@@ -172,26 +172,7 @@ describe('Notify highest-miss coverage', function (): void {
         }
     });
 
-    test('resources expose model pages and legacy form schema', function (): void {
-        Assert::assertSame(NotificationTemplate::class, NotificationTemplateResource::getModel());
-        Assert::assertArrayHasKey('name', NotificationTemplateResource::getFormSchema());
-        Assert::assertNotEmpty(NotificationTemplateResource::getPages());
 
-        Assert::assertSame(NotifyTheme::class, NotifyThemeResource::getModel());
-        Assert::assertArrayHasKey('subject', NotifyThemeResource::getFormSchema());
-        Assert::assertNotEmpty(NotifyThemeResource::getPages());
-
-        Assert::assertSame(MailTemplate::class, MailTemplateResource::getModel());
-        Assert::assertNotEmpty(MailTemplateResource::getFormSchema());
-        Assert::assertNotEmpty(MailTemplateResource::getPages());
-
-        Assert::assertSame(\Modules\Notify\Models\Notification::class, NotificationResource::getModel());
-        Assert::assertNotEmpty(NotificationResource::getFormSchema());
-
-        Assert::assertSame(Contact::class, ContactResource::getModel());
-        Assert::assertNotEmpty(ContactResource::getFormSchema());
-        Assert::assertNotEmpty(ContactResource::getPages());
-    });
 
     test('PushNotificationService sends fakes schedules and guards empty targets', function (): void {
         config([

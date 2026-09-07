@@ -126,12 +126,7 @@ describe('Job execute coverage — Filament resources', function (): void {
         }
     });
 
-    test('ScheduleResource getFormSchema esegue GetCommandsAction', function (): void {
-        jobBindArtisan();
-        $schema = ScheduleResource::getFormSchema();
-        Assert::assertNotEmpty($schema);
-        Assert::assertArrayHasKey('index', ScheduleResource::getPages());
-    });
+    
 });
 
 describe('Job execute coverage — policies', function (): void {

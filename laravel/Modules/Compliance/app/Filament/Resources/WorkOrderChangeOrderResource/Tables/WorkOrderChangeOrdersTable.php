@@ -10,6 +10,7 @@ use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Modules\Compliance\Filament\Resources\WorkOrderChangeOrderResource;
+use Modules\Compliance\Filament\Resources\WorkOrderChangeOrderResource\Schemas\WorkOrderChangeOrderForm;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 final class WorkOrderChangeOrdersTable extends XotBaseResourceTable

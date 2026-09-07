@@ -1,9 +1,9 @@
 ---
 name: inventory-coverage
-description: Stato PHPStan e Pest per Modules/Inventory dopo la campagna zero-errori 2026-09-06
+description: Stato PHPStan e Pest per Modules/Inventory dopo la campagna zero-errori 2026-09-06 e il follow-up canonical-structure 2026-09-07
 metadata:
   module: Inventory
-  updated: 2026-09-06
+  updated: 2026-09-07
 ---
 
 # Coverage e qualita — Modules/Inventory

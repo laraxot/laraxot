@@ -30,7 +30,7 @@ final class SensitiveDataRedactor
      *
      * @var array<int, string>
      */
-    private const SECRET_PATTERNS = [
+    private const array SECRET_PATTERNS = [
         // key=value pairs for anything that names itself a credential
         '/\b(api[_-]?key|apikey|secret|token|password|passwd|pwd|authorization)\b\s*[:=]\s*["\']?[^\s"\',;]{6,}/iu',
         // Bearer / Basic auth headers
@@ -49,7 +49,7 @@ final class SensitiveDataRedactor
      *
      * @var array<int, string>
      */
-    private const PERSONAL_PATTERNS = [
+    private const array PERSONAL_PATTERNS = [
         // IBAN, Italian and generic
         '/\b[A-Z]{2}\d{2}[A-Z0-9]{11,30}\b/u',
         // Payment card numbers, grouped or not
@@ -85,7 +85,7 @@ final class SensitiveDataRedactor
      *
      * @var array<int, string>
      */
-    private const SECRET_KEY_NAMES = [
+    private const array SECRET_KEY_NAMES = [
         'api_key', 'apikey', 'api-key', 'secret', 'client_secret', 'token',
         'access_token', 'refresh_token', 'password', 'passwd', 'pwd',
         'authorization', 'auth', 'credentials', 'private_key',

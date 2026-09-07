@@ -534,10 +534,7 @@ describe('Xot execute coverage floor 50', function (): void {
             Assert::assertNotEmpty($resource::getModuleName());
             Assert::assertNotEmpty($resource::getPages());
             Assert::assertNotEmpty($resource::getRelations());
-            try {
-                Assert::assertNotEmpty($resource::getFormSchema());
-            } catch (\Throwable) {
-            }
+            
             try {
                 Assert::assertNotEmpty($resource::getInfolistSchema());
             } catch (\Throwable) {

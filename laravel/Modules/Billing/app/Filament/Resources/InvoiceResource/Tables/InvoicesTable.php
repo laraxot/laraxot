@@ -4,23 +4,22 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Filament\Resources\InvoiceResource\Tables;
 
-use Filament\Tables\Actions\Action;
-use Filament\Tables\Actions\ActionGroup;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\ViewAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\ForceDeleteBulkAction;
+use Filament\Actions\RestoreBulkAction;
+use Filament\Actions\ViewAction;
+use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
-use Webmozart\Assert\Assert;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Filament\Resources\InvoiceResource;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 final class InvoicesTable extends XotBaseResourceTable
 {
-    protected static string $resource = InvoiceResource::class;
-
     /**
-     * @return array<string, TextColumn>
+     * @return array<int|string, Column>
      */
     public function getTableColumns(): array
     {
@@ -60,36 +59,29 @@ final class InvoicesTable extends XotBaseResourceTable
     }
 
     /**
-     * @return array<int|string, \Filament\Tables\Actions\Action|\Filament\Tables\Actions\ActionGroup>
+     * @return array<string, ViewAction|EditAction>
      */
     public function getTableActions(): array
     {
-        /** @var array<int|string, Action|ActionGroup> $actions */
-        $actions = [];
-
-        $resource = app(static::$resource);
-        Assert::isInstanceOf($resource, \Illuminate\Database\Eloquent\Model::class);
-        if (method_exists($resource, 'canView')) {
-            $actions['view'] = ViewAction::make()
+        return [
+            'view' => ViewAction::make()
                 ->iconButton()
-                ->visible(static fn (mixed $record): bool => (bool) $resource->canView($record));
-        }
-
-        if (method_exists($resource, 'canEdit')) {
-            $actions['edit'] = EditAction::make()
+                ->visible(static fn (Model $record): bool => InvoiceResource::canView($record)),
+            'edit' => EditAction::make()
                 ->iconButton()
-                ->visible(
-                    fn (mixed $record): bool => ! request()->is('customer/*')
-                        && (bool) $resource->canEdit($record)
-                );
-        }
+                ->visible(static fn (Model $record): bool => InvoiceResource::canEdit($record)),
+        ];
+    }
 
-        if (method_exists($resource, 'canDelete')) {
-            $actions['delete'] = DeleteAction::make()
-                ->iconButton()
-                ->visible(static fn (mixed $record): bool => (bool) $resource->canDelete($record));
-        }
-
-        return $actions;
+    /**
+     * @return array<string, DeleteBulkAction|RestoreBulkAction|ForceDeleteBulkAction>
+     */
+    public function getTableBulkActions(): array
+    {
+        return [
+            'delete' => DeleteBulkAction::make(),
+            'restore' => RestoreBulkAction::make(),
+            'forceDelete' => ForceDeleteBulkAction::make(),
+        ];
     }
 }

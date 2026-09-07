@@ -19,12 +19,12 @@ final class WarehouseLocationForm extends XotBaseResourceForm
     protected static string $resource = WarehouseLocationResource::class;
 
     /**
-     * @return array<int, Component>
+     * @return array<string, Component>
      */
     public function getFormSchema(): array
     {
         return [
-            Section::make()
+            'section' => Section::make()
                 ->columnSpanFull()
                 ->components([
                     Grid::make(2)->components([

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Tenant\Filament\Resources;
 
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\TextInput;
 use Modules\Tenant\Filament\Resources\DomainResource\Pages\CreateDomain;
 use Modules\Tenant\Filament\Resources\DomainResource\Pages\EditDomain;
 use Modules\Tenant\Filament\Resources\DomainResource\Pages\ListDomains;

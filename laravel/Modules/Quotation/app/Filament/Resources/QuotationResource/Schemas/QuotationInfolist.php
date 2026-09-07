@@ -9,6 +9,7 @@ use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Modules\Quotation\Filament\Resources\QuotationResource;
+use Modules\Quotation\Models\Quotation;
 use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceInfolist;
 
 final class QuotationInfolist extends XotBaseResourceInfolist
@@ -69,7 +70,7 @@ final class QuotationInfolist extends XotBaseResourceInfolist
                         'cost_total' => TextEntry::make('cost_total')
                             ->money('EUR'),
                         'margin' => TextEntry::make('margin')
-                            ->state(fn ($record) => QuotationResource::marginSummary($record)),
+                            ->state(fn (?Quotation $record): string => QuotationResource::marginSummary($record)),
                     ]),
                 ])
                 ->columns(3),

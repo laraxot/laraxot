@@ -80,12 +80,12 @@ final class WarehouseLocationsTable extends XotBaseResourceTable
         ];
     }
 
-    protected function getDefaultTableSortColumn(): ?string
+    protected function getDefaultTableSortColumn(): string
     {
         return 'warehouse_id';
     }
 
-    protected function getDefaultTableSortDirection(): ?string
+    protected function getDefaultTableSortDirection(): string
     {
         return 'asc';
     }

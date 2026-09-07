@@ -9,6 +9,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource;
+use Modules\Inventory\Filament\Resources\InventoryMovementResource\Schemas\InventoryMovementForm;
 use Modules\Inventory\Models\InventoryMovement;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
@@ -38,7 +39,7 @@ final class InventoryMovementsTable extends XotBaseResourceTable
             'toWarehouse.name' => TextColumn::make('toWarehouse.name')->label(__('inventory.fields.to'))->toggleable(),
         ];
 
-        if (InventoryMovementResource::storageZonesEnabled()) {
+        if (InventoryMovementForm::storageZonesEnabled()) {
             $columns['fromLocation.code'] = TextColumn::make('fromLocation.code')
                 ->label(__('inventory.fields.from_location'))
                 ->placeholder('—')
@@ -51,11 +52,11 @@ final class InventoryMovementsTable extends XotBaseResourceTable
 
         $columns['workOrder.code'] = TextColumn::make('workOrder.code')
             ->label(__('inventory.fields.work_order'))
-            ->formatStateUsing(fn ($state, InventoryMovement $record): string => InventoryMovementResource::workOrderLabel($record->workOrder))
+            ->formatStateUsing(fn ($state, InventoryMovement $record): string => InventoryMovementForm::workOrderLabel($record->workOrder))
             ->toggleable(isToggledHiddenByDefault: true);
         $columns['intervention_id'] = TextColumn::make('intervention_id')
             ->label(__('inventory.fields.intervention'))
-            ->formatStateUsing(fn ($state, InventoryMovement $record): string => InventoryMovementResource::interventionLabel($record->intervention))
+            ->formatStateUsing(fn ($state, InventoryMovement $record): string => InventoryMovementForm::interventionLabel($record->intervention))
             ->toggleable(isToggledHiddenByDefault: true);
         $columns['occurred_at'] = TextColumn::make('occurred_at')->label(__('inventory.fields.date'))->dateTime()->sortable();
         $columns['created_at'] = TextColumn::make('created_at')->dateTime()->toggleable(isToggledHiddenByDefault: true);
@@ -84,12 +85,12 @@ final class InventoryMovementsTable extends XotBaseResourceTable
         ];
     }
 
-    protected function getDefaultTableSortColumn(): ?string
+    protected function getDefaultTableSortColumn(): string
     {
         return 'id';
     }
 
-    protected function getDefaultTableSortDirection(): ?string
+    protected function getDefaultTableSortDirection(): string
     {
         return 'desc';
     }

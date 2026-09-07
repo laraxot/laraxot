@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd" backupGlobals="false" bootstrap="vendor/autoload.php" colors="true" processIsolation="false" stopOnFailure="false" executionOrder="random" failOnWarning="true" failOnRisky="true" failOnEmptyTestSuite="true" beStrictAboutOutputDuringTests="true" cacheDirectory=".phpunit.cache" backupStaticProperties="false">
+<!--
+    L'attributo bootstrap è relativo a QUESTO file, non alla cwd: da "laravel/" il percorso
+    corretto è "../../vendor/autoload.php" (il modulo non ha un proprio vendor/ in questo
+    monorepo). Con "vendor/autoload.php" la config non è eseguibile e Pest/PHPUnit non
+    partono affatto ("Cannot open bootstrap script"). Stesso fix già applicato a
+    Notify/Xot/UI/Lang/Tenant/Gdpr.
+-->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.3/phpunit.xsd" backupGlobals="false" bootstrap="../../vendor/autoload.php" colors="true" processIsolation="false" stopOnFailure="false" executionOrder="random" failOnWarning="true" failOnRisky="true" failOnEmptyTestSuite="true" beStrictAboutOutputDuringTests="true" cacheDirectory=".phpunit.cache" backupStaticProperties="false">
   <testsuites>
     <testsuite name="VendorName Test Suite">
       <directory>tests</directory>

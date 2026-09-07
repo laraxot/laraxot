@@ -61,18 +61,6 @@ final class DailyNoteResource extends XotBaseResource
         return "media/daily-notes/{$normalizedUserId}/{$normalizedDate}/photos";
     }
 
-    private static function extractUserId(callable $get): int
-    {
-        $userId = $get('user_id');
-        if (is_numeric($userId)) {
-            return (int) $userId;
-        }
-
-        $authId = Auth::id();
-
-        return is_numeric($authId) ? (int) $authId : 0;
-    }
-
     private static function castMixedToString(mixed $value): string
     {
         if (is_string($value)) {

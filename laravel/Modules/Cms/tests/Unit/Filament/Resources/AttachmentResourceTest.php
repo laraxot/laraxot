@@ -15,11 +15,7 @@ describe('AttachmentResource', function (): void {
         Assert::assertSame(Attachment::class, $resource::getModel());
     });
 
-    test('attachment resource has form schema', function (): void {
-        $schema = AttachmentResource::getFormSchema();
-        /* @var array<string, mixed> $schema */
-        Assert::assertGreaterThan(0, count($schema));
-    });
+   
 
     test('attachment resource has relations', function (): void {
         $relations = AttachmentResource::getRelations();

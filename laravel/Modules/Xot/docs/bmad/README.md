@@ -63,3 +63,6 @@ Target: >99% (graduale, non bloccante per quality gate)
 Azione: aggiungere dichiarazioni : const TIPO quando possibile (es. protected const STATUS = 'pending')
 Nota: non sopprimere, non usare @phpstan-ignore per metrica
 === COMPLETATO BMAD SWARM ===
+=== BATCH CONSTANTS AI ASSISTANT ===
+- AiOutputGuard: LEAK_MARKERS -> const array
+- PromptInjectionGuard: BLOCK_PATTERNS -> const array

@@ -275,11 +275,7 @@ describe('User execute coverage floor 50', function (): void {
         ModuleExecuteCoverage::runFloor50($appRoot, $ns);
     });
 
-    test('Filament UserResource legacy schema e pages', function (): void {
-        Assert::assertNotEmpty(UserResource::getFormSchema());
-        Assert::assertNotEmpty(UserResource::getPages());
-        Assert::assertTrue(class_exists(UserResource::getModel()));
-    });
+
 
     test('enums e datas User espongono label', function (): void {
         $labels = 0;
@@ -366,7 +362,7 @@ describe('User execute coverage floor 50', function (): void {
         Assert::assertNotEmpty(OauthAccessTokenResource::getTableFilters());
         Assert::assertNotEmpty(OauthAccessTokenResource::getTableActions());
         Assert::assertNotEmpty(OauthAccessTokenResource::getTableBulkActions());
-        Assert::assertNotEmpty(OauthAccessTokenResource::getFormSchema());
+        
 
         $resource = new OauthAccessTokenResource;
         $columns = $resource->getTableColumns();

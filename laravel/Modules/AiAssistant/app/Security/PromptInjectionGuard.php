@@ -10,7 +10,7 @@ use function Safe\preg_replace;
 final class PromptInjectionGuard
 {
     /** @var array<int, string> */
-    private const BLOCK_PATTERNS = [
+    private const array BLOCK_PATTERNS = [
         '/\b(ignore|disregard|forget)\b.{0,40}\b(previous|prior|above|all)\b.{0,40}\b(instruction|prompt|rule|message)s?\b/iu',
         '/\b(system|developer|hidden)\s+(prompt|instruction)s?\b/iu',
         '/\byou\s+are\s+now\b/iu',

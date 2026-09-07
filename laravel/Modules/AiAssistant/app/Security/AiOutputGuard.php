@@ -27,7 +27,7 @@ final class AiOutputGuard
      *
      * @var array<int, string>
      */
-    private const LEAK_MARKERS = [
+    private const array LEAK_MARKERS = [
         '[security_notice]',
         '[trusted_context',
         '<user_request>',

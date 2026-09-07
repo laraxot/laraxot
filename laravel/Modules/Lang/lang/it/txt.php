@@ -184,6 +184,7 @@ return [
         'badge' => ['label' => 'badge', 'placeholder' => 'badge', 'helper_text' => 'badge', 'description' => 'badge'],
         'date' => ['label' => 'date', 'placeholder' => 'date', 'helper_text' => 'date', 'description' => 'date'],
         'order_column' => ['label' => 'order_column'],
+        'map_picker' => ['label' => 'map_picker', 'placeholder' => 'map_picker', 'helper_text' => 'map_picker', 'description' => 'map_picker'],
     ],
     'actions' => [
         'authenticate' => ['label' => 'Autentica', 'tooltip' => 'Effettua il login nel sistema', 'icon' => 'ui-login', 'color' => 'primary'],

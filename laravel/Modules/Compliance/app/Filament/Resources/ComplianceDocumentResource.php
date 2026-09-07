@@ -4,33 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Filament\Resources;
 
-use Filament\Actions\Action;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Notifications\Notification;
-use Filament\Schemas\Components\Component;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
-use Filament\Tables;
-use Filament\Tables\Filters\SelectFilter;
-use Filament\Tables\Table;
 use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\HtmlString;
-use Modules\Compliance\Actions\AnalyzeComplianceDocumentWithOpenAiAction;
 use Modules\Compliance\Filament\Resources\ComplianceDocumentResource\Pages;
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Document\Models\Media;
 use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
-use Modules\WorkOrder\Models\WorkOrder;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class ComplianceDocumentResource extends XotBaseResource
@@ -96,38 +76,5 @@ final class ComplianceDocumentResource extends XotBaseResource
             e($url),
             e($url),
         ));
-    }
-
-    /** @return array<string, string> */
-    private static function documentTypes(): array
-    {
-        return [
-            'durc' => 'DURC',
-            'pos' => 'POS',
-            'psc' => 'PSC',
-            'dvr' => 'DVR',
-            'dico' => 'DICO',
-            'dico_attachment' => 'Allegato DICO',
-            'building_permit' => 'Titolo edilizio',
-            'training' => 'Attestato',
-            'medical_fitness' => 'Idoneita sanitaria',
-            'dpi_delivery' => 'Consegna DPI',
-            'insurance' => 'Polizza',
-            'equipment_manual' => 'Manuale attrezzatura',
-            'equipment_check' => 'Verifica attrezzatura',
-            'other' => 'Altro',
-        ];
-    }
-
-    /** @return array<string, string> */
-    private static function statuses(): array
-    {
-        return [
-            'missing' => 'Mancante',
-            'valid' => 'Valido',
-            'expiring' => 'In scadenza',
-            'expired' => 'Scaduto',
-            'waived' => 'Non necessario',
-        ];
     }
 }

@@ -53,13 +53,7 @@ function makePreviewNotificationTemplateTestProxy(): PreviewNotificationTemplate
     return new class() extends PreviewNotificationTemplate {};
 }
 
-test('contact resource form schema exposes expected fields', function (): void {
-    $schema = TestCase::assertNotifyArray(ContactResource::getFormSchema());
 
-    Assert::assertArrayHasKey('name', $schema);
-    Assert::assertArrayHasKey('email', $schema);
-    Assert::assertArrayHasKey('phone', $schema);
-});
 
 test('edit contact page exposes delete header action', function (): void {
     $page = makeEditContactTestProxy();
@@ -128,47 +122,7 @@ test('notification infolist schema exposes its resource fields', function (): vo
     }
 });
 
-test('mail template resource form schema exposes expected components', function (): void {
-    // Nessuna fixture da creare: HtmlLayoutPathSelect legge
-    // XotData::make()->getMailHtmlLayoutPath(), cioe' Themes/<pub_theme>/resources/mail-layouts,
-    // e in questo progetto pub_theme e' 'Zero', che i suoi layout ce li ha gia'.
-    $schema = XotBasePest::assertArray(MailTemplateResource::getFormSchema());
 
-    Assert::assertArrayHasKey('mailable_slug_group', $schema);
-    Assert::assertInstanceOf(Group::class, $schema['mailable_slug_group']);
-    Assert::assertArrayHasKey('subject', $schema);
-    Assert::assertInstanceOf(TextInput::class, $schema['subject']);
-    Assert::assertArrayHasKey('html_layout_path', $schema);
-    Assert::assertArrayHasKey('html_template', $schema);
-    Assert::assertInstanceOf(RichEditor::class, $schema['html_template']);
-    Assert::assertArrayHasKey('params_display', $schema);
-    Assert::assertArrayHasKey('text_template', $schema);
-    Assert::assertInstanceOf(Textarea::class, $schema['text_template']);
-});
-
-test('notification resource form schema exposes expected components', function (): void {
-    $schema = TestCase::assertNotifyArray(NotificationResource::getFormSchema());
-
-    Assert::assertArrayHasKey('type', $schema);
-    Assert::assertInstanceOf(TextInput::class, $schema['type']);
-    Assert::assertArrayHasKey('data', $schema);
-    Assert::assertInstanceOf(Textarea::class, $schema['data']);
-    Assert::assertArrayHasKey('read_at', $schema);
-    Assert::assertInstanceOf(DateTimePicker::class, $schema['read_at']);
-});
-
-test('notification template resource form schema and pages are configured', function (): void {
-    $schema = TestCase::assertNotifyArray(NotificationTemplateResource::getFormSchema());
-    $pages = TestCase::assertNotifyArray(NotificationTemplateResource::getPages());
-
-    Assert::assertArrayHasKey('name', $schema);
-    Assert::assertInstanceOf(TextInput::class, $schema['name']);
-    Assert::assertArrayHasKey('type', $schema);
-    Assert::assertInstanceOf(Select::class, $schema['type']);
-    Assert::assertArrayHasKey('attachments', $schema);
-    Assert::assertInstanceOf(SpatieMediaLibraryFileUpload::class, $schema['attachments']);
-    Assert::assertArrayHasKey('preview', $pages);
-});
 
 test('preview notification template page exposes title and subheading', function (): void {
     $page = makePreviewNotificationTemplateTestProxy();

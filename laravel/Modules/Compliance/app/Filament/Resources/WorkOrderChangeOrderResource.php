@@ -59,17 +59,4 @@ final class WorkOrderChangeOrderResource extends XotBaseResource
             'edit' => Pages\EditWorkOrderChangeOrder::route('/{record}/edit'),
         ];
     }
-
-    /** @return array<string, string> */
-    private static function statuses(): array
-    {
-        return [
-            'proposed' => 'Proposta',
-            'pending_approval' => 'Da approvare',
-            'approved' => 'Approvata',
-            'executed' => 'Eseguita',
-            'billed' => 'Fatturata',
-            'rejected' => 'Respinta',
-        ];
-    }
 }

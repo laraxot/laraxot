@@ -48,7 +48,9 @@ final class SupplierResource extends XotBaseResource
      */
     public static function getGloballySearchableAttributes(): array
     {
-        return ['legal_name', 'vat_number', 'email', 'phone'];
+        $attrs = ['legal_name', 'vat_number', 'email', 'phone'];
+
+        return array_combine($attrs, $attrs);
     }
 
     /**

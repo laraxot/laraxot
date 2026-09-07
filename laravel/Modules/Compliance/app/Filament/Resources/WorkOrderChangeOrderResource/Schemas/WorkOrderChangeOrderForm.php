@@ -32,10 +32,23 @@ final class WorkOrderChangeOrderForm extends XotBaseResourceForm
                 'grid' => Grid::make(3)->components([
                     'title' => TextInput::make('title')->required()->maxLength(255),
                     'estimated_amount' => TextInput::make('estimated_amount')->numeric()->prefix('EUR'),
-                    'status' => Select::make('status')->default('proposed')->options(WorkOrderChangeOrderResource::statuses()),
+                    'status' => Select::make('status')->default('proposed')->options(self::statuses()),
                 ]),
                 'description' => Textarea::make('description')->columnSpanFull(),
             ]),
+        ];
+    }
+
+    /** @return array<string, string> */
+    public static function statuses(): array
+    {
+        return [
+            'proposed' => 'Proposta',
+            'pending_approval' => 'Da approvare',
+            'approved' => 'Approvata',
+            'executed' => 'Eseguita',
+            'billed' => 'Fatturata',
+            'rejected' => 'Respinta',
         ];
     }
 }

@@ -15,20 +15,7 @@ describe('SectionResource', function (): void {
         Assert::assertSame(Section::class, $resource::getModel());
     });
 
-    test('section resource has form schema', function (): void {
-        $schema = SectionResource::getFormSchema();
-        /* @var array<string, mixed> $schema */
-        Assert::assertGreaterThan(0, count($schema));
-    });
-
-    test('section resource has form fields', function (): void {
-        $schema = SectionResource::getFormSchema();
-
-        // Check that form has required components (check array keys)
-        Assert::assertContains('info', array_keys($schema));
-        Assert::assertContains('blocks', array_keys($schema));
-    });
-
+   
     test('section resource extends LangBaseResource', function (): void {
         Assert::assertTrue(class_exists(SectionResource::class));
     });

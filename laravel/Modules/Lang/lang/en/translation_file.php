@@ -1,10 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 return [
     'model' => [
         'label' => 'translation file.model',
+        'placeholder' => 'Seleziona file traduzione',
+        'helper_text' => 'File di traduzione per la gestione delle lingue',
     ],
     'navigation' => [
         'label' => 'Navigation Label',
@@ -63,6 +63,7 @@ return [
                         'description' => 'snapshots.fields.updated_at.label',
                         'helper_text' => 'snapshots.fields.updated_at.label',
                         'placeholder' => 'snapshots.fields.updated_at.label',
+                        'label' => 'Etichetta Data',
                     ],
                 ],
             ],
@@ -82,16 +83,49 @@ return [
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+            'placeholder' => 'Inserisci chiave traduzione',
+            'help' => 'Chiave identificativa della traduzione',
+        ],
+        'delete' => [
+            'label' => 'delete',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'title' => [
+            'label' => 'title',
+            'placeholder' => 'title',
+            'helper_text' => 'title',
+            'description' => 'title',
+        ],
+        'meta' => [
+            'description' => [
+                'label' => 'meta.description',
+                'placeholder' => 'meta.description',
+                'helper_text' => 'meta.description',
+                'description' => 'meta.description',
+            ],
         ],
     ],
     'actions' => [
         'create' => [
             'label' => 'create',
+            'tooltip' => 'Crea nuovo file di traduzione',
+            'success' => 'File di traduzione creato con successo',
+            'icon' => 'create',
         ],
         'lang' => [
             'label' => 'lang',
+            'tooltip' => 'Seleziona lingua',
+            'icon' => 'lang',
         ],
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
+    'sections' => [
+        'meta' => [
+            'label' => 'meta',
+            'heading' => 'meta',
+        ],
+    ],
 ];

@@ -5,12 +5,9 @@ declare(strict_types=1);
 namespace Modules\Billing\Filament\Resources;
 
 use App\Support\AccountFeatures;
-use Filament\Actions\Action;
-use Filament\Support\Facades\FilamentIcon;
-use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Modules\Billing\Models\Invoice;
 use Modules\User\Models\User;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -51,7 +48,7 @@ final class InvoiceResource extends XotBaseResource
         return parent::canCreate();
     }
 
-    public static function canEdit(mixed $record): bool
+    public static function canEdit(Model $record): bool
     {
         if (! self::isAvailableInCurrentPanel()) {
             return false;
@@ -64,7 +61,7 @@ final class InvoiceResource extends XotBaseResource
         return parent::canEdit($record);
     }
 
-    public static function canView(mixed $record): bool
+    public static function canView(Model $record): bool
     {
         return self::isAvailableInCurrentPanel() && parent::canView($record);
     }

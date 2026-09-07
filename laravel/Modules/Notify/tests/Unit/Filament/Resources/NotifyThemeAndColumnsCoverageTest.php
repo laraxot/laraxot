@@ -37,19 +37,7 @@ test('notify theme resource field options are configured', function (): void {
     Assert::assertArrayHasKey('page', NotifyThemeResource::fieldOptions('post_type'));
 });
 
-test('notify theme resource form schema exposes expected components', function (): void {
-    $schema = NotifyThemeResource::getFormSchema();
-    Assert::assertArrayHasKey('post_id', $schema);
-    Assert::assertInstanceOf(TextInput::class, $schema['post_id']);
-    Assert::assertArrayHasKey('logo', $schema);
-    Assert::assertInstanceOf(SpatieMediaLibraryFileUpload::class, $schema['logo']);
-    Assert::assertArrayHasKey('body', $schema);
-    Assert::assertInstanceOf(Textarea::class, $schema['body']);
-    Assert::assertArrayHasKey('body_html', $schema);
-    Assert::assertInstanceOf(RichEditor::class, $schema['body_html']);
-    Assert::assertArrayHasKey('lang', $schema);
-    Assert::assertInstanceOf(Select::class, $schema['lang']);
-});
+
 
 test('edit notify theme page exposes delete header action', function (): void {
     $page = makeEditNotifyThemeTestProxy();

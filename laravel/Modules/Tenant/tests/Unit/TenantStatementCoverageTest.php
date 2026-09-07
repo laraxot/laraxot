@@ -24,7 +24,7 @@ use Modules\Tenant\Actions\Models\ResolveTenantModelClassAction;
 use Modules\Tenant\Actions\Models\ResolveTenantModelInstanceAction;
 use Modules\Tenant\Actions\Modules\GetTenantModulesAction;
 use Modules\Tenant\Actions\Translations\TranslateTenantKeyAction;
-use Modules\Tenant\Filament\Resources\DomainResource;
+use Modules\Tenant\Filament\Resources\DomainResource\Schemas\DomainForm;
 use Modules\Tenant\Models\Domain;
 use Modules\Tenant\Models\Policies\DomainPolicy;
 use Modules\Tenant\Models\Tenant;
@@ -374,8 +374,8 @@ describe('Tenant statement coverage — models and policies', function (): void 
         Assert::assertNull((new TenantBasePolicyCoverage())->before($user, 'view'));
     });
 
-    test('DomainResource getFormSchema is executable', function (): void {
-        $schema = DomainResource::getFormSchema();
+    test('DomainForm getFormSchema is executable', function (): void {
+        $schema = app(DomainForm::class)->getFormSchema();
         Assert::assertArrayHasKey('title', $schema);
         Assert::assertArrayHasKey('price', $schema);
     });

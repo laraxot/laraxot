@@ -1,7 +1,47 @@
 # Employee Module: Test & Quality Coverage
 
-Generated: 2026-09-06  
+Generated: 2026-09-06
 Workflow: Module closure (merge + PHPMD + Pest + docs)
+
+---
+
+## Update 2026-09-07 — PHPStan zero campaign
+
+Fix: `docs/stories/phpstan-Employee-fix.md`. PHPStan Modules/Employee: 1 errore → 0
+(`method.staticCall` su `WorkHourResource::getInfolistSchema()`, dead code + chiamata
+statica invalida a `WorkHourInfolist::getInfolistSchema()`, rimosso).
+
+### Pest — prima vs dopo
+
+| | Prima (2026-09-06, baseline sotto) | Dopo (2026-09-07, questa sessione) |
+|---|---|---|
+| Totale test | 16 | 16 |
+| Passed | 15 | 10 |
+| Failed | 1 (Tenant DB connection, non-Employee) | 6 |
+| Coverage % | non generato (nessun driver richiesto all'epoca) | non generabile: pest non emette il report coverage quando ci sono fallimenti bloccanti nel bootstrap |
+
+**La regressione 15→10 NON è causata da questa story.** I 5 fallimenti aggiuntivi sono:
+- `BindingResolutionException` su `Spatie\EventSourcing\StoredEvents\EventSubscriber`
+  (parametro `$storedEventRepository` non risolvibile) — problema di configurazione/
+  service-container a livello applicativo, non di un singolo modulo.
+- `LogicException: bootIfNotBooted ... while it is being booted` sui model
+  `AbsenceRequest`/`WorkHour`/`BaseModel` — problema di boot Eloquent condiviso.
+
+Nessuno dei test falliti referenzia `WorkHourResource` o `WorkHourInfolist` (verificato
+con grep mirato prima di escludere la responsabilità). Coerente con
+`bashscripts/ai/wiki/memories/project_xot_bootstrap_break_xotbaseresourceform_2026_09_07.md`:
+altri agenti stanno rifattorizzando le classi base Xot in tempo reale nello stesso
+working tree condiviso. Non è stato tentato un fix (fuori scope, non di competenza di
+questa story, rischio di collisione con lock non posseduti).
+
+### PHPInsights
+
+`./tools/phpinsights.sh analyse Modules/Employee --min-quality=80 --min-complexity=80 --min-architecture=80 --min-style=80`
+fallisce con `ComposerNotFound: composer.lock not found` — bug tooling noto quando
+l'analisi è scoped a un singolo modulo invece che alla root (vedi memoria
+`project_phpinsights_composer_lock_scoped_path`). Non è colpa di questa modifica; non
+è stato applicato il workaround (config-path ephemeral) per restare nello scope minimo
+della story.
 
 ---
 
