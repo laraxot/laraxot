@@ -301,3 +301,46 @@ sessions read/write the same tree) and will be carried forward automatically
 whenever the 4.14.3 owner commits that file. Only this session's own
 documentation (`docs/coverage.md`, `docs/stories/phpstan-HR-fix.md`) was
 committed directly.
+
+## 2026-09-07 (later still) — `typeCoverage.constantTypeCoverage` regression re-restore (story 2.8/5.1 tail, no commit needed)
+
+Full-tree scan (`phpstan analyse Modules --error-format=raw`, cache cleared)
+during the 2.8/5.1 campaign's final push found HR back at **5** occurrences —
+the exact regression flagged in the "side-effect regression" note above had
+resurfaced in the still-uncommitted 4.14.3 extraction sitting in the shared
+working tree:
+
+- `AbsenceRequestResource.php:22,34,37` — `ABSENCE_TYPE_ALIASES` /
+  `ACCOUNT_FEATURE_ADMIN` / `ACCOUNT_FEATURE_OPERATOR` back to untyped with
+  `@var` docblocks only.
+- `EmployeeResource.php:41,44` — `ACCOUNT_FEATURE_ADMIN` /
+  `ACCOUNT_FEATURE_OPERATOR` same regression.
+
+Re-applied the exact native-type fix (`private const array
+ABSENCE_TYPE_ALIASES` with its `@var array<string, string>` docblock kept for
+the shape; `private const string ACCOUNT_FEATURE_ADMIN` /
+`ACCOUNT_FEATURE_OPERATOR` in both files, scalar `@var` docblocks dropped as
+redundant). Confirmed via `git diff` against `HEAD` on both files that the
+constant-declaration hunks are now byte-for-byte **identical to HEAD**
+(commit `8e5c91e`, story 2.8, already on `laraxot/dev`) — i.e. this was a
+pure restore, not a new change. **Nothing to commit**: `git status` /
+`git diff` on the constant lines is empty; the only remaining working-tree
+diff on these two files is the unrelated, still-uncommitted 4.14.3
+canonical-structure extraction (getFormSchema()/table() removal, import
+cleanup), untouched by this fix and left for its owner as before.
+
+Verified with full-tree `phpstan analyse Modules` (cache cleared): 0
+occurrences for `Modules/HR/` and, at the moment of this check, **0 errors
+project-wide** — the 2.8/5.1 campaign reached 302/302 (100%) with
+contributions from parallel sessions on the other flagged modules
+(Billing, Bom, Compliance, Platform, Quotation, WorkOrder, Signage, etc.).
+
+Scoped `phpstan analyse Modules/HR` (cache cleared): `[OK] No errors`.
+`./tools/phpmd.sh Modules/HR text Modules/HR/phpmd.ruleset.xml`: no new
+findings on the two files. `./vendor/bin/phpinsights analyse Modules/HR
+--no-interaction --config-path=/tmp/...` (ephemeral config removing only
+`ForbiddenSecurityIssues`): Code 91.8, Complexity 93.9, Architecture 82.4,
+Style 84.3 — unchanged from the prior session, all ≥ 70.
+`./vendor/bin/pest --testsuite=HR --no-coverage`: 6 failed / 2 passed,
+identical to the baseline documented above (pre-existing `Database
+connection [hr] not configured` gap, independent of this fix).

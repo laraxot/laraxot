@@ -113,3 +113,53 @@ I 4 test che falliscono **prima e dopo** (nessuna regressione, non toccati da qu
 - `UserIdColumnsAcceptUuidTest` (1 test) — la colonna `fgas_leak_checks.performed_by_user_id` non esiste nello schema di test corrente. Anche questo e' uno stato del DB di test, non del codice Compliance.
 
 Entrambi i blocchi sono ambientali (stato del DB di test condiviso), verificati identici confrontando l'esecuzione prima e dopo le modifiche di entrambe le sessioni (2026-09-06 e 2026-09-07).
+
+## 2026-09-07 (sera) — `typeCoverage.constantTypeCoverage` (story 5.71, continuazione 2.8/5.1)
+
+Coda della campagna project-wide `typeCoverage.constantTypeCoverage` (story
+`docs/stories/2.8.phpstan-constant-type-coverage.story.md` e
+`5.1.phpstan-constant-type-coverage-remaining.story.md`, 49%→64.3%→66.8%→68.5%
+nella giornata). La metrica e' globale: `phpstan analyse Modules/Compliance` da
+solo riporta sempre `[OK] No errors` per questa regola; verificato con scan
+full-tree `phpstan analyse Modules --error-format=raw`, grep su `Modules/Compliance`.
+
+| | Occorrenze Compliance (scan full-tree) |
+|---|---|
+| Prima | 16 (9 file) |
+| Dopo | 0 |
+| Costanti tipate progetto (full-tree) | 207/302 (68.5%) → 302/302 (100%, campagna chiusa da tutti i moduli in parallelo) |
+
+File corretti (tipo nativo PHP 8.3+ su `const`, docblock `@var` mantenuto solo
+per le shape generiche, rimosso dove ridondante con lo scalare nativo):
+
+- `app/Actions/EvaluateWorkOrderReadinessAction.php` — `DEFAULT_REQUIRED_DOCUMENTS` → `private const array`
+- `app/Actions/RegisterMaintenanceControlAction.php` — `MAINTENANCE`/`EFFICIENCY` → `private const string`; `FIELDS` → `private const array` (deduplicato un doppio docblock `@var` incoerente, tenuto `list<string>`)
+- `app/Application/Queries/GetHeatingComplianceOverviewQuery.php` — `STATUS_RANK` → `private const array`
+- `app/DTO/FGasObligation.php` — 3 costanti `public const string`
+- `app/DTO/ValueObjects/Refrigerant.php` — `GWP` → `private const array`
+- `app/DTO/ValueObjects/ThermalPlantRegistry.php` — `BY_REGION` → `private const array`
+- `app/Filament/Resources/CustomerSystemResource.php` — `ACCOUNT_FEATURE_ADMIN` → `protected const string`, `ACCOUNT_FEATURE_ADMIN_DEFAULT` → `protected const bool` (nessun docblock preesistente su queste due)
+- `app/Filament/Resources/CustomerSystemResource/RelationManagers/SchemasRelationManager.php` — `KIND` → `private const string`; `ACCEPTED_MIME_TYPES` → `private const array` (docblock `@var list<string>` spostato dentro il blocco di commento esistente)
+- `app/Filament/Resources/HeatingSystemResource.php` — `ACCOUNT_FEATURE_ADMIN`/`ACCOUNT_FEATURE_OPERATOR` → `protected const string`
+
+Verifica: `php -l` pulito su tutti i 9 file; `phpstan analyse Modules`
+(full-tree, cache pulita) → **0 errori totali nell'intero progetto** al momento
+di questa verifica (2026-09-07 sera); PHPMD (`./tools/phpmd.sh Modules/Compliance
+text Modules/Compliance/phpmd.ruleset.xml`) nessun nuovo reperto sui file
+toccati; PHPInsights (config effimera per bypassare il bug di scope
+`ForbiddenSecurityIssues`/`composer.lock`) Code 89.7, Complexity 89.7,
+Architecture 88.2, Style 88.0 — invariato rispetto alla sessione precedente;
+Pest 24 passed / 4 failed, identico alla baseline (i 4 fallimenti restano gap
+di schema/dati del DB di test condiviso, non toccati).
+
+### Nota su collisione git (non causata da questa story)
+
+Al momento del commit, il modulo aveva gia' altri 3 file dirty di una sessione
+concorrente (decoupling `Modules/Platform`, poi committati a parte in
+`f257ac5`) e 2 lang file auto-generati da `LangServiceProvider`/`AutoLabelAction`.
+Una sessione diversa ha eseguito un `git add -A && git commit -m "."` che ha
+incluso anche i 9 file di questo fix nello stesso commit non descrittivo
+(`623adbe`, gia' pushato). Contenuto verificato: corretto, nessuna perdita.
+Non sono stati eseguiti `reset`/`rebase`/force per correggere il messaggio
+(vietato da policy) — solo documentato qui e in
+`docs/stories/5.71.phpstan-typecoverage-constants.story.md`.
