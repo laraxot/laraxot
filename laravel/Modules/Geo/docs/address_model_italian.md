@@ -114,7 +114,7 @@ Esempio di implementazione con Filament:
 
 ```php
 // In un form Filament
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'administrative_area_level_1' => Select::make('administrative_area_level_1')

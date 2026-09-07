@@ -41,7 +41,7 @@ class TenantResource extends XotBaseResource
      * @return array<string, Component>
      */
     #[\Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'main' => Section::make()

@@ -18,7 +18,7 @@ class SocialProviderForm extends XotBaseResourceForm
     /**
      * @return array<int|string, SchemaComponent>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'env_guide' => TextEntry::make('env_guide')

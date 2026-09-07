@@ -384,7 +384,7 @@ class MapPointResource extends XotBaseResource
 
     protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-map-pin';
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('name')

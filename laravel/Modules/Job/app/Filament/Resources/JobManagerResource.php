@@ -25,7 +25,7 @@ class JobManagerResource extends XotBaseResource
     protected static ?string $model = JobManager::class;
 
     #[Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'job_id' => TextInput::make('job_id')->required()->maxLength(255),

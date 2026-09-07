@@ -79,7 +79,7 @@ public static function getTableColumns(): array
 
 ### Form
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'title' => TextInput::make('title')->required()->maxLength(255),
@@ -91,7 +91,7 @@ public static function getFormSchema(): array
 
 ### Infolist
 ```php
-public static function getInfolistSchema(): array
+public function getInfolistSchema(): array
 {
     return [
         'title' => TextEntry::make('title'),

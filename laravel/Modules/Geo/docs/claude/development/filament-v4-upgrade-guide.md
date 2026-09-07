@@ -170,10 +170,10 @@ use Filament\Resources\Pages\PageRegistration; // ✅ NEW
 #### C. Type Hints Migliorati
 ```php
 // Prima
-public static function getFormSchema(): array
+public function getFormSchema(): array
 
 // Dopo (migliorato)
-public static function getFormSchema(): array<string, Component>
+public function getFormSchema(): array<string, Component>
 ```
 
 ### Fase 4: File Visibility
@@ -263,7 +263,7 @@ use Filament\Schemas\Components\Section;
 ### Type Hints Migliorati
 ```php
 // MIGLIORATO: Generic types per array
-public static function getFormSchema(): array<string, Component>
+public function getFormSchema(): array<string, Component>
 public static function getPages(): array<string, PageRegistration>
 ```
 

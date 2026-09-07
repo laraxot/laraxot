@@ -149,7 +149,7 @@ it('covers get attachments schema branches', function (): void {
     {
         protected static ?string $model = Probe::class;
 
-        public static function getFormSchema(): array
+        public function getFormSchema(): array
         {
             return [];
         }
@@ -164,7 +164,7 @@ it('covers get attachments schema branches', function (): void {
     {
         protected static ?string $model = ProbeBadAttachments::class;
 
-        public static function getFormSchema(): array
+        public function getFormSchema(): array
         {
             return [];
         }
@@ -195,7 +195,7 @@ it('covers get attachments schema branches', function (): void {
     {
         protected static ?string $model = ProbeGoodAttachments::class;
 
-        public static function getFormSchema(): array
+        public function getFormSchema(): array
         {
             return [];
         }

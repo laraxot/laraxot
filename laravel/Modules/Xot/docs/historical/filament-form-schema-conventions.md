@@ -8,7 +8,7 @@ In <nome progetto>, il metodo `getFormSchema()` nelle risorse Filament deve **SE
 
 ```php
 // ✅ CORRETTO
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'title' => Forms\Components\TextInput::make('title')
@@ -25,7 +25,7 @@ public static function getFormSchema(): array
 
 ```php
 // ❌ ERRATO
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         Forms\Components\TextInput::make('title')
@@ -97,7 +97,7 @@ class MyResource extends XotBaseResource
         ];
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('title'),
@@ -112,7 +112,7 @@ class MyResource extends XotBaseResource
 ```php
 class MyResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'title' => Forms\Components\TextInput::make('title'),

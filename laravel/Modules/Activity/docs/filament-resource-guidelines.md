@@ -14,7 +14,7 @@ class ActivityResource extends XotBaseResource
 {
     protected static ?string $model = Activity::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Form schema components only
@@ -125,7 +125,7 @@ class ActivityResource extends XotBaseResource
 {
     protected static ?string $model = Activity::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Form schema components only

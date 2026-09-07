@@ -458,7 +458,7 @@ class ServiceResource extends XotBaseResource
 
     protected static string | \UnitEnum | null $navigationGroup = 'Servizi';
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\Tabs::make('Service')

@@ -18,7 +18,7 @@ use Modules\Media\Filament\Resources\MediaConvertResource;
 use Modules\Media\Filament\Resources\MediaConvertResource\Pages\ListMediaConverts;
 use Modules\Media\Filament\Resources\MediaResource;
 use Modules\Media\Filament\Resources\MediaResource\Pages\ListMedia;
-use Modules\Media\Filament\Resources\MediaResource\Pages\ViewMedia;
+use Modules\Media\Filament\Resources\MediaResource\Schemas\MediaInfolist;
 use Modules\Media\Filament\Resources\TemporaryUploadResource;
 use Modules\Media\Http\Requests\CreateTemporaryUploadFromDirectS3UploadRequest;
 use Modules\Media\Models\Media;
@@ -220,8 +220,7 @@ XML;
     });
 
     test('ViewMedia infolist schema and convert command missing file', function (): void {
-        $page = (new ReflectionClass(ViewMedia::class))->newInstanceWithoutConstructor();
-        Assert::assertArrayHasKey('media_grid', mediaTablePart($page, 'getInfolistSchema'));
+        Assert::assertArrayHasKey('media_grid', MediaInfolist::getInfolistSchema());
 
         Storage::fake('local');
         $this->artisan('media:convert-video', ['disk' => 'local', 'file' => 'missing.mp4']);

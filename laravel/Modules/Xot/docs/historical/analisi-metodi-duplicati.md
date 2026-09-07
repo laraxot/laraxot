@@ -249,7 +249,7 @@ class MyResource extends XotBaseResource
 class MyResource extends XotBaseResource
 {
     // ✅ CORRETTO: Implementa solo getFormSchema()
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'name' => Forms\Components\TextInput::make('name'),

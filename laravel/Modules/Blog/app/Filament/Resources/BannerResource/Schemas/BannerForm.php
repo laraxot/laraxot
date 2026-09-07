@@ -20,7 +20,7 @@ class BannerForm extends XotBaseResourceForm
     /**
      * @return array<int|string, SchemaComponent>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Grid::make()->columns(2)->schema([

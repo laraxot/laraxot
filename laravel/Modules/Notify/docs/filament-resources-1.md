@@ -40,7 +40,7 @@ MailTemplateResource gestisce i template delle email nel sistema. Estende `XotBa
 ### Schema del Form
 
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         Forms\Components\Card::make()

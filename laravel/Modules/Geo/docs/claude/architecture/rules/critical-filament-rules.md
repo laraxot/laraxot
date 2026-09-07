@@ -43,7 +43,7 @@ class MyResource extends XotBaseResource
     public function getTableBulkActions(): array { return []; }
 
     // ✅ ALLOWED - These are OK
-    public static function getFormSchema(): array { return []; }
+    public function getFormSchema(): array { return []; }
     public static function getPages(): array { return []; }
     protected static function getEloquentQuery(): Builder { return parent::getEloquentQuery(); }
 }

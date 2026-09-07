@@ -33,7 +33,7 @@ class CoeffResource extends XotBaseResource
   /**
    * @return array<string, \Filament\Schemas\Components\Component>
    */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [ /* ... */ ];
     }
@@ -73,7 +73,7 @@ class ExampleResource extends XotBaseResource
     /**
      * @return array<string, \Filament\Schemas\Components\Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // campi con chiavi stringa

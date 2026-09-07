@@ -8,8 +8,6 @@ use Carbon\CarbonImmutable;
 use Filament\Actions;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Radio;
-use Filament\Infolists\Components\Entry;
-use Filament\Schemas\Components\Component;
 use Modules\Customer\Actions\RestoreCustomerCascadeAction;
 use Modules\Customer\Filament\Resources\CustomerResource;
 use Modules\Customer\Models\Customer;
@@ -19,14 +17,6 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 final class ViewCustomer extends XotBaseViewRecord
 {
     protected static string $resource = CustomerResource::class;
-
-    /**
-     * @return array<string, Component|Entry>
-     */
-    protected function getInfolistSchema(): array
-    {
-        return CustomerResource::getInfolistSchema();
-    }
 
     protected function getHeaderActions(): array
     {

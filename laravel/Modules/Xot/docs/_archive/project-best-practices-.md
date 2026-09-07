@@ -267,7 +267,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class MyResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             TextInput::make('name'),  // No ->label()!

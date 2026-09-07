@@ -53,7 +53,7 @@ final class QuotationTemplateResource extends XotBaseResource
         return __('quotations.quotation_templates');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'title' => Section::make()->columnSpanFull()->components([

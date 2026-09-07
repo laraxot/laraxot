@@ -23,7 +23,7 @@ final class DeliveryNoteForm extends XotBaseResourceForm
 {
     protected static string $resource = DeliveryNoteResource::class;
 
-    public static function getFormSchemaColumns(): int
+    public function getFormSchemaColumns(): int
     {
         return 2;
     }
@@ -31,7 +31,7 @@ final class DeliveryNoteForm extends XotBaseResourceForm
     /**
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'section' => Section::make()

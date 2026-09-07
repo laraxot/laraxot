@@ -282,7 +282,7 @@ interface XotBaseResourceContract
 {
     public static function getModel(): string;
     public static function getRelations(): array;
-    public static function getFormSchema(): array;
+    public function getFormSchema(): array;
     public static function getTableColumns(): array;
 }
 ```

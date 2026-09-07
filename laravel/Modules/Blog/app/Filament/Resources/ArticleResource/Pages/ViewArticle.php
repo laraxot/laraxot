@@ -8,7 +8,6 @@ use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Infolists\Components\TextEntry;
 use Modules\Blog\Filament\Resources\ArticleResource;
 // use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 // use LaraZeus\SpatieTranslatable\Resources\Pages\EditRecord\Concerns\Translatable;
@@ -23,16 +22,6 @@ class ViewArticle extends XotBaseViewRecord
     // use Translatable; // Temporarily disabled until lara-zeus package is working
 
     protected static string $resource = ArticleResource::class;
-
-    protected function getInfolistSchema(): array
-    {
-        return [
-            // ...
-            'title' => TextEntry::make('title'),
-            'closed_at' => TextEntry::make('closed_at'),
-            'rewarded_at' => TextEntry::make('rewarded_at'),
-        ];
-    }
 
     protected function getHeaderActions(): array
     {

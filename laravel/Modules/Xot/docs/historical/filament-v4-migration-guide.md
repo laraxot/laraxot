@@ -153,7 +153,7 @@ public function boot()
 abstract class XotBaseResource extends Resource
 {
     // ✅ Metodi rimangono invariati
-    public static function getFormSchema(): array { /* ... */ }
+    public function getFormSchema(): array { /* ... */ }
     public static function getPages(): array { /* ... */ }
 
     // ❌ METODI VIETATI - Devono essere solo nelle pagine List

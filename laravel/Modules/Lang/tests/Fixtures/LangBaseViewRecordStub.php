@@ -10,9 +10,4 @@ use Modules\Lang\Filament\Resources\TranslationFileResource;
 final class LangBaseViewRecordStub extends LangBaseViewRecord
 {
     protected static string $resource = TranslationFileResource::class;
-
-    protected function getInfolistSchema(): array
-    {
-        return [];
-    }
 }

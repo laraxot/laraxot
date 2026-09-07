@@ -42,6 +42,7 @@ related:
 - Estendi **SOLO** `XotBaseResource` (mai `Filament\Resources\Resource`, **mai** varianti inventate tipo `GatedXotBaseResource`).
 - Schema form → `Schemas/<Name>Form extends XotBaseResourceForm`.
 - Schema infolist → `Schemas/<Name>Infolist extends XotBaseResourceInfolist`.
+- Le sottoclassi dirette o indirette di `XotBaseViewRecord` **non dichiarano `getInfolistSchema()`**: la pagina delega alla Resource tramite `infolist(Schema)`. Rimuovere il metodo obsoleto, non soltanto `#[\Override]`; mantenere lo schema nella classe dedicata.
 - Tabella → `Tables/<Plural>Table extends XotBaseResourceTable`.
 - **ZERO** `->label(...)` / `->tooltip(...)` / `->placeholder(...)` hardcoded. Tutto autoregistrato da `LangServiceProvider` con chiave `<modulo>.<resource>.<field>.label` / `.tooltip` / `.placeholder`.
 

@@ -97,7 +97,7 @@ final class TeamUserResource extends XotBaseResource
     // protected static \UnitEnum|string|null $navigationGroup = 'Teams';
 
     // ✅ SOLO getFormSchema() e metodi table* se necessario
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Schema del form

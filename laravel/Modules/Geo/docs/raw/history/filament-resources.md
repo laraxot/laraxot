@@ -9,7 +9,7 @@
 
 Esempio corretto:
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'title' => TextInput::make('title')
@@ -22,7 +22,7 @@ public static function getFormSchema(): array
 
 Esempio errato:
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('title')

@@ -8,8 +8,6 @@ use Carbon\CarbonImmutable;
 use Filament\Actions;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Radio;
-use Filament\Infolists\Components\Entry;
-use Filament\Schemas\Components\Component;
 use Modules\WorkOrder\Actions\GenerateWorkOrderPdfAction;
 use Modules\WorkOrder\Actions\GenerateWorkOrderReportAction;
 use Modules\WorkOrder\Actions\RestoreWorkOrderCascadeAction;
@@ -20,14 +18,6 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 final class ViewWorkOrder extends XotBaseViewRecord
 {
     protected static string $resource = WorkOrderResource::class;
-
-    /**
-     * @return array<string, Component|Entry>
-     */
-    protected function getInfolistSchema(): array
-    {
-        return WorkOrderResource::getInfolistSchema();
-    }
 
     protected function getHeaderActions(): array
     {

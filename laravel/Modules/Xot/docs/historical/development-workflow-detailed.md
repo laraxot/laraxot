@@ -174,7 +174,7 @@ namespace Modules\NewModule\Filament\Resources;
 
 class ProductResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('name'),
@@ -185,7 +185,7 @@ class ProductResource extends XotBaseResource
         ];
     }
 
-    public static function getInfolistSchema(): array
+    public function getInfolistSchema(): array
     {
         return [
             Infolists\Components\TextEntry::make('name'),

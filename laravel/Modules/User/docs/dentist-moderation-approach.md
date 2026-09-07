@@ -55,7 +55,7 @@ This document outlines the strategy for implementing dentist moderation within t
   {
       protected static ?string $model = User::class;
 
-      public static function getFormSchema(): array
+      public function getFormSchema(): array
       {
           return [
               'moderation_status' => Forms\Components\Select::make('moderation_status')

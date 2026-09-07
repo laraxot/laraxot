@@ -69,7 +69,7 @@ final class ResellerResource extends XotBaseResource
         return __('resellers.resellers');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make()

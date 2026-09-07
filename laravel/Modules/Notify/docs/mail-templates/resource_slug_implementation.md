@@ -12,7 +12,7 @@ L'aggiunta del campo `slug` al form schema di `MailTemplateResource` segue le co
 /**
  * Campo slug in getFormSchema()
  */
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'name' => Forms\Components\TextInput::make('name')

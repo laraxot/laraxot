@@ -128,7 +128,7 @@ class {ModelName}Resource extends XotBaseResource
     protected static ?string $model = {ModelName}::class;
 
     // UNICO metodo necessario nella Resource principale
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make()  // NO ->label() - gestito automaticamente

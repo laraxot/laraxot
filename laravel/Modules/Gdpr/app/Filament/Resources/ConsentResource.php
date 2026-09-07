@@ -18,7 +18,7 @@ class ConsentResource extends XotBaseResource
     protected static ?string $model = Consent::class;
 
     #[\Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'treatment_id' => Select::make('treatment_id')

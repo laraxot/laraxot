@@ -88,7 +88,7 @@ final class InventoryMovementResource extends XotBaseResource
     /**
      * @return array<int, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         $storageZonesEnabled = self::storageZonesEnabled();
         $hasMovementType = fn (callable $get): bool => trim(SafeStringCastAction::cast($get('movement_type'))) !== '';

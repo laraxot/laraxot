@@ -27,7 +27,7 @@ class MediaResource extends XotBaseResource
      *
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'file' => FileUpload::make('file')

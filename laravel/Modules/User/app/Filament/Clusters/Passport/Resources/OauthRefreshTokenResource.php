@@ -39,7 +39,7 @@ class OauthRefreshTokenResource extends XotBaseResource
      * @return array<string, Component>
      */
     #[\Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'oauth_refresh_token_info' => Section::make(static::trans('label'))

@@ -17,7 +17,7 @@ class NotifyThemeForm extends XotBaseResourceForm
     /**
      * @return array<int|string, SchemaComponent>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'lang' => Select::make('lang')->options(fn (): array => self::fieldOptions('lang')),

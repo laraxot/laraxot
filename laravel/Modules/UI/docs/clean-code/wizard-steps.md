@@ -131,7 +131,7 @@ class DoctorResource extends XotBaseResource
             ]);
     }
 
-    public static function getFormSchemaWidget(): array
+    public function getFormSchemaWidget(): array
     {
         return [
             'wizard' => Forms\Components\Wizard::make([

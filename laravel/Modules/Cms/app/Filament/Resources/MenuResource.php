@@ -22,7 +22,7 @@ class MenuResource extends XotBaseResource
      *
      * @return array<int, Component>
      */
-    public static function getFormSchemaOld(): array
+    public function getFormSchemaOld(): array
     {
         return [
             TextInput::make('title')->required()->maxLength(2048),

@@ -18,13 +18,13 @@ class CommentResource extends XotBaseResource
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 
     #[Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return CommentForm::getFormSchema();
     }
 
     #[Override]
-    public static function getInfolistSchema(): array
+    public function getInfolistSchema(): array
     {
         return CommentInfolist::getInfolistSchema();
     }

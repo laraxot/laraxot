@@ -27,7 +27,7 @@ Il pattern di condivisione degli schemi form risolve questi problemi attraverso:
 
 ```php
 // In Modules\Geo\Filament\Resources\AddressResource
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'route' => Forms\Components\TextInput::make('route')->required(),
@@ -41,7 +41,7 @@ public static function getFormSchema(): array
 
 ```php
 // In Modules\<main module>\Filament\Resources\StudioResource
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         // Altri campi specifici dello Studio

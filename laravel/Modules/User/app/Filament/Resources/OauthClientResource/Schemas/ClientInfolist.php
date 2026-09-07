@@ -15,7 +15,7 @@ class ClientInfolist extends XotBaseResourceInfolist
     /**
      * @return array<string, Component>
      */
-    public static function getInfolistSchema(): array
+    public function getInfolistSchema(): array
     {
         return [
             'oauth_info' => XotBaseSection::make('OAuth Client Information')

@@ -98,7 +98,7 @@ final class CustomerResource extends XotBaseResource
         return __('customers.customers');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make()

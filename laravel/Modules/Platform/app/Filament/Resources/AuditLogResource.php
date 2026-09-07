@@ -56,7 +56,7 @@ final class AuditLogResource extends XotBaseResource
         return __('platform.audit_log.model_plural');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [];
     }

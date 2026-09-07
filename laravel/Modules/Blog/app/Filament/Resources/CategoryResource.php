@@ -41,7 +41,7 @@ class CategoryResource extends XotBaseResource
     /**
      * @return array<string|int, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         /** @var array<string|int, Component> $fields */
         $fields = static::getFormFields();

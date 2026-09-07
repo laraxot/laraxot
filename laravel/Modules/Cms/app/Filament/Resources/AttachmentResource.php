@@ -26,7 +26,7 @@ class AttachmentResource extends LangBaseResource
      *
      * @return array<string, BaseComponent>
      */
-    public static function getFormSchemaOld(): array
+    public function getFormSchemaOld(): array
     {
         return [
             'title' => TextInput::make('title')->required(),

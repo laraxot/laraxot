@@ -38,7 +38,7 @@ class ArticleResource extends XotBaseResource
     /**
      * @return array<int|string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         /** @var array<int|string, Component> $fields */
         $fields = static::getFormFields();

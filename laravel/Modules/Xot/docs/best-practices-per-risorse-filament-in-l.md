@@ -17,7 +17,7 @@ Questo documento riassume le migliori pratiche per la creazione e gestione delle
 
 2. **SEMPRE** implementare `getFormSchema()`:
    ```php
-   public static function getFormSchema(): array
+   public function getFormSchema(): array
    {
        return [
            TextInput::make('nome')->required(),
@@ -588,7 +588,7 @@ class ReportResource extends XotBaseResource
      *
      * @return array<int, \Filament\Forms\Components\Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // ✅ NO ->label(): Tutte le label gestite da LangServiceProvider

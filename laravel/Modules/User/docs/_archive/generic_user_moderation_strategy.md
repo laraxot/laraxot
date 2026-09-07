@@ -118,7 +118,7 @@ This document outlines a comprehensive strategy for implementing a generic moder
   {
       protected static ?string $model = User::class;
 
-      public static function getFormSchema(): array
+      public function getFormSchema(): array
       {
           return [
               'type' => Forms\Components\TextInput::make('type')

@@ -30,7 +30,7 @@ class AddressResource extends XotBaseResource
 La risorsa definisce uno schema form completo per la gestione degli indirizzi, che può essere riutilizzato in altre risorse Filament:
 
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'name' => Forms\Components\TextInput::make('name')
@@ -67,7 +67,7 @@ Invece di duplicare la definizione dei campi per gli indirizzi in ogni risorsa, 
 use Modules\Geo\Filament\Resources\AddressResource;
 
 // In un'altra risorsa Filament
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         // Campi specifici della risorsa...
@@ -198,7 +198,7 @@ public static function getTableActions(): array
 La risorsa definisce uno schema dettagliato per la visualizzazione delle informazioni dell'indirizzo:
 
 ```php
-public static function getInfolistSchema(): array
+public function getInfolistSchema(): array
 {
     return [
         Forms\Components\Section::make('address.sections.metadata.label')

@@ -7,7 +7,6 @@ namespace Modules\Xot\Filament\Resources\Tables;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Table;
 use Modules\Xot\Filament\Traits\HasXotTable;
-use Modules\Xot\Filament\Traits\TransTrait;
 use Webmozart\Assert\Assert;
 
 /**
@@ -19,7 +18,6 @@ use Webmozart\Assert\Assert;
 abstract class XotBaseResourceTable
 {
     use HasXotTable;
-    use TransTrait;
 
     public static function configure(Table $table): Table
     {

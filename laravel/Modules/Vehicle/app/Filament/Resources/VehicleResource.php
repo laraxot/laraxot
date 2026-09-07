@@ -64,7 +64,7 @@ final class VehicleResource extends XotBaseResource
         return __('vehicles.vehicles');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make()->columnSpanFull()->components([

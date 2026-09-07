@@ -169,7 +169,7 @@ class UserResource extends XotBaseResource
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('name')

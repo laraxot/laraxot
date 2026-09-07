@@ -15,7 +15,7 @@
 
 ### Implementazione
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         // Campi modificabili dall'utente
@@ -65,7 +65,7 @@ return [
 ## XotBaseResource
 
 ### Regole di Estensione
-1. Implementare `public static function getFormSchema(): array`
+1. Implementare `public function getFormSchema(): array`
 2. NON implementare il metodo `form(Form $form): Form`
 3. NON definire `protected static ?string $navigationIcon`
 4. La navigazione è gestita interamente da XotBaseResource
@@ -76,7 +76,7 @@ class MyResource extends XotBaseResource
 {
     protected static ?string $model = MyModel::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             TextInput::make('name')->required(),

@@ -213,14 +213,14 @@ class YourResource extends XotBaseResource
     // Model auto-resolved as Modules\YourModule\Models\YourResource
     // Pages auto-discovered following pattern
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Form components - NO hardcoded labels
         ];
     }
 
-    public static function getInfolistSchema(): array
+    public function getInfolistSchema(): array
     {
         return [
             // Infolist components

@@ -124,7 +124,7 @@ Filament Resource → XotBaseResource → FilamentResource
 
 ### Required Implementation
 ```php
-abstract public static function getFormSchema(): array
+abstract public function getFormSchema(): array
 ```
 
 ### Page Generation

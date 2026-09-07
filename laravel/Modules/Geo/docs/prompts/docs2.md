@@ -117,7 +117,7 @@ namespace Modules\{ModuleName}\Models;
 /**
  * @return array<string, \Filament\Forms\Components\Component>
  */
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'name' => TextInput::make('name')
@@ -183,7 +183,7 @@ class {ModelName}Resource extends XotBaseResource
     /**
      * @return array<string, \Filament\Forms\Components\Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'name' => TextInput::make('name')
@@ -199,7 +199,7 @@ class {ModelName}Resource extends XotBaseResource
 
 ```php
 // ✅ CORRETTO
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'name' => TextInput::make('name')->required(),

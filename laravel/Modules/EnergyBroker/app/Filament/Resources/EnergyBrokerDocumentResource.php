@@ -48,7 +48,7 @@ final class EnergyBrokerDocumentResource extends XotBaseResource
     }
 
     /** @return array<int, Component> */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make(__('energy_broker.sections.document_summary'))->columns(3)->columnSpanFull()->components([

@@ -9,7 +9,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class ListLogActivitiesActionTestResourceSimple extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [];
     }

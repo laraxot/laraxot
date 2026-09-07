@@ -22,7 +22,7 @@ final class TeamUserResource extends XotBaseResource
      * @return array<string, Component>
      */
     #[\Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'team_user' => XotBaseSection::make('Team User Information')

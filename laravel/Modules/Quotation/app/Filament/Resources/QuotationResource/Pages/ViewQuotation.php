@@ -8,8 +8,6 @@ use Filament\Actions\Action;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Schemas\Components\Component;
 use Illuminate\Support\Facades\Auth;
 use Modules\Quotation\Actions\ApplyQuotationTemplateToQuotationAction;
 use Modules\Quotation\Actions\GenerateConfirmedQuotationPdfAction;
@@ -164,25 +162,6 @@ final class ViewQuotation extends XotBaseViewRecord
 
                     $this->redirect(WorkOrderResource::getUrl('view', ['record' => $workOrder->id]));
                 }),
-        ];
-    }
-
-    /**
-     * @return array<string, Component>
-     */
-    protected function getInfolistSchema(): array
-    {
-        return [
-            'code' => TextEntry::make('code'),
-            'status_code' => TextEntry::make('status_code'),
-            'customer_id' => TextEntry::make('customer_id'),
-            'total' => TextEntry::make('total'),
-            'cost_total' => TextEntry::make('cost_total'),
-            'margin' => TextEntry::make('margin'),
-            'project' => TextEntry::make('project'),
-            'delivery_at' => TextEntry::make('delivery_at'),
-            'issued_at' => TextEntry::make('issued_at'),
-            'updated_at' => TextEntry::make('updated_at'),
         ];
     }
 }

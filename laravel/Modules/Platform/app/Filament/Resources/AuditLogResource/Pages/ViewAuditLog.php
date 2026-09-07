@@ -5,46 +5,12 @@ declare(strict_types=1);
 namespace Modules\Platform\Filament\Resources\AuditLogResource\Pages;
 
 use Filament\Actions\Action;
-use Filament\Infolists\Components\KeyValueEntry;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Schemas\Components\Component;
-use Filament\Schemas\Components\Section;
 use Modules\Platform\Filament\Resources\AuditLogResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 
 final class ViewAuditLog extends XotBaseViewRecord
 {
     protected static string $resource = AuditLogResource::class;
-
-    /**
-     * @return array<string, Component>
-     */
-    protected function getInfolistSchema(): array
-    {
-        return [
-            'summary' => Section::make(__('platform.audit_log.sections.summary'))
-                ->columns(2)
-                ->schema([
-                    TextEntry::make('created_at')->label(__('platform.audit_log.fields.created_at'))->dateTime(),
-                    TextEntry::make('action')->label(__('platform.audit_log.fields.action'))->badge(),
-                    TextEntry::make('actor.email')->label(__('platform.audit_log.fields.actor'))->placeholder('—'),
-                    TextEntry::make('panel_id')->label(__('platform.audit_log.fields.panel'))->placeholder('—'),
-                    TextEntry::make('route')->label(__('platform.audit_log.fields.route'))->placeholder('—'),
-                    TextEntry::make('ip')->label(__('platform.audit_log.fields.ip'))->placeholder('—'),
-                    TextEntry::make('subject_type')
-                        ->label(__('platform.audit_log.fields.subject'))
-                        ->formatStateUsing(fn (?string $s): string => $s ? class_basename($s) : '—'),
-                    TextEntry::make('subject_id')->label(__('platform.audit_log.fields.subject_id'))->placeholder('—'),
-                ]),
-
-            'before_after' => Section::make(__('platform.audit_log.sections.before_after'))
-                ->columns(2)
-                ->schema([
-                    KeyValueEntry::make('before')->label(__('platform.audit_log.sections.before'))->columnSpan(1),
-                    KeyValueEntry::make('after')->label(__('platform.audit_log.sections.after'))->columnSpan(1),
-                ]),
-        ];
-    }
 
     /** @return array<string, Action> */
     protected function getHeaderActions(): array

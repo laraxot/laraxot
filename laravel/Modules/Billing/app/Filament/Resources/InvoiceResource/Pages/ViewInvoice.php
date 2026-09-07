@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace Modules\Billing\Filament\Resources\InvoiceResource\Pages;
 
 use Filament\Actions\Action;
-use Filament\Infolists\Components\TextEntry;
 use Filament\Notifications\Notification;
-use Filament\Schemas\Components\Component;
 use Modules\Billing\Actions\GenerateInvoicePdfAction;
 use Modules\Billing\Actions\SendElectronicInvoiceAction;
 use Modules\Billing\Filament\Resources\InvoiceResource;
@@ -69,22 +67,6 @@ final class ViewInvoice extends XotBaseViewRecord
                             ->send();
                     }
                 }),
-        ];
-    }
-
-    /**
-     * @return array<string, Component>
-     */
-    protected function getInfolistSchema(): array
-    {
-        return [
-            'number' => TextEntry::make('number'),
-            'customer_id' => TextEntry::make('customer_id'),
-            'issued_on' => TextEntry::make('issued_on'),
-            'total' => TextEntry::make('total'),
-            'electronic_invoice_sent_at' => TextEntry::make('electronic_invoice_sent_at'),
-            'electronic_invoice_external_id' => TextEntry::make('electronic_invoice_external_id'),
-            'updated_at' => TextEntry::make('updated_at'),
         ];
     }
 }

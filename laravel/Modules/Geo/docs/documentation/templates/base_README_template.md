@@ -270,7 +270,7 @@ class {{module_name}}Resource extends XotBaseResource
 {
     protected static ?string $model = {{module_name}}::class;
     
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Form automaticamente tradotto

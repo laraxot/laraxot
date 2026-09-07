@@ -60,7 +60,7 @@ class XotBaseResourceForm
             ->columns(static::getFormSchemaColumns());
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [];
     }
@@ -85,7 +85,7 @@ class XotBaseResourceForm
 // Modules/Fixcity/app/Filament/Resources/TicketResource/Schemas/TicketForm.php
 class TicketForm extends XotBaseResourceForm
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         $steps = static::getSteps();
         $wizard = Wizard::make($steps)->skippable()->persistStepInQueryString();

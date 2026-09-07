@@ -179,7 +179,7 @@ TextInput::make('price')
 
 ```php
 // In Modules\NomeModulo\Filament\Resources\MiaRisorsa.php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'nome' => TextInput::make('nome')
@@ -336,7 +336,7 @@ Quando si estende `XotBaseResource`:
 // Corretto
 class MiaRisorsa extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'nome' => TextInput::make('nome')
@@ -358,7 +358,7 @@ class MiaRisorsa extends XotBaseResource
         return [];
     }
     
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             TextInput::make('nome'),

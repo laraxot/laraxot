@@ -14,7 +14,7 @@ final class LangBaseResourceStub extends LangBaseResource
     /**
      * @return array<string, mixed>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [];
     }

@@ -16,7 +16,7 @@ class WorkHourForm extends XotBaseResourceForm
     /**
      * @return array<string|int, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make('Time Entry Details')

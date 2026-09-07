@@ -177,7 +177,7 @@ try {
 
 ```php
 // ContactResource.php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('first_name'),
@@ -186,7 +186,7 @@ public static function getFormSchema(): array
 }
 
 // CustomerResource.php - PATTERN SIMILE
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('name')->required(),
@@ -282,7 +282,7 @@ protected function casts(): array
 ```php
 class ContactResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             TextInput::make('first_name'),
@@ -631,7 +631,7 @@ try {
 
 ```php
 // ContactResource.php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('first_name'),
@@ -640,7 +640,7 @@ public static function getFormSchema(): array
 }
 
 // CustomerResource.php - PATTERN SIMILE
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('name')->required(),
@@ -736,7 +736,7 @@ protected function casts(): array
 ```php
 class ContactResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             TextInput::make('first_name'),
@@ -1079,7 +1079,7 @@ try {
 
 ```php
 // ContactResource.php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('first_name'),
@@ -1088,7 +1088,7 @@ public static function getFormSchema(): array
 }
 
 // CustomerResource.php - PATTERN SIMILE
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('name')->required(),
@@ -1184,7 +1184,7 @@ protected function casts(): array
 ```php
 class ContactResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             TextInput::make('first_name'),

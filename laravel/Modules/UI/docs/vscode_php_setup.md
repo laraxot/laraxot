@@ -106,7 +106,7 @@
             "{",
             "    protected static ?string \\$model = ${2:Name}::class;",
             "",
-            "    public static function getFormSchema(): array",
+            "    public function getFormSchema(): array",
             "    {",
             "        return [",
             "            $0",

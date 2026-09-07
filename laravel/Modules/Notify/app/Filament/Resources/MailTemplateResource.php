@@ -31,7 +31,7 @@ class MailTemplateResource extends LangBaseResource
      * @return array<string, Component>
      */
     #[Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         /** @var view-string $paramsBadgesView */
         $paramsBadgesView = 'notify::filament.components.params-badges';

@@ -25,7 +25,7 @@ Filament 5.x usa un sistema dichiarativo Schema:
 // Filament 5.x
 use Filament\Forms\Components\TextInput;
 
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('name'),

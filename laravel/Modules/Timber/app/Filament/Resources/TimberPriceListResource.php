@@ -81,7 +81,7 @@ final class TimberPriceListResource extends XotBaseResource
     }
 
     /** @return array<int|string, Component> */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make()

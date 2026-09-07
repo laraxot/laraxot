@@ -104,7 +104,7 @@ class AppointmentResource extends XotBaseResource
 {
     protected static ?string $model = Appointment::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'patient_id' => Forms\Components\Select::make('patient_id')

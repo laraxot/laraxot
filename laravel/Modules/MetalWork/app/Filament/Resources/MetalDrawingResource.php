@@ -52,7 +52,7 @@ final class MetalDrawingResource extends XotBaseResource
      *
      * @return array<string, Component|Field>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [];
     }

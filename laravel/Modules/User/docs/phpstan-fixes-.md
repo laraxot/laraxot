@@ -649,7 +649,7 @@ Il metodo `getFormSchema()` deve restituire un array associativo con chiavi stri
 
 ```php
 // ✅ CORRETTO
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'main_section' => Section::make('OAuth Client Information')

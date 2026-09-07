@@ -109,7 +109,7 @@ abstract class XotBaseResource extends FilamentResource
     /**
      * @return array<int|string, \Filament\Schemas\Components\Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return static::getFormSchemaOld();
     }
@@ -126,7 +126,7 @@ abstract class XotBaseResource extends FilamentResource
      *
      * @return array<int|string, \Filament\Schemas\Components\Component>
      */
-    public static function getFormSchemaOld(): array
+    public function getFormSchemaOld(): array
     {
         return [];
     }
@@ -179,7 +179,7 @@ abstract class XotBaseResource extends FilamentResource
         return $configured;
     }
 
-    public static function getFormSchemaColumns(): int
+    public function getFormSchemaColumns(): int
     {
         return 1;
     }
@@ -189,7 +189,7 @@ abstract class XotBaseResource extends FilamentResource
      *
      * @return array<string, \Filament\Schemas\Components\Component>
      */
-    public static function getInfolistSchema(): array
+    public function getInfolistSchema(): array
     {
         return [];
     }

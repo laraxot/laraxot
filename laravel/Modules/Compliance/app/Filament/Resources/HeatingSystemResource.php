@@ -57,7 +57,7 @@ final class HeatingSystemResource extends XotBaseResource
     /**
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         /** @var array<int|string, string> $fuelOptions */
         $fuelOptions = collect((array) config('heating.fuel_types', []))

@@ -81,7 +81,7 @@ final class PlatformSettingResource extends XotBaseResource
         return __('platform.settings');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             TextInput::make('key')

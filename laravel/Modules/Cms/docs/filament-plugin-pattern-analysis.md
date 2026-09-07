@@ -230,7 +230,7 @@ class BlockEditor extends Component
 **Implementazione Ipotetica**:
 ```php
 // PageResource.php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         // ... campi esistenti ...

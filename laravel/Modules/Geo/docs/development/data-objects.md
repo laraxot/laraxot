@@ -103,7 +103,7 @@ use Filament\Forms;
 
 class PerformanceResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('nome')

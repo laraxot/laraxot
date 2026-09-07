@@ -114,11 +114,6 @@ final class LangBaseListRecordsStub extends LangBaseListRecords
 final class LangBaseViewRecordStub extends LangBaseViewRecord
 {
     protected static string $resource = TranslationFileResource::class;
-
-    protected function getInfolistSchema(): array
-    {
-        return [];
-    }
 }
 
 final class LangBasePolicyStub extends LangBasePolicy {}

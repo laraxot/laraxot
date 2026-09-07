@@ -29,7 +29,7 @@ class SocialProviderResource extends XotBaseResource
      * @return array<string, Component>
      */
     #[\Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'env_guide' => TextEntry::make('env_guide')

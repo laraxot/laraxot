@@ -13,7 +13,7 @@ class ConsentForm extends XotBaseResourceForm
     /**
      * @return array<int|string, \Filament\Schemas\Components\Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'treatment_id' => Select::make('treatment_id')

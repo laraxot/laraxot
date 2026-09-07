@@ -25,7 +25,7 @@ class MyResource extends Resource {
 class MyResource extends XotBaseResource {
     protected static ?string $model = MyModel::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Campi senza ->label()

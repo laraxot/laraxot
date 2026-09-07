@@ -20,7 +20,7 @@ class StoredEventResource extends XotBaseResource
     protected static ?string $model = StoredEvent::class;
 
     #[Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'event_class' => TextInput::make('event_class')->required()->maxLength(255),

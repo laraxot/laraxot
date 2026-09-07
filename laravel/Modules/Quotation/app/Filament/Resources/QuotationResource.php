@@ -100,7 +100,7 @@ final class QuotationResource extends XotBaseResource
         return __('quotations.quotations');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'code' => Section::make()

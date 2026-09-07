@@ -33,7 +33,7 @@ abstract class XotBaseResource extends Resource
 {
     final public function form(Form $form): Form;
     final public function table(Table $table): Table;
-    abstract public static function getFormSchema(): array;
+    abstract public function getFormSchema(): array;
     abstract public static function getTableColumns(): array;
 }
 ```

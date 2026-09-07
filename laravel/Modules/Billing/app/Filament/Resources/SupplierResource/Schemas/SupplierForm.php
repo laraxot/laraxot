@@ -16,7 +16,7 @@ use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
  */
 final class SupplierForm extends XotBaseResourceForm
 {
-    public static function getFormSchemaColumns(): int
+    public function getFormSchemaColumns(): int
     {
         return 2;
     }
@@ -24,7 +24,7 @@ final class SupplierForm extends XotBaseResourceForm
     /**
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'section' => Section::make()

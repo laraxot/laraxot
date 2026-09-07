@@ -82,7 +82,7 @@ class MyResource extends XotBaseResource
         ];
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('title'),
@@ -94,7 +94,7 @@ class MyResource extends XotBaseResource
 // Dopo
 class MyResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'title' => Forms\Components\TextInput::make('title'),

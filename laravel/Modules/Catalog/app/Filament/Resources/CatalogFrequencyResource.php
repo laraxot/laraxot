@@ -50,7 +50,7 @@ final class CatalogFrequencyResource extends XotBaseResource
     /**
      * @return array<int, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make()->columnSpanFull()->components([

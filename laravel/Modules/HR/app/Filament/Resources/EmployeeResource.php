@@ -67,7 +67,7 @@ final class EmployeeResource extends XotBaseResource
         return __('hr.employees');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make()->components([

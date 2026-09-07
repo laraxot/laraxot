@@ -144,7 +144,7 @@ describe('Event Management', function () {
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Grid;
 
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'details' => Section::make('Details')

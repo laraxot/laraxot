@@ -62,7 +62,7 @@ public function getTableBulkActions(): array
  *
  * @return array<string, \Filament\Forms\Components\Component>
  */
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'name' => TextInput::make('name')->required(),
@@ -99,7 +99,7 @@ public function getTableActions(): array
 /**
  * @return array<mixed, Component>
  */
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     // ...
 }
@@ -146,7 +146,7 @@ public function getTableBulkActions(): array
 
 ```php
 // ✅ CORRETTO
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'template_slug' => Select::make('template_slug')

@@ -70,7 +70,7 @@ use Modules\Geo\Filament\Forms\Components\AddressesField;
 
 class StudioResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Altri campi dello studio...
@@ -96,7 +96,7 @@ use Modules\Geo\Filament\Forms\Components\AddressesField;
 
 class PatientResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Altri campi del paziente...
@@ -125,7 +125,7 @@ use Modules\Geo\Filament\Forms\Components\AddressesField;
 
 class ClinicResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Altri campi della clinica...

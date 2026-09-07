@@ -133,7 +133,7 @@ final class WorkOrderResource extends XotBaseResource
         return __('workorder::work_orders.work_orders');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make()
@@ -249,7 +249,7 @@ final class WorkOrderResource extends XotBaseResource
     /**
      * @return array<string, Component|Entry>
      */
-    public static function getInfolistSchema(): array
+    public function getInfolistSchema(): array
     {
         return [
             'main' => Section::make()

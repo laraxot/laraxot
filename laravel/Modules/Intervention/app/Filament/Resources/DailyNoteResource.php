@@ -170,7 +170,7 @@ final class DailyNoteResource extends XotBaseResource
         return __('interventions.daily_notes');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make()
@@ -229,7 +229,7 @@ final class DailyNoteResource extends XotBaseResource
     /**
      * @return array<string, Section>
      */
-    public static function getInfolistSchema(): array
+    public function getInfolistSchema(): array
     {
         /** @var view-string $dailyNoteView */
         $dailyNoteView = 'intervention::filament.infolists.entries.daily-note-display';

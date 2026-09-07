@@ -45,7 +45,7 @@ class AddAttachmentAction extends XotBaseAction
     /**
      * @return array<int, Radio|TextInput|BaseFileUpload|FileUpload>
      */
-    public static function getFormSchema(bool $asset = true): array
+    public function getFormSchema(bool $asset = true): array
     {
         // Assert::string($disk = $asset ? config('xra.asset.attachments.disk.driver') : config('xra.operation.attachments.disk.driver'));
         // Assert::isArray($file_types = $asset ? config('xra.asset.attachments.allowed_file_types') : config('xra.operation.attachments.allowed_file_types'));

@@ -178,7 +178,7 @@ class AddressResource extends XotBaseResource
 {
     protected static ?string $model = Address::class;
     
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('route')

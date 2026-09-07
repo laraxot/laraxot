@@ -114,7 +114,7 @@ class {ModelName}Resource extends XotBaseResource
     /**
      * @return array<string, \Filament\Forms\Components\Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'name' => TextInput::make('name')->required(),

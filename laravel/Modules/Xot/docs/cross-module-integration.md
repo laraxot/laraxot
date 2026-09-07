@@ -41,7 +41,7 @@ class IntegparamResource extends XotBaseResource
 {
     protected static ?string $model = Integparam::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Schema del form
@@ -118,7 +118,7 @@ class IntegparamResource extends XotBaseResource
 {
     protected static ?string $model = \Modules\Sigma\Models\Integparam::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make('Dati Anagrafici')

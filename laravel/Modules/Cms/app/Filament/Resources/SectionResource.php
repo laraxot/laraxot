@@ -19,7 +19,7 @@ class SectionResource extends LangBaseResource
      *
      * @return array<string, Component>
      */
-    public static function getFormSchemaOld(): array
+    public function getFormSchemaOld(): array
     {
         return [
             'info' => \Filament\Schemas\Components\Section::make('info')->schema([

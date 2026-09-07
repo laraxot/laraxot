@@ -104,7 +104,7 @@ class GeoDataService
 }
 
 // Nel Resource
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     $geoService = app(GeoDataService::class);
     

@@ -20,7 +20,7 @@ class AbsenceRequestResource extends XotBaseResource
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
 
     #[Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return AbsenceRequestForm::getFormSchema();
     }

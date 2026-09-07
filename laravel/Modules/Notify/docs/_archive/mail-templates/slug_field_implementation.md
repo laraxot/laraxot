@@ -91,7 +91,7 @@ public static function findBySlugOrFail(string $slug): static
 Nel Resource Filament, il campo `slug` dovrebbe essere implementato con:
 
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'name' => Forms\Components\TextInput::make('name')

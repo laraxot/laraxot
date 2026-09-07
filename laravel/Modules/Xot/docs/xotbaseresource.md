@@ -25,7 +25,7 @@ Questo significa che:
 ### Metodi Astratti
 
 ```php
-abstract public static function getFormSchema(): array;
+abstract public function getFormSchema(): array;
 ```
 
 Questo metodo DEVE essere implementato nelle classi figlie e deve restituire un array di componenti del form.
@@ -59,7 +59,7 @@ class NotificationResource extends XotBaseResource
 {
     protected static ?string $model = 'Modules\Notify\Models\Notification';
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('title')

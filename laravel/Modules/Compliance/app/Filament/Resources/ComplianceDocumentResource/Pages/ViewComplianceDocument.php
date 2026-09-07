@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Filament\Resources\ComplianceDocumentResource\Pages;
 
-use Filament\Infolists\Components\TextEntry;
-use Filament\Schemas\Components\Component;
 use Modules\Compliance\Filament\Resources\ComplianceDocumentResource;
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
@@ -25,20 +23,5 @@ final class ViewComplianceDocument extends XotBaseViewRecord
         }
 
         return $data;
-    }
-
-    /**
-     * @return array<string, Component>
-     */
-    protected function getInfolistSchema(): array
-    {
-        return [
-            'type' => TextEntry::make('type'),
-            'title' => TextEntry::make('title'),
-            'status' => TextEntry::make('status'),
-            'workOrder.title' => TextEntry::make('workOrder.title'),
-            'expires_on' => TextEntry::make('expires_on'),
-            'is_required' => TextEntry::make('is_required'),
-        ];
     }
 }

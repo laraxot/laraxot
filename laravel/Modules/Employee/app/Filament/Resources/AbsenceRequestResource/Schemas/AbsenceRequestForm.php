@@ -17,7 +17,7 @@ class AbsenceRequestForm extends XotBaseResourceForm
     /**
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'section' => Section::make(__('employee::absence_request.fields.section'))

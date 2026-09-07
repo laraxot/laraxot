@@ -23,7 +23,7 @@ class PageContentResource extends LangBaseResource
      *
      * @return array<int|string, Component>
      */
-    public static function getFormSchemaOld(): array
+    public function getFormSchemaOld(): array
     {
         return [
             'name' => TextInput::make('name')

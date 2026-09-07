@@ -19,7 +19,7 @@ class CommentForm extends XotBaseResourceForm
     /**
      * @return array<string, SchemaComponent>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'content' => Section::make()

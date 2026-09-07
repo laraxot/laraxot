@@ -252,7 +252,7 @@ use Filament\Forms\Components\TextInput;
 
 class ExampleResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             TextInput::make('name')->required(),
@@ -292,7 +292,7 @@ class UserModerationResource extends XotBaseResource
 /**
  * @return array<string, \Filament\Forms\Components\Component>
  */
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         // Schema del form

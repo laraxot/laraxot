@@ -26,7 +26,7 @@ class PageResource extends LangBaseResource
      *
      * @return array<int|string, Component>
      */
-    public static function getFormSchemaOld(): array
+    public function getFormSchemaOld(): array
     {
         return [
             'title' => TextInput::make('title')

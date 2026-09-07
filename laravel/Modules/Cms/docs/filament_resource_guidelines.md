@@ -16,7 +16,7 @@ class PageResource extends LangBaseResource
 {
     protected static ?string $model = Page::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Form schema components with multilingual support
@@ -35,7 +35,7 @@ class MenuResource extends XotBaseResource
 {
     protected static ?string $model = Menu::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Form schema components

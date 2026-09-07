@@ -34,7 +34,7 @@ class LocationResource extends XotBaseResource
      *
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return LocationForm::getFormSchema();
     }

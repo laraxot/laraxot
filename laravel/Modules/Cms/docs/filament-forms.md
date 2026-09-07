@@ -31,7 +31,7 @@ abstract class XotBaseResource extends FilamentResource
     /**
      * @return array<string|int,\Filament\Forms\Components\Component>
      */
-    abstract public static function getFormSchema(): array;
+    abstract public function getFormSchema(): array;
 
     final public static function form(Form $form): Form
     {
@@ -91,7 +91,7 @@ public static function addressFields(): array
 }
 
 // Utilizzo in un form
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         // ... altri campi
@@ -148,7 +148,7 @@ class PageResource extends XotBaseResource
 ### 2. Definire lo Schema del Form
 
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         Forms\Components\TextInput::make('title')
@@ -186,7 +186,7 @@ Per utilizzare al meglio i widget Filament per i form, è consigliabile seguire 
 ### 1. Organizzare i Campi in Sezioni
 
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         Forms\Components\Section::make('Informazioni Base')
@@ -233,7 +233,7 @@ class AddressFields
 }
 
 // Utilizzo
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         // ...
@@ -271,7 +271,7 @@ Forms\Components\Tabs::make('Tabs')
 ### Esempio: Form per una Pagina
 
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         Forms\Components\Grid::make()->columns(2)->schema([
@@ -358,7 +358,7 @@ class PageResource extends XotBaseResource
 {
     use HasSeoFields;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // ...

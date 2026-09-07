@@ -43,7 +43,7 @@ Il modulo User ha errori PHPStan che devono essere risolti per raggiungere la co
 /**
  * @return array<string, Field>
  */
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'name' => TextInput::make('name')

@@ -67,7 +67,7 @@ Le risorse Filament richiedono che il metodo `getFormSchema()` restituisca un ar
 ### Esempio corretto:
 
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'name' => TextInput::make('name')->required(),
@@ -79,7 +79,7 @@ public static function getFormSchema(): array
 ### Esempio errato:
 
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('name')->required(),

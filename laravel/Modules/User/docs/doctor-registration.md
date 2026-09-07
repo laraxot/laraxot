@@ -67,7 +67,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class DoctorResource extends XotBaseResource
 {
-    public static function getFormSchemaWidget(): array
+    public function getFormSchemaWidget(): array
     {
         return [
             // Schema del form
@@ -125,7 +125,7 @@ class User extends Authenticatable
 ### Form Schema
 ```php
 // /laravel/Modules/Patient/app/Filament/Resources/DoctorResource.php
-public static function getFormSchemaWidget(): array
+public function getFormSchemaWidget(): array
 {
     return [
         Forms\Components\TextInput::make('name')

@@ -473,7 +473,7 @@ Methods:
 
 #### Form Schema
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         Section::make()->schema([

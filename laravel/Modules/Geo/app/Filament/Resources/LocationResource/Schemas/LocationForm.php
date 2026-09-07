@@ -20,7 +20,7 @@ class LocationForm extends XotBaseResourceForm
     /**
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'name' => TextInput::make('name')->required()->maxLength(255),

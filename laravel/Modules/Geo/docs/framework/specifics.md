@@ -134,7 +134,7 @@ declare(strict_types=1);
 
 class UserResource extends XotBaseResource
 {
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make('Personal Information')

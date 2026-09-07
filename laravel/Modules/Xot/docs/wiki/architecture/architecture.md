@@ -105,7 +105,7 @@ abstract class XotBaseResource extends Resource
 {
     use HasXotTable;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return static::getFormSchemaImplementation();
     }

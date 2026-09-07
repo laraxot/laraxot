@@ -45,7 +45,7 @@ abstract class XotBaseResource extends FilamentResource
 Each resource must implement the abstract method:
 
 ```php
-abstract public static function getFormSchema(): array
+abstract public function getFormSchema(): array
 ```
 
 This enforces consistent form schema definition across all resources.
@@ -71,7 +71,7 @@ public static function getPages(): array
 Resources define forms through `getFormSchema()`:
 
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'name' => TextInput::make('name')->required(),
@@ -172,7 +172,7 @@ Laraxot uses automatic translation management through `LangServiceProvider`:
 Consistent form setup with standardized columns:
 
 ```php
-public static function getFormSchemaColumns(): int
+public function getFormSchemaColumns(): int
 {
     return 1; // Standard single column layout
 }
@@ -347,7 +347,7 @@ public static function getModel(): string
 ### 3. Form Schema Method
 Always implement `getFormSchema()` for consistency:
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     // Return array of form components
 }

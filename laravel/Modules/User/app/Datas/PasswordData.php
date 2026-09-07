@@ -182,7 +182,7 @@ class PasswordData extends Data
     /**
      * @return array<string, FormsTextInput>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'password' => FormsTextInput::make('password')

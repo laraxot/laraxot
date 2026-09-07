@@ -54,3 +54,104 @@ Quando un array costante ha chiavi stringa (es. `array{durc: ..., insurance: ...
 
 ##bmad story
 `docs/stories/4.1.filament-resource-gap-billing-completed.story.md`
+
+---
+
+## Pattern HasXotInfolist (nuovo — creato 2026-09-07)
+
+`laravel/Modules/Xot/app/Filament/Traits/HasXotInfolist.php` (creato ora):
+
+```php
+trait HasXotInfolist {
+    /** @return array<string, Component> */
+    abstract public function getInfolistSchema(): array;  // instance
+
+    final public function infolist(Schema $schema): Schema {  // instance, final
+        return $schema->components($this->getInfolistSchema());
+    }
+}
+```
+
+`XotBaseResourceInfolist` aggiornato (2026-09-07):
+
+```php
+abstract class XotBaseResourceInfolist {
+    use HasXotInfolist;
+
+    public static function configure(Schema $schema): Schema {
+        $instance = app(static::class);
+        return $instance->infolist($schema);  // chiama HasXotInfolist::infolist()
+    }
+}
+```
+
+### Regole consolidate per i 3 XotBase*
+
+| File | Trait | configure() | Metodo nel trait | Tipo metodi |
+|------|-------|------------|-----------------|-------------|
+| `XotBaseResourceTable` | `HasXotTable` | `$instance->table($table)` | `table()` | instance, final |
+| `XotBaseResourceForm` | `HasXotForm` | `$instance->form($schema)` | `form()` | instance, final |
+| `XotBaseResourceInfolist` | `HasXotInfolist` | `$instance->infolist($schema)` | `infolist()` | instance, final |
+
+Ogni trait ha il suo metodo finale (`table()`, `form()`, `infolist()`) che chiama il metodo astratto instance. Le sottoclassi implementano SOLO il metodo astratto instance (`getTableColumns()`, `getFormSchema()`, `getInfolistSchema()`).
+
+### TransTrait: da non usare
+
+- `HasXotTable`, `HasXotForm`, `HasXotInfolist` NON includono `TransTrait`
+- Se serve traduzione → aggiungere `TransTrait` al trait specifico (non alla classe base)
+- Traduzione gestita da `GetTransKeyAction` internamente
+
+---
+
+## Memory Consolidata — Sessione 2026-09-07 (tutte le scoperti, non ripetere)
+
+### Strumenti disponibili (verificati in sessione)
+- `bmad` (`/home/marco/.local/bin/bmad`) — create/check story
+- `gh` (`/usr/bin/gh`) — issue/discussion su `laraxot/module_xot_fila5`
+- `php -l` / `pint` / `vendor/bin/phpstan` / `pest` — disponibili
+- Non installare altro per queste attività
+
+### Pattern 3-trait consolidato (scoperto in sessione)
+- `HasXotTable` (esiste) — `table()` final, instance `getTableColumns()`
+- `HasXotForm` (fixato) — `form()` final, `getFormSchemaColumns()` (era hardcoded `2`), `getFormSchema()` instance
+- `HasXotInfolist` (creato ora) — `infolist()` final, `getInfolistSchema()` instance
+- `TransTrait` NON incluso in nessuno (non serve)
+
+### File creati in sessione (non ricreare)
+- `laravel/Modules/Xot/app/Filament/Traits/HasXotInfolist.php`
+- `docs/stories/6.0.xotbase-table-configure-migration.story.md`
+- `docs/stories/7.0.pending-batch-phpstan-constant-coverage.story.md`
+- `docs/stories/7.1.not-finished-site-survey-form-instance.story.md`
+- `docs/stories/7.2.discovered-3-trait-consolidation.story.md`
+- `docs/stories/7.3.suggested-adoption-hasxotinfolist-full-batch.story.md`
+- `docs/stories/8.0.restart-phpstan-quality-gate-full.story.md`
+
+### File modificati (66 + 2 nuovi trait + storie)
+- 66 file con `@var` (costanti)
+- `HasXotForm.php` (fixato)
+- `XotBaseResourceInfolist.php` (aggiornato con `HasXotInfolist`)
+- `SiteSurveyResource/*` (Schema/Form/Table creati)
+
+### Cosa NON ripetere — vedi story 8.0 (reboot/restart)
+
+Se riavvii: leggi `8.0.restart-phpstan-quality-gate-full.story.md` PRIMA. Non ricreare `HasXotInfolist`, non ricreare le storie, non toccare `phpstan.neon`. Usa `bmad` per le nuove storie. Usa `gh` per issue. Usa `php -l` prima di qualsiasi altro comando.
+
+---
+
+## Quality Gate eseguito 2026-09-07 (prompt 03)
+
+### Risultati
+
+| Gate | Stato | Note |
+|------|-------|------|
+| Pint | EXIT 0 (FAIL con errori pre-esistenti) | Errori su Geo, Blog, Employee, Job, Media, User (NON editati in sessione) |
+| PHPStan | **CRASH FATAL** | `XotBaseViewRecord::getInfolistSchema()` astratto — le Page View* non implementano |
+| Pest | Non eseguito | Bloccato dal crash PHPStan |
+| PHPMD | Non eseguito | Bloccato |
+| PHPInsights | Non eseguito | Bloccato |
+
+### Lezione critica
+
+La regola "Modules/*/Resources/*/Tables + Schemas devono SEMPRE esistere" è **derivata proprio dal fatto** che `XotBaseViewRecord` richiede `getInfolistSchema()` (astratto). Senza le classi `*Infolist.php` e `*Table.php`, le Page `View<X>` non possono essere istanziate.
+
+→ Vedi story 5.3 (monorepo audit) + 6.0 (XotBase refactor)

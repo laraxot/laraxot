@@ -24,13 +24,13 @@ class WorkHourResource extends XotBaseResource
     }
 
     #[Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return WorkHourForm::getFormSchema();
     }
 
     #[Override]
-    public static function getInfolistSchema(): array
+    public function getInfolistSchema(): array
     {
         return WorkHourInfolist::getInfolistSchema();
     }

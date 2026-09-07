@@ -119,19 +119,13 @@ test('list notifications page exposes expected columns and filters', function ()
     Assert::assertInstanceOf(SelectFilter::class, $filters['type']);
 });
 
-test('view notification page infolist schema contains section with text entries', function (): void {
-    $page = makeViewNotificationTestProxy();
-    $schema = $page->exposedInfolistSchema();
+test('notification infolist schema exposes its resource fields', function (): void {
+    $schema = makeViewNotificationTestProxy()->exposedInfolistSchema();
 
-    Assert::assertCount(1, $schema);
-    Assert::assertInstanceOf(Section::class, $schema[0]);
-
-    $reflection = new \ReflectionClass($schema[0]);
-    $prop = $reflection->getProperty('childComponents');
-    $prop->setAccessible(true);
-    $components = XotBasePest::assertArray($prop->getValue($schema[0]));
-
-    Assert::assertNotEmpty($components);
+    foreach (['id', 'type', 'data', 'read_at', 'created_at'] as $field) {
+        Assert::assertArrayHasKey($field, $schema);
+        Assert::assertInstanceOf(\Filament\Infolists\Components\TextEntry::class, $schema[$field]);
+    }
 });
 
 test('mail template resource form schema exposes expected components', function (): void {

@@ -22,7 +22,7 @@ class NotifyThemeResource extends XotBaseResource
      * @return array<string, Field>
      */
     #[Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'lang' => Select::make('lang')->options(fn (): array => self::fieldOptions('lang')),

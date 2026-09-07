@@ -7,9 +7,7 @@ namespace Modules\Intervention\Filament\Resources\InterventionResource\Pages;
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
-use Filament\Infolists\Components\Entry;
 use Filament\Notifications\Notification;
-use Filament\Schemas\Components\Component;
 use Illuminate\Support\Facades\Auth;
 use Modules\AiAssistant\Filament\Pages\AiAssistantChat;
 use Modules\Intervention\Actions\CreateInterventionReportShareLinkAction;
@@ -30,14 +28,6 @@ final class ViewIntervention extends XotBaseViewRecord
     use ResolvesCalendarReturnUrl;
 
     protected static string $resource = InterventionResource::class;
-
-    /**
-     * @return array<string, Component|Entry>
-     */
-    protected function getInfolistSchema(): array
-    {
-        return InterventionResource::getInfolistSchema();
-    }
 
     protected function getHeaderActions(): array
     {

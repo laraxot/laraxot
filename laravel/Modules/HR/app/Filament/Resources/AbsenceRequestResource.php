@@ -74,7 +74,7 @@ final class AbsenceRequestResource extends XotBaseResource
         return __('hr.absence_requests');
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Section::make()

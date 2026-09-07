@@ -21,7 +21,7 @@ class PrenotazioniServiceProvider extends XotBaseServiceProvider
 ### Form Schema Best Practices
 
 #### Regole Obbligatorie per getFormSchema()
-1. Il metodo DEVE essere dichiarato come `public static function getFormSchema(): array`
+1. Il metodo DEVE essere dichiarato come `public function getFormSchema(): array`
 2. DEVE restituire un array associativo di campi form
 3. Ogni campo DEVE avere una chiave stringa univoca che corrisponde al nome della colonna nel database
 4. Tutti i campi DEVONO essere istanze di `Filament\Forms\Components`
@@ -60,7 +60,7 @@ class PrenotazioniServiceProvider extends XotBaseServiceProvider
 
 #### Esempio Completo e Corretto:
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         Forms\Components\Group::make()
@@ -120,7 +120,7 @@ public static function getFormSchema(): array
 #### Errori Comuni da Evitare
 ❌ NON FARE:
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         // ❌ Mai usare ->label()
@@ -345,7 +345,7 @@ namespace App\Modules\Setting\Models;
 
 Esempio completo:
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'id' => Forms\Components\TextInput::make('id')
@@ -498,7 +498,7 @@ class DatabaseConnectionResource extends XotBaseResource
     protected static ?string $navigationIcon = 'heroicon-o-database';
     protected static ?string $navigationGroup = 'System';
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'name' => Forms\Components\TextInput::make('name')
@@ -626,7 +626,7 @@ class PerformanceResource extends XotBaseResource
     protected static ?string $model = PerformanceModel::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Campi form con type hints

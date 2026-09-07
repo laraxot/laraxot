@@ -60,7 +60,7 @@ class MyResource extends XotBaseResource
 {
     protected static ?string $model = MyModel::class;
     
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Form components
@@ -275,7 +275,7 @@ class QuestionChartResource extends XotBaseResource
 {
     protected static ?string $model = QuestionChart::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Form components
@@ -429,7 +429,7 @@ class MyResource extends XotBaseResource
 {
     protected static ?string $model = MyModel::class;
     
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Form components
@@ -644,7 +644,7 @@ class QuestionChartResource extends XotBaseResource
 {
     protected static ?string $model = QuestionChart::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Form components

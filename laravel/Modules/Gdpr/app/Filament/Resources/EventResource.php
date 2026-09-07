@@ -18,7 +18,7 @@ class EventResource extends XotBaseResource
     protected static ?string $model = Event::class;
 
     #[\Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'treatment_id' => TextInput::make('treatment_id')->maxLength(36)->default(null),

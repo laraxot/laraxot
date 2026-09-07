@@ -220,7 +220,7 @@ Il trait `HasAddress` è progettato per funzionare perfettamente con Filament. P
 use Modules\Geo\Filament\Resources\AddressResource;
 
 // Utilizzo in una risorsa Filament
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         // ... altri campi

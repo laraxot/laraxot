@@ -59,7 +59,7 @@ Per `getFormSchema()` nei **resource e pagine** (dove non viene usato `statePath
 
 ```php
 // ✅ CORRETTO per resource/pagine
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('email')->email()->required(),

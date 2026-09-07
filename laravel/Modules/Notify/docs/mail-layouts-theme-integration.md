@@ -317,7 +317,7 @@ class EmailLayoutResource extends XotBaseResource
 {
     protected static ?string $model = EmailLayout::class;
     
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'name' => TextInput::make('name'),

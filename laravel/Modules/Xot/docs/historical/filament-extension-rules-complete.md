@@ -289,7 +289,7 @@ Per `getFormSchema()` nei **resource e pagine**, usare array indicizzati:
 /**
  * @return array<int, Component>
  */
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         TextInput::make('email')->email()->required(),
@@ -473,7 +473,7 @@ class UserResource extends XotBaseResource
     /**
      * @return array<int, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             TextInput::make('name')->required(),

@@ -26,7 +26,7 @@ class SocialiteUserResource extends XotBaseResource
      * @return array<string, Select|TextInput>
      */
     #[\Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'user_id' => Select::make('user_id')

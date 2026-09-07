@@ -76,7 +76,7 @@ class TeamInvitationResource extends XotBaseResource
 {
     protected static ?string $parentResource = TeamResource::class;
     
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'email' => TextInput::make('email')
@@ -182,7 +182,7 @@ class TeamInvitationResource extends XotBaseResource
 {
     protected static ?string $parentResource = TeamResource::class;
     
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'email' => TextInput::make('email')

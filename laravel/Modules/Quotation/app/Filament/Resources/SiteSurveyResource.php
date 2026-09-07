@@ -78,7 +78,7 @@ final class SiteSurveyResource extends XotBaseResource
         };
     }
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'code' => Section::make(__('site_surveys.sections.general'))

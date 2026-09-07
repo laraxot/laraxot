@@ -126,7 +126,7 @@ class OauthClientResource extends XotBaseResource
     /**
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Schema components

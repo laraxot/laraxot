@@ -621,7 +621,7 @@ class OauthClientResource extends XotBaseResource
     /**
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             // Schema components
@@ -2955,7 +2955,7 @@ final class OauthClientResource extends XotBaseResource
     // ✅ SOLO getFormSchema() necessario
     // ❌ NON implementare table(), getPages() (gestiti da XotBaseResource)
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'oauth_client' => Section::make('OAuth Client Information')
@@ -3077,7 +3077,7 @@ class OauthClient extends PassportClient
 // ❌ NON table(), getPages()
 final class OauthClientResource extends XotBaseResource
 {
-    public static function getFormSchema(): array { /* ... */ }
+    public function getFormSchema(): array { /* ... */ }
 }
 ```
 

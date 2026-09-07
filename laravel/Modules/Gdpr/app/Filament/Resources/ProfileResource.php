@@ -17,7 +17,7 @@ class ProfileResource extends XotBaseResource
     protected static ?string $model = Profile::class;
 
     #[\Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'type' => TextInput::make('type')->maxLength(255)->default(null),

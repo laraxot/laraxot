@@ -18,7 +18,7 @@ class TreatmentResource extends XotBaseResource
     protected static ?string $model = Treatment::class;
 
     #[\Override]
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'active' => Toggle::make('active')->required(),

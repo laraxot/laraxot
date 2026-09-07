@@ -32,7 +32,7 @@ class TranslationFileResource extends XotBaseResource
     /**
      * @return array<string, mixed>
      */
-    public static function getFormSchemaOld(): array
+    public function getFormSchemaOld(): array
     {
         return [];
 

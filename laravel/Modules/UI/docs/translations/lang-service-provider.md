@@ -138,7 +138,7 @@ return [
 ];
 
 // Modules/Patient/Filament/Resources/DoctorResource.php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         Forms\Components\TextInput::make('first_name'),  // La label viene gestita automaticamente

@@ -2505,7 +2505,7 @@ class TranslationFileResource extends XotBaseResource
 {
     protected static ?string $model = TranslationFile::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Components\TextInput::make('key')
@@ -2756,7 +2756,7 @@ class TranslationFileResource extends XotBaseResource
 {
     protected static ?string $model = TranslationFile::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Components\TextInput::make('key')
@@ -11587,7 +11587,7 @@ class TranslationFileResource extends XotBaseResource
 {
     protected static ?string $model = TranslationFile::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Components\TextInput::make('key')

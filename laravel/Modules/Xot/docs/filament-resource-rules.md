@@ -74,7 +74,7 @@ Le classi che estendono `XotBaseResource` **DEVONO** dichiarare solo:
 // ✅ DICHIARARE SOLO QUESTE PROPRIETÀ/METODI
 protected static ?string $model = YourModel::class;
 
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'field_name' => Forms\Components\TextInput::make('field_name'),
@@ -169,7 +169,7 @@ class DoctorResource extends XotBaseResource
 {
     protected static ?string $model = Doctor::class;
 
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'first_name' => Forms\Components\TextInput::make('first_name')

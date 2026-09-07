@@ -34,7 +34,7 @@ class DepartmentForm {
 ```php
 // TicketForm.php (Our Pattern)
 class TicketForm extends XotBaseResourceForm {
-    public static function getFormSchema(): array {
+    public function getFormSchema(): array {
         return [
             TextInput::make('name'), // ✅ No label - LangServiceProvider owns it
             // Wizard integration built-in

@@ -48,7 +48,7 @@ Ecco come il componente potrebbe essere implementato in `MailTemplateResource` s
 ```php
 use Camya\Filament\Forms\Components\TitleWithSlugInput;
 
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'titleSlug' => TitleWithSlugInput::make(
@@ -170,7 +170,7 @@ Per rispettare le convenzioni del progetto, è necessario:
 ### Esempio di Implementazione Conforme
 
 ```php
-public static function getFormSchema(): array
+public function getFormSchema(): array
 {
     return [
         'titleWithSlug' => TitleWithSlugInput::make(

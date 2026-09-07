@@ -151,7 +151,7 @@ class OauthAccessTokenResource extends XotBaseResource
     /**
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'oauth_access_token_info' => Section::make('OAuth Access Token Information')

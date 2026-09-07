@@ -57,7 +57,7 @@ final class WorkOrderStatusResource extends XotBaseResource
     }
 
     /** @return array<int|string, Component|Field> */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             TextInput::make('code')

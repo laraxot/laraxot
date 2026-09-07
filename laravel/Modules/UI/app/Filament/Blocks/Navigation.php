@@ -37,7 +37,7 @@ final class Navigation extends XotBaseBlock
     /**
      * @return array<string, Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             'items' => Repeater::make('items')

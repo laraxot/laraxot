@@ -36,7 +36,7 @@ public static function getTableColumns(): array
 // CORRETTO ✅
 public function getTableColumns(): array
 ### 2. Per Widget
-public static function getFormSchema(): array
+public function getFormSchema(): array
 public function getFormSchema(): array
 ### 3. Per tutte le classi
 Rimuovere le chiamate a `->label()` per utilizzare il sistema di traduzione automatica:

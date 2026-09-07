@@ -288,7 +288,7 @@ class MioModelloResource extends XotBaseResource
      *
      * @return array<int, \Filament\Forms\Components\Component>
      */
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('nome')
