@@ -7,7 +7,6 @@ namespace Modules\Inventory\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Inventory\Database\Factories\WarehouseLocationFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -17,7 +16,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property bool $is_active
  * @property-read Warehouse|null $warehouse
  */
-final class WarehouseLocation extends XotBaseModel
+final class WarehouseLocation extends BaseModel
 {
 
     protected $table = 'warehouse_locations';

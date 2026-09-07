@@ -1,34 +1,89 @@
 # Tema One per
 
-[![Module](https://img.shields.io/badge/Module-Tema One per-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Introduzione
 
-> **Core module for the FixCity Platform.**
+Il Tema One è il tema predefinito per , basato su Filament 3.3. Questo tema fornisce un'interfaccia moderna e responsive per il frontend del sito.
+# Tema One per <nome progetto>
 
-## Perché esiste
+## Introduzione
 
-Core module for the FixCity Platform.
+Il Tema One è il tema predefinito per <nome progetto>, basato su Filament 3.3. Questo tema fornisce un'interfaccia moderna e responsive per il frontend del sito.
 
-## Superpoteri
+## Requisiti
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+- PHP 8.1+
+- Laravel 10+
+- Filament 3.3+
+- Node.js 16+
+- NPM 8+
 
-## Documentazione
+## Struttura del Tema
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+```
+Themes/One/
+├── app/
+│   └── Providers/
+│       └── ThemeServiceProvider.php
+├── config/
+│   └── theme.php
+├── resources/
+│   └── views/
+│       ├── components/
+│       │   └── blocks/
+│       ├── layouts/
+│       └── pages/
+└── assets/
+    ├── css/
+    └── js/
+```
 
----
+## Blocchi Disponibili
 
-**Modulo** `User` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+Il tema One include i seguenti blocchi:
+
+### Hero
+Un blocco hero per le pagine principali con titolo, sottotitolo, immagine e call-to-action.
+
+### Feature Sections
+Sezioni di caratteristiche con icone, titoli e descrizioni.
+
+### Team
+Sezione per visualizzare i membri del team con foto, nomi, ruoli e biografie.
+
+### Stats
+Statistiche con numeri e etichette.
+
+### CTA
+Call-to-action con titolo, descrizione e pulsante.
+
+## Personalizzazione
+
+### Modificare le Viste
+Le viste possono essere modificate nella directory `resources/views`.
+
+### Modificare gli Assets
+Gli assets CSS e JavaScript possono essere modificati nella directory `assets`.
+
+### Configurazione
+La configurazione del tema può essere modificata nel file `config/theme.php`.
+
+## Integrazione con Laravel Folio
+
+Il tema One utilizza Laravel Folio per la gestione delle rotte del frontend. Le pagine sono definite nella directory `resources/views/pages` e seguono la convenzione di naming di Folio.
+
+Esempio:
+- `resources/views/pages/about.blade.php` -> `/about`
+- `resources/views/pages/blog/[slug].blade.php` -> `/blog/{slug}`
+
+## Integrazione con il Modulo CMS
+
+Il tema One si integra con il modulo CMS per la gestione dei contenuti. I contenuti sono definiti in file JSON nella directory `config/local/<nome progetto>/database/content/pages`.
+
+## Supporto
+
+Per supporto tecnico, contattare il team .
+Il tema One si integra con il modulo CMS per la gestione dei contenuti. I contenuti sono definiti in file JSON nella directory `config/local/<nome progetto>/database/content/pages`.
+
+## Supporto
+
+Per supporto tecnico, contattare il team <nome progetto>.

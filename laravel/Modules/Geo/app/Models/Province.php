@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\File;
 use Modules\Geo\Database\Factories\ProvinceFactory;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
-use Modules\Xot\Models\Traits\HasXotFactory;
 use Sushi\Sushi;
 
 /**
@@ -38,7 +37,6 @@ use Sushi\Sushi;
  */
 class Province extends BaseModel
 {
-    use HasXotFactory;
 
     use Sushi;
 

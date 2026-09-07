@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\Comment\Database\Factories\CommentNotificationOptOutFactory;
 use Modules\Comment\Datas\CommentConfigData;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int|string|null $commentator_id
@@ -23,12 +22,8 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @method static Builder<static> newQuery()
  * @method static Builder<static> query()
  */
-class CommentNotificationOptOut extends Model
+class CommentNotificationOptOut extends BaseModel
 {
-    use HasXotFactory;
-
-    protected $connection = 'comment';
-
     protected $guarded = [];
 
     /** @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Model, $this> */

@@ -31,7 +31,7 @@ class Profile extends XotBasePage implements HasForms
     /** @var array<string, mixed> */
     public array $data = [];
 
-    public BlogProfile $model;
+    public BlogProfile $profile;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-text';
 
@@ -41,9 +41,9 @@ class Profile extends XotBasePage implements HasForms
         BlogProfile $model,
         string $tpl = 'v1',
     ): void {
-        $this->model = $model;
+        $this->profile = $model;
         $this->tpl = $tpl;
-        $this->data = self::buildFormData($this->model);
+        $this->data = self::buildFormData($this->profile);
 
         // $this->data['photo_profile'] = $this->model->getFirstMedia('photo_profile');
 
@@ -96,7 +96,7 @@ class Profile extends XotBasePage implements HasForms
     {
         $data = $this->form->getState();
 
-        $this->model->update($data);
+        $this->profile->update($data);
 
         // $article_aggregate = ArticleAggregate::retrieve($this->article->id);
         // Assert::isArray($ratings_add = $data['ratings_add']);

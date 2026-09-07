@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Bom\Database\Factories\BomFactory;
 use Modules\Catalog\Models\Product;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -16,7 +15,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property string|null $name
  * @property bool $is_active
  */
-final class Bom extends XotBaseModel
+final class Bom extends BaseModel
 {
 
     protected $table = 'boms';

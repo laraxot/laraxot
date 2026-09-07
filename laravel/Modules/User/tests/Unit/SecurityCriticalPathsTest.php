@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 test('admin panel requires admin or super-admin role', function (): void {
-    $user = new class() extends BaseUser
+    $user = new class extends BaseUser
     {
         public bool $superAdmin = false;
 
@@ -41,10 +41,11 @@ test('admin panel requires admin or super-admin role', function (): void {
 });
 
 test('password mutator hashes long passphrases instead of storing plaintext', function (): void {
-    $user = new class() extends BaseUser {};
+    $user = new class extends BaseUser {};
     $longPassphrase = 'this-is-a-very-long-passphrase-that-exceeds-thirty-two-characters';
 
     $user->password = $longPassphrase;
 
-    Assert::assertTrue(Hash::check($longPassphrase, is_string($user->getAttributes()['password'] ?? null) ? $user->getAttributes()['password'] : ''));
+    $storedPassword = $user->getAttributes()['password'];
+    Assert::assertTrue(Hash::check($longPassphrase, is_string($storedPassword) ? $storedPassword : ''));
 });

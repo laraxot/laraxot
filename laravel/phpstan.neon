@@ -12,6 +12,9 @@ parameters:
     paths:
         - ./Modules/
 
+    type_coverage:
+        param: 20
+
     ignoreErrors:
 
     excludePaths:

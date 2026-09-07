@@ -27,7 +27,7 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static \Modules\Billing\Database\Factories\InvoiceFactory factory($count = null, $state = [])
  */
-final class Invoice extends XotBaseModel
+final class Invoice extends BaseModel
 {
     use SoftDeletes;
 

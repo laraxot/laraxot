@@ -7,7 +7,6 @@ namespace Modules\Tenant\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Tenant\Actions\Domains\GetDomainsArrayAction;
 use Modules\Tenant\Database\Factories\DomainFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
 use Sushi\Sushi;
 
 /**
@@ -25,7 +24,6 @@ use Sushi\Sushi;
  */
 class Domain extends BaseModel
 {
-    use HasXotFactory;
 
     use Sushi;
 

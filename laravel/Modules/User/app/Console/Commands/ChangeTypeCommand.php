@@ -65,14 +65,14 @@ class ChangeTypeCommand extends Command
         $typeLabel = 'None';
         if (isset($user->type) && \is_object($user->type) && method_exists($user->type, 'getLabel')) {
             $enumType = $user->type;
-            /** @var string|Htmlable $label */
+            /** @var string|Htmlable|mixed */
             $label = $enumType->getLabel();
-            if ($label instanceof \Stringable) {
-                $typeLabel = (string) $label;
+            if (\is_string($label)) {
+                $typeLabel = $label;
             } elseif ($label instanceof Htmlable) {
                 $typeLabel = $label->toHtml();
-            } else {
-                $typeLabel = '';
+            } elseif (\is_scalar($label) || $label instanceof \Stringable) {
+                $typeLabel = (string) $label;
             }
         }
 
@@ -90,7 +90,8 @@ class ChangeTypeCommand extends Command
             ) {
                 $value = app(SafeObjectCastAction::class)
                     ->getStringProperty($item, 'value', '');
-                $options[$value] = is_string($item->getLabel()) ? $item->getLabel() : '';
+                $label = $item->getLabel();
+                $options[$value] = \is_scalar($label) || $label instanceof \Stringable ? (string) $label : 'Unknown';
             } else {
                 $options[(string) $key] = 'Unknown';
             }
@@ -105,19 +106,18 @@ class ChangeTypeCommand extends Command
         Assert::isInstanceOf($newTypeEnum, HasLabel::class);
         Assert::isInstanceOf($newTypeEnum, \BackedEnum::class);
 
-        /** @var \BackedEnum&HasLabel $newTypeEnum */
+        /* @var \BackedEnum&HasLabel $newTypeEnum */
         $user->type = (string) $newTypeEnum->value;
         $user->save();
 
-        /** @var string|Htmlable $label */
-            $label = $newTypeEnum->getLabel();
+        $label = $newTypeEnum->getLabel();
         $labelString = '';
-        if ($label instanceof \Stringable) {
-            $labelString = (string) $label;
+        if (\is_string($label)) {
+            $labelString = $label;
         } elseif ($label instanceof Htmlable) {
             $labelString = $label->toHtml();
         } else {
-            $labelString = '';
+            $labelString = (string) $label;
         }
         $this->info("User type changed to '{$labelString}' for {$email}");
     }

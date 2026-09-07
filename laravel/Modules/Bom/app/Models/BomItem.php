@@ -7,7 +7,6 @@ namespace Modules\Bom\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Bom\Database\Factories\BomItemFactory;
 use Modules\Catalog\Models\Product;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -15,7 +14,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property int $component_product_id
  * @property numeric-string $quantity
  */
-final class BomItem extends XotBaseModel
+final class BomItem extends BaseModel
 {
 
     protected $table = 'bom_items';

@@ -26,8 +26,10 @@ final class CatalogFrequencyResource extends GatedXotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-clock';
 
+    /** @var string */
     protected const ACCOUNT_FEATURE_ADMIN = 'admin.catalog';
 
+    /** @var string */
     protected const ACCOUNT_FEATURE_OPERATOR = 'operator.catalog';
 
     public static function getNavigationGroup(): string

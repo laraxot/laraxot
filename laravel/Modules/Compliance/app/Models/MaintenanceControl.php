@@ -6,7 +6,6 @@ namespace Modules\Compliance\Models;
 
 use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -31,7 +30,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property CarbonInterface|null $next_due_on
  * @property string|null $notes
  */
-final class MaintenanceControl extends XotBaseModel
+final class MaintenanceControl extends BaseModel
 {
     protected $table = 'maintenance_controls';
 

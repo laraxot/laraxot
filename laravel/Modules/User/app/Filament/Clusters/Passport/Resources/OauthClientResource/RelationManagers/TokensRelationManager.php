@@ -55,10 +55,10 @@ class TokensRelationManager extends XotBaseRelationManager
                 })
                 ->formatStateUsing(function (mixed $state): string {
                     if (is_array($state)) {
-                        return implode(', ', array_map(fn (mixed $s): string => is_string($s) ? $s : '', $state));
+                        return implode(', ', array_map(fn (mixed $s): string => is_scalar($s) ? (string) $s : '', $state));
                     }
 
-                    return is_string($state ?? null) ? $state : '';
+                    return is_scalar($state) ? (string) $state : '';
                 }),
             'revoked' => IconColumn::make('revoked')
                 ->boolean()

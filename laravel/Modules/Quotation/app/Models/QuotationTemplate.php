@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Quotation\Database\Factories\QuotationTemplateFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -22,7 +21,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class QuotationTemplate extends BaseModel
 {
-    use HasXotFactory;
     use SoftDeletes;
 
     protected $table = 'quotation_templates';

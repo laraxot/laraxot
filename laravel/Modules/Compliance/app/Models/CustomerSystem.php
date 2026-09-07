@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Document\Models\Media;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * Impianto installato presso un cliente (videosorveglianza, quadro elettrico, fotovoltaico).
@@ -31,7 +30,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property bool $is_active
  * @property string|null $notes
  */
-final class CustomerSystem extends XotBaseModel
+final class CustomerSystem extends BaseModel
 {
     use SoftDeletes;
 

@@ -48,7 +48,7 @@ test('can create role with all fields', function (): void {
 });
 
 test('role has connection attribute', function (): void {
-    Assert::assertSame('user', (new Role())->getConnectionName());
+    Assert::assertSame('user', (new Role)->getConnectionName());
 });
 
 test('role constants are defined', function (): void {
@@ -157,7 +157,7 @@ test('can find roles by multiple criteria', function (): void {
 });
 
 test('role has table name', function (): void {
-    Assert::assertNotSame('', (new Role())->getTable());
+    Assert::assertNotSame('', (new Role)->getTable());
 });
 
 test('role can be deleted from database', function (): void {

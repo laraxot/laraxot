@@ -11,8 +11,6 @@ use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementContractFactory;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -47,9 +45,8 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static PublicProcurementContractFactory factory($count = null, $state = [])
  */
-final class PublicProcurementContract extends XotBaseModel
+final class PublicProcurementContract extends BaseModel
 {
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementContractFactory
     {

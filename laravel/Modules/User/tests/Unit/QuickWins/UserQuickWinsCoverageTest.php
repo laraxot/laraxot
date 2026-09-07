@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Mockery\MockInterface;
 use Modules\User\Actions\Team\GetUserTeamsOptionAction;
 use Modules\User\Actions\User\CreateUserAction;
 use Modules\User\Database\Factories\TeamFactory;
@@ -26,12 +27,12 @@ describe('User quick wins coverage', function (): void {
     });
 
     it('resolves filament shield facade accessor', function (): void {
-        $service = new FilamentShieldStubFixture();
+        $service = new FilamentShieldStubFixture;
 
         app()->instance('filament-shield', $service);
 
         Assert::assertSame($service, FilamentShield::getFacadeRoot());
-        Assert::assertSame(['w1', 'w2'], (new FilamentShieldStubFixture())->getWidgets());
+        Assert::assertSame(['w1', 'w2'], (new FilamentShieldStubFixture)->getWidgets());
     });
 
     it('returns default option plus team options', function (): void {
@@ -55,11 +56,11 @@ describe('User quick wins coverage', function (): void {
             'name' => 'Quick Win',
         ];
 
-        $createdUser = new User();
+        $createdUser = new User;
         $createdUser->email = $payload['email'];
         $createdUser->name = $payload['name'];
 
-        $userModel = configureMock(User::class, function (Mockery\MockInterface $mock) use ($createdUser): void {
+        $userModel = configureMock(User::class, function (MockInterface $mock) use ($createdUser): void {
             $mock->allows(['create' => $createdUser]);
         });
 

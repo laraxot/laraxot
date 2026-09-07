@@ -14,7 +14,6 @@ use Modules\HR\Models\Employee;
 use Modules\User\Models\User;
 use Modules\Vehicle\Models\Vehicle;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -42,7 +41,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
  */
-final class ComplianceDocument extends XotBaseModel
+final class ComplianceDocument extends BaseModel
 {
     use SoftDeletes;
 

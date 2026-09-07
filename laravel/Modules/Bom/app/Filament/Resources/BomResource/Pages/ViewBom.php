@@ -19,6 +19,7 @@ final class ViewBom extends XotBaseViewRecord
 {
     protected static string $resource = BomResource::class;
 
+    /** @var int */
     private const MAX_TREE_DEPTH = 8;
 
     public function getMaxContentWidth(): Width

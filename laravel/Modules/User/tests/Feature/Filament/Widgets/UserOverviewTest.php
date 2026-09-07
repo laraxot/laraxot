@@ -17,7 +17,7 @@ uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var TestCase $this */
-    $this->widget = new UserOverview();
+    $this->widget = new UserOverview;
     TestCase::$user = UserFactory::new()->createOne([
         'type' => UserType::MasterAdmin,
         'email' => 'admin-'.Str::lower(Str::random(10)).'@example.com',
@@ -67,7 +67,7 @@ describe('User Overview', function (): void {
     });
 
     test('user overview widget has correct namespace', function (): void {
-        Assert::assertStringContainsString('Modules\User\Filament\Resources\UserResource\Widgets', UserOverview::class);
+        Assert::assertStringContainsString((string) 'Modules\User\Filament\Resources\UserResource\Widgets', (string) UserOverview::class);
     });
 
     test('user overview widget can be instantiated', function (): void {
@@ -92,7 +92,10 @@ describe('User Overview', function (): void {
         $viewProperty->setAccessible(true);
 
         $viewPath = $viewProperty->getValue($widget);
-        Assert::assertStringContainsString('user::', is_string($viewPath) ? $viewPath : '');
-        Assert::assertStringContainsString('widgets.user-overview', is_string($viewPath) ? $viewPath : '');
+        if (! is_string($viewPath)) {
+            Assert::fail('Expected $viewPath to be a string.');
+        }
+        Assert::assertStringContainsString('user::', $viewPath);
+        Assert::assertStringContainsString('widgets.user-overview', $viewPath);
     });
 });

@@ -7,8 +7,8 @@ namespace Modules\User\Tests\Feature\Filament\Resources;
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
 use Filament\Forms\Components\Field;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\TextInput;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
 use Illuminate\Support\Facades\Hash;
@@ -66,17 +66,17 @@ describe('User Resource', function (): void {
 
         $createdAtField = userResourceFindComponentByName($section02Schema, 'created_at');
         Assert::assertNotNull($createdAtField);
-        Assert::assertInstanceOf(Placeholder::class, $createdAtField);
+        Assert::assertInstanceOf(TextEntry::class, $createdAtField);
     });
 
     test('user resource has combined relation manager tabs', function (): void {
-        $resource = new UserResource();
+        $resource = new UserResource;
 
         Assert::assertTrue($resource->hasCombinedRelationManagerTabsWithContent());
     });
 
     test('user resource extends correct base class', function (): void {
-        $resource = new UserResource();
+        $resource = new UserResource;
 
         Assert::assertInstanceOf(XotBaseResource::class, $resource);
     });
@@ -176,17 +176,17 @@ describe('User Resource', function (): void {
             $this->skipTest('created_at field not found in section02 schema');
         }
 
-        Assert::assertInstanceOf(Placeholder::class, $createdAtField);
+        Assert::assertInstanceOf(TextEntry::class, $createdAtField);
     });
 
     test('user resource can be instantiated', function (): void {
-        $resource = new UserResource();
+        $resource = new UserResource;
 
         Assert::assertInstanceOf(UserResource::class, $resource);
     });
 
     test('user resource has correct model', function (): void {
-        $resource = new UserResource();
+        $resource = new UserResource;
 
         Assert::assertInstanceOf(UserResource::class, $resource);
     });

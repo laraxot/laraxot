@@ -22,7 +22,7 @@ it('creates expected roles', function (): void {
         'guest',
     ];
 
-    $seeder = new RoleSeeder();
+    $seeder = new RoleSeeder;
     $seeder->setContainer(app());
     $seeder->run();
 
@@ -35,7 +35,7 @@ it('creates expected roles', function (): void {
 });
 
 it('is idempotent when run multiple times', function (): void {
-    $seeder = new RoleSeeder();
+    $seeder = new RoleSeeder;
     $seeder->setContainer(app());
 
     $seeder->run();

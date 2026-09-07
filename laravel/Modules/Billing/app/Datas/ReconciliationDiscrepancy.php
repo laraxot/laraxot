@@ -11,15 +11,19 @@ namespace Modules\Billing\Datas;
 final readonly class ReconciliationDiscrepancy
 {
     /** Fatturato materiale che non risulta consegnato da nessun DDT. */
+    /** @var string */
     public const TYPE_NOT_DELIVERED = 'not_delivered';
 
     /** Fatturata una quantita' superiore a quella consegnata. */
+    /** @var string */
     public const TYPE_QUANTITY_OVER = 'quantity_over';
 
     /** Prezzo fatturato diverso da quello del DDT. */
+    /** @var string */
     public const TYPE_PRICE_MISMATCH = 'price_mismatch';
 
     /** Consegnato ma mai fatturato: da attendersi in una fattura successiva. */
+    /** @var string */
     public const TYPE_NOT_INVOICED = 'not_invoiced';
 
     public function __construct(

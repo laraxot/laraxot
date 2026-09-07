@@ -26,7 +26,7 @@ related:
 - [x] Standardizzazione del pattern ID (autoincrement) e UUID per i profili
 - [ ] Rimozione definitiva dei 550+ file obsoleti
 - [ ] Implementazione del **Security Cluster** in Filament v5
-- [ ] Supporto completo per **Laravel 13 Authentication Features**
+- [ ] Supporto completo per **Laravel 12 Authentication Features**
 
 ## Fase 2: Modern Identity (Planned)
 

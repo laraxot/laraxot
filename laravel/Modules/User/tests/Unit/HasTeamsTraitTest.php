@@ -246,7 +246,7 @@ test('it provides utility methods', function (): void {
 
 test('it handles edge cases correctly', function (): void {
     ['user' => $user] = hasTeamsBootstrapFixture();
-    $newUser = new User();
+    $newUser = new User;
 
     Assert::assertFalse($newUser->belongsToTeams());
 

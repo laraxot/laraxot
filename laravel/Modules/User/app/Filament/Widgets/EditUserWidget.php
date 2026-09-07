@@ -27,7 +27,7 @@ use Webmozart\Assert\Assert;
  * @property string $resource
  * @property string $model
  * @property string $action
- * @property Model  $record
+ * @property Model $record
  */
 class EditUserWidget extends XotBaseSchemaWidget
 {

@@ -33,9 +33,9 @@ class ViewOauthAuthCode extends XotBaseViewRecord
                     'code_grid' => Grid::make(2)
                         ->schema([
                             'id' => TextEntry::make('id')
-                                ->formatStateUsing(fn (mixed $state): string => Str::limit(is_string($state) ? $state : '', 15, '...')),
+                                ->formatStateUsing(fn (mixed $state): string => Str::limit(is_scalar($state) ? (string) $state : '', 15, '...')),
                             'client_name' => TextEntry::make('client.name')
-                                ->url(function (mixed $state, $record): ?string {
+                                ->url(function (mixed $state, mixed $record): ?string {
                                     if (! $record instanceof Model) {
                                         return null;
                                     }
@@ -52,7 +52,7 @@ class ViewOauthAuthCode extends XotBaseViewRecord
                     'user_grid' => Grid::make(2)
                         ->schema([
                             'user_name' => TextEntry::make('user.name')
-                                ->url(function (mixed $state, $record): ?string {
+                                ->url(function (mixed $state, mixed $record): ?string {
                                     if (! $record instanceof Model) {
                                         return null;
                                     }
@@ -73,10 +73,10 @@ class ViewOauthAuthCode extends XotBaseViewRecord
                         ->formatStateUsing(function (mixed $state): string {
                             if (is_array($state)) {
                                 /* @var array<int|string, mixed> $state */
-                                return implode(', ', array_map(fn (mixed $item): string => is_string($item) ? $item : '', $state));
+                                return implode(', ', array_map(fn (mixed $item): string => is_scalar($item) ? (string) $item : '', $state));
                             }
 
-                            return is_string($state) ? $state : '';
+                            return is_scalar($state) ? (string) $state : '';
                         })
                         ->columnSpanFull(),
                 ])->columns(1),

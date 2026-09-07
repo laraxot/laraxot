@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\File;
 use Modules\Tenant\Actions\Config\GetTenantFilePathAction;
 use Modules\Tenant\Database\Factories\TestSushiModelFactory;
 use Modules\Tenant\Models\Traits\SushiToJson;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -40,7 +39,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 class TestSushiModel extends BaseModel
 {
-    use HasXotFactory;
 
     use SushiToJson;
 

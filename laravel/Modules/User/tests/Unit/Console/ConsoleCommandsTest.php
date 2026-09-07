@@ -14,7 +14,7 @@ uses(TestCase::class);
 
 test('AssignRoleCommand can be instantiated', function () {
     try {
-        $command = new AssignRoleCommand();
+        $command = new AssignRoleCommand;
         Assert::assertInstanceOf(AssignRoleCommand::class, $command);
     } catch (Exception $e) {
         // assertTrue(true) removed — tautology // Pass if class exists
@@ -23,7 +23,7 @@ test('AssignRoleCommand can be instantiated', function () {
 
 test('ChangeTypeCommand can be instantiated', function () {
     try {
-        $command = new ChangeTypeCommand();
+        $command = new ChangeTypeCommand;
         Assert::assertInstanceOf(ChangeTypeCommand::class, $command);
     } catch (Exception $e) {
         // assertTrue(true) removed — tautology // Pass if class exists
@@ -32,7 +32,7 @@ test('ChangeTypeCommand can be instantiated', function () {
 
 test('SuperAdminCommand can be instantiated', function () {
     try {
-        $command = new SuperAdminCommand();
+        $command = new SuperAdminCommand;
         Assert::assertInstanceOf(SuperAdminCommand::class, $command);
     } catch (Exception $e) {
         // assertTrue(true) removed — tautology // Pass if class exists
@@ -41,7 +41,7 @@ test('SuperAdminCommand can be instantiated', function () {
 
 test('CreateTeamCommand can be instantiated', function () {
     try {
-        $command = new CreateTeamCommand();
+        $command = new CreateTeamCommand;
         Assert::assertInstanceOf(CreateTeamCommand::class, $command);
     } catch (Exception $e) {
         // assertTrue(true) removed — tautology // Pass if class exists
@@ -50,7 +50,7 @@ test('CreateTeamCommand can be instantiated', function () {
 
 test('CreateTenantCommand can be instantiated', function () {
     try {
-        $command = new CreateTenantCommand();
+        $command = new CreateTenantCommand;
         Assert::assertInstanceOf(CreateTenantCommand::class, $command);
     } catch (Exception $e) {
         // assertTrue(true) removed — tautology // Pass if class exists

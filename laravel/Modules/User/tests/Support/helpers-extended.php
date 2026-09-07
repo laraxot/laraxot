@@ -182,7 +182,7 @@ function fakeSocialiteUser(string $email): Laravel\Socialite\Contracts\User
 
 function makeIsUserAllowedAction(): IsUserAllowedAction
 {
-    return new IsUserAllowedAction();
+    return new IsUserAllowedAction;
 }
 
 /**
@@ -288,7 +288,8 @@ function hasTeamsCurrentCreateTeam(User $user, array $attributes = []): Team
 function enableTwoFactorForUser(User $user, Google2FA $google2fa, array $attributes = []): array
 {
     $secret = (string) $google2fa->generateSecretKey();
-    $qrCode = $google2fa->getQRCodeUrl((string) config('app.name'), $user->email, $secret);
+    $appName = config('app.name');
+    $qrCode = $google2fa->getQRCodeUrl(is_string($appName) ? $appName : '', $user->email, $secret);
 
     $recoveryCodes = array_map(
         static fn (): string => substr(str_shuffle('0123456789ABCDEF'), 0, 10).'-'.substr(str_shuffle('0123456789ABCDEF'), 0, 10),
@@ -324,10 +325,8 @@ function verifyTwoFactorCode(User $user, Google2FA $google2fa, string $code): bo
         return false;
     }
 
-    $secret = decrypt($user->two_factor_secret);
-    if (! is_string($secret)) {
-        return false;
-    }
+    $decrypted = decrypt($user->two_factor_secret);
+    $secret = is_string($decrypted) ? $decrypted : '';
 
     return $google2fa->verifyKey($secret, $code) !== false;
 }
@@ -347,12 +346,12 @@ function verifyTwoFactorRecoveryCode(User $user, string $code): bool
     }
 
     $decrypted = decrypt($user->two_factor_recovery_codes);
-    $codes = is_string($decrypted) ? json_decode($decrypted, true) : null;
+    $codes = json_decode(is_string($decrypted) ? $decrypted : '', true);
     if (! is_array($codes)) {
         return false;
     }
 
-    $codes = array_values(array_filter($codes, static fn ($c): bool => $c !== $code));
+    $codes = array_values(array_filter($codes, static fn (mixed $c): bool => $c !== $code));
     $user->two_factor_recovery_codes = encrypt(json_encode($codes));
     $user->save();
 
@@ -369,7 +368,7 @@ function readStoredRecoveryCodes(User $user): array
     }
 
     $decrypted = decrypt($user->two_factor_recovery_codes);
-    $codes = is_string($decrypted) ? json_decode($decrypted, true) : null;
+    $codes = json_decode(is_string($decrypted) ? $decrypted : '', true);
     if (! is_array($codes)) {
         return [];
     }

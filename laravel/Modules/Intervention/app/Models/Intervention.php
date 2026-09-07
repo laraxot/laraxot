@@ -14,14 +14,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\Document\Models\Media;
-use Modules\Intervention\Database\Factories\InterventionFactory;
 use Modules\Intervention\Support\DailyNoteHtml;
 use Modules\Inventory\Models\InventoryMovement;
 use Modules\Signature\Models\Signature;
 use Modules\Signature\Models\Sketch;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -66,7 +64,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class Intervention extends BaseModel
 {
-    use HasXotFactory;
 
     use SoftDeletes;
 

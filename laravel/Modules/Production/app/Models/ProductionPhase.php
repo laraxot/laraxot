@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Production\Database\Factories\ProductionPhaseFactory;
 use Modules\User\Models\User;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -22,7 +21,7 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static ProductionPhaseFactory factory($count = null, $state = [])
  */
-final class ProductionPhase extends XotBaseModel
+final class ProductionPhase extends BaseModel
 {
 
     protected $table = 'production_phases';

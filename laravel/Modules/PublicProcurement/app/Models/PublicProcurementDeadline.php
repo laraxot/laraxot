@@ -7,15 +7,12 @@ namespace Modules\PublicProcurement\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementDeadlineFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementDeadline extends XotBaseModel
+final class PublicProcurementDeadline extends BaseModel
 {
     /**
  * @method static PublicProcurementDeadlineFactory factory($count = null, $state = [])
  */
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementDeadlineFactory
     {

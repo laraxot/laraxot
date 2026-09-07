@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementProgressReportFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementProgressReport extends XotBaseModel
+final class PublicProcurementProgressReport extends BaseModel
 {
     /**
  * @method static PublicProcurementProgressReportFactory factory($count = null, $state = [])
  */
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementProgressReportFactory
     {

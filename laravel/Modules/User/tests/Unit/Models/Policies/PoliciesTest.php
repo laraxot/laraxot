@@ -24,81 +24,81 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 test('OauthClientPolicy can be instantiated', function () {
-    $policy = new OauthClientPolicy();
+    $policy = new OauthClientPolicy;
     Assert::assertInstanceOf(OauthClientPolicy::class, $policy);
 });
 
 test('OauthAccessTokenPolicy can be instantiated', function () {
-    $policy = new OauthAccessTokenPolicy();
+    $policy = new OauthAccessTokenPolicy;
     Assert::assertInstanceOf(OauthAccessTokenPolicy::class, $policy);
 });
 
 test('OauthAuthCodePolicy can be instantiated', function () {
-    $policy = new OauthAuthCodePolicy();
+    $policy = new OauthAuthCodePolicy;
     Assert::assertInstanceOf(OauthAuthCodePolicy::class, $policy);
 });
 
 test('OauthRefreshTokenPolicy can be instantiated', function () {
-    $policy = new OauthRefreshTokenPolicy();
+    $policy = new OauthRefreshTokenPolicy;
     Assert::assertInstanceOf(OauthRefreshTokenPolicy::class, $policy);
 });
 
 test('OauthPersonalAccessClientPolicy can be instantiated', function () {
-    $policy = new OauthPersonalAccessClientPolicy();
+    $policy = new OauthPersonalAccessClientPolicy;
     Assert::assertInstanceOf(OauthPersonalAccessClientPolicy::class, $policy);
 });
 
 test('SocialiteUserPolicy can be instantiated', function () {
-    $policy = new SocialiteUserPolicy();
+    $policy = new SocialiteUserPolicy;
     Assert::assertInstanceOf(SocialiteUserPolicy::class, $policy);
 });
 
 test('SocialProviderPolicy can be instantiated', function () {
-    $policy = new SocialProviderPolicy();
+    $policy = new SocialProviderPolicy;
     Assert::assertInstanceOf(SocialProviderPolicy::class, $policy);
 });
 
 test('AuthenticationLogPolicy can be instantiated', function () {
-    $policy = new AuthenticationLogPolicy();
+    $policy = new AuthenticationLogPolicy;
     Assert::assertInstanceOf(AuthenticationLogPolicy::class, $policy);
 });
 
 test('AuthenticationPolicy can be instantiated', function () {
-    $policy = new AuthenticationPolicy();
+    $policy = new AuthenticationPolicy;
     Assert::assertInstanceOf(AuthenticationPolicy::class, $policy);
 });
 
 test('DevicePolicy can be instantiated', function () {
-    $policy = new DevicePolicy();
+    $policy = new DevicePolicy;
     Assert::assertInstanceOf(DevicePolicy::class, $policy);
 });
 
 test('DeviceProfilePolicy can be instantiated', function () {
-    $policy = new DeviceProfilePolicy();
+    $policy = new DeviceProfilePolicy;
     Assert::assertInstanceOf(DeviceProfilePolicy::class, $policy);
 });
 
 test('TeamInvitationPolicy can be instantiated', function () {
-    $policy = new TeamInvitationPolicy();
+    $policy = new TeamInvitationPolicy;
     Assert::assertInstanceOf(TeamInvitationPolicy::class, $policy);
 });
 
 test('TeamPermissionPolicy can be instantiated', function () {
-    $policy = new TeamPermissionPolicy();
+    $policy = new TeamPermissionPolicy;
     Assert::assertInstanceOf(TeamPermissionPolicy::class, $policy);
 });
 
 test('FeaturePolicy can be instantiated', function () {
-    $policy = new FeaturePolicy();
+    $policy = new FeaturePolicy;
     Assert::assertInstanceOf(FeaturePolicy::class, $policy);
 });
 
 test('ExtraPolicy can be instantiated', function () {
-    $policy = new ExtraPolicy();
+    $policy = new ExtraPolicy;
     Assert::assertInstanceOf(ExtraPolicy::class, $policy);
 });
 
 test('NotificationPolicy can be instantiated', function () {
-    $policy = new NotificationPolicy();
+    $policy = new NotificationPolicy;
     Assert::assertInstanceOf(NotificationPolicy::class, $policy);
 });

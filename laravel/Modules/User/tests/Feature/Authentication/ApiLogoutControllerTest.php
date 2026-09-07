@@ -30,12 +30,11 @@ beforeEach(function (): void {
     TestCase::$device = DeviceFactory::new()->createOne();
 
     $userKey = TestCase::requireUser()->getKey();
-    $userKeyStr = is_string($userKey) ? $userKey : '';
     $deviceKey = TestCase::requireDevice()->getKey();
-    $deviceKeyStr = is_string($deviceKey) ? $deviceKey : '';
+
     DeviceUser::query()->create([
-        'user_id' => $userKeyStr,
-        'device_id' => $deviceKeyStr,
+        'user_id' => (is_int($userKey) || is_string($userKey)) ? (string) $userKey : '',
+        'device_id' => (is_int($deviceKey) || is_string($deviceKey)) ? (string) $deviceKey : '',
         'login_at' => now()->subHour(),
         'logout_at' => null,
     ]);
@@ -45,6 +44,8 @@ describe('Api Logout Controller', function (): void {
     test('api logout revokes current personal access token and marks device logout time', function (): void {
         /** @var TestCase $this */
         $user = TestCase::requireUser();
+        $userKey = $user->getKey();
+        $userKeyString = (is_int($userKey) || is_string($userKey)) ? (string) $userKey : '';
         $privateKey = storage_path('oauth-private.key');
         $publicKey = storage_path('oauth-public.key');
 
@@ -67,19 +68,16 @@ describe('Api Logout Controller', function (): void {
         $accessTokenModel = $user->tokens()->latest('id')->first();
         Assert::assertNotNull($accessTokenModel);
 
-        $userId = $user->getKey();
-        $userIdString = is_string($userId) ? $userId : (string) ($userId ?? '');
-
         Assert::assertTrue(DB::connection('user')->table('oauth_access_tokens')->where('id', $accessTokenModel->getKey())->exists());
-        Assert::assertTrue(DeviceUser::query()->where('user_id', $userIdString)->whereNull('logout_at')->exists());
+        Assert::assertTrue(DeviceUser::query()->where('user_id', $userKeyString)->whereNull('logout_at')->exists());
         $response = $this->withHeader('Authorization', 'Bearer '.$tokenResult->accessToken)
             ->getJson('/api/v2/logout');
 
         $response->assertOk()
             ->assertJsonPath('message', 'Successfully logged out.')
-            ->assertJsonPath('data.user_id', $userIdString);
+            ->assertJsonPath('data.user_id', $userKeyString);
 
         Assert::assertSame(1, DB::connection('user')->table('oauth_access_tokens')->where('id', $accessTokenModel->getKey())->value('revoked'));
-        Assert::assertTrue(DeviceUser::query()->where('user_id', $userIdString)->whereNotNull('logout_at')->exists());
+        Assert::assertTrue(DeviceUser::query()->where('user_id', $userKeyString)->whereNotNull('logout_at')->exists());
     });
 });

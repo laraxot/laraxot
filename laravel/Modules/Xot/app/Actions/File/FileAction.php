@@ -340,7 +340,10 @@ class FileAction
                 'filename' => $filename,
                 'msg' => 'Filename not Exists',
             ];
-            /** @phpstan-ignore-next-line */
+            // Debug context: heterogeneous payload for dddx() Laravel debug helper
+            // (raw array with mixed values). The @var below silences the type
+            // check since dddx() accepts any PHP type.
+            /** @var array<string, mixed> $msg */
             dddx($msg);
             // dddx('non esiste '.); //4 debug
         }

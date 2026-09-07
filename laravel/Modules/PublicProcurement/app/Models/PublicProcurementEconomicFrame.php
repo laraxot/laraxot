@@ -6,15 +6,12 @@ namespace Modules\PublicProcurement\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementEconomicFrameFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementEconomicFrame extends XotBaseModel
+final class PublicProcurementEconomicFrame extends BaseModel
 {
     /**
  * @method static PublicProcurementEconomicFrameFactory factory($count = null, $state = [])
  */
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementEconomicFrameFactory
     {

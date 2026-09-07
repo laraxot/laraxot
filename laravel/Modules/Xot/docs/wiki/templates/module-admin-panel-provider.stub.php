@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Modules\\{Module}\\Providers\\Filament;
+namespace Modules\Xot\Providers\Filament;
 
-use Modules\\Xot\\Providers\\Filament\\XotBasePanelProvider;
+use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
 class AdminPanelProvider extends XotBasePanelProvider
 {
-    protected string $module = '{Module}';
+    protected string $module = 'Xot';
 }

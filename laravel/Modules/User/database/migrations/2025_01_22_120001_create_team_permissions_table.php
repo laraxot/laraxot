@@ -6,7 +6,8 @@ use Illuminate\Database\Schema\Blueprint;
 use Modules\User\Models\TeamPermission;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends XotBaseMigration {
+return new class extends XotBaseMigration
+{
     protected ?string $model_class = TeamPermission::class;
 
     /**

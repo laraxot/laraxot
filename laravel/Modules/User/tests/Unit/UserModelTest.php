@@ -64,7 +64,7 @@ describe('User Model', function (): void {
 
     test('has profile relationship in memory', function (): void {
         $user = stubUser();
-        $profile = new Profile();
+        $profile = new Profile;
         $profile->forceFill(['user_id' => 'test-user-id']);
         $user->setRelation('profile', $profile);
 
@@ -73,21 +73,21 @@ describe('User Model', function (): void {
 
     test('can attach authentication logs in memory', function (): void {
         $user = stubUser();
-        $log = new AuthenticationLog();
+        $log = new AuthenticationLog;
         $user->setRelation('authentications', collect([$log]));
         Assert::assertCount(1, $user->authentications);
     });
 
     test('can expose owned teams relation when preset', function (): void {
         $user = stubUser();
-        $team = new Team();
+        $team = new Team;
         $user->setRelation('ownedTeams', collect([$team]));
         Assert::assertCount(1, $user->ownedTeams);
     });
 
     test('can expose teams relation when preset', function (): void {
         $user = stubUser();
-        $team = new Team();
+        $team = new Team;
         $user->setRelation('teams', collect([$team]));
         Assert::assertCount(1, $user->teams);
     });
@@ -184,7 +184,7 @@ describe('User Model', function (): void {
 
     test('can own teams in memory', function (): void {
         $user = stubUser();
-        $team = new Team();
+        $team = new Team;
         $team->forceFill(['user_id' => $user->id]);
         $user->setRelation('ownedTeams', collect([$team]));
 

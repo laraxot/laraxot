@@ -7,8 +7,6 @@ namespace Modules\Catalog\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Catalog\Database\Factories\ProductFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -22,9 +20,8 @@ use Modules\Xot\Models\XotBaseModel;
  * @property int|null $catalog_measure_unit_id
  * @property int|null $catalog_frequency_id
  */
-final class Product extends XotBaseModel
+final class Product extends BaseModel
 {
-    use HasXotFactory;
     use SoftDeletes;
 
     protected $table = 'products';

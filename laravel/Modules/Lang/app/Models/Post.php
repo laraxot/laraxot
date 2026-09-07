@@ -11,7 +11,6 @@ use Illuminate\Support\Carbon;
 // use Laravel\Scout\Searchable;
 use Illuminate\Support\Str;
 use Modules\Xot\Contracts\ProfileContract;
-use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Traits\Updater;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -109,7 +108,6 @@ use Spatie\Sluggable\SlugOptions;
 class Post extends BaseModel
 {
     use HasSlug;
-    use HasXotFactory;
 
     // use Cachable;
     use Updater;

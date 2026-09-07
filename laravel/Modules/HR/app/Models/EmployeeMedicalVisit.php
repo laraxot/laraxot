@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Document\Models\Media;
 use Modules\HR\Database\Factories\EmployeeMedicalVisitFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -22,7 +21,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $updated_at
  * @property Media|null $media
  */
-final class EmployeeMedicalVisit extends XotBaseModel
+final class EmployeeMedicalVisit extends BaseModel
 {
 
     protected $table = 'employee_medical_visits';

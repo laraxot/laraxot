@@ -13,8 +13,6 @@ use Modules\Compliance\Database\Factories\HeatingSystemFactory;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -29,9 +27,8 @@ use Modules\Xot\Models\XotBaseModel;
  * @property string|null $notes
  * @property bool $is_active
  */
-final class HeatingSystem extends XotBaseModel
+final class HeatingSystem extends BaseModel
 {
-    use HasXotFactory;
     use SoftDeletes;
 
     protected static function newFactory(): HeatingSystemFactory

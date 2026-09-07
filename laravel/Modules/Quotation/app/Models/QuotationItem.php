@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Catalog\Models\Product;
 use Modules\Quotation\Database\Factories\QuotationItemFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -27,7 +26,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class QuotationItem extends BaseModel
 {
-    use HasXotFactory;
 
     protected $table = 'quotation_items';
 

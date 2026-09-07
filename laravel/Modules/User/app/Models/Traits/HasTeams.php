@@ -162,11 +162,9 @@ trait HasTeams
     {
         // teamUsers are Membership objects, we need to extract the User models
         /** @var Collection<int, User> $users */
-        $users = $this->teamUsers->map(static function ($membership) {
+        $users = $this->teamUsers->map(static function (TeamUser $membership): ?User {
             // Membership always extends Model, check only if user attribute exists
-            $user = $membership->getAttribute('user');
-
-            return $user !== null ? $user : null;
+            return $membership->user;
         })->filter();
 
         $owner = $this->owner;
@@ -184,7 +182,7 @@ trait HasTeams
      */
     public function allTeamUsers(): Collection // @phpstan-ignore return.type
     {/** @var Collection<int, mixed> $teams */
-        $teams = $this->membershipTeams; // @phpstan-ignore property.nonObject
+            $teams = $this->membershipTeams; // @phpstan-ignore property.nonObject
         /** @var Collection<int, User> $result */
         $result = $teams->flatMap( // @phpstan-ignore argument.type
             /** @param mixed $team @return array<int,User>|Collection<int,User> */
@@ -204,9 +202,9 @@ trait HasTeams
     public function hasTeamMember(XotUserContract $user): bool
     {
         // Check if user is in teamUsers (checking by key since Membership != UserContract)
-        $userFound = $this->teamUsers->first(static function ($membership) use ($user) {
+        $userFound = $this->teamUsers->first(static function (TeamUser $membership) use ($user): bool {
             // Membership always extends Model
-            $memberUser = $membership->getAttribute('user');
+            $memberUser = $membership->user;
             if ($memberUser instanceof Model) {
                 $memberUserKey = $memberUser->getKey();
 

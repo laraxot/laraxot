@@ -6,7 +6,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Modules\User\Models\TeamPermission;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class() extends XotBaseMigration
+return new class extends XotBaseMigration
 {
     protected ?string $model_class = TeamPermission::class;
 
@@ -108,6 +108,8 @@ return new class() extends XotBaseMigration
             return false;
         }
 
-        return is_int($result->count) ? $result->count > 0 : false;
+        $count = $result->count;
+
+        return is_numeric($count) && ((int) $count) > 0;
     }
 };

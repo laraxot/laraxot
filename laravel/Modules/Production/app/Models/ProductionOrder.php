@@ -10,7 +10,6 @@ use Illuminate\Support\Carbon;
 use Modules\Catalog\Models\Product;
 use Modules\Production\Database\Factories\ProductionOrderFactory;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -24,7 +23,7 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static ProductionOrderFactory factory($count = null, $state = [])
  */
-final class ProductionOrder extends XotBaseModel
+final class ProductionOrder extends BaseModel
 {
 
     protected $table = 'production_orders';

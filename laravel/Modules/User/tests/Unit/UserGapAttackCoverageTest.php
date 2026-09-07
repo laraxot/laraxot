@@ -200,7 +200,7 @@ describe('User gap attack — highest miss files', function (): void {
         Hash::shouldReceive('check')->andReturn(true);
         Hash::shouldReceive('needsRehash')->andReturn(false);
 
-        $user = new UserGapBaseUserProbe();
+        $user = new UserGapBaseUserProbe;
         $user->setRawAttributes([
             'id' => 1,
             'name' => 'Test',

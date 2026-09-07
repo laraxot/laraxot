@@ -23,7 +23,7 @@ uses(TestCase::class);
  */
 function createPersistedTenant(array $overrides = []): Tenant
 {
-    $tenant = new Tenant();
+    $tenant = new Tenant;
     $tenant->incrementing = false;
     $tenant->setKeyType('string');
 

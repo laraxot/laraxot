@@ -22,7 +22,7 @@ class SendOtpAction extends XotBaseAction
             ->action(function (User $record): void {
                 // User already implements UserContract, no need for assertion
                 $action = app(SendOtpByUserAction::class);
-                if (null === $action) {
+                if ($action === null) {
                     throw new \RuntimeException('Impossibile istanziare SendOtpByUserAction');
                 }
                 // PHPStan Level 10: User extends BaseUser which implements UserContract
@@ -30,8 +30,8 @@ class SendOtpAction extends XotBaseAction
             })
             ->requiresConfirmation()
             ->modalHeading(trans('user::otp.actions.send_otp'))
-            ->modalSubheading(trans('user::otp.actions.confirm_otp'))
-            ->modalButton(trans('user::otp.actions.yes_send_otp'));
+            ->modalDescription(trans('user::otp.actions.confirm_otp'))
+            ->modalSubmitActionLabel(trans('user::otp.actions.yes_send_otp'));
     }
 
     /**

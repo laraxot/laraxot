@@ -46,7 +46,7 @@ test('password data can be created with custom parameters', function (): void {
 });
 
 test('password data has default values', function (): void {
-    $defaultPasswordData = new PasswordData();
+    $defaultPasswordData = new PasswordData;
 
     Assert::assertSame(5, $defaultPasswordData->otp_expiration_minutes);
     Assert::assertSame(6, $defaultPasswordData->otp_length);
@@ -109,12 +109,12 @@ test('password data has correct types', function (): void {
     foreach ($typeExpectations as $propertyName => $expectedType) {
         $property = $reflection->getProperty($propertyName);
         $type = $property->getType();
-        Assert::assertInstanceOf(\ReflectionNamedType::class, $type);
+        Assert::assertInstanceOf(ReflectionNamedType::class, $type);
         Assert::assertSame($expectedType, $type->getName());
     }
 
     $failMessageType = $reflection->getProperty('failMessage')->getType();
-    Assert::assertInstanceOf(\ReflectionNamedType::class, $failMessageType);
+    Assert::assertInstanceOf(ReflectionNamedType::class, $failMessageType);
     Assert::assertTrue($failMessageType->allowsNull());
 });
 
@@ -129,14 +129,14 @@ test('password data has correct constructor parameters', function (): void {
 
     Assert::assertSame('otp_expiration_minutes', $parameters[0]->getName());
     $otpExpirationType = $parameters[0]->getType();
-    Assert::assertInstanceOf(\ReflectionNamedType::class, $otpExpirationType);
+    Assert::assertInstanceOf(ReflectionNamedType::class, $otpExpirationType);
     Assert::assertSame('int', $otpExpirationType->getName());
     Assert::assertTrue($parameters[0]->isOptional());
     Assert::assertSame(5, $parameters[0]->getDefaultValue());
 
     Assert::assertSame('otp_length', $parameters[1]->getName());
     $otpLengthType = $parameters[1]->getType();
-    Assert::assertInstanceOf(\ReflectionNamedType::class, $otpLengthType);
+    Assert::assertInstanceOf(ReflectionNamedType::class, $otpLengthType);
     Assert::assertSame('int', $otpLengthType->getName());
     Assert::assertTrue($parameters[1]->isOptional());
     Assert::assertSame(6, $parameters[1]->getDefaultValue());

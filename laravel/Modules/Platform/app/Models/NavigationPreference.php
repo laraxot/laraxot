@@ -6,7 +6,6 @@ namespace Modules\Platform\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\User\Models\User;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * Runtime on/off state for a single navigation node (module, group or menu item).
@@ -19,7 +18,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property bool $is_enabled
  * @property string|null $updated_by_user_id
  */
-final class NavigationPreference extends XotBaseModel
+final class NavigationPreference extends BaseModel
 {
     protected $table = 'navigation_preferences';
 

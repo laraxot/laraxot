@@ -19,7 +19,10 @@ function getUserMigrationFiles(): array
     $result = [];
 
     foreach ($files as $file) {
-        $result[] = is_string($file) ? $file : '';
+        if (! is_string($file)) {
+            continue;
+        }
+        $result[] = $file;
     }
 
     sort($result);
@@ -43,7 +46,7 @@ it('has valid php syntax in user migrations', function (): void {
 
         exec('php -l '.escapeshellarg($migrationFile), $output, $exitCode);
         /** @var list<string> $output */
-        $outputLines = array_map(static fn (mixed $line): string => is_string($line) ? $line : '', $output);
+        $outputLines = array_map(static fn (mixed $line): string => (string) $line, $output);
         Assert::assertSame(0, $exitCode, implode(PHP_EOL, $outputLines));
     }
 });

@@ -26,7 +26,11 @@ trait HasSocialite
 
         $res = $socialiteUser->{$field};
 
-        return is_string($res) ? $res : '';
+        if (\is_scalar($res) || $res instanceof \Stringable) {
+            return (string) $res;
+        }
+
+        throw new \Exception(\sprintf('SocialiteUser field "%s" is not stringable', $field));
     }
 
     public function canAccessSocialite(): bool

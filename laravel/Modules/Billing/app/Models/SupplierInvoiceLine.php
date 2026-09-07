@@ -20,7 +20,7 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static \Modules\Billing\Database\Factories\SupplierInvoiceLineFactory factory($count = null, $state = [])
  */
-final class SupplierInvoiceLine extends XotBaseModel
+final class SupplierInvoiceLine extends BaseModel
 {
     protected $table = 'supplier_invoice_lines';
 

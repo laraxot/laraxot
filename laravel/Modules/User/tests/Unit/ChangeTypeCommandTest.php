@@ -12,7 +12,7 @@ uses(TestCase::class);
 
 function changeTypeCommandInstance(): ChangeTypeCommand
 {
-    return new ChangeTypeCommand();
+    return new ChangeTypeCommand;
 }
 
 test('change type command can be instantiated', function (): void {
@@ -47,7 +47,7 @@ test('change type command handle method is public void', function (): void {
     $returnType = $handleMethod->getReturnType();
 
     Assert::assertTrue($handleMethod->isPublic());
-    Assert::assertInstanceOf(\ReflectionNamedType::class, $returnType);
+    Assert::assertInstanceOf(ReflectionNamedType::class, $returnType);
     Assert::assertSame('void', $returnType->getName());
 });
 

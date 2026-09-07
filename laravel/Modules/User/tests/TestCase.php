@@ -396,16 +396,16 @@ abstract class TestCase extends XotBaseTestCase
 
     public static function permissionRolePivotTable(): string
     {
-        $table = config('permission.table_names.model_has_roles');
+        $value = config('permission.table_names.model_has_roles', 'model_has_role');
 
-        return is_string($table) ? $table : 'model_has_role';
+        return is_string($value) ? $value : 'model_has_role';
     }
 
     public static function permissionPivotTable(): string
     {
-        $table = config('permission.table_names.model_has_permissions');
+        $value = config('permission.table_names.model_has_permissions', 'model_has_permission');
 
-        return is_string($table) ? $table : 'model_has_permission';
+        return is_string($value) ? $value : 'model_has_permission';
     }
 
     /**
@@ -570,7 +570,7 @@ abstract class TestCase extends XotBaseTestCase
             'role' => 'member',
         ], $attributes);
 
-        $invitation = new TeamInvitation();
+        $invitation = new TeamInvitation;
         $invitation->forceFill($payload);
         $invitation->save();
 

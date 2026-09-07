@@ -97,3 +97,22 @@ vendor/bin/phpstan analyse Modules/Intervention
 - XOT-18.5: Intervention module PHPStan Level 10 fix
 - Filament v5.0 API migration
 - Laravel type safety initiative
+
+## HasXotFactory runtime verification + unused import cleanup
+
+Confirmed `Intervention extends BaseModel extends XotBaseModel`, no local
+`use HasXotFactory;` (already removed in commit `2fc1c1b`). Given today's
+5 distinct `HasXotFactory`-related runtime regressions elsewhere in the
+repo (silent, PHPStan-invisible — PHP discards excess positional args on
+undeclared params instead of erroring), verified with a real runtime call
+rather than trusting a clean PHPStan run alone:
+
+```
+Intervention::factory() => Modules\Intervention\Database\Factories\InterventionFactory
+```
+
+Resolves correctly via the inherited trait. Also removed an orphaned
+`use Modules\Intervention\Database\Factories\InterventionFactory;` import
+(no other reference in the file). `phpstan analyse Modules/Intervention`:
+0 errors. Story:
+`docs/stories/intervention-hasxotfactory-runtime-verification.story.md`.

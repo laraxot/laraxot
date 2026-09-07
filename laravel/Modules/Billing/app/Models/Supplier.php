@@ -22,7 +22,7 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static \Modules\Billing\Database\Factories\SupplierFactory factory($count = null, $state = [])
  */
-final class Supplier extends XotBaseModel
+final class Supplier extends BaseModel
 {
     use SoftDeletes;
 

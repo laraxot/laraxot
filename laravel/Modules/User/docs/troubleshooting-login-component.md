@@ -57,7 +57,7 @@ The POST method is not supported for route it/auth/login. Supported methods: GET
 **Errore:** `Livewire\Exceptions\ComponentNotFoundException: Unable to find component: [filament.auth.pages.login]`
 
 **Contesto:**
-- Laravel 13.30.1
+- Laravel 12.30.1
 - PHP 8.3.25
 - Filament 3.x
 - Livewire 3.x

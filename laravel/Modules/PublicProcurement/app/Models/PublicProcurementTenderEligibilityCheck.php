@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementTenderEligibilityCheckFactory;
 use Modules\User\Models\User;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -22,9 +20,8 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static PublicProcurementTenderEligibilityCheckFactory factory($count = null, $state = [])
  */
-final class PublicProcurementTenderEligibilityCheck extends XotBaseModel
+final class PublicProcurementTenderEligibilityCheck extends BaseModel
 {
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementTenderEligibilityCheckFactory
     {

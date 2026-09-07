@@ -52,19 +52,33 @@ trait HasPassportConfiguration
         $config = Config::get('user.passport.tokens', []);
         Assert::isArray($config);
 
-        $accessToken = $config['access_token'] ?? 15;
-        $refreshToken = $config['refresh_token'] ?? 30;
-        $personalAccessToken = $config['personal_access_token'] ?? 6;
-
         Passport::tokensExpireIn(
-            CarbonInterval::days(is_int($accessToken) ? $accessToken : 15)
+            CarbonInterval::days(self::toIntOrDefault($config['access_token'] ?? null, 15))
         );
         Passport::refreshTokensExpireIn(
-            CarbonInterval::days(is_int($refreshToken) ? $refreshToken : 30)
+            CarbonInterval::days(self::toIntOrDefault($config['refresh_token'] ?? null, 30))
         );
         Passport::personalAccessTokensExpireIn(
-            CarbonInterval::months(is_int($personalAccessToken) ? $personalAccessToken : 6)
+            CarbonInterval::months(self::toIntOrDefault($config['personal_access_token'] ?? null, 6))
         );
+    }
+
+    /**
+     * Narrows an untyped config value (mixed, from an `array<mixed>` config
+     * entry) to a real int, without a blind cast. Falls back to $default when
+     * the value is neither an int nor a numeric string/float.
+     */
+    private static function toIntOrDefault(mixed $value, int $default): int
+    {
+        if (\is_int($value)) {
+            return $value;
+        }
+
+        if (\is_numeric($value)) {
+            return (int) $value;
+        }
+
+        return $default;
     }
 
     /**

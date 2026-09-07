@@ -6,8 +6,6 @@ namespace Modules\Catalog\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -22,9 +20,8 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class MetelCatalog extends XotBaseModel
+final class MetelCatalog extends BaseModel
 {
-    use HasXotFactory;
 
     protected $table = 'metel_catalogs';
 

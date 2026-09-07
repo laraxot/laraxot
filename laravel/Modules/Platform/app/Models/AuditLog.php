@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\User\Models\User;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -25,7 +24,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property array<string,mixed>|null $before
  * @property array<string,mixed>|null $after
  */
-final class AuditLog extends XotBaseModel
+final class AuditLog extends BaseModel
 {
     protected $table = 'audit_logs';
 

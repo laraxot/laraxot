@@ -5,12 +5,9 @@ declare(strict_types=1);
 namespace Modules\Catalog\Models;
 
 use Modules\Catalog\Database\Factories\CatalogModelFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class CatalogModel extends XotBaseModel
+final class CatalogModel extends BaseModel
 {
-    use HasXotFactory;
 
     protected $table = 'catalog_models';
 

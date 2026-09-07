@@ -54,10 +54,10 @@ test('creates oauth client with defaults and user association', function (): voi
     Assert::assertFalse((bool) $client->personal_access_client);
     Assert::assertFalse((bool) $client->password_client);
     Assert::assertFalse((bool) $client->revoked);
-    Assert::assertSame((string) $client->user_id, is_string($user->id) ? $user->id : (string) $user->id);
+    Assert::assertSame((string) $client->user_id, (string) $user->id);
     Assert::assertNotNull($client->secret);
-    Assert::assertGreaterThanOrEqual(40, strlen(is_string($client->secret) ? $client->secret : ''));
-    Assert::assertTrue(DB::connection('user')->table('oauth_clients')->where('id', is_string($client->id) ? $client->id : (string) $client->id)->exists());
+    Assert::assertGreaterThanOrEqual(40, strlen((string) $client->secret));
+    Assert::assertTrue(DB::connection('user')->table('oauth_clients')->where('id', (string) $client->id)->exists());
 });
 
 test('creates generic oauth client with explicit flags and provider', function (): void {
@@ -118,7 +118,7 @@ test('regenerates client secret from model instance and client id', function ():
     $storedSecret = DB::connection('user')->table('oauth_clients')->where('id', $clientId)->value('secret');
 
     Assert::assertNotSame($secretFromId, $storedSecret);
-    Assert::assertTrue(Hash::check($secretFromId, (string) $storedSecret));
+    Assert::assertTrue(Hash::check($secretFromId, is_string($storedSecret) ? $storedSecret : ''));
 });
 
 test('revokes refresh token and returns false for missing token', function (): void {

@@ -6,9 +6,8 @@ namespace Modules\Compliance\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Models\XotBaseModel;
 
-final class WorkOrderReadinessItem extends XotBaseModel
+final class WorkOrderReadinessItem extends BaseModel
 {
     protected $table = 'work_order_readiness_items';
 

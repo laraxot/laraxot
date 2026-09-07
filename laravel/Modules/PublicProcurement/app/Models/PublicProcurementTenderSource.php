@@ -7,15 +7,12 @@ namespace Modules\PublicProcurement\Models;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementTenderSourceFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementTenderSource extends XotBaseModel
+final class PublicProcurementTenderSource extends BaseModel
 {
     /**
  * @method static PublicProcurementTenderSourceFactory factory($count = null, $state = [])
  */
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementTenderSourceFactory
     {

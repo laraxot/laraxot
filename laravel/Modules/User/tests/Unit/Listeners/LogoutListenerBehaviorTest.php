@@ -63,7 +63,7 @@ describe('LogoutListener behavior', function (): void {
     test('forgetRememberTokens catches errors for BaseUser without DB', function (): void {
         Log::shouldReceive('error')->atLeast()->once();
 
-        $user = new TestBaseUser();
+        $user = new TestBaseUser;
         $user->forceFill(['id' => 'logout-user-1']);
 
         $listener = new LogoutListener(Request::create('/'));

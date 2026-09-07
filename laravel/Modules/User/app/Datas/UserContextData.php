@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Datas;
 
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Spatie\LaravelData\Data;
 
 /**
@@ -24,18 +25,26 @@ class UserContextData extends Data
 
     public static function fromUserModel(object $userModel): self
     {
-        $userIdValue = property_exists($userModel, 'id') ? $userModel->id : null;
-        $userId = is_string($userIdValue) ? $userIdValue : null;
+        // property_exists() è sempre false sugli attributi Eloquent (magic, in $attributes):
+        // isset() passa da __isset() e vede l'attributo davvero valorizzato.
+        $rawId = $userModel->id ?? null;
+        $userId = $rawId !== null ? SafeStringCastAction::cast($rawId) : null;
 
         $roles = array_values(array_map(
-            static fn (mixed $role): string => is_string($role) ? $role : '',
+            static fn (mixed $role): string => SafeStringCastAction::cast($role),
             is_array($userModel->roles ?? null) ? $userModel->roles : [],
         ));
 
+        $rawEmail = $userModel->email ?? '';
+        $email = SafeStringCastAction::cast($rawEmail);
+
+        $rawRole = $userModel->role ?? '';
+        $isAdmin = ! empty($rawRole) && strtolower(SafeStringCastAction::cast($rawRole)) === 'admin';
+
         return new self(
             userId: $userId,
-            email: is_string($userModel->email ?? null) ? $userModel->email : '',
-            isAdministrator: ! empty($userModel->role) && strtolower(is_string($userModel->role) ? $userModel->role : '') === 'admin',
+            email: $email,
+            isAdministrator: $isAdmin,
             roles: $roles,
         );
     }

@@ -7,7 +7,6 @@ namespace Modules\Platform\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\User\Models\User;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -17,7 +16,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class PlatformSetting extends XotBaseModel
+final class PlatformSetting extends BaseModel
 {
     protected $table = 'platform_settings';
 

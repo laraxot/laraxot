@@ -50,18 +50,18 @@ test('can create permission with all fields', function (): void {
 });
 
 test('permission has connection attribute', function (): void {
-    Assert::assertSame('user', (new Permission())->getConnectionName());
+    Assert::assertSame('user', (new Permission)->getConnectionName());
 });
 
 test('permission has fillable attributes', function (): void {
-    $fillable = (new Permission())->getFillable();
+    $fillable = (new Permission)->getFillable();
 
     Assert::assertContains('name', $fillable);
     Assert::assertContains('guard_name', $fillable);
 });
 
 test('permission has casts', function (): void {
-    $casts = (new Permission())->getCasts();
+    $casts = (new Permission)->getCasts();
 
     Assert::assertArrayHasKey('id', $casts);
     Assert::assertSame('int', $casts['id']);
@@ -193,7 +193,7 @@ test('can find permissions by multiple criteria', function (): void {
 });
 
 test('permission has table name', function (): void {
-    Assert::assertNotSame('', (new Permission())->getTable());
+    Assert::assertNotSame('', (new Permission)->getTable());
 });
 
 test('permission can be deleted from database', function (): void {

@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\Catalog\Models\Product;
 use Modules\Inventory\Database\Factories\ProductUnitFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class ProductUnit extends XotBaseModel
+final class ProductUnit extends BaseModel
 {
 
     protected $table = 'product_units';

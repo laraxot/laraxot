@@ -18,7 +18,6 @@ use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\Models\Intervention;
 use Modules\PublicProcurement\Models\PublicProcurementContract;
 use Modules\WorkOrder\Database\Factories\WorkOrderFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -45,7 +44,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class WorkOrder extends BaseModel
 {
-    use HasXotFactory;
 
     use SoftDeletes;
 

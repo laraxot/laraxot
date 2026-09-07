@@ -233,7 +233,7 @@ test('it correctly manages team permissions', function (): void {
 
 test('it handles edge cases', function (): void {
     ['user' => $user] = pestHasTeamsBootstrapFixture();
-    $newUser = new User();
+    $newUser = new User;
 
     Assert::assertFalse($newUser->belongsToTeams());
 

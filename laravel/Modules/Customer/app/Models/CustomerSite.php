@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Customer\Database\Factories\CustomerSiteFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -17,7 +16,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class CustomerSite extends BaseModel
 {
-    use HasXotFactory;
     use SoftDeletes;
 
     protected $table = 'customer_sites';

@@ -6,6 +6,7 @@ namespace Modules\User\Filament\Widgets\Auth;
 
 use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use Modules\User\Filament\Widgets\Auth\Schemas\UserForm;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 
@@ -46,11 +47,11 @@ class LoginWidget extends XotBaseSchemaWidget
             'password' => is_string($data['password'] ?? null) ? $data['password'] : '',
         ];
 
-        $remember = isset($data['remember']) && true === $data['remember'];
+        $remember = isset($data['remember']) && $data['remember'] === true;
 
         if (Auth::attempt($credentials, $remember)) {
             session()->regenerate();
-            $redirectUrl = \Illuminate\Support\Facades\Route::has('dashboard')
+            $redirectUrl = Route::has('dashboard')
                 ? route('dashboard')
                 : url('/'.app()->getLocale());
             $this->redirect($redirectUrl);

@@ -7,6 +7,7 @@ namespace Modules\User\Tests\Feature\Filament\Pages;
 use Filament\Facades\Filament;
 use Filament\Panel;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Illuminate\Support\Collection;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Enums\UserType;
@@ -32,7 +33,7 @@ beforeEach(function (): void {
     }
     Filament::setCurrentPanel($panel);
 
-    TestCase::$listUsersPage = new ListUsers();
+    TestCase::$listUsersPage = new ListUsers;
 
     $users = UserFactory::new()
         ->count(3)
@@ -63,7 +64,8 @@ describe('List Users', function (): void {
     test('list users page has correct table columns', function (): void {
         /** @var TestCase $this */
         $listUsersPage = TestCase::requireListUsersPage();
-        $columns = $listUsersPage->getTableColumns();
+        $table = $listUsersPage->table(Table::make($listUsersPage));
+        $columns = $table->getColumns();
 
         Assert::assertArrayHasKey('name', $columns);
         Assert::assertArrayHasKey('email', $columns);
@@ -80,7 +82,8 @@ describe('List Users', function (): void {
     test('list users page has correct table filters', function (): void {
         /** @var TestCase $this */
         $listUsersPage = TestCase::requireListUsersPage();
-        $filters = $listUsersPage->getTableFilters();
+        $table = $listUsersPage->table(Table::make($listUsersPage));
+        $filters = $table->getFilters();
 
         Assert::assertCount(0, $filters);
     });
@@ -88,11 +91,18 @@ describe('List Users', function (): void {
     test('list users page has correct table actions', function (): void {
         /** @var TestCase $this */
         $listUsersPage = TestCase::requireListUsersPage();
-        $actions = $listUsersPage->getTableActions();
+        $table = $listUsersPage->table(Table::make($listUsersPage));
+        $actions = $table->getRecordActions();
 
-        Assert::assertArrayHasKey('change_password', $actions);
+        $changePasswordAction = null;
+        foreach ($actions as $action) {
+            if ($action instanceof ChangePasswordAction) {
+                $changePasswordAction = $action;
 
-        $changePasswordAction = $actions['change_password'];
+                break;
+            }
+        }
+
         Assert::assertInstanceOf(ChangePasswordAction::class, $changePasswordAction);
     });
 
@@ -140,7 +150,8 @@ describe('List Users', function (): void {
     test('list users page can handle search', function (): void {
         /** @var TestCase $this */
         $listUsersPage = TestCase::requireListUsersPage();
-        $columns = $listUsersPage->getTableColumns();
+        $table = $listUsersPage->table(Table::make($listUsersPage));
+        $columns = $table->getColumns();
         $nameColumn = $columns['name'];
         $emailColumn = $columns['email'];
 

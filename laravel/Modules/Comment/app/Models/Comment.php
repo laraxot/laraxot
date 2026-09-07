@@ -32,7 +32,6 @@ use Modules\Comment\Models\Concerns\HasComments;
 use Modules\Comment\Models\Contracts\CanComment;
 use Modules\Comment\Models\Contracts\Commentable;
 use Modules\Comment\Models\Contracts\SupportsCommentNotifications;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -57,22 +56,19 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @method static Builder<Comment> approved()
  * @method static Builder<Comment> pending()
  */
-class Comment extends Model implements Commentable, SupportsCommentNotifications
+class Comment extends BaseModel implements Commentable, SupportsCommentNotifications
 {
     use HasComments;
-    use HasXotFactory;
-
-    protected $connection = 'comment';
 
     protected $guarded = [];
 
     /** @return array<string, string> */
     protected function casts(): array
     {
-        return [
+        return array_merge(parent::casts(), [
             'extra' => 'array',
             'approved_at' => 'datetime',
-        ];
+        ]);
     }
 
     public static function booted(): void

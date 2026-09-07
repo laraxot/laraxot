@@ -54,8 +54,11 @@ class RegisterController extends XotBaseController
 
         /** @var array<string, mixed> $input */
         $input = $request->all();
-        $password = $input['password'] ?? '';
-        $input['password'] = bcrypt(is_string($password) ? $password : '');
+        $password = $input['password'] ?? null;
+        if (! \is_string($password)) {
+            return $this->sendError('Validation Error.', ['password' => ['The password must be a string.']]);
+        }
+        $input['password'] = bcrypt($password);
         $user_class = XotData::make()->getUserClass();
         /** @var UserContract */
         $user = $user_class::create($input);

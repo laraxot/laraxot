@@ -9,7 +9,6 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\exec;
 use function Safe\file_get_contents;
-use Modules\User\Models\User;
 
 uses(TestCase::class);
 

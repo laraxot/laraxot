@@ -29,6 +29,7 @@ use Modules\Platform\Settings\SettingsRepository;
  */
 final class GetJobMarginsQuery
 {
+    /** @var string */
     public const HOURLY_LABOUR_COST_SETTING = 'accounting.hourly_labour_cost_cents';
 
     /**
@@ -37,6 +38,7 @@ final class GetJobMarginsQuery
      * deliberately not zero: costing labour at nothing makes every job look
      * profitable, which is a more expensive lie than an approximate rate.
      */
+    /** @var int */
     public const DEFAULT_HOURLY_LABOUR_COST_CENTS = 3000;
 
     public function __construct(

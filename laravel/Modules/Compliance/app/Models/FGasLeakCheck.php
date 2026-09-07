@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Modules\Compliance\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Modules\Xot\Models\XotBaseModel;
 
 /** One recorded leak check on a refrigerant circuit. */
-final class FGasLeakCheck extends XotBaseModel
+final class FGasLeakCheck extends BaseModel
 {
     protected $table = 'fgas_leak_checks';
 

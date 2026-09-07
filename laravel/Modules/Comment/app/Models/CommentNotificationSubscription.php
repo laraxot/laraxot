@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Comment\Database\Factories\CommentNotificationSubscriptionFactory;
 use Modules\Comment\Enums\NotificationSubscriptionType;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -22,32 +21,36 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
- * @property-read Model|null $commentable
- * @property-read Model|null $subscriber
+ * @property-read BaseMorphPivot|null $commentable
+ * @property-read BaseMorphPivot|null $subscriber
  *
  * @method static Builder<static> newModelQuery()
  * @method static Builder<static> newQuery()
  * @method static Builder<static> query()
  */
-class CommentNotificationSubscription extends Model
+class CommentNotificationSubscription extends BaseMorphPivot
 {
-    use HasXotFactory;
-
-    protected $connection = 'comment';
-
     protected $guarded = [];
 
     protected $casts = [
         'type' => NotificationSubscriptionType::class,
     ];
 
-    /** @return MorphTo<Model, $this> */
+    /**
+     * @return MorphTo<Model, $this>
+     *
+     * Polymorphic: can relate to any Eloquent model.
+     */
     public function commentable(): MorphTo
     {
         return $this->morphTo();
     }
 
-    /** @return MorphTo<Model, $this> */
+    /**
+     * @return MorphTo<Model, $this>
+     *
+     * Polymorphic: can relate to any Eloquent model.
+     */
     public function subscriber(): MorphTo
     {
         return $this->morphTo();

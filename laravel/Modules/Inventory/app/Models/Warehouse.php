@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Modules\Inventory\Database\Factories\WarehouseFactory;
 use Modules\Vehicle\Models\Vehicle;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -17,7 +16,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property bool $is_active
  * @property bool $is_final_destination
  */
-final class Warehouse extends XotBaseModel
+final class Warehouse extends BaseModel
 {
 
     protected $table = 'warehouses';

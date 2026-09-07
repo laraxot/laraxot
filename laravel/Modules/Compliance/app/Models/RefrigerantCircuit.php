@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Customer\Models\Customer;
-use Modules\Xot\Models\XotBaseModel;
 
 /** A sealed refrigerant circuit subject to the F-Gas leak-check regime. */
-final class RefrigerantCircuit extends XotBaseModel
+final class RefrigerantCircuit extends BaseModel
 {
     use SoftDeletes;
 

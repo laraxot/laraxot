@@ -29,106 +29,106 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 test('Notification model can be instantiated', function () {
-    $model = new Notification();
+    $model = new Notification;
     Assert::assertInstanceOf(Notification::class, $model);
 });
 
 test('OauthAccessToken model can be instantiated', function () {
-    $model = new OauthAccessToken();
+    $model = new OauthAccessToken;
     Assert::assertInstanceOf(OauthAccessToken::class, $model);
 });
 
 test('OauthClient model can be instantiated', function () {
-    $model = new OauthClient();
+    $model = new OauthClient;
     Assert::assertInstanceOf(OauthClient::class, $model);
 });
 
 test('OauthAuthCode model can be instantiated', function () {
-    $model = new OauthAuthCode();
+    $model = new OauthAuthCode;
     Assert::assertInstanceOf(OauthAuthCode::class, $model);
 });
 
 test('OauthRefreshToken model can be instantiated', function () {
-    $model = new OauthRefreshToken();
+    $model = new OauthRefreshToken;
     Assert::assertInstanceOf(OauthRefreshToken::class, $model);
 });
 
 test('OauthPersonalAccessClient model can be instantiated', function () {
-    $model = new OauthPersonalAccessClient();
+    $model = new OauthPersonalAccessClient;
     Assert::assertInstanceOf(OauthPersonalAccessClient::class, $model);
 });
 
 test('OauthToken model can be instantiated', function () {
-    $model = new OauthToken();
+    $model = new OauthToken;
     Assert::assertInstanceOf(OauthToken::class, $model);
 });
 
 test('OauthDeviceCode model can be instantiated', function () {
-    $model = new OauthDeviceCode();
+    $model = new OauthDeviceCode;
     Assert::assertInstanceOf(OauthDeviceCode::class, $model);
 });
 
 test('TeamPermission model can be instantiated', function () {
-    $model = new TeamPermission();
+    $model = new TeamPermission;
     Assert::assertInstanceOf(TeamPermission::class, $model);
 });
 
 test('TeamInvitation model can be instantiated', function () {
-    $model = new TeamInvitation();
+    $model = new TeamInvitation;
     Assert::assertInstanceOf(TeamInvitation::class, $model);
 });
 
 test('AuthenticationLog model can be instantiated', function () {
-    $model = new AuthenticationLog();
+    $model = new AuthenticationLog;
     Assert::assertInstanceOf(AuthenticationLog::class, $model);
 });
 
 test('Authentication model can be instantiated', function () {
-    $model = new Authentication();
+    $model = new Authentication;
     Assert::assertInstanceOf(Authentication::class, $model);
 });
 
 test('SocialiteUser model can be instantiated', function () {
-    $model = new SocialiteUser();
+    $model = new SocialiteUser;
     Assert::assertInstanceOf(SocialiteUser::class, $model);
 });
 
 test('SocialProvider model can be instantiated', function () {
-    $model = new SocialProvider();
+    $model = new SocialProvider;
     Assert::assertInstanceOf(SocialProvider::class, $model);
 });
 
 test('SsoProvider model can be instantiated', function () {
-    $model = new SsoProvider();
+    $model = new SsoProvider;
     Assert::assertInstanceOf(SsoProvider::class, $model);
 });
 
 test('Feature model can be instantiated', function () {
-    $model = new Feature();
+    $model = new Feature;
     Assert::assertInstanceOf(Feature::class, $model);
 });
 
 test('Extra model can be instantiated', function () {
-    $model = new Extra();
+    $model = new Extra;
     Assert::assertInstanceOf(Extra::class, $model);
 });
 
 test('Device model can be instantiated', function () {
-    $model = new Device();
+    $model = new Device;
     Assert::assertInstanceOf(Device::class, $model);
 });
 
 test('DeviceProfile model can be instantiated', function () {
-    $model = new DeviceProfile();
+    $model = new DeviceProfile;
     Assert::assertInstanceOf(DeviceProfile::class, $model);
 });
 
 test('DeviceUser model can be instantiated', function () {
-    $model = new DeviceUser();
+    $model = new DeviceUser;
     Assert::assertInstanceOf(DeviceUser::class, $model);
 });
 
 test('PasswordReset model can be instantiated', function () {
-    $model = new PasswordReset();
+    $model = new PasswordReset;
     Assert::assertInstanceOf(PasswordReset::class, $model);
 });

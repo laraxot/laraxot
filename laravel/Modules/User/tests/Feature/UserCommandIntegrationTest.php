@@ -16,7 +16,7 @@ uses(TestCase::class);
 beforeEach(function (): void {
     /* @var \Modules\User\Tests\TestCase $this */
     /* @var TestCase $this */
-    TestCase::$command = new ChangeTypeCommand();
+    TestCase::$command = new ChangeTypeCommand;
 });
 
 describe('User Command Integration', function (): void {
@@ -50,7 +50,7 @@ describe('User Command Integration', function (): void {
     test('integrates with illuminate support arr', function (): void {
         $testArray = ['a' => 1, 'b' => 2, 'c' => 3];
 
-        $result = Arr::mapWithKeys($testArray, fn ($value, $key) => [
+        $result = Arr::mapWithKeys($testArray, fn (int $value, string $key) => [
             $key.'_mapped' => $value * 2,
         ]);
         Assert::assertSame(2, $result['a_mapped']);
@@ -105,7 +105,7 @@ describe('User Command Integration', function (): void {
     });
 
     test('can work with type checking utilities', function (): void {
-        $testObject = new \stdClass();
+        $testObject = new \stdClass;
         $testObject->value = 'test';
         $testObject->getLabel = fn () => 'Test Label';
 
@@ -184,7 +184,7 @@ describe('User Command Integration', function (): void {
     });
 
     test('can handle object property access safely', function (): void {
-        $testObject = new \stdClass();
+        $testObject = new \stdClass;
         $testObject->testProperty = 'test_value';
 
         $objectData = (array) $testObject;

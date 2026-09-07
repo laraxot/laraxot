@@ -37,7 +37,7 @@ function passportWrapperConnectionName(string $wrapperClass): ?string
         }
     }
 
-    $instance = new $wrapperClass();
+    $instance = new $wrapperClass;
 
     if (! $instance instanceof Model) {
         return null;

@@ -57,7 +57,7 @@ class OauthAccessTokenResource extends XotBaseResource
                             return null;
                         }
                         $user = $record->user;
-                        if (null !== $user && method_exists($user, 'exists') && $user->exists) {
+                        if ($user !== null && method_exists($user, 'exists') && $user->exists) {
                             return UserResource::getUrl('view', ['record' => $user]);
                         }
 
@@ -76,7 +76,7 @@ class OauthAccessTokenResource extends XotBaseResource
                 TextColumn::make('scopes')
                     ->limit(30)
                     ->tooltip(function (mixed $state): ?string {
-                        if (null === $state) {
+                        if ($state === null) {
                             return null;
                         }
                         if (is_array($state)) {
@@ -129,8 +129,7 @@ class OauthAccessTokenResource extends XotBaseResource
                     ->action(function (mixed $record): void {
                         if ($record instanceof Model) {
                             $key = $record->getKey();
-                            $keyStr = is_string($key) ? $key : (string) ($key);
-                            if ($keyStr !== '' && app(RevokeTokenAction::class)->execute($keyStr)) {
+                            if ((is_int($key) || is_string($key)) && app(RevokeTokenAction::class)->execute((string) $key)) {
                                 Notification::make()
                                     ->title(static::trans('actions.revoke.success'))
                                     ->success()
@@ -141,7 +140,7 @@ class OauthAccessTokenResource extends XotBaseResource
                     ->visible(fn (mixed $record) => $record instanceof OauthAccessToken && ! $record->revoked),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 BulkAction::make('revoke_all_for_user')
                     ->icon('heroicon-o-x-circle')
                     ->color('danger')
@@ -183,7 +182,7 @@ class OauthAccessTokenResource extends XotBaseResource
                         return null;
                     }
                     $user = $record->user;
-                    if (null !== $user && method_exists($user, 'exists') && $user->exists) {
+                    if ($user !== null && method_exists($user, 'exists') && $user->exists) {
                         return UserResource::getUrl('view', ['record' => $user]);
                     }
 
@@ -202,7 +201,7 @@ class OauthAccessTokenResource extends XotBaseResource
             'scopes' => TextColumn::make('scopes')
                 ->limit(30)
                 ->tooltip(function (mixed $state): ?string {
-                    if (null === $state) {
+                    if ($state === null) {
                         return null;
                     }
                     if (is_array($state)) {
@@ -269,8 +268,7 @@ class OauthAccessTokenResource extends XotBaseResource
                 ->action(function (mixed $record): void {
                     if ($record instanceof Model) {
                         $key = $record->getKey();
-                        $keyStr = is_string($key) ? $key : (string) ($key ?? '');
-                        if (app(RevokeTokenAction::class)->execute($keyStr)) {
+                        if ((is_int($key) || is_string($key)) && app(RevokeTokenAction::class)->execute((string) $key)) {
                             Notification::make()
                                 ->title(static::trans('actions.revoke.success'))
                                 ->success()

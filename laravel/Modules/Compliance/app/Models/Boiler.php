@@ -8,7 +8,6 @@ use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -26,7 +25,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property CarbonInterface|null $next_efficiency_check_due_on
  * @property string|null $notes
  */
-final class Boiler extends XotBaseModel
+final class Boiler extends BaseModel
 {
     use SoftDeletes;
 

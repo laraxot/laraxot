@@ -15,7 +15,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-final class InvoiceWorkOrderLink extends XotBaseModel
+final class InvoiceWorkOrderLink extends BaseModel
 {
     protected $table = 'invoice_work_order_links';
 

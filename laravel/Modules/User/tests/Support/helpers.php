@@ -129,16 +129,16 @@ function skipUnlessUserTable(string $table, string $reason = ''): void
 
 function permissionRolePivotTable(): string
 {
-    $table = config('permission.table_names.model_has_roles');
+    $value = config('permission.table_names.model_has_roles', 'model_has_role');
 
-    return is_string($table) ? $table : 'model_has_role';
+    return is_string($value) ? $value : 'model_has_role';
 }
 
 function permissionPivotTable(): string
 {
-    $table = config('permission.table_names.model_has_permissions');
+    $value = config('permission.table_names.model_has_permissions', 'model_has_permission');
 
-    return is_string($table) ? $table : 'model_has_permission';
+    return is_string($value) ? $value : 'model_has_permission';
 }
 
 function skipUnlessUsersTableReady(string $reason = ''): void
@@ -317,7 +317,7 @@ function fakeSocialiteUser(string $email): Laravel\Socialite\Contracts\User
 
 function makeIsUserAllowedAction(): IsUserAllowedAction
 {
-    return new IsUserAllowedAction();
+    return new IsUserAllowedAction;
 }
 
 /**
@@ -423,7 +423,8 @@ function hasTeamsCurrentCreateTeam(User $user, array $attributes = []): Team
 function enableTwoFactorForUser(User $user, Google2FA $google2fa, array $attributes = []): array
 {
     $secret = (string) $google2fa->generateSecretKey();
-    $qrCode = $google2fa->getQRCodeUrl((string) config('app.name'), $user->email, $secret);
+    $appName = config('app.name');
+    $qrCode = $google2fa->getQRCodeUrl(is_string($appName) ? $appName : '', $user->email, $secret);
 
     $recoveryCodes = array_map(
         static fn (): string => substr(str_shuffle('0123456789ABCDEF'), 0, 10).'-'.substr(str_shuffle('0123456789ABCDEF'), 0, 10),
@@ -459,10 +460,8 @@ function verifyTwoFactorCode(User $user, Google2FA $google2fa, string $code): bo
         return false;
     }
 
-    $secret = decrypt($user->two_factor_secret);
-    if (! is_string($secret)) {
-        return false;
-    }
+    $decryptedSecret = decrypt($user->two_factor_secret);
+    $secret = is_string($decryptedSecret) ? $decryptedSecret : '';
 
     return $google2fa->verifyKey($secret, $code) !== false;
 }
@@ -481,13 +480,13 @@ function verifyTwoFactorRecoveryCode(User $user, string $code): bool
         return false;
     }
 
-    $decrypted = decrypt($user->two_factor_recovery_codes);
-    $codes = is_string($decrypted) ? json_decode($decrypted, true) : null;
+    $decryptedCodes = decrypt($user->two_factor_recovery_codes);
+    $codes = json_decode(is_string($decryptedCodes) ? $decryptedCodes : '', true);
     if (! is_array($codes)) {
         return false;
     }
 
-    $codes = array_values(array_filter($codes, static fn ($c): bool => $c !== $code));
+    $codes = array_values(array_filter($codes, static fn (mixed $c): bool => $c !== $code));
     $user->two_factor_recovery_codes = encrypt(json_encode($codes));
     $user->save();
 
@@ -503,8 +502,8 @@ function readStoredRecoveryCodes(User $user): array
         return [];
     }
 
-    $decrypted = decrypt($user->two_factor_recovery_codes);
-    $codes = is_string($decrypted) ? json_decode($decrypted, true) : null;
+    $decryptedCodes = decrypt($user->two_factor_recovery_codes);
+    $codes = json_decode(is_string($decryptedCodes) ? $decryptedCodes : '', true);
     if (! is_array($codes)) {
         return [];
     }

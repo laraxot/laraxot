@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\User\Models;
 
-use App\Support\AccountFeatures;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasName;
 use Filament\Models\Contracts\HasTenants;
@@ -27,6 +26,7 @@ use Illuminate\Support\Str;
 use Laravel\Passport\Contracts\OAuthenticatable;
 use Laravel\Passport\HasApiTokens;
 use Modules\User\Contracts\HasAuthentications;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\Traits\HasAuthenticationLogTrait;
 use Modules\User\Models\Traits\HasDevices;
 use Modules\User\Models\Traits\HasModules;
@@ -141,7 +141,9 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
         HasTeams::teams as membershipTeams;
     }
     use HasUuids;
+
     use HasXotFactory;
+
     use InteractsWithMedia;
     use Notifiable;
 
@@ -227,9 +229,14 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
 
     public function getProviderName(): string
     {
-        $provider = $this->getAttribute('provider') ?? config('auth.guards.api.provider', 'users');
+        $provider = $this->getAttribute('provider');
+        if (\is_string($provider) && '' !== $provider) {
+            return $provider;
+        }
 
-        return is_string($provider) ? $provider : 'users';
+        $configured = config('auth.guards.api.provider', 'users');
+
+        return \is_string($configured) ? $configured : 'users';
     }
 
     /*
@@ -245,17 +252,17 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
      */
     public function getFilamentName(): string
     {
-        $name = $this->getAttribute('name') ?? '';
-        $firstName = $this->getAttribute('first_name') ?? '';
-        $lastName = $this->getAttribute('last_name') ?? '';
+        $name = $this->name ?? '';
+        $firstName = $this->first_name ?? '';
+        $lastName = $this->last_name ?? '';
 
-        $fullName = trim(\sprintf('%s %s %s', is_string($name) ? $name : '', is_string($firstName) ? $firstName : '', is_string($lastName) ? $lastName : ''));
+        $fullName = trim(\sprintf('%s %s %s', $name, $firstName, $lastName));
 
         // Ensure we always return a non-empty string
         if (empty($fullName)) {
-            $email = $this->getAttribute('email') ?? '';
+            $email = $this->email ?? '';
 
-            return ! empty($email) && is_string($email) ? $email : 'User';
+            return ! empty($email) ? $email : 'User';
         }
 
         return $fullName;
@@ -316,15 +323,11 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
         if ($panel->getId() !== 'admin') {
             $role = $panel->getId();
 
-            // Matrice pannelli/ruoli del gestionale (config/account_features.php):
-            // copre i ruoli di dominio (timber_admin, wts_operator, …) senza richiedere
-            // un ruolo omonimo al panel id. I panel Laraxot usano id "{modulo}::admin":
-            // alla matrice va passata la chiave modulo. hasRole(panelId) resta come fallback.
-            $panelKey = str_contains($role, '::') ? (string) strtok($role, ':') : $role;
-            if (AccountFeatures::canAccessPanel($this, $panelKey)) {
-                return true;
-            }
-
+            // App\Support\AccountFeatures non e' mai esistita (ne' la classe ne'
+            // config/account_features.php): riferimento morto fin dal commit
+            // iniziale del modulo, causava un Error fatale a runtime su ogni
+            // pannello diverso da "admin". hasRole($role) resta l'unico controllo
+            // reale, come gia' documentato qui sopra come fallback.
             return $this->hasRole($role);
         }
 
@@ -354,7 +357,7 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
      */
     public function treeSons(): Collection
     {
-        return $this->membershipTeams ?? new Collection();
+        return $this->membershipTeams ?? new Collection;
     }
 
     /**

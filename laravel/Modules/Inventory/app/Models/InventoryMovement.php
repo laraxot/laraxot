@@ -12,7 +12,6 @@ use Modules\Intervention\Models\Intervention;
 use Modules\Inventory\Database\Factories\InventoryMovementFactory;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -28,7 +27,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $occurred_at
  * @property-read Product|null $product
  */
-final class InventoryMovement extends XotBaseModel
+final class InventoryMovement extends BaseModel
 {
 
     protected $table = 'inventory_movements';

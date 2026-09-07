@@ -34,11 +34,11 @@ class SocialiteUsersRelationManager extends XotBaseRelationManager
                 ->searchable(),
             'provider_avatar' => TextColumn::make('provider_avatar')
                 ->formatStateUsing(function (mixed $state): string {
-                    if ($state) {
+                    if (\is_scalar($state) && $state) {
                         /** @phpstan-var view-string $viewString */
                         $viewString = 'filament.components.avatar';
 
-                        return view($viewString, ['url' => is_string($state) ? $state : ''])->render();
+                        return view($viewString, ['url' => (string) $state])->render();
                     }
 
                     return 'No Avatar';

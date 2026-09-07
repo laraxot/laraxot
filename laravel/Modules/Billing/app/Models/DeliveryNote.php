@@ -25,7 +25,7 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static \Modules\Billing\Database\Factories\DeliveryNoteFactory factory($count = null, $state = [])
  */
-final class DeliveryNote extends XotBaseModel
+final class DeliveryNote extends BaseModel
 {
     use SoftDeletes;
 

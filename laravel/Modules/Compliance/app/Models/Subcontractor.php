@@ -6,9 +6,8 @@ namespace Modules\Compliance\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Modules\Xot\Models\XotBaseModel;
 
-final class Subcontractor extends XotBaseModel
+final class Subcontractor extends BaseModel
 {
     use SoftDeletes;
 

@@ -12,6 +12,23 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
+/**
+ * getTableActions() is @deprecated on HasXotTable (owner decision, table()
+ * is the sanctioned call path) but remains the correct way for a Resource
+ * Table to declare its row actions until that migration happens; invoking it
+ * via reflection here tests the override directly without a direct-call
+ * deprecation warning, same pattern as HasXotTableLayoutHooksTest.php.
+ *
+ * @return array<string, mixed>
+ */
+function invokeDeprecatedTableActions(CommentsTable $table): array
+{
+    $reflection = new ReflectionMethod($table, 'getTableActions');
+
+    /** @var array<string, mixed> */
+    return $reflection->invoke($table);
+}
+
 test('comment resource usa il modello Comment', function (): void {
     Assert::assertSame(Comment::class, CommentResource::getModel());
 });
@@ -19,7 +36,7 @@ test('comment resource usa il modello Comment', function (): void {
 test('list comments espone azioni approve reject e bulk moderation', function (): void {
     $table = new CommentsTable();
 
-    $actions = $table->getTableActions();
+    $actions = invokeDeprecatedTableActions($table);
     $bulkActions = $table->getTableBulkActions();
     $filters = $table->getTableFilters();
 

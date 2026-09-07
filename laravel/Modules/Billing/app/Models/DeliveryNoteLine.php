@@ -19,7 +19,7 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static \Modules\Billing\Database\Factories\DeliveryNoteLineFactory factory($count = null, $state = [])
  */
-final class DeliveryNoteLine extends XotBaseModel
+final class DeliveryNoteLine extends BaseModel
 {
     protected $table = 'delivery_note_lines';
 

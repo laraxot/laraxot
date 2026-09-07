@@ -9,9 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\HR\Database\Factories\EmployeeFactory;
 use Modules\User\Models\User;
-use Modules\Xot\Models\XotBaseModel;
 
-final class Employee extends XotBaseModel
+final class Employee extends BaseModel
 {
 
     use SoftDeletes;

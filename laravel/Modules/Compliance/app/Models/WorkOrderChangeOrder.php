@@ -11,7 +11,6 @@ use Modules\Compliance\Actions\EvaluateWorkOrderReadinessAction;
 use Modules\Document\Models\Media;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -31,7 +30,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
  */
-final class WorkOrderChangeOrder extends XotBaseModel
+final class WorkOrderChangeOrder extends BaseModel
 {
     use SoftDeletes;
 

@@ -28,14 +28,14 @@ beforeEach(function (): void {
 describe('Oauth Client', function (): void {
     test('oauth client can be instantiated', function (): void {
         /** @var TestCase $this */
-        $client = new OauthClient();
+        $client = new OauthClient;
 
         Assert::assertInstanceOf(OauthClient::class, $client);
         Assert::assertInstanceOf(Client::class, $client);
     });
 
     test('oauth client has connection user', function (): void {
-        $client = new OauthClient();
+        $client = new OauthClient;
 
         Assert::assertSame('user', $client->getConnectionName());
     });
@@ -43,7 +43,9 @@ describe('Oauth Client', function (): void {
     test('oauth client user relation uses xot data', function (): void {
         /** @var TestCase $this */
         $user = UserFactory::new()->createOne();
-        $client = TestCase::oauthClientTestPersistedClient(['user_id' => is_string($user->getKey()) ? $user->getKey() : (string) $user->getKey()]);
+        $userKey = $user->getKey();
+        $userKeyString = (is_int($userKey) || is_string($userKey)) ? (string) $userKey : '';
+        $client = TestCase::oauthClientTestPersistedClient(['user_id' => $userKeyString]);
 
         Assert::assertNotNull($client->user);
         Assert::assertSame($user->getKey(), $client->user->getKey());

@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Modules\User\Filament\Resources\PermissionResource;
+use Modules\User\Models\Permission;
 use Modules\User\Models\Role;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 use Webmozart\Assert\Assert;
@@ -93,7 +94,7 @@ class ListPermissions extends XotBaseListRecords
 
                         // Poi verifichiamo che il modello abbia il metodo roles() prima di chiamarlo
                         if (method_exists($record, 'roles')) {
-                            /** @var BelongsToMany<Role, \Modules\User\Models\Permission> $rolesRelation */
+                            /** @var BelongsToMany<Role, Permission> $rolesRelation */
                             $rolesRelation = $record->roles();
                             $roleData = $data['role'];
                             if (is_array($roleData) || is_int($roleData) || is_string($roleData)) {

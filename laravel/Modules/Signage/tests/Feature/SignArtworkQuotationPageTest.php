@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-uses(TestCase::class);
-
 use Illuminate\Http\Testing\File;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -22,6 +20,8 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 use Spatie\Permission\Models\Role;
+
+uses(TestCase::class);
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\Document\Models\Media;
 use Modules\HR\Database\Factories\EmployeeTrainingFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -23,7 +22,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property Carbon|null $updated_at
  * @property Media|null $media
  */
-final class EmployeeTraining extends XotBaseModel
+final class EmployeeTraining extends BaseModel
 {
 
     protected $table = 'employee_trainings';

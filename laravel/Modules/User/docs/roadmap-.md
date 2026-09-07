@@ -164,7 +164,7 @@ requiresPasswordChange()   // Security policy enforcement
 ## 🚨 **CURRENT CRITICAL ISSUES**
 
 ### **Issue #1: UUID Trait Conflict** ✅ RESOLVED
-**Resolution**: Temporarily disabled HasApiTokens, implemented Laravel 13 native UUID
+**Resolution**: Temporarily disabled HasApiTokens, implemented Laravel 12 native UUID
 **Impact**: Prevented system startup failures, maintained UUID functionality
 
 ### **Issue #2: Spatie Permission Caching**
@@ -194,7 +194,7 @@ requiresPasswordChange()   // Security policy enforcement
 // Solution: Custom HasPassportTokens trait
 
 // In BaseUser.php:
-use HasUuids;  // Laravel 13 native
+use HasUuids;  // Laravel 12 native
 use HasPassportTokens; // Custom bridge trait
 
 trait HasPassportTokens {
@@ -204,7 +204,7 @@ trait HasPassportTokens {
 
     public function initializeHasUniqueStringIds(): void
     {
-        // Bridge to Laravel 13 UUID system
+        // Bridge to Laravel 12 UUID system
         if (method_exists($this, 'initializeHasUuids')) {
             $this->initializeHasUuids();
         }
@@ -426,7 +426,7 @@ public function redirectToProvider(string $provider)
 
 ### **UUID Strategy Decision** ✅
 **Date**: 2026-01-02
-**Decision**: Use Laravel 13 native UUID with custom Passport bridge
+**Decision**: Use Laravel 12 native UUID with custom Passport bridge
 **Rationale**: Future-proof, consistent, maintainable approach
 
 ### **Permission Caching Decision**

@@ -32,10 +32,13 @@ final class BomResource extends GatedXotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-list-bullet';
 
+    /** @var string */
     protected const ACCOUNT_FEATURE_ADMIN = 'admin.bom';
 
+    /** @var null */
     protected const ACCOUNT_FEATURE_OPERATOR = null;
 
+    /** @var bool */
     protected const ACCOUNT_FEATURE_OPERATOR_DEFAULT = false;
 
     public static function getNavigationGroup(): string

@@ -11,8 +11,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Customer\Models\Customer;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementTenderOpportunityFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -40,9 +38,8 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static PublicProcurementTenderOpportunityFactory factory($count = null, $state = [])
  */
-final class PublicProcurementTenderOpportunity extends XotBaseModel
+final class PublicProcurementTenderOpportunity extends BaseModel
 {
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementTenderOpportunityFactory
     {

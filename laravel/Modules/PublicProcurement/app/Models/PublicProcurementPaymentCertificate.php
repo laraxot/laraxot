@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Billing\Models\Invoice;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementPaymentCertificateFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementPaymentCertificate extends XotBaseModel
+final class PublicProcurementPaymentCertificate extends BaseModel
 {
     /**
  * @method static PublicProcurementPaymentCertificateFactory factory($count = null, $state = [])
  */
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementPaymentCertificateFactory
     {

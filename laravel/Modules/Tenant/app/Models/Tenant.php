@@ -15,7 +15,6 @@ use Illuminate\Support\Str;
 use Modules\Tenant\Database\Factories\TenantFactory;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * Modello Tenant per la gestione multi-tenant dell'applicazione.
@@ -50,7 +49,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 class Tenant extends BaseModel
 {
-    use HasXotFactory;
 
     /**
      * Gli attributi che sono mass assignable.

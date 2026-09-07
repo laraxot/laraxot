@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementDocumentRequirementFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementDocumentRequirement extends XotBaseModel
+final class PublicProcurementDocumentRequirement extends BaseModel
 {
     /**
  * @method static PublicProcurementDocumentRequirementFactory factory($count = null, $state = [])
  */
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementDocumentRequirementFactory
     {

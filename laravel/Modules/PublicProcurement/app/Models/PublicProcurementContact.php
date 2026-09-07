@@ -7,15 +7,12 @@ namespace Modules\PublicProcurement\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementContactFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementContact extends XotBaseModel
+final class PublicProcurementContact extends BaseModel
 {
     /**
  * @method static PublicProcurementContactFactory factory($count = null, $state = [])
  */
-    use HasXotFactory;
     use SoftDeletes;
 
     protected $table = 'public_procurement_contacts';

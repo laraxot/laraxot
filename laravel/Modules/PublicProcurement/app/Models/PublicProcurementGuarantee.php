@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Document\Models\Media;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementGuaranteeFactory;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementGuarantee extends XotBaseModel
+final class PublicProcurementGuarantee extends BaseModel
 {
     /**
  * @method static PublicProcurementGuaranteeFactory factory($count = null, $state = [])
  */
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementGuaranteeFactory
     {

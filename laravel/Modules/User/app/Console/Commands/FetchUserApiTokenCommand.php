@@ -12,9 +12,9 @@ use Webmozart\Assert\Assert;
 
 class FetchUserApiTokenCommand extends Command
 {
-    private const INVALID_ENV = 1;
+    private const int INVALID_ENV = 1;
 
-    private const USER_NOT_FOUND = 2;
+    private const int USER_NOT_FOUND = 2;
 
     protected $signature = 'passport:fetch-user-token
                             {email : The email of the user to impersonate}';
@@ -39,7 +39,7 @@ class FetchUserApiTokenCommand extends Command
         /** @var UserContract */
         $user = XotData::make()->getUserByEmail($userEmail);
 
-        if (null === $user) {
+        if ($user === null) {
             $this->error('User not found!');
 
             return self::USER_NOT_FOUND;

@@ -70,7 +70,8 @@ class Reset extends Component
             },
         );
 
-        $response_lang = trans(is_string($response) ? $response : '');
+        Assert::string($response);
+        Assert::string($response_lang = trans($response));
 
         if ($response === Password::PASSWORD_RESET) {
             session()->flash($response_lang);

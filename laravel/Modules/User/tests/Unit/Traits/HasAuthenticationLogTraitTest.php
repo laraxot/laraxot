@@ -15,7 +15,7 @@ uses(TestCase::class);
  */
 function makeAuthenticationLogFor(User $user, array $attributes = []): AuthenticationLog
 {
-    $log = new AuthenticationLog();
+    $log = new AuthenticationLog;
     $log->forceFill(array_merge([
         'authenticatable_type' => $user->getMorphClass(),
         'authenticatable_id' => $user->getKey(),

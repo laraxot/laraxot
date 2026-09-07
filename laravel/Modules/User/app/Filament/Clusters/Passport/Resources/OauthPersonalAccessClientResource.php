@@ -62,8 +62,8 @@ final class OauthPersonalAccessClientResource extends XotBaseResource
         return $table
             ->columns(self::getTableColumns())
             ->filters(self::getTableFilters())
-            ->actions(self::getTableActions())
-            ->bulkActions(self::getTableBulkActions())
+            ->recordActions(self::getTableActions())
+            ->toolbarActions(self::getTableBulkActions())
             ->defaultSort('created_at', 'desc');
     }
 

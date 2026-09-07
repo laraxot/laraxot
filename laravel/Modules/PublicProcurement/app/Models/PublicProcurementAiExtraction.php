@@ -10,8 +10,6 @@ use Illuminate\Support\Carbon;
 use Modules\Document\Models\Media;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementAiExtractionFactory;
 use Modules\User\Models\User;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
 /**
  * @property int $id
@@ -29,9 +27,8 @@ use Modules\Xot\Models\XotBaseModel;
  *
  * @method static PublicProcurementAiExtractionFactory factory($count = null, $state = [])
  */
-final class PublicProcurementAiExtraction extends XotBaseModel
+final class PublicProcurementAiExtraction extends BaseModel
 {
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementAiExtractionFactory
     {

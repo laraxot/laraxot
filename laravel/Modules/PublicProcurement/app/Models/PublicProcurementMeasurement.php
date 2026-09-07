@@ -9,15 +9,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Intervention\Models\Intervention;
 use Modules\PublicProcurement\Database\Factories\PublicProcurementMeasurementFactory;
 use Modules\User\Models\User;
-use Modules\Xot\Models\Traits\HasXotFactory;
-use Modules\Xot\Models\XotBaseModel;
 
-final class PublicProcurementMeasurement extends XotBaseModel
+final class PublicProcurementMeasurement extends BaseModel
 {
     /**
  * @method static PublicProcurementMeasurementFactory factory($count = null, $state = [])
  */
-    use HasXotFactory;
 
     protected static function newFactory(): PublicProcurementMeasurementFactory
     {
