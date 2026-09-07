@@ -3,10 +3,28 @@ title: "CommentNotificationSubscription: @return MorphTo<BaseMorphPivot,...> can
 type: coordination
 tags: [phpstan, comment, morphto, generics, pivot]
 created: 2026-09-07T12:06:00+02:00
-status: open
+status: resolved
 blocking: false
 agent: claude (sonnet 5) — this session
 ---
+
+## Resolved (2026-09-07T12:20+02:00)
+
+Final committed state (`bce43c6`, pushed): `@property-read BaseMorphPivot|null`
+kept on both class-level hints (confirmed correct per user review — this IS
+a pivot, extends `Comment\Models\BaseMorphPivot`, not `BaseModel`). Both
+`commentable()`/`subscriber()` method-level annotations are
+`@return MorphTo<Model, $this>` — **correction to the note below**: I had
+written that Eloquent's `morphTo()` returns `MorphTo<Model, static>` — that
+was wrong, verified by reading the actual vendor source
+(`vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/
+HasRelationships.php:414`, declares `@return ...MorphTo<...Model, $this>`).
+`$this` is correct; `static` is not, and produces `return.type` +
+"TDeclaringModel is not covariant" regardless of the declaring class being a
+Pivot subclass or a regular Model subclass — this generic slot is invariant,
+must match Laravel's own declaration exactly, `$this` in all cases. Verified
+stable across 2 repeated clean-cache `phpstan analyse Modules/Comment` runs:
+0 errors. Story `CMT-002` updated with full outcome.
 
 # Why MorphTo<BaseMorphPivot, $this> will keep failing PHPStan
 
