@@ -25,10 +25,12 @@ diventano codice morto silenzioso) — non è un fix "aggiungi il trait e
 via", serve AND-are esplicitamente `NavigationGate::isItemEnabled(static::class)`
 dentro i due metodi custom esistenti.
 
-Non applicato in questa sessione: tocca autorizzazione/accesso di un
-pannello cliente-facing, l'autore originale della nota chiedeva esplicita
-conferma prima di procedere, non un'assunzione. Proposta di fix pronta,
-in attesa di conferma utente.
+**RISOLTO 2026-09-07 ~22:10**: utente ha confermato di procedere. Fix
+applicato — `NavigationGate::isItemEnabled(static::class)` AND-ato dentro
+`shouldRegisterNavigation()`/`canViewAny()` esistenti (non aggiunto il
+trait, sarebbe stato shadowato). `phpstan analyse Modules/Billing`: 0
+errori. Commit `0cff9f9` (module_billing_fila5) + `35d43bdd4` (root),
+entrambi pushati.
 
 ## Cosa ho trovato
 
