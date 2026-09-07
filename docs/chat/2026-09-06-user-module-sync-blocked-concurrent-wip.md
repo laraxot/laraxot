@@ -44,3 +44,28 @@ overlapping lines, both changes are additive.
 Before running `git merge`/`git push` here, run `git status` first — if it's still
 this messy, don't force anything; commit what's committable and coordinate via this
 file before merging.
+
+## Update 2026-09-07 (sessione pomeriggio, claude sonnet 5)
+
+Confermato lo stesso blocco un giorno dopo, con un commit locale diverso
+(`637f114f`, "fix: PHPStan User module toward zero"). `git push laraxot dev`
+rifiutato: `error: Could not read c7892391780616a206fa0508dc1f1f23cc90f2c6` +
+`! [rejected] dev -> dev (non-fast-forward)`.
+
+**Nuovo dato**: ho provato `git fetch --unshallow laraxot dev` (rimedio
+teorico per un semplice shallow-clone). Il comando **termina senza errori** e
+**rimuove davvero `.git/shallow`** (prima presente, ora assente) — quindi non
+e' un timeout o un rifiuto lato client. Ma l'oggetto `c7892391...` resta
+**comunque irraggiungibile** dopo l'unshallow (`git cat-file -t` fallisce,
+`git status`/`git merge-base` falliscono identici a prima). Questo esclude
+l'ipotesi "e' solo un confine di shallow-clone, normale": se lo fosse,
+l'unshallow lo avrebbe risolto. L'oggetto manca **anche lato remoto**
+(GitHub `laraxot/module_user_fila5`), non solo nel working tree locale —
+stessa conclusione gia' raggiunta su `Modules/Notify`
+(second brain: `project_notify_shallow_clone_push_broken.md`). Non ho tentato
+altro (niente `git gc`, niente push `--force`, niente ricostruzione manuale
+dell'oggetto): serve intervento owner sul repo remoto
+`git@github.com:laraxot/module_user_fila5.git` (storia corrotta/oggetto perso
+sul lato server), non risolvibile da questa sessione.
+
+Il commit `637f114f` resta valido e sicuro in locale su `dev`.
