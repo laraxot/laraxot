@@ -17,7 +17,7 @@ final class Refrigerant
     /**
      * @var array<string, int>
      */
-    private const GWP = [
+    private const array GWP = [
         'R23' => 14800,
         'R32' => 675,
         'R125' => 3500,

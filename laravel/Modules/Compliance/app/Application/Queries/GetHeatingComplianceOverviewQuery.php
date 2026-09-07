@@ -17,7 +17,7 @@ use Modules\Compliance\Models\Boiler;
 final class GetHeatingComplianceOverviewQuery
 {
     /** @var array<string, int> */
-    private const STATUS_RANK = ['overdue' => 0, 'expiring' => 1, 'ok' => 2, 'unknown' => 3];
+    private const array STATUS_RANK = ['overdue' => 0, 'expiring' => 1, 'ok' => 2, 'unknown' => 3];
 
     /**
      * @return list<HeatingComplianceRow>

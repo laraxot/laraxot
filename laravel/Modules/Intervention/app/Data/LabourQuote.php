@@ -13,13 +13,9 @@ namespace Modules\Intervention\Data;
  */
 final readonly class LabourQuote
 {
-    /** @var string */
-    /** @var string */
-    public const SURCHARGE_NIGHT = 'night';
+    public const string SURCHARGE_NIGHT = 'night';
 
-    /** @var string */
-    /** @var string */
-    public const SURCHARGE_WEEKEND = 'weekend';
+    public const string SURCHARGE_WEEKEND = 'weekend';
 
     public function __construct(
         public float $amount,

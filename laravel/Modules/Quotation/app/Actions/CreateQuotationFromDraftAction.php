@@ -19,8 +19,7 @@ final class CreateQuotationFromDraftAction
 {
     use QueueableAction;
 
-    /** @var float */
-    private const DEFAULT_TAX_PERCENT = 22.0;
+    private const float DEFAULT_TAX_PERCENT = 22.0;
 
     public function __construct(
         private readonly RecalculateQuotationTotalsAction $recalculate,

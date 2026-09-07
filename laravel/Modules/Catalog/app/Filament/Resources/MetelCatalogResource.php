@@ -18,11 +18,9 @@ final class MetelCatalogResource extends XotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-book-open';
 
-    /** @var string */
-    protected const ACCOUNT_FEATURE_ADMIN = 'admin.metel_catalogs';
+    protected const string ACCOUNT_FEATURE_ADMIN = 'admin.metel_catalogs';
 
-    /** @var string */
-    protected const ACCOUNT_FEATURE_OPERATOR = 'operator.metel_catalogs';
+    protected const string ACCOUNT_FEATURE_OPERATOR = 'operator.metel_catalogs';
 
     public static function getNavigationGroup(): string
     {

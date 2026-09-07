@@ -12,7 +12,7 @@ use InvalidArgumentException;
 final readonly class SiteSurveyAttachment
 {
     /** @var list<string> */
-    public const KINDS = ['photo', 'video', 'audio'];
+    public const array KINDS = ['photo', 'video', 'audio'];
 
     /**
      * @param  array<string, mixed>|null  $meta

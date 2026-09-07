@@ -12,14 +12,11 @@ use DateTimeImmutable;
  */
 final readonly class FGasObligation
 {
-    /** @var string */
-    public const EXEMPT_BELOW_THRESHOLD = 'below_threshold';
+    public const string EXEMPT_BELOW_THRESHOLD = 'below_threshold';
 
-    /** @var string */
-    public const EXEMPT_HERMETIC = 'hermetically_sealed';
+    public const string EXEMPT_HERMETIC = 'hermetically_sealed';
 
-    /** @var string */
-    public const UNKNOWN_REFRIGERANT = 'unknown_refrigerant';
+    public const string UNKNOWN_REFRIGERANT = 'unknown_refrigerant';
 
     public function __construct(
         public string $refrigerantCode,

@@ -21,7 +21,7 @@ final class ThermalPlantRegistry
      *
      * @var array<string, array{0: string, 1: string}>
      */
-    private const BY_REGION = [
+    private const array BY_REGION = [
         'lombardia' => ['curit', 'CURIT'],
         'emilia-romagna' => ['criter', 'CRITER'],
         'piemonte' => ['catasto-piemonte', 'Catasto impianti termici Piemonte'],

@@ -17,11 +17,9 @@ final class ProductResource extends XotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-cube';
 
-    /** @var string */
-    protected const ACCOUNT_FEATURE_ADMIN = 'admin.catalog';
+    protected const string ACCOUNT_FEATURE_ADMIN = 'admin.catalog';
 
-    /** @var string */
-    protected const ACCOUNT_FEATURE_OPERATOR = 'operator.catalog';
+    protected const string ACCOUNT_FEATURE_OPERATOR = 'operator.catalog';
 
     public static function getNavigationGroup(): string
     {
