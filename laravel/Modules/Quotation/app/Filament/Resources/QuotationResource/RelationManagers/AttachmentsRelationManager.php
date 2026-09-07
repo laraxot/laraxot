@@ -33,7 +33,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
      * Office, OpenOffice/LibreOffice, CSV/TXT, PDF and images.
      */
     /** @var list<string> */
-    private const ACCEPTED_MIME_TYPES = [
+    private const array ACCEPTED_MIME_TYPES = [
         'application/pdf',
         'application/msword',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',

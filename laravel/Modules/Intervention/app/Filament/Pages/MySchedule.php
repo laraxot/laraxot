@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\DailyNote;
 use Modules\Intervention\Models\Intervention;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\User\Models\User;
 use Modules\Xot\Filament\Pages\XotBasePage;
@@ -25,7 +24,6 @@ use Modules\Xot\Filament\Pages\XotBasePage;
  */
 final class MySchedule extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
 

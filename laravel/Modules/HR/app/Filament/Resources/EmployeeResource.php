@@ -37,11 +37,9 @@ final class EmployeeResource extends XotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-user-group';
 
-    /** @var string */
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.hr';
+    private const string ACCOUNT_FEATURE_ADMIN = 'admin.hr';
 
-    /** @var string */
-    private const ACCOUNT_FEATURE_OPERATOR = 'operator.hr';
+    private const string ACCOUNT_FEATURE_OPERATOR = 'operator.hr';
 
     public static function getNavigationGroup(): string
     {

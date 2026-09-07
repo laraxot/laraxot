@@ -21,7 +21,7 @@ use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceInfolist;
 class MediaInfolist extends XotBaseResourceInfolist
 {
     /**
-     * @return array<string, \Filament\Schemas\Components\Component>
+     * @return array<string, Component>
      */
     public function getInfolistSchema(): array
     {

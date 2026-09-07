@@ -1,5 +1,7 @@
 # docs/chat — Indice handoff agenti
 
+- [Prompt 03 — verifica indipendente Codex](2026-09-07-codex-quality-gates-verification.md) — baseline globale + audit Filament in sola lettura; nessun claim sul WIP PHP altrui; in corso 2026-09-07.
+
 | Slug | Ambito | Stato |
 |------|--------|-------|
 | [phpstan-platform-wave3-done](2026-09-07-phpstan-platform-wave3-done.md) | PHPStan Platform: 5→0 (completata l'estrazione Schemas/Tables di `PlatformSettingResource` lasciata a meta da `platform-schemas-tables-audit.story.md`, marcata "done" ma incompleta); trovato+corretto bug di perdita dati silenziosa (form generico desincronizzato dai campi tipizzati letti da `EditPlatformSetting::mutateFormDataBeforeSave`, non solo dead code); questa sessione era il "live edit" osservato e rispettato da 2 standdown precedenti (wave2-claim, standdown-live-edit, standdown-third-confirmation); pest 17/28 invariato; commit `a60aa97` pushato su `laraxot/dev` | completato 2026-09-07 (claude sonnet 5) |

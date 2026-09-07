@@ -9,8 +9,6 @@ use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Wts\Actions\EnqueueWtsLabelPrintAction;
 use Modules\Wts\Actions\GenerateWtsUnitLabelPdfAction;
 use Modules\Wts\Actions\GenerateWtsUnitLabelsBatchPdfAction;
@@ -18,11 +16,11 @@ use Modules\Wts\Actions\GenerateWtsUnitSeriesAction;
 use Modules\Wts\Actions\ReportWtsNonConformityAction;
 use Modules\Wts\Models\WtsInboundLot;
 use Modules\Wts\Models\WtsUnit;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class WtsLotDetailPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static bool $isDiscovered = false;
 

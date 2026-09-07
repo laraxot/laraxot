@@ -7,7 +7,6 @@ namespace Modules\WorkOrder\Filament\Pages;
 use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Auth;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\WorkOrder\Actions\BuildPeriodicSummaryAction;
 use Modules\WorkOrder\Actions\GeneratePeriodicSummaryPdfAction;
 use Modules\Xot\Filament\Pages\XotBasePage;
@@ -20,7 +19,6 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
  */
 final class PeriodicSummaryPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-chart-bar';
 

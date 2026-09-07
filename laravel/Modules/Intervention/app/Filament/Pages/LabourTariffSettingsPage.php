@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Actions\CalculateLabourAmountAction;
 use Modules\Intervention\Data\LabourTariff;
 use Modules\Intervention\Settings\InterventionTariffSettings;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\Xot\Filament\Pages\XotBasePage;
 
@@ -27,7 +26,6 @@ use Modules\Xot\Filament\Pages\XotBasePage;
  */
 final class LabourTariffSettingsPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-banknotes';
 

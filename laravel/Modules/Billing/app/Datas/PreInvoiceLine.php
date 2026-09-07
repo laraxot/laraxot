@@ -9,21 +9,13 @@ namespace Modules\Billing\Datas;
  */
 final readonly class PreInvoiceLine
 {
-    /** @var string */
-    /** @var string */
-    public const SOURCE_LABOR = 'labor';
+    public const string SOURCE_LABOR = 'labor';
 
-    /** @var string */
-    /** @var string */
-    public const SOURCE_CALLOUT = 'callout';
+    public const string SOURCE_CALLOUT = 'callout';
 
-    /** @var string */
-    /** @var string */
-    public const SOURCE_MATERIAL = 'material';
+    public const string SOURCE_MATERIAL = 'material';
 
-    /** @var string */
-    /** @var string */
-    public const SOURCE_EXTRA = 'extra';
+    public const string SOURCE_EXTRA = 'extra';
 
     public function __construct(
         public string $description,

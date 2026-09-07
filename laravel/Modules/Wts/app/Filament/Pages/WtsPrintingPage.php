@@ -4,20 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
-use Modules\Wts\Models\WtsPrintJob;
 use Filament\Notifications\Notification;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use Modules\Wts\Label\ZplBuilder;
+use Modules\Wts\Models\WtsPrintJob;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Configurazione e monitoraggio della stampa etichette (coda ZPL + agente locale).
  */
 final class WtsPrintingPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static bool $isDiscovered = false;
 
@@ -86,7 +85,7 @@ final class WtsPrintingPage extends XotBasePage
      *     pendingCount: int,
      *     printedCount: int,
      *     failedCount: int,
-     *     jobs: \Illuminate\Database\Eloquent\Collection<int, WtsPrintJob>,
+     *     jobs: Collection<int, WtsPrintJob>,
      *     tokenConfigured: bool,
      *     labelWidth: string,
      *     labelHeight: string
@@ -114,7 +113,7 @@ final class WtsPrintingPage extends XotBasePage
 
     private function buildTestZpl(): string
     {
-        return (new ZplBuilder)->renderTemplate([
+        return (new ZplBuilder())->renderTemplate([
             'labelWidth' => 1120,
             'labelHeight' => 400,
             'dpi' => 203,

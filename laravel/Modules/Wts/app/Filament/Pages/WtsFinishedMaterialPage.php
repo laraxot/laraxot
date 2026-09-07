@@ -7,15 +7,13 @@ namespace Modules\Wts\Filament\Pages;
 use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Wts\Actions\GenerateWtsOutputLabelPdfAction;
 use Modules\Wts\Models\WtsDerivedMaterial;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 final class WtsFinishedMaterialPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static bool $isDiscovered = false;
 

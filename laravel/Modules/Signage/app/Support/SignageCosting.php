@@ -11,5 +11,5 @@ namespace Modules\Signage\Support;
 final class SignageCosting
 {
     /** @var string */
-    public const CONTEXT = 'signage';
+    public const string CONTEXT = 'signage';
 }

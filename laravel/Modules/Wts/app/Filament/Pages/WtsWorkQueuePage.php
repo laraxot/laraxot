@@ -9,15 +9,13 @@ use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Wts\Actions\MoveWtsUnitAction;
 use Modules\Wts\Models\WtsUnit;
 use Modules\Wts\Queries\GetWtsWorkQueueOverviewQuery;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 final class WtsWorkQueuePage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static bool $isDiscovered = false;
 

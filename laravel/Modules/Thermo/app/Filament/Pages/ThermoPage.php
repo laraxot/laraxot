@@ -6,12 +6,10 @@ namespace Modules\Thermo\Filament\Pages;
 
 use App\Support\AccountFeatures;
 use Illuminate\Support\Facades\Auth;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Xot\Filament\Pages\XotBasePage;
 
 abstract class ThermoPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static bool $isDiscovered = false;
 

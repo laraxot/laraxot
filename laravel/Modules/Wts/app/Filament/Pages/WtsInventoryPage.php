@@ -4,21 +4,22 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use Modules\Wts\Actions\GenerateWtsInventoryExcelAction;
 use Modules\Wts\Actions\GenerateWtsInventoryPdfAction;
+use Modules\Wts\Datas\WtsInventoryRow;
 use Modules\Wts\Queries\GetWtsInventoryOverviewQuery;
-use Illuminate\Support\Facades\Auth;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+
 use function Safe\fclose;
 use function Safe\fopen;
 use function Safe\unlink;
 
 final class WtsInventoryPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static bool $isDiscovered = false;
 
@@ -102,7 +103,7 @@ final class WtsInventoryPage extends XotBasePage
 
     /**
      * @return array{
-     *     rows: \Illuminate\Support\Collection<int, \Modules\Wts\Datas\WtsInventoryRow>,
+     *     rows: Collection<int, WtsInventoryRow>,
      *     stats: array{available:int, consumed:int, total:int},
      *     filters: array{wasteCodes: array<int, string>, zones: array<int, string>},
      *     stockViews: array<string, string>,

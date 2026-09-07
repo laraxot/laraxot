@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Dds\Filament\Pages;
 
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
 use Illuminate\Support\Facades\Auth;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 abstract class DdsPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static bool $isDiscovered = false;
 

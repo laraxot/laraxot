@@ -4,16 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
-use Modules\Wts\Filament\Pages\Concerns\HandlesWtsProcessingForm;
 use App\Support\AccountFeatures;
 use Illuminate\Support\Facades\Auth;
+use Modules\Wts\Filament\Pages\Concerns\HandlesWtsProcessingForm;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 final class WtsSortingPage extends XotBasePage
 {
-    use GatesPageNavigation;
-
     use HandlesWtsProcessingForm;
 
     protected static bool $isDiscovered = false;

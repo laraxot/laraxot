@@ -19,7 +19,6 @@ use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Queries\GetPastInterventionNotesForReportQuery;
 use Modules\Intervention\Settings\InterventionTariffSettings;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\User\Models\User;
 use Modules\Xot\Filament\Pages\XotBasePage;
 
@@ -32,7 +31,6 @@ use Modules\Xot\Filament\Pages\XotBasePage;
  */
 final class RecordInterventionReportPage extends XotBasePage
 {
-    use GatesPageNavigation;
     use WithFileUploads;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-microphone';

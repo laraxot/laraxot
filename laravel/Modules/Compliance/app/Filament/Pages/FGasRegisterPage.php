@@ -8,7 +8,6 @@ use App\Support\AccountFeatures;
 use BackedEnum;
 use Illuminate\Support\Facades\Auth;
 use Modules\Compliance\Application\Queries\GetFGasOverviewQuery;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
@@ -18,7 +17,6 @@ use Modules\Xot\Filament\Pages\XotBasePage;
  */
 final class FGasRegisterPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-beaker';
 

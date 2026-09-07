@@ -56,9 +56,9 @@ test('list comments definisce colonne id testo e stato moderazione', function ()
 });
 
 test('comment resource schema classes exist and delegate zen table', function (): void {
-    $form = app(\Modules\Comment\Filament\Resources\CommentResource\Schemas\CommentForm::class)->getFormSchema();
+    $form = app(CommentForm::class)->getFormSchema();
     Assert::assertNotEmpty($form);
-    $infolist = app(\Modules\Comment\Filament\Resources\CommentResource\Schemas\CommentInfolist::class)->getInfolistSchema();
+    $infolist = app(CommentInfolist::class)->getInfolistSchema();
     Assert::assertNotEmpty($infolist);
     Assert::assertNotEmpty((new CommentsTable())->getTableColumns());
     Assert::assertArrayHasKey('moderation', (new CommentsTable())->getTableFilters());

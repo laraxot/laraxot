@@ -20,15 +20,12 @@ final class RegisterMaintenanceControlAction
 {
     use QueueableAction;
 
-    /** @var string */
-    private const MAINTENANCE = 'maintenance';
+    private const string MAINTENANCE = 'maintenance';
 
-    /** @var string */
-    private const EFFICIENCY = 'efficiency_check';
+    private const string EFFICIENCY = 'efficiency_check';
 
     /** @var list<string> */
-    /** @var array<int, string> */
-    private const FIELDS = [
+    private const array FIELDS = [
         'performed_by_user_id', 'intervention_id', 'rcee_type', 'outcome',
         'co_ppm', 'co2_percent', 'o2_percent', 'flue_gas_temp_c', 'air_temp_c',
         'combustion_efficiency_percent', 'smoke_index', 'draft_pa',

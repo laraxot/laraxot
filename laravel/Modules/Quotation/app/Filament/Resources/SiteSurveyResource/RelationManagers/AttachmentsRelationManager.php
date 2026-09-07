@@ -31,8 +31,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
     protected static string $relationship = 'media';
 
     /** @var array<string, string> */
-    /** @var array<string, string> */
-    private const KIND_TO_COLLECTION = [
+    private const array KIND_TO_COLLECTION = [
         'photo' => 'photos',
         'video' => 'videos',
         'audio' => 'voice_notes',

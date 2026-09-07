@@ -4,19 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
-use Modules\Wts\Actions\UpdateWtsOperationalParameterAction;
-use Modules\Wts\Models\WtsOperationalParameter;
-use Modules\Wts\Queries\GetWtsOperationalParametersQuery;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
+use Modules\Wts\Actions\UpdateWtsOperationalParameterAction;
+use Modules\Wts\Models\WtsOperationalParameter;
+use Modules\Wts\Queries\GetWtsOperationalParametersQuery;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 final class WtsOperationalParametersPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static bool $isDiscovered = false;
 

@@ -4,15 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
-use Modules\Wts\Queries\SearchWtsAuditQuery;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
+use Modules\Wts\Models\WtsDerivedMaterial;
+use Modules\Wts\Models\WtsInboundLot;
+use Modules\Wts\Models\WtsInboundRecord;
+use Modules\Wts\Models\WtsProcessingStep;
+use Modules\Wts\Models\WtsUnit;
+use Modules\Wts\Queries\SearchWtsAuditQuery;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 final class WtsAuditPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static bool $isDiscovered = false;
 
@@ -42,7 +46,7 @@ final class WtsAuditPage extends XotBasePage
 
     /**
      * @return array{
-     *     searchResult: array{record: \Modules\Wts\Models\WtsInboundRecord|null, lot: \Modules\Wts\Models\WtsInboundLot|null, unit: \Modules\Wts\Models\WtsUnit|null, derivedMaterial: \Modules\Wts\Models\WtsDerivedMaterial|null, processingSteps: \Illuminate\Database\Eloquent\Collection<int, \Modules\Wts\Models\WtsProcessingStep>}|null
+     *     searchResult: array{record: WtsInboundRecord|null, lot: WtsInboundLot|null, unit: WtsUnit|null, derivedMaterial: WtsDerivedMaterial|null, processingSteps: Collection<int, WtsProcessingStep>}|null
      * }
      */
     protected function getViewData(): array

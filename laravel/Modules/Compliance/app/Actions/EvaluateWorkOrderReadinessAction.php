@@ -16,7 +16,7 @@ final class EvaluateWorkOrderReadinessAction
     use QueueableAction;
 
     /** @var array<int, string> */
-    private const DEFAULT_REQUIRED_DOCUMENTS = ['durc', 'pos', 'dico'];
+    private const array DEFAULT_REQUIRED_DOCUMENTS = ['durc', 'pos', 'dico'];
 
     /**
      * @return array{status: string, blocking: int, warnings: int, items: array<int, array<string, mixed>>}

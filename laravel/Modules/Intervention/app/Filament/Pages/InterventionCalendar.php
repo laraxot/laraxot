@@ -16,13 +16,11 @@ use Modules\Intervention\Filament\Concerns\ResolvesCalendarReturnUrl;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\GoogleCalendar\Actions\BuildGoogleOverlayEventsAction;
 use Modules\Intervention\Models\Intervention;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\User\Models\User;
 use Modules\Xot\Filament\Pages\XotBasePage;
 
 final class InterventionCalendar extends XotBasePage
 {
-    use GatesPageNavigation;
     use InterventionCalendarColors;
     use ResolvesCalendarReturnUrl;
 
