@@ -1,5 +1,6 @@
 # docs/chat — Indice handoff agenti
 
+- BMAD stories create per domani 2026-09-07 sera (phpstan-error-fixes-swarm): `Modules/User/docs/stories/8.1.module-remote-git-object-corruption.story.md`, `Modules/Notify/docs/stories/4.30.module-remote-git-object-corruption.story.md` (entrambe blocked-on-owner, corruzione oggetto git remoto, non re-investigare), `Modules/Platform/docs/stories/4.6.reduce-cross-module-platform-coupling-audit.story.md` (audit 12 moduli con dipendenza da Modules\Platform oltre il pattern Gated* gia' chiuso). Campagna PHPStan chiusa a 0 errori, confermata 3x indipendentemente.
 - [Prompt 03 — verifica indipendente Codex](2026-09-07-codex-quality-gates-verification.md) — baseline globale + audit Filament in sola lettura; nessun claim sul WIP PHP altrui; in corso 2026-09-07.
 
 | Slug | Ambito | Stato |
