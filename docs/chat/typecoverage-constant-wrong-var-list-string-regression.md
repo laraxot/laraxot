@@ -3,6 +3,8 @@ title: "typeCoverage.constantTypeCoverage fix pattern — @var list<string> regr
 type: coordination-alert
 created: 2026-09-07
 status: active
+issue: https://github.com/laraxot/base_workorder_fila5/issues/14
+discussion: https://github.com/laraxot/base_workorder_fila5/discussions/15
 ---
 
 # Attenzione: pattern di fix sbagliato su typeCoverage.constantTypeCoverage
