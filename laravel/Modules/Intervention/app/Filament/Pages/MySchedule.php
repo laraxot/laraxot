@@ -112,7 +112,7 @@ final class MySchedule extends GatedXotBasePage
             ->statePath('')
             ->components([
                 DatePicker::make('selectedDate')
-                    ->label(__('interventions.fields.note_date'))
+
                     ->live()
                     ->required(),
             ]);

@@ -169,7 +169,7 @@ final class InterventionResource extends GatedXotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         Select::make('work_order_id')
-                            ->label(__('interventions.fields.work_order_id'))
+
                             ->options(fn (): array => self::getWorkOrderOptions())
                             ->searchable()
                             ->preload()
@@ -177,7 +177,7 @@ final class InterventionResource extends GatedXotBaseResource
                             ->required(fn (): bool => ! self::isDirectCustomerMode()),
 
                         Select::make('customer_id')
-                            ->label(__('customers.customer'))
+
                             ->options(fn (): array => self::getCustomerOptions())
                             ->searchable()
                             ->preload()
@@ -186,7 +186,7 @@ final class InterventionResource extends GatedXotBaseResource
                             ->helperText('Seleziona il cliente per cui stai eseguendo l\'intervento.'),
 
                         Select::make('assigned_user_ids')
-                            ->label(__('interventions.fields.performed_by'))
+
                             ->options(fn (): array => self::getAssignableOperatorOptions())
                             ->getOptionLabelsUsing(fn (array $values): array => User::query()
                                 ->whereIn('id', $values)
@@ -222,7 +222,7 @@ final class InterventionResource extends GatedXotBaseResource
 
                     Grid::make(2)->components([
                         DatePicker::make('scheduled_date')
-                            ->label(__('interventions.fields.scheduled_at'))
+
                             ->displayFormat('d/m/Y')
                             ->required()
                             ->dehydrated(fn (): bool => self::isDirectCustomerMode())
@@ -235,12 +235,12 @@ final class InterventionResource extends GatedXotBaseResource
                             })
                             ->visible(fn (): bool => self::isDirectCustomerMode()),
                         DateTimePicker::make('scheduled_at')
-                            ->label(__('interventions.fields.scheduled_at'))
+
                             ->displayFormat('d/m/Y H:i')
                             ->seconds(false)
                             ->visible(fn (): bool => ! self::isDirectCustomerMode()),
                         TextInput::make('amount')
-                            ->label(__('interventions.fields.labor_amount'))
+
                             ->numeric()
                             ->minValue(0)
                             ->step(0.01)
@@ -251,7 +251,7 @@ final class InterventionResource extends GatedXotBaseResource
 
                     Grid::make(3)->components([
                         TextInput::make('work_hours')
-                            ->label(__('interventions.fields.work_hours'))
+
                             ->numeric()
                             ->minValue(0)
                             ->step(0.25)
@@ -265,7 +265,7 @@ final class InterventionResource extends GatedXotBaseResource
                                 $component->state(number_format(((int) ($record->work_minutes ?? 0)) / 60, 2, '.', ''));
                             }),
                         TextInput::make('callout_fee')
-                            ->label(__('interventions.fields.callout_fee'))
+
                             ->numeric()
                             ->minValue(0)
                             ->step(0.01)
@@ -274,7 +274,7 @@ final class InterventionResource extends GatedXotBaseResource
                             ->live()
                             ->helperText('Lascia 0 se non applichi il diritto di chiamata.'),
                         TextEntry::make('total_amount_preview')
-                            ->label(__('interventions.fields.total_amount'))
+
                             ->state(function (callable $get, ?Intervention $record): string {
                                 $amountValue = $get('amount') ?? 0;
                                 $laborAmount = is_numeric($amountValue) ? (float) $amountValue : 0.0;
@@ -289,21 +289,21 @@ final class InterventionResource extends GatedXotBaseResource
 
                     Grid::make(2)->components([
                         DateTimePicker::make('started_at')
-                            ->label(__('interventions.fields.started_at'))
+
                             ->visible(fn (): bool => ! self::isDirectCustomerMode()),
                         DateTimePicker::make('ended_at')
-                            ->label(__('interventions.fields.ended_at'))
+
                             ->visible(fn (): bool => ! self::isDirectCustomerMode()),
                     ]),
 
                     Grid::make(2)->components([
                         TextInput::make('travel_km')
-                            ->label(__('interventions.fields.travel_km'))
+
                             ->numeric()
                             ->minValue(0)
                             ->visible(fn (): bool => ! self::isDirectCustomerMode()),
                         TextEntry::make('materials_total_preview')
-                            ->label(__('interventions.fields.materials_total'))
+
                             ->state(function (callable $get, ?Intervention $record): string {
                                 return number_format(self::previewMaterialsTotal($get('manual_material_lines'), $record), 2, ',', '.').' €';
                             })
@@ -311,7 +311,7 @@ final class InterventionResource extends GatedXotBaseResource
                     ]),
 
                     RichEditor::make('notes_html')
-                        ->label(__('interventions.fields.notes'))
+
                         ->columnSpanFull()
                         ->live(debounce: 500)
                         ->toolbarButtons([
@@ -324,7 +324,7 @@ final class InterventionResource extends GatedXotBaseResource
                         ->helperText('Mentre scrivi compaiono suggerimenti riutilizzabili con un click. Puoi anche allegare foto alla nota dell\'intervento.'),
 
                     FileUpload::make('notes_photo_paths')
-                        ->label(__('interventions.fields.photos'))
+
                         ->disk('public')
                         ->directory(fn (Get $get, ?Intervention $record): string => self::notePhotoDirectory(
                             record: $record,
@@ -359,7 +359,7 @@ final class InterventionResource extends GatedXotBaseResource
                         ->columnSpanFull(),
 
                     TextEntry::make('notes_suggestions')
-                        ->label(__('interventions.fields.notes_suggestions'))
+
                         ->columnSpanFull()
                         ->state(function (Get $get): ?HtmlString {
                             $suggestions = self::getPreviousNoteSuggestions(self::normalizeTextState($get('notes_html')));
@@ -386,21 +386,20 @@ final class InterventionResource extends GatedXotBaseResource
                         }),
 
                     Repeater::make('manual_material_lines')
-                        ->label(__('interventions.fields.material_lines'))
+
                         ->columnSpanFull()
                         ->schema([
-                            TextInput::make('description')
-                                ->label(__('interventions.fields.material_description')),
+                            TextInput::make('description'),
                             Grid::make(2)->components([
                                 TextInput::make('quantity')
-                                    ->label(__('interventions.fields.material_quantity'))
+
                                     ->numeric()
                                     ->minValue(0.01)
                                     ->step(0.01)
                                     ->default(1)
                                     ->live(),
                                 Select::make('unit')
-                                    ->label(__('interventions.fields.material_unit'))
+
                                     ->options([
                                         'pz' => 'Pz',
                                         'mt' => 'Mt',
@@ -408,7 +407,7 @@ final class InterventionResource extends GatedXotBaseResource
                                     ->default('pz'),
                             ]),
                             TextInput::make('unit_price')
-                                ->label(__('interventions.fields.material_unit_price'))
+
                                 ->numeric()
                                 ->minValue(0)
                                 ->step(0.01)
@@ -416,7 +415,7 @@ final class InterventionResource extends GatedXotBaseResource
                                 ->default(0)
                                 ->live(),
                             TextEntry::make('line_total_preview')
-                                ->label(__('interventions.fields.material_line_total'))
+
                                 ->state(function (callable $get): string {
                                     $qtyValue = $get('quantity') ?? 0;
                                     $quantity = is_numeric($qtyValue) ? (float) $qtyValue : 0.0;
@@ -430,7 +429,7 @@ final class InterventionResource extends GatedXotBaseResource
                             // L'extra e' calcolato al salvataggio confrontando la riga
                             // con i preventivi della commessa: qui si legge soltanto.
                             TextEntry::make('extra_preview')
-                                ->label(__('interventions.extra.amount'))
+
                                 ->state(function (callable $get): string {
                                     $extraQtyValue = $get('extra_quantity');
                                     $extraQuantity = is_numeric($extraQtyValue) ? (float) $extraQtyValue : 0.0;
@@ -451,7 +450,7 @@ final class InterventionResource extends GatedXotBaseResource
                                 ->helperText(__('interventions.extra.computed_hint')),
 
                             Select::make('extra_status_code')
-                                ->label(__('interventions.extra.status'))
+
                                 ->options(self::extraStatusOptions())
                                 ->default('pending')
                                 ->selectablePlaceholder(false)
@@ -489,7 +488,7 @@ final class InterventionResource extends GatedXotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('work_order_id')
-                    ->label(__('interventions.fields.work_order_id'))
+
                     ->formatStateUsing(function (mixed $state, Intervention $record): string {
                         $stateValue = is_numeric($state) ? (int) $state : 0;
                         if ($stateValue === 0) {
@@ -503,7 +502,7 @@ final class InterventionResource extends GatedXotBaseResource
                     })
                     ->sortable(),
                 Tables\Columns\TextColumn::make('customer_display')
-                    ->label(__('work_orders.fields.customer'))
+
                     ->state(fn (Intervention $record): string => $record->workOrder->customer->legal_name
                         ?? $record->customer->legal_name
                         ?? '—')
@@ -515,15 +514,15 @@ final class InterventionResource extends GatedXotBaseResource
                     })
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('workOrder.site.name')
-                    ->label(__('work_orders.fields.site'))
+
                     ->searchable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('performedBy.name')
-                    ->label(__('interventions.fields.performed_by'))
+
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('assigned_users_summary')
-                    ->label(__('interventions.fields.operators'))
+
                     ->state(function (Intervention $record): string {
                         $names = $record->assignedUsers()
                             ->orderBy('name')
@@ -539,43 +538,43 @@ final class InterventionResource extends GatedXotBaseResource
                     })
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('started_at')
-                    ->label(__('interventions.fields.started_at'))
+
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('ended_at')
-                    ->label(__('interventions.fields.ended_at'))
+
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('scheduled_at')
-                    ->label(__('interventions.fields.scheduled_at'))
+
                     ->dateTime('d/m/Y H:i')
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('amount')
-                    ->label(__('interventions.fields.labor_amount'))
+
                     ->money('EUR')
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('callout_fee')
-                    ->label(__('interventions.fields.callout_fee'))
+
                     ->money('EUR')
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('materials_total')
-                    ->label(__('interventions.fields.materials_total'))
+
                     ->money('EUR')
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('total_amount')
-                    ->label(__('interventions.fields.total_amount'))
+
                     ->money('EUR')
                     ->sortable()
                     ->toggleable(),
                 // Extra fuori preventivo: se resta invisibile, viene regalato.
                 Tables\Columns\TextColumn::make('extra_total')
-                    ->label(__('interventions.extra.total'))
+
                     ->state(fn (Intervention $record): float => round(
                         (float) $record->materialLines()->sum('extra_amount'),
                         2,
@@ -584,11 +583,11 @@ final class InterventionResource extends GatedXotBaseResource
                     ->badge()
                     ->color(fn (mixed $state): string => (is_numeric($state) ? (float) $state : 0.0) > 0.0 ? 'warning' : 'gray'),
                 Tables\Columns\TextColumn::make('work_minutes')
-                    ->label(__('interventions.fields.work_minutes'))
+
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('outcome_code')
-                    ->label(__('interventions.fields.outcome'))
+
                     ->formatStateUsing(fn (?string $state): string => match ($state) {
                         'completed' => __('interventions.outcomes.completed'),
                         'suspended' => __('interventions.outcomes.suspended'),
@@ -598,12 +597,12 @@ final class InterventionResource extends GatedXotBaseResource
                     ->badge()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('notes')
-                    ->label(__('interventions.fields.notes'))
+
                     ->limit(70)
                     ->searchable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('travel_km')
-                    ->label(__('interventions.fields.travel_km'))
+
                     ->numeric()
                     ->sortable()
                     ->toggleable(),
@@ -613,13 +612,13 @@ final class InterventionResource extends GatedXotBaseResource
             ])
             ->filters([
                 Filter::make('has_extra')
-                    ->label(__('interventions.extra.has_extra'))
+
                     ->query(fn (Builder $query): Builder => $query->whereHas(
                         'materialLines',
                         fn (Builder $lines): Builder => $lines->where('extra_quantity', '>', 0),
                     )),
                 SelectFilter::make('customer_id')
-                    ->label(__('work_orders.fields.customer'))
+
                     ->options(fn (): array => Customer::query()->whereNotNull('legal_name')->orderBy('legal_name')->pluck('legal_name', 'id')->all())
                     ->query(function (Builder $query, array $data): Builder {
                         $value = $data['value'] ?? null;
@@ -633,7 +632,7 @@ final class InterventionResource extends GatedXotBaseResource
                             : $query;
                     }),
                 SelectFilter::make('customer_site_id')
-                    ->label(__('work_orders.fields.site'))
+
                     ->options(fn (): array => CustomerSite::query()->whereNotNull('name')->orderBy('name')->pluck('name', 'id')->all())
                     ->query(function (Builder $query, array $data): Builder {
                         $value = $data['value'] ?? null;
@@ -644,7 +643,7 @@ final class InterventionResource extends GatedXotBaseResource
                             : $query;
                     }),
                 SelectFilter::make('outcome_code')
-                    ->label(__('interventions.fields.outcome'))
+
                     ->options([
                         'completed' => __('interventions.outcomes.completed'),
                         'suspended' => __('interventions.outcomes.suspended'),
@@ -653,10 +652,8 @@ final class InterventionResource extends GatedXotBaseResource
                 Filter::make('scheduled_between')
                     ->label(__('work_orders.fields.report_from').' / '.__('work_orders.fields.report_to'))
                     ->schema([
-                        DatePicker::make('from')
-                            ->label(__('work_orders.fields.report_from')),
-                        DatePicker::make('to')
-                            ->label(__('work_orders.fields.report_to')),
+                        DatePicker::make('from'),
+                        DatePicker::make('to'),
                     ])
                     ->query(function (Builder $query, array $data): Builder {
                         $from = $data['from'] ?? null;
@@ -675,7 +672,7 @@ final class InterventionResource extends GatedXotBaseResource
             ])
             ->recordActions([
                 Action::make('start_time_punch')
-                    ->label(__('interventions.actions.start_time_punch'))
+
                     ->icon('heroicon-o-play')
                     ->visible(function (Intervention $record): bool {
                         $userId = Auth::id();
@@ -707,7 +704,7 @@ final class InterventionResource extends GatedXotBaseResource
                     }),
 
                 Action::make('stop_time_punch')
-                    ->label(__('interventions.actions.stop_time_punch'))
+
                     ->icon('heroicon-o-stop')
                     ->color('danger')
                     ->visible(function (Intervention $record): bool {
@@ -740,7 +737,7 @@ final class InterventionResource extends GatedXotBaseResource
                     }),
 
                 Action::make('validate')
-                    ->label(__('interventions.actions.validate'))
+
                     ->icon('heroicon-o-check-circle')
                     ->visible(function (Intervention $record): bool {
                         $userId = Auth::id();
@@ -752,23 +749,23 @@ final class InterventionResource extends GatedXotBaseResource
                     })
                     ->schema([
                         TextInput::make('travel_km')
-                            ->label(__('interventions.fields.travel_km'))
+
                             ->numeric()
                             ->minValue(0)
                             ->required()
                             ->default(fn (Intervention $record): int => (int) ($record->travel_km ?? 0)),
                         TextInput::make('travel_minutes')
-                            ->label(__('interventions.fields.travel_minutes'))
+
                             ->numeric()
                             ->minValue(0)
                             ->required()
                             ->default(fn (Intervention $record): int => (int) ($record->travel_minutes ?? 0)),
                         Textarea::make('notes')
-                            ->label(__('interventions.fields.notes'))
+
                             ->default(fn (Intervention $record): ?string => $record->notes)
                             ->columnSpanFull(),
                         Select::make('outcome_code')
-                            ->label(__('interventions.fields.outcome'))
+
                             ->options([
                                 'completed' => __('interventions.outcomes.completed'),
                                 'suspended' => __('interventions.outcomes.suspended'),
@@ -801,7 +798,7 @@ final class InterventionResource extends GatedXotBaseResource
                     }),
 
                 Action::make('upload_photos')
-                    ->label(__('documents.actions.upload_photos'))
+
                     ->icon('heroicon-o-camera')
                     ->visible(function (Intervention $record): bool {
                         if (! request()->is('operator/*')) {

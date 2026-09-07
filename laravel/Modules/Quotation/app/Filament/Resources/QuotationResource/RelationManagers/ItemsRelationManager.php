@@ -35,39 +35,39 @@ final class ItemsRelationManager extends XotBaseRelationManager
     {
         return [
             'product_id' => Select::make('product_id')
-                ->label(__('quotations.fields.product'))
+
                 ->relationship('product', 'name')
                 ->searchable()
                 ->preload(),
             'description' => TextInput::make('description')
-                ->label(__('quotations.fields.description'))
+
                 ->required()
                 ->columnSpanFull()
                 ->maxLength(255),
             'quantity' => TextInput::make('quantity')
-                ->label(__('quotations.fields.quantity'))
+
                 ->numeric()
                 ->minValue(0.01)
                 ->default(1)
                 ->required(),
             'unit_price' => TextInput::make('unit_price')
-                ->label(__('quotations.fields.unit_price'))
+
                 ->numeric()
                 ->minValue(0)
                 ->default(0)
                 ->required(),
             'discount_percent' => TextInput::make('discount_percent')
-                ->label(__('quotations.fields.discount_percent'))
+
                 ->numeric()
                 ->minValue(0)
                 ->maxValue(100)
                 ->default(0),
             'line_total' => TextInput::make('line_total')
-                ->label(__('quotations.fields.line_total'))
+
                 ->numeric()
                 ->disabled(),
             'sort_order' => TextInput::make('sort_order')
-                ->label(__('quotations.fields.sort_order'))
+
                 ->numeric()
                 ->minValue(0)
                 ->default(0),
@@ -79,25 +79,25 @@ final class ItemsRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('description')
-                    ->label(__('quotations.fields.description'))
+
                     ->searchable()
                     ->wrap()
                     ->limit(80),
                 Tables\Columns\TextColumn::make('quantity')
-                    ->label(__('quotations.fields.quantity'))
+
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('unit_price')
-                    ->label(__('quotations.fields.unit_price'))
+
                     ->money('EUR')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('discount_percent')
-                    ->label(__('quotations.fields.discount_percent'))
+
                     ->suffix('%')
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('line_total')
-                    ->label(__('quotations.fields.line_total'))
+
                     ->money('EUR')
                     ->sortable(),
             ])

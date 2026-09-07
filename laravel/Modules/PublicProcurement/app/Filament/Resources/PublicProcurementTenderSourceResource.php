@@ -50,10 +50,10 @@ final class PublicProcurementTenderSourceResource extends XotBaseResource
     {
         return [
             'name' => TextInput::make('name')->required(),
-            'source_type' => Select::make('source_type')->label(__('public_procurement.fields.source_type'))->options(['manual' => 'Manuale', 'portal' => 'Portale', 'rss' => 'RSS/API'])->default('manual'),
-            'url' => TextInput::make('url')->label(__('public_procurement.fields.url'))->url(),
+            'source_type' => Select::make('source_type')->options(['manual' => 'Manuale', 'portal' => 'Portale', 'rss' => 'RSS/API'])->default('manual'),
+            'url' => TextInput::make('url')->url(),
             'is_active' => Toggle::make('is_active')->default(true),
-            'notes' => Textarea::make('notes')->label(__('public_procurement.fields.notes'))->columnSpanFull(),
+            'notes' => Textarea::make('notes')->columnSpanFull(),
         ];
     }
 
@@ -62,9 +62,9 @@ final class PublicProcurementTenderSourceResource extends XotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('source_type')->label(__('public_procurement.fields.source_type'))->badge()->sortable(),
+                Tables\Columns\TextColumn::make('source_type')->badge()->sortable(),
                 Tables\Columns\IconColumn::make('is_active')->boolean(),
-                Tables\Columns\TextColumn::make('url')->label(__('public_procurement.fields.url'))->limit(50),
+                Tables\Columns\TextColumn::make('url')->limit(50),
             ])
             ->recordActions([EditAction::make()])
             ->toolbarActions([DeleteBulkAction::make()]);

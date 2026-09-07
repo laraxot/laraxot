@@ -69,7 +69,7 @@ final class WorkOrderStatusResource extends GatedXotBaseResource
                 ->required()
                 ->maxLength(255),
             Select::make('color')
-                ->label(__('workorder::work_orders.status_help.color'))
+
                 ->options([
                     'gray' => 'gray',
                     'blue' => 'blue',
@@ -78,11 +78,11 @@ final class WorkOrderStatusResource extends GatedXotBaseResource
                     'red' => 'red',
                 ]),
             TextInput::make('sort_order')
-                ->label(__('workorder::work_orders.status_help.sort_order'))
+
                 ->numeric()
                 ->default(0),
             Toggle::make('is_terminal')
-                ->label(__('workorder::work_orders.status_help.is_terminal'))
+
                 ->helperText(__('workorder::work_orders.status_help.is_terminal_hint')),
         ];
     }

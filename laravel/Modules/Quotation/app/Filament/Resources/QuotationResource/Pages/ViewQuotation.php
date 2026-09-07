@@ -34,13 +34,13 @@ final class ViewQuotation extends XotBaseViewRecord
     {
         return [
             'voiceSimilar' => Action::make('voiceSimilar')
-                ->label(__('quotations.voice.create_similar'))
+
                 ->icon('heroicon-o-microphone')
                 ->visible(fn (): bool => RecordQuotationVoicePage::canAccess())
                 ->url(fn (): string => RecordQuotationVoicePage::getUrl(['source' => $this->getRecord()->getKey()])),
 
             'downloadPdf' => Action::make('downloadPdf')
-                ->label(__('quotations.actions.download_pdf'))
+
                 ->icon('heroicon-o-arrow-down-tray')
                 ->action(function () {
                     /** @var Quotation $quotation */
@@ -55,7 +55,7 @@ final class ViewQuotation extends XotBaseViewRecord
                 }),
 
             'downloadConfirmedPdf' => Action::make('downloadConfirmedPdf')
-                ->label(__('quotations.actions.download_confirmed_pdf'))
+
                 ->icon('heroicon-o-check-badge')
                 ->visible(function (): bool {
                     /** @var Quotation $quotation */
@@ -76,11 +76,11 @@ final class ViewQuotation extends XotBaseViewRecord
                 }),
 
             'applyTemplate' => Action::make('applyTemplate')
-                ->label(__('quotations.actions.apply_template'))
+
                 ->icon('heroicon-o-rectangle-stack')
                 ->schema([
                     Select::make('template_id')
-                        ->label(__('quotations.quotation_template'))
+
                         ->helperText('Applica un modello per inserire automaticamente righe e note precompilate nel preventivo.')
                         ->options(fn (): array => QuotationTemplate::query()->orderBy('title')->pluck('title', 'id')->all())
                         ->searchable()
@@ -97,7 +97,7 @@ final class ViewQuotation extends XotBaseViewRecord
                 }),
 
             'createWorkOrder' => Action::make('createWorkOrder')
-                ->label(__('quotations.actions.create_work_order'))
+
                 ->icon('heroicon-o-briefcase')
                 ->visible(function (): bool {
                     /** @var Quotation $quotation */
@@ -107,7 +107,7 @@ final class ViewQuotation extends XotBaseViewRecord
                 })
                 ->schema([
                     TextInput::make('title')
-                        ->label(__('work_orders.fields.title'))
+
                         ->required()
                         ->default(function (): string {
                             /** @var Quotation $quotation */
@@ -115,10 +115,9 @@ final class ViewQuotation extends XotBaseViewRecord
 
                             return $quotation->title ?? ('Da preventivo '.($quotation->code ?? ('#'.$quotation->id)));
                         }),
-                    DateTimePicker::make('scheduled_at')
-                        ->label(__('work_orders.fields.scheduled_at')),
+                    DateTimePicker::make('scheduled_at'),
                     DateTimePicker::make('delivery_due_at')
-                        ->label(__('workorder::work_orders.fields.delivery_due_at'))
+
                         ->default(function (): ?string {
                             /** @var Quotation $quotation */
                             $quotation = $this->getRecord();
@@ -130,7 +129,7 @@ final class ViewQuotation extends XotBaseViewRecord
                     Select::make('status_code')
                         ->options(fn (): array => WorkOrderStatus::query()->orderBy('sort_order')->pluck('name', 'code')->all()),
                     Select::make('assigned_user_id')
-                        ->label(__('work_orders.fields.assigned_to'))
+
                         ->options(fn (): array => User::query()->orderBy('name')->pluck('name', 'id')->all())
                         ->searchable()
                         ->preload(),

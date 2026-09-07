@@ -45,12 +45,12 @@ final class IssueReportsRelationManager extends XotBaseRelationManager
     {
         return [
             Select::make('created_by_user_id')
-                ->label(__('interventions.fields.created_by'))
+
                 ->relationship('createdBy', 'name')
                 ->searchable()
                 ->preload(),
             Textarea::make('body')
-                ->label(__('interventions.fields.body'))
+
                 ->required()
                 ->columnSpanFull(),
         ];
@@ -61,11 +61,11 @@ final class IssueReportsRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('createdBy.name')
-                    ->label(__('interventions.fields.created_by'))
+
                     ->toggleable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('body')
-                    ->label(__('interventions.fields.body'))
+
                     ->limit(80)
                     ->wrap(),
                 Tables\Columns\TextColumn::make('created_at')

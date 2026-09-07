@@ -83,7 +83,7 @@ final class ListWorkOrders extends XotBaseListRecords
                 ->sortable()
                 ->toggleable(),
             'progress_percent' => Tables\Columns\TextColumn::make('progress_percent')
-                ->label(__('workorder::work_orders.progress.label'))
+
                 ->badge()
                 ->color(fn (?int $state): string => match (true) {
                     $state === null || $state === 0 => 'gray',
@@ -94,7 +94,7 @@ final class ListWorkOrders extends XotBaseListRecords
                 ->sortable(),
             // I ritardi di consegna devono urlare dalla lista.
             'delivery_due_at' => Tables\Columns\TextColumn::make('delivery_due_at')
-                ->label(__('workorder::work_orders.fields.delivery_due_at'))
+
                 ->dateTime()
                 ->sortable()
                 ->color(fn (?string $state, WorkOrder $record): string => WorkOrderResource::deliveryColour($state, $record))

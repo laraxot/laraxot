@@ -31,14 +31,14 @@ final class SketchesRelationManager extends XotBaseRelationManager
     {
         return [
             Select::make('user_id')
-                ->label(__('signatures.fields.user'))
+
                 ->relationship('user', 'name')
                 ->searchable()
                 ->preload()
                 ->required()
                 ->default(fn (): ?int => Auth::id() !== null ? (int) Auth::id() : null),
             CanvasPad::make('payload.image')
-                ->label(__('signatures.fields.image'))
+
                 ->required()
                 ->height(280)
                 ->columnSpanFull(),
@@ -50,10 +50,10 @@ final class SketchesRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')
-                    ->label(__('signatures.fields.user'))
+
                     ->sortable(),
                 Tables\Columns\ImageColumn::make('path')
-                    ->label(__('signatures.fields.image'))
+
                     ->disk('public')
                     ->imageHeight(60)
                     ->width(120)
@@ -92,7 +92,7 @@ final class SketchesRelationManager extends XotBaseRelationManager
             ])
             ->recordActions([
                 Action::make('open')
-                    ->label(__('documents.actions.open'))
+
                     ->icon('heroicon-o-eye')
                     ->color('gray')
                     ->url(fn (Sketch $record): string => is_string($record->path) && $record->path !== ''
@@ -100,7 +100,7 @@ final class SketchesRelationManager extends XotBaseRelationManager
                         : '#')
                     ->openUrlInNewTab(),
                 Action::make('download')
-                    ->label(__('documents.actions.download'))
+
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('gray')
                     ->url(fn (Sketch $record): string => is_string($record->path) && $record->path !== ''

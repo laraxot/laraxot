@@ -68,15 +68,15 @@ final class HeatingSystemResource extends XotBaseResource
 
         return [
             'main' => Section::make()->columns(2)->components([
-                TextInput::make('code')->label(__('heating.fields.code'))->maxLength(255),
+                TextInput::make('code')->maxLength(255),
                 Select::make('customer_id')
-                    ->label(__('heating.fields.customer'))
+
                     ->options(fn (): array => DB::table('customers')->orderBy('legal_name')->pluck('legal_name', 'id')->all())
                     ->searchable()->preload()->live()
                     ->afterStateUpdated(fn (callable $set) => $set('customer_site_id', null))
                     ->required(),
                 Select::make('customer_site_id')
-                    ->label(__('heating.fields.site'))
+
                     ->options(function (callable $get): array {
                         $customerId = $get('customer_id');
 
@@ -85,14 +85,14 @@ final class HeatingSystemResource extends XotBaseResource
                             : DB::table('customer_sites')->where('customer_id', $customerId)->pluck('name', 'id')->all();
                     })
                     ->searchable()->preload(),
-                TextInput::make('description')->label(__('heating.fields.description'))->maxLength(255),
-                Select::make('fuel_type')->label(__('heating.fields.fuel_type'))->options($fuelOptions),
-                TextInput::make('total_power_kw')->label(__('heating.fields.total_power_kw'))->numeric()->suffix('kW'),
-                TextInput::make('plant_registry_code')->label(__('heating.fields.plant_registry_code'))->maxLength(255),
-                DatePicker::make('installation_date')->label(__('heating.fields.installation_date')),
-                Toggle::make('is_active')->label(__('heating.fields.is_active'))->default(true),
+                TextInput::make('description')->maxLength(255),
+                Select::make('fuel_type')->options($fuelOptions),
+                TextInput::make('total_power_kw')->numeric()->suffix('kW'),
+                TextInput::make('plant_registry_code')->maxLength(255),
+                DatePicker::make('installation_date'),
+                Toggle::make('is_active')->default(true),
                 Grid::make(1)->components([
-                    Textarea::make('notes')->label(__('heating.fields.notes'))->columnSpanFull(),
+                    Textarea::make('notes')->columnSpanFull(),
                 ]),
             ]),
         ];
@@ -102,18 +102,18 @@ final class HeatingSystemResource extends XotBaseResource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('code')->label(__('heating.fields.code'))->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('customer_id')
-                    ->label(__('heating.fields.customer'))
+
                     ->formatStateUsing(function ($state): string {
                         $name = DB::table('customers')->where('id', $state)->value('legal_name');
 
                         return is_string($name) ? $name : '—';
                     })
                     ->searchable(),
-                Tables\Columns\TextColumn::make('description')->label(__('heating.fields.description'))->limit(40)->toggleable(),
-                Tables\Columns\TextColumn::make('boilers_count')->label(__('heating.fields.boilers'))->counts('boilers'),
-                Tables\Columns\IconColumn::make('is_active')->label(__('heating.fields.is_active'))->boolean(),
+                Tables\Columns\TextColumn::make('description')->limit(40)->toggleable(),
+                Tables\Columns\TextColumn::make('boilers_count')->counts('boilers'),
+                Tables\Columns\IconColumn::make('is_active')->boolean(),
             ])
             ->recordActions([
                 ViewAction::make(),

@@ -47,7 +47,7 @@ final class ViewIntervention extends XotBaseViewRecord
 
         return [
             'voiceReport' => Action::make('voiceReport')
-                ->label(__('interventions.voice_report.title'))
+
                 ->icon('heroicon-o-microphone')
                 ->color('primary')
                 ->visible(fn (): bool => RecordInterventionReportPage::canAccess())
@@ -77,7 +77,7 @@ final class ViewIntervention extends XotBaseViewRecord
                 ->url(fn (): string => CaptureSignature::getUrl(['interventionId' => $interventionId]))
                 ->openUrlInNewTab(),
             'createQuotation' => Action::make('createQuotation')
-                ->label(__('quotations.from_intervention.action'))
+
                 ->icon('heroicon-o-calculator')
                 ->color('warning')
                 ->requiresConfirmation()
@@ -106,7 +106,7 @@ final class ViewIntervention extends XotBaseViewRecord
                     $this->redirect(QuotationResource::getUrl('edit', ['record' => $quotation->getKey()]));
                 }),
             'downloadReport' => Action::make('downloadReport')
-                ->label(__('interventions.voice_report.download_pdf'))
+
                 ->icon('heroicon-o-document-arrow-down')
                 ->action(function () use ($interventionId): StreamedResponse {
                     $intervention = Intervention::query()->findOrFail($interventionId);
@@ -119,7 +119,7 @@ final class ViewIntervention extends XotBaseViewRecord
                     );
                 }),
             'showToCustomer' => Action::make('showToCustomer')
-                ->label(__('interventions.voice_report.show_to_customer'))
+
                 ->icon('heroicon-o-device-phone-mobile')
                 ->color('success')
                 ->url(fn (): string => app(CreateInterventionReportShareLinkAction::class)

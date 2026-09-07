@@ -39,7 +39,7 @@ final class ComplianceDocumentsRelationManager extends XotBaseRelationManager
     {
         return [
             Grid::make(3)->components([
-                Select::make('type')->label(__('compliance.fields.type'))->required()->options([
+                Select::make('type')->required()->options([
                     'durc' => 'DURC',
                     'pos' => 'POS',
                     'psc' => 'PSC',
@@ -49,19 +49,19 @@ final class ComplianceDocumentsRelationManager extends XotBaseRelationManager
                     'insurance' => 'Polizza',
                     'other' => 'Altro',
                 ]),
-                TextInput::make('title')->label(__('compliance.fields.title'))->required()->maxLength(255),
-                Select::make('status')->label(__('compliance.fields.status'))->default('missing')->options([
+                TextInput::make('title')->required()->maxLength(255),
+                Select::make('status')->default('missing')->options([
                     'missing' => 'Mancante',
                     'valid' => 'Valido',
                     'expiring' => 'In scadenza',
                     'expired' => 'Scaduto',
                     'waived' => 'Non necessario',
                 ]),
-                Toggle::make('is_required')->label(__('compliance.fields.is_required'))->default(true),
-                DatePicker::make('issued_on')->label(__('compliance.fields.issued_on')),
-                DatePicker::make('expires_on')->label(__('compliance.fields.expires_on')),
+                Toggle::make('is_required')->default(true),
+                DatePicker::make('issued_on'),
+                DatePicker::make('expires_on'),
             ]),
-            Textarea::make('notes')->label(__('compliance.fields.notes'))->columnSpanFull(),
+            Textarea::make('notes')->columnSpanFull(),
         ];
     }
 
@@ -69,15 +69,15 @@ final class ComplianceDocumentsRelationManager extends XotBaseRelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('type')->label(__('compliance.fields.type'))->badge()->sortable(),
-                Tables\Columns\TextColumn::make('title')->label(__('compliance.fields.title'))->searchable(),
-                Tables\Columns\TextColumn::make('status')->label(__('compliance.fields.status'))->badge()->sortable(),
-                Tables\Columns\TextColumn::make('expires_on')->label(__('compliance.fields.expires_on'))->date()->sortable(),
-                Tables\Columns\IconColumn::make('is_required')->label(__('compliance.fields.is_required'))->boolean(),
+                Tables\Columns\TextColumn::make('type')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('title')->searchable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('expires_on')->date()->sortable(),
+                Tables\Columns\IconColumn::make('is_required')->boolean(),
             ])
             ->headerActions([
                 Action::make('generatePosDraft')
-                    ->label(__('compliance.actions.generate_pos_draft'))
+
                     ->icon('heroicon-o-document-plus')
                     ->color('success')
                     ->action(function (): void {
@@ -118,7 +118,7 @@ final class ComplianceDocumentsRelationManager extends XotBaseRelationManager
     {
         return [
             Grid::make(3)->components([
-                Select::make('type')->label(__('compliance.fields.type'))->required()->options([
+                Select::make('type')->required()->options([
                     'durc' => 'DURC',
                     'pos' => 'POS',
                     'psc' => 'PSC',
@@ -128,20 +128,20 @@ final class ComplianceDocumentsRelationManager extends XotBaseRelationManager
                     'insurance' => 'Polizza',
                     'other' => 'Altro',
                 ]),
-                TextInput::make('title')->label(__('compliance.fields.title'))->required()->maxLength(255),
-                Select::make('status')->label(__('compliance.fields.status'))->default('missing')->options([
+                TextInput::make('title')->required()->maxLength(255),
+                Select::make('status')->default('missing')->options([
                     'missing' => 'Mancante',
                     'valid' => 'Valido',
                     'expiring' => 'In scadenza',
                     'expired' => 'Scaduto',
                     'waived' => 'Non necessario',
                 ]),
-                Toggle::make('is_required')->label(__('compliance.fields.is_required'))->default(true),
-                DatePicker::make('issued_on')->label(__('compliance.fields.issued_on')),
-                DatePicker::make('expires_on')->label(__('compliance.fields.expires_on')),
+                Toggle::make('is_required')->default(true),
+                DatePicker::make('issued_on'),
+                DatePicker::make('expires_on'),
             ]),
             FileUpload::make('file_path')
-                ->label(__('compliance.fields.file'))
+
                 ->disk('public')
                 ->directory('media/compliance')
                 ->preserveFilenames()
@@ -149,7 +149,7 @@ final class ComplianceDocumentsRelationManager extends XotBaseRelationManager
                 ->openable()
                 ->previewable()
                 ->columnSpanFull(),
-            Textarea::make('notes')->label(__('compliance.fields.notes'))->columnSpanFull(),
+            Textarea::make('notes')->columnSpanFull(),
         ];
     }
 }

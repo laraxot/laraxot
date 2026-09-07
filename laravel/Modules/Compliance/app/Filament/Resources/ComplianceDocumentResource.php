@@ -64,21 +64,21 @@ final class ComplianceDocumentResource extends XotBaseResource
         return [
             'section' => Section::make()->columnSpanFull()->components([
                 'grid' => Grid::make(3)->components([
-                    'type' => Select::make('type')->label(__('compliance.fields.type'))->required()->options(self::documentTypes()),
-                    'title' => TextInput::make('title')->label(__('compliance.fields.title'))->required()->maxLength(255),
-                    'status' => Select::make('status')->label(__('compliance.fields.status'))->required()->default('missing')->options(self::statuses()),
+                    'type' => Select::make('type')->required()->options(self::documentTypes()),
+                    'title' => TextInput::make('title')->required()->maxLength(255),
+                    'status' => Select::make('status')->required()->default('missing')->options(self::statuses()),
                 ]),
                 'grid2' => Grid::make(3)->components([
-                    'is_required' => Toggle::make('is_required')->label(__('compliance.fields.is_required'))->default(true),
-                    'issued_on' => DatePicker::make('issued_on')->label(__('compliance.fields.issued_on')),
-                    'expires_on' => DatePicker::make('expires_on')->label(__('compliance.fields.expires_on')),
+                    'is_required' => Toggle::make('is_required')->default(true),
+                    'issued_on' => DatePicker::make('issued_on'),
+                    'expires_on' => DatePicker::make('expires_on'),
                 ]),
                 'work_order_id' => Select::make('work_order_id')
-                    ->label(__('compliance.fields.work_order'))
+
                     ->options(fn (): array => WorkOrder::query()->orderByDesc('id')->limit(200)->pluck('title', 'id')->all())
                     ->searchable(),
                 'file_path' => FileUpload::make('file_path')
-                    ->label(__('compliance.fields.file'))
+
                     ->disk('public')
                     ->directory('media/compliance')
                     ->preserveFilenames()
@@ -87,11 +87,11 @@ final class ComplianceDocumentResource extends XotBaseResource
                     ->previewable()
                     ->columnSpanFull(),
                 'file_preview' => TextEntry::make('file_preview')
-                    ->label(__('compliance.fields.file_preview'))
+
                     ->state(fn (?ComplianceDocument $record): HtmlString => self::filePreview($record))
                     ->columnSpanFull()
                     ->visible(fn (?ComplianceDocument $record): bool => $record?->media instanceof Media),
-                'notes' => Textarea::make('notes')->label(__('compliance.fields.notes'))->columnSpanFull(),
+                'notes' => Textarea::make('notes')->columnSpanFull(),
             ]),
         ];
     }
@@ -100,20 +100,20 @@ final class ComplianceDocumentResource extends XotBaseResource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('type')->label(__('compliance.fields.type'))->badge()->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('title')->label(__('compliance.fields.title'))->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('status')->label(__('compliance.fields.status'))->badge()->sortable(),
-                Tables\Columns\TextColumn::make('workOrder.title')->label(__('compliance.fields.work_order'))->limit(40)->toggleable(),
-                Tables\Columns\TextColumn::make('expires_on')->label(__('compliance.fields.expires_on'))->date()->sortable(),
-                Tables\Columns\IconColumn::make('is_required')->label(__('compliance.fields.is_required'))->boolean(),
+                Tables\Columns\TextColumn::make('type')->badge()->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('workOrder.title')->limit(40)->toggleable(),
+                Tables\Columns\TextColumn::make('expires_on')->date()->sortable(),
+                Tables\Columns\IconColumn::make('is_required')->boolean(),
             ])
             ->filters([
-                SelectFilter::make('type')->label(__('compliance.fields.type'))->options(self::documentTypes()),
-                SelectFilter::make('status')->label(__('compliance.fields.status'))->options(self::statuses()),
+                SelectFilter::make('type')->options(self::documentTypes()),
+                SelectFilter::make('status')->options(self::statuses()),
             ])
             ->recordActions([
                 Action::make('analyzeWithAi')
-                    ->label(__('compliance.actions.analyze_with_ai'))
+
                     ->icon('heroicon-o-sparkles')
                     ->color('info')
                     ->action(function (ComplianceDocument $record): void {

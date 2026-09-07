@@ -50,7 +50,7 @@ final class ListInterventions extends XotBaseListRecords
     {
         return [
             'work_order_id' => Tables\Columns\TextColumn::make('work_order_id')
-                ->label(__('interventions.fields.work_order_id'))
+
                 ->formatStateUsing(function ($state, Intervention $record): string {
                     if ($state === null || ! is_numeric($state) || (int) $state === 0) {
                         return '—';
@@ -64,7 +64,7 @@ final class ListInterventions extends XotBaseListRecords
                 })
                 ->sortable(),
             'customer_display' => Tables\Columns\TextColumn::make('customer_display')
-                ->label(__('work_orders.fields.customer'))
+
                 ->state(fn (Intervention $record): string => $record->workOrder->customer->legal_name
                     ?? $record->customer->legal_name
                     ?? '—')
@@ -76,15 +76,15 @@ final class ListInterventions extends XotBaseListRecords
                 })
                 ->toggleable(),
             'workOrder.site.name' => Tables\Columns\TextColumn::make('workOrder.site.name')
-                ->label(__('work_orders.fields.site'))
+
                 ->searchable()
                 ->toggleable(),
             'performedBy.name' => Tables\Columns\TextColumn::make('performedBy.name')
-                ->label(__('interventions.fields.performed_by'))
+
                 ->searchable()
                 ->sortable(),
             'assigned_users_summary' => Tables\Columns\TextColumn::make('assigned_users_summary')
-                ->label(__('interventions.fields.operators'))
+
                 ->state(function (Intervention $record): string {
                     $names = $record->assignedUsers()
                         ->orderBy('name')
@@ -100,43 +100,43 @@ final class ListInterventions extends XotBaseListRecords
                 })
                 ->toggleable(),
             'started_at' => Tables\Columns\TextColumn::make('started_at')
-                ->label(__('interventions.fields.started_at'))
+
                 ->dateTime()
                 ->sortable()
                 ->toggleable(),
             'ended_at' => Tables\Columns\TextColumn::make('ended_at')
-                ->label(__('interventions.fields.ended_at'))
+
                 ->dateTime()
                 ->sortable()
                 ->toggleable(),
             'scheduled_at' => Tables\Columns\TextColumn::make('scheduled_at')
-                ->label(__('interventions.fields.scheduled_at'))
+
                 ->dateTime('d/m/Y H:i')
                 ->sortable()
                 ->toggleable(),
             'amount' => Tables\Columns\TextColumn::make('amount')
-                ->label(__('interventions.fields.labor_amount'))
+
                 ->money('EUR')
                 ->sortable()
                 ->toggleable(),
             'callout_fee' => Tables\Columns\TextColumn::make('callout_fee')
-                ->label(__('interventions.fields.callout_fee'))
+
                 ->money('EUR')
                 ->sortable()
                 ->toggleable(),
             'materials_total' => Tables\Columns\TextColumn::make('materials_total')
-                ->label(__('interventions.fields.materials_total'))
+
                 ->money('EUR')
                 ->sortable()
                 ->toggleable(),
             'total_amount' => Tables\Columns\TextColumn::make('total_amount')
-                ->label(__('interventions.fields.total_amount'))
+
                 ->money('EUR')
                 ->sortable()
                 ->toggleable(),
             // Extra fuori preventivo: se resta invisibile, viene regalato.
             'extra_total' => Tables\Columns\TextColumn::make('extra_total')
-                ->label(__('interventions.extra.total'))
+
                 ->state(fn (Intervention $record): float => round(
                     (float) $record->materialLines()->sum('extra_amount'),
                     2,
@@ -145,11 +145,11 @@ final class ListInterventions extends XotBaseListRecords
                 ->badge()
                 ->color(fn (mixed $state): string => is_numeric($state) && (float) $state > 0.0 ? 'warning' : 'gray'),
             'work_minutes' => Tables\Columns\TextColumn::make('work_minutes')
-                ->label(__('interventions.fields.work_minutes'))
+
                 ->numeric()
                 ->sortable(),
             'outcome_code' => Tables\Columns\TextColumn::make('outcome_code')
-                ->label(__('interventions.fields.outcome'))
+
                 ->formatStateUsing(fn (?string $state): string => match ($state) {
                     'completed' => __('interventions.outcomes.completed'),
                     'suspended' => __('interventions.outcomes.suspended'),
@@ -159,12 +159,12 @@ final class ListInterventions extends XotBaseListRecords
                 ->badge()
                 ->toggleable(),
             'notes' => Tables\Columns\TextColumn::make('notes')
-                ->label(__('interventions.fields.notes'))
+
                 ->limit(70)
                 ->searchable()
                 ->toggleable(),
             'travel_km' => Tables\Columns\TextColumn::make('travel_km')
-                ->label(__('interventions.fields.travel_km'))
+
                 ->numeric()
                 ->sortable()
                 ->toggleable(),
@@ -181,13 +181,13 @@ final class ListInterventions extends XotBaseListRecords
     {
         return [
             'has_extra' => Filter::make('has_extra')
-                ->label(__('interventions.extra.has_extra'))
+
                 ->query(fn (Builder $query): Builder => $query->whereHas(
                     'materialLines',
                     fn ($lines) => $lines->where('extra_quantity', '>', 0),
                 )),
             'customer_id' => SelectFilter::make('customer_id')
-                ->label(__('work_orders.fields.customer'))
+
                 ->options(fn (): array => Customer::query()->whereNotNull('legal_name')->orderBy('legal_name')->pluck('legal_name', 'id')->all())
                 ->query(function (Builder $query, array $data): Builder {
                     $value = $data['value'] ?? 0;
@@ -201,7 +201,7 @@ final class ListInterventions extends XotBaseListRecords
                         : $query;
                 }),
             'customer_site_id' => SelectFilter::make('customer_site_id')
-                ->label(__('work_orders.fields.site'))
+
                 ->options(fn (): array => CustomerSite::query()->whereNotNull('name')->orderBy('name')->pluck('name', 'id')->all())
                 ->query(function (Builder $query, array $data): Builder {
                     $value = $data['value'] ?? 0;
@@ -212,7 +212,7 @@ final class ListInterventions extends XotBaseListRecords
                         : $query;
                 }),
             'outcome_code' => SelectFilter::make('outcome_code')
-                ->label(__('interventions.fields.outcome'))
+
                 ->options([
                     'completed' => __('interventions.outcomes.completed'),
                     'suspended' => __('interventions.outcomes.suspended'),
@@ -221,10 +221,8 @@ final class ListInterventions extends XotBaseListRecords
             'scheduled_between' => Filter::make('scheduled_between')
                 ->label(__('work_orders.fields.report_from').' / '.__('work_orders.fields.report_to'))
                 ->form([
-                    DatePicker::make('from')
-                        ->label(__('work_orders.fields.report_from')),
-                    DatePicker::make('to')
-                        ->label(__('work_orders.fields.report_to')),
+                    DatePicker::make('from'),
+                    DatePicker::make('to'),
                 ])
                 ->query(function (Builder $query, array $data): Builder {
                     $from = is_string($data['from'] ?? null) ? $data['from'] : null;
@@ -250,7 +248,7 @@ final class ListInterventions extends XotBaseListRecords
     {
         return [
             'start_time_punch' => Action::make('start_time_punch')
-                ->label(__('interventions.actions.start_time_punch'))
+
                 ->icon('heroicon-o-play')
                 ->visible(function (Intervention $record): bool {
                     $userId = Auth::id();
@@ -281,7 +279,7 @@ final class ListInterventions extends XotBaseListRecords
                     }
                 }),
             'stop_time_punch' => Action::make('stop_time_punch')
-                ->label(__('interventions.actions.stop_time_punch'))
+
                 ->icon('heroicon-o-stop')
                 ->color('danger')
                 ->visible(function (Intervention $record): bool {
@@ -313,7 +311,7 @@ final class ListInterventions extends XotBaseListRecords
                     }
                 }),
             'validate' => Action::make('validate')
-                ->label(__('interventions.actions.validate'))
+
                 ->icon('heroicon-o-check-circle')
                 ->visible(function (Intervention $record): bool {
                     $userId = Auth::id();
@@ -325,23 +323,23 @@ final class ListInterventions extends XotBaseListRecords
                 })
                 ->form([
                     TextInput::make('travel_km')
-                        ->label(__('interventions.fields.travel_km'))
+
                         ->numeric()
                         ->minValue(0)
                         ->required()
                         ->default(fn (Intervention $record): int => (int) ($record->travel_km ?? 0)),
                     TextInput::make('travel_minutes')
-                        ->label(__('interventions.fields.travel_minutes'))
+
                         ->numeric()
                         ->minValue(0)
                         ->required()
                         ->default(fn (Intervention $record): int => (int) ($record->travel_minutes ?? 0)),
                     Textarea::make('notes')
-                        ->label(__('interventions.fields.notes'))
+
                         ->default(fn (Intervention $record): ?string => $record->notes)
                         ->columnSpanFull(),
                     Select::make('outcome_code')
-                        ->label(__('interventions.fields.outcome'))
+
                         ->options([
                             'completed' => __('interventions.outcomes.completed'),
                             'suspended' => __('interventions.outcomes.suspended'),
@@ -371,7 +369,7 @@ final class ListInterventions extends XotBaseListRecords
                     );
                 }),
             'upload_photos' => Action::make('upload_photos')
-                ->label(__('documents.actions.upload_photos'))
+
                 ->icon('heroicon-o-camera')
                 ->visible(function (Intervention $record): bool {
                     if (! request()->is('operator/*')) {

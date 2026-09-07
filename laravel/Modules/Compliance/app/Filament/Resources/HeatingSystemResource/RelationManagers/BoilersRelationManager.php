@@ -53,15 +53,15 @@ final class BoilersRelationManager extends XotBaseRelationManager
             ])->all();
 
         return [
-            'brand' => TextInput::make('brand')->label(__('heating.fields.brand'))->maxLength(255),
-            'model' => TextInput::make('model')->label(__('heating.fields.model'))->maxLength(255),
-            'serial_number' => TextInput::make('serial_number')->label(__('heating.fields.serial_number'))->maxLength(255),
-            'generator_type' => Select::make('generator_type')->label(__('heating.fields.generator_type'))->options($generatorOptions),
-            'fuel_type' => Select::make('fuel_type')->label(__('heating.fields.fuel_type'))->options($fuelOptions),
-            'power_kw' => TextInput::make('power_kw')->label(__('heating.fields.power_kw'))->numeric()->suffix('kW'),
-            'installation_date' => DatePicker::make('installation_date')->label(__('heating.fields.installation_date')),
-            'maintenance_interval_months' => TextInput::make('maintenance_interval_months')->label(__('heating.fields.maintenance_interval_months'))->numeric()->minValue(1),
-            'efficiency_check_interval_months' => TextInput::make('efficiency_check_interval_months')->label(__('heating.fields.efficiency_check_interval_months'))->numeric()->minValue(1),
+            'brand' => TextInput::make('brand')->maxLength(255),
+            'model' => TextInput::make('model')->maxLength(255),
+            'serial_number' => TextInput::make('serial_number')->maxLength(255),
+            'generator_type' => Select::make('generator_type')->options($generatorOptions),
+            'fuel_type' => Select::make('fuel_type')->options($fuelOptions),
+            'power_kw' => TextInput::make('power_kw')->numeric()->suffix('kW'),
+            'installation_date' => DatePicker::make('installation_date'),
+            'maintenance_interval_months' => TextInput::make('maintenance_interval_months')->numeric()->minValue(1),
+            'efficiency_check_interval_months' => TextInput::make('efficiency_check_interval_months')->numeric()->minValue(1),
         ];
     }
 
@@ -69,14 +69,14 @@ final class BoilersRelationManager extends XotBaseRelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('brand')->label(__('heating.fields.brand'))->searchable(),
-                Tables\Columns\TextColumn::make('model')->label(__('heating.fields.model')),
-                Tables\Columns\TextColumn::make('power_kw')->label(__('heating.fields.power_kw'))->suffix(' kW')->toggleable(),
+                Tables\Columns\TextColumn::make('brand')->searchable(),
+                Tables\Columns\TextColumn::make('model'),
+                Tables\Columns\TextColumn::make('power_kw')->suffix(' kW')->toggleable(),
                 Tables\Columns\TextColumn::make('next_maintenance_due_on')
-                    ->label(__('heating.fields.next_maintenance'))->date()->sortable()
+                    ->date()->sortable()
                     ->color(fn (?Carbon $state): string => $this->dueColor($state)),
                 Tables\Columns\TextColumn::make('next_efficiency_check_due_on')
-                    ->label(__('heating.fields.next_efficiency'))->date()->sortable()
+                    ->date()->sortable()
                     ->color(fn (?Carbon $state): string => $this->dueColor($state)),
             ])
             ->headerActions([
@@ -93,28 +93,28 @@ final class BoilersRelationManager extends XotBaseRelationManager
     private function registerControlAction(): Action
     {
         return Action::make('registerControl')
-            ->label(__('heating.actions.register_control'))
+
             ->icon('heroicon-o-clipboard-document-check')
             ->schema([
                 Select::make('control_type')
-                    ->label(__('heating.fields.control_type'))
+
                     ->options([
                         'maintenance' => __('heating.control_types.maintenance'),
                         'efficiency_check' => __('heating.control_types.efficiency_check'),
                     ])->default('maintenance')->required(),
-                DatePicker::make('performed_on')->label(__('heating.fields.performed_on'))->default(now())->required(),
-                Select::make('outcome')->label(__('heating.fields.outcome'))->options([
+                DatePicker::make('performed_on')->default(now())->required(),
+                Select::make('outcome')->options([
                     'conforme' => __('heating.outcomes.conforme'),
                     'non_conforme' => __('heating.outcomes.non_conforme'),
                 ]),
-                TextInput::make('combustion_efficiency_percent')->label(__('heating.fields.efficiency_percent'))->numeric()->suffix('%'),
+                TextInput::make('combustion_efficiency_percent')->numeric()->suffix('%'),
                 TextInput::make('co2_percent')->numeric()->suffix('%'),
                 TextInput::make('o2_percent')->numeric()->suffix('%'),
                 TextInput::make('co_ppm')->numeric()->suffix('ppm'),
-                TextInput::make('flue_gas_temp_c')->label(__('heating.fields.flue_gas_temp'))->numeric()->suffix('°C'),
-                TextInput::make('smoke_index')->label(__('heating.fields.smoke_index'))->numeric()->minValue(0)->maxValue(9),
-                TextInput::make('bollino_code')->label(__('heating.fields.bollino_code')),
-                Textarea::make('notes')->label(__('heating.fields.notes'))->columnSpanFull(),
+                TextInput::make('flue_gas_temp_c')->numeric()->suffix('°C'),
+                TextInput::make('smoke_index')->numeric()->minValue(0)->maxValue(9),
+                TextInput::make('bollino_code'),
+                Textarea::make('notes')->columnSpanFull(),
             ])
             ->action(function (array $data, Boiler $record): void {
                 /** @var array<string, mixed> $data */
@@ -131,16 +131,16 @@ final class BoilersRelationManager extends XotBaseRelationManager
     private function generateInterventionAction(): Action
     {
         return Action::make('generateIntervention')
-            ->label(__('heating.actions.generate_intervention'))
+
             ->icon('heroicon-o-calendar-days')
             ->schema([
-                Select::make('control_type')->label(__('heating.fields.control_type'))->options([
+                Select::make('control_type')->options([
                     'maintenance' => __('heating.control_types.maintenance'),
                     'efficiency_check' => __('heating.control_types.efficiency_check'),
                 ])->default('maintenance')->required(),
-                DateTimePicker::make('scheduled_at')->label(__('heating.fields.scheduled_at'))->default(now()->addWeek())->required(),
+                DateTimePicker::make('scheduled_at')->default(now()->addWeek())->required(),
                 Select::make('performed_by_user_id')
-                    ->label(__('heating.fields.technician'))
+
                     ->options(fn (): array => User::query()->orderBy('name')->pluck('name', 'id')->all())
                     ->searchable()->preload()->required(),
             ])

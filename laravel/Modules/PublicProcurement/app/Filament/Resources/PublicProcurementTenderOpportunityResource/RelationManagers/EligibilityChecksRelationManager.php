@@ -22,10 +22,10 @@ final class EligibilityChecksRelationManager extends XotBaseRelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('status')->label(__('public_procurement.fields.status'))->badge()->sortable(),
-                Tables\Columns\TextColumn::make('score')->label(__('public_procurement.fields.score'))->sortable(),
-                Tables\Columns\TextColumn::make('summary')->label(__('public_procurement.fields.summary'))->limit(80),
-                Tables\Columns\TextColumn::make('evaluated_at')->label(__('public_procurement.fields.evaluated_at'))->dateTime()->sortable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('score')->sortable(),
+                Tables\Columns\TextColumn::make('summary')->limit(80),
+                Tables\Columns\TextColumn::make('evaluated_at')->dateTime()->sortable(),
             ])
             ->defaultSort('id', 'desc');
     }
