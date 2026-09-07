@@ -19,14 +19,14 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Validation\Rules\Unique;
 use Modules\Costing\Models\WorkCenter;
 use Modules\MetalWork\Support\MetalWorksCosting;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * The workshop's cost centres. The hourly rate and the markup here are what every
  * machining row of every estimate is computed from, so this is the one screen
  * that moves the price of the whole catalogue.
  */
-final class MetalWorkCenterResource extends GatedXotBaseResource
+final class MetalWorkCenterResource extends XotBaseResource
 {
     protected static ?string $model = WorkCenter::class;
 

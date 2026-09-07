@@ -25,10 +25,10 @@ use Modules\Catalog\Actions\ImportMetelPriceListFileAction;
 use Modules\Catalog\Filament\Resources\MetelCatalogResource\Pages;
 use Modules\Catalog\Filament\Resources\MetelCatalogResource\RelationManagers\ItemsRelationManager;
 use Modules\Catalog\Models\MetelCatalog;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use RuntimeException;
 
-final class MetelCatalogResource extends GatedXotBaseResource
+final class MetelCatalogResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 

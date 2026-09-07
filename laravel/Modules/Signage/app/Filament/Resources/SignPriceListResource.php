@@ -16,16 +16,16 @@ use Filament\Schemas\Components\Section;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Customer\Models\Customer;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Signage\Filament\Resources\SignPriceListResource\Pages;
 use Modules\Signage\Models\SignPriceList;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * Sales price lists, kept per brand/customer the way the customer keeps them.
  * The grouping is organisational: an article has one sale price, discounts live
  * on the quotation line.
  */
-final class SignPriceListResource extends GatedXotBaseResource
+final class SignPriceListResource extends XotBaseResource
 {
     protected static ?string $model = SignPriceList::class;
 

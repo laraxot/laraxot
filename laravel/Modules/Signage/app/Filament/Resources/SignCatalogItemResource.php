@@ -18,10 +18,10 @@ use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Signage\Filament\Resources\SignCatalogItemResource\Pages;
 use Modules\Signage\Models\SignCatalogItem;
 use Modules\Signage\Models\SignPriceList;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * A finished product in a sales price list, with its own distinta. Items are
@@ -29,7 +29,7 @@ use Modules\Signage\Models\SignPriceList;
  * temperature and colour — so "Duplica" is how the next variant is born, the
  * same as in the customer's gestionale.
  */
-final class SignCatalogItemResource extends GatedXotBaseResource
+final class SignCatalogItemResource extends XotBaseResource
 {
     protected static ?string $model = SignCatalogItem::class;
 

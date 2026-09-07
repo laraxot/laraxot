@@ -33,13 +33,13 @@ use Modules\Inventory\Filament\Resources\InventoryMovementResource\Pages\ViewInv
 use Modules\Inventory\Models\InventoryMovement;
 use Modules\Inventory\Models\Warehouse;
 use Modules\Inventory\Models\WarehouseLocation;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\Xot\Actions\Cast\SafeIntCastAction;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class InventoryMovementResource extends GatedXotBaseResource
+final class InventoryMovementResource extends XotBaseResource
 {
     protected static ?string $model = InventoryMovement::class;
 

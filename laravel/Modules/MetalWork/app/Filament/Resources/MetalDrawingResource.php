@@ -10,7 +10,7 @@ use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\MetalWork\Models\MetalDrawing;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * The archive of parsed drawings. Read-only by design: everything here was
@@ -18,7 +18,7 @@ use Modules\Platform\Filament\Resources\GatedXotBaseResource;
  * from the drawing it came from. Corrections belong on the estimate, where they
  * are recorded as the operator's own inputs.
  */
-final class MetalDrawingResource extends GatedXotBaseResource
+final class MetalDrawingResource extends XotBaseResource
 {
     protected static ?string $model = MetalDrawing::class;
 

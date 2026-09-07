@@ -76,3 +76,22 @@ Billing esiste perché la fatturazione ha requisiti di integrità e conformità 
 4. **Real-time reconciliation**: matching in tempo reale invece di nightly batch
 5. **Multi-tax jurisdictions**: supporto per giurisdizioni fiscali multiple
 6. **Financial AI assistant**: chat per analisi dati finanziari
+
+---
+
+## Filament Pattern (DeliveryNoteResource — audit 2026-09-07)
+
+`Billing\DeliveryNoteResource` segue la struttura canonica Laraxot (audit 06 `filament_audit.md`):
+- `extends XotBaseResource` (direct — mai `GatedXotBaseResource` o inventata)
+- `Schemas/DeliveryNoteForm.php` · `Schemas/DeliveryNoteInfolist.php` · `Tables/DeliveryNotesTable.php`
+- `Pages/` + `RelationManagers/` presenti
+- Zero `getFormSchema()` / `table()` / `getInfolistSchema()` inline nel Resource
+- Zero `->label()` hardcoded — tutto via `LangServiceProvider` (`billing::suppliers.*`)
+- `declare(strict_types=1);` ovunque
+
+## Second Brain / BMAD
+
+- Story: `docs/stories/4.1.filament-resource-gap-billing-completed.story.md`
+- Prompt 06: `bashscripts/docs/prompts/06-filament-audit.md` (frontmatter aggiornato, `typeCoverage` documentato, `LangServiceProvider` convenzione aggiunta)
+- Second brain entry: `docs/second-brain/langserviceprovider-label-convention.md`
+- Pattern: `LangServiceProvider` auto-registra traduzioni; mai `->label()` nel codice

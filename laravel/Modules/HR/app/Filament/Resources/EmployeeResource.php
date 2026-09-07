@@ -26,10 +26,10 @@ use Modules\HR\Filament\Resources\EmployeeResource\RelationManagers\DocumentsRel
 use Modules\HR\Filament\Resources\EmployeeResource\RelationManagers\MedicalVisitsRelationManager;
 use Modules\HR\Filament\Resources\EmployeeResource\RelationManagers\TrainingsRelationManager;
 use Modules\HR\Models\Employee;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\User\Models\User;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class EmployeeResource extends GatedXotBaseResource
+final class EmployeeResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 

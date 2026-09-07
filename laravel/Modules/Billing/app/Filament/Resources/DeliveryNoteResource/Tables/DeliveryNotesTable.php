@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Filament\Resources\DeliveryNoteResource\Tables;
 
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Modules\Billing\Filament\Resources\DeliveryNoteResource;
@@ -20,7 +23,7 @@ final class DeliveryNotesTable extends XotBaseResourceTable
     {
         return [
             'number' => TextColumn::make('number')
-                ->weight(\Filament\Support\Enums\FontWeight::Bold)
+                ->weight(FontWeight::Bold)
                 ->searchable()
                 ->sortable(),
             'supplier.legal_name' => TextColumn::make('supplier.legal_name')
@@ -48,5 +51,26 @@ final class DeliveryNotesTable extends XotBaseResourceTable
                 ->options(fn (): array => DeliveryNoteResource::supplierOptions())
                 ->searchable(),
         ];
+    }
+
+    /**
+     * @return array<string, ViewAction|EditAction>
+     */
+    public function getTableActions(): array
+    {
+        return [
+            'view' => ViewAction::make(),
+            'edit' => EditAction::make(),
+        ];
+    }
+
+    protected function getDefaultTableSortColumn(): string
+    {
+        return 'received_on';
+    }
+
+    protected function getDefaultTableSortDirection(): string
+    {
+        return 'desc';
     }
 }

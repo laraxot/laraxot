@@ -89,10 +89,31 @@ Tests: 2 passed (2 assertions)
 PHPStan `Modules/Rating` cold: **0 errori** (confermato 3 volte con
 `clear-result-cache` prima di ogni run).
 
+## Aggiornamento del 7 settembre 2026 (DoD piena — typeCoverage + PHPMD, story RATING-2.4)
+
+Fix `typeCoverage.constantTypeCoverage` (const tipizzata su `Rating.php::BLOCK_TYPE`) +
+pulizia PHPMD (~40→12 violazioni, resto documentato come falso positivo o vincolo di
+framework — dettaglio in `docs/stories/2.4.dod-full-closure-typecoverage-phpmd.story.md`).
+Nessun comportamento nuovo: solo rename camelCase, un `MissingImport`, un
+extract-method a comportamento identico (`Datas/RatingData::fromArray()`, complessità
+ciclomatica 11→~5), rimozione di un parametro closure morto.
+
+Verifica mirata (carico condiviso ~30 agenti attivo, suite completa lanciata in
+background con timeout 8 min per lo stesso motivo):
+```
+./vendor/bin/pest Modules/Rating/tests/Unit/RatingDatasDataTest.php --no-coverage
+Tests: 6 passed (29 assertions) — 38.31s (5-8s/test, carico condiviso, non un hang)
+```
+PHPStan `Modules/Rating`: verde più volte durante il lavoro (cache pulita ogni
+volta); verifica finale bloccata da un bootstrap-fatal non correlato su
+`Modules/Platform` (WIP di un altro agente, classe mancante temporaneamente) —
+`php -l` pulito su tutti i file toccati.
+
 ## Storico
 
 | Data | Passati | Saltati | Falliti | Coverage |
 |---|---:|---:|---:|---|
 | 2026-09-01 | 118 | 7 | 0 | 80.8 % |
 | 2026-09-06 (mirato, vedi nota sopra) | 2/2 file toccato | — | 0 | non ricalcolata (full-suite non completata per carico condiviso) |
+| 2026-09-07 (mirato, story RATING-2.4) | 6/6 file toccato | — | 0 | non ricalcolata (full-suite in background, carico condiviso) |
 

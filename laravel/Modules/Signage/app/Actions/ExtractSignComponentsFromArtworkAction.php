@@ -24,7 +24,7 @@ use function Safe\preg_match_all;
 final class ExtractSignComponentsFromArtworkAction
 {
     /** @var array<string, string> Title-block labels (right column) mapped to their extraction field key. */
-    private const TITLE_BLOCK_LABELS = [
+    private const array TITLE_BLOCK_LABELS = [
         'CUSTOMER' => 'customer',
         'REFERENT' => 'referent',
         'PROJECT' => 'project',
@@ -40,10 +40,10 @@ final class ExtractSignComponentsFromArtworkAction
 
     /** @var list<string> Labels that are not stored as fields but still act as boundaries so a value
      * never bleeds into the row below (e.g. the PM/REV/SCALE/SIZE bottom strip). */
-    private const BOUNDARY_LABELS = ['PM', 'REV', 'TAV', 'SCALE', 'SIZE', 'NOTE'];
+    private const array BOUNDARY_LABELS = ['PM', 'REV', 'TAV', 'SCALE', 'SIZE', 'NOTE'];
 
     /** @var list<array{role: string, keyword: string}> Component classification rules, evaluated in order (first match wins). */
-    private const COMPONENT_RULES = [
+    private const array COMPONENT_RULES = [
         ['role' => 'body', 'keyword' => '/ACRYLBLOCK|PLEXBLOCK|BLOCK|LASTRA|BODY|RETRO|BACK OF THE LETTERS/i'],
         ['role' => 'face', 'keyword' => '/FRONT SIDE|FRONT LIGHT|LETTERS FRONT|FACE|OPAL PLEX|FRONTE/i'],
         ['role' => 'led', 'keyword' => '/LED|STRIPLED|STRIP LED|MODUL/i'],

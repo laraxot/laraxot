@@ -59,11 +59,11 @@ use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
 use Modules\Intervention\Models\TimePunch;
 use Modules\Intervention\Support\DailyNoteHtml;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Platform\Settings\SettingsRepository;
 use Modules\User\Models\User;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class InterventionResource extends GatedXotBaseResource
+final class InterventionResource extends XotBaseResource
 {
     protected static ?string $model = Intervention::class;
 

@@ -1,5 +1,93 @@
 # Coverage — MetalWork
 
+## 2026-09-07 (later pass) — typeCoverage.constantTypeCoverage + @var regression fix
+
+Story: `docs/stories/phpstan-MetalWork-fix.md` (Update 2026-09-07 section).
+
+### PHPStan
+
+Scoped (`phpstan analyse Modules/MetalWork --no-progress --memory-limit=-1`):
+0 errors before, 0 errors after (unchanged — the metric this pass targets is
+invisible at module scope).
+
+Full tree (`phpstan analyse Modules --no-progress --memory-limit=-1
+--error-format=json`): before this pass, 8 MetalWork files had untyped class
+constants contributing to the repo-wide `typeCoverage.constantTypeCoverage`
+deficit (117 occurrences repo-wide before touching MetalWork, counted against
+the JSON report). After adding real `const array|string|int|float` type
+declarations to all 8 files' constants: 0 messages of any kind (of any
+identifier) attributed to any MetalWork file in the full-tree JSON report —
+confirmed by filtering `d['files']` for any key containing `MetalWork`.
+`classConstant.*` errors repo-wide: 0 (the `@var list<string>` regression on
+`ELIGIBLE_FAMILIES`/`COUNTED_ENTITIES`/`SURFACE_ENTITIES` reported in
+`docs/chat/typecoverage-constant-wrong-var-list-string-regression.md` was
+already fixed by a concurrent agent's commit `b28a1bd` before this pass
+started; this pass added the missing real type declarations on top of that
+already-correct `@var` shape).
+
+Files touched (constant type declarations only, no logic changes):
+`app/Actions/EstimateFromBillOfMaterialsAction.php`,
+`app/Actions/MatchRawMaterialToSolidAction.php`, `app/Datas/StepSolid.php`,
+`app/Filament/Pages/MetalDrawingQuotationPage.php`,
+`app/Support/MetalWorksCosting.php`, `app/Support/StepFileParser.php`,
+`app/Support/StepSolidExtractor.php`, `app/Support/SupplierInvoiceParser.php`.
+
+### PHPMD
+
+`bash tools/phpmd.sh Modules/MetalWork/app text Modules/MetalWork/phpmd.ruleset.xml`:
+**31 findings**, before and after identical in nature (ShortVariable,
+ExcessiveClassComplexity, CyclomaticComplexity, ExcessiveParameterList,
+CouplingBetweenObjects, UnusedFormalParameter, LongClassName, LongVariable,
+ElseExpression) — none on the touched const declaration lines, none new. All
+pre-existing, already documented in the section below. Left untouched: the
+structural ones (complexity/coupling) per the "don't break working code for a
+lint score" rule; the mechanical short-variable-name ones too, because fixing
+them requires touching files outside this pass's locked scope
+(`BuildDrawingBillOfMaterialsAction.php`, `EstimateMetalPartCostAction.php`,
+`Datas/SupplierInvoice.php`, `Datas/StepGeometry.php`,
+`Datas/MetalPartCosting.php`, `Support/RawMaterialDimensionReader.php`) that
+other agents may be concurrently editing (lock-file contention risk).
+
+### PHPInsights
+
+`vendor/bin/phpinsights analyse Modules/MetalWork/app --no-interaction`:
+ran cleanly, exit 0, no `ComposerNotFound` crash this time (previous session's
+documented bug did not reproduce — not re-investigated, out of scope).
+
+- Code: 88.7
+- Complexity: 72.6
+- Architecture: 88.2
+- Style: 89.2
+
+All four above the repo's `min-*: 70` thresholds in `phpinsights.php`.
+Remaining findings (forbidden public property, forbidden setter, import
+ordering, useless parentheses) are pre-existing, on files/lines not touched by
+this pass.
+
+### Pest
+
+`vendor/bin/pest Modules/MetalWork/tests --no-coverage`:
+
+Before (previous pass, same suite): 34 failed / 8 passed (21 assertions).
+After (this pass): **34 failed / 8 passed (18 assertions)** — identical
+pass/fail counts, confirming no regression from the constant-typing change.
+Of the 34 failures:
+- 14 are the same pre-existing "missing DB table" bucket documented in the
+  section below (`metalwork_raw_materials`, `metalwork_supplier_prices` not
+  present in the `workorder_data_test` database on the `metal_work`
+  connection).
+- 20 are `Error: Class "Modules\Platform\Filament\Resources\XotBaseResource"
+  not found`, raised while Filament panel discovery loads
+  `Modules/Platform/app/Filament/Resources/AuditLogResource.php` — a
+  **transient failure from a concurrent agent's in-flight, uncommitted edit**
+  to that exact file in `Modules/Platform` (confirmed via `git status` in
+  that module showing `AuditLogResource.php` modified plus a live
+  `.lock` file at the time of this run), not caused by anything in this pass.
+
+The assertion-count difference (18 vs 21) is consistent with which specific
+tests happen to fail on the way to their first assertion under this kind of
+transient cross-module breakage, not a coverage regression.
+
 ## 2026-09-07 — PHPStan zero (except pre-approved skip) + Filament v4->v5 deprecations
 
 Story: `docs/stories/phpstan-MetalWork-fix.md`.

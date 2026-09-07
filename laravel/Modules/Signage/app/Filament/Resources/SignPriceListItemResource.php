@@ -19,17 +19,17 @@ use Filament\Schemas\Components\Section;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Costing\Models\WorkCenter;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Signage\Filament\Resources\SignPriceListItemResource\Pages;
 use Modules\Signage\Models\SignPriceListItem;
 use Modules\Signage\Support\SignageCosting;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * The supplier price list: what every material, machining step and outsourced
  * job costs, grouped by the work centre it belongs to. It is the cost side —
  * the sales side lives in SignPriceListResource.
  */
-final class SignPriceListItemResource extends GatedXotBaseResource
+final class SignPriceListItemResource extends XotBaseResource
 {
     protected static ?string $model = SignPriceListItem::class;
 

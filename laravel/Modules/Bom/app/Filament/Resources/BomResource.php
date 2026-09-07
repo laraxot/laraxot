@@ -22,9 +22,9 @@ use Modules\Bom\Filament\Resources\BomResource\Pages\ViewBom;
 use Modules\Bom\Filament\Resources\BomResource\RelationManagers\BomItemsRelationManager;
 use Modules\Bom\Models\Bom;
 use Modules\Catalog\Models\Product;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class BomResource extends GatedXotBaseResource
+final class BomResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 

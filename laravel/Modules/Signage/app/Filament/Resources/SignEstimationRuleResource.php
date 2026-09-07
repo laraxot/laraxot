@@ -17,11 +17,11 @@ use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Signage\Filament\Resources\SignEstimationRuleResource\Pages;
 use Modules\Signage\Models\SignEstimationRule;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class SignEstimationRuleResource extends GatedXotBaseResource
+final class SignEstimationRuleResource extends XotBaseResource
 {
     protected static ?string $model = SignEstimationRule::class;
 

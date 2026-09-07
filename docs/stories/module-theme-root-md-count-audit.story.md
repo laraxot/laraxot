@@ -1,11 +1,15 @@
 ---
 name: module-theme-root-md-count-audit-2026-09-07
-description: Audit .md file count in every module/theme root against the max-6 rule; result already compliant
+description: Audit .md file count in every module/theme root against the max-6 rule; drifted back to non-compliant within hours, re-fixed via swarm
 metadata:
   type: story
   status: done
   date: 2026-09-07
   claimed_by: claude-sonnet-5 (this session)
+issues:
+  - https://github.com/laraxot/base_workorder_fila5/issues/14
+discussions:
+  - https://github.com/laraxot/base_workorder_fila5/discussions/15
 ---
 
 # Story: audit max-6 `.md` files in module/theme roots
@@ -70,3 +74,38 @@ stesso trattamento di `Modules/docs/` in futuro (consolidare a un indice +
 sottocartelle tematiche), ma essendo un hub e non una root di
 modulo/tema non rientra nell'ambito letterale di questa richiesta. Nessuna
 azione presa qui, segnalata per decisione futura dell'owner.
+
+## Aggiornamento 2026-09-07 (~2h dopo) — la claim "0 violazioni" era già stale
+
+Una sessione diversa (questa) ha rieseguito lo stesso controllo poche ore dopo
+e trovato **6 violazioni reali**, non zero:
+
+| Dir | md | txt | causa |
+|---|---|---|---|
+| `Modules/AI/` | 3 | 3 | `.txt` di root (report phpmd/pest/closure) mai spostati |
+| `Modules/Media/` | 3 | 2 | `.txt` di root (phpmd/pest) mai spostati |
+| `Modules/Cms/` | 16 | 0 | 14 file duplicati (byte-identici a copie già in `docs/root-md-files/` da un import mai ripulito) |
+| `Modules/UI/` | 31 | 0 | 25 file duplicati (stesso pattern, `docs/raw/root-import/`) |
+| `Modules/Xot/` | 139 | 0 | bulk operation non committata, mtime uniforme `12:16`, probabile script txt→md interrotto — **non** una regressione della consolidazione 2026-09-05 (quella *era* rimasta a 1 file tracciato; i 139 erano tutti untracked, poi accidentalmente committati da un altro agente con un `git add -A` a metà del mio audit) |
+
+**Lezione:** "conforme oggi" su un repo con ~30 agenti concorrenti non implica
+"conforme fra due ore". La verifica del 2026-09-05 era corretta al momento;
+quella delle 2026-09-07 mattina pure; il drift è arrivato dopo, da operazioni
+bulk non coordinate. Ri-controllare prima di fidarsi, sempre — non della memoria
+di **nessuna** sessione precedente, inclusa questa stessa story.
+
+**Fix applicato** (swarm di 5 agenti paralleli, questa sessione):
+- AI: 3 `.txt` → `docs/root-txt-files/` — commit `437b344`
+- Media: 2 `.txt` → `docs/archived/` — commit `294a9a50`
+- Cms: 14 file duplicati rimossi (root già coperta da `docs/root-md-files/`) — commit `d719fc83`
+- UI: 25 file duplicati rimossi/fusi (root già coperta da `docs/raw/root-import/`) — commit `d4e1f578`
+- Xot: 138 file spostati in `docs/archived/` (gitignored, già politica del repo) — commit `9982f978` (+ collisione con `git add -A` di un altro agente risolta, vedi `Modules/Xot/docs/stories/18.3.module-theme-root-md-file-limit-audit.story.md`)
+
+Tutti e 5 committati e pushati sul remote del rispettivo modulo. Verifica finale
+post-fix: 0 violazioni reali (ri-eseguito lo stesso comando `find` di questa story).
+
+**`Themes/docs/` ancora non risolto**: confermato non essere un tema vero (nessun
+`.git` proprio), 30 file di documentazione architetturale modules-vs-themes a
+livello di progetto. Chiesto all'utente dove spostarlo (docs/wiki/ vs laravel/docs/
+vs lascia stare) — risposta: "lascia stare per ora". Resta un debito noto, non
+un blocco.

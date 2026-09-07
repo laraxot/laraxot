@@ -25,12 +25,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Filament\Resources\DailyNoteResource\Pages;
 use Modules\Intervention\Models\DailyNote;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 use function Safe\preg_replace;
 
-final class DailyNoteResource extends GatedXotBaseResource
+final class DailyNoteResource extends XotBaseResource
 {
     protected static ?string $model = DailyNote::class;
 

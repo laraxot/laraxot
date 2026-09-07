@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Platform\Filament\Resources\AuditLogResource\Pages\ListAuditLogs;
 use Modules\Platform\Filament\Resources\AuditLogResource\Pages\ViewAuditLog;
 use Modules\Platform\Models\AuditLog;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class AuditLogResource extends GatedXotBaseResource
+final class AuditLogResource extends XotBaseResource
 {
     protected static ?string $model = AuditLog::class;
 

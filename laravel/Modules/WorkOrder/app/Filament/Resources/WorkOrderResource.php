@@ -35,7 +35,6 @@ use Modules\Billing\Actions\BuildWorkOrderPreInvoiceAction;
 use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\ComputeWorkOrderEffortAction;
 use Modules\WorkOrder\Actions\GenerateWorkOrderReportAction;
@@ -51,8 +50,9 @@ use Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers\Read
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers\StatusEventsRelationManager;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class WorkOrderResource extends GatedXotBaseResource
+final class WorkOrderResource extends XotBaseResource
 {
     protected static ?string $model = WorkOrder::class;
 

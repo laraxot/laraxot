@@ -53,7 +53,8 @@ final class StepSolidExtractor
         'VERTEX_LOOP',
     ];
 
-    /** @var array{PLANE: 'plane', CYLINDRICAL_SURFACE: 'cylinder'} Surface types worth telling apart when describing a piece. */
+    /** Surface types worth telling apart when describing a piece. */
+    /** @var array<string, string> */
     private const array SURFACE_ENTITIES = [
         'PLANE' => 'plane',
         'CYLINDRICAL_SURFACE' => 'cylinder',

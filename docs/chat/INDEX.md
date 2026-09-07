@@ -2,6 +2,8 @@
 
 | Slug | Ambito | Stato |
 |------|--------|-------|
+| [gatedxotbaseresource-migration-bootstrap-break](2026-09-07-gatedxotbaseresource-migration-bootstrap-break.md) | `Modules\Platform\...\XotBaseResource` not found — Platform AuditLogResource/PlatformSettingResource: rename senza `use` import rompe bootstrap Filament su tutto `Modules`; + rischio regressione NavigationGate su `Billing\InvoiceResource`/CustomerPanelProvider se si toglie GatedXotBaseResource | urgente, non risolto 2026-09-07 (claude sonnet 5) |
+| [filament-canonical-structure-billing-4.1](2026-09-07-filament-canonical-structure-billing-4.1.md) | Story 4.1: 4 Resources Billing migrate a canonical structure (Schemas/ + Tables/ + Infolist) — 12 file creati, 4 Resource slimmate (rimozione -560 righe), `GatedXotBaseResource` → `XotBaseResource` diretto. PHPStan: 13 errori residui da fixare (4.1.1) | completato struttura, PHPStan pending 2026-09-07 (opencode) |
 | [bmad-deep-document-project](bmad-deep-document-project.md) | BMAD deep scan codice → project-documentation + religion | completato 2026-07-27 |
 | [second-brain-max-power-always](second-brain-max-power-always.md) | Rule alwaysApply + bootstrap/skill — QMD obbligatorio ogni task | attivo 2026-07-27 |
 | [audit-models-migrations-seeders-factories](audit-models-migrations-seeders-factories.md) | Audit modelli↔migration↔seeder↔factory tutti i moduli + fix swarm | completato (14 agenti, esito in fondo al file) |

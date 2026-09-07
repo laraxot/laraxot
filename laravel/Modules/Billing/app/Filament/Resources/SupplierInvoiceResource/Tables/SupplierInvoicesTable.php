@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Filament\Resources\SupplierInvoiceResource\Tables;
 
+use Filament\Actions\Action;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Modules\Billing\Filament\Resources\DeliveryNoteResource;
@@ -21,7 +26,7 @@ final class SupplierInvoicesTable extends XotBaseResourceTable
     {
         return [
             'number' => TextColumn::make('number')
-                ->weight(\Filament\Support\Enums\FontWeight::Bold)
+                ->weight(FontWeight::Bold)
                 ->searchable()
                 ->sortable(),
             'supplier.legal_name' => TextColumn::make('supplier.legal_name')
@@ -45,7 +50,7 @@ final class SupplierInvoicesTable extends XotBaseResourceTable
     }
 
     /**
-     * @return array<int|string, \Filament\Tables\Filters\Filter>
+     * @return array<int|string, SelectFilter>
      */
     public function getTableFilters(): array
     {
@@ -59,14 +64,14 @@ final class SupplierInvoicesTable extends XotBaseResourceTable
     }
 
     /**
-     * @return array<int|string, \Filament\Actions\Action|\Filament\Actions\ActionGroup>
+     * @return array<int|string, Action|ActionGroup>
      */
     public function getTableActions(): array
     {
         return [
             SupplierInvoiceResource::reconcileAction(),
-            \Filament\Actions\ViewAction::make(),
-            \Filament\Actions\EditAction::make(),
+            ViewAction::make(),
+            EditAction::make(),
         ];
     }
 }

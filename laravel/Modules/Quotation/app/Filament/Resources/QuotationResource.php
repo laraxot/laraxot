@@ -25,15 +25,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Modules\Customer\Models\Customer;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Quotation\Filament\Resources\QuotationResource\Pages;
 use Modules\Quotation\Filament\Resources\QuotationResource\RelationManagers\AttachmentsRelationManager;
 use Modules\Quotation\Filament\Resources\QuotationResource\RelationManagers\ItemsRelationManager;
 use Modules\Quotation\Models\Quotation;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 use function Safe\json_encode;
 
-final class QuotationResource extends GatedXotBaseResource
+final class QuotationResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 

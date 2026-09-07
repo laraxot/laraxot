@@ -10,15 +10,15 @@ use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\MetalWork\Models\MetalPartEstimate;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Quotation\Filament\Resources\QuotationResource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * Saved estimates, with the rows they were computed from. This is what makes a
  * price defensible months later, once the material has moved: the rows hold the
  * cost of the day the quotation went out.
  */
-final class MetalPartEstimateResource extends GatedXotBaseResource
+final class MetalPartEstimateResource extends XotBaseResource
 {
     protected static ?string $model = MetalPartEstimate::class;
 

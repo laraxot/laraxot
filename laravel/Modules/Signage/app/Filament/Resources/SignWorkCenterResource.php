@@ -18,15 +18,15 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Validation\Rules\Unique;
 use Modules\Costing\Models\WorkCenter;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Signage\Filament\Resources\SignWorkCenterResource\Pages;
 use Modules\Signage\Support\SignageCosting;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * Work centres and the markup each one sells at. Editable because the list is
  * the customer's, not ours: they add the ones we did not guess.
  */
-final class SignWorkCenterResource extends GatedXotBaseResource
+final class SignWorkCenterResource extends XotBaseResource
 {
     protected static ?string $model = WorkCenter::class;
 

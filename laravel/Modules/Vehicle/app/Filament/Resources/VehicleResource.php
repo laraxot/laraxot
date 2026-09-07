@@ -20,12 +20,12 @@ use Filament\Schemas\Components\Section;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Auth;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\Vehicle\Filament\Resources\VehicleResource\Pages;
 use Modules\Vehicle\Filament\Resources\VehicleResource\RelationManagers\DocumentsRelationManager;
 use Modules\Vehicle\Models\Vehicle;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class VehicleResource extends GatedXotBaseResource
+final class VehicleResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 

@@ -11,9 +11,9 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Component;
 use Illuminate\Support\Facades\Auth;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
 use Modules\WorkOrder\Filament\Resources\WorkOrderStatusResource\Pages;
 use Modules\WorkOrder\Models\WorkOrderStatus;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * Le fasi di una commessa sono diverse in ogni officina (preventivo →
@@ -21,7 +21,7 @@ use Modules\WorkOrder\Models\WorkOrderStatus;
  * lista per un idraulico). Modificabili qui invece che in un seeder
  * irraggiungibile.
  */
-final class WorkOrderStatusResource extends GatedXotBaseResource
+final class WorkOrderStatusResource extends XotBaseResource
 {
     protected static ?string $model = WorkOrderStatus::class;
 

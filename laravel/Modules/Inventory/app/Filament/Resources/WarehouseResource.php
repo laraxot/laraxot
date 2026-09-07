@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Modules\Inventory\Filament\Resources\WarehouseResource\Pages;
 use Modules\Inventory\Models\Warehouse;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class WarehouseResource extends GatedXotBaseResource
+final class WarehouseResource extends XotBaseResource
 {
     protected static ?string $model = Warehouse::class;
 

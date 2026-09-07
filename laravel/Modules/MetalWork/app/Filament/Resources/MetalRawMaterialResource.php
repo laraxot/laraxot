@@ -16,7 +16,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\MetalWork\Models\MetalRawMaterial;
-use Modules\Platform\Filament\Resources\GatedXotBaseResource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
 /**
  * The raw-material list, built by importing the purchase invoices rather than
@@ -24,7 +24,7 @@ use Modules\Platform\Filament\Resources\GatedXotBaseResource;
  * number the estimate uses — so a wrong quotation can be traced to the invoice
  * behind it in one click.
  */
-final class MetalRawMaterialResource extends GatedXotBaseResource
+final class MetalRawMaterialResource extends XotBaseResource
 {
     protected static ?string $model = MetalRawMaterial::class;
 

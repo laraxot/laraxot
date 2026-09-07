@@ -20,8 +20,9 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Platform\Filament\Resources\PlatformSettingResource\Pages\EditPlatformSetting;
 use Modules\Platform\Filament\Resources\PlatformSettingResource\Pages\ListPlatformSettings;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class PlatformSettingResource extends GatedXotBaseResource
+final class PlatformSettingResource extends XotBaseResource
 {
     protected static ?string $model = PlatformSetting::class;
 
