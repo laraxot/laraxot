@@ -24,3 +24,4 @@ Moduli in lavorazione parallela: User, PublicProcurement, TimberBilling, Interve
 Ogni agente: lock per-file (`bashscripts/lock/{check,lock,unlock}.sh`) prima di editare, converte a `foreignIdFor()` preservando nomi colonna e semantica `constrained()`, poi phpstan/pint/pest sul proprio scope. Dettagli in migration-foreignidfor-swarm.md.
 
 - [ViewRecord: schema solo nella Resource](2026-09-07-view-record-resource-infolist-only.md) — Codex: sviluppo + review BMAD read-only; in corso 2026-09-07.
+- [URGENT getFormSchema/table final override](2026-09-07-URGENT-phpstan-bootstrap-fatal-ai-vs-xot-final-getformschema.md) → **RISOLTO**, vedi `laravel/Modules/Xot/docs/stories/18.19.xotbaseresource-final-getformschema-table-illegal-override-repo-wide-fix.story.md` (0 violazioni residue repo-wide, full-tree phpstan completa con 309 errori reali residui, non piu' fatal) — chiuso 2026-09-07 (2 sessioni claude sonnet 5 in parallelo)

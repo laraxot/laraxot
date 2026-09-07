@@ -28,47 +28,6 @@ class TranslationFileResource extends XotBaseResource
         return ['it', 'en'];
     }
 
-    // #[\Override]
-    /**
-     * @return array<string, mixed>
-     */
-    public function getFormSchemaOld(): array
-    {
-        return [];
-
-        /*
-         * return [
-         * Components\TextInput::make('key')
-         * ->required()
-         * ->maxLength(255)
-         * ->disabled()
-         * ->label('Chiave File'),
-         *
-         * Components\TextInput::make('name')
-         * ->required()
-         * ->maxLength(255)
-         * ->disabled()
-         * ->label('Nome File'),
-         *
-         * Components\TextInput::make('path')
-         * ->required()
-         * ->maxLength(255)
-         * ->disabled()
-         * ->label('Percorso File'),
-         *
-         * Components\KeyValue::make('content')
-         * ->label('Traduzioni')
-         * ->keyLabel('Chiave')
-         * ->valueLabel('Valore')
-         * ->addActionLabel('Aggiungi Traduzione')
-         * ->deleteActionLabel('Rimuovi')
-         * ->reorderable()
-         * ->columnSpanFull(),
-         *
-         * ];
-         */
-    }
-
     #[\Override]
     public static function getPages(): array
     {

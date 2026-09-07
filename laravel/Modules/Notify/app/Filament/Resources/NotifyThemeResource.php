@@ -19,41 +19,6 @@ class NotifyThemeResource extends XotBaseResource
     protected static ?string $model = NotifyTheme::class;
 
     /**
-     * @return array<string, Field>
-     */
-    #[Override]
-    public function getFormSchema(): array
-    {
-        return [
-            'lang' => Select::make('lang')->options(fn (): array => self::fieldOptions('lang')),
-            'type' => Select::make('type')->options(fn (): array => self::fieldOptions('type')),
-            'post_type' => Select::make('post_type')->options(fn (): array => self::fieldOptions('post_type')),
-            'post_id' => TextInput::make('post_id'),
-            'subject' => TextInput::make('subject'),
-            'from' => TextInput::make('from'),
-            'from_email' => TextInput::make('from_email'),
-            'logo' => SpatieMediaLibraryFileUpload::make('logo_src')
-                ->openable()
-                ->downloadable()
-                ->columnSpanFull()
-                ->disk('uploads')
-                ->directory('photos')
-                ->preserveFilenames(),
-            'logo_width' => TextInput::make('logo_width'),
-            'logo_height' => TextInput::make('logo_height'),
-            'theme' => Select::make('theme')
-                ->options([
-                    'empty' => 'empty',
-                    'ark' => 'ark',
-                    'minty' => 'minty',
-                    'sunny' => 'sunny',
-                    'widgets' => 'widgets'])
-                ->default('empty'),
-            'body' => Textarea::make('body')->columnSpanFull(),
-            'body_html' => RichEditor::make('body_html')->columnSpanFull()];
-    }
-
-    /**
      * @return array<string, string>
      */
     public static function fieldOptions(string $field): array

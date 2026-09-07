@@ -9,11 +9,6 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class ListLogActivitiesActionTestResourceSimple extends XotBaseResource
 {
-    public function getFormSchema(): array
-    {
-        return [];
-    }
-
     /**
      * @param  array<string, mixed>  $parameters
      */

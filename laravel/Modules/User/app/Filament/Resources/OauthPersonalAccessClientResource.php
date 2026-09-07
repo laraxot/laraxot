@@ -39,23 +39,6 @@ final class OauthPersonalAccessClientResource extends XotBaseResource
     /**
      * @return array<string, Component>
      */
-    #[\Override]
-    public function getFormSchema(): array
-    {
-        return [
-            'oauth_personal_access_client' => Section::make('OAuth Personal Access Client Information')
-                ->schema([
-                    Select::make('client_id')
-                        ->label('Client')
-                        ->relationship('client', 'name')
-                        ->required()
-                        ->searchable()
-                        ->helperText('Associated OAuth client'),
-                ])
-                ->columns(2),
-        ];
-    }
-
     /**
      * Get the table columns for the resource.
      *
