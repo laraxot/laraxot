@@ -19,7 +19,7 @@ final class WarehouseForm extends XotBaseResourceForm
     protected static string $resource = WarehouseResource::class;
 
     /**
-     * @return array<string, \Filament\Schemas\Components\Component>
+     * @return array<string, Component>
      */
     public function getFormSchema(): array
     {

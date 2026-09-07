@@ -12,13 +12,13 @@ use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 use Modules\Customer\Models\Customer;
 use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Quotation\Filament\Resources\QuotationResource;
 use Modules\Signage\Actions\CreateQuotationFromSignSpecAction;
 use Modules\Signage\Actions\ImportArtworkAsSignSpecAction;
 use Modules\Signage\Actions\PriceSignSpecAction;
 use Modules\Signage\Datas\SignQuotation;
 use Modules\Signage\Models\SignSpec;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 use function Safe\file_get_contents;
 
@@ -30,7 +30,6 @@ use function Safe\file_get_contents;
 final class SignArtworkQuotationPage extends XotBasePage
 {
     use GatesPageNavigation;
-
     use WithFileUploads;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-arrow-up';

@@ -26,7 +26,7 @@ uses(TestCase::class);
  * campo e sostituisce la label esplicita. Un array a chiavi numeriche è una regressione,
  * non uno stile diverso.
  *
- * @param array<array-key, mixed> $schema
+ * @param  array<array-key, mixed>  $schema
  */
 function ratingAssertKeyedSchema(array $schema, string $tipo): void
 {

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Thermo\Filament\Pages;
 
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
 use Illuminate\Support\Facades\Auth;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 abstract class ThermoPage extends XotBasePage
 {

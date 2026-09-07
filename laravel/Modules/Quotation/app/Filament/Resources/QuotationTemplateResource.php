@@ -31,12 +31,10 @@ final class QuotationTemplateResource extends XotBaseResource
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-rectangle-stack';
 
     /** Read reflectively by HasAccountFeatureVisibility via defined()/constant(). */
-    /** @var string */
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.quotations';
+    private const string ACCOUNT_FEATURE_ADMIN = 'admin.quotations';
 
     /** Read reflectively by HasAccountFeatureVisibility via defined()/constant(). */
-    /** @var string */
-    private const ACCOUNT_FEATURE_OPERATOR = 'operator.quotations';
+    private const string ACCOUNT_FEATURE_OPERATOR = 'operator.quotations';
 
     public static function getNavigationGroup(): string
     {

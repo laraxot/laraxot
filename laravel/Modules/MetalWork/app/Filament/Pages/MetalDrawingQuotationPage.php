@@ -21,8 +21,8 @@ use Modules\MetalWork\Models\MetalDrawing;
 use Modules\MetalWork\Models\MetalDrawingComponent;
 use Modules\MetalWork\Models\MetalRawMaterial;
 use Modules\Platform\Filament\Concerns\GatesPageNavigation;
-use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Quotation\Filament\Resources\QuotationResource;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Throwable;
 
 use function Safe\file_get_contents;
@@ -39,7 +39,6 @@ use function Safe\file_get_contents;
 final class MetalDrawingQuotationPage extends XotBasePage
 {
     use GatesPageNavigation;
-
     use WithFileUploads;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-arrow-up';

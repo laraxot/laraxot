@@ -14,7 +14,6 @@ use Modules\Billing\Datas\OpenItem;
 use Modules\Billing\Queries\GetCashFlowProjectionQuery;
 use Modules\Billing\Queries\GetJobMarginsQuery;
 use Modules\Billing\Queries\GetReceivablesAgingQuery;
-use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
@@ -23,7 +22,6 @@ use Modules\Xot\Filament\Pages\XotBasePage;
  */
 final class FinancialControlPage extends XotBasePage
 {
-    use GatesPageNavigation;
 
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-banknotes';
 
