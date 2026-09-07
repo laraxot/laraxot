@@ -219,7 +219,7 @@ PROMPT;
                 return [
 'ok' => true,
                         'results' => $customers->map(function (Customer $customer): array {
-                            $site = $customer->sites->firstOrNull();
+                            $site = $customer->sites->first();
 
                         return [
                             'id' => (int) $customer->id,

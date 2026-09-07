@@ -400,11 +400,10 @@ final class AiAssistantChat extends XotBasePage
     private function displayableAiMessageContent(string $content): string
     {
         if (preg_match_all('/(?:^|\R)<user_request>\s*(.*?)\s*<\/user_request>/su', $content, $matches) >= 1) {
-            $requests = $matches[1] ?? [];
-            $lastRequest = is_array($requests) ? end($requests) : null;
-            $lastString = is_string($lastRequest) ? $lastRequest : (string) $lastRequest;
+            $requests = $matches[1];
+            $lastRequest = $requests === [] ? '' : (string) end($requests);
 
-            return trim($lastString);
+            return trim($lastRequest);
         }
 
         $withoutContext = preg_replace('/^\[trusted_context[^\]]*\]\s*/u', '', $content);
