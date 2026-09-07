@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace Modules\Timber\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Dashboard;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Filament\Pages\Concerns\NormalizesTimberConfigMaps;
 use Modules\Timber\Queries\GetTimberDashboardChartsQuery;
 use Modules\Timber\Queries\GetTimberDashboardStatsQuery;
 use Modules\Timber\Support\WoodSpeciesCatalog;
+use Modules\Xot\Filament\Pages\XotBaseDashboard;
 
-final class TimberDashboard extends Dashboard
+final class TimberDashboard extends XotBaseDashboard
 {
     use NormalizesTimberConfigMaps;
 

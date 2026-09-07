@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace Modules\Compliance\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;
 use Modules\Compliance\Queries\GetHeatingComplianceOverviewQuery;
 use Modules\User\Models\User;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Cross-customer overview of heating maintenance / RCEE deadlines, worst first,
  * so overdue and expiring controls are visible at a glance.
  */
-final class HeatingDeadlinesPage extends Page
+final class HeatingDeadlinesPage extends XotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-bell-alert';
 

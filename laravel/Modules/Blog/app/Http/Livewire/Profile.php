@@ -8,19 +8,19 @@ use Filament\Actions\Action;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
-use Filament\Pages\Page;
 use Filament\Schemas\Schema;
 use Illuminate\Contracts\View\View;
-// use Modules\Blog\Models\Profile;
 use Modules\Blog\Models\Profile as BlogProfile;
+// use Modules\Blog\Models\Profile;
 use Modules\Xot\Actions\Cast\SafeArrayByModelCastAction;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Actions\GetViewAction;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * @property Schema $form
  */
-class Profile extends Page implements HasForms
+class Profile extends XotBasePage implements HasForms
 {
     use InteractsWithForms;
     // public Article $article;

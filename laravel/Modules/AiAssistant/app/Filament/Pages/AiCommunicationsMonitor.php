@@ -6,7 +6,6 @@ namespace Modules\AiAssistant\Filament\Pages;
 
 use Carbon\CarbonImmutable;
 use Filament\Notifications\Notification;
-use Filament\Pages\Page;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -17,10 +16,11 @@ use Modules\Platform\Settings\SettingsRepository;
 use Modules\WhatsApp\Models\WhatsAppConversation;
 use Modules\WhatsApp\Models\WhatsAppMessage;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 use function Safe\preg_match;
 
-final class AiCommunicationsMonitor extends Page
+final class AiCommunicationsMonitor extends XotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 

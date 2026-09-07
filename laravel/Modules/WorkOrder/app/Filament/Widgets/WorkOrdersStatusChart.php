@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\WorkOrder\Filament\Widgets;
 
-use Modules\Platform\Filament\Widgets\Concerns\ResolvesPanelUserScope;
 use App\Support\AccountFeatures;
-use Filament\Widgets\ChartWidget;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Models\Intervention;
+use Modules\Platform\Filament\Widgets\Concerns\ResolvesPanelUserScope;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Widgets\XotBaseChartWidget;
 
-final class WorkOrdersStatusChart extends ChartWidget
+final class WorkOrdersStatusChart extends XotBaseChartWidget
 {
     use ResolvesPanelUserScope;
 
