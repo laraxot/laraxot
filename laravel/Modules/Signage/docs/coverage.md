@@ -77,3 +77,35 @@ Per the "data is sacred" rule, `migrate:fresh`/`migrate:refresh` were not run to
 "fix" this — it would be a destructive, out-of-scope DB operation. Whoever owns
 the Signage test database/migrations needs to run its migrations against
 `workorder_data_test` for this suite to be exercised at all.
+
+## Regression re-fix (2026-09-07, claim-typecoverage-final-push-swarm batch)
+
+`typeCoverage.constantTypeCoverage` (full-tree scan) flagged 7 constants across
+4 files that had already been typed by commit `28d7bd4`
+(`fix(signage): type constants for typeCoverage.constantTypeCoverage + fix
+wrong @var shape regression`): `ExtractSignComponentsFromArtworkAction::LAYER_TOKENS`,
+`SignArtworkQuotationPage::{ACCEPTED_EXTENSIONS,ARTWORK_DISK,ARTWORK_DIRECTORY}`,
+`SignageCosting::CONTEXT`, `SignageDemoSeeder::{WORKFLOW_STATUSES,VAT_PERCENT}`.
+Same root cause as the Quotation module today: the live Epic4
+"filament-canonical-structure" swarm's uncommitted WIP (Schemas/Tables
+extraction on the 5 Sign*Resource classes, story `4.14.9.signage-canonical`)
+regenerated these files from a pre-`28d7bd4` base, silently dropping the
+native constant types while keeping unrelated structural changes.
+
+Re-applied the exact same native types as `28d7bd4` (verified against
+`git show 28d7bd4` diff, verbatim match). `SignageCosting::CONTEXT` was found
+already re-fixed by a concurrent agent mid-session (own edit lost the "file
+modified since read" race, re-read confirmed `public const string CONTEXT`
+already present) — left untouched.
+
+Verification: `grep -rnP` for untyped `const` across `app/ database/` → 0
+results after fix. Full-tree `phpstan analyse Modules --no-progress
+--memory-limit=-1` (clean cache): before 302 constants/209 typed (69.2%), 95
+`typeCoverage.constantTypeCoverage` lines project-wide; after `[OK] No
+errors` — 0 occurrences anywhere in `Modules/` (99% threshold reached
+project-wide, combined with parallel batches on the same claim).
+
+Story root: `docs/stories/2.8.phpstan-constant-type-coverage.story.md` +
+`docs/stories/5.1.phpstan-constant-type-coverage-remaining.story.md`. Claim:
+`docs/chat/2026-09-07-claim-typecoverage-final-push-swarm.md`. Module story:
+`docs/stories/3.4.signage-constant-type-coverage-regression-fix.story.md`.

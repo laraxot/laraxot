@@ -164,3 +164,41 @@ non ancora committato). I 10 file di questa story si sovrappongono a quel WIP.
 Per non inglobare lavoro altrui non revisionato nel commit di questa story, il
 commit e' stato fatto con `git add <file...>` mirato sui soli file toccati per il
 tipo delle costanti, non `git add -A`.
+
+## Story 5.1 — regressione e re-fix (2026-09-07, sessione claim finale batch Quotation+Signage)
+
+Le stesse 12 costanti tipizzate dal commit `352d16b` (sezione sopra) sono state
+trovate di nuovo **non tipizzate** in una verifica successiva della stessa
+giornata: la scansione full-tree fresca segnalava ancora
+`typeCoverage.constantTypeCoverage` sui 10 file elencati sopra, con i valori
+`private const DEFAULT_TAX_PERCENT = 22.0;` (senza `float`), `public const
+KINDS = [...]` (senza `array`), ecc. — cioe' esattamente lo stato pre-`352d16b`.
+
+Causa: `git status` mostrava gli stessi 10 file (+ altri) come `modified` nel
+working tree al momento della verifica, sovrapposti al WIP in-progress dello
+swarm Epic4 "filament-canonical-structure" (story `4.13.sitesurvey-canonical-structure`,
+`docs/stories/phpstan-fix-quotation-hasxotfactory-*.story.md`) che rigenera i
+Resources/Widgets/Actions da una base precedente a `352d16b`, perdendo
+silenziosamente l'annotazione di tipo nativo sulla costante (stesso pattern
+gia' documentato per Customer/HR/Signage in `docs/chat/2026-09-07-customer-typecoverage-fix.md`
+e per Signage stesso, vedi commit `28d7bd4` nel modulo Signage).
+
+### Fix
+
+Ri-applicati verbatim gli stessi tipi nativi del commit `352d16b` (stessa lista di
+12 costanti/10 file), verificato con:
+```bash
+grep -rnP "^\s*(public|protected|private)? const\s+(?!(string|int|float|bool|array|self|static|mixed|iterable|object|callable)\s)[A-Za-z_]" app/ database/
+```
+→ 0 risultati residui su tutto il modulo dopo il fix.
+
+Full-tree `./vendor/bin/phpstan analyse Modules --no-progress --memory-limit=-1`
+(cache pulita prima e dopo): **prima** 302 costanti totali, 209 tipizzate (69.2%),
+95 righe `typeCoverage.constantTypeCoverage` segnalate nel run raw (di cui 12 sui
+10 file Quotation sopra); **dopo** `[OK] No errors` — 0 occorrenze
+`constantTypeCoverage` in tutto `Modules/` (soglia 99% raggiunta a livello
+progetto, con il contributo di altri batch paralleli sullo stesso claim).
+
+Story root: `docs/stories/2.8.phpstan-constant-type-coverage.story.md` +
+`docs/stories/5.1.phpstan-constant-type-coverage-remaining.story.md`. Claim:
+`docs/chat/2026-09-07-claim-typecoverage-final-push-swarm.md`.
