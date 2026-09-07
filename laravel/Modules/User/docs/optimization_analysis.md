@@ -94,4 +94,8 @@ docs/
 - **maintainability**: clear structure, no duplication
 - **navigation**: logical grouping and clear hierarchy
 - **performance**: faster search and access
+<<<<<<< HEAD
 - **consistency**: uniform documentation standards
+=======
+- **consistency**: uniform documentation standards
+>>>>>>> 2024e2e7 (.)

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Task: Audit Completo Dipendenze User"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./tasks-index.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Task: Audit Completo Dipendenze User
 
 **Modulo**: User  

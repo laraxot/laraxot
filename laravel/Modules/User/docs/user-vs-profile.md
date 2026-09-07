@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "User vs Profile Models: Guida Completa"
 type: concept
@@ -18,11 +23,28 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # User vs Profile Models: Guida Completa
 
 ## Panoramica
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 Questo documento analizza quando usare il modello **User** rispetto al modello **Profile** nel progetto <nome progetto>, basandosi su best practice di settore e architettura specifica del progetto.
+=======
+Questo documento analizza quando usare il modello **User** rispetto al modello **Profile** nel progetto LaravelPizza, basandosi su best practice di settore e architettura specifica del progetto.
+>>>>>>> 60a2c9a9 (.)
+=======
+Questo documento analizza quando usare il modello **User** rispetto al modello **Profile** nel progetto LaravelPizza, basandosi su best practice di settore e architettura specifica del progetto.
+=======
+Questo documento analizza quando usare il modello **User** rispetto al modello **Profile** nel progetto <nome progetto>, basandosi su best practice di settore e architettura specifica del progetto.
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ---
 
@@ -154,13 +176,35 @@ class Profile extends BaseProfile
 
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 ## 3. Analisi nel Contesto <nome progetto>
+=======
+## 3. Analisi nel Contesto LaravelPizza
+>>>>>>> 60a2c9a9 (.)
+=======
+## 3. Analisi nel Contesto LaravelPizza
+=======
+## 3. Analisi nel Contesto <nome progetto>
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ### 3.1 Architettura Attuale
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
+<<<<<<< HEAD
+<<<<<<< HEAD
 │                        <nome progetto>                              │
+=======
+│                        LARAVELPIZZA                              │
+>>>>>>> 60a2c9a9 (.)
+=======
+│                        LARAVELPIZZA                              │
+=======
+│                        <nome progetto>                              │
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ├──────────────────────────────────────────────────────────────────┤
 │                                                                   │
 │  ┌─────────────────┐         ┌─────────────────┐              │
@@ -206,9 +250,26 @@ CURRENT STATE:
 
 ### 3.3 Soluzione Raccomandata
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **Opzione A: Consolidare in User (Simple) - CONSIGLIATA PER <nome progetto>**
 
 Per un progetto community come <nome progetto> dove:
+=======
+**Opzione A: Consolidare in User (Simple) - CONSIGLIATA PER LARAVELPIZZA**
+
+Per un progetto community come LaravelPizza dove:
+>>>>>>> 60a2c9a9 (.)
+=======
+**Opzione A: Consolidare in User (Simple) - CONSIGLIATA PER LARAVELPIZZA**
+
+Per un progetto community come LaravelPizza dove:
+=======
+**Opzione A: Consolidare in User (Simple) - CONSIGLIATA PER <nome progetto>**
+
+Per un progetto community come <nome progetto> dove:
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - Gli utenti sono principalmente "attendees" agli eventi
 - Non servono profili multipli
 - L'avatar è l'unico dato profilo essenziale
@@ -537,4 +598,17 @@ class User extends Authenticatable
 
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 *Documento generato per <nome progetto> - Progetto Community Laravel*
+=======
+*Documento generato per LaravelPizza - Progetto Community Laravel*
+*Ultimo aggiornamento: Febbraio 2026*
+>>>>>>> 60a2c9a9 (.)
+=======
+*Documento generato per LaravelPizza - Progetto Community Laravel*
+*Ultimo aggiornamento: Febbraio 2026*
+=======
+*Documento generato per <nome progetto> - Progetto Community Laravel*
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

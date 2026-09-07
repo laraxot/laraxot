@@ -357,6 +357,11 @@ trait HasTeams
 ## Analisi del Conflitto con HasTeamsContract
 
 Il contratto `HasTeamsContract` definisce:
+<<<<<<< HEAD
+```
+
+=======
+>>>>>>> f548be94 (.)
 ```php
 public function teamRole(TeamContract $teamContract): ?Role;
 ```
@@ -411,4 +416,12 @@ SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key
 #### Conflitto HasTeamsContract ✅ **RISOLTO**
 - **teamRole() contratto**: CORRETTO - ora restituisce `?Role` invece di `?string`
 - **teamRoleName() helper**: AGGIUNTO - per ottenere stringa del ruolo
+<<<<<<< HEAD
 - **Compatibilità**: MANTENUTA - sia oggetti Role che stringhe supportati
+=======
+- **Compatibilità**: MANTENUTA - sia oggetti Role che stringhe supportati
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

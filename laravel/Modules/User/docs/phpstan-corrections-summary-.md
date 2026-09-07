@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 ---
 title: "PHPStan Corrections Summary - Modulo User"
 type: concept
@@ -18,6 +20,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
+>>>>>>> 2024e2e7 (.)
 # PHPStan Corrections Summary - Modulo User
 
 **Data**: 2025-01-22

@@ -126,6 +126,8 @@ return [
         'tooltip' => 'Másolás sikerült!',
     ],
     'fields' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
         'email' => [
             'label' => 'E-mail cím',
             'tooltip' => '',
@@ -218,4 +220,121 @@ return [
     'plural_label' => 'Missing Plural label',
     'actions' => [
     ],
+=======
+=======
+>>>>>>> 87273113 (.)
+        'email' => 'E-mail cím',
+        'login' => 'Bejelentkezés',
+        'name' => 'Név',
+        'password' => 'Jelszó',
+        'password_confirm' => 'Jelszó megerősítése',
+        'new_password' => 'Új jelszó',
+        'new_password_confirmation' => 'Új jelszó megerősítése',
+        'token_name' => 'Token neve',
+        'abilities' => 'Képességek',
+        '2fa_code' => 'Kód',
+        '2fa_recovery_code' => 'Helyreállítási kód',
+        'created' => 'Létrehozva',
+        'expires' => 'Lejár',
+    ],
+    'or' => 'Vagy',
+    'cancel' => 'Mégsem',
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'email' => [
+            'label' => 'E-mail cím',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'login' => [
+            'label' => 'Bejelentkezés',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'name' => [
+            'label' => 'Név',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password' => [
+            'label' => 'Jelszó',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password_confirm' => [
+            'label' => 'Jelszó megerősítése',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password' => [
+            'label' => 'Új jelszó',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password_confirmation' => [
+            'label' => 'Új jelszó megerősítése',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_name' => [
+            'label' => 'Token neve',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'abilities' => [
+            'label' => 'Képességek',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_code' => [
+            'label' => 'Kód',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_recovery_code' => [
+            'label' => 'Helyreállítási kód',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created' => [
+            'label' => 'Létrehozva',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'expires' => [
+            'label' => 'Lejár',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'or' => 'Vagy',
+    'cancel' => 'Mégsem',
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'actions' => [
+    ],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

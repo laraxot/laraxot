@@ -136,6 +136,8 @@ return [
         'tooltip' => 'Copiado!',
     ],
     'fields' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
         'avatar' => [
             'label' => 'Avatar',
             'tooltip' => '',
@@ -240,4 +242,135 @@ return [
     'plural_label' => 'Missing Plural label',
     'actions' => [
     ],
+=======
+=======
+>>>>>>> 87273113 (.)
+        'avatar' => 'Avatar',
+        'email' => 'E-mail',
+        'login' => 'Usuário',
+        'name' => 'Nome',
+        'password' => 'Senha',
+        'password_confirm' => 'Confirme a senha',
+        'new_password' => 'Nova senha',
+        'new_password_confirmation' => 'Confirme a senha',
+        'token_name' => 'Nome do Token',
+        'token_expiry' => 'Expiração do token',
+        'abilities' => 'Permissões',
+        '2fa_code' => 'Código',
+        '2fa_recovery_code' => 'Código de recuperação',
+        'created' => 'Criado',
+        'expires' => 'Expira',
+    ],
+    'or' => 'Ou',
+    'cancel' => 'Cancelar',
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'avatar' => [
+            'label' => 'Avatar',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'email' => [
+            'label' => 'E-mail',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'login' => [
+            'label' => 'Usuário',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'name' => [
+            'label' => 'Nome',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password' => [
+            'label' => 'Senha',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password_confirm' => [
+            'label' => 'Confirme a senha',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password' => [
+            'label' => 'Nova senha',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password_confirmation' => [
+            'label' => 'Confirme a senha',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_name' => [
+            'label' => 'Nome do Token',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_expiry' => [
+            'label' => 'Expiração do token',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'abilities' => [
+            'label' => 'Permissões',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_code' => [
+            'label' => 'Código',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_recovery_code' => [
+            'label' => 'Código de recuperação',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created' => [
+            'label' => 'Criado',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'expires' => [
+            'label' => 'Expira',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'or' => 'Ou',
+    'cancel' => 'Cancelar',
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'actions' => [
+    ],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

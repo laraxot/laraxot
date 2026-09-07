@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Compatibilità Filament 4.x - Modulo User"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Compatibilità Filament 4.x - Modulo User
 
 **Data**: 2025-01-27

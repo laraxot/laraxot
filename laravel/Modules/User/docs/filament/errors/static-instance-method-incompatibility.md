@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Incompatibilità tra metodi statici e di istanza in Filament"
 type: concept
@@ -10,6 +15,12 @@ discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Incompatibilità tra metodi statici e di istanza in Filament
 
 > **NOTA IMPORTANTE**: Questo documento è un riferimento specifico per il modulo User.
@@ -36,7 +47,11 @@ public static function getTableColumns(): array
 // CORRETTO ✅
 public function getTableColumns(): array
 ### 2. Per Widget
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> 2024e2e7 (.)
 public function getFormSchema(): array
 ### 3. Per tutte le classi
 Rimuovere le chiamate a `->label()` per utilizzare il sistema di traduzione automatica:

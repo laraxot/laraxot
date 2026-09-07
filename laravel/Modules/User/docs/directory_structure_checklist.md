@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+---
+title: "directory_structure_checklist - User"
+module: user
+type: integration
+tags: [integrations, modules, user]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
+=======
+>>>>>>> 87273113 (.)
 # directory_structure_checklist - User
 
 ## Overview

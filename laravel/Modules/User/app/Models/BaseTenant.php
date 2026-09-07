@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\User\Models;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 use Filament\Models\Contracts\HasAvatar;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
@@ -12,6 +14,32 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Modules\User\Contracts\TenantContract;
 use Modules\Xot\Contracts\ProfileContract;
+=======
+=======
+>>>>>>> 87273113 (.)
+use Modules\User\Database\Factories\TenantFactory;
+use Illuminate\Database\Eloquent\Builder;
+use Modules\Xot\Contracts\ProfileContract;
+use Filament\Models\Contracts\HasAvatar;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Str;
+use Modules\User\Contracts\TenantContract;
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+use Filament\Models\Contracts\HasAvatar;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\Pivot;
+use Modules\User\Contracts\TenantContract;
+use Modules\Xot\Contracts\ProfileContract;
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use Spatie\MediaLibrary\HasMedia;
@@ -22,6 +50,16 @@ use Spatie\Sluggable\SlugOptions;
 /**
  * Modules\User\Models\Tenant.
  *
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+ * @method static TenantFactory factory($count = null, $state = [])
+>>>>>>> f548be94 (.)
+=======
+ * @method static TenantFactory factory($count = null, $state = [])
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
  * @method static Builder|Tenant newModelQuery()
  * @method static Builder|Tenant newQuery()
  * @method static Builder|Tenant query()
@@ -38,10 +76,21 @@ abstract class BaseTenant extends BaseModel implements HasAvatar, HasMedia, Tena
     use HasSlug;
     use InteractsWithMedia;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
     public $incrementing = false;
 
     protected $keyType = 'string';
 
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     /** @var list<string> */
     protected $fillable = [
         'id',
@@ -66,7 +115,18 @@ abstract class BaseTenant extends BaseModel implements HasAvatar, HasMedia, Tena
     /**
      * Ottiene tutti i membri associati al tenant.
      *
+<<<<<<< HEAD
+<<<<<<< HEAD
      * @return BelongsToMany<Model, $this, Pivot, 'pivot'>
+=======
+     * @return BelongsToMany<Model, \Modules\User\Models\BaseTenant>
+>>>>>>> f548be94 (.)
+=======
+     * @return BelongsToMany<Model, \Modules\User\Models\BaseTenant>
+=======
+     * @return BelongsToMany<Model, $this, Pivot, 'pivot'>
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
      */
     public function members(): BelongsToMany
     {
@@ -79,7 +139,18 @@ abstract class BaseTenant extends BaseModel implements HasAvatar, HasMedia, Tena
     /**
      * Ottiene tutti gli utenti associati al tenant.
      *
+<<<<<<< HEAD
+<<<<<<< HEAD
      * @return BelongsToMany<Model, $this, Pivot, 'pivot'>
+=======
+     * @return BelongsToMany<Model, \Modules\User\Models\BaseTenant>
+>>>>>>> f548be94 (.)
+=======
+     * @return BelongsToMany<Model, \Modules\User\Models\BaseTenant>
+=======
+     * @return BelongsToMany<Model, $this, Pivot, 'pivot'>
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
      */
     public function users(): BelongsToMany
     {
@@ -88,7 +159,18 @@ abstract class BaseTenant extends BaseModel implements HasAvatar, HasMedia, Tena
         $userClass = $xot->getUserClass();
 
         // $this->setConnection('mysql');
+<<<<<<< HEAD
+<<<<<<< HEAD
         // return $this->belongsToManyX($userClass, null, 'tenant_id', 'user_id');
+=======
+        //return $this->belongsToManyX($userClass, null, 'tenant_id', 'user_id');
+>>>>>>> f548be94 (.)
+=======
+        //return $this->belongsToManyX($userClass, null, 'tenant_id', 'user_id');
+=======
+        // return $this->belongsToManyX($userClass, null, 'tenant_id', 'user_id');
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         return $this->belongsToManyX($userClass);
 
         // ->as('membership')
@@ -99,7 +181,18 @@ abstract class BaseTenant extends BaseModel implements HasAvatar, HasMedia, Tena
      *
      * @return string|null URL dell'avatar o null se non presente
      */
+<<<<<<< HEAD
+<<<<<<< HEAD
     public function getFilamentAvatarUrl(): ?string
+=======
+    public function getFilamentAvatarUrl(): null|string
+>>>>>>> f548be94 (.)
+=======
+    public function getFilamentAvatarUrl(): null|string
+=======
+    public function getFilamentAvatarUrl(): ?string
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     {
         // return $this->avatar_url;
         return $this->getFirstMediaUrl('avatar');

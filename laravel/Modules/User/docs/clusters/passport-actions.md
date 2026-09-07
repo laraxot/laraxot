@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Passport Administrative Actions in Filament"
 type: concept
@@ -11,6 +16,12 @@ related:
   - "./socialite.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Passport Administrative Actions in Filament
 
 > Riferimenti ufficiali: [Laravel Passport 12.x Docs](https://laravel.com/docs/12.x/passport) e [laravel/passport GitHub](https://github.com/laravel/passport).

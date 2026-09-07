@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "TeamPermission"
 type: concept
@@ -16,6 +21,12 @@ related:
   - "./xotbasepivot-migration.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # TeamPermission
 
 Il modello `TeamPermission` rappresenta i permessi specifici di un utente all'interno di un team.

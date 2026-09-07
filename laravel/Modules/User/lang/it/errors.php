@@ -64,6 +64,11 @@ return [
             'description' => 'Il valore inserito è troppo corto.',
         ],
     ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
     'navigation' => [
         'name' => 'Errors',
         'plural' => 'Errors',
@@ -108,4 +113,10 @@ return [
             'label' => 'Elimina Errors',
         ],
     ],
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Bugfix: DeviceUser e HasXotFactory"
 type: concept
@@ -14,6 +19,12 @@ related:
   - "./multiple-bugs-resolution.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Bugfix: DeviceUser e HasXotFactory
 
 ## Contesto

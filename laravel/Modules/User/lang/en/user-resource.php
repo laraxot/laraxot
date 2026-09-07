@@ -2,6 +2,16 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> f548be94 (.)
+=======
+
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 return [
     'fields' => [
         'name' => [
@@ -12,9 +22,20 @@ return [
                 'required' => 'Il nome è obbligatorio',
                 'max' => 'Il nome non può superare i 255 caratteri',
             ],
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
         'last_name' => [
             'label' => 'Cognome',
@@ -24,9 +45,20 @@ return [
                 'required' => 'Il cognome è obbligatorio',
                 'max' => 'Il cognome non può superare i 255 caratteri',
             ],
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
         'email' => [
             'label' => 'Email',
@@ -38,9 +70,20 @@ return [
                 'max' => 'L\'email non può superare i 255 caratteri',
                 'unique' => 'Questa email è già registrata',
             ],
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
         'password' => [
             'label' => 'Password',
@@ -51,9 +94,20 @@ return [
                 'min' => 'La password deve essere di almeno 8 caratteri',
                 'max' => 'La password non può superare i 255 caratteri',
             ],
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
         'password_confirmation' => [
             'label' => 'Conferma Password',
@@ -65,16 +119,38 @@ return [
                 'max' => 'La password non può superare i 255 caratteri',
                 'same' => 'Le password non coincidono',
             ],
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
         'remember_me' => [
             'label' => 'Ricordami',
             'help' => 'Mantieni la sessione attiva',
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
     ],
     'actions' => [
@@ -159,6 +235,11 @@ return [
             ],
         ],
     ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
     'navigation' => [
         'label' => 'Missing Navigation Label',
         'plural_label' => 'Missing Navigation Plural Label',
@@ -168,4 +249,10 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

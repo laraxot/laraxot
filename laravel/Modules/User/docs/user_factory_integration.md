@@ -354,4 +354,8 @@ public function test_bulk_sti_creation()
 **Created**: January 2025  
 **Purpose**: Document cross-module factory integration  
 **Maintainer**: Development Team  
+<<<<<<< HEAD
 **Review Status**: Ready for implementation 
+=======
+**Review Status**: Ready for implementation 
+>>>>>>> 2024e2e7 (.)

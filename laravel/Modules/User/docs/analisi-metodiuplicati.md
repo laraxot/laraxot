@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Analisi Metodi Duplicati - Modulo User"
 type: concept
@@ -18,11 +23,28 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Analisi Metodi Duplicati - Modulo User
 
 ## Riferimento Principale
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 📚 **Documento Completo:** [../../../../docs/analisi-metodi-duplicati.md](../../../../docs/analisi-metodi-duplicati.md)
+=======
+📚 **Documento Completo:** [../../../docs/analisi-metodi-duplicati.md](../../../docs/analisi-metodi-duplicati.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+📚 **Documento Completo:** [../../../docs/analisi-metodi-duplicati.md](../../../docs/analisi-metodi-duplicati.md)
+=======
+📚 **Documento Completo:** [../../../../docs/analisi-metodi-duplicati.md](../../../../docs/analisi-metodi-duplicati.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ## Stato del Modulo User
 
@@ -160,7 +182,18 @@ protected function registerObservers(): void
 
 ## Link Correlati
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 - 📚 [Analisi Completa](../../../../docs/analisi-metodi-duplicati.md)
+=======
+- 📚 [Analisi Completa](../../../docs/analisi-metodi-duplicati.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- 📚 [Analisi Completa](../../../docs/analisi-metodi-duplicati.md)
+=======
+- 📚 [Analisi Completa](../../../../docs/analisi-metodi-duplicati.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - 📖 [Modulo Xot - Classi Base](../../xot/docs/analisi-metodi-duplicati.md)
 - 📖 [Architettura User](./core/architecture.md)
 - 📖 [Regole Business Logic](./business-logic-deep-dive.md)

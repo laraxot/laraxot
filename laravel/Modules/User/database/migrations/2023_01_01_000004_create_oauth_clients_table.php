@@ -2,12 +2,34 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Datas\XotData;
 
 return new class extends XotBaseMigration
 {
+=======
+=======
+>>>>>>> 87273113 (.)
+use Modules\Xot\Datas\XotData;
+use Illuminate\Database\Schema\Blueprint;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
+
+return new class extends XotBaseMigration {
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+use Illuminate\Database\Schema\Blueprint;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
+use Modules\Xot\Datas\XotData;
+
+return new class extends XotBaseMigration
+{
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     public function up(): void
     {
         $this->tableCreate(static function (Blueprint $table): void {

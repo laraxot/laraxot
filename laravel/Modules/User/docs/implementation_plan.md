@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+---
+title: "Piano di Implementazione Componenti Header"
+module: user
+type: integration
+tags: [integrations, modules, user]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
+=======
+>>>>>>> f548be94 (.)
 # Piano di Implementazione Componenti Header
 
 ## Fase 1: Setup Struttura

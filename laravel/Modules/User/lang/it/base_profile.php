@@ -17,6 +17,11 @@ return [
         'sort' => 31,
         'icon' => 'user-user-permission',
     ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
     'label' => 'Base Profile',
     'plural_label' => 'Base Profile (Plurale)',
     'fields' => [
@@ -50,4 +55,10 @@ return [
             'label' => 'Elimina Base Profile',
         ],
     ],
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

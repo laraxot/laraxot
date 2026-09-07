@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Best Practices per i Componenti di Autenticazione"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./dependency.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Best Practices per i Componenti di Autenticazione 
 
 ## Collegamenti correlati

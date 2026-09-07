@@ -17,6 +17,8 @@ name('password.reset');
 
 new class extends Component {
     #[Validate('required')]
+<<<<<<< HEAD
+<<<<<<< HEAD
     public string $token = '';
 
     #[Validate('required|email')]
@@ -38,6 +40,51 @@ new class extends Component {
     /**
      * @return \Illuminate\Http\RedirectResponse|null
      */
+=======
+=======
+>>>>>>> 87273113 (.)
+    public $token;
+
+    #[Validate('required|email')]
+    public $email;
+
+    #[Validate('required|min:8|same:passwordConfirmation')]
+    public $password;
+    public $passwordConfirmation;
+
+    public function mount($token)
+    {
+        $this->email = request()->query('email', '');
+        $this->token = $token;
+    }
+
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+    public string $token = '';
+
+    #[Validate('required|email')]
+    public string $email = '';
+
+    #[Validate('required|min:8|same:passwordConfirmation')]
+    public string $password = '';
+    public string $passwordConfirmation = '';
+
+    /**
+     * @return void
+     */
+    public function mount(string $token)
+    {
+        $this->email = (string) request()->query('email', '');
+        $this->token = $token;
+    }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse|null
+     */
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     public function resetPassword()
     {
         $this->validate();
@@ -48,8 +95,20 @@ new class extends Component {
                 'email' => $this->email,
                 'password' => $this->password,
             ],
+<<<<<<< HEAD
+<<<<<<< HEAD
             function ($user, string $password) {
                 /** @var \Modules\User\Models\User $user */
+=======
+            function ($user, $password) {
+>>>>>>> f548be94 (.)
+=======
+            function ($user, $password) {
+=======
+            function ($user, string $password) {
+                /** @var \Modules\User\Models\User $user */
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
                 $user->password = Hash::make($password);
 
                 $user->setRememberToken(Str::random(60));
@@ -62,17 +121,43 @@ new class extends Component {
             },
         );
 
+<<<<<<< HEAD
+<<<<<<< HEAD
         if (\is_string($response) && $response === Password::PASSWORD_RESET) {
+=======
+        if ($response === Password::PASSWORD_RESET) {
+>>>>>>> f548be94 (.)
+=======
+        if ($response === Password::PASSWORD_RESET) {
+=======
+        if (\is_string($response) && $response === Password::PASSWORD_RESET) {
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
             session()->flash(trans($response));
 
             return redirect('/');
         }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
         if (\is_string($response)) {
             $this->addError('email', trans($response));
         }
 
         return null;
+=======
+        $this->addError('email', trans($response));
+>>>>>>> f548be94 (.)
+=======
+        $this->addError('email', trans($response));
+=======
+        if (\is_string($response)) {
+            $this->addError('email', trans($response));
+        }
+
+        return null;
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     }
 };
 

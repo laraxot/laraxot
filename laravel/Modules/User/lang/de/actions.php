@@ -2,6 +2,16 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> f548be94 (.)
+=======
+
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 return [
     'attach_user' => 'Collega Utente',
     'associate_user' => 'Associa Utente',
@@ -18,6 +28,11 @@ return [
     'success_attached' => 'Utente collegato con successo',
     'success_detached' => 'Utente scollegato con successo',
     'success_deleted' => 'Utenti eliminati con successo',
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
     'navigation' => [
         'label' => 'Missing Navigation Label',
         'plural_label' => 'Missing Navigation Plural Label',
@@ -31,4 +46,10 @@ return [
     ],
     'actions' => [
     ],
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

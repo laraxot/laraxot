@@ -8,10 +8,28 @@ declare(strict_types=1);
 
 namespace Modules\User\Actions\Socialite;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Contracts\Events\Dispatcher;
 use Laravel\Socialite\Contracts\User as SocialiteUserContract;
 // use DutchCodingCompany\FilamentSocialite\FilamentSocialite;
 use Laravel\Socialite\Facades\Socialite;
+=======
+use Laravel\Socialite\Contracts\User as SocialiteUserContract;
+use Laravel\Socialite\Facades\Socialite;
+// use DutchCodingCompany\FilamentSocialite\FilamentSocialite;
+>>>>>>> f548be94 (.)
+=======
+use Laravel\Socialite\Contracts\User as SocialiteUserContract;
+use Laravel\Socialite\Facades\Socialite;
+// use DutchCodingCompany\FilamentSocialite\FilamentSocialite;
+=======
+use Illuminate\Contracts\Events\Dispatcher;
+use Laravel\Socialite\Contracts\User as SocialiteUserContract;
+// use DutchCodingCompany\FilamentSocialite\FilamentSocialite;
+use Laravel\Socialite\Facades\Socialite;
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 use Laravel\Socialite\Two\InvalidStateException;
 use Modules\User\Events\InvalidState;
 use Spatie\QueueableAction\QueueableAction;
@@ -20,6 +38,8 @@ class RetrieveOauthUserAction
 {
     use QueueableAction;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
     public function __construct(
         private readonly Dispatcher $eventDispatcher,
     ) {
@@ -29,22 +49,69 @@ class RetrieveOauthUserAction
      * Execute the action.
      */
     public function execute(string $provider): ?SocialiteUserContract
+=======
+=======
+>>>>>>> 87273113 (.)
+    /**
+     * Execute the action.
+     */
+    public function execute(string $provider): null|SocialiteUserContract
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+    public function __construct(
+        private readonly Dispatcher $eventDispatcher,
+    ) {
+    }
+
+    /**
+     * Execute the action.
+     */
+    public function execute(string $provider): ?SocialiteUserContract
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     {
         try {
             return Socialite::driver($provider)->user();
 
             // SocialiteProviders\Manager\OAuth2\User
+<<<<<<< HEAD
+<<<<<<< HEAD
         } catch (InvalidStateException $e) {
             $this->handleInvalidStateException($e);
+=======
+        } catch (InvalidStateException $invalidStateException) {
+            InvalidState::dispatch($invalidStateException);
+>>>>>>> f548be94 (.)
+=======
+        } catch (InvalidStateException $invalidStateException) {
+            InvalidState::dispatch($invalidStateException);
+=======
+        } catch (InvalidStateException $e) {
+            $this->handleInvalidStateException($e);
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         }
 
         return null;
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 
     private function handleInvalidStateException(InvalidStateException $exception): void
     {
         $this->eventDispatcher->dispatch(new InvalidState($exception));
     }
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 }
 
 /*

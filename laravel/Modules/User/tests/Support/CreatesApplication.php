@@ -8,6 +8,10 @@ use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Application;
 
 use function Safe\realpath;
+<<<<<<< HEAD
+use Modules\User\Models\User;
+=======
+>>>>>>> 87273113 (.)
 
 /**
  * PHPStan-visible CreatesApplication trait for User test support.

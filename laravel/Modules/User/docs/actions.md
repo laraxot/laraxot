@@ -2,6 +2,11 @@
 description:
 globs:
 alwaysApply: false
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 related:
   - "./00-index-1.md"
   - "./00-index.md"
@@ -11,6 +16,12 @@ related:
   - "./actions-path-convention-1.md"
   - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ---
 # Linee guida per l'uso di Spatie Queueable Action
 
@@ -62,5 +73,16 @@ QueueableActionFake::assertPushed(ApproveUserAction::class);
 - [Best Practices](mdc:best-practices.md)
 - [Filament Best Practices](mdc:filament-best-practices.md)
 - [Testing](mdc:testing.md)
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Documentazione centrale](mdc:../../../../../docs/index.md)
+=======
+- [Documentazione centrale](mdc:../../../../docs/index.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Documentazione centrale](mdc:../../../../docs/index.md)
+=======
+- [Documentazione centrale](mdc:../../../../../docs/index.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Correzioni PHPStan per il Modulo User"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Correzioni PHPStan per il Modulo User
 
 ## Panoramica
@@ -173,7 +184,18 @@ Gli errori rimanenti (94) sono principalmente:
 
 - [Test di Validazione](../../tests/Unit/UserModulePhpstanFixesTest.php)
 - [Configurazione Password](../../config/password.php)
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Documentazione Root](../../../../docs/user-module-phpstan-fixes.md)
+=======
+- [Documentazione Root](../../../docs/user-module-phpstan-fixes.md)
+>>>>>>> f548be94 (.)
+=======
+- [Documentazione Root](../../../docs/user-module-phpstan-fixes.md)
+=======
+- [Documentazione Root](../../../../docs/user-module-phpstan-fixes.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ## Note per il Futuro
 
@@ -182,6 +204,8 @@ Gli errori rimanenti (94) sono principalmente:
 3. **Actions**: Usare proprietà readonly solo quando necessario e inizializzarle correttamente
 4. **Test**: Creare sempre test di validazione per le correzioni PHPStan
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 ## Aggiornamento verificato (2026-07-06, sessione pomeridiana)
 
 Ri-verificato con `phpstan analyse Modules/User --memory-limit=-1` (cache pulita): **0 errori**. Fix applicati in questa sessione oltre a quanto sopra:
@@ -193,3 +217,22 @@ Ri-verificato con `phpstan analyse Modules/User --memory-limit=-1` (cache pulita
 
 Dettagli completi: `docs/chat/phpstan-modules-progress-2026-07-06-pm.md` (root del repo) e `docs/wiki/second-brain/phpstan-journey.md`.
 
+=======
+*Ultimo aggiornamento: dicembre 2024*
+>>>>>>> f548be94 (.)
+=======
+*Ultimo aggiornamento: dicembre 2024*
+=======
+## Aggiornamento verificato (2026-07-06, sessione pomeridiana)
+
+Ri-verificato con `phpstan analyse Modules/User --memory-limit=-1` (cache pulita): **0 errori**. Fix applicati in questa sessione oltre a quanto sopra:
+
+- `tests/Traits/HasUserTestCase.php`: dichiarava `@property User $user` solo in PHPDoc, senza `use` per la classe `User` né una property reale — PHPStan risolveva `User` nel namespace sbagliato. Aggiunta `use Modules\User\Models\User;` + `protected User $user;` reale.
+- `tests/Feature/Authentication/UserAuthenticationTest.php`: chiamate `->fresh()` (nullable) incatenate direttamente su `$this->requireUser()`, causando `property.nonObject`/`method.nonObject`. Fix con l'helper già esistente `TestCase::requireFreshUser(User $user): User`. Chiuso in convergenza con un altro agente, che ha anche convertito `Role::factory()->create()` / `Permission::factory()->create()` in `RoleFactory::new()->createOne()` / `PermissionFactory::new()->createOne()` — necessario perché `Model::factory()` su modelli con `HasXotFactory` (risoluzione dinamica della factory via `GetFactoryAction`) risolve a `mixed` per PHPStan.
+- `tests/Feature/Database/Migrations/UserMigrationSyntaxTest.php`: `dataset(...)->with(...)` sostituito con una funzione helper `getUserMigrationFiles()` chiamata dentro un `foreach`, eliminando sia `method.internalClass` su `expect()` sia su `Pest\PendingCalls\TestCall::with()` (anch'esso `@internal`). Nessun `@phpstan-ignore` usato, nonostante un tentativo di un altro agente in tal senso durante la sessione.
+- `app/Console/Commands/AssignTeamCommand.php` (aggiunto durante la sessione da un altro agente): un `/** @var UserContract */` senza `$user` e senza il relativo `use` import lasciava `$user` non tipizzato. Sostituito con `Assert::isInstanceOf($user, BaseUser::class)` (Webmozart), narrowing verificato anche a runtime.
+
+Dettagli completi: `docs/chat/phpstan-modules-progress-2026-07-06-pm.md` (root del repo) e `docs/wiki/second-brain/phpstan-journey.md`.
+
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 # Auto-generated forbidden paths — do not edit manually
 # Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
 
@@ -34,6 +36,84 @@ cache/*
 docs/cache/
 docs/phpstan/
 # --- Cache & temporary ---
+=======
+=======
+>>>>>>> 87273113 (.)
+# ==============================================
+# LARAXOT MODULE USER - .GITIGNORE
+# ==============================================
+# Modulo User Laraxot - Template standardizzato
+# Ultimo aggiornamento: 2025-01-06
+# ==============================================
+
+# ==============================================
+# DEPENDENCIES & PACKAGES
+# ==============================================
+vendor/
+/vendor/
+node_modules/
+/node_modules/
+/docs/vendor/
+package-lock.json
+yarn.lock
+yarn-error.log
+composer.lock
+
+# ==============================================
+# BUILD & COMPILED FILES
+# ==============================================
+/build
+/build/
+build/
+dist/
+docs/cache/
+cache/*
+
+# ==============================================
+# CACHE & TEMPORARY FILES
+# ==============================================
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+# Auto-generated forbidden paths — do not edit manually
+# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
+
+bashscripts
+_bmad-output
+.circleci
+.claude-audit
+.devcontainer
+_docs
+docs/archive
+docs/archived
+docs/legacy
+docs/workbench
+.kilocode
+.kiro
+.ralph
+scripts
+test-results
+tests/.claude-audit
+# ==============================================
+# LARAXOT MODULE: USER — .gitignore
+# Grouped, deduped. See docs/wiki/rules/module-theme-root-cleanup.md
+# --- Dependencies & packages ---
+/vendor/
+/node_modules/
+package-lock.json
+yarn.lock
+composer.lock
+# --- Build & compiled ---
+/build/
+dist/
+bootstrap/compiled.php
+cache/*
+docs/cache/
+docs/phpstan/
+# --- Cache & temporary ---
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 *.cache
 *.lock
 *.phar
@@ -47,6 +127,8 @@ docs/phpstan/
 v8-compile-cache-*
 .php-cs-fixer.cache
 .phpunit.result.cache
+<<<<<<< HEAD
+<<<<<<< HEAD
 # --- Logs ---
 *.log
 error_log
@@ -54,12 +136,45 @@ npm-debug.log*
 yarn-error.log*
 lerna-debug.log*
 # --- Laravel runtime ---
+=======
+=======
+>>>>>>> 87273113 (.)
+
+# ==============================================
+# LOG FILES
+# ==============================================
+*.log
+error_log
+npm-debug.log*
+npm-debug.log
+yarn-error.log*
+lerna-debug.log*
+
+# ==============================================
+# LARAVEL SPECIFIC
+# ==============================================
+bootstrap/compiled.php
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+# --- Logs ---
+*.log
+error_log
+npm-debug.log*
+yarn-error.log*
+lerna-debug.log*
+# --- Laravel runtime ---
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 app/storage/
 public/storage
 public/hot
 public_html/storage
 public_html/hot
 storage/*.key
+<<<<<<< HEAD
+<<<<<<< HEAD
 storage/framework/cache/
 storage/framework/sessions/
 storage/framework/views/
@@ -67,11 +182,36 @@ storage/framework/views/
 .env.*
 !.env.example
 # --- Environment & IDE ---
+=======
+=======
+>>>>>>> 87273113 (.)
+.env
+.env.*
+!.env.example
+
+# ==============================================
+# ENVIRONMENT & CONFIGURATION
+# ==============================================
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+.env
+.env.*
+!.env.example
+# --- Environment & IDE ---
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 Homestead.yaml
 Homestead.json
 /.vagrant
 /.idea
 .phpintel
+<<<<<<< HEAD
+<<<<<<< HEAD
 .phpstorm.meta.php
 .windsurf/
 .cursor/
@@ -87,6 +227,41 @@ Homestead.json
 *.orig
 *.rej
 # --- System files ---
+=======
+=======
+>>>>>>> 87273113 (.)
+
+# ==============================================
+# GIT SPECIFIC
+# ==============================================
+.git-rewrite/
+.git-rewrite
+.git-blame-ignore-revs
+
+# ==============================================
+# SYSTEM FILES
+# ==============================================
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+.phpstorm.meta.php
+.windsurf/
+.cursor/
+.vscode/
+# --- Git leftovers (merge/rebase/editor) ---
+.git-rewrite/
+.git-blame-ignore-revs
+*~HEAD
+*~BASE
+*~LOCAL
+*~REMOTE
+*~head
+*.orig
+*.rej
+# --- System files ---
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 .DS_Store
 .DS_Store?
 ._*
@@ -94,13 +269,32 @@ Homestead.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+<<<<<<< HEAD
+<<<<<<< HEAD
 agentdb.rvf
 # --- Backup / old files ---
+=======
+=======
+>>>>>>> 87273113 (.)
+
+# ==============================================
+# BACKUP FILES
+# ==============================================
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+agentdb.rvf
+# --- Backup / old files ---
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 *.old
 *.old1
 *.old2
 *.backup
 *.backup.*
+<<<<<<< HEAD
+<<<<<<< HEAD
 *.backup-*
 *.backup_*
 *.bak
@@ -147,3 +341,114 @@ resources/views/node_modules
 phpinsights.php
 rector.php
 tests/Unit/graphify-out/
+=======
+=======
+>>>>>>> 87273113 (.)
+*.bak
+*.bakcup
+*.new
+
+# ==============================================
+# DEVELOPMENT TOOLS
+# ==============================================
+.windsurf/
+.cursor/
+.phpstorm.meta.php
+
+# ==============================================
+# DOCUMENTATION CACHE
+# ==============================================
+docs/phpstan/
+docs/cache/
+
+# ==============================================
+# OLD DIRECTORIES (LEGACY CLEANUP)
+# ==============================================
+resources/views/Components_old/
+resources/views/Components_old
+database/Migrations_old/
+database/Migrations_old
+database/Seeders_old/
+database/Seeders_old
+database/Factories_old/
+database/Factories_old
+database/Factories_
+database_old/
+database_old
+
+# ==============================================
+# MODULE SPECIFIC - USER
+# ==============================================
+# File di configurazione locale
+config/local.php
+config/development.php
+
+# Cache autenticazione
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+
+# File di test temporanei
+test_users.json
+user_test_data.csv
+
+# ==============================================
+# END OF USER .GITIGNORE
+# ==============================================
+
+# 🚫 File specifici del progetto
+*.fila2
+laravel
+public_html
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+*.backup-*
+*.backup_*
+*.bak
+*.bakcup
+*.new
+# --- Legacy directories (historic cleanup) ---
+resources/views/Components_old/
+database/Migrations_old/
+database/Seeders_old/
+database/Factories_old/
+database/Factories_
+database_old/
+lang/lang/
+# --- Project-specific (User) ---
+*.fila2
+laravel
+public_html
+config/local.php
+config/development.php
+test_users.json
+user_test_data.csv
+# AI/TOOL SCAFFOLD — must never exist in the module tree.
+# Generated by AI agents / external CI, never part of the module domain.
+# See docs/wiki/rules/module-theme-root-cleanup.md
+# Patterns cover both module root and nested occurrences (docs/**).
+tests/AuditCoverage/
+docs/scripts/
+docs/bashscripts/
+docs/**/archive/
+docs/**/archived/
+docs/**/legacy/
+docs/**/workbench/
+docs/**/scripts/
+docs/**/bashscripts/
+resources/views/node_modules
+
+# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
+.cursor/
+.devcontainer/
+.vscode/
+.windsurf/
+
+# Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
+phpinsights.php
+rector.php
+tests/Unit/graphify-out/
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

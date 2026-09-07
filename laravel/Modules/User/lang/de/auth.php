@@ -277,6 +277,11 @@ return [
         'token' => 'Il token di reset password non è valido.',
         'user' => 'Non riusciamo a trovare un utente con questo indirizzo email.',
     ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
     'navigation' => [
         'label' => 'Missing Navigation Label',
         'plural_label' => 'Missing Navigation Plural Label',
@@ -290,4 +295,10 @@ return [
     ],
     'actions' => [
     ],
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

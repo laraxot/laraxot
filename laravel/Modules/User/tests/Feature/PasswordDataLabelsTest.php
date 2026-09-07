@@ -4,6 +4,91 @@ declare(strict_types=1);
 
 namespace Modules\User\Tests\Feature;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+use Modules\User\Datas\PasswordData;
+use Modules\User\Tests\TestCase;
+use PHPUnit\Framework\Assert;
+use Modules\User\Models\User;
+
+uses(TestCase::class);
+
+describe('Password Data Labels', function (): void {
+    test('password data labels are translated', function (): void {
+        app()->setLocale('it');
+
+        $passwordData = PasswordData::make();
+        $passwordData->setFieldName('password');
+
+        $passwordComponent = $passwordData->getPasswordFormComponent('password');
+        $confirmationComponent = $passwordData->getPasswordConfirmationFormComponent();
+
+        Assert::assertSame('Parola d\'ordine', $passwordComponent->getLabel());
+        Assert::assertSame('Conferma Password', $confirmationComponent->getLabel());
+    });
+
+    test('login form labels are translated', function (): void {
+        /* @var TestCase $this */
+        $this->skipTest('Login Livewire form labels — coperto da widget Filament LoginWidgetTest');
+    });
+=======
+=======
+>>>>>>> 87273113 (.)
+use Livewire\Livewire;
+use Modules\User\Datas\PasswordData;
+use Modules\User\Http\Livewire\Auth\Login;
+use Modules\User\Tests\TestCase;
+
+uses(TestCase::class);
+
+test('password data labels are translated', function (): void {
+    // Arrange
+    app()->setLocale('it');
+
+    $passwordData = PasswordData::make();
+    $passwordData->setFieldName('password');
+
+    // Act
+    $passwordComponent = $passwordData->getPasswordFormComponent('password');
+    $confirmationComponent = $passwordData->getPasswordConfirmationFormComponent();
+
+    // Assert
+    expect($passwordComponent->getLabel())->toBe('Password');
+    expect($confirmationComponent->getLabel())->toBe('Conferma Password');
+});
+
+test('login form labels are translated', function (): void {
+    // Assemble
+    app()->setLocale('it');
+
+    // Using Livewire test helper
+    $livewire = Livewire::test(Login::class);
+    $instance = $livewire->instance();
+
+    // Filament forms are initialized on mount or when accessed.
+    $instance->mount();
+
+    $form = $instance->getForm('form');
+    $components = $form->getComponents();
+
+    // Find components
+    $email = collect($components)->first(fn ($c) => 'email' === $c->getName());
+    $password = collect($components)->first(fn ($c) => 'password' === $c->getName());
+    $remember = collect($components)->first(fn ($c) => 'remember' === $c->getName());
+
+    // Assert
+    expect($email)->not->toBeNull();
+    expect($email->getLabel())->toBe('Email');
+
+    expect($password)->not->toBeNull();
+    expect($password->getLabel())->toBe('Password');
+
+    expect($remember)->not->toBeNull();
+    expect($remember->getLabel())->toBe('Ricordami');
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
 use Modules\User\Datas\PasswordData;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -28,4 +113,6 @@ describe('Password Data Labels', function (): void {
         /* @var TestCase $this */
         $this->skipTest('Login Livewire form labels — coperto da widget Filament LoginWidgetTest');
     });
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 });

@@ -4,6 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\User\Http\Middleware;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+use Closure;
+use Filament\Facades\Filament;
+>>>>>>> f548be94 (.)
+=======
+use Closure;
+use Filament\Facades\Filament;
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -11,10 +23,24 @@ use Illuminate\Support\Facades\Auth;
 
 class PasswordExpiryMiddleware
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
     /**
      * @param \Closure(Request):((Response|RedirectResponse)) $next
      */
     public function handle(Request $request, \Closure $next): Response|RedirectResponse
+=======
+    public function handle(Request $request, Closure $next): Response|RedirectResponse
+>>>>>>> f548be94 (.)
+=======
+    public function handle(Request $request, Closure $next): Response|RedirectResponse
+=======
+    /**
+     * @param \Closure(Request):((Response|RedirectResponse)) $next
+     */
+    public function handle(Request $request, \Closure $next): Response|RedirectResponse
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     {
         if ($request->routeIs('password.change') || $request->routeIs('password.update')) {
             return $next($request);
@@ -51,7 +77,18 @@ class PasswordExpiryMiddleware
     protected function passwordHasExpired(): bool
     {
         $user = Auth::user();
+<<<<<<< HEAD
+<<<<<<< HEAD
         if (! $user) {
+=======
+        if (!$user) {
+>>>>>>> f548be94 (.)
+=======
+        if (!$user) {
+=======
+        if (! $user) {
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
             return false;
         }
 

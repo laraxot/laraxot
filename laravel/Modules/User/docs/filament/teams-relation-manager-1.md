@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "TeamsRelationManager in User Module"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./widgets-responsive-layout.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # TeamsRelationManager in User Module
 
 ## Panoramica

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Collegamento al Modulo Cms"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Collegamento al Modulo Cms
 
 Questo documento descrive le relazioni e i collegamenti tra il modulo User e il modulo Cms per quanto riguarda i componenti Filament e le convenzioni di namespace.

@@ -102,6 +102,8 @@ return [
         'tooltip' => 'Zkopírováno!',
     ],
     'fields' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
         'avatar' => [
             'label' => 'Avatar',
             'tooltip' => '',
@@ -206,4 +208,135 @@ return [
     'plural_label' => 'Missing Plural label',
     'actions' => [
     ],
+=======
+=======
+>>>>>>> 87273113 (.)
+        'avatar' => 'Avatar',
+        'email' => 'Email',
+        'login' => 'Přihlášení',
+        'name' => 'Jméno',
+        'password' => 'Heslo',
+        'password_confirm' => 'Potvrzení hesla',
+        'new_password' => 'Nové heslo',
+        'new_password_confirmation' => 'Potvrďte heslo',
+        'token_name' => 'Název tokenu',
+        'token_expiry' => 'Platnost tokenu',
+        'abilities' => 'Vlastnosti',
+        '2fa_code' => 'Kód',
+        '2fa_recovery_code' => 'Záložní kód',
+        'created' => 'Vytvořeno',
+        'expires' => 'Expirace',
+    ],
+    'or' => 'nebo',
+    'cancel' => 'Zrušit',
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'avatar' => [
+            'label' => 'Avatar',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'email' => [
+            'label' => 'Email',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'login' => [
+            'label' => 'Přihlášení',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'name' => [
+            'label' => 'Jméno',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password' => [
+            'label' => 'Heslo',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password_confirm' => [
+            'label' => 'Potvrzení hesla',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password' => [
+            'label' => 'Nové heslo',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password_confirmation' => [
+            'label' => 'Potvrďte heslo',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_name' => [
+            'label' => 'Název tokenu',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_expiry' => [
+            'label' => 'Platnost tokenu',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'abilities' => [
+            'label' => 'Vlastnosti',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_code' => [
+            'label' => 'Kód',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_recovery_code' => [
+            'label' => 'Záložní kód',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created' => [
+            'label' => 'Vytvořeno',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'expires' => [
+            'label' => 'Expirace',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'or' => 'nebo',
+    'cancel' => 'Zrušit',
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'actions' => [
+    ],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

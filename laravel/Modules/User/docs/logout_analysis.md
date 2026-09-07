@@ -221,4 +221,8 @@ $logout = function () {
 - [Documentazione Volt](./VOLT_BLADE_IMPLEMENTATION.md)
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
 - [Gestione Sessione](./SESSION_MANAGEMENT.md)
+<<<<<<< HEAD
 - [Tema One Documentation](../../Themes/One/docs/README.md) 
+=======
+- [Tema One Documentation](../../Themes/One/docs/README.md) 
+>>>>>>> 2024e2e7 (.)

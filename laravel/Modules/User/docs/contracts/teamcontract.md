@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "TeamContract"
 type: concept
@@ -11,6 +16,12 @@ related:
   - "./hasteamsandusercontract.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # TeamContract
 
 L'interfaccia `TeamContract` definisce il contratto per i team nel sistema.

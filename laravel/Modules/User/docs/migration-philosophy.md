@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Laraxot Migration Philosophy"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Laraxot Migration Philosophy
 
 ## Core Principle: One Migration Per Table Per Module
@@ -27,7 +38,18 @@ related:
 ### Why This Rule Exists
 
 1. **Database Consistency**: Multiple migrations for the same table create confusion about the authoritative schema definition
+<<<<<<< HEAD
+<<<<<<< HEAD
 2. **Migration Order Issues**: Different timestamps can cause un<nome progetto>able execution order in different environments
+=======
+2. **Migration Order Issues**: Different timestamps can cause unpredictable execution order in different environments
+>>>>>>> 60a2c9a9 (.)
+=======
+2. **Migration Order Issues**: Different timestamps can cause unpredictable execution order in different environments
+=======
+2. **Migration Order Issues**: Different timestamps can cause un<nome progetto>able execution order in different environments
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 3. **Maintenance Complexity**: Multiple files for the same table make it difficult to track schema changes
 4. **DRY Violation**: Duplicate migrations violate the "Don't Repeat Yourself" principle
 5. **Single Source of Truth**: Each table should have exactly one authoritative migration file
@@ -106,4 +128,12 @@ Modules/User/database/migrations/
 
 ---
 
+<<<<<<< HEAD
 **Remember**: In Laraxot philosophy, simplicity and clarity trump flexibility. One table, one migration, no exceptions.
+=======
+**Remember**: In Laraxot philosophy, simplicity and clarity trump flexibility. One table, one migration, no exceptions.
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

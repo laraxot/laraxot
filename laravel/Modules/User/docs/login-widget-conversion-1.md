@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Conversione Livewire Auth/Login a Filament LoginWidget"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Conversione Livewire Auth/Login a Filament LoginWidget
 
 ## Analisi del componente Livewire
@@ -109,6 +120,23 @@ class LoginWidget extends XotBaseWidget
 - Alcune funzionalità (es. `render()`) non sono necessarie nel widget.
 
 ## Collegamenti
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [WIDGETS_STRUCTURE.md](../widgets-structure-2.md) — Regole di struttura per i widget Filament nel modulo User.
 - [filament_best_practices.md](filament_best_practices.md) — Best practices per risorse e widget Filament.
 - [login-improvements.md](../../../themes/twentyone/docs/login-improvements.md) — Analisi e miglioramenti della pagina di login nel tema TwentyOne.
+=======
+- [WIDGETS_STRUCTURE.md](../widgets_structure.md) — Regole di struttura per i widget Filament nel modulo User.
+- [filament_best_practices.md](filament_best_practices.md) — Best practices per risorse e widget Filament.
+- [login-improvements.md](../../../themes/twentyone/docs/login-improvements.md) — Analisi e miglioramenti della pagina di login nel tema TwentyOne.
+>>>>>>> 60a2c9a9 (.)
+=======
+- [WIDGETS_STRUCTURE.md](../widgets_structure.md) — Regole di struttura per i widget Filament nel modulo User.
+- [filament_best_practices.md](filament_best_practices.md) — Best practices per risorse e widget Filament.
+- [login-improvements.md](../../../themes/twentyone/docs/login-improvements.md) — Analisi e miglioramenti della pagina di login nel tema TwentyOne.
+=======
+- [WIDGETS_STRUCTURE.md](../widgets-structure-2.md) — Regole di struttura per i widget Filament nel modulo User.
+- [filament_best_practices.md](filament_best_practices.md) — Best practices per risorse e widget Filament.
+- [login-improvements.md](../../../themes/twentyone/docs/login-improvements.md) — Analisi e miglioramenti della pagina di login nel tema TwentyOne.
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

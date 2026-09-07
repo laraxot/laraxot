@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Ottimizzazioni Super DRY + KISS - Modulo User"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Ottimizzazioni Super DRY + KISS - Modulo User
 
 ## 🎯 Panoramica
@@ -370,14 +381,41 @@ class User extends Model
 
 ## 🔗 Collegamenti
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Documentazione Core](../../../../docs/core/)
 - [Best Practices Filament](../../../../docs/core/filament-best-practices.md)
 - [Convenzioni Sistema](../../../../docs/core/conventions.md)
 - [Template Modulo](../../../../docs/templates/module-template.md)
+=======
+=======
+>>>>>>> 87273113 (.)
+- [Documentazione Core](../../../docs/core/)
+- [Best Practices Filament](../../../docs/core/filament-best-practices.md)
+- [Convenzioni Sistema](../../../docs/core/conventions.md)
+- [Template Modulo](../../../docs/templates/module-template.md)
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+- [Documentazione Core](../../../../docs/core/)
+- [Best Practices Filament](../../../../docs/core/filament-best-practices.md)
+- [Convenzioni Sistema](../../../../docs/core/conventions.md)
+- [Template Modulo](../../../../docs/templates/module-template.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ---
 
 **Responsabile:** Team User
 **Data:** 2025-01-XX
 **Stato:** In Analisi
+<<<<<<< HEAD
 **Priorità:** CRITICA
+=======
+**Priorità:** CRITICA
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

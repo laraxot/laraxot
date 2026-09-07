@@ -18,7 +18,18 @@ use Illuminate\Support\Facades\Route;
  */
 /*
  * Route::middleware('auth:api')->get('/user', function (Request $request) {
+<<<<<<< HEAD
+<<<<<<< HEAD
  *     return $request->user();
+=======
+ * return $request->user();
+>>>>>>> f548be94 (.)
+=======
+ * return $request->user();
+=======
+ *     return $request->user();
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
  * });
  */
 

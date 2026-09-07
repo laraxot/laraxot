@@ -36,6 +36,11 @@ Le Rules progettuali vivono qui, nel wiki del Module **User**, e vengono caricat
 - Non embeddare Rules nei prompt di avvio
 - Per Rules globali, consulta il [wiki root](../../docs/wiki/rules/index.md)
 
+<<<<<<< HEAD
+- Per Rules globali, consulta il [wiki root](../../docs/wiki/rules/INDEX.md)
+
+=======
+>>>>>>> 87273113 (.)
 ## Rules ricorrenti
 
 | Rule | Scopo |

@@ -102,6 +102,8 @@ return [
         'tooltip' => 'Copiado!',
     ],
     'fields' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
         'avatar' => [
             'label' => 'Avatar',
             'tooltip' => '',
@@ -206,4 +208,135 @@ return [
     'plural_label' => 'Missing Plural label',
     'actions' => [
     ],
+=======
+=======
+>>>>>>> 87273113 (.)
+        'avatar' => 'Avatar',
+        'email' => 'E-mail',
+        'login' => 'Iniciar sessão',
+        'name' => 'Nome',
+        'password' => 'Palavra-passe',
+        'password_confirm' => 'Confirmar palavra-passe',
+        'new_password' => 'Nova palavra-passe',
+        'new_password_confirmation' => 'Confirmação de nova palavra-passe',
+        'token_name' => 'Nome da chave única',
+        'token_expiry' => 'Validade da chave única',
+        'abilities' => 'Capacidades',
+        '2fa_code' => 'Código',
+        '2fa_recovery_code' => 'Código de Recuperação',
+        'created' => 'Criado',
+        'expires' => 'Expira',
+    ],
+    'or' => 'Ou',
+    'cancel' => 'Cancelar',
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'avatar' => [
+            'label' => 'Avatar',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'email' => [
+            'label' => 'E-mail',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'login' => [
+            'label' => 'Iniciar sessão',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'name' => [
+            'label' => 'Nome',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password' => [
+            'label' => 'Palavra-passe',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password_confirm' => [
+            'label' => 'Confirmar palavra-passe',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password' => [
+            'label' => 'Nova palavra-passe',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password_confirmation' => [
+            'label' => 'Confirmação de nova palavra-passe',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_name' => [
+            'label' => 'Nome da chave única',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_expiry' => [
+            'label' => 'Validade da chave única',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'abilities' => [
+            'label' => 'Capacidades',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_code' => [
+            'label' => 'Código',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_recovery_code' => [
+            'label' => 'Código de Recuperação',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created' => [
+            'label' => 'Criado',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'expires' => [
+            'label' => 'Expira',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'or' => 'Ou',
+    'cancel' => 'Cancelar',
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'actions' => [
+    ],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

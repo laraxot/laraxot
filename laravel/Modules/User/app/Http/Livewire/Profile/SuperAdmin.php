@@ -32,6 +32,8 @@ class SuperAdmin extends Component
 
     public function render(): View
     {
+<<<<<<< HEAD
+<<<<<<< HEAD
         /** @var view-string $viewName */
         $viewName = 'user::livewire.profile.super-admin';
         $view_params = [
@@ -39,5 +41,27 @@ class SuperAdmin extends Component
         ];
 
         return view($viewName, $view_params);
+=======
+=======
+>>>>>>> 87273113 (.)
+        $view = 'user::livewire.profile.super-admin';
+        $view_params = [
+            'view' => $view,
+        ];
+
+        return view($view, $view_params);
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        /** @var view-string $viewName */
+        $viewName = 'user::livewire.profile.super-admin';
+        $view_params = [
+            'view' => $viewName,
+        ];
+
+        return view($viewName, $view_params);
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     }
 }

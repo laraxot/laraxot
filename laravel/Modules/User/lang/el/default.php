@@ -89,11 +89,32 @@ return [
             'setup_key' => 'Setup key',
             'not_enabled' => [
                 'title' => 'You have not enabled two factor authentication.',
+<<<<<<< HEAD
+<<<<<<< HEAD
                 'description' => 'When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.',
             ],
             'finish_enabling' => [
                 'title' => 'Finish enabling two factor authentication.',
                 'description' => 'To finish enabling two factor authentication, scan the following QR code using your phone\'s authenticator application or enter the setup key and provide the generated OTP code.',
+=======
+=======
+>>>>>>> 87273113 (.)
+                'description' => "When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application.",
+            ],
+            'finish_enabling' => [
+                'title' => 'Finish enabling two factor authentication.',
+                'description' => "To finish enabling two factor authentication, scan the following QR code using your phone's authenticator application or enter the setup key and provide the generated OTP code.",
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+                'description' => 'When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.',
+            ],
+            'finish_enabling' => [
+                'title' => 'Finish enabling two factor authentication.',
+                'description' => 'To finish enabling two factor authentication, scan the following QR code using your phone\'s authenticator application or enter the setup key and provide the generated OTP code.',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
             ],
             'enabled' => [
                 'title' => 'You have enabled two factor authentication!',
@@ -122,10 +143,22 @@ return [
         ],
     ],
     'clipboard' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        // 'link' => 'In die Zwischenablage kopieren',
+>>>>>>> f548be94 (.)
+=======
+        // 'link' => 'In die Zwischenablage kopieren',
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         'link' => 'Αντιγραφή στο πρόχειρο',
         'tooltip' => 'Αντιγράφηκε!',
     ],
     'fields' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
         'email' => [
             'label' => 'Email',
             'tooltip' => '',
@@ -218,4 +251,121 @@ return [
     'plural_label' => 'Missing Plural label',
     'actions' => [
     ],
+=======
+=======
+>>>>>>> 87273113 (.)
+        'email' => 'Email',
+        'login' => 'Συνδεθείτε',
+        'name' => 'Όνομα',
+        'password' => 'Κωδικός',
+        'password_confirm' => 'Κωδικός επιβεβαίωσης',
+        'new_password' => 'Νέος κωδικός',
+        'new_password_confirmation' => 'Επιβεβαίωση κωδικού',
+        'token_name' => 'Token name',
+        'abilities' => 'Ικανότητες',
+        '2fa_code' => 'Code',
+        '2fa_recovery_code' => 'Recovery Code',
+        'created' => 'Created',
+        'expires => "Expires',
+    ],
+    'or' => 'ή',
+    'cancel' => 'Ακύρωση',
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'email' => [
+            'label' => 'Email',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'login' => [
+            'label' => 'Συνδεθείτε',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'name' => [
+            'label' => 'Όνομα',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password' => [
+            'label' => 'Κωδικός',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password_confirm' => [
+            'label' => 'Κωδικός επιβεβαίωσης',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password' => [
+            'label' => 'Νέος κωδικός',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password_confirmation' => [
+            'label' => 'Επιβεβαίωση κωδικού',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_name' => [
+            'label' => 'Token name',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'abilities' => [
+            'label' => 'Ικανότητες',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_code' => [
+            'label' => 'Code',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_recovery_code' => [
+            'label' => 'Recovery Code',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created' => [
+            'label' => 'Created',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        0 => [
+            'label' => 'expires => "Expires',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'or' => 'ή',
+    'cancel' => 'Ακύρωση',
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'actions' => [
+    ],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

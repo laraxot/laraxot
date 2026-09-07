@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "User Analytics"
 type: concept
@@ -17,6 +22,12 @@ related:
   - "./user-traits.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # User Analytics
 
 ## Overview
@@ -62,7 +73,18 @@ Sistema di analisi e monitoraggio degli utenti, inclusi pattern di utilizzo, met
 
 ### Pending
 - Real-time monitoring
+<<<<<<< HEAD
+<<<<<<< HEAD
 - <nome progetto>ive analytics
+=======
+- Predictive analytics
+>>>>>>> 60a2c9a9 (.)
+=======
+- Predictive analytics
+=======
+- <nome progetto>ive analytics
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - Custom metrics
 - Export system
 

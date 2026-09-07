@@ -8,25 +8,168 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources;
 
+<<<<<<< HEAD
+use Filament\Forms\Components\ColorPicker;
+use Filament\Forms\Components\TextInput;
+<<<<<<< HEAD
+=======
+use Filament\Resources\Resource;
+>>>>>>> f548be94 (.)
+use Filament\Schemas\Components\Section;
+use Filament\Support\Components\Component;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+=======
 use Filament\Resources\RelationManagers\RelationGroup;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\RelationManagers\RelationManagerConfiguration;
 use Illuminate\Database\Eloquent\Model;
+>>>>>>> 2024e2e7 (.)
 use Modules\User\Filament\Resources\TenantResource\Pages\CreateTenant;
 use Modules\User\Filament\Resources\TenantResource\Pages\EditTenant;
 use Modules\User\Filament\Resources\TenantResource\Pages\ListTenants;
 use Modules\User\Filament\Resources\TenantResource\Pages\ViewTenant;
+<<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\User\Filament\Resources\TenantResource\RelationManagers\UsersRelationManager;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class TenantResource extends XotBaseResource
 {
+=======
+=======
+>>>>>>> 87273113 (.)
+use Modules\User\Filament\Resources\TenantResource\RelationManagers;
+use Modules\User\Filament\Resources\TenantResource\RelationManagers\UsersRelationManager;
+use Modules\Xot\Datas\XotData;
+use Modules\Xot\Filament\Resources\XotBaseResource;
+use Override;
+
+class TenantResource extends XotBaseResource
+{
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-rectangle-stack';
+
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+use Modules\User\Filament\Resources\TenantResource\RelationManagers\UsersRelationManager;
+use Modules\Xot\Datas\XotData;
+use Modules\Xot\Filament\Resources\XotBaseResource;
+
+class TenantResource extends XotBaseResource
+{
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     /**
      * Get the model class name for this resource.
      *
      * @return class-string<Model>
      */
+<<<<<<< HEAD
+<<<<<<< HEAD
+    #[\Override]
+    public static function getModel(): string
+    {
+        $xot = XotData::make();
+
+        return $xot->getTenantClass();
+=======
+=======
+>>>>>>> 87273113 (.)
+    #[Override]
+    public static function getModel(): string
+    {
+        $xot = XotData::make();
+        $model = $xot->getTenantClass();
+
+        return $model;
+>>>>>>> f548be94 (.)
+    }
+
+    /**
+     * @return array<string, Component>
+     */
+<<<<<<< HEAD
+    #[\Override]
+=======
+    #[Override]
+>>>>>>> f548be94 (.)
+    public static function getFormSchema(): array
+    {
+        return [
+            'main' => Section::make()
+                ->schema([
+                    TextInput::make('name')
+                        ->required()
+                        ->unique(
+                            table: 'tenants',
+                            ignoreRecord: true,
+                        )
+                        ->live(onBlur: true)
+<<<<<<< HEAD
+                        ->afterStateUpdated(function (callable $set, $state): void {
+                            if (is_string($state)) {
+                                $set('slug', Str::slug($state));
+                                $set('domain', Str::slug($state));
+                            }
+=======
+                        ->afterStateUpdated(function (callable $set, $state) {
+                            $set('slug', Str::slug($state));
+                            $set('domain', Str::slug($state));
+>>>>>>> f548be94 (.)
+                        })
+                        ->columnSpanFull()
+                        ->placeholder('Nome del tenant')
+                        ->helperText('Inserisci il nome del tenant'),
+                    TextInput::make('slug')
+                        ->required()
+                        ->disabled(fn ($context) => $context !== 'create')
+                        ->unique(
+                            table: 'tenants',
+                            ignoreRecord: true,
+                        )
+                        ->helperText('Lo slug verrà generato automaticamente dal nome'),
+                    TextInput::make('domain')
+                        ->required()
+                        ->visible(fn ($context) => $context === 'create')
+                        ->unique(
+                            table: 'domains',
+                            ignoreRecord: true,
+                        )
+                        ->prefix('https://')
+                        ->suffix('.'.request()->getHost())
+                        ->placeholder('dominio')
+                        ->helperText('Il dominio del tenant'),
+                    TextInput::make('email_address')
+                        ->email()
+                        ->placeholder('email@example.com')
+                        ->helperText('Indirizzo email del tenant'),
+                    TextInput::make('phone')
+                        ->tel()
+                        ->placeholder('Telefono')
+                        ->helperText('Numero di telefono del tenant'),
+                    TextInput::make('mobile')
+                        ->tel()
+                        ->placeholder('Cellulare')
+                        ->helperText('Numero di cellulare del tenant'),
+                    TextInput::make('address')->placeholder('Indirizzo')->helperText('Indirizzo del tenant'),
+                    ColorPicker::make('primary_color')->helperText('Colore primario del tenant'),
+                    ColorPicker::make('secondary_color')->helperText('Colore secondario del tenant'),
+                ])
+                ->columns(2),
+        ];
+    }
+
+<<<<<<< HEAD
+    #[\Override]
+=======
+    #[Override]
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
     #[\Override]
     public static function getModel(): string
     {
@@ -39,6 +182,8 @@ class TenantResource extends XotBaseResource
      * @return array<int, class-string<RelationManager>|RelationGroup|RelationManagerConfiguration>
      */
     #[\Override]
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     public static function getRelations(): array
     {
         return [
@@ -47,7 +192,18 @@ class TenantResource extends XotBaseResource
         ];
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
     #[\Override]
+=======
+    #[Override]
+>>>>>>> f548be94 (.)
+=======
+    #[Override]
+=======
+    #[\Override]
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     public static function getPages(): array
     {
         return [

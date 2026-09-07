@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "phpstan"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./profile.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # phpstan
 
 <!-- Contenuto migrato da _docs/phpstan.txt -->

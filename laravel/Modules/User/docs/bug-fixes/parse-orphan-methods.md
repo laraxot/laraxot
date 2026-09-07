@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Bug Fix: ParseError - Metodi Orfani Fuori dalla Classe"
 type: concept
@@ -17,6 +22,12 @@ related:
   - "./parse-error-orphan-methods.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Bug Fix: ParseError - Metodi Orfani Fuori dalla Classe
 
 ## Data
@@ -147,7 +158,18 @@ protected function orphanMethod(): array
 
 ## Collegamenti
 - [Widget Auth Best Practices](../filament/widgets/registration-widget.md)
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Git Conflicts Resolution](../git-conflicts-resolution-.md.md)
+=======
+- [Git Conflicts Resolution](../git-conflicts-resolution-2025-01-27.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Git Conflicts Resolution](../git-conflicts-resolution-2025-01-27.md)
+=======
+- [Git Conflicts Resolution](../git-conflicts-resolution-.md.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - [Bug Fix Guidelines](../../../../project_docs/bug-fixing-guidelines.md)
 
 ## Status

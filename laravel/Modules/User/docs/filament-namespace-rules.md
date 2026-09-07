@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Regole per i Namespace Filament"
 type: rule
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Regole per i Namespace Filament
 
 ## Regola 1: Namespace Modulare
@@ -63,12 +74,23 @@ class Dashboard extends Page
 - [Convenzioni Namespace Filament](../../cms/docs/convenzioni-namespace-filament.md)
 - [Regole Generali Xot](../../xot/docs/readme.md)
 - [Best Practices Filament](../../cms/docs/best-practices/filament.md)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 - [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md)
 - [Regole Generali Xot](../../Xot/project_docs/README.md)
 - [Best Practices Filament](../../Cms/project_docs/best-practices/filament.md)
 - [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
 - [Regole Generali Xot](../../Xot/docs/README.md)
 - [Best Practices Filament](../../Cms/docs/best-practices/filament.md)
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Regole per i Namespace Filament
 
 ## Regola 1: Namespace Modulare
@@ -133,9 +155,28 @@ class Dashboard extends Page
 ```
 
 ## Collegamenti
+<<<<<<< HEAD
+<<<<<<< HEAD
+- [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
+- [Regole Generali Xot](../../Xot/docs/README.md)
+- [Best Practices Filament](../../Cms/docs/best-practices/filament.md)
+=======
+>>>>>>> 87273113 (.)
+- [Convenzioni Namespace Filament](../../cms/docs/convenzioni-namespace-filament.md)
+- [Regole Generali Xot](../../xot/docs/readme.md)
+- [Best Practices Filament](../../cms/docs/best-practices/filament.md)
+=======
+<<<<<<< HEAD
+- [Convenzioni Namespace Filament](../../cms/docs/convenzioni-namespace-filament.md)
+- [Regole Generali Xot](../../xot/docs/readme.md)
+- [Best Practices Filament](../../cms/docs/best-practices/filament.md)
+>>>>>>> 60a2c9a9 (.)
+=======
 - [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
 - [Regole Generali Xot](../../Xot/docs/README.md)
 - [Best Practices Filament](../../Cms/docs/best-practices/filament.md)
 - [Convenzioni Namespace Filament](../../cms/docs/convenzioni-namespace-filament.md)
 - [Regole Generali Xot](../../xot/docs/readme.md)
 - [Best Practices Filament](../../cms/docs/best-practices/filament.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

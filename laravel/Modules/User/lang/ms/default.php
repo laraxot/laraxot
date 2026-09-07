@@ -126,6 +126,8 @@ return [
         'tooltip' => 'Disalin!',
     ],
     'fields' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
         'email' => [
             'label' => 'E-mel',
             'tooltip' => '',
@@ -218,4 +220,121 @@ return [
     'plural_label' => 'Missing Plural label',
     'actions' => [
     ],
+=======
+=======
+>>>>>>> 87273113 (.)
+        'email' => 'E-mel',
+        'login' => 'Log masuk',
+        'name' => 'Nama',
+        'password' => 'Kata laluan',
+        'password_confirm' => 'Pengesahan kata laluan',
+        'new_password' => 'Kata laluan baharu',
+        'new_password_confirmation' => 'Sahkan kata laluan',
+        'token_name' => 'Nama token',
+        'abilities' => 'Kebolehan',
+        '2fa_code' => 'Kod',
+        '2fa_recovery_code' => 'Kod Pemulihan',
+        'created' => 'Dicipta',
+        'expires' => 'Tamat tempoh',
+    ],
+    'or' => 'Atau',
+    'cancel' => 'Batal',
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'email' => [
+            'label' => 'E-mel',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'login' => [
+            'label' => 'Log masuk',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'name' => [
+            'label' => 'Nama',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password' => [
+            'label' => 'Kata laluan',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password_confirm' => [
+            'label' => 'Pengesahan kata laluan',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password' => [
+            'label' => 'Kata laluan baharu',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password_confirmation' => [
+            'label' => 'Sahkan kata laluan',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_name' => [
+            'label' => 'Nama token',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'abilities' => [
+            'label' => 'Kebolehan',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_code' => [
+            'label' => 'Kod',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_recovery_code' => [
+            'label' => 'Kod Pemulihan',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created' => [
+            'label' => 'Dicipta',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'expires' => [
+            'label' => 'Tamat tempoh',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'or' => 'Atau',
+    'cancel' => 'Batal',
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'actions' => [
+    ],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

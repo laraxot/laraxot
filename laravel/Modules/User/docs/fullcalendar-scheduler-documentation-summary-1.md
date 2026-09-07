@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "FullCalendar Scheduler - Documentazione Completa"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # FullCalendar Scheduler - Documentazione Completa
 
 ## Panoramica
@@ -52,7 +63,18 @@ Documentazione base esistente per:
 - Configurazione di base in <nome progetto>
 - Problemi comuni basilari
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 #### 4. [Scheduler License Key](./scheduler-license-key-2.md)
+=======
+#### 4. [Scheduler License Key](./scheduler_license_key.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+#### 4. [Scheduler License Key](./scheduler_license_key.md)
+=======
+#### 4. [Scheduler License Key](./scheduler-license-key-2.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 Guida rapida esistente per:
 - Uso base delle chiavi licenza
 - Problemi di formato chiavi

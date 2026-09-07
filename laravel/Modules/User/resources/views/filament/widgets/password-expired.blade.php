@@ -15,11 +15,33 @@ declare(strict_types=1);
         <p class="mt-2 text-gray-600">{{ __('user::password_expired.sub_heading') }}</p>
     </div>
     
+<<<<<<< HEAD
+<<<<<<< HEAD
     <form wire:submit="resetPassword">
+=======
+    <x-filament-schemas::form wire:submit="resetPassword">
+>>>>>>> f548be94 (.)
+=======
+    <x-filament-schemas::form wire:submit="resetPassword">
+=======
+    <form wire:submit="resetPassword">
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         {{ $this->form }}
         
         <x-filament::button type="submit" class="mt-4">
             @lang('user::password_expired.actions.reset_password.label') <x-filament::loading-indicator class="h-5 w-5" wire:loading wire:target="submit"/>
         </x-filament::button>
+<<<<<<< HEAD
+<<<<<<< HEAD
     </form>
+=======
+    </x-filament-schemas::form>
+>>>>>>> f548be94 (.)
+=======
+    </x-filament-schemas::form>
+=======
+    </form>
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 </x-filament-widgets::widget>

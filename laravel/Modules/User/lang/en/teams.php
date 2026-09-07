@@ -2,6 +2,16 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> f548be94 (.)
+=======
+
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 return [
     'name' => 'Teams',
     'fields' => [
@@ -10,31 +20,76 @@ return [
             'placeholder' => 'Enter team name',
             'helper_text' => 'Team identifying name',
             'description' => 'The name that identifies this team',
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
         'personal_team' => [
             'label' => 'Personal Team',
             'helper_text' => 'Indicates if this is a personal team',
             'description' => 'A personal team is associated with a single user',
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
         'owner' => [
             'label' => 'Owner',
             'helper_text' => 'Team owner user',
             'description' => 'The user who created and manages this team',
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
         'created_at' => [
             'label' => 'Created At',
             'helper_text' => 'Team creation date',
             'description' => 'Date and time when the team was created',
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
         'updated_at' => [
             'label' => 'Last Modified',
             'helper_text' => 'Last modification date',
             'description' => 'Date and time of the last team modification',
+<<<<<<< HEAD
+<<<<<<< HEAD
             'tooltip' => '',
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+            'tooltip' => '',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
     ],
     'actions' => [
@@ -80,6 +135,11 @@ return [
             'description' => 'User who created this team',
         ],
     ],
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
     'navigation' => [
         'label' => 'Missing Navigation Label',
         'plural_label' => 'Missing Navigation Plural Label',
@@ -89,4 +149,10 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

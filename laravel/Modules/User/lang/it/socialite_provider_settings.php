@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 return [
     'navigation' => ['group' => 'socialite provider settings.navigation'],
+<<<<<<< HEAD
+=======
     'actions' => [
         'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
         'showPassword' => ['label' => 'showPassword', 'icon' => 'showPassword', 'tooltip' => 'showPassword'],
         'hidePassword' => ['label' => 'hidePassword', 'icon' => 'hidePassword', 'tooltip' => 'hidePassword'],
         'copy' => ['label' => 'copy', 'icon' => 'copy', 'tooltip' => 'copy'],
     ],
+>>>>>>> 87273113 (.)
     'sections' => [
         'Google OAuth' => ['label' => 'Google OAuth', 'heading' => 'Google OAuth'],
         'GitHub OAuth' => ['label' => 'GitHub OAuth', 'heading' => 'GitHub OAuth'],
@@ -38,4 +41,13 @@ return [
             'redirect' => ['label' => 'microsoft.redirect', 'placeholder' => 'microsoft.redirect', 'helper_text' => 'microsoft.redirect', 'description' => 'microsoft.redirect'],
         ],
     ],
+<<<<<<< HEAD
+    'actions' => [
+        'showPassword' => ['label' => 'showPassword', 'icon' => 'showPassword', 'tooltip' => 'showPassword'],
+        'hidePassword' => ['label' => 'hidePassword', 'icon' => 'hidePassword', 'tooltip' => 'hidePassword'],
+        'copy' => ['label' => 'copy', 'icon' => 'copy', 'tooltip' => 'copy'],
+        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
+    ],
+=======
+>>>>>>> 87273113 (.)
 ];

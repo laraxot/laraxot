@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Risoluzione Conflitti Git - Modulo User"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Risoluzione Conflitti Git - Modulo User
 
 ## Data Risoluzione
@@ -55,7 +66,18 @@ related:
 - `docs/README.md` - Documentazione principale
 - `docs/baseuser.md` - Documentazione BaseUser
 - `docs/registration-widget.md` - Widget registrazione
+<<<<<<< HEAD
+<<<<<<< HEAD
 - `docs/phpstan-fixes-8.md` - Fix PHPStan
+=======
+- `docs/phpstan_fixes.md` - Fix PHPStan
+>>>>>>> 60a2c9a9 (.)
+=======
+- `docs/phpstan_fixes.md` - Fix PHPStan
+=======
+- `docs/phpstan-fixes-8.md` - Fix PHPStan
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - `docs/filament/widgets/registration-widget.md` - Widget Filament
 
 ## Modifiche Applicate
@@ -121,10 +143,29 @@ Funzionalità team includono:
 
 ## Collegamenti
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Documentazione Root User](../../../../docs/project/modules/user.md)
 - [BaseUser Documentation](./baseuser.md)
 - [Registration Widget](./registration-widget.md)
 - [PHPStan Fixes](./phpstan-fixes-8.md)
+=======
+=======
+>>>>>>> 87273113 (.)
+- [Documentazione Root User](../../../project_docs/modules/user.md)
+- [BaseUser Documentation](./baseuser.md)
+- [Registration Widget](./registration-widget.md)
+- [PHPStan Fixes](./phpstan_fixes.md)
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
+- [Documentazione Root User](../../../../docs/project/modules/user.md)
+- [BaseUser Documentation](./baseuser.md)
+- [Registration Widget](./registration-widget.md)
+- [PHPStan Fixes](./phpstan-fixes-8.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ---
 *Aggiornato automaticamente dopo risoluzione conflitti Git*

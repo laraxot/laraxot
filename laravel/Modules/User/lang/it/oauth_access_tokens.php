@@ -26,7 +26,12 @@ return [
     ],
     'actions' => [
         'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
+<<<<<<< HEAD
+        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
+        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
+=======
         'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
         'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
+>>>>>>> 87273113 (.)
     ],
 ];

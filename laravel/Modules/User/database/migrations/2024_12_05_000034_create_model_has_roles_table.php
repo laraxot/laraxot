@@ -11,8 +11,20 @@ use Modules\Xot\Datas\XotData;
 /*
  * Class CreateModelHasRolesTable.
  */
+<<<<<<< HEAD
+<<<<<<< HEAD
 return new class extends XotBaseMigration
 {
+=======
+return new class extends XotBaseMigration {
+>>>>>>> f548be94 (.)
+=======
+return new class extends XotBaseMigration {
+=======
+return new class extends XotBaseMigration
+{
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     /**
      * Run the migrations.
      */
@@ -30,7 +42,18 @@ return new class extends XotBaseMigration
         // -- UPDATE --
         $this->tableUpdate(function (Blueprint $table): void {
             $team_class = XotData::make()->getTeamClass();
+<<<<<<< HEAD
+<<<<<<< HEAD
             if (! $this->hasColumn('team_id')) {
+=======
+            if (!$this->hasColumn('team_id')) {
+>>>>>>> f548be94 (.)
+=======
+            if (!$this->hasColumn('team_id')) {
+=======
+            if (! $this->hasColumn('team_id')) {
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
                 $table->foreignIdFor($team_class, 'team_id')->nullable();
             }
             if ($this->getColumnType('model_id') === 'uuid') {

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Fix: Duplicate Entry Error in team_user Table - Conversione UUID a Autoincrement"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Fix: Duplicate Entry Error in team_user Table - Conversione UUID a Autoincrement
 
 ## Data Intervento
@@ -235,3 +246,13 @@ Quando si crea un modello pivot che usa autoincrement come PRIMARY KEY:
 - [HasTeams Trait](../../app/Models/Traits/HasTeams.php)
 - [Migration Rules](../../../xot/docs/migrations-consolidated.md)
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+*Ultimo aggiornamento: gennaio 2025*
+>>>>>>> 60a2c9a9 (.)
+=======
+*Ultimo aggiornamento: gennaio 2025*
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

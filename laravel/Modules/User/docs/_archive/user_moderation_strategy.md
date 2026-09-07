@@ -99,7 +99,11 @@ Instead of traditional service classes, we'll use [@spatie/laravel-queueable-act
   class ModerationResource extends Resource {
       protected static ?string $model = User::class;
       protected static ?string $navigationIcon = 'heroicon-o-check-circle';
+<<<<<<< HEAD
+      public static function getFormSchema(): array {
+=======
       public function getFormSchema(): array {
+>>>>>>> 87273113 (.)
           return [
               'type' => Forms\Components\Select::make('type')
                   ->options(UserType::all()),

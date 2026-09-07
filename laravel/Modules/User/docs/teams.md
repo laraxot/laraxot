@@ -2,6 +2,11 @@
 description:
 globs:
 alwaysApply: false
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 related:
   - "./00-index-1.md"
   - "./00-index.md"
@@ -11,6 +16,12 @@ related:
   - "./actions-path-convention-1.md"
   - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ---
 # Relazione utenti-team: tabella pivot `doctor_team`
 
@@ -30,11 +41,32 @@ Permette di assegnare più team a uno stesso utente (es. dottori in più team) e
 La migrazione estende `XotBaseMigration` e utilizza i metodi helper per garantire compatibilità multi-tenant e sicurezza. La tabella viene creata con chiave primaria `id` e campi `user_id` e `team_id` come stringhe di 36 caratteri, senza chiave composta.
 
 ## Collegamenti
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Migrazioni del database](mdc:../../../../docs/database-migrations.md)
 - [Relazioni generali tra moduli](mdc:../../Xot/docs/relazioni.mdc)
 - [Pattern di ereditarietà dei modelli](mdc:../../../../docs/model-inheritance-patterns.md)
 - [Gestione degli utenti](mdc:../../../../docs/user-management.md)
 - [Gestione delle traduzioni](mdc:../../../../docs/translation-management.md)
+=======
+=======
+>>>>>>> 87273113 (.)
+- [Migrazioni del database](mdc:../../../docs/database-migrations.md)
+- [Relazioni generali tra moduli](mdc:../../Xot/docs/relazioni.mdc)
+- [Pattern di ereditarietà dei modelli](mdc:../../../docs/model-inheritance-patterns.md)
+- [Gestione degli utenti](mdc:../../../docs/user-management.md)
+- [Gestione delle traduzioni](mdc:../../../docs/translation-management.md)
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
+- [Migrazioni del database](mdc:../../../../docs/database-migrations.md)
+- [Relazioni generali tra moduli](mdc:../../Xot/docs/relazioni.mdc)
+- [Pattern di ereditarietà dei modelli](mdc:../../../../docs/model-inheritance-patterns.md)
+- [Gestione degli utenti](mdc:../../../../docs/user-management.md)
+- [Gestione delle traduzioni](mdc:../../../../docs/translation-management.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ---
 

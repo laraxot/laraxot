@@ -15,4 +15,34 @@ class TeamPermissionResource extends XotBaseResource
 {
     protected static ?string $model = TeamPermission::class;
 
+<<<<<<< HEAD
+    /**
+     * Get the form schema for the resource (XotBaseResource pattern).
+     *
+     * @return array<string, Field|Section>
+     */
+    public static function getFormSchema(): array
+    {
+        return [
+            'section01' => Section::make([
+                'team_id' => Select::make('team_id')
+                    ->relationship('team', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
+
+                'user_id' => Select::make('user_id')
+                    ->relationship('user', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->required(),
+
+                'permission' => TextInput::make('permission')
+                    ->required()
+                    ->maxLength(255),
+            ]),
+        ];
+    }
+=======
+>>>>>>> 2024e2e7 (.)
 }

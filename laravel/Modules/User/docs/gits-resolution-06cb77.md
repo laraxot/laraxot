@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Risoluzione Conflitti Git - Modulo User ([DATE])"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Risoluzione Conflitti Git - Modulo User ([DATE])
 
 ## Data
@@ -29,8 +40,22 @@ Documentazione della risoluzione dei conflitti Git nel modulo User, inclusi i fi
 ## Collegamenti correlati
 - [Indice documentazione User](/laravel/modules/user/docs/index.md)
 - [README User](/laravel/modules/user/docs/readme.md)
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Auth Components Best Practices](/laravel/modules/user/docs/auth-components-best-practices.md)
 - [Filament Widgets Structure](/laravel/modules/user/docs/widgets-structure-2.md)
+=======
+- [Auth Components Best Practices](/laravel/modules/user/docs/auth_components_best_practices.md)
+- [Filament Widgets Structure](/laravel/modules/user/docs/widgets_structure.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Auth Components Best Practices](/laravel/modules/user/docs/auth_components_best_practices.md)
+- [Filament Widgets Structure](/laravel/modules/user/docs/widgets_structure.md)
+=======
+- [Auth Components Best Practices](/laravel/modules/user/docs/auth-components-best-practices.md)
+- [Filament Widgets Structure](/laravel/modules/user/docs/widgets-structure-2.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - [BaseUser Documentation](/laravel/modules/user/docs/baseuser.md)
 
 ## File Risolti
@@ -315,10 +340,29 @@ La risoluzione dei conflitti Git ha migliorato significativamente la stabilità 
 - **Tipizzazione**: PHPDoc rigorosi per conformità PHPStan
 
 ### **Documentazione Aggiornata:**
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [widgets-structure-2.md](./widgets-structure-2.md) - Regole per widget structure
 - [widget-translation-rules.md](./widget-translation-rules.md) - Pattern traduzioni
 - [path-conventions-2.md](./path-conventions-2.md) - Convenzioni percorsi
 - [volt-blade-implementation-3.md](./volt-blade-implementation-3.md) - View patterns
+=======
+=======
+>>>>>>> 87273113 (.)
+- [widgets_structure.md](./widgets_structure.md) - Regole per widget structure
+- [widget-translation-rules.md](./widget-translation-rules.md) - Pattern traduzioni
+- [path_conventions.md](./path_conventions.md) - Convenzioni percorsi
+- [volt_blade_implementation.md](./volt_blade_implementation.md) - View patterns
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
+- [widgets-structure-2.md](./widgets-structure-2.md) - Regole per widget structure
+- [widget-translation-rules.md](./widget-translation-rules.md) - Pattern traduzioni
+- [path-conventions-2.md](./path-conventions-2.md) - Convenzioni percorsi
+- [volt-blade-implementation-3.md](./volt-blade-implementation-3.md) - View patterns
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ### **Post-Risoluzione TODO:**
 - [ ] Verificare funzionamento widget in contesto Filament panel

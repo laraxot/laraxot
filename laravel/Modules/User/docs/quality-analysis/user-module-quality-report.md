@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Analisi Qualità - Modulo User"
 type: concept
@@ -11,6 +16,12 @@ related:
   - "./user-module-quality.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Analisi Qualità - Modulo User
 
 **Data Analisi**: 2025-01-22
@@ -50,7 +61,18 @@ related:
 #### OtherDeviceLogoutListener - N+1 Updates
 **File**: `Listeners/OtherDeviceLogoutListener.php:42`
 **Problema**: Loop con update individuali (50+ query)
+<<<<<<< HEAD
+<<<<<<< HEAD
 **Soluzione**: Bulk update (già documentata in `code-quality-analysis.md`)
+=======
+**Soluzione**: Bulk update (già documentata in `code_quality_analysis.md`)
+>>>>>>> 60a2c9a9 (.)
+=======
+**Soluzione**: Bulk update (già documentata in `code_quality_analysis.md`)
+=======
+**Soluzione**: Bulk update (già documentata in `code-quality-analysis.md`)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ### 2. Code Duplication (MEDIUM Priority)
 
@@ -86,9 +108,26 @@ related:
 
 ## 🔗 Collegamenti
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Code Quality Analysis](./code-quality-analysis.md)
 - [Optimization Analysis](./optimization-analysis.md)
 - [Business Logic Deep Dive](./business-logic-deep-dive.md)
+=======
+- [Code Quality Analysis](./code_quality_analysis.md)
+- [Optimization Analysis](./optimization-analysis.md)
+- [Business Logic Deep Dive](./business_logic_deep_dive.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Code Quality Analysis](./code_quality_analysis.md)
+- [Optimization Analysis](./optimization-analysis.md)
+- [Business Logic Deep Dive](./business_logic_deep_dive.md)
+=======
+- [Code Quality Analysis](./code-quality-analysis.md)
+- [Optimization Analysis](./optimization-analysis.md)
+- [Business Logic Deep Dive](./business-logic-deep-dive.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - [Xot Quality Analysis](../xot/docs/quality-analysis/current-status.md)
 
 ## 📝 Note

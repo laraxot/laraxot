@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "two_factor"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./phpstan.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # two_factor
 
 <!-- Contenuto migrato da _docs/two_factor.txt -->

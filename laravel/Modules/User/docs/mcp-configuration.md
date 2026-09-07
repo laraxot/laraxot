@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "MCP Server Configuration - User Module"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # MCP Server Configuration - User Module
 
 
@@ -56,14 +67,36 @@ The User module's MCP configuration enables AI assistants to interact with:
     },
     "filesystem": {
       "command": "npx",
+<<<<<<< HEAD
+<<<<<<< HEAD
       "args": ["-y", "@modelcontextprotocol/server-filesystem", "/var/www/_bases/base_<nome progetto>/laravel"],
+=======
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/var/www/_bases/base_laravelpizza/laravel"],
+>>>>>>> 60a2c9a9 (.)
+=======
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/var/www/_bases/base_laravelpizza/laravel"],
+=======
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/var/www/_bases/base_<nome progetto>/laravel"],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
       "description": "Access to User module files"
     },
     "database": {
       "command": "npx",
       "args": ["-y", "@bytebase/dbhub"],
       "env": {
+<<<<<<< HEAD
+<<<<<<< HEAD
         "DATABASE_URL": "sqlite:///var/www/_bases/base_<nome progetto>/laravel/database/database.sqlite"
+=======
+        "DATABASE_URL": "sqlite:///var/www/_bases/base_laravelpizza/laravel/database/database.sqlite"
+>>>>>>> 60a2c9a9 (.)
+=======
+        "DATABASE_URL": "sqlite:///var/www/_bases/base_laravelpizza/laravel/database/database.sqlite"
+=======
+        "DATABASE_URL": "sqlite:///var/www/_bases/base_<nome progetto>/laravel/database/database.sqlite"
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
       },
       "description": "SQLite database queries"
     }
@@ -78,7 +111,18 @@ The User module's MCP configuration enables AI assistants to interact with:
 ### Asana Integration
 ```bash
 # Create task
+<<<<<<< HEAD
+<<<<<<< HEAD
 "Create task in '<nome progetto> - User Module' project: 'Implement two-factor authentication'"
+=======
+"Create task in 'LaravelPizza - User Module' project: 'Implement two-factor authentication'"
+>>>>>>> 60a2c9a9 (.)
+=======
+"Create task in 'LaravelPizza - User Module' project: 'Implement two-factor authentication'"
+=======
+"Create task in '<nome progetto> - User Module' project: 'Implement two-factor authentication'"
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 # Track security improvements
 "Create task: 'Add device fingerprinting for security alerts'"
@@ -153,10 +197,29 @@ Map User module roadmap tasks to Asana:
 
 | Roadmap Task | Asana Project | Priority |
 |--------------|---------------|----------|
+<<<<<<< HEAD
+<<<<<<< HEAD
 | Two-factor authentication | <nome progetto> - User Module | High |
 | Security alerts | <nome progetto> - User Module | High |
 | Device management | <nome progetto> - User Module | Medium |
 | Test coverage 90%+ | <nome progetto> - User Module | High |
+=======
+=======
+>>>>>>> 87273113 (.)
+| Two-factor authentication | LaravelPizza - User Module | High |
+| Security alerts | LaravelPizza - User Module | High |
+| Device management | LaravelPizza - User Module | Medium |
+| Test coverage 90%+ | LaravelPizza - User Module | High |
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
+| Two-factor authentication | <nome progetto> - User Module | High |
+| Security alerts | <nome progetto> - User Module | High |
+| Device management | <nome progetto> - User Module | Medium |
+| Test coverage 90%+ | <nome progetto> - User Module | High |
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ---
 
@@ -167,11 +230,32 @@ Map User module roadmap tasks to Asana:
 - **Server URL**: `https://mcp.asana.com/sse`
 
 ### Cursor
+<<<<<<< HEAD
+<<<<<<< HEAD
 - **Config File**: `/var/www/_bases/base_<nome progetto>/laravel/.cursor-mcp.json`
 - **Command**: `npx mcp-remote https://mcp.asana.com/sse`
 
 ### Windsurf
 - **Config File**: `/var/www/_bases/base_<nome progetto>/laravel/.windsurf-mcp.json`
+=======
+=======
+>>>>>>> 87273113 (.)
+- **Config File**: `/var/www/_bases/base_laravelpizza/laravel/.cursor-mcp.json`
+- **Command**: `npx mcp-remote https://mcp.asana.com/sse`
+
+### Windsurf
+- **Config File**: `/var/www/_bases/base_laravelpizza/laravel/.windsurf-mcp.json`
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
+- **Config File**: `/var/www/_bases/base_<nome progetto>/laravel/.cursor-mcp.json`
+- **Command**: `npx mcp-remote https://mcp.asana.com/sse`
+
+### Windsurf
+- **Config File**: `/var/www/_bases/base_<nome progetto>/laravel/.windsurf-mcp.json`
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - **Command**: `npx mcp-remote https://mcp.asana.com/sse`
 
 ---
@@ -186,7 +270,18 @@ Map User module roadmap tasks to Asana:
    ```
 
 2. **Project Organization**:
+<<<<<<< HEAD
+<<<<<<< HEAD
    - Create dedicated Asana project: "<nome progetto> - User Module"
+=======
+   - Create dedicated Asana project: "LaravelPizza - User Module"
+>>>>>>> 60a2c9a9 (.)
+=======
+   - Create dedicated Asana project: "LaravelPizza - User Module"
+=======
+   - Create dedicated Asana project: "<nome progetto> - User Module"
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
    - Use sections: "Authentication", "Authorization", "Security", "Testing", "Documentation"
 
 3. **Tagging System**:
@@ -230,9 +325,26 @@ Map User module roadmap tasks to Asana:
 
 ## 📚 Related Documentation
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Asana MCP Configuration](../../../../docs/mcp-asana-configuration.md)
 - [ClickUp MCP Configuration](../../../../docs/mcp-clickup-configuration.md)
 - [Redmine MCP Configuration](../../../../docs/mcp-redmine-configuration.md)
+=======
+- [Asana MCP Configuration](../../../docs/mcp-asana-configuration.md)
+- [ClickUp MCP Configuration](../../../docs/mcp-clickup-configuration.md)
+- [Redmine MCP Configuration](../../../docs/mcp-redmine-configuration.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Asana MCP Configuration](../../../docs/mcp-asana-configuration.md)
+- [ClickUp MCP Configuration](../../../docs/mcp-clickup-configuration.md)
+- [Redmine MCP Configuration](../../../docs/mcp-redmine-configuration.md)
+=======
+- [Asana MCP Configuration](../../../../docs/mcp-asana-configuration.md)
+- [ClickUp MCP Configuration](../../../../docs/mcp-clickup-configuration.md)
+- [Redmine MCP Configuration](../../../../docs/mcp-redmine-configuration.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - [User Module Roadmap](./roadmap-[date].md)
 
 ---

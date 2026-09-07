@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Architettura Modulo User"
 type: concept
@@ -10,6 +15,12 @@ discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Architettura Modulo User
 
 ## 🏗️ Panoramica Architetturale
@@ -300,11 +311,38 @@ return [
 
 ## 🔗 Collegamenti
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Best Practices Sistema](../../../../docs/core/best-practices.md)
 - [Convenzioni Sistema](../../../../docs/core/conventions.md)
 - [Template Modulo](../../../../docs/templates/module-template.md)
+=======
+- [Best Practices Sistema](../../../docs/core/best-practices.md)
+- [Convenzioni Sistema](../../../docs/core/conventions.md)
+- [Template Modulo](../../../docs/templates/module-template.md)
+>>>>>>> f548be94 (.)
+=======
+- [Best Practices Sistema](../../../docs/core/best-practices.md)
+- [Convenzioni Sistema](../../../docs/core/conventions.md)
+- [Template Modulo](../../../docs/templates/module-template.md)
+=======
+- [Best Practices Sistema](../../../../docs/core/best-practices.md)
+- [Convenzioni Sistema](../../../../docs/core/conventions.md)
+- [Template Modulo](../../../../docs/templates/module-template.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - [PHPStan Guide](../development/phpstan-guide.md)
 
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+**Ultimo aggiornamento:** Gennaio 2025  
+>>>>>>> f548be94 (.)
+=======
+**Ultimo aggiornamento:** Gennaio 2025  
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 **Versione:** 2.0 - Consolidata DRY + KISS

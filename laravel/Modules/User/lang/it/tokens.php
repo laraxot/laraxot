@@ -6,6 +6,11 @@ return [
     'fields' => [
         'name' => [
             'label' => 'name',
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -33,6 +38,12 @@ return [
         ],
         'delete' => [
             'label' => 'Elimina Tokens',
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
     ],
 ];

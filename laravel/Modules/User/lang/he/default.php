@@ -126,6 +126,8 @@ return [
         'tooltip' => 'הועתק!',
     ],
     'fields' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
         'email' => [
             'label' => 'אימייל',
             'tooltip' => '',
@@ -218,4 +220,121 @@ return [
     'plural_label' => 'Missing Plural label',
     'actions' => [
     ],
+=======
+=======
+>>>>>>> 87273113 (.)
+        'email' => 'אימייל',
+        'login' => 'כניסה',
+        'name' => 'שם',
+        'password' => 'סיסמה',
+        'password_confirm' => 'אישור סיסמה',
+        'new_password' => 'סיסמה חדשה',
+        'new_password_confirmation' => 'אישור סיסמה חדשה',
+        'token_name' => 'שם טוקן',
+        'abilities' => 'יכולות',
+        '2fa_code' => 'קוד 2FA',
+        '2fa_recovery_code' => 'קוד שחזור 2FA',
+        'created' => 'נוצר',
+        'expires' => 'פג תוקף',
+    ],
+    'or' => 'או',
+    'cancel' => 'ביטול',
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'email' => [
+            'label' => 'אימייל',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'login' => [
+            'label' => 'כניסה',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'name' => [
+            'label' => 'שם',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password' => [
+            'label' => 'סיסמה',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password_confirm' => [
+            'label' => 'אישור סיסמה',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password' => [
+            'label' => 'סיסמה חדשה',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password_confirmation' => [
+            'label' => 'אישור סיסמה חדשה',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_name' => [
+            'label' => 'שם טוקן',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'abilities' => [
+            'label' => 'יכולות',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_code' => [
+            'label' => 'קוד 2FA',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_recovery_code' => [
+            'label' => 'קוד שחזור 2FA',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created' => [
+            'label' => 'נוצר',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'expires' => [
+            'label' => 'פג תוקף',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'or' => 'או',
+    'cancel' => 'ביטול',
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'actions' => [
+    ],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

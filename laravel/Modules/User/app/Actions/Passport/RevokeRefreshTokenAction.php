@@ -36,7 +36,18 @@ class RevokeRefreshTokenAction
             return false;
         }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
         $token->setAttribute('revoked', true);
+=======
+        $token->revoked = true;
+>>>>>>> 60a2c9a9 (.)
+=======
+        $token->revoked = true;
+=======
+        $token->setAttribute('revoked', true);
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         $token->save();
 
         return true;

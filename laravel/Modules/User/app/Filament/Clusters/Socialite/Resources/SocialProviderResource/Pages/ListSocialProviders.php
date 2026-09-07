@@ -18,9 +18,20 @@ class ListSocialProviders extends XotBaseListRecords
     protected static string $resource = SocialProviderResource::class;
 
     #[\Override]
+<<<<<<< HEAD
+<<<<<<< HEAD
     /**
      * @return array<string, mixed>
      */
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
+    /**
+     * @return array<string, mixed>
+     */
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     public function getTableColumns(): array
     {
         return [

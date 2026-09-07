@@ -4,8 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
+use Filament\Actions\Action;
+use Filament\Actions\ActionGroup;
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -39,12 +49,59 @@ final class OauthPersonalAccessClientResource extends XotBaseResource
     /**
      * @return array<string, Component>
      */
+<<<<<<< HEAD
+    #[\Override]
+    public static function getFormSchema(): array
+    {
+        return [
+            'oauth_personal_access_client' => Section::make('OAuth Personal Access Client Information')
+                ->schema([
+                    Select::make('client_id')
+                        ->label('Client')
+                        ->relationship('client', 'name')
+                        ->required()
+                        ->searchable()
+                        ->helperText('Associated OAuth client'),
+                ])
+                ->columns(2),
+        ];
+    }
+
     /**
+<<<<<<< HEAD
+=======
+     * Define the table for the resource.
+     */
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns(self::getTableColumns())
+            ->filters(self::getTableFilters())
+            ->actions(self::getTableActions())
+            ->bulkActions(self::getTableBulkActions())
+            ->defaultSort('created_at', 'desc');
+    }
+
+=======
+>>>>>>> 2024e2e7 (.)
+    /**
+>>>>>>> 60a2c9a9 (.)
      * Get the table columns for the resource.
      *
      * @return array<string, Tables\Columns\Column>
      */
+<<<<<<< HEAD
+<<<<<<< HEAD
     public function getTableColumns(): array
+=======
+    public static function getTableColumns(): array
+>>>>>>> 60a2c9a9 (.)
+=======
+    public static function getTableColumns(): array
+=======
+    public function getTableColumns(): array
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     {
         return [
             'id' => Tables\Columns\TextColumn::make('id')
@@ -83,7 +140,18 @@ final class OauthPersonalAccessClientResource extends XotBaseResource
     /**
      * Get the table actions for the resource.
      *
+<<<<<<< HEAD
+<<<<<<< HEAD
      * @return array<string, Action>
+=======
+     * @return array<string, \Filament\Actions\Action>
+>>>>>>> 60a2c9a9 (.)
+=======
+     * @return array<string, \Filament\Actions\Action>
+=======
+     * @return array<string, Action>
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
      */
     public static function getTableActions(): array
     {
@@ -96,7 +164,18 @@ final class OauthPersonalAccessClientResource extends XotBaseResource
     /**
      * Get the table bulk actions for the resource.
      *
+<<<<<<< HEAD
+<<<<<<< HEAD
      * @return array<string, Action|ActionGroup>
+=======
+     * @return array<string, \Filament\Actions\Action|\Filament\Actions\ActionGroup>
+>>>>>>> 60a2c9a9 (.)
+=======
+     * @return array<string, \Filament\Actions\Action|\Filament\Actions\ActionGroup>
+=======
+     * @return array<string, Action|ActionGroup>
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
      */
     public static function getTableBulkActions(): array
     {

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Best Practices per Risorse Filament nel Modulo User"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./dependency-rules.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Best Practices per Risorse Filament nel Modulo User
 
 Questo documento descrive le best practices da seguire quando si creano o modificano risorse Filament nel modulo User.
@@ -67,7 +78,11 @@ Le risorse Filament richiedono che il metodo `getFormSchema()` restituisca un ar
 ### Esempio corretto:
 
 ```php
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> 2024e2e7 (.)
 {
     return [
         'name' => TextInput::make('name')->required(),
@@ -79,7 +94,11 @@ public function getFormSchema(): array
 ### Esempio errato:
 
 ```php
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> 2024e2e7 (.)
 {
     return [
         TextInput::make('name')->required(),

@@ -25,6 +25,29 @@ class PasswordResetResource extends XotBaseResource
         ];
     }
 
+<<<<<<< HEAD
+    /**
+     * @return array<string, Component>
+     */
+    public static function getFormSchema(): array
+    {
+        return [
+            'password_reset_info' => Section::make('Password Reset Information')
+                ->schema([
+                    'email' => TextInput::make('email')
+                        ->email()
+                        ->required()
+                        ->maxLength(255),
+
+                    'token' => TextInput::make('token')
+                        ->required()
+                        ->maxLength(255),
+                ]),
+        ];
+    }
+
+=======
+>>>>>>> 2024e2e7 (.)
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery();

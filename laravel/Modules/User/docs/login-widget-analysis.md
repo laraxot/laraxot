@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Analisi Dettagliata di LoginWidget"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Analisi Dettagliata di LoginWidget
 
 **File**: `Modules/User/app/Filament/Widgets/LoginWidget.php`
@@ -33,7 +44,11 @@ related:
   - `Illuminate\Validation\ValidationException`
 
 ## Metodo getFormSchema()
+<<<<<<< HEAD
+- Inizialmente definito come `public static function getFormSchema(): array`.
+=======
 - Inizialmente definito come `public function getFormSchema(): array`.
+>>>>>>> 2024e2e7 (.)
   - **Issue**: firma statica non compatibile con l’astrazione di `XotBaseWidget`, che richiede un metodo d’istanza `public function getFormSchema(): array`.
   - Motivo: PHP non permette di sovrascrivere un metodo di istanza con uno statico.
 - Restituisce array associativo con componenti.
@@ -88,8 +103,20 @@ related:
 8. Utilizzare `Notification::make()->danger()` per messaggi utente-friendly.
 
 ## Collegamenti
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [WIDGETS_STRUCTURE.md](../WIDGETS_STRUCTURE.md) — Regole di struttura per widget Filament nel modulo User.
 - [WIDGETS_STRUCTURE.md](../widgets-structure-2.md) — Regole di struttura per widget Filament nel modulo User.
+=======
+- [WIDGETS_STRUCTURE.md](../widgets_structure.md) — Regole di struttura per widget Filament nel modulo User.
+>>>>>>> 60a2c9a9 (.)
+=======
+- [WIDGETS_STRUCTURE.md](../widgets_structure.md) — Regole di struttura per widget Filament nel modulo User.
+=======
+- [WIDGETS_STRUCTURE.md](../WIDGETS_STRUCTURE.md) — Regole di struttura per widget Filament nel modulo User.
+- [WIDGETS_STRUCTURE.md](../widgets-structure-2.md) — Regole di struttura per widget Filament nel modulo User.
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - [filament_best_practices.md](filament_best_practices.md) — Best practices per risorse Filament.
 - [login-widget-conversion.md](login-widget-conversion.md) — Conversione del componente Livewire a LoginWidget.
 # Analisi Dettagliata di LoginWidget
@@ -107,7 +134,11 @@ related:
   - `Illuminate\Validation\ValidationException`
 
 ## Metodo getFormSchema()
+<<<<<<< HEAD
+- Inizialmente definito come `public static function getFormSchema(): array`.
+=======
 - Inizialmente definito come `public function getFormSchema(): array`.
+>>>>>>> 2024e2e7 (.)
   - **Issue**: firma statica non compatibile con l’astrazione di `XotBaseWidget`, che richiede un metodo d’istanza `public function getFormSchema(): array`.
   - Motivo: PHP non permette di sovrascrivere un metodo di istanza con uno statico.
 - Restituisce array associativo con componenti.
@@ -162,7 +193,25 @@ related:
 8. Utilizzare `Notification::make()->danger()` per messaggi utente-friendly.
 
 ## Collegamenti
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [WIDGETS_STRUCTURE.md](../WIDGETS_STRUCTURE.md) — Regole di struttura per widget Filament nel modulo User.
 - [WIDGETS_STRUCTURE.md](../widgets-structure-2.md) — Regole di struttura per widget Filament nel modulo User.
 - [filament_best_practices.md](filament_best_practices.md) — Best practices per risorse Filament.
 - [login-widget-conversion.md](login-widget-conversion.md) — Conversione del componente Livewire a LoginWidget.
+=======
+- [WIDGETS_STRUCTURE.md](../widgets_structure.md) — Regole di struttura per widget Filament nel modulo User.
+- [filament_best_practices.md](filament_best_practices.md) — Best practices per risorse Filament.
+- [login-widget-conversion.md](login-widget-conversion.md) — Conversione del componente Livewire a LoginWidget.
+>>>>>>> 60a2c9a9 (.)
+=======
+- [WIDGETS_STRUCTURE.md](../widgets_structure.md) — Regole di struttura per widget Filament nel modulo User.
+- [filament_best_practices.md](filament_best_practices.md) — Best practices per risorse Filament.
+- [login-widget-conversion.md](login-widget-conversion.md) — Conversione del componente Livewire a LoginWidget.
+=======
+- [WIDGETS_STRUCTURE.md](../WIDGETS_STRUCTURE.md) — Regole di struttura per widget Filament nel modulo User.
+- [WIDGETS_STRUCTURE.md](../widgets-structure-2.md) — Regole di struttura per widget Filament nel modulo User.
+- [filament_best_practices.md](filament_best_practices.md) — Best practices per risorse Filament.
+- [login-widget-conversion.md](login-widget-conversion.md) — Conversione del componente Livewire a LoginWidget.
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

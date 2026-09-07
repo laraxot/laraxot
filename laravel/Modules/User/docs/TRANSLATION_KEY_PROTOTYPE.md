@@ -25,4 +25,8 @@ Action performed:
 
 Follow-ups:
 - Run a repo-wide grep for occurrences of less-structured keys and standardize them.
+<<<<<<< HEAD
 - Add CI check to enforce prototype for new keys.
+=======
+- Add CI check to enforce prototype for new keys.
+>>>>>>> 87273113 (.)

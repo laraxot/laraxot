@@ -11,10 +11,29 @@ use Spatie\LaravelData\Data;
  */
 class PermissionColumnNamesData extends Data
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
     public ?string $role_pivot_key = null;
 
     // => null, // default 'role_id',
     public ?string $permission_pivot_key = null;
+=======
+=======
+>>>>>>> 87273113 (.)
+    public null|string $role_pivot_key = null;
+
+    // => null, // default 'role_id',
+    public null|string $permission_pivot_key = null;
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+    public ?string $role_pivot_key = null;
+
+    // => null, // default 'role_id',
+    public ?string $permission_pivot_key = null;
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
     // => null, // default 'permission_id',
     public string $model_morph_key;

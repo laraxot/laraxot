@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Clusters\Appearance\Pages;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 use Filament\Actions\Action;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
@@ -12,10 +14,40 @@ use Filament\Support\Exceptions\Halt;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Filament\Clusters\Appearance;
 use Modules\Xot\Filament\Pages\XotBasePage;
+=======
+=======
+>>>>>>> 87273113 (.)
+use Filament\Schemas\Schema;
+use Filament\Actions\Action;
+use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
+use Filament\Pages\Page;
+use Filament\Support\Exceptions\Halt;
+use Illuminate\Database\Eloquent\Model;
+use Modules\User\Filament\Clusters\Appearance;
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+use Filament\Actions\Action;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Schema;
+use Filament\Support\Exceptions\Halt;
+use Illuminate\Database\Eloquent\Model;
+use Modules\User\Filament\Clusters\Appearance;
+use Modules\Xot\Filament\Pages\XotBasePage;
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 /**
  * @property Schema $form
  */
+<<<<<<< HEAD
+<<<<<<< HEAD
 class Logo extends XotBasePage
 {
     /** @var array<string, mixed>|null */
@@ -26,6 +58,38 @@ class Logo extends XotBasePage
     protected static ?string $cluster = Appearance::class;
 
     protected static ?int $navigationSort = 1;
+=======
+=======
+>>>>>>> 87273113 (.)
+class Logo extends Page implements HasForms
+{
+    use InteractsWithForms;
+
+    public null|array $logoData = [];
+
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-document-text';
+
+    protected string $view = 'user::filament.clusters.appearance.pages.logo';
+
+    protected static null|string $cluster = Appearance::class;
+
+    protected static null|int $navigationSort = 1;
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+class Logo extends XotBasePage
+{
+    /** @var array<string, mixed>|null */
+    public ?array $logoData = [];
+
+    protected string $view = 'user::filament.clusters.appearance.pages.logo';
+
+    protected static ?string $cluster = Appearance::class;
+
+    protected static ?int $navigationSort = 1;
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
     public function mount(): void
     {
@@ -39,7 +103,18 @@ class Logo extends XotBasePage
     //    ];
     // }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
     public function schema(Schema $schema): Schema
+=======
+    public function form(Schema $schema): Schema
+>>>>>>> f548be94 (.)
+=======
+    public function form(Schema $schema): Schema
+=======
+    public function schema(Schema $schema): Schema
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     {
         return $schema
             ->components([
@@ -78,9 +153,20 @@ class Logo extends XotBasePage
         $this->form->fill($data);
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
     /**
      * @return array<Action>
      */
+=======
+>>>>>>> f548be94 (.)
+=======
+=======
+    /**
+     * @return array<Action>
+     */
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     protected function getUpdateLogoFormActions(): array
     {
         return [

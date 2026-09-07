@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Queueable Actions Best Practices"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./dependency-rules.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Queueable Actions Best Practices
 
 ## Why Queueable Actions?

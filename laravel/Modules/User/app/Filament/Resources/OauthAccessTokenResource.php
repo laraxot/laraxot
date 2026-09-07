@@ -48,6 +48,109 @@ class OauthAccessTokenResource extends XotBaseResource
         return __('OAuth Access Token');
     }
 
+<<<<<<< HEAD
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('id')
+                    ->searchable()
+                    ->sortable()
+                    ->copyable(),
+
+                TextColumn::make('user.name')
+                    ->searchable()
+                    ->sortable()
+                    ->url(function (mixed $record): ?string {
+                        if (! $record instanceof OauthAccessToken) {
+                            return null;
+                        }
+                        $user = $record->user;
+<<<<<<< HEAD
+                        if ($user !== null && method_exists($user, 'exists') && $user->exists) {
+=======
+                        if (null !== $user && method_exists($user, 'exists') && $user->exists) {
+>>>>>>> 60a2c9a9 (.)
+                            return UserResource::getUrl('view', ['record' => $user]);
+                        }
+
+                        return null;
+                    })
+                    ->openUrlInNewTab(),
+
+                TextColumn::make('client.name')
+                    ->searchable()
+                    ->sortable(),
+
+                TextColumn::make('name')
+                    ->searchable()
+                    ->sortable(),
+
+                TextColumn::make('scopes')
+                    ->limit(30)
+                    ->tooltip(function (mixed $state): ?string {
+<<<<<<< HEAD
+                        if ($state === null) {
+=======
+                        if (null === $state) {
+>>>>>>> 60a2c9a9 (.)
+                            return null;
+                        }
+                        if (is_array($state)) {
+                            /* @var array<string, mixed> $state */
+                            return json_encode($state);
+                        }
+
+                        return is_string($state) ? $state : null;
+                    }),
+
+                IconColumn::make('revoked')
+                    ->boolean()
+                    ->color(fn (bool $state): string => $state ? 'danger' : 'success'),
+
+                TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable(),
+
+                TextColumn::make('expires_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->formatStateUsing(function (mixed $state): string {
+                        if ($state instanceof Carbon) {
+                            $now = Carbon::now();
+                            if ($state->lt($now)) {
+                                return $state->format('Y-m-d H:i:s').' (Expired)';
+                            }
+
+                            return $state->format('Y-m-d H:i:s');
+                        }
+
+                        return 'N/A';
+                    }),
+            ])
+            ->filters([
+                Filter::make('revoked')
+                    ->query(fn (Builder $query) => $query->where('revoked', true)),
+
+                Filter::make('expired')
+                    ->query(fn (Builder $query) => $query->where('expires_at', '<', now())),
+
+                Filter::make('valid')
+                    ->query(fn (Builder $query) => $query->where('revoked', false)->where('expires_at', '>', now())),
+            ])
+            ->recordActions([
+                DeleteAction::make(),
+            ])
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                ]),
+            ])
+            ->defaultSort('created_at', 'desc');
+    }
+
+=======
+>>>>>>> 2024e2e7 (.)
     public static function getPages(): array
     {
         return [
@@ -56,6 +159,38 @@ class OauthAccessTokenResource extends XotBaseResource
         ];
     }
 
+<<<<<<< HEAD
+    /**
+     * @return array<string, Component>
+     */
+    public static function getFormSchema(): array
+    {
+        return [
+            'oauth_access_token_info' => Section::make('OAuth Access Token Information')
+                ->schema([
+                    'grid_1' => Grid::make(2)
+                        ->schema([
+                            'user_id' => Select::make('user_id')
+                                ->relationship('user', 'name')
+                                ->searchable(),
+                            'client_id' => Select::make('client_id')
+                                ->relationship('client', 'name')
+                                ->searchable()
+                                ->required(),
+                        ]),
+
+                    'grid_2' => Grid::make(2)
+                        ->schema([
+                            'name' => TextInput::make('name')
+                                ->maxLength(255),
+                            'scopes' => TextInput::make('scopes'),
+                        ]),
+                ]),
+        ];
+    }
+
+=======
+>>>>>>> 2024e2e7 (.)
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()->with(['user', 'client']);

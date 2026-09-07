@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Piano di Implementazione Componenti Header"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Piano di Implementazione Componenti Header
 
 ## Fase 1: Setup Struttura
@@ -183,12 +194,32 @@ class NavigationTest extends TestCase
 ## Fase 7: Documentazione
 
 ### 7.1 Aggiornare
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Header Components](./header-components.md)
 - [Navigation Structure](./navigation-structure.md)
 - [Security Best Practices](./SECURITY_BEST_PRACTICES.md)
 - [Header Components](./header-components.md)
 - [Navigation Structure](./navigation-structure-2.md)
 - [Security Best Practices](./security_best_practices.md)
+=======
+- [Header Components](./HEADER_COMPONENTS.md)
+- [Navigation Structure](./NAVIGATION_STRUCTURE.md)
+- [Security Best Practices](./SECURITY_BEST_PRACTICES.md)
+>>>>>>> f548be94 (.)
+=======
+- [Header Components](./HEADER_COMPONENTS.md)
+- [Navigation Structure](./NAVIGATION_STRUCTURE.md)
+- [Security Best Practices](./SECURITY_BEST_PRACTICES.md)
+=======
+- [Header Components](./header-components.md)
+- [Navigation Structure](./navigation-structure.md)
+- [Security Best Practices](./SECURITY_BEST_PRACTICES.md)
+- [Header Components](./header-components.md)
+- [Navigation Structure](./navigation-structure-2.md)
+- [Security Best Practices](./security_best_practices.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ## Timeline
 
@@ -215,9 +246,29 @@ class NavigationTest extends TestCase
    - Cache settings
 
 ## Collegamenti Correlati
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Header Components](./header-components.md)
 - [Navigation Structure](./navigation-structure.md)
 - [Security Best Practices](./SECURITY_BEST_PRACTICES.md) 
 - [Header Components](./header-components.md)
 - [Navigation Structure](./navigation-structure-2.md)
 - [Security Best Practices](./security_best_practices.md) 
+=======
+- [Header Components](./HEADER_COMPONENTS.md)
+- [Navigation Structure](./NAVIGATION_STRUCTURE.md)
+- [Security Best Practices](./SECURITY_BEST_PRACTICES.md) 
+>>>>>>> f548be94 (.)
+=======
+- [Header Components](./HEADER_COMPONENTS.md)
+- [Navigation Structure](./NAVIGATION_STRUCTURE.md)
+- [Security Best Practices](./SECURITY_BEST_PRACTICES.md) 
+=======
+- [Header Components](./header-components.md)
+- [Navigation Structure](./navigation-structure.md)
+- [Security Best Practices](./SECURITY_BEST_PRACTICES.md) 
+- [Header Components](./header-components.md)
+- [Navigation Structure](./navigation-structure-2.md)
+- [Security Best Practices](./security_best_practices.md) 
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)

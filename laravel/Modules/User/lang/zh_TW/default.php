@@ -102,6 +102,8 @@ return [
         'tooltip' => '已複製！',
     ],
     'fields' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
         'avatar' => [
             'label' => 'Avatar',
             'tooltip' => '',
@@ -206,4 +208,135 @@ return [
     'plural_label' => 'Missing Plural label',
     'actions' => [
     ],
+=======
+=======
+>>>>>>> 87273113 (.)
+        'avatar' => 'Avatar',
+        'email' => 'Email',
+        'login' => '登入',
+        'name' => '名稱',
+        'password' => '確認',
+        'password_confirm' => '密碼確認',
+        'new_password' => '新的密碼',
+        'new_password_confirmation' => '確認密碼',
+        'token_name' => 'Token 名稱',
+        'token_expiry' => 'Token 到期',
+        'abilities' => 'Abilities',
+        '2fa_code' => 'Code',
+        '2fa_recovery_code' => '恢復代碼',
+        'created' => '創建',
+        'expires' => '到期',
+    ],
+    'or' => ' 或 ',
+    'cancel' => '取消',
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'avatar' => [
+            'label' => 'Avatar',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'email' => [
+            'label' => 'Email',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'login' => [
+            'label' => '登入',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'name' => [
+            'label' => '名稱',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password' => [
+            'label' => '確認',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password_confirm' => [
+            'label' => '密碼確認',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password' => [
+            'label' => '新的密碼',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password_confirmation' => [
+            'label' => '確認密碼',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_name' => [
+            'label' => 'Token 名稱',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_expiry' => [
+            'label' => 'Token 到期',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'abilities' => [
+            'label' => 'Abilities',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_code' => [
+            'label' => 'Code',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_recovery_code' => [
+            'label' => '恢復代碼',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created' => [
+            'label' => '創建',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'expires' => [
+            'label' => '到期',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'or' => ' 或 ',
+    'cancel' => '取消',
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'actions' => [
+    ],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

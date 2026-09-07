@@ -7,11 +7,19 @@
 Documentazione della risoluzione dei conflitti Git nel modulo User, inclusi i file modificati e le decisioni prese per migliorare la stabilità del sistema.
 
 ## Collegamenti correlati
+<<<<<<< HEAD
+- [Indice documentazione User](/laravel/modules/user/docs/index.md)
+- [README User](/laravel/modules/user/docs/readme.md)
+- [Auth Components Best Practices](/laravel/modules/user/docs/auth_components_best_practices.md)
+- [Filament Widgets Structure](/laravel/modules/user/docs/widgets_structure.md)
+- [BaseUser Documentation](/laravel/modules/user/docs/baseuser.md)
+=======
 - [Indice documentazione User](/laravel/Modules/User/docs/index.md)
 - [README User](/laravel/Modules/User/docs/README.md)
 - [Auth Components Best Practices](/laravel/Modules/User/docs/auth_components_best_practices.md)
 - [Filament Widgets Structure](/laravel/Modules/User/docs/widgets_structure.md)
 - [BaseUser Documentation](/laravel/Modules/User/docs/BaseUser.md)
+>>>>>>> 2024e2e7 (.)
 
 ## File Risolti
 

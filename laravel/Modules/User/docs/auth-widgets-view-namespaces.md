@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Widget di Autenticazione: Namespace delle View"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Widget di Autenticazione: Namespace delle View
 
 ## ⚠️ **Regola Critica**
@@ -120,11 +131,33 @@ Per ogni nuovo widget di autenticazione:
 - [ ] View minimalista (solo styling)
 - [ ] Logica centralizzata nel widget PHP
 ## Collegamenti
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Documentazione Root: Widget View Namespaces](../../../../docs/project/frontend/widget-view-namespaces.md)
 - [Struttura Temi](../../../../docs/project/tecnico/themes/theme-structure.md)
 - [Documentazione Root: Widget View Namespaces](../../../../docs/frontend/widget-view-namespaces.md)
 - [Struttura Temi](../../../../docs/tecnico/themes/theme-structure.md)
 - [Implementazione Auth Pages](auth-pages-implementation.md)
+=======
+=======
+>>>>>>> 87273113 (.)
+- [Documentazione Root: Widget View Namespaces](../../../project_docs/frontend/widget-view-namespaces.md)
+- [Struttura Temi](../../../project_docs/tecnico/themes/theme-structure.md)
+- [Documentazione Root: Widget View Namespaces](../../../docs/frontend/widget-view-namespaces.md)
+- [Struttura Temi](../../../docs/tecnico/themes/theme-structure.md)
+- [Implementazione Auth Pages](auth-pages-implementation.md)
+*Ultimo aggiornamento: Dicembre 2024*
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
+- [Documentazione Root: Widget View Namespaces](../../../../docs/project/frontend/widget-view-namespaces.md)
+- [Struttura Temi](../../../../docs/project/tecnico/themes/theme-structure.md)
+- [Documentazione Root: Widget View Namespaces](../../../../docs/frontend/widget-view-namespaces.md)
+- [Struttura Temi](../../../../docs/tecnico/themes/theme-structure.md)
+- [Implementazione Auth Pages](auth-pages-implementation.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Widget di Autenticazione: Namespace delle View
 
 ## ⚠️ **Regola Critica**
@@ -267,6 +300,20 @@ Per ogni nuovo widget di autenticazione:
 - [ ] Logica centralizzata nel widget PHP
 
 ## Collegamenti
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Documentazione Root: Widget View Namespaces](../../../../docs/frontend/widget-view-namespaces.md)
 - [Struttura Temi](../../../../docs/tecnico/themes/theme-structure.md)
+=======
+- [Documentazione Root: Widget View Namespaces](../../../docs/frontend/widget-view-namespaces.md)
+- [Struttura Temi](../../../docs/tecnico/themes/theme-structure.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Documentazione Root: Widget View Namespaces](../../../docs/frontend/widget-view-namespaces.md)
+- [Struttura Temi](../../../docs/tecnico/themes/theme-structure.md)
+=======
+- [Documentazione Root: Widget View Namespaces](../../../../docs/frontend/widget-view-namespaces.md)
+- [Struttura Temi](../../../../docs/tecnico/themes/theme-structure.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 - [Implementazione Auth Pages](auth-pages-implementation.md)

@@ -70,3 +70,10 @@ Nota: non sopprimere, non usare @phpstan-ignore per metrica
 Regola: non usare mai GatedXotBasePage (Platform). Utilizza direttamente XotBasePage (Xot).
 File corretti: Quotation/RecordQuotationVoicePage, Document/UploadInterventionPhotos, Signature/CaptureSketch + CaptureSignature, WhatsApp/WhatsAppInboxPage + WhatsAppSettingsPage, Giveback/GivebackPlatformPage.
 php -l OK su tutti i file modificati.
+=== SECONDO CERVELLO — STORIE 36-40 (continuazione domani) ===
+36: AI/AiActionProposalResource.php (method.staticCall)
+37: Blog/ArticleResource.php (getFormSchema statico)
+38: Catalog/CategoryResource.php (missingType)
+39: Cms/PageContentResource.php (getFormSchemaOld)
+40: Geo/LocationResource.php (property.nonObject)
+Regola: XotBaseResource NON ha getFormSchema(); solo Schema Form; no GatedXotBasePage; no @phpstan-ignore; strict_types=1; git solo avanti; nessun commit senza richiesta esplicita.

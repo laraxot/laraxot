@@ -6,6 +6,10 @@ namespace Modules\User\Tests\Unit\Fixtures;
 
 use Illuminate\Support\Collection;
 use Modules\User\Models\BaseUser;
+<<<<<<< HEAD
+use Modules\User\Models\User;
+=======
+>>>>>>> 87273113 (.)
 
 /**
  * BaseUser stub con flag per canAccessPanel senza classi anonime.

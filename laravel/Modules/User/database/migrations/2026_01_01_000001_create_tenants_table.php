@@ -3,12 +3,36 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
+<<<<<<< HEAD
+<<<<<<< HEAD
 use Modules\User\Models\Tenant;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 return new class extends XotBaseMigration
 {
     protected ?string $model_class = Tenant::class;
+=======
+=======
+>>>>>>> 87273113 (.)
+use Modules\Xot\Database\Migrations\XotBaseMigration;
+
+return new class extends XotBaseMigration {
+    /**
+     * Nome della tabella.
+     */
+    protected string $table_name = 'tenants';
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
+use Modules\User\Models\Tenant;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
+
+return new class extends XotBaseMigration
+{
+    protected ?string $model_class = Tenant::class;
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
     /**
      * Run the migrations.
@@ -32,7 +56,23 @@ return new class extends XotBaseMigration
             if (! $this->hasColumn('settings')) {
                 $table->json('settings')->nullable();
             }
+<<<<<<< HEAD
+<<<<<<< HEAD
             $this->updateTimestamps(table: $table, hasSoftDeletes: true);
+=======
+=======
+>>>>>>> 87273113 (.)
+            $this->updateTimestamps(
+                table: $table,
+                hasSoftDeletes: true,
+            );
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
+            $this->updateTimestamps(table: $table, hasSoftDeletes: true);
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         });
     }
 };

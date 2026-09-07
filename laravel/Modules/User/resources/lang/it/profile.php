@@ -2,6 +2,16 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> f548be94 (.)
+=======
+
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 return [
     'delete_account' => [
         'title' => 'Elimina Account',
@@ -17,6 +27,11 @@ return [
     'manage_account' => 'Gestisci Account',
     'update_success' => 'Profilo aggiornato con successo',
     'update_error' => 'Errore durante l\'aggiornamento del profilo',
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
     'navigation' => [
         'label' => 'Missing Navigation Label',
         'plural_label' => 'Missing Navigation Plural Label',
@@ -30,4 +45,10 @@ return [
     ],
     'actions' => [
     ],
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

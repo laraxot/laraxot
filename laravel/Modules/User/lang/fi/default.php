@@ -126,6 +126,8 @@ return [
         'tooltip' => 'Kopioitu!',
     ],
     'fields' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
         'email' => [
             'label' => 'Sähköposti',
             'tooltip' => '',
@@ -218,4 +220,121 @@ return [
     'plural_label' => 'Missing Plural label',
     'actions' => [
     ],
+=======
+=======
+>>>>>>> 87273113 (.)
+        'email' => 'Sähköposti',
+        'login' => 'Kirjaudu',
+        'name' => 'Nimi',
+        'password' => 'Salasana',
+        'password_confirm' => 'Vahvista salasana',
+        'new_password' => 'Uusi salasana',
+        'new_password_confirmation' => 'Vahvista uusi salasana',
+        'token_name' => 'Valtuutuksen nimi',
+        'abilities' => 'Kyvyt',
+        '2fa_code' => 'Koodi',
+        '2fa_recovery_code' => 'Palautuskoodi',
+        'created' => 'Luotu',
+        'expires' => 'Vanhenee',
+    ],
+    'or' => 'Tai',
+    'cancel' => 'Peruuta',
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'email' => [
+            'label' => 'Sähköposti',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'login' => [
+            'label' => 'Kirjaudu',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'name' => [
+            'label' => 'Nimi',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password' => [
+            'label' => 'Salasana',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password_confirm' => [
+            'label' => 'Vahvista salasana',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password' => [
+            'label' => 'Uusi salasana',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password_confirmation' => [
+            'label' => 'Vahvista uusi salasana',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_name' => [
+            'label' => 'Valtuutuksen nimi',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'abilities' => [
+            'label' => 'Kyvyt',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_code' => [
+            'label' => 'Koodi',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_recovery_code' => [
+            'label' => 'Palautuskoodi',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created' => [
+            'label' => 'Luotu',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'expires' => [
+            'label' => 'Vanhenee',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'or' => 'Tai',
+    'cancel' => 'Peruuta',
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'actions' => [
+    ],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

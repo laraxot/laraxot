@@ -1,0 +1,84 @@
+-------------------------------------------------------------------------------------------------------------
+How to customize Laravel filament login page
+https://dev.to/mfazail/how-to-customize-laravel-filament-login-page-455n
+-------------------------------------------------------------------------------------------------------------
+
+https://github.com/DutchCodingCompany/filament-socialite
+
+# Integrazione Socialite nel Modulo User
+
+> **Collegamenti Correlati:**
+> - [Passport Integration](passport.md) - Integrazione OAuth2 con Passport
+> - [Custom Login](custom_login.md) - Implementazione login personalizzato
+> - [User Profile Models](user_profile_models.md) - Modelli del profilo utente
+> - [Filament Best Practices](FILAMENT_BEST_PRACTICES.md) - Best practices Filament
+
+## Implementazione Socialite con Trait
+
+```php
+// In Modules/User/Traits/HasSocialiteConfiguration.php
+namespace Modules\User\Traits;
+
+use Laravel\Socialite\SocialiteServiceProvider;
+
+trait HasSocialiteConfiguration
+{
+    protected function configureSocialite(): void
+    {
+        $this->configureProviders();
+        $this->configureCallbacks();
+    }
+
+    protected function configureProviders(): void
+    {
+        config([
+            'services.google' => [
+                'client_id' => env('GOOGLE_CLIENT_ID'),
+                'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+                'redirect' => env('GOOGLE_REDIRECT_URI'),
+            ],
+            'services.facebook' => [
+                'client_id' => env('FACEBOOK_CLIENT_ID'),
+                'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+                'redirect' => env('FACEBOOK_REDIRECT_URI'),
+            ],
+        ]);
+    }
+
+    protected function configureCallbacks(): void
+    {
+        // Configurazione callback social login
+    }
+}
+```
+
+## Utilizzo nel UserServiceProvider
+
+```php
+use Modules\User\Traits\HasSocialiteConfiguration;
+
+class UserServiceProvider extends XotBaseServiceProvider
+{
+    use HasSocialiteConfiguration;
+
+    protected function registerSocialite(): void
+    {
+        $this->configureSocialite();
+    }
+}
+```
+
+## Best Practices
+
+1. Utilizzare trait per la configurazione
+2. Centralizzare le configurazioni dei provider
+3. Gestire i callback in modo modulare
+4. Implementare logging per debug
+5. Gestire errori e fallback
+
+## Collegamenti Utili
+
+- [Documentazione Socialite](https://laravel.com/docs/socialite)
+- [Provider Supportati](https://laravel.com/docs/socialite#supported-providers)
+- [Custom Provider](https://laravel.com/docs/socialite#custom-providers)
+

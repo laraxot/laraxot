@@ -7,11 +7,30 @@ namespace Modules\User\Filament\Resources;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
+<<<<<<< HEAD
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Resources\Pages\PageRegistration;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+<<<<<<< HEAD
+// Already there, but explicitly for boolean()
+use Illuminate\Database\Eloquent\Builder;
+=======
+use Filament\Tables\Table; // Already there, but explicitly for boolean()
+use Illuminate\Database\Eloquent\Builder;
+use Modules\User\Filament\Resources\OauthRefreshTokenResource\Pages;
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+=======
 use Filament\Resources\Pages\PageRegistration;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 // Already there, but explicitly for boolean()
 use Illuminate\Database\Eloquent\Builder;
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 use Modules\User\Filament\Resources\OauthRefreshTokenResource\Pages\ListOauthRefreshTokens;
 use Modules\User\Filament\Resources\OauthRefreshTokenResource\Pages\ViewOauthRefreshToken;
 use Modules\User\Models\OauthRefreshToken;
@@ -33,11 +52,37 @@ class OauthRefreshTokenResource extends XotBaseResource
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-arrow-path';
 
     /**
+<<<<<<< HEAD
+     * Get the form schema for the resource.
+     *
+     * @return array<string, Select|TextInput>
+     */
+    #[\Override]
+    public static function getFormSchema(): array
+    {
+        return [
+            'access_token_id' => Select::make('access_token_id')
+                ->relationship('accessToken', 'id')
+                ->searchable()
+                ->required(),
+            'revoked' => TextInput::make('revoked')
+                ->numeric()
+                ->required(),
+            'expires_at' => TextInput::make('expires_at'),
+        ];
+    }
+
+    /**
+=======
+>>>>>>> 2024e2e7 (.)
      * Extend table callback for the resource.
      *
      * @return array<string, mixed>
      */
+<<<<<<< HEAD
+=======
     #[\Override]
+>>>>>>> 2024e2e7 (.)
     public static function extendTableCallback(): array
     {
         return [

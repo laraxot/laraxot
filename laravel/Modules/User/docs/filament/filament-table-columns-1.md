@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Convenzione Metodo getTableColumns per Filament Table"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./widgets-responsive-layout.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Convenzione Metodo getTableColumns per Filament Table
 
 ## Motivazione della Modifica
@@ -51,8 +62,22 @@ public function getTableColumns(): array
 - Aggiornare anche override, chiamate e test.
 
 ## Collegamenti
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Regola Generale - Modulo Xot](../../../xot/docs/filament-table-columns-2.md)
 - [Regola Globale - Root Docs](../../../../../docs/filament-table-columns.md)
+=======
+- [Regola Generale - Modulo Xot](../../../xot/docs/filament_table_columns.md)
+- [Regola Globale - Root Docs](../../../../docs/filament-table-columns.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Regola Generale - Modulo Xot](../../../xot/docs/filament_table_columns.md)
+- [Regola Globale - Root Docs](../../../../docs/filament-table-columns.md)
+=======
+- [Regola Generale - Modulo Xot](../../../xot/docs/filament-table-columns-2.md)
+- [Regola Globale - Root Docs](../../../../../docs/filament-table-columns.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 
 ---
 

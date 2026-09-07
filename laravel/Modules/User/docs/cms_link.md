@@ -11,7 +11,11 @@ Sia il modulo User che il modulo Cms seguono le stesse convenzioni di namespace 
 
 Per dettagli specifici, consulta:
 - [Convenzioni di Namespace](./namespace-conventions.md) in questo modulo
+<<<<<<< HEAD
+- [Convenzioni Namespace Filament](../../cms/docs/convenzioni-namespace-filament.md) nel modulo Cms
+=======
 - [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) nel modulo Cms
+>>>>>>> 2024e2e7 (.)
 
 ## Punti di Integrazione
 
@@ -21,8 +25,13 @@ Per dettagli specifici, consulta:
 
 ## Collegamenti Bidirezionali
 
+<<<<<<< HEAD
+- [Convenzioni Namespace Filament nel modulo Cms](../../cms/docs/convenzioni-namespace-filament.md)
+- [Collegamento User-Cms nel modulo Cms](../../cms/docs/user-link.md)
+=======
 - [Convenzioni Namespace Filament nel modulo Cms](../../Cms/docs/convenzioni-namespace-filament.md)
 - [Collegamento User-Cms nel modulo Cms](../../Cms/docs/user-link.md)
+>>>>>>> 2024e2e7 (.)
 
 ---
 
@@ -33,8 +42,15 @@ Quando aggiungi nuovi componenti Filament nel modulo User, assicurati di:
 3. Seguire le convenzioni di stile condivise con il modulo Cms
 
 ## Collegamenti tra versioni di cms-link.md
+<<<<<<< HEAD
+* [cms-link.md](../../../xot/docs/cms-link.md)
+* [cms-link.md](../../../user/docs/cms-link.md)
+* [cms-link.md](../../../ui/docs/cms-link.md)
+* [cms-link.md](../../../lang/docs/cms-link.md)
+=======
 * [cms-link.md](../../../Xot/docs/cms-link.md)
 * [cms-link.md](../../../User/docs/cms-link.md)
 * [cms-link.md](../../../UI/docs/cms-link.md)
 * [cms-link.md](../../../Lang/docs/cms-link.md)
+>>>>>>> 2024e2e7 (.)
 

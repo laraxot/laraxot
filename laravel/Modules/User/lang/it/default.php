@@ -15,11 +15,32 @@ return [
     ],
     'two_factor' => [
         'heading' => 'Autenticazione a due fattori',
+<<<<<<< HEAD
+<<<<<<< HEAD
         'description' => 'Conferma l\'accesso al tuo account inserendo il codice che trovi sulla tua app di autenticazione.',
         'code_placeholder' => 'XXX-XXX',
         'recovery' => [
             'heading' => 'Autenticazione a due fattori',
             'description' => 'Conferma l\'accesso al tuo account inserendo uno dei tuoi codice di emergenza.',
+=======
+=======
+>>>>>>> 87273113 (.)
+        'description' => "Conferma l'accesso al tuo account inserendo il codice che trovi sulla tua app di autenticazione.",
+        'code_placeholder' => 'XXX-XXX',
+        'recovery' => [
+            'heading' => 'Autenticazione a due fattori',
+            'description' => "Conferma l'accesso al tuo account inserendo uno dei tuoi codice di emergenza.",
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'description' => 'Conferma l\'accesso al tuo account inserendo il codice che trovi sulla tua app di autenticazione.',
+        'code_placeholder' => 'XXX-XXX',
+        'recovery' => [
+            'heading' => 'Autenticazione a due fattori',
+            'description' => 'Conferma l\'accesso al tuo account inserendo uno dei tuoi codice di emergenza.',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         ],
         'recovery_code_placeholder' => 'abcdef-98765',
         'recovery_code_text' => 'Dispositivo smarrito?',
@@ -46,14 +67,36 @@ return [
     ],
     'verification' => [
         'title' => 'Verifica email',
+<<<<<<< HEAD
+<<<<<<< HEAD
         'heading' => 'Necessaria verifica dell\'indirizzo Email',
+=======
+        'heading' => "Necessaria verifica dell'indirizzo Email",
+>>>>>>> f548be94 (.)
+=======
+        'heading' => "Necessaria verifica dell'indirizzo Email",
+=======
+        'heading' => 'Necessaria verifica dell\'indirizzo Email',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         'submit' => [
             'label' => 'Log out',
         ],
         'notification_success' => 'Controlla la tua casella di posta per ulteriori istruzioni!',
         'notification_resend' => 'È stata inviata una email di verifica.',
         'before_proceeding' => 'Prima di procedere, controlla la tua casella di posta per verificare la tua email.',
+<<<<<<< HEAD
+<<<<<<< HEAD
         'not_receive' => 'Se non hai ricevuto l\'email di verifica,',
+=======
+        'not_receive' => "Se non hai ricevuto l'email di verifica,",
+>>>>>>> f548be94 (.)
+=======
+        'not_receive' => "Se non hai ricevuto l'email di verifica,",
+=======
+        'not_receive' => 'Se non hai ricevuto l\'email di verifica,',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
         'request_another' => 'clicca qui per richiederla di nuovo',
     ],
     'profile' => [
@@ -79,7 +122,18 @@ return [
         ],
         '2fa' => [
             'title' => 'Autenticazione a due Fattori',
+<<<<<<< HEAD
+<<<<<<< HEAD
             'description' => 'Gestisci l\'autenticazione a due fattori per il tuo account (raccomandato].',
+=======
+            'description' => "Gestisci l'autenticazione a due fattori per il tuo account (raccomandato).",
+>>>>>>> f548be94 (.)
+=======
+            'description' => "Gestisci l'autenticazione a due fattori per il tuo account (raccomandato).",
+=======
+            'description' => 'Gestisci l\'autenticazione a due fattori per il tuo account (raccomandato].',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
             'actions' => [
                 'enable' => 'Abilita',
                 'regenerate_codes' => 'Rigenera Codici',
@@ -90,6 +144,8 @@ return [
             'setup_key' => 'Chiave di Setup',
             'must_enable' => 'Per utilizzare questa applicazione devi abilitare la 2FA.',
             'not_enabled' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
                 'title' => 'Non hai abilitato l\'autenticazione a due fattori.',
                 'description' => 'Quando l\'autenticazione a due fattori è attivata, durante l\'autenticazione, ti verrà richiesto un token casuale. Potrai recuperare questo toke tramite l\'app mobile di Google Authenticator',
             ],
@@ -102,6 +158,39 @@ return [
                 'title' => 'Hai abilitato l\'autenticazione a due fattori!',
                 'description' => 'L\'autenticazione a due fattori adesso è abilitata. Questo permette di rendere più sicuro il tuo account.',
                 'store_codes' => 'Salva questi codice di ripristino in un luogo sicuro. Possono essere utilizzati per ripristinare l\'accesso al tuo account se il dispositivo che utilizzi viene smarrito',
+=======
+=======
+>>>>>>> 87273113 (.)
+                'title' => "Non hai abilitato l'autenticazione a due fattori.",
+                'description' => "Quando l'autenticazione a due fattori è attivata, durante l'autenticazione, ti verrà richiesto un token casuale. Potrai recuperare questo toke tramite l'app mobile di Google Authenticator",
+            ],
+            'finish_enabling' => [
+                'title' => "Finisci di abilitare l'autenticazione a due fattori.",
+                'description' => "Per completare l'abilitazione del login con autenticazione a due fattori, scansiona il seguente QR code utilizzando una applicazione di autenticazione o inserisci la chiave insieme al codice OTP generato.",
+            ],
+            'enabled' => [
+                'notify' => 'Autenticazione a due fattori attivata.',
+                'title' => "Hai abilitato l'autenticazione a due fattori!",
+                'description' => "L'autenticazione a due fattori adesso è abilitata. Questo permette di rendere più sicuro il tuo account.",
+                'store_codes' => "Salva questi codice di ripristino in un luogo sicuro. Possono essere utilizzati per ripristinare l'accesso al tuo account se il dispositivo che utilizzi viene smarrito",
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+                'title' => 'Non hai abilitato l\'autenticazione a due fattori.',
+                'description' => 'Quando l\'autenticazione a due fattori è attivata, durante l\'autenticazione, ti verrà richiesto un token casuale. Potrai recuperare questo toke tramite l\'app mobile di Google Authenticator',
+            ],
+            'finish_enabling' => [
+                'title' => 'Finisci di abilitare l\'autenticazione a due fattori.',
+                'description' => 'Per completare l\'abilitazione del login con autenticazione a due fattori, scansiona il seguente QR code utilizzando una applicazione di autenticazione o inserisci la chiave insieme al codice OTP generato.',
+            ],
+            'enabled' => [
+                'notify' => 'Autenticazione a due fattori attivata.',
+                'title' => 'Hai abilitato l\'autenticazione a due fattori!',
+                'description' => 'L\'autenticazione a due fattori adesso è abilitata. Questo permette di rendere più sicuro il tuo account.',
+                'store_codes' => 'Salva questi codice di ripristino in un luogo sicuro. Possono essere utilizzati per ripristinare l\'accesso al tuo account se il dispositivo che utilizzi viene smarrito',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
             ],
             'disabling' => [
                 'notify' => 'L\'autenticazione a due fattori è stata disabilitata.',
@@ -116,7 +205,18 @@ return [
         ],
         'sanctum' => [
             'title' => 'Token API ',
+<<<<<<< HEAD
+<<<<<<< HEAD
             'description' => 'Gestisci i token API che permettono l\'accesso a questa applicazione a servizi di terze parti. NOTA: il tuo token viene mostrato dopo la creazione. Se perdi il token, dovrai cancellarlo e crearlo nuovamente.',
+=======
+            'description' => "Gestisci i token API che permettono l'accesso a questa applicazione a servizi di terze parti. NOTA: il tuo token viene mostrato dopo la creazione. Se perdi il token, dovrai cancellarlo e crearlo nuovamente.",
+>>>>>>> f548be94 (.)
+=======
+            'description' => "Gestisci i token API che permettono l'accesso a questa applicazione a servizi di terze parti. NOTA: il tuo token viene mostrato dopo la creazione. Se perdi il token, dovrai cancellarlo e crearlo nuovamente.",
+=======
+            'description' => 'Gestisci i token API che permettono l\'accesso a questa applicazione a servizi di terze parti. NOTA: il tuo token viene mostrato dopo la creazione. Se perdi il token, dovrai cancellarlo e crearlo nuovamente.',
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
             'create' => [
                 'notify' => 'Token creato correttamente!',
                 'message' => 'Il tuo token viene mostrato solo una volta. Se perdi il token, dovrai cancellarlo e crearne uno nuovo.',
@@ -137,6 +237,8 @@ return [
         'tooltip' => 'Copiato!',
     ],
     'fields' => [
+<<<<<<< HEAD
+<<<<<<< HEAD
         'avatar' => [
             'label' => 'Avatar',
             'tooltip' => '',
@@ -254,4 +356,148 @@ return [
             'label' => 'Elimina Default',
         ],
     ],
+=======
+=======
+>>>>>>> 87273113 (.)
+        'avatar' => 'Avatar',
+        'email' => 'Email',
+        'login' => 'Login',
+        'name' => 'Nome',
+        'password' => 'Password',
+        'password_confirm' => 'Conferma password',
+        'new_password' => 'Nuova password',
+        'new_password_confirmation' => 'Conferma nuova password',
+        'token_name' => 'Nome del Token',
+        'token_expiry' => 'Scadenza del Token',
+        'abilities' => 'Abilità',
+        '2fa_code' => 'Codice',
+        '2fa_recovery_code' => 'Codice di Ripristino',
+        'created' => 'Creato',
+        'expires' => 'Scade',
+    ],
+    'or' => 'O',
+    'cancel' => 'Annulla',
+<<<<<<< HEAD
+>>>>>>> f548be94 (.)
+=======
+=======
+        'avatar' => [
+            'label' => 'Avatar',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'email' => [
+            'label' => 'Email',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'login' => [
+            'label' => 'Login',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'name' => [
+            'label' => 'Nome',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password' => [
+            'label' => 'Password',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'password_confirm' => [
+            'label' => 'Conferma password',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password' => [
+            'label' => 'Nuova password',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'new_password_confirmation' => [
+            'label' => 'Conferma nuova password',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_name' => [
+            'label' => 'Nome del Token',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'token_expiry' => [
+            'label' => 'Scadenza del Token',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'abilities' => [
+            'label' => 'Abilità',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_code' => [
+            'label' => 'Codice',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        '2fa_recovery_code' => [
+            'label' => 'Codice di Ripristino',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created' => [
+            'label' => 'Creato',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'expires' => [
+            'label' => 'Scade',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'or' => 'O',
+    'cancel' => 'Annulla',
+    'navigation' => [
+        'name' => 'Default',
+        'plural' => 'Default',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Default',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
+    'label' => 'Default',
+    'plural_label' => 'Default (Plurale)',
+    'actions' => [
+        'create' => [
+            'label' => 'Crea Default',
+        ],
+        'edit' => [
+            'label' => 'Modifica Default',
+        ],
+        'delete' => [
+            'label' => 'Elimina Default',
+        ],
+    ],
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 ];

@@ -9,6 +9,10 @@ use Mockery\MockInterface;
 use Modules\User\Actions\Socialite\Utils\UserNameFieldsResolver;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+<<<<<<< HEAD
+use Modules\User\Models\User;
+=======
+>>>>>>> 87273113 (.)
 
 uses(TestCase::class);
 

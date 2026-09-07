@@ -16,7 +16,21 @@
         }
     },
     "require": {
+<<<<<<< HEAD
+<<<<<<< HEAD
         "filament/filament": "*",
         "filament/tables": "*"
+=======
+        "filament/filament": "^3.4",
+        "filament/tables": "^3.4"
+>>>>>>> f548be94 (.)
+=======
+        "filament/filament": "^3.4",
+        "filament/tables": "^3.4"
+=======
+        "filament/filament": "*",
+        "filament/tables": "*"
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
     }
 }

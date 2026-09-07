@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Task: Aumentare Copertura Test User"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./tasks-index.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Task: Aumentare Copertura Test User
 
 **Modulo**: User  

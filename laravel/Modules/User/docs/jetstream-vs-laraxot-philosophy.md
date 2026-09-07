@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Jetstream vs Laraxot: Filosofia, Religione e Politica dei Team"
 type: concept
@@ -18,6 +23,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Jetstream vs Laraxot: Filosofia, Religione e Politica dei Team
 
 ## 🌟 **LA RELIGIONE JETSTREAM**

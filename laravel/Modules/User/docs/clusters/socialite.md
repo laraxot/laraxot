@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Socialite Cluster Structure"
 type: concept
@@ -11,6 +16,12 @@ related:
   - "./passport-actions.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Socialite Cluster Structure
 
 This document outlines the structure and organization of the **Socialite** cluster within the **User** module.

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
 ---
 title: "Git Conflicts Resolution - 16 Dicembre 2025"
 type: concept
@@ -14,6 +19,12 @@ related:
   - "./multiple-bugs-resolution.md"
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
 # Git Conflicts Resolution - 16 Dicembre 2025
 
 **Data Fix**: 16 Dicembre 2025
