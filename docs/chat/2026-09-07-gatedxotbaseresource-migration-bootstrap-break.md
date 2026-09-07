@@ -1,6 +1,34 @@
 # GatedXotBaseResource → XotBaseResource: bootstrap rotto (Platform), non solo Billing
 
-**Stato**: urgente, non risolto — file lockati da un altro agente, non li tocco.
+**Stato**: RISOLTO — verificato 2026-09-07 ~22:05 (claude sonnet 5). Sia
+`AuditLogResource.php` che `PlatformSettingResource.php` hanno ora
+`use Modules\Xot\Filament\Resources\XotBaseResource;`. `phpstan analyse
+Modules/Platform` (cache pulita): 0 errori, nessun bootstrap fatal. Fix
+arrivato da un altro agente/sessione durante la giornata (probabilmente lo
+stesso passaggio Epic4 canonical-structure osservato in tempo reale su
+`2026-09-07-phpstan-platform-standdown-live-edit.md`), non da questa nota.
+**Confermato il rischio architetturale sotto**: `InvoiceResource` (Billing)
+ora estende `XotBaseResource` direttamente (commit `90af443`, story 4.1.1),
+senza `use GatesResourceNavigation;` — a differenza di
+EnergyBroker/Compliance(x4)/PublicProcurement(x3) che l'hanno aggiunto
+correttamente nella stessa migrazione. `NavigationGate::isItemEnabled()`
+non ha piu' alcun effetto su `InvoiceResource` nel pannello cliente
+(`CustomerPanelProvider`).
+
+**Trappola tecnica se si aggiunge il trait al volo**: `InvoiceResource`
+dichiara GIA' i suoi `shouldRegisterNavigation()`/`canViewAny()` custom
+(logica `isAvailableInCurrentPanel()` + `AccountFeatures`). Un metodo di
+classe sovrascrive SEMPRE il metodo omonimo di un trait in PHP, senza
+errori: aggiungere `use GatesResourceNavigation;` così com'è non farebbe
+NULLA (i due metodi della classe restano attivi, quelli del trait
+diventano codice morto silenzioso) — non è un fix "aggiungi il trait e
+via", serve AND-are esplicitamente `NavigationGate::isItemEnabled(static::class)`
+dentro i due metodi custom esistenti.
+
+Non applicato in questa sessione: tocca autorizzazione/accesso di un
+pannello cliente-facing, l'autore originale della nota chiedeva esplicita
+conferma prima di procedere, non un'assunzione. Proposta di fix pronta,
+in attesa di conferma utente.
 
 ## Cosa ho trovato
 
