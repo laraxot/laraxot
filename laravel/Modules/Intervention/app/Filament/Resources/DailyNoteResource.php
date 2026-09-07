@@ -178,7 +178,7 @@ final class DailyNoteResource extends GatedXotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         Select::make('user_id')
-                            ->label(__('interventions.fields.user'))
+
                             ->relationship('user', 'name')
                             ->searchable()
                             ->preload()
@@ -187,11 +187,11 @@ final class DailyNoteResource extends GatedXotBaseResource
                             ->disabled(fn (): bool => request()->is('operator/*'))
                             ->dehydrated(),
                         DatePicker::make('note_date')
-                            ->label(__('interventions.fields.note_date'))
+
                             ->required(),
                     ]),
                     RichEditor::make('body_html')
-                        ->label(__('interventions.fields.body'))
+
                         ->required()
                         ->toolbarButtons([
                             ['bold', 'italic', 'underline', 'strike', 'link', 'textColor'],
@@ -202,7 +202,7 @@ final class DailyNoteResource extends GatedXotBaseResource
                         ->helperText(__('interventions.helpers.daily_note_formatting'))
                         ->columnSpanFull(),
                     FileUpload::make('photo_paths')
-                        ->label(__('interventions.fields.photos'))
+
                         ->disk('public')
                         ->directory(fn (Get $get): string => self::photoDirectory(
                             userId: self::extractUserId($get),
@@ -239,10 +239,9 @@ final class DailyNoteResource extends GatedXotBaseResource
                 ->columnSpanFull()
                 ->components([
                     Grid::make(2)->components([
-                        TextEntry::make('user.name')
-                            ->label(__('interventions.fields.user')),
+                        TextEntry::make('user.name'),
                         TextEntry::make('note_date')
-                            ->label(__('interventions.fields.note_date'))
+
                             ->date(),
                     ]),
                     ViewEntry::make('daily_note_display')
@@ -259,15 +258,15 @@ final class DailyNoteResource extends GatedXotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')
-                    ->label(__('interventions.fields.user'))
+
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('note_date')
-                    ->label(__('interventions.fields.note_date'))
+
                     ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('body')
-                    ->label(__('interventions.fields.body'))
+
                     ->limit(80)
                     ->wrap()
                     ->toggleable(),

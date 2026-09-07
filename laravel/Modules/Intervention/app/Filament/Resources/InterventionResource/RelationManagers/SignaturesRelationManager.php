@@ -31,14 +31,14 @@ final class SignaturesRelationManager extends XotBaseRelationManager
     {
         return [
             Select::make('user_id')
-                ->label(__('signatures.fields.user'))
+
                 ->relationship('user', 'name')
                 ->searchable()
                 ->preload()
                 ->required()
                 ->default(fn (): ?int => Auth::id() !== null ? (int) Auth::id() : null),
             CanvasPad::make('payload.image')
-                ->label(__('signatures.fields.image'))
+
                 ->required()
                 ->height(220)
                 ->columnSpanFull(),
@@ -50,15 +50,15 @@ final class SignaturesRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')
-                    ->label(__('signatures.fields.user'))
+
                     ->sortable(),
                 Tables\Columns\TextColumn::make('signed_at')
-                    ->label(__('signatures.fields.signed_at'))
+
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\ImageColumn::make('path')
-                    ->label(__('signatures.fields.image'))
+
                     ->disk('public')
                     ->imageHeight(60)
                     ->width(120)
@@ -98,7 +98,7 @@ final class SignaturesRelationManager extends XotBaseRelationManager
             ])
             ->recordActions([
                 Action::make('open')
-                    ->label(__('documents.actions.open'))
+
                     ->icon('heroicon-o-eye')
                     ->color('gray')
                     ->url(fn (Signature $record): string => is_string($record->path) && $record->path !== ''
@@ -106,7 +106,7 @@ final class SignaturesRelationManager extends XotBaseRelationManager
                         : '#')
                     ->openUrlInNewTab(),
                 Action::make('download')
-                    ->label(__('documents.actions.download'))
+
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('gray')
                     ->url(fn (Signature $record): string => is_string($record->path) && $record->path !== ''

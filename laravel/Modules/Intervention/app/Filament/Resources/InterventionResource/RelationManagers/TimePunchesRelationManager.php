@@ -28,16 +28,15 @@ final class TimePunchesRelationManager extends XotBaseRelationManager
     {
         return [
             Select::make('user_id')
-                ->label(__('interventions.fields.user'))
+
                 ->relationship('user', 'name')
                 ->searchable()
                 ->preload()
                 ->required(),
             DateTimePicker::make('started_at')
-                ->label(__('interventions.fields.started_at'))
+
                 ->required(),
-            DateTimePicker::make('ended_at')
-                ->label(__('interventions.fields.ended_at')),
+            DateTimePicker::make('ended_at'),
         ];
     }
 
@@ -46,15 +45,15 @@ final class TimePunchesRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('user.name')
-                    ->label(__('interventions.fields.user'))
+
                     ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('started_at')
-                    ->label(__('interventions.fields.started_at'))
+
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('ended_at')
-                    ->label(__('interventions.fields.ended_at'))
+
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),

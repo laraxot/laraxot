@@ -63,7 +63,7 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
     {
         return [
             Select::make('product_id')
-                ->label(__('inventory.fields.product'))
+
                 ->options(fn (): array => Product::query()
                     ->where('is_active', true)
                     ->orderBy('name')
@@ -83,7 +83,7 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                 })
                 ->required(),
             Select::make('from_warehouse_id')
-                ->label(__('inventory.fields.from_warehouse'))
+
                 ->options(fn (): array => Warehouse::query()
                     ->where('is_active', true)
                     ->orderBy('name')
@@ -95,20 +95,20 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                 ->afterStateUpdated(fn (callable $set): mixed => $set('from_location_id', null))
                 ->required(),
             Select::make('from_location_id')
-                ->label(__('inventory.fields.from_location'))
+
                 ->options(fn (callable $get): array => self::locationOptionsForWarehouse((int) (is_numeric($get('from_warehouse_id')) ? $get('from_warehouse_id') : 0)))
                 ->searchable()
                 ->preload()
                 ->live()
                 ->visible(fn (callable $get): bool => self::storageZonesEnabled() && (int) (is_numeric($get('from_warehouse_id')) ? $get('from_warehouse_id') : 0) > 0),
             TextInput::make('quantity')
-                ->label(__('inventory.fields.quantity'))
+
                 ->numeric()
                 ->minValue(1)
                 ->default(1)
                 ->required(),
             TextInput::make('unit_price')
-                ->label(__('inventory.fields.unit_price'))
+
                 ->numeric()
                 ->minValue(0)
                 ->step(0.01)
@@ -116,7 +116,7 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                 ->default('0.00')
                 ->required(),
             TextInput::make('stock_available')
-                ->label(__('inventory.fields.available_stock'))
+
                 ->readOnly()
                 ->default(function (callable $get): string {
                     $productIdValue = $get('product_id') ?? 0;
@@ -143,7 +143,7 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
                     return sprintf('%d disponibili in questo magazzino.', (int) ($snapshot['aggregate'] ?? 0));
                 }),
             Textarea::make('note')
-                ->label(__('inventory.fields.note'))
+
                 ->rows(3)
                 ->placeholder('Es. n.1 timer scale, n.2 lampade LED, morsetti quadro...')
                 ->columnSpanFull(),
@@ -156,35 +156,35 @@ final class InventoryMovementsRelationManager extends XotBaseRelationManager
             ->modifyQueryUsing(fn (Builder $query): Builder => $query->where('movement_type', 'scarico')->latest('occurred_at'))
             ->columns([
                 Tables\Columns\TextColumn::make('product.name')
-                    ->label(__('inventory.fields.product'))
+
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('fromWarehouse.name')
-                    ->label(__('inventory.fields.from_warehouse'))
+
                     ->searchable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('fromLocation.code')
-                    ->label(__('inventory.fields.from_location'))
+
                     ->placeholder('—')
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('quantity')
-                    ->label(__('inventory.fields.quantity'))
+
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('unit_price')
-                    ->label(__('inventory.fields.unit_price'))
+
                     ->money('EUR')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('line_total')
-                    ->label(__('inventory.fields.line_total'))
+
                     ->money('EUR')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('note')
-                    ->label(__('inventory.fields.note'))
+
                     ->limit(90)
                     ->wrap(),
                 Tables\Columns\TextColumn::make('occurred_at')
-                    ->label(__('inventory.fields.occurred_at'))
+
                     ->dateTime('d/m/Y H:i')
                     ->sortable(),
             ])

@@ -37,7 +37,7 @@ final class MediaRelationManager extends XotBaseRelationManager
             Hidden::make('disk')
                 ->default('public'),
             Select::make('kind')
-                ->label(__('documents.fields.kind'))
+
                 ->options([
                     'document' => __('documents.kinds.document'),
                     'photo' => __('documents.kinds.photo'),
@@ -48,10 +48,10 @@ final class MediaRelationManager extends XotBaseRelationManager
                 ->default('photo')
                 ->required(),
             TextInput::make('title')
-                ->label(__('documents.fields.title'))
+
                 ->maxLength(255),
             FileUpload::make('path')
-                ->label(__('documents.fields.path'))
+
                 ->disk('public')
                 ->directory('media')
                 ->preserveFilenames()
@@ -68,13 +68,13 @@ final class MediaRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('kind')
-                    ->label(__('documents.fields.kind'))
+
                     ->badge(),
                 Tables\Columns\TextColumn::make('title')
-                    ->label(__('documents.fields.title'))
+
                     ->toggleable(),
                 Tables\Columns\ImageColumn::make('path')
-                    ->label(__('documents.fields.preview'))
+
                     ->disk('public')
                     ->imageHeight(48)
                     ->width(48)
@@ -82,15 +82,15 @@ final class MediaRelationManager extends XotBaseRelationManager
                     ->defaultImageUrl(fn (): string => '')
                     ->visibility('public'),
                 Tables\Columns\TextColumn::make('title')
-                    ->label(__('documents.fields.title'))
+
                     ->description(fn (Media $record): string => basename((string) ($record->path ?? '')))
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('size_bytes')
-                    ->label(__('documents.fields.size_bytes'))
+
                     ->numeric()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label(__('documents.fields.created_at'))
+
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),
@@ -100,7 +100,7 @@ final class MediaRelationManager extends XotBaseRelationManager
             ])
             ->recordActions([
                 Action::make('download')
-                    ->label(__('documents.actions.download'))
+
                     ->icon('heroicon-o-arrow-down-tray')
                     ->color('gray')
                     ->url(fn (Media $record): string => asset('storage/'.ltrim((string) ($record->path ?? ''), '/')))

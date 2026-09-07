@@ -36,15 +36,15 @@ final class ListDailyNotes extends XotBaseListRecords
     {
         return [
             'user.name' => Tables\Columns\TextColumn::make('user.name')
-                ->label(__('interventions.fields.user'))
+
                 ->searchable()
                 ->sortable(),
             'note_date' => Tables\Columns\TextColumn::make('note_date')
-                ->label(__('interventions.fields.note_date'))
+
                 ->date()
                 ->sortable(),
             'body' => Tables\Columns\TextColumn::make('body')
-                ->label(__('interventions.fields.body'))
+
                 ->limit(80)
                 ->wrap()
                 ->toggleable(),

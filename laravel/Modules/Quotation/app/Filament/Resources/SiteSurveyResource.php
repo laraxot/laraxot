@@ -86,27 +86,27 @@ final class SiteSurveyResource extends GatedXotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         TextInput::make('code')
-                            ->label(__('site_surveys.fields.code'))
+
                             ->maxLength(255),
                         Select::make('status_code')
-                            ->label(__('site_surveys.fields.status'))
+
                             ->options(self::statusOptions())
                             ->required()
                             ->default('planned'),
                     ]),
 
                     TextInput::make('title')
-                        ->label(__('site_surveys.fields.title'))
+
                         ->columnSpanFull()
                         ->maxLength(255),
 
                     Grid::make(2)->components([
                         DateTimePicker::make('scheduled_at')
-                            ->label(__('site_surveys.fields.scheduled_at'))
+
                             ->displayFormat('d/m/Y H:i')
                             ->seconds(false),
                         DateTimePicker::make('performed_at')
-                            ->label(__('site_surveys.fields.performed_at'))
+
                             ->displayFormat('d/m/Y H:i')
                             ->seconds(false),
                     ]),
@@ -116,7 +116,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
                 ->columnSpanFull()
                 ->components([
                     Select::make('customer_id')
-                        ->label(__('site_surveys.fields.customer'))
+
                         ->options(fn (): array => Customer::query()
                             ->orderBy('legal_name')
                             ->pluck('legal_name', 'id')
@@ -128,7 +128,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
                         ->required(),
 
                     Select::make('customer_site_id')
-                        ->label(__('site_surveys.fields.customer_site'))
+
                         ->options(function (callable $get): array {
                             $rawCustomerId = $get('customer_id');
                             $customerId = is_numeric($rawCustomerId) ? (int) $rawCustomerId : 0;
@@ -149,7 +149,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
                         ->disabled(fn (callable $get): bool => blank($get('customer_id'))),
 
                     Select::make('work_order_id')
-                        ->label(__('site_surveys.fields.work_order'))
+
                         ->options(fn (): array => WorkOrder::query()
                             ->orderByDesc('id')
                             ->limit(200)
@@ -162,7 +162,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
                         ->preload(),
 
                     Select::make('quotation_id')
-                        ->label(__('site_surveys.fields.quotation'))
+
                         ->options(fn (): array => Quotation::query()
                             ->orderByDesc('id')
                             ->limit(200)
@@ -175,7 +175,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
                         ->preload(),
 
                     Select::make('performed_by_user_id')
-                        ->label(__('site_surveys.fields.performed_by'))
+
                         ->relationship('performedBy', 'name')
                         ->searchable()
                         ->preload(),
@@ -185,7 +185,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
                 ->columnSpanFull()
                 ->components([
                     Textarea::make('notes')
-                        ->label(__('site_surveys.fields.notes'))
+
                         ->rows(5)
                         ->helperText(__('site_surveys.hints.no_attachments'))
                         ->columnSpanFull(),
@@ -198,35 +198,35 @@ final class SiteSurveyResource extends GatedXotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('code')
-                    ->label(__('site_surveys.fields.code'))
+
                     ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('title')
-                    ->label(__('site_surveys.fields.title'))
+
                     ->limit(50)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('customer.legal_name')
-                    ->label(__('site_surveys.fields.customer'))
+
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status_code')
-                    ->label(__('site_surveys.fields.status'))
+
                     ->badge()
                     ->color(fn (string $state): string => self::statusColor($state))
                     ->formatStateUsing(fn (string $state): string => __("site_surveys.statuses.{$state}"))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('scheduled_at')
-                    ->label(__('site_surveys.fields.scheduled_at'))
+
                     ->dateTime('d/m/Y H:i')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('performed_at')
-                    ->label(__('site_surveys.fields.performed_at'))
+
                     ->dateTime('d/m/Y H:i')
                     ->toggleable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('media_count')
-                    ->label(__('site_surveys.fields.attachments_count'))
+
                     ->counts('media')
                     ->badge()
                     ->color(fn (mixed $state): string => is_numeric($state) && (int) $state > 0 ? 'success' : 'warning'),
@@ -234,7 +234,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
             ->defaultSort('scheduled_at', 'desc')
             ->filters([
                 SelectFilter::make('status_code')
-                    ->label(__('site_surveys.fields.status'))
+
                     ->options(self::statusOptions()),
             ])
             ->recordActions([

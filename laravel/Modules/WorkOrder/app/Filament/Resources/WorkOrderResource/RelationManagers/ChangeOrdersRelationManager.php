@@ -29,9 +29,9 @@ final class ChangeOrdersRelationManager extends XotBaseRelationManager
     {
         return [
             Grid::make(3)->components([
-                TextInput::make('title')->label(__('compliance.fields.title'))->required()->maxLength(255),
-                TextInput::make('estimated_amount')->label(__('compliance.fields.estimated_amount'))->numeric()->prefix('EUR'),
-                Select::make('status')->label(__('compliance.fields.status'))->default('proposed')->options([
+                TextInput::make('title')->required()->maxLength(255),
+                TextInput::make('estimated_amount')->numeric()->prefix('EUR'),
+                Select::make('status')->default('proposed')->options([
                     'proposed' => 'Proposta',
                     'pending_approval' => 'Da approvare',
                     'approved' => 'Approvata',
@@ -40,7 +40,7 @@ final class ChangeOrdersRelationManager extends XotBaseRelationManager
                     'rejected' => 'Respinta',
                 ]),
             ]),
-            Textarea::make('description')->label(__('compliance.fields.description'))->columnSpanFull(),
+            Textarea::make('description')->columnSpanFull(),
         ];
     }
 
@@ -48,9 +48,9 @@ final class ChangeOrdersRelationManager extends XotBaseRelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')->label(__('compliance.fields.title'))->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('estimated_amount')->label(__('compliance.fields.estimated_amount'))->money('EUR')->sortable(),
-                Tables\Columns\TextColumn::make('status')->label(__('compliance.fields.status'))->badge()->sortable(),
+                Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('estimated_amount')->money('EUR')->sortable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
             ])
             ->headerActions([CreateAction::make()])

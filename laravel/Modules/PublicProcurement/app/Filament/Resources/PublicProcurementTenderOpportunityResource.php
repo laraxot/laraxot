@@ -64,36 +64,36 @@ final class PublicProcurementTenderOpportunityResource extends XotBaseResource
         return [
             'section' => Section::make()->columnSpanFull()->components([
                 'grid' => Grid::make(3)->components([
-                    'status' => Select::make('status')->label(__('public_procurement.fields.status'))->options(self::statuses())->default('new')->required(),
+                    'status' => Select::make('status')->options(self::statuses())->default('new')->required(),
                     'tender_source_id' => Select::make('tender_source_id')
-                        ->label(__('public_procurement.fields.source'))
+
                         ->options(fn (): array => PublicProcurementTenderSource::query()->orderBy('name')->pluck('name', 'id')->all())
                         ->searchable()
                         ->preload(),
                     'customer_id' => Select::make('customer_id')
-                        ->label(__('public_procurement.fields.customer'))
+
                         ->options(fn (): array => Customer::query()->orderBy('legal_name')->pluck('legal_name', 'id')->all())
                         ->searchable()
                         ->preload(),
                 ]),
-                'title' => TextInput::make('title')->label(__('public_procurement.fields.title'))->required()->maxLength(255)->columnSpanFull(),
+                'title' => TextInput::make('title')->required()->maxLength(255)->columnSpanFull(),
                 'grid2' => Grid::make(3)->components([
-                    'contracting_authority' => TextInput::make('contracting_authority')->label(__('public_procurement.fields.contracting_authority'))->required()->maxLength(255),
-                    'cig' => TextInput::make('cig')->label(__('public_procurement.fields.cig'))->maxLength(255),
-                    'cup' => TextInput::make('cup')->label(__('public_procurement.fields.cup'))->maxLength(255),
-                    'cpv_code' => TextInput::make('cpv_code')->label(__('public_procurement.fields.cpv_code'))->maxLength(255),
-                    'category' => TextInput::make('category')->label(__('public_procurement.fields.category'))->maxLength(255),
-                    'territory' => TextInput::make('territory')->label(__('public_procurement.fields.territory'))->maxLength(255),
+                    'contracting_authority' => TextInput::make('contracting_authority')->required()->maxLength(255),
+                    'cig' => TextInput::make('cig')->maxLength(255),
+                    'cup' => TextInput::make('cup')->maxLength(255),
+                    'cpv_code' => TextInput::make('cpv_code')->maxLength(255),
+                    'category' => TextInput::make('category')->maxLength(255),
+                    'territory' => TextInput::make('territory')->maxLength(255),
                 ]),
                 'grid3' => Grid::make(3)->components([
-                    'estimated_amount' => TextInput::make('estimated_amount')->label(__('public_procurement.fields.estimated_amount'))->numeric(),
-                    'published_at' => DateTimePicker::make('published_at')->label(__('public_procurement.fields.published_at')),
-                    'submission_deadline_at' => DateTimePicker::make('submission_deadline_at')->label(__('public_procurement.fields.submission_deadline_at')),
-                    'site_visit_due_at' => DateTimePicker::make('site_visit_due_at')->label(__('public_procurement.fields.site_visit_due_at')),
-                    'source_url' => TextInput::make('source_url')->label(__('public_procurement.fields.source_url'))->url()->columnSpan(2),
+                    'estimated_amount' => TextInput::make('estimated_amount')->numeric(),
+                    'published_at' => DateTimePicker::make('published_at'),
+                    'submission_deadline_at' => DateTimePicker::make('submission_deadline_at'),
+                    'site_visit_due_at' => DateTimePicker::make('site_visit_due_at'),
+                    'source_url' => TextInput::make('source_url')->url()->columnSpan(2),
                 ]),
-                'raw_excerpt' => Textarea::make('raw_excerpt')->label(__('public_procurement.fields.raw_excerpt'))->columnSpanFull(),
-                'notes' => Textarea::make('notes')->label(__('public_procurement.fields.notes'))->columnSpanFull(),
+                'raw_excerpt' => Textarea::make('raw_excerpt')->columnSpanFull(),
+                'notes' => Textarea::make('notes')->columnSpanFull(),
             ]),
         ];
     }
@@ -102,22 +102,22 @@ final class PublicProcurementTenderOpportunityResource extends XotBaseResource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('status')->label(__('public_procurement.fields.status'))->badge()->formatStateUsing(fn (string $state): string => self::statuses()[$state] ?? $state)->sortable(),
-                Tables\Columns\TextColumn::make('title')->label(__('public_procurement.fields.title'))->searchable()->limit(50),
-                Tables\Columns\TextColumn::make('contracting_authority')->label(__('public_procurement.fields.contracting_authority'))->searchable()->limit(34),
-                Tables\Columns\TextColumn::make('cig')->label(__('public_procurement.fields.cig'))->searchable()->toggleable(),
-                Tables\Columns\TextColumn::make('category')->label(__('public_procurement.fields.category'))->searchable()->toggleable(),
-                Tables\Columns\TextColumn::make('territory')->label(__('public_procurement.fields.territory'))->searchable()->toggleable(),
-                Tables\Columns\TextColumn::make('estimated_amount')->label(__('public_procurement.fields.estimated_amount'))->money('EUR')->sortable(),
-                Tables\Columns\TextColumn::make('submission_deadline_at')->label(__('public_procurement.fields.submission_deadline_at'))->dateTime()->sortable(),
+                Tables\Columns\TextColumn::make('status')->badge()->formatStateUsing(fn (string $state): string => self::statuses()[$state] ?? $state)->sortable(),
+                Tables\Columns\TextColumn::make('title')->searchable()->limit(50),
+                Tables\Columns\TextColumn::make('contracting_authority')->searchable()->limit(34),
+                Tables\Columns\TextColumn::make('cig')->searchable()->toggleable(),
+                Tables\Columns\TextColumn::make('category')->searchable()->toggleable(),
+                Tables\Columns\TextColumn::make('territory')->searchable()->toggleable(),
+                Tables\Columns\TextColumn::make('estimated_amount')->money('EUR')->sortable(),
+                Tables\Columns\TextColumn::make('submission_deadline_at')->dateTime()->sortable(),
             ])
             ->filters([
-                SelectFilter::make('status')->label(__('public_procurement.fields.status'))->options(self::statuses()),
-                SelectFilter::make('category')->label(__('public_procurement.fields.category'))->options(fn (): array => PublicProcurementTenderOpportunity::query()->whereNotNull('category')->distinct()->pluck('category', 'category')->all()),
+                SelectFilter::make('status')->options(self::statuses()),
+                SelectFilter::make('category')->options(fn (): array => PublicProcurementTenderOpportunity::query()->whereNotNull('category')->distinct()->pluck('category', 'category')->all()),
             ])
             ->recordActions([
                 Action::make('evaluateEligibility')
-                    ->label(__('public_procurement.actions.evaluate_eligibility'))
+
                     ->icon('heroicon-o-shield-check')
                     ->color('warning')
                     ->action(function (PublicProcurementTenderOpportunity $record): void {
@@ -126,7 +126,7 @@ final class PublicProcurementTenderOpportunityResource extends XotBaseResource
                         Notification::make()->title(__('public_procurement.messages.eligibility_completed'))->success()->send();
                     }),
                 Action::make('createContract')
-                    ->label(__('public_procurement.actions.create_contract'))
+
                     ->icon('heroicon-o-briefcase')
                     ->color('success')
                     ->action(function (PublicProcurementTenderOpportunity $record): void {

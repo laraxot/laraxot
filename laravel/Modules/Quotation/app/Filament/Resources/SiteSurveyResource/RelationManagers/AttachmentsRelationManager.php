@@ -69,15 +69,15 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
     {
         return [
             'kind' => Select::make('kind')
-                ->label(__('site_surveys.attachments.kind'))
+
                 ->options(self::kindOptions())
                 ->default('photo')
                 ->required(),
             'title' => TextInput::make('title')
-                ->label(__('site_surveys.attachments.file_title'))
+
                 ->maxLength(255),
             'path' => FileUpload::make('path')
-                ->label(__('site_surveys.attachments.file'))
+
                 ->disk('public')
                 ->directory(function (): string {
                     $key = $this->getOwnerRecord()->getKey();
@@ -96,7 +96,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('collection_name')
-                    ->label(__('site_surveys.attachments.kind'))
+
                     ->badge()
                     ->color(fn (string $state): string => match (self::collectionToKind($state)) {
                         'photo' => 'success',
@@ -107,18 +107,18 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
                     ->formatStateUsing(fn (string $state): string => self::kindOptions()[self::collectionToKind($state)] ?? $state)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name')
-                    ->label(__('site_surveys.attachments.file_title'))
+
                     ->formatStateUsing(fn (Media $record): string => $record->name !== '' ? $record->name : $record->file_name)
                     ->wrap()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label(__('site_surveys.attachments.uploaded_at'))
+
                     ->dateTime('d/m/Y H:i')
                     ->sortable(),
             ])
             ->filters([
                 SelectFilter::make('collection_name')
-                    ->label(__('site_surveys.attachments.kind'))
+
                     ->options([
                         'photos' => __('site_surveys.attachments.kinds.photo'),
                         'videos' => __('site_surveys.attachments.kinds.video'),
@@ -156,7 +156,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
             ])
             ->recordActions([
                 Action::make('download')
-                    ->label(__('site_surveys.attachments.download'))
+
                     ->icon('heroicon-o-arrow-down-tray')
                     ->action(fn (Media $record) => Storage::disk((string) $record->disk)
                         ->download($record->getPathRelativeToRoot(), $record->name !== '' ? $record->name : $record->file_name)),

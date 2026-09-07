@@ -106,10 +106,10 @@ final class QuotationResource extends GatedXotBaseResource
                 ->components([
                     Grid::make(2)->components([
                         TextInput::make('code')
-                            ->label(__('quotations.fields.code'))
+
                             ->maxLength(255),
                         Select::make('status_code')
-                            ->label(__('quotations.fields.status'))
+
                             ->options([
                                 'draft' => __('quotations.statuses.draft'),
                                 'sent' => __('quotations.statuses.sent'),
@@ -121,12 +121,12 @@ final class QuotationResource extends GatedXotBaseResource
                     ]),
 
                     TextInput::make('project')
-                        ->label(__('quotations.fields.project'))
+
                         ->helperText(__('quotations.fields.project_hint'))
                         ->maxLength(255),
 
                     Select::make('customer_id')
-                        ->label(__('quotations.fields.customer'))
+
                         ->options(fn (): array => DB::table('customers')->orderBy('legal_name')->pluck('legal_name', 'id')->all())
                         ->searchable()
                         ->preload()
@@ -134,11 +134,11 @@ final class QuotationResource extends GatedXotBaseResource
                         ->afterStateUpdated(fn (callable $set) => $set('work_order_id', null))
                         ->required()
                         ->createOptionForm([
-                            TextInput::make('legal_name')->label(__('quotations.fields.customer'))->required()->maxLength(255),
+                            TextInput::make('legal_name')->required()->maxLength(255),
                             TextInput::make('vat_number')->maxLength(255),
-                            TextInput::make('city')->label(__('quotations.voice.city'))->maxLength(255),
+                            TextInput::make('city')->maxLength(255),
                             TextInput::make('email')->email()->maxLength(255),
-                            TextInput::make('phone')->label(__('quotations.voice.phone'))->maxLength(255),
+                            TextInput::make('phone')->maxLength(255),
                         ])
                         ->createOptionUsing(function (array $data): int {
                             $key = Customer::query()->create([
@@ -154,7 +154,7 @@ final class QuotationResource extends GatedXotBaseResource
                         }),
 
                     Select::make('work_order_id')
-                        ->label(__('quotations.fields.work_order'))
+
                         ->options(function (callable $get): array {
                             $q = DB::table('work_orders')->orderByDesc('id');
                             $customerId = $get('customer_id');
@@ -183,66 +183,66 @@ final class QuotationResource extends GatedXotBaseResource
                         ->preload(),
 
                     TextInput::make('title')
-                        ->label(__('quotations.fields.title'))
+
                         ->maxLength(255),
 
                     TextInput::make('tax_percent')
-                        ->label(__('quotations.fields.tax_percent'))
+
                         ->numeric()
                         ->minValue(0)
                         ->default(22),
 
                     Grid::make(2)->components([
-                        DateTimePicker::make('issued_at')->label(__('quotations.fields.issued_at')),
-                        DateTimePicker::make('confirmed_at')->label(__('quotations.fields.confirmed_at')),
+                        DateTimePicker::make('issued_at'),
+                        DateTimePicker::make('confirmed_at'),
                     ]),
 
                     Grid::make(2)->components([
-                        DateTimePicker::make('delivery_at')->label(__('quotations.fields.delivery_at')),
+                        DateTimePicker::make('delivery_at'),
                         TextInput::make('lead_time_days')
-                            ->label(__('quotations.fields.lead_time_days'))
+
                             ->helperText(__('quotations.fields.lead_time_days_hint'))
                             ->numeric()
                             ->minValue(0),
                     ]),
 
                     Textarea::make('notes')
-                        ->label(__('quotations.fields.notes'))
+
                         ->columnSpanFull(),
 
                     Grid::make(3)->components([
                         TextInput::make('subtotal')
-                            ->label(__('quotations.fields.subtotal'))
+
                             ->numeric()
                             ->disabled(),
                         TextInput::make('discount_amount')
-                            ->label(__('quotations.fields.discount_amount'))
+
                             ->numeric()
                             ->disabled(),
                         TextInput::make('taxable_amount')
-                            ->label(__('quotations.fields.taxable_amount'))
+
                             ->numeric()
                             ->disabled(),
                     ]),
                     Grid::make(2)->components([
                         TextInput::make('tax_amount')
-                            ->label(__('quotations.fields.tax_amount'))
+
                             ->numeric()
                             ->disabled(),
                         TextInput::make('total')
-                            ->label(__('quotations.fields.total'))
+
                             ->numeric()
                             ->disabled(),
                     ]),
 
                     Grid::make(2)->components([
                         TextInput::make('cost_total')
-                            ->label(__('quotations.fields.cost_total'))
+
                             ->helperText(__('quotations.fields.cost_total_hint'))
                             ->numeric()
                             ->minValue(0),
                         TextEntry::make('margin_summary')
-                            ->label(__('quotations.margin.label'))
+
                             ->state(fn (?Quotation $record): string => self::marginSummary($record)),
                     ]),
                 ])
@@ -260,12 +260,12 @@ final class QuotationResource extends GatedXotBaseResource
                 })
                 ->components([
                     Textarea::make('voice_transcript')
-                        ->label(__('quotations.voice.transcript_label'))
+
                         ->disabled()
                         ->rows(3)
                         ->columnSpanFull(),
                     Textarea::make('voice_ai_response')
-                        ->label(__('quotations.voice.ai_response_label'))
+
                         ->disabled()
                         ->rows(10)
                         ->formatStateUsing(function (mixed $state): string {
@@ -285,12 +285,12 @@ final class QuotationResource extends GatedXotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('code')
-                    ->label(__('quotations.fields.code'))
+
                     ->weight(FontWeight::Bold)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status_code')
-                    ->label(__('quotations.fields.status'))
+
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
                         'confirmed' => 'success',
@@ -301,7 +301,7 @@ final class QuotationResource extends GatedXotBaseResource
                     ->formatStateUsing(fn (string $state): string => __("quotations.statuses.{$state}"))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('customer_id')
-                    ->label(__('quotations.fields.customer'))
+
                     ->formatStateUsing(function ($state): string {
                         $legalName = DB::table('customers')->where('id', $state)->value('legal_name');
 
@@ -310,31 +310,31 @@ final class QuotationResource extends GatedXotBaseResource
                     ->toggleable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('total')
-                    ->label(__('quotations.fields.total'))
+
                     ->money('EUR')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('cost_total')
-                    ->label(__('quotations.fields.cost_total'))
+
                     ->money('EUR')
                     ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('margin')
-                    ->label(__('quotations.margin.label'))
+
                     ->state(fn (Quotation $record): string => self::marginSummary($record))
                     ->badge()
                     ->color(fn (Quotation $record): string => self::marginColour($record))
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('project')
-                    ->label(__('quotations.fields.project'))
+
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('delivery_at')
-                    ->label(__('quotations.fields.delivery_at'))
+
                     ->dateTime()
                     ->toggleable(isToggledHiddenByDefault: true)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('issued_at')
-                    ->label(__('quotations.fields.issued_at'))
+
                     ->dateTime()
                     ->toggleable()
                     ->sortable(),

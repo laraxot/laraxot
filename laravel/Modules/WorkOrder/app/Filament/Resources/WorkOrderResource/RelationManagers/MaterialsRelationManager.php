@@ -37,30 +37,30 @@ final class MaterialsRelationManager extends XotBaseRelationManager
     {
         return [
             TextInput::make('description')
-                ->label(__('workorder::work_orders.materials.fields.description'))
+
                 ->required()
                 ->maxLength(255)
                 ->columnSpanFull(),
             Select::make('product_id')
-                ->label(__('workorder::work_orders.materials.fields.product'))
+
                 ->options(fn (): array => Product::query()->orderBy('name')->pluck('name', 'id')->all())
                 ->searchable()
                 ->preload(),
             TextInput::make('unit_code')
-                ->label(__('workorder::work_orders.materials.fields.unit'))
+
                 ->maxLength(20),
             TextInput::make('quantity')
-                ->label(__('workorder::work_orders.materials.fields.quantity'))
+
                 ->numeric()
                 ->default(1)
                 ->required(),
             TextInput::make('unit_cost')
-                ->label(__('workorder::work_orders.materials.fields.unit_cost'))
+
                 ->numeric()
                 ->default(0)
                 ->required(),
             Textarea::make('notes')
-                ->label(__('workorder::work_orders.materials.fields.notes'))
+
                 ->rows(2)
                 ->columnSpanFull(),
         ];
@@ -71,23 +71,22 @@ final class MaterialsRelationManager extends XotBaseRelationManager
     {
         return [
             'description' => Tables\Columns\TextColumn::make('description')
-                ->label(__('workorder::work_orders.materials.fields.description'))
+
                 ->searchable()
                 ->wrap(),
             'source_code' => Tables\Columns\TextColumn::make('source_code')
-                ->label(__('workorder::work_orders.materials.fields.source'))
+
                 ->badge()
                 ->formatStateUsing(fn (?string $state): string => (string) __('workorder::work_orders.materials.sources.'.($state ?? 'manual'))),
             'quantity' => Tables\Columns\TextColumn::make('quantity')
-                ->label(__('workorder::work_orders.materials.fields.quantity'))
+
                 ->numeric(decimalPlaces: 2),
-            'unit_code' => Tables\Columns\TextColumn::make('unit_code')
-                ->label(__('workorder::work_orders.materials.fields.unit')),
+            'unit_code' => Tables\Columns\TextColumn::make('unit_code'),
             'unit_cost' => Tables\Columns\TextColumn::make('unit_cost')
-                ->label(__('workorder::work_orders.materials.fields.unit_cost'))
+
                 ->money('EUR'),
             'line_total' => Tables\Columns\TextColumn::make('line_total')
-                ->label(__('workorder::work_orders.materials.fields.line_total'))
+
                 ->money('EUR')
                 ->summarize(Tables\Columns\Summarizers\Sum::make()->money('EUR')),
         ];

@@ -77,15 +77,15 @@ return [
             'placeholder' => 'es. In lavorazione',
         ],
         'color' => [
-            'label' => 'Colore',
+            'label' => 'Color',
             'helper_text' => 'Colore del badge nelle liste.',
         ],
         'sort_order' => [
-            'label' => 'Ordinamento',
+            'label' => 'Sort order',
             'helper_text' => 'Posizione nel flusso: dal primo stato all\'ultimo.',
         ],
         'is_terminal' => [
-            'label' => 'Stato finale',
+            'label' => 'Is terminal',
             'helper_text' => 'Marca la commessa come chiusa: niente più avanzamenti.',
         ],
         'work_orders_count' => [

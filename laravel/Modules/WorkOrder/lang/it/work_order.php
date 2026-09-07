@@ -76,6 +76,12 @@ return [
         'format' => [
             'label' => 'Formato Report',
         ],
+        'delivery_due_at' => [
+            'label' => 'Delivery due at',
+        ],
+        'progress_percent' => [
+            'label' => 'Progress percent',
+        ],
     ],
     'actions' => [
         'exportReport' => [
@@ -86,6 +92,9 @@ return [
         ],
         'restoreCascade' => [
             'label' => 'Ripristina Commessa e Dati Collegati',
+        ],
+        'preInvoice' => [
+            'label' => 'PreInvoice',
         ],
     ],
 ];

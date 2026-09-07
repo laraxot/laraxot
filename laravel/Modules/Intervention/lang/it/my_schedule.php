@@ -8,4 +8,9 @@ return [
             'label' => 'Nuovo intervento',
         ],
     ],
+    'fields' => [
+        'selectedDate' => [
+            'label' => 'SelectedDate',
+        ],
+    ],
 ];

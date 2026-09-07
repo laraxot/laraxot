@@ -10,5 +10,14 @@ return [
         'is_active' => [
             'label' => 'Attiva',
         ],
+        'source_type' => [
+            'label' => 'Source type',
+        ],
+        'url' => [
+            'label' => 'Url',
+        ],
+        'notes' => [
+            'label' => 'Notes',
+        ],
     ],
 ];

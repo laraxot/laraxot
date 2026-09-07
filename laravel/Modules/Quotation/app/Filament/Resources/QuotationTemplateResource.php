@@ -56,11 +56,11 @@ final class QuotationTemplateResource extends GatedXotBaseResource
         return [
             'title' => Section::make()->columnSpanFull()->components([
                 TextInput::make('title')
-                    ->label(__('quotations.fields.title'))
+
                     ->required()
                     ->maxLength(255),
                 Textarea::make('notes')
-                    ->label(__('quotations.fields.notes'))
+
                     ->columnSpanFull(),
             ])->columns(2),
         ];
@@ -71,7 +71,7 @@ final class QuotationTemplateResource extends GatedXotBaseResource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
-                    ->label(__('quotations.fields.title'))
+
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')

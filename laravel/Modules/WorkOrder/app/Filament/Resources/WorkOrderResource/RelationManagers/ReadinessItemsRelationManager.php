@@ -25,15 +25,15 @@ final class ReadinessItemsRelationManager extends XotBaseRelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('label')->label(__('compliance.fields.label'))->searchable(),
-                Tables\Columns\TextColumn::make('severity')->label(__('compliance.fields.severity'))->badge()->sortable(),
-                Tables\Columns\TextColumn::make('status')->label(__('compliance.fields.status'))->badge()->sortable(),
-                Tables\Columns\TextColumn::make('message')->label(__('compliance.fields.message'))->limit(80),
-                Tables\Columns\TextColumn::make('due_on')->label(__('compliance.fields.due_on'))->date()->sortable(),
+                Tables\Columns\TextColumn::make('label')->searchable(),
+                Tables\Columns\TextColumn::make('severity')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
+                Tables\Columns\TextColumn::make('message')->limit(80),
+                Tables\Columns\TextColumn::make('due_on')->date()->sortable(),
             ])
             ->headerActions([
                 Action::make('evaluate')
-                    ->label(__('compliance.actions.evaluate_readiness'))
+
                     ->icon('heroicon-o-arrow-path')
                     ->color('warning')
                     ->action(function (): void {

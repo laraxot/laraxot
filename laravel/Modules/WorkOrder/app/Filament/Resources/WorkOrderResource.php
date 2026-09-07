@@ -216,7 +216,7 @@ final class WorkOrderResource extends GatedXotBaseResource
                         DateTimePicker::make('opened_at'),
                         DateTimePicker::make('scheduled_at'),
                         DateTimePicker::make('delivery_due_at')
-                            ->label(__('workorder::work_orders.fields.delivery_due_at'))
+
                             ->helperText(__('workorder::work_orders.fields.delivery_due_at_hint')),
                         DateTimePicker::make('started_at'),
                         DateTimePicker::make('completed_at'),
@@ -229,7 +229,7 @@ final class WorkOrderResource extends GatedXotBaseResource
                             ->minValue(0)
                             ->step(1),
                         TextInput::make('progress_percent')
-                            ->label(__('workorder::work_orders.progress.label'))
+
                             ->helperText(__('workorder::work_orders.progress.hint'))
                             ->numeric()
                             ->minValue(0)
@@ -263,8 +263,8 @@ final class WorkOrderResource extends GatedXotBaseResource
                         TextEntry::make('primaryContact.full_name'),
                         TextEntry::make('title'),
                         TextEntry::make('scheduled_at')->dateTime(),
-                        TextEntry::make('delivery_due_at')->label(__('workorder::work_orders.fields.delivery_due_at'))->dateTime(),
-                        TextEntry::make('progress_percent')->label(__('workorder::work_orders.progress.label')),
+                        TextEntry::make('delivery_due_at')->dateTime(),
+                        TextEntry::make('progress_percent'),
                         TextEntry::make('planned_minutes'),
                     ]),
                     TextEntry::make('description')->columnSpanFull(),
@@ -334,7 +334,7 @@ final class WorkOrderResource extends GatedXotBaseResource
     public static function preInvoiceAction(): Action
     {
         return Action::make('preInvoice')
-            ->label(__('billing::billing.pre_invoice.action'))
+
             ->icon('heroicon-o-receipt-percent')
             ->color('gray')
             ->modalHeading(__('billing::billing.pre_invoice.title'))
@@ -422,7 +422,7 @@ final class WorkOrderResource extends GatedXotBaseResource
                     ->sortable()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('progress_percent')
-                    ->label(__('workorder::work_orders.progress.label'))
+
                     ->badge()
                     ->color(fn (?int $state): string => match (true) {
                         $state === null || $state === 0 => 'gray',
@@ -433,7 +433,7 @@ final class WorkOrderResource extends GatedXotBaseResource
                     ->sortable(),
                 // I ritardi di consegna devono urlare dalla lista.
                 Tables\Columns\TextColumn::make('delivery_due_at')
-                    ->label(__('workorder::work_orders.fields.delivery_due_at'))
+
                     ->dateTime()
                     ->sortable()
                     ->color(fn (?string $state, WorkOrder $record): string => self::deliveryColour($state, $record))

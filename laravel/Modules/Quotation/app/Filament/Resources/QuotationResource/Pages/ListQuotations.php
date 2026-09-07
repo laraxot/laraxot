@@ -37,17 +37,17 @@ final class ListQuotations extends XotBaseListRecords
     {
         return [
             'voiceNew' => Actions\Action::make('voiceNew')
-                ->label(__('quotations.voice.new'))
+
                 ->icon('heroicon-o-microphone')
                 ->visible(fn (): bool => RecordQuotationVoicePage::canAccess())
                 ->url(fn (): string => RecordQuotationVoicePage::getUrl()),
 
             'importFromFile' => Actions\Action::make('importFromFile')
-                ->label(__('quotations.import.title'))
+
                 ->icon('heroicon-o-document-arrow-up')
                 ->schema([
                     FileUpload::make('file')
-                        ->label(__('quotations.import.file'))
+
                         ->disk('local')
                         ->directory('quotation-imports')
                         ->visibility('private')

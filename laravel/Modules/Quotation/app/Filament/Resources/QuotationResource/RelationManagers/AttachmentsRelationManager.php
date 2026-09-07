@@ -62,7 +62,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
     {
         return [
             'path' => FileUpload::make('path')
-                ->label(__('quotations.attachments.file'))
+
                 ->disk('local')
                 ->directory(function (): string {
                     $key = $this->getOwnerRecord()->getKey();
@@ -77,7 +77,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
                 ->columnSpanFull(),
             'original_name' => Hidden::make('original_name'),
             'title' => TextInput::make('title')
-                ->label(__('quotations.attachments.file_title'))
+
                 ->helperText(__('quotations.attachments.file_title_hint'))
                 ->maxLength(255)
                 ->columnSpanFull(),
@@ -90,26 +90,26 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
             ->modifyQueryUsing(fn (Builder $query): Builder => $query->where('collection_name', 'documents'))
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label(__('quotations.attachments.file_title'))
+
                     ->formatStateUsing(fn (Media $record): string => $record->name !== '' ? $record->name : $record->file_name)
                     ->wrap()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('mime_type')
-                    ->label(__('quotations.attachments.type'))
+
                     ->badge()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('size')
-                    ->label(__('quotations.attachments.size'))
+
                     ->formatStateUsing(fn (?int $state): string => $state !== null ? number_format($state / 1024, 0).' KB' : '—')
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label(__('quotations.attachments.uploaded_at'))
+
                     ->dateTime()
                     ->sortable(),
             ])
             ->headerActions([
                 Action::make('reprepareAttachment')
-                    ->label(__('quotations.actions.reprepare_attachment'))
+
                     ->icon('heroicon-o-arrow-path')
                     ->color('warning')
                     ->visible(function (): bool {
@@ -168,7 +168,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
             ])
             ->recordActions([
                 Action::make('download')
-                    ->label(__('quotations.attachments.download'))
+
                     ->icon('heroicon-o-arrow-down-tray')
                     ->action(fn (Media $record) => Storage::disk((string) $record->disk)
                         ->download($record->getPathRelativeToRoot(), $record->name !== '' ? $record->name : $record->file_name)),

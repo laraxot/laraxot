@@ -31,11 +31,11 @@ final class InterventionsRelationManager extends XotBaseRelationManager
             ->recordTitleAttribute('id')
             ->columns([
                 Tables\Columns\TextColumn::make('scheduled_at')
-                    ->label(__('interventions.fields.scheduled_at'))
+
                     ->dateTime('d/m/Y H:i')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('operators')
-                    ->label(__('interventions.fields.operators'))
+
                     ->state(function (Intervention $record): string {
                         $names = $record->assignedUsers()
                             ->orderBy('name')
@@ -50,11 +50,11 @@ final class InterventionsRelationManager extends XotBaseRelationManager
                         return implode(', ', $names);
                     }),
                 Tables\Columns\TextColumn::make('notes')
-                    ->label(__('interventions.fields.notes'))
+
                     ->limit(80)
                     ->wrap(),
                 Tables\Columns\TextColumn::make('materials_summary')
-                    ->label(__('interventions.fields.material_lines'))
+
                     ->state(function (Intervention $record): string {
                         $manualMaterials = $record->materialLines()
                             ->orderBy('description')
@@ -98,7 +98,7 @@ final class InterventionsRelationManager extends XotBaseRelationManager
                     ->wrap()
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('total_amount')
-                    ->label(__('interventions.fields.total_amount'))
+
                     ->money('EUR')
                     ->sortable(),
             ])
