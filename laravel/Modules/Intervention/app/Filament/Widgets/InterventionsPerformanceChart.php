@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Intervention\Filament\Widgets;
 
-use Modules\Platform\Filament\Widgets\Concerns\ResolvesPanelUserScope;
 use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
-use Filament\Widgets\ChartWidget;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Models\Intervention;
+use Modules\Platform\Filament\Widgets\Concerns\ResolvesPanelUserScope;
+use Modules\Xot\Filament\Widgets\XotBaseChartWidget;
 
-final class InterventionsPerformanceChart extends ChartWidget
+final class InterventionsPerformanceChart extends XotBaseChartWidget
 {
     use ResolvesPanelUserScope;
 

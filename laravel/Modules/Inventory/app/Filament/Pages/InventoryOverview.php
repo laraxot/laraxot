@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Inventory\Filament\Pages;
 
 use App\Support\AccountFeatures;
-use Filament\Pages\Page;
 use Filament\Tables;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
@@ -18,8 +17,9 @@ use Modules\Inventory\Models\Warehouse;
 use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\Xot\Actions\Cast\SafeIntCastAction;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
-final class InventoryOverview extends Page implements HasTable
+final class InventoryOverview extends XotBasePage implements HasTable
 {
     use GatesPageNavigation;
     use InteractsWithTable;

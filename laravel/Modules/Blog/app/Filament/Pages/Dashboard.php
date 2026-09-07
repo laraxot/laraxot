@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Filament\Pages;
 
-use Filament\Pages\Page;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
-class Dashboard extends Page
+class Dashboard extends XotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-home';
 
