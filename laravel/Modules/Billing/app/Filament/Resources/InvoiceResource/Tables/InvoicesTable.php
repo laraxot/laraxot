@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Filament\Resources\InvoiceResource\Tables;
 
+use Filament\Actions\Action;
+use Filament\Actions\ActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
@@ -11,6 +13,7 @@ use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\BaseFilter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Filament\Resources\InvoiceResource;
@@ -59,7 +62,15 @@ final class InvoicesTable extends XotBaseResourceTable
     }
 
     /**
-     * @return array<string, ViewAction|EditAction>
+     * @return array<int|string, BaseFilter>
+     */
+    public function getTableFilters(): array
+    {
+        return [];
+    }
+
+    /**
+     * @return array<int|string, Action|ActionGroup>
      */
     public function getTableActions(): array
     {

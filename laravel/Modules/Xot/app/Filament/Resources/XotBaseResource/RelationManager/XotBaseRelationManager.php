@@ -8,9 +8,11 @@ use Filament\Resources\RelationManagers\RelationManager as FilamentRelationManag
 use Filament\Support\Components\Component;
 use Filament\Tables;
 use Illuminate\Support\Str;
+use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use Modules\Xot\Filament\Traits\HasRelationshipModelClass;
 use Modules\Xot\Filament\Traits\HasXotTable;
+use Webmozart\Assert\Assert;
 
 /**
  * @property class-string<XotBaseResource> $resource
@@ -55,8 +57,11 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
      */
     final public function getFormSchema(): array
     {
-        $class= $this->getResource()::getFormClass();
-        return app($class)->getFormSchema();
+        $class = $this->getResource()::getFormClass();
+        $instance = app($class);
+        Assert::isInstanceOf($instance, XotBaseResourceForm::class);
+
+        return $instance->getFormSchema();
     }
 
     /**

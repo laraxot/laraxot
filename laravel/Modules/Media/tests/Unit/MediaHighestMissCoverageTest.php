@@ -66,11 +66,9 @@ describe('Media highest-miss coverage', function (): void {
         Assert::assertArrayHasKey('index', $mediaPages);
         Assert::assertArrayHasKey('view', $mediaPages);
         Assert::assertArrayHasKey('convert', $mediaPages);
-        
 
         Assert::assertSame(MediaConvert::class, MediaConvertResource::getModel());
         Assert::assertArrayHasKey('index', MediaConvertResource::getPages());
-        
 
         Assert::assertSame(TemporaryUpload::class, TemporaryUploadResource::getModel());
         Assert::assertNotEmpty(TemporaryUploadResource::getPages());
@@ -220,7 +218,7 @@ XML;
     });
 
     test('ViewMedia infolist schema and convert command missing file', function (): void {
-        Assert::assertArrayHasKey('media_grid', MediaInfolist::getInfolistSchema());
+        Assert::assertArrayHasKey('media_grid', app(MediaInfolist::class)->getInfolistSchema());
 
         Storage::fake('local');
         $this->artisan('media:convert-video', ['disk' => 'local', 'file' => 'missing.mp4']);

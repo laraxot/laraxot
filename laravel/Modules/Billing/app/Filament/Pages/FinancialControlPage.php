@@ -14,14 +14,17 @@ use Modules\Billing\Datas\OpenItem;
 use Modules\Billing\Queries\GetCashFlowProjectionQuery;
 use Modules\Billing\Queries\GetJobMarginsQuery;
 use Modules\Billing\Queries\GetReceivablesAgingQuery;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * The three questions an owner asks about money: who owes me, will I have
  * enough to pay what I owe, and which jobs are actually earning.
  */
-final class FinancialControlPage extends GatedXotBasePage
+final class FinancialControlPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-banknotes';
 
     protected static ?string $slug = 'financial-control';

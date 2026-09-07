@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
 use Modules\Wts\Models\WtsPrintJob;
 use Filament\Notifications\Notification;
@@ -14,8 +15,10 @@ use Modules\Wts\Label\ZplBuilder;
 /**
  * Configurazione e monitoraggio della stampa etichette (coda ZPL + agente locale).
  */
-final class WtsPrintingPage extends GatedXotBasePage
+final class WtsPrintingPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static bool $isDiscovered = false;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-printer';

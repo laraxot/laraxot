@@ -29,7 +29,7 @@ final class TimberCustomerForm extends XotBaseResourceForm
     public function getFormSchema(): array
     {
         return [
-            Tabs::make('customer')
+            'customer' => Tabs::make('customer')
                 ->columnSpanFull()
                 ->tabs([
                     Tab::make('Anagrafica')->schema(self::registryFields()),

@@ -22,9 +22,9 @@ namespace Modules\AiAssistant\Security;
  */
 final class AiActionPolicy
 {
-    public const DENIED_UNKNOWN_TYPE = 'unknown_action_type';
+    public const string DENIED_UNKNOWN_TYPE = 'unknown_action_type';
 
-    public const DENIED_RATE_LIMIT = 'rate_limit_exceeded';
+    public const string DENIED_RATE_LIMIT = 'rate_limit_exceeded';
 
     /**
      * @param  list<string>  $allowedTypes

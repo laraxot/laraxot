@@ -6,18 +6,6 @@ namespace Modules\Customer\Filament\Resources;
 
 use App\Support\AccountFeatures;
 use App\Support\Concerns\HasAccountFeatureVisibility;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ForceDeleteBulkAction;
-use Filament\Actions\RestoreBulkAction;
-use Filament\Actions\ViewAction;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Support\Facades\Auth;
 use Modules\Customer\Filament\Resources\ResellerResource\Pages;
 use Modules\Customer\Models\Reseller;
@@ -31,14 +19,11 @@ final class ResellerResource extends XotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-user-group';
 
-    /** @var string */
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.resellers';
+    private const string ACCOUNT_FEATURE_ADMIN = 'admin.resellers';
 
-    /** @var null */
-    private const ACCOUNT_FEATURE_OPERATOR = null;
+    private const ?string ACCOUNT_FEATURE_OPERATOR = null;
 
-    /** @var bool */
-    private const ACCOUNT_FEATURE_OPERATOR_DEFAULT = false;
+    private const bool ACCOUNT_FEATURE_OPERATOR_DEFAULT = false;
 
     public static function getNavigationGroup(): string
     {

@@ -5,15 +5,6 @@ declare(strict_types=1);
 namespace Modules\Catalog\Filament\Resources;
 
 use App\Support\Concerns\HasAccountFeatureVisibility;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
-use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Component;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Modules\Catalog\Filament\Resources\CatalogFrequencyResource\Pages;
 use Modules\Catalog\Models\CatalogFrequency;
 use Modules\Xot\Filament\Resources\XotBaseResource;

@@ -5,49 +5,13 @@ declare(strict_types=1);
 namespace Modules\Intervention\Filament\Resources;
 
 use App\Support\AccountFeatures;
-use Filament\Actions\Action;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ForceDeleteBulkAction;
-use Filament\Actions\RestoreBulkAction;
-use Filament\Actions\ViewAction;
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\RichEditor\TextColor;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Notifications\Notification;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
-use Filament\Schemas\Components\Utilities\Get;
-use Filament\Tables;
-use Filament\Tables\Filters\Filter;
-use Filament\Tables\Filters\SelectFilter;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\HtmlString;
-use Illuminate\Support\Js;
-use Illuminate\Support\Str;
-use Modules\Customer\Models\Customer;
-use Modules\Customer\Models\CustomerSite;
-use Modules\Document\Filament\Pages\UploadInterventionPhotos;
-use Modules\Intervention\Actions\FinalizeInterventionReportAction;
-use Modules\Intervention\Actions\StartTimePunchAction;
-use Modules\Intervention\Actions\StopTimePunchAction;
 use Modules\Intervention\Actions\SyncInterventionNotePhotosAction;
-use Modules\Intervention\Actions\SyncInterventionWorkMinutesFromTimePunchesAction;
-use Modules\Intervention\Exceptions\NoOpenTimePunchToStop;
-use Modules\Intervention\Exceptions\OpenTimePunchAlreadyExists;
 use Modules\Intervention\Filament\Resources\InterventionResource\Pages;
 use Modules\Intervention\Filament\Resources\InterventionResource\RelationManagers\InventoryMovementsRelationManager;
 use Modules\Intervention\Filament\Resources\InterventionResource\RelationManagers\IssueReportsRelationManager;
@@ -57,7 +21,6 @@ use Modules\Intervention\Filament\Resources\InterventionResource\RelationManager
 use Modules\Intervention\Filament\Resources\InterventionResource\RelationManagers\TimePunchesRelationManager;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Models\InterventionMaterialLine;
-use Modules\Intervention\Models\TimePunch;
 use Modules\Intervention\Support\DailyNoteHtml;
 use Modules\Platform\Settings\SettingsRepository;
 use Modules\User\Models\User;
@@ -454,29 +417,6 @@ final class InterventionResource extends XotBaseResource
             ->all();
     }
 
-    /**
-     * Il materiale di un intervento sta in due posti: le righe scritte a mano
-     * nel form e gli scarichi di magazzino. L'anteprima deve mostrare il più
-     * alto dei due totali (stessa regola di refreshEconomicTotals), non la
-     * somma: sono modi alternativi di registrare lo stesso materiale.
-     */
-    private static function previewMaterialsTotal(mixed $lines, ?Intervention $record): float
-    {
-        $manualTotal = self::computeManualMaterialsTotal($lines);
-
-        if (! $record instanceof Intervention || $record->getKey() === null) {
-            return $manualTotal;
-        }
-
-        $rawWarehouseTotal = $record->inventoryMovements()
-            ->where('movement_type', 'scarico')
-            ->sum('line_total');
-
-        $warehouseTotal = is_numeric($rawWarehouseTotal) ? (float) $rawWarehouseTotal : 0.0;
-
-        return round(max($manualTotal, $warehouseTotal), 2);
-    }
-
     private static function computeManualMaterialsTotal(mixed $lines): float
     {
         if (! is_iterable($lines)) {
@@ -505,71 +445,6 @@ final class InterventionResource extends XotBaseResource
         }
 
         return round($total, 2);
-    }
-
-    /**
-     * @return array<int, string>
-     */
-    private static function getPreviousNoteSuggestions(string $currentValue = ''): array
-    {
-        $query = DB::table('interventions')
-            ->whereNotNull('notes')
-            ->where('notes', '!=', '');
-
-        $currentValue = trim($currentValue);
-        if ($currentValue !== '') {
-            $query->where('notes', 'like', '%'.$currentValue.'%');
-        }
-
-        return $query
-            ->orderByDesc('id')
-            ->limit(5)
-            ->pluck('notes')
-            ->map(static fn ($note): string => trim(self::ensureString($note)))
-            ->filter(static fn (string $note): bool => $note !== '')
-            ->unique()
-            ->values()
-            ->all();
-    }
-
-    private static function applyNoteSuggestion(string $currentValue, string $suggestion): string
-    {
-        $currentValue = trim($currentValue);
-        $suggestion = trim($suggestion);
-
-        if ($suggestion === '') {
-            return $currentValue;
-        }
-
-        if ($currentValue === '') {
-            return $suggestion;
-        }
-
-        $normalizedCurrentValue = Str::lower($currentValue);
-        $normalizedSuggestion = Str::lower($suggestion);
-
-        if (Str::contains($normalizedSuggestion, $normalizedCurrentValue)) {
-            return $suggestion;
-        }
-
-        if (Str::contains($normalizedCurrentValue, $normalizedSuggestion)) {
-            return $currentValue;
-        }
-
-        return $currentValue.PHP_EOL.$suggestion;
-    }
-
-    private static function normalizeTextState(mixed $value): string
-    {
-        if (is_string($value)) {
-            return DailyNoteHtml::toPlainText($value);
-        }
-
-        if (is_numeric($value)) {
-            return (string) $value;
-        }
-
-        return '';
     }
 
     public static function isAssignedToUser(Intervention $record, int|string $userId): bool

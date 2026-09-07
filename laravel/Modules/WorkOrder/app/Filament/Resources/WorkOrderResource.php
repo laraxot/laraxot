@@ -7,37 +7,20 @@ namespace Modules\WorkOrder\Filament\Resources;
 use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
 use Filament\Actions\Action;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ForceDeleteBulkAction;
-use Filament\Actions\RestoreBulkAction;
-use Filament\Actions\ViewAction;
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\Radio;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
 use Filament\Infolists\Components\Entry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Tables;
-use Filament\Tables\Filters\Filter;
-use Filament\Tables\Filters\SelectFilter;
-use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Billing\Actions\BuildWorkOrderPreInvoiceAction;
-use Modules\Customer\Models\Contact;
 use Modules\Customer\Models\Customer;
-use Modules\Customer\Models\CustomerSite;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Actions\ComputeWorkOrderEffortAction;
-use Modules\WorkOrder\Actions\GenerateWorkOrderReportAction;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource\Pages;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers\ActivitiesRelationManager;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers\AssignmentsRelationManager;
@@ -49,7 +32,6 @@ use Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers\Publ
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers\ReadinessItemsRelationManager;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource\RelationManagers\StatusEventsRelationManager;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\WorkOrder\Models\WorkOrderStatus;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class WorkOrderResource extends XotBaseResource
@@ -379,9 +361,12 @@ final class WorkOrderResource extends XotBaseResource
     }
 
     /**
+     * Esposto public: consumato da WorkOrderResource\Schemas\WorkOrderForm,
+     * classe sorella (non sottoclasse) dopo l'estrazione Schemas/Tables.
+     *
      * @return array<int, string>
      */
-    private static function getCustomerOptionsForCurrentPanel(): array
+    public static function getCustomerOptionsForCurrentPanel(): array
     {
         $query = Customer::query()->whereNotNull('legal_name')->orderBy('legal_name');
 

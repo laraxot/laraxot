@@ -17,15 +17,15 @@ use Illuminate\Support\Facades\Gate;
 use Modules\Customer\Actions\UpsertCustomerContactByEmailAction;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Signature\Actions\StoreSignatureForModelAction;
 use Modules\Signature\Filament\Pages\Concerns\InteractsWithCanvasFormData;
 use Modules\WorkOrder\Actions\SetWorkOrderPrimaryContactAction;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * @property Schema $form
  */
-final class CaptureSignature extends GatedXotBasePage
+final class CaptureSignature extends XotBasePage
 {
     use InteractsWithCanvasFormData;
 

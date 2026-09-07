@@ -44,6 +44,14 @@ portando avanti quel lavoro (Filament canonical structure su Compliance) puo'
 aggiungere il tipo nativo alle 4 costanti quando lo committa, oppure lasciare
 un segnale qui/in INDEX per chi riprende la wave C.
 
+**Update 2026-09-07 (sessione successiva, PHPStan swarm):** quel WIP era
+la story `docs/stories/5.72.11.compliance-filament-canonical.story.md` (Task 1 +
+Task 2). Le 4 costanti qui sopra risultano gia' tipizzate nel WIP trovato
+all'avvio della sessione successiva (nessun'azione necessaria su quel fronte).
+Il WIP aveva pero' lasciato 5 errori PHPStan residui (dead code duplicato
+post-estrazione Schemas/Tables, non le costanti), chiusi separatamente — vedi
+`2026-09-07-compliance-phpstan-zero-canonical-wiring-fix.md`.
+
 ## Blocker Pest non correlato (gia' noto)
 
 `./vendor/bin/pest Modules/Compliance/tests --no-coverage` -> 25 failed, 1 passed.

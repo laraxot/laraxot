@@ -29,7 +29,7 @@ use Modules\UI\View\Composers\ThemeComposer;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('UI gap closer 100 — Livewire', function (): void {
     test('DarkModeSwitcher mount toggle and render', function (): void {
@@ -148,7 +148,7 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
     test('Image block ratio helpers', function (): void {
         Assert::assertSame('aspect-[3/4]', Image::getRatioClass('3-4'));
         Assert::assertSame('', Image::getRatioClass('unknown'));
-        Assert::assertNotEmpty(Image::getFormSchema());
+        Assert::assertNotEmpty((new Image())->getFormSchema());
         Assert::assertArrayHasKey('4-3', Image::getRatios());
     });
 

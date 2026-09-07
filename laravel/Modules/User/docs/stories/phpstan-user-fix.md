@@ -2,10 +2,15 @@
 id: phpstan-user-fix
 slug: phpstan-user
 scope: [module:User, project:base_workorder_fila5]
-status: Pending
+status: Superseded
 priority: High
 created: 2026-09-06
+superseded_by: 01.User-phpstan-fix.story.md
 ---
+
+> Superseded 2026-09-07: stesso obiettivo (PHPStan zero su Modules/User)
+> tracciato e chiuso in `01.User-phpstan-fix.story.md`. Non duplicare il
+> lavoro qui.
 
 ## Problema
 PHPStan errors in Modules/User

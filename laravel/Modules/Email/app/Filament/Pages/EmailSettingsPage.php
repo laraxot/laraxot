@@ -12,12 +12,15 @@ use Modules\Email\Actions\PollEmailInboxAction;
 use Modules\Email\Inbox\EmailInboxClientInterface;
 use Modules\Email\Models\EmailMessage;
 use Modules\Email\Settings\EmailSettings;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\User\Models\User;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
-final class EmailSettingsPage extends GatedXotBasePage
+final class EmailSettingsPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-envelope';
 
     protected static ?string $navigationLabel = 'Email AI';

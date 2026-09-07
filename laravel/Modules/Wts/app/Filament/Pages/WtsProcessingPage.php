@@ -9,7 +9,8 @@ use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Wts\Actions\CalculateWtsStandardOutputWeightAction;
 use Modules\Wts\Actions\RegisterWtsProcessingAction;
 use Modules\Wts\Models\WtsInboundLot;
@@ -17,8 +18,10 @@ use Modules\Wts\Models\WtsOperationalParameter;
 use Modules\Wts\Models\WtsUnit;
 use Modules\Wts\Queries\GetWtsOperationalParametersQuery;
 
-final class WtsProcessingPage extends GatedXotBasePage
+final class WtsProcessingPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static bool $isDiscovered = false;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-cog-6-tooth';

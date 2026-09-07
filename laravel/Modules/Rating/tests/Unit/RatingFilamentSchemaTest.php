@@ -15,6 +15,7 @@ use Modules\Rating\Filament\Resources\RatingResource\Schemas\RatingInfolist;
 use Modules\Rating\Filament\Resources\RatingResource\Tables\RatingsTable;
 use Modules\Rating\Filament\Resources\RatingResource\Tables\RatingTable;
 use Modules\Rating\Tests\TestCase;
+use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceInfolist;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 use PHPUnit\Framework\Assert;
 
@@ -82,7 +83,7 @@ test('RatingsTable copre i campi anagrafici del rating', function (): void {
 });
 
 test('i form espongono uno schema indicizzato per campo', function (): void {
-    $schema = RatingForm::getFormSchema();
+    $schema = (new RatingForm())->getFormSchema();
 
     ratingAssertKeyedSchema($schema, RatingForm::class);
     Assert::assertContainsOnlyInstancesOf(SchemaComponent::class, $schema);
@@ -94,18 +95,18 @@ test('RatingMorphForm è ancora uno stub vuoto', function (): void {
     // resource ne dichiara otto. È una lacuna aperta, segnalata in
     // docs/testing-and-coverage.md: quando verrà colmata, questo test va aggiornato
     // spostando la classe nel dataset qui sopra.
-    Assert::assertSame([], RatingMorphForm::getFormSchema());
+    Assert::assertSame([], (new RatingMorphForm())->getFormSchema());
 });
 
 test('gli infolist espongono uno schema indicizzato per campo', function (): void {
-    /** @var list<class-string> $classi */
+    /** @var list<class-string<XotBaseResourceInfolist>> $classi */
     $classi = [
         RatingInfolist::class,
         RatingMorphInfolist::class,
     ];
 
     foreach ($classi as $classe) {
-        $schema = $classe::getInfolistSchema();
+        $schema = (new $classe())->getInfolistSchema();
         Assert::assertIsArray($schema);
         ratingAssertKeyedSchema($schema, $classe);
     }
@@ -114,7 +115,7 @@ test('gli infolist espongono uno schema indicizzato per campo', function (): voi
 test('il form del rating dichiara i campi attesi', function (): void {
     Assert::assertSame(
         ['title', 'color', 'rule', 'flags', 'txt'],
-        array_keys(RatingForm::getFormSchema()),
+        array_keys((new RatingForm())->getFormSchema()),
     );
 });
 

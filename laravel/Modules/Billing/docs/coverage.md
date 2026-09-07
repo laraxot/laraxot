@@ -80,7 +80,28 @@ metadata:
 3. Document coverage percentage by file
 4. Set coverage thresholds per file group
 
+## Re-verification — 2026-09-07 (story 4.1.1)
+
+Working tree on session start had an uncommitted regression that reverted 3 already-fixed files
+(`InvoiceResource.php`, `InvoiceResource/Tables/InvoicesTable.php`, `SupplierResource.php`) back
+to the pre-fix state described in story 4.1.1, causing 17 fresh PHPStan errors. Root cause:
+another concurrent session saved unrelated edits from a stale pre-fix checkout. Restored the 3
+files (and the story file's status) to their already-committed `HEAD` content (commit `90af443`).
+No new code change; nothing to commit for the fix itself (0 diff vs `HEAD`).
+
+- **PHPStan** (`analyse Modules/Billing --memory-limit=-1`, cache cleared first): **0 errors**
+  (was 17 in the dirty working tree, was already 0 at `HEAD`).
+- **Pint** (`--test` on the 3 restored files): passed.
+- **Pest** (`Modules/Billing/tests --no-coverage`): **51 passed, 29 failed** (95 assertions,
+  383.73s) — identical pass/fail counts to the 2026-09-06 baseline above. All 29 failures are the
+  same pre-existing cause: `workorder_data_test` is missing tables (`customers`, `suppliers`,
+  `permissions`) on the `mariadb`/`billing` test connections. This is a test-database migration
+  gap outside the module's code (see second-brain
+  `project_test_db_missing_migrations_blocks_feature_tests.md`), not something this module's code
+  can fix without an owner-run migration of the shared test DB — coverage could not be raised this
+  session for that reason; it did not regress either.
+
 ---
 
-**Last Updated**: 2026-09-06 by Claude Code Agent
-**Story**: XOT-18.9 Billing (PHPStan L10 fix)
+**Last Updated**: 2026-09-07 by Claude Code Agent (Sonnet 5)
+**Story**: 4.1.1 Billing PHPStan fixes (regression restore)

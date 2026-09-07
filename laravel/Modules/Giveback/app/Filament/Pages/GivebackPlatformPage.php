@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Giveback\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use App\Support\AccountFeatures;
 use Illuminate\Support\Facades\Auth;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
-abstract class GivebackPlatformPage extends GatedXotBasePage
+abstract class GivebackPlatformPage extends XotBasePage
 {
     protected static bool $isDiscovered = false;
 

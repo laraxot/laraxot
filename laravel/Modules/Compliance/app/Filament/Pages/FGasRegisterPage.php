@@ -8,15 +8,18 @@ use App\Support\AccountFeatures;
 use BackedEnum;
 use Illuminate\Support\Facades\Auth;
 use Modules\Compliance\Application\Queries\GetFGasOverviewQuery;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * The two obligations that follow refrigerant and heating work around: leak
  * checks under the F-Gas Regulation, and controls still waiting to be filed
  * with the regional register.
  */
-final class FGasRegisterPage extends GatedXotBasePage
+final class FGasRegisterPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-beaker';
 
     protected static ?string $slug = 'fgas-register';

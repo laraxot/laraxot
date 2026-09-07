@@ -23,12 +23,12 @@ final class BomForm extends XotBaseResourceForm
     }
 
     /**
-     * @return array<int, Component>
+     * @return array<string, Component>
      */
     public function getFormSchema(): array
     {
         return [
-            Section::make()
+            'main' => Section::make()
                 ->columnSpanFull()
                 ->components([
                     Select::make('product_id')

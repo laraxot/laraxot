@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
 use Modules\Wts\Queries\SearchWtsAuditQuery;
 use Illuminate\Support\Facades\Auth;
 
-final class WtsAuditPage extends GatedXotBasePage
+final class WtsAuditPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static bool $isDiscovered = false;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-magnifying-glass';

@@ -155,3 +155,72 @@ several "before" numbers above are reasoned analytically instead of re-measured.
 - Pest: the logic actually touched by this fix (constants + their consumers) is green.
   The module's broader Feature suite is blocked by a pre-existing, out-of-scope test-DB
   migration gap that is explicitly not this story's to fix.
+
+## 2026-09-07 (session 2) — Epic4 Schemas/Tables extraction tail: dead code + return.type fix
+
+Follow-up on story `01.Timber-phpstan-fix`, resuming after the Epic4
+`filament-canonical-structure` swarm's WIP on this module cooled down (see
+`docs/chat/2026-09-07-phpstan-timber-standdown.md` and
+`docs/chat/2026-09-07-phpstan-timber-claim-cold-wip.md`).
+
+### PHPStan
+
+| | Before | After |
+|---|---|---|
+| `phpstan analyse Modules/Timber --memory-limit=-1 --no-progress` (cache cleared) | 10 errors | 0 errors |
+
+All 10 were the same two mechanical patterns already generalized for this
+swarm elsewhere (Compliance/Intervention/HR/Notify/Bom): 7×
+`method.unused` (private static field-builder methods left behind in
+`*Resource.php` after their logic was copied, not moved, into the new
+`Schemas/*Form.php` classes) + 3× `return.type` (`getFormSchema()` /
+`getInfolistSchema()` returning `array<int, Component>` instead of the
+`array<string, Component>` required by
+`XotBaseResourceForm`/`XotBaseResourceInfolist`).
+
+Fix: removed the 7 dead methods (verified via `grep` that nothing else in
+the module called them) plus their now-orphaned `use` imports (verified
+individually, not assumed), and added the missing top-level string key on
+the 3 `getFormSchema()`/`getInfolistSchema()` return arrays, matching the
+pattern already used by every other `Schemas/*Form.php` in this module.
+
+### Pint
+
+`pint --test` on the 6 touched files: passed (after one auto-fix pass —
+`fully_qualified_strict_types` simplified `@return array<string,
+\Filament\Schemas\Components\Component>` to `@return array<string,
+Component>` in the 3 `Schemas/*.php` files, since `Component` was already
+imported; cosmetic only, no behavior change).
+
+### PHPMD
+
+`tools/phpmd.sh Modules/Timber text Modules/Timber/phpmd.ruleset.xml`,
+filtered to the 6 touched files: 1 pre-existing violation
+(`CouplingBetweenObjects` on `TimberCustomerResource.php`, value reduced —
+not worsened — by removing 3 dead-method dependencies); not fixed, out of
+this task's mechanical/low-risk scope, consistent with the existing PHPMD
+debt already documented above in this file.
+
+### Pest
+
+`vendor/bin/pest Modules/Timber/tests --no-coverage` — same pre-existing
+test-DB gap documented above (`workorder_data_test` missing Timber/User
+migrations) applies; this fix touches no runtime logic covered by tests
+(dead-code removal + a return-type/array-key correction that Filament's
+form/infolist builder consumes structurally, not through a code path any
+current test reaches), so there is no coverage regression risk from this
+change specifically. Full run output captured for the record; pre-existing
+failures are the same class already described in this file, not
+re-litigated here.
+
+### Files touched
+
+- `app/Filament/Resources/TimberCustomerResource.php`
+- `app/Filament/Resources/TimberCustomerResource/Schemas/TimberCustomerForm.php`
+- `app/Filament/Resources/TimberCustomerResource/Schemas/TimberCustomerInfolist.php`
+- `app/Filament/Resources/TimberDocumentResource.php`
+- `app/Filament/Resources/TimberProductResource.php`
+- `app/Filament/Resources/TimberProductResource/Schemas/TimberProductForm.php`
+
+No `mixed` introduced. `phpstan.neon` untouched. No `@phpstan-ignore`, no
+baseline entries.

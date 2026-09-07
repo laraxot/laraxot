@@ -7,9 +7,10 @@ namespace Modules\WorkOrder\Filament\Pages;
 use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Auth;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\WorkOrder\Actions\BuildPeriodicSummaryAction;
 use Modules\WorkOrder\Actions\GeneratePeriodicSummaryPdfAction;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /**
@@ -17,8 +18,10 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
  * interventions, materials and quotations aggregated over a date range, with a
  * one-click PDF of the same figures.
  */
-final class PeriodicSummaryPage extends GatedXotBasePage
+final class PeriodicSummaryPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-chart-bar';
 
     protected static ?string $slug = 'periodic-summary';

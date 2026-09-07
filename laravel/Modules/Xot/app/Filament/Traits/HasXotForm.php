@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Traits;
 
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Schema;
 
 trait HasXotForm
@@ -11,6 +12,9 @@ trait HasXotForm
     /** @var array<string, mixed> */
     public array $data = [];
 
+    /**
+     * @return array<string, Component>
+     */
     abstract public function getFormSchema(): array;
 
     public function getFormColumns(): int

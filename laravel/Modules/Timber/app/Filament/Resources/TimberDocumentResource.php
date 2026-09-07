@@ -6,23 +6,11 @@ namespace Modules\Timber\Filament\Resources;
 
 use App\Support\AccountFeatures;
 use Filament\Actions\Action;
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
-use Filament\Schemas\Components\Component;
-use Filament\Schemas\Components\Section;
-use Filament\Schemas\Components\Utilities\Get;
-use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Support\Facades\Auth;
 use Modules\Timber\Actions\PostTimberDocumentStockAction;
 use Modules\Timber\Filament\Resources\TimberDocumentResource\Pages;
 use Modules\Timber\Models\TimberDocument;
-use Modules\Timber\Models\TimberProduct;
-use Modules\Timber\Queries\GetTimberProductStockByLotQuery;
-use Modules\Timber\Support\TimberConfigMap;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class TimberDocumentResource extends XotBaseResource
@@ -89,11 +77,6 @@ final class TimberDocumentResource extends XotBaseResource
                     Notification::make()->title($exception->getMessage())->warning()->send();
                 }
             });
-    }
-
-    private static function formatQuantity(float $quantity): string
-    {
-        return rtrim(rtrim(number_format($quantity, 3, ',', '.'), '0'), ',');
     }
 
     public static function getPages(): array

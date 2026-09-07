@@ -20,7 +20,8 @@ use Modules\MetalWork\Datas\MetalPartCosting;
 use Modules\MetalWork\Models\MetalDrawing;
 use Modules\MetalWork\Models\MetalDrawingComponent;
 use Modules\MetalWork\Models\MetalRawMaterial;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Quotation\Filament\Resources\QuotationResource;
 use Throwable;
 
@@ -35,8 +36,10 @@ use function Safe\file_get_contents;
  * the operator changes one input and wants to watch the price move. Only the
  * "save" step freezes it.
  */
-final class MetalDrawingQuotationPage extends GatedXotBasePage
+final class MetalDrawingQuotationPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     use WithFileUploads;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-arrow-up';

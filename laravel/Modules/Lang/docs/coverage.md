@@ -269,4 +269,103 @@ committed). `Modules/Lang/lang/it/txt.php` was also found already modified befor
 kept changing while this task was in progress — left untouched and excluded from this commit, per the
 "don't touch another session's live WIP" rule.
 
+## 2026-09-07 — PHPStan regression fix: static call on canonical Schemas instance methods
+
+Task: PHPStan zero campaign re-run on `Modules/Lang` (`bashscripts/docs/prompts/03-quality-gates.md`).
+The module had already been closed at 0 errors (see `docs/stories/phpstan-Lang-fix.md`, done
+2026-09-06), but a concurrent session's Epic 4 "filament-canonical-structure" swarm refactored
+`TranslationFileResource` + its `Schemas/TranslationFileForm.php` / `Schemas/TranslationFileInfolist.php`
+while this session was picking up the module (live WIP visible in `git status`, ~27 dirty files,
+none of them touched here except the one test file below). That refactor is architecturally correct
+(Resource no longer overrides `getFormSchema()`/inline schema; the dedicated `Schemas/{Model}Form`
+and `Schemas/{Model}Infolist` classes now own the schema as an **instance** method, matching
+`XotBaseResourceForm`/`XotBaseResourceInfolist`'s abstract contract) — but it left a stale test
+calling the old shape statically.
+
+### Baseline (this session, cache cleared)
+
+`./vendor/bin/phpstan analyse Modules/Lang --no-progress --memory-limit=-1` → **3 errors**, all
+`method.staticCall` in `tests/Unit/LangCoverageBoostTest.php`:
+- L143 `TranslationFileResource::getFormSchema()` — inherited instance bridge on `XotBaseResource`
+  (`final public function getFormSchema(): array`), called statically.
+- L154 `TranslationFileForm::getFormSchema()` — abstract instance method on `XotBaseResourceForm`.
+- L155 `TranslationFileInfolist::getInfolistSchema()` — abstract instance method on
+  `XotBaseResourceInfolist`.
+
+### Root cause
+
+Not a source-code bug: `getFormSchema()`/`getInfolistSchema()` are declared as instance methods by
+design (`XotBaseResourceForm::configure()`/`XotBaseResourceInfolist::configure()` resolve the
+concrete class via `app(static::class)` and call the method on that instance — see
+`Modules/Xot/app/Filament/Resources/Schemas/XotBaseResourceForm.php` and
+`.../XotBaseResourceInfolist.php`). The test was written before/against an older, non-canonical
+shape and never updated when the Resource lost its inline schema. Same class of bug already
+documented for other modules in
+`bashscripts/ai/wiki/memories/xotbaseresource-inline-delegate-static-call-bug.md` (dead inline
+override case) and `.../geo-addressform-schema-reuse-static-call-bug.md` (legitimate external reuse
+case) — this is a third variant: a **test** consuming its own module's canonical Schemas classes.
+
+### Fix (root cause, test-only)
+
+`tests/Unit/LangCoverageBoostTest.php`, three call sites converted from static to instance calls,
+consistent with the sibling `(new TranslationFilesTable())->getTableColumns()` call already present
+two lines below in the same test:
+
+```php
+// before
+Assert::assertSame([], TranslationFileResource::getFormSchema());
+$formSchema = TranslationFileForm::getFormSchema();
+$infolistSchema = TranslationFileInfolist::getInfolistSchema();
+
+// after
+Assert::assertSame([], (new TranslationFileResource())->getFormSchema());
+$formSchema = (new TranslationFileForm())->getFormSchema();
+$infolistSchema = (new TranslationFileInfolist())->getInfolistSchema();
+```
+
+No `@phpstan-ignore`, no baseline, no widened types, `phpstan.neon` untouched.
+
+### PHPStan
+
+- Before (this session): 3 errors.
+- After: **0 errors** (`./vendor/bin/phpstan analyse Modules/Lang --no-progress --memory-limit=-1`,
+  clean result cache).
+
+### Pest
+
+- Targeted: `./vendor/bin/pest Modules/Lang/tests/Unit/LangCoverageBoostTest.php -c
+  Modules/Lang/phpunit.xml --no-coverage` → **14 passed (58 assertions)**, including the two tests
+  touching the three fixed call sites.
+- Full-suite confirmed still blocked by the same pre-existing `dddx()` dump-and-die in
+  `SaveTransAction.php` documented above (2026-09-04 entry) — reached and passed
+  `LangCoverageBoostTest` cleanly in-context before dying at `LangCoverageGapsTest`'s deliberate
+  catch-branch trigger. Not caused by this change, not fixed here (out of scope: touching
+  `SaveTransAction.php`'s error handling is a separate, pre-existing concern already flagged).
+- One unrelated pre-existing failure confirmed via isolated run of
+  `tests/Unit/Actions/ReadTranslationFileActionTest.php` (`handles numeric values in translation
+  values`, `boolean_false` string-cast assertion) — file never touched by this session, not a
+  regression from this fix.
+
+### PHPMD
+
+`./tools/phpmd.sh Modules/Lang text Modules/Lang/phpmd.ruleset.xml` → large pre-existing debt across
+the module (Cyclomatic/NPath complexity, CamelCase variables, MissingImport, ElseExpression, etc.),
+none of it on the three changed lines (143/154/155) or newly introduced by this change. Out of scope
+for a targeted PHPStan-regression fix on a shared, actively-contended module; left untouched.
+
+### PHPInsights
+
+`vendor/bin/phpinsights` confirmed installed and runnable in this repo (contradicts a stale hook
+message claiming otherwise — see `bashscripts/ai/wiki/memories/feedback_phpinsights_removed_use_exact_gate_commands.md`).
+Not run module-wide in this session: scope was a single 3-line test fix already verified clean by
+PHPStan + targeted Pest + scoped PHPMD; a full module-wide PHPInsights pass belongs to whichever
+session owns the broader Epic 4 canonical-structure work currently in flight on this module's
+`app/Filament/Resources/TranslationFileResource*` files.
+
+### Files touched
+
+- `tests/Unit/LangCoverageBoostTest.php` (3 lines)
+- `docs/coverage.md` (this entry)
+- `docs/stories/7.4.phpstan-canonical-schemas-static-call-fix.story.md` (new)
+
 Story: `docs/stories/lang-services-to-actions.story.md`.

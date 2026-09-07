@@ -29,7 +29,7 @@ final class TimberProductForm extends XotBaseResourceForm
     public function getFormSchema(): array
     {
         return [
-            Tabs::make('product')->columnSpanFull()->tabs([
+            'product' => Tabs::make('product')->columnSpanFull()->tabs([
                 Tab::make('Prodotto')->schema(self::productFields()),
                 Tab::make('Caratteristiche')->schema(self::featureFields()),
                 Tab::make('Magazzino')->schema(self::warehouseFields()),

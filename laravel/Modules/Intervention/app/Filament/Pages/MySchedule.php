@@ -15,15 +15,18 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\DailyNote;
 use Modules\Intervention\Models\Intervention;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Platform\Models\PlatformSetting;
 use Modules\User\Models\User;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * @property Schema $form
  */
-final class MySchedule extends GatedXotBasePage
+final class MySchedule extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
 
     protected static ?string $navigationLabel = 'Agenda';

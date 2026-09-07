@@ -9,13 +9,16 @@ use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Wts\Actions\MoveWtsUnitAction;
 use Modules\Wts\Models\WtsUnit;
 use Modules\Wts\Queries\GetWtsWorkQueueOverviewQuery;
 
-final class WtsWorkQueuePage extends GatedXotBasePage
+final class WtsWorkQueuePage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static bool $isDiscovered = false;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-queue-list';

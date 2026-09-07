@@ -12,8 +12,7 @@ final class SearchCompanyOnlineAction
 {
     use QueueableAction;
 
-    /** @var int */
-    private const MAX_RESULTS = 5;
+    private const int MAX_RESULTS = 5;
 
     public function __construct(
         private readonly CompanyLookupProviderInterface $provider,

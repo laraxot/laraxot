@@ -2,10 +2,70 @@
 name: EnergyBroker Code Coverage
 description: PHPStan L10 fix verification and code quality baseline
 tags: [coverage, phpstan, quality-gates]
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 
 # Code Coverage: EnergyBroker
+
+## Round 3 — 2026-09-07 (canonical-structure Schemas/ follow-up: getFormSchema return type)
+
+**Context:** the Epic4 filament-canonical-structure swarm (story `4.14.8.energybroker-canonical`)
+extracted `getFormSchema()`/`getInfolistSchema()`/`table()` out of
+`EnergyBrokerDocumentResource.php` into `Schemas/EnergyBrokerDocumentForm.php`,
+`Schemas/EnergyBrokerDocumentInfolist.php`, `Tables/EnergyBrokerDocumentsTable.php`
+(left uncommitted in the shared working tree). That extraction introduced a fresh
+PHPStan error in the new `EnergyBrokerDocumentForm.php`.
+
+- Error: `return.type` — `getFormSchema(): array` is declared
+  `@return array<string, Component>` but the method returned a plain list
+  (`array<int, Section>` — five `Section::make(...)` entries with no explicit
+  keys), matching `XotBaseResourceForm::getFormSchema(): array`'s contract.
+- Fix: keyed each of the five top-level `Section::make(...)` entries with a
+  descriptive string key (`document_summary`, `customer_data`, `billing_data`,
+  `supply_data`, `contract_data`) instead of leaving them as a positional list —
+  same pattern already used across Billing/Catalog/Compliance canonical
+  `*Form.php` files (`'section' => Section::make(...)`). No behavioral change,
+  same components/order.
+
+### PHPStan
+- Before: 1 error (`return.type` in `EnergyBrokerDocumentForm.php:28`)
+- After: **0 errors**
+- Verified with `phpstan clear-result-cache` + fresh
+  `phpstan analyse Modules/EnergyBroker --memory-limit=-1 --no-progress` →
+  `[OK] No errors`
+
+### Pint
+- `./vendor/bin/pint Modules/EnergyBroker/app/Filament/Resources/EnergyBrokerDocumentResource/Schemas/EnergyBrokerDocumentForm.php --test`
+  → passed, no changes needed.
+
+### PHPMD
+- `./tools/phpmd.sh Modules/EnergyBroker text phpmd.xml` — only pre-existing
+  findings (Actions/Jobs/Providers: MissingImport, CyclomaticComplexity,
+  NPathComplexity, LongClassName, CamelCasePropertyName). None in the touched
+  `Schemas/EnergyBrokerDocumentForm.php`.
+
+### PHPInsights
+- `./tools/phpinsights.sh analyse Modules/EnergyBroker --no-interaction --composer=composer.lock`
+- Code: 92.8 pts (1422 lines) — stable
+- Complexity: 74.4 pts (avg cyclomatic 2.50) — stable vs Round 2's 73.8 (file
+  count grew from the canonical-structure extraction, not from this fix)
+- Architecture: 88.2 pts (60 files) — stable
+- Style (Misc): 86.7 pts — stable
+- No new findings on the touched file (public-property/short-ternary/mixed-type
+  findings are all pre-existing, in other files).
+
+### Pest
+- `./vendor/bin/pest Modules/EnergyBroker/tests --no-coverage` (module has no
+  local `phpunit.xml`, ran against root config)
+- Before and after: **11 passed / 11 failed (unchanged)**
+- All 11 failures are the same pre-existing `QueryException` —
+  `workorder_data_test.roles` table missing on the `mariadb`/Spatie-Permission
+  connection (shared test-DB gap, already documented in Round 2 and in
+  second-brain memory `project_test_db_missing_migrations_blocks_feature_tests.md`).
+  Per "data is sacred", did not run `migrate`/`migrate:fresh`/`RefreshDatabase`.
+  Coverage unchanged — this fix only touched a return-type/array-keying issue
+  in a Filament schema definition, unreachable from any currently-passing or
+  currently-failing test.
 
 ## Round 2 — 2026-09-06 (Filament v4→v5 deprecation cleanup)
 

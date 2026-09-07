@@ -21,12 +21,12 @@ final class EnergyBrokerDocumentForm extends XotBaseResourceForm
     }
 
     /**
-     * @return array<int, Component>
+     * @return array<string, Component>
      */
     public function getFormSchema(): array
     {
         return [
-            Section::make(__('energy_broker.sections.document_summary'))->columns(3)->columnSpanFull()->components([
+            'document_summary' => Section::make(__('energy_broker.sections.document_summary'))->columns(3)->columnSpanFull()->components([
                 TextEntry::make('source_file_name')
 
                     ->state(fn (?EnergyBrokerDocument $record): string => (string) ($record->source_file_name ?? '-')),
@@ -49,7 +49,7 @@ final class EnergyBrokerDocumentForm extends XotBaseResourceForm
 
                     ->state(fn (?EnergyBrokerDocument $record): string => (string) ($record->media->title ?? '-')),
             ]),
-            Section::make(__('energy_broker.sections.customer_data'))->columns(3)->columnSpanFull()->components([
+            'customer_data' => Section::make(__('energy_broker.sections.customer_data'))->columns(3)->columnSpanFull()->components([
                 TextEntry::make('payload_customer_legal_name')
 
                     ->state(fn (?EnergyBrokerDocument $record): string => EnergyBrokerDocumentResource::payloadValue($record, 'customer.legal_name')),
@@ -72,7 +72,7 @@ final class EnergyBrokerDocumentForm extends XotBaseResourceForm
 
                     ->state(fn (?EnergyBrokerDocument $record): string => EnergyBrokerDocumentResource::payloadValue($record, 'customer.province')),
             ]),
-            Section::make(__('energy_broker.sections.billing_data'))->columns(3)->columnSpanFull()->components([
+            'billing_data' => Section::make(__('energy_broker.sections.billing_data'))->columns(3)->columnSpanFull()->components([
                 TextEntry::make('payload_document_number')
 
                     ->state(fn (?EnergyBrokerDocument $record): string => EnergyBrokerDocumentResource::payloadValue($record, 'document.document_number')),
@@ -92,7 +92,7 @@ final class EnergyBrokerDocumentForm extends XotBaseResourceForm
 
                     ->state(fn (?EnergyBrokerDocument $record): string => EnergyBrokerDocumentResource::payloadValue($record, 'document.customer_code')),
             ]),
-            Section::make(__('energy_broker.sections.supply_data'))->columns(3)->columnSpanFull()->components([
+            'supply_data' => Section::make(__('energy_broker.sections.supply_data'))->columns(3)->columnSpanFull()->components([
                 TextEntry::make('payload_pod')
 
                     ->state(fn (?EnergyBrokerDocument $record): string => EnergyBrokerDocumentResource::payloadValue($record, 'supply.pod')),
@@ -118,7 +118,7 @@ final class EnergyBrokerDocumentForm extends XotBaseResourceForm
 
                     ->state(fn (?EnergyBrokerDocument $record): string => EnergyBrokerDocumentResource::payloadValue($record, 'supply.annual_consumption_gas')),
             ]),
-            Section::make(__('energy_broker.sections.contract_data'))->columns(3)->columnSpanFull()->components([
+            'contract_data' => Section::make(__('energy_broker.sections.contract_data'))->columns(3)->columnSpanFull()->components([
                 TextEntry::make('payload_current_supplier')
 
                     ->state(fn (?EnergyBrokerDocument $record): string => EnergyBrokerDocumentResource::payloadValue($record, 'contract.current_supplier')),

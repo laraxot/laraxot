@@ -14,14 +14,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
 use Modules\Signature\Actions\StoreSketchForModelAction;
 use Modules\Signature\Filament\Pages\Concerns\InteractsWithCanvasFormData;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * @property Schema $form
  */
-final class CaptureSketch extends GatedXotBasePage
+final class CaptureSketch extends XotBasePage
 {
     use InteractsWithCanvasFormData;
 

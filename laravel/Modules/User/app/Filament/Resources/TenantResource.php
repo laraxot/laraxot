@@ -8,12 +8,10 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources;
 
-use Filament\Forms\Components\ColorPicker;
-use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Section;
-use Filament\Support\Components\Component;
+use Filament\Resources\RelationManagers\RelationGroup;
+use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Resources\RelationManagers\RelationManagerConfiguration;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 use Modules\User\Filament\Resources\TenantResource\Pages\CreateTenant;
 use Modules\User\Filament\Resources\TenantResource\Pages\EditTenant;
 use Modules\User\Filament\Resources\TenantResource\Pages\ListTenants;
@@ -38,7 +36,7 @@ class TenantResource extends XotBaseResource
     }
 
     /**
-     * @return array<string, Component>
+     * @return array<int, class-string<RelationManager>|RelationGroup|RelationManagerConfiguration>
      */
     #[\Override]
     public static function getRelations(): array

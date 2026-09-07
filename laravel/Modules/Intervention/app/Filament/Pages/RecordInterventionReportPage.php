@@ -19,8 +19,9 @@ use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
 use Modules\Intervention\Queries\GetPastInterventionNotesForReportQuery;
 use Modules\Intervention\Settings\InterventionTariffSettings;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\User\Models\User;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Mobile-first page: the operator records a voice note, the AI turns it into a
@@ -29,8 +30,9 @@ use Modules\User\Models\User;
  * {@see ApplyInterventionReportDraftAction} and
  * {@see SaveInterventionReportAttachmentsAction}.
  */
-final class RecordInterventionReportPage extends GatedXotBasePage
+final class RecordInterventionReportPage extends XotBasePage
 {
+    use GatesPageNavigation;
     use WithFileUploads;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-microphone';

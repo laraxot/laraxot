@@ -148,3 +148,122 @@ completate.
 - `tests/Unit/Actions/BuildMailMessageActionTest.php` (fix assert stale)
 - `docs/stories/01.Notify-phpstan-fix.story.md`
 - `docs/coverage.md` (questa sezione)
+
+## Aggiornamento 2026-09-07 — regressione 0→14 errori, fix 3 static-call, 0 errori confermati
+
+Story: `docs/stories/01.Notify-phpstan-fix.story.md` (sezione "Aggiornamento
+2026-09-07").
+
+### PHPStan
+
+```bash
+cd laravel
+./vendor/bin/phpstan analyse Modules/Notify --memory-limit=-1 --no-progress
+```
+
+| Momento | Errori |
+|---|---:|
+| Baseline questa sessione (regredita dallo 0 del 2026-09-06 per lavoro concorrente non committato di un altro agente swarm) | 14 |
+| Dopo il fix dei 3 file di mia proprieta' | 0 |
+
+Verificato due volte, la seconda con `tmpDir` isolato (`/tmp/phpstan-notify-verify-cache`,
+config temporanea `/tmp/phpstan-notify-verify.neon` fuori repo) per escludere
+un falso negativo da cache condivisa fra agenti dello swarm sullo stesso
+`tmpDir: /tmp/phpstan` dichiarato in `phpstan.neon` — stesso esito, 0 errori
+reali.
+
+Causa radice unica nei 4 errori residui dopo il primo giro (14 -> 4, gli
+altri 10 sono stati corretti nel frattempo da un altro agente concorrente
+sugli stessi file, vedi nota sotto): chiamata statica
+(`ClassName::getFormSchema()` / `::getInfolistSchema()`) a metodi di
+istanza `final` su `XotBaseResource`/`XotBaseResourceForm`/
+`XotBaseResourceInfolist` — errore PHP reale a runtime in PHP 8.3, non solo
+PHPStan. Pattern di fix: `app(Class::class)->getFormSchema()` (gia' in uso
+in `Modules/Xot/app/Filament/Resources/XotBaseResource/RelationManager/XotBaseRelationManager.php`).
+
+### PHPMD
+
+```bash
+cd laravel
+./tools/phpmd.sh Modules/Notify text phpmd.xml
+```
+
+~130 finding, invariati rispetto alla baseline del 2026-09-06 (stesso
+pattern: `CamelCaseVariableName`/`CamelCasePropertyName` su DTO che
+rispecchiano payload esterni SMS/WhatsApp/Telegram/SMTP,
+`UnusedFormalParameter $notifiable`/`$panel` richiesti dalle firme
+Filament/Notification, `CyclomaticComplexity`/`NPathComplexity` su due
+pagine legacy `SendPushNotification(Page)`). Nessun finding nuovo sui 3 file
+toccati in questa sessione (nessuno dei tre appare nell'output).
+`phpinsights` non e' installato in questo repo (rimosso, incompatibile con
+Pest 5): non eseguito.
+
+### Pest
+
+```bash
+cd laravel
+./vendor/bin/pest Modules/Notify/tests/Unit/NotifyHighestMissCoverageTest.php -c Modules/Notify/phpunit.xml --no-coverage --filter="notification template and theme forms"
+./vendor/bin/pest Modules/Notify/tests/Unit/Filament/Resources/NotifyFilamentResourcesCoverageTest.php -c Modules/Notify/phpunit.xml --no-coverage --filter="notification infolist schema"
+```
+
+Entrambi **PASS** (1/1, rispettivamente 2 e 10 assertion) — i due test che
+esercitano direttamente le chiamate corrette.
+
+Suite completa (`tests/Unit`) fortemente contesa durante la misura (8+ run
+Pest concorrenti di altri agenti sulla stessa macchina, load average >10 su
+24 core; ogni test individuale, normalmente sub-100ms, ha impiegato
+~1.2-1.4s per il contendere di CPU). Un primo tentativo e' arrivato a 18
+minuti di CPU senza terminare ed e' stato interrotto; un secondo tentativo
+con `timeout 400` si e' fermato da solo (`EXIT=124`) dopo aver coperto
+`Actions/` + `Channels/` + `Console/` + `Datas/` (in ordine alfabetico, non
+l'intero `tests/Unit`) — stesso limite gia' documentato il 27 agosto 2026 e
+il 2026-09-06 ("un run completo e' stato interrotto dal timeout di
+sicurezza (400s) prima della fine").
+
+Nella porzione completata: 10 `FAIL` (classi:
+`Actions/NotificationManagerTest`, `Actions/SMS/NormalizePhoneNumberActionTest`,
+`Actions/SMS/SendAgiletelecomSMSActionTest`,
+`Actions/SMS/SendAgiletelecomSMSv1ActionTest`,
+`Actions/SMS/SendAgiletelecomSMSv2ActionTest`,
+`Actions/SendAppointmentNotificationActionTest`,
+`Actions/SendNotificationActionTest`, `Actions/SendNotificationFlowTest`,
+`Console/Commands/AnalyzeTranslationFilesTest`,
+`Datas/NotifyDatasCoverageTest`) — **nessuno dei 3 file toccati in questa
+sessione, nessun dettaglio d'errore disponibile** (il blocco `FAILED` con
+lo stack trace viene stampato da Pest solo nel riepilogo finale, mai
+raggiunto perche' il processo e' stato interrotto a meta' suite). Pattern
+compatibile con l'indisponibilita' del DB di test documentata sopra dal 27
+agosto 2026 (Actions che inviano SMS/notifiche reali dipendono da
+connessioni esterne/DB). Non in scope di questa story: nessuno di questi
+file rientra fra i 3 corretti, non introdotti da questa sessione (verificato
+che nessuno dei 3 file toccati appare nell'elenco `FAIL`).
+
+### Regressione di coverage trovata ma NON di mia proprieta' — segnalata, non corretta
+
+Durante questa sessione un altro agente concorrente (lavoro non committato,
+`git status` nel modulo con 102 file `M` all'avvio) ha **rimosso** (invece
+di correggere con `app(Class::class)->getFormSchema()`) due blocchi di test
+che la causa radice sopra riguardava:
+
+- `tests/Unit/Filament/Resources/NotifyFilamentResourcesCoverageTest.php` —
+  test `'resources expose model pages and legacy form schema'` (5
+  assertion su Contact/MailTemplate/Notification/NotificationTemplate/
+  NotifyTheme Resource) rimosso.
+- `tests/Unit/Filament/Resources/NotifyThemeAndColumnsCoverageTest.php` —
+  copertura equivalente su `NotifyThemeResource` rimossa.
+
+Netto: la coverage di questa porzione del modulo e' **scesa**, in contrasto
+col mandato di questa story. Non ho ripristinato ne' corretto questi file:
+non erano di mia proprieta' in questa sessione (modificati da un altro
+agente pochi minuti prima del mio avvio, `git status`/timestamp alla mano),
+e la regola di progetto impone di fermarsi quando un altro agente sta gia'
+lavorando sugli stessi file invece di sovrascriverne il lavoro in corso.
+Segnalato al coordinatore e in `docs/chat/` per chi possiede quei file.
+
+### File toccati (2026-09-07)
+
+- `app/Filament/Resources/NotificationTemplateResource.php`
+- `tests/Fixtures/ViewNotificationTestProxy.php`
+- `tests/Unit/NotifyHighestMissCoverageTest.php`
+- `docs/stories/01.Notify-phpstan-fix.story.md`
+- `docs/coverage.md` (questa sezione)

@@ -52,6 +52,7 @@ Moduli in lavorazione parallela: User, PublicProcurement, TimberBilling, Interve
 Ogni agente: lock per-file (`bashscripts/lock/{check,lock,unlock}.sh`) prima di editare, converte a `foreignIdFor()` preservando nomi colonna e semantica `constrained()`, poi phpstan/pint/pest sul proprio scope. Dettagli in migration-foreignidfor-swarm.md.
 
 - [ViewRecord: schema solo nella Resource](2026-09-07-view-record-resource-infolist-only.md) — Codex: sviluppo + review BMAD read-only; in corso 2026-09-07.
+- [CLAIM typeCoverage final push](2026-09-07-claim-typecoverage-final-push-swarm.md) — 100 costanti/11 moduli, story 2.8/5.1, 66.8%→99% target — in corso 2026-09-07 (claude sonnet 5)
 - [CLAIM Platform+Timber phpstan-zero](2026-09-07-claim-platform-timber-phpstan-swarm.md) — 10+10 errori reali, story-2.15 batch stale ~3h15m — in corso 2026-09-07 (claude sonnet 5)
 - [CLAIM Billing phpstan-zero](2026-09-07-claim-billing-phpstan-swarm.md) — standdown, vedi [phpstan-billing-standdown](2026-09-07-phpstan-billing-standdown.md): gia' 0 errori, modulo conteso da swarm Epic4 live (story 4.1.1 done + 5.71 in_progress) — 2026-09-07 (claude sonnet 5)
 - [CLAIM Media phpstan-zero](2026-09-07-claim-media-phpstan-swarm.md) — 8 errori reali, 03-quality-gates — in corso 2026-09-07 (claude sonnet 5)

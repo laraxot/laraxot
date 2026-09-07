@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
 use Modules\Wts\Actions\UpdateWtsOperationalParameterAction;
 use Modules\Wts\Models\WtsOperationalParameter;
@@ -13,8 +14,10 @@ use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
 
-final class WtsOperationalParametersPage extends GatedXotBasePage
+final class WtsOperationalParametersPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static bool $isDiscovered = false;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-adjustments-horizontal';

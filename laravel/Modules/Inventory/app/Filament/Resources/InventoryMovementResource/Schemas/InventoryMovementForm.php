@@ -32,7 +32,7 @@ final class InventoryMovementForm extends XotBaseResourceForm
     protected static string $resource = InventoryMovementResource::class;
 
     /**
-     * @return array<string, Component>
+     * @return array<string, \Filament\Schemas\Components\Component>
      */
     public function getFormSchema(): array
     {

@@ -94,7 +94,7 @@ final class WorkOrdersTable extends XotBaseResourceTable
     }
 
     /**
-     * @return array<string, Filter>
+     * @return array<string, Filter|SelectFilter>
      */
     public function getTableFilters(): array
     {
@@ -128,7 +128,7 @@ final class WorkOrdersTable extends XotBaseResourceTable
     }
 
     /**
-     * @return array<int, Action>
+     * @return array<string, Action>
      */
     public function getTableActions(): array
     {
@@ -197,7 +197,7 @@ final class WorkOrdersTable extends XotBaseResourceTable
     }
 
     /**
-     * @return array<int, Action>
+     * @return array<string, DeleteBulkAction|RestoreBulkAction|ForceDeleteBulkAction>
      */
     public function getTableBulkActions(): array
     {

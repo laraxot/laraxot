@@ -22,7 +22,7 @@ use function Safe\preg_replace;
  */
 final class SensitiveDataRedactor
 {
-    public const MASK = '[redatto]';
+    public const string MASK = '[redatto]';
 
     /**
      * Credentials and keys. Ordered longest-context first so a labelled secret

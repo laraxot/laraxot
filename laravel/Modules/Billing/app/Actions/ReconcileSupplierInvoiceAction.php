@@ -24,7 +24,7 @@ final class ReconcileSupplierInvoiceAction
      * Tolleranza sui confronti: i decimali di quantita' e prezzo arrivano da
      * documenti diversi e un centesimo di differenza non e' una contestazione.
      */
-    private const EPSILON = 0.01;
+    private const float EPSILON = 0.01;
 
     /**
      * @param  array<int, SupplierLine>  $invoiceLines

@@ -47,18 +47,10 @@ use Modules\Notify\Filament\Clusters\Test\Pages\SendSmsPage;
 use Modules\Notify\Filament\Clusters\Test\Pages\SendSpatieEmailPage;
 use Modules\Notify\Filament\Clusters\Test\Pages\SendTelegramPage;
 use Modules\Notify\Filament\Clusters\Test\Pages\SendWhatsAppPage;
-use Modules\Notify\Filament\Resources\ContactResource;
-use Modules\Notify\Filament\Resources\MailTemplateResource;
-use Modules\Notify\Filament\Resources\NotificationResource;
-use Modules\Notify\Filament\Resources\NotificationTemplateResource;
 use Modules\Notify\Filament\Resources\NotificationTemplateResource\Schemas\NotificationTemplateForm;
-use Modules\Notify\Filament\Resources\NotifyThemeResource;
 use Modules\Notify\Filament\Resources\NotifyThemeResource\Schemas\NotifyThemeForm;
 use Modules\Notify\Helpers\ConfigHelper;
-use Modules\Notify\Models\Contact;
-use Modules\Notify\Models\MailTemplate;
 use Modules\Notify\Models\NotificationTemplate;
-use Modules\Notify\Models\NotifyTheme;
 use Modules\Notify\Notifications\GenericNotification;
 use Modules\Notify\Services\PushNotificationService;
 use Modules\Notify\Services\SmsService;
@@ -171,8 +163,6 @@ describe('Notify highest-miss coverage', function (): void {
             }
         }
     });
-
-
 
     test('PushNotificationService sends fakes schedules and guards empty targets', function (): void {
         config([
@@ -352,11 +342,11 @@ describe('Notify highest-miss coverage', function (): void {
     test('notification template and theme forms expose keyed schema', function (): void {
         Assert::assertArrayHasKey(
             'name',
-            NotificationTemplateForm::getFormSchema(),
+            app(NotificationTemplateForm::class)->getFormSchema(),
         );
         Assert::assertArrayHasKey(
             'subject',
-            NotifyThemeForm::getFormSchema(),
+            app(NotifyThemeForm::class)->getFormSchema(),
         );
     });
 

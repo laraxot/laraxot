@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
 use Modules\Wts\Actions\GenerateWtsInventoryExcelAction;
 use Modules\Wts\Actions\GenerateWtsInventoryPdfAction;
@@ -15,8 +16,10 @@ use function Safe\fclose;
 use function Safe\fopen;
 use function Safe\unlink;
 
-final class WtsInventoryPage extends GatedXotBasePage
+final class WtsInventoryPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static bool $isDiscovered = false;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-printer';

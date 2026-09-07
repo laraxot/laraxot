@@ -7,8 +7,6 @@ namespace Modules\User\Filament\Resources;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Resources\Pages\PageRegistration;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -35,17 +33,11 @@ class OauthRefreshTokenResource extends XotBaseResource
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-arrow-path';
 
     /**
-     * Get the form schema for the resource.
-     *
-     * @return array<string, Select|TextInput>
-     */
-    #[\Override]
-
-    /**
      * Extend table callback for the resource.
      *
      * @return array<string, mixed>
      */
+    #[\Override]
     public static function extendTableCallback(): array
     {
         return [

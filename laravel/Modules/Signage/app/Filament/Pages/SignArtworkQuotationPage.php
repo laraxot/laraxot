@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Storage;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 use Modules\Customer\Models\Customer;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Quotation\Filament\Resources\QuotationResource;
 use Modules\Signage\Actions\CreateQuotationFromSignSpecAction;
 use Modules\Signage\Actions\ImportArtworkAsSignSpecAction;
@@ -26,8 +27,10 @@ use function Safe\file_get_contents;
  * what was read from it, fill the quantities the drawing cannot give (milling
  * metres, labour minutes), then turn it into a draft quotation.
  */
-final class SignArtworkQuotationPage extends GatedXotBasePage
+final class SignArtworkQuotationPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     use WithFileUploads;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-arrow-up';

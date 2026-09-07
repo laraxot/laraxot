@@ -21,7 +21,7 @@ use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceInfolist;
 class MediaInfolist extends XotBaseResourceInfolist
 {
     /**
-     * @return array<string, Component>
+     * @return array<string, \Filament\Schemas\Components\Component>
      */
     public function getInfolistSchema(): array
     {
@@ -43,7 +43,7 @@ class MediaInfolist extends XotBaseResourceInfolist
                             Action::make('convert')
                                 ->tooltip('convert')
                                 ->icon('heroicon-o-scale')
-                                ->schema(MediaConvertForm::getFormSchema())
+                                ->schema(app(MediaConvertForm::class)->getFormSchema())
                                 ->action(static function (Media $record, array $data): void {
                                     /** @var array<string, mixed> $actionData */
                                     $actionData = $data;

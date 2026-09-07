@@ -36,7 +36,7 @@ final class WorkOrderChangeOrdersTable extends XotBaseResourceTable
     public function getTableFilters(): array
     {
         return [
-            'status' => SelectFilter::make('status')->options(WorkOrderChangeOrderResource::statuses()),
+            'status' => SelectFilter::make('status')->options(WorkOrderChangeOrderForm::statuses()),
         ];
     }
 

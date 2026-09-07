@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'navigation' => ['label' => 'delivery note.navigation', 'icon' => 'delivery note.navigation'],
+    'navigation' => ['label' => 'delivery note.navigation', 'icon' => 'delivery note.navigation', 'group' => 'delivery note.navigation'],
     'actions' => [
         'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
         'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],

@@ -6,23 +6,9 @@ namespace Modules\HR\Filament\Resources;
 
 use App\Support\AccountFeatures;
 use App\Support\Concerns\HasAccountFeatureVisibility;
-use Filament\Actions\Action;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
-use Filament\Tables;
-use Filament\Tables\Filters\SelectFilter;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
-use Modules\HR\Actions\ApproveAbsenceRequestAction;
-use Modules\HR\Actions\RejectAbsenceRequestAction;
 use Modules\HR\Filament\Resources\AbsenceRequestResource\Pages;
 use Modules\HR\Models\AbsenceRequest;
 use Modules\Xot\Filament\Resources\XotBaseResource;
@@ -31,9 +17,7 @@ final class AbsenceRequestResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
-    /** @var array<string, string> */
-    /** @var array<string, string> */
-    private const ABSENCE_TYPE_ALIASES = [
+    private const array ABSENCE_TYPE_ALIASES = [
         'permesso' => 'leave',
         'ferie' => 'vacation',
         'malattia' => 'sick',
@@ -44,11 +28,9 @@ final class AbsenceRequestResource extends XotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar';
 
-    /** @var string */
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.hr';
+    private const string ACCOUNT_FEATURE_ADMIN = 'admin.hr';
 
-    /** @var string */
-    private const ACCOUNT_FEATURE_OPERATOR = 'operator.hr';
+    private const string ACCOUNT_FEATURE_OPERATOR = 'operator.hr';
 
     public static function getNavigationGroup(): string
     {

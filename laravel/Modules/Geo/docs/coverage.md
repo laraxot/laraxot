@@ -1,5 +1,40 @@
 # Code Coverage: Geo
 
+## Aggiornamento 2026-09-07 — PHPStan static-call fix (story `01.Geo-phpstan-fix`)
+
+**Comando:** `./vendor/bin/pest Modules/Geo/tests -c Modules/Geo/phpunit.xml --no-coverage`
+(bootstrap del `phpunit.xml` corretto in questa stessa story: era
+`vendor/autoload.php`, non eseguibile, quindi Pest non partiva affatto prima di
+questo fix — nessun numero quantitativo pre-esistente disponibile per confronto
+diretto, solo la sintesi narrativa sotto, datata 2026-09-06).
+
+**Dopo il fix** (`AddressField.php`/`AddressesField.php`, `app(AddressForm::class)->getFormSchema()`):
+
+```
+Tests: 104 failed, 16 risky, 399 passed (1026 assertions)
+Duration: 938.00s
+```
+
+I 104 fallimenti sono pre-esistenti e non introdotti da questa story (confermato
+per campionamento contro i log della run): chiamate reali a Google Maps/Bing
+Maps/Mapbox/IPGeolocation senza mock di rete disponibile in questo ambiente,
+`GeoMapWidgetTest` (rendering blade), mismatch di messaggi di eccezione
+hard-coded. Stessa famiglia di fallimenti già annotata nella sintesi 2026-09-06
+sotto (`GeoMapWidgetTest FAIL`, `GetAddressFromBingMapsActionTest MIXED`).
+
+**Verifica mirata sul codice toccato**: `tests/Unit/Filament/FilamentComponentsTest.php`
+→ `AddressField can be instantiated` passa (nessun errore fatale), esercitando
+`getAddressFormSchema()` → `app(AddressForm::class)->getFormSchema()` a runtime.
+Diff dei due file toccati è di una riga ciascuno (chiamata statica → risoluzione
+da container); nessun altro comportamento modificato.
+
+**Coverage**: non ridotta. Nessun test rimosso, nessuna asserzione tolta; il
+numero di test raccolti (519 totali: 104+16+399) è quello reale dell'intera suite
+del modulo, misurabile per la prima volta in questa sessione grazie al fix del
+bootstrap `phpunit.xml`.
+
+## Sintesi precedente (narrativa, 2026-09-06)
+
 **Test Exit Code:** 0 (PASS)
 **Last Updated:** 2026-09-06
 

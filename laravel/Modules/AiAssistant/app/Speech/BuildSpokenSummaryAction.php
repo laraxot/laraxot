@@ -16,9 +16,9 @@ use function Safe\preg_split;
  */
 final class BuildSpokenSummaryAction
 {
-    private const MAX_SENTENCES = 3;
+    private const int MAX_SENTENCES = 3;
 
-    private const MAX_CHARS = 350;
+    private const int MAX_CHARS = 350;
 
     public function execute(string $markdown): string
     {

@@ -9,7 +9,8 @@ use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Wts\Actions\EnqueueWtsLabelPrintAction;
 use Modules\Wts\Actions\GenerateWtsUnitLabelPdfAction;
 use Modules\Wts\Actions\GenerateWtsUnitLabelsBatchPdfAction;
@@ -19,8 +20,10 @@ use Modules\Wts\Models\WtsInboundLot;
 use Modules\Wts\Models\WtsUnit;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class WtsLotDetailPage extends GatedXotBasePage
+final class WtsLotDetailPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static bool $isDiscovered = false;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-archive-box';

@@ -16,6 +16,7 @@ use Webmozart\Assert\Assert;
 abstract class XotBaseResourceForm
 {
     use HasXotForm;
+    // private static ?self $_instance = null;
 
     final public static function configure(Schema $schema): Schema
     {
@@ -24,6 +25,9 @@ abstract class XotBaseResourceForm
         }
         $instance = app(static::class);
         Assert::isInstanceOf($instance, self::class);
+
+        // static::$_instance = $instance;
+        // return static::$_instance->form($schema);
         return $instance->form($schema);
     }
 

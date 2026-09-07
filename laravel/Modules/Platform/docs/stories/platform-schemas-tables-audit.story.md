@@ -62,3 +62,39 @@ Regole canoniche Laraxot:
 - Module: Platform
 - Done: 5/5 file nuovi, lint OK
 - Next: orchestratore → PHPStan + PHPMD + PHPInsights + Pest
+
+## Addendum — 2026-09-07, orchestratore PHPStan-zero (wave 3)
+
+Il "Next" sopra non era mai stato eseguito: l'orchestratore PHPStan ha trovato
+5 errori reali generati proprio da questa estrazione, ancora non committata:
+
+- `PlatformSettingResource::toStringValue()` (nota "resta pubblico" sopra) era
+  in realtà rimasto `private` — bug di trascrizione in questa story, non
+  intenzionale.
+- `formatValueForDisplay()`/`badgeColorForValue()`/`quickEditFieldFor()`
+  (i 3 helper del vecchio `table()`) erano rimasti `private` e MAI richiamati
+  dal nuovo `Tables/PlatformSettingsTable.php` → 3x `method.unused`.
+- **Bug funzionale più serio, non solo dead code**: `Schemas/PlatformSettingForm.php`
+  (punto 3 del Plan, "key TextInput + value_json KeyValue") aveva sostituito il
+  form ricco originale (un campo tipizzato Select/Toggle/TextInput per ciascuna
+  `platform_settings.key` nota) con un form generico, ma
+  `Pages/EditPlatformSetting.php` (non toccato da questa story, già committato)
+  continua a leggere/scrivere quei nomi di campo tipizzati in
+  `mutateFormDataBeforeFill()`/`mutateFormDataBeforeSave()`. Risultato: salvare
+  una qualunque chiave nota tramite la pagina "Avanzato" avrebbe silenziosamente
+  sovrascritto il valore con il default hardcoded, invece di persistere
+  l'input dell'admin — perdita dati silenziosa, non solo un errore PHPStan.
+
+Fix applicato (root cause, non baseline/ignore):
+- Ripristinato l'intero form originale (da `git show 76f2b98:...PlatformSettingResource.php`)
+  dentro `Schemas/PlatformSettingForm.php`, canonico (`Section` + chiavi
+  associative, come `AuditLogForm.php`).
+- Ripristinato il `table()` originale (colonna badge, azione quick-edit
+  slide-over, "Avanzato") dentro `Tables/PlatformSettingsTable.php`.
+- I 4 helper sulla Resource sono ora `public static` (uso cross-class
+  documentato in PHPDoc).
+
+Verifica: PHPStan `Modules/Platform` 0 errori (cache pulita), `php -l` su tutti
+i file toccati, PHPMD nessuna nuova violazione, Pest 17 failed/28 passed
+invariato (nessun fallimento nei file toccati — dettaglio in
+`docs/coverage.md`). Dettagli completi: `docs/coverage.md` sezione "wave 3".

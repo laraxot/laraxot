@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Intervention\Actions\CalculateLabourAmountAction;
 use Modules\Intervention\Data\LabourTariff;
 use Modules\Intervention\Settings\InterventionTariffSettings;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\Platform\Models\PlatformSetting;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
 /**
  * Where the company sets what an hour of work is *sold* for.
@@ -24,8 +25,10 @@ use Modules\Platform\Models\PlatformSetting;
  * Amounts are handled in euros here and stored in cents, because asking someone
  * to type 4000 when they mean forty euros is how wrong prices reach invoices.
  */
-final class LabourTariffSettingsPage extends GatedXotBasePage
+final class LabourTariffSettingsPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-banknotes';
 
     protected static ?string $slug = 'settings/labour-tariff';

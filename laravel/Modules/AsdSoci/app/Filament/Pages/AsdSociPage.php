@@ -4,12 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\AsdSoci\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use App\Support\AccountFeatures;
 use Illuminate\Support\Facades\Auth;
 
-abstract class AsdSociPage extends GatedXotBasePage
+abstract class AsdSociPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static bool $isDiscovered = false;
 
     protected static ?string $asdFeature = null;

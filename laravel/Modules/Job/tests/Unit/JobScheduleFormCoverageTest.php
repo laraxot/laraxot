@@ -14,7 +14,7 @@ use Modules\Job\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\DataCollection;
 
-uses(\Modules\Job\Tests\TestCase::class)->group('no-job-db');
+uses(TestCase::class)->group('no-job-db');
 
 afterEach(function (): void {
     Mockery::close();
@@ -57,7 +57,7 @@ describe('Job ScheduleForm full schema coverage', function (): void {
             }
         });
 
-        $schema = ScheduleForm::getFormSchema();
+        $schema = (new ScheduleForm())->getFormSchema();
         Assert::assertArrayHasKey('main_section', $schema);
 
         // Invoke nested closures via ModuleRemainingCoverage-style property walk

@@ -66,3 +66,7 @@ Nota: non sopprimere, non usare @phpstan-ignore per metrica
 === BATCH CONSTANTS AI ASSISTANT ===
 - AiOutputGuard: LEAK_MARKERS -> const array
 - PromptInjectionGuard: BLOCK_PATTERNS -> const array
+=== SECONDO CERVELLO AGGIORNATO (regola GatedXotBasePage) ===
+Regola: non usare mai GatedXotBasePage (Platform). Utilizza direttamente XotBasePage (Xot).
+File corretti: Quotation/RecordQuotationVoicePage, Document/UploadInterventionPhotos, Signature/CaptureSketch + CaptureSignature, WhatsApp/WhatsAppInboxPage + WhatsAppSettingsPage, Giveback/GivebackPlatformPage.
+php -l OK su tutti i file modificati.

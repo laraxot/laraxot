@@ -7,7 +7,8 @@ namespace Modules\Wts\Filament\Pages;
 use App\Support\AccountFeatures;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Wts\Actions\GenerateWtsProcessingReportPdfAction;
 use Modules\Wts\Actions\GenerateWtsProcessingSheetPdfAction;
 use Modules\Wts\Models\WtsDerivedMaterial;
@@ -15,8 +16,10 @@ use Modules\Wts\Models\WtsProcessingStep;
 use Modules\Wts\Queries\GetWtsReportOverviewQuery;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class WtsReportsPage extends GatedXotBasePage
+final class WtsReportsPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static bool $isDiscovered = false;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-chart-bar-square';

@@ -8,14 +8,17 @@ use App\Support\AccountFeatures;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use InvalidArgumentException;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Wts\Actions\GenerateWtsUnitLabelPdfAction;
 use Modules\Wts\Actions\MoveWtsUnitAction;
 use Modules\Wts\Models\WtsUnit;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-final class WtsMaterialDetailPage extends GatedXotBasePage
+final class WtsMaterialDetailPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     protected static bool $isDiscovered = false;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-cube';

@@ -21,7 +21,7 @@ final class TimberCustomerInfolist extends XotBaseResourceInfolist
     public function getInfolistSchema(): array
     {
         return [
-            Section::make()->columnSpanFull()->components([
+            'main' => Section::make()->columnSpanFull()->components([
                 Grid::make(2)->components([
                     'code' => TextEntry::make('code'),
                     'business_name' => TextEntry::make('business_name'),
@@ -32,12 +32,12 @@ final class TimberCustomerInfolist extends XotBaseResourceInfolist
                     'is_active' => TextEntry::make('is_active'),
                 ]),
             ]),
-            Section::make('Contatti')->components([
+            'contacts' => Section::make('Contatti')->components([
                 TextEntry::make('contact_person'),
                 TextEntry::make('phone'),
                 TextEntry::make('email'),
             ]),
-            Section::make('Fattura elettronica')->components([
+            'einvoice' => Section::make('Fattura elettronica')->components([
                 TextEntry::make('sdi_recipient_code'),
                 TextEntry::make('pec'),
             ]),

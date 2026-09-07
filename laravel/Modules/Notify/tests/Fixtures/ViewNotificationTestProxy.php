@@ -13,6 +13,6 @@ final class ViewNotificationTestProxy extends ViewNotification
     /** @return array<string, Component> */
     public function exposedInfolistSchema(): array
     {
-        return NotificationInfolist::getInfolistSchema();
+        return app(NotificationInfolist::class)->getInfolistSchema();
     }
 }

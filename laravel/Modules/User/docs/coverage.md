@@ -88,3 +88,87 @@ significativo: DB di test `10.100.200.53` irraggiungibile da questo ambiente
 
 **Fuori scope**: 15 file della lista originale non richiedevano piu' modifiche
 (gia' risolti dal commit `5ec97b13` prima dell'inizio di questo lavoro).
+
+## PHPStan (level max) — swarm fix 2026-09-07 (sessione pomeriggio)
+
+Contesto: recon segnalava ~19 errori residui in `Modules/User`; alla verifica
+reale con `phpstan analyse Modules/User --memory-limit=-1 --no-progress` (cache
+`/tmp/phpstan` ripulita prima di ogni run, condivisa fra sessioni swarm
+concorrenti — vedi nota sotto) il numero reale era **12**, poi sceso a **9**
+dopo che la cache stale si e' auto-corretta (2 errori su file di test erano
+falsi positivi da cache contaminata da un run precedente).
+
+**Esito: 9 -> 0 errori.** File toccati (5 sorgente + 2 test):
+
+- `app/Filament/Resources/OauthAuthCodeResource.php` — rimossa una docblock
+  orfana (`@return array<string, Select|TextInput>`) incastrata fra
+  `#[\Override]` e il vero docblock di `extendTableCallback()`: PHPStan
+  associava il tipo di ritorno sbagliato al metodo. Il metodo
+  `getFormSchema()` che quel docblock descriveva in origine era gia' morto
+  (override illegale di un hook risolto staticamente da
+  `XotBaseResource::form()`, `final`, verso `Schemas/OauthAuthCodeForm.php`
+  gia' esistente) ed e' stato rimosso.
+- `app/Filament/Resources/OauthRefreshTokenResource.php` — stesso pattern
+  (docblock orfana + `getFormSchema()` morto, `Schemas/OauthRefreshTokenForm.php`
+  gia' esistente).
+- `app/Filament/Resources/TeamUserResource.php`,
+  `app/Filament/Resources/TenantUserResource.php` — stesso pattern per
+  `getFormSchema()` (Schemas dedicate gia' esistenti) + `getEloquentQuery()`
+  senza generics sul tipo di ritorno. Fix: `@return Builder<Model>` (non
+  `Builder<TeamUser>`/`Builder<TenantUser>`) perche' `XotBaseResource` non
+  lega il template `TModel` di Filament `Resource` al model concreto (nessun
+  `@extends Resource<TModel>` nella catena) — dichiarare un generic piu'
+  stretto sarebbe stata un'affermazione non verificabile dal type system.
+  Commentato inline il motivo per chi legge dopo.
+- `app/Filament/Resources/TenantResource.php` — stesso pattern
+  `getFormSchema()` morto (`Schemas/TenantForm.php` gia' esistente) +
+  `getRelations()` con un docblock copiato per errore da un altro metodo
+  (`@return array<string, Component>` invece del tipo reale
+  `array<int, class-string<RelationManager>|RelationGroup|RelationManagerConfiguration>`
+  usato dal parent `XotBaseResource`/Filament `Resource`); aggiunti gli
+  `use` mancanti per le 3 classi Filament.
+- `tests/Unit/UserExecuteCoverage50Test.php`,
+  `tests/Unit/UserModulePhpstanFixesTest.php` — due test chiamavano
+  staticamente metodi `getFormSchema()` che sono **istanza**, non statici
+  (`UserForm::getFormSchema()`, `PasswordData::getFormSchema()`, entrambi
+  `public function`, non `public static function`): `(new UserForm())->getFormSchema()`
+  e `PasswordData::make()->getFormSchema()`.
+
+**mixed residui**: nessuno introdotto da questi file.
+
+**Nota cache condivisa**: `phpstan.neon` usa `tmpDir: /tmp/phpstan`, condiviso
+da tutte le sessioni swarm attive in parallelo sullo stesso host — un run "0
+errori" subito dopo un edit di un altro agente puo' essere un falso negativo
+da cache contaminata. Verificato con run ripetuti a cache pulita
+(`rm -f /tmp/phpstan/resultCache.php`) prima di dichiarare 0 errori definitivo.
+
+**Concorrenza sul modulo**: durante questa sessione il working tree di
+`Modules/User` aveva ~650 file gia' modificati/non tracciati da altre sessioni
+swarm attive in parallelo (probabile `migration-foreignidfor-swarm`, che
+elenca esplicitamente `User` fra i moduli in lavorazione — vedi
+`docs/chat/INDEX.md` root repo). Il commit di questa sessione include **solo**
+i 7 file elencati sopra (`git add` esplicito per path, mai `-A`); il resto
+del working tree non e' stato toccato ne' committato.
+
+**Gate**:
+- `pint --test` (scope esplicito sui 7 file, mai `--dirty` che spazzola l'intero
+  repo condiviso) -> 2 file con debito di stile preesistente
+  (`new_with_parentheses` ecc.), corretti con `pint` scope-limitato.
+- `tools/phpmd.sh` sull'intero modulo va in crash (`PHP Fatal error` interno al
+  phar, `AbstractLocalVariable::isPassedByReference()` su `getParent()` di un
+  nodo null) — crash del tool su un file del modulo non identificato, non
+  riconducibile ai 7 file di questa sessione: scope-limitato ai 5 file sorgente
+  toccati, **0 violazioni**.
+- `phpinsights` risulta rimosso dal repo (incompatibile con Pest 5, vedi second
+  brain) — non eseguito.
+- `pest` scope-limitato ai 2 file di test toccati (`--filter` sui test
+  modificati): entrambi **passano** a runtime (non solo staticamente).
+  Il run completo `Modules/User/tests` (suite intera, ~650+ test) e' stato
+  lanciato ma non atteso fino in fondo per via del carico dell'host condiviso
+  da altre sessioni swarm (piu' processi Pest concorrenti su altri moduli);
+  i fallimenti osservati nella porzione completata sono preesistenti e non
+  riconducibili a questi 7 file (`mockeryExpect()` funzione non importata in
+  test non toccati, `HasPassportConfiguration::tokenLifetime()` metodo non
+  esistente in test non toccati, tabella `users` mancante sul DB di test —
+  stesso pattern gia' documentato in second brain
+  "Test DB missing migrations blocks Feature tests").

@@ -22,7 +22,7 @@ final class ListQuotations extends XotBaseListRecords
 
     /** Office, OpenOffice/LibreOffice, PDF and CSV — the same set accepted as attachments. */
     /** @var list<string> */
-    private const IMPORT_MIME_TYPES = [
+    private const array IMPORT_MIME_TYPES = [
         'application/pdf',
         'application/msword',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',

@@ -25,6 +25,7 @@ return [
         'create' => ['label' => 'Registrati', 'tooltip' => 'Crea un nuovo account', 'helper_text' => 'Registrati al sistema', 'description' => 'Azione di registrazione'],
         'hidePassword' => ['tooltip' => 'hidePassword', 'icon' => 'hidePassword', 'label' => 'hidePassword'],
         'showPassword' => ['tooltip' => 'showPassword', 'icon' => 'showPassword', 'label' => 'showPassword'],
+        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
     ],
     'messages' => ['success' => 'Registrazione completata con successo', 'error' => 'Si è verificato un errore'],
 ];

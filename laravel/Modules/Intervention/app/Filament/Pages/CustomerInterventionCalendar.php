@@ -10,12 +10,14 @@ use Modules\Customer\Models\Customer;
 use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\Filament\Concerns\InterventionCalendarColors;
 use Modules\Intervention\Models\Intervention;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
 use Modules\User\Models\User;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
-final class CustomerInterventionCalendar extends GatedXotBasePage
+final class CustomerInterventionCalendar extends XotBasePage
 {
+    use GatesPageNavigation;
     use InterventionCalendarColors;
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar';

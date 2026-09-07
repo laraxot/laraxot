@@ -5,16 +5,10 @@ declare(strict_types=1);
 namespace Modules\Platform\Filament\Resources;
 
 use App\Support\AccountFeatures;
-use Filament\Actions\Action;
-use Filament\Actions\EditAction;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Platform\Filament\Resources\PlatformSettingResource\Pages\EditPlatformSetting;
@@ -110,8 +104,12 @@ final class PlatformSettingResource extends XotBaseResource
     /**
      * Narrows a Filament form/table `mixed` value down to a safe string
      * representation, without ever casting a non-scalar value.
+     *
+     * Public: consumed cross-class by the canonical
+     * `PlatformSettingResource\Schemas\PlatformSettingForm` and
+     * `PlatformSettingResource\Tables\PlatformSettingsTable`.
      */
-    private static function toStringValue(mixed $value): string
+    public static function toStringValue(mixed $value): string
     {
         if (is_string($value)) {
             return $value;
@@ -120,7 +118,11 @@ final class PlatformSettingResource extends XotBaseResource
         return is_scalar($value) ? (string) $value : '';
     }
 
-    private static function formatValueForDisplay(PlatformSetting $record): string
+    /**
+     * Public: consumed cross-class by
+     * `PlatformSettingResource\Tables\PlatformSettingsTable`.
+     */
+    public static function formatValueForDisplay(PlatformSetting $record): string
     {
         /** @var mixed $value */
         $value = data_get($record->value_json, 'value');
@@ -157,7 +159,11 @@ final class PlatformSettingResource extends XotBaseResource
         return mb_strlen($str) > 40 ? mb_substr($str, 0, 37).'…' : ($str !== '' ? $str : '—');
     }
 
-    private static function badgeColorForValue(PlatformSetting $record): string
+    /**
+     * Public: consumed cross-class by
+     * `PlatformSettingResource\Tables\PlatformSettingsTable`.
+     */
+    public static function badgeColorForValue(PlatformSetting $record): string
     {
         /** @var mixed $value */
         $value = data_get($record->value_json, 'value');
@@ -176,9 +182,12 @@ final class PlatformSettingResource extends XotBaseResource
     }
 
     /**
+     * Public: consumed cross-class by
+     * `PlatformSettingResource\Tables\PlatformSettingsTable`.
+     *
      * @return array<int, Field>
      */
-    private static function quickEditFieldFor(string $key): array
+    public static function quickEditFieldFor(string $key): array
     {
         $booleanKeys = [
             'inventory.allow_link_work_orders',

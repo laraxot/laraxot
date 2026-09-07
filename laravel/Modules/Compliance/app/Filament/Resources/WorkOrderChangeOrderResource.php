@@ -4,22 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Filament\Resources;
 
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Component;
-use Filament\Schemas\Components\Grid;
-use Filament\Schemas\Components\Section;
-use Filament\Tables;
-use Filament\Tables\Filters\SelectFilter;
-use Filament\Tables\Table;
 use Modules\Compliance\Filament\Resources\WorkOrderChangeOrderResource\Pages;
 use Modules\Compliance\Models\WorkOrderChangeOrder;
 use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
-use Modules\WorkOrder\Models\WorkOrder;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 final class WorkOrderChangeOrderResource extends XotBaseResource

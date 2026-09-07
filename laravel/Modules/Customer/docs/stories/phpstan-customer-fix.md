@@ -2,7 +2,8 @@
 id: phpstan-customer-fix
 slug: phpstan-customer
 scope: [module:Customer, project:base_workorder_fila5]
-status: Pending
+status: superseded
+superseded_by: 5.67.customer-phpstan-10-errors.story.md
 priority: High
 created: 2026-09-06
 ---

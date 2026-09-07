@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Wts\Filament\Pages;
 
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Platform\Filament\Concerns\GatesPageNavigation;
+use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Wts\Filament\Pages\Concerns\HandlesWtsProcessingForm;
 use App\Support\AccountFeatures;
 use Illuminate\Support\Facades\Auth;
 
-final class WtsUnpackagingPage extends GatedXotBasePage
+final class WtsUnpackagingPage extends XotBasePage
 {
+    use GatesPageNavigation;
+
     use HandlesWtsProcessingForm;
 
     protected static bool $isDiscovered = false;

@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Gate;
 use Modules\Document\Actions\AttachPhotosToInterventionAction;
 use Modules\Intervention\Filament\Resources\InterventionResource;
 use Modules\Intervention\Models\Intervention;
-use Modules\Platform\Filament\Pages\GatedXotBasePage;
+use Modules\Xot\Filament\Pages\XotBasePage;
 
-final class UploadInterventionPhotos extends GatedXotBasePage
+final class UploadInterventionPhotos extends XotBasePage
 {
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-camera';
 
@@ -103,6 +103,7 @@ final class UploadInterventionPhotos extends GatedXotBasePage
                             if (is_int($path) || is_float($path)) {
                                 return (string) $path;
                             }
+
                             return '';
                         }, $paths)),
                         uploadedByUserId: is_int($userId) ? $userId : null,

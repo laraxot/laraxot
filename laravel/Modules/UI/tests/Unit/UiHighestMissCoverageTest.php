@@ -48,7 +48,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use function Safe\glob;
 
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('UI highest-miss coverage', function (): void {
     test('table state columns instantiate via make', function (): void {
@@ -177,9 +177,9 @@ describe('UI highest-miss coverage', function (): void {
     });
 
     test('XotBase blocks and document upload factories expose schema', function (): void {
-        Assert::assertNotEmpty(Contact::getFormSchema());
-        Assert::assertNotEmpty(\Modules\UI\Filament\Blocks\Category::getFormSchema());
-        Assert::assertNotEmpty(Post::getFormSchema());
+        Assert::assertNotEmpty((new Contact())->getFormSchema());
+        Assert::assertNotEmpty((new \Modules\UI\Filament\Blocks\Category())->getFormSchema());
+        Assert::assertNotEmpty((new Post())->getFormSchema());
         Assert::assertNotSame('', Contact::getTitle());
 
         Assert::assertSame('identity_document', SpatieDocumentUpload::forIdentityDocument()->getName());
