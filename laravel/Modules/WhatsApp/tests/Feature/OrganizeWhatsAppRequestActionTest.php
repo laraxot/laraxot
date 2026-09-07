@@ -20,7 +20,7 @@ use Modules\WorkOrder\Models\WorkOrderStatus;
  * Modules\WorkOrders\Infrastructure -> Modules\WorkOrder\Models,
  * Modules\Platform\Infrastructure -> Modules\Platform\Models, stessa API dell'action.
  */
-uses(\Modules\WhatsApp\Tests\TestCase::class);
+uses(TestCase::class);
 
 function organizeSetWorkMode(string $mode): void
 {
@@ -93,7 +93,7 @@ it('sets the appointment date on the intervention and ignores an invalid one', f
     ], $this->userId);
 
     $scheduled = DB::table('interventions')->where('id', $result['intervention_id'])->value('scheduled_at');
-    expect((string) $scheduled)->toContain('2026-07-11 10:00:00');
+    expect(is_string($scheduled) ? $scheduled : '')->toContain('2026-07-11 10:00:00');
 
     $conversation2 = organizeMakeInboundConversation(['phone_e164' => '+393330000000']);
     $result2 = app(OrganizeWhatsAppRequestAction::class)->execute($conversation2, [
@@ -164,7 +164,7 @@ it('creates a direct-customer intervention without a work order in customer mode
         ->and($result['work_order_created'])->toBeFalse();
 
     $interventionCustomerId = DB::table('interventions')->where('id', $result['intervention_id'])->value('customer_id');
-    expect((int) $interventionCustomerId)->toBe($result['customer_id']);
+    expect(is_numeric($interventionCustomerId) ? (int) $interventionCustomerId : null)->toBe($result['customer_id']);
 });
 
 it('creates a new customer when the phone is too short to match', function (): void {
@@ -188,5 +188,5 @@ it('falls back to a placeholder problem and the display name when data is sparse
     expect($customer?->legal_name)->toBe('Mario Verdi');
 
     $notes = DB::table('interventions')->where('id', $result['intervention_id'])->value('notes');
-    expect((string) $notes)->toBe('Richiesta ricevuta via WhatsApp.');
+    expect(is_string($notes) ? $notes : null)->toBe('Richiesta ricevuta via WhatsApp.');
 });

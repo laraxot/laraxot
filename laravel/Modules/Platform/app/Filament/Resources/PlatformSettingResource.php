@@ -8,11 +8,11 @@ use App\Support\AccountFeatures;
 use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Field;
-use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
@@ -92,10 +92,10 @@ final class PlatformSettingResource extends GatedXotBaseResource
                 ->visible(fn (?Model $record): bool => $record === null)
                 ->maxLength(190),
 
-            Placeholder::make('key_human')
+            TextEntry::make('key_human')
                 ->label(__('platform.fields.setting'))
-                ->content(function (callable $get): string {
-                    $key = (string) $get('key');
+                ->state(function (callable $get): string {
+                    $key = self::toStringValue($get('key'));
 
                     return self::humanLabelForKey($key);
                 })
@@ -108,20 +108,20 @@ final class PlatformSettingResource extends GatedXotBaseResource
                     'unit_serial' => __('platform.inventory.trace_mode_options.unit_serial'),
                     'both' => __('platform.inventory.trace_mode_options.both'),
                 ])
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.trace_mode')
-                ->required(fn (callable $get): bool => (string) $get('key') === 'inventory.trace_mode'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.trace_mode')
+                ->required(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.trace_mode'),
 
             Toggle::make('inventory_allow_link_work_orders')
                 ->label(__('platform.inventory.allow_link_work_orders'))
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.allow_link_work_orders'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.allow_link_work_orders'),
 
             Toggle::make('inventory_allow_link_interventions')
                 ->label(__('platform.inventory.allow_link_interventions'))
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.allow_link_interventions'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.allow_link_interventions'),
 
             Toggle::make('inventory_enable_storage_zones')
                 ->label(__('platform.inventory.enable_storage_zones'))
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.enable_storage_zones'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.enable_storage_zones'),
 
             Select::make('inventory_zone_mode')
                 ->label(__('platform.inventory.zone_mode'))
@@ -129,42 +129,42 @@ final class PlatformSettingResource extends GatedXotBaseResource
                     'floor_grid' => __('platform.inventory.zone_mode_options.floor_grid'),
                     'bin_rack' => __('platform.inventory.zone_mode_options.bin_rack'),
                 ])
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.zone_mode')
-                ->required(fn (callable $get): bool => (string) $get('key') === 'inventory.zone_mode'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.zone_mode')
+                ->required(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.zone_mode'),
 
             Toggle::make('inventory_enable_realtime_monitoring')
                 ->label(__('platform.inventory.enable_realtime_monitoring'))
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.enable_realtime_monitoring'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.enable_realtime_monitoring'),
 
             Toggle::make('inventory_enable_space_optimization')
                 ->label(__('platform.inventory.enable_space_optimization'))
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.enable_space_optimization'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.enable_space_optimization'),
 
             Toggle::make('inventory_enable_operator_workflows')
                 ->label(__('platform.inventory.enable_operator_workflows'))
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.enable_operator_workflows'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.enable_operator_workflows'),
 
             Toggle::make('inventory_enable_traceability')
                 ->label(__('platform.inventory.enable_traceability'))
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.enable_traceability'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.enable_traceability'),
 
             Toggle::make('inventory_enable_erp_integration')
                 ->label(__('platform.inventory.enable_erp_integration'))
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.enable_erp_integration'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.enable_erp_integration'),
 
             Toggle::make('inventory_enable_rfid_iot')
                 ->label(__('platform.inventory.enable_rfid_iot'))
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'inventory.enable_rfid_iot'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'inventory.enable_rfid_iot'),
 
             Toggle::make('modules_operator_daily_notes')
                 ->label(__('platform.modules.operator.daily_notes'))
                 ->helperText('Se disabilitato, le Note giornaliere non sono visibili nel pannello operatore.')
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'modules.operator.daily_notes'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'modules.operator.daily_notes'),
 
             Toggle::make('modules_operator_my_schedule')
                 ->label(__('platform.modules.operator.my_schedule'))
                 ->helperText('Se disabilitato, l\'Agenda non è visibile nel pannello operatore.')
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'modules.operator.my_schedule'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'modules.operator.my_schedule'),
 
             Select::make('billing_einvoice_provider')
                 ->label(__('platform.billing.einvoice.provider'))
@@ -172,19 +172,19 @@ final class PlatformSettingResource extends GatedXotBaseResource
                     'disabled' => __('platform.billing.einvoice.provider_options.disabled'),
                     'custom_http' => __('platform.billing.einvoice.provider_options.custom_http'),
                 ])
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'billing.einvoice.provider')
-                ->required(fn (callable $get): bool => (string) $get('key') === 'billing.einvoice.provider'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'billing.einvoice.provider')
+                ->required(fn (callable $get): bool => self::toStringValue($get('key')) === 'billing.einvoice.provider'),
 
             TextInput::make('billing_einvoice_api_key')
                 ->label(__('platform.billing.einvoice.api_key'))
                 ->password()
                 ->revealable()
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'billing.einvoice.api_key'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'billing.einvoice.api_key'),
 
             TextInput::make('billing_einvoice_endpoint')
                 ->label(__('platform.billing.einvoice.endpoint'))
                 ->url()
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'billing.einvoice.endpoint'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'billing.einvoice.endpoint'),
 
             Select::make('interventions_work_mode')
                 ->label(__('platform.interventions.work_mode'))
@@ -192,15 +192,15 @@ final class PlatformSettingResource extends GatedXotBaseResource
                     'work_order' => __('platform.interventions.work_mode_options.work_order'),
                     'customer' => __('platform.interventions.work_mode_options.customer'),
                 ])
-                ->visible(fn (callable $get): bool => (string) $get('key') === 'interventions.work_mode')
-                ->required(fn (callable $get): bool => (string) $get('key') === 'interventions.work_mode'),
+                ->visible(fn (callable $get): bool => self::toStringValue($get('key')) === 'interventions.work_mode')
+                ->required(fn (callable $get): bool => self::toStringValue($get('key')) === 'interventions.work_mode'),
 
             Textarea::make('value_json_raw')
                 ->label('Valore (JSON)')
                 ->helperText('Per chiavi non standard, inserisci un JSON (es. {"value": true}).')
                 ->rows(8)
                 ->visible(function (callable $get): bool {
-                    $key = (string) $get('key');
+                    $key = self::toStringValue($get('key'));
 
                     return ! in_array($key, [
                         'inventory.trace_mode',
@@ -244,7 +244,7 @@ final class PlatformSettingResource extends GatedXotBaseResource
                     ->dateTime('d/m/Y H:i')
                     ->sortable(),
             ])
-            ->actions([
+            ->recordActions([
                 Action::make('quick_edit')
                     ->label('Modifica')
                     ->icon('heroicon-o-pencil')
@@ -255,7 +255,7 @@ final class PlatformSettingResource extends GatedXotBaseResource
 
                         return ['quick_value' => $raw];
                     })
-                    ->form(fn (PlatformSetting $record): array => self::quickEditFieldFor((string) $record->key))
+                    ->schema(fn (PlatformSetting $record): array => self::quickEditFieldFor((string) $record->key))
                     ->action(function (PlatformSetting $record, array $data): void {
                         $record->update([
                             'value_json' => ['value' => $data['quick_value']],
@@ -294,6 +294,19 @@ final class PlatformSettingResource extends GatedXotBaseResource
         return self::humanLabelForKey($key);
     }
 
+    /**
+     * Narrows a Filament form/table `mixed` value down to a safe string
+     * representation, without ever casting a non-scalar value.
+     */
+    private static function toStringValue(mixed $value): string
+    {
+        if (is_string($value)) {
+            return $value;
+        }
+
+        return is_scalar($value) ? (string) $value : '';
+    }
+
     private static function formatValueForDisplay(PlatformSetting $record): string
     {
         /** @var mixed $value */
@@ -322,7 +335,7 @@ final class PlatformSettingResource extends GatedXotBaseResource
             'customer' => 'Per cliente',
         ];
 
-        $str = (string) $value;
+        $str = self::toStringValue($value);
 
         if (array_key_exists($str, $enumLabels)) {
             return $enumLabels[$str];

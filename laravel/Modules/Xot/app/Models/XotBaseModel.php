@@ -14,14 +14,13 @@ use Modules\Xot\Traits\Updater;
 use Webmozart\Assert\Assert;
 
 /**
- * @method static \Illuminate\Database\Eloquent\Factories\Factory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Factories\Factory<static> factory($count = null, $state = [])
  *
  * Class XotBaseModel.
  */
 abstract class XotBaseModel extends EloquentModel
 {
     use HasXotFactory;
-
     use RelationX;
     use Updater;
 

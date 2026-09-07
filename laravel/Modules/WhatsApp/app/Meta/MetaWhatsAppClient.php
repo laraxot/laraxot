@@ -17,7 +17,7 @@ final readonly class MetaWhatsAppClient implements WhatsAppClientInterface
 
         $response = Http::withToken($this->settings->accessToken())
             ->acceptJson()
-            ->timeout((int) config('services.whatsapp.timeout', 30))
+            ->timeout($this->timeoutSeconds())
             ->post($this->endpoint('messages'), [
                 'messaging_product' => 'whatsapp',
                 'to' => ltrim($toPhoneE164, '+'),
@@ -43,7 +43,7 @@ final readonly class MetaWhatsAppClient implements WhatsAppClientInterface
 
         $response = Http::withToken($this->settings->accessToken())
             ->acceptJson()
-            ->timeout((int) config('services.whatsapp.timeout', 30))
+            ->timeout($this->timeoutSeconds())
             ->get($this->endpoint(''), [
                 'fields' => 'id,display_phone_number,verified_name',
             ]);
@@ -84,6 +84,13 @@ final readonly class MetaWhatsAppClient implements WhatsAppClientInterface
         }
 
         return $result;
+    }
+
+    private function timeoutSeconds(): int
+    {
+        $configured = config('services.whatsapp.timeout', 30);
+
+        return is_numeric($configured) ? (int) $configured : 30;
     }
 
     private function endpoint(string $path): string

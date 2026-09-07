@@ -101,11 +101,11 @@ final class SignEstimationRuleResource extends GatedXotBaseResource
                 Tables\Columns\TextColumn::make('min_per_piece')->numeric()->placeholder('—'),
                 Tables\Columns\IconColumn::make('is_active')->boolean(),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

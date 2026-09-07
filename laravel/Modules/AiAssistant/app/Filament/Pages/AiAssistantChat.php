@@ -400,9 +400,11 @@ final class AiAssistantChat extends Page
     private function displayableAiMessageContent(string $content): string
     {
         if (preg_match_all('/(?:^|\R)<user_request>\s*(.*?)\s*<\/user_request>/su', $content, $matches) >= 1) {
-            $requests = $matches[1];
+            $requests = $matches[1] ?? [];
+            $lastRequest = is_array($requests) ? end($requests) : null;
+            $lastString = is_string($lastRequest) ? $lastRequest : (string) $lastRequest;
 
-            return trim((string) end($requests));
+            return trim($lastString);
         }
 
         $withoutContext = preg_replace('/^\[trusted_context[^\]]*\]\s*/u', '', $content);
@@ -676,7 +678,11 @@ final class AiAssistantChat extends Page
             ->orderByDesc('id')
             ->first();
 
-        $context = is_array($message?->payload) ? ($message->payload['context'] ?? []) : [];
+        if ($message === null) {
+            return [];
+        }
+
+        $context = is_array($message->payload) ? ($message->payload['context'] ?? []) : [];
 
         return $this->stringKeyArray($context);
     }

@@ -115,8 +115,8 @@ final class ProcessWhatsAppMessageAction
     {
         return $this->settings->autoArchiveCertainNotes()
             && (bool) ($classification['requires_approval'] ?? true) === false
-            && (int) ($classification['confidence'] ?? 0) >= $this->settings->confidenceThreshold()
-            && (string) ($classification['intent'] ?? '') === 'work_order_note'
+            && $this->intValue($classification['confidence'] ?? 0) >= $this->settings->confidenceThreshold()
+            && $this->stringValue($classification['intent'] ?? '') === 'work_order_note'
             && $this->positiveInt($classification['work_order_id'] ?? null) !== null;
     }
 
@@ -127,7 +127,7 @@ final class ProcessWhatsAppMessageAction
     {
         $action = $this->stringKeyed($classification['proposed_action'] ?? null);
 
-        return (string) ($action['type'] ?? '') === 'none'
+        return $this->stringValue($action['type'] ?? '') === 'none'
             && (bool) ($classification['requires_approval'] ?? false) === false;
     }
 
@@ -141,7 +141,7 @@ final class ProcessWhatsAppMessageAction
             return;
         }
 
-        $summary = trim((string) ($classification['summary'] ?? ''));
+        $summary = trim($this->stringValue($classification['summary'] ?? ''));
         $body = $summary !== '' ? $summary : trim((string) $message->body);
 
         $this->addWorkOrderActivity->execute(
@@ -173,12 +173,12 @@ final class ProcessWhatsAppMessageAction
         $payload['whatsapp_message_id'] = (int) $message->id;
         $payload['source'] = 'whatsapp';
 
-        $summary = trim((string) ($classification['summary'] ?? ''));
+        $summary = trim($this->stringValue($classification['summary'] ?? ''));
         if ($summary !== '' && ! isset($payload['body'])) {
             $payload['body'] = $summary;
         }
 
-        $preview = trim((string) ($action['preview'] ?? ''));
+        $preview = trim($this->stringValue($action['preview'] ?? ''));
         if ($preview === '') {
             $preview = $this->defaultPreview($type, $message, $classification);
         }
@@ -230,7 +230,7 @@ final class ProcessWhatsAppMessageAction
      */
     private function proposalType(array $action): string
     {
-        $type = (string) ($action['type'] ?? '');
+        $type = $this->stringValue($action['type'] ?? '');
 
         return in_array($type, [
             'append_work_order_activity_from_whatsapp',
@@ -316,7 +316,7 @@ final class ProcessWhatsAppMessageAction
      */
     private function defaultPreview(string $type, WhatsAppMessage $message, array $classification): string
     {
-        $summary = trim((string) ($classification['summary'] ?? ''));
+        $summary = trim($this->stringValue($classification['summary'] ?? ''));
         $summary = $summary !== '' ? $summary : mb_substr((string) $message->body, 0, 300);
 
         return match ($type) {
@@ -336,6 +336,16 @@ final class ProcessWhatsAppMessageAction
         $int = (int) $value;
 
         return $int > 0 ? $int : null;
+    }
+
+    private function intValue(mixed $value, int $default = 0): int
+    {
+        return is_numeric($value) ? (int) $value : $default;
+    }
+
+    private function stringValue(mixed $value, string $default = ''): string
+    {
+        return is_string($value) ? $value : $default;
     }
 
     /**

@@ -94,7 +94,7 @@ final class SignPriceListResource extends GatedXotBaseResource
                     ->suffix('%'),
                 Tables\Columns\IconColumn::make('is_active')->boolean(),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ]);

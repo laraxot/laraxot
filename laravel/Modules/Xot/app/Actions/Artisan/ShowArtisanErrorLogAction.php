@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Modules\Xot\Actions\Artisan;
 
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\File;
 use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
 
 use function Safe\preg_match_all;
 
@@ -19,9 +21,6 @@ class ShowArtisanErrorLogAction
 
     public function execute(): Renderable
     {
-        /**
-         * @phpstan-var view-string
-         */
         $view = 'xot::acts.artisan.error-show';
         $files = File::files(storage_path('logs'));
         $log = request('log', '');
@@ -34,9 +33,13 @@ class ShowArtisanErrorLogAction
         }
 
         $pattern = '/url":"([^"]*)"/';
+        $matches = [];
         preg_match_all($pattern, $content, $matches);
 
-        $urls = array_unique($matches[1]);
+        $urls = [];
+        if (isset($matches[1]) && is_array($matches[1])) {
+            $urls = array_unique($matches[1]);
+        }
         $view_params = [
             'view' => $view,
             'lang' => app()->getLocale(),
@@ -45,6 +48,9 @@ class ShowArtisanErrorLogAction
             'urls' => $urls,
         ];
 
-        return view($view, $view_params);
+        $result = view($view, $view_params);
+        Assert::isInstanceOf($result, View::class);
+
+        return $result;
     }
 }

@@ -28,7 +28,8 @@ final class AsdSociDocumentationPage extends AsdSociPage
 
     public function mount(): void
     {
-        $requestedDocument = (string) request()->query('document', $this->document);
+        $requested = request()->query('document', $this->document);
+        $requestedDocument = is_string($requested) ? $requested : $this->document;
 
         if (array_key_exists($requestedDocument, $this->documents())) {
             $this->document = $requestedDocument;

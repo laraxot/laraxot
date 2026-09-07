@@ -48,7 +48,7 @@ final class BomItemsRelationManager extends XotBaseRelationManager
             ->headerActions([
                 CreateAction::make(),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ]);

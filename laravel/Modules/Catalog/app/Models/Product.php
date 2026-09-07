@@ -21,8 +21,6 @@ use Modules\Xot\Models\XotBaseModel;
  * @property int|null $catalog_part_type_id
  * @property int|null $catalog_measure_unit_id
  * @property int|null $catalog_frequency_id
- *
- * @method static ProductFactory factory($count = null, $state = [])
  */
 final class Product extends XotBaseModel
 {

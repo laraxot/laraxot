@@ -20,7 +20,6 @@ use Modules\WorkOrder\Actions\GeneratePeriodicSummaryPdfAction;
 use Modules\WorkOrder\Filament\Pages\PeriodicSummaryPage;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
-use Modules\WorkOrder\Tests\TestCase;
 use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;

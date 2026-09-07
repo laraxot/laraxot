@@ -217,9 +217,9 @@ PROMPT;
                     ->get();
 
                 return [
-                    'ok' => true,
-                    'results' => $customers->map(function (Customer $customer): array {
-                        $site = $customer->sites->first();
+'ok' => true,
+                        'results' => $customers->map(function (Customer $customer): array {
+                            $site = $customer->sites->firstOrNull();
 
                         return [
                             'id' => (int) $customer->id,

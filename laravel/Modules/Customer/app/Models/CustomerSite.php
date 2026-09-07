@@ -14,8 +14,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property int $id
  * @property int $customer_id
  * @property string|null $name
- *
- * @method static CustomerSiteFactory factory($count = null, $state = [])
  */
 final class CustomerSite extends BaseModel
 {

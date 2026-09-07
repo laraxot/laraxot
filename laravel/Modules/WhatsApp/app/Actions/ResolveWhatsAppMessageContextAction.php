@@ -90,8 +90,8 @@ final class ResolveWhatsAppMessageContextAction
                 'id' => (int) $workOrder->id,
                 'code' => (string) ($workOrder->code ?? ''),
                 'title' => (string) $workOrder->title,
-                'status' => (string) data_get($workOrder, 'status.name', ''),
-                'site' => (string) data_get($workOrder, 'site.name', ''),
+                'status' => $this->stringValue(data_get($workOrder, 'status.name', '')),
+                'site' => $this->stringValue(data_get($workOrder, 'site.name', '')),
             ])->all(),
             'interventions' => $interventions->map(fn (Intervention $intervention): array => [
                 'id' => (int) $intervention->id,
@@ -168,7 +168,7 @@ final class ResolveWhatsAppMessageContextAction
     {
         /** @var CustomerSite|null $match */
         $match = CustomerSite::query()->whereNotNull('phone')->get()
-            ->first(fn (CustomerSite $site): bool => $this->normalizer->normalize((string) $site->getAttribute('phone')) === $phone);
+            ->first(fn (CustomerSite $site): bool => $this->normalizer->normalize($this->stringValue($site->getAttribute('phone'))) === $phone);
 
         return $match;
     }
@@ -187,11 +187,16 @@ final class ResolveWhatsAppMessageContextAction
         $conversation->loadMissing(['customer', 'site', 'contact']);
 
         $parts = array_filter([
-            (string) data_get($conversation, 'customer.legal_name', ''),
-            (string) data_get($conversation, 'site.name', ''),
-            (string) data_get($conversation, 'contact.full_name', ''),
+            $this->stringValue(data_get($conversation, 'customer.legal_name', '')),
+            $this->stringValue(data_get($conversation, 'site.name', '')),
+            $this->stringValue(data_get($conversation, 'contact.full_name', '')),
         ]);
 
         return implode(' - ', $parts);
+    }
+
+    private function stringValue(mixed $value): string
+    {
+        return is_string($value) ? $value : '';
     }
 }

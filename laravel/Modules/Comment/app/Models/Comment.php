@@ -51,7 +51,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property-read Model|null $commentable
  * @property-read Model|null $commentator
  *
- * @method static CommentFactory factory($count = null, $state = [])
  * @method static Builder<Comment> newModelQuery()
  * @method static Builder<Comment> newQuery()
  * @method static Builder<Comment> query()

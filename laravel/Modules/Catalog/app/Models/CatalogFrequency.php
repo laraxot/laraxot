@@ -8,9 +8,6 @@ use Modules\Catalog\Database\Factories\CatalogFrequencyFactory;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
-/**
- * @method static CatalogFrequencyFactory factory($count = null, $state = [])
- */
 final class CatalogFrequency extends XotBaseModel
 {
     use HasXotFactory;

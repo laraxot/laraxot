@@ -55,7 +55,7 @@ final class StoreIncomingWhatsAppMessageAction
                 'meta_message_id' => $messageId,
                 'direction' => 'inbound',
                 'from_number' => $from,
-                'to_number' => $this->normalizer->normalize($this->stringValue($messagePayload['to'] ?? null) ?: (string) config('services.whatsapp.business_number', '')),
+                'to_number' => $this->normalizer->normalize($this->stringValue($messagePayload['to'] ?? null) ?: $this->stringValue(config('services.whatsapp.business_number', ''))),
                 'message_type' => $messageType,
                 'body' => $this->messageBody($messagePayload, $messageType),
                 'status' => 'received',

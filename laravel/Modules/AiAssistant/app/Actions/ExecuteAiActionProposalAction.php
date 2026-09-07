@@ -327,11 +327,16 @@ final class ExecuteAiActionProposalAction
 
         /** @var WhatsAppMessage|null $message */
         $message = WhatsAppMessage::query()->with('conversation')->find($messageId);
-        if (! $message instanceof WhatsAppMessage || $message->conversation === null) {
+        if (! $message instanceof WhatsAppMessage) {
+            return ['ok' => false, 'error' => 'Conversazione non trovata.'];
+        }
+        /** @var \Modules\WhatsApp\Models\WhatsAppConversation|null $conversation */
+        $conversation = $message->conversation;
+        if (! $conversation instanceof \Modules\WhatsApp\Models\WhatsAppConversation) {
             return ['ok' => false, 'error' => 'Conversazione non trovata.'];
         }
 
-        $result = app(OrganizeWhatsAppRequestAction::class)->execute($message->conversation, [
+        $result = app(OrganizeWhatsAppRequestAction::class)->execute($conversation, [
             'customer_name' => $this->payloadNullableString($payload, 'customer_name') ?? '',
             'address' => $this->payloadNullableString($payload, 'address') ?? '',
             'city' => $this->payloadNullableString($payload, 'city') ?? '',
@@ -1287,11 +1292,11 @@ final class ExecuteAiActionProposalAction
         // Checkpoint: everything up to the latest message is now handled, and
         // the live proposal is cleared so new messages start a fresh one.
         $conversation = $message->conversation;
-        if ($conversation !== null) {
+        if ($conversation instanceof \Modules\WhatsApp\Models\WhatsAppConversation) {
             $maxId = $conversation->messages()->max('id');
-            $latestMessageId = is_int($maxId) ? $maxId : 0;
+            $latestMessageId = is_int($maxId) && $maxId > 0 ? $maxId : $message->id;
             $conversation->forceFill([
-                'approved_up_to_message_id' => $latestMessageId > 0 ? $latestMessageId : $message->id,
+                'approved_up_to_message_id' => $latestMessageId,
                 'active_proposal_id' => null,
             ])->save();
         }

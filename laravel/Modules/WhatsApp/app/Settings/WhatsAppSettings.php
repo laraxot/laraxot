@@ -74,7 +74,9 @@ final readonly class WhatsAppSettings
 
     public function confidenceThreshold(): int
     {
-        $value = $this->settings->getInt('whatsapp.ai_confidence_threshold', (int) config('services.whatsapp.ai_confidence_threshold', 80));
+        $configuredDefault = config('services.whatsapp.ai_confidence_threshold', 80);
+        $default = is_numeric($configuredDefault) ? (int) $configuredDefault : 80;
+        $value = $this->settings->getInt('whatsapp.ai_confidence_threshold', $default);
 
         return max(0, min(100, $value));
     }

@@ -8,9 +8,6 @@ use Modules\Catalog\Database\Factories\CatalogPartTypeFactory;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\XotBaseModel;
 
-/**
- * @method static CatalogPartTypeFactory factory($count = null, $state = [])
- */
 final class CatalogPartType extends XotBaseModel
 {
     use HasXotFactory;

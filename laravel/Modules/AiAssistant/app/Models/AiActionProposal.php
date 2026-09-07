@@ -24,6 +24,7 @@ use Modules\User\Models\User;
  * @property string|null $error
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * @property AiThread|null $thread
  */
 final class AiActionProposal extends BaseModel
 {

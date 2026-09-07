@@ -2,16 +2,22 @@
 id: phpstan-Blog-fix
 slug: phpstan-Blog
 scope: [module:Blog, project:base_workorder_fila5]
-status: Pending
+status: Done
 priority: High
 created: 2026-09-06
+updated: 2026-09-07
 ---
 
-## Problema
-PHPStan errors in Modules/Blog
+## Problema (risolto)
+8 errori PHPStan: `Filament\Forms\Components\BaseFileUpload::enableOpen()`/
+`enableDownload()` deprecati in Filament v5, sostituiti da `openable()`/
+`downloadable()`.
 
-## Solution
-1. Analyze with phpstan
-2. Fix pattern errors
-3. Verify with phpmd + phpinsights + pest
-4. Git sync
+## Fix
+Rinomina meccanica in `CategoryForm.php`, `CategoryFormSchema.php`,
+`TextWidgetResource.php`, `TextWidgetResource/Schemas/TextWidgetForm.php`.
+
+## Verifica
+- PHPStan: 8 -> 0 errori
+- PHPMD: nessuna nuova segnalazione
+- Dettaglio: `docs/coverage.md`

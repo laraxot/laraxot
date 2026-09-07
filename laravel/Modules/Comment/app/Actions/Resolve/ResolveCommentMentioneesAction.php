@@ -12,8 +12,6 @@ use Modules\Comment\Models\Contracts\CanComment;
 use RuntimeException;
 use Spatie\QueueableAction\QueueableAction;
 
-use function Safe\preg_match_all;
-
 class ResolveCommentMentioneesAction
 {
     use QueueableAction;
@@ -22,23 +20,20 @@ class ResolveCommentMentioneesAction
     public function execute(Comment $comment): Collection
     {
         \Safe\preg_match_all('/data-mention="([^"]+)"/', $comment->original_text, $matches);
-        if (! isset($matches[1])) {
-            return new Collection;
-        }
         $mentioneeIds = $matches[1];
         if ($mentioneeIds === []) {
-            return new Collection;
+            return new Collection();
         }
 
         $modelClass = CommentConfigData::make()->models['commentator'] ?? null;
         if (! is_string($modelClass) || $modelClass === '' || ! is_a($modelClass, Model::class, true)) {
-            return new Collection;
+            return new Collection();
         }
 
         /** @var class-string<Model> $commentatorClass */
         $commentatorClass = $modelClass;
         /** @var Model $instance */
-        $instance = new $commentatorClass;
+        $instance = new $commentatorClass();
 
         $mentionees = $commentatorClass::query()
             ->whereIn($instance->getKeyName(), $mentioneeIds)

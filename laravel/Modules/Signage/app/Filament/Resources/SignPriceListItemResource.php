@@ -137,12 +137,12 @@ final class SignPriceListItemResource extends GatedXotBaseResource
                         ->pluck('name', 'code')
                         ->all()),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
                 DeleteAction::make(),
             ])
-            ->bulkActions([
+            ->toolbarActions([
                 DeleteBulkAction::make(),
             ]);
     }

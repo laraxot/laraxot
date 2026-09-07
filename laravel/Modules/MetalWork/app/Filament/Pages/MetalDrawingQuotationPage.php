@@ -8,6 +8,7 @@ use Filament\Notifications\Notification;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 use Modules\Customer\Models\Customer;
 use Modules\MetalWork\Actions\CreateQuotationFromMetalPartEstimateAction;
@@ -368,8 +369,8 @@ final class MetalDrawingQuotationPage extends GatedXotBasePage
 
     private function uploadedFileName(): string
     {
-        return is_object($this->drawingFile) && method_exists($this->drawingFile, 'getClientOriginalName')
-            ? (string) $this->drawingFile->getClientOriginalName()
+        return $this->drawingFile instanceof TemporaryUploadedFile
+            ? $this->drawingFile->getClientOriginalName()
             : 'disegno.stp';
     }
 
@@ -379,11 +380,11 @@ final class MetalDrawingQuotationPage extends GatedXotBasePage
      */
     private function storeUpload(string $originalName): ?string
     {
-        $sourcePath = is_object($this->drawingFile) && method_exists($this->drawingFile, 'getRealPath')
-            ? (string) $this->drawingFile->getRealPath()
-            : '';
+        $sourcePath = $this->drawingFile instanceof TemporaryUploadedFile
+            ? $this->drawingFile->getRealPath()
+            : false;
 
-        if ($sourcePath === '' || ! is_file($sourcePath)) {
+        if ($sourcePath === false || $sourcePath === '' || ! is_file($sourcePath)) {
             return null;
         }
 

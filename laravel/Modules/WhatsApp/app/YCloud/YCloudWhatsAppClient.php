@@ -16,9 +16,12 @@ final readonly class YCloudWhatsAppClient implements WhatsAppClientInterface
     {
         $this->assertConfigured();
 
+        $timeoutConfig = config('services.whatsapp.timeout', 30);
+        $timeout = is_numeric($timeoutConfig) ? (int) $timeoutConfig : 30;
+
         $response = Http::withHeaders(['X-API-Key' => $this->settings->ycloudApiKey()])
             ->acceptJson()
-            ->timeout((int) config('services.whatsapp.timeout', 30))
+            ->timeout($timeout)
             ->post($this->endpoint('/whatsapp/messages/sendDirectly'), [
                 'from' => $this->settings->businessNumber(),
                 'to' => $toPhoneE164,

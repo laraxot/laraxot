@@ -130,7 +130,7 @@ final class MetalRawMaterialResource extends GatedXotBaseResource
                 Tables\Filters\SelectFilter::make('family_code')
                     ->options(self::familyOptions()),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ]);

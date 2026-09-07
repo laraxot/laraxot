@@ -112,7 +112,7 @@ final class MetalWorkCenterResource extends GatedXotBaseResource
                 Tables\Columns\IconColumn::make('is_internal')->boolean(),
                 Tables\Columns\IconColumn::make('is_active')->boolean(),
             ])
-            ->actions([
+            ->recordActions([
                 EditAction::make(),
                 DeleteAction::make(),
             ]);

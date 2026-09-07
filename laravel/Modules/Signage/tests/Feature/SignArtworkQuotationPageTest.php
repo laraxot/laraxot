@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Signage\Tests\TestCase::class);
+uses(TestCase::class);
 
 use Illuminate\Http\Testing\File;
 use Illuminate\Http\UploadedFile;
@@ -20,8 +20,8 @@ use Modules\Signage\Models\SignSpec;
 use Modules\Signage\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
-use Spatie\Permission\Models\Role;
 use PHPUnit\Framework\Assert;
+use Spatie\Permission\Models\Role;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
@@ -63,7 +63,8 @@ it('reads an uploaded drawing and prices it on screen', function (): void {
     $page->call('extract');
     $page->assertHasNoErrors();
 
-    $specId = (int) $page->get('specId');
+    $specId = $page->get('specId');
+    Assert::assertIsInt($specId);
 
     $spec = SignSpec::query()->findOrFail($specId);
 
@@ -96,14 +97,15 @@ it('recomputes the quotation when the operator types a missing quantity', functi
         ->call('extract')
         ->set('markupPercent', '0');
 
-    $specId = (int) $page->get('specId');
+    $specId = $page->get('specId');
+    Assert::assertIsInt($specId);
     $baseline = priceSignageSpec($specId, []);
 
     $cutting = collect($baseline->lines)->firstWhere('role', 'cutting');
     Assert::assertInstanceOf(SignQuotationLine::class, $cutting);
     $doubledQuantity = (float) $cutting->quantity * 2;
 
-    $doubled = priceSignageSpec((int) $specId, ['cutting' => $doubledQuantity]);
+    $doubled = priceSignageSpec($specId, ['cutting' => $doubledQuantity]);
 
     // Doubling the milling metres has to add exactly one more milling line worth.
     expect(round($doubled->totalCost - $baseline->totalCost, 2))

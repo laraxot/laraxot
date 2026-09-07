@@ -25,7 +25,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property-read Model|null $commentable
  * @property-read Model|null $subscriber
  *
- * @method static CommentNotificationSubscriptionFactory factory($count = null, $state = [])
  * @method static Builder<static> newModelQuery()
  * @method static Builder<static> newQuery()
  * @method static Builder<static> query()

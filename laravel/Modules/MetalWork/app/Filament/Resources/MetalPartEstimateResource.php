@@ -78,7 +78,7 @@ final class MetalPartEstimateResource extends GatedXotBaseResource
                         : QuotationResource::getUrl('edit', ['record' => $record->quotation_id], panel: 'admin')),
                 Tables\Columns\TextColumn::make('created_at')->dateTime('d/m/Y H:i')->sortable(),
             ])
-            ->actions([
+            ->recordActions([
                 DeleteAction::make(),
             ]);
     }

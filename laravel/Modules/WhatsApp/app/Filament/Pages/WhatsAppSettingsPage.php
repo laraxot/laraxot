@@ -157,10 +157,11 @@ final class WhatsAppSettingsPage extends GatedXotBasePage
             $client = app(WhatsAppClientInterface::class);
             $this->lastDiagnostic = $client->verifyConfiguration(trim($this->testRecipient) !== '' ? $this->testRecipient : null);
             $ok = (bool) ($this->lastDiagnostic['ok'] ?? false);
+            $errorMessage = $this->lastDiagnostic['error'] ?? 'Errore sconosciuto.';
 
             $notification = Notification::make()
                 ->title($ok ? 'Configurazione WhatsApp verificata' : 'Configurazione WhatsApp non valida')
-                ->body($ok ? 'Il provider WhatsApp configurato risponde correttamente.' : (string) ($this->lastDiagnostic['error'] ?? 'Errore sconosciuto.'));
+                ->body($ok ? 'Il provider WhatsApp configurato risponde correttamente.' : (is_string($errorMessage) ? $errorMessage : 'Errore sconosciuto.'));
 
             ($ok ? $notification->success() : $notification->danger())->send();
         } catch (\Throwable $e) {
@@ -227,7 +228,7 @@ final class WhatsAppSettingsPage extends GatedXotBasePage
             ->orderBy('name')
             ->limit(100)
             ->pluck('name', 'id')
-            ->mapWithKeys(fn (mixed $name, int|string $id): array => [(int) $id => (string) $name])
+            ->mapWithKeys(fn (mixed $name, int|string $id): array => [(int) $id => is_string($name) ? $name : ''])
             ->all();
     }
 

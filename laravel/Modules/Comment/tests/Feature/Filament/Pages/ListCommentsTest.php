@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Modules\Comment\Filament\Resources\CommentResource;
-use Modules\Comment\Filament\Resources\CommentResource\Pages\ListComments;
 use Modules\Comment\Filament\Resources\CommentResource\Schemas\CommentForm;
 use Modules\Comment\Filament\Resources\CommentResource\Schemas\CommentInfolist;
 use Modules\Comment\Filament\Resources\CommentResource\Tables\CommentsTable;
@@ -11,18 +10,18 @@ use Modules\Comment\Models\Comment;
 use Modules\Comment\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('comment resource usa il modello Comment', function (): void {
     Assert::assertSame(Comment::class, CommentResource::getModel());
 });
 
 test('list comments espone azioni approve reject e bulk moderation', function (): void {
-    $page = new ListComments;
+    $table = new CommentsTable();
 
-    $actions = $page->getTableActions();
-    $bulkActions = $page->getTableBulkActions();
-    $filters = $page->getTableFilters();
+    $actions = $table->getTableActions();
+    $bulkActions = $table->getTableBulkActions();
+    $filters = $table->getTableFilters();
 
     Assert::assertArrayHasKey('approve', $actions);
     Assert::assertArrayHasKey('reject', $actions);
@@ -31,8 +30,8 @@ test('list comments espone azioni approve reject e bulk moderation', function ()
 });
 
 test('list comments definisce colonne id testo e stato moderazione', function (): void {
-    $page = new ListComments;
-    $columns = $page->getTableColumns();
+    $table = new CommentsTable();
+    $columns = $table->getTableColumns();
 
     foreach (['id', 'original_text', 'commentator', 'commentable', 'status', 'created_at'] as $key) {
         Assert::assertArrayHasKey($key, $columns);
@@ -42,6 +41,6 @@ test('list comments definisce colonne id testo e stato moderazione', function ()
 test('comment resource schema classes exist and delegate zen table', function (): void {
     Assert::assertNotEmpty(CommentForm::getFormSchema());
     Assert::assertNotEmpty(CommentInfolist::getInfolistSchema());
-    Assert::assertNotEmpty((new CommentsTable)->getTableColumns());
-    Assert::assertArrayHasKey('moderation', (new CommentsTable)->getTableFilters());
+    Assert::assertNotEmpty((new CommentsTable())->getTableColumns());
+    Assert::assertArrayHasKey('moderation', (new CommentsTable())->getTableFilters());
 });

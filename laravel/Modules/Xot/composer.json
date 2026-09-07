@@ -58,7 +58,7 @@
         "tightenco/parental": "*"
     },
     "require_comment": {
-        "filament/spatie-laravel-translatable-plugin": "*"
+       
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.2",
@@ -73,9 +73,21 @@
         "nunomaduro/phpinsights": "*",
         "orchestra/testbench": "*",
         "pestphp/pest": "*",
+        "pestphp/pest-plugin": "*",
+        "pestphp/pest-plugin-arch": "*",
+        "pestphp/pest-plugin-faker": "*",
+        "pestphp/pest-plugin-laravel": "*",
+        "pestphp/pest-plugin-livewire": "*",
+        "pestphp/pest-plugin-mutate": "*",
+        "pestphp/pest-plugin-phpstan": "*",
+        "pestphp/pest-plugin-profanity": "*",
+        "pestphp/pest-plugin-rector": "*",
         "pestphp/pest-plugin-type-coverage": "*",
-        "thecodingmachine/phpstan-safe-rule": "*",
-        "pestphp/pest-plugin-laravel": "*"
+        "phpstan/extension-installer": "*",
+        "phpstan/phpdoc-parser": "*",
+        "phpstan/phpstan": "*",
+        "phpstan/phpstan-deprecation-rules": "*",
+        "thecodingmachine/phpstan-safe-rule": "*"
     },
     "repositories_comment": "Local path packages (coolsam/panel-modules) moved to root composer.json for proper priority. DO NOT add Packagist here - it must remain non-canonical in root.",
     "repositories": [

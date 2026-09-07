@@ -8,6 +8,7 @@ use Filament\Notifications\Notification;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\Features\SupportFileUploads\WithFileUploads;
 use Modules\Customer\Models\Customer;
 use Modules\Platform\Filament\Pages\GatedXotBasePage;
@@ -44,8 +45,7 @@ final class SignArtworkQuotationPage extends GatedXotBasePage
 
     private const ARTWORK_DIRECTORY = 'signage-artwork';
 
-    /** @var mixed */
-    public $artwork = null;
+    public ?TemporaryUploadedFile $artwork = null;
 
     public ?int $specId = null;
 
@@ -254,8 +254,8 @@ final class SignArtworkQuotationPage extends GatedXotBasePage
 
     private function uploadedFileName(): string
     {
-        return is_object($this->artwork) && method_exists($this->artwork, 'getClientOriginalName')
-            ? (string) $this->artwork->getClientOriginalName()
+        return $this->artwork instanceof TemporaryUploadedFile
+            ? $this->artwork->getClientOriginalName()
             : 'disegno.ai';
     }
 
@@ -265,8 +265,8 @@ final class SignArtworkQuotationPage extends GatedXotBasePage
      */
     private function storeUpload(string $originalName): ?string
     {
-        $sourcePath = is_object($this->artwork) && method_exists($this->artwork, 'getRealPath')
-            ? (string) $this->artwork->getRealPath()
+        $sourcePath = $this->artwork instanceof TemporaryUploadedFile
+            ? $this->artwork->getRealPath()
             : '';
 
         if ($sourcePath === '' || ! is_file($sourcePath)) {

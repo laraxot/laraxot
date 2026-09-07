@@ -121,7 +121,7 @@ final class EditPlatformSetting extends XotBaseEditRecord
         $key = $this->resolveSettingKey($data);
 
         if ($key === 'inventory.trace_mode') {
-            $data['value_json'] = ['value' => (string) ($data['inventory_trace_mode'] ?? 'aggregate')];
+            $data['value_json'] = ['value' => self::stringOrDefault($data['inventory_trace_mode'] ?? null, 'aggregate')];
         } elseif ($key === 'inventory.allow_link_work_orders') {
             $data['value_json'] = ['value' => (bool) ($data['inventory_allow_link_work_orders'] ?? false)];
         } elseif ($key === 'inventory.allow_link_interventions') {
@@ -129,7 +129,7 @@ final class EditPlatformSetting extends XotBaseEditRecord
         } elseif ($key === 'inventory.enable_storage_zones') {
             $data['value_json'] = ['value' => (bool) ($data['inventory_enable_storage_zones'] ?? false)];
         } elseif ($key === 'inventory.zone_mode') {
-            $data['value_json'] = ['value' => (string) ($data['inventory_zone_mode'] ?? 'floor_grid')];
+            $data['value_json'] = ['value' => self::stringOrDefault($data['inventory_zone_mode'] ?? null, 'floor_grid')];
         } elseif ($key === 'inventory.enable_realtime_monitoring') {
             $data['value_json'] = ['value' => (bool) ($data['inventory_enable_realtime_monitoring'] ?? true)];
         } elseif ($key === 'inventory.enable_space_optimization') {
@@ -143,17 +143,17 @@ final class EditPlatformSetting extends XotBaseEditRecord
         } elseif ($key === 'inventory.enable_rfid_iot') {
             $data['value_json'] = ['value' => (bool) ($data['inventory_enable_rfid_iot'] ?? false)];
         } elseif ($key === 'billing.einvoice.provider') {
-            $data['value_json'] = ['value' => (string) ($data['billing_einvoice_provider'] ?? 'disabled')];
+            $data['value_json'] = ['value' => self::stringOrDefault($data['billing_einvoice_provider'] ?? null, 'disabled')];
         } elseif ($key === 'billing.einvoice.api_key') {
-            $data['value_json'] = ['value' => (string) ($data['billing_einvoice_api_key'] ?? '')];
+            $data['value_json'] = ['value' => self::stringOrDefault($data['billing_einvoice_api_key'] ?? null, '')];
         } elseif ($key === 'billing.einvoice.endpoint') {
-            $data['value_json'] = ['value' => (string) ($data['billing_einvoice_endpoint'] ?? '')];
+            $data['value_json'] = ['value' => self::stringOrDefault($data['billing_einvoice_endpoint'] ?? null, '')];
         } elseif ($key === 'modules.operator.daily_notes') {
             $data['value_json'] = ['value' => (bool) ($data['modules_operator_daily_notes'] ?? true)];
         } elseif ($key === 'modules.operator.my_schedule') {
             $data['value_json'] = ['value' => (bool) ($data['modules_operator_my_schedule'] ?? true)];
         } elseif ($key === 'interventions.work_mode') {
-            $data['value_json'] = ['value' => (string) ($data['interventions_work_mode'] ?? 'work_order')];
+            $data['value_json'] = ['value' => self::stringOrDefault($data['interventions_work_mode'] ?? null, 'work_order')];
         } else {
             $raw = $data['value_json_raw'] ?? null;
             if (is_string($raw)) {
@@ -211,5 +211,14 @@ final class EditPlatformSetting extends XotBaseEditRecord
         $record = $this->getRecord();
 
         return $record instanceof PlatformSetting ? (string) $record->key : '';
+    }
+
+    /**
+     * Narrows a `mixed` form value to a string, falling back to `$default`
+     * when the value is not already a string (never blindly casts).
+     */
+    private static function stringOrDefault(mixed $value, string $default): string
+    {
+        return is_string($value) ? $value : $default;
     }
 }

@@ -158,7 +158,10 @@ final class PriceSignSpecAction
             $tokens[] = strtoupper(trim($component->lighting));
         }
         foreach (preg_split('/\s+/', (string) $component->material) ?: [] as $word) {
-            $word = strtoupper(trim((string) $word));
+            if (! is_string($word)) {
+                continue;
+            }
+            $word = strtoupper(trim($word));
             if (strlen($word) >= 3) {
                 $tokens[] = $word;
             }

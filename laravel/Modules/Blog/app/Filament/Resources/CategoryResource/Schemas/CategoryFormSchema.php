@@ -40,8 +40,8 @@ final class CategoryFormSchema
             TextInput::make('description')
                 ->maxLength(2048),
             SpatieMediaLibraryFileUpload::make('image')
-                ->enableOpen()
-                ->enableDownload()
+                ->openable()
+                ->downloadable()
                 ->columnSpanFull()
                 ->collection('category')
                 ->disk('uploads')

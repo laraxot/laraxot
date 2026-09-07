@@ -243,8 +243,9 @@ final class EstimateMetalPartCostAction
                 continue;
             }
 
-            $minutes = array_key_exists($code, $overrides)
-                ? (float) $overrides[$code]
+            $overrideMinutes = $overrides[$code] ?? null;
+            $minutes = is_int($overrideMinutes) || is_float($overrideMinutes)
+                ? (float) $overrideMinutes
                 : $this->derivedMinutes($rule, $geometry);
 
             if ($minutes <= 0.0) {

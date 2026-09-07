@@ -28,22 +28,52 @@ final class SignWorkCenterSeeder extends Seeder
         }
 
         foreach ($centers as $center) {
-            if (! is_array($center) || ! isset($center['code'])) {
+            $normalized = $this->normalizeCenter($center);
+            if ($normalized === null) {
                 continue;
             }
 
-            $code = (string) $center['code'];
-            $nameKey = isset($center['name_key']) ? (string) $center['name_key'] : $code;
-
             WorkCenter::query()->updateOrCreate(
-                ['context_code' => SignageCosting::CONTEXT, 'code' => $code],
+                ['context_code' => SignageCosting::CONTEXT, 'code' => $normalized['code']],
                 [
-                    'name' => (string) __('signage::signage.work_centers.'.$nameKey),
-                    'is_internal' => (bool) ($center['is_internal'] ?? true),
-                    'sort_order' => (int) ($center['sort_order'] ?? 0),
+                    'name' => (string) __('signage::signage.work_centers.'.$normalized['name_key']),
+                    'is_internal' => $normalized['is_internal'],
+                    'sort_order' => $normalized['sort_order'],
                     'is_active' => true,
                 ],
             );
         }
+    }
+
+    /**
+     * Normalizes one raw config entry into the typed shape `updateOrCreate()`
+     * needs, or returns null when the entry is missing the code it must be
+     * keyed on.
+     *
+     * @return array{code: string, name_key: string, is_internal: bool, sort_order: int}|null
+     */
+    private function normalizeCenter(mixed $center): ?array
+    {
+        if (! is_array($center) || ! isset($center['code'])) {
+            return null;
+        }
+
+        $codeRaw = $center['code'];
+        if (! is_string($codeRaw) && ! is_int($codeRaw)) {
+            return null;
+        }
+        $code = (string) $codeRaw;
+
+        $nameKeyRaw = $center['name_key'] ?? null;
+        $nameKey = is_string($nameKeyRaw) || is_int($nameKeyRaw) ? (string) $nameKeyRaw : $code;
+
+        $sortOrderRaw = $center['sort_order'] ?? 0;
+
+        return [
+            'code' => $code,
+            'name_key' => $nameKey,
+            'is_internal' => (bool) ($center['is_internal'] ?? true),
+            'sort_order' => is_numeric($sortOrderRaw) ? (int) $sortOrderRaw : 0,
+        ];
     }
 }

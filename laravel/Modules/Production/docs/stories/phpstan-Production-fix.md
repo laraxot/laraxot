@@ -2,16 +2,21 @@
 id: phpstan-Production-fix
 slug: phpstan-Production
 scope: [module:Production, project:base_workorder_fila5]
-status: Pending
+status: Done
 priority: High
 created: 2026-09-06
+updated: 2026-09-07
 ---
 
-## Problema
-PHPStan errors in Modules/Production
+## Problema (risolto)
+3 errori PHPStan: `Table::actions()`/`bulkActions()` deprecati (Filament v4->v5),
+sostituiti da `recordActions()`/`toolbarActions()`.
 
-## Solution
-1. Analyze with phpstan
-2. Fix pattern errors
-3. Verify with phpmd + phpinsights + pest
-4. Git sync
+## Fix
+Rinomina meccanica in `ProductionOrderResource.php`,
+`ProductionPhasesRelationManager.php`.
+
+## Verifica
+- PHPStan: 3 -> 0 errori
+- PHPMD: nessuna segnalazione
+- Dettaglio: `docs/coverage.md`

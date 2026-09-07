@@ -145,7 +145,7 @@ final class IdroclimaRecaldiniDemoSeeder extends Seeder
                 ],
             );
 
-            $ids[$code] = (int) DB::table('work_order_statuses')->where('code', $code)->value('id');
+            $ids[$code] = self::toInt(DB::table('work_order_statuses')->where('code', $code)->value('id'));
         }
 
         return $ids;
@@ -563,5 +563,18 @@ final class IdroclimaRecaldiniDemoSeeder extends Seeder
                 ['quantity' => $quantity, 'unit_price' => $unitPrice],
             );
         }
+    }
+
+    /**
+     * Narrows a `mixed` DB/query-builder value to `int`, without ever
+     * blindly casting a non-numeric value.
+     */
+    private static function toInt(mixed $value, int $default = 0): int
+    {
+        if (is_int($value)) {
+            return $value;
+        }
+
+        return is_numeric($value) ? (int) $value : $default;
     }
 }

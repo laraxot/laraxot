@@ -19,6 +19,8 @@ final class SignSpecFactory extends Factory
      */
     public function definition(): array
     {
+        $scaleDenominator = $this->faker->randomElement([5, 10, 20]);
+
         return [
             'source_file' => $this->faker->word().'.ai',
             'drawing_title' => $this->faker->sentence(3),
@@ -36,7 +38,7 @@ final class SignSpecFactory extends Factory
             'painting' => 'RAL '.$this->faker->numberBetween(1000, 9018),
             'finishing' => $this->faker->randomElement(['MATT', 'GLOSSY', 'SATIN']),
             'lighting' => $this->faker->randomElement(['2700K', '3000K', '3500K', '4000K']),
-            'scale' => '1:'.(int) $this->faker->randomElement([5, 10, 20]),
+            'scale' => '1:'.(is_int($scaleDenominator) ? $scaleDenominator : 10),
             'sheet_size' => $this->faker->randomElement(['A4', 'A3']),
             'revision' => 'RS '.$this->faker->numberBetween(0, 5),
             'creator' => 'Adobe Illustrator',

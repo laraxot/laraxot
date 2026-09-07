@@ -122,7 +122,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
             $statusIdsByCode = DB::table('work_order_statuses')
                 ->select(['id', 'code'])
                 ->get()
-                ->mapWithKeys(fn ($row): array => [(string) $row->code => $row->id])
+                ->mapWithKeys(fn ($row): array => [self::toStringValue($row->code) => $row->id])
                 ->all();
 
             // ── Contact roles ────────────────────────────────────────────────
@@ -131,7 +131,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
             }
 
             // ── Users operatori ──────────────────────────────────────────────
-            $adminUserId = DB::table('users')->where('email', 'admin@local.test')->value('id');
+            $adminUserId = self::toIntOrNull(DB::table('users')->where('email', 'admin@local.test')->value('id'));
 
             $operatorData = [
                 [
@@ -163,7 +163,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
             foreach ($operatorData as $op) {
                 $existing = DB::table('users')->where('email', $op['email'])->first();
                 if ($existing) {
-                    $userId = (int) $existing->id;
+                    $userId = self::toInt($existing->id);
                     $operatorIds[] = $userId;
                 } else {
                     $userId = (int) DB::table('users')->insertGetId([
@@ -194,7 +194,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     'updated_at' => $now,
                 ],
             );
-            $gerardoUserId = (int) (DB::table('users')->where('email', 'info@gsbuildingservice.it')->value('id') ?: 0);
+            $gerardoUserId = self::toInt(DB::table('users')->where('email', 'info@gsbuildingservice.it')->value('id'));
             $gerardoUser = User::query()->find($gerardoUserId);
             if ($gerardoUser !== null) {
                 $gerardoUser->syncRoles(['admin', 'operator']);
@@ -228,7 +228,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     ],
                 );
 
-                $teamUserId = (int) (DB::table('users')->where('email', $teamMember['email'])->value('id') ?: 0);
+                $teamUserId = self::toInt(DB::table('users')->where('email', $teamMember['email'])->value('id'));
                 $teamUser = User::query()->find($teamUserId);
                 if ($teamUser !== null) {
                     $teamUser->syncRoles(['operator']);
@@ -942,8 +942,8 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     }
 
                     $quotationId = (int) DB::table('quotations')->insertGetId([
-                        'customer_id' => (int) $workOrderMeta['customer_id'],
-                        'work_order_id' => (int) $workOrderMeta['id'],
+                        'customer_id' => self::toInt($workOrderMeta['customer_id']),
+                        'work_order_id' => self::toInt($workOrderMeta['id']),
                         'code' => $quotationDefinition['code'],
                         'status_code' => $quotationDefinition['status_code'],
                         'title' => $quotationDefinition['title'],
@@ -1032,11 +1032,11 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                         : [];
 
                     $invoiceTotal = collect($workOrderInterventions)
-                        ->sum(fn (mixed $intervention): float => is_array($intervention) ? (float) ($intervention['amount'] ?? 0) : 0.0);
+                        ->sum(fn (mixed $intervention): float => is_array($intervention) ? self::toFloat($intervention['amount'] ?? 0) : 0.0);
 
                     $invoiceId = (int) DB::table('invoices')->insertGetId([
-                        'customer_id' => (int) $workOrderMeta['customer_id'],
-                        'work_order_id' => (int) $workOrderMeta['id'],
+                        'customer_id' => self::toInt($workOrderMeta['customer_id']),
+                        'work_order_id' => self::toInt($workOrderMeta['id']),
                         'number' => $invoiceDefinition['number'],
                         'issued_on' => $invoiceDefinition['issued_on'],
                         'total' => round($invoiceTotal, 2),
@@ -1052,7 +1052,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     DB::table('invoice_work_order_links')->updateOrInsert(
                         [
                             'invoice_id' => $invoiceId,
-                            'work_order_id' => (int) $workOrderMeta['id'],
+                            'work_order_id' => self::toInt($workOrderMeta['id']),
                         ],
                         [
                             'created_at' => $now,
@@ -1716,9 +1716,9 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                             'unit_price' => $fallbackProduct['unit_price'],
                             'line_total' => $fallbackProduct['unit_price'],
                             'note' => 'Materiale demo fallback collegato a intervento Gerardo.',
-                            'work_order_id' => (int) $firstGerardoIntervention->work_order_id,
-                            'intervention_id' => (int) $firstGerardoIntervention->id,
-                            'created_by_user_id' => (int) ($firstGerardoIntervention->performed_by_user_id ?? $gerardoUserId),
+                            'work_order_id' => self::toInt($firstGerardoIntervention->work_order_id),
+                            'intervention_id' => self::toInt($firstGerardoIntervention->id),
+                            'created_by_user_id' => self::toIntOrNull($firstGerardoIntervention->performed_by_user_id) ?? $gerardoUserId,
                             'occurred_at' => $firstGerardoIntervention->scheduled_at,
                             'origin_auto' => false,
                             'created_at' => $firstGerardoIntervention->scheduled_at,
@@ -1769,7 +1769,7 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
                     ],
                 );
 
-                $settingId = (int) DB::table('platform_settings')->where('key', $settingKey)->value('id');
+                $settingId = self::toInt(DB::table('platform_settings')->where('key', $settingKey)->value('id'));
                 if ($settingId > 0) {
                     $auditInsert(
                         $now->subMinutes(5),
@@ -1834,5 +1834,46 @@ final class ImpiantiElettricIDemoSeeder extends Seeder
         });
 
         $this->command->info('✅  ImpiantiElettricIDemoSeeder completato — Volt Service Srl (demo)');
+    }
+
+    /**
+     * Narrows a `mixed` DB/query-builder value to `int`, without ever
+     * blindly casting a non-numeric value.
+     */
+    private static function toInt(mixed $value, int $default = 0): int
+    {
+        return self::toIntOrNull($value) ?? $default;
+    }
+
+    /**
+     * Narrows a `mixed` DB/query-builder value to `int|null`.
+     */
+    private static function toIntOrNull(mixed $value): ?int
+    {
+        if (is_int($value)) {
+            return $value;
+        }
+
+        return is_numeric($value) ? (int) $value : null;
+    }
+
+    /**
+     * Narrows a `mixed` DB/query-builder value to `float`.
+     */
+    private static function toFloat(mixed $value): float
+    {
+        return is_numeric($value) ? (float) $value : 0.0;
+    }
+
+    /**
+     * Narrows a `mixed` DB/query-builder value to `string`.
+     */
+    private static function toStringValue(mixed $value): string
+    {
+        if (is_string($value)) {
+            return $value;
+        }
+
+        return is_scalar($value) ? (string) $value : '';
     }
 }

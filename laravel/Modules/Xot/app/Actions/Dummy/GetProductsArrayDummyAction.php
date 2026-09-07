@@ -27,8 +27,9 @@ class GetProductsArrayDummyAction
         // API
         $response = Http::get('https://dummyjson.com/products');
 
-        /* @var Response $response */
-        Assert::isArray($products = $response->json());
+        Assert::isInstanceOf($response, Response::class);
+        $products = $response->json();
+        Assert::isArray($products);
         Assert::isArray($products['products']);
 
         // filtering some attributes

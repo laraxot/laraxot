@@ -132,7 +132,7 @@ final class SignCatalogItemResource extends GatedXotBaseResource
                 Tables\Filters\SelectFilter::make('sign_price_list_id')
                     ->options(fn (): array => SignPriceList::query()->orderBy('code')->pluck('name', 'id')->all()),
             ])
-            ->actions([
+            ->recordActions([
                 ViewAction::make(),
                 EditAction::make(),
                 ReplicateAction::make()

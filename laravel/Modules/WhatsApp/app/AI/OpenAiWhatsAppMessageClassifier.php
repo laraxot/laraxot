@@ -209,11 +209,13 @@ PROMPT;
      */
     private function normalizeResult(array $parsed, WhatsAppMessage $message, array $context): array
     {
-        $confidence = (int) ($parsed['confidence'] ?? 0);
+        $confidenceRaw = $parsed['confidence'] ?? 0;
+        $confidence = is_numeric($confidenceRaw) ? (int) $confidenceRaw : 0;
         $proposedAction = is_array($parsed['proposed_action'] ?? null) ? $parsed['proposed_action'] : [];
         $payload = is_array($proposedAction['payload'] ?? null) ? $proposedAction['payload'] : [];
 
-        $workOrderId = (int) ($parsed['work_order_id'] ?? $payload['work_order_id'] ?? 0);
+        $workOrderIdRaw = $parsed['work_order_id'] ?? $payload['work_order_id'] ?? 0;
+        $workOrderId = is_numeric($workOrderIdRaw) ? (int) $workOrderIdRaw : 0;
         if ($workOrderId <= 0) {
             $firstWorkOrderId = data_get($context, 'work_orders.0.id');
             $workOrderId = is_numeric($firstWorkOrderId) ? (int) $firstWorkOrderId : 0;

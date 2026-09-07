@@ -63,8 +63,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property-read User|null $performedBy
  * @property-read WorkOrder|null $workOrder
  * @property-read Customer|null $customer
- *
- * @method static InterventionFactory factory($count = null, $state = [])
  */
 final class Intervention extends BaseModel
 {

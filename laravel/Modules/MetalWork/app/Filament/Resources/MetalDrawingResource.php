@@ -86,7 +86,7 @@ final class MetalDrawingResource extends GatedXotBaseResource
             ->filters([
                 Tables\Filters\TernaryFilter::make('is_assembly'),
             ])
-            ->actions([
+            ->recordActions([
                 DeleteAction::make(),
             ]);
     }

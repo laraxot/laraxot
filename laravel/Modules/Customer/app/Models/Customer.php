@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Customer\Database\Factories\CustomerFactory;
 use Modules\WorkOrder\Models\WorkOrder;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property int $id
@@ -34,6 +33,11 @@ final class Customer extends BaseModel
             'is_active' => 'bool',
             'deleted_at' => 'datetime',
         ];
+    }
+
+    protected static function newFactory(): CustomerFactory
+    {
+        return CustomerFactory::new();
     }
 
     /** @return HasMany<CustomerSite, $this> */
