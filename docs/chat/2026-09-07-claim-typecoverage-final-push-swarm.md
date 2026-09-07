@@ -21,3 +21,12 @@ oggi, altri agenti). Metodologia gia' definita in quella story: `@var
 string|int|float|bool|null` sul docblock della costante, o `public const
 string X = '...'` tipizzato (PHP 8.3+) dove possibile. Split in batch per
 ridurre overhead, ogni modulo resta commit/push separato nel proprio repo.
+
+## Outcome — batch Billing + WorkOrder (2026-09-07 ~22:40)
+
+Chiuso: dettagli completi in
+`2026-09-07-typecoverage-billing-workorder-done.md`. Billing 16→0, WorkOrder
+1→0. Commit `46484f9` (module_billing_fila5), `efac702` (module_workorder_fila5),
+`2d28632cd` (root, solo aggiornamento story files — il codice PHP era gia' in HEAD
+root via un altro batch parallelo, commit `ee91599e5`). Full-tree residuo al
+termine di questo batch: 48/302 righe `constantTypeCoverage`, 254/302 (84.1%).
