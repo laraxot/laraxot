@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace Modules\Compliance\Filament\Resources\CustomerSystemResource\Pages;
 
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
 use Modules\Compliance\Filament\Resources\CustomerSystemResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListCustomerSystems extends ListRecords
+final class ListCustomerSystems extends XotBaseListRecords
 {
     protected static string $resource = CustomerSystemResource::class;
 
     protected function getHeaderActions(): array
     {
-        return [Actions\CreateAction::make()];
+        return ['create' => Actions\CreateAction::make()];
     }
 }

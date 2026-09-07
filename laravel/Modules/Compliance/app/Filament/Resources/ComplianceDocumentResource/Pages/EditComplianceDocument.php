@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Filament\Resources\ComplianceDocumentResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Auth;
 use Modules\Compliance\Actions\AttachComplianceDocumentFileAction;
 use Modules\Compliance\Filament\Resources\ComplianceDocumentResource;
 use Modules\Compliance\Models\ComplianceDocument;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditComplianceDocument extends EditRecord
+final class EditComplianceDocument extends XotBaseEditRecord
 {
     protected static string $resource = ComplianceDocumentResource::class;
 

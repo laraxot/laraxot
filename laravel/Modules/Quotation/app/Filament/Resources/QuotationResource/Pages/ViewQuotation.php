@@ -8,7 +8,8 @@ use Filament\Actions\Action;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Pages\ViewRecord;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Components\Component;
 use Illuminate\Support\Facades\Auth;
 use Modules\Quotation\Actions\ApplyQuotationTemplateToQuotationAction;
 use Modules\Quotation\Actions\GenerateConfirmedQuotationPdfAction;
@@ -23,21 +24,22 @@ use Modules\WorkOrder\Actions\CreateWorkOrderFromQuotationAction;
 use Modules\WorkOrder\Filament\Resources\WorkOrderResource;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderStatus;
+use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 
-final class ViewQuotation extends ViewRecord
+final class ViewQuotation extends XotBaseViewRecord
 {
     protected static string $resource = QuotationResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('voiceSimilar')
+            'voiceSimilar' => Action::make('voiceSimilar')
                 ->label(__('quotations.voice.create_similar'))
                 ->icon('heroicon-o-microphone')
                 ->visible(fn (): bool => RecordQuotationVoicePage::canAccess())
                 ->url(fn (): string => RecordQuotationVoicePage::getUrl(['source' => $this->getRecord()->getKey()])),
 
-            Action::make('downloadPdf')
+            'downloadPdf' => Action::make('downloadPdf')
                 ->label(__('quotations.actions.download_pdf'))
                 ->icon('heroicon-o-arrow-down-tray')
                 ->action(function () {
@@ -52,7 +54,7 @@ final class ViewQuotation extends ViewRecord
                     );
                 }),
 
-            Action::make('downloadConfirmedPdf')
+            'downloadConfirmedPdf' => Action::make('downloadConfirmedPdf')
                 ->label(__('quotations.actions.download_confirmed_pdf'))
                 ->icon('heroicon-o-check-badge')
                 ->visible(function (): bool {
@@ -73,7 +75,7 @@ final class ViewQuotation extends ViewRecord
                     );
                 }),
 
-            Action::make('applyTemplate')
+            'applyTemplate' => Action::make('applyTemplate')
                 ->label(__('quotations.actions.apply_template'))
                 ->icon('heroicon-o-rectangle-stack')
                 ->schema([
@@ -94,7 +96,7 @@ final class ViewQuotation extends ViewRecord
                     app(ApplyQuotationTemplateToQuotationAction::class)->execute($quotation, $template);
                 }),
 
-            Action::make('createWorkOrder')
+            'createWorkOrder' => Action::make('createWorkOrder')
                 ->label(__('quotations.actions.create_work_order'))
                 ->icon('heroicon-o-briefcase')
                 ->visible(function (): bool {
@@ -163,6 +165,25 @@ final class ViewQuotation extends ViewRecord
 
                     $this->redirect(WorkOrderResource::getUrl('view', ['record' => $workOrder->id]));
                 }),
+        ];
+    }
+
+    /**
+     * @return array<string, Component>
+     */
+    protected function getInfolistSchema(): array
+    {
+        return [
+            'code' => TextEntry::make('code'),
+            'status_code' => TextEntry::make('status_code'),
+            'customer_id' => TextEntry::make('customer_id'),
+            'total' => TextEntry::make('total'),
+            'cost_total' => TextEntry::make('cost_total'),
+            'margin' => TextEntry::make('margin'),
+            'project' => TextEntry::make('project'),
+            'delivery_at' => TextEntry::make('delivery_at'),
+            'issued_at' => TextEntry::make('issued_at'),
+            'updated_at' => TextEntry::make('updated_at'),
         ];
     }
 }

@@ -11,18 +11,18 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Compliance\Filament\Resources\EquipmentResource\Pages;
 use Modules\Compliance\Models\Equipment;
 use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
 use Modules\WorkOrder\Models\WorkOrder;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class EquipmentResource extends Resource
+final class EquipmentResource extends XotBaseResource
 {
     use GatesResourceNavigation;
 
@@ -50,30 +50,33 @@ final class EquipmentResource extends Resource
         return __('compliance.equipment');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
-            Section::make()->columnSpanFull()->components([
-                Grid::make(3)->components([
-                    TextInput::make('name')->required()->maxLength(255),
-                    TextInput::make('type')->maxLength(255),
-                    TextInput::make('serial_number')->maxLength(255),
-                    Select::make('status')->default('available')->options([
+        return [
+            'section' => Section::make()->columnSpanFull()->components([
+                'grid' => Grid::make(3)->components([
+                    'name' => TextInput::make('name')->required()->maxLength(255),
+                    'type' => TextInput::make('type')->maxLength(255),
+                    'serial_number' => TextInput::make('serial_number')->maxLength(255),
+                    'status' => Select::make('status')->default('available')->options([
                         'available' => 'Disponibile',
                         'assigned' => 'Assegnata',
                         'maintenance' => 'In manutenzione',
                         'blocked' => 'Bloccata',
                     ]),
-                    DatePicker::make('last_checked_on'),
-                    DatePicker::make('next_check_due_on'),
-                    DatePicker::make('maintenance_due_on'),
-                    Select::make('assigned_work_order_id')
+                    'last_checked_on' => DatePicker::make('last_checked_on'),
+                    'next_check_due_on' => DatePicker::make('next_check_due_on'),
+                    'maintenance_due_on' => DatePicker::make('maintenance_due_on'),
+                    'assigned_work_order_id' => Select::make('assigned_work_order_id')
                         ->options(fn (): array => WorkOrder::query()->orderByDesc('id')->limit(200)->pluck('title', 'id')->all())
                         ->searchable(),
                 ]),
-                Textarea::make('notes')->columnSpanFull(),
+                'notes' => Textarea::make('notes')->columnSpanFull(),
             ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

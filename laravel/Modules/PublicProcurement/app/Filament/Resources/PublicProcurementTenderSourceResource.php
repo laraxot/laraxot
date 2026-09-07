@@ -10,8 +10,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\Platform\Filament\Concerns\GatesResourceNavigation;
@@ -19,8 +18,9 @@ use Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderSourceRe
 use Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderSourceResource\Pages\EditPublicProcurementTenderSource;
 use Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderSourceResource\Pages\ListPublicProcurementTenderSources;
 use Modules\PublicProcurement\Models\PublicProcurementTenderSource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class PublicProcurementTenderSourceResource extends Resource
+final class PublicProcurementTenderSourceResource extends XotBaseResource
 {
     use GatesResourceNavigation;
 
@@ -43,15 +43,18 @@ final class PublicProcurementTenderSourceResource extends Resource
         return __('public_procurement.sources');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public static function getFormSchema(): array
     {
-        return $schema->components([
-            TextInput::make('name')->required(),
-            Select::make('source_type')->label(__('public_procurement.fields.source_type'))->options(['manual' => 'Manuale', 'portal' => 'Portale', 'rss' => 'RSS/API'])->default('manual'),
-            TextInput::make('url')->label(__('public_procurement.fields.url'))->url(),
-            Toggle::make('is_active')->default(true),
-            Textarea::make('notes')->label(__('public_procurement.fields.notes'))->columnSpanFull(),
-        ]);
+        return [
+            'name' => TextInput::make('name')->required(),
+            'source_type' => Select::make('source_type')->label(__('public_procurement.fields.source_type'))->options(['manual' => 'Manuale', 'portal' => 'Portale', 'rss' => 'RSS/API'])->default('manual'),
+            'url' => TextInput::make('url')->label(__('public_procurement.fields.url'))->url(),
+            'is_active' => Toggle::make('is_active')->default(true),
+            'notes' => Textarea::make('notes')->label(__('public_procurement.fields.notes'))->columnSpanFull(),
+        ];
     }
 
     public static function table(Table $table): Table

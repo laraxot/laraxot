@@ -10,8 +10,7 @@ use Filament\Actions\DeleteAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -21,13 +20,14 @@ use Illuminate\Support\Facades\Storage;
 use Modules\Compliance\Models\CustomerSystem;
 use Modules\Document\Actions\CreateMediaFromStoredFileAction;
 use Modules\Document\Models\Media;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
 /**
  * Schemi tecnici allegati a un impianto: schemi dei quadri elettrici, schemi
  * fotovoltaico, planimetrie videosorveglianza. Riusa il {@see Media} polimorfico
  * con kind = "schema". Accetta PDF, immagini e file CAD (DWG/DXF).
  */
-final class SchemasRelationManager extends RelationManager
+final class SchemasRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'media';
 
@@ -62,10 +62,13 @@ final class SchemasRelationManager extends RelationManager
         return 'Schemi tecnici';
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            FileUpload::make('path')
+        return [
+            'path' => FileUpload::make('path')
                 ->disk('local')
                 ->directory(function (): string {
                     $key = $this->getOwnerRecord()->getKey();
@@ -79,11 +82,11 @@ final class SchemasRelationManager extends RelationManager
                 ->storeFileNamesIn('original_name')
                 ->required()
                 ->columnSpanFull(),
-            Hidden::make('original_name'),
-            TextInput::make('title')
+            'original_name' => Hidden::make('original_name'),
+            'title' => TextInput::make('title')
                 ->maxLength(255)
                 ->columnSpanFull(),
-        ]);
+        ];
     }
 
     public function table(Table $table): Table

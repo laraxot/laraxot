@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderOpportunityResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
 use Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderOpportunityResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
-final class CreatePublicProcurementTenderOpportunity extends CreateRecord
+final class CreatePublicProcurementTenderOpportunity extends XotBaseCreateRecord
 {
     protected static string $resource = PublicProcurementTenderOpportunityResource::class;
 }

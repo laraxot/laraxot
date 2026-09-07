@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderSourceResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderSourceResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditPublicProcurementTenderSource extends EditRecord
+final class EditPublicProcurementTenderSource extends XotBaseEditRecord
 {
     protected static string $resource = PublicProcurementTenderSourceResource::class;
 }

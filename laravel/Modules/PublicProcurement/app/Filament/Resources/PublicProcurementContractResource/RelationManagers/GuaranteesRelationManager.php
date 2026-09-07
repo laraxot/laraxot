@@ -11,13 +11,13 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class GuaranteesRelationManager extends RelationManager
+final class GuaranteesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'guarantees';
 
@@ -26,19 +26,22 @@ final class GuaranteesRelationManager extends RelationManager
         return 'Cauzioni e garanzie';
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            Select::make('type')->options(['provisional' => 'Provvisoria', 'definitive' => 'Definitiva', 'insurance' => 'Polizza'])->default('definitive'),
-            TextInput::make('title')->required(),
-            TextInput::make('provider'),
-            TextInput::make('policy_number'),
-            Select::make('status')->options(['valid' => 'Valida', 'expiring' => 'In scadenza', 'expired' => 'Scaduta', 'released' => 'Svincolata'])->default('valid'),
-            TextInput::make('amount')->numeric(),
-            DatePicker::make('issued_on'),
-            DatePicker::make('expires_on'),
-            Textarea::make('notes')->columnSpanFull(),
-        ]);
+        return [
+            'type' => Select::make('type')->options(['provisional' => 'Provvisoria', 'definitive' => 'Definitiva', 'insurance' => 'Polizza'])->default('definitive'),
+            'title' => TextInput::make('title')->required(),
+            'provider' => TextInput::make('provider'),
+            'policy_number' => TextInput::make('policy_number'),
+            'status' => Select::make('status')->options(['valid' => 'Valida', 'expiring' => 'In scadenza', 'expired' => 'Scaduta', 'released' => 'Svincolata'])->default('valid'),
+            'amount' => TextInput::make('amount')->numeric(),
+            'issued_on' => DatePicker::make('issued_on'),
+            'expires_on' => DatePicker::make('expires_on'),
+            'notes' => Textarea::make('notes')->columnSpanFull(),
+        ];
     }
 
     public function table(Table $table): Table

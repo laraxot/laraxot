@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace Modules\Compliance\Filament\Resources\HeatingSystemResource\Pages;
 
 use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
 use Modules\Compliance\Filament\Resources\HeatingSystemResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
-final class ListHeatingSystems extends ListRecords
+final class ListHeatingSystems extends XotBaseListRecords
 {
     protected static string $resource = HeatingSystemResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            'create' => Actions\CreateAction::make(),
         ];
     }
 }

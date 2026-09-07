@@ -81,7 +81,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
     public static function getFormSchema(): array
     {
         return [
-            Section::make(__('site_surveys.sections.general'))
+            'code' => Section::make(__('site_surveys.sections.general'))
                 ->columnSpanFull()
                 ->components([
                     Grid::make(2)->components([
@@ -112,8 +112,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
                     ]),
                 ])
                 ->columns(2),
-
-            Section::make(__('site_surveys.sections.links'))
+            'customer_id' => Section::make(__('site_surveys.sections.links'))
                 ->columnSpanFull()
                 ->components([
                     Select::make('customer_id')
@@ -182,8 +181,7 @@ final class SiteSurveyResource extends GatedXotBaseResource
                         ->preload(),
                 ])
                 ->columns(2),
-
-            Section::make(__('site_surveys.sections.outcome'))
+            'notes' => Section::make(__('site_surveys.sections.outcome'))
                 ->columnSpanFull()
                 ->components([
                     Textarea::make('notes')

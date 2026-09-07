@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Quotation\Filament\Widgets;
 
 use App\Support\AccountFeatures;
-use Filament\Widgets\ChartWidget;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Modules\Quotation\Models\Quotation;
+use Modules\Xot\Filament\Widgets\XotBaseChartWidget;
 
 /**
  * Revenue vs. cost of the quoted work, broken down by project/brand — the view
@@ -18,7 +18,7 @@ use Modules\Quotation\Models\Quotation;
  * Quotations with no cost recorded are left out: showing them would read as
  * 100% margin and flatter the numbers.
  */
-final class QuotationsMarginByProjectChart extends ChartWidget
+final class QuotationsMarginByProjectChart extends XotBaseChartWidget
 {
     protected static ?int $sort = 6;
 

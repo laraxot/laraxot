@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Quotation\Filament\Resources\SiteSurveyResource\Pages;
 
-use Filament\Resources\Pages\EditRecord;
 use Modules\Quotation\Filament\Resources\SiteSurveyResource;
 use Modules\Quotation\Filament\Resources\SiteSurveyResource\Concerns\RecordsSiteSurvey;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
-final class EditSiteSurvey extends EditRecord
+final class EditSiteSurvey extends XotBaseEditRecord
 {
     use RecordsSiteSurvey;
 
@@ -17,7 +17,7 @@ final class EditSiteSurvey extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            $this->recordSurveyAction(),
+            'recordSurvey' => $this->recordSurveyAction(),
         ];
     }
 }

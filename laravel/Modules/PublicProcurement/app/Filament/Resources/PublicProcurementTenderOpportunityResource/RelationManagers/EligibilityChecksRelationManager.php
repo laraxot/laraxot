@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\PublicProcurement\Filament\Resources\PublicProcurementTenderOpportunityResource\RelationManagers;
 
-use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class EligibilityChecksRelationManager extends RelationManager
+final class EligibilityChecksRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'eligibilityChecks';
 

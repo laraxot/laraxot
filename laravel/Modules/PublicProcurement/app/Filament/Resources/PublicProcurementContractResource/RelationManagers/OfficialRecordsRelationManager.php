@@ -11,13 +11,13 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class OfficialRecordsRelationManager extends RelationManager
+final class OfficialRecordsRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'officialRecords';
 
@@ -26,16 +26,19 @@ final class OfficialRecordsRelationManager extends RelationManager
         return 'Verbali e atti';
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            TextInput::make('type')->required(),
-            TextInput::make('title')->required(),
-            TextInput::make('protocol_number'),
-            DatePicker::make('recorded_on'),
-            Select::make('status')->options(['draft' => 'Bozza', 'sent' => 'Inviato', 'signed' => 'Firmato', 'archived' => 'Archiviato'])->default('draft'),
-            Textarea::make('summary')->columnSpanFull(),
-        ]);
+        return [
+            'type' => TextInput::make('type')->required(),
+            'title' => TextInput::make('title')->required(),
+            'protocol_number' => TextInput::make('protocol_number'),
+            'recorded_on' => DatePicker::make('recorded_on'),
+            'status' => Select::make('status')->options(['draft' => 'Bozza', 'sent' => 'Inviato', 'signed' => 'Firmato', 'archived' => 'Archiviato'])->default('draft'),
+            'summary' => Textarea::make('summary')->columnSpanFull(),
+        ];
     }
 
     public function table(Table $table): Table

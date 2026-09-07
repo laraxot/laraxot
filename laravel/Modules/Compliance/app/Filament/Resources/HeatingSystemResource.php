@@ -13,10 +13,9 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Resources\Resource;
+use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
-use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\DB;
@@ -24,8 +23,9 @@ use Modules\Compliance\Filament\Resources\HeatingSystemResource\Pages;
 use Modules\Compliance\Filament\Resources\HeatingSystemResource\RelationManagers\BoilersRelationManager;
 use Modules\Compliance\Filament\Resources\HeatingSystemResource\RelationManagers\ControlsRelationManager;
 use Modules\Compliance\Models\HeatingSystem;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 
-final class HeatingSystemResource extends Resource
+final class HeatingSystemResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
@@ -52,7 +52,10 @@ final class HeatingSystemResource extends Resource
         return __('heating.systems');
     }
 
-    public static function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public static function getFormSchema(): array
     {
         /** @var array<int|string, string> $fuelOptions */
         $fuelOptions = collect((array) config('heating.fuel_types', []))
@@ -63,8 +66,8 @@ final class HeatingSystemResource extends Resource
             })
             ->all();
 
-        return $schema->components([
-            Section::make()->columns(2)->components([
+        return [
+            'main' => Section::make()->columns(2)->components([
                 TextInput::make('code')->label(__('heating.fields.code'))->maxLength(255),
                 Select::make('customer_id')
                     ->label(__('heating.fields.customer'))
@@ -92,7 +95,7 @@ final class HeatingSystemResource extends Resource
                     Textarea::make('notes')->label(__('heating.fields.notes'))->columnSpanFull(),
                 ]),
             ]),
-        ]);
+        ];
     }
 
     public static function table(Table $table): Table

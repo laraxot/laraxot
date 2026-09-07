@@ -7,16 +7,16 @@ namespace Modules\Quotation\Filament\Resources\QuotationResource\Pages;
 use Filament\Actions;
 use Filament\Forms\Components\FileUpload;
 use Filament\Notifications\Notification;
-use Filament\Resources\Pages\ListRecords;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Modules\Quotation\Actions\AddQuotationAttachmentAction;
 use Modules\Quotation\Actions\ImportQuotationFromFileAction;
 use Modules\Quotation\Filament\Pages\RecordQuotationVoicePage;
 use Modules\Quotation\Filament\Resources\QuotationResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 use RuntimeException;
 
-final class ListQuotations extends ListRecords
+final class ListQuotations extends XotBaseListRecords
 {
     protected static string $resource = QuotationResource::class;
 
@@ -36,13 +36,13 @@ final class ListQuotations extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\Action::make('voiceNew')
+            'voiceNew' => Actions\Action::make('voiceNew')
                 ->label(__('quotations.voice.new'))
                 ->icon('heroicon-o-microphone')
                 ->visible(fn (): bool => RecordQuotationVoicePage::canAccess())
                 ->url(fn (): string => RecordQuotationVoicePage::getUrl()),
 
-            Actions\Action::make('importFromFile')
+            'importFromFile' => Actions\Action::make('importFromFile')
                 ->label(__('quotations.import.title'))
                 ->icon('heroicon-o-document-arrow-up')
                 ->schema([
@@ -94,7 +94,7 @@ final class ListQuotations extends ListRecords
                     $this->redirect(QuotationResource::getUrl('view', ['record' => $quotation->id]));
                 }),
 
-            Actions\CreateAction::make(),
+            'create' => Actions\CreateAction::make(),
         ];
     }
 }

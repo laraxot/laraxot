@@ -6,15 +6,15 @@ namespace Modules\Quotation\Filament\Widgets;
 
 use App\Support\AccountFeatures;
 use Carbon\CarbonImmutable;
-use Filament\Widgets\ChartWidget;
 use Illuminate\Support\Facades\Auth;
 use Modules\Quotation\Models\Quotation;
+use Modules\Xot\Filament\Widgets\XotBaseChartWidget;
 
 /**
  * Monthly quotations value for the last 6 months: total quoted vs. confirmed.
  * Lets the plumber see the business trend and the quote→win conversion.
  */
-final class QuotationsValuePerMonthChart extends ChartWidget
+final class QuotationsValuePerMonthChart extends XotBaseChartWidget
 {
     protected static ?int $sort = 5;
 

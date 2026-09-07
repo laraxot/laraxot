@@ -101,7 +101,7 @@ final class QuotationResource extends GatedXotBaseResource
     public static function getFormSchema(): array
     {
         return [
-            Section::make()
+            'code' => Section::make()
                 ->columnSpanFull()
                 ->components([
                     Grid::make(2)->components([
@@ -247,8 +247,7 @@ final class QuotationResource extends GatedXotBaseResource
                     ]),
                 ])
                 ->columns(2),
-
-            Section::make(__('quotations.voice.section_title'))
+            'voice_transcript' => Section::make(__('quotations.voice.section_title'))
                 ->collapsible()
                 ->collapsed()
                 ->columnSpanFull()

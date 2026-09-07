@@ -11,13 +11,13 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Component;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
-final class DeadlinesRelationManager extends RelationManager
+final class DeadlinesRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'deadlines';
 
@@ -26,17 +26,20 @@ final class DeadlinesRelationManager extends RelationManager
         return 'Scadenze';
     }
 
-    public function form(Schema $schema): Schema
+    /**
+     * @return array<string, Component>
+     */
+    public function getFormSchema(): array
     {
-        return $schema->components([
-            TextInput::make('type')->required(),
-            TextInput::make('title')->required(),
-            Select::make('status')->options(['open' => 'Aperta', 'done' => 'Completata', 'waived' => 'Non necessaria'])->default('open'),
-            Select::make('severity')->options(['info' => 'Info', 'warning' => 'Warning', 'blocking' => 'Bloccante'])->default('warning'),
-            DateTimePicker::make('due_at'),
-            DateTimePicker::make('completed_at'),
-            Textarea::make('notes')->columnSpanFull(),
-        ]);
+        return [
+            'type' => TextInput::make('type')->required(),
+            'title' => TextInput::make('title')->required(),
+            'status' => Select::make('status')->options(['open' => 'Aperta', 'done' => 'Completata', 'waived' => 'Non necessaria'])->default('open'),
+            'severity' => Select::make('severity')->options(['info' => 'Info', 'warning' => 'Warning', 'blocking' => 'Bloccante'])->default('warning'),
+            'due_at' => DateTimePicker::make('due_at'),
+            'completed_at' => DateTimePicker::make('completed_at'),
+            'notes' => Textarea::make('notes')->columnSpanFull(),
+        ];
     }
 
     public function table(Table $table): Table
