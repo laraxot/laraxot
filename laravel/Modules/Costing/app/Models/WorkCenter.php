@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Costing\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * Un centro di lavoro di un modulo di preventivazione: dove si esegue una riga di
@@ -27,8 +26,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 final class WorkCenter extends BaseModel
 {
-    use HasXotFactory;
-
     protected $table = 'costing_work_centers';
 
     /** @var array<int, string> */
