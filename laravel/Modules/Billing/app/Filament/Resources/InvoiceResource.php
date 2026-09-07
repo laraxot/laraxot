@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Modules\Billing\Models\Invoice;
+use Modules\Platform\Support\Navigation\NavigationGate;
 use Modules\User\Models\User;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
@@ -27,12 +28,12 @@ final class InvoiceResource extends XotBaseResource
 
     public static function shouldRegisterNavigation(): bool
     {
-        return self::isAvailableInCurrentPanel();
+        return NavigationGate::isItemEnabled(static::class) && self::isAvailableInCurrentPanel();
     }
 
     public static function canViewAny(): bool
     {
-        return self::isAvailableInCurrentPanel() && parent::canViewAny();
+        return NavigationGate::isItemEnabled(static::class) && self::isAvailableInCurrentPanel() && parent::canViewAny();
     }
 
     public static function canCreate(): bool
