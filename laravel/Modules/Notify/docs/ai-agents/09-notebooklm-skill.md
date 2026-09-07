@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a988596b (first)
+---
+title: "NotebookLM Skill - Guida Installazione e Utilizzo"
+type: concept
+tags: [notebooklm, skill]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "09-notebooklm-skill notebooklm skill - guida installazione e utilizzo"
+issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
+discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+related:
+  - "./00-index.md"
+  - "./01-gsd-workflow.md"
+  - "./02-bmad-workflow.md"
+  - "./03-architecture-zen.md"
+  - "./04-filament-philosophy.md"
+  - "./05-front-office-audit.md"
+  - "./06-cinematic-effects.md"
+  - "./07-mcp-tailwind-ui.md"
+---
+
+<<<<<<< HEAD
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
+=======
+>>>>>>> a377e9e6 (.)
 # NotebookLM Skill - Guida Installazione e Utilizzo
 
 **Skill**: `notebooklm`

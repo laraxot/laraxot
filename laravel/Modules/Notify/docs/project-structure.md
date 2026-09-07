@@ -4,6 +4,21 @@ type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [structure, architecture, module]
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a988596b (first)
+related:
+  - "./00-index-1.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-100.md"
+  - "./acronym-naming-conventions-1.md"
+  - "./acronym-naming-conventions-2.md"
+  - "./acronym-naming-conventions.md"
+  - "./action-plan-immediate.md"
 ---
 
 # Project Structure — Module **Notify**
@@ -18,6 +33,162 @@ tags: [structure, architecture, module]
 │   ├── concepts/                 # Topic/theme pages
 │   ├── entities/                 # Organization/person pages
 │   ├── rules/                    # ⚠️ 151+ regole progettuali
+│   │   ├── 00-index-1.md          # Indice regole
+│   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
+│   │   └── *.md                 # Regole specifiche modulo
+│   ├── skills/                   # Skill progettuali
+<<<<<<< HEAD
+│   │   ├── index.md
+│   │   └── *.md
+│   ├── commands/                 # Comandi progettuali
+│   │   ├── index.md
+│   │   └── *.md
+│   ├── memories/                 # Memorie progettuali
+│   │   ├── index.md
+=======
+│   │   ├── INDEX.md
+│   │   └── *.md
+│   ├── commands/                 # Comandi progettuali
+│   │   ├── INDEX.md
+│   │   └── *.md
+│   ├── memories/                 # Memorie progettuali
+│   │   ├── INDEX.md
+│   │   └── *.md
+│   ├── commands/                 # Comandi progettuali
+│   │   ├── INDEX.md
+│   │   └── *.md
+│   ├── memories/                 # Memorie progettuali
+│   │   ├── INDEX.md
+>>>>>>> a988596b (first)
+│   │   └── *.md
+│   ├── decisions/                # Architecture decision records
+│   └── troubleshooting/          # Bug fixes, error resolutions
+├── on-demand-pattern.md          # 🌟 QUESTO FILE — Pattern on-demand
+├── qmd-setup.md                  # Configurazione QMD
+├── performance-optimization-1.md    # Metriche e best practice
+├── architecture.md               # (opzionale) Architettura modulo
+└── README.md                     # (opzionale) Overview modulo
+\`\`\`
+
+## File Chiave
+
+| File | Purpose |
+|------|---------|
+| `wiki/index.md` | Catalogo di tutto il sapere del modulo |
+| `wiki/log.md` | Storico attività (ingest/query/lint) |
+| `wiki/rules/` | Regole + trigger map locale |
+| `wiki/concepts/` | Concetti specifici del modulo |
+| `on-demand-pattern.md` | **Leggi prima** — pattern da seguire |
+
+## Convenzioni
+
+### Naming
+
+- **Filenames**: lowercase-kebab-case.md
+- **Directories**: lowercase
+- **Titles**: Title Case
+
+### Frontmatter Schema
+
+\`\`\`yaml
+---
+title: "Page Title"
+type: concept|entity|source|comparison|decision|troubleshooting
+sources: []  # Solo per raw sources
+confidence: high|medium|low
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+tags: [tag1, tag2]
+related:
+  - ../concepts/related.md
+---
+\`\`\`
+
+### Link Rules
+
+- **Interno modulo**: `[[concepts/page]]` o `[link](./concepts/page.md)`
+- **Modulo altro**: `[[../../OtherModule/docs/wiki/concepts/page]]`
+- **Project wiki**: `[Global rule](../../docs/wiki/rules/rule.md)`
+
+## Workflow con On-Demand Pattern
+
+\`\`\`mermaid
+graph TD
+    A[Task Received] --> B{Has trigger?}
+    B -->|Yes| C[Read trigger_map]
+    C --> D[Load specific file]
+    B -->|No| E[qmd search]
+    E --> D
+    D --> F[Apply knowledge]
+    F --> G[Update wiki/log]
+\`\`\`
+
+## Riferimenti Globali
+
+- [Project Wiki Root](../../docs/wiki/)
+- [Global Rules](../../docs/wiki/rules/)
+- [Global Skills](../../docs/wiki/skills/)
+- [Global Commands](../../docs/wiki/commands/)
+- [Global Memories](../../docs/wiki/memories/)
+
+## Setup Iniziale (per nuovi moduli)
+
+\`\`\`bash
+# 1. Crea struttura wiki
+mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,troubleshooting}
+
+# 2. Crea INDEX files (già creati)
+<<<<<<< HEAD
+=======
+cp docs/wiki/rules/INDEX.md docs/wiki/rules/
+>>>>>>> a988596b (first)
+cp docs/wiki/rules/index.md docs/wiki/rules/
+# ... etc
+
+# 3. Aggiungi a QMD collection (opzionale, già incluso global)
+# Il .qmd/index.yml include automaticamente docs/**/wiki/
+
+# 4. Committa
+git add docs/
+git commit -m "docs: add wiki structure for Notify"
+\`\`\`
+
+---
+*Pattern: On-Demand | Source: docs/wiki/*
+
+---
+
+<!-- Merged from PROJECT-STRUCTURE.md, which collided with this file on case-insensitive filesystems. -->
+
+---
+title: "Project Structure — Module Notify"
+type: documentation
+created: 2026-05-11
+updated: 2026-05-11
+tags: [structure, architecture, module]
+<<<<<<< HEAD
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
+=======
+>>>>>>> a377e9e6 (.)
+---
+
+# Project Structure — Module **Notify**
+
+## Directory Structure
+
+\`\`\`
+./laravel/Modules/Notify/docs/
+├── wiki/                          # Knowledge base locale (LLM Wiki)
+│   ├── index.md                  # Master catalog
+│   ├── log.md                    # Activity log
+│   ├── concepts/                 # Topic/theme pages
+│   ├── entities/                 # Organization/person pages
+│   ├── rules/                    # ⚠️ 151+ regole progettuali
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 │   │   ├── 00-INDEX.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -29,13 +200,50 @@ tags: [structure, architecture, module]
 │   │   └── *.md
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── INDEX.md
+=======
+=======
+>>>>>>> a988596b (first)
+│   │   ├── 00-index.md          # Indice regole
+=======
+│   │   ├── 00-INDEX.md          # Indice regole
+>>>>>>> a377e9e6 (.)
+│   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
+│   │   └── *.md                 # Regole specifiche modulo
+│   ├── skills/                   # Skill progettuali
+│   │   ├── INDEX.md
+│   │   └── *.md
+│   ├── commands/                 # Comandi progettuali
+│   │   ├── INDEX.md
+│   │   └── *.md
+│   ├── memories/                 # Memorie progettuali
+<<<<<<< HEAD
+│   │   ├── index.md
+<<<<<<< HEAD
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
+=======
+│   │   ├── INDEX.md
+>>>>>>> a377e9e6 (.)
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
 ├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+=======
+├── architecture.md               # (opzionale) Architettura modulo
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+├── architecture.md               # (opzionale) Architettura modulo
+>>>>>>> a988596b (first)
+=======
+├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+>>>>>>> a377e9e6 (.)
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
 
@@ -107,7 +315,19 @@ graph TD
 mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,troubleshooting}
 
 # 2. Crea INDEX files (già creati)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 cp docs/wiki/rules/INDEX.md docs/wiki/rules/
+=======
+cp docs/wiki/rules/index.md docs/wiki/rules/
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+cp docs/wiki/rules/index.md docs/wiki/rules/
+>>>>>>> a988596b (first)
+=======
+cp docs/wiki/rules/INDEX.md docs/wiki/rules/
+>>>>>>> a377e9e6 (.)
 # ... etc
 
 # 3. Aggiungi a QMD collection (opzionale, già incluso global)

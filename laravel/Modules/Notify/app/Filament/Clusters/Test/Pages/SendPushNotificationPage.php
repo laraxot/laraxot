@@ -116,7 +116,17 @@ class SendPushNotificationPage extends XotBasePage
                 TextInput::make('body')->required(),
                 Repeater::make('data')->schema([
                     TextInput::make('name')->required(),
+<<<<<<< HEAD
+<<<<<<< HEAD
                     TextInput::make('value')->required()])])
+=======
+                    TextInput::make('value')->required(),
+                ]),
+            ])
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+                    TextInput::make('value')->required()])])
+>>>>>>> a988596b (first)
             // ->model($this->getUser())
             ->statePath('notificationData');
     }
@@ -205,7 +215,16 @@ class SendPushNotificationPage extends XotBasePage
     protected function getForms(): array
     {
         return [
+<<<<<<< HEAD
+<<<<<<< HEAD
             'notificationForm'];
+=======
+            'notificationForm',
+        ];
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+            'notificationForm'];
+>>>>>>> a988596b (first)
     }
 
     /** @return array<string, Action> */
@@ -214,7 +233,16 @@ class SendPushNotificationPage extends XotBasePage
         return [
             'submit' => Action::make('notificationFormActions')
 
+<<<<<<< HEAD
+<<<<<<< HEAD
                 ->submit('notificationFormActions')];
+=======
+                ->submit('notificationFormActions'),
+        ];
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+                ->submit('notificationFormActions')];
+>>>>>>> a988596b (first)
     }
 
     #[Override]

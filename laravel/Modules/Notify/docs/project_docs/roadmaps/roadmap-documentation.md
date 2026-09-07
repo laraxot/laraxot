@@ -1,4 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 # 📚 ROADMAP DOCUMENTAZIONE - FIXCITY PLATFORM
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+# 📚 ROADMAP DOCUMENTAZIONE - FIXCITY PLATFORM
+>>>>>>> a988596b (first)
 # 📚 ROADMAP DOCUMENTAZIONE - NOTIFY PLATFORM
 
 **Versione**: 1.0  
@@ -7,7 +14,14 @@
 **Priorità**: ALTA  
 
 ## 🎯 Obiettivo
+<<<<<<< HEAD
+<<<<<<< HEAD
 Creare un ecosistema di documentazione completo, accessibile e mantenibile per tutti gli stakeholder del progetto FixCity.
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+Creare un ecosistema di documentazione completo, accessibile e mantenibile per tutti gli stakeholder del progetto FixCity.
+>>>>>>> a988596b (first)
 Creare un ecosistema di documentazione completo, accessibile e mantenibile per tutti gli stakeholder del progetto Notify.
 
 ## 📊 Stato Attuale
@@ -71,7 +85,14 @@ docs/
 #### Moduli da Documentare
 - [x] **Xot**: Framework base (completato)
 - [x] **User**: Gestione utenti (completato)
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [x] **Fixcity**: Core business (completato)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- [x] **Fixcity**: Core business (completato)
+>>>>>>> a988596b (first)
 - [x] **App**: Core business (completato)
 - [ ] **UI**: Componenti interfaccia
 - [ ] **Geo**: Gestione geografica
@@ -170,7 +191,14 @@ docs/
 # OpenAPI specification
 openapi: 3.0.0
 info:
+<<<<<<< HEAD
+<<<<<<< HEAD
   title: FixCity API
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+  title: FixCity API
+>>>>>>> a988596b (first)
   title: Notify API
   version: 1.0.0
   description: API per la gestione segnalazioni urbane
@@ -375,7 +403,14 @@ paths:
 - [ ] **Profiles.md**: Gestione profili
 - [ ] **Roles.md**: Gestione ruoli e permessi
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 ### Modulo Fixcity (Core Business)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+### Modulo Fixcity (Core Business)
+>>>>>>> a988596b (first)
 ### Modulo App (Core Business)
 - [x] **README.md**: Panoramica sistema ticket
 - [x] **API.md**: API per gestione ticket
@@ -620,8 +655,16 @@ paths:
 **📞 Contatti Documentazione**
 - **Tech Writer**: Documentation Team
 - **Email**: docs@laraxot.com
+<<<<<<< HEAD
+<<<<<<< HEAD
 - **Slack**: #fixcity-docs
 - **GitHub**: [FixCity Docs](https://github.com/laraxot/fixcity-docs)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- **Slack**: #fixcity-docs
+- **GitHub**: [FixCity Docs](https://github.com/laraxot/fixcity-docs)
+>>>>>>> a988596b (first)
 - **Slack**: #laraxot-docs
 - **GitHub**: [Notify Docs](https://github.com/laraxot/laraxot-docs)
 

@@ -1,4 +1,46 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 # FixCity - Architecture Documentation
+=======
+---
+=======
+---
+title: "FixCity - Architecture Documentation"
+>>>>>>> a988596b (first)
+title: "Notify - Architecture Documentation"
+type: concept
+tags: [architecture]
+created: 2026-07-14
+updated: 2026-07-14
+<<<<<<< HEAD
+=======
+qmd: "architecture fixcity - architecture documentation"
+>>>>>>> a988596b (first)
+qmd: "architecture laraxot - architecture documentation"
+issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
+discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+related:
+  - "./2025-excellence-achievement.md"
+  - "./agid-implementation-guide.md"
+  - "./complete-refactoring-analysis.md"
+  - "./documentation-status.md"
+  - "./final-implementation-report-.md"
+  - "./final-implementation-report-1.md"
+  - "./final-implementation-report.md"
+  - "./final-refactoring-report.md"
+---
+
+<<<<<<< HEAD
+# Notify - Architecture Documentation
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+# FixCity - Architecture Documentation
+# Notify - Architecture Documentation
+>>>>>>> a988596b (first)
+=======
+# FixCity - Architecture Documentation
+>>>>>>> a377e9e6 (.)
 
 **Version:** 4.0  
 **Date:** 2025-10-01  
@@ -52,7 +94,19 @@ Modules/
 ├── Xot/              # Core framework extensions
 ├── Tenant/           # Multi-tenancy support
 ├── User/             # User management & authentication
+<<<<<<< HEAD
+<<<<<<< HEAD
 ├── Fixcity/          # Main application logic
+=======
+├── App/          # Main application logic
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+├── Fixcity/          # Main application logic
+<<<<<<< HEAD
+├── App/          # Main application logic
+>>>>>>> a988596b (first)
+=======
+>>>>>>> a377e9e6 (.)
 ├── Blog/             # Content management
 ├── Cms/              # CMS functionality
 ├── Geo/              # Geographic services
@@ -76,7 +130,19 @@ graph TD
     A[Xot] --> B[Tenant]
     A --> C[User]
     A --> D[Lang]
+<<<<<<< HEAD
+<<<<<<< HEAD
     B --> E[Fixcity]
+=======
+    B --> E[App]
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+    B --> E[Fixcity]
+<<<<<<< HEAD
+    B --> E[App]
+>>>>>>> a988596b (first)
+=======
+>>>>>>> a377e9e6 (.)
     C --> E
     E --> F[Blog]
     E --> G[Cms]

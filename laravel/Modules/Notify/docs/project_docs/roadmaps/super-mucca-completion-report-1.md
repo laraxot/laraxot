@@ -28,7 +28,14 @@ related:
 
 ## 🎯 Obiettivi Session
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 Completamento intensivo del progetto FixCity per diventare la piattaforma migliore del 2025:
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+Completamento intensivo del progetto FixCity per diventare la piattaforma migliore del 2025:
+>>>>>>> a988596b (first)
 Completamento intensivo del progetto Notify per diventare la piattaforma migliore del 2025:
 
 1. ✅ API RESTful completa con documentazione OpenAPI
@@ -47,7 +54,14 @@ Completamento intensivo del progetto Notify per diventare la piattaforma miglior
 ### 1. API Layer Enhancement
 
 #### Rate Limiting Middleware ✅
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Fixcity/app/Http/Middleware/ApiRateLimiter.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Fixcity/app/Http/Middleware/ApiRateLimiter.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Http/Middleware/ApiRateLimiter.php`
 
 **Features**:
@@ -60,7 +74,14 @@ Completamento intensivo del progetto Notify per diventare la piattaforma miglior
 **Security Impact**: Previene abuse e DDoS attacks sulle API
 
 #### OpenAPI Documentation Generator ✅
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Fixcity/app/Services/OpenApiGenerator.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Fixcity/app/Services/OpenApiGenerator.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Services/OpenApiGenerator.php`
 
 **Features**:
@@ -76,7 +97,14 @@ Completamento intensivo del progetto Notify per diventare la piattaforma miglior
 ### 2. Performance Optimization
 
 #### Cache Service ✅
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Fixcity/app/Services/TicketCacheService.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Fixcity/app/Services/TicketCacheService.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Services/TicketCacheService.php`
 
 **Features**:
@@ -93,7 +121,14 @@ Completamento intensivo del progetto Notify per diventare la piattaforma miglior
 - Database load reduction: ~60%
 
 #### Query Optimizer Service ✅
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Fixcity/app/Services/QueryOptimizerService.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Fixcity/app/Services/QueryOptimizerService.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Services/QueryOptimizerService.php`
 
 **Features**:
@@ -112,7 +147,14 @@ Completamento intensivo del progetto Notify per diventare la piattaforma miglior
 ### 3. Security Hardening
 
 #### Security Headers Middleware ✅
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Fixcity/app/Http/Middleware/SecurityHeadersMiddleware.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Fixcity/app/Http/Middleware/SecurityHeadersMiddleware.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Http/Middleware/SecurityHeadersMiddleware.php`
 
 **Security Headers Implementati**:
@@ -178,7 +220,14 @@ Completamento intensivo del progetto Notify per diventare la piattaforma miglior
 ### 6. Dashboard Analytics
 
 #### Filament Stats Widget ✅
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Fixcity/app/Filament/Widgets/TicketStatsWidget.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Fixcity/app/Filament/Widgets/TicketStatsWidget.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Filament/Widgets/TicketStatsWidget.php`
 
 **Metriche Dashboard**:
@@ -197,9 +246,18 @@ Completamento intensivo del progetto Notify per diventare la piattaforma miglior
 
 ### Analisi Completa Eseguita
 ```bash
+<<<<<<< HEAD
+<<<<<<< HEAD
 ./vendor/bin/phpstan analyse Modules/Fixcity/app/Services/ \
   Modules/Fixcity/app/Http/Middleware/ \
   Modules/Fixcity/app/Filament/Widgets/
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+./vendor/bin/phpstan analyse Modules/Fixcity/app/Services/ \
+  Modules/Fixcity/app/Http/Middleware/ \
+  Modules/Fixcity/app/Filament/Widgets/
+>>>>>>> a988596b (first)
 ./vendor/bin/phpstan analyse Modules/App/app/Services/ \
   Modules/App/app/Http/Middleware/ \
   Modules/App/app/Filament/Widgets/
@@ -236,7 +294,14 @@ Completamento intensivo del progetto Notify per diventare la piattaforma miglior
 7. `laravel/public/sw.js` - 300+ lines
 
 ### UI Components (2)
+<<<<<<< HEAD
+<<<<<<< HEAD
 8. `Modules/Fixcity/app/Filament/Widgets/TicketStatsWidget.php` - 116 lines
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+8. `Modules/Fixcity/app/Filament/Widgets/TicketStatsWidget.php` - 116 lines
+>>>>>>> a988596b (first)
 8. `Modules/App/app/Filament/Widgets/TicketStatsWidget.php` - 116 lines
 9. `Themes/Sixteen/resources/views/components/agid/header.blade.php` - 200+ lines
 
@@ -376,7 +441,14 @@ Completamento intensivo del progetto Notify per diventare la piattaforma miglior
 - **Error Codes**: All documented
 
 ### Access
+<<<<<<< HEAD
+<<<<<<< HEAD
 - **JSON**: `GET /api/fixcity/openapi.json`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- **JSON**: `GET /api/fixcity/openapi.json`
+>>>>>>> a988596b (first)
 - **JSON**: `GET /api/laraxot/openapi.json`
 - **Swagger UI**: Ready for integration
 - **Postman**: Can auto-generate collection
@@ -460,7 +532,14 @@ Completamento intensivo del progetto Notify per diventare la piattaforma miglior
 ```
 
 ### Module Breakdown
+<<<<<<< HEAD
+<<<<<<< HEAD
 - **Fixcity Core**: 90% ✅
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- **Fixcity Core**: 90% ✅
+>>>>>>> a988596b (first)
 - **App Core**: 90% ✅
 - **API Layer**: 85% ✅
 - **Performance**: 95% ✅

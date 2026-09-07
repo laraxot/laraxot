@@ -4,12 +4,27 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Unit;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+use Modules\Notify\Tests\TestCase;
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
 use function Safe\glob;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+uses(TestCase::class)->group('no-notify-db');
+
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
 /**
  * @return list<class-string>
  */
@@ -57,7 +72,11 @@ describe('Notify coverage boost', function (): void {
                 Assert::assertInstanceOf($class, app($class));
             } catch (\Throwable) {
                 try {
+<<<<<<< HEAD
+                    Assert::assertInstanceOf($class, new $class);
+=======
                     Assert::assertInstanceOf($class, new $class());
+>>>>>>> a988596b (first)
                 } catch (\Throwable) {
                     Assert::assertTrue($ref->hasMethod('execute') || $ref->hasMethod('handle'));
                 }

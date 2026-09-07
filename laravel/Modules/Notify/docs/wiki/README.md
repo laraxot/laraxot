@@ -30,5 +30,51 @@ Core module for the FixCity Platform.
 | 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
 
 ---
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+title: "FixCity LLM Wiki"
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+title: "FixCity LLM Wiki"
+>>>>>>> a988596b (first)
+title: "Notify LLM Wiki"
+type: index
+tags: [notify, docs, wiki]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+<<<<<<< HEAD
+<<<<<<< HEAD
+qmd: "notify documentazione wiki readme fixcity llm wiki index readme frontmatter qmd search"
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+qmd: "notify documentazione wiki readme fixcity llm wiki index readme frontmatter qmd search"
+>>>>>>> a988596b (first)
+qmd: "notify documentazione wiki readme laraxot llm wiki index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../README.md
+  - index.md
+  - ../notifications/readme.md
+  - ../integrations/readme.md
+  - ../templates/readme.md
+---
+<<<<<<< HEAD
+<<<<<<< HEAD
+# FixCity LLM Wiki
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+# FixCity LLM Wiki
+>>>>>>> a988596b (first)
+# Notify LLM Wiki
+=======
+>>>>>>> d822d97f (.)
 
 **Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
+title: "Divergenza da riconciliare: AI_RULES_CRITICAL.md"
+=======
 title: "Divergenza da riconciliare: ai-rules-critical.md"
+>>>>>>> a377e9e6 (.)
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
@@ -7,12 +11,21 @@ created: 2026-08-24
 updated: 2026-08-24
 ---
 
+<<<<<<< HEAD
+# Divergenza: `AI_RULES_CRITICAL.md`
+
+Questo file veniva da `docs/wiki/integrations/modules/notify/AI_RULES_CRITICAL.md`, cancellato dal working tree senza migrazione. Il modulo ha gia' un file con lo stesso nome, ma con **corpo diverso**:
+
+- versione del modulo: `laravel/Modules/Notify/docs/AI_RULES_CRITICAL.md`
+- versione recuperata: `laravel/Modules/Notify/docs/wiki/integrations/_da-riconciliare/AI_RULES_CRITICAL.md`
+=======
 # Divergenza: `ai-rules-critical.md`
 
 Questo file veniva da `docs/wiki/integrations/modules/notify/ai-rules-critical.md`, cancellato dal working tree senza migrazione. Il modulo ha gia' un file con lo stesso nome, ma con **corpo diverso**:
 
 - versione del modulo: `laravel/Modules/Notify/docs/ai-rules-critical.md`
 - versione recuperata: `laravel/Modules/Notify/docs/wiki/integrations/_da-riconciliare/ai-rules-critical.md`
+>>>>>>> a377e9e6 (.)
 
 Vanno confrontate e fuse a mano. Quando la fusione e' fatta, questo file e la nota vanno rimossi.
 

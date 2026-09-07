@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> a988596b (first)
+---
+title: "🎨 MCP Servers per Tailwind CSS & UI Frameworks"
+type: concept
+tags: [mcp, tailwind]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "07-mcp-tailwind-ui 🎨 mcp servers per tailwind css & ui frameworks"
+issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
+discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+related:
+  - "./00-index.md"
+  - "./01-gsd-workflow.md"
+  - "./02-bmad-workflow.md"
+  - "./03-architecture-zen.md"
+  - "./04-filament-philosophy.md"
+  - "./05-front-office-audit.md"
+  - "./06-cinematic-effects.md"
+  - "./08-verified-commit-governance.md"
+---
+
+<<<<<<< HEAD
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
+=======
+>>>>>>> a377e9e6 (.)
 # 🎨 MCP Servers per Tailwind CSS & UI Frameworks
 
 **Data**: 2026-03-20  
@@ -80,7 +112,19 @@ php artisan boost:install
 
 **Usage**:
 ```
+<<<<<<< HEAD
+<<<<<<< HEAD
 "Create a Filament table widget for Predict model"
+=======
+"Create a Filament table widget for Forecast model"
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+"Create a Filament table widget for Predict model"
+<<<<<<< HEAD
+"Create a Filament table widget for Forecast model"
+>>>>>>> a988596b (first)
+=======
+>>>>>>> a377e9e6 (.)
 "Generate a Livewire component for market cards"
 "Add validation rules for user registration"
 ```
@@ -413,7 +457,19 @@ npx shadcn@latest mcp init --client claude
 ### 3. Use Skills
 ```
 "Create a hero section using Flowbite with purple brand color"
+<<<<<<< HEAD
+<<<<<<< HEAD
 "Generate a Filament table widget for Predict model"
+=======
+"Generate a Filament table widget for Forecast model"
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+"Generate a Filament table widget for Predict model"
+<<<<<<< HEAD
+"Generate a Filament table widget for Forecast model"
+>>>>>>> a988596b (first)
+=======
+>>>>>>> a377e9e6 (.)
 "Add cinematic particles effect to homepage"
 ```
 

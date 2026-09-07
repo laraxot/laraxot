@@ -82,7 +82,14 @@ class AppServiceProvider extends ServiceProvider
 
 ```json
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
     "name": "fixcity/theme-sixteen",
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+    "name": "fixcity/theme-sixteen",
+>>>>>>> a988596b (first)
     "name": "ptv/theme-sixteen",
     "extra": {
         "laravel": {
@@ -263,7 +270,14 @@ class AppServiceProvider extends ServiceProvider
 ### 2. Theme composer.json Complete
 ```json
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
     "name": "fixcity/theme-sixteen",
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+    "name": "fixcity/theme-sixteen",
+>>>>>>> a988596b (first)
     "name": "ptv/theme-sixteen",
     "extra": {
         "laravel": {

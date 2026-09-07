@@ -8,7 +8,15 @@ use Modules\User\Models\Notification as UserDatabaseNotification;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
+<<<<<<< HEAD
+<<<<<<< HEAD
  * Owner Notify — UNICA migrazione per `notifications` (connessione user / fixcity_user).
+=======
+ * Owner Notify — UNICA migrazione per `notifications` (connessione user).
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+ * Owner Notify — UNICA migrazione per `notifications` (connessione user / fixcity_user).
+>>>>>>> a988596b (first)
  * Runtime Eloquent: Modules\User\Models\Notification (DatabaseNotification).
  * Schema: uuid PK + uuidMorphs — users.id è UUID/ULID string.
  * Evoluzione: edit QUESTO file + bump timestamp — vietato secondo create_* in User/.
@@ -29,7 +37,11 @@ return new class extends XotBaseMigration
         ) {
             $connection = $this->model->getConnectionName() ?? 'user';
 
+<<<<<<< HEAD
+            if (DB::connection($connection)->table($this->getTable())->count() === 0) {
+=======
             if (0 === DB::connection($connection)->table($this->getTable())->count()) {
+>>>>>>> a988596b (first)
                 $this->dropTableIfExists($this->getTable());
             }
         }

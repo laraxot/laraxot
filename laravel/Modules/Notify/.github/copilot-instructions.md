@@ -365,8 +365,16 @@ GSD directories:
 - **Issue Tracking**: `.github/README.md` (Design Comuni project tracking)
 
 ### Module & Theme Documentation
+<<<<<<< HEAD
+<<<<<<< HEAD
 - **All Modules**: `laravel/Modules/{ModuleName}/docs/00-INDEX.md`
 - **All Themes**: `laravel/Themes/{ThemeName}/docs/00-INDEX.md`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- **All Modules**: `laravel/Modules/{ModuleName}/docs/00-INDEX.md`
+- **All Themes**: `laravel/Themes/{ThemeName}/docs/00-INDEX.md`
+>>>>>>> a988596b (first)
 - **All Modules**: `laravel/Modules/{ModuleName}/docs/00-index.md`
 - **All Themes**: `laravel/Themes/{ThemeName}/docs/00-index.md`
 - **Component Catalog**: `laravel/Themes/Sixteen/docs/COMPONENT_CATALOG.md` (47 components, 38 pages)

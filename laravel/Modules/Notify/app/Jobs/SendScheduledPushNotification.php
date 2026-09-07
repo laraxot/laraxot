@@ -45,7 +45,16 @@ class SendScheduledPushNotification implements ShouldQueue
 
             if (! $notificationData) {
                 Log::warning('Scheduled push notification not found', [
+<<<<<<< HEAD
+<<<<<<< HEAD
                     'job_id' => $this->jobId]);
+=======
+                    'job_id' => $this->jobId,
+                ]);
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+                    'job_id' => $this->jobId]);
+>>>>>>> a988596b (first)
 
                 return;
             }
@@ -75,14 +84,32 @@ class SendScheduledPushNotification implements ShouldQueue
             // Log risultato
             Log::debug('Scheduled push notification sent', [
                 'job_id' => $this->jobId,
+<<<<<<< HEAD
+<<<<<<< HEAD
                 'result' => $result]);
+=======
+                'result' => $result,
+            ]);
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+                'result' => $result]);
+>>>>>>> a988596b (first)
 
             // Rimuovi notifica programmata
             Cache::forget("scheduled_push:{$this->jobId}");
         } catch (Exception $e) {
             Log::error('Scheduled push notification failed', [
                 'job_id' => $this->jobId,
+<<<<<<< HEAD
+<<<<<<< HEAD
                 'error' => $e->getMessage()]);
+=======
+                'error' => $e->getMessage(),
+            ]);
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+                'error' => $e->getMessage()]);
+>>>>>>> a988596b (first)
 
             // Rilancia l'eccezione per il retry
             throw $e;
@@ -96,7 +123,16 @@ class SendScheduledPushNotification implements ShouldQueue
     {
         Log::error('Scheduled push notification job failed permanently', [
             'job_id' => $this->jobId,
+<<<<<<< HEAD
+<<<<<<< HEAD
             'error' => $exception->getMessage()]);
+=======
+            'error' => $exception->getMessage(),
+        ]);
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+            'error' => $exception->getMessage()]);
+>>>>>>> a988596b (first)
 
         // Rimuovi notifica programmata anche in caso di fallimento
         Cache::forget("scheduled_push:{$this->jobId}");

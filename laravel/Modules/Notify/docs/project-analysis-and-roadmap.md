@@ -69,7 +69,14 @@ Moduli Supporto:
 ### Architettura Modulare
 
 ```
+<<<<<<< HEAD
+<<<<<<< HEAD
 /var/www/_bases/base_fixcity_fila5_mono/
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+/var/www/_bases/base_fixcity_fila5_mono/
+>>>>>>> a988596b (first)
 /var/www/_bases/base_ptv_fila5_mono/
 ├── laravel/                    # Root Laravel
 │   ├── Modules/               # Moduli business

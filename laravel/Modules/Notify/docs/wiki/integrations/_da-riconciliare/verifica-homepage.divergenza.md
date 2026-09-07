@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
+title: "Divergenza da riconciliare: VERIFICA_HOMEPAGE.md"
+=======
 title: "Divergenza da riconciliare: verifica-homepage.md"
+>>>>>>> a377e9e6 (.)
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
@@ -7,12 +11,21 @@ created: 2026-08-24
 updated: 2026-08-24
 ---
 
+<<<<<<< HEAD
+# Divergenza: `VERIFICA_HOMEPAGE.md`
+
+Questo file veniva da `docs/wiki/integrations/modules/notify/VERIFICA_HOMEPAGE.md`, cancellato dal working tree senza migrazione. Il modulo ha gia' un file con lo stesso nome, ma con **corpo diverso**:
+
+- versione del modulo: `laravel/Modules/Notify/docs/VERIFICA_HOMEPAGE.md`
+- versione recuperata: `laravel/Modules/Notify/docs/wiki/integrations/_da-riconciliare/VERIFICA_HOMEPAGE.md`
+=======
 # Divergenza: `verifica-homepage.md`
 
 Questo file veniva da `docs/wiki/integrations/modules/notify/verifica-homepage.md`, cancellato dal working tree senza migrazione. Il modulo ha gia' un file con lo stesso nome, ma con **corpo diverso**:
 
 - versione del modulo: `laravel/Modules/Notify/docs/verifica-homepage.md`
 - versione recuperata: `laravel/Modules/Notify/docs/wiki/integrations/_da-riconciliare/verifica-homepage.md`
+>>>>>>> a377e9e6 (.)
 
 Vanno confrontate e fuse a mano. Quando la fusione e' fatta, questo file e la nota vanno rimossi.
 

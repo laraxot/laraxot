@@ -72,7 +72,14 @@
 
 **✅ SEMPRE**:
 ```blade
+<<<<<<< HEAD
+<<<<<<< HEAD
 @livewire(\Modules\Predict\Filament\Widgets\PredictTableWidget::class)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+@livewire(\Modules\Predict\Filament\Widgets\PredictTableWidget::class)
+>>>>>>> a988596b (first)
 @livewire(\Modules\Forecast\Filament\Widgets\ForecastTableWidget::class)
 ```
 

@@ -4,7 +4,14 @@ type: concept
 tags: [master, plan]
 created: 2026-07-14
 updated: 2026-07-14
+<<<<<<< HEAD
+<<<<<<< HEAD
 qmd: "master-plan fixcity platform - master plan 🚀"
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+qmd: "master-plan fixcity platform - master plan 🚀"
+>>>>>>> a988596b (first)
 qmd: "master-plan ptv platform - master plan 🚀"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -448,7 +455,14 @@ docs/
 ├── API_REFERENCE.md (📋 API Documentation)
 ├── DEPLOYMENT.md (📋 Deployment Guide)
 └── modules/
+<<<<<<< HEAD
+<<<<<<< HEAD
     ├── fixcity/ (✅ Business Logic + Roadmap)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+    ├── fixcity/ (✅ Business Logic + Roadmap)
+>>>>>>> a988596b (first)
     ├── ptv/ (✅ Business Logic + Roadmap)
     ├── user/ (✅ IAM + Roadmap)
     ├── notify/ (✅ Notifications + Roadmap)
@@ -504,6 +518,13 @@ FixCity è posizionata per diventare la **piattaforma leader europea** per il ci
 - *Technical capabilities e constraints*
 - *Team composition e roadmap feasibility*
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **Per domande o approfondimenti**: development@fixcity.io
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**Per domande o approfondimenti**: development@fixcity.io
+>>>>>>> a988596b (first)
 **Per domande o approfondimenti**: development@ptv.io
 

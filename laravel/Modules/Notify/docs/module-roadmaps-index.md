@@ -273,7 +273,14 @@ This document provides an index of all module roadmaps in the Laraxot ecosystem.
 
 - [Laraxot Architecture Rules](./laravel/Modules/Xot/docs/laraxot-architecture-rules.md)
 - [Project Roadmap](./project-roadmap-1.md)
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [AGENTS.md](./AGENTS.md)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- [AGENTS.md](./AGENTS.md)
+>>>>>>> a988596b (first)
 - [agents.md](./AGENTS.md)
 - [Getting Started](./quick-start.md)
 

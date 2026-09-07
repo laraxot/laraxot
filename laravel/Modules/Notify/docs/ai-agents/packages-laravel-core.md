@@ -140,7 +140,14 @@ XDEBUG_MODE=off ./vendor/bin/pest --coverage         # con coverage
 XDEBUG_MODE=off ./vendor/bin/pest --coverage --min=80
 
 # Modulo specifico
+<<<<<<< HEAD
+<<<<<<< HEAD
 XDEBUG_MODE=off ./vendor/bin/pest Modules/Quaeris/tests
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+XDEBUG_MODE=off ./vendor/bin/pest Modules/Quaeris/tests
+>>>>>>> a988596b (first)
 XDEBUG_MODE=off ./vendor/bin/pest Modules/App/tests
 
 # Via composer
@@ -288,7 +295,14 @@ Espone l'applicazione all'AI (Claude, ecc.) tramite MCP protocol.
 ```php
 use Laravel\Mcp\Server;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 $server = new Server('quaeris-surveys');
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+$server = new Server('quaeris-surveys');
+>>>>>>> a988596b (first)
 $server = new Server('this-project-surveys');
 
 // Resources (dati che l'AI puo leggere)

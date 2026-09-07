@@ -48,7 +48,14 @@ bashscripts/
 ### Documentation (Theme Level)
 ```
 laravel/Themes/Sixteen/docs/
+<<<<<<< HEAD
+<<<<<<< HEAD
 ├── INDEX.md                                     ✨ NEW (theme index)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+├── INDEX.md                                     ✨ NEW (theme index)
+>>>>>>> a988596b (first)
 ├── index.md                                     ✨ NEW (theme index)
 ├── COMPLETE-VISUAL-PARITY-REPORT.md            ✨ NEW (54-page ranking)
 ├── PRIORITY-MATRIX.json                        ✨ NEW (work planning)
@@ -66,7 +73,14 @@ laravel/Themes/Sixteen/docs/
 ### Bash Scripts Documentation
 ```
 bashscripts/docs/
+<<<<<<< HEAD
+<<<<<<< HEAD
 ├── INDEX.md                                     ✨ NEW (tools reference)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+├── INDEX.md                                     ✨ NEW (tools reference)
+>>>>>>> a988596b (first)
 ├── index.md                                     ✨ NEW (tools reference)
 ├── github-issues-batch.md                       ✨ NEW (CLI guide)
 └── [future README for other areas]
@@ -163,7 +177,14 @@ Project Root/
    - Phase breakdown (1-3) with timelines
    - Start here if new to the project
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 2. **laravel/Themes/Sixteen/docs/INDEX.md**
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+2. **laravel/Themes/Sixteen/docs/INDEX.md**
+>>>>>>> a988596b (first)
 2. **laravel/Themes/Sixteen/docs/index.md**
    - Theme documentation hub
    - Cross-linked to all other docs
@@ -190,8 +211,16 @@ Project Root/
 - Reference: PRIORITY-MATRIX.json (for timeline/effort)
 
 **For Developers**:
+<<<<<<< HEAD
+<<<<<<< HEAD
 - Read: laravel/Themes/Sixteen/docs/INDEX.md
 - Reference: bashscripts/docs/INDEX.md (for tools)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- Read: laravel/Themes/Sixteen/docs/INDEX.md
+- Reference: bashscripts/docs/INDEX.md (for tools)
+>>>>>>> a988596b (first)
 - Read: laravel/Themes/Sixteen/docs/index.md
 - Reference: bashscripts/docs/index.md (for tools)
 - Analyze: pages/<page-name>/DETAILED-analysis.md (per page)

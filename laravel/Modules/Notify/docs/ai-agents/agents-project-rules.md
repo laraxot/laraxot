@@ -36,7 +36,14 @@ All JSON files in `config/local/*/database/content/pages/` MUST follow:
 
 1. **Filename MUST match slug exactly**:
    - File `about.json` MUST have `"slug": "about"`
+<<<<<<< HEAD
+<<<<<<< HEAD
    - File `predicts.json` MUST have `"slug": "predicts"`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+   - File `predicts.json` MUST have `"slug": "predicts"`
+>>>>>>> a988596b (first)
    - File `forecasts.json` MUST have `"slug": "forecasts"`
 
 2. **Empty files forbidden**:
@@ -64,7 +71,14 @@ done
 
 - Module SVG icons live in `Modules/<ModuleName>/resources/svg`
 - The blade icon name must use the module prefix + filename
+<<<<<<< HEAD
+<<<<<<< HEAD
 - Example: `predict-bottlecap` for `Modules/Predict/resources/svg/bottlecap.svg`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- Example: `predict-bottlecap` for `Modules/Predict/resources/svg/bottlecap.svg`
+>>>>>>> a988596b (first)
 - Example: `forecast-bottlecap` for `Modules/Forecast/resources/svg/bottlecap.svg`
 
 ---
@@ -108,6 +122,13 @@ done
 
 - [Indice AGENTS](./agents-split-index.md)
 - [regole-critiche.md](./regole-critiche.md) - Regole critiche
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [AGENTS.md originale](../../AGENTS.md)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- [AGENTS.md originale](../../AGENTS.md)
+>>>>>>> a988596b (first)
 - [agents.md originale](../../agents.md)
 - [Index principale](./index.md)

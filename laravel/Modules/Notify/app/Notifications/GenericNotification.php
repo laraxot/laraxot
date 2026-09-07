@@ -58,7 +58,14 @@ class GenericNotification extends Notification implements ShouldQueue
     /**
      * Ottiene i canali di consegna della notifica.
      *
+<<<<<<< HEAD
+<<<<<<< HEAD
      * @param  object  $_notifiable  L'entità da notificare (oggetto che riceverà la notifica)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+     * @param  object  $_notifiable  L'entità da notificare (oggetto che riceverà la notifica)
+>>>>>>> a988596b (first)
      * @return array<int, string>
      */
     public function via(object $_notifiable): array
@@ -71,7 +78,11 @@ class GenericNotification extends Notification implements ShouldQueue
      */
     public function toMail(object $notifiable): MailMessage
     {
+<<<<<<< HEAD
+        $mail = (new MailMessage)
+=======
         $mail = (new MailMessage())
+>>>>>>> a988596b (first)
             ->subject($this->title)
             ->greeting('Gentile '.$this->getRecipientName($notifiable))
             ->line($this->message);
@@ -119,7 +130,16 @@ class GenericNotification extends Notification implements ShouldQueue
 
         return [
             'content' => $content,
+<<<<<<< HEAD
+<<<<<<< HEAD
             'to' => $to];
+=======
+            'to' => $to,
+        ];
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+            'to' => $to];
+>>>>>>> a988596b (first)
     }
 
     /**
@@ -133,7 +153,16 @@ class GenericNotification extends Notification implements ShouldQueue
             'title' => $this->title,
             'message' => $this->message,
             'data' => $this->data,
+<<<<<<< HEAD
+<<<<<<< HEAD
             'created_at' => now()->toIso8601String()];
+=======
+            'created_at' => now()->toIso8601String(),
+        ];
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+            'created_at' => now()->toIso8601String()];
+>>>>>>> a988596b (first)
     }
 
     /**

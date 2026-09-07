@@ -28,7 +28,14 @@
 
 ### What Are Custom Question Types?
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 Custom question types are specialized data processing actions for Quaeris survey analytics that handle complex business logic not covered by standard LimeSurvey queries. They enable:
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+Custom question types are specialized data processing actions for Quaeris survey analytics that handle complex business logic not covered by standard LimeSurvey queries. They enable:
+>>>>>>> a988596b (first)
 Custom question types are specialized data processing actions for App survey analytics that handle complex business logic not covered by standard LimeSurvey queries. They enable:
 
 - **Response rate calculations** (email, SMS)
@@ -39,7 +46,14 @@ Custom question types are specialized data processing actions for App survey ana
 ### Why Custom Implementation?
 
 Standard LimeSurvey queries cannot handle:
+<<<<<<< HEAD
+<<<<<<< HEAD
 - Cross-database operations (contacts in `quaeris_data`, surveys in `limesurvey`)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- Cross-database operations (contacts in `quaeris_data`, surveys in `limesurvey`)
+>>>>>>> a988596b (first)
 - Cross-database operations (contacts in `app_data`, surveys in `limesurvey`)
 - Complex business logic (response rate calculations)
 - Custom grouping and aggregation
@@ -130,14 +144,28 @@ WHERE parent_qid != 0
 GROUP BY gid
 ```
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
 
 **Lines**: 125
 
 **Complexity**: Medium
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/234`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/234`
+>>>>>>> a988596b (first)
 **Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/234`
 
 ---
@@ -162,14 +190,28 @@ WHERE submitdate IS NOT NULL
 AND sent != 'N'
 ```
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/MailResponseRate.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/MailResponseRate.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/MailResponseRate.php`
 
 **Lines**: 173
 
 **Complexity**: High
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/192`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/192`
+>>>>>>> a988596b (first)
 **Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/192`
 
 **Footer Output**:
@@ -187,7 +229,14 @@ Totale Invitati: 100 - Rispondenti: 75 - Percentuale di risposta: 75.00%
 
 **Database Operations**:
 ```sql
+<<<<<<< HEAD
+<<<<<<< HEAD
 -- Uses Contact model (quaeris_data database)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+-- Uses Contact model (quaeris_data database)
+>>>>>>> a988596b (first)
 -- Uses Contact model (app_data database)
 SELECT 
     DATE_FORMAT(sms_sent_at, '%Y-%b') as label,
@@ -202,14 +251,28 @@ GROUP BY
 ORDER BY DATE_FORMAT(sms_sent_at, '%Y-%m')
 ```
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
 
 **Lines**: 150 (optimized from 473)
 
 **Complexity**: High
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/191`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/191`
+>>>>>>> a988596b (first)
 **Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/191`
 
 **Key Optimization**: No cross-database joins, uses Contact model directly
@@ -224,14 +287,28 @@ ORDER BY DATE_FORMAT(sms_sent_at, '%Y-%m')
 
 **Implementation**: Combines MailResponseRate + SmsResponseRate
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
 
 **Lines**: 122
 
 **Complexity**: Medium
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/190`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/190`
+>>>>>>> a988596b (first)
 **Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/190`
 
 **Calculation**:
@@ -251,7 +328,14 @@ $responsePercentage = $totalInvited !== 0
 
 **Pattern**: `custom:contacts_completed_2`
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
 
 **Lines**: 128
@@ -266,7 +350,14 @@ $responsePercentage = $totalInvited !== 0
 
 **Pattern**: `custom:avg_group_2`
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/AvgGroup2.php`
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/AvgGroup2.php`
+>>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/AvgGroup2.php`
 
 **Lines**: 107
@@ -363,7 +454,14 @@ Argument #1 ($dataClass) must be of type string, null given
 **Stack Trace**:
 ```
 #0 vendor/spatie/laravel-data/src/DataPipes/CastPropertiesDataPipe.php:113
+<<<<<<< HEAD
+<<<<<<< HEAD
 #1 Modules/Quaeris/app/Actions/QuestionChart/Custom/MailResponseRate.php:50
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+#1 Modules/Quaeris/app/Actions/QuestionChart/Custom/MailResponseRate.php:50
+>>>>>>> a988596b (first)
 #1 Modules/App/app/Actions/QuestionChart/Custom/MailResponseRate.php:50
 ```
 
@@ -490,12 +588,27 @@ return new AnswersChartData(answers: $answersArray);
 **Error Message**:
 ```
 SQLSTATE[42S02]: Base table or view not found: 1146
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a988596b (first)
 Table 'quaeris_survey.contacts' doesn't exist
 ```
 
 **Root Cause**: 
 - `contacts` table exists in `quaeris_data` database
 - Query was using `limesurvey` connection (aka `quaeris_survey`)
+<<<<<<< HEAD
+=======
+Table 'app_survey.contacts' doesn't exist
+```
+
+**Root Cause**: 
+- `contacts` table exists in `app_data` database
+- Query was using `limesurvey` connection (aka `app_survey`)
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
 - Cross-database joins not supported without special config
 
 **Problematic Code**:
@@ -684,7 +797,14 @@ $footer = sprintf(
 
 ```
 ┌─────────────────────┐     ┌─────────────────────┐
+<<<<<<< HEAD
+<<<<<<< HEAD
 │   quaeris_data      │     │     limesurvey      │
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+│   quaeris_data      │     │     limesurvey      │
+>>>>>>> a988596b (first)
 │   app_data      │     │     limesurvey      │
 │   (MySQL)           │     │     (MySQL)         │
 ├─────────────────────┤     ├─────────────────────┤
@@ -715,7 +835,14 @@ $footer = sprintf(
     
     'limesurvey' => [
         'driver' => 'mysql',
+<<<<<<< HEAD
+<<<<<<< HEAD
         'database' => 'quaeris_survey', // aka limesurvey
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+        'database' => 'quaeris_survey', // aka limesurvey
+>>>>>>> a988596b (first)
         'database' => 'app_survey', // aka limesurvey
         'host' => '127.0.0.1',
         // ...
@@ -903,7 +1030,14 @@ it('calculates mail response rate correctly', function (): void {
 - `.kilo/memories/session-2026-03-17-custom-charts.md`
 
 ### GitHub
+<<<<<<< HEAD
+<<<<<<< HEAD
 - Issue #97: https://github.com/laraxot/base_quaeris_fila5_mono/issues/97
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+- Issue #97: https://github.com/laraxot/base_quaeris_fila5_mono/issues/97
+>>>>>>> a988596b (first)
 - Issue #97: https://github.com/laraxot/base_ptvx_fila5_mono/issues/97
 
 ### External Resources

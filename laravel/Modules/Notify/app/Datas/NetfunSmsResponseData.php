@@ -10,7 +10,10 @@ class NetfunSmsResponseData extends Data
 {
     /**
      * @param  array<int, array<string, mixed>>|null  $messages
+<<<<<<< HEAD
+=======
      *
+>>>>>>> a988596b (first)
      * @return void
      */
     public function __construct(
@@ -18,8 +21,12 @@ class NetfunSmsResponseData extends Data
         public ?string $batchId = null,
         public ?array $messages = null,
         public ?string $error = null,
+<<<<<<< HEAD
+    ) {}
+=======
     ) {
     }
+>>>>>>> a988596b (first)
 
     /**
      * @param  array{status: string, batchId?: string, messages?: array<int, array<string, mixed>>, error?: string}  $data

@@ -16,9 +16,18 @@ related:
   - "./sms-provider-configuration.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 # Notifiche Telegram 
 
 Questa documentazione descrive come implementare notifiche Telegram nel modulo Notify di SaluteOra.
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+# Notifiche Telegram 
+
+Questa documentazione descrive come implementare notifiche Telegram nel modulo Notify di SaluteOra.
+>>>>>>> a988596b (first)
 # Notifiche Telegram
 
 Questa documentazione descrive come implementare notifiche Telegram nel modulo Notify di <nome progetto>.
@@ -36,7 +45,14 @@ Questa documentazione descrive come implementare notifiche Telegram nel modulo N
 
 ## Introduzione
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 Telegram offre un'ottima piattaforma per notifiche istantanee grazie alla sua API per bot. SaluteOra integra Telegram per inviare notifiche relative ad appuntamenti, promemoria e altre comunicazioni importanti.
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+Telegram offre un'ottima piattaforma per notifiche istantanee grazie alla sua API per bot. SaluteOra integra Telegram per inviare notifiche relative ad appuntamenti, promemoria e altre comunicazioni importanti.
+>>>>>>> a988596b (first)
 Telegram offre un'ottima piattaforma per notifiche istantanee grazie alla sua API per bot. <nome progetto> integra Telegram per inviare notifiche relative ad appuntamenti, promemoria e altre comunicazioni importanti.
 
 ## Setup del Bot Telegram
@@ -60,7 +76,14 @@ Il bot di <nome progetto> deve avere:
 Configura i seguenti comandi per il tuo bot:
 ```
 start - Inizia l'interazione con il bot
+<<<<<<< HEAD
+<<<<<<< HEAD
 register - Collega il tuo account Telegram a SaluteOra
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+register - Collega il tuo account Telegram a SaluteOra
+>>>>>>> a988596b (first)
 register - Collega il tuo account Telegram a <nome progetto>
 unregister - Scollega il tuo account Telegram
 settings - Gestisci le tue preferenze di notifica
@@ -105,14 +128,35 @@ use NotificationChannels\Telegram\TelegramMessage;
 class AppointmentNotification extends Notification
 {
     protected $appointment;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
     public function __construct($appointment)
     {
         $this->appointment = $appointment;
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
     public function via($notifiable)
     {
         return [TelegramChannel::class];
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
     public function toTelegram($notifiable)
     {
         $url = url("/appointments/{$this->appointment->id}");
@@ -155,6 +199,13 @@ public function toTelegram($notifiable)
 public function toTelegram($notifiable)
 {
     $appointmentId = $this->appointment->id;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
     return TelegramMessage::create()
         ->content("Confermi l'appuntamento del {$this->appointment->formatted_date}?")
         ->buttonWithCallback('Conferma', "confirm_appointment_{$appointmentId}")
@@ -194,25 +245,49 @@ use Modules\Notify\Models\TelegramToken;
 class RegisterCommand extends Command
 {
     protected $name = 'register';
+<<<<<<< HEAD
+<<<<<<< HEAD
     protected $description = 'Collega il tuo account Telegram a SaluteOra';
     
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+    protected $description = 'Collega il tuo account Telegram a SaluteOra';
+    
+>>>>>>> a988596b (first)
     protected $description = 'Collega il tuo account Telegram a <nome progetto>';
 
     public function handle()
     {
         $chatId = $this->update->getMessage()->getChat()->getId();
         $token = Str::random(8);
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
         // Salva il token temporaneo
         TelegramToken::create([
             'token' => $token,
             'chat_id' => $chatId,
             'expires_at' => now()->addHours(1),
         ]);
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a988596b (first)
         $this->replyWithMessage([
             'text' => "Il tuo codice di collegamento è: {$token}\n\nInseriscilo nel tuo profilo SaluteOra per completare il collegamento."
         
         $this->replyWithMessage([
             'text' => "Il tuo codice di collegamento è: {$token}\n\nInseriscilo nel tuo profilo SaluteOra per completare il collegamento."
+<<<<<<< HEAD
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
 
         $this->replyWithMessage([
             'text' => "Il tuo codice di collegamento è: {$token}\n\nInseriscilo nel tuo profilo <nome progetto> per completare il collegamento."
@@ -235,10 +310,24 @@ class VerifyTelegramToken
     public function handle(Request $request, Closure $next)
     {
         $token = $request->input('token');
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
         $telegramToken = TelegramToken::where('token', $token)
             ->where('expires_at', '>', now())
             ->whereNull('user_id')
             ->first();
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
         if (!$telegramToken) {
             return response()->json(['error' => 'Token non valido o scaduto'], 400);
         }
@@ -271,6 +360,13 @@ class TelegramNotificationTest extends TestCase
     {
         $user = User::factory()->create(['telegram_chat_id' => '123456789']);
         $appointment = Appointment::factory()->create();
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
         $notification = new AppointmentNotification($appointment);
 
         $telegramMessage = $notification->toTelegram($user);
@@ -279,6 +375,13 @@ class TelegramNotificationTest extends TestCase
             $appointment->formatted_date,
             $telegramMessage->content
         );
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+>>>>>>> a988596b (first)
         $this->assertCount(2, $telegramMessage->buttons);
     }
 }

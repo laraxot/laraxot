@@ -2,7 +2,14 @@
 
 **Versione:** 6.2.2  
 **Data Setup:** 2026-04-07  
+<<<<<<< HEAD
+<<<<<<< HEAD
 **Progetto:** FixCity Fila5 (Laraxot)
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+**Progetto:** FixCity Fila5 (Laraxot)
+>>>>>>> a988596b (first)
 **Progetto:** Notify Fila5 (Laraxot)
 
 ---
@@ -48,7 +55,14 @@ Un framework open-source (MIT) per lo sviluppo software guidato da AI che fornis
 ### Installazione Interattiva (consigliata la prima volta)
 
 ```bash
+<<<<<<< HEAD
+<<<<<<< HEAD
 cd /var/www/_bases/base_fixcity_fila5
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+cd /var/www/_bases/base_fixcity_fila5
+>>>>>>> a988596b (first)
 cd /var/www/_bases/base_ptvx_fila5
 npx bmad-method install
 ```
@@ -57,7 +71,14 @@ npx bmad-method install
 
 ```bash
 npx bmad-method install \
+<<<<<<< HEAD
+<<<<<<< HEAD
   --directory /var/www/_bases/base_fixcity_fila5 \
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+  --directory /var/www/_bases/base_fixcity_fila5 \
+>>>>>>> a988596b (first)
   --directory /var/www/_bases/base_ptvx_fila5 \
   --modules bmm \
   --tools windsurf \
@@ -68,7 +89,14 @@ npx bmad-method install \
 
 ```bash
 npx bmad-method install \
+<<<<<<< HEAD
+<<<<<<< HEAD
   --directory /var/www/_bases/base_fixcity_fila5 \
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+  --directory /var/www/_bases/base_fixcity_fila5 \
+>>>>>>> a988596b (first)
   --directory /var/www/_bases/base_ptvx_fila5 \
   --modules bmm \
   --tools windsurf \
@@ -80,7 +108,14 @@ npx bmad-method install \
 
 ```bash
 npx bmad-method install \
+<<<<<<< HEAD
+<<<<<<< HEAD
   --directory /var/www/_bases/base_fixcity_fila5 \
+=======
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
+  --directory /var/www/_bases/base_fixcity_fila5 \
+>>>>>>> a988596b (first)
   --directory /var/www/_bases/base_ptvx_fila5 \
   --action quick-update \
   --yes

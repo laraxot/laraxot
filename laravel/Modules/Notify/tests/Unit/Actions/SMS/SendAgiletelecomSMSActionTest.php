@@ -15,7 +15,11 @@ it('SendAgiletelecomSMSAction can be instantiated', function () {
 });
 
 it('SendAgiletelecomSMSAction has execute method with correct signature', function () {
+<<<<<<< HEAD
+    $action = new SendAgiletelecomSMSAction;
+=======
     $action = new SendAgiletelecomSMSAction();
+>>>>>>> a988596b (first)
     $reflection = new ReflectionClass($action);
     $method = $reflection->getMethod('execute');
 
@@ -24,7 +28,11 @@ it('SendAgiletelecomSMSAction has execute method with correct signature', functi
 });
 
 it('SendAgiletelecomSMSAction execute accepts SmsData parameter', function () {
+<<<<<<< HEAD
+    $action = new SendAgiletelecomSMSAction;
+=======
     $action = new SendAgiletelecomSMSAction();
+>>>>>>> a988596b (first)
     $reflection = new ReflectionClass($action);
     $method = $reflection->getMethod('execute');
     $params = $method->getParameters();
@@ -34,7 +42,11 @@ it('SendAgiletelecomSMSAction execute accepts SmsData parameter', function () {
 });
 
 it('SendAgiletelecomSMSAction execute returns array', function () {
+<<<<<<< HEAD
+    $action = new SendAgiletelecomSMSAction;
+=======
     $action = new SendAgiletelecomSMSAction();
+>>>>>>> a988596b (first)
     $reflection = new ReflectionClass($action);
     $method = $reflection->getMethod('execute');
     $returnType = $method->getReturnType();
@@ -43,7 +55,11 @@ it('SendAgiletelecomSMSAction execute returns array', function () {
 });
 
 it('SendAgiletelecomSMSAction uses strict types', function () {
+<<<<<<< HEAD
+    $action = new SendAgiletelecomSMSAction;
+=======
     $action = new SendAgiletelecomSMSAction();
+>>>>>>> a988596b (first)
     $reflection = new ReflectionClass($action);
     $filename = $reflection->getFileName();
 
@@ -54,14 +70,22 @@ it('SendAgiletelecomSMSAction uses strict types', function () {
 });
 
 it('SendAgiletelecomSMSAction has correct namespace', function () {
+<<<<<<< HEAD
+    $action = new SendAgiletelecomSMSAction;
+=======
     $action = new SendAgiletelecomSMSAction();
+>>>>>>> a988596b (first)
     $reflection = new ReflectionClass($action);
 
     expect($reflection->getNamespaceName())->toBe('Modules\\Notify\\Actions\\SMS');
 });
 
 it('SendAgiletelecomSMSAction has required imports', function () {
+<<<<<<< HEAD
+    $action = new SendAgiletelecomSMSAction;
+=======
     $action = new SendAgiletelecomSMSAction();
+>>>>>>> a988596b (first)
     $reflection = new ReflectionClass($action);
     $filename = $reflection->getFileName();
     /** @var string $filename */
@@ -71,9 +95,25 @@ it('SendAgiletelecomSMSAction has required imports', function () {
     expect($content)->toContain('use Modules\\Notify\\Datas\\SmsData;');
 });
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+it('SendAgiletelecomSMSAction does not use QueueableAction trait', function () {
+    $action = new SendAgiletelecomSMSAction;
+    $traits = \Safe\class_uses($action);
+
+    expect($traits)->not->toContain('Spatie\\QueueableAction\\QueueableAction');
+=======
+it('SendAgiletelecomSMSAction uses QueueableAction trait', function () {
+    $action = new SendAgiletelecomSMSAction;
+    $traits = \Safe\class_uses($action);
+
+    expect($traits)->toContain('Spatie\\QueueableAction\\QueueableAction');
+>>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
+=======
 it('SendAgiletelecomSMSAction does not use QueueableAction trait', function () {
     $action = new SendAgiletelecomSMSAction();
     $traits = \Safe\class_uses($action);
 
     expect($traits)->not->toContain('Spatie\\QueueableAction\\QueueableAction');
+>>>>>>> a988596b (first)
 });
