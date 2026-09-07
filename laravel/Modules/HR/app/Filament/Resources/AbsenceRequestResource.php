@@ -17,6 +17,7 @@ final class AbsenceRequestResource extends XotBaseResource
 {
     use HasAccountFeatureVisibility;
 
+    /** @var array<string, string> */
     private const array ABSENCE_TYPE_ALIASES = [
         'permesso' => 'leave',
         'ferie' => 'vacation',
