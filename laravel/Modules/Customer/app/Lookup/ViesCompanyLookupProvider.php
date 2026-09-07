@@ -11,6 +11,7 @@ use function Safe\preg_replace;
 
 final class ViesCompanyLookupProvider implements CompanyLookupProviderInterface
 {
+    /** @var string */
     private const ENDPOINT = 'https://ec.europa.eu/taxation_customs/vies/rest-api/ms/IT/vat/';
 
     /**

@@ -30,13 +30,15 @@ use function Safe\preg_match_all;
  */
 final class StepSolidExtractor
 {
-    private const CHUNK_BYTES = 262144;
+    /** @var int */
+    private const int CHUNK_BYTES = 262144;
 
     /**
      * Entities on the path from a solid down to its vertices. Everything else in
      * the file is irrelevant here and is dropped as it is read.
      */
-    private const TOPOLOGY_ENTITIES = [
+    /** @var list<string> */
+    private const array TOPOLOGY_ENTITIES = [
         'MANIFOLD_SOLID_BREP',
         'BREP_WITH_VOIDS',
         'CLOSED_SHELL',
@@ -51,8 +53,8 @@ final class StepSolidExtractor
         'VERTEX_LOOP',
     ];
 
-    /** Surface types worth telling apart when describing a piece. */
-    private const SURFACE_ENTITIES = [
+    /** @var array{PLANE: 'plane', CYLINDRICAL_SURFACE: 'cylinder'} Surface types worth telling apart when describing a piece. */
+    private const array SURFACE_ENTITIES = [
         'PLANE' => 'plane',
         'CYLINDRICAL_SURFACE' => 'cylinder',
     ];

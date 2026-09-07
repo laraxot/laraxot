@@ -16,6 +16,7 @@ return new class() extends XotBaseMigration
     protected ?string $model_class = Profile::class;
 
     /** @var list<string> */
+    /** @var list<string> */
     private const DATA_COLUMNS = [
         'user_id',
         'type',

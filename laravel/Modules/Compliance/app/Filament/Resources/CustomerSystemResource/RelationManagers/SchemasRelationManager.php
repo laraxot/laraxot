@@ -31,12 +31,14 @@ final class SchemasRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'media';
 
+    /** @var string */
     private const KIND = 'schema';
 
     /**
      * PDF + immagini + CAD nativi. I DWG/DXF non hanno un MIME standard univoco e
      * molti browser li inviano come application/octet-stream: la whitelist li copre tutti.
      */
+    /** @var list<string> */
     private const ACCEPTED_MIME_TYPES = [
         'application/pdf',
         'image/jpeg',

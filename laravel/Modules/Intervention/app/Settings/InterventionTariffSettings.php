@@ -16,14 +16,19 @@ use Modules\Platform\Settings\SettingsRepository;
  */
 final class InterventionTariffSettings
 {
+    /** @var string */
     public const HOURLY_PRICE = 'interventions.hourly_labour_price_cents';
 
+    /** @var string */
     public const CALLOUT_FEE = 'interventions.callout_fee_cents';
 
+    /** @var string */
     public const NIGHT_PERCENT = 'interventions.surcharge.night_percent';
 
+    /** @var string */
     public const NIGHT_FROM_HOUR = 'interventions.surcharge.night_from_hour';
 
+    /** @var string */
     public const NIGHT_TO_HOUR = 'interventions.surcharge.night_to_hour';
 
     public const WEEKEND_PERCENT = 'interventions.surcharge.weekend_percent';

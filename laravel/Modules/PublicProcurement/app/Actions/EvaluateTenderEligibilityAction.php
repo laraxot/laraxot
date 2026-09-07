@@ -15,8 +15,7 @@ final class EvaluateTenderEligibilityAction
 {
     use QueueableAction;
 
-    /** @var array<string, string> */
-    private const DEFAULT_DOCUMENTS = [
+    private const array DEFAULT_DOCUMENTS = [
         'durc' => 'DURC valido',
         'insurance' => 'Polizza assicurativa valida',
     ];

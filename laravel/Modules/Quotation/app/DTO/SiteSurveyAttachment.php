@@ -11,6 +11,7 @@ use InvalidArgumentException;
  */
 final readonly class SiteSurveyAttachment
 {
+    /** @var list<string> */
     public const KINDS = ['photo', 'video', 'audio'];
 
     /**

@@ -13,7 +13,7 @@ use DateTimeInterface;
  */
 final class TimberTraceCode
 {
-    public const SEPARATOR = '·';
+    public const string SEPARATOR = '·';
 
     /**
      * Segmento per una tappa: PREFISSO-mmgg (+ eventuale suffisso, es. codice articolo).

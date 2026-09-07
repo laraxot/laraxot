@@ -12,14 +12,19 @@ namespace Modules\Billing\Datas;
  */
 final class AgingBuckets
 {
+    /** @var string */
     public const NOT_DUE = 'not_due';
 
+    /** @var string */
     public const DAYS_1_30 = 'days_1_30';
 
+    /** @var string */
     public const DAYS_31_60 = 'days_31_60';
 
+    /** @var string */
     public const DAYS_61_90 = 'days_61_90';
 
+    /** @var string */
     public const OVER_90 = 'over_90';
 
     /**

@@ -23,7 +23,7 @@ use function Safe\preg_match_all;
  */
 final class ExtractSignComponentsFromArtworkAction
 {
-    /** Title-block labels (right column) mapped to their extraction field key. */
+    /** @var array<string, string> Title-block labels (right column) mapped to their extraction field key. */
     private const TITLE_BLOCK_LABELS = [
         'CUSTOMER' => 'customer',
         'REFERENT' => 'referent',
@@ -38,13 +38,11 @@ final class ExtractSignComponentsFromArtworkAction
         'DRAWING' => 'drawing',
     ];
 
-    /**
-     * Labels that are not stored as fields but still act as boundaries so a value
-     * never bleeds into the row below (e.g. the PM/REV/SCALE/SIZE bottom strip).
-     */
+    /** @var list<string> Labels that are not stored as fields but still act as boundaries so a value
+     * never bleeds into the row below (e.g. the PM/REV/SCALE/SIZE bottom strip). */
     private const BOUNDARY_LABELS = ['PM', 'REV', 'TAV', 'SCALE', 'SIZE', 'NOTE'];
 
-    /** Component classification rules, evaluated in order (first match wins). */
+    /** @var list<array{role: string, keyword: string}> Component classification rules, evaluated in order (first match wins). */
     private const COMPONENT_RULES = [
         ['role' => 'body', 'keyword' => '/ACRYLBLOCK|PLEXBLOCK|BLOCK|LASTRA|BODY|RETRO|BACK OF THE LETTERS/i'],
         ['role' => 'face', 'keyword' => '/FRONT SIDE|FRONT LIGHT|LETTERS FRONT|FACE|OPAL PLEX|FRONTE/i'],

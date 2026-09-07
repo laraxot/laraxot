@@ -13,6 +13,7 @@ namespace Modules\Intervention\Data;
  */
 final readonly class DictatedMaterialLine
 {
+    /** @var string */
     public const DEFAULT_UNIT = 'pz';
 
     public function __construct(

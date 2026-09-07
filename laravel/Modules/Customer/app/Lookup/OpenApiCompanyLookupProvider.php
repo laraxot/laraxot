@@ -11,6 +11,7 @@ use function Safe\preg_replace;
 
 final class OpenApiCompanyLookupProvider implements CompanyLookupProviderInterface
 {
+    /** @var int */
     private const MAX_RESULTS = 5;
 
     /**

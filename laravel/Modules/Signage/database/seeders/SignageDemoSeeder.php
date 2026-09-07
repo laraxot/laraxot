@@ -28,6 +28,7 @@ use Modules\WorkOrder\Models\WorkOrderStatus;
 final class SignageDemoSeeder extends Seeder
 {
     /** The stages a sign shop actually goes through, in order. */
+    /** @var array<int, array{code: string, name: string, color: string, is_terminal: bool, sort_order: int}> */
     private const WORKFLOW_STATUSES = [
         ['code' => 'quoting', 'name' => 'Preventivazione', 'color' => 'gray', 'is_terminal' => false, 'sort_order' => 10],
         ['code' => 'approved', 'name' => 'Approvata', 'color' => 'blue', 'is_terminal' => false, 'sort_order' => 20],
@@ -36,6 +37,7 @@ final class SignageDemoSeeder extends Seeder
         ['code' => 'closed', 'name' => 'Chiusa', 'color' => 'green', 'is_terminal' => true, 'sort_order' => 50],
     ];
 
+    /** @var float */
     private const VAT_PERCENT = 22.0;
 
     public function run(): void

@@ -27,6 +27,7 @@ final class QuotationsMarginByProjectChart extends XotBaseChartWidget
     protected ?string $maxHeight = '180px';
 
     /** How many projects to plot: past this the chart stops being readable. */
+    /** @var int */
     private const MAX_PROJECTS = 6;
 
     public static function canView(): bool

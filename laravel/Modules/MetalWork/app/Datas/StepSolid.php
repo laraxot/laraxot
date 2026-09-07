@@ -21,17 +21,20 @@ namespace Modules\MetalWork\Datas;
 final readonly class StepSolid
 {
     /** Below this ratio of thickness to width the piece is cut from plate. */
-    private const PLATE_RATIO = 0.25;
+    /** @var float */
+    private const float PLATE_RATIO = 0.25;
 
     /** From this ratio of length to width the piece is cut from a profile. */
-    private const BAR_RATIO = 3.0;
+    /** @var float */
+    private const float BAR_RATIO = 3.0;
 
     /**
      * A box has 6 planar faces; chamfers and steps add a few more. Past this the
      * outline is a profile, which has to be cut by torch or laser rather than
      * sawn square.
      */
-    private const SQUARE_CUT_PLANE_LIMIT = 12;
+    /** @var int */
+    private const int SQUARE_CUT_PLANE_LIMIT = 12;
 
     public function __construct(
         /** Dimensions sorted largest first, in millimetres. */

@@ -31,10 +31,13 @@ final class ResellerResource extends GatedXotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-user-group';
 
+    /** @var string */
     private const ACCOUNT_FEATURE_ADMIN = 'admin.resellers';
 
+    /** @var null */
     private const ACCOUNT_FEATURE_OPERATOR = null;
 
+    /** @var bool */
     private const ACCOUNT_FEATURE_OPERATOR_DEFAULT = false;
 
     public static function getNavigationGroup(): string

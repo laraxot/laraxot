@@ -47,11 +47,14 @@ final class MetalDrawingQuotationPage extends GatedXotBasePage
 
     protected string $view = 'metalwork::filament.pages.drawing-quotation';
 
-    private const ACCEPTED_EXTENSIONS = ['stp', 'step'];
+    /** @var list<string> */
+    private const array ACCEPTED_EXTENSIONS = ['stp', 'step'];
 
-    private const DRAWING_DISK = 'local';
+    /** @var string */
+    private const string DRAWING_DISK = 'local';
 
-    private const DRAWING_DIRECTORY = 'metalworks-drawings';
+    /** @var string */
+    private const string DRAWING_DIRECTORY = 'metalworks-drawings';
 
     /** @var mixed */
     public $drawingFile = null;

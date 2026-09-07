@@ -36,8 +36,10 @@ final class MetelCatalogResource extends GatedXotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-book-open';
 
+    /** @var string */
     protected const ACCOUNT_FEATURE_ADMIN = 'admin.metel_catalogs';
 
+    /** @var string */
     protected const ACCOUNT_FEATURE_OPERATOR = 'operator.metel_catalogs';
 
     public static function getNavigationGroup(): string

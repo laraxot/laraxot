@@ -9,7 +9,7 @@ use chillerlan\QRCode\QROptions;
 
 final class RenderTimberQrSvgAction
 {
-    private const OUTPUT_TYPE = 'svg';
+    private const string OUTPUT_TYPE = 'svg';
 
     public function execute(string $payload, int $size = 260): string
     {
@@ -21,6 +21,7 @@ final class RenderTimberQrSvgAction
         ]);
 
         $rendered = (new QRCode($options))->render($payload);
+
         return is_string($rendered) ? $rendered : '';
     }
 

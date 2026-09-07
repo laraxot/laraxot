@@ -10,5 +10,6 @@ namespace Modules\MetalWork\Support;
  */
 final class MetalWorksCosting
 {
-    public const CONTEXT = 'metalwork';
+    /** @var string */
+    public const string CONTEXT = 'metalwork';
 }

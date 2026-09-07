@@ -34,7 +34,7 @@ trait RatingTrait
     public function ratingObjectives()
     {
         $related = Rating::class;
-        $user_id = Auth::id();
+        $userId = Auth::id();
 
         return $this->hasMany($related, 'related_type', 'post_type')
 
@@ -42,7 +42,7 @@ trait RatingTrait
                 'ratings.*,
                 count(value) as rating_count,
                 avg(value) as rating_avg,
-                sum(if(user_id="'.$user_id.'",value,0)) AS rating_my
+                sum(if(user_id="'.$userId.'",value,0)) AS rating_my
                 '
             )->leftJoin(
                 'rating_morph',
@@ -80,11 +80,9 @@ trait RatingTrait
     // ----- mutators -----
     // *
     /**
-     * @param float $value
-     *
      * @return Collection
      */
-    public function getMyRatingAttribute($value)
+    public function getMyRatingAttribute()
     {
         $my = $this->myRatings;
 
@@ -145,33 +143,33 @@ trait RatingTrait
     public function ratingAvgHtml(): string
     {
         // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
-        // $pivot_avg = $ratings->avg('pivot.rating');
-        $pivot_avg = $this->ratings_avg;
-        // $pivot_cout = $ratings->count('pivot.rating');
-        $pivot_cout = $this->ratings_count;
+        // $pivotAvg = $ratings->avg('pivot.rating');
+        $pivotAvg = $this->ratings_avg;
+        // $pivotCount = $ratings->count('pivot.rating');
+        $pivotCount = $this->ratings_count;
 
-        $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
-        $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
+        $msg = '<div class="rateit" data-rateit-value="'.$pivotAvg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
+        $msg .= '('.$pivotAvg.') '.$pivotCount.' Votes ';
 
-        // $rating_url = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
-        // $rating_url = Panel::make()->get($this)->url('show').'?_act=rate';
-        // $rating_url = Panel::make()->get($this)->itemAction('rate_it')->url();
-        $rating_url = '#';
+        // $ratingUrl = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
+        // $ratingUrl = Panel::make()->get($this)->url('show').'?_act=rate';
+        // $ratingUrl = Panel::make()->get($this)->itemAction('rate_it')->url();
+        $ratingUrl = '#';
         // http://geek.local/public_html/it/article/prova-articolo?_act=rate
         /*
-        return $msg.'<a data-href="'.$rating_url.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
+        return $msg.'<a data-href="'.$ratingUrl.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
         Rate It </a>';
         */
         $title = 'Vota '.$this->title;
 
-        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
+        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
-        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$rating_url.'">
+        $btnIframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
-        return $msg.$btn.$btn_iframe;
+        return $msg.$btn.$btnIframe;
     }
 }

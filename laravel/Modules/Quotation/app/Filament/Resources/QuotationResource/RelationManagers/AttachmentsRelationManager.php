@@ -32,6 +32,7 @@ final class AttachmentsRelationManager extends XotBaseRelationManager
      * Single-file document types requested by trade (plumbing) quotations:
      * Office, OpenOffice/LibreOffice, CSV/TXT, PDF and images.
      */
+    /** @var list<string> */
     private const ACCEPTED_MIME_TYPES = [
         'application/pdf',
         'application/msword',

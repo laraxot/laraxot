@@ -25,6 +25,7 @@ final class NavigationClassifier
      *
      * @var array<int, string>
      */
+    /** @var list<string> */
     private const SUBSYSTEM_SEGMENTS = [
         'Wts', 'Timber', 'Dds', 'Thermo', 'EnergyBroker', 'AsdSoci', 'GivebackPlatform',
     ];

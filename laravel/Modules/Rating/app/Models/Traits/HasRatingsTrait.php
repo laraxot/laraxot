@@ -208,25 +208,25 @@ trait HasRatingsTrait
      */
     public function ratingAvgHtml(): string
     {
-        $pivot_avg = $this->ratings_avg;
-        $pivot_cout = $this->ratings_count;
+        $pivotAvg = $this->ratings_avg;
+        $pivotCount = $this->ratings_count;
 
-        $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
-        $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
+        $msg = '<div class="rateit" data-rateit-value="'.$pivotAvg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
+        $msg .= '('.$pivotAvg.') '.$pivotCount.' Votes ';
 
-        $rating_url = '#';
+        $ratingUrl = '#';
         $titleValue = $this->title ?? '';
         $title = 'Vota '.(is_scalar($titleValue) ? (string) $titleValue : '');
 
-        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
+        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
-        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$rating_url.'">
+        $btnIframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
-        return $msg.$btn.$btn_iframe;
+        return $msg.$btn.$btnIframe;
     }
 
     /** @return array<string, string> */

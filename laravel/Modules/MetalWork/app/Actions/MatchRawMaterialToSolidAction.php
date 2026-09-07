@@ -26,13 +26,15 @@ use Modules\MetalWork\Support\RawMaterialDimensionReader;
 final class MatchRawMaterialToSolidAction
 {
     /** Above this thickness a flat piece is bought as an oxy-cut blank, not as sheet. */
-    private const SHEET_MAX_THICKNESS_MM = 4.0;
+    /** @var float */
+    private const float SHEET_MAX_THICKNESS_MM = 4.0;
 
     /** Beyond this relative oversize the stock is the wrong size for the job. */
-    private const MAX_FIT_ERROR = 0.6;
+    /** @var float */
+    private const float MAX_FIT_ERROR = 0.6;
 
     /** @var array<string, list<string>> eligible material families per piece shape */
-    private const ELIGIBLE_FAMILIES = [
+    private const array ELIGIBLE_FAMILIES = [
         'plate' => ['sheet', 'oxy_cut', 'flat'],
         'bar' => ['tube', 'flat', 'angle', 'square', 'round', 'beam'],
         'block' => ['oxy_cut', 'square', 'round', 'flat'],

@@ -38,13 +38,15 @@ use function Safe\rewind;
  */
 final class StepFileParser
 {
-    private const CHUNK_BYTES = 262144;
+    /** @var int */
+    private const int CHUNK_BYTES = 262144;
 
     /** A header longer than this is not a STEP header. */
-    private const MAX_HEADER_BYTES = 65536;
+    /** @var int */
+    private const int MAX_HEADER_BYTES = 65536;
 
-    /** Entity keywords counted while streaming, mapped to the metric they feed. */
-    private const COUNTED_ENTITIES = [
+    /** @var array<string, string> Entity keywords counted while streaming, mapped to the metric they feed. */
+    private const array COUNTED_ENTITIES = [
         'ADVANCED_FACE' => 'face',
         'PLANE' => 'plane',
         'CYLINDRICAL_SURFACE' => 'cylinder',

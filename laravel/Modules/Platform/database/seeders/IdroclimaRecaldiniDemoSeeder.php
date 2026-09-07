@@ -50,6 +50,7 @@ use Spatie\Permission\Models\Role;
  */
 final class IdroclimaRecaldiniDemoSeeder extends Seeder
 {
+    /** @var string */
     private const REGION = 'lombardia';
 
     public function run(): void

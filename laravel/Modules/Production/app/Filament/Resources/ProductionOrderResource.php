@@ -37,10 +37,13 @@ final class ProductionOrderResource extends GatedXotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-cog-6-tooth';
 
+    /** @var string */
     private const ACCOUNT_FEATURE_ADMIN = 'admin.production';
 
+    /** @var null */
     private const ACCOUNT_FEATURE_OPERATOR = null;
 
+    /** @var bool */
     private const ACCOUNT_FEATURE_OPERATOR_DEFAULT = false;
 
     protected static function isAvailableInCurrentPanel(): bool

@@ -29,10 +29,8 @@ final class TimberDashboard extends XotBaseDashboard
 
     protected string $view = 'timber::filament.pages.dashboard';
 
-    /**
-     * @var array<string, string>
-     */
-    private const STATUS_COLORS = [
+    /** @var array<string, string> */
+    private const array STATUS_COLORS = [
         'da_lavorare' => 'bg-blue-500 dark:bg-blue-400',
         'in_lavorazione' => 'bg-emerald-500 dark:bg-emerald-400',
         'in_essiccazione' => 'bg-amber-500 dark:bg-amber-400',

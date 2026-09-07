@@ -65,11 +65,11 @@ trait HasRating
             ->get();
         // ->toArray()
 
-        $ratings_array = [];
+        $ratingsArray = [];
         foreach ($ratings as $key => $rating) {
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
-            $ratings_array[$key] = $rowData;
+            $ratingsArray[$key] = $rowData;
             // Use in-memory SVG icons instead of fetching external images
             // Default SVG icons based on rating position
             $svgIcons = [
@@ -79,14 +79,14 @@ trait HasRating
             ];
 
             // Use media if it already exists, otherwise don't try to create it
-            $ratings_array[$key]['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
+            $ratingsArray[$key]['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
 
             // Add SVG icon directly to the array
-            $ratings_array[$key]['svg_icon'] = $svgIcons[$key % count($svgIcons)];
-            $ratings_array[$key]['effect'] = false;
+            $ratingsArray[$key]['svg_icon'] = $svgIcons[$key % count($svgIcons)];
+            $ratingsArray[$key]['effect'] = false;
         }
 
-        return $ratings_array;
+        return $ratingsArray;
     }
 
     public function getBettingUsers(): int
@@ -100,21 +100,21 @@ trait HasRating
     /** @return array<int|string, float|int> */
     public function getRatingsPercentageByUser(): array
     {
-        $ratings_options = $this->getOptionRatingsIdTitle();
+        $ratingsOptions = $this->getOptionRatingsIdTitle();
         $result = [];
-        foreach ($ratings_options as $key => $value) {
-            $b = RatingMorph::where('model_id', $this->id)
+        foreach (array_keys($ratingsOptions) as $key) {
+            $totalCount = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
-            if (0 === $b) {
-                $b = 1;
+            if (0 === $totalCount) {
+                $totalCount = 1;
             }
 
-            $a = RatingMorph::where('model_id', $this->id)
+            $matchCount = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->where('rating_id', $key)
                 ->count();
-            $result[$key] = round(100 * $a / $b, 0);
+            $result[$key] = round(100 * $matchCount / $totalCount, 0);
         }
 
         return $result;
@@ -123,29 +123,29 @@ trait HasRating
     /** @return array<int|string, float|int> */
     public function getRatingsPercentageByVolume(): array
     {
-        $ratings_options = $this->getOptionRatingsIdTitle();
+        $ratingsOptions = $this->getOptionRatingsIdTitle();
         $result = [];
 
-        $total_volume = $this->getVolumeCredit();
-        if ($total_volume <= 0) {
-            $total_volume = 1;
+        $totalVolume = $this->getVolumeCredit();
+        if ($totalVolume <= 0) {
+            $totalVolume = 1;
         }
 
-        foreach ($ratings_options as $key => $value) {
+        foreach (array_keys($ratingsOptions) as $key) {
             $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
-            $result[$key] = round($volume * 100 / $total_volume, 0);
+            $result[$key] = round($volume * 100 / $totalVolume, 0);
         }
 
         return $result;
     }
 
-    public function getVolumeCredit(?int $rating_id = null): float
+    public function getVolumeCredit(?int $ratingId = null): float
     {
         $query = RatingMorph::where('model_id', $this->id)
             ->where('user_id', '!=', null);
 
-        if (null !== $rating_id) {
-            $query->where('rating_id', $rating_id);
+        if (null !== $ratingId) {
+            $query->where('rating_id', $ratingId);
         }
 
         return (float) $query->sum('points');

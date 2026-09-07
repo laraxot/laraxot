@@ -16,7 +16,7 @@ class EcosOdbcConnection
      * Timeout di connessione: senza limite esplicito una pagina Filament resta
      * appesa finche' il TCP non scade (oltre 60s) quando ECOS non e' raggiungibile.
      */
-    private const CONNECT_TIMEOUT_SECONDS = 8;
+    private const int CONNECT_TIMEOUT_SECONDS = 8;
 
     private string $host;
 

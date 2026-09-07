@@ -33,7 +33,8 @@ use Modules\MetalWork\Support\MetalWorksCosting;
 final class EstimateFromBillOfMaterialsAction
 {
     /** Sections that enclose air: their bounding box is not their weight. */
-    private const HOLLOW_FAMILIES = ['tube', 'beam'];
+    /** @var list<string> */
+    private const array HOLLOW_FAMILIES = ['tube', 'beam'];
 
     /**
      * Accetta l'intero set di opzioni di pricing della pagina, anche quelle che

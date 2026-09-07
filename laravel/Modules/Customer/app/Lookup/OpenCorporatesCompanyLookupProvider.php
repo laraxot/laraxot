@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\Http;
 
 final class OpenCorporatesCompanyLookupProvider implements CompanyLookupProviderInterface
 {
+    /** @var string */
     private const ENDPOINT = 'https://api.opencorporates.com/v0.4/companies/search';
 
+    /** @var int */
     private const MAX_RESULTS = 5;
 
     /**

@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Actions\Table;
 
-use Filament\Actions\Action;
 use Filament\Forms\Components\TextInput;
 use Modules\Xot\Filament\Actions\XotBaseAction;
 
@@ -21,7 +20,7 @@ class BetTableAction extends XotBaseAction
         $this->label('')
             ->tooltip(trans('rating:txt.bet'))
             ->modalWidth('xl')
-            ->schema(fn (Action $action): array => [
+            ->schema(fn (): array => [
                 TextInput::make('aa'),
             ]);
     }

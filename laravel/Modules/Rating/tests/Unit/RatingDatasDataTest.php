@@ -19,7 +19,7 @@ test('applica i default del costruttore', function (): void {
     Assert::assertFalse($data->disabled);
     Assert::assertSame(0, $data->position);
     Assert::assertSame(SupportedLocale::IT, $data->locale);
-    Assert::assertNull($data->image_url);
+    Assert::assertNull($data->imageUrl);
 });
 
 test('fromArray legge un payload completo', function (): void {
@@ -37,7 +37,7 @@ test('fromArray legge un payload completo', function (): void {
     Assert::assertTrue($data->disabled);
     Assert::assertSame(3, $data->position);
     Assert::assertSame(SupportedLocale::EN, $data->locale);
-    Assert::assertSame('https://example.test/r.png', $data->image_url);
+    Assert::assertSame('https://example.test/r.png', $data->imageUrl);
 });
 
 test('fromArray su array vuoto ricade sui default', function (): void {
@@ -48,7 +48,7 @@ test('fromArray su array vuoto ricade sui default', function (): void {
     Assert::assertFalse($data->disabled);
     Assert::assertSame(0, $data->position);
     Assert::assertSame(SupportedLocale::IT, $data->locale);
-    Assert::assertNull($data->image_url);
+    Assert::assertNull($data->imageUrl);
 });
 
 test('fromArray normalizza gli scalari non stringa', function (): void {
@@ -66,7 +66,7 @@ test('fromArray normalizza gli scalari non stringa', function (): void {
     Assert::assertFalse($data->disabled);
     Assert::assertSame(7, $data->position);
     Assert::assertSame(SupportedLocale::IT, $data->locale, 'un locale sconosciuto ricade su IT');
-    Assert::assertNull($data->image_url, 'un image_url non stringa diventa null');
+    Assert::assertNull($data->imageUrl, 'un image_url non stringa diventa null');
 });
 
 test('fromArray scarta i valori non scalari', function (): void {

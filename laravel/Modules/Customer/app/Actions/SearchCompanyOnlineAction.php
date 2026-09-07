@@ -12,6 +12,7 @@ final class SearchCompanyOnlineAction
 {
     use QueueableAction;
 
+    /** @var int */
     private const MAX_RESULTS = 5;
 
     public function __construct(

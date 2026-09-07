@@ -32,6 +32,7 @@ final class NavigationGate
      *
      * @var array<int, string>
      */
+    /** @var list<string> */
     private const PROTECTED_ITEM_CLASSES = [
         NavigationSettingsPage::class,
         PlatformSettingResource::class,

@@ -19,6 +19,7 @@ final class BuildInterventionReportDraftAction
     use QueueableAction;
 
     /** @var list<string> */
+    /** @var list<string> */
     private const ALLOWED_OUTCOMES = ['completed', 'suspended', 'quotation'];
 
     public function __construct(

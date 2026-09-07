@@ -16,11 +16,11 @@ namespace Modules\Signage\Support;
  */
 final class ArtworkTextLayout
 {
-    /** Max horizontal gap (pt) between fragments before they become separate cells. */
-    private const COLUMN_GAP = 55.0;
+    /** @var float Max horizontal gap (pt) between fragments before they become separate cells. */
+    private const float COLUMN_GAP = 55.0;
 
-    /** Max vertical distance (pt) for two fragments to share a baseline. */
-    private const LINE_TOLERANCE = 2.0;
+    /** @var float Max vertical distance (pt) for two fragments to share a baseline. */
+    private const float LINE_TOLERANCE = 2.0;
 
     /**
      * @param  list<array{x: float, y: float, text: string}>  $cells

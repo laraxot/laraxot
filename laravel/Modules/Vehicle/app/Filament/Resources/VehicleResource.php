@@ -34,10 +34,10 @@ final class VehicleResource extends GatedXotBaseResource
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-truck';
 
     /** Read reflectively by HasAccountFeatureVisibility via defined()/constant(). */
-    private const ACCOUNT_FEATURE_ADMIN = 'admin.vehicles';
+    private const string ACCOUNT_FEATURE_ADMIN = 'admin.vehicles';
 
     /** Read reflectively by HasAccountFeatureVisibility via defined()/constant(). */
-    private const ACCOUNT_FEATURE_OPERATOR = 'operator.vehicles';
+    private const string ACCOUNT_FEATURE_OPERATOR = 'operator.vehicles';
 
     public static function getNavigationGroup(): string
     {

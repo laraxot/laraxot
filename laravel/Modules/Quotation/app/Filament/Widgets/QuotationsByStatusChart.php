@@ -22,6 +22,7 @@ final class QuotationsByStatusChart extends XotBaseChartWidget
     protected ?string $maxHeight = '180px';
 
     /** @var array<string, string> status code => bar/slice color */
+    /** @var array<string, string> */
     private const STATUS_COLORS = [
         'draft' => '#94a3b8',
         'sent' => '#3b82f6',

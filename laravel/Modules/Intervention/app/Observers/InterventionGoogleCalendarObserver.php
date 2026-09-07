@@ -15,6 +15,7 @@ use Modules\Intervention\Models\Intervention;
 final class InterventionGoogleCalendarObserver
 {
     /** Fields whose change warrants re-pushing the Google event. */
+    /** @var list<string> */
     private const SYNC_FIELDS = ['scheduled_at', 'ended_at', 'notes', 'performed_by_user_id', 'work_order_id', 'customer_id'];
 
     public function saved(Intervention $intervention): void

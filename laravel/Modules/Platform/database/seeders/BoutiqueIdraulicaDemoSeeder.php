@@ -48,6 +48,7 @@ use Spatie\Permission\Models\Role;
 final class BoutiqueIdraulicaDemoSeeder extends Seeder
 {
     /** Drives which regional register the seeded plants belong to. */
+    /** @var string */
     private const REGION = 'emilia-romagna';
 
     public function run(): void

@@ -21,6 +21,7 @@ final class ListQuotations extends XotBaseListRecords
     protected static string $resource = QuotationResource::class;
 
     /** Office, OpenOffice/LibreOffice, PDF and CSV — the same set accepted as attachments. */
+    /** @var list<string> */
     private const IMPORT_MIME_TYPES = [
         'application/pdf',
         'application/msword',

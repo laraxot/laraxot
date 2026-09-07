@@ -32,10 +32,12 @@ final class SupplierInvoiceParser
      * of the price list: those rows carry none. The trailing pair is optional
      * because a discounted row pushes it onto the next rendered line.
      */
-    private const AMOUNTS_PATTERN = '/(\d{1,3}(?:\.\d{3})*,\d+)\s+(\d{1,3}(?:\.\d{3})*,\d+)\s*(KG|ML|MT|MQ|NR|PZ)\b(?:\s*-?\s*(\d+[.,]\d+)\s*%)?(?:\s+(\d{1,2},\d{2})\s+(\d{1,3}(?:\.\d{3})*,\d+))?/u';
+    /** @var string */
+    private const string AMOUNTS_PATTERN = '/(\d{1,3}(?:\.\d{3})*,\d+)\s+(\d{1,3}(?:\.\d{3})*,\d+)\s*(KG|ML|MT|MQ|NR|PZ)\b(?:\s*-?\s*(\d+[.,]\d+)\s*%)?(?:\s+(\d{1,2},\d{2})\s+(\d{1,3}(?:\.\d{3})*,\d+))?/u';
 
     /** The table header ends here; rows above it belong to the invoice preamble. */
-    private const ITEMS_START_MARKER = 'Prezzo totale';
+    /** @var string */
+    private const string ITEMS_START_MARKER = 'Prezzo totale';
 
     /**
      * A line above the row that can only be part of the supplier's article code:
@@ -44,10 +46,12 @@ final class SupplierInvoiceParser
      * printed under a row ("4 PZ. COD. ART. OSS-04418460 - 6") are also uppercase,
      * and must not be mistaken for the next row's code.
      */
-    private const CODE_FRAGMENT_PATTERN = '/^(?:[A-Z0-9_.\-]{1,20})?\s*(?:\(FORN\))?$/u';
+    /** @var string */
+    private const string CODE_FRAGMENT_PATTERN = '/^(?:[A-Z0-9_.\-]{1,20})?\s*(?:\(FORN\))?$/u';
 
     /** Ordered: the first family that matches wins, so "TUBO QUADRO" is a tube. */
-    private const FAMILY_RULES = [
+    /** @var array<string, string> */
+    private const array FAMILY_RULES = [
         'service' => '/\b(TAGLI[OA]?|FASCE|SPESE|TRASPORTO|INCASSO|SPEDIZIONE)\b/u',
         'oxy_cut' => '/\b(OSSITAGL|SAGOMAT|PIASTRE)/u',
         'mesh' => '/\bRETE\b/u',

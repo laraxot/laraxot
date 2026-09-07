@@ -3,10 +3,40 @@ name: Vehicle coverage
 description: Stato copertura Pest e note PHPStan level-max per Modules/Vehicle
 metadata:
   module: Vehicle
-  updated: 2026-09-06
+  updated: 2026-09-07
 ---
 
 # Coverage — Modules/Vehicle
+
+## PHPStan typeCoverage.constantTypeCoverage (2026-09-07)
+
+Bucket repo-wide (campagna "PHPStan Modules a zero errori"), visibile solo con
+`phpstan analyse Modules` (albero intero), non con `phpstan analyse Modules/Vehicle` da
+solo (il modulo è già a 0 errori a livello locale, prima e dopo).
+
+- File: `app/Filament/Resources/VehicleResource.php`, righe 38 e 42.
+- Prima: `private const ACCOUNT_FEATURE_ADMIN = 'admin.vehicles';` /
+  `private const ACCOUNT_FEATURE_OPERATOR = 'operator.vehicles';`, con solo un PHPDoc
+  `/** @var string */` sopra, nessuna type declaration nativa.
+- Dopo: `private const string ACCOUNT_FEATURE_ADMIN = 'admin.vehicles';` /
+  `private const string ACCOUNT_FEATURE_OPERATOR = 'operator.vehicles';` (PHP 8.3+ native
+  const type), PHPDoc `@var` rimosso perché ridondante.
+- Verifica shape reale prima del fix: entrambe stringhe scalari semplici, nessun rischio
+  del pattern sbagliato `@var list<string>` su array associativi/annidati documentato in
+  `docs/chat/typecoverage-constant-wrong-var-list-string-regression.md`.
+- Percentuale globale (`phpstan analyse Modules`, cache pulita): 164/300 (54.6%) →
+  177/300 (59.0%). Il salto di 13 anziché 2 riflette il lavoro concorrente di altri agenti
+  sullo stesso bucket in altri moduli (repo condiviso multi-agente); il contributo
+  verificabile di questa sessione sono le 2 costanti di Vehicle — confermate assenti
+  dall'elenco `typeCoverage.constantTypeCoverage` dopo il fix (`phpstan analyse Modules`
+  con cache pulita, prima e dopo, confrontati per nome file).
+- Nessuna modifica a `phpstan.neon`, nessun `@phpstan-ignore`, nessun baseline, nessun
+  `mixed`. `declare(strict_types=1);` già presente (file non toccato in quel punto).
+- Effetto collaterale positivo PHPInsights: rimosso il finding pre-esistente
+  `[Code] Useless constant type hint` su `VehicleResource.php:37`/`:41` (il PHPDoc `@var`
+  era già segnalato come "Useless documentation comment"). Vedi sezione PHPInsights sotto.
+- Story: `stories/02.Vehicle-typecoverage-constant-fix.story.md` /
+  `stories/phpstan-Vehicle-typecoverage-fix.md`.
 
 ## PHPStan (2026-09-06)
 
@@ -55,3 +85,40 @@ pre-esistente su file non toccati in questa sessione.
 
 Per errori PHPStan `cast.string`/`cast.int`/`cast.float` su valori `mixed` (es. da `array $data` non tipizzato di Filament, o da `Model::getKey()` che ritorna `int|string`), usare le action già presenti in `Modules\Xot\Actions\Cast\`:
 `SafeStringCastAction`, `SafeNullableStringCastAction`, `SafeIntCastAction`, `SafeFloatCastAction`, `SafeBooleanCastAction`, `SafeArrayCastAction`, `SafeObjectCastAction`. Evitano il cast diretto (vietato dalle regole PHPStan del progetto) e centralizzano la logica di conversione sicura.
+
+## Sessione 2026-09-07 — typeCoverage constant fix, quality gate completo
+
+Quality gate rieseguito per intero dopo il fix delle 2 costanti (vedi sezione
+`typeCoverage.constantTypeCoverage` in cima al file).
+
+### PHPStan (`./vendor/bin/phpstan analyse Modules/Vehicle --no-progress --memory-limit=-1`)
+
+- Prima: 0 errori (invariato dalla sessione 2026-09-06)
+- Dopo: 0 errori
+
+### PHPStan albero intero (`./vendor/bin/phpstan analyse Modules --no-progress --memory-limit=-1`, cache pulita)
+
+- Prima: `typeCoverage.constantTypeCoverage` 164/300 (54.6%), 136 occorrenze su 73 file, incluse le 2 righe di `VehicleResource.php` (38, 42)
+- Dopo: 177/300 (59.0%), 123 occorrenze su 67 file, `VehicleResource.php` non più presente nell'elenco
+- Nota: il salto di 13 (non 2) è dovuto a lavoro concorrente di altri agenti sullo stesso bucket in altri moduli (repo multi-agente condiviso); il contributo di questa sessione sono le 2 costanti Vehicle, verificate come non più presenti.
+
+### Pest (`./vendor/bin/pest Modules/Vehicle/tests --no-coverage`)
+
+- Prima: 4 passed / 2 failed
+- Dopo: 4 passed / 2 failed (invariato)
+- I 2 fallimenti restano gli stessi pre-esistenti già documentati sopra (tabella `vehicles` mancante nel DB di test condiviso `workorder_data_test`), non toccati da un fix di sola type declaration su costanti scalari.
+
+### PHPMD (`bash tools/phpmd.sh Modules/Vehicle/app text phpmd.xml`)
+
+- Prima: 14 finding (elenco identico a quello già documentato sopra)
+- Dopo: 14 finding, identici — nessun nuovo finding, nessuno risolto (il file toccato, `VehicleResource.php`, non aveva e non ha finding PHPMD)
+
+### PHPInsights (`bash tools/phpinsights.sh analyse Modules/Vehicle/app --no-interaction`)
+
+- Prima: Code 92.8%, Complexity 100%, Architecture 88.2%, Style 94.0% — con finding `[Code] Useless constant type hint` su `VehicleResource.php:37`/`:41` (i due `@var string` ridondanti)
+- Dopo: **Code 93.8%** (+1.0 punto), Complexity 100%, Architecture 88.2%, Style 94.0% — finding "Useless constant type hint" rimosso
+- Nota: il valore Code 92.8% "prima" di questa sessione è più basso del 93.8% registrato a fine sessione 2026-09-06 in questo stesso file: nel frattempo (repo condiviso multi-agente) qualcuno ha introdotto i due PHPDoc `/** @var string */` sulle costanti (probabile tentativo di fix del bucket typeCoverage con il pattern sbagliato, PHPDoc invece di type declaration nativa — vedi `docs/chat/typecoverage-constant-wrong-var-list-string-regression.md`), causando una piccola regressione locale poi corretta in questa sessione con il fix nativo `private const string`.
+
+### Pint
+
+`vendor/bin/pint --dirty` (scope: solo il file toccato) → `{"tool":"pint","result":"passed"}`, nessuna riformattazione necessaria.

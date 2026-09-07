@@ -13,7 +13,7 @@ use Modules\Blog\Models\Tag;
 class TagSeeder extends Seeder
 {
     /** @var list<array{name: array{it: string, en: string}, type: string}> */
-    private const TAGS = [
+    private const array TAGS = [
         [
             'name' => ['it' => 'Mercati', 'en' => 'Markets'],
             'type' => 'predict',

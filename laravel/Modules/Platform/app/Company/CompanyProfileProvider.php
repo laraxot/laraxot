@@ -16,6 +16,7 @@ use function Safe\file_get_contents;
  */
 final class CompanyProfileProvider
 {
+    /** @var string */
     public const SETTINGS_KEY = 'company.profile';
 
     public function __construct(private readonly SettingsRepository $settings) {}

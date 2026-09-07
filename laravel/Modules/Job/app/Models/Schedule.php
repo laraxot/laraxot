@@ -96,11 +96,11 @@ class Schedule extends BaseModel
 {
     use ManagesFrequencies;
 
-    public const STATUS_INACTIVE = 0;
+    public const int STATUS_INACTIVE = 0;
 
-    public const STATUS_ACTIVE = 1;
+    public const int STATUS_ACTIVE = 1;
 
-    public const STATUS_TRASHED = 2;
+    public const int STATUS_TRASHED = 2;
 
     protected $fillable = [
         'command',

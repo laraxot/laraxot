@@ -22,24 +22,37 @@ class RatingData extends Data
         public readonly bool $disabled = false,
         public readonly int $position = 0,
         public readonly SupportedLocale $locale = SupportedLocale::IT,
-        public readonly ?string $image_url = null,
-    ) {
-    }
+        public readonly ?string $imageUrl = null,
+    ) {}
 
     /**
      * Create from array with type casting.
      *
-     * @param array<string,mixed> $data
+     * @param  array<string,mixed>  $data
      */
     public static function fromArray(array $data): self
     {
         return new self(
-            title: is_string($data['title'] ?? '') ? ($data['title'] ?? '') : (is_scalar($data['title'] ?? '') ? (string) ($data['title'] ?? '') : ''),
-            description: is_string($data['description'] ?? '') ? ($data['description'] ?? '') : (is_scalar($data['description'] ?? '') ? (string) ($data['description'] ?? '') : ''),
+            title: self::normalizeString($data['title'] ?? '', ''),
+            description: self::normalizeString($data['description'] ?? '', ''),
             disabled: isset($data['disabled']) ? (bool) $data['disabled'] : false,
             position: isset($data['position']) && is_numeric($data['position']) ? (int) $data['position'] : 0,
-            locale: SupportedLocale::fromString(is_string($data['locale'] ?? 'it') ? ($data['locale'] ?? 'it') : 'it'),
-            image_url: isset($data['image_url']) ? (is_string($data['image_url']) ? $data['image_url'] : null) : null,
+            locale: SupportedLocale::fromString(self::normalizeString($data['locale'] ?? 'it', 'it')),
+            imageUrl: isset($data['image_url']) ? self::normalizeNullableString($data['image_url']) : null,
         );
+    }
+
+    private static function normalizeString(mixed $value, string $default): string
+    {
+        if (is_string($value)) {
+            return $value;
+        }
+
+        return is_scalar($value) ? (string) $value : $default;
+    }
+
+    private static function normalizeNullableString(mixed $value): ?string
+    {
+        return is_string($value) ? $value : null;
     }
 }

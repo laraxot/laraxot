@@ -32,6 +32,7 @@ final class AbsenceRequestResource extends GatedXotBaseResource
     use HasAccountFeatureVisibility;
 
     /** @var array<string, string> */
+    /** @var array<string, string> */
     private const ABSENCE_TYPE_ALIASES = [
         'permesso' => 'leave',
         'ferie' => 'vacation',
@@ -43,8 +44,10 @@ final class AbsenceRequestResource extends GatedXotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar';
 
+    /** @var string */
     private const ACCOUNT_FEATURE_ADMIN = 'admin.hr';
 
+    /** @var string */
     private const ACCOUNT_FEATURE_OPERATOR = 'operator.hr';
 
     public static function getNavigationGroup(): string
