@@ -140,7 +140,7 @@ describe('Lang coverage boost — Filament static', function (): void {
 
         Assert::assertSame('it', TranslationFileResource::getDefaultTranslatableLocale());
         Assert::assertSame(['it', 'en'], TranslationFileResource::getTranslatableLocales());
-        Assert::assertSame([], TranslationFileResource::getFormSchema());
+        Assert::assertSame([], (new TranslationFileResource())->getFormSchema());
 
         $pages = TranslationFileResource::getPages();
         Assert::assertArrayHasKey('index', $pages);
@@ -151,8 +151,8 @@ describe('Lang coverage boost — Filament static', function (): void {
 
 describe('Lang coverage boost — UI and data', function (): void {
     test('translation file schemas and pages build executable structures', function (): void {
-        $formSchema = TranslationFileForm::getFormSchema();
-        $infolistSchema = TranslationFileInfolist::getInfolistSchema();
+        $formSchema = (new TranslationFileForm())->getFormSchema();
+        $infolistSchema = (new TranslationFileInfolist())->getInfolistSchema();
         $tableColumns = (new TranslationFilesTable())->getTableColumns();
 
         Assert::assertArrayHasKey('name', $formSchema);

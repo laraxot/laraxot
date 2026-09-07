@@ -69,60 +69,6 @@ final class ResellerResource extends XotBaseResource
         return __('resellers.resellers');
     }
 
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()
-                ->columnSpanFull()
-                ->components([
-                    Grid::make(2)->components([
-                        TextInput::make('name')
-                            ->label(__('resellers.fields.name'))
-                            ->required()
-                            ->maxLength(255),
-
-                        Select::make('user_id')
-                            ->label(__('resellers.fields.user'))
-                            ->relationship('user', 'name')
-                            ->searchable()
-                            ->preload(),
-                    ]),
-
-                    Textarea::make('notes')
-                        ->label(__('resellers.fields.notes'))
-                        ->columnSpanFull(),
-                ])
-                ->columns(2),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->label(__('resellers.fields.name'))
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('user.name')
-                    ->label(__('resellers.fields.user'))
-                    ->toggleable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
-            ])
-            ->toolbarActions([
-                DeleteBulkAction::make(),
-                RestoreBulkAction::make(),
-                ForceDeleteBulkAction::make(),
-            ]);
-    }
-
     public static function getPages(): array
     {
         return [

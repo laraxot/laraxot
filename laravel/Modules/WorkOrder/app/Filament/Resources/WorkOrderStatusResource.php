@@ -56,37 +56,6 @@ final class WorkOrderStatusResource extends XotBaseResource
         );
     }
 
-    /** @return array<int|string, Component|Field> */
-    public function getFormSchema(): array
-    {
-        return [
-            TextInput::make('code')
-                ->helperText(__('workorder::work_orders.status_help.code'))
-                ->required()
-                ->maxLength(50)
-                ->unique(ignoreRecord: true),
-            TextInput::make('name')
-                ->required()
-                ->maxLength(255),
-            Select::make('color')
-
-                ->options([
-                    'gray' => 'gray',
-                    'blue' => 'blue',
-                    'amber' => 'amber',
-                    'green' => 'green',
-                    'red' => 'red',
-                ]),
-            TextInput::make('sort_order')
-
-                ->numeric()
-                ->default(0),
-            Toggle::make('is_terminal')
-
-                ->helperText(__('workorder::work_orders.status_help.is_terminal_hint')),
-        ];
-    }
-
     public static function getPages(): array
     {
         return [

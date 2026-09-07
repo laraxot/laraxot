@@ -76,42 +76,6 @@ final class TimberTransporterResource extends XotBaseResource
         return 'Trasportatori';
     }
 
-    /** @return array<int|string, Component> */
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()
-                ->columnSpanFull()
-                ->components([
-                    Grid::make(2)->components([
-                        TextInput::make('legal_name')
-                            ->required()
-                            ->maxLength(255),
-
-                        TextInput::make('vat_number')
-                            ->maxLength(255),
-
-                        TextInput::make('phone')
-                            ->maxLength(255),
-
-                        TextInput::make('email')
-                            ->email()
-                            ->maxLength(255),
-
-                        TextInput::make('vehicle_plate')
-                            ->maxLength(255),
-
-                        Toggle::make('is_active')
-                            ->default(true),
-                    ]),
-
-                    Textarea::make('notes')
-                        ->columnSpanFull(),
-                ])
-                ->columns(2),
-        ];
-    }
-
     public static function getPages(): array
     {
         return [

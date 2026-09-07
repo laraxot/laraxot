@@ -21,35 +21,6 @@ class DomainResource extends XotBaseResource
      * @return array<string, mixed>
      */
     #[Override]
-    public function getFormSchema(): array
-    {
-        return [
-            'title' => TextInput::make('title')
-                ->required()
-                ->string()
-                ->maxLength(255),
-            'brand' => TextInput::make('brand')
-                ->required()
-                ->string()
-                ->maxLength(255),
-            'category' => TextInput::make('category')
-                ->required()
-                ->string()
-                ->maxLength(255),
-            'description' => RichEditor::make('description')->required()->string(),
-            'price' => TextInput::make('price')
-                ->required()
-                ->numeric()
-                ->prefix('$'),
-            'rating' => TextInput::make('rating')
-                ->required()
-                ->numeric()
-                ->minValue(0)
-                ->maxValue(5),
-        ];
-    }
-
-    #[Override]
     public static function getRelations(): array
     {
         return [];

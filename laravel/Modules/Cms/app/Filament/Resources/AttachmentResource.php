@@ -21,45 +21,5 @@ class AttachmentResource extends LangBaseResource
 {
     protected static ?string $model = Attachment::class;
 
-    /**
-    * Schema legacy del form: la sorgente di verità è AttachmentForm::getFormSchema().
-     *
-     * @return array<string, BaseComponent>
-     */
-    public function getFormSchemaOld(): array
-    {
-        return [
-            'title' => TextInput::make('title')->required(),
-            'slug' => TextInput::make('slug')->required(),
-            'description' => Textarea::make('description'),
-            'disk' => Select::make('disk')->options(AttachmentDiskEnum::class),
-            'attachment' => FileUpload::make('attachment')
-                ->directory('attachments')
-                ->preserveFilenames()
-                ->maxSize(10240)
-                ->multiple(false)
-                ->downloadable()
-                ->openable()
-                ->disk(fn (Get $get) => $get('disk')),
-        ];
-    }
-
-    /**
-     * @return array<int, array<string, mixed>>
-     */
-    public static function getRelations(): array
-    {
-        return [
-        ];
-    }
-
-    #[\Override]
-    public static function getPages(): array
-    {
-        return [
-            'index' => ListAttachments::route('/'),
-            'create' => CreateAttachment::route('/create'),
-            'edit' => EditAttachment::route('/{record}/edit'),
-        ];
-    }
+    
 }

@@ -14,21 +14,5 @@ class SectionResource extends LangBaseResource
 {
     protected static ?string $model = Section::class;
 
-    /**
-    * Schema legacy del form: la sorgente di verità è SectionForm::getFormSchema().
-     *
-     * @return array<string, Component>
-     */
-    public function getFormSchemaOld(): array
-    {
-        return [
-            'info' => \Filament\Schemas\Components\Section::make('info')->schema([
-                'name' => TextInput::make('name')->translateLabel()->required(),
-                'slug' => TextInput::make('slug')->translateLabel()->required(),
-            ]),
-            'blocks' => \Filament\Schemas\Components\Section::make('blocks')->schema([
-                PageContentBuilder::make('blocks')->columnSpanFull(),
-            ]),
-        ];
-    }
+  
 }

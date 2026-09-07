@@ -50,50 +50,6 @@ final class EquipmentResource extends XotBaseResource
         return __('compliance.equipment');
     }
 
-    /**
-     * @return array<string, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            'section' => Section::make()->columnSpanFull()->components([
-                'grid' => Grid::make(3)->components([
-                    'name' => TextInput::make('name')->required()->maxLength(255),
-                    'type' => TextInput::make('type')->maxLength(255),
-                    'serial_number' => TextInput::make('serial_number')->maxLength(255),
-                    'status' => Select::make('status')->default('available')->options([
-                        'available' => 'Disponibile',
-                        'assigned' => 'Assegnata',
-                        'maintenance' => 'In manutenzione',
-                        'blocked' => 'Bloccata',
-                    ]),
-                    'last_checked_on' => DatePicker::make('last_checked_on'),
-                    'next_check_due_on' => DatePicker::make('next_check_due_on'),
-                    'maintenance_due_on' => DatePicker::make('maintenance_due_on'),
-                    'assigned_work_order_id' => Select::make('assigned_work_order_id')
-                        ->options(fn (): array => WorkOrder::query()->orderByDesc('id')->limit(200)->pluck('title', 'id')->all())
-                        ->searchable(),
-                ]),
-                'notes' => Textarea::make('notes')->columnSpanFull(),
-            ]),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('type')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('serial_number')->toggleable(),
-                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
-                Tables\Columns\TextColumn::make('next_check_due_on')->date()->sortable(),
-                Tables\Columns\TextColumn::make('assignedWorkOrder.title')->limit(40)->toggleable(),
-            ])
-            ->recordActions([ViewAction::make(), EditAction::make()])
-            ->toolbarActions([DeleteBulkAction::make()]);
-    }
-
     public static function getPages(): array
     {
         return [

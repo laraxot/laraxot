@@ -18,29 +18,5 @@ class PageContentResource extends LangBaseResource
 {
     protected static ?string $model = PageContent::class;
 
-    /**
-    * Schema legacy del form: la sorgente di verità è PageContentForm::getFormSchema().
-     *
-     * @return array<int|string, Component>
-     */
-    public function getFormSchemaOld(): array
-    {
-        return [
-            'name' => TextInput::make('name')
-                ->required()
-                ->lazy()
-                ->afterStateUpdated(static function (Set $set, Get $get, string $state): void {
-                    if ($get('slug')) {
-                        return;
-                    }
-                    $set('slug', Str::slug($state));
-                }),
-            'slug' => TextInput::make('slug')
-                ->required()
-                ->afterStateUpdated(static fn (Set $set, string $state) => $set('slug', Str::slug($state))),
-            'content' => Section::make('Content')->schema([
-                PageContentBuilder::make('blocks')->columnSpanFull(),
-            ]),
-        ];
-    }
+    
 }

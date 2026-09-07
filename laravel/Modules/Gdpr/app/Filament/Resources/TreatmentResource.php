@@ -18,20 +18,6 @@ class TreatmentResource extends XotBaseResource
     protected static ?string $model = Treatment::class;
 
     #[\Override]
-    public function getFormSchema(): array
-    {
-        return [
-            'active' => Toggle::make('active')->required(),
-            'required' => Toggle::make('required')->required(),
-            'name' => TextInput::make('name')->required()->maxLength(191),
-            'description' => Textarea::make('description')->required()->columnSpanFull(),
-            'documentVersion' => TextInput::make('documentVersion')->maxLength(191)->default(null),
-            'documentUrl' => TextInput::make('documentUrl')->maxLength(191)->default(null),
-            'weight' => TextInput::make('weight')->required()->numeric(),
-        ];
-    }
-
-    #[\Override]
     public static function getPages(): array
     {
         return [

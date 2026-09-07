@@ -56,11 +56,6 @@ final class AuditLogResource extends XotBaseResource
         return __('platform.audit_log.model_plural');
     }
 
-    public function getFormSchema(): array
-    {
-        return [];
-    }
-
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()

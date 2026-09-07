@@ -15,31 +15,5 @@ class AiActionProposalResource extends XotBaseResource
 {
     protected static ?string $model = AiActionProposal::class;
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-sparkles';
-
-    /**
-     * @return array<string, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return AiActionProposalForm::getFormSchema();
-    }
-
-    /**
-     * @return array<class-string<Widget>>
-     */
-    public static function getHeaderWidgets(): array
-    {
-        return [];
-    }
-
-    public static function getPages(): array
-    {
-        return array_merge(parent::getPages(), [
-            'index' => Pages\ListAiActionProposals::route('/'),
-            'create' => Pages\CreateAiActionProposal::route('/create'),
-            'view' => Pages\ViewAiActionProposal::route('/{record}'),
-            'edit' => Pages\EditAiActionProposal::route('/{record}/edit'),
-        ]);
-    }
+   
 }

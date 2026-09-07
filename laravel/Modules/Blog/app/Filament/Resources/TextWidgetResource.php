@@ -22,15 +22,6 @@ class TextWidgetResource extends XotBaseResource
     // protected static \BackedEnum|string|null $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static string|\BackedEnum|null $navigationIcon = 'ui-widgets';
 
-    // protected static ?string $navigationGroup = 'Content';
-    /**
-     * @return array<string|int, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return static::getFormFields();
-    }
-
     /**
      * Ritorna i campi del form (compatibilità con XotBaseResource).
      *

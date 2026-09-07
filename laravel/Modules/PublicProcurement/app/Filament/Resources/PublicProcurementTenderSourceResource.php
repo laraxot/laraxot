@@ -43,33 +43,6 @@ final class PublicProcurementTenderSourceResource extends XotBaseResource
         return __('public_procurement.sources');
     }
 
-    /**
-     * @return array<string, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            'name' => TextInput::make('name')->required(),
-            'source_type' => Select::make('source_type')->options(['manual' => 'Manuale', 'portal' => 'Portale', 'rss' => 'RSS/API'])->default('manual'),
-            'url' => TextInput::make('url')->url(),
-            'is_active' => Toggle::make('is_active')->default(true),
-            'notes' => Textarea::make('notes')->columnSpanFull(),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('source_type')->badge()->sortable(),
-                Tables\Columns\IconColumn::make('is_active')->boolean(),
-                Tables\Columns\TextColumn::make('url')->limit(50),
-            ])
-            ->recordActions([EditAction::make()])
-            ->toolbarActions([DeleteBulkAction::make()]);
-    }
-
     public static function getPages(): array
     {
         return [

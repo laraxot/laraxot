@@ -23,30 +23,6 @@ class MediaResource extends XotBaseResource
     protected static ?string $model = Media::class;
 
     /**
-     * Schema legacy del form: la sorgente di verità è MediaForm::getFormSchema().
-     *
-     * @return array<string, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            'file' => FileUpload::make('file')
-                ->hint(static::trans('fields.file_hint'))
-                ->storeFileNamesIn('original_file_name')
-                ->visibility('private')
-                ->required()
-                ->columnSpanFull(),
-            'attachment_type' => Radio::make('attachment_type'),
-            'name' => TextInput::make('name')
-                ->translateLabel()
-                ->hint(static::trans('fields.name.hint'))
-                ->autocomplete(false)
-                ->maxLength(255)
-                ->columnSpanFull(),
-        ];
-    }
-
-    /**
      * @psalm-return array<never, never>
      */
     #[Override]

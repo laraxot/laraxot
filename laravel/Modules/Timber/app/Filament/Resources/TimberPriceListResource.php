@@ -80,52 +80,6 @@ final class TimberPriceListResource extends XotBaseResource
         return 'Listini';
     }
 
-    /** @return array<int|string, Component> */
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()
-                ->components([
-                    Grid::make(3)->components([
-                        TextInput::make('code')
-                            ->required()
-                            ->unique(ignoreRecord: true)
-                            ->maxLength(255),
-                        TextInput::make('name')
-                            ->required()
-                            ->maxLength(255),
-                        Toggle::make('is_active')
-                            ->default(true),
-                    ]),
-                ]),
-
-            Section::make('Prezzi prodotti')
-                ->components([
-                    Repeater::make('items')
-                        ->relationship()
-                        ->hiddenLabel()
-                        ->schema([
-                            Select::make('product_id')
-                                ->options(fn (): array => TimberProduct::query()
-                                    ->orderBy('description')
-                                    ->pluck('description', 'id')
-                                    ->all())
-                                ->searchable()
-                                ->preload()
-                                ->required()
-                                ->columnSpan(2),
-                            TextInput::make('net_price')
-                                ->numeric()
-                                ->minValue(0)
-                                ->required(),
-                        ])
-                        ->columns(3)
-                        ->addActionLabel('Aggiungi prezzo')
-                        ->defaultItems(0),
-                ]),
-        ];
-    }
-
     public static function exportCsvAction(): Action
     {
         return Action::make('exportCsv')

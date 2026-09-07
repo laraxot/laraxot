@@ -46,43 +46,6 @@ final class MetalPartEstimateResource extends XotBaseResource
         return false;
     }
 
-    /**
-     * I preventivi nascono dal calcolo sul disegno: qui si consultano e si
-     * trasformano in offerta, non si scrivono a mano.
-     *
-     * @return array<string, Component|Field>
-     */
-    public function getFormSchema(): array
-    {
-        return [];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->defaultSort('id', 'desc')
-            ->columns([
-                Tables\Columns\TextColumn::make('part_code')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('name')->searchable()->wrap(),
-                Tables\Columns\TextColumn::make('quantity')->numeric(),
-                Tables\Columns\TextColumn::make('gross_weight_kg')
-                    ->numeric(2)
-                    ->suffix(' kg'),
-                Tables\Columns\TextColumn::make('total_cost')->numeric(2)->suffix(' €'),
-                Tables\Columns\TextColumn::make('sale_price')->numeric(2)->suffix(' €'),
-                Tables\Columns\TextColumn::make('rawMaterial.code')->placeholder('—'),
-                Tables\Columns\TextColumn::make('quotation.code')
-                    ->placeholder('—')
-                    ->url(fn (MetalPartEstimate $record): ?string => $record->quotation_id === null
-                        ? null
-                        : QuotationResource::getUrl('edit', ['record' => $record->quotation_id], panel: 'admin')),
-                Tables\Columns\TextColumn::make('created_at')->dateTime('d/m/Y H:i')->sortable(),
-            ])
-            ->recordActions([
-                DeleteAction::make(),
-            ]);
-    }
-
     public static function getRelations(): array
     {
         return [

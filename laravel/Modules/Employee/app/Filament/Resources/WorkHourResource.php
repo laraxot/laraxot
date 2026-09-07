@@ -6,11 +6,8 @@ namespace Modules\Employee\Filament\Resources;
 
 use Filament\Widgets\Widget;
 use Modules\Employee\Filament\Resources\WorkHourResource\Pages;
-use Modules\Employee\Filament\Resources\WorkHourResource\Schemas\WorkHourForm;
-use Modules\Employee\Filament\Resources\WorkHourResource\Schemas\WorkHourInfolist;
 use Modules\Employee\Models\WorkHour;
 use Modules\Xot\Filament\Resources\XotBaseResource;
-use Override;
 
 class WorkHourResource extends XotBaseResource
 {
@@ -21,18 +18,6 @@ class WorkHourResource extends XotBaseResource
         return array_merge(parent::getPages(), [
             'time-clock' => Pages\TimeClockPage::route('/time-clock'),
         ]);
-    }
-
-    #[Override]
-    public function getFormSchema(): array
-    {
-        return WorkHourForm::getFormSchema();
-    }
-
-    #[Override]
-    public function getInfolistSchema(): array
-    {
-        return WorkHourInfolist::getInfolistSchema();
     }
 
     /**

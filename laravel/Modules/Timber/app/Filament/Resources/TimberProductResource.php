@@ -82,20 +82,6 @@ final class TimberProductResource extends XotBaseResource
         return 'Prodotti';
     }
 
-    /** @return array<int|string, Component> */
-    public function getFormSchema(): array
-    {
-        return [
-            Tabs::make('product')
-                ->columnSpanFull()
-                ->tabs([
-                    Tab::make('Prodotto')->schema(self::productFields()),
-                    Tab::make('Caratteristiche')->schema(self::featureFields()),
-                    Tab::make('Magazzino')->schema(self::warehouseFields()),
-                ]),
-        ];
-    }
-
     /** @return array<int, Component> */
     private static function productFields(): array
     {

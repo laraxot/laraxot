@@ -90,7 +90,8 @@ test('activity resource has correct model configuration', function () {
 });
 
 test('activity resource form schema returns array', function () {
-    $form = ActivityResource::getFormSchema();
+    $formInstance = app(\Modules\Activity\Filament\Resources\ActivityResource\Schemas\ActivityForm::class);
+    $form = $formInstance->getFormSchema();
 
     Assert::assertNotEmpty($form);
 
@@ -108,7 +109,8 @@ test('activity resource form schema returns array', function () {
 });
 
 test('snapshot resource form schema returns array', function () {
-    $form = SnapshotResource::getFormSchema();
+    $formInstance = app(\Modules\Activity\Filament\Resources\SnapshotResource\Schemas\SnapshotForm::class);
+    $form = $formInstance->getFormSchema();
 
     Assert::assertNotEmpty($form);
 
@@ -124,7 +126,8 @@ test('snapshot resource form schema returns array', function () {
 });
 
 test('stored event resource form schema returns array', function () {
-    $form = StoredEventResource::getFormSchema();
+    $formInstance = app(\Modules\Activity\Filament\Resources\StoredEventResource\Schemas\StoredEventForm::class);
+    $form = $formInstance->getFormSchema();
 
     Assert::assertNotEmpty($form);
 

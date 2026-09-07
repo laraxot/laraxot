@@ -19,14 +19,6 @@ final class PersonalAccessTokenResource extends XotBaseResource
      * @return array<string, Component>
      */
     #[\Override]
-    public function getFormSchema(): array
-    {
-        return [
-            'name' => TextInput::make('name')
-                ->required()
-                ->maxLength(255),
-        ];
-    }
 
     public static function getPages(): array
     {

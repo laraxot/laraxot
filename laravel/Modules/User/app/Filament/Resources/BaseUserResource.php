@@ -39,41 +39,7 @@ abstract class BaseUserResource extends XotBaseResource
     //    static::$extendFormCallback = $callback;
     // }
 
-    #[\Override]
-    public function getFormSchema(): array
-    {
-        return [
-            'section01' => Section::make([
-                'name' => TextInput::make('name')->required(),
-                'email' => TextInput::make('email')->required()->unique(ignoreRecord: true),
-                'password' => TextInput::make('password')
-                    ->password()
-                    ->dehydrateStateUsing(function ($state) {
-                        if (empty($state)) {
-                            return;
-                        }
-
-                        return is_string($state) ? Hash::make($state) : null;
-                    })
-                    ->required(fn ($livewire) => $livewire instanceof CreateUser),
-            ])->columnSpan(8),
-            'section02' => Section::make([
-                'created_at' => TextEntry::make('created_at')->state(static function ($record) {
-                    if ($record === null || ! $record instanceof Model) {
-                        return new HtmlString('&mdash;');
-                    }
-
-                    if (! isset($record->created_at) || ! ($record->created_at instanceof \DateTimeInterface)) {
-                        return new HtmlString('&mdash;');
-                    }
-
-                    $createdAt = $record->created_at;
-
-                    return $createdAt instanceof CarbonInterface ? $createdAt->diffForHumans() : $createdAt->format('Y-m-d H:i:s');
-                }),
-            ])->columnSpan(4),
-        ];
-    }
+    
 
     // public static function enablePasswordUpdates(bool|Closure $condition = true): void
     // {

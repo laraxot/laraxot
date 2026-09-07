@@ -46,42 +46,6 @@ final class CatalogPartTypeResource extends XotBaseResource
         return __('catalog.part_types');
     }
 
-    /**
-     * @return array<int, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()->columnSpanFull()->components([
-                TextInput::make('name')
-                    ->label(__('catalog.fields.name'))
-                    ->required()
-                    ->maxLength(255),
-            ]),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->label(__('catalog.fields.name'))
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
-            ])
-            ->toolbarActions([
-                DeleteBulkAction::make(),
-            ]);
-    }
-
     public static function getPages(): array
     {
         return [

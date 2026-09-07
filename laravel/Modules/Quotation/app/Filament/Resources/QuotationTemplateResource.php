@@ -53,44 +53,6 @@ final class QuotationTemplateResource extends XotBaseResource
         return __('quotations.quotation_templates');
     }
 
-    public function getFormSchema(): array
-    {
-        return [
-            'title' => Section::make()->columnSpanFull()->components([
-                TextInput::make('title')
-
-                    ->required()
-                    ->maxLength(255),
-                Textarea::make('notes')
-
-                    ->columnSpanFull(),
-            ])->columns(2),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('title')
-
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
-            ])
-            ->toolbarActions([
-                DeleteBulkAction::make(),
-                RestoreBulkAction::make(),
-                ForceDeleteBulkAction::make(),
-            ]);
-    }
-
     public static function getRelations(): array
     {
         return [

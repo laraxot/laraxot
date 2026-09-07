@@ -22,36 +22,6 @@ final class TenantUserResource extends XotBaseResource
      * @return array<string, Component>
      */
     #[\Override]
-    public function getFormSchema(): array
-    {
-        return [
-            'tenant_user' => Section::make('Tenant User Information')
-                ->schema([
-                    'tenant_id' => Select::make('tenant_id')
-                        ->label('Tenant')
-                        ->relationship('tenant', 'name')
-                        ->required()
-                        ->searchable(),
-                    'user_id' => Select::make('user_id')
-                        ->label('User')
-                        ->relationship('user', 'name')
-                        ->required()
-                        ->searchable(),
-                    'role' => Select::make('role')
-                        ->label('Role')
-                        ->options([
-                            'admin' => 'Admin',
-                            'manager' => 'Manager',
-                            'user' => 'User',
-                            'viewer' => 'Viewer',
-                        ])
-                        ->required()
-                        ->searchable()
-                        ->helperText('Role of the user in the tenant'),
-                ])
-                ->columns(2),
-        ];
-    }
 
     /**
      * Configure the model query.

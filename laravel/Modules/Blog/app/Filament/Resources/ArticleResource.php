@@ -8,7 +8,6 @@ use Filament\Schemas\Components\Component;
 use Modules\Blog\Filament\Resources\ArticleResource\Schemas\ArticleFormSchema;
 use Modules\Blog\Models\Article;
 use Modules\Xot\Filament\Resources\XotBaseResource;
-use Webmozart\Assert\Assert;
 
 class ArticleResource extends XotBaseResource
 {
@@ -33,17 +32,5 @@ class ArticleResource extends XotBaseResource
     public static function getFormFields(): array
     {
         return ArticleFormSchema::build();
-    }
-
-    /**
-     * @return array<int|string, Component>
-     */
-    public function getFormSchema(): array
-    {
-        /** @var array<int|string, Component> $fields */
-        $fields = static::getFormFields();
-        Assert::isArray($fields, 'getFormFields must return array');
-
-        return $fields;
     }
 }

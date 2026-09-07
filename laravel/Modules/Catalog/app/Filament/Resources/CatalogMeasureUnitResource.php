@@ -47,50 +47,6 @@ final class CatalogMeasureUnitResource extends XotBaseResource
         return __('catalog.measure_units');
     }
 
-    /**
-     * @return array<int, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()->columnSpanFull()->components([
-                Grid::make(2)->components([
-                    TextInput::make('name')
-                        ->label(__('catalog.fields.name'))
-                        ->required()
-                        ->maxLength(255),
-                    TextInput::make('symbol')
-                        ->label(__('catalog.fields.symbol'))
-                        ->maxLength(50),
-                ]),
-            ]),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('name')
-                    ->label(__('catalog.fields.name'))
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('symbol')
-                    ->label(__('catalog.fields.symbol'))
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
-            ])
-            ->toolbarActions([
-                DeleteBulkAction::make(),
-            ]);
-    }
-
     public static function getPages(): array
     {
         return [

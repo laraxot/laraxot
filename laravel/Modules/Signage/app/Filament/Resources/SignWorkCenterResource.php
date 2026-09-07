@@ -58,59 +58,6 @@ final class SignWorkCenterResource extends XotBaseResource
         return $query;
     }
 
-    /**
-     * @return array<string, Component|Field>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            'main' => Section::make()
-                ->columnSpanFull()
-                ->components([
-                    Grid::make(2)->components([
-                        TextInput::make('code')
-                            ->required()
-                            ->unique(ignoreRecord: true, modifyRuleUsing: fn (Unique $rule): Unique => $rule->where('context_code', SignageCosting::CONTEXT)),
-                        TextInput::make('name')
-                            ->required(),
-                    ]),
-                    Grid::make(3)->components([
-                        TextInput::make('default_markup_percent')
-                            ->helperText(__('signage::signage.pricing.markup_hint'))
-                            ->numeric()
-                            ->suffix('%'),
-                        TextInput::make('sort_order')
-                            ->numeric()
-                            ->default(0),
-                        Toggle::make('is_internal')
-                            ->default(true),
-                    ]),
-                    Hidden::make('context_code')->default(SignageCosting::CONTEXT),
-                    Toggle::make('is_active')->default(true),
-                ]),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->defaultSort('sort_order')
-            ->columns([
-                Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('default_markup_percent')
-                    ->placeholder('—')
-                    ->suffix('%')
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('is_internal')->boolean(),
-                Tables\Columns\IconColumn::make('is_active')->boolean(),
-            ])
-            ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
-            ]);
-    }
-
     public static function getPages(): array
     {
         return [

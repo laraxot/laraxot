@@ -21,35 +21,5 @@ class PageResource extends LangBaseResource
 {
     protected static ?string $model = Page::class;
 
-    /**
-    * Schema legacy del form: la sorgente di verità è PageForm::getFormSchema().
-     *
-     * @return array<int|string, Component>
-     */
-    public function getFormSchemaOld(): array
-    {
-        return [
-            'title' => TextInput::make('title')
-                ->required()
-                ->lazy()
-                ->afterStateUpdated(static function (Set $set, Get $get, string $state): void {
-                    if ($get('slug')) {
-                        return;
-                    }
-                    $set('slug', Str::slug($state));
-                }),
-            'slug' => TextInput::make('slug')
-                ->required()
-                ->afterStateUpdated(static fn (Set $set, string $state) => $set('slug', Str::slug($state))),
-            'content' => Section::make('Content')->schema([
-                PageContentBuilder::make('content_blocks')->columnSpanFull(),
-            ]),
-            'sidebar' => Section::make('Sidebar')->schema([
-                PageContentBuilder::make('sidebar_blocks')->columnSpanFull(),
-            ]),
-            'footer' => Section::make('Footer')->schema([
-                PageContentBuilder::make('footer_blocks')->columnSpanFull(),
-            ]),
-        ];
-    }
+    
 }

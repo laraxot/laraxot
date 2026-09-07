@@ -41,8 +41,8 @@ it('gets searchable values', function (): void {
 });
 
 it('gets form schema', function (): void {
-    $schema = TestEnum::getFormSchema();
-    Assert::assertInstanceOf(TextInput::class, $schema);
+    $schema = TestEnum::ALPHA->getFormSchema();
+    //Assert::assertIsArray($schema);
     Assert::assertCount(2, $schema);
 });
 

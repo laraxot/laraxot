@@ -74,102 +74,6 @@ final class AbsenceRequestResource extends XotBaseResource
         return __('hr.absence_requests');
     }
 
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()
-                ->columnSpanFull()
-                ->components([
-                    Grid::make(2)->components([
-                        Select::make('type')
-                            ->label(__('hr.fields.absence_type'))
-                            ->options(self::getAbsenceTypeOptions())
-                            ->afterStateHydrated(function (Select $component, ?string $state): void {
-                                $component->state(self::normalizeAbsenceType($state));
-                            })
-                            ->dehydrateStateUsing(fn (?string $state): ?string => self::normalizeAbsenceType($state))
-                            ->required(),
-
-                        Select::make('status')
-                            ->label(__('hr.fields.status'))
-                            ->options([
-                                'pending' => __('hr.statuses.pending'),
-                                'approved' => __('hr.statuses.approved'),
-                                'rejected' => __('hr.statuses.rejected'),
-                            ])
-                            ->disabled(fn (): bool => request()->is('operator/*')),
-                    ]),
-
-                    Grid::make(2)->components([
-                        DateTimePicker::make('starts_at')
-                            ->label(__('hr.fields.starts_at'))
-                            ->required(),
-                        DateTimePicker::make('ends_at')
-                            ->label(__('hr.fields.ends_at'))
-                            ->required(),
-                    ]),
-
-                    Textarea::make('notes')
-                        ->label(__('hr.fields.notes'))
-                        ->columnSpanFull(),
-                ])
-                ->columns(2),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('type')
-                    ->label(__('hr.fields.absence_type'))
-                    ->formatStateUsing(fn (?string $state): string => self::translateAbsenceType($state))
-                    ->badge(),
-                Tables\Columns\TextColumn::make('starts_at')
-                    ->label(__('hr.fields.starts_at'))
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('ends_at')
-                    ->label(__('hr.fields.ends_at'))
-                    ->dateTime()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('status')
-                    ->label(__('hr.fields.status'))
-                    ->formatStateUsing(fn (string $state): string => __("hr.statuses.{$state}"))
-                    ->badge()
-                    ->sortable(),
-            ])
-            ->filters([
-                SelectFilter::make('status')
-                    ->label(__('hr.fields.status'))
-                    ->options([
-                        'pending' => __('hr.statuses.pending'),
-                        'approved' => __('hr.statuses.approved'),
-                        'rejected' => __('hr.statuses.rejected'),
-                    ])
-                    ->default('pending'),
-            ])
-            ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
-                Action::make('approve')
-                    ->label(__('hr.actions.approve'))
-                    ->color('success')
-                    ->visible(fn (AbsenceRequest $record): bool => request()->is('admin/*') && $record->status === 'pending')
-                    ->requiresConfirmation()
-                    ->action(fn (AbsenceRequest $record): AbsenceRequest => app(ApproveAbsenceRequestAction::class)->execute($record, (int) Auth::id())),
-                Action::make('reject')
-                    ->label(__('hr.actions.reject'))
-                    ->color('danger')
-                    ->visible(fn (AbsenceRequest $record): bool => request()->is('admin/*') && $record->status === 'pending')
-                    ->requiresConfirmation()
-                    ->action(fn (AbsenceRequest $record): AbsenceRequest => app(RejectAbsenceRequestAction::class)->execute($record, (int) Auth::id())),
-            ])
-            ->toolbarActions([
-                DeleteBulkAction::make(),
-            ]);
-    }
-
     public static function getEloquentQuery(): Builder
     {
         $query = parent::getEloquentQuery();
@@ -191,17 +95,6 @@ final class AbsenceRequestResource extends XotBaseResource
             'create' => Pages\CreateAbsenceRequest::route('/create'),
             'view' => Pages\ViewAbsenceRequest::route('/{record}'),
             'edit' => Pages\EditAbsenceRequest::route('/{record}/edit'),
-        ];
-    }
-
-    /** @return array<string, string> */
-    private static function getAbsenceTypeOptions(): array
-    {
-        return [
-            'leave' => __('hr::hr.absence_types.leave'),
-            'vacation' => __('hr::hr.absence_types.vacation'),
-            'sick' => __('hr::hr.absence_types.sick'),
-            'injury' => __('hr::hr.absence_types.injury'),
         ];
     }
 

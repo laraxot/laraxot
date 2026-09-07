@@ -27,18 +27,6 @@ class LocationResource extends XotBaseResource
 {
     protected static ?string $model = Location::class;
 
-    // ✅ CORRETTO - NIENTE navigationGroup - La gestione è centralizzata in XotBaseResource
-
-    /**
-     * Schema legacy del form: la sorgente di verità è LocationForm::getFormSchema().
-     *
-     * @return array<string, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return LocationForm::getFormSchema();
-    }
-
     // ✅ CORRETTO - NIENTE metodo table() - La gestione è centralizzata in XotBaseResource
 
     /**

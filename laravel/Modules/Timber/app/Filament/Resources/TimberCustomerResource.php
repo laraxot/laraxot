@@ -86,23 +86,6 @@ final class TimberCustomerResource extends XotBaseResource
         return 'Clienti';
     }
 
-    /** @return array<int|string, Component> */
-    public function getFormSchema(): array
-    {
-        return [
-            Tabs::make('customer')
-                ->columnSpanFull()
-                ->tabs([
-                    Tab::make('Anagrafica')
-                        ->schema(self::registryFields()),
-                    Tab::make('Rapporti commerciali')
-                        ->schema(self::commercialFields()),
-                    Tab::make('Varie')
-                        ->schema(self::extraFields()),
-                ]),
-        ];
-    }
-
     /** @return array<int, Component> */
     private static function registryFields(): array
     {

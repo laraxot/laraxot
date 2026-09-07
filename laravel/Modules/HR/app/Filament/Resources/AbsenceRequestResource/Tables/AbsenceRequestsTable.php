@@ -49,7 +49,7 @@ final class AbsenceRequestsTable extends XotBaseResourceTable
     }
 
     /**
-     * @return array<string, Action>
+     * @return array<int|string, \Filament\Tables\Filters\BaseFilter>
      */
     public function getTableFilters(): array
     {

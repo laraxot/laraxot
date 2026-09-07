@@ -46,51 +46,6 @@ final class MetalDrawingResource extends XotBaseResource
         return false;
     }
 
-    /**
-     * I disegni entrano dall'import STEP, non si compilano a mano: la
-     * risorsa serve a consultarli e a lanciare la preventivazione.
-     *
-     * @return array<string, Component|Field>
-     */
-    public function getFormSchema(): array
-    {
-        return [];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->defaultSort('id', 'desc')
-            ->columns([
-                Tables\Columns\TextColumn::make('part_code')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('name')->searchable()->wrap(),
-                Tables\Columns\TextColumn::make('bbox')
-                    ->placeholder('—')
-                    ->state(fn (MetalDrawing $record): ?string => $record->bbox_length_mm === null
-                        ? null
-                        : sprintf(
-                            '%s × %s × %s',
-                            number_format((float) $record->bbox_length_mm, 1, ',', '.'),
-                            number_format((float) $record->bbox_width_mm, 1, ',', '.'),
-                            number_format((float) $record->bbox_thickness_mm, 1, ',', '.'),
-                        )),
-                Tables\Columns\TextColumn::make('solid_count')->numeric(),
-                Tables\Columns\TextColumn::make('cylinder_count')->numeric()->toggleable(),
-                Tables\Columns\IconColumn::make('is_assembly')->boolean(),
-                Tables\Columns\TextColumn::make('estimates_count')
-                    ->counts('estimates'),
-                Tables\Columns\TextColumn::make('source_file')->searchable()->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('cad_system')->placeholder('—')->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('created_at')->dateTime('d/m/Y H:i')->sortable(),
-            ])
-            ->filters([
-                Tables\Filters\TernaryFilter::make('is_assembly'),
-            ])
-            ->recordActions([
-                DeleteAction::make(),
-            ]);
-    }
-
     public static function getPages(): array
     {
         return [

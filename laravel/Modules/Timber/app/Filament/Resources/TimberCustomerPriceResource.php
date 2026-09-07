@@ -69,31 +69,6 @@ final class TimberCustomerPriceResource extends XotBaseResource
         return 'Prezzi per cliente';
     }
 
-    /** @return array<int|string, Component> */
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()
-                ->columns(3)
-                ->components([
-                    Select::make('customer_id')
-                        ->relationship('customer', 'business_name')
-                        ->searchable()
-                        ->preload()
-                        ->required(),
-                    Select::make('product_id')
-                        ->relationship('product', 'description')
-                        ->searchable()
-                        ->preload()
-                        ->required(),
-                    TextInput::make('net_price')
-                        ->numeric()
-                        ->minValue(0)
-                        ->required(),
-                ]),
-        ];
-    }
-
     public static function getPages(): array
     {
         return [

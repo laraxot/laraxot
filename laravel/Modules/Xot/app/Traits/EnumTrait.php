@@ -54,7 +54,7 @@ trait EnumTrait
     /**
      * @return array<int|string, TextInput>
      */
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         // ContactTypeEnum::cases() restituisce un array shape specifico, non list<ContactTypeEnum>
         $cases = static::cases();

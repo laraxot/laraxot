@@ -20,16 +20,6 @@ class FeatureResource extends XotBaseResource
     protected static ?string $model = Feature::class;
 
     #[\Override]
-    public function getFormSchema(): array
-    {
-        return [
-            'name' => TextInput::make('name')->required()->maxLength(255),
-            'type' => TextInput::make('type')->required()->maxLength(255),
-            'active' => Toggle::make('active')->required(),
-        ];
-    }
-
-    #[\Override]
     public static function getRelations(): array
     {
         return [];

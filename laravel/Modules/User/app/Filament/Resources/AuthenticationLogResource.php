@@ -29,54 +29,6 @@ class AuthenticationLogResource extends XotBaseResource
         ];
     }
 
-    /**
-     * @return array<string, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            'authentication_info_section' => Section::make('Authentication Information')
-                ->schema([
-                    Grid::make(2)
-                        ->schema([
-                            Select::make('authenticatable_type')
-                                ->options([
-                                    User::class => 'User',
-                                    // Add other authenticatable types as needed
-                                ])
-                                ->required()
-                                ->searchable(),
-
-                            TextInput::make('authenticatable_id')
-                                ->required()
-                                ->numeric(),
-                        ]),
-
-                    Grid::make(2)
-                        ->schema([
-                            TextInput::make('ip_address')
-                                ->maxLength(45),
-
-                            TextInput::make('user_agent')
-                                ->maxLength(500),
-                        ]),
-
-                    Grid::make(3)
-                        ->schema([
-                            Toggle::make('login_successful')
-                                ->inline(false),
-
-                            TextInput::make('login_at'),
-
-                            TextInput::make('logout_at'),
-                        ]),
-
-                    Toggle::make('cleared_by_user')
-                        ->inline(false),
-                ]),
-        ];
-    }
-
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()->with(['authenticatable']);

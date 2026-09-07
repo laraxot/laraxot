@@ -11,6 +11,7 @@ use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Modules\Xot\Filament\Traits\HasXotForm;
+use Webmozart\Assert\Assert;
 
 abstract class XotBaseResourceForm
 {

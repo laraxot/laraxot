@@ -56,51 +56,6 @@ final class BomResource extends XotBaseResource
         return __('boms.boms');
     }
 
-    /**
-     * @return array<int, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()
-                ->columnSpanFull()
-                ->components([
-                    Select::make('product_id')
-                        ->label(__('boms.fields.product_id'))
-                        ->options(fn () => Product::query()->orderBy('name')->pluck('name', 'id')->all())
-                        ->searchable()
-                        ->preload()
-                        ->required(),
-                    TextInput::make('name')
-                        ->label(__('boms.fields.name'))
-                        ->maxLength(255),
-                    Toggle::make('is_active')
-                        ->label(__('boms.fields.is_active'))
-                        ->default(true),
-                ]),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('id')->label('#')->sortable(),
-                Tables\Columns\TextColumn::make('product.name')->label(__('boms.fields.product_id'))->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('name')->label(__('boms.fields.name'))->toggleable(),
-                Tables\Columns\IconColumn::make('is_active')->label(__('boms.fields.is_active'))->boolean()->sortable(),
-                Tables\Columns\TextColumn::make('updated_at')->dateTime()->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->defaultSort('id', 'desc')
-            ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
-            ])
-            ->toolbarActions([
-                DeleteBulkAction::make(),
-            ]);
-    }
-
     public static function getRelations(): array
     {
         return [

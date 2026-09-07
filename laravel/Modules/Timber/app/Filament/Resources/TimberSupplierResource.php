@@ -77,68 +77,6 @@ final class TimberSupplierResource extends XotBaseResource
         return 'Fornitori';
     }
 
-    /** @return array<int|string, Component> */
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()
-                ->columnSpanFull()
-                ->components([
-                    Grid::make(2)->components([
-                        TextInput::make('legal_name')
-                            ->required()
-                            ->maxLength(255),
-
-                        TextInput::make('vat_number')
-                            ->maxLength(255),
-
-                        TextInput::make('tax_code')
-                            ->maxLength(255),
-
-                        TextInput::make('email')
-                            ->email()
-                            ->maxLength(255),
-
-                        TextInput::make('phone')
-                            ->maxLength(255),
-
-                        TextInput::make('certifications')
-                            ->placeholder('FSC, PEFC')
-                            ->maxLength(255),
-
-                        TextInput::make('city')
-                            ->maxLength(255),
-
-                        TextInput::make('province')
-                            ->maxLength(255),
-
-                        Toggle::make('is_active')
-                            ->default(true),
-                    ]),
-
-                    Textarea::make('notes')
-                        ->columnSpanFull(),
-                ])
-                ->columns(2),
-
-            Section::make('Foglio appunti')
-                ->description('Annotazioni datate sul fornitore')
-                ->columnSpanFull()
-                ->components([
-                    Repeater::make('contactNotes')
-                        ->relationship()
-                        ->hiddenLabel()
-                        ->schema([
-                            Textarea::make('body')
-                                ->required()
-                                ->rows(2),
-                        ])
-                        ->addActionLabel('Aggiungi appunto')
-                        ->defaultItems(0),
-                ]),
-        ];
-    }
-
     public static function getPages(): array
     {
         return [

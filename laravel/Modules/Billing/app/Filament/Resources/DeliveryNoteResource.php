@@ -20,27 +20,7 @@ final class DeliveryNoteResource extends XotBaseResource
 {
     protected static ?string $model = DeliveryNote::class;
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-truck';
-
-    public static function getNavigationSort(): int
-    {
-        return 2;
-    }
-
-    public static function getNavigationGroup(): string
-    {
-        return __('billing::suppliers.navigation');
-    }
-
-    public static function getModelLabel(): string
-    {
-        return __('billing::suppliers.delivery_note');
-    }
-
-    public static function getPluralModelLabel(): string
-    {
-        return __('billing::suppliers.delivery_notes');
-    }
+   
 
     /**
      * @return array<int, string>

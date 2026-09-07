@@ -30,18 +30,6 @@ class AddressResource extends XotBaseResource
 {
     protected static ?string $model = Address::class;
 
-    // ✅ CORRETTO - NIENTE navigationGroup - La gestione è centralizzata in XotBaseResource
-
-    /**
-     * Schema legacy del form: la sorgente di verità è AddressForm::getFormSchema().
-     *
-     * @return array<string, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return AddressForm::getFormSchema();
-    }
-
     /**
      * @return array<string, mixed>
      */

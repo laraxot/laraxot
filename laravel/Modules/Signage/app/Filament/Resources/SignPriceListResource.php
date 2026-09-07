@@ -48,58 +48,6 @@ final class SignPriceListResource extends XotBaseResource
         return __('signage::signage.sales_price_lists');
     }
 
-    /**
-     * @return array<string, Component|Field>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            'main' => Section::make()
-                ->columnSpanFull()
-                ->components([
-                    Grid::make(2)->components([
-                        TextInput::make('code')
-                            ->required()
-                            ->unique(ignoreRecord: true),
-                        TextInput::make('name')
-                            ->required(),
-                    ]),
-                    Grid::make(3)->components([
-                        TextInput::make('brand'),
-                        Select::make('customer_id')
-                            ->options(fn (): array => Customer::query()->orderBy('name')->pluck('name', 'id')->all())
-                            ->searchable()
-                            ->preload(),
-                        TextInput::make('default_markup_percent')
-                            ->helperText(__('signage::signage.pricing.markup_hint'))
-                            ->numeric()
-                            ->suffix('%'),
-                    ]),
-                    Toggle::make('is_active')->default(true),
-                ]),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('code')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('brand')->placeholder('—')->searchable(),
-                Tables\Columns\TextColumn::make('items_count')
-                    ->counts('items'),
-                Tables\Columns\TextColumn::make('default_markup_percent')
-                    ->placeholder('—')
-                    ->suffix('%'),
-                Tables\Columns\IconColumn::make('is_active')->boolean(),
-            ])
-            ->recordActions([
-                EditAction::make(),
-                DeleteAction::make(),
-            ]);
-    }
-
     public static function getPages(): array
     {
         return [

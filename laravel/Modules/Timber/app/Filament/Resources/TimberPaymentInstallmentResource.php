@@ -70,44 +70,6 @@ final class TimberPaymentInstallmentResource extends XotBaseResource
         return 'Scadenzario / Pagamenti';
     }
 
-    /** @return array<int|string, Component> */
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()
-                ->columns(2)
-                ->components([
-                    Select::make('invoice_id')
-                        ->relationship('invoice', 'number')
-                        ->searchable()
-                        ->preload(),
-                    Select::make('customer_id')
-                        ->relationship('customer', 'business_name')
-                        ->searchable()
-                        ->preload(),
-                    Select::make('direction')
-                        ->options(['in' => 'Entrata (incasso)', 'out' => 'Uscita (pagamento)'])
-                        ->default('in')
-                        ->required(),
-                    DatePicker::make('due_date')
-                        ->required(),
-                    TextInput::make('amount')
-                        ->numeric()
-                        ->minValue(0)
-                        ->required(),
-                    Select::make('payment_method_code')
-                        ->options(TimberConfigMap::get('timber.payment_methods')),
-                    Select::make('status_code')
-                        ->options(TimberConfigMap::get('timber.payment_statuses'))
-                        ->default('da_saldare')
-                        ->required(),
-                    Textarea::make('notes')
-                        ->rows(2)
-                        ->columnSpanFull(),
-                ]),
-        ];
-    }
-
     public static function markPaidAction(): Action
     {
         return Action::make('markPaid')

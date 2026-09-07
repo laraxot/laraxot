@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Billing\Filament\Resources\InvoiceResource\Tables;
 
-use Filament\Actions\DeleteAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
+use Filament\Tables\Actions\Action;
+use Filament\Tables\Actions\ActionGroup;
+use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
+use Webmozart\Assert\Assert;
 use Illuminate\Support\Facades\DB;
 use Modules\Billing\Filament\Resources\InvoiceResource;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
@@ -61,9 +64,11 @@ final class InvoicesTable extends XotBaseResourceTable
      */
     public function getTableActions(): array
     {
+        /** @var array<int|string, Action|ActionGroup> $actions */
         $actions = [];
 
         $resource = app(static::$resource);
+        Assert::isInstanceOf($resource, \Illuminate\Database\Eloquent\Model::class);
         if (method_exists($resource, 'canView')) {
             $actions['view'] = ViewAction::make()
                 ->iconButton()

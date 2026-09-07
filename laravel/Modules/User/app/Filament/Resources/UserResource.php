@@ -29,11 +29,7 @@ class UserResource extends XotBaseResource
     //    static::$extendFormCallback = $callback;
     // }
 
-    #[\Override]
-    public function getFormSchema(): array
-    {
-        return UserForm::getFormSchema();
-    }
+    
 
     // public static function enablePasswordUpdates(bool|Closure $condition = true): void
     // {

@@ -25,13 +25,6 @@ class TeamResource extends XotBaseResource
         return $xot->getTeamClass();
     }
 
-    #[\Override]
-    public function getFormSchema(): array
-    {
-        return [
-            'name' => TextInput::make('name')->required()->maxLength(255),
-            'display_name' => TextInput::make('display_name')->maxLength(255),
-            'description' => TextInput::make('description')->maxLength(255),
-        ];
-    }
+    
+
 }

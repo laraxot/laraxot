@@ -20,43 +20,6 @@ use Webmozart\Assert\Assert;
 class ClientResource extends XotBaseResource
 {
     protected static string $resource = ClientResource::class;
-    // use HasResourceFormComponents;
-
-    /**
-     * ⚠️ IMPORTANTE: NavigationIcon è gestito automaticamente da NavigationLabelTrait
-     * tramite il file di traduzione (navigation.icon).
-     * NON definire $navigationIcon qui!
-     *
-     * Get the form schema for the resource (XotBaseResource pattern).
-     *
-     * @return array<string, Field>
-     */
-    public function getFormSchema(): array
-    {
-        $components = [
-            'name' => TextInput::make('name')
-                ->unique('clients', 'name')
-                ->required()
-                ->maxLength(255),
-            'user_id' => XotBaseSelect::make('user_id')
-                ->relationship('user', 'name')
-                ->searchable()
-                ->required(),
-        ];
-
-        /*
-         * merge getResourceFormComponents if enabled
-         */
-        if (static::isResourceFormComponentsEnabled()) {
-            $additionalComponents = static::getResourceFormComponents();
-            /** @var array<string, Field> $additionalComponents */
-            /** @var array<string, Field> $components */
-            $components = array_merge($components, $additionalComponents);
-        }
-
-        /* @var array<string, Field> $components */
-        return $components;
-    }
 
     /**
      * Get the model class for the resource from Passport.

@@ -17,25 +17,5 @@ class ConsentResource extends XotBaseResource
 
     protected static ?string $cluster = ProfileCluster::class;
 
-    #[\Override]
-    public function getFormSchema(): array
-    {
-        return [];
-    }
-
-    #[\Override]
-    public static function getRelations(): array
-    {
-        return [];
-    }
-
-    #[\Override]
-    public static function getPages(): array
-    {
-        return [
-            'index' => ListConsents::route('/'),
-            'create' => CreateConsent::route('/create'),
-            'edit' => EditConsent::route('/{record}/edit'),
-        ];
-    }
+    
 }

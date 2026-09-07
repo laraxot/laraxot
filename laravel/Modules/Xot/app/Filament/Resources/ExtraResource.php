@@ -22,21 +22,6 @@ class ExtraResource extends XotBaseResource
      * @return array<string, Component>
      */
     #[\Override]
-    public function getFormSchema(): array
-    {
-        return [
-            'id' => TextInput::make('id')->required()->maxLength(36),
-            'post_type' => TextInput::make('post_type')->required()->maxLength(255),
-            'post_id' => TextInput::make('post_id')->required()->numeric(),
-            'value' => KeyValue::make('value')
-                ->keyLabel('Chiave')
-                ->valueLabel('Valore')
-                ->reorderable()
-                ->columnSpanFull(),
-        ];
-    }
-
-    #[\Override]
     public static function getRelations(): array
     {
         return [];

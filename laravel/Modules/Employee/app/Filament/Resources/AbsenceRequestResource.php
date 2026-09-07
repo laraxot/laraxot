@@ -17,21 +17,7 @@ class AbsenceRequestResource extends XotBaseResource
 {
     protected static ?string $model = AbsenceRequest::class;
 
-    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
-
-    #[Override]
-    public function getFormSchema(): array
-    {
-        return AbsenceRequestForm::getFormSchema();
-    }
-
-    /**
-     * @return array<class-string<Widget>>
-     */
-    public static function getHeaderWidgets(): array
-    {
-        return [];
-    }
+    
 
     /**
      * Scope the query: non-admin panels only see their own absence requests.
@@ -51,13 +37,5 @@ class AbsenceRequestResource extends XotBaseResource
         return $query;
     }
 
-    public static function getPages(): array
-    {
-        return array_merge(parent::getPages(), [
-            'index' => Pages\ListAbsenceRequests::route('/'),
-            'create' => Pages\CreateAbsenceRequest::route('/create'),
-            'view' => Pages\ViewAbsenceRequest::route('/{record}'),
-            'edit' => Pages\EditAbsenceRequest::route('/{record}/edit'),
-        ]);
-    }
+    
 }

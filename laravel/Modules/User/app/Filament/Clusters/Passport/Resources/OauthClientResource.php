@@ -26,56 +26,6 @@ class OauthClientResource extends XotBaseResource
 {
     protected static ?string $cluster = Passport::class;
 
-    // use HasResourceFormComponents;
-
-    /**
-     * Get the form schema for the resource (XotBaseResource pattern).
-     *
-     * @return array<string, Field>
-     */
-    /**
-     * @return array<string, Field>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            'name' => TextInput::make('name')
-                ->unique('oauth_clients', 'name')
-                ->required()
-                ->maxLength(255),
-            'user_id' => Select::make('user_id')
-                ->relationship('user', 'name')
-                ->searchable(),
-            'redirect' => TextInput::make('redirect')
-                ->url()
-                ->maxLength(2000),
-            'provider' => TextInput::make('provider')
-                ->maxLength(255),
-        ];
-    }
-
-    /**
-     * Build the table for the resource.
-     */
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                TextColumn::make('name')
-                    ->formatStateUsing(fn (string $state): string => Str::headline($state))
-                    ->searchable(),
-                TextColumn::make('owner.name')
-                    ->searchable(),
-                TextColumn::make('created_at')
-                    ->dateTime(),
-                TextColumn::make('updated_at')
-                    ->dateTime(),
-            ])
-            ->toolbarActions([
-                DeleteBulkAction::make(),
-            ]);
-    }
-
     /**
      * Get the model class for the resource from Passport.
      *

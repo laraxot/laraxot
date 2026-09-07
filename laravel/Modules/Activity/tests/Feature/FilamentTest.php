@@ -125,7 +125,8 @@ describe('ActivityResource', function (): void {
     });
 
     test('has required form schema fields', function (): void {
-        $schema = ActivityResource::getFormSchema();
+        $instance = app(\Modules\Activity\Filament\Resources\ActivityResource\Schemas\ActivityForm::class);
+        $schema = $instance->getFormSchema();
 
         Assert::assertArrayHasKey('log_name', $schema);
         Assert::assertArrayHasKey('description', $schema);
@@ -201,7 +202,8 @@ describe('SnapshotResource', function (): void {
     });
 
     test('has required form schema fields', function (): void {
-        $schema = SnapshotResource::getFormSchema();
+        $instance = app(\Modules\Activity\Filament\Resources\SnapshotResource\Schemas\SnapshotForm::class);
+        $schema = $instance->getFormSchema();
 
         Assert::assertArrayHasKey('model_type', $schema);
         Assert::assertArrayHasKey('model_id', $schema);
@@ -272,7 +274,8 @@ describe('StoredEventResource', function (): void {
     });
 
     test('has required form schema fields', function (): void {
-        $schema = StoredEventResource::getFormSchema();
+        $instance = app(\Modules\Activity\Filament\Resources\StoredEventResource\Schemas\StoredEventForm::class);
+        $schema = $instance->getFormSchema();
 
         Assert::assertArrayHasKey('event_class', $schema);
         Assert::assertArrayHasKey('event_properties', $schema);

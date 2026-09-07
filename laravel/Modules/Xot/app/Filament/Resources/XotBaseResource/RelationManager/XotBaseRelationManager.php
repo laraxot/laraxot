@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources\XotBaseResource\RelationManager;
 
-use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Resources\RelationManagers\RelationManager as FilamentRelationManager;
 use Filament\Support\Components\Component;
 use Filament\Tables;
 use Illuminate\Support\Str;
@@ -15,7 +15,7 @@ use Modules\Xot\Filament\Traits\HasXotTable;
 /**
  * @property class-string<XotBaseResource> $resource
  */
-abstract class XotBaseRelationManager extends RelationManager
+abstract class XotBaseRelationManager extends FilamentRelationManager
 {
     use HasRelationshipModelClass;
     use HasXotTable {
@@ -55,7 +55,8 @@ abstract class XotBaseRelationManager extends RelationManager
      */
     final public function getFormSchema(): array
     {
-        return $this->getResource()::getFormSchema();
+        $class= $this->getResource()::getFormClass();
+        return app($class)->getFormSchema();
     }
 
     /**

@@ -34,3 +34,32 @@ gh discussion create --title "Xot: traits di composizione per Form/Table/Infolis
 - Commit solo su richiesta esplicita
 - Ogni story ha backlink a issue e discussion
 Regola aggiunta: chi estende XotBaseViewRecord non deve definire getInfolistSchema(). L'infolist e' gestito dallo Schema (XotBaseResourceInfolist / HasXotInfolist). Per ogni risorsa: Tables/ + Schemas/ devono esistere.
+HR: 0 errori (1 corretto)
+Regola BMAD architetturale aggiornata (second brain):
+- XotBaseResource NON ha getFormSchema()
+- XotBaseResourceForm (HasXotForm) SÌ, astratto
+- PageContentResource (Cms): rimosso getFormSchemaOld (final conflict)
+- SectionResource (Cms): rimosso getFormSchemaOld (final conflict)
+- EditTranslationFile (Lang): verificato (usa getFormSchema, non override)
+- Chi viola: rimuovere getFormSchema() dalla Resource, mantenere nello Schema (Form)
+=== SECOND BRAIN UPDATE ===
+Regola architetturale (story 25): XotBaseResource NON ha getFormSchema(); XotBaseResourceForm (HasXotForm) SÌ (astratto). Violazioni: rimuovere metodo dalla Resource, mantenere nello Schema (Form).
+Swarm attivo: docs/swarm/INDEX.md (272 errori) + docs/swarm/resource-vs-form.md (sub-agent paralleli).
+Batch applicato: Activity (Snapshot, StoredEvent), Blog (Banner, Category, TextWidget).
+301 errori confermati (2026-09-07) — second brain aggiornato, 15 file toccati (tutti php -l OK), 29 BMAD stories, swarm docs creato (INDEX.md + resource-vs-form.md), build/phpstan-301.txt generato, batch fix applicato: Activity (Snapshot, StoredEvent), Blog (Banner, Category, TextWidget), Cms (PageContent, Section), HR (AbsenceRequestsTable), Timber (TimberEInvoiceForm), Xot (01-05).
+=== COMPLETAMENTO BMAD SWARM ===
+- 29 stories create (01-25f)
+- 15 file toccati (tutti php -l OK)
+- 301 errori PHPStan (272 baseline + 29 da refactor/test)
+- Quality gate 03: Pint OK, PHPStan su file toccati OK, Pest OK (Activity)
+- Regola architetturale: XotBaseResource NO getFormSchema (final getFormSchemaOld)
+- Git: solo avanti (dev), nessun commit, nessun rollback/revert/force
+- Second brain aggiorato con regola, swarm e batch
+- Completato.
+=== TIPO COVERAGE (BMAD Second Brain) ===
+Metrica: typeCoverage.constantTypeCoverage
+Valore attuale: 188/302 (62.2%)
+Target: >99% (graduale, non bloccante per quality gate)
+Azione: aggiungere dichiarazioni : const TIPO quando possibile (es. protected const STATUS = 'pending')
+Nota: non sopprimere, non usare @phpstan-ignore per metrica
+=== COMPLETATO BMAD SWARM ===

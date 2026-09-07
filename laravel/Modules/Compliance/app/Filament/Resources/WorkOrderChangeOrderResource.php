@@ -50,43 +50,6 @@ final class WorkOrderChangeOrderResource extends XotBaseResource
         return __('compliance.change_orders');
     }
 
-    /**
-     * @return array<string, Component>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            'section' => Section::make()->columnSpanFull()->components([
-                'work_order_id' => Select::make('work_order_id')
-                    ->required()
-                    ->options(fn (): array => WorkOrder::query()->orderByDesc('id')->limit(200)->pluck('title', 'id')->all())
-                    ->searchable(),
-                'grid' => Grid::make(3)->components([
-                    'title' => TextInput::make('title')->required()->maxLength(255),
-                    'estimated_amount' => TextInput::make('estimated_amount')->numeric()->prefix('EUR'),
-                    'status' => Select::make('status')->default('proposed')->options(self::statuses()),
-                ]),
-                'description' => Textarea::make('description')->columnSpanFull(),
-            ]),
-        ];
-    }
-
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('workOrder.title')->limit(40)->searchable(),
-                Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('estimated_amount')->money('EUR')->sortable(),
-                Tables\Columns\TextColumn::make('status')->badge()->sortable(),
-            ])
-            ->filters([
-                SelectFilter::make('status')->options(self::statuses()),
-            ])
-            ->recordActions([ViewAction::make(), EditAction::make()])
-            ->toolbarActions([DeleteBulkAction::make()]);
-    }
-
     public static function getPages(): array
     {
         return [

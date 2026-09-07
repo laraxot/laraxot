@@ -73,39 +73,6 @@ final class TimberWoodSpeciesResource extends XotBaseResource
         return 'Specie legnose';
     }
 
-    /** @return array<int|string, Component> */
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make()
-                ->columns(2)
-                ->components([
-                    TextInput::make('name')
-                        ->required()
-                        ->maxLength(255)
-                        ->live(onBlur: true)
-                        ->afterStateUpdated(function (Set $set, ?string $state, ?string $old, Get $get): void {
-                            $code = $get('code');
-                            if (($code === null || $code === '') && is_string($state)) {
-                                $set('code', Str::slug($state, '_'));
-                            }
-                        }),
-                    TextInput::make('code')
-                        ->required()
-                        ->maxLength(255)
-                        ->unique(ignoreRecord: true)
-                        ->helperText('Codice stabile usato internamente (es. "abete"). Non cambiarlo dopo l\'uso.'),
-                    Grid::make(2)->components([
-                        TextInput::make('sort_order')
-                            ->integer()
-                            ->default(0),
-                        Toggle::make('is_active')
-                            ->default(true),
-                    ]),
-                ]),
-        ];
-    }
-
     public static function getPages(): array
     {
         return [

@@ -64,12 +64,6 @@ final class TimberEInvoiceResource extends XotBaseResource
         return 'Fatture elettroniche';
     }
 
-    /** @return array<int|string, Component> */
-    public function getFormSchema(): array
-    {
-        return [];
-    }
-
     public static function transmitAction(): Action
     {
         return Action::make('transmit')
