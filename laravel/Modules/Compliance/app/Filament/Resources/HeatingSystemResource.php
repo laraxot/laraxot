@@ -33,11 +33,9 @@ final class HeatingSystemResource extends XotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-fire';
 
-    /** @var string */
-    protected const ACCOUNT_FEATURE_ADMIN = 'admin.heating_maintenance';
+    protected const string ACCOUNT_FEATURE_ADMIN = 'admin.heating_maintenance';
 
-    /** @var string */
-    protected const ACCOUNT_FEATURE_OPERATOR = 'operator.heating_maintenance';
+    protected const string ACCOUNT_FEATURE_OPERATOR = 'operator.heating_maintenance';
 
     public static function getNavigationGroup(): string
     {

@@ -56,6 +56,7 @@ Ogni agente: lock per-file (`bashscripts/lock/{check,lock,unlock}.sh`) prima di 
 
 - [ViewRecord: schema solo nella Resource](2026-09-07-view-record-resource-infolist-only.md) — Codex: sviluppo + review BMAD read-only; in corso 2026-09-07.
 - [CLAIM typeCoverage final push](2026-09-07-claim-typecoverage-final-push-swarm.md) — 100 costanti/11 moduli, story 2.8/5.1, 66.8%→99% target — in corso 2026-09-07 (claude sonnet 5)
+- [Customer typeCoverage regression re-fix](2026-09-07-customer-typecoverage-fix.md) — 8 costanti gia' tipizzate oggi (`1d9da95`) trovate regredite da WIP Epic4 stale (story 4.14.13, 3.5-6.5h senza lock/mtime recenti), pattern sbagliato `/** @var */` + const non tipizzata; ripristinate verbatim, full-tree phpstan conferma 0 occorrenze Customer x2; nessun commit PHP necessario (working tree gia' allineato a HEAD in entrambi i repo), solo doc `docs/coverage.md` (Customer, commit `3126ada`, pushato) — completato 2026-09-07 (claude sonnet 5)
 - [CLAIM Platform+Timber phpstan-zero](2026-09-07-claim-platform-timber-phpstan-swarm.md) — 10+10 errori reali, story-2.15 batch stale ~3h15m — in corso 2026-09-07 (claude sonnet 5)
 - [CLAIM Billing phpstan-zero](2026-09-07-claim-billing-phpstan-swarm.md) — standdown, vedi [phpstan-billing-standdown](2026-09-07-phpstan-billing-standdown.md): gia' 0 errori, modulo conteso da swarm Epic4 live (story 4.1.1 done + 5.71 in_progress) — 2026-09-07 (claude sonnet 5)
 - [CLAIM Media phpstan-zero](2026-09-07-claim-media-phpstan-swarm.md) — 8 errori reali, 03-quality-gates — in corso 2026-09-07 (claude sonnet 5)

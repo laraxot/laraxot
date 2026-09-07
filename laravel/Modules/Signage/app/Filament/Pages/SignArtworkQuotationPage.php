@@ -38,15 +38,12 @@ final class SignArtworkQuotationPage extends XotBasePage
 
     protected string $view = 'signage::filament.pages.artwork-quotation';
 
-    /** Accepted drawing extensions: .ai files are PDF containers, .pdf exports work too. */
     /** @var list<string> Accepted drawing extensions: .ai files are PDF containers, .pdf exports work too. */
-    private const ACCEPTED_EXTENSIONS = ['ai', 'pdf'];
+    private const array ACCEPTED_EXTENSIONS = ['ai', 'pdf'];
 
-    /** @var string */
-    private const ARTWORK_DISK = 'public';
+    private const string ARTWORK_DISK = 'public';
 
-    /** @var string */
-    private const ARTWORK_DIRECTORY = 'signage-artwork';
+    private const string ARTWORK_DIRECTORY = 'signage-artwork';
 
     public ?TemporaryUploadedFile $artwork = null;
 

@@ -13,7 +13,7 @@ trait ResolvesCalendarReturnUrl
     /**
      * @var array<int, string>
      */
-    private const ALLOWED_CALENDAR_VIEWS = [
+    private const array ALLOWED_CALENDAR_VIEWS = [
         'dayGridMonth',
         'timeGridWeek',
         'timeGridDay',

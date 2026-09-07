@@ -96,3 +96,35 @@ to release it. Heavy contention today; expect slow full-tree runs.
 Committed and pushed: `1d9da95` on `git@github.com:laraxot/module_customer_fila5.git`
 branch `dev` (`68188d6..1d9da95`). No divergence from remote (only remote:
 `laraxot`), fetch/merge was a no-op, clean fast push.
+
+## Update 2026-09-07 ~22:30 — regression found and re-fixed (swarm final push, story 5.1)
+
+The swarm claim doc (`docs/chat/2026-09-07-claim-typecoverage-final-push-swarm.md`) recorded
+Customer back at **8 residual `typeCoverage.constantTypeCoverage` occurrences** on a ~22:11
+full-tree scan. Investigated: all 5 files above had regressed back to the exact wrong pattern
+this session already fixed once (`/** @var TYPE */` PHPDoc + untyped `const`, no native type),
+caused by a stale, uncommitted Epic4 canonical-structure WIP (`docs/stories/4.14.13.customer-canonical.story.md`,
+`in_progress`) that had checked out/edited these same files 3.5-6.5h earlier (mtimes 15:45 and
+18:41), with no active lock (`bashscripts/lock/check.sh` → `LIBERO`) and nothing touched in the
+last 45 minutes — confirmed stale, not a live edit.
+
+Re-applied the exact same native-type declarations verbatim (matching commit `1d9da95`),
+touching only the `const` lines and leaving the rest of the Epic4 WIP (structural
+`getFormSchema()`/`table()` extraction on `ResellerResource.php`) untouched.
+
+Verified via full-tree PHPStan (`clear-result-cache && analyse Modules`, no path arg — required
+for this rule to fire): zero `Modules/Customer` occurrences, confirmed twice (302 total
+constants, 239→252 typed as other agents' concurrent fixes landed in between the two runs).
+PHPMD on the 5 files: only the same pre-existing findings already logged above. Pest
+`--testsuite=Customer`: 25 failed / 21 passed, identical to the pre-existing
+`workorder_data_test` DB-gap baseline — no regression.
+
+**No new PHP commit was needed**: after restoring the working tree, `git diff` showed zero
+delta against `HEAD` in both the nested `Modules/Customer` repo (`1d9da95`/`6ab7070`) and the
+root monorepo (`ee91599e5` typeCoverage-campaign chain) for 4 of 5 files, and only the
+unrelated Epic4 structural diff on the 5th. The regression existed only in the shared working
+tree, never committed. Only a doc update was committed: `docs/coverage.md` section (Customer
+module repo, commit `3126ada`, pushed `6ab7070..3126ada` to `laraxot/dev`).
+
+Full detail: `laravel/Modules/Customer/docs/coverage.md` (`## 2026-09-07 (swarm final push)`
+section).

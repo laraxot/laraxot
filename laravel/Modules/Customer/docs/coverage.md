@@ -164,3 +164,85 @@ passes with that WIP present in the tree.
 0 → 0 PHPStan errors (already closed before this session). Committed only this doc file plus
 the story status update — no `app/` code changed, no gate regressions found, no `mixed`
 introduced or removed.
+
+## 2026-09-07 (swarm final push) — constantTypeCoverage regression found and re-fixed
+
+**Story:** `docs/stories/2.8.phpstan-constant-type-coverage.story.md` /
+`docs/stories/5.1.phpstan-constant-type-coverage-remaining.story.md`
+**Date:** 2026-09-07 ~22:15–22:35 CEST
+
+### Context
+
+Swarm claim doc (`docs/chat/2026-09-07-claim-typecoverage-final-push-swarm.md`) recorded a
+full-tree scan at ~22:11 showing **8 residual `typeCoverage.constantTypeCoverage` occurrences
+in `Modules/Customer`** — even though this exact metric had already been closed for this module
+earlier the same day (see the `## 2026-09-07 — story 2.8` section above, commit `1d9da95`).
+
+### Root cause: silent regression from a stale, uncommitted Epic4 WIP
+
+All 5 previously-fixed files were found **modified again on disk**, reverted to the same wrong
+pattern already documented once before (`/** @var int|string|bool|null */` PHPDoc immediately
+above an untyped `const`, no native type) — caused by the concurrent, uncommitted Epic4
+canonical-structure extraction WIP (`docs/stories/4.14.13.customer-canonical.story.md`,
+`in_progress`, untracked `ResellerResource/Schemas/` + `Tables/` dirs). File mtimes (15:45 and
+18:41) were 3.5–6.5h old and `bashscripts/lock/check.sh Modules/Customer` reported `LIBERO`
+(no active lock), and `find ... -newermt "-45 minutes"` found nothing — confirmed stale/abandoned
+WIP, not a live edit, safe to touch just the constant declarations.
+
+### Fix
+
+Re-applied the exact native-type declarations from commit `1d9da95` (verbatim, no changes to
+values or visibility) to the 8 constants, without touching the unrelated Epic4 structural
+diff still present in `ResellerResource.php` (removal of inline `getFormSchema()`/`table()`,
+extracted to `Schemas/`/`Tables/` — left as-is, out of scope):
+
+- `app/Actions/SearchCompanyOnlineAction.php` — `private const int MAX_RESULTS`
+- `app/Lookup/OpenApiCompanyLookupProvider.php` — `private const int MAX_RESULTS`
+- `app/Lookup/OpenCorporatesCompanyLookupProvider.php` — `private const string ENDPOINT`,
+  `private const int MAX_RESULTS`
+- `app/Lookup/ViesCompanyLookupProvider.php` — `private const string ENDPOINT`
+- `app/Filament/Resources/ResellerResource.php` — `private const string ACCOUNT_FEATURE_ADMIN`,
+  `private const ?string ACCOUNT_FEATURE_OPERATOR`, `private const bool
+  ACCOUNT_FEATURE_OPERATOR_DEFAULT`
+
+### Quality gate
+
+- `php -l`: clean on all 5 files.
+- PHPStan full-tree (`phpstan clear-result-cache && phpstan analyse Modules`, no path arg —
+  required for this rule): confirmed **zero** `Modules/Customer` occurrences both immediately
+  after the fix (302 total, 239 typed, 79.1%) and on a second run a few minutes later (302
+  total, 252 typed, 83.4% — the delta is other agents' concurrent fixes on other modules, not
+  this session).
+- PHPStan scoped `Modules/Customer`: `[OK] No errors` (expected either way — this rule never
+  fires on a scoped run).
+- PHPMD (5 touched files, `Modules/Customer/phpmd.ruleset.xml`): only pre-existing findings on
+  method bodies untouched by this fix (`CyclomaticComplexity`/`NPathComplexity` on
+  `OpenApiCompanyLookupProvider::search()`, `OpenCorporatesCompanyLookupProvider::search()`;
+  `CyclomaticComplexity`/`ShortVariable` on `ViesCompanyLookupProvider::parseAddress()`) —
+  identical to what the original 2.8 session already logged, confirms no new violations.
+- PHPInsights: not run (removed from this repo, incompatible with Pest 5).
+- Pest (`./vendor/bin/pest --testsuite=Customer --no-coverage`): **25 failed / 21 passed**,
+  identical split to the story 5.67 re-verification baseline above — 100% pre-existing
+  `workorder_data_test` missing-migration `QueryException` on the `customer` connection, not a
+  regression from this change (const-only edits touch no runtime behaviour).
+
+### Interesting finding: no new commit needed
+
+After restoring the 8 constants, `git diff` in **both** the nested `Modules/Customer` repo and
+the root monorepo showed **zero delta** for 4 of the 5 files, and only the (unrelated, expected)
+Epic4 structural diff on the 5th (`ResellerResource.php`) — because both repos' `HEAD` already
+contained the correct typed-constant content from the original fix (nested: `1d9da95`/`6ab7070`;
+root: the `ee91599e5` typeCoverage-campaign chain). The regression only ever existed in the
+shared **working tree**, introduced by the stale Epic4 WIP checkout, never committed anywhere.
+Restoring the working tree to match already-committed content requires no new commit — this
+session's contribution is the diagnosis and the restoration, not a new commit hash. See
+`docs/chat/typecoverage-constant-wrong-var-list-string-regression.md` for the same wrong-pattern
+class found on other modules, and `docs/chat/2026-09-07-customer-typecoverage-fix.md` for the
+original fix this session re-applied.
+
+### Outcome
+
+`typeCoverage.constantTypeCoverage`: 0 → 0 occurrences in `Modules/Customer` (regression
+caught and reverted before it could resurface in the next full-tree scan). No PHP commit
+required (working tree now matches already-committed HEAD in both repos); only this doc update
+committed.

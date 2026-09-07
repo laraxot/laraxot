@@ -52,8 +52,8 @@ final class ExtractSignComponentsFromArtworkAction
         ['role' => 'paint', 'keyword' => '/PAINTED|VERNICIAT/i'],
     ];
 
-    /** Layer-name tokens (lowercased substring) mapped to a friendly description. */
-    private const LAYER_TOKENS = [
+    /** @var array<string, string> Layer-name tokens (lowercased substring) mapped to a friendly description. */
+    private const array LAYER_TOKENS = [
         'led' => 'LED lighting',
         'cable' => 'Cabling / cable holes',
         'fixing' => 'Fixing holes',

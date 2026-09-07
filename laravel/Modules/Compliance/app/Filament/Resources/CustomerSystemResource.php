@@ -31,9 +31,9 @@ final class CustomerSystemResource extends XotBaseResource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-cpu-chip';
 
-    protected const ACCOUNT_FEATURE_ADMIN = 'admin.customer_systems';
+    protected const string ACCOUNT_FEATURE_ADMIN = 'admin.customer_systems';
 
-    protected const ACCOUNT_FEATURE_ADMIN_DEFAULT = false;
+    protected const bool ACCOUNT_FEATURE_ADMIN_DEFAULT = false;
 
     /**
      * Tipi di impianto gestiti (videosorveglianza, quadro elettrico, fotovoltaico).
