@@ -329,8 +329,9 @@ PROMPT;
         if ($raw === '') {
             return '';
         }
-        preg_match_all('/[A-Za-z0-9À-ÿ][A-Za-z0-9À-ÿ\s.,;:\/\-_€]{4,}/u', $raw, $matches);
-        $found = $matches[0];
+        $matchCount = preg_match_all('/[A-Za-z0-9À-ÿ][A-Za-z0-9À-ÿ\s.,;:\/\-_€]{4,}/u', $raw, $matches);
+        /** @var array<int, string> $found */
+        $found = $matchCount > 0 ? $matches[0] : [];
 
         return trim(implode("\n", array_slice($found, 0, 40)));
     }

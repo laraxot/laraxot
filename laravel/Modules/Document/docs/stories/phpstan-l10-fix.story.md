@@ -6,7 +6,7 @@ story_id: DOCUMENT-phpstan-l10-fix
 slug: phpstan-l10-fix
 status: done
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-07
 language: it-IT
 related:
   - ./phpstan-Document-fix.md
@@ -16,6 +16,19 @@ related:
 ---
 
 # Document module — PHPStan Level 10 verify + quality/test hardening
+
+## Update 2026-09-07
+
+The "0 errors" baseline below was invalidated the same evening (after this
+story closed) by an unrelated owner commit `6eacf7c38` disabling
+Larastan/Carbon/Pest extension includes in `phpstan.neon` repo-wide — see
+second-brain `project_phpstan_neon_larastan_disabled_2026_09_07.md`, owner
+confirmed keep that config as-is. Full-tree re-scan found 14 findings; fixed
+4 real ones (`method.notFound` on `Filesystem::mimeType()`, 3x `array|string`
+translation results fed into Filament `string`-typed params); the remaining
+10 are Pest's own `expect()` chain tripping `method.internalClass`, not
+fixable under current constraints (same structural class as the `@mixin`
+blocker). Full detail in `docs/coverage.md`.
 
 ## Problema
 

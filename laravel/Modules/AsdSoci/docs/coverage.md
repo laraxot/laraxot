@@ -28,6 +28,12 @@ metadata:
   il DB di test `workorder_data_test` non ha le migration applicate su quella connessione.
   Nessuna `migrate:fresh`/`--force` eseguita (dato sacro, decisione owner).
 
+## PHPInsights
+
+Ephemeral `/tmp` config (removing `ForbiddenSecurityIssues`, see
+`project_phpinsights_composer_lock_scoped_path.md`): Code 99.0, Complexity 90.5,
+Architecture 94.1, Style 90.4 — all above min-70.
+
 ## Stato
 
 - PHPStan: 2 -> 0.

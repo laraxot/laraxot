@@ -22,6 +22,8 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property numeric-string|null $default_markup_percent
  * @property int $sort_order
  * @property bool $is_active
+ *
+ * @method static Builder<WorkCenter> forContext(string $contextCode)
  */
 final class WorkCenter extends BaseModel
 {

@@ -31,6 +31,13 @@ final class UploadInterventionPhotos extends GatedXotBasePage
     /** @var array<string, mixed> */
     public array $data = [];
 
+    private static function stringTrans(string $key): string
+    {
+        $translated = __($key);
+
+        return is_string($translated) ? $translated : $key;
+    }
+
     public static function canAccess(): bool
     {
         return request()->is('operator/*')
@@ -58,7 +65,7 @@ final class UploadInterventionPhotos extends GatedXotBasePage
             ->components([
                 Hidden::make('intervention_id')->default($interventionId),
                 FileUpload::make('photos')
-                    ->label(__('documents.actions.upload_photos'))
+                    ->label($this->stringTrans('documents.actions.upload_photos'))
                     ->disk('public')
                     ->directory("media/interventions/{$interventionId}/photos")
                     ->image()
@@ -75,7 +82,7 @@ final class UploadInterventionPhotos extends GatedXotBasePage
     {
         return [
             Action::make('save')
-                ->label(__('documents.actions.save'))
+                ->label(self::stringTrans('documents.actions.save'))
                 ->action(function (): void {
                     $schema = $this->getSchema('form');
                     $state = $schema?->getState() ?? [];
@@ -110,6 +117,6 @@ final class UploadInterventionPhotos extends GatedXotBasePage
 
     public function getTitle(): string
     {
-        return __('documents.pages.upload_intervention_photos');
+        return self::stringTrans('documents.pages.upload_intervention_photos');
     }
 }

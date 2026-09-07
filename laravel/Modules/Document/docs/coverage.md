@@ -8,7 +8,43 @@ status: active
 
 # Coverage Baseline — Document Module
 
-## Overview
+## Update 2026-09-07 — regression from phpstan.neon, re-fixed
+
+The "0 errors" baseline below (and the 2026-09-06 parallel-wave re-verify) was
+invalidated later the same evening by an unrelated owner commit `6eacf7c38`
+(22:05 UTC) disabling the Larastan/Carbon/Pest extension includes in
+`phpstan.neon` repo-wide — see second-brain
+`project_phpstan_neon_larastan_disabled_2026_09_07.md`. Owner confirmed keep
+that config as-is. Re-verified against a full `Modules/` tree scan (isolated
+per-module scans undercount, see `docs/chat/phpstan-modules-zero.md`), found
+14 findings, 4 of them real:
+
+- `app/Actions/CreateMediaFromStoredFileAction.php:28` — `method.notFound` on
+  `Storage::disk($disk)->mimeType()`: `Illuminate\Contracts\Filesystem\Filesystem`
+  doesn't declare `mimeType()` (only the concrete `FilesystemAdapter` does).
+  Fixed with an `instanceof FilesystemAdapter` narrow before the call.
+- `app/Filament/Pages/UploadInterventionPhotos.php:61,78,113` —
+  `__()`/translation calls typed `array|string`, passed straight into
+  Filament's `label()`/`getTitle()` which want `string`. Fixed with a small
+  `stringTrans()` private helper narrowing to `is_string()` (falls back to the
+  key itself, never silently empty).
+- 10 residual `method.internalClass` in `tests/Feature/MediaActionsTest.php`
+  (Pest's own `expect()->toBe()`/`toBeNull()`/`toHaveCount()` chain) —
+  **not fixable under current constraints**, same structural class as the
+  previously documented `@mixin` blocker (Pest's own phpstan extension is
+  disabled repo-wide, owner decision; `@phpstan-ignore` comments banned by
+  policy). Left as-is, not a code defect.
+
+PHPStan: 14 -> 10 (all 10 residual are the structural Pest bucket).
+PHPMD: 1 pre-existing non-actionable `LongVariable` on
+`UploadInterventionPhotos.php:25` (`$shouldRegisterNavigation`, Filament base
+class property name, not renameable).
+PHPInsights (ephemeral `/tmp` config): Code 94.8, Complexity 95.2,
+Architecture 88.2, Style 97.6 — all above min-70.
+Pest: 2 passed, 4 failed — same pre-existing `document_media` table missing
+on the `document` mysql test connection documented below, unrelated to this fix.
+
+## Overview (2026-09-06, superseded above for the PHPStan section)
 
 Post-PHPStan Level 10 fixes (XOT-18.3). All type safety issues resolved; coverage established for ongoing quality gates.
 

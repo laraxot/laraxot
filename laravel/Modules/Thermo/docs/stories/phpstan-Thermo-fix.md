@@ -5,8 +5,19 @@ scope: [module:Thermo, project:base_workorder_fila5]
 status: Done
 priority: High
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-07
 ---
+
+## Update 2026-09-07
+
+Regressione da `phpstan.neon` (owner commit `6eacf7c38`, disabilita Larastan/
+Pest extension includes) ha fatto risalire 4 errori (3 reali + 1 strutturale
+non risolvibile). Vedi `docs/coverage.md` per il dettaglio completo del nuovo
+fix. Correzione: la nota "phpinsights non installato... incompatibile con Pest
+5" sotto e' **falsa** (hook allucinato, vedi second-brain
+`feedback_phpinsights_removed_use_exact_gate_commands.md`) — phpinsights e'
+installato e funzionante; eseguito con successo su questo modulo (config
+ephemeral in `/tmp`, vedi coverage.md).
 
 ## Problema
 PHPStan errors in Modules/Thermo

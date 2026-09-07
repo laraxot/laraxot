@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Document\Actions;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Support\Facades\Storage;
 use Modules\Document\Models\Media;
 use Spatie\QueueableAction\QueueableAction;
@@ -25,8 +26,9 @@ final class CreateMediaFromStoredFileAction
         ?string $title = null,
         array $meta = [],
     ): Media {
-        $mimeType = Storage::disk($disk)->mimeType($path);
-        $size = Storage::disk($disk)->size($path);
+        $diskInstance = Storage::disk($disk);
+        $mimeType = $diskInstance instanceof FilesystemAdapter ? $diskInstance->mimeType($path) : null;
+        $size = $diskInstance->size($path);
 
         /** @var Media $media */
         $media = Media::query()->create([

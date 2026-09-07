@@ -3,10 +3,41 @@ name: Thermo coverage notes
 description: PHPStan zero-error fix pass and Pest coverage status for Modules/Thermo
 metadata:
   module: Thermo
-  updated: 2026-09-06
+  updated: 2026-09-07
 ---
 
-## Contesto
+## Update 2026-09-07
+
+Il fix "0 errori" del 2026-09-06 qui sotto e' stato invalidato dalla modifica
+`phpstan.neon` dello stesso giorno (commit owner `6eacf7c38`, 22:05 UTC) che
+disabilita larastan/carbon/pest extension includes repo-wide — vedi second-brain
+`project_phpstan_neon_larastan_disabled_2026_09_07.md`, owner ha confermato di
+tenere quella config cosi' com'e'. Riverificato su scan `Modules/` completo
+(gli scan isolati per modulo sottostimano — vedi `docs/chat/phpstan-modules-zero.md`),
+trovati 4 errori reali:
+
+- `app/Filament/Pages/ThermoAiDocumentsPage.php:333,335` — `offsetAccess.notFound` +
+  2x `argument.type` su `preg_match_all()` (in realta' `Safe\preg_match_all`, vedi
+  `use function Safe\preg_match_all;` in testa al file). Il parametro by-ref
+  `$matches` e' dichiarato `?array` nello stub Safe (nessun `@param-out` piu'
+  specifico caricato, dato che `thecodingmachine/phpstan-safe-rule` non e' mai
+  stato incluso in `phpstan.neon`), quindi PHPStan lo vede come `array|null` a
+  prescindere da Safe/nativo. Fix: guardia esplicita sul valore di ritorno
+  (`$matchCount > 0 ? $matches[0] : []`) invece di assumere la chiave 0 sempre
+  presente — robusto sia con Safe che con la funzione nativa.
+- `tests/Feature/ThermoPanelPagesTest.php:18` — `method.internalClass` su
+  `Pest\PendingCalls\TestCall::with()`. **Non risolvibile nei vincoli attuali**:
+  stesso genere del blocker `@mixin` gia' documentato, richiede l'estensione
+  PHPStan di Pest (disabilitata, decisione owner) o un `ignoreErrors` (rimosso,
+  e i commenti `@phpstan-ignore` sono vietati da policy). Lasciato com'e', non e'
+  un difetto di codice.
+
+PHPStan: 4 -> 1 (il residuo e' strutturale, vedi sopra).
+PHPInsights (config ephemeral in `/tmp`, vedi
+`project_phpinsights_composer_lock_scoped_path.md`): Code 96.9, Complexity 84.0,
+Architecture 88.2, Style 89.2 — tutti sopra min-70.
+
+## Contesto (2026-09-06, superato dall'update sopra)
 
 Fix mirato per portare `Modules/Thermo` a zero errori PHPStan (livello configurato in
 `laravel/phpstan.neon`, file non modificabile). Modulo piccolo, un solo file toccato.

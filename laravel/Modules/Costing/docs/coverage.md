@@ -74,3 +74,40 @@ Stesse di Rating (vedi `Modules/Rating/docs/coverage.md`):
 |---|---:|---:|---|---:|
 | 2026-09-06 (baseline) | 10 | 0 (2-3 al 2° run) | non misurabile | 2 |
 | 2026-09-06 (fix) | 10 | 0 | 100.0 % | 0 |
+| 2026-09-07 (regressione + fix) | 10 | 0 | non rimisurata | 22 -> 19 (3 reali fissati, 19 residuo strutturale Pest) |
+
+## Update 2026-09-07
+
+Il baseline "0 errori" sopra e' stato invalidato dalla modifica owner
+`6eacf7c38` (22:05 UTC, 2026-09-06) che disabilita gli include Larastan/
+Carbon/Pest in `phpstan.neon` repo-wide — vedi second-brain
+`project_phpstan_neon_larastan_disabled_2026_09_07.md`, owner ha confermato
+di tenere quella config cosi' com'e'. Scan completo (`Modules/` intero, gli
+scan isolati per modulo sottostimano): 22 findings, 3 reali:
+
+- `tests/Feature/WorkCenterTest.php:15` — `method.notFound` su
+  `WorkCenter::query()->forContext()` + 2x `method.nonObject` a cascata
+  (`->pluck()->all()`): senza Larastan, PHPStan non risolve gli scope
+  Eloquent dinamici. Fix: annotazione `@method static Builder<WorkCenter>
+  forContext(string $contextCode)` sulla classe `WorkCenter` — PHPStan
+  nativo (non Larastan) risolve i `@mixin`/`@method` generici dichiarati
+  sul model quando si chiama tramite `Builder<Model>` (verificato: fix
+  sufficiente da solo, senza toccare `phpstan.neon`).
+- 19 residui `method.internalClass` su `expect()->toBe()`/`toContain()` in
+  `WorkCenterTest.php` e `MarkupResolverTest.php` — **non risolvibili nei
+  vincoli attuali** (stessa classe strutturale del blocker `@mixin` gia'
+  documentato; estensione Pest disabilitata, `@phpstan-ignore` vietato da
+  policy). Lasciati com'erano, non sono un difetto di codice.
+
+**Incidente concorrente rilevato e corretto**: durante questo fix, un edit
+non documentato e non tracciato (nessun claim in `docs/chat/`, nessun lock)
+ha rimosso `use HasXotFactory;` (e il relativo import) da `WorkCenter.php`,
+in contraddizione con la story del 2026-09-06 sopra che dichiara esplicitamente
+la trait "gia' in uso nel model" come parte della soluzione. Nessun codice
+vivente chiama oggi `WorkCenter::factory()` (i test usano `WorkCenterFactory::new()`
+direttamente), ma la rimozione ripete lo stesso pattern di incidente ricorrente
+gia' documentato su `HasXotFactory.php` stesso ("rimosso per errore e
+ripristinato 3 volte") — trait ripristinata qui prima di committare.
+
+PHPInsights (config ephemeral in `/tmp`): Code 97.9, Complexity 100,
+Architecture 94.1, Style 92.8 — tutti sopra min-70.

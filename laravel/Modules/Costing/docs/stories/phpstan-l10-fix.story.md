@@ -7,7 +7,7 @@ story_id: COSTING-18.16
 slug: phpstan-l10-fix
 status: done
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-07
 language: it-IT
 related:
   - ../../Xot/docs/stories/18.16.costing-phpstan-l10-fix.story.md
@@ -17,6 +17,14 @@ tags: [phpstan, level-10, pest, database-transactions]
 ---
 
 # COSTING-18.16 — PHPStan level max a zero + isolamento test
+
+## Update 2026-09-07
+
+Regressione da `phpstan.neon` (owner commit `6eacf7c38`, Larastan/Pest
+extension includes disabilitati) ha fatto risalire 22 findings (3 reali,
+19 strutturali Pest). Fix + dettaglio completo in `docs/coverage.md`. Corretto
+anche un edit concorrente non tracciato che aveva rimosso `use HasXotFactory;`
+da `WorkCenter.php` — ripristinato prima del commit.
 
 ## Nota su story precedente
 
