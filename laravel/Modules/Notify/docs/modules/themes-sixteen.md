@@ -27,14 +27,7 @@ Segui questi passaggi per risolvere:
 
 1. Vai nella cartella del tema:
    ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
    cd /var/www/html/_bases/base_fixcity_fila5_mono/laravel/Themes/Sixteen
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-   cd /var/www/html/_bases/base_fixcity_fila5_mono/laravel/Themes/Sixteen
->>>>>>> a988596b (first)
    cd /var/www/html/_bases/base_ptvx_fila5_mono/laravel/Themes/Sixteen
    ```
 2. Esegui il comando:

@@ -34,16 +34,8 @@ database/Seeders/
 Ho creato questi documenti:
 
 1. **[Database Naming Convention](docs/conventions/database-naming.md)** - Guida completa
-<<<<<<< HEAD
-<<<<<<< HEAD
 2. **[AGENTS.md Update](AGENTS.md)** - Rule aggiunta alle regole architetturali
 3. **[GitHub Issue #5](https://github.com/laraxot/base_fixcity_fila5/issues/5)** - Tracking delle correzioni
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-2. **[AGENTS.md Update](AGENTS.md)** - Rule aggiunta alle regole architetturali
-3. **[GitHub Issue #5](https://github.com/laraxot/base_fixcity_fila5/issues/5)** - Tracking delle correzioni
->>>>>>> a988596b (first)
 2. **[agents.md Update](agents.md)** - Rule aggiunta alle regole architetturali
 3. **[GitHub Issue #5](https://github.com/laraxot/platform/issues/5)** - Tracking delle correzioni
 
@@ -64,14 +56,7 @@ Ho creato questi documenti:
 - [ ] AI
 - [ ] Cms
 - [ ] Comment
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Fixcity
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [ ] Fixcity
->>>>>>> a988596b (first)
 - [ ] App
 - [ ] Gdpr
 - [ ] Geo

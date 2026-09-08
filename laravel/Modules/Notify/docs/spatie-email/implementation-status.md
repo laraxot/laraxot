@@ -6,11 +6,11 @@ Questo documento tiene traccia dello stato di implementazione delle email utiliz
 
 1. **Struttura Base**:
    - Configurato il modello `MailTemplate` per utilizzare il trait `HasTranslations`
-   - Aggiornato il metodo `casts()` per seguire le convenzioni Laravel 13
+   - Aggiornato il metodo `casts()` per seguire le convenzioni Laravel 12
    - Creato documentazione su best practices per gestione traduzioni
 
 2. **Documentazione**:
-   - Creata documentazione sulle proprietà traducibili in Laravel 13 
+   - Creata documentazione sulle proprietà traducibili in Laravel 12 
    - Aggiornati i documenti sulla gestione delle traduzioni mancanti
    - Creato documento sulle best practices per l'implementazione del pacchetto
    - Documentate le regole per la localizzazione
@@ -43,7 +43,7 @@ Potrebbero esserci altri modelli nel modulo Notify che utilizzano ancora la sint
 
 2. **Refactoring Modelli**:
    - Verificare e aggiornare tutti i modelli che utilizzano il trait `HasTranslations`
-   - Assicurarsi che tutti i modelli seguano le convenzioni Laravel 13 per i metodi
+   - Assicurarsi che tutti i modelli seguano le convenzioni Laravel 12 per i metodi
    - Implementare best practices per la gestione delle traduzioni mancanti
 
 3. **Testing**:

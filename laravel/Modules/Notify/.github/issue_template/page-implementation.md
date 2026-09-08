@@ -23,16 +23,8 @@ assignees: ''
 **View Source**: `view-source:https://italia.github.io/design-comuni-pagine-statiche/sito/[page].html`
 
 ### Target Page
-<<<<<<< HEAD
-<<<<<<< HEAD
 **FixCity**: http://fixcity.local/it/tests/[slug]  
 **View Source**: `view-source:http://fixcity.local/it/tests/[slug]`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**FixCity**: http://fixcity.local/it/tests/[slug]  
-**View Source**: `view-source:http://fixcity.local/it/tests/[slug]`
->>>>>>> a988596b (first)
 **FixCity**: http://ptv.local/it/tests/[slug]  
 **View Source**: `view-source:http://ptv.local/it/tests/[slug]`
 
@@ -47,14 +39,7 @@ assignees: ''
 ## Implementation Plan
 
 ### 1. Create JSON Content File
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `laravel/config/local/fixcity/database/content/pages/tests.[slug].json`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `laravel/config/local/fixcity/database/content/pages/tests.[slug].json`
->>>>>>> a988596b (first)
 **File**: `laravel/config/local/ptv/database/content/pages/tests.[slug].json`
 
 ```json
@@ -85,14 +70,7 @@ assignees: ''
       "data": {
         "address": "Via Roma 1, FixCity",
         "phone": "+39 0123 456789",
-<<<<<<< HEAD
-<<<<<<< HEAD
         "email": "info@comune.fixcity.it"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        "email": "info@comune.fixcity.it"
->>>>>>> a988596b (first)
         "email": "info@comune.ptv.it"
       }
     }

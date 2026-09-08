@@ -18,16 +18,6 @@ class NotificationLogForm extends XotBaseResourceForm
     {
         return [
             Section::make([
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'name' => TextInput::make('name')])];
-=======
-                'name' => TextInput::make('name'),
-            ]),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'name' => TextInput::make('name')])];
->>>>>>> a988596b (first)
     }
 }

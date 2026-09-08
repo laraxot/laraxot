@@ -133,15 +133,7 @@ Quando si utilizza `Schema::hasColumn()` direttamente, si bypassa tutta questa l
 
 ## Riferimenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Xot Module Documentation](/var/www/html/saluteora/laravel/modules/xot/docs/migrations.md)
 - [JSON Migration Best Practices](/var/www/html/saluteora/laravel/modules/notify/docs/mail-templates/json-migration-fixes-1.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Xot Module Documentation](/var/www/html/saluteora/laravel/modules/xot/docs/migrations.md)
-- [JSON Migration Best Practices](/var/www/html/saluteora/laravel/modules/notify/docs/mail-templates/json-migration-fixes-1.md)
->>>>>>> a988596b (first)
 - [Xot Module Documentation]([project-root]/laravel/modules/xot/docs/migrations.md)
 - [JSON Migration Best Practices]([project-root]/laravel/modules/notify/docs/mail-templates/json-migration-fixes-1.md)

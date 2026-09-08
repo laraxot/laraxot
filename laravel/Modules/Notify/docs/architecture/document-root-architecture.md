@@ -8,13 +8,6 @@ qmd: "document-root-architecture document root architecture"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  - "../../../Xot/docs/wiki/rules/public-path-public-html.md"
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
   - "./config-structure.md"
   - "./dto-structure-conventions.md"
   - "./dto-structure-rules.md"
@@ -27,14 +20,6 @@ related:
 
 # Document Root Architecture
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-> **SSoT progetto:** [public-path-is-public-html](../../../../../docs/wiki/memories/public-path-is-public-html.md) — `public_path()` = `public_html/`, mai `laravel/public/`.
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ## Overview
 
 This project uses a **custom Laravel public path architecture** where the web-accessible document root is `public_html/` instead of the default `laravel/public/`.
@@ -42,14 +27,7 @@ This project uses a **custom Laravel public path architecture** where the web-ac
 ## Architecture
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 /var/www/_bases/base_fixcity_fila5/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-/var/www/_bases/base_fixcity_fila5/
->>>>>>> a988596b (first)
 /var/www/_bases/base_ptvx_fila5/
 ├── public_html/                    ← ACTUAL DocumentRoot (Apache serves from here)
 │   ├── index.php                   ← Entry point
@@ -126,23 +104,10 @@ The entry point defines `LARAVEL_DIR` constant pointing to the Laravel installat
 
 ### 4. Apache Configuration
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 **Active VHost**: `/etc/apache2/sites-enabled/fixcity.local.conf`
 
 ```apache
 DocumentRoot /var/www/_bases/base_fixcity_fila5/public_html
-<<<<<<< HEAD
-=======
-**Active VHost**: `/etc/apache2/sites-enabled/laraxot.local.conf`
-
-```apache
-DocumentRoot /var/www/_bases/base_ptvx_fila5/public_html
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ```
 
 ## Verification
@@ -150,25 +115,11 @@ DocumentRoot /var/www/_bases/base_ptvx_fila5/public_html
 Test that `public_path()` resolves correctly:
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 cd /var/www/_bases/base_fixcity_fila5/laravel
 php -r "require 'vendor/autoload.php'; \$app = require 'bootstrap/app.php'; echo public_path() . PHP_EOL;"
 ```
 
 **Expected output**: `/var/www/_bases/base_fixcity_fila5/public_html`
-<<<<<<< HEAD
-=======
-cd /var/www/_bases/base_ptvx_fila5/laravel
-php -r "require 'vendor/autoload.php'; \$app = require 'bootstrap/app.php'; echo public_path() . PHP_EOL;"
-```
-
-**Expected output**: `/var/www/_bases/base_ptvx_fila5/public_html`
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 ## Why Both Directories Exist
 

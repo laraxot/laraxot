@@ -144,7 +144,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 class MyResource extends XotBaseResource
 {
     // Usa getFormSchema() invece di form()
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             // schema fields

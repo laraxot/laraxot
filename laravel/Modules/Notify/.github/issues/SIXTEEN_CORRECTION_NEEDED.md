@@ -108,16 +108,8 @@ public function boot(): void
 
 After fixes:
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] `http://fixcity.local/it/tests/argomenti` loads correctly
 - [ ] `http://fixcity.local/it/tests/appuntamento-06-conferma` loads correctly
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [ ] `http://fixcity.local/it/tests/argomenti` loads correctly
-- [ ] `http://fixcity.local/it/tests/appuntamento-06-conferma` loads correctly
->>>>>>> a988596b (first)
 - [ ] `http://ptv.local/it/tests/argomenti` loads correctly
 - [ ] `http://ptv.local/it/tests/appuntamento-06-conferma` loads correctly
 - [ ] All Tailwind classes render correctly

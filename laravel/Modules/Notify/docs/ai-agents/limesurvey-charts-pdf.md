@@ -61,14 +61,7 @@ Usare `MakePdf2Action` con `AnswersFilterData`.
 - [LimeSurvey Deep Dive](../../laravel/Modules/Limesurvey/docs/limesurvey-deep-dive-architecture.md)
 - [Professional Charts Guide](../../laravel/Modules/Chart/docs/filament-charts-professional-guide.md)
 - [JpGraph 4.4.3 Reference](../../laravel/Modules/Chart/docs/jpgraph-4-4-3-reference.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [PDF Generation Guide](../../laravel/Modules/Quaeris/docs/pdf-generation-with-charts.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [PDF Generation Guide](../../laravel/Modules/Quaeris/docs/pdf-generation-with-charts.md)
->>>>>>> a988596b (first)
 - [PDF Generation Guide](../../laravel/Modules/App/docs/pdf-generation-with-charts.md)
 
 ## Collegamenti

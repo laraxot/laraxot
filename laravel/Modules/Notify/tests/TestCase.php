@@ -37,10 +37,6 @@ use function Safe\file_get_contents;
 abstract class TestCase extends XotBaseTestCase
 {
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
      * @return array<string, mixed>
      */
     public static function assertNotifyArray(mixed $value): array
@@ -52,11 +48,6 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-<<<<<<< HEAD
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
      * @template T of object
      *
      * @param  ReflectionClass<T>  $reflection
@@ -144,7 +135,7 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
-        $this->prepareSharedFixcitySqliteForTesting();
+        $this->prepareSharedSqliteForTesting();
 
         parent::setUp();
 
@@ -206,7 +197,7 @@ abstract class TestCase extends XotBaseTestCase
 
     /**
      * Il sqlite condiviso non contiene sempre le tabelle notify complete: i test DB vanno saltati, non falliti.
-     * Se la connessione punta a fixcity_data.sqlite (offline condiviso) trattiamo il dominio come unavailable
+     * Se la connessione punta a il file sqlite condiviso (offline) trattiamo il dominio come unavailable
      * salvo override esplicito NOTIFY_DB_TESTS=1.
      */
     public static function notifyDbUnavailable(): bool
@@ -249,7 +240,7 @@ abstract class TestCase extends XotBaseTestCase
     {
         try {
             if (DB::connection('notify')->getDriverName() === 'sqlite') {
-                // Qualsiasi sqlite (fixcity, XOT_TEST_SQLITE, :memory:) è offline rispetto a MySQL notify.
+                // Qualsiasi sqlite (file condiviso, XOT_TEST_SQLITE, :memory:) è offline rispetto a MySQL notify.
                 return ! self::notifyDbTestsEnabled();
             }
 
@@ -259,7 +250,7 @@ abstract class TestCase extends XotBaseTestCase
             $default = is_string($defaultRaw) ? $defaultRaw : '';
 
             foreach ([$database, $default] as $path) {
-                if ($path !== '' && str_contains($path, 'fixcity_data.sqlite')) {
+                if ($path !== '' && str_contains($path, basename(self::sharedSqlitePath()))) {
                     return true;
                 }
             }
@@ -275,16 +266,7 @@ abstract class TestCase extends XotBaseTestCase
         return [
             ...parent::getPackageProviders($app),
             UserServiceProvider::class,
-<<<<<<< HEAD
-<<<<<<< HEAD
             NotifyServiceProvider::class];
-=======
-            NotifyServiceProvider::class,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            NotifyServiceProvider::class];
->>>>>>> a988596b (first)
     }
 
     /**

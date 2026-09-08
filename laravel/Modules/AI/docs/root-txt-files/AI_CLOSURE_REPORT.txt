@@ -20,7 +20,7 @@ COMPLETED STEPS:
    - Test configuration issue resolved (removed duplicate uses(TestCase::class))
    - BLOCKER: Unresolved git merge conflict markers in Modules/Activity/app/Models/StoredEvent.php
      Lines 67-71 contain merge markers that cause PHP parse error
-     Markers: <<<<<<< .merge_file_fzPFS8 / ======= / >>>>>>> .merge_file_3vbLWT
+     Markers: 
 
 BLOCKED STEPS:
 - Step 3 (Pest tests): Cannot complete due to parse error in Activity module

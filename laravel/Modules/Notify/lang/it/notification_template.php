@@ -13,16 +13,7 @@ return [
         'preview_data' => ['label' => 'Dati di Anteprima', 'helper' => 'Dati JSON per l\'anteprima', 'tooltip' => '', 'helper_text' => '', 'description' => '', 'placeholder' => 'preview_data'],
         'resetFilters' => ['label' => 'resetFilters', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
         'applyFilters' => ['label' => 'applyFilters', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-<<<<<<< HEAD
-<<<<<<< HEAD
         'attachments' => ['label' => 'attachments', 'placeholder' => 'attachments', 'helper_text' => 'attachments', 'description' => 'attachments']],
-=======
-        'attachments' => ['label' => 'attachments', 'placeholder' => 'attachments', 'helper_text' => 'attachments', 'description' => 'attachments'],
-    ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'attachments' => ['label' => 'attachments', 'placeholder' => 'attachments', 'helper_text' => 'attachments', 'description' => 'attachments']],
->>>>>>> a988596b (first)
     'columns' => ['name' => 'Nome', 'subject' => 'Oggetto', 'type' => 'Tipo', 'created_at' => 'Creato il', 'updated_at' => 'Aggiornato il'],
     'actions' => [
         'preview' => 'Anteprima',
@@ -31,25 +22,8 @@ return [
         'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
         'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
         'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
         'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit']],
     'enums' => [
         'notification_type' => ['email' => 'Email', 'sms' => 'SMS', 'push' => 'Notifica Push']],
     'label' => 'Notification Template',
     'plural_label' => 'Notification Template (Plurale)'];
-<<<<<<< HEAD
-=======
-        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
-    ],
-    'enums' => [
-        'notification_type' => ['email' => 'Email', 'sms' => 'SMS', 'push' => 'Notifica Push'],
-    ],
-    'label' => 'Notification Template',
-    'plural_label' => 'Notification Template (Plurale)',
-];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)

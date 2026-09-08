@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ---
 title: "Il Grande Dibattito Furioso: PHPStan Level 10 - La Verità Assoluta"
 type: concept
@@ -20,7 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
->>>>>>> 2024e2e7 (.)
 # Il Grande Dibattito Furioso: PHPStan Level 10 - La Verità Assoluta
 
 **Data**: 2025-01-22
@@ -186,18 +183,10 @@ Ogni modulo corretto è un traguardo.
 
 - [PHPStan Errors Philosophy](./phpstan-errors-philosophy.md)
 - [Filament 4 Actions Namespace](./filament-4-actions-namespace.md)
-<<<<<<< HEAD
-- [DRY/KISS Principles](../../../docs/architecture/dry-kiss-principles.md)
-=======
 - [DRY/KISS Principles](../../../../docs/architecture/dry-kiss-principles.md)
->>>>>>> 2024e2e7 (.)
 
 ---
 
 *"La type safety non è un optional - è un REQUISITO. Ogni errore PHPStan è un bug potenziale. Correggiamoli tutti, uno alla volta, con pazienza e determinazione."*
 
-<<<<<<< HEAD
 **Il Purista ha vinto. La type safety è sacra. Non profanarla mai.**
-=======
-**Il Purista ha vinto. La type safety è sacra. Non profanarla mai.**
->>>>>>> 2024e2e7 (.)

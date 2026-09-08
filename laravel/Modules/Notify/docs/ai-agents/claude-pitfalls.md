@@ -10,7 +10,7 @@ Errori comuni da evitare.
 ---
 
 ### 2. ❌ Connessioni Per-Modulo in Config
-**✅ CORRETTO**: Seguire Laravel 13 standard - solo driver connections
+**✅ CORRETTO**: Seguire Laravel 12 standard - solo driver connections
 
 ---
 

@@ -28,27 +28,11 @@ class SmsActionFactory
      */
     /** @var list<string> */
     protected array $supportedDrivers = [
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
         'smsfactor'];
 
     /** @var array<string, string> */
     protected array $driverAliases = [
         'smsfac' => 'smsfactor'];
-<<<<<<< HEAD
-=======
-        'smsfactor',
-    ];
-
-    /** @var array<string, string> */
-    protected array $driverAliases = [
-        'smsfac' => 'smsfactor',
-    ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
     /**
      * Crea un'azione SMS basata sul driver specificato o su quello predefinito.
@@ -80,16 +64,7 @@ class SmsActionFactory
             Log::error('SMS driver class not found', [
                 'driver' => $driver,
                 'normalized' => $normalizedDriver,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'className' => $className]);
-=======
-                'className' => $className,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'className' => $className]);
->>>>>>> a988596b (first)
 
             throw new Exception(
                 'Unsupported SMS driver: '.(is_string($driver) ? $driver : '').". Class {$className} not found.",

@@ -5,21 +5,8 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Feature;
 
 use Illuminate\Support\Facades\File;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
 
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class)->group('notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use PHPUnit\Framework\Assert;
-
->>>>>>> a988596b (first)
 describe('Email Templates', function (): void {
     test('_html_template_contains_optional_function', function (): void {
         $filePath = base_path('Modules/Notify/resources/views/emails/html.blade.php');

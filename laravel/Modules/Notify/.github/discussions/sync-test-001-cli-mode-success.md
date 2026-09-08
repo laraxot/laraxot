@@ -28,14 +28,7 @@ body:
         ℹ️ [2026-03-13 13:58:45] Configurazione avanzata git...
         ✅ [2026-03-13 13:58:45] Configurazione git completata con successo
         ℹ️ [2026-03-13 13:58:45] CI environment detected, skipping backup
-<<<<<<< HEAD
-<<<<<<< HEAD
         ✅ Found gitmodules.ini at: /var/www/_bases/base_fixcity_fila5/gitmodules.ini
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        ✅ Found gitmodules.ini at: /var/www/_bases/base_fixcity_fila5/gitmodules.ini
->>>>>>> a988596b (first)
         ✅ Found gitmodules.ini at: /var/www/_bases/base_ptv_fila5/gitmodules.ini
         🔄 Inizio sincronizzazione di 1 submodules...
         ---------------------------------------------------

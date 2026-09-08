@@ -17,21 +17,13 @@ describe('SendAgiletelecomSMSv2Action', function () {
     });
 
     it('implements SmsActionContract', function () {
-<<<<<<< HEAD
         $action = new SendAgiletelecomSMSv2Action;
-=======
-        $action = new SendAgiletelecomSMSv2Action();
->>>>>>> a988596b (first)
 
         Assert::assertInstanceOf(SmsActionContract::class, $action);
     });
 
     it('has execute method with correct signature', function () {
-<<<<<<< HEAD
         $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action);
-=======
-        $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action());
->>>>>>> a988596b (first)
         $method = $reflection->getMethod('execute');
 
         expect($method->isPublic())->toBeTrue();
@@ -39,11 +31,7 @@ describe('SendAgiletelecomSMSv2Action', function () {
     });
 
     it('execute accepts SmsData parameter', function () {
-<<<<<<< HEAD
         $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action);
-=======
-        $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action());
->>>>>>> a988596b (first)
         $method = $reflection->getMethod('execute');
         $params = $method->getParameters();
         $type = $params[0]->getType();
@@ -53,11 +41,7 @@ describe('SendAgiletelecomSMSv2Action', function () {
     });
 
     it('execute returns array', function () {
-<<<<<<< HEAD
         $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action);
-=======
-        $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action());
->>>>>>> a988596b (first)
         $method = $reflection->getMethod('execute');
         $returnType = $method->getReturnType();
 
@@ -66,11 +50,7 @@ describe('SendAgiletelecomSMSv2Action', function () {
     });
 
     it('uses strict types', function () {
-<<<<<<< HEAD
         $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action);
-=======
-        $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action());
->>>>>>> a988596b (first)
         $filename = $reflection->getFileName();
 
         expect($filename)->not->toBeNull();
@@ -80,21 +60,13 @@ describe('SendAgiletelecomSMSv2Action', function () {
     });
 
     it('has correct namespace', function () {
-<<<<<<< HEAD
         $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action);
-=======
-        $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action());
->>>>>>> a988596b (first)
 
         expect($reflection->getNamespaceName())->toBe('Modules\\Notify\\Actions\\SMS');
     });
 
     it('has required imports', function () {
-<<<<<<< HEAD
         $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action);
-=======
-        $reflection = new ReflectionClass(new SendAgiletelecomSMSv2Action());
->>>>>>> a988596b (first)
         $filename = $reflection->getFileName();
         /** @var string $filename */
         $content = \Safe\file_get_contents($filename);
@@ -104,20 +76,10 @@ describe('SendAgiletelecomSMSv2Action', function () {
     });
 
     it('does not use QueueableAction trait', function () {
-<<<<<<< HEAD
         $traits = \Safe\class_uses(new SendAgiletelecomSMSv2Action);
 
-<<<<<<< HEAD
         expect($traits)->not->toContain('Spatie\\QueueableAction\\QueueableAction');
 
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        $traits = \Safe\class_uses(new SendAgiletelecomSMSv2Action());
-
-        expect($traits)->not->toContain('Spatie\\QueueableAction\\QueueableAction');
-
->>>>>>> a988596b (first)
         expect($traits)->toContain('Spatie\\QueueableAction\\QueueableAction');
     });
 });

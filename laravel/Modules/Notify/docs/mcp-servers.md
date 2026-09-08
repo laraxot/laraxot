@@ -50,7 +50,7 @@ MCP (Model Context Protocol) servers provide AI assistants with persistent memor
 ### laravel-boost
 - **Type**: Laravel-specific
 - **Command**: `php artisan boost:mcp`
-- **Use**: Laravel 13, Filament, Livewire documentation and best practices
+- **Use**: Laravel 12, Filament, Livewire documentation and best practices
 - **Module Docs**: [Xot MCP Guide](../Modules/Xot/docs/mcp-servers.md) | [Theme MCP Guide](../Themes/Sixteen/docs/mcp-servers.md)
 
 ### fetch
@@ -62,14 +62,7 @@ MCP (Model Context Protocol) servers provide AI assistants with persistent memor
 ### filesystem
 - **Type**: File operations
 - **Package**: `@modelcontextprotocol/server-filesystem`
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Scope**: `/var/www/_bases/base_fixcity_fila5`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Scope**: `/var/www/_bases/base_fixcity_fila5`
->>>>>>> a988596b (first)
 - **Scope**: `/var/www/_bases/base_ptv_fila5`
 - **Use**: Read/write files, search directories, explore project structure
 
@@ -117,14 +110,7 @@ MCP (Model Context Protocol) servers provide AI assistants with persistent memor
 - **Type**: AI Memory Infrastructure
 - **CLI**: `supermemory` (npm global)
 - **API Key**: Configured in `.mcp.json`
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Container Tag**: `fixcity`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Container Tag**: `fixcity`
->>>>>>> a988596b (first)
 - **Container Tag**: `ptv`
 - **Use**: 
   - Persistent project context across conversations
@@ -189,40 +175,19 @@ supermemory whoami
 
 ### Add Project Context
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 supermemory add --tag fixcity --file .supermemory/fixcity-context.md
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-supermemory add --tag fixcity --file .supermemory/fixcity-context.md
->>>>>>> a988596b (first)
 supermemory add --tag ptv --file .supermemory/ptv-context.md
 ```
 
 ### Search Memories
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 supermemory search "FixCity architecture" --tag fixcity
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-supermemory search "FixCity architecture" --tag fixcity
->>>>>>> a988596b (first)
 supermemory search "FixCity architecture" --tag ptv
 ```
 
 ### Get Profile
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 supermemory profile --tag fixcity --query "project preferences"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-supermemory profile --tag fixcity --query "project preferences"
->>>>>>> a988596b (first)
 supermemory profile --tag ptv --query "project preferences"
 ```
 

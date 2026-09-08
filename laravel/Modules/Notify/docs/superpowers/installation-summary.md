@@ -26,14 +26,7 @@ related:
 
 ## 📋 Overview
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Successfully installed and configured the **Superpowers** agentic skills framework for the FixCity platform.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Successfully installed and configured the **Superpowers** agentic skills framework for the FixCity platform.
->>>>>>> a988596b (first)
 Successfully installed and configured the **Superpowers** agentic skills framework for the Notify platform.
 
 ---
@@ -64,14 +57,7 @@ Successfully installed and configured the **Superpowers** agentic skills framewo
 | `docs/superpowers/installation.md` | 300+ | Installation guide |
 | `docs/superpowers/workflow.md` | 500+ | Workflow details |
 | `docs/superpowers/skills-reference.md` | 400+ | All skills reference |
-<<<<<<< HEAD
-<<<<<<< HEAD
 | `docs/superpowers/INDEX.md` | 300+ | Quick reference index |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| `docs/superpowers/INDEX.md` | 300+ | Quick reference index |
->>>>>>> a988596b (first)
 | `docs/superpowers/index.md` | 300+ | Quick reference index |
 
 #### Module Documentation
@@ -96,14 +82,7 @@ Successfully installed and configured the **Superpowers** agentic skills framewo
 | File | Updates |
 |------|---------|
 | `docs/index.md` | Added superpowers section, updated recent updates |
-<<<<<<< HEAD
-<<<<<<< HEAD
 | `docs/superpowers/INDEX.md` | Created new index |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| `docs/superpowers/INDEX.md` | Created new index |
->>>>>>> a988596b (first)
 | `docs/superpowers/index.md` | Created new index |
 
 ---
@@ -324,14 +303,7 @@ Agent: [Systematic debugging]
 - [Installation Guide](docs/superpowers/installation.md)
 - [Workflow Guide](docs/superpowers/workflow.md)
 - [Skills Reference](docs/superpowers/skills-reference.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Quick Index](docs/superpowers/INDEX.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Quick Index](docs/superpowers/INDEX.md)
->>>>>>> a988596b (first)
 - [Quick Index](docs/superpowers/index.md)
 - [Laravel Integration](laravel/Modules/docs/superpowers.md)
 

@@ -15,18 +15,8 @@ use Modules\Notify\Enums\ContactTypeEnum;
  * e offre metodi di utilità per la gestione degli indirizzi.
  *
  * @property Collection<int, Address> $addresses
-<<<<<<< HEAD
-<<<<<<< HEAD
  */
 /** @phpstan-ignore trait.unused */
-=======
- *
- */
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
- */
-/** @phpstan-ignore trait.unused */
->>>>>>> a988596b (first)
 trait HasContact
 {
     /**

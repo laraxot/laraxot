@@ -10,18 +10,7 @@ use Laravel\Jetstream\Team as JetstreamTeam;
 
 class Team extends JetstreamTeam
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     use \Modules\Xot\Models\Traits\HasXotFactory;
-=======
-    use HasFactory;
->>>>>>> f548be94 (.)
-=======
-    use HasFactory;
-=======
-    use \Modules\Xot\Models\Traits\HasXotFactory;
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
     /** @return array<string, string> */
     protected function casts(): array

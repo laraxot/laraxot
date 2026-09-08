@@ -8,14 +8,7 @@
 
 ## Overview
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Implementazione completa delle custom question types per Quaeris Fila5, basata sul pattern di Fila4 ma con ottimizzazioni moderne.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Implementazione completa delle custom question types per Quaeris Fila5, basata sul pattern di Fila4 ma con ottimizzazioni moderne.
->>>>>>> a988596b (first)
 Implementazione completa delle custom question types per App Fila5, basata sul pattern di Fila4 ma con ottimizzazioni moderne.
 
 ---
@@ -24,10 +17,6 @@ Implementazione completa delle custom question types per App Fila5, basata sul p
 
 ### 1. RootGroupedBf
 - **Pattern**: `custom:root_grouped_bf`
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 - **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
 - **Scopo**: Raggruppa domande per gid, calcola valutazioni 1-5 vs 6-10
 - **Test URL**: `/quaeris/admin/ats/survey-pdfs/16/question-charts/234`
@@ -85,40 +74,6 @@ Implementazione completa delle custom question types per App Fila5, basata sul p
 ### 6. AvgGroup2
 - **Pattern**: `custom:avg_group_2`
 - **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/AvgGroup2.php`
-<<<<<<< HEAD
-=======
-- **File**: `Modules/App/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
-- **Scopo**: Raggruppa domande per gid, calcola valutazioni 1-5 vs 6-10
-- **Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/234`
-
-### 2. MailResponseRate
-- **Pattern**: `custom:mail_response_rate`
-- **File**: `Modules/App/app/Actions/QuestionChart/Custom/MailResponseRate.php`
-- **Scopo**: Calcola tasso di risposta email
-- **Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/192`
-
-### 3. SmsResponseRate
-- **Pattern**: `custom:sms_response_rate`
-- **File**: `Modules/App/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
-- **Scopo**: Calcola tasso di risposta SMS
-- **Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/191`
-
-### 4. ContactsCompleted
-- **Pattern**: `custom:contacts_completed`
-- **File**: `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
-- **Scopo**: Conta contatti completati
-- **Test URL**: `/this-project/admin/ats/survey-pdfs/16/question-charts/190`
-
-### 5. ContactsCompleted2
-- **Pattern**: `custom:contacts_completed_2`
-- **File**: `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
-
-### 6. AvgGroup2
-- **Pattern**: `custom:avg_group_2`
-- **File**: `Modules/App/app/Actions/QuestionChart/Custom/AvgGroup2.php`
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 ---
 
@@ -257,14 +212,7 @@ return new AnswersChartData(
 
 ```bash
 cd laravel
-<<<<<<< HEAD
-<<<<<<< HEAD
 ./vendor/bin/pest Modules/Quaeris/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-./vendor/bin/pest Modules/Quaeris/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php
->>>>>>> a988596b (first)
 ./vendor/bin/pest Modules/App/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php
 ```
 
@@ -313,14 +261,7 @@ cd laravel
 
 ## GitHub Resources
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Issue #97**: https://github.com/laraxot/base_quaeris_fila5_mono/issues/97
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Issue #97**: https://github.com/laraxot/base_quaeris_fila5_mono/issues/97
->>>>>>> a988596b (first)
 - **Issue #97**: https://github.com/laraxot/base_ptvx_fila5_mono/issues/97
 - **Comments**: 7 (all fixes documented)
 - **Status**: ✅ Complete & Ready for Production

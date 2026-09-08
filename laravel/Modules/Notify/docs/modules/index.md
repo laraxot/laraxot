@@ -34,25 +34,11 @@ related:
 - `UpdaterTrait` - Tracking automatico created_by/updated_by
 - Pattern architetturali comuni
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 ### Fixcity - Business Logic
 **Path**: `Modules/Fixcity/`  
 **Responsabilità**: Core della piattaforma di segnalazioni  
 **Status**: ✅ Attivo - Modulo principale  
 **Docs**: [📖 Fixcity Docs](../../Modules/Fixcity/docs/links.md)
-<<<<<<< HEAD
-=======
-### App - Business Logic
-**Path**: `Modules/App/`  
-**Responsabilità**: Core della piattaforma di segnalazioni  
-**Status**: ✅ Attivo - Modulo principale  
-**Docs**: [📖 App Docs](../../Modules/App/docs/links.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 - Gestione segnalazioni cittadini
 - Workflow amministrativo
@@ -256,14 +242,7 @@ related:
 | Modulo | Status | PHPStan | Tests | Docs |
 |--------|---------|---------|-------|------|
 | Xot | ✅ Active | Level 9 | ✅ 80% | ✅ Complete |  
-<<<<<<< HEAD
-<<<<<<< HEAD
 | Fixcity | ✅ Active | Level 7 | ⚠️ 60% | 📝 Updating |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| Fixcity | ✅ Active | Level 7 | ⚠️ 60% | 📝 Updating |
->>>>>>> a988596b (first)
 | App | ✅ Active | Level 7 | ⚠️ 60% | 📝 Updating |
 | User | ✅ Active | Level 8 | ✅ 75% | ✅ Complete |
 | UI | ✅ Active | Level 8 | ✅ 70% | ✅ Complete |

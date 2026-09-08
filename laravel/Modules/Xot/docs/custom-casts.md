@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 ---
 title: "Custom casts"
 type: reference
@@ -10,6 +12,7 @@ note: "Convertito da custom_casts.txt (documento) da convert-docs-txt-to-md.py."
 # custom_casts
 
 <!-- Contenuto migrato da _docs/custom_casts.txt -->
+>>>>>>> laraxot/dev
 
 php artisan make:cast Address
 
@@ -17,8 +20,19 @@ https://medium.com/@SlyFireFox/laravel-models-3-common-custom-cast-examples-6d05
 
 https://dev.to/slyfirefox/laravel-models-3-common-custom-cast-examples-2com
 
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> laraxot/dev
 DB::table(‘orders’)
     ->where(‘address->postalCode’, ‘30582–0378’)
     ->get();
 
+<<<<<<< HEAD
+
 $table->json('address')->nullable();
+=======
+$table->json('address')->nullable();
+>>>>>>> laraxot/dev

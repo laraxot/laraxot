@@ -35,6 +35,7 @@ use Sushi\Sushi;
  * @property \Illuminate\Support\Carbon|null $deactivation_date
  * @property \Illuminate\Support\Carbon|null $installation_date
  * @property array<array-key, mixed>|null    $update_history
+ *
  * @method static Builder<static>|Module newModelQuery()
  * @method static Builder<static>|Module newQuery()
  * @method static Builder<static>|Module query()
@@ -46,10 +47,13 @@ use Sushi\Sushi;
  * @method static Builder<static>|Module wherePath($value)
  * @method static Builder<static>|Module wherePriority($value)
  * @method static Builder<static>|Module whereStatus($value)
+ *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $deleter
  * @property ProfileContract|null $updater
+ *
  * @method static ModuleFactory factory($count = null, $state = [])
+ *
  * @mixin \Eloquent
  */
 final class Module extends BaseModel

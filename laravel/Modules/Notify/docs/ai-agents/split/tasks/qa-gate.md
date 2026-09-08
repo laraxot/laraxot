@@ -161,14 +161,7 @@ Gate: CONCERNS → qa.qaLocation/gates/{epic}.{story}-{slug}.yml
 
 ## Key Principles
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Keep it minimal and predictable
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Keep it minimal and predictable
->>>>>>> a988596b (first)
 - Keep it minimal and forecastable
 - Fixed severity scale (low/medium/high)
 - Always write to standard path

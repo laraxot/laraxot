@@ -91,7 +91,7 @@ public static function findBySlugOrFail(string $slug): static
 Nel Resource Filament, il campo `slug` dovrebbe essere implementato con:
 
 ```php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         'name' => Forms\Components\TextInput::make('name')
@@ -168,12 +168,5 @@ L'implementazione del campo `slug` nella tabella `mail_templates` segue le migli
 
 - [Migration Structure](./migration_structure.md)
 - [Email Templates](../email_templates.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Spatie Email Usage Guide](../spatie_email_usage_guide.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Spatie Email Usage Guide](../spatie_email_usage_guide.md)
->>>>>>> a988596b (first)
 - [Spatie Email Usage Guide](../spatie-email-usage-guide.md)

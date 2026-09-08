@@ -15,16 +15,8 @@ La classe `SpatieEmail` ora utilizza l'API moderna di Laravel per gli allegati t
 $attachments = [
     [
         'path' => '/var/www/html/<nome progetto>/public_html/images/avatars/default.svg',
-<<<<<<< HEAD
-<<<<<<< HEAD
 'path' => '/var/www/html/Quaeris/public_html/images/avatars/default.svg',
         'path' => '/var/www/html/_bases/base_techplanner_fila5_mono/public_html/images/avatars/default.svg',
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-'path' => '/var/www/html/Quaeris/public_html/images/avatars/default.svg',
-        'path' => '/var/www/html/_bases/base_techplanner_fila5_mono/public_html/images/avatars/default.svg',
->>>>>>> a988596b (first)
 'path' => '/var/www/_bases/base_ptvx_fila5/public_html/images/avatars/default.svg',
         'path' => '/var/www/html/_bases/base_ptvx_fila5/public_html/images/avatars/default.svg',
         'as' => 'logo.svg',
@@ -216,12 +208,5 @@ public function test_can_send_email_with_attachments()
 
 - [ATTACHMENTS_USAGE.md](./attachments_usage.md)
 - [EMAIL_LAYOUTS_BEST_PRACTICES.md](../mail-templates/email_layouts_best_practices.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [SPATIE_MAIL_TEMPLATES_STRUCTURE.md](../mail-templates/spatie_mail_templates_structure.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [SPATIE_MAIL_TEMPLATES_STRUCTURE.md](../mail-templates/spatie_mail_templates_structure.md)
->>>>>>> a988596b (first)
 - [SPATIE_MAIL_TEMPLATES_STRUCTURE.md](../mail-templates/spatie-mail-templates-structure.md)

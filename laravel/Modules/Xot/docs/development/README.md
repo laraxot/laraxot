@@ -1,6 +1,19 @@
 # Sviluppo
 
 <<<<<<< HEAD
+Questa cartella contiene la documentazione relativa agli strumenti e alle pratiche di sviluppo.
+
+## File Contenuti
+
+- `git.md` - Utilizzo di Git nel progetto
+- `git-conflicts.md` - Risoluzione dei conflitti Git
+- `merge-conflicts.md` - Gestione dei merge
+- `merge-updates.md` - Aggiornamenti e merge
+
+## Note
+
+=======
+<<<<<<< HEAD
 [![Module](https://img.shields.io/badge/Module-Sviluppo-8B0000.svg)]()
 [![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
 [![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
@@ -39,12 +52,16 @@ Core module for the FixCity Platform.
 
 **Modulo** `Xot` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
 =======
+>>>>>>> laraxot/dev
 Questa documentazione è essenziale per tutti gli sviluppatori che lavorano al progetto.
 ## Collegamenti tra versioni di README.md
 * [README.md](bashscripts/project_docs/readme.md)
 * [README.md](bashscripts/project_docs/it/readme.md)
+<<<<<<< HEAD
+=======
 * [README.md](bashscripts/docs/readme.md)
 * [README.md](bashscripts/docs/it/readme.md)
+>>>>>>> laraxot/dev
 * [README.md](docs/laravel-app/phpstan/readme.md)
 * [README.md](docs/laravel-app/readme.md)
 * [README.md](docs/moduli/struttura/readme.md)
@@ -119,6 +136,8 @@ Questa documentazione è essenziale per tutti gli sviluppatori che lavorano al p
 * [README.md](../../../cms/project_docs/components/readme.md)
 * [README.md](../../../../themes/two/project_docs/readme.md)
 * [README.md](../../../../themes/one/project_docs/readme.md)
+<<<<<<< HEAD
+=======
 
 ---
 
@@ -299,3 +318,4 @@ Core module for the FixCity Platform.
 **Modulo** `Xot` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
 >>>>>>> 7f6cf6be (.)
 >>>>>>> 28b0298a (fix: phpstan issues)
+>>>>>>> laraxot/dev

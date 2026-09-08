@@ -55,35 +55,3 @@ Vedi [WorkOrder profile-schema-ownership](../../../WorkOrder/docs/profile-schema
 php artisan migrate
 # SHOW COLUMNS: id bigint unsigned auto_increment
 ```
-<<<<<<< HEAD
-
-## Fix restaurant_fila5 (2026-09-04)
-
-Errore 500 su `/it/auth/login` con stack:
-
-```
-XotData::getProfileClass()  →  Webmozart\Assert\InvalidArgumentException
-  cercava "Modules\TechPlanner\Models\Profile"  (inesistente)
-XotComposer → XotData::getProfileModel() → getProfileModelByUserId()
-  → Profile::firstOrCreate(['user_id' => $uuid])
-  → PDOException 1364 Field 'id' doesn't have a default value
-```
-
-Cause concorrenti:
-
-1. `config/local/restaurant/xot.php` + `config/local/restaurant/xra.php` + `config/localhost/xra.php` avevano `'main_module' => 'TechPlanner'` (modulo assente)
-2. `BaseProfile::booted()` settava `$model->id = (string) Str::uuid()` su tabella con `id` bigint AI → insert senza default
-3. `BaseProfile::$casts()` forzava `'id' => 'integer'` su colonna di tipo `int` — ridondante ma PHPStan L10 lo segnalava
-
-Correzioni:
-
-1. Allineato `main_module = 'User'` nei 3 file config → `XotData::getProfileClass()` risolve `Modules\User\Models\Profile`
-2. `BaseProfile::booted()` ora genera solo `uuid`, lascia `id` a MySQL (AI)
-3. `BaseProfile::casts()`: rimosso `'id' => 'integer'` (ora colonna int gestita da migration)
-4. Aggiunto `Livewire\LivewireServiceProvider::class` in `bootstrap/providers.php` (era implicito via Folio, ma per safety)
-5. Volt `LoginComponent` ora tipizza `Builder<UserContract>` invece di `Builder<Model>`
-6. Config `Modules/Cms/app/Config/xra.php` + lowercase duplicato: aggiunto `use Modules\User\Models\User; use Modules\User\Models\Profile;` per `::class` literals
-
-Verifica login funzionante → composer/pint/phpstan green sui file chiave.
-=======
->>>>>>> 87273113 (.)

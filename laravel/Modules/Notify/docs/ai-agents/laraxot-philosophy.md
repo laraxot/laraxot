@@ -101,14 +101,7 @@ See [laraxot-model-rules.md](laraxot-model-rules.md) for implementation details.
 
 1. **Autoloader clarity**: PHP autoloader cannot resolve duplicate files
 2. **Maintenance simplicity**: one authoritative location per file type
-<<<<<<< HEAD
-<<<<<<< HEAD
 3. **Predictable behavior**: consistent loading across environments
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-3. **Predictable behavior**: consistent loading across environments
->>>>>>> a988596b (first)
 3. **Forecastable behavior**: consistent loading across environments
 4. **DRY compliance**: eliminates redundant file locations
 5. **Test discovery**: Pest/PHPUnit rely on consistent directory structures

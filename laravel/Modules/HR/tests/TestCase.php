@@ -35,7 +35,7 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
-        $this->prepareSharedFixcitySqliteForTesting();
+        $this->prepareSharedSqliteForTesting();
 
         $this->ensureUsersStubForHrFk();
         $this->ensureHrSchema();

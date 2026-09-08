@@ -73,15 +73,7 @@ Per parametri critici come `sender`, non utilizzare valori predefiniti:
 
 ```php
 // ❌ ERRATO
-<<<<<<< HEAD
-<<<<<<< HEAD
-'sender' => env('NETFUN_SENDER', 'SaluteOra'),
-=======
 'sender' => env('NETFUN_SENDER', 'Quaeris'),
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-'sender' => env('NETFUN_SENDER', 'Quaeris'),
->>>>>>> a988596b (first)
 
 // ✅ CORRETTO
 'sender' => env('NETFUN_SENDER'),

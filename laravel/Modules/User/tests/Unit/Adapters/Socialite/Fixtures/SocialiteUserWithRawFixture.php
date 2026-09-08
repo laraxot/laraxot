@@ -5,10 +5,6 @@ declare(strict_types=1);
 namespace Modules\User\Tests\Unit\Adapters\Socialite\Fixtures;
 
 use Laravel\Socialite\Contracts\User as SocialiteUserContract;
-<<<<<<< HEAD
-use Modules\User\Models\User;
-=======
->>>>>>> 87273113 (.)
 
 /**
  * Socialite user stub con getRaw() per test adapter (no classi anonime).

@@ -3,10 +3,13 @@
 ## Critical Requirement
 
 All Filament action methods **MUST** return associative arrays with **string keys**, not indexed arrays.
+<<<<<<< HEAD
+=======
 When configuring actions inside a static `make()` method, the callback **MUST NOT**
 rely on `$this` from the closure scope. Capture the created action instance with
 `use ($action)` and narrow any payload read from `$arguments` / `$data` before
 delegating to typed services or actions.
+>>>>>>> laraxot/dev
 
 ## The Rule
 
@@ -139,6 +142,8 @@ When creating or updating Filament pages:
 
 ## Common Mistakes
 
+<<<<<<< HEAD
+=======
 ### Mistake 0: Using `$this` inside `static make()` callbacks
 ```php
 // ❌ WRONG
@@ -187,6 +192,7 @@ if (! is_string($year) && null !== $year) {
 $modelCopyAction->execute($modelClass, $fieldName, $year);
 ```
 
+>>>>>>> laraxot/dev
 ### Mistake 1: Indexed Array
 ```php
 // ❌ WRONG
@@ -286,4 +292,8 @@ Using string keys for Filament actions is **required** for:
 - ✅ Code readability
 - ✅ Maintainability
 
+<<<<<<< HEAD
 **Always use associative arrays with string keys for all Filament action methods.**
+=======
+**Always use associative arrays with string keys for all Filament action methods.**
+>>>>>>> laraxot/dev

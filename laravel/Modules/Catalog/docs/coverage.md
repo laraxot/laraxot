@@ -206,6 +206,31 @@ e chiuso il gate:
   completo di HEAD prima di aggiungere questa sezione: nessuna perdita di
   cronologia.
 
+## `prepareSharedFixcitySqliteForTesting` → `prepareSharedSqliteForTesting` rename — 2026-09-08
+
+**Bug:** `tests/TestCase.php` called `prepareSharedFixcitySqliteForTesting()`,
+a method that doesn't exist (host-project-specific name leaked into a
+module test base class — modules must stay host-agnostic, tracked in
+`Xot/docs/stories/18.34.moduli-e-script-agnostici-dal-progetto-ospite.story.md`).
+The real shared method is `prepareSharedSqliteForTesting()`
+(`Xot/tests/XotBaseTestCase.php:288`). Renamed both the call and the
+docblock reference; nothing else changed.
+
+**Verification:** PHPStan Modules/Catalog (clean cache): 0 errors (was 1
+`method.notFound`). PHPMD unchanged (same pre-existing `LongVariable` note
+on `tests/TestCase.php:27`, unrelated). Pest
+(`./vendor/bin/pest Modules/Catalog/tests --no-coverage`): 11 failed, 0
+assertions — `QueryException: Database file at path
+database/test_data.sqlite does not exist`. This is a different failure mode
+than the `6 failed/5 passed` documented above, caused by
+`XotBaseTestCase::sharedSqlitePath()` finding 2 candidate files via
+`glob(database_path('*.sqlite'))` (`database.sqlite` and
+`fixcity_data.sqlite`) instead of exactly 1, so it falls back to a
+`test_data.sqlite` path that doesn't exist — a pre-existing shared-fixture
+ambiguity from the same host-agnosticism gap (18.34), not caused by this
+rename. Out of scope for this fix; owner/18.34 to resolve the sqlite
+fixture naming.
+
 ## Next Steps
 
 1. Run full Pest suite with coverage: `php artisan test Modules/Catalog --coverage`

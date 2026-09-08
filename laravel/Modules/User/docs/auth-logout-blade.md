@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Implementazione Corretta di logout.blade.php"
 type: concept
@@ -23,20 +18,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Implementazione Corretta di logout.blade.php
 
 ## Collegamenti correlati
 - [Documentazione centrale](../../../docs/README.md)
 - [Collegamenti documentazione](../../../docs/collegamenti-documentazione.md)
 - [README modulo User](./README.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Convenzioni Path](./path-conventions.md)
 - [Struttura moduli](../../../docs/architecture/modules-structure.md)
 - [Logout Page Fix](./logout-page-fix.md)
@@ -46,27 +33,6 @@ related:
 - [Convenzioni Path](./path-conventions-2.md)
 - [Struttura moduli](../../../../docs/architecture/modules-structure.md)
 - [Logout Page Fix](./logout-page-fix-2.md)
-=======
-- [Convenzioni Path](./PATH_CONVENTIONS.md)
-- [Struttura moduli](../../../docs/architecture/modules-structure.md)
-- [Logout Page Fix](./LOGOUT_PAGE_FIX.md)
->>>>>>> f548be94 (.)
-=======
-- [Convenzioni Path](./PATH_CONVENTIONS.md)
-- [Struttura moduli](../../../docs/architecture/modules-structure.md)
-- [Logout Page Fix](./LOGOUT_PAGE_FIX.md)
-=======
-- [Convenzioni Path](./path-conventions.md)
-- [Struttura moduli](../../../docs/architecture/modules-structure.md)
-- [Logout Page Fix](./logout-page-fix.md)
-- [Documentazione centrale](../../../../docs/readme.md)
-- [Collegamenti documentazione](../../../../docs/collegamenti-documentazione.md)
-- [README modulo User](./readme.md)
-- [Convenzioni Path](./path-conventions-2.md)
-- [Struttura moduli](../../../../docs/architecture/modules-structure.md)
-- [Logout Page Fix](./logout-page-fix-2.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
 ## Posizione Corretta
 Il file `logout.blade.php` deve essere posizionato in:
@@ -160,12 +126,4 @@ laravel/Themes/One/resources/views/pages/auth/logout.blade.php
 
 - Il file `logout.blade.php` è una pagina Folio e non richiede configurazioni aggiuntive in `routes/web.php`.
 - La pagina è accessibile all'URL `/{locale}/auth/logout`.
-<<<<<<< HEAD
 - Per maggiori informazioni sulla gestione dell'autenticazione, consultare la documentazione Laravel ufficiale.
-=======
-- Per maggiori informazioni sulla gestione dell'autenticazione, consultare la documentazione Laravel ufficiale.
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

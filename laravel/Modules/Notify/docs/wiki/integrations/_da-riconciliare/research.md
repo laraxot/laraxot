@@ -26,7 +26,7 @@ updated: 2026-08-24
 - **Enterprise Solutions**: Spesso troppo rigide o costose. <nome progetto> offre flessibilità open-source con qualità enterprise.
 
 ## 3. Technical Research
-- **Framework Trends**: Adozione di Laravel 13 e Livewire 4 per massimizzare le prestazioni frontend senza la complessità di una SPA.
+- **Framework Trends**: Adozione di Laravel 12 e Livewire 4 per massimizzare le prestazioni frontend senza la complessità di una SPA.
 - **Code Quality**: Studio sull'impatto di PHPStan Level 10 nella riduzione dei bug a runtime del 40% in contesti modulari complessi.
 
 ## 4. Key Insights

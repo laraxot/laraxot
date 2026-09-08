@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Correzioni Ridondanze - Gennaio 2026"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Correzioni Ridondanze - Gennaio 2026
 
 ## Problema Identificato
@@ -137,8 +126,6 @@ Prima di committare, verifica:
 ## Collegamenti
 
 - [Redundancy Rules](../../xot/docs/filament/redundancy-rules.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Service Provider Architecture](./service-provider-architecture.md)
 - [XotBaseRelationManager Documentation](../../xot/docs/filament/relation-managers.md)
 
@@ -148,25 +135,3 @@ Prima di committare, verifica:
 
 *Ultimo aggiornamento: Gennaio 2026*
 *Ultimo aggiornamento: Gennaio 2026*
-=======
-=======
->>>>>>> 87273113 (.)
-- [Service Provider Architecture](./service_provider_architecture.md)
-- [XotBaseRelationManager Documentation](../../xot/docs/filament/relation-managers.md)
-
-*Ultimo aggiornamento: Gennaio 2026*
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Service Provider Architecture](./service-provider-architecture.md)
-- [XotBaseRelationManager Documentation](../../xot/docs/filament/relation-managers.md)
-
-- [Redundancy Rules](../../Xot/docs/filament/redundancy-rules.md)
-- [Service Provider Architecture](./service-provider-architecture.md)
-- [XotBaseRelationManager Documentation](../../Xot/docs/filament/relation-managers.md)
-
-*Ultimo aggiornamento: Gennaio 2026*
-*Ultimo aggiornamento: Gennaio 2026*
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

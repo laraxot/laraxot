@@ -25,46 +25,17 @@ namespace Modules\Notify\Tests\Unit\Models;
 
 use Modules\Notify\Database\Factories\ContactFactory;
 use Modules\Notify\Models\Contact;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\withoutExceptionHandling;
-<<<<<<< HEAD
-use Modules\User\Models\User;
 
 beforeEach(function (): void {
     withoutExceptionHandling();
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-use Modules\Xot\Tests\XotBasePest;
-
-uses(TestCase::class)->group('notify-db');
-
-beforeEach(function (): void {
-    /** @var TestCase $this */
-    $this->disableExceptionHandling();
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-
-beforeEach(function (): void {
-    withoutExceptionHandling();
->>>>>>> a988596b (first)
 });
 
 describe('Contact PartOne', function (): void {
     test('_can_create_contact', function (): void {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        /** @var TestCase $this */
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         $contact = ContactFactory::new()->createOne([
             'model_type' => 'App\Models\User',
             'model_id' => '123',
@@ -91,16 +62,7 @@ describe('Contact PartOne', function (): void {
             'sms_status_code' => '200',
             'sms_status_txt' => 'Delivered',
             'duplicate_count' => 0,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'order_column' => 1]);
-=======
-            'order_column' => 1,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'order_column' => 1]);
->>>>>>> a988596b (first)
         XotBasePest::assertTableHas('notify', 'contacts', [
             'id' => $contact->id,
             'model_type' => 'App\Models\User',
@@ -122,26 +84,13 @@ describe('Contact PartOne', function (): void {
             'sms_status_code' => '200',
             'sms_status_txt' => 'Delivered',
             'duplicate_count' => 0,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'order_column' => 1]);
-=======
-            'order_column' => 1,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'order_column' => 1]);
->>>>>>> a988596b (first)
 
         Assert::assertInstanceOf(Contact::class, $contact);
     });
 
     test('_has_correct_fillable_fields', function (): void {
-<<<<<<< HEAD
         $contact = new Contact;
-=======
-        $contact = new Contact();
->>>>>>> a988596b (first)
 
         $expectedFillable = [
             'model_id',
@@ -154,26 +103,13 @@ describe('Contact PartOne', function (): void {
             'updated_by',
             'created_by',
             'user_id',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'token'];
-=======
-            'token',
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'token'];
->>>>>>> a988596b (first)
 
         Assert::assertEquals($expectedFillable, $contact->getFillable());
     });
 
     test('_has_correct_casts', function (): void {
-<<<<<<< HEAD
         $contact = new Contact;
-=======
-        $contact = new Contact();
->>>>>>> a988596b (first)
 
         $expectedCasts = [
             'id' => 'string',
@@ -185,16 +121,7 @@ describe('Contact PartOne', function (): void {
             'created_by' => 'string',
             'deleted_by' => 'string',
             'model_id' => 'string',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'user_id' => 'string'];
-=======
-            'user_id' => 'string',
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'user_id' => 'string'];
->>>>>>> a988596b (first)
 
         Assert::assertEquals($expectedCasts, $contact->getCasts());
     });
@@ -204,31 +131,13 @@ describe('Contact PartOne', function (): void {
             'model_type' => 'App\Models\User',
             'model_id' => '123',
             'contact_type' => 'phone',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'value' => '+393331234567']);
-=======
-            'value' => '+393331234567',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'value' => '+393331234567']);
->>>>>>> a988596b (first)
         XotBasePest::assertTableHas('notify', 'contacts', [
             'id' => $contact->id,
             'model_type' => 'App\Models\User',
             'model_id' => '123',
             'contact_type' => 'phone',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'value' => '+393331234567']);
-=======
-            'value' => '+393331234567',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'value' => '+393331234567']);
->>>>>>> a988596b (first)
 
         Assert::assertInstanceOf(Contact::class, $contact);
     });
@@ -269,16 +178,7 @@ describe('Contact PartOne', function (): void {
             'sms_status_code' => '201',
             'sms_status_txt' => 'Queued',
             'duplicate_count' => 1,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'order_column' => 2]);
-=======
-            'order_column' => 2,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'order_column' => 2]);
->>>>>>> a988596b (first)
         XotBasePest::assertTableHas('notify', 'contacts', [
             'id' => $contact->id,
             'model_type' => 'App\Models\Company',
@@ -308,16 +208,7 @@ describe('Contact PartOne', function (): void {
             'sms_status_code' => '201',
             'sms_status_txt' => 'Queued',
             'duplicate_count' => 1,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'order_column' => 2]);
-=======
-            'order_column' => 2,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'order_column' => 2]);
->>>>>>> a988596b (first)
     });
 
     test('_can_update_contact', function (): void {
@@ -329,16 +220,7 @@ describe('Contact PartOne', function (): void {
             'first_name' => 'Old Name',
             'last_name' => 'Old Surname',
             'email' => 'old.email@example.com',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'mobile_phone' => '+393330000000']);
-=======
-            'mobile_phone' => '+393330000000',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'mobile_phone' => '+393330000000']);
->>>>>>> a988596b (first)
 
         $contact->update([
             'value' => 'new@example.com',
@@ -347,40 +229,17 @@ describe('Contact PartOne', function (): void {
             'email' => 'new.email@example.com',
             'mobile_phone' => '+393331111111',
             'verified_at' => now(),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'token' => 'new-token-123']);
-=======
-            'token' => 'new-token-123',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'token' => 'new-token-123']);
->>>>>>> a988596b (first)
         XotBasePest::assertTableHas('notify', 'contacts', [
             'id' => $contact->id,
             'value' => 'new@example.com',
             'first_name' => 'New Name',
             'last_name' => 'New Surname',
             'email' => 'new.email@example.com',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
             'mobile_phone' => '+393331111111']);
 
         Assert::assertNotNull(assertFreshModel($contact, Contact::class)->verified_at);
         Assert::assertEquals('new-token-123', assertFreshModel($contact, Contact::class)->token);
-<<<<<<< HEAD
-=======
-            'mobile_phone' => '+393331111111',
-        ]);
-
-        Assert::assertNotNull($this->freshModel($contact, Contact::class)->verified_at);
-        Assert::assertEquals('new-token-123', $this->freshModel($contact, Contact::class)->token);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
     });
 
     test('_can_find_by_model_type_and_id', function (): void {
@@ -388,16 +247,7 @@ describe('Contact PartOne', function (): void {
             'model_type' => 'App\Models\User',
             'model_id' => '123',
             'contact_type' => 'email',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'value' => 'test@example.com']);
-=======
-            'value' => 'test@example.com',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'value' => 'test@example.com']);
->>>>>>> a988596b (first)
 
         $foundContact = Contact::where('model_type', 'App\Models\User')->where('model_id', '123')->first();
 
@@ -412,64 +262,27 @@ describe('Contact PartOne', function (): void {
             'model_type' => 'App\Models\User',
             'model_id' => '123',
             'contact_type' => 'email',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'value' => 'email@example.com']);
-=======
-            'value' => 'email@example.com',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'value' => 'email@example.com']);
->>>>>>> a988596b (first)
 
         ContactFactory::new()->createOne([
             'model_type' => 'App\Models\User',
             'model_id' => '456',
             'contact_type' => 'phone',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'value' => '+393331234567']);
-=======
-            'value' => '+393331234567',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'value' => '+393331234567']);
->>>>>>> a988596b (first)
 
         ContactFactory::new()->createOne([
             'model_type' => 'App\Models\Company',
             'model_id' => '789',
             'contact_type' => 'email',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'value' => 'company@example.com']);
-=======
-            'value' => 'company@example.com',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'value' => 'company@example.com']);
->>>>>>> a988596b (first)
 
         $emailContacts = Contact::where('contact_type', 'email')->get();
         $phoneContacts = Contact::where('contact_type', 'phone')->get();
 
         Assert::assertCount(2, $emailContacts);
         Assert::assertCount(1, $phoneContacts);
-<<<<<<< HEAD
-<<<<<<< HEAD
         Assert::assertEquals('email', assertFirstModel($emailContacts, Contact::class)->contact_type);
         Assert::assertEquals('phone', assertFirstModel($phoneContacts, Contact::class)->contact_type);
-=======
-        Assert::assertEquals('email', $this->firstModel($emailContacts, Contact::class)->contact_type);
-        Assert::assertEquals('phone', $this->firstModel($phoneContacts, Contact::class)->contact_type);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        Assert::assertEquals('email', assertFirstModel($emailContacts, Contact::class)->contact_type);
-        Assert::assertEquals('phone', assertFirstModel($phoneContacts, Contact::class)->contact_type);
->>>>>>> a988596b (first)
     });
 
     test('_can_find_by_user_id', function (): void {
@@ -478,73 +291,32 @@ describe('Contact PartOne', function (): void {
             'model_id' => '123',
             'contact_type' => 'email',
             'value' => 'user1@example.com',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'user_id' => '456']);
-=======
-            'user_id' => '456',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'user_id' => '456']);
->>>>>>> a988596b (first)
 
         ContactFactory::new()->createOne([
             'model_type' => 'App\Models\User',
             'model_id' => '789',
             'contact_type' => 'phone',
             'value' => '+393331234567',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'user_id' => '456']);
-=======
-            'user_id' => '456',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'user_id' => '456']);
->>>>>>> a988596b (first)
 
         ContactFactory::new()->createOne([
             'model_type' => 'App\Models\Company',
             'model_id' => '101',
             'contact_type' => 'email',
             'value' => 'company@example.com',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'user_id' => '789']);
-=======
-            'user_id' => '789',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'user_id' => '789']);
->>>>>>> a988596b (first)
 
         $user456Contacts = Contact::where('user_id', '456')->get();
         $user789Contacts = Contact::where('user_id', '789')->get();
 
         Assert::assertCount(2, $user456Contacts);
         Assert::assertCount(1, $user789Contacts);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
         Assert::assertEquals('456', assertFirstModel($user456Contacts, Contact::class)->user_id);
         $secondUserContact = $user456Contacts->get(1);
         Assert::assertInstanceOf(Contact::class, $secondUserContact);
         Assert::assertEquals('456', $secondUserContact->user_id);
         Assert::assertEquals('789', assertFirstModel($user789Contacts, Contact::class)->user_id);
-<<<<<<< HEAD
-=======
-        Assert::assertEquals('456', $this->firstModel($user456Contacts, Contact::class)->user_id);
-        $secondUserContact = $user456Contacts->get(1);
-        Assert::assertInstanceOf(Contact::class, $secondUserContact);
-        Assert::assertEquals('456', $secondUserContact->user_id);
-        Assert::assertEquals('789', $this->firstModel($user789Contacts, Contact::class)->user_id);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
     });
 
     test('_can_find_by_email', function (): void {
@@ -553,16 +325,7 @@ describe('Contact PartOne', function (): void {
             'model_id' => '123',
             'contact_type' => 'email',
             'value' => 'test@example.com',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'email' => 'test@example.com']);
-=======
-            'email' => 'test@example.com',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'email' => 'test@example.com']);
->>>>>>> a988596b (first)
 
         $foundContact = Contact::where('email', 'test@example.com')->first();
 
@@ -571,8 +334,4 @@ describe('Contact PartOne', function (): void {
         Assert::assertEquals($contact->id, $foundContact->id);
         Assert::assertEquals('test@example.com', $foundContact->value);
     });
-<<<<<<< HEAD
-=======
-
->>>>>>> a988596b (first)
 });

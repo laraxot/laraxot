@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Architectural Rules & Guidelines"
 type: rule
@@ -23,32 +18,15 @@ related:
   - "./user-gdpr-oupling.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Architectural Rules & Guidelines
 
 This module adheres to the **Laraxot Architecture** and **Super Cow Methodology**.
 
 For strict coding standards, Filament extension rules, and PHPStan guidelines, please refer to the central documentation in the **Xot Module**:
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 -   [Super Cow Methodology](../../Xot/docs/super_cow_methodology.md)
 -   [PHP Quality Guide](../../Xot/docs/php_quality_guide.md)
 -   [Filament Extension Rules](../../Xot/docs/filament_extension_rules.md)
-=======
->>>>>>> 60a2c9a9 (.)
-=======
-=======
--   [Super Cow Methodology](../../Xot/docs/super_cow_methodology.md)
--   [PHP Quality Guide](../../Xot/docs/php_quality_guide.md)
--   [Filament Extension Rules](../../Xot/docs/filament_extension_rules.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 -   [Super Cow Methodology](../../xot/docs/super_cow_methodology.md)
 -   [PHP Quality Guide](../../xot/docs/php_quality_guide.md)
 -   [Filament Extension Rules](../../xot/docs/filament_extension_rules.md)
@@ -57,12 +35,4 @@ For strict coding standards, Filament extension rules, and PHPStan guidelines, p
 1.  **DRY & KISS**: Don't repeat yourself, keep it simple.
 2.  **Zero Errors**: PHPStan Level 10 compliance is mandatory.
 3.  **XotBase**: Always extend `XotBase` classes, never Filament classes directly.
-<<<<<<< HEAD
 4.  **Translations**: Use `LangServiceProvider` for automatic label resolution.
-=======
-4.  **Translations**: Use `LangServiceProvider` for automatic label resolution.
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

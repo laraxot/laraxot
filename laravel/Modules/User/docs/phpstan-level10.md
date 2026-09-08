@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "User Module - PHPStan Level 10 Analysis"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # User Module - PHPStan Level 10 Analysis
 
 ## 📊 Current Status
@@ -273,26 +262,9 @@ These fixes are **local to User module** and won't affect other modules.
 
 ## 🔗 Related Files
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [BaseUser.php](file:///var/www/_bases/base_ptvx_fila5_mono/laravel/Modules/User/app/Models/BaseUser.php) - Already fixed
 - [PassportHasApiTokensContract.php](file:///var/www/_bases/base_ptvx_fila5_mono/laravel/Modules/Xot/app/Contracts/PassportHasApiTokensContract.php) - Fixed in Xot
 - [Passport Documentation](file:///var/www/_bases/base_ptvx_fila5_mono/laravel/modules/user/docs/passport.md)
-=======
-- [BaseUser.php](file:///var/www/_bases/base_ptvx_fila4_mono/laravel/Modules/User/app/Models/BaseUser.php) - Already fixed
-- [PassportHasApiTokensContract.php](file:///var/www/_bases/base_ptvx_fila4_mono/laravel/Modules/Xot/app/Contracts/PassportHasApiTokensContract.php) - Fixed in Xot
-- [Passport Documentation](file:///var/www/_bases/base_ptvx_fila4_mono/laravel/modules/user/docs/passport.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [BaseUser.php](file:///var/www/_bases/base_ptvx_fila4_mono/laravel/Modules/User/app/Models/BaseUser.php) - Already fixed
-- [PassportHasApiTokensContract.php](file:///var/www/_bases/base_ptvx_fila4_mono/laravel/Modules/Xot/app/Contracts/PassportHasApiTokensContract.php) - Fixed in Xot
-- [Passport Documentation](file:///var/www/_bases/base_ptvx_fila4_mono/laravel/modules/user/docs/passport.md)
-=======
-- [BaseUser.php](file:///var/www/_bases/base_ptvx_fila5_mono/laravel/Modules/User/app/Models/BaseUser.php) - Already fixed
-- [PassportHasApiTokensContract.php](file:///var/www/_bases/base_ptvx_fila5_mono/laravel/Modules/Xot/app/Contracts/PassportHasApiTokensContract.php) - Fixed in Xot
-- [Passport Documentation](file:///var/www/_bases/base_ptvx_fila5_mono/laravel/modules/user/docs/passport.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
 ---
 

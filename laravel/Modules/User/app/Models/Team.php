@@ -4,86 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\User\Models;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Modules\Xot\Contracts\ProfileContract;
-=======
-=======
->>>>>>> 87273113 (.)
-use Illuminate\Support\Carbon;
-use Modules\Xot\Contracts\ProfileContract;
-use Illuminate\Database\Eloquent\Collection;
-use Modules\User\Database\Factories\TeamFactory;
-use Illuminate\Database\Eloquent\Builder;
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Carbon;
-use Modules\Xot\Contracts\ProfileContract;
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
 /**
  * Class Modules\User\Models\Team.
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
- * @property string                          $id
- * @property string                          $user_id                (DC2Type:guid)
- * @property string                          $name
- * @property int                             $personal_team
- * @property Carbon|null                     $created_at
- * @property Carbon|null                     $updated_at
- * @property string|null                     $updated_by
- * @property string|null                     $created_by
- * @property Carbon|null                     $deleted_at
- * @property string|null                     $deleted_by
- * @property ProfileContract|null            $creator
- * @property TeamUser                        $pivot
- * @property Collection<int, User>           $members
- * @property int|null                        $members_count
- * @property User|null                       $owner
- * @property Collection<int, TeamInvitation> $teamInvitations
- * @property int|null                        $team_invitations_count
- * @property ProfileContract|null            $updater
- * @property Collection<int, User>           $users
- * @property int|null                        $users_count
-=======
-=======
->>>>>>> 87273113 (.)
- * @property string $id
- * @property string $user_id (DC2Type:guid)
- * @property string $name
- * @property int $personal_team
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property string|null $updated_by
- * @property string|null $created_by
- * @property Carbon|null $deleted_at
- * @property string|null $deleted_by
- * @property ProfileContract|null $creator
- * @property TeamUser $pivot
- * @property Collection<int, User> $members
- * @property int|null $members_count
- * @property User|null $owner
- * @property Collection<int, TeamInvitation> $teamInvitations
- * @property int|null $team_invitations_count
- * @property ProfileContract|null $updater
- * @property Collection<int, User> $users
- * @property int|null $users_count
- * @method static TeamFactory factory($count = null, $state = [])
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
  * @property string                          $id
  * @property string                          $user_id                (DC2Type:guid)
  * @property string                          $name
@@ -105,8 +34,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property Collection<int, User>           $users
  * @property int|null                        $users_count
  *
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
  * @method static Builder|Team newModelQuery()
  * @method static Builder|Team newQuery()
  * @method static Builder|Team query()
@@ -120,37 +47,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder|Team whereUpdatedAt($value)
  * @method static Builder|Team whereUpdatedBy($value)
  * @method static Builder|Team whereUserId($value)
-<<<<<<< HEAD
- * @property string|null $code
- * @method static Builder|Team whereCode($value)
- * @property string|null $uuid
- * @method static Builder<static>|Team whereUuid($value)
- * @property string|null $owner_id
- * @method static Builder<static>|Team whereOwnerId($value)
-<<<<<<< HEAD
- * @method static static               create(array<string, mixed> $attributes = [])
- * @method static static               firstOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
- * @method static static               updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
- * @property ProfileContract|null $deleter
- * @method static \Modules\User\Database\Factories\TeamFactory factory($count = null, $state = [])
- * @property string|null                     $slug
- * @property string|null                     $description
- * @property string|null                     $avatar_path
- * @property array<array-key, mixed>|null    $settings
- * @property Collection<int, TeamPermission> $permissions
- * @property int|null                        $permissions_count
- * @property Collection<int, TeamUser>       $teamUsers
- * @property int|null                        $team_users_count
- * @method static Builder<static>|Team whereAvatarPath($value)
- * @method static Builder<static>|Team whereDescription($value)
- * @method static Builder<static>|Team whereSettings($value)
- * @method static Builder<static>|Team whereSlug($value)
-=======
- * @mixin IdeHelperTeam
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
  *
  * @property string|null $code
  *
@@ -185,17 +81,10 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Team whereSettings($value)
  * @method static Builder<static>|Team whereSlug($value)
  *
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
  * @mixin \Eloquent
  */
 class Team extends BaseTeam
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
     // use SoftDeletes;
 
     protected $fillable = [
@@ -228,10 +117,4 @@ class Team extends BaseTeam
             'settings' => 'array',
         ];
     }
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 }

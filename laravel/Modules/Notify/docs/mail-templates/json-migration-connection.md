@@ -64,20 +64,7 @@ if ($this->hasColumn('subject') && !$this->isColumnType('subject', 'json')) {
 
 ## Documentazione Correlata
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [XotBaseMigration Best Practices](./XOTBASEMIGRATION_BEST_PRACTICES.md)
-- [JSON Migration Fixes](./JSON_MIGRATION_FIXES.md)
-- [Migration Structure](./MIGRATION_STRUCTURE.md)
-- [Mail Template Migration Guide](../MAIL_TEMPLATE_MIGRATION_GUIDE.md)
-=======
-=======
->>>>>>> a988596b (first)
 - [XotBaseMigration Best Practices](./xotbasemigration_best_practices.md)
 - [JSON Migration Fixes](./json_migration_fixes.md)
 - [Migration Structure](./migration_structure.md)
 - [Mail Template Migration Guide](../mail_template_migration_guide.md)
-<<<<<<< HEAD
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)

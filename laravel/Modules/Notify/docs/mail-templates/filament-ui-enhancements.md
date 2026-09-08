@@ -118,15 +118,7 @@ Card::make()
 
 ### 1. Form Completo
 ```php
-<<<<<<< HEAD
-<<<<<<< HEAD
-public static function form(\Filament\Schemas\Schema $form): \Filament\Schemas\Schema
-=======
 public static function form(Form $form): Form
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-public static function form(Form $form): Form
->>>>>>> a988596b (first)
 {
     return $form
         ->schema([

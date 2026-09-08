@@ -111,14 +111,7 @@ class OutcomesTableWidget extends XotBaseTableWidget
 ```
 
 **Zen Philosophy**:
-<<<<<<< HEAD
-<<<<<<< HEAD
 > "XotBaseTableWidget non sa di Predict, non sa di Blog, non sa di Events.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-> "XotBaseTableWidget non sa di Predict, non sa di Blog, non sa di Events.
->>>>>>> a988596b (first)
 > "XotBaseTableWidget non sa di Forecast, non sa di Blog, non sa di Events.
 > È AGNOSTICO, come il container blade.
 > La sua forza è la sua VUOTEZZA.
@@ -135,14 +128,7 @@ abstract class XotBaseTableWidget extends FilamentTableWidget
 ```
 
 **Why This is Powerful**:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - ✅ **Agnostico**: Funziona per Predict, Blog, Events, Profiles
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- ✅ **Agnostico**: Funziona per Predict, Blog, Events, Profiles
->>>>>>> a988596b (first)
 - ✅ **Agnostico**: Funziona per Forecast, Blog, Events, Profiles
 - ✅ **Estensibile**: Puoi aggiungere features a TUTTI i widget cambiando 1 file
 - ✅ **Coerente**: Tutti i widget hanno lo stesso comportamento base

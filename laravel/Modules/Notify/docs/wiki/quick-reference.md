@@ -1,35 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a988596b (first)
----
-title: "LLM Wiki Quick Reference"
-type: concept
-tags: [quick, reference]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "quick-reference llm wiki quick reference"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./agents.md"
-  - "./bmad-method.md"
-  - "./index.md"
-  - "./log.md"
-  - "./notify-conflict-check-.md"
-  - "./notify-conflict-check-1.md"
-  - "./notify-conflict-check.md"
-  - "./notify-restore-.md"
----
-
-<<<<<<< HEAD
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
-=======
->>>>>>> a377e9e6 (.)
 # LLM Wiki Quick Reference
 
 > **Based on**: Karpathy's LLM Wiki pattern
@@ -147,57 +115,21 @@ related:                               # Optional (array of paths)
 ### Initialize Module Wiki
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 bashscripts/ai/init-llm-wiki.sh module Fixcity
-=======
-bashscripts/ai/init-llm-wiki.sh module App
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-bashscripts/ai/init-llm-wiki.sh module Fixcity
-<<<<<<< HEAD
-bashscripts/ai/init-llm-wiki.sh module App
->>>>>>> a988596b (first)
-=======
->>>>>>> a377e9e6 (.)
 bashscripts/ai/init-llm-wiki.sh theme Sixteen
 ```
 
 ### Install qmd Search
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 npm install -g --prefix "$HOME/.npm-global" @tobilu/qmd
-=======
-npm install -g qmd
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-npm install -g --prefix "$HOME/.npm-global" @tobilu/qmd
->>>>>>> bdc49995 (.)
-=======
-npm install -g qmd
->>>>>>> a988596b (first)
 qmd serve ./docs/wiki
 ```
 
 ### Configure Obsidian
 
 1. Open Obsidian → "Open folder as vault"
-<<<<<<< HEAD
-<<<<<<< HEAD
 2. Select: `/var/www/_bases/base_fixcity_fila5/docs`
-=======
-2. Select: `/var/www/_bases/base_ptvx_fila5/docs`
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-2. Select: `/var/www/_bases/base_fixcity_fila5/docs`
-<<<<<<< HEAD
-2. Select: `/var/www/_bases/base_ptvx_fila5/docs`
->>>>>>> a988596b (first)
-=======
->>>>>>> a377e9e6 (.)
 3. Configuration already in `.obsidian/`
 
 ## Quality Checklist
@@ -235,19 +167,7 @@ Templates available:
 ## Related Documentation
 
 - [Complete Integration Guide](wiki/README.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Agent Instructions](wiki/AGENTS.md)
-=======
-- [Agent Instructions](wiki/agents.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Agent Instructions](wiki/AGENTS.md)
-<<<<<<< HEAD
-- [Agent Instructions](wiki/agents.md)
->>>>>>> a988596b (first)
-=======
->>>>>>> a377e9e6 (.)
 - [Wiki Overview](wiki/overview.md)
 - [Obsidian Setup](.obsidian/README.md)
 - [Module Wiki Guide](Modules/Xot/docs/llm-wiki-integration.md)

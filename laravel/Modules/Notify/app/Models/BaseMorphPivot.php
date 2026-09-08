@@ -43,16 +43,7 @@ abstract class BaseMorphPivot extends MorphPivot
         'post_type',
         'related_type',
         'user_id',
-<<<<<<< HEAD
-<<<<<<< HEAD
         'note'];
-=======
-        'note',
-    ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'note'];
->>>>>>> a988596b (first)
 
     protected function casts(): array
     {
@@ -64,15 +55,6 @@ abstract class BaseMorphPivot extends MorphPivot
             'deleted_at' => 'datetime',
             'updated_by' => 'string',
             'created_by' => 'string',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'deleted_by' => 'string'];
-=======
-            'deleted_by' => 'string',
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'deleted_by' => 'string'];
->>>>>>> a988596b (first)
     }
 }

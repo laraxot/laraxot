@@ -24,26 +24,13 @@ return [
         'current_password' => [
             'label' => 'Password Attuale',
             'validation_attribute' => 'password_attuale',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
-=======
->>>>>>> f548be94 (.)
-=======
-=======
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
         ],
         'password' => [
             'label' => 'Nuova Password',
             'validation_attribute' => 'password',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -53,27 +40,6 @@ return [
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
-=======
-        ],
-        'password_confirmation' => [
-            'label' => 'Conferma Password',
->>>>>>> f548be94 (.)
-=======
-        ],
-        'password_confirmation' => [
-            'label' => 'Conferma Password',
-=======
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'password_confirmation' => [
-            'label' => 'Conferma Password',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
         ],
     ],
     'reset_password' => 'Reimposta Password',
@@ -126,18 +92,6 @@ return [
         'send_otp' => 'Invia Codice OTP',
         'yes_send_otp' => 'Si, Invia Codice OTP',
         'confirm_otp' => 'Sei sicuro di voler inviare una password temporanea a questo utente? Sarà richiesto di cambiarla al primo accesso.',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        // Are you sure you want to send a temporary password to this user? They will be required to change it upon first login.
-        // Temporary password sent successfully.
->>>>>>> f548be94 (.)
-=======
-        // Are you sure you want to send a temporary password to this user? They will be required to change it upon first login.
-        // Temporary password sent successfully.
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
         'send_otp_success' => 'Password temporanea inviata con successo.',
     ],
     'navigation' => [
@@ -151,16 +105,6 @@ return [
         'sort' => 31,
         'icon' => 'user-user-otp',
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
     'label' => 'Otp',
     'plural_label' => 'Otp (Plurale)',
-=======
->>>>>>> f548be94 (.)
-=======
-=======
-    'label' => 'Otp',
-    'plural_label' => 'Otp (Plurale)',
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 ];

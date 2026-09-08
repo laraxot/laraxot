@@ -68,16 +68,7 @@ class SendRecordsNotificationAction
                     $errors->push([
                         'record' => $recordName,
                         'channel' => $channelItem,
-<<<<<<< HEAD
-<<<<<<< HEAD
                         'error' => $e->getMessage()]);
-=======
-                        'error' => $e->getMessage(),
-                    ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                        'error' => $e->getMessage()]);
->>>>>>> a988596b (first)
                 }
                 /*
                 logger()->error('Errore invio notifica bulk', [
@@ -85,16 +76,7 @@ class SendRecordsNotificationAction
                     'record_id' => $record->getKey(),
                     'channels' => array_map(fn (ChannelEnum $ce) => $ce->value, $channels),
                     'template_slug' => $templateSlug,
-<<<<<<< HEAD
-<<<<<<< HEAD
                     'error' => $e->getMessage()]);
-=======
-                    'error' => $e->getMessage(),
-                ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    'error' => $e->getMessage()]);
->>>>>>> a988596b (first)
                 */
             }
         }

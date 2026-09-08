@@ -12,21 +12,8 @@ use Modules\Notify\Filament\Actions\SendRecordsNotificationBulkAction;
 use Modules\Notify\Filament\Forms\Components\ChannelCheckboxList;
 use Modules\Notify\Filament\Forms\Components\MailTemplateSelect;
 use Modules\Notify\Tests\Fixtures\SendRecordsNotificationBulkActionSpy;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-use Modules\Xot\Tests\XotBasePest;
-
-uses(TestCase::class)->group('no-notify-db');
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use Modules\Xot\Tests\XotBasePest;
-use PHPUnit\Framework\Assert;
->>>>>>> a988596b (first)
 
 /**
  * @param  array<string, mixed>  $attributes
@@ -72,11 +59,7 @@ test('send records notification bulk action exposes expected schema components',
 });
 
 test('send records notification bulk action delegates to send records action', function (): void {
-<<<<<<< HEAD
     $spy = new SendRecordsNotificationBulkActionSpy;
-=======
-    $spy = new SendRecordsNotificationBulkActionSpy();
->>>>>>> a988596b (first)
     app()->instance(SendRecordsNotificationAction::class, $spy);
 
     $action = SendRecordsNotificationBulkAction::make();
@@ -88,27 +71,11 @@ test('send records notification bulk action delegates to send records action', f
 
     $records = new EloquentCollection([
         makeDummyNotifyBulkModel(['id' => 1]),
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
         makeDummyNotifyBulkModel(['id' => 2])]);
 
     $callback($records, [
         'mail_template_slug' => 'template-a',
         'channels' => ['mail', 'sms']]);
-<<<<<<< HEAD
-=======
-        makeDummyNotifyBulkModel(['id' => 2]),
-    ]);
-
-    $callback($records, [
-        'mail_template_slug' => 'template-a',
-        'channels' => ['mail', 'sms'],
-    ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
     Assert::assertNotNull($spy->received);
     Assert::assertSame(2, $spy->received['count']);

@@ -77,15 +77,7 @@
 ### 1. Struttura Log
 ```json
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "timestamp": "2024-03-20 10:00:00",
-=======
     "timestamp": "[DATE] 10:00:00",
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    "timestamp": "[DATE] 10:00:00",
->>>>>>> a988596b (first)
     "level": "error",
     "message": "SMS sending failed",
     "context": {
@@ -171,24 +163,10 @@ Log::debug('SMS Debug', [
 ### 2. Risorse Utili
 - [Laravel Notifications](https://laravel.com/docs/notifications)
 - [Laravel Queue](https://laravel.com/docs/queues)
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Laravel Logging](https://laravel.com/docs/logging)
-- [Laravel Notifications](https://laravel.com/project_docs/notifications)
-- [Laravel Logging](https://laravel.com/docs/logging)- [Laravel Notifications](https://laravel.com/project_docs/notifications)
-- [Laravel Queue](https://laravel.com/project_docs/queues)
-- [Laravel Logging](https://laravel.com/project_docs/logging)
-=======
-=======
->>>>>>> a988596b (first)
 - [Laravel Logging](https://laravel.com/docs/logging)- [Laravel Notifications](https://laravel.com/project_docs/notifications)
 - [Laravel Queue](https://laravel.com/project_docs/queues)
 - [Laravel Logging](https://laravel.com/project_docs/logging)
 - [Laravel Logging](https://laravel.com/docs/logging)
-<<<<<<< HEAD
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 ## Supporto
 

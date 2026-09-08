@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Dentist Moderation Approach in User Module"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Dentist Moderation Approach in User Module
 
 ## Overview
@@ -66,11 +55,7 @@ This document outlines the strategy for implementing dentist moderation within t
   {
       protected static ?string $model = User::class;
 
-<<<<<<< HEAD
       public static function getFormSchema(): array
-=======
-      public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
       {
           return [
               'moderation_status' => Forms\Components\Select::make('moderation_status')

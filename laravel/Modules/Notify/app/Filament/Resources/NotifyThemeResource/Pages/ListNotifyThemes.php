@@ -35,16 +35,7 @@ class ListNotifyThemes extends XotBaseListRecords
             'updated_at' => TextColumn::make('updated_at')
                 ->dateTime()
                 ->sortable()
-<<<<<<< HEAD
-<<<<<<< HEAD
                 ->toggleable(isToggledHiddenByDefault: true)];
-=======
-                ->toggleable(isToggledHiddenByDefault: true),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                ->toggleable(isToggledHiddenByDefault: true)];
->>>>>>> a988596b (first)
     }
 
     #[Override]
@@ -67,10 +58,6 @@ class ListNotifyThemes extends XotBaseListRecords
             ),
             'type' => SelectFilter::make('type')->options(
                 fn (): array => NotifyThemeResource::fieldOptions('type'),
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
             )];
     }
 
@@ -78,12 +65,5 @@ class ListNotifyThemes extends XotBaseListRecords
     public function getTableFilters(): array
     {
         return self::getNotifyThemeTableFilters();
-<<<<<<< HEAD
-=======
-            ),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
     }
 }

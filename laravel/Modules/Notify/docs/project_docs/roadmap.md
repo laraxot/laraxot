@@ -1,35 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a988596b (first)
----
-title: "Project Roadmap"
-type: concept
-tags: [roadmap]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "roadmap project roadmap"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./2025-excellence-achievement.md"
-  - "./agid-implementation-guide.md"
-  - "./architecture.md"
-  - "./complete-refactoring-analysis.md"
-  - "./documentation-status.md"
-  - "./final-implementation-report-.md"
-  - "./final-implementation-report-1.md"
-  - "./final-implementation-report.md"
----
-
-<<<<<<< HEAD
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
-=======
->>>>>>> a377e9e6 (.)
 # Project Roadmap
 
 ## Goals

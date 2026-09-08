@@ -301,14 +301,7 @@ return [
         'username' => env('SMSHOSTING_USERNAME'),
         'password' => env('SMSHOSTING_PASSWORD'),
         'sender' => env('SMSHOSTING_SENDER', '<nome progetto>'),
-<<<<<<< HEAD
-<<<<<<< HEAD
 'sender' => env('SMSHOSTING_SENDER', 'Quaeris'),
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-'sender' => env('SMSHOSTING_SENDER', 'Quaeris'),
->>>>>>> a988596b (first)
 'sender' => env('SMSHOSTING_SENDER', 'App'),
     ],
 ];
@@ -767,19 +760,10 @@ public function toTwilio($notifiable)
     return (new TwilioSmsMessage())
         ->content("<nome progetto>: Promemoria appuntamento {$this->appointment->formatted_date}. 
         Per annullare rispondere NO. Per info: <nome progetto>.it/privacy");
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 ->content("Quaeris: Promemoria appuntamento {$this->appointment->formatted_date}. 
         Per annullare rispondere NO. Per info: Quaeris.it/privacy");
 ->content("Quaeris: Promemoria appuntamento {$this->appointment->formatted_date}. 
         Per annullare rispondere NO. Per info: Quaeris.it/privacy");
-<<<<<<< HEAD
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ->content("App: Promemoria appuntamento {$this->appointment->formatted_date}. 
         Per annullare rispondere NO. Per info: App.it/privacy");
 }
@@ -835,11 +819,4 @@ class ConsentLog extends Model
 - [SMS_PROVIDER_CONFIGURATION.md](./sms-provider-configuration.md)
 - [NOTIFICATIONS_IMPLEMENTATION_GUIDE.md](./notifications-implementation-guide.md)
 - [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [TELEGRAM_NOTIFICATIONS_GUIDE.md](./telegram-notifications-guide.md)
->>>>>>> a988596b (first)

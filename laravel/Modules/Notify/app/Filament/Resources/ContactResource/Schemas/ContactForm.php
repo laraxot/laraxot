@@ -25,15 +25,6 @@ class ContactForm extends XotBaseResourceForm
                 ->maxLength(255),
             'phone' => TextInput::make('phone')
                 ->tel()
-<<<<<<< HEAD
-<<<<<<< HEAD
                 ->maxLength(255)];
-=======
-                ->maxLength(255),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                ->maxLength(255)];
->>>>>>> a988596b (first)
     }
 }

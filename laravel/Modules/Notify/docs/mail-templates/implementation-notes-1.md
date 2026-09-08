@@ -49,27 +49,13 @@ L'implementazione corretta degli allegati richiede una struttura specifica. Ecco
    ```php
    $attachments = [
        [
-<<<<<<< HEAD
-<<<<<<< HEAD
 'path' => '/var/www/html/Quaeris/public_html/images/avatars/default-3.svg',
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-'path' => '/var/www/html/Quaeris/public_html/images/avatars/default-3.svg',
->>>>>>> a988596b (first)
 'path' => '/var/www/_bases/base_ptvx_fila5/public_html/images/avatars/default-3.svg',
            'as' => 'logo.png',
            'mime' => 'image/png'
        ],
        [
-<<<<<<< HEAD
-<<<<<<< HEAD
 'path' => '/var/www/html/Quaeris/public_html/images/avatars/default-3.svg',
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-'path' => '/var/www/html/Quaeris/public_html/images/avatars/default-3.svg',
->>>>>>> a988596b (first)
 'path' => '/var/www/_bases/base_ptvx_fila5/public_html/images/avatars/default-3.svg',
            'as' => 'logo.png',
            'mime' => 'image/png'

@@ -32,11 +32,7 @@ class TryMailAction
     /**
      * @param  array<string, mixed>  $vars
      *
-<<<<<<< HEAD
      * @throws RuntimeException
-=======
-     * @throws \RuntimeException
->>>>>>> a988596b (first)
      */
     public function execute(string $to = '', ?string $body = null, array $vars = [], ?string $from = null, string $driver = 'duocircle'): void
     {

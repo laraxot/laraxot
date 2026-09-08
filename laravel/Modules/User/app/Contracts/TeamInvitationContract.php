@@ -11,8 +11,6 @@ use Illuminate\Support\Carbon;
 /**
  * Modules\User\Contracts\TeamInvitationContract.
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
  * @property int          $id
  * @property int          $team_id
  * @property string       $email
@@ -30,49 +28,6 @@ use Illuminate\Support\Carbon;
  * @method static Builder<Model>|TeamInvitationContract whereRole($value)
  * @method static Builder<Model>|TeamInvitationContract whereTeamId($value)
  * @method static Builder<Model>|TeamInvitationContract whereUpdatedAt($value)
-=======
-=======
->>>>>>> 87273113 (.)
- * @property int $id
- * @property int $team_id
- * @property string $email
- * @property string|null $role
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property TeamContract $team
- *
- * @method static Builder|TeamInvitationContract newModelQuery()
- * @method static Builder|TeamInvitationContract newQuery()
- * @method static Builder|TeamInvitationContract query()
- * @method static Builder|TeamInvitationContract whereCreatedAt($value)
- * @method static Builder|TeamInvitationContract whereEmail($value)
- * @method static Builder|TeamInvitationContract whereId($value)
- * @method static Builder|TeamInvitationContract whereRole($value)
- * @method static Builder|TeamInvitationContract whereTeamId($value)
- * @method static Builder|TeamInvitationContract whereUpdatedAt($value)
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
- * @property int          $id
- * @property int          $team_id
- * @property string       $email
- * @property string|null  $role
- * @property Carbon|null  $created_at
- * @property Carbon|null  $updated_at
- * @property TeamContract $team
- *
- * @method static Builder<Model>|TeamInvitationContract newModelQuery()
- * @method static Builder<Model>|TeamInvitationContract newQuery()
- * @method static Builder<Model>|TeamInvitationContract query()
- * @method static Builder<Model>|TeamInvitationContract whereCreatedAt($value)
- * @method static Builder<Model>|TeamInvitationContract whereEmail($value)
- * @method static Builder<Model>|TeamInvitationContract whereId($value)
- * @method static Builder<Model>|TeamInvitationContract whereRole($value)
- * @method static Builder<Model>|TeamInvitationContract whereTeamId($value)
- * @method static Builder<Model>|TeamInvitationContract whereUpdatedAt($value)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
  *
  * @phpstan-require-extends Model
  *

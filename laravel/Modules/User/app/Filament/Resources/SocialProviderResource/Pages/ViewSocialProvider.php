@@ -4,25 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources\SocialProviderResource\Pages;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-use Filament\Infolists\Components\TextEntry;
-use Filament\Schemas\Components\Component;
-use Filament\Schemas\Components\Section;
-=======
-=======
->>>>>>> 87273113 (.)
-use Filament\Schemas\Components\Section;
-use Filament\Schemas\Components\Component;
-use Override;
-use Filament\Actions;
-use Filament\Infolists\Components\TextEntry;
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 use Modules\User\Filament\Resources\SocialProviderResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 
@@ -31,71 +12,4 @@ use function Safe\json_encode;
 class ViewSocialProvider extends XotBaseViewRecord
 {
     protected static string $resource = SocialProviderResource::class;
-<<<<<<< HEAD
-
-    /**
-<<<<<<< HEAD
-     * @return array<string, Component>
-     */
-    #[\Override]
-    protected function getInfolistSchema(): array
-    {
-        return [
-            'provider_info' => Section::make()->schema([
-                'id' => TextEntry::make('id'),
-                'name' => TextEntry::make('name'),
-                'scopes' => TextEntry::make('scopes')->formatStateUsing(function ($state): string {
-                    if (is_array($state)) {
-                        return json_encode($state);
-                    }
-
-                    return is_string($state) ? $state : (is_scalar($state) ? (string) $state : '');
-                }),
-                'parameters' => TextEntry::make('parameters')->formatStateUsing(function ($state): string {
-                    if (is_array($state)) {
-                        return json_encode($state);
-                    }
-
-                    return is_string($state) ? $state : (is_scalar($state) ? (string) $state : '');
-                }),
-                'stateless' => TextEntry::make('stateless')->badge()->color(fn (bool $state): string => $state ? 'success' : 'danger'),
-                'active' => TextEntry::make('active')->badge()->color(fn (bool $state): string => $state ? 'success' : 'danger'),
-                'socialite' => TextEntry::make('socialite')->badge()->color(fn (bool $state): string => $state ? 'success' : 'danger'),
-                'svg' => TextEntry::make('svg')->html(),
-                'created_at' => TextEntry::make('created_at'),
-                'updated_at' => TextEntry::make('updated_at'),
-=======
-     * @return array<Component>
-     */
-    #[Override]
-    protected function getInfolistSchema(): array
-    {
-        return [
-            Section::make()->schema([
-                TextEntry::make('id'),
-                TextEntry::make('name'),
-                TextEntry::make('scopes')->formatStateUsing(function ($state): string {
-                    if (is_array($state)) {
-                        return json_encode($state);
-                    }
-                    return is_string($state) ? $state : ((string) $state);
-                }),
-                TextEntry::make('parameters')->formatStateUsing(function ($state): string {
-                    if (is_array($state)) {
-                        return json_encode($state);
-                    }
-                    return is_string($state) ? $state : ((string) $state);
-                }),
-                TextEntry::make('stateless')->badge()->color(fn(bool $state): string => $state ? 'success' : 'danger'),
-                TextEntry::make('active')->badge()->color(fn(bool $state): string => $state ? 'success' : 'danger'),
-                TextEntry::make('socialite')->badge()->color(fn(bool $state): string => $state ? 'success' : 'danger'),
-                TextEntry::make('svg')->html(),
-                TextEntry::make('created_at'),
-                TextEntry::make('updated_at'),
->>>>>>> f548be94 (.)
-            ]),
-        ];
-    }
-=======
->>>>>>> 2024e2e7 (.)
 }

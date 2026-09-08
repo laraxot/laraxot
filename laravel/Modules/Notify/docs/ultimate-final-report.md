@@ -4,14 +4,7 @@ type: concept
 tags: [ultimate, final, report]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "ultimate-final-report 🏆 fixcity - ultimate final report"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "ultimate-final-report 🏆 fixcity - ultimate final report"
->>>>>>> a988596b (first)
 qmd: "ultimate-final-report 🏆 ptv - ultimate final report"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -284,14 +277,7 @@ Trasformato FixCity da progetto con documentazione parziale a piattaforma enterp
 ## 📚 STRUTTURA FINALE COMPLETA
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 base_fixcity_fila5_mono/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-base_fixcity_fila5_mono/
->>>>>>> a988596b (first)
 base_ptv_fila5_mono/
 │
 ├── 📊 ROOT DOCS (15 files)

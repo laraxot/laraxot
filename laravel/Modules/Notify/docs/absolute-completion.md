@@ -4,14 +4,7 @@ type: concept
 tags: [absolute, completion, 100]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "absolute-completion-100 🏆 fixcity - completamento assoluto 100%"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "absolute-completion-100 🏆 fixcity - completamento assoluto 100%"
->>>>>>> a988596b (first)
 qmd: "absolute-completion-100 🏆 ptv - completamento assoluto 100%"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]

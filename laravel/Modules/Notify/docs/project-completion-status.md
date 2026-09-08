@@ -4,14 +4,7 @@ type: concept
 tags: [project, completion, status]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "project-completion-status 🎯 fixcity - stato completamento progetto"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "project-completion-status 🎯 fixcity - stato completamento progetto"
->>>>>>> a988596b (first)
 qmd: "project-completion-status 🎯 ptv - stato completamento progetto"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -202,14 +195,7 @@ related:
 ## 🔗 STRUTTURA DOCUMENTAZIONE
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 base_fixcity_fila5_mono/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-base_fixcity_fila5_mono/
->>>>>>> a988596b (first)
 base_ptv_fila5_mono/
 ├── documentation-index.md          # ✅ Indice generale
 ├── quick-start.md                  # ✅ Guida rapida
@@ -280,18 +266,9 @@ base_ptv_fila5_mono/
 - **Doc Lead**: Documentazione
 
 ### Supporto
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Email**: dev@fixcity.it
 - **Docs**: docs@fixcity.it
 - **Slack**: #fixcity-dev
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Email**: dev@fixcity.it
-- **Docs**: docs@fixcity.it
-- **Slack**: #fixcity-dev
->>>>>>> a988596b (first)
 - **Email**: dev@ptv.it
 - **Docs**: docs@ptv.it
 - **Slack**: #ptv-dev

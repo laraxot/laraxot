@@ -5,23 +5,10 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Datas;
 
 use Modules\Notify\Datas\EmailData;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
-<<<<<<< HEAD
-=======
-use PHPUnit\Framework\Assert;
-use Spatie\LaravelData\Data;
-use Modules\Xot\Tests\XotBasePest;
-use Modules\Notify\Tests\TestCase;
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 describe('EmailData', function () {
     it('can be instantiated via reflection without constructor', function () {

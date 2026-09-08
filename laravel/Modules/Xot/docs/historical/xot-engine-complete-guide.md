@@ -232,7 +232,11 @@ abstract class XotBaseResource extends Resource
     /**
      * Get form schema con validation automatica
      */
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             // Schema base automatico

@@ -189,12 +189,4 @@ Un esempio completo di implementazione è disponibile in `TestSmtpPage.php`. Si 
 
 - [Documentazione Laravel Mail](https://laravel.com/docs/10.x/mail)
 - [Documentazione Filament](https://filamentphp.com/docs)
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Modulo Xot - XotBasePage](mdc:../../Xot/docs/pages.md)
-=======
 - [Modulo Xot - XotBasePage](mdc:../../xot/docs/pages.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Modulo Xot - XotBasePage](mdc:../../xot/docs/pages.md)
->>>>>>> a988596b (first)

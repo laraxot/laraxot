@@ -16,27 +16,13 @@
 ```php
 // ❌ SBAGLIATO - DB::table() quando esiste il modello
 $betHistories = DB::table('bet_histories')
-<<<<<<< HEAD
-<<<<<<< HEAD
     ->where('predict_id', $predict->id)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    ->where('predict_id', $predict->id)
->>>>>>> a988596b (first)
     ->where('forecast_id', $forecast->id)
     ->get();
 
 // ✅ CORRETTO - Usa il MODELLO
 $betHistories = BetHistory::query()
-<<<<<<< HEAD
-<<<<<<< HEAD
     ->where('predict_id', $predict->id)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    ->where('predict_id', $predict->id)
->>>>>>> a988596b (first)
     ->where('forecast_id', $forecast->id)
     ->get();
 ```
@@ -194,29 +180,14 @@ Rating::query()->...
 ## 🔗 Related Documentation
 
 ### AI Agents Docs
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **[Rules Index](00-INDEX.md)** - All rules
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **[Rules Index](00-INDEX.md)** - All rules
->>>>>>> a988596b (first)
 - **[Rules Index](00-index.md)** - All rules
 - **[XotBase Extension Rule](xotbase-extension-rule.md)** - XotBase philosophy
 - **[Reusable Components](../guidelines/reusable-components-philosophy.md)** - DRY+KISS
 
 ### Module Docs
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **[BetHistory Model](../../laravel/Modules/Predict/app/Models/BetHistory.php)** - Source
 - **[Transaction Model](../../laravel/Modules/Predict/app/Models/Transaction.php)** - Source
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **[BetHistory Model](../../laravel/Modules/Predict/app/Models/BetHistory.php)** - Source
-- **[Transaction Model](../../laravel/Modules/Predict/app/Models/Transaction.php)** - Source
->>>>>>> a988596b (first)
 - **[BetHistory Model](../../laravel/Modules/Forecast/app/Models/BetHistory.php)** - Source
 - **[Transaction Model](../../laravel/Modules/Forecast/app/Models/Transaction.php)** - Source
 

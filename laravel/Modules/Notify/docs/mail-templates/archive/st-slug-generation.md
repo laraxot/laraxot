@@ -71,24 +71,10 @@ TextInput::make('name')
         if ($operation === 'edit' && $record->isPublished()) {
             return;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         // Non aggiornare lo slug se è stato modificato manualmente
         if (($get('slug') ?? '') !== Str::slug($old)) {
             return;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         // Aggiorna lo slug solo se le condizioni sopra non sono verificate
         $set('slug', Str::slug($state));
     })
@@ -101,14 +87,7 @@ TextInput::make('slug')
     ->required()
     ->maxLength(255)
     ->unique(MailTemplate::class, 'slug', fn ($record) => $record)
-<<<<<<< HEAD
-<<<<<<< HEAD
     ->disabled(fn (?string $operation, ?Model $record) => 
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    ->disabled(fn (?string $operation, ?Model $record) => 
->>>>>>> a988596b (first)
     ->disabled(fn (?string $operation, ?Model $record) =>
         $operation === 'edit' && $record->isPublished())
 ```
@@ -138,13 +117,6 @@ public function isPublished(): bool
     if ($this->logs()->count() > 0) {
         return true;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
     // O basata su un flag specifico
     return (bool) $this->is_published;
 }
@@ -153,7 +125,7 @@ public function isPublished(): bool
 ### Implementazione Conforme in getFormSchema()
 
 ```php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         'name' => TextInput::make('name')
@@ -165,24 +137,10 @@ public function getFormSchema(): array
                 if ($operation === 'edit' && $record && $record->isPublished()) {
                     return;
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
                 // Non aggiornare lo slug se è stato modificato manualmente
                 if (($get('slug') ?? '') !== Str::slug($old)) {
                     return;
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
                 // Aggiorna lo slug solo se le condizioni sopra non sono verificate
                 $set('slug', Str::slug($state));
             }),
@@ -191,18 +149,9 @@ public function getFormSchema(): array
             ->required()
             ->unique(MailTemplate::class, 'slug', fn ($record) => $record)
             ->maxLength(255)
-<<<<<<< HEAD
-<<<<<<< HEAD
             ->disabled(fn (?string $operation, ?Model $record) => 
                 $operation === 'edit' && $record && $record->isPublished()),
             
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            ->disabled(fn (?string $operation, ?Model $record) => 
-                $operation === 'edit' && $record && $record->isPublished()),
-            
->>>>>>> a988596b (first)
             ->disabled(fn (?string $operation, ?Model $record) =>
                 $operation === 'edit' && $record && $record->isPublished()),
 
@@ -251,14 +200,7 @@ In alternativa o in aggiunta, è possibile implementare un sistema di reindirizz
 
 L'implementazione di una generazione intelligente di slug per i template email migliora significativamente la stabilità e l'usabilità del sistema. Preservando gli slug dei template pubblicati, si prevengono problemi di accessibilità e si garantisce un'esperienza utente coerente.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Per il modulo Notify di SaluteOra, questa soluzione rappresenta un equilibrio ottimale tra automazione e controllo, con particolare attenzione alla preservazione dei link esistenti.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Per il modulo Notify di SaluteOra, questa soluzione rappresenta un equilibrio ottimale tra automazione e controllo, con particolare attenzione alla preservazione dei link esistenti.
->>>>>>> a988596b (first)
 Per il modulo Notify di <nome progetto>, questa soluzione rappresenta un equilibrio ottimale tra automazione e controllo, con particolare attenzione alla preservazione dei link esistenti.
 
 ## Riferimenti

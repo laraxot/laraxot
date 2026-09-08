@@ -65,15 +65,6 @@ class NotificationTemplateForm extends XotBaseResourceForm
                 ->maxSize(5120)
                 ->acceptedFileTypes(['application/pdf', 'image/*'])
                 ->columnSpan(['lg' => 3])
-<<<<<<< HEAD
-<<<<<<< HEAD
                 ->helperText(__('notify::template.form.attachments.helper'))];
-=======
-                ->helperText(__('notify::template.form.attachments.helper')),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                ->helperText(__('notify::template.form.attachments.helper'))];
->>>>>>> a988596b (first)
     }
 }

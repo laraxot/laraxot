@@ -45,14 +45,6 @@ as a Folio page + Action, not a controller.
 See: [no-http-controllers.md](./no-http-controllers.md)
 
 ## Related Documentation
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [README](./readme.md)
-=======
-- [README](./README.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [README](./readme.md)
->>>>>>> a988596b (first)
 - [phpstan](./phpstan.md)
 - [No HTTP controllers](./no-http-controllers.md)

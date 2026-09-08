@@ -10,21 +10,8 @@ use Modules\Notify\Enums\NotificationTypeEnum;
 use Modules\Notify\Enums\SmsDriverEnum;
 use Modules\Notify\Enums\TelegramDriverEnum;
 use Modules\Notify\Enums\WhatsAppDriverEnum;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
 
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class)->group('no-notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use PHPUnit\Framework\Assert;
-
->>>>>>> a988596b (first)
 test('contact type enum exposes expected cases and column definitions', function () {
     Assert::assertCount(6, ContactTypeEnum::cases());
     $defs = ContactTypeEnum::getColumnDefinitions();

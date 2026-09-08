@@ -10,10 +10,6 @@ return [
         'group' => ['name' => 'Sistema', 'description' => 'Funzionalità per l\'invio di messaggi attraverso Telegram'],
         'label' => 'Invio Telegram',
         'icon' => 'notify-telegram-animated',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
         'sort' => 50],
     'fields' => [
         'chat_id' => [
@@ -28,38 +24,16 @@ return [
             'helper_text' => 'Contenuto del messaggio Telegram',
             'description' => 'Testo del messaggio da inviare tramite Telegram',
             'tooltip' => ''],
-<<<<<<< HEAD
-=======
-        'sort' => 50,
-    ],
-    'fields' => [
-        'chat_id' => ['label' => 'ID Chat', 'placeholder' => 'Inserisci l\'ID della chat', 'helper_text' => 'ID della chat Telegram di destinazione', 'description' => 'Identificativo univoco della chat Telegram', 'tooltip' => ''],
-        'message' => ['label' => 'Messaggio', 'placeholder' => 'Inserisci il messaggio da inviare', 'helper_text' => 'Contenuto del messaggio Telegram', 'description' => 'Testo del messaggio da inviare tramite Telegram', 'tooltip' => ''],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         'parse_mode' => [
             'label' => 'Formato',
             'placeholder' => 'Seleziona il formato',
             'helper_text' => 'Formato di interpretazione del messaggio',
             'description' => 'Modalità di formattazione del messaggio',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
             'options' => [
                 'text' => 'Testo semplice',
                 'html' => 'HTML',
                 'markdown' => 'Markdown'],
             'tooltip' => ''],
-<<<<<<< HEAD
-=======
-            'options' => ['text' => 'Testo semplice', 'html' => 'HTML', 'markdown' => 'Markdown'],
-            'tooltip' => '',
-        ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         'text' => ['label' => 'text', 'placeholder' => 'text', 'helper_text' => 'text', 'description' => 'text'],
         'driver' => ['label' => 'driver', 'placeholder' => 'driver', 'helper_text' => 'driver', 'description' => 'driver'],
         'disable_web_page_preview' => ['label' => 'disable_web_page_preview', 'placeholder' => 'disable_web_page_preview', 'helper_text' => 'disable_web_page_preview', 'description' => 'disable_web_page_preview'],
@@ -69,43 +43,15 @@ return [
         'media_type' => ['label' => 'media_type', 'placeholder' => 'media_type', 'helper_text' => 'media_type', 'description' => 'media_type'],
         'caption' => ['label' => 'caption', 'placeholder' => 'caption', 'helper_text' => 'caption', 'description' => 'caption'],
         'recipient' => ['label' => 'recipient', 'placeholder' => 'recipient', 'helper_text' => 'recipient', 'description' => 'recipient'],
-<<<<<<< HEAD
-<<<<<<< HEAD
         'body' => ['label' => 'body', 'placeholder' => 'body', 'helper_text' => 'body', 'description' => 'body']],
-=======
-        'body' => ['label' => 'body', 'placeholder' => 'body', 'helper_text' => 'body', 'description' => 'body'],
-    ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'body' => ['label' => 'body', 'placeholder' => 'body', 'helper_text' => 'body', 'description' => 'body']],
->>>>>>> a988596b (first)
     'actions' => [
         'send' => ['label' => 'Invia Messaggio', 'tooltip' => 'Invia un messaggio tramite Telegram', 'success_message' => 'Messaggio inviato con successo', 'error_message' => 'Errore nell\'invio del messaggio', 'success' => 'Messaggio inviato con successo', 'error' => 'Errore durante l\'invio del messaggio'],
         'preview' => ['label' => 'Anteprima', 'tooltip' => 'Visualizza un\'anteprima del messaggio', 'success_message' => 'Anteprima generata', 'error_message' => 'Errore nella generazione dell\'anteprima'],
         'emailFormActions' => ['label' => 'emailFormActions', 'icon' => 'emailFormActions', 'tooltip' => 'emailFormActions'],
         'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-<<<<<<< HEAD
-<<<<<<< HEAD
         'telegramFormActions' => ['label' => 'telegramFormActions', 'icon' => 'telegramFormActions', 'tooltip' => 'telegramFormActions']],
-=======
-        'telegramFormActions' => ['label' => 'telegramFormActions', 'icon' => 'telegramFormActions', 'tooltip' => 'telegramFormActions'],
-    ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'telegramFormActions' => ['label' => 'telegramFormActions', 'icon' => 'telegramFormActions', 'tooltip' => 'telegramFormActions']],
->>>>>>> a988596b (first)
     'messages' => ['success' => 'Messaggio Telegram inviato con successo', 'error' => 'Si è verificato un errore durante l\'invio del messaggio Telegram', 'confirmation' => 'Sei sicuro di voler inviare questo messaggio Telegram?'],
     'label' => 'Send Telegram',
     'plural_label' => 'Send Telegram (Plurale)',
     'sections' => [
-<<<<<<< HEAD
-<<<<<<< HEAD
         'empty' => ['label' => 'empty', 'heading' => 'empty']]];
-=======
-        'empty' => ['label' => 'empty', 'heading' => 'empty'],
-    ],
-];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'empty' => ['label' => 'empty', 'heading' => 'empty']]];
->>>>>>> a988596b (first)

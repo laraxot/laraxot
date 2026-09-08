@@ -7,27 +7,11 @@ namespace Modules\Notify\Tests\Feature;
 use Modules\Notify\Database\Factories\NotificationTypeFactory;
 use Modules\Notify\Models\NotificationType;
 use Modules\Notify\Tests\TestCase;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
-<<<<<<< HEAD
-=======
-use PHPUnit\Framework\Assert;
-use Modules\Xot\Tests\XotBasePest;
-
-use function Safe\json_encode;
-
-uses(TestCase::class)->group('notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 describe('Notification Type Business Logic', function () {
     it('can create notification type with basic information', function () {
         $typeData = [
@@ -35,16 +19,7 @@ describe('Notification Type Business Logic', function () {
             'slug' => 'appointment-reminder',
             'description' => 'Promemoria per appuntamenti',
             'category' => 'healthcare',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'is_active' => true];
-=======
-            'is_active' => true,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'is_active' => true];
->>>>>>> a988596b (first)
 
         $type = NotificationTypeFactory::new()->createOne($typeData);
 
@@ -60,16 +35,7 @@ describe('Notification Type Business Logic', function () {
             'slug' => 'appointment-reminder',
             'description' => 'Promemoria per appuntamenti',
             'category' => 'healthcare',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'is_active' => true]);
-=======
-            'is_active' => true,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'is_active' => true]);
->>>>>>> a988596b (first)
     });
 
     it('can manage notification type channels', function () {
@@ -78,46 +44,18 @@ describe('Notification Type Business Logic', function () {
             'email' => [
                 'enabled' => true,
                 'priority' => 'high',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
                 'template' => 'email.appointment-reminder'],
             'sms' => [
                 'enabled' => true,
                 'max_length' => 160],
             'push' => [
                 'enabled' => false]];
-<<<<<<< HEAD
-=======
-                'template' => 'email.appointment-reminder',
-            ],
-            'sms' => [
-                'enabled' => true,
-                'max_length' => 160,
-            ],
-            'push' => [
-                'enabled' => false,
-            ],
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
         $type->update(['channels' => $channels]);
 
         XotBasePest::assertTableHas('notify', 'notification_types', [
             'id' => $type->id,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'channels' => json_encode($channels)]);
-=======
-            'channels' => json_encode($channels),
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'channels' => json_encode($channels)]);
->>>>>>> a988596b (first)
 
         $fresh = XotBasePest::assertFreshModel($type, NotificationType::class);
         $storedChannels = XotBasePest::assertArray($fresh->channels);
@@ -139,31 +77,13 @@ describe('Notification Type Business Logic', function () {
             'retry_delay' => 300,
             'batch_size' => 100,
             'timezone_aware' => true,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'encryption_required' => false];
-=======
-            'encryption_required' => false,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'encryption_required' => false];
->>>>>>> a988596b (first)
 
         $type->update(['settings' => $settings]);
 
         XotBasePest::assertTableHas('notify', 'notification_types', [
             'id' => $type->id,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'settings' => json_encode($settings)]);
-=======
-            'settings' => json_encode($settings),
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'settings' => json_encode($settings)]);
->>>>>>> a988596b (first)
 
         $storedSettings = XotBasePest::assertArray(TestCase::notifyFreshTypeSettings($type));
 
@@ -182,16 +102,7 @@ describe('Notification Type Business Logic', function () {
 
         XotBasePest::assertTableHas('notify', 'notification_types', [
             'id' => $type->id,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'template' => $template]);
-=======
-            'template' => $template,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'template' => $template]);
->>>>>>> a988596b (first)
 
         Assert::assertSame($template, XotBasePest::assertFreshModel($type, NotificationType::class)->template);
     });
@@ -212,16 +123,7 @@ describe('Notification Type Business Logic', function () {
         $originalType = NotificationTypeFactory::new()->createOne([
             'name' => 'Original Type',
             'slug' => 'original-type',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'category' => 'system']);
-=======
-            'category' => 'system',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'category' => 'system']);
->>>>>>> a988596b (first)
 
         $duplicateType = $originalType->replicate();
         $duplicateType->name = 'Duplicate Type';
@@ -231,15 +133,6 @@ describe('Notification Type Business Logic', function () {
         XotBasePest::assertTableHas('notify', 'notification_types', [
             'id' => $duplicateType->id,
             'name' => 'Duplicate Type',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'slug' => 'duplicate-type']);
-=======
-            'slug' => 'duplicate-type',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'slug' => 'duplicate-type']);
->>>>>>> a988596b (first)
     });
 });

@@ -148,13 +148,6 @@ return [
 ```
 
 ## Riferimenti
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Regole di Naming per i File di Traduzione](./translation_file_naming_rules.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Regole di Naming per i File di Traduzione](./translation_file_naming_rules.md)
->>>>>>> a988596b (first)
 - [Regole di Naming per i File di Traduzione](./translation-file-naming-rules.md)
 - [Regole Generali per le Traduzioni](../../lang/docs/translation_keys_rules.md)

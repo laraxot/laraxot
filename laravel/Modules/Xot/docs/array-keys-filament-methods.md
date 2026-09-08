@@ -62,7 +62,11 @@ public function getTableBulkActions(): array
  *
  * @return array<string, \Filament\Forms\Components\Component>
  */
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         'name' => TextInput::make('name')->required(),
@@ -99,7 +103,11 @@ public function getTableActions(): array
 /**
  * @return array<mixed, Component>
  */
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     // ...
 }
@@ -146,7 +154,11 @@ public function getTableBulkActions(): array
 
 ```php
 // ✅ CORRETTO
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         'template_slug' => Select::make('template_slug')

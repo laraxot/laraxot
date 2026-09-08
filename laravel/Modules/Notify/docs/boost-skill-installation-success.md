@@ -35,20 +35,13 @@ The `boost:add-skill jeffallan/claude-skills --skill laravel-specialist` command
 **Solution**: Moved all dependencies from `require_comment` and `require-dev_comment` sections to active `require` and `require-dev` sections.
 
 **Files Modified**:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `/var/www/_bases/base_fixcity_fila5/laravel/composer.json`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- `/var/www/_bases/base_fixcity_fila5/laravel/composer.json`
->>>>>>> a988596b (first)
 - `/var/www/_bases/base_ptv_fila5/laravel/composer.json`
 
 ### 2. Version Conflicts (CRITICAL)
 **Problem**: Module composer.json files had conflicting version requirements:
 - Xot module required `laravel/boost: ^2.0` vs root `^1.0`
-- Rating module required `pestphp/pest-plugin-laravel: ^2.0` (Laravel 10.x/11.x only) vs Laravel 13.x
+- Rating module required `pestphp/pest-plugin-laravel: ^2.0` (Laravel 10.x/11.x only) vs Laravel 12.x
 - dotswan/filament-map-picker required Filament 4.x vs Filament 5.x
 
 **Solution**:
@@ -58,16 +51,8 @@ The `boost:add-skill jeffallan/claude-skills --skill laravel-specialist` command
 - Removed Pest version constraints from Rating module
 
 **Files Modified**:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `/var/www/_bases/base_fixcity_fila5/laravel/composer.json`
 - `/var/www/_bases/base_fixcity_fila5/laravel/Modules/Rating/composer.json`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- `/var/www/_bases/base_fixcity_fila5/laravel/composer.json`
-- `/var/www/_bases/base_fixcity_fila5/laravel/Modules/Rating/composer.json`
->>>>>>> a988596b (first)
 - `/var/www/_bases/base_ptv_fila5/laravel/composer.json`
 - `/var/www/_bases/base_ptv_fila5/laravel/Modules/Rating/composer.json`
 
@@ -79,16 +64,8 @@ The `boost:add-skill jeffallan/claude-skills --skill laravel-specialist` command
 **Solution**: Temporarily disabled `InteractsWithComments` trait and `CanComment` interface in `Modules\Fixcity\Models\User`.
 
 **Files Modified**:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `/var/www/_bases/base_fixcity_fila5/laravel/Modules/Fixcity/app/Models/User.php`
 - `/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/app/Models/BaseUser.php` (fixed return type)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- `/var/www/_bases/base_fixcity_fila5/laravel/Modules/Fixcity/app/Models/User.php`
-- `/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/app/Models/BaseUser.php` (fixed return type)
->>>>>>> a988596b (first)
 - `/var/www/_bases/base_ptv_fila5/laravel/Modules/Fixcity/app/Models/User.php`
 - `/var/www/_bases/base_ptv_fila5/laravel/Modules/User/app/Models/BaseUser.php` (fixed return type)
 
@@ -100,14 +77,7 @@ The `boost:add-skill jeffallan/claude-skills --skill laravel-specialist` command
 - `APP_DEBUG=true`
 
 **Files Created**:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `/var/www/_bases/base_fixcity_fila5/laravel/.env`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- `/var/www/_bases/base_fixcity_fila5/laravel/.env`
->>>>>>> a988596b (first)
 - `/var/www/_bases/base_ptv_fila5/laravel/.env`
 
 ## Installation Process
@@ -148,14 +118,7 @@ php artisan list | grep boost
 
 ### Skill Installation Location
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 /var/www/_bases/base_fixcity_fila5/laravel/.ai/skills/laravel-specialist/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-/var/www/_bases/base_fixcity_fila5/laravel/.ai/skills/laravel-specialist/
->>>>>>> a988596b (first)
 /var/www/_bases/base_ptv_fila5/laravel/.ai/skills/laravel-specialist/
 ```
 
@@ -202,14 +165,7 @@ Created BOOST_SKILL_FIX_summary.md in:
 
 ## Backup Files Created
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `/var/www/_bases/base_fixcity_fila5/laravel/composer.json.backup`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- `/var/www/_bases/base_fixcity_fila5/laravel/composer.json.backup`
->>>>>>> a988596b (first)
 - `/var/www/_bases/base_ptv_fila5/laravel/composer.json.backup`
 
 ## Known Issues
@@ -228,7 +184,7 @@ The `InteractsWithComments` trait is temporarily disabled in `Modules\Fixcity\Mo
 
 ✅ composer.json has all dependencies in active sections  
 ✅ composer install completed without errors (328 packages)  
-✅ php artisan --version returns Laravel 13.53.0  
+✅ php artisan --version returns Laravel 12.53.0  
 ✅ boost:add-skill command executes successfully  
 ✅ laravel-specialist skill installed in .ai/skills/  
 ✅ All module documentation updated  

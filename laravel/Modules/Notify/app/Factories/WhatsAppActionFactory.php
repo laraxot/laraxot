@@ -7,14 +7,9 @@ namespace Modules\Notify\Factories;
 use Exception;
 use Illuminate\Support\Facades\Config;
 use Modules\Notify\Contracts\WhatsAppProviderActionInterface;
-<<<<<<< HEAD
 use Webmozart\Assert\Assert;
 
 use function Safe\preg_replace;
-=======
-use function Safe\preg_replace;
-use Webmozart\Assert\Assert;
->>>>>>> a988596b (first)
 
 /**
  * Factory per la creazione di azioni WhatsApp.
@@ -29,10 +24,6 @@ final class WhatsAppActionFactory
      * Utilizza una formula per calcolare il nome della classe dell'azione.
      *
      * @param  string|null  $driver  Driver WhatsApp da utilizzare (se null, viene utilizzato quello predefinito)
-<<<<<<< HEAD
-=======
-     *
->>>>>>> a988596b (first)
      * @return WhatsAppProviderActionInterface Azione WhatsApp corrispondente al driver
      *
      * @throws Exception Se il driver specificato non è supportato o la classe non esiste

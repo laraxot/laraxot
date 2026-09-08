@@ -27,14 +27,7 @@ related:
 
 ## 📋 Overview
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 This discussion tracks the AI agent's work on improving GitHub Actions, documentation, and development workflows for the FixCity platform.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-This discussion tracks the AI agent's work on improving GitHub Actions, documentation, and development workflows for the FixCity platform.
->>>>>>> a988596b (first)
 This discussion tracks the AI agent's work on improving GitHub Actions, documentation, and development workflows for the Notify platform.
 
 ---
@@ -198,16 +191,8 @@ ssh-keygen -t ed25519 -C "actions@github.com"
 - [Sync Subtrees Docs](bashscripts/docs/github/actions/sync-subtrees.md)
 
 ### GitHub Links
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Actions Tab](https://github.com/laraxot/base_fixcity_fila5/actions)
 - [Settings > Secrets](https://github.com/laraxot/base_fixcity_fila5/settings/secrets/actions)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Actions Tab](https://github.com/laraxot/base_fixcity_fila5/actions)
-- [Settings > Secrets](https://github.com/laraxot/base_fixcity_fila5/settings/secrets/actions)
->>>>>>> a988596b (first)
 - [Actions Tab](https://github.com/laraxot/platform/actions)
 - [Settings > Secrets](https://github.com/laraxot/platform/settings/secrets/actions)
 - [Settings > SSH Keys](https://github.com/settings/keys)

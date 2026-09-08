@@ -50,14 +50,7 @@ find Modules/*/tests Themes/*/tests -type f \
 
 1. **Identificare i duplicati:**
    ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
    cd /var/www/_bases/base_fixcity_fila5_mono/laravel
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-   cd /var/www/_bases/base_fixcity_fila5_mono/laravel
->>>>>>> a988596b (first)
    cd /var/www/_bases/base_ptvx_fila5_mono/laravel
    find Modules/*/tests Themes/*/tests -type f \
      \( -name "*test.php" -o -name "*test.pest.php" -o -name "pest.php" \) \

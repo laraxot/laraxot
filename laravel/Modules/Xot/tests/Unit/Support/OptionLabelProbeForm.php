@@ -19,6 +19,7 @@ class OptionLabelProbeForm extends XotBaseResourceForm
 
     public static function labelFor(Model $record, string $titleAttribute = 'name'): string
     {
+        /** @var \Closure(Model $record): string $callback */
         $callback = static::optionLabelFromRecord($titleAttribute);
 
         return $callback($record);

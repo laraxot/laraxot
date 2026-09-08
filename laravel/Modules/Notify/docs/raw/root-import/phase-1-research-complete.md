@@ -13,23 +13,10 @@
 1. **PHASE-1-STRATEGY.md** (22.938 caratteri)
    - Analisi architettura Design Comuni
    - Breakdown pagina segnalazioni-elenco
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
    - Assessment stato FixCity attuale
    - 6 gap critici identificati
    - Strategia esecuzione multi-agente
    - Pattern traduzioni (corretto: `fixcity::segnalazione.fields.title.label`)
-<<<<<<< HEAD
-=======
-   - Assessment stato Notify attuale
-   - 6 gap critici identificati
-   - Strategia esecuzione multi-agente
-   - Pattern traduzioni (corretto: `laraxot::segnalazione.fields.title.label`)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
    - Criteri successo e checklist
 
 2. **GSD-PHASE-1-EXECUTION.md** (19.499 caratteri)
@@ -40,14 +27,7 @@
    - Timeline (15-60 min per subtask)
    - Success criteria
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 3. **bashscripts/docs/html/INDEX.md** (8.531 caratteri)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-3. **bashscripts/docs/html/INDEX.md** (8.531 caratteri)
->>>>>>> a988596b (first)
 3. **bashscripts/docs/html/index.md** (8.531 caratteri)
    - Documentazione strumenti HTML
    - Parity scoring (90%+ PASS, <90% WORK)
@@ -59,14 +39,7 @@
    - Rimuove scripts, styles, noscript
    - Preserva hierarchy, classes, attributes
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 5. **laravel/Themes/Sixteen/docs/00-INDEX.md** (12.926 caratteri)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-5. **laravel/Themes/Sixteen/docs/00-INDEX.md** (12.926 caratteri)
->>>>>>> a988596b (first)
 5. **laravel/Themes/Sixteen/docs/00-index.md** (12.926 caratteri)
    - Master index documentazione
    - Navigazione per topic
@@ -110,14 +83,7 @@ Data Flow: JSON → Handlebars → Static HTML
 5. <section id="info-contacts">       <!-- CONTACTS -->
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### FixCity Sixteen - Stato Attuale (Assessment)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-### FixCity Sixteen - Stato Attuale (Assessment)
->>>>>>> a988596b (first)
 ### Notify Sixteen - Stato Attuale (Assessment)
 
 ```
@@ -206,14 +172,7 @@ Crea: `PHASE-1-FINDINGS.md` con gap list dettagliato
 ### PASSO 3: Executor #2 applica fix (Subtask 3 & 4)
 Modifica:
 - `laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php`
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `laravel/config/local/fixcity/database/content/pages/tests.segnalazioni-elenco.json`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- `laravel/config/local/fixcity/database/content/pages/tests.segnalazioni-elenco.json`
->>>>>>> a988596b (first)
 - `laravel/config/local/laraxot/database/content/pages/tests.segnalazioni-elenco.json`
 ⏱️ ~40-60 min
 
@@ -237,18 +196,9 @@ Aggiorna: `00-INDEX.md`
 
 ### ✅ CORRETTO
 ```blade
-<<<<<<< HEAD
-<<<<<<< HEAD
 {{ trans('fixcity::segnalazione.fields.title.label') }}
 {{ trans('fixcity::segnalazione.filters.category.placeholder') }}
 {{ trans('fixcity::segnalazione.actions.submit.label') }}
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-{{ trans('fixcity::segnalazione.fields.title.label') }}
-{{ trans('fixcity::segnalazione.filters.category.placeholder') }}
-{{ trans('fixcity::segnalazione.actions.submit.label') }}
->>>>>>> a988596b (first)
 {{ trans('laraxot::segnalazione.fields.title.label') }}
 {{ trans('laraxot::segnalazione.filters.category.placeholder') }}
 {{ trans('laraxot::segnalazione.actions.submit.label') }}
@@ -263,14 +213,7 @@ Aggiorna: `00-INDEX.md`
 
 ### Struttura file traduzioni
 ```php
-<<<<<<< HEAD
-<<<<<<< HEAD
 // laravel/lang/it/fixcity.php
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-// laravel/lang/it/fixcity.php
->>>>>>> a988596b (first)
 // laravel/lang/it/laraxot.php
 return [
     'segnalazione' => [
@@ -292,23 +235,10 @@ return [
 
 **Leggi in questo ordine**:
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 1. **[00-INDEX.md](laravel/Themes/Sixteen/docs/00-INDEX.md)** - Master index (sei qui, ma online)
 2. **[PHASE-1-STRATEGY.md](laravel/Themes/Sixteen/docs/PHASE-1-STRATEGY.md)** - Strategia completa (22k chars)
 3. **[GSD-PHASE-1-EXECUTION.md](laravel/Themes/Sixteen/docs/GSD-PHASE-1-EXECUTION.md)** - Piano esecuzione (19k chars)
 4. **[bashscripts/docs/html/INDEX.md](bashscripts/docs/html/INDEX.md)** - Documentazione strumenti
-<<<<<<< HEAD
-=======
-1. **[00-index.md](laravel/Themes/Sixteen/docs/00-index.md)** - Master index (sei qui, ma online)
-2. **[PHASE-1-STRATEGY.md](laravel/Themes/Sixteen/docs/PHASE-1-STRATEGY.md)** - Strategia completa (22k chars)
-3. **[GSD-PHASE-1-EXECUTION.md](laravel/Themes/Sixteen/docs/GSD-PHASE-1-EXECUTION.md)** - Piano esecuzione (19k chars)
-4. **[bashscripts/docs/html/index.md](bashscripts/docs/html/index.md)** - Documentazione strumenti
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 ---
 
@@ -360,12 +290,5 @@ Buona fortuna! 🚀
 
 *Created: 2026-04-08*  
 *Researcher Agent - BMAD Mode C (Opzione C)*  
-<<<<<<< HEAD
-<<<<<<< HEAD
 *FixCity Sixteen Theme - Phase 1*
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-*FixCity Sixteen Theme - Phase 1*
->>>>>>> a988596b (first)
 *Notify Sixteen Theme - Phase 1*

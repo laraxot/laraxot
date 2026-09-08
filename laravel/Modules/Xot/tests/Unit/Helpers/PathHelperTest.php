@@ -59,7 +59,7 @@ it('constructs the views path', function (): void {
 });
 
 it('constructs the filament resources path', function (): void {
-    $result = PathHelper::filamentResourcesPath('Fixcity');
+    $result = PathHelper::filamentResourcesPath('Demo');
 
     expect($result)->toContain('Filament');
     expect($result)->toContain('Resources');

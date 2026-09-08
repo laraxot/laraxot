@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Case Sensitivity Rules - User Module"
 type: rule
@@ -23,28 +18,13 @@ related:
   - "./dependency.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Case Sensitivity Rules - User Module
 
 ## Problema / Problem
 
 **NON possono esistere file con lo stesso nome che differiscono solo per maiuscole/minuscole nella stessa directory.**
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Riferimento completo: [Xot Module Case Sensitivity Rules](../../Xot/docs/case-sensitivity-rules.md)
-=======
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-Riferimento completo: [Xot Module Case Sensitivity Rules](../../Xot/docs/case-sensitivity-rules.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 Riferimento completo: [Xot Module Case Sensitivity Rules](../../xot/docs/case-sensitivity-rules.md)
 
 ## File/Directory Rimossi da User Module
@@ -208,12 +188,4 @@ grep -r "Database/seeders" .
   - 29 factory files
   - 23 migration files
   - 5 seeder files
-<<<<<<< HEAD
   - Total: 57 duplicate files eliminated
-=======
-  - Total: 57 duplicate files eliminated
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

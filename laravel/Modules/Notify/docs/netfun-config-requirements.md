@@ -12,15 +12,7 @@ Aggiungi la seguente sezione nel file `config/sms.php`:
 
 ## Introduzione
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Questo documento descrive i requisiti di configurazione per l'integrazione con il provider SMS Netfun nel modulo Notify, seguendo la [struttura standardizzata della configurazione SMS](./STANDARDIZED_SMS_CONFIG_STRUCTURE.md).
-=======
 Questo documento descrive i requisiti di configurazione per l'integrazione con il provider SMS Netfun nel modulo Notify, seguendo la [struttura standardizzata della configurazione SMS](./standardized_sms_config_structure.md).
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Questo documento descrive i requisiti di configurazione per l'integrazione con il provider SMS Netfun nel modulo Notify, seguendo la [struttura standardizzata della configurazione SMS](./standardized_sms_config_structure.md).
->>>>>>> a988596b (first)
 
 ## Struttura di Configurazione
 
@@ -91,18 +83,8 @@ NETFUN_API_URL=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 ## Documentazione Correlata
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Struttura Standardizzata della Configurazione SMS](./STANDARDIZED_SMS_CONFIG_STRUCTURE.md)
-- [Canale SMS Netfun](./SMS_NETFUN_CHANNEL.md)
-=======
 - [Struttura Standardizzata della Configurazione SMS](./standardized_sms_config_structure.md)
 - [Canale SMS Netfun](./sms_netfun_channel.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Struttura Standardizzata della Configurazione SMS](./standardized_sms_config_structure.md)
-- [Canale SMS Netfun](./sms_netfun_channel.md)
->>>>>>> a988596b (first)
 
 ## Supporto
 
@@ -110,15 +92,7 @@ Per problemi di configurazione o domande sull'integrazione con Netfun, consultar
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-*Ultimo aggiornamento: 2025-05-12*
-=======
 *Ultimo aggiornamento: [DATE]*
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-*Ultimo aggiornamento: [DATE]*
->>>>>>> a988596b (first)
 
 ## 2. Esempio di .env
 
@@ -165,28 +139,10 @@ NETFUN_ENDPOINT=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 ## Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Documentazione Completa Netfun Channel](./SMS_NETFUN_CHANNEL.md)
-- [Esempi di Utilizzo Netfun](./NETFUN_EXAMPLES.md)
-=======
 - [Documentazione Completa Netfun Channel](./sms_netfun_channel.md)
 - [Esempi di Utilizzo Netfun](./netfun_examples.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Documentazione Completa Netfun Channel](./sms_netfun_channel.md)
-- [Esempi di Utilizzo Netfun](./netfun_examples.md)
->>>>>>> a988596b (first)
 - [Risoluzione Conflitti Netfun](./netfunchannel_conflict_resolution.md)
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-*Ultimo aggiornamento: 2025-05-12*
-=======
 *Ultimo aggiornamento: [DATE]*
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-*Ultimo aggiornamento: [DATE]*
->>>>>>> a988596b (first)

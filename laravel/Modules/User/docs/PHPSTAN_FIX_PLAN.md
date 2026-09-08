@@ -324,11 +324,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Models\Policies;
 
-<<<<<<< HEAD
-use Modules\Xot\Contracts\UserContract;
-=======
 use Modules\User\Models\User;
->>>>>>> 87273113 (.)
 use Modules\Xot\Contracts\UserContract;
 
 class UserPolicy
@@ -378,11 +374,7 @@ declare(strict_types=1);
 namespace Modules\User\Console\Commands;
 
 use Illuminate\Console\Command;
-<<<<<<< HEAD
-use Modules\Xot\Contracts\UserContract;
-=======
 use Modules\User\Models\User;
->>>>>>> 87273113 (.)
 use Modules\Xot\Contracts\UserContract;
 
 class ExampleCommand extends Command
@@ -429,11 +421,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Actions\Passport;
 
-<<<<<<< HEAD
-use Modules\Xot\Contracts\UserContract;
-=======
 use Modules\User\Models\User;
->>>>>>> 87273113 (.)
 use Modules\Xot\Contracts\UserContract;
 
 class CreateTokenAction

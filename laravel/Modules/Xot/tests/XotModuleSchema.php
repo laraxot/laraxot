@@ -17,7 +17,7 @@ use Throwable;
  * ## Perche' esiste
  *
  * `XotBaseTestCase::refreshApplication()` punta ogni connessione su
- * `database/fixcity_data.sqlite`. Quel file non e' un database di test: e' uno scratch
+ * il file sqlite condiviso in `database/`. Quel file non e' un database di test: e' uno scratch
  * condiviso, che contiene le tabelle lasciate li' dall'ultima suite che ha migrato per
  * conto suo. Alla misura del 2026-08-19 conteneva sette tabelle — `assets`, `collections`,
  * `components`, `migrations`, `sqlite_sequence`, `test_index_table`, `themes` — e nessuna
@@ -79,7 +79,7 @@ final class XotModuleSchema
      * Sposta ogni connessione su un file sqlite privato di **questo processo**.
      *
      * Senza isolamento tutte le suite — quelle degli altri moduli e quelle degli altri
-     * agenti — scrivono sullo stesso `database/fixcity_data.sqlite`, e due conseguenze
+     * agenti — scrivono sullo stesso il file sqlite condiviso in `database/`, e due conseguenze
      * arrivano insieme: `SQLSTATE[HY000]: General error: 5 database is locked` appena due
      * run si sovrappongono, e percentuali non riproducibili, perche' lo schema visto da una
      * suite dipende da quale altra suite ha migrato per ultima. Misurato: la suite di Pdnd

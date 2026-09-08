@@ -54,21 +54,9 @@ Here's a complete example of a properly formatted schema:
 ### Versione HEAD
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
-## Collegamenti tra versioni di schema_conventions.md
-* [schema_conventions.md](docs/schema_conventions.md)
-* [schema_conventions.md](../../../Notify/docs/schema_conventions.md)
-=======
 ## Collegamenti tra versioni di schema-conventions.md
 * [schema-conventions.md](docs/schema-conventions.md)
 * [schema-conventions.md](../../../Notify/docs/schema-conventions.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-## Collegamenti tra versioni di schema-conventions.md
-* [schema-conventions.md](docs/schema-conventions.md)
-* [schema-conventions.md](../../../Notify/docs/schema-conventions.md)
->>>>>>> a988596b (first)
 
 
 ### Versione Incoming

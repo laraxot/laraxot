@@ -18,27 +18,10 @@ use Modules\Notify\Models\MailTemplateVersion;
 use Modules\Notify\Models\Notification;
 use Modules\Notify\Models\NotificationTemplate;
 use Modules\Notify\Models\NotificationType;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
-<<<<<<< HEAD
-use Modules\User\Models\User;
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-use Modules\Xot\Tests\XotBasePest;
-
-use function Safe\json_encode;
-
-uses(TestCase::class)->group('notify-db');
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 describe('Notification Management Business Logic', function () {
     it('can create notification with core fields', function () {
@@ -47,20 +30,8 @@ describe('Notification Management Business Logic', function () {
             'status' => 'pending',
             'data' => [
                 'subject' => 'Test subject',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'message' => 'Test body'],
             'channels' => ['mail']]);
-=======
-                'message' => 'Test body',
-            ],
-            'channels' => ['mail'],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'message' => 'Test body'],
-            'channels' => ['mail']]);
->>>>>>> a988596b (first)
 
         Assert::assertInstanceOf(Notification::class, $notification);
         Assert::assertSame('email', $notification->type);
@@ -69,16 +40,7 @@ describe('Notification Management Business Logic', function () {
         XotBasePest::assertTableHas('notify', 'notifications', [
             'id' => $notification->id,
             'type' => 'email',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'status' => 'pending']);
-=======
-            'status' => 'pending',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'status' => 'pending']);
->>>>>>> a988596b (first)
     });
 
     it('can create notification template with valid schema', function () {
@@ -89,16 +51,7 @@ describe('Notification Management Business Logic', function () {
             'body_html' => '<p>Benvenuto {{user_name}}</p>',
             'channels' => ['mail'],
             'variables' => ['user_name'],
-<<<<<<< HEAD
-<<<<<<< HEAD
             'is_active' => true]);
-=======
-            'is_active' => true,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'is_active' => true]);
->>>>>>> a988596b (first)
 
         Assert::assertInstanceOf(NotificationTemplate::class, $template);
         Assert::assertSame('Welcome Email Template', $template->name);
@@ -108,16 +61,7 @@ describe('Notification Management Business Logic', function () {
             'id' => $template->id,
             'name' => 'Welcome Email Template',
             'code' => 'welcome-email',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'is_active' => true]);
-=======
-            'is_active' => true,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'is_active' => true]);
->>>>>>> a988596b (first)
     });
 
     it('can create notification type with valid schema', function () {
@@ -126,16 +70,7 @@ describe('Notification Management Business Logic', function () {
             'slug' => 'welcome-email',
             'description' => 'Email inviata ai nuovi utenti registrati',
             'category' => 'onboarding',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'is_active' => true]);
-=======
-            'is_active' => true,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'is_active' => true]);
->>>>>>> a988596b (first)
 
         Assert::assertInstanceOf(NotificationType::class, $type);
         Assert::assertSame('welcome_email', $type->name);
@@ -145,16 +80,7 @@ describe('Notification Management Business Logic', function () {
             'id' => $type->id,
             'name' => 'welcome_email',
             'slug' => 'welcome-email',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'is_active' => true]);
-=======
-            'is_active' => true,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'is_active' => true]);
->>>>>>> a988596b (first)
     });
 
     it('can create contact for notification delivery', function () {
@@ -165,33 +91,14 @@ describe('Notification Management Business Logic', function () {
             'value' => 'mario.rossi@example.com',
             'first_name' => 'Mario',
             'last_name' => 'Rossi',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'email' => 'mario.rossi@example.com']);
-=======
-            'email' => 'mario.rossi@example.com',
-        ]);
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'email' => 'mario.rossi@example.com']);
->>>>>>> a988596b (first)
         Assert::assertInstanceOf(Contact::class, $contact);
         Assert::assertSame('mario.rossi@example.com', $contact->value);
 
         XotBasePest::assertTableHas('notify', 'contacts', [
             'id' => $contact->id,
             'contact_type' => 'email',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'value' => 'mario.rossi@example.com']);
-=======
-            'value' => 'mario.rossi@example.com',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'value' => 'mario.rossi@example.com']);
->>>>>>> a988596b (first)
     });
 
     it('can track mail template log lifecycle', function () {
@@ -201,16 +108,7 @@ describe('Notification Management Business Logic', function () {
             'status' => 'sent',
             'data' => ['recipient' => 'patient@example.com'],
             'metadata' => ['campaign_id' => 'welcome_001'],
-<<<<<<< HEAD
-<<<<<<< HEAD
             'sent_at' => now()]);
-=======
-            'sent_at' => now(),
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'sent_at' => now()]);
->>>>>>> a988596b (first)
 
         Assert::assertInstanceOf(MailTemplateLog::class, $log);
         Assert::assertSame('sent', $log->status);
@@ -226,16 +124,7 @@ describe('Notification Management Business Logic', function () {
             'html_template' => '<p>Snapshot</p>',
             'text_template' => 'Snapshot',
             'version' => 2,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'change_notes' => 'Aggiornamento copy']);
-=======
-            'change_notes' => 'Aggiornamento copy',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'change_notes' => 'Aggiornamento copy']);
->>>>>>> a988596b (first)
 
         Assert::assertInstanceOf(MailTemplateVersion::class, $version);
         Assert::assertSame('Versione precedente', $version->subject);
@@ -247,16 +136,7 @@ describe('Notification Management Business Logic', function () {
         $notification = NotificationFactory::new()->createOne([
             'type' => 'sms',
             'status' => 'pending',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'data' => ['message' => 'Old message']]);
-=======
-            'data' => ['message' => 'Old message'],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'data' => ['message' => 'Old message']]);
->>>>>>> a988596b (first)
 
         $payload = ['message' => 'Updated message', 'locale' => 'it'];
         $notification->update(['data' => $payload, 'status' => 'sent', 'sent_at' => now()]);
@@ -270,46 +150,19 @@ describe('Notification Management Business Logic', function () {
 
         XotBasePest::assertTableHas('notify', 'notifications', [
             'id' => $notification->id,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'status' => 'sent']);
-=======
-            'status' => 'sent',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'status' => 'sent']);
->>>>>>> a988596b (first)
     });
 
     it('can store notification type channel configuration', function () {
         $channels = [
             'email' => ['enabled' => true],
-<<<<<<< HEAD
-<<<<<<< HEAD
             'sms' => ['enabled' => false]];
-=======
-            'sms' => ['enabled' => false],
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'sms' => ['enabled' => false]];
->>>>>>> a988596b (first)
 
         $type = NotificationTypeFactory::new()->createOne(['channels' => $channels]);
 
         XotBasePest::assertTableHas('notify', 'notification_types', [
             'id' => $type->id,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'channels' => json_encode($channels)]);
-=======
-            'channels' => json_encode($channels),
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'channels' => json_encode($channels)]);
->>>>>>> a988596b (first)
 
         $stored = XotBasePest::assertArray(XotBasePest::assertFreshModel($type, NotificationType::class)->channels);
         Assert::assertTrue(XotBasePest::assertArray($stored['email'] ?? null)['enabled']);

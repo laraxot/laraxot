@@ -174,7 +174,11 @@ namespace Modules\NewModule\Filament\Resources;
 
 class ProductResource extends XotBaseResource
 {
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             Forms\Components\TextInput::make('name'),
@@ -185,7 +189,11 @@ class ProductResource extends XotBaseResource
         ];
     }
 
+<<<<<<< HEAD
+    public static function getInfolistSchema(): array
+=======
     public function getInfolistSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             Infolists\Components\TextEntry::make('name'),

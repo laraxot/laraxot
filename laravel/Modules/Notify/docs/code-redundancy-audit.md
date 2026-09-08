@@ -83,14 +83,7 @@ Ridurre rumore, duplicazione e ambiguita' nel codice di questo module, senza per
 ## Second Brain 2026 — note operative
 
 - Markdown locale + Git restano la base piu' portabile: gli agenti leggono/scrivono file senza database esterni.
-<<<<<<< HEAD
-<<<<<<< HEAD
 - AGENTS.md/SKILL.md devono restare manifest leggeri, con YAML/front matter e routing on-demand.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- AGENTS.md/SKILL.md devono restare manifest leggeri, con YAML/front matter e routing on-demand.
->>>>>>> a988596b (first)
 - agents.md/SKILL.md devono restare manifest leggeri, con YAML/front matter e routing on-demand.
 - I descrittori architetturali navigabili riducono i passi di localizzazione: ogni owner dovrebbe avere mappa scopo -> file chiave.
 - AI utile = recupero mirato, non pre-caricamento: report atomici, QMD, issue e log.

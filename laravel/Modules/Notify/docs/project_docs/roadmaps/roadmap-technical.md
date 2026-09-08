@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # 🛠️ ROADMAP TECNICA - FIXCITY PLATFORM
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# 🛠️ ROADMAP TECNICA - FIXCITY PLATFORM
->>>>>>> a988596b (first)
 # 🛠️ ROADMAP TECNICA - NOTIFY PLATFORM
 
 **Versione**: 1.0  
@@ -14,14 +7,7 @@
 **Priorità**: ALTA  
 
 ## 🎯 Obiettivo
-<<<<<<< HEAD
-<<<<<<< HEAD
 Completare l'evoluzione tecnica del progetto FixCity per raggiungere la produzione con qualità enterprise e scalabilità.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Completare l'evoluzione tecnica del progetto FixCity per raggiungere la produzione con qualità enterprise e scalabilità.
->>>>>>> a988596b (first)
 Completare l'evoluzione tecnica del progetto Notify per raggiungere la produzione con qualità enterprise e scalabilità.
 
 ## 📊 Stato Attuale
@@ -474,16 +460,8 @@ jobs:
 **📞 Contatti**
 - **Tech Lead**: Laraxot Development Team
 - **Email**: tech@laraxot.com
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Slack**: #fixcity-tech
 - **GitHub**: [FixCity Repository](https://github.com/laraxot/fixcity)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Slack**: #fixcity-tech
-- **GitHub**: [FixCity Repository](https://github.com/laraxot/fixcity)
->>>>>>> a988596b (first)
 - **Slack**: #laraxot-tech
 - **GitHub**: [Notify Repository](https://github.com/laraxot/laraxot)
 

@@ -2,14 +2,7 @@
 
 ## Panoramica
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Questo documento descrive l'integrazione dei template email [mailpace/templates](https://github.com/mailpace/templates) nel modulo Notify di Quaeris. Questi template offrono un design moderno basato su TailwindCSS con supporto nativo per la modalità scura.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Questo documento descrive l'integrazione dei template email [mailpace/templates](https://github.com/mailpace/templates) nel modulo Notify di Quaeris. Questi template offrono un design moderno basato su TailwindCSS con supporto nativo per la modalità scura.
->>>>>>> a988596b (first)
 Questo documento descrive l'integrazione dei template email [mailpace/templates](https://github.com/mailpace/templates) nel modulo Notify di App. Questi template offrono un design moderno basato su TailwindCSS con supporto nativo per la modalità scura.
 
 ## Template Disponibili
@@ -36,14 +29,7 @@ MailPace offre i seguenti template transazionali:
 ### Struttura della Directory
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 /var/www/html/Quaeris/laravel/Modules/Notify/resources/mail-layouts/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-/var/www/html/Quaeris/laravel/Modules/Notify/resources/mail-layouts/
->>>>>>> a988596b (first)
 /var/www/_bases/base_ptvx_fila5/laravel/Modules/Notify/resources/mail-layouts/
 ├── default.html       # Layout base per la maggior parte delle email
 ├── main.html          # Alternativa semplificata
@@ -105,27 +91,13 @@ $mailTemplate->send($user->email, [
 1. **Mantieni la Struttura Base** - Non modificare la struttura HTML base per garantire compatibilità
 2. **Usa Variabili** - Utilizza variabili Blade per contenuti dinamici
 3. **Test Cross-Client** - Testa i template su diversi client email
-<<<<<<< HEAD
-<<<<<<< HEAD
 4. **Segui le Convenzioni di Branding** - Usa i colori e font definiti per Quaeris
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-4. **Segui le Convenzioni di Branding** - Usa i colori e font definiti per Quaeris
->>>>>>> a988596b (first)
 4. **Segui le Convenzioni di Branding** - Usa i colori e font definiti per App
 
 ## Riferimenti
 
 - [Documentazione Maizzle](https://maizzle.com/docs/)
 - [Repository MailPace Templates](https://github.com/mailpace/templates)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Guida Spatie Email](../spatie_email_usage_guide.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Guida Spatie Email](../spatie_email_usage_guide.md)
->>>>>>> a988596b (first)
 - [Guida Spatie Email](../spatie-email-usage-guide.md)
 - [Implementazione Slug Field](./slug_field_implementation.md)

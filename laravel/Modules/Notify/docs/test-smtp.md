@@ -40,13 +40,6 @@ Mail::raw('Test SMTP', function($m){ $m->to('tuo@email.com')->subject('Test SMTP
 
 ## Approfondimenti
 - [TestSmtpPage vs SendEmail: differenze architetturali](./test_smtp.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Best practice per la configurazione SMTP](./email_best_practices.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Best practice per la configurazione SMTP](./email_best_practices.md)
->>>>>>> a988596b (first)
 - [Best practice per la configurazione SMTP](./email-best-practices.md)
 - [Documentazione Laravel Mail](https://laravel.com/docs/mail)

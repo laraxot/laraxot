@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
----
-title: "Notify Module - Code Fixes & Improvements (2025)"
-module: notify
-type: integration
-tags: [integrations, modules, notify]
-created: 2026-08-24
-updated: 2026-08-24
----
-
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 # Notify Module - Code Fixes & Improvements (2025)
 
 > **Last Updated:** 2025-11-23

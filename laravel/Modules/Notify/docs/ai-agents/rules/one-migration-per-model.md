@@ -188,14 +188,7 @@ Tutto il resto è **RUMORE**.
 ## 🔗 Related Documentation
 
 ### AI Agents Docs
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **[Rules Index](00-INDEX.md)** - All rules
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **[Rules Index](00-INDEX.md)** - All rules
->>>>>>> a988596b (first)
 - **[Rules Index](00-index.md)** - All rules
 - **[DRY Principle](../guidelines/dry-kiss.md)** - DRY + KISS
 - **[Translation Structure](translation-structure-5-levels.md)** - 5 levels rule

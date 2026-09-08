@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ---
 title: "User Module - PHPStan Fixes Session 2025-10-01"
 type: concept
@@ -20,7 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
->>>>>>> 2024e2e7 (.)
 # User Module - PHPStan Fixes Session 2025-10-01
 
 ## ⚠️ Stato: IN PROGRESS - 95 errori rimanenti
@@ -228,15 +225,9 @@ public function canAccessTenant(\Illuminate\Database\Eloquent\Model $tenant): bo
 ## 🔗 Collegamenti
 
 - [← User Module README](./readme.md)
-<<<<<<< HEAD
-- [← PHPStan Session Report](../../../docs/phpstan/filament-v4-fixes-session.md)
-- [← Final Report](../../../docs/phpstan/final-report-session-2025-10-01.md)
-- [← Root Documentation](../../../docs/index.md)
-=======
 - [← PHPStan Session Report](../../../../docs/phpstan/filament-v4-fixes-session.md)
 - [← Final Report](../../../../docs/phpstan/final-report-session-2025-10-01.md)
 - [← Root Documentation](../../../../docs/index.md)
->>>>>>> 2024e2e7 (.)
 
 ---
 
@@ -646,10 +637,6 @@ public string $currentState = 'default';
 - [PHPStan Usage](../../xot/docs/phpstan-usage.md)
 - [XotBaseResource Documentation](../../xot/docs/filament/xot-base-resource.md)
 
-<<<<<<< HEAD
-*Ultimo aggiornamento: 2025-01-22*
-=======
->>>>>>> 2024e2e7 (.)
 # PHPStan Fixes - Modulo User
 
 ## OauthClientResource.php
@@ -662,11 +649,7 @@ Il metodo `getFormSchema()` deve restituire un array associativo con chiavi stri
 
 ```php
 // ✅ CORRETTO
-<<<<<<< HEAD
 public static function getFormSchema(): array
-=======
-public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
 {
     return [
         'main_section' => Section::make('OAuth Client Information')

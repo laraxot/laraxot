@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Best Practices per le Traduzioni"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./dependency-rules.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Best Practices per le Traduzioni
 
 ## Principi Generali
@@ -172,23 +161,7 @@ Seguire queste best practices aiuta a mantenere un sistema di traduzioni efficie
 
 ## Collegamenti Correlati
 - [Documentazione Laravel Localization](https://laravel.com/docs/localization)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Best Practices di Codice](./CODE_BEST_PRACTICES.md)
 - [Struttura Moduli](./module-structure.md) 
 - [Best Practices di Codice](./code_best_practices.md)
 - [Struttura Moduli](./module-structure-2.md) 
-=======
-- [Best Practices di Codice](./code_best_practices.md)
-- [Struttura Moduli](./module_structure.md) 
->>>>>>> 60a2c9a9 (.)
-=======
-- [Best Practices di Codice](./code_best_practices.md)
-- [Struttura Moduli](./module_structure.md) 
-=======
-- [Best Practices di Codice](./CODE_BEST_PRACTICES.md)
-- [Struttura Moduli](./module-structure.md) 
-- [Best Practices di Codice](./code_best_practices.md)
-- [Struttura Moduli](./module-structure-2.md) 
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Correzione conflitto e miglioramento PHPStan livello 9 in Filament/Resources/UserResource.php"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Correzione conflitto e miglioramento PHPStan livello 9 in Filament/Resources/UserResource.php
 
 **Data:** [DATE]
@@ -51,18 +40,7 @@ Sono stati rilevati conflitti Git non risolti nel file `app/Filament/Resources/U
 - Validazione con PHPStan livello 9
 
 ## Collegamenti
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Documentazione globale correzioni](../../../../docs/modules_analysis.md)
-=======
-- [Documentazione globale correzioni](../../../docs/modules_analysis.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Documentazione globale correzioni](../../../docs/modules_analysis.md)
-=======
-- [Documentazione globale correzioni](../../../../docs/modules_analysis.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
 ---
 

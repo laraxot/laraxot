@@ -135,15 +135,7 @@ return [
 ## Collegamenti
 - [Documentazione API](./api.md)
 - [Template Email](./templates.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Guida Contribuzione](./contributing.md)
-=======
-- [Guida Contribuzione](./CONTRIBUTING.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Guida Contribuzione](./contributing.md)
->>>>>>> a988596b (first)
 
 ## Note
 - Testare le notifiche in ambiente di sviluppo

@@ -42,7 +42,6 @@ use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Actions\Filament\PlainTextFromFilamentValueAction;
 use Modules\Xot\Actions\GetTransKeyAction;
 use Webmozart\Assert\Assert;
-use ReflectionMethod;
 
 /**
  * Trait HasXotTable.
@@ -130,7 +129,8 @@ trait HasXotTable
     {
         $columns = [];
 
-        foreach (array_values($this->resolveTableColumns()) as $column) {
+        // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+        foreach (array_values($this->getTableColumns()) as $column) {
             if ($column instanceof ColumnGroup) {
                 // Stack::make() non accetta ColumnGroup: nella vista a griglia le colonne
                 // raggruppate non hanno un layout sensato, quindi vengono saltate.
@@ -187,7 +187,8 @@ trait HasXotTable
      */
     public function getTableFiltersFormColumns(): int
     {
-        $count = count($this->resolveTableFilters()) + 1;
+        // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+        $count = count($this->getTableFilters()) + 1;
 
         return min($count, 6);
     }
@@ -236,31 +237,46 @@ trait HasXotTable
         // (fallback deprecato di Filament): si filtrano per restare coerenti col tipo
         // atteso da TableLayoutEnum::getTableColumns().
         $tableColumns = array_values(array_filter(
-            $this->resolveTableColumns(),
+            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            $this->getTableColumns(),
             static fn (mixed $column): bool => $column instanceof Column || $column instanceof ColumnGroup || $column instanceof LayoutComponent,
         ));
 
+        $columns = $this->layoutView->getTableColumns($tableColumns, $this->getGridTableColumns());
+        
+        
+
         $table = $table
             ->recordTitleAttribute($this->getTableRecordTitleAttribute())
-            ->heading($this->resolveTableHeading())
+            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            ->heading($this->getTableHeading())
             ->columns($this->layoutView->getTableColumns($tableColumns, $this->getGridTableColumns()))
             ->contentGrid($this->layoutView->getTableContentGrid())
-            ->filters($this->resolveTableFilters())
-            ->filtersLayout(FiltersLayout::AboveContent)
+            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            ->filters($this->getTableFilters())
+            ->filtersLayout($this->getTableFiltersLayout())
             ->filtersFormColumns($this->getTableFiltersFormColumns())
             ->deferFilters($this->shouldDeferTableFilters())
-            ->persistFiltersInSession()
-            ->headerActions(array_values($this->resolveTableHeaderActions()))
-            ->recordActions(array_values($this->resolveTableActions()))
-            ->toolbarActions(array_values($this->resolveTableBulkActions()))
-            ->recordActionsPosition(RecordActionsPosition::BeforeColumns)
-            ->emptyStateActions(array_values($this->resolveTableEmptyStateActions()))
-            ->striped()
+            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            ->persistFiltersInSession($this->shouldPersistTableFiltersInSession())
+            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            ->headerActions($this->getTableHeaderActions())
+            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            ->recordActions($this->getTableActions())
+            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            ->toolbarActions($this->getTableBulkActions())
+            ->recordActionsPosition($this->getTableRecordActionsPosition())
+            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            ->emptyStateActions($this->getTableEmptyStateActions())
+            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            ->striped($this->isTableStriped())
             ->paginated($this->getTablePaginated());
 
         // Configurazioni opzionali personalizzabili
-        $sortColumn = $this->resolveDefaultTableSortColumn();
-        $sortDirection = $this->resolveDefaultTableSortDirection();
+        // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+        $sortColumn = $this->getDefaultTableSortColumn();
+        // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+        $sortDirection = $this->getDefaultTableSortDirection();
         if ($sortColumn !== null && $sortDirection !== null) {
             $table = $table->defaultSort($sortColumn, $sortDirection);
         }
@@ -295,21 +311,15 @@ trait HasXotTable
      *
      * @return array<int|string, Action|ActionGroup>
      */
-    /**
-     * @deprecated override the `table()` method to configure the table
-     *
-     * @return array<int|string, Action|ActionGroup>
-     */
     public function getTableActions(): array
     {
-        if ($this instanceof TableWidget) {
-            return [];
-        }
+       
 
         $actions = [];
         $resource = $this;
         /* @phpstan-ignore-next-line */
-        if ($this instanceof ListRecords) {
+        //if ($this instanceof ListRecords) {
+        if(method_exists($this, 'getResource')) {
             $resourceClass = $this->getResource();
             // @phpstan-ignore-next-line staticMethod.alreadyNarrowedType
             Assert::string($resourceClass);
@@ -317,6 +327,7 @@ trait HasXotTable
         }
         // @phpstan-ignore-next-line staticMethod.alreadyNarrowedType
         Assert::object($resource);
+        
 
         // @phpstan-ignore-next-line function.alreadyNarrowedType
         if (method_exists($resource, 'canView')) {
@@ -428,9 +439,6 @@ trait HasXotTable
     /**
      * Get list table columns.
      *
-     * @return array<string, Column>
-     */
-    /**
      * @return array<string, Column|ColumnGroup|LayoutComponent>
      */
     abstract protected function getTableColumns(): array;
@@ -472,95 +480,6 @@ trait HasXotTable
     protected function getTableEmptyStateActions(): array
     {
         return [];
-    }
-
-    /**
-     * Invoke legacy Filament hooks only when implemented by the concrete component.
-     *
-     * @return array<string|int, Column|ColumnGroup|LayoutComponent>
-     */
-    private function resolveTableColumns(): array
-    {
-        return $this->invokeTableHook('getTableColumns', []);
-    }
-
-    /**
-     * @return array<string|int, Tables\Filters\Filter|TernaryFilter|BaseFilter>
-     */
-    private function resolveTableFilters(): array
-    {
-        return $this->invokeTableHook('getTableFilters', []);
-    }
-
-    /**
-     * @return array<int|string, Action|ActionGroup>
-     */
-    private function resolveTableHeaderActions(): array
-    {
-        return $this->invokeTableHook('getTableHeaderActions', []);
-    }
-
-    /**
-     * @return array<int|string, Action|ActionGroup>
-     */
-    private function resolveTableActions(): array
-    {
-        return $this->invokeTableHook('getTableActions', []);
-    }
-
-    /**
-     * @return array<int|string, BulkAction>
-     */
-    private function resolveTableBulkActions(): array
-    {
-        return $this->invokeTableHook('getTableBulkActions', []);
-    }
-
-    /**
-     * @return array<int|string, Action>
-     */
-    private function resolveTableEmptyStateActions(): array
-    {
-        return $this->invokeTableHook('getTableEmptyStateActions', []);
-    }
-
-    private function resolveTableHeading(): ?string
-    {
-        $heading = $this->invokeTableHook('getTableHeading', null);
-
-        return is_string($heading) ? $heading : null;
-    }
-
-    private function resolveDefaultTableSortColumn(): ?string
-    {
-        $column = $this->invokeTableHook('getDefaultTableSortColumn', null);
-
-        return is_string($column) ? $column : null;
-    }
-
-    private function resolveDefaultTableSortDirection(): ?string
-    {
-        $direction = $this->invokeTableHook('getDefaultTableSortDirection', null);
-
-        return is_string($direction) ? $direction : null;
-    }
-
-    /**
-     * @template TResult
-     *
-     * @param  TResult  $default
-     * @return TResult
-     */
-    private function invokeTableHook(string $method, mixed $default): mixed
-    {
-        $reflection = new ReflectionMethod($this, $method);
-        $declaringClass = $reflection->getDeclaringClass()->getName();
-
-        if ($declaringClass === self::class || str_starts_with($declaringClass, 'Filament\\')) {
-            return $default;
-        }
-
-        return $reflection->invoke($this);
     }
 
     protected function shouldShowAssociateAction(): bool
@@ -605,6 +524,38 @@ trait HasXotTable
         return [
             'create' => CreateAction::make()->icon('heroicon-o-plus'),
         ];
+    }
+
+    /**
+     * Get table filters layout.
+     */
+    protected function getTableFiltersLayout(): FiltersLayout
+    {
+        return FiltersLayout::AboveContent;
+    }
+
+    /**
+     * Get table record actions position.
+     */
+    protected function getTableRecordActionsPosition(): RecordActionsPosition
+    {
+        return RecordActionsPosition::BeforeColumns;
+    }
+
+    /**
+     * Whether table rows are striped.
+     */
+    protected function isTableStriped(): bool
+    {
+        return true;
+    }
+
+    /**
+     * Whether table filters persist in session.
+     */
+    protected function shouldPersistTableFiltersInSession(): bool
+    {
+        return true;
     }
 
     /**

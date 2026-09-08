@@ -51,14 +51,7 @@ Vedi [index](index.md) per navigazione completa.
 - Per chaining queued usare `new ActionJob(AnotherAction::class, $args)`.
 - Per test queued usare `Queue::fake()` + `Spatie\QueueableAction\Testing\QueueableActionFake`.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### Quaeris question-chart pipeline — prima lint, poi app boot
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-### Quaeris question-chart pipeline — prima lint, poi app boot
->>>>>>> a988596b (first)
 ### App question-chart pipeline — prima lint, poi app boot
 - Nei flussi `ViewQuestionChart` il primo blocker puo` essere sintattico e non applicativo.
 - Prima di inseguire Livewire/Filament o query runtime, lintare l'intera catena caricata subito:
@@ -69,14 +62,7 @@ Vedi [index](index.md) per navigazione completa.
 - Se lo stack trace dell'utente punta a una riga che sul disco non corrisponde piu`, trattarlo come possibile errore stale e verificare il file attuale con `php -l` + `nl -ba`.
 
 ### QuestionChart root ancestor — distinguere metodo assente da runtime stale
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `QuestionChart::getRootQuestionAncestorId()` e` parte del contratto del modulo Quaeris.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- `QuestionChart::getRootQuestionAncestorId()` e` parte del contratto del modulo Quaeris.
->>>>>>> a988596b (first)
 - `QuestionChart::getRootQuestionAncestorId()` e` parte del contratto del modulo App.
 - Se l'errore utente dice "undefined method" ma:
   - il metodo esiste sul file corrente
@@ -126,14 +112,7 @@ Vedi [index](index.md) per navigazione completa.
 - **PERCHE ManageQuestionCharts FUNZIONA**: ha `$this->record` = SurveyPdf (padre) → accede a `$this->record->survey_id` direttamente
 - **PERCHE EditQuestionChart NON FUNZIONA**: ha `$this->record` = QuestionChart (figlio) → deve navigare `$this->record->surveyPdf->survey_id` — metodo mai implementato
 - **REGOLA**: se lo schema dipende dal padre, la Edit page DEVE sovrascrivere `getFormSchema()` come metodo istanza
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **DOC**: `laravel/Modules/Quaeris/docs/nested-resource-form-trap.md` (analisi completa)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **DOC**: `laravel/Modules/Quaeris/docs/nested-resource-form-trap.md` (analisi completa)
->>>>>>> a988596b (first)
 - **DOC**: `laravel/Modules/App/docs/nested-resource-form-trap.md` (analisi completa)
 
 ### Filament Resources Overview — allineamento Laraxot
@@ -182,14 +161,7 @@ Vedi [index](index.md) per navigazione completa.
 - Errore: `Cannot override final method ...::table()`
 - Classi che avevano `table()` e devono essere corrette:
   - `LocationMapTableWidget` (Geo)
-<<<<<<< HEAD
-<<<<<<< HEAD
   - `OptOutWidget` (Quaeris)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-  - `OptOutWidget` (Quaeris)
->>>>>>> a988596b (first)
   - `OptOutWidget` (App)
   - `ManageRolePermissions` (User)
   - `GoogleDriveFileListPage` (CloudStorage)
@@ -260,14 +232,7 @@ Vedi [index](index.md) per navigazione completa.
 ### Form vuoto su Edit nested resource (QuestionCharts)
 - URL tipo `.../survey-pdfs/16/question-charts/230/edit` può mostrare la pagina Edit ma **form vuoto**.
 - **Causa**: la Edit usa `Resource::form()` → `Resource::getFormSchema()`. Se la nested resource (es. QuestionChartResource) ha `getFormSchema()` vuoto e i campi veri in un altro metodo (es. `getFormSchemaBySurveyId($survey_id)`), il form resta vuoto perché quel secondo metodo non viene mai chiamato nel flusso Edit/Create.
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Regola**: per nested resource con form dipendente dal parent, lo schema effettivo deve essere restituito da `getFormSchema()` (o dalla pagina che override), eventualmente recuperando il parent dal contesto. Documentazione: `laravel/Modules/Quaeris/docs/edit-question-chart-form-empty-cause.md`, rule `filament-nested-resources.mdc` e `filament-form-schema.mdc`.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Regola**: per nested resource con form dipendente dal parent, lo schema effettivo deve essere restituito da `getFormSchema()` (o dalla pagina che override), eventualmente recuperando il parent dal contesto. Documentazione: `laravel/Modules/Quaeris/docs/edit-question-chart-form-empty-cause.md`, rule `filament-nested-resources.mdc` e `filament-form-schema.mdc`.
->>>>>>> a988596b (first)
 - **Regola**: per nested resource con form dipendente dal parent, lo schema effettivo deve essere restituito da `getFormSchema()` (o dalla pagina che override), eventualmente recuperando il parent dal contesto. Documentazione: `laravel/Modules/App/docs/edit-question-chart-form-empty-cause.md`, rule `filament-nested-resources.mdc` e `filament-form-schema.mdc`.
 
 ### HasXotTable / XotBaseManageRelatedRecords pattern (ManageCharts)

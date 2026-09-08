@@ -1,34 +1,144 @@
-# Notify
+---
+title: "Guide di Sviluppo"
+type: index
+tags: [notify, docs, project_docs, development]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione project_docs development readme guide di sviluppo index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../../README.md
+  - ../../wiki/index.md
+  - ../../notifications/readme.md
+  - ../../integrations/readme.md
+  - ../../templates/readme.md
+---
+# Guide di Sviluppo
 
-[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Panoramica
+Questa sezione contiene tutte le guide per lo sviluppo del sistema Laraxot, incluse best practices e strumenti.
 
-> **Core module for the FixCity Platform.**
+## Struttura
 
-## Perché esiste
+### filament/
+Guide specifiche per lo sviluppo con Filament.
 
-Core module for the FixCity Platform.
+**Contenuti:**
+- Best practices Filament
+- Pattern per Resources
+- Widget personalizzati
+- Form e validazioni
+- Azioni custom
 
-## Superpoteri
+### phpstan/
+Guide per PHPStan e qualità del codice.
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+**Contenuti:**
+- Configurazione PHPStan
+- Livelli di analisi
+- Fix comuni
+- Best practices
+- Baseline management
 
-## Documentazione
+### translations/
+Sistema di traduzioni e localizzazione.
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+**Contenuti:**
+- Struttura traduzioni
+- Best practices
+- Gestione chiavi
+- Localizzazione
+- Pluralizzazione
+
+### best-practices/
+Best practices generali di sviluppo.
+
+**Contenuti:**
+- Codice pulito
+- Performance
+- Sicurezza
+- Testing
+- Debugging
+
+### ui/
+Guide per componenti UI e SVG.
+
+**Contenuti:**
+- Struttura SVG nei moduli
+- Componenti Blade
+- Icone e grafica
+- Layout system
+- Design patterns
+
+## Guide Rapide
+
+### Filament Development
+```bash
+# Creazione risorsa Filament
+php artisan make:filament-resource ModelName
+
+# Creazione widget
+php artisan make:filament-widget WidgetName
+
+# Creazione pagina
+php artisan make:filament-page PageName
+```
+
+### PHPStan Analysis
+```bash
+# Analisi completa
+./vendor/bin/phpstan analyse --level=9
+
+# Analisi modulo specifico
+./vendor/bin/phpstan analyse Modules/ModuleName --level=9
+
+# Generazione baseline
+./vendor/bin/phpstan analyse --generate-baseline
+```
+
+### Translation Management
+```bash
+# Estrazione chiavi
+php artisan translation:extract
+
+# Compilazione traduzioni
+php artisan translation:compile
+
+# Verifica traduzioni
+php artisan translation:check
+```
+
+## Best Practices
+
+### Codice Pulito
+- Seguire PSR-12 per lo stile del codice
+- Utilizzare type hints espliciti
+- Documentare sempre i metodi pubblici
+- Mantenere classi e metodi piccoli
+
+### Performance
+- Ottimizzare query database
+- Utilizzare cache appropriata
+- Minimizzare richieste HTTP
+- Ottimizzare asset frontend
+
+### Sicurezza
+- Validare sempre input utente
+- Utilizzare prepared statements
+- Implementare autenticazione robusta
+- Proteggere da attacchi comuni
+
+## Collegamenti
+
+- [Architettura](../architecture/)
+- [Moduli](../modules/)
+- [Troubleshooting](../troubleshooting/)
+- [Guide Utente](../guides/)
 
 ---
 
-**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+*Ultimo aggiornamento: Agosto 2025* 

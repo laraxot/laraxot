@@ -5,35 +5,13 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Models;
 
 use Modules\Notify\Models\NotifyThemeable;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\withoutExceptionHandling;
-<<<<<<< HEAD
-use Modules\User\Models\User;
 
 beforeEach(function (): void {
     withoutExceptionHandling();
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-use Modules\Xot\Tests\XotBasePest;
-
-uses(TestCase::class)->group('notify-db');
-
-beforeEach(function (): void {
-    /** @var TestCase $this */
-    $this->disableExceptionHandling();
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-
-beforeEach(function (): void {
-    withoutExceptionHandling();
->>>>>>> a988596b (first)
 });
 
 describe('Notify Themeable', function (): void {
@@ -41,30 +19,12 @@ describe('Notify Themeable', function (): void {
         $themeable = NotifyThemeable::create([
             'model_type' => 'App\Models\User',
             'model_id' => 123,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'notify_theme_id' => 456]);
-=======
-            'notify_theme_id' => 456,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'notify_theme_id' => 456]);
->>>>>>> a988596b (first)
         XotBasePest::assertTableHas('notify', 'notify_themeables', [
             'id' => $themeable->id,
             'model_type' => 'App\Models\User',
             'model_id' => 123,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'notify_theme_id' => 456]);
-=======
-            'notify_theme_id' => 456,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'notify_theme_id' => 456]);
->>>>>>> a988596b (first)
 
         Assert::assertInstanceOf(NotifyThemeable::class, $themeable);
     });
@@ -75,32 +35,14 @@ describe('Notify Themeable', function (): void {
             'model_id' => 789,
             'notify_theme_id' => 101,
             'created_by' => 'user_123',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'updated_by' => 'user_123']);
-=======
-            'updated_by' => 'user_123',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'updated_by' => 'user_123']);
->>>>>>> a988596b (first)
         XotBasePest::assertTableHas('notify', 'notify_themeables', [
             'id' => $themeable->id,
             'model_type' => 'App\Models\Company',
             'model_id' => 789,
             'notify_theme_id' => 101,
             'created_by' => 'user_123',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'updated_by' => 'user_123']);
-=======
-            'updated_by' => 'user_123',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'updated_by' => 'user_123']);
->>>>>>> a988596b (first)
 
         Assert::assertEquals('user_123', $themeable->created_by);
         Assert::assertEquals('user_123', $themeable->updated_by);
@@ -110,10 +52,6 @@ describe('Notify Themeable', function (): void {
         $themeable = NotifyThemeable::create([
             'model_type' => 'App\Models\User',
             'model_id' => 123,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
             'notify_theme_id' => 456]);
 
         $themeable->update([
@@ -123,23 +61,6 @@ describe('Notify Themeable', function (): void {
             'id' => $themeable->id,
             'notify_theme_id' => 789,
             'updated_by' => 'user_456']);
-<<<<<<< HEAD
-=======
-            'notify_theme_id' => 456,
-        ]);
-
-        $themeable->update([
-            'notify_theme_id' => 789,
-            'updated_by' => 'user_456',
-        ]);
-        XotBasePest::assertTableHas('notify', 'notify_themeables', [
-            'id' => $themeable->id,
-            'notify_theme_id' => 789,
-            'updated_by' => 'user_456',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
         Assert::assertEquals(789, XotBasePest::assertFreshModel($themeable, NotifyThemeable::class)->notify_theme_id);
         Assert::assertEquals('user_456', XotBasePest::assertFreshModel($themeable, NotifyThemeable::class)->updated_by);
@@ -149,16 +70,7 @@ describe('Notify Themeable', function (): void {
         $themeable = NotifyThemeable::create([
             'model_type' => 'App\Models\User',
             'model_id' => 123,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'notify_theme_id' => 456]);
-=======
-            'notify_theme_id' => 456,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'notify_theme_id' => 456]);
->>>>>>> a988596b (first)
 
         $found = NotifyThemeable::where('model_type', 'App\Models\User')->where('model_id', 123)->first();
 
@@ -173,44 +85,17 @@ describe('Notify Themeable', function (): void {
         NotifyThemeable::create([
             'model_type' => 'App\Models\User',
             'model_id' => 123,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'notify_theme_id' => 456]);
-=======
-            'notify_theme_id' => 456,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'notify_theme_id' => 456]);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\Company',
             'model_id' => 789,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'notify_theme_id' => 456]);
-=======
-            'notify_theme_id' => 456,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'notify_theme_id' => 456]);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\Order',
             'model_id' => 101,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'notify_theme_id' => 789]);
-=======
-            'notify_theme_id' => 789,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'notify_theme_id' => 789]);
->>>>>>> a988596b (first)
 
         $theme456Themeables = NotifyThemeable::where('notify_theme_id', 456)->get();
         $theme789Themeables = NotifyThemeable::where('notify_theme_id', 789)->get();
@@ -226,44 +111,17 @@ describe('Notify Themeable', function (): void {
         NotifyThemeable::create([
             'model_type' => 'App\Models\User',
             'model_id' => 123,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'notify_theme_id' => 456]);
-=======
-            'notify_theme_id' => 456,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'notify_theme_id' => 456]);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\User',
             'model_id' => 456,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'notify_theme_id' => 789]);
-=======
-            'notify_theme_id' => 789,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'notify_theme_id' => 789]);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\Company',
             'model_id' => 789,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'notify_theme_id' => 101]);
-=======
-            'notify_theme_id' => 101,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'notify_theme_id' => 101]);
->>>>>>> a988596b (first)
 
         $userThemeables = NotifyThemeable::where('model_type', 'App\Models\User')->get();
         $companyThemeables = NotifyThemeable::where('model_type', 'App\Models\Company')->get();
@@ -280,46 +138,19 @@ describe('Notify Themeable', function (): void {
             'model_type' => 'App\Models\User',
             'model_id' => 123,
             'notify_theme_id' => 456,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_by' => 'user_123']);
-=======
-            'created_by' => 'user_123',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_by' => 'user_123']);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\Company',
             'model_id' => 789,
             'notify_theme_id' => 101,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_by' => 'user_456']);
-=======
-            'created_by' => 'user_456',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_by' => 'user_456']);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\Order',
             'model_id' => 101,
             'notify_theme_id' => 789,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_by' => 'user_123']);
-=======
-            'created_by' => 'user_123',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_by' => 'user_123']);
->>>>>>> a988596b (first)
 
         $user123Themeables = NotifyThemeable::where('created_by', 'user_123')->get();
         $user456Themeables = NotifyThemeable::where('created_by', 'user_456')->get();
@@ -336,46 +167,19 @@ describe('Notify Themeable', function (): void {
             'model_type' => 'App\Models\User',
             'model_id' => 123,
             'notify_theme_id' => 456,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'updated_by' => 'user_123']);
-=======
-            'updated_by' => 'user_123',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'updated_by' => 'user_123']);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\Company',
             'model_id' => 789,
             'notify_theme_id' => 101,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'updated_by' => 'user_456']);
-=======
-            'updated_by' => 'user_456',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'updated_by' => 'user_456']);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\Order',
             'model_id' => 101,
             'notify_theme_id' => 789,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'updated_by' => 'user_123']);
-=======
-            'updated_by' => 'user_123',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'updated_by' => 'user_123']);
->>>>>>> a988596b (first)
 
         $user123Themeables = NotifyThemeable::where('updated_by', 'user_123')->get();
         $user456Themeables = NotifyThemeable::where('updated_by', 'user_456')->get();
@@ -392,46 +196,19 @@ describe('Notify Themeable', function (): void {
             'model_type' => 'App\Models\User',
             'model_id' => 123,
             'notify_theme_id' => 456,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_by' => 'user_123']);
-=======
-            'created_by' => 'user_123',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_by' => 'user_123']);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\User',
             'model_id' => 456,
             'notify_theme_id' => 789,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_by' => 'user_456']);
-=======
-            'created_by' => 'user_456',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_by' => 'user_456']);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\Company',
             'model_id' => 789,
             'notify_theme_id' => 101,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_by' => 'user_123']);
-=======
-            'created_by' => 'user_123',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_by' => 'user_123']);
->>>>>>> a988596b (first)
 
         $user123Themeables = NotifyThemeable::where('model_type', 'App\Models\User')
             ->where('created_by', 'user_123')
@@ -450,16 +227,7 @@ describe('Notify Themeable', function (): void {
             'model_id' => null,
             'notify_theme_id' => null,
             'created_by' => null,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'updated_by' => null]);
-=======
-            'updated_by' => null,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'updated_by' => null]);
->>>>>>> a988596b (first)
 
         Assert::assertNull($themeable->model_type);
         Assert::assertNull($themeable->model_id);
@@ -474,73 +242,27 @@ describe('Notify Themeable', function (): void {
                 'model_type' => 'App\Models\User',
                 'model_id' => 1,
                 'notify_theme_id' => 101,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'created_by' => 'user_1'],
-=======
-                'created_by' => 'user_1',
-            ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'created_by' => 'user_1'],
->>>>>>> a988596b (first)
             [
                 'model_type' => 'App\Models\User',
                 'model_id' => 2,
                 'notify_theme_id' => 102,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'created_by' => 'user_2'],
-=======
-                'created_by' => 'user_2',
-            ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'created_by' => 'user_2'],
->>>>>>> a988596b (first)
             [
                 'model_type' => 'App\Models\Company',
                 'model_id' => 1,
                 'notify_theme_id' => 201,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'created_by' => 'user_1'],
-=======
-                'created_by' => 'user_1',
-            ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'created_by' => 'user_1'],
->>>>>>> a988596b (first)
             [
                 'model_type' => 'App\Models\Company',
                 'model_id' => 2,
                 'notify_theme_id' => 202,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'created_by' => 'user_2'],
-=======
-                'created_by' => 'user_2',
-            ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'created_by' => 'user_2'],
->>>>>>> a988596b (first)
             [
                 'model_type' => 'App\Models\Order',
                 'model_id' => 1,
                 'notify_theme_id' => 301,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'created_by' => 'user_1']];
-=======
-                'created_by' => 'user_1',
-            ],
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'created_by' => 'user_1']];
->>>>>>> a988596b (first)
 
         foreach ($themeables as $themeableData) {
             NotifyThemeable::create($themeableData);
@@ -569,46 +291,19 @@ describe('Notify Themeable', function (): void {
             'model_type' => 'App\Models\User',
             'model_id' => 1,
             'notify_theme_id' => 101,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_at' => $yesterday]);
-=======
-            'created_at' => $yesterday,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_at' => $yesterday]);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\User',
             'model_id' => 2,
             'notify_theme_id' => 102,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_at' => $today]);
-=======
-            'created_at' => $today,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_at' => $today]);
->>>>>>> a988596b (first)
 
         NotifyThemeable::create([
             'model_type' => 'App\Models\Company',
             'model_id' => 1,
             'notify_theme_id' => 201,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_at' => $tomorrow]);
-=======
-            'created_at' => $tomorrow,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_at' => $tomorrow]);
->>>>>>> a988596b (first)
 
         $todayThemeables = NotifyThemeable::whereDate('created_at', $today->toDateString())->get();
         $recentThemeables = NotifyThemeable::where('created_at', '>=', $yesterday)->get();

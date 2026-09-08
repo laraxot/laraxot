@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "👥 USER MODULE - ROADMAP 2025"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # 👥 USER MODULE - ROADMAP 2025
 
 **Modulo**: User (Authentication & Authorization)
@@ -503,18 +492,6 @@ User Module
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-**Last Updated**: 2025-10-01
-**Next Review**: 2025-11-01
->>>>>>> 60a2c9a9 (.)
-=======
-**Last Updated**: 2025-10-01
-**Next Review**: 2025-11-01
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 **Status**: 🚧 ACTIVE DEVELOPMENT
 **Confidence Level**: 98%
 

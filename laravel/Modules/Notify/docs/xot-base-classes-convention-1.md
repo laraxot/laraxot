@@ -111,11 +111,4 @@ class SendSMSPage extends XotBasePage implements HasForms  // Estensione corrett
 - Mantieni aggiornata la documentazione delle dipendenze
 - Segui le convenzioni di naming e struttura
 ``` 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ```

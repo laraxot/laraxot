@@ -289,21 +289,9 @@ Semantic HTML **REDUCES** need for ARIA:
 ## 🔗 Related Documentation
 
 ### AI Agents Docs
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **[Guidelines Index](00-INDEX.md)** - All guidelines
 - **[Reusable Components](reusable-components-philosophy.md)** - DRY+KISS
 - **[Rules Index](../rules/00-INDEX.md)** - All rules
-=======
-- **[Guidelines Index](00-index.md)** - All guidelines
-- **[Reusable Components](reusable-components-philosophy.md)** - DRY+KISS
-- **[Rules Index](../rules/00-index.md)** - All rules
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **[Guidelines Index](00-INDEX.md)** - All guidelines
-- **[Reusable Components](reusable-components-philosophy.md)** - DRY+KISS
-- **[Rules Index](../rules/00-INDEX.md)** - All rules
->>>>>>> a988596b (first)
 
 ### External Resources
 - **[Maintainable CSS](https://maintainablecss.com/chapters/semantics/)** - Source material
@@ -332,14 +320,7 @@ Semantic HTML **REDUCES** need for ARIA:
 
 ## 📊 Examples from Our Project
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### Predict Detail Page
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-### Predict Detail Page
->>>>>>> a988596b (first)
 ### Forecast Detail Page
 
 ```blade

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "socialite"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./phpstan.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # socialite
 
 <!-- Contenuto migrato da _docs/socialite.txt -->

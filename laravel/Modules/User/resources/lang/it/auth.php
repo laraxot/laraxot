@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 return [
     'login' => [
         'title' => 'Accedi al tuo account',
@@ -25,39 +23,6 @@ return [
         'no_account' => 'Non hai un account?',
         'create_account' => 'Crea account',
     ],
-=======
-
-return [
-    'login' => 'Accedi',
->>>>>>> f548be94 (.)
-=======
-
-return [
-    'login' => 'Accedi',
-=======
-return [
-    'login' => [
-        'title' => 'Accedi al tuo account',
-        'welcome_back' => 'Bentornato',
-        'welcome_message' => 'Inserisci le tue credenziali per accedere.',
-        'google' => 'Google',
-        'github' => 'GitHub',
-        'with_google' => 'Continua con Google',
-        'with_github' => 'Continua con GitHub',
-        'or_continue_with' => 'oppure',
-        'email' => 'Email',
-        'email_placeholder' => 'esempio@email.com',
-        'password' => 'Password',
-        'password_placeholder' => '••••••••',
-        'remember_me' => 'Ricordami',
-        'forgot_password' => 'Password dimenticata?',
-        'submit' => 'Accedi',
-        'logging_in' => 'Accesso in corso…',
-        'no_account' => 'Non hai un account?',
-        'create_account' => 'Crea account',
-    ],
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
     'register' => 'Registrati',
     'logout' => 'Esci',
     'logout_success' => 'Logout effettuato con successo',
@@ -71,11 +36,6 @@ return [
     'name' => 'Nome',
     'already_registered' => 'Già registrato?',
     'not_registered' => 'Non sei registrato?',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
     'navigation' => [
         'label' => 'Missing Navigation Label',
         'plural_label' => 'Missing Navigation Plural Label',
@@ -96,10 +56,4 @@ return [
         'context' => 'login_form.credentials',
         'placeholder' => '',
     ],
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 ];

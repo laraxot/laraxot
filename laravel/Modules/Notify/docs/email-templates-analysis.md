@@ -123,12 +123,4 @@ Sono state analizzate le principali soluzioni open source, best practice e patte
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-_Analisi aggiornata al 2025-05-05. Per dettagli e approfondimenti, consultare i README specifici delle soluzioni nella cartella email-templates._
-=======
 _Analisi aggiornata al [DATE]. Per dettagli e approfondimenti, consultare i README specifici delle soluzioni nella cartella email-templates._
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-_Analisi aggiornata al [DATE]. Per dettagli e approfondimenti, consultare i README specifici delle soluzioni nella cartella email-templates._
->>>>>>> a988596b (first)

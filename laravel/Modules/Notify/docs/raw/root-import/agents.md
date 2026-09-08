@@ -38,14 +38,7 @@ docs/
 │   ├── papers/    # Paper tecnici
 │   └── notes/     # Note e appunti
 ├── .schema/       # Schema per l'LLM
-<<<<<<< HEAD
-<<<<<<< HEAD
 │   └── WIKI_SCHEMA.md
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-│   └── WIKI_SCHEMA.md
->>>>>>> a988596b (first)
 │   └── wiki-schema.md
 ├── wiki/index.md  # Indice principale
 └── log.md         # Log cronologico
@@ -59,14 +52,7 @@ docs/
 
 ### Riferimenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Schema Wiki](./docs/.schema/WIKI_SCHEMA.md) - Istruzioni per l'LLM
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Schema Wiki](./docs/.schema/WIKI_SCHEMA.md) - Istruzioni per l'LLM
->>>>>>> a988596b (first)
 - [Schema Wiki](./docs/.schema/wiki-schema.md) - Istruzioni per l'LLM
 - [Index Globale](./docs/wiki/index.md) - Catalogo di tutte le wiki
 - [Log](./docs/log.md) - Cronologia delle operazioni
@@ -102,14 +88,7 @@ docs/
 <claude-mem-context>
 # Memory Context
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 # [base_fixcity_fila5] recent context, 2026-04-15 10:19pm GMT+2
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# [base_fixcity_fila5] recent context, 2026-04-15 10:19pm GMT+2
->>>>>>> a988596b (first)
 # [base_ptvx_fila5] recent context, 2026-04-15 10:19pm GMT+2
 
 No previous sessions found.

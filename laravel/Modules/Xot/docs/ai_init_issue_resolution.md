@@ -1,6 +1,8 @@
 # Risoluzione Problema con ai_init.sh
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 ## Stato attuale
 
 Questa nota descrive un modello ormai superato.
@@ -44,6 +46,7 @@ bash bashscripts/tools/sync-ide-junctions.sh
 `bashscripts/ai/ai_init.sh` va considerato legacy rispetto al modello SSoT
 `.agents`.
 =======
+>>>>>>> laraxot/dev
 ## Problema Risolto
 
 Lo script `./bashscripts/ai/ai_init.sh` non creava la junction richiesta per la cartella `./bashscripts/ai/.gemini` da vedere dentro `./`.
@@ -73,6 +76,9 @@ lrwxrwxrwx 1 zorin zorin 22 Dec 22 16:17 ./.gemini -> bashscripts/ai/.gemini
 La cartella `./bashscripts/ai/.gemini` ora è accessibile direttamente dalla root del progetto tramite il symlink `.gemini`, come richiesto.
 
 ## Documentazione Aggiornata
+<<<<<<< HEAD
+=======
 >>>>>>> 7f6cf6be (.)
+>>>>>>> laraxot/dev
 
 La documentazione del progetto è stata aggiornata per riflettere questo cambiamento.

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Analisi Corretta del Trait HasTeams - Filosofia Laraxot"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Analisi Corretta del Trait HasTeams - Filosofia Laraxot
 
 ## Comprensione della Filosofia `belongsToManyX`
@@ -556,24 +545,7 @@ trait HasTeams
 
 ## Backlink e Riferimenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [docs/USER_MODULE.md](../../../../docs/project/user_module.md)
 - [Modules/User/project_docs/traits.md](traits.md)
 - [docs/phpstan-fixes-8.md](../../../../docs/project/phpstan-fixes-8.md)
-=======
-- [docs/USER_MODULE.md](../../../project_docs/user_module.md)
-- [Modules/User/project_docs/traits.md](traits.md)
-- [docs/phpstan_fixes.md](../../../project_docs/phpstan_fixes.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [docs/USER_MODULE.md](../../../project_docs/user_module.md)
-- [Modules/User/project_docs/traits.md](traits.md)
-- [docs/phpstan_fixes.md](../../../project_docs/phpstan_fixes.md)
-=======
-- [docs/USER_MODULE.md](../../../../docs/project/user_module.md)
-- [Modules/User/project_docs/traits.md](traits.md)
-- [docs/phpstan-fixes-8.md](../../../../docs/project/phpstan-fixes-8.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [Modules/Xot/project_docs/RELATION_X.md](../../xot/project_docs/relation_x.md)

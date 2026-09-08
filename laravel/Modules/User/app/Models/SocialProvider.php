@@ -8,57 +8,11 @@ declare(strict_types=1);
 
 namespace Modules\User\Models;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Override;
-use Modules\User\Database\Factories\SocialProviderFactory;
->>>>>>> f548be94 (.)
-=======
-use Override;
-use Modules\User\Database\Factories\SocialProviderFactory;
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Tenant\Models\Traits\SushiToPhpArray;
 use Modules\Xot\Contracts\ProfileContract;
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
- * @property int|null                  $id
- * @property string|null               $name
- * @property array<int, string>|null   $scopes
- * @property array<string, mixed>|null $parameters
- * @property bool|null                 $stateless
- * @property bool|null                 $active
- * @property bool|null                 $socialite
- * @property string|null               $svg
- * @property string|null               $client_id
- * @property string|null               $client_secret
- * @property ProfileContract|null      $creator
- * @property ProfileContract|null      $updater
-=======
-=======
->>>>>>> 87273113 (.)
- * @property int|null $id
- * @property string|null $name
- * @property array|null $scopes
- * @property array|null $parameters
- * @property bool|null $stateless
- * @property bool|null $active
- * @property bool|null $socialite
- * @property string|null $svg
- * @property string|null $client_id
- * @property string|null $client_secret
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
- * @method static SocialProviderFactory factory($count = null, $state = [])
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
  * @property int|null                  $id
  * @property string|null               $name
  * @property array<int, string>|null   $scopes
@@ -72,8 +26,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property ProfileContract|null      $creator
  * @property ProfileContract|null      $updater
  *
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
  * @method static Builder|SocialProvider newModelQuery()
  * @method static Builder|SocialProvider newQuery()
  * @method static Builder|SocialProvider query()
@@ -87,55 +39,27 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder|SocialProvider whereSocialite($value)
  * @method static Builder|SocialProvider whereStateless($value)
  * @method static Builder|SocialProvider whereSvg($value)
-<<<<<<< HEAD
-=======
  *
->>>>>>> 2024e2e7 (.)
  * @property string|null $created_at
  * @property string|null $updated_at
  * @property string|null $created_by
  * @property string|null $updated_by
-<<<<<<< HEAD
-=======
  *
->>>>>>> 2024e2e7 (.)
  * @method static Builder|SocialProvider whereCreatedAt($value)
  * @method static Builder|SocialProvider whereCreatedBy($value)
  * @method static Builder|SocialProvider whereUpdatedAt($value)
  * @method static Builder|SocialProvider whereUpdatedBy($value)
-<<<<<<< HEAD
-<<<<<<< HEAD
- * @property ProfileContract|null $deleter
- * @method static \Modules\User\Database\Factories\SocialProviderFactory factory($count = null, $state = [])
-=======
- * @mixin IdeHelperSocialProvider
->>>>>>> f548be94 (.)
-=======
- * @mixin IdeHelperSocialProvider
-=======
  *
  * @property ProfileContract|null $deleter
  *
  * @method static \Modules\User\Database\Factories\SocialProviderFactory factory($count = null, $state = [])
  *
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
  * @mixin \Eloquent
  */
 class SocialProvider extends BaseModel
 {
     use SushiToPhpArray;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    /** @var bool */
->>>>>>> f548be94 (.)
-=======
-    /** @var bool */
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
     public $incrementing = false;
 
     /** @var list<string> */
@@ -152,22 +76,11 @@ class SocialProvider extends BaseModel
         // 'client_secret',// => env('FACEBOOK_CLIENT_SECRET'),
     ];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
     /**
      * Logical form definition for this Sushi-backed model.
      *
      * @var array<string, string>
      */
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
     protected array $form = [
         'id' => 'integer',
         'name' => 'string',
@@ -183,8 +96,6 @@ class SocialProvider extends BaseModel
         'updated_by' => 'string',
     ];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     /** @var array<string, string> */
     protected array $schema = [
         'id' => 'integer',
@@ -214,51 +125,6 @@ class SocialProvider extends BaseModel
 
     /** @return array<string, string> */
     #[\Override]
-=======
-=======
->>>>>>> 87273113 (.)
-    public function getRows(): array
-    {
-        return $this->getSushiRows();
-    }
-
-    /** @return array<string, string> */
-    #[Override]
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-    /** @var array<string, string> */
-    protected array $schema = [
-        'id' => 'integer',
-        'name' => 'string',
-        'scopes' => 'text',
-        'parameters' => 'text',
-        'stateless' => 'boolean',
-        'active' => 'boolean',
-        'socialite' => 'boolean',
-        'svg' => 'text',
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
-        'created_by' => 'string',
-        'updated_by' => 'string',
-    ];
-
-    /**
-     * @return array<int, array<string, mixed>>
-     */
-    public function getRows(): array
-    {
-        /** @var array<int, array<string, mixed>> $rows */
-        $rows = $this->getSushiRows();
-
-        return $rows;
-    }
-
-    /** @return array<string, string> */
-    #[\Override]
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
     protected function casts(): array
     {
         return [

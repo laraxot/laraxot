@@ -3,24 +3,6 @@
 declare(strict_types=1);
 
 return [
-<<<<<<< HEAD
-<<<<<<< HEAD
-    'navigation' => ['label' => 'Token Accesso OAuth', 'plural_label' => 'Token Accesso OAuth', 'group' => 'OAuth', 'icon' => 'heroicon-o-key', 'sort' => 33],
-    'label' => 'Token Accesso OAuth',
-    'plural_label' => 'Token Accesso OAuth',
-    'fields' => [
-        'id' => ['label' => 'ID', 'tooltip' => 'Identificativo univoco', 'helper_text' => 'Identificativo numerico del token', 'description' => 'ID del token'],
-        'user_id' => ['label' => 'Utente', 'tooltip' => 'Utente associato', 'placeholder' => 'Seleziona l\'utente', 'helper_text' => 'Utente proprietario del token', 'description' => 'ID dell\'utente'],
-        'client_id' => ['label' => 'Client', 'tooltip' => 'Client OAuth', 'placeholder' => 'Seleziona il client', 'helper_text' => 'Client che ha generato il token', 'description' => 'ID del client OAuth'],
-        'name' => ['label' => 'Nome', 'tooltip' => 'Nome del token', 'placeholder' => 'Inserisci il nome', 'helper_text' => 'Nome identificativo del token', 'description' => 'Nome del token'],
-        'scopes' => ['label' => 'Ambiti', 'tooltip' => 'Permessi del token', 'placeholder' => 'Seleziona gli ambiti', 'helper_text' => 'Ambiti di permesso del token', 'description' => 'Permessi associati al token'],
-        'revoked' => ['label' => 'Revocato', 'tooltip' => 'Stato di revoca', 'helper_text' => 'Indica se il token è stato revocato', 'description' => 'Stato di revoca del token'],
-        'expires_at' => ['label' => 'Scade il', 'tooltip' => 'Data di scadenza', 'placeholder' => 'Seleziona la data', 'helper_text' => 'Data e ora di scadenza del token', 'description' => 'Data di scadenza'],
-        'user' => [
-            'name' => ['label' => 'Nome Utente', 'tooltip' => 'Nome dell\'utente', 'helper_text' => 'Nome dell\'utente proprietario', 'description' => 'Nome utente'],
-=======
-=======
->>>>>>> 87273113 (.)
     'navigation' => [
         'label' => 'Token Accesso OAuth',
         'plural_label' => 'Token Accesso OAuth',
@@ -85,79 +67,23 @@ return [
                 'helper_text' => 'Nome dell\'utente proprietario',
                 'description' => 'Nome utente',
             ],
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-    'navigation' => ['label' => 'Token Accesso OAuth', 'plural_label' => 'Token Accesso OAuth', 'group' => 'OAuth', 'icon' => 'heroicon-o-key', 'sort' => 33],
-    'label' => 'Token Accesso OAuth',
-    'plural_label' => 'Token Accesso OAuth',
-    'fields' => [
-        'id' => ['label' => 'ID', 'tooltip' => 'Identificativo univoco', 'helper_text' => 'Identificativo numerico del token', 'description' => 'ID del token'],
-        'user_id' => ['label' => 'Utente', 'tooltip' => 'Utente associato', 'placeholder' => 'Seleziona l\'utente', 'helper_text' => 'Utente proprietario del token', 'description' => 'ID dell\'utente'],
-        'client_id' => ['label' => 'Client', 'tooltip' => 'Client OAuth', 'placeholder' => 'Seleziona il client', 'helper_text' => 'Client che ha generato il token', 'description' => 'ID del client OAuth'],
-        'name' => ['label' => 'Nome', 'tooltip' => 'Nome del token', 'placeholder' => 'Inserisci il nome', 'helper_text' => 'Nome identificativo del token', 'description' => 'Nome del token'],
-        'scopes' => ['label' => 'Ambiti', 'tooltip' => 'Permessi del token', 'placeholder' => 'Seleziona gli ambiti', 'helper_text' => 'Ambiti di permesso del token', 'description' => 'Permessi associati al token'],
-        'revoked' => ['label' => 'Revocato', 'tooltip' => 'Stato di revoca', 'helper_text' => 'Indica se il token è stato revocato', 'description' => 'Stato di revoca del token'],
-        'expires_at' => ['label' => 'Scade il', 'tooltip' => 'Data di scadenza', 'placeholder' => 'Seleziona la data', 'helper_text' => 'Data e ora di scadenza del token', 'description' => 'Data di scadenza'],
-        'user' => [
-            'name' => ['label' => 'Nome Utente', 'tooltip' => 'Nome dell\'utente', 'helper_text' => 'Nome dell\'utente proprietario', 'description' => 'Nome utente'],
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
             'label' => '',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'client' => [
-<<<<<<< HEAD
-<<<<<<< HEAD
-            'name' => ['label' => 'Nome Client', 'tooltip' => 'Nome del client', 'helper_text' => 'Nome del client OAuth', 'description' => 'Nome client'],
-=======
-=======
->>>>>>> 87273113 (.)
             'name' => [
                 'label' => 'Nome Client',
                 'tooltip' => 'Nome del client',
                 'helper_text' => 'Nome del client OAuth',
                 'description' => 'Nome client',
             ],
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-            'name' => ['label' => 'Nome Client', 'tooltip' => 'Nome del client', 'helper_text' => 'Nome del client OAuth', 'description' => 'Nome client'],
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
             'label' => '',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-        'created_at' => ['label' => 'Creato il', 'tooltip' => 'Data di creazione', 'helper_text' => 'Data e ora di creazione del token', 'description' => 'Data di creazione'],
-        'expired' => ['label' => 'Scaduto', 'tooltip' => 'Stato di scadenza', 'helper_text' => 'Indica se il token è scaduto', 'description' => 'Stato di scadenza'],
-        'valid' => ['label' => 'Valido', 'tooltip' => 'Validità del token', 'helper_text' => 'Indica se il token è valido', 'description' => 'Stato di validità'],
-    ],
-    'actions' => [
-        'revoke' => ['label' => 'Revoca', 'tooltip' => 'Revoca il token', 'helper_text' => 'Revoca questo token', 'description' => 'Azione per revocare il token', 'icon' => 'revoke'],
-        'refresh' => ['label' => 'Aggiorna', 'tooltip' => 'Aggiorna il token', 'helper_text' => 'Aggiorna questo token', 'description' => 'Azione per aggiornare il token'],
-        'revoke_all_for_user' => ['label' => 'Revoca Tutti', 'tooltip' => 'Revoca tutti i token per questo utente', 'helper_text' => 'Revoca tutti i token dell\'utente', 'description' => 'Revoca tutti i token per utente', 'success' => ':count token revocati con successo.', 'icon' => 'revoke_all_for_user'],
-        'logout' => ['label' => 'Logout', 'tooltip' => 'Disconnettiti', 'helper_text' => 'Esci dall\'account', 'description' => 'Azione di logout', 'icon' => 'heroicon-o-arrow-right-on-rectangle'],
-        'delete' => ['label' => 'Elimina', 'tooltip' => 'Elimina il token', 'helper_text' => 'Elimina definitivamente il token', 'description' => 'Azione per eliminare', 'icon' => 'heroicon-o-trash'],
-        'create' => ['label' => 'Crea', 'tooltip' => 'Crea un nuovo token', 'helper_text' => 'Crea un nuovo token', 'description' => 'Azione per creare', 'icon' => 'heroicon-o-plus'],
-        'createAnother' => ['label' => 'createAnother', 'icon' => 'createAnother', 'tooltip' => 'createAnother'],
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
-    ],
-    'messages' => ['created' => 'Token creato con successo', 'revoked' => 'Token revocato con successo', 'deleted' => 'Token eliminato con successo'],
-    'sections' => [
-        'OAuth Access Token Information' => ['label' => 'OAuth Access Token Information', 'heading' => 'OAuth Access Token Information'],
-=======
-=======
->>>>>>> 87273113 (.)
         'created_at' => [
             'label' => 'Creato il',
             'tooltip' => 'Data di creazione',
@@ -223,25 +149,5 @@ return [
         'created' => 'Token creato con successo',
         'revoked' => 'Token revocato con successo',
         'deleted' => 'Token eliminato con successo',
->>>>>>> 60a2c9a9 (.)
     ],
-=======
-        'created_at' => ['label' => 'Creato il', 'tooltip' => 'Data di creazione', 'helper_text' => 'Data e ora di creazione del token', 'description' => 'Data di creazione'],
-        'expired' => ['label' => 'Scaduto', 'tooltip' => 'Stato di scadenza', 'helper_text' => 'Indica se il token è scaduto', 'description' => 'Stato di scadenza'],
-        'valid' => ['label' => 'Valido', 'tooltip' => 'Validità del token', 'helper_text' => 'Indica se il token è valido', 'description' => 'Stato di validità'],
-    ],
-    'actions' => [
-        'revoke' => ['label' => 'Revoca', 'tooltip' => 'Revoca il token', 'helper_text' => 'Revoca questo token', 'description' => 'Azione per revocare il token', 'icon' => 'revoke'],
-        'refresh' => ['label' => 'Aggiorna', 'tooltip' => 'Aggiorna il token', 'helper_text' => 'Aggiorna questo token', 'description' => 'Azione per aggiornare il token'],
-        'revoke_all_for_user' => ['label' => 'Revoca Tutti', 'tooltip' => 'Revoca tutti i token per questo utente', 'helper_text' => 'Revoca tutti i token dell\'utente', 'description' => 'Revoca tutti i token per utente', 'success' => ':count token revocati con successo.', 'icon' => 'revoke_all_for_user'],
-        'logout' => ['label' => 'Logout', 'tooltip' => 'Disconnettiti', 'helper_text' => 'Esci dall\'account', 'description' => 'Azione di logout', 'icon' => 'heroicon-o-arrow-right-on-rectangle'],
-        'delete' => ['label' => 'Elimina', 'tooltip' => 'Elimina il token', 'helper_text' => 'Elimina definitivamente il token', 'description' => 'Azione per eliminare', 'icon' => 'heroicon-o-trash'],
-        'create' => ['label' => 'Crea', 'tooltip' => 'Crea un nuovo token', 'helper_text' => 'Crea un nuovo token', 'description' => 'Azione per creare', 'icon' => 'heroicon-o-plus'],
-        'createAnother' => ['label' => 'createAnother', 'icon' => 'createAnother', 'tooltip' => 'createAnother'],
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
-    ],
-    'messages' => ['created' => 'Token creato con successo', 'revoked' => 'Token revocato con successo', 'deleted' => 'Token eliminato con successo'],
->>>>>>> 2024e2e7 (.)
 ];

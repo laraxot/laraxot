@@ -28,7 +28,11 @@ class DepartmentForm
 // Extends XotBase, returns array
 class TicketForm extends XotBaseResourceForm
 {
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [...]; // Array of components
     }
@@ -93,7 +97,11 @@ class ArticleForm extends XotBaseResourceForm
      * 
      * @return array<int, Component>
      */
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         // Delegate to configure() to avoid duplication
         $schema = app(Schema::class);
@@ -167,7 +175,11 @@ class ArticleForm extends XotBaseResourceForm
     }
     
     // LEGACY: Array style (backward compatibility)
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         $schema = app(Schema::class);
         return static::configure($schema)->getComponents();
@@ -205,7 +217,11 @@ abstract class XotBaseResourceForm
      * LEGACY: Array method with default implementation.
      * Can be overridden, but default delegates to configure().
      */
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         $schema = app(Schema::class);
         return static::configure($schema)->getComponents();
@@ -263,7 +279,11 @@ abstract class XotBaseResourceInfolist
     /**
      * LEGACY: Array method with default implementation.
      */
+<<<<<<< HEAD
+    public static function getInfolistSchema(): array
+=======
     public function getInfolistSchema(): array
+>>>>>>> laraxot/dev
     {
         $schema = app(Schema::class);
         return static::configure($schema)->getComponents();

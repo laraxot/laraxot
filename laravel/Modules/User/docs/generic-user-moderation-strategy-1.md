@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Generic User Moderation Strategy in User Module"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Generic User Moderation Strategy in User Module
 
 ## Overview
@@ -149,11 +138,7 @@ This document outlines a comprehensive strategy for implementing a generic moder
   {
       protected static ?string $model = User::class;
 
-<<<<<<< HEAD
       public static function getFormSchema(): array
-=======
-      public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
       {
           return [
               'type' => Forms\Components\TextInput::make('type')

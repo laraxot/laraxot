@@ -6,32 +6,13 @@ namespace Modules\Notify\Tests\Feature;
 
 use Illuminate\Support\Facades\Config;
 use Modules\Notify\Actions\Mail\GetMailLayoutAction;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Xot\Actions\Theme\GetThemeContextAction;
 use PHPUnit\Framework\Assert;
 
-=======
-use Modules\Notify\Tests\TestCase;
-use Modules\Xot\Actions\Theme\GetThemeContextAction;
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class)->group('notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
 it('resolves christmas professional layout when context is christmas', function (): void {
     Config::set('xra.pub_theme', 'TwentyOne');
 
     app()->instance(GetThemeContextAction::class, new class extends GetThemeContextAction
-=======
-use Modules\Xot\Actions\Theme\GetThemeContextAction;
-use PHPUnit\Framework\Assert;
-
-it('resolves christmas professional layout when context is christmas', function (): void {
-    Config::set('xra.pub_theme', 'TwentyOne');
-
-    app()->instance(GetThemeContextAction::class, new class() extends GetThemeContextAction
->>>>>>> a988596b (first)
     {
         public function execute(): string
         {

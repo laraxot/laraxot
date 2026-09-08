@@ -28,10 +28,6 @@ class EmailData extends Data
 
     /**
      * @param  list<string>  $attachments
-<<<<<<< HEAD
-=======
-     *
->>>>>>> a988596b (first)
      * @return void
      */
     public function __construct(
@@ -82,11 +78,7 @@ class EmailData extends Data
             $this->body = strip_tags($this->body_html);
         }
 
-<<<<<<< HEAD
         $email = (new MimeEmail)
-=======
-        $email = (new MimeEmail())
->>>>>>> a988596b (first)
             ->from($this->getFrom())
             ->to($this->recipient)
             ->subject(strip_tags($this->subject))

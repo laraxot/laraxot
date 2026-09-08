@@ -240,14 +240,7 @@ related:
 
 **URL Reference**:
 - Bootstrap Italia: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
-<<<<<<< HEAD
-<<<<<<< HEAD
 - FixCity: http://fixcity.local/it/tests/homepage
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- FixCity: http://fixcity.local/it/tests/homepage
->>>>>>> a988596b (first)
 - FixCity: http://ptv.local/it/tests/homepage
 
 ---

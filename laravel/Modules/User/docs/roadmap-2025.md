@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "👥 USER MODULE - ROADMAP 2025"
 type: concept
@@ -23,29 +18,12 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # 👥 USER MODULE - ROADMAP 2025
 
 **Modulo**: User (Authentication & Authorization)  
 **Status**: 90% COMPLETATO  
 **Priority**: HIGH  
-<<<<<<< HEAD
-<<<<<<< HEAD
 **PHPStan**: ✅ Level 10 (0 errori)  
-=======
-**PHPStan**: ✅ Level 9 (0 errori)  
->>>>>>> 60a2c9a9 (.)
-=======
-**PHPStan**: ✅ Level 9 (0 errori)  
-=======
-**PHPStan**: ✅ Level 10 (0 errori)  
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 **Filament**: ✅ 4.x Compatibile  
 
 ---
@@ -124,18 +102,7 @@ User Module
 - [x] **Notification System**: User notifications
 
 ### 🔧 Technical Excellence
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [x] **PHPStan Level 10**: 0 errori
-=======
-- [x] **PHPStan Level 9**: 0 errori
->>>>>>> 60a2c9a9 (.)
-=======
-- [x] **PHPStan Level 9**: 0 errori
-=======
-- [x] **PHPStan Level 10**: 0 errori
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [x] **Filament 4.x**: Compatibilità completa
 - [x] **Type Safety**: Type hints completi
 - [x] **Error Handling**: Gestione errori robusta
@@ -302,18 +269,7 @@ User Module
 **Status**: 95% COMPLETATO
 
 #### ✅ Completed
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [x] PHPStan Level 10 compliance
-=======
-- [x] PHPStan Level 9 compliance
->>>>>>> 60a2c9a9 (.)
-=======
-- [x] PHPStan Level 9 compliance
-=======
-- [x] PHPStan Level 10 compliance
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [x] Type safety implementation
 - [x] Error handling improvement
 - [x] Code documentation
@@ -372,18 +328,7 @@ User Module
 ## 🎯 SUCCESS METRICS
 
 ### 📊 Technical Metrics
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [x] **PHPStan Level 10**: 0 errori ✅
-=======
-- [x] **PHPStan Level 9**: 0 errori ✅
->>>>>>> 60a2c9a9 (.)
-=======
-- [x] **PHPStan Level 9**: 0 errori ✅
-=======
-- [x] **PHPStan Level 10**: 0 errori ✅
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [x] **Filament 4.x**: Compatibile ✅
 - [ ] **Test Coverage**: 80% (target)
 - [ ] **Response Time**: < 200ms
@@ -547,18 +492,6 @@ User Module
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-**Last Updated**: 2025-10-01
-**Next Review**: 2025-11-01
->>>>>>> 60a2c9a9 (.)
-=======
-**Last Updated**: 2025-10-01
-**Next Review**: 2025-11-01
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 **Status**: 🚧 ACTIVE DEVELOPMENT  
 **Confidence Level**: 98%  
 

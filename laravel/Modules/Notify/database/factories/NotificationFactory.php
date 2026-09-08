@@ -34,15 +34,6 @@ class NotificationFactory extends Factory
             'notifiable_type' => User::class,
             'notifiable_id' => (string) Str::uuid(),
             'data' => json_encode(['message' => $this->faker->sentence()]),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'read_at' => null];
-=======
-            'read_at' => null,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'read_at' => null];
->>>>>>> a988596b (first)
     }
 }

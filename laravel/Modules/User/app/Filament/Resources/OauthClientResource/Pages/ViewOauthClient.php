@@ -5,27 +5,11 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources\OauthClientResource\Pages;
 
 use Filament\Actions\Action;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Filament\Actions\ActionGroup;
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 87273113 (.)
-use Filament\Infolists\Components\IconEntry;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Schemas\Components\Component;
-=======
-use Filament\Actions\ActionGroup;
->>>>>>> 2024e2e7 (.)
 use Modules\User\Actions\Passport\RevokeClientAction;
 use Modules\User\Filament\Resources\OauthClientResource;
 use Modules\User\Models\OauthClient;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
-<<<<<<< HEAD
-use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
-=======
->>>>>>> 2024e2e7 (.)
 
 /**
  * View OAuth Client page.
@@ -37,18 +21,7 @@ class ViewOauthClient extends XotBaseViewRecord
     /**
      * Get the header actions.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @return array<string, Action|ActionGroup>
-=======
-     * @return array<string, Action|\Filament\Actions\ActionGroup>
->>>>>>> 60a2c9a9 (.)
-=======
-     * @return array<string, Action|\Filament\Actions\ActionGroup>
-=======
-     * @return array<string, Action|ActionGroup>
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
      */
     protected function getHeaderActions(): array
     {
@@ -77,31 +50,4 @@ class ViewOauthClient extends XotBaseViewRecord
 
         return $actions;
     }
-<<<<<<< HEAD
-
-    /**
-     * Schema dell'infolist per la visualizzazione dei dettagli.
-     *
-     * @return array<string, Component>
-     */
-    protected function getInfolistSchema(): array
-    {
-        return [
-            'oauth_info' => XotBaseSection::make('OAuth Client Information')
-                ->schema([
-                    'name' => TextEntry::make('name'),
-                    'user' => TextEntry::make('user.name'),
-                    'redirect' => TextEntry::make('redirect'),
-                    'provider' => TextEntry::make('provider'),
-                    'personal_access_client' => IconEntry::make('personal_access_client')
-                        ->boolean(),
-                    'password_client' => IconEntry::make('password_client')
-                        ->boolean(),
-                    'created_at' => TextEntry::make('created_at')
-                        ->dateTime(),
-                ]),
-        ];
-    }
-=======
->>>>>>> 2024e2e7 (.)
 }

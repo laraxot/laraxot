@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
 # Analisi Completa del Codice - Sistema Laraxot
 
 ## Panoramica
@@ -177,7 +180,11 @@ try {
 
 ```php
 // ContactResource.php
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         TextInput::make('first_name'),
@@ -186,7 +193,11 @@ public function getFormSchema(): array
 }
 
 // CustomerResource.php - PATTERN SIMILE
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         TextInput::make('name')->required(),
@@ -282,6 +293,9 @@ protected function casts(): array
 ```php
 class ContactResource extends XotBaseResource
 {
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
     {
         return [
@@ -737,6 +751,7 @@ protected function casts(): array
 class ContactResource extends XotBaseResource
 {
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             TextInput::make('first_name'),
@@ -894,6 +909,8 @@ return [
 **Analista**: AI Code Review System  
 **Priorità**: CRITICA - Richiede intervento immediato  
 **Stima Effort**: 40-60 ore di refactoring
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 
 
@@ -1345,3 +1362,4 @@ return [
 **Stima Effort**: 40-60 ore di refactoring
 =======
 >>>>>>> 7f6cf6be (.)
+>>>>>>> laraxot/dev

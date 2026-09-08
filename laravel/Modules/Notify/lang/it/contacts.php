@@ -5,10 +5,6 @@ declare(strict_types=1);
 return [
     'navigation' => ['group' => 'Sistema', 'label' => 'Contatti Notifiche', 'icon' => 'notify-contacts-animated', 'sort' => 49, 'description' => 'Gestione dei contatti per l\'invio delle notifiche'],
     'fields' => [
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
         'name' => [
             'label' => 'Nome',
             'tooltip' => 'Nome del contatto',
@@ -37,15 +33,6 @@ return [
             'help' => 'ID numerico fornito dal bot Telegram',
             'helper_text' => '',
             'description' => ''],
-<<<<<<< HEAD
-=======
-        'name' => ['label' => 'Nome', 'tooltip' => 'Nome del contatto', 'placeholder' => 'es: Mario Rossi', 'help' => 'Inserisci il nome completo del contatto', 'helper_text' => '', 'description' => ''],
-        'email' => ['label' => 'Email', 'tooltip' => 'Indirizzo email del contatto', 'placeholder' => 'es: mario.rossi@example.com', 'help' => 'Inserisci un indirizzo email valido', 'helper_text' => '', 'description' => ''],
-        'phone' => ['label' => 'Telefono', 'tooltip' => 'Numero di telefono del contatto', 'placeholder' => 'es: +39 123 456 7890', 'help' => 'Inserisci il numero con prefisso internazionale', 'helper_text' => '', 'description' => ''],
-        'telegram_chat_id' => ['label' => 'Chat ID Telegram', 'tooltip' => 'ID della chat Telegram del contatto', 'placeholder' => 'es: 123456789', 'help' => 'ID numerico fornito dal bot Telegram', 'helper_text' => '', 'description' => ''],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         'group' => [
             'label' => 'Gruppo',
             'tooltip' => 'Gruppo di appartenenza del contatto',
@@ -54,23 +41,9 @@ return [
             'options' => [
                 'admin' => ['label' => 'Amministratori', 'tooltip' => 'Staff amministrativo'],
                 'users' => ['label' => 'Utenti', 'tooltip' => 'Utenti standard'],
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'support' => ['label' => 'Supporto', 'tooltip' => 'Team di supporto']],
             'helper_text' => '',
             'description' => ''],
-=======
-                'support' => ['label' => 'Supporto', 'tooltip' => 'Team di supporto'],
-            ],
-            'helper_text' => '',
-            'description' => '',
-        ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'support' => ['label' => 'Supporto', 'tooltip' => 'Team di supporto']],
-            'helper_text' => '',
-            'description' => ''],
->>>>>>> a988596b (first)
         'channels' => [
             'label' => 'Canali',
             'tooltip' => 'Canali di notifica preferiti',
@@ -79,23 +52,9 @@ return [
                 'email' => ['label' => 'Email', 'tooltip' => 'Notifiche via email'],
                 'sms' => ['label' => 'SMS', 'tooltip' => 'Notifiche via SMS'],
                 'telegram' => ['label' => 'Telegram', 'tooltip' => 'Notifiche via Telegram'],
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'push' => ['label' => 'Push', 'tooltip' => 'Notifiche push sul browser']],
             'helper_text' => '',
             'description' => ''],
-=======
-                'push' => ['label' => 'Push', 'tooltip' => 'Notifiche push sul browser'],
-            ],
-            'helper_text' => '',
-            'description' => '',
-        ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'push' => ['label' => 'Push', 'tooltip' => 'Notifiche push sul browser']],
-            'helper_text' => '',
-            'description' => ''],
->>>>>>> a988596b (first)
         'preferences' => [
             'label' => 'Preferenze',
             'tooltip' => 'Preferenze di notifica',
@@ -107,50 +66,20 @@ return [
                     'options' => [
                         'immediate' => ['label' => 'Immediata', 'tooltip' => 'Invia le notifiche immediatamente'],
                         'daily' => ['label' => 'Giornaliera', 'tooltip' => 'Raggruppa le notifiche in un digest giornaliero'],
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
                         'weekly' => ['label' => 'Settimanale', 'tooltip' => 'Raggruppa le notifiche in un digest settimanale']]],
                 'quiet_hours' => ['label' => 'Ore di silenzio', 'tooltip' => 'Periodo in cui non inviare notifiche', 'help' => 'Le notifiche verranno inviate al termine del periodo di silenzio']],
             'helper_text' => '',
             'description' => ''],
-<<<<<<< HEAD
-=======
-                        'weekly' => ['label' => 'Settimanale', 'tooltip' => 'Raggruppa le notifiche in un digest settimanale'],
-                    ],
-                ],
-                'quiet_hours' => ['label' => 'Ore di silenzio', 'tooltip' => 'Periodo in cui non inviare notifiche', 'help' => 'Le notifiche verranno inviate al termine del periodo di silenzio'],
-            ],
-            'helper_text' => '',
-            'description' => '',
-        ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         'is_active' => [
             'label' => 'Attivo',
             'tooltip' => 'Stato di attivazione del contatto',
             'help' => 'Disattiva temporaneamente l\'invio di notifiche a questo contatto',
             'helper_text' => '',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'description' => ''],
-=======
-            'description' => '',
-        ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'description' => ''],
->>>>>>> a988596b (first)
         'last_notified_at' => [
             'label' => 'Ultima notifica',
             'tooltip' => 'Data e ora dell\'ultima notifica inviata',
             'helper_text' => '',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
             'description' => ''],
         'id' => [
             'label' => 'id'],
@@ -170,93 +99,27 @@ return [
             'label' => 'active'],
         'inactive' => [
             'label' => 'inactive']],
-<<<<<<< HEAD
-=======
-            'description' => '',
-        ],
-        'id' => [
-            'label' => 'id',
-        ],
-        'contact_type' => [
-            'label' => 'contact_type',
-        ],
-        'value' => [
-            'label' => 'value',
-        ],
-        'user_id' => [
-            'label' => 'user_id',
-        ],
-        'verified_at' => [
-            'label' => 'verified_at',
-        ],
-        'created_at' => [
-            'label' => 'created_at',
-        ],
-        'updated_at' => [
-            'label' => 'updated_at',
-        ],
-        'active' => [
-            'label' => 'active',
-        ],
-        'inactive' => [
-            'label' => 'inactive',
-        ],
-    ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
     'actions' => [
         'test_notification' => [
             'label' => 'Invia test',
             'tooltip' => 'Invia una notifica di test al contatto',
             'icon' => 'heroicon-o-paper-airplane',
             'color' => 'primary',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'confirmation' => ['title' => 'Conferma invio test', 'message' => 'Vuoi inviare una notifica di test a questo contatto?', 'confirm' => 'Sì, invia test', 'cancel' => 'No, annulla']],
-=======
-            'confirmation' => ['title' => 'Conferma invio test', 'message' => 'Vuoi inviare una notifica di test a questo contatto?', 'confirm' => 'Sì, invia test', 'cancel' => 'No, annulla'],
-        ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'confirmation' => ['title' => 'Conferma invio test', 'message' => 'Vuoi inviare una notifica di test a questo contatto?', 'confirm' => 'Sì, invia test', 'cancel' => 'No, annulla']],
->>>>>>> a988596b (first)
         'import' => [
             'label' => 'Importa contatti',
             'tooltip' => 'Importa contatti da file CSV',
             'icon' => 'heroicon-o-arrow-up-tray',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'color' => 'success'],
-=======
-            'color' => 'success',
-        ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'color' => 'success'],
->>>>>>> a988596b (first)
         'export' => [
             'label' => 'Esporta contatti',
             'tooltip' => 'Esporta contatti in CSV',
             'icon' => 'heroicon-o-arrow-down-tray',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'color' => 'info'],
-=======
-            'color' => 'info',
-        ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'color' => 'info'],
->>>>>>> a988596b (first)
         'verify_contacts' => [
             'label' => 'Verifica contatti',
             'tooltip' => 'Verifica la validità dei contatti',
             'icon' => 'heroicon-o-check-circle',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
             'color' => 'warning'],
         'create' => [
             'label' => 'create',
@@ -270,63 +133,17 @@ return [
             'label' => 'delete',
             'icon' => 'delete',
             'tooltip' => 'delete']],
-<<<<<<< HEAD
-=======
-            'color' => 'warning',
-        ],
-        'create' => [
-            'label' => 'create',
-            'icon' => 'create',
-            'tooltip' => 'create',
-        ],
-        'layout' => [
-            'label' => 'layout',
-            'icon' => 'layout',
-            'tooltip' => 'layout',
-        ],
-        'delete' => [
-            'label' => 'delete',
-            'icon' => 'delete',
-            'tooltip' => 'delete',
-        ],
-    ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
     'messages' => [
         'test_sent' => ['title' => 'Test Inviato', 'message' => 'La notifica di test è stata inviata con successo al contatto'],
         'test_failed' => ['title' => 'Errore Test', 'message' => 'Impossibile inviare la notifica di test: :error'],
         'import_success' => ['title' => 'Importazione Completata', 'message' => ':count contatti importati con successo'],
         'import_failed' => ['title' => 'Errore Importazione', 'message' => 'Errore durante l\'importazione dei contatti: :error'],
         'export_success' => ['title' => 'Esportazione Completata', 'message' => 'I contatti sono stati esportati con successo'],
-<<<<<<< HEAD
-<<<<<<< HEAD
         'verification_complete' => ['title' => 'Verifica Completata', 'message' => 'La verifica dei contatti è stata completata. :valid validi, :invalid non validi']],
-=======
-        'verification_complete' => ['title' => 'Verifica Completata', 'message' => 'La verifica dei contatti è stata completata. :valid validi, :invalid non validi'],
-    ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'verification_complete' => ['title' => 'Verifica Completata', 'message' => 'La verifica dei contatti è stata completata. :valid validi, :invalid non validi']],
->>>>>>> a988596b (first)
     'filters' => [
         'group' => ['label' => 'Gruppo', 'tooltip' => 'Filtra per gruppo di appartenenza'],
         'channels' => ['label' => 'Canali', 'tooltip' => 'Filtra per canali attivi'],
         'status' => ['label' => 'Stato', 'tooltip' => 'Filtra per stato di attivazione'],
-<<<<<<< HEAD
-<<<<<<< HEAD
         'last_notified' => ['label' => 'Ultima notifica', 'tooltip' => 'Filtra per data ultima notifica']],
     'label' => 'Contacts',
     'plural_label' => 'Contacts (Plurale)'];
-=======
-        'last_notified' => ['label' => 'Ultima notifica', 'tooltip' => 'Filtra per data ultima notifica'],
-    ],
-    'label' => 'Contacts',
-    'plural_label' => 'Contacts (Plurale)',
-];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'last_notified' => ['label' => 'Ultima notifica', 'tooltip' => 'Filtra per data ultima notifica']],
-    'label' => 'Contacts',
-    'plural_label' => 'Contacts (Plurale)'];
->>>>>>> a988596b (first)

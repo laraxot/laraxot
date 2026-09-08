@@ -85,15 +85,6 @@ class SendNotificationJob implements ShouldQueue
             'recipient_id' => $this->recipient->getKey(),
             'template_code' => $this->templateCode,
             'error' => $exception->getMessage(),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'trace' => $exception->getTraceAsString()]);
-=======
-            'trace' => $exception->getTraceAsString(),
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'trace' => $exception->getTraceAsString()]);
->>>>>>> a988596b (first)
     }
 }

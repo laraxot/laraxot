@@ -28,14 +28,7 @@ related:
 
 ## 🎯 Obiettivo Raggiunto
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Implementazione completa AGID compliance per FixCity**
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Implementazione completa AGID compliance per FixCity**
->>>>>>> a988596b (first)
 **Implementazione completa AGID compliance per Notify**
 - ✅ Multi-step form (4 passi obbligatori)
 - ✅ Sistema FAQ con gestione completa
@@ -48,19 +41,10 @@ related:
 ## 📦 File Implementati (28 file)
 
 ### Models (2)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 - `Modules/Fixcity/app/Models/Faq.php`
 - `Modules/Fixcity/app/Models/FaqCategory.php`
 - `Modules/Fixcity/app/Models/Faq.php`
 - `Modules/Fixcity/app/Models/FaqCategory.php`
-<<<<<<< HEAD
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 - `Modules/App/app/Models/Faq.php`
 - `Modules/App/app/Models/FaqCategory.php`
 
@@ -141,28 +125,14 @@ protected static ?string $navigationGroup = 'Contenuti';
 
 ### 1. Esegui Migrations
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 cd /var/www/_bases/base_fixcity_fila5_mono/laravel
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-cd /var/www/_bases/base_fixcity_fila5_mono/laravel
->>>>>>> a988596b (first)
 cd /var/www/_bases/base_ptvx_fila5_mono/laravel
 php artisan migrate
 ```
 
 ### 2. Popola Database
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 php artisan db:seed --class=Modules\\Fixcity\\Database\\Seeders\\FaqSeeder
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-php artisan db:seed --class=Modules\\Fixcity\\Database\\Seeders\\FaqSeeder
->>>>>>> a988596b (first)
 php artisan db:seed --class=Modules\\App\\Database\\Seeders\\FaqSeeder
 ```
 
@@ -220,14 +190,7 @@ Steps:
 
 ## 📚 Documentazione Creata
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. **AGID Gap Analysis** (`Modules/Fixcity/docs/agid-gap-analysis.md`)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. **AGID Gap Analysis** (`Modules/Fixcity/docs/agid-gap-analysis.md`)
->>>>>>> a988596b (first)
 1. **AGID Gap Analysis** (`Modules/App/docs/agid-gap-analysis.md`)
 2. **Theme Compliance** (`Themes/Sixteen/docs/agid-compliance-summary.md`)
 3. **CMS Compliance** (`Modules/Cms/docs/agid-compliance.md`)
@@ -278,14 +241,7 @@ Steps:
 - ✅ Documentazione completa
 - ✅ Production ready
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **FixCity è ora completamente AGID-compliant e pronto per la produzione!**
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**FixCity è ora completamente AGID-compliant e pronto per la produzione!**
->>>>>>> a988596b (first)
 **Notify è ora completamente AGID-compliant e pronto per la produzione!**
 
 ---

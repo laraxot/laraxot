@@ -19,14 +19,7 @@ Ogni modulo/tema deve essere pubblicabile, comprensibile e desiderabile: workflo
 - `../README.md`
 - `../.github/workflows/semantic-release.yml`
 - `../.releaserc.json`
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `../CHANGELOG.md`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- `../CHANGELOG.md`
->>>>>>> a988596b (first)
 - `../changelog.md`
 
 ## Confidenza

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Git Conflict Resolution - Modulo User"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Git Conflict Resolution - Modulo User
 
 ## Data
@@ -56,13 +45,3 @@ related:
 - Factory utilizza `@var OauthClient` per evitare `mixed`.
 - PHPStan blocca per seeder legacy; verrà affrontato in step successivi.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-Ultimo aggiornamento: 2025-01-06
->>>>>>> 60a2c9a9 (.)
-=======
-Ultimo aggiornamento: 2025-01-06
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

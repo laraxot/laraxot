@@ -70,15 +70,7 @@ return [
                 'account_sid' => env('TWILIO_ACCOUNT_SID'),
                 'auth_token' => env('TWILIO_AUTH_TOKEN'),
                 'from' => env('TWILIO_WHATSAPP_FROM'),
-<<<<<<< HEAD
-<<<<<<< HEAD
-                'endpoint' => env('TWILIO_WHATSAPP_ENDPOINT', 'https://api.twilio.com/2010-04-01/Accounts/{AccountSid}/Messages.json'),
-=======
                 'endpoint' => env('TWILIO_WHATSAPP_ENDPOINT', 'https://api.twilio.com/[DATE]/Accounts/{AccountSid}/Messages.json'),
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'endpoint' => env('TWILIO_WHATSAPP_ENDPOINT', 'https://api.twilio.com/[DATE]/Accounts/{AccountSid}/Messages.json'),
->>>>>>> a988596b (first)
             ],
             'vonage' => [
                 'api_key' => env('VONAGE_API_KEY'),

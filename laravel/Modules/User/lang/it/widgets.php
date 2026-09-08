@@ -73,18 +73,7 @@ return [
                 'help' => 'Ripeti la nuova password per conferma',
             ],
             'is_otp' => [
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'label' => 'Autenticazione a Due Fattori (OTP]',
-=======
-                'label' => 'Autenticazione a Due Fattori (OTP)',
->>>>>>> f548be94 (.)
-=======
-                'label' => 'Autenticazione a Due Fattori (OTP)',
-=======
-                'label' => 'Autenticazione a Due Fattori (OTP]',
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
                 'help' => 'Abilita l\'autenticazione a due fattori per maggiore sicurezza',
             ],
             'password_expires_at' => [
@@ -182,11 +171,6 @@ return [
             'confirm' => 'Sei sicuro di voler uscire?',
         ],
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
     'navigation' => [
         'name' => 'Widgets',
         'plural' => 'Widgets',
@@ -235,10 +219,4 @@ return [
         'heading' => 'Log Accessi',
         'label' => 'Numero di accessi eseguiti',
     ],
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 ];

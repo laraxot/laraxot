@@ -31,7 +31,7 @@ Transform Notify from a functional MVP to a national-scale enterprise-ready plat
 - AI-powered automation for categorization and duplicate detection.
 
 ## Stack
-- Laravel 13
+- Laravel 12
 - Filament v5
 - Folio (Routing)
 - Volt (Livewire Components)

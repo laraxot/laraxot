@@ -11,14 +11,7 @@ assignees: ''
 Replicare la pagina **[pagina-name].html** da Design Comuni Italia.
 
 **Source**: https://italia.github.io/design-comuni-pagine-statiche/sito/[pagina-name].html  
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Target**: http://fixcity.local/it/tests/[pagina-name]  
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Target**: http://fixcity.local/it/tests/[pagina-name]  
->>>>>>> a988596b (first)
 **Target**: http://ptv.local/it/tests/[pagina-name]  
 **HTML Parity**: 100% match dentro `<body>` (esclusi scripts)
 
@@ -27,14 +20,7 @@ Replicare la pagina **[pagina-name].html** da Design Comuni Italia.
 ## ✅ Checklist
 
 ### 1. JSON Content
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Creare `laravel/config/local/fixcity/database/content/pages/tests.[pagina-name].json`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [ ] Creare `laravel/config/local/fixcity/database/content/pages/tests.[pagina-name].json`
->>>>>>> a988596b (first)
 - [ ] Creare `laravel/config/local/ptv/database/content/pages/tests.[pagina-name].json`
 - [ ] Definire blocchi con type generici (hero, card, navigation, etc.)
 - [ ] Set weight per ordinamento
@@ -46,14 +32,7 @@ Replicare la pagina **[pagina-name].html** da Design Comuni Italia.
 - [ ] Assicurarsi che blocchi siano universali (NOT page-specific)
 
 ### 3. Test Pagina
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Visitare `http://fixcity.local/it/tests/[pagina-name]`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [ ] Visitare `http://fixcity.local/it/tests/[pagina-name]`
->>>>>>> a988596b (first)
 - [ ] Visitare `http://ptv.local/it/tests/[pagina-name]`
 - [ ] Verificare rendering corretto
 - [ ] Controllare header e footer

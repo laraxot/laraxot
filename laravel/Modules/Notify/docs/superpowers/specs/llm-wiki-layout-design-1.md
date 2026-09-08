@@ -8,16 +8,8 @@ qmd: "2026-04-15-llm-wiki-layout-design.deprecated design spec – shared ai‑a
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-<<<<<<< HEAD
-<<<<<<< HEAD
   - "./fixcity-hero-marketing-1.md"
   - "./fixcity-hero-marketing.md"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-  - "./fixcity-hero-marketing-1.md"
-  - "./fixcity-hero-marketing.md"
->>>>>>> a988596b (first)
   - "./laraxot-hero-marketing-1.md"
   - "./laraxot-hero-marketing.md"
   - "./llm-wiki-layout-design.md"

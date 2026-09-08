@@ -62,16 +62,7 @@ final class SendNexmoSMSAction implements SmsActionContract
     public function execute(SmsData $smsData): array
     {
         $headers = [
-<<<<<<< HEAD
-<<<<<<< HEAD
             'Content-Type' => 'application/x-www-form-urlencoded'];
-=======
-            'Content-Type' => 'application/x-www-form-urlencoded',
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'Content-Type' => 'application/x-www-form-urlencoded'];
->>>>>>> a988596b (first)
 
         // Normalizza il numero di telefono
         $to = (string) $smsData->recipient;
@@ -87,16 +78,7 @@ final class SendNexmoSMSAction implements SmsActionContract
 
         $client = new Client([
             'timeout' => $this->nexmoData->getTimeout(),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'headers' => $headers]);
-=======
-            'headers' => $headers,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'headers' => $headers]);
->>>>>>> a988596b (first)
 
         try {
             $response = $client->post($this->nexmoData->getBaseUrl().'/sms/json', [
@@ -106,17 +88,7 @@ final class SendNexmoSMSAction implements SmsActionContract
                     'to' => $to,
                     'from' => $from,
                     'text' => $smsData->body,
-<<<<<<< HEAD
-<<<<<<< HEAD
                     'type' => 'unicode']]);
-=======
-                    'type' => 'unicode',
-                ],
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    'type' => 'unicode']]);
->>>>>>> a988596b (first)
 
             $this->vars['status_code'] = $response->getStatusCode();
             $this->vars['status_txt'] = $response->getBody()->getContents();

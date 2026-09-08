@@ -157,11 +157,7 @@ laravel/Themes/One/resources/views/pages/auth/
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Hash;
     use Illuminate\Auth\Events\Registered;
-<<<<<<< HEAD
-    use Modules\Xot\Contracts\UserContract;
-=======
     use Modules\User\Models\User;
->>>>>>> f548be94 (.)
     use function Livewire\Volt\{state, rules, mount};
 
     state([

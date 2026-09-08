@@ -10,7 +10,7 @@
 
 ### Core Technology
 - **PHP 8.3+** - Strict typing, latest features
-- **Laravel 13** - Latest LTS version
+- **Laravel 12** - Latest LTS version
 - **Filament v5** - Admin panel, widgets, tables
 - **Livewire v4** - Reactive components
 - **Nwidart Laravel Modules** - Modular architecture
@@ -72,14 +72,7 @@
 
 **✅ SEMPRE**:
 ```blade
-<<<<<<< HEAD
-<<<<<<< HEAD
 @livewire(\Modules\Predict\Filament\Widgets\PredictTableWidget::class)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-@livewire(\Modules\Predict\Filament\Widgets\PredictTableWidget::class)
->>>>>>> a988596b (first)
 @livewire(\Modules\Forecast\Filament\Widgets\ForecastTableWidget::class)
 ```
 

@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Base Fixcity Fila5 — PROJECT.md
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# Base Fixcity Fila5 — PROJECT.md
->>>>>>> a988596b (first)
 # Base App Fila5 — PROJECT.md
 
 ## Context
@@ -14,14 +7,7 @@ Theme: Sixteen (Bootstrap Italia → Tailwind parity).
 Frontend wizard: Ticket creation wizard via `CreateTicketWizardWidget` (Filament v5 Schemas).
 
 ## Current Milestone
-<<<<<<< HEAD
-<<<<<<< HEAD
 **M0: Fixcity Ticket Wizard — Visual & HTML Parity** ✅ DONE
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**M0: Fixcity Ticket Wizard — Visual & HTML Parity** ✅ DONE
->>>>>>> a988596b (first)
 **M0: App Ticket Wizard — Visual & HTML Parity** ✅ DONE
 
 Target: `segnalazione-crea` wizard page → 90%+ parity with Design Comuni `segnalazione-02-dati.html`
@@ -46,12 +32,5 @@ Target: `segnalazione-crea` wizard page → 90%+ parity with Design Comuni `segn
 - Filament Schemas = unified system (v5). Forms + Infolists coexist.
 - Widget → NO model binding (`getFormModel() → null`)
 - CSS scoped overrides → never mutate Filament markup
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Multilingual: all strings via `__('fixcity::ticket.*')`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Multilingual: all strings via `__('fixcity::ticket.*')`
->>>>>>> a988596b (first)
 - Multilingual: all strings via `__('laraxot::ticket.*')`

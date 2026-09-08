@@ -1,15 +1,3 @@
-<<<<<<< HEAD
----
-title: "module_structure - User"
-module: user
-type: integration
-tags: [integrations, modules, user]
-created: 2026-08-24
-updated: 2026-08-24
----
-
-=======
->>>>>>> 87273113 (.)
 # module_structure - User
 
 ## Overview

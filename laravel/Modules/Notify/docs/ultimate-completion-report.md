@@ -4,14 +4,7 @@ type: concept
 tags: [ultimate, completion, report]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "ultimate-completion-report 🏆 fixcity - ultimate completion report"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "ultimate-completion-report 🏆 fixcity - ultimate completion report"
->>>>>>> a988596b (first)
 qmd: "ultimate-completion-report 🏆 ptv - ultimate completion report"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -118,14 +111,7 @@ Trasformato FixCity da MVP documentato a piattaforma enterprise-ready con implem
 ## 🗂️ STRUTTURA FINALE PROGETTO
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 base_fixcity_fila5_mono/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-base_fixcity_fila5_mono/
->>>>>>> a988596b (first)
 base_ptv_fila5_mono/
 │
 ├── 📊 ROOT DOCS (13 files)

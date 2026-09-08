@@ -14,11 +14,7 @@ class TenantUserForm extends XotBaseResourceForm
     /**
      * @return array<int|string, SchemaComponent>
      */
-<<<<<<< HEAD
-    public static function getFormSchema(): array
-=======
     public function getFormSchema(): array
->>>>>>> 87273113 (.)
     {
         return [
             'tenant_user' => Section::make('Tenant User Information')

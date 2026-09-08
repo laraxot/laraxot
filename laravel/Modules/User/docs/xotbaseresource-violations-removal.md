@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Rimozione Proprietà/Metodi Vietati da XotBaseResource - [DATE]"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Rimozione Proprietà/Metodi Vietati da XotBaseResource - [DATE]
 
 **Status**: ✅ Completato  
@@ -67,18 +56,7 @@ related:
 5. **PersonalAccessTokenResource**
    - ❌ Rimosso: `protected static ?string $recordTitleAttribute = 'name'`
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### Modulo ExternalProject
-=======
-### Modulo Quaeris
->>>>>>> 60a2c9a9 (.)
-=======
-### Modulo Quaeris
-=======
-### Modulo ExternalProject
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
 6. **ContactResource**
    - ❌ Rimosso: `protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-user-circle'`

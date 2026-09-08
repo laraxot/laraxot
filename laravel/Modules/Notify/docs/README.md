@@ -1,37 +1,70 @@
-# Notify
+---
+title: "Notify Module Documentation"
+type: documentation
+tags: [module, documentation]
+created: 2026-06-05
+updated: 2026-08-02
+---
 
-[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+# Documentation
 
-> ****Verificato 2026-07-24**: `Modules\Notify\Models\Traits\HasNotify` **non esiste** (unico trait presente in**
+This directory contains documentation for the Notify module.
 
-## Perché esiste
+## Structure
 
-**Verificato 2026-07-24**: `Modules\Notify\Models\Traits\HasNotify` **non esiste** (unico trait presente in
+- **architecture.md** - Module architecture and design patterns
+- **README.md** - This file
 
-## Superpoteri
+## Guidelines
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+Documentation should be:
+- Clear and concise
+- Example-driven
+- Updated with code changes
+- Use Markdown format (.md)
 
-## Documentazione
+## Sistemi di Notificazione
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+- Mail notifications
+- Database notifications
+- Template management
+- Queue integration
+
+## Modelli Principali (verificato 2026-07-24 contro `app/Models/`)
+
+```php
+Modules\Notify\Models\MailTemplate
+Modules\Notify\Models\MailTemplateVersion
+Modules\Notify\Models\MailTemplateLog
+Modules\Notify\Models\Notification
+Modules\Notify\Models\NotificationLog
+Modules\Notify\Models\NotificationType
+Modules\Notify\Models\NotificationChannel
+Modules\Notify\Models\NotificationTemplate
+Modules\Notify\Models\NotificationTemplateVersion
+```
+
+## Traits
+
+> **Verificato 2026-07-24**: `Modules\Notify\Models\Traits\HasNotify` **non esiste** (unico trait presente in
+> `app/Models/Traits/` è `HasContact.php`). Se questo trait serve, va creato, non documentato come
+> già presente.
+
+## Collegamenti
+
+- [Xot Base](../Xot/docs/) - Core framework
+- [User Module](../User/docs/) - User management integration
+
+## Risorse
+
+- [PHPStan Config](./phpstan/) - Type checking configuration
+- [On-Demand Pattern](./on-demand-pattern.md) — Pattern per caricamento efficiente
+- [QMD Setup](./qmd-setup.md) — Configurazione ricerca locale
+- [Performance](./performance-optimization.md) — Metriche e best practice
+- [Project Structure](./project-structure.md) — Directory layout
 
 ---
 
-<<<<<<< HEAD
 <!-- Merged from readme.md, which collided with this file on case-insensitive filesystems. -->
 
 ---
@@ -459,20 +492,9 @@ Log::channel('email')->info('Email sent', [
 - **Team Laraxot** - Core implementation
 - **Xot Module** - PDF generation support
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## Documentation
-=======
----
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-## Documentation
->>>>>>> a988596b (first)
 
 **Ultimo aggiornamento:** 2025-01-22  
 **Versione:** 2.1.0  
 **Stato:** ✅ Production Ready  
 **PHPStan Level:** 10
-=======
-**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
->>>>>>> d822d97f (.)

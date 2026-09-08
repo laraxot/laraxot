@@ -65,14 +65,7 @@ Laravel Boost v2.2.1 includes 14 built-in skills in the package:
 
 ### Built-in Skills Location
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 /var/www/_bases/base_fixcity_fila5/laravel/vendor/laravel/boost/.ai/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-/var/www/_bases/base_fixcity_fila5/laravel/vendor/laravel/boost/.ai/
->>>>>>> a988596b (first)
 /var/www/_bases/base_ptv_fila5/laravel/vendor/laravel/boost/.ai/
 ```
 
@@ -80,14 +73,7 @@ Laravel Boost v2.2.1 includes 14 built-in skills in the package:
 
 ### laravel-specialist
 - **Package**: jeffallan/claude-skills
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Location**: `/var/www/_bases/base_fixcity_fila5/laravel/.ai/skills/laravel-specialist/`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Location**: `/var/www/_bases/base_fixcity_fila5/laravel/.ai/skills/laravel-specialist/`
->>>>>>> a988596b (first)
 - **Location**: `/var/www/_bases/base_ptv_fila5/laravel/.ai/skills/laravel-specialist/`
 - **Files**:
   - SKILL.md

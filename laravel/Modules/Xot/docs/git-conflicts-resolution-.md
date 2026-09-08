@@ -115,10 +115,13 @@ Sono stati identificati e risolti conflitti Git in diversi file del progetto <no
 
 **Modifiche Applicate**:
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 ```
 
 =======
 >>>>>>> 7f6cf6be (.)
+>>>>>>> laraxot/dev
 ```php
 // VERSIONE CORRETTA
 $res=Locality::query()
@@ -311,5 +314,9 @@ php artisan lang:check
 <<<<<<< HEAD
 **Stato**: ✅ Completato
 =======
+<<<<<<< HEAD
+**Stato**: ✅ Completato
+=======
 **Stato**: ✅ Completato
 >>>>>>> 7f6cf6be (.)
+>>>>>>> laraxot/dev

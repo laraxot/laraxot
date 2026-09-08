@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Database Errors in User Module"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Database Errors in User Module
 
 ## Missing `doctor_team` Table
@@ -60,16 +49,5 @@ related:
 - [BaseUser Model](../app/Models/BaseUser.php)
 - [Teams Relationship](../app/Models/Team.php)
 - [Migration File](../database/migrations/2025_05_17_000001_create_doctor_team_table.php)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Root Documentation](../../../../docs/collegamenti-documentazione.md)
-=======
-- [Root Documentation](../../../docs/collegamenti-documentazione.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Root Documentation](../../../docs/collegamenti-documentazione.md)
-=======
-- [Root Documentation](../../../../docs/collegamenti-documentazione.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [Xot Module Database Guidelines](../../../modules/xot/docs/database_guidelines.md)

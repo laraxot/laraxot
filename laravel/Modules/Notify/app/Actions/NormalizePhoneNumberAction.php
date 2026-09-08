@@ -5,14 +5,9 @@ declare(strict_types=1);
 namespace Modules\Notify\Actions;
 
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
-<<<<<<< HEAD
 use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\preg_replace;
-=======
-use function Safe\preg_replace;
-use Spatie\QueueableAction\QueueableAction;
->>>>>>> a988596b (first)
 
 class NormalizePhoneNumberAction
 {
@@ -22,10 +17,6 @@ class NormalizePhoneNumberAction
      * Normalizes a phone number to a consistent format (e.g., E.164).
      *
      * @param  string|null  $phoneNumber  The phone number to normalize.
-<<<<<<< HEAD
-=======
-     *
->>>>>>> a988596b (first)
      * @return string Normalized phone number, or empty string if invalid/null.
      */
     public function execute(?string $phoneNumber): string

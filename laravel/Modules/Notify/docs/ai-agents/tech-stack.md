@@ -1,19 +1,7 @@
 # Technology Stack
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 Stack tecnologico completo di Quaeris Fila5 Mono - Laravel 12 + Filament 5 + PHP 8.3
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Stack tecnologico completo di Quaeris Fila5 Mono - Laravel 12 + Filament 5 + PHP 8.3
->>>>>>> a988596b (first)
 Stack tecnologico completo di App Fila5 Mono - Laravel 12 + Filament 5 + PHP 8.3
-=======
-Stack tecnologico completo di Quaeris Fila5 Mono - Laravel 13 + Filament 5 + PHP 8.3
-Stack tecnologico completo di App Fila5 Mono - Laravel 13 + Filament 5 + PHP 8.3
->>>>>>> 04cb1070 (fix: PHPStan Notify sync, bmad story, docs/stories, second brain)
 
 ## Core Technologies
 

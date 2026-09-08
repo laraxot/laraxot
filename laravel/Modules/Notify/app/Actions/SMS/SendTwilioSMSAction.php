@@ -76,16 +76,7 @@ final class SendTwilioSMSAction implements SmsActionContract
         // Twilio richiede l'autenticazione Basic
         $client = new Client([
             'timeout' => $this->twilioData->getTimeout(),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'auth' => [$this->twilioData->account_sid, $this->twilioData->auth_token]]);
-=======
-            'auth' => [$this->twilioData->account_sid, $this->twilioData->auth_token],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'auth' => [$this->twilioData->account_sid, $this->twilioData->auth_token]]);
->>>>>>> a988596b (first)
 
         $endpoint =
             $this->twilioData->getBaseUrl().
@@ -98,17 +89,7 @@ final class SendTwilioSMSAction implements SmsActionContract
                 'form_params' => [
                     'To' => $to,
                     'From' => $from,
-<<<<<<< HEAD
-<<<<<<< HEAD
                     'Body' => $smsData->body]]);
-=======
-                    'Body' => $smsData->body,
-                ],
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    'Body' => $smsData->body]]);
->>>>>>> a988596b (first)
 
             $this->vars['status_code'] = $response->getStatusCode();
             $this->vars['status_txt'] = $response->getBody()->getContents();

@@ -13,13 +13,13 @@ abstract class XotBaseViewRecord extends FilamentViewRecord
 {
     use HasFiltersForm;
 
-/**
- * Get the header actions.
- *
- * @return array<string, Action|ActionGroup>
- */
-protected function getHeaderActions(): array
-{
-    return [];
-}
+    /**
+     * Get the header actions.
+     *
+     * @return array<string, Action|ActionGroup>
+     */
+    protected function getHeaderActions(): array
+    {
+        return [];
+    }
 }

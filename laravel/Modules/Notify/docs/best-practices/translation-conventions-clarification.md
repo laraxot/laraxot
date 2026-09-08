@@ -108,12 +108,5 @@ Il file `send_whats_app.php` e altri file simili nel modulo Notify seguono corre
 
 - [Convenzioni Generali di Traduzione](../../lang/docs/translation_keys_rules.md)
 - [Convenzioni Specifiche del Modulo Notify](./translation_conventions.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Regole per le Chiavi di Traduzione](../../lang/docs/translation_keys_best_practices.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Regole per le Chiavi di Traduzione](../../lang/docs/translation_keys_best_practices.md)
->>>>>>> a988596b (first)
 - [Regole per le Chiavi di Traduzione](../../lang/docs/translation-keys-best-practices.md)

@@ -4,14 +4,7 @@ type: concept
 tags: [documentation, ecosystem]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "documentation-ecosystem fixcity documentation ecosystem - visual map"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "documentation-ecosystem fixcity documentation ecosystem - visual map"
->>>>>>> a988596b (first)
 qmd: "documentation-ecosystem ptv documentation ecosystem - visual map"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -184,14 +177,7 @@ Theme: Sixteen
     │
     ├─→ Cms Module
     │   └─ Displays: Pages, blocks, content
-<<<<<<< HEAD
-<<<<<<< HEAD
     │   └─ Via: config/local/fixcity/database/content/pages/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    │   └─ Via: config/local/fixcity/database/content/pages/
->>>>>>> a988596b (first)
     │   └─ Via: config/local/ptv/database/content/pages/
     │   └─ Renders: Block components
     │
@@ -401,14 +387,7 @@ docs/
 
 laravel/
 ├── claude.md                       ← Framework rules (38.7 KB)
-<<<<<<< HEAD
-<<<<<<< HEAD
 ├── AGENTS.md
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-├── AGENTS.md
->>>>>>> a988596b (first)
 ├── agents.md
 └── .windsurfrules                 ← Windsurf rules
 ```

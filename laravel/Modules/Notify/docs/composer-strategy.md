@@ -63,14 +63,7 @@ Ogni modulo gestisce le proprie dipendenze:
 
 ```json
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "name": "fixcity/module-name",
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    "name": "fixcity/module-name",
->>>>>>> a988596b (first)
     "name": "ptv/module-name",
     "require": {
         "php": "^8.2",
@@ -239,14 +232,7 @@ composer update
 
 ```json
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "name": "fixcity/cms-module",
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    "name": "fixcity/cms-module",
->>>>>>> a988596b (first)
     "name": "ptv/cms-module",
     "require": {
         "php": "^8.2",

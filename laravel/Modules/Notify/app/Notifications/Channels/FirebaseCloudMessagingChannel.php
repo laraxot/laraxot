@@ -19,10 +19,7 @@ use Modules\Notify\Contracts\CanReceivePushNotifications;
 use Modules\Notify\Contracts\MobilePushNotification;
 use Modules\Notify\Datas\PushNotificationDebugData;
 use Psr\Log\LoggerInterface;
-<<<<<<< HEAD
 
-=======
->>>>>>> a988596b (first)
 use function Safe\json_encode;
 
 final class FirebaseCloudMessagingChannel

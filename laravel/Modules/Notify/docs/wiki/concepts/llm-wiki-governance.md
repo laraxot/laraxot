@@ -6,14 +6,7 @@
 
 ## Purpose
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 This page defines how the Karpathy-style LLM wiki maps onto the FixCity repository.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-This page defines how the Karpathy-style LLM wiki maps onto the FixCity repository.
->>>>>>> a988596b (first)
 This page defines how the Karpathy-style LLM wiki maps onto the Notify repository.
 
 ## Mapping

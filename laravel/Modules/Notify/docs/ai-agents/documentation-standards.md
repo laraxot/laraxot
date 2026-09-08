@@ -21,15 +21,7 @@ WRONG:   ModelArchitecture.md
 Never include dates in filenames:
 ```
 CORRECT: dry-kiss-analysis.md
-<<<<<<< HEAD
-<<<<<<< HEAD
 WRONG:   dry-kiss-analysis-2025-10-15.md
-=======
-WRONG:   dry-kiss-analysis.md
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-WRONG:   dry-kiss-analysis-2025-10-15.md
->>>>>>> a988596b (first)
 WRONG:   phpstan-fixes-january-2026.md
 ```
 

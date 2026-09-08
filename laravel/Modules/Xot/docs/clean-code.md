@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+https://github.com/jupeter/clean-code-php#use-meaningful-and-pronounceable-variable-names
+=======
 ---
 title: 'Clean code — risorse esterne'
 module: Xot
@@ -18,3 +21,4 @@ updated: 2026-08-24
 ## Riferimenti
 
 - <https://github.com/jupeter/clean-code-php#use-meaningful-and-pronounceable-variable-names>
+>>>>>>> laraxot/dev

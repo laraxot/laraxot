@@ -15,7 +15,7 @@ use Modules\Xot\Tests\XotBaseTestCase;
 /**
  * Feature Catalog: condividono lo schema sqlite di `database/fixcity_data.sqlite`
  * (già con products/metel_* dopo migrate path Catalog). Senza
- * prepareSharedFixcitySqliteForTesting() phpunit forza :memory: vuoto → no such table.
+ * prepareSharedSqliteForTesting() phpunit forza :memory: vuoto → no such table.
  */
 abstract class TestCase extends XotBaseTestCase
 {
@@ -39,7 +39,7 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
-        $this->prepareSharedFixcitySqliteForTesting();
+        $this->prepareSharedSqliteForTesting();
 
         // Schema PRIMA di DatabaseTransactions: altrimenti DDL sul sqlite file
         // resta nella transazione del test e sparisce al rollback.

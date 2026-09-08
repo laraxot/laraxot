@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Correzioni File di Traduzione User Module"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Correzioni File di Traduzione User Module
 
 ## Problemi Identificati e Risolti
@@ -127,13 +116,3 @@ Il file ora segue la struttura espansa obbligatoria per le regole Laraxot:
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-*Ultimo aggiornamento: [DATE]*
->>>>>>> 60a2c9a9 (.)
-=======
-*Ultimo aggiornamento: [DATE]*
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

@@ -1,34 +1,45 @@
 # Mail Layouts
 
-[![Module](https://img.shields.io/badge/Module-Mail Layouts-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+Questa directory contiene i layout HTML base per le email. I layout sono file HTML statici che definiscono la struttura base delle email, con il placeholder `{{{ body }}}` per il contenuto dinamico.
 
-> **Core module for the FixCity Platform.**
+## Struttura Directory
 
-## Perché esiste
+```
+mail-layouts/
+├── base/
+│   └── default.html    # Layout base con {{{ body }}}
+└── themes/
+    ├── light.html      # Tema chiaro
+    └── dark.html       # Tema scuro
+```
 
-Core module for the FixCity Platform.
+## Utilizzo
 
-## Superpoteri
+I layout vengono utilizzati dalle classi Mailable che estendono `TemplateMailable`. Il contenuto dinamico viene definito nel campo `html_template` della tabella `mail_templates`.
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+### Esempio
 
-## Documentazione
+```php
+class WelcomeMail extends TemplateMailable
+{
+    public function getHtmlLayout(): string
+    {
+        return file_get_contents(resource_path('mail-layouts/base/default.html'));
+    }
+}
+```
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+## Best Practices
 
----
+1. Mantenere i layout HTML semplici e statici
+2. Usare il placeholder `{{{ body }}}` per il contenuto
+3. Evitare logica dinamica nei layout
+4. Includere solo stili base e struttura
+5. Testare su vari client email
 
-**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+## Note
+
+- I contenuti dinamici devono essere definiti nel database
+- I layout devono essere compatibili con i client email
+- Usare stili inline per massima compatibilità
+- Testare su vari dispositivi e client

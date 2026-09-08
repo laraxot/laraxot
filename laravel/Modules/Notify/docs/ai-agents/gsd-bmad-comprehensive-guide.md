@@ -177,14 +177,7 @@ Ogni task: Contesto fresco (200k token) → Qualità costante ✅
 ├── research/
 │   ├── STACK.md         # Stack tecnologico
 │   ├── FEATURES.md      # Feature research
-<<<<<<< HEAD
-<<<<<<< HEAD
 │   ├── ARCHITECTURE.md  # Architettura
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-│   ├── ARCHITECTURE.md  # Architettura
->>>>>>> a988596b (first)
 │   ├── architecture.md  # Architettura
 │   └── PITFALLS.md      # Pitfalls da evitare
 ├── phase-1-PLAN.md      # Task atomici XML
@@ -452,16 +445,8 @@ Agent N (Verifier):
 
 ```
 Commit Messages:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - "docs: predict detail research"
 - "docs: predict detail architecture"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- "docs: predict detail research"
-- "docs: predict detail architecture"
->>>>>>> a988596b (first)
 - "docs: forecast detail research"
 - "docs: forecast detail architecture"
 - "feat: add price chart component"

@@ -127,15 +127,6 @@ class Get
             'from' => $theme->from,
             'subject' => $subject,
             'body_html' => $body_html,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'view_params' => $view_params]);
-=======
-            'view_params' => $view_params,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'view_params' => $view_params]);
->>>>>>> a988596b (first)
     }
 }

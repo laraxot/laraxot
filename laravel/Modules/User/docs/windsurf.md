@@ -2,11 +2,6 @@
 description:
 globs:
 alwaysApply: false
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 related:
   - "./00-index-1.md"
   - "./00-index.md"
@@ -16,12 +11,6 @@ related:
   - "./actions-path-convention-1.md"
   - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 ---
 # Regola Windsurf: Migrazioni XotBaseMigration
 
@@ -52,15 +41,4 @@ if (! $this->hasColumn('state')) {
 - [Best Practices](mdc:best-practices.mdc)
 - [Linee guida Actions](mdc:actions.mdc)
 - [Linee guida Activitylog](mdc:activitylog.mdc)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Documentazione centrale](mdc:../../../../../docs/index.md)
-=======
-- [Documentazione centrale](mdc:../../../../docs/index.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Documentazione centrale](mdc:../../../../docs/index.md)
-=======
-- [Documentazione centrale](mdc:../../../../../docs/index.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

@@ -205,11 +205,7 @@ Modules/User/
 ```
 
 ## Collegamenti
-<<<<<<< HEAD
-- [Console Commands Philosophy](console_commands_philosophy.md)
-=======
 - [Console Commands Philosophy](console-commands-philosophy.md)
->>>>>>> 2024e2e7 (.)
 - [User Models](../models/readme.md)
 - [Role Management](../models/role-management.md)
 - [Password Management](../password.md)

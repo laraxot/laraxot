@@ -10,28 +10,14 @@ Implementazione completa delle custom question types da Fila4 a Fila5, con integ
 
 ### 1. RootGroupedBf ✅
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
->>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/RootGroupedBf.php`
 
 **Scopo**: Raggruppa domande per `gid` e calcola valutazioni 1-5 vs 6-10
 
 **Pattern**: `custom:root_grouped_bf`
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/234
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/234
->>>>>>> a988596b (first)
 **Esempio URL**: http://127.0.0.1:8000/this-project/admin/ats/survey-pdfs/16/question-charts/234
 
 **Logica**:
@@ -56,28 +42,14 @@ AnswersChartData {
 
 ### 2. MailResponseRate ✅
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/MailResponseRate.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/MailResponseRate.php`
->>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/MailResponseRate.php`
 
 **Scopo**: Calcola tasso di risposta email
 
 **Pattern**: `custom:mail_response_rate`
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/192
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/192
->>>>>>> a988596b (first)
 **Esempio URL**: http://127.0.0.1:8000/this-project/admin/ats/survey-pdfs/16/question-charts/192
 
 **Logica**:
@@ -100,28 +72,14 @@ AnswersChartData {
 
 ### 3. SmsResponseRate ✅
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
->>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/SmsResponseRate.php`
 
 **Scopo**: Calcola tasso di risposta SMS
 
 **Pattern**: `custom:sms_response_rate`
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/191
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/191
->>>>>>> a988596b (first)
 **Esempio URL**: http://127.0.0.1:8000/this-project/admin/ats/survey-pdfs/16/question-charts/191
 
 **Logica**:
@@ -132,28 +90,14 @@ AnswersChartData {
 
 ### 4. ContactsCompleted ✅
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
->>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted.php`
 
 **Scopo**: Conta contatti completati
 
 **Pattern**: `custom:contacts_completed`
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/190
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Esempio URL**: http://127.0.0.1:8000/quaeris/admin/ats/survey-pdfs/16/question-charts/190
->>>>>>> a988596b (first)
 **Esempio URL**: http://127.0.0.1:8000/this-project/admin/ats/survey-pdfs/16/question-charts/190
 
 **Logica**:
@@ -165,14 +109,7 @@ AnswersChartData {
 
 ### 5. ContactsCompleted2 ✅
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
->>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/ContactsCompleted2.php`
 
 **Scopo**: Variante di ContactsCompleted
@@ -183,14 +120,7 @@ AnswersChartData {
 
 ### 6. AvgGroup2 ✅
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/AvgGroup2.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `Modules/Quaeris/app/Actions/QuestionChart/Custom/AvgGroup2.php`
->>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/Custom/AvgGroup2.php`
 
 **Scopo**: Calcola medie per gruppo
@@ -203,14 +133,7 @@ AnswersChartData {
 
 ### GetAnswersByQuestionChart
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `Modules/Quaeris/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `Modules/Quaeris/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
->>>>>>> a988596b (first)
 **File**: `Modules/App/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
 
 **Custom Action Map**:
@@ -245,14 +168,7 @@ private function handleCustomQuestionType(...): AnswersChartData
 
 ### Pest Test Suite
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `Modules/Quaeris/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `Modules/Quaeris/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php`
->>>>>>> a988596b (first)
 **File**: `Modules/App/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php`
 
 **Test Cases**: 10+
@@ -280,23 +196,10 @@ it('can handle RootGroupedBf custom question', function (): void {
 cd ./laravel
 
 # Esegui test custom questions
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 ./vendor/bin/pest Modules/Quaeris/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php
 
 # Con coverage
 XDEBUG_MODE=off ./vendor/bin/pest Modules/Quaeris/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php --coverage
-<<<<<<< HEAD
-=======
-./vendor/bin/pest Modules/App/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php
-
-# Con coverage
-XDEBUG_MODE=off ./vendor/bin/pest Modules/App/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php --coverage
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ```
 
 ---
@@ -331,16 +234,8 @@ XDEBUG_MODE=off ./vendor/bin/pest Modules/App/tests/Unit/Actions/QuestionChart/C
 ### Example: RootGroupedBf
 
 ```php
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Quaeris\Actions\QuestionChart\Custom\RootGroupedBf;
 use Modules\Quaeris\Models\QuestionChart;
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use Modules\Quaeris\Actions\QuestionChart\Custom\RootGroupedBf;
-use Modules\Quaeris\Models\QuestionChart;
->>>>>>> a988596b (first)
 use Modules\App\Actions\QuestionChart\Custom\RootGroupedBf;
 use Modules\App\Models\QuestionChart;
 
@@ -360,16 +255,8 @@ foreach ($result->answers as $answer) {
 ### Example: MailResponseRate
 
 ```php
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Quaeris\Actions\QuestionChart\Custom\MailResponseRate;
 use Modules\Quaeris\Datas\AnswersFilterData;
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use Modules\Quaeris\Actions\QuestionChart\Custom\MailResponseRate;
-use Modules\Quaeris\Datas\AnswersFilterData;
->>>>>>> a988596b (first)
 use Modules\App\Actions\QuestionChart\Custom\MailResponseRate;
 use Modules\App\Datas\AnswersFilterData;
 
@@ -483,10 +370,6 @@ return AnswersChartData::from([
 ## References
 
 ### Fila4 Source
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 - `./laravel/Modules/Quaeris/app/Actions/QuestionChart/Custom/`
 
 ### Fila5 Implementation
@@ -502,19 +385,6 @@ return AnswersChartData::from([
 
 ### Tests
 - `Modules/Quaeris/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php`
-<<<<<<< HEAD
-=======
-- `./laravel/Modules/App/app/Actions/QuestionChart/Custom/`
-
-### Fila5 Implementation
-- `Modules/App/app/Actions/QuestionChart/Custom/`
-- `Modules/App/app/Actions/QuestionChart/GetAnswersByQuestionChart.php`
-
-### Tests
-- `Modules/App/tests/Unit/Actions/QuestionChart/CustomQuestionTypesTest.php`
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 ### GitHub
 - [Custom Chart Implementation Issue](.github/ISSUE_TEMPLATE/custom-chart-implementation.md)

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Laravel Passport Integration - Architettura Completa"
 type: concept
@@ -23,28 +18,11 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Laravel Passport Integration - Architettura Completa
 
 > **Generato**: [DATE]
 > **Filosofia**: L'Architetto Laraxot (Vincitore del Dibattito Interno)
-<<<<<<< HEAD
-<<<<<<< HEAD
 > **PHPStan Status**: ✅ Modulo `User` verificato pulito il 2026-03-10
-=======
-> **PHPStan Status**: ✅ Level MAX Compliant (Zero Errori)
->>>>>>> 60a2c9a9 (.)
-=======
-> **PHPStan Status**: ✅ Level MAX Compliant (Zero Errori)
-=======
-> **PHPStan Status**: ✅ Modulo `User` verificato pulito il 2026-03-10
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
 ---
 
@@ -80,8 +58,6 @@ Durante l'analisi dell'integrazione Passport, sono emerse tre posizioni:
 laravel/Modules/User/app/Models/
 ├── BaseUser.php              # Implements OAuthenticatable + HasApiTokens
 ├── OauthClient.php          # Extends Laravel\Passport\Client
-<<<<<<< HEAD
-<<<<<<< HEAD
 ├── OauthToken.php           # Extends Laravel\Passport\Token
 ├── OauthAccessToken.php     # Local alias/model used by app consumers when needed
 ├── OauthRefreshToken.php    # Extends Laravel\Passport\RefreshToken
@@ -95,34 +71,6 @@ laravel/Modules/User/app/Models/
 - `Laravel\Passport\PersonalAccessClient` non e un model Eloquent vendor disponibile come wrapper 1:1 nel progetto
 - `OauthPersonalAccessClient` resta quindi un model locale del modulo `User`, non un mirror diretto del vendor
 
-=======
-=======
->>>>>>> 87273113 (.)
-├── OauthAccessToken.php     # Extends Laravel\Passport\Token
-├── OauthRefreshToken.php    # Extends Laravel\Passport\RefreshToken
-├── OauthAuthCode.php        # Extends Laravel\Passport\AuthCode
-└── OauthPersonalAccessClient.php  # Extends Laravel\Passport\PersonalAccessClient
-```
-
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-├── OauthToken.php           # Extends Laravel\Passport\Token
-├── OauthAccessToken.php     # Local alias/model used by app consumers when needed
-├── OauthRefreshToken.php    # Extends Laravel\Passport\RefreshToken
-├── OauthAuthCode.php        # Extends Laravel\Passport\AuthCode
-└── OauthPersonalAccessClient.php  # Local application model for oauth_personal_access_clients
-```
-
-### Distinzione critica
-
-- I wrapper 1:1 obbligatori esistono solo per i model vendor Passport che estendono `Illuminate\Database\Eloquent\Model`
-- `Laravel\Passport\PersonalAccessClient` non e un model Eloquent vendor disponibile come wrapper 1:1 nel progetto
-- `OauthPersonalAccessClient` resta quindi un model locale del modulo `User`, non un mirror diretto del vendor
-
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 ### BaseUser + Passport
 
 ```php
@@ -275,11 +223,7 @@ final class OauthClientResource extends XotBaseResource
     // ✅ SOLO getFormSchema() necessario
     // ❌ NON implementare table(), getPages() (gestiti da XotBaseResource)
 
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
     {
         return [
             'oauth_client' => Section::make('OAuth Client Information')
@@ -401,11 +345,7 @@ class OauthClient extends PassportClient
 // ❌ NON table(), getPages()
 final class OauthClientResource extends XotBaseResource
 {
-<<<<<<< HEAD
     public static function getFormSchema(): array { /* ... */ }
-=======
-    public function getFormSchema(): array { /* ... */ }
->>>>>>> 2024e2e7 (.)
 }
 ```
 
@@ -579,26 +519,9 @@ $ ./vendor/bin/phpstan analyse Modules --memory-limit=-1
 ## 📚 Collegamenti
 
 ### Documentazione Correlata
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [FILOSOFIA_MODULO_USER.md](./filosofia-modulo-user.md) - Filosofia generale
 - [README.md](./readme.md) - Overview modulo
 - [business-logic-deep-dive-4.md](./business-logic-deep-dive.md) - Business logic completa
-=======
-- [FILOSOFIA_MODULO_USER.md](./filosofia_modulo_user.md) - Filosofia generale
-- [README.md](./readme.md) - Overview modulo
-- [BUSINESS_LOGIC_DEEP_DIVE.md](./business_logic_deep_dive.md) - Business logic completa
->>>>>>> 60a2c9a9 (.)
-=======
-- [FILOSOFIA_MODULO_USER.md](./filosofia_modulo_user.md) - Filosofia generale
-- [README.md](./readme.md) - Overview modulo
-- [BUSINESS_LOGIC_DEEP_DIVE.md](./business_logic_deep_dive.md) - Business logic completa
-=======
-- [FILOSOFIA_MODULO_USER.md](./filosofia-modulo-user.md) - Filosofia generale
-- [README.md](./readme.md) - Overview modulo
-- [business-logic-deep-dive-4.md](./business-logic-deep-dive.md) - Business logic completa
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
 ### Documentazione Esterna
 - [Laravel Passport Official](https://laravel.com/docs/passport)

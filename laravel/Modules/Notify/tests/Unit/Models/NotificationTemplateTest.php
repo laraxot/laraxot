@@ -6,21 +6,8 @@ namespace Modules\Notify\Tests\Unit\Models;
 
 use Modules\Notify\Enums\NotificationTypeEnum;
 use Modules\Notify\Models\NotificationTemplate;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
 
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class)->group('no-notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use PHPUnit\Framework\Assert;
-
->>>>>>> a988596b (first)
 /**
  * Unit tests must not bootstrap the application container.
  */
@@ -50,16 +37,7 @@ it('has correct fillable fields', function (): void {
         'version',
         'tenant_id',
         'grapesjs_data',
-<<<<<<< HEAD
-<<<<<<< HEAD
         'type'];
-=======
-        'type',
-    ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'type'];
->>>>>>> a988596b (first)
 
     Assert::assertSame($expectedFillable, $fillable);
 });
@@ -83,16 +61,7 @@ it('has correct casts', function (): void {
         'conditions' => 'array',
         'metadata' => 'array',
         'is_active' => 'boolean',
-<<<<<<< HEAD
-<<<<<<< HEAD
         'grapesjs_data' => 'array'];
-=======
-        'grapesjs_data' => 'array',
-    ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'grapesjs_data' => 'array'];
->>>>>>> a988596b (first)
 
     Assert::assertSame($expectedCasts, $casts);
 });
@@ -109,16 +78,7 @@ it('has translatable fields', function (): void {
     $expectedTranslatable = [
         'subject',
         'body_text',
-<<<<<<< HEAD
-<<<<<<< HEAD
         'body_html'];
-=======
-        'body_html',
-    ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'body_html'];
->>>>>>> a988596b (first)
 
     Assert::assertSame($expectedTranslatable, $translatable);
 });

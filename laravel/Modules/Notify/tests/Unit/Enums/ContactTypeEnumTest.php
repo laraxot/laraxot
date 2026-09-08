@@ -9,21 +9,8 @@ use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
 use Modules\Notify\Enums\ContactTypeEnum;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
 
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class)->group('no-notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use PHPUnit\Framework\Assert;
-
->>>>>>> a988596b (first)
 it('has correct cases', function (): void {
     Assert::assertCount(6, ContactTypeEnum::cases());
     Assert::assertSame('phone', ContactTypeEnum::PHONE->value);

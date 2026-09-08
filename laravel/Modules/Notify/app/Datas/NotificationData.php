@@ -55,15 +55,6 @@ class NotificationData extends Data
         return SmsData::from([
             'from' => $this->from,
             'recipient' => $this->recipient,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'body' => $this->body]);
-=======
-            'body' => $this->body,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'body' => $this->body]);
->>>>>>> a988596b (first)
     }
 }

@@ -46,7 +46,11 @@ DatePicker::make('date_field'),                      // Date
 protected $fillable = ['id', 'categoria', 'lista_propro', 'lista_propro_sup', 'posti', 'anno'];
 
 // RISORSA SBAGLIATA (PRIMA):
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         TextInput::make('id')->disabled(),
@@ -61,7 +65,11 @@ public function getFormSchema(): array
 ### ✅ CORREZIONE: Campi Allineati al Modello
 ```php
 // RISORSA CORRETTA (DOPO):
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         TextInput::make('id')->disabled(),

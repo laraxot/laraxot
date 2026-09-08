@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Colli di Bottiglia - Modulo User"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./03-later.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Colli di Bottiglia - Modulo User
 
 ## 1. Autenticazione 2FA [70%]

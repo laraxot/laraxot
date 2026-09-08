@@ -1,34 +1,23 @@
 # Migration archiviate (Notify)
 
-[![Module](https://img.shields.io/badge/Module-Migration archiviate (Notify)-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+Queste migration **non devono essere eseguite** su installazione pulita (`migrate` / fresh install). Laravel carica solo i file in `database/migrations/` (non le sottocartelle); restano qui per storico e confronto.
 
-> **Core module for the FixCity Platform.**
+## Tabella `mail_templates`
 
-## Perché esiste
+| Stato | File |
+|-------|------|
+| **Canonica** | `../2018_10_10_000007_create_mail_templates_table.php` |
+| Archiviate | `2018_10_10_000000` … `000006` (CREATE ridondanti della stessa tabella) |
 
-Core module for the FixCity Platform.
+La canonica unisce CREATE + UPDATE (params, sms_template, counter, html_layout_path, soft delete).
 
-## Superpoteri
+## Tabella `mail_template_versions`
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+| Stato | File |
+|-------|------|
+| **Canonica** | `../2025_04_20_000001_create_mail_template_versions_table.php` |
+| Archiviata | `2024_04_20_000001_create_mail_template_versions_table.php` (duplicato) |
 
-## Documentazione
+## Regola
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
-
----
-
-**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+Una tabella = una migration attiva in `database/migrations/`. Evoluzioni schema solo nella migration canonica (pattern `XotBaseMigration`).

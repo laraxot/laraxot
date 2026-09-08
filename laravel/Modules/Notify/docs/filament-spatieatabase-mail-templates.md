@@ -131,7 +131,7 @@ class NotifyPlugin implements Plugin
 **Implementazione Ipotetica**:
 ```php
 // MailTemplateResource.php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         'mailable' => TextInput::make('mailable')
@@ -214,7 +214,7 @@ class MailTemplateEditor extends Component
 **Implementazione Ipotetica**:
 ```php
 // MailTemplateResource.php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         // ... altri campi ...

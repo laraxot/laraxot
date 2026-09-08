@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Filament 5.x Nested Resources - Opportunità di Applicazione"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Filament 5.x Nested Resources - Opportunità di Applicazione
 
 **Data Analisi**: [DATE]  
@@ -87,11 +76,7 @@ class TeamInvitationResource extends XotBaseResource
 {
     protected static ?string $parentResource = TeamResource::class;
     
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
     {
         return [
             'email' => TextInput::make('email')
@@ -197,11 +182,7 @@ class TeamInvitationResource extends XotBaseResource
 {
     protected static ?string $parentResource = TeamResource::class;
     
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
     {
         return [
             'email' => TextInput::make('email')

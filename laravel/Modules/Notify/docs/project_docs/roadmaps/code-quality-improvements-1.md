@@ -22,14 +22,7 @@ related:
 
 ## Executive Summary
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 This report documents code quality improvements made across the FixCity platform following the roadmap analysis and PHPStan validation workflow.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-This report documents code quality improvements made across the FixCity platform following the roadmap analysis and PHPStan validation workflow.
->>>>>>> a988596b (first)
 This report documents code quality improvements made across the Notify platform following the roadmap analysis and PHPStan validation workflow.
 
 ## Objectives
@@ -42,28 +35,14 @@ This report documents code quality improvements made across the Notify platform 
 
 ## Modules Analyzed
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### ✅ Fixcity Module (CRITICAL)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-### ✅ Fixcity Module (CRITICAL)
->>>>>>> a988596b (first)
 ### ✅ App Module (CRITICAL)
 **Status**: 80% Complete → Code Quality Verified
 **PHPStan**: Level 9 - **0 Errors** ✅
 
 #### Issues Found and Fixed
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. **Ticket Model** (`Modules/Fixcity/app/Models/Ticket.php`)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. **Ticket Model** (`Modules/Fixcity/app/Models/Ticket.php`)
->>>>>>> a988596b (first)
 1. **Ticket Model** (`Modules/App/app/Models/Ticket.php`)
    - **Issue**: Missing return type on `getMediaAttribute()` method (line 557)
    - **Fix**: Added full return type annotation
@@ -73,14 +52,7 @@ This report documents code quality improvements made across the Notify platform 
    - **Validation**: PHPStan Level 9 passes with 0 errors
    - **Impact**: Improved type safety for media collection access
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 2. **Configuration Fix** (`config/it/quaerisofficina/manager2/xra.php`)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-2. **Configuration Fix** (`config/it/quaerisofficina/manager2/xra.php`)
->>>>>>> a988596b (first)
 2. **Configuration Fix** (`config/it/appofficina/manager2/xra.php`)
    - **Issue**: Parse error from placeholder `\Modules\<nome progetto>\Models\Customer::class`
    - **Fix**: Replaced with null and TODO comment
@@ -118,14 +90,7 @@ Added 2 new test cases for media attribute functionality:
 
 | Module | Files Analyzed | Errors Found | Errors Fixed | Status |
 |--------|----------------|--------------|--------------|---------|
-<<<<<<< HEAD
-<<<<<<< HEAD
 | Fixcity | Models, Services | 1 | 1 | ✅ PASS |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| Fixcity | Models, Services | 1 | 1 | ✅ PASS |
->>>>>>> a988596b (first)
 | App | Models, Services | 1 | 1 | ✅ PASS |
 | User | Models | 0 | 0 | ✅ PASS |
 | Blog | All app/ | 0 | 0 | ✅ PASS |
@@ -156,14 +121,7 @@ Added 2 new test cases for media attribute functionality:
 **Note**: Unit tests require database setup. Tests are syntactically correct and ready to run with proper environment configuration.
 
 **Test Files Enhanced**:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `Modules/Fixcity/tests/Unit/Models/TicketBusinessLogicTest.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- `Modules/Fixcity/tests/Unit/Models/TicketBusinessLogicTest.php`
->>>>>>> a988596b (first)
 - `Modules/App/tests/Unit/Models/TicketBusinessLogicTest.php`
 
 **New Test Coverage**:
@@ -227,14 +185,7 @@ Added 2 new test cases for media attribute functionality:
 ### Medium-Term Actions (Next 30 Days)
 
 1. **Test Coverage**
-<<<<<<< HEAD
-<<<<<<< HEAD
    - Achieve >80% coverage target for Fixcity module
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-   - Achieve >80% coverage target for Fixcity module
->>>>>>> a988596b (first)
    - Achieve >80% coverage target for App module
    - Create tests for remaining models and services
    - Add integration tests for API endpoints
@@ -258,14 +209,7 @@ Added 2 new test cases for media attribute functionality:
 
 This code quality improvement pass has successfully:
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - ✅ Identified and fixed PHPStan errors in the Fixcity module
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- ✅ Identified and fixed PHPStan errors in the Fixcity module
->>>>>>> a988596b (first)
 - ✅ Identified and fixed PHPStan errors in the App module
 - ✅ Enhanced test coverage for the Ticket model
 - ✅ Fixed blocking parse errors in configuration files
@@ -283,12 +227,5 @@ The codebase maintains **PHPStan Level 9 with 0 errors**, demonstrating excellen
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 *This report is part of the ongoing code quality and documentation improvement initiative for the FixCity platform.*
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-*This report is part of the ongoing code quality and documentation improvement initiative for the FixCity platform.*
->>>>>>> a988596b (first)
 *This report is part of the ongoing code quality and documentation improvement initiative for the Notify platform.*

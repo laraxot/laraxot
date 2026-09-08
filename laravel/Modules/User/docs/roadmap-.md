@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "User Module - Complete Roadmap 2026"
 type: concept
@@ -10,12 +5,6 @@ tags: [roadmap]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "roadmap- user module - complete roadmap 2026"
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-
-=======
->>>>>>> 87273113 (.)
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -29,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # User Module - Complete Roadmap 2026
 
 **Generated**: 2026-01-02
@@ -315,18 +298,7 @@ public function redirectToProvider(string $provider)
 *"BaseUser is the bedrock upon which all security stands"*
 - UUID-based identity across all systems
 - Immutable core properties (id, email)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - <nome progetto>able behavior in all contexts
-=======
-- Predictable behavior in all contexts
->>>>>>> 60a2c9a9 (.)
-=======
-- Predictable behavior in all contexts
-=======
-- <nome progetto>able behavior in all contexts
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
 #### **2. Water (Adaptability)**
 *"Authentication flows like water, taking the shape of any system"*
@@ -537,18 +509,7 @@ User Module Dependencies:
 **Modulo**: User (Authentication & Authorization)
 **Status**: 90% COMPLETATO
 **Priority**: HIGH
-<<<<<<< HEAD
-<<<<<<< HEAD
 **PHPStan**: ✅ Level 10 (0 errori)
-=======
-**PHPStan**: ✅ Level 9 (0 errori)
->>>>>>> 60a2c9a9 (.)
-=======
-**PHPStan**: ✅ Level 9 (0 errori)
-=======
-**PHPStan**: ✅ Level 10 (0 errori)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 **Filament**: ✅ 4.x Compatibile
 
 ---
@@ -627,18 +588,7 @@ User Module
 - [x] **Notification System**: User notifications
 
 ### 🔧 Technical Excellence
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [x] **PHPStan Level 10**: 0 errori
-=======
-- [x] **PHPStan Level 9**: 0 errori
->>>>>>> 60a2c9a9 (.)
-=======
-- [x] **PHPStan Level 9**: 0 errori
-=======
-- [x] **PHPStan Level 10**: 0 errori
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [x] **Filament 4.x**: Compatibilità completa
 - [x] **Type Safety**: Type hints completi
 - [x] **Error Handling**: Gestione errori robusta
@@ -805,18 +755,7 @@ User Module
 **Status**: 95% COMPLETATO
 
 #### ✅ Completed
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [x] PHPStan Level 10 compliance
-=======
-- [x] PHPStan Level 9 compliance
->>>>>>> 60a2c9a9 (.)
-=======
-- [x] PHPStan Level 9 compliance
-=======
-- [x] PHPStan Level 10 compliance
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [x] Type safety implementation
 - [x] Error handling improvement
 - [x] Code documentation
@@ -875,18 +814,7 @@ User Module
 ## 🎯 SUCCESS METRICS
 
 ### 📊 Technical Metrics
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [x] **PHPStan Level 10**: 0 errori ✅
-=======
-- [x] **PHPStan Level 9**: 0 errori ✅
->>>>>>> 60a2c9a9 (.)
-=======
-- [x] **PHPStan Level 9**: 0 errori ✅
-=======
-- [x] **PHPStan Level 10**: 0 errori ✅
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [x] **Filament 4.x**: Compatibile ✅
 - [ ] **Test Coverage**: 80% (target)
 - [ ] **Response Time**: < 200ms
@@ -1024,11 +952,6 @@ User Module
 
 ## 🔗 INTEGRATION POINTS
 
-<<<<<<< HEAD
-### 🎫 <nome progetto> Module
-
-=======
->>>>>>> 60a2c9a9 (.)
 ### 🎫 Fixcity Module
 - [ ] User-ticket relationships
 - [ ] Profile-ticket associations
@@ -1055,18 +978,6 @@ User Module
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-**Last Updated**: 2025-10-01
-**Next Review**: 2025-11-01
->>>>>>> 60a2c9a9 (.)
-=======
-**Last Updated**: 2025-10-01
-**Next Review**: 2025-11-01
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 **Status**: 🚧 ACTIVE DEVELOPMENT
 **Confidence Level**: 98%
 

@@ -6,21 +6,9 @@ created: 2026-06-05
 updated: 2026-06-13
 qmd: "Notify testing Pest notificationManager test doubles PHPStan"
 issues:
-<<<<<<< HEAD
-<<<<<<< HEAD
   - "https://github.com/laraxot/module_fixcity_fila5/issues/52"
 discussions:
   - "https://github.com/laraxot/module_fixcity_fila5/discussions/53"
-=======
-  - "https://github.com/laraxot/module_app_fila5/issues/52"
-discussions:
-  - "https://github.com/laraxot/module_app_fila5/discussions/53"
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-  - "https://github.com/laraxot/module_fixcity_fila5/issues/52"
-discussions:
-  - "https://github.com/laraxot/module_fixcity_fila5/discussions/53"
->>>>>>> a988596b (first)
 related:
   - ./phpstan-pest-test-doubles.md
   - ../../phpstan-compliance-status.md

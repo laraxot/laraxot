@@ -55,16 +55,7 @@ class SendNetfunSmsPage extends XotBasePage
     protected function getForms(): array
     {
         return [
-<<<<<<< HEAD
-<<<<<<< HEAD
             'smsForm'];
-=======
-            'smsForm',
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'smsForm'];
->>>>>>> a988596b (first)
     }
 
     protected function fillForms(): void
@@ -108,25 +99,10 @@ class SendNetfunSmsPage extends XotBasePage
                     'twilio' => 'Twilio',
                     'nexmo' => 'Nexmo',
                     'plivo' => 'Plivo',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
                     'gammu' => 'Gammu'])
                 ->default('netfun')
                 ->selectablePlaceholder(false)
                 ->required()];
-<<<<<<< HEAD
-=======
-                    'gammu' => 'Gammu',
-                ])
-                ->default('netfun')
-                ->selectablePlaceholder(false)
-                ->required(),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
     }
 
     public function sendSms(): void
@@ -136,16 +112,7 @@ class SendNetfunSmsPage extends XotBasePage
         $smsData = SmsData::from([
             'recipient' => is_scalar($data['recipient'] ?? null) ? (string) $data['recipient'] : '',
             'body' => is_scalar($data['body'] ?? null) ? (string) $data['body'] : '',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'from' => is_scalar($data['from'] ?? null) ? (string) $data['from'] : '']);
-=======
-            'from' => is_scalar($data['from'] ?? null) ? (string) $data['from'] : '',
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'from' => is_scalar($data['from'] ?? null) ? (string) $data['from'] : '']);
->>>>>>> a988596b (first)
         $provider = $data['provider'] ?? 'netfun';
 
         try {
@@ -160,31 +127,13 @@ class SendNetfunSmsPage extends XotBasePage
             Log::debug('SMS inviato con successo', [
                 'recipient' => $data['recipient'],
                 'from' => $data['from'],
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'provider' => $provider]);
-=======
-                'provider' => $provider,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'provider' => $provider]);
->>>>>>> a988596b (first)
         } catch (Exception $e) {
             Log::error('Errore durante l\'invio dell\'SMS', [
                 'error' => $e->getMessage(),
                 'recipient' => $data['recipient'],
                 'from' => $data['from'],
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'provider' => $provider]);
-=======
-                'provider' => $provider,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'provider' => $provider]);
->>>>>>> a988596b (first)
 
             FilamentNotification::make()
                 ->danger()
@@ -200,16 +149,7 @@ class SendNetfunSmsPage extends XotBasePage
     protected function getSmsFormActions(): array
     {
         return [
-<<<<<<< HEAD
-<<<<<<< HEAD
             Action::make('sendSms')->label(__('notify::sms.actions.send'))->submit('sendSms')];
-=======
-            Action::make('sendSms')->label(__('notify::sms.actions.send'))->submit('sendSms'),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            Action::make('sendSms')->label(__('notify::sms.actions.send'))->submit('sendSms')];
->>>>>>> a988596b (first)
     }
 
     #[Override]

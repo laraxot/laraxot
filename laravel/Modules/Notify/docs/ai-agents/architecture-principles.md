@@ -1,23 +1,11 @@
 # Architecture Principles
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 Key architectural rules for Quaeris Fila5 Mono (Laraxot / Laravel 12 / Filament 5).
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Key architectural rules for Quaeris Fila5 Mono (Laraxot / Laravel 12 / Filament 5).
->>>>>>> a988596b (first)
 Key architectural rules for App Fila5 Mono (Laraxot / Laravel 12 / Filament 5).
-=======
-Key architectural rules for Quaeris Fila5 Mono (Laraxot / Laravel 13 / Filament 5).
-Key architectural rules for App Fila5 Mono (Laraxot / Laravel 13 / Filament 5).
->>>>>>> 04cb1070 (fix: PHPStan Notify sync, bmad story, docs/stories, second brain)
 
 ## 0. Database Configuration (CRITICAL)
 
-**REGOLA ASSOLUTA**: `laravel/config/database.php` deve essere identico alla versione ufficiale Laravel 13.x.
+**REGOLA ASSOLUTA**: `laravel/config/database.php` deve essere identico alla versione ufficiale Laravel 12.x.
 
 **Perche**:
 - Compatibilita con aggiornamenti Laravel
@@ -143,14 +131,7 @@ Ref: `.claude/docs/spatie-queueable-action.md`
 
 ```php
 // WRONG - Service class FORBIDDEN
-<<<<<<< HEAD
-<<<<<<< HEAD
 namespace Modules\Quaeris\Services;
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-namespace Modules\Quaeris\Services;
->>>>>>> a988596b (first)
 namespace Modules\App\Services;
 class ReportService
 {
@@ -158,14 +139,7 @@ class ReportService
 }
 
 // CORRECT - QueueableAction obbligatorio
-<<<<<<< HEAD
-<<<<<<< HEAD
 namespace Modules\Quaeris\Actions;
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-namespace Modules\Quaeris\Actions;
->>>>>>> a988596b (first)
 namespace Modules\App\Actions;
 use Spatie\QueueableAction\QueueableAction;
 

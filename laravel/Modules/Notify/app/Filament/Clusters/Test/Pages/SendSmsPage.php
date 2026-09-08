@@ -57,16 +57,7 @@ class SendSmsPage extends XotBasePage
     protected function getForms(): array
     {
         return [
-<<<<<<< HEAD
-<<<<<<< HEAD
             'smsForm'];
-=======
-            'smsForm',
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'smsForm'];
->>>>>>> a988596b (first)
     }
 
     protected function fillForms(): void
@@ -100,16 +91,7 @@ class SendSmsPage extends XotBasePage
                 ->helperText(__('notify::sms.fields.driver.helper_text')),
             'template_slug' => Select::make('template_slug')
                 ->options(MailTemplate::all()->pluck('slug', 'slug'))
-<<<<<<< HEAD
-<<<<<<< HEAD
                 ->required()];
-=======
-                ->required(),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                ->required()];
->>>>>>> a988596b (first)
     }
 
     public function sendSMS(): void
@@ -161,16 +143,7 @@ class SendSmsPage extends XotBasePage
                 ->label(__('notify::sms.actions.send'))
                 ->icon('heroicon-o-paper-airplane')
                 ->color('primary')
-<<<<<<< HEAD
-<<<<<<< HEAD
                 ->action('sendSMS')];
-=======
-                ->action('sendSMS'),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                ->action('sendSMS')];
->>>>>>> a988596b (first)
     }
 
     #[Override]

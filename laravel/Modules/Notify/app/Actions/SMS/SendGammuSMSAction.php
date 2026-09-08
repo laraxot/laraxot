@@ -87,16 +87,7 @@ final class SendGammuSMSAction implements SmsActionContract
             'TEXT',
             $to,
             '-text',
-<<<<<<< HEAD
-<<<<<<< HEAD
             $tempFile]);
-=======
-            $tempFile,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            $tempFile]);
->>>>>>> a988596b (first)
 
         $process->setTimeout($this->gammuData->getTimeout());
 

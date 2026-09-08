@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "user module code and documentation optimization analysis"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # user module code and documentation optimization analysis
 
 ## comprehensive analysis
@@ -59,18 +48,7 @@ docs/
 │   └── troubleshooting.md
 ├── user_management/
 │   ├── crud_operations.md
-<<<<<<< HEAD
-<<<<<<< HEAD
 │   ├── profile-management-2.md
-=======
-│   ├── profile_management.md
->>>>>>> 60a2c9a9 (.)
-=======
-│   ├── profile_management.md
-=======
-│   ├── profile-management-2.md
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 │   ├── role_permissions.md
 │   └── team_management.md
 ├── filament_integration/
@@ -81,22 +59,8 @@ docs/
 ├── integrations/
 │   ├── socialite.md
 │   ├── passport.md
-<<<<<<< HEAD
-<<<<<<< HEAD
 │   ├── spatie-permissions-2.md
 │   └── two-factor-2.md
-=======
-│   ├── spatie_permissions.md
-│   └── two_factor.md
->>>>>>> 60a2c9a9 (.)
-=======
-│   ├── spatie_permissions.md
-│   └── two_factor.md
-=======
-│   ├── spatie-permissions-2.md
-│   └── two-factor-2.md
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 ├── api/
 │   ├── rest_api.md
 │   ├── graphql_api.md

@@ -1,25 +1,11 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
 title: "📊 Quality Dashboard - FixCity Project"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-title: "📊 Quality Dashboard - FixCity Project"
->>>>>>> a988596b (first)
 title: "📊 Quality Dashboard - Notify Project"
 type: concept
 tags: [quality, dashboard]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "quality-dashboard 📊 quality dashboard - fixcity project"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "quality-dashboard 📊 quality dashboard - fixcity project"
->>>>>>> a988596b (first)
 qmd: "quality-dashboard 📊 quality dashboard - laraxot project"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -34,14 +20,7 @@ related:
   - "./final-implementation-report.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 # 📊 Quality Dashboard - FixCity Project
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# 📊 Quality Dashboard - FixCity Project
->>>>>>> a988596b (first)
 # 📊 Quality Dashboard - Notify Project
 
 **Last Updated:** 2025-10-01 21:35  
@@ -90,14 +69,7 @@ Coverage by Module:
 Xot      ████████████████████████████████████████ 90%
 Tenant   ████████████████████████████████████████ 88%
 User     ████████████████████████████████████████ 85%
-<<<<<<< HEAD
-<<<<<<< HEAD
 Fixcity  ████████████████████████████████████████ 82%
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Fixcity  ████████████████████████████████████████ 82%
->>>>>>> a988596b (first)
 App  ████████████████████████████████████████ 82%
 Blog     ████████████████████████████████████████ 80%
 Others   ████████████████████████████████████████ 85%
@@ -139,14 +111,7 @@ Others   ███████████████████████�
 | Module | Score | Complexity | Tests | PHPStan |
 |--------|-------|------------|-------|---------|
 | Tenant | 94% | 🟢 0 | 🟢 88% | 🟢 Pass |
-<<<<<<< HEAD
-<<<<<<< HEAD
 | Fixcity | 92% | 🟢 0 | 🟢 82% | 🟢 Pass |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| Fixcity | 92% | 🟢 0 | 🟢 82% | 🟢 Pass |
->>>>>>> a988596b (first)
 | App | 92% | 🟢 0 | 🟢 82% | 🟢 Pass |
 | UI | 91% | 🟢 0 | 🟢 85% | 🟢 Pass |
 | Cms | 90% | 🟢 0 | 🟢 80% | 🟢 Pass |
@@ -324,18 +289,9 @@ Overall Progress: ████████████████████�
 
 ## 📞 Quality Team Contacts
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Quality Lead**: quality@fixcity.com
 - **Architecture**: architecture@fixcity.com
 - **Testing**: testing@fixcity.com
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Quality Lead**: quality@fixcity.com
-- **Architecture**: architecture@fixcity.com
-- **Testing**: testing@fixcity.com
->>>>>>> a988596b (first)
 - **Quality Lead**: quality@laraxot.com
 - **Architecture**: architecture@laraxot.com
 - **Testing**: testing@laraxot.com
@@ -345,15 +301,7 @@ Overall Progress: ████████████████████�
 ## 🔗 Related Resources
 
 - [Architecture Documentation](./architecture.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Contributing Guidelines](../contributing.md)
-=======
-- [Contributing Guidelines](../CONTRIBUTING.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Contributing Guidelines](../contributing.md)
->>>>>>> a988596b (first)
 - [Testing Strategy](../Modules/Xot/docs/testing/testing-strategy.md)
 - [Refactoring Reports](./final-refactoring-report.md)
 

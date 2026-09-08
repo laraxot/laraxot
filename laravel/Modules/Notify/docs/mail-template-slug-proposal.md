@@ -2,18 +2,8 @@
 
 ## Collegamenti correlati
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [README del modulo Notify](./readme.md)
 - [Guida all'utilizzo di SpatieEmail](./spatie_email_usage_guide.md)
-=======
-- [README del modulo Notify](./README.md)
-- [Guida all'utilizzo di SpatieEmail](./spatie-email-usage-guide.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [README del modulo Notify](./readme.md)
-- [Guida all'utilizzo di SpatieEmail](./spatie_email_usage_guide.md)
->>>>>>> a988596b (first)
 - [Documentazione Template Email](./email_templates.md)
 - [Documentazione Root](../../../../../docs/collegamenti-documentazione.md)
 

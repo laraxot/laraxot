@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "PHPStan Compliance - User Module"
 type: concept
@@ -23,26 +18,10 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # PHPStan Compliance - User Module
 
 ## Status: ✅ FULLY COMPLIANT
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-**Analysis Date:** September 22, 2025
->>>>>>> f548be94 (.)
-=======
-**Analysis Date:** September 22, 2025
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 **PHPStan Level:** 9 (Maximum)
 **Files Analyzed:** 772
 **Errors Found:** 0

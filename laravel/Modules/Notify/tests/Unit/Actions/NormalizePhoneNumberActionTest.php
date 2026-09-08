@@ -6,29 +6,12 @@ namespace Modules\Notify\Tests\Unit\Actions;
 
 use Modules\Notify\Actions\NormalizePhoneNumberAction;
 use Modules\Notify\Tests\TestCase;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
-<<<<<<< HEAD
-=======
-use PHPUnit\Framework\Assert;
-use Spatie\QueueableAction\QueueableAction;
-use Modules\Xot\Tests\XotBasePest;
-
-use function Safe\class_uses;
-
-uses(TestCase::class)->group('no-notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 describe('NormalizePhoneNumberAction', function () {
     it('can be instantiated', function () {
         Assert::assertTrue(class_exists(NormalizePhoneNumberAction::class));

@@ -242,16 +242,42 @@ abstract class XotBaseTestCase extends BaseTestCase
     /**
      * Path of the shared SQLite database used by module tests.
      *
-     * Single source of truth for `prepareSharedFixcitySqliteForTesting()` and for
-     * `xot:build-test-sqlite`, which needs the same path to build the file offline.
+     * I moduli sono condivisi fra piu' progetti: il nome del file non puo' essere
+     * cablato qui, altrimenti il framework porta con se' il nome del progetto in cui e'
+     * nato. Si risolve in tre passi, dal piu' esplicito al piu' neutro:
+     *
+     * 1. `config('xot.testing.sqlite_file')` — il progetto dichiara il proprio file;
+     * 2. l'unico `*.sqlite` presente in `database/` — il caso normale, funziona senza
+     *    configurare niente e qualunque sia il nome scelto dal progetto;
+     * 3. `test_data.sqlite` — default neutro quando la cartella e' vuota o ambigua.
+     *
+     * Single source of truth per `prepareSharedSqliteForTesting()` e per
+     * `xot:build-test-sqlite`, che ha bisogno dello stesso path per costruire il file.
      */
     public static function sharedSqlitePath(): string
     {
-        return database_path('fixcity_data.sqlite');
+        $configured = config('xot.testing.sqlite_file');
+
+        if (is_string($configured) && $configured !== '') {
+            return database_path($configured);
+        }
+
+        try {
+            /** @var list<string> $found */
+            $found = \Safe\glob(database_path('*.sqlite'));
+        } catch (\Safe\Exceptions\FilesystemException) {
+            $found = [];
+        }
+
+        if (count($found) === 1) {
+            return $found[0];
+        }
+
+        return database_path('test_data.sqlite');
     }
 
     /**
-     * Point every sqlite connection at fixcity_data.sqlite and share one PDO.
+     * Punta ogni connessione sqlite al file condiviso e condivide un solo PDO.
      *
      * Multiple named connections (activity, user, gdpr, …) on the same SQLite file
      * each opening their own transaction causes "database is locked". Sharing the
@@ -259,7 +285,7 @@ abstract class XotBaseTestCase extends BaseTestCase
      *
      * Call before parent::setUp() when the test case uses DatabaseTransactions.
      */
-    protected function prepareSharedFixcitySqliteForTesting(): void
+    protected function prepareSharedSqliteForTesting(): void
     {
         if ($this->app === null) {
             $this->refreshApplication();

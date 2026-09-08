@@ -1,4 +1,18 @@
 ---
+<<<<<<< HEAD
+title: 'Inodes'
+module: Xot
+type: reference
+slug: inodes
+description: "-- current directory total inodes $find . -xdev -printf '%h\\n' | sort | uniq -c | awk '{total = total + $1}END{print total}'"
+tags: [migrato-da-txt, xot]
+converted_from: inodes.txt
+created: 2026-08-24
+updated: 2026-08-24
+---
+
+-----------------------------------------------------------
+=======
 title: "Inodes"
 type: reference
 status: active
@@ -15,6 +29,7 @@ Filesystem      Inodes  IUsed   IFree    IUse% Mounted on
 /dev/xvda1      7692288 652294 7039994    9%      /
 
 --------------------------------------------------------------
+>>>>>>> laraxot/dev
 $ sudo find / -xdev -printf '%h\0' | sort -z | uniq -cz | sort -nrzk 1 | tr '\0' '\n' | head -n 50
 
 -------------------------------------------------------------------

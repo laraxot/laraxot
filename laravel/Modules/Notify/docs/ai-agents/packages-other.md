@@ -20,14 +20,7 @@ Modules/
   Limesurvey/ — integrazione LimeSurvey
   Media/      — file e media
   Notify/     — notifiche (email, SMS, Telegram, WhatsApp)
-<<<<<<< HEAD
-<<<<<<< HEAD
   Quaeris/    — survey management
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-  Quaeris/    — survey management
->>>>>>> a988596b (first)
   App/    — survey management
   Tenant/     — multi-tenancy
   UI/         — componenti UI

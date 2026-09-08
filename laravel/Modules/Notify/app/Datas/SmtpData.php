@@ -61,16 +61,7 @@ class SmtpData extends Data
             'username' => $this->username,
             'password' => $this->password,
             'timeout' => $this->timeout,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'local_domain' => $this->local_domain];
-=======
-            'local_domain' => $this->local_domain,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'local_domain' => $this->local_domain];
->>>>>>> a988596b (first)
     }
 
     public function getTransport(): EsmtpTransport

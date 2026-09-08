@@ -108,7 +108,7 @@ public function isPublished(): bool
 ### Implementazione Conforme in getFormSchema()
 
 ```php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         'name' => TextInput::make('name')

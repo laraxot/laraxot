@@ -76,25 +76,11 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
             'timeout' => $this->timeout,
             'headers' => [
                 'Content-Type' => 'application/json',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'Accept' => 'application/json']]);
-=======
-                'Accept' => 'application/json',
-            ],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'Accept' => 'application/json']]);
->>>>>>> a988596b (first)
 
         $payload = [
             'from' => [
                 'type' => 'whatsapp',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
                 'number' => $from],
             'to' => [
                 'type' => 'whatsapp',
@@ -103,24 +89,6 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
                 'content' => [
                     'type' => 'text',
                     'text' => $whatsAppData->body]]];
-<<<<<<< HEAD
-=======
-                'number' => $from,
-            ],
-            'to' => [
-                'type' => 'whatsapp',
-                'number' => $whatsAppData->recipient,
-            ],
-            'message' => [
-                'content' => [
-                    'type' => 'text',
-                    'text' => $whatsAppData->body,
-                ],
-            ],
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
         // Gestione diversi tipi di messaggi
         if ($whatsAppData->type === 'media' && ! empty($whatsAppData->media)) {
@@ -132,43 +100,17 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
                 'type' => $mediaType,
                 $mediaType => [
                     'url' => $mediaUrl,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
                     'caption' => $whatsAppData->body]];
         } elseif ($whatsAppData->type === 'template' && ! empty($whatsAppData->template)) {
             $payload['message']['content'] = [
                 'type' => 'template',
                 'template' => $whatsAppData->template];
-<<<<<<< HEAD
-=======
-                    'caption' => $whatsAppData->body,
-                ],
-            ];
-        } elseif ($whatsAppData->type === 'template' && ! empty($whatsAppData->template)) {
-            $payload['message']['content'] = [
-                'type' => 'template',
-                'template' => $whatsAppData->template,
-            ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         }
 
         try {
             $response = $client->post($this->baseUrl, [
                 'json' => $payload,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'auth' => [$this->apiKey, $this->apiSecret]]);
-=======
-                'auth' => [$this->apiKey, $this->apiSecret],
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'auth' => [$this->apiKey, $this->apiSecret]]);
->>>>>>> a988596b (first)
 
             $statusCode = $response->getStatusCode();
             $responseContent = $response->getBody()->getContents();
@@ -183,16 +125,7 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
 
             Log::debug('WhatsApp Vonage inviato con successo', [
                 'to' => $whatsAppData->recipient,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'response_code' => $statusCode]);
-=======
-                'response_code' => $statusCode,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'response_code' => $statusCode]);
->>>>>>> a988596b (first)
 
             return [
                 'success' => $statusCode >= 200 && $statusCode < 300,
@@ -200,16 +133,7 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
                     ? $responseData['message_uuid']
                     : null,
                 'response' => $responseData,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'vars' => $this->vars];
-=======
-                'vars' => $this->vars,
-            ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'vars' => $this->vars];
->>>>>>> a988596b (first)
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $statusCode = $response->getStatusCode();
@@ -225,16 +149,7 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
             Log::warning('Errore invio WhatsApp Vonage', [
                 'to' => $whatsAppData->recipient,
                 'status' => $statusCode,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'response' => $responseBody]);
-=======
-                'response' => $responseBody,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'response' => $responseBody]);
->>>>>>> a988596b (first)
 
             return [
                 'success' => false,
@@ -242,16 +157,7 @@ final class SendVonageWhatsAppAction implements WhatsAppProviderActionInterface
                     ? $responseBody['title']
                     : 'Errore sconosciuto',
                 'status_code' => $statusCode,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'vars' => $this->vars];
-=======
-                'vars' => $this->vars,
-            ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'vars' => $this->vars];
->>>>>>> a988596b (first)
         }
     }
 

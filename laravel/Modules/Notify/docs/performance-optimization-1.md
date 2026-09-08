@@ -25,14 +25,7 @@ related:
 **Dopo**: Carico solo what's needed (~2K startup)
 
 \`\`\`diff
-<<<<<<< HEAD
-<<<<<<< HEAD
 - 150+ rules embeddate in AGENTS.md
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- 150+ rules embeddate in AGENTS.md
->>>>>>> a988596b (first)
 - 150+ rules embeddate in agents.md
 + 0 rules embeddate — tutte on-demand
 \`\`\`
@@ -58,14 +51,7 @@ related:
 
 ### 4. Wiki Indici Locali
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
->>>>>>> a988596b (first)
 Ogni modulo ha i propri `rules/skills/commands/memories/index.md`:
 - Ricerca più rapida (scope limitato)
 - Context rilevante per il modulo

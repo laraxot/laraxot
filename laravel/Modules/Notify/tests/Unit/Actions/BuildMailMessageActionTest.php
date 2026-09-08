@@ -7,29 +7,12 @@ namespace Modules\Notify\Tests\Unit\Actions;
 use Illuminate\Notifications\Messages\MailMessage;
 use Modules\Notify\Actions\BuildMailMessageAction;
 use Modules\Notify\Tests\TestCase;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
-<<<<<<< HEAD
-=======
-use PHPUnit\Framework\Assert;
-use Spatie\QueueableAction\QueueableAction;
-use Modules\Xot\Tests\XotBasePest;
-
-use function Safe\class_uses;
-
-uses(TestCase::class)->group('notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 describe('BuildMailMessageAction', function () {
     // Test strutturali - non richiede container per la classe
     it('has correct class definition', function () {
@@ -84,7 +67,7 @@ describe('BuildMailMessageAction', function () {
 
         Assert::assertStringContainsString('use Modules\Notify\Actions\NotifyTheme\Get;', $content);
         Assert::assertStringContainsString('use Modules\Notify\Datas\AttachmentData;', $content);
-        Assert::assertStringContainsString('use Modules\Notify\Datas\NotifyThemeData;', $content);
+        Assert::assertStringContainsString('use Spatie\LaravelData\DataCollection;', $content);
     });
 
     it('has QueueableAction trait applied correctly', function () {

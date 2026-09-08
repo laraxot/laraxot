@@ -17,7 +17,11 @@ updated: 2026-08-24
 
 ### Form Schema
 ```php
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         // Campi base

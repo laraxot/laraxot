@@ -502,14 +502,7 @@ Code quality analysis: complexity, style, architecture.
 | aws/aws-sdk-php | 3.371.0 | Media | S3, STS, CloudFront |
 | google/cloud-storage | 1.49.2 | (infra) | GCS client |
 | spatie/laravel-google-cloud-storage | 2.3.4 | (infra) | GCS filesystem driver |
-<<<<<<< HEAD
-<<<<<<< HEAD
 | spipu/html2pdf | 5.3.3 | Xot, Quaeris | HTML to PDF |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| spipu/html2pdf | 5.3.3 | Xot, Quaeris | HTML to PDF |
->>>>>>> a988596b (first)
 | spipu/html2pdf | 5.3.3 | Xot, App | HTML to PDF |
 | tecnickcom/tcpdf | 6.10.1 | Chart | PDF engine (used by html2pdf) |
 | statikbe/laravel-cookie-consent | 1.11.4 | Gdpr | Cookie banner |

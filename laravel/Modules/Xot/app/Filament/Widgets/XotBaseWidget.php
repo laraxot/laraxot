@@ -181,7 +181,6 @@ abstract class XotBaseWidget extends FilamentWidget implements HasActions, HasFo
         }
 
         return Action::make('submit')
-            ->label(__('filament-panels::resources/edit-record.form.actions.save.label'))
             ->submit('save')
             ->view((string) $submit_view);
     }
@@ -195,7 +194,6 @@ abstract class XotBaseWidget extends FilamentWidget implements HasActions, HasFo
     {
         return [
             Action::make('save')
-                ->label(__('filament-panels::resources/edit-record.form.actions.save.label'))
                 ->submit('save'),
         ];
     }

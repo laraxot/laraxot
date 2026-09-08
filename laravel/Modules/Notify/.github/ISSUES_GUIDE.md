@@ -285,10 +285,6 @@ Priority: P1
 ## Examples
 
 ### Good Epic Issue
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 https://github.com/laraxot/base_fixcity_fila5/issues/1
 
 ### Good Component Issue
@@ -299,21 +295,6 @@ https://github.com/laraxot/base_fixcity_fila5/issues/9
 
 ### Good ADR
 https://github.com/laraxot/base_fixcity_fila5/discussions/1
-<<<<<<< HEAD
-=======
-https://github.com/laraxot/platform/issues/1
-
-### Good Component Issue
-https://github.com/laraxot/platform/issues/2
-
-### Good Page Issue
-https://github.com/laraxot/platform/issues/9
-
-### Good ADR
-https://github.com/laraxot/platform/discussions/1
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 ---
 

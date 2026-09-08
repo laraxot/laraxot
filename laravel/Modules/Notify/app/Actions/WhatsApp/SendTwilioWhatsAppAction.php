@@ -78,32 +78,14 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 
         $client = new Client([
             'timeout' => $this->timeout,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'auth' => [$this->accountSid, $this->authToken]]);
-=======
-            'auth' => [$this->accountSid, $this->authToken],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'auth' => [$this->accountSid, $this->authToken]]);
->>>>>>> a988596b (first)
 
         $endpoint = $this->baseUrl.'/Accounts/'.$this->accountSid.'/Messages.json';
 
         $payload = [
             'To' => $to,
             'From' => $from,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'Body' => $whatsAppData->body];
-=======
-            'Body' => $whatsAppData->body,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'Body' => $whatsAppData->body];
->>>>>>> a988596b (first)
 
         // Aggiungi media se presente
         if (! empty($whatsAppData->media)) {
@@ -112,16 +94,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 
         try {
             $response = $client->post($endpoint, [
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'form_params' => $payload]);
-=======
-                'form_params' => $payload,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'form_params' => $payload]);
->>>>>>> a988596b (first)
 
             $statusCode = $response->getStatusCode();
             $responseContent = $response->getBody()->getContents();
@@ -136,16 +109,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 
             Log::debug('WhatsApp Twilio inviato con successo', [
                 'to' => $whatsAppData->recipient,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'response_code' => $statusCode]);
-=======
-                'response_code' => $statusCode,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'response_code' => $statusCode]);
->>>>>>> a988596b (first)
 
             return [
                 'success' => $statusCode >= 200 && $statusCode < 300,
@@ -153,16 +117,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
                     ? $responseData['sid']
                     : null,
                 'response' => $responseData,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'vars' => $this->vars];
-=======
-                'vars' => $this->vars,
-            ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'vars' => $this->vars];
->>>>>>> a988596b (first)
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $statusCode = $response->getStatusCode();
@@ -178,16 +133,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
             Log::warning('Errore invio WhatsApp Twilio', [
                 'to' => $whatsAppData->recipient,
                 'status' => $statusCode,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'response' => $responseBody]);
-=======
-                'response' => $responseBody,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'response' => $responseBody]);
->>>>>>> a988596b (first)
 
             return [
                 'success' => false,
@@ -195,16 +141,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
                     ? $responseBody['message']
                     : 'Errore sconosciuto',
                 'status_code' => $statusCode,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'vars' => $this->vars];
-=======
-                'vars' => $this->vars,
-            ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'vars' => $this->vars];
->>>>>>> a988596b (first)
         }
     }
 }

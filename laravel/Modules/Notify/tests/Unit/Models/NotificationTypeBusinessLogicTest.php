@@ -6,21 +6,8 @@ namespace Modules\Notify\Tests\Unit\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Notify\Models\NotificationType;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
 
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class)->group('notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use PHPUnit\Framework\Assert;
-
->>>>>>> a988596b (first)
 describe('NotificationType Business Logic', function () {
     test('notification type extends eloquent model', function () {
         $reflection = new \ReflectionClass(NotificationType::class);
@@ -38,16 +25,7 @@ describe('NotificationType Business Logic', function () {
         $expectedFillable = [
             'name',
             'description',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'template'];
-=======
-            'template',
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'template'];
->>>>>>> a988596b (first)
 
         Assert::assertEquals($expectedFillable, $property->getValue($reflection->newInstanceWithoutConstructor()));
     });

@@ -28,16 +28,7 @@ class SendPushToAllUsersAction
         if ($tokens === []) {
             return [
                 'success' => false,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'message' => 'No active tokens found'];
-=======
-                'message' => 'No active tokens found',
-            ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'message' => 'No active tokens found'];
->>>>>>> a988596b (first)
         }
 
         return app(SendPushToDevicesAction::class)->execute($tokens, $notification, $data);

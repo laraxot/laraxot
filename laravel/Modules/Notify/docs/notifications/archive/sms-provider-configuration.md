@@ -81,13 +81,6 @@ class AppointmentNotification extends Notification
     {
         return ['mail', TwilioChannel::class];
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
     public function toTwilio($notifiable)
     {
         return (new TwilioSmsMessage())
@@ -132,14 +125,7 @@ composer require laravel-notification-channels/vonage
 VONAGE_KEY=abcd1234
 VONAGE_SECRET=xyz789...
 VONAGE_SMS_FROM=<nome progetto>
-<<<<<<< HEAD
-<<<<<<< HEAD
 VONAGE_SMS_FROM=SaluteOra
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-VONAGE_SMS_FROM=SaluteOra
->>>>>>> a988596b (first)
 VONAGE_SMS_FROM=<nome progetto>
 ```
 
@@ -155,13 +141,6 @@ class AppointmentNotification extends Notification
     {
         return ['mail', VonageChannel::class];
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
     public function toVonage($notifiable)
     {
         return (new VonageMessage())
@@ -457,13 +436,6 @@ $this->app->bind(CustomSMSChannel::class, function ($app) {
     if ($app->environment('testing')) {
         return new TestSMSChannel();
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
     return new CustomSMSChannel(
         new HttpClient(),
         config('services.sms.base_url'),

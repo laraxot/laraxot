@@ -29,28 +29,14 @@ related:
 
 ## 📋 Executive Summary
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Comprehensive analysis of AGID (Agenzia per l'Italia Digitale) design system for Italian municipal websites, gap analysis against FixCity project, complete documentation, and implementation of critical missing components.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Comprehensive analysis of AGID (Agenzia per l'Italia Digitale) design system for Italian municipal websites, gap analysis against FixCity project, complete documentation, and implementation of critical missing components.
->>>>>>> a988596b (first)
 Comprehensive analysis of AGID (Agenzia per l'Italia Digitale) design system for Italian municipal websites, gap analysis against Notify project, complete documentation, and implementation of critical missing components.
 
 ### Deliverables
 
 | Deliverable | Status | Location |
 |------------|--------|----------|
-<<<<<<< HEAD
-<<<<<<< HEAD
 | **AGID Gap Analysis** | ✅ Complete | `Modules/Fixcity/docs/agid-gap-analysis.md` |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| **AGID Gap Analysis** | ✅ Complete | `Modules/Fixcity/docs/agid-gap-analysis.md` |
->>>>>>> a988596b (first)
 | **AGID Gap Analysis** | ✅ Complete | `Modules/App/docs/agid-gap-analysis.md` |
 | **Theme Compliance Doc** | ✅ Complete | `Themes/Sixteen/docs/agid-compliance-summary.md` |
 | **CMS Compliance Doc** | ✅ Complete | `Modules/Cms/docs/agid-compliance.md` |
@@ -85,14 +71,7 @@ Comprehensive analysis of AGID (Agenzia per l'Italia Digitale) design system for
 3. **Novità** (2 templates) - News/announcements
 4. **Servizi** (3 templates) - Service catalog
 5. **Vivere il Comune** (2 templates) - Events, living in city
-<<<<<<< HEAD
-<<<<<<< HEAD
 6. **Segnalazione Disservizio** (7 templates) - Service reporting (CRITICAL for FixCity)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-6. **Segnalazione Disservizio** (7 templates) - Service reporting (CRITICAL for FixCity)
->>>>>>> a988596b (first)
 6. **Segnalazione Disservizio** (7 templates) - Service reporting (CRITICAL for Notify)
 7. **Prenotazione Appuntamento** (6 templates) - Appointment booking
 8. **Richiesta Assistenza** (6 templates) - Support requests
@@ -115,14 +94,7 @@ Comprehensive analysis of AGID (Agenzia per l'Italia Digitale) design system for
 
 | Module/Theme | Compliance | Score | Priority |
 |--------------|-----------|-------|----------|
-<<<<<<< HEAD
-<<<<<<< HEAD
 | **Fixcity Module** | 🟡 Partial | 75% | CRITICAL |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| **Fixcity Module** | 🟡 Partial | 75% | CRITICAL |
->>>>>>> a988596b (first)
 | **App Module** | 🟡 Partial | 75% | CRITICAL |
 | **Cms Module** | ✅ Good | 80% | MEDIUM |
 | **Sixteen Theme** | 🟡 Partial | 75% | HIGH |
@@ -138,14 +110,7 @@ Comprehensive analysis of AGID (Agenzia per l'Italia Digitale) design system for
 
 #### 2. Interactive MAP Component ✅ ALREADY FIXED
 **Status**: Implemented on 02/02/2025  
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Location**: `Modules/Fixcity/resources/views/components/interactive-tickets-map.blade.php`  
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Location**: `Modules/Fixcity/resources/views/components/interactive-tickets-map.blade.php`  
->>>>>>> a988596b (first)
 **Location**: `Modules/App/resources/views/components/interactive-tickets-map.blade.php`  
 **Features**: Leaflet.js, clustering, filters, geolocation, WCAG compliant
 
@@ -261,18 +226,9 @@ Comprehensive analysis of AGID (Agenzia per l'Italia Digitale) design system for
 
 ## 📚 Documentation Created
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### 1. AGID Gap Analysis (Fixcity)
 
 **File**: `Modules/Fixcity/docs/agid-gap-analysis.md` (388 lines)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-### 1. AGID Gap Analysis (Fixcity)
-
-**File**: `Modules/Fixcity/docs/agid-gap-analysis.md` (388 lines)
->>>>>>> a988596b (first)
 ### 1. AGID Gap Analysis (App)
 
 **File**: `Modules/App/docs/agid-gap-analysis.md` (388 lines)
@@ -506,14 +462,7 @@ Comprehensive analysis of AGID (Agenzia per l'Italia Digitale) design system for
 - **WCAG 2.1**: https://www.w3.org/WAI/WCAG21/quickref/
 
 ### Project Documentation
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Gap Analysis: `Modules/Fixcity/docs/agid-gap-analysis.md`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Gap Analysis: `Modules/Fixcity/docs/agid-gap-analysis.md`
->>>>>>> a988596b (first)
 - Gap Analysis: `Modules/App/docs/agid-gap-analysis.md`
 - Theme Compliance: `Themes/Sixteen/docs/agid-compliance-summary.md`
 - CMS Compliance: `Modules/Cms/docs/agid-compliance.md`
@@ -565,14 +514,7 @@ Comprehensive analysis of AGID (Agenzia per l'Italia Digitale) design system for
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **🏛️ FixCity is now on the path to full AGID compliance!**  
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**🏛️ FixCity is now on the path to full AGID compliance!**  
->>>>>>> a988596b (first)
 **🏛️ Notify is now on the path to full AGID compliance!**  
 **📚 All documentation in place for successful implementation!**  
 **⚡ Critical components ready for immediate use!**

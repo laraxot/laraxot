@@ -26,16 +26,7 @@ class FirebaseNotificationData extends Data
             'type' => $type,
             'title' => trans($main_module.'::notifications.'.mb_strtoupper($type).'.title'),
             'body' => trans($main_module.'::notifications.'.mb_strtoupper($type).'.body'),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'data' => []];
-=======
-            'data' => [],
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'data' => []];
->>>>>>> a988596b (first)
 
         return self::from($data);
     }

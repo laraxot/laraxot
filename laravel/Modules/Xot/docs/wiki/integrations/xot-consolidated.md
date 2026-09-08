@@ -91,7 +91,11 @@ The Xot base classes provide a centralized way to customize and extend functiona
   class DoctorResource extends XotBaseResource
   {
       // Resource definition
+<<<<<<< HEAD
+      public static function getFormSchema(): array
+=======
       public function getFormSchema(): array
+>>>>>>> laraxot/dev
       {
           return [
               'full_name' => Forms\Components\TextInput::make('full_name'),
@@ -159,7 +163,11 @@ The Xot base classes provide a centralized way to customize and extend functiona
   class DoctorResource extends XotBaseResource
   {
       // Resource definition
+<<<<<<< HEAD
+      public static function getFormSchema(): array
+=======
       public function getFormSchema(): array
+>>>>>>> laraxot/dev
       {
           return [
               'full_name' => Forms\Components\TextInput::make('full_name'),
@@ -821,7 +829,11 @@ abstract class XotBaseResource extends Resource
     /**
      * Get form schema con validation automatica
      */
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             // Schema base automatico
@@ -4214,7 +4226,11 @@ class {ModelName}Resource extends XotBaseResource
     protected static ?string $model = {ModelName}::class;
 
     // UNICO metodo necessario nella Resource principale
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             Section::make()  // NO ->label() - gestito automaticamente
@@ -4428,7 +4444,11 @@ Questo significa che:
 
 ```php
 /** @return array<int|string, \Filament\Schemas\Components\Component> */
+<<<<<<< HEAD
+abstract public static function getFormSchemaOld(): array;
+=======
 abstract public function getFormSchemaOld(): array;
+>>>>>>> laraxot/dev
 ```
 
 Questo metodo DEVE essere implementato nelle classi figlie e deve restituire un array di componenti del form. `getFormSchema()` è ora `final` e ritorna `[]` — vedi [[xotbaseresource-formschema-old-pattern]].
@@ -4462,7 +4482,11 @@ class NotificationResource extends XotBaseResource
 {
     protected static ?string $model = 'Modules\Notify\Models\Notification';
 
+<<<<<<< HEAD
+    public static function getFormSchemaOld(): array
+=======
     public function getFormSchemaOld(): array
+>>>>>>> laraxot/dev
     {
         return [
             Forms\Components\TextInput::make('title')

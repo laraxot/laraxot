@@ -111,12 +111,4 @@ Link: https://filamentphp.com/plugins/visual-builder-email-templates
 - Integrare pipeline CI/CD per lint e test email
 
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-*Documento generato il 2025-05-05T21:41:18+02:00*
-=======
 *Documento generato il [DATE]T21:41:18+02:00*
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-*Documento generato il [DATE]T21:41:18+02:00*
->>>>>>> a988596b (first)

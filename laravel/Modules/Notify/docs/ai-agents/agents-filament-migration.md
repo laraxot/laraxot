@@ -7,7 +7,7 @@ Guida alla migrazione da Filament v3/v4 a v5.
 | Requisito | Stato Attuale | Necessario |
 |-----------|---------------|------------|
 | PHP 8.2+ | ✅ Soddisfatto | ✅ |
-| Laravel 11.28+ | ✅ Soddisfatto (Laravel 13) | ✅ |
+| Laravel 11.28+ | ✅ Soddisfatto (Laravel 12) | ✅ |
 | Livewire v4.0+ | ❌ v3 - DA AGGIORNARE | ✅ |
 | Tailwind CSS v4.0+ | ❌ v3 - DA AGGIORNARE | ✅ |
 
@@ -65,13 +65,6 @@ composer remove filament/upgrade --dev
 
 - [Indice AGENTS](./agents-split-index.md)
 - [filament-patterns.md](./filament-patterns.md) - Pattern Filament
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [AGENTS.md originale](../../AGENTS.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [AGENTS.md originale](../../AGENTS.md)
->>>>>>> a988596b (first)
 - [agents.md originale](../../agents.md)
 - [Index principale](./index.md)

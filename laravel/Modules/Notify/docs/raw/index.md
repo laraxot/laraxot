@@ -46,14 +46,7 @@ Il layer raw per questo modulo/tema è **l'intera cartella `docs/`** (esclusa `d
 
 ## Schema di riferimento
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 → `docs/.schema/WIKI_SCHEMA.md` (root progetto)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-→ `docs/.schema/WIKI_SCHEMA.md` (root progetto)
->>>>>>> a988596b (first)
 → `docs/.schema/wiki-schema.md` (root progetto)
 → `docs/project/llm-wiki-module-adoption.md` (guida per moduli/temi)
 

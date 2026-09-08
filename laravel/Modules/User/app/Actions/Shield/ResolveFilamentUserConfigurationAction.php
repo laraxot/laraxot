@@ -30,12 +30,6 @@ class ResolveFilamentUserConfigurationAction
         $filamentUserConfig = $shieldData->filament_user;
 
         return [
-<<<<<<< HEAD
-            'enabled' => $filamentUserConfig->enabled,
-            'name' => $filamentUserConfig->name,
-        ];
-    }
-=======
             'enabled' => $this->toBoolean($filamentUserConfig->enabled ?? false),
             'name' => $this->toString($filamentUserConfig->name ?? 'Filament User'),
         ];
@@ -50,5 +44,4 @@ class ResolveFilamentUserConfigurationAction
     {
         return is_string($value) ? $value : '';
     }
->>>>>>> 87273113 (.)
 }

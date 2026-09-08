@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 ---
 title: "Laravel mix"
 type: reference
@@ -11,6 +13,7 @@ note: "Convertito da laravel_mix.txt (documento) da convert-docs-txt-to-md.py."
 
 <!-- Contenuto migrato da _docs/laravel_mix.txt -->
 
+>>>>>>> laraxot/dev
 //-------------------------------------------------------------------------------------
 Use Laravel Mix without Laravel (using npm)
 https://dev.to/nickfrosty/use-laravel-mix-without-laravel-using-npm-m09
@@ -66,4 +69,8 @@ https://frostbutter.com/articles/use-laravel-mix-without-laravel-using-npm/
 //-------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------
+<<<<<<< HEAD
 //-------------------------------------------------------------------------------------
+=======
+//-------------------------------------------------------------------------------------
+>>>>>>> laraxot/dev

@@ -114,11 +114,14 @@ MY_DOCUMENT.md              # UPPERCASE
 my_document.md              # underscore
 analysis.md      # date in name (use CHANGELOG.md)
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 analysis-2025-11-04.md      # date in name (use CHANGELOG.md)
 =======
 analysis.md      # date in name (use CHANGELOG.md)
 =======
 >>>>>>> 7f6cf6be (.)
+>>>>>>> laraxot/dev
 ```
 
 ### 8. DRY Principle
@@ -273,7 +276,11 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class MyResource extends XotBaseResource
 {
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             TextInput::make('name'),  // No ->label()!

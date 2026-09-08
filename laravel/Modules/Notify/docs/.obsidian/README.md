@@ -1,51 +1,30 @@
-# Notify
-
-[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
-
-> **Core module for the FixCity Platform.**
-
-## Perché esiste
-
-Core module for the FixCity Platform.
-
-## Superpoteri
-
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
-
-## Documentazione
-
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
-
 ---
+title: "Obsidian Setup Guide"
+type: index
+tags: [notify, docs]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione .obsidian readme obsidian setup guide index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../README.md
+  - ../wiki/index.md
+  - ../notifications/readme.md
+  - ../integrations/readme.md
+  - ../templates/readme.md
+---
+# Obsidian Setup Guide
 
-<<<<<<< HEAD
 ## Quick Start
 
 1. **Open Obsidian**
 2. Click **"Open folder as vault"**
-<<<<<<< HEAD
-<<<<<<< HEAD
 3. Select: `/var/www/_bases/base_fixcity_fila5/docs`
 4. Vault name: `base_fixcity_fila5-docs`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-3. Select: `/var/www/_bases/base_fixcity_fila5/docs`
-4. Vault name: `base_fixcity_fila5-docs`
->>>>>>> a988596b (first)
 3. Select: `/var/www/_bases/base_ptvx_fila5/docs`
 4. Vault name: `base_ptvx_fila5-docs`
 5. Click **"Open"**
@@ -101,14 +80,7 @@ Install browser extension to capture web articles:
 2. **Firefox**: [Obsidian Web Clipper](https://addons.mozilla.org/en-US/firefox/addon/obsidian-web-clipper/)
 
 **Configuration**:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Clip destination: `/var/www/_bases/base_fixcity_fila5/docs/raw/articles/`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Clip destination: `/var/www/_bases/base_fixcity_fila5/docs/raw/articles/`
->>>>>>> a988596b (first)
 - Clip destination: `/var/www/_bases/base_ptvx_fila5/docs/raw/articles/`
 - Format: Markdown with YAML frontmatter
 - Tags: Auto-extract from article metadata
@@ -158,14 +130,7 @@ LLM scans for issues and reports findings.
 ## Graph View Tips
 
 - **Filter by type**: `type:concept` to see only concept pages
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Filter by tags**: `tags:prediction-market` to see related pages
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Filter by tags**: `tags:prediction-market` to see related pages
->>>>>>> a988596b (first)
 - **Filter by tags**: `tags:forecast-market` to see related pages
 - **Local graph**: Open on a page to see only its connections
 - **Groups**: Color-code by page type (concepts, entities, sources)
@@ -227,6 +192,3 @@ LIMIT 10
 - [LLM Wiki Integration Guide](../wiki/README.md)
 - [Agent Instructions](../wiki/AGENTS.md)
 - [Wiki Overview](../wiki/overview.md)
-=======
-**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
->>>>>>> d822d97f (.)

@@ -23,7 +23,11 @@ class PerformanceResource extends XotBaseResource
 {
     protected static ?string $model = Performance::class;
 
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             Forms\Components\Card::make()
@@ -240,7 +244,11 @@ Forms\Components\Grid::make()
 ### Eventi Form
 
 ```php
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         Forms\Components\TextInput::make('codice')

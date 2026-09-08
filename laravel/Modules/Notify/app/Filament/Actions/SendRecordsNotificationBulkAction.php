@@ -37,16 +37,7 @@ class SendRecordsNotificationBulkAction extends XotBaseBulkAction
             })
             ->schema([
                 'mail_template_slug' => MailTemplateSelect::make('mail_template_slug'),
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'channels' => ChannelCheckboxList::make('channels')])
-=======
-                'channels' => ChannelCheckboxList::make('channels'),
-            ])
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'channels' => ChannelCheckboxList::make('channels')])
->>>>>>> a988596b (first)
             ->deselectRecordsAfterCompletion();
     }
 }

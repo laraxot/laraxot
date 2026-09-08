@@ -1,25 +1,11 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
 title: "🏆 FixCity Project Completion Summary – 2025-10-01"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-title: "🏆 FixCity Project Completion Summary – 2025-10-01"
->>>>>>> a988596b (first)
 title: "🏆 Notify Project Completion Summary – 2025-10-01"
 type: concept
 tags: [completion, summary, 2025, 01.deprecated]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "completion-summary-2025-10-01.deprecated 🏆 fixcity project completion summary – 2025-10-01"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "completion-summary-2025-10-01.deprecated 🏆 fixcity project completion summary – 2025-10-01"
->>>>>>> a988596b (first)
 qmd: "completion-summary-2025-10-01.deprecated 🏆 laraxot project completion summary – 2025-10-01"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -60,14 +46,7 @@ Diventare la piattaforma civic tech leader in Italia con:
 
 | Modulo | Completamento | PHPStan | Filament 4.x | Priorità |
 |--------|--------------|---------|--------------|----------|
-<<<<<<< HEAD
-<<<<<<< HEAD
 | **Fixcity** | 80% | ✅ Level 9 | ✅ Compatible | CRITICAL |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| **Fixcity** | 80% | ✅ Level 9 | ✅ Compatible | CRITICAL |
->>>>>>> a988596b (first)
 | **App** | 80% | ✅ Level 9 | ✅ Compatible | CRITICAL |
 | **User** | 90% | ✅ Level 9 | ✅ Compatible | HIGH |
 | **Blog** | 85% | ✅ Level 9 | ✅ Compatible | HIGH |
@@ -89,14 +68,7 @@ Diventare la piattaforma civic tech leader in Italia con:
 
 ### 1. Code Quality Improvements
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #### Fixcity Module
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-#### Fixcity Module
->>>>>>> a988596b (first)
 #### App Module
 - ✅ **Fixed** `Ticket` model return type (`getMediaAttribute()`)
 - ✅ **Validated** with PHPStan Level 9 - 0 errors
@@ -106,14 +78,7 @@ Diventare la piattaforma civic tech leader in Italia con:
 - ✅ **Implemented** API Requests (StoreTicketRequest, UpdateTicketRequest)
 
 #### Configuration
-<<<<<<< HEAD
-<<<<<<< HEAD
 - ✅ **Fixed** parse error in `config/it/quaerisofficina/manager2/xra.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- ✅ **Fixed** parse error in `config/it/quaerisofficina/manager2/xra.php`
->>>>>>> a988596b (first)
 - ✅ **Fixed** parse error in `config/it/appofficina/manager2/xra.php`
 - ✅ **Unblocked** PHPStan analysis across all modules
 
@@ -135,14 +100,7 @@ Diventare la piattaforma civic tech leader in Italia con:
 
 ### 3. API Development
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #### RESTful Endpoints (Fixcity Tickets)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-#### RESTful Endpoints (Fixcity Tickets)
->>>>>>> a988596b (first)
 #### RESTful Endpoints (App Tickets)
 - ✅ `GET /api/tickets` - Lista ticket con filtri e paginazione
 - ✅ `POST /api/tickets` - Creazione ticket
@@ -173,14 +131,7 @@ Diventare la piattaforma civic tech leader in Italia con:
 - [x] API Controller completo per Tickets
 - [x] API Resources e Requests
 - [x] Documentazione aggiornata con 2025 timelines
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Test Coverage >60% per Fixcity
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [ ] Test Coverage >60% per Fixcity
->>>>>>> a988596b (first)
 - [ ] Test Coverage >60% per App
 - [ ] Mobile optimization audit
 - [ ] AGID compliance audit
@@ -358,14 +309,7 @@ Diventare la piattaforma civic tech leader in Italia con:
 
 ## 📝 Conclusion
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Il progetto FixCity è posizionato eccellentemente per diventare la piattaforma civic tech leader in Italia nel 2025. Con:
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Il progetto FixCity è posizionato eccellentemente per diventare la piattaforma civic tech leader in Italia nel 2025. Con:
->>>>>>> a988596b (first)
 Il progetto Notify è posizionato eccellentemente per diventare la piattaforma civic tech leader in Italia nel 2025. Con:
 
 - ✅ **Fondamenta solide**: PHPStan Level 9, Filament 4.x, Laravel 11.x

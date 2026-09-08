@@ -16,11 +16,7 @@ class RoleInfolist extends XotBaseResourceInfolist
      *
      * Campi basati sul Model Role.php -> id, uuid, team_id, name, guard_name, display_name, description
      */
-<<<<<<< HEAD
-    public static function getInfolistSchema(): array
-=======
     public function getInfolistSchema(): array
->>>>>>> 87273113 (.)
     {
         return [
             'id' => TextEntry::make('id'),

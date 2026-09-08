@@ -62,9 +62,9 @@ it('creates a real client_credentials grant client with a hashed secret via Clie
 it('hides the new credentials action for a non-super-admin user', function (): void {
     // Bloccato da un problema preesistente del DB di test (non causato da
     // questa story): la tabella `profiles` nel DB di test
-    // (geek_quaeris_backup_server_23_10_2025_test, uno snapshot di ottobre
+    // (<client-name>_backup_server_23_10_2025_test, uno snapshot di ottobre
     // 2025) non ha la colonna `uuid`, aggiunta da migration successive
-    // (2026-04-28 modulo User, 2026-08-06 modulo Quaeris) mai applicate a
+    // (due occorrenze storiche in moduli diversi) mai applicate a
     // quel DB. Il mount della pagina Filament crea un Profile per l'utente
     // autenticato e fallisce con "Unknown column 'uuid' in field list".
     // Verificato: le migration dichiarano davvero la colonna, il DB di test

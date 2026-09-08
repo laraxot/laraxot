@@ -12,16 +12,8 @@ This guide covers the Apache VirtualHost configuration for FixCity local develop
 
 ### Primary Domain
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Domain**: `fixcity.local`
 - **Alias**: `www.fixcity.local`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Domain**: `fixcity.local`
-- **Alias**: `www.fixcity.local`
->>>>>>> a988596b (first)
 - **Domain**: `ptv.local`
 - **Alias**: `www.ptv.local`
 - **Document Root**: `public_html/`
@@ -33,14 +25,7 @@ This guide covers the Apache VirtualHost configuration for FixCity local develop
 
 ### Master Configuration
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Location**: `laravel/config/vhost/fixcity.local.conf`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Location**: `laravel/config/vhost/fixcity.local.conf`
->>>>>>> a988596b (first)
 **Location**: `laravel/config/vhost/ptv.local.conf`
 
 This is the **Single Source of Truth (SSOT)** for vhost configuration.
@@ -58,23 +43,10 @@ This is the **Single Source of Truth (SSOT)** for vhost configuration.
 
 ```bash
 # Copy to Apache sites-available
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 sudo cp laravel/config/vhost/fixcity.local.conf /etc/apache2/sites-available/
 
 # Enable site
 sudo a2ensite fixcity.local.conf
-<<<<<<< HEAD
-=======
-sudo cp laravel/config/vhost/ptv.local.conf /etc/apache2/sites-available/
-
-# Enable site
-sudo a2ensite ptv.local.conf
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 # Reload Apache
 sudo systemctl reload apache2
@@ -85,16 +57,8 @@ sudo systemctl reload apache2
 Edit `/etc/hosts`:
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 127.0.0.1    fixcity.local
 127.0.0.1    www.fixcity.local
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-127.0.0.1    fixcity.local
-127.0.0.1    www.fixcity.local
->>>>>>> a988596b (first)
 127.0.0.1    ptv.local
 127.0.0.1    www.ptv.local
 ```
@@ -106,14 +70,7 @@ Edit `/etc/hosts`:
 sudo apache2ctl configtest
 
 # Check vhost is enabled
-<<<<<<< HEAD
-<<<<<<< HEAD
 apache2ctl -S | grep fixcity
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-apache2ctl -S | grep fixcity
->>>>>>> a988596b (first)
 apache2ctl -S | grep ptv
 ```
 
@@ -124,14 +81,7 @@ apache2ctl -S | grep ptv
 ### Directory Structure
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 base_fixcity_fila5/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-base_fixcity_fila5/
->>>>>>> a988596b (first)
 base_ptv_fila5/
 ├── public_html/              ← Document Root
 │   ├── index.php            ← Entry point
@@ -139,14 +89,7 @@ base_ptv_fila5/
 ├── laravel/                  ← Application code
 │   ├── config/
 │   │   └── vhost/
-<<<<<<< HEAD
-<<<<<<< HEAD
 │   │       └── fixcity.local.conf  ← VHost config
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-│   │       └── fixcity.local.conf  ← VHost config
->>>>>>> a988596b (first)
 │   │       └── ptv.local.conf  ← VHost config
 │   ├── Modules/             ← All modules
 │   └── Themes/              ← All themes
@@ -158,14 +101,7 @@ base_ptv_fila5/
 ### Request Flow
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 Browser → Apache vhost (fixcity.local:80)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Browser → Apache vhost (fixcity.local:80)
->>>>>>> a988596b (first)
 Browser → Apache vhost (ptv.local:80)
     ↓
 DocumentRoot (public_html/)
@@ -205,16 +141,8 @@ Modules/ + Themes/
         </IfModule>
     </Directory>
     
-<<<<<<< HEAD
-<<<<<<< HEAD
     ErrorLog ${APACHE_LOG_DIR}/fixcity_local_error.log
     CustomLog ${APACHE_LOG_DIR}/fixcity_local_access.log combined
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    ErrorLog ${APACHE_LOG_DIR}/fixcity_local_error.log
-    CustomLog ${APACHE_LOG_DIR}/fixcity_local_access.log combined
->>>>>>> a988596b (first)
     ErrorLog ${APACHE_LOG_DIR}/ptv_local_error.log
     CustomLog ${APACHE_LOG_DIR}/ptv_local_access.log combined
 </VirtualHost>
@@ -244,14 +172,7 @@ Modules/ + Themes/
 
 ```bash
 # Apache error log
-<<<<<<< HEAD
-<<<<<<< HEAD
 tail -f /var/log/apache2/fixcity_local_error.log
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-tail -f /var/log/apache2/fixcity_local_error.log
->>>>>>> a988596b (first)
 tail -f /var/log/apache2/ptv_local_error.log
 
 # Laravel log
@@ -314,16 +235,8 @@ For production:
 
 ### Update VHost Config
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. Edit `laravel/config/vhost/fixcity.local.conf`
 2. Copy to Apache: `sudo cp laravel/config/vhost/fixcity.local.conf /etc/apache2/sites-available/`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. Edit `laravel/config/vhost/fixcity.local.conf`
-2. Copy to Apache: `sudo cp laravel/config/vhost/fixcity.local.conf /etc/apache2/sites-available/`
->>>>>>> a988596b (first)
 1. Edit `laravel/config/vhost/ptv.local.conf`
 2. Copy to Apache: `sudo cp laravel/config/vhost/ptv.local.conf /etc/apache2/sites-available/`
 3. Reload: `sudo systemctl reload apache2`
@@ -331,16 +244,8 @@ For production:
 ### Backup
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 sudo cp /etc/apache2/sites-available/fixcity.local.conf \
         /etc/apache2/sites-available/fixcity.local.conf.backup.$(date +%Y%m%d)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-sudo cp /etc/apache2/sites-available/fixcity.local.conf \
-        /etc/apache2/sites-available/fixcity.local.conf.backup.$(date +%Y%m%d)
->>>>>>> a988596b (first)
 sudo cp /etc/apache2/sites-available/ptv.local.conf \
         /etc/apache2/sites-available/ptv.local.conf.backup.$(date +%Y%m%d)
 ```
@@ -359,14 +264,7 @@ apache2ctl -S
 apache2ctl configtest
 
 # Check enabled sites
-<<<<<<< HEAD
-<<<<<<< HEAD
 ls -la /etc/apache2/sites-enabled/ | grep fixcity
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-ls -la /etc/apache2/sites-enabled/ | grep fixcity
->>>>>>> a988596b (first)
 ls -la /etc/apache2/sites-enabled/ | grep ptv
 ```
 
@@ -374,23 +272,10 @@ ls -la /etc/apache2/sites-enabled/ | grep ptv
 
 ```bash
 # Ping test
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 ping fixcity.local
 
 # Curl test
 curl -I http://fixcity.local
-<<<<<<< HEAD
-=======
-ping ptv.local
-
-# Curl test
-curl -I http://ptv.local
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ```
 
 ---

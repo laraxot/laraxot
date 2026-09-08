@@ -24,14 +24,7 @@
 ### Local Implementation
 - Base URL: http://127.0.0.1:8000/it/tests/
 - Blade template: `laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php`
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Config system: JSON-driven content in `laravel/config/local/fixcity/database/content/pages/`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Config system: JSON-driven content in `laravel/config/local/fixcity/database/content/pages/`
->>>>>>> a988596b (first)
 - Config system: JSON-driven content in `laravel/config/local/ptv/database/content/pages/`
 
 ---

@@ -216,18 +216,8 @@
 ## 📚 DOCUMENTAZIONE CORRELATA
 
 ### Session Reports
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [📊 Session Summary 2025-10-01](./phpstan/session-summary-2025-10-01.md)
 - [📝 Final Report 2025-10-01](./phpstan/final-report-session-2025-10-01.md)
-=======
-- [📊 Session Summary 2025-10-01](./phpstan/session-summary.md)
-- [📝 Final Report 2025-10-01](./phpstan/final-report-session.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [📊 Session Summary 2025-10-01](./phpstan/session-summary-2025-10-01.md)
-- [📝 Final Report 2025-10-01](./phpstan/final-report-session-2025-10-01.md)
->>>>>>> a988596b (first)
 - [🛠️ Fixes Session](./phpstan/filament-v4-fixes-session.md)
 
 ### Project Overview

@@ -11,13 +11,6 @@ Specialized logic for Notify needs a dedicated, type-safe Module to ensure maint
 ## 🎯 Goals & Success Metrics
 - **Goal 1:** 100% PHPStan L10 compliance.
 - **Goal 2:** Seamless integration with XotBase.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ---
 
 <!-- Merged from PRD.md, which collided with this file on case-insensitive filesystems. -->

@@ -1,25 +1,11 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
 title: "Errori Comuni da Evitare nelle Implementazioni di Moduli SaluteOra"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-title: "Errori Comuni da Evitare nelle Implementazioni di Moduli SaluteOra"
->>>>>>> a988596b (first)
 title: "Errori Comuni da Evitare nelle Implementazioni di Moduli <nome progetto>"
 type: concept
 tags: [errori, comuni, evitare]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "errori-comuni-da-evitare errori comuni da evitare nelle implementazioni di moduli saluteora"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "errori-comuni-da-evitare errori comuni da evitare nelle implementazioni di moduli saluteora"
->>>>>>> a988596b (first)
 qmd: "errori-comuni-da-evitare errori comuni da evitare nelle implementazioni di moduli <nome progetto>"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -32,31 +18,15 @@ related:
   - "./telegram-notifications-guide.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Errori Comuni da Evitare nelle Implementazioni di Moduli SaluteOra
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# Errori Comuni da Evitare nelle Implementazioni di Moduli SaluteOra
->>>>>>> a988596b (first)
 # Errori Comuni da Evitare nelle Implementazioni di Moduli <nome progetto>
 
 ## Errori di Struttura Directory e Namespace
 
 1. **Errore di Case nelle Directory**
-<<<<<<< HEAD
-<<<<<<< HEAD
    - ❌ ERRATO: `/var/www/html/saluteora/laravel/Modules/Notify/App/Actions/`
    - ✅ CORRETTO: `/var/www/html/saluteora/laravel/Modules/Notify/app/Actions/`
    
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-   - ❌ ERRATO: `/var/www/html/saluteora/laravel/Modules/Notify/App/Actions/`
-   - ✅ CORRETTO: `/var/www/html/saluteora/laravel/Modules/Notify/app/Actions/`
-   
->>>>>>> a988596b (first)
    - ❌ ERRATO: `[project-root]/laravel/Modules/Notify/App/Actions/`
    - ✅ CORRETTO: `[project-root]/laravel/Modules/Notify/app/Actions/`
 
@@ -65,13 +35,6 @@ related:
 2. **Errore di Namespace nei File**
    - ❌ ERRATO: `namespace Modules\Notify\App\Actions;`
    - ✅ CORRETTO: `namespace Modules\Notify\Actions;`
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
    > Il namespace dipende dalla configurazione PSR-4 nel composer.json del modulo
 
 ## Errori di Configurazione
@@ -88,13 +51,6 @@ related:
            'retry_attempts' => 3,  // ERRORE: Duplicazione
        ],
    ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
    // CORRETTO
    'drivers' => [
        'provider' => [
@@ -121,13 +77,6 @@ related:
    public function execute() {
        $timeout = 30; // Hardcoded
    }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
    // CORRETTO
    public function execute() {
        $timeout = config('sms.timeout');

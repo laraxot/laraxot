@@ -292,7 +292,11 @@ Level 0  → 🏕️  Campo Base
 
 ```php
 // 1. Form Schema con Semantic Keys
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         'field_name' => ComponentType::make('field_name')

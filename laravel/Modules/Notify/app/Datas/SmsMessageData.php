@@ -15,10 +15,5 @@ readonly class SmsMessageData
         public ?string $sender = null,
         public ?string $reference = null,
         public ?string $scheduledDate = null,
-<<<<<<< HEAD
     ) {}
-=======
-    ) {
-    }
->>>>>>> a988596b (first)
 }

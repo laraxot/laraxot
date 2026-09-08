@@ -403,11 +403,6 @@ public function assignAdminRole(User $user): void
 ### Setup Test User
 
 ```php
-<<<<<<< HEAD
-use Modules\<nome progetto>\Models\User;
-
-=======
->>>>>>> 60a2c9a9 (.)
 use Modules\Fixcity\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -477,11 +472,6 @@ $user->assignRole(Role::findByName('admin', 'web'));
 
 - **Official Docs**: https://spatie.be/docs/laravel-permission/
 - **GitHub**: https://github.com/spatie/laravel-permission
-<<<<<<< HEAD
-- **Changelog**: https://github.com/spatie/laravel-permission/blob/main/changelog.md
-
-=======
->>>>>>> 60a2c9a9 (.)
 - **Changelog**: https://github.com/spatie/laravel-permission/blob/main/CHANGELOG.md
 
 ## Version Information
@@ -497,15 +487,3 @@ $user->assignRole(Role::findByName('admin', 'web'));
 **Autore**: Claude Code
 **Data**: 2025-10-15
 **Versione**: 1.0.0
-<<<<<<< HEAD
-
-
----
-
-## Contenuto assorbito da `SPATIE_PERMISSIONS_METHODS.md`
-
-# Documento unificato
-
-Questo file era un duplicato esatto che differiva solo per maiuscole/minuscole, in violazione della regola no-case-only-variations. Il contenuto canonico si trova in [spatie_permissions_methods.md](./spatie_permissions_methods.md).
-=======
->>>>>>> 60a2c9a9 (.)

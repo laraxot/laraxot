@@ -230,15 +230,7 @@ Nessuna funzionalità critica mancante - il modulo Notify è ben implementato
 
 - [Modulo Quaeris](../Quaeris/docs/readme.md)
 - [Modulo Limesurvey](../limesurvey/docs/readme.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Notify README](./readme.md)
-=======
-- [Notify README](./README.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Notify README](./readme.md)
->>>>>>> a988596b (first)
 
 ---
 

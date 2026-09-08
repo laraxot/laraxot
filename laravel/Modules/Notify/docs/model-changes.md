@@ -126,21 +126,9 @@ public static function generateUniqueSlug(string $subject): string
 - Facile utilizzo
 
 ## Collegamenti Correlati
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Proposta Slug](./spatie_email_slug_proposal.md)
 - [Changelog Migrazioni](./migrations_changelog.md)
 - [Best Practices Email](./email_best_practices.md)
-=======
-- [Proposta Slug](./spatie-email-slug-proposal.md)
-- [Changelog Migrazioni](./migrations_changelog.md)
-- [Best Practices Email](./email-best-practices.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Proposta Slug](./spatie_email_slug_proposal.md)
-- [Changelog Migrazioni](./migrations_changelog.md)
-- [Best Practices Email](./email_best_practices.md)
->>>>>>> a988596b (first)
 
 ## Note di Implementazione
 

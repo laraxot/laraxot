@@ -143,7 +143,7 @@ php artisan event:cache
 ✅ Composer update completato con successo
 ✅ 193 pacchetti installati/aggiornati
 ✅ Nessuna vulnerabilità di sicurezza trovata
-✅ Laravel 13.39.0 + PHP 8.3.27 + Filament v4.2.3 funzionanti
+✅ Laravel 12.39.0 + PHP 8.3.27 + Filament v4.2.3 funzionanti
 ✅ Server avviato correttamente su porta 8000
 
 ## Ambiente

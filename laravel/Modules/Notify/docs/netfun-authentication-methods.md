@@ -65,24 +65,9 @@ public function send($notifiable, Notification $notification)
 
 ## Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Documentazione Netfun SMS Channel](./SMS_NETFUN_CHANNEL.md)
-- [Requisiti di Configurazione Netfun](./NETFUN_CONFIG_REQUIREMENTS.md)
-
----
-
-*Ultimo aggiornamento: 2025-05-12*
-=======
-=======
->>>>>>> a988596b (first)
 - [Documentazione Netfun SMS Channel](./sms_netfun_channel.md)
 - [Requisiti di Configurazione Netfun](./netfun_config_requirements.md)
 
 ---
 
 *Ultimo aggiornamento: [DATE]*
-<<<<<<< HEAD
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)

@@ -4,14 +4,7 @@ type: concept
 tags: [quick, start]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "quick-start 🚀 fixcity - guida rapida sviluppatori"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "quick-start 🚀 fixcity - guida rapida sviluppatori"
->>>>>>> a988596b (first)
 qmd: "quick-start 🚀 ptv - guida rapida sviluppatori"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -57,16 +50,8 @@ related:
 
 ### 1. Clone Repository
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 git clone https://github.com/laraxot/fixcity.git
 cd fixcity/laravel
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-git clone https://github.com/laraxot/fixcity.git
-cd fixcity/laravel
->>>>>>> a988596b (first)
 git clone https://github.com/laraxot/ptv.git
 cd ptv/laravel
 ```
@@ -93,14 +78,7 @@ php artisan key:generate
 DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
 DB_PORT=5432
-<<<<<<< HEAD
-<<<<<<< HEAD
 DB_DATABASE=fixcity
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-DB_DATABASE=fixcity
->>>>>>> a988596b (first)
 DB_DATABASE=ptv
 DB_USERNAME=your_user
 DB_PASSWORD=your_password
@@ -170,7 +148,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 class MyResource extends XotBaseResource
 {
     // Usa getFormSchema() invece di form()
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             // schema fields
@@ -272,14 +250,7 @@ return [
 ## 📁 STRUTTURA PROGETTO
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 base_fixcity_fila5_mono/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-base_fixcity_fila5_mono/
->>>>>>> a988596b (first)
 base_ptv_fila5_mono/
 ├── laravel/                    # Applicazione Laravel
 │   ├── Modules/               # Moduli Nwidart
@@ -582,13 +553,6 @@ php artisan optimize:clear
 
 *Per contribuire al progetto, leggi attentamente questa guida e le regole Laraxot. In caso di dubbi, consulta la
 documentazione del modulo specifico o chiedi supporto al team.*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ---
 
 <!-- Merged from QUICK-START.md, which collided with this file on case-insensitive filesystems. -->

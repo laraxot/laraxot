@@ -31,7 +31,11 @@ class MyPage extends Modules\Xot\Filament\Resources\Pages\XotBasePage
 class MyResource extends XotBaseResource
 {
     // ✅ OK - Ha getFormSchema()
+<<<<<<< HEAD
+    public static function getFormSchema(): array { /* ... */ }
+=======
     public function getFormSchema(): array { /* ... */ }
+>>>>>>> laraxot/dev
 
     // ❌ VIETATO - ERRORE GRAVE
     // public function getTableColumns(): array { /* ... */ }
@@ -130,7 +134,11 @@ abstract class XotBaseResource extends Filament\Resources\Resource
     /**
      * Get form schema with automatic translations.
      */
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             Section::make(__('filament.section.general'))
@@ -293,7 +301,11 @@ class YourResource extends XotBaseResource
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
 
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             ...parent::getFormSchema(),
@@ -362,7 +374,11 @@ use Filament\Forms\Components\TextInput;   // ✅ STILL VALID
 ```php
 // ✅ OPTIMIZED in XotBase classes
 /** @return array<string, Component> */
+<<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
 
 /** @return array<string, PageRegistration> */
 public static function getPages(): array

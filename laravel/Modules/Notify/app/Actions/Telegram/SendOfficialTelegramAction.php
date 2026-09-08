@@ -70,16 +70,7 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
     {
         $client = new Client([
             'timeout' => $this->timeout,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'base_uri' => $this->apiUrl]);
-=======
-            'base_uri' => $this->apiUrl,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'base_uri' => $this->apiUrl]);
->>>>>>> a988596b (first)
 
         // Determina l'endpoint in base al tipo di messaggio
         $endpoint = match ($telegramData->type) {
@@ -94,16 +85,7 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
         // Prepara il payload in base al tipo di messaggio
         $payload = [
             'chat_id' => $telegramData->chatId,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'disable_notification' => $telegramData->disableNotification];
-=======
-            'disable_notification' => $telegramData->disableNotification,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'disable_notification' => $telegramData->disableNotification];
->>>>>>> a988596b (first)
 
         if ($telegramData->replyToMessageId !== null) {
             $payload['reply_to_message_id'] = $telegramData->replyToMessageId;
@@ -130,16 +112,7 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
 
         try {
             $response = $client->post($endpoint, [
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'json' => $payload]);
-=======
-                'json' => $payload,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'json' => $payload]);
->>>>>>> a988596b (first)
 
             $statusCode = $response->getStatusCode();
             $responseContent = $response->getBody()->getContents();
@@ -153,16 +126,7 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
 
             Log::debug('Telegram inviato con successo', [
                 'chat_id' => $telegramData->chatId,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'response_code' => $statusCode]);
-=======
-                'response_code' => $statusCode,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'response_code' => $statusCode]);
->>>>>>> a988596b (first)
 
             /** @var array<string, mixed> $result */
             $result = $responseData['result'] ?? [];
@@ -173,16 +137,7 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
                 'success' => ($responseData['ok'] ?? false) === true,
                 'message_id' => $messageId,
                 'response' => $responseData,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'vars' => $this->vars];
-=======
-                'vars' => $this->vars,
-            ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'vars' => $this->vars];
->>>>>>> a988596b (first)
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $statusCode = $response->getStatusCode();
@@ -197,32 +152,14 @@ final class SendOfficialTelegramAction implements TelegramProviderActionInterfac
             Log::warning('Errore invio Telegram', [
                 'chat_id' => $telegramData->chatId,
                 'status' => $statusCode,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'response' => $responseBody]);
-=======
-                'response' => $responseBody,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'response' => $responseBody]);
->>>>>>> a988596b (first)
 
             return [
                 'success' => false,
                 'error' => $responseBody['description'] ?? 'Errore sconosciuto',
                 'error_code' => $responseBody['error_code'] ?? null,
                 'status_code' => $statusCode,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'vars' => $this->vars];
-=======
-                'vars' => $this->vars,
-            ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'vars' => $this->vars];
->>>>>>> a988596b (first)
         }
     }
 }

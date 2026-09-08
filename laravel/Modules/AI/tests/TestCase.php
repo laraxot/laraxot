@@ -32,7 +32,7 @@ abstract class TestCase extends XotBaseTestCase
     {
         // Alcuni test guardano lo schema (es. il tipo delle colonne che indicano
         // una persona): senza il fixture condiviso le tabelle non esistono.
-        $this->prepareSharedFixcitySqliteForTesting();
+        $this->prepareSharedSqliteForTesting();
 
         parent::setUp();
 

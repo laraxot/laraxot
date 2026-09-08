@@ -14,20 +14,8 @@ class TenantPolicy extends UserBasePolicy
      */
     public function viewAny(UserContract $user): bool
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         // return $user->hasPermissionTo('tenant.view.any');
         return false;
-=======
-        return $user->hasPermissionTo('tenant.view.any');
->>>>>>> f548be94 (.)
-=======
-        return $user->hasPermissionTo('tenant.view.any');
-=======
-        // return $user->hasPermissionTo('tenant.view.any');
-        return false;
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
     }
 
     /**
@@ -35,28 +23,9 @@ class TenantPolicy extends UserBasePolicy
      */
     public function view(UserContract $user, Tenant $tenant): bool
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         return $user->hasPermissionTo('tenant.view')
             || $user->tenants->contains($tenant->id)
             || $user->hasRole('super-admin');
-=======
-=======
->>>>>>> 87273113 (.)
-        return (
-            $user->hasPermissionTo('tenant.view') ||
-            $user->tenants->contains($tenant->id) ||
-            $user->hasRole('super-admin')
-        );
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-        return $user->hasPermissionTo('tenant.view')
-            || $user->tenants->contains($tenant->id)
-            || $user->hasRole('super-admin');
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
     }
 
     /**

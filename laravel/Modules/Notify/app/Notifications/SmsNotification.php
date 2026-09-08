@@ -47,16 +47,7 @@ class SmsNotification extends Notification implements ShouldQueue
             $this->smsData = SmsData::from([
                 'body' => $content,
                 'recipient' => is_scalar($recipient) ? (string) $recipient : '',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'from' => is_scalar($from) ? (string) $from : '']);
-=======
-                'from' => is_scalar($from) ? (string) $from : '',
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'from' => is_scalar($from) ? (string) $from : '']);
->>>>>>> a988596b (first)
         }
 
         $this->config = $config;
@@ -65,69 +56,22 @@ class SmsNotification extends Notification implements ShouldQueue
     /**
      * Get the notification's delivery channels.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @param  object  $notifiable  The entity to be notified (l'entità da notificare)
      * @return array<int, string>
      */
     public function via(object $notifiable): array
     {
-=======
-     * @return array<int, string>
-     */
-    public function via(object $notifiable): array
-    {
-<<<<<<< HEAD
-=======
-     * @param  mixed  $notifiable  The entity to be notified (l'entità da notificare)
-     * @return array<int, string>
-     */
-    public function via(mixed $notifiable): array
-    {
->>>>>>> a988596b (first)
-        if (is_object($notifiable) && method_exists($notifiable, 'routeNotificationFor')) {
-            return ['sms'];
-        }
-
-<<<<<<< HEAD
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> bdc49995 (.)
-=======
->>>>>>> a988596b (first)
         return ['sms'];
     }
 
     /**
      * Get the SMS representation of the notification.
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     public function toSms(object $notifiable): SmsData
     {
         // If the notifiable entity has a routeNotificationForSms method,
         // we'll use that to get the destination phone number
         if (method_exists($notifiable, 'routeNotificationForSms')) {
-=======
-=======
->>>>>>> a988596b (first)
-    public function toSms(mixed $notifiable): SmsData
-    {
-        // If the notifiable entity has a routeNotificationForSms method,
-        // we'll use that to get the destination phone number
-        if (is_object($notifiable) && method_exists($notifiable, 'routeNotificationForSms')) {
-<<<<<<< HEAD
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    public function toSms(object $notifiable): SmsData
-    {
-        // If the notifiable entity has a routeNotificationForSms method,
-        // we'll use that to get the destination phone number
-        if (method_exists($notifiable, 'routeNotificationForSms')) {
->>>>>>> bdc49995 (.)
-=======
->>>>>>> a988596b (first)
             $routeResult = $notifiable->routeNotificationForSms($this);
             $this->smsData->recipient = is_scalar($routeResult) ? (string) $routeResult : '';
         }

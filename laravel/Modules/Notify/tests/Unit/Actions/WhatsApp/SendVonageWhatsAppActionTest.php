@@ -7,27 +7,11 @@ namespace Modules\Notify\Tests\Unit\Actions\WhatsApp;
 use Modules\Notify\Actions\WhatsApp\SendVonageWhatsAppAction;
 use Modules\Notify\Datas\WhatsAppData;
 use Modules\Notify\Tests\TestCase;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
 
-<<<<<<< HEAD
-=======
-use PHPUnit\Framework\Assert;
-use Modules\Xot\Tests\XotBasePest;
-
-use function Safe\class_uses;
-
-uses(TestCase::class)->group('no-notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 describe('SendVonageWhatsAppAction', function () {
     it('can be referenced via ReflectionClass without instantiation', function () {
         $reflection = new \ReflectionClass(SendVonageWhatsAppAction::class);

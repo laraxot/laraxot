@@ -71,7 +71,7 @@ abstract class TestCase extends XotBaseTestCase
         // Senza il fixture condiviso i test cercano MariaDB con le credenziali
         // dello sviluppatore che ha scritto il .env, e falliscono su ogni altra
         // macchina.
-        $this->prepareSharedFixcitySqliteForTesting();
+        $this->prepareSharedSqliteForTesting();
 
         parent::setUp();
 

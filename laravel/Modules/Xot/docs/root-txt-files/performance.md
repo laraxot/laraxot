@@ -5,7 +5,11 @@ type: reference
 slug: performance
 description: '<!-- Contenuto migrato da _docs/_performance.txt -->'
 tags: [migrato-da-txt, xot]
+<<<<<<< HEAD
+converted_from: performance.txt
+=======
 converted_from: _performance.txt
+>>>>>>> laraxot/dev
 created: 2026-08-24
 updated: 2026-08-24
 ---

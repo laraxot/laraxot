@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Analisi PHPStan del Modulo User"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Analisi PHPStan del Modulo User
 
 ## Stato Attuale
@@ -37,66 +26,22 @@ Il modulo User è attualmente in fase di analisi con PHPStan. Questo documento t
 ## Problemi e Soluzioni
 
 ### Team e BaseTeam
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#team-php-e-baseteam-php)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan_fixes.md#team-php-e-baseteam-php)
->>>>>>> f548be94 (.)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan_fixes.md#team-php-e-baseteam-php)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#team-php-e-baseteam-php)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - Stato: ✅ Risolto
 - Commit: N/A
 
 ### TeamInvitation
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#teaminvitation-php)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan_fixes.md#teaminvitation-php)
->>>>>>> f548be94 (.)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan_fixes.md#teaminvitation-php)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#teaminvitation-php)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - Stato: ✅ Risolto
 - Commit: N/A
 
 ### TeamUser e BasePivot
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#teamuser-php-e-basepivot-php)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan_fixes.md#teamuser-php-e-basepivot-php)
->>>>>>> f548be94 (.)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan_fixes.md#teamuser-php-e-basepivot-php)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#teamuser-php-e-basepivot-php)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - Stato: ✅ Risolto
 - Commit: N/A
 
 ### BaseUser
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#baseuser-php)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan_fixes.md#baseuser-php)
->>>>>>> f548be94 (.)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan_fixes.md#baseuser-php)
-=======
-- [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#baseuser-php)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - Stato: 🔄 In Corso
 - Problemi rimanenti:
   - Proprietà non definite
@@ -105,18 +50,7 @@ Il modulo User è attualmente in fase di analisi con PHPStan. Questo documento t
 
 ## Collegamenti
 - [Documentazione Generale PHPStan](/docs/phpstan.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Linee Guida PHPStan Livello 10](/docs/phpstan/phpstan_level10_linee_guida.md)
-=======
-- [Linee Guida PHPStan Livello 10](/docs/phpstan/PHPSTAN_LEVEL10_LINEE_GUIDA.md)
->>>>>>> f548be94 (.)
-=======
-- [Linee Guida PHPStan Livello 10](/docs/phpstan/PHPSTAN_LEVEL10_LINEE_GUIDA.md)
-=======
-- [Linee Guida PHPStan Livello 10](/docs/phpstan/phpstan_level10_linee_guida.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [Contratti del Modulo User](/docs/modules/user/contracts.md)
 - [Best Practices per i Modelli](/docs/modules/user/models.md)
 

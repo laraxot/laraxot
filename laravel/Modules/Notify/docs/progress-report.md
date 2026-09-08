@@ -4,14 +4,7 @@ type: concept
 tags: [progress, report]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "progress-report 📊 fixcity project - progress report"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "progress-report 📊 fixcity project - progress report"
->>>>>>> a988596b (first)
 qmd: "progress-report 📊 ptv project - progress report"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]

@@ -51,14 +51,7 @@ Per collegamenti a documenti in altre directory:
 
 ```markdown
 [Regole Generali per le Chiavi di Traduzione](../../lang/docs/translation_keys_rules.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 [Best Practices per le Chiavi di Traduzione](../../lang/docs/translation_keys_best_practices.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-[Best Practices per le Chiavi di Traduzione](../../lang/docs/translation_keys_best_practices.md)
->>>>>>> a988596b (first)
 [Best Practices per le Chiavi di Traduzione](../../lang/docs/translation-keys-best-practices.md)
 ```
 

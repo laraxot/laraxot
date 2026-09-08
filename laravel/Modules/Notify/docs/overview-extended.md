@@ -245,14 +245,7 @@ Notification::route('mail', 'to@example.com')->notify($notify);
 **Versione**: 1.1  
 **Stato**: PSR-4 compliant, test business logic completati (95% copertura)  
 **Prossimi passi**: Completamento test modelli base  
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Changelog**: [CHANGELOG.md](./CHANGELOG.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Changelog**: [CHANGELOG.md](./CHANGELOG.md)
->>>>>>> a988596b (first)
 **Changelog**: [changelog.md](./CHANGELOG.md)
 
 ## 🔗 Collegamenti

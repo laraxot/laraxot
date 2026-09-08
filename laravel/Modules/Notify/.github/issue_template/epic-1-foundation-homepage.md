@@ -11,14 +11,7 @@ milestone: 'v1.0 - Design Comuni Replication'
 Replicate the Design Comuni homepage achieving 100% HTML and visual parity with the original template.
 
 **Source**: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html  
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Target**: http://fixcity.local/it/tests/homepage  
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Target**: http://fixcity.local/it/tests/homepage  
->>>>>>> a988596b (first)
 **Target**: http://ptv.local/it/tests/homepage  
 **Timeline**: Weeks 1-2 (April 1-14, 2026)  
 **Status**: 🟡 IN PROGRESS
@@ -30,14 +23,7 @@ Replicate the Design Comuni homepage achieving 100% HTML and visual parity with 
 ### Primary Goal
 Achieve 100% HTML parity (inside `<body>` tag, excluding scripts) between:
 - ✅ Source: `view-source:https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html`
-<<<<<<< HEAD
-<<<<<<< HEAD
 - ✅ Target: `view-source:http://fixcity.local/it/tests/homepage`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- ✅ Target: `view-source:http://fixcity.local/it/tests/homepage`
->>>>>>> a988596b (first)
 - ✅ Target: `view-source:http://ptv.local/it/tests/homepage`
 
 ### Secondary Goals

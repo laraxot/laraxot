@@ -1,25 +1,11 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
 title: "Errori Comuni da Evitare nelle Implementazioni di Moduli Quaeris"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-title: "Errori Comuni da Evitare nelle Implementazioni di Moduli Quaeris"
->>>>>>> a988596b (first)
 title: "Errori Comuni da Evitare nelle Implementazioni di Moduli App"
 type: concept
 tags: [errori, comuni, evitare]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "errori-comuni-da-evitare-1 errori comuni da evitare nelle implementazioni di moduli quaeris"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "errori-comuni-da-evitare-1 errori comuni da evitare nelle implementazioni di moduli quaeris"
->>>>>>> a988596b (first)
 qmd: "errori-comuni-da-evitare-1 errori comuni da evitare nelle implementazioni di moduli this-project"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -34,32 +20,16 @@ related:
   - "./notifications-implementation-guide-1.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Errori Comuni da Evitare nelle Implementazioni di Moduli Quaeris
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# Errori Comuni da Evitare nelle Implementazioni di Moduli Quaeris
->>>>>>> a988596b (first)
 # Errori Comuni da Evitare nelle Implementazioni di Moduli App
 
 ## Errori di Struttura Directory e Namespace
 
 1. **Errore di Case nelle Directory**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 - ❌ ERRATO: `/var/www/html/Quaeris/laravel/Modules/Notify/App/Actions/`
    - ✅ CORRETTO: `/var/www/html/Quaeris/laravel/Modules/Notify/app/Actions/`
 - ❌ ERRATO: `/var/www/html/Quaeris/laravel/Modules/Notify/App/Actions/`
    - ✅ CORRETTO: `/var/www/html/Quaeris/laravel/Modules/Notify/app/Actions/`
-<<<<<<< HEAD
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 - ❌ ERRATO: `/var/www/_bases/base_ptvx_fila5/laravel/Modules/Notify/App/Actions/`
    - ✅ CORRETTO: `/var/www/_bases/base_ptvx_fila5/laravel/Modules/Notify/app/Actions/`
    

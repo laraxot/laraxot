@@ -12,45 +12,21 @@ use Modules\Notify\Models\NotifyTheme;
 use Modules\Notify\Tests\Fixtures\NotifyBaseMorphPivotProxy;
 use Modules\Notify\Tests\Fixtures\NotifyBasePivotProxy;
 use Modules\Notify\Tests\Fixtures\NotifyNotificationTemplateProxy;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
 
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class)->group('notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
 function makeNotifyBaseMorphPivotProxy(): NotifyBaseMorphPivotProxy
 {
     return new NotifyBaseMorphPivotProxy;
-=======
-use PHPUnit\Framework\Assert;
-
-function makeNotifyBaseMorphPivotProxy(): NotifyBaseMorphPivotProxy
-{
-    return new NotifyBaseMorphPivotProxy();
->>>>>>> a988596b (first)
 }
 
 function makeNotifyBasePivotProxy(): NotifyBasePivotProxy
 {
-<<<<<<< HEAD
     return new NotifyBasePivotProxy;
-=======
-    return new NotifyBasePivotProxy();
->>>>>>> a988596b (first)
 }
 
 function makeNotifyNotificationTemplateProxy(): NotifyNotificationTemplateProxy
 {
-<<<<<<< HEAD
     return new NotifyNotificationTemplateProxy;
-=======
-    return new NotifyNotificationTemplateProxy();
->>>>>>> a988596b (first)
 }
 
 test('base morph pivot and base pivot use notify connection and default casts', function () {
@@ -64,11 +40,7 @@ test('base morph pivot and base pivot use notify connection and default casts', 
 });
 
 test('contact model has expected fillable and casts', function () {
-<<<<<<< HEAD
     $contact = new Contact;
-=======
-    $contact = new Contact();
->>>>>>> a988596b (first)
 
     Assert::assertSame('notify', $contact->getConnectionName());
     Assert::assertContains('model_id', $contact->getFillable());
@@ -78,11 +50,7 @@ test('contact model has expected fillable and casts', function () {
 });
 
 test('mail template has slug options and expected casts', function () {
-<<<<<<< HEAD
     $mailTemplate = new MailTemplate;
-=======
-    $mailTemplate = new MailTemplate();
->>>>>>> a988596b (first)
 
     Assert::assertSame('notify', $mailTemplate->getConnectionName());
     Assert::assertContains('slug', $mailTemplate->getFillable());
@@ -92,11 +60,7 @@ test('mail template has slug options and expected casts', function () {
 });
 
 test('notification model has array and datetime casts', function () {
-<<<<<<< HEAD
     $notification = new Notification;
-=======
-    $notification = new Notification();
->>>>>>> a988596b (first)
 
     Assert::assertContains('message', $notification->getFillable());
     Assert::assertContains('channels', $notification->getFillable());
@@ -132,11 +96,7 @@ test('notification template compile and helper methods return expected structure
 });
 
 test('notify theme exposes logo accessor and morph relation', function () {
-<<<<<<< HEAD
     $theme = new NotifyTheme;
-=======
-    $theme = new NotifyTheme();
->>>>>>> a988596b (first)
     $theme->logo_width = 300;
     $theme->logo_height = 120;
 

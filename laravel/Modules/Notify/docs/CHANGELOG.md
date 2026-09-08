@@ -21,14 +21,6 @@ Tutte le modifiche significative al modulo Notify saranno documentate in questo 
 - Namespace modulo: `Modules\Notify\{Subdirectory}`
 - NO: `Modules\Notify\App\{Subdirectory}`
 - Cartella `app/` è organizzativa, non parte del namespace
-<<<<<<< HEAD
-<<<<<<< HEAD
-- Cartella `app/` è organizzativa, non parte del namespace
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Cartella `app/` è organizzativa, non parte del namespace
->>>>>>> a988596b (first)
 
 ---
 

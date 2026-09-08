@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "LoginWidget Form Data Binding Fix"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # LoginWidget Form Data Binding Fix
 
 ## Problema
@@ -72,26 +61,9 @@ public function mount(): void
 
 Per `LoginWidget`, che non ha un modello associato (`getFormModel()` restituisce `null`), `getFormFill()` restituisce un array vuoto `[]`, che è il comportamento corretto per un form vuoto.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### 2. Schema con chiavi stringa e NO label/placeholder
 
 Corretto lo schema per usare array associativo con chiavi stringa (conforme alle regole Filament). **MAI usare `->label()`, `->placeholder()` o `->helperText()`**: il LangServiceProvider risolve automaticamente da `user::login_widget.fields.*` (file `lang/it/login_widget.php`).
-=======
-### 2. Schema con chiavi stringa
-
-Corretto lo schema per usare array associativo con chiavi stringa (conforme alle regole Filament):
->>>>>>> 60a2c9a9 (.)
-=======
-### 2. Schema con chiavi stringa
-
-Corretto lo schema per usare array associativo con chiavi stringa (conforme alle regole Filament):
-=======
-### 2. Schema con chiavi stringa e NO label/placeholder
-
-Corretto lo schema per usare array associativo con chiavi stringa (conforme alle regole Filament). **MAI usare `->label()`, `->placeholder()` o `->helperText()`**: il LangServiceProvider risolve automaticamente da `user::login_widget.fields.*` (file `lang/it/login_widget.php`).
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
 ```php
 #[\Override]
@@ -213,13 +185,3 @@ Tutti i widget Filament che estendono `XotBaseWidget` e usano `statePath('data')
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-*Ultimo aggiornamento: Dicembre 2024*
->>>>>>> 60a2c9a9 (.)
-=======
-*Ultimo aggiornamento: Dicembre 2024*
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

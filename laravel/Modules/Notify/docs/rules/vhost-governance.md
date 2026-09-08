@@ -27,14 +27,7 @@ related:
 
 ## 📋 Overview
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 This document defines the **mandatory rules** for Apache VirtualHost configuration in the FixCity platform.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-This document defines the **mandatory rules** for Apache VirtualHost configuration in the FixCity platform.
->>>>>>> a988596b (first)
 This document defines the **mandatory rules** for Apache VirtualHost configuration in the Notify platform.
 
 ---
@@ -47,23 +40,10 @@ This document defines the **mandatory rules** for Apache VirtualHost configurati
 
 ```apache
 # ✅ CORRECT
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 DocumentRoot /var/www/_bases/base_fixcity_fila5/public_html
 
 # ❌ WRONG - Never point to laravel/ directly
 DocumentRoot /var/www/_bases/base_fixcity_fila5/laravel
-<<<<<<< HEAD
-=======
-DocumentRoot /var/www/_bases/base_ptvx_fila5/public_html
-
-# ❌ WRONG - Never point to laravel/ directly
-DocumentRoot /var/www/_bases/base_ptvx_fila5/laravel
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ```
 
 **Rationale**: 
@@ -79,10 +59,6 @@ DocumentRoot /var/www/_bases/base_ptvx_fila5/laravel
 
 ```
 ✅ CORRECT:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 laravel/config/vhost/fixcity.local.conf
 
 ❌ WRONG:
@@ -94,17 +70,6 @@ laravel/config/vhost/fixcity.local.conf
 - /etc/apache2/sites-available/fixcity.local.conf (not versioned)
 - docs/vhost.conf (wrong location)
 - config/fixcity.local.conf (wrong directory)
-<<<<<<< HEAD
-=======
-laravel/config/vhost/laraxot.local.conf
-
-❌ WRONG:
-- /etc/apache2/sites-available/laraxot.local.conf (not versioned)
-- docs/vhost.conf (wrong location)
-- config/laraxot.local.conf (wrong directory)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ```
 
 **Rationale**:
@@ -142,16 +107,8 @@ ServerName localhost/laraxot
 
 ```apache
 # ✅ CORRECT
-<<<<<<< HEAD
-<<<<<<< HEAD
 ErrorLog ${APACHE_LOG_DIR}/fixcity_local_error.log
 CustomLog ${APACHE_LOG_DIR}/fixcity_local_access.log combined
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-ErrorLog ${APACHE_LOG_DIR}/fixcity_local_error.log
-CustomLog ${APACHE_LOG_DIR}/fixcity_local_access.log combined
->>>>>>> a988596b (first)
 ErrorLog ${APACHE_LOG_DIR}/app_local_error.log
 CustomLog ${APACHE_LOG_DIR}/app_local_access.log combined
 
@@ -172,14 +129,7 @@ CustomLog ${APACHE_LOG_DIR}/app_local_access.log combined
 
 ```apache
 # ✅ CORRECT
-<<<<<<< HEAD
-<<<<<<< HEAD
 <Directory /var/www/_bases/base_fixcity_fila5/public_html>
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-<Directory /var/www/_bases/base_fixcity_fila5/public_html>
->>>>>>> a988596b (first)
 <Directory /var/www/_bases/base_ptvx_fila5/public_html>
     Options -Indexes +FollowSymLinks +MultiViews
     AllowOverride All
@@ -208,27 +158,13 @@ CustomLog ${APACHE_LOG_DIR}/app_local_access.log combined
 
 ```
 ✅ CORRECT:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - fixcity.local.conf
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- fixcity.local.conf
->>>>>>> a988596b (first)
 - laraxot.local.conf
 - staging.local.conf
 
 ❌ WRONG:
 - vhost.conf (too generic)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - fixcity.conf (missing .local)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- fixcity.conf (missing .local)
->>>>>>> a988596b (first)
 - laraxot.conf (missing .local)
 - 000-default.conf (Apache default)
 ```
@@ -284,18 +220,9 @@ apache2ctl -M | grep rewrite
 
 ```bash
 # ✅ CORRECT WORKFLOW
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. Edit: laravel/config/vhost/fixcity.local.conf
 2. Copy: sudo cp laravel/config/vhost/fixcity.local.conf /etc/apache2/sites-available/
 3. Enable: sudo a2ensite fixcity.local.conf
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. Edit: laravel/config/vhost/fixcity.local.conf
-2. Copy: sudo cp laravel/config/vhost/fixcity.local.conf /etc/apache2/sites-available/
-3. Enable: sudo a2ensite fixcity.local.conf
->>>>>>> a988596b (first)
 1. Edit: laravel/config/vhost/laraxot.local.conf
 2. Copy: sudo cp laravel/config/vhost/laraxot.local.conf /etc/apache2/sites-available/
 3. Enable: sudo a2ensite laraxot.local.conf
@@ -330,14 +257,7 @@ php artisan migrate:rollback
 
 ```apache
 # ❌ CRITICAL SECURITY ISSUE
-<<<<<<< HEAD
-<<<<<<< HEAD
 DocumentRoot /var/www/_bases/base_fixcity_fila5/laravel
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-DocumentRoot /var/www/_bases/base_fixcity_fila5/laravel
->>>>>>> a988596b (first)
 DocumentRoot /var/www/_bases/base_ptvx_fila5/laravel
 
 # This exposes:
@@ -399,14 +319,7 @@ AllowOverride None
 ```env
 # ✅ DEVELOPMENT
 DB_CONNECTION=sqlite
-<<<<<<< HEAD
-<<<<<<< HEAD
 DB_DATABASE=/var/www/_bases/base_fixcity_fila5/laravel/database/fixcity_data.sqlite
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-DB_DATABASE=/var/www/_bases/base_fixcity_fila5/laravel/database/fixcity_data.sqlite
->>>>>>> a988596b (first)
 DB_DATABASE=/var/www/_bases/base_ptvx_fila5/laravel/database/notify_data.sqlite
 
 # ❌ WRONG
@@ -433,18 +346,9 @@ Before committing vhost changes:
 - [ ] `apache2ctl configtest` passes
 - [ ] Site enabled: `a2ensite`
 - [ ] Apache reloaded: `systemctl reload apache2`
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Domain resolves: `ping fixcity.local`
 - [ ] Application accessible: `curl -I http://fixcity.local`
 - [ ] Logs created: `ls -la /var/log/apache2/fixcity_*`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [ ] Domain resolves: `ping fixcity.local`
-- [ ] Application accessible: `curl -I http://fixcity.local`
-- [ ] Logs created: `ls -la /var/log/apache2/fixcity_*`
->>>>>>> a988596b (first)
 - [ ] Domain resolves: `ping laraxot.local`
 - [ ] Application accessible: `curl -I http://laraxot.local`
 - [ ] Logs created: `ls -la /var/log/apache2/app_*`

@@ -447,14 +447,7 @@ new class extends Component {
 
 ```php
 use Livewire\Livewire;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Quaeris\Filament\Widgets\SalesChartWidget;
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use Modules\Quaeris\Filament\Widgets\SalesChartWidget;
->>>>>>> a988596b (first)
 use Modules\App\Filament\Widgets\SalesChartWidget;
 
 it('renders chart widget', function (): void {

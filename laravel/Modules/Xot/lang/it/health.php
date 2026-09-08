@@ -6,26 +6,56 @@ return [
     'navigation' => [
         'name' => 'Salute',
         'plural' => 'Salute',
-        'group' => ['name' => 'Admin'],
+        'group' => [
+            'name' => 'Admin',
+        ],
     ],
     'pages' => [
         'health_check_results' => [
-            'buttons' => ['refresh' => 'Refresh'],
+            'buttons' => [
+                'refresh' => 'Refresh',
+            ],
             'heading' => 'Application Health',
-            'navigation' => ['group' => 'Settings', 'label' => 'Application Health'],
-            'notifications' => ['check_results' => 'Check results from'],
+            'navigation' => [
+                'group' => 'Settings',
+                'label' => 'Application Health',
+            ],
+            'notifications' => [
+                'check_results' => 'Check results from',
+            ],
         ],
     ],
     'actions' => [
-        'refresh' => ['label' => 'refresh', 'tooltip' => 'refresh', 'icon' => 'refresh'],
-        'logout' => ['tooltip' => 'logout'],
+        'refresh' => [
+            'label' => 'refresh',
+            'tooltip' => 'refresh',
+            'icon' => 'refresh',
+        ],
+        'logout' => [
+            'tooltip' => 'logout',
+        ],
         'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
     ],
     'label' => 'Health',
     'plural_label' => 'Health (Plurale)',
     'fields' => [
-        'id' => ['label' => 'Identificativo', 'tooltip' => 'Identificativo univoco del record', 'helper_text' => '', 'description' => ''],
-        'created_at' => ['label' => 'Data Creazione', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'updated_at' => ['label' => 'Ultima Modifica', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
+        'id' => [
+            'label' => 'Identificativo',
+            'tooltip' => 'Identificativo univoco del record',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'created_at' => [
+            'label' => 'Data Creazione',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'updated_at' => [
+            'label' => 'Ultima Modifica',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
     ],
 ];

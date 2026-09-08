@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Passport Cluster - Implementazione Necessaria"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Passport Cluster - Implementazione Necessaria
 
 **Data**: 2025-01-22
@@ -137,11 +126,7 @@ class OauthClientResource extends XotBaseResource
     /**
      * @return array<string, Component>
      */
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
     {
         return [
             // Schema components

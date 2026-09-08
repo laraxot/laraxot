@@ -17,16 +17,8 @@
 
 | Use Case | Component Type | File Pattern | Features |
 |----------|---------------|--------------|----------|
-<<<<<<< HEAD
-<<<<<<< HEAD
 | **Lista di Mercati** (`/it/predicts`) | ✅ Filament Table Widget | `Themes/*/resources/views/filament/widgets/predict-table.blade.php` | Search, Filter, Sorting, Pagination |
 | **Dettaglio Mercato** (`/it/predicts/{slug}`) | ✅ Mixed shell | `ViewPredictWidget` + Blade shell + widget Filament per sezioni list-like | Trading, charts, hero, list-like outcomes |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| **Lista di Mercati** (`/it/predicts`) | ✅ Filament Table Widget | `Themes/*/resources/views/filament/widgets/predict-table.blade.php` | Search, Filter, Sorting, Pagination |
-| **Dettaglio Mercato** (`/it/predicts/{slug}`) | ✅ Mixed shell | `ViewPredictWidget` + Blade shell + widget Filament per sezioni list-like | Trading, charts, hero, list-like outcomes |
->>>>>>> a988596b (first)
 | **Lista di Mercati** (`/it/forecasts`) | ✅ Filament Table Widget | `Themes/*/resources/views/filament/widgets/forecast-table.blade.php` | Search, Filter, Sorting, Pagination |
 | **Dettaglio Mercato** (`/it/forecasts/{slug}`) | ✅ Mixed shell | `ViewForecastWidget` + Blade shell + widget Filament per sezioni list-like | Trading, charts, hero, list-like outcomes |
 | **Lista Articoli** (`/it/articles`) | ✅ Filament Table Widget | `Themes/*/resources/views/filament/widgets/article-table.blade.php` | Search, Filter, Sorting |
@@ -47,18 +39,9 @@
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## 🎯 PREDICT DETAIL PAGE (Mixed Shell)
 
 ### URL: `/it/predicts/f1-world-champion-2026`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-## 🎯 PREDICT DETAIL PAGE (Mixed Shell)
-
-### URL: `/it/predicts/f1-world-champion-2026`
->>>>>>> a988596b (first)
 ## 🎯 FORECAST DETAIL PAGE (Mixed Shell)
 
 ### URL: `/it/forecasts/f1-world-champion-2026`
@@ -67,14 +50,7 @@
 
 **Struttura corretta**:
 ```text
-<<<<<<< HEAD
-<<<<<<< HEAD
 Modules/Predict/resources/views/filament/widgets/view-predict.blade.php
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Modules/Predict/resources/views/filament/widgets/view-predict.blade.php
->>>>>>> a988596b (first)
 Modules/Forecast/resources/views/filament/widgets/view-forecast.blade.php
 ├── header / hero / stats / trading-form / order-book / chart = Blade shell
 └── OutcomesTableWidget = Filament table per outcomes list-like
@@ -88,16 +64,8 @@ Modules/Forecast/resources/views/filament/widgets/view-forecast.blade.php
 **Esempio corretto**:
 ```blade
 @livewire(
-<<<<<<< HEAD
-<<<<<<< HEAD
     \Modules\Predict\Filament\Widgets\OutcomesTableWidget::class,
     ['predict' => $predict]
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    \Modules\Predict\Filament\Widgets\OutcomesTableWidget::class,
-    ['predict' => $predict]
->>>>>>> a988596b (first)
     \Modules\Forecast\Filament\Widgets\OutcomesTableWidget::class,
     ['forecast' => $forecast]
 )
@@ -123,16 +91,8 @@ Perché è sbagliato:
 ### ❌ SBAGLIATO: Custom Blade per LIST
 
 ```blade
-<<<<<<< HEAD
-<<<<<<< HEAD
 @foreach($predicts as $predict)
     <div>{{ $predict->title }}</div>
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-@foreach($predicts as $predict)
-    <div>{{ $predict->title }}</div>
->>>>>>> a988596b (first)
 @foreach($forecasts as $forecast)
     <div>{{ $forecast->title }}</div>
 @endforeach

@@ -161,7 +161,7 @@ public function scope_active_returns_only_active_events(): void
 ```php
 class EventResource extends XotBaseResource
 {
-    public function getFormSchema(): array  // ← Often uncovered
+    public static function getFormSchema(): array  // ← Often uncovered
     {
         return [
             TextInput::make('title')->required(),

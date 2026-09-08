@@ -5,21 +5,8 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Enums;
 
 use Modules\Notify\Enums\NotificationLogStatusEnum;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
 
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class)->group('no-notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use PHPUnit\Framework\Assert;
-
->>>>>>> a988596b (first)
 test('it exposes all expected statuses', function () {
     $values = array_map(static fn (NotificationLogStatusEnum $case): string => $case->value, NotificationLogStatusEnum::cases());
 
@@ -29,16 +16,7 @@ test('it exposes all expected statuses', function () {
         'delivered',
         'failed',
         'opened',
-<<<<<<< HEAD
-<<<<<<< HEAD
         'clicked'], $values);
-=======
-        'clicked',
-    ], $values);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'clicked'], $values);
->>>>>>> a988596b (first)
 });
 
 test('it returns expected label color and icon', function () {

@@ -8,7 +8,7 @@ Nel sistema Laraxot, il metodo `getFormSchema()` nelle risorse Filament deve **S
 
 ```php
 // ✅ CORRETTO
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         'title' => Forms\Components\TextInput::make('title')
@@ -25,7 +25,7 @@ public function getFormSchema(): array
 
 ```php
 // ❌ ERRATO
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         Forms\Components\TextInput::make('title')
@@ -97,7 +97,7 @@ class MyResource extends XotBaseResource
         ];
     }
 
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('title'),
@@ -112,7 +112,7 @@ class MyResource extends XotBaseResource
 ```php
 class MyResource extends XotBaseResource
 {
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             'title' => Forms\Components\TextInput::make('title'),

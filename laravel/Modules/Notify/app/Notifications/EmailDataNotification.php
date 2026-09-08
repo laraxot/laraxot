@@ -49,26 +49,13 @@ class EmailDataNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-<<<<<<< HEAD
         $mailMessage = (new MailMessage)
-=======
-        $mailMessage = (new MailMessage())
->>>>>>> a988596b (first)
             ->subject($this->emailData->subject)
             ->line($this->emailData->body);
 
         if (! empty($this->emailData->body_html)) {
             $mailMessage->view('notify::emails.template', [
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'content' => $this->emailData->body_html]);
-=======
-                'content' => $this->emailData->body_html,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'content' => $this->emailData->body_html]);
->>>>>>> a988596b (first)
         }
 
         if (! empty($this->emailData->from_email) && ! empty($this->emailData->from)) {
@@ -91,15 +78,6 @@ class EmailDataNotification extends Notification
             'from' => $this->emailData->from,
             'from_email' => $this->emailData->from_email,
             'subject' => $this->emailData->subject,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'body' => $this->emailData->body];
-=======
-            'body' => $this->emailData->body,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'body' => $this->emailData->body];
->>>>>>> a988596b (first)
     }
 }

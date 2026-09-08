@@ -621,15 +621,7 @@ Per testare l'invio di un SMS tramite Netfun con la nostra implementazione:
 namespace Modules\Notify\Tests\Feature;
 
 use Tests\TestCase;
-<<<<<<< HEAD
-<<<<<<< HEAD
-use Modules\Xot\Contracts\UserContract;
-=======
 use Modules\User\Models\User;
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-use Modules\User\Models\User;
->>>>>>> a988596b (first)
 use Modules\Notify\Datas\NetfunSMSMessage;
 use Modules\Notify\Actions\SMS\SendNetfunSMSAction;
 use Illuminate\Foundation\Testing\DatabaseTransactions;

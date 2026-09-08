@@ -1,22 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 # bmad method: setup e configurazione (fixcity)
 
 ## scopo
 
 Rendere ripetibile e verificabile l’uso del **BMAD Method** nel progetto FixCity: installazione, struttura, configurazioni lingua/output, e punti di controllo minimi (“funziona / non funziona”).
-<<<<<<< HEAD
-=======
-# bmad method: setup e configurazione (laraxot)
-
-## scopo
-
-Rendere ripetibile e verificabile l’uso del **BMAD Method** nel progetto Notify: installazione, struttura, configurazioni lingua/output, e punti di controllo minimi (“funziona / non funziona”).
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 ## cosa è “bmad” qui (business logic)
 

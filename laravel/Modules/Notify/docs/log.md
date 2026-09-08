@@ -31,14 +31,7 @@ Quando esegui un'operazione:
 
 ## [2026-04-15] bootstrap | Initial Wiki Setup
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Creato schema [[.schema/WIKI_SCHEMA.md]]
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Creato schema [[.schema/WIKI_SCHEMA.md]]
->>>>>>> a988596b (first)
 - Creato schema [[.schema/wiki-schema.md]]
 - Creato [[wiki/index.md]] con struttura
 - Create cartelle `wiki/` e `raw/` per:

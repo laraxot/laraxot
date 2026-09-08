@@ -19,27 +19,11 @@ use Modules\Notify\Filament\Resources\NotifyThemeResource\Pages\ListNotifyThemes
 use Modules\Notify\Filament\Resources\NotifyThemeResource\RelationManagers\LinkableRelationManager;
 use Modules\Notify\Filament\Tables\Columns\ContactColumn;
 use Modules\Notify\Tests\Fixtures\EditNotifyThemeTestProxy;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
 
-=======
-use Modules\Notify\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-
-uses(TestCase::class)->group('no-notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
 function makeEditNotifyThemeTestProxy(): EditNotifyThemeTestProxy
 {
     return new EditNotifyThemeTestProxy;
-=======
-use PHPUnit\Framework\Assert;
-
-function makeEditNotifyThemeTestProxy(): EditNotifyThemeTestProxy
-{
-    return new EditNotifyThemeTestProxy();
->>>>>>> a988596b (first)
 }
 
 test('list notification templates page returns empty table columns array', function (): void {
@@ -53,17 +37,8 @@ test('notify theme resource field options are configured', function (): void {
     Assert::assertArrayHasKey('page', NotifyThemeResource::fieldOptions('post_type'));
 });
 
-<<<<<<< HEAD
 test('notify theme resource form schema exposes expected components', function (): void {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    $schema = NotifyThemeResource::getFormSchema();
-=======
-    $schema = NotifyThemeResource::getFormSchemaOld();
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    $schema = NotifyThemeResource::getFormSchema();
->>>>>>> a988596b (first)
+    $schema = app(NotifyThemeResource::class)->getFormSchema();
     Assert::assertArrayHasKey('post_id', $schema);
     Assert::assertInstanceOf(TextInput::class, $schema['post_id']);
     Assert::assertArrayHasKey('logo', $schema);
@@ -75,9 +50,6 @@ test('notify theme resource form schema exposes expected components', function (
     Assert::assertArrayHasKey('lang', $schema);
     Assert::assertInstanceOf(Select::class, $schema['lang']);
 });
-=======
-
->>>>>>> 48f28c29 (.)
 
 test('edit notify theme page exposes delete header action', function (): void {
     $page = makeEditNotifyThemeTestProxy();
@@ -104,11 +76,7 @@ test('list notify themes columns and filters are configured', function (): void 
 });
 
 test('linkable relation manager exposes text input form schema', function (): void {
-<<<<<<< HEAD
     $manager = new LinkableRelationManager;
-=======
-    $manager = new LinkableRelationManager();
->>>>>>> a988596b (first)
     $schema = $manager->getFormSchema();
     Assert::assertNotEmpty($schema);
     Assert::assertInstanceOf(TextInput::class, $schema[0]);

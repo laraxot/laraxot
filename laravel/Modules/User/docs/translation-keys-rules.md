@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Regole per le Chiavi di Traduzione"
 type: rule
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Regole per le Chiavi di Traduzione
 
 ## Principi Fondamentali
@@ -146,17 +135,6 @@ return [
 - [Best Practices per le Traduzioni](TRANSLATION_BEST_PRACTICES.md)
 - [Struttura del Modulo](MODULE_STRUCTURE.md)
 - [Convenzioni di Codice](CODE_CONVENTIONS.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Best Practices per le Traduzioni](translation-best-practices-2.md)
 - [Struttura del Modulo](module-structure-2.md)
 - [Convenzioni di Codice](code-conventions.md)
-=======
->>>>>>> f548be94 (.)
-=======
-=======
-- [Best Practices per le Traduzioni](translation-best-practices-2.md)
-- [Struttura del Modulo](module-structure-2.md)
-- [Convenzioni di Codice](code-conventions.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

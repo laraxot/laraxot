@@ -1,15 +1,3 @@
-<<<<<<< HEAD
----
-title: "service_provider_warning - User"
-module: user
-type: integration
-tags: [integrations, modules, user]
-created: 2026-08-24
-updated: 2026-08-24
----
-
-=======
->>>>>>> 87273113 (.)
 # service_provider_warning - User
 
 ## Overview

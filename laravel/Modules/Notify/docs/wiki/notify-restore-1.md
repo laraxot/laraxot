@@ -24,14 +24,7 @@ related:
 
 `laravel/Modules/Notify/laravel` conteneva una Laravel app completa annidata dentro il modulo Notify. La directory includeva `artisan`, `config`, `routes`, `storage`, `Themes`, `Modules` e copie di altri moduli. Questo contaminava scansioni, QMD, grep e validazioni statiche.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Inoltre `laravel/Modules/Notify/composer.json` descriveva erroneamente un modulo User/FixCity invece di Notify.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Inoltre `laravel/Modules/Notify/composer.json` descriveva erroneamente un modulo User/FixCity invece di Notify.
->>>>>>> a988596b (first)
 Inoltre `laravel/Modules/Notify/composer.json` descriveva erroneamente un modulo User/Notify invece di Notify.
 
 ## Intervento
@@ -48,14 +41,7 @@ Inoltre `laravel/Modules/Notify/composer.json` descriveva erroneamente un modulo
   - `Modules\\Notify\\` -> `app/`
   - `Modules\\Notify\\Database\\Factories\\` -> `database/factories/`
   - `Modules\\Notify\\Database\\Seeders\\` -> `database/seeders/`
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Non restano riferimenti `fixcity/user-module` o `Modules\\User\\` nel composer del modulo.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Non restano riferimenti `fixcity/user-module` o `Modules\\User\\` nel composer del modulo.
->>>>>>> a988596b (first)
 - Non restano riferimenti `laraxot/user-module` o `Modules\\User\\` nel composer del modulo.
 
 ## Nota

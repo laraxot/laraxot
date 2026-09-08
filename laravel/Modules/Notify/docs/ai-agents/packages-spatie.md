@@ -1,13 +1,6 @@
 # Spatie Packages Reference
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Pacchetti Spatie installati in Quaeris Fila5 Mono.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Pacchetti Spatie installati in Quaeris Fila5 Mono.
->>>>>>> a988596b (first)
 Pacchetti Spatie installati in App Fila5 Mono.
 
 ## Versioni installate

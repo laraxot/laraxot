@@ -87,11 +87,6 @@ docs/
 # Memory Context
 
 # [base_fixcity_fila5] recent context, 2026-04-15 10:19pm GMT+2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a377e9e6 (.)
 # [base_ptv_fila5] recent context, 2026-04-15 10:19pm GMT+2
 
 No previous sessions found.
@@ -190,13 +185,6 @@ docs/
 # Memory Context
 
 # [base_ptv_fila5] recent context, 2026-04-15 10:19pm GMT+2
-<<<<<<< HEAD
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
-=======
->>>>>>> a377e9e6 (.)
 
 No previous sessions found.
 </claude-mem-context>

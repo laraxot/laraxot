@@ -8,14 +8,7 @@
 
 ## [2026-04-15] maintenance | Initial wiki setup
 - Created: llm-wiki/ directory structure
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Created: AGENTS.md (agent instructions)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Created: AGENTS.md (agent instructions)
->>>>>>> a988596b (first)
 - Created: agents.md (agent instructions)
 - Created: index.md (content catalog)
 - Created: log.md (this file)

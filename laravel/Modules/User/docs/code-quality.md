@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Code Quality Analysis - User Module"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Code Quality Analysis - User Module
 
 ## 🚨 Critical Issues Identified
@@ -335,18 +324,7 @@ public function getTableColumns(): array
 
 ## 📚 Related Documentation
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [authentication-performance-optimization-2.md](./performance/authentication-performance-optimization-3.md)
-=======
-- [AUTHENTICATION_PERFORMANCE_OPTIMIZATION.md](./performance/authentication_performance_optimization.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [AUTHENTICATION_PERFORMANCE_OPTIMIZATION.md](./performance/authentication_performance_optimization.md)
-=======
-- [authentication-performance-optimization-2.md](./performance/authentication-performance-optimization-3.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [optimization-analysis.md](./optimization-analysis.md)
 - [phpstan-compliance.md](./phpstan-compliance.md)
 

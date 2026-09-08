@@ -18,15 +18,6 @@ class NotificationLogInfolist extends XotBaseResourceInfolist
         return [
             'id' => TextEntry::make('id'),
             'name' => TextEntry::make('name'),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_at' => TextEntry::make('created_at')->dateTime()];
-=======
-            'created_at' => TextEntry::make('created_at')->dateTime(),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_at' => TextEntry::make('created_at')->dateTime()];
->>>>>>> a988596b (first)
     }
 }

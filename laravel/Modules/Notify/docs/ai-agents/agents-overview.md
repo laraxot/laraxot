@@ -25,16 +25,8 @@ Panoramica delle preferenze utente e del canone operativo del repository.
 
 ## Riferimenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Main docs index](./00-INDEX.md)
 - [Architecture index](./architecture/00-INDEX.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Main docs index](./00-INDEX.md)
-- [Architecture index](./architecture/00-INDEX.md)
->>>>>>> a988596b (first)
 - [Main docs index](./00-index.md)
 - [Architecture index](./architecture/00-index.md)
 - [Filament table vs blade component](./architecture/filament-table-vs-blade-component.md)

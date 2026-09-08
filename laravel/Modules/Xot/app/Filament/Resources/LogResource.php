@@ -24,7 +24,6 @@ class LogResource extends XotBaseResource
     /**
      * @return array<string, Component>
      */
-    #[\Override]
 
     public function getInfolistSchema(): array
     {
@@ -48,13 +47,11 @@ class LogResource extends XotBaseResource
         ];
     }
 
-    #[\Override]
     public static function getRelations(): array
     {
         return [];
     }
 
-    #[\Override]
     public static function getPages(): array
     {
         return [

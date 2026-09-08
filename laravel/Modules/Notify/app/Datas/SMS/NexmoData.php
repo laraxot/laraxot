@@ -45,16 +45,7 @@ class NexmoData extends Data
             default:
                 return [
                     'Authorization' => 'Basic '.base64_encode($this->key.':'.$this->secret),
-<<<<<<< HEAD
-<<<<<<< HEAD
                     'Content-Type' => 'application/json'];
-=======
-                    'Content-Type' => 'application/json',
-                ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    'Content-Type' => 'application/json'];
->>>>>>> a988596b (first)
         }
     }
 

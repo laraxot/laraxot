@@ -4,14 +4,7 @@ type: concept
 tags: [header, fix, analysis]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "header-fix-analysis 📸 header fixcity vs bootstrap italia - analisi e fix"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "header-fix-analysis 📸 header fixcity vs bootstrap italia - analisi e fix"
->>>>>>> a988596b (first)
 qmd: "header-fix-analysis 📸 header ptv vs bootstrap italia - analisi e fix"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]

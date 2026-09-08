@@ -817,7 +817,7 @@ class NotificationCacheManager
 }
 ```
 
-## 📈 Modern Laravel 13 + PHP 8.3 Enhancements
+## 📈 Modern Laravel 12 + PHP 8.3 Enhancements
 
 ### 1. Enhanced Type Safety
 ```php

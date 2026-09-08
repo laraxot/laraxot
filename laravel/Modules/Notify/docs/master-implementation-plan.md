@@ -4,14 +4,7 @@ type: concept
 tags: [master, implementation, plan]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "master-implementation-plan 🎯 fixcity - master implementation plan"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "master-implementation-plan 🎯 fixcity - master implementation plan"
->>>>>>> a988596b (first)
 qmd: "master-implementation-plan 🎯 ptv - master implementation plan"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -54,11 +47,4 @@ Modules:
 PHPStan Level 9: 0 errori ✅
 Test Coverage: 27 tests esistenti
 Code Quality: ✅ Eccellente
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ```

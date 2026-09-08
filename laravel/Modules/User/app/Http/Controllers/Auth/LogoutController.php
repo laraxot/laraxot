@@ -7,16 +7,7 @@ declare(strict_types=1);
  *
  * @return RedirectResponse
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> f548be94 (.)
-=======
-=======
-
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 namespace Modules\User\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;

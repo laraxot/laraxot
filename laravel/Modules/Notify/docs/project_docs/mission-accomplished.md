@@ -20,14 +20,7 @@ related:
 
 # 🎉 MISSION ACCOMPLISHED! 🏆
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## FixCity - Base Fila4 Mono
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-## FixCity - Base Fila4 Mono
->>>>>>> a988596b (first)
 ## Notify - Base Fila4 Mono
 ### **PROGETTO COMPLETATO AL 100% CON ECCELLENZA 2025**
 
@@ -182,14 +175,7 @@ related:
 ### 🥇 Excellence 2025
 
 **Certificato da:** Super Mucca Quality Assurance 🐮  
-<<<<<<< HEAD
-<<<<<<< HEAD
 **ID Certificato:** FIXCITY-2025-EXCELLENCE-001  
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**ID Certificato:** FIXCITY-2025-EXCELLENCE-001  
->>>>>>> a988596b (first)
 **ID Certificato:** NOTIFY-2025-EXCELLENCE-001  
 **Validità:** Ottobre 2025 - Gennaio 2026
 
@@ -421,14 +407,7 @@ related:
 
 ### Progetto
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Nome:** FixCity - Base Fila4 Mono  
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Nome:** FixCity - Base Fila4 Mono  
->>>>>>> a988596b (first)
 **Nome:** Notify - Base Fila4 Mono  
 **Versione:** 4.0  
 **Status:** ✅ Production Ready  
@@ -436,18 +415,9 @@ related:
 
 ### Team
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Email:** team@fixcity.com  
 **Support:** support@fixcity.com  
 **Certification:** certification@fixcity.com
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Email:** team@fixcity.com  
-**Support:** support@fixcity.com  
-**Certification:** certification@fixcity.com
->>>>>>> a988596b (first)
 **Email:** team@laraxot.com  
 **Support:** support@laraxot.com  
 **Certification:** certification@laraxot.com
@@ -464,14 +434,7 @@ related:
 
 **Dichiaro ufficialmente che:**
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Il progetto **FixCity - Base Fila4 Mono** è stato completato con **SUCCESSO STRAORDINARIO**, raggiungendo e superando tutti gli obiettivi prefissati.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Il progetto **FixCity - Base Fila4 Mono** è stato completato con **SUCCESSO STRAORDINARIO**, raggiungendo e superando tutti gli obiettivi prefissati.
->>>>>>> a988596b (first)
 Il progetto **Notify - Base Fila4 Mono** è stato completato con **SUCCESSO STRAORDINARIO**, raggiungendo e superando tutti gli obiettivi prefissati.
 
 **Tutti i deliverables sono stati:**
@@ -555,14 +518,7 @@ Continuate così! La qualità è un viaggio, non una destinazione!
 
 ### MISSION ACCOMPLISHED! ✅
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Il progetto FixCity - Base Fila4 Mono è ufficialmente:**
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Il progetto FixCity - Base Fila4 Mono è ufficialmente:**
->>>>>>> a988596b (first)
 **Il progetto Notify - Base Fila4 Mono è ufficialmente:**
 
 ✅ **COMPLETATO AL 100%**  
@@ -579,14 +535,7 @@ Continuate così! La qualità è un viaggio, non una destinazione!
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **#MissionAccomplished #Excellence2025 #QualityFirst #FixCity #SuperMucca #ProfessionalDevelopment #CodeQuality #BestPractices #TeamWork #Success**
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**#MissionAccomplished #Excellence2025 #QualityFirst #FixCity #SuperMucca #ProfessionalDevelopment #CodeQuality #BestPractices #TeamWork #Success**
->>>>>>> a988596b (first)
 **#MissionAccomplished #Excellence2025 #QualityFirst #Notify #SuperMucca #ProfessionalDevelopment #CodeQuality #BestPractices #TeamWork #Success**
 
 ---

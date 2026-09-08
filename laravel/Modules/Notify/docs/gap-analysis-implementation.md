@@ -4,14 +4,7 @@ type: concept
 tags: [gap, analysis, implementation]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "gap-analysis-implementation 🔍 fixcity - gap analysis & implementation plan"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "gap-analysis-implementation 🔍 fixcity - gap analysis & implementation plan"
->>>>>>> a988596b (first)
 qmd: "gap-analysis-implementation 🔍 ptv - gap analysis & implementation plan"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -231,14 +224,7 @@ Modules/Fixcity/
 **Files da creare/modificare**:
 ```
 lang/en/
-<<<<<<< HEAD
-<<<<<<< HEAD
 ├── fixcity.php                               [NEW]
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-├── fixcity.php                               [NEW]
->>>>>>> a988596b (first)
 ├── ptv.php                               [NEW]
 ├── user.php                                  [NEW]
 └── validation.php                            [NEW]

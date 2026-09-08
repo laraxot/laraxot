@@ -5,7 +5,11 @@ type: reference
 slug: filters
 description: 'https://www.algolia.com/blog/engineering/implementing-faceted-search-with-dynamic-faceting-with-code/ !!!'
 tags: [migrato-da-txt, xot]
+<<<<<<< HEAD
+converted_from: filters.txt
+=======
 converted_from: _filters.txt
+>>>>>>> laraxot/dev
 created: 2026-08-24
 updated: 2026-08-24
 ---

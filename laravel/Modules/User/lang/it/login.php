@@ -1,31 +1,74 @@
 <?php
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 declare(strict_types=1);
 
 return [
     'fields' => [
-        'email' => ['label' => 'Email', 'description' => 'Email', 'helper_text' => '', 'placeholder' => 'Inserisci la tua email', 'tooltip' => ''],
-        'password' => ['label' => 'Password', 'description' => 'Password', 'helper_text' => '', 'placeholder' => 'Inserisci la tua password', 'tooltip' => ''],
-        'remember' => ['label' => 'Ricordami', 'description' => 'Ricordami', 'helper_text' => '', 'placeholder' => 'Ricordami', 'tooltip' => ''],
+        'email' => [
+            'label' => 'Email',
+            'description' => 'Email',
+            'helper_text' => '',
+            'placeholder' => 'Inserisci la tua email',
+            'tooltip' => '',
+        ],
+        'password' => [
+            'label' => 'Password',
+            'description' => 'Password',
+            'helper_text' => '',
+            'placeholder' => 'Inserisci la tua password',
+            'tooltip' => '',
+        ],
+        'remember' => [
+            'label' => 'Ricordami',
+            'description' => 'Ricordami',
+            'helper_text' => '',
+            'placeholder' => 'Ricordami',
+            'tooltip' => '',
+        ],
     ],
     'actions' => [
-        'login' => ['label' => 'Accedi', 'success' => 'Accesso effettuato con successo', 'error' => 'Le credenziali inserite non sono corrette.'],
-        'register' => ['label' => 'Registrati', 'success' => 'Registrazione completata con successo', 'error' => 'Impossibile completare la registrazione'],
-        'forgot_password' => ['label' => 'Password dimenticata?', 'success' => 'Istruzioni inviate alla tua email', 'error' => 'Impossibile inviare le istruzioni'],
-        'hidePassword' => ['label' => 'Nascondi Password', 'icon' => 'hidePassword', 'tooltip' => 'Nascondi Password'],
-        'showPassword' => ['label' => 'Mostra Password', 'icon' => 'showPassword', 'tooltip' => 'Mostra Password'],
-        'authenticate' => ['label' => 'authenticate', 'icon' => 'authenticate', 'tooltip' => 'authenticate'],
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
+        'login' => [
+            'label' => 'Accedi',
+            'success' => 'Accesso effettuato con successo',
+            'error' => 'Le credenziali inserite non sono corrette.',
+        ],
+        'register' => [
+            'label' => 'Registrati',
+            'success' => 'Registrazione completata con successo',
+            'error' => 'Impossibile completare la registrazione',
+        ],
+        'forgot_password' => [
+            'label' => 'Password dimenticata?',
+            'success' => 'Istruzioni inviate alla tua email',
+            'error' => 'Impossibile inviare le istruzioni',
+        ],
+        'hidePassword' => [
+            'label' => 'Nascondi Password',
+            'icon' => 'hidePassword',
+            'tooltip' => 'Nascondi Password',
+        ],
+        'showPassword' => [
+            'label' => 'Mostra Password',
+            'icon' => 'showPassword',
+            'tooltip' => 'Mostra Password',
+        ],
     ],
-    'navigation' => ['label' => 'Missing Navigation Label', 'plural_label' => 'Missing Navigation Plural Label', 'group' => 'Missing Group', 'icon' => 'heroicon-o-puzzle-piece', 'sort' => 100],
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
     'title' => 'Accedi al tuo account',
     'subtitle_start' => 'Oppure',
     'subtitle_link' => 'crea un nuovo account',
-    'page' => ['title' => 'Benvenuto a <nome progetto>! 🍕', 'subtitle' => 'Accedi alla community di developer e pizza lovers'],
+    'page' => [
+        'title' => 'Benvenuto a <nome progetto>! 🍕',
+        'subtitle' => 'Accedi alla community di developer e pizza lovers',
+    ],
     'already_registered' => 'Non hai ancora un account?',
     'register' => 'Registrati ora',
     'no_account' => 'Non hai ancora un account?',
@@ -33,80 +76,3 @@ return [
     'forgot_password_text' => 'Hai dimenticato la tua password?',
     'reset_it' => 'Reimpostala qui',
 ];
-=======
-=======
->>>>>>> 87273113 (.)
-return array (
-  'fields' => 
-  array (
-    'email' => 
-    array (
-      'label' => 'email',
-      'description' => 'email',
-      'helper_text' => '',
-      'placeholder' => 'email',
-    ),
-    'password' => 
-    array (
-      'label' => 'password',
-      'description' => 'password',
-      'helper_text' => '',
-      'placeholder' => 'password',
-    ),
-    'remember' => 
-    array (
-      'label' => 'remember',
-      'description' => 'remember',
-      'helper_text' => '',
-      'placeholder' => 'remember',
-    ),
-  ),
-  'actions' => 
-  array (
-    'hidePassword' => 
-    array (
-      'label' => 'hidePassword',
-    ),
-    'showPassword' => 
-    array (
-      'label' => 'showPassword',
-    ),
-  ),
-);
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-declare(strict_types=1);
-
-return [
-    'fields' => [
-        'email' => ['label' => 'Email', 'description' => 'Email', 'helper_text' => '', 'placeholder' => 'Inserisci la tua email', 'tooltip' => ''],
-        'password' => ['label' => 'Password', 'description' => 'Password', 'helper_text' => '', 'placeholder' => 'Inserisci la tua password', 'tooltip' => ''],
-        'remember' => ['label' => 'Ricordami', 'description' => 'Ricordami', 'helper_text' => '', 'placeholder' => 'Ricordami', 'tooltip' => ''],
-    ],
-    'actions' => [
-        'login' => ['label' => 'Accedi', 'success' => 'Accesso effettuato con successo', 'error' => 'Le credenziali inserite non sono corrette.'],
-        'register' => ['label' => 'Registrati', 'success' => 'Registrazione completata con successo', 'error' => 'Impossibile completare la registrazione'],
-        'forgot_password' => ['label' => 'Password dimenticata?', 'success' => 'Istruzioni inviate alla tua email', 'error' => 'Impossibile inviare le istruzioni'],
-        'hidePassword' => ['label' => 'Nascondi Password', 'icon' => 'hidePassword', 'tooltip' => 'Nascondi Password'],
-        'showPassword' => ['label' => 'Mostra Password', 'icon' => 'showPassword', 'tooltip' => 'Mostra Password'],
-        'authenticate' => ['label' => 'authenticate', 'icon' => 'authenticate', 'tooltip' => 'authenticate'],
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-    ],
-    'navigation' => ['label' => 'Missing Navigation Label', 'plural_label' => 'Missing Navigation Plural Label', 'group' => 'Missing Group', 'icon' => 'heroicon-o-puzzle-piece', 'sort' => 100],
-    'label' => 'Missing Label',
-    'plural_label' => 'Missing Plural label',
-    'title' => 'Accedi al tuo account',
-    'subtitle_start' => 'Oppure',
-    'subtitle_link' => 'crea un nuovo account',
-    'page' => ['title' => 'Benvenuto a <nome progetto>! 🍕', 'subtitle' => 'Accedi alla community di developer e pizza lovers'],
-    'already_registered' => 'Non hai ancora un account?',
-    'register' => 'Registrati ora',
-    'no_account' => 'Non hai ancora un account?',
-    'register_now' => 'Registrati ora',
-    'forgot_password_text' => 'Hai dimenticato la tua password?',
-    'reset_it' => 'Reimpostala qui',
-];
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

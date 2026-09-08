@@ -61,16 +61,8 @@ related:
 
 ### 2. Code Quality Improvements ✅
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #### Fixcity Module - Ticket Model
 **File**: `laravel/Modules/Fixcity/app/Models/Ticket.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-#### Fixcity Module - Ticket Model
-**File**: `laravel/Modules/Fixcity/app/Models/Ticket.php`
->>>>>>> a988596b (first)
 #### App Module - Ticket Model
 **File**: `laravel/Modules/App/app/Models/Ticket.php`
 
@@ -90,28 +82,14 @@ public function getMediaAttribute(): \Spatie\MediaLibrary\MediaCollections\Model
 **Validation**: ✅ PHPStan Level 9 - 0 errors
 
 #### Configuration Fix
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `laravel/config/it/quaerisofficina/manager2/xra.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `laravel/config/it/quaerisofficina/manager2/xra.php`
->>>>>>> a988596b (first)
 **File**: `laravel/config/it/appofficina/manager2/xra.php`
 
 **Issue**: Parse error from invalid placeholder `\Modules\<nome progetto>\Models\Customer::class`
 
 **Fix**:
 ```php
-<<<<<<< HEAD
-<<<<<<< HEAD
 // 'team_class' => \Modules\Fixcity\Models\Customer::class,  // TODO: Configure team class
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-// 'team_class' => \Modules\Fixcity\Models\Customer::class,  // TODO: Configure team class
->>>>>>> a988596b (first)
 // 'team_class' => \Modules\App\Models\Customer::class,  // TODO: Configure team class
 'team_class' => null,
 ```
@@ -121,21 +99,12 @@ public function getMediaAttribute(): \Spatie\MediaLibrary\MediaCollections\Model
 ### 3. API Implementation ✅
 
 #### API Controller
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 **File**: `laravel/Modules/Fixcity/app/Http/Controllers/Api/TicketController.php`
 
 **Namespace Fix**: `Modules\Fixcity\App\Http\` → `Modules\Fixcity\Http\`
 **File**: `laravel/Modules/Fixcity/app/Http/Controllers/Api/TicketController.php`
 
 **Namespace Fix**: `Modules\Fixcity\App\Http\` → `Modules\Fixcity\Http\`
-<<<<<<< HEAD
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 **File**: `laravel/Modules/App/app/Http/Controllers/Api/TicketController.php`
 
 **Namespace Fix**: `Modules\App\App\Http\` → `Modules\App\Http\`
@@ -160,18 +129,9 @@ public function getMediaAttribute(): \Spatie\MediaLibrary\MediaCollections\Model
 - Error handling
 
 #### API Resource
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `laravel/Modules/Fixcity/app/Http/Resources/Api/TicketResource.php`
 
 **Namespace Fix**: `Modules\Fixcity\App\Http\` → `Modules\Fixcity\Http\`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `laravel/Modules/Fixcity/app/Http/Resources/Api/TicketResource.php`
-
-**Namespace Fix**: `Modules\Fixcity\App\Http\` → `Modules\Fixcity\Http\`
->>>>>>> a988596b (first)
 **File**: `laravel/Modules/App/app/Http/Resources/Api/TicketResource.php`
 
 **Namespace Fix**: `Modules\App\App\Http\` → `Modules\App\Http\`
@@ -200,14 +160,7 @@ public function getMediaAttribute(): \Spatie\MediaLibrary\MediaCollections\Model
 - Auto-fill profile_id from authenticated user
 
 #### API Routes
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `laravel/Modules/Fixcity/routes/api.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `laravel/Modules/Fixcity/routes/api.php`
->>>>>>> a988596b (first)
 **File**: `laravel/Modules/App/routes/api.php`
 
 **Namespace Fix**: Applied
@@ -221,14 +174,7 @@ public function getMediaAttribute(): \Spatie\MediaLibrary\MediaCollections\Model
 ### 4. Test Coverage Enhancement ✅
 
 #### Ticket Model Tests
-<<<<<<< HEAD
-<<<<<<< HEAD
 **File**: `laravel/Modules/Fixcity/tests/Unit/Models/TicketBusinessLogicTest.php`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**File**: `laravel/Modules/Fixcity/tests/Unit/Models/TicketBusinessLogicTest.php`
->>>>>>> a988596b (first)
 **File**: `laravel/Modules/App/tests/Unit/Models/TicketBusinessLogicTest.php`
 
 **Tests Added**:
@@ -299,14 +245,7 @@ it('media attribute returns empty collection when no media attached', function (
 ### Modules Validated
 | Module | Status | Errors |
 |--------|--------|--------|
-<<<<<<< HEAD
-<<<<<<< HEAD
 | Fixcity | ✅ PASS | 0 |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| Fixcity | ✅ PASS | 0 |
->>>>>>> a988596b (first)
 | App | ✅ PASS | 0 |
 | User | ✅ PASS | 0 |
 | Blog | ✅ PASS | 0 |
@@ -465,14 +404,7 @@ it('media attribute returns empty collection when no media attached', function (
 
 ## 🎉 Conclusion
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 This session has significantly advanced the FixCity project toward its goal of becoming the best civic tech platform in Italy for 2025. Key achievements include:
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-This session has significantly advanced the FixCity project toward its goal of becoming the best civic tech platform in Italy for 2025. Key achievements include:
->>>>>>> a988596b (first)
 This session has significantly advanced the Notify project toward its goal of becoming the best civic tech platform in Italy for 2025. Key achievements include:
 
 - **API layer** fully implemented and validated

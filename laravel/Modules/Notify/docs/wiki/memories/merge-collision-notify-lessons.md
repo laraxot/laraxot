@@ -15,14 +15,7 @@ related:
 | Lato conflitto | Contenuto | Scelta |
 |----------------|-----------|--------|
 | HEAD | XML SVG | **Tenere** |
-<<<<<<< HEAD
-<<<<<<< HEAD
 | Incoming | Riga `git-lfs.github.com/spec/v1` | Scartare nel working tree mono (asset inline) |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| Incoming | Riga `git-lfs.github.com/spec/v1` | Scartare nel working tree mono (asset inline) |
->>>>>>> a988596b (first)
 
 ## Filament `*Table.php`
 

@@ -41,16 +41,7 @@ class EsendexSendAction
             'message_type' => 'N',
             'returnCredits' => false,
             'recipient' => [$smsData->recipient],
-<<<<<<< HEAD
-<<<<<<< HEAD
             'sender' => config('esendex.sender')];
-=======
-            'sender' => config('esendex.sender'),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'sender' => config('esendex.sender')];
->>>>>>> a988596b (first)
 
         $curlHandle = curl_init();
         curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, false);
@@ -59,16 +50,7 @@ class EsendexSendAction
         curl_setopt($curlHandle, CURLOPT_HTTPHEADER, [
             'Content-type: application/json',
             'user_key: '.$auth[0],
-<<<<<<< HEAD
-<<<<<<< HEAD
             'Session_key: '.$auth[1]]);
-=======
-            'Session_key: '.$auth[1],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'Session_key: '.$auth[1]]);
->>>>>>> a988596b (first)
 
         curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curlHandle, CURLOPT_POST, true);

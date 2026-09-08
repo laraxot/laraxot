@@ -120,14 +120,7 @@ $attachments = [
 ## Collegamenti Correlati
 
 - [Documentazione MailPace](https://github.com/mailpace/templates)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Best Practices Email HTML](./email_html_best_practices.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Best Practices Email HTML](./email_html_best_practices.md)
->>>>>>> a988596b (first)
 - [Best Practices Email HTML](./email-html-best-practices.md)
 - [Guida Testing](./email_testing.md)
 

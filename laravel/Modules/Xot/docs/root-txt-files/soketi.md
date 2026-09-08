@@ -5,7 +5,11 @@ type: reference
 slug: soketi
 description: 'Elenco di 2 riferimenti esterni raccolti per soketi, deduplicati e convertiti da un dump di link.'
 tags: [migrato-da-txt, xot]
+<<<<<<< HEAD
+converted_from: soketi.txt
+=======
 converted_from: _soketi.txt
+>>>>>>> laraxot/dev
 created: 2026-08-24
 updated: 2026-08-24
 ---

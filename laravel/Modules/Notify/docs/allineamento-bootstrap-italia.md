@@ -106,14 +106,7 @@ Creare componenti compatibili Bootstrap Italia.
 ### Fase 3: Testing
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 curl http://fixcity.local/it/tests/homepage | grep -o '<section[^>]*>' | head -10
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-curl http://fixcity.local/it/tests/homepage | grep -o '<section[^>]*>' | head -10
->>>>>>> a988596b (first)
 curl http://ptv.local/it/tests/homepage | grep -o '<section[^>]*>' | head -10
 ```
 

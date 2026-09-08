@@ -18,14 +18,4 @@ return [
         'logo_src' => ['label' => 'logo_src'],
         'logo_width' => ['label' => 'logo_width'],
         'logo_height' => ['label' => 'logo_height'],
-<<<<<<< HEAD
-<<<<<<< HEAD
         'view_params' => ['label' => 'view_params']]];
-=======
-        'view_params' => ['label' => 'view_params'],
-    ],
-];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        'view_params' => ['label' => 'view_params']]];
->>>>>>> a988596b (first)

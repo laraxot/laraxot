@@ -1,20 +1,9 @@
 ---
 title: [Module Name]
 module: [module-slug]
-<<<<<<< HEAD
-<<<<<<< HEAD
-related: [module1, module2]
-status: production
-=======
 status: production
 related:
   - "./readme.md"
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-status: production
-related:
-  - "./readme.md"
->>>>>>> a988596b (first)
 ---
 
 # [Module Name] Module
@@ -90,13 +79,6 @@ Key settings:
 │   └── [module-slug].php
 ├── docs/
 │   ├── README.md (this file)
-<<<<<<< HEAD
-<<<<<<< HEAD
-│   ├── ARCHITECTURE.md
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 │   ├── architecture.md
 │   ├── guides/
 │   └── api/
@@ -183,13 +165,6 @@ composer test -- Modules/[ModuleName]
 ## Related Documentation
 
 ### Within Module
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [ARCHITECTURE.md](./ARCHITECTURE.md) - Design details
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 - [architecture.md](./architecture.md) - Design details
 - [Guides](./guides/) - How-to guides
 
@@ -198,13 +173,6 @@ composer test -- Modules/[ModuleName]
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Navigation: [Project Home](../../docs/INDEX.md) | [Modules](../../docs/modules/README.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Navigation: [Project Home](../../docs/INDEX.md) | [Modules](../../docs/modules/README.md)
->>>>>>> a988596b (first)
 Navigation: [Project Home](../../docs/index.md) | [Modules](../../docs/modules/README.md)
 

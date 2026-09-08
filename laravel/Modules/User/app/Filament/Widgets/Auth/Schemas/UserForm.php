@@ -29,16 +29,13 @@ use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
  */
 class UserForm extends XotBaseResourceForm
 {
-<<<<<<< HEAD
-=======
 
-
- /**
+/**
      * FO auth login — SSoT campi per `LoginWidget`.
      *
      * @return array<string, Component>
      */
-    public function getFormSchema(): array
+    public  function getFormSchema(): array
     {
         return [
             'email' => TextInput::make('email')
@@ -53,9 +50,11 @@ class UserForm extends XotBaseResourceForm
                 ->required()
                 ->autocomplete('current-password')
                 ->extraInputAttributes(['class' => 'fo-auth-input']),
+            'remember' => Checkbox::make('remember')
+                ->label(__('user::login.fields.remember.label'))
+                ->extraInputAttributes(['class' => 'fo-auth-checkbox']),
         ];
     }
->>>>>>> 87273113 (.)
     /**
      * FO auth login — SSoT campi per `LoginWidget`.
      *

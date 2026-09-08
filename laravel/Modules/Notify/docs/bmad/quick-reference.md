@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # bmad method: quick reference (fixcity)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# bmad method: quick reference (fixcity)
->>>>>>> a988596b (first)
 # bmad method: quick reference (laraxot)
 
 ## comandi rapidi

@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Risoluzione Conflitti Git - Progetto Base FixCity Fila3 Mono
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# Risoluzione Conflitti Git - Progetto Base FixCity Fila3 Mono
->>>>>>> a988596b (first)
 # Risoluzione Conflitti Git - Progetto Base Notify Fila3 Mono
 
 ## Panoramica

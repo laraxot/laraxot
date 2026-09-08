@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "AssignModuleCommand - Gestione Moduli Utente"
 type: concept
@@ -22,12 +17,6 @@ related:
   - "./readme.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # AssignModuleCommand - Gestione Moduli Utente
 
 ## Descrizione
@@ -184,18 +173,7 @@ Result: No changes made to user modules.
 ```
 
 ## Collegamenti
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Console Commands Philosophy](console-commands-philosophy.md)
-=======
-- [Console Commands Philosophy](console_commands_philosophy.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Console Commands Philosophy](console_commands_philosophy.md)
-=======
-- [Console Commands Philosophy](console-commands-philosophy.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [User Models](models/readme.md)
 - [Role Management](models/role-management.md)
 - [README.md](../readme.md)
@@ -209,13 +187,3 @@ Result: No changes made to user modules.
 - ✅ **Gestione Errori**: Controlli preventivi per utenti non trovati
 - ✅ **Documentazione**: Documentazione completa con esempi
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-*Ultimo aggiornamento: 2025-01-27*
->>>>>>> 60a2c9a9 (.)
-=======
-*Ultimo aggiornamento: 2025-01-27*
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

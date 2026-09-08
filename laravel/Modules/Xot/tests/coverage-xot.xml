@@ -9271,7 +9271,7 @@
         <line num="196" type="stmt" count="0"/>
         <line num="197" type="stmt" count="0"/>
         <line num="199" type="stmt" count="0"/>
-        <line num="202" type="method" name="getFormSchemaColumns" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="202" type="method" name="getFormColumns" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="204" type="stmt" count="0"/>
         <line num="213" type="method" name="getInfolistSchema" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="215" type="stmt" count="0"/>
@@ -10222,7 +10222,7 @@
         <line num="19" type="stmt" count="0"/>
         <line num="20" type="stmt" count="0"/>
         <line num="21" type="stmt" count="0"/>
-        <line num="24" type="method" name="getFormSchemaColumns" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="24" type="method" name="getFormColumns" visibility="public" complexity="1" crap="2" count="0"/>
         <line num="26" type="stmt" count="0"/>
         <line num="32" type="method" name="getFormSchema" visibility="public" complexity="1" crap="1" count="1"/>
         <line num="34" type="stmt" count="1"/>

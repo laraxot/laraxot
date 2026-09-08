@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Modulo User"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./user-gdpr-oupling.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Modulo User
 
 Data: 2025-04-23 19:09:56
@@ -38,18 +27,7 @@ Data: 2025-04-23 19:09:56
 - **Namespace principale**: Modules\\User
 Modules\\User\\Database\\Factories
 Modules\\User\\Database\\Seeders
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Pacchetto Composer**: laraxot/module_user_fila5
-=======
-- **Pacchetto Composer**: laraxot/module_user_fila3
->>>>>>> 60a2c9a9 (.)
-=======
-- **Pacchetto Composer**: laraxot/module_user_fila3
-=======
-- **Pacchetto Composer**: laraxot/module_user_fila5
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 Marco Sottana
 - **Dipendenze**: flowframe/laravel-trend * jenssegers/agent * laravel/passport * socialiteproviders/auth0 * spatie/laravel-personal-data-export * repositories type path url ../Xot type path url ../Tenant type path url ../UI 
 - **Totale file PHP**: 673

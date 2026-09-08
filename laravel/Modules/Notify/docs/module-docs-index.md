@@ -4,14 +4,7 @@ type: concept
 tags: [module, docs, index]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "module-docs-index master documentation index - fixcity fila5"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "module-docs-index master documentation index - fixcity fila5"
->>>>>>> a988596b (first)
 qmd: "module-docs-index master documentation index - ptv fila5"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -248,14 +241,7 @@ FixCity Fila5 Documentation
 | **Codebase Analysis** | `codebase/` | 3,170 | Technical analysis |
 
 **Cross-References:**
-<<<<<<< HEAD
-<<<<<<< HEAD
 - ← [Master Index](#master-documentation-index---fixcity-fila5) - This document
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- ← [Master Index](#master-documentation-index---fixcity-fila5) - This document
->>>>>>> a988596b (first)
 - ← [Master Index](#master-documentation-index---ptv-fila5) - This document
 - ← [Module Docs](#module-documentation-indexes) - Module documentation
 - ← [Theme Docs](#theme-documentation-indexes) - Theme documentation
@@ -407,14 +393,7 @@ Themes/Sixteen/docs/
 
 ### Project Resources
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [GitHub Repository](https://github.com/fixcity/fila5)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [GitHub Repository](https://github.com/fixcity/fila5)
->>>>>>> a988596b (first)
 - [GitHub Repository](https://github.com/ptv/fila5)
 - [Laravel Docs](https://laravel.com/docs)
 - [Filament Docs](https://filamentphp.com/docs)
@@ -465,14 +444,7 @@ Main content here.
 
 ### Finding Documentation
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. Start at [Master Index](#master-documentation-index---fixcity-fila5)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. Start at [Master Index](#master-documentation-index---fixcity-fila5)
->>>>>>> a988596b (first)
 1. Start at [Master Index](#master-documentation-index---ptv-fila5)
 2. Navigate to module/theme category
 3. Use search (Ctrl+F) for keywords

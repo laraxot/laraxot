@@ -47,11 +47,7 @@ SaluteOra utilizza il package `spatie/laravel-queueable-action` per le Actions, 
 namespace Modules\User\Actions\User;
 
 use Spatie\QueueableAction\QueueableAction;
-<<<<<<< HEAD
-use Modules\Xot\Contracts\UserContract;
-=======
 use Modules\User\Models\User;
->>>>>>> f548be94 (.)
 
 class DeleteUserAction
 {

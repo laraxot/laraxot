@@ -134,14 +134,7 @@ comply with psr-4 autoloading standard
 
 ```
 5a34cd9c (HEAD -> dev) Fix GitHub Actions issues
-<<<<<<< HEAD
-<<<<<<< HEAD
 236c2218 Update AGENTS.md and add git commit/push rules
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-236c2218 Update AGENTS.md and add git commit/push rules
->>>>>>> a988596b (first)
 236c2218 Update agents.md and add git commit/push rules
 55d23201 Add task complete report - all files pushed
 99974315 Add CRITICAL AI rules for git commit/push
@@ -179,14 +172,7 @@ ae920e7c Add AI lessons learned and GitHub Action setup guide
 
 ```bash
 # Option 1: Via GitHub UI
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. Go to: https://github.com/laraxot/base_fixcity_fila5/discussions
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. Go to: https://github.com/laraxot/base_fixcity_fila5/discussions
->>>>>>> a988596b (first)
 1. Go to: https://github.com/laraxot/platform/discussions
 2. Click "New discussion"
 3. Copy content from docs/github/DISCUSSION_AI_WORK_summary.md
@@ -266,14 +252,7 @@ nothing to commit, working tree clean
 ```bash
 $ git log -n 5 --oneline
 5a34cd9c (HEAD -> dev, origin/dev) Fix GitHub Actions issues
-<<<<<<< HEAD
-<<<<<<< HEAD
 236c2218 Update AGENTS.md and add git commit/push rules
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-236c2218 Update AGENTS.md and add git commit/push rules
->>>>>>> a988596b (first)
 236c2218 Update agents.md and add git commit/push rules
 55d23201 Add task complete report - all files pushed
 99974315 Add CRITICAL AI rules for git commit/push
@@ -283,14 +262,7 @@ ae920e7c Add AI lessons learned and GitHub Action setup guide
 ### Files on GitHub
 
 All files are pushed and accessible on:
-<<<<<<< HEAD
-<<<<<<< HEAD
 https://github.com/laraxot/base_fixcity_fila5/commits/dev
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-https://github.com/laraxot/base_fixcity_fila5/commits/dev
->>>>>>> a988596b (first)
 https://github.com/laraxot/platform/commits/dev
 
 ---

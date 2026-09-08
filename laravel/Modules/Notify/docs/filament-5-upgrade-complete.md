@@ -114,14 +114,7 @@ composer show livewire/livewire
 ### 1. Clear Cache
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 cd /var/www/_bases/base_fixcity_fila5/laravel
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-cd /var/www/_bases/base_fixcity_fila5/laravel
->>>>>>> a988596b (first)
 cd /var/www/_bases/base_ptv_fila5/laravel
 php artisan config:clear
 php artisan cache:clear
@@ -133,23 +126,10 @@ php artisan route:clear
 
 ```bash
 # Test homepage
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 http://fixcity.local/it/tests/homepage
 
 # Test Filament admin
 http://fixcity.local/admin
-<<<<<<< HEAD
-=======
-http://ptv.local/it/tests/homepage
-
-# Test Filament admin
-http://ptv.local/admin
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ```
 
 ### 3. Check for Breaking Changes

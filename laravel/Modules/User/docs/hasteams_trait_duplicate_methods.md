@@ -72,11 +72,6 @@ Nel trait `HasTeams` sono presenti diversi metodi con lo stesso nome ma implemen
 - [ ] Verificare la compatibilità con i moduli che usano il trait
 
 ## Collegamenti correlati
-<<<<<<< HEAD
-- [Indice documentazione User](./index.md)
-
-=======
->>>>>>> f548be94 (.)
 - [Indice documentazione User](./INDEX.md)
 - [Modello User](./Models/User.md)
 - [Best practices trait](./best-practices-traits.md)

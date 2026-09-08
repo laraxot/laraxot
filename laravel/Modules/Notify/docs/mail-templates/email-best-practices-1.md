@@ -35,14 +35,7 @@ Questo documento descrive le best practices per la creazione e gestione di email
 
 ### 2. Branding Coerente
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Elementi visuali**: Utilizzare logo, colori e font Quaeris
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Elementi visuali**: Utilizzare logo, colori e font Quaeris
->>>>>>> a988596b (first)
 - **Elementi visuali**: Utilizzare logo, colori e font App
 - **Voce e tono**: Mantenere un tono professionale ma amichevole
 - **Firma coerente**: Includere sempre lo stesso formato di firma e disclaimer
@@ -89,14 +82,7 @@ I template di [mailpace/templates](https://github.com/mailpace/templates) integr
 
 ### Directory `mail-layouts`
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 La directory `/var/www/html/Quaeris/laravel/Modules/Notify/resources/mail-layouts/` contiene:
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-La directory `/var/www/html/Quaeris/laravel/Modules/Notify/resources/mail-layouts/` contiene:
->>>>>>> a988596b (first)
 La directory `/var/www/_bases/base_ptvx_fila5/laravel/Modules/Notify/resources/mail-layouts/` contiene:
 
 - **default.html**: Template base per la maggior parte delle comunicazioni
@@ -106,14 +92,7 @@ La directory `/var/www/_bases/base_ptvx_fila5/laravel/Modules/Notify/resources/m
 
 ### Integrazione con Spatie Mail Templates
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Seguendo le regole di progetto Quaeris, ricordare di:
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Seguendo le regole di progetto Quaeris, ricordare di:
->>>>>>> a988596b (first)
 Seguendo le regole di progetto App, ricordare di:
 
 - NON creare controller personalizzati per gestire l'invio di email

@@ -26,7 +26,11 @@ protected static ?string $navigationIcon = 'heroicon-o-user';
 ### 2. Mandatory Implementation
 Every concrete resource must implement:
 - `protected static ?string $model`
+<<<<<<< HEAD
+- `public static function getFormSchema(): array`
+=======
 - `public function getFormSchema(): array`
+>>>>>>> laraxot/dev
 - `public static function getPages(): array`
 
 ### 3. Separation of Concerns

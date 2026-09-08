@@ -14,16 +14,7 @@ declare(strict_types=1);
 {{--
 <button  @class([
                 'flex flex-shrink-0 w-10 h-10 rounded-full bg-gray-200 items-center justify-center',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'dark:bg-gray-900' => config('filament.dark_mode')]) aria-label="{{ __('filament::layout.buttons.user_menu.label') }}">
-=======
-                'dark:bg-gray-900' => config('filament.dark_mode'),
-            ]) aria-label="{{ __('filament::layout.buttons.user_menu.label') }}">
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'dark:bg-gray-900' => config('filament.dark_mode')]) aria-label="{{ __('filament::layout.buttons.user_menu.label') }}">
->>>>>>> a988596b (first)
                 @svg('heroicon-o-bell', 'w-4 h-4')
         <span class=" p-1 rounded text-blue-600 text-xs ml-2">{{ $unreadNotificationsCount }}</span>
 </button>

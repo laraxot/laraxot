@@ -4,14 +4,7 @@ type: concept
 tags: [final, summary]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "final-summary 📊 fixcity - riepilogo finale completamento"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "final-summary 📊 fixcity - riepilogo finale completamento"
->>>>>>> a988596b (first)
 qmd: "final-summary 📊 ptv - riepilogo finale completamento"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -128,14 +121,7 @@ di eccellenza 2025 per la gestione delle segnalazioni urbane in Italia.
 ## 🏗️ STRUTTURA DOCUMENTAZIONE FINALE
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 base_fixcity_fila5_mono/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-base_fixcity_fila5_mono/
->>>>>>> a988596b (first)
 base_ptv_fila5_mono/
 │
 ├── 📊 ROOT LEVEL (11 docs strategici)
@@ -308,27 +294,13 @@ base_ptv_fila5_mono/
 ### Per Sviluppatori
 - **Quick Start**: [quick-start.md](./quick-start.md)
 - **Documentation Index**: [documentation-index.md](./documentation-index.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Slack**: #fixcity-dev
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Slack**: #fixcity-dev
->>>>>>> a988596b (first)
 - **Slack**: #ptv-dev
 
 ### Per Utenti
 - **User Guide**: [USER_GUIDE.md](./laravel/Modules/Fixcity/docs/USER_GUIDE.md)
 - **Admin Guide**: [ADMIN_GUIDE.md](./laravel/Modules/Fixcity/docs/ADMIN_GUIDE.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Support**: support@fixcity.it
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Support**: support@fixcity.it
->>>>>>> a988596b (first)
 - **Support**: support@ptv.it
 
 ### Per API Developers
@@ -431,18 +403,9 @@ php artisan test --coverage
 ## 📞 CONTATTI
 
 **Team FixCity**
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Email: dev@fixcity.it
 - Slack: #fixcity-dev
 - GitHub: github.com/laraxot/fixcity
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Email: dev@fixcity.it
-- Slack: #fixcity-dev
-- GitHub: github.com/laraxot/fixcity
->>>>>>> a988596b (first)
 - Email: dev@ptv.it
 - Slack: #ptv-dev
 - GitHub: github.com/laraxot/ptv

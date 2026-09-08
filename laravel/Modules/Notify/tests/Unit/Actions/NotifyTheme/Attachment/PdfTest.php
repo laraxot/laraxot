@@ -7,36 +7,19 @@ namespace Modules\Notify\Tests\Unit\Actions\NotifyTheme\Attachment;
 use Modules\Notify\Actions\NotifyTheme\Attachment\Pdf;
 use Modules\Notify\Datas\AttachmentData;
 use Modules\Notify\Tests\TestCase;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
-<<<<<<< HEAD
-=======
-use PHPUnit\Framework\Assert;
-use Spatie\QueueableAction\QueueableAction;
-use Modules\Xot\Tests\XotBasePest;
-
-use function Safe\class_uses;
-
-uses(TestCase::class)->group('notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 describe('NotifyTheme\Attachment\Pdf', function () {
     it('can be instantiated', function () {
         Assert::assertTrue(class_exists(Pdf::class));
     });
 
     it('uses QueueableAction trait', function () {
-        $traits = class_uses(Pdf::class);
+        $traits = class_uses(AttachmentData::class);
         Assert::assertArrayHasKey(QueueableAction::class, $traits);
     });
 

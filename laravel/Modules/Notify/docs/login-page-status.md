@@ -274,14 +274,7 @@ FAIL → $this->addError() + rimane su form
 ### 1. Avviare il Server
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 cd /var/www/_bases/base_fixcity_fila5_mono/laravel
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-cd /var/www/_bases/base_fixcity_fila5_mono/laravel
->>>>>>> a988596b (first)
 cd /var/www/_bases/base_ptv_fila5_mono/laravel
 php artisan serve --host=127.0.0.1 --port=8000
 ```

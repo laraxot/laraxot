@@ -12,19 +12,8 @@ use Modules\Xot\Contracts\UserContract;
  */
 interface CreatesTeams
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     /**
      * @param array<string, mixed> $input
      */
-=======
->>>>>>> f548be94 (.)
-=======
-=======
-    /**
-     * @param array<string, mixed> $input
-     */
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
     public function create(UserContract $userContract, array $input): TeamContract;
 }

@@ -31,10 +31,6 @@ class SendNotificationToRecipientAction
      * @param  string  $recipient  Email destinatario
      * @param  IlluminateNotification  $notification  Notification da inviare
      * @param  string|null  $locale  Locale (default: it)
-<<<<<<< HEAD
-=======
-     *
->>>>>>> a988596b (first)
      * @return bool True se invio riuscito
      *
      * @throws Exception Se invio fallisce

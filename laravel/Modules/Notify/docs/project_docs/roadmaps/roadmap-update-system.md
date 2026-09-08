@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # 🔄 SISTEMA AGGIORNAMENTO ROADMAP - FIXCITY PLATFORM
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# 🔄 SISTEMA AGGIORNAMENTO ROADMAP - FIXCITY PLATFORM
->>>>>>> a988596b (first)
 # 🔄 SISTEMA AGGIORNAMENTO ROADMAP - NOTIFY PLATFORM
 
 **Versione**: 1.0  
@@ -28,14 +21,7 @@ project_docs/roadmaps/
 ├── roadmap-quality.md            # Roadmap qualità
 ├── roadmap-update-system.md      # Questo file
 └── modules/                      # Roadmap specifiche moduli
-<<<<<<< HEAD
-<<<<<<< HEAD
     ├── fixcity-roadmap.md
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    ├── fixcity-roadmap.md
->>>>>>> a988596b (first)
     ├── laraxot-roadmap.md
     ├── user-roadmap.md
     ├── xot-roadmap.md
@@ -459,14 +445,7 @@ class ProgressReportGenerator
 
 ### Q2 2025
 - [ ] AI-powered insights
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Predictive analytics
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [ ] Predictive analytics
->>>>>>> a988596b (first)
 - [ ] Forecasting analytics
 - [ ] Automated recommendations
 - [ ] Advanced reporting
@@ -474,28 +453,14 @@ class ProgressReportGenerator
 ### Q3 2025
 - [ ] Machine learning integration
 - [ ] Automated timeline optimization
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Risk prediction
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [ ] Risk prediction
->>>>>>> a988596b (first)
 - [ ] Risk forecast
 - [ ] Resource optimization
 
 ### Q4 2025
 - [ ] Full automation
 - [ ] Zero-touch updates
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Predictive planning
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [ ] Predictive planning
->>>>>>> a988596b (first)
 - [ ] Forecasting planning
 - [ ] Self-optimizing system
 
@@ -508,12 +473,5 @@ class ProgressReportGenerator
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 *Questo sistema garantisce l'aggiornamento costante e coerente di tutte le roadmap del progetto FixCity.*
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-*Questo sistema garantisce l'aggiornamento costante e coerente di tutte le roadmap del progetto FixCity.*
->>>>>>> a988596b (first)
 *Questo sistema garantisce l'aggiornamento costante e coerente di tutte le roadmap del progetto Notify.*

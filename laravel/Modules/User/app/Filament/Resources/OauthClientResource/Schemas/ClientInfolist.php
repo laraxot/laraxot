@@ -8,21 +8,17 @@ use Filament\Infolists\Components\IconEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Component;
 use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceInfolist;
-use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
+use Filament\Schemas\Components\Section;
 
 class ClientInfolist extends XotBaseResourceInfolist
 {
     /**
      * @return array<string, Component>
      */
-<<<<<<< HEAD
-    public static function getInfolistSchema(): array
-=======
     public function getInfolistSchema(): array
->>>>>>> 87273113 (.)
     {
         return [
-            'oauth_info' => XotBaseSection::make('OAuth Client Information')
+            'oauth_info' => Section::make('OAuth Client Information')
                 ->schema([
                     'name' => TextEntry::make('name'),
                     'user' => TextEntry::make('user.name'),

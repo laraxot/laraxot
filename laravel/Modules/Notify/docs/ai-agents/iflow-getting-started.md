@@ -52,14 +52,7 @@ Confronta con `https://laravelpizza.com` e trova le differenze da colmare.
 ### Regole Fondamentali
 
 - **MAI** creare file .md in posizioni sbagliate
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **MAI** usare maiuscole nei nomi .md (eccetto README.md e CHANGELOG.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **MAI** usare maiuscole nei nomi .md (eccetto README.md e CHANGELOG.md)
->>>>>>> a988596b (first)
 - **MAI** usare maiuscole nei nomi .md (eccetto README.md e changelog.md)
 - **SEMPRE** usare PHPStan Level 10 dopo aver modificato un file
 - **SEMPRE** eseguire PHPMD e PHPInsights

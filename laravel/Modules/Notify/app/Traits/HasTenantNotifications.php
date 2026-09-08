@@ -16,26 +16,11 @@ use Webmozart\Assert\Assert;
  *
  * Fornisce funzionalità per la gestione delle notifiche per tenant.
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
  * @phpstan-ignore trait.unused (Trait composable: consumer in app/ futuri; coverage via NotifyTenantDummyModel in tests/Unit/Traits/)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
- * @phpstan-ignore trait.unused (Trait composable: consumer in app/ futuri; coverage via NotifyTenantDummyModel in tests/Unit/Traits/)
->>>>>>> a988596b (first)
  */
 trait HasTenantNotifications
 {
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-     * Ottiene tutte le notifiche per il tenant corrente.
-     *
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
      * @return MorphMany<NotificationLog, $this>
      */
     public function notifications(): MorphMany
@@ -44,14 +29,6 @@ trait HasTenantNotifications
     }
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-     * Ottiene le notifiche non lette per il tenant corrente.
-     *
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
      * @return MorphMany<NotificationLog, $this>
      */
     public function unreadNotifications(): MorphMany
@@ -60,14 +37,6 @@ trait HasTenantNotifications
     }
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-     * Ottiene le notifiche lette per il tenant corrente.
-     *
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
      * @return MorphMany<NotificationLog, $this>
      */
     public function readNotifications(): MorphMany
@@ -76,14 +45,6 @@ trait HasTenantNotifications
     }
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-     * Scope per filtrare le notifiche per tenant.
-     *
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
      * @param  Builder<static>  $query
      * @return Builder<static>
      */
@@ -145,15 +106,7 @@ trait HasTenantNotifications
     /**
      * Relazione morph verso NotificationLog filtrata per tenant corrente.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @return MorphMany<NotificationLog, static>
-=======
-     * @return MorphMany<NotificationLog, $this>
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-     * @return MorphMany<NotificationLog, static>
->>>>>>> a988596b (first)
      */
     protected function tenantNotificationLogs(): MorphMany
     {

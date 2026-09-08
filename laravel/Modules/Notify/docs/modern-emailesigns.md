@@ -356,18 +356,6 @@ return [
 ## Riferimenti
 
 - [Responsive Email Templates](./responsive_email_templates.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Email Best Practices](./mail-templates/email_best_practices.md)
 - [HTML Email Compatibility](./mail-templates/html_email_compatibility.md)
 - [Spatie Email Integration](./spatie_email_usage_guide.md)
-=======
-- [Email Best Practices](./mail-templates/email-best-practices.md)
-- [HTML Email Compatibility](./mail-templates/html_email_compatibility.md)
-- [Spatie Email Integration](./spatie-email-usage-guide.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Email Best Practices](./mail-templates/email_best_practices.md)
-- [HTML Email Compatibility](./mail-templates/html_email_compatibility.md)
-- [Spatie Email Integration](./spatie_email_usage_guide.md)
->>>>>>> a988596b (first)

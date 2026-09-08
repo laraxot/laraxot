@@ -6,22 +6,41 @@ return [
     'navigation' => [
         'name' => 'extra',
         'plural' => 'estras',
-        'group' => ['name' => 'Admin'],
+        'group' => [
+            'name' => 'Admin',
+        ],
     ],
     'pages' => [
         'health_check_results' => [
-            'buttons' => ['refresh' => 'Refresh'],
+            'buttons' => [
+                'refresh' => 'Refresh',
+            ],
             'heading' => 'Application Health',
-            'navigation' => ['group' => 'Settings', 'label' => 'Application Health'],
-            'notifications' => ['check_results' => 'Check results from'],
+            'navigation' => [
+                'group' => 'Settings',
+                'label' => 'Application Health',
+            ],
+            'notifications' => [
+                'check_results' => 'Check results from',
+            ],
         ],
     ],
     'label' => 'Extra',
     'plural_label' => 'Extra (Plurale)',
     'fields' => [
         'id' => ['label' => 'Identificativo', 'tooltip' => 'Identificativo univoco del record', 'helper_text' => '', 'description' => '', 'placeholder' => 'id'],
-        'created_at' => ['label' => 'Data Creazione', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'updated_at' => ['label' => 'Ultima Modifica', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
+        'created_at' => [
+            'label' => 'Data Creazione',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'updated_at' => [
+            'label' => 'Ultima Modifica',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
         'model_type' => ['label' => 'model_type'],
         'model_id' => ['label' => 'model_id'],
         'extra_attributes' => ['label' => 'extra_attributes'],

@@ -33,14 +33,7 @@ php laravel/artisan boost:add-skill jeffallan/claude-skills --skill laravel-spec
 The command fails with:
 ```
 PHP Fatal error: Uncaught Error: Class "Illuminate\Foundation\Application" not found
-<<<<<<< HEAD
-<<<<<<< HEAD
 in /var/www/_bases/base_fixcity_fila5/laravel/app/Application.php:9
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-in /var/www/_bases/base_fixcity_fila5/laravel/app/Application.php:9
->>>>>>> a988596b (first)
 in /var/www/_bases/base_ptv_fila5/laravel/app/Application.php:9
 ```
 
@@ -72,7 +65,7 @@ Because `laravel/framework` is not installed, the `Illuminate\Foundation\Applica
 ## Architecture Context
 
 This project uses:
-- **Laravel 13.x** framework
+- **Laravel 12.x** framework
 - **nwidart/laravel-modules** for modular architecture
 - **Filament 5.x** for admin panels
 - **Laravel Boost** for AI skill management
@@ -93,18 +86,9 @@ Retry the `boost:add-skill` command.
 
 ## Files Affected
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. `/var/www/_bases/base_fixcity_fila5/laravel/composer.json` - **NEEDS FIX**
 2. `/var/www/_bases/base_fixcity_fila5/laravel/app/Application.php` - depends on Illuminate
 3. `/var/www/_bases/base_fixcity_fila5/laravel/bootstrap/app.php` - bootstrap process
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. `/var/www/_bases/base_fixcity_fila5/laravel/composer.json` - **NEEDS FIX**
-2. `/var/www/_bases/base_fixcity_fila5/laravel/app/Application.php` - depends on Illuminate
-3. `/var/www/_bases/base_fixcity_fila5/laravel/bootstrap/app.php` - bootstrap process
->>>>>>> a988596b (first)
 1. `/var/www/_bases/base_ptv_fila5/laravel/composer.json` - **NEEDS FIX**
 2. `/var/www/_bases/base_ptv_fila5/laravel/app/Application.php` - depends on Illuminate
 3. `/var/www/_bases/base_ptv_fila5/laravel/bootstrap/app.php` - bootstrap process

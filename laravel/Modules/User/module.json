@@ -6,8 +6,6 @@
     "priority": 0,
     "providers": [
         "Modules\\User\\Providers\\UserServiceProvider",
-<<<<<<< HEAD
-<<<<<<< HEAD
         "Modules\\User\\Providers\\Filament\\AdminPanelProvider",
         "Modules\\User\\Providers\\PassportServiceProvider",
         "Modules\\User\\Providers\\SocialiteServiceProvider"
@@ -15,27 +13,6 @@
     "migration": {
         "seeds": [
             "Modules\\User\\Database\\Seeders\\RoleSeeder"
-=======
-=======
->>>>>>> 87273113 (.)
-        "Modules\\User\\Providers\\Filament\\AdminPanelProvider"
-    ],
-    "migration": {
-        "seeds": [
-            "Modules\\User\\Database\\Seeders\\RolesSeeder"
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-        "Modules\\User\\Providers\\Filament\\AdminPanelProvider",
-        "Modules\\User\\Providers\\PassportServiceProvider",
-        "Modules\\User\\Providers\\SocialiteServiceProvider"
-    ],
-    "migration": {
-        "seeds": [
-            "Modules\\User\\Database\\Seeders\\RoleSeeder"
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
         ]
     },
     "files": []

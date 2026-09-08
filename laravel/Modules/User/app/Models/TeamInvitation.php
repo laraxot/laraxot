@@ -5,65 +5,17 @@ declare(strict_types=1);
 namespace Modules\User\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Modules\Xot\Contracts\ProfileContract;
->>>>>>> f548be94 (.)
-=======
-use Modules\Xot\Contracts\ProfileContract;
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 use Modules\User\Contracts\TeamContract;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
-=======
-use Modules\User\Database\Factories\TeamInvitationFactory;
->>>>>>> f548be94 (.)
-=======
-use Modules\User\Database\Factories\TeamInvitationFactory;
-=======
-use Modules\Xot\Contracts\ProfileContract;
-use Modules\Xot\Contracts\UserContract;
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 use Modules\Xot\Datas\XotData;
 
 /**
  * Modules\User\Models\TeamInvitation.
  *
-<<<<<<< HEAD
-<<<<<<< HEAD
- * @property int               $id
- * @property string|null       $team_id
- * @property string            $email
- * @property string|null       $role
- * @property Carbon|null       $created_at
- * @property Carbon|null       $updated_at
- * @property Team|null         $team
- * @property TeamContract|null $team
-=======
-=======
->>>>>>> 87273113 (.)
- * @property int $id
- * @property string|null $team_id
- * @property string $email
- * @property string|null $role
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property Team|null $team
- * @property TeamContract|null $team
- * @method static TeamInvitationFactory factory($count = null, $state = [])
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
  * @property int               $id
  * @property string|null       $team_id
  * @property string            $email
@@ -73,8 +25,6 @@ use Modules\Xot\Datas\XotData;
  * @property Team|null         $team
  * @property TeamContract|null $team
  *
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
  * @method static Builder|TeamInvitation newModelQuery()
  * @method static Builder|TeamInvitation newQuery()
  * @method static Builder|TeamInvitation query()
@@ -84,50 +34,18 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder|TeamInvitation whereRole($value)
  * @method static Builder|TeamInvitation whereTeamId($value)
  * @method static Builder|TeamInvitation whereUpdatedAt($value)
-<<<<<<< HEAD
-<<<<<<< HEAD
- * @property string      $uuid
-=======
- * @property string $uuid
->>>>>>> f548be94 (.)
-=======
- * @property string $uuid
-=======
  *
  * @property string      $uuid
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
  * @property string|null $updated_by
  * @property string|null $created_by
  * @property Carbon|null $deleted_at
  * @property string|null $deleted_by
-<<<<<<< HEAD
-=======
  *
->>>>>>> 2024e2e7 (.)
  * @method static Builder|TeamInvitation whereCreatedBy($value)
  * @method static Builder|TeamInvitation whereDeletedAt($value)
  * @method static Builder|TeamInvitation whereDeletedBy($value)
  * @method static Builder|TeamInvitation whereUpdatedBy($value)
  * @method static Builder|TeamInvitation whereUuid($value)
-<<<<<<< HEAD
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
-<<<<<<< HEAD
- * @property ProfileContract|null $deleter
- * @property Carbon|null          $accepted_at
- * @property Carbon|null          $declined_at
- * @property string|null          $user_id
- * @method static \Modules\User\Database\Factories\TeamInvitationFactory factory($count = null, $state = [])
- * @method static Builder<static>|TeamInvitation                         whereAcceptedAt($value)
- * @method static Builder<static>|TeamInvitation                         whereDeclinedAt($value)
- * @method static Builder<static>|TeamInvitation                         whereUserId($value)
-=======
- * @mixin IdeHelperTeamInvitation
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
@@ -141,30 +59,16 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder<static>|TeamInvitation                         whereDeclinedAt($value)
  * @method static Builder<static>|TeamInvitation                         whereUserId($value)
  *
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
  * @mixin \Eloquent
  */
 class TeamInvitation extends BaseModel
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    /** @var string */
->>>>>>> f548be94 (.)
-=======
-    /** @var string */
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
     protected $connection = 'user';
 
     /** @var list<string> */
     protected $fillable = [
         'email',
         'role',
-<<<<<<< HEAD
-<<<<<<< HEAD
         'accepted_at',
         'declined_at',
         'user_id',
@@ -172,28 +76,6 @@ class TeamInvitation extends BaseModel
 
     /**
      * @return BelongsTo<Model, $this>
-=======
-=======
->>>>>>> 87273113 (.)
-    ];
-
-    /**
-     * Get the team that the invitation belongs to.
-     *  BelongsTo<the related model, the current model>
-     * -return BelongsTo<TeamContract, TeamInvitation> No TeamContract ..
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-        'accepted_at',
-        'declined_at',
-        'user_id',
-    ];
-
-    /**
-     * @return BelongsTo<Model, $this>
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
      */
     public function team(): BelongsTo
     {
@@ -203,11 +85,6 @@ class TeamInvitation extends BaseModel
 
         return $this->belongsTo($team_class);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 
     /**
      * Accept the invitation.
@@ -241,10 +118,4 @@ class TeamInvitation extends BaseModel
             'declined_at' => 'datetime',
         ];
     }
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 }

@@ -52,41 +52,17 @@ class SendPushToPlatformAction
                 'body' => $notification->body,
                 'icon' => $notification->icon ?? '/icons/icon-192x192.png',
                 'sound' => $notification->sound ?? 'default',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
                 'badge' => $notification->badge ?? 1],
             'data' => $data,
             'priority' => $notification->priority ?? 'high',
             'ttl' => $notification->ttl ?? 3600];
-<<<<<<< HEAD
-=======
-                'badge' => $notification->badge ?? 1,
-            ],
-            'data' => $data,
-            'priority' => $notification->priority ?? 'high',
-            'ttl' => $notification->ttl ?? 3600,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
         $serverKey = SafeStringCastAction::cast(config('notify.fcm.server_key'));
         $url = SafeStringCastAction::cast(config('notify.fcm.url', 'https://fcm.googleapis.com/fcm/send'));
 
         $response = Http::withHeaders([
             'Authorization' => 'key='.$serverKey,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'Content-Type' => 'application/json'])->post($url, $payload);
-=======
-            'Content-Type' => 'application/json',
-        ])->post($url, $payload);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'Content-Type' => 'application/json'])->post($url, $payload);
->>>>>>> a988596b (first)
 
         if ($response instanceof PromiseInterface) {
             $response = $response->wait();
@@ -102,16 +78,7 @@ class SendPushToPlatformAction
             return [
                 'success' => true,
                 'message_id' => is_array($responseData) && isset($responseData['message_id']) ? $responseData['message_id'] : null,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'response' => $responseData];
-=======
-                'response' => $responseData,
-            ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'response' => $responseData];
->>>>>>> a988596b (first)
         }
 
         throw new Exception('FCM request failed: '.$response->body());
@@ -125,16 +92,7 @@ class SendPushToPlatformAction
         return [
             'success' => true,
             'message' => 'APNS notification sent (simulated)',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'platform' => 'apns'];
-=======
-            'platform' => 'apns',
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'platform' => 'apns'];
->>>>>>> a988596b (first)
     }
 
     /**
@@ -151,29 +109,11 @@ class SendPushToPlatformAction
             'data' => $data,
             'actions' => $notification->actions ?? [],
             'requireInteraction' => $notification->requireInteraction ?? false,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'silent' => $notification->silent ?? false]);
-=======
-            'silent' => $notification->silent ?? false,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'silent' => $notification->silent ?? false]);
->>>>>>> a988596b (first)
 
         return [
             'success' => true,
             'message' => 'Web Push notification sent (simulated)',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'platform' => 'webpush'];
-=======
-            'platform' => 'webpush',
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'platform' => 'webpush'];
->>>>>>> a988596b (first)
     }
 }

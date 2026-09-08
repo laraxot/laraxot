@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "PHPStan Fixes and Architectural Decisions for Passport/Socialite Configuration"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # PHPStan Fixes and Architectural Decisions for Passport/Socialite Configuration
 
 This document outlines the rationale behind the architectural decision to move from a trait-based configuration approach to dedicated Service Providers for Laravel Passport and Socialite within the `Modules/User` module. It also details the PHPStan issues encountered during this process and their resolutions.

@@ -28,15 +28,6 @@ class ContactInfolist extends XotBaseResourceInfolist
                 ->dateTime(),
             'updated_by' => TextEntry::make('updated_by'),
             'created_by' => TextEntry::make('created_by'),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'user_id' => TextEntry::make('user_id')];
-=======
-            'user_id' => TextEntry::make('user_id'),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'user_id' => TextEntry::make('user_id')];
->>>>>>> a988596b (first)
     }
 }

@@ -49,14 +49,7 @@ it('creates user successfully', function () {
 ## 🔗 Link
 
 **Di ritorno:**
-<<<<<<< HEAD
-<<<<<<< HEAD
 - → [AGENTS.md - Testing Patterns](../../AGENTS.md#testing-patterns)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- → [AGENTS.md - Testing Patterns](../../AGENTS.md#testing-patterns)
->>>>>>> a988596b (first)
 - → [agents.md - Testing Patterns](../../agents.md#testing-patterns)
 - → [AGENT_MEMORY.md - Testing Patterns](../../AGENT_MEMORY.md#-testing-validation-patterns)
 - → [commands.md](commands.md)

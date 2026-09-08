@@ -43,7 +43,11 @@ Modules/IndennitaResponsabilita/app/Filament/Resources/MessageResource/Schemas/
 // Modules/Ptv/.../Schemas/BaseMessageForm.php
 abstract class BaseMessageForm extends XotBaseResourceForm
 {
+<<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             'type' => Select::make('type')

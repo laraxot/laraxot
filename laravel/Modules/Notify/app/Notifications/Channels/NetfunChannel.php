@@ -19,14 +19,7 @@ class NetfunChannel
 
         $action = app(SendSmsFactorSMSAction::class);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        /** @var array{status_code: int, status_txt: string} $data */
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
         /** @var array<string, mixed> $data */
->>>>>>> a988596b (first)
         $data = $action->execute($smsData);
 
         $notifiable->increase('sms', $data);

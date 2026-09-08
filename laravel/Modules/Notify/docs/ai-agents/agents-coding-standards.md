@@ -68,16 +68,8 @@ use Modules\Blog\Http\Controllers\BlogController;
 
 ```php
 // Only routing and dispatch
-<<<<<<< HEAD
-<<<<<<< HEAD
 if ($container0 === 'predicts') {
     @include('predict::pages.predict-detail')
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-if ($container0 === 'predicts') {
-    @include('predict::pages.predict-detail')
->>>>>>> a988596b (first)
 if ($container0 === 'forecasts') {
     @include('forecast::pages.forecast-detail')
 } elseif ($container0 === 'events') {
@@ -91,18 +83,9 @@ if ($container0 === 'forecasts') {
 
 ```php
 // ❌ NEVER do this in the generic blade
-<<<<<<< HEAD
-<<<<<<< HEAD
 private function getMarketData() { ... }  // Predict-specific
 private function buildOrderBook() { ... } // Predict-specific
 private function calculateQualityScore() { ... } // Predict-specific
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-private function getMarketData() { ... }  // Predict-specific
-private function buildOrderBook() { ... } // Predict-specific
-private function calculateQualityScore() { ... } // Predict-specific
->>>>>>> a988596b (first)
 private function getMarketData() { ... }  // Forecast-specific
 private function buildOrderBook() { ... } // Forecast-specific
 private function calculateQualityScore() { ... } // Forecast-specific
@@ -184,14 +167,7 @@ enum Status: string implements HasLabel, HasColor {
 - [Indice AGENTS](./agents-split-index.md)
 - [code-style.md](./code-style.md) - Più dettagliato
 - [critical-rules.md](./critical-rules.md) - Regole critiche
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [AGENTS.md originale](../../AGENTS.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [AGENTS.md originale](../../AGENTS.md)
->>>>>>> a988596b (first)
 - [agents.md originale](../../agents.md)
 - [Index principale](./index.md)
 

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Testing Rules Summary"
 type: rule
@@ -23,12 +18,6 @@ related:
   - "./dependency-rules.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Testing Rules Summary
 
 ## Regole Fondamentali dei Test

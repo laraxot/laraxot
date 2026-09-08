@@ -8,10 +8,6 @@ use Illuminate\Support\Facades\Process;
 use Modules\User\Tests\TestCase;
 use Modules\Xot\Tests\ModuleRemainingCoverage;
 use PHPUnit\Framework\Assert;
-<<<<<<< HEAD
-use Modules\User\Models\User;
-=======
->>>>>>> 87273113 (.)
 
 uses(TestCase::class)->group('no-user-db');
 

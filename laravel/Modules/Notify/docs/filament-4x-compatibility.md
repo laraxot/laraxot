@@ -1,36 +1,14 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Compatibilità Filament 4.x - Modulo Notify
-
-**Data**: 2025-01-27  
-**Status**: ✅ COMPLETATO  
-**Versione Filament**: 4.0.17  
-=======
-=======
->>>>>>> a988596b (first)
 
 # Compatibilità Filament 4.x - Modulo Notify
 
 **Data**: 2025-01-27
 **Status**: ✅ COMPLETATO
 **Versione Filament**: 4.0.17
-<<<<<<< HEAD
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 
 ## 🔧 Correzioni Implementate
 
 ### 1. SpatieEmail
-<<<<<<< HEAD
-<<<<<<< HEAD
-**Problema**: Chiamata a metodo protetto `increment()`  
-=======
 **Problema**: Chiamata a metodo protetto `increment()`
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Problema**: Chiamata a metodo protetto `increment()`
->>>>>>> a988596b (first)
 **Soluzione**: Sostituito con `update()` pubblico
 
 ```php
@@ -101,15 +79,7 @@ UPDATE templates SET counter = ? WHERE id = ?
 
 ## 🔗 Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Rapporto Aggiornamento Filament 4.x](../../docs/filament_4x_upgrade_report.md)
-=======
 - [Rapporto Aggiornamento Filament 4.x](../../../docs/filament_4x_upgrade_report.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Rapporto Aggiornamento Filament 4.x](../../../docs/filament_4x_upgrade_report.md)
->>>>>>> a988596b (first)
 - [Guida Ufficiale Filament 4.x](https://filamentphp.com/docs/4.x/upgrade-guide)
 - [Documentazione Eloquent](https://laravel.com/docs/eloquent)
 

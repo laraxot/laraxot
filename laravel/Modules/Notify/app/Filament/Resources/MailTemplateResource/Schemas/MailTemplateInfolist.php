@@ -26,15 +26,6 @@ class MailTemplateInfolist extends XotBaseResourceInfolist
             'sms_template' => TextEntry::make('sms_template'),
             'whatsapp_template' => TextEntry::make('whatsapp_template'),
             'params' => TextEntry::make('params'),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'counter' => TextEntry::make('counter')];
-=======
-            'counter' => TextEntry::make('counter'),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'counter' => TextEntry::make('counter')];
->>>>>>> a988596b (first)
     }
 }

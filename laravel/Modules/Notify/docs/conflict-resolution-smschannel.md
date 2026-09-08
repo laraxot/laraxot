@@ -50,18 +50,8 @@ return $action->execute($smsData);
 - Solo miglioramento della leggibilità del codice
 
 ## Collegamenti
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Notify Module Documentation](readme.md)
 - [SMS Channel Architecture](sms_channel_action_resolution.md)
-=======
-- [Notify Module Documentation](README.md)
-- [SMS Channel Architecture](sms-channel-action-resolution.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Notify Module Documentation](readme.md)
-- [SMS Channel Architecture](sms_channel_action_resolution.md)
->>>>>>> a988596b (first)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -118,14 +108,7 @@ return $action->execute($smsData);
 
 ## Collegamenti
 - [Notify Module Documentation](README.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [SMS Channel Architecture](sms_channel_action_resolution.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [SMS Channel Architecture](sms_channel_action_resolution.md)
->>>>>>> a988596b (first)
 - [SMS Channel Architecture](sms-channel-action-resolution.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 

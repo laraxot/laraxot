@@ -138,14 +138,7 @@ Section::make()
 use Filament\Schemas\Components\Text;
 use Illuminate\Support\HtmlString;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Text::make(new HtmlString((string) __('fixcity::privacy.notice.html')))
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Text::make(new HtmlString((string) __('fixcity::privacy.notice.html')))
->>>>>>> a988596b (first)
 Text::make(new HtmlString((string) __('ptv::privacy.notice.html')))
 ```
 
@@ -179,12 +172,5 @@ TextInput::make('review_title')
 - Filament Schemas Overview: https://filamentphp.com/docs/5.x/schemas/overview
 - Filament Infolists Overview: https://filamentphp.com/docs/5.x/infolists/overview
 - Filament Schemas Prime Components: https://filamentphp.com/docs/5.x/schemas/primes
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Placeholder source locale: [Placeholder.php](/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/vendor/filament/forms/src/Components/Placeholder.php)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Placeholder source locale: [Placeholder.php](/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/vendor/filament/forms/src/Components/Placeholder.php)
->>>>>>> a988596b (first)
 - Placeholder source locale: [Placeholder.php](/var/www/_bases/base_ptv_fila5/laravel/Themes/Sixteen/vendor/filament/forms/src/Components/Placeholder.php)

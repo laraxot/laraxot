@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a988596b (first)
----
-title: "Bug Fixes Summary"
-type: concept
-tags: [summary]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "summary bug fixes summary"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./user-creation-infinite-loop-fix.md"
----
-
-<<<<<<< HEAD
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
-=======
->>>>>>> a377e9e6 (.)
 # Bug Fixes Summary
 
 ## 2025-01-14: User Creation Infinite Loop Fix

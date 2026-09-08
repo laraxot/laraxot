@@ -7,52 +7,14 @@ return [
         'name' => 'Permesso Team',
         'plural' => 'Permessi Team',
         'label' => 'Permessi Team',
-<<<<<<< HEAD
-<<<<<<< HEAD
-        'group' => ['name' => 'Gestione Utenti', 'description' => 'Gestione permessi specifici per team'],
-=======
-=======
->>>>>>> 87273113 (.)
         'group' => [
             'name' => 'Gestione Utenti',
             'description' => 'Gestione permessi specifici per team',
         ],
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-        'group' => ['name' => 'Gestione Utenti', 'description' => 'Gestione permessi specifici per team'],
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
         'sort' => 15,
         'icon' => 'heroicon-o-shield-check',
     ],
     'fields' => [
-<<<<<<< HEAD
-<<<<<<< HEAD
-        'team_id' => ['label' => 'Team', 'placeholder' => 'Seleziona un team', 'help' => 'Il team a cui appartiene questo permesso', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'user_id' => ['label' => 'Utente', 'placeholder' => 'Seleziona un utente', 'help' => 'L\'utente a cui è assegnato questo permesso', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'permission' => ['label' => 'Permesso', 'placeholder' => 'Inserisci il nome del permesso', 'help' => 'Il nome del permesso (es. view-reports, edit-documents]', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'id' => ['label' => 'ID', 'help' => 'Identificativo univoco del permesso team', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'created_at' => ['label' => 'Data Creazione', 'help' => 'Data e ora di creazione del permesso', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'updated_at' => ['label' => 'Data Aggiornamento', 'help' => 'Data e ora dell\'ultimo aggiornamento', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-    ],
-    'actions' => [
-        'create' => ['label' => 'Crea Permesso Team', 'success' => 'Permesso team creato con successo', 'error' => 'Errore durante la creazione del permesso team', 'icon' => 'create', 'tooltip' => 'create'],
-        'edit' => ['label' => 'Modifica Permesso Team', 'success' => 'Permesso team aggiornato con successo', 'error' => 'Errore durante l\'aggiornamento del permesso team', 'icon' => 'edit', 'tooltip' => 'edit'],
-        'delete' => ['label' => 'Elimina Permesso Team', 'success' => 'Permesso team eliminato con successo', 'error' => 'Errore durante l\'eliminazione del permesso team', 'confirmation' => 'Sei sicuro di voler eliminare questo permesso team?', 'icon' => 'delete', 'tooltip' => 'delete'],
-        'createAnother' => ['label' => 'createAnother', 'icon' => 'createAnother', 'tooltip' => 'createAnother'],
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-    ],
-    'label' => 'Team Permission',
-    'plural_label' => 'Team Permission (Plurale)',
-    'sections' => [
-        'empty' => ['label' => '', 'heading' => ''],
-    ],
-=======
-=======
->>>>>>> 87273113 (.)
         'team_id' => [
             'label' => 'Team',
             'placeholder' => 'Seleziona un team',
@@ -116,24 +78,7 @@ return [
             'error' => 'Errore durante l\'eliminazione del permesso team',
             'confirmation' => 'Sei sicuro di voler eliminare questo permesso team?',
         ],
-=======
-        'team_id' => ['label' => 'Team', 'placeholder' => 'Seleziona un team', 'help' => 'Il team a cui appartiene questo permesso', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'user_id' => ['label' => 'Utente', 'placeholder' => 'Seleziona un utente', 'help' => 'L\'utente a cui è assegnato questo permesso', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'permission' => ['label' => 'Permesso', 'placeholder' => 'Inserisci il nome del permesso', 'help' => 'Il nome del permesso (es. view-reports, edit-documents]', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'id' => ['label' => 'ID', 'help' => 'Identificativo univoco del permesso team', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'created_at' => ['label' => 'Data Creazione', 'help' => 'Data e ora di creazione del permesso', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-        'updated_at' => ['label' => 'Data Aggiornamento', 'help' => 'Data e ora dell\'ultimo aggiornamento', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
-    ],
-    'actions' => [
-        'create' => ['label' => 'Crea Permesso Team', 'success' => 'Permesso team creato con successo', 'error' => 'Errore durante la creazione del permesso team', 'icon' => 'create', 'tooltip' => 'create'],
-        'edit' => ['label' => 'Modifica Permesso Team', 'success' => 'Permesso team aggiornato con successo', 'error' => 'Errore durante l\'aggiornamento del permesso team', 'icon' => 'edit', 'tooltip' => 'edit'],
-        'delete' => ['label' => 'Elimina Permesso Team', 'success' => 'Permesso team eliminato con successo', 'error' => 'Errore durante l\'eliminazione del permesso team', 'confirmation' => 'Sei sicuro di voler eliminare questo permesso team?', 'icon' => 'delete', 'tooltip' => 'delete'],
-        'createAnother' => ['label' => 'createAnother', 'icon' => 'createAnother', 'tooltip' => 'createAnother'],
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
->>>>>>> 2024e2e7 (.)
     ],
     'label' => 'Team Permission',
     'plural_label' => 'Team Permission (Plurale)',
->>>>>>> 60a2c9a9 (.)
 ];

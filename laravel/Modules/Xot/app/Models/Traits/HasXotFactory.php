@@ -40,6 +40,4 @@ trait HasXotFactory
 
         return $factory;
     }
-
-   
 }

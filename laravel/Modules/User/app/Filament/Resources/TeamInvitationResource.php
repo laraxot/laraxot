@@ -4,14 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources;
 
-<<<<<<< HEAD
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Resources\Pages\PageRegistration;
-use Filament\Support\Components\Component;
-=======
-use Filament\Resources\Pages\PageRegistration;
->>>>>>> 2024e2e7 (.)
 use Illuminate\Database\Eloquent\Builder;
 use Modules\User\Filament\Resources\TeamInvitationResource\Pages\EditTeamInvitations;
 use Modules\User\Filament\Resources\TeamInvitationResource\Pages\ListTeamInvitations;
@@ -26,38 +19,6 @@ class TeamInvitationResource extends XotBaseResource
     protected static ?string $model = TeamInvitation::class;
 
     /**
-<<<<<<< HEAD
-     * Get the form schema for the resource.
-     *
-     * @return array<string, Component>
-     */
-    #[\Override]
-    public static function getFormSchema(): array
-    {
-        return [
-            'team_id' => Select::make('team_id')
-                ->relationship('team', 'name')
-                ->searchable()
-                ->required(),
-            'email' => TextInput::make('email')
-                ->email()
-                ->required()
-                ->maxLength(255),
-            'role' => Select::make('role')
-                ->options([
-                    'admin' => 'Admin',
-                    'member' => 'Member',
-                    'viewer' => 'Viewer',
-                    // Add other roles as defined in your application
-                ])
-                ->searchable()
-                ->required(),
-        ];
-    }
-
-    /**
-=======
->>>>>>> 2024e2e7 (.)
      * Get the pages available for the resource.
      *
      * @return array<string, PageRegistration>

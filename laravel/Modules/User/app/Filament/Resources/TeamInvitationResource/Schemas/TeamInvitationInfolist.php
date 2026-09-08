@@ -16,11 +16,7 @@ class TeamInvitationInfolist extends XotBaseResourceInfolist
      *
      * Campi basati sul Model TeamInvitation.php -> id, uuid, team_id, email, role, user_id, accepted_at, declined_at
      */
-<<<<<<< HEAD
-    public static function getInfolistSchema(): array
-=======
     public function getInfolistSchema(): array
->>>>>>> 87273113 (.)
     {
         return [
             'id' => TextEntry::make('id'),

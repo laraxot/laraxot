@@ -1,34 +1,102 @@
-# Notify
+---
+title: "Risoluzione Problemi"
+type: index
+tags: [notify, docs, project_docs, troubleshooting]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione project_docs troubleshooting readme risoluzione problemi index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../../README.md
+  - ../../wiki/index.md
+  - ../../notifications/readme.md
+  - ../../integrations/readme.md
+  - ../../templates/readme.md
+---
+# Risoluzione Problemi
 
-[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Panoramica
+Questa sezione contiene guide per la risoluzione di problemi comuni nel sistema Laraxot.
 
-> **Core module for the FixCity Platform.**
+## Struttura
 
-## Perché esiste
+### conflicts/
+Risoluzione conflitti Git e merge.
 
-Core module for the FixCity Platform.
+**Contenuti:**
+- [Risoluzione Conflitti Git](./git-conflicts-resolution.md) - Documentazione completa della risoluzione sistematica
+- Strategie risoluzione conflitti
+- Best practices Git
+- Merge conflicts
+- Branch management
+- Conflict prevention
 
-## Superpoteri
+### errors/
+Errori comuni e loro soluzioni.
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+**Contenuti:**
+- Errori PHP
+- Errori Laravel
+- Errori Filament
+- Errori database
+- Errori di configurazione
 
-## Documentazione
+### fixes/
+Fix e correzioni specifiche.
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+**Contenuti:**
+- Bug fixes
+- Performance fixes
+- Security fixes
+- Compatibility fixes
+- Hotfix procedures
+
+## Processo di Troubleshooting
+
+### 1. Identificazione
+- Analizzare il messaggio di errore
+- Controllare i log
+- Riprodurre il problema
+- Identificare la causa radice
+
+### 2. Risoluzione
+- Applicare la soluzione appropriata
+- Testare la correzione
+- Documentare la soluzione
+- Aggiornare la documentazione
+
+### 3. Prevenzione
+- Implementare controlli
+- Aggiungere test
+- Migliorare la documentazione
+- Formare il team
+
+## Collegamenti
+
+- [Conflitti](./conflicts/)
+- [Errori](./errors/)
+- [Fix](./fixes/)
+- [Sviluppo](../development/)
+- [Architettura](../architecture/)
 
 ---
 
-**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+## Aggiornamenti Recenti
+
+### Gennaio 2025
+- **Risoluzione Conflitti Backup**: Completata risoluzione sistematica di conflitti nei file di backup
+- **Workflow Module Setup**: Aggiornato a versione 2.1 con compatibilità Laravel 11+
+- **Documentazione Moduli**: Unificata struttura con Quick Reference per AI e Blog
+- **Best Practices**: Consolidate regole per risoluzione conflitti manuale
+
+### Collegamenti Correlati
+- [Risoluzione Conflitti Backup](../riepilogo-risoluzione-conflitti-backup.md)
+- [Risoluzione Conflitti Git](./git-conflicts-resolution.md)
+
+---
+
+*Ultimo aggiornamento: Gennaio 2025* 

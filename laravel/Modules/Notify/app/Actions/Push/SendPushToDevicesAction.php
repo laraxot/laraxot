@@ -39,31 +39,13 @@ class SendPushToDevicesAction
             } catch (Exception $e) {
                 Log::error("Batch push notification failed for platform {$platform}", [
                     'error' => $e->getMessage(),
-<<<<<<< HEAD
-<<<<<<< HEAD
                     'token_count' => count($platformTokens)]);
-=======
-                    'token_count' => count($platformTokens),
-                ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    'token_count' => count($platformTokens)]);
->>>>>>> a988596b (first)
 
                 $results[$platform] = [
                     'success' => false,
                     'error' => $e->getMessage(),
                     'sent' => 0,
-<<<<<<< HEAD
-<<<<<<< HEAD
                     'failed' => count($platformTokens)];
-=======
-                    'failed' => count($platformTokens),
-                ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    'failed' => count($platformTokens)];
->>>>>>> a988596b (first)
             }
         }
 
@@ -96,16 +78,7 @@ class SendPushToDevicesAction
                 $results[] = [
                     'success' => false,
                     'error' => $e->getMessage(),
-<<<<<<< HEAD
-<<<<<<< HEAD
                     'token' => $token];
-=======
-                    'token' => $token,
-                ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    'token' => $token];
->>>>>>> a988596b (first)
             }
         }
 
@@ -114,16 +87,7 @@ class SendPushToDevicesAction
             'sent' => $successCount,
             'failed' => $failureCount,
             'total' => count($tokens),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'results' => $results];
-=======
-            'results' => $results,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'results' => $results];
->>>>>>> a988596b (first)
     }
 
     /**

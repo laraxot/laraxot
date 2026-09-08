@@ -912,7 +912,7 @@ final class ModuleExecuteCoverage
                 if (str_ends_with($class, 'Resource') && method_exists($class, 'getModel')) {
                     $class::getModel();
                     $executed++;
-                    foreach (['getFormSchema', 'getFormSchemaOld', 'getInfolistSchema', 'getPages', 'getRelations', 'getNavigationBadge', 'getModuleName', 'getFormSchemaColumns', 'extendTableCallback', 'extendFormCallback', 'getAttachmentsSchema'] as $staticMethod) {
+                    foreach (['getFormSchema', 'getFormSchemaOld', 'getInfolistSchema', 'getPages', 'getRelations', 'getNavigationBadge', 'getModuleName', 'getFormColumns', 'extendTableCallback', 'extendFormCallback', 'getAttachmentsSchema'] as $staticMethod) {
                         if (! method_exists($class, $staticMethod)) {
                             continue;
                         }

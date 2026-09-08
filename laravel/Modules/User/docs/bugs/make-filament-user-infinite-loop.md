@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Bug: Infinite Loop in make:filament-user Command"
 type: concept
@@ -16,12 +11,6 @@ related:
   - "./testing.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Bug: Infinite Loop in make:filament-user Command
 
 ## Problema Identificato

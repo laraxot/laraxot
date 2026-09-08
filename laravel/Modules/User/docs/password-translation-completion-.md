@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "Completamento Traduzioni Password - 2025"
 type: concept
@@ -10,12 +5,6 @@ tags: [password, translation, completion]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "password-translation-completion- completamento traduzioni password - 2025"
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-
-=======
->>>>>>> 87273113 (.)
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -29,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # Completamento Traduzioni Password - 2025
 
 ## Problema Identificato
@@ -140,18 +123,8 @@ Durante l'audit delle traduzioni del modulo User, sono state identificate traduz
 
 ## Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Documentazione Modulo User](../README.md)
 - [Best Practices Traduzioni](../../Lang/docs/translation_standards.md)
-=======
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Documentazione Modulo User](../README.md)
-- [Best Practices Traduzioni](../../Lang/docs/translation_standards.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [Documentazione Modulo User](../readme.md)
 - [Best Practices Traduzioni](../../lang/docs/translation_standards.md)
 - [Sicurezza Password](../security/password_policies.md)
@@ -271,18 +244,8 @@ Durante l'audit delle traduzioni del modulo User, sono state identificate traduz
 
 ## Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Documentazione Modulo User](../README.md)
 - [Best Practices Traduzioni](../../Lang/docs/translation_standards.md)
-=======
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Documentazione Modulo User](../README.md)
-- [Best Practices Traduzioni](../../Lang/docs/translation_standards.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 - [Documentazione Modulo User](../readme.md)
 - [Best Practices Traduzioni](../../lang/docs/translation_standards.md)
 - [Sicurezza Password](../security/password_policies.md)
@@ -296,8 +259,4 @@ Durante l'audit delle traduzioni del modulo User, sono state identificate traduz
 
 ---
 *Ultimo aggiornamento: 2025-01-06*
-<<<<<<< HEAD
 *Autore: Sistema di Audit Traduzioni*
-=======
-*Autore: Sistema di Audit Traduzioni*
->>>>>>> 2024e2e7 (.)

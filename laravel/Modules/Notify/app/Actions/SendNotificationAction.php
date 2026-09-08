@@ -104,14 +104,7 @@ class SendNotificationAction
             throw new Exception('Il destinatario non supporta le notifiche email');
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         /** @var mixed $email */
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        /** @var mixed $email */
->>>>>>> a988596b (first)
         $email = $recipient->routeNotificationForMail();
         if (! is_string($email) || $email === '') {
             throw new Exception('Email destinatario non disponibile');
@@ -148,11 +141,7 @@ class SendNotificationAction
     ): NotificationModel {
         $bodyHtml = $compiled['body_html'];
         $message = $compiled['body_text'] ?? ($bodyHtml !== null ? strip_tags($bodyHtml) : '');
-<<<<<<< HEAD
         $notification = new NotificationModel;
-=======
-        $notification = new NotificationModel();
->>>>>>> a988596b (first)
         $notification->forceFill([
             'type' => is_string($template->type) && $template->type !== '' ? $template->type : 'generic',
             'message' => $message,
@@ -169,17 +158,7 @@ class SendNotificationAction
                 'template_code' => $template->code,
                 'template_id' => $template->getKey(),
                 'payload' => $data,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'options' => $options]]);
-=======
-                'options' => $options,
-            ],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'options' => $options]]);
->>>>>>> a988596b (first)
         $notification->save();
 
         return $notification;
@@ -197,14 +176,7 @@ class SendNotificationAction
             throw new Exception('Il destinatario non supporta le notifiche SMS');
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         /** @var mixed $phone */
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        /** @var mixed $phone */
->>>>>>> a988596b (first)
         $phone = $recipient->routeNotificationForSms();
         if (! is_string($phone) || $phone === '') {
             throw new Exception('Numero di telefono destinatario non disponibile');

@@ -1,4 +1,12 @@
 ---
+<<<<<<< HEAD
+module: theme
+topic: continuous-integration-tools
+canonical: ../../../Themes/docs/shared-components/_continuous_integration_tools.txt
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/_continuous_integration_tools.txt
+=======
 title: 'Continuous integration tools'
 module: Xot
 type: reference
@@ -85,3 +93,4 @@ https://grafikart.fr/tutoriels/grumphp-836
 ----------------------------------------------------------------------
 
 https://jakzal.github.io/toolbox/
+>>>>>>> laraxot/dev

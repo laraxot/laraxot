@@ -4,16 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\User\Livewire;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Exception;
->>>>>>> f548be94 (.)
-=======
-use Exception;
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -32,18 +22,7 @@ class Logout extends Component
     /**
      * Handle user logout process.
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
     public function logout(): ?RedirectResponse
-=======
-    public function logout(): null|RedirectResponse
->>>>>>> f548be94 (.)
-=======
-    public function logout(): null|RedirectResponse
-=======
-    public function logout(): ?RedirectResponse
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
     {
         $this->processing = true;
 
@@ -53,28 +32,10 @@ class Logout extends Component
             session()->regenerateToken();
 
             return redirect()->route('home');
-<<<<<<< HEAD
-<<<<<<< HEAD
         } catch (\Exception $e) {
             $this->processing = false;
             session()->flash('error', __('Errore durante il logout. Riprova.'));
 
-=======
-        } catch (Exception $e) {
-            $this->processing = false;
-            session()->flash('error', __('Errore durante il logout. Riprova.'));
->>>>>>> f548be94 (.)
-=======
-        } catch (Exception $e) {
-            $this->processing = false;
-            session()->flash('error', __('Errore durante il logout. Riprova.'));
-=======
-        } catch (\Exception $e) {
-            $this->processing = false;
-            session()->flash('error', __('Errore durante il logout. Riprova.'));
-
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
             return null;
         }
     }

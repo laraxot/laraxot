@@ -1,34 +1,123 @@
-# Notify
+---
+title: "Filament Development Guide"
+type: index
+tags: [notify, docs, project_docs, development, filament]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione project_docs development filament readme filament development guide index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../../../README.md
+  - ../../../wiki/index.md
+  - ../../../notifications/readme.md
+  - ../../../integrations/readme.md
+  - ../../../templates/readme.md
+---
+# Filament Development Guide
 
-[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Panoramica
+Questa sezione contiene tutte le guide per lo sviluppo con Filament nel sistema Laraxot.
 
-> **Core module for the FixCity Platform.**
+## Contenuti
 
-## Perché esiste
+### resource-rules.md
+Regole fondamentali per l'implementazione delle risorse Filament.
 
-Core module for the FixCity Platform.
+**Argomenti:**
+- Estensione di XotBaseResource
+- Proprietà e metodi da NON dichiarare
+- Traduzioni e etichette
+- Namespace di traduzione
+- Relazioni e pagine
 
-## Superpoteri
+### form-schema-conventions.md
+Convenzioni per i form schema in Filament.
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+**Argomenti:**
+- Array associativi con chiavi stringhe
+- Componenti deprecati da evitare
+- Origine dei campi
+- Proprietà di navigazione
+- Esempi completi
 
-## Documentazione
+### best-practices.md
+Best practices generali per Filament.
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+**Argomenti:**
+- Struttura delle risorse
+- Gestione dei form
+- Validazioni
+- Azioni custom
+- Widget personalizzati
+
+### form-components.md
+Guida ai componenti form di Filament.
+
+**Argomenti:**
+- TextInput
+- Select
+- RichEditor
+- FileUpload
+- DatePicker
+- Componenti custom
+
+### form-validation.md
+Validazione nei form Filament.
+
+**Argomenti:**
+- Regole di validazione
+- Messaggi di errore
+- Validazione custom
+- Validazione condizionale
+- Validazione lato client
+
+### translations.md
+Gestione traduzioni in Filament.
+
+**Argomenti:**
+- File di traduzione
+- Chiavi strutturate
+- Namespace moduli
+- Pluralizzazione
+- Localizzazione
+
+### actions.md
+Azioni custom in Filament.
+
+**Argomenti:**
+- Creazione azioni
+- Azioni bulk
+- Azioni con conferma
+- Azioni con form
+- Azioni asincrone
+
+### widgets.md
+Widget personalizzati in Filament.
+
+**Argomenti:**
+- StatsOverviewWidget
+- ChartWidget
+- TableWidget
+- Widget custom
+- Widget con interazioni
+
+## Collegamenti
+
+- [Resource Rules](./resource-rules.md)
+- [Form Schema Conventions](./form-schema-conventions.md)
+- [Best Practices](./best-practices.md)
+- [Form Components](./form-components.md)
+- [Form Validation](./form-validation.md)
+- [Translations](./translations.md)
+- [Actions](./actions.md)
+- [Widgets](./widgets.md)
+- [PHPStan](../phpstan/)
+- [Troubleshooting Filament](../../troubleshooting/errors/filament-errors.md)
 
 ---
 
-**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+*Ultimo aggiornamento: Agosto 2025* 

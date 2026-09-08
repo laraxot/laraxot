@@ -24,14 +24,7 @@ related:
 **Module Version**: 2.1.0
 
 ## 🎯 **Lettura Essenziale**
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. [README.md](./readme.md) - Panoramica completa e Quick Start.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. [README.md](./readme.md) - Panoramica completa e Quick Start.
->>>>>>> a988596b (first)
 1. [README.md](./README.md) - Panoramica completa e Quick Start.
 2. [roadmap.md](./roadmap.md) - Evoluzione 2026: Multi-channel API e AI Templates.
 3. [philosophy.md](./philosophy.md) - "Essere Connessi": filosofia delle notifiche in tempo reale.

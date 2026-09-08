@@ -6,7 +6,7 @@
 ## 1. Current State Analysis
 
 ### 1.1 Technical Stack
-- **Base**: Laravel 13 + Tailwind CSS 4.x
+- **Base**: Laravel 12 + Tailwind CSS 4.x
 - **Strategy**: Hybrid (BI Classes + Tailwind @apply)
 - **Status**: Partially compliant, high technical debt in CSS layer.
 

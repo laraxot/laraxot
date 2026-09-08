@@ -171,28 +171,10 @@ Prima di modificare la configurazione SMS, verificare che:
 
 ## Riferimenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Struttura Standardizzata della Configurazione SMS](./STANDARDIZED_SMS_CONFIG_STRUCTURE.md)
-- [Configurazione Netfun](./NETFUN_CONFIG_REQUIREMENTS.md)
-=======
 - [Struttura Standardizzata della Configurazione SMS](./standardized_sms_config_structure.md)
 - [Configurazione Netfun](./netfun_config_requirements.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Struttura Standardizzata della Configurazione SMS](./standardized_sms_config_structure.md)
-- [Configurazione Netfun](./netfun_config_requirements.md)
->>>>>>> a988596b (first)
 - [Laravel Configuration Best Practices](https://laravel.com/docs/configuration)
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-*Ultimo aggiornamento: 2025-05-12*
-=======
 *Ultimo aggiornamento: [DATE]*
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-*Ultimo aggiornamento: [DATE]*
->>>>>>> a988596b (first)

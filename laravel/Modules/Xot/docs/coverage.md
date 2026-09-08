@@ -23,6 +23,8 @@ This module has comprehensive test coverage with various test types implemented.
 ## Status
 All tests are passing and coverage is being maintained.
 
+<<<<<<< HEAD
+=======
 ## Services to Actions conversion — 2026-09-04
 
 Sessione Claude Sonnet 5, story `docs/stories/18.1.xot-services-to-actions.story.md`.
@@ -80,6 +82,7 @@ gia' presenti nel codice sorgente originale) — nessun nuovo debito introdotto.
 Dettaglio completo per-file (Kind A/B, path vecchio → nuovo, motivazione):
 vedi la story.
 
+>>>>>>> laraxot/dev
 ## PHPStan swarm fix — 2026-09-02
 
 Sessione Claude Sonnet 5 (6748f176), claim `docs/chat/claim-phpstan-542-swarm-2026-09-02.md`.
@@ -173,6 +176,9 @@ contratto in-flux di quel file.
 errori `typeCoverage.*` residui nel modulo (soglia tree-wide, contributo Xot
 azzerato); tutti gli errori `cast.*`/`method.deprecated`/`*deprecatedClass*`/
 `class.implements*`/`class.extends*` sui file toccati risolti, tranne il cluster
+<<<<<<< HEAD
+bridge sopra descritto.
+=======
 bridge sopra descritto.
 
 ## Riduzione uso di `mixed` — 2026-09-04
@@ -279,3 +285,113 @@ sostituito ovunque da `Actions/Model/GetAllModelsByModuleNameAction`
 (gia' esistente, logica identica). I suoi 2 test riscritti sul sostituto
 (coverage preservata). `phpstan analyse Modules/Xot`: 0 errori, cache
 pulita, verificato.
+>>>>>>> laraxot/dev
+
+## StoryEpicAndOwnedScopeTest — Safe wrappers e narrowing — 2026-09-08
+
+Sessione Claude Sonnet 5, story `docs/stories/5.79.phpstan-542-errori-swarm-xot-user-longtail.story.md`
+(Task 5), claim `docs/chat/claim-phpstan-28-swarm-2026-09-08.md`. Scope: 5 errori
+PHPStan in `tests/Unit/Bmad/StoryEpicAndOwnedScopeTest.php` (file creato lo stesso
+giorno, story 5.88, guardia BMAD epic/owned-scope).
+
+**Fix applicati:**
+- `cast.string` (riga 46 originale): `$path = (string) $file;` su un `$file`
+  iterato da `RecursiveIteratorIterator`/`RecursiveDirectoryIterator` che PHPStan
+  vede `mixed` (stub non generico). Sostituito il cast cieco con narrowing reale:
+  `if (! $file instanceof SplFileInfo) { continue; }` seguito da
+  `$file->getPathname()` (equivalente a `(string) $file` a runtime, dato che
+  `SplFileInfo::__toString()` chiama `getPathname()` — nessun cambio di
+  comportamento).
+- `file_get_contents`/`preg_match_all`/`preg_match` "unsafe": aggiunte
+  `use function Safe\file_get_contents;`, `use function Safe\preg_match;`,
+  `use function Safe\preg_match_all;` in testa al file (stile gia' in uso nel
+  modulo, confermato con `grep -rn "use function Safe" app | head`). Rimossi i
+  cast `(string)` residui sui due `file_get_contents(...)` (Safe garantisce
+  `string`, il cast era gia' ridondante).
+- Effetto collaterale scoperto durante la verifica: `Safe\preg_match` non porta
+  la narrowing condizionale nativa di PHPStan tra return `1` e forma non-vuota
+  di `$matches` (`offsetAccess.notFound` su `$m[1]`). Aggiunto un controllo
+  `isset($m[1])` esplicito nella stessa condizione — narrowing reale, non un
+  cast o un ignore.
+
+**PHPStan**: `analyse Modules/Xot --memory-limit=2G` (tmpDir isolata,
+`/tmp/phpstan-xot-agent-2026-09-08/`, per evitare la cache condivisa fra i 6
+agenti dello swarm) → **0 errori** (1390 file analizzati).
+
+**PHPMD**: scoped sul file toccato (`php tools/phpmd.phar
+Modules/Xot/tests/Unit/Bmad/StoryEpicAndOwnedScopeTest.php`) → pulito, exit 0,
+nessun finding. Run sull'intero modulo (`tools/phpmd.sh Xot`) **non produce
+risultati utilizzabili**: aborta subito con `No node to visit provided for
+visitAnonymousClass` su una classe anonima altrove nel modulo — condizione
+pre-esistente e non causata da questa modifica (vedi memoria
+`feedback-phpmd-zero-on-module-root-means-it-died.md`).
+
+**PHPInsights**: `tools/phpinsights.sh Modules/Xot` completo, exit 0. Nessun
+finding sul file toccato (verificato per nome file nell'output). Punteggi
+modulo (pre-esistenti, non spostati da questa modifica): Code 76.5/100,
+Complexity 100/100, Architecture 50/100.
+
+**Pest**: `./vendor/bin/pest Modules/Xot/tests/Unit/Bmad --no-coverage` →
+1 passed, 1 failed (6 assertions). Il test `gli epic dichiarati nelle story
+esistono in docs/epics.md` passa. Il test `le story dichiarano il proprio
+Owned File/Module Scope` **fallisce**: soglia a cricchetto congelata a 348
+(misurata il 2026-09-08 al momento della creazione del file), valore reale
+misurato ora **350** (474 story file totali contro 471 dichiarati nel commento
+originale — 3 nuovi file apparsi durante la finestra di questo swarm, 2 senza
+il campo `Owned File/Module Scope`). Non e' un effetto del mio fix (verificato:
+`getPathname()` e `(string) $file` restituiscono lo stesso path, il conteggio
+file non e' cambiato per via mia) ne' un file di un altro modulo che ho
+toccato: e' debito reale aggiunto altrove nel repo (Rating/Ptv/IndennitaResponsabilita,
+mtime identico 12:57:57, probabile pull/checkout di massa di una sessione
+concorrente) durante l'esecuzione di questo stesso swarm. **Non ho alzato la
+soglia**: la rinumerazione/ricalibrazione di una soglia a cricchetto e' un
+atto di planning (stesso principio dichiarato nel file di test per la
+rinumerazione delle story: passa da `bmad-correct-course`, non da un edit
+ad-hoc di un sub-agente con scope limitato a 5 errori PHPStan). Segnalato nel
+claim e qui per follow-up.
+
+**Corruzione pre-esistente segnalata, non toccata**: questo stesso file
+(`docs/coverage.md`) contiene due blocchi di merge irrisolti (`<<<<<<< HEAD` /
+`=======` / `>>>>>>> laraxot/dev` alle righe 26-85 e 179-288 prima di questa
+appendice) — non generati da questa sessione, non toccati per rispetto dello
+standing order ("se trovi un marker di merge fuori dal tuo file, fermati e
+riportalo"). Serve una sessione dedicata a diff3/risoluzione, non un
+sub-agente in scope ristretto.
+
+## Riesame swarm PHPStan 5.79 — 2026-09-08
+
+Claim: `docs/chat/phpstan-swarm-codex.md` alla root del repository. Riesaminato
+`tests/Unit/Bmad/StoryEpicAndOwnedScopeTest.php`: il working tree conteneva già
+due guardie separate per `Safe\preg_match(...) !== 1` e `! isset($m[1])`.
+La separazione conserva il comportamento della precedente condizione con `||`;
+nessun ulteriore edit PHP è stato necessario. `git log -S 'preg_match'` nel
+repository Xot individua `f58df115` come origine dei wrapper Safe e del narrowing.
+
+La vecchia nota sul mancato narrowing di Safe non è una regola generale:
+il vendor corrente include `PregMatchParameterOutTypeExtension` e
+`PregMatchTypeSpecifyingExtension` per le funzioni Safe. Il risultato va verificato
+sulla configurazione canonica e sul flusso condizionale concreto.
+
+Verifiche effettive della ripresa:
+
+- PHPStan canonico su `Modules`, serializzato dal coordinatore: **exit 0**,
+  `totals.errors = 0`, `totals.file_errors = 0`; report
+  `/tmp/codex-phpstan-initial.json`. La verifica finale dopo gli ultimi edit
+  degli altri gruppi resta registrata nel claim coordinatore.
+- `php -l` sul test: **exit 0**.
+- PHPMD sul test: **exit 0**, nessun finding. Sul modulo: **exit 1** con
+  `No node to visit provided for visitAnonymousClass`; il crash già documentato
+  impedisce di ricavarne un esito di qualità completo.
+- PHPInsights su `Modules/Xot`: **exit 0**, Code **76.5%**, Complexity **100%**,
+  Architecture **50%**, Style **79%**, problemi di sicurezza **0**. Nessun finding
+  riferito a `StoryEpicAndOwnedScopeTest.php`.
+- Pest sul solo test BMAD, senza bootstrap applicativo o accesso DB:
+  **1 passato, 1 fallito, 6 assertion**. Il controllo sugli epic passa;
+  quello sugli ambiti conta **352** story senza `Owned File/Module Scope`
+  contro la soglia **348**. La soglia è invariata: si tratta di debito
+  documentale rilevato dalla guardia, distinto dagli errori PHPStan.
+- Coverage non misurata: esecuzione mirata con `--no-coverage`; non si dichiara
+  alcun incremento del coverage applicativo.
+
+I contenuti e i marker di conflitto precedenti a questa appendice sono conservati.
+Reindicizzazione second brain e chiusura della story sono affidate al coordinatore.

@@ -2,16 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> f548be94 (.)
-=======
-
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 return [
     'fields' => [
         'email' => [
@@ -19,51 +9,23 @@ return [
             'description' => 'email',
             'helper_text' => '',
             'placeholder' => 'email',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'tooltip' => '',
-=======
->>>>>>> f548be94 (.)
-=======
-=======
-            'tooltip' => '',
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
         ],
         'password' => [
             'label' => 'password',
             'description' => 'password',
             'helper_text' => '',
             'placeholder' => 'password',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'tooltip' => '',
-=======
->>>>>>> f548be94 (.)
-=======
-=======
-            'tooltip' => '',
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
         ],
         'remember' => [
             'label' => 'remember',
             'description' => 'remember',
             'helper_text' => '',
             'placeholder' => 'remember',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'tooltip' => '',
         ],
     ],
-=======
-        ],
-    ],
-=======
-            'tooltip' => '',
-        ],
-    ],
->>>>>>> 87273113 (.)
     'actions' => [
         'login' => [
             'label' => 'Anmelden',
@@ -103,12 +65,4 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
-<<<<<<< HEAD
-=======
-        ],
-    ],
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 ];

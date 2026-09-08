@@ -2,15 +2,7 @@
 
 ## Panoramica
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Questo documento descrive l'architettura e l'implementazione dell'integrazione WhatsApp nel modulo Notify di SaluteOra, seguendo gli stessi standard e pattern utilizzati per l'invio di email e SMS.
-=======
 Questo documento descrive l'architettura e l'implementazione dell'integrazione WhatsApp nel modulo Notify di Quaeris, seguendo gli stessi standard e pattern utilizzati per l'invio di email e SMS.
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Questo documento descrive l'architettura e l'implementazione dell'integrazione WhatsApp nel modulo Notify di Quaeris, seguendo gli stessi standard e pattern utilizzati per l'invio di email e SMS.
->>>>>>> a988596b (first)
 
 ## Architettura
 
@@ -205,15 +197,7 @@ final class SendTwilioWhatsAppAction implements WhatsAppProviderActionInterface
 
     private string $accountSid;
     private string $authToken;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    private string $baseUrl = 'https://api.twilio.com/2010-04-01';
-=======
     private string $baseUrl = 'https://api.twilio.com/[DATE]';
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    private string $baseUrl = 'https://api.twilio.com/[DATE]';
->>>>>>> a988596b (first)
     private array $vars = [];
     protected bool $debug;
     protected int $timeout;
@@ -415,15 +399,7 @@ $action = app(SendTwilioWhatsAppAction::class);
 
 $whatsAppData = new WhatsAppData(
     to: '+393401234567',
-<<<<<<< HEAD
-<<<<<<< HEAD
-    body: 'Questo è un messaggio di test da SaluteOra',
-=======
 body: 'Questo è un messaggio di test da Quaeris',
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-body: 'Questo è un messaggio di test da Quaeris',
->>>>>>> a988596b (first)
 );
 
 $result = $action->execute($whatsAppData);
@@ -556,21 +532,7 @@ L'integrazione WhatsApp  segue gli stessi pattern e standard utilizzati per l'in
 3. **Estensibilità**: È facile aggiungere nuovi provider WhatsApp
 4. **Testabilità**: Le azioni sono facilmente testabili grazie all'interfaccia comune
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Seguendo questa architettura, l'integrazione WhatsApp si inserisce perfettamente nell'ecosistema di notifiche di SaluteOra, mantenendo la coerenza con le altre modalità di comunicazione.
-
----
-
-*Ultimo aggiornamento: 2023-05-12*
-=======
-=======
->>>>>>> a988596b (first)
 Seguendo questa architettura, l'integrazione WhatsApp si inserisce perfettamente nell'ecosistema di notifiche di Quaeris, mantenendo la coerenza con le altre modalità di comunicazione.
 
 ---
 
-<<<<<<< HEAD
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)

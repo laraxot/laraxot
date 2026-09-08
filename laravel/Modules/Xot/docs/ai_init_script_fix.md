@@ -1,6 +1,8 @@
 # Aggiornamento Importante: ai_init.sh Script
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 ## Nota di deprecazione
 
 Questo documento riflette il modello legacy "un path reale per ogni tool" ed e'
@@ -19,6 +21,7 @@ Tutti gli adapter di root devono puntare a un solo backend condiviso:
 .windsurf -> bashscripts/ai/.agents
 .zai      -> bashscripts/ai/.agents
 =======
+>>>>>>> laraxot/dev
 ## Problema Risolto
 Lo script `./bashscripts/ai/ai_init.sh` non creava correttamente tutti i collegamenti simbolici richiesti. Alcune directory esistevano già come cartelle reali invece di collegamenti simbolici.
 
@@ -49,7 +52,10 @@ Lo script `ai_init.sh` ha una logica di sicurezza che non sovrascrive directory 
 Per verificare che tutto funzioni correttamente:
 ```bash
 file ./.ai ./.cursor ./.claude ./.windsurf ./.gemini
+<<<<<<< HEAD
+=======
 >>>>>>> 7f6cf6be (.)
+>>>>>>> laraxot/dev
 ```
 
 Tutti dovrebbero mostrare "symbolic link to bashscripts/ai/..."

@@ -4,19 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Actions;
 
-use Spatie\QueueableAction\ActionJob;
-
+use Illuminate\Support\Facades\Config;
 use Spatie\QueueableAction\QueueableAction;
 
-use Illuminate\Support\Facades\Config;
-
 /**
- * Class ThemeService
+ * Class ThemeAction
  * Gestisce il tema dell'applicazione.
  */
 class ThemeAction
 {
     use QueueableAction;
+
     /**
      * Nome del tema corrente.
      */
@@ -53,5 +51,9 @@ class ThemeAction
     public static function getThemePath(): string
     {
         return resource_path('themes/'.self::$currentTheme);
+    }
+
+    public function execute(): void
+    {
     }
 }

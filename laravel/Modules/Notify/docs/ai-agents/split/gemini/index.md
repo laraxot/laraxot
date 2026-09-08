@@ -39,7 +39,7 @@ related:
 |---------|----|----|----|
 | PHP Rules | [php-rules.md](php-rules.md) | 37 | Constructors, types, enums, PHPDoc |
 | Laravel Core | [laravel-core-rules.md](laravel-core-rules.md) | 55 | Database, controllers, auth, testing |
-| Laravel v12 | [laravel-v12-rules.md](laravel-v12-rules.md) | 25 | Laravel 13 specific rules |
+| Laravel v12 | [laravel-v12-rules.md](laravel-v12-rules.md) | 25 | Laravel 12 specific rules |
 
 ## Routing & Pages
 

@@ -22,16 +22,7 @@ class ListMailTemplates extends LangBaseListRecords
             'slug' => TextColumn::make('slug')->searchable()->sortable(),
             // TextColumn::make('mailable')->searchable()->sortable(),
             'subject' => TextColumn::make('subject')->searchable()->sortable(),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'counter' => TextColumn::make('counter')->searchable()->sortable()];
-=======
-            'counter' => TextColumn::make('counter')->searchable()->sortable(),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'counter' => TextColumn::make('counter')->searchable()->sortable()];
->>>>>>> a988596b (first)
     }
 
     #[Override]

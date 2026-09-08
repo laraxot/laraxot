@@ -33,15 +33,6 @@ class NotificationTemplateInfolist extends XotBaseResourceInfolist
             'version' => TextEntry::make('version'),
             'tenant_id' => TextEntry::make('tenant_id'),
             'grapesjs_data' => TextEntry::make('grapesjs_data'),
-<<<<<<< HEAD
-<<<<<<< HEAD
             'type' => TextEntry::make('type')];
-=======
-            'type' => TextEntry::make('type'),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'type' => TextEntry::make('type')];
->>>>>>> a988596b (first)
     }
 }

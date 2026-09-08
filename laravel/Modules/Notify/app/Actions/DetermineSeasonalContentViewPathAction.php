@@ -16,10 +16,6 @@ class DetermineSeasonalContentViewPathAction
      * Determines the appropriate seasonal email content view path (Blade view path).
      *
      * @param  string  $defaultViewName  The default content view file name (e.g., 'base-content').
-<<<<<<< HEAD
-=======
-     *
->>>>>>> a988596b (first)
      * @return string The Blade view path for the seasonal content (e.g., 'sixteen::emails.christmas-content').
      */
     public function execute(string $defaultViewName = 'base-content'): string
@@ -74,10 +70,6 @@ class DetermineSeasonalContentViewPathAction
      * Calculate Easter date using the computus algorithm.
      *
      * @param  int  $year  The year to calculate Easter for
-<<<<<<< HEAD
-=======
-     *
->>>>>>> a988596b (first)
      * @return Carbon Easter date for the given year (never null)
      */
     private function getEasterDate(int $year): Carbon

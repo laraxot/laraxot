@@ -22,15 +22,6 @@ class LinkableRelationManager extends XotBaseRelationManager
     public function getFormSchema(): array
     {
         return [
-<<<<<<< HEAD
-<<<<<<< HEAD
             TextInput::make('id')->required()->maxLength(255)];
-=======
-            TextInput::make('id')->required()->maxLength(255),
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            TextInput::make('id')->required()->maxLength(255)];
->>>>>>> a988596b (first)
     }
 }

@@ -18,25 +18,11 @@ Unificare le 4 pagine di creazione ticket in un singolo Filament Wizard Widget:
 
 ### File da modificare/creare
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 1. **`laravel/Modules/Fixcity/app/Filament/Widgets/CreateTicketWidget.php`**
    - Aggiungere Step 3 (Riepilogo) e Step 4 (Conferma)
    - Aggiornare `getFormSchema()` con 4 step
 
 2. **`laravel/config/local/fixcity/database/content/pages/tests.ticket-create.json`**
-<<<<<<< HEAD
-=======
-1. **`laravel/Modules/App/app/Filament/Widgets/CreateTicketWidget.php`**
-   - Aggiungere Step 3 (Riepilogo) e Step 4 (Conferma)
-   - Aggiornare `getFormSchema()` con 4 step
-
-2. **`laravel/config/local/laraxot/database/content/pages/tests.ticket-create.json`**
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
    - Nuovo file JSON per la pagina
    - Definisce i blocchi della pagina
 
@@ -45,14 +31,7 @@ Unificare le 4 pagine di creazione ticket in un singolo Filament Wizard Widget:
 
 ### Traduzioni
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Pattern: `fixcity::ticket.steps.<item>.<tipo>`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Pattern: `fixcity::ticket.steps.<item>.<tipo>`
->>>>>>> a988596b (first)
 Pattern: `laraxot::ticket.steps.<item>.<tipo>`
 
 ```json
@@ -93,14 +72,7 @@ Pattern: `laraxot::ticket.steps.<item>.<tipo>`
 
 Il widget viene esposto come blocco CMS:
 - **Tipo**: `filament-widget`
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Widget**: `Modules\Fixcity\Filament\Widgets\CreateTicketWidget`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Widget**: `Modules\Fixcity\Filament\Widgets\CreateTicketWidget`
->>>>>>> a988596b (first)
 - **Widget**: `Modules\App\Filament\Widgets\CreateTicketWidget`
 - **Posizionamento**: Main content area
 

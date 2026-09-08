@@ -11,5 +11,6 @@ return [
     ],
     'sections' => [
         'empty' => ['label' => 'empty', 'heading' => 'empty'],
+        'Refresh Token OAuth' => ['label' => 'Refresh Token OAuth', 'heading' => 'Refresh Token OAuth'],
     ],
 ];

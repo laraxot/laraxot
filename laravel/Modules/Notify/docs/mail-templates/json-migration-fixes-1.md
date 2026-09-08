@@ -139,18 +139,9 @@ if(!$this->hasColumn('subject')) {
 }
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## Applicazione a Quaeris
 
 Nel contesto di Quaeris, tutte le migrazioni che coinvolgono la conversione di campi esistenti a JSON devono seguire queste linee guida, in particolare:
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-## Applicazione a Quaeris
-
-Nel contesto di Quaeris, tutte le migrazioni che coinvolgono la conversione di campi esistenti a JSON devono seguire queste linee guida, in particolare:
->>>>>>> a988596b (first)
 ## Applicazione a App
 
 Nel contesto di App, tutte le migrazioni che coinvolgono la conversione di campi esistenti a JSON devono seguire queste linee guida, in particolare:
@@ -164,14 +155,7 @@ Nel contesto di App, tutte le migrazioni che coinvolgono la conversione di campi
 È necessario esaminare tutte le migrazioni esistenti per identificare pattern simili di conversione diretta a JSON:
 
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 grep -r "json.*change" /var/www/html/Quaeris/laravel/Modules/*/database/migrations/
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-grep -r "json.*change" /var/www/html/Quaeris/laravel/Modules/*/database/migrations/
->>>>>>> a988596b (first)
 grep -r "json.*change" /var/www/_bases/base_ptvx_fila5/laravel/Modules/*/database/migrations/
 ```
 

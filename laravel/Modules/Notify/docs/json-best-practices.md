@@ -215,14 +215,7 @@ protected function rollback(): void
 
 ## Collegamenti Correlati
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Documentazione Migrazioni](./migration_rules.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Documentazione Migrazioni](./migration_rules.md)
->>>>>>> a988596b (first)
 - [Documentazione Migrazioni](./migration-rules.md)
 - [Gestione Errori](./error_handling.md)
 - [Best Practices Database](./database_best_practices.md)

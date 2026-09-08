@@ -16,11 +16,7 @@ class TenantUserInfolist extends XotBaseResourceInfolist
      *
      * Campi basati sul Model TenantUser.php -> id, uuid, tenant_id, user_id
      */
-<<<<<<< HEAD
-    public static function getInfolistSchema(): array
-=======
     public function getInfolistSchema(): array
->>>>>>> 87273113 (.)
     {
         return [
             'id' => TextEntry::make('id'),

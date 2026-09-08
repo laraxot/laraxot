@@ -2,18 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-uses(Modules\User\Tests\TestCase::class);
-
->>>>>>> 60a2c9a9 (.)
-=======
-uses(Modules\User\Tests\TestCase::class);
-
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 use Modules\User\Datas\DeviceData;
 use Modules\User\Datas\FilamentShieldData;
 use Modules\User\Datas\FilamentUserData;
@@ -26,21 +14,10 @@ use Modules\User\Datas\PermissionTableNamesData;
 use Modules\User\Datas\ShieldResourceData;
 use Modules\User\Datas\SocialProviderData;
 use Modules\User\Datas\SuperAdminData;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 
 test('PermissionData can be instantiated', function () {
     $permissionData = PermissionData::from([
@@ -55,18 +32,7 @@ test('PermissionData can be instantiated', function () {
         'cache' => PermissionCacheData::from(['enabled' => true, 'key' => 'spatie.permission.cache', 'expiration_time' => DateInterval::createFromDateString('24 hours'), 'store' => 'default']),
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(PermissionData::class, $permissionData);
-=======
-    expect($permissionData)->toBeInstanceOf(PermissionData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($permissionData)->toBeInstanceOf(PermissionData::class);
-=======
-    Assert::assertInstanceOf(PermissionData::class, $permissionData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('PermissionModelsData can be instantiated', function () {
@@ -75,18 +41,7 @@ test('PermissionModelsData can be instantiated', function () {
         'role' => 'Modules\User\Models\Role',
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(PermissionModelsData::class, $modelsData);
-=======
-    expect($modelsData)->toBeInstanceOf(PermissionModelsData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($modelsData)->toBeInstanceOf(PermissionModelsData::class);
-=======
-    Assert::assertInstanceOf(PermissionModelsData::class, $modelsData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('PermissionTableNamesData can be instantiated', function () {
@@ -98,18 +53,7 @@ test('PermissionTableNamesData can be instantiated', function () {
         'role_has_permissions' => 'role_has_permissions',
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(PermissionTableNamesData::class, $tableNamesData);
-=======
-    expect($tableNamesData)->toBeInstanceOf(PermissionTableNamesData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($tableNamesData)->toBeInstanceOf(PermissionTableNamesData::class);
-=======
-    Assert::assertInstanceOf(PermissionTableNamesData::class, $tableNamesData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('PermissionColumnNamesData can be instantiated', function () {
@@ -117,18 +61,7 @@ test('PermissionColumnNamesData can be instantiated', function () {
         'model_morph_key' => 'model_id',
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(PermissionColumnNamesData::class, $columnNamesData);
-=======
-    expect($columnNamesData)->toBeInstanceOf(PermissionColumnNamesData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($columnNamesData)->toBeInstanceOf(PermissionColumnNamesData::class);
-=======
-    Assert::assertInstanceOf(PermissionColumnNamesData::class, $columnNamesData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('PermissionCacheData can be instantiated', function () {
@@ -138,18 +71,7 @@ test('PermissionCacheData can be instantiated', function () {
         'store' => 'default',
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(PermissionCacheData::class, $cacheData);
-=======
-    expect($cacheData)->toBeInstanceOf(PermissionCacheData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($cacheData)->toBeInstanceOf(PermissionCacheData::class);
-=======
-    Assert::assertInstanceOf(PermissionCacheData::class, $cacheData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('DeviceData can be instantiated', function () {
@@ -159,18 +81,7 @@ test('DeviceData can be instantiated', function () {
         'user_id' => 1,
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(DeviceData::class, $deviceData);
-=======
-    expect($deviceData)->toBeInstanceOf(DeviceData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($deviceData)->toBeInstanceOf(DeviceData::class);
-=======
-    Assert::assertInstanceOf(DeviceData::class, $deviceData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('SocialProviderData can be instantiated', function () {
@@ -180,18 +91,7 @@ test('SocialProviderData can be instantiated', function () {
         'active' => true,
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(SocialProviderData::class, $socialProviderData);
-=======
-    expect($socialProviderData)->toBeInstanceOf(SocialProviderData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($socialProviderData)->toBeInstanceOf(SocialProviderData::class);
-=======
-    Assert::assertInstanceOf(SocialProviderData::class, $socialProviderData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('FilamentUserData can be instantiated', function () {
@@ -200,18 +100,7 @@ test('FilamentUserData can be instantiated', function () {
         'name' => 'Test User',
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(FilamentUserData::class, $filamentUserData);
-=======
-    expect($filamentUserData)->toBeInstanceOf(FilamentUserData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($filamentUserData)->toBeInstanceOf(FilamentUserData::class);
-=======
-    Assert::assertInstanceOf(FilamentUserData::class, $filamentUserData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('SuperAdminData can be instantiated', function () {
@@ -220,18 +109,7 @@ test('SuperAdminData can be instantiated', function () {
         'name' => 'Super Admin',
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(SuperAdminData::class, $superAdminData);
-=======
-    expect($superAdminData)->toBeInstanceOf(SuperAdminData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($superAdminData)->toBeInstanceOf(SuperAdminData::class);
-=======
-    Assert::assertInstanceOf(SuperAdminData::class, $superAdminData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('FilamentShieldData can be instantiated', function () {
@@ -239,18 +117,7 @@ test('FilamentShieldData can be instantiated', function () {
         'enabled' => true,
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(FilamentShieldData::class, $filamentShieldData);
-=======
-    expect($filamentShieldData)->toBeInstanceOf(FilamentShieldData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($filamentShieldData)->toBeInstanceOf(FilamentShieldData::class);
-=======
-    Assert::assertInstanceOf(FilamentShieldData::class, $filamentShieldData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('PasswordData can be instantiated', function () {
@@ -259,18 +126,7 @@ test('PasswordData can be instantiated', function () {
         'max' => 100,
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(PasswordData::class, $passwordData);
-=======
-    expect($passwordData)->toBeInstanceOf(PasswordData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($passwordData)->toBeInstanceOf(PasswordData::class);
-=======
-    Assert::assertInstanceOf(PasswordData::class, $passwordData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });
 
 test('ShieldResourceData can be instantiated', function () {
@@ -279,16 +135,5 @@ test('ShieldResourceData can be instantiated', function () {
         'enabled' => true,
     ]);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     Assert::assertInstanceOf(ShieldResourceData::class, $shieldResourceData);
-=======
-    expect($shieldResourceData)->toBeInstanceOf(ShieldResourceData::class);
->>>>>>> 60a2c9a9 (.)
-=======
-    expect($shieldResourceData)->toBeInstanceOf(ShieldResourceData::class);
-=======
-    Assert::assertInstanceOf(ShieldResourceData::class, $shieldResourceData);
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 });

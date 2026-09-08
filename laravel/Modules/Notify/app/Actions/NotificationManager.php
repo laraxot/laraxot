@@ -21,13 +21,6 @@ class NotificationManager
      * @param  array<string, mixed>  $data
      * @param  list<string>  $channels
      * @param  array<string, mixed>  $options
-<<<<<<< HEAD
-<<<<<<< HEAD
-     * @return Notification|null
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
      */
     public function send(
         Model $recipient,

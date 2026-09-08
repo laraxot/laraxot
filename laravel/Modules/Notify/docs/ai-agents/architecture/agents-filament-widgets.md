@@ -40,14 +40,7 @@
 ### Livewire in Themes
 ```
 ❌ VIETATO:
-<<<<<<< HEAD
-<<<<<<< HEAD
 Themes/TwentyOne/Http/Livewire/PredictComponent.php
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Themes/TwentyOne/Http/Livewire/PredictComponent.php
->>>>>>> a988596b (first)
 Themes/TwentyOne/Http/Livewire/ForecastComponent.php
 ```
 
@@ -57,16 +50,8 @@ Themes/TwentyOne/Http/Livewire/ForecastComponent.php
 
 ### Filament Table Widget
 ```php
-<<<<<<< HEAD
-<<<<<<< HEAD
 // ✅ CORRETTO - Modules/Predict/Filament/Widgets/PredictTableWidget.php
 namespace Modules\Predict\Filament\Widgets;
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-// ✅ CORRETTO - Modules/Predict/Filament/Widgets/PredictTableWidget.php
-namespace Modules\Predict\Filament\Widgets;
->>>>>>> a988596b (first)
 // ✅ CORRETTO - Modules/Forecast/Filament/Widgets/ForecastTableWidget.php
 namespace Modules\Forecast\Filament\Widgets;
 
@@ -74,27 +59,13 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget as BaseWidget;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 class PredictTableWidget extends BaseWidget
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-class PredictTableWidget extends BaseWidget
->>>>>>> a988596b (first)
 class ForecastTableWidget extends BaseWidget
 {
     public function table(Table $table): Table
     {
         return $table
-<<<<<<< HEAD
-<<<<<<< HEAD
             ->query(Predict::query()->where('status', 'active'))
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            ->query(Predict::query()->where('status', 'active'))
->>>>>>> a988596b (first)
             ->query(Forecast::query()->where('status', 'active'))
             ->searchable()              // ✅ Search automatica
             ->filters([                 // ✅ Filters automatici
@@ -121,16 +92,8 @@ class ForecastTableWidget extends BaseWidget
 
 ### View Blade (Solo @livewire)
 ```blade
-<<<<<<< HEAD
-<<<<<<< HEAD
 {{-- ✅ CORRETTO - Themes/TwentyOne/resources/views/filament/widgets/predict-table.blade.php --}}
 @livewire(\Modules\Predict\Filament\Widgets\PredictTableWidget::class)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-{{-- ✅ CORRETTO - Themes/TwentyOne/resources/views/filament/widgets/predict-table.blade.php --}}
-@livewire(\Modules\Predict\Filament\Widgets\PredictTableWidget::class)
->>>>>>> a988596b (first)
 {{-- ✅ CORRETTO - Themes/TwentyOne/resources/views/filament/widgets/forecast-table.blade.php --}}
 @livewire(\Modules\Forecast\Filament\Widgets\ForecastTableWidget::class)
 ```
@@ -138,30 +101,15 @@ class ForecastTableWidget extends BaseWidget
 ### JSON CMS
 ```json
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "slug": "predicts.index",
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    "slug": "predicts.index",
->>>>>>> a988596b (first)
     "slug": "forecasts.index",
     "content_blocks": {
         "it": [
             {
                 "type": "widget",
                 "data": {
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "view": "pub_theme::filament.widgets.predict-table",
                     "widget": "Modules\\Predict\\Filament\\Widgets\\PredictTableWidget"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    "view": "pub_theme::filament.widgets.predict-table",
-                    "widget": "Modules\\Predict\\Filament\\Widgets\\PredictTableWidget"
->>>>>>> a988596b (first)
                     "view": "pub_theme::filament.widgets.forecast-table",
                     "widget": "Modules\\Forecast\\Filament\\Widgets\\ForecastTableWidget"
                 }
@@ -207,28 +155,14 @@ laravel/
         └── resources/views/
             └── filament/
                 └── widgets/
-<<<<<<< HEAD
-<<<<<<< HEAD
                     └── predict-table.blade.php  ✅ VISTA
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    └── predict-table.blade.php  ✅ VISTA
->>>>>>> a988596b (first)
                     └── forecast-table.blade.php  ✅ VISTA
 ```
 
 ### Flusso Dati
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. HTTP Request → predicts.index
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. HTTP Request → predicts.index
->>>>>>> a988596b (first)
 1. HTTP Request → forecasts.index
    ↓
 2. Folio Route → [container0]/index.blade.php
@@ -292,18 +226,9 @@ Prima di commitare una pagina list/grid:
 - [Tables Overview](https://filamentphp.com/docs/5.x/tables/overview)
 
 ### Esempi Reali
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `Modules/Predict/Filament/Widgets/PredictTableWidget.php`
 - `Themes/TwentyOne/resources/views/filament/widgets/predict-table.blade.php`
 - `config/local/predict/database/content/pages/predicts.index.json`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- `Modules/Predict/Filament/Widgets/PredictTableWidget.php`
-- `Themes/TwentyOne/resources/views/filament/widgets/predict-table.blade.php`
-- `config/local/predict/database/content/pages/predicts.index.json`
->>>>>>> a988596b (first)
 - `Modules/Forecast/Filament/Widgets/ForecastTableWidget.php`
 - `Themes/TwentyOne/resources/views/filament/widgets/forecast-table.blade.php`
 - `config/local/forecast/database/content/pages/forecasts.index.json`

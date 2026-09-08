@@ -4,14 +4,7 @@ type: concept
 tags: [complete, success]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "complete-success 🏆 fixcity - complete success"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "complete-success 🏆 fixcity - complete success"
->>>>>>> a988596b (first)
 qmd: "complete-success 🏆 ptv - complete success"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]

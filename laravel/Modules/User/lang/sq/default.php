@@ -56,18 +56,7 @@ return [
             'must_enable' => 'Duhet të aktivizoni autentifikimin me dy faktorë për të përdorur këtë faqe.',
             'not_enabled' => [
                 'title' => 'Nuk keni aktivizuar autentifikimin me dy faktorë.',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'description' => 'Kur aktivizohet autentifikimi me dy faktorë, do t\'ju kërkohet një kod i sigurt dhe e rastësishme gjatë vërtetimit. Ju mund ta merrni këtë kod nga aplikacioni Google Authenticator në telefonin tuaj.',
-=======
-                'description' => "Kur aktivizohet autentifikimi me dy faktorë, do t'ju kërkohet një kod i sigurt dhe e rastësishme gjatë vërtetimit. Ju mund ta merrni këtë kod nga aplikacioni Google Authenticator në telefonin tuaj.",
->>>>>>> f548be94 (.)
-=======
-                'description' => "Kur aktivizohet autentifikimi me dy faktorë, do t'ju kërkohet një kod i sigurt dhe e rastësishme gjatë vërtetimit. Ju mund ta merrni këtë kod nga aplikacioni Google Authenticator në telefonin tuaj.",
-=======
-                'description' => 'Kur aktivizohet autentifikimi me dy faktorë, do t\'ju kërkohet një kod i sigurt dhe e rastësishme gjatë vërtetimit. Ju mund ta merrni këtë kod nga aplikacioni Google Authenticator në telefonin tuaj.',
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
             ],
             'finish_enabling' => [
                 'title' => 'Përfundo aktivizimin e autentifikimit me dy faktorë.',
@@ -113,8 +102,6 @@ return [
         'tooltip' => 'Kopjuar!',
     ],
     'fields' => [
-<<<<<<< HEAD
-<<<<<<< HEAD
         'avatar' => [
             'label' => 'Avatar',
             'tooltip' => '',
@@ -219,135 +206,4 @@ return [
     'plural_label' => 'Missing Plural label',
     'actions' => [
     ],
-=======
-=======
->>>>>>> 87273113 (.)
-        'avatar' => 'Avatar',
-        'email' => 'Email',
-        'login' => 'Identifikohu',
-        'name' => 'Emri',
-        'fjalëkalim' => 'Fjalëkalimi',
-        'password_confirm' => 'Konfirmo fjalëkalimin',
-        'new_password' => 'Fjalëkalim i ri',
-        'new_password_confirmation' => 'Konfirmo fjalëkalimin',
-        'token_name' => 'Emri i Kodit për API',
-        'token_expiry' => 'Data e skadimit te kodit API',
-        'abilities' => 'Aftësitë',
-        '2fa_code' => 'Kodi',
-        '2fa_recovery_code' => 'Kodi i rikuperimit',
-        'created' => 'Krijuar',
-        'expires' => 'Skadon',
-    ],
-    'or' => 'Ose',
-    'cancel' => 'Anullo',
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-        'avatar' => [
-            'label' => 'Avatar',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'email' => [
-            'label' => 'Email',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'login' => [
-            'label' => 'Identifikohu',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'name' => [
-            'label' => 'Emri',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'fjalëkalim' => [
-            'label' => 'Fjalëkalimi',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'password_confirm' => [
-            'label' => 'Konfirmo fjalëkalimin',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'new_password' => [
-            'label' => 'Fjalëkalim i ri',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'new_password_confirmation' => [
-            'label' => 'Konfirmo fjalëkalimin',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'token_name' => [
-            'label' => 'Emri i Kodit për API',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'token_expiry' => [
-            'label' => 'Data e skadimit te kodit API',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'abilities' => [
-            'label' => 'Aftësitë',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        '2fa_code' => [
-            'label' => 'Kodi',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        '2fa_recovery_code' => [
-            'label' => 'Kodi i rikuperimit',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'created' => [
-            'label' => 'Krijuar',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'expires' => [
-            'label' => 'Skadon',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-    ],
-    'or' => 'Ose',
-    'cancel' => 'Anullo',
-    'navigation' => [
-        'label' => 'Missing Navigation Label',
-        'plural_label' => 'Missing Navigation Plural Label',
-        'group' => 'Missing Group',
-        'icon' => 'heroicon-o-puzzle-piece',
-        'sort' => 100,
-    ],
-    'label' => 'Missing Label',
-    'plural_label' => 'Missing Plural label',
-    'actions' => [
-    ],
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 ];

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "PHPStan Level 10 - Progresso Finale"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # PHPStan Level 10 - Progresso Finale
 
 **Data**: 2025-01-22
@@ -84,13 +73,3 @@ Da identificare e correggere sistematicamente.
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-*Ultimo aggiornamento: 2025-01-22*
->>>>>>> 60a2c9a9 (.)
-=======
-*Ultimo aggiornamento: 2025-01-22*
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

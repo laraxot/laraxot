@@ -1,13 +1,6 @@
 # QWEN Critical Rules
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Regole critiche del progetto Base Predict.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Regole critiche del progetto Base Predict.
->>>>>>> a988596b (first)
 Regole critiche del progetto Base Forecast.
 
 ---
@@ -30,14 +23,7 @@ Regole critiche del progetto Base Forecast.
 Themes/TwentyOne/Http/Livewire/*.php  ← FORBIDDEN!
 
 {{-- NO Controllers for lists --}}
-<<<<<<< HEAD
-<<<<<<< HEAD
 PredictController@index  ← FORBIDDEN!
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-PredictController@index  ← FORBIDDEN!
->>>>>>> a988596b (first)
 ForecastController@index  ← FORBIDDEN!
 ```
 
@@ -45,30 +31,15 @@ ForecastController@index  ← FORBIDDEN!
 
 ```blade
 {{-- Filament Table Widget --}}
-<<<<<<< HEAD
-<<<<<<< HEAD
 @livewire(\Modules\Predict\Filament\Widgets\PredictTableWidget::class)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-@livewire(\Modules\Predict\Filament\Widgets\PredictTableWidget::class)
->>>>>>> a988596b (first)
 @livewire(\Modules\Forecast\Filament\Widgets\ForecastTableWidget::class)
 
 {{-- Or via CMS JSON --}}
 {
     "type": "widget",
     "data": {
-<<<<<<< HEAD
-<<<<<<< HEAD
         "view": "pub_theme::filament.widgets.predict-table",
         "widget": "Modules\\Predict\\Filament\\Widgets\\PredictTableWidget"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        "view": "pub_theme::filament.widgets.predict-table",
-        "widget": "Modules\\Predict\\Filament\\Widgets\\PredictTableWidget"
->>>>>>> a988596b (first)
         "view": "pub_theme::filament.widgets.forecast-table",
         "widget": "Modules\\Forecast\\Filament\\Widgets\\ForecastTableWidget"
     }
@@ -155,18 +126,9 @@ public function buildOrderBook(): array { ... }
 ### ✅ CORRETTO
 
 La logica specifica va in:
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. **Filament Widgets**: `Modules/Predict/Filament/Widgets/`
 2. **Actions**: `Modules/Predict/Actions/`
 3. **CMS Blocks**: `Modules/Predict/resources/views/components/blocks/`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. **Filament Widgets**: `Modules/Predict/Filament/Widgets/`
-2. **Actions**: `Modules/Predict/Actions/`
-3. **CMS Blocks**: `Modules/Predict/resources/views/components/blocks/`
->>>>>>> a988596b (first)
 1. **Filament Widgets**: `Modules/Forecast/Filament/Widgets/`
 2. **Actions**: `Modules/Forecast/Actions/`
 3. **CMS Blocks**: `Modules/Forecast/resources/views/components/blocks/`
@@ -182,16 +144,8 @@ namespace::context.collection.element.type
 ```
 
 ```blade
-<<<<<<< HEAD
-<<<<<<< HEAD
 ✅ __('predict::user.fields.first_name.label')
 ❌ __('predict::fields.key')  // Missing type!
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-✅ __('predict::user.fields.first_name.label')
-❌ __('predict::fields.key')  // Missing type!
->>>>>>> a988596b (first)
 ✅ __('forecast::user.fields.first_name.label')
 ❌ __('forecast::fields.key')  // Missing type!
 ```

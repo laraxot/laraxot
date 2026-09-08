@@ -8,23 +8,8 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Forms\Components\Field;
-use Filament\Forms\Components\KeyValue;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
 use Filament\Resources\Pages\PageRegistration;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Filament\Resources\RelationManagers\RelationManager;
-=======
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-use Filament\Resources\RelationManagers\RelationManager;
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Modules\User\Filament\Clusters\Socialite;
@@ -40,61 +25,9 @@ class SsoProviderResource extends XotBaseResource
     protected static ?string $model = SsoProvider::class;
 
     /**
-<<<<<<< HEAD
-     * @return array<string, Field>
-     */
-    #[\Override]
-    public static function getFormSchema(): array
-    {
-        return [
-            'name' => TextInput::make('name')
-                ->required()
-                ->maxLength(255),
-            'display_name' => TextInput::make('display_name')
-                ->required()
-                ->maxLength(255),
-            'type' => Select::make('type')
-                ->options([
-                    'saml' => 'SAML',
-                    'oidc' => 'OIDC',
-                    'oauth' => 'OAuth',
-                ])
-                ->required(),
-            'entity_id' => TextInput::make('entity_id')->maxLength(255),
-            'client_id' => TextInput::make('client_id')->maxLength(255),
-            'client_secret' => TextInput::make('client_secret')
-                ->password()
-                ->maxLength(255),
-            'redirect_url' => TextInput::make('redirect_url')
-                ->url()
-                ->maxLength(255),
-            'metadata_url' => TextInput::make('metadata_url')
-                ->url()
-                ->maxLength(255),
-            'scopes' => Textarea::make('scopes')->rows(2),
-            'settings' => KeyValue::make('settings'),
-            'domain_whitelist' => KeyValue::make('domain_whitelist'),
-            'role_mapping' => KeyValue::make('role_mapping'),
-            'is_active' => Toggle::make('is_active'),
-        ];
-    }
-
-    /**
-     * @return array<string, TextColumn|IconColumn>
-     */
-<<<<<<< HEAD
-    public function getTableColumns(): array
-=======
-    public static function getTableColumns(): array
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
      * @return array<string, TextColumn|IconColumn>
      */
     public function getTableColumns(): array
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
     {
         return [
             'name' => TextColumn::make('name')
@@ -142,18 +75,7 @@ class SsoProviderResource extends XotBaseResource
     }
 
     /**
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @return array<string, class-string<RelationManager>>
-=======
-     * @return array<string, class-string<\Filament\Resources\RelationManagers\RelationManager>>
->>>>>>> 60a2c9a9 (.)
-=======
-     * @return array<string, class-string<\Filament\Resources\RelationManagers\RelationManager>>
-=======
-     * @return array<string, class-string<RelationManager>>
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
      */
     #[\Override]
     public static function getRelations(): array

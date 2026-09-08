@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
@@ -267,26 +263,3 @@ function notifyThemeForThemeable(NotifyThemeable $themeable): NotifyTheme
 }
 
 pest()->extend(TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
-<<<<<<< HEAD
-=======
-/*
- * Bootstrap Pest — modulo Notify.
- *
- * Questo file NON viene caricato. `Pest\Bootstrappers\BootFiles` legge `Pest.php`,
- * `Helpers.php` ed `Expectations.php` da un solo percorso per run — quello della root —
- * quindi ogni funzione dichiarata qui è codice morto e i test che la chiamano falliscono
- * con `Call to undefined function`.
- *
- * Regole, non negoziabili:
- * - zero funzioni libere qui dentro (`grep -c '^function ' ` deve dare 0);
- * - helper condivisi: metodi statici su `Modules\Xot\Tests\XotBasePest` (autoload PSR-4,
- *   niente `require_once`);
- * - helper di dominio: metodi statici su `Modules\Notify\Tests\TestCase`;
- * - ogni file di test dichiara `uses(\Modules\Notify\Tests\TestCase::class)` in testa —
- *   un `uses()->in(...)` scritto qui non verrebbe applicato;
- * - vietati `pest()->extend()` e `pest()->uses()` (PHPStan `method.internalClass`);
- * - vietata la cartella `tests/Support/` (ADR-002).
- */
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)

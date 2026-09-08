@@ -56,12 +56,5 @@ Per ogni azione SMS, verificare che:
 
 - [Struttura della Configurazione SMS](./sms_config_structure.md)
 - [Requisiti di Configurazione Netfun](./netfun_config_requirements.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Pattern Factory per SMS](./sms_action_factory_analysis.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Pattern Factory per SMS](./sms_action_factory_analysis.md)
->>>>>>> a988596b (first)
 - [Pattern Factory per SMS](./sms-action-factory-analysis.md)

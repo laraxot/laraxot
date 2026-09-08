@@ -44,16 +44,7 @@ class SmsFactorData extends Data
                 return [
                     'Authorization' => 'Bearer '.$this->token,
                     'Content-Type' => 'application/json',
-<<<<<<< HEAD
-<<<<<<< HEAD
                     'Cache-Control' => 'no-cache'];
-=======
-                    'Cache-Control' => 'no-cache',
-                ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    'Cache-Control' => 'no-cache'];
->>>>>>> a988596b (first)
         }
     }
 

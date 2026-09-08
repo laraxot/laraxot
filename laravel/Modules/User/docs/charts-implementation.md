@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 ---
 title: "User Module - Charts Implementation"
 type: concept
@@ -23,12 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 # User Module - Charts Implementation
 
 ## 📋 Panoramica
@@ -592,16 +581,6 @@ class UsersChartWidgetTest extends TestCase
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-**Ultimo aggiornamento:** Dicembre 2025
->>>>>>> 60a2c9a9 (.)
-=======
-**Ultimo aggiornamento:** Dicembre 2025
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
 **Modulo:** User
 **Framework:** Laraxot/PTVX
 **Filament:** 4.x

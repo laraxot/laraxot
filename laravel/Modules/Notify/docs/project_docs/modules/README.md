@@ -1,29 +1,50 @@
-# Notify
+---
+title: "Documentazione Moduli"
+type: index
+tags: [notify, docs, project_docs, modules]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione project_docs modules readme documentazione moduli index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../../README.md
+  - ../../wiki/index.md
+  - ../../notifications/readme.md
+  - ../../integrations/readme.md
+  - ../../templates/readme.md
+---
+# Documentazione Moduli
 
-[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Panoramica
+Questa sezione contiene la documentazione specifica di ogni modulo del sistema Laraxot.
 
-> **Core module for the FixCity Platform.**
+## Moduli Disponibili
 
-## Perché esiste
+### xot/
+Modulo core del sistema Laraxot.
 
-Core module for the FixCity Platform.
+**Contenuti:**
+- Classi base
+- Service Provider
+- Helper e utilities
+- Pattern comuni
 
-## Superpoteri
+### user/
+Modulo per la gestione utenti e autenticazione.
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+**Contenuti:**
+- Autenticazione
+- Autorizzazioni
+- Profili utente
+- Team e tenant
 
-## Documentazione
+### ui/
+Modulo per i componenti dell'interfaccia utente.
 
-<<<<<<< HEAD
 **Contenuti:**
 - Componenti Blade
 - Widget Filament
@@ -183,16 +204,8 @@ Modulo per l'intelligenza artificiale.
 - Chatbots
 - Automation
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### fixcity/
 Modulo specifico per FixCity.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-### fixcity/
-Modulo specifico per FixCity.
->>>>>>> a988596b (first)
 ### laraxot/
 Modulo specifico per Notify.
 
@@ -207,14 +220,7 @@ Modulo specifico per Notify.
 - [Architettura](../architecture/)
 - [Sviluppo](../development/)
 - [Troubleshooting](../troubleshooting/)
-=======
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
->>>>>>> d822d97f (.)
 
 ---
 
-**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+*Ultimo aggiornamento: Agosto 2025* 

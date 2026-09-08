@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # 🔧 Console Commands FixCity
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# 🔧 Console Commands FixCity
->>>>>>> a988596b (first)
 # 🔧 Console Commands Notify
 
 > **Laravel 11**: Comandi auto-registrati da `app/Console/Commands/`
@@ -188,71 +181,31 @@ php artisan migrate --force
 php artisan queue:restart
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## 🔧 Comandi Personalizzati FixCity
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-## 🔧 Comandi Personalizzati FixCity
->>>>>>> a988596b (first)
 ## 🔧 Comandi Personalizzati Notify
 
 ### Template Base
 ```php
 <?php
-<<<<<<< HEAD
-<<<<<<< HEAD
 // app/Console/Commands/FixCityCommand.php
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-// app/Console/Commands/FixCityCommand.php
->>>>>>> a988596b (first)
 // app/Console/Commands/NotifyCommand.php
 
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 class FixCityCommand extends Command
 {
     protected $signature = 'fixcity:example 
-=======
-class NotifyCommand extends Command
-{
-    protected $signature = 'laraxot:example 
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-class FixCityCommand extends Command
-{
-    protected $signature = 'fixcity:example 
->>>>>>> a988596b (first)
                            {argument : Argomento richiesto}
                            {--option=default : Opzione con default}
                            {--flag : Boolean flag}';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
     protected $description = 'Comando esempio per FixCity';
 
     public function handle(): int
     {
         $this->info('🚀 Esecuzione comando FixCity...');
-<<<<<<< HEAD
-=======
-    protected $description = 'Comando esempio per Notify';
-
-    public function handle(): int
-    {
-        $this->info('🚀 Esecuzione comando Notify...');
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         
         if ($this->confirm('Continuare con l\'operazione?')) {
             // Business logic
@@ -300,14 +253,7 @@ php artisan health:check
 ### Struttura Comandi (Laravel 11)
 ```
 app/Console/Commands/
-<<<<<<< HEAD
-<<<<<<< HEAD
 ├── FixCity/           # Comandi business logic
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-├── FixCity/           # Comandi business logic
->>>>>>> a988596b (first)
 ├── Notify/           # Comandi business logic
 │   ├── ProcessTickets.php
 │   └── GenerateReports.php
@@ -322,16 +268,8 @@ app/Console/Commands/
 ### Convenzioni Naming
 ```bash
 # Gruppo comando con namespace
-<<<<<<< HEAD
-<<<<<<< HEAD
 fixcity:process-tickets
 fixcity:generate-reports
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-fixcity:process-tickets
-fixcity:generate-reports
->>>>>>> a988596b (first)
 laraxot:process-tickets
 laraxot:generate-reports
 

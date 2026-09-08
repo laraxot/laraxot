@@ -24,14 +24,7 @@ Il sistema wiki si articola in tre layer:
 - **Regola**: L'LLM SCrive e mantiene; l'umano legge e naviga
 
 ### Layer 3: Schema (questo file)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **Posizione**: `docs/.schema/WIKI_SCHEMA.md`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **Posizione**: `docs/.schema/WIKI_SCHEMA.md`
->>>>>>> a988596b (first)
 - **Posizione**: `docs/.schema/wiki-schema.md`
 - **Scopo**: Istruisce l'LLM su convenzioni, workflow e struttura
 
@@ -45,27 +38,13 @@ Quando aggiungi un nuovo sorgente:
    - Sommario del documento
    - Entity pages rilevanti
    - Concept pages se necessario
-<<<<<<< HEAD
-<<<<<<< HEAD
 4. Aggiorna l'INDEX.md
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-4. Aggiorna l'INDEX.md
->>>>>>> a988596b (first)
 4. Aggiorna l'index.md
 5. Appendi a LOG.md
 
 ### Query
 Quando rispondi a domande:
-<<<<<<< HEAD
-<<<<<<< HEAD
 1. Consulta INDEX.md per trovare pagine rilevanti
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-1. Consulta INDEX.md per trovare pagine rilevanti
->>>>>>> a988596b (first)
 1. Consulta index.md per trovare pagine rilevanti
 2. Leggi le pagine identificate
 3. Sintetizza una risposta con citazioni
@@ -117,14 +96,7 @@ docs/
 ├── index.md              # Indice principale della wiki
 ├── log.md                # Log cronologico
 ├── .schema/
-<<<<<<< HEAD
-<<<<<<< HEAD
 │   └── WIKI_SCHEMA.md   # Questo file
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-│   └── WIKI_SCHEMA.md   # Questo file
->>>>>>> a988596b (first)
 │   └── wiki-schema.md   # Questo file
 ├── raw/                  # Sorgenti globali
 │   ├── articles/
@@ -139,14 +111,7 @@ docs/
     └── overviews/
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## Formato INDEX.md
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-## Formato INDEX.md
->>>>>>> a988596b (first)
 ## Formato index.md
 
 ```markdown

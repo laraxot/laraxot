@@ -47,45 +47,17 @@ class SendPushWithTemplateAction
                 'title' => 'Nuovo Ticket Creato',
                 'body' => 'È stato creato un nuovo ticket: {ticket_title}',
                 'icon' => '/icons/ticket.png',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'data' => ['type' => 'ticket_created']],
-=======
-                'data' => ['type' => 'ticket_created'],
-            ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'data' => ['type' => 'ticket_created']],
->>>>>>> a988596b (first)
             'ticket_updated' => [
                 'title' => 'Ticket Aggiornato',
                 'body' => 'Il ticket {ticket_title} è stato aggiornato',
                 'icon' => '/icons/update.png',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'data' => ['type' => 'ticket_updated']],
-=======
-                'data' => ['type' => 'ticket_updated'],
-            ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'data' => ['type' => 'ticket_updated']],
->>>>>>> a988596b (first)
             'ticket_resolved' => [
                 'title' => 'Ticket Risolto',
                 'body' => 'Il ticket {ticket_title} è stato risolto',
                 'icon' => '/icons/check.png',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'data' => ['type' => 'ticket_resolved']]];
-=======
-                'data' => ['type' => 'ticket_resolved'],
-            ],
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'data' => ['type' => 'ticket_resolved']]];
->>>>>>> a988596b (first)
 
         return $templates[$templateId] ?? null;
     }

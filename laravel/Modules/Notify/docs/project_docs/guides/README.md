@@ -1,34 +1,104 @@
-# Notify
+---
+title: "Guide Utente"
+type: index
+tags: [notify, docs, project_docs, guides]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione project_docs guides readme guide utente index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../../README.md
+  - ../../wiki/index.md
+  - ../../notifications/readme.md
+  - ../../integrations/readme.md
+  - ../../templates/readme.md
+---
+# Guide Utente
 
-[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Panoramica
+Questa sezione contiene guide per l'utilizzo del sistema Laraxot, dall'installazione al deployment.
 
-> **Core module for the FixCity Platform.**
+## Struttura
 
-## Perché esiste
+### installation/
+Guide per l'installazione del sistema.
 
-Core module for the FixCity Platform.
+**Contenuti:**
+- Requisiti di sistema
+- Installazione Laravel
+- Configurazione moduli
+- Setup ambiente
+- Verifica installazione
 
-## Superpoteri
+### configuration/
+Guide per la configurazione del sistema.
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+**Contenuti:**
+- Configurazione database
+- Configurazione email
+- Configurazione cache
+- Configurazione storage
+- Configurazione sicurezza
 
-## Documentazione
+### deployment/
+Guide per il deployment in produzione.
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+**Contenuti:**
+- Preparazione ambiente
+- Deployment procedure
+- Monitoring
+- Backup
+- Rollback procedures
+
+## Guide Rapide
+
+### Installazione Rapida
+```bash
+# Clona il repository
+git clone [repository-url]
+
+# Installa dipendenze
+composer install
+
+# Configura ambiente
+cp .env.example .env
+php artisan key:generate
+
+# Esegui migrazioni
+php artisan migrate
+
+# Avvia server
+php artisan serve
+```
+
+### Configurazione Base
+1. Configura database in `.env`
+2. Configura email settings
+3. Configura storage settings
+4. Esegui seeder iniziali
+5. Verifica installazione
+
+### Deployment Checklist
+- [ ] Ambiente configurato
+- [ ] Database migrato
+- [ ] Cache configurato
+- [ ] Storage configurato
+- [ ] SSL configurato
+- [ ] Monitoring attivo
+- [ ] Backup configurato
+
+## Collegamenti
+
+- [Installazione](./installation/)
+- [Configurazione](./configuration/)
+- [Deployment](./deployment/)
+- [Sviluppo](../development/)
+- [Troubleshooting](../troubleshooting/)
 
 ---
 
-**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+*Ultimo aggiornamento: Agosto 2025* 

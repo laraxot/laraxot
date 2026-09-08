@@ -47,10 +47,6 @@ docs/
     └── overview.md      # This file
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 ## Progetto: FixCity (base_fixcity_fila5)
 
 **Stack**: Laravel 11 + Filament 5 + Laraxot pattern  
@@ -78,25 +74,6 @@ docs/
 | `raw/` | `./docs/` + ogni `Modules/*/docs/` | Documenti sorgente (immutabili) |
 | `wiki/` | `./docs/wiki/` + ogni `Modules/*/docs/wiki/` | Conoscenza compilata dall'LLM |
 | `AGENTS.md` | `./docs/wiki/AGENTS.md` | Schema multi-agent |
-<<<<<<< HEAD
-=======
-## Progetto: Notify (base_ptvx_fila5)
-
-**Stack**: Laravel 11 + Filament 5 + Laraxot pattern  
-**Moduli**: 18 (Xot, Cms, UI, Lang, User, App, Blog, Geo, Media, Notify, Activity, Comment, Rating, Seo, Tenant, Job, Gdpr, AI)  
-**Temi**: 2 (Sixteen — Design Comuni/Bootstrap Italia, TwentyOne — cinematic/forecast market)  
-**Raw docs totali**: ~14.000 file  
-
-### Mapping Karpathy → Notify
-
-| Karpathy | Notify | Note |
-|----------|---------|------|
-| `raw/` | `./docs/` + ogni `Modules/*/docs/` | Documenti sorgente (immutabili) |
-| `wiki/` | `./docs/wiki/` + ogni `Modules/*/docs/wiki/` | Conoscenza compilata dall'LLM |
-| `AGENTS.md` | `./docs/wiki/agents.md` | Schema multi-agent |
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 | `index.md` | `./docs/wiki/index.md` | Catalogo globale |
 | `log.md` | `./docs/wiki/log.md` | Log append-only |
 
@@ -132,14 +109,7 @@ docs/
 ### Priorità 1: Moduli rimanenti
 
 1. **User** — autenticazione, profilo, GDPR compliance
-<<<<<<< HEAD
-<<<<<<< HEAD
 2. **Fixcity** — ticket system, segnalazioni civiche, workflow
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-2. **Fixcity** — ticket system, segnalazioni civiche, workflow
->>>>>>> a988596b (first)
 2. **App** — ticket system, segnalazioni civiche, workflow
 3. **Geo** — geolocalizzazione, mappe, OpenStreetMap
 4. **Media** — gestione file, upload, storage S3

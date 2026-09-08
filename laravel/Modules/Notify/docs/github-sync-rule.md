@@ -57,14 +57,7 @@ related:
 
 ```bash
 # After updating .github/workflows/
-<<<<<<< HEAD
-<<<<<<< HEAD
 cd /var/www/_bases/base_fixcity_fila5
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-cd /var/www/_bases/base_fixcity_fila5
->>>>>>> a988596b (first)
 cd /var/www/_bases/base_ptv_fila5
 
 # Create directory if needed

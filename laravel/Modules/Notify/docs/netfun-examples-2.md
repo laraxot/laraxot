@@ -707,11 +707,4 @@ class NetfunNotificationIntegrationTest extends TestCase
 # Netfun Examples
 
 This document provides examples for Netfun integration.
-<<<<<<< HEAD
-<<<<<<< HEAD
 This document provides examples for Netfun integration.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-This document provides examples for Netfun integration.
->>>>>>> a988596b (first)

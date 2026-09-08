@@ -322,14 +322,7 @@ git merge --abort   # No merge in progress
 # 2. Check current status
 git status --short
 # M docs/custom-charts-session-summary.md
-<<<<<<< HEAD
-<<<<<<< HEAD
 # M laravel/Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# M laravel/Modules/Quaeris/app/Actions/QuestionChart/Custom/SmsResponseRate.php
->>>>>>> a988596b (first)
 # M laravel/Modules/App/app/Actions/QuestionChart/Custom/SmsResponseRate.php
 # ...
 

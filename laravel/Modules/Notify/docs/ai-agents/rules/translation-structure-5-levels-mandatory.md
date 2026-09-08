@@ -123,16 +123,8 @@ actions.trade.market.label      → Etichetta azione trade
 **Immediate Fix**:
 ```blade
 // ✅ CORRETTO: 5 livelli con __()
-<<<<<<< HEAD
-<<<<<<< HEAD
 {{ __('predict::labels.market.volume.label') }}
 {{ __('predict::messages.bet.loading.message') }}
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-{{ __('predict::labels.market.volume.label') }}
-{{ __('predict::messages.bet.loading.message') }}
->>>>>>> a988596b (first)
 {{ __('forecast::labels.market.volume.label') }}
 {{ __('forecast::messages.bet.loading.message') }}
 ```

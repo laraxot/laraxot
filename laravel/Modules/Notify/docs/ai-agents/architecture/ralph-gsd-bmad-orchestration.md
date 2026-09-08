@@ -81,22 +81,8 @@ Nel repo prevalgono sempre i quality gate locali, anche quando il loop Ralph sug
 
 ## Riferimenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 - [AI agents docs index](../00-INDEX.md)
 - [Architecture index](./00-INDEX.md)
 - [Ralph local README](../../ralph/README.md)
 - [GSD + BMAD guide](../gsd-bmad-comprehensive-guide.md)
 - [AGENTS.md](../../../../AGENTS.md)
-<<<<<<< HEAD
-=======
-- [AI agents docs index](../00-index.md)
-- [Architecture index](./00-index.md)
-- [Ralph local README](../../ralph/README.md)
-- [GSD + BMAD guide](../gsd-bmad-comprehensive-guide.md)
-- [agents.md](../../../../agents.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)

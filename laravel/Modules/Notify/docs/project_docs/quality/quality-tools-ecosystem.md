@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # 🔧 ECOSISTEMA STRUMENTI QUALITÀ - FIXCITY PLATFORM
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# 🔧 ECOSISTEMA STRUMENTI QUALITÀ - FIXCITY PLATFORM
->>>>>>> a988596b (first)
 # 🔧 ECOSISTEMA STRUMENTI QUALITÀ - NOTIFY PLATFORM
 
 **Versione**: 1.0  
@@ -14,14 +7,7 @@
 **Priorità**: CRITICAL  
 
 ## 🎯 OBIETTIVO
-<<<<<<< HEAD
-<<<<<<< HEAD
 Implementare un ecosistema completo di strumenti di qualità del codice per il progetto FixCity, coprendo tutti gli aspetti: PHP, JavaScript, CSS, sicurezza, documentazione e CI/CD.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Implementare un ecosistema completo di strumenti di qualità del codice per il progetto FixCity, coprendo tutti gli aspetti: PHP, JavaScript, CSS, sicurezza, documentazione e CI/CD.
->>>>>>> a988596b (first)
 Implementare un ecosistema completo di strumenti di qualità del codice per il progetto Notify, coprendo tutti gli aspetti: PHP, JavaScript, CSS, sicurezza, documentazione e CI/CD.
 
 ## 🛠️ STRUMENTI IMPLEMENTATI
@@ -726,14 +712,7 @@ jobs:
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 *Questo ecosistema garantisce la massima qualità del codice in tutti gli aspetti del progetto FixCity Platform.*
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-*Questo ecosistema garantisce la massima qualità del codice in tutti gli aspetti del progetto FixCity Platform.*
->>>>>>> a988596b (first)
 *Questo ecosistema garantisce la massima qualità del codice in tutti gli aspetti del progetto Notify Platform.*
 
 

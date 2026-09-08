@@ -5,35 +5,31 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources\TeamUserResource\Schemas;
 
 use Filament\Schemas\Components\Component as SchemaComponent;
-use Modules\Xot\Filament\Forms\Components\XotBaseSelect;
+use Filament\Forms\Components\Select;
 use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
-use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
+use Filament\Schemas\Components\Section;
 
 class TeamUserForm extends XotBaseResourceForm
 {
     /**
      * @return array<int|string, SchemaComponent>
      */
-<<<<<<< HEAD
-    public static function getFormSchema(): array
-=======
     public function getFormSchema(): array
->>>>>>> 87273113 (.)
     {
         return [
-            'team_user' => XotBaseSection::make('Team User Information')
+            'team_user' => Section::make('Team User Information')
                 ->schema([
-                    'team_id' => XotBaseSelect::make('team_id')
+                    'team_id' => Select::make('team_id')
                         ->label('Team')
                         ->relationship('team', 'name')
                         ->required()
                         ->searchable(),
-                    'user_id' => XotBaseSelect::make('user_id')
+                    'user_id' => Select::make('user_id')
                         ->label('User')
                         ->relationship('user', 'name')
                         ->required()
                         ->searchable(),
-                    'role' => XotBaseSelect::make('role')
+                    'role' => Select::make('role')
                         ->label('Role')
                         ->options([
                             'admin' => 'Admin',

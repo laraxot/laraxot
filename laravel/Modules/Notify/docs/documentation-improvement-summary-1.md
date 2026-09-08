@@ -35,14 +35,7 @@ Successfully implemented a comprehensive documentation governance framework and 
 ✅ **784 temporal strings removed** from 3,646 markdown files  
 ✅ **Documentation governance framework** created  
 ✅ **Master documentation index** established  
-<<<<<<< HEAD
-<<<<<<< HEAD
 ✅ **Rules and standards** updated (AGENTS.md, .windsurfrules)  
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-✅ **Rules and standards** updated (AGENTS.md, .windsurfrules)  
->>>>>>> a988596b (first)
 ✅ **Rules and standards** updated (agents.md, .windsurfrules)  
 ✅ **Documentation management skill** created  
 ✅ **4 global memories** saved  
@@ -95,19 +88,9 @@ Successfully implemented a comprehensive documentation governance framework and 
 
 ### Rules Updates
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 5. **[AGENTS.md](AGENTS.md)** - Updated
 5. **[agents.md](AGENTS.md)** - Updated
 5. **[AGENTS.md](AGENTS.md)** - Updated
-=======
-5. **[agents.md](AGENTS.md)** - Updated
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-5. **[AGENTS.md](AGENTS.md)** - Updated
-5. **[agents.md](AGENTS.md)** - Updated
-5. **[AGENTS.md](AGENTS.md)** - Updated
->>>>>>> a988596b (first)
    - Added documentation governance section
    - No temporal strings rule
    - File naming conventions
@@ -331,19 +314,9 @@ grep -r "Last Updated" laravel/Modules/*/docs/ --include="*.md" | wc -l
 - [Improvement Plan](docs/documentation-analysis-and-improvement-plan.md)
 
 ### Rules
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [AGENTS.md](AGENTS.md) - Full standards
 - [agents.md](AGENTS.md) - Full standards
 - [AGENTS.md](AGENTS.md) - Full standards
-=======
-- [agents.md](AGENTS.md) - Full standards
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [AGENTS.md](AGENTS.md) - Full standards
-- [agents.md](AGENTS.md) - Full standards
-- [AGENTS.md](AGENTS.md) - Full standards
->>>>>>> a988596b (first)
 - [.windsurfrules](.windsurfrules) - IDE rules
 
 ### Skills

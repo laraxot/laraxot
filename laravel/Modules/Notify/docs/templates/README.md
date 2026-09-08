@@ -1,29 +1,60 @@
-# Notify
+---
+title: "Template Email"
+type: index
+tags: [notify, docs, templates]
+module: Notify
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "notify documentazione templates readme template email index readme frontmatter qmd search"
+issues:
+  - "https://github.com/laraxot/module_notify_fila5/issues/56"
+discussions:
+  - "https://github.com/laraxot/module_notify_fila5/discussions/57"
+related:
+  - ../README.md
+  - ../wiki/index.md
+  - ../notifications/readme.md
+  - ../integrations/readme.md
+  - readme.md
+---
+# Template Email
 
-[![Module](https://img.shields.io/badge/Module-Notify-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Panoramica
+Questo documento descrive il sistema di template email utilizzato nel modulo Notify.
 
-> **Core module for the FixCity Platform.**
+## Struttura dei Template
 
-## Perché esiste
+### Template Base
+```php
+// resources/views/vendor/notifications/email/base.blade.php
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config('app.name') }}</title>
+</head>
+<body>
+    <div class="container">
+        @yield('content')
+    </div>
+</body>
+</html>
+```
 
-Core module for the FixCity Platform.
+### Template Markdown
+```php
+// resources/views/vendor/notifications/email/welcome.blade.php
+@component('mail::message')
 
-## Superpoteri
+# Benvenuto in {{ config('app.name') }}
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+Grazie per esserti registrato.
 
-## Documentazione
+@component('mail::button', ['url' => $url])
+Accedi
+@endcomponent
 
-<<<<<<< HEAD
 Grazie,<br>
 {{ config('app.name') }}
 @endcomponent
@@ -129,24 +160,20 @@ Per contribuire alla documentazione, seguire le [Linee Guida](../../../../../doc
 
 ## Collegamenti Completi
 Per una lista completa di tutti i collegamenti tra i README.md, consultare il file [README_links.md](../../../../../docs/readme_links.md). 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 ---
 
 <!-- Merged from readme.md, which collided with this file on case-insensitive filesystems. -->
-=======
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
->>>>>>> d822d97f (.)
 
 ---
+title: "Readme"
+type: concept
+tags: [readme]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "readme readme"
+issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
+discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+related:
+  - "./module-readme-template.md"
+---
 
-**Modulo** `Notify` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

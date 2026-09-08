@@ -339,14 +339,7 @@ git push origin feature/user-activity-tracking
 
 ```bash
 # Return to main worktree
-<<<<<<< HEAD
-<<<<<<< HEAD
 cd /var/www/_bases/base_fixcity_fila5
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-cd /var/www/_bases/base_fixcity_fila5
->>>>>>> a988596b (first)
 cd /var/www/_bases/base_ptvx_fila5
 
 # Remove feature worktree

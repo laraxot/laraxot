@@ -46,7 +46,7 @@ Trasformare il rapporto cittadino-amministrazione attraverso:
 ### Tech Stack
 
 **Backend**:
-- Laravel 13.24.0 + PHP 8.3.20
+- Laravel 12.24.0 + PHP 8.3.20
 - SQLite (development) / PostgreSQL (production ready)
 - Nwidart Modules + Laraxot Extensions
 

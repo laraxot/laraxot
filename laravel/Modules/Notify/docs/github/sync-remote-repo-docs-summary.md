@@ -142,14 +142,7 @@ All documents are cross-referenced:
 - Coordination Log → Guide
 - Issue Template → Guide + Coordination Log
 - Discussion Template → Coordination Log
-<<<<<<< HEAD
-<<<<<<< HEAD
 - AGENTS.md → All docs
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- AGENTS.md → All docs
->>>>>>> a988596b (first)
 - agents.md → All docs
 
 ### External Links
@@ -202,14 +195,7 @@ All documents are cross-referenced:
 - Created GITHUB_WIKI_SYNC.md (wiki sync guide)
 - Created README.md (docs index)
 - Created GitHub Issue/Discussion templates
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Updated AGENTS.md with coordination guidelines
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Updated AGENTS.md with coordination guidelines
->>>>>>> a988596b (first)
 - Updated agents.md with coordination guidelines
 
 **Testing**:

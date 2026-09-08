@@ -1692,15 +1692,7 @@ public function getConnectionName(): ?string
 4. `Modules/Blog/docs/models/xotbasepivot-migration.md` (2.500+ parole)
 5. `docs/architecture/README.md` (1.500+ parole)
 6. `docs/XotBasePivot-Executive-Summary.md` (2.000+ parole)
-<<<<<<< HEAD
-<<<<<<< HEAD
 7. `docs/SESSIONE-2025-10-15-SUPER-MUCCA.md` (questo documento)
-=======
-7. `docs/sessione-super-mucca.md` (questo documento)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-7. `docs/SESSIONE-2025-10-15-SUPER-MUCCA.md` (questo documento)
->>>>>>> a988596b (first)
 
 **Totale:** ~20.000 parole di documentazione professionale
 

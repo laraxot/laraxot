@@ -372,18 +372,8 @@ NETFUN_TOKEN=your_token_here
 NETFUN_ENDPOINT=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 # Global SMS configuration
-<<<<<<< HEAD
-<<<<<<< HEAD
-SMS_FROM_NAME=<nome progetto>
-SMS_FROM_NAME=SaluteOra
-=======
 SMS_FROM_NAME=
 SMS_FROM_NAME=<nome progetto>
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-SMS_FROM_NAME=
-SMS_FROM_NAME=<nome progetto>
->>>>>>> a988596b (first)
 SMS_FROM_NUMBER=+393331234567
 SMS_DEBUG=false
 

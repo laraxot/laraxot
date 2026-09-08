@@ -52,11 +52,6 @@ class UserResource extends XotBaseResource {
     // Personalizzazioni solo tramite metodi/trait previsti
 }
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
 
 # Regola: Filament Pages che estendono XotBasePage
 
@@ -87,9 +82,3 @@ class PasswordExpired extends XotBasePage
 {
 }
 ```
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)

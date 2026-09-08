@@ -41,32 +41,14 @@ class SendAppointmentNotificationAction
             // we return early with logging
             Log::debug('Notification service not fully implemented - missing Patient models', [
                 'type' => $type,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'additional_data' => $additionalData]);
-=======
-                'additional_data' => $additionalData,
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'additional_data' => $additionalData]);
->>>>>>> a988596b (first)
 
             return false;
         } catch (Exception $e) {
             Log::error('Errore nell\'invio della notifica di appuntamento', [
                 'type' => $type,
                 'error' => $e->getMessage(),
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'trace' => $e->getTraceAsString()]);
-=======
-                'trace' => $e->getTraceAsString(),
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'trace' => $e->getTraceAsString()]);
->>>>>>> a988596b (first)
 
             return false;
         }

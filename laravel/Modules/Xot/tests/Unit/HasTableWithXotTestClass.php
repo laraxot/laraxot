@@ -66,7 +66,7 @@ class HasTableWithXotTestClass
     }
 
     /**
-     * @return array<int, mixed>
+     * @return array<string|int, \Filament\Tables\Filters\BaseFilter>
      */
     public function getTableFilters(): array
     {

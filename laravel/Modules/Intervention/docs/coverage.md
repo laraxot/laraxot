@@ -417,3 +417,80 @@ Nessun commit di codice necessario. Aggiornate solo le story per il dedup
 Xot marcate superseded). Report completo:
 `docs/chat/2026-09-07-phpstan-intervention-standdown-already-zero.md`
 (root del progetto).
+
+## typeCoverage.constantTypeCoverage — regressione re-fixata (2026-09-07, sessione 5)
+
+Continuazione di `docs/stories/2.8.phpstan-constant-type-coverage.story.md` e
+`docs/stories/5.1.phpstan-constant-type-coverage-remaining.story.md`, batch
+finale swarm (`docs/chat/2026-09-07-claim-typecoverage-final-push-swarm.md`).
+
+**Scoperta**: i 7 costanti già tipizzate dalla sessione story-2.8 delle
+~15:20 (sezione sopra, "After ~15:20: project-wide 270/300") erano
+**regredite** allo stato non tipato/doppio-docblock entro le ~22:11 (scan
+full-tree dello swarm: 302 costanti totali, 227/302 tipate, 15 righe
+`typeCoverage.constantTypeCoverage` su Intervention — stesso identico set di
+6 file già elencato sopra, incluse le duplicazioni `/** @var ... */` × 2 già
+descritte come sintomo della vecchia regressione). Causa più probabile:
+merge/reset di un'altra sessione concorrente durante le ore di swarm intenso
+(stessa classe di corruzione osservata poco dopo su `Modules/User/module.json`
+e `Modules/Notify/tests/Support/helpers.php`, entrambi con marker di conflitto
+git non risolti — vedi sotto).
+
+**Fix riapplicato**: stesso pattern della sessione story-2.8 (tipo nativo
+PHP 8.3+ su tutte le costanti, docblock `@var` più precisi mantenuti dove utili,
+duplicazioni rimosse):
+
+- `app/Actions/BuildInterventionReportDraftAction.php:23` — `ALLOWED_OUTCOMES` → `private const array`
+- `app/Data/DictatedMaterialLine.php:17` — `DEFAULT_UNIT` → `public const string`
+- `app/Data/LabourQuote.php:18,22` — `SURCHARGE_NIGHT`, `SURCHARGE_WEEKEND` → `public const string`
+- `app/Filament/Concerns/ResolvesCalendarReturnUrl.php:16` — `ALLOWED_CALENDAR_VIEWS` (trait) → `private const array`
+- `app/Observers/InterventionGoogleCalendarObserver.php:19` — `SYNC_FIELDS` → `private const array`
+- `app/Settings/InterventionTariffSettings.php:20,23,26,29,32,34` — tutte e 6 → `public const string`
+
+Nota sulla riga 16 del trait `ResolvesCalendarReturnUrl`: il formatter di
+`tomasvotruba/type-coverage` attribuisce l'errore al file della CLASSE che usa
+il trait (non al trait stesso) per ogni classe consumer — per questo lo scan
+full-tree elenca 4 righe separate (`InterventionCalendar.php:16`,
+`CreateIntervention.php:16`, `EditIntervention.php:16`,
+`ViewIntervention.php:16`) che sono in realtà la STESSA unica costante nel
+trait. Fixata una sola volta nel trait, risolve tutte e 4.
+
+**Collisione gestita**: una sessione concorrente ("phpstan-error-fixes-swarm")
+stava fixando in parallelo lo stesso identico problema
+(`classConstant.nativeType` su `ALLOWED_CALENDAR_VIEWS`) sugli stessi due file
+(`ResolvesCalendarReturnUrl.php`, `CreateIntervention.php`). Working tree
+condiviso tra sessioni (non clone separati): il mio edit e il commit
+dell'altra sessione sono convereduti sullo stesso contenuto finale byte-per-byte
+(verificato con `git show HEAD:<file>` subito dopo), zero conflitto reale.
+Tutti i fix di questa sessione risultano già presenti in `HEAD` (commit
+`d97942c` e successivi, fatti da sessioni concorrenti che hanno incluso questo
+working tree nel loro `git add`) — nessun commit aggiuntivo necessario da
+questa sessione per Intervention.
+
+**Verifica bloccata da corruzione repo-wide non correlata**: uno scan
+full-tree (`./vendor/bin/phpstan analyse --memory-limit=-1`, necessario per
+questa regola specifica, vedi nota sopra su `areFullPathsAnalysed`) fallisce
+con `Laravel framework bootstrap failed` /
+`Only arrays and Traversables can be unpacked, null given` causato da
+`Modules/User/module.json` con marker di conflitto git **committati**
+(`<<<<<<< HEAD` / `=======` / `>>>>>>>` ancora nel file, `git status` pulito
+quindi è nel commit stesso, non solo working tree). Un retry successivo ha
+incontrato un secondo blocco simile (`Modules/Notify/tests/Support/helpers.php`,
+parse error su marker di conflitto). Nessuno dei due moduli è nello scope di
+questo task (User/Notify), non toccati, segnalati qui e in
+`docs/chat/INDEX.md` per la sessione proprietaria.
+
+**Verifica eseguita** (module-scoped, non valida per questa regola specifica
+ma conferma nessuna regressione sulle altre regole):
+
+```bash
+cd laravel && ./vendor/bin/phpstan analyse Modules/Intervention --no-progress --memory-limit=-1
+# [OK] No errors
+```
+
+Baseline pre-fix (full-tree, swarm claim doc, ~22:11): 302 costanti totali,
+227 tipate (75.1%). Le 15 righe Intervention sopra erano tra le 75 righe
+`typeCoverage.constantTypeCoverage` residue project-wide in quel momento.
+Conferma full-tree post-fix non disponibile per il blocker descritto sopra;
+stato del codice verificato via `git show HEAD` su tutti i file elencati
+(tipo nativo presente su tutte le 12 costanti distinte).

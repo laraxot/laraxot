@@ -32,16 +32,8 @@ La classe `SpatieEmail` ora utilizza l'API moderna di Laravel per gli allegati t
 $attachments = [
     [
         'path' => '/var/www/html/<nome progetto>/public_html/images/avatars/default.svg',
-<<<<<<< HEAD
-<<<<<<< HEAD
 'path' => '/var/www/html/Quaeris/public_html/images/avatars/default.svg',
         'path' => '/var/www/html/_bases/base_techplanner_fila5_mono/public_html/images/avatars/default.svg',
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-'path' => '/var/www/html/Quaeris/public_html/images/avatars/default.svg',
-        'path' => '/var/www/html/_bases/base_techplanner_fila5_mono/public_html/images/avatars/default.svg',
->>>>>>> a988596b (first)
 'path' => '/var/www/_bases/base_ptvx_fila5/public_html/images/avatars/default.svg',
         'path' => '/var/www/html/_bases/base_ptvx_fila5/public_html/images/avatars/default.svg',
         'as' => 'logo.svg',

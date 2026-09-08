@@ -14,11 +14,7 @@ class PasswordResetForm extends XotBaseResourceForm
     /**
      * @return array<int|string, SchemaComponent>
      */
-<<<<<<< HEAD
-    public static function getFormSchema(): array
-=======
     public function getFormSchema(): array
->>>>>>> 87273113 (.)
     {
         return [
             'password_reset_info' => Section::make('Password Reset Information')

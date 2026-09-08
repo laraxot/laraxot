@@ -124,7 +124,7 @@ composer update "filament/*" -W
 - ✅ Community help
 
 ### 4. Compatibility
-- ✅ Laravel 13 compatible
+- ✅ Laravel 12 compatible
 - ✅ PHP 8.2+ compatible
 - ✅ Other packages compatible
 

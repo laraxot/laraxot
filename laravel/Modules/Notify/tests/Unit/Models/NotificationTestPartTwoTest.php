@@ -27,37 +27,14 @@ namespace Modules\Notify\Tests\Unit\Models;
 use Modules\Notify\Database\Factories\NotificationFactory;
 use Modules\Notify\Models\Notification;
 use Modules\Notify\Tests\TestCase;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\withoutExceptionHandling;
 use function Safe\json_encode;
-<<<<<<< HEAD
-use Modules\User\Models\User;
 
 beforeEach(function (): void {
     withoutExceptionHandling();
-=======
-use PHPUnit\Framework\Assert;
-use Modules\Xot\Tests\XotBasePest;
-
-use function Safe\json_encode;
-
-uses(TestCase::class)->group('notify-db');
-
-beforeEach(function (): void {
-    /** @var TestCase $this */
-    $this->disableExceptionHandling();
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-
-beforeEach(function (): void {
-    withoutExceptionHandling();
->>>>>>> a988596b (first)
 });
 
 describe('Notification PartTwo', function (): void {
@@ -65,44 +42,17 @@ describe('Notification PartTwo', function (): void {
         NotificationFactory::new()->createOne([
             'message' => 'User 123 notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'user_id' => 123]);
-=======
-            'user_id' => 123,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'user_id' => 123]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'User 456 notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'user_id' => 456]);
-=======
-            'user_id' => 456,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'user_id' => 456]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'User 123 another notification',
             'type' => 'warning',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'user_id' => 123]);
-=======
-            'user_id' => 123,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'user_id' => 123]);
->>>>>>> a988596b (first)
 
         $user123Notifications = Notification::where('user_id', 123)->get();
         $user456Notifications = Notification::where('user_id', 456)->get();
@@ -119,46 +69,19 @@ describe('Notification PartTwo', function (): void {
             'message' => 'User subject notification',
             'type' => 'info',
             'subject_type' => 'App\Models\User',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'subject_id' => 123]);
-=======
-            'subject_id' => 123,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'subject_id' => 123]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Company subject notification',
             'type' => 'info',
             'subject_type' => 'App\Models\Company',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'subject_id' => 456]);
-=======
-            'subject_id' => 456,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'subject_id' => 456]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'User subject another notification',
             'type' => 'warning',
             'subject_type' => 'App\Models\User',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'subject_id' => 789]);
-=======
-            'subject_id' => 789,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'subject_id' => 789]);
->>>>>>> a988596b (first)
 
         $userSubjectNotifications = Notification::where('subject_type', 'App\Models\User')->get();
         $companySubjectNotifications = Notification::where('subject_type', 'App\Models\Company')->get();
@@ -174,44 +97,17 @@ describe('Notification PartTwo', function (): void {
         NotificationFactory::new()->createOne([
             'message' => 'Mail notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'channels' => ['mail']]);
-=======
-            'channels' => ['mail'],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'channels' => ['mail']]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'SMS notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'channels' => ['sms']]);
-=======
-            'channels' => ['sms'],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'channels' => ['sms']]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Multi-channel notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'channels' => ['mail', 'database', 'sms']]);
-=======
-            'channels' => ['mail', 'database', 'sms'],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'channels' => ['mail', 'database', 'sms']]);
->>>>>>> a988596b (first)
 
         $mailNotifications = Notification::whereJsonContains('channels', 'mail')->get();
         $smsNotifications = Notification::whereJsonContains('channels', 'sms')->get();
@@ -228,51 +124,21 @@ describe('Notification PartTwo', function (): void {
             'type' => 'alert',
             'data' => [
                 'priority' => 'high',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'category' => 'security']]);
-=======
-                'category' => 'security',
-            ],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'category' => 'security']]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Low priority notification',
             'type' => 'info',
             'data' => [
                 'priority' => 'low',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'category' => 'general']]);
-=======
-                'category' => 'general',
-            ],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'category' => 'general']]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Medium priority notification',
             'type' => 'warning',
             'data' => [
                 'priority' => 'medium',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'category' => 'maintenance']]);
-=======
-                'category' => 'maintenance',
-            ],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'category' => 'maintenance']]);
->>>>>>> a988596b (first)
 
         $highPriorityNotifications = Notification::whereJsonPath('data.priority', 'high')->get();
         $securityNotifications = Notification::whereJsonPath('data.category', 'security')->get();
@@ -287,44 +153,17 @@ describe('Notification PartTwo', function (): void {
         NotificationFactory::new()->createOne([
             'message' => 'Unread notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'read_at' => null]);
-=======
-            'read_at' => null,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'read_at' => null]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Read notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'read_at' => now()]);
-=======
-            'read_at' => now(),
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'read_at' => now()]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Another unread notification',
             'type' => 'warning',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'read_at' => null]);
-=======
-            'read_at' => null,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'read_at' => null]);
->>>>>>> a988596b (first)
 
         $unreadNotifications = Notification::whereNull('read_at')->get();
         $readNotifications = Notification::whereNotNull('read_at')->get();
@@ -340,44 +179,17 @@ describe('Notification PartTwo', function (): void {
         NotificationFactory::new()->createOne([
             'message' => 'Unsent notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'sent_at' => null]);
-=======
-            'sent_at' => null,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'sent_at' => null]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Sent notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'sent_at' => now()]);
-=======
-            'sent_at' => now(),
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'sent_at' => now()]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Another unsent notification',
             'type' => 'warning',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'sent_at' => null]);
-=======
-            'sent_at' => null,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'sent_at' => null]);
->>>>>>> a988596b (first)
 
         $unsentNotifications = Notification::whereNull('sent_at')->get();
         $sentNotifications = Notification::whereNotNull('sent_at')->get();
@@ -397,44 +209,17 @@ describe('Notification PartTwo', function (): void {
         NotificationFactory::new()->createOne([
             'message' => 'Yesterday notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_at' => $yesterday]);
-=======
-            'created_at' => $yesterday,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_at' => $yesterday]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Today notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_at' => $today]);
-=======
-            'created_at' => $today,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_at' => $today]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Tomorrow notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'created_at' => $tomorrow]);
-=======
-            'created_at' => $tomorrow,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'created_at' => $tomorrow]);
->>>>>>> a988596b (first)
 
         $todayNotifications = Notification::whereDate('created_at', $today->toDateString())->get();
         $recentNotifications = Notification::where('created_at', '>=', $yesterday)->get();
@@ -452,17 +237,7 @@ describe('Notification PartTwo', function (): void {
             'tenant_id' => 1,
             'data' => [
                 'priority' => 'high',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'category' => 'security']]);
-=======
-                'category' => 'security',
-            ],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'category' => 'security']]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Low priority general info',
@@ -471,17 +246,7 @@ describe('Notification PartTwo', function (): void {
             'tenant_id' => 1,
             'data' => [
                 'priority' => 'low',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'category' => 'general']]);
-=======
-                'category' => 'general',
-            ],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'category' => 'general']]);
->>>>>>> a988596b (first)
 
         NotificationFactory::new()->createOne([
             'message' => 'Medium priority maintenance warning',
@@ -490,17 +255,7 @@ describe('Notification PartTwo', function (): void {
             'tenant_id' => 2,
             'data' => [
                 'priority' => 'medium',
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'category' => 'maintenance']]);
-=======
-                'category' => 'maintenance',
-            ],
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'category' => 'maintenance']]);
->>>>>>> a988596b (first)
 
         $pendingHighPriorityTenant1 = Notification::where('status', 'pending')
             ->where('tenant_id', 1)
@@ -518,25 +273,10 @@ describe('Notification PartTwo', function (): void {
         $notification = NotificationFactory::new()->createOne([
             'message' => 'Empty data notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
             'data' => []]);
         XotBasePest::assertTableHas('notify', 'notifications', [
             'id' => $notification->id,
             'data' => json_encode([])]);
-<<<<<<< HEAD
-=======
-            'data' => [],
-        ]);
-        XotBasePest::assertTableHas('notify', 'notifications', [
-            'id' => $notification->id,
-            'data' => json_encode([]),
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         Assert::assertEmpty($notification->data);
     });
 
@@ -544,25 +284,10 @@ describe('Notification PartTwo', function (): void {
         $notification = NotificationFactory::new()->createOne([
             'message' => 'No channels notification',
             'type' => 'info',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
             'channels' => []]);
         XotBasePest::assertTableHas('notify', 'notifications', [
             'id' => $notification->id,
             'channels' => json_encode([])]);
-<<<<<<< HEAD
-=======
-            'channels' => [],
-        ]);
-        XotBasePest::assertTableHas('notify', 'notifications', [
-            'id' => $notification->id,
-            'channels' => json_encode([]),
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
         Assert::assertEmpty($notification->channels);
     });
 
@@ -577,16 +302,7 @@ describe('Notification PartTwo', function (): void {
             'channels' => null,
             'status' => null,
             'sent_at' => null,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'data' => null]);
-=======
-            'data' => null,
-        ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'data' => null]);
->>>>>>> a988596b (first)
 
         Assert::assertNull($notification->tenant_id);
         Assert::assertNull($notification->user_id);

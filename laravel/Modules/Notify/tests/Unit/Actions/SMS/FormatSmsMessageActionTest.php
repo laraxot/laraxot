@@ -6,45 +6,21 @@ namespace Modules\Notify\Tests\Unit\Actions\SMS;
 
 use Modules\Notify\Actions\SMS\FormatSmsMessageAction;
 use Modules\Notify\Tests\TestCase;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
-<<<<<<< HEAD
-=======
-use PHPUnit\Framework\Assert;
-use Spatie\QueueableAction\QueueableAction;
-use Modules\Xot\Tests\XotBasePest;
-
-use function Safe\class_uses;
-
-uses(TestCase::class);
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
 describe('FormatSmsMessageAction', function () {
     it('can be instantiated', function () {
         $action = new FormatSmsMessageAction;
-=======
-describe('FormatSmsMessageAction', function () {
-    it('can be instantiated', function () {
-        $action = new FormatSmsMessageAction();
->>>>>>> a988596b (first)
 
         Assert::assertInstanceOf(FormatSmsMessageAction::class, $action);
     });
 
     it('has execute method with correct signature', function () {
-<<<<<<< HEAD
         $action = new FormatSmsMessageAction;
-=======
-        $action = new FormatSmsMessageAction();
->>>>>>> a988596b (first)
 
         $reflection = new \ReflectionClass($action);
         $method = $reflection->getMethod('execute');
@@ -54,11 +30,7 @@ describe('FormatSmsMessageAction', function () {
     });
 
     it('execute accepts string parameter', function () {
-<<<<<<< HEAD
         $action = new FormatSmsMessageAction;
-=======
-        $action = new FormatSmsMessageAction();
->>>>>>> a988596b (first)
 
         $reflection = new \ReflectionClass($action);
         $method = $reflection->getMethod('execute');
@@ -68,11 +40,7 @@ describe('FormatSmsMessageAction', function () {
     });
 
     it('execute returns array', function () {
-<<<<<<< HEAD
         $action = new FormatSmsMessageAction;
-=======
-        $action = new FormatSmsMessageAction();
->>>>>>> a988596b (first)
 
         $reflection = new \ReflectionClass($action);
         $method = $reflection->getMethod('execute');
@@ -82,11 +50,7 @@ describe('FormatSmsMessageAction', function () {
     });
 
     it('uses strict types', function () {
-<<<<<<< HEAD
         $action = new FormatSmsMessageAction;
-=======
-        $action = new FormatSmsMessageAction();
->>>>>>> a988596b (first)
 
         $reflection = new \ReflectionClass($action);
         $content = TestCase::notifyReflectionSource($reflection);
@@ -94,11 +58,7 @@ describe('FormatSmsMessageAction', function () {
     });
 
     it('has correct namespace', function () {
-<<<<<<< HEAD
         $action = new FormatSmsMessageAction;
-=======
-        $action = new FormatSmsMessageAction();
->>>>>>> a988596b (first)
 
         $reflection = new \ReflectionClass($action);
 
@@ -106,11 +66,7 @@ describe('FormatSmsMessageAction', function () {
     });
 
     it('has required imports', function () {
-<<<<<<< HEAD
         $action = new FormatSmsMessageAction;
-=======
-        $action = new FormatSmsMessageAction();
->>>>>>> a988596b (first)
 
         $reflection = new \ReflectionClass($action);
         $content = TestCase::notifyReflectionSource($reflection);
@@ -118,11 +74,7 @@ describe('FormatSmsMessageAction', function () {
     });
 
     it('is not using QueueableAction trait', function () {
-<<<<<<< HEAD
         $action = new FormatSmsMessageAction;
-=======
-        $action = new FormatSmsMessageAction();
->>>>>>> a988596b (first)
 
         $traits = class_uses(FormatSmsMessageAction::class);
 

@@ -2,14 +2,7 @@
 
 ## Panoramica
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Questo documento descrive l'implementazione del campo `slug` nella risorsa Filament `MailTemplateResource`, rispettando le convenzioni e gli standard del progetto Quaeris.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-Questo documento descrive l'implementazione del campo `slug` nella risorsa Filament `MailTemplateResource`, rispettando le convenzioni e gli standard del progetto Quaeris.
->>>>>>> a988596b (first)
 Questo documento descrive l'implementazione del campo `slug` nella risorsa Filament `MailTemplateResource`, rispettando le convenzioni e gli standard del progetto App.
 
 ## Implementazione nel Form Schema
@@ -20,7 +13,7 @@ L'aggiunta del campo `slug` al form schema di `MailTemplateResource` segue le co
 /**
  * Campo slug in getFormSchema()
  */
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         'name' => Forms\Components\TextInput::make('name')
@@ -50,14 +43,7 @@ public function getFormSchema(): array
 3. **Validazione Unicità**: L'opzione `unique(ignoreRecord: true)` garantisce unicità, escludendo il record corrente durante l'aggiornamento.
 4. **Generazione Automatica**: La callback `afterStateUpdated()` genera automaticamente lo slug dal nome quando si crea un nuovo record.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## Conformità con gli Standard Quaeris
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-## Conformità con gli Standard Quaeris
->>>>>>> a988596b (first)
 ## Conformità con gli Standard App
 
 Questa implementazione aderisce a diversi standard chiave del progetto:

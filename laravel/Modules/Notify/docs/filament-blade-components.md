@@ -25,13 +25,5 @@ In <nome progetto>, la **prima scelta per i componenti Blade** sono SEMPRE i [co
 ## Collegamenti
 - [Documentazione Filament Blade Components](https://filamentphp.com/project_docs/3.x/support/blade-components/overview)
 - [Documentazione Filament Blade Components](https://filamentphp.com/docs/3.x/support/blade-components/overview)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [README Notify](readme.md)
-=======
-- [README Notify](README.md)
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [README Notify](readme.md)
->>>>>>> a988596b (first)
 - [queueable-action.md](queueable-action.md)

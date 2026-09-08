@@ -63,14 +63,7 @@ Ho corretto tutti i riferimenti errati alle directory del database nel modulo **
 
 **Created**:
 - ✅ **Issue #5**: "📁 Fix Database Directory Naming Convention"
-<<<<<<< HEAD
-<<<<<<< HEAD
   - URL: https://github.com/laraxot/base_fixcity_fila5/issues/5
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-  - URL: https://github.com/laraxot/base_fixcity_fila5/issues/5
->>>>>>> a988596b (first)
   - URL: https://github.com/laraxot/platform/issues/5
   - Labels: documentation, good first issue
   - Checklist per tutti i 18 moduli
@@ -146,14 +139,7 @@ grep -A 5 "autoload" laravel/Modules/*/composer.json | grep -i "database"
 | Blog | ✅ | ✅ | ✅ | ✅ Complete |
 | Cms | ✅ | ⏳ | ⏳ | 📋 To Verify |
 | Comment | ✅ | ⏳ | ⏳ | 📋 To Verify |
-<<<<<<< HEAD
-<<<<<<< HEAD
 | Fixcity | ✅ | ⏳ | ⏳ | 📋 To Verify |
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-| Fixcity | ✅ | ⏳ | ⏳ | 📋 To Verify |
->>>>>>> a988596b (first)
 | App | ✅ | ⏳ | ⏳ | 📋 To Verify |
 | Gdpr | ✅ | ⏳ | ⏳ | 📋 To Verify |
 | Geo | ✅ | ⏳ | ⏳ | 📋 To Verify |
@@ -176,14 +162,7 @@ grep -A 5 "autoload" laravel/Modules/*/composer.json | grep -i "database"
 
 ### Immediate (Done)
 - ✅ Fix Blog module docs
-<<<<<<< HEAD
-<<<<<<< HEAD
 - ✅ Update AGENTS.md
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- ✅ Update AGENTS.md
->>>>>>> a988596b (first)
 - ✅ Update agents.md
 - ✅ Create convention doc
 - ✅ Create GitHub Issue #5
@@ -206,14 +185,7 @@ grep -A 5 "autoload" laravel/Modules/*/composer.json | grep -i "database"
 ## 📚 Related Documentation
 
 - [Database Naming Convention](conventions/database-naming.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [AGENTS.md](../../AGENTS.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [AGENTS.md](../../AGENTS.md)
->>>>>>> a988596b (first)
 - [agents.md](../../agents.md)
 - [GitHub Issues & Discussions](github/README.md)
 - [MCP Configuration](mcp/README.md)
@@ -263,21 +235,9 @@ echo "Fixed documentation references"
 
 ## 📞 Questions?
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **GitHub Issue**: https://github.com/laraxot/base_fixcity_fila5/issues/5
 - **Documentation**: docs/conventions/database-naming.md
 - **Contact**: dev @fixcity.example.com
-=======
-- **GitHub Issue**: https://github.com/laraxot/platform/issues/5
-- **Documentation**: docs/conventions/database-naming.md
-- **Contact**: dev @laraxot.example.com
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **GitHub Issue**: https://github.com/laraxot/base_fixcity_fila5/issues/5
-- **Documentation**: docs/conventions/database-naming.md
-- **Contact**: dev @fixcity.example.com
->>>>>>> a988596b (first)
 
 ---
 

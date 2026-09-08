@@ -120,16 +120,7 @@ class RecordNotification extends Notification implements ShouldQueue
         $smsDataArray = [
             'from' => 'Xot',
             'recipient' => $to,
-<<<<<<< HEAD
-<<<<<<< HEAD
             'body' => $smsBody];
-=======
-            'body' => $smsBody,
-        ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-            'body' => $smsBody];
->>>>>>> a988596b (first)
 
         return SmsData::from($smsDataArray);
     }

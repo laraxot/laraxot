@@ -55,14 +55,7 @@ Replicate **EXACTLY** 38 static pages with:
 
 **Decision**: Content stored in JSON files, structure in Blade.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Files**: `laravel/config/local/fixcity/database/content/pages/tests.[slug].json`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Files**: `laravel/config/local/fixcity/database/content/pages/tests.[slug].json`
->>>>>>> a988596b (first)
 **Files**: `laravel/config/local/ptv/database/content/pages/tests.[slug].json`
 
 **Rationale**:

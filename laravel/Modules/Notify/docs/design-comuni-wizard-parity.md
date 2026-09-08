@@ -69,16 +69,8 @@ public function getDataSchema(): array
 {
     return [
         // Sezione LUOGO
-<<<<<<< HEAD
-<<<<<<< HEAD
         Section::make(__('fixcity::segnalazione.sections.place.label'))
             ->description(__('fixcity::segnalazione.sections.place.description'))
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        Section::make(__('fixcity::segnalazione.sections.place.label'))
-            ->description(__('fixcity::segnalazione.sections.place.description'))
->>>>>>> a988596b (first)
         Section::make(__('ptv::segnalazione.sections.place.label'))
             ->description(__('ptv::segnalazione.sections.place.description'))
             ->aside()       // Sidebar heading style
@@ -86,29 +78,14 @@ public function getDataSchema(): array
             ->schema([...]),
 
         // Sezione DISSERVIZIO
-<<<<<<< HEAD
-<<<<<<< HEAD
         Section::make(__('fixcity::segnalazione.sections.inefficiency.label'))
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        Section::make(__('fixcity::segnalazione.sections.inefficiency.label'))
->>>>>>> a988596b (first)
         Section::make(__('ptv::segnalazione.sections.inefficiency.label'))
             ->compact()
             ->schema([...]),
 
         // Sezione AUTORE
-<<<<<<< HEAD
-<<<<<<< HEAD
         Section::make(__('fixcity::segnalazione.sections.author.label'))
             ->description(__('fixcity::segnalazione.sections.author.description'))
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-        Section::make(__('fixcity::segnalazione.sections.author.label'))
-            ->description(__('fixcity::segnalazione.sections.author.description'))
->>>>>>> a988596b (first)
         Section::make(__('ptv::segnalazione.sections.author.label'))
             ->description(__('ptv::segnalazione.sections.author.description'))
             ->aside()

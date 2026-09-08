@@ -17,7 +17,7 @@ use PHPUnit\Framework\Assert;
  * Base test case for Gdpr module.
  *
  * Uses shared fixcity_data.sqlite (no RefreshDatabase / migrate:fresh).
- * prepareSharedFixcitySqliteForTesting() runs before transactions begin.
+ * prepareSharedSqliteForTesting() runs before transactions begin.
  */
 abstract class TestCase extends XotBaseTestCase
 {
@@ -28,7 +28,7 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
-        $this->prepareSharedFixcitySqliteForTesting();
+        $this->prepareSharedSqliteForTesting();
 
         parent::setUp();
 

@@ -50,14 +50,7 @@ Filament è gestito dai moduli.
 
 ```json
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "name": "fixcity/module-name",
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    "name": "fixcity/module-name",
->>>>>>> a988596b (first)
     "name": "ptv/module-name",
     "require": {
         "php": "^8.2",
@@ -142,7 +135,7 @@ composer update "filament/*" -W
 - ✅ Community help
 
 ### 4. Compatibility
-- ✅ Laravel 13 compatible
+- ✅ Laravel 12 compatible
 - ✅ PHP 8.2+ compatible
 - ✅ Other packages compatible
 

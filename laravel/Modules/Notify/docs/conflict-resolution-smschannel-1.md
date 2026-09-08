@@ -75,14 +75,7 @@ return $action->execute($smsData);
 - [Root Conflict Resolution Guidelines](../../../project_docs/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Notify Module Documentation](readme.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- [Notify Module Documentation](readme.md)
->>>>>>> a988596b (first)
 - [Notify Module Documentation](README.md)
 - [SMS Channel Architecture](sms-channel-action-resolution-1.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)

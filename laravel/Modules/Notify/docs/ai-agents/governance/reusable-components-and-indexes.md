@@ -1,13 +1,6 @@
 # Reusable Components And Indexes
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 > Indice: [./00-INDEX.md](./00-INDEX.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-> Indice: [./00-INDEX.md](./00-INDEX.md)
->>>>>>> a988596b (first)
 > Indice: [./00-index.md](./00-index.md)
 > Policy correlata: [../policies/filament-widget-tables-policy.md](../policies/filament-widget-tables-policy.md)
 
@@ -20,14 +13,7 @@ Ogni fix o nuova feature deve preferire componenti riusabili, documentazione can
 - prima estrarre il pattern riusabile, poi applicarlo alla pagina specifica
 - ogni cartella documentale significativa deve avere `00-INDEX.md`
 - ogni documento deve linkare il proprio `00-INDEX.md` con percorso relativo
-<<<<<<< HEAD
-<<<<<<< HEAD
 - modulo e tema aggiornano i rispettivi `docs/00-INDEX.md` quando si tocca il loro perimetro
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- modulo e tema aggiornano i rispettivi `docs/00-INDEX.md` quando si tocca il loro perimetro
->>>>>>> a988596b (first)
 - modulo e tema aggiornano i rispettivi `docs/00-index.md` quando si tocca il loro perimetro
 - `AGENTS.md`, `CLAUDE.md`, `QWEN.md` devono puntare a documenti canonici, non duplicarne il contenuto
 

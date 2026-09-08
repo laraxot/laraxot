@@ -138,16 +138,7 @@ class AnalyzeTranslationFiles extends Command
         foreach ($patterns as $pattern => $files) {
             $table->addRow([
                 $pattern,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 implode(PHP_EOL, $files)]);
-=======
-                implode(PHP_EOL, $files),
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                implode(PHP_EOL, $files)]);
->>>>>>> a988596b (first)
         }
 
         $table->render();
@@ -263,16 +254,7 @@ class AnalyzeTranslationFiles extends Command
         foreach ($navigationStructures as $structure => $files) {
             $table->addRow([
                 $structure,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 implode(PHP_EOL, $files)]);
-=======
-                implode(PHP_EOL, $files),
-            ]);
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                implode(PHP_EOL, $files)]);
->>>>>>> a988596b (first)
         }
 
         $table->render();

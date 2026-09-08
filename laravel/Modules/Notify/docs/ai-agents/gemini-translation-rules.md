@@ -58,30 +58,15 @@ namespace::context.collection.element.type
 ### Esempio
 
 ```blade
-<<<<<<< HEAD
-<<<<<<< HEAD
 ✅ __('predict::home.hero.cta_learn.label')
 ❌ __('predict::fields.key')  // Missing type!
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-✅ __('predict::home.hero.cta_learn.label')
-❌ __('predict::fields.key')  // Missing type!
->>>>>>> a988596b (first)
 ✅ __('forecast::home.hero.cta_learn.label')
 ❌ __('forecast::fields.key')  // Missing type!
 ```
 
 ### Eccezione
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 `predict::messages.*` - valore diretto, NO `.label`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-`predict::messages.*` - valore diretto, NO `.label`
->>>>>>> a988596b (first)
 `forecast::messages.*` - valore diretto, NO `.label`
 
 ---

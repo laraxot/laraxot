@@ -80,6 +80,18 @@ abstract class XotBaseResource extends FilamentResource
     }
 
     /**
+     * Modelli derivati dal nome della Resource, memoizzati per classe.
+     *
+     * La property `$model` di Filament e' dichiarata sul parent: una Resource che non la
+     * ridichiara scrive nello slot condiviso da tutte le altre nella stessa condizione
+     * (457 su 571 in questo progetto), e la prima risolta detta il modello a tutte.
+     * La mappa indicizzata per `static::class` memoizza senza contaminare.
+     *
+     * @var array<class-string, class-string<Model>>
+     */
+    private static array $resolvedModels = [];
+
+    /**
      * @return class-string<Model>
      */
     public static function getModel(): string
@@ -94,6 +106,10 @@ abstract class XotBaseResource extends FilamentResource
 
             return $res;
         }
+        if (isset(self::$resolvedModels[static::class])) {
+            return self::$resolvedModels[static::class];
+        }
+
         $moduleName = static::getModuleName();
         $modelName = Str::before(class_basename(static::class), 'Resource');
         $res = 'Modules\\'.$moduleName.'\Models\\'.$modelName;
@@ -103,13 +119,22 @@ abstract class XotBaseResource extends FilamentResource
             Model::class,
             \sprintf('Class %s must extend Eloquent Model', $res),
         );
-        static::$model = $res;
+        self::$resolvedModels[static::class] = $res;
 
         return $res;
     }
 
     /**
+     * @return array<int|string, \Filament\Schemas\Components\Component>
+     */
+    final public function getFormSchema(): array
+    {
+        return static::getFormSchemaOld();
+    }
+
+    /**
      * Bridge di migrazione — schema form ancora sulla Resource.
+     * La classe `{Model}Form` è **obbligatoria** ({@see static::getFormClass()}):
      * se manca si solleva errore. Old serve solo a spostare il contenuto dentro
      * `Schemas\{Model}Form::getFormSchema()`; a migrazione chiusa si rimuove.
      *
@@ -119,7 +144,7 @@ abstract class XotBaseResource extends FilamentResource
      *
      * @return array<int|string, \Filament\Schemas\Components\Component>
      */
-    final public function getFormSchemaOld(): array
+    public static function getFormSchemaOld(): array
     {
         return [];
     }
@@ -174,7 +199,7 @@ abstract class XotBaseResource extends FilamentResource
         return $class1;
     }
 
-    final public static function table(Table $table): Table
+    public static function table(Table $table): Table
     {
         $class = static::getTableClass();
         $configured = $class::configure($table);
@@ -183,7 +208,7 @@ abstract class XotBaseResource extends FilamentResource
         return $configured;
     }
 
-    public function getFormSchemaColumns(): int
+    public static function getFormColumns(): int
     {
         return 1;
     }

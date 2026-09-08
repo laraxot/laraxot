@@ -50,7 +50,7 @@ npm run quality:eslint       # JavaScript/TypeScript only
 
 ### Project Structure
 - **Document Root**: `public_html/` (NOT `public/`)
-- **Laravel App**: `laravel/` (Laravel 13, Filament 5, Livewire 3)
+- **Laravel App**: `laravel/` (Laravel 12, Filament 5, Livewire 3)
 - **Modules**: `laravel/Modules/*/` (19 modules using nwidart/laravel-modules)
 - **Themes**: `laravel/Themes/*/` (Active: "Sixteen", alt: "TwentyOne")
 - **Bash Scripts**: `bashscripts/<category>/` (organized by function)
@@ -365,16 +365,8 @@ GSD directories:
 - **Issue Tracking**: `.github/README.md` (Design Comuni project tracking)
 
 ### Module & Theme Documentation
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **All Modules**: `laravel/Modules/{ModuleName}/docs/00-INDEX.md`
 - **All Themes**: `laravel/Themes/{ThemeName}/docs/00-INDEX.md`
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **All Modules**: `laravel/Modules/{ModuleName}/docs/00-INDEX.md`
-- **All Themes**: `laravel/Themes/{ThemeName}/docs/00-INDEX.md`
->>>>>>> a988596b (first)
 - **All Modules**: `laravel/Modules/{ModuleName}/docs/00-index.md`
 - **All Themes**: `laravel/Themes/{ThemeName}/docs/00-index.md`
 - **Component Catalog**: `laravel/Themes/Sixteen/docs/COMPONENT_CATALOG.md` (47 components, 38 pages)
@@ -426,4 +418,4 @@ This project supports **simultaneous work by multiple AI agents**. When working:
 
 **Last Updated**: See git history for changelog  
 **Version**: Copilot-native  
-**Framework**: Laravel 13 + Filament 5 + Livewire 3 + nwidart/laravel-modules
+**Framework**: Laravel 12 + Filament 5 + Livewire 3 + nwidart/laravel-modules

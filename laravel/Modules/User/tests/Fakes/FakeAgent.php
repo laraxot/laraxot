@@ -5,10 +5,6 @@ declare(strict_types=1);
 namespace Modules\User\Tests\Fakes;
 
 use Jenssegers\Agent\Agent;
-<<<<<<< HEAD
-use Modules\User\Models\User;
-=======
->>>>>>> 87273113 (.)
 
 /**
  * Agent test double — no Mockery magic (PHPStan L10 friendly).

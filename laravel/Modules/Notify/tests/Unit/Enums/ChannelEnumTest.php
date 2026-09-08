@@ -9,26 +9,11 @@ use Modules\Notify\Actions\SMS\NormalizePhoneNumberAction;
 use Modules\Notify\Channels\SmsChannel;
 use Modules\Notify\Channels\WhatsAppChannel;
 use Modules\Notify\Enums\ChannelEnum;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Modules\Notify\Tests\TestCase;
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 use Modules\Xot\Actions\Cast\SafeEloquentCastAction;
 use PHPUnit\Framework\Assert;
 
 use function Safe\preg_replace;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-uses(TestCase::class)->group('no-notify-db');
-
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
->>>>>>> a988596b (first)
 test('notification channel mapping is correct', function () {
     Assert::assertSame('mail', ChannelEnum::Mail->getNotificationChannel());
     Assert::assertSame(SmsChannel::class, ChannelEnum::Sms->getNotificationChannel());
@@ -36,11 +21,7 @@ test('notification channel mapping is correct', function () {
 });
 
 test('mail recipient is resolved only for valid email', function () {
-<<<<<<< HEAD
     app()->instance(SafeEloquentCastAction::class, new class
-=======
-    app()->instance(SafeEloquentCastAction::class, new class()
->>>>>>> a988596b (first)
     {
         public function getStringAttribute(Model $record, string $attribute, string $default = ''): string
         {
@@ -50,21 +31,13 @@ test('mail recipient is resolved only for valid email', function () {
         }
     });
 
-<<<<<<< HEAD
     $valid = new class extends Model
-=======
-    $valid = new class() extends Model
->>>>>>> a988596b (first)
     {
         protected $guarded = [];
     };
     $valid->setAttribute('email', 'notify@example.test');
 
-<<<<<<< HEAD
     $invalid = new class extends Model
-=======
-    $invalid = new class() extends Model
->>>>>>> a988596b (first)
     {
         protected $guarded = [];
     };
@@ -75,11 +48,7 @@ test('mail recipient is resolved only for valid email', function () {
 });
 
 test('sms and whatsapp recipients are normalized', function () {
-<<<<<<< HEAD
     app()->instance(SafeEloquentCastAction::class, new class
-=======
-    app()->instance(SafeEloquentCastAction::class, new class()
->>>>>>> a988596b (first)
     {
         public function getStringAttribute(Model $record, string $attribute, string $default = ''): string
         {
@@ -89,11 +58,7 @@ test('sms and whatsapp recipients are normalized', function () {
         }
     });
 
-<<<<<<< HEAD
     app()->instance(NormalizePhoneNumberAction::class, new class
-=======
-    app()->instance(NormalizePhoneNumberAction::class, new class()
->>>>>>> a988596b (first)
     {
         public function execute(string $phone): string
         {
@@ -101,11 +66,7 @@ test('sms and whatsapp recipients are normalized', function () {
         }
     });
 
-<<<<<<< HEAD
     $record = new class extends Model
-=======
-    $record = new class() extends Model
->>>>>>> a988596b (first)
     {
         protected $guarded = [];
     };

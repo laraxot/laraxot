@@ -1,13 +1,6 @@
 # Command Approval Discipline
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 > Indice: [./00-INDEX.md](./00-INDEX.md)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-> Indice: [./00-INDEX.md](./00-INDEX.md)
->>>>>>> a988596b (first)
 > Indice: [./00-index.md](./00-index.md)
 > Governance correlata: [./reusable-components-and-indexes.md](./reusable-components-and-indexes.md)
 

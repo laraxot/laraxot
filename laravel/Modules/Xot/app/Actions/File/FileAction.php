@@ -186,8 +186,7 @@ class FileAction
     public static function getViewNameSpacePath(string $ns): ?string
     {
         $xot = XotData::make();
-        /** @var \Illuminate\View\Factory $finder */
-        $finder = app(\Illuminate\View\Factory::class);
+        $finder = view()->getFinder();
         $viewHints = [];
         if (method_exists($finder, 'getHints')) {
             $viewHints = $finder->getHints();
@@ -246,8 +245,8 @@ class FileAction
         //    throw new \Exception('do not reach public path');
         // }
 
-        if (Str::startsWith($filename, (string) $public_path)) {
-            $url = mb_substr($filename, mb_strlen((string) $public_path));
+        if (Str::startsWith($filename, $public_path)) {
+            $url = mb_substr($filename, mb_strlen($public_path));
             $url = str_replace(\DIRECTORY_SEPARATOR, '/', $url);
 
             return asset($url);
@@ -259,7 +258,7 @@ class FileAction
             dddx($msg);
         }
         //*/
-        $url = asset('modules/'.$ns.'/'.$path1);
+        $url = Module::asset($ns.':'.$path1);
         $filename_pub = Module::assetPath($ns).\DIRECTORY_SEPARATOR.$path1;
         if (! File::exists(\dirname($filename_pub))) {
             try {
@@ -327,7 +326,7 @@ class FileAction
             }
         } else {
             $filename = str_replace('/', \DIRECTORY_SEPARATOR, $filename);
-                        $full = $ns.':'.$path1;
+            $full = $ns.':'.$path1;
             $msg = [
                 'ns' => $ns,
                 'Module::getModulePath' => Module::getModulePath($ns.':'.$path1), // /home/vagrant/code/htdocs/lara/foodm/Modules/LU/

@@ -18,10 +18,6 @@ final class SmsData
      * Create a new SmsData instance.
      *
      * @param  array<string, mixed>  $data
-<<<<<<< HEAD
-=======
-     *
->>>>>>> a988596b (first)
      * @return void
      */
     public function __construct(array $data = [])

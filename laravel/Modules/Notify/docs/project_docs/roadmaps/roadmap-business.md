@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # 💼 ROADMAP BUSINESS - FIXCITY PLATFORM
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-# 💼 ROADMAP BUSINESS - FIXCITY PLATFORM
->>>>>>> a988596b (first)
 # 💼 ROADMAP BUSINESS - NOTIFY PLATFORM
 
 **Versione**: 1.0  
@@ -16,14 +9,7 @@
 ## 🎯 Vision & Mission
 
 ### Vision
-<<<<<<< HEAD
-<<<<<<< HEAD
 **FixCity** diventa la piattaforma leader in Italia per il civic engagement urbano, connettendo 100+ città e 1M+ cittadini per rendere le città più vivibili, efficienti e responsive.
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**FixCity** diventa la piattaforma leader in Italia per il civic engagement urbano, connettendo 100+ città e 1M+ cittadini per rendere le città più vivibili, efficienti e responsive.
->>>>>>> a988596b (first)
 **Notify** diventa la piattaforma leader in Italia per il civic engagement urbano, connettendo 100+ città e 1M+ cittadini per rendere le città più vivibili, efficienti e responsive.
 
 ### Mission
@@ -220,14 +206,7 @@ class CustomerFeedback
 # Revenue optimization
 - A/B testing pricing
 - Upselling campaigns
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Churn prediction model
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- Churn prediction model
->>>>>>> a988596b (first)
 - Churn forecast model
 - Customer success program
 - Retention campaigns
@@ -336,14 +315,7 @@ class ApiMarketplace
 # AI/ML features
 class AIFeatures:
     def auto_categorize_tickets(self): pass
-<<<<<<< HEAD
-<<<<<<< HEAD
     def predict_resolution_time(self): pass
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-    def predict_resolution_time(self): pass
->>>>>>> a988596b (first)
     def forecast_resolution_time(self): pass
     def detect_duplicates(self): pass
     def sentiment_analysis(self): pass
@@ -525,16 +497,8 @@ EBITDA: €0 (Break-even Q4 2025)
 **📞 Contatti Business**
 - **CEO**: Business Development Team
 - **Email**: business@laraxot.com
-<<<<<<< HEAD
-<<<<<<< HEAD
 - **LinkedIn**: [FixCity Business](https://linkedin.com/company/fixcity)
 - **Website**: [www.fixcity.it](https://www.fixcity.it)
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-- **LinkedIn**: [FixCity Business](https://linkedin.com/company/fixcity)
-- **Website**: [www.fixcity.it](https://www.fixcity.it)
->>>>>>> a988596b (first)
 - **LinkedIn**: [Notify Business](https://linkedin.com/company/laraxot)
 - **Website**: [www.laraxot.it](https://www.laraxot.it)
 

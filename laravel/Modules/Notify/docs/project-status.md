@@ -4,14 +4,7 @@ type: concept
 tags: [project, status]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "project-status fixcity platform - project status report"
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-qmd: "project-status fixcity platform - project status report"
->>>>>>> a988596b (first)
 qmd: "project-status ptv platform - project status report"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
@@ -120,7 +113,7 @@ related:
 - ✅ Master Plan strategico 2025-2026 creato
 
 ### Dicembre 2024
-- ✅ Upgraded to Laravel 13
+- ✅ Upgraded to Laravel 12
 - ✅ Migrated to Filament 4
 - ✅ Implemented OAuth2 with Passport
 - ✅ Enhanced geolocation features
@@ -203,13 +196,6 @@ related:
 
 **Report Generated**: 2025-01-01  
 **Next Update**: 2025-01-15  
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Contact**: development@fixcity.io
-=======
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-**Contact**: development@fixcity.io
->>>>>>> a988596b (first)
 **Contact**: development@ptv.io
 

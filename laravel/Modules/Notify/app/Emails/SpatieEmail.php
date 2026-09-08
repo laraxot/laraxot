@@ -52,16 +52,7 @@ class SpatieEmail extends TemplateMailable
         $tpl = MailTemplate::firstOrCreate(
             [
                 'mailable' => self::class,
-<<<<<<< HEAD
-<<<<<<< HEAD
                 'slug' => $this->slug],
-=======
-                'slug' => $this->slug,
-            ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                'slug' => $this->slug],
->>>>>>> a988596b (first)
             [
                 'subject' => 'Benvenuto, {{ first_name }}',
                 'html_template' => '<p>Gentile {{ first_name }} {{ last_name }},</p><p>La tua registrazione  è in attesa di approvazione. Ti contatteremo presto.</p>['.
@@ -72,16 +63,7 @@ class SpatieEmail extends TemplateMailable
                         ']',
                 'sms_template' => 'Gentile {{ first_name }} {{ last_name }}, la tua registrazione  è in attesa di approvazione. Ti contatteremo presto.['.
                         $this->slug.
-<<<<<<< HEAD
-<<<<<<< HEAD
                         ']'],
-=======
-                        ']',
-            ],
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                        ']'],
->>>>>>> a988596b (first)
         );
 
         if ($tpl !== null) {
@@ -151,11 +133,7 @@ class SpatieEmail extends TemplateMailable
      */
     public function envelope(): Envelope
     {
-<<<<<<< HEAD
         $envelope = new Envelope;
-=======
-        $envelope = new Envelope();
->>>>>>> a988596b (first)
 
         // Set the recipient if available
         if ($this->recipient) {
@@ -248,16 +226,7 @@ class SpatieEmail extends TemplateMailable
                 $pathAttachment = [
                     'path' => $path,
                     'as' => $item['as'] ?? null,
-<<<<<<< HEAD
-<<<<<<< HEAD
                     'mime' => $item['mime'] ?? null];
-=======
-                    'mime' => $item['mime'] ?? null,
-                ];
->>>>>>> 3096f6ae (chore(gitattributes): sync dal prototipo canonico, no git-lfs [graft: broken parent 2c641c73 missing upstream, treated as root - local-only replace, not pushed])
-=======
-                    'mime' => $item['mime'] ?? null];
->>>>>>> a988596b (first)
                 $attachment = $this->getAttachmentFromPath($pathAttachment);
             }
 
