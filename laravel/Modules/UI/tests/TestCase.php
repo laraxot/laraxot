@@ -73,7 +73,7 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
-        
+        $this->prepareSharedSqliteForTesting();
 
         parent::setUp();
 
