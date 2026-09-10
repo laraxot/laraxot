@@ -189,4 +189,20 @@ return [
         'unified_naming' => true,
         'framework_compliance' => true,
     ],
+
+    /*
+     * |--------------------------------------------------------------------------
+     * | Scrittura delle chiavi mancanti
+     * |--------------------------------------------------------------------------
+     * |
+     * | Quando AutoLabelAction non trova una chiave, SaveTransAction la scrive nel
+     * | file di lingua del modulo. E' comodo mentre si sviluppa e dannoso durante i
+     * | test: la suite tocca migliaia di etichette e riscrive l'albero di lavoro,
+     * | lasciando in `git status` file che nessuno ha modificato a mano.
+     * |
+     * | phpunit.xml lo spegne. In locale resta acceso.
+     * |
+     */
+
+    'save_missing_translations' => env('LANG_SAVE_MISSING_TRANSLATIONS', true),
 ];
