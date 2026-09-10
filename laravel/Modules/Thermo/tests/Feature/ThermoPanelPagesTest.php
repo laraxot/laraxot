@@ -18,7 +18,7 @@ uses(\Modules\Thermo\Tests\TestCase::class);
 it('opens every page of the panel', function (string $path): void {
     Role::findOrCreate('thermo_admin');
     $user = UserFactory::new()->createOne();
-    $user->syncRoles(['thermo_admin']);
+    $user->syncRoles(['thermo', 'thermo_admin']);
 
     actingAs($user);
     get($path)->assertOk();

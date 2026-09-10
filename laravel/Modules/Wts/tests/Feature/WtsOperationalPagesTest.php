@@ -20,7 +20,7 @@ it('shows legacy technical sheet details in the WTS ingress page and links direc
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $snapshot = WtsTechnicalSheetSnapshot::query()->create([
         'sheet_code' => 'SR2024-04817',
@@ -67,7 +67,7 @@ it('shows take charge button when an ingress has no lot yet', function (): void 
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $record = WtsInboundRecord::factory()->create([
         'received_at' => now(),
@@ -86,7 +86,7 @@ it('shows work queue button when an ingress lot already has units', function ():
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $record = WtsInboundRecord::factory()->create([
         'received_at' => now(),
@@ -365,7 +365,7 @@ it('shows generated units in the operational stock page and processing entry poi
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $snapshot = WtsTechnicalSheetSnapshot::query()->create([
         'sheet_code' => 'SR2024-04817',
@@ -550,7 +550,7 @@ it('shows the WTS printable inventory with technical notes and consumed state', 
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $snapshot = WtsTechnicalSheetSnapshot::query()->create([
         'sheet_code' => 'SR2024-04817',
@@ -662,7 +662,7 @@ it('renders the lot detail page with real lot data when a lot is selected', func
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $snapshot = WtsTechnicalSheetSnapshot::query()->create([
         'sheet_code' => 'SR2024-04817',
@@ -719,7 +719,7 @@ it('shows placeholder colli rows instead of fake BIGBAG demo rows when no units 
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $snapshot = WtsTechnicalSheetSnapshot::query()->create([
         'sheet_code' => 'ST-5',
@@ -761,7 +761,7 @@ it('shows an empty colli message when no units and no estimated count exist', fu
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $record = WtsInboundRecord::query()->create([
         'legacy_reference' => 'ECOS-EMPTY',
@@ -793,7 +793,7 @@ it('shows the static WTS mockup flow when the database has no demo seed', functi
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     actingAs($user);
     get('/wts')
@@ -845,7 +845,7 @@ it('renders the separate WTS processing pages', function (): void {
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     actingAs($user);
     get('/wts/sorting')
@@ -883,7 +883,7 @@ it('shows the progressivo and the colli of each viaggio, not those of the shared
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     // Stessa scheda tecnica, due viaggi diversi nello stesso giorno: la riga
     // deve mostrare il progressivo e i colli del proprio viaggio.

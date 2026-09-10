@@ -17,7 +17,7 @@ it('covers missing lot branches for label and non-conformity actions in lot deta
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
@@ -38,7 +38,7 @@ it('normalizes lot detail unit type config and ignores non string keys', functio
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
 
@@ -62,7 +62,7 @@ it('covers missing lot and config fallback branches in lot detail page', functio
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     config()->set('wts.unit_types', 'invalid-config');
 
@@ -81,7 +81,7 @@ it('ignores non string unit type keys in lot detail page config', function (): v
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
 
@@ -105,7 +105,7 @@ it('covers missing record branch and default date in new ingress page', function
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */
@@ -121,7 +121,7 @@ it('covers invalid taking charge input branch in new ingress page', function ():
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $record = WtsInboundRecord::factory()->create([
         'status_code' => 'registered',
@@ -143,7 +143,7 @@ it('ignores invalid unit ids on the lot detail page when a lot exists', function
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     $unit = WtsUnit::factory()->create([
@@ -167,7 +167,7 @@ it('prints single and bulk labels directly from the lot detail page', function (
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     $unit = WtsUnit::factory()->create([
@@ -205,7 +205,7 @@ it('warns instead of printing when the lot has no units yet', function (): void 
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
 
@@ -223,7 +223,7 @@ it('ignores lot detail label actions when no lot is selected', function (): void
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */

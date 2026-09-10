@@ -83,7 +83,7 @@ it('covers remaining processing page utility branches and config normalization',
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     $unitA = WtsUnit::factory()->create([

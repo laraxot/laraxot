@@ -87,7 +87,7 @@ it('registers processing on selected units and creates derived materials', funct
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $snapshot = WtsTechnicalSheetSnapshot::query()->create([
         'sheet_code' => 'SR2024-04817',

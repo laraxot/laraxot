@@ -121,7 +121,7 @@ it('renders the quotation page of the metalworks panel', function (): void {
     Role::findOrCreate('metalwork_admin');
 
     $user = UserFactory::new()->createOne();
-    $user->syncRoles(['metalwork_admin']);
+    $user->syncRoles(['metalwork', 'metalwork_admin']);
 
     actingAs($user);
     get('/metalwork/drawing-quotation')
@@ -133,7 +133,7 @@ it('renders the metalworks dashboard', function (): void {
     Role::findOrCreate('metalwork_operator');
 
     $user = UserFactory::new()->createOne();
-    $user->syncRoles(['metalwork_operator']);
+    $user->syncRoles(['metalwork', 'metalwork_operator']);
 
     actingAs($user);
     get('/metalwork')

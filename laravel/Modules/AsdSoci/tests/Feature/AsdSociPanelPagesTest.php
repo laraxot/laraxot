@@ -22,7 +22,7 @@ it('sends a guest to the login', function (): void {
 it('opens every page of the panel', function (): void {
     Role::findOrCreate('asd_admin');
     $user = UserFactory::new()->createOne();
-    $user->syncRoles(['asd_admin']);
+    $user->syncRoles(['asd-soci', 'asd_admin']);
 
     actingAs($user);
 

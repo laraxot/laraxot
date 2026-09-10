@@ -18,7 +18,7 @@ uses(\Modules\Giveback\Tests\TestCase::class);
 it('opens every page of the panel', function (string $path): void {
     Role::findOrCreate('giveback_admin');
     $user = UserFactory::new()->createOne();
-    $user->syncRoles(['giveback_admin']);
+    $user->syncRoles(['giveback-platform', 'giveback_admin']);
 
     actingAs($user);
     get($path)->assertOk();

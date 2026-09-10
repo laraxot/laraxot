@@ -186,7 +186,7 @@ it('covers ingresses and inventory page utility config branches', function (): v
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     config()->set('wts.unit_types', [
         'big_bag' => 'Big bag',
@@ -220,7 +220,7 @@ it('covers missing material branches in outputs page', function (): void {
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $material = WtsDerivedMaterial::factory()->create();
 
@@ -237,7 +237,7 @@ it('covers invalid unit type config branch in the lot detail page', function ():
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     config()->set('wts.unit_types', 'invalid');
 

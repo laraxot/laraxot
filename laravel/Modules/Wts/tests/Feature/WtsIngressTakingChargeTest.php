@@ -140,7 +140,7 @@ it('stores UI-02 taking charge data from the WTS panel', function (): void {
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $record = WtsInboundRecord::factory()->create([
         'legacy_reference' => 'ECOS-1002',
@@ -176,7 +176,7 @@ it('adds and removes lot units directly from UI-03', function (): void {
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $lot = WtsInboundLot::factory()->create([
         'lot_code' => 'LOT-2026-0007',
@@ -209,7 +209,7 @@ it('takes charge straight from UI-01 with ECOS data and lands on the lot detail'
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $record = WtsInboundRecord::factory()->create([
         'legacy_reference' => 'ECOS-2001',
@@ -247,7 +247,7 @@ it('keeps the ECOS acceptance status and notes when taking charge from UI-01', f
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $record = WtsInboundRecord::factory()->create([
         'form_number' => '  FIR-2026-202  ',
@@ -276,7 +276,7 @@ it('reopens the existing lot instead of taking charge twice from UI-01', functio
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $record = WtsInboundRecord::factory()->create([
         'form_number' => 'FIR-2026-203',
@@ -302,7 +302,7 @@ it('refuses the take charge without sending the operator to UI-02 when ECOS data
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $record = WtsInboundRecord::factory()->create([
         'form_number' => null,
@@ -324,7 +324,7 @@ it('blocks the take charge button until ECOS declares formulario and quantita', 
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     // Viaggio programmato ma non ancora arrivato: nessun formulario da ECOS.
     $waiting = WtsInboundRecord::factory()->create([
@@ -357,7 +357,7 @@ it('warns instead of taking charge when the UI-01 ingress does not exist', funct
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     Livewire::actingAs($user);
     /** @var \Livewire\Features\SupportTesting\Testable<\Livewire\Component> $livewire */

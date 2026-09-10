@@ -108,7 +108,7 @@ it('lets the agent mark a job failed with an error', function (): void {
 it('queues a single label to the printer from the lot detail page', function (): void {
     Spatie\Permission\Models\Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $unit = makeLabelUnit('LOT-2026-9001-BIG-BAG-01');
     $lot = $unit->inboundLot;
@@ -136,7 +136,7 @@ it('queues a single label to the printer from the lot detail page', function ():
 it('queues all lot labels to the printer from the lot detail page', function (): void {
     Spatie\Permission\Models\Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $unit = makeLabelUnit('LOT-2026-9002-BIG-BAG-01');
     $lot = $unit->inboundLot;
@@ -177,7 +177,7 @@ it('sizes the ZPL label from the configured format and dpi', function (): void {
 it('lets the printing page enqueue a test label and manage the queue', function (): void {
     Spatie\Permission\Models\Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     filament()->setCurrentPanel('wts');
 

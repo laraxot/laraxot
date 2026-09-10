@@ -34,7 +34,7 @@ function brondiOperator(): User
 {
     Role::findOrCreate('wts_operator');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_operator']);
+    $user->syncRoles(['wts', 'wts_operator']);
 
     return $user;
 }
@@ -75,7 +75,7 @@ it('riserva report e parametri operativi al solo wts_admin', function (): void {
 
     Role::findOrCreate('wts_admin');
     $admin = \Modules\Wts\Tests\TestCase::createUser();
-    $admin->syncRoles(['wts_admin']);
+    $admin->syncRoles(['wts', 'wts_admin']);
 
     actingAs($admin);
     expect(WtsReportsPage::canAccess())->toBeTrue();
@@ -102,7 +102,7 @@ it('nello snodo mostra i quattro tasti ma non i passi successivi', function (): 
 it('all amministratore lascia invece i passi successivi', function (): void {
     Role::findOrCreate('wts_admin');
     $admin = \Modules\Wts\Tests\TestCase::createUser();
-    $admin->syncRoles(['wts_admin']);
+    $admin->syncRoles(['wts', 'wts_admin']);
 
     actingAs($admin);
     get('/wts/processing')

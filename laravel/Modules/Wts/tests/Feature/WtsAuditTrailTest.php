@@ -207,7 +207,7 @@ it('records label prints when labels are queued to the printer', function (): vo
 it('attributes queued label prints to the acting user from the lot detail page', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $unit = WtsUnit::factory()->create(['unit_code' => 'LOT-2026-0601-BIG-BAG-01']);
     $lot = $unit->inboundLot;
@@ -228,7 +228,7 @@ it('attributes queued label prints to the acting user from the lot detail page',
 it('soft deletes removed units keeping their print history and audit trail', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     app(GenerateWtsUnitSeriesAction::class)->execute(
@@ -264,7 +264,7 @@ it('soft deletes removed units keeping their print history and audit trail', fun
 it('ignores queue print requests without a selected lot or without units', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     Livewire::actingAs($user);
     Livewire::test(WtsLotDetailPage::class)
@@ -285,7 +285,7 @@ it('ignores queue print requests without a selected lot or without units', funct
 it('keeps cleared print jobs in the database as soft deleted history', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts_admin']);
+    $user->syncRoles(['wts', 'wts_admin']);
 
     filament()->setCurrentPanel('wts');
 
