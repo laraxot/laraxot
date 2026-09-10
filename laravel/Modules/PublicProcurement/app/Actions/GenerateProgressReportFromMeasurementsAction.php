@@ -19,9 +19,14 @@ final class GenerateProgressReportFromMeasurementsAction
         CarbonImmutable $periodFrom,
         CarbonImmutable $periodTo,
     ): PublicProcurementProgressReport {
+        // Il periodo e' chiuso a entrambe le estremita'. Confrontando le sole date
+        // il valore salvato porta con se' l'orario (il cast 'date' scrive
+        // 2026-01-31 00:00:00) e resta oltre l'estremo '2026-01-31': il lavoro
+        // misurato l'ultimo giorno spariva dal SAL, e l'impresa se ne accorgeva
+        // solo a conti fatti.
         $workAmount = (float) $contract->measurements()
             ->where('status', 'approved')
-            ->whereBetween('measured_on', [$periodFrom->toDateString(), $periodTo->toDateString()])
+            ->whereBetween('measured_on', [$periodFrom->startOfDay(), $periodTo->endOfDay()])
             ->sum('amount');
 
         $securityAmount = round($workAmount > 0 ? ((float) $contract->security_costs * min($this->progressRatio($contract), 1.0)) : 0, 2);
