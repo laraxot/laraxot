@@ -8,6 +8,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\ServiceProvider;
 use Modules\Dds\Providers\DdsServiceProvider;
+use Modules\User\Models\Role;
 use Modules\Xot\Tests\XotBaseTestCase;
 
 abstract class TestCase extends XotBaseTestCase
@@ -19,9 +20,13 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
-        
+        $this->prepareSharedSqliteForTesting();
 
         parent::setUp();
+
+        // Il pannello si apre a chi ha il ruolo omonimo al suo id: in produzione lo
+        // crea PanelRoleSeeder (vedi Xot), qui basta quello di questo pannello.
+        Role::findOrCreate('dds');
     }
 
     /**
