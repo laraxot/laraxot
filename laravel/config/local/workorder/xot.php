@@ -16,4 +16,18 @@ return [
     'disable_frontend_dynamic_route' => false,
     'register_adm_theme' => false,
     'register_pub_theme' => true,
+
+    'testing' => [
+        /*
+         * Il database dei test, dichiarato invece che indovinato.
+         *
+         * XotBaseTestCase::sharedSqlitePath() senza questa chiave ripiega su
+         * «l'unico *.sqlite dentro database/», e quando i file sono piu' di uno
+         * sceglie un `test_data.sqlite` che nessuno ha mai costruito. E' quello
+         * che e' successo appena database/database.sqlite e' comparso: la suite
+         * ha smesso di trovare le tabelle senza che nessuno avesse toccato i
+         * test.
+         */
+        'sqlite_file' => 'fixcity_data.sqlite',
+    ],
 ];
