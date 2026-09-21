@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Themes\Sixteen\Models\Municipal;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,6 +16,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+
+use function Safe\filesize;
+use function Safe\hash_file;
 
 /**
  * Modello per i documenti pubblici (Public Document)
@@ -40,7 +45,7 @@ use Illuminate\Support\Str;
  * @property string|null $legal_status
  * @property string|null $classification_code
  * @property string|null $subject_matter
- * @property array|null $keywords
+ * @property array<array-key, mixed>|null $keywords
  * @property string|null $language
  * @property Carbon|null $document_date
  * @property Carbon|null $approval_date
@@ -56,18 +61,18 @@ use Illuminate\Support\Str;
  * @property string|null $original_format
  * @property string|null $accessible_format
  * @property string|null $signed_version
- * @property array|null $attachments
- * @property array|null $versions
- * @property array|null $related_documents
- * @property array|null $legislative_references
- * @property array|null $administrative_references
+ * @property array<array-key, mixed>|null $attachments
+ * @property array<array-key, mixed>|null $versions
+ * @property array<array-key, mixed>|null $related_documents
+ * @property array<array-key, mixed>|null $legislative_references
+ * @property array<array-key, mixed>|null $administrative_references
  * @property string|null $transparency_section
  * @property string|null $access_rights
  * @property string $privacy_level
  * @property int|null $retention_period
  * @property Carbon|null $disposal_date
- * @property array|null $digital_signature
- * @property array|null $timestamp
+ * @property array<array-key, mixed>|null $digital_signature
+ * @property array<array-key, mixed>|null $timestamp
  * @property bool $accessibility_compliance
  * @property bool $format_compliance
  * @property bool $metadata_compliance
@@ -80,7 +85,7 @@ use Illuminate\Support\Str;
  * @property bool $is_downloadable
  * @property bool $requires_authentication
  * @property string $visibility_level
- * @property array|null $metadata
+ * @property array<array-key, mixed>|null $metadata
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
@@ -88,9 +93,21 @@ use Illuminate\Support\Str;
  * @property-read PublicPerson|null $author
  * @property-read MunicipalService|null $service
  * @property-read Collection<int, ContactPoint> $contacts
+ * @property-read Collection<int, PublicPerson> $people
+ * @property-read string $document_type_name
+ * @property-read string $document_status_name
+ * @property-read string $publication_status_name
+ * @property-read string $privacy_level_name
+ * @property-read bool $is_expired
+ * @property-read bool $is_effective
+ * @property-read bool $needs_review
+ * @property-read string|null $formatted_file_size
+ * @property-read string $url
+ * @property-read string|null $download_url
  */
 class PublicDocument extends Model
 {
+    /** @use HasFactory<Factory<self>> */
     use HasFactory, SoftDeletes;
 
     /**
@@ -265,40 +282,48 @@ class PublicDocument extends Model
         'metadata',
     ];
 
-    protected $casts = [
-        'document_date' => 'date',
-        'approval_date' => 'date',
-        'publication_date' => 'date',
-        'effective_date' => 'date',
-        'expiry_date' => 'date',
-        'review_date' => 'date',
-        'disposal_date' => 'date',
-        'last_accessed' => 'datetime',
-        'file_size' => 'integer',
-        'download_count' => 'integer',
-        'retention_period' => 'integer',
-        'is_published' => 'boolean',
-        'is_active' => 'boolean',
-        'is_searchable' => 'boolean',
-        'is_downloadable' => 'boolean',
-        'requires_authentication' => 'boolean',
-        'accessibility_compliance' => 'boolean',
-        'format_compliance' => 'boolean',
-        'metadata_compliance' => 'boolean',
-        'keywords' => 'json',
-        'attachments' => 'json',
-        'versions' => 'json',
-        'related_documents' => 'json',
-        'legislative_references' => 'json',
-        'administrative_references' => 'json',
-        'access_rights' => 'json',
-        'digital_signature' => 'json',
-        'timestamp' => 'json',
-        'metadata' => 'json',
-    ];
+    /**
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'document_date' => 'date',
+            'approval_date' => 'date',
+            'publication_date' => 'date',
+            'effective_date' => 'date',
+            'expiry_date' => 'date',
+            'review_date' => 'date',
+            'disposal_date' => 'date',
+            'last_accessed' => 'datetime',
+            'file_size' => 'integer',
+            'download_count' => 'integer',
+            'retention_period' => 'integer',
+            'is_published' => 'boolean',
+            'is_active' => 'boolean',
+            'is_searchable' => 'boolean',
+            'is_downloadable' => 'boolean',
+            'requires_authentication' => 'boolean',
+            'accessibility_compliance' => 'boolean',
+            'format_compliance' => 'boolean',
+            'metadata_compliance' => 'boolean',
+            'keywords' => 'json',
+            'attachments' => 'json',
+            'versions' => 'json',
+            'related_documents' => 'json',
+            'legislative_references' => 'json',
+            'administrative_references' => 'json',
+            'access_rights' => 'json',
+            'digital_signature' => 'json',
+            'timestamp' => 'json',
+            'metadata' => 'json',
+        ];
+    }
 
     /**
      * Relazione con l'unità organizzativa
+     *
+     * @return BelongsTo<OrganizationalUnit, $this>
      */
     public function organizationalUnit(): BelongsTo
     {
@@ -307,6 +332,8 @@ class PublicDocument extends Model
 
     /**
      * Relazione con l'autore
+     *
+     * @return BelongsTo<PublicPerson, $this>
      */
     public function author(): BelongsTo
     {
@@ -315,6 +342,8 @@ class PublicDocument extends Model
 
     /**
      * Relazione con il servizio correlato
+     *
+     * @return BelongsTo<MunicipalService, $this>
      */
     public function service(): BelongsTo
     {
@@ -323,6 +352,8 @@ class PublicDocument extends Model
 
     /**
      * Relazione con i punti di contatto
+     *
+     * @return MorphMany<ContactPoint, $this>
      */
     public function contacts(): MorphMany
     {
@@ -331,6 +362,8 @@ class PublicDocument extends Model
 
     /**
      * Relazione con le persone correlate
+     *
+     * @return BelongsToMany<PublicPerson, $this>
      */
     public function people(): BelongsToMany
     {
@@ -342,8 +375,11 @@ class PublicDocument extends Model
 
     /**
      * Scope per documenti pubblicati
+     *
+     * @param  Builder<static>  $query
+     * @return Builder<static>
      */
-    public function scopePublished($query)
+    public function scopePublished(Builder $query): Builder
     {
         return $query->where('is_published', true)
             ->where('publication_date', '<=', now())
@@ -352,11 +388,14 @@ class PublicDocument extends Model
 
     /**
      * Scope per documenti attivi
+     *
+     * @param  Builder<static>  $query
+     * @return Builder<static>
      */
-    public function scopeActive($query)
+    public function scopeActive(Builder $query): Builder
     {
         return $query->where('is_active', true)
-            ->where(function ($q): void {
+            ->where(function (Builder $q): void {
                 $q->whereNull('expiry_date')
                     ->orWhere('expiry_date', '>', now());
             });
@@ -364,35 +403,47 @@ class PublicDocument extends Model
 
     /**
      * Scope per documenti ricercabili
+     *
+     * @param  Builder<static>  $query
+     * @return Builder<static>
      */
-    public function scopeSearchable($query)
+    public function scopeSearchable(Builder $query): Builder
     {
         return $query->where('is_searchable', true);
     }
 
     /**
      * Scope per tipologia di documento
+     *
+     * @param  Builder<static>  $query
+     * @return Builder<static>
      */
-    public function scopeOfType($query, string $type)
+    public function scopeOfType(Builder $query, string $type): Builder
     {
         return $query->where('document_type', $type);
     }
 
     /**
      * Scope per sezione di trasparenza
+     *
+     * @param  Builder<static>  $query
+     * @return Builder<static>
      */
-    public function scopeInTransparencySection($query, string $section)
+    public function scopeInTransparencySection(Builder $query, string $section): Builder
     {
         return $query->where('transparency_section', $section);
     }
 
     /**
      * Scope per documenti in vigore
+     *
+     * @param  Builder<static>  $query
+     * @return Builder<static>
      */
-    public function scopeEffective($query)
+    public function scopeEffective(Builder $query): Builder
     {
         return $query->where('document_status', 'effective')
-            ->where(function ($q): void {
+            ->where(function (Builder $q): void {
                 $q->whereNull('effective_date')
                     ->orWhere('effective_date', '<=', now());
             });
@@ -400,23 +451,31 @@ class PublicDocument extends Model
 
     /**
      * Scope ordinati per data
+     *
+     * @param  Builder<static>  $query
+     * @param  'asc'|'desc'  $direction
+     * @return Builder<static>
      */
-    public function scopeOrdered($query, string $field = 'document_date', string $direction = 'desc')
+    public function scopeOrdered(Builder $query, string $field = 'document_date', string $direction = 'desc'): Builder
     {
         return $query->orderBy($field, $direction);
     }
 
     /**
      * Ottiene le parole chiave formattate
+     *
+     * @return array<int|string, mixed>
      */
     public function getFormattedKeywords(): array
     {
-        if (! $this->keywords || ! is_array($this->keywords)) {
+        $keywords = $this->keywords;
+
+        if (! is_array($keywords)) {
             return [];
         }
 
-        return collect($this->keywords)
-            ->map(function ($keyword) {
+        return collect($keywords)
+            ->map(function (mixed $keyword): mixed {
                 return is_string($keyword) ? ['name' => $keyword, 'slug' => Str::slug($keyword)] : $keyword;
             })
             ->toArray();
@@ -424,15 +483,19 @@ class PublicDocument extends Model
 
     /**
      * Ottiene gli allegati formattati
+     *
+     * @return array<int|string, mixed>
      */
     public function getFormattedAttachments(): array
     {
-        if (! $this->attachments || ! is_array($this->attachments)) {
+        $attachments = $this->attachments;
+
+        if (! is_array($attachments)) {
             return [];
         }
 
-        return collect($this->attachments)
-            ->map(function ($attachment) {
+        return collect($attachments)
+            ->map(function (mixed $attachment): mixed {
                 if (is_string($attachment)) {
                     return [
                         'path' => $attachment,
@@ -442,8 +505,14 @@ class PublicDocument extends Model
                     ];
                 }
 
+                if (! is_array($attachment)) {
+                    return $attachment;
+                }
+
+                $path = $attachment['path'] ?? null;
+
                 return array_merge([
-                    'url' => isset($attachment['path']) ? asset('storage/'.$attachment['path']) : null,
+                    'url' => is_string($path) ? asset('storage/'.$path) : null,
                 ], $attachment);
             })
             ->toArray();
@@ -451,17 +520,21 @@ class PublicDocument extends Model
 
     /**
      * Ottiene le versioni del documento
+     *
+     * @return array<int|string, mixed>
      */
     public function getFormattedVersions(): array
     {
-        if (! $this->versions || ! is_array($this->versions)) {
+        $versions = $this->versions;
+
+        if (! is_array($versions)) {
             return [];
         }
 
-        return collect($this->versions)
-            ->map(function ($version, $index) {
+        return collect($versions)
+            ->map(function (mixed $version, int|string $index): array {
                 return array_merge([
-                    'version' => $index + 1,
+                    'version' => (is_int($index) ? $index : 0) + 1,
                     'date' => null,
                     'changes' => null,
                     'file' => null,
@@ -474,15 +547,19 @@ class PublicDocument extends Model
 
     /**
      * Ottiene i riferimenti normativi formattati
+     *
+     * @return array<int|string, mixed>
      */
     public function getFormattedLegislativeReferences(): array
     {
-        if (! $this->legislative_references || ! is_array($this->legislative_references)) {
+        $references = $this->legislative_references;
+
+        if (! is_array($references)) {
             return [];
         }
 
-        return collect($this->legislative_references)
-            ->map(function ($reference) {
+        return collect($references)
+            ->map(function (mixed $reference): mixed {
                 if (is_string($reference)) {
                     return ['title' => $reference];
                 }
@@ -532,6 +609,8 @@ class PublicDocument extends Model
 
     /**
      * Verifica la compliance AGID
+     *
+     * @return array<string, mixed>
      */
     public function checkAgidCompliance(): array
     {
@@ -562,10 +641,29 @@ class PublicDocument extends Model
     }
 
     /**
+     * Ottiene il nome completo dell'autore, se presente
+     */
+    protected function authorFullName(): ?string
+    {
+        if ($this->author === null) {
+            return null;
+        }
+
+        return trim($this->author->first_name.' '.$this->author->last_name);
+    }
+
+    /**
      * Ottiene i dati strutturati per SEO
+     *
+     * @return array<string, mixed>
      */
     public function getStructuredData(): array
     {
+        $keywords = $this->keywords;
+        $keywordNames = is_array($keywords)
+            ? array_map(static fn (mixed $keyword): string => is_array($keyword) && is_string($keyword['name'] ?? null) ? $keyword['name'] : (is_scalar($keyword) ? (string) $keyword : ''), $keywords)
+            : [];
+
         return [
             '@context' => 'https://schema.org',
             '@type' => 'DigitalDocument',
@@ -573,18 +671,18 @@ class PublicDocument extends Model
             'description' => $this->description,
             'dateCreated' => $this->document_date?->toISOString(),
             'datePublished' => $this->publication_date?->toISOString(),
-            'dateModified' => $this->updated_at->toISOString(),
+            'dateModified' => $this->updated_at?->toISOString(),
             'author' => [
                 '@type' => 'Person',
-                'name' => $this->author?->full_name,
+                'name' => $this->authorFullName(),
             ],
             'publisher' => [
                 '@type' => 'Organization',
-                'name' => $this->organizationalUnit?->name ?? 'Comune',
+                'name' => $this->organizationalUnit?->getAttribute('name') ?? 'Comune',
             ],
             'encodingFormat' => $this->file_type,
             'contentSize' => $this->formatted_file_size,
-            'keywords' => is_array($this->keywords) ? implode(', ', array_column($this->keywords, 'name')) : null,
+            'keywords' => $keywordNames !== [] ? implode(', ', $keywordNames) : null,
             'inLanguage' => $this->language ?? 'it',
             'isAccessibleForFree' => true,
             'license' => 'https://creativecommons.org/licenses/by/4.0/',
@@ -593,6 +691,8 @@ class PublicDocument extends Model
 
     /**
      * Ottiene le informazioni complete del documento
+     *
+     * @return array<string, mixed>
      */
     public function getDocumentDetails(): array
     {
@@ -630,9 +730,9 @@ class PublicDocument extends Model
                 'keywords' => $this->getFormattedKeywords(),
             ],
             'relationships' => [
-                'author' => $this->author?->full_name,
-                'organizational_unit' => $this->organizationalUnit?->name,
-                'service' => $this->service?->name,
+                'author' => $this->authorFullName(),
+                'organizational_unit' => $this->organizationalUnit?->getAttribute('name'),
+                'service' => $this->service?->getAttribute('name'),
                 'attachments' => $this->getFormattedAttachments(),
                 'versions' => $this->getFormattedVersions(),
             ],
@@ -642,61 +742,73 @@ class PublicDocument extends Model
 
     /**
      * Accessor per il nome del tipo di documento
+     *
+     * @return Attribute<string, never>
      */
     protected function documentTypeName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::DOCUMENT_TYPES[$this->document_type] ?? $this->document_type
+            get: fn (): string => self::DOCUMENT_TYPES[$this->document_type] ?? $this->document_type
         );
     }
 
     /**
      * Accessor per il nome dello stato
+     *
+     * @return Attribute<string, never>
      */
     protected function documentStatusName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::DOCUMENT_STATUSES[$this->document_status] ?? $this->document_status
+            get: fn (): string => self::DOCUMENT_STATUSES[$this->document_status] ?? $this->document_status
         );
     }
 
     /**
      * Accessor per il nome dello stato di pubblicazione
+     *
+     * @return Attribute<string, never>
      */
     protected function publicationStatusName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::PUBLICATION_STATUSES[$this->publication_status] ?? $this->publication_status
+            get: fn (): string => self::PUBLICATION_STATUSES[$this->publication_status] ?? $this->publication_status
         );
     }
 
     /**
      * Accessor per il nome del livello di privacy
+     *
+     * @return Attribute<string, never>
      */
     protected function privacyLevelName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::PRIVACY_LEVELS[$this->privacy_level] ?? $this->privacy_level
+            get: fn (): string => self::PRIVACY_LEVELS[$this->privacy_level] ?? $this->privacy_level
         );
     }
 
     /**
      * Accessor per verificare se è scaduto
+     *
+     * @return Attribute<bool, never>
      */
     protected function isExpired(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->expiry_date && $this->expiry_date->isPast()
+            get: fn (): bool => (bool) ($this->expiry_date && $this->expiry_date->isPast())
         );
     }
 
     /**
      * Accessor per verificare se è in vigore
+     *
+     * @return Attribute<bool, never>
      */
     protected function isEffective(): Attribute
     {
         return Attribute::make(
-            get: function () {
+            get: function (): bool {
                 if ($this->document_status !== 'effective') {
                     return false;
                 }
@@ -716,16 +828,20 @@ class PublicDocument extends Model
 
     /**
      * Accessor per verificare se necessita revisione
+     *
+     * @return Attribute<bool, never>
      */
     protected function needsReview(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->review_date && $this->review_date->isPast()
+            get: fn (): bool => (bool) ($this->review_date && $this->review_date->isPast())
         );
     }
 
     /**
      * Accessor per la dimensione del file formattata
+     *
+     * @return Attribute<string|null, never>
      */
     protected function formattedFileSize(): Attribute
     {
@@ -751,31 +867,37 @@ class PublicDocument extends Model
 
     /**
      * Accessor per l'URL del documento
+     *
+     * @return Attribute<string, never>
      */
     protected function url(): Attribute
     {
         return Attribute::make(
-            get: fn () => route('municipal.documents.show', $this->slug)
+            get: fn (): string => route('municipal.documents.show', $this->slug)
         );
     }
 
     /**
      * Accessor per l'URL di download
+     *
+     * @return Attribute<string|null, never>
      */
     protected function downloadUrl(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->file_path ? route('municipal.documents.download', $this->id) : null
+            get: fn (): ?string => $this->file_path ? route('municipal.documents.download', $this->id) : null
         );
     }
 
     /**
      * Mutator per il titolo (genera automaticamente lo slug)
+     *
+     * @return Attribute<string, string>
      */
     protected function title(): Attribute
     {
         return Attribute::make(
-            set: function ($value) {
+            set: function (string $value): string {
                 $this->attributes['title'] = $value;
                 if (empty($this->attributes['slug'])) {
                     $this->attributes['slug'] = Str::slug($value);
@@ -794,14 +916,14 @@ class PublicDocument extends Model
         parent::boot();
 
         // Genera slug se mancante
-        static::creating(function ($model): void {
+        static::creating(function (self $model): void {
             if (empty($model->slug)) {
                 $model->slug = Str::slug($model->title);
             }
         });
 
         // Assicura unicità dello slug
-        static::creating(function ($model): void {
+        static::creating(function (self $model): void {
             $originalSlug = $model->slug;
             $counter = 1;
 
@@ -812,7 +934,7 @@ class PublicDocument extends Model
         });
 
         // Set default values
-        static::creating(function ($model): void {
+        static::creating(function (self $model): void {
             if (is_null($model->document_status)) {
                 $model->document_status = 'draft';
             }
@@ -835,7 +957,7 @@ class PublicDocument extends Model
         });
 
         // Calcola checksum del file se presente
-        static::creating(function ($model): void {
+        static::creating(function (self $model): void {
             if ($model->file_path && empty($model->checksum)) {
                 $filePath = storage_path('app/'.$model->file_path);
                 if (file_exists($filePath)) {

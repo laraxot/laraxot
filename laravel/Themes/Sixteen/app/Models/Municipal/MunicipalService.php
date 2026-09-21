@@ -669,7 +669,7 @@ class MunicipalService extends Model
     /**
      * Mutator per il nome (genera automaticamente lo slug)
      *
-     * @return Attribute<never, string>
+     * @return Attribute<string, string>
      */
     protected function name(): Attribute
     {
