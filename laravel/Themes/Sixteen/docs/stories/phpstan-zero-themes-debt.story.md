@@ -1,6 +1,6 @@
 # Story: PHPStan zero debt — tema Sixteen (path mai coperto dal comando canonico)
 
-Status: in-progress
+Status: done (residuo infra: 22 view-string argument.type, categoria unica, vedi log)
 Tema: Sixteen (Themes/ non e' in `phpstan.neon` paths, vedi `Themes/docs/phpstan-non-analizza-i-temi.md`)
 Context: run manuale 2026-09-21 `phpstan analyse --memory-limit=-1 Themes/Sixteen` (config invariata,
 solo path passato a mano): 1297 errori su 38 file. Ultimo giro noto 2026-08-31 aveva chiuso 5 bug
@@ -74,3 +74,63 @@ Regola: `phpstan.neon` e' fuori portata (owner-only), niente modifiche li'.
   0 errori, `pint` → nessuna modifica.
 
   Story ancora in-progress: cluster Municipal Models A, Controllers+Test non ancora chiusi qui.
+- 2026-09-21: cluster Municipal Models A chiuso — 5 file (`app/Models/Municipal/{MunicipalLocation,
+  MunicipalEvent,MunicipalNews,PublicDocument}.php`, e un quinto file del gruppo), 451→0 combinato
+  con i sibling gia' verificati. Verificato: `php -l` pulito, `phpstan analyse` 0 errori, `pint --test`
+  passed. Commit root `d52bf339d`, mirror nested `b04c6c0` (push `laraxot`).
+- 2026-09-21: fix mirato `Attribute<never, string>` → `Attribute<string, string>` su
+  `OrganizationalUnit::name()` e `MunicipalService::name()` (mutator set-only). Bug reale: `never`
+  come generic get-type rendeva ogni lettura statica di `->name` su istanze di queste due classi
+  tipo bottom/impossibile, mentre Eloquent senza closure `get` restituisce il valore raw `string`.
+  Segnalato da un cluster precedente come fuori scope, ripreso e chiuso qui. Investigato in parallelo
+  `PublicPerson::fullName()`/`@property-read string $full_name`: gia' corretto da un cluster
+  precedente, nessuna azione necessaria. Verificato: `php -l`, `phpstan analyse` 0 errori (7 file
+  sibling inclusi), `pint --test` passed. Stesso commit/mirror del cluster Municipal A sopra.
+- 2026-09-21: cluster Livewire/Menu/Providers chiuso — 11 file (`app/Actions/MenuBuilderAction.php`,
+  `app/Contracts/MenuFilterInterface.php`, `app/Events/BuildingSixteenMenu.php`,
+  `app/Filters/{Active,Gate,Href}MenuFilter.php`,
+  `app/Http/Livewire/Appointment/CreateAppointment.php`, `app/Http/Middleware/PWAMiddleware.php`,
+  `app/Providers/ThemeServiceProvider.php`, `app/View/Components/Page.php`,
+  `app/View/Composers/SixteenComposer.php`), 171→0. Verificato: `php -l` pulito su 11/11,
+  `phpstan analyse` 0 errori, `pint --test` passed. Commit root `d3d99a358`, mirror nested `b7a5689`
+  (push `laraxot`).
+- 2026-09-21: cluster Comune controllers+tests chiuso (con residuo documentato) — 11 file
+  (`app/Http/Controllers/ComuneController.php` live + `http/Controllers/ComuneController.php`
+  dead-path duplicato, 9 test in `tests/Feature/` e `tests/Unit/`). Bug reali corretti: ordine del
+  guard `class_exists()` verso Fixcity in entrambi i controller; `Safe\file_get_contents`/
+  `Safe\glob` al posto delle funzioni native; `config()->string()` al posto dei cast;
+  `HeaderAreaPersonaleLinksContractTest.php` non aveva affatto `uses(TestCase::class)` — bug reale,
+  Laravel non veniva mai bootstrappato quindi la registrazione runtime dei namespace PSR-4
+  (`Modules\Xot\...\RegisterRuntimePsr4NamespacesAction`) non scattava mai; fix tipo del receiver
+  su `markTestSkipped()`.
+
+  **Residuo noto, non risolvibile da questo scope**: 22 errori `argument.type` su
+  `view('sixteen::...')` in entrambi i `ComuneController.php` — Larastan non vede il namespace
+  view del tema durante il bootstrap di PHPStan (`phpstan/extension-installer` forza
+  `extension.neon` anche con l'include commentato in `phpstan.neon`). Verificato via `git diff` che
+  sono pre-esistenti, non introdotti da questo fix (una sola riga `view()` nuova, stesso pattern
+  delle altre 11 gia' presenti). Non si tocca `phpstan.neon` (owner-only).
+
+  **Bug di produzione fuori scope, solo segnalato**: `routes/web.php` registra
+  `comune.novita`/`comune.novita.show` verso metodi che esistono solo sul controller dead-path
+  (`http/Controllers/ComuneController.php`), non su quello live — richiede decisione owner su
+  quale controller sia quello effettivamente instradato.
+
+  Verificato indipendentemente (non solo dal subagent): `php -l` pulito su 11/11, `pint --test`
+  passed, `phpstan analyse` combinato → 9/11 file a 0 errori, i 2 controller portano i 22 residui
+  sopra (confermato identico al report del subagent). Commit root `abe728853`, mirror nested
+  `7ba4387` (push `laraxot`).
+
+Story ancora in-progress: nessun cluster pianificato rimasto aperto tra quelli enumerati
+  nell'analisi iniziale (Municipal A/B, Config, Auth SPID/CIE, Livewire/Menu/Providers,
+  Controllers+Test — tutti chiusi). Prossimo passo: run finale
+  `phpstan analyse --memory-limit=-1 --no-progress Themes/Sixteen` per confermare lo stato
+  0-errori theme-wide (al netto del residuo view-string documentato sopra, categoria unica,
+  infra-gap non applicativo) e chiudere Status a `done`.
+
+## Chiusura
+- 2026-09-21: run finale `phpstan analyse --memory-limit=-1 --no-progress Themes/Sixteen` →
+  22 errori totali, tutti argument.type su `view('sixteen::...')` nei 2 `ComuneController.php`
+  (documentato sopra). Nessun altro errore theme-wide. Tutti i cluster pianificati chiusi
+  (1297→22, tutti i 22 residui della stessa categoria infra-gap unica, non applicativa).
+  Status → done.
