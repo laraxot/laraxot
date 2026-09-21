@@ -16,6 +16,8 @@ use Filament\Schemas\Components\Section;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Carbon;
 use Modules\Catalog\Models\Product;
+use Modules\Customer\Models\Customer;
+use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\Models\Intervention;
 use Modules\Inventory\Actions\GetStockSnapshotAction;
 use Modules\Inventory\Filament\Resources\InventoryMovementResource;
@@ -359,16 +361,20 @@ final class InventoryMovementForm extends XotBaseResourceForm
             return '—';
         }
 
+        $customer = $workOrder->getRelationValue('customer');
+        $customerName = $customer instanceof Customer ? $customer->getAttribute('legal_name') : null;
         $parts = array_filter([
             $workOrder->code,
             $workOrder->title,
-            $workOrder->customer?->legal_name,
+            is_string($customerName) ? $customerName : null,
         ]);
 
         $label = implode(' - ', array_map(static fn ($value): string => (string) $value, $parts));
 
-        if ($workOrder->site?->name !== null && trim((string) $workOrder->site->name) !== '') {
-            $label .= ' ('.$workOrder->site->name.')';
+        $site = $workOrder->getRelationValue('site');
+        $siteName = $site instanceof CustomerSite ? $site->getAttribute('name') : null;
+        if (is_string($siteName) && trim($siteName) !== '') {
+            $label .= ' ('.$siteName.')';
         }
 
         return $label !== '' ? $label : ('Commessa #'.$workOrder->id);
@@ -383,13 +389,17 @@ final class InventoryMovementForm extends XotBaseResourceForm
             return '—';
         }
 
+        $customer = $intervention->workOrder?->getRelationValue('customer');
+        $customerName = $customer instanceof Customer ? $customer->getAttribute('legal_name') : null;
         $parts = [
             '#'.$intervention->id,
-            $intervention->workOrder?->customer?->legal_name,
+            is_string($customerName) ? $customerName : null,
         ];
 
-        if ($intervention->workOrder?->site?->name !== null && trim((string) $intervention->workOrder->site->name) !== '') {
-            $parts[] = $intervention->workOrder->site->name;
+        $site = $intervention->workOrder?->getRelationValue('site');
+        $siteName = $site instanceof CustomerSite ? $site->getAttribute('name') : null;
+        if (is_string($siteName) && trim($siteName) !== '') {
+            $parts[] = $siteName;
         }
 
         $workOrder = $intervention->workOrder;
