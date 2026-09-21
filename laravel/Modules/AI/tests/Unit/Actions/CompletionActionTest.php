@@ -26,6 +26,7 @@ afterEach(function (): void {
 
 describe('Completion Action', function (): void {
     test('_creates_completion_with_valid_prompt', function (): void {
+        /** @var TestCase $this */
         $action = new CompletionAction();
         $prompt = 'Explain what PHP is';
         $expectedText = 'PHP is a server-side scripting language designed for web development.';
@@ -69,6 +70,7 @@ describe('Completion Action', function (): void {
     });
 
     test('_handles_empty_prompt', function (): void {
+        /** @var TestCase $this */
         $action = new CompletionAction();
         $prompt = '';
         $expectedText = 'No prompt provided.';
@@ -100,6 +102,7 @@ describe('Completion Action', function (): void {
     });
 
     test('_handles_long_prompt', function (): void {
+        /** @var TestCase $this */
         $action = new CompletionAction();
         $prompt = str_repeat('This is a very long prompt that tests the handling of extended text content. ', 50);
         $expectedText = 'Response to long prompt.';
@@ -128,6 +131,7 @@ describe('Completion Action', function (): void {
     });
 
     test('_handles_special_characters_in_prompt', function (): void {
+        /** @var TestCase $this */
         $action = new CompletionAction();
         $prompt = 'What is the meaning of life? 42! @#$%^&*()';
         $expectedText = 'The meaning of life is a philosophical question.';
@@ -155,6 +159,7 @@ describe('Completion Action', function (): void {
     });
 
     test('_handles_multilingual_prompt', function (): void {
+        /** @var TestCase $this */
         $action = new CompletionAction();
         $prompt = '¿Qué es PHP? Explain in Spanish and English.';
         $expectedText = 'PHP es un lenguaje de programación. PHP is a programming language.';
@@ -182,6 +187,7 @@ describe('Completion Action', function (): void {
     });
 
     test('_handles_code_prompt', function (): void {
+        /** @var TestCase $this */
         $action = new CompletionAction();
         $prompt = 'Write a PHP function to calculate factorial: function factorial($n) {';
         $expectedText = 'return $n <= 1 ? 1 : $n * factorial($n - 1); }';
@@ -209,6 +215,7 @@ describe('Completion Action', function (): void {
     });
 
     test('_handles_technical_prompt', function (): void {
+        /** @var TestCase $this */
         $action = new CompletionAction();
         $prompt = 'Explain the SOLID principles in software development.';
         $expectedText = 'SOLID principles are five design principles for object-oriented programming.';
@@ -236,6 +243,7 @@ describe('Completion Action', function (): void {
     });
 
     test('_handles_question_prompt', function (): void {
+        /** @var TestCase $this */
         $action = new CompletionAction();
         $prompt = 'What are the best practices for Laravel development?';
         $expectedText = 'Laravel best practices include using Eloquent ORM, following PSR standards, and implementing proper validation.';
@@ -263,6 +271,7 @@ describe('Completion Action', function (): void {
     });
 
     test('_handles_creative_prompt', function (): void {
+        /** @var TestCase $this */
         $action = new CompletionAction();
         $prompt = 'Write a short story about a developer who discovers a magical bug.';
         $expectedText = 'Once upon a time, there was a developer named Alex who found a bug that glowed with an otherworldly light.';

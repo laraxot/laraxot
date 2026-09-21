@@ -1,0 +1,10 @@
+
+  [41;1m Pest\Exceptions\TestCaseAlreadyInUse [49;22m
+
+[39;1m  The test case [Modules\AI\Tests\TestCase] may not be used here. The folder [/var/www/_bases/base_techplanner_fila5/laravel/Modules/AI/tests/Unit/Actions/ContextCompressorActionTest.php] is already bound to the test case [Modules\AI\Tests\TestCase].[39;22m
+
+
+  [41;1m Pest\Exceptions\TestCaseAlreadyInUse [49;22m
+
+[39;1m  The test case [Modules\AI\Tests\TestCase] may not be used here. The folder [/var/www/_bases/base_techplanner_fila5/laravel/Modules/AI/tests/Unit/Actions/ContextCompressorActionTest.php] is already bound to the test case [Modules\AI\Tests\TestCase].[39;22m
+

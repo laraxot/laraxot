@@ -25,9 +25,7 @@ return new class() extends XotBaseMigration
 
             $table->uuid('public_id')->unique();
 
-            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
-            // a 0, perdendo in silenzio chi ha eseguito l'operazione.
-            $table->string('created_by_user_id', 36)->index();
+            $table->unsignedBigInteger('created_by_user_id')->index();
 
             $table->string('panel_id')->default('operator');
 

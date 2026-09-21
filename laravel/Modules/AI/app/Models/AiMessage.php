@@ -6,13 +6,17 @@ namespace Modules\AI\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Xot\Contracts\ProfileContract;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * Class AiMessage.
  *
  * A single message (user|assistant|tool|system) within an AiThread.
  *
+ * @property-read ProfileContract|null $creator
  * @property-read AiThread|null $thread
+ * @property-read ProfileContract|null $updater
  *
  * @method static Builder<static>|AiMessage newModelQuery()
  * @method static Builder<static>|AiMessage newQuery()
@@ -20,7 +24,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *
  * @mixin \Eloquent
  */
-class AiMessage extends BaseModel
+class AiMessage extends XotBaseModel
 {
     public const string ROLE_USER = 'user';
 

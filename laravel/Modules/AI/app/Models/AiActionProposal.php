@@ -7,6 +7,8 @@ namespace Modules\AI\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use Modules\Xot\Contracts\ProfileContract;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * Class AiActionProposal.
@@ -20,19 +22,21 @@ use Illuminate\Support\Carbon;
  * @property int $id
  * @property string $public_id
  * @property int $ai_thread_id
- * @property string $proposed_by_user_id
+ * @property int $proposed_by_user_id
  * @property string $type
  * @property array<string, mixed> $payload
  * @property string|null $preview
  * @property string $status
- * @property string|null $confirmed_by_user_id
+ * @property int|null $confirmed_by_user_id
  * @property Carbon|null $confirmed_at
  * @property Carbon|null $executed_at
  * @property array<string, mixed>|null $result
  * @property string|null $error
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * @property-read ProfileContract|null $creator
  * @property-read AiThread|null $thread
+ * @property-read ProfileContract|null $updater
  *
  * @method static Builder<static>|AiActionProposal newModelQuery()
  * @method static Builder<static>|AiActionProposal newQuery()
@@ -40,7 +44,7 @@ use Illuminate\Support\Carbon;
  *
  * @mixin \Eloquent
  */
-class AiActionProposal extends BaseModel
+class AiActionProposal extends XotBaseModel
 {
     public const string STATUS_PENDING = 'pending';
 

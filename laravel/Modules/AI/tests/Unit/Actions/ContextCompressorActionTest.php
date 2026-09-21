@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace Modules\AI\Tests\Unit\Actions;
 
 use Modules\AI\Actions\ContextCompressorAction;
-use PHPUnit\Framework\Assert;
-
 use function Safe\putenv;
+
 
 /**
  * Forces the extractive (non-OpenAI) fallback path by clearing OPENAI_API_KEY
@@ -41,7 +40,7 @@ describe('ContextCompressorAction', function (): void {
 
         $result = ContextCompressorAction::compress($text, 200);
 
-        Assert::assertSame($text, $result);
+        $this->assertSame($text, $result);
     });
 
     test('_extractive_fallback_stays_within_target_and_keeps_sentence_boundaries', function (): void {
@@ -53,9 +52,9 @@ describe('ContextCompressorAction', function (): void {
 
         $result = withoutOpenAiKey(fn () => ContextCompressorAction::compress($text, 200));
 
-        Assert::assertLessThanOrEqual(200, mb_strlen($result));
-        Assert::assertStringStartsWith('Questa e la frase numero 1', $result);
-        Assert::assertMatchesRegularExpression('/\.$/', $result);
+        $this->assertLessThanOrEqual(200, mb_strlen($result));
+        $this->assertStringStartsWith('Questa e la frase numero 1', $result);
+        $this->assertMatchesRegularExpression('/\.$/', $result);
     });
 
     test('_extractive_fallback_hard_truncates_when_no_sentence_boundary_fits', function (): void {
@@ -63,6 +62,6 @@ describe('ContextCompressorAction', function (): void {
 
         $result = withoutOpenAiKey(fn () => ContextCompressorAction::compress($text, 50));
 
-        Assert::assertSame(str_repeat('a', 50), $result);
+        $this->assertSame(str_repeat('a', 50), $result);
     });
 });

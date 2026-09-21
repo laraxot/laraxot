@@ -372,6 +372,7 @@ Per una migliore diagnostica dei problemi, è consigliabile configurare un loggi
 declare(strict_types=1);
 
 namespace Modules\AI\Services\Servers;
+use Modules\User\Models\User;
 
 use Modules\AI\Services\Contracts\SequentialThinkingServerContract;
 use Illuminate\Support\Facades\Http;

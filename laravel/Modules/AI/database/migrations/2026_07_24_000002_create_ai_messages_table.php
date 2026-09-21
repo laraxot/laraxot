@@ -22,9 +22,7 @@ return new class() extends XotBaseMigration
 
             $table->foreignId('ai_thread_id')->constrained('ai_threads')->cascadeOnDelete();
 
-            // L'id utente e' un UUID di 36 caratteri: una colonna intera lo troncherebbe
-            // a 0, legando la riga all'utente sbagliato o a nessuno.
-            $table->string('user_id', 36)->nullable()->index();
+            $table->unsignedBigInteger('user_id')->nullable()->index();
 
             $table->string('role');
 
