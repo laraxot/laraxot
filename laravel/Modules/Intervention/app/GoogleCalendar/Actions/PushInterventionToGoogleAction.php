@@ -6,6 +6,7 @@ namespace Modules\Intervention\GoogleCalendar\Actions;
 
 use Carbon\CarbonImmutable;
 use Modules\Customer\Models\Customer;
+use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\GoogleCalendar\Contracts\GoogleCalendarClient;
 use Modules\Intervention\GoogleCalendar\DTO\GoogleEventInput;
 use Modules\Intervention\Models\Intervention;
@@ -170,15 +171,18 @@ final class PushInterventionToGoogleAction
 
     private function location(Intervention $intervention): ?string
     {
-        $site = $intervention->workOrder?->site;
-        if ($site === null) {
+        $site = $intervention->workOrder?->getRelationValue('site');
+        if (! $site instanceof CustomerSite) {
             return null;
         }
 
+        $siteName = $site->getAttribute('name');
+        $addressLine1 = $site->getAttribute('address_line1');
+        $city = $site->getAttribute('city');
         $parts = array_values(array_filter([
-            is_string($site->name ?? null) ? $site->name : null,
-            is_string($site->getAttribute('address_line1')) ? (string) $site->getAttribute('address_line1') : null,
-            is_string($site->getAttribute('city')) ? (string) $site->getAttribute('city') : null,
+            is_string($siteName) ? $siteName : null,
+            is_string($addressLine1) ? $addressLine1 : null,
+            is_string($city) ? $city : null,
         ], static fn (?string $part): bool => $part !== null && $part !== ''));
 
         return $parts !== [] ? implode(', ', $parts) : null;

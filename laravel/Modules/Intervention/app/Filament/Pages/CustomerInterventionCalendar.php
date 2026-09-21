@@ -244,6 +244,8 @@ final class CustomerInterventionCalendar extends XotBasePage
             return '';
         }
 
-        return (string) ($workOrder->site->name ?? '');
+        $name = $workOrder->site->getAttribute('name');
+
+        return is_string($name) ? $name : '';
     }
 }

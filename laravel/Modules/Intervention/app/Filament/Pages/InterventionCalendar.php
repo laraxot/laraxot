@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Facades\Auth;
+use Modules\Customer\Models\Customer;
+use Modules\Customer\Models\CustomerSite;
 use Modules\Intervention\Filament\Concerns\InterventionCalendarColors;
 use Modules\Intervention\Filament\Concerns\ResolvesCalendarReturnUrl;
 use Modules\Intervention\Filament\Resources\InterventionResource;
@@ -176,17 +178,21 @@ final class InterventionCalendar extends XotBasePage
             if ($operatorName === '') {
                 $operatorName = $performedBy !== null ? ($performedBy->name ?? '—') : '—';
             }
-            $customerName = ($workOrder !== null && $workOrder->customer !== null ? $workOrder->customer->legal_name : null)
+            $workOrderCustomer = $workOrder?->getRelationValue('customer');
+            $customerName = ($workOrderCustomer instanceof Customer ? $workOrderCustomer->getAttribute('legal_name') : null)
                 ?? ($customer !== null ? $customer->legal_name : null)
                 ?? '—';
-            $siteName = ($workOrder !== null && $workOrder->site !== null) ? (string) ($workOrder->site->name ?? '') : '';
+            $workOrderSite = $workOrder?->getRelationValue('site');
+            $siteNameValue = $workOrderSite instanceof CustomerSite ? $workOrderSite->getAttribute('name') : null;
+            $siteName = is_string($siteNameValue) ? $siteNameValue : '';
             $title = $workOrder !== null ? (string) ($workOrder->title ?? '—') : '—';
 
-            $labelParts = array_filter([
-                $title !== '—' ? $title : null,
-                $customerName !== '—' ? $customerName : null,
-                $siteName !== '' ? $siteName : null,
-            ]);
+            $labelParts = [];
+            foreach ([$title, $customerName, $siteName] as $part) {
+                if (is_string($part) && $part !== '' && $part !== '—') {
+                    $labelParts[] = $part;
+                }
+            }
             $eventLabel = $labelParts !== [] ? implode(' · ', $labelParts) : '—';
 
             return [
@@ -258,10 +264,10 @@ final class InterventionCalendar extends XotBasePage
         $this->selectedIntervention = [
             'id' => $intervention->id,
             'work_order_title' => $workOrder !== null ? (string) ($workOrder->title ?? '—') : '—',
-            'customer' => ($workOrder !== null && $workOrder->customer !== null ? $workOrder->customer->legal_name : null)
+            'customer' => (($workOrderCustomer = $workOrder?->getRelationValue('customer')) instanceof Customer ? $workOrderCustomer->getAttribute('legal_name') : null)
                 ?? ($customer !== null ? $customer->legal_name : null)
                 ?? '—',
-            'site' => ($workOrder !== null && $workOrder->site !== null) ? (string) ($workOrder->site->name ?? '') : '',
+            'site' => (($workOrderSite = $workOrder?->getRelationValue('site')) instanceof CustomerSite && is_string($siteNameValue = $workOrderSite->getAttribute('name')) ? $siteNameValue : ''),
             'operator' => $assignedNames !== '' ? $assignedNames : ($performedBy !== null ? ($performedBy->name ?? '—') : '—'),
             'operator_color' => self::operatorColorFor($operatorId),
             'scheduled_at' => $intervention->scheduled_at?->format('d/m/Y H:i') ?? '—',
