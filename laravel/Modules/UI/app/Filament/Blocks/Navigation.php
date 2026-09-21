@@ -14,7 +14,6 @@ final class Navigation extends XotBaseBlock
     /**
      * @return array<string, Component>
      */
-    #[\Override]
     public static function getBlockSchema(): array
     {
         return [
@@ -37,7 +36,7 @@ final class Navigation extends XotBaseBlock
     /**
      * @return array<string, Component>
      */
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             'items' => Repeater::make('items')

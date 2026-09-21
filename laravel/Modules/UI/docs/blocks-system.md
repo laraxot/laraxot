@@ -1,8 +1,44 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 ---
 module: theme
 topic: blocks_system
 canonical: ../../../Themes/docs/shared-components/blocks-system_1.md
 ---
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/blocks-system_1.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/blocks-system_1.md
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+# Sistema di Blocchi
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 See canonical documentation: ../../../Themes/docs/shared-components/blocks-system_1.md
 # Sistema di Blocchi
@@ -88,4 +124,27 @@ Questa documentazione è parte del sistema di documentazione di il progetto. Per
 1. **[NavigationBlock](../laravel/Modules/Cms/project_docs/blocks/navigation-block.md)**
 - [Documentazione Blocchi](../laravel/Modules/Cms/project_docs/blocks/)
 
+<<<<<<< HEAD
 ```
+=======
+<<<<<<< HEAD
+```
+=======
+## Note
+Questa documentazione è parte del sistema di documentazione di il progetto. Per dettagli specifici sui singoli blocchi, consultare la documentazione dei rispettivi moduli.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/blocks-system_1.md
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

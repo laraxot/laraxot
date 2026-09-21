@@ -207,6 +207,25 @@ If the component doesn't look right, make sure you have the required Tailwind CS
 
 ## Contributing
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+Contributions are welcome! Please feel free to submit a Pull Request.
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+Contributions are welcome! Please feel free to submit a Pull Request.
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+Contributions are welcome! Please feel free to submit a Pull Request.
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 Contributions are welcome! Please feel free to submit a Pull Request.
 ## ♻️ Manutenzione
 - Rafforzata la tipizzazione delle settimane generate (`array<int, array<int, array<string, mixed>>>`).
@@ -325,4 +344,26 @@ Check that you're not overriding the component's JavaScript with custom code. Th
 If the component doesn't look right, make sure you have the required Tailwind CSS utilities included in your build. The component uses standard Tailwind classes for styling.
 ## Contributing
 
+<<<<<<< HEAD
 ```
+=======
+<<<<<<< HEAD
+```
+=======
+Contributions are welcome! Please feel free to submit a Pull Request.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+Contributions are welcome! Please feel free to submit a Pull Request.
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

@@ -45,3 +45,31 @@ discriminante.
   cella, non nello schema.
 
 Test: `tests/Feature/AddressColumnTest.php`, `tests/Feature/OpeningHoursColumnTest.php`.
+<<<<<<< HEAD
+=======
+- **`PersonColumn`** (`app/Filament/Tables/Columns/PersonColumn.php`) — estende
+  `GroupColumn` come `UserColumn` in User: un `TextColumn` per campo, nome diretto
+  (`first_name`, non `person.first_name`) perche' la persona e' il record stesso, non
+  un correlato — a differenza di `AddressColumn`. Campi di default:
+  `first_name`, `last_name`, `email`, `mobile_phone`, `language`, mappati (solo a
+  scopo documentale) su `https://schema.org/Person` (`givenName`, `familyName`,
+  `email`, `telephone`, `knowsLanguage`). `fields()` per restringere l'elenco.
+  Gemello form: `PersonSection`.
+
+- **`SortableIdColumn`**/**`TimestampColumn`** (`app/Filament/Tables/Columns/{SortableIdColumn,TimestampColumn}.php`)
+  — nessun gemello form (non e' un fatto di dominio, e' una convenzione di
+  progetto ripetuta identica): trovato lo stesso trio letterale
+  (`sortable()->copyable()->toggleable(...)` per `id`;
+  `dateTime()->sortable()->placeholder('—')` per `created_at`/`updated_at`)
+  in 30+ classi `Tables/*.php` (soprattutto `Modules/User`), durante il
+  lavoro su `Modules/Quaeris/ContactResource/Tables/ContactsTable.php`.
+  `toggleable()` resta componibile dal chiamante (non fissato dentro
+  `TimestampColumn`: `created_at`/`updated_at` differiscono su questo punto
+  nel codice esistente). Migrazione dei 30+ consumer non ancora fatta, solo
+  il componente e' stato creato — vedi
+  `Modules/UI/docs/stories/id-timestamp-columns-extraction.story.md`.
+
+Test: `tests/Feature/AddressColumnTest.php`, `tests/Feature/OpeningHoursColumnTest.php`,
+`tests/Feature/PersonColumnTest.php`, `tests/Feature/SortableIdColumnTest.php`,
+`tests/Feature/TimestampColumnTest.php`.
+>>>>>>> laraxot/dev

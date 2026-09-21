@@ -1,15 +1,82 @@
 # Rapporto Aggiornamento Filament 4.x - Modulo UI
 
+<<<<<<< HEAD
 **Data**: 2025-01-27
 **Status**: ✅ COMPLETATO
 **Versione Filament**: 4.0.17
 **Status**: ✅ COMPLETATO  
 **Versione Filament**: 4.0.17  
+=======
+<<<<<<< HEAD
+**Data**: 2025-01-27  
+**Status**: ✅ COMPLETATO  
+**Versione Filament**: 4.0.17  
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+**Data**: 2025-01-27
+**Status**: ✅ COMPLETATO
+**Versione Filament**: 4.0.17
+<<<<<<< HEAD
+**Status**: ✅ COMPLETATO  
+**Versione Filament**: 4.0.17  
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+**Data**: 2025-01-27  
+**Status**: ✅ COMPLETATO  
+**Versione Filament**: 4.0.17  
+=======
+**Data**: 2025-01-27
+**Status**: ✅ COMPLETATO
+**Versione Filament**: 4.0.17
+>>>>>>> laraxot/dev
+=======
+**Data**: 2025-01-27  
+**Status**: ✅ COMPLETATO  
+**Versione Filament**: 4.0.17  
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 ## 🔧 Correzioni Implementate
 
 ### 1. Widget FullCalendar Disabilitato
+<<<<<<< HEAD
 **Problema**: Dipendenza da `saade/filament-fullcalendar` non compatibile con Filament 4.x
+=======
+<<<<<<< HEAD
+**Problema**: Dipendenza da `saade/filament-fullcalendar` non compatibile con Filament 4.x  
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+**Problema**: Dipendenza da `saade/filament-fullcalendar` non compatibile con Filament 4.x
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+**Problema**: Dipendenza da `saade/filament-fullcalendar` non compatibile con Filament 4.x  
+=======
+**Problema**: Dipendenza da `saade/filament-fullcalendar` non compatibile con Filament 4.x
+>>>>>>> laraxot/dev
+=======
+**Problema**: Dipendenza da `saade/filament-fullcalendar` non compatibile con Filament 4.x  
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
 **Soluzione**: Disabilitazione temporanea del widget
 
 **File disabilitato**:
@@ -76,6 +143,35 @@ class UserCalendarWidget extends \Filament\Widgets\Widget
 class SimpleCalendarWidget extends \Filament\Widgets\Widget
 {
     protected static ?string $view = 'ui::filament.widgets.simple-calendar';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+    
+=======
+
+>>>>>>> laraxot/dev
+=======
+    
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
     public function getEvents(): array
     {
         // Logica per recuperare eventi
@@ -113,6 +209,25 @@ class SimpleCalendarWidget extends \Filament\Widgets\Widget
 - Widget base di Filament 4.x
 - Sistema di autenticazione e autorizzazione
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+*Ultimo aggiornamento: 2025-01-27*
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+*Ultimo aggiornamento: 2025-01-27*
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+*Ultimo aggiornamento: 2025-01-27*
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 *Ultimo aggiornamento: 2025-01-27*
 # Rapporto Aggiornamento Filament 4.x - Modulo UI
 **Data**: 2025-01-27
@@ -196,3 +311,25 @@ class SimpleCalendarWidget extends \Filament\Widgets\Widget
 - Tutte le altre funzionalità del modulo UI
 - Widget base di Filament 4.x
 - Sistema di autenticazione e autorizzazione
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+*Ultimo aggiornamento: 2025-01-27*
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+*Ultimo aggiornamento: 2025-01-27*
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

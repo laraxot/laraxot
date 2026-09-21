@@ -1,10 +1,45 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 ---
 module: theme
 topic: table_layout_enum_usage
 canonical: ../../../Themes/docs/shared-components/table-layout-enum-usage_1.md
 ---
 
+<<<<<<< HEAD
 See canonical documentation: ../../../Themes/docs/shared-components/table-layout-enum-usage_1.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/table-layout-enum-usage_1.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/table-layout-enum-usage_1.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/table-layout-enum-usage_1.md
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 # TableLayoutEnum Usage Guide
 ## Nuovo Approccio (Corretto)
 Dopo la correzione del problema di visibilità, il metodo `getTableColumns()` ora richiede parametri espliciti invece di usare debug_backtrace.
@@ -193,3 +228,43 @@ $columns = $this->layout->getTableColumns($listColumns, $gridColumns);
 - [Root Documentation: UI Components](../../../docs/components/ui-components.md)
      * Toggle del layout tramite action
                 ->icon($this->layout->getIcon())
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                ->action(function () {
+                    $this->layout = $this->layout->toggle();
+                }),
+        ];
+    }
+}
+```
+
+### Vantaggi del nuovo approccio:
+
+1. **Type Safety**: Non usa più reflection o debug_backtrace
+2. **Chiarezza**: Esplicito su quali colonne usare per ogni layout
+3. **Testabilità**: Più facile da testare senza dipendenze nascoste
+4. **Performance**: Nessun overhead di debug_backtrace
+
+### Breaking Change:
+
+Il metodo `getTableColumns()` ora richiede due parametri:
+- `$listColumns`: Array delle colonne per layout lista
+- `$gridColumns`: Array delle colonne per layout griglia
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/table-layout-enum-usage_1.md
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

@@ -20,8 +20,17 @@ related:
 
 ## AI / second brain
 
+<<<<<<< HEAD
 - [hackernoon-ai-coding-tips-ptv-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-ptv-map.md)
 - [hackernoon-ai-coding-tips-fixcity-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
+=======
+<<<<<<< HEAD
+- [hackernoon-ai-coding-tips-ptv-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-ptv-map.md)
+- [hackernoon-ai-coding-tips-fixcity-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
+=======
+- [hackernoon-ai-coding-tips-<nome progetto>-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-<nome progetto>-map.md)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 - [bmad/architecture](../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
 - [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)

@@ -34,7 +34,7 @@ describe('UI Filament widgets and components coverage', function (): void {
             if (! str_contains($class, 'Filament\\Widgets\\')) {
                 continue;
             }
-            Assert::assertInstanceOf($class, new $class());
+            Assert::assertInstanceOf($class, new $class);
             $seen++;
         }
         Assert::assertGreaterThan(0, $seen);
@@ -71,7 +71,7 @@ describe('UI coverage boost — Enums', function (): void {
 
 describe('UI coverage boost — Rules and policies', function (): void {
     test('OpeningHoursRule accepts empty array value', function (): void {
-        $rule = new OpeningHoursRule();
+        $rule = new OpeningHoursRule;
         $failed = false;
         $rule->validate(
             'hours',
@@ -88,17 +88,12 @@ describe('UI coverage boost — Rules and policies', function (): void {
     test('UiBasePolicy before grants super-admin', function (): void {
         /** @var MockInterface&UserContract $superAdmin */
         $superAdmin = Mockery::mock(UserContract::class);
-        $superAdmin->allows([
-            'hasRole' => true,
-        ]);
-
+        TestCase::expectMethod($superAdmin, 'hasRole')->with('super-admin')->andReturn(true);
         /** @var MockInterface&UserContract $regular */
         $regular = Mockery::mock(UserContract::class);
-        $regular->allows([
-            'hasRole' => false,
-        ]);
+        TestCase::expectMethod($regular, 'hasRole')->with('super-admin')->andReturn(false);
 
-        $policy = new class() extends UiBasePolicy {};
+        $policy = new class extends UiBasePolicy {};
         Assert::assertTrue($policy->before($superAdmin, 'viewAny'));
         Assert::assertNull($policy->before($regular, 'viewAny'));
     });
@@ -106,11 +101,11 @@ describe('UI coverage boost — Rules and policies', function (): void {
 
 describe('UI coverage boost — Models and providers', function (): void {
     test('Category fillable matches domain fields', function (): void {
-        Assert::assertContains('name', (new Category())->getFillable());
+        Assert::assertContains('name', (new Category)->getFillable());
     });
 
     test('StatsOverviewWidget declares heading', function (): void {
-        $widget = new StatsOverviewWidget();
+        $widget = new StatsOverviewWidget;
         $ref = new \ReflectionClass($widget);
         $prop = $ref->getProperty('heading');
         $prop->setAccessible(true);

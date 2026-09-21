@@ -5,8 +5,20 @@ status: approved
 tags: [release, semantic-versioning, changelog, readme, marketing]
 created: "2026-05-26"
 updated: "2026-05-26"
+<<<<<<< HEAD
 issue: "https://github.com/provtv/base_ptv_fila5_mono/issues/153"
 issue: "https://github.com/provtv/<nome repository>/issues/153"
+=======
+<<<<<<< HEAD
+issue: "https://github.com/provtv/base_ptv_fila5_mono/issues/153"
+<<<<<<< HEAD
+issue: "https://github.com/provtv/<nome repository>/issues/153"
+=======
+=======
+issue: "https://github.com/provtv/<nome repository>/issues/153"
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 ---
 
 # Release e README marketing — UI
@@ -20,7 +32,15 @@ Ogni modulo/tema deve essere pubblicabile, comprensibile e desiderabile: workflo
 - `../README.md`
 - `../.github/workflows/semantic-release.yml`
 - `../.releaserc.json`
+<<<<<<< HEAD
 - `../CHANGELOG.md`
+=======
+<<<<<<< HEAD
+- `../CHANGELOG.md`
+=======
+- `../changelog.md`
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
 
 ## Confidenza
 

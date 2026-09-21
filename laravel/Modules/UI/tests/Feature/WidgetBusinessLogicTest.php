@@ -23,19 +23,19 @@ uses(TestCase::class, DatabaseTransactions::class);
 
 function concreteRowWidget(): RowWidget
 {
-    return new class() extends RowWidget {};
+    return new class extends RowWidget {};
 }
 
 it('widgets instantiate and extend filament base', function (): void {
     $widgets = [
-        new StatWithIconWidget(),
-        new OverlookWidget(),
-        new HeroWidget(),
-        new TestChartWidget(),
-        new StatsOverviewWidget(),
-        new GroupWidget(),
-        new RedirectWidget(),
-        new UserCalendarWidget(),
+        new StatWithIconWidget,
+        new OverlookWidget,
+        new HeroWidget,
+        new TestChartWidget,
+        new StatsOverviewWidget,
+        new GroupWidget,
+        new RedirectWidget,
+        new UserCalendarWidget,
         concreteRowWidget(),
     ];
 
@@ -46,9 +46,9 @@ it('widgets instantiate and extend filament base', function (): void {
 
 it('schema widgets expose empty form schema by default', function (): void {
     $widgets = [
-        new StatWithIconWidget(),
-        new GroupWidget(),
-        new RedirectWidget(),
+        new StatWithIconWidget,
+        new GroupWidget,
+        new RedirectWidget,
         concreteRowWidget(),
     ];
 

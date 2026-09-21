@@ -31,3 +31,10 @@ Se serve un’icona, usare solo i metodi previsti dalla documentazione Filament.
 
 ## Collegamenti tra versioni di filament-error-fileupload-prefixicon.md
 * [filament-error-fileupload-prefixicon.md](../../Patient/docs/filament-error-fileupload-prefixicon.md)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

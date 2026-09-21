@@ -13,11 +13,11 @@ use Modules\UI\Filament\Widgets\UserCalendarWidget;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 function createTestCalendarWidget(): UserCalendarWidget
 {
-    $widget = new class() extends UserCalendarWidget
+    $widget = new class extends UserCalendarWidget
     {
         public function getActionName(string $function): string
         {

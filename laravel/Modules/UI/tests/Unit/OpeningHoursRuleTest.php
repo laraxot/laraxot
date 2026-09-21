@@ -10,7 +10,7 @@ use Modules\UI\Rules\OpeningHoursRule;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
  * Applica la regola e restituisce i messaggi di errore raccolti.
@@ -32,7 +32,7 @@ function uiOpeningHoursFailures(mixed $value): array
         return new PotentiallyTranslatedString($message, app('translator'));
     };
 
-    (new OpeningHoursRule())->validate('orari', $value, $collect);
+    (new OpeningHoursRule)->validate('orari', $value, $collect);
 
     return $failures;
 }

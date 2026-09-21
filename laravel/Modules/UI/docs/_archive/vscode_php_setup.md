@@ -106,7 +106,11 @@
             "{",
             "    protected static ?string \\$model = ${2:Name}::class;",
             "",
+<<<<<<< HEAD
             "    public function getFormSchema(): array",
+=======
+            "    public static function getFormSchema(): array",
+>>>>>>> laraxot/dev
             "    {",
             "        return [",
             "            $0",

@@ -1,8 +1,44 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 ---
 module: theme
 topic: filament_resources_structure
 canonical: ../../../Themes/docs/shared-components/filament-resources-structure_1.md
 ---
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/filament-resources-structure_1.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/filament-resources-structure_1.md
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+# Struttura delle Filament Resources
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 See canonical documentation: ../../../Themes/docs/shared-components/filament-resources-structure_1.md
 # Struttura delle Filament Resources
@@ -71,3 +107,56 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 Questa documentazione è collegata bidirezionalmente con la documentazione specifica dei moduli. Per dettagli su resources specifiche, consultare la documentazione del modulo corrispondente.
 - [Documentazione CMS Module](../laravel/Modules/Cms/project_docs/filament-resources.md)
 - [Documentazione Xot Module](../laravel/Modules/Xot/project_docs/filament-resources.md)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+- [Documentazione CMS Module](../laravel/Modules/Cms/project_docs/filament-resources.md)
+- [Documentazione Xot Module](../laravel/Modules/Xot/project_docs/filament-resources.md)
+- [Documentazione CMS Module](../laravel/Modules/Cms/project_docs/filament-resources.md)
+- [Documentazione Xot Module](../laravel/Modules/Xot/project_docs/filament-resources.md)
+
+## Best Practices
+1. **Namespace**
+   - Usa sempre il namespace completo
+   - Importa le classi base dal percorso corretto
+   - Mantieni la coerenza tra i moduli
+
+2. **Ereditarietà**
+   - Estendi sempre le classi base di Xot
+   - Usa il prefisso "Base" per le classi base
+   - Implementa solo le funzionalità specifiche del modulo
+
+3. **Documentazione**
+   - Mantieni aggiornata la documentazione
+   - Crea collegamenti bidirezionali
+   - Documenta le dipendenze
+
+## Note Importanti
+- Le classi base sono nel namespace `Modules\Xot\Filament\Resources\Pages\`
+- Non esistono classi senza il prefisso "Base"
+- La documentazione deve essere mantenuta sincronizzata
+
+## Links
+- [Documentazione Filament](https://filamentphp.com/)
+- [Laravel Modules](module-structure.md)
+- [Best Practices](best-practices.md)
+
+## Note
+Questa documentazione è collegata bidirezionalmente con la documentazione specifica dei moduli. Per dettagli su resources specifiche, consultare la documentazione del modulo corrispondente.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/filament-resources-structure_1.md
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

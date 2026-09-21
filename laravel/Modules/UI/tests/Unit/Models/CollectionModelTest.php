@@ -8,7 +8,7 @@ use Modules\UI\Models\Collection;
 use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Collection Model', function (): void {
     test('it can hydrate a collection with valid data in memory', function (): void {
@@ -24,7 +24,7 @@ describe('Collection Model', function (): void {
     });
 
     test('it has fillable attributes', function (): void {
-        $collection = new Collection();
+        $collection = new Collection;
         $expected = ['name', 'description', 'type'];
 
         foreach ($expected as $field) {
@@ -33,7 +33,7 @@ describe('Collection Model', function (): void {
     });
 
     test('collection has timestamps enabled', function (): void {
-        $collection = new Collection();
+        $collection = new Collection;
 
         Assert::assertTrue($collection->timestamps);
     });

@@ -7,8 +7,34 @@ created: 2026-07-17
 updated: 2026-07-27
 qmd: "code quality baseline PHPStan Pest strict types Laraxot UI git remote"
 story: STORY-001
+<<<<<<< HEAD
 # GRAVE: issue/discussion del modulo — mai base_techplanner / base_workorder / mono.
 # GRAVE: issue/discussion del modulo — mai base_project / base_workorder / mono.
+=======
+<<<<<<< HEAD
+# GRAVE: issue/discussion del modulo — mai base_techplanner / base_workorder / mono.
+<<<<<<< HEAD
+# GRAVE: issue/discussion del modulo — mai base_project / base_workorder / mono.
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+# GRAVE: issue/discussion del modulo — mai base_techplanner / base_workorder / mono.
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+# GRAVE: issue/discussion del modulo — mai base_project / base_workorder / mono.
+=======
+# GRAVE: issue/discussion del modulo — mai base_techplanner / base_workorder / mono.
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 # Resolve: cd laravel/Modules/UI && git remote -v → laraxot/module_ui_fila5
 issues: []
 discussions: []
@@ -28,8 +54,34 @@ cd laravel/Modules/UI && git remote -v
 # atteso: laraxot/module_ui_fila5
 ```
 
+<<<<<<< HEAD
 **Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_techplanner_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
 **Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_project_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+=======
+<<<<<<< HEAD
+**Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_techplanner_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+<<<<<<< HEAD
+**Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_project_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+**Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_techplanner_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+**Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_project_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+=======
+**Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_techplanner_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 ## Baseline
 

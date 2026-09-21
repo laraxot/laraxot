@@ -12,19 +12,43 @@ use Modules\UI\Enums\TableLayoutEnum;
 class ListUsers extends ListRecords
 {
     protected TableLayoutEnum $layout;
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
     public function mount(): void
     {
         $this->layout = TableLayoutEnum::LIST;
     }
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
     public function table(Table $table): Table
     {
         return $table
             ->columns($this->getColumnsForLayout())
             ->contentGrid($this->layout->getTableContentGrid());
     }
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
     /**
      * Restituisce le colonne appropriate per il layout corrente
      */
@@ -35,7 +59,15 @@ class ListUsers extends ListRecords
             Tables\Columns\TextColumn::make('email'),
             Tables\Columns\TextColumn::make('created_at'),
         ];
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+        
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
         $gridColumns = [
             Tables\Columns\Layout\Stack::make([
                 Tables\Columns\TextColumn::make('name')
@@ -47,10 +79,19 @@ class ListUsers extends ListRecords
         return $this->layout->getTableColumns($listColumns, $gridColumns);
     }
     
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
 
         return $this->layout->getTableColumns($listColumns, $gridColumns);
     }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
     /**
      * Toggle del layout tramite action
      */
@@ -78,4 +119,12 @@ class ListUsers extends ListRecords
 
 Il metodo `getTableColumns()` ora richiede due parametri:
 - `$listColumns`: Array delle colonne per layout lista
+<<<<<<< HEAD
 - `$gridColumns`: Array delle colonne per layout griglia
+=======
+<<<<<<< HEAD
+- `$gridColumns`: Array delle colonne per layout griglia
+=======
+- `$gridColumns`: Array delle colonne per layout griglia 
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

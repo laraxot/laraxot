@@ -21,7 +21,7 @@ use PHPUnit\Framework\Assert;
  * the ignores.
  */
 
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\UI\Tests\TestCase $this */
@@ -46,7 +46,7 @@ describe('Theme Model', function (): void {
 
     test('it has fillable attributes', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Theme model absent from artifact set) */
-        $theme = new Theme();
+        $theme = new Theme;
         $expected = ['name', 'description', 'is_active', 'config', 'parent_id', 'source_path', 'compiled_path', 'needs_compilation'];
 
         foreach ($expected as $field) {

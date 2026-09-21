@@ -1,5 +1,34 @@
 # Block Components
 
+<<<<<<< HEAD
+=======
+This document provides guidelines and documentation for theme block components used in the frontend architecture.
+
+## Overview
+
+Block components are modular UI elements used to build sections in the frontend. They're typically rendered through JSON configuration data and integrated into the theme's template system.
+
+## Key Concepts
+
+1. **Data Passing**: Block data is passed from JSON configurations to blade templates
+2. **Props Definition**: Components must define all expected props using `@props` directive
+3. **Modularity**: Each block handles a specific UI concern
+4. **Reusability**: Blocks are designed to be reused across different sections
+
+## Common Block Types
+
+| Block Type | Description | Documentation |
+|------------|-------------|---------------|
+| Logo | Site logo with optional text | [Logo Component](./logo.md) |
+| Navigation | Site navigation menu | [Navigation Component](./navigation.md) |
+| User Dropdown | User authentication UI | [User Dropdown Component](./user-dropdown.md) |
+
+## Related Documentation
+
+- [Section Architecture](../sections/readme.md)
+- [Theme Components](../components/readme.md)
+- [Data Handling in Blade](../blade-data-handling.md)
+>>>>>>> laraxot/dev
 [![Module](https://img.shields.io/badge/Module-Block Components-8B0000.svg)]()
 [![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
 [![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)

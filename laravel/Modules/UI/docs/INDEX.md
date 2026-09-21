@@ -1,3 +1,495 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+# Documentation Index
+
+## actions
+
+- [table-layout-toggle-1.md](./actions/table-layout-toggle-1.md)
+- [table-layout-toggle.md](./actions/table-layout-toggle.md)
+
+## architecture
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+---
+title: UI Module — Documentazione
+module: UI
+type: index
+status: approved
+updated: "2026-07-28"
+related:
+  - ./README.md
+  - ./PATTERNS.md
+  - ./TROUBLESHOOTING.md
+---
+
+# UI — Indice Documentazione
+
+> Mappa completa della knowledge base locale del modulo UI. Ultimo aggiornamento: 2026-07-28
+
+## 🚀 Quick Navigation
+
+- **[README](./README.md)** — Scopo, quick start, architettura Blade/Filament
+- **[PATTERNS](./PATTERNS.md)** — Decisioni architetturali, workflow core, anti-pattern
+- **[TROUBLESHOOTING](./TROUBLESHOOTING.md)** — Errori comuni e soluzioni
+
+## 📊 Statistiche Documentazione
+
+| Categoria | File | Note |
+| --- | --- | --- |
+| **Core Architecture** | 7 | Component registration, Filament resources, Blade patterns |
+| **Blade Components** | 50+ | UI components, x-ui:: prefixed, Tailwind styled |
+| **Filament Widgets** | 20+ | CalendarWidget, StatsOverviewWidget, ChartWidget, custom fields |
+| **Enums & Patterns** | 5 | TableLayoutEnum, state management, form validations |
+| **Charts & Visualization** | 6 | ChartJS integration, data labels plugin, export strategy |
+| **Standards & Best Practices** | 7 | Accessibility, form standards, UI standards, performance |
+| **Themes & Assets** | 6 | Tailwind compilation, asset management, custom themes |
+| **HTML2PDF & Export** | 6 | PDF generation, styling, security, advanced usage |
+| **Testing** | 1 | Pest testing guide, component testing |
+| **Quality & Analysis** | 1 | UI module quality report |
+| **Wiki & Conceptual** | 3+ | Concepts, overviews, sources |
+| **Roadmap & Planning** | 30+ | Q4 roadmap, bottlenecks, component/form/theme systems |
+| **Raw & Archive** | 160+ | Legacy docs, imports, deprecated patterns |
+| **Root Documentation** | 600+ | Flat file archive (pre-consolidation) |
+| **TOTALE** | **~900** | Modulo UI |
+
+## 📚 Sezioni Principali
+
+### 🎯 Core Architecture
+
+Fondamenti della struttura modulo e filosofia.
+
+- [README.md](./README.md) — Overview, quick start, stack tech
+- [PATTERNS.md](./PATTERNS.md) — Decisioni architetturali e workflow
+- [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) — Errori comuni e soluzioni
+- [architecture/component-registration.md](./architecture/component-registration.md) — Registrazione Blade components
+- [architecture/filament-pages-structure.md](./architecture/filament-pages-structure.md) — Filament Pages
+- [architecture/filament-resources-structure.md](./architecture/filament-resources-structure.md) — Filament Resources
+- [architecture/structure.md](./architecture/structure.md) — Struttura modulo app/
+
+---
+
+### 🎨 Blade Components
+
+50+ componenti Blade con prefisso `x-ui::ui.` (convention).
+
+**Categorie** (raggruppate in PATTERNS.md):
+
+- **Layout & Navigation** — Master layouts, navigation, headers, footers
+  - [layouts/master.md](./layouts/master.md)
+  - [blocks/navigation.md](./blocks/navigation.md)
+  - [blocks/logo.md](./blocks/logo.md)
+
+- **Form Components** (custom + Filament integration)
+  - [components/address-field.md](./components/address-field.md) — Custom AddressField
+  - [components/file-upload.md](./components/file-upload.md) — File upload widget
+  - [components/inline-date-picker.md](./components/inline-date-picker.md) — Inline DatePicker
+  - [components/opening-hours-field.md](./components/opening-hours-field.md) — Opening hours editor
+  - [components/radio-collection.md](./components/radio-collection.md) — Radio group collection
+  - [components/studio-card-selector.md](./components/studio-card-selector.md) — Studio selector
+
+- **Data Display & Tables**
+  - [components/table-columns.md](./components/table-columns.md) — Custom table columns
+  - [components/ui-components.md](./components/ui-components.md) — Generic UI components
+
+- **Full Calendar & Calendar Integration**
+  - [components/full-calendar.md](./components/full-calendar.md)
+  - [filament/best-practices.md](./filament/best-practices.md)
+
+- **Other Components**
+  - [blocks/user-dropdown.md](./blocks/user-dropdown.md)
+  - [blocks/correct-filament-components.md](./blocks/correct-filament-components.md)
+
+---
+
+### 📱 Filament Widgets & Integrations
+
+20+ widgets e componenti Filament, incluse custom form fields.
+
+**Widgets Core** (da PATTERNS.md):
+
+- **CalendarWidget** — Calendario interattivo con events
+- **StatsOverviewWidget** — Panoramica statistiche (KPI, gauges)
+- **ChartWidget** — Grafici interattivi (line, bar, pie)
+
+**Custom Form Fields** (Filament-specific):
+
+- [components/address-field.md](./components/address-field.md) — AddressField
+- [components/file-upload.md](./components/file-upload.md) — FileUpload
+- [components/inline-date-picker-component.md](./components/inline-date-picker-component.md) — InlineDatePicker
+- [components/opening-hours-field.md](./components/opening-hours-field.md) — OpeningHoursField
+- [components/radio-collection-component.md](./components/radio-collection-component.md) — RadioCollection
+- [components/studio-card-selector-component.md](./components/studio-card-selector-component.md) — StudioCardSelector
+- [components/table-columns.md](./components/table-columns.md) — TableColumns (custom columns)
+
+**Filament Resources & Pages**:
+
+- [filament/resources.md](./filament/resources.md) — Resource patterns
+- [filament/list-records.md](./filament/list-records.md) — ListRecords pages
+- [filament/nested-resource.md](./filament/nested-resource.md) — Nested resources
+- [filament/wizard-best-practices.md](./filament/wizard-best-practices.md) — Form Wizard patterns
+- [filament/wizard-step-naming.md](./filament/wizard-step-naming.md) — Naming conventions
+
+**Filament Translation & Plugins**:
+
+- [filament/automatic-translations.md](./filament/automatic-translations.md) — Translation loading
+- [filament/label-translation-system.md](./filament/label-translation-system.md) — Label translations
+
+**Filament Troubleshooting**:
+
+- [filament/errors/common-errors.md](./filament/errors/common-errors.md)
+- [filament/errors/dropdown-list-item-tag.md](./filament/errors/dropdown-list-item-tag.md)
+- [filament/errors/static-instance-method-incompatibility.md](./filament/errors/static-instance-method-incompatibility.md)
+
+---
+
+### 🔤 Enums & Layout Patterns
+
+Enum types per type-safety e layout toggle logic.
+
+- **TableLayoutEnum** — Toggle list/grid layout
+  - [archive/table-layout-enum-analysis.md](./archive/table-layout-enum-analysis.md)
+  - [archive/table-layout-enum-usage.md](./archive/table-layout-enum-usage.md)
+  - [archive/table-layout-enum-implementation-example.md](./archive/table-layout-enum-implementation-example.md)
+
+- **Actions & State Management**:
+  - [actions/table-layout-toggle.md](./actions/table-layout-toggle.md)
+  - [archive/table-layout-toggle-1.md](./archive/table-layout-toggle-1.md)
+
+---
+
+### 📊 Charts & Visualization
+
+ChartJS integration con data labels plugin.
+
+- [charts/chartjs-datalabels-multiple-labels-complete-guide.md](./charts/chartjs-datalabels-multiple-labels-complete-guide.md) — Comprehensive guide
+- [charts/chartjs-plugin-datalabels-filament5.md](./charts/chartjs-plugin-datalabels-filament5.md) — Filament 5 setup
+- [charts/filament-chart-js-guide.md](./charts/filament-chart-js-guide.md) — Filament ChartJS integration
+- [charts/export-strategy.md](./charts/export-strategy.md) — Chart export patterns
+- [charts/server-side-actions.md](./charts/server-side-actions.md) — Server-side rendering
+- [charts/shared-hosting-strategy.md](./charts/shared-hosting-strategy.md) — Shared hosting optimization
+
+---
+
+### 📐 Standards & Best Practices
+
+Regole di qualità, accessibilità, form standards, performance.
+
+- [standards/accessibility.md](./standards/accessibility.md) — WCAG compliance
+- [standards/auth-form-standards.md](./standards/auth-form-standards.md) — Authentication form rules
+- [standards/form-standards.md](./standards/form-standards.md) — General form standards
+- [standards/performance.md](./standards/performance.md) — Performance optimization
+- [standards/ui-standards.md](./standards/ui-standards.md) — UI component standards
+- [filament/no-label-rule.md](./filament/no-label-rule.md) — No hardcoded labels rule
+- [clean-code/no-obvious-comments.md](./clean-code/no-obvious-comments.md) — Code quality
+
+---
+
+### 🎭 Themes & Asset Management
+
+Tailwind compilation, tema customization, asset pipeline.
+
+- [themes/asset-management.md](./themes/asset-management.md) — Asset loading & compilation
+- [themes/compilation.md](./themes/compilation.md) — Tailwind build process
+- [themes/components.md](./themes/components.md) — Theme-specific components
+- [themes/optimizations.md](./themes/optimizations.md) — Performance tweaks
+- [themes/schemaless-attributes-guide.md](./themes/schemaless-attributes-guide.md) — Schema pattern
+- [development/roadmap/theme-system.md](./development/roadmap/theme-system.md) — Theme roadmap
+
+---
+
+### 📄 HTML2PDF & Export
+
+PDF generation, styling, security.
+
+- [html2pdf/index.md](./html2pdf/index.md) — Panoramica
+- [html2pdf/laravel.md](./html2pdf/laravel.md) — Laravel integration
+- [html2pdf/styling.md](./html2pdf/styling.md) — CSS for PDF
+- [html2pdf/usage.md](./html2pdf/usage.md) — Basic usage
+- [html2pdf/advanced.md](./html2pdf/advanced.md) — Advanced patterns
+- [html2pdf/security.md](./html2pdf/security.md) — Security considerations
+
+---
+
+### 🧪 Testing
+
+Pest testing guide for UI components.
+
+- [testing/pest-testing-guide.md](./testing/pest-testing-guide.md) — Component testing with Pest
+
+---
+
+### 🔍 Quality & Analysis
+
+Quality reports e audit findings.
+
+- [quality-analysis/ui-module-quality-report.md](./quality-analysis/ui-module-quality-report.md) — Module quality assessment
+
+---
+
+### 📚 Wiki, Concepts & Overviews
+
+Architectural concepts, LLM wiki, memoria.
+
+**Concepts**:
+
+- [wiki/concepts/blade-component-registration.md](./wiki/concepts/blade-component-registration.md) — Component registration pattern
+- [wiki/concepts/enum-select-usage.md](./wiki/concepts/enum-select-usage.md) — EnumSelect best practices
+- [wiki/concepts/filament-first-blade-canonical.md](./wiki/concepts/filament-first-blade-canonical.md) — Filament-first approach
+- [wiki/concepts/module-filament-component-autoload-rule.md](./wiki/concepts/module-filament-component-autoload-rule.md) — Component auto-registration
+- [wiki/concepts/ui-operating-model.md](./wiki/concepts/ui-operating-model.md) — Operating model
+
+**Overviews**:
+
+- [wiki/overviews/ui-module.md](./wiki/overviews/ui-module.md) — Module overview
+- [wiki/concepts/ui-services-support-to-actions.md](./wiki/concepts/ui-services-support-to-actions.md) — Services→Actions migration
+
+**Memory & Sources**:
+
+- [wiki/memories/lang-split-ui-claude-audit.md](./wiki/memories/lang-split-ui-claude-audit.md) — Lang split history
+- [wiki/sources/ui-architecture-sources.md](./wiki/sources/ui-architecture-sources.md) — Source references
+
+---
+
+### 🗺️ Roadmap & Planning
+
+Q4 roadmap, bottlenecks, component/form/theme systems.
+
+**Roadmap Files**:
+
+- [roadmap/00-overview.md](./roadmap/00-overview.md) — Overview
+- [roadmap/01-current-state.md](./roadmap/01-current-state.md) — Current state assessment
+- [roadmap/02-goals.md](./roadmap/02-goals.md) — Goals e milestones
+- [roadmap/03-workstreams.md](./roadmap/03-workstreams.md) — Workstreams
+- [roadmap/bottlenecks.md](./roadmap/bottlenecks.md) — Identified bottlenecks
+- [roadmap/component-system.md](./roadmap/component-system.md) — Component system roadmap
+- [roadmap/form-components.md](./roadmap/form-components.md) — Form component roadmap
+- [roadmap/theme-system.md](./roadmap/theme-system.md) — Theme system roadmap
+- [roadmap/quality.md](./roadmap/quality.md) — Quality initiatives
+- [roadmap/2025-q4-roadmap.md](./roadmap/2025-q4-roadmap.md) — Q4 detailed plan
+
+**Planning & Tasks**:
+
+- [tasks/001-design-system-components.md](./tasks/001-design-system-components.md)
+- [tasks/filament-v5-alignment.md](./tasks/filament-v5-alignment.md)
+- [tasks/increase-test-coverage.md](./tasks/increase-test-coverage.md)
+- [tasks/refactor-complex-components.md](./tasks/refactor-complex-components.md)
+- [tasks/ui-cleanup-docs.md](./tasks/ui-cleanup-docs.md)
+
+---
+
+### 📦 Raw & Archive
+
+Legacy documentation pre-consolidation (160+ files).
+
+- [raw/index.md](./raw/index.md) — Raw import index
+- [raw/root-import/](./raw/root-import/) — Root import collection (API, blocks, filament, themes, etc.)
+- [archive/](./archive/) — Deprecated/superseded files
+
+---
+
+### 📄 Root Files (Pre-consolidation)
+
+600+ flat files in docs root (legacy structure, migrating to organized categories).
+
+Vedi cartelle sopra per nuova organizzazione canonica.
+
+---
+
+## 🏗️ Struttura Modulo
+
+```
+laravel/Modules/UI/
+├── app/
+│   ├── Actions/              # Azioni queued (TableLayoutToggle, etc.)
+│   ├── Filament/
+│   │   ├── Resources/        # Filament resources
+│   │   ├── Pages/            # Custom pages
+│   │   └── Widgets/          # CalendarWidget, StatsOverviewWidget, ChartWidget
+│   ├── Models/               # UI-specific models (rarely needed)
+│   └── Services/             # Services → Actions migration
+├── resources/
+│   ├── views/
+│   │   ├── components/       # Blade components (x-ui::ui.*)
+│   │   ├── filament/         # Filament-specific views
+│   │   ├── layouts/          # Master layouts
+│   │   └── blocks/           # Reusable blocks (nav, footer, etc.)
+│   ├── css/                  # Tailwind custom styles
+│   └── js/                   # Alpine.js, ChartJS, etc.
+├── lang/
+│   ├── it/                   # Italian translations
+│   │   ├── forms.php         # Form labels
+│   │   └── ui.php            # UI labels
+│   └── en/                   # English translations (parallel structure)
+├── tests/
+│   ├── Feature/              # Filament resource tests
+│   ├── Unit/                 # Component unit tests
+│   └── Pest/                 # Pest test suite
+└── docs/
+<<<<<<< HEAD
+    ├── INDEX.md              # This file
+=======
+    ├── index.md              # This file
+>>>>>>> 92912795 (.)
+    ├── README.md             # Quick start
+    ├── PATTERNS.md           # Architecture & decisions
+    ├── TROUBLESHOOTING.md    # Common errors
+    ├── architecture/         # Detailed architecture docs
+    ├── components/           # Component docs
+    ├── filament/             # Filament patterns
+    ├── charts/               # ChartJS integration
+    ├── themes/               # Theme customization
+    ├── html2pdf/             # PDF generation
+    ├── standards/            # Quality & accessibility
+    ├── testing/              # Testing guides
+    ├── roadmap/              # Planning docs
+    └── wiki/                 # Conceptual knowledge
+```
+
+---
+
+## 📋 Regole Fondamentali
+
+### Blade Components
+
+- **Prefixing**: Tutti i Blade components DEVONO usare prefisso `x-ui::ui.`
+  ```blade
+  <x-ui::ui.button :label="'Submit'" />
+  ```
+
+- **PHPDoc**: Ogni component ha `@param` PHPDoc su view
+  ```php
+  /**
+   * @param string $label Button label text
+   * @param string $color Tailwind color (primary, secondary, danger)
+   * @param bool $disabled Disable button interaction
+   */
+  ```
+
+- **Tailwind Utility Classes**: Nessun inline style; solo Tailwind utilities
+  ```blade
+  {{-- ✅ CORRETTO --}}
+  <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
+  
+  {{-- ❌ SBAGLIATO --}}
+  <div style="background-color: #f3f4f6; padding: 16px;">
+  ```
+
+### Filament Integration
+
+- **No Hardcoded Labels**: Navigation e form labels DEVONO venire da translation files
+  ```php
+  // ✅ CORRETTO
+  protected static ?string $navigationLabel = null; // Loads from lang file
+  
+  // ❌ SBAGLIATO
+  protected static ?string $navigationLabel = 'Users';
+  ```
+
+- **PHPStan Level 10**: Tutti i file devono passare PHPStan L10
+  ```bash
+  phpstan analyse Modules/UI --level=max
+  ```
+
+- **Multilingua**: IT/EN translation files per ogni resource
+  ```
+  lang/it/users.php
+  lang/en/users.php
+  ```
+
+### Enums & Type Safety
+
+- **TableLayoutEnum**: Utilizzo per list/grid toggle
+  ```php
+  use Modules\UI\Enums\TableLayoutEnum;
+  
+  $layout = TableLayoutEnum::LIST; // Type-safe
+  ```
+
+- **State Enums**: Utilizzo Enums per state management (not strings)
+
+### Asset Management
+
+- **Tailwind Compilation**: Build CSS before deployment
+  ```bash
+  npm run build
+  ```
+
+- **No Inline Styles**: Tutti gli stili via Tailwind o `resources/css/`
+
+### Testing
+
+- **Pest Testing**: Utilizzo Pest per component/widget tests
+- **No migrate:fresh**: Vedi [rules-testing-no-migrate-fresh.md](./rules-testing-no-migrate-fresh.md)
+
+---
+
+## 📖 Governance Notes
+
+**Ownership**: Modulo UI gestisce tutti gli aspetti della UI/UX della piattaforma.
+
+**File Management**: 
+- Tutti i file in `docs/` sono managed dal modulo UI
+- Consolidation in progress: vedi [PATTERNS.md](./PATTERNS.md) per nuovo structure
+- Legacy files in `/archive` e `/raw` per reference storico
+
+**Cross-Module Dependencies**:
+- UI dipende da Filament, Blade, Tailwind (framework-level)
+- UI NON dipende da business logic (Progressioni, Performance, Ptv)
+- Dependency Injection per cross-module services
+
+**Quality Gates**:
+- PHPStan Level 10 su tutti i .php file
+- Pest test coverage per components
+- WCAG accessibility compliance su nuovi components
+- Performance audit per ChartJS e heavy rendering
+
+---
+
+## 🔗 Riferimenti Correlati
+
+- [README](./README.md) — Quick start e overview
+- [PATTERNS](./PATTERNS.md) — Decisioni architetturali e anti-pattern
+- [TROUBLESHOOTING](./TROUBLESHOOTING.md) — Errori comuni e soluzioni
+- [Wiki Index](./wiki/index.md) — Conceptual knowledge base
+
+---
+
+**Last Updated**: 2026-07-28  
+**Status**: Approved for consolidation  
+**Next Steps**: Create PATTERNS.md and TROUBLESHOOTING.md with UI-specific content
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+# Documentation Index
+
+# UI — Indice Documentazione
+
+> Mappa completa della knowledge base locale del modulo UI. Ultimo aggiornamento: 2026-07-28
+
+## architecture
+>>>>>>> laraxot/dev
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 - [component-registration.md](./architecture/component-registration.md)
 - [filament-pages-structure.md](./architecture/filament-pages-structure.md)
@@ -1143,3 +1635,54 @@
 - [git-merge-conflict-inventory-1.md](./wiki/troubleshooting/git-merge-conflict-inventory-1.md)
 - [git-merge-conflict-inventory-2026-04-28.deprecated.md](./wiki/troubleshooting/git-merge-conflict-inventory-2026-04-28.deprecated.md)
 - [git-merge-conflict-inventory.md](./wiki/troubleshooting/git-merge-conflict-inventory.md)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+- [module-theme-root-hygiene.md](./wiki/troubleshooting/module-theme-root-hygiene.md)
+- [phpstan-fixes-1.md](./wiki/troubleshooting/phpstan-fixes-1.md)
+- [phpstan-fixes-2026-05-06.deprecated.md](./wiki/troubleshooting/phpstan-fixes-2026-05-06.deprecated.md)
+- [phpstan-fixes.md](./wiki/troubleshooting/phpstan-fixes.md)
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+- [module-theme-root-hygiene.md](./wiki/troubleshooting/module-theme-root-hygiene.md)
+- [phpstan-fixes-1.md](./wiki/troubleshooting/phpstan-fixes-1.md)
+- [phpstan-fixes-2026-05-06.deprecated.md](./wiki/troubleshooting/phpstan-fixes-2026-05-06.deprecated.md)
+- [phpstan-fixes.md](./wiki/troubleshooting/phpstan-fixes.md)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+- [git-push-lfs-missing-objects.md](./wiki/troubleshooting/git-push-lfs-missing-objects.md)
+- [module-theme-root-hygiene.md](./wiki/troubleshooting/module-theme-root-hygiene.md)
+- [phpstan-fixes-1.md](./wiki/troubleshooting/phpstan-fixes-1.md)
+- [phpstan-fixes-2026-05-06.deprecated.md](./wiki/troubleshooting/phpstan-fixes-2026-05-06.deprecated.md)
+- [phpstan-fixes.md](./wiki/troubleshooting/phpstan-fixes.md)
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+- [module-theme-root-hygiene.md](./wiki/troubleshooting/module-theme-root-hygiene.md)
+- [phpstan-fixes-1.md](./wiki/troubleshooting/phpstan-fixes-1.md)
+- [phpstan-fixes-2026-05-06.deprecated.md](./wiki/troubleshooting/phpstan-fixes-2026-05-06.deprecated.md)
+- [phpstan-fixes.md](./wiki/troubleshooting/phpstan-fixes.md)
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

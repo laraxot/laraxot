@@ -9,7 +9,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
 
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 function sixteenComponentsBasePath(): string
 {
@@ -99,7 +99,7 @@ describe('Component Files Exist', function (): void {
             static fn (string $relativePath): bool => file_exists($themeBasePath.$relativePath),
         ));
 
-        if ([] !== $legacyPresent) {
+        if ($legacyPresent !== []) {
             Assert::markTestSkipped('Legacy root components still present: '.implode(', ', $legacyPresent));
         }
 

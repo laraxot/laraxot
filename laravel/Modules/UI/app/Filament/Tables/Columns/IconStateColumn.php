@@ -140,16 +140,12 @@ class IconStateColumn extends XotBaseIconColumn
                         'state' => $stateName,
                     ];
                 })
-                ->action(function (mixed $record, array $data): void {
+                ->action(function (Model $record, array $data): void {
                     /** @var array<string, mixed> $data */
                     if (! isset($data['state']) || ! is_string($data['state'])) {
                         throw new Exception('State is required and must be a string');
                     }
                     $state = $data['state'];
-                    /** @var Model $record */
-                    if (! is_object($record)) {
-                        throw new Exception('Record must be an object');
-                    }
                     $model = Str::of(class_basename($record))->slug()->toString();
                     /** @var string $label */
                     $label = __('pub_theme::'.$model.'_states.'.$state.'.label');

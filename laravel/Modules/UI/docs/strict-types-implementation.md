@@ -54,6 +54,25 @@ Durante la risoluzione dei conflitti Git, è fondamentale assicurarsi che la dic
 - [Regole Generali per strict_types](../../Xot/docs/php-strict-types.md)
 - [Linee Guida PHPStan Livello 10](../../Xot/docs/PHPStan/LEVEL10_LINEE_GUIDA.md)
 - [Conflitti Merge Risolti](./CONFLITTI_MERGE_RISOLTI.md)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+- [README del Modulo UI](./README.md)
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+- [README del Modulo UI](./README.md)
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+- [README del Modulo UI](./README.md)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 - [README del Modulo UI](./README.md)
 # Implementazione di strict_types nel Modulo UI
 ## Importanza di declare(strict_types=1)
@@ -90,5 +109,28 @@ Durante la risoluzione dei conflitti Git, è fondamentale assicurarsi che la dic
 - [Regole Generali per strict_types](../../Xot/docs/php-strict-types.md)
 - [Linee Guida PHPStan Livello 10](../../Xot/docs/PHPStan/LEVEL10_LINEE_GUIDA.md)
 - [Conflitti Merge Risolti](./CONFLITTI_MERGE_RISOLTI.md)
+<<<<<<< HEAD
 
 ```
+=======
+<<<<<<< HEAD
+
+```
+=======
+- [README del Modulo UI](./README.md)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+- [README del Modulo UI](./README.md)
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

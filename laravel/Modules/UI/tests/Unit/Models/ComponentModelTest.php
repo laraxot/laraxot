@@ -22,7 +22,7 @@ use function Safe\file_get_contents;
  * (see CategoryModelTest) and drop the ignores.
  */
 
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\UI\Tests\TestCase $this */
@@ -34,14 +34,14 @@ beforeEach(function (): void {
 describe('Component Model', function (): void {
     test('can be instantiated', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $component = new Component();
+        $component = new Component;
         /* @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
         Assert::assertInstanceOf(Component::class, $component);
     });
 
     test('has fillable attributes', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $component = new Component();
+        $component = new Component;
         $expected = [
             'name', 'theme_id', 'is_active', 'version', 'dependencies',
             'template', 'is_cacheable', 'cache_ttl', 'validation_rules',
@@ -58,7 +58,7 @@ describe('Component Model', function (): void {
 
     test('has casts defined', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $component = new Component();
+        $component = new Component;
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
         $casts = $component->getCasts();
         Assert::assertIsArray($casts);
@@ -81,7 +81,7 @@ describe('Component Model', function (): void {
 
     test('has correct table name', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
-        $component = new Component();
+        $component = new Component;
         /* @phpstan-ignore-next-line class.notFound (Component model absent from artifact set) */
         Assert::assertSame('components', $component->getTable());
     });

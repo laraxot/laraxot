@@ -96,6 +96,25 @@ If radio buttons are not selecting properly, check:
 ### 2025-06-27
 
 - Initial documentation
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+- Added troubleshooting section for selection issues
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+- Added troubleshooting section for selection issues
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+- Added troubleshooting section for selection issues
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 - Added troubleshooting section for selection issues
 # RadioCollection Component
 ## Overview
@@ -165,5 +184,28 @@ If radio buttons are not selecting properly, check:
 ## Changelog
 ### 2025-06-27
 - Initial documentation
+<<<<<<< HEAD
 
 ```
+=======
+<<<<<<< HEAD
+
+```
+=======
+- Added troubleshooting section for selection issues
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+- Added troubleshooting section for selection issues
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

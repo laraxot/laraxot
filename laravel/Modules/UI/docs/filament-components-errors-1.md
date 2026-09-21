@@ -168,4 +168,12 @@ TextInput::make('first_name')  // ✅ Il LangServiceProvider gestirà automatica
 1. La documentazione degli errori UI deve essere sempre in `Modules/UI/docs/`
 2. Mantenere collegamenti bidirezionali aggiornati
 3. Seguire le convenzioni di naming del progetto
+<<<<<<< HEAD
 4. Aggiornare la documentazione quando vengono scoperti nuovi errori
+=======
+<<<<<<< HEAD
+4. Aggiornare la documentazione quando vengono scoperti nuovi errori
+=======
+4. Aggiornare la documentazione quando vengono scoperti nuovi errori 
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

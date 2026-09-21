@@ -188,7 +188,7 @@ describe('GroupColumn view rendering', function (): void {
         $html = view('ui::filament.tables.columns.group', [
             'getFields' => fn () => $fields,
             'getRecord' => fn () => $record,
-            'attributes' => new ComponentAttributeBag(),
+            'attributes' => new ComponentAttributeBag,
             'getExtraAttributes' => fn () => [],
             'isInline' => fn () => false,
             ...groupColumnViewTableBag(),
@@ -221,7 +221,7 @@ describe('GroupColumn view rendering', function (): void {
         $html = view('ui::filament.tables.columns.group', [
             'getFields' => fn () => $fields,
             'getRecord' => fn () => $record,
-            'attributes' => new ComponentAttributeBag(),
+            'attributes' => new ComponentAttributeBag,
             'getExtraAttributes' => fn () => [],
             'isInline' => fn () => false,
             ...groupColumnViewTableBag(),
@@ -261,7 +261,7 @@ describe('GroupColumn view rendering', function (): void {
         $html = view('ui::filament.tables.columns.group', [
             'getFields' => fn () => $fields,
             'getRecord' => fn () => $record,
-            'attributes' => new ComponentAttributeBag(),
+            'attributes' => new ComponentAttributeBag,
             'getExtraAttributes' => fn () => [],
             'isInline' => fn () => false,
             ...groupColumnViewTableBag(),
@@ -298,7 +298,7 @@ describe('GroupColumn view rendering', function (): void {
         $html = view('ui::filament.tables.columns.group', [
             'getFields' => fn () => $fields,
             'getRecord' => fn () => $record,
-            'attributes' => new ComponentAttributeBag(),
+            'attributes' => new ComponentAttributeBag,
             'getExtraAttributes' => fn () => [],
             'isInline' => fn () => false,
             ...groupColumnViewTableBag(),
@@ -318,7 +318,7 @@ describe('GroupColumn view rendering', function (): void {
         $html = view('ui::filament.tables.columns.group', [
             'getFields' => fn () => $fields,
             'getRecord' => fn () => $record,
-            'attributes' => new ComponentAttributeBag(),
+            'attributes' => new ComponentAttributeBag,
             'getExtraAttributes' => fn () => [],
             'isInline' => fn () => false,
             ...groupColumnViewTableBag(),

@@ -78,7 +78,33 @@ Le traduzioni italiane nel file `opening_hours.php` contenevano errori grammatic
 'morning_hours' => 'Orario mattutino',
 'afternoon_hours' => 'Orario pomeridiano',
 
+<<<<<<< HEAD
 // Dopo
+=======
+<<<<<<< HEAD
+// Dopo  
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+// Dopo
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+// Dopo  
+=======
+// Dopo
+>>>>>>> laraxot/dev
+=======
+// Dopo  
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
 'morning_hours' => 'Orari del mattino',
 'afternoon_hours' => 'Orari del pomeriggio',
 ```
@@ -158,6 +184,25 @@ Le traduzioni italiane nel file `opening_hours.php` contenevano errori grammatic
 - [Validation Files Multilingua](./validation_files_multilingua.md)
 - [Linee Guida Localizzazione](./localization_guidelines.md)
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+*Correzioni completate: gennaio 2025*
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+*Correzioni completate: gennaio 2025*
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+*Correzioni completate: gennaio 2025*
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 *Correzioni completate: gennaio 2025*
 # Correzioni Lingua Italiana - Opening Hours
 ## Problema Identificato
@@ -261,3 +306,25 @@ Le traduzioni italiane nel file `opening_hours.php` contenevano errori grammatic
 - [Opening Hours Rule](../app/Rules/OpeningHoursRule.php)
 - [Validation Files Multilingua](./validation_files_multilingua.md)
 - [Linee Guida Localizzazione](./localization_guidelines.md)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+*Correzioni completate: gennaio 2025*
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+*Correzioni completate: gennaio 2025*
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

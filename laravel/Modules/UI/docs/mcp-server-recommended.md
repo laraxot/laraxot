@@ -20,6 +20,25 @@ Gestione interfaccia utente, componenti, asset e frontend.
 ```
 
 ## Note
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+- Personalizza la configurazione per esigenze di frontend avanzato.
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+- Personalizza la configurazione per esigenze di frontend avanzato.
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+- Personalizza la configurazione per esigenze di frontend avanzato.
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 - Personalizza la configurazione per esigenze di frontend avanzato.
 # MCP Server Consigliati per il Modulo UI
 ## Scopo del Modulo
@@ -39,3 +58,24 @@ Gestione interfaccia utente, componenti, asset e frontend.
 }
 ```
 ## Note
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+- Personalizza la configurazione per esigenze di frontend avanzato.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+- Personalizza la configurazione per esigenze di frontend avanzato.
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

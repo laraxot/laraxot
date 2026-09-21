@@ -67,6 +67,10 @@ Il sistema è stato esteso con componenti personalizzati specifici per il proget
 In il progetto, i form Filament sono implementati attraverso la classe base `XotBaseResource` che tutti i Resource estendono. Ecco un esempio semplificato di come viene definito un form per la gestione delle pagine:
 
 ```php
+<<<<<<< HEAD
+=======
+public static function getFormSchema(): array
+>>>>>>> laraxot/dev
 public function getFormSchema(): array
 {
     return [
@@ -86,6 +90,35 @@ public function getFormSchema(): array
                 ->required()
                 ->columnSpan(1),
         ]),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> laraxot/dev
+=======
+        
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
         Forms\Components\Section::make('Contenuto della Pagina')->schema([
             PageContent::make('content_blocks')
                 ->label('Blocchi Contenuto')
@@ -108,6 +141,25 @@ Per una documentazione più approfondita sull'utilizzo dei widget Filament in il
 
 ## Conclusione
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+L'utilizzo esclusivo dei widget Filament per i form in il progetto rappresenta una scelta strategica che ha portato a un'interfaccia utente coerente, robusta e facilmente manutenibile. Questa decisione architetturale supporta gli obiettivi del progetto in termini di qualità del codice, velocità di sviluppo e esperienza utente.
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+L'utilizzo esclusivo dei widget Filament per i form in il progetto rappresenta una scelta strategica che ha portato a un'interfaccia utente coerente, robusta e facilmente manutenibile. Questa decisione architetturale supporta gli obiettivi del progetto in termini di qualità del codice, velocità di sviluppo e esperienza utente.
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+L'utilizzo esclusivo dei widget Filament per i form in il progetto rappresenta una scelta strategica che ha portato a un'interfaccia utente coerente, robusta e facilmente manutenibile. Questa decisione architetturale supporta gli obiettivi del progetto in termini di qualità del codice, velocità di sviluppo e esperienza utente.
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 L'utilizzo esclusivo dei widget Filament per i form in il progetto rappresenta una scelta strategica che ha portato a un'interfaccia utente coerente, robusta e facilmente manutenibile. Questa decisione architetturale supporta gli obiettivi del progetto in termini di qualità del codice, velocità di sviluppo e esperienza utente.
 # Utilizzo dei Widget Filament per i Form in il progetto
 ## Indice
@@ -152,6 +204,10 @@ Il sistema è stato esteso con componenti personalizzati specifici per il proget
 ## Esempi di Implementazione
 In il progetto, i form Filament sono implementati attraverso la classe base `XotBaseResource` che tutti i Resource estendono. Ecco un esempio semplificato di come viene definito un form per la gestione delle pagine:
 ```php
+<<<<<<< HEAD
+=======
+public static function getFormSchema(): array
+>>>>>>> laraxot/dev
 public function getFormSchema(): array
 {
     return [
@@ -183,3 +239,25 @@ Per una documentazione più approfondita sull'utilizzo dei widget Filament in il
 - [Creazione di Componenti Personalizzati](../laravel/Modules/Cms/docs/custom_filament_components.md) (da creare)
 - [Best Practices per i Form in il progetto](../laravel/Modules/Cms/docs/form_best_practices.md) (da creare)
 ## Conclusione
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+L'utilizzo esclusivo dei widget Filament per i form in il progetto rappresenta una scelta strategica che ha portato a un'interfaccia utente coerente, robusta e facilmente manutenibile. Questa decisione architetturale supporta gli obiettivi del progetto in termini di qualità del codice, velocità di sviluppo e esperienza utente.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+L'utilizzo esclusivo dei widget Filament per i form in il progetto rappresenta una scelta strategica che ha portato a un'interfaccia utente coerente, robusta e facilmente manutenibile. Questa decisione architetturale supporta gli obiettivi del progetto in termini di qualità del codice, velocità di sviluppo e esperienza utente.
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

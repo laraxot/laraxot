@@ -1,8 +1,44 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 ---
 module: theme
 topic: filament_error_fileupload_prefixicon
 canonical: ../../../Themes/docs/shared-components/filament-error-fileupload-prefixicon_1.md
 ---
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/filament-error-fileupload-prefixicon_1.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/filament-error-fileupload-prefixicon_1.md
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+# Errore UI: Uso di `prefixIcon` su FileUpload di Filament
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 See canonical documentation: ../../../Themes/docs/shared-components/filament-error-fileupload-prefixicon_1.md
 # Errore UI: Uso di `prefixIcon` su FileUpload di Filament
@@ -30,3 +66,20 @@ Se serve un’icona, usare solo i metodi previsti dalla documentazione Filament.
 * [filament-error-fileupload-prefixicon.md](../../Patient/docs/filament-error-fileupload-prefixicon.md)
 - Questo errore si è manifestato nel modulo Patient: vedere [Patient/project_docs/filament-error-fileupload-prefixicon.md](../../Patient/project_docs/filament-error-fileupload-prefixicon.md)
 * [filament-error-fileupload-prefixicon.md](../../Patient/project_docs/filament-error-fileupload-prefixicon.md)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/filament-error-fileupload-prefixicon_1.md
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev

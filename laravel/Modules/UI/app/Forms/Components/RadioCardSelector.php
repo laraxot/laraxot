@@ -118,7 +118,7 @@ class RadioCardSelector extends XotBaseField
     }
 
     /**
-     * @param array<mixed, mixed> $item
+     * @param array<array-key, mixed> $item
      *
      * @return array<string, mixed>
      */

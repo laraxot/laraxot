@@ -131,39 +131,39 @@ describe('UI highest-miss coverage', function (): void {
         $widgets->setAccessible(true);
         Assert::assertNotEmpty($widgets->invoke($dashboard));
 
-        $calendar = new UserCalendarWidget();
+        $calendar = new UserCalendarWidget;
         $calendar->type = 'master_admin';
         Assert::assertSame([], $calendar->fetchEvents(['start' => now()->toIso8601String()]));
         Assert::assertNotEmpty($calendar->getFormSchema());
 
-        $chart = new TestChartWidget();
+        $chart = new TestChartWidget;
         Assert::assertNotSame('', $chart->getDescription());
-        $icons = (new GetAllIconsAction())->execute();
-        Assert::assertSame($icons, (new GetAllIconsAction())->execute());
+        $icons = (new GetAllIconsAction)->execute();
+        Assert::assertSame($icons, (new GetAllIconsAction)->execute());
     });
 
     test('models middleware language controller and view helpers', function (): void {
-        Assert::assertNotSame('', (new Category())->getTable());
-        Assert::assertNotSame('', (new Collection())->getTable());
-        Assert::assertNotSame('', (new FieldOption())->getTable());
+        Assert::assertNotSame('', (new Category)->getTable());
+        Assert::assertNotSame('', (new Collection)->getTable());
+        Assert::assertNotSame('', (new FieldOption)->getTable());
 
-        $response = (new SetLocale())->handle(Request::create('/'), static fn (): Response => new Response('ok'));
+        $response = (new SetLocale)->handle(Request::create('/'), static fn (): Response => new Response('ok'));
         Assert::assertSame('ok', $response->getContent());
 
         config(['app.supported_locales' => ['it', 'en'], 'app.locale' => 'it']);
-        Assert::assertTrue((new LanguageController())->switch('en')->isRedirect());
-        Assert::assertTrue((new LanguageController())->switch('xx')->isRedirect());
+        Assert::assertTrue((new LanguageController)->switch('en')->isRedirect());
+        Assert::assertTrue((new LanguageController)->switch('xx')->isRedirect());
 
         $block = new Block(['data' => ['view' => 'ui::empty']]);
         Assert::assertSame('ui::empty', $block->view);
 
-        $composer = new ThemeComposer();
+        $composer = new ThemeComposer;
         Assert::assertSame('', $composer->showScripts());
         Assert::assertNull($composer->metatag('missing-key'));
     });
 
     test('TableLayoutTrait reads and writes session layout', function (): void {
-        $subject = new class()
+        $subject = new class
         {
             use TableLayoutTrait;
 
@@ -177,9 +177,9 @@ describe('UI highest-miss coverage', function (): void {
     });
 
     test('XotBase blocks and document upload factories expose schema', function (): void {
-        Assert::assertNotEmpty((new Contact())->getFormSchema());
-        Assert::assertNotEmpty((new \Modules\UI\Filament\Blocks\Category())->getFormSchema());
-        Assert::assertNotEmpty((new Post())->getFormSchema());
+        Assert::assertNotEmpty(Contact::getFormSchema());
+        Assert::assertNotEmpty(\Modules\UI\Filament\Blocks\Category::getFormSchema());
+        Assert::assertNotEmpty(Post::getFormSchema());
         Assert::assertNotSame('', Contact::getTitle());
 
         Assert::assertSame('identity_document', SpatieDocumentUpload::forIdentityDocument()->getName());
@@ -211,7 +211,7 @@ describe('UI highest-miss coverage', function (): void {
     });
 
     test('TableLayoutToggleTableAction resolves layout from session', function (): void {
-        $subject = new class()
+        $subject = new class
         {
             use \Modules\UI\Filament\Actions\Table\TableLayoutTrait;
 

@@ -57,8 +57,34 @@ Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (rule
 | Notify | - | - | 61% | 21 |
 | Rating | - | - | 7% | 0 |
 | Seo | - | - | 100% | 0 |
+<<<<<<< HEAD
 | TechPlanner | - | - | 2% | 0 |
 | modulo operativo | - | - | 2% | 0 |
+=======
+<<<<<<< HEAD
+| TechPlanner | - | - | 2% | 0 |
+<<<<<<< HEAD
+| modulo operativo | - | - | 2% | 0 |
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+| TechPlanner | - | - | 2% | 0 |
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+| modulo operativo | - | - | 2% | 0 |
+=======
+| TechPlanner | - | - | 2% | 0 |
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 | Tenant | - | - | 75% | 6 |
 | UI | - | - | 34% | 4 |
 | User | - | - | 23% | 4 |

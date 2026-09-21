@@ -67,7 +67,11 @@ Il sistema è stato esteso con componenti personalizzati specifici per il proget
 In il progetto, i form Filament sono implementati attraverso la classe base `XotBaseResource` che tutti i Resource estendono. Ecco un esempio semplificato di come viene definito un form per la gestione delle pagine:
 
 ```php
+<<<<<<< HEAD
 public function getFormSchema(): array
+=======
+public static function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         Forms\Components\Grid::make()->columns(2)->schema([

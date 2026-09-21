@@ -58,7 +58,7 @@ class IconPicker extends XotBaseTextInput
                             );
                             /** @var array<int|string> $optsKeys */
                             $optsKeys = array_map(
-                                static fn (mixed $k): string => SafeStringCastAction::cast($k),
+                                static fn (int|string $k): string => SafeStringCastAction::cast($k),
                                 array_keys($optsRaw),
                             );
                             $optsCombined = array_combine($optsKeys, $optsValues);

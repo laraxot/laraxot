@@ -27,7 +27,19 @@ Quel dominio vive in `Modules/Geo` (quando il progetto lo include), **mai** in `
 
 Direzione dipendenze: **Geo → UI** (Geo può usare primitive UI). Mai il contrario.
 
+<<<<<<< HEAD
 ## Questo progetto (`base_ptvx_fila5`)
+=======
+<<<<<<< HEAD
+## Questo progetto (`base_ptvx_fila5`)
+<<<<<<< HEAD
+=======
+=======
+## Questo progetto (`<nome repository>`)
+>>>>>>> 92912795 (.)
+
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 `laravel/Modules/Geo` **non esiste** e **non deve essere reintrodotto** senza decisione esplicita.
 Quindi in UI non devono restare neanche fallback/null-object “per quando Geo manca”: senza Geo non serve il layer.
 ## Ownership della classe (Action / Component)
@@ -56,7 +68,34 @@ In questo repo `modules_statuses.json` ha `"Geo": false` e `laravel/Modules/Geo`
 3. Eliminato `LocationSelector.php` attivo (non reintrodurre come “null-adapter”).
 4. Rimosso da `UIServiceProvider` il `bindIf` / registrazione verso null-adapters Geo.
 5. Canon aggiornato qui + [second-brain.md](./second-brain.md) + [wiki/concepts/ui-geo-boundary-contracts.md](./wiki/concepts/ui-geo-boundary-contracts.md).
+<<<<<<< HEAD
 6. Push dual-remote (`laraxot` + `provtv`) a tip `b874935` — vedi [wiki/troubleshooting/git-push-lfs-missing-objects.md](./wiki/troubleshooting/git-push-lfs-missing-objects.md) e [multi-org-sync-laraxot-provtv.md](./multi-org-sync-laraxot-provtv.md).
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+6. Push dual-remote (`laraxot` + `provtv`) a tip `b874935` — vedi [wiki/troubleshooting/git-push-lfs-missing-objects.md](./wiki/troubleshooting/git-push-lfs-missing-objects.md) e [multi-org-sync-laraxot-provtv.md](./multi-org-sync-laraxot-provtv.md).
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+6. Push dual-remote (`laraxot` + `provtv`) a tip `b874935` — vedi [wiki/troubleshooting/git-push-lfs-missing-objects.md](./wiki/troubleshooting/git-push-lfs-missing-objects.md) e [multi-org-sync-laraxot-provtv.md](./multi-org-sync-laraxot-provtv.md).
+>>>>>>> laraxot/dev
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 **Anti-pattern:** ricreare contract+null in UI “perché Geo manca”. Senza Geo non serve il layer.
 ## Storia (forward-only)
 Rimosso il 2026-07-22 da UI (git history = archivio; **no** `docs/archive/`):
@@ -82,6 +121,21 @@ rimosso (questo canone: `.to_geo` non è un backup da tenere). Nessun riferiment
 `LocationSelector` in PHP/Blade/lang. `InteractiveMap.php` attivo con import `Modules\Geo\*`
 è ancora presente: violazione aperta, serve decisione (stesso trattamento `.old`?).
 
+<<<<<<< HEAD
+=======
+2026-09-15: `LocationSelector.php` ricomparso una quarta volta (commit `ec907ef1` — mass-import
+da un altro base project via reimport monorepo, insieme a `.old` e `.to_geo` gia' esistenti,
+tipico "5 file-spia" da reimportazione laraxot). Rilevato durante un fix phpstan-swarm mirato
+sui 36 errori `class.notFound`/`method.nonObject` di questo file (report `UI.txt`): prima di
+patchare `Comune` con resolve dinamico + guardie `class_exists()`, verificato `git log -S` sul
+file e trovate 4 delete precedenti + questo canone. **Fix corretto = cancellare, non patchare**:
+rimossi `LocationSelector.php` (attivo) e `LocationSelector.php.to_geo`; `lang/{en,de,it}/location_selector.php`
+rimossi (nessun altro riferimento nel modulo). `.old` lasciato invariato (precedente storico).
+`InteractiveMap.php` attivo con `use Modules\Geo\Services\{MapService,GeocodingService}` e' ancora
+presente — stessa violazione aperta dal 2026-08-27, fuori dallo scope di quel fix (non nel report
+assegnato): segnalato al coordinatore, non toccato qui.
+
+>>>>>>> laraxot/dev
 Se in un altro monorepo servirà geografia: implementare in `Modules/Geo` (Action + Livewire/Filament lì), non ricopiare in UI.
 
 ## Verifica

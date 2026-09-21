@@ -33,7 +33,7 @@ uses(TestCase::class);
 
 describe('UI gap closer 100 — Livewire', function (): void {
     test('DarkModeSwitcher mount toggle and render', function (): void {
-        $component = new DarkModeSwitcher();
+        $component = new DarkModeSwitcher;
         $component->mount();
         Assert::assertFalse($component->darkMode);
         $component->toggleDarkMode();
@@ -42,7 +42,7 @@ describe('UI gap closer 100 — Livewire', function (): void {
     });
 
     test('Toast render exposes view params', function (): void {
-        $component = new Toast();
+        $component = new Toast;
         Assert::assertInstanceOf(ViewContract::class, $component->render());
     });
 });
@@ -64,7 +64,7 @@ describe('UI gap closer 100 — View components', function (): void {
     });
 
     test('ThemeComposer metatag and scripts', function (): void {
-        $composer = new ThemeComposer();
+        $composer = new ThemeComposer;
         Assert::assertSame('', $composer->showScripts());
         Assert::assertNull($composer->metatag('missing-key'));
         config(['metatag.test_bool' => true]);
@@ -76,7 +76,7 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
     test('RedirectWidget getViewData and canView', function (): void {
         Assert::assertTrue(RedirectWidget::canView());
 
-        $widget = new RedirectWidget();
+        $widget = new RedirectWidget;
         $widget->to = '/admin';
         $widget->label = 'Go';
         $widget->icon = 'heroicon-o-link';
@@ -93,7 +93,7 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
     });
 
     test('StatWithIconWidget getData and RowWidget getColumns', function (): void {
-        $stat = new StatWithIconWidget();
+        $stat = new StatWithIconWidget;
         $ref = new ReflectionClass($stat);
         $label = $ref->getProperty('label');
         $label->setAccessible(true);
@@ -107,12 +107,12 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
         Assert::assertSame('Users', $data['label']);
         Assert::assertSame(42, $data['value']);
 
-        $row = new class() extends RowWidget {};
+        $row = new class extends RowWidget {};
         Assert::assertSame(3, (new ReflectionClass($row))->getMethod('getColumns')->invoke($row));
     });
 
     test('HeroWidget getStats and UserCalendarWidget private normalizers', function (): void {
-        $hero = new HeroWidget();
+        $hero = new HeroWidget;
         $heroRef = new ReflectionClass($hero);
         foreach (['title' => 'Welcome', 'icon' => 'heroicon-o-star'] as $prop => $val) {
             $p = $heroRef->getProperty($prop);
@@ -123,7 +123,7 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
         Assert::assertIsIterable($stats);
         Assert::assertCount(1, $stats);
 
-        $calendar = new UserCalendarWidget();
+        $calendar = new UserCalendarWidget;
         $calendarRef = new ReflectionClass($calendar);
         $normalizeEvents = $calendarRef->getMethod('normalizeEventsArray');
         $normalizeEvents->setAccessible(true);
@@ -148,7 +148,7 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
     test('Image block ratio helpers', function (): void {
         Assert::assertSame('aspect-[3/4]', Image::getRatioClass('3-4'));
         Assert::assertSame('', Image::getRatioClass('unknown'));
-        Assert::assertNotEmpty((new Image())->getFormSchema());
+        Assert::assertNotEmpty(Image::getFormSchema());
         Assert::assertArrayHasKey('4-3', Image::getRatios());
     });
 
@@ -174,13 +174,13 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
 describe('UI gap closer 100 — middleware trait rules', function (): void {
     test('SetLocale handles non-string session locale', function (): void {
         Session::put('locale', 123);
-        $middleware = new SetLocale();
+        $middleware = new SetLocale;
         $response = $middleware->handle(Request::create('/'), static fn () => response('ok'));
         Assert::assertSame(200, $response->getStatusCode());
     });
 
     test('TableLayoutTrait session branches and refresh', function (): void {
-        $subject = new class()
+        $subject = new class
         {
             use TableLayoutTrait;
 
@@ -209,7 +209,7 @@ describe('UI gap closer 100 — middleware trait rules', function (): void {
     });
 
     test('OpeningHoursRule cleanTimeValue rejects non-string', function (): void {
-        $rule = new OpeningHoursRule();
+        $rule = new OpeningHoursRule;
         $method = (new ReflectionClass($rule))->getMethod('cleanTimeValue');
         $method->setAccessible(true);
 

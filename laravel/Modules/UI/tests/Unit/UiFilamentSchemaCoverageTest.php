@@ -8,7 +8,7 @@ use Modules\UI\Tests\TestCase;
 use Modules\Xot\Tests\FilamentSchemaCoverage;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 /** @return list{string, string} */
 function uiFilamentContext(): array

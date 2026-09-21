@@ -22,7 +22,7 @@ use function Safe\file_get_contents;
  * (see CategoryModelTest) and drop the ignores.
  */
 
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\UI\Tests\TestCase $this */
@@ -34,7 +34,7 @@ beforeEach(function (): void {
 describe('Asset Model', function (): void {
     test('can be instantiated', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Asset model absent from artifact set) */
-        $asset = new Asset();
+        $asset = new Asset;
         /* @phpstan-ignore-next-line class.notFound (Asset model absent from artifact set) */
         Assert::assertInstanceOf(Asset::class, $asset);
     });
@@ -43,7 +43,7 @@ describe('Asset Model', function (): void {
         $expected = ['name', 'type', 'path', 'theme_id', 'is_minified', 'is_compressed', 'order', 'should_bundle'];
 
         /** @phpstan-ignore-next-line class.notFound (Asset model absent from artifact set) */
-        $asset = new Asset();
+        $asset = new Asset;
         foreach ($expected as $field) {
             /* @phpstan-ignore-next-line class.notFound, argument.type (Asset model absent from artifact set) */
             Assert::assertTrue(in_array($field, $asset->getFillable()));
@@ -52,7 +52,7 @@ describe('Asset Model', function (): void {
 
     test('has casts defined', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Asset model absent from artifact set) */
-        $asset = new Asset();
+        $asset = new Asset;
         /**
          * @var array<string, string> $casts
          *
@@ -73,7 +73,7 @@ describe('Asset Model', function (): void {
 
     test('has correct table name', function (): void {
         /** @phpstan-ignore-next-line class.notFound (Asset model absent from artifact set) */
-        $asset = new Asset();
+        $asset = new Asset;
         /* @phpstan-ignore-next-line class.notFound (Asset model absent from artifact set) */
         Assert::assertSame('assets', $asset->getTable());
     });

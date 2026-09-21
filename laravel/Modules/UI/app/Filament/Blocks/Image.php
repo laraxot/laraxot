@@ -56,7 +56,7 @@ class Image
     /**
      * @return array<int, Component>
      */
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             FileUpload::make('image')

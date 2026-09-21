@@ -1,10 +1,45 @@
 ---
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 module: theme
 topic: customizing_your_site
 canonical: ../../../Themes/docs/shared-components/customizing-your-site_1.md
 ---
 
+<<<<<<< HEAD
 See canonical documentation: ../../../Themes/docs/shared-components/customizing-your-site_1.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/customizing-your-site_1.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/customizing-your-site_1.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/customizing-your-site_1.md
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 title: Customizing Your Site
 description: Customizing your Jigsaw docs site
 extends: _layouts.documentation
@@ -68,3 +103,82 @@ class Foo extends bar
 ### Versione Incoming
 
 ```
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+---
+
+## Typography Styles {#customizing-typography}
+
+Here’s a quick preview of what some of the basic type styles will look like in this starter template:
+
+<div markdown="1" class="example pt-6">
+
+# h1 Heading
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
+
+The quick brown fox jumps over the lazy dog
+
+<s>The quick brown fox jumps over the lazy dog</s>
+
+<u>The quick brown fox jumps over the lazy dog</u>
+
+_The quick brown fox jumps over the lazy dog_
+
+**The quick brown fox jumps over the lazy dog**
+
+`The quick brown fox jumps over the lazy dog`
+
+<small>The quick brown fox jumps over the lazy dog</small>
+
+> The quick brown fox jumps over the lazy dog
+
+[The quick brown fox jumps over the lazy dog](#)
+
+```php
+class Foo extends bar
+{
+    public function fooBar()
+    {
+        //
+    }
+}
+```
+
+</div>
+* [customizing-your-site.md](../../../Gdpr/docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../Xot/docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../UI/docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../Tenant/docs/it/customizing-your-site.md)
+* [customizing-your-site.md](../../../Cms/docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../Gdpr/project_docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../Xot/project_docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../UI/project_docs/customizing-your-site.md)
+* [customizing-your-site.md](../../../Tenant/project_docs/it/customizing-your-site.md)
+* [customizing-your-site.md](../../../Cms/project_docs/customizing-your-site.md)
+
+### Versione Incoming
+
+---
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/customizing-your-site_1.md
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

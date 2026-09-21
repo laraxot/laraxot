@@ -7,6 +7,7 @@ namespace Modules\UI\Actions\Icon;
 use BladeUI\Icons\Factory as IconFactory;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
+use ReflectionClass;
 use Spatie\QueueableAction\QueueableAction;
 
 class GetAllIconsAction
@@ -22,7 +23,7 @@ class GetAllIconsAction
 
         // Uso reflection per accedere alle icone in modo sicuro
         try {
-            $reflection = new \ReflectionClass($iconsFactory);
+            $reflection = new ReflectionClass($iconsFactory);
             $property = $reflection->getProperty('sets');
             $property->setAccessible(true);
             $icons = $property->getValue($iconsFactory);

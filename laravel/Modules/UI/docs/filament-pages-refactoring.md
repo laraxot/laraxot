@@ -142,6 +142,25 @@ class S3Test extends XotBasePage
 - [XotBasePage Implementation](../../Xot/docs/xotbasepage_implementation.md)
 - [DRY + KISS Principles](../../Xot/docs/dry_kiss_principles.md)
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+*Ultimo aggiornamento: giugno 2025* 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+*Ultimo aggiornamento: giugno 2025* 
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+*Ultimo aggiornamento: giugno 2025* 
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 *Ultimo aggiornamento: giugno 2025*
 # Filament Pages Refactoring - UI Module
 ## S3Test.php Refactoring
@@ -240,3 +259,25 @@ class S3Test extends XotBasePage
 - [Filament Best Practices](../../Xot/docs/filament_best_practices.md)
 - [XotBasePage Implementation](../../Xot/docs/xotbasepage_implementation.md)
 - [DRY + KISS Principles](../../Xot/docs/dry_kiss_principles.md)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+*Ultimo aggiornamento: giugno 2025*
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+*Ultimo aggiornamento: giugno 2025* 
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

@@ -9,9 +9,36 @@
 
 ## 🎯 PANORAMICA
 
+<<<<<<< HEAD
 Questa guida descrive l'integrazione di funzionalità mappa interattiva nel modulo UI, ispirate al progetto [farmshops.eu](https://farmshops.eu/). L'obiettivo è fornire componenti riutilizzabili per visualizzazioni geografiche in tutta l'applicazione FixCity.
 Questa guida descrive l'integrazione di funzionalità mappa interattiva nel modulo UI, ispirate al progetto [farmshops.eu](https://farmshops.eu/). L'obiettivo è fornire componenti riutilizzabili per visualizzazioni geografiche in tutta l'applicazione <nome progetto>.
 Questa guida descrive l'integrazione di funzionalità mappa interattiva nel modulo UI, ispirate al progetto [farmshops.eu](https://farmshops.eu/). L'obiettivo è fornire componenti riutilizzabili per visualizzazioni geografiche in tutta l'applicazione progetto corrente.
+=======
+<<<<<<< HEAD
+Questa guida descrive l'integrazione di funzionalità mappa interattiva nel modulo UI, ispirate al progetto [farmshops.eu](https://farmshops.eu/). L'obiettivo è fornire componenti riutilizzabili per visualizzazioni geografiche in tutta l'applicazione FixCity.
+<<<<<<< HEAD
+Questa guida descrive l'integrazione di funzionalità mappa interattiva nel modulo UI, ispirate al progetto [farmshops.eu](https://farmshops.eu/). L'obiettivo è fornire componenti riutilizzabili per visualizzazioni geografiche in tutta l'applicazione <nome progetto>.
+Questa guida descrive l'integrazione di funzionalità mappa interattiva nel modulo UI, ispirate al progetto [farmshops.eu](https://farmshops.eu/). L'obiettivo è fornire componenti riutilizzabili per visualizzazioni geografiche in tutta l'applicazione progetto corrente.
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+Questa guida descrive l'integrazione di funzionalità mappa interattiva nel modulo UI, ispirate al progetto [farmshops.eu](https://farmshops.eu/). L'obiettivo è fornire componenti riutilizzabili per visualizzazioni geografiche in tutta l'applicazione <nome progetto>.
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+Questa guida descrive l'integrazione di funzionalità mappa interattiva nel modulo UI, ispirate al progetto [farmshops.eu](https://farmshops.eu/). L'obiettivo è fornire componenti riutilizzabili per visualizzazioni geografiche in tutta l'applicazione progetto corrente.
+=======
+Questa guida descrive l'integrazione di funzionalità mappa interattiva nel modulo UI, ispirate al progetto [farmshops.eu](https://farmshops.eu/). L'obiettivo è fornire componenti riutilizzabili per visualizzazioni geografiche in tutta l'applicazione <nome progetto>.
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 ---
 
@@ -431,9 +458,37 @@ class MapService
                     'description' => $ticket->description,
                     'status' => $ticket->status->slug,
                     'priority' => $ticket->priority->slug,
+<<<<<<< HEAD
                     'url' => route('<nome progetto>.tickets.show', $ticket)
                     'url' => route('fixcity.tickets.show', $ticket)
                     'url' => route('tickets.show', $ticket)
+=======
+<<<<<<< HEAD
+                    'url' => route('<nome progetto>.tickets.show', $ticket)
+                    'url' => route('fixcity.tickets.show', $ticket)
+                    'url' => route('tickets.show', $ticket)
+=======
+<<<<<<< HEAD
+                    'url' => route('fixcity.tickets.show', $ticket)
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                    'url' => route('<nome progetto>.tickets.show', $ticket)
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+                    'url' => route('tickets.show', $ticket)
+=======
+                    'url' => route('<nome progetto>.tickets.show', $ticket)
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
                 ];
             })
             ->toArray();
@@ -513,9 +568,37 @@ class GeocodingService
             />
         </div>
         <div class="col-md-4">
+<<<<<<< HEAD
             <livewire:<nome progetto>::components.ticket-stats />
             <livewire:fixcity::components.ticket-stats />
             <livewire:project::components.ticket-stats />
+=======
+<<<<<<< HEAD
+            <livewire:<nome progetto>::components.ticket-stats />
+            <livewire:fixcity::components.ticket-stats />
+            <livewire:project::components.ticket-stats />
+=======
+<<<<<<< HEAD
+            <livewire:fixcity::components.ticket-stats />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            <livewire:<nome progetto>::components.ticket-stats />
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+            <livewire:project::components.ticket-stats />
+=======
+            <livewire:<nome progetto>::components.ticket-stats />
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
         </div>
     </div>
 </div>
@@ -569,9 +652,36 @@ class GeocodingService
 - [ ] GeocodingService implementation
 
 ### 📅 Fase 3: Integrazione (Settimana 3)
+<<<<<<< HEAD
 - [ ] Integrazione con modulo Fixcity
 - [ ] Integrazione con modulo <nome progetto>
 - [ ] Integrazione con modulo progetto corrente
+=======
+<<<<<<< HEAD
+- [ ] Integrazione con modulo Fixcity
+<<<<<<< HEAD
+- [ ] Integrazione con modulo <nome progetto>
+- [ ] Integrazione con modulo progetto corrente
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+- [ ] Integrazione con modulo <nome progetto>
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+- [ ] Integrazione con modulo progetto corrente
+=======
+- [ ] Integrazione con modulo <nome progetto>
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 - [ ] Integrazione con modulo User
 - [ ] API endpoints per mappa
 - [ ] Testing componenti

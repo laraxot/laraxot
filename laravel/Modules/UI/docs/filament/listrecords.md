@@ -1,3 +1,55 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+---
+title: "List Records in Filament"
+type: concept
+tags: [listrecords]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "listrecords list records in filament"
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
+related:
+  - "./automatic-translations.md"
+  - "./best-practices.md"
+  - "./component-icon-support.md"
+  - "./component-methods-compatibility.md"
+  - "./filament-4-components-guide.md"
+  - "./filament-4-migration-guide.md"
+  - "./filament-4-migration-summary.md"
+  - "./filament-4-migration-sumy.md"
+---
+
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 # List Records in Filament
 
 ## Estensione Corretta
@@ -72,6 +124,59 @@ use Modules\UI\Filament\Actions\Table\TableLayoutToggleTableAction;
 use Modules\Xot\Filament\Traits\TransTrait;
 use Webmozart\Assert\Assert;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+class ListXXX extends XotBaseListRecords
+{
+
+    protected static string $resource = XXXResource::class;
+
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+
+class ListXXX extends XotBaseListRecords
+{
+    
+    protected static string $resource = XXXResource::class;
+
+    
+
+    
+
+  
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+class ListXXX extends XotBaseListRecords
+{
+    
+    protected static string $resource = XXXResource::class;
+
+>>>>>>> laraxot/dev
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
     public function getGridTableColumns(): array
     {
         return [
@@ -110,6 +215,37 @@ class ListMyRecords extends XotBaseListRecords
     {
         return [
     public function getTableActions(): array
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    {
+        return [
+<<<<<<< HEAD
+            
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+            
+=======
+
+>>>>>>> laraxot/dev
+=======
+            
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
             ViewAction::make()
                 ->label(''),
             EditAction::make()
@@ -138,6 +274,31 @@ class ListMyRecords extends XotBaseListRecords
             TextColumn::make('name')->searchable(),
         ];
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+}
+<<<<<<< HEAD
+```
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+```
+=======
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+```
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+```
+# List Records in Filament
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
     public function getListTableActions(): array
     {
@@ -271,3 +432,26 @@ class ListXXX extends XotBaseListRecords
                 column: 'created_at',
                 direction: 'DESC',
             );
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    }
+}
+```
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+```
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 # User Research: UI Module
 
 ## 🔬 Research Goals
@@ -6,6 +14,19 @@ Identify usability issues in complex Filament forms and tables.
 ## 💡 Key Findings
 - Users struggle with very long forms without clear sections or tabs.
 - Mobile responsiveness is critical for field workers.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 # UI Module - User Research
 
 **Module:** UI  
@@ -98,8 +119,50 @@ Some customization capability required.
 
 ---
 
+<<<<<<< HEAD
 *Last Updated: March 12, 2026*
+=======
+<<<<<<< HEAD
+*Last Updated: March 12, 2026*
+=======
+<<<<<<< HEAD
+*Last Updated: March 12, 2026*
+=======
+<<<<<<< HEAD
+*Last Updated: March 12, 2026*
+=======
+# User Research: UI Module
+
+**Module:** UI  
+**Version:** 1.0.0  
+**Last Updated:** March 12, 2026  
+**Owner:** Product Team
+
+---
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 ## ✅ Actionable Insights / Next Steps
 - Enforce the use of `Tabs` and `Sections` in all `XotBaseResource` forms.
 - Optimize table columns for narrow viewports using `WorkerColumn` patterns.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+*Last Updated: March 12, 2026*
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev

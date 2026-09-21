@@ -1,8 +1,44 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 ---
 module: theme
 topic: selectstatecolumn_confirmation_modal
 canonical: ../../../Themes/docs/shared-components/selectstatecolumn-confirmation-modal-1.md
 ---
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/selectstatecolumn-confirmation-modal-1.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/selectstatecolumn-confirmation-modal-1.md
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+# SelectStateColumn - Aggiunta Modal di Conferma
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 
 See canonical documentation: ../../../Themes/docs/shared-components/selectstatecolumn-confirmation-modal-1.md
 # SelectStateColumn - Aggiunta Modal di Conferma
@@ -48,3 +84,39 @@ Verificare che:
 4. Lo stato venga aggiornato correttamente nel database
 5. Gli errori vengano gestiti in modo appropriato
 - [Filament Modals Documentation](https://filamentphp.com/project_docs/3.x/panels/modals)
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+- [Filament Modals Documentation](https://filamentphp.com/project_docs/3.x/panels/modals)
+- [Filament Modals Documentation](https://filamentphp.com/project_docs/3.x/panels/modals)
+- [State Management](./state-management.md)
+
+## Note di Implementazione
+- La modale dovrebbe essere disabilitabile tramite configurazione
+- Considerare l'aggiunta di un hook per la validazione personalizzata
+- Documentare il formato del messaggio atteso dalle transizioni
+
+## Test
+Verificare che:
+1. La modale venga visualizzata correttamente
+2. Il messaggio venga passato correttamente alla transizione
+3. La modale si chiuda in entrambi gli scenari
+4. Lo stato venga aggiornato correttamente nel database
+5. Gli errori vengano gestiti in modo appropriato
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/selectstatecolumn-confirmation-modal-1.md
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
