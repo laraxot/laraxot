@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "TeamContract"
 type: concept
@@ -19,15 +11,7 @@ related:
   - "./hasteamsandusercontract.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # TeamContract
 
 L'interfaccia `TeamContract` definisce il contratto per i team nel sistema.

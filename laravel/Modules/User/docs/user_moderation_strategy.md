@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "User Moderation Strategy"
 module: user
@@ -9,10 +7,6 @@ created: 2026-08-24
 updated: 2026-08-24
 ---
 
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> laraxot/dev
 # User Moderation Strategy
 
 ## Overview
@@ -114,15 +108,7 @@ Instead of traditional service classes, we'll use [@spatie/laravel-queueable-act
   class ModerationResource extends Resource {
       protected static ?string $model = User::class;
       protected static ?string $navigationIcon = 'heroicon-o-check-circle';
-<<<<<<< HEAD
-<<<<<<< HEAD
       public static function getFormSchema(): array {
-=======
-      public function getFormSchema(): array {
->>>>>>> 2024e2e7 (.)
-=======
-      public static function getFormSchema(): array {
->>>>>>> laraxot/dev
           return [
               'type' => Forms\Components\Select::make('type')
                   ->options(UserType::all()),

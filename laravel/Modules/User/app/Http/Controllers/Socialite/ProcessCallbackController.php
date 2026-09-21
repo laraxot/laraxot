@@ -20,7 +20,6 @@ use Modules\User\Actions\Socialite\RegisterOauthUserAction;
 use Modules\User\Actions\Socialite\RegisterSocialiteUserAction;
 use Modules\User\Actions\Socialite\RetrieveOauthUserAction;
 use Modules\User\Actions\Socialite\RetrieveSocialiteUserAction;
-use Modules\User\Actions\Socialite\SetDefaultRolesBySocialiteUserAction;
 use Modules\User\Actions\Socialite\ValidateProviderAction;
 use Modules\User\Events\RegistrationNotEnabled;
 use Modules\User\Events\UserNotAllowed;

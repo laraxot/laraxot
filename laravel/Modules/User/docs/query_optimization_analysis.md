@@ -474,8 +474,6 @@ class UserServiceProvider extends ServiceProvider
 3. **Medium** (Week 2): Add database indexes and optimize search
 4. **Low** (Week 3): Implement background cleanup and monitoring
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 This optimization plan will transform the User module from a performance bottleneck into a highly efficient authentication and authorization system.
 
 
@@ -486,9 +484,3 @@ This optimization plan will transform the User module from a performance bottlen
 # Documento unificato
 
 Questo file era un duplicato esatto che differiva solo per maiuscole/minuscole, in violazione della regola no-case-only-variations. Il contenuto canonico si trova in [query_optimization_analysis.md](./query_optimization_analysis.md).
-=======
-This optimization plan will transform the User module from a performance bottleneck into a highly efficient authentication and authorization system.
->>>>>>> 60a2c9a9 (.)
-=======
-This optimization plan will transform the User module from a performance bottleneck into a highly efficient authentication and authorization system.
->>>>>>> laraxot/dev

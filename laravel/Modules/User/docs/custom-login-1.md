@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Implementazione Login Personalizzato"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 https://ajaxray.com/blog/lets-beautify-filament-3-login-page/
 
 https://www.codef.site/blog/laravel/how-to-customize-laravel-filament-login-page

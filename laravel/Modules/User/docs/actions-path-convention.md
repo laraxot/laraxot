@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Convenzione dei Percorsi per le Actions"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-structure-1.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Convenzione dei Percorsi per le Actions
 
 ## Regola Fondamentale
@@ -98,29 +82,7 @@ fi
 ```
 
 ## Collegamenti
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Convenzioni Path nei Moduli Laravel](./path-conventions-2.md)
 - [Checklist per la Struttura delle Directory](./directory-structure-checklist.md)
 - [Analisi Errore: Gestione Percorsi](../../../../docs/error_analysis/path_management.md)
-=======
-- [Convenzioni Path nei Moduli Laravel](./path_conventions.md)
-- [Checklist per la Struttura delle Directory](./directory_structure_checklist.md)
-- [Analisi Errore: Gestione Percorsi](../../../docs/error_analysis/path_management.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Convenzioni Path nei Moduli Laravel](./path_conventions.md)
-- [Checklist per la Struttura delle Directory](./directory_structure_checklist.md)
-- [Analisi Errore: Gestione Percorsi](../../../docs/error_analysis/path_management.md)
-=======
-- [Convenzioni Path nei Moduli Laravel](./path-conventions-2.md)
-- [Checklist per la Struttura delle Directory](./directory-structure-checklist.md)
-- [Analisi Errore: Gestione Percorsi](../../../../docs/error_analysis/path_management.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Convenzioni Path nei Moduli Laravel](./path-conventions-2.md)
-- [Checklist per la Struttura delle Directory](./directory-structure-checklist.md)
-- [Analisi Errore: Gestione Percorsi](../../../../docs/error_analysis/path_management.md)
->>>>>>> laraxot/dev

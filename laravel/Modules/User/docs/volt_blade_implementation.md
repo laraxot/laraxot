@@ -195,15 +195,7 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Form;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Xot\Contracts\UserContract;
-=======
-use Modules\User\Models\User;
->>>>>>> f548be94 (.)
-=======
-use Modules\User\Models\User;
->>>>>>> laraxot/dev
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 
 class RegisterFormWidget extends XotBaseWidget

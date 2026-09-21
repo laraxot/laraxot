@@ -36,11 +36,8 @@ Le Skills progettuali vivono qui, nel wiki del Module **User**, e vengono carica
 - Non embeddare Skills nei prompt di avvio
 - Per Skills globali, consulta il [wiki root](../../docs/wiki/skills/index.md)
 
-<<<<<<< HEAD
 - Per Skills globali, consulta il [wiki root](../../docs/wiki/skills/INDEX.md)
 
-=======
->>>>>>> 87273113 (.)
 ## Aggiungere una Nuova SKILLS
 
 1. Crea `../skills/<nome>.md` con contenuto completo

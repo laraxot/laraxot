@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "BaseUser Refactoring - Completato"
 type: concept
@@ -13,15 +5,9 @@ tags: [baseuser, refactoring, completed]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "baseuser-refactoring-completed- baseuser refactoring - completato"
-<<<<<<< HEAD
-<<<<<<< HEAD
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -35,15 +21,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # BaseUser Refactoring - Completato
 
 **Data**: 15 Ottobre 2025
@@ -279,55 +256,23 @@ $user->hasRole('admin', 'api'); // ✅ Ora funziona correttamente
 
 ### Analisi Pre-Refactoring
 - [DRY Violation Analysis](./baseuser-dry-violation-analysis.md) - Analisi completa del problema
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Refactoring Plan](../../../docs/baseuser-dry-violation-2025-10-15.md) - Piano esecutivo
-=======
-- [Refactoring Plan](../../docs/baseuser-dry-violation-2025-10-15.md) - Piano esecutivo
->>>>>>> 60a2c9a9 (.)
-=======
-- [Refactoring Plan](../../docs/baseuser-dry-violation-2025-10-15.md) - Piano esecutivo
-=======
-- [Refactoring Plan](../../../docs/baseuser-dry-violation-2025-10-15.md) - Piano esecutivo
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-- [Refactoring Plan](../../../docs/baseuser-dry-violation-2025-10-15.md) - Piano esecutivo
->>>>>>> laraxot/dev
 
 ### Modulo User
 - [BaseUser Model](./models/baseuser.md)
 - [Roles & Permissions](./roles-permissions.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [User Module README](./README.md)
 
-=======
->>>>>>> laraxot/dev
 - [User Module README](./readme.md)
 
 ### Root Progetto
 - [Code Quality](../../../docs/code-quality-analysis.md)
 - [DRY Violations](../../../docs/dry-violations-analysis.md)
-<<<<<<< HEAD
-=======
 - [User Module README](./readme.md)
 
 ### Root Progetto
-<<<<<<< HEAD
 - [Code Quality](../../docs/code-quality-analysis.md)
 - [DRY Violations](../../docs/dry-violations-analysis.md)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Code Quality](../../../docs/code-quality-analysis.md)
-- [DRY Violations](../../../docs/dry-violations-analysis.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ### Spatie Documentation
 - [Laravel Permission](https://spatie.be/docs/laravel-permission/v6/introduction)

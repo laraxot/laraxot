@@ -1,18 +1,6 @@
 # 📚 **Indice Documentazione Modulo User**
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-**Last Update**: 31 Gennaio 2026
->>>>>>> 60a2c9a9 (.)
-=======
-**Last Update**: 31 Gennaio 2026
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 **Status**: ✅ PHPStan Level 10 Compliant
 **Module Version**: 2.5.0
 
@@ -25,40 +13,14 @@
 - 🔐 **[Authentication Flow](./authentication.md)** - Dettagli sul ciclo di vita della sessione.
 - 📜 **[Permissions System](./permissions.md)** - Gestione ruoli e permessi con Spatie.
 - 🎫 **[Passport & SSO](./passport-integration.md)** - Integrazione OAuth2 e Single Sign-On.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - 🧷 **[Passport Model Wrappers](./passport-model-wrappers.md)** - Mappa obbligatoria tra model vendor Passport e wrapper `Oauth*` locali.
 - 🛡️ **[2FA Guide](./2fa-guide.md)** - Implementazione dell'autenticazione a due fattori.
 
-=======
-- 🛡️ **[2FA Guide](./2fa-guide.md)** - Implementazione dell'autenticazione a due fattori.
-
-=======
-- 🧷 **[Passport Model Wrappers](./passport-model-wrappers.md)** - Mappa obbligatoria tra model vendor Passport e wrapper `Oauth*` locali.
-- 🛡️ **[2FA Guide](./2fa-guide.md)** - Implementazione dell'autenticazione a due fattori.
-
->>>>>>> 87273113 (.)
-=======
-- 🧷 **[Passport Model Wrappers](./passport-model-wrappers.md)** - Mappa obbligatoria tra model vendor Passport e wrapper `Oauth*` locali.
-- 🛡️ **[2FA Guide](./2fa-guide.md)** - Implementazione dell'autenticazione a due fattori.
-
->>>>>>> laraxot/dev
 ## 🪮 **Ponytail audit**
 - 📋 **[Over-engineering audit](./ponytail-audit-over-engineering.md)** - Policy stub e contracts inutilizzati.
 - 🗄️ **[Archiviazione Contracts orfani e backup lang](./wiki/decisions/contracts-and-lang-backup-archival-2026-06-30.md)** - `ModelContract`, `PassportHasApiTokensContract` archiviati (`.bak`); 281 backup lang → `lang/{locale}/*.php.bak` in-place ([regola no-Legacy](../../../../docs/wiki/concepts/no-legacy-folders-code.md)).
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-- 🛡️ **[2FA Guide](./2fa-guide.md)** - Implementazione dell'autenticazione a due fattori.
-
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ## 👤 **Profilo & Moderazione**
 - 🧑‍🎨 **[Profile Management](./profile-management.md)** - Gestione estesa dei dati utente (EAV).
 - ⚖️ **[Moderation Strategy](./user-moderation-strategy.md)** - Workflow per approvazione e ban (dentisti, cliniche, utenti).
@@ -68,11 +30,6 @@
 - 🏗️ **[Filament Resources](./filament-resources-updated.md)** - Gestione utenti, ruoli e permessi in v5.
 - 🔑 **[Passport Cluster](./passport-cluster-summary.md)** - Gestione centralizzata delle chiavi API.
 - ⚡ **[Auth Widgets](./login-widget-fix.md)** - Componenti di login/registrazione riutilizzabili.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - 🔐 **[Socialite + Microsoft OAuth](./socialite-microsoft-integration.md)** - Integrazione autenticazione Microsoft (NEW)
 
 ## 🧪 **Qualità e Sviluppo**
@@ -82,44 +39,11 @@
 - 🔬 **[Testing Identity](./testing.md)** - Test di autenticazione e autorizzazione (Pest).
 - 🧬 **[Model Inheritance](./model-inheritance-rules.md)** - Regole per estendere il modello User.
 - 🧪 **PSR-4 Test Helpers** - Nei test trait/helper preferire anonymous classes o fixture dedicate sotto `tests/` con percorso coerente PSR-4.
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-
-## 🧪 **Qualità e Sviluppo**
-- ✅ **[PHPStan Analysis](./phpstan-level10-user-fixes.md)** - Report di conformità Level 10.
-- 🔬 **[Testing Identity](./testing.md)** - Test di autenticazione e autorizzazione (Pest).
-- 🧬 **[Model Inheritance](./model-inheritance-rules.md)** - Regole per estendere il modello User.
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- 🔐 **[Socialite + Microsoft OAuth](./socialite-microsoft-integration.md)** - Integrazione autenticazione Microsoft (NEW)
-
-## 🧪 **Qualità e Sviluppo**
-- ✅ **[PHPStan Analysis](./phpstan-level10-user-fixes.md)** - Report di conformità Level 10.
-- 🚨 **[PHPStan Syntax Blockers 2026-03-10](./phpstan-syntax-blockers-2026-03-10.md)** - Severe syntax errors e merge marker da eliminare prima dell'analisi completa.
-- 🧭 **[IDE Helper Models Wave 2026-03-10](./ide-helper-models-wave-2026-03-10.md)** - Distinzione tra errori sandbox e reali durante `php artisan ide-helper:models -W`.
-- 🔬 **[Testing Identity](./testing.md)** - Test di autenticazione e autorizzazione (Pest).
-- 🧬 **[Model Inheritance](./model-inheritance-rules.md)** - Regole per estendere il modello User.
-- 🧪 **PSR-4 Test Helpers** - Nei test trait/helper preferire anonymous classes o fixture dedicate sotto `tests/` con percorso coerente PSR-4.
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ## 🧹 **Manutenzione**
 - 🗑️ **[Cleanup Plan](./todo.md)** - Strategia per gestire i 550+ documenti accumulati.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ## 📦 **Pacchetti Composer**
 - [Riferimento completo](../../../../docs/composer-packages-reference.md) | [Inventario 312 pacchetti](../../../../docs/architecture/composer-packages-full-inventory.md)
 - `laravel/passport` - OAuth2 API
@@ -128,39 +52,15 @@
 - `jenssegers/agent` - User-Agent
 - `spatie/laravel-personal-data-export` - Export GDPR
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ## 🔗 **Moduli Correlati**
 - [Xot](../../xot/docs/readme.md) - Core per la gestione dei trait `HasTeams`.
 - [Tenant](../../tenant/docs/readme.md) - Risoluzione del Tenant corrente per l'utente.
 
 ---
 *Documentazione conforme agli standard Laraxot - DRY + KISS + SOLID*
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ## Dependency Intelligence
 
 - [Dependency intelligence](dependency-intelligence.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

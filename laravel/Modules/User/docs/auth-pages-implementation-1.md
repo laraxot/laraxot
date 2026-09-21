@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ---
 title: "Implementazione Corretta delle Pagine Auth"
 type: concept
@@ -33,58 +28,7 @@ related:
 - [Volt Errors](./volt-errors-2.md)
 - [Volt Folio Logout](./volt-folio-logout-2.md)
 - [Volt Logout Action](./volt-logout-action-2.md)
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-# Implementazione Corretta delle Pagine Auth
-
-## Collegamenti correlati
-- [Documentazione centrale](../../../docs/readme.md)
-- [Collegamenti documentazione](../../../docs/collegamenti-documentazione.md)
-- [README modulo User](./readme.md)
-- [Convenzioni Path](./path_conventions.md)
-- [Volt Errors](./volt_errors.md)
-- [Volt Folio Logout](./volt_folio_logout.md)
-- [Volt Logout Action](./volt_logout_action.md)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
----
-title: "Implementazione Corretta delle Pagine Auth"
-type: concept
-tags: [auth, pages, implementation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "auth-pages-implementation-1 implementazione corretta delle pagine auth"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./2fa-guide.md"
-  - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
-  - "./actions-path-convention.md"
----
-
-# Implementazione Corretta delle Pagine Auth
-
-## Collegamenti correlati
-- [Documentazione centrale](../../../../docs/readme.md)
-- [Collegamenti documentazione](../../../../docs/collegamenti-documentazione.md)
-- [README modulo User](./readme.md)
-- [Convenzioni Path](./path-conventions-2.md)
-- [Volt Errors](./volt-errors-2.md)
-- [Volt Folio Logout](./volt-folio-logout-2.md)
-- [Volt Logout Action](./volt-logout-action-2.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ## Introduzione
 

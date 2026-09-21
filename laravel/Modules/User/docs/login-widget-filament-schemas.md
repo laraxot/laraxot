@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "LoginWidget Filament Schema JavaScript Errors - Roadmap"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # LoginWidget Filament Schema JavaScript Errors - Roadmap
 
 **Status**: 🔄 In Progress

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Resources Corrections Summary - 2025-01-22
 
 ## Obiettivo
@@ -157,9 +155,6 @@ use Filament\Tables\Actions\ViewAction; // Namespace sbagliato
 - [Resources Array Keys Philosophy](./resources-array-keys-philosophy.md)
 - [Filament Resources Philosophical Debate](./filament-resources-philosophical-debate.md)
 - [Filament Best Practices](./filament-best-practices.md)
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: resources-corrections-summary-
@@ -176,7 +171,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/resources-corrections-summary-.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev

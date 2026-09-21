@@ -227,27 +227,9 @@ When creating new models in User module:
 ## Related Documentation
 
 - [Model Inheritance Rules](./model-inheritance-rules.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [PHPStan Level 10 Full Analysis (Xot Module)](../../Xot/docs/phpstan-level-10-dry-kiss-analysis-2025-10-17.md)
 - [DRY/KISS Model Refactoring 2025-10-15](../../Xot/docs/dry-kiss-model-refactoring-2025-10-15.md)
-=======
-- [PHPStan Level 10 Full Analysis (Xot Module)](../../xot/docs/phpstan-level-10-dry-kiss-analysis-2025-10-17.md)
-- [DRY/KISS Model Refactoring 2025-10-15](../../xot/docs/dry-kiss-model-refactoring-2025-10-15.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [PHPStan Level 10 Full Analysis (Xot Module)](../../xot/docs/phpstan-level-10-dry-kiss-analysis-2025-10-17.md)
-- [DRY/KISS Model Refactoring 2025-10-15](../../xot/docs/dry-kiss-model-refactoring-2025-10-15.md)
-=======
-- [PHPStan Level 10 Full Analysis (Xot Module)](../../Xot/docs/phpstan-level-10-dry-kiss-analysis-2025-10-17.md)
-- [DRY/KISS Model Refactoring 2025-10-15](../../Xot/docs/dry-kiss-model-refactoring-2025-10-15.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [PHPStan Level 10 Full Analysis (Xot Module)](../../Xot/docs/phpstan-level-10-dry-kiss-analysis-2025-10-17.md)
-- [DRY/KISS Model Refactoring 2025-10-15](../../Xot/docs/dry-kiss-model-refactoring-2025-10-15.md)
->>>>>>> laraxot/dev
 
 ---
 

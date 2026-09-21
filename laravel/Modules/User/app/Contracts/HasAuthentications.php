@@ -10,4 +10,6 @@ use Modules\User\Models\Traits\HasAuthenticationLogTrait;
 /**
  * Marker: il modello usa {@see HasAuthenticationLogTrait}.
  */
-interface HasAuthentications extends Authenticatable {}
+interface HasAuthentications extends Authenticatable
+{
+}

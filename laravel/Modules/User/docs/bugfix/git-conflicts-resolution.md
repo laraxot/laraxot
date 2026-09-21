@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Git Conflicts Resolution - 16 Dicembre 2025"
 type: concept
@@ -22,15 +14,7 @@ related:
   - "./multiple-bugs-resolution.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Git Conflicts Resolution - 16 Dicembre 2025
 
 **Data Fix**: 16 Dicembre 2025

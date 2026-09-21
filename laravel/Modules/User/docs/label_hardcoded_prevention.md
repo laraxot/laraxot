@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Prevenzione ->label() Hardcoded - Modulo User"
 module: user
@@ -9,10 +7,6 @@ created: 2026-08-24
 updated: 2026-08-24
 ---
 
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> laraxot/dev
 # Prevenzione ->label() Hardcoded - Modulo User
 
 ## 🚨 **REGOLA ASSOLUTA**
@@ -91,15 +85,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class ExampleResource extends XotBaseResource
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
     {
         return [
             'name' => TextInput::make('name')

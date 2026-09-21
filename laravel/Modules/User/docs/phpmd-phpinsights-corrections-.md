@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # PHPMD e PHP Insights Corrections - 2025-01-22
 
 ## Obiettivo
@@ -103,9 +101,6 @@ I seguenti warning sono accettabili e non richiedono correzione immediata:
 - [Resources Corrections Summary](./resources-corrections-summary-2025-01-22.md)
 - [Quality Tools Report](./quality-tools-report.md)
 - [PHPStan Complete Success](./phpstan-complete-success.md)
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: phpmd-phpinsights-corrections-
@@ -122,7 +117,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/phpmd-phpinsights-corrections-.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev

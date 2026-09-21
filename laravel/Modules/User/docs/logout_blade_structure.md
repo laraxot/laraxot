@@ -115,12 +115,4 @@ class LogoutPage
 
 - [Documentazione Volt](./VOLT_LOGOUT.md)
 - [Best Practices Routing](./ROUTING_BEST_PRACTICES.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Struttura Directory](./DIRECTORY_STRUCTURE_CHECKLIST.md) 
-=======
-- [Struttura Directory](./DIRECTORY_STRUCTURE_CHECKLIST.md) 
->>>>>>> 2024e2e7 (.)
-=======
-- [Struttura Directory](./DIRECTORY_STRUCTURE_CHECKLIST.md) 
->>>>>>> laraxot/dev

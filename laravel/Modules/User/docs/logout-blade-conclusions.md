@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Conclusioni e Raccomandazioni per logout.blade.php
 
 ## Collegamenti correlati
@@ -90,9 +88,6 @@ Se si desidera mantenere un'interazione utente durante il processo di logout, si
 ## Conclusione
 
 L'implementazione raccomandata rappresenta la soluzione più semplice, efficiente e coerente con le convenzioni del progetto SaluteOra per il logout degli utenti. Questa implementazione garantisce una buona esperienza utente e mantiene tutte le necessarie misure di sicurezza.
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: logout-blade-conclusions
@@ -109,7 +104,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/logout-blade-conclusions.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev

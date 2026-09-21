@@ -1,26 +1,11 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 # 👤 User — chi sei, cosa puoi fare, per conto di chi
 
-<<<<<<< .merge_file_2p2dHQ
 [![Dominio](https://img.shields.io/badge/dominio-identit%C3%A0%20%26%20autorizzazione-1565C0.svg)](#)
 [![PHP](https://img.shields.io/badge/PHP-%5E8.3-777BB4.svg)](../../composer.json)
 [![Laravel](https://img.shields.io/badge/Laravel-%5E13.0-FF2D20.svg)](../../composer.json)
 [![Filament](https://img.shields.io/badge/Filament-%5E5.0-ffab00.svg)](../../composer.json)
 [![PHPStan](https://img.shields.io/badge/PHPStan-level%20max%2C%200%20errori-brightgreen.svg)](../../phpstan.neon)
 [![strict_types](https://img.shields.io/badge/declare-strict__types%3D1-informational.svg)](#)
-=======
-[![Domain-Auth](https://img.shields.io/badge/Domain-Auth%20%26%20Teams-1565C0.svg)](#)
-[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
-[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
-[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
-[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
-[![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
-[![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
-[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)](#)
->>>>>>> .merge_file_feUxsu
 
 > Badge **misurati il 2026-09-02**, non dichiarati. PHPStan verificato con
 > `cd laravel && ./vendor/bin/phpstan analyse Modules/User` → `[OK] No errors`.
@@ -77,11 +62,7 @@ Scopo esteso, misure e mosse: [docs/scopo.md](docs/scopo.md).
 - **Estensione** — `BaseUser` e `BaseProfile` sono punti di estensione previsti,
   non classi da copiare.
 
-<<<<<<< .merge_file_2p2dHQ
 ## Filosofia
-=======
-Security-minded dev? Qui si definisce **chi è autorizzato** su FixCity.
->>>>>>> .merge_file_feUxsu
 
 **Un permesso che non esiste nega in silenzio.** `can('scheda.approva')` con un
 permesso mai registrato restituisce `false`: sembra una scelta di sicurezza, è un
@@ -116,15 +97,8 @@ spedisce.
 | Analisi statica | `./vendor/bin/phpstan analyse Modules/User` | `[OK] No errors` |
 | Versioni | `composer.json` | PHP `^8.3`, Laravel `^13.0`, Filament `^5.0` |
 
-<<<<<<< .merge_file_2p2dHQ
 Voci **non** ancora verificate in questa revisione: copertura dei test, PHPMD,
 PHPInsights. Finché non sono misurate, non compaiono come badge.
-=======
-**Modulo** `user` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
->>>>>>> .merge_file_feUxsu
-=======
-=======
->>>>>>> 87273113 (.)
 # 👥 User - Il SISTEMA di GESTIONE UTENTI più AVANZATO! 🔐
 
 [![PHP Version](https://img.shields.io/badge/PHP-8.2+-blue.svg)](https://php.net)
@@ -569,30 +543,6 @@ Questo progetto è distribuito sotto la licenza MIT. Vedi il file [LICENSE](LICE
   <em>Costruito con ❤️ per la comunità Laravel</em>
 </div>
 
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-# 👤 User — chi sei, cosa puoi fare, per conto di chi
-
-<<<<<<< .merge_file_2p2dHQ
-[![Dominio](https://img.shields.io/badge/dominio-identit%C3%A0%20%26%20autorizzazione-1565C0.svg)](#)
-[![PHP](https://img.shields.io/badge/PHP-%5E8.3-777BB4.svg)](../../composer.json)
-[![Laravel](https://img.shields.io/badge/Laravel-%5E13.0-FF2D20.svg)](../../composer.json)
-[![Filament](https://img.shields.io/badge/Filament-%5E5.0-ffab00.svg)](../../composer.json)
-[![PHPStan](https://img.shields.io/badge/PHPStan-level%20max%2C%200%20errori-brightgreen.svg)](../../phpstan.neon)
-[![strict_types](https://img.shields.io/badge/declare-strict__types%3D1-informational.svg)](#)
-=======
-[![Domain-Auth](https://img.shields.io/badge/Domain-Auth%20%26%20Teams-1565C0.svg)](#)
-[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
-[![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
-[![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
-[![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue.svg)](https://www.php-fig.org/psr/psr-12/)
-[![Strict Types](https://img.shields.io/badge/PHP-strict__types-1-informational.svg)](#)
-[![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
-[![FixCity Platform](https://img.shields.io/badge/Platform-FixCity-008758.svg)](#)
->>>>>>> .merge_file_feUxsu
 
 > Badge **misurati il 2026-09-02**, non dichiarati. PHPStan verificato con
 > `cd laravel && ./vendor/bin/phpstan analyse Modules/User` → `[OK] No errors`.
@@ -649,11 +599,7 @@ Scopo esteso, misure e mosse: [docs/scopo.md](docs/scopo.md).
 - **Estensione** — `BaseUser` e `BaseProfile` sono punti di estensione previsti,
   non classi da copiare.
 
-<<<<<<< .merge_file_2p2dHQ
 ## Filosofia
-=======
-Security-minded dev? Qui si definisce **chi è autorizzato** su FixCity.
->>>>>>> .merge_file_feUxsu
 
 **Un permesso che non esiste nega in silenzio.** `can('scheda.approva')` con un
 permesso mai registrato restituisce `false`: sembra una scelta di sicurezza, è un
@@ -688,75 +634,5 @@ spedisce.
 | Analisi statica | `./vendor/bin/phpstan analyse Modules/User` | `[OK] No errors` |
 | Versioni | `composer.json` | PHP `^8.3`, Laravel `^13.0`, Filament `^5.0` |
 
-<<<<<<< .merge_file_2p2dHQ
 Voci **non** ancora verificate in questa revisione: copertura dei test, PHPMD,
 PHPInsights. Finché non sono misurate, non compaiono come badge.
-=======
-**Modulo** `user` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
->>>>>>> .merge_file_feUxsu
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
----
-id: module-user-readme
-title: "User — Identità, Autorizzazione e Team"
-type: module-readme
-category: module-documentation
-module: User
-status: active
-tags: [user, identity, authentication, authorization, teams]
-created: 2026-09-14
-updated: 2026-09-14
-qmd: "user identity authentication roles teams module documentation"
-issues:
-  - "https://github.com/laraxot/module_user_fila5/issues/93"
-discussions:
-  - "https://github.com/laraxot/module_user_fila5/discussions/94"
-related:
-  - "./docs/"
-sources: []
----
-
-# 👤 User
-
-> **Identità, autorizzazione e team.**
-
-Utenti, profili, ruoli, permessi e appartenenza organizzativa.
-
-## Cosa offre
-
-- **Autenticazione** – login e sessioni
-- **RBAC/policy** – controllo accessi granulare
-- **Team/tenant** – organizzazione multi-tenancy
-- **OAuth/Filament** – integrazione social e admin
-
-## Confini architetturali
-
-This module publishes contracts usable by other modules. Logic lives in `Actions`; admin UI follows Laraxot/XotBase.
-
-## Integrazione rapida
-
-```bash
-cd laravel
-php artisan module:list
-./vendor/bin/phpstan analyse Modules/User
-```
-
-See local docs for integration patterns.
-
-## Documentazione
-
-The technical map is in [docs/README.md](./docs/README.md).
-
-- [Story BMAD del modulo](./docs/stories/)
-- [Regole del progetto](../../../docs/wiki/)
-- [README del progetto](../../README.md)
-
-## Qualità e manutenzione
-
-Keep `declare(strict_types=1);` in PHP, respect project PHPStan config, and update docs when contracts evolve.
-
----
-
-**Modulo** `user` · **Laraxot ecosystem** · **Project-agnostic**
->>>>>>> laraxot/dev

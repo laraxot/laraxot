@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> laraxot/dev
 ---
 title: "🔧 PHPStan Fixes - Modulo User - Gennaio 2025"
 type: concept
@@ -23,10 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev
 # 🔧 PHPStan Fixes - Modulo User - Gennaio 2025
 
 **Data**: 27 Gennaio 2025
@@ -240,14 +231,6 @@ $subject = Lang::get('user::email.password_reset_subject');
 ## 📚 **Riferimenti**
 
 ### **Documentazione Correlata**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-- [README.md Modulo User](./README.md)
->>>>>>> 2024e2e7 (.)
-=======
-- [README.md Modulo User](./README.md)
->>>>>>> laraxot/dev
 - [README.md Modulo User](./readme.md)
 - [Authentication Guide](./authentication.md)
 - [Best Practices](./best-practices.md)
@@ -264,12 +247,4 @@ $subject = Lang::get('user::email.password_reset_subject');
 **🐛 PHPStan Level**: 9 ✅
 **🌐 Translation Standards**: IT/EN complete ✅
 **🚀 Performance**: 95/100 score
-<<<<<<< HEAD
-<<<<<<< HEAD
 **✨ Test Coverage**: 85% ✅
-=======
-**✨ Test Coverage**: 85% ✅
->>>>>>> 2024e2e7 (.)
-=======
-**✨ Test Coverage**: 85% ✅
->>>>>>> laraxot/dev

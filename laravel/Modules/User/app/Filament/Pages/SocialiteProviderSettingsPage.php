@@ -82,7 +82,7 @@ class SocialiteProviderSettingsPage extends XotBasePage
 
                         TextInput::make('google.client_id')
                             ->placeholder('xxx.apps.googleusercontent.com')
-                            ->visible(fn (Get $get): bool => $get('google.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('google.enabled')),
 
                         TextInput::make('google.client_secret')
                             ->password()
@@ -91,17 +91,17 @@ class SocialiteProviderSettingsPage extends XotBasePage
                             ->dehydrateStateUsing(fn (mixed $state): string => $this->isMasked($state)
                                  ? $this->configString('services.google.client_secret')
                                  : $this->stringValue($state))
-                            ->visible(fn (Get $get): bool => $get('google.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('google.enabled')),
 
                         TagsInput::make('google.scopes')
                             ->placeholder('openid, email, profile')
-                            ->visible(fn (Get $get): bool => $get('google.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('google.enabled')),
 
                         TextInput::make('google.redirect')
                             ->default(fn () => route('socialite.oauth.callback', 'google'))
                             ->disabled()
                             ->copyable()
-                            ->visible(fn (Get $get): bool => $get('google.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('google.enabled')),
                     ]),
 
                 Section::make('GitHub OAuth')
@@ -113,7 +113,7 @@ class SocialiteProviderSettingsPage extends XotBasePage
 
                         TextInput::make('github.client_id')
                             ->placeholder('Iv23lixxx')
-                            ->visible(fn (Get $get): bool => $get('github.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('github.enabled')),
 
                         TextInput::make('github.client_secret')
                             ->password()
@@ -121,17 +121,17 @@ class SocialiteProviderSettingsPage extends XotBasePage
                             ->dehydrateStateUsing(fn (mixed $state): string => $this->isMasked($state)
                                  ? $this->configString('services.github.client_secret')
                                  : $this->stringValue($state))
-                            ->visible(fn (Get $get): bool => $get('github.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('github.enabled')),
 
                         TagsInput::make('github.scopes')
                             ->placeholder('read:user, user:email')
-                            ->visible(fn (Get $get): bool => $get('github.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('github.enabled')),
 
                         TextInput::make('github.redirect')
                             ->default(fn () => route('socialite.oauth.callback', 'github'))
                             ->disabled()
                             ->copyable()
-                            ->visible(fn (Get $get): bool => $get('github.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('github.enabled')),
                     ]),
 
                 Section::make('Microsoft OAuth')
@@ -143,7 +143,7 @@ class SocialiteProviderSettingsPage extends XotBasePage
 
                         TextInput::make('microsoft.client_id')
                             ->placeholder('xxx-xxx-xxx-xxx')
-                            ->visible(fn (Get $get): bool => $get('microsoft.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('microsoft.enabled')),
 
                         TextInput::make('microsoft.client_secret')
                             ->password()
@@ -151,17 +151,17 @@ class SocialiteProviderSettingsPage extends XotBasePage
                             ->dehydrateStateUsing(fn (mixed $state): string => $this->isMasked($state)
                                  ? $this->configString('services.microsoft.client_secret')
                                  : $this->stringValue($state))
-                            ->visible(fn (Get $get): bool => $get('microsoft.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('microsoft.enabled')),
 
                         TagsInput::make('microsoft.scopes')
                             ->placeholder('User.Read, openid, email')
-                            ->visible(fn (Get $get): bool => $get('microsoft.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('microsoft.enabled')),
 
                         TextInput::make('microsoft.redirect')
                             ->default(fn () => route('socialite.oauth.callback', 'microsoft'))
                             ->disabled()
                             ->copyable()
-                            ->visible(fn (Get $get): bool => $get('microsoft.enabled') === true),
+                            ->visible(fn (Get $get): bool => true === $get('microsoft.enabled')),
                     ]),
             ])
             ->statePath('data');
@@ -265,7 +265,7 @@ class SocialiteProviderSettingsPage extends XotBasePage
     /**
      * Write configuration to secure PHP file.
      *
-     * @param  array<string, mixed>  $config
+     * @param array<string, mixed> $config
      */
     private function writeSocialiteConfig(array $config): void
     {
@@ -290,7 +290,7 @@ class SocialiteProviderSettingsPage extends XotBasePage
     /**
      * Update SocialProvider model active states.
      *
-     * @param  array<string, array<string, mixed>>  $config
+     * @param array<string, array<string, mixed>> $config
      */
     private function updateSocialProviderActiveStates(array $config): void
     {
@@ -347,7 +347,7 @@ class SocialiteProviderSettingsPage extends XotBasePage
         $newSecret = $this->stringValue($newValue);
         $existingSecret = $this->stringValue($existingValue);
 
-        if ($this->isMasked($newSecret) && $existingSecret !== '') {
+        if ($this->isMasked($newSecret) && '' !== $existingSecret) {
             return $existingSecret;
         }
 
@@ -356,7 +356,7 @@ class SocialiteProviderSettingsPage extends XotBasePage
 
     private function configBool(string $key): bool
     {
-        return config($key, false) === true;
+        return true === config($key, false);
     }
 
     private function configString(string $key): string
@@ -365,14 +365,15 @@ class SocialiteProviderSettingsPage extends XotBasePage
     }
 
     /**
-     * @param  array<int, string>  $default
+     * @param array<int, string> $default
+     *
      * @return array<int, string>
      */
     private function configStringList(string $key, array $default): array
     {
         $value = config($key, $default);
 
-        return $this->stringList($value === [] ? $default : $value);
+        return $this->stringList([] === $value ? $default : $value);
     }
 
     private function stringValue(mixed $value): string
@@ -418,7 +419,7 @@ class SocialiteProviderSettingsPage extends XotBasePage
 
         return array_values(array_filter(
             $value,
-            static fn (mixed $item): bool => is_string($item) && $item !== '',
+            static fn (mixed $item): bool => is_string($item) && '' !== $item,
         ));
     }
 }

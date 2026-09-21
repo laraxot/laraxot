@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Guida Rendering Widget Filament 4 - Modulo User"
 type: guide
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Guida Rendering Widget Filament 4 - Modulo User
 
 **Data**: 14 Ottobre 2025  
@@ -416,22 +400,8 @@ class LoginWidget extends XotBaseWidget
 - [Filament 4 Widgets](https://filamentphp.com/docs/4.x/widgets)
 - [Filament 4 Forms](https://filamentphp.com/docs/4.x/forms)
 - [Livewire 3](https://livewire.laravel.com/docs/3.x)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Laraxot Widget Rules](./auth-widget-rules.md)
-=======
-- [Laraxot Widget Rules](./auth_widget_rules.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Laraxot Widget Rules](./auth_widget_rules.md)
-=======
-- [Laraxot Widget Rules](./auth-widget-rules.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Laraxot Widget Rules](./auth-widget-rules.md)
->>>>>>> laraxot/dev
 
 ## 🎯 Conclusione
 

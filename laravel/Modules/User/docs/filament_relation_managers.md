@@ -171,18 +171,6 @@ class TeamsRelationManager extends XotBaseRelationManager
 ## Riferimenti
 
 - [Documentazione Filament RelationManager](https://filamentphp.com/docs/tables#relation-managers)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [XotBaseRelationManager](../xot/docs/filament-relation-managers.md)
 - [Sistema di Traduzione](../xot/docs/translation-system.md)
 - [Best Practices Filament](../xot/docs/filament-best-practices.md) 
-=======
-- [XotBaseRelationManager](../Xot/docs/filament-relation-managers.md)
-- [Sistema di Traduzione](../Xot/docs/translation-system.md)
-- [Best Practices Filament](../Xot/docs/filament-best-practices.md) 
->>>>>>> 2024e2e7 (.)
-=======
-- [XotBaseRelationManager](../Xot/docs/filament-relation-managers.md)
-- [Sistema di Traduzione](../Xot/docs/translation-system.md)
-- [Best Practices Filament](../Xot/docs/filament-best-practices.md) 
->>>>>>> laraxot/dev

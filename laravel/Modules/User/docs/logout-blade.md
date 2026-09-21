@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Analisi Approfondita dell'Errore nell'Implementazione del Logout"
 type: concept
@@ -26,49 +18,17 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Analisi Approfondita dell'Errore nell'Implementazione del Logout
 
 ## Collegamenti correlati
 - [Documentazione centrale](/docs/readme.md)
 - [Collegamenti documentazione](/docs/collegamenti-documentazione.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Implementazione Auth Pages](auth-pages-implementation.md)
 - [Implementazione Logout](logout-blade-implementation-2.md)
 - [Analisi Logout](logout-blade-analysis-3.md)
 - [Conclusioni Logout](logout-blade-conclusions-2.md)
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-- [Implementazione Auth Pages](auth_pages_implementation.md)
-- [Implementazione Logout](logout_blade_implementation.md)
-- [Analisi Logout](logout_blade_analysis.md)
-- [Conclusioni Logout](logout_blade_conclusions.md)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Implementazione Auth Pages](auth-pages-implementation.md)
-- [Implementazione Logout](logout-blade-implementation-2.md)
-- [Analisi Logout](logout-blade-analysis-3.md)
-- [Conclusioni Logout](logout-blade-conclusions-2.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 - [Documentazione Auth Tema One](/laravel/themes/one/docs/auth.md)
 
 ## Errore Fondamentale Identificato
@@ -177,35 +137,11 @@ Questi errori evidenziano l'importanza di:
 ## Collegamenti correlati
 - [Documentazione centrale](/docs/readme.md)
 - [Collegamenti documentazione](/docs/collegamenti-documentazione.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Implementazione Auth Pages](auth-pages-implementation.md)
 - [Implementazione Logout](logout-blade-implementation-2.md)
 - [Analisi Logout](logout-blade-analysis-3.md)
 - [Conclusioni Logout](logout-blade-conclusions-2.md)
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-- [Implementazione Auth Pages](auth_pages_implementation.md)
-- [Implementazione Logout](logout_blade_implementation.md)
-- [Analisi Logout](logout_blade_analysis.md)
-- [Conclusioni Logout](logout_blade_conclusions.md)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Implementazione Auth Pages](auth-pages-implementation.md)
-- [Implementazione Logout](logout-blade-implementation-2.md)
-- [Analisi Logout](logout-blade-analysis-3.md)
-- [Conclusioni Logout](logout-blade-conclusions-2.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 - [Documentazione Auth Tema One](/laravel/themes/one/docs/auth.md)
 
 ## Errore Fondamentale Identificato

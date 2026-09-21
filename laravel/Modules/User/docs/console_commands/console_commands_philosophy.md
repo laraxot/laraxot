@@ -439,15 +439,7 @@ private function getPasswordLegacy(): string
 ```
 
 ## Collegamenti
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [README Comandi Console](readme.md)
-=======
-- [README Comandi Console](README.md)
->>>>>>> 2024e2e7 (.)
-=======
-- [README Comandi Console](README.md)
->>>>>>> laraxot/dev
 - [ChangePasswordCommand](change-password-command.md)
 - [AssignModuleCommand](assign-module-command.md)
 - [Testing Strategy](../testing/console-commands-testing.md)

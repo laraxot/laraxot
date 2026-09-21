@@ -4,14 +4,8 @@ type: index
 tags: [concepts, User]
 created: 2026-05-11
 updated: 2026-08-19
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 updated: 2026-07-27
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 
 # concepts Index — User
@@ -48,14 +42,8 @@ Concetti specifici del modulo User. Carica on-demand via `qmd search` o consulta
 - [notifications-runtime-model.md](notifications-runtime-model.md) — runtime + `NotificationSchema`
 - [notifications-folio-page.md](notifications-folio-page.md) — `route('notifications')`
 - [profiles-ownership-boundary-rule.md](profiles-ownership-boundary-rule.md) — owner <nome progetto>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 - [profiles-ownership-boundary-rule.md](profiles-ownership-boundary-rule.md) — owner Fixcity
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 - [no-notifications-migration-in-user-module](../rules/no-notifications-migration-in-user-module.md)
 
 ## Folio FO

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Correzioni Errori di Sintassi nei File di Traduzione - 2025
 
 ## Data
@@ -128,9 +126,6 @@ find Modules/User/lang -name "*.php" -exec php -l {} \;
 **Data**: 2025-01-15
 **Versione**: 1.0
 **Stato**: Completato
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: translation-syntax-fixes-
@@ -147,7 +142,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/translation-syntax-fixes.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev

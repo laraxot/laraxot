@@ -118,15 +118,7 @@ This document outlines a comprehensive strategy for implementing a generic moder
   {
       protected static ?string $model = User::class;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
       public static function getFormSchema(): array
-=======
-      public function getFormSchema(): array
->>>>>>> 87273113 (.)
-=======
-      public static function getFormSchema(): array
->>>>>>> laraxot/dev
       {
           return [
               'type' => Forms\Components\TextInput::make('type')

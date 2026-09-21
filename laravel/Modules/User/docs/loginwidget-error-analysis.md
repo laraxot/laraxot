@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Analisi Errore LoginWidget: Problema Logico e Soluzione"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Analisi Errore LoginWidget: Problema Logico e Soluzione
 
 ## Problema Identificato
@@ -213,20 +197,6 @@ class LoginWidget extends XotBaseWidget
 ## Riferimenti
 
 - [XotBaseWidget](Modules/Xot/app/Filament/Widgets/XotBaseWidget.php)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Documentazione Widget Structure](modules/user/widgets-structure-2.md)
-=======
-- [Documentazione Widget Structure](modules/user/widgets_structure.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Documentazione Widget Structure](modules/user/widgets_structure.md)
-=======
-- [Documentazione Widget Structure](modules/user/widgets-structure-2.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Documentazione Widget Structure](modules/user/widgets-structure-2.md)
->>>>>>> laraxot/dev
 - [Best Practices Widget Filament](modules/user/best-practices/filament-widgets.md) 

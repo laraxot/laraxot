@@ -13,9 +13,10 @@ use Modules\User\Database\Factories\TenantFactory;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use Modules\User\Tests\TestCase;
-use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\actingAs;
+
+use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 

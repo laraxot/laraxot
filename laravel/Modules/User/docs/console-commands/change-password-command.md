@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "ChangePasswordCommand"
 type: concept
@@ -22,15 +14,7 @@ related:
   - "./readme.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # ChangePasswordCommand
 
 ## Panoramica
@@ -397,17 +381,5 @@ php artisan test --filter=ChangePasswordCommandIntegrationTest
 - ✅ **Gestione Password**: Hash e scadenza
 - ✅ **Eventi**: Dispatched NewPasswordSet
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-*Ultimo aggiornamento: 2025-01-27*
->>>>>>> 60a2c9a9 (.)
-=======
-*Ultimo aggiornamento: 2025-01-27*
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 

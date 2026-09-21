@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\User\Providers\Traits;
 
-use Carbon\CarbonInterval;
 use Illuminate\Support\Facades\Config;
 use Laravel\Passport\Passport;
 use Modules\User\Models\OauthAccessToken;

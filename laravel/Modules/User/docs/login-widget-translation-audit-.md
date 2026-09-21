@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "LoginWidget Translation Audit - Gennaio 2025"
 type: concept
@@ -13,15 +5,9 @@ tags: [login, widget, translation, audit]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "login-widget-translation-audit- loginwidget translation audit - gennaio 2025"
-<<<<<<< HEAD
-<<<<<<< HEAD
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -35,15 +21,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # LoginWidget Translation Audit - Gennaio 2025
 
 ## Obiettivo

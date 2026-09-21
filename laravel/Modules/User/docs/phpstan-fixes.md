@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "User Module - PHPStan Fixes Session 2025-10-01"
 type: concept
@@ -667,9 +664,6 @@ public static function getFormSchema(): array
 - PHPStan Level 10: PASS
 - PHPMD: PASS
 - PHP Insights: PASS
-=======
-=======
->>>>>>> 87273113 (.)
 # PHPStan Fixes and Type System Improvements
 
 ## Overview
@@ -854,12 +848,6 @@ After applying fixes:
 - Safe functions provide exception-throwing alternatives to standard PHP functions
 - All Filament components should extend XotBase classes for consistency
 - Type system improvements enhance code reliability and maintainability 
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-=======
->>>>>>> laraxot/dev
 ---
 title: "PHPStan Compliance — User Module"
 type: concept
@@ -978,8 +966,3 @@ it('test name', function (): void {
 
 - [Pest Scope Type Hints](../../docs/wiki/skills/pest-scope-type-hints.md)
 - [PHPStan Sacred Configuration](../../docs/wiki/rules/phpstan-neon-sacred.md)
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

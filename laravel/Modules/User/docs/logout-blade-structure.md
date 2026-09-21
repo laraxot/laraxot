@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Struttura del Logout Blade nel Theme One
 
 ## Posizione Corretta
@@ -117,17 +115,7 @@ class LogoutPage
 
 - [Documentazione Volt](./VOLT_LOGOUT.md)
 - [Best Practices Routing](./ROUTING_BEST_PRACTICES.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Struttura Directory](./DIRECTORY_STRUCTURE_CHECKLIST.md) 
-=======
-- [Struttura Directory](./DIRECTORY_STRUCTURE_CHECKLIST.md) 
->>>>>>> f548be94 (.)
-=======
-- [Struttura Directory](./DIRECTORY_STRUCTURE_CHECKLIST.md) 
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: logout-blade-structure
@@ -144,8 +132,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/logout-blade-structure.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

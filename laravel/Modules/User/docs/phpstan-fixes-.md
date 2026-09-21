@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> laraxot/dev
 ---
 title: "User Module - PHPStan Fixes Session 2025-10-01"
 type: concept
@@ -23,10 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev
 # User Module - PHPStan Fixes Session 2025-10-01
 
 ## ⚠️ Stato: IN PROGRESS - 95 errori rimanenti
@@ -234,21 +225,9 @@ public function canAccessTenant(\Illuminate\Database\Eloquent\Model $tenant): bo
 ## 🔗 Collegamenti
 
 - [← User Module README](./readme.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [← PHPStan Session Report](../../../docs/phpstan/filament-v4-fixes-session.md)
 - [← Final Report](../../../docs/phpstan/final-report-session-2025-10-01.md)
 - [← Root Documentation](../../../docs/index.md)
-=======
-- [← PHPStan Session Report](../../../../docs/phpstan/filament-v4-fixes-session.md)
-- [← Final Report](../../../../docs/phpstan/final-report-session-2025-10-01.md)
-- [← Root Documentation](../../../../docs/index.md)
->>>>>>> 2024e2e7 (.)
-=======
-- [← PHPStan Session Report](../../../../docs/phpstan/filament-v4-fixes-session.md)
-- [← Final Report](../../../../docs/phpstan/final-report-session-2025-10-01.md)
-- [← Root Documentation](../../../../docs/index.md)
->>>>>>> laraxot/dev
 
 ---
 
@@ -658,13 +637,7 @@ public string $currentState = 'default';
 - [PHPStan Usage](../../xot/docs/phpstan-usage.md)
 - [XotBaseResource Documentation](../../xot/docs/filament/xot-base-resource.md)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 *Ultimo aggiornamento: 2025-01-22*
-=======
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev
 # PHPStan Fixes - Modulo User
 
 ## OauthClientResource.php
@@ -677,15 +650,7 @@ Il metodo `getFormSchema()` deve restituire un array associativo con chiavi stri
 
 ```php
 // ✅ CORRETTO
-<<<<<<< HEAD
-<<<<<<< HEAD
 public static function getFormSchema(): array
-=======
-public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
-=======
-public static function getFormSchema(): array
->>>>>>> laraxot/dev
 {
     return [
         'main_section' => Section::make('OAuth Client Information')

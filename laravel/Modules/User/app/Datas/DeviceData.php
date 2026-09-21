@@ -48,7 +48,7 @@ class DeviceData extends Data
     {
         $headers = collect(request()->header())->mapWithKeys(
             /**
-             * @param  array<int, string|null>  $item
+             * @param array<int, string|null> $item
              */
             static function (array $item, string $key): array {
                 if (Str::startsWith($key, 'X-')) {

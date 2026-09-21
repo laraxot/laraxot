@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "🏛️ FILOSOFIA SPATIE PERMISSION IN LARAXOT"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # 🏛️ FILOSOFIA SPATIE PERMISSION IN LARAXOT
 
 ## 📋 CONTESTO E ANALISI
@@ -255,22 +239,8 @@ use Spatie\Permission\Models\Permission;  // Confuso se si estende
 - [External Package Integration](../Xot/docs/models/model-architecture.md#special-cases)
 - [Class Responsibility Separation](../xot/docs/critical-architecture-rules.md)
 - [Spatie Permission Methods](spatie-permissions-methods.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Roles and Permissions](roles-permissions-3.md)
-=======
-- [Roles and Permissions](roles_permissions.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Roles and Permissions](roles_permissions.md)
-=======
-- [Roles and Permissions](roles-permissions-3.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Roles and Permissions](roles-permissions-3.md)
->>>>>>> laraxot/dev
 
 ## ✅ **VERIFICA STATO ATTUALE**
 

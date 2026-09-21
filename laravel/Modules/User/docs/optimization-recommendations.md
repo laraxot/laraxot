@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Raccomandazioni di Ottimizzazione - Modulo User"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Raccomandazioni di Ottimizzazione - Modulo User
 
 ## 🎯 Stato Attuale e Problemi Critici
@@ -308,36 +292,11 @@ php artisan user:benchmark  # Target: < 100ms
 
 ## Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Analisi Moduli Globale](../../../../docs/project/modules_analysis_and_optimization.md)
 - [Linee Guida Riusabilità](../../../../docs/project/module_reusability_guidelines.md)
 - [Best Practices User](best-practices/)
 
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-- [Analisi Moduli Globale](../../../project_docs/modules_analysis_and_optimization.md)
-- [Linee Guida Riusabilità](../../../project_docs/module_reusability_guidelines.md)
-- [Best Practices User](best-practices/)
-
-*Ultimo aggiornamento: gennaio 2025*
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Analisi Moduli Globale](../../../../docs/project/modules_analysis_and_optimization.md)
-- [Linee Guida Riusabilità](../../../../docs/project/module_reusability_guidelines.md)
-- [Best Practices User](best-practices/)
-
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Raccomandazioni di Ottimizzazione - Modulo User
 
 ## 🎯 Stato Attuale e Problemi Critici
@@ -611,33 +570,8 @@ php artisan user:benchmark  # Target: < 100ms
 
 ## Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Analisi Moduli Globale](../../../../docs/modules_analysis_and_optimization.md)
 - [Linee Guida Riusabilità](../../../../docs/module_reusability_guidelines.md)
 - [Best Practices User](best-practices/)
 
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-- [Analisi Moduli Globale](../../../docs/modules_analysis_and_optimization.md)
-- [Linee Guida Riusabilità](../../../docs/module_reusability_guidelines.md)
-- [Best Practices User](best-practices/)
-
-*Ultimo aggiornamento: gennaio 2025*
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Analisi Moduli Globale](../../../../docs/modules_analysis_and_optimization.md)
-- [Linee Guida Riusabilità](../../../../docs/module_reusability_guidelines.md)
-- [Best Practices User](best-practices/)
-
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

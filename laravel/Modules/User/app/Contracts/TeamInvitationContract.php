@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\User\Contracts;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Carbon;
 
 /**
  * Modules\User\Contracts\TeamInvitationContract.
- *
  *
  * @phpstan-require-extends Model
  *

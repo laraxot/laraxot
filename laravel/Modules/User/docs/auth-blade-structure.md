@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Struttura delle Blade di Autenticazione con Volt"
 type: concept
@@ -26,15 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Struttura delle Blade di Autenticazione con Volt
 
 ## Introduzione
@@ -215,11 +198,6 @@ Ogni azione di autenticazione deve:
 
 ## Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Documentazione Volt](./volt-logout-2.md)
 - [Best Practices Routing](./routing-best-practices-2.md)
 - [Struttura Directory](./directory-structure-checklist.md)
@@ -227,29 +205,8 @@ Ogni azione di autenticazione deve:
 - [Documentazione Volt](./volt-logout.md)
 - [Best Practices Routing](./routing-best-practices.md)
 - [Struttura Directory](./directory-structure-checklist.md)
-<<<<<<< HEAD
 - [Gestione Errori](./error-handling.md) 
-=======
-=======
->>>>>>> 87273113 (.)
 - [Documentazione Volt](./volt_logout.md)
 - [Best Practices Routing](./routing_best_practices.md)
 - [Struttura Directory](./directory_structure_checklist.md)
 - [Gestione Errori](./error_handling.md) 
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Documentazione Volt](./volt-logout-2.md)
-- [Best Practices Routing](./routing-best-practices-2.md)
-- [Struttura Directory](./directory-structure-checklist.md)
-- [Gestione Errori](./error-handling.md) 
-- [Documentazione Volt](./volt-logout.md)
-- [Best Practices Routing](./routing-best-practices.md)
-- [Struttura Directory](./directory-structure-checklist.md)
-- [Gestione Errori](./error-handling.md) 
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-- [Gestione Errori](./error-handling.md) 
->>>>>>> laraxot/dev

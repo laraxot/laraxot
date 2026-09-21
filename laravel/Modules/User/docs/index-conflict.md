@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "User Module Documentation"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # User Module Documentation
 
 ## Overview
@@ -84,35 +68,11 @@ This document serves as the central index for the User module, providing guidanc
 
 ## Links to Related Documentation
 - [BaseUser Model](./baseuser.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Authentication Pages Implementation](./auth-pages-implementation.md)
 - [Profile Management](./profile-management-2.md)
 - [Routing Best Practices](./routing-best-practices-2.md)
 - [Session Management](./session-management-2.md)
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-- [Authentication Pages Implementation](./auth_pages_implementation.md)
-- [Profile Management](./profile_management.md)
-- [Routing Best Practices](./routing_best_practices.md)
-- [Session Management](./session_management.md)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Authentication Pages Implementation](./auth-pages-implementation.md)
-- [Profile Management](./profile-management-2.md)
-- [Routing Best Practices](./routing-best-practices-2.md)
-- [Session Management](./session-management-2.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ## Sottocartelle
 
@@ -130,19 +90,7 @@ This document serves as the central index for the User module, providing guidanc
 ## Note sulla Manutenzione
 Questa documentazione viene aggiornata regolarmente. Prima di apportare modifiche al codice, consultare la documentazione pertinente e aggiornare i documenti correlati.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-Ultimo aggiornamento: 14 Maggio 2025
->>>>>>> 60a2c9a9 (.)
-=======
-Ultimo aggiornamento: 14 Maggio 2025
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 # Indice Documentazione User
 

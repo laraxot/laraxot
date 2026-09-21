@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Team"
 type: concept
@@ -18,15 +10,7 @@ discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Team
 
 Il modello `Team` rappresenta un team nel sistema, implementando l'interfaccia `TeamContract`.

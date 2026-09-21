@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "🔑 SINGLE SIGN-ON (SSO) - GUIDA IMPLEMENTAZIONE"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # 🔑 SINGLE SIGN-ON (SSO) - GUIDA IMPLEMENTAZIONE
 
 **Versione**: 1.0  
@@ -559,15 +543,7 @@ class SsoProviderResource extends XotBaseResource
     protected static ?string $navigationIcon = 'heroicon-o-key';
     protected static ?string $navigationGroup = 'Security';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
     {
         return [
             'name' => Forms\Components\TextInput::make('name')

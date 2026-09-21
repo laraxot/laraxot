@@ -10,13 +10,10 @@ namespace Modules\User\Actions\Socialite;
 
 // use DutchCodingCompany\FilamentSocialite\FilamentSocialite;
 use Filament\Facades\Filament;
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\RedirectResponse;
 use Modules\User\Events\SocialiteUserConnected;
 use Modules\User\Models\SocialiteUser;
 use Spatie\QueueableAction\QueueableAction;
-use Webmozart\Assert\Assert;
 
 class LoginUserAction
 {
@@ -24,8 +21,6 @@ class LoginUserAction
 
     /**
      * Execute the action.
-     *
-     * @return RedirectResponse
      */
     public function execute(SocialiteUser $socialiteUser): RedirectResponse
     {

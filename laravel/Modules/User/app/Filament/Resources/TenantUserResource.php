@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources;
 
-use Filament\Schemas\Components\Component;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\User\Models\TenantUser;
 use Modules\Xot\Filament\Resources\XotBaseResource;

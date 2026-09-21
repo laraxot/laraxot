@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "DRY & KISS Analysis - Modulo User"
 type: concept
@@ -42,9 +39,6 @@ abstract class BaseModel extends XotBaseModel
     {
         return array_merge(parent::casts(), [
             'verified_at' => 'datetime',  // Domain-specific
-=======
-=======
->>>>>>> 87273113 (.)
 # 🐄✨ DRY & KISS Analysis - Modulo User
 
 **Data Analisi:** 2025-10-15  
@@ -151,9 +145,6 @@ abstract class BaseModel extends XotBaseModel
     use RelationX;  // ✅ Specifico User
     
     protected $connection = 'user';
-=======
-=======
->>>>>>> laraxot/dev
 ---
 title: "DRY & KISS Analysis - Modulo User"
 type: concept
@@ -190,37 +181,18 @@ related:
 abstract class BaseModel extends XotBaseModel
 {
     protected $connection = 'user';  // SOLO questa proprietà!
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev
     
     protected function casts(): array
     {
         return array_merge(parent::casts(), [
-<<<<<<< HEAD
-<<<<<<< HEAD
             'id' => 'string',
             'uuid' => 'string',
             'verified_at' => 'datetime',
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-            'verified_at' => 'datetime',  // Domain-specific
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-            'verified_at' => 'datetime',  // Domain-specific
->>>>>>> laraxot/dev
         ]);
     }
 }
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Righe:** 12
 **DRY Level:** ✅ 98%
 
@@ -317,9 +289,6 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 ---
 
 **Conclusione:** Modulo User ha architettura solida, DRY eccellente, e complessità giustificata.
-=======
-=======
->>>>>>> 87273113 (.)
 **OSSERVAZIONE:**
 - ✅ Ridotto da 74 → 40 LOC
 - ✅ Usa XotBaseModel
@@ -568,9 +537,6 @@ find docs/ -name "*old*" -o -name "*backup*" -o -name "*deprecated*"
 **Overall:** Buona architettura ma troppo complesso
 
 🐄 **MU-UU-UU!** 🐄
-=======
-=======
->>>>>>> laraxot/dev
 **Righe:** 12  
 **DRY Level:** ✅ 98%
 
@@ -666,10 +632,4 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 ---
 
 **Conclusione:** Modulo User ha architettura solida, DRY eccellente, e complessità giustificata.
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
 
->>>>>>> 60a2c9a9 (.)
-=======
-
->>>>>>> laraxot/dev

@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Sicurezza nel Processo di Logout"
 type: concept
@@ -26,15 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Sicurezza nel Processo di Logout
 
 ## Analisi della Sicurezza
@@ -207,11 +190,6 @@ Log::channel('auth')->info('Logout effettuato', [
 - Tracking sessioni anomale
 
 ## Collegamenti Correlati
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Best Practices di Sicurezza](./security_best_practices.md)
 - [Gestione Sessione](./session-management-2.md)
 - [Documentazione Volt](./volt-blade-implementation-3.md)
@@ -219,29 +197,8 @@ Log::channel('auth')->info('Logout effettuato', [
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
 - [Gestione Sessione](./session-management.md)
 - [Documentazione Volt](./volt-blade-implementation.md)
-<<<<<<< HEAD
 - [Tema One Documentation](../../Themes/One/docs/README.md) 
-=======
-=======
->>>>>>> 87273113 (.)
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
 - [Gestione Sessione](./SESSION_MANAGEMENT.md)
 - [Documentazione Volt](./VOLT_BLADE_IMPLEMENTATION.md)
 - [Tema One Documentation](../../Themes/One/docs/README.md) 
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-- [Best Practices di Sicurezza](./security_best_practices.md)
-- [Gestione Sessione](./session-management-2.md)
-- [Documentazione Volt](./volt-blade-implementation-3.md)
-- [Tema One Documentation](../../themes/one/docs/readme.md) 
-- [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
-- [Gestione Sessione](./session-management.md)
-- [Documentazione Volt](./volt-blade-implementation.md)
-- [Tema One Documentation](../../Themes/One/docs/README.md) 
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-- [Tema One Documentation](../../Themes/One/docs/README.md) 
->>>>>>> laraxot/dev

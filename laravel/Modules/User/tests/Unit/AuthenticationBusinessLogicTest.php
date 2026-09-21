@@ -209,16 +209,16 @@ describe('Authentication Business Logic', function (): void {
             Assert::assertNotSame('', $user['email']);
 
             $profileScore = 0;
-            if ($user['name'] !== '') {
+            if ('' !== $user['name']) {
                 $profileScore += 25;
             }
-            if ($user['email'] !== '') {
+            if ('' !== $user['email']) {
                 $profileScore += 25;
             }
             if ($user['email_verified_at'] instanceof Carbon) {
                 $profileScore += 25;
             }
-            if ($user['profile_photo_path'] !== '') {
+            if ('' !== $user['profile_photo_path']) {
                 $profileScore += 25;
             }
 
@@ -395,7 +395,7 @@ describe('Authentication Business Logic', function (): void {
         it('validates push notification setup', function (): void {
             $device = authBizDeviceData();
 
-            if ($device['device_type'] === 'mobile') {
+            if ('mobile' === $device['device_type']) {
                 $pushToken = $device['push_token'];
                 Assert::assertGreaterThan(20, strlen($pushToken));
             }

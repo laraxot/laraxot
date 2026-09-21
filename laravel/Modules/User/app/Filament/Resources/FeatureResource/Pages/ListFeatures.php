@@ -12,6 +12,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 class ListFeatures extends XotBaseListRecords
 {
     protected static string $resource = FeatureResource::class;
+
     public function getTableColumns(): array
     {
         return [

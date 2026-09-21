@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Pattern di Ereditarietà per Pacchetti Esterni"
 type: pattern
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Pattern di Ereditarietà per Pacchetti Esterni
 
 ## 📋 Panoramica
@@ -176,37 +160,15 @@ use RelationX;  // ✅ OK - Enhancement Laraxot
 ## 📚 Riferimenti
 
 - [Filosofia Spatie Permission](./spatie-permission-philosophy.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Architettura Modelli](../Xot/docs/models/model-architecture.md)
 - [Regole Critiche Architettura](../Xot/docs/critical-architecture-rules.md)
-=======
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Architettura Modelli](../Xot/docs/models/model-architecture.md)
-- [Regole Critiche Architettura](../Xot/docs/critical-architecture-rules.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Architettura Modelli](../Xot/docs/models/model-architecture.md)
-- [Regole Critiche Architettura](../Xot/docs/critical-architecture-rules.md)
->>>>>>> laraxot/dev
 - [Architettura Modelli](../xot/docs/models/model-architecture.md)
 - [Regole Critiche Architettura](../xot/docs/critical-architecture-rules.md)
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 *Pattern verificato e documentato: 2025-01-XX*
-=======
-*Pattern verificato e documentato: 2025-01-XX*
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
 =======
 *Pattern verificato e documentato: 2025-01-XX*

@@ -392,8 +392,6 @@ php artisan vendor:publish --tag=user-assets
 ---
 
 **Ultimo Aggiornamento**: 2025-11-11
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Versione Architettura**: 1.0
 
 ---
@@ -814,9 +812,3 @@ php artisan vendor:publish --tag=user-assets
 ---
 
 **Versione Architettura**: 1.0
-=======
-**Versione Architettura**: 1.0
->>>>>>> 60a2c9a9 (.)
-=======
-**Versione Architettura**: 1.0
->>>>>>> laraxot/dev

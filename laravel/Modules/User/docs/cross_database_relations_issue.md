@@ -68,30 +68,14 @@ Sostituire `belongsToManyX` con relazioni `belongsToMany` esplicite per cross-da
 
 ### Test 1: Verifica Relazione Base
 ```php
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Xot\Contracts\UserContract;
-=======
-use Modules\User\Models\User;
->>>>>>> f548be94 (.)
-=======
-use Modules\User\Models\User;
->>>>>>> laraxot/dev
 $user = User::find('0199690d-481a-7101-ac17-7518b3959314');
 $tenants = $user->tenants; // Dovrebbe funzionare senza errori
 ```
 
 ### Test 2: Verifica Cross-Database Query
 ```php
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Xot\Contracts\UserContract;
-=======
-use Modules\User\Models\User;
->>>>>>> f548be94 (.)
-=======
-use Modules\User\Models\User;
->>>>>>> laraxot/dev
 use Modules\Quaeris\Models\Customer;
 $user = User::with('tenants')->find('0199690d-481a-7101-ac17-7518b3959314');
 // Verifica che la query sia corretta
@@ -124,15 +108,7 @@ if ($pivotDbName !== $dbName || $relatedDbName !== $dbName) {
 ```bash
 # Test HasTenants trait
 php artisan tinker --execute="
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Xot\Contracts\UserContract;
-=======
-use Modules\User\Models\User;
->>>>>>> f548be94 (.)
-=======
-use Modules\User\Models\User;
->>>>>>> laraxot/dev
 \$user = User::find('0199690d-481a-7101-ac17-7518b3959314');
 \$tenants = \$user->tenants; // ✅ Funziona
 echo 'HasTenants works! Count: ' . \$tenants->count();
@@ -140,15 +116,7 @@ echo 'HasTenants works! Count: ' . \$tenants->count();
 
 # Test getTenants method
 php artisan tinker --execute="
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Xot\Contracts\UserContract;
-=======
-use Modules\User\Models\User;
->>>>>>> f548be94 (.)
-=======
-use Modules\User\Models\User;
->>>>>>> laraxot/dev
 \$user = User::find('0199690d-481a-7101-ac17-7518b3959314');
 \$tenants = \$user->getTenants(app('filament')->getPanel('quaeris::admin'));
 echo 'getTenants works! Count: ' . count(\$tenants); // ✅ Funziona

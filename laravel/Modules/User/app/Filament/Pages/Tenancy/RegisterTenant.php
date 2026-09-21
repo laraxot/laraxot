@@ -67,7 +67,7 @@ class RegisterTenant extends XotBaseRegisterTenant
     }
 
     /**
-     * @param  array<string, string|int|bool|null>  $data
+     * @param array<string, string|int|bool|null> $data
      */
     protected function handleRegistration(array $data): Model
     {
@@ -85,7 +85,7 @@ class RegisterTenant extends XotBaseRegisterTenant
      */
     private function resolveResourceClass(): string
     {
-        if ($this->resourceClass !== null) {
+        if (null !== $this->resourceClass) {
             return $this->resourceClass;
         }
 

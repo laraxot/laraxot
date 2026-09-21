@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Filosofia dei Console Commands in Laraxot (Standard Supremo)"
 type: concept
@@ -26,15 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Filosofia dei Console Commands in Laraxot (Standard Supremo)
 
 ## Filosofia Fondamentale
@@ -236,30 +219,10 @@ foreach ($types as $key => $type) {
 ## Collegamenti
 - [ChangeTypeCommand.php](../app/Console/Commands/ChangeTypeCommand.php) - Il comando supremo di riferimento
 - [README.md](readme.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [.cursor/rules/console-commands-philosophy.mdc](../../../.cursor/rules/console-commands-philosophy.mdc)
 - [.windsurf/rules/console-commands-philosophy.mdc](../../../.windsurf/rules/console-commands-philosophy.mdc)
 
-=======
-=======
->>>>>>> 87273113 (.)
 - [.cursor/rules/console_commands_philosophy.mdc](../../../.cursor/rules/console_commands_philosophy.mdc)
 - [.windsurf/rules/console_commands_philosophy.mdc](../../../.windsurf/rules/console_commands_philosophy.mdc)
 
 *Ultimo aggiornamento: giugno 2025 - Standard estratto dal capolavoro ChangeTypeCommand.php*
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [.cursor/rules/console-commands-philosophy.mdc](../../../.cursor/rules/console-commands-philosophy.mdc)
-- [.windsurf/rules/console-commands-philosophy.mdc](../../../.windsurf/rules/console-commands-philosophy.mdc)
-
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-- [.cursor/rules/console-commands-philosophy.mdc](../../../.cursor/rules/console-commands-philosophy.mdc)
-- [.windsurf/rules/console-commands-philosophy.mdc](../../../.windsurf/rules/console-commands-philosophy.mdc)
-
->>>>>>> laraxot/dev

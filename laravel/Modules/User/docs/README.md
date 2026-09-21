@@ -113,7 +113,6 @@ Rule: never commit files with conflict markers. Fix immediately when found.
 - [On-Demand Pattern](./on-demand-pattern.md) — Pattern per caricamento efficiente
 - [QMD Setup](./qmd-setup.md) — Configurazione ricerca locale
 - [Performance](./performance-optimization.md) — Metriche e best practice
-<<<<<<< HEAD
 - [Project Structure](./project-structure.md) — Directory layout
 
 ---
@@ -2322,6 +2321,3 @@ See [ROADMAP.md](./roadmap.md) for details.
 **PHPStan**: Level 10 ✅
 **Test Coverage**: 88%+ ✅
 **Security**: OWASP Compliant ✅
-=======
-- [Project Structure](./project-structure.md) — Directory layout
->>>>>>> laraxot/dev

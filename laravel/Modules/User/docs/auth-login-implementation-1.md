@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Implementazione Corretta della Pagina di Login"
 type: concept
@@ -26,46 +18,16 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Implementazione Corretta della Pagina di Login
 
 ## Collegamenti correlati
 - [Documentazione centrale](/docs/readme.md)
 - [Collegamenti documentazione](/docs/collegamenti-documentazione.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Regole Traduzioni](/laravel/modules/lang/docs/translation-keys-rules-2.md)
 - [Implementazione Auth Pages](/laravel/modules/user/docs/auth-pages-implementation.md)
 - [Volt Folio Auth](/laravel/modules/user/docs/volt-folio-auth-implementation-3.md)
-=======
-- [Regole Traduzioni](/laravel/modules/lang/docs/translation_keys_rules.md)
-- [Implementazione Auth Pages](/laravel/modules/user/docs/auth_pages_implementation.md)
-- [Volt Folio Auth](/laravel/modules/user/docs/volt_folio_auth_implementation.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Regole Traduzioni](/laravel/modules/lang/docs/translation_keys_rules.md)
-- [Implementazione Auth Pages](/laravel/modules/user/docs/auth_pages_implementation.md)
-- [Volt Folio Auth](/laravel/modules/user/docs/volt_folio_auth_implementation.md)
-=======
-- [Regole Traduzioni](/laravel/modules/lang/docs/translation-keys-rules-2.md)
-- [Implementazione Auth Pages](/laravel/modules/user/docs/auth-pages-implementation.md)
-- [Volt Folio Auth](/laravel/modules/user/docs/volt-folio-auth-implementation-3.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Regole Traduzioni](/laravel/modules/lang/docs/translation-keys-rules-2.md)
-- [Implementazione Auth Pages](/laravel/modules/user/docs/auth-pages-implementation.md)
-- [Volt Folio Auth](/laravel/modules/user/docs/volt-folio-auth-implementation-3.md)
->>>>>>> laraxot/dev
 - [Componenti Filament](/docs/rules/filament-components.md)
 
 ## Analisi e Miglioramenti della Pagina di Login

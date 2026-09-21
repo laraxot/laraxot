@@ -55,15 +55,7 @@ This document outlines the strategy for implementing dentist moderation within t
   {
       protected static ?string $model = User::class;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
       public static function getFormSchema(): array
-=======
-      public function getFormSchema(): array
->>>>>>> 87273113 (.)
-=======
-      public static function getFormSchema(): array
->>>>>>> laraxot/dev
       {
           return [
               'moderation_status' => Forms\Components\Select::make('moderation_status')

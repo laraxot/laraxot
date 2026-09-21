@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Comandi Console - Modulo User"
 type: concept
@@ -22,15 +14,7 @@ related:
   - "./console-commands.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Comandi Console - Modulo User
 
 ## Panoramica
@@ -238,22 +222,8 @@ Modules/User/
 ```
 
 ## Collegamenti
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Console Commands Philosophy](console-commands-philosophy.md)
-=======
-- [Console Commands Philosophy](console_commands_philosophy.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Console Commands Philosophy](console_commands_philosophy.md)
-=======
-- [Console Commands Philosophy](console-commands-philosophy.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Console Commands Philosophy](console-commands-philosophy.md)
->>>>>>> laraxot/dev
 - [User Models](../models/readme.md)
 - [Role Management](../models/role-management.md)
 - [Password Management](../password.md)
@@ -291,16 +261,4 @@ Modules/User/
 - [ ] Logging strutturato
 - [ ] Metriche di utilizzo
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-*Ultimo aggiornamento: 2025-01-27* 
->>>>>>> 60a2c9a9 (.)
-=======
-*Ultimo aggiornamento: 2025-01-27* 
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

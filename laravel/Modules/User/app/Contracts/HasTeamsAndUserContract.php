@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\User\Contracts;
 
-use Modules\User\Models\Role;
 use Modules\User\Models\Team;
 use Modules\Xot\Contracts\UserContract;
 
@@ -13,8 +12,6 @@ use Modules\Xot\Contracts\UserContract;
  */
 interface HasTeamsAndUserContract extends HasTeamsContract, UserContract
 {
-    /**
-     */
     public function canRemoveTeamMember(Team $team, HasTeamsContract $user): bool;
 
     /**

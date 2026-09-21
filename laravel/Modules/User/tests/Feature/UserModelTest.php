@@ -343,8 +343,8 @@ describe('User Model', function (): void {
         $verifiedUsers = User::whereNotNull('email_verified_at')->get();
         $unverifiedUsers = User::whereNull('email_verified_at')->get();
 
-        Assert::assertSame(true, $verifiedUsers->every(fn (User $user) => $user->email_verified_at !== null));
-        Assert::assertSame(true, $unverifiedUsers->every(fn (User $user) => $user->email_verified_at === null));
+        Assert::assertSame(true, $verifiedUsers->every(fn (User $user) => null !== $user->email_verified_at));
+        Assert::assertSame(true, $unverifiedUsers->every(fn (User $user) => null === $user->email_verified_at));
     });
 
     test('can filter by language', function (): void {
@@ -354,7 +354,7 @@ describe('User Model', function (): void {
         $italianUsers = User::where('lang', 'it')->get();
         $englishUsers = User::where('lang', 'en')->get();
 
-        Assert::assertSame(true, $italianUsers->every(fn (User $user) => $user->lang === 'it'));
-        Assert::assertSame(true, $englishUsers->every(fn (User $user) => $user->lang === 'en'));
+        Assert::assertSame(true, $italianUsers->every(fn (User $user) => 'it' === $user->lang));
+        Assert::assertSame(true, $englishUsers->every(fn (User $user) => 'en' === $user->lang));
     });
 });

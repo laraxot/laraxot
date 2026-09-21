@@ -77,7 +77,7 @@ class RegisterWidget extends XotBaseSchemaWidget
             $email = is_string($data['email'] ?? null) ? trim($data['email']) : '';
 
             $user = $userClass::create(array_merge($data, [
-                'name' => $name !== '' ? $name : $email,
+                'name' => '' !== $name ? $name : $email,
                 'email_verified_at' => null,
             ]));
 

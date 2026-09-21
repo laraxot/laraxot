@@ -21,7 +21,7 @@ beforeEach(function (): void {
     TestCase::skipUnlessUserColumn('users', 'two_factor_confirmed_at');
 
     TestCase::$user = TestCase::createTestUser();
-    TestCase::$google2fa = new Google2FA;
+    TestCase::$google2fa = new Google2FA();
 });
 
 describe('Two Factor Service', function (): void {

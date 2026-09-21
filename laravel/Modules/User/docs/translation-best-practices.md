@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Best Practices per le Traduzioni"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Best Practices per le Traduzioni
 
 ## Principi Generali
@@ -179,25 +163,7 @@ Seguire queste best practices aiuta a mantenere un sistema di traduzioni efficie
 ## Collegamenti Correlati
 - [Documentazione Laravel Localization](https://laravel.com/docs/localization)
 - [Best Practices di Codice](./CODE_BEST_PRACTICES.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Struttura Moduli](./module-structure.md) 
 - [Best Practices di Codice](./code_best_practices.md)
 - [Struttura Moduli](./module-structure-2.md) 
-=======
-- [Struttura Moduli](./MODULE_STRUCTURE.md) 
->>>>>>> f548be94 (.)
-=======
-- [Struttura Moduli](./MODULE_STRUCTURE.md) 
-=======
-- [Struttura Moduli](./module-structure.md) 
-- [Best Practices di Codice](./code_best_practices.md)
-- [Struttura Moduli](./module-structure-2.md) 
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Struttura Moduli](./module-structure.md) 
-- [Best Practices di Codice](./code_best_practices.md)
-- [Struttura Moduli](./module-structure-2.md) 
->>>>>>> laraxot/dev

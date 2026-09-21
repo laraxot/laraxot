@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Migration Safety Rules - NEVER Destroy Data
 
 ## Regola ASSOLUTA
@@ -289,9 +287,6 @@ Quando un altro agente AI incontra problemi di schema:
 
 **Creato da**: AI Agent Session 2026-03-12  
 **Per**: Preservazione dati e comunicazione inter-agent
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: migration-safety-rules
@@ -303,7 +298,3 @@ related:
 ---
 
 See canonical documentation: ../../../../Themes/docs/shared-components/migration-safety-rules-1.md
-<<<<<<< HEAD
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

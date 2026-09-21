@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "🛡️ Best Practices per Proprietà Eloquent"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./dependency-rules.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # 🛡️ Best Practices per Proprietà Eloquent
 
 ## ⚠️ Regola Critica: property_exists() VIETATO

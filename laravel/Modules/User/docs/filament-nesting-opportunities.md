@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Filament 5.x Nested Resources - Opportunità di Applicazione"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Filament 5.x Nested Resources - Opportunità di Applicazione
 
 **Data Analisi**: [DATE]  
@@ -93,15 +77,7 @@ class TeamInvitationResource extends XotBaseResource
 {
     protected static ?string $parentResource = TeamResource::class;
     
-<<<<<<< HEAD
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
     {
         return [
             'email' => TextInput::make('email')
@@ -207,15 +183,7 @@ class TeamInvitationResource extends XotBaseResource
 {
     protected static ?string $parentResource = TeamResource::class;
     
-<<<<<<< HEAD
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
     {
         return [
             'email' => TextInput::make('email')

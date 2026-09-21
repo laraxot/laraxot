@@ -1,6 +1,4 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
 title: "Risoluzione Conflitti Git - Modulo User (2025-01-27)"
 type: concept
 tags: [git, conflicts, resolution]
@@ -9,16 +7,6 @@ updated: 2026-07-14
 qmd: "git-conflicts-resolution-1 risoluzione conflitti git - modulo user (2025-01-27)"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-=======
-module: theme
-topic: git-conflicts-resolution-1
-canonical: ../../../Themes/docs/shared-components/git-conflicts-resolution-.md
->>>>>>> 87273113 (.)
-=======
-module: theme
-topic: git-conflicts-resolution-1
-canonical: ../../../Themes/docs/shared-components/git-conflicts-resolution-.md
->>>>>>> laraxot/dev
 related:
   - "./00-index-1.md"
   - "./00-index.md"
@@ -30,8 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Risoluzione Conflitti Git - Modulo User (2025-01-27)
 
 ## Data
@@ -342,9 +328,3 @@ La risoluzione dei conflitti Git ha migliorato significativamente la stabilità 
 - [ ] Creare test di regressione per prevenire conflitti futuri
 
 --- 
-=======
-See canonical documentation: ../../../Themes/docs/shared-components/git-conflicts-resolution-.md
->>>>>>> 87273113 (.)
-=======
-See canonical documentation: ../../../Themes/docs/shared-components/git-conflicts-resolution-.md
->>>>>>> laraxot/dev

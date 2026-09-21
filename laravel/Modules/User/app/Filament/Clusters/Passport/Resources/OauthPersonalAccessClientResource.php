@@ -10,8 +10,6 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Schemas\Components\Component;
-use Filament\Schemas\Components\Section;
 use Filament\Resources\Pages\PageRegistration;
 use Filament\Tables;
 use Filament\Tables\Table;

@@ -1,15 +1,7 @@
 # User Module - Business Logic Analysis
 
 ## Overview
-<<<<<<< HEAD
-<<<<<<< HEAD
 The User module provides comprehensive user management, authentication, authorization, and team-based access control for the Quaeris platform. It serves as the foundation for all user-related operations across the entire application.
-=======
-The User module provides comprehensive user management, authentication, authorization, and team-based access control for the healthcare_app platform. It serves as the foundation for all user-related operations across the entire application.
->>>>>>> 2024e2e7 (.)
-=======
-The User module provides comprehensive user management, authentication, authorization, and team-based access control for the healthcare_app platform. It serves as the foundation for all user-related operations across the entire application.
->>>>>>> laraxot/dev
 
 ## Business Purpose
 - **Authentication**: Secure user authentication with multiple options
@@ -139,15 +131,7 @@ CREATE INDEX idx_users_password_expires ON users(password_expires_at);
 #### 1. Enhanced User Management
 ```php
 // Advanced user form with Filament 4
-<<<<<<< HEAD
-<<<<<<< HEAD
 public static function getFormSchema(): array
-=======
-public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
-=======
-public static function getFormSchema(): array
->>>>>>> laraxot/dev
 {
     return [
         Forms\Components\Tabs::make('User Information')

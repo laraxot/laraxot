@@ -37,7 +37,6 @@ return new class extends XotBaseMigration {
             if ($this->hasColumn('personal_team')) {
                 $table->boolean('personal_team')->default(false)->change();
             }
-
         });
     }
 };

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: terms-and-conditions
@@ -18,11 +13,7 @@ related:
   - "./phpstan.md"
 ---
 
-<<<<<<< HEAD
 See canonical documentation: ../../../../Themes/docs/shared-components/terms-and-conditions-2.md
-=======
-=======
->>>>>>> 87273113 (.)
 # terms_and_conditions
 
 <!-- Contenuto migrato da _docs/terms_and_conditions.txt -->
@@ -35,28 +26,3 @@ https://github.com/nowendwell/laravel-terms
 https://dev.to/filamentmastery/adding-terms-and-conditions-acceptance-to-filament-registration-2nhc
 
 
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
----
-module: theme
-topic: terms-and-conditions
-canonical: ../../../../Themes/docs/shared-components/terms-and-conditions-2.md
-related:
-  - "./eav.md"
-  - "./filament.md"
-  - "./gdpr.md"
-  - "./json.md"
-  - "./links.md"
-  - "./passport.md"
-  - "./payment.md"
-  - "./phpstan.md"
----
-
-See canonical documentation: ../../../../Themes/docs/shared-components/terms-and-conditions-2.md
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-See canonical documentation: ../../../../Themes/docs/shared-components/terms-and-conditions-2.md
->>>>>>> laraxot/dev

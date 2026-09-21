@@ -202,12 +202,4 @@ foreach ($types as $key => $type) {
 - [.cursor/rules/console_commands_philosophy.mdc](../../../.cursor/rules/console_commands_philosophy.mdc)
 - [.windsurf/rules/console_commands_philosophy.mdc](../../../.windsurf/rules/console_commands_philosophy.mdc)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 *Ultimo aggiornamento: giugno 2025 - Standard estratto dal capolavoro ChangeTypeCommand.php*
-=======
-*Ultimo aggiornamento: giugno 2025 - Standard estratto dal capolavoro ChangeTypeCommand.php*
->>>>>>> 2024e2e7 (.)
-=======
-*Ultimo aggiornamento: giugno 2025 - Standard estratto dal capolavoro ChangeTypeCommand.php*
->>>>>>> laraxot/dev

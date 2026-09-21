@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Analisi metodi duplicati in HasTeams (trait)"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Analisi metodi duplicati in HasTeams (trait)
 
 ## Introduzione
@@ -109,38 +93,12 @@ Nel trait `HasTeams` sono presenti diversi metodi con lo stesso nome ma implemen
 - [ ] Verificare la compatibilità con i moduli che usano il trait
 
 ## Collegamenti correlati
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Indice documentazione User](./index.md)
 - [Modello User](./models/user.md)
 - [Best practices trait](./best-practices-traits.md)
 - [Refactor checklist](./refactor-checklist.md)
 - [XotData helper](../../xot/docs/standards/readme.md)
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-- [Indice documentazione User](./INDEX.md)
-- [Modello User](./Models/User.md)
-- [Best practices trait](./best-practices-traits.md)
-- [Refactor checklist](./refactor-checklist.md)
-- [XotData helper](../../Xot/docs/standards/README.md)
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-- [Indice documentazione User](./index.md)
-- [Modello User](./models/user.md)
-- [Best practices trait](./best-practices-traits.md)
-- [Refactor checklist](./refactor-checklist.md)
-- [XotData helper](../../xot/docs/standards/readme.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ---
 

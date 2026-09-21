@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Implementazione Login Personalizzato"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 https://ajaxray.com/blog/lets-beautify-filament-3-login-page/
 
 https://www.codef.site/blog/laravel/how-to-customize-laravel-filament-login-page
@@ -50,22 +34,8 @@ https://v2.filamentphp.com/tricks/customizing-filament-breezy-registration-profi
 > - [Passport Integration](passport.md) - Integrazione OAuth2 con Passport
 > - [Socialite Integration](socialite.txt) - Integrazione con provider social
 > - [Two Factor Authentication](two_factor.txt) - Autenticazione a due fattori
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 > - [Filament Best Practices](filament_best_practices.md) - Best practices Filament
-=======
-> - [Filament Best Practices](FILAMENT_BEST_PRACTICES.md) - Best practices Filament
->>>>>>> f548be94 (.)
-=======
-> - [Filament Best Practices](FILAMENT_BEST_PRACTICES.md) - Best practices Filament
-=======
-> - [Filament Best Practices](filament_best_practices.md) - Best practices Filament
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-> - [Filament Best Practices](filament_best_practices.md) - Best practices Filament
->>>>>>> laraxot/dev
 > - [User Profile Models](user_profile_models.md) - Modelli del profilo utente
 
 ## Implementazione con Filament
@@ -129,22 +99,8 @@ class LoginWidget extends XotBaseWidget
 ## Collegamenti Utili
 
 - [Documentazione Filament](https://filamentphp.com/docs)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Best Practices Filament](filament_best_practices.md)
-=======
-- [Best Practices Filament](FILAMENT_BEST_PRACTICES.md)
->>>>>>> f548be94 (.)
-=======
-- [Best Practices Filament](FILAMENT_BEST_PRACTICES.md)
-=======
-- [Best Practices Filament](filament_best_practices.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Best Practices Filament](filament_best_practices.md)
->>>>>>> laraxot/dev
 - [User Profile Models](user_profile_models.md)
 
 

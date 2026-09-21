@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Correzione PHPStan - Relationship Type Hints"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Correzione PHPStan - Relationship Type Hints
 
 ## 🚨 Errore PHPStan Risolto
@@ -114,15 +98,7 @@ Per **tutte le relazioni Eloquent** in trait e modelli:
 - [PHPStan Template Covariance](https://phpstan.org/blog/whats-up-with-template-covariant)
 - [Eloquent Relationships](https://laravel.com/project_docs/12.x/eloquent-relationships)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 *Ultimo aggiornamento: gennaio 2025*
-=======
-*Ultimo aggiornamento: gennaio 2025*
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
 =======
 *Ultimo aggiornamento: gennaio 2025*

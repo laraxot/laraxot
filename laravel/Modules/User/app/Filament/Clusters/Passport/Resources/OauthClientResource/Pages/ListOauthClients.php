@@ -114,7 +114,7 @@ class ListOauthClients extends XotBaseListRecords
     }
 
     /**
-     * @param  array<array-key, mixed>  $data
+     * @param array<array-key, mixed> $data
      */
     private static function dataString(array $data, string $key, string $default = ''): string
     {

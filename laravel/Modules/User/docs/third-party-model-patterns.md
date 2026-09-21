@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "User Module - Third-Party Model Patterns"
 type: pattern
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # User Module - Third-Party Model Patterns
 
 ## Spatie Permission Package Integration
@@ -262,23 +246,9 @@ $this->tableCreate(function (Blueprint $table) {
 - [Package Configuration](https://spatie.be/docs/laravel-permission/v5/installation-setup)
 
 ### Laraxot Philosophy
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Third-Party Model Inheritance](../Xot/docs/third-party-model-inheritance-philosophy.md)
 - [Model Architecture](../Xot/docs/models/MODEL_ARCHITECTURE.md)
-=======
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Third-Party Model Inheritance](../Xot/docs/third-party-model-inheritance-philosophy.md)
-- [Model Architecture](../Xot/docs/models/MODEL_ARCHITECTURE.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Third-Party Model Inheritance](../Xot/docs/third-party-model-inheritance-philosophy.md)
-- [Model Architecture](../Xot/docs/models/MODEL_ARCHITECTURE.md)
->>>>>>> laraxot/dev
 - [Third-Party Model Inheritance](../xot/docs/third-party-model-inheritance-philosophy.md)
 - [Model Architecture](../xot/docs/models/model_architecture.md)
 
@@ -286,15 +256,7 @@ $this->tableCreate(function (Blueprint $table) {
 
 **Integration Status**: ✅ Fully compatible with Spatie package architecture
 **Maintenance**: Low - leverages package maintenance
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Security**: High - benefits from package security updates
-=======
-**Security**: High - benefits from package security updates
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
 =======
 **Security**: High - benefits from package security updates

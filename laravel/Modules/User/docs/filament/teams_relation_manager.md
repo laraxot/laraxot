@@ -184,12 +184,4 @@ public function getTableActions(): array
 - [HasXotTable Trait](/laravel/Modules/Xot/docs/filament/xot_table.md)
 - [Regole di Traduzione per Filament](/laravel/Modules/Xot/docs/translation_rules.md)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 *Ultimo aggiornamento: 3 Giugno 2025*
-=======
-*Ultimo aggiornamento: 3 Giugno 2025*
->>>>>>> 2024e2e7 (.)
-=======
-*Ultimo aggiornamento: 3 Giugno 2025*
->>>>>>> laraxot/dev

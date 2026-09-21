@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Implementazione degli Avatar"
 type: concept
@@ -26,35 +18,13 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Implementazione degli Avatar
 
 ## Collegamenti correlati
 - [README modulo User](./readme.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Implementazione Header con Selettore Lingua](/laravel/modules/user/docs/header-language-selector-with-flags.md)
-=======
-- [Implementazione Header con Selettore Lingua](/laravel/modules/user/docs/header_language_selector_with_flags.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Implementazione Header con Selettore Lingua](/laravel/modules/user/docs/header_language_selector_with_flags.md)
-=======
-- [Implementazione Header con Selettore Lingua](/laravel/modules/user/docs/header-language-selector-with-flags.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Implementazione Header con Selettore Lingua](/laravel/modules/user/docs/header-language-selector-with-flags.md)
->>>>>>> laraxot/dev
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 
 ## Panoramica
@@ -174,22 +144,8 @@ Il sistema di avatar può essere esteso in futuro per includere:
 
 ## Collegamenti correlati
 - [README modulo User](./readme.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Implementazione Header con Selettore Lingua](/laravel/modules/user/docs/header-language-selector-with-flags.md)
-=======
-- [Implementazione Header con Selettore Lingua](/laravel/modules/user/docs/header_language_selector_with_flags.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Implementazione Header con Selettore Lingua](/laravel/modules/user/docs/header_language_selector_with_flags.md)
-=======
-- [Implementazione Header con Selettore Lingua](/laravel/modules/user/docs/header-language-selector-with-flags.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Implementazione Header con Selettore Lingua](/laravel/modules/user/docs/header-language-selector-with-flags.md)
->>>>>>> laraxot/dev
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 
 ## Panoramica

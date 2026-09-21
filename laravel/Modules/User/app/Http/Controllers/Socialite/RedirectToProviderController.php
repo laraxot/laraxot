@@ -29,11 +29,7 @@ class RedirectToProviderController extends Controller
         $redirect = Socialite::driver($provider)->redirect();
 
         if (! $redirect instanceof RedirectResponse) {
-            throw new \RuntimeException(\sprintf(
-                'Expected %s from Socialite provider redirect(), got %s.',
-                RedirectResponse::class,
-                $redirect::class,
-            ));
+            throw new \RuntimeException(\sprintf('Expected %s from Socialite provider redirect(), got %s.', RedirectResponse::class, $redirect::class));
         }
 
         return $redirect;

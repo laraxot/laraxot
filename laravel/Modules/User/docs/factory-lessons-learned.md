@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Lezioni Apprese dall'Errore Gravissimo delle Factory"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Lezioni Apprese dall'Errore Gravissimo delle Factory
 
 ## L'Errore Gravissimo
@@ -182,35 +166,11 @@ done
 
 ## Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Factory Audit Root](../../../../docs/project/factory-audit-2025.md)
 - [Missing Factories Audit](./missing-factories-audit.md)
 - [Geo Factory Audit](../../geo/project_docs/missing-factories-audit.md)
 - [Laravel Factory Best Practices](../../../../docs/project/laravel-factory-best-practices.md)
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-- [Factory Audit Root](../../../project_docs/factory-audit-2025.md)
-- [Missing Factories Audit](./missing-factories-audit.md)
-- [Geo Factory Audit](../../geo/project_docs/missing-factories-audit.md)
-- [Laravel Factory Best Practices](../../../project_docs/laravel-factory-best-practices.md)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Factory Audit Root](../../../../docs/project/factory-audit-2025.md)
-- [Missing Factories Audit](./missing-factories-audit.md)
-- [Geo Factory Audit](../../geo/project_docs/missing-factories-audit.md)
-- [Laravel Factory Best Practices](../../../../docs/project/laravel-factory-best-practices.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ---
 
@@ -218,16 +178,4 @@ done
 
 Ogni model DEVE avere la sua factory. È obbligatorio per il corretto funzionamento del sistema.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-*Ultimo aggiornamento: 2025-01-06*
->>>>>>> 60a2c9a9 (.)
-=======
-*Ultimo aggiornamento: 2025-01-06*
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

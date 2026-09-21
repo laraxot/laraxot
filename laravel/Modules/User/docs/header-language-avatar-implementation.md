@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Implementazione del Selettore di Lingua e Avatar Utente nell'Header"
 type: concept
@@ -26,45 +18,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Implementazione del Selettore di Lingua e Avatar Utente nell'Header
 
 ## Collegamenti correlati
 - [README modulo User](./readme.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Convenzioni Path](./path-conventions-2.md)
 - [Volt Folio Logout](./volt-folio-logout-2.md)
 - [Implementazione Logout](./logout-blade-implementation-2.md)
-=======
-- [Convenzioni Path](./path_conventions.md)
-- [Volt Folio Logout](./volt_folio_logout.md)
-- [Implementazione Logout](./logout_blade_implementation.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Convenzioni Path](./path_conventions.md)
-- [Volt Folio Logout](./volt_folio_logout.md)
-- [Implementazione Logout](./logout_blade_implementation.md)
-=======
-- [Convenzioni Path](./path-conventions-2.md)
-- [Volt Folio Logout](./volt-folio-logout-2.md)
-- [Implementazione Logout](./logout-blade-implementation-2.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Convenzioni Path](./path-conventions-2.md)
-- [Volt Folio Logout](./volt-folio-logout-2.md)
-- [Implementazione Logout](./logout-blade-implementation-2.md)
->>>>>>> laraxot/dev
 
 ## Panoramica
 
@@ -440,32 +402,10 @@ Ecco come dovrebbe apparire il file JSON completo dell'header dopo le modifiche:
 
 ## Collegamenti correlati
 - [README modulo User](./readme.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Convenzioni Path](./path-conventions-2.md)
 - [Volt Folio Logout](./volt-folio-logout-2.md)
 - [Implementazione Logout](./logout-blade-implementation-2.md)
-=======
-- [Convenzioni Path](./path_conventions.md)
-- [Volt Folio Logout](./volt_folio_logout.md)
-- [Implementazione Logout](./logout_blade_implementation.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Convenzioni Path](./path_conventions.md)
-- [Volt Folio Logout](./volt_folio_logout.md)
-- [Implementazione Logout](./logout_blade_implementation.md)
-=======
-- [Convenzioni Path](./path-conventions-2.md)
-- [Volt Folio Logout](./volt-folio-logout-2.md)
-- [Implementazione Logout](./logout-blade-implementation-2.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Convenzioni Path](./path-conventions-2.md)
-- [Volt Folio Logout](./volt-folio-logout-2.md)
-- [Implementazione Logout](./logout-blade-implementation-2.md)
->>>>>>> laraxot/dev
 
 ## Panoramica
 

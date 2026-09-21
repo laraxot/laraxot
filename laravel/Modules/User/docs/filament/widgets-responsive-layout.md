@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Widget Responsivi per Form di Registrazione"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./teams-relation-manager.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Widget Responsivi per Form di Registrazione
 
 > **NOTA IMPORTANTE**: Questo documento è un riferimento specifico per il modulo User.

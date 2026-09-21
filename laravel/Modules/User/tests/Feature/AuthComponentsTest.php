@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-use Modules\User\Models\User;
 use Modules\User\Tests\TestCase;
 
-use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
 
 uses(TestCase::class);

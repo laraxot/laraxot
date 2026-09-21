@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "ANALISI METODI DUPLICATI - SUPER MUCCA EDITION"
 module: user
@@ -10,10 +7,6 @@ created: 2026-08-24
 updated: 2026-08-24
 ---
 
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 87273113 (.)
 # 🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION
 
 **Powered by**: Super Mucca AI 🐄✨  
@@ -123,11 +116,8 @@ abstract class BaseModel extends \Modules\Xot\Models\XotBaseModel
 
 ### Pattern 1: getTableColumns() - ESEMPIO REALE
 
-<<<<<<< HEAD
 #### <nome progetto>/TicketResource/ListTickets.php (ECCELLENTE)
 
-=======
->>>>>>> 60a2c9a9 (.)
 #### Fixcity/TicketResource/ListTickets.php (ECCELLENTE)
 ```php
 protected function getTableColumns(): array
@@ -489,11 +479,8 @@ public function getTableFilters(): array
 - Test dopo ogni modulo
 - Code review
 
-<<<<<<< HEAD
 **Settimana 2**: Moduli Business (<nome progetto>, Blog, Geo)
 
-=======
->>>>>>> 60a2c9a9 (.)
 **Settimana 2**: Moduli Business (Fixcity, Blog, Geo)
 - 20 List files
 - Test integrazione
@@ -532,11 +519,8 @@ public function getTableFilters(): array
 3. Refactoring moduli core (Xot, User, Cms)
 
 #### ⭐⭐⭐⭐ PRIORITÀ ALTA
-<<<<<<< HEAD
 4. Refactoring moduli business (<nome progetto>, Blog, Geo)
 
-=======
->>>>>>> 60a2c9a9 (.)
 4. Refactoring moduli business (Fixcity, Blog, Geo)
 5. ActionPresets per CRUD
 6. Documentazione completa
@@ -567,18 +551,11 @@ public function getTableFilters(): array
 4. Implementazione ColumnBuilder
 
 **Domande?** Chiedi alla Super Mucca! 🐄⚡
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 ---
 
 <!-- Merged from METODI_DUPLICATI_ANALISI.md, which collided with this file on case-insensitive filesystems. -->
 
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 module: User
 topic: METODI_DUPLICATI_ANALISI
@@ -2792,12 +2769,4 @@ Elenco dei metodi duplicati (cross-file e cross-modulo) che coinvolgono il modul
 
 ---
 _Report generato automaticamente — fonte: `/tmp/metodi_duplicati_domain_report.md`_
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

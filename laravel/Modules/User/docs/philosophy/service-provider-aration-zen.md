@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Lo Zen della Separazione dei ServiceProviders: Filosofia della Responsabilità Unica"
 type: concept
@@ -19,15 +11,7 @@ related:
   - "./service-provider-separation-zen.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Lo Zen della Separazione dei ServiceProviders: Filosofia della Responsabilità Unica
 
 ## La Storia

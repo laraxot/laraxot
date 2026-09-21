@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Compatibilità Filament 4.x - Modulo User"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Compatibilità Filament 4.x - Modulo User
 
 **Data**: 2025-01-27
@@ -168,22 +152,8 @@ $this->info("Current user type: " . $typeLabelString);
 
 ## 🔗 Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Rapporto Aggiornamento Filament 4.x](../../../docs/filament_4x_upgrade_report.md)
-=======
-- [Rapporto Aggiornamento Filament 4.x](../../docs/filament_4x_upgrade_report.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Rapporto Aggiornamento Filament 4.x](../../docs/filament_4x_upgrade_report.md)
-=======
-- [Rapporto Aggiornamento Filament 4.x](../../../docs/filament_4x_upgrade_report.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Rapporto Aggiornamento Filament 4.x](../../../docs/filament_4x_upgrade_report.md)
->>>>>>> laraxot/dev
 - [Guida Ufficiale Filament 4.x](https://filamentphp.com/docs/4.x/upgrade-guide)
 - [Documentazione Autenticazione](https://filamentphp.com/docs/panels/authentication)
 

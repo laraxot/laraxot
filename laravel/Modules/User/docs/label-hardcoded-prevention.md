@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Prevenzione ->label() Hardcoded - Modulo User"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Prevenzione ->label() Hardcoded - Modulo User
 
 ## 🚨 **REGOLA ASSOLUTA**
@@ -113,15 +97,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class ExampleResource extends XotBaseResource
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
     {
         return [
             'name' => TextInput::make('name')
@@ -231,47 +207,17 @@ return [
 
 ## 🔗 **Collegamenti**
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Translation Standards](../../../docs/translation-standards.md)
 - [PHPStan Fixes](../../../docs/phpstan_level10_fixes.md)
 - [Best Practices](../../../docs/best-practices.md)
-=======
-- [Translation Standards](../../docs/translation-standards.md)
-- [PHPStan Fixes](../../docs/phpstan_level10_fixes.md)
-- [Best Practices](../../docs/best-practices.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Translation Standards](../../docs/translation-standards.md)
-- [PHPStan Fixes](../../docs/phpstan_level10_fixes.md)
-- [Best Practices](../../docs/best-practices.md)
-=======
-- [Translation Standards](../../../docs/translation-standards.md)
-- [PHPStan Fixes](../../../docs/phpstan_level10_fixes.md)
-- [Best Practices](../../../docs/best-practices.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Translation Standards](../../../docs/translation-standards.md)
-- [PHPStan Fixes](../../../docs/phpstan_level10_fixes.md)
-- [Best Practices](../../../docs/best-practices.md)
->>>>>>> laraxot/dev
 
 ---
 
 **🔄 Ultimo aggiornamento**: 27 Gennaio 2025  
 **📦 Versione**: 3.1.0  
 **🎯 Obiettivo**: Zero ->label() hardcoded  
-<<<<<<< HEAD
-<<<<<<< HEAD
 **✅ Status**: Prevenzione attiva e monitorata
-=======
-**✅ Status**: Prevenzione attiva e monitorata
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
 =======
 **✅ Status**: Prevenzione attiva e monitorata

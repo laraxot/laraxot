@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "🔧 Migration Fix: create_tenants_table"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # 🔧 Migration Fix: create_tenants_table
 
 **File**: `database/migrations/2023_01_01_000008_create_tenants_table.php`
@@ -241,27 +225,9 @@ done
 
 ### Root Documentation
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Database Migrations](../../../../../docs/database-migrations.md)
 - [Laraxot Philosophy](../../../../../docs/architettura_filosofia_religione_politica_zen.md)
-=======
-- [Database Migrations](../../../../docs/database-migrations.md)
-- [Laraxot Philosophy](../../../../docs/architettura_filosofia_religione_politica_zen.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Database Migrations](../../../../docs/database-migrations.md)
-- [Laraxot Philosophy](../../../../docs/architettura_filosofia_religione_politica_zen.md)
-=======
-- [Database Migrations](../../../../../docs/database-migrations.md)
-- [Laraxot Philosophy](../../../../../docs/architettura_filosofia_religione_politica_zen.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Database Migrations](../../../../../docs/database-migrations.md)
-- [Laraxot Philosophy](../../../../../docs/architettura_filosofia_religione_politica_zen.md)
->>>>>>> laraxot/dev
 
 ### This Analysis
 

@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Multiple Bugs Resolution - 16 Dicembre 2025"
 type: concept
@@ -22,15 +14,7 @@ related:
   - "./gits-resolution.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Multiple Bugs Resolution - 16 Dicembre 2025
 
 **Data Fix**: 16 Dicembre 2025
@@ -237,22 +221,8 @@ public function render(): View
 
 - [Priority Decision Rules](../../xot/docs/priority-decision-rules.md)
 - [Super Mucca Workflow](../../xot/docs/super-mucca-workflow.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Git Conflict Resolution](./git-conflicts-resolution.md)
-=======
-- [Git Conflict Resolution](./git-conflicts-resolution-2025-12-16.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Git Conflict Resolution](./git-conflicts-resolution-2025-12-16.md)
-=======
-- [Git Conflict Resolution](./git-conflicts-resolution.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Git Conflict Resolution](./git-conflicts-resolution.md)
->>>>>>> laraxot/dev
 - [TenantService Actions](../../tenant/docs/configuration.md)
 
 ---

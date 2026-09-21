@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ---
 title: "Autenticazione in <nome progetto>"
 type: concept
@@ -27,46 +22,7 @@ related:
 
 ## Panoramica
 Il sistema di autenticazione in <nome progetto> è basato su Laravel Volt e supporta sia l'autenticazione tradizionale che quella sociale.
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-# Autenticazione in Predict
-
-## Panoramica
-Il sistema di autenticazione in Predict è basato su Laravel Volt e supporta sia l'autenticazione tradizionale che quella sociale.
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
----
-title: "Autenticazione in <nome progetto>"
-type: concept
-tags: [authentication]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "authentication autenticazione in <nome progetto>"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./2fa-guide.md"
-  - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
-  - "./actions-path-convention.md"
----
-
-# Autenticazione in <nome progetto>
-
-## Panoramica
-Il sistema di autenticazione in <nome progetto> è basato su Laravel Volt e supporta sia l'autenticazione tradizionale che quella sociale.
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ## Configurazione
 
@@ -193,19 +149,5 @@ Route::middleware('guest')->group(function () {
 ## Implementazioni Specifiche
 
 ### Logout con Volt e Folio
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 Per dettagli sull'implementazione del logout utilizzando Volt e Folio, consultare la [documentazione del modulo User](../laravel/modules/user/project_docs/volt-folio-logout-error-3.md). 
-=======
-Per dettagli sull'implementazione del logout utilizzando Volt e Folio, consultare la [documentazione del modulo User](../laravel/modules/user/project_docs/volt_folio_logout_error.md). 
->>>>>>> 60a2c9a9 (.)
-=======
-Per dettagli sull'implementazione del logout utilizzando Volt e Folio, consultare la [documentazione del modulo User](../laravel/modules/user/project_docs/volt_folio_logout_error.md). 
-=======
-Per dettagli sull'implementazione del logout utilizzando Volt e Folio, consultare la [documentazione del modulo User](../laravel/modules/user/project_docs/volt-folio-logout-error-3.md). 
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-Per dettagli sull'implementazione del logout utilizzando Volt e Folio, consultare la [documentazione del modulo User](../laravel/modules/user/project_docs/volt-folio-logout-error-3.md). 
->>>>>>> laraxot/dev

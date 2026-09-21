@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Gestione delle Sessioni"
 type: concept
@@ -26,15 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Gestione delle Sessioni
 
 ## Panoramica
@@ -104,11 +87,6 @@ Questo documento fornisce linee guida per la gestione delle sessioni utente all'
 - Aggiornare questo documento se vengono identificate nuove strategie di gestione delle sessioni o problemi.
 
 ## Collegamenti a Documentazione Correlata
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Indice del Modulo Utente](./index.md)
 - [Modello BaseUser](./baseuser.md)
 - [Implementazione delle Pagine di Autenticazione](./auth-pages-implementation.md)
@@ -124,11 +102,7 @@ Questo documento fornisce linee guida per la gestione delle sessioni utente all'
 - [Best Practices per il Routing](./routing-best-practices.md)
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
 - [Documentazione Volt](./volt-blade-implementation.md)
-<<<<<<< HEAD
 - [Tema One Documentation](../../Themes/One/docs/README.md) 
-=======
-=======
->>>>>>> 87273113 (.)
 - [Indice del Modulo Utente](./INDEX.md)
 - [Modello BaseUser](./BaseUser.md)
 - [Implementazione delle Pagine di Autenticazione](./AUTH_PAGES_IMPLEMENTATION.md)
@@ -137,28 +111,3 @@ Questo documento fornisce linee guida per la gestione delle sessioni utente all'
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
 - [Documentazione Volt](./VOLT_BLADE_IMPLEMENTATION.md)
 - [Tema One Documentation](../../Themes/One/docs/README.md) 
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-- [Indice del Modulo Utente](./index.md)
-- [Modello BaseUser](./baseuser.md)
-- [Implementazione delle Pagine di Autenticazione](./auth-pages-implementation.md)
-- [Gestione del Profilo](./profile-management-2.md)
-- [Best Practices per il Routing](./routing-best-practices-2.md)
-- [Best Practices di Sicurezza](./security_best_practices.md)
-- [Documentazione Volt](./volt-blade-implementation-3.md)
-- [Tema One Documentation](../../themes/one/docs/readme.md) 
-- [Indice del Modulo Utente](./INDEX.md)
-- [Modello BaseUser](./baseuser.md)
-- [Implementazione delle Pagine di Autenticazione](./auth-pages-implementation.md)
-- [Gestione del Profilo](./profile-management.md)
-- [Best Practices per il Routing](./routing-best-practices.md)
-- [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
-- [Documentazione Volt](./volt-blade-implementation.md)
-- [Tema One Documentation](../../Themes/One/docs/README.md) 
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-- [Tema One Documentation](../../Themes/One/docs/README.md) 
->>>>>>> laraxot/dev

@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Generic User Moderation Strategy in User Module"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Generic User Moderation Strategy in User Module
 
 ## Overview
@@ -155,15 +139,7 @@ This document outlines a comprehensive strategy for implementing a generic moder
   {
       protected static ?string $model = User::class;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
       public static function getFormSchema(): array
-=======
-      public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
-=======
-      public static function getFormSchema(): array
->>>>>>> laraxot/dev
       {
           return [
               'type' => Forms\Components\TextInput::make('type')
@@ -256,15 +232,6 @@ This document outlines a comprehensive strategy for implementing a generic moder
 
 ## Addressing Specific Needs Without Hardcoding
 - **Project-Specific Customizations**: Projects using the `User` module can override or extend moderation profiles via their own configuration files or by registering custom validation rules or workflow steps in a service provider.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-- **Example for SaluteOra**: In the context of the SaluteOra project, a user type of 'dentist' can be configured with specific moderation requirements (like license verification) in the project's configuration, without altering the `User` module's generic approach. Similarly, other user types can have their own rules.
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 - **Example for <nome progetto>**: In the context of the <nome progetto> project, a user type of 'dentist' can be configured with specific moderation requirements (like license verification) in the project's configuration, without altering the `User` module's generic approach. Similarly, other user types can have their own rules.
 
 ## Benefits of This Approach
@@ -399,15 +366,7 @@ This document outlines a comprehensive strategy for implementing a generic moder
   {
       protected static ?string $model = User::class;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
       public static function getFormSchema(): array
-=======
-      public function getFormSchema(): array
->>>>>>> 87273113 (.)
-=======
-      public static function getFormSchema(): array
->>>>>>> laraxot/dev
       {
           return [
               'type' => Forms\Components\TextInput::make('type')
@@ -501,16 +460,7 @@ This document outlines a comprehensive strategy for implementing a generic moder
 ## Addressing Specific Needs Without Hardcoding
 - **Project-Specific Customizations**: Projects using the `User` module can override or extend moderation profiles via their own configuration files or by registering custom validation rules or workflow steps in a service provider.
 - **Example for <nome progetto>**: In the context of the <nome progetto> project, a user type of 'dentist' can be configured with specific moderation requirements (like license verification) in the project's configuration, without altering the `User` module's generic approach. Similarly, other user types can have their own rules.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-- **Example for SaluteOra**: In the context of the SaluteOra project, a user type of 'dentist' can be configured with specific moderation requirements (like license verification) in the project's configuration, without altering the `User` module's generic approach. Similarly, other user types can have their own rules.
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ## Benefits of This Approach
 - **Unified System**: Aligns with the philosophy of a unique registration wizard by providing a unique moderation system adaptable to all user types.

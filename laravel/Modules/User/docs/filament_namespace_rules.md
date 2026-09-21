@@ -62,18 +62,6 @@ class Dashboard extends Page
 ```
 
 ## Collegamenti
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Convenzioni Namespace Filament](../../cms/docs/convenzioni-namespace-filament.md)
 - [Regole Generali Xot](../../xot/docs/readme.md)
 - [Best Practices Filament](../../cms/docs/best-practices/filament.md) 
-=======
-- [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
-- [Regole Generali Xot](../../Xot/docs/README.md)
-- [Best Practices Filament](../../Cms/docs/best-practices/filament.md) 
->>>>>>> 2024e2e7 (.)
-=======
-- [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
-- [Regole Generali Xot](../../Xot/docs/README.md)
-- [Best Practices Filament](../../Cms/docs/best-practices/filament.md) 
->>>>>>> laraxot/dev

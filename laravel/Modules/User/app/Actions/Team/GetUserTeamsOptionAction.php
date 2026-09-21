@@ -19,7 +19,7 @@ class GetUserTeamsOptionAction
         $teams = TeamUser::with('team')->where('user_id', authId())->get();
         $result = [];
         foreach ($teams as $teamUser) {
-            if ($teamUser->team !== null) {
+            if (null !== $teamUser->team) {
                 $result[(string) $teamUser->team->name] = (string) $teamUser->team->id;
             }
         }

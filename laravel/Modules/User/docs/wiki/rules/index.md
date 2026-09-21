@@ -34,15 +34,7 @@ Le Rules progettuali vivono qui, nel wiki del Module **User**, e vengono caricat
 
 - La sorgente di verita' per le Rules e' sempre il wiki locale
 - Non embeddare Rules nei prompt di avvio
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Per Rules globali, consulta il [wiki root](../../docs/wiki/rules/index.md)
-=======
-- Per Rules globali, consulta il [wiki root](../../docs/wiki/rules/INDEX.md)
->>>>>>> 87273113 (.)
-=======
-- Per Rules globali, consulta il [wiki root](../../docs/wiki/rules/INDEX.md)
->>>>>>> laraxot/dev
 
 ## Rules ricorrenti
 

@@ -89,15 +89,7 @@ Verificare che:
 - Altri widget di autenticazione abbiano componenti simili per coerenza
 
 ## Collegamenti
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [User Module Documentation](readme.md)
-=======
-- [User Module Documentation](README.md)
->>>>>>> 2024e2e7 (.)
-=======
-- [User Module Documentation](README.md)
->>>>>>> laraxot/dev
 - [Authentication Widgets Guide](auth_widgets.md)
 - [Filament Form Components](filament_form_components.md)
 - [Root Conflict Resolution Guidelines](../../../docs/conflict-resolution-guidelines.md)

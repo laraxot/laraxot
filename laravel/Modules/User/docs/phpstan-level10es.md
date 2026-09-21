@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: phpstan-level10es
@@ -18,11 +13,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
 See canonical documentation: ../../../Themes/docs/shared-components/phpstan-level10-fixes.md
-=======
-=======
->>>>>>> 87273113 (.)
 # Correzioni PHPStan Livello 10 - Modulo User
 
 Questo documento traccia gli errori PHPStan di livello 10 identificati nel modulo User e le relative soluzioni implementate.
@@ -280,28 +271,3 @@ public function handle(Failed $event): void
 2. Considera l'uso di generics (come `@template`) per migliorare ulteriormente la tipizzazione delle classi che gestiscono diverse tipologie di dati.
 3. Mantieni aggiornata la documentazione quando vengono modificati metodi o proprietà.
 4. Utilizza strumenti di analisi automatica come PHPStan regolarmente per verificare che il codice rimanga conforme. 
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
----
-module: theme
-topic: phpstan-level10es
-canonical: ../../../Themes/docs/shared-components/phpstan-level10-fixes.md
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./2fa-guide.md"
-  - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
-  - "./actions-path-convention.md"
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/phpstan-level10-fixes.md
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-See canonical documentation: ../../../Themes/docs/shared-components/phpstan-level10-fixes.md
->>>>>>> laraxot/dev

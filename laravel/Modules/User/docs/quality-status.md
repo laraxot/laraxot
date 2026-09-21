@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "User Module Quality Status"
 type: "quality-report"
@@ -59,9 +56,6 @@ Warning attesi su pattern Laravel (facades, Assert static). Non bloccanti per pu
 ## Session Log
 
 - **2026-07-08**: PHPStan lvl10 su `app/` verde; TestCase allineato a MySQL; docs aggiornate; push in attesa di rebase su `laraxot/dev`.
-=======
-=======
->>>>>>> 87273113 (.)
 # User Module - Quality Status (November 2025)
 
 ## 🎯 Overview
@@ -224,12 +218,6 @@ After fixes:
 *PHPStan: IMPROVED (13 → ~5 errors)*
 *Status: IN PROGRESS*
 *Priority: CRITICAL*
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: quality-status
@@ -246,8 +234,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/quality-status.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

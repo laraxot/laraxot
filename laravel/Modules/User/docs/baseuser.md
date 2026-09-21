@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "BaseUser Model in Laravel Modules"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # BaseUser Model in Laravel Modules
 
 ## Overview
@@ -85,35 +69,11 @@ This document outlines the structure and usage of the `BaseUser` model within a 
 
 ## Links to Related Documentation
 - [User Module Index](./index.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Authentication Pages Implementation](./auth-pages-implementation.md)
 - [Profile Management](./profile-management-2.md)
 - [Routing Best Practices](./routing-best-practices-2.md)
 - [Session Management](./session-management-2.md)
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-- [Authentication Pages Implementation](./auth_pages_implementation.md)
-- [Profile Management](./profile_management.md)
-- [Routing Best Practices](./routing_best_practices.md)
-- [Session Management](./session_management.md)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Authentication Pages Implementation](./auth-pages-implementation.md)
-- [Profile Management](./profile-management-2.md)
-- [Routing Best Practices](./routing-best-practices-2.md)
-- [Session Management](./session-management-2.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 - [[HasTeamsContract]]
 - [[UserContract]]
 - [[Team]]

@@ -72,7 +72,7 @@ function getAssociateExistingClientActionFunction(User $owner): \Closure
     // chiavi stringa di getTableHeaderActions()) — si cerca per nome.
     $action = null;
     foreach ($manager->getTable()->getHeaderActions() as $candidate) {
-        if ($candidate instanceof Action && $candidate->getName() === 'associateExistingClient') {
+        if ($candidate instanceof Action && 'associateExistingClient' === $candidate->getName()) {
             $action = $candidate;
 
             break;

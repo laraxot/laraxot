@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ---
 title: "Implementazione Corretta delle Pagine Auth"
 type: concept
@@ -37,66 +32,7 @@ related:
 ## Introduzione
 
 Questo documento descrive l'implementazione corretta delle pagine di autenticazione nel tema One di <nome progetto>, utilizzando Laravel Folio, Livewire Volt e seguendo le convenzioni del progetto.
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-# Implementazione Corretta delle Pagine Auth 
-
-## Collegamenti correlati
-- [Documentazione centrale](../../../docs/README.md)
-- [Collegamenti documentazione](../../../docs/collegamenti-documentazione.md)
-- [README modulo User](./README.md)
-- [Convenzioni Path](./PATH_CONVENTIONS.md)
-- [Volt Errors](./VOLT_ERRORS.md)
-- [Volt Folio Logout](./VOLT_FOLIO_LOGOUT.md)
-- [Volt Logout Action](./VOLT_LOGOUT_ACTION.md)
-
-## Introduzione
-
-Questo documento descrive l'implementazione corretta delle pagine di autenticazione nel tema One di SaluteOra, utilizzando Laravel Folio, Livewire Volt e seguendo le convenzioni del progetto.
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
----
-title: "Implementazione Corretta delle Pagine Auth"
-type: concept
-tags: [auth, pages, implementation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "auth-pages-implementation implementazione corretta delle pagine auth"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./2fa-guide.md"
-  - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
-  - "./actions-path-convention.md"
----
-
-# Implementazione Corretta delle Pagine Auth
-
-## Collegamenti correlati
-- [Documentazione centrale](../../../../docs/readme.md)
-- [Collegamenti documentazione](../../../../docs/collegamenti-documentazione.md)
-- [README modulo User](./readme.md)
-- [Convenzioni Path](./path-conventions-2.md)
-- [Volt Errors](./volt-errors-2.md)
-- [Volt Folio Logout](./volt-folio-logout-2.md)
-- [Volt Logout Action](./volt-logout-action-2.md)
-
-## Introduzione
-
-Questo documento descrive l'implementazione corretta delle pagine di autenticazione nel tema One di <nome progetto>, utilizzando Laravel Folio, Livewire Volt e seguendo le convenzioni del progetto.
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ## Struttura delle Directory
 
@@ -148,22 +84,8 @@ laravel/Themes/One/resources/views/pages/auth/
 
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
             session()->regenerate();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> f548be94 (.)
-=======
-            
-=======
-
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-
->>>>>>> laraxot/dev
             // Reindirizza alla home page localizzata
             return redirect()->to('/' . app()->getLocale());
         }
@@ -227,22 +149,8 @@ laravel/Themes/One/resources/views/pages/auth/
                 </div>
 
                 <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <x-filament::button
-=======
-                    <x-filament::button 
->>>>>>> f548be94 (.)
-=======
-                    <x-filament::button 
-=======
-                    <x-filament::button
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-                    <x-filament::button
->>>>>>> laraxot/dev
                         type="submit"
                         size="lg"
                         color="primary"
@@ -377,22 +285,8 @@ laravel/Themes/One/resources/views/pages/auth/
                 </div>
 
                 <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <x-filament::button
-=======
-                    <x-filament::button 
->>>>>>> f548be94 (.)
-=======
-                    <x-filament::button 
-=======
-                    <x-filament::button
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-                    <x-filament::button
->>>>>>> laraxot/dev
                         type="submit"
                         size="lg"
                         color="primary"
@@ -499,22 +393,8 @@ Quindi nel form:
             session()->invalidate();
             session()->regenerateToken();
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> f548be94 (.)
-=======
-        
-=======
-
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-
->>>>>>> laraxot/dev
         // Reindirizza alla home page localizzata
         $this->redirect('/' . app()->getLocale());
     });
@@ -562,15 +442,6 @@ url(app()->getLocale() . '/percorso')
 Utilizzare sempre i componenti Blade nativi di Filament:
 
 ```blade
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<x-filament::button 
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 <x-filament::button
     type="submit"
     size="lg"
@@ -1035,16 +906,7 @@ Utilizzare sempre i componenti Blade nativi di Filament:
 
 ```blade
 <x-filament::button
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<x-filament::button 
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
     type="submit"
     size="lg"
     color="primary"

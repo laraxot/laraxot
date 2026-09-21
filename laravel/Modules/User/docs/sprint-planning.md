@@ -1,6 +1,4 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
 title: "User Module - Sprint Planning"
 module: user
 type: integration
@@ -80,9 +78,6 @@ Implement core user authentication system with registration, login, and basic pr
 ---
 
 *Last Updated: March 12, 2026*
-=======
-=======
->>>>>>> laraxot/dev
 title: "Sprint Planning: User Auth"
 type: concept
 tags: [sprint, planning]
@@ -116,7 +111,3 @@ Standardize all documentation and finalize the MFA implementation.
 ## ✅ Definition of Done
 - All 6 files exist.
 - MFA passes all unit tests.
-<<<<<<< HEAD
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

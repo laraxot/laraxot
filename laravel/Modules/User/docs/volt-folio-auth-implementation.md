@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Implementazione Corretta delle Pagine di Autenticazione con Volt e Folio
 
 ## Collegamenti correlati
@@ -537,9 +535,6 @@ Seguendo queste linee guida per l'implementazione delle pagine di autenticazione
 - [Documentazione Volt](https://livewire.laravel.com/docs/volt)
 - [Documentazione Folio](https://laravel.com/docs/10.x/folio)
 - [Documentazione Livewire](https://livewire.laravel.com/docs)
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: volt-folio-auth-implementation
@@ -556,7 +551,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/volt-folio-auth-implementation.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev

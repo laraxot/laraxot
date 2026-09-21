@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # PHPStan Analysis - User Module (Jan 2026)
 
 ## Current Status
@@ -33,9 +31,6 @@ This confirms that the project is using a version of Filament where Forms seem t
 ## Implementation
 - Search for `Grid.php`.
 - Update `OauthClientResource` imports.
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: phpstan-fix-plan-
@@ -52,7 +47,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/phpstan-fix-plan-.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev

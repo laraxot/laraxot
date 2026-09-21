@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Implementazione del Selettore di Lingua con Bandiere SVG"
 type: concept
@@ -26,45 +18,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Implementazione del Selettore di Lingua con Bandiere SVG
 
 ## Collegamenti correlati
 - [README modulo User](./readme.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Convenzioni Path](./path-conventions-2.md)
 - [Best Practices Chiavi di Traduzione](/laravel/modules/lang/docs/translation_keys_best_practices.md)
 - [Implementazione Header](/laravel/modules/user/docs/header_language_avatar-implementation.md)
-=======
-- [Convenzioni Path](./path_conventions.md)
-- [Best Practices Chiavi di Traduzione](/laravel/modules/lang/docs/translation_keys_best_practices.md)
-- [Implementazione Header](/laravel/modules/user/docs/header_language_avatar_implementation.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Convenzioni Path](./path_conventions.md)
-- [Best Practices Chiavi di Traduzione](/laravel/modules/lang/docs/translation_keys_best_practices.md)
-- [Implementazione Header](/laravel/modules/user/docs/header_language_avatar_implementation.md)
-=======
-- [Convenzioni Path](./path-conventions-2.md)
-- [Best Practices Chiavi di Traduzione](/laravel/modules/lang/docs/translation_keys_best_practices.md)
-- [Implementazione Header](/laravel/modules/user/docs/header_language_avatar-implementation.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Convenzioni Path](./path-conventions-2.md)
-- [Best Practices Chiavi di Traduzione](/laravel/modules/lang/docs/translation_keys_best_practices.md)
-- [Implementazione Header](/laravel/modules/user/docs/header_language_avatar-implementation.md)
->>>>>>> laraxot/dev
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 
 ## Panoramica

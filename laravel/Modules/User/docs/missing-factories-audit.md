@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Factory Mancanti - Modulo User"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Factory Mancanti - Modulo User
 
 ## Situazione Critica Identificata
@@ -171,36 +155,10 @@ related:
 ## Collegamenti
 
 - [README Modulo User](./readme.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Factory Audit Root](../../../../docs/project/factory-audit-2025.md)
-=======
-- [Factory Audit Root](../../../project_docs/factory-audit-2025.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Factory Audit Root](../../../project_docs/factory-audit-2025.md)
-=======
-- [Factory Audit Root](../../../../docs/project/factory-audit-2025.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Factory Audit Root](../../../../docs/project/factory-audit-2025.md)
->>>>>>> laraxot/dev
 - [Models Documentation](./models/readme.md)
 
 ---
 **Errore gravissimo da non ripetere mai più**  
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-*Ultimo aggiornamento: 2025-01-06*
->>>>>>> 60a2c9a9 (.)
-=======
-*Ultimo aggiornamento: 2025-01-06*
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

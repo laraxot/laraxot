@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Analisi del File logout.blade.php
 
 ## Collegamenti correlati
@@ -442,9 +440,6 @@ La versione migliorata proposta risolve tutti i problemi identificati e offre un
 - [Documentazione Folio](https://laravel.com/docs/10.x/folio)
 - [Documentazione Livewire](https://livewire.laravel.com/docs)
 - [Documentazione Filament](https://filamentphp.com/docs)
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: logout-blade-analysis
@@ -461,7 +456,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/logout-blade-analysis.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev

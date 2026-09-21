@@ -296,12 +296,4 @@ $gdprTests = [
 - [State Management](../laravel/Modules/SaluteOra/docs/models/states.md)
 - [Cross-Module Relations](../laravel/Modules/SaluteOra/docs/models/doctor-studio-relationship.md)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **🎉 MISSION ACCOMPLISHED - UserFactory Advanced Implementation Complete! 🎉** 
-=======
-**🎉 MISSION ACCOMPLISHED - UserFactory Advanced Implementation Complete! 🎉** 
->>>>>>> 2024e2e7 (.)
-=======
-**🎉 MISSION ACCOMPLISHED - UserFactory Advanced Implementation Complete! 🎉** 
->>>>>>> laraxot/dev

@@ -34,15 +34,7 @@ Le Commands progettuali vivono qui, nel wiki del Module **User**, e vengono cari
 
 - La sorgente di verita' per le Commands e' sempre il wiki locale
 - Non embeddare Commands nei prompt di avvio
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/index.md)
-=======
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
->>>>>>> 87273113 (.)
-=======
-- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
->>>>>>> laraxot/dev
 
 ## Aggiungere una Nuova COMMANDS
 

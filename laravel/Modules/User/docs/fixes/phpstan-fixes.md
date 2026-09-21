@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Correzioni PHPStan nel Modulo User"
 type: concept
@@ -25,15 +17,7 @@ related:
   - "./phpstanes.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Correzioni PHPStan nel Modulo User
 
 ## Team.php
@@ -67,56 +51,16 @@ Il modello `Team` accede direttamente a proprietà che potrebbero non essere dis
 3. Implementare controlli di tipo più robusti
 
 ### Collegamenti Bidirezionali
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Documentazione Generale PHPStan](/docs/phpstan/phpstan_level10_linee_guida.md)
-=======
-- [Documentazione Generale PHPStan](/docs/phpstan/PHPSTAN_LEVEL10_LINEE_GUIDA.md)
->>>>>>> f548be94 (.)
-=======
-- [Documentazione Generale PHPStan](/docs/phpstan/PHPSTAN_LEVEL10_LINEE_GUIDA.md)
-=======
-- [Documentazione Generale PHPStan](/docs/phpstan/phpstan_level10_linee_guida.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Documentazione Generale PHPStan](/docs/phpstan/phpstan_level10_linee_guida.md)
->>>>>>> laraxot/dev
 - [Contratti del Modulo User](/docs/modules/user/contracts.md)
 - [Best Practices per i Modelli](/docs/modules/user/models.md)
 - [Interfacce e Contratti](/docs/modules/xot/contracts.md) 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ## Collegamenti tra versioni di phpstan-fixes-8.md
 * [phpstan-fixes-8.md](../../../xot/docs/phpstan-fixes-8.md)
 * [phpstan-fixes-8.md](../../../user/docs/phpstan-fixes-8.md)
 * [phpstan-fixes-8.md](../../../user/docs/fixes/phpstan-fixes-8.md)
 * [phpstan-fixes-8.md](../../../activity/docs/phpstan-fixes-8.md)
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-## Collegamenti tra versioni di phpstan_fixes.md
-* [phpstan_fixes.md](../../../Xot/docs/phpstan_fixes.md)
-* [phpstan_fixes.md](../../../User/docs/phpstan_fixes.md)
-* [phpstan_fixes.md](../../../User/docs/fixes/phpstan_fixes.md)
-* [phpstan_fixes.md](../../../Activity/docs/phpstan_fixes.md)
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-## Collegamenti tra versioni di phpstan-fixes-8.md
-* [phpstan-fixes-8.md](../../../xot/docs/phpstan-fixes-8.md)
-* [phpstan-fixes-8.md](../../../user/docs/phpstan-fixes-8.md)
-* [phpstan-fixes-8.md](../../../user/docs/fixes/phpstan-fixes-8.md)
-* [phpstan-fixes-8.md](../../../activity/docs/phpstan-fixes-8.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 

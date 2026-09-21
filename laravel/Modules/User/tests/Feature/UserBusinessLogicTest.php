@@ -17,7 +17,6 @@ use Modules\User\Models\Team;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-
 /**
  * Nome della connessione su cui vive il model Profile.
  *
@@ -28,9 +27,9 @@ use PHPUnit\Framework\Assert;
 function profileConnectionName(): string
 {
     $profileClass = \Modules\Xot\Datas\XotData::make()->getProfileClass();
-    $connection = (new $profileClass)->getConnectionName();
+    $connection = (new $profileClass())->getConnectionName();
 
-    if (is_string($connection) && $connection !== '') {
+    if (is_string($connection) && '' !== $connection) {
         return $connection;
     }
 

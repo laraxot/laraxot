@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "🏛️ PATTERN ESTENSIONE CLASSI VENDOR IN LARAXOT"
 type: pattern
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # 🏛️ PATTERN ESTENSIONE CLASSI VENDOR IN LARAXOT
 
 ## 📋 PRINCIPIO FONDAMENTALE
@@ -246,47 +230,15 @@ class CustomModel extends VendorModelAlias
 ## 📚 RIFERIMENTI
 
 - [Spatie Permission Philosophy](spatie-permission-philosophy.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [BaseModel Philosophy](../Xot/docs/basemodel-philosophy.md)
 - [External Package Integration](../Xot/docs/external-packages.md)
 - [Class Responsibility Separation](../Xot/docs/class-responsibility.md)
-=======
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [BaseModel Philosophy](../Xot/docs/basemodel-philosophy.md)
-- [External Package Integration](../Xot/docs/external-packages.md)
-- [Class Responsibility Separation](../Xot/docs/class-responsibility.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [BaseModel Philosophy](../Xot/docs/basemodel-philosophy.md)
-- [External Package Integration](../Xot/docs/external-packages.md)
-- [Class Responsibility Separation](../Xot/docs/class-responsibility.md)
->>>>>>> laraxot/dev
 - [BaseModel Philosophy](../xot/docs/basemodel-philosophy.md)
 - [External Package Integration](../xot/docs/external-packages.md)
 - [Class Responsibility Separation](../xot/docs/class-responsibility.md)
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 *Questa è la Via Laraxot: Rispettare la natura di ogni cosa, non forzarla in forme innaturali.*
-=======
-*Questa è la Via Laraxot: Rispettare la natura di ogni cosa, non forzarla in forme innaturali.*
-
->>>>>>> 60a2c9a9 (.)
-=======
-*Questa è la Via Laraxot: Rispettare la natura di ogni cosa, non forzarla in forme innaturali.*
-
-=======
-*Questa è la Via Laraxot: Rispettare la natura di ogni cosa, non forzarla in forme innaturali.*
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-*Questa è la Via Laraxot: Rispettare la natura di ogni cosa, non forzarla in forme innaturali.*
->>>>>>> laraxot/dev

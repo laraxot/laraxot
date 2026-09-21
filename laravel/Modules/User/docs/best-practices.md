@@ -2,14 +2,6 @@
 description:
 globs:
 alwaysApply: false
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 related:
   - "./00-index-1.md"
   - "./00-index.md"
@@ -19,15 +11,7 @@ related:
   - "./actions-path-convention-1.md"
   - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 # Best Practices Migrazioni XotBaseMigration
 
@@ -85,22 +69,8 @@ public function addMember(Team $team, User $user)
 - [Linee guida Actions](mdc:actions.mdc)
 - [Linee guida Activitylog](mdc:activitylog.mdc)
 - [Testing](mdc:testing.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Documentazione centrale](mdc:../../../../../docs/index.md)
-=======
-- [Documentazione centrale](mdc:../../../../docs/index.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Documentazione centrale](mdc:../../../../docs/index.md)
-=======
-- [Documentazione centrale](mdc:../../../../../docs/index.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Documentazione centrale](mdc:../../../../../docs/index.md)
->>>>>>> laraxot/dev
 
 ## Migration modulari: path corretto obbligatorio
 
@@ -125,19 +95,5 @@ public function addMember(Team $team, User $user)
 
 - Tutte le migration devono essere nella cartella `database/migrations` del modulo di riferimento.
 - Mai mettere migration custom in `laravel/database/migrations`.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Vedi motivazione e checklist in [PATH_CONVENTIONS.md](./path-conventions-2.md).
-=======
-- Vedi motivazione e checklist in [PATH_CONVENTIONS.md](./path_conventions.md).
->>>>>>> 60a2c9a9 (.)
-=======
-- Vedi motivazione e checklist in [PATH_CONVENTIONS.md](./path_conventions.md).
-=======
-- Vedi motivazione e checklist in [PATH_CONVENTIONS.md](./path-conventions-2.md).
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- Vedi motivazione e checklist in [PATH_CONVENTIONS.md](./path-conventions-2.md).
->>>>>>> laraxot/dev

@@ -173,8 +173,6 @@ Claude Sonnet 5
 - `laravel/Modules/User/app/View/Pages/ProfileEditVoltComponent.php` (fix)
 - `laravel/Modules/User/app/Models/BaseUser.php` (fix docblock: `$id` +
   `Carbon|null`)
-<<<<<<< HEAD
-=======
 
 ## Aggiornamento 2026-09-10 (subagent-quaeris-user, terza occorrenza indipendente)
 
@@ -223,4 +221,3 @@ Modules/User/app/View/Pages/ProfileEditVoltComponent.php --no-progress
 
 File toccati in questo aggiornamento: solo
 `laravel/Modules/User/app/View/Pages/ProfileEditVoltComponent.php`.
->>>>>>> laraxot/dev

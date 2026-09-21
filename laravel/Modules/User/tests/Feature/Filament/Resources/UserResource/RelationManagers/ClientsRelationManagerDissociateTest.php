@@ -62,7 +62,7 @@ function getDissociateClientActionFunction(User $owner): \Closure
 
     $action = null;
     foreach ($manager->getTable()->getRecordActions() as $candidate) {
-        if ($candidate instanceof Action && $candidate->getName() === 'dissociateClient') {
+        if ($candidate instanceof Action && 'dissociateClient' === $candidate->getName()) {
             $action = $candidate;
 
             break;

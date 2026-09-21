@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "User Analytics"
 type: concept
@@ -25,15 +17,7 @@ related:
   - "./user-traits.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # User Analytics
 
 ## Overview
@@ -79,22 +63,8 @@ Sistema di analisi e monitoraggio degli utenti, inclusi pattern di utilizzo, met
 
 ### Pending
 - Real-time monitoring
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - <nome progetto>ive analytics
-=======
-- Predictive analytics
->>>>>>> 60a2c9a9 (.)
-=======
-- Predictive analytics
-=======
-- <nome progetto>ive analytics
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- <nome progetto>ive analytics
->>>>>>> laraxot/dev
 - Custom metrics
 - Export system
 

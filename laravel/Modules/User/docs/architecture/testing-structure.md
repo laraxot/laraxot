@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Struttura dei Tests del Modulo User"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./user-gdpr-oupling.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Struttura dei Tests del Modulo User
 
 ## Panoramica
@@ -329,19 +313,7 @@ dump($variable);
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-*Ultimo aggiornamento: 2025-01-06*
->>>>>>> 60a2c9a9 (.)
-=======
-*Ultimo aggiornamento: 2025-01-06*
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 
 

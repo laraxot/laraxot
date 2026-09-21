@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "User Module - Complete Roadmap 2026"
 type: concept
@@ -987,9 +984,6 @@ User Module
 ---
 
 *Questa roadmap è specifica per il modulo User e viene aggiornata regolarmente in base ai progressi e alle nuove esigenze.*
-=======
-=======
->>>>>>> 87273113 (.)
 # User Module Roadmap
 
 "Proteggere l'identità: il fondamento della fiducia."
@@ -1026,12 +1020,6 @@ Diventare un identity provider completo (IdP) che supporta standard moderni come
 **Versione**: 1.0.0
 **Maintainer**: User Module Team
 **Status**: 🚧 In Development (70% completo)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-=======
->>>>>>> laraxot/dev
 ---
 title: "Product Roadmap - User Module"
 type: concept
@@ -1072,8 +1060,3 @@ Provide a secure, highly-scalable authentication and authorization system for th
 ## 📂 Backlog / Future Ideas
 - Passkey (WebAuthn) support.
 - Centralized Auth across multiple Laraxot instances.
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

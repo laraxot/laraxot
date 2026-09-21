@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Analisi del File Logout.blade.php"
 type: concept
@@ -26,15 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Analisi del File Logout.blade.php
 
 ## Analisi Attuale
@@ -255,11 +238,6 @@ $logout = function () {
    - Test di UI per l'interfaccia
 
 ## Collegamenti Correlati
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Documentazione Volt](./volt-blade-implementation.md)
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
 - [Gestione Sessione](./session-management.md)
@@ -267,29 +245,8 @@ $logout = function () {
 - [Documentazione Volt](./volt-blade-implementation-3.md)
 - [Best Practices di Sicurezza](./security_best_practices.md)
 - [Gestione Sessione](./session-management-2.md)
-<<<<<<< HEAD
 - [Tema One Documentation](../../themes/one/docs/readme.md) 
-=======
-=======
->>>>>>> 87273113 (.)
 - [Documentazione Volt](./VOLT_BLADE_IMPLEMENTATION.md)
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
 - [Gestione Sessione](./SESSION_MANAGEMENT.md)
 - [Tema One Documentation](../../Themes/One/docs/README.md) 
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-- [Documentazione Volt](./volt-blade-implementation.md)
-- [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
-- [Gestione Sessione](./session-management.md)
-- [Tema One Documentation](../../Themes/One/docs/README.md) 
-- [Documentazione Volt](./volt-blade-implementation-3.md)
-- [Best Practices di Sicurezza](./security_best_practices.md)
-- [Gestione Sessione](./session-management-2.md)
-- [Tema One Documentation](../../themes/one/docs/readme.md) 
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-- [Tema One Documentation](../../themes/one/docs/readme.md) 
->>>>>>> laraxot/dev

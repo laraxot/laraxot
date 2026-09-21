@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Passport Cluster - Riepilogo Completo"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Passport Cluster - Riepilogo Completo
 
 **Data**: 2025-01-22
@@ -182,24 +166,8 @@ Alcune risorse non hanno tutte le pages standard:
 **Ultimo aggiornamento**: 2025-01-22
 **Versione**: 1.0.0
 **Status**: ✅ Completato e verificato
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ## 2026-07-08 PHPStan
 
 `OauthPersonalAccessClientResource::getTableColumns()` resta statico perché viene usato da `table()`. Non chiamare metodi istanza con `self::`.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

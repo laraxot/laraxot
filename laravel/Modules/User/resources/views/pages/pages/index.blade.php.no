@@ -152,22 +152,8 @@ render(function (View $view) {
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse($pages as $page)
                 <a
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                     href="{{ url('/' . $locale . '/' . $page->slug) }}"
-=======
-                    href="{{ url('/' . $locale . '/pages/' . $page->slug) }}"
->>>>>>> f548be94 (.)
-=======
-                    href="{{ url('/' . $locale . '/pages/' . $page->slug) }}"
-=======
-                    href="{{ url('/' . $locale . '/' . $page->slug) }}"
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-                    href="{{ url('/' . $locale . '/' . $page->slug) }}"
->>>>>>> laraxot/dev
                     class="group flex flex-col h-full overflow-hidden bg-white rounded-lg shadow hover:shadow-md transition duration-300"
                 >
                     @if(isset($page->featured_image) && $page->featured_image)

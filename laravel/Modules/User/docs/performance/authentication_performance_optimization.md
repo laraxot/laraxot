@@ -217,8 +217,6 @@ CREATE INDEX idx_sessions_last_activity ON sessions(last_activity);
 - Validate security compliance
 
 This document provides the roadmap for resolving the performance issues in the User module while maintaining security and functionality.
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
 ---
@@ -228,7 +226,3 @@ This document provides the roadmap for resolving the performance issues in the U
 # Documento unificato
 
 Questo file era un duplicato esatto che differiva solo per maiuscole/minuscole, in violazione della regola no-case-only-variations. Il contenuto canonico si trova in [authentication_performance_optimization.md](./authentication_performance_optimization.md).
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> laraxot/dev

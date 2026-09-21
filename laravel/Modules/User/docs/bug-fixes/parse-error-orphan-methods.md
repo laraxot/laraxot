@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ---
 title: "Bug Fix: ParseError - Metodi Orfani Fuori dalla Classe"
 type: concept
@@ -20,10 +17,6 @@ related:
   - "./parse-orphan-methods.md"
 ---
 
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 87273113 (.)
 # Bug Fix: ParseError - Metodi Orfani Fuori dalla Classe
 
 ## Data
@@ -103,11 +96,7 @@ class RegisterWidget extends XotBaseWidget
     {
         // implementazione
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 60a2c9a9 (.)
     protected function method2(): array
     {
         // implementazione
@@ -158,13 +147,8 @@ protected function orphanMethod(): array
 
 ## Collegamenti
 - [Widget Auth Best Practices](../filament/widgets/registration-widget.md)
-<<<<<<< HEAD
 - [Git Conflicts Resolution](../git-conflicts-resolution-.md.md)
 - [Bug Fix Guidelines](../../../../../docs/bug-fixing-guidelines.md)
-=======
-- [Git Conflicts Resolution](../git-conflicts-resolution-2025-01-27.md)
-- [Bug Fix Guidelines](../../../../project_docs/bug-fixing-guidelines.md)
->>>>>>> 60a2c9a9 (.)
 
 ## Status
 ✅ **RISOLTO** - RegisterWidget funziona correttamente con tutte le migliorie di qualità implementate
@@ -177,9 +161,6 @@ Questo bug fix ha permesso di completare il miglioramento della qualità del cod
 - Transazioni database
 - Notifiche utente
 - Verifica email
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: parse-error-orphan-methods
@@ -195,7 +176,4 @@ related:
 ---
 
 See canonical documentation: ../../../../Themes/docs/shared-components/parse-error-orphan-methods.md
-<<<<<<< HEAD
 >>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev

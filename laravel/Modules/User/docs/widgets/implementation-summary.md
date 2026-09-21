@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "EditUserWidget Implementation Summary"
 type: concept
@@ -22,15 +14,7 @@ related:
   - "./translationlines.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # EditUserWidget Implementation Summary
 
 ## Project Status: COMPLETED ✅
@@ -174,43 +158,15 @@ The implementation serves as a reference pattern for future widget development i
 - `Modules/User/docs/widget-translation-rules.md`
 - `Modules/User/docs/widgets/implementation-summary.md` (this file)
 ### Related Documentation
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `Modules/User/docs/widgets-structure-2.md`
-=======
-- `Modules/User/docs/widgets_structure.md`
->>>>>>> 60a2c9a9 (.)
-=======
-- `Modules/User/docs/widgets_structure.md`
-=======
-- `Modules/User/docs/widgets-structure-2.md`
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- `Modules/User/docs/widgets-structure-2.md`
->>>>>>> laraxot/dev
 - `Modules/Xot/docs/filament-widgets.md`
 - `Modules/Xot/docs/translations.md`
 - `Modules/User/project_docs/widgets/edit-user-widget.md`
 - `Modules/User/project_docs/widgets/translation-guidelines.md`
 - `Modules/User/project_docs/widget-translation-rules.md`
 - `Modules/User/project_docs/widgets/implementation-summary.md` (this file)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - `Modules/User/project_docs/widgets-structure-2.md`
-=======
-- `Modules/User/project_docs/widgets_structure.md`
->>>>>>> 60a2c9a9 (.)
-=======
-- `Modules/User/project_docs/widgets_structure.md`
-=======
-- `Modules/User/project_docs/widgets-structure-2.md`
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- `Modules/User/project_docs/widgets-structure-2.md`
->>>>>>> laraxot/dev
 - `Modules/Xot/project_docs/filament-widgets.md`
 - `Modules/Xot/project_docs/translations.md`

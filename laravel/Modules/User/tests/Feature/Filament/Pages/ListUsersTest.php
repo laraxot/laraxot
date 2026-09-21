@@ -33,7 +33,7 @@ beforeEach(function (): void {
     }
     Filament::setCurrentPanel($panel);
 
-    TestCase::$listUsersPage = new ListUsers;
+    TestCase::$listUsersPage = new ListUsers();
 
     $users = UserFactory::new()
         ->count(3)

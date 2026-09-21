@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Widget Translation Rules - FixCity Project"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Widget Translation Rules - FixCity Project
 
 ## Core Principles
@@ -170,38 +154,12 @@ protected static string $view = 'user::widgets.edit-user';
 - Check responsive design and accessibility
 - Validate form submission and error handling
 ## Related Documentation
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [User Module Widget Structure](../modules/user/project_docs/widgets-structure-2.md)
 - [EditUserWidget Documentation](../modules/user/project_docs/widgets/edit-user-widget.md)
 - [Widget Translation Guidelines](../modules/user/project_docs/widgets/translation-guidelines.md)
 - [Filament Widget Conventions](../modules/xot/project_docs/filament-widgets.md)
 - [User Module Widget Structure](../modules/user/docs/widgets-structure-2.md)
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-- [User Module Widget Structure](../modules/user/project_docs/widgets_structure.md)
-- [EditUserWidget Documentation](../modules/user/project_docs/widgets/edit-user-widget.md)
-- [Widget Translation Guidelines](../modules/user/project_docs/widgets/translation-guidelines.md)
-- [Filament Widget Conventions](../modules/xot/project_docs/filament-widgets.md)
-- [User Module Widget Structure](../modules/user/docs/widgets_structure.md)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [User Module Widget Structure](../modules/user/project_docs/widgets-structure-2.md)
-- [EditUserWidget Documentation](../modules/user/project_docs/widgets/edit-user-widget.md)
-- [Widget Translation Guidelines](../modules/user/project_docs/widgets/translation-guidelines.md)
-- [Filament Widget Conventions](../modules/xot/project_docs/filament-widgets.md)
-- [User Module Widget Structure](../modules/user/docs/widgets-structure-2.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 - [EditUserWidget Documentation](../modules/user/docs/widgets/edit-user-widget.md)
 - [Widget Translation Guidelines](../modules/user/docs/widgets/translation-guidelines.md)
 - [Filament Widget Conventions](../modules/xot/docs/filament-widgets.md)
@@ -397,22 +355,8 @@ protected static string $view = 'user::widgets.edit-user';
 
 ## Related Documentation
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [User Module Widget Structure](../modules/user/docs/widgets-structure-2.md)
-=======
-- [User Module Widget Structure](../modules/user/docs/widgets_structure.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [User Module Widget Structure](../modules/user/docs/widgets_structure.md)
-=======
-- [User Module Widget Structure](../modules/user/docs/widgets-structure-2.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [User Module Widget Structure](../modules/user/docs/widgets-structure-2.md)
->>>>>>> laraxot/dev
 - [EditUserWidget Documentation](../modules/user/docs/widgets/edit-user-widget.md)
 - [Widget Translation Guidelines](../modules/user/docs/widgets/translation-guidelines.md)
 - [Filament Widget Conventions](../modules/xot/docs/filament-widgets.md)

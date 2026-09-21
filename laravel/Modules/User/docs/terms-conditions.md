@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Terms Conditions"
 type: concept
@@ -26,42 +18,16 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 https://julienboyer.re/en/posts/how-to-add-terms-and-conditions-checkbox-on-filament-registration-page
 
 ### Versione HEAD
 
 
 ## Collegamenti tra versioni di terms_conditions.md
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 * [terms_conditions.md](../../../gdpr/docs/terms_conditions.md)
 * [terms_conditions.md](../../../user/docs/terms_conditions.md)
-=======
-* [terms_conditions.md](../../../Gdpr/docs/terms_conditions.md)
-* [terms_conditions.md](../../../User/docs/terms_conditions.md)
->>>>>>> f548be94 (.)
-=======
-* [terms_conditions.md](../../../Gdpr/docs/terms_conditions.md)
-* [terms_conditions.md](../../../User/docs/terms_conditions.md)
-=======
-* [terms_conditions.md](../../../gdpr/docs/terms_conditions.md)
-* [terms_conditions.md](../../../user/docs/terms_conditions.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-* [terms_conditions.md](../../../gdpr/docs/terms_conditions.md)
-* [terms_conditions.md](../../../user/docs/terms_conditions.md)
->>>>>>> laraxot/dev
 
 
 ### Versione Incoming

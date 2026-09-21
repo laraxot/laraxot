@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Regole per le Chiavi di Traduzione"
 type: rule
@@ -26,15 +18,7 @@ related:
   - "./dependency-rules.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Regole per le Chiavi di Traduzione
 
 ## Principi Fondamentali
@@ -149,36 +133,10 @@ return [
 
 ## Collegamenti Correlati
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-- [Best Practices per le Traduzioni](TRANSLATION_BEST_PRACTICES.md)
-- [Struttura del Modulo](MODULE_STRUCTURE.md)
-- [Convenzioni di Codice](CODE_CONVENTIONS.md)
-- [Best Practices per le Traduzioni](translation-best-practices-2.md)
-- [Struttura del Modulo](module-structure-2.md)
-<<<<<<< HEAD
-- [Convenzioni di Codice](code-conventions.md)
-=======
-- [Best Practices per le Traduzioni](translation_best_practices.md)
-- [Struttura del Modulo](module_structure.md)
-- [Convenzioni di Codice](code_conventions.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Best Practices per le Traduzioni](translation_best_practices.md)
-- [Struttura del Modulo](module_structure.md)
-- [Convenzioni di Codice](code_conventions.md)
-=======
 - [Best Practices per le Traduzioni](TRANSLATION_BEST_PRACTICES.md)
 - [Struttura del Modulo](MODULE_STRUCTURE.md)
 - [Convenzioni di Codice](CODE_CONVENTIONS.md)
 - [Best Practices per le Traduzioni](translation-best-practices-2.md)
 - [Struttura del Modulo](module-structure-2.md)
 - [Convenzioni di Codice](code-conventions.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Convenzioni di Codice](code-conventions.md)
->>>>>>> laraxot/dev

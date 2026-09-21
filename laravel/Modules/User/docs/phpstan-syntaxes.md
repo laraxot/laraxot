@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "PHPStan Syntax Fixes - Modulo User"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # PHPStan Syntax Fixes - Modulo User
 
 **Versione PHPStan**: 1.12.x  
@@ -178,22 +162,8 @@ use App\Models\User;
 
 ## 🔗 Collegamenti
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Analisi Generale PHPStan](../../../../docs/project/quality/phpstan-analysis.md)
-=======
-- [Analisi Generale PHPStan](../../../project_docs/quality/phpstan-analysis.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Analisi Generale PHPStan](../../../project_docs/quality/phpstan-analysis.md)
-=======
-- [Analisi Generale PHPStan](../../../../docs/project/quality/phpstan-analysis.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Analisi Generale PHPStan](../../../../docs/project/quality/phpstan-analysis.md)
->>>>>>> laraxot/dev
 - [PSR-12 Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
 - [CLAUDE.md - Quality Guidelines](../../../claude.md)
 

@@ -4,15 +4,7 @@ type: concept
 tags: [phpstan, furious, debate]
 created: 2026-07-14
 updated: 2026-07-14
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "phpstan-furious-debate- il grande dibattito furioso: phpstan level 10 - la verità assoluta"
-=======
-qmd: "phpstan-furious-debate il grande dibattito furioso: phpstan level 10 - la verità assoluta"
->>>>>>> 87273113 (.)
-=======
-qmd: "phpstan-furious-debate il grande dibattito furioso: phpstan level 10 - la verità assoluta"
->>>>>>> laraxot/dev
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
@@ -191,26 +183,10 @@ Ogni modulo corretto è un traguardo.
 
 - [PHPStan Errors Philosophy](./phpstan-errors-philosophy.md)
 - [Filament 4 Actions Namespace](./filament-4-actions-namespace.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [DRY/KISS Principles](../../../../docs/architecture/dry-kiss-principles.md)
-=======
-- [DRY/KISS Principles](../../../docs/architecture/dry-kiss-principles.md)
->>>>>>> 87273113 (.)
-=======
-- [DRY/KISS Principles](../../../docs/architecture/dry-kiss-principles.md)
->>>>>>> laraxot/dev
 
 ---
 
 *"La type safety non è un optional - è un REQUISITO. Ogni errore PHPStan è un bug potenziale. Correggiamoli tutti, uno alla volta, con pazienza e determinazione."*
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Il Purista ha vinto. La type safety è sacra. Non profanarla mai.**
-=======
-**Il Purista ha vinto. La type safety è sacra. Non profanarla mai.**
->>>>>>> 87273113 (.)
-=======
-**Il Purista ha vinto. La type safety è sacra. Non profanarla mai.**
->>>>>>> laraxot/dev

@@ -11,6 +11,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 class ListProfiles extends XotBaseListRecords
 {
     protected static string $resource = ProfileResource::class;
+
     public function getTableColumns(): array
     {
         return [

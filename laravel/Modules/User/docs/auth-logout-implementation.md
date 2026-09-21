@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ---
 title: "Implementazione del Logout"
 type: concept
@@ -24,38 +19,8 @@ related:
 ---
 
 # Implementazione del Logout
-<<<<<<< HEAD
-=======
 # Implementazione del Logout 
->>>>>>> f548be94 (.)
-=======
-# Implementazione del Logout 
-=======
----
-title: "Implementazione del Logout"
-type: concept
-tags: [auth, logout, implementation]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "auth-logout-implementation implementazione del logout"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./2fa-guide.md"
-  - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
-  - "./actions-path-convention.md"
----
-
-# Implementazione del Logout
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ## Indice
 - [Panoramica](#panoramica)
@@ -91,58 +56,18 @@ mount(function() {
     if (Auth::check()) {
         // Dispatch dell'evento prima del logout
         Event::dispatch('auth.logout.attempting', [Auth::user()]);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> f548be94 (.)
-=======
-        
-=======
-
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-
->>>>>>> laraxot/dev
         // Esegui il logout
         Auth::logout();
         session()->invalidate();
         session()->regenerateToken();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 
         // Dispatch dell'evento dopo il logout
         Event::dispatch('auth.logout.successful');
     }
 
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-        
-        // Dispatch dell'evento dopo il logout
-        Event::dispatch('auth.logout.successful');
-    }
-    
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-
-        // Dispatch dell'evento dopo il logout
-        Event::dispatch('auth.logout.successful');
-    }
-
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
     // Reindirizza l'utente alla home page localizzata
     $this->redirect(LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(), route('home')));
 });
@@ -162,22 +87,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 $this->redirect(LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(), route('home')));
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 Questo garantisce che l'utente venga reindirizzato alla versione localizzata della home page dopo il logout, rispettando le convenzioni di <nome progetto> per la gestione della localizzazione.
-=======
-Questo garantisce che l'utente venga reindirizzato alla versione localizzata della home page dopo il logout, rispettando le convenzioni di SaluteOra per la gestione della localizzazione.
->>>>>>> f548be94 (.)
-=======
-Questo garantisce che l'utente venga reindirizzato alla versione localizzata della home page dopo il logout, rispettando le convenzioni di SaluteOra per la gestione della localizzazione.
-=======
-Questo garantisce che l'utente venga reindirizzato alla versione localizzata della home page dopo il logout, rispettando le convenzioni di <nome progetto> per la gestione della localizzazione.
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-Questo garantisce che l'utente venga reindirizzato alla versione localizzata della home page dopo il logout, rispettando le convenzioni di <nome progetto> per la gestione della localizzazione.
->>>>>>> laraxot/dev
 
 ## Componenti Filament
 
@@ -205,22 +116,8 @@ Il template Blade per il logout deve utilizzare i componenti Filament per garant
 
 ## Chiavi di Traduzione
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 Le chiavi di traduzione per il logout devono seguire la struttura gerarchica definita nelle best practices di <nome progetto>:
-=======
-Le chiavi di traduzione per il logout devono seguire la struttura gerarchica definita nelle best practices di SaluteOra:
->>>>>>> f548be94 (.)
-=======
-Le chiavi di traduzione per il logout devono seguire la struttura gerarchica definita nelle best practices di SaluteOra:
-=======
-Le chiavi di traduzione per il logout devono seguire la struttura gerarchica definita nelle best practices di <nome progetto>:
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-Le chiavi di traduzione per il logout devono seguire la struttura gerarchica definita nelle best practices di <nome progetto>:
->>>>>>> laraxot/dev
 
 ```php
 'logout' => [
@@ -277,22 +174,8 @@ mount(function() {
     Auth::logout();
     session()->invalidate();
     session()->regenerateToken();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f548be94 (.)
-=======
-    
-=======
-
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-
->>>>>>> laraxot/dev
     $this->redirect(LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(), route('home')));
 });
 ?>
@@ -334,63 +217,24 @@ name('logout');
 mount(function() {
     if (Auth::check()) {
         $user = Auth::user();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 
         // Evento pre-logout
         Event::dispatch('auth.logout.attempting', [$user]);
 
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-        
-        // Evento pre-logout
-        Event::dispatch('auth.logout.attempting', [$user]);
-        
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
-
-        // Evento pre-logout
-        Event::dispatch('auth.logout.attempting', [$user]);
-
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
         // Logout
         Auth::logout();
         session()->invalidate();
         session()->regenerateToken();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 
         // Evento post-logout
         Event::dispatch('auth.logout.successful');
     }
-<<<<<<< HEAD
-=======
         
         // Evento post-logout
         Event::dispatch('auth.logout.successful');
     }
     
-=======
-
-        // Evento post-logout
-        Event::dispatch('auth.logout.successful');
-    }
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
     $this->redirect(LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(), route('home')));
 });
@@ -619,20 +463,7 @@ mount(function() {
         Event::dispatch('auth.logout.successful');
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        
-        // Evento post-logout
-        Event::dispatch('auth.logout.successful');
-    }
-    
->>>>>>> f548be94 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
     $this->redirect(LaravelLocalization::getLocalizedURL(LaravelLocalization::getCurrentLocale(), route('home')));
 });
 ?>

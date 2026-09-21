@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Actions Structure"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Actions Structure
 
 ## Directory Structure
@@ -108,32 +92,10 @@ class DeleteUserAction
 
 ## Documentazione Correlata
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Path Conventions](./path-conventions-2.md)
 - [Directory Structure Checklist](./directory-structure-checklist.md)
 - [Module Structure](./module-structure-2.md)
-=======
-- [Path Conventions](./path_conventions.md)
-- [Directory Structure Checklist](./directory_structure_checklist.md)
-- [Module Structure](./module_structure.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Path Conventions](./path_conventions.md)
-- [Directory Structure Checklist](./directory_structure_checklist.md)
-- [Module Structure](./module_structure.md)
-=======
-- [Path Conventions](./path-conventions-2.md)
-- [Directory Structure Checklist](./directory-structure-checklist.md)
-- [Module Structure](./module-structure-2.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Path Conventions](./path-conventions-2.md)
-- [Directory Structure Checklist](./directory-structure-checklist.md)
-- [Module Structure](./module-structure-2.md)
->>>>>>> laraxot/dev
 - [Queueable Actions Best Practices](./best-practices/queueable-actions.md)
 # Actions Structure
 
@@ -208,30 +170,8 @@ class DeleteUserAction
 
 ## Documentazione Correlata
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Path Conventions](./path-conventions-2.md)
 - [Directory Structure Checklist](./directory-structure-checklist.md)
 - [Module Structure](./module-structure-2.md)
-=======
-- [Path Conventions](./path_conventions.md)
-- [Directory Structure Checklist](./directory_structure_checklist.md)
-- [Module Structure](./module_structure.md)
->>>>>>> 60a2c9a9 (.)
-=======
-- [Path Conventions](./path_conventions.md)
-- [Directory Structure Checklist](./directory_structure_checklist.md)
-- [Module Structure](./module_structure.md)
-=======
-- [Path Conventions](./path-conventions-2.md)
-- [Directory Structure Checklist](./directory-structure-checklist.md)
-- [Module Structure](./module-structure-2.md)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-- [Path Conventions](./path-conventions-2.md)
-- [Directory Structure Checklist](./directory-structure-checklist.md)
-- [Module Structure](./module-structure-2.md)
->>>>>>> laraxot/dev
 - [Queueable Actions Best Practices](./best-practices/queueable-actions.md)

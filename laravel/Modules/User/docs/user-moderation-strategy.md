@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ---
 title: "User Moderation Strategy"
 type: concept
@@ -27,46 +22,7 @@ related:
 
 ## Overview
 In the healthcare_app system, and across various projects utilizing the `User` module, users can have different roles or types, each potentially requiring specific verification or moderation processes before full access to platform functionalities is granted. This document analyzes the integration of a unified moderation strategy within the `User` module, ensuring it remains generic and applicable to all user types, mirroring the approach of a unified registration wizard.
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-# User Moderation Strategy
-
-## Overview
-In the SaluteOra system, and across various projects utilizing the `User` module, users can have different roles or types, each potentially requiring specific verification or moderation processes before full access to platform functionalities is granted. This document analyzes the integration of a unified moderation strategy within the `User` module, ensuring it remains generic and applicable to all user types, mirroring the approach of a unified registration wizard.
-<<<<<<< HEAD
->>>>>>> f548be94 (.)
-=======
-=======
----
-title: "User Moderation Strategy"
-type: concept
-tags: [user, moderation, strategy]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "user-moderation-strategy user moderation strategy"
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-related:
-  - "./00-index-1.md"
-  - "./00-index.md"
-  - "./2fa-guide.md"
-  - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
-  - "./actions-path-convention.md"
----
-
-# User Moderation Strategy
-
-## Overview
-In the healthcare_app system, and across various projects utilizing the `User` module, users can have different roles or types, each potentially requiring specific verification or moderation processes before full access to platform functionalities is granted. This document analyzes the integration of a unified moderation strategy within the `User` module, ensuring it remains generic and applicable to all user types, mirroring the approach of a unified registration wizard.
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 ## Rationale for Moderation within User Module
 Given that the `User` module serves as the central hub for user management across multiple projects, it is logical to embed moderation functionalities within this module. This approach ensures:
@@ -164,15 +120,7 @@ Instead of traditional service classes, we'll use [@spatie/laravel-queueable-act
   class ModerationResource extends Resource {
       protected static ?string $model = User::class;
       protected static ?string $navigationIcon = 'heroicon-o-check-circle';
-<<<<<<< HEAD
-<<<<<<< HEAD
       public static function getFormSchema(): array {
-=======
-      public function getFormSchema(): array {
->>>>>>> 2024e2e7 (.)
-=======
-      public static function getFormSchema(): array {
->>>>>>> laraxot/dev
           return [
               'type' => Forms\Components\Select::make('type')
                   ->options(UserType::all()),
@@ -235,19 +183,5 @@ As noted, moderation for certain user types might be more labor-intensive. To ha
 ## Conclusion
 Integrating a unified moderation strategy within the `User` module aligns with the principle of a centralized user management system applicable across various projects. By leveraging configurable workflows, Filament for admin interfaces, an event-driven approach, and proper state management with `spatie/laravel-model-states`, we can manage the moderation of all user types efficiently while accommodating varying levels of complexity. This approach ensures consistency with the unified registration wizard, maintains project-agnostic code, and supports scalability with an estimated effort distribution as outlined above.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 **Documented on**: [DATE]
-=======
-**Documented on**: 2025-05-16
->>>>>>> f548be94 (.)
-=======
-**Documented on**: 2025-05-16
-=======
-**Documented on**: [DATE]
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-**Documented on**: [DATE]
->>>>>>> laraxot/dev

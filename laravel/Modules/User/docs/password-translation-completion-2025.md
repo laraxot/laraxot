@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Completamento Traduzioni Password - 2025
 
 ## Problema Identificato
@@ -105,13 +103,8 @@ Durante l'audit delle traduzioni del modulo User, sono state identificate traduz
 
 ## Collegamenti
 
-<<<<<<< HEAD
 - [Documentazione Modulo User](../README.md)
 - [Best Practices Traduzioni](../../Lang/docs/translation_standards.md)
-=======
-- [Documentazione Modulo User](../readme.md)
-- [Best Practices Traduzioni](../../lang/docs/translation_standards.md)
->>>>>>> 60a2c9a9 (.)
 - [Sicurezza Password](../security/password_policies.md)
 
 ## Note per il Futuro
@@ -124,9 +117,6 @@ Durante l'audit delle traduzioni del modulo User, sono state identificate traduz
 ---
 *Ultimo aggiornamento: 2025-01-06*
 *Autore: Sistema di Audit Traduzioni*
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: password-translation-completion-2025
@@ -143,7 +133,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/password-translation-completion-2025.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev

@@ -11,7 +11,6 @@ use Spatie\LaravelData\Data;
  */
 class PermissionColumnNamesData extends Data
 {
-
     // => null, // default 'permission_id',
     public string $model_morph_key;
 

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # User Module - PHPStan Level 10 Fix Plan
 
 ## Analysis Date
@@ -579,9 +577,6 @@ This fix plan depends on:
 2. **Fixcity Module - User Model Inheritance** (Medium Priority)
 
 Without the UserContract update, most errors in the User module cannot be resolved.
-=======
-=======
->>>>>>> laraxot/dev
 ---
 title: "PHPStan Analysis - User Module (Jan 2026)"
 type: concept
@@ -635,7 +630,3 @@ This confirms that the project is using a version of Filament where Forms seem t
 ## Implementation
 - Search for `Grid.php`.
 - Update `OauthClientResource` imports.
-<<<<<<< HEAD
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

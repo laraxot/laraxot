@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
- * @param  array<string, mixed>  $attributes
+ * @param array<string, mixed> $attributes
  */
 function currentTeamFixCreateUser(array $attributes = []): User
 {
@@ -23,7 +23,7 @@ function currentTeamFixCreateUser(array $attributes = []): User
 }
 
 /**
- * @param  array<string, mixed>  $attributes
+ * @param array<string, mixed> $attributes
  */
 function currentTeamFixCreateTeam(User $user, array $attributes = []): Team
 {
@@ -158,7 +158,7 @@ test('user creation does not trigger infinite loop', function () {
 test('multiple users can be created without issues', function () {
     $users = [];
 
-    for ($i = 1; $i <= 5; $i++) {
+    for ($i = 1; $i <= 5; ++$i) {
         $users[] = currentTeamFixCreateUser([
             'name' => "User {$i}",
             'email' => "user-{$i}-".uniqid('', true).'@example.com',

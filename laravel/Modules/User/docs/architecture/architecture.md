@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Architectural Rules & Guidelines"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./user-gdpr-oupling.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Architectural Rules & Guidelines
 
 This module adheres to the **Laraxot Architecture** and **Super Cow Methodology**.

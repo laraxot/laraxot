@@ -13,7 +13,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
- * @param  array<string, mixed>  $attributes
+ * @param array<string, mixed> $attributes
  */
 function createTestRole(array $attributes = []): Role
 {
@@ -24,7 +24,7 @@ function createTestRole(array $attributes = []): Role
 }
 
 /**
- * @param  array<string, mixed>  $attributes
+ * @param array<string, mixed> $attributes
  */
 function createTestPermissionForRole(array $attributes = []): Permission
 {

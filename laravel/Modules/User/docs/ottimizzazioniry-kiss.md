@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Ottimizzazioni DRY + KISS - Modulo User"
 type: concept
@@ -26,15 +18,6 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Ottimizzazioni DRY + KISS - Modulo User
 
 ## Panoramica del Modulo
@@ -54,11 +37,6 @@ Il modulo User è il cuore dell'autenticazione e gestione utenti del sistema PTV
 ##### A. **Logout Analysis (12+ file duplicati)**
 ```
 ❌ DUPLICAZIONI CRITICHE:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ├── logout-blade-analysis-3.md (14KB)
 ├── logout-blade-conclusions-2.md (4.1KB)
 ├── logout-blade-corrected-analysis-3.md (7.4KB)
@@ -75,50 +53,6 @@ Il modulo User è il cuore dell'autenticazione e gestione utenti del sistema PTV
 ├── logout-page-fix-2.md (1.3KB)
 ├── logout-page-implementation-3.md (3.2KB)
 └── logout-security-2.md (4.1KB)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-├── logout_blade_analysis.md (14KB)
-├── logout_blade_conclusions.md (4.1KB)
-├── logout_blade_corrected_analysis.md (7.4KB)
-├── logout_blade_error_analysis.md (3.8KB)
-├── logout_blade_implementation.md (6.3KB)
-├── logout_blade_structure.md (3.1KB)
-├── logout_error_analysis.md (3.7KB)
-├── logout_event_error.md (5.1KB)
-├── logout_filament_widget.md (7.5KB)
-├── logout_filament_widget_corrected.md (8.3KB)
-├── logout_implementation_best_practices.md (10KB)
-├── logout_implementation_error.md (3.3KB)
-├── logout_implementation_with_laravel_localization.md (6.2KB)
-├── logout_page_fix.md (1.3KB)
-├── logout_page_implementation.md (3.2KB)
-└── logout_security.md (4.1KB)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-├── logout-blade-analysis-3.md (14KB)
-├── logout-blade-conclusions-2.md (4.1KB)
-├── logout-blade-corrected-analysis-3.md (7.4KB)
-├── logout-blade-error-analysis-3.md (3.8KB)
-├── logout-blade-implementation-2.md (6.3KB)
-├── logout-blade-structure-2.md (3.1KB)
-├── logout-error-analysis-2.md (3.7KB)
-├── logout-event-error-2.md (5.1KB)
-├── logout-filament-widget-3.md (7.5KB)
-├── logout-filament-widget-corrected-3.md (8.3KB)
-├── logout-implementation-best-practices-2.md (10KB)
-├── logout-implementation-error-3.md (3.3KB)
-├── logout-implementation-with-laravel-localization-3.md (6.2KB)
-├── logout-page-fix-2.md (1.3KB)
-├── logout-page-implementation-3.md (3.2KB)
-└── logout-security-2.md (4.1KB)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 PROBLEMA: 16 file per una singola funzionalità!
 CONTENUTO: Stesse informazioni ripetute con variazioni minime
@@ -128,35 +62,10 @@ IMPATTO: -80% efficienza ricerca, +90% confusione sviluppatori
 ##### B. **User Factory (4+ file duplicati)**
 ```
 ❌ DUPLICAZIONI CRITICHE:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ├── userfactory-advanced-implementation-complete-2.md (11KB)
 ├── user-factory-advanced-integration-3.md (9.1KB)
 ├── user-factory-complete-ecosystem-integration-2.md (14KB)
 └── user-factory-integration-2.md (9.8KB)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-├── userfactory_advanced_implementation_complete.md (11KB)
-├── user_factory_advanced_integration.md (9.1KB)
-├── user_factory_complete_ecosystem_integration.md (14KB)
-└── user_factory_integration.md (9.8KB)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-├── userfactory-advanced-implementation-complete-2.md (11KB)
-├── user-factory-advanced-integration-3.md (9.1KB)
-├── user-factory-complete-ecosystem-integration-2.md (14KB)
-└── user-factory-integration-2.md (9.8KB)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 PROBLEMA: Stessa funzionalità documentata 4 volte
 CONTENUTO: Implementazioni simili con variazioni minime
@@ -166,42 +75,12 @@ IMPATTO: -70% manutenibilità, +60% confusione
 ##### C. **PHPStan Fixes (5+ file duplicati)**
 ```
 ❌ DUPLICAZIONI CRITICHE:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ├── phpstan-fixes-2025-1.md (4.4KB)
-=======
-├── phpstan_fixes_2025.md (4.4KB)
->>>>>>> 60a2c9a9 (.)
-=======
-├── phpstan_fixes_2025.md (4.4KB)
-=======
-├── phpstan-fixes-2025-1.md (4.4KB)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-├── phpstan-fixes-2025-1.md (4.4KB)
->>>>>>> laraxot/dev
 ├── phpstan_generic_types.md (3.1KB)
 ├── phpstan_level10_fixes.md (7.8KB)
 ├── phpstan_level9_fixes.md (1.1KB)
 ├── phpstan.md (1.3KB)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 └── phpstan-fixes-8.md (2.5KB)
-=======
-└── phpstan_fixes.md (2.5KB)
->>>>>>> 60a2c9a9 (.)
-=======
-└── phpstan_fixes.md (2.5KB)
-=======
-└── phpstan-fixes-8.md (2.5KB)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
-└── phpstan-fixes-8.md (2.5KB)
->>>>>>> laraxot/dev
 
 PROBLEMA: Fix PHPStan sparsi in 6 file diversi
 CONTENUTO: Correzioni simili ripetute
@@ -211,11 +90,6 @@ IMPATTO: -60% efficienza correzione, +50% duplicazioni
 ##### D. **Volt Implementation (8+ file duplicati)**
 ```
 ❌ DUPLICAZIONI CRITICHE:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 ├── volt-blade-implementation-3.md (9.2KB)
 ├── volt-blade-implementation-error-3.md (3.8KB)
 ├── volt-errors-2.md (5.6KB)
@@ -225,36 +99,6 @@ IMPATTO: -60% efficienza correzione, +50% duplicazioni
 ├── volt-folio-logout-debug-2.md (3.0KB)
 ├── volt-folio-logout-error-3.md (3.7KB)
 └── volt-logout-2.md (5.2KB)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-├── volt_blade_implementation.md (9.2KB)
-├── volt_blade_implementation_error.md (3.8KB)
-├── volt_errors.md (5.6KB)
-├── volt_folio_auth_implementation.md (17KB)
-├── volt_folio_error.md (1.6KB)
-├── volt_folio_logout.md (5.0KB)
-├── volt_folio_logout_debug.md (3.0KB)
-├── volt_folio_logout_error.md (3.7KB)
-└── volt_logout.md (5.2KB)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-├── volt-blade-implementation-3.md (9.2KB)
-├── volt-blade-implementation-error-3.md (3.8KB)
-├── volt-errors-2.md (5.6KB)
-├── volt-folio-auth-implementation-3.md (17KB)
-├── volt-folio-error-2.md (1.6KB)
-├── volt-folio-logout-2.md (5.0KB)
-├── volt-folio-logout-debug-2.md (3.0KB)
-├── volt-folio-logout-error-3.md (3.7KB)
-└── volt-logout-2.md (5.2KB)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 
 PROBLEMA: Implementazioni Volt frammentate e duplicate
 CONTENUTO: Errori e implementazioni simili ripetute
@@ -583,15 +427,7 @@ public function getUsersWithTeams(): Collection
 // PRIMA: Configurazione ripetuta in ogni componente
 class UserResource extends XotBaseResource
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
     {
         return [
             TextInput::make('name')
@@ -634,15 +470,7 @@ class UserFormComponents
 // Utilizzo semplificato
 class UserResource extends XotBaseResource
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     public static function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> 2024e2e7 (.)
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
     {
         return [
             UserFormComponents::name(),
@@ -723,20 +551,11 @@ class UserResource extends XotBaseResource
 - **Developer Experience**: +90% chiarezza
 
 ## Collegamenti
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Template Standardizzato](../../../docs/template-modulo-standardizzato.md)
 - [Ottimizzazioni Master](../../../docs/ottimizzazioni-modulari-master.md)
 - [Modulo Xot](../xot/docs/ottimizzazioni-dry-kiss.md)
 
-<<<<<<< HEAD
 ---
-=======
-=======
->>>>>>> 87273113 (.)
 - [Template Standardizzato](../../docs/template-modulo-standardizzato.md)
 - [Ottimizzazioni Master](../../docs/ottimizzazioni-modulari-master.md)
 - [Modulo Xot](../xot/docs/ottimizzazioni-dry-kiss.md)
@@ -744,17 +563,3 @@ class UserResource extends XotBaseResource
 ---
 
 *Ultimo aggiornamento: Gennaio 2025 - Ottimizzazione DRY + KISS User Module*
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Template Standardizzato](../../../docs/template-modulo-standardizzato.md)
-- [Ottimizzazioni Master](../../../docs/ottimizzazioni-modulari-master.md)
-- [Modulo Xot](../xot/docs/ottimizzazioni-dry-kiss.md)
-
----
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
----
->>>>>>> laraxot/dev

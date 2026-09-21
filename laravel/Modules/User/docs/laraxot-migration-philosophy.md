@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Filosofia, Religione e Politica di Laraxot: Regole di Migrazione"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Filosofia, Religione e Politica di Laraxot: Regole di Migrazione
 
 ## Regola Fondamentale: Una Tabella = Una Migration per Modulo
@@ -72,20 +56,8 @@ La migration è stata modificata per **estendere** la tabella `roles` esistente 
 3. **Controllo colonne**: Verificare l'esistenza delle colonne prima di aggiungerle con `hasColumn()`
 4. **Controllo indici**: Verificare l'esistenza degli indici prima di crearli
 5. **Rollback sicuro**: Rimuovere solo le colonne aggiunte, non quelle originali
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 6. **Modifiche schema**: Modificare la **stessa** migrazione esistente e aggiornare il **timestamp** nel nome file (NON creare `add_column_to_table.php` separate)
-=======
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-6. **Modifiche schema**: Modificare la **stessa** migrazione esistente e aggiornare il **timestamp** nel nome file (NON creare `add_column_to_table.php` separate)
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
-6. **Modifiche schema**: Modificare la **stessa** migrazione esistente e aggiornare il **timestamp** nel nome file (NON creare `add_column_to_table.php` separate)
->>>>>>> laraxot/dev
 
 ## Principi Laraxot Rispettati
 

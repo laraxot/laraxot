@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # Logout via Volt Action
 
 ## Contesto
@@ -64,9 +62,6 @@ Volt scoprirà automaticamente la rotta `logout` grazie all’Attribute.
 - Il middleware `web` gestisce session e CSRF.
 - Il middleware `auth` impedisce accessi non autenticati.
 - Non toccare `routes/web.php` per il frontoffice.
-=======
-=======
->>>>>>> laraxot/dev
 ---
 module: theme
 topic: volt-logout-action
@@ -83,7 +78,3 @@ related:
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/volt-logout-action.md
-<<<<<<< HEAD
->>>>>>> 2024e2e7 (.)
-=======
->>>>>>> laraxot/dev

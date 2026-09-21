@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Fix: Duplicate Entry Error in team_user Table (DEPRECATO)"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Fix: Duplicate Entry Error in team_user Table (DEPRECATO)
 
 > ⚠️ **DEPRECATO**: Questa soluzione è stata sostituita dalla conversione UUID → autoincrement.
@@ -186,16 +170,4 @@ Quando si crea un modello pivot che usa UUID come PRIMARY KEY:
 - [TeamsRelationManager](../../app/Filament/Resources/UserResource/RelationManagers/TeamsRelationManager.php)
 - [HasTeams Trait](../../app/Models/Traits/HasTeams.php)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-*Ultimo aggiornamento: gennaio 2025*
->>>>>>> 60a2c9a9 (.)
-=======
-*Ultimo aggiornamento: gennaio 2025*
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev

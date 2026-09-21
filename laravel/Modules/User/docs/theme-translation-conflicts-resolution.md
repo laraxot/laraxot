@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 ---
 title: "Risoluzione Conflitti Traduzioni Tema Two - Modulo User"
 type: concept
@@ -26,15 +18,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 60a2c9a9 (.)
-=======
->>>>>>> 2024e2e7 (.)
 >>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 # Risoluzione Conflitti Traduzioni Tema Two - Modulo User
 
 ## Data: 2025-01-06
@@ -431,38 +415,12 @@ php artisan lang:missing --locale=it,en,de
 
 ### Collegamenti Interni
 - [User States](user_states.mdc)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
 - [Moderation Strategy](user-moderation-strategy-3.md)
 - [Filament Best Practices](filament_best_practices.md)
 
 ### Collegamenti Esterni
 - [Translation Standards](../../../../docs/project/translation-standards.md)
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 87273113 (.)
-- [Moderation Strategy](user_moderation_strategy.md)
-- [Filament Best Practices](filament_best_practices.md)
-
-### Collegamenti Esterni
-- [Translation Standards](../../../project_docs/translation-standards.md)
-<<<<<<< HEAD
->>>>>>> 60a2c9a9 (.)
-=======
-=======
-- [Moderation Strategy](user-moderation-strategy-3.md)
-- [Filament Best Practices](filament_best_practices.md)
-
-### Collegamenti Esterni
-- [Translation Standards](../../../../docs/project/translation-standards.md)
->>>>>>> 2024e2e7 (.)
->>>>>>> 87273113 (.)
-=======
->>>>>>> laraxot/dev
 - [Theme Documentation](../../../themes/two/project_docs/readme.md)
 
 ## Note per Sviluppatori
