@@ -43,3 +43,26 @@ cd laravel && ./vendor/bin/phpstan analyse Modules/Rating --memory-limit=4G --no
 ## Errors before/after
 - Before: 6 errors (1 cast + 5 deprecated)
 - After: 0 errors
+
+## Follow-up 2026-09-21
+
+`HasRatingContract::ratings()` regressed dopo questa story: return type
+tornato `Relation` non tipizzato (`missingType.generics`). Causa: un merge
+commit (`608c0dd`, "Merge remote-tracking branch 'laraxot/dev' into dev")
+ha silenziosamente scartato un fix precedente di una sessione parallela
+(`c0c8f84`). Ripristinato:
+
+```php
+/** @return MorphToMany<Rating, Model, MorphPivot, 'pivot'> */
+public function ratings(): MorphToMany;
+```
+
+Verificato: `phpstan analyse Modules/Rating` → `[OK] No errors`; run intero
+`phpstan analyse Modules/` → `[OK] No errors`. Nessuna classe reale
+implementa la contract con firma incompatibile (solo mock Pest). Commit
+`f9d54e4` (module_rating_fila5) + mirror root `4a2fec959`.
+
+Nota: ~21 test Pest pre-esistenti falliti in Rating
+(RatingFilamentSchemaTest, RatingDatasDataTest, RatingFilamentExtendedTest,
+RatingFilamentRelationManagerTest, ListRatingsPageTest, RatingBlockTest)
+NON toccati, non correlati a questo fix — fuori scope, da story separata.

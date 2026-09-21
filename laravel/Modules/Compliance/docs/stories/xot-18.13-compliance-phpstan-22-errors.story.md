@@ -162,3 +162,14 @@ File toccati: `app/Actions/PrepareConformityDeclarationForWorkOrderAction.php`,
 `app/Models/ConformityDeclaration.php`,
 `tests/Feature/ConformityDeclarationTest.php`,
 `../WorkOrder/app/Models/WorkOrder.php` (modulo WorkOrder, story gemella li').
+
+## Follow-up 2026-09-21
+
+`tests/Feature/ConformityDeclarationTest.php` aveva accumulato un bug
+successivo a questa story (introdotto da un'altra sessione dopo la verifica
+sopra): `static int $n = 0;` in `makeDico()` — i type-hint su variabili
+locali `static` sono un errore di parse PHP fatale, e bloccava l'intero run
+`phpstan analyse Modules/` (non solo Compliance). Fix: `/** @var int $n */`
++ `static $n = 0;` non tipizzato. Verificato: `php -l`, Pint, `phpstan
+analyse Modules/` intero → `[OK] No errors`. Commit
+`a6081bb` (module_compliance_fila5) + mirror root `4a2fec959`.
