@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Testing Documentation"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "testing"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Testing Documentation
 
 ## Overview

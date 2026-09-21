@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "Links"
 module: "Job"
 type: concept
@@ -29,3 +30,11 @@ https://websolutionstuff.com/post/laravel-9-cron-job-task-scheduling-tutorial  !
 
 
 
+=======
+module: theme
+topic: links
+canonical: ../../../Themes/docs/shared-components/links.txt
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/links.txt
+>>>>>>> af4545e (.)

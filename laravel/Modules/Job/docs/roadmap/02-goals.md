@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Goals - Job"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "02 goals"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Goals - Job
 
 ## Short Term

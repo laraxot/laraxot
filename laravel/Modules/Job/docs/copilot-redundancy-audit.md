@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Copilot Redundancy Audit"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "copilot redundancy audit"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 Copilot Redundancy Audit — 2026-05-25
 
 Sintesi

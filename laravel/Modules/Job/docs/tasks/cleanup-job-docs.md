@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Task: Job Docs Consolidation & Cleanup"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "cleanup job docs"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Task: Job Docs Consolidation & Cleanup
 
 ## 📋 Obiettivo

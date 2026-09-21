@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Navigation Translations Completion Roadmap - Job Module"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "navigation translations completion roadmap"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Navigation Translations Completion Roadmap - Job Module
 
 **Modulo**: Job  

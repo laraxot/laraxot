@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Dependency Intelligence - Module Job"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "dependency intelligence"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Dependency Intelligence - Module Job
 
 Aggiornato da `composer show` il 2026-03-02.

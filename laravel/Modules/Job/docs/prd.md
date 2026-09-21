@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "PRD - Job Module (2025-2026 Lean Standard)"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "prd"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # PRD - Job Module (2025-2026 Lean Standard)
 
 ## 1. Problem Statement

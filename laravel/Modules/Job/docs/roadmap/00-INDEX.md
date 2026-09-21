@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Job Module - Roadmap"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "00 index"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Job Module - Roadmap
 
 > Infrastruttura robusta per code e processi in background.

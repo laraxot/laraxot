@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "Schedule"
 module: "Job"
 type: concept
@@ -40,3 +41,11 @@ https://github.com/spatie/laravel-schedule-monitor
 https://github.com/hmazter/laravel-schedule-list
 
 
+=======
+module: theme
+topic: schedule
+canonical: ../../../Themes/docs/shared-components/schedule.txt
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/schedule.txt
+>>>>>>> af4545e (.)

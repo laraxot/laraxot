@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Job Module - Sprint Planning"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "sprint planning"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Job Module - Sprint Planning
 
 **Module:** Job  

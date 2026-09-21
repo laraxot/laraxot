@@ -41,47 +41,4 @@ class ViewSchedule extends XotBaseResourcePage implements HasTable
     {
         return [];
     }
-
-    /**
-     * @return array<int, Split>
-     */
-    protected function getTableColumns(): array
-    {
-        $date_format = config('app.date_format');
-        Assert::string($date_format, '['.__LINE__.']['.class_basename($this).']');
-
-        return [
-            Split::make([
-                'command' => TextColumn::make('command'),
-                'created_at' => TextColumn::make('created_at')->dateTime($date_format),
-                'updated_at' => TextColumn::make('updated_at')->formatStateUsing(static function (
-                    ?Carbon $state,
-                    ScheduleHistory $record,
-                ): string {
-                    if ($record->created_at === null || $state === null) {
-                        return '';
-                    }
-
-                    if ($state->equalTo($record->created_at)) {
-                        return 'Processing...';
-                    }
-
-                    return (string) $state->diffInSeconds($record->created_at).' seconds';
-                }),
-                'output' => TextColumn::make('output')->formatStateUsing(
-                    static fn (string $state): string => (count(explode('<br />', nl2br($state))) - 1).' rows of output',
-                ),
-            ]),
-            Split::make([
-                Panel::make([
-                    'output' => TextColumn::make('output')
-                        ->extraAttributes(['class' => '!max-w-max'], true)
-                        ->formatStateUsing(static fn (string $state): HtmlString => new HtmlString(nl2br(
-                            $state,
-                        ))),
-                ])->collapsible(),
-            ]),
-            // ->collapsed(config('job::history_collapsed'))
-        ];
-    }
 }

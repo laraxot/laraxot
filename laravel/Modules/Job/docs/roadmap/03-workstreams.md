@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Workstreams - Job"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "03 workstreams"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Workstreams - Job
 
 ## WS1 Architecture

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Links"
 module: "Job"
@@ -9,5 +10,7 @@ qmd: "links"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 https://gist.github.com/milon/5173255b58564a0e50548cfbe879181e
 

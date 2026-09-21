@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Job Module - Comprehensive Job Management System"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "enterprise job system roadmap"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Job Module - Comprehensive Job Management System
 
 ## Overview

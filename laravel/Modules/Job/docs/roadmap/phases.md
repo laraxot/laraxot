@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Fasi di sviluppo - Job Module"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "phases"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Fasi di sviluppo - Job Module
 
 ## Fase 1: Infrastruttura Core (Completata)

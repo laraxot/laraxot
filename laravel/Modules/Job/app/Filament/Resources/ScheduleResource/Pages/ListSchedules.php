@@ -22,31 +22,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 class ListSchedules extends XotBaseListRecords
 {
     protected static string $resource = ScheduleResource::class;
-
-    public function getTableColumns(): array
-    {
-        return [
-            'id' => TextColumn::make('id')
-                ->numeric()
-                ->sortable()
-                ->searchable(),
-            'command' => TextColumn::make('command')->sortable()->searchable(),
-            'params' => TextColumn::make('params')->wrap()->searchable(),
-            'expression' => TextColumn::make('expression')->sortable()->searchable(),
-            'timezone' => TextColumn::make('timezone')->sortable()->searchable(),
-            'is_active' => IconColumn::make('is_active')->boolean()->sortable(),
-            'without_overlapping' => IconColumn::make('without_overlapping')->boolean()->sortable(),
-            'on_one_server' => IconColumn::make('on_one_server')->boolean()->sortable(),
-            'created_at' => TextColumn::make('created_at')
-                ->dateTime()
-                ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
-            'updated_at' => TextColumn::make('updated_at')
-                ->dateTime()
-                ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
-        ];
-    }
+   
 
     /**
      * @return array<string, EditAction|RestoreAction|DeleteAction|ForceDeleteAction|ViewAction|ActionGroup>

@@ -13,13 +13,13 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Modules\Job\Filament\Resources\JobsWaitingResource\Widgets\JobsWaitingOverview;
-use Modules\Job\Models\Job;
+use Modules\Job\Models\JobsWaiting;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use Override;
 
 class JobsWaitingResource extends XotBaseResource
 {
-    protected static ?string $model = Job::class;
+    protected static ?string $model = JobsWaiting::class;
 
     protected static bool $shouldRegisterNavigation = true;
 

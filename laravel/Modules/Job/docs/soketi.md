@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "Soketi"
 module: "Job"
 type: concept
@@ -41,3 +42,11 @@ https://www.youtube.com/watch?v=mDnsC-sfG7I
 
 
 
+=======
+module: theme
+topic: soketi
+canonical: ../../../Themes/docs/shared-components/soketi.txt
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/soketi.txt
+>>>>>>> af4545e (.)

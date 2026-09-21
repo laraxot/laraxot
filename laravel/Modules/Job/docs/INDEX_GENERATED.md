@@ -135,6 +135,10 @@
 ### Audits & Analysis
 - [code-redundancy-audit.md](code-redundancy-audit.md) - Redundancy audit (2.9KB)
 - [copilot-redundancy-audit.md](copilot-redundancy-audit.md) - Copilot audit (581 bytes)
+<<<<<<< HEAD
+=======
+- [copilot-redundancy-audit-2026-05-25.md](copilot-redundancy-audit-2026-05-25.md) - 2026 audit (420 bytes)
+>>>>>>> laraxot/dev
 - [redundancy-audit.md](redundancy-audit.md) - General redundancy (1.2KB)
 - [redundancy-report.md](redundancy-report.md) - Redundancy report (1.6KB)
 - [duplicate-methods-analysis.md](duplicate-methods-analysis.md) - Method duplication (37KB - comprehensive)

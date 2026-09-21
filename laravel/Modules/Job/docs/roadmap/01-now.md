@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Now (Module Job)"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "01 now"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Now (Module Job)
 
 ## Stabilization

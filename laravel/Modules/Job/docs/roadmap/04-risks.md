@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Risks and dependencies (Module Job)"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "04 risks"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Risks and dependencies (Module Job)
 
 ## Risks

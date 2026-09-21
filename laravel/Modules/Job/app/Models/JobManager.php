@@ -85,7 +85,7 @@ use Override;
  *
  * @mixin \Eloquent
  */
-class JobManager extends BaseModel
+final class JobManager extends BaseModel
 {
     // protected $table = 'job_manager';
 
@@ -101,9 +101,10 @@ class JobManager extends BaseModel
         'exception_message',
     ];
 
-    public static function getJobId(JobContract $job): string|int
+    public static function getJobId(JobContract $job): string
     {
-        if ($jobId = $job->getJobId()) {
+        $jobId = $job->getJobId();
+        if ($jobId !== '') {
             return $jobId;
         }
 
@@ -159,18 +160,17 @@ class JobManager extends BaseModel
     public function prunable(): Builder
     {
         if (config('jobs.pruning.activate')) {
-            $retention_days = config('jobs.pruning.retention_days');
-            if (! is_int($retention_days)) {
-                $retention_days = 365;
+            $retentionDays = config('jobs.pruning.retention_days');
+            if (! is_int($retentionDays)) {
+                $retentionDays = 365;
             }
 
-            return static::query()->where('created_at', '<=', now()->subDays($retention_days));
+            $query = self::query()->where('created_at', '<=', now()->subDays($retentionDays));
+
+            return $query;
         }
 
-        /** @var Builder<static> $query */
-        $query = static::query();
-
-        return $query;
+        return self::query()->whereNotNull('id');
     }
 
     #[Override]

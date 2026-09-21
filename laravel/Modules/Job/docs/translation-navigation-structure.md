@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Translation Navigation Structure - Job Module"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "translation navigation structure"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Translation Navigation Structure - Job Module
 
 ## Problema Identificato
@@ -122,7 +125,11 @@ Verificare che User abbia le stesse 6 lingue per i file `.navigation` (passport.
 
 ## Backlink
 
+<<<<<<< HEAD
 - [Modules/Job/docs/README.md](README.md)
+=======
+- [Modules/Job/docs/README.md](./readme.md)
+>>>>>>> af4545e (.)
 - [Modules/User/lang/it/passport.php](../../User/lang/it/passport.php)
 - [bashscripts/docs/translation-management.md](../../../bashscripts/docs/translation-management.md)
 

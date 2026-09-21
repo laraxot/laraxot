@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Struttura del Modulo Job"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "structure"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Struttura del Modulo Job
 
 ## Panoramica

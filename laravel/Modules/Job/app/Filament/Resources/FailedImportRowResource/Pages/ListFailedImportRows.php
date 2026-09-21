@@ -13,28 +13,4 @@ class ListFailedImportRows extends XotBaseListRecords
 {
     protected static string $resource = FailedImportRowResource::class;
 
-    #[Override]
-    /**
-     * @return array<string, mixed>
-     */
-    public function getTableColumns(): array
-    {
-        return [
-            'id' => TextColumn::make('id')->searchable()->sortable(),
-            'import_id' => TextColumn::make('import_id')
-                ->searchable()
-                ->sortable()
-                ->copyable(),
-            'data' => TextColumn::make('data')
-                ->searchable()
-                ->wrap()
-                ->limit(100),
-            'validation_error' => TextColumn::make('validation_error')
-                ->searchable()
-                ->wrap()
-                ->limit(200),
-            'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
-            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable(),
-        ];
-    }
 }

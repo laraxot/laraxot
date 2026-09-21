@@ -143,13 +143,22 @@ tests/AuditCoverage
 # AI/TOOL SCAFFOLD — must never exist in module tree (see docs/wiki/rules/module-theme-root-cleanup.md)
 
 # Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
-.cursor/
 .devcontainer/
-.vscode/
-.windsurf/
 tests/AuditCoverage/
 
 # Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
 phpinsights.php
 rector.php
 graphify-out
+
+# Laraxot — forbidden at module/theme root (rector.php, phpinsights.php, .cursor, .windsurf, .vscode)
+/rector.php
+/phpinsights.php
+/.cursor
+/.cursor/
+/.windsurf
+/.windsurf/
+/.vscode
+/.vscode/
+.cursor~*
+.windsurf~*

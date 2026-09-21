@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Directory Structure Rules"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "directory structure rules"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Directory Structure Rules
 
 Per il modulo Job valgono queste regole:

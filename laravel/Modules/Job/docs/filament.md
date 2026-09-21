@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "Filament"
 module: "Job"
 type: concept
@@ -18,3 +19,11 @@ https://medium.com/@laravelprotips/laravel-filament-top-12-plugins-simplified-wi
 
 
 
+=======
+module: theme
+topic: filament
+canonical: ../../../Themes/docs/shared-components/filament-Modules.txt
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/filament-Modules.txt
+>>>>>>> af4545e (.)

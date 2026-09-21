@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Collegamento alle Traduzioni del Modulo Job"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "lang link"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Collegamento alle Traduzioni del Modulo Job
 
 Questo modulo utilizza le traduzioni centralizzate nella cartella [Lang](../../Lang/docs/).

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Task: Consolidare Documentazione - Job"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "task consolidare documentazione"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Task: Consolidare Documentazione - Job
 
 **Modulo**: Job

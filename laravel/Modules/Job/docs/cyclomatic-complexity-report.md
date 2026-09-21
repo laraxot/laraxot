@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Cyclomatic Complexity Report - Module: Job"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "cyclomatic complexity report"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Cyclomatic Complexity Report - Module: Job
 
 **Analyzer:** Super Mucca 🐮

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Report: Metodi con nome duplicato nei moduli e nei temi"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "duplicate methods report"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Report: Metodi con nome duplicato nei moduli e nei temi
 
 ## Introduzione

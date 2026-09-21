@@ -25,58 +25,7 @@ use Webmozart\Assert\Assert;
 class ListJobBatches extends XotBaseListRecords
 {
     protected static string $resource = JobBatchResource::class;
-
-    /**
-     * @return array<string, Tables\Columns\Column>
-     */
-    #[Override]
-    public function getTableColumns(): array
-    {
-        $date_format = config('app.date_format');
-        Assert::string($date_format, '['.__LINE__.']['.class_basename(self::class).']');
-
-        return [
-            'id' => TextColumn::make('id')
-                ->searchable()
-                ->sortable()
-                ->copyable(),
-            'name' => TextColumn::make('name')
-                ->searchable()
-                ->sortable()
-                ->wrap(),
-            'total_jobs' => TextColumn::make('total_jobs')->numeric()->sortable(),
-            'pending_jobs' => TextColumn::make('pending_jobs')->numeric()->sortable(),
-            'failed_jobs' => TextColumn::make('failed_jobs')->numeric()->sortable(),
-            'progress' => TextColumn::make('progress')
-                ->formatStateUsing(
-                    /**
-                     * @param  mixed  $record
-                     */
-                    static function ($record): string {
-                        if (! $record instanceof JobBatch) {
-                            return '';
-                        }
-
-                        return (string) $record->progress().'%';
-                    },
-                )
-                ->sortable(),
-            'failed_job_ids' => TextColumn::make('failed_job_ids')
-                ->wrap()
-                ->searchable()
-                ->limit(50),
-            'options' => TextColumn::make('options')->wrap()->searchable(),
-            'cancelled_at' => TextColumn::make('cancelled_at')->dateTime($date_format)->sortable(),
-            'created_at' => TextColumn::make('created_at')
-                ->dateTime($date_format)
-                ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
-            'finished_at' => TextColumn::make('finished_at')
-                ->dateTime($date_format)
-                ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
-        ];
-    }
+    
 
     /**
      * @return array<string, Action|ActionGroup>

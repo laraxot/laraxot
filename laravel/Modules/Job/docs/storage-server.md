@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "Storage Server"
 module: "Job"
 type: concept
@@ -54,3 +55,11 @@ https://github.com/amincheloh/cookbook/blob/master/docs/how-to-use-minio-as-lara
 
 
 
+=======
+module: theme
+topic: storage-server
+canonical: ../../../Themes/docs/shared-components/storage-server-1.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/storage-server-1.md
+>>>>>>> af4545e (.)

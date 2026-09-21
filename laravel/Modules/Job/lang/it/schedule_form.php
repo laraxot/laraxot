@@ -7,7 +7,7 @@ return [
         'command' => ['label' => 'command', 'placeholder' => 'command', 'helper_text' => 'command', 'description' => 'command'],
         'params' => ['label' => 'params', 'placeholder' => 'params', 'helper_text' => 'params', 'description' => 'params'],
         'name' => ['label' => 'name', 'placeholder' => 'name', 'helper_text' => 'name', 'description' => 'name'],
-        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => 'value', 'description' => 'value'],
+        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => '', 'description' => 'value'],
         'options_with_value' => ['label' => 'options_with_value', 'placeholder' => 'options_with_value', 'helper_text' => 'options_with_value', 'description' => 'options_with_value'],
         'type' => ['label' => 'type', 'placeholder' => 'type', 'helper_text' => 'type', 'description' => 'type'],
         'expression' => ['label' => 'expression', 'placeholder' => 'expression', 'helper_text' => 'expression', 'description' => 'expression'],

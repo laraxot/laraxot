@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Milestones - Job"
 module: "Job"
@@ -9,6 +10,8 @@ qmd: "04 milestones"
 related:
   - "./phpstan-fixes-archive-2.md"
 ---
+=======
+>>>>>>> af4545e (.)
 # Milestones - Job
 
 ## M1 Documentation Baseline
