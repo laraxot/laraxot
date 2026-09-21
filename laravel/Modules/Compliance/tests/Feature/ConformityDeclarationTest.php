@@ -70,8 +70,9 @@ function makeDicoWorkOrder(): WorkOrder
  */
 function makeDico(array $extra = []): ConformityDeclaration
 {
+    /** @var int $n */
     static $n = 0;
-    $n++;
+    $n = $n + 1;
 
     $dico = ConformityDeclaration::query()->create(array_merge([
         'number' => 'DICO-TEST-'.$n,
