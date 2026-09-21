@@ -19,43 +19,6 @@ https://italia.github.io/design-comuni-pagine-statiche/sito/ and our local test 
 
 | Page | Similarity | Status | Reference Structure | Local Structure |
 |------|------------|--------|---------------------|-----------------|
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-| segnalazione-02-dati | 78% ⚠️ | OK | 147divs,91anchors,3inputs | 133divs,90anchors,3inputs |
-| homepage | 73% ⚠️ | OK | 215divs,139anchors,18inputs | 186divs,139anchors,8inputs |
-| argomenti | 67% ⚠️ | OK | 230divs,108anchors,17inputs | 185divs,102anchors,6inputs |
-| segnalazione-dettaglio | 64% ⚠️ | OK | 186divs,121anchors,17inputs | 130divs,108anchors,6inputs |
-| amministrazione | 63% ⚠️ | OK | 173divs,94anchors,17inputs | 110divs,89anchors,6inputs |
-| ticket-list | 62% ⚠️ | OK | 261divs,89anchors,28inputs | 315divs,89anchors,28inputs |
-| segnalazione-04-conferma | 58% ⚠️ | OK | 128divs,88anchors,17inputs | 105divs,86anchors,6inputs |
-| domande-frequenti | 57% ⚠️ | OK | 261divs,84anchors,18inputs | 211divs,80anchors,7inputs |
-| argomento | 56% ⚠️ | OK | 229divs,116anchors,17inputs | 100divs,82anchors,6inputs |
-| lista-categorie | 55% ⚠️ | OK | 187divs,100anchors,17inputs | 95divs,83anchors,1inputs |
-| segnalazione-01-privacy | 54% ⚠️ | OK | 94divs,86anchors,2inputs | 80divs,80anchors,1inputs |
-| assistenza-01-dati | 52% ⚠️ | OK | 133divs,87anchors,5inputs | 88divs,80anchors,7inputs |
-| novita | 50% ⚠️ | OK | 211divs,111anchors,18inputs | 92divs,86anchors,1inputs |
-| eventi | 50% ⚠️ | OK | 228divs,123anchors,17inputs | 95divs,86anchors,1inputs |
-| documenti-dati | 49% ❌ | OK | 210divs,108anchors,18inputs | 91divs,89anchors,1inputs |
-| servizi-categoria | 49% ❌ | OK | 183divs,102anchors,18inputs | 94divs,84anchors,1inputs |
-| lista-risorse | 48% ❌ | OK | 197divs,108anchors,18inputs | 171divs,94anchors,18inputs |
-| lista-risorse-categorie | 47% ❌ | OK | 279divs,128anchors,18inputs | 88divs,84anchors,1inputs |
-| appuntamento-05-riepilogo | 46% ❌ | OK | 156divs,88anchors,1inputs | 80divs,80anchors,1inputs |
-| appuntamento-03-dettagli | 45% ❌ | OK | 122divs,85anchors,1inputs | 80divs,80anchors,1inputs |
-| appuntamento-01-ufficio-luogo | 44% ❌ | OK | 136divs,84anchors,4inputs | 80divs,80anchors,1inputs |
-| appuntamento-04-richiedente | 44% ❌ | OK | 121divs,84anchors,4inputs | 80divs,80anchors,1inputs |
-| appuntamento-04-richiedente-autenticato | 43% ❌ | OK | 132divs,85anchors,1inputs | 80divs,80anchors,1inputs |
-| segnalazione-03-riepilogo | 43% ❌ | OK | 149divs,87anchors,1inputs | 80divs,80anchors,1inputs |
-| assistenza-02-conferma | 42% ❌ | OK | 129divs,83anchors,17inputs | 80divs,80anchors,1inputs |
-| appuntamento-01-ufficio | 40% ❌ | OK | 115divs,84anchors,1inputs | 107divs,79anchors,5inputs |
-| segnalazione-area-personale | 38% ❌ | OK | 253divs,134anchors,3inputs | 90divs,83anchors,1inputs |
-| appuntamento-02-data-orario | 37% ❌ | OK | 138divs,85anchors,4inputs | 92divs,79anchors,1inputs |
-| servizi | 36% ❌ | OK | 221divs,116anchors,18inputs | 83divs,85anchors,1inputs |
-| servizio-dettaglio | 36% ❌ | OK | 208divs,126anchors,17inputs | 127divs,86anchors,1inputs |
-| evento-dettaglio | 35% ❌ | OK | 220divs,129anchors,17inputs | 84divs,81anchors,1inputs |
-| novita-dettaglio | 33% ❌ | OK | 158divs,101anchors,17inputs | 83divs,85anchors,1inputs |
-=======
->>>>>>> laraxot/dev
 | homepage | 76% ⚠️ | OK | 215divs,139anchors,18inputs | 243divs,140anchors,18inputs |
 | argomenti | 73% ⚠️ | OK | 230divs,108anchors,17inputs | 229divs,104anchors,17inputs |
 | amministrazione | 70% ⚠️ | OK | 173divs,94anchors,17inputs | 155divs,89anchors,17inputs |
@@ -88,10 +51,6 @@ https://italia.github.io/design-comuni-pagine-statiche/sito/ and our local test 
 | segnalazione-02-dati | 0% ❌ | ERROR | 0divs,0anchors,0inputs | 0divs,0anchors,0inputs |
 | segnalazione-03-riepilogo | 0% ❌ | ERROR | 0divs,0anchors,0inputs | 0divs,0anchors,0inputs |
 | segnalazione-area-personale | 0% ❌ | ERROR | 0divs,0anchors,0inputs | 0divs,0anchors,0inputs |
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> laraxot/dev
 
 ## Overall Statistics
 
