@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Compliance\Actions;
 
+use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Compliance\Models\ConformityAttachment;
 use Modules\Compliance\Models\ConformityDeclaration;
+use Modules\Customer\Models\CustomerSite;
 use Modules\Platform\Settings\SettingsRepository;
 use Modules\WorkOrder\Models\WorkOrder;
 use Modules\WorkOrder\Models\WorkOrderMaterial;
@@ -72,6 +74,16 @@ final class PrepareConformityDeclarationForWorkOrderAction
         $customer = $workOrder->customer;
         $site = $workOrder->site;
 
+        // BelongsTo nullable (customer_site_id puo' essere null): $site puo'
+        // davvero non esserci, ma Larastan non capisce l'unione nullable su
+        // una magic property che condivide il nome con la relation (bug noto
+        // di ModelRelationsExtension). Restringere il tipo con instanceof
+        // invece di ?-> tiene la sicurezza a runtime senza inseguire un
+        // falso positivo che ?-> non risolverebbe comunque.
+        $siteCity = $site instanceof CustomerSite ? $site->city : null;
+        $siteProvince = $site instanceof CustomerSite ? $site->province : null;
+        $sitePostalCode = $site instanceof CustomerSite ? $site->postal_code : null;
+
         $declaration = ConformityDeclaration::query()->create(array_merge($this->impresa(), [
             'work_order_id' => $workOrder->id,
             'customer_id' => $workOrder->customer_id,
@@ -80,15 +92,15 @@ final class PrepareConformityDeclarationForWorkOrderAction
             'model' => ConformityDeclaration::MODELLO_I,
             'status' => ConformityDeclaration::BOZZA,
 
-            'client_name' => (string) ($customer?->legal_name ?? ''),
-            'client_tax_code' => $customer?->tax_code ?? $customer?->vat_number,
+            'client_name' => (string) ($customer->legal_name ?? ''),
+            'client_tax_code' => ($customer->tax_code ?? $customer->vat_number) ?? '',
 
             // L'immobile e' il cantiere della commessa. Se il cantiere non c'e',
             // si ripiega sul comune del cliente, ma resta un ripiego: sono due
             // cose diverse, e su una dichiarazione confonderle e' un errore.
-            'site_city' => $site?->city ?? $customer?->city,
-            'site_province' => $site?->province ?? $customer?->province,
-            'site_postal_code' => $site?->postal_code ?? $customer?->postal_code,
+            'site_city' => ($siteCity ?? $customer->city) ?? '',
+            'site_province' => ($siteProvince ?? $customer->province) ?? '',
+            'site_postal_code' => ($sitePostalCode ?? $customer->postal_code) ?? '',
 
             'work_description' => $workOrder->title,
             'materials' => $this->materials($workOrder),
@@ -186,7 +198,8 @@ final class PrepareConformityDeclarationForWorkOrderAction
      */
     private function prepareAttachmentSlots(ConformityDeclaration $declaration): void
     {
-        $documenti = $declaration->workOrder?->complianceDocuments ?? collect();
+        $workOrder = $declaration->workOrder;
+        $documenti = $workOrder instanceof WorkOrder ? $workOrder->complianceDocuments : collect();
 
         $corrispondenze = [
             'progetto' => ConformityAttachment::PROGETTO,
@@ -196,6 +209,10 @@ final class PrepareConformityDeclarationForWorkOrderAction
         ];
 
         foreach ($documenti as $documento) {
+            if (! $documento instanceof ComplianceDocument) {
+                continue;
+            }
+
             $tipo = mb_strtolower($documento->type.' '.$documento->title);
 
             foreach ($corrispondenze as $indizio => $kind) {

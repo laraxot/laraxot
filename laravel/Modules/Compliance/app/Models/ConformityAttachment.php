@@ -20,27 +20,27 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 final class ConformityAttachment extends BaseModel
 {
     // I sei allegati dell'Allegato I.
-    public const PROGETTO = 'project';
+    public const string PROGETTO = 'project';
 
-    public const RELAZIONE_MATERIALI = 'materials_report';
+    public const string RELAZIONE_MATERIALI = 'materials_report';
 
-    public const SCHEMA_IMPIANTO = 'plant_diagram';
+    public const string SCHEMA_IMPIANTO = 'plant_diagram';
 
-    public const DICO_PRECEDENTE = 'previous_declaration';
+    public const string DICO_PRECEDENTE = 'previous_declaration';
 
-    public const CERTIFICATO_IMPRESA = 'company_certificate';
+    public const string CERTIFICATO_IMPRESA = 'company_certificate';
 
-    public const MATERIALI_NON_NORMALIZZATI = 'non_standard_attestation';
+    public const string MATERIALI_NON_NORMALIZZATI = 'non_standard_attestation';
 
     // Non stanno nell'Allegato I ma sono obblighi lo stesso: le istruzioni d'uso
     // per l'art. 8 comma 2, il rapporto delle verifiche per l'art. 7 comma 1.
     // Compaiono fra gli avvisi, non fra i blocchi.
-    public const ISTRUZIONI_USO = 'use_instructions';
+    public const string ISTRUZIONI_USO = 'use_instructions';
 
-    public const RAPPORTO_VERIFICA = 'verification_report';
+    public const string RAPPORTO_VERIFICA = 'verification_report';
 
     /** @var array<string, string> */
-    public const ETICHETTE = [
+    public const array ETICHETTE = [
         self::PROGETTO => 'Progetto',
         self::RELAZIONE_MATERIALI => 'Relazione con tipologie dei materiali',
         self::SCHEMA_IMPIANTO => 'Schema dell impianto realizzato',

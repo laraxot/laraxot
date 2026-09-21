@@ -6,6 +6,7 @@ namespace Modules\Compliance\Actions;
 
 use Modules\Compliance\Models\ComplianceDocument;
 use Modules\Compliance\Models\Equipment;
+use Modules\Customer\Models\CustomerSite;
 use Modules\WorkOrder\Models\WorkOrder;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -36,13 +37,20 @@ final class GeneratePosDraftForWorkOrderAction
             ])
             ->all();
 
+        $site = $workOrder->site;
+        // BelongsTo nullable (customer_site_id puo' essere null): instanceof
+        // invece di ?-> perche' Larastan non capisce l'unione nullable su una
+        // magic property col nome uguale alla relation (vedi
+        // PrepareConformityDeclarationForWorkOrderAction).
+        $siteName = $site instanceof CustomerSite ? $site->name : null;
+
         $draft = [
             'source' => 'D.I. 9 settembre 2014 - modello semplificato POS; contenuti minimi Allegato XV D.Lgs. 81/2008',
             'work_order' => [
                 'id' => $workOrder->id,
                 'title' => $workOrder->title,
                 'customer' => $workOrder->customer?->legal_name,
-                'site' => $workOrder->site?->name,
+                'site' => $siteName,
                 'description' => $workOrder->description,
             ],
             'sections' => [

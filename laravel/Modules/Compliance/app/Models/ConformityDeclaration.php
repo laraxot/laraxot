@@ -55,21 +55,24 @@ use Modules\WorkOrder\Models\WorkOrder;
  * @property string $status
  * @property CarbonInterface|null $issued_at
  * @property string|null $notes
+ * @property-read WorkOrder|null $workOrder
+ * @property-read Customer|null $customer
+ * @property-read CustomerSite|null $site
  */
 final class ConformityDeclaration extends BaseModel
 {
     use SoftDeletes;
 
-    public const BOZZA = 'draft';
+    public const string BOZZA = 'draft';
 
-    public const EMESSA = 'issued';
+    public const string EMESSA = 'issued';
 
-    public const MODELLO_I = 'I';
+    public const string MODELLO_I = 'I';
 
-    public const MODELLO_II = 'II';
+    public const string MODELLO_II = 'II';
 
     /** @var array<string, string> */
-    public const MODELLI = [
+    public const array MODELLI = [
         self::MODELLO_I => 'Allegato I - Impresa installatrice',
         self::MODELLO_II => 'Allegato II - Ufficio tecnico interno',
     ];
@@ -90,7 +93,7 @@ final class ConformityDeclaration extends BaseModel
      *
      * @var array<string, string>
      */
-    public const IMPIANTI = [
+    public const array IMPIANTI = [
         'a' => 'a) Impianti elettrici: produzione, trasformazione, trasporto, distribuzione e utilizzazione dell energia elettrica, protezione contro le scariche atmosferiche, automazione di porte, cancelli e barriere',
         'b' => 'b) Impianti radiotelevisivi, antenne e impianti elettronici in genere',
         'c' => 'c) Impianti di riscaldamento, climatizzazione, condizionamento e refrigerazione di qualsiasi natura, comprese le opere di evacuazione dei prodotti della combustione e delle condense, e di ventilazione e aerazione dei locali',
@@ -101,7 +104,7 @@ final class ConformityDeclaration extends BaseModel
     ];
 
     /** @var array<string, string> */
-    public const INTERVENTI = [
+    public const array INTERVENTI = [
         'nuovo_impianto' => 'Nuovo impianto',
         'trasformazione' => 'Trasformazione',
         'ampliamento' => 'Ampliamento',

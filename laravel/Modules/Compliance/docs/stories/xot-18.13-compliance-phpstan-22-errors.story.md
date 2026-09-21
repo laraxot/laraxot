@@ -105,3 +105,60 @@ prima di questa story) — dettagli in `docs/coverage.md`.
 l'aggiornamento in coda a
 `docs/chat/2026-09-06-pest-v5-done-plus-phpstan-parallel-wave.md` per hash ed
 esito push reale.
+
+## Update 2026-09-21 — 7 nuovi errori (file successivi alla baseline), 0 residui
+
+Campagna full-tree `phpstan analyse Modules` (tutti i moduli, ordine casuale,
+swarm) ha trovato 7 errori reali in Compliance, in file scritti dopo la baseline
+del 2026-09-06 (quindi non una regressione di questa story, codice nuovo mai
+passato da un giro phpstan):
+
+1. `tests/Feature/ConformityDeclarationTest.php` — `postInc.type` su
+   `static $n = 0; $n++;` dentro l'helper globale `makeDico()`. Fix: `/** @var
+   int $n */` sopra la dichiarazione static (pattern documentato PHPStan per
+   variabili static, non un override di un tipo gia' corretto).
+2. `app/Actions/PrepareConformityDeclarationForWorkOrderAction.php` — 2 errori
+   `nullsafe.neverNull` reali su `$customer?->` (Customer e' garantito,
+   `customer_id` non nullable): tolto `?->`, tenuto `??` per i campi
+   effettivamente nullable (`tax_code`/`vat_number`).
+3. Stesso file, 4 errori `nullsafe.neverNull` su `$site?->` (city/province/
+   postal_code) e `$declaration->workOrder?->complianceDocuments` — QUESTI
+   sono falsi positivi Larastan, non veri bug: `customer_site_id` e
+   `work_order_id` sono nullable per schema, quindi l'accesso nullsafe e'
+   davvero necessario a runtime. Root cause: bug noto di
+   `ModelRelationsExtension` di Larastan — quando una magic property
+   condivide il nome con un metodo di relation (`site()`/`workOrder()`),
+   l'override `@property-read Tipo|null $nome` nel docblock del model viene
+   letto per il tipo base ma la meta' `|null` dell'unione viene ignorata solo
+   dal check `nullsafe.neverNull` (verificato con repro isolato: stesso
+   comportamento identico fra `@property-read string $x` e `@property-read
+   string|null $x`). Fix root-cause (non `@phpstan-ignore`/baseline/cast):
+   sostituito `?->` con guardia `instanceof CustomerSite`/`instanceof
+   WorkOrder` su variabile locale — PHPStan restringe correttamente il tipo
+   via `instanceof` anche se non lo fa via `?->`, e non segnala "instanceof
+   always true" (verificato: significa che il tipo `CustomerSite|null` e'
+   davvero visto altrove, solo il check nullsafe specifico ha il bug).
+4. `app/Actions/GeneratePosDraftForWorkOrderAction.php` — stesso identico
+   pattern/fix su `$workOrder->site?->name`.
+5. `app/Models/ConformityDeclaration.php`, `Modules/WorkOrder/app/Models/WorkOrder.php`
+   — aggiunti/corretti i tag `@property-read` mancanti per le relation
+   (`customer`, `site`, `workOrder`) a scopo di documentazione IDE/PHPStan,
+   anche se per il caso nullable specifico il tag da solo non basta (vedi
+   punto 3).
+
+Verifica: `phpstan analyse Modules/Compliance Modules/WorkOrder
+--memory-limit=-1` con cache pulita → 0 errori (esclusi i bucket strutturali
+noti `typeCoverage`/`internalClass`, gia' documentati come non affrontabili
+sotto il `phpstan.neon` attuale). Pint scoped sui 5 file toccati (non
+`--dirty`, per non toccare WIP di altre sessioni sull'albero condiviso).
+
+Nota: questa run ha trovato `docs/coverage.md` di questo modulo gia'
+cancellato nell'albero di lavoro (non da questa sessione) — non ripristinato,
+fuori scope, verosimile stesso fenomeno di
+`feedback_coverage_md_working_tree_truncation.md` nel second brain.
+
+File toccati: `app/Actions/PrepareConformityDeclarationForWorkOrderAction.php`,
+`app/Actions/GeneratePosDraftForWorkOrderAction.php`,
+`app/Models/ConformityDeclaration.php`,
+`tests/Feature/ConformityDeclarationTest.php`,
+`../WorkOrder/app/Models/WorkOrder.php` (modulo WorkOrder, story gemella li').
