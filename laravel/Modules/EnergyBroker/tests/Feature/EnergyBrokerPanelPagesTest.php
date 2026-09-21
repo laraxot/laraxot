@@ -30,9 +30,7 @@ function energyBrokerUser(string $role = 'energy_broker_admin'): User
 {
     Role::findOrCreate($role);
     $user = UserFactory::new()->createOne();
-    // 'energy-broker' e' l'id del pannello, ed e' il ruolo che ne apre la porta;
-    // $role dice invece cosa l'utente puo' fare una volta dentro.
-    $user->syncRoles(['energy-broker', $role]);
+    $user->syncRoles([$role]);
 
     return $user;
 }
