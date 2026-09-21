@@ -14,14 +14,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 class ListTranslationFiles extends XotBaseListRecords
 {
     protected static string $resource = TranslationFileResource::class;
-
-    #[\Override]
-    public function getTableColumns(): array
-    {
-        return [
-            'key' => TextColumn::make('key')->searchable(['key', 'content']),
-        ];
-    }
+   
 
     /**
      * @return array<string, Action|ActionGroup>

@@ -200,9 +200,13 @@ return [
      * | test: la suite tocca migliaia di etichette e riscrive l'albero di lavoro,
      * | lasciando in `git status` file che nessuno ha modificato a mano.
      * |
-     * | phpunit.xml lo spegne. In locale resta acceso.
+     * | Solo default: niente env() nei config di modulo (Larastan lo vieta fuori
+     * | dal config/ di root). Lo spegnimento reale sotto test non passa da qui:
+     * | SaveTransAction legge Config::get('lang.save_missing_translations',
+     * | ! app()->runningUnitTests()), e la config di modulo non e' comunque
+     * | caricata nell'app dei test.
      * |
      */
 
-    'save_missing_translations' => env('LANG_SAVE_MISSING_TRANSLATIONS', true),
+    'save_missing_translations' => true,
 ];
