@@ -3,12 +3,10 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\Menu;
-use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
-uses(TestCase::class);
 test('Menu model can be instantiated', function () {
     $menu = new Menu();
 

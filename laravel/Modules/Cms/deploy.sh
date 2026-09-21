@@ -30,8 +30,6 @@ sudo rm -rf ./app/View/Components/vendor/
 sudo rm -rf ./resources/views/vendor/
 echo "Aggiorno librerie..."
 sudo COMPOSER_ALLOW_SUPERUSER=1 php -d memory_limit=-1 composer.phar update -W --no-interaction 1>/dev/null
-echo "Rigenero autoloader..."
-sudo COMPOSER_ALLOW_SUPERUSER=1 php -d memory_limit=-1 composer.phar dump-autoload --optimize --classmap-authoritative 1>/dev/null
 echo "Pubblico variabili e configurazioni..."
 sudo php artisan vendor:publish --all --quiet
 sudo rm -rf database/migrations/*

@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('login screen can be rendered', function (): void {
     $lang = app()->getLocale();
     $response = cmsGet('/'.$lang.'/auth/login');

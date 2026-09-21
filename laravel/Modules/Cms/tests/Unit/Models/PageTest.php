@@ -6,11 +6,8 @@ namespace Modules\Cms\Tests\Unit\Models;
 
 use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Page;
-use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
-
-uses(TestCase::class);
 
 describe('Page', function (): void {
     test('page model can be instantiated', function (): void {

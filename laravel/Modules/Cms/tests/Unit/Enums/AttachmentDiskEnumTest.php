@@ -3,10 +3,8 @@
 declare(strict_types=1);
 
 use Modules\Cms\Enums\AttachmentDiskEnum;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('AttachmentDiskEnum has all cases', function () {
     $cases = AttachmentDiskEnum::cases();
 

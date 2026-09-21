@@ -48,7 +48,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class ContentResource extends XotBaseResource
 {
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             'title' => Forms\Components\TextInput::make('title')

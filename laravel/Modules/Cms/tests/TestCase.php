@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests;
 
-use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
@@ -15,6 +14,7 @@ use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Providers\XotServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
+use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * Base test case for Cms module.
@@ -80,7 +80,7 @@ abstract class TestCase extends XotBaseTestCase
     /**
      * @return array<int, class-string<ServiceProvider>>
      */
-    protected function getPackageProviders(Application $app): array
+    protected function getPackageProviders(mixed $app): array
     {
         return [
             XotServiceProvider::class,
@@ -118,7 +118,7 @@ abstract class TestCase extends XotBaseTestCase
      *
      * @param class-string<T> $class
      *
-     * @return T&\PHPUnit\Framework\MockObject\MockObject
+     * @return T&MockObject
      */
     public function createPHPUnitMock(string $class): object
     {

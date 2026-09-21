@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 use Modules\Cms\Actions\SaveFooterConfigAction;
 use Modules\Cms\Datas\FooterData;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('SaveFooterConfigAction can be executed', function () {
     $action = new SaveFooterConfigAction();
 

@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
 use Modules\Cms\View\Components\Page;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('page component merges route context into block data', function (): void {
     $block = (object) [
         'view' => 'cms::tests.fixtures.slug-probe',

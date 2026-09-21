@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
-use Modules\Xot\Contracts\UserContract;
-
-uses(TestCase::class);
+use Modules\User\Models\User;
 
 it('renders the login page', function (): void {
     $locale = app()->getLocale();
@@ -44,6 +42,7 @@ it('login page contains localized content', function (): void {
 });
 
 it('allows the user to authenticate via frontend login page', function (): void {
+    /** @var TestCase $this */
     $email = cmsGenerateUniqueEmail();
     $user = cmsCreateTestUser([
         'email' => $email,
@@ -68,6 +67,7 @@ it('allows the user to authenticate via frontend login page', function (): void 
 });
 
 it('redirects authenticated users from login page', function (): void {
+    /** @var TestCase $this */
     $user = cmsCreateTestUser();
 
     $this->actingAs($user);
@@ -87,7 +87,7 @@ it('remember me functionality works', function (): void {
 
     cmsAssertGuest();
 
-    $response = LivewireVolt::test('auth.login')
+    $response = LivewireVolt::test('auth.login #2')
         ->set('email', $email)
         ->set('password', 'password123')
         ->set('remember', true)
@@ -106,7 +106,7 @@ it('regenerates the session on login', function (): void {
 
     $originalSessionId = session()->getId();
 
-    LivewireVolt::test('auth.login')
+    LivewireVolt::test('auth.login #3')
         ->set('email', $email)
         ->set('password', 'password123')
         ->call('authenticate');
@@ -123,7 +123,7 @@ it('rate limits login attempts', function (): void {
     ]);
 
     for ($i = 0; $i < 5; ++$i) {
-        LivewireVolt::test('auth.login')
+        LivewireVolt::test('auth.login #4')
             ->set('email', $email)
             ->set('password', 'wrong_password')
             ->call('authenticate');
@@ -132,7 +132,7 @@ it('rate limits login attempts', function (): void {
     // Sesto tentativo, con la password giusta: il rate limiter deve fermarlo lo stesso.
     // `call()` restituisce un Testable, mai null: `expect($response)->toBeNull()` non
     // poteva passare e non diceva niente sul throttling.
-    LivewireVolt::test('auth.login')
+    LivewireVolt::test('auth.login #5')
         ->set('email', $email)
         ->set('password', 'password123')
         ->call('authenticate')
@@ -149,7 +149,7 @@ it('allows any user type to login via frontend', function (): void {
     ]);
     cmsAssertGuest();
 
-    $response = LivewireVolt::test('auth.login')
+    $response = LivewireVolt::test('auth.login #6')
         ->set('email', $email)
         ->set('password', 'password123')
         ->call('authenticate');
@@ -159,6 +159,6 @@ it('allows any user type to login via frontend', function (): void {
 
     $authenticatedUser = Auth::user();
     expect($authenticatedUser)->not->toBeNull();
-    assert($authenticatedUser instanceof UserContract);
+    assert($authenticatedUser instanceof User);
     expect($authenticatedUser->email)->toBe($email);
 });

@@ -3,16 +3,14 @@
 declare(strict_types=1);
 
 use Modules\Cms\Filament\Pages\Themes;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('Themes page can be instantiated', function () {
     $page = new Themes();
 });
 
 test('Themes page has themes property', function () {
-    $page = new Themes;
+    $page = new Themes();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('themes');
     $property->setAccessible(true);

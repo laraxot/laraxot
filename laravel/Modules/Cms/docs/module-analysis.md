@@ -4,7 +4,7 @@
 **Module Name**: Cms  
 **Type**: Content Management System Module  
 **Status**: ✅ Active  
-**Framework**: Laravel 13.x + Filament 4.x + Folio + Volt  
+**Framework**: Laravel 12.x + Filament 4.x + Folio + Volt  
 **Content Architecture**: Page-based with block system  
 **Language**: Multi-language (IT/EN/DE)  
 

@@ -37,7 +37,7 @@ namespace Modules\User\Filament\Widgets\Auth;
 use Xot\Filament\Widgets\XotBaseWidget;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 use Illuminate\Support\Facades\Auth;
 use Filament\Notifications\Notification;
 

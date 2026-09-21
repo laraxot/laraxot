@@ -5,18 +5,16 @@ declare(strict_types=1);
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Headernav;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\class_implements;
 
-uses(TestCase::class);
 test('Headernav page can be instantiated', function () {
     $page = new Headernav();
 });
 
 test('Headernav page has data property', function () {
-    $page = new Headernav;
+    $page = new Headernav();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
@@ -27,7 +25,7 @@ test('Headernav page has data property', function () {
 });
 
 test('Headernav page has headernavData property', function () {
-    $page = new Headernav;
+    $page = new Headernav();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('headernavData');
     $property->setAccessible(true);

@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 use Modules\Cms\Actions\ResolveBlockQueryAction;
 use Modules\Cms\Models\Page;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('ResolveBlockQueryAction can be instantiated', function () {
     $action = new ResolveBlockQueryAction();
 

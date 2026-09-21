@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Filament\Forms\Components;
 
-use Filament\Forms\Components\Placeholder;
 use Illuminate\Support\HtmlString;
 use Modules\Cms\Models\Attachment;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
@@ -18,7 +17,7 @@ class DownloadAttachmentPlaceHolder extends XotBaseTextEntry
         parent::setUp();
         // `Placeholder::content()` accettava un HtmlString e lo rendeva come HTML;
         // `TextEntry::state()` no, serve `html()` esplicito.
-        $this->label('')->html()->state($this->generateContent())->columnSpanFull();
+        $this->label('')->html()->state($this->generateContent(...))->columnSpanFull();
     }
 
     protected function generateContent(): HtmlString

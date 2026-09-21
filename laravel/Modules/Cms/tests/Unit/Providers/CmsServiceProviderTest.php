@@ -7,11 +7,9 @@ use Modules\Cms\Providers\CmsServiceProvider;
 use Modules\Cms\Providers\EventServiceProvider;
 use Modules\Cms\Providers\FolioVoltServiceProvider;
 use Modules\Cms\Providers\RouteServiceProvider;
-use Modules\Cms\Tests\TestCase;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('CmsServiceProvider has correct name', function () {
     $provider = new CmsServiceProvider(app());
     $reflection = new ReflectionClass($provider);

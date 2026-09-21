@@ -6,7 +6,6 @@ namespace Modules\Cms\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
-use Modules\Cms\Database\Factories\SectionFactory;
 use Modules\Cms\Models\Traits\HasBlocks;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\ProfileContract;
@@ -14,9 +13,7 @@ use Modules\Xot\Contracts\ProfileContract;
 /**
  * Modules\Cms\Models\Section.
  *
- * @property string $id
- * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
- * @property string                       $id
+ * @property string|null                  $id
  * @property array<array-key, mixed>|null $name
  * @property string|null                  $slug
  * @property array<array-key, mixed>|null $blocks
@@ -25,29 +22,26 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property string|null                  $created_by
  * @property string|null                  $updated_by
  * @property ProfileContract|null         $creator
- * @property array<string, array<string, mixed>> $translations
+ * @property array<int|string, mixed>     $translatable_columns_from
+ * @property mixed                        $translations
  * @property ProfileContract|null         $updater
- * @method static Builder<static>|Section newModelQuery()
- * @method static Builder<static>|Section newQuery()
- * @method static Builder<static>|Section query()
- * @method static Builder<static>|Section whereBlocks($value)
- * @method static Builder<static>|Section whereCreatedAt($value)
- * @method static Builder<static>|Section whereCreatedBy($value)
- * @method static Builder<static>|Section whereId($value)
- * @method static Builder<static>|Section whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
- * @method static Builder<static>|Section whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
- * @method static Builder<static>|Section whereLocale(string $column, string $locale)
- * @method static Builder<static>|Section whereLocales(string $column, array<int, string> $locales)
- * @method static Builder<static>|Section whereName($value)
- * @method static Builder<static>|Section whereSlug($value)
- * @method static Builder<static>|Section whereUpdatedAt($value)
- * @method static Builder<static>|Section whereUpdatedBy($value)
- * @method static int                     count()
- * @method static Builder<static>|Section where($column, $operator = null, $value = null, $boolean = 'and')
- * @property ProfileContract|null $deleter
- * @method static SectionFactory                   factory($count = null, $state = [])
- * @method array<int, array<string, mixed>> getSushiRows()
- * @property-read array<int, string> $translatable_columns_from
+ *
+ * @method static Builder<static>|Section                               newModelQuery()
+ * @method static Builder<static>|Section                               newQuery()
+ * @method static Builder<static>|Section                               query()
+ * @method static Builder<static>|Section                               whereBlocks($value)
+ * @method static Builder<static>|Section                               whereCreatedAt($value)
+ * @method static Builder<static>|Section                               whereCreatedBy($value)
+ * @method static Builder<static>|Section                               whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Section whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Section whereJsonContainsLocales(string $column, array<int|string, mixed> $locales, ?mixed $value, string $operand = '=')
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Section whereLocale(string $column, string $locale)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Section whereLocales(string $column, array<int|string, mixed> $locales)
+ * @method static Builder<static>|Section                               whereName($value)
+ * @method static Builder<static>|Section                               whereSlug($value)
+ * @method static Builder<static>|Section                               whereUpdatedAt($value)
+ * @method static Builder<static>|Section                               whereUpdatedBy($value)
+ *
  * @mixin \Eloquent
  */
 class Section extends BaseModelLang
@@ -93,7 +87,6 @@ class Section extends BaseModelLang
      *
      * @return array<string, string>
      */
-    #[\Override]
     protected function casts(): array
     {
         return [

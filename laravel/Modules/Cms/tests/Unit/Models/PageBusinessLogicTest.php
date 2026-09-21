@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Unit\Models;
 
 use Modules\Cms\Models\Page;
-use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
-
-uses(TestCase::class);
 
 describe('Page Business Logic', function (): void {
     test('page has expected fillable fields', function (): void {

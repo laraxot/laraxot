@@ -242,7 +242,7 @@ php -d memory_limit=-1 ./vendor/bin/phpstan analyse --level=max Modules/Cms
 
 **Status**: ✅ Production  
 **Last Updated**: 2026-07-14  
-**Requirements**: PHP 8.3+, Laravel 13, Filament 5  
+**Requirements**: PHP 8.3+, Laravel 12, Filament 5  
 **PHPStan Level**: 10 (Target)
 
 **Note**: Documentation previously had duplications and merge conflicts. This version consolidates to single source of truth.

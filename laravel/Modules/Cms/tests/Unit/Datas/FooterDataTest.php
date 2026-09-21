@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 use Livewire\Wireable;
 use Modules\Cms\Datas\FooterData;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
-uses(TestCase::class);
 test('FooterData can be instantiated', function (): void {
     $footerData = new FooterData();
 

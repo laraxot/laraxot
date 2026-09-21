@@ -1,118 +1,51 @@
-# PHPStan Corrections - Cms Module - Gennaio 2025
+# PHPStan Corrections - CMS Module
 
-**Modulo**: Cms
-**Errori Risolti**: 8
+## Fixed Issues
 
----
+### 1. HTTP Client PromiseInterface|Response Union Type (Multiple Action files)
+**Date**: [DATE]
+**Files affected**:
+- app/Actions/Bing/GetAddressFromBingMapsAction.php
+- app/Actions/GetCoordinatesAction.php
+- app/Actions/GetCoordinatesByAddressAction.php
+- app/Actions/GoogleMaps/CalculateDistanceMatrixAction.php
+- app/Actions/GoogleMaps/GetAddressFromGoogleMapsAction.php
+- app/Actions/GoogleMaps/OptimizeRouteAction.php
+- app/Actions/Here/GetAddressFromHereMapsAction.php
+- app/Actions/LocationIQ/GetAddressFromLocationIQAction.php
+- app/Actions/Mapbox/GetAddressFromMapboxLatLngAction.php
+- app/Actions/Nominatim/GetAddressFromNominatimAction.php
+- app/Actions/OpenCage/GetAddressFromOpenCageAction.php
+- app/Actions/Weather/GetOpenWeatherDataAction.php
 
-## 🔧 Correzioni Implementate
+**Issue**: Laravel's `Http::get()` returns `PromiseInterface|Response` union type, causing PHPStan errors when calling methods like `successful()` and `json()`.
 
-### 1. HasBlocks Trait - DataCollection::make() Non Esiste
-
-**File**: `Modules/Cms/app/Models/Traits/HasBlocks.php`
-
-**Problema**: `DataCollection::make()` non esiste, deve usare `BlockData::collection()`
-
-**Errore PHPStan**:
-```
-Call to an undefined static method Spatie\LaravelData\DataCollection::make().
-```
-
-**Soluzione**:
+**Solution**: Added type checking and casting after HTTP calls:
 ```php
-// ❌ SBAGLIATO
-return DataCollection::make([]);
-
-// ✅ CORRETTO
-return BlockData::collection([]);
-```
-
-**Pattern Applicato**: Usare sempre `DataClass::collection()` invece di `DataCollection::make()`
-
----
-
-### 2. Section Component - BlockData Type Non Trovato
-
-**File**: `Modules/Cms/app/View/Components/Section.php`
-
-**Problema**: Tipo `BlockData` non importato nella property
-
-**Errore PHPStan**:
-```
-Property Modules\Cms\View\Components\Section::$blocks has unknown class Modules\Cms\View\Components\BlockData as its type.
-```
-
-**Soluzione**:
-```php
-use Modules\Cms\Datas\BlockData;
-
-/** @var DataCollection<BlockData> */
-public DataCollection $blocks;
-```
-
----
-
-### 3. XotComposer - Unknown User Class
-
-**File**: `Modules/Cms/app/Http/View/Composers/XotComposer.php`
-
-**Problema**: Riferimento a `App\Models\User` che non esiste
-
-**Errore PHPStan**:
-```
-Call to method profile() on an unknown class App\Models\User.
-```
-
-**Soluzione**:
-```php
-use Modules\Xot\Contracts\UserContract;
-
-if (! ($user instanceof UserContract)) {
-    return;
+// Handle PromiseInterface|Response union type
+if ($response instanceof \GuzzleHttp\Promise\PromiseInterface) {
+    $response = $response->wait();
 }
 
-/** @var \Illuminate\Database\Eloquent\Relations\HasOne $profileRelation */
-$profileRelation = $user->profile();
+/** @var \Illuminate\Http\Client\Response $response */
 ```
 
-**Pattern Applicato**: Verificare sempre che l'utente implementi `UserContract` prima di chiamare metodi specifici
-
----
-
-### 4. VerifyComponent - Metodi Email Verification Mancanti
-
-**File**: `Modules/Cms/app/Http/Volt/VerifyComponent.php`
-
-**Problema**: Metodi `hasVerifiedEmail()` e `sendEmailVerificationNotification()` non definiti in `UserContract`
-
-**Errore PHPStan**:
-```
-Call to an undefined method Modules\Xot\Contracts\UserContract::hasVerifiedEmail().
-Call to an undefined method Modules\Xot\Contracts\UserContract::sendEmailVerificationNotification().
-```
-
-**Soluzione**: Aggiunti metodi a `UserContract`:
+### 2. Missing BASE_URL Constant
+**File**: app/Actions/GoogleMaps/OptimizeRouteAction.php
+**Issue**: Undefined constant `BASE_URL`
+**Fix**: Added the missing constant:
 ```php
-/**
- * Determine if the user has verified their email address.
- */
-public function hasVerifiedEmail(): bool;
-
-/**
- * Send the email verification notification.
- */
-public function sendEmailVerificationNotification(): void;
+private const BASE_URL = 'https://maps.googleapis.com/maps/api/directions/json';
 ```
 
-**File Modificato**: `Modules/Xot/app/Contracts/UserContract.php`
+## Status
+✅ **0 errors** - All PHPStan errors have been resolved
 
----
+## Technical Notes
+- Correct namespace for PromiseInterface is `GuzzleHttp\Promise\PromiseInterface`
+- All HTTP client responses now properly handle both synchronous and asynchronous cases
+- PHPDoc casting ensures PHPStan recognizes the correct type after Promise resolution
 
-## 📚 Riferimenti
-
-- [PHPStan Code Quality Guide](../../xot/docs/phpstan_code_quality_guide.md)
-- [Cms Module README](./readme.md)
-- [DataCollection Best Practices](../../xot/docs/spatie-data-best-practices.md)
-
----
-
+## Test Corrections (Pest)
+- Nei test, la connessione `user` usa SQLite in-memory: la tabella `users` deve esistere (altrimenti le factory falliscono con `no such table: users`).
+- Evitare assert fragili su stringhe hardcoded di localizzazione (il sito funziona): preferire stringhe realmente presenti nel markup o key/valori di traduzione attuali.

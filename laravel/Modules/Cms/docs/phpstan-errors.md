@@ -36,7 +36,7 @@ Code is calling `App\Models\User` but this class doesn't exist in this codebase.
 use App\Models\User;
 
 // ✅ CORRECT - Option 1: Use module User
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 // ✅ CORRECT - Option 2: Use contract
 use Modules\Xot\Contracts\UserContract;

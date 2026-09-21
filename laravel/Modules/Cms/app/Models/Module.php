@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Cms\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Modules\Cms\Database\Factories\ModuleFactory;
 use Modules\Xot\Contracts\ProfileContract;
 use Nwidart\Modules\Facades\Module as NwModule;
 use Sushi\Sushi;
@@ -17,14 +16,13 @@ use Sushi\Sushi;
  * @property string|null          $name
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
+ *
  * @method static Builder<static>|Module newModelQuery()
  * @method static Builder<static>|Module newQuery()
  * @method static Builder<static>|Module query()
  * @method static Builder<static>|Module whereId($value)
  * @method static Builder<static>|Module whereName($value)
- * @method static int                    count()
- * @property ProfileContract|null $deleter
- * @method static ModuleFactory factory($count = null, $state = [])
+ *
  * @mixin \Eloquent
  */
 class Module extends BaseModel

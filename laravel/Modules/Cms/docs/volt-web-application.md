@@ -6,7 +6,7 @@ Questa guida spiega come sviluppare applicazioni web moderne utilizzando Laravel
 
 - Laravel 10+
 - Laravel Volt
-- Livewire 4+
+- Livewire 3+
 - PHP 8.1+
 - Composer
 

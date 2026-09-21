@@ -39,7 +39,7 @@ class PageResource extends XotBaseResource
         return ['it', 'en'];
     }
 
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             'title' => Forms\Components\TextInput::make('title')

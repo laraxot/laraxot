@@ -59,7 +59,7 @@ class BlockResource extends XotBaseResource
 {
     protected static ?string $parentResource = PageResource::class;
     
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             'type' => Select::make('type')
@@ -127,7 +127,7 @@ Usare lo stesso `MenuResource` con logica condizionale:
 
 ```php
 // MenuResource.php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     $parent = static::getParentRecord();
     $isSubMenu = $parent instanceof Menu;
@@ -204,7 +204,7 @@ class BlockResource extends XotBaseResource
     protected static ?string $parentResource = PageResource::class;
     
     // Gestione relazione many-to-many con pivot
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             'type' => Select::make('type')->required(),

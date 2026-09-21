@@ -49,7 +49,7 @@ class PageSlugMiddleware
     }
 
     /**
-    * Resolve CMS page slug from Folio route (name, container+segment, or single slug).
+     * Resolve CMS page slug from Folio route (name, container+segment, or single slug).
      */
     protected function resolveCmsPageSlug(Request $request): ?string
     {

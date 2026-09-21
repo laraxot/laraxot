@@ -3,12 +3,10 @@
 declare(strict_types=1);
 
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Breadcrumb;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('Breadcrumb page uses correct view', function () {
-    $page = new Breadcrumb;
+    $page = new Breadcrumb();
     // Access protected property via reflection
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('view');
@@ -22,7 +20,7 @@ test('Breadcrumb page can be instantiated', function () {
 });
 
 test('Breadcrumb page has data property', function () {
-    $page = new Breadcrumb;
+    $page = new Breadcrumb();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);

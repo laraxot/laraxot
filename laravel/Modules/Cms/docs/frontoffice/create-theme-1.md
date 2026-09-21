@@ -47,7 +47,7 @@ theme-name/
 1. **composer.json**
 ```json
 {
-    "name": "<nome progetto>/theme-name",
+    "name": "saluteora/theme-name",
     "description": "Tema per il progetto",
     "type": "theme",
     "license": "proprietary",
@@ -73,7 +73,7 @@ theme-name/
 2. **package.json**
 ```json
 {
-    "name": "<nome progetto>/theme-name",
+    "name": "saluteora/theme-name",
     "private": true,
     "scripts": {
         "dev": "vite",
@@ -292,7 +292,7 @@ namespace Modules\User\Filament\Widgets\Auth;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Widgets\Widget;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 class RegisterWidget extends Widget
 {
@@ -366,7 +366,7 @@ Le viste dei widget devono utilizzare i componenti Filament:
             <x-filament::widget>
                 <x-filament::form wire:submit="register">
                     {{ $this->form }}
-                    
+
                     <x-filament::button type="submit">
                         Registrati
                     </x-filament::button>

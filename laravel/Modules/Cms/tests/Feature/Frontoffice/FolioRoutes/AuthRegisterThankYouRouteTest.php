@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 it('GET /it/auth/register/thank-you acceptable', function (): void {
     $res = cmsGet('/it/auth/register/thank-you');
     $status = (int) $res->getStatusCode();

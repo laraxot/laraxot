@@ -3,21 +3,19 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\PageContent;
-use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 use Spatie\Translatable\HasTranslations;
 
-uses(TestCase::class);
 describe('PageContent Model', function (): void {
     test('page content model can be instantiated', function (): void {
-        $model = new PageContent;
+        $model = new PageContent();
 
         Assert::assertInstanceOf(PageContent::class, $model);
     });
 
     test('page content model has expected fillable fields', function (): void {
-        $model = new PageContent;
+        $model = new PageContent();
 
         $fillable = $model->getFillable();
 
@@ -29,7 +27,7 @@ describe('PageContent Model', function (): void {
     });
 
     test('page content model has expected casts', function (): void {
-        $model = new PageContent;
+        $model = new PageContent();
 
         $casts = $model->getCasts();
 
@@ -41,7 +39,7 @@ describe('PageContent Model', function (): void {
     });
 
     test('page content model has translatable fields', function (): void {
-        $model = new PageContent;
+        $model = new PageContent();
 
         Assert::assertContains('name', $model->translatable);
 
@@ -49,13 +47,13 @@ describe('PageContent Model', function (): void {
     });
 
     test('page content model uses HasTranslations trait', function (): void {
-        $model = new PageContent;
+        $model = new PageContent();
 
         Assert::assertTrue(in_array(HasTranslations::class, class_uses_recursive($model)));
     });
 
     test('page content model uses SushiToJsons trait', function (): void {
-        $model = new PageContent;
+        $model = new PageContent();
 
         Assert::assertTrue(in_array(SushiToJsons::class, class_uses_recursive($model)));
     });
