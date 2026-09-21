@@ -328,4 +328,8 @@ public function test_users_isolated_by_tenant()
 
 ---
 
+<<<<<<< HEAD
 Navigation: [Documentation Index](index.md) | [README](README.md) | [Troubleshooting](TROUBLESHOOTING.md)
+=======
+Navigation: [Documentation Index](INDEX.md) | [README](README.md) | [Troubleshooting](TROUBLESHOOTING.md)
+>>>>>>> laraxot/dev

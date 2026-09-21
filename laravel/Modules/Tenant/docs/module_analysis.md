@@ -329,9 +329,9 @@ $reports = CrossTenantService::aggregateData([
 ## Collegamenti Documentation
 
 ### Internal Links
-- `../User/docs/MODULE_ANALYSIS.md` - Tenant-aware users
-- `../Activity/docs/MODULE_ANALYSIS.md` - Isolated activity logging
-- `../Limesurvey/docs/MODULE_ANALYSIS.md` - Tenant survey data
+- `../User/docs/module-analysis.md` - Tenant-aware users
+- `../Activity/docs/module-analysis.md` - Isolated activity logging
+- `../Limesurvey/docs/module-analysis.md` - Tenant survey data
 - `./tenant-management-guide.md` - Operational procedures
 
 ### External References
