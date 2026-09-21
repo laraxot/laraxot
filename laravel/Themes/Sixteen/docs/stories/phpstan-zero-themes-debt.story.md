@@ -57,3 +57,20 @@ Regola: `phpstan.neon` e' fuori portata (owner-only), niente modifiche li'.
 
   Story ancora in-progress: cluster Municipal Models A/B, Livewire/Menu/Providers,
   Controllers+Test non ancora chiusi qui.
+- 2026-09-21: cluster Municipal Models B chiuso — 5 file (`app/Models/Municipal/{ContactPoint,
+  OrganizationalUnit,PublicPerson,MunicipalService}.php`, `app/Models/Appointment.php`), 271→0.
+  Bug reali corretti: `boot()`'s `creating` closure faceva `max('position') + 1` → `TypeError`
+  fatale su tabella vuota (nessun sibling), corretto con `is_numeric()` guard su 3 file;
+  `OrganizationalUnit::isOpenNow()` accedeva `$period['open']`/`['close']` senza `is_array()`
+  guard (fatal su JSON malformato); `PublicPerson::lastName()` concatenava un valore `mixed`
+  raw invece della property tipizzata; `MunicipalService::getFormattedProcedures()` faceva
+  `array_merge()` su valore `mixed` da `collect()->map()` senza guardia; `Appointment` accedeva
+  metodi (`isTomorrow()`, `format()`, `diffInMinutes()`) su Carbon nullable senza nullsafe;
+  `Appointment::$cancelled_at` scritto in `booted()` ma mai documentato — aggiunto `@property`;
+  docblock `@property-read self|null $office/$service` corretti nei tipi reali. Relazioni
+  self-referenti (`parent()`/`children()`/ecc.) passate da `self::class` a `static::class` per
+  coerenza coi generics `BelongsTo<static, $this>`/`HasMany<static, $this>` gia' dichiarati.
+  Verificato da me: `git status` sui 5 path, `php -l` pulito, `phpstan analyse` sui 5 file →
+  0 errori, `pint` → nessuna modifica.
+
+  Story ancora in-progress: cluster Municipal Models A, Controllers+Test non ancora chiusi qui.
