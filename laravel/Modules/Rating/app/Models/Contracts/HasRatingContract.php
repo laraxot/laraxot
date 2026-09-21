@@ -12,6 +12,9 @@ use Modules\Rating\Models\Rating;
 /** Contract for models that expose the shared ratings relation. */
 interface HasRatingContract
 {
-    /** @return MorphToMany<Rating, Model, MorphPivot, 'pivot'> */
+    /**
+     * @return MorphToMany<Rating, Model, MorphPivot, 'pivot'>
+     * @phpstan-return MorphToMany<Rating, Model, MorphPivot, 'pivot'>
+     */
     public function ratings(): MorphToMany;
 }

@@ -20,7 +20,6 @@ use Modules\Notify\Filament\Resources\NotifyThemeResource\Tables\NotifyThemesTab
 use Modules\Notify\Filament\Tables\Columns\ContactColumn;
 use Modules\Notify\Tests\Fixtures\EditNotifyThemeTestProxy;
 use PHPUnit\Framework\Assert;
-use ReflectionMethod;
 
 function makeEditNotifyThemeTestProxy(): EditNotifyThemeTestProxy
 {
@@ -28,7 +27,7 @@ function makeEditNotifyThemeTestProxy(): EditNotifyThemeTestProxy
 }
 
 test('list notification templates page returns empty table columns array', function (): void {
-    $reflection = new ReflectionMethod(ListNotificationTemplates::class, 'getTableColumns');
+    $reflection = new \ReflectionMethod(ListNotificationTemplates::class, 'getTableColumns');
     $columns = $reflection->invoke(new ListNotificationTemplates());
     Assert::assertSame([], $columns);
 });
