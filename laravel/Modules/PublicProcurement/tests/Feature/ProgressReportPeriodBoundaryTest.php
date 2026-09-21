@@ -78,7 +78,8 @@ it('conta una misura registrata l ultimo giorno del periodo', function (): void 
         $lastDay,
     );
 
-    expect((float) $report->work_amount)->toBe(5000.0);
+    $workAmount = $report->getAttribute('work_amount');
+    expect(is_numeric($workAmount) ? (float) $workAmount : null)->toBe(5000.0);
 });
 
 it('conta una misura registrata il primo giorno del periodo', function (): void {
@@ -110,7 +111,8 @@ it('conta una misura registrata il primo giorno del periodo', function (): void 
         CarbonImmutable::now()->endOfMonth(),
     );
 
-    expect((float) $report->work_amount)->toBe(3000.0);
+    $workAmount = $report->getAttribute('work_amount');
+    expect(is_numeric($workAmount) ? (float) $workAmount : null)->toBe(3000.0);
 });
 
 it('lascia fuori una misura del giorno dopo la fine del periodo', function (): void {
@@ -142,5 +144,6 @@ it('lascia fuori una misura del giorno dopo la fine del periodo', function (): v
         $periodTo,
     );
 
-    expect((float) $report->work_amount)->toBe(0.0);
+    $workAmount = $report->getAttribute('work_amount');
+    expect(is_numeric($workAmount) ? (float) $workAmount : null)->toBe(0.0);
 });
