@@ -18,7 +18,7 @@ uses(\Modules\Dds\Tests\TestCase::class);
 it('opens every page of the panel', function (): void {
     Role::findOrCreate('dds_admin');
     $user = UserFactory::new()->createOne();
-    $user->syncRoles(['dds', 'dds_admin']);
+    $user->syncRoles(['dds_admin']);
 
     actingAs($user);
 
