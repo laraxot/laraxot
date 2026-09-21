@@ -10,7 +10,15 @@
 
 ### 1. Errore: "Column not found: 1054 Unknown column 'state'"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+**Causa**: Il database di test (`<nome progetto>_data_test`) non ha tutte le migrazioni eseguite.
+=======
 **Causa**: Il database di test (`techplanner_data_test`) non ha tutte le migrazioni eseguite.
+>>>>>>> 0a02158a (.)
+=======
+**Causa**: Il database di test (`techplanner_data_test`) non ha tutte le migrazioni eseguite.
+>>>>>>> 35d8cf69 (Initial commit)
 
 **Soluzione**:
 ```bash
@@ -22,7 +30,15 @@ php artisan migrate --database=mysql --seed
 
 Verificare che .env.testing abbia le stesse tabelle del database principale:
 ```env
+<<<<<<< HEAD
+<<<<<<< HEAD
+DB_DATABASE=<nome progetto>_data_test
+=======
 DB_DATABASE=techplanner_data_test
+>>>>>>> 0a02158a (.)
+=======
+DB_DATABASE=techplanner_data_test
+>>>>>>> 35d8cf69 (Initial commit)
 ```
 
 ### 3. Connessione 'activity'

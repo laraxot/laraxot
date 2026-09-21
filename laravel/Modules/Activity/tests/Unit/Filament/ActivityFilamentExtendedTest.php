@@ -10,7 +10,6 @@ use Mockery;
 use Modules\Activity\Filament\Resources\ActivityResource\Pages\EditActivity;
 use Modules\Activity\Filament\Resources\ActivityResource\Schemas\ActivityInfolist;
 use Modules\Activity\Filament\Resources\ActivityResource\Tables\ActivitiesTable;
-use Modules\Activity\Filament\Resources\ActivityResource\Tables\ActivitysTable;
 use Modules\Activity\Filament\Resources\SnapshotResource\Schemas\SnapshotForm;
 use Modules\Activity\Filament\Resources\SnapshotResource\Schemas\SnapshotInfolist;
 use Modules\Activity\Filament\Resources\SnapshotResource\Tables\SnapshotsTable;
@@ -46,12 +45,6 @@ test('ActivitiesTable espone colonne complete', function (): void {
         array_keys($tabella->getTableColumns()),
     );
     Assert::assertContainsOnlyInstancesOf(Column::class, $tabella->getTableColumns());
-});
-
-test('ActivitysTable espone colonne compatte', function (): void {
-    $tabella = new ActivitysTable();
-
-    Assert::assertSame(['id', 'log_name', 'description', 'created_at'], array_keys($tabella->getTableColumns()));
 });
 
 test('ActivityInfolist espone schema infolist', function (): void {

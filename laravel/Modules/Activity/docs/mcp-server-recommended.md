@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+---
+module: theme
+topic: MCP_SERVER_RECOMMENDED
+canonical: ../../../Themes/docs/shared-components/MCP-SERVER-RECOMMENDED.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/MCP-SERVER-RECOMMENDED.md
+=======
+=======
+>>>>>>> 35d8cf69 (Initial commit)
+
+
+>>>>>>> laraxot/dev
 # MCP Server Consigliati per il Modulo Activity
 
 ## Scopo del Modulo
@@ -21,3 +38,7 @@ Gestione delle attività utente, log, cron e tracciamento eventi.
 
 ## Note
 - Adatta la configurazione se il modulo interagisce con sistemi di terze parti.
+<<<<<<< HEAD
+>>>>>>> 0a02158a (.)
+=======
+>>>>>>> 35d8cf69 (Initial commit)

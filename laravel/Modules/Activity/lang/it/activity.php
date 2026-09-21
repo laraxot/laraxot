@@ -110,6 +110,9 @@ return [
             'label' => 'Ripristina',
             'tooltip' => 'Ripristina stato precedente',
         ],
+        'logout' => [
+            'tooltip' => 'logout',
+        ],
     ],
     'messages' => [
         'no_activities' => 'Nessuna attività trovata',

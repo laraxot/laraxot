@@ -40,7 +40,8 @@ class GetActivityStatisticsAction
      */
     private function computeStatistics(?User $user): array
     {
-        $query = Activity::query();
+        /** @var Builder<Activity> $query */
+        $query = Activity::newQuery();
 
         if ($user) {
             $query->where('causer_id', $user->getKey())
