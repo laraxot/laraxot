@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources\TeamUserResource\Schemas;
 
-use Filament\Schemas\Components\Component as SchemaComponent;
 use Filament\Forms\Components\Select;
-use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
+use Filament\Schemas\Components\Component as SchemaComponent;
 use Filament\Schemas\Components\Section;
+use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 
 class TeamUserForm extends XotBaseResourceForm
 {

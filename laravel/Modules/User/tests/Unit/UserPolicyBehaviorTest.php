@@ -16,7 +16,8 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class)->group('no-user-db');
 
 /**
- * @param  list<string>  $roles
+ * @param list<string> $roles
+ *
  * @return Mockery\MockInterface&UserContract
  */
 function userBehaviorUser(
@@ -25,13 +26,13 @@ function userBehaviorUser(
     bool $belongsToTeam = false,
 ): UserContract {
     /** @var Mockery\MockInterface&UserContract $user */
-    $user = Mockery::mock(UserContract::class);
+    $user = \Mockery::mock(UserContract::class);
     mockeryExpect($user->shouldReceive('hasRole'))
         ->andReturnUsing(static function (array|string $richiesti) use ($roles): bool {
             /** @var list<string> $normalizzati */
             $normalizzati = is_array($richiesti) ? $richiesti : [$richiesti];
 
-            return array_intersect($normalizzati, $roles) !== [];
+            return [] !== array_intersect($normalizzati, $roles);
         });
     mockeryExpect($user->shouldReceive('ownsTeam'))->andReturn($ownsTeam);
     mockeryExpect($user->shouldReceive('belongsToTeam'))->andReturn($belongsToTeam);
@@ -40,12 +41,12 @@ function userBehaviorUser(
 }
 
 afterEach(function (): void {
-    Mockery::close();
+    \Mockery::close();
 });
 
 test('RolePolicy: viewAny false, view/create/update/delete true', function (): void {
-    $policy = new RolePolicy;
-    $role = new Role;
+    $policy = new RolePolicy();
+    $role = new Role();
     $user = userBehaviorUser();
 
     Assert::assertFalse($policy->viewAny($user));
@@ -57,8 +58,8 @@ test('RolePolicy: viewAny false, view/create/update/delete true', function (): v
 });
 
 test('TeamPolicy: view legato a belongsToTeam, mutazioni a ownsTeam', function (): void {
-    $policy = new TeamPolicy;
-    $team = new Team;
+    $policy = new TeamPolicy();
+    $team = new Team();
     $outsider = userBehaviorUser();
     $member = userBehaviorUser(belongsToTeam: true);
     $owner = userBehaviorUser(ownsTeam: true, belongsToTeam: true);
@@ -77,7 +78,7 @@ test('TeamPolicy: view legato a belongsToTeam, mutazioni a ownsTeam', function (
 });
 
 test('UserBasePolicy before: super-admin bypass', function (): void {
-    $policy = new RolePolicy;
+    $policy = new RolePolicy();
     Assert::assertTrue($policy->before(userBehaviorUser(['super-admin']), 'viewAny'));
     Assert::assertNull($policy->before(userBehaviorUser(), 'viewAny'));
 });

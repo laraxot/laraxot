@@ -7,8 +7,8 @@ namespace Modules\User\Filament\Resources\OauthClientResource\Schemas;
 use Filament\Infolists\Components\IconEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Component;
-use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceInfolist;
 use Filament\Schemas\Components\Section;
+use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceInfolist;
 
 class ClientInfolist extends XotBaseResourceInfolist
 {

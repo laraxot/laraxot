@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "Factory Creation Status - User Module"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # Factory Creation Status - User Module
 
 ## ERRORE GRAVISSIMO IDENTIFICATO E RISOLUZIONE IN CORSO
@@ -116,7 +133,22 @@ Questo errore è **GRAVISSIMO** perché:
 
 ## COLLEGAMENTI
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Factory Audit Complete Analysis](../../../../docs/project/factory-audit-complete-analysis.md)
+=======
+- [Factory Audit Complete Analysis](../../../project_docs/factory-audit-complete-analysis.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Factory Audit Complete Analysis](../../../project_docs/factory-audit-complete-analysis.md)
+=======
+- [Factory Audit Complete Analysis](../../../../docs/project/factory-audit-complete-analysis.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+- [Factory Audit Complete Analysis](../../../../docs/project/factory-audit-complete-analysis.md)
+>>>>>>> laraxot/dev
 - [User Module README](./readme.md)
 - [Factory PHPStan Fixes](./phpstan/factory-fixes.md)
 - [Database Documentation](./database/readme.md)
@@ -130,3 +162,16 @@ Questo errore è **GRAVISSIMO** perché:
 5. ⏳ Documentare pattern e best practice
 
 *Creato: 2025-01-06*
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+*Ultimo aggiornamento: 2025-01-06*
+>>>>>>> 60a2c9a9 (.)
+=======
+*Ultimo aggiornamento: 2025-01-06*
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev

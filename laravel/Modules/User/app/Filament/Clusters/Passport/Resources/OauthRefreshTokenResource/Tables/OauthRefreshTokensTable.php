@@ -5,20 +5,28 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Clusters\Passport\Resources\OauthRefreshTokenResource\Tables;
 
 use Filament\Tables\Columns\Column;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Modules\User\Models\OauthRefreshToken;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 class OauthRefreshTokensTable extends XotBaseResourceTable
 {
+    /**
+     * @var class-string<OauthRefreshToken>
+     */
+    protected static string $model = OauthRefreshToken::class;
+
     /**
      * @return array<string, Column>
      */
     public function getTableColumns(): array
     {
         return [
-            'id' => TextColumn::make('id')->sortable(),
-            'name' => TextColumn::make('name')->searchable(),
-            'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
+            'access_token_id' => TextColumn::make('access_token_id')->sortable()->copyable(),
+            'revoked' => IconColumn::make('revoked')->boolean()->sortable(),
+            'expires_at' => TextColumn::make('expires_at')->dateTime()->sortable()->placeholder('—'),
+            'id' => TextColumn::make('id')->sortable()->copyable()->toggleable(isToggledHiddenByDefault: true),
         ];
     }
 }

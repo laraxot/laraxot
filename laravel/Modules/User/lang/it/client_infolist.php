@@ -14,5 +14,11 @@ return [
         'revoked' => ['label' => 'revoked'],
         'created_at' => ['label' => 'created_at'],
         'updated_at' => ['label' => 'updated_at'],
+        'user' => [
+            'name' => ['label' => 'user.name'],
+        ],
+    ],
+    'sections' => [
+        'OAuth Client Information' => ['label' => 'OAuth Client Information', 'heading' => 'OAuth Client Information'],
     ],
 ];

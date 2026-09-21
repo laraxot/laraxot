@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "🔧 PHPStan Fixes - Modulo User - Gennaio 2025"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # 🔧 PHPStan Fixes - Modulo User - Gennaio 2025
 
 **Data**: 27 Gennaio 2025
@@ -247,4 +264,16 @@ $subject = Lang::get('user::email.password_reset_subject');
 **🐛 PHPStan Level**: 9 ✅
 **🌐 Translation Standards**: IT/EN complete ✅
 **🚀 Performance**: 95/100 score
+<<<<<<< HEAD
+<<<<<<< HEAD
 **✨ Test Coverage**: 85% ✅
+=======
+**✨ Test Coverage**: 85% ✅
+<<<<<<< HEAD
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+**✨ Test Coverage**: 85% ✅
+>>>>>>> laraxot/dev

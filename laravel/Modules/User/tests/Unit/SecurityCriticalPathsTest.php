@@ -12,8 +12,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 test('admin panel requires admin or super-admin role', function (): void {
-    $user = new class extends BaseUser
-    {
+    $user = new class extends BaseUser {
         public bool $superAdmin = false;
 
         public bool $hasAdminRole = false;
@@ -24,7 +23,7 @@ test('admin panel requires admin or super-admin role', function (): void {
         }
 
         /**
-         * @param  array<int, string>|Collection<int, string>  $roles
+         * @param array<int, string>|Collection<int, string> $roles
          */
         public function hasRole($roles, ?string $guard = null): bool
         {
@@ -41,7 +40,8 @@ test('admin panel requires admin or super-admin role', function (): void {
 });
 
 test('password mutator hashes long passphrases instead of storing plaintext', function (): void {
-    $user = new class extends BaseUser {};
+    $user = new class extends BaseUser {
+    };
     $longPassphrase = 'this-is-a-very-long-passphrase-that-exceeds-thirty-two-characters';
 
     $user->password = $longPassphrase;

@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+---
+title: "Logging Performance Optimization"
+module: user
+type: integration
+tags: [integrations, modules, user]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # Logging Performance Optimization
 
 ## Rule: NEVER USE Log::info()
@@ -74,4 +89,21 @@ Metrics::increment('tickets.created');
 - [ ] No Log::info() calls
 - [ ] All logs are errors or warnings
 - [ ] Audit trails use database tables
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [ ] Monitoring uses Telescope/Pulse
+
+
+---
+
+## Contenuto assorbito da `LOGGING_PERFORMANCE.md`
+
+# Documento unificato
+
+Questo file era un duplicato esatto che differiva solo per maiuscole/minuscole, in violazione della regola no-case-only-variations. Il contenuto canonico si trova in [logging_performance.md](./logging_performance.md).
+=======
+- [ ] Monitoring uses Telescope/Pulse
+>>>>>>> 87273113 (.)
+=======
+- [ ] Monitoring uses Telescope/Pulse
+>>>>>>> laraxot/dev

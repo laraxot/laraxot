@@ -31,15 +31,6 @@ return [
         'password' => [
             'label' => 'Nuova Password',
             'validation_attribute' => 'password',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'password_confirmation' => [
-            'label' => 'Conferma Password',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
         ],
     ],
     'reset_password' => 'Reimposta Password',

@@ -66,27 +66,6 @@ return [
         'is_active' => [
             'label' => 'Attivo',
             'help' => 'Stato attivo del profilo',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'id' => [
-            'label' => 'ID',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'ente' => [
-            'label' => 'Ente',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'matr' => [
-            'label' => 'Matricola',
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
         ],
     ],
     'actions' => [

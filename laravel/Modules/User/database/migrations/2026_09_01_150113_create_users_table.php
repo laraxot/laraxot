@@ -10,7 +10,7 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Class CreateLiveuserUsersTable.
  */
-/**
+/*
  * Owner migration `User::users` (consolidamento 2026-09-01).
  * Colonne unione viste nei duplicati non presenti qui: ['uuid'].
  */

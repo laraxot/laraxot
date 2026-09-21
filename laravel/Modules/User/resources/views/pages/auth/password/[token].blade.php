@@ -17,27 +17,6 @@ name('password.reset');
 
 new class extends Component {
     #[Validate('required')]
-    public string $token = '';
-
-    #[Validate('required|email')]
-    public string $email = '';
-
-    #[Validate('required|min:8|same:passwordConfirmation')]
-    public string $password = '';
-    public string $passwordConfirmation = '';
-
-    /**
-     * @return void
-     */
-    public function mount(string $token)
-    {
-        $this->email = (string) request()->query('email', '');
-        $this->token = $token;
-    }
-
-    /**
-     * @return \Illuminate\Http\RedirectResponse|null
-     */
     public function resetPassword()
     {
         $this->validate();
@@ -68,11 +47,6 @@ new class extends Component {
             return redirect('/');
         }
 
-        if (\is_string($response)) {
-            $this->addError('email', trans($response));
-        }
-
-        return null;
     }
 };
 

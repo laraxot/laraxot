@@ -19,7 +19,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
- * @param  class-string  $wrapperClass
+ * @param class-string $wrapperClass
  */
 function passportWrapperConnectionName(string $wrapperClass): ?string
 {
@@ -32,12 +32,12 @@ function passportWrapperConnectionName(string $wrapperClass): ?string
         $property->setAccessible(true);
         $connection = $property->getValue($reflection->newInstanceWithoutConstructor());
 
-        if (is_string($connection) && $connection !== '') {
+        if (is_string($connection) && '' !== $connection) {
             return $connection;
         }
     }
 
-    $instance = new $wrapperClass;
+    $instance = new $wrapperClass();
 
     if (! $instance instanceof Model) {
         return null;

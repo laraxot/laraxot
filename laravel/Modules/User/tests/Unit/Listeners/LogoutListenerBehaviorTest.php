@@ -30,7 +30,7 @@ function logoutEvent(?Authenticatable $user): Logout
     /** @var Authenticatable&MockInterface $placeholder */
     $placeholder = \Mockery::mock(Authenticatable::class);
     $event = new Logout('web', $placeholder);
-    if ($user === null) {
+    if (null === $user) {
         $prop = (new \ReflectionClass($event))->getProperty('user');
         $prop->setAccessible(true);
         $prop->setValue($event, null);
@@ -63,7 +63,7 @@ describe('LogoutListener behavior', function (): void {
     test('forgetRememberTokens catches errors for BaseUser without DB', function (): void {
         Log::shouldReceive('error')->atLeast()->once();
 
-        $user = new TestBaseUser;
+        $user = new TestBaseUser();
         $user->forceFill(['id' => 'logout-user-1']);
 
         $listener = new LogoutListener(Request::create('/'));

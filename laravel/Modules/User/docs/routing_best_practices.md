@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+---
+title: "Best Practices per il Routing in Architettura Volt + Folio + Filament"
+module: user
+type: integration
+tags: [integrations, modules, user]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
+=======
+>>>>>>> f548be94 (.)
+=======
+>>>>>>> laraxot/dev
 # Best Practices per il Routing in Architettura Volt + Folio + Filament
 
 ## Il Principio Fondamentale

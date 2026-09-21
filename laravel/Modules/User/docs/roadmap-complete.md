@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "🗺️ ROADMAP COMPLETA - Modulo User"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # 🗺️ ROADMAP COMPLETA - Modulo User
 
 ## 📊 Business Logic
@@ -437,7 +454,22 @@ La cartella `docs/` contiene ~300+ file con molti duplicati:
 ---
 
 **Versione**: 1.0.0  
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 **
+=======
+**Ultimo Aggiornamento**: 2025-01-01  
+>>>>>>> 60a2c9a9 (.)
+=======
+**Ultimo Aggiornamento**: 2025-01-01  
+=======
+**
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+**
+>>>>>>> laraxot/dev
 **Maintainer**: User Module Team  
 **Status**: 🚧 In Development (70% completo)  
 **Prossima Revisione**: 2025-02-01

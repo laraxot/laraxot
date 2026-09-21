@@ -17,14 +17,6 @@ class CreateTenant extends XotBaseCreateRecord
     protected static string $resource = TenantResource::class;
 
     /**
-     * @throws \Throwable
-     */
-    protected function handleRecordCreation(array $data): Model
-    {
-        /** @var array<string, mixed> $filteredData */
-        $filteredData = collect($data)->except('domain')->toArray();
-
-        return parent::handleRecordCreation($filteredData);
     }
 
     // :30    Method Modules\User\Filament\Resources\TenantResource\Pages\CreateTenant::createTenantRecord() is unused.
@@ -34,10 +26,6 @@ class CreateTenant extends XotBaseCreateRecord
     //  */
     // private function createTenantRecord(array $data)
     // {
-    //     \Log::debug('Saving Tenant');
-    //     $record = new Tenant(collect($data)->except('domain')->toArray());
-    //     $record->saveOrFail();
-    //     \Log::debug('Saving Domains');
     //     $record = $record::find($record->);
     //     $record->domains()->create(['domain' => collect($data)->get('domain')]);
     //     return $record;

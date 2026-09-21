@@ -173,3 +173,54 @@ Claude Sonnet 5
 - `laravel/Modules/User/app/View/Pages/ProfileEditVoltComponent.php` (fix)
 - `laravel/Modules/User/app/Models/BaseUser.php` (fix docblock: `$id` +
   `Carbon|null`)
+<<<<<<< HEAD
+=======
+
+## Aggiornamento 2026-09-10 (subagent-quaeris-user, terza occorrenza indipendente)
+
+Task assegnato come "4 errori PHPStan cast.string/argument.type/method.nonObject
+su `ProfileEditVoltComponent.php`" (righe 142/348/353/362), senza riferimento a
+questa story. Prima di editare, cercata story esistente sul tema (procedura
+BMAD obbligatoria) — trovata questa. La working tree di **questa** sessione
+aveva ancora il bug originale (`Assert::isInstanceOf($user,
+\Modules\User\Models\User::class, ...)` sempre falso a runtime, mascherato da
+`/** @var User $user */` in 3 metodi su 4, `deleteAccount()` senza override e
+quindi quello che emergeva su PHPStan) — conferma che il fix descritto sopra
+non era ancora arrivato in questa copia del modulo (git repo proprio per
+modulo, non submodule; vedi nota "Collisione multi-sessione reale" sopra).
+
+**Primo errore proprio**: nel primissimo giro, senza aver ancora letto questa
+story, ho aggiunto `/** @var User $user */` a `updateProfile()` e
+`deleteAccount()` per zittire PHPStan — esattamente l'anti-pattern che AC2 di
+questa story vieta. Trovata la story cercando `phpstan` in
+`Modules/User/docs/stories/` come da procedura, riletta, rimossi i 2 `@var`
+propri e applicato il fix corretto.
+
+Fix applicato (stesso principio della sezione sopra, adattato a questa
+versione del file con logging esteso):
+
+- Tutti e 4 i metodi (`mount`, `updateProfile`, `updatePassword`,
+  `deleteAccount`): `Assert::isInstanceOf($user, User::class, ...)` →
+  `if (! $user instanceof BaseUser) { throw new InvalidArgumentException(...); }`
+  (narrowing nativo, nessun `@var` residuo). Import `Modules\User\Models\User`
+  sostituito con `Modules\User\Models\BaseUser`.
+- `updateProfile()`: `User::where('email', ...)` (classe hardcoded) →
+  `$user::where('email', ...)` (late static binding sull'istanza narrowata).
+- `updatePassword()` e `deleteAccount()`: `$user->password` su `BaseUser` è
+  `string|null` (non tutti gli utenti hanno hash — social login). Aggiunto
+  `$currentPasswordHash = $user->password; if (null === $currentPasswordHash) {
+  throw new InvalidArgumentException(...); }` prima di ogni `Hash::check()`,
+  al posto del cast/assert non narrowante.
+- **Non è stato necessario** toccare `BaseUser.php`: a differenza di quanto
+  registrato sopra (Task 3, "`@property string $id` mancante"), in questa
+  copia del modulo `$id` risolve già a un tipo utilizzabile per PHPStan senza
+  docblock aggiuntivo — verificato empiricamente (0 errori senza modificare
+  `BaseUser.php`), non per assunzione.
+
+Verifica: `cd laravel && ./vendor/bin/phpstan analyse
+Modules/User/app/View/Pages/ProfileEditVoltComponent.php --no-progress
+--memory-limit=-1` → `[OK] No errors` (da 4 errori). `php -l` pulito.
+
+File toccati in questo aggiornamento: solo
+`laravel/Modules/User/app/View/Pages/ProfileEditVoltComponent.php`.
+>>>>>>> laraxot/dev

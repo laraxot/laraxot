@@ -12,6 +12,7 @@ namespace Modules\User\Filament\Resources\UserResource\Pages;
 use Filament\Actions\DeleteAction;
 use Illuminate\Support\Facades\Hash;
 use Modules\User\Filament\Resources\UserResource;
+use Modules\User\Filament\Resources\UserResource\Actions\VerifyEmailAction;
 use Modules\User\Models\User;
 use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 use Webmozart\Assert\Assert;
@@ -53,6 +54,7 @@ class EditUser extends XotBaseEditRecord
     protected function getHeaderActions(): array
     {
         return [
+            'verify_email' => VerifyEmailAction::make(),
             'delete' => DeleteAction::make(),
         ];
     }

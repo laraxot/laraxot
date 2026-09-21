@@ -14,13 +14,6 @@ use Modules\Xot\Contracts\UserContract;
 interface HasTeamsAndUserContract extends HasTeamsContract, UserContract
 {
     /**
-     * Ottiene il ruolo dell'utente nel team.
-     */
-    #[\Override]
-    public function teamRole(TeamContract $team): ?Role;
-
-    /**
-     * Verifica se l'utente può rimuovere un membro dal team.
      */
     public function canRemoveTeamMember(Team $team, HasTeamsContract $user): bool;
 

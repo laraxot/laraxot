@@ -11,7 +11,7 @@ use function Safe\preg_replace;
 
 uses(TestCase::class);
 
-/**
+/*
  * Regola: ogni componente in Forms/Components ha gemello in Tables/Columns.
  *
  * @see Modules/User/docs/form-column-parity.md

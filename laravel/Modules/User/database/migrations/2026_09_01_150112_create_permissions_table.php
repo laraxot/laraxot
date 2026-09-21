@@ -11,7 +11,7 @@ use Modules\Xot\Datas\XotData;
 /*
  * Class CreatePermissionsTable.
  */
-/**
+/*
  * Owner migration `User::permissions` (consolidamento 2026-09-01).
  * Colonne unione viste nei duplicati non presenti qui: nessuna.
  */

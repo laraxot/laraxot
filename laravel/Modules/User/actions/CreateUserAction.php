@@ -22,7 +22,7 @@ class CreateUserAction
     /**
      * Execute the action to create a new user.
      *
-     * @param  array<string, mixed>  $data
+     * @param array<string, mixed> $data
      */
     public function execute(array $data): User
     {

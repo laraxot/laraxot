@@ -23,11 +23,11 @@ it('returns only the placeholder when the authenticated user has no teams', func
 it('returns the teams the authenticated user belongs to, keyed by team id', function (): void {
     $user = TestCase::createTestUser();
 
-    $team = new Team;
+    $team = new Team();
     $team->forceFill(['user_id' => $user->getKey(), 'name' => 'Engineering']);
     $team->save();
 
-    $teamUser = new TeamUser;
+    $teamUser = new TeamUser();
     $teamUser->forceFill([
         'team_id' => $team->getKey(),
         'user_id' => $user->getKey(),
@@ -48,7 +48,7 @@ it('returns the teams the authenticated user belongs to, keyed by team id', func
 it('skips team_user rows whose team no longer exists', function (): void {
     $user = TestCase::createTestUser();
 
-    $teamUser = new TeamUser;
+    $teamUser = new TeamUser();
     $teamUser->forceFill([
         'team_id' => 999999,
         'user_id' => $user->getKey(),

@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "Analisi Funzionalità Mancanti - Modulo User"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # Analisi Funzionalità Mancanti - Modulo User
 
 **Data Analisi**: [DATE]  
@@ -127,7 +144,22 @@ Il modulo **User** fornisce:
    - Mapping permessi
 
 2. **LimeParticipant** - Partecipanti survey
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
    - Integrazione con Contact model ExternalProject
+=======
+   - Integrazione con Contact model Quaeris
+>>>>>>> 60a2c9a9 (.)
+=======
+   - Integrazione con Contact model Quaeris
+=======
+   - Integrazione con Contact model ExternalProject
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+   - Integrazione con Contact model ExternalProject
+>>>>>>> laraxot/dev
    - Gestione partecipanti centralizzata
    - Attributi personalizzati
 
@@ -175,7 +207,22 @@ Nessuna funzionalità critica mancante - il modulo User è ben implementato
 
 ## Collegamenti
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Modulo ExternalProject](../<nome progetto>/docs/readme.md)
+=======
+- [Modulo Quaeris](../quaeris/docs/readme.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Modulo Quaeris](../quaeris/docs/readme.md)
+=======
+- [Modulo ExternalProject](../<nome progetto>/docs/readme.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+- [Modulo ExternalProject](../<nome progetto>/docs/readme.md)
+>>>>>>> laraxot/dev
 - [Modulo Limesurvey](../limesurvey/docs/readme.md)
 - [User README](./readme.md)
 

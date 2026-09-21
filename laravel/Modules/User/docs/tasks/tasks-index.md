@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "Indice task - Modulo User"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./spostamento-widget-violante.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # Indice task - Modulo User
 
 Lista dei task del modulo con link ai file .md separati. Ogni task è un file nella cartella `tasks/`.
@@ -45,4 +62,19 @@ Lista dei task del modulo con link ai file .md separati. Ogni task è un file ne
 
 - [Roadmap User](../roadmap.md)
 - [README User](../readme.md)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Scopo moduli progetto](../../../../../docs/moduli-scopo.md)
+=======
+- [Scopo moduli progetto](../../../../docs/moduli-scopo.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Scopo moduli progetto](../../../../docs/moduli-scopo.md)
+=======
+- [Scopo moduli progetto](../../../../../docs/moduli-scopo.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+- [Scopo moduli progetto](../../../../../docs/moduli-scopo.md)
+>>>>>>> laraxot/dev

@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "Best Practices per Risorse Filament nel Modulo User"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./dependency-rules.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # Best Practices per Risorse Filament nel Modulo User
 
 Questo documento descrive le best practices da seguire quando si creano o modificano risorse Filament nel modulo User.
@@ -67,7 +84,15 @@ Le risorse Filament richiedono che il metodo `getFormSchema()` restituisca un ar
 ### Esempio corretto:
 
 ```php
+<<<<<<< HEAD
+<<<<<<< HEAD
 public static function getFormSchema(): array
+=======
+public function getFormSchema(): array
+>>>>>>> 2024e2e7 (.)
+=======
+public static function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         'name' => TextInput::make('name')->required(),
@@ -79,7 +104,15 @@ public static function getFormSchema(): array
 ### Esempio errato:
 
 ```php
+<<<<<<< HEAD
+<<<<<<< HEAD
 public static function getFormSchema(): array
+=======
+public function getFormSchema(): array
+>>>>>>> 2024e2e7 (.)
+=======
+public static function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         TextInput::make('name')->required(),

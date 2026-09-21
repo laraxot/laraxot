@@ -57,11 +57,6 @@ class ProcessCallbackController extends Controller
         $socialiteUser = app(RetrieveSocialiteUserAction::class)->execute($provider, $oauthUser);
         if ($socialiteUser) {
             $socialiteUserObj = $socialiteUser->user;
-            if (null === $socialiteUserObj || ! $socialiteUserObj->canAccessSocialite()) {
-                return app(RedirectToLoginAction::class)->execute('auth.user-not-allowed');
-            }
-            // Associate default roles to the existing "real" user, if needed
-            app(SetDefaultRolesBySocialiteUserAction::class)->execute($provider, $socialiteUserObj, $oauthUser);
 
             return app(LoginUserAction::class)->execute($socialiteUser);
         }

@@ -26,8 +26,8 @@ class DemoUserSeeder extends Seeder
         $userClass = XotData::make()->getUserClass();
         \assert(is_subclass_of($userClass, User::class));
 
-        $userTable = (new $userClass)->getTable();
-        $userConnection = (new $userClass)->getConnectionName() ?? 'user';
+        $userTable = (new $userClass())->getTable();
+        $userConnection = (new $userClass())->getConnectionName() ?? 'user';
 
         DB::connection($userConnection)
             ->table($userTable)
@@ -70,12 +70,12 @@ class DemoUserSeeder extends Seeder
             );
 
             $role = Role::query()->where('name', $roleName)->where('guard_name', 'web')->first();
-            if ($role !== null && ! $user->hasRole($roleName)) {
+            if (null !== $role && ! $user->hasRole($roleName)) {
                 $user->assignRole($role);
             }
         }
 
-        if ($this->command !== null) {
+        if (null !== $this->command) {
             $this->command->info('DemoUserSeeder: '.count($demoUsers).' utenti demo pronti.');
         }
     }

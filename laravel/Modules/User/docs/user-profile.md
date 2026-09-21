@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "User vs Profile: Guida Completa alla Progettazione"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # User vs Profile: Guida Completa alla Progettazione
 
 ## Sommario
@@ -25,7 +42,22 @@ related:
 2. [Analisi del Codice Attuale](#analisi-del-codice-attuale)
 3. [Best Practice Raccolte](#best-practice-raccolte)
 4. [Casi d'Uso con Percentuali](#casi-duso-con-percentuali)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 5. [Raccomandazioni per <nome progetto>](#raccomandazioni-per-<nome progetto>)
+=======
+5. [Raccomandazioni per LaravelPizza](#raccomandazioni-per-laravelpizza)
+>>>>>>> 60a2c9a9 (.)
+=======
+5. [Raccomandazioni per LaravelPizza](#raccomandazioni-per-laravelpizza)
+=======
+5. [Raccomandazioni per <nome progetto>](#raccomandazioni-per-<nome progetto>)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+5. [Raccomandazioni per <nome progetto>](#raccomandazioni-per-<nome progetto>)
+>>>>>>> laraxot/dev
 6. [Schema Decisionale](#schema-decisionale)
 
 ---
@@ -38,7 +70,22 @@ La separazione tra **User** (tabella per autenticazione) e **Profile** (tabella 
 
 ## Analisi del Codice Attuale
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 ### Struttura Attuale <nome progetto>
+=======
+### Struttura Attuale LaravelPizza
+>>>>>>> 60a2c9a9 (.)
+=======
+### Struttura Attuale LaravelPizza
+=======
+### Struttura Attuale <nome progetto>
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+### Struttura Attuale <nome progetto>
+>>>>>>> laraxot/dev
 
 ```
 User (connection: user)
@@ -59,9 +106,30 @@ User (connection: user)
 ├── timestamps
 └── SoftDeletes
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 Profile (connection: user)
 ├── id (bigint autoincrement)
 ├── uuid (char 36 unique, per Android/Postgres/API)
+=======
+Profile (connection: meetup)
+├── id (UUID)
+>>>>>>> 60a2c9a9 (.)
+=======
+Profile (connection: meetup)
+├── id (UUID)
+=======
+Profile (connection: user)
+├── id (bigint autoincrement)
+├── uuid (char 36 unique, per Android/Postgres/API)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+Profile (connection: user)
+├── id (bigint autoincrement)
+├── uuid (char 36 unique, per Android/Postgres/API)
+>>>>>>> laraxot/dev
 ├── user_id (UUID)
 ├── first_name
 ├── last_name
@@ -146,7 +214,22 @@ public function profile(): HasOne
 
 ## Casi d'Uso con Percentuali
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 ### Caso 1: Community Platform (es. <nome progetto>)
+=======
+### Caso 1: Community Platform (es. LaravelPizza)
+>>>>>>> 60a2c9a9 (.)
+=======
+### Caso 1: Community Platform (es. LaravelPizza)
+=======
+### Caso 1: Community Platform (es. <nome progetto>)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+### Caso 1: Community Platform (es. <nome progetto>)
+>>>>>>> laraxot/dev
 ```
 User: 60% dei dati necessari
 - id, email, password, name, lang, type, state
@@ -251,7 +334,22 @@ START
 
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 ## Raccomandazioni per <nome progetto>
+=======
+## Raccomandazioni per LaravelPizza
+>>>>>>> 60a2c9a9 (.)
+=======
+## Raccomandazioni per LaravelPizza
+=======
+## Raccomandazioni per <nome progetto>
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+## Raccomandazioni per <nome progetto>
+>>>>>>> laraxot/dev
 
 ### Attuale (CORRETTO)
 
@@ -326,7 +424,22 @@ Profile: Tutti i dati applicativi
 
 | Scenario | Usa | Note |
 |----------|-----|------|
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 | <nome progetto> attuale | User + Profile | Profile in meetup DB |
+=======
+| LaravelPizza attuale | User + Profile | Profile in meetup DB |
+>>>>>>> 60a2c9a9 (.)
+=======
+| LaravelPizza attuale | User + Profile | Profile in meetup DB |
+=======
+| <nome progetto> attuale | User + Profile | Profile in meetup DB |
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+| <nome progetto> attuale | User + Profile | Profile in meetup DB |
+>>>>>>> laraxot/dev
 | MVP semplice | Solo User | Tutto in una tabella |
 | SaaS multi-tenant | User + Profile | Profile per tenant |
 | Social network | User + Profile | Profile ricco |
@@ -336,7 +449,22 @@ Profile: Tutti i dati applicativi
 
 ## Conclusione
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 Per **<nome progetto>** la separazione attuale ha senso perché:
+=======
+Per **LaravelPizza** la separazione attuale ha senso perché:
+>>>>>>> 60a2c9a9 (.)
+=======
+Per **LaravelPizza** la separazione attuale ha senso perché:
+=======
+Per **<nome progetto>** la separazione attuale ha senso perché:
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+Per **<nome progetto>** la separazione attuale ha senso perché:
+>>>>>>> laraxot/dev
 - ✅ Profile è in connection separata (meetup)
 - ✅ Meetup module ha dati specifici
 - ✅ Possibile estensione futura (altri moduli)
@@ -347,5 +475,20 @@ Per **<nome progetto>** la separazione attuale ha senso perché:
 
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 *Documento generato per <nome progetto> - Analisi User vs Profile Pattern*
+=======
+*Documento generato per LaravelPizza - Analisi User vs Profile Pattern*
+>>>>>>> 60a2c9a9 (.)
+=======
+*Documento generato per LaravelPizza - Analisi User vs Profile Pattern*
+=======
+*Documento generato per <nome progetto> - Analisi User vs Profile Pattern*
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+*Documento generato per <nome progetto> - Analisi User vs Profile Pattern*
+>>>>>>> laraxot/dev
 *Data: [DATE]*

@@ -14,10 +14,16 @@ return [
         'revoked' => ['label' => 'revoked'],
         'created_at' => ['label' => 'created_at'],
         'updated_at' => ['label' => 'updated_at'],
+        'grant_types' => ['label' => 'grant_types'],
+        'redirect_uris' => ['label' => 'redirect_uris'],
+        'owner_id' => ['label' => 'owner_id'],
+        'owner_type' => ['label' => 'owner_type'],
     ],
     'actions' => [
         'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
         'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
         'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
+        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
+        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
     ],
 ];

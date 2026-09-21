@@ -14,7 +14,7 @@ test('it does not reference the comment module anywhere under user app', functio
 
     /** @var \SplFileInfo $file */
     foreach ($iterator as $file) {
-        if (! $file->isFile() || $file->getExtension() !== 'php') {
+        if (! $file->isFile() || 'php' !== $file->getExtension()) {
             continue;
         }
 

@@ -23,8 +23,14 @@ return [
             'placeholder' => 'Enter client secret',
             'help' => 'Secret for OAuth authentication',
         ],
+        'client_name' => [
+            'label' => 'Client name',
+        ],
     ],
     'actions' => [
+        'new_credentials' => [
+            'label' => 'New credentials',
+        ],
         'create' => [
             'label' => 'Create Client',
             'tooltip' => 'Create a new OAuth client',
@@ -62,5 +68,6 @@ return [
         'command_completed' => 'Command completed successfully',
         'command_failed' => 'Command execution failed',
         'command_error' => 'Error during command execution',
+        'credentials_created' => 'Credentials created successfully',
     ],
 ];

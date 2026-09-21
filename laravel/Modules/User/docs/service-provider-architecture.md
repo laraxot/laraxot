@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "Service Provider Architecture - Module Pattern"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # Service Provider Architecture - Module Pattern
 
 > **Generato**: 2026-01-07
@@ -218,7 +235,22 @@ class UserServiceProvider extends XotBaseServiceProvider
 
 ```json
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     "name": "laraxot/module_user_fila5",
+=======
+    "name": "laraxot/module_user_fila3",
+>>>>>>> 60a2c9a9 (.)
+=======
+    "name": "laraxot/module_user_fila3",
+=======
+    "name": "laraxot/module_user_fila5",
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+    "name": "laraxot/module_user_fila5",
+>>>>>>> laraxot/dev
     "extra": {
         "laravel": {
             "providers": [
@@ -386,8 +418,27 @@ test('user service provider only configures, not registers dependencies', functi
 ## 📚 Collegamenti
 
 ### Documentazione Correlata
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [PASSPORT_INTEGRATION.md](./passport-integration.md) - Passport integration completa
 - [FILOSOFIA_MODULO_USER.md](./filosofia-modulo-user.md) - Filosofia generale modulo
+=======
+- [PASSPORT_INTEGRATION.md](./passport_integration.md) - Passport integration completa
+- [FILOSOFIA_MODULO_USER.md](./filosofia_modulo_user.md) - Filosofia generale modulo
+>>>>>>> 60a2c9a9 (.)
+=======
+- [PASSPORT_INTEGRATION.md](./passport_integration.md) - Passport integration completa
+- [FILOSOFIA_MODULO_USER.md](./filosofia_modulo_user.md) - Filosofia generale modulo
+=======
+- [PASSPORT_INTEGRATION.md](./passport-integration.md) - Passport integration completa
+- [FILOSOFIA_MODULO_USER.md](./filosofia-modulo-user.md) - Filosofia generale modulo
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+- [PASSPORT_INTEGRATION.md](./passport-integration.md) - Passport integration completa
+- [FILOSOFIA_MODULO_USER.md](./filosofia-modulo-user.md) - Filosofia generale modulo
+>>>>>>> laraxot/dev
 - [README.md](./readme.md) - Overview modulo
 
 ### Documentazione Esterna

@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "PHPStan Level 10 Fixes Roadmap - Modulo User"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # PHPStan Level 10 Fixes Roadmap - Modulo User
 
 **Data Creazione**: 2025-01-27  
@@ -43,7 +60,15 @@ Il modulo User ha errori PHPStan che devono essere risolti per raggiungere la co
 /**
  * @return array<string, Field>
  */
+<<<<<<< HEAD
+<<<<<<< HEAD
 public static function getFormSchema(): array
+=======
+public function getFormSchema(): array
+>>>>>>> 2024e2e7 (.)
+=======
+public static function getFormSchema(): array
+>>>>>>> laraxot/dev
 {
     return [
         'name' => TextInput::make('name')
@@ -126,4 +151,21 @@ public static function getTableActions(): array
 
 - [Regole Filament Resources](../../../.cursor/rules/filament-relation-managers.mdc)
 - [Regole No Labels](../../../.cursor/rules/no-filament-labels.mdc)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [PHPStan Fixes User Module - 2026-01-05](./phpstan-fix-plan.md)
+=======
+- [PHPStan Fixes User Module - 2026-01-05](./phpstan-fix-plan-2026-01-05.md)
+>>>>>>> fa4b6559 (.)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [PHPStan Fixes User Module - 2026-01-05](./phpstan-fix-plan-2026-01-05.md)
+>>>>>>> fa4b6559 (.)
+=======
+- [PHPStan Fixes User Module - 2026-01-05](./phpstan-fix-plan.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+- [PHPStan Fixes User Module - 2026-01-05](./phpstan-fix-plan.md)
+>>>>>>> laraxot/dev

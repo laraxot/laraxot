@@ -16,5 +16,5 @@ return [
         'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
     ],
     'label' => 'role permissions',
-    'navigation' => ['label' => 'role permissions.navigation', 'icon' => 'role permissions.navigation', 'sort' => 86],
+    'navigation' => ['label' => 'Permessi ruolo', 'icon' => 'Permessi ruolo', 'sort' => 86],
 ];

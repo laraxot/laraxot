@@ -33,5 +33,6 @@ class CreateUserData extends Data
         public string|Optional $email_verified_at,
         public string|Optional $type,
         public string|Optional $state,
-    ) {}
+    ) {
+    }
 }

@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "Final Summary - User Module Passport Integration & Architecture Refactoring"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # Final Summary - User Module Passport Integration & Architecture Refactoring
 
 > **Date**: 2026-01-07
@@ -297,9 +314,32 @@ public function getHeaderActions(): array
 ## 📚 Documentation References
 
 ### Internal Documentation
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Passport Integration](./passport-integration.md)
 - [Service Provider Architecture](./service-provider-architecture.md)
 - [Filosofia Modulo User](./filosofia-modulo-user.md)
+=======
+- [Passport Integration](./passport_integration.md)
+- [Service Provider Architecture](./service_provider_architecture.md)
+- [Filosofia Modulo User](./filosofia_modulo_user.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Passport Integration](./passport_integration.md)
+- [Service Provider Architecture](./service_provider_architecture.md)
+- [Filosofia Modulo User](./filosofia_modulo_user.md)
+=======
+- [Passport Integration](./passport-integration.md)
+- [Service Provider Architecture](./service-provider-architecture.md)
+- [Filosofia Modulo User](./filosofia-modulo-user.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+- [Passport Integration](./passport-integration.md)
+- [Service Provider Architecture](./service-provider-architecture.md)
+- [Filosofia Modulo User](./filosofia-modulo-user.md)
+>>>>>>> laraxot/dev
 - [README](./readme.md)
 
 ### External Documentation

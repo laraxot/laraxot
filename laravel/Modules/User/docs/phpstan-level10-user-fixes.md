@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "PHPStan Level 10 Fixes - User Module"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # PHPStan Level 10 Fixes - User Module
 
 ## 📋 Riepilogo Intervento
@@ -334,6 +351,21 @@ Il modulo User è ora **completamente compliant** con PHPStan Level 10. I patter
 ## 📋 Riferimento Incrociato
 
 - **Xot Module**: Vedi `Modules/Xot/docs/phpstan-level10-xot-fixes.md` per pattern di base
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 - **ExternalProject Module**: Vedi `Modules/ExternalProject/docs/phpstan-level10-app-fixes.md` per pattern simili
+=======
+- **Quaeris Module**: Vedi `Modules/Quaeris/docs/phpstan-level10-quaeris-fixes.md` per pattern simili
+>>>>>>> 60a2c9a9 (.)
+=======
+- **Quaeris Module**: Vedi `Modules/Quaeris/docs/phpstan-level10-quaeris-fixes.md` per pattern simili
+=======
+- **ExternalProject Module**: Vedi `Modules/ExternalProject/docs/phpstan-level10-app-fixes.md` per pattern simili
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+- **ExternalProject Module**: Vedi `Modules/ExternalProject/docs/phpstan-level10-app-fixes.md` per pattern simili
+>>>>>>> laraxot/dev
 
 **Status**: ✅ **COMPLETATO** - Pronto per production con type safety massima.

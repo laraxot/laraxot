@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> laraxot/dev
 ---
 title: "PHPStan Corrections Summary - Modulo User"
 type: concept
@@ -18,6 +23,10 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+>>>>>>> 2024e2e7 (.)
+=======
+>>>>>>> laraxot/dev
 # PHPStan Corrections Summary - Modulo User
 
 **Data**: 2025-01-22

@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+---
+title: "GDPR Compliance Guide for Registration"
+module: user
+type: integration
+tags: [integrations, modules, user]
+created: 2026-08-24
+updated: 2026-08-24
+---
+
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # GDPR Compliance Guide for Registration
 
 ## Core Principles (Italian Privacy Code & GDPR)

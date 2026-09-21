@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "BaseUser Refactoring - Completato"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # BaseUser Refactoring - Completato
 
 **Data**: 15 Ottobre 2025  
@@ -253,7 +270,22 @@ $user->hasRole('admin', 'api'); // ✅ Ora funziona correttamente
 
 ### Analisi Pre-Refactoring
 - [DRY Violation Analysis](./baseuser-dry-violation-analysis.md) - Analisi completa del problema
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Refactoring Plan](../../../docs/baseuser-dry-violation-2025-10-15.md) - Piano esecutivo
+=======
+- [Refactoring Plan](../../docs/baseuser-dry-violation-2025-10-15.md) - Piano esecutivo
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Refactoring Plan](../../docs/baseuser-dry-violation-2025-10-15.md) - Piano esecutivo
+=======
+- [Refactoring Plan](../../../docs/baseuser-dry-violation-2025-10-15.md) - Piano esecutivo
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+- [Refactoring Plan](../../../docs/baseuser-dry-violation-2025-10-15.md) - Piano esecutivo
+>>>>>>> laraxot/dev
 
 ### Modulo User
 - [BaseUser Model](./models/baseuser.md)
@@ -261,8 +293,27 @@ $user->hasRole('admin', 'api'); // ✅ Ora funziona correttamente
 - [User Module README](./readme.md)
 
 ### Root Progetto
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [Code Quality](../../../docs/code-quality-analysis.md)
 - [DRY Violations](../../../docs/dry-violations-analysis.md)
+=======
+- [Code Quality](../../docs/code-quality-analysis.md)
+- [DRY Violations](../../docs/dry-violations-analysis.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [Code Quality](../../docs/code-quality-analysis.md)
+- [DRY Violations](../../docs/dry-violations-analysis.md)
+=======
+- [Code Quality](../../../docs/code-quality-analysis.md)
+- [DRY Violations](../../../docs/dry-violations-analysis.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+- [Code Quality](../../../docs/code-quality-analysis.md)
+- [DRY Violations](../../../docs/dry-violations-analysis.md)
+>>>>>>> laraxot/dev
 
 ### Spatie Documentation
 - [Laravel Permission](https://spatie.be/docs/laravel-permission/v6/introduction)

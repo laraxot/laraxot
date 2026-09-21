@@ -9,9 +9,9 @@ use Livewire\Livewire;
 use Modules\User\Filament\Clusters\Passport\Pages\PassportDashboard;
 use Modules\User\Models\BaseUser;
 use Modules\User\Models\OauthClient;
+use Modules\User\Models\User;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-use Modules\User\Models\User;
 
 uses(TestCase::class);
 
@@ -26,16 +26,17 @@ uses(TestCase::class);
  */
 function makeMockUser(bool $isSuper): BaseUser
 {
-    return new class($isSuper) extends BaseUser
-    {
-        public function __construct(private readonly bool $isSuper) {}
+    return new class($isSuper) extends BaseUser {
+        public function __construct(private readonly bool $isSuper)
+        {
+        }
 
         /**
-         * @param  array<int, string>|\Illuminate\Support\Collection<int, string>|string  $roles
+         * @param array<int, string>|\Illuminate\Support\Collection<int, string>|string $roles
          */
         public function hasRole($roles, ?string $guard = null): bool
         {
-            if ($roles === 'super-admin') {
+            if ('super-admin' === $roles) {
                 return $this->isSuper;
             }
 
@@ -50,7 +51,7 @@ function makeMockUser(bool $isSuper): BaseUser
 it('creates a real client_credentials grant client with a hashed secret via ClientRepository', function (): void {
     $client = app(ClientRepository::class)->createClientCredentialsGrantClient('Test Client AC7a');
 
-    /** @var OauthClient $client */
+    /* @var OauthClient $client */
     Assert::assertInstanceOf(OauthClient::class, $client);
     Assert::assertTrue(in_array('client_credentials', $client->grant_types, true));
     Assert::assertNotNull($client->secret);

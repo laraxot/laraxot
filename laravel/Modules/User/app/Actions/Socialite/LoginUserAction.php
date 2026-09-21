@@ -1,10 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * @see https://github.com/DutchCodingCompany/filament-socialite
  */
-
-declare(strict_types=1);
 
 namespace Modules\User\Actions\Socialite;
 
@@ -24,22 +24,18 @@ class LoginUserAction
 
     /**
      * Execute the action.
+     *
+     * @return RedirectResponse
      */
     public function execute(SocialiteUser $socialiteUser): RedirectResponse
     {
-        Assert::notNull($user = $socialiteUser->user, '['.__FILE__.']['.__LINE__.']');
+        /** @var \Modules\Xot\Contracts\UserContract $user */
+        $user = $socialiteUser->user()->firstOrFail();
 
-        if (! $user instanceof Authenticatable) {
-            throw new \LogicException('User instance must implement Authenticatable.');
-        }
+        event(new SocialiteUserConnected($socialiteUser));
 
-        // PHPStan: assicuriamoci che l'utente sia Authenticatable per il login
-        /** @var Authenticatable $authenticatableUser */
-        $authenticatableUser = $user;
-        Filament::auth()->login($authenticatableUser);
-        session()->regenerate();
-        app(Dispatcher::class)->dispatch(new SocialiteUserConnected($socialiteUser));
+        Filament::auth()->login($user);
 
-        return redirect()->intended('/'.app()->getLocale());
+        return redirect()->intended('/');
     }
 }

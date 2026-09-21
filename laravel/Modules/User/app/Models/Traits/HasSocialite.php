@@ -20,17 +20,13 @@ trait HasSocialite
     public function getProviderField(string $provider, string $field): string
     {
         $socialiteUser = $this->socialiteUsers()->firstWhere(['provider' => $provider]);
-        if ($socialiteUser === null) {
+        if (null === $socialiteUser) {
             throw new \Exception('SocialiteUser not found');
         }
 
         $res = $socialiteUser->{$field};
 
-        if (\is_scalar($res) || $res instanceof \Stringable) {
-            return (string) $res;
-        }
-
-        throw new \Exception(\sprintf('SocialiteUser field "%s" is not stringable', $field));
+        return is_string($res) ? $res : '';
     }
 
     public function canAccessSocialite(): bool

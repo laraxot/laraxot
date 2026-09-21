@@ -10,6 +10,8 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Schemas\Components\Component;
+use Filament\Schemas\Components\Section;
 use Filament\Resources\Pages\PageRegistration;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -30,19 +32,6 @@ final class OauthPersonalAccessClientResource extends XotBaseResource
     protected static ?string $cluster = Passport::class;
 
     protected static ?string $model = OauthPersonalAccessClient::class;
-
-    /**
-     * Define the table for the resource.
-     */
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns(self::getTableColumns())
-            ->filters(self::getTableFilters())
-            ->recordActions(self::getTableActions())
-            ->toolbarActions(self::getTableBulkActions())
-            ->defaultSort('created_at', 'desc');
-    }
 
     /**
      * Get the table columns for the resource.

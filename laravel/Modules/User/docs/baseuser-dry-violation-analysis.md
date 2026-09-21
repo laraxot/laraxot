@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 ---
 title: "BaseUser - Analisi Violazione Principio DRY"
 type: concept
@@ -18,6 +26,15 @@ related:
   - "./actions-path-convention.md"
 ---
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 60a2c9a9 (.)
+=======
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+>>>>>>> laraxot/dev
 # BaseUser - Analisi Violazione Principio DRY
 
 **Data**: 15 Ottobre 2025  
@@ -452,8 +469,27 @@ test('hasRole works with guard parameter', function () {
 - [API Reference](https://github.com/spatie/laravel-permission/blob/main/src/Traits/HasRoles.php)
 
 ### Root Progetto
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 - [DRY Violations](../../../../docs/dry-violations-analysis.md)
 - [Code Quality](../../../../docs/code-quality-analysis.md)
+=======
+- [DRY Violations](../../../docs/dry-violations-analysis.md)
+- [Code Quality](../../../docs/code-quality-analysis.md)
+>>>>>>> 60a2c9a9 (.)
+=======
+- [DRY Violations](../../../docs/dry-violations-analysis.md)
+- [Code Quality](../../../docs/code-quality-analysis.md)
+=======
+- [DRY Violations](../../../../docs/dry-violations-analysis.md)
+- [Code Quality](../../../../docs/code-quality-analysis.md)
+>>>>>>> 2024e2e7 (.)
+>>>>>>> 87273113 (.)
+=======
+- [DRY Violations](../../../../docs/dry-violations-analysis.md)
+- [Code Quality](../../../../docs/code-quality-analysis.md)
+>>>>>>> laraxot/dev
 
 ## Conclusioni
 

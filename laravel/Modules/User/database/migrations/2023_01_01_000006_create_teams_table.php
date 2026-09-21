@@ -9,8 +9,7 @@ declare(strict_types=1);
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends XotBaseMigration
-{
+return new class extends XotBaseMigration {
     /**
      * Esegue la migrazione.
      */
@@ -39,15 +38,6 @@ return new class extends XotBaseMigration
                 $table->boolean('personal_team')->default(false)->change();
             }
 
-            if (! $this->hasColumn('code')) {
-                $table->string('code', 36)->nullable()->index();
-            }
-
-            if (! $this->hasColumn('owner_id')) {
-                $table->uuid('owner_id')->nullable()->after('id');
-            }
-
-            $this->updateTimestamps($table, true);
         });
     }
 };
