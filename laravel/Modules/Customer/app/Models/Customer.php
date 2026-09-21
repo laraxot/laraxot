@@ -16,7 +16,15 @@ use Modules\WorkOrder\Models\WorkOrder;
  * @property string|null $tax_code
  * @property string|null $email
  * @property string|null $phone
+ * @property string|null $address_line1
+ * @property string|null $address_line2
  * @property string|null $city
+ * @property string|null $postal_code
+ * @property string|null $province
+ * @property string|null $country_code
+ * @property string|null $payment_method
+ * @property string|null $iban
+ * @property string|null $notes
  * @property bool $is_active
  *
  * @method static CustomerFactory factory($count = null, $state = [])
