@@ -32,6 +32,7 @@ class HasTableWithXotTestClass
     /**
      * @return array<string, Column|ColumnGroup|Component>
      */
+    /** @return array<string, \Filament\Tables\Columns\Column> */
     public function getTableColumns(): array
     {
         return [];

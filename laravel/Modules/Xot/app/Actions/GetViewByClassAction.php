@@ -26,7 +26,7 @@ class GetViewByClassAction
     public function execute(string $class, array $params = [], ?string $viewName = null): View
     {
         $viewName ??= $this->getViewNameFromClass($class);
-        /* @var view-string $viewName */
+        /** @var view-string $viewName */
 
         return ViewFacade::make($viewName, $params);
     }

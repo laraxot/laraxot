@@ -6,8 +6,10 @@ namespace Modules\Xot\Actions\Arrays;
 
 use Spatie\QueueableAction\QueueableAction;
 
-use function Safe\file_put_contents;
-
+/**
+ * @deprecated Prefer {@see \Modules\Xot\Actions\Arr\SavePhpArrayAction} (namespace Arr).
+ *             Wrapper: stessa regola one-key-per-line.
+ */
 class SavePhpArrayAction
 {
     use QueueableAction;
@@ -17,8 +19,6 @@ class SavePhpArrayAction
      */
     public function execute(array $data, string $filename): bool
     {
-        $content = "<?php\n\nreturn ".var_export($data, true).";\n";
-
-        return (bool) file_put_contents($filename, $content);
+        return app(\Modules\Xot\Actions\Arr\SavePhpArrayAction::class)->execute($data, $filename);
     }
 }

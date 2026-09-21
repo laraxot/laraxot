@@ -181,7 +181,7 @@ try {
 ```php
 // ContactResource.php
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -194,7 +194,7 @@ public function getFormSchema(): array
 
 // CustomerResource.php - PATTERN SIMILE
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -294,7 +294,7 @@ protected function casts(): array
 class ContactResource extends XotBaseResource
 {
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
     {

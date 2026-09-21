@@ -34,7 +34,7 @@ class CoeffResource extends XotBaseResource
    * @return array<string, \Filament\Schemas\Components\Component>
    */
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -78,7 +78,7 @@ class ExampleResource extends XotBaseResource
      * @return array<string, \Filament\Schemas\Components\Component>
      */
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev

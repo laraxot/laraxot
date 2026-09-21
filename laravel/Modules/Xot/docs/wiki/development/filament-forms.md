@@ -24,7 +24,7 @@ class PerformanceResource extends XotBaseResource
     protected static ?string $model = Performance::class;
 
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -245,7 +245,7 @@ Forms\Components\Grid::make()
 
 ```php
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev

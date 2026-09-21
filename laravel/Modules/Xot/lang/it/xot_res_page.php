@@ -3,6 +3,6 @@
 declare(strict_types=1);
 
 return [
-    'navigation' => ['label' => 'xot res page.navigation'],
+    'navigation' => ['label' => 'Pagina risorsa Xot'],
     'title' => 'xot res page',
 ];

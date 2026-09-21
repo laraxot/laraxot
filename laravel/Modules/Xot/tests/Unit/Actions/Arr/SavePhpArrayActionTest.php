@@ -57,4 +57,39 @@ describe('Save Php Array Action', function () use (&$tempDir): void {
 
         Assert::assertStringContainsString('declare(strict_types=1)', file_get_contents($path));
     });
+
+    test('nested arrays are written one key per line never inline', function () use (&$tempDir): void {
+        // Ordine utente 2026-09-16: mai 'nav' => ['a' => 1, 'b' => 2] su una riga.
+        $path = $tempDir.'/nested.php';
+        app(SavePhpArrayAction::class)->execute([
+            'navigation' => [
+                'label' => 'Dipendenti',
+                'icon' => 'heroicon-o-user',
+                'sort' => 11,
+            ],
+            'title' => 'Compilazione Scheda Dipendente',
+        ], $path);
+
+        $content = file_get_contents($path);
+        Assert::assertStringNotContainsString(
+            "'navigation' => ['label'",
+            $content,
+            'VarExporter-style compact nested array is forbidden',
+        );
+        Assert::assertMatchesRegularExpression(
+            "/'navigation' => \\[\\n\\s+'label' =>/",
+            $content,
+        );
+        Assert::assertSame(
+            [
+                'navigation' => [
+                    'label' => 'Dipendenti',
+                    'icon' => 'heroicon-o-user',
+                    'sort' => 11,
+                ],
+                'title' => 'Compilazione Scheda Dipendente',
+            ],
+            require $path,
+        );
+    });
 });

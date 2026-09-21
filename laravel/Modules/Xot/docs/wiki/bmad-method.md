@@ -27,6 +27,16 @@ BMAD non e' un generatore casuale di codice: e' il processo di delivery. Prima s
 - Logica applicativa in Actions/Queueable Actions, non in Services.
 - Quality gate proporzionati al cambio; per PHP almeno `php -l`, PHPStan mirato e `git diff --check`.
 
+## Locazione artefatti BMAD (obbligatoria)
+
+Story, architecture, brainstorming ed epic vanno in:
+
+`laravel/Modules/<Modulo>/docs/bmad/{stories,architecture,brainstorming,epics}/`
+
+del/i modulo/i su cui si lavora. `docs/bmad/` alla root del repo è solo indice/puntatore.
+
+SSoT: `bashscripts/ai/wiki/memories/bmad-artifacts-live-in-module-docs.md` · always-on `.cursor/rules/bmad-docs-in-module.mdc`.
+
 ## LLM Wiki locale
 
 - Raw ufficiale BMAD: `docs/raw/bmad/llms-full.txt`.

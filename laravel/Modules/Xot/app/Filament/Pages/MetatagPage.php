@@ -89,7 +89,7 @@ class MetatagPage extends XotBasePage
 
         Notification::make()
             ->success()
-            ->title(__('filament-panels::resources/edit-record.notifications.saved.title'))
+            ->title('Salvato con Successo !')
             ->send();
     }
 

@@ -46,7 +46,7 @@ return [
         'extra_attributes' => ['label' => 'extra_attributes'],
         'post_type' => ['label' => 'post_type', 'placeholder' => 'post_type', 'helper_text' => 'post_type', 'description' => 'post_type'],
         'post_id' => ['label' => 'post_id', 'placeholder' => 'post_id', 'helper_text' => 'post_id', 'description' => 'post_id'],
-        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => 'value', 'description' => 'value'],
+        'value' => ['label' => 'value', 'placeholder' => 'value', 'helper_text' => '', 'description' => 'value'],
     ],
     'actions' => [
         'create' => ['label' => 'Crea Extra', 'icon' => 'create', 'tooltip' => 'create'],

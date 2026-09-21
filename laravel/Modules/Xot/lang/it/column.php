@@ -32,5 +32,6 @@ return [
         'updater' => [
             'name' => ['label' => 'updater.name'],
         ],
+        'name_count' => ['label' => 'name_count'],
     ],
 ];

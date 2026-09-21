@@ -126,3 +126,16 @@ Aggiornato: 2026-07-27
 | `Dashboard.php` | [module-dashboard-page-mandatory.md](./concepts/module-dashboard-page-mandatory.md) |
 | Hub runtime cross-modulo | [runtime-config-religion-hub](../../../../Themes/docs/shared-components/runtime-config-religion-hub.md) |
 | Tenant `modules_statuses` | [tenant-module-status-registry](../../Tenant/docs/tenant-module-status-registry.md) |
+
+## Decisioni in discussione — 2026-09-11
+
+- [Owner e Resource correlata](concepts/manage-related-records-resource-delegation.md) — riuso form/colonne, DRY/KISS e vincoli Filament; traccia vendor completa (`makeTable()`→`configureTable()`).
+- Analisi indipendente parallela, stesso giorno, mappa completa in [../index.md#discussioni-architetturali--2026-09-11](../index.md#discussioni-architetturali--2026-09-11) — censimento pagine, verifica dal vivo pannello/modulo, prova di precedenza classe/trait.
+
+- [File proposto XotBaseManageRelatedRecords](../app/Filament/Resources/Pages/XotBaseManageRelatedRecords.php.md) — PHP documentato, review e coordinamento multi-agente.
+
+**Aggiornamento 2026-09-11 (piu' tardi, stesso giorno)**: "quinta direzione"
+in fondo al file sopra — `form()`/`table()` delegano per intero alla
+Resource correlata (mai bridge per singolo hook come nella quarta), unici
+override point per-pagina `getTableColumns()`/`getTableHeaderActions()`.
+Non implementata. Story: `Modules/Xot/docs/stories/xotbasemanagerelatedrecords-convention-over-configuration.story.md`.

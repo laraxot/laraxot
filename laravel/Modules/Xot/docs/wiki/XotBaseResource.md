@@ -27,7 +27,7 @@ protected static ?string $navigationIcon = 'heroicon-o-user';
 Every concrete resource must implement:
 - `protected static ?string $model`
 <<<<<<< HEAD
-- `public static function getFormSchema(): array`
+- `public function getFormSchema(): array`
 =======
 - `public function getFormSchema(): array`
 >>>>>>> laraxot/dev

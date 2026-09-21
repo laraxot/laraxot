@@ -19,7 +19,7 @@ return [
         'value' => [
             'label' => 'value',
             'placeholder' => 'value',
-            'helper_text' => 'value',
+            'helper_text' => '',
             'description' => 'value',
         ],
     ],

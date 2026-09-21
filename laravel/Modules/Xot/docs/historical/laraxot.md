@@ -1201,7 +1201,7 @@ XotBaseResource è la classe base per tutte le risorse Filament nel framework. F
 3. **Form Schema**
    ```php
 <<<<<<< HEAD
-   public static function getFormSchema(): array
+   public function getFormSchema(): array
 =======
    public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -4444,7 +4444,7 @@ protected function getFormSchema(): array
 
 // ✅ CORRETTO: getFormSchema deve essere statico
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -4458,7 +4458,7 @@ class TicketResource extends XotBaseResource
 
     // ✅ CORRETTO: Metodo statico
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -4483,7 +4483,7 @@ public function getFormSchema(): array
 
 // ✅ CORRETTO: public e statico
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -4493,7 +4493,7 @@ public function getFormSchema(): array
 ```php
 // ❌ ERRATO: Accesso a $this in metodo statico
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -4506,7 +4506,7 @@ public function getFormSchema(): array
 
 // ✅ CORRETTO: Usa metodi statici o proprietà statiche
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -4528,7 +4528,7 @@ public function getFormSchema(): array
     * @return array<int, \Filament\Forms\Components\Component>
     */
 <<<<<<< HEAD
-   public static function getFormSchema(): array
+   public function getFormSchema(): array
 =======
    public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -4564,7 +4564,7 @@ public function getFormSchema(): array
    ```php
    // Usa sempre return type declarations
 <<<<<<< HEAD
-   public static function getFormSchema(): array
+   public function getFormSchema(): array
 =======
    public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -4576,7 +4576,7 @@ public function getFormSchema(): array
     * @return array<int, \Filament\Forms\Components\Component>
     */
 <<<<<<< HEAD
-   public static function getFormSchema(): array
+   public function getFormSchema(): array
 =======
    public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -5733,7 +5733,7 @@ class TicketResource extends XotBaseResource
     protected static ?string $model = Ticket::class;
 
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -7184,7 +7184,7 @@ protected function getFormSchema(): array
 
 // ✅ CORRETTO: getFormSchema deve essere statico
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -7198,7 +7198,7 @@ class TicketResource extends XotBaseResource
 
     // ✅ CORRETTO: Metodo statico
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -7223,7 +7223,7 @@ public function getFormSchema(): array
 
 // ✅ CORRETTO: public e statico
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -7233,7 +7233,7 @@ public function getFormSchema(): array
 ```php
 // ❌ ERRATO: Accesso a $this in metodo statico
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -7246,7 +7246,7 @@ public function getFormSchema(): array
 
 // ✅ CORRETTO: Usa metodi statici o proprietà statiche
 <<<<<<< HEAD
-public static function getFormSchema(): array
+public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -7268,7 +7268,7 @@ public function getFormSchema(): array
     * @return array<int, \Filament\Forms\Components\Component>
     */
 <<<<<<< HEAD
-   public static function getFormSchema(): array
+   public function getFormSchema(): array
 =======
    public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -7304,7 +7304,7 @@ public function getFormSchema(): array
    ```php
    // Usa sempre return type declarations
 <<<<<<< HEAD
-   public static function getFormSchema(): array
+   public function getFormSchema(): array
 =======
    public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -7316,7 +7316,7 @@ public function getFormSchema(): array
     * @return array<int, \Filament\Forms\Components\Component>
     */
 <<<<<<< HEAD
-   public static function getFormSchema(): array
+   public function getFormSchema(): array
 =======
    public function getFormSchema(): array
 >>>>>>> laraxot/dev

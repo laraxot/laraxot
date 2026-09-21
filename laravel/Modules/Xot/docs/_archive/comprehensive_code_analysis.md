@@ -176,7 +176,7 @@ try {
 
 ```php
 // ContactResource.php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         TextInput::make('first_name'),
@@ -185,7 +185,7 @@ public function getFormSchema(): array
 }
 
 // CustomerResource.php - PATTERN SIMILE
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         TextInput::make('name')->required(),
@@ -281,7 +281,7 @@ protected function casts(): array
 ```php
 class ContactResource extends XotBaseResource
 {
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             TextInput::make('first_name'),

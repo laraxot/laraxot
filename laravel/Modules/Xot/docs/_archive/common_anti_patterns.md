@@ -328,7 +328,7 @@ public function canAccess($user): bool
 // ❌ ANTI-PATTERN
 class MyWidget extends XotBaseWidget
 {
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         // Filament methods should not be static
     }

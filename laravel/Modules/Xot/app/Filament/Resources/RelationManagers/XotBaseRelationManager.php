@@ -43,7 +43,7 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
      */
     public static function trans(string $key, bool $exceptionIfNotExist = false, array $params = []): string
     {
-        return static::$resource::trans($key, $exceptionIfNotExist, $params);
+        return static::getResourceClass()::trans($key, $exceptionIfNotExist, $params);
     }
 
     protected static string $relationship = '';
@@ -58,7 +58,23 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
      */
     public function getResource(): string
     {
-        if (isset(static::$resource) && \is_string(static::$resource) && static::$resource !== '') {
+        return static::getResourceClass();
+    }
+
+    /**
+     * La classe Resource genitrice, derivata dal namespace del RelationManager e
+     * memoizzata in `static::$resource`.
+     *
+     * Statica e non `getResource()` (di istanza) perché serve anche a `trans()`,
+     * chiamato durante la build delle azioni tabella in un ciclo Livewire in cui
+     * `static::$resource` non è ancora inizializzata — la proprietà tipata senza
+     * default lanciava «must not be accessed before initialization».
+     *
+     * @return class-string<XotBaseResource>
+     */
+    protected static function getResourceClass(): string
+    {
+        if (isset(static::$resource) && '' !== static::$resource) {
             return static::$resource;
         }
 
@@ -77,7 +93,7 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
         Assert::true(class_exists($resource), 'Resource class does not exist: '.$resource);
         Assert::true(is_subclass_of($resource, XotBaseResource::class), 'Resource must extend XotBaseResource: '.$resource);
 
-        /* @var class-string<XotBaseResource> $resource */
+        /** @var class-string<XotBaseResource> $resource */
         static::$resource = $resource;
 
         return static::$resource;

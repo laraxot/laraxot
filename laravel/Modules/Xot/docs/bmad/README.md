@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+---
+name: readme
+description: "Repo: git@github.com:laraxot/modulexotfila5.git"
+metadata:
+  type: bmad
+---
+
+=======
+>>>>>>> laraxot/dev
+=======
+>>>>>>> laraxot/dev
 # BMAD — Indice workflow Xot
 
 **Repo:** `git@github.com:laraxot/module_xot_fila5.git`

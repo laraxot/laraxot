@@ -10,6 +10,7 @@ use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\View\PanelsRenderHook;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
@@ -93,7 +94,32 @@ abstract class XotBasePanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            // Fix "This page has expired" (Livewire) sulla pagina di login:
+            // riprodotto con evidenza che e' un vero 419 quando il browser
+            // ripresenta (bfcache/"indietro") la pagina di login DOPO che la
+            // sessione e' stata rigenerata altrove (es. login/logout riuscito
+            // in un'altra tab) — il token CSRF/snapshot incorporato nella
+            // pagina in cache non e' piu' valido. Cache-Control/Pragma sono
+            // gia' corretti (Livewire::DisableBackButtonCacheMiddleware), ma
+            // Chrome ripristina comunque le pagine dalla bfcache anche con
+            // `no-store` dal 2021: qui forziamo un reload quando la pagina
+            // viene ripristinata dalla bfcache, cosi' l'utente prende sempre
+            // un token fresco invece di vedere il messaggio fuorviante.
+            // Vedi Modules/Xot/docs/stories/login-page-expired-investigation-2026-09-11.story.md
+            ->renderHook(
+                PanelsRenderHook::HEAD_END,
+                fn (): string => <<<'HTML'
+                    <script>
+                        window.addEventListener('pageshow', function (event) {
+                            if (event.persisted) {
+                                window.location.reload();
+                            }
+                        });
+                    </script>
+                    HTML,
+                scopes: \Filament\Auth\Pages\Login::class,
+            );
 
         if ($this->discoverModuleComponents) {
             $panel

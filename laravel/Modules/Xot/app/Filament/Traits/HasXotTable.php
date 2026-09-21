@@ -33,6 +33,7 @@ use Filament\Widgets\TableWidget;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Str;
 use Livewire\Component;
 use Modules\UI\Enums\TableLayoutEnum;
@@ -41,6 +42,7 @@ use Modules\UI\Filament\Traits\HasTableLayoutPage;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Actions\Filament\PlainTextFromFilamentValueAction;
 use Modules\Xot\Actions\GetTransKeyAction;
+use RuntimeException;
 use Webmozart\Assert\Assert;
 
 /**
@@ -129,7 +131,7 @@ trait HasXotTable
     {
         $columns = [];
 
-        // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+        // @phpstan-ignore method.deprecated
         foreach (array_values($this->getTableColumns()) as $column) {
             if ($column instanceof ColumnGroup) {
                 // Stack::make() non accetta ColumnGroup: nella vista a griglia le colonne
@@ -187,7 +189,7 @@ trait HasXotTable
      */
     public function getTableFiltersFormColumns(): int
     {
-        // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+        // @phpstan-ignore method.deprecated
         $count = count($this->getTableFilters()) + 1;
 
         return min($count, 6);
@@ -237,45 +239,43 @@ trait HasXotTable
         // (fallback deprecato di Filament): si filtrano per restare coerenti col tipo
         // atteso da TableLayoutEnum::getTableColumns().
         $tableColumns = array_values(array_filter(
-            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            // @phpstan-ignore method.deprecated
             $this->getTableColumns(),
             static fn (mixed $column): bool => $column instanceof Column || $column instanceof ColumnGroup || $column instanceof LayoutComponent,
         ));
 
         $columns = $this->layoutView->getTableColumns($tableColumns, $this->getGridTableColumns());
-        
-        
 
         $table = $table
             ->recordTitleAttribute($this->getTableRecordTitleAttribute())
-            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            // @phpstan-ignore method.deprecated
             ->heading($this->getTableHeading())
-            ->columns($this->layoutView->getTableColumns($tableColumns, $this->getGridTableColumns()))
+            // @phpstan-ignore method.deprecated, argument.type
+            ->headerActions($this->getTableHeaderActions())
+            ->columns($columns)
             ->contentGrid($this->layoutView->getTableContentGrid())
-            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            // @phpstan-ignore method.deprecated
             ->filters($this->getTableFilters())
             ->filtersLayout($this->getTableFiltersLayout())
             ->filtersFormColumns($this->getTableFiltersFormColumns())
             ->deferFilters($this->shouldDeferTableFilters())
-            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            // @phpstan-ignore method.deprecated
             ->persistFiltersInSession($this->shouldPersistTableFiltersInSession())
-            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
-            ->headerActions($this->getTableHeaderActions())
-            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            // @phpstan-ignore method.deprecated, method.childReturnType, argument.type
             ->recordActions($this->getTableActions())
-            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            // @phpstan-ignore method.deprecated
             ->toolbarActions($this->getTableBulkActions())
             ->recordActionsPosition($this->getTableRecordActionsPosition())
-            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            // @phpstan-ignore method.deprecated
             ->emptyStateActions($this->getTableEmptyStateActions())
-            // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+            // @phpstan-ignore method.deprecated
             ->striped($this->isTableStriped())
             ->paginated($this->getTablePaginated());
 
         // Configurazioni opzionali personalizzabili
-        // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+        // @phpstan-ignore method.deprecated
         $sortColumn = $this->getDefaultTableSortColumn();
-        // @phpstan-ignore method.deprecated (il trait E' l'override di table(): la deprecazione Filament non si applica)
+        // @phpstan-ignore method.deprecated
         $sortDirection = $this->getDefaultTableSortDirection();
         if ($sortColumn !== null && $sortDirection !== null) {
             $table = $table->defaultSort($sortColumn, $sortDirection);
@@ -285,6 +285,8 @@ trait HasXotTable
         if ($pollInterval !== null) {
             $table = $table->poll($pollInterval);
         }
+
+        $table = $this->applyReorderable($table);
 
         return $table;
     }
@@ -296,7 +298,7 @@ trait HasXotTable
      * Filament\Tables\Concerns\InteractsWithTable richiede visibilità PUBLIC.
      * Vedi: Modules/Xot/docs/filament/widget-method-visibility-rules.md
      *
-     * @return array<string|int, Tables\Filters\Filter|TernaryFilter|BaseFilter>
+     * @return array<string|int, \Filament\Tables\Filters\Filter|TernaryFilter|BaseFilter>
      */
     public function getTableFilters(): array
     {
@@ -313,13 +315,22 @@ trait HasXotTable
      */
     public function getTableActions(): array
     {
-       
-
         $actions = [];
         $resource = $this;
         /* @phpstan-ignore-next-line */
-        //if ($this instanceof ListRecords) {
-        if(method_exists($this, 'getResource')) {
+        // Ripristinato a method_exists() il 2026-09-11: un giro precedente
+        // aveva ristretto questo controllo a `$this instanceof ListRecords`,
+        // pensato per le pagine, ma XotBaseResourceTable::getTableActions()
+        // (usato da OGNI {Model}sTable.php del repo, non solo dalle pagine
+        // ListRecords) espone `getResource()` senza essere una ListRecords —
+        // verificato dal vivo: la versione ristretta faceva sparire
+        // view/edit/delete di default per tutte quelle tabelle (es.
+        // ChartsTable::getTableActions() tornava [] invece di
+        // view/edit/delete), zero errori, nessuna eccezione. Nessuna
+        // giustificazione trovata per la versione ristretta (nessuna story
+        // la documenta); il controllo ampio e' quello verificato corretto
+        // per il resto di questa sessione.
+        if (method_exists($this, 'getResource')) {
             $resourceClass = $this->getResource();
             // @phpstan-ignore-next-line staticMethod.alreadyNarrowedType
             Assert::string($resourceClass);
@@ -396,22 +407,39 @@ trait HasXotTable
      *
      *
      * @return class-string<Model>
+     * @phpstan-return class-string<Model>
      *
      * @throws \Exception Se non viene trovata una classe modello valida
      */
     public function getModelClass(): string
     {
+        // Su pagine "related records" / relation manager, getModel() risale al
+        // model della Resource proprietaria (es. SurveyPdf), non al model della
+        // relazione mostrata in tabella (es. Contact): va usato getRelationship().
+        if (method_exists($this, 'getRelationship')) {
+            $relationship = $this->getRelationship();
+            Assert::isInstanceOfAny($relationship, [Relation::class, Builder::class]);
+            $related = $relationship instanceof Builder ? $relationship->getModel() : $relationship->getRelated();
+            if ($related instanceof Model) {
+                /** @var class-string<Model> $relatedClass */
+            $relatedClass = get_class($related);
+
+            return $relatedClass;
+            }
+        }
+
         /* @phpstan-ignore-next-line function.alreadyNarrowedType */
         if (method_exists($this, 'getModel')) {
             $model = $this->getModel();
             Assert::string($model);
-            Assert::classExists($model);
-            Assert::subclassOf($model, Model::class);
+            if (! is_a($model, Model::class, true)) {
+                throw new RuntimeException('Invalid model class '.$model);
+            }
 
             return $model;
         }
 
-        throw new \RuntimeException('No model found in '.class_basename(self::class).'::'.__FUNCTION__);
+        throw new RuntimeException('No model found in '.class_basename(self::class).'::'.__FUNCTION__);
     }
 
     /**
@@ -657,5 +685,48 @@ trait HasXotTable
     protected function hasSearch(): bool
     {
         return true;
+    }
+
+    /**
+     * Check if model has a specific column via schema introspection.
+     * Generic, reusable method for any column check.
+     */
+    protected function hasColumn(string $column): bool
+    {
+        $modelClass = $this->getModelClass();
+        $model = app($modelClass);
+        Assert::isInstanceOf($model, Model::class);
+
+        return $model->getConnection()
+            ->getSchemaBuilder()
+            ->hasColumn($model->getTable(), $column);
+    }
+
+    /**
+     * Get the column name used for table reordering.
+     * Returns 'order_column' if it exists in the model's table, null otherwise.
+     */
+    protected function getOrderColumn(): ?string
+    {
+        if ($this->hasColumn('order_column')) {
+            return 'order_column';
+        }
+    
+        return null;
+    }
+
+    /**
+     * Apply reorderable to table if order column is available.
+     */
+    protected function applyReorderable(Table $table): Table
+    {
+        $orderColumn = $this->getOrderColumn();
+       
+
+        if ($orderColumn !== null) {
+            return $table->reorderable($orderColumn);
+        }
+
+        return $table;
     }
 }

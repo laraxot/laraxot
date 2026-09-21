@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+---
+name: issue-04-infolist
+description: "Repo: git@github.com:laraxot/modulexotfila5.git"
+metadata:
+  type: bmad
+---
+
+=======
+>>>>>>> laraxot/dev
+=======
+>>>>>>> laraxot/dev
 # Issue GH #04 — XotBaseResourceInfolist: istanza + HasXotInfolist
 
 **Repo:** `git@github.com:laraxot/module_xot_fila5.git`

@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+---
+name: 01-refactor-table-trans
+description: "Repo: git@github.com:laraxot/modulexotfila5.git"
+metadata:
+  type: bmad
+---
+
+=======
+>>>>>>> laraxot/dev
+=======
+>>>>>>> laraxot/dev
 # BMAD Story 01 — Rimuovere TransTrait ridondante
 
 **Repo:** `git@github.com:laraxot/module_xot_fila5.git`

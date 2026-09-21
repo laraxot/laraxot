@@ -419,3 +419,23 @@ discussions:
 - Commit: docs: add cross-reference to policy boundary decision
 
 2026-06-30 | start.txt v12 — cleanup: rimosso §1.10 duplicato, rg pre-check, test-naming in output, PHPStan consolidato in §6, appendice compressa
+
+## 2026-09-11 — Delega Resource per ManageRelatedRecords
+
+Brainstorming documentale e story BMAD, nessuna implementazione. [Memoria](concepts/manage-related-records-resource-delegation.md), [analisi](../filament/manage-related-records-resource-delegation-brainstorming.md), [story](../stories/manage-related-records-resource-delegation.story.md). QMD search/update tentati ma bloccati da ABI Node/SQLite; fonti lette direttamente.
+
+### 2026-09-11 — Revisione senza trait nelle pagine related
+
+Aggiornati [brainstorming](../filament/manage-related-records-resource-delegation-brainstorming.md), [story BMAD](../stories/manage-related-records-resource-delegation.story.md) e [memoria](concepts/manage-related-records-resource-delegation.md). Preferenza E: delega nativa, evitando doppia configurazione table. Solo documentazione; nessuna verifica runtime dichiarata.
+
+### Consolidamento della proposta form/table — 2026-09-11
+
+Rivisti gli undici documenti richiesti: delega completa, correzione getResource owner, percorsi A/B esclusivi. Ritirate raccomandazioni contraddittorie e percentuali di sicurezza non dimostrate. [Fonte canonica](../architecture/xotbasemanagerelatedrecords-form-table-delegation-feasibility.md), [story](../stories/manage-related-records-resource-delegation.story.md). Solo documentazione.
+
+### Proposta PHP documentata e review multi-agente
+
+Writer `/root`, reviewer `/root/proposal_review`; story condivisa aggiornata. [Artefatto](../app/Filament/Resources/Pages/XotBaseManageRelatedRecords.php.md) con contributo concorrente preservato come storico; finding layout e ambiguità recepiti. Solo docs; sintassi via stdin verificata, nessun PHP applicativo modificato da questo task.
+
+### 2026-09-11 — Tracking BMAD completato
+
+Create [issue #112](https://github.com/laraxot/module_xot_fila5/issues/112) e [discussion #114](https://github.com/laraxot/module_xot_fila5/discussions/114) nel repository Xot, collegate alla story e alla memoria. MCP tentato con 403; pubblicazione riuscita con gh. Nessuna modifica applicativa.

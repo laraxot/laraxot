@@ -92,7 +92,7 @@ The Xot base classes provide a centralized way to customize and extend functiona
   {
       // Resource definition
 <<<<<<< HEAD
-      public static function getFormSchema(): array
+      public function getFormSchema(): array
 =======
       public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -164,7 +164,7 @@ The Xot base classes provide a centralized way to customize and extend functiona
   {
       // Resource definition
 <<<<<<< HEAD
-      public static function getFormSchema(): array
+      public function getFormSchema(): array
 =======
       public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -830,7 +830,7 @@ abstract class XotBaseResource extends Resource
      * Get form schema con validation automatica
      */
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -4227,7 +4227,7 @@ class {ModelName}Resource extends XotBaseResource
 
     // UNICO metodo necessario nella Resource principale
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -4445,7 +4445,7 @@ Questo significa che:
 ```php
 /** @return array<int|string, \Filament\Schemas\Components\Component> */
 <<<<<<< HEAD
-abstract public static function getFormSchemaOld(): array;
+abstract public function getFormSchemaOld(): array;
 =======
 abstract public function getFormSchemaOld(): array;
 >>>>>>> laraxot/dev
@@ -4483,7 +4483,7 @@ class NotificationResource extends XotBaseResource
     protected static ?string $model = 'Modules\Notify\Models\Notification';
 
 <<<<<<< HEAD
-    public static function getFormSchemaOld(): array
+    public function getFormSchemaOld(): array
 =======
     public function getFormSchemaOld(): array
 >>>>>>> laraxot/dev

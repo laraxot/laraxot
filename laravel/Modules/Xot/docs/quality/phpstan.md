@@ -98,7 +98,7 @@ abstract class XotBaseResource extends Resource
      * @return array<int, Component>
      */
 <<<<<<< HEAD
-    abstract public static function getFormSchema(): array;
+    abstract public function getFormSchema(): array;
 =======
     abstract public function getFormSchema(): array;
 >>>>>>> laraxot/dev

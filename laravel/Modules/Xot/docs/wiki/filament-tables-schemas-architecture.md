@@ -50,3 +50,9 @@ grep -rn 'public function table' Modules/*/app/Filament/Resources/Tables/  # BAD
 ## Riferimenti
 - `Modules/Xot/app/Filament/Traits/HasXotTable.php` — consumo Tables
 - `Modules/Xot/app/Providers/Filament/XotBasePanelProvider.php:100` — discoverResources()
+
+## Schema contract and source audit (2026-09-10)
+
+`XotBaseResourceTable::getTableColumns()` returns `array<string, Column>`. String keys preserve identity for translation/overrides. Cache and CacheLock migrations provide key/expiration (plus owner for locks), not id/timestamps. Session provides user_id/ip_address/user_agent/last_activity (Unix seconds). Extra provides model_type/model_id. Log Sushi rows provide name/size; Module Sushi rows provide name/description/status/priority/path. Do not infer fields from generic scaffolds or model annotations when getRows/migrations contradict them.
+
+Sources: `app/Models/{Cache,CacheLock,Session,Extra,Log,Module}.php`, `database/migrations/*_{cache,cache_locks,sessions,extra}_table.php`. Related: [[filament-v5-hybrid-pattern]], [[filament-tables-schemas-architecture]], [[index]].

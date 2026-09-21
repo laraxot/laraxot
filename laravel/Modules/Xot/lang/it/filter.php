@@ -18,5 +18,6 @@ return [
         'type' => ['label' => 'type'],
         'trashed' => ['label' => 'trashed'],
         'user' => ['label' => 'user'],
+        'name' => ['label' => 'name'],
     ],
 ];

@@ -56,11 +56,11 @@ it('every list page declares its table columns', function (): void {
             // La pagina va bene se dichiara le colonne, oppure se la Resource
             // che la ospita ha la classe Tables/ che XotBaseResource cerca.
             $resourceDir = dirname($path, 2);
-            if (str_contains($source, 'function getTableColumns') || is_dir($resourceDir.'/Tables')) {
-                continue;
+            $tableDir = $resourceDir.'/Tables';
+            $hasColumns = (bool) glob($tableDir.'/*Table.php');
+            if (! $hasColumns) {
+                $pages[] = $relative;
             }
-
-            $pages[] = $relative;
         }
     }
 

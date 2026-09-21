@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+---
+name: phpstan-analysis-report-2025-11-18
+description: " Executive Summary"
+metadata:
+  type: documentation
+---
+
+=======
+>>>>>>> laraxot/dev
+=======
+>>>>>>> laraxot/dev
 # PHPStan Analysis Report - 2025-11-18
 
 ## Executive Summary

@@ -61,7 +61,7 @@ class XotBaseResourceForm
     }
 
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -90,7 +90,7 @@ class XotBaseResourceForm
 class TicketForm extends XotBaseResourceForm
 {
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev

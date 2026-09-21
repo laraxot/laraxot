@@ -214,7 +214,7 @@ class YourResource extends XotBaseResource
     // Pages auto-discovered following pattern
 
 <<<<<<< HEAD
-    public static function getFormSchema(): array
+    public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
@@ -225,7 +225,7 @@ class YourResource extends XotBaseResource
     }
 
 <<<<<<< HEAD
-    public static function getInfolistSchema(): array
+    public function getInfolistSchema(): array
 =======
     public function getInfolistSchema(): array
 >>>>>>> laraxot/dev

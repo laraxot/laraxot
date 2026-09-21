@@ -148,7 +148,7 @@ class MyPage extends XotBasePage
 ### 2. **Metodi Statici Errati**
 ```php
 // ❌ SBAGLIATO
-public function getFormSchema(): array
+public static function getFormSchema(): array
 
 // ✅ CORRETTO
 public function getFormSchema(): array

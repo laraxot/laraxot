@@ -1,30 +1,114 @@
 # Xot Module Test Coverage
 
 ## Overview
-This module has comprehensive test coverage with various test types implemented.
 
-## Test Results
-- **Tests Passed**: 0
-- **Assertions**: 0
-- **Test Types**: Unit, Feature, Integration tests
+Questa sezione in cima era boilerplate mai compilato (tutti zero, "Status: all
+passing" senza numeri a sostegno) — corretta il 2026-09-11 con l'ultima
+misura reale disponibile. Il resto del file, sotto, e' un log storico
+append-only per sessione: ogni sezione riporta i propri numeri verificati al
+momento, non riassunti qui (i moduli cambiano troppo in fretta in un contesto
+multi-agente per un unico "coverage rate" a inizio file sia mai affidabile).
 
-## Coverage Statistics
-- **Files**: 0
-- **Lines of Code**: 0
-- **Classes**: 0
-- **Methods**: 0
-- **Coverage Rate**: 0%
+## PHPStan fleet fix — 4 root cause, 1 vera (2026-09-16)
 
-## Test Categories
-- Unit Tests
-- Feature Tests
-- Integration Tests
+Story: `Modules/Xot/docs/stories/phpstan-fleet-fix-2026-09-16.story.md` (campagna
+coordinata con `codex-2026-09-16` e peer `base-ptvx-fila5-c5`). Assessment iniziale
+(fork dedicato nella stessa sessione) ipotizzava 96 errori raggruppati in 4 root
+cause; all'atto pratico un fork precedente della stessa sessione aveva GIA' applicato
+i 4 fix nel working tree (non ancora committati) prima che questo sub-agente
+partisse — il lavoro qui e' stato verifica, non-regressione e chiusura.
 
-## Status
-All tests are passing and coverage is being maintained.
+- **`HasXotTable::hasColumn()`** (`app/Filament/Traits/HasXotTable.php`) — la causa
+  dei ~90 errori "in context of" era `$model = app($modelClass)` senza narrowing:
+  `$model` restava `mixed` e `getConnection()/getSchemaBuilder()/getTable()` su
+  `mixed` sono `method.nonObject`. Fix gia' presente: aggiunto
+  `Assert::isInstanceOf($model, Model::class);` dopo `app($modelClass)`, rimosso un
+  `try/catch` commentato morto. `Model` e `Assert` erano gia' importati nel trait.
+- **`XotBaseResourceTable::getModelClass()`** — gia' `public static function
+  getModelClass(): string` con `@return class-string<Model>` corretto (import
+  `Illuminate\Database\Eloquent\Model` aggiunto). Nessun errore residuo.
+- **Contratto `getModelClass()` statico nei test doubles** — 3 classi in
+  `Tests/Feature/Filament/Traits/HasXotTableReorderingTest.php` (righe 70/86/102)
+  e una classe anonima in `tests/Unit/HasXotTableSortHooksTest.php` dichiaravano
+  `getModelClass()` come metodo di istanza mentre `XotBaseResourceTable` (che
+  estendono) lo dichiara `static` — PHP vieta di rendere non-static un metodo
+  static ereditato (`method.nonStatic` in fase di build, oltre a `class.notFound`/
+  `return.type` riportati da PHPStan). Gia' corrette a `public static function
+  getModelClass(): string` in tutti e 4 i punti.
+- **`SaveArrayAction` deprecato** — sia `app/Actions/Array/SaveArrayAction.php` sia
+  `app/Actions/Arrays/SaveArrayAction.php` chiamavano `Modules\Xot\Actions\Array\
+  SavePhpArrayAction` (marcato `@deprecated`, `{@see}` → `Modules\Xot\Actions\Arr\
+  SavePhpArrayAction`). Gia' corretti: entrambi importano e chiamano
+  `Modules\Xot\Actions\Arr\SavePhpArrayAction` (namespace `Arr`, canonico). Nota:
+  esistono ANCHE `app/Actions/Arrays/SavePhpArrayAction.php` e
+  `app/Actions/Array/SavePhpArrayAction.php`, entrambi wrapper `@deprecated` verso
+  lo stesso target `Arr\SavePhpArrayAction` — coerenti, non toccati (fuori scope
+  del fix, nessun errore PHPStan li segnala).
 
-<<<<<<< HEAD
-=======
+**Trappola cache condivisa**: prima verifica (`phpstan analyse Modules/Xot`) con la
+`tmpDir: /tmp/phpstan/` del neon (condivisa fra ~30 agenti concorrenti) riportava
+ANCORA 4 errori `method.nonStatic`/`Non-static method ... overrides static method`
+sulle righe gia' corrette nel working tree — cache result stantia da un run
+precedente di un altro agente. `./vendor/bin/phpstan clear-result-cache` (comando
+supportato, non tocca `phpstan.neon` ne' usa `-c`/`--level`) + rerun →
+**`[OK] No errors`** pulito, `{"errors": 0, "file_errors": 0}` in JSON.
+
+- `./vendor/bin/phpstan analyse Modules/Xot --no-progress --memory-limit=-1` (dopo
+  `clear-result-cache`) → **[OK] No errors**.
+- Non-regressione `./vendor/bin/phpstan analyse Modules/Rating --no-progress
+  --memory-limit=-1` (stessa cache pulita) → **[OK] No errors**. Nessuna rottura di
+  contratto per i consumer di `HasXotTable`/`XotBaseResourceTable`.
+- `tools/phpmd.sh Modules/Xot/app` → 1 solo finding informativo pre-esistente
+  (collisione trait `getKeyTransFunc` su `XotBaseManageRelatedRecords`, gia'
+  documentata sopra al 2026-09-11), fuori scope di questo fix, non toccato.
+- `tools/phpinsights.sh analyse Modules/Xot/app` → eseguibile (`tools/phpinsights/
+  vendor/bin/phpinsights` presente). Code 78.8/100, Complexity 100/100,
+  Architecture 57.1/100; alcuni finding di stile (`Ordered imports`) su file non
+  toccati da questa campagna — fuori scope, non corretti qui.
+- Pest (`./vendor/bin/pest Modules/Xot/tests`): **skip ambientale** —
+  `nc -z -w3 10.100.200.53 3306` fallisce (DB irraggiungibile al momento del run),
+  coerente con la nota gia' presente in questo file per DB test.
+
+## Ultima misura reale (2026-09-11, sera)
+
+- `vendor/bin/phpstan analyse Modules/Xot --no-progress` (modulo intero) →
+  **[OK] No errors**.
+- `vendor/bin/pest Modules/Xot/tests/Unit/XotBaseManageRelatedRecordsRegressionTest.php`
+  → **5 passed, 21 assertions** (guardie sulla saga XotBaseManageRelatedRecords:
+  trait corretti, hook di contenuto, niente duplicazione colonne,
+  `getModelClass()`/`Builder`).
+- Suite completa del modulo (`Modules/Xot/tests`, 97 unit + 11 feature per
+  l'ultimo censimento in `docs/index.md`): non riportata qui con un numero
+  secco — l'appendice del 2026-09-04 sotto documenta gia' che un run
+  completo puo' andare in timeout senza produrre output (processi forked,
+  vedi `tests/XotForkedInvoke.php`), quindi un singolo "Tests: N passed" a
+  fine sessione rischia di essere piu' fuorviante che utile senza rieseguirla
+  scoped per area.
+- PHPInsights: **non eseguibile** in questo momento —
+  `laravel/vendor/bin/phpinsights` non esiste (rimosso, vedi second brain
+  `pest5-incompatibile-con-phpinsights.md`: scelto Pest 5 con tutti i plugin,
+  phpinsights rimosso per incompatibilita'). L'ultimo punteggio reale
+  misurato resta quello del 2026-09-08 piu' in basso in questo file (Code
+  76.5/100, Complexity 100/100, Architecture 50/100, Style 79/100).
+- PHPMD (`tools/phpmd.sh Modules/Xot/app text Modules/Xot/phpmd.ruleset.xml`):
+  un solo finding informativo, non bloccante — collisione di trait method
+  `getKeyTransFunc` (da `TransFuncTrait`) su
+  `XotBaseManageRelatedRecords`, riportata da PHPMD ma non da PHPStan ne'
+  dai test (che restano verdi): da verificare in una sessione dedicata se
+  e' un problema reale di precedenza fra trait o solo un artefatto del
+  parser di PHPMD.
+
+## Marcatori di conflitto Git risolti (2026-09-11)
+
+Questo file conteneva due blocchi `<<<<<<< HEAD` / `=======` / `>>>>>>> laraxot/dev`
+irrisolti (righe originarie 26-85 e 179-288), segnalati ma esplicitamente NON
+risolti da una sessione dell'8 settembre ("serve una sessione dedicata a
+diff3/risoluzione, non un sub-agente in scope ristretto"). Risolti ora: in
+entrambi i casi il lato `HEAD` era vuoto o un sottoinsieme esatto del lato
+`laraxot/dev` (stessa riga finale ripetuta) — nessun contenuto perso,
+tenuto il lato piu' completo. Vedi second brain
+`xot-coverage-md-merge-markers-resolved-2026-09-11.md`.
+
 ## Services to Actions conversion — 2026-09-04
 
 Sessione Claude Sonnet 5, story `docs/stories/18.1.xot-services-to-actions.story.md`.
@@ -82,7 +166,6 @@ gia' presenti nel codice sorgente originale) — nessun nuovo debito introdotto.
 Dettaglio completo per-file (Kind A/B, path vecchio → nuovo, motivazione):
 vedi la story.
 
->>>>>>> laraxot/dev
 ## PHPStan swarm fix — 2026-09-02
 
 Sessione Claude Sonnet 5 (6748f176), claim `docs/chat/claim-phpstan-542-swarm-2026-09-02.md`.
@@ -176,9 +259,6 @@ contratto in-flux di quel file.
 errori `typeCoverage.*` residui nel modulo (soglia tree-wide, contributo Xot
 azzerato); tutti gli errori `cast.*`/`method.deprecated`/`*deprecatedClass*`/
 `class.implements*`/`class.extends*` sui file toccati risolti, tranne il cluster
-<<<<<<< HEAD
-bridge sopra descritto.
-=======
 bridge sopra descritto.
 
 ## Riduzione uso di `mixed` — 2026-09-04
@@ -285,7 +365,6 @@ sostituito ovunque da `Actions/Model/GetAllModelsByModuleNameAction`
 (gia' esistente, logica identica). I suoi 2 test riscritti sul sostituto
 (coverage preservata). `phpstan analyse Modules/Xot`: 0 errori, cache
 pulita, verificato.
->>>>>>> laraxot/dev
 
 ## StoryEpicAndOwnedScopeTest — Safe wrappers e narrowing — 2026-09-08
 

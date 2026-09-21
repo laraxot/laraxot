@@ -97,7 +97,7 @@ abstract class XotBaseResource extends Resource
      *
      * @return array<int, Component>
      */
-    abstract public static function getFormSchema(): array;
+    abstract public function getFormSchema(): array;
 
     /**
      * Get pages with proper typing.

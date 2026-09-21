@@ -6,5 +6,5 @@ return [
     'actions' => [
         'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
     ],
-    'navigation' => ['label' => 'clock.navigation'],
+    'navigation' => ['label' => 'Orologio'],
 ];
