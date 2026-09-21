@@ -44,7 +44,6 @@ class NotificationType extends Model
         'template'];
 
     /** @return array<string, string> */
-    #[Override]
     protected function casts(): array
     {
         return [

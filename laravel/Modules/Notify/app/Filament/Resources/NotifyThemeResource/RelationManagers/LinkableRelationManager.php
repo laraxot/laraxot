@@ -18,7 +18,6 @@ class LinkableRelationManager extends XotBaseRelationManager
     /**
      * @return array<int|string, Component>
      */
-    #[Override]
     public function getFormSchema(): array
     {
         return [

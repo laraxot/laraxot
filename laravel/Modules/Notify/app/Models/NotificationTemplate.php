@@ -292,7 +292,6 @@ class NotificationTemplate extends BaseModel implements HasMedia
      *
      * @return array<string, string>
      */
-    #[Override]
     protected function casts(): array
     {
         return [

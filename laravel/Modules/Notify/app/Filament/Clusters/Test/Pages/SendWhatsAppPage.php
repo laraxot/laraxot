@@ -137,8 +137,6 @@ class SendWhatsAppPage extends XotBasePage
         return [
             'submit' => Action::make('whatsappFormActions')->submit('whatsappFormActions')];
     }
-
-    #[Override]
     protected function getUser(): Authenticatable&Model
     {
         $user = Filament::auth()->user();

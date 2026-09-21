@@ -142,8 +142,6 @@ class SendAwsEmailPage extends XotBasePage
         return [
             'submit' => Action::make('sendEmail')->label(__('notify::email.actions.send'))->submit('sendEmail')];
     }
-
-    #[Override]
     protected function getUser(): Authenticatable&Model
     {
         $user = Filament::auth()->user();

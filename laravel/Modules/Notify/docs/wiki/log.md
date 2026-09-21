@@ -1,3 +1,21 @@
+## [2026-09-11] fix | invito automatico — Difetto 11/12, regola un-canale
+
+- **Difetto 11 (bloccante SMS)**: `SendRecordNotificationAction` instradava l'SMS con `Notification::route(SmsChannel::class, …)` (FQCN come chiave), ma `RecordNotification::via()`/`toSms()` cercano il recapito sotto `'sms'` → `via()` tornava `[]` → l'SMS dell'invito automatico non partiva, in silenzio. Fix: `Notification::route($channelEnum->value, …)`. Commit `f150a9a54`.
+- **Difetto 12 (pagina di test)**: `SendNetfunSmsPage::sendSms` ≠ blade `sendSMS` (Livewire `MethodNotFoundException`); `SmsNotification::via()` → `['sms']` alias non registrato → `Driver [sms] not supported`. Fix: `sendSMS`, `SmsNotification::via()` → `[SmsChannel::class]`. Commit `bb340eec0`. SMS reale via Netfun ricevuto dalla pagina sistemata.
+- `SendInviteAction` (Quaeris) ora sceglie **un solo canale** (priorità mail), come il legacy `Contact::getNotificationData()`. Commit `a492c917c`.
+- Verifica end-to-end (tinker): mail lancia `TypeError getHtmlTemplate(): null` per 22/40 template `survey-pdf-*` (senza `html_template`/`subject`); SMS instrada ok ma `config('sms.default')` = `smsfactor` non configurato (manca `SMS_DRIVER=netfun` in `.env`, anche prod). Dettaglio: story `../../../Quaeris/docs/stories/quaeris-send-invite-migrate-to-record-notification.md` §"Stato dell'invio automatico"; log progetto `docs/wiki/log.md` voce `2026-09-11 (2)`.
+
+## [2026-09-11] compliance | `SmsActionContract` → `Models/Contracts/`, `SmsData` → Spatie Data
+
+- Violazioni `start.md §3` corrette: `SmsActionContract` spostato da `app/Contracts/SMS/` a `app/Models/Contracts/` (namespace `Modules\Notify\Models\Contracts`), duplicato morto `app/Contracts/SmsActionContract.php` rimosso; `SmsData` ora `extends Spatie\LaravelData\Data`. 9 `Send*SMSAction` + `SmsActionFactory` + ~12 test aggiornati. PHPStan 0 errori, phpmd pulito.
+- Concept: [concepts/sms-channel-driver-selection.md](concepts/sms-channel-driver-selection.md) §"Posizione contratto e forma di SmsData". Log di progetto: `docs/wiki/log.md` voce `2026-09-11`.
+
+## [2026-09-10] feature | `SmsChannel` config-driven + `sms_from` (Difetto 9/10 story invito Quaeris)
+
+- `SmsChannel` non più cablato su SMSFactor (regressione `b8321c567`): sceglie il driver da `config('sms.default')` via `SmsActionFactory` (mappa esplicita). `SMS_DRIVER=netfun` → inviti SMS via Netfun.
+- `MailTemplate.sms_from` (mittente SMS per template) + `SpatieEmail::buildSmsFrom()` + wiring in `RecordNotification::toSms()`. `MailTemplate::getSlugOptions()->preventOverwrite()` (Difetto 10: `SpatieEmail::__construct()` corrompeva lo slug).
+- Concept: [concepts/sms-channel-driver-selection.md](concepts/sms-channel-driver-selection.md), [concepts/mail-template-slug-prevent-overwrite.md](concepts/mail-template-slug-prevent-overwrite.md). Story: `../../../Quaeris/docs/stories/quaeris-send-invite-migrate-to-record-notification.md`.
+
 ## [2026-08-27] quality | PHPStan `Modules/Notify/app` — XOT-5.43
 
 - `GenericNotification::via()` — PHPDoc `@param object` allineato al type hint nativo

@@ -111,7 +111,6 @@ class Contact extends BaseModel
         'attribute_14'];
 
     /** @return array<string, string> */
-    #[Override]
     protected function casts(): array
     {
         return [

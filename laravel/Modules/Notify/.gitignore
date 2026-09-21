@@ -175,3 +175,16 @@ reports
 .vscode/
 reports/
 graphify-out/
+docs/_archive
+docs/archived
+
+# Module-root dumps / quality configs (SSoT: laravel/phpunit.xml)
+phpunit.xml
+phpunit.xml.dist
+*.code-workspace
+.github/DISCUSSION_CONTENT/
+/*.md
+!/README.md
+!/CHANGELOG.md
+!/LICENSE.md
+

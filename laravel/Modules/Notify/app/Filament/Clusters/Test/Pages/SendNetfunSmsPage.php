@@ -105,7 +105,7 @@ class SendNetfunSmsPage extends XotBasePage
                 ->required()];
     }
 
-    public function sendSms(): void
+    public function sendSMS(): void
     {
         $data = $this->smsForm->getState();
 
@@ -149,10 +149,8 @@ class SendNetfunSmsPage extends XotBasePage
     protected function getSmsFormActions(): array
     {
         return [
-            Action::make('sendSms')->label(__('notify::sms.actions.send'))->submit('sendSms')];
+            Action::make('sendSMS')->label(__('notify::sms.actions.send'))->submit('sendSMS')];
     }
-
-    #[Override]
     protected function getUser(): Authenticatable&Model
     {
         $user = Filament::auth()->user();

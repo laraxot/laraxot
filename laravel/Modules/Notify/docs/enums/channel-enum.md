@@ -39,8 +39,8 @@ Returns the fully qualified class name or string identifier that Laravel's Notif
 
 *   **Example:**
     *   `ChannelEnum::Mail->getNotificationChannel()` returns `'mail'`.
-    *   `ChannelEnum::Sms->getNotificationChannel()` returns `Modules\Notify\Notifications\Channels\SmsChannel::class`.
-    *   `ChannelEnum::WhatsApp->getNotificationChannel()` returns `Modules\Notify\Notifications\Channels\WhatsAppChannel::class`.
+    *   `ChannelEnum::Sms->getNotificationChannel()` returns `Modules\Notify\Channels\SmsChannel::class`.
+    *   `ChannelEnum::WhatsApp->getNotificationChannel()` returns `Modules\Notify\Channels\WhatsAppChannel::class`.
 
 ## Usage Example
 

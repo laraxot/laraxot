@@ -216,8 +216,6 @@ class SendPushNotificationPage extends XotBasePage
 
                 ->submit('notificationFormActions')];
     }
-
-    #[Override]
     protected function getUser(): Authenticatable&Model
     {
         $user = Filament::auth()->user();

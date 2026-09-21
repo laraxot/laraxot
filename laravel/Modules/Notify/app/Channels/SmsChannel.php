@@ -6,27 +6,34 @@ namespace Modules\Notify\Channels;
 
 use Exception;
 use Illuminate\Notifications\Notification;
-use Modules\Notify\Actions\SMS\SendSmsFactorSMSAction;
 use Modules\Notify\Datas\SmsData;
+use Modules\Notify\Factories\SmsActionFactory;
 
 /**
  * Canale di notifica per l'invio di messaggi SMS.
  *
- * Questo canale utilizza il driver SMS configurato in config/sms.php
- * per inviare messaggi SMS attraverso il provider selezionato.
+ * Il driver effettivo è scelto da `SmsActionFactory` in base a
+ * `config('sms.default')` (env `SMS_DRIVER`), oppure a un override
+ * per-notifica se la notifica espone `getProvider(): ?string`
+ * (es. `SmsNotification`). Così `SMS_DRIVER=netfun` con
+ * `config('sms.drivers.netfun')` valorizzato fa passare gli SMS da Netfun,
+ * senza toccare codice — vedi
+ * `Modules/Notify/docs/wiki/concepts/sms-channel-driver-selection.md`.
  */
 class SmsChannel
 {
     /**
      * Crea una nuova istanza del canale.
      */
-    public function __construct(private readonly SendSmsFactorSMSAction $action) {}
+    public function __construct(private readonly SmsActionFactory $factory) {}
 
     /**
      * Invia la notifica attraverso il canale SMS.
      *
      * @param  Notification  $notification  Notifica da inviare
-     * @return array{status_code: int, status_txt: string} Risultato dell'invio restituito da SendSmsFactorSMSAction
+     * @return array<string, mixed>|null Risultato dell'invio restituito dall'azione del driver
+     *                                   (`SmsActionContract::execute()`); di norma
+     *                                   `array{status_code: int, status_txt: string}`
      *
      * @throws Exception Se la notifica non ha il metodo toSms o il driver non è supportato
      */
@@ -42,6 +49,15 @@ class SmsChannel
             throw new Exception('toSms method must return an instance of SmsData');
         }
 
-        return $this->action->execute($smsData);
+        // Override del driver per-notifica se la notifica lo espone (es.
+        // SmsNotification::getProvider()); altrimenti null e SmsActionFactory
+        // usa config('sms.default').
+        $driver = null;
+        if (method_exists($notification, 'getProvider')) {
+            $provider = $notification->getProvider();
+            $driver = \is_string($provider) && '' !== $provider ? $provider : null;
+        }
+
+        return $this->factory->create($driver)->execute($smsData);
     }
 }

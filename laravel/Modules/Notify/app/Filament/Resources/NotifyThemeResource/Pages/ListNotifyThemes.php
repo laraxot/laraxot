@@ -38,12 +38,6 @@ class ListNotifyThemes extends XotBaseListRecords
                 ->toggleable(isToggledHiddenByDefault: true)];
     }
 
-    #[Override]
-    public function getTableColumns(): array
-    {
-        return self::getNotifyThemeTableColumns();
-    }
-
     /**
      * @return array<string, SelectFilter>
      */
@@ -60,8 +54,6 @@ class ListNotifyThemes extends XotBaseListRecords
                 fn (): array => NotifyThemeResource::fieldOptions('type'),
             )];
     }
-
-    #[Override]
     public function getTableFilters(): array
     {
         return self::getNotifyThemeTableFilters();

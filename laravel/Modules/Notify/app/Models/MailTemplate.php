@@ -39,6 +39,7 @@ use Spatie\Translatable\HasTranslations;
  * @property string|int $version
  * @property string|null $params
  * @property array<array-key, mixed>|null $sms_template
+ * @property string|null $sms_from
  * @property int $counter
  * @property string|null $html_layout_path
  * @property Carbon|null $created_at
@@ -60,6 +61,7 @@ use Spatie\Translatable\HasTranslations;
  * @method static Builder<static>|MailTemplate whereName($value)
  * @method static Builder<static>|MailTemplate whereParams($value)
  * @method static Builder<static>|MailTemplate whereSlug($value)
+ * @method static Builder<static>|MailTemplate whereSmsFrom($value)
  * @method static Builder<static>|MailTemplate whereSmsTemplate($value)
  * @method static Builder<static>|MailTemplate whereSubject($value)
  * @method static Builder<static>|MailTemplate whereTextTemplate($value)
@@ -91,6 +93,7 @@ class MailTemplate extends SpatieMailTemplate implements MailTemplateInterface
         'html_template',
         'text_template',
         'sms_template',
+        'sms_from',
         'whatsapp_template',
         // 'version',  //under development
         'params',
@@ -98,12 +101,22 @@ class MailTemplate extends SpatieMailTemplate implements MailTemplateInterface
 
     /**
      * Get the options for generating the slug.
+     *
+     * `preventOverwrite()`: senza, HasSlug rigenera lo slug da `subject` ad ogni
+     * save/update — anche il `$tpl->update(['counter' => ...])` che
+     * SpatieEmail::__construct() fa ad ogni istanziazione. Risultato: uno slug
+     * impostato a mano (es. `survey-pdf-44-invito` dalla scheda "Inviti" o dallo
+     * script di migrazione) veniva silenziosamente sovrascritto col
+     * subject-slug, e il lookup successivo `findForMailable()` non lo trovava più
+     * (story quaeris-send-invite-migrate-to-record-notification.md, Difetto 10).
+     * Con `preventOverwrite()` lo slug si genera solo se il campo è vuoto.
      */
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
             ->generateSlugsFrom('subject')
-            ->saveSlugsTo('slug');
+            ->saveSlugsTo('slug')
+            ->preventOverwrite();
     }
 
     /**

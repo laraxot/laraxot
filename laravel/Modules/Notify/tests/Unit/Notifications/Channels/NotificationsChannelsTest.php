@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Log;
 use Modules\Notify\Actions\SMS\SendSmsFactorSMSAction;
 use Modules\Notify\Contracts\CanThemeNotificationContract;
-use Modules\Notify\Contracts\SMS\SmsActionContract;
+use Modules\Notify\Models\Contracts\SmsActionContract;
 use Modules\Notify\Datas\SmsData;
 use Modules\Notify\Notifications\Channels\NetfunChannel;
 use Modules\Notify\Notifications\Channels\TelegramChannel;

@@ -7,6 +7,7 @@ namespace Modules\Notify\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Notification;
+use Modules\Notify\Channels\SmsChannel;
 use Modules\Notify\Datas\SmsData;
 
 /**
@@ -57,11 +58,11 @@ class SmsNotification extends Notification implements ShouldQueue
      * Get the notification's delivery channels.
      *
      * @param  object  $notifiable  The entity to be notified (l'entità da notificare)
-     * @return array<int, string>
+     * @return array<int, class-string>
      */
     public function via(object $notifiable): array
     {
-        return ['sms'];
+        return [SmsChannel::class];
     }
 
     /**

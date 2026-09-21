@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Actions\SMS;
 
 use Modules\Notify\Actions\SMS\SendTwilioSMSAction;
-use Modules\Notify\Contracts\SMS\SmsActionContract;
+use Modules\Notify\Models\Contracts\SmsActionContract;
 use Modules\Notify\Datas\SmsData;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;

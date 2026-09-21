@@ -21,7 +21,7 @@ The `boost:add-skill jeffallan/claude-skills --skill laravel-specialist` command
 ### 2. Version Conflicts (CRITICAL)
 **Problem**: Module composer.json files had conflicting version requirements:
 - Xot module required `laravel/boost: ^2.0` vs root `^1.0`
-- Rating module required `pestphp/pest-plugin-laravel: ^2.0` (Laravel 10.x/11.x only) vs Laravel 13.x
+- Rating module required `pestphp/pest-plugin-laravel: ^2.0` (Laravel 10.x/11.x only) vs Laravel 12.x
 - dotswan/filament-map-picker required Filament 4.x vs Filament 5.x
 
 **Solution**:
@@ -164,7 +164,7 @@ The `InteractsWithComments` trait is temporarily disabled in `Modules\Fixcity\Mo
 
 ✅ composer.json has all dependencies in active sections  
 ✅ composer install completed without errors (328 packages)  
-✅ php artisan --version returns Laravel 13.53.0  
+✅ php artisan --version returns Laravel 12.53.0  
 ✅ boost:add-skill command executes successfully  
 ✅ laravel-specialist skill installed in .ai/skills/  
 ✅ All module documentation updated  

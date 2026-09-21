@@ -136,8 +136,6 @@ class SendSpatieEmailPage extends XotBasePage
         return [
             'submit' => Action::make('emailFormActions')->submit('emailFormActions')];
     }
-
-    #[Override]
     protected function getUser(): Authenticatable&Model
     {
         $user = Filament::auth()->user();

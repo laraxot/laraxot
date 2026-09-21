@@ -97,8 +97,6 @@ class SendEmailPage extends XotBasePage
 
                 ->submit('emailFormActions')];
     }
-
-    #[Override]
     protected function getUser(): Authenticatable&Model
     {
         $user = Filament::auth()->user();

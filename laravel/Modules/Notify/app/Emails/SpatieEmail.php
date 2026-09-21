@@ -265,4 +265,27 @@ class SpatieEmail extends TemplateMailable
 
         return $mustache->render($smsTemplateString, $this->data);
     }
+
+    /**
+     * Mittente dell'SMS per questo template.
+     *
+     * Story quaeris-send-invite-migrate-to-record-notification.md, Difetto 9:
+     * prima `RecordNotification::toSms()` scriveva il letterale 'Xot'. Catena:
+     * `MailTemplate.sms_from` (per-survey, es. "VIVASERVIZI") → `config('sms.from')`
+     * (globale) → `null` (il gateway usa il default del suo account).
+     */
+    public function buildSmsFrom(): ?string
+    {
+        /** @var MailTemplate $mailTemplate */
+        $mailTemplate = $this->getMailTemplate();
+
+        $smsFrom = $mailTemplate->sms_from;
+        if (\is_string($smsFrom) && $smsFrom !== '') {
+            return $smsFrom;
+        }
+
+        $configFrom = config('sms.from');
+
+        return \is_string($configFrom) && $configFrom !== '' ? $configFrom : null;
+    }
 }

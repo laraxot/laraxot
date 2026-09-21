@@ -50,7 +50,7 @@ it('getSearchable returns all values', function (): void {
 });
 
 it('getFormSchema returns TextInput components', function (): void {
-    $schema = ContactTypeEnum::getFormSchema();
+    $schema = ContactTypeEnum::PHONE->getFormSchema();
     Assert::assertCount(6, $schema);
     foreach ($schema as $component) {
         Assert::assertInstanceOf(TextInput::class, $component);

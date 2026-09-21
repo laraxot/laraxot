@@ -115,12 +115,20 @@ class RecordNotification extends Notification implements ShouldQueue
         // Build SMS content using SpatieEmail (which handles template resolution and placeholder replacement)
         $smsBody = $email->buildSms();
 
+        // Story quaeris-send-invite-migrate-to-record-notification.md, Difetto 9:
+        // il mittente era il letterale 'Xot'. Ora SpatieEmail lo risolve dal
+        // MailTemplate (colonna sms_from), con fallback a config('sms.from').
+        $smsFrom = $email->buildSmsFrom();
+
         // Wrap in SmsData for the SmsChannel (ensure all values are strings for type safety)
         /** @var array<string, string> $smsDataArray */
         $smsDataArray = [
-            'from' => 'Xot',
             'recipient' => $to,
             'body' => $smsBody];
+
+        if ($smsFrom !== null) {
+            $smsDataArray['from'] = $smsFrom;
+        }
 
         return SmsData::from($smsDataArray);
     }

@@ -452,7 +452,7 @@ Methods:
 
 #### Form Schema
 ```php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         Section::make()->schema([

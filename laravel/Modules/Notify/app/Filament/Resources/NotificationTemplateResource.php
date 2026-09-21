@@ -12,8 +12,6 @@ use Override;
 class NotificationTemplateResource extends XotBaseResource
 {
     protected static ?string $model = NotificationTemplate::class;
-
-    #[Override]
     public static function getPages(): array
     {
         return [

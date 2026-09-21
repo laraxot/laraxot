@@ -16,43 +16,5 @@ class ListContacts extends XotBaseListRecords
 {
     protected static string $resource = ContactResource::class;
 
-    /**
-     * @return array<string, IconColumn|TextColumn>
-     */
-    public static function contactTableColumns(): array
-    {
-        return [
-            'id' => TextColumn::make('id')->numeric()->sortable(),
-            'name' => TextColumn::make('name')->searchable()->sortable(),
-            'email' => TextColumn::make('email')->searchable()->sortable(),
-            'phone' => TextColumn::make('phone')->searchable()->sortable(),
-            'message' => TextColumn::make('message')->searchable()->sortable(),
-            'is_read' => IconColumn::make('is_read')->boolean(),
-            'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
-            'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()];
-    }
 
-    /**
-     * @return array<string, Filter>
-     */
-    public static function contactTableFilters(): array
-    {
-        return [
-            'active' => Filter::make('active')->query(fn (Builder $query): Builder => $query->where('active', true)),
-            'inactive' => Filter::make('inactive')->query(
-                fn (Builder $query): Builder => $query->where('active', false),
-            )];
-    }
-
-    #[Override]
-    public function getTableColumns(): array
-    {
-        return self::contactTableColumns();
-    }
-
-    #[Override]
-    public function getTableFilters(): array
-    {
-        return self::contactTableFilters();
-    }
 }

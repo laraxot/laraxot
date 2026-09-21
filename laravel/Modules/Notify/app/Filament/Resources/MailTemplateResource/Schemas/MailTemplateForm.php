@@ -69,6 +69,8 @@ class MailTemplateForm extends XotBaseResourceForm
             'text_template' => Textarea::make('text_template')
                 ->maxLength(65535)
                 ->columnSpanFull(),
+            'sms_from' => TextInput::make('sms_from')
+                ->maxLength(11),
             'sms_template' => Textarea::make('sms_template')
                 ->columnSpanFull()];
     }

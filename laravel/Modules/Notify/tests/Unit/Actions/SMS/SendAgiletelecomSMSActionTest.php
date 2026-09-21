@@ -67,7 +67,7 @@ it('SendAgiletelecomSMSAction has required imports', function () {
     /** @var string $filename */
     $content = \Safe\file_get_contents($filename);
 
-    expect($content)->toContain('use Modules\\Notify\\Contracts\\SMS\\SmsActionContract;');
+    expect($content)->toContain('use Modules\\Notify\\Models\\Contracts\\SmsActionContract;');
     expect($content)->toContain('use Modules\\Notify\\Datas\\SmsData;');
 });
 
