@@ -7,7 +7,7 @@ namespace Modules\Gdpr\Tests\Feature;
 use Modules\Gdpr\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Gdpr\Tests\TestCase::class);
+uses(TestCase::class);
 
 /*
  * Localization Tests for Registration Page.

@@ -1,9 +1,2 @@
-# Filament
+https://github.com/andrewdwallo/filament-companies
 
----
-module: theme
-topic: filament
-canonical: ../../../Themes/docs/shared-components/filament-Modules.md
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/filament-Modules.md

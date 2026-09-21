@@ -12,7 +12,7 @@ use Modules\Gdpr\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Gdpr\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('GDPR Consent Business Logic', function () {
     beforeEach(function (): void {

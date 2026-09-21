@@ -19,7 +19,7 @@ class ConsentFactory extends Factory
     protected $model = Consent::class;
 
     /**
-     * @return array<string, mixed>
+     * @return array<string, string>
      */
     public function definition(): array
     {

@@ -16,6 +16,30 @@ class ProfileResource extends XotBaseResource
 {
     protected static ?string $model = Profile::class;
 
+    /**
+     * Schema legacy del form: la sorgente di verità è ProfileForm::getFormSchema().
+     *
+     * @return array<string, \Filament\Schemas\Components\Component>
+     */
+    public function getFormSchemaOld(): array
+    {
+        return [
+            'type' => TextInput::make('type')->maxLength(255)->default(null),
+            'first_name' => TextInput::make('first_name')->maxLength(191)->default(null),
+            'last_name' => TextInput::make('last_name')->maxLength(191)->default(null),
+            'full_name' => TextInput::make('full_name')->maxLength(191)->default(null),
+            'email' => TextInput::make('email')
+                ->email()
+                ->maxLength(191)
+                ->default(null),
+            'user_id' => TextInput::make('user_id')->maxLength(36)->default(null),
+            'updated_by' => TextInput::make('updated_by')->maxLength(36)->default(null),
+            'created_by' => TextInput::make('created_by')->maxLength(36)->default(null),
+            'deleted_by' => TextInput::make('deleted_by')->maxLength(36)->default(null),
+            'is_active' => Toggle::make('is_active')->required(),
+        ];
+    }
+
     #[\Override]
     public static function getRelations(): array
     {

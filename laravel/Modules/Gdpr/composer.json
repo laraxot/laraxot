@@ -39,6 +39,7 @@
     "autoload-dev": {
         "psr-4": {
             "Modules\\Gdpr\\Tests\\": "tests/"
+
         },
         "files": [
             "tests/PestHelpers.php",

@@ -1,9 +1,10 @@
-# Consents
+https://packagist.org/packages/dialect/laravel-gdpr-compliance
 
----
-module: theme
-topic: consents
-canonical: ../../../Themes/docs/shared-components/consents.md
----
+https://github.com/papertank/origami-consent
 
-See canonical documentation: ../../../Themes/docs/shared-components/consents.md
+https://github.com/foothing/laravel-gdpr-consent
+
+https://github.com/maize-tech/laravel-legal-consent
+
+
+

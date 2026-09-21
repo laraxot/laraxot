@@ -9,7 +9,7 @@ use Modules\Gdpr\Models\Consent;
 use Modules\Gdpr\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Gdpr\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('consent_fillable_attributes', function (): void {
     $consent = new Consent();

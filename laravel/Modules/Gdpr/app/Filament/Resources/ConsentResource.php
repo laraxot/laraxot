@@ -17,5 +17,48 @@ class ConsentResource extends XotBaseResource
 {
     protected static ?string $model = Consent::class;
 
-    
+    /**
+     * Schema legacy del form: la sorgente di verità è ConsentForm::getFormSchema().
+     *
+     * @return array<string, \Filament\Schemas\Components\Component>
+     */
+    public function getFormSchemaOld(): array
+    {
+        return [
+            'treatment_id' => Select::make('treatment_id')
+                ->relationship('treatment', 'name')
+                ->required(),
+            'subject_id' => TextInput::make('subject_id')->required()->maxLength(191),
+        ];
+    }
+
+    /**
+     * @return array<int|string, TextColumn>
+     */
+    public function getTableColumns(): array
+    {
+        return [
+            'id' => TextColumn::make('id')->searchable(),
+            TextColumn::make('treatment.name')->searchable(),
+            'subject_id' => TextColumn::make('subject_id')->searchable(),
+            'created_at' => TextColumn::make('created_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
+            'updated_at' => TextColumn::make('updated_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
+        ];
+    }
+
+    #[\Override]
+    public static function getPages(): array
+    {
+        return [
+            'index' => ListConsents::route('/'),
+            'create' => CreateConsent::route('/create'),
+            'edit' => EditConsent::route('/{record}/edit'),
+        ];
+    }
 }

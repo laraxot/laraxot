@@ -9,7 +9,7 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Gdpr\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('renders the registration page successfully', function () {
     gdprGet('/en/auth/register')
