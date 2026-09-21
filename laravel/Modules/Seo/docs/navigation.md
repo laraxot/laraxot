@@ -32,5 +32,8 @@ return [
 // blade files
 $page->navigation
 ```
+<<<<<<< HEAD
 =======
 >>>>>>> origin/develop
+=======
+>>>>>>> laraxot/dev

@@ -172,9 +172,12 @@ tests/Unit
     },
     "require_comment": {
         "openai-php/laravel": "*"
+<<<<<<< HEAD
 >>>>>>> 1c344a1 (.)
 =======
 >>>>>>> origin/develop
+=======
+>>>>>>> laraxot/dev
     },
 ```
 

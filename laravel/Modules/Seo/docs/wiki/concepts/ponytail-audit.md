@@ -7,3 +7,12 @@
 - [Findings Seo](../../ponytail-audit-over-engineering.md)
 
 Aggiornare solo finding e stato specifici di questo modulo.
+<<<<<<< HEAD
+=======
+**Run:** 2026-06-30
+
+Documento canonico: [ponytail-audit-over-engineering.md](../../ponytail-audit-over-engineering.md)
+
+- `MetatagDataInterface` → già `.bak`
+- Doppio `MetatagData` con Xot — discussione architetturale
+>>>>>>> laraxot/dev
