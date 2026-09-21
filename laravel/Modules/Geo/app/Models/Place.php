@@ -144,20 +144,14 @@ class Place extends BaseModel implements HasGeolocation
     {
         return $this->belongsTo(Address::class);
     }
-
-    #[\Override]
     public function getLatitude(): ?float
     {
         return $this->latitude;
     }
-
-    #[\Override]
     public function getLongitude(): ?float
     {
         return $this->longitude;
     }
-
-    #[\Override]
     public function getFormattedAddress(): string
     {
         return (string) ($this->formatted_address ?? $this->address->formatted_address ?? '');
@@ -225,8 +219,6 @@ class Place extends BaseModel implements HasGeolocation
 
         return is_string($premise) && trim($premise) !== '' ? $premise : null;
     }
-
-    #[\Override]
     public function hasValidCoordinates(): bool
     {
         return $this->latitude !== null
@@ -236,8 +228,6 @@ class Place extends BaseModel implements HasGeolocation
             && $this->longitude >= -180
             && $this->longitude <= 180;
     }
-
-    #[\Override]
     public function getMapIcon(): ?string
     {
         $slug = $this->placeType->slug ?? null;
@@ -260,8 +250,6 @@ class Place extends BaseModel implements HasGeolocation
 
         return is_string($icon) ? $icon : null;
     }
-
-    #[\Override]
     public function getLocationType(): ?string
     {
         $name = $this->placeType->name ?? null;
@@ -274,7 +262,6 @@ class Place extends BaseModel implements HasGeolocation
      *
      * @return array<string, string>
      */
-    #[\Override]
     protected function casts(): array
     {
         return [

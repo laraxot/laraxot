@@ -114,7 +114,7 @@ class {ModelName}Resource extends XotBaseResource
     /**
      * @return array<string, \Filament\Forms\Components\Component>
      */
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             'name' => TextInput::make('name')->required(),
@@ -598,7 +598,7 @@ find docs/ -name "*" | grep '[A-Z]' | grep -v "README.md"
 
 **Ultimo aggiornamento:** Giugno 2025
 **Versione:** 4.0
-**Compatibilità:** Laravel 13.x, PHP 8.2+, Filament 3.x
+**Compatibilità:** Laravel 12.x, PHP 8.2+, Filament 3.x
 **Autore:** Analisi approfondita del codice Laraxot
 
 

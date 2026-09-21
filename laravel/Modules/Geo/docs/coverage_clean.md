@@ -1,9 +1,0 @@
-# Coverage Clean
-
----
-module: theme
-topic: coverage_clean
-canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules

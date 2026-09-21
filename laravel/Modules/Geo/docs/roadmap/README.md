@@ -1,34 +1,60 @@
 # Geo Module Roadmap
 
-[![Module](https://img.shields.io/badge/Module-Geo Module Roadmap-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+> "Geographic and location services for the Laraxot ecosystem with maps, geocoding, and spatial features."
 
-> **"Geographic and location services for the Laraxot ecosystem with maps, geocoding, and spatial features."**
+## 🎯 Vision
 
-## Perché esiste
+Provide a **comprehensive geographic** toolkit that includes:
 
-"Geographic and location services for the Laraxot ecosystem with maps, geocoding, and spatial features."
+- ✅ Location services
+- ✅ Maps integration
+- ✅ Geocoding and reverse geocoding
+- ✅ Spatial queries
+- ✅ Distance calculations
+- ✅ Geographic boundaries
 
-## Superpoteri
+## 📊 Current Status
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+### Overall Progress: 70% Complete
 
-## Documentazione
+| Category | Status | Progress |
+|----------|--------|----------|
+| Location Services | ✅ Complete | 100% |
+| Maps Integration | ✅ Complete | 100% |
+| Geocoding | ✅ Complete | 100% |
+| Spatial Queries | 🔄 In Progress | 70% |
+| Distance Calculations | ✅ Complete | 100% |
+| Boundaries | 🔄 In Progress | 60% |
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+## 🏗️ Key Features
+
+### 1. Location Services
+- GPS coordinates
+- Address resolution
+- Location validation
+- Location history
+- Location sharing
+
+### 2. Maps Integration
+- Map rendering
+- Custom markers
+- Map layers
+- Map styles
+- Interactive maps
+
+### 3. Geocoding
+- Address to coordinates
+- Coordinates to address
+- Batch geocoding
+- Geocoding caching
+- Multiple providers
+
+### 4. Spatial Queries
+- Distance queries
+- Radius searches
+- Polygon searches
+- Within bounds
+- Nearest neighbor
 
 ---
 
-**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

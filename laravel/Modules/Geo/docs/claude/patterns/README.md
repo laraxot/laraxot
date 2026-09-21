@@ -1,34 +1,89 @@
 # Code Patterns
 
-[![Module](https://img.shields.io/badge/Module-Code Patterns-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+This section contains proven patterns and solutions for common development challenges in the PTVX Laraxot project.
 
-> **Core module for the FixCity Platform.**
+## DRY (Don't Repeat Yourself)
 
-## Perché esiste
+### [Helper Methods](dry/helper-methods.md)
+- Extract method pattern for eliminating code duplication
+- Business logic consolidation
+- Testable, maintainable helper methods
 
-Core module for the FixCity Platform.
+### [Consolidation](dry/consolidation.md)
+- Date handling normalization
+- Type casting standardization
+- Collection processing patterns
 
-## Superpoteri
+## KISS (Keep It Simple, Stupid)
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+### [Simplification](kiss/simplification.md)
+- Method complexity reduction
+- View resolution simplification
+- Focused, single-responsibility methods
 
-## Documentazione
+### [Clean Code](kiss/clean-code.md)
+- Dead code removal
+- Debug code elimination
+- Code formatting standards
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+## Special Patterns
+
+### [Magic Numbers](magic-numbers.md)
+- Named constants for hardcoded values
+- Configuration-driven values
+- Self-documenting business rules
+
+### [Checklist](checklist.md)
+- Comprehensive refactoring checklist
+- DRY + KISS violation detection
+- Implementation priority guidelines
+
+## Pattern Categories
+
+| Category | Purpose | Examples |
+|----------|---------|----------|
+| **DRY** | Eliminate duplication | Helper methods, consolidation |
+| **KISS** | Simplify complexity | Method splitting, clean code |
+| **SOLID** | Design principles | Single responsibility, dependency inversion |
+| **Performance** | Optimize execution | Caching, query optimization |
+| **Security** | Protect applications | Input validation, authorization |
+
+## Implementation Guidelines
+
+### When to Apply Patterns
+- **DRY**: Code repeated 3+ times
+- **KISS**: Methods > 30 lines or complex logic
+- **SOLID**: Class with multiple responsibilities
+- **Performance**: Slow operations or N+1 queries
+- **Security**: Any user input or data exposure
+
+### Pattern Selection Process
+1. **Identify Problem**: What specific issue are you solving?
+2. **Assess Complexity**: How complex is the current implementation?
+3. **Choose Pattern**: Select the most appropriate pattern
+4. **Apply Consistently**: Use the same pattern throughout the codebase
+5. **Test Thoroughly**: Ensure the pattern works correctly
+6. **Document Usage**: Add examples to this documentation
+
+## Benefits
+
+### Code Quality
+- **Maintainability**: Easier to modify and extend
+- **Readability**: Clear intent and structure
+- **Testability**: Isolated, focused units
+
+### Developer Experience
+- **Consistency**: <nome progetto>able code patterns
+- **Productivity**: Faster development with proven solutions
+- **Onboarding**: Easier for new developers to understand
+
+### Business Value
+- **Reliability**: Fewer bugs from complexity
+- **Scalability**: Patterns support growth
+- **Maintainability**: Long-term cost reduction
 
 ---
 
-**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+**Version**: 4.0
+**Last Updated**: December 2025
+**Focus**: Proven patterns for clean, maintainable code

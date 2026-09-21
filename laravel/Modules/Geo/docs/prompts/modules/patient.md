@@ -37,7 +37,7 @@ namespace Modules\Patient\Filament\Resources;
 
 class DoctorResource extends XotBaseResource
 {
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             Forms\Components\Card::make()

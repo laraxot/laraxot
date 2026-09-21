@@ -10,4 +10,6 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 class ViewAddress extends XotBaseViewRecord
 {
     protected static string $resource = AddressResource::class;
+
+    
 }

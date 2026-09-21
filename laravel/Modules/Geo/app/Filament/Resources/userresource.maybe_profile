@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Resources;
+use Modules\User\Models\User;
 
 use Cheesegrits\FilamentGoogleMaps\Filters\RadiusFilter;
 use Filament\Forms;

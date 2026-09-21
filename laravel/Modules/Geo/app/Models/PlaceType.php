@@ -6,8 +6,8 @@ namespace Modules\Geo\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
-use Modules\Geo\Database\Factories\PlaceTypeFactory;
 use Modules\Xot\Contracts\ProfileContract;
+use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
  * @property-read ProfileContract|null $creator
@@ -34,6 +34,7 @@ use Modules\Xot\Contracts\ProfileContract;
  */
 class PlaceType extends BaseModel
 {
+    use HasXotFactory;
 
     protected $fillable = [
         'name',

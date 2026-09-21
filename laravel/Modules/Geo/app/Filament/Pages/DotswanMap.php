@@ -38,9 +38,6 @@ class DotswanMap extends XotBasePage
         return 1;
     }
 
-    /**
-     * @return array<int, mixed>
-     */
     public function getFormSchema(): array
     {
         return [

@@ -2,7 +2,7 @@ public static function form\(Form \$form\): Form\s*\{\s*return \$form\s*->schema
 
 
 
-public function getFormSchema(): array
+public static function getFormSchema(): array
     {
         return [
             $1

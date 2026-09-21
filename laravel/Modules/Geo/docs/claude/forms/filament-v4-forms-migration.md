@@ -64,7 +64,7 @@ TextInput::make('email')->unique(ignoreRecord: false) // Old behavior
 
 ### Correct v4 Pattern
 ```php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         'personal_info' => Section::make('Personal Information')

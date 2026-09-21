@@ -42,7 +42,7 @@ namespace Modules\Notify\Filament\Resources;
 
 class NotificationTemplateResource extends XotBaseResource
 {
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             Forms\Components\Card::make()

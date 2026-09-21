@@ -1,34 +1,85 @@
 # Code Conventions
 
-[![Module](https://img.shields.io/badge/Module-Code Conventions-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+This section contains all coding conventions and standards used in the PTVX Laraxot project.
 
-> **Core module for the FixCity Platform.**
+## 📁 Structure
 
-## Perché esiste
+### [Structure](structure/) - Laravel Framework Conventions
+- Service Provider configuration
+- Routing and middleware patterns
+- Controller authorization
+- Form Request validation
+- Inline validation patterns
 
-Core module for the FixCity Platform.
+### [Naming](naming/) - Naming Standards
+- PHP classes, methods, properties
+- Database tables and columns
+- File and directory naming
+- URL and route naming
+- Translation keys structure
 
-## Superpoteri
+### [Validation](validation/) - Validation Patterns
+- Complete Form Request implementation
+- Model validation rules
+- API validation patterns
+- Custom validation rules
+- Livewire component validation
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+## 🎯 Key Principles
 
-## Documentazione
+### DRY (Don't Repeat Yourself)
+- Extract common validation logic
+- Create reusable form request classes
+- Use custom validation rules for complex logic
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+### KISS (Keep It Simple, Stupid)
+- Simple, readable validation rules
+- Clear error messages
+- Consistent validation patterns
+
+### SOLID Principles
+- Single Responsibility: Each request class handles one concern
+- Open/Closed: Extend validation without modifying existing code
+- Liskov Substitution: Request classes are interchangeable
+- Interface Segregation: Specific validation interfaces
+- Dependency Inversion: Validation depends on abstractions
+
+## 📋 Quick Reference
+
+### Basic Form Request Structure
+```php
+class StoreUserRequest extends FormRequest
+{
+    public function authorize(): bool { /* ... */ }
+    public function rules(): array { /* ... */ }
+    public function messages(): array { /* ... */ }
+    public function attributes(): array { /* ... */ }
+}
+```
+
+### Common Validation Rules
+```php
+'email' => ['required', 'email:rfc,dns', 'unique:users,email'],
+'password' => ['required', 'min:8', 'regex:/complex-pattern/'],
+'file' => ['image', 'mimes:jpeg,png', 'max:2048'],
+```
+
+### Translation Integration
+```php
+'messages' => [
+    'name.required' => __('validation.name.required'),
+    'email.unique' => __('validation.email.unique'),
+]
+```
+
+## 🔗 Related Documentation
+
+- [Laravel Validation Documentation](https://laravel.com/docs/validation)
+- [Spatie Laravel Data](https://spatie.be/docs/laravel-data)
+- [Filament Forms](https://filamentphp.com/docs/forms)
 
 ---
 
-**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+**Version**: 4.0
+**Last Updated**: December 2025
+**Applies to**: All PTVX modules

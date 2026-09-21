@@ -106,7 +106,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class ExampleResource extends XotBaseResource
 {
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             // Componenti del form

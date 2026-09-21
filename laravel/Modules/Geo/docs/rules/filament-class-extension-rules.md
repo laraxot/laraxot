@@ -361,7 +361,7 @@ declare(strict_types=1);
 namespace Modules\User\Filament\Resources;
 
 use Modules\Xot\Filament\Resources\XotBaseResource;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 class UserResource extends XotBaseResource
 {
@@ -370,7 +370,7 @@ class UserResource extends XotBaseResource
     /**
      * @return array<int|string, \Filament\Schemas\Components\Component>
      */
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             TextInput::make('name')->required(),

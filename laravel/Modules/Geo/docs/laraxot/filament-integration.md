@@ -9,7 +9,7 @@
 
 ### Form Schema
 ```php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         // Campi base

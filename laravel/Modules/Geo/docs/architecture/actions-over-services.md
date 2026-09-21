@@ -81,7 +81,7 @@ class UserService
 namespace Modules\User\Actions;
 
 use Modules\User\Datas\UserData;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 use Spatie\QueueableAction\QueueableAction;
 
 class CreateUserAction

@@ -96,7 +96,7 @@ The enum uses the `TransTrait` to provide multilingual support:
 
 The `getFormSchema()` method automatically creates Filament form fields:
 ```php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return Arr::map(
         self::cases(),

@@ -57,7 +57,7 @@ class OrganizzativaResource extends XotBaseResource
     protected static ?string $model = Organizzativa::class;
 
     // ✅ CORRECT: Data definition
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             Forms\Components\TextInput::make('descrizione')
@@ -169,7 +169,7 @@ class MyResource extends XotBaseResource {
 ```php
 // WRONG - In Page class
 class ListMyRecords extends XotBaseListRecords {
-    public function getFormSchema(): array { ... } // ERROR!
+    public static function getFormSchema(): array { ... } // ERROR!
 }
 ```
 

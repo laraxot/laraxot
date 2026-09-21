@@ -1,34 +1,123 @@
 # Operazioni Docker 🐳
 
-[![Module](https://img.shields.io/badge/Module-Operazioni Docker 🐳-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+Questa directory contiene gli script per la gestione e automazione delle operazioni Docker, con focus su deployment, monitoraggio e manutenzione dei container.
 
-> **Core module for the FixCity Platform.**
+## 📁 Struttura
 
-## Perché esiste
+```
+docker/
+├── deployment/     # Script di deployment
+├── monitoring/     # Script di monitoraggio
+├── maintenance/    # Script di manutenzione
+└── security/       # Script di sicurezza
+```
 
-Core module for the FixCity Platform.
+## 🔧 Funzionalità Principali
 
-## Superpoteri
+### Deployment
+- Build automatico immagini
+- Deployment container
+- Gestione stack
+- Rollback automatico
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+### Monitoraggio
+- Health check container
+- Log aggregation
+- Performance metrics
+- Alerting automatico
 
-## Documentazione
+### Manutenzione
+- Pulizia risorse
+- Aggiornamento immagini
+- Backup container
+- Rotazione log
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+### Sicurezza
+- Scan vulnerabilità
+- Hardening container
+- Gestione segreti
+- Audit log
 
----
+## 🚀 Utilizzo
 
-**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+### Prerequisiti
+- Docker 24.0+
+- Docker Compose 2.0+
+- Bash 4.0+
+- Permessi sudo
+
+### Comandi Comuni
+```bash
+
+# Deploy stack
+./deployment/deploy_stack.sh
+
+# Monitoraggio container
+./monitoring/check_containers.sh
+
+# Manutenzione sistema
+./maintenance/cleanup.sh
+```
+
+## ⚠️ Note Importanti
+
+1. **Sicurezza**
+   - Utilizzare immagini ufficiali
+   - Implementare least privilege
+   - Gestire segreti in modo sicuro
+   - Monitorare vulnerabilità
+
+2. **Performance**
+   - Ottimizzare risorse
+   - Gestire reti
+   - Monitorare utilizzo
+   - Implementare caching
+
+3. **Backup**
+   - Backup regolari
+   - Test restore
+   - Gestione volumi
+   - Disaster recovery
+
+## 📊 Monitoraggio
+
+### Metriche Chiave
+- Utilizzo risorse
+- Stato container
+- Performance rete
+- Log applicativi
+- Errori runtime
+
+### Alerting
+- Container down
+- Utilizzo risorse
+- Errori applicativi
+- Vulnerabilità
+
+## 🔒 Sicurezza
+
+### Best Practices
+- Immagini minimali
+- Multi-stage build
+- Non-root user
+- Read-only filesystem
+
+### Controlli
+- Scan immagini
+- Network security
+- Resource limits
+- Access control
+
+## 📚 Documentazione Correlata
+
+- [Guida Deployment](deployment/README.md)
+- [Guida Monitoraggio](monitoring/README.md)
+- [Guida Sicurezza](security/README.md)
+
+## 🤝 Contribuire
+
+1. Fork del repository
+2. Creazione branch feature
+3. Commit modifiche
+4. Push al branch
+5. Creazione Pull Request 

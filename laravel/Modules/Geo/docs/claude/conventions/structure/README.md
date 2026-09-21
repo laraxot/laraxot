@@ -1,34 +1,215 @@
 # Laravel Framework Conventions
 
-[![Module](https://img.shields.io/badge/Module-Laravel Framework Conventions-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Basic Requirements
 
-> **Core module for the FixCity Platform.**
+All PHP files in PTVX must follow strict typing and Laraxot standards:
 
-## Perché esiste
+```php
+<?php
 
-Core module for the FixCity Platform.
+declare(strict_types=1);
 
-## Superpoteri
+namespace Modules\ModuleName\Feature;
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+// All PHP files require:
+// - strict_types declaration
+// - PSR-12 compliance
+// - Complete PHPDoc documentation
+// - PHPStan Level 10 compatibility
+```
 
-## Documentazione
+### Service Provider Configuration
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\ModuleName\Providers;
+
+use Modules\Xot\Providers\XotBaseServiceProvider;
+
+class ModuleNameServiceProvider extends XotBaseServiceProvider
+{
+    /**
+     * Module name identifier.
+     */
+    public string $name = 'ModuleName';
+
+    /**
+     * Bootstrap services.
+     */
+    public function boot(): void
+    {
+        parent::boot();
+
+        // Only add module-specific customizations here
+        // XotBaseServiceProvider handles all standard bootstrapping
+    }
+
+    /**
+     * Register services.
+     */
+    public function register(): void
+    {
+        parent::register();
+
+        // Only register module-specific services
+        // XotBaseServiceProvider handles standard registrations
+    }
+}
+```
+
+## Routing and Middleware
+
+### Modular Routes Structure
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use Illuminate\Support\Facades\Route;
+
+Route::middleware(['auth', 'verified'])
+    ->prefix('module-name')
+    ->name('module-name.')
+    ->group(__DIR__.'/routes/web.php');
+
+Route::middleware(['api'])
+    ->prefix('api/module-name')
+    ->name('api.module-name.')
+    ->group(__DIR__.'/routes/api.php');
+```
+
+### Controller Authorization
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\ModuleName\Http\Controllers;
+
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Modules\ModuleName\Models\ModelName;
+
+class ModelNameController extends Controller
+{
+    /**
+     * Update the specified resource.
+     */
+    public function update(Request $request, ModelName $model): RedirectResponse
+    {
+        $this->authorize('update', $model);
+
+        // Controller logic here
+        $model->update($request->validated());
+
+        return redirect()->back()
+            ->with('success', __('module-name::messages.updated'));
+    }
+}
+```
+
+## Validation Patterns
+
+### Form Request Classes
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\ModuleName\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class CreateModelRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return $this->user()->can('create', ModelName::class);
+    }
+
+    /**
+     * Get the validation rules.
+     *
+     * @return array<string, array<int, string>>
+     */
+    public function rules(): array
+    {
+        return [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => [
+                'required',
+                'email',
+                'unique:model_names,email',
+                'max:255'
+            ],
+            'description' => ['nullable', 'string', 'max:1000'],
+        ];
+    }
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'name.required' => __('module-name::validation.name.required'),
+            'email.unique' => __('module-name::validation.email.unique'),
+        ];
+    }
+}
+```
+
+### Inline Validation in Controllers
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\ModuleName\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+
+class ModelNameController extends Controller
+{
+    /**
+     * Store a new resource.
+     */
+    public function store(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('model_names', 'email'),
+                'max:255'
+            ],
+        ]);
+
+        // Create model with validated data
+        ModelName::create($validated);
+
+        return redirect()->route('module-name.index')
+            ->with('success', __('module-name::messages.created'));
+    }
+}
+```
 
 ---
 
-**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+**Version**: 4.0
+**Last Updated**: December 2025
+**Applies to**: Laravel Framework conventions

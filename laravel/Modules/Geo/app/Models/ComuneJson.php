@@ -44,7 +44,6 @@ class ComuneJson extends GeoJsonModel
      *     popolazione: int
      * }>
      */
-    #[\Override]
     public static function all(): Collection
     {
         /** @var Collection<int, array{

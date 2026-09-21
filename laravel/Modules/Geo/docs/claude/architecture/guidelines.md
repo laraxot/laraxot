@@ -48,7 +48,7 @@ class MyResource extends XotBaseResource  // ✅ Corretto
 {
     protected static ?string $model = MyModel::class;
     
-    public function getFormSchema(): array  // ✅ Nella Resource
+    public static function getFormSchema(): array  // ✅ Nella Resource
     {
         return [...];
     }

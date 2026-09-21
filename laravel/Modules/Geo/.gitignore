@@ -154,4 +154,3 @@ tests/AuditCoverage/
 phpinsights.php
 rector.php
 test-results/
-graphify-out

@@ -23,7 +23,7 @@ class ClienteResource extends XotBaseResource
     protected static ?string $navigationIcon = 'heroicon-o-users';
     protected static ?string $cluster = ClienteCluster::class;
     
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             // Schema del form

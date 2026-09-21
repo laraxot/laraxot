@@ -3,7 +3,10 @@
 declare(strict_types=1);
 
 use Modules\Geo\Filament\Widgets\GeoMapWidget;
+use Modules\Geo\Tests\LightTestCase;
 use PHPUnit\Framework\Assert;
+
+uses(LightTestCase::class);
 
 use function Safe\file_get_contents;
 

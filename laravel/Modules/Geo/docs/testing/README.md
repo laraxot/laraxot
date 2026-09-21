@@ -1,34 +1,46 @@
 # Script di Testing
 
-[![Module](https://img.shields.io/badge/Module-Script di Testing-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Descrizione
+Questa cartella contiene gli script per i test del sistema, inclusi:
+- Esecuzione dei test
+- Analisi del codice
+- Verifica della qualità
 
-> **Core module for the FixCity Platform.**
+## Script Disponibili
 
-## Perché esiste
+### 1. run_tests.sh
+Esegue i test con:
+- Test unitari
+- Test di integrazione
+- Test di funzionalità
 
-Core module for the FixCity Platform.
+### 2. analyze_code.sh
+Analizza il codice con:
+- PHPStan
+- PHPCS
+- PHPMD
 
-## Superpoteri
+### 3. check_quality.sh
+Verifica la qualità con:
+- Controllo coverage
+- Analisi complessità
+- Verifica standard
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+## Utilizzo
 
-## Documentazione
+```bash
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+# Esegui tutti i test
+./run_tests.sh
 
----
+# Analisi codice
+./analyze_code.sh --level=9
 
-**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+# Verifica qualità
+./check_quality.sh --coverage
+```
+
+## Best Practices
+- Eseguire test regolarmente
+- Mantenere coverage alto
+- Seguire gli standard di codice 

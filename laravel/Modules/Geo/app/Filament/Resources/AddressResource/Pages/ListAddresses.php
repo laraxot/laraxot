@@ -16,7 +16,6 @@ class ListAddresses extends XotBaseListRecords
     /**
      * @return array<string, Action>
      */
-    #[\Override]
     protected function getHeaderActions(): array
     {
         return [

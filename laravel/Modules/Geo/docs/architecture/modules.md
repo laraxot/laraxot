@@ -136,7 +136,7 @@ class IndividualeResource extends XotBaseResource
     protected static ?string $model = Individuale::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             'nome' => Forms\Components\TextInput::make('nome')

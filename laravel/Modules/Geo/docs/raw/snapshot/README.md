@@ -1,34 +1,44 @@
 # Script di Backup
 
-[![Module](https://img.shields.io/badge/Module-Script di Backup-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Descrizione
+Questa cartella contiene gli script per il backup del sistema, inclusi:
+- Backup del database
+- Backup dei file
+- Rotazione dei backup
 
-> **Core module for the FixCity Platform.**
+## Script Disponibili
 
-## Perché esiste
+### 1. backup_database.sh
+Esegue il backup del database con:
+- Dump completo
+- Backup incrementale
+- Compressione dati
 
-Core module for the FixCity Platform.
+### 2. backup_files.sh
+Gestisce il backup dei file con:
+- Backup file di configurazione
+- Backup uploads
+- Backup log
 
-## Superpoteri
+### 3. rotate_backups.sh
+Gestisce la rotazione dei backup con:
+- Rimozione vecchi backup
+- Verifica integrità
+- Notifiche
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+## Utilizzo
 
-## Documentazione
+```bash
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+# Backup completo
+./backup_database.sh
+./backup_files.sh
 
----
+# Rotazione backup
+./rotate_backups.sh --keep-last=7
+```
 
-**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+## Best Practices
+- Eseguire backup regolari
+- Verificare l'integrità dei backup
+- Mantenere backup in location sicure 

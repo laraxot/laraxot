@@ -1,34 +1,51 @@
 # Claude Code - Guida Completa per PTVX
 
-[![Module](https://img.shields.io/badge/Module-Claude Code - Guida Completa per PTVX-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
-
-> **Core module for the FixCity Platform.**
-
-## Perché esiste
-
-Core module for the FixCity Platform.
-
-## Superpoteri
-
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
-
-## Documentazione
-
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+**Ultimo aggiornamento**: 2026-01-12  
+**Versione**: 2.0  
+**Status**: ✅ Documentazione Completa
 
 ---
 
-**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+## Panoramica
+
+Claude Code è l'IDE AI di Anthropic che integra Claude AI direttamente nell'ambiente di sviluppo. Questa guida descrive come configurare e utilizzare Claude Code al meglio per lo sviluppo del progetto PTVX.
+
+---
+
+## Indice
+
+1. [Configurazione Iniziale](./configuration.md)
+2. [Setup MCP](./mcp-setup.md)
+3. [Workflow di Sviluppo](./workflow.md)
+4. [Best Practices](./best-practices.md)
+5. [Troubleshooting](./troubleshooting.md)
+
+---
+
+## Caratteristiche Principali
+
+- **Integrazione nativa**: Claude AI direttamente nell'IDE
+- **MCP Support**: Configurazione server MCP per estendere capacità
+- **Project-scoped config**: Configurazione per progetto in `.mcp.json`
+- **Context-aware**: Comprensione profonda del codebase
+
+---
+
+## Quick Start
+
+1. **Installa Claude Code**: [Download ufficiale](https://claude.ai/code)
+2. **Configura MCP**: Vedi [Setup MCP](./mcp-setup.md)
+3. **Apri progetto**: Apri la cartella `laravel/` come workspace
+4. **Inizia a sviluppare**: Usa la chat per interagire con Claude
+
+---
+
+## Collegamenti Correlati
+
+- [Configurazione MCP Laraxot](../../../laravel/Modules/Xot/docs/mcp-configuration-ptvx.md)
+- [Prompt Improvements](../../../laravel/Modules/Xot/docs/prompts-improvements.md)
+- [Documentazione Progetto](../README.md)
+
+---
+
+**Filosofia**: Claude Code come pair programmer intelligente che comprende l'architettura Laraxot.

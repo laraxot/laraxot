@@ -1,34 +1,70 @@
 # Librerie Bash: Documentazione delle Funzioni
 
-[![Module](https://img.shields.io/badge/Module-Librerie Bash: Documentazione delle Funzioni-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+## Perché questa documentazione è importante
 
-> **Questo documento è parte della Filosofia della Documentazione del progetto.**
+- **Singola fonte di verità**: Ogni funzione deve essere definita una sola volta
+- **Prevenzione duplicazioni**: Evitare di riscrivere funzioni già esistenti
+- **Manutenibilità**: Facilitare gli aggiornamenti e le correzioni
+- **Onboarding**: Aiutare i nuovi sviluppatori a comprendere le funzionalità disponibili
 
-## Perché esiste
+## Funzioni disponibili in `custom.sh`
 
-Questo documento è parte della [Filosofia della Documentazione](/var/www/html/_bases/base_<nome progetto>_fila5_mono/docs/DOCUMENTATION_PHILOSOPHY.md) del progetto.
+### Logging e Gestione Errori
 
-## Superpoteri
+| Funzione | Descrizione | Parametri |
+|----------|-------------|-----------|
+| `log()` | Registra messaggi nel log con timestamp e colori | `level` (error/success/warning/info), `message` |
+| `handle_git_error()` | Gestisce errori nelle operazioni git | `operation`, `error_message`, `retry_count` (opzionale) |
+| `handle_error()` | Gestisce errori generici e termina l'esecuzione | `error_message` |
+| `die()` | Termina l'esecuzione con messaggio di errore | `message` |
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+### Manutenzione Git
 
-## Documentazione
+| Funzione | Descrizione | Parametri |
+|----------|-------------|-----------|
+| `check_repository_integrity()` | Verifica l'integrità del repository git | - |
+| `git_maintenance()` | Esegue operazioni di manutenzione sul repository | - |
+| `git_config_setup()` | Configura le impostazioni git ottimali | - |
+| `git_delete_history()` | Elimina la storia di un branch | `branch` |
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+### Utilità
+
+| Funzione | Descrizione | Parametri |
+|----------|-------------|-----------|
+| `rewrite_url()` | Riscrive URL secondo regole specifiche | `original_url`, `org` |
+| `backup_disk()` | Esegue backup su disco | - |
+
+## Come utilizzare queste funzioni
+
+```bash
+#!/bin/bash
+source ./bashscripts/lib/custom.sh
+
+# Esempio di utilizzo
+log "info" "Avvio operazione"
+rewrite_url "https://github.com/example/repo.git" "nuova-org"
+
+# Gestione errori
+if ! git pull; then
+    handle_git_error "git pull" "Impossibile eseguire pull"
+fi
+
+# Manutenzione
+git_maintenance
+```
+
+## Principio DRY (Don't Repeat Yourself)
+
+**IMPORTANTE**: Quando si utilizza `source ./bashscripts/lib/custom.sh`, NON ridefinire MAI le funzioni già presenti in questa libreria. Per maggiori dettagli, consultare la [documentazione sul principio DRY negli script Bash](/var/www/html/_bases/base_<nome progetto>_fila5_mono/bashscripts/docs/NO_DUPLICATE_FUNCTIONS_IN_SOURCED_SCRIPTS.md).
+
+## Contribuire
+
+Per aggiungere nuove funzioni:
+1. Verificare che la funzione non esista già
+2. Aggiungere la funzione a `custom.sh` con documentazione appropriata
+3. Aggiornare questo README
+4. Aggiornare i test se presenti
 
 ---
 
-**Modulo** `Geo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+> Questo documento è parte della [Filosofia della Documentazione](/var/www/html/_bases/base_<nome progetto>_fila5_mono/docs/DOCUMENTATION_PHILOSOPHY.md) del progetto.

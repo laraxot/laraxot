@@ -267,7 +267,7 @@ use Filament\Forms\Form;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Modules\User\Filament\Resources\UserResource\Pages;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class UserResource extends XotBaseResource

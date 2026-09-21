@@ -125,7 +125,7 @@ $rules = [
 Per l'utilizzo in form Filament, è possibile utilizzare:
 
 ```php
-public function getFormSchema(): array
+public static function getFormSchema(): array
 {
     return [
         'addresses' => Forms\Components\Repeater::make('addresses')
