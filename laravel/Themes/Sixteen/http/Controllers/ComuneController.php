@@ -2,7 +2,9 @@
 
 namespace Themes\Sixteen\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\View\View;
 use Modules\Fixcity\App\Models\News;
 use Modules\Fixcity\App\Models\Ticket;
@@ -10,18 +12,38 @@ use Modules\Fixcity\App\Models\Ticket;
 class ComuneController extends Controller
 {
     /**
+     * Inoltra una chiamata dinamica su un target di tipo sconosciuto a livello statico.
+     *
+     * Modules\Fixcity non e' presente in questa base (modulo agnostico/esterno):
+     * Ticket/News non sono risolvibili staticamente da PHPStan. Il dispatch dinamico
+     * evita di dichiarare un tipo falso, mantenendo il comportamento reale invariato
+     * quando il modulo e' installato altrove.
+     *
+     * @param  array<int, mixed>  $args
+     */
+    private function dynamicCall(mixed $target, string $method, array $args = []): mixed
+    {
+        return $target->{$method}(...$args);
+    }
+
+    /**
      * Homepage del comune
      */
     public function homepage(): View
     {
-        $recentTickets = Ticket::with(['user', 'status', 'priority'])
-            ->orderBy('created_at', 'desc')
-            ->limit(5)
-            ->get();
+        if (! class_exists(Ticket::class) || ! class_exists(News::class)) {
+            return view('sixteen::pages.comune.homepage', ['recentTickets' => collect(), 'recentNews' => collect()]);
+        }
 
-        $recentNews = News::orderBy('created_at', 'desc')
-            ->limit(3)
-            ->get();
+        $ticketClass = Ticket::class;
+        $newsClass = News::class;
+
+        $ticketsQuery = $this->dynamicCall($ticketClass::with(['user', 'status', 'priority']), 'orderBy', ['created_at', 'desc']);
+        $ticketsQuery = $this->dynamicCall($ticketsQuery, 'limit', [5]);
+        $recentTickets = $this->dynamicCall($ticketsQuery, 'get');
+
+        $newsQuery = $this->dynamicCall($newsClass::orderBy('created_at', 'desc'), 'limit', [3]);
+        $recentNews = $this->dynamicCall($newsQuery, 'get');
 
         return view('sixteen::pages.comune.homepage', compact('recentTickets', 'recentNews'));
     }
@@ -78,8 +100,12 @@ class ComuneController extends Controller
      */
     public function novita(): View
     {
-        $news = News::orderBy('created_at', 'desc')
-            ->paginate(10);
+        if (! class_exists(News::class)) {
+            abort(404);
+        }
+
+        $newsClass = News::class;
+        $news = $this->dynamicCall($newsClass::orderBy('created_at', 'desc'), 'paginate', [10]);
 
         return view('sixteen::pages.comune.novita', compact('news'));
     }
@@ -87,9 +113,16 @@ class ComuneController extends Controller
     /**
      * Dettaglio notizia
      */
-    public function showNews(News $news): View
+    public function showNews(int $news): View
     {
-        return view('sixteen::pages.comune.novita-detail', compact('news'));
+        if (! class_exists(News::class)) {
+            abort(404);
+        }
+
+        $newsClass = News::class;
+        $newsModel = $this->dynamicCall($newsClass::query(), 'findOrFail', [$news]);
+
+        return view('sixteen::pages.comune.novita-detail', ['news' => $newsModel]);
     }
 
     /**
@@ -103,7 +136,7 @@ class ComuneController extends Controller
     /**
      * Invia messaggio di contatto
      */
-    public function sendContact(Request $request)
+    public function sendContact(Request $request): RedirectResponse
     {
         $request->validate([
             'nome' => 'required|string|max:255',

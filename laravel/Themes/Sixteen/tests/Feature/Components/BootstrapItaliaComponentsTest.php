@@ -7,7 +7,8 @@ use Tests\TestCase;
 uses(TestCase::class);
 
 beforeEach(function (): void {
-    test()->markTestSkipped(
+    /** @var TestCase $this */
+    $this->markTestSkipped(
         'View legacy pub_theme::bootstrap-italia.* assenti in base workorder — componenti attivi sotto sixteen::components/bootstrap-italia/.'
     );
 });

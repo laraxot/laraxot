@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use function Safe\file_get_contents;
+
 /**
  * Contratto markup story 7-3: niente handler JS assente; navigazione come link.
  */
@@ -9,7 +11,7 @@ test('il blade segnalazione-02-dati espone stepper nav e non usa confirmAndProce
     $bladePath = dirname(__DIR__, 4).'/Themes/Sixteen/resources/views/components/blocks/tests/segnalazione-02-dati.blade.php';
     expect(file_exists($bladePath))->toBeTrue('Blade tema mancante: '.$bladePath);
 
-    $html = (string) file_get_contents($bladePath);
+    $html = file_get_contents($bladePath);
     expect($html)->toContain('steppers-btn-confirm');
     expect($html)->toContain('steppers-btn-prev');
     expect($html)->toContain('fixcity::segnalazione.actions.next.label');
@@ -23,7 +25,7 @@ test('il blade segnalazione-02-dati espone stepper nav e non usa confirmAndProce
  */
 test('il blade segnalazione-02-dati ha steppers-header e steppers-index per la responsive', function (): void {
     $bladePath = dirname(__DIR__, 4).'/Themes/Sixteen/resources/views/components/blocks/tests/segnalazione-02-dati.blade.php';
-    $html = (string) file_get_contents($bladePath);
+    $html = file_get_contents($bladePath);
 
     // Elementi strutturali del stepper necessari per il CSS responsive
     expect($html)->toContain('steppers-header');
@@ -40,7 +42,7 @@ test('segnalazione-parity.css §27.18 nasconde i passi non-attivi su mobile/tabl
     $cssPath = dirname(__DIR__, 4).'/Themes/Sixteen/resources/css/segnalazione-parity.css';
     expect(file_exists($cssPath))->toBeTrue('CSS parity mancante: '.$cssPath);
 
-    $css = (string) file_get_contents($cssPath);
+    $css = file_get_contents($cssPath);
 
     // Deve contenere il nuovo titolo sezione §27.18 responsive
     expect($css)->toContain('27.18 Stepper — responsive tablet/mobile');

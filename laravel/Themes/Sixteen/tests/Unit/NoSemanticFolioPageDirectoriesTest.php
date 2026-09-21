@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Vietato directory semantiche sotto resources/views/pages (tickets, news, …).
  * URL /it/tickets/{id} → [container0]/[slug0] + CMS tickets.view.
@@ -9,6 +11,7 @@ declare(strict_types=1);
  * @see laravel/Themes/Sixteen/docs/page-directory-structure.md
  */
 test('sixteen pages non contiene directory semantiche vietate', function (): void {
+    /** @var TestCase $this */
     $pagesRoot = dirname(__DIR__, 2).'/resources/views/pages';
 
     $legacyDirs = array_filter(
@@ -22,7 +25,7 @@ test('sixteen pages non contiene directory semantiche vietate', function (): voi
     );
 
     if ($legacyDirs !== []) {
-        test()->markTestSkipped(
+        $this->markTestSkipped(
             'Directory semantiche legacy Fixcity ancora presenti: '.implode(', ', $legacyDirs)
             .' — migrare a [container0] prima di riattivare (vedi page-directory-structure.md).'
         );
