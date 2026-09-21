@@ -16,6 +16,15 @@ discussions:
 
 # TechPlanner LLM Wiki Log
 
+## 2026-09-21 (gitmodules.ini — repo figli, non submodule)
+
+- Mancanza grave: status git letto sulla root invece che sul `.git` del modulo. Isolamento: `git -C <path>` + `rev-parse --show-toplevel`. Iterare tutti i path di `gitmodules.ini`. Canon aggiornato: [no-git-submodules-module-repos.md](memories/no-git-submodules-module-repos.md), trigger map, `AGENTS.md`.
+- Inventario: `laravel/Themes/Sixteen` ha `.git/` e remote `laraxot/theme_sixteen_fila5` ma mancava da `gitmodules.ini` (working tree). Temi senza `.git` (TwentyOne, Meetup, Barthelemy) non vanno aggiunti.
+
+## 2026-09-21 (PHPStan Activity/Log/ListLogFilesActionTest)
+
+- Fixed redundant `toBeInt()` assertion causing `pest.expectation.redundant` error in Activity/tests/Unit/Actions/Log/ListLogFilesActionTest.php:71. Changed `expect($files[0]->modifiedAt)->toBeInt()->toBeGreaterThan(0)` to `expect($files[0]->modifiedAt)->toBeGreaterThan(0)`. All 7 Activity tests pass, PHPStan Modules zero errors (10958 file). Second brain + BMAD workflow: identified error via PHPStan, fixed underlying cause without ignore/baseline/cast, verified with Pest tests.
+
 ## 2026-09-02 (PHPStan Modules — Rating, UI, Xot)
 
 - Story [2.3](../stories/2.3.deep-quality-enabled-modules.story.md): `./vendor/bin/phpstan analyse Modules` verde su **10573 file**. Corretti null safety e generics Eloquent in Rating, helper Mockery UI con `Expectation` concreta e resolver `XotBaseResource::getTableClass()`. Nessuna modifica a `phpstan.neon`, nessun ignore/baseline/cast artificiale. Creato [PHPSTAN-INDEX](PHPSTAN-INDEX.md) e compattata la skill [phpstan-pest-remediation](skills/phpstan-pest-remediation.md).
