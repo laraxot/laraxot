@@ -22,6 +22,7 @@ discussions:
 - Inventario: `laravel/Themes/Sixteen` ha `.git/` e remote `laraxot/theme_sixteen_fila5` ma mancava da `gitmodules.ini` (working tree). Temi senza `.git` (TwentyOne, Meetup, Barthelemy) non vanno aggiunti.
 - Rebase in corso su User/Notify/Rating **abortiti** (rebase vietato; 486 pick residui su Rating). Merge `ort` + `-X theirs` dove la storia locale era un rewrite dello stesso lavoro remoto. Marker `<<<<<<<` committati puliti in User (PHP lint) e Rating (32 file PHP + gitignore/gitattributes). Notify: merge + igiene GSD/archive + PHP lint sul tree toccato. Push su `laraxot/dev`: User, Notify, Rating, Cms, Employee, Gdpr, root (`gitmodules.ini` + Sixteen). `git merge --abort` usato solo per uscire da un merge esploso, non come rollback di contenuto.
 - Round sync successivo (stesso giorno): re-fetch 51 path. Dirty residui Notify/Rating/Xot committati (PHP lint) e pushati; User fast-forward styling. Qualità (`phpunit.xml`) ignorata in root modulo. Story BMAD [modules-git-synchronization](../../laravel/Modules/Xot/docs/stories/modules-git-synchronization.story.md) → done.
+- Script sync: `bashscripts/git/subtrees/sync_gitmodules_ini.sh` (+ alias `gitmodules-sync.sh` / `gitmodules-sync-full.sh` nella stessa cartella). **Nessun `.sh` nella root di `bashscripts/`**. Isolamento `git -C`, nessun auto-commit. How-to: [per-module-git-sync-verification.md](how-to/per-module-git-sync-verification.md).
 
 ## 2026-09-21 (PHPStan Activity/Log/ListLogFilesActionTest)
 

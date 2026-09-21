@@ -14,6 +14,7 @@ interface HasRatingContract
 {
     /**
      * @return MorphToMany<Rating, Model, MorphPivot, 'pivot'>
+     *
      * @phpstan-return MorphToMany<Rating, Model, MorphPivot, 'pivot'>
      */
     public function ratings(): MorphToMany;
