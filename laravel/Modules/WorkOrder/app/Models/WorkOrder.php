@@ -41,10 +41,12 @@ use Modules\WorkOrder\Database\Factories\WorkOrderFactory;
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
  * @property-read Collection<int, WorkOrderMaterial> $materials
+ * @property-read Collection<int, ComplianceDocument> $complianceDocuments
+ * @property-read Customer $customer
+ * @property-read CustomerSite|null $site
  */
 final class WorkOrder extends BaseModel
 {
-
     use SoftDeletes;
 
     protected $table = 'work_orders';

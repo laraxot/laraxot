@@ -42,3 +42,19 @@ direttamente e ne narrowa il tipo, senza toccare il modello User (cross-repo).
   non causati ne' risolvibili da questo fix (vedi `docs/coverage.md` +
   second-brain `project_test_db_missing_migrations_blocks_feature_tests.md`)
 - Git: commit+push su `laraxot/dev`, repo dedicato `Modules/WorkOrder`
+
+## Update 2026-09-21 — docblock relation per Compliance, nessun errore nuovo qui
+
+Nell'ambito della campagna phpstan cross-modulo (vedi story gemella
+`Modules/Compliance/docs/stories/xot-18.13-compliance-phpstan-22-errors.story.md`,
+sezione Update 2026-09-21), aggiunti a `app/Models/WorkOrder.php` i tag
+`@property-read Customer $customer` e `@property-read CustomerSite|null
+$site` (documentazione IDE/PHPStan delle relation gia' esistenti, nessuna
+relation nuova). Non risolve da solo il falso positivo `nullsafe.neverNull`
+su `$site` visto da Compliance (bug noto Larastan su unioni nullable su
+magic-property omonime a una relation, dettagliato nella story gemella): il
+fix vero e' nel codice chiamante (Compliance), con guardia `instanceof`
+invece di `?->`.
+
+Verifica: `phpstan analyse Modules/WorkOrder --memory-limit=-1` cache pulita
+→ 0 errori reali, nessuna regressione.
