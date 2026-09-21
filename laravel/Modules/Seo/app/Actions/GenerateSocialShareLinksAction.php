@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Seo\Actions;
 
-use Modules\Seo\Data\SocialShareData;
+use Modules\Seo\Datas\SocialShareData;
 use Spatie\QueueableAction\QueueableAction;
 
 /**

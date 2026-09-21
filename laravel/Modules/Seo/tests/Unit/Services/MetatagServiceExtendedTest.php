@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Seo\Tests\Unit\Services;
 
-use Modules\Seo\Adapters\MetatagManager;
+use Modules\Seo\Services\MetatagService;
 use PHPUnit\Framework\Assert;
-uses(\Modules\Seo\Tests\TestCase::class);
 
 it('sets all optional seo fields through service', function (): void {
-    $service = new MetatagManager;
+    $service = new MetatagService();
     $published = now()->subDay();
     $modified = now();
 
@@ -30,6 +29,11 @@ it('sets all optional seo fields through service', function (): void {
     Assert::assertSame('LaravelPizza', $meta->getSiteName());
     Assert::assertSame('https://example.test/post', $meta->getUrl());
     Assert::assertSame('Mario', $meta->getAuthor());
-    Assert::assertSame($published->format('c'), $meta->getPublishedTime()?->format('c'));
-    Assert::assertSame($modified->format('c'), $meta->getModifiedTime()?->format('c'));
+
+    $publishedTime = $meta->getPublishedTime();
+    $modifiedTime = $meta->getModifiedTime();
+    Assert::assertNotNull($publishedTime);
+    Assert::assertNotNull($modifiedTime);
+    Assert::assertSame($published->format('c'), $publishedTime->format('c'));
+    Assert::assertSame($modified->format('c'), $modifiedTime->format('c'));
 });

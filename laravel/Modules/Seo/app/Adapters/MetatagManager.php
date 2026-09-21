@@ -7,6 +7,7 @@ namespace Modules\Seo\Adapters;
 use DateTimeInterface;
 use Modules\Seo\Data\MetatagData;
 use Modules\Seo\Facades\Metatag;
+use Webmozart\Assert\Assert;
 
 /**
  * Metatag facade coordinator.
@@ -163,5 +164,106 @@ class MetatagManager
     public function setModifiedTime(DateTimeInterface $time): void
     {
         $this->set(array_merge($this->metatagData->toArray(), ['modified_time' => $time]));
+    }
+
+    /**
+     * Set a meta field.
+     */
+    public function setMeta(string $key, mixed $value): void
+    {
+        $this->set(array_merge($this->metatagData->toArray(), [$key => $value]));
+    }
+
+    /**
+     * Get a meta field.
+     */
+    public function getMeta(string $key): mixed
+    {
+        $data = $this->metatagData->toArray();
+
+        return $data[$key] ?? null;
+    }
+
+    /**
+     * Get the title.
+     */
+    public function getTitle(): string
+    {
+        $title = $this->metatagData->toArray()['title'] ?? '';
+        Assert::string($title);
+
+        return $title;
+    }
+
+    /**
+     * Set Open Graph title.
+     */
+    public function setOgTitle(string $title): void
+    {
+        $this->set(array_merge($this->metatagData->toArray(), ['og_title' => $title]));
+    }
+
+    /**
+     * Set Open Graph description.
+     */
+    public function setOgDescription(string $description): void
+    {
+        $this->set(array_merge($this->metatagData->toArray(), ['og_description' => $description]));
+    }
+
+    /**
+     * Set Open Graph image.
+     */
+    public function setOgImage(string $image): void
+    {
+        $this->set(array_merge($this->metatagData->toArray(), ['og_image' => $image]));
+    }
+
+    /**
+     * Set Open Graph type.
+     */
+    public function setOgType(string $type): void
+    {
+        $this->set(array_merge($this->metatagData->toArray(), ['og_type' => $type]));
+    }
+
+    /**
+     * Set Twitter card type.
+     */
+    public function setTwitterCard(string $card): void
+    {
+        $this->set(array_merge($this->metatagData->toArray(), ['twitter_card' => $card]));
+    }
+
+    /**
+     * Set Twitter title.
+     */
+    public function setTwitterTitle(string $title): void
+    {
+        $this->set(array_merge($this->metatagData->toArray(), ['twitter_title' => $title]));
+    }
+
+    /**
+     * Set Twitter description.
+     */
+    public function setTwitterDescription(string $description): void
+    {
+        $this->set(array_merge($this->metatagData->toArray(), ['twitter_description' => $description]));
+    }
+
+    /**
+     * Set Twitter image.
+     */
+    public function setTwitterImage(string $image): void
+    {
+        $this->set(array_merge($this->metatagData->toArray(), ['twitter_image' => $image]));
+    }
+
+    /**
+     * Set section.
+     */
+    public function setSection(string $section): void
+    {
+        $this->set(array_merge($this->metatagData->toArray(), ['section' => $section]));
     }
 }

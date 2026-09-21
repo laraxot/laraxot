@@ -5,8 +5,7 @@
     "keywords": [],
     "priority": 0,
     "providers": [
-        "Modules\\Seo\\Providers\\SeoServiceProvider",
-        "Modules\\Seo\\Providers\\Filament\\AdminPanelProvider"
+        "Modules\\Seo\\Providers\\SeoServiceProvider"
     ],
     "files": []
 }

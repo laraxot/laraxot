@@ -82,8 +82,12 @@ interface MetatagDataInterface
 
     /**
      * Get extra metadata.
+     *
+     * @param  string  $key  The metadata key
+     * @param  array<string, mixed>|string|int|float|bool|null  $default  Default value
+     * @return array<string, mixed>|string|int|float|bool|null The metadata value or default
      */
-    public function get(string $key, mixed $default = null): mixed;
+    public function get(string $key, array|string|int|float|bool|null $default = null): array|string|int|float|bool|null;
 
     /**
      * Check if the metadata has a specific key.

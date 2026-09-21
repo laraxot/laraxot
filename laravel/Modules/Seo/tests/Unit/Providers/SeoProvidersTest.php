@@ -3,26 +3,29 @@
 declare(strict_types=1);
 
 namespace Modules\Seo\Tests\Unit\Providers;
+
+use Modules\Seo\Adapters\MetatagFacadeAdapter;
+use Modules\Seo\Adapters\MetatagState;
 use Modules\Seo\Providers\EventServiceProvider;
 use Modules\Seo\Providers\SeoServiceProvider;
-use Modules\Seo\Adapters\MetatagManager;
 use PHPUnit\Framework\Assert;
-uses(\Modules\Seo\Tests\TestCase::class);
+use ReflectionClass;
 
-it('registers metatag service singleton and provides list', function (): void {
+it('registers metatag adapter and state singletons', function (): void {
     $provider = new SeoServiceProvider(app());
     $provider->register();
 
-    $instanceA = app(MetatagManager::class);
-    $instanceB = app(MetatagManager::class);
+    $adapter = app(MetatagFacadeAdapter::class);
+    $state = app(MetatagState::class);
 
-    Assert::assertInstanceOf(MetatagManager::class, $instanceA);
-    Assert::assertSame($instanceA, $instanceB);
-    Assert::assertContains(MetatagManager::class, $provider->provides());
+    Assert::assertSame($adapter, app(MetatagFacadeAdapter::class));
+    Assert::assertSame($state, app(MetatagState::class));
+    Assert::assertContains(MetatagFacadeAdapter::class, $provider->provides());
+    Assert::assertContains(MetatagState::class, $provider->provides());
 });
 
 it('event service provider enables event discovery', function (): void {
-    $reflection = new \ReflectionClass(EventServiceProvider::class);
+    $reflection = new ReflectionClass(EventServiceProvider::class);
     $property = $reflection->getProperty('shouldDiscoverEvents');
     $property->setAccessible(true);
 
