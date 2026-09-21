@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * Solo valori di default: niente env() in questo file. Larastan vieta env()
+ * fuori dalla config/ di root (stessa scelta di Modules/Catalog/config/metel.php,
+ * Modules/Wts/config/wts.php e altri Modules/*\/config/*.php). Questo file viene
+ * caricato da ThemeServiceProvider::loadConfigFrom() via mergeConfigFrom(), quindi
+ * non e' sotto config_path() e Larastan lo tratta come codice applicativo.
+ */
 return [
     /*
     |--------------------------------------------------------------------------
@@ -220,7 +227,7 @@ return [
     ],
 
     'debug' => [
-        'enabled' => env('APP_DEBUG', false),
+        'enabled' => config('app.debug'),
         'log_queries' => false,
         'log_views' => false,
         'log_assets' => false,
