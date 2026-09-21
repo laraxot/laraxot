@@ -28,7 +28,7 @@ it('covers empty selection and invalid config branches in processing page', func
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     config()->set('wts.processing_step_types', 'invalid');
     config()->set('wts.operational_parameters', 'invalid');
@@ -47,7 +47,7 @@ it('covers dirty drum and pallet output branches in processing form trait', func
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     config()->set('wts.stock_views', 'invalid');
 
@@ -130,7 +130,7 @@ it('covers invalid config branches in ingresses and inventory pages', function (
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     config()->set('wts.unit_types', 'invalid');
     config()->set('wts.stock_views', 'invalid');
@@ -150,7 +150,7 @@ it('covers empty fallback branches in finished material and material detail page
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     config()->set('wts.stock_views', 'invalid');
 

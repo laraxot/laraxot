@@ -86,7 +86,7 @@ it('shows and updates WTS operational parameters from the WTS panel', function (
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     actingAs($user);
     get('/wts/operational-parameters')

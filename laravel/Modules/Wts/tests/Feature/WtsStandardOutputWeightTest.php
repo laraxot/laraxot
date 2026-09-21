@@ -44,7 +44,7 @@ it('computes drum, dirty drum and pallet output weight automatically when regist
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     $unit = WtsUnit::factory()->create([
@@ -77,7 +77,7 @@ it('uses the admin edited standard weight for the next processing instead of the
     Role::findOrCreate('wts_admin');
 
     $admin = \Modules\Wts\Tests\TestCase::createUser();
-    $admin->syncRoles(['wts', 'wts_admin']);
+    $admin->syncRoles(['wts_admin']);
 
     app(UpdateWtsOperationalParameterAction::class)->execute(
         code: 'standard_pallet_weight_kg',
@@ -86,7 +86,7 @@ it('uses the admin edited standard weight for the next processing instead of the
     );
 
     $operator = \Modules\Wts\Tests\TestCase::createUser();
-    $operator->syncRoles(['wts', 'wts_admin']);
+    $operator->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     $unit = WtsUnit::factory()->create([
@@ -112,7 +112,7 @@ it('computes standard output weight for drum, dirty drum and pallet from the UI-
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     $unit = WtsUnit::factory()->create([
@@ -143,7 +143,7 @@ it('reflects the admin edited standard weight in the UI-07 hub informational sum
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     app(UpdateWtsOperationalParameterAction::class)->execute(
         code: 'standard_drum_weight_kg',
@@ -164,7 +164,7 @@ it('uses the exceptional manual weight override instead of the automatic calcula
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     $unit = WtsUnit::factory()->create([
@@ -197,7 +197,7 @@ it('falls back to automatic calculation when the manual override is empty or zer
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     $unit = WtsUnit::factory()->create([
@@ -227,7 +227,7 @@ it('uses the exceptional manual weight override from the UI-07 hub page', functi
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     $unit = WtsUnit::factory()->create([

@@ -120,7 +120,7 @@ it('covers empty selection invalid lot selection and stock view normalization in
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     config()->set('wts.stock_views', [
         'to_process' => 'Da lavorare',

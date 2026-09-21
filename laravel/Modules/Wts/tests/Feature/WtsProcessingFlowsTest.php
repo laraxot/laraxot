@@ -21,7 +21,7 @@ it('registers processing from each WTS processing subpage', function (string $pa
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $lot = WtsInboundLot::factory()->create();
     $unit = WtsUnit::factory()->create([
@@ -53,7 +53,7 @@ it('auto-computes the worked weight from the selected colli', function (): void 
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $record = WtsInboundRecord::factory()->create([
         'entry_weight' => 300,
@@ -91,7 +91,7 @@ it('exposes computed output weights and the remaining waste weight', function ()
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     config()->set('wts.operational_parameters.standard_drum_weight_kg', [
         'label' => 'Peso fusto', 'value' => 20, 'unit' => 'kg',

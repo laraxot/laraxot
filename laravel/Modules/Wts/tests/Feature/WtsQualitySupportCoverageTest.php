@@ -90,7 +90,7 @@ it('renders reports page and covers work queue utility branches', function (): v
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $unit = WtsUnit::factory()->create([
         'status_code' => 'available',
@@ -140,7 +140,7 @@ it('covers material detail fallback branches and invalid moves', function (): vo
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $unit = WtsUnit::factory()->create([
         'status_code' => 'available',

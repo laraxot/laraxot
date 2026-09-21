@@ -23,9 +23,9 @@ it('lists only wts_admin and wts_operator users in the wts panel', function (): 
     }
 
     $wtsAdmin = \Modules\Wts\Tests\TestCase::createUser();
-    $wtsAdmin->syncRoles(['wts', 'wts_admin']);
+    $wtsAdmin->syncRoles(['wts_admin']);
     $wtsOperator = \Modules\Wts\Tests\TestCase::createUser();
-    $wtsOperator->syncRoles(['wts', 'wts_operator']);
+    $wtsOperator->syncRoles(['wts_operator']);
     $systemAdmin = \Modules\Wts\Tests\TestCase::createUser();
     $systemAdmin->syncRoles(['admin']);
 
@@ -44,7 +44,7 @@ it('lists only wts_admin and wts_operator users in the wts panel', function (): 
 it('hides user management from wts_operator', function (): void {
     Role::findOrCreate('wts_operator');
     $operator = \Modules\Wts\Tests\TestCase::createUser();
-    $operator->syncRoles(['wts', 'wts_operator']);
+    $operator->syncRoles(['wts_operator']);
 
     filament()->setCurrentPanel('wts');
     actingAs($operator);
@@ -55,9 +55,9 @@ it('hides user management from wts_operator', function (): void {
 it('lets a wts_admin edit and view the plant users', function (): void {
     Role::findOrCreate('wts_admin');
     $admin = \Modules\Wts\Tests\TestCase::createUser();
-    $admin->syncRoles(['wts', 'wts_admin']);
+    $admin->syncRoles(['wts_admin']);
     $other = \Modules\Wts\Tests\TestCase::createUser();
-    $other->syncRoles(['wts', 'wts_admin']);
+    $other->syncRoles(['wts_admin']);
 
     filament()->setCurrentPanel('wts');
     actingAs($admin);
@@ -71,9 +71,9 @@ it('denies edit and view to a wts_operator', function (): void {
         Role::findOrCreate($roleName);
     }
     $operator = \Modules\Wts\Tests\TestCase::createUser();
-    $operator->syncRoles(['wts', 'wts_operator']);
+    $operator->syncRoles(['wts_operator']);
     $target = \Modules\Wts\Tests\TestCase::createUser();
-    $target->syncRoles(['wts', 'wts_admin']);
+    $target->syncRoles(['wts_admin']);
 
     filament()->setCurrentPanel('wts');
     actingAs($operator);
@@ -85,7 +85,7 @@ it('denies edit and view to a wts_operator', function (): void {
 it('offers the create action on the wts user list', function (): void {
     Role::findOrCreate('wts_admin');
     $admin = \Modules\Wts\Tests\TestCase::createUser();
-    $admin->syncRoles(['wts', 'wts_admin']);
+    $admin->syncRoles(['wts_admin']);
 
     filament()->setCurrentPanel('wts');
 

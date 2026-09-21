@@ -37,7 +37,7 @@ it('updates warehouse area from UI-05', function (): void {
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $unit = WtsUnit::factory()->create([
         'current_area_code' => 'incoming',
@@ -57,7 +57,7 @@ it('renders the real material detail page for a scanned unit', function (): void
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $unit = WtsUnit::factory()->create([
         'unit_code' => 'LOT-2026-0200-BIG-BAG-01',
@@ -87,7 +87,7 @@ it('reprints the label of a collo directly from the material detail page', funct
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $unit = WtsUnit::factory()->create([
         'unit_code' => 'LOT-2026-0201-BIG-BAG-01',

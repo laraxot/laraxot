@@ -21,7 +21,7 @@ it('renders the real finished material page with origin chain', function (): voi
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $step = WtsProcessingStep::factory()->create([
         'work_sheet_code' => 'WS-FIN-001',
@@ -54,7 +54,7 @@ it('renders the real audit page results for a searched code', function (): void 
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $step = WtsProcessingStep::factory()->create([
         'work_sheet_code' => 'WS-AUDIT-REAL-01',
@@ -85,7 +85,7 @@ it('renders the real processing sheet page for a selected step', function (): vo
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $step = WtsProcessingStep::factory()->create([
         'work_sheet_code' => 'WS-SHEET-REAL-01',
@@ -108,7 +108,7 @@ it('reprints a derived material label from outputs page', function (): void {
     Role::findOrCreate('wts_admin');
 
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $material = WtsDerivedMaterial::factory()->create([
         'output_code' => 'OUT-LABEL-01',

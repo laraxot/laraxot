@@ -85,7 +85,7 @@ it('generates a valid empty batch PDF when there are no units', function (): voi
 it('downloads the processing sheet PDF from the processing sheet page', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $step = WtsProcessingStep::factory()->create([
         'work_sheet_code' => 'WS-DOWNLOAD-01',
@@ -101,7 +101,7 @@ it('downloads the processing sheet PDF from the processing sheet page', function
 it('returns nothing when downloading a processing sheet PDF without a selected step', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     Livewire::actingAs($user);
     Livewire::test(WtsProcessingSheetPage::class)
@@ -112,7 +112,7 @@ it('returns nothing when downloading a processing sheet PDF without a selected s
 it('downloads a step sheet PDF from the reports page', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $step = WtsProcessingStep::factory()->create([
         'work_sheet_code' => 'WS-REPORT-01',
@@ -127,7 +127,7 @@ it('downloads a step sheet PDF from the reports page', function (): void {
 it('returns nothing when downloading a missing step sheet PDF from the reports page', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     Livewire::actingAs($user);
     Livewire::test(WtsReportsPage::class)
@@ -138,7 +138,7 @@ it('returns nothing when downloading a missing step sheet PDF from the reports p
 it('downloads the full processing report PDF from the reports page', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     WtsProcessingStep::factory()->create();
 
@@ -151,7 +151,7 @@ it('downloads the full processing report PDF from the reports page', function ()
 it('reprints the output label PDF from the finished material page', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     $material = WtsDerivedMaterial::factory()->create([
         'output_code' => 'OUT-FIN-PRINT-01',
@@ -171,7 +171,7 @@ it('reprints the output label PDF from the finished material page', function ():
 it('returns nothing when reprinting an output label without a selected material', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     Livewire::actingAs($user);
     Livewire::test(WtsFinishedMaterialPage::class)
@@ -182,7 +182,7 @@ it('returns nothing when reprinting an output label without a selected material'
 it('downloads the WTS inventory PDF with the default reference date', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     WtsUnit::factory()->create();
 
@@ -195,7 +195,7 @@ it('downloads the WTS inventory PDF with the default reference date', function (
 it('downloads the WTS inventory PDF using an explicit reference date', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     Livewire::actingAs($user);
     Livewire::test(WtsInventoryPage::class)
@@ -207,7 +207,7 @@ it('downloads the WTS inventory PDF using an explicit reference date', function 
 it('falls back to today when the WTS inventory reference date is cleared', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     Livewire::actingAs($user);
     Livewire::test(WtsInventoryPage::class)

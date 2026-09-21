@@ -62,7 +62,7 @@ it('generates processing report and inventory PDFs', function (): void {
 it('shows real dashboard counters on the WTS dashboard', function (): void {
     Role::findOrCreate('wts_admin');
     $user = \Modules\Wts\Tests\TestCase::createUser();
-    $user->syncRoles(['wts', 'wts_admin']);
+    $user->syncRoles(['wts_admin']);
 
     WtsInboundRecord::factory()->create([
         'received_at' => now(),
