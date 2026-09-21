@@ -27,3 +27,33 @@ Regola: `phpstan.neon` e' fuori portata (owner-only), niente modifiche li'.
   `Modules/Catalog/app/Providers/CatalogServiceProvider.php::applyMetelEnvOverrides()`.
   Story ancora in-progress: cluster Municipal Models A/B, Auth SPID/CIE, Livewire/Menu/Providers,
   Controllers+Test non ancora chiusi qui.
+- 2026-09-21: cluster Auth SPID/CIE chiuso — 8 file (`app/Actions/{Cie,Spid}AuthAction.php`,
+  `app/Http/Controllers/{Cie,Spid}AuthController.php`, `app/Events/{Cie,Spid}Authenticated.php`,
+  `app/Events/{Cie,Spid}LoggedOut.php`), 113→0. Bug reali corretti (non cosmetici, sul path di
+  login): `base64_decode`/`gzdeflate` possono tornare `false` sotto `strict_types=1` → sostituiti
+  con `Safe\*` (eccezione catchabile invece di `TypeError` non gestito); `Http\Client\Response::json()`
+  puo' tornare non-array su risposta malformata dal provider SAML/OAuth → guardia `is_array()`;
+  doppia chiamata `Auth::user()`/`Auth::check()` non atomica → catturato in variabile locale;
+  `findOrCreateUser` tornava `Model` generico dichiarato `UserContract` → `instanceof` esplicito;
+  concatenazione `fiscal_code` (mixed) in stringa email sotto `strict_types=1` → guardia
+  `is_string()` prima di ogni uso (lookup e creazione); guardia `! empty($updateData)` sempre vera
+  (dead code) rimossa; SLO/logout leggeva `Session::get()` mixed senza narrowing → `is_array()`/
+  `is_string()`; eventi tipizzati `User` concreto → `UserContract` (safe, non-widening, confermato
+  `Modules\User\Models\User implements ... UserContract`); proprieta' magiche non dichiarate su
+  `UserContract` (`surname`, `auth_method`, `mobile_phone`, `spid_provider`) → `getAttribute()`.
+  Verificato da me (non solo dal subagent): `git status` sui 8 path, `php -l` pulito su tutti,
+  `phpstan analyse` sui 8 file → 0 errori, `pint` → nessuna modifica.
+
+  **Bug critico trovato, FUORI scope di questo cluster, non corretto qui**: `fiscal_code`,
+  `auth_method`, `cie_provider`, `spid_provider`, `mobile_phone`, `last_login_at`, `birth_place`,
+  `gender` sono usati in `where()`/`create()`/`update()` su `users` in entrambi i controller, ma
+  **nessuna migration in tutto il repo aggiunge queste colonne alla tabella `users`** (grep
+  `fiscal_code|spid_provider|cie_provider` su tutte le migrations: zero risultati; `Themes/Sixteen`
+  non ha nessuna cartella migrations). PHPStan non lo vede (accesso dinamico via array-key/magic
+  attribute, non tipizzato), ma **ogni login SPID/CIE in produzione romperebbe con SQL "Unknown
+  column"** su `findOrCreateUser()`. Verificato anche da me (stesso grep, stesso risultato zero).
+  Serve una migration nuova su `users` (o tabella profilo SPID/CIE separata) — richiede decisione
+  owner su schema, non incluso qui. Segnalato anche nel second brain.
+
+  Story ancora in-progress: cluster Municipal Models A/B, Livewire/Menu/Providers,
+  Controllers+Test non ancora chiusi qui.

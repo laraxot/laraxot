@@ -14,10 +14,14 @@ use Illuminate\Support\Facades\Session;
 use InvalidArgumentException;
 use Spatie\QueueableAction\QueueableAction;
 
+use function Safe\base64_decode;
+use function Safe\gzdeflate;
+
 class SpidAuthAction
 {
     use QueueableAction;
 
+    /** @var array<string, array<string, string>> */
     protected array $providers = [];
 
     protected string $entityId;
@@ -28,7 +32,7 @@ class SpidAuthAction
 
     public function __construct()
     {
-        $this->entityId = config('spid.entity_id', config('app.url'));
+        $this->entityId = config()->string('spid.entity_id', config()->string('app.url'));
         $this->assertionConsumerServiceUrl = route('spid.callback');
         $this->singleLogoutServiceUrl = route('spid.slo');
         $this->loadProviders();
@@ -36,6 +40,9 @@ class SpidAuthAction
 
     public function execute(): void {}
 
+    /**
+     * @return array<string, array<string, string>>
+     */
     public function getProviders(): array
     {
         return $this->providers;
@@ -84,20 +91,28 @@ class SpidAuthAction
         ]);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function processCallback(Request $request): array
     {
-        $samlResponse = $request->input('SAMLResponse');
-        $relayState = $request->input('RelayState');
+        $samlResponse = $request->string('SAMLResponse')->toString();
+        $relayState = $request->string('RelayState')->toString();
 
-        if (! $samlResponse) {
+        if ($samlResponse === '') {
             throw new Exception('SAMLResponse mancante');
         }
 
-        if (! $relayState || $relayState !== Session::get('spid.request_id')) {
+        if ($relayState === '' || $relayState !== Session::get('spid.request_id')) {
             throw new Exception('RelayState non valido');
         }
 
         $decodedResponse = base64_decode($samlResponse);
+
+        if ($decodedResponse === '') {
+            throw new Exception('SAMLResponse non decodificabile');
+        }
+
         $responseDoc = new DOMDocument();
         $responseDoc->loadXML($decodedResponse);
 
@@ -139,7 +154,7 @@ class SpidAuthAction
         $metadata .= '                           Location="'.htmlspecialchars($this->singleLogoutServiceUrl).'"/>'.PHP_EOL;
 
         $metadata .= '    <md:AttributeConsumingService index="0">'.PHP_EOL;
-        $metadata .= '      <md:ServiceName xml:lang="it">'.config('app.name').'</md:ServiceName>'.PHP_EOL;
+        $metadata .= '      <md:ServiceName xml:lang="it">'.config()->string('app.name').'</md:ServiceName>'.PHP_EOL;
 
         $spidAttributes = [
             'spidCode', 'name', 'familyName', 'placeOfBirth', 'countyOfBirth',
@@ -164,13 +179,18 @@ class SpidAuthAction
         return Session::has('spid.authenticated') && Session::get('spid.authenticated') === true;
     }
 
+    /**
+     * @return array<array-key, mixed>|null
+     */
     public function getAuthenticatedUser(): ?array
     {
         if (! $this->isAuthenticated()) {
             return null;
         }
 
-        return Session::get('spid.user_data');
+        $userData = Session::get('spid.user_data');
+
+        return is_array($userData) ? $userData : null;
     }
 
     public function logout(): void
@@ -186,7 +206,7 @@ class SpidAuthAction
 
     protected function loadProviders(): void
     {
-        $this->providers = config('spid.providers', [
+        $default = [
             'poste' => [
                 'name' => 'Poste Italiane',
                 'entityId' => 'https://posteid.poste.it',
@@ -211,7 +231,39 @@ class SpidAuthAction
                 'cert' => 'tim.crt',
                 'logo' => 'tim-logo.svg',
             ],
-        ]);
+        ];
+
+        $configured = config('spid.providers');
+
+        $this->providers = is_array($configured) ? $this->normalizeProviders($configured) : $default;
+    }
+
+    /**
+     * @param  array<array-key, mixed>  $configured
+     * @return array<string, array<string, string>>
+     */
+    protected function normalizeProviders(array $configured): array
+    {
+        $normalized = [];
+
+        foreach ($configured as $key => $provider) {
+            if (! is_string($key) || ! is_array($provider)) {
+                continue;
+            }
+
+            $entry = [];
+            foreach ($provider as $field => $value) {
+                if (is_string($field) && is_string($value)) {
+                    $entry[$field] = $value;
+                }
+            }
+
+            if ($entry !== []) {
+                $normalized[$key] = $entry;
+            }
+        }
+
+        return $normalized;
     }
 
     protected function generateRequestId(): string
@@ -219,6 +271,9 @@ class SpidAuthAction
         return 'req_'.bin2hex(random_bytes(16));
     }
 
+    /**
+     * @param  array<string, string>  $provider
+     */
     protected function buildSamlAuthRequest(string $requestId, array $provider, int $level): string
     {
         $issueInstant = gmdate('Y-m-d\TH:i:s\Z');
@@ -243,6 +298,9 @@ class SpidAuthAction
         return $request;
     }
 
+    /**
+     * @param  array<string, string>  $provider
+     */
     protected function buildSamlLogoutRequest(string $requestId, string $nameId, string $sessionIndex, array $provider): string
     {
         $issueInstant = gmdate('Y-m-d\TH:i:s\Z');
@@ -279,6 +337,9 @@ class SpidAuthAction
         }
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     protected function extractUserAttributes(DOMDocument $responseDoc): array
     {
         $xpath = new DOMXPath($responseDoc);
@@ -327,6 +388,6 @@ class SpidAuthAction
 
     protected function getSigningCertificate(): string
     {
-        return config('spid.signing_cert', '');
+        return config()->string('spid.signing_cert', '');
     }
 }

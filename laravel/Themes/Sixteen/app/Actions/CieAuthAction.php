@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Spatie\QueueableAction\QueueableAction;
 
+use function Safe\base64_decode;
+use function Safe\json_decode;
+
 class CieAuthAction
 {
     use QueueableAction;
@@ -25,9 +28,9 @@ class CieAuthAction
 
     public function __construct()
     {
-        $this->baseUrl = config('cie.base_url', 'https://preprod.idserver.servizicie.interno.gov.it/idp');
-        $this->clientId = config('cie.client_id');
-        $this->clientSecret = config('cie.client_secret');
+        $this->baseUrl = config()->string('cie.base_url', 'https://preprod.idserver.servizicie.interno.gov.it/idp');
+        $this->clientId = config()->string('cie.client_id');
+        $this->clientSecret = config()->string('cie.client_secret');
         $this->redirectUri = route('cie.callback');
     }
 
@@ -70,33 +73,46 @@ class CieAuthAction
 
         return 'cieid://login?'.http_build_query([
             'redirect_url' => $webLoginUrl,
-            'client_name' => config('app.name'),
+            'client_name' => config()->string('app.name'),
         ]);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function processCallback(Request $request): array
     {
-        $code = $request->input('code');
-        $state = $request->input('state');
-        $error = $request->input('error');
+        $code = $request->string('code')->toString();
+        $state = $request->string('state')->toString();
+        $error = $request->string('error')->toString();
 
-        if ($error) {
+        if ($error !== '') {
             throw new Exception('CIE authentication error: '.$error);
         }
 
-        if (! $state || $state !== Session::get('cie.state')) {
+        if ($state === '' || $state !== Session::get('cie.state')) {
             throw new Exception('State parameter mismatch');
         }
 
-        if (! $code) {
+        if ($code === '') {
             throw new Exception('Authorization code missing');
         }
 
         $tokenData = $this->exchangeCodeForToken($code);
 
-        $userData = $this->getUserInfo($tokenData['access_token']);
+        $accessToken = $tokenData['access_token'] ?? null;
+        if (! is_string($accessToken)) {
+            throw new Exception('CIE token response missing access_token');
+        }
 
-        $idTokenClaims = $this->validateIdToken($tokenData['id_token']);
+        $idToken = $tokenData['id_token'] ?? null;
+        if (! is_string($idToken)) {
+            throw new Exception('CIE token response missing id_token');
+        }
+
+        $userData = $this->getUserInfo($accessToken);
+
+        $idTokenClaims = $this->validateIdToken($idToken);
 
         $userAttributes = array_merge($userData, $idTokenClaims);
 
@@ -113,13 +129,18 @@ class CieAuthAction
         return Session::has('cie.authenticated') && Session::get('cie.authenticated') === true;
     }
 
+    /**
+     * @return array<array-key, mixed>|null
+     */
     public function getAuthenticatedUser(): ?array
     {
         if (! $this->isAuthenticated()) {
             return null;
         }
 
-        return Session::get('cie.user_data');
+        $userData = Session::get('cie.user_data');
+
+        return is_array($userData) ? $userData : null;
     }
 
     public function logout(): void
@@ -159,6 +180,9 @@ class CieAuthAction
         return $this->baseUrl.'/oidc/logout?'.http_build_query($params);
     }
 
+    /**
+     * @return array<array-key, mixed>|null
+     */
     public function refreshToken(): ?array
     {
         $refreshToken = Session::get('cie.refresh_token');
@@ -178,7 +202,13 @@ class CieAuthAction
             if ($response->successful()) {
                 $tokenData = $response->json();
 
-                Session::put('cie.access_token', $tokenData['access_token']);
+                if (! is_array($tokenData)) {
+                    Log::warning('CIE token refresh returned an unexpected payload shape');
+
+                    return null;
+                }
+
+                Session::put('cie.access_token', $tokenData['access_token'] ?? null);
                 if (isset($tokenData['refresh_token'])) {
                     Session::put('cie.refresh_token', $tokenData['refresh_token']);
                 }
@@ -199,6 +229,9 @@ class CieAuthAction
                ! empty($this->baseUrl);
     }
 
+    /**
+     * @return array<string, string|bool>
+     */
     public function getConfigInfo(): array
     {
         return [
@@ -210,6 +243,9 @@ class CieAuthAction
         ];
     }
 
+    /**
+     * @return array<array-key, mixed>
+     */
     protected function exchangeCodeForToken(string $code): array
     {
         $response = Http::asForm()->post($this->baseUrl.'/oidc/token', [
@@ -224,9 +260,18 @@ class CieAuthAction
             throw new Exception('Token exchange failed: '.$response->body());
         }
 
-        return $response->json();
+        $data = $response->json();
+
+        if (! is_array($data)) {
+            throw new Exception('Token exchange returned an unexpected payload shape');
+        }
+
+        return $data;
     }
 
+    /**
+     * @return array<array-key, mixed>
+     */
     protected function getUserInfo(string $accessToken): array
     {
         $response = Http::withToken($accessToken)
@@ -236,9 +281,18 @@ class CieAuthAction
             throw new Exception('UserInfo request failed: '.$response->body());
         }
 
-        return $response->json();
+        $data = $response->json();
+
+        if (! is_array($data)) {
+            throw new Exception('UserInfo request returned an unexpected payload shape');
+        }
+
+        return $data;
     }
 
+    /**
+     * @return array<array-key, mixed>
+     */
     protected function validateIdToken(string $idToken): array
     {
         $parts = explode('.', $idToken);
@@ -249,6 +303,10 @@ class CieAuthAction
 
         $header = json_decode(base64_decode($parts[0]), true);
         $payload = json_decode(base64_decode($parts[1]), true);
+
+        if (! is_array($payload)) {
+            throw new Exception('Invalid JWT payload');
+        }
 
         if (! isset($payload['nonce']) || $payload['nonce'] !== Session::get('cie.nonce')) {
             throw new Exception('Nonce verification failed');
@@ -269,6 +327,10 @@ class CieAuthAction
         return $payload;
     }
 
+    /**
+     * @param  array<array-key, mixed>  $attributes
+     * @return array<string, mixed>
+     */
     protected function mapCieAttributes(array $attributes): array
     {
         return [
@@ -291,24 +353,33 @@ class CieAuthAction
         ];
     }
 
+    /**
+     * @param  array<array-key, mixed>  $attributes
+     */
     protected function formatAddress(array $attributes): ?string
     {
+        $address = $attributes['address'] ?? null;
+
+        if (! is_array($address)) {
+            return null;
+        }
+
         $addressParts = [];
 
-        if (isset($attributes['address']['street_address'])) {
-            $addressParts[] = $attributes['address']['street_address'];
+        if (isset($address['street_address']) && is_string($address['street_address'])) {
+            $addressParts[] = $address['street_address'];
         }
 
-        if (isset($attributes['address']['locality'])) {
-            $addressParts[] = $attributes['address']['locality'];
+        if (isset($address['locality']) && is_string($address['locality'])) {
+            $addressParts[] = $address['locality'];
         }
 
-        if (isset($attributes['address']['postal_code'])) {
-            $addressParts[] = $attributes['address']['postal_code'];
+        if (isset($address['postal_code']) && is_string($address['postal_code'])) {
+            $addressParts[] = $address['postal_code'];
         }
 
-        if (isset($attributes['address']['country'])) {
-            $addressParts[] = $attributes['address']['country'];
+        if (isset($address['country']) && is_string($address['country'])) {
+            $addressParts[] = $address['country'];
         }
 
         return ! empty($addressParts) ? implode(', ', $addressParts) : null;
