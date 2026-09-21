@@ -1,3 +1,14 @@
+---
+title: "Product Requirements Document (PRD)"
+type: guide
+tags: [product, requirements, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "product requirements"
+related:
+  - "./product-roadmap.md"
+---
+
 # Product Requirements Document (PRD)
 
 ## Metadata

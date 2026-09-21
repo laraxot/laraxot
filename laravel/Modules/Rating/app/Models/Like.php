@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  * @property int|string $id
  * @property int|string $user_id
  * @property int|string $likeable_id
- * @property string $likeable_type
+ * @property string     $likeable_type
  */
 class Like extends BaseModel
 {

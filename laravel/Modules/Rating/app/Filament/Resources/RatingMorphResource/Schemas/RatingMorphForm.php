@@ -4,18 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Filament\Resources\RatingMorphResource\Schemas;
 
-use Filament\Schemas\Components\Component as SchemaComponent;
-use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
-
-class RatingMorphForm extends XotBaseResourceForm
+class RatingMorphForm extends BaseRatingMorphForm
 {
-    /**
-     * @return array<int|string, SchemaComponent>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            // Campi del form
-        ];
-    }
 }

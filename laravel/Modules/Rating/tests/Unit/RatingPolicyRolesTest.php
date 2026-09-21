@@ -9,8 +9,8 @@ use Modules\Rating\Models\Policies\RatingMorphPolicy;
 use Modules\Rating\Models\Policies\RatingPolicy;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
-use Modules\Rating\Tests\TestCase;
 use Modules\Rating\Tests\Fixtures\OwnedModelStub;
+use Modules\Rating\Tests\TestCase;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
@@ -21,7 +21,6 @@ uses(TestCase::class);
 // i test ai sorgenti per convenzione di nome, e un file che non si chiama
 // `RatingPolicyTest` non viene eseguito contro i mutanti di `RatingPolicy`.
 covers(RatingPolicy::class, RatingMorphPolicy::class);
-
 
 /**
  * Utente con **un solo** ruolo. Serve un ruolo per volta: è l'unico modo di dimostrare

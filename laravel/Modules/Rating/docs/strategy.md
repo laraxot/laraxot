@@ -1,3 +1,14 @@
+---
+title: "Product Strategy: Rating Module"
+type: guide
+tags: [strategy, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "strategy"
+related:
+  - "./troubleshooting.md"
+---
+
 # Product Strategy: Rating Module
 
 ## 🌍 Market Context

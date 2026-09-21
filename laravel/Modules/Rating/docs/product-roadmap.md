@@ -1,3 +1,14 @@
+---
+title: "Rating - Product Roadmap"
+type: guide
+tags: [product, roadmap, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "product roadmap"
+related:
+  - "./product-strategy.md"
+---
+
 # Rating - Product Roadmap
 
 > Documento vivente. Modulo.

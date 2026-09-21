@@ -1,4 +1,17 @@
+---
+title: "Analisi Metodi Duplicati - Modulo Rating"
+type: concept
+tags: [duplicate, methods, analysis, rating, legacy]
+created: 2026-07-14
+updated: 2026-08-02
+qmd: "duplicate methods analysis"
+related:
+  - "./duplicate_methods.md"
+---
+
 # Analisi Metodi Duplicati - Modulo Rating
+
+> ⚠️ **Note**: Questo documento contiene riferimenti a moduli legacy (LegacyDomain) non più presenti nel progetto. Tali riferimenti sono conservati per storicità ma non influiscono sulla validità dell'analisi dei moduli attuali.
 
 **Data Generazione**: 2025-10-15 06:41:17
 **Totale Gruppi di Duplicati**: 
@@ -27,13 +40,13 @@ Questo documento identifica i metodi duplicati nel modulo **Rating** che potrebb
 - `extends::user` - [Modules/Activity/app/Models/Activity.php:97](Modules/Activity/app/Models/Activity.php) (Modulo: Activity)
 - `Article::user` - [Modules/Blog/app/Models/Article.php:393](Modules/Blog/app/Models/Article.php) (Modulo: Blog)
 - `Comment::user` - [Modules/Blog/app/Models/Comment.php:102](Modules/Blog/app/Models/Comment.php) (Modulo: Blog)
-- `Activity::user` - [Modules/Fixcity/app/Models/Activity.php:58](Modules/Fixcity/app/Models/Activity.php) (Modulo: Fixcity)
-- `PushSubscription::user` - [Modules/Fixcity/app/Models/PushSubscription.php:64](Modules/Fixcity/app/Models/PushSubscription.php) (Modulo: Fixcity)
-- `Ticket::user` - [Modules/Fixcity/app/Models/Ticket.php:572](Modules/Fixcity/app/Models/Ticket.php) (Modulo: Fixcity)
-- `TicketActivity::user` - [Modules/Fixcity/app/Models/TicketActivity.php:78](Modules/Fixcity/app/Models/TicketActivity.php) (Modulo: Fixcity)
-- `TicketComment::user` - [Modules/Fixcity/app/Models/TicketComment.php:68](Modules/Fixcity/app/Models/TicketComment.php) (Modulo: Fixcity)
-- `TicketHour::user` - [Modules/Fixcity/app/Models/TicketHour.php:62](Modules/Fixcity/app/Models/TicketHour.php) (Modulo: Fixcity)
-- `TicketSubscriber::user` - [Modules/Fixcity/app/Models/TicketSubscriber.php:51](Modules/Fixcity/app/Models/TicketSubscriber.php) (Modulo: Fixcity)
+- `Activity::user` - [Modules/LegacyDomain/app/Models/Activity.php:58](Modules/LegacyDomain/app/Models/Activity.php) (Modulo: LegacyDomain)
+- `PushSubscription::user` - [Modules/LegacyDomain/app/Models/PushSubscription.php:64](Modules/LegacyDomain/app/Models/PushSubscription.php) (Modulo: LegacyDomain)
+- `Ticket::user` - [Modules/LegacyDomain/app/Models/Ticket.php:572](Modules/LegacyDomain/app/Models/Ticket.php) (Modulo: LegacyDomain)
+- `TicketActivity::user` - [Modules/LegacyDomain/app/Models/TicketActivity.php:78](Modules/LegacyDomain/app/Models/TicketActivity.php) (Modulo: LegacyDomain)
+- `TicketComment::user` - [Modules/LegacyDomain/app/Models/TicketComment.php:68](Modules/LegacyDomain/app/Models/TicketComment.php) (Modulo: LegacyDomain)
+- `TicketHour::user` - [Modules/LegacyDomain/app/Models/TicketHour.php:62](Modules/LegacyDomain/app/Models/TicketHour.php) (Modulo: LegacyDomain)
+- `TicketSubscriber::user` - [Modules/LegacyDomain/app/Models/TicketSubscriber.php:51](Modules/LegacyDomain/app/Models/TicketSubscriber.php) (Modulo: LegacyDomain)
 - `TaskComment::user` - [Modules/Job/app/Models/TaskComment.php:70](Modules/Job/app/Models/TaskComment.php) (Modulo: Job)
 - `RatingMorph::user` - [Modules/Rating/app/Models/RatingMorph.php:104](Modules/Rating/app/Models/RatingMorph.php)
 - `AuthenticationLog::user` - [Modules/User/app/Models/AuthenticationLog.php:74](Modules/User/app/Models/AuthenticationLog.php) (Modulo: User)
@@ -105,15 +118,15 @@ public function user(): BelongsTo
 - `BaseModel::casts` - [Modules/Comment/app/Models/BaseModel.php:44](Modules/Comment/app/Models/BaseModel.php) (Modulo: Comment)
 - `BaseMorphPivot::casts` - [Modules/Comment/app/Models/BaseMorphPivot.php:54](Modules/Comment/app/Models/BaseMorphPivot.php) (Modulo: Comment)
 - `BasePivot::casts` - [Modules/Comment/app/Models/BasePivot.php:41](Modules/Comment/app/Models/BasePivot.php) (Modulo: Comment)
-- `Activity::casts` - [Modules/Fixcity/app/Models/Activity.php:50](Modules/Fixcity/app/Models/Activity.php) (Modulo: Fixcity)
-- `BaseModel::casts` - [Modules/Fixcity/app/Models/BaseModel.php:47](Modules/Fixcity/app/Models/BaseModel.php) (Modulo: Fixcity)
-- `BasePivot::casts` - [Modules/Fixcity/app/Models/BasePivot.php:49](Modules/Fixcity/app/Models/BasePivot.php) (Modulo: Fixcity)
-- `Category::casts` - [Modules/Fixcity/app/Models/Category.php:117](Modules/Fixcity/app/Models/Category.php) (Modulo: Fixcity)
-- `Faq::casts` - [Modules/Fixcity/app/Models/Faq.php:63](Modules/Fixcity/app/Models/Faq.php) (Modulo: Fixcity)
-- `FaqCategory::casts` - [Modules/Fixcity/app/Models/FaqCategory.php:67](Modules/Fixcity/app/Models/FaqCategory.php) (Modulo: Fixcity)
-- `PushSubscription::casts` - [Modules/Fixcity/app/Models/PushSubscription.php:58](Modules/Fixcity/app/Models/PushSubscription.php) (Modulo: Fixcity)
-- `Ticket::casts` - [Modules/Fixcity/app/Models/Ticket.php:188](Modules/Fixcity/app/Models/Ticket.php) (Modulo: Fixcity)
-- `TicketCategory::casts` - [Modules/Fixcity/app/Models/TicketCategory.php:51](Modules/Fixcity/app/Models/TicketCategory.php) (Modulo: Fixcity)
+- `Activity::casts` - [Modules/LegacyDomain/app/Models/Activity.php:50](Modules/LegacyDomain/app/Models/Activity.php) (Modulo: LegacyDomain)
+- `BaseModel::casts` - [Modules/LegacyDomain/app/Models/BaseModel.php:47](Modules/LegacyDomain/app/Models/BaseModel.php) (Modulo: LegacyDomain)
+- `BasePivot::casts` - [Modules/LegacyDomain/app/Models/BasePivot.php:49](Modules/LegacyDomain/app/Models/BasePivot.php) (Modulo: LegacyDomain)
+- `Category::casts` - [Modules/LegacyDomain/app/Models/Category.php:117](Modules/LegacyDomain/app/Models/Category.php) (Modulo: LegacyDomain)
+- `Faq::casts` - [Modules/LegacyDomain/app/Models/Faq.php:63](Modules/LegacyDomain/app/Models/Faq.php) (Modulo: LegacyDomain)
+- `FaqCategory::casts` - [Modules/LegacyDomain/app/Models/FaqCategory.php:67](Modules/LegacyDomain/app/Models/FaqCategory.php) (Modulo: LegacyDomain)
+- `PushSubscription::casts` - [Modules/LegacyDomain/app/Models/PushSubscription.php:58](Modules/LegacyDomain/app/Models/PushSubscription.php) (Modulo: LegacyDomain)
+- `Ticket::casts` - [Modules/LegacyDomain/app/Models/Ticket.php:188](Modules/LegacyDomain/app/Models/Ticket.php) (Modulo: LegacyDomain)
+- `TicketCategory::casts` - [Modules/LegacyDomain/app/Models/TicketCategory.php:51](Modules/LegacyDomain/app/Models/TicketCategory.php) (Modulo: LegacyDomain)
 - `BaseModel::casts` - [Modules/Gdpr/app/Models/BaseModel.php:58](Modules/Gdpr/app/Models/BaseModel.php) (Modulo: Gdpr)
 - `BaseMorphPivot::casts` - [Modules/Gdpr/app/Models/BaseMorphPivot.php:67](Modules/Gdpr/app/Models/BaseMorphPivot.php) (Modulo: Gdpr)
 - `BasePivot::casts` - [Modules/Gdpr/app/Models/BasePivot.php:47](Modules/Gdpr/app/Models/BasePivot.php) (Modulo: Gdpr)
@@ -331,7 +344,7 @@ public function scopeWithExtraAttributes(Builder $query): Builder
 
 **Trovato in  file4 file**:
 
-- `Ticket::profile` - [Modules/Fixcity/app/Models/Ticket.php:562](Modules/Fixcity/app/Models/Ticket.php) (Modulo: Fixcity)
+- `Ticket::profile` - [Modules/LegacyDomain/app/Models/Ticket.php:562](Modules/LegacyDomain/app/Models/Ticket.php) (Modulo: LegacyDomain)
 - `RatingMorph::profile` - [Modules/Rating/app/Models/RatingMorph.php:111](Modules/Rating/app/Models/RatingMorph.php)
 - `BaseUser::profile` - [Modules/User/app/Models/BaseUser.php:243](Modules/User/app/Models/BaseUser.php) (Modulo: User)
 - `DeviceUser::profile` - [Modules/User/app/Models/DeviceUser.php:90](Modules/User/app/Models/DeviceUser.php) (Modulo: User)

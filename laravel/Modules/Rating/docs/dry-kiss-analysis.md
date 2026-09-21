@@ -1,3 +1,14 @@
+---
+title: "🐄 DRY & KISS Analysis - Rating"
+type: concept
+tags: [dry, kiss, analysis, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "dry kiss analysis"
+related:
+  - "./duplicate-methods-analysis.md"
+---
+
 # 🐄 DRY & KISS Analysis - Rating
 
 **Data:** 2025-10-15 | **Status:** ✅

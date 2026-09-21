@@ -30,7 +30,7 @@ final class LikeableStub extends Model
         }
 
         /** @var MorphMany<Like, $this>&Mockery\MockInterface $fallback */
-        $fallback = Mockery::mock(MorphMany::class);
+        $fallback = \Mockery::mock(MorphMany::class);
         $fallback->shouldReceive('delete')->andReturn(0);
 
         return $fallback;

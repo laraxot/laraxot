@@ -9,4 +9,6 @@ use Modules\Rating\Filament\Resources\RatingResource\Pages\BaseEditRating;
 /**
  * Stub concreto for BaseEditRating page testing.
  */
-final class BaseEditRatingStub extends BaseEditRating {}
+final class BaseEditRatingStub extends BaseEditRating
+{
+}

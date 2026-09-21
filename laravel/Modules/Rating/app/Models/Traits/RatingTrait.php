@@ -17,7 +17,7 @@ use Modules\Rating\Models\Rating;
 /**
  * Trait RatingTrait.
  */
-/** @phpstan-ignore trait.unused */
+/** @phpstan-ignore trait.unused (verificato zero consumer in questo repo il 2026-09-01) */
 trait RatingTrait
 {
     /**
@@ -34,7 +34,7 @@ trait RatingTrait
     public function ratingObjectives()
     {
         $related = Rating::class;
-        $userId = Auth::id();
+        $user_id = Auth::id();
 
         return $this->hasMany($related, 'related_type', 'post_type')
 
@@ -42,7 +42,7 @@ trait RatingTrait
                 'ratings.*,
                 count(value) as rating_count,
                 avg(value) as rating_avg,
-                sum(if(user_id="'.$userId.'",value,0)) AS rating_my
+                sum(if(user_id="'.$user_id.'",value,0)) AS rating_my
                 '
             )->leftJoin(
                 'rating_morph',
@@ -80,9 +80,11 @@ trait RatingTrait
     // ----- mutators -----
     // *
     /**
+     * @param float $value
+     *
      * @return Collection
      */
-    public function getMyRatingAttribute()
+    public function getMyRatingAttribute($value)
     {
         $my = $this->myRatings;
 
@@ -143,13 +145,13 @@ trait RatingTrait
     public function ratingAvgHtml(): string
     {
         // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
-        // $pivotAvg = $ratings->avg('pivot.rating');
-        $pivotAvg = $this->ratings_avg;
-        // $pivotCount = $ratings->count('pivot.rating');
-        $pivotCount = $this->ratings_count;
+        // $pivot_avg = $ratings->avg('pivot.rating');
+        $pivot_avg = $this->ratings_avg;
+        // $pivot_cout = $ratings->count('pivot.rating');
+        $pivot_cout = $this->ratings_count;
 
-        $msg = '<div class="rateit" data-rateit-value="'.$pivotAvg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
-        $msg .= '('.$pivotAvg.') '.$pivotCount.' Votes ';
+        $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
+        $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
 
         // $ratingUrl = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
         // $ratingUrl = Panel::make()->get($this)->url('show').'?_act=rate';

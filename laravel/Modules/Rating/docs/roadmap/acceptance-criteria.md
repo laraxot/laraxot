@@ -1,3 +1,12 @@
+---
+title: "Criteri di accettazione per le fasi"
+type: guide
+tags: [acceptance, criteria, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "acceptance criteria"
+---
+
 # Criteri di accettazione per le fasi
 
 Criteri misurabili e verificabili per considerare completata ogni fase della roadmap.  

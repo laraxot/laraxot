@@ -1,3 +1,14 @@
+---
+title: "Rating Module Configuration"
+type: guide
+tags: [configuration, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "configuration"
+related:
+  - "./conflict-resolution.md"
+---
+
 # Rating Module Configuration
 
 ## `composer.json` Dependencies
@@ -26,8 +37,8 @@ This section includes packages necessary for development, testing, and code qual
 
 ```json
 "require-dev": {
-    "pestphp/pest": "*",
-    "pestphp/pest-plugin-laravel": "*"
+    "pestphp/pest": "^2.0",
+    "pestphp/pest-plugin-laravel": "^2.0"
 }
 ```
 

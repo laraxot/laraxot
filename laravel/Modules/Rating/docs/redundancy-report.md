@@ -1,3 +1,14 @@
+---
+title: "Redundancy Report — Modulo Rating"
+type: guide
+tags: [redundancy, report, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "redundancy report"
+related:
+  - "./release-marketing-standard.md"
+---
+
 - Inventario [ridondanze cross-modulo](../docs/redundancy-report.md)
 - Concetti [ridondanze cross-cutting](../Xot/docs/wiki/concepts/ridondanze-cross-cutting-codebase.md)
 

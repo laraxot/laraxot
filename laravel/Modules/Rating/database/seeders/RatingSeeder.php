@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 use Modules\Rating\Models\Rating;
 
 /**
- * Rating base Sì/No — schema ratings (title, color) usati da PredictSeeder.
+ * Rating base Sì/No — schema ratings (title, color) usati da seeder di dominio.
  */
 class RatingSeeder extends Seeder
 {

@@ -1,3 +1,14 @@
+---
+title: "Filament Version Declaration — Rating"
+type: guide
+tags: [filament, version, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "filament version"
+related:
+  - "./file-naming-rules.md"
+---
+
 # Filament Version Declaration — Rating
 
 **Current Version**: Filament v5 (Livewire v4 + Schemas)

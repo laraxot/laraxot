@@ -1,6 +1,7 @@
 ---
 id: phpstan-Rating-fix
 slug: phpstan-Rating
+scope: [module:Rating, project:<repo progetto>]
 scope: [module:Rating, project:base_workorder_fila5]
 status: Completed
 priority: High

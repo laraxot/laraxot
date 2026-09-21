@@ -9,7 +9,7 @@
     "Stabilizzare il contratto dati delle opzioni"
   ],
   "nonGoals": [
-    "Gestire il dominio completo Predict"
+    "Gestire un dominio applicativo esterno completo"
   ],
   "dependencies": [
     "Xot"

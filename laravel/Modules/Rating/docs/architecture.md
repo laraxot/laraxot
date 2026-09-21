@@ -1,3 +1,75 @@
+<<<<<<< HEAD
+# Rating Module Architecture
+
+Lightweight reference to architecture. See consolidated documentation:
+
+- [README](./README.md) — Overview and module description
+- [FAQ](./faq.md) — Quick answers (implementation, database, Filament, testing, performance, security, troubleshooting, upgrade)
+- [Index](./index.md) — Navigation to wiki analysis
+
+## Core Design
+
+**Polymorphic ratings system** for any Eloquent model.
+
+- One rating per user per entity (unique constraint)
+- 1-5 score scale, optional comments
+- HasRatingsTrait for model integration
+- QueueableAction pattern for business logic
+- Event-driven cache invalidation
+- Multi-language translation support
+
+## Key Tables
+
+```
+ratings (rateable_type, rateable_id, user_id, score, comment, timestamps)
+rating_categories (id, name, description, timestamps)
+```
+
+**Indexes:** (rateable_type, rateable_id), (user_id), (score), (created_at)
+
+## Consumer Pattern
+
+Any module uses Rating via trait:
+
+```php
+use Modules\Rating\Traits\HasRatingsTrait;
+
+class Product extends Model {
+    use HasRatingsTrait;
+}
+
+// Available methods
+$product->ratings;          // Relations
+$product->averageRating();  // Average score
+$product->ratedBy($user);   // Check user rated
+```
+
+**Circular dependency rule:** Rating never imports from consumers (User, Product, Service, Employee). Reverse dependency only (consumer → Rating via trait, Actions, Events).
+
+## Quality Gates
+
+- **PHPStan Level 10** compliance
+- **PHPMD** cleancode, codesize, design rules
+- **PHP Insights** best practices
+- **Pest tests** with 80%+ coverage
+- **Migrations** use XotBaseMigration for tenant-awareness
+
+## See Also
+
+Full topic-specific guidance in [FAQ](./faq.md).
+Related wiki analysis: [Rating Module Analysis](../../docs/wiki/analysis/modules/rating/)
+=======
+---
+title: "Rating Architecture"
+type: concept
+tags: [architecture, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "architecture"
+related:
+  - "./best-practices.md"
+---
+
 # Rating Architecture
 
 ## 🏗️ System Design
@@ -429,3 +501,119 @@ $ratings = Rating::wherePivot('extra_attributes->anno', $anno)
 **Autore**: PTVX Development Team  
 **Versione**: 2.0.0  
 **Ultimo aggiornamento**: 2024-02-11
+<<<<<<< HEAD
+
+
+---
+
+## Contenuto assorbito da `ARCHITECTURE.md`
+
+# Rating Module Architecture
+
+## Overview
+The Rating module provides star ratings, reviews, and feedback mechanisms.
+
+## Components
+- **Rating Model**: Core rating entity
+- **Review System**: User-submitted reviews with moderation
+- **Aggregation**: Rating calculations and statistics
+- **Display Components**: Star display widgets
+
+## 3. **HasRatingsTrait Form Schema Pattern** - Presentation Logic
+
+### Purpose
+Estrarre la generazione dello schema del form dei rating nel trait `HasRatingsTrait` per riutilizzo DRY tra i moduli che lo compongono.
+
+### Implementation
+
+```php
+// In HasRatingsTrait
+public function getRatingsFormSchema(?object $caller = null): array
+{
+    $ratings = $this->ratings;
+    $schema = [];
+    $readonlyFields = $ratings->where('is_readonly', true);
+
+    foreach ($ratings as $rating) {
+        $fieldname = 'ratings.' . $rating->id . '.pivot.value';
+        $label = strip_tags((string) ($rating->txt ?? $rating->title));
+        $readOnly = (bool) ($rating->is_readonly ?? false);
+
+        if (! $readOnly) {
+            $item = TextInput::make($fieldname)
+                ->label($label)
+                ->numeric()
+                ->nullable()
+                ->columns(2)
+                ->inlineLabel()
+                ->live(onBlur: true)
+                ->rules((string) ($rating->rule?->value ?? ''));
+
+            if ($caller && method_exists($caller, 'recalculateReadonlyFields')) {
+                $item->afterStateUpdated(function (Set $set, Get $get) use ($caller, $readonlyFields): void {
+                    $caller->recalculateReadonlyFields($set, $get, $readonlyFields);
+                });
+            }
+        } else {
+            $item = TextEntry::make($fieldname)
+                ->label($label)
+                ->inlineLabel()
+                ->default(Arr::get($this->data ?? [], $fieldname, 0));
+
+            // Formattazione specifica del modulo (es. Importo -> money)
+            if (Str::contains($label, 'Importo') && method_exists($item, 'money')) {
+                $item->money('EUR'); // Configurabile via $caller
+            }
+        }
+        $schema[] = $item;
+    }
+
+    return $schema;
+}
+```
+
+### Usage in Module Pages
+
+```php
+// In module page (es. CompilaIndennitaResponsabilita)
+protected function getFormSchema(): array
+{
+    return array_merge(
+        [
+            DatePicker::make('dal'),
+            DatePicker::make('al'),
+            Textarea::make('note')->columnSpanFull(),
+        ],
+        $this->getRatingsFormSchema($this) // Passa $this come $caller
+    );
+}
+
+// I metodi di calcolo specifici del modulo restano nel page
+public function getTot(Get $get): int { /* ... */ }
+public function getImportoMensileCalcolato(Get $get): float { /* ... */ }
+```
+
+### Why This Pattern
+- **DRY**: Elimina il loop duplicato `foreach ($this->ratings as $rating)`
+- **KISS**: Il page implementa solo i calcoli specifici (`getTot`, `getImporto*`)
+- **SOLID**: Il trait gestisce la logica di presentazione, il page la business logic
+- **Safe**: `$caller` è opzionale; il trait funziona anche senza
+- **Extensible**: I moduli possono iniettare comportamenti tramite `$caller` senza modificare il trait
+
+### Related Stories
+- 5.90: resolveRatingClass() vs getClassName()
+- 5.91: getRatingsFormSchema con parametro $caller
+
+## Features
+- 1-5 star ratings
+- Text reviews with moderation queue
+- Rating aggregation (average, count)
+- User-specific ratings (prevent duplicate)
+
+## Integration
+- Rateable trait for other models
+- Filament admin interface for moderation
+- Statistics dashboard widget
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev

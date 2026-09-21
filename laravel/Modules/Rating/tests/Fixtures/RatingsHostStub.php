@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\AbstractRatingsHost;
+use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
 
 /**
@@ -64,6 +65,25 @@ class RatingsHostStub extends AbstractRatingsHost
             $relation,
             $inverse,
         );
+    }
+
+    /**
+     * Bypassa `Rating::getClassName()` (risoluzione via `debug_backtrace`, verificata
+     * fragile/ambientale su questa macchina — vedi nota nel test) quando il test forza
+     * esplicitamente la relazione, stesso pattern di `morphToManyX()` sopra.
+     *
+     * @return MorphToMany<BaseRating, static, MorphPivot, 'pivot'>
+     */
+    public function ratings(): MorphToMany
+    {
+        if ($this->forcedMorph instanceof MorphToMany) {
+            /** @var MorphToMany<BaseRating, static, MorphPivot, 'pivot'> $forcedMorph */
+            $forcedMorph = $this->forcedMorph;
+
+            return $forcedMorph;
+        }
+
+        return parent::ratings();
     }
 
     /**

@@ -28,3 +28,7 @@
 ---
 
 **Ultimo Aggiornamento**: 2026-03-24
+
+- [Criteri a scelta: opzioni in JSON, figli del criterio, o altro](criteri-a-scelta-multipla.md)
+
+- [Il tipo di campo di un criterio: intero, decimale, select, radio, testo libero](tipo-di-campo-del-criterio.md)

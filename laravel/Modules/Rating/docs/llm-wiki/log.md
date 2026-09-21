@@ -1,3 +1,12 @@
+---
+title: "Rating Activity Log"
+type: guide
+tags: [log, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "log"
+---
+
 # Rating Activity Log
 
 > **Module**: Rating
@@ -8,7 +17,11 @@
 
 ## [2026-04-15] maintenance | Initial wiki setup
 - Created: llm-wiki/ directory structure
+<<<<<<< HEAD
+- Created: agents.md (agent instructions)
+=======
 - Created: AGENTS.md (agent instructions)
+>>>>>>> laraxot/dev
 - Created: index.md (content catalog)
 - Created: log.md (this file)
 - Directories initialized:

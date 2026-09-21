@@ -1,3 +1,14 @@
+---
+title: "Rating System - Architecture Analysis & Fixes"
+type: concept
+tags: [rating, architecture]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "rating architecture"
+related:
+  - "./readme-en.md"
+---
+
 # Rating System - Architecture Analysis & Fixes
 
 **Module**: Rating (Agnostic)  

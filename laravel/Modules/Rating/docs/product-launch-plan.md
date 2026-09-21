@@ -1,3 +1,14 @@
+---
+title: "Rating - Product Launch Plan"
+type: guide
+tags: [product, launch, plan, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "product launch plan"
+related:
+  - "./product-requirements.md"
+---
+
 # Rating - Product Launch Plan
 
 > Piano di lancio. Modulo.

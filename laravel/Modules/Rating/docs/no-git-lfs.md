@@ -91,6 +91,7 @@ CHANGELOG.md export-ignore
 LFS di intervenire. `!filter` annulla per path qualunque `filter.lfs` ereditato.
 
 Serve davvero: su questa macchina `filter.lfs.*` e' installato a livello **system**
+(`git config --system`) e serve ad altri progetti — `<repo progetto>` ha 38 file
 (`git config --system`) e serve ad altri progetti — `base_predict_fila5` ha 38 file
 legittimamente in LFS. Non si disinstalla il pacchetto. Cio' che tiene questo monorepo
 fuori da LFS non e' l'assenza del filtro, e' il `!filter` del prototipo.

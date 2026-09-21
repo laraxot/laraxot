@@ -5,14 +5,10 @@ declare(strict_types=1);
 namespace Modules\Rating\Models\Traits;
 
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Modules\Rating\Models\Like;
 use Modules\Xot\Contracts\UserContract;
 
-/**
- * @phpstan-require-extends Model
- */
 trait HasLikes
 {
     /**
@@ -25,7 +21,7 @@ trait HasLikes
 
     public function likedBy(?UserContract $user): void
     {
-        if ($user === null) {
+        if (null === $user) {
             return;
         }
 
@@ -36,12 +32,12 @@ trait HasLikes
 
     public function dislikedBy(?UserContract $user): void
     {
-        if ($user === null) {
+        if (null === $user) {
             return;
         }
 
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
-        if ($where !== null) {
+        if (null !== $where) {
             $where->delete();
         }
 
@@ -53,9 +49,8 @@ trait HasLikes
      * eager loading of the polymorphic relationship will fail on queued jobs.
      *
      * @see https://github.com/laravelio/laravel.io/issues/350
-     *
-     * @return MorphMany<Like, $this>
      */
+    /** @return MorphMany<Like, $this> */
     public function likesRelation(): MorphMany
     {
         return $this->morphMany(Like::class, 'likesRelation', 'likeable_type', 'likeable_id');
@@ -63,7 +58,7 @@ trait HasLikes
 
     public function isLikedBy(?UserContract $user): bool
     {
-        if ($user === null) {
+        if (null === $user) {
             return false;
         }
 
@@ -72,11 +67,7 @@ trait HasLikes
 
     protected static function bootHasLikes(): void
     {
-        static::deleting(static function (Model $model): void {
-            if (! $model instanceof self) {
-                return;
-            }
-
+        static::deleting(static function (self $model): void {
             $model->likesRelation()->delete();
             $model->unsetRelation('likesRelation');
         });

@@ -121,9 +121,9 @@ abstract class BaseRatingMorph extends BaseMorphPivot
      */
     public function user(): BelongsTo
     {
-        $userClass = XotData::make()->getUserClass();
+        $user_class = XotData::make()->getUserClass();
 
-        return $this->belongsTo($userClass, 'user_id');
+        return $this->belongsTo($user_class, 'user_id');
     }
 
     /**
@@ -131,9 +131,9 @@ abstract class BaseRatingMorph extends BaseMorphPivot
      */
     public function profile(): BelongsTo
     {
-        $profileClass = XotData::make()->getProfileClass();
+        $profile_class = XotData::make()->getProfileClass();
 
-        return $this->belongsTo($profileClass, 'user_id', 'user_id');
+        return $this->belongsTo($profile_class, 'user_id', 'user_id');
     }
 
     /**

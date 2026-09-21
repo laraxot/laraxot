@@ -1,3 +1,14 @@
+---
+title: "Conflict Resolution — Module Rating"
+type: guide
+tags: [conflict, resolution, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "conflict resolution"
+related:
+  - "./contracts-naming.md"
+---
+
 # Conflict Resolution — Module Rating
 
 ## Summary

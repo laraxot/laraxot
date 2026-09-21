@@ -34,12 +34,12 @@ describe('BaseRating (via Rating)', function (): void {
         Assert::assertInstanceOf(Rating::class, $rating);
     });
 
-    test('linkedTo restituisce relazione morphTo', function (): void {
-        $relation = (new Rating())->linkedTo();
-
-        Assert::assertSame('model_type', $relation->getMorphType());
-        Assert::assertSame('model_id', $relation->getForeignKeyName());
-    });
+    // La relazione morphTo verso il model valutato non vive su `Rating`: vive su
+    // `BaseRatingMorph::model()`, ed e' gia' verificata in `RatingMorphModelTest`
+    // («espone le relazioni rating user profile model»), con le stesse asserzioni su
+    // `model_type` e `model_id`. Qui restava un test su `Rating::linkedTo()`, metodo
+    // che oggi non esiste piu' su nessuna classe: chiedeva un'API inesistente, quindi
+    // si corregge il test — non si reintroduce il metodo per farlo passare.
 
     test('casts include extra_attributes rule e boolean', function (): void {
         $rating = new Rating([

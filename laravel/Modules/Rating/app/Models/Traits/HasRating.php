@@ -4,28 +4,22 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Traits;
 
+use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 
-/**
- * Trait HasRating.
- */
-/** @phpstan-ignore trait.unused */
+/** @phpstan-require-extends Model */
+/** @phpstan-ignore trait.unused (verificato zero consumer reale il 2026-09-01 — solo riferimenti a `HasRatingContract`/namespace `Actions\HasRating\*`, non `use HasRating;`) */
 trait HasRating
 {
-    /** @return MorphToMany<Rating, $this, RatingMorph, 'pivot'> */
+    /** @phpstan-return MorphToMany<Rating, $this, MorphPivot, 'pivot'> */
     public function ratings(): MorphToMany
     {
-        $pivot = new RatingMorph();
-
-        return $this->morphToMany(Rating::class, 'model', $pivot->getTable())
-            ->using(RatingMorph::class)
-            ->withPivot($pivot->getFillable())
-            ->withTimestamps();
+        return $this->morphToManyX(Rating::class, 'model');
     }
 
-    /** @return array<int|string, string> */
+    /** @return array<int, string> */
     public function getOptionRatingsIdTitle(): array
     {
         $options = [];
@@ -34,13 +28,13 @@ trait HasRating
                 continue;
             }
 
-            $options[$rating->id] = (string) $rating->title;
+            $options[(int) $rating->id] = (string) $rating->title;
         }
 
         return $options;
     }
 
-    /** @return array<int|string, string> */
+    /** @return array<int, string> */
     public function getOptionRatingsIdColor(): array
     {
         $options = [];
@@ -49,13 +43,15 @@ trait HasRating
                 continue;
             }
 
-            $options[$rating->id] = (string) $rating->color;
+            $options[(int) $rating->id] = (string) $rating->color;
         }
 
         return $options;
     }
 
-    /** @return array<int, array<string, mixed>> */
+    /**
+     * @return array<int, non-empty-array<string, mixed>>
+     */
     public function getArrayRatingsWithImage(): array
     {
         $ratings = $this
@@ -65,11 +61,11 @@ trait HasRating
             ->get();
         // ->toArray()
 
-        $ratingsArray = [];
+        /** @var array<int, non-empty-array<string, mixed>> $ratings_array */
+        $ratings_array = [];
         foreach ($ratings as $key => $rating) {
             /** @var array<string, mixed> $rowData */
             $rowData = $rating->toArray();
-            $ratingsArray[$key] = $rowData;
             // Use in-memory SVG icons instead of fetching external images
             // Default SVG icons based on rating position
             $svgIcons = [
@@ -79,14 +75,15 @@ trait HasRating
             ];
 
             // Use media if it already exists, otherwise don't try to create it
-            $ratingsArray[$key]['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
+            $rowData['image'] = method_exists($rating, 'getFirstMediaUrl') ? $rating->getFirstMediaUrl('rating') : null;
 
             // Add SVG icon directly to the array
-            $ratingsArray[$key]['svg_icon'] = $svgIcons[$key % count($svgIcons)];
-            $ratingsArray[$key]['effect'] = false;
+            $rowData['svg_icon'] = $svgIcons[$key % count($svgIcons)];
+            $rowData['effect'] = false;
+            $ratings_array[$key] = $rowData;
         }
 
-        return $ratingsArray;
+        return $ratings_array;
     }
 
     public function getBettingUsers(): int
@@ -97,55 +94,55 @@ trait HasRating
             ->count('user_id');
     }
 
-    /** @return array<int|string, float|int> */
+    /** @return array<int, float> */
     public function getRatingsPercentageByUser(): array
     {
-        $ratingsOptions = $this->getOptionRatingsIdTitle();
+        $ratings_options = $this->getOptionRatingsIdTitle();
         $result = [];
-        foreach (array_keys($ratingsOptions) as $key) {
-            $totalCount = RatingMorph::where('model_id', $this->id)
+        foreach (array_keys($ratings_options) as $key) {
+            $b = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->count();
-            if (0 === $totalCount) {
-                $totalCount = 1;
+            if (0 === $b) {
+                $b = 1;
             }
 
-            $matchCount = RatingMorph::where('model_id', $this->id)
+            $a = RatingMorph::where('model_id', $this->id)
                 ->where('user_id', '!=', null)
                 ->where('rating_id', $key)
                 ->count();
-            $result[$key] = round(100 * $matchCount / $totalCount, 0);
+            $result[$key] = round(100 * $a / $b, 0);
         }
 
         return $result;
     }
 
-    /** @return array<int|string, float|int> */
+    /** @return array<int, float> */
     public function getRatingsPercentageByVolume(): array
     {
-        $ratingsOptions = $this->getOptionRatingsIdTitle();
+        $ratings_options = $this->getOptionRatingsIdTitle();
         $result = [];
 
-        $totalVolume = $this->getVolumeCredit();
-        if ($totalVolume <= 0) {
-            $totalVolume = 1;
+        $total_volume = $this->getVolumeCredit();
+        if ($total_volume <= 0) {
+            $total_volume = 1;
         }
 
-        foreach (array_keys($ratingsOptions) as $key) {
+        foreach (array_keys($ratings_options) as $key) {
             $volume = $this->getVolumeCredit(is_int($key) ? $key : (int) $key);
-            $result[$key] = round($volume * 100 / $totalVolume, 0);
+            $result[$key] = round($volume * 100 / $total_volume, 0);
         }
 
         return $result;
     }
 
-    public function getVolumeCredit(?int $ratingId = null): float
+    public function getVolumeCredit(?int $rating_id = null): float
     {
         $query = RatingMorph::where('model_id', $this->id)
             ->where('user_id', '!=', null);
 
-        if (null !== $ratingId) {
-            $query->where('rating_id', $ratingId);
+        if (null !== $rating_id) {
+            $query->where('rating_id', $rating_id);
         }
 
         return (float) $query->sum('points');

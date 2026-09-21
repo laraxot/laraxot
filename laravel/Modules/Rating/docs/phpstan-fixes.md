@@ -1,3 +1,14 @@
+---
+title: "PHPStan Fixes - Modulo Rating"
+type: guide
+tags: [phpstan, fixes, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "phpstan fixes"
+related:
+  - "./ponytail-audit-over-engineering.md"
+---
+
 # PHPStan Fixes - Modulo Rating
 
 ## ✅ Status: COMPLETATO - 0 Errori
@@ -118,5 +129,26 @@ return $result;
 ---
 
 **Status**: ✅ COMPLETATO  
-**Conformità**: ✅ Laraxot + Filament 4 + PHP 8.3 + PHPStan Max  
+**Conformità**: ✅ Laraxot + Filament 5 + PHP 8.3 + PHPStan Max  
 **Errori Totali**: 0 ✅
+
+---
+
+## 📊 Verifica 2026-07-07
+
+Comando: `php -d memory_limit=2048M vendor/bin/phpstan analyse Modules/Rating --no-progress`
+
+**Errori di codice reali**: 0 ✅
+
+**Residuo (non correggibile, non è codice Rating)**: PHPStan segnala 2 errori
+`Ignored error pattern ... was not matched in reported errors` per i pattern
+globali `#Cannot cast mixed to ...#` e `larastan.noEnvCallsOutsideOfConfig`
+definiti in `phpstan.neon`. Sono falsi positivi da **scope parziale**: quei
+pattern matchano errori che esistono in altri moduli, non in Rating (verificato:
+nessun `env()` e nessun cast problematico in `Modules/Rating`). Stesso
+meccanismo documentato in
+[phpstan-partial-scope-false-positives](../../Xot/docs/wiki/concepts/phpstan-partial-scope-false-positives.md)
+per un pattern analogo (`@mixin contains unknown class`).
+
+Non risolvibile senza modificare `phpstan.neon` (vietato dal mandato). Sparisce
+eseguendo l'analisi sull'intero albero `Modules/`.

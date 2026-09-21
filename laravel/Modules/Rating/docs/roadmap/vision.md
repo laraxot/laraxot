@@ -1,3 +1,12 @@
+---
+title: "Visione del Modulo Rating"
+type: guide
+tags: [vision, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "vision"
+---
+
 # Visione del Modulo Rating
 
 Il modulo `Rating` ha l'obiettivo di fornire un'infrastruttura **agnostica e riusabile** per la gestione di criteri di valutazione e punteggi, indipendente dal dominio applicativo specifico.

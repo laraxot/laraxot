@@ -1,3 +1,14 @@
+---
+title: "Code Quality Analysis - Rating Module"
+type: concept
+tags: [code, quality, analysis, rating]
+created: 2026-07-14
+updated: 2026-07-14
+qmd: "code quality analysis"
+related:
+  - "./code-redundancy-audit.md"
+---
+
 # Code Quality Analysis - Rating Module
 
 **Data Analisi**: 2025-01-22  
