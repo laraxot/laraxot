@@ -24,7 +24,7 @@ use RuntimeException;
 uses(TestCase::class)->group('no-media-db');
 
 test('MediaForm espone i campi anagrafici del media', function (): void {
-    $schema = app(MediaForm::class)->getFormSchema();
+    $schema = (new MediaForm())->getFormSchema();
 
     Assert::assertSame(
         ['name', 'file_name', 'mime_type', 'disk', 'size', 'collection_name'],
@@ -36,12 +36,12 @@ test('MediaForm espone i campi anagrafici del media', function (): void {
 test('TemporaryUploadForm espone file folder e expires_at', function (): void {
     Assert::assertSame(
         ['file', 'folder', 'expires_at'],
-        array_keys(app(TemporaryUploadForm::class)->getFormSchema()),
+        array_keys((new TemporaryUploadForm())->getFormSchema()),
     );
 });
 
 test('HasMediaForm espone una section con name', function (): void {
-    $schema = app(HasMediaForm::class)->getFormSchema();
+    $schema = (new HasMediaForm())->getFormSchema();
 
     Assert::assertNotSame([], $schema);
 });

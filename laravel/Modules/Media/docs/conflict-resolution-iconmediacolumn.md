@@ -90,4 +90,8 @@ Il file `Modules/Media/app/Filament/Tables/Columns/IconMediaColumn.php` presenta
 - [filament_table_actions.md](filament_table_actions.md)
 - [Modules/Media/docs/](../docs/)
 
+<<<<<<< HEAD
 *Ultimo aggiornamento: 29 luglio 2025*
+=======
+*Ultimo aggiornamento: 29 luglio 2025*
+>>>>>>> laraxot/dev

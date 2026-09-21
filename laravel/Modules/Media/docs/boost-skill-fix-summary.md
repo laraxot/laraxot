@@ -61,4 +61,8 @@ Critical dependencies for Media module:
 1. **Media operations require Laravel services**
    - Filesystem needs framework
    - Storage needs config
+<<<<<<< HEAD
    - Cannot operate in isolation
+=======
+   - Cannot operate in isolation
+>>>>>>> laraxot/dev

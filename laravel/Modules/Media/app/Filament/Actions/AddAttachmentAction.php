@@ -45,7 +45,7 @@ class AddAttachmentAction extends XotBaseAction
     /**
      * @return array<int, Radio|TextInput|BaseFileUpload|FileUpload>
      */
-    public function getFormSchema(bool $asset = true): array
+    public static function getFormSchema(bool $asset = true): array
     {
         Assert::integer($max_size = config('media-library.max_file_size'));
 

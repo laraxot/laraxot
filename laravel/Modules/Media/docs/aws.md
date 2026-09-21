@@ -9,4 +9,8 @@ qmd: "aws"
 related:
   - "./webm.md"
 ---
+<<<<<<< HEAD
 https://github.com/kefabean/lambda-transcoder/blob/master/transcoder/transcode.js
+=======
+https://github.com/kefabean/lambda-transcoder/blob/master/transcoder/transcode.js
+>>>>>>> laraxot/dev

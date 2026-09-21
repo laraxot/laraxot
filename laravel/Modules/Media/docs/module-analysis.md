@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Media Module - Comprehensive Analysis"
 module: "Media"
@@ -15,7 +16,7 @@ related:
 **Module Name**: Media  
 **Type**: Media Management Module  
 **Status**: ✅ Active  
-**Framework**: Laravel 13.x + Filament 4.x  
+**Framework**: Laravel 12.x + Filament 4.x  
 **Library Integration**: Spatie Media Library  
 **Language**: Multi-language (IT/EN/DE)  
 
@@ -104,3 +105,7 @@ The Media module provides comprehensive media file management:
 - Advanced search
 - Metadata management
 - Performance optimization
+=======
+- Performance optimization
+- Performance optimization
+>>>>>>> laraxot/dev

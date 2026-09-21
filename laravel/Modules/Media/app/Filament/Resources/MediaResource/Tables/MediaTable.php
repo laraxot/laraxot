@@ -93,14 +93,4 @@ class MediaTable extends XotBaseResourceTable
                 ->openUrlInNewTab(true),
         ];
     }
-
-    /**
-     * @return array<string, Action|ActionGroup>
-     */
-    public function getTableBulkActions(): array
-    {
-        return [
-            'delete' => DeleteAction::make(),
-        ];
-    }
 }

@@ -65,20 +65,3 @@ test('updated_at is the only column hidden behind the toggle', function (): void
     Assert::assertFalse($columns['created_at']->isToggledHiddenByDefault());
 });
 
-// Deprecated: getTableActions() moved to Resource.table() in Filament 5
-// test('the row actions are keyed by their own name, with one documented deviation', function (): void {
-//     $actions = (new MediaTable())->getTableActions();
-//     Assert::assertArrayHasKey('view', $actions);
-//     Assert::assertInstanceOf(ViewAction::class, $actions['view']);
-//     Assert::assertArrayHasKey('view_attachment', $actions);
-//     Assert::assertInstanceOf(Action::class, $actions['view_attachment']);
-//     Assert::assertArrayHasKey('delete', $actions);
-//     Assert::assertInstanceOf(DeleteAction::class, $actions['delete']);
-//     // Deviazione reale: la chiave è 'download' ma l'azione si chiama 'download_attachment'.
-//     Assert::assertArrayHasKey('download', $actions);
-//     $download = $actions['download'];
-//     Assert::assertInstanceOf(Action::class, $download);
-//     Assert::assertSame('download_attachment', $download->getName());
-//     Assert::assertArrayHasKey('convert', $actions);
-//     Assert::assertInstanceOf(Action::class, $actions['convert']);
-// });

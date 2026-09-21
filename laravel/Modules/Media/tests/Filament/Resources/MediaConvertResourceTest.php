@@ -11,4 +11,13 @@ use Modules\Media\Tests\TestCase;
 
 uses(TestCase::class);
 
+test('get form schema returns expected components', function (): void {
+    $form = (new \Modules\Media\Filament\Resources\MediaConvertResource\Schemas\MediaConvertForm())->getFormSchema();
 
+    expect($form)->not->toBeEmpty();
+
+    $componentClasses = array_map(get_class(...), $form);
+
+    expect($componentClasses)->toContain(Radio::class);
+    expect($componentClasses)->toContain(TextInput::class);
+});

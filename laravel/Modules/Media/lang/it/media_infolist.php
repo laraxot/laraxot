@@ -14,16 +14,5 @@ return [
         'mime_type' => ['label' => 'mime_type'],
         'disk' => ['label' => 'disk'],
         'size' => ['label' => 'size'],
-        'url' => ['label' => 'url'],
-        'human_readable_size' => ['label' => 'human_readable_size'],
-        'created_at' => ['label' => 'created_at'],
-        'entry_conversions' => ['label' => 'entry_conversions'],
-        'src' => ['label' => 'src'],
-    ],
-    'sections' => [
-        'empty' => ['label' => '', 'heading' => ''],
-    ],
-    'actions' => [
-        'convert' => ['label' => 'convert', 'icon' => 'convert', 'tooltip' => 'convert'],
     ],
 ];

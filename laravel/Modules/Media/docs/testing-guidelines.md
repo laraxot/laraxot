@@ -38,7 +38,7 @@ declare(strict_types=1);
 
 use Modules\Media\Models\Media;
 use Modules\Media\Models\MediaCollection;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 

@@ -18,10 +18,11 @@ class MediaConvertResource extends XotBaseResource
 {
     protected static ?string $model = MediaConvert::class;
 
+    
+
     /**
      * @return array<string, mixed>
      */
-    #[Override]
     public static function getRelations(): array
     {
         return [];
@@ -30,7 +31,6 @@ class MediaConvertResource extends XotBaseResource
     /**
      * @return array<string, mixed>
      */
-    #[Override]
     public static function getPages(): array
     {
         return [

@@ -22,26 +22,11 @@ class ListTemporaryUploads extends XotBaseListRecords
     /**
      * @return array<string, TextColumn>
      */
-    #[Override]
-    public function getTableColumns(): array
-    {
-        return [
-            'folder' => TextColumn::make('folder')
-                ->searchable()
-                ->sortable()
-                ->wrap(),
-            'filename' => TextColumn::make('filename')
-                ->searchable()
-                ->sortable()
-                ->wrap(),
-            'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
-        ];
-    }
+    
 
     /**
      * @return array<string, SelectFilter>
      */
-    #[Override]
     public function getTableFilters(): array
     {
         return [
@@ -55,7 +40,6 @@ class ListTemporaryUploads extends XotBaseListRecords
     /**
      * @return array<string, ViewAction|EditAction|DeleteAction>
      */
-    #[Override]
     public function getTableActions(): array
     {
         return [
@@ -68,7 +52,6 @@ class ListTemporaryUploads extends XotBaseListRecords
     /**
      * @return array<string, DeleteBulkAction>
      */
-    #[Override]
     public function getTableBulkActions(): array
     {
         return [

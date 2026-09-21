@@ -27,4 +27,10 @@
 
 ---
 
+<<<<<<< HEAD
 **Ultimo Aggiornamento**: 2026-03-24
+=======
+## Dependency Intelligence
+
+- [Dependency intelligence](dependency-intelligence.md)
+>>>>>>> laraxot/dev

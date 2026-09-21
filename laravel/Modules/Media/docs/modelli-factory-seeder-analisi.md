@@ -10,6 +10,7 @@ related:
   - "./webm.md"
 ---
 
+
 # Analisi Modelli, Factory e Seeder - Modulo Media
 
 ## Panoramica
@@ -44,7 +45,11 @@ Questo documento analizza tutti i modelli del modulo Media verificando la presen
 - **Versioning**: Gestione versioni multiple file
 
 **Relazioni Business Logic**:
+<<<<<<< HEAD
 - **Dominio sanitario**: Documenti pazienti, referti medici, immagini profilo
+=======
+- **SaluteOra**: Documenti pazienti, referti medici, immagini profilo
+>>>>>>> laraxot/dev
 - **User**: Avatar utenti, documenti identità
 - **Cms**: Immagini contenuti, allegati pagine
 - **Notify**: Allegati notifiche email
@@ -147,12 +152,12 @@ Tutti i modelli attivi hanno le factory corrispondenti.
 - **Streaming**: Streaming file grandi
 
 ### File Processing
-- **Image Processing**:
+- **Image Processing**: 
   - Resize, crop, rotate
   - Filters e effetti
   - Format conversion
   - Quality optimization
-
+  
 - **Document Processing**:
   - PDF generation
   - Text extraction
@@ -207,7 +212,11 @@ Tutti i file factory devono essere validati con PHPStan livello 9:
 - [Performance Optimization](./performance_optimization.md)
 
 ### Moduli Collegati
+<<<<<<< HEAD
 - Modulo sanitario legacy - Documenti medici
+=======
+- [SaluteOra Module](../../SaluteOra/docs/modelli_factory_seeder_analisi.md) - Documenti medici
+>>>>>>> laraxot/dev
 - [User Module](../../User/docs/modelli_factory_seeder_analisi.md) - Avatar e documenti utente
 - [Cms Module](../../Cms/docs/modelli_factory_seeder_analisi.md) - Contenuti multimediali
 - [Notify Module](../../Notify/docs/modelli_factory_seeder_analisi.md) - Allegati notifiche

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Task 001: Implement Media Library Management System
 
 ## Description
@@ -244,4 +245,6 @@ The Media module needs a robust media management system for handling images, vid
 ---
 
 **Status**: Pending
+=======
+>>>>>>> laraxot/dev
 **Assignee**: TBD

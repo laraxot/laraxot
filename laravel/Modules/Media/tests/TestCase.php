@@ -24,6 +24,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\file_get_contents;
+use Modules\User\Models\User;
 
 /**
  * Base test case for Media module.

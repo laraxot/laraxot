@@ -138,6 +138,7 @@ Il modulo utilizza l'inversion of control tramite:
 - README.md - Documentazione di base
 - index.md - Bridge indice
 - /docs/ root - Standard di documentazione globali
+<<<<<<< HEAD
 
 ---
 
@@ -188,3 +189,5 @@ Media module provides file handling, storage, and processing infrastructure for 
 ## Quality Gates
 - **PHPStan L10**: Pending verification
 - **Storage**: Tested with local/S3 drivers
+=======
+>>>>>>> laraxot/dev

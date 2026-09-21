@@ -86,14 +86,10 @@ v8-compile-cache-*
 .phpunit.result.cache
 error_log
 
-# ==============================================
-# LOG FILES
-*.log
 npm-debug.log*
 npm-debug.log
 yarn-error.log*
 lerna-debug.log*
-# LARAVEL SPECIFIC
 bootstrap/compiled.php
 app/storage/
 public/storage
@@ -103,181 +99,70 @@ public_html/hot
 storage/*.key
 .env
 .env.*
-!.env.example
-# ENVIRONMENT & CONFIGURATION
 Homestead.yaml
 Homestead.json
 /.vagrant
 /.idea
 .phpintel
-# GIT SPECIFIC
 .git-rewrite/
 .git-rewrite
 .git-blame-ignore-revs
-# SYSTEM FILES
 # =============================================
 .DS_Store
 .DS_Store?
 .Spotlight-V100
 .Trashes
 ._*
-.circleci
-.claude-audit
 ehthumbs.db
 Thumbs.db
 
-# ==============================================
-# BACKUP FILES
-# GIT SPECIFIC
-.git-rewrite/
-.git-rewrite
-.git-blame-ignore-revs
-# SYSTEM FILES
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-*.old
-*.old1
-*.old2
-*.backup
-*.backup.*
-*.backup-*
-*.backup_*
-*.bak
-*.bakcup
-*.new
-# DEVELOPMENT TOOLS
 .windsurf/
 .cursor/
-.devcontainer
 .devcontainer/
-.env
-.env.*
-.git-blame-ignore-revs
-.git-rewrite
-.git-rewrite/
-.kilocode
-.kiro
-.php-cs-fixer.cache
-.phpintel
 .phpstorm.meta.php
-.phpunit.result.cache
-.ralph
 .vscode/
-.windsurf/
-.kilocode
-.kiro
-.devcontainer
-.devcontainer/
-/.idea
-/.vagrant
-/build
-/build/
-/docs/vendor/
-/node_modules/
-/vendor/
-Homestead.json
-Homestead.yaml
-Thumbs.db
-_bmad-output
-_docs
 agentdb.rvf
-app/storage/
 archive/
-bashscripts
-bootstrap/compiled.php
-build/
-cache/
-composer.lock
 config/development.php
 config/local.php
 database/Factories_
 database/Factories_old
 database/Factories_old/
 
-# ==============================================
-# DOCUMENTATION CACHE
 docs/phpstan/
-docs/cache/
 docs/archive/
 docs/archive/**
-# OLD DIRECTORIES (LEGACY CLEANUP)
-# DEVELOPMENT TOOLS
-.windsurf/
-.cursor/
-.phpstorm.meta.php
 resources/views/Components_old/
 resources/views/Components_old
 database/Migrations_old/
 database/Migrations_old
-database/Migrations_old/
 database/Seeders_old
 database/Seeders_old/
 database_old
 database_old/
-dist/
 docs/**/*-[0-9].mdarchive/
-docs/archive/
-docs/archive/**
-docs/archived
-docs/cache/
-docs/legacy
-docs/phpstan/
-docs/workbench
-ehthumbs.db
-error_log
 lang/lang/
 laravel
 legacy/
-lerna-debug.log*
 
-# ==============================================
-# MODULE SPECIFIC - MEDIA
-# File di configurazione locale
-config/local.php
-config/development.php
-# File media temporanei
 media/temp/
 media/thumbnails/temp/
 media/uploads/temp/
 media_test_data.json
-node_modules/
-npm-debug.log
-npm-debug.log*
-package-lock.json
 phpinsights.php
 phpmd.ruleset.xml
 phpstan*
-public/hot
-public/storage
 public_html
-public_html/hot
-public_html/storage
 rector.php
-resources/views/Components_old
-resources/views/Components_old/
-scripts
-storage/*.key
 storage/media/
 storage/thumbnails/
-test-results
 test_media_files/
-tests/.claude-audit
 tests/AuditCoverage
 tests/AuditCoverage/
-v8-compile-cache-*
-vendor/
-yarn-error.log
-yarn-error.log*
-yarn.lock
 
 # Root quality tool configs forbidden in module root
 phpmd*
 
-# ==============================================
-# END OF MEDIA .GITIGNORE
 /.ai*
 /_bmad
 /bashscripts
@@ -291,39 +176,15 @@ phpmd*
 .opencode
 phpstan*-*
 phpmd*.*
-database/Seeders_old/
-database/Seeders_old
-database/Factories_old/
-database/Factories_old
-database/Factories_
-database_old/
-database_old
-# MODULE SPECIFIC - MEDIA
-# File di configurazione locale
-config/local.php
-config/development.php
-# File media temporanei
-media/temp/
-media/uploads/temp/
-media/thumbnails/temp/
-# Cache media
-storage/media/
-storage/thumbnails/
-# File di test media
-media_test_data.json
-test_media_files/
-# 🚫 File specifici del progetto
-*.fila2
-laravel
-public_html
-lang/lang/
-agentdb.rvf
-.vscode/
-tests/AuditCoverage
-# AI/TOOL SCAFFOLD — must never exist in module tree (see docs/wiki/rules/module-theme-root-cleanup.md)
-# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
-.cursor/
-.devcontainer/
-.windsurf/
-tests/AuditCoverage/
-graphify-out
+
+# Laraxot — forbidden at module/theme root (rector.php, phpinsights.php, .cursor, .windsurf, .vscode)
+/rector.php
+/phpinsights.php
+/.cursor
+/.cursor/
+/.windsurf
+/.windsurf/
+/.vscode
+/.vscode/
+.cursor~*
+.windsurf~*
