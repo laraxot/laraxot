@@ -20,6 +20,7 @@ discussions:
 
 - Mancanza grave: status git letto sulla root invece che sul `.git` del modulo. Isolamento: `git -C <path>` + `rev-parse --show-toplevel`. Iterare tutti i path di `gitmodules.ini`. Canon aggiornato: [no-git-submodules-module-repos.md](memories/no-git-submodules-module-repos.md), trigger map, `AGENTS.md`.
 - Inventario: `laravel/Themes/Sixteen` ha `.git/` e remote `laraxot/theme_sixteen_fila5` ma mancava da `gitmodules.ini` (working tree). Temi senza `.git` (TwentyOne, Meetup, Barthelemy) non vanno aggiunti.
+- Rebase in corso su User/Notify/Rating **abortiti** (rebase vietato; 486 pick residui su Rating). Merge `ort` + `-X theirs` dove la storia locale era un rewrite dello stesso lavoro remoto. Marker `<<<<<<<` committati puliti in User (PHP lint) e Rating (32 file PHP + gitignore/gitattributes). Notify: merge + igiene GSD/archive + PHP lint sul tree toccato. Push su `laraxot/dev`: User, Notify, Rating, Cms, Employee, Gdpr, root (`gitmodules.ini` + Sixteen). `git merge --abort` usato solo per uscire da un merge esploso, non come rollback di contenuto.
 
 ## 2026-09-21 (PHPStan Activity/Log/ListLogFilesActionTest)
 
