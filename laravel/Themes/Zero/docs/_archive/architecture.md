@@ -1,0 +1,1 @@
+- [Architettura Widget](../User/docs/widgets_structure.md)

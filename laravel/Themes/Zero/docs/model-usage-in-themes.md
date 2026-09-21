@@ -62,7 +62,11 @@ Widgets encapsulate both logic and data access, passing only the necessary data 
 
 namespace Modules\User\Filament\Widgets\Auth;
 
+<<<<<<< HEAD
 use Modules\User\Models\User;
+=======
+use Modules\Xot\Contracts\UserContract;
+>>>>>>> laraxot/dev
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 
 class LoginWidget extends XotBaseWidget
@@ -114,7 +118,11 @@ For Folio pages that need data, use route model binding or controller-like logic
 ```php
 <?php
 
+<<<<<<< HEAD
 use Modules\User\Models\User;
+=======
+use Modules\Xot\Contracts\UserContract;
+>>>>>>> laraxot/dev
 use function Laravel\Folio\{name, render};
 
 name('users.show');
@@ -133,7 +141,11 @@ render(fn (User $user) => view('pub_theme::pages.users.show', [
 ```
 
 **Key Points:**
+<<<<<<< HEAD
 - ✅ Import model from module: `use Modules\User\Models\User;`
+=======
+- ✅ Import model from module: `use Modules\Xot\Contracts\UserContract;`
+>>>>>>> laraxot/dev
 - ✅ Use route model binding for automatic loading
 - ✅ Pass data to view as variables
 - ❌ Never instantiate models directly in Blade templates
@@ -145,7 +157,11 @@ For data needed across multiple views (e.g., navigation, user info).
 **Service Provider (Modules/User/Providers/UserServiceProvider.php):**
 ```php
 use Illuminate\Support\Facades\View;
+<<<<<<< HEAD
 use Modules\User\Models\User;
+=======
+use Modules\Xot\Contracts\UserContract;
+>>>>>>> laraxot/dev
 
 public function boot(): void
 {
@@ -269,7 +285,11 @@ render(fn (User $user) => view('pub_theme::pages.users.show', [
 **✅ Use Folio for Simple Lists:**
 ```php
 // Folio page
+<<<<<<< HEAD
 use Modules\User\Models\User;
+=======
+use Modules\Xot\Contracts\UserContract;
+>>>>>>> laraxot/dev
 
 render(fn () => view('pub_theme::pages.users.index', [
     'users' => User::query()->latest()->paginate(20),
@@ -295,7 +315,11 @@ render(fn () => view('pub_theme::pages.users.index', [
 
 1. **Import Models from Modules**
    ```php
+<<<<<<< HEAD
    use Modules\User\Models\User;
+=======
+   use Modules\Xot\Contracts\UserContract;
+>>>>>>> laraxot/dev
    use Modules\Cms\Models\Post;
    ```
 
@@ -414,7 +438,11 @@ test('login widget provides form to theme view', function () {
 ### Test 2: Verify Folio Page Data Binding
 
 ```php
+<<<<<<< HEAD
 use Modules\User\Models\User;
+=======
+use Modules\Xot\Contracts\UserContract;
+>>>>>>> laraxot/dev
 
 test('user profile page displays user data', function () {
     $user = User::factory()->create(['name' => 'John Doe']);
@@ -517,7 +545,11 @@ use Modules\User\Models\CustomUser;  // ✅ NEW
 
 **Solution:** Import at top of Folio page or pass via widget:
 ```php
+<<<<<<< HEAD
 use Modules\User\Models\User;
+=======
+use Modules\Xot\Contracts\UserContract;
+>>>>>>> laraxot/dev
 ```
 
 ### Problem: "Connection not found" error
