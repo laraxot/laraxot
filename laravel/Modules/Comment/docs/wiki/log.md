@@ -1,3 +1,7 @@
+## [2026-09-25] phpstan | Notification mailView() view-string fix
+- `ApprovedCommentNotification.php` + `PendingCommentNotification.php`: replaced `implode()` + `view()->exists()` pattern with direct `view-string` literal and `@var view-string` annotation.
+- Cleared `method.impossibleType` (Factory::exists always-false) and `return.type` (string&view-string) errors.
+
 ## [2026-06-29] boundary | Comment → User (DIP) — round 2
 
 - Index wiki + `depends-on-user-module.md` (manifest User senza Comment)

@@ -36,10 +36,7 @@ class PendingCommentNotification extends Notification implements ShouldQueue
 
         $config = CommentConfigData::make();
         $view = implode('.', ['comment::mail', 'pending-comment-notification']);
-        if (! view()->exists($view)) {
-            throw new \LogicException("Comment notification view [{$view}] does not exist.");
-        }
-        /** @phpstan-var view-string $view */
+        self::assertMailViewExists($view);
 
         return (new MailMessage)
             ->from(
@@ -51,6 +48,14 @@ class PendingCommentNotification extends Notification implements ShouldQueue
                 'comment' => $this->comment,
                 'topLevelComment' => $this->comment->topLevel(),
             ]);
+    }
+
+    /** @phpstan-assert view-string $view */
+    private static function assertMailViewExists(string $view): void
+    {
+        if (! view()->exists($view)) {
+            throw new \LogicException("Comment notification view [{$view}] does not exist.");
+        }
     }
 
     public static function sendTo(Closure $sendTo): void

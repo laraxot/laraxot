@@ -33,8 +33,9 @@ class ApprovedCommentNotification extends Notification implements ShouldQueue
         unset($notifiable);
 
         $config = CommentConfigData::make();
+        $view = implode('.', ['comment::mail', 'approved-comment-notification']);
+        self::assertMailViewExists($view);
         /** @var view-string $view */
-        $view = 'comment::mail.approved-comment-notification';
 
         return (new MailMessage)
             ->from(
@@ -47,6 +48,14 @@ class ApprovedCommentNotification extends Notification implements ShouldQueue
                 'commentator' => $this->commentator,
                 'topLevelComment' => $this->comment->topLevel(),
             ]);
+    }
+
+    /** @phpstan-assert view-string $view */
+    private static function assertMailViewExists(string $view): void
+    {
+        if (! view()->exists($view)) {
+            throw new \LogicException("Comment notification view [{$view}] does not exist.");
+        }
     }
 
 }

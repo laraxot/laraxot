@@ -160,3 +160,11 @@ module: "Activity"
 - Secondo audit alle linee guida: story anche in Activity, registro `sprint-status.yaml` aggiornato; scostamenti aperti (CSS in linea, TestCase, PHPMD/PHPInsights, chiavi lang) elencati nel concept.
 - Classi base di Xot: usata `XotBasePage` per `LogViewer`; per Action, Data ed eccezione non c'è una base applicabile (vedi il concept). Unico scostamento: i test usano `Tests\TestCase` della root e non il `TestCase` del modulo (manca `database/test_data.sqlite`).
 - Dettagli: [concepts/log-viewer-page-no-ssh.md](concepts/log-viewer-page-no-ssh.md), story [quaeris-admin-log-viewer-no-ssh](../../../Quaeris/docs/stories/quaeris-admin-log-viewer-no-ssh.md).
+
+---
+
+## [2026-09-25] phpstan | CanPaginate template covariant fix
+- `app/Filament/Pages/Concerns/CanPaginate.php`: added `@template TModel of Model` to `paginateQuery()` so callers passing `Builder<Activity>` satisfy the `Builder<Model>` parameter (template covariance).
+- `tests/Fixtures/CanPaginateHarness.php` + `tests/fixtures/CanPaginateHarness.php`: aligned `exposePaginateQuery()` PHPDoc to `Builder<Model>` (removed own `@template` that shadowed the trait's).
+- `app/Filament/Pages/ListLogActivities.php`: added `@var LengthAwarePaginator<int, Activity>` after the instanceof check to satisfy return-type covariance.
+- Cleared 6 `argument.type` / `return.type` errors.

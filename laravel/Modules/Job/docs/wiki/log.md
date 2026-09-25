@@ -25,3 +25,9 @@ module: "Job"
 - Created module index.md
 - Ready for on-demand loading via QMD
 
+
+---
+
+## [2026-09-25] phpstan | TaskBusinessLogicTest staticMethod.alreadyNarrowedType fix
+- `tests/Feature/TaskBusinessLogicTest.php`: replaced `Assert::assertSame(1, $task->is_active)` after `update(['is_active' => 1])` with `$reactivatedTask = $task->fresh()` + `Assert::assertNotNull()` + `Assert::assertSame(1, $reactivatedTask->is_active)` to avoid the "already narrowed type" false positive.
+- Cleared `staticMethod.alreadyNarrowedType` error.

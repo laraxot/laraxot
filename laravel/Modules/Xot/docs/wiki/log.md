@@ -466,3 +466,9 @@ Create [issue #112](https://github.com/laraxot/module_xot_fila5/issues/112) e [d
 - Richiesta successiva dell'utente, stesso giorno: poter anche vedere/modificare `NETFUN_TOKEN` dalla stessa pagina (verifica di cosa c'è già in produzione, senza SSH). Aggiunta proprietà `netfun_token` a `EnvData` e `TextInput` (non `Select`: valore libero fornito dal provider) a `EnvWidget`, anch'esso attivato in `Notify\SettingPage`. Compare già valorizzato al caricamento della pagina — `mount()` carica sempre `$_ENV` corrente nel form, nessun lavoro aggiuntivo richiesto per la visualizzazione.
 - Documentato il meccanismo generale (mai descritto prima): [concepts/env-widget-no-ssh-env-editor.md](concepts/env-widget-no-ssh-env-editor.md) — come aggiungere una variabile editabile, e il passo successivo obbligato (`config:cache` via `ArtisanCommandsManager`, già disponibile) se la config è cache-ata in produzione.
 - PHPStan pulito sui 3 file toccati (`EnvData.php`, `EnvWidget.php`, `Notify\SettingPage.php`), `php -l` ok. Nessuna verifica end-to-end in produzione — i valori vanno ancora selezionati/salvati dall'utente dopo il deploy.
+
+---
+
+## [2026-09-25] phpstan | XotForkedInvoke is_int alreadyNarrowedType fix
+- `tests/XotForkedInvoke.php`: removed redundant `is_int($status)` check inside `if ($res > 0)` block since `$status` is already typed as `int` from `pcntl_waitpid()`.
+- Cleared `function.alreadyNarrowedType` error.
