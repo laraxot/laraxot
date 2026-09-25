@@ -92,7 +92,7 @@ trait HasCommonScopes
      * @param  Builder<static>  $query
      * @return Builder<static>
      */
-    public function scopeCreatedAfter(Builder $query, mixed $date): Builder
+    public function scopeCreatedAfter(Builder $query, \DateTimeInterface|string|int $date): Builder
     {
         return $query->where('created_at', '>=', $date);
     }
@@ -103,7 +103,7 @@ trait HasCommonScopes
      * @param  Builder<static>  $query
      * @return Builder<static>
      */
-    public function scopeCreatedBefore(Builder $query, mixed $date): Builder
+    public function scopeCreatedBefore(Builder $query, \DateTimeInterface|string|int $date): Builder
     {
         return $query->where('created_at', '<=', $date);
     }
@@ -114,7 +114,7 @@ trait HasCommonScopes
      * @param  Builder<static>  $query
      * @return Builder<static>
      */
-    public function scopeUpdatedAfter(Builder $query, mixed $date): Builder
+    public function scopeUpdatedAfter(Builder $query, \DateTimeInterface|string|int $date): Builder
     {
         return $query->where('updated_at', '>=', $date);
     }

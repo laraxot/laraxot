@@ -20,7 +20,5 @@ class XotAction
         return Tenant::class;
     }
 
-    public function execute(): void
-    {
-    }
+    public function execute(): void {}
 }

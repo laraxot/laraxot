@@ -1,17 +1,3 @@
-<<<<<<< HEAD
----
-title: "Fasi di sviluppo - Job Module"
-module: "Job"
-type: concept
-tags: [phases]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "phases"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
-=======
->>>>>>> af4545e (.)
 # Fasi di sviluppo - Job Module
 
 ## Fase 1: Infrastruttura Core (Completata)

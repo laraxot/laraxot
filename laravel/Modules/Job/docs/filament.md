@@ -1,15 +1,3 @@
----
-<<<<<<< HEAD
-title: "Filament"
-module: "Job"
-type: concept
-tags: [filament]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
 
 https://gitlab.com/amvisor/filament-failed-jobs/-/blob/master/src/FilamentFailedJobsServiceProvider.php
 
@@ -19,11 +7,3 @@ https://medium.com/@laravelprotips/laravel-filament-top-12-plugins-simplified-wi
 
 
 
-=======
-module: theme
-topic: filament
-canonical: ../../../Themes/docs/shared-components/filament-Modules.txt
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/filament-Modules.txt
->>>>>>> af4545e (.)

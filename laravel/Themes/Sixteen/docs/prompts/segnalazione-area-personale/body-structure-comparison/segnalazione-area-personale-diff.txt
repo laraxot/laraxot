@@ -1,0 +1,1065 @@
+--- segnalazione-area-personale-reference
++++ segnalazione-area-personale-local
+@@ -27,37 +27,11 @@
+ body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+ body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+ body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=ENG
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=dropdown it-user-wrapper nav-item | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1] | <a> | id=- | class=btn btn-full btn-icon btn-primary | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]/span[1] | <span> | id=- | class=rounded-icon | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]/span[1]/img[1] | <img> | id=- | class=border icon-white rounded-circle | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]/span[2] | <span> | id=- | class=d-lg-block d-none | text=Mario Rossi
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]/svg[1] | <svg> | id=- | class=d-lg-block d-none icon icon-white | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=dropdown-menu | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=row | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=I miei servizi
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Le mie pratiche
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Notifiche
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/span[1] | <span> | id=- | class=divider | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[5] | <li> | id=- | class=- | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[5]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[5]/a[1]/span[1] | <span> | id=- | class=- | text=Impostazioni
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[6] | <li> | id=- | class=- | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[6]/a[1] | <a> | id=- | class=left-icon list-item | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[6]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm left | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[6]/a[1]/span[1] | <span> | id=- | class=fw-bold | text=Esci
++body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1] | <a> | id=- | class=btn btn-full btn-icon btn-primary | text=-
++body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1] | <span> | id=- | class=rounded-icon | text=-
++body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary | text=-
++body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/header[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[2] | <span> | id=- | class=d-lg-block d-none | text=Accedi all'area personale
+ body/header[1]/div[2] | <div> | id=- | class=it-nav-wrapper | text=-
+ body/header[1]/div[2]/div[1] | <div> | id=- | class=it-header-center-wrapper | text=-
+ body/header[1]/div[2]/div[1]/div[1] | <div> | id=- | class=container | text=-
+@@ -191,504 +165,521 @@
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1] | <svg> | id=- | class=align-top icon icon-sm icon-white | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/span[1] | <span> | id=- | class=visually-hidden | text=RSS
+-body/main[1] | <main> | id=- | class=- | text=-
+-body/main[1]/div[1] | <div> | id=main-container | class=container | text=-
+-body/main[1]/div[1]/div[1] | <div> | id=- | class=justify-content-center row | text=-
+-body/main[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-breadcrumbs | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=breadcrumb-container | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1] | <ol> | id=- | class=breadcrumb p-0 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1] | <li> | id=- | class=breadcrumb-item | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1] | <a> | id=- | class=- | text=Home
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1] | <span> | id=- | class=separator | text=/
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2] | <li> | id=- | class=active breadcrumb-item | text=Area personale
+-body/main[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=cmp-heading pb-3 pb-lg-4 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/h1[1] | <h1> | id=- | class=title-xxxlarge | text=Giulia Rossi
+-body/main[1]/div[1]/div[1]/div[1]/div[2]/p[1] | <p> | id=- | class=subtitle-small | text=CF: GLARSS72H25H501Y
+-body/main[1]/div[1]/div[1]/div[2] | <div> | id=- | class=col-12 p-0 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=cmp-nav-tab mb-4 mb-lg-5 mt-lg-4 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=myTab | class=flex-nowrap nav nav-tabs nav-tabs-icon-text w-100 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=nav-item w-100 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=active justify-content-start nav-link text-tab | text=Scrivania
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon me-1 mr-lg-10 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=nav-item w-100 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=justify-content-start nav-link text-tab | text=Messaggi
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon me-1 mr-lg-10 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3] | <li> | id=- | class=nav-item w-100 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=justify-content-start nav-link text-tab | text=Attività
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon me-1 mr-lg-10 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4] | <li> | id=- | class=nav-item w-100 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=justify-content-start nav-link text-tab | text=Servizi
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon me-1 mr-lg-10 | text=-
+-body/main[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2] | <div> | id=- | class=it-page-sections-container | text=-
+-body/main[1]/div[1]/div[2]/div[1] | <div> | id=- | class=tab-content | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=data-ex-tab1 | class=active fade show tab-pane | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=row | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-3 d-lg-block d-none mb-4 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-navscroll sticky-top | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=it-navscroll-wrapper navbar navbar-expand-lg | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1] | <div> | id=navbarNavProgress | class=navbar-custom | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1] | <div> | id=- | class=menu-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=accordion-title-one | class=accordion-header | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1] | <button> | id=- | class=accordion-button pb-10 px-3 | text=INDICE DELLA PAGINA
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-xs right | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=progress | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=it-navscroll-progressbar progress-bar | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=collapse-one | class=accordion-collapse collapse show | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Ultimi messaggi
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Ultime attività
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=col-12 col-lg-8 offset-lg-1 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=latest-posts | class=it-page-section mb-40 mb-lg-60 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-card | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=card | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header mb-lg-20 p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=d-flex | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=title-xxlarge | text=Ultimi messaggi
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=1 | class=cmp-card-latest-messages mb-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=card pb-4 pt-4 px-4 shadow-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1] | <span> | id=- | class=visually-hidden | text=Categoria:
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header m-0 p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/date[1] | <date> | id=- | class=date-xsmall | text=05/04/2022
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body my-2 p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/h3[1] | <h3> | id=- | class=m-0 mb-1 t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/h3[1]/a[1] | <a> | id=- | class=text-decoration-none | text=Richiesta servizio mensa scolastica
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/p[1] | <p> | id=- | class=text-paragraph text-truncate | text=La richiesta AN4059281 è stata approv...
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2] | <div> | id=2 | class=cmp-card-latest-messages mb-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=card pb-4 pt-4 px-4 shadow-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/span[1] | <span> | id=- | class=visually-hidden | text=Categoria:
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=border-0 card-header m-0 p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/date[1] | <date> | id=- | class=date-xsmall | text=20/03/2022
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2] | <div> | id=- | class=card-body my-2 p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/h3[1] | <h3> | id=- | class=m-0 mb-1 t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/h3[1]/a[1] | <a> | id=- | class=text-decoration-none | text=Richiesta servizio mensa scolastica
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/p[1] | <p> | id=- | class=text-paragraph text-truncate | text=La richiesta AN4059281 è stata ricevu...
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3] | <div> | id=3 | class=cmp-card-latest-messages mb-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1] | <div> | id=- | class=card pb-4 pt-4 px-4 shadow-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/span[1] | <span> | id=- | class=visually-hidden | text=Categoria:
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1] | <div> | id=- | class=border-0 card-header m-0 p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/date[1] | <date> | id=- | class=date-xsmall | text=15/02/2022
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2] | <div> | id=- | class=card-body my-2 p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/h3[1] | <h3> | id=- | class=m-0 mb-1 t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/h3[1]/a[1] | <a> | id=- | class=text-decoration-none | text=Iscrizione alla scuola dell’infanzia
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/p[1] | <p> | id=- | class=text-paragraph text-truncate | text=La richiesta AFG059281 è stata ricevu...
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/button[1] | <button> | id=- | class=btn btn-label btn-me btn-xs px-0 t-primary | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1] | <span> | id=- | class=- | text=Vedi altri messaggi
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2] | <div> | id=latest-activities | class=it-page-section mb-50 mb-lg-90 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=cmp-card | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=card | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header m-0 mb-lg-20 p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=d-flex | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Ultime attività
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=cmp-icon-card mb-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=card drop-shadow pb-4 pr-30 ps-4 pt-20 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-card-title d-flex | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-sm me-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h3[1] | <h3> | id=- | class=mb-2 t-primary title-small-semi-bold underline | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h3[1]/a[1] | <a> | id=- | class=- | text=Segnalazione disservizio
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2] | <div> | id=- | class=cmp-icon-card__description | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/date[1] | <date> | id=- | class=date-xsmall ml-30 | text=15/04/2022
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2] | <div> | id=- | class=cmp-icon-card mb-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=card drop-shadow pb-4 pr-30 ps-4 pt-20 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-card-title d-flex | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-sm me-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/h3[1] | <h3> | id=- | class=mb-2 t-primary title-small-semi-bold underline | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/h3[1]/a[1] | <a> | id=- | class=- | text=Pagamento contravvenzione
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2] | <div> | id=- | class=cmp-icon-card__description | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/date[1] | <date> | id=- | class=date-xsmall ml-30 | text=23/01/2022
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3] | <div> | id=- | class=cmp-icon-card mb-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1] | <div> | id=- | class=card drop-shadow pb-4 pr-30 ps-4 pt-20 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1] | <div> | id=- | class=cmp-card-title d-flex | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-sm me-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/h3[1] | <h3> | id=- | class=mb-2 t-primary title-small-semi-bold underline | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/h3[1]/a[1] | <a> | id=- | class=- | text=Richiesta assegno maternità
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2] | <div> | id=- | class=cmp-icon-card__description | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/date[1] | <date> | id=- | class=date-xsmall ml-30 | text=01/10/2021
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/button[1] | <button> | id=- | class=btn btn-label btn-me btn-xs px-0 t-primary | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/button[1]/span[1] | <span> | id=- | class=- | text=Vedi altre attività
+-body/main[1]/div[1]/div[2]/div[1]/div[2] | <div> | id=data-ex-tab2 | class=tab-pane | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3] | <div> | id=data-ex-tab3 | class=tab-pane | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1] | <div> | id=- | class=row | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1] | <div> | id=- | class=col-lg-3 d-lg-block d-none d-sm-none | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-navscroll sticky-top | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=it-navscroll-wrapper navbar navbar-expand-lg | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1] | <div> | id=navbarNavProgress | class=navbar-custom | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1] | <div> | id=- | class=menu-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=accordion-title-Three | class=accordion-header | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1] | <button> | id=- | class=accordion-button pb-10 px-3 | text=INDICE DELLA PAGINA
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-xs right | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=progress | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=it-navscroll-progressbar progress-bar | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=collapse-Three | class=accordion-collapse collapse show | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Pratiche
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Pagamenti
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2] | <div> | id=- | class=col-12 col-lg-8 offset-lg-1 px-0 px-sm-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1] | <section> | id=practices | class=it-page-section mb-40 mb-lg-60 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1] | <div> | id=- | class=cmp-filter | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1] | <div> | id=- | class=filter-section | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=cmp-filter__title title-xxlarge | text=Pratiche
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1] | <div> | id=- | class=align-items-center d-flex filter-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=btn p-0 pe-2 t-primary | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=rounded-icon | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-xs me-1 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/button[1]/span[2] | <span> | id=- | class=- | text=Filtra
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=dropdown | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/button[1] | <button> | id=dropdownMenu-pratiche | class=btn btn-dropdown dropdown-toggle | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-expand icon-primary icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=dropdown__title | text=Ordina
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=dropdown-menu | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 1
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 2
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 3
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2] | <div> | id=- | class=cmp-input-search | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1] | <div> | id=- | class=autocomplete-wrapper form-group | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=input-group | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1]/label[1] | <label> | id=- | class=visually-hidden | text=Cerca nel sito
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1]/input[1] | <input> | id=autocomplete-pratiche | class=autocomplete form-control | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1]/span[1] | <span> | id=- | class=autocomplete-icon | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2] | <div> | id=- | class=cmp-accordion | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1] | <div> | id=- | class=accordion | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=heading1 | class=accordion-header | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Segnalazione disservizio
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=u-main-black | text=In attesa
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=20/03/2022
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2] | <div> | id=collapse1 | class=accordion-collapse collapse p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1] | <div> | id=heading2 | class=accordion-header | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Iscrizione corso di formazione
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Conclusa
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=24/06/2021
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2] | <div> | id=collapse2 | class=accordion-collapse collapse p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1] | <div> | id=heading3 | class=accordion-header | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Richiesta permesso ZTL
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Conclusa
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=10/05/2021
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2] | <div> | id=collapse3 | class=accordion-collapse collapse p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1] | <div> | id=heading4 | class=accordion-header | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Richiesta parcheggio residenti
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Conclusa
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=06/03/2021
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2] | <div> | id=collapse4 | class=accordion-collapse collapse p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/button[1] | <button> | id=- | class=accordion-view-more btn mb-2 ps-lg-3 pt-3 t-primary title-xsmall-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/button[1]/span[1] | <span> | id=- | class=- | text=Vedi altre pratiche
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2] | <section> | id=payments | class=it-page-section mb-50 mb-lg-90 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1] | <div> | id=- | class=cmp-filter | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1] | <div> | id=- | class=filter-section | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/h2[1] | <h2> | id=- | class=cmp-filter__title title-xxlarge | text=Pagamenti
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1] | <div> | id=- | class=align-items-center d-flex filter-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=btn p-0 pe-2 t-primary | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=rounded-icon | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-xs me-1 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/button[1]/span[2] | <span> | id=- | class=- | text=Filtra
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=dropdown | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/button[1] | <button> | id=dropdownMenu-pagamenti | class=btn btn-dropdown dropdown-toggle | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-expand icon-primary icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=dropdown__title | text=Ordina
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=dropdown-menu | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 1
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 2
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 3
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2] | <div> | id=- | class=cmp-input-search | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1] | <div> | id=- | class=autocomplete-wrapper form-group | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=input-group | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1]/label[1] | <label> | id=- | class=visually-hidden | text=Cerca nel sito
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1]/input[1] | <input> | id=autocomplete-pagamenti | class=autocomplete form-control | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1]/span[1] | <span> | id=- | class=autocomplete-icon | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2] | <div> | id=- | class=cmp-accordion | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1] | <div> | id=- | class=accordion | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1] | <div> | id=heading5 | class=accordion-header | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Pagamento contravvenzione
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Pagato
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=01/10/2021
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2] | <div> | id=collapse5 | class=accordion-collapse collapse p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1] | <div> | id=heading6 | class=accordion-header | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Pagamento contravvenzione
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Pagato
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=24/06/2021
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2] | <div> | id=collapse6 | class=accordion-collapse collapse p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1] | <div> | id=heading7 | class=accordion-header | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Pagamento contravvenzione
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Pagato
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=10/05/2021
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2] | <div> | id=collapse7 | class=accordion-collapse collapse p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1] | <div> | id=heading8 | class=accordion-header | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Pagamento contravvenzione
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Pagato
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=06/03/2021
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2] | <div> | id=collapse8 | class=accordion-collapse collapse p-0 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/button[1] | <button> | id=- | class=accordion-view-more btn mb-2 ps-lg-3 t-primary title-xsmall-semi-bold | text=-
+-body/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/button[1]/span[1] | <span> | id=- | class=- | text=Vedi altri pagamenti
+-body/main[1]/div[1]/div[2]/div[1]/div[4] | <div> | id=data-ex-tab4 | class=tab-pane | text=-
+-body/main[1]/div[2] | <div> | id=- | class=bg-grey-card shadow-contacts | text=-
+-body/main[1]/div[2]/div[1] | <div> | id=- | class=container | text=-
+-body/main[1]/div[2]/div[1]/div[1] | <div> | id=- | class=row | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 offset-lg-3 p-contacts | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-contacts | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card w-100 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=title-medium-2-semi-bold | text=Contatta il comune
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=contact-list p-0 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Leggi le domande frequenti
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Richiedi assistenza
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Chiama il numero verde 05 0505
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Prenota appuntamento
+-body/main[1]/div[3] | <div> | id=- | class=cmp-modal | text=-
+-body/main[1]/div[3]/div[1] | <div> | id=modal-message | class=fade it-dialog-scrollable modal | text=-
+-body/main[1]/div[3]/div[1]/div[1] | <div> | id=- | class=modal-dialog modal-dialog-centered | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1] | <div> | id=- | class=h-100 modal-content modal-dimensions | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-modal__header modal-header pb-0 | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=btn-close | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-modal__header mt-30 mt-lg-50 | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/date[1] | <date> | id=- | class=date-regular w-100 | text=15/03/2022
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=modal-message-modal-title | class=mb-0 mt-2 title-xxxlarge | text=Iscrizione alla scuola dell’infanzia
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=modal-body | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=mb-60 mb-lg-80 | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/h5[1] | <h5> | id=- | class=subtitle-large | text=Graduatoria 2022/23
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-4 text-paragraph | text=La graduatoria per l’iscrizione alla Scuola dell’Infanzia, a.a. 2022/2023 è stata pubblicata. Consulta la graduatoria online e perfeziona la pratica.
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/a[1] | <a> | id=- | class=t-primary text-decoration-underline text-paragraph | text=Graduatoria Scuola dell'infanzia per l'anno scolastico 2022/23
++body/main[1] | <main> | id=main-container | class=- | text=-
++body/main[1]/div[1] | <div> | id=- | class=cms-view-wrapper | text=-
++body/main[1]/div[1]/div[1] | <div> | id=- | class=content page-content | text=-
++body/main[1]/div[1]/div[1]/div[1] | <div> | id=main-container | class=container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=justify-content-center row | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-breadcrumbs | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=breadcrumb-container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1] | <ol> | id=- | class=breadcrumb p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1] | <li> | id=- | class=breadcrumb-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1] | <a> | id=- | class=- | text=Home
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1] | <span> | id=- | class=separator | text=/
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2] | <li> | id=- | class=active breadcrumb-item | text=Area personale
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=cmp-heading pb-3 pb-lg-4 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h1[1] | <h1> | id=- | class=title-xxxlarge | text=Giulia Rossi
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/p[1] | <p> | id=- | class=subtitle-small | text=CF: GLARSS72H25H501Y
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=col-12 p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=cmp-nav-tab mb-4 mb-lg-5 mt-lg-4 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=myTab | class=flex-nowrap nav nav-tabs nav-tabs-icon-text w-100 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=nav-item w-100 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=active justify-content-start nav-link text-tab | text=Scrivania
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon me-1 mr-lg-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=nav-item w-100 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=justify-content-start nav-link text-tab | text=Messaggi
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon me-1 mr-lg-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3] | <li> | id=- | class=nav-item w-100 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=justify-content-start nav-link text-tab | text=Attività
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon me-1 mr-lg-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4] | <li> | id=- | class=nav-item w-100 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=justify-content-start nav-link text-tab | text=Servizi
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon me-1 mr-lg-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=it-page-sections-container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=tab-content | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=data-ex-tab1 | class=active fade show tab-pane | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=row | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-lg-3 d-lg-block d-none d-sm-none | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-navscroll sticky-top | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=it-navscroll-wrapper navbar navbar-expand-lg | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1] | <div> | id=navbarNavProgress | class=navbar-custom | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1] | <div> | id=- | class=menu-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=accordion-title-one | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1] | <button> | id=- | class=accordion-button pb-10 px-3 | text=INDICE DELLA PAGINA
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-xs right | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=progress | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=it-navscroll-progressbar progress-bar | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=collapse-one | class=accordion-collapse collapse show | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Ultimi messaggi
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Ultime attività
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=col-12 col-lg-8 offset-lg-1 px-0 px-sm-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=latest-posts | class=it-page-section mb-40 mb-lg-60 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-card | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=card | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header mb-lg-20 p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=d-flex | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=title-xxlarge | text=Ultimi messaggi
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=1 | class=cmp-card-latest-messages mb-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=card pb-4 pt-4 px-4 shadow-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/span[1] | <span> | id=- | class=visually-hidden | text=Categoria:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header m-0 p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/date[1] | <date> | id=- | class=date-xsmall | text=05/04/2022
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body my-2 p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/h3[1] | <h3> | id=- | class=m-0 mb-1 t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/h3[1]/a[1] | <a> | id=- | class=text-decoration-none | text=Richiesta servizio mensa scolastica
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/p[1] | <p> | id=- | class=text-paragraph text-truncate | text=La richiesta AN4059281 è stata approvata.
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2] | <div> | id=2 | class=cmp-card-latest-messages mb-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=card pb-4 pt-4 px-4 shadow-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/span[1] | <span> | id=- | class=visually-hidden | text=Categoria:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=border-0 card-header m-0 p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/date[1] | <date> | id=- | class=date-xsmall | text=20/03/2022
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2] | <div> | id=- | class=card-body my-2 p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/h3[1] | <h3> | id=- | class=m-0 mb-1 t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/h3[1]/a[1] | <a> | id=- | class=text-decoration-none | text=Richiesta servizio mensa scolastica
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/p[1] | <p> | id=- | class=text-paragraph text-truncate | text=La richiesta AN4059281 è stata ricevuta.
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3] | <div> | id=3 | class=cmp-card-latest-messages mb-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1] | <div> | id=- | class=card pb-4 pt-4 px-4 shadow-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/span[1] | <span> | id=- | class=visually-hidden | text=Categoria:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1] | <div> | id=- | class=border-0 card-header m-0 p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/date[1] | <date> | id=- | class=date-xsmall | text=15/02/2022
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2] | <div> | id=- | class=card-body my-2 p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/h3[1] | <h3> | id=- | class=m-0 mb-1 t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/h3[1]/a[1] | <a> | id=- | class=text-decoration-none | text=Iscrizione alla scuola dell'infanzia
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/p[1] | <p> | id=- | class=text-paragraph text-truncate | text=La richiesta AFG059281 è stata ricevuta.
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/button[1] | <button> | id=- | class=btn btn-label btn-me btn-xs px-0 t-primary | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/button[1]/span[1] | <span> | id=- | class=- | text=Vedi altri messaggi
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2] | <div> | id=latest-activities | class=it-page-section mb-50 mb-lg-90 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=cmp-card | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=card | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header m-0 mb-lg-20 p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=d-flex | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Ultime attività
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=cmp-icon-card mb-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=card drop-shadow pb-4 pr-30 ps-4 pt-20 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-card-title d-flex | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-sm me-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h3[1] | <h3> | id=- | class=mb-2 t-primary title-small-semi-bold underline | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h3[1]/a[1] | <a> | id=- | class=- | text=Segnalazione disservizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2] | <div> | id=- | class=cmp-icon-card__description | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/date[1] | <date> | id=- | class=date-xsmall ml-30 | text=15/04/2022
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2] | <div> | id=- | class=cmp-icon-card mb-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=card drop-shadow pb-4 pr-30 ps-4 pt-20 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-card-title d-flex | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-sm me-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/h3[1] | <h3> | id=- | class=mb-2 t-primary title-small-semi-bold underline | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/h3[1]/a[1] | <a> | id=- | class=- | text=Pagamento contravvenzione
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2] | <div> | id=- | class=cmp-icon-card__description | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/date[1] | <date> | id=- | class=date-xsmall ml-30 | text=23/01/2022
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3] | <div> | id=- | class=cmp-icon-card mb-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1] | <div> | id=- | class=card drop-shadow pb-4 pr-30 ps-4 pt-20 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1] | <div> | id=- | class=cmp-card-title d-flex | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-sm me-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/h3[1] | <h3> | id=- | class=mb-2 t-primary title-small-semi-bold underline | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/h3[1]/a[1] | <a> | id=- | class=- | text=Richiesta assegno maternità
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2] | <div> | id=- | class=cmp-icon-card__description | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/date[1] | <date> | id=- | class=date-xsmall ml-30 | text=01/10/2021
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/button[1] | <button> | id=- | class=btn btn-label btn-me btn-xs px-0 t-primary | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/button[1]/span[1] | <span> | id=- | class=- | text=Vedi altre attività
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2] | <div> | id=data-ex-tab2 | class=tab-pane | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3] | <div> | id=data-ex-tab3 | class=tab-pane | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1] | <div> | id=- | class=row | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1] | <div> | id=- | class=col-lg-3 d-lg-block d-none d-sm-none | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-navscroll sticky-top | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=it-navscroll-wrapper navbar navbar-expand-lg | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1] | <div> | id=navbarNavProgress | class=navbar-custom | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1] | <div> | id=- | class=menu-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=accordion-title-Three | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1] | <button> | id=- | class=accordion-button pb-10 px-3 | text=INDICE DELLA PAGINA
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-xs right | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=progress | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=it-navscroll-progressbar progress-bar | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=collapse-Three | class=accordion-collapse collapse show | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Pratiche
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Pagamenti
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2] | <div> | id=- | class=col-12 col-lg-8 offset-lg-1 px-0 px-sm-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1] | <section> | id=practices | class=it-page-section mb-40 mb-lg-60 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1] | <div> | id=- | class=cmp-filter | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1] | <div> | id=- | class=filter-section | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=cmp-filter__title title-xxlarge | text=Pratiche
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1] | <div> | id=- | class=align-items-center d-flex filter-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=btn p-0 pe-2 t-primary | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=rounded-icon | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-xs me-1 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/button[1]/span[2] | <span> | id=- | class=- | text=Filtra
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=dropdown | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/button[1] | <button> | id=dropdownMenu-pratiche | class=btn btn-dropdown dropdown-toggle | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-expand icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=dropdown__title | text=Ordina
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=dropdown-menu | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 1
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 2
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 3
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2] | <div> | id=- | class=cmp-input-search | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1] | <div> | id=- | class=autocomplete-wrapper form-group | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=input-group | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1]/label[1] | <label> | id=- | class=visually-hidden | text=Cerca nel sito
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1]/input[1] | <input> | id=autocomplete-pratiche | class=autocomplete form-control | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1]/span[1] | <span> | id=- | class=autocomplete-icon | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[1]/div[2]/div[1]/div[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2] | <div> | id=- | class=cmp-accordion | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1] | <div> | id=- | class=accordion | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=heading1 | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Segnalazione disservizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=u-main-black | text=In attesa
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=20/03/2022
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2] | <div> | id=collapse1 | class=accordion-collapse collapse p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1] | <div> | id=heading2 | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Iscrizione corso di formazione
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Conclusa
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=24/06/2021
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2] | <div> | id=collapse2 | class=accordion-collapse collapse p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1] | <div> | id=heading3 | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Richiesta permesso ZTL
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Conclusa
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=10/05/2021
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2] | <div> | id=collapse3 | class=accordion-collapse collapse p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[3]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1] | <div> | id=heading4 | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Richiesta parcheggio residenti
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Conclusa
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=06/03/2021
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2] | <div> | id=collapse4 | class=accordion-collapse collapse p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/div[2]/div[1]/div[4]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/button[1] | <button> | id=- | class=accordion-view-more btn mb-2 ps-lg-3 pt-3 t-primary title-xsmall-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[1]/button[1]/span[1] | <span> | id=- | class=- | text=Vedi altre pratiche
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2] | <section> | id=payments | class=it-page-section mb-50 mb-lg-90 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1] | <div> | id=- | class=cmp-filter | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1] | <div> | id=- | class=filter-section | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/h2[1] | <h2> | id=- | class=cmp-filter__title title-xxlarge | text=Pagamenti
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1] | <div> | id=- | class=align-items-center d-flex filter-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=btn p-0 pe-2 t-primary | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=rounded-icon | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-xs me-1 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/button[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/button[1]/span[2] | <span> | id=- | class=- | text=Filtra
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=dropdown | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/button[1] | <button> | id=dropdownMenu-pagamenti | class=btn btn-dropdown dropdown-toggle | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-expand icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=dropdown__title | text=Ordina
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=dropdown-menu | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 1
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 2
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=dropdown-item list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Azione 3
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2] | <div> | id=- | class=cmp-input-search | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1] | <div> | id=- | class=autocomplete-wrapper form-group | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=input-group | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1]/label[1] | <label> | id=- | class=visually-hidden | text=Cerca nel sito
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1]/input[1] | <input> | id=autocomplete-pagamenti | class=autocomplete form-control | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1]/span[1] | <span> | id=- | class=autocomplete-icon | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[1]/div[2]/div[1]/div[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2] | <div> | id=- | class=cmp-accordion | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1] | <div> | id=- | class=accordion | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1] | <div> | id=heading5 | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Pagamento contravvenzione
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Pagato
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=01/10/2021
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2] | <div> | id=collapse5 | class=accordion-collapse collapse p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[1]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1] | <div> | id=heading6 | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Pagamento contravvenzione
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Pagato
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=24/06/2021
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2] | <div> | id=collapse6 | class=accordion-collapse collapse p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1] | <div> | id=heading7 | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Pagamento contravvenzione
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Pagato
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=10/05/2021
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2] | <div> | id=collapse7 | class=accordion-collapse collapse p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[3]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1] | <div> | id=heading8 | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/button[1] | <button> | id=- | class=accordion-button collapsed title-snall-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1] | <div> | id=- | class=button-wrapper | text=Pagamento contravvenzione
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1] | <div> | id=- | class=icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1]/img[1] | <img> | id=- | class=icon-folder | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/button[1]/div[1]/div[1]/span[1] | <span> | id=- | class=- | text=Pagato
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[1]/p[1] | <p> | id=- | class=accordion-date mb-0 title-xsmall-regular | text=06/03/2021
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2] | <div> | id=collapse8 | class=accordion-collapse collapse p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/p[1] | <p> | id=- | class=fw-normal mb-2 | text=Pratica:
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/p[1]/span[1] | <span> | id=- | class=label | text=AN4059281
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/a[1] | <a> | id=- | class=mb-2 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/a[1]/span[1] | <span> | id=- | class=t-primary | text=Scheda servizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/a[2] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/a[2]/span[1] | <span> | id=- | class=chip-label | text=Servizio non digitale
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=mt-3 shadow | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=icon-left list-item t-primary title-small-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=align-self-start icon icon-color icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item-title title-small-semi-bold | text=Ricevuta pagamento (PDF 80KB)
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/button[1] | <button> | id=- | class=btn btn-primary justify-content-center my-3 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/div[2]/div[1]/div[4]/div[2]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Perfeziona la richiesta
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/button[1] | <button> | id=- | class=accordion-view-more btn mb-2 ps-lg-3 pt-3 t-primary title-xsmall-semi-bold | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[2]/button[1]/span[1] | <span> | id=- | class=- | text=Vedi altri pagamenti
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3] | <section> | id=contacts | class=it-page-section mb-50 mb-lg-90 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1] | <div> | id=- | class=cmp-card | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1] | <div> | id=- | class=card | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header m-0 mb-lg-20 p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=d-flex | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Contatta il comune
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Leggi le domande frequenti
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Richiedi assistenza
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Chiama il numero verde 05 0505
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[4] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[3]/div[1]/div[1]/div[2]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Prenota appuntamento
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[4] | <section> | id=highlight | class=it-page-section mb-50 mb-lg-90 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[4]/div[1] | <div> | id=- | class=cmp-card | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[4]/div[1]/div[1] | <div> | id=- | class=card card-teaser p-4 rounded shadow-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[4]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[4]/div[1]/div[1]/div[1]/date[1] | <date> | id=- | class=date-xsmall | text=15/03/2022
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[4]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=mt-2 title-xxlarge | text=Iscrizione alla scuola dell'infanzia
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[4]/div[1]/div[1]/div[1]/h5[1] | <h5> | id=- | class=mb-3 subtitle-large | text=Graduatoria 2022/23
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[4]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=mb-3 | text=La graduatoria per l'iscrizione alla Scuola dell'Infanzia, a.a. 2022/2023 è stata pubblicata. Consulta la graduatoria online e perfeziona la pratica.
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[4]/div[1]/div[1]/div[1]/a[1] | <a> | id=- | class=t-primary text-decoration-none | text=Graduatoria Scuola dell'infanzia per l'anno scolastico 2022/23
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5] | <section> | id=search-section | class=it-page-section mb-50 mb-lg-90 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1] | <div> | id=- | class=cmp-search-box | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Cerca
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/form[1] | <form> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/form[1]/div[1] | <div> | id=- | class=cmp-input-search | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/form[1]/div[1]/label[1] | <label> | id=- | class=visually-hidden | text=Cerca nel sito
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/form[1]/div[1]/input[1] | <input> | id=search-area-personale | class=form-control | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/form[1]/div[1]/button[1] | <button> | id=- | class=btn btn-primary | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/form[1]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Cerca
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1] | <div> | id=- | class=cmp-icon-list mt-4 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/h3[1] | <h3> | id=- | class=mb-3 title-medium | text=FORSE STAVI CERCANDO
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Rilascio Carta Identità Elettronica (CIE)
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Cambio di residenza
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Tributi online
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Prenotazione appuntamenti
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[5] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[5]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[5]/a[1]/span[1] | <span> | id=- | class=- | text=Rilascio tessera elettorale
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[6] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[6]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/section[5]/div[1]/div[1]/ul[1]/li[6]/a[1]/span[1] | <span> | id=- | class=- | text=Voucher connettività
+ body/div[2] | <div> | id=search-modal | class=fade modal search-modal | text=-
+ body/div[2]/div[1] | <div> | id=- | class=modal-dialog modal-lg | text=-
+ body/div[2]/div[1]/div[1] | <div> | id=- | class=modal-content perfect-scrollbar | text=-

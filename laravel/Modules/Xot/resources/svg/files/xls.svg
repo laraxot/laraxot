@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" role="img">
+  <!-- Foglio con angolo piegato (variante legacy xls: griglia 2 colonne, senza barra header piena) -->
+  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75h6.75L18 7.5v11.25a1.5 1.5 0 0 1-1.5 1.5h-9a1.5 1.5 0 0 1-1.5-1.5V5.25a1.5 1.5 0 0 1 1.5-1.5Z"/>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 3.75V7.5H18"/>
+  <!-- Griglia 2 colonne a sinistra -->
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 10.5H12v7H8.25z"/>
+  <path stroke-linecap="round" d="M8.25 13H12M8.25 15.25H12M10.1 10.5v7"/>
+  <!-- Freccia export a destra: il dato esce dal file -->
+  <path stroke-linecap="round" stroke-linejoin="round" d="M14.1 11v5m0 0-1.35-1.35m1.35 1.35 1.35-1.35"/>
+</svg>

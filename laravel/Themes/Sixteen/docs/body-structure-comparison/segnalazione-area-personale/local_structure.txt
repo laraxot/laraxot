@@ -1,0 +1,891 @@
+<div class="skiplink">
+  <a class="visually-hidden-focusable">
+  <a class="visually-hidden-focusable">
+<header class="it-header-wrapper">
+  <div class="it-header-slim-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="it-header-slim-wrapper-content">
+            <a class="d-lg-block navbar-brand">
+            <div class="it-header-slim-right-zone" role="navigation">
+              <div class="nav-item dropdown">
+                <button class="nav-link dropdown-toggle">
+                  <span class="visually-hidden">
+                  <span>
+                  <svg class="icon">
+                    <use>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="link-list-wrapper">
+                        <ul class="link-list">
+                          <li>
+                            <a class="dropdown-item list-item">
+                              <span>
+                                <span class="visually-hidden">
+                          <li>
+                            <a class="dropdown-item list-item">
+                              <span>
+              <a class="btn btn-primary btn-icon btn-full" data-element="personal-area-login">
+                <span class="rounded-icon">
+                  <svg class="icon icon-primary">
+                    <use>
+                <span class="d-none d-lg-block">
+  <div class="it-nav-wrapper">
+    <div class="it-header-center-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="it-header-center-content-wrapper">
+              <div class="it-brand-wrapper">
+                <a>
+                  <svg class="icon">
+                    <image>
+                  <div class="it-brand-text">
+                    <div class="it-brand-title">
+                    <div class="it-brand-tagline d-none d-md-block">
+              <div class="it-right-zone">
+                <div class="it-socials d-none d-lg-flex">
+                  <span>
+                  <ul>
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                <div class="it-search-wrapper">
+                  <span class="d-none d-md-block">
+                  <button class="search-link rounded-icon">
+                    <svg class="icon">
+                      <use>
+    <div id="header-nav-wrapper" class="it-header-navbar-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="navbar navbar-expand-lg has-megamenu">
+              <button class="custom-navbar-toggler">
+                <svg class="icon">
+                  <use>
+              <div id="nav4" class="navbar-collapsable">
+                <div class="overlay">
+                <div class="close-div">
+                  <button class="btn close-menu">
+                    <span class="visually-hidden">
+                    <svg class="icon">
+                      <use>
+                <div class="menu-wrapper">
+                  <a class="logo-hamburger">
+                    <svg class="icon">
+                      <use>
+                    <div class="it-brand-text">
+                      <div class="it-brand-title">
+                  <nav>
+                    <ul class="navbar-nav" data-element="main-navigation">
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="management">
+                          <span>
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="news">
+                          <span>
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="all-services">
+                          <span>
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="live">
+                          <span>
+                  <nav>
+                    <ul class="navbar-nav navbar-secondary">
+                      <li class="nav-item">
+                        <a class="nav-link">
+                      <li class="nav-item">
+                        <a class="nav-link">
+                      <li class="nav-item">
+                        <a class="nav-link">
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="all-topics">
+                          <span>
+                            <svg class="icon icon-sm">
+                              <use>
+                  <div class="it-socials">
+                    <span>
+                    <ul>
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+<main>
+  <div class="tests-view-wrapper">
+    <div id="main-container" class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="cmp-breadcrumbs" role="navigation">
+            <nav class="breadcrumb-container">
+              <ol class="breadcrumb p-0" data-element="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a>
+                  <span class="separator">
+                <li class="breadcrumb-item active">
+          <div class="cmp-heading pb-3 pb-lg-4">
+            <h1 class="title-xxxlarge">
+            <p class="subtitle-small">
+        <div class="col-12 p-0">
+          <div class="cmp-nav-tab mb-4 mb-lg-5 mt-lg-4">
+            <ul id="myTab" class="nav nav-tabs nav-tabs-icon-text w-100 flex-nowrap" role="tablist">
+              <li class="nav-item w-100" role="tab">
+                <a class="nav-link justify-content-start text-tab active" role="button">
+                  <svg class="icon me-1 mr-lg-10">
+                    <use>
+              <li class="nav-item w-100" role="tab">
+                <a class="nav-link justify-content-start text-tab" role="button">
+                  <svg class="icon me-1 mr-lg-10">
+                    <use>
+              <li class="nav-item w-100" role="tab">
+                <a class="nav-link justify-content-start text-tab" role="button">
+                  <svg class="icon me-1 mr-lg-10">
+                    <use>
+              <li class="nav-item w-100" role="tab">
+                <a class="nav-link justify-content-start text-tab" role="button">
+                  <svg class="icon me-1 mr-lg-10">
+                    <use>
+      <div class="it-page-sections-container">
+        <div class="tab-content">
+          <div id="data-ex-tab1" class="tab-pane fade show active" role="tabpanel">
+            <div class="row">
+              <div class="d-none d-sm-none d-lg-block col-lg-3">
+                <div class="cmp-navscroll sticky-top">
+                  <nav class="navbar it-navscroll-wrapper navbar-expand-lg">
+                    <div id="navbarNavProgress" class="navbar-custom">
+                      <div class="menu-wrapper">
+                        <div class="link-list-wrapper">
+                          <div class="accordion">
+                            <div class="accordion-item">
+                              <span id="accordion-title-one" class="accordion-header">
+                                <button class="accordion-button pb-10 px-3">
+                                  <svg class="icon icon-xs right">
+                                    <use>
+                              <div class="progress">
+                                <div class="progress-bar it-navscroll-progressbar" role="progressbar">
+                              <div id="collapse-one" class="accordion-collapse collapse show" role="region">
+                                <div class="accordion-body">
+                                  <ul class="link-list" data-element="page-index">
+                                    <li class="nav-item">
+                                      <a class="nav-link">
+                                        <span>
+                                    <li class="nav-item">
+                                      <a class="nav-link">
+                                        <span>
+              <div class="col-12 col-lg-8 offset-lg-1 px-0 px-sm-3">
+                <div id="latest-posts" class="it-page-section mb-40 mb-lg-60">
+                  <div class="cmp-card">
+                    <div class="card">
+                      <div class="card-header border-0 p-0 mb-lg-20">
+                        <div class="d-flex">
+                          <h2 class="title-xxlarge">
+                      <div class="card-body p-0">
+                        <div id="1" class="cmp-card-latest-messages mb-3">
+                          <div class="card shadow-sm px-4 pt-4 pb-4">
+                            <span class="visually-hidden">
+                            <div class="card-header border-0 p-0 m-0">
+                              <date class="date-xsmall">
+                            <div class="card-body p-0 my-2">
+                              <h3 class="title-small-semi-bold t-primary m-0 mb-1">
+                                <a class="text-decoration-none">
+                              <p class="text-paragraph text-truncate">
+                        <div id="2" class="cmp-card-latest-messages mb-3">
+                          <div class="card shadow-sm px-4 pt-4 pb-4">
+                            <span class="visually-hidden">
+                            <div class="card-header border-0 p-0 m-0">
+                              <date class="date-xsmall">
+                            <div class="card-body p-0 my-2">
+                              <h3 class="title-small-semi-bold t-primary m-0 mb-1">
+                                <a class="text-decoration-none">
+                              <p class="text-paragraph text-truncate">
+                        <div id="3" class="cmp-card-latest-messages mb-3">
+                          <div class="card shadow-sm px-4 pt-4 pb-4">
+                            <span class="visually-hidden">
+                            <div class="card-header border-0 p-0 m-0">
+                              <date class="date-xsmall">
+                            <div class="card-body p-0 my-2">
+                              <h3 class="title-small-semi-bold t-primary m-0 mb-1">
+                                <a class="text-decoration-none">
+                              <p class="text-paragraph text-truncate">
+                        <button class="btn btn-xs btn-me btn-label t-primary px-0">
+                          <span>
+                <div id="latest-activities" class="it-page-section mb-50 mb-lg-90">
+                  <div class="cmp-card">
+                    <div class="card">
+                      <div class="card-header border-0 p-0 mb-lg-20 m-0">
+                        <div class="d-flex">
+                          <h2 class="title-xxlarge mb-3">
+                      <div class="card-body p-0">
+                        <div class="cmp-icon-card mb-3">
+                          <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
+                            <div class="cmp-card-title d-flex">
+                              <svg class="icon icon-sm me-2">
+                                <use>
+                              <h3 class="t-primary mb-2 underline title-small-semi-bold">
+                                <a>
+                            <div class="cmp-icon-card__description">
+                              <date class="date-xsmall ml-30">
+                        <div class="cmp-icon-card mb-3">
+                          <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
+                            <div class="cmp-card-title d-flex">
+                              <svg class="icon icon-sm me-2">
+                                <use>
+                              <h3 class="t-primary mb-2 underline title-small-semi-bold">
+                                <a>
+                            <div class="cmp-icon-card__description">
+                              <date class="date-xsmall ml-30">
+                        <div class="cmp-icon-card mb-3">
+                          <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
+                            <div class="cmp-card-title d-flex">
+                              <svg class="icon icon-sm me-2">
+                                <use>
+                              <h3 class="t-primary mb-2 underline title-small-semi-bold">
+                                <a>
+                            <div class="cmp-icon-card__description">
+                              <date class="date-xsmall ml-30">
+                        <button class="btn btn-xs btn-me btn-label t-primary px-0">
+                          <span>
+          <div id="data-ex-tab2" class="tab-pane" role="tabpanel">
+          <div id="data-ex-tab3" class="tab-pane" role="tabpanel">
+            <div class="row">
+              <div class="d-none d-sm-none d-lg-block col-lg-3">
+                <div class="cmp-navscroll sticky-top">
+                  <nav class="navbar it-navscroll-wrapper navbar-expand-lg">
+                    <div id="navbarNavProgress" class="navbar-custom">
+                      <div class="menu-wrapper">
+                        <div class="link-list-wrapper">
+                          <div class="accordion">
+                            <div class="accordion-item">
+                              <span id="accordion-title-Three" class="accordion-header">
+                                <button class="accordion-button pb-10 px-3">
+                                  <svg class="icon icon-xs right">
+                                    <use>
+                              <div class="progress">
+                                <div class="progress-bar it-navscroll-progressbar" role="progressbar">
+                              <div id="collapse-Three" class="accordion-collapse collapse show" role="region">
+                                <div class="accordion-body">
+                                  <ul class="link-list" data-element="page-index">
+                                    <li class="nav-item">
+                                      <a class="nav-link">
+                                        <span>
+                                    <li class="nav-item">
+                                      <a class="nav-link">
+                                        <span>
+              <div class="col-12 col-lg-8 offset-lg-1 px-0 px-sm-3">
+                <section id="practices" class="it-page-section mb-40 mb-lg-60">
+                  <div class="cmp-filter">
+                    <div class="filter-section">
+                      <h2 class="cmp-filter__title title-xxlarge">
+                      <div class="filter-wrapper d-flex align-items-center">
+                        <button class="btn p-0 pe-2 t-primary">
+                          <span class="rounded-icon">
+                            <svg class="icon icon-primary icon-xs me-1">
+                              <use>
+                          <span>
+                        <div class="dropdown">
+                          <button id="dropdownMenu-pratiche" class="btn btn-dropdown dropdown-toggle">
+                            <svg class="icon-expand icon icon-sm icon-primary">
+                              <use>
+                            <span class="dropdown__title">
+                          <div class="dropdown-menu">
+                            <div class="link-list-wrapper">
+                              <ul class="link-list">
+                                <li>
+                                  <a class="dropdown-item list-item">
+                                    <span>
+                                <li>
+                                  <a class="dropdown-item list-item">
+                                    <span>
+                                <li>
+                                  <a class="dropdown-item list-item">
+                                    <span>
+                    <div class="cmp-input-search">
+                      <div class="form-group autocomplete-wrapper">
+                        <div class="input-group">
+                          <label class="visually-hidden">
+                          <input id="autocomplete-pratiche" class="autocomplete form-control">
+                          <span class="autocomplete-icon">
+                            <svg class="icon icon-sm">
+                              <use>
+                  <div class="cmp-accordion">
+                    <div class="accordion">
+                      <div class="accordion-item">
+                        <div id="heading1" class="accordion-header">
+                          <button class="accordion-button collapsed title-snall-semi-bold">
+                            <div class="button-wrapper">
+                              <div class="icon-wrapper">
+                                <img class="icon-folder" role="img">
+                                <span class="u-main-black">
+                          <p class="accordion-date title-xsmall-regular mb-0">
+                        <div id="collapse1" class="accordion-collapse collapse p-0" role="region">
+                          <div class="accordion-body">
+                            <p class="mb-2 fw-normal">
+                              <span class="label">
+                            <a class="mb-2">
+                              <span class="t-primary">
+                            <a class="chip chip-simple">
+                              <span class="chip-label">
+                            <div class="cmp-icon-list">
+                              <div class="link-list-wrapper">
+                                <ul class="link-list">
+                                  <li class="shadow mt-3">
+                                    <a class="list-item icon-left t-primary title-small-semi-bold">
+                                      <span class="list-item-title-icon-wrapper">
+                                        <svg class="icon icon-sm align-self-start icon-color">
+                                          <use>
+                                        <span class="list-item-title title-small-semi-bold">
+                            <button class="btn btn-primary justify-content-center my-3">
+                              <span>
+                      <div class="accordion-item">
+                        <div id="heading2" class="accordion-header">
+                          <button class="accordion-button collapsed title-snall-semi-bold">
+                            <div class="button-wrapper">
+                              <div class="icon-wrapper">
+                                <img class="icon-folder" role="img">
+                                <span>
+                          <p class="accordion-date title-xsmall-regular mb-0">
+                        <div id="collapse2" class="accordion-collapse collapse p-0" role="region">
+                          <div class="accordion-body">
+                            <p class="mb-2 fw-normal">
+                              <span class="label">
+                            <a class="mb-2">
+                              <span class="t-primary">
+                            <a class="chip chip-simple">
+                              <span class="chip-label">
+                            <div class="cmp-icon-list">
+                              <div class="link-list-wrapper">
+                                <ul class="link-list">
+                                  <li class="shadow mt-3">
+                                    <a class="list-item icon-left t-primary title-small-semi-bold">
+                                      <span class="list-item-title-icon-wrapper">
+                                        <svg class="icon icon-sm align-self-start icon-color">
+                                          <use>
+                                        <span class="list-item-title title-small-semi-bold">
+                            <button class="btn btn-primary justify-content-center my-3">
+                              <span>
+                      <div class="accordion-item">
+                        <div id="heading3" class="accordion-header">
+                          <button class="accordion-button collapsed title-snall-semi-bold">
+                            <div class="button-wrapper">
+                              <div class="icon-wrapper">
+                                <img class="icon-folder" role="img">
+                                <span>
+                          <p class="accordion-date title-xsmall-regular mb-0">
+                        <div id="collapse3" class="accordion-collapse collapse p-0" role="region">
+                          <div class="accordion-body">
+                            <p class="mb-2 fw-normal">
+                              <span class="label">
+                            <a class="mb-2">
+                              <span class="t-primary">
+                            <a class="chip chip-simple">
+                              <span class="chip-label">
+                            <div class="cmp-icon-list">
+                              <div class="link-list-wrapper">
+                                <ul class="link-list">
+                                  <li class="shadow mt-3">
+                                    <a class="list-item icon-left t-primary title-small-semi-bold">
+                                      <span class="list-item-title-icon-wrapper">
+                                        <svg class="icon icon-sm align-self-start icon-color">
+                                          <use>
+                                        <span class="list-item-title title-small-semi-bold">
+                            <button class="btn btn-primary justify-content-center my-3">
+                              <span>
+                      <div class="accordion-item">
+                        <div id="heading4" class="accordion-header">
+                          <button class="accordion-button collapsed title-snall-semi-bold">
+                            <div class="button-wrapper">
+                              <div class="icon-wrapper">
+                                <img class="icon-folder" role="img">
+                                <span>
+                          <p class="accordion-date title-xsmall-regular mb-0">
+                        <div id="collapse4" class="accordion-collapse collapse p-0" role="region">
+                          <div class="accordion-body">
+                            <p class="mb-2 fw-normal">
+                              <span class="label">
+                            <a class="mb-2">
+                              <span class="t-primary">
+                            <a class="chip chip-simple">
+                              <span class="chip-label">
+                            <div class="cmp-icon-list">
+                              <div class="link-list-wrapper">
+                                <ul class="link-list">
+                                  <li class="shadow mt-3">
+                                    <a class="list-item icon-left t-primary title-small-semi-bold">
+                                      <span class="list-item-title-icon-wrapper">
+                                        <svg class="icon icon-sm align-self-start icon-color">
+                                          <use>
+                                        <span class="list-item-title title-small-semi-bold">
+                            <button class="btn btn-primary justify-content-center my-3">
+                              <span>
+                  <button class="btn accordion-view-more mb-2 pt-3 t-primary title-xsmall-semi-bold ps-lg-3">
+                    <span>
+                <section id="payments" class="it-page-section mb-50 mb-lg-90">
+                  <div class="cmp-filter">
+                    <div class="filter-section">
+                      <h2 class="cmp-filter__title title-xxlarge">
+                      <div class="filter-wrapper d-flex align-items-center">
+                        <button class="btn p-0 pe-2 t-primary">
+                          <span class="rounded-icon">
+                            <svg class="icon icon-primary icon-xs me-1">
+                              <use>
+                          <span>
+                        <div class="dropdown">
+                          <button id="dropdownMenu-pagamenti" class="btn btn-dropdown dropdown-toggle">
+                            <svg class="icon-expand icon icon-sm icon-primary">
+                              <use>
+                            <span class="dropdown__title">
+                          <div class="dropdown-menu">
+                            <div class="link-list-wrapper">
+                              <ul class="link-list">
+                                <li>
+                                  <a class="dropdown-item list-item">
+                                    <span>
+                                <li>
+                                  <a class="dropdown-item list-item">
+                                    <span>
+                                <li>
+                                  <a class="dropdown-item list-item">
+                                    <span>
+                    <div class="cmp-input-search">
+                      <div class="form-group autocomplete-wrapper">
+                        <div class="input-group">
+                          <label class="visually-hidden">
+                          <input id="autocomplete-pagamenti" class="autocomplete form-control">
+                          <span class="autocomplete-icon">
+                            <svg class="icon icon-sm">
+                              <use>
+                  <div class="cmp-accordion">
+                    <div class="accordion">
+                      <div class="accordion-item">
+                        <div id="heading5" class="accordion-header">
+                          <button class="accordion-button collapsed title-snall-semi-bold">
+                            <div class="button-wrapper">
+                              <div class="icon-wrapper">
+                                <img class="icon-folder" role="img">
+                                <span>
+                          <p class="accordion-date title-xsmall-regular mb-0">
+                        <div id="collapse5" class="accordion-collapse collapse p-0" role="region">
+                          <div class="accordion-body">
+                            <p class="mb-2 fw-normal">
+                              <span class="label">
+                            <a class="mb-2">
+                              <span class="t-primary">
+                            <a class="chip chip-simple">
+                              <span class="chip-label">
+                            <div class="cmp-icon-list">
+                              <div class="link-list-wrapper">
+                                <ul class="link-list">
+                                  <li class="shadow mt-3">
+                                    <a class="list-item icon-left t-primary title-small-semi-bold">
+                                      <span class="list-item-title-icon-wrapper">
+                                        <svg class="icon icon-sm align-self-start icon-color">
+                                          <use>
+                                        <span class="list-item-title title-small-semi-bold">
+                            <button class="btn btn-primary justify-content-center my-3">
+                              <span>
+                      <div class="accordion-item">
+                        <div id="heading6" class="accordion-header">
+                          <button class="accordion-button collapsed title-snall-semi-bold">
+                            <div class="button-wrapper">
+                              <div class="icon-wrapper">
+                                <img class="icon-folder" role="img">
+                                <span>
+                          <p class="accordion-date title-xsmall-regular mb-0">
+                        <div id="collapse6" class="accordion-collapse collapse p-0" role="region">
+                          <div class="accordion-body">
+                            <p class="mb-2 fw-normal">
+                              <span class="label">
+                            <a class="mb-2">
+                              <span class="t-primary">
+                            <a class="chip chip-simple">
+                              <span class="chip-label">
+                            <div class="cmp-icon-list">
+                              <div class="link-list-wrapper">
+                                <ul class="link-list">
+                                  <li class="shadow mt-3">
+                                    <a class="list-item icon-left t-primary title-small-semi-bold">
+                                      <span class="list-item-title-icon-wrapper">
+                                        <svg class="icon icon-sm align-self-start icon-color">
+                                          <use>
+                                        <span class="list-item-title title-small-semi-bold">
+                            <button class="btn btn-primary justify-content-center my-3">
+                              <span>
+                      <div class="accordion-item">
+                        <div id="heading7" class="accordion-header">
+                          <button class="accordion-button collapsed title-snall-semi-bold">
+                            <div class="button-wrapper">
+                              <div class="icon-wrapper">
+                                <img class="icon-folder" role="img">
+                                <span>
+                          <p class="accordion-date title-xsmall-regular mb-0">
+                        <div id="collapse7" class="accordion-collapse collapse p-0" role="region">
+                          <div class="accordion-body">
+                            <p class="mb-2 fw-normal">
+                              <span class="label">
+                            <a class="mb-2">
+                              <span class="t-primary">
+                            <a class="chip chip-simple">
+                              <span class="chip-label">
+                            <div class="cmp-icon-list">
+                              <div class="link-list-wrapper">
+                                <ul class="link-list">
+                                  <li class="shadow mt-3">
+                                    <a class="list-item icon-left t-primary title-small-semi-bold">
+                                      <span class="list-item-title-icon-wrapper">
+                                        <svg class="icon icon-sm align-self-start icon-color">
+                                          <use>
+                                        <span class="list-item-title title-small-semi-bold">
+                            <button class="btn btn-primary justify-content-center my-3">
+                              <span>
+                      <div class="accordion-item">
+                        <div id="heading8" class="accordion-header">
+                          <button class="accordion-button collapsed title-snall-semi-bold">
+                            <div class="button-wrapper">
+                              <div class="icon-wrapper">
+                                <img class="icon-folder" role="img">
+                                <span>
+                          <p class="accordion-date title-xsmall-regular mb-0">
+                        <div id="collapse8" class="accordion-collapse collapse p-0" role="region">
+                          <div class="accordion-body">
+                            <p class="mb-2 fw-normal">
+                              <span class="label">
+                            <a class="mb-2">
+                              <span class="t-primary">
+                            <a class="chip chip-simple">
+                              <span class="chip-label">
+                            <div class="cmp-icon-list">
+                              <div class="link-list-wrapper">
+                                <ul class="link-list">
+                                  <li class="shadow mt-3">
+                                    <a class="list-item icon-left t-primary title-small-semi-bold">
+                                      <span class="list-item-title-icon-wrapper">
+                                        <svg class="icon icon-sm align-self-start icon-color">
+                                          <use>
+                                        <span class="list-item-title title-small-semi-bold">
+                            <button class="btn btn-primary justify-content-center my-3">
+                              <span>
+                  <button class="btn accordion-view-more mb-2 pt-3 t-primary title-xsmall-semi-bold ps-lg-3">
+                    <span>
+                <section id="contacts" class="it-page-section mb-50 mb-lg-90">
+                  <div class="cmp-card">
+                    <div class="card">
+                      <div class="card-header border-0 p-0 mb-lg-20 m-0">
+                        <div class="d-flex">
+                          <h2 class="title-xxlarge mb-3">
+                      <div class="card-body p-0">
+                        <ul class="link-list">
+                          <li>
+                            <a class="list-item">
+                              <span>
+                          <li>
+                            <a class="list-item">
+                              <span>
+                          <li>
+                            <a class="list-item">
+                              <span>
+                          <li>
+                            <a class="list-item">
+                              <span>
+                <section id="highlight" class="it-page-section mb-50 mb-lg-90">
+                  <div class="cmp-card">
+                    <div class="card card-teaser rounded shadow-sm p-4">
+                      <div class="card-body p-0">
+                        <date class="date-xsmall">
+                        <h2 class="title-xxlarge mt-2">
+                        <h5 class="subtitle-large mb-3">
+                        <p class="mb-3">
+                        <a class="t-primary text-decoration-none">
+                <section id="search-section" class="it-page-section mb-50 mb-lg-90">
+                  <div class="cmp-search-box">
+                    <h2 class="title-xxlarge mb-3">
+                    <form>
+                      <div class="cmp-input-search">
+                        <label class="visually-hidden">
+                        <input id="search-area-personale" class="form-control">
+                        <button class="btn btn-primary">
+                          <span>
+                    <div class="cmp-icon-list mt-4">
+                      <h3 class="title-medium mb-3">
+                      <ul class="link-list">
+                        <li>
+                          <a class="list-item">
+                            <span>
+                        <li>
+                          <a class="list-item">
+                            <span>
+                        <li>
+                          <a class="list-item">
+                            <span>
+                        <li>
+                          <a class="list-item">
+                            <span>
+                        <li>
+                          <a class="list-item">
+                            <span>
+                        <li>
+                          <a class="list-item">
+                            <span>
+    <div id="modal-message" class="modal fade it-dialog-scrollable" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content modal-dimensions h-100">
+          <div class="cmp-modal__header modal-header pb-0">
+            <button class="btn-close">
+            <div class="cmp-modal__header mt-30 mt-lg-50">
+              <date class="date-regular w-100">
+              <h2 id="modal-message-modal-title" class="title-xxxlarge mt-2 mb-0">
+          <div class="modal-body">
+            <div class="mb-60 mb-lg-80">
+              <h5 class="subtitle-large">
+              <p class="text-paragraph mb-4 fw-normal">
+<div id="search-modal" class="modal fade search-modal" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content perfect-scrollbar">
+      <div class="modal-body">
+        <form>
+          <div class="container">
+            <div class="row variable-gutters">
+              <div class="col">
+                <div class="modal-title">
+                  <button class="search-link d-md-none">
+                    <svg class="icon icon-md">
+                      <use>
+                  <h2>
+                  <button class="search-link d-none d-md-block">
+                    <svg class="icon icon-md">
+                      <use>
+                <div class="form-group autocomplete-wrapper">
+                  <label class="visually-hidden">
+                  <input id="autocomplete-two" class="autocomplete ps-5">
+                  <span class="autocomplete-icon">
+                    <svg class="icon">
+                      <use>
+                  <button class="btn btn-primary">
+                    <span>
+            <div class="row variable-gutters">
+              <div class="col-lg-5">
+                <div class="searches-list-wrapper">
+                  <div class="other-link-title">
+                  <ul class="searches-list">
+                    <li>
+                      <a>
+                    <li>
+                      <a>
+                    <li>
+                      <a>
+                    <li>
+                      <a>
+                    <li>
+                      <a>
+                    <li>
+                      <a>
+<footer id="footer" class="it-footer">
+  <div class="it-footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 footer-items-wrapper logo-wrapper">
+          <img class="ue-logo">
+          <div class="it-brand-wrapper">
+            <a>
+              <svg class="icon">
+                <use>
+              <div class="it-brand-text">
+                <h2 class="no_toc">
+      <div class="row">
+        <div class="col-md-3 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          <ul class="footer-list">
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+        <div class="col-md-6 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="footer-list">
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+            <div class="col-md-6">
+              <ul class="footer-list">
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+        <div class="col-md-3 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          <ul class="footer-list">
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+          <h4 class="footer-heading-title">
+          <ul class="footer-list">
+            <li>
+              <a>
+            <li>
+              <a>
+        <div class="col-md-9 mt-md-4 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          <div class="row">
+            <div class="col-md-4">
+              <p class="footer-info">
+                <br>
+                <br>
+                <br>
+                <br>
+                <a>
+                <br>
+                <br>
+                <br>
+                <br>
+            <div class="col-md-4">
+              <ul class="footer-list">
+                <li>
+                  <a data-element="faq">
+                <li>
+                  <a>
+                <li>
+                  <a data-element="report-inefficiency">
+                <li>
+                  <a>
+            <div class="col-md-4">
+              <ul class="footer-list">
+                <li>
+                  <a>
+                <li>
+                  <a data-element="privacy-policy-link">
+                <li>
+                  <a data-element="legal-notes">
+                <li>
+                  <a data-element="accessibility-link">
+        <div class="col-md-3 mt-md-4 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          <ul class="list-inline text-start social">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+      <div class="row">
+        <div class="col-12 footer-items-wrapper">
+          <div class="footer-bottom">
+            <a>
+            <a>
+<link>
+<link>
+<link>

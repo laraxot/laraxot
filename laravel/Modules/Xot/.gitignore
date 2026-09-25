@@ -168,3 +168,5 @@ docs/coverage-*.md
 /.vscode/
 .cursor~*
 .windsurf~*
+graphify-out/
+tests/coverage-xot.xml

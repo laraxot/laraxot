@@ -871,7 +871,7 @@ describe('Lang 100% — Models policies providers views', function (): void {
         $this->mockService(GetAllTranslationAction::class, static function (MockInterface $mock): void {
             $mock->shouldReceive('execute')->andThrow(new \RuntimeException('boom'));
         });
-        Assert::assertSame([], (new TranslationFile())->getRows());
+        expect((new TranslationFile())->getRows())->toBeEmpty();
 
         $bad = sys_get_temp_dir().'/tf_bad_'.uniqid().'.php';
         file_put_contents($bad, '<?php throw new Exception("x");');

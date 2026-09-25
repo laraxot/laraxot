@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # base_workorder_fila5
 
 Monorepo Laraxot per il field service: commesse, interventi, preventivi, fatturazione, magazzino, produzione, conformità e verticali di settore, costruiti come moduli Laravel indipendenti.
@@ -19,3 +20,6 @@ composer test                                         # Pest
 ./vendor/bin/phpstan analyse Modules --memory-limit=-1
 bash ../bashscripts/tools/readme/module-readme-badges.sh --host --check   # README stantii o non agnostici
 ```
+=======
+# laraxot
+>>>>>>> laraxot/dev

@@ -11,12 +11,12 @@ use Mockery\Expectation;
 use Mockery\LegacyMockInterface;
 use Mockery\MockInterface;
 use Modules\UI\Providers\UIServiceProvider;
-use Modules\Xot\Contracts\UserContract;
+use Modules\UI\Tests\Support\EnsuresUiDatabaseSchema;
+use Modules\User\Models\User;
 use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
 
 use function Safe\file_get_contents;
-use Modules\User\Models\User;
 
 /**
  * Base test case for UI module.
@@ -27,6 +27,7 @@ use Modules\User\Models\User;
 abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
+    use EnsuresUiDatabaseSchema;
 
     /**
      * Restringe il tipo di ritorno unione di shouldReceive() per PHPStan.
@@ -68,6 +69,8 @@ abstract class TestCase extends XotBaseTestCase
         $this->prepareSharedSqliteForTesting();
 
         parent::setUp();
+
+        $this->ensureUiSchema();
 
         config(['auth.providers.users.model' => User::class]);
 

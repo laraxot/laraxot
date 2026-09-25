@@ -157,10 +157,10 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         if ($comps->count() === 0) {
             return;
         }
+        /** @var array<int, array<string, mixed>> $commands */
         $commands = $comps->toArray();
-        /** @var array<int, array{ns: string}> $commands */
-        $commands = array_map(static function (mixed $item): string {
-            Assert::isArray($item);
+        /** @var array<int, string> $commands */
+        $commands = array_map(static function (array $item): string {
             Assert::keyExists($item, 'ns');
             Assert::string($item['ns'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
 

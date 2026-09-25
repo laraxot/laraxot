@@ -1,14 +1,3 @@
----
-title: "Filament"
-module: "Job"
-type: concept
-tags: [filament]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "filament"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
 
 https://gitlab.com/amvisor/filament-failed-jobs/-/blob/master/src/FilamentFailedJobsServiceProvider.php
 

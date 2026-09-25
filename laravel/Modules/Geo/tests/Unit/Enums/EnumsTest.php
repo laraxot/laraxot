@@ -6,7 +6,10 @@ namespace Modules\Geo\Tests\Unit\Enums;
 
 use Modules\Geo\Enums\AddressItemEnum;
 use Modules\Geo\Enums\AddressTypeEnum;
+use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
 
 test('AddressItemEnum has expected cases', function () {
     $cases = AddressItemEnum::cases();

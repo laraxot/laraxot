@@ -1,27 +1,13 @@
-# Auto-generated forbidden paths — do not edit manually
-# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
-
-bashscripts
-_bmad-output
-.circleci
-.claude-audit
-.devcontainer
-_docs
-docs/archive
-docs/archived
-docs/legacy
-docs/workbench
-.kilocode
-.kiro
-.ralph
-scripts
-test-results
-tests/.claude-audit
 # ==============================================
 # LARAXOT MODULE GEO - .GITIGNORE
+# ==============================================
 # Modulo Geo Laraxot - Template standardizzato
 # Ultimo aggiornamento: 2025-01-31
+# ==============================================
+
+# ==============================================
 # DEPENDENCIES & PACKAGES
+# ==============================================
 /vendor/
 /vendor
 /node_modules/
@@ -31,13 +17,19 @@ yarn.lock
 composer.lock
 yarn-error.log
 npm-debug.log
+
+# ==============================================
 # BUILD & COMPILED FILES
+# ==============================================
 /build
 /build/
 build/
 dist/
 cache/
+
+# ==============================================
 # CACHE & TEMPORARY FILES
+# ==============================================
 *.cache
 *.lock
 *.phar
@@ -50,13 +42,19 @@ cache/
 v8-compile-cache-*
 .php-cs-fixer.cache
 .phpunit.result.cache
+
+# ==============================================
 # LOG FILES
+# ==============================================
 *.log
 error_log
 npm-debug.log*
 yarn-error.log*
 lerna-debug.log*
+
+# ==============================================
 # LARAVEL SPECIFIC
+# ==============================================
 bootstrap/compiled.php
 app/storage/
 public/storage
@@ -67,17 +65,26 @@ storage/*.key
 .env
 .env.*
 !.env.example
+
+# ==============================================
 # ENVIRONMENT & CONFIGURATION
+# ==============================================
 Homestead.yaml
 Homestead.json
 /.vagrant
 /.idea
 .phpintel
+
+# ==============================================
 # GIT SPECIFIC
+# ==============================================
 .git-rewrite/
 .git-rewrite
 .git-blame-ignore-revs
+
+# ==============================================
 # SYSTEM FILES
+# ==============================================
 .DS_Store
 .DS_Store?
 ._*
@@ -85,7 +92,10 @@ Homestead.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# ==============================================
 # BACKUP FILES
+# ==============================================
 *.old
 *.old1
 *.old2
@@ -94,39 +104,64 @@ Thumbs.db
 *.bak
 *.bakcup
 *.new
+
+# ==============================================
 # DEVELOPMENT TOOLS
+# ==============================================
 .windsurf/
 .cursor/
 .phpstorm.meta.php
+
+# ==============================================
 # DOCUMENTATION CACHE
+# ==============================================
+
+# ==============================================
 # LANGUAGE FILES
+# ==============================================
 resources/lang/
+
+# ==============================================
 # OLD DIRECTORIES (LEGACY CLEANUP)
+# ==============================================
 resources/views/Components_old/
 database/Migrations_old/
 database/Seeders_old/
 database/Factories_old/
 database_old/
+
+# ==============================================
 # MODULE SPECIFIC - GEO
+# ==============================================
 # File di configurazione locale
 config/local.php
 config/development.php
+
 # Dati geografici temporanei
 geo/temp/
 geo/maps/temp/
 geo/data/temp/
+
 # Cache geografica
 storage/geo/
 storage/maps/
+
 # File di test geografici
 geo_test_data.json
 test_geo_data.sql
+
+# ==============================================
 # END OF GEO .GITIGNORE
+# ==============================================
+
 # 🚫 File specifici del progetto
 *.fila2
 laravel
 public_html
 lang/lang/
+_docs/
+_docs/
+
 # Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
 **/docs/archive/
 # Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
@@ -137,20 +172,9 @@ lang/lang/
 *.orig
 *.rej
 *~head
+
 agentdb.rvf
 .claude-flow/
+test-results
 .vscode/
-tests/AuditCoverage
-# AI/TOOL SCAFFOLD — must never exist in module tree (see docs/wiki/rules/module-theme-root-cleanup.md)
-
-# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
-.cursor/
 .devcontainer/
-.vscode/
-.windsurf/
-tests/AuditCoverage/
-
-# Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
-phpinsights.php
-rector.php
-test-results/

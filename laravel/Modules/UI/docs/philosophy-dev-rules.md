@@ -116,6 +116,14 @@ If you think a rule is wrong:
 
 - `ARCHITECTURE.md` — component organization and Filament patterns
 - `TESTING.md` — component testing strategies
+- `ARCHITECTURE.md` — component organization and Filament patterns
+- `TESTING.md` — component testing strategies
+- `architecture.md` — component organization and Filament patterns
+- `testing.md` — component testing strategies
+- `ARCHITECTURE.md` — component organization and Filament patterns
+- `TESTING.md` — component testing strategies
+- `ARCHITECTURE.md` — component organization and Filament patterns
+- `TESTING.md` — component testing strategies
 - `docs/filament-patterns.md` — Filament resource best practices
 - `docs/folio-volt-integration.md` — Folio+Volt workflow
 - `docs/theme-system.md` — multi-tenant theming

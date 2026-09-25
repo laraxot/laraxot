@@ -4,6 +4,8 @@ type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [structure, architecture, module]
+issues: []
+discussions: []
 ---
 
 # Project Structure — Module **UI**
@@ -35,6 +37,8 @@ tags: [structure, architecture, module]
 ├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
+├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+├── architecture.md                # (opzionale) Architettura modulo
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`

@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 ?>
 <div>
     <div class="btn-group group-toggle">

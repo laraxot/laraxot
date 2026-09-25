@@ -356,8 +356,8 @@ dd($this->layout->getTableContentGrid());
 
 - [UI Components](../components.md)
 - [Filament Tables](https://filamentphp.com/docs/3.x/tables/overview)
-- [Translation Standards](../../Xot/docs/translation-standards.md)
-- [Enum Standards](../../../docs/enum_standards.md)
+- [Translation Standards](../../xot/docs/translation-standards.md)
+- [Enum Standards](../../../../docs/enum_standards.md)
 
 ## Ultimo Aggiornamento
-2025-01-27 - Documentazione completa TableLayoutEnum
+[DATE] - Documentazione completa TableLayoutEnum

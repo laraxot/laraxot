@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 /**
  * Guardia a cricchetto sulle collisioni case-insensitive.
  *
@@ -43,7 +42,7 @@ function collisionGroups(): int
     try {
         /** @var array{identical?: array<mixed>, differing?: array<mixed>} $payload */
         $payload = json_decode($process->getOutput(), true);
-    } catch (\Throwable) {
+    } catch (Throwable) {
         return -1;
     }
 

@@ -5,14 +5,8 @@ type: concept
 created: "2026-04-29T00:00:00Z"
 updated: "2026-04-29T07:22:00Z"
 related:
-  - "./auth-register-focus-loss-overlay.md"
-  - "./block-rendering-and-optional-services.md"
-  - "./claude-audit-static.md"
-  - "./code-redundancy-ui.md"
-  - "./context-overflow-prevention.md"
-  - "./enum-select-best-practices.md"
-  - "./enum-select-component.md"
-  - "./enum-select-contract-and-false-friends.md"
+  - "[[Theme Integration]]"
+  - "[[UI Architecture Sources]]"
 ---
 
 # UI Operating Model
@@ -67,6 +61,6 @@ When a task concerns shared interface behavior:
 
 - [[UI Architecture Sources]]
 - `../../README.md`
-- `../../architecture-1.md`
-- `../../product-strategy-1.md`
+- `../../ARCHITECTURE.md`
+- `../../PRODUCT_STRATEGY.md`
 - `../../architecture/structure.md`

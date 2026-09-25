@@ -12,8 +12,9 @@ use Spatie\QueueableAction\QueueableAction;
  */
 class FilterCoordinatesAction
 {
-    use HandlesCoordinates;
     use QueueableAction;
+
+    use HandlesCoordinates;
 
     /**
      * Filtra le coordinate che si trovano entro un certo raggio da un punto.

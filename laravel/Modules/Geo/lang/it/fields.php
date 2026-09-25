@@ -34,7 +34,7 @@ return [
         ],
         'label' => 'Fields',
         'sort' => 1,
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
     ],
     'fields' => [
         'id' => [

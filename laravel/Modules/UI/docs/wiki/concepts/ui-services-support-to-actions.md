@@ -9,14 +9,8 @@ qmd: "UI module services support converted to actions adapters queueable action"
 issues: []
 discussions: []
 related:
-  - "./auth-register-focus-loss-overlay.md"
-  - "./block-rendering-and-optional-services.md"
-  - "./claude-audit-static.md"
-  - "./code-redundancy-ui.md"
-  - "./context-overflow-prevention.md"
-  - "./enum-select-best-practices.md"
-  - "./enum-select-component.md"
-  - "./enum-select-contract-and-false-friends.md"
+  - ../../Xot/docs/wiki/concepts/queueable-action-trait-mandatory.md
+  - ../../Xot/docs/wiki/concepts/no-app-support-queueable-actions.md
 ---
 
 # UI Services/Support → Actions/Adapters mapping
@@ -44,9 +38,9 @@ invece `Modules\Xot\Services\ThemeService` (archiviato). Nessuna duplicazione tr
 
 | Legacy path | Nuovo path | Tipo | Note |
 |-------------|-----------|------|------|
-| `Services/ComponentService.php` | *(archiviato `.bak`)* | — | classe vuota, nessun caller, nessuna Action creata |
-| `Services/ThemeService.php` | *(archiviato `.bak`)* | — | classe vuota, nessun caller, nessuna Action creata |
-| `Services/UIService.php` | *(archiviato `.bak`)* | — | `asset()` era solo passthrough di `Xot\Actions\File\AssetAction`; nessun caller in produzione, chiamare direttamente `app(AssetAction::class)->execute($path)` se serve |
+| `Services/ComponentService.php` | *(eliminato)* | — | classe vuota, nessun caller, nessuna Action creata |
+| `Services/ThemeService.php` | *(eliminato)* | — | classe vuota, nessun caller, nessuna Action creata |
+| `Services/UIService.php` | *(eliminato)* | — | `asset()` era solo passthrough di `Xot\Actions\File\AssetAction`; nessun caller in produzione, chiamare direttamente `app(AssetAction::class)->execute($path)` se serve |
 | `Services/Map/NullMapService.php` | `Adapters/Map/NullMapServiceAdapter.php` | Adapter | implementa `MapServiceContract` |
 | `Services/Map/NullGeocodingService.php` | `Adapters/Map/NullGeocodingServiceAdapter.php` | Adapter | implementa `GeocodingServiceContract` |
 
@@ -56,21 +50,9 @@ Nessun chiamante PHP in `Modules/*` o `Themes/*` da aggiornare: i Service non av
 consumer in codice produzione, e i loro stub Action (rimossi in questa revisione)
 non avevano a loro volta consumer.
 
-## File archiviati (`.bak`, mai `git rm`)
+## File eliminati
 
-Revisione 2026-07-16: i 5 file `Service` legacy erano ancora fisicamente presenti in
-`app/Services/` (nonostante la revisione precedente li descrivesse come "eliminati").
-Sono stati archiviati con estensione `.bak` secondo la golden rule del repo (mai
-`git rm`, solo rename a `.bak`):
-
-- `app/Services/ComponentService.php.bak`
-- `app/Services/ThemeService.php.bak`
-- `app/Services/UIService.php.bak`
-- `app/Services/Map/NullMapService.php.bak` (sostituito da `Adapters/Map/NullMapServiceAdapter.php`)
-- `app/Services/Map/NullGeocodingService.php.bak` (sostituito da `Adapters/Map/NullGeocodingServiceAdapter.php`)
-
-Nessun `.php` attivo resta in `app/Services/`.
-
+- `app/Services/` (directory intera, prima migrazione)
 - `app/Support/` (non presente nel modulo UI)
 - `app/Actions/ComponentAction.php`, `app/Actions/ThemeAction.php`, `app/Actions/UIAction.php`
   (stub introdotti dalla prima migrazione, eliminati in questa revisione perché privi di

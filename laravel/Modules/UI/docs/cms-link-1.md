@@ -34,10 +34,3 @@ Questo documento è collegato bidirezionalmente con [ui-link.md](../../Cms/docs/
 * [cms-link.md](../../../User/docs/cms-link.md)
 * [cms-link.md](../../../UI/docs/cms-link.md)
 * [cms-link.md](../../../Lang/docs/cms-link.md)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev

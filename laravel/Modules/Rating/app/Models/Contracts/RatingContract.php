@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models\Contracts;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
@@ -37,15 +38,16 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
  *
  * @phpstan-require-extends Model
  *
- * @property int         $id
- * @property int|null    $parent_id
- * @property string|null $title
- * @property string|null $txt
- * @property string|null $slug
- * @property bool|null   $is_readonly
- * @property bool|null   $is_disabled
- * @property int|null    $order_column
- * @property RuleEnum    $rule
+ * @property int                    $id
+ * @property int|null               $parent_id
+ * @property string|null            $title
+ * @property string|null            $txt
+ * @property string|null            $slug
+ * @property bool|null              $is_readonly
+ * @property bool|null              $is_disabled
+ * @property int|null               $order_column
+ * @property Collection<int, Model> $children
+ * @property RuleEnum               $rule
  */
 interface RatingContract extends HasRecursiveRelationshipsContract
 {

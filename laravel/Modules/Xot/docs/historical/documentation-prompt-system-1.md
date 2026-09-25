@@ -7,7 +7,7 @@ Questo documento descrive l'integrazione tra il sistema di documentazione di Xot
 ## Collegamenti
 
 - [Documentazione Completa del Sistema di Prompt](../../../../bashscripts/docs/PROMPTS_DOCUMENTATION_SYSTEM.md)
-- [Linee Guida Generali per la Documentazione](documentation-guidelines.md)
+- [Linee Guida Generali per la Documentazione](./DOCUMENTATION-GUIDELINES.md)
 
 ## Cos'è il Sistema di Prompt
 
@@ -29,7 +29,7 @@ Il sistema di documentazione di Xot e il sistema di prompt di bashscripts si com
 
 ### Come Utilizzare Entrambi i Sistemi
 
-1. Consultare le [Linee Guida per la Documentazione](documentation-guidelines.md) di Xot per comprendere la struttura generale
+1. Consultare le [Linee Guida per la Documentazione](./DOCUMENTATION-GUIDELINES.md) di Xot per comprendere la struttura generale
 2. Utilizzare il [Sistema di Prompt](../../../../bashscripts/docs/PROMPTS_DOCUMENTATION_SYSTEM.md) per istruzioni dettagliate
 
 ## Miglioramenti Recenti
@@ -51,6 +51,6 @@ Qualsiasi aggiornamento al sistema di prompt deve essere:
 ## Collegamenti Correlati
 
 - [Sistema di Collegamenti della Documentazione](../../../../docs/collegamenti-documentazione.md)
-- [Linee Guida per la Documentazione in Xot](documentation-guidelines.md)
+- [Linee Guida per la Documentazione in Xot](./DOCUMENTATION-GUIDELINES.md)
 - [Percorsi Relativi nella Documentazione](../../../../bashscripts/docs/PERCORSI_RELATIVI_DOCUMENTAZIONE.md)
 - [Documentazione del Sistema di Prompt](../../../../bashscripts/docs/PROMPTS_DOCUMENTATION_SYSTEM.md)

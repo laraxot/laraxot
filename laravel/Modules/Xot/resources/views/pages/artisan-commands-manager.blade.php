@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 ?>
 <x-filament::page>
     <div class="space-y-6">

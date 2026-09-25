@@ -42,6 +42,8 @@ function comuneModelFixtures(): array
     ];
 }
 
+uses(\Modules\Geo\Tests\TestCase::class);
+
 beforeEach(function (): void {
     /* @var \Modules\Geo\Tests\TestCase $this */
     File::put(

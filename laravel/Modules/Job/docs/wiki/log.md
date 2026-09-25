@@ -1,17 +1,3 @@
-<<<<<<< HEAD
----
-title: "Job - Wiki Activity Log"
-module: "Job"
-type: concept
-tags: [log]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "log"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
-=======
->>>>>>> af4545e (.)
 ## [2026-06-30] docs | Second brain — policy incident consolidato
 
 - Memoria datata rimossa; canon in [policy-restoration-incident.md](./concepts/policy-restoration-incident.md)

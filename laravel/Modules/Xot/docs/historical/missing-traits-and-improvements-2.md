@@ -613,7 +613,7 @@ class AlertWidget extends BaseTableWidget
 ## 🔗 Collegamenti Correlati
 
 - [Analisi Completa Codice](./COMPREHENSIVE_CODE_ANALYSIS.md)
-- [Architettura Moduli](architecture.md)
+- [Architettura Moduli](./ARCHITECTURE.md)
 - [Performance Guide](./PERFORMANCE_GUIDE.md)
 
 ---

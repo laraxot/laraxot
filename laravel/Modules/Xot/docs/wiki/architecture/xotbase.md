@@ -22,6 +22,7 @@ XotBase funge da wrapper per tutti i componenti Filament nel progetto Laraxot. C
 | Componente Filament | Classe XotBase |
 | :--- | :--- |
 | `Filament\Actions\Action` | `Modules\Xot\Filament\Actions\XotBaseAction` |
+| `Filament\Actions\ExportAction` | `Modules\Xot\Filament\Actions\XotBaseExportAction` |
 | `Filament\Resources\Resource` | `Modules\Xot\Filament\Resources\XotBaseResource` |
 | `Filament\Pages\Page` | `Modules\Xot\Filament\Pages\XotBasePage` |
 | `Filament\Widgets\Widget` | `Modules\Xot\Filament\Widgets\XotBaseWidget` |
@@ -37,11 +38,7 @@ Non utilizzare mai `->label()`, `->placeholder()`, o `->tooltip()` con stringhe 
 ### 2. Metodi Obbligatori
 Alcune classi `XotBase` impongono pattern specifici per garantire la conformità con PHPStan Level 10:
 - **XotBaseWidget**: Deve implementare `public function getFormSchema(): array`.
-<<<<<<< HEAD
 - **XotBaseResource**: Deve implementare `public function getFormSchema(): array` (centralizzato).
-=======
-- **XotBaseResource**: Deve implementare `public function getFormSchema(): array` (centralizzato).
->>>>>>> laraxot/dev
 
 ### 3. Namespace Standard
 Assicurati di usare i namespace corretti. Mai includere `App` nel percorso se sei all'interno di un modulo (es. `Modules\Xot\Filament\...` non `Modules\Xot\App\Filament\...`).

@@ -1,0 +1,444 @@
+--- URL1: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-04-conferma.html
++++ URL2: http://127.0.0.1:8000/it/tests/segnalazione-04-conferma
+@@ -114,7 +114,7 @@
+                         <a class="nav-link" data-element="news">
+                           <span>
+                       <li class="nav-item">
+-                        <a class="nav-link active" data-element="all-services">
++                        <a class="nav-link" data-element="all-services">
+                           <span>
+                       <li class="nav-item">
+                         <a class="nav-link" data-element="live">
+@@ -166,386 +166,58 @@
+                             <use>
+                           <span class="visually-hidden">
+ <main>
+-  <div id="main-container" class="container">
+-    <div class="row justify-content-center">
+-      <div class="col-12 col-lg-10">
+-        <div class="cmp-breadcrumbs" role="navigation">
+-          <nav class="breadcrumb-container">
+-            <ol class="breadcrumb p-0" data-element="breadcrumb">
+-              <li class="breadcrumb-item">
+-                <a>
+-                <span class="separator">
+-              <li class="breadcrumb-item">
+-                <a>
+-                <span class="separator">
+-              <li class="breadcrumb-item active">
+-        <div class="cmp-heading p-0">
+-          <div class="categoryicon-top d-flex">
+-            <svg class="icon icon-success mr-10 icon-md">
+-              <use>
+-            <h1 class="title-xxxlarge">
+-          <p class="subtitle-small">
+-            <strong>
+-          <p class="subtitle-small">
+-            <a class="t-primary">
+-          <p class="subtitle-small pt-3 pt-lg-4">
+-            <br>
+-            <strong>
+-          <button class="btn btn-outline-primary bg-white fw-bold">
+-            <span class="rounded-icon">
+-              <svg class="icon icon-primary icon-sm">
+-                <use>
+-            <span>
+-        <p class="mt-3">
+-          <a class="t-primary text-paragraph">
+-          <span class="text-paragraph">
+-    <hr class="d-none d-lg-block mt-40 mb-0">
+-    <div class="row justify-content-center mb-3 mb-md-5">
+-      <div class="col-12 col-lg-10">
+-        <div class="cmp-icon-list">
+-          <h2 id="related-service" class="title-xxlarge mt-40 mb-2 mb-lg-4 mb-lg-4">
+-          <div class="link-list-wrapper">
+-            <ul class="link-list">
+-              <li class="shadow mb-4">
+-                <a class="list-item icon-left t-primary title-small-semi-bold">
+-                  <span class="list-item-title-icon-wrapper">
+-                    <svg class="icon icon-sm align-self-start icon-color">
+-                      <use>
+-                    <span class="list-item-title title-small-semi-bold">
+-  <div class="bg-primary">
+-    <div class="container">
+-      <div class="row d-flex justify-content-center bg-primary">
+-        <div class="col-12 col-lg-6 p-lg-0 px-4">
+-          <div id="rating" class="cmp-rating pt-lg-80 pb-lg-80">
+-            <div class="card shadow card-wrapper" data-element="feedback">
+-              <div class="cmp-rating__card-first">
+-                <div class="card-header border-0">
+-                  <h2 class="title-medium-2-semi-bold mb-0" data-element="feedback-title">
+-                <div class="card-body">
+-                  <fieldset class="rating">
+-                    <legend class="visually-hidden">
+-                    <input id="star5a">
+-                    <label class="full rating-star active" data-element="feedback-rate-5">
+-                      <svg class="icon icon-sm" role="img">
+-                        <path>
+-                        <path>
+-                      <span id="first-star" class="visually-hidden">
+-                    <input id="star4a">
+-                    <label class="full rating-star active" data-element="feedback-rate-4">
+-                      <svg class="icon icon-sm" role="img">
+-                        <path>
+-                        <path>
+-                      <span id="second-star" class="visually-hidden">
+-                    <input id="star3a">
+-                    <label class="full rating-star active" data-element="feedback-rate-3">
+-                      <svg class="icon icon-sm" role="img">
+-                        <path>
+-                        <path>
+-                      <span id="third-star" class="visually-hidden">
+-                    <input id="star2a">
+-                    <label class="full rating-star active" data-element="feedback-rate-2">
+-                      <svg class="icon icon-sm" role="img">
+-                        <path>
+-                        <path>
+-                      <span id="fourth-star" class="visually-hidden">
+-                    <input id="star1a">
+-                    <label class="full rating-star active" data-element="feedback-rate-1">
+-                      <svg class="icon icon-sm" role="img">
+-                        <path>
+-                        <path>
+-                      <span id="fifth-star" class="visually-hidden">
+-              <div class="cmp-rating__card-second d-none">
+-                <div class="card-header border-0 mb-0">
+-                  <h2 id="rating-feedback" class="title-medium-2-bold mb-0">
+-              <div class="form-rating d-none">
+-                <div class="d-none">
+-                  <div class="cmp-steps-rating">
+-                    <fieldset class="fieldset-rating-one d-none" data-element="feedback-rating-positive">
+-                      <legend class="iscrizioni-header w-100">
+-                        <h3 class="step-title d-flex flex-column flex-lg-row align-items-lg-center justify-content-between drop-shadow">
+-                          <span class="d-block text-wrap" data-element="feedback-rating-question">
+-                          <span class="step">
+-                      <div class="cmp-steps-rating__body">
+-                        <div class="cmp-radio-list">
+-                          <div class="card card-teaser shadow-rating">
+-                            <div class="card-body">
+-                              <div class="form-check m-0">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-1">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-2">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-3">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-4">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-5">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                    <fieldset class="fieldset-rating-two d-none" data-element="feedback-rating-negative">
+-                      <legend class="iscrizioni-header w-100">
+-                        <h3 class="step-title d-flex flex-column flex-lg-row flex-wrap align-items-lg-center justify-content-between drop-shadow">
+-                          <span class="d-block text-wrap" data-element="feedback-rating-question">
+-                          <span class="step">
+-                      <div class="cmp-steps-rating__body">
+-                        <div class="cmp-radio-list">
+-                          <div class="card card-teaser shadow-rating">
+-                            <div class="card-body">
+-                              <div class="form-check m-0">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-6">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-7">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-8">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-9">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-10">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                <div class="d-none">
+-                  <div class="cmp-steps-rating">
+-                    <fieldset>
+-                      <legend class="iscrizioni-header w-100">
+-                        <h3 class="step-title d-flex flex-column flex-lg-row flex-wrap align-items-lg-center justify-content-between drop-shadow">
+-                          <span class="d-block text-wrap">
+-                          <span class="step">
+-                      <div class="cmp-steps-rating__body">
+-                        <div class="form-group">
+-                          <label>
+-                          <input id="formGroupExampleInputWithHelp" class="form-control" data-element="feedback-input-text">
+-                          <small id="formGroupExampleInputWithHelpDescription" class="form-text">
+-                <div class="d-flex flex-nowrap pt-4 w-100 justify-content-center button-shadow">
+-                  <button class="btn btn-outline-primary fw-bold me-4 btn-back">
+-                  <button class="btn btn-primary fw-bold btn-next">
+-  <div class="bg-grey-card shadow-contacts">
+-    <div class="container">
+-      <div class="row">
+-        <div class="col-12 col-lg-6 offset-lg-3 p-contacts">
+-          <div class="cmp-contacts">
+-            <div class="card w-100">
+-              <div class="card-body">
+-                <h2 class="title-medium-2-semi-bold">
+-                <ul class="contact-list p-0">
+-                  <li>
+-                    <a class="list-item">
+-                      <svg class="icon icon-primary icon-sm">
++  <div class="cms-view-wrapper">
++    <div class="page-content content">
++      <section class="stepper-flow-section py-8">
++        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
++          <div class="it-stepper" role="group">
++            <div class="stepper-header" role="tablist">
++              <ul class="stepper-header-group">
++                <li class="stepper-step" role="tab">
++                  <button class="stepper-number">
++                    <span class="step-dot">
++                      <span class="sr-only">
++                      <svg class="icon icon-sm">
+                         <use>
+                       <span>
+-                  <li>
+-                    <a class="list-item" data-element="contacts">
+-                      <svg class="icon icon-primary icon-sm">
++                    <span class="step-label">
++                <li class="stepper-step" role="tab">
++                  <button class="stepper-number">
++                    <span class="step-dot">
++                      <span class="sr-only">
++                      <svg class="icon icon-sm">
+                         <use>
+                       <span>
+-                  <li>
+-                    <a class="list-item">
+-                      <svg class="icon icon-primary icon-sm">
++                    <span class="step-label">
++                <li class="stepper-step" role="tab">
++                  <button class="stepper-number">
++                    <span class="step-dot">
++                      <span class="sr-only">
++                      <svg class="icon icon-sm">
+                         <use>
+                       <span>
+-                  <li>
+-                    <a class="list-item" data-element="appointment-booking">
+-                      <svg class="icon icon-primary icon-sm">
++                    <span class="step-label">
++                <li class="stepper-step" role="tab">
++                  <button class="stepper-number">
++                    <span class="step-dot">
++                      <span class="sr-only">
++                      <svg class="icon icon-sm">
+                         <use>
+                       <span>
+-<div id="search-modal" class="modal fade search-modal" role="dialog">
+-  <div class="modal-dialog modal-lg" role="document">
+-    <div class="modal-content perfect-scrollbar">
+-      <div class="modal-body">
+-        <form>
+-          <div class="container">
+-            <div class="row variable-gutters">
+-              <div class="col">
+-                <div class="modal-title">
+-                  <button class="search-link d-md-none">
+-                    <svg class="icon icon-md">
+-                      <use>
+-                  <h2>
+-                  <button class="search-link d-none d-md-block">
+-                    <svg class="icon icon-md">
+-                      <use>
+-                <div class="form-group autocomplete-wrapper">
+-                  <label class="visually-hidden">
+-                  <input id="autocomplete-two" class="autocomplete ps-5">
+-                  <span class="autocomplete-icon">
+-                    <svg class="icon">
+-                      <use>
+-                  <button class="btn btn-primary">
+-                    <span>
+-            <div class="row variable-gutters">
+-              <div class="col-lg-5">
+-                <div class="searches-list-wrapper">
+-                  <div class="other-link-title">
+-                  <ul class="searches-list">
+-                    <li>
+-                      <a>
+-                    <li>
+-                      <a>
+-                    <li>
+-                      <a>
+-                    <li>
+-                      <a>
+-                    <li>
+-                      <a>
+-                    <li>
+-                      <a>
+-<footer id="footer" class="it-footer">
+-  <div class="it-footer-main">
+-    <div class="container">
+-      <div class="row">
+-        <div class="col-12 footer-items-wrapper logo-wrapper">
+-          <img class="ue-logo">
+-          <div class="it-brand-wrapper">
+-            <a>
+-              <svg class="icon">
+-                <use>
+-              <div class="it-brand-text">
+-                <h2 class="no_toc">
+-      <div class="row">
+-        <div class="col-md-3 footer-items-wrapper">
+-          <h4 class="footer-heading-title">
+-          <ul class="footer-list">
+-            <li>
+-              <a>
+-            <li>
+-              <a>
+-            <li>
+-              <a>
+-            <li>
+-              <a>
+-            <li>
+-              <a>
+-            <li>
+-              <a>
+-            <li>
+-              <a>
+-        <div class="col-md-6 footer-items-wrapper">
+-          <h4 class="footer-heading-title">
+-          <div class="row">
+-            <div class="col-md-6">
+-              <ul class="footer-list">
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-            <div class="col-md-6">
+-              <ul class="footer-list">
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-                <li>
+-                  <a>
+-        <div class="col-md-3 footer-items-wrapper">
+-          <h4 class="footer-heading-title">
+-          <ul class="footer-list">
+-            <li>
+-              <a>
+-            <li>
+-              <a>
+-            <li>
+-              <a>
+-          <h4 class="footer-heading-title">
+-          <ul class="footer-list">
+-            <li>
+-              <a>
+-            <li>
+-              <a>
+-        <div class="col-md-9 mt-md-4 footer-items-wrapper">
+-          <h4 class="footer-heading-title">
+-          <div class="row">
+-            <div class="col-md-4">
+-              <p class="footer-info">
+-                <br>
+-                <br>
+-                <br>
+-                <br>
+-                <a>
+-                <br>
+-                <br>
+-                <br>
+-                <br>
+-            <div class="col-md-4">
+-              <ul class="footer-list">
+-                <li>
+-                  <a data-element="faq">
+-                <li>
+-                  <a>
+-                <li>
+-                  <a data-element="report-inefficiency">
+-                <li>
+-                  <a>
+-            <div class="col-md-4">
+-              <ul class="footer-list">
+-                <li>
+-                  <a>
+-                <li>
+-                  <a data-element="privacy-policy-link">
+-                <li>
+-                  <a data-element="legal-notes">
+-                <li>
+-                  <a data-element="accessibility-link">
+-        <div class="col-md-3 mt-md-4 footer-items-wrapper">
+-          <h4 class="footer-heading-title">
+-          <ul class="list-inline text-start social">
+-            <li class="list-inline-item">
+-              <a class="p-1 text-white">
+-                <svg class="icon icon-sm icon-white align-top">
+-                  <use>
+-                <span class="visually-hidden">
+-            <li class="list-inline-item">
+-              <a class="p-1 text-white">
+-                <svg class="icon icon-sm icon-white align-top">
+-                  <use>
+-                <span class="visually-hidden">
+-            <li class="list-inline-item">
+-              <a class="p-1 text-white">
+-                <svg class="icon icon-sm icon-white align-top">
+-                  <use>
+-                <span class="visually-hidden">
+-            <li class="list-inline-item">
+-              <a class="p-1 text-white">
+-                <svg class="icon icon-sm icon-white align-top">
+-                  <use>
+-                <span class="visually-hidden">
+-            <li class="list-inline-item">
+-              <a class="p-1 text-white">
+-                <svg class="icon icon-sm icon-white align-top">
+-                  <use>
+-                <span class="visually-hidden">
+-            <li class="list-inline-item">
+-              <a class="p-1 text-white">
+-                <svg class="icon icon-sm icon-white align-top">
++                    <span class="step-label">
++              <div class="stepper-progress" role="progressbar">
++                <div class="stepper-progress-bar">
++            <div class="stepper-content">
++            <nav class="stepper-nav">
++              <button class="btn btn-outline-primary">
++                <svg class="icon icon-primary icon-sm">
++                  <use>
++                <span>
++              <button class="btn btn-primary ms-auto">
++                <span>
++                <svg class="icon icon-white icon-sm">
++                  <use>
++              <button class="btn btn-success ms-auto">
++                <span>
++                <svg class="icon icon-white icon-sm">
+                   <use>
+-                <span class="visually-hidden">
+-      <div class="row">
+-        <div class="col-12 footer-items-wrapper">
+-          <div class="footer-bottom">
+-            <a>
+-            <a>

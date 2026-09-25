@@ -1,37 +1,3 @@
----
-title: "Shared Hosting Chart Strategy (No NPM/Node)"
-type: concept
-tags: [shared, hosting, strategy]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "shared-hosting-strategy shared hosting chart strategy (no npm/node)"
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-=======
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-related:
-  - "./chartjs-datalabels-multiple-labels-complete-guide.md"
-  - "./chartjs-plugin-datalabels-filament5.md"
-  - "./export-strategy.md"
-  - "./filament-chart-js-guide.md"
-  - "./server-side-actions.md"
----
-
 # Shared Hosting Chart Strategy (No NPM/Node)
 
 > **Purpose**: Generate chart images in background jobs on **Shared Hosting environments** where you cannot install Node.js/Puppeteer (`browsershot` is not an option).

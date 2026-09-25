@@ -1,14 +1,3 @@
----
-title: "Job Module - Roadmap"
-module: "Job"
-type: concept
-tags: [00, INDEX]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "00 index"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
 # Job Module - Roadmap
 
 > Infrastruttura robusta per code e processi in background.

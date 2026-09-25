@@ -10,7 +10,7 @@
 
 **Motivazione:** La documentazione nel codice è fondamentale per la manutenibilità e la comprensione del sistema, specialmente per quanto riguarda la gestione dei componenti UI che è un aspetto critico dell'architettura modulare.
 
-### 2. PATHS_AND_ASSETS.md
+### 2. paths-and-assets.md
 
 **Problema:** Conflitto tra la versione HEAD che conteneva un avviso importante sulla posizione corretta dei componenti UI condivisi e una sezione dettagliata sulle regole per i componenti Blade UI, e la versione del branch che li aveva rimossi.
 

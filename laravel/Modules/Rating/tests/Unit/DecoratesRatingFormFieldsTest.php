@@ -8,7 +8,7 @@ use Filament\Forms\Components\Select;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Fieldset;
 use Modules\Rating\Filament\Concerns\DecoratesRatingFormFields;
-use Modules\Rating\Models\BaseRating;
+use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -20,7 +20,7 @@ describe('DecoratesRatingFormFields', function (): void {
         $host = new class {
             use DecoratesRatingFormFields;
 
-            public function decorate(BaseRating $rating, Component $component): Component
+            public function decorate(RatingContract $rating, Component $component): Component
             {
                 return $this->applyDefaultRatingFieldDecoration($rating, $component);
             }

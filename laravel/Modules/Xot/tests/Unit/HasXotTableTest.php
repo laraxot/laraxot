@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Filament\Tables\Table;
 use Mockery\MockInterface;
 use Modules\Xot\Tests\TestCase;

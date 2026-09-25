@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-## stato analisi phpstan
-
-- **data**: 2025-11-12
-- **ambito**: `Modules/Xot`
-- **comando**: `./vendor/bin/phpstan analyse Modules/Xot --memory-limit=-1`
-- **risultato**: ✅ nessun errore (livello massimo configurato)
-
-### osservazioni operative
-- mantenere le classi base allineate ai pattern Laraxot (`XotBase*`, trait condivisi);
-- proseguire con la normalizzazione dei file in `docs/` (evitare duplicati e nomi non conformi);
-- verificare dopo ogni refactor che gli helper condivisi rispettino la tipizzazione stretta.
-=======
 # PHPStan Analysis Report - 2025-11-18
 
 ## Executive Summary
@@ -33,8 +20,7 @@
   - Array access on mixed types
   - Invalid binary operations
 
-#### healthcare_app Module (Complex Issues)
-#### ModuloEsempio Module (Complex Issues)
+#### <nome progetto> Module (Complex Issues)
 - **Errors:** ~500+ across chart export and quantum actions
 - **Main Issues:**
   - Missing class definitions (quantum-related classes)
@@ -69,12 +55,11 @@ Function preg_replace is unsafe to use. Please add 'use function Safe\preg_repla
 #### Missing Class Definitions
 ```php
 // ❌ Quantum-related classes not found
-Class Modules\healthcare_app\Actions\Charts\Quantum\GenerateConsciousChartAction
+Class Modules\<nome progetto>\Actions\Charts\Quantum\GenerateConsciousChartAction
 implements unknown interface Spatie\Queable\Contracts\Queable.
-Class Modules\healthcare_app\Actions\Charts\Quantum\GenerateConsciousChartAction
-Class Modules\ModuloEsempio\Actions\Charts\Quantum\GenerateConsciousChartAction
+Class Modules\<nome progetto>\Actions\Charts\Quantum\GenerateConsciousChartAction
 implements unknown interface Spatie\Queable\Contracts\Queable.
-Class Modules\ModuloEsempio\Actions\Charts\Quantum\GenerateConsciousChartAction
+Class Modules\<nome progetto>\Actions\Charts\Quantum\GenerateConsciousChartAction
 uses unknown trait Spatie\Queable\QueableAction.
 ```
 
@@ -92,16 +77,11 @@ uses unknown trait Spatie\Queable\QueableAction.
 3. **Function Safety**: Missing Safe library imports
 4. **Return Types**: Incorrect PHPDoc return types
 
-#### healthcare_app Module Issues
+#### <nome progetto> Module Issues
 **Primary Files:**
-- `healthcare_app/app/Actions/Charts/Export/ExportFilamentWidgetToPngAction.php` (100+ errors)
-- `healthcare_app/app/Actions/Charts/Export/ExportFilamentWidgetToSvgAction.php` (150+ errors)
-- `healthcare_app/app/Actions/Charts/Quantum/GenerateConsciousChartAction.php` (200+ errors)
-#### ModuloEsempio Module Issues
-**Primary Files:**
-- `ModuloEsempio/app/Actions/Charts/Export/ExportFilamentWidgetToPngAction.php` (100+ errors)
-- `ModuloEsempio/app/Actions/Charts/Export/ExportFilamentWidgetToSvgAction.php` (150+ errors)
-- `ModuloEsempio/app/Actions/Charts/Quantum/GenerateConsciousChartAction.php` (200+ errors)
+- `<nome progetto>/app/Actions/Charts/Export/ExportFilamentWidgetToPngAction.php` (100+ errors)
+- `<nome progetto>/app/Actions/Charts/Export/ExportFilamentWidgetToSvgAction.php` (150+ errors)
+- `<nome progetto>/app/Actions/Charts/Quantum/GenerateConsciousChartAction.php` (200+ errors)
 
 **Key Problems:**
 1. **Missing Classes**: Quantum architecture classes not implemented
@@ -1075,4 +1055,3 @@ class MyModel extends BaseModel
 **Stato**: 🔄 Analisi Completata - Correzioni in Corso
 **phpstan.neon**: ✅ INTOCCATO
 **Approccio**: DRY + KISS + Type Safety
->>>>>>> laraxot/dev

@@ -1,0 +1,157 @@
+--- segnalazione-01-privacy-reference
++++ segnalazione-01-privacy-local
+@@ -114,7 +114,7 @@
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=nav-link | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Novità
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3] | <li> | id=- | class=nav-item | text=-
+-body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=active nav-link | text=-
++body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=nav-link | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Servizi
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4] | <li> | id=- | class=nav-item | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=nav-link | text=-
+@@ -165,74 +165,77 @@
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1] | <svg> | id=- | class=align-top icon icon-sm icon-white | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/span[1] | <span> | id=- | class=visually-hidden | text=RSS
+-body/main[1] | <main> | id=- | class=- | text=-
+-body/main[1]/div[1] | <div> | id=main-container | class=container | text=-
+-body/main[1]/div[1]/div[1] | <div> | id=- | class=justify-content-center row | text=-
+-body/main[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-breadcrumbs | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=breadcrumb-container | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1] | <ol> | id=- | class=breadcrumb p-0 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1] | <li> | id=- | class=breadcrumb-item | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1] | <a> | id=- | class=- | text=Home
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1] | <span> | id=- | class=separator | text=/
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2] | <li> | id=- | class=breadcrumb-item | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/a[1] | <a> | id=- | class=- | text=Servizi
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/span[1] | <span> | id=- | class=separator | text=/
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[3] | <li> | id=- | class=active breadcrumb-item | text=Segnalazione disservizio
+-body/main[1]/div[2] | <div> | id=- | class=container | text=-
+-body/main[1]/div[2]/div[1] | <div> | id=- | class=justify-content-center row | text=-
+-body/main[1]/div[2]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/h1[1] | <h1> | id=- | class=mb-4 title-xxxlarge | text=Segnalazione disservizio
+-body/main[1]/div[2]/div[1]/div[2] | <div> | id=- | class=col-12 | text=-
+-body/main[1]/div[2]/div[1]/div[2]/div[1] | <div> | id=- | class=steppers | text=-
+-body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=steppers-header | text=-
+-body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1] | <ul> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=active | text=Autorizzazioni e condizioni
+-body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/span[1] | <span> | id=- | class=visually-hidden | text=Attivo
+-body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=Dati di segnalazione
+-body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=Riepilogo
+-body/main[1]/div[2]/div[1]/div[2]/div[1]/div[1]/span[1] | <span> | id=- | class=steppers-index | text=1/3
+-body/main[1]/div[3] | <div> | id=- | class=container | text=-
+-body/main[1]/div[3]/div[1] | <div> | id=- | class=justify-content-center row | text=-
+-body/main[1]/div[3]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-8 pb-40 pb-lg-80 | text=-
+-body/main[1]/div[3]/div[1]/div[1]/p[1] | <p> | id=- | class=mb-lg-4 text-paragraph | text=Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell’articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).
+-body/main[1]/div[3]/div[1]/div[1]/p[2] | <p> | id=- | class=mb-0 text-paragraph | text=Per i dettagli sul trattamento dei dati personali consulta l’
+-body/main[1]/div[3]/div[1]/div[1]/p[2]/a[1] | <a> | id=- | class=t-primary | text=informativa sulla privacy.
+-body/main[1]/div[3]/div[1]/div[1]/div[1] | <div> | id=- | class=form-check mb-3 mb-lg-40 mt-4 mt-md-40 | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=align-items-center checkbox-body d-flex | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1] | <input> | id=privacy | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1] | <label> | id=- | class=pt-1 title-small-semi-bold | text=Ho letto e compreso l’informativa sulla privacy
+-body/main[1]/div[3]/div[1]/div[1]/button[1] | <button> | id=- | class=btn btn-primary mobile-full | text=-
+-body/main[1]/div[3]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Avanti
+-body/main[1]/div[4] | <div> | id=- | class=bg-grey-card shadow-contacts | text=-
+-body/main[1]/div[4]/div[1] | <div> | id=- | class=container | text=-
+-body/main[1]/div[4]/div[1]/div[1] | <div> | id=- | class=row | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 offset-lg-3 p-contacts | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-contacts | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card w-100 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=title-medium-2-semi-bold | text=Contatta il comune
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=contact-list p-0 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Leggi le domande frequenti
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Richiedi assistenza
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Chiama il numero verde 05 0505
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Prenota appuntamento
++body/main[1] | <main> | id=main-container | class=- | text=-
++body/main[1]/div[1] | <div> | id=- | class=cms-view-wrapper | text=-
++body/main[1]/div[1]/div[1] | <div> | id=- | class=content page-content | text=-
++body/main[1]/div[1]/div[1]/div[1] | <div> | id=- | class=segnalazione-privacy-page | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=main-container | class=container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=justify-content-center row | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-breadcrumbs | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=breadcrumb-container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1] | <ol> | id=- | class=breadcrumb p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1] | <li> | id=- | class=breadcrumb-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1] | <a> | id=- | class=- | text=Home
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1] | <span> | id=- | class=separator | text=/
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2] | <li> | id=- | class=breadcrumb-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/a[1] | <a> | id=- | class=- | text=Servizi
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/span[1] | <span> | id=- | class=separator | text=/
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[3] | <li> | id=- | class=active breadcrumb-item | text=Segnalazione disservizio
++body/main[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=justify-content-center row | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/h1[1] | <h1> | id=- | class=mb-4 title-xxxlarge | text=Segnalazione disservizio
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2] | <div> | id=- | class=col-12 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1] | <div> | id=- | class=steppers | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=steppers-header | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1] | <ul> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=active | text=Autorizzazioni e condizioni
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/span[1] | <span> | id=- | class=visually-hidden | text=Attivo
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=Dati di segnalazione
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=Riepilogo
++body/main[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/span[1] | <span> | id=- | class=steppers-index | text=1/3
++body/main[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=justify-content-center row | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-8 pb-40 pb-lg-80 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/p[1] | <p> | id=- | class=mb-lg-4 text-paragraph | text=Il Comune di Firenze gestisce i dati personali forniti e liberamente comunicati sulla base dell'articolo 13 del Regolamento (UE) 2016/679 General data protection regulation (Gdpr) e degli articoli 13 e successive modifiche e integrazione del decreto legislativo (di seguito d.lgs) 267/2000 (Testo unico enti locali).
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/p[2] | <p> | id=- | class=mb-0 text-paragraph | text=Per i dettagli sul trattamento dei dati personali consulta l'
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/p[2]/a[1] | <a> | id=- | class=t-primary | text=informativa sulla privacy.
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1] | <div> | id=- | class=form-check mb-3 mb-lg-40 mt-4 mt-md-40 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=align-items-center checkbox-body d-flex | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1] | <input> | id=privacy | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1] | <label> | id=- | class=pt-1 title-small-semi-bold | text=Ho letto e compreso l'informativa sulla privacy
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1] | <button> | id=- | class=btn btn-primary mobile-full | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Avanti
++body/main[1]/div[1]/div[1]/div[1]/div[4] | <div> | id=- | class=bg-grey-card shadow-contacts | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1] | <div> | id=- | class=container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1] | <div> | id=- | class=row | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 offset-lg-3 p-contacts | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-contacts | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card w-100 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=title-medium-2-semi-bold | text=Contatta il comune
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=contact-list p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Leggi le domande frequenti
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Richiedi assistenza
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Chiama il numero verde 05 0505
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Prenota appuntamento
+ body/div[2] | <div> | id=search-modal | class=fade modal search-modal | text=-
+ body/div[2]/div[1] | <div> | id=- | class=modal-dialog modal-lg | text=-
+ body/div[2]/div[1]/div[1] | <div> | id=- | class=modal-content perfect-scrollbar | text=-

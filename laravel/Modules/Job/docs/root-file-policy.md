@@ -1,14 +1,3 @@
----
-title: "Root file policy"
-module: "Job"
-type: rule
-tags: [root, file, policy]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "root file policy"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
 # Root file policy
 
 Updated: 2026-07-08

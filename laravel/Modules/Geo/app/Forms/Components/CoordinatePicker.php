@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Forms\Components;
 
+use Filament\Forms\Components\Field;
 use Illuminate\Support\Facades\Http;
 use Livewire\Attributes\On;
 use Modules\Xot\Actions\Cast\SafeFloatCastAction;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
-use Modules\Xot\Filament\Forms\Components\XotBaseField;
 
-class CoordinatePicker extends XotBaseField
+class CoordinatePicker extends Field
 {
     public ?string $latitudeColumn = 'latitude';
 

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Modules\Geo\Filament\Fields;
 
 use Filament\Forms\Components\TextInput;
-use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
+use Filament\Schemas\Components\Section;
 
-class AddressField extends XotBaseSection
+class AddressField extends Section
 {
     // protected string $optionValueProperty = 'id';
 

@@ -1,17 +1,3 @@
-<<<<<<< HEAD
----
-title: "Risks - Job"
-module: "Job"
-type: concept
-tags: [05, risks]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "05 risks"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
-=======
->>>>>>> af4545e (.)
 # Risks - Job
 
 ## Top Risks

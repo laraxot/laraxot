@@ -8,8 +8,10 @@ use Modules\Geo\Datas\Map\IconData;
 use Modules\Geo\Datas\Map\MarkerData;
 use Modules\Geo\Datas\Map\PositionData;
 use Modules\Geo\Datas\Map\SizeData;
+use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('IconData can be instantiated', function (): void {
     $icon = IconData::from([
         'url' => 'https://example.com/icon.png',

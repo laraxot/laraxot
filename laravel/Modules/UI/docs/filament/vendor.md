@@ -3,15 +3,6 @@ title: Ripristinare cartella vendor
 description: Ripristinare cartella vendor
 extends: _layouts.documentation
 section: content
-related:
-  - "./automatic-translations.md"
-  - "./best-practices.md"
-  - "./component-icon-support.md"
-  - "./component-methods-compatibility.md"
-  - "./filament-4-components-guide.md"
-  - "./filament-4-migration-guide.md"
-  - "./filament-4-migration-summary.md"
-  - "./filament-4-migration-sumy.md"
 ---
 
 # Ripristinare la cartella vendor

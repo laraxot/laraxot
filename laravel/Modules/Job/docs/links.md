@@ -1,15 +1,3 @@
----
-<<<<<<< HEAD
-title: "Links"
-module: "Job"
-type: concept
-tags: [links]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "links"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
 https://betterprogramming.pub/laravel-fail-retry-or-delay-a-queued-job-from-itself-41e0bb14440c
 
 
@@ -30,11 +18,3 @@ https://websolutionstuff.com/post/laravel-9-cron-job-task-scheduling-tutorial  !
 
 
 
-=======
-module: theme
-topic: links
-canonical: ../../../Themes/docs/shared-components/links.txt
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/links.txt
->>>>>>> af4545e (.)

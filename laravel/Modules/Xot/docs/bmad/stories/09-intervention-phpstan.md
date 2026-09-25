@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
----
-name: 09-intervention-phpstan
-description: "Modulo: Intervention"
-metadata:
-  type: bmad
----
-
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> laraxot/dev
 # BMAD Story 09 — Intervention: 21 errori PHPStan
 
 **Modulo:** `Intervention`

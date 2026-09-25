@@ -344,21 +344,20 @@ echo "✅ Consolidamento completato!"
 ## Collegamenti Bidirezionali
 
 ### Documentazione Correlata
-- [README](../README.md) - Panoramica modulo UI
+- [README](../readme.md) - Panoramica modulo UI
 - [Architettura](./core/architecture.md) - Architettura modulo
 - [Convenzioni](./core/conventions.md) - Convenzioni unificate
 
 ### Documentazione Root
-- [docs/ottimizzazioni-sistema.md](../../../docs/ottimizzazioni-sistema.md) - Ottimizzazioni sistema generale
-- [docs/architettura-moduli.md](../../../docs/architettura-moduli.md) - Architettura moduli
+- [docs/ottimizzazioni-sistema.md](../../../../docs/ottimizzazioni-sistema.md) - Ottimizzazioni sistema generale
+- [docs/architettura-moduli.md](../../../../docs/architettura-moduli.md) - Architettura moduli
 
 ### Documentazione Moduli Correlati
-- [Xot/docs/ottimizzazioni-modulo-xot.md](../../Xot/docs/ottimizzazioni-modulo-xot.md) - Ottimizzazioni modulo Xot
-- [User/docs/ottimizzazioni-modulo-user.md](../../User/docs/ottimizzazioni-modulo-user.md) - Ottimizzazioni modulo User
+- [Xot/docs/ottimizzazioni-modulo-xot.md](../../xot/docs/ottimizzazioni-modulo-xot.md) - Ottimizzazioni modulo Xot
+- [User/docs/ottimizzazioni-modulo-user.md](../../user/docs/ottimizzazioni-modulo-user.md) - Ottimizzazioni modulo User
 
 ---
 
-**Ultimo aggiornamento:** 2025-01-06
 **Stato:** In implementazione
 **Responsabile:** Team Sviluppo UI
 **Priorità:** ALTA (duplicazioni massive identificate)

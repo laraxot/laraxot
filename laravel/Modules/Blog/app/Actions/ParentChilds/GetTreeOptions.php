@@ -41,13 +41,13 @@ class GetTreeOptions
         Assert::isInstanceOf($collection, Collection::class, 'tree()->get() must return a collection');
 
         if (! method_exists($collection, 'toTree')) {
-            return $collection->all();
+            return array_values($collection->all());
         }
 
         /** @var Collection<int, Category|Menu> $models */
         $models = $collection->toTree();
 
-        return $models->all();
+        return array_values($models->all());
     }
 
     /**

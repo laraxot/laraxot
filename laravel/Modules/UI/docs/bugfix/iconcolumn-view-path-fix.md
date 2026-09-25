@@ -1,34 +1,3 @@
----
-title: "Bugfix: IconColumn View Path Mismatch"
-type: concept
-tags: [iconcolumn, view, path, fix]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "iconcolumn-view-path-fix bugfix: iconcolumn view path mismatch"
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-=======
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-related:
-  - "./groupcolumn-architectural-violations.md"
-  - "./iconcolumn-extends-filament-column.md"
----
-
 # Bugfix: IconColumn View Path Mismatch
 
 **Data Fix**: 11 Novembre 2025
@@ -143,6 +112,6 @@ protected string $view = 'ui::filament.tables.columns.icon';
 
 ## Riferimenti
 
-- [Laraxot Architectural Rules](../../architecture-rules-1.md)
+- [Laraxot Architectural Rules](../../architecture_rules.md)
 - [XotBaseIconColumn](../../../../Xot/app/Filament/Tables/Columns/XotBaseIconColumn.php)
 - [Blade Best Practices](https://laravel.com/docs/blade)

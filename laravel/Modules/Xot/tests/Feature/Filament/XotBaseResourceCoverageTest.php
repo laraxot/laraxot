@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Filament\Schemas\Components\Wizard\Step;
 use Illuminate\Support\HtmlString;
 use Modules\Media\Actions\GetAttachmentsSchemaAction;

@@ -1,0 +1,750 @@
+<div class="skiplink">
+  <a class="visually-hidden-focusable" href="#main-container">
+  </a>
+  <a class="visually-hidden-focusable" href="#footer">
+  </a>
+</div>
+<header class="it-header-wrapper">
+  <div class="it-header-slim-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="it-header-slim-wrapper-content">
+            <a class="d-lg-block navbar-brand" href="#" aria-label="Vai al portale {Nome della Regione} - link esterno - apertura nuova scheda">
+            </a>
+            <div class="it-header-slim-right-zone" role="navigation">
+              <div class="nav-item dropdown">
+                <button type="button" class="nav-link dropdown-toggle">
+                  <span class="visually-hidden">
+                  </span>
+                  <span>
+                  </span>
+                  <svg class="icon">
+                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
+                    </use>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="link-list-wrapper">
+                        <ul class="link-list">
+                          <li>
+                            <a class="dropdown-item list-item" href="#">
+                              <span>
+                                <span class="visually-hidden">
+                                </span>
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item list-item" href="#">
+                              <span>
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-icon btn-full" href="/it/tests/accesso-servizio" data-element="personal-area-login">
+                <span class="rounded-icon">
+                  <svg class="icon icon-primary">
+                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-user">
+                    </use>
+                  </svg>
+                </span>
+                <span class="d-none d-lg-block">
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="it-nav-wrapper">
+    <div class="it-header-center-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="it-header-center-content-wrapper">
+              <div class="it-brand-wrapper">
+                <a href="/">
+                  <svg class="icon">
+                    <image href="/themes/Sixteen/design-comuni/assets/images/logo-comune.svg">
+                    </image>
+                  </svg>
+                  <div class="it-brand-text">
+                    <div class="it-brand-title">
+                    </div>
+                    <div class="it-brand-tagline d-none d-md-block">
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="it-right-zone">
+                <div class="it-socials d-none d-lg-flex">
+                  <span>
+                  </span>
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+                          </use>
+                        </svg>
+                        <span class="visually-hidden">
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+                          </use>
+                        </svg>
+                        <span class="visually-hidden">
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+                          </use>
+                        </svg>
+                        <span class="visually-hidden">
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+                          </use>
+                        </svg>
+                        <span class="visually-hidden">
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+                          </use>
+                        </svg>
+                        <span class="visually-hidden">
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+                          </use>
+                        </svg>
+                        <span class="visually-hidden">
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="it-search-wrapper">
+                  <span class="d-none d-md-block">
+                  </span>
+                  <button class="search-link rounded-icon" type="button" aria-label="Cerca nel sito">
+                    <svg class="icon">
+                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
+                      </use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="it-header-navbar-wrapper" id="header-nav-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="navbar navbar-expand-lg has-megamenu">
+              <button class="custom-navbar-toggler" type="button" aria-label="Mostra/Nascondi la navigazione">
+                <svg class="icon">
+                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-burger">
+                  </use>
+                </svg>
+              </button>
+              <div class="navbar-collapsable" id="nav4">
+                <div class="overlay">
+                </div>
+                <div class="close-div">
+                  <button class="btn close-menu" type="button">
+                    <span class="visually-hidden">
+                    </span>
+                    <svg class="icon">
+                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big">
+                      </use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="menu-wrapper">
+                  <a href="/" class="logo-hamburger">
+                    <svg class="icon">
+                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
+                      </use>
+                    </svg>
+                    <div class="it-brand-text">
+                      <div class="it-brand-title">
+                      </div>
+                    </div>
+                  </a>
+                  <nav aria-label="Principale">
+                    <ul class="navbar-nav" data-element="main-navigation">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/it/tests/amministrazione" data-element="management">
+                          <span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/it/tests/novita" data-element="news">
+                          <span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/it/tests/servizi" data-element="all-services">
+                          <span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/it/tests/eventi" data-element="live">
+                          <span>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <nav aria-label="Secondaria">
+                    <ul class="navbar-nav navbar-secondary">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/it/tests/argomenti" data-element="all-topics">
+                          <span>
+                            <svg class="icon icon-sm">
+                              <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right">
+                              </use>
+                            </svg>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <div class="it-socials">
+                    <span>
+                    </span>
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+                            </use>
+                          </svg>
+                          <span class="visually-hidden">
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+                            </use>
+                          </svg>
+                          <span class="visually-hidden">
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+                            </use>
+                          </svg>
+                          <span class="visually-hidden">
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+                            </use>
+                          </svg>
+                          <span class="visually-hidden">
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+                            </use>
+                          </svg>
+                          <span class="visually-hidden">
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+                            </use>
+                          </svg>
+                          <span class="visually-hidden">
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <div id="main-container" class="container cms-view-wrapper">
+    <div class="page-content content">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <div class="cmp-breadcrumbs">
+              <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb p-0" data-element="breadcrumb">
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="cmp-hero">
+            <section class="it-hero-wrapper bg-white align-items-start">
+              <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
+                <h1 class="text-black" data-element="page-name">
+                </h1>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="container py-5">
+        <h2 class="title-xxlarge mb-4">
+        </h2>
+        <div class="row g-4">
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="modal fade search-modal" id="search-modal" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content perfect-scrollbar">
+      <div class="modal-body">
+        <form>
+          <div class="container">
+            <div class="row variable-gutters">
+              <div class="col">
+                <div class="modal-title">
+                  <button class="search-link d-md-none" type="button" aria-label="Chiudi e torna alla pagina precedente">
+                    <svg class="icon icon-md">
+                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-left">
+                      </use>
+                    </svg>
+                  </button>
+                  <h2>
+                  </h2>
+                  <button class="search-link d-none d-md-block" type="button" aria-label="Chiudi e torna alla pagina precedente">
+                    <svg class="icon icon-md">
+                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big">
+                      </use>
+                    </svg>
+                  </button>
+                </div>
+                <div class="form-group autocomplete-wrapper">
+                  <label for="autocomplete-two" class="visually-hidden">
+                  </label>
+                  <input type="search" class="autocomplete ps-5" id="autocomplete-two" name="autocomplete-two">
+                  <span class="autocomplete-icon">
+                    <svg class="icon">
+                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
+                      </use>
+                    </svg>
+                  </span>
+                  <button type="button" class="btn btn-primary">
+                    <span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row variable-gutters">
+              <div class="col-lg-5">
+                <div class="searches-list-wrapper">
+                  <div class="other-link-title">
+                  </div>
+                  <ul class="searches-list">
+                    <li>
+                      <a href="#">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="it-footer" id="footer">
+  <div class="it-footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 footer-items-wrapper logo-wrapper">
+          <img class="ue-logo" src="/themes/Sixteen/design-comuni/assets/images/logo-eu-inverted.svg" alt="logo Unione Europea">
+          <div class="it-brand-wrapper">
+            <a href="#">
+              <svg class="icon">
+                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
+                </use>
+              </svg>
+              <div class="it-brand-text">
+                <h2 class="no_toc">
+                </h2>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          </h4>
+          <ul class="footer-list">
+            <li>
+              <a href="#">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          </h4>
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="footer-list">
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="footer-list">
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          </h4>
+          <ul class="footer-list">
+            <li>
+              <a href="#">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              </a>
+            </li>
+          </ul>
+          <h4 class="footer-heading-title">
+          </h4>
+          <ul class="footer-list">
+            <li>
+              <a href="#">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-9 mt-md-4 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          </h4>
+          <div class="row">
+            <div class="col-md-4">
+              <p class="footer-info">
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="#">
+                </a>
+                <br>
+                <br>
+                <br>
+                <br>
+              </p>
+            </div>
+            <div class="col-md-4">
+              <ul class="footer-list">
+                <li>
+                  <a href="#" data-element="faq">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-element="report-inefficiency">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul class="footer-list">
+                <li>
+                  <a href="#">
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-element="privacy-policy-link">
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-element="legal-notes">
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-element="accessibility-link">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mt-md-4 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          </h4>
+          <ul class="list-inline text-start social">
+            <li class="list-inline-item">
+              <a class="p-1 text-white" href="#">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+                  </use>
+                </svg>
+                <span class="visually-hidden">
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="p-1 text-white" href="#">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+                  </use>
+                </svg>
+                <span class="visually-hidden">
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="p-1 text-white" href="#">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+                  </use>
+                </svg>
+                <span class="visually-hidden">
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="p-1 text-white" href="#">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+                  </use>
+                </svg>
+                <span class="visually-hidden">
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="p-1 text-white" href="#">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+                  </use>
+                </svg>
+                <span class="visually-hidden">
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="p-1 text-white" href="#">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+                  </use>
+                </svg>
+                <span class="visually-hidden">
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 footer-items-wrapper">
+          <div class="footer-bottom">
+            <a href="#">
+            </a>
+            <a href="#">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

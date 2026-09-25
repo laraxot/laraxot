@@ -46,7 +46,7 @@ final class ImagesGallery
                 //         // ->image()
                 //         // ->maxSize(5000)
                 //     ->multiple()
-                //     ->reorderable()
+                //     ->enableReordering()
                 //     ->openable()
                 //     ->downloadable()
                 //     ->columnSpanFull()

@@ -6,8 +6,6 @@ namespace Modules\Xot\Filament\Resources\CacheResource\Pages;
 
 use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
-use Filament\Tables\Columns\Layout\Stack;
-use Filament\Tables\Columns\TextColumn;
 use Modules\UI\Enums\TableLayoutEnum;
 use Modules\Xot\Filament\Actions\Header\ArtisanHeaderAction;
 use Modules\Xot\Filament\Resources\CacheResource;
@@ -29,8 +27,6 @@ class ListCaches extends XotBaseListRecords
         ];
     }
 
-    
-   
     /**
      * @return array<string, Action>
      */

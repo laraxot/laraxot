@@ -22,7 +22,7 @@ return [
         ],
         'label' => 'Pdf',
         'sort' => 1,
-        'icon' => 'heroicon-o-collection',
+        'icon' => 'xot-files.pdf',
     ],
     'actions' => [
         'create' => [

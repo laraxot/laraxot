@@ -6,9 +6,10 @@ namespace Modules\UI\Filament\Tables\Columns;
 
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
+use Modules\UI\Filament\Forms\Components\AddressField;
 
 /**
- * Controparte in lista di {@see \Modules\UI\Filament\Forms\Components\AddressField}.
+ * Controparte in lista di {@see AddressField}.
  *
  * Stesso insieme di campi (`country`, `street`, `city`, `state`, `zip`), due superfici:
  * il form li edita, la tabella li mostra. Il form legge la relazione con
@@ -28,7 +29,7 @@ class AddressColumn extends GroupColumn
     protected const string DEFAULT_NAME = 'address';
 
     /**
-     * Stesso ordine di {@see \Modules\UI\Filament\Forms\Components\AddressField::getDefaultChildComponents()}.
+     * Stesso ordine di {@see AddressField::getDefaultChildComponents()}.
      *
      * @var list<string>
      */
@@ -50,7 +51,7 @@ class AddressColumn extends GroupColumn
     /**
      * Sostituisce l'elenco dei campi mostrati.
      *
-     * @param  list<string>  $fields
+     * @param list<string> $fields
      */
     public function fields(array $fields): static
     {

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Geo\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Modules\Geo\Actions\Distance\CalculateGeoDistanceAction;
 
 /**
  * Facade for Geo module services.
@@ -16,7 +15,7 @@ use Modules\Geo\Actions\Distance\CalculateGeoDistanceAction;
  * @method static float                calculateDistance(float $lat1, float $lon1, float $lat2, float $lon2)
  * @method static string               getCountryCode(float $lat, float $lon)
  *
- * @see CalculateGeoDistanceAction
+ * @see \Modules\Geo\Actions\Distance\CalculateGeoDistanceAction
  */
 class GeoServiceFacade extends Facade
 {

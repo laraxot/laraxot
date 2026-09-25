@@ -9,7 +9,8 @@ class Clock extends XotBaseWidget
     public string $start = '';
 
     /** @var view-string */
-    protected string $view = 'xot::filament.widgets.clock';
+    /** @var view-string */
+    protected string $view;
 
     public function begin(): void
     {
@@ -29,7 +30,7 @@ class Clock extends XotBaseWidget
             // Decrement the counter...
             // $this->start = $this->start - 1;
             $this->start = (string) now();
-            if ('impossible' === $this->start) {
+            if ($this->start === 'impossible') {
                 $cond = false;
             }
         }

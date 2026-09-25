@@ -1,6 +1,6 @@
 # Analisi Approfondita del Modulo UI
 
-> **Generato**: 2025-12-24
+> **Generato**: [DATE]
 > **Scopo**: Documentare la filosofia, logica, business logic e architettura del modulo UI
 
 ---
@@ -81,39 +81,8 @@ Questo è intenzionale: UI è un **consumer** di Xot, non un base layer.
 Ogni componente è progettato per essere riutilizzato in più moduli senza duplicazione:
 
 ```php
-<<<<<<< HEAD
-// InlineDatePicker - Usato in modulo operativo, Employee, Cms
-// LocationSelector - Usato in modulo operativo, Employee, Geo
-=======
-<<<<<<< HEAD
-// InlineDatePicker - Usato in modulo operativo, Employee, Cms
-// LocationSelector - Usato in modulo operativo, Employee, Geo
-=======
-<<<<<<< HEAD
 // InlineDatePicker - Usato in TechPlanner, Employee, Cms
 // LocationSelector - Usato in TechPlanner, Employee, Geo
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-// InlineDatePicker - Usato in TechPlanner, Employee, Cms
-// LocationSelector - Usato in TechPlanner, Employee, Geo
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-// InlineDatePicker - Usato in modulo operativo, Employee, Cms
-// LocationSelector - Usato in modulo operativo, Employee, Geo
-=======
-// InlineDatePicker - Usato in TechPlanner, Employee, Cms
-// LocationSelector - Usato in TechPlanner, Employee, Geo
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 // IconStateColumn - Usato in tutti i moduli con Spatie ModelStates
 // RadioCollection - Usato per selezioni complesse multimodulo
 ```
@@ -424,33 +393,7 @@ namespace Modules\UI\...;
 Altri moduli consumano componenti UI:
 
 ```php
-<<<<<<< HEAD
-// In modulo operativo/Filament/Resources/DeviceResource.php
-=======
-<<<<<<< HEAD
-// In modulo operativo/Filament/Resources/DeviceResource.php
-=======
-<<<<<<< HEAD
 // In TechPlanner/Filament/Resources/DeviceResource.php
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-// In TechPlanner/Filament/Resources/DeviceResource.php
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-// In modulo operativo/Filament/Resources/DeviceResource.php
-=======
-// In TechPlanner/Filament/Resources/DeviceResource.php
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 use Modules\UI\Filament\Forms\Components\InlineDatePicker;
 use Modules\UI\Filament\Tables\Columns\IconStateColumn;
 
@@ -723,11 +666,7 @@ Laravel risolve automaticamente override temi con view namespace precedence.
 
 **Modulo**: UI
 **Versione**: 4.1.0
-<<<<<<< HEAD
-=======
 **Framework**: Laravel 12 + Filament 4
->>>>>>> laraxot/dev
-**Framework**: Laravel 13 + Filament 4
 **PHPStan**: Level 10 ✅
 **Filosofia**: Estendere, Riutilizzare, Tradurre, Adattare
 **Zen**: I componenti si scoprono da soli 禅

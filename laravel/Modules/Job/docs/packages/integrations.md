@@ -1,17 +1,3 @@
-<<<<<<< HEAD
----
-title: "Integrazioni"
-module: "Job"
-type: concept
-tags: [integrations]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "integrations"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
-=======
->>>>>>> af4545e (.)
 # Integrazioni
 
 ## Pacchetti Utilizzati

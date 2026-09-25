@@ -36,8 +36,8 @@ The `IconStateSplitColumn` is a custom Filament table column component designed 
 
 ```php
 use Modules\UI\Filament\Tables\Columns\IconStateSplitColumn;
-use Modules\SaluteOra\States\Appointment\AppointmentState;
-use Modules\SaluteOra\Models\Appointment;
+use Modules\<nome progetto>\States\Appointment\AppointmentState;
+use Modules\<nome progetto>\Models\Appointment;
 
 // In your Filament resource table configuration
 'states' => IconStateSplitColumn::make()
@@ -66,55 +66,23 @@ class IconStateSplitColumn extends Column
     protected string $view = 'ui::filament.tables.columns.icon-state-split';
     protected string $stateClass = '';
     protected string $modelClass = '';
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
     protected function setUp(): void
     {
         parent::setUp();
         $this->label('Stati');
     }
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
     public function stateClass(string $stateClass, string $modelClass): static
     {
         // Configure states and model
     }
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
     public function getRecordStates(): array
     {
         // Return array of available states
     }
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
     public function canTransitionTo($recordId, $stateClass): bool
     {
         // Check if transition is possible
@@ -312,26 +280,18 @@ The main issue was that `wire:click` doesn't work directly in Filament table col
 #### Solution Architecture
 ```javascript
 // Custom event dispatch
-onclick="window.dispatchEvent(new CustomEvent('state-transition', { 
-    detail: { 
-        recordId: {{ $record->id }}, 
+onclick="window.dispatchEvent(new CustomEvent('state-transition', {
+    detail: {
+        recordId: {{ $record->id }},
         stateClass: '{{ $state['class']::class }}',
         action: 'prova'
-    } 
+    }
 }))"
 
 // Event listener for Livewire integration
 document.addEventListener('state-transition', function(event) {
     const { recordId, stateClass, action } = event.detail;
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
     if (window.Livewire) {
         window.Livewire.find(document.querySelector('[wire\\:id]').getAttribute('wire:id'))
             .call(action, recordId, stateClass);
@@ -369,12 +329,4 @@ document.addEventListener('state-transition', function(event) {
 
 **Last Updated**: June 2025
 **Version**: 2.1
-<<<<<<< HEAD
-**Compatibility**: Filament 3.x, Laravel 10.x 
-=======
-<<<<<<< HEAD
-**Compatibility**: Filament 3.x, Laravel 10.x 
-=======
-**Compatibility**: Filament 3.x, Laravel 10.x 
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
+**Compatibility**: Filament 3.x, Laravel 10.x

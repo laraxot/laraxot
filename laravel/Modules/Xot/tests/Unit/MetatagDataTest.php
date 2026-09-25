@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Xot\Actions\PaDesignColorsAction;
 use Modules\Xot\Datas\MetatagData;
 use Modules\Xot\Tests\TestCase;

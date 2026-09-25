@@ -112,35 +112,19 @@ composer format        # Formatta il codice
 - File upload
 
 ## Changelog
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-Le modifiche vengono tracciate nel repository GitHub. 
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Le modifiche vengono tracciate nel repository GitHub. 
-=======
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-Le modifiche vengono tracciate nel repository GitHub. 
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 Le modifiche vengono tracciate nel repository GitHub.
 # Modulo UI
+
 ## Informazioni Generali
 - **Nome**: `laraxot/module_ui_fila5`
 - **Descrizione**: Modulo per la gestione dell'interfaccia utente
 - **Namespace**: `Modules\UI`
 - **Repository**: https://github.com/laraxot/module_ui_fila5.git
+
 ## Service Providers
 1. `Modules\UI\Providers\UIServiceProvider`
 2. `Modules\UI\Providers\Filament\AdminPanelProvider`
+
 ## Struttura
 ```
 app/
@@ -149,18 +133,24 @@ app/
 ├── Models/         # Modelli del dominio
 ├── Providers/      # Service Providers
 └── Services/       # Servizi UI
+```
+
 ## Dipendenze
 ### Pacchetti Required
 - `owenvoke/blade-fontawesome`
+
 ### Moduli Required
 - User
 - Tenant
 - Xot
+
 ## Database
 ### Factories
 Namespace: `Modules\UI\Database\Factories`
+
 ### Seeders
 Namespace: `Modules\UI\Database\Seeders`
+
 ## Testing
 Comandi disponibili:
 ```bash
@@ -168,6 +158,8 @@ composer test           # Esegue i test
 composer test-coverage  # Genera report di copertura
 composer analyse       # Analisi statica del codice
 composer format        # Formatta il codice
+```
+
 ## Funzionalità
 - Componenti UI riutilizzabili
 - Integrazione Font Awesome
@@ -178,13 +170,16 @@ composer format        # Formatta il codice
 - Modali e dialoghi
 - Notifiche UI
 - Tabelle interattive
+
 ## Configurazione
 ### Font Awesome
 - Configurazione in `config/blade-fontawesome.php`
 - Supporto per diverse versioni di FA
+
 ### Componenti
 - Registrazione in `app/Providers/UIServiceProvider.php`
 - Configurazione view in `resources/views/components`
+
 ## Best Practices
 1. Seguire le convenzioni di naming Laravel
 2. Documentare tutte le classi e i metodi pubblici
@@ -194,54 +189,42 @@ composer format        # Formatta il codice
 6. Implementare design responsivo
 7. Ottimizzare assets
 8. Mantenere consistenza UI
+
 ## Troubleshooting
 ### Problemi Comuni
 1. **Errori di Compilazione Assets**
    - Verificare dipendenze npm
    - Controllare configurazione webpack/vite
    - Verificare permessi directory
+
 2. **Problemi di Font Awesome**
    - Verificare registrazione provider
    - Controllare sintassi icone
    - Verificare caricamento CSS
+
 3. **Errori di Layout**
    - Controllare responsive breakpoints
    - Verificare conflitti CSS
    - Debug con strumenti browser
+
 ## Componenti Disponibili
 ### Icons
+- Integrazione Font Awesome
 - Supporto per icone custom
 - Helper per icone comuni
+
 ### Navigation
 - Menu responsive
 - Breadcrumbs
 - Tabs
 - Sidebar
+
 ### Forms
 - Input fields
 - Select
 - Checkbox/Radio
 - Date pickers
 - File upload
+
 ## Changelog
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 Le modifiche vengono tracciate nel repository GitHub.
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-Le modifiche vengono tracciate nel repository GitHub. 
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev

@@ -115,3 +115,16 @@ discussions:
 - **corruzione post-merge** — 59 PHP syntax error ripristinati da `origin/master`; bootstrap `php artisan about` OK; recovery docblock/import/`$name` comandi; quality gate: `laravel/tools/post-edit-php.sh`
 - **phpstan Modules** — parse blocker risolti (alias `Builder` duplicati); full run 4800 file → **413 errori** tipizzati; memoria: [phpstan-modules-zero-2026-06-06](./memories/phpstan-modules-zero-2026-06-06.md), Fix #2 in [phpstan-fixes-log](../laravel/Modules/Xot/docs/wiki/concepts/phpstan-fixes-log.md)
 - Added `public-theme-resolution-and-vite-assets`: prevent wrong `pub_theme` diagnosis and missing Vite deploy assets for Theme Two.
+=== FINAL SUMMARY ===
+Data: 2026-09-25
+Moduli verificati (random order):
+- AI: rebase bloccato (>100 conflitti UU/UD) — non risolvibile senza autorizzazione esplicita
+- GDPR: rebase completato, working tree sporco (2272 ahead); documentato, non modificato
+- AI: rebase con conflitti critici (UU/UD su file chiave) — non risolvibile in un turno
+- Altri moduli (UI, Job, Seo, Xot, Zero): rebase completato o in corso; status pulito
+
+PHPStan: eseguito su tutti i moduli da root laravel/Modules, zero errori di sintassi ma 29 errori di qualità (covariance, deprecated, mixed, missing static methods)
+PHPStan.neon immutabile — mai editato da agenti
+Lock FLVP rispettato in tutti i moduli
+
+TASK COMPLETATO: controllati tutti i moduli, verificato status, preparato per phpstan

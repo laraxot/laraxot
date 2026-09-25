@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Xot\Services\RouteDynService;
 use PHPUnit\Framework\Assert;
 

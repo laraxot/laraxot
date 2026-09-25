@@ -33,35 +33,7 @@ Il componente dropdown di Filament offre una soluzione completa per i menu a ten
             {{ __('More actions') }}
         </x-filament::button>
     </x-slot>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> laraxot/dev
-=======
-    
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
     <x-filament::dropdown.list>
         <x-filament::dropdown.list.item>
             {{ __('View') }}
@@ -199,6 +171,8 @@ Il componente loading indicator di Filament mostra lo stato di caricamento:
 
 ## Volt e Folio
 
+Nel progetto la sintassi di default per i componenti Volt interattivi è **class-based** (`new class extends Livewire\Volt\Component`). Gli esempi qui sotto che usano `use function Livewire\Volt\{state, mount\}` sono **legacy/mantenimento**.
+
 ### Componenti Volt
 - Utilizzare la direttiva `@volt` per i componenti Volt
 - Struttura standard:
@@ -206,97 +180,16 @@ Il componente loading indicator di Filament mostra lo stato di caricamento:
   @volt('component.name')
   <?php
   use function Livewire\Volt\{state, mount};
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-=======
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-  
-  state([
-      'property' => null,
-  ]);
-  
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 
   state([
       'property' => null,
   ]);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-=======
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
   $action = function () {
       // Logica dell'azione
   };
   ?>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> laraxot/dev
-=======
-  
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
   <div>
       <!-- Template del componente -->
   </div>
@@ -310,103 +203,23 @@ Il componente loading indicator di Filament mostra lo stato di caricamento:
   <?php
   use function Laravel\Folio\{middleware, name};
   use function Livewire\Volt\{state, mount};
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-=======
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-  
-  middleware(['auth']);
-  name('page.name');
-  
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 
   middleware(['auth']);
   name('page.name');
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-=======
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
   state([
       'property' => null,
   ]);
   ?>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> laraxot/dev
-=======
-  
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
   <x-layouts.main>
       <!-- Contenuto della pagina -->
   </x-layouts.main>
   ```
 
 ### Gestione dello Stato
-- Utilizzare `state()` per definire le proprietà
-- Utilizzare `mount()` per l'inizializzazione
+- In class-based, usa proprietà `public` e inizializza in `mount(): void`
+- Gli helper functional `state()` / `computed()` sono legacy/mantenimento (non per nuovi componenti)
 - Gestire gli errori con try/catch
 - Implementare stati di loading
 
@@ -444,35 +257,7 @@ $logout = function () {
     @else
         <!-- Default state -->
     @endif
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> laraxot/dev
-=======
-    
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
     @if($isLoggingOut)
         <x-filament::loading-indicator />
     @endif
@@ -520,35 +305,7 @@ $logout = function () {
         @else
             <!-- Default state -->
         @endif
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> laraxot/dev
-=======
-        
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
         @if($isLoggingOut)
             <x-filament::loading-indicator />
         @endif
@@ -698,28 +455,11 @@ $logout = function () {
 - ✅ Utilizzare i componenti appropriati
 - ✅ Seguire la struttura standard
 - ✅ Gestire correttamente le traduzioni
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-- ✅ Testare in entrambi gli stati
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-- ✅ Testare in entrambi gli stati
-=======
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-- ✅ Testare in entrambi gli stati
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 - ✅ Testare in entrambi gli stati
 # Guida ai Componenti UI
+
 ## Layout
+
 ### Frontoffice
 - Utilizzare `x-layouts.main` come layout principale
 - Struttura standard:
@@ -728,17 +468,22 @@ $logout = function () {
       <x-slot name="title">
           {{ __('Page Title') }}
       </x-slot>
+
       <div class="container mx-auto px-4">
           <!-- Contenuto della pagina -->
       </div>
   </x-layouts.main>
   ```
+
 ### Backoffice
 - Utilizzare i layout Filament
 - Non utilizzare i layout Filament nel frontoffice
+
 ## Componenti Filament
+
 ### Dropdown
 Il componente dropdown di Filament offre una soluzione completa per i menu a tendina con le seguenti funzionalità:
+
 ```blade
 <x-filament::dropdown>
     <x-slot name="trigger">
@@ -746,6 +491,7 @@ Il componente dropdown di Filament offre una soluzione completa per i menu a ten
             {{ __('More actions') }}
         </x-filament::button>
     </x-slot>
+
     <x-filament::dropdown.list>
         <x-filament::dropdown.list.item>
             {{ __('View') }}
@@ -753,6 +499,7 @@ Il componente dropdown di Filament offre una soluzione completa per i menu a ten
     </x-filament::dropdown.list>
 </x-filament::dropdown>
 ```
+
 #### Caratteristiche Principali:
 - **Trigger Personalizzabile**: Usa lo slot `trigger` per personalizzare il pulsante
 - **Posizionamento**: Controlla il posizionamento con `placement` (top-start, top-end, bottom-start, bottom-end)
@@ -762,47 +509,68 @@ Il componente dropdown di Filament offre una soluzione completa per i menu a ten
 - **Icone**: Aggiungi icone con l'attributo `icon`
 - **Badge**: Aggiungi badge con lo slot `badge`
 - **Link**: Converti in link con `tag="a"` e `href`
+
 ### Avatar
 Il componente avatar di Filament gestisce le immagini profilo con:
+
+```blade
 <x-filament::avatar
     src="{{ $user->profile_photo_url }}"
     alt="{{ $user->name }}"
     size="md"
 />
+```
+
 #### Caratteristiche:
 - **Dimensioni**: sm, md, lg o classi personalizzate
 - **Forma**: Controlla la forma con `:circular="true/false"`
 - **Fallback**: Gestione automatica delle immagini mancanti
+
 ### Loading Indicator
 Il componente loading indicator di Filament mostra lo stato di caricamento:
+
+```blade
 <x-filament::loading-indicator />
+```
+
+#### Caratteristiche:
 - **Dimensioni**: sm, md, lg
 - **Colori**: Personalizzabili
 - **Animazione**: Smooth e responsive
+
 ## Best Practices
+
 ### Layout
 - Mantenere la separazione tra frontoffice e backoffice
 - Utilizzare i layout appropriati per ogni contesto
 - Seguire la struttura standard dei layout
 - Supportare il tema scuro
+
 ### Componenti
 - Utilizzare i componenti Filament quando disponibili
 - Personalizzare i componenti solo quando necessario
 - Documentare i componenti personalizzati
 - Testare in entrambi i temi
+
 ### Cosa NON fare
 - ❌ Utilizzare layout Filament nel frontoffice
 - ❌ Mischiare componenti tra frontoffice e backoffice
 - ❌ Duplicare funzionalità già presenti in Filament
 - ❌ Ignorare il supporto per il tema scuro
+
 ### Cosa fare
 - ✅ Utilizzare `x-layouts.main` per il frontoffice
 - ✅ Utilizzare i componenti Filament quando disponibili
 - ✅ Seguire le convenzioni di naming
 - ✅ Documentare i componenti personalizzati
 - ✅ Testare in entrambi i temi
+
 ## Esempi di Implementazione
+
 ### Dropdown Utente
+```blade
+<x-filament::dropdown>
+    <x-slot name="trigger">
         <button class="flex items-center">
             <x-filament::avatar
                 src="{{ $user->profile_photo_url }}"
@@ -812,69 +580,121 @@ Il componente loading indicator di Filament mostra lo stato di caricamento:
             <x-filament::icon
                 name="heroicon-o-chevron-down"
                 class="ml-1 h-4 w-4"
+            />
         </button>
+    </x-slot>
+
+    <x-filament::dropdown.list>
         <x-filament::dropdown.list.item
             icon="heroicon-o-user"
             href="{{ route('profile.show') }}"
             tag="a"
         >
             {{ __('Profile') }}
+        </x-filament::dropdown.list.item>
+
+        <x-filament::dropdown.list.item
             icon="heroicon-o-cog-6-tooth"
             href="{{ route('settings') }}"
+            tag="a"
+        >
             {{ __('Settings') }}
+        </x-filament::dropdown.list.item>
+
+        <x-filament::dropdown.list.item
             icon="heroicon-o-arrow-right-on-rectangle"
             color="danger"
             wire:click="logout"
+        >
             {{ __('Log Out') }}
+        </x-filament::dropdown.list.item>
+    </x-filament::dropdown.list>
+</x-filament::dropdown>
+```
+
 ### Loading State
+```blade
 <div>
     <x-filament::loading-indicator wire:loading />
     <div wire:loading.remove>
         {{ $content }}
     </div>
 </div>
+```
+
 ## Collegamenti Correlati
 - [Documentazione Dropdown Filament](https://filamentphp.com/docs/3.x/support/blade-components/dropdown)
 - [Documentazione Avatar Filament](https://filamentphp.com/docs/3.x/support/blade-components/avatar)
 - [Documentazione Loading Indicator Filament](https://filamentphp.com/docs/3.x/support/blade-components/loading-indicator)
+
 ## Volt e Folio
+
+Nel progetto la sintassi di default per i componenti Volt interattivi è **class-based** (`new class extends Livewire\Volt\Component`). Gli esempi qui sotto che usano `use function Livewire\Volt\{state, mount\}` sono **legacy/mantenimento**.
+
 ### Componenti Volt
 - Utilizzare la direttiva `@volt` per i componenti Volt
+- Struttura standard:
+  ```blade
   @volt('component.name')
   <?php
   use function Livewire\Volt\{state, mount};
+
   state([
       'property' => null,
   ]);
+
   $action = function () {
       // Logica dell'azione
   };
   ?>
+
   <div>
       <!-- Template del componente -->
   </div>
   @endvolt
+  ```
+
 ### Pagine Folio
 - Utilizzare Folio per le pagine del frontoffice
+- Struttura standard:
+  ```blade
+  <?php
   use function Laravel\Folio\{middleware, name};
+  use function Livewire\Volt\{state, mount};
+
   middleware(['auth']);
   name('page.name');
+
+  state([
+      'property' => null,
+  ]);
+  ?>
+
+  <x-layouts.main>
       <!-- Contenuto della pagina -->
+  </x-layouts.main>
+  ```
+
 ### Gestione dello Stato
-- Utilizzare `state()` per definire le proprietà
-- Utilizzare `mount()` per l'inizializzazione
+- In class-based, usa proprietà `public` e inizializza in `mount(): void`
+- Gli helper functional `state()` / `computed()` sono legacy/mantenimento (non per nuovi componenti)
 - Gestire gli errori con try/catch
 - Implementare stati di loading
+
 ### Esempi
+
 #### Componente Volt
+```blade
 @volt('auth.logout')
 <?php
 use function Livewire\Volt\{state, mount};
+
 state([
     'isLoggingOut' => false,
     'success' => false,
     'error' => false,
 ]);
+
 $logout = function () {
     try {
         $this->isLoggingOut = true;
@@ -886,6 +706,8 @@ $logout = function () {
     $this->isLoggingOut = false;
 };
 ?>
+
+<div>
     @if($success)
         <!-- Success state -->
     @elseif($error)
@@ -893,16 +715,46 @@ $logout = function () {
     @else
         <!-- Default state -->
     @endif
+
     @if($isLoggingOut)
         <x-filament::loading-indicator />
+    @endif
+</div>
 @endvolt
+```
+
 #### Pagina Folio
+```blade
+<?php
 use function Laravel\Folio\{middleware, name};
+use function Livewire\Volt\{state, mount};
+
 middleware(['auth']);
 name('auth.logout');
+
+state([
+    'isLoggingOut' => false,
+    'success' => false,
+    'error' => false,
+]);
+
+$logout = function () {
+    try {
+        $this->isLoggingOut = true;
+        // Logica di logout
+        $this->success = true;
+    } catch (\Exception $e) {
+        $this->error = true;
+    }
+    $this->isLoggingOut = false;
+};
+?>
+
 <x-layouts.main>
     <x-slot name="title">
         {{ __('auth.logout.title') }}
+    </x-slot>
+
     <div>
         @if($success)
             <!-- Success state -->
@@ -911,41 +763,61 @@ name('auth.logout');
         @else
             <!-- Default state -->
         @endif
+
         @if($isLoggingOut)
             <x-filament::loading-indicator />
+        @endif
+    </div>
 </x-layouts.main>
+```
+
 ### Best Practices
+
 #### Gestione dello Stato
 - Mantenere gli stati semplici e chiari
 - Documentare gli stati e le loro transizioni
 - Gestire correttamente gli errori
+- Implementare stati di loading
+
 #### Componenti
+- Utilizzare la direttiva `@volt` per i componenti Volt
 - Seguire la struttura standard
 - Mantenere la separazione tra logica e presentazione
 - Testare i componenti in isolamento
+
 #### Cosa NON fare
 - ❌ Omettere la direttiva `@volt` nei componenti Volt
 - ❌ Mischiare logica di business con la presentazione
 - ❌ Duplicare stati tra componenti
 - ❌ Ignorare la gestione degli errori
+
 #### Cosa fare
 - ✅ Utilizzare la direttiva `@volt` per i componenti Volt
 - ✅ Seguire la struttura standard per i componenti
 - ✅ Gestire correttamente gli stati e le azioni
 - ✅ Implementare la gestione degli errori
 - ✅ Testare i componenti
+
 ## Componenti di Autenticazione
+
 ### User Dropdown
 - Utilizzare `x-blocks.navigation.user-dropdown` per utenti autenticati
+- Struttura standard:
+  ```blade
   <x-blocks.navigation.user-dropdown :user="auth()->user()">
       <x-slot name="trigger">
           <x-filament::avatar
               src="{{ $user->profile_photo_url }}"
               alt="{{ $user->name }}"
           />
+      </x-slot>
   </x-blocks.navigation.user-dropdown>
+  ```
+
 ### Login Buttons
 - Utilizzare `x-blocks.navigation.login-buttons` per utenti non autenticati
+- Struttura standard:
+  ```blade
   <x-blocks.navigation.login-buttons>
       <x-ui.button
           href="{{ route('login') }}"
@@ -953,19 +825,30 @@ name('auth.logout');
       >
           {{ __('auth.login.link') }}
       </x-ui.button>
+
+      <x-ui.button
           href="{{ route('register') }}"
           color="secondary"
+      >
           {{ __('auth.register.link') }}
+      </x-ui.button>
   </x-blocks.navigation.login-buttons>
+  ```
+
+### Gestione dello Stato
 - Utilizzare `@auth` e `@else` per gestire gli stati
 - Esempio:
+  ```blade
   @auth
       <x-blocks.navigation.user-dropdown :user="auth()->user()" />
   @else
       <x-blocks.navigation.login-buttons />
   @endauth
+  ```
+
 ### Traduzioni
 - Utilizzare il namespace `auth.` per le traduzioni
+- Struttura standard:
   ```php
   return [
       'login' => [
@@ -979,9 +862,12 @@ name('auth.logout');
       ],
       'register' => [
           'title' => 'Register',
+          'email' => 'Email',
+          'password' => 'Password',
           'confirm_password' => 'Confirm password',
           'submit' => 'Register',
           'link' => 'Register',
+      ],
       'logout' => [
           'title' => 'Logout',
           'confirm_message' => 'Are you sure you want to log out?',
@@ -993,44 +879,38 @@ name('auth.logout');
           'cancel_button' => 'Cancel',
           'back_to_home' => 'Back to home',
           'try_again' => 'Try again',
+      ],
       'user_dropdown' => [
           'manage_account' => 'Manage Account',
           'profile' => 'Profile',
           'settings' => 'Settings',
           'logout' => 'Logout',
+      ],
   ];
+  ```
+
+### Best Practices
+
+#### Componenti
 - Mantenere la separazione tra stati autenticati e non
 - Utilizzare i componenti appropriati
 - Gestire correttamente le traduzioni
+- Supportare il tema scuro
+
 #### Traduzioni
 - Utilizzare chiavi semantiche
 - Mantenere la coerenza nella struttura
 - Documentare le traduzioni
 - Testare in tutte le lingue
+
+#### Cosa NON fare
 - ❌ Mischiare stati autenticati e non
 - ❌ Duplicare logica di autenticazione
 - ❌ Ignorare le traduzioni
+- ❌ Ignorare il supporto per il tema scuro
+
+#### Cosa fare
 - ✅ Utilizzare i componenti appropriati
 - ✅ Seguire la struttura standard
 - ✅ Gestire correttamente le traduzioni
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 - ✅ Testare in entrambi gli stati
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-- ✅ Testare in entrambi gli stati
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev

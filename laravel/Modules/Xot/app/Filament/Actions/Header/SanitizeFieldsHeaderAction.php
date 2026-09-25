@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://coderflex.com/blog/create-advanced-filters-with-filament
  */
-
-declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Actions\Header;
 
@@ -49,7 +48,7 @@ class SanitizeFieldsHeaderAction extends XotBaseAction
                         if ($string !== $item) {
                             $row->{$fieldName} = $string;
                             $save = true;
-                            ++$c;
+                            $c++;
                         }
                     }
                     if ($save) {
@@ -64,7 +63,7 @@ class SanitizeFieldsHeaderAction extends XotBaseAction
     }
 
     /**
-     * @param list<string> $fields
+     * @param  list<string>  $fields
      */
     public function setFields(array $fields): self
     {

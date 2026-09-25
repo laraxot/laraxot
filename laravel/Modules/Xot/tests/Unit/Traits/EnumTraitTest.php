@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Tests\Unit\Traits;
 
-use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Schema\Blueprint;
 use Mockery;
 use Mockery\MockInterface;
@@ -42,7 +41,7 @@ it('gets searchable values', function (): void {
 
 it('gets form schema', function (): void {
     $schema = TestEnum::ALPHA->getFormSchema();
-    //Assert::assertIsArray($schema);
+    // Assert::assertIsArray($schema);
     Assert::assertCount(2, $schema);
 });
 

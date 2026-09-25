@@ -35,7 +35,7 @@ class GetProvincesAction
 
             if (! $region || ! \is_array($region) || ! isset($region['provinces']) || ! \is_array($region['provinces'])) {
                 /** @var Collection<int, array{name: string, code: string}> $empty */
-                $empty = new Collection();
+                $empty = new Collection;
 
                 return $empty;
             }
@@ -53,8 +53,8 @@ class GetProvincesAction
                     $code = $province['code'] ?? '';
 
                     return [
-                        'name' => \is_string($name) ? $name : SafeStringCastAction::cast($name),
-                        'code' => \is_string($code) ? $code : SafeStringCastAction::cast($code),
+                        'name' => SafeStringCastAction::cast($name),
+                        'code' => SafeStringCastAction::cast($code),
                     ];
                 })
                 ->values();

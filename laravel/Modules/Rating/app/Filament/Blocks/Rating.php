@@ -29,14 +29,11 @@ class Rating extends Block
         return static::make(self::BLOCK_TYPE)
             ->schema([
                 TextInput::make('title')
-                    ->label('Titolo')
                     ->required(),
 
-                TextInput::make('description')
-                    ->label('Descrizione'),
+                TextInput::make('description'),
 
                 Toggle::make('disabled')
-                    ->label('Disabilitato')
                     ->default(false),
             ])
             ->label(static function (): string {
@@ -50,8 +47,7 @@ class Rating extends Block
     /**
      * Create rating data from form data.
      *
-     * @param array<string,mixed> $data
-     * @param array<string,mixed> $data
+     * @param array<string, mixed> $data
      */
     public static function createFromFormData(array $data): RatingData
     {

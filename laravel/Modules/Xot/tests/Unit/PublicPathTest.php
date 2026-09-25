@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-
+use App\Application;
 use Modules\Xot\Tests\TestCase;
 use Webmozart\Assert\Assert;
 
@@ -46,9 +46,9 @@ it('restituisce un percorso anche per segmenti non ancora creati', function (): 
 });
 
 it('usa la Application con publicPath sovrascritto', function (): void {
-    expect(app())->toBeInstanceOf(App\Application::class)
-        ->and((new ReflectionMethod(App\Application::class, 'publicPath'))->getDeclaringClass()->getName())
-        ->toBe(App\Application::class);
+    expect(app())->toBeInstanceOf(Application::class)
+        ->and((new ReflectionMethod(Application::class, 'publicPath'))->getDeclaringClass()->getName())
+        ->toBe(Application::class);
 });
 
 it('public_html esiste ed e fuori da laravel/', function (): void {

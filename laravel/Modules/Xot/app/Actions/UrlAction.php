@@ -12,16 +12,15 @@ use Spatie\QueueableAction\QueueableAction;
 class UrlAction
 {
     use QueueableAction;
+
     private static ?self $instance = null;
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public static function getInstance(): self
     {
         if (! self::$instance instanceof self) {
-            self::$instance = new self();
+            self::$instance = new self;
         }
 
         return self::$instance;
@@ -34,10 +33,8 @@ class UrlAction
 
     public function checkValidUrl(string $url): bool
     {
-        return false !== filter_var($url, FILTER_VALIDATE_URL);
+        return filter_var($url, FILTER_VALIDATE_URL) !== false;
     }
 
-    public function execute(): void
-    {
-    }
+    public function execute(): void {}
 }

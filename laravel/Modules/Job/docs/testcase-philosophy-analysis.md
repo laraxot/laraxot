@@ -1,17 +1,3 @@
-<<<<<<< HEAD
----
-title: "TestCase Philosophy Analysis - Job Module"
-module: "Job"
-type: concept
-tags: [testcase, philosophy, analysis]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "testcase philosophy analysis"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
-=======
->>>>>>> af4545e (.)
 # TestCase Philosophy Analysis - Job Module
 
 ## Il Problema Attuale

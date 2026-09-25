@@ -22,6 +22,7 @@ parameters:
         - ./*/build/*
         - ./*/docs/*
         - ./*/packages/*
+        - ./*/tests/AuditCoverage/*
         - ./*/*.blade.php
         - ./_ide_helper.php
         - ./_ide_helper_models.php

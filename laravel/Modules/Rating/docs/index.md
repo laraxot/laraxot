@@ -2,7 +2,7 @@
 title: "Rating Module — Documentation Index"
 type: guide
 module: Rating
-updated: 2026-09-16
+updated: 2026-09-22
 ---
 
 # Rating Module — Index
@@ -28,6 +28,17 @@ updated: 2026-09-16
 
 ## Debito docs
 
-Molti `.md` sotto `docs/` (fuori `bmad/`) contengono ancora **marker di merge non risolti**
-(`<<<<<<<`). Non usarli come SSoT. Pulizia: story dedicata o sessione docs-only; priorità
-`bmad/` + README + questo index.
+**2026-09-22 — risolto.** I 38 file sotto `docs/` con marker di merge non risolti
+(`<<<<<<<`/`=======`/`>>>>>>>`, incluso `architecture.md`) sono stati fusi e ripuliti
+(verifica: `grep -rl '^<<<<<<< \|^=======$\|^>>>>>>> ' docs/` → nessun risultato).
+Duplicati case-sensitive noti (es. `INDEX.md`/`index.md`, `BEST_PRACTICES.md`/`best_practices.md`)
+non sono stati deduplicati in questo passaggio: sono fuori scope, tracciati in
+`root-files-hygiene.md`.
+
+Ancora aperto (fuori scope per questo cleanup, non toccare qui):
+- root `README.md` del modulo ha marker di merge non risolti (righe 3-19, 122-133) —
+  file fuori `docs/`, serve una story dedicata.
+- regressione pulizia root (`ARCHITECTURE.md`/`CHANGELOG.md`/`LICENSE.md` duplicati in
+  root) — vedi `root-files-hygiene.md`.
+- possibile corruzione repo Git (commit mancante, vedi `git fsck`) — da investigare
+  prima di qualsiasi rewrite di history su questo modulo.

@@ -19,7 +19,7 @@ class ActionGroup extends XotBaseActionGroup
 {
     use InteractsWithRecord;
 
-    public const ICON_BUTTON_VIEW = 'job::components.action-group';
+    public const string ICON_BUTTON_VIEW = 'job::components.action-group';
 
     protected string $view = 'job::components.action-group';
 

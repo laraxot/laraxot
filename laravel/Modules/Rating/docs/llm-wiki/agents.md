@@ -1,3 +1,17 @@
+---
+title: "Agent instructions"
+type: reference
+tags: [agents, coding-agent, llm-wiki]
+created: 2026-07-01
+updated: 2026-07-01
+qmd: "istruzioni agenti LLM wiki modulo"
+issues: []
+discussions: []
+related:
+  - ./index.md
+  - ./log.md
+---
+
 # Rating Module LLM Wiki Agent Instructions
 
 > **Module/Theme:** Rating

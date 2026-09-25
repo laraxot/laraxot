@@ -92,11 +92,7 @@ class MyResource extends XotBaseResource
 
 2. **IMPLEMENTARE nella Resource**
    - ✅ `protected static ?string $model`
-<<<<<<< HEAD
    - ✅ `public function getFormSchema(): array`
-=======
-   - ✅ `public function getFormSchema(): array`
->>>>>>> laraxot/dev
    - ✅ `public static function getPages(): array`
 
 ## Gestione Tabelle

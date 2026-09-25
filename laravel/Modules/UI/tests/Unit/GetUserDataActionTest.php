@@ -6,14 +6,13 @@ namespace Modules\UI\Tests\Unit;
 
 use Illuminate\Auth\GenericUser;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Modules\UI\Actions\GetUserDataAction;
 use Modules\UI\Tests\TestCase;
-use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
-use Modules\User\Models\User;
 
 uses(TestCase::class);
 
@@ -31,8 +30,10 @@ uses(TestCase::class);
  */
 function uiAuthUser(array $roles = [], array $permissions = [], array $attributes = []): Authenticatable
 {
-    $user = new class extends \Illuminate\Foundation\Auth\User {
+    $user = new class extends User
+    {
         public ?object $profile = null;
+
         public function relationLoaded(mixed $key): bool
         {
             if (! is_string($key)) {

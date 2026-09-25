@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 /**
  * Pest Laravel helper stubs for PHPStan.
  *
@@ -11,13 +12,16 @@
  * - This file is only for static analysis and test helper convenience.
  */
 
-declare(strict_types=1);
-
 namespace Pest\Laravel;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
+use Pest\PendingCalls\AfterEachCall;
+use Pest\PendingCalls\BeforeEachCall;
+use Pest\PendingCalls\DescribeCall;
+use Pest\PendingCalls\TestCall;
+use Pest\PendingCalls\UsesCall;
 
 /**
  * Authenticate as a given model or ID.
@@ -188,7 +192,7 @@ function followingRedirects(int $number = 5): TestResponse
 /**
  * Define a test case.
  */
-function test(string $description, ?\Closure $closure = null): mixed
+function test(string $description, ?\Closure $closure = null): TestCall
 {
     throw new \RuntimeException('Stub: This function is meant for static analysis only.');
 }
@@ -196,7 +200,7 @@ function test(string $description, ?\Closure $closure = null): mixed
 /**
  * Define a test case.
  */
-function it(string $description, ?\Closure $closure = null): mixed
+function it(string $description, ?\Closure $closure = null): TestCall
 {
     throw new \RuntimeException('Stub: This function is meant for static analysis only.');
 }
@@ -204,7 +208,7 @@ function it(string $description, ?\Closure $closure = null): mixed
 /**
  * Define a test group.
  */
-function describe(string $description, \Closure $closure): mixed
+function describe(string $description, \Closure $closure): DescribeCall
 {
     throw new \RuntimeException('Stub: This function is meant for static analysis only.');
 }
@@ -212,7 +216,7 @@ function describe(string $description, \Closure $closure): mixed
 /**
  * Define a before each hook.
  */
-function beforeEach(\Closure $closure): mixed
+function beforeEach(\Closure $closure): BeforeEachCall
 {
     throw new \RuntimeException('Stub: This function is meant for static analysis only.');
 }
@@ -220,7 +224,7 @@ function beforeEach(\Closure $closure): mixed
 /**
  * Define an after each hook.
  */
-function afterEach(\Closure $closure): mixed
+function afterEach(\Closure $closure): AfterEachCall
 {
     throw new \RuntimeException('Stub: This function is meant for static analysis only.');
 }
@@ -230,7 +234,7 @@ function afterEach(\Closure $closure): mixed
  *
  * @param  class-string  ...$classes
  */
-function uses(string ...$classes): mixed
+function uses(string ...$classes): UsesCall
 {
     throw new \RuntimeException('Stub: This function is meant for static analysis only.');
 }

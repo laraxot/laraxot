@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Rules;
 
-use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
-use Illuminate\Translation\PotentiallyTranslatedString;
 use Modules\Geo\Actions\FilterCoordinatesInRadiusAction;
 
 /**
@@ -14,6 +12,8 @@ use Modules\Geo\Actions\FilterCoordinatesInRadiusAction;
  */
 class FilterCoordinatesInRadius implements ValidationRule
 {
+    private string $message = '';
+
     public function __construct(
         private readonly FilterCoordinatesInRadiusAction $filterAction,
         private readonly float $centerLatitude,
@@ -21,23 +21,29 @@ class FilterCoordinatesInRadius implements ValidationRule
         private readonly int $radius,
     ) {}
 
+    public function validate(string $attribute, mixed $value, \Closure $fail): void
+    {
+        if (! $this->passes($attribute, $value)) {
+            $fail($this->message());
+        }
+    }
+
     /**
      * Determina se le coordinate passate sono all'interno del raggio specificato.
      *
-     * @param  string  $attribute  Nome dell'attributo
+     * @param  mixed  $_attribute  Nome dell'attributo
      * @param  mixed  $value  Valore da validare
-     * @param  Closure(string, ?string=): PotentiallyTranslatedString  $fail
      */
-    public function validate(string $attribute, mixed $value, Closure $fail): void
+    public function passes(mixed $_attribute, mixed $value): bool
     {
         if (! \is_array($value)) {
-            $fail('Il valore deve essere un array di coordinate');
+            $this->message = 'Il valore deve essere un array di coordinate';
 
-            return;
+            return false;
         }
 
         /** @var array<array{latitude: string, longitude: string}> $coordinates */
-        $coordinates = array_map(static function (mixed $coordinate): array {
+        $coordinates = array_map(static function ($coordinate): array {
             if (! \is_array($coordinate)) {
                 return ['latitude' => '', 'longitude' => ''];
             }
@@ -58,9 +64,7 @@ class FilterCoordinatesInRadius implements ValidationRule
             $this->radius,
         );
 
-        if ($filteredCoordinates === []) {
-            $fail($this->message());
-        }
+        return \count($filteredCoordinates) > 0;
     }
 
     /**
@@ -68,6 +72,6 @@ class FilterCoordinatesInRadius implements ValidationRule
      */
     public function message(): string
     {
-        return 'Nessuna coordinata trovata nel raggio specificato';
+        return $this->message ?: 'Nessuna coordinata trovata nel raggio specificato';
     }
 }

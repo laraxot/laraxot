@@ -8,7 +8,6 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Widgets;
 
-use Filament\Schemas\Components\Component;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 
 final class OverlookWidget extends XotBaseSchemaWidget
@@ -31,13 +30,20 @@ final class OverlookWidget extends XotBaseSchemaWidget
     /** @var array<int, array<string, mixed>> */
     public array $stats = [];
 
-    protected string $view = 'ui::filament.widgets.overlook';
+    /** @var view-string */
+    protected string $view;
+
+    public function __construct()
+    {
+        /** @var view-string $view */
+        $view = 'ui::filament.widgets.overlook';
+        $this->view = $view;
+
+        parent::__construct();
+    }
 
     protected int|string|array $columnSpan = 1;
 
-    /**
-     * @return array<string, Component>
-     */
     public function getFormSchema(): array
     {
         return [];

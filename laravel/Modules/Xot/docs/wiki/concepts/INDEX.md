@@ -18,6 +18,7 @@ qmd search "Xot concepts" --limit 5
 ```
 
 ## See Also
+- [env-widget-no-ssh-env-editor](./env-widget-no-ssh-env-editor.md) — EnvWidget: modificare il `.env` di produzione dal pannello admin senza SSH/FTP, + config:cache via ArtisanCommandsManager
 - [field-refresh-action](./field-refresh-action.md) — ricalcolo campo form dal record tramite getter studly
 - [composer-merge-plugin-modules-only](./composer-merge-plugin-modules-only.md) — merge solo moduli, mai temi
 - [composer-root-skeleton-modular](./composer-root-skeleton-modular.md) — Root Composer minimo: skeleton Laravel + `nwidart/laravel-modules`; moduli owner delle dipendenze.

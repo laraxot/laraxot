@@ -29,7 +29,7 @@ class ThemeMetadataData extends Data
     }
 
     /**
-     * @throws InvalidArgumentException se la chiave non esiste
+     * @throws \InvalidArgumentException se la chiave non esiste.
      */
     public function getSpacing(string $key): string
     {

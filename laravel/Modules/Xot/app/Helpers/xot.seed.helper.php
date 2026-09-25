@@ -1,14 +1,12 @@
 <?php
 
+declare(strict_types=1);
 /**
  * Xot Seeder Helper Functions.
  *
  * This file contains helper functions for seeding data with Xot modules
  * The functions ensure that models are only seeded once
  */
-
-declare(strict_types=1);
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Cache;

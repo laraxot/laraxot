@@ -1,4 +1,4 @@
-# Utilizzo dei Componenti Filament 
+# Utilizzo dei Componenti Filament
 
 ## Collegamenti correlati
 - [README modulo UI](/laravel/Modules/UI/docs/README.md)
@@ -131,17 +131,11 @@ Filament fornisce un componente `x-filament::dropdown` che può essere utilizzat
             Apri Menu
         </x-filament::button>
     </x-slot>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-    
+
     <x-filament::dropdown.item wire:click="action">
         Azione 1
     </x-filament::dropdown.item>
-    
+
     <x-filament::dropdown.item href="#">
         Azione 2
     </x-filament::dropdown.item>
@@ -150,48 +144,17 @@ Filament fornisce un componente `x-filament::dropdown` che può essere utilizzat
 
 ## Best Practices
 
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-    <x-filament::dropdown.item wire:click="action">
-        Azione 1
-    </x-filament::dropdown.item>
-    <x-filament::dropdown.item href="#">
-        Azione 2
-</x-filament::dropdown>
-```
-## Best Practices
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 1. **SEMPRE utilizzare i componenti Filament** quando disponibili invece di creare componenti personalizzati
 2. **SEMPRE utilizzare il prefisso corretto** `x-filament::` per accedere ai componenti Filament
 3. **MAI modificare direttamente i componenti Filament**, ma estenderli se necessario
 4. **SEMPRE consultare la documentazione ufficiale** di Filament per le ultime funzionalità e best practices
 5. **SEMPRE utilizzare le classi Tailwind** fornite da Filament per mantenere la coerenza visiva
 6. **SEMPRE verificare il percorso corretto** dei componenti e degli asset
-<<<<<<< HEAD
-## Errori Comuni
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 ## Errori Comuni
 
-=======
-## Errori Comuni
->>>>>>> laraxot/dev
-=======
-
-## Errori Comuni
-
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 1. **Utilizzo del prefisso errato**: Utilizzare `x-ui-icon` invece di `x-filament::icon`
-2. **Percorso errato del provider**: Utilizzare `/var/www/html/saluteora/laravel/Modules/UI/Providers/UIServiceProvider.php` invece di `/var/www/html/saluteora/laravel/Modules/UI/app/Providers/UIServiceProvider.php`
+2. **Percorso errato del provider**: Utilizzare `Modules/UI/Providers/UIServiceProvider.php` invece di `Modules/UI/app/Providers/UIServiceProvider.php`
 3. **Creazione di componenti duplicati**: Creare componenti personalizzati che duplicano funzionalità già fornite da Filament
 4. **Mancata verifica dei componenti esistenti**: Non controllare se un componente è già disponibile in Filament prima di crearne uno personalizzato
 

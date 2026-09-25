@@ -1,0 +1,229 @@
+# 🎯 ORGANI DI GOVERNO - FIX LAYOUT 3 COLONNE
+# Data: 2026-04-07
+# Status: 🔄 IN CORSO
+
+---
+
+## 📸 SCREENSHOT 8 ANALYSIS
+
+**Problema**: Card "Organi di Governo" sono UNA SOTTO L'ALTRA (verticali) invece che AFFIANCATE (3 colonne)
+
+**Reference**: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
+**Locale**: http://127.0.0.1:8000/it/tests/homepage
+
+---
+
+## 🔍 ROOT CAUSE ANALYSIS
+
+### Blade Structure (CORRETTA ✅)
+```blade
+<div class="row g-4 mb-5">
+  @foreach($cards as $i => $card)
+  <div class="col-md-6 col-lg-4">  ← Bootstrap grid CORRETTA
+    <div class="card ...">...</div>
+  </div>
+  @endforeach
+</div>
+```
+
+### CSS Problem (SBAGLIATO ❌)
+```css
+/* design-comuni-global.css riga 17 */
+.card-teaser-wrapper-equal {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;  ← PROBLEMA! Force tutti in UNA riga
+  gap: 1.5rem !important;
+}
+
+.card-teaser-wrapper-equal > .card {
+  flex: 1 1 0 !important;  ← Ogni card occupa spazio uguale
+  min-width: 0 !important;
+  max-width: none !important;
+}
+```
+
+### Conflitto:
+- Blade usa Bootstrap grid: `row` + `col-md-6 col-lg-4` → 3 colonne
+- CSS override: `flex-wrap: nowrap` → tutte in UNA riga orizzontale
+- Risultato: card strettissime, occupano poco spazio orizzontale
+
+---
+
+## ✅ SOLUZIONE
+
+### Opzione 1: Rimuovere classe CSS dal wrapper governance (PREFERITA)
+
+**File**: `laravel/Themes/Sixteen/resources/views/components/blocks/governance/cards.blade.php`
+
+Il wrapper `.card-teaser-wrapper-equal` NON deve essere usato perché:
+- È progettato per flexbox layout SENZA Bootstrap grid
+- Governance cards USA già Bootstrap grid (`col-md-6 col-lg-4`)
+
+**Fix**: Rimuovere classi flexbox dal wrapper, usare solo Bootstrap row/col
+
+### Opzione 2: CSS override per governance section
+
+Aggiungere CSS specifico per governance cards:
+
+```css
+/* Governance cards - use Bootstrap grid, NOT flexbox */
+#calendario .row.g-4 {
+  display: flex !important;
+  flex-wrap: wrap !important;  ← Allow wrapping!
+  gap: 1rem;
+}
+
+#calendario .col-md-6.col-lg-4 {
+  flex: 0 0 auto !important;  ← Don't stretch
+  width: 33.333% !important;  ← 3 columns on lg
+}
+
+@media (max-width: 991.98px) {
+  #calendario .col-md-6.col-lg-4 {
+    width: 50% !important;  ← 2 columns on md
+  }
+}
+
+@media (max-width: 575.98px) {
+  #calendario .col-md-6.col-lg-4 {
+    width: 100% !important;  ← 1 column on mobile
+  }
+}
+```
+
+---
+
+## 🛠️ IMPLEMENTAZIONE
+
+### Step 1: Fix CSS in homepage-visual-fix.css
+
+Aggiungere in CIMA al file (prima di altri selectors):
+
+```css
+/* ========== GOVERNANCE CARDS - 3 COLUMN LAYOUT FIX ========== */
+
+/* Override flexbox with Bootstrap grid */
+#calendario .row.g-4 {
+  display: flex !important;
+  flex-wrap: wrap !important;  ← Allow wrapping to multiple rows
+}
+
+#calendario .row.g-4 > .col-md-6.col-lg-4 {
+  flex: 0 0 auto !important;  ← Don't stretch flex
+  max-width: 33.333% !important;  ← 3 columns desktop
+}
+
+@media (max-width: 991.98px) {
+  #calendario .row.g-4 > .col-md-6.col-lg-4 {
+    max-width: 50% !important;  ← 2 columns tablet
+  }
+}
+
+@media (max-width: 575.98px) {
+  #calendario .row.g-4 > .col-md-6.col-lg-4 {
+    max-width: 100% !important;  ← 1 column mobile
+  }
+}
+
+/* Ensure cards have proper min-width */
+#calendario .card-teaser {
+  min-width: 0 !important;  ← Allow shrinking
+  width: 100% !important;  ← Fill column width
+}
+```
+
+### Step 2: Verify Blade Structure
+
+Verificare governance/cards.blade.php abbia:
+
+```blade
+<div class="row g-4 mb-5">  ← Flex container con wrap
+  @foreach($cards as $i => $card)
+  <div class="col-md-6 col-lg-4">  ← Bootstrap columns
+    <div class="card ...">...</div>
+  </div>
+  @endforeach
+</div>
+```
+
+### Step 3: Build & Test
+
+```bash
+npm run build && npm run copy
+php artisan view:clear
+```
+
+### Step 4: Screenshot Tablet
+
+```bash
+# Tablet viewport (768px)
+# URL: http://127.0.0.1:8000/it/tests/homepage
+# Viewport: 768x1024
+```
+
+### Step 5: Verify
+
+✅ 3 colonne su desktop (≥992px)
+✅ 2 colonne su tablet (576px-991px)
+✅ 1 colonna su mobile (<576px)
+✅ Cards occupano spazio adeguato
+✅ Nessuna card sovrapposta
+
+---
+
+## 📋 CHECKLIST
+
+- [ ] CSS fix aggiunto a homepage-visual-fix.css
+- [ ] Blade structure verificata
+- [ ] Build completato
+- [ ] Cache pulita
+- [ ] Test desktop (≥992px) → 3 colonne
+- [ ] Test tablet (576-991px) → 2 colonne
+- [ ] Test mobile (<576px) → 1 colonna
+- [ ] Screenshot tablet mode
+- [ ] Confronto con reference
+- [ ] Ripetere fino a perfezione
+
+---
+
+## 🎯 CRITERI DI PERFEZIONE
+
+Cards "Organi di Governo" sono perfette quando:
+1. ✅ 3 card affiancate su desktop
+2. ✅ Ogni card occupa ~33% larghezza
+3. ✅ Spaziatura uniforme tra card (gap: 1rem)
+4. ✅ Card stesse dimensioni (altezza)
+5. ✅ Immagine laterale su prima card (Mario Rossi)
+6. ✅ Link "VAI ALLA PAGINA" verde su ogni card
+7. ✅ Responsive: 2 col tablet, 1 col mobile
+
+---
+
+**Prossimo Step**: ~~Implementare CSS fix → build → test → screenshot tablet → verificare~~
+
+## ✅ STATO ATTUALE - FIX COMPLETATO
+
+### Fix Applicati:
+1. ✅ **CSS Override** aggiunto a `homepage-visual-fix.css` (righe 6-37)
+   - `#calendario .row.g-4` con `flex-wrap: wrap !important`
+   - `max-width: 33.333%` per desktop (3 colonne)
+   - `max-width: 50%` per tablet (2 colonne)
+   - `max-width: 100%` per mobile (1 colonna)
+   - `.card-teaser` con `width: 100%` per riempire colonne
+
+2. ✅ **Build completato** - CSS generato: `app-hkqYYiea.css`
+3. ✅ **Cache pulita** - `php artisan view:clear`
+4. ✅ **Git commit** - `[FIX] Governance cards 3-column layout - screenshot 8 fix`
+
+### Verifica Richiesta:
+- [ ] Test su desktop (≥992px) → 3 colonne affiancate
+- [ ] Test su tablet (576-991px) → 2 colonne
+- [ ] Test su mobile (<576px) → 1 colonna
+- [ ] Screenshot e confronto con reference
+
+### Prossimo Step:
+1. Apri http://127.0.0.1:8000/it/tests/homepage
+2. Fai screenshot della sezione "Organi di Governo"
+3. Confronta con reference
+4. Se ci sono ancora differenze → mandami screenshot → iteriamo

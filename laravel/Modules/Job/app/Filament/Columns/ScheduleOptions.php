@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Job\Filament\Columns;
 
-use Modules\Xot\Filament\Tables\Columns\XotBaseTextColumn;
+use Filament\Tables\Columns\TextColumn;
 
-class ScheduleOptions extends XotBaseTextColumn
+class ScheduleOptions extends TextColumn
 {
     protected bool $withValue = true;
 

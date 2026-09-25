@@ -8,9 +8,12 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Location;
+use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
+
+uses(TestCase::class);
 
 describe('Location Business Logic', function () {
     test('location extends base model', function () {

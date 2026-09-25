@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Actions\Table;
 
+use Filament\Actions\Action;
 use Filament\Resources\Pages\ListRecords;
-use Modules\UI\Enums\TableLayoutEnum;
-use Modules\UI\Filament\Traits\HasTableLayoutPage;
-use Modules\Xot\Filament\Actions\XotBaseAction;
+use Modules\UI\Contracts\HasTableLayout;
 
-final class TableLayoutToggleTableAction extends XotBaseAction implements HasTableLayout
+final class TableLayoutToggleTableAction extends Action implements HasTableLayout
 {
     use TableLayoutTrait;
 
@@ -17,10 +16,12 @@ final class TableLayoutToggleTableAction extends XotBaseAction implements HasTab
     {
         parent::setUp();
 
-        $this->iconButton()
-            ->label('')
-            ->tooltip(fn (): string => $this->resolveTargetLayout()->getLabel())
-            ->icon(fn (): string => $this->resolveTargetLayout()->getIcon())
+        $current = $this->getCurrentLayout();
+
+        $this->label(__('ui::table_layout.actions.toggle.label'))
+            ->tooltip($current->getLabel())
+            ->color($current->getColor())
+            ->icon($current->getIcon())
             ->action($this->toggleLayout(...));
     }
 
@@ -29,49 +30,15 @@ final class TableLayoutToggleTableAction extends XotBaseAction implements HasTab
         return 'table_layout_toggle';
     }
 
-    protected function toggleLayout(): void
+    protected function toggleLayout(?ListRecords $livewire): void
     {
-        $livewire = $this->getLivewire();
-
-        if (! is_object($livewire) || ! HasTableLayoutPage::isLayoutCapable($livewire)) {
-            return;
-        }
-
-        $newLayout = $this->resolveLayout($livewire)->toggle();
+        $currentLayout = $this->getCurrentLayout();
+        $newLayout = $currentLayout->toggle();
 
         $this->setTableLayout($newLayout);
-        HasTableLayoutPage::applyLayoutTo($livewire, $newLayout);
 
         if ($livewire instanceof ListRecords) {
-            $livewire->resetTable();
+            $livewire->dispatch('$refresh');
         }
-    }
-
-    private function resolveTargetLayout(?object $livewire = null): TableLayoutEnum
-    {
-        return $this->resolveLayout($livewire)->toggle();
-    }
-
-    private function resolveLayout(?object $livewire = null): TableLayoutEnum
-    {
-        if (is_object($livewire)) {
-            $layout = HasTableLayoutPage::readLayoutFrom($livewire);
-
-            if ($layout instanceof TableLayoutEnum) {
-                return $layout;
-            }
-        }
-
-        $component = $this->getLivewire();
-
-        if (is_object($component)) {
-            $layout = HasTableLayoutPage::readLayoutFrom($component);
-
-            if ($layout instanceof TableLayoutEnum) {
-                return $layout;
-            }
-        }
-
-        return $this->getCurrentLayout();
     }
 }

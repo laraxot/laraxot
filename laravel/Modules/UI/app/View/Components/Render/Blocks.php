@@ -37,12 +37,12 @@ final class Blocks extends Component
          * @phpstan-var view-string
          */
         $view = app(GetViewAction::class)->execute($this->view);
-        $viewParams = [
+        $view_params = [
             'view' => $view,
             'blocks' => $this->blocks,
             'model' => $this->model,
         ];
 
-        return view($view, $viewParams);
+        return view($view, $view_params);
     }
 }

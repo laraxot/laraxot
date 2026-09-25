@@ -1,17 +1,3 @@
-<<<<<<< HEAD
----
-title: "MCP Server Configuration - Job Module"
-module: "Job"
-type: concept
-tags: [mcp, configuration]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "mcp configuration"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
-=======
->>>>>>> af4545e (.)
 # MCP Server Configuration - Job Module
 
 

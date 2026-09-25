@@ -69,26 +69,14 @@
         "updated_by": null
     },
     {
+        "regione": "\"Lombardia\"",
+        "provincia": "\"Milano\"",
         "nome": "Bresso",
-        "codice": null,
-        "regione": "Lombardia",
-        "provincia": "Milano",
-        "sigla_provincia": "MI",
-        "cap": "20091",
-        "codice_catastale": null,
-        "popolazione": null,
-        "zona_altimetrica": null,
-        "altitudine": null,
-        "superficie": null,
+        "cap": "\"20091\"",
         "lat": 45.5389,
         "lng": 9.19,
         "id": 4,
-        "slug": "bresso",
-        "title": "Bresso",
-        "content": null,
         "updated_at": "2026-06-30T12:04:15.869651Z",
-        "created_at": "2026-06-30T12:04:15.869733Z",
-        "created_by": null,
-        "updated_by": null
+        "created_at": "2026-06-30T12:04:15.869733Z"
     }
 ]

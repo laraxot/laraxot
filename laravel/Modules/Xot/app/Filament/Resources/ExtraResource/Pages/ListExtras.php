@@ -9,7 +9,6 @@ use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\BaseFilter;
 use Modules\Xot\Filament\Resources\ExtraResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
@@ -20,7 +19,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 class ListExtras extends XotBaseListRecords
 {
     protected static string $resource = ExtraResource::class;
-   
+
     /**
      * @return array<BaseFilter>
      */

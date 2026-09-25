@@ -1,17 +1,3 @@
-<<<<<<< HEAD
----
-title: "Task: Migliorare Dashboard Monitoring - Job"
-module: "Job"
-type: concept
-tags: [task, dashboard, monitoring]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "task dashboard monitoring"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
-=======
->>>>>>> af4545e (.)
 # Task: Migliorare Dashboard Monitoring - Job
 
 **Modulo**: Job

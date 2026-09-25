@@ -46,7 +46,7 @@ class DiffAssocRecursiveAction
         $coll_1 = collect(self::fixType($arr_1));
         $arr_2 = self::fixType($arr_2);
 
-        $ris = $coll_1->filter(static function (mixed $value, int|string $key) use ($arr_2) {
+        $ris = $coll_1->filter(static function (array $value, int|string $key) use ($arr_2) {
             try {
                 return ! \in_array($value, $arr_2, false);
             } catch (\Exception $exception) {

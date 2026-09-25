@@ -66,6 +66,7 @@ Sempre estendere classi astratte con prefisso `XotBase` che rispettano il vecchi
 | ❌ SBAGLIATO | ✅ CORRETTO |
 |-------------|------------|
 | `Filament\Actions\ActionGroup` | `Modules\Xot\Filament\Actions\XotBaseActionGroup` |
+| `Filament\Actions\ExportAction` | `Modules\Xot\Filament\Actions\XotBaseExportAction` |
 
 ### Resources
 

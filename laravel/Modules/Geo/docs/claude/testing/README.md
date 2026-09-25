@@ -7,7 +7,7 @@ Tests use **Pest** (BDD-style) for better readability.
 ```php
 <?php
 
-use Modules\Xot\Contracts\UserContract;
+use Modules\User\Models\User;
 
 test('can create user', function () {
     $user = User::factory()->create([

@@ -1,36 +1,3 @@
----
-title: "Separazione dello Schema dagli Step nei Wizard Filament"
-type: concept
-tags: [wizard, schema, aration]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "wizard-schema-aration separazione dello schema dagli step nei wizard filament"
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-=======
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-related:
-  - "./no-obvious-comments.md"
-  - "./syntax-error-fixes.md"
-  - "./wizard-schema-separation.md"
-  - "./wizard-steps.md"
----
-
 # Separazione dello Schema dagli Step nei Wizard Filament
 
 ## Regola Fondamentale

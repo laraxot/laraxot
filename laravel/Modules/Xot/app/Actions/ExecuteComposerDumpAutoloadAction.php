@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Actions;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Process;
-
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -34,8 +32,6 @@ class ExecuteComposerDumpAutoloadAction
     {
         /** @var list<string> $output */
         $output = [];
-
-        Event::dispatch('artisan-command.started', ['composer dump-autoload']);
 
         try {
             /*
@@ -76,7 +72,6 @@ class ExecuteComposerDumpAutoloadAction
                     $formatted = trim($data);
                     if ($formatted !== '') {
                         $output[] = $formatted;
-                        Event::dispatch('artisan-command.output', ['composer dump-autoload', $formatted]);
                     }
                 }
 
@@ -85,7 +80,6 @@ class ExecuteComposerDumpAutoloadAction
                     $formattedError = trim($errorData);
                     if ($formattedError !== '') {
                         $output[] = $formattedError;
-                        Event::dispatch('artisan-command.output', ['composer dump-autoload', $formattedError]);
                     }
                 }
 
@@ -97,24 +91,18 @@ class ExecuteComposerDumpAutoloadAction
             $finalOutput = trim($result->output());
             if ($finalOutput !== '') {
                 $output[] = $finalOutput;
-                Event::dispatch('artisan-command.output', ['composer dump-autoload', $finalOutput]);
             }
 
             $finalErrorOutput = trim($result->errorOutput());
             if ($finalErrorOutput !== '') {
                 $output[] = $finalErrorOutput;
-                Event::dispatch('artisan-command.output', ['composer dump-autoload', $finalErrorOutput]);
             }
 
             $status = $result->successful() ? 'completed' : 'failed';
 
             if ($status === 'failed') {
-                $failureNotice = '[ERRORE] Il comando è fallito (exit code '.($result->exitCode() ?? 0).').';
-                $output[] = $failureNotice;
-                Event::dispatch('artisan-command.output', ['composer dump-autoload', $failureNotice]);
+                $output[] = '[ERRORE] Il comando è fallito (exit code '.($result->exitCode() ?? 0).').';
             }
-
-            Event::dispatch('artisan-command.'.$status, ['composer dump-autoload', $finalErrorOutput]);
 
             return [
                 'output' => $output,
@@ -122,8 +110,6 @@ class ExecuteComposerDumpAutoloadAction
                 'exitCode' => $result->exitCode() ?? 0,
             ];
         } catch (\Throwable $e) {
-            Event::dispatch('artisan-command.error', ['composer dump-autoload', $e->getMessage()]);
-
             throw new \RuntimeException("Errore durante l'esecuzione di composer dump-autoload: {$e->getMessage()}", (int) $e->getCode(), $e);
         }
     }

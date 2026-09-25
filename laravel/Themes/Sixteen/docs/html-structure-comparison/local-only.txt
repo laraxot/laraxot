@@ -1,0 +1,21 @@
+<a class="btn btn-outline-light btn-icon" href="..." data-element="personal-area-login" aria-label="Accedi all'area personale">
+<a href="..." class="all-news-link">
+<body class="dc-homepage-parity">
+<button class="btn btn-outline-primary fw-bold me-4 btn-back" type="button" @click="showStep(step >
+<button class="custom-navbar-toggler d-lg-none me-3" type="button" aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione" data-bs-target="#nav4" data-bs-toggle="navbarcollapsible">
+<div class="cmp-rating__card-first" data-step="0">
+<div class="d-none" data-step="buttons">
+<div class="page-content-content" data-slug="tests.homepage" data-side="content">
+<div class="row text-center mt-4">
+<fieldset class="fieldset-rating-one d-none" data-element="feedback-rating-positive" x-show="isPositive">
+<fieldset class="fieldset-rating-two d-none" data-element="feedback-rating-negative" x-show="!isPositive">
+<fieldset class="rating" id="fieldset-rating-one">
+<form id="rating" x-show="step >
+<input type="radio" id="star1a" name="ratingA" value="1" x-model="rating">
+<input type="radio" id="star2a" name="ratingA" value="2" x-model="rating">
+<input type="radio" id="star3a" name="ratingA" value="3" x-model="rating">
+<input type="radio" id="star4a" name="ratingA" value="4" x-model="rating">
+<input type="radio" id="star5a" name="ratingA" value="5" x-model="rating">
+<label for="formGroupExampleInputWithHelp">
+<label for="radio-5" class="active" data-element="feedback-rating-answer">
+<svg class="icon icon-white">

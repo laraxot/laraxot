@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Filament\Forms\Components\TextInput;
 use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Xot\Tests\TestCase;
@@ -12,7 +11,7 @@ use ReflectionMethod;
 uses(TestCase::class);
 
 test('un override di getFormSchema viene onorato su XotBasePage', function (): void {
-    $fixture = new FormSchemaPageFixture();
+    $fixture = new FormSchemaPageFixture;
     $method = new ReflectionMethod($fixture, 'resolveFormSchemaForXotPage');
     $method->setAccessible(true);
 

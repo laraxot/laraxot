@@ -26,7 +26,7 @@ class RecordMail extends Mailable
     /**
      * Crea una nuova istanza del mailable.
      *
-     * @param array<string, mixed> $data I dati del record
+     * @param  array<string, mixed>  $data  I dati del record
      */
     public function __construct(array $data)
     {
@@ -40,6 +40,9 @@ class RecordMail extends Mailable
      */
     public function build(): self
     {
-        return $this->view('xot::emails.record')->with(['data' => $this->recordData]);
+        /** @var view-string $view */
+        $view = 'xot::emails.record';
+
+        return $this->view($view)->with(['data' => $this->recordData]);
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Support\Facades\File;
 use Modules\Xot\Actions\File\GetClassNameByPathAction;
 use Modules\Xot\Tests\TestCase;

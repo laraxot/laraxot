@@ -22,7 +22,17 @@ class ClockWidget extends XotBaseWidget
 
     public bool $run = false;
 
-    protected string $view = 'job::filament.widgets.clock-widget';
+    /** @var view-string */
+    protected string $view;
+
+    public function __construct()
+    {
+        /** @var view-string $view */
+        $view = 'job::filament.widgets.clock-widget';
+        $this->view = $view;
+
+        parent::__construct();
+    }
 
     protected int|string|array $columnSpan = 'full';
 

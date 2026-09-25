@@ -45,32 +45,6 @@ abstract class TestCase extends XotBaseTestCase
     /** @var list<string> */
     protected $connectionsToTransact = ['sqlite', 'user', 'tenant', 'xot'];
 
-    public mixed $action = null;
-
-    public mixed $model = null;
-
-    public mixed $service = null;
-
-    public mixed $tempDir = null;
-
-    public mixed $record = null;
-
-    public mixed $transition = null;
-
-    public mixed $resource = null;
-
-    public mixed $testModel = null;
-
-    public mixed $extraClass = null;
-
-    public mixed $baseModel = null;
-
-    public ?string $testDir = null;
-
-    public mixed $saved = null;
-
-    public mixed $extra_attributes = null;
-
     /**
      * @return array<int, class-string<ServiceProvider>>
      */

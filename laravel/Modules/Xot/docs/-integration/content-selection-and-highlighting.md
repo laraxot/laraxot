@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-# content_selection_and_highlighting
-
-<!-- Contenuto migrato da _docs/content_selection_and_highlighting.txt -->
-
-https://javascript.plainenglish.io/medium-like-text-highlighting-in-react-afa35a29a81a
-
-=======
 ---
 title: 'Content selection and highlighting'
 module: Xot
@@ -20,53 +12,29 @@ updated: 2026-08-24
 
 https://javascript.plainenglish.io/medium-like-text-highlighting-in-react-afa35a29a81a
 
-
->>>>>>> laraxot/dev
 https://github.com/codeshifu/react-highlight-pop
 
 https://stackoverflow.com/questions/18543676/display-popup-above-highlighted-text-in-contenteditable-div
 
-<<<<<<< HEAD
 https://medium.com/@hyvor.talk/how-to-simply-highlight-code-on-your-blog-with-highlight-js-9d9ab2797b8
 
 https://stackoverflow.com/questions/23952220/how-can-i-recreate-the-medium-highlight-function
 
-=======
-
-https://medium.com/@hyvor.talk/how-to-simply-highlight-code-on-your-blog-with-highlight-js-9d9ab2797b8
-
-
-https://stackoverflow.com/questions/23952220/how-can-i-recreate-the-medium-highlight-function
-
-
->>>>>>> laraxot/dev
 http://720kb.github.io/butler/
 https://720kb.github.io/highlighter.js/
 
 https://github.com/anonyco/Highlighter-JS
 
-<<<<<<< HEAD
-https://jobjects.com/project_docs/highlighter/jquery //deprecated
-
-https://devpost.com/software/highlighter-js
-
-=======
 https://jobjects.com/docs/highlighter/jquery //deprecated
 
 https://devpost.com/software/highlighter-js
 
-
->>>>>>> laraxot/dev
 ------------------------------------------------------------
 https://mxb.dev/blog/medium-share-highlight-eleventy/
 https://github.com/maxboeck/eleventy-plugin-share-highlight
 
 ---------------------------------------------------------------
 
-<<<<<<< HEAD
-=======
-
->>>>>>> laraxot/dev
 https://css-tricks.com/how-to-create-actions-for-selected-text-with-the-selection-api/    !!!
 
 -----------------------------------------------------------------
@@ -75,17 +43,9 @@ https://github.com/anythingcodes/highlight-share
 -------------------------------------------------------------------------------
 https://estevanmaito.github.io/sharect/
 
-<<<<<<< HEAD
 ---------------------------------------------------------------
 https://www.freecodecamp.org/news/how-to-create-a-medium-like-highlight-menu-in-vue-dc515f2dddef/   !!!!!!
 
-=======
-
----------------------------------------------------------------
-https://www.freecodecamp.org/news/how-to-create-a-medium-like-highlight-menu-in-vue-dc515f2dddef/   !!!!!!
-
-
->>>>>>> laraxot/dev
 --------------------------------------------------------------
 
 https://codecanyon.net/item/highlighter-pro-a-mediumcominspired-text-highlighting-and-inline-commenting-tool-for-wordpress/20743682
@@ -122,15 +82,8 @@ https://javascript.plainenglish.io/medium-like-text-highlighting-in-react-afa35a
 --------------------------------------------------------------
 --------------------------------------------------------------
 
-<<<<<<< HEAD
 tvb.bibliotechetrevigiane.it
 
-=======
-
-tvb.bibliotechetrevigiane.it
-
-
->>>>>>> laraxot/dev
 -------------------
 <div class="dd ew od xf" data-popper-reference-hidden="false" data-popper-escaped="false"
 data-popper-placement="top" style="position: absolute; inset: auto auto 0px 0px;

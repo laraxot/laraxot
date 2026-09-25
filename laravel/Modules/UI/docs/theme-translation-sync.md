@@ -38,7 +38,7 @@ Entrambi i temi contengono i seguenti file di traduzione:
 11. `patient.php` - Gestione pazienti
 12. `studio.php` - Gestione studi
 
-## Correzioni Applicate (2025-01-06)
+## Correzioni Applicate ([DATE])
 
 ### 1. Problema: Traduzione mancante `pub_theme::appointment.fields.state.label`
 
@@ -73,7 +73,7 @@ Entrambi i temi contengono i seguenti file di traduzione:
 - `duration` - Durata
 - `emergency` - Emergenza
 
-### 4. Problema: Testo hardcoded in italiano per i referti (2025-01-06)
+### 4. Problema: Testo hardcoded in italiano per i referti ([DATE])
 
 **Causa**: Il file `appointment/item.blade.php` conteneva testo hardcoded in italiano per la sezione referti:
 - "Il tuo referto è pronto!"
@@ -223,15 +223,15 @@ return [
 
 - [Theme Widget Translations](theme-widget-translations.md)
 - [Translation Helper Text Standards](translation-helper-text-standards.md)
-- [Modules/<nome modulo>/docs/translation_quality_standards.md](../laravel/Modules/<nome modulo>/docs/translation_quality_standards.md)
-- [Modules/<nome progetto>/docs/translation_quality_standards.md](../laravel/Modules/<nome progetto>/docs/translation_quality_standards.md)
-- [Modules/<nome modulo>/docs/translation_quality_standards.md](../laravel/Modules/<nome modulo>/docs/translation_quality_standards.md)
-- [Modules/<nome progetto>/docs/translation_quality_standards.md](../laravel/Modules/<nome progetto>/docs/translation_quality_standards.md)
-- [Modules/<nome modulo>/docs/translation_quality_standards.md](../laravel/Modules/<nome modulo>/docs/translation_quality_standards.md)
-- [Modules/<nome progetto>/docs/translation_quality_standards.md](../laravel/Modules/<nome progetto>/docs/translation_quality_standards.md)
+- [Modules/<nome modulo>/docs/translation_quality_standards.md](../laravel/modules/<nome modulo>/docs/translation_quality_standards.md)
+- [Modules/<nome progetto>/docs/translation_quality_standards.md](../laravel/modules/<nome progetto>/docs/translation_quality_standards.md)
+- [Modules/<nome modulo>/docs/translation_quality_standards.md](../laravel/modules/<nome modulo>/docs/translation_quality_standards.md)
+- [Modules/<nome progetto>/docs/translation_quality_standards.md](../laravel/modules/<nome progetto>/docs/translation_quality_standards.md)
+- [Modules/<nome modulo>/docs/translation_quality_standards.md](../laravel/modules/<nome modulo>/docs/translation_quality_standards.md)
+- [Modules/<nome progetto>/docs/translation_quality_standards.md](../laravel/modules/<nome progetto>/docs/translation_quality_standards.md)
 
 ---
 
-**Ultimo aggiornamento**: 2025-01-06
+**Ultimo aggiornamento**: [DATE]
 **Versione**: 2.2
 **Autore**: AI Assistant

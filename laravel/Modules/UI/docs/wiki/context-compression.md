@@ -5,11 +5,7 @@ type: concept
 created: "2026-04-29T00:00:00Z"
 updated: "2026-04-29T00:00:00Z"
 related:
-  - "./agents.md"
-  - "./bmad-method.md"
-  - "./index.md"
-  - "./log.md"
-  - "./overview.md"
+  - "[[UI Operating Model]]"
 ---
 
 # Context Compression Setup
@@ -67,36 +63,7 @@ Questo sostituisce la precedente nota speculativa con una configurazione effetti
 qmd query "$1" -c wiki --limit 3 > compressed_result.md
 
 # Estrai keyword principali
-<<<<<<< HEAD
 qmd search "$1" -c fixcity-docs | head -5 > keywords.txt
-qmd search "$1" -c <nome progetto>-docs | head -5 > keywords.txt
-qmd search "$1" -c project-docs | head -5 > keywords.txt
-=======
-<<<<<<< HEAD
-qmd search "$1" -c fixcity-docs | head -5 > keywords.txt
-<<<<<<< HEAD
-qmd search "$1" -c <nome progetto>-docs | head -5 > keywords.txt
-qmd search "$1" -c project-docs | head -5 > keywords.txt
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-qmd search "$1" -c <nome progetto>-docs | head -5 > keywords.txt
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-qmd search "$1" -c project-docs | head -5 > keywords.txt
-=======
-qmd search "$1" -c <nome progetto>-docs | head -5 > keywords.txt
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 
 # Genera sommario
 qmd multi-get $(qmd search "$1" -c main_docs | head -10) | awk '/^# / {print; getline; print; print ""}' > summary.md

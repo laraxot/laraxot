@@ -277,8 +277,7 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * non li sostituisce: aggiungere questo hook non perde nessuno scoping
      * (es. tenant) gia' applicato da `$resourceClass::table()`.
      *
-     * @param Builder<Model> $query
-     *
+     * @param  Builder<Model>  $query
      * @return Builder<Model>
      */
     protected function modifyRelatedQuery(Builder $query): Builder

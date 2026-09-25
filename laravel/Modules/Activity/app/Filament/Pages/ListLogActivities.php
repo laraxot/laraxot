@@ -138,6 +138,7 @@ abstract class ListLogActivities extends XotBasePage
             throw new InvalidArgumentException('paginateQuery() with PaginationMode::Default must return LengthAwarePaginator');
         }
 
+        /** @var LengthAwarePaginator<int, Activity> $paginated */
         return $paginated;
     }
 

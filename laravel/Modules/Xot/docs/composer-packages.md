@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-//---- pacchetto per gli stati, si possono utilizzare piu' campi per lo stato
-https://github.com/asantibanez/laravel-eloquent-state-machines
-=======
 ---
 title: 'composer_packages'
 module: Xot
@@ -21,4 +16,3 @@ updated: 2026-08-24
 
 //---- pacchetto per gli stati, si possono utilizzare piu' campi per lo stato
 https://github.com/asantibanez/laravel-eloquent-state-machines
->>>>>>> laraxot/dev

@@ -1,0 +1,22 @@
+# Test artifacts
+/tests/AuditCoverage/
+
+.rector.php
+.phpinsights.php
+
+# Module-local quality tool configuration
+
+# Root agent tooling and PHP quality configuration
+/.agents/
+/.codex/
+/.cursor/
+/.opencode/
+/.qwen/
+/rector.php
+/phpinsights.php
+/.php-cs-fixer.php
+/.php-cs-fixer.dist.php
+
+# Generated Claude audit coverage scaffold (never commit)
+/audit-coverage/
+*.lock

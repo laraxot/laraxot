@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 /**
  * Base provider for the Xot main panel in Filament.
  *

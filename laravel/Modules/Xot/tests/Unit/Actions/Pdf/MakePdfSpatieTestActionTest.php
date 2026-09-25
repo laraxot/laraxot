@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Support\Facades\Facade;
 use Modules\Xot\Actions\Pdf\MakePdfSpatieTestAction;
 use Modules\Xot\Tests\TestCase;

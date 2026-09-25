@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-# Xot
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
 ---
 title: "Readme"
 type: reference
@@ -12,7 +5,6 @@ tags: [wiki, no-frontmatter-fix]
 created: 2026-08-24
 updated: 2026-08-24
 ---
-<<<<<<< HEAD
 
 # Gestione delle Eccezioni
 
@@ -49,160 +41,7 @@ Questo documento fornisce una panoramica del sistema di gestione delle eccezioni
 - [Exception Handling Guidelines](../exception-handling-guide.md)
 - [Logging Best Practices](../logging-best-practices.md)
 - [PHPStan Level 9 Guide](../phpstan-level9-guide.md)
-## Collegamenti tra versioni di README.md
-* [README.md](bashscripts/project_docs/readme.md)
-* [README.md](bashscripts/project_docs/it/readme.md)
-* [README.md](docs/laravel-app/phpstan/readme.md)
-* [README.md](docs/laravel-app/readme.md)
-* [README.md](docs/moduli/struttura/readme.md)
-* [README.md](docs/moduli/readme.md)
-* [README.md](docs/moduli/manutenzione/readme.md)
-* [README.md](docs/moduli/core/readme.md)
-* [README.md](docs/moduli/installati/readme.md)
-* [README.md](docs/moduli/comandi/readme.md)
-* [README.md](docs/phpstan/readme.md)
-* [README.md](docs/readme.md)
-* [README.md](docs/module-links/readme.md)
-* [README.md](docs/troubleshooting/git-conflicts/readme.md)
-* [README.md](docs/tecnico/laraxot/readme.md)
-* [README.md](docs/modules/readme.md)
-* [README.md](docs/conventions/readme.md)
-* [README.md](docs/amministrazione/backup/readme.md)
-* [README.md](docs/amministrazione/monitoraggio/readme.md)
-* [README.md](docs/amministrazione/deployment/readme.md)
-* [README.md](docs/translations/readme.md)
-* [README.md](docs/roadmap/readme.md)
-* [README.md](docs/ide/cursor/readme.md)
-* [README.md](docs/implementazione/api/readme.md)
-* [README.md](docs/implementazione/testing/readme.md)
-* [README.md](docs/implementazione/pazienti/readme.md)
-* [README.md](docs/implementazione/ui/readme.md)
-* [README.md](docs/implementazione/dental/readme.md)
-* [README.md](docs/implementazione/core/readme.md)
-* [README.md](docs/implementazione/reporting/readme.md)
-* [README.md](docs/implementazione/isee/readme.md)
-* [README.md](docs/it/readme.md)
-* [README.md](laravel/vendor/mockery/mockery/project_docs/readme.md)
-* [README.md](../../../chart/project_docs/readme.md)
-* [README.md](../../../reporting/project_docs/readme.md)
-* [README.md](../../../gdpr/project_docs/phpstan/readme.md)
-* [README.md](../../../gdpr/project_docs/readme.md)
-* [README.md](../../../notify/project_docs/phpstan/readme.md)
-* [README.md](../../../notify/project_docs/readme.md)
-* [README.md](../../../xot/project_docs/filament/readme.md)
-* [README.md](../../../xot/project_docs/phpstan/readme.md)
-* [README.md](../../../xot/project_docs/exceptions/readme.md)
-* [README.md](../../../xot/project_docs/readme.md)
-* [README.md](../../../xot/project_docs/standards/readme.md)
-* [README.md](../../../xot/project_docs/conventions/readme.md)
-* [README.md](../../../xot/project_docs/development/readme.md)
-* [README.md](../../../dental/project_docs/readme.md)
-* [README.md](../../../user/project_docs/phpstan/readme.md)
-* [README.md](../../../user/project_docs/readme.md)
-* [README.md](../../../user/project_docs/readme.md)
-* [README.md](../../../ui/project_docs/phpstan/readme.md)
-* [README.md](../../../ui/project_docs/readme.md)
-* [README.md](../../../ui/project_docs/standards/readme.md)
-* [README.md](../../../ui/project_docs/themes/readme.md)
-* [README.md](../../../ui/project_docs/components/readme.md)
-* [README.md](../../../lang/project_docs/phpstan/readme.md)
-* [README.md](../../../lang/project_docs/readme.md)
-* [README.md](../../../job/project_docs/phpstan/readme.md)
-* [README.md](../../../job/project_docs/readme.md)
-* [README.md](../../../media/project_docs/phpstan/readme.md)
-* [README.md](../../../media/project_docs/readme.md)
-* [README.md](../../../tenant/project_docs/phpstan/readme.md)
-* [README.md](../../../tenant/project_docs/readme.md)
-* [README.md](../../../activity/project_docs/phpstan/readme.md)
-* [README.md](../../../activity/project_docs/readme.md)
-* [README.md](../../../patient/project_docs/readme.md)
-* [README.md](../../../patient/project_docs/standards/readme.md)
-* [README.md](../../../patient/project_docs/value-objects/readme.md)
-* [README.md](../../../cms/project_docs/blocks/readme.md)
-* [README.md](../../../cms/project_docs/readme.md)
-* [README.md](../../../cms/project_docs/standards/readme.md)
-* [README.md](../../../cms/project_docs/content/readme.md)
-* [README.md](../../../cms/project_docs/frontoffice/readme.md)
-* [README.md](../../../cms/project_docs/components/readme.md)
-* [README.md](../../../../themes/two/project_docs/readme.md)
-* [README.md](../../../../themes/one/project_docs/readme.md)
 
----
-
-=======
->>>>>>> 28b0298a (fix: phpstan issues)
-
-[![Module](https://img.shields.io/badge/Module-Xot-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
-
-> **Core module for the FixCity Platform.**
-
-## Perché esiste
-
-Core module for the FixCity Platform.
-
-## Superpoteri
-
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
-
-## Documentazione
-
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
-
----
-
-<<<<<<< HEAD
-**Modulo** `Xot` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
-=======
->>>>>>> laraxot/dev
-<!-- Merged from readme.md, which collided with this file on case-insensitive filesystems. -->
-
-# Gestione delle Eccezioni
-
-Questo documento fornisce una panoramica del sistema di gestione delle eccezioni nel modulo Xot.
-
-## HandlerDecorator
-- [Documentazione Dettagliata](./handler-decorator.md)
-- Modulo: Xot
-- Percorso: `Modules/Xot/app/Exceptions/Handlers/HandlerDecorator.php`
-
-### Funzionalità Principali
-- Decorazione del gestore eccezioni Laravel
-- Gestione personalizzata delle eccezioni
-- Supporto per log dettagliati e webhook
-- Integrazione con sistemi di monitoraggio
-
-## Formatters
-- [WebhookErrorFormatter](./formatters/webhook-error-formatter.md)
-- Altri formattatori personalizzati
-
-### Caratteristiche
-- Formattazione consistente degli errori
-- Supporto per diversi canali di output
-- Integrazione con sistemi esterni
-
-## Best Practices
-1. Utilizzo di pattern di design appropriati
-2. Logging strutturato e dettagliato
-3. Gestione errori robusta
-4. Supporto per PHPStan livello 9
-5. Conforme alle convenzioni Laraxot/<nome progetto>
-
-## Collegamenti
-- [Exception Handling Guidelines](../EXCEPTION-HANDLING-GUIDE.md)
-- [Logging Best Practices](../LOGGING-BEST-PRACTICES.md)
 ## Collegamenti tra versioni di README.md
 * [README.md](bashscripts/docs/README.md)
 * [README.md](bashscripts/docs/it/README.md)
@@ -253,7 +92,6 @@ Questo documento fornisce una panoramica del sistema di gestione delle eccezioni
 * [README.md](../../../Dental/docs/README.md)
 * [README.md](../../../User/docs/phpstan/README.md)
 * [README.md](../../../User/docs/README.md)
-* [README.md](../../../User/docs/README.md)
 * [README.md](../../../UI/docs/phpstan/README.md)
 * [README.md](../../../UI/docs/README.md)
 * [README.md](../../../UI/docs/standards/README.md)
@@ -280,44 +118,3 @@ Questo documento fornisce una panoramica del sistema di gestione delle eccezioni
 * [README.md](../../../Cms/docs/components/README.md)
 * [README.md](../../../../Themes/Two/docs/README.md)
 * [README.md](../../../../Themes/One/docs/README.md)
-
-<<<<<<< HEAD
-=======
-=======
-# Xot
-
-[![Module](https://img.shields.io/badge/Module-Xot-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
-
-> **Core module for the FixCity Platform.**
-
-## Perché esiste
-
-Core module for the FixCity Platform.
-
-## Superpoteri
-
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
-
-## Documentazione
-
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
-
----
-
-**Modulo** `Xot` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
->>>>>>> 7f6cf6be (.)
->>>>>>> 28b0298a (fix: phpstan issues)
->>>>>>> laraxot/dev

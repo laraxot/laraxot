@@ -15,7 +15,7 @@ return [
         'label' => 'Missing Navigation Label',
         'plural_label' => 'Missing Navigation Plural Label',
         'group' => 'Missing Group',
-        'icon' => 'heroicon-o-puzzle-piece',
+        'icon' => 'xot-files.pdf',
         'sort' => 100,
     ],
     'label' => 'Missing Label',

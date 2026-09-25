@@ -5,6 +5,9 @@
 
 # Blog Wiki Log
 
+## [2026-09-25] phpstan | tree resolver returns a list
+- `GetTreeOptions::resolveTreeModels()` discards collection keys with `array_values()` because the caller iterates models as a sequence; this satisfies the `array<int, Category|Menu>` contract without depending on collection keys.
+
 ## [2026-04-15] init | wiki bootstrap
 - Struttura wiki/log.md inizializzata.
 - Layer raw: tutti i file in `docs/` (eccetto `wiki/`).

@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-# UI Module Architecture
-
-## Overview
-The UI module provides Filament-based admin interface components, themes, and utilities.
-
-## Components
-- **Filament Resources**: AdminPanel resources for data management
-- **Widgets**: Dashboard widgets and custom controls
-- **Themes**: Tailwind CSS theme system
-- **Layout Components**: Navbar, blocks, page builder
-
-## Subsystems
-- **Page Builder**: Drag-and-drop content builder
-- **Theme System**: Multi-theme support with Tailwind
-- **Components**: Reusable Vue/Blade components
-- **Admin Panel**: Filament admin interface
-
-## Related Docs
-- Wiki: `docs/wiki/ui/`
-- Components: `docs/wiki/ui/UI-*.md`
-- Filament: `docs/wiki/concepts/UI-filament-patterns.md`
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 92912795 (.)
 # UI Module - Architecture Guide (2025)
 
 > **Last Updated:** 2025-11-19
@@ -681,32 +652,3 @@ The UI module is a **well-architected, feature-rich Filament customization layer
 **Document Version:** 1.0
 **Generated:** 2025-11-19
 **Author:** Claude Code Analysis
-<<<<<<< HEAD
-=======
-=======
->>>>>>> laraxot/dev
----
-title: "UI Module Architecture"
-type: architecture
-tags: [module, architecture, ui]
-created: 2026-08-04
-updated: 2026-08-04
----
-# UI Module — Architecture
-
-## Purpose
-UI module for Laraxot platform.
-
-## Core Components
-- Models, Actions, Resources
-- Standard Laraxot module structure
-
-## Quality Gates
-- PHPStan L10 compliance
-- Test coverage requirements
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev

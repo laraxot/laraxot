@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Tests\Feature\Filament\Widgets;
 
+use Filament\Schemas\Components\Section;
 use Illuminate\Support\Facades\File;
 use Modules\Xot\Filament\Widgets\EnvWidget;
 use Tests\TestCase;
@@ -37,7 +38,7 @@ afterEach(function (): void {
 it('persists a changed field to the real .env file when the form is submitted', function (): void {
     $marker = 'pest-test-'.uniqid('', true);
 
-    $widget = new EnvWidget();
+    $widget = new EnvWidget;
     $widget->mount();
     $widget->data['telegram_bot_token'] = $marker;
     $widget->submit();
@@ -54,7 +55,7 @@ it('does not rewrite a field that was not changed in the form', function (): voi
     $appUrlLineBefore = collect(explode("\n", $this->originalEnvContent))
         ->first(fn (string $line): bool => str_starts_with($line, 'APP_URL='));
 
-    $widget = new EnvWidget();
+    $widget = new EnvWidget;
     $widget->mount();
     $widget->data['telegram_bot_token'] = 'pest-test-'.uniqid('', true);
     $widget->submit();
@@ -66,7 +67,7 @@ it('does not rewrite a field that was not changed in the form', function (): voi
 });
 
 it('mounts with the mail and sms fields pre-filled from the current .env, not empty', function (): void {
-    $widget = new EnvWidget();
+    $widget = new EnvWidget;
     $widget->mount();
 
     expect($widget->data)->not->toBeNull();
@@ -84,7 +85,7 @@ it('mounts with the mail and sms fields pre-filled from the current .env, not em
 it('persists mail_from_address and mail_from_name to the real .env file when changed', function (): void {
     $marker = uniqid('', true);
 
-    $widget = new EnvWidget();
+    $widget = new EnvWidget;
     $widget->mount();
     $widget->data['mail_from_address'] = 'pest-'.$marker.'@example.test';
     $widget->data['mail_from_name'] = 'Pest '.$marker;
@@ -100,7 +101,7 @@ it('does not rewrite MAIL_FROM_NAME when the form leaves it unchanged, so a ${AP
     $fromNameLineBefore = collect(explode("\n", $this->originalEnvContent))
         ->first(fn (string $line): bool => str_starts_with($line, 'MAIL_FROM_NAME='));
 
-    $widget = new EnvWidget();
+    $widget = new EnvWidget;
     $widget->mount();
     $widget->data['telegram_bot_token'] = 'pest-test-'.uniqid('', true);
     $widget->submit();
@@ -112,7 +113,7 @@ it('does not rewrite MAIL_FROM_NAME when the form leaves it unchanged, so a ${AP
 });
 
 it('groups fields into General/SMS/Mail sections and keeps every selected field visible', function (): void {
-    $widget = new EnvWidget();
+    $widget = new EnvWidget;
     $widget->only = [
         'debugbar_enabled', 'telegram_bot_token',
         'sms_driver', 'netfun_token',
@@ -124,12 +125,12 @@ it('groups fields into General/SMS/Mail sections and keeps every selected field 
 
     expect($schema)->toHaveCount(3);
     foreach ($schema as $component) {
-        expect($component)->toBeInstanceOf(\Filament\Schemas\Components\Section::class);
+        expect($component)->toBeInstanceOf(Section::class);
     }
 });
 
 it('does not drop a field that is selected but missing from the GROUPS map', function (): void {
-    $widget = new EnvWidget();
+    $widget = new EnvWidget;
     $widget->only = ['app_url'];
 
     $schema = $widget->getFormSchema();
@@ -139,7 +140,7 @@ it('does not drop a field that is selected but missing from the GROUPS map', fun
     // resta comunque una Section (nessun campo sparisce fuori dal gruppo
     // mappato in GROUPS).
     expect($schema)->toHaveCount(1);
-    expect($schema[0])->toBeInstanceOf(\Filament\Schemas\Components\Section::class);
+    expect($schema[0])->toBeInstanceOf(Section::class);
 });
 
 it('resolves field labels and section headings from the translation file, not from hardcoded strings', function (): void {

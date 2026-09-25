@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Xot\Actions\String\GetPronounceablePasswordAction;
 use Modules\Xot\Actions\String\GetStrBetweenStartsWithAction;
 use Modules\Xot\Actions\String\NormalizeDriverNameAction;

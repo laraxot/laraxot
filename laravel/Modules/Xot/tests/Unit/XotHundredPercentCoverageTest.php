@@ -97,11 +97,11 @@ namespace PhpCsFixer\Runner\Parallel {
 }
 namespace PhpCsFixer {
     final class Config {
-        public function setParallelConfig(mixed $c): self { return $this; }
+        public function setParallelConfig(object $c): self { return $this; }
         public function setRiskyAllowed(bool $v): self { return $this; }
         /** @param array<string, mixed> $rules */
         public function setRules(array $rules): self { return $this; }
-        public function setFinder(mixed $f): self { return $this; }
+        public function setFinder(object $f): self { return $this; }
     }
     final class Finder {
         public function in(string $dir): self { return $this; }

@@ -1,34 +1,29 @@
 # LLM Wiki (module)
 
-[![Module](https://img.shields.io/badge/Module-LLM Wiki (module)-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+This folder is the module's LLM wiki (docs/wiki). Use it to store synthesized, curated docs optimized for LLM ingestion.
 
-> **Core module for the FixCity Platform.**
+Structure:
+- raw/: original source docs
+- wiki/: distilled summaries and canonical pages for LLM
+- archived/: historical/obsolete docs
 
-## Perché esiste
+Use qmd to serve or convert these documents (https://github.com/tobi/qmd).
+# LLM Wiki
 
-Core module for the FixCity Platform.
+Questa cartella contiene pagine curate per l'uso con LLM (wiki). Mettere qui sintesi, convenzioni e pagine curate.
+# LLM Wiki
 
-## Superpoteri
+Questa cartella contiene pagine curate per l'uso con LLM (wiki). Mettere qui sintesi, convenzioni e pagine curate.
+# LLM Wiki (module)
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+This folder is the module's LLM wiki (docs/wiki). Use it to store synthesized, curated docs optimized for LLM ingestion.
 
-## Documentazione
+Structure:
+- raw/: original source docs
+- wiki/: distilled summaries and canonical pages for LLM
+- archived/: historical/obsolete docs
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+Use qmd to serve or convert these documents (https://github.com/tobi/qmd).
+# LLM Wiki
 
----
-
-**Modulo** `Job` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+Questa cartella contiene pagine curate per l'uso con LLM (wiki). Mettere qui sintesi, convenzioni e pagine curate.

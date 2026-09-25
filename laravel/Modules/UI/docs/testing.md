@@ -175,34 +175,7 @@ protected function createApplication()
     $app = parent::createApplication();
     
     $app['config']->set([
-<<<<<<< HEAD
-        'database.connections.ui.database' => 'quaeris_data_test',
-        'database.connections.ui.database' => 'modulo questionari_data_test',
-=======
-<<<<<<< HEAD
-        'database.connections.ui.database' => 'quaeris_data_test',
-<<<<<<< HEAD
-        'database.connections.ui.database' => 'modulo questionari_data_test',
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        'database.connections.ui.database' => 'quaeris_data_test',
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-        'database.connections.ui.database' => 'modulo questionari_data_test',
-=======
-        'database.connections.ui.database' => 'quaeris_data_test',
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
+'database.connections.ui.database' => 'Quaeris_data_test',
     ]);
     
     return $app;
@@ -282,19 +255,15 @@ protected function createApplication()
 
 ### External Resources
 
-<<<<<<< HEAD
-=======
 - [Laravel 12.x Testing Documentation](https://laravel.com/docs/12.x/testing)
->>>>>>> laraxot/dev
-- [Laravel 13.x Testing Documentation](https://laravel.com/docs/12.x/testing)
 - [Pest Installation Guide](https://pestphp.com/docs/installation)
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started)
 
 ### Internal Resources
 
-- [Testing Setup Guide](../../docs/testing-setup.md)
-- [Testing Best Practices](../../docs/testing-best-practices.md)
-- [Troubleshooting Guide](../../docs/troubleshooting.md)
+- [Testing Setup Guide](../../../docs/testing-setup.md)
+- [Testing Best Practices](../../../docs/testing-best-practices.md)
+- [Troubleshooting Guide](../../../docs/troubleshooting.md)
 
 ## Testing Examples
 
@@ -390,57 +359,4 @@ Remember: Good tests are the foundation of reliable software development.
 
 ---
 
-*Last updated: January 2025*
-
-## Story 5.26 — progress verso 100% (2026-08-20)
-
-Gate: `XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/UI/phpunit.xml --coverage --min=100`.
-
-| Voce | Valore |
-|------|--------|
-| Baseline clover batch mattina | vedi tabella sotto |
-| Skip offline | pattern Activity: Feature/`ui-db` skip se schema assente; Unit eseguiti |
-| Nuovi test | `*MassExecuteCoverageTest`, `*GapCloserCoverageTest` |
-| Esclusioni `<source>` | nessuna (AC-3: perimetro = tutto `app/`) |
-
-### Misura intermedia (pre–gap closer massivo)
-
-| Coverage | Suite | Gate `--min=100` |
-|---:|---|---|
-| **80.4%** (post gap-closer 2026-08-20) | 189 pass / 112 skip / 1 risky | **FAIL** — gap ~20% su Filament state columns/forms |
-
-Interventi 2026-08-20 (wave UI):
-- `GetAllIconsAction`: fix reflection property `sets` (BladeUI Icons Factory).
-- Nuovi test comportamentali: `UiStateColumnsBehaviorTest.php` + stub nominati in `tests/Unit/Stubs/`.
-- Skip offline invariato (`ui-db` / `no-ui-db`).
-
-Prossimo step: coprire rami residui IconStateColumn (fillForm/textarea required), RadioBadge, IconPicker, UserCalendarWidget; poi Job (suite Feature hang?) e Media.
-
----
-
-## Aree di test per sottosistema (migrate da `TESTING.md` in root)
-
-> Questo blocco stava nella root del modulo, dove sono ammessi solo README,
-> CHANGELOG, LICENSE, AGENTS e CLAUDE. Il contenuto non era duplicato qui
-> dentro, quindi è stato accodato invece che cancellato: va integrato nelle
-> sezioni sopra.
-
-## Component Testing
-- Livewire component tests
-- Vue component tests
-- Filament widget tests
-
-## Theme Testing
-- Tailwind CSS build verification
-- Theme variable validation
-- Dark mode testing
-
-## Integration Tests
-- Admin panel flow tests
-- Page builder drag-and-drop tests
-- Theme switching tests
-
-## Running Tests
-```bash
-./vendor/bin/pest Modules/UI/tests
-```
+*

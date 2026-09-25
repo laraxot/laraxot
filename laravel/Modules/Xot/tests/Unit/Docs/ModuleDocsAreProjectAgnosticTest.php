@@ -90,7 +90,7 @@ test('nessun documento nuovo di modulo nomina il progetto ospite', function (): 
     expect(count($hits))->toBeLessThanOrEqual(
         MODULE_DOCS_HOST_NAME_FILE_BASELINE,
         "Un documento di modulo nomina un'installazione specifica. Un modulo gira in "
-        ."più progetti: il dato specifico sta nella configurazione del progetto, non qui. "
+        .'più progetti: il dato specifico sta nella configurazione del progetto, non qui. '
         .'Vedi docs/wiki/rules/project-agnostic.md'
     );
 });

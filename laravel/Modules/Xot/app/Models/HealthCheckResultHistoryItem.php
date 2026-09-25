@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://github.com/shuvroroy/filament-spatie-laravel-health/tree/main
  */
-
-declare(strict_types=1);
 
 namespace Modules\Xot\Models;
 

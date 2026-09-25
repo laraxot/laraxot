@@ -75,7 +75,6 @@ trait CanPaginate
 
     /**
      * @template TModel of Model
-     *
      * @param  Builder<TModel>  $query
      * @return Paginator<int, TModel>|CursorPaginator<int, TModel>|LengthAwarePaginator<int, TModel>
      */
@@ -101,7 +100,7 @@ trait CanPaginate
 
         $total = $query->toBase()->getCountForPagination();
 
-        /** @var LengthAwarePaginator<int, TModel> $records */
+        /** @var LengthAwarePaginator<int, Model> $records */
         $records = $query->paginate(
             perPage: $perPage === 'all' ? $total : (int) $perPage,
             pageName: $this->getPaginationPageName(),
@@ -112,7 +111,7 @@ trait CanPaginate
     }
 
     /**
-     * @return array<int|string>
+     * @return list<int|string>
      */
     protected function getRecordsPerPageSelectOptions(): array
     {

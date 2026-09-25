@@ -19,9 +19,10 @@ uses(TestCase::class);
  * PotentiallyTranslatedString` — perché è quella che il contratto promette al chiamante:
  * una closure di comodo con firma diversa passerebbe a runtime e mentirebbe sul contratto.
  *
+ * @param  array<string, mixed>|string|int|null  $value
  * @return list<string>
  */
-function uiOpeningHoursFailures(mixed $value): array
+function uiOpeningHoursFailures(array|string|int|null $value): array
 {
     /** @var list<string> $failures */
     $failures = [];

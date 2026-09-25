@@ -8,7 +8,7 @@ use Modules\Xot\Filament\Widgets\XotBaseWizardWidget;
 
 final class XotAbsWizard3 extends XotBaseWizardWidget
 {
-    protected string $view = 'xot::filament.widgets.base';
+    protected string $view;
 
     public function getSteps(): array
     {

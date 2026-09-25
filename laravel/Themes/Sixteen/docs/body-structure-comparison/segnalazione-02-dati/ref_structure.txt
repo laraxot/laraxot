@@ -1,0 +1,559 @@
+<div class="skiplink">
+  <a class="visually-hidden-focusable">
+  <a class="visually-hidden-focusable">
+<header class="it-header-wrapper">
+  <div class="it-header-slim-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="it-header-slim-wrapper-content">
+            <a class="d-lg-block navbar-brand">
+            <div class="it-header-slim-right-zone" role="navigation">
+              <div class="nav-item dropdown">
+                <button class="nav-link dropdown-toggle">
+                  <span class="visually-hidden">
+                  <span>
+                  <svg class="icon">
+                    <use>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="link-list-wrapper">
+                        <ul class="link-list">
+                          <li>
+                            <a class="dropdown-item list-item">
+                              <span>
+                                <span class="visually-hidden">
+                          <li>
+                            <a class="dropdown-item list-item">
+                              <span>
+              <a class="btn btn-primary btn-icon btn-full" data-element="personal-area-login">
+                <span class="rounded-icon">
+                  <svg class="icon icon-primary">
+                    <use>
+                <span class="d-none d-lg-block">
+  <div class="it-nav-wrapper">
+    <div class="it-header-center-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="it-header-center-content-wrapper">
+              <div class="it-brand-wrapper">
+                <a>
+                  <svg class="icon">
+                    <image>
+                  <div class="it-brand-text">
+                    <div class="it-brand-title">
+                    <div class="it-brand-tagline d-none d-md-block">
+              <div class="it-right-zone">
+                <div class="it-socials d-none d-lg-flex">
+                  <span>
+                  <ul>
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                <div class="it-search-wrapper">
+                  <span class="d-none d-md-block">
+                  <button class="search-link rounded-icon">
+                    <svg class="icon">
+                      <use>
+    <div id="header-nav-wrapper" class="it-header-navbar-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="navbar navbar-expand-lg has-megamenu">
+              <button class="custom-navbar-toggler">
+                <svg class="icon">
+                  <use>
+              <div id="nav4" class="navbar-collapsable">
+                <div class="overlay">
+                <div class="close-div">
+                  <button class="btn close-menu">
+                    <span class="visually-hidden">
+                    <svg class="icon">
+                      <use>
+                <div class="menu-wrapper">
+                  <a class="logo-hamburger">
+                    <svg class="icon">
+                      <use>
+                    <div class="it-brand-text">
+                      <div class="it-brand-title">
+                  <nav>
+                    <ul class="navbar-nav" data-element="main-navigation">
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="management">
+                          <span>
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="news">
+                          <span>
+                      <li class="nav-item">
+                        <a class="nav-link active" data-element="all-services">
+                          <span>
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="live">
+                          <span>
+                  <nav>
+                    <ul class="navbar-nav navbar-secondary">
+                      <li class="nav-item">
+                        <a class="nav-link">
+                      <li class="nav-item">
+                        <a class="nav-link">
+                      <li class="nav-item">
+                        <a class="nav-link">
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="all-topics">
+                          <span>
+                            <svg class="icon icon-sm">
+                              <use>
+                  <div class="it-socials">
+                    <span>
+                    <ul>
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+<main>
+  <div id="main-container" class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+        <div class="cmp-breadcrumbs" role="navigation">
+          <nav class="breadcrumb-container">
+            <ol class="breadcrumb p-0" data-element="breadcrumb">
+              <li class="breadcrumb-item">
+                <a>
+                <span class="separator">
+              <li class="breadcrumb-item">
+                <a>
+                <span class="separator">
+              <li class="breadcrumb-item active">
+        <div class="cmp-heading pb-3 pb-lg-4">
+          <h1 class="title-xxxlarge">
+      <div class="col-12">
+        <div class="steppers">
+          <div class="steppers-header">
+            <ul>
+              <li class="confirmed">
+                <svg class="icon steppers-success">
+                  <use>
+                <span class="visually-hidden">
+              <li class="active">
+                <span class="visually-hidden">
+              <li>
+            <span class="steppers-index">
+        <p class="title-xsmall d-lg-none my-5">
+    <div class="row">
+      <div class="col-12 col-lg-3 d-lg-block mb-4 d-none">
+        <div class="cmp-navscroll sticky-top">
+          <nav class="navbar it-navscroll-wrapper navbar-expand-lg">
+            <div id="navbarNavProgress" class="navbar-custom">
+              <div class="menu-wrapper">
+                <div class="link-list-wrapper">
+                  <div class="accordion">
+                    <div class="accordion-item">
+                      <span id="accordion-title-one" class="accordion-header">
+                        <button class="accordion-button pb-10 px-3">
+                          <svg class="icon icon-xs right">
+                            <use>
+                      <div class="progress">
+                        <div class="progress-bar it-navscroll-progressbar" role="progressbar">
+                      <div id="collapse-one" class="accordion-collapse collapse show" role="region">
+                        <div class="accordion-body">
+                          <ul class="link-list" data-element="page-index">
+                            <li class="nav-item">
+                              <a class="nav-link">
+                                <span>
+                            <li class="nav-item">
+                              <a class="nav-link">
+                                <span>
+                            <li class="nav-item">
+                              <a class="nav-link">
+                                <span>
+      <div class="col-12 col-lg-8 offset-lg-1">
+        <div class="steppers-content">
+          <div class="it-page-sections-container">
+            <section id="report-place" class="it-page-section">
+              <div class="cmp-card mb-40">
+                <div class="card has-bkg-grey shadow-sm p-big p-lg-4">
+                  <div class="card-header border-0 p-0 mb-lg-20 m-0">
+                    <div class="d-flex">
+                      <h2 class="title-xxlarge mb-1">
+                    <p class="subtitle-small mb-0">
+                  <div class="card-body p-0">
+                    <div class="cmp-input-autocomplete">
+                      <div class="form-group bg-white p-3 mb-0 mt-3">
+                        <label class="label-input d-none mb-2">
+                        <input id="autocomplete-regioni" class="autocomplete">
+                        <div class="link-wrapper mt-3">
+                          <a class="list-item active icon-left">
+                            <span class="list-item-title-icon-wrapper">
+                              <svg class="icon icon-sm icon-primary mb-1">
+                                <use>
+                              <span class="list-item-title t-primary">
+            <section id="report-info" class="it-page-section">
+              <div class="cmp-card mb-40">
+                <div class="card has-bkg-grey shadow-sm p-big">
+                  <div class="card-header border-0 p-0 mb-lg-20 m-0">
+                    <div class="d-flex">
+                      <h2 class="title-xxlarge mb-3 icon-required">
+                  <div class="card-body p-0">
+                    <div class="select-wrapper p-md-3 p-lg-4 pb-lg-0 select-partials">
+                      <label class="visually-hidden">
+                      <select id="inefficiency" class="u-grey-dark">
+                        <option>
+                        <option>
+                    <div class="text-area-wrapper p-3 px-lg-4 pt-lg-5 pb-lg-0 bg-white">
+                      <div class="form-group cmp-input mb-0">
+                        <label class="cmp-input__label">
+                        <input id="title" class="form-control">
+                    <div class="cmp-text-area m-0 p-3 px-lg-4 pt-lg-5 pb-lg-4 bg-white">
+                      <div class="form-group">
+                        <label class="d-block">
+                        <textarea id="details" class="text-area">
+                        <span class="label">
+                    <div class="btn-wrapper px-3 pt-2 pb-3 px-lg-4 pb-lg-4 pt-lg-0 bg-white">
+                      <label class="title-xsmall-bold u-grey-dark pb-2 ms-2">
+                      <div class="upload-wrapper d-flex justify-content-between align-items-center">
+                        <img class="img">
+                        <span class="t-primary fw-bold w-100 ms-2">
+                        <a class="align-self-center">
+                          <svg class="icon icon-primary icon-sm mb-1">
+                            <use>
+                      <hr>
+                      <button class="btn btn-primary w-100 fw-bold">
+                        <span class="rounded-icon">
+                          <svg class="icon icon-white icon-sm">
+                            <use>
+                        <span>
+                      <p class="title-xsmall u-grey-dark pt-10 mb-0">
+            <section id="report-author" class="it-page-section">
+              <div class="cmp-card">
+                <div class="card has-bkg-grey shadow-sm">
+                  <div class="card-header border-0 p-0 mb-lg-20 m-0">
+                    <div class="d-flex">
+                      <h2 class="title-xxlarge mb-1">
+                    <p class="subtitle-small mb-0">
+                  <div class="card-body p-0">
+                    <div class="cmp-info-button-card mt-3">
+                      <div class="card p-3 p-lg-4">
+                        <div class="card-body p-0">
+                          <h3 class="big-title mb-0">
+                          <p class="card-info">
+                            <br>
+                            <span>
+                          <div class="accordion-item">
+                            <div id="heading-collapse-parents" class="accordion-header">
+                              <button class="collapsed accordion-button">
+                                <span class="d-flex align-items-center">
+                                  <svg class="icon icon-primary icon-sm">
+                                    <use>
+                            <div id="collapse-parents" class="accordion-collapse collapse" role="region">
+                              <div class="accordion-body p-0">
+                                <div class="cmp-info-summary bg-white has-border">
+                                  <div class="card">
+                                    <div class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-content-end">
+                                      <h4 class="title-large-semi-bold mb-3">
+                                      <a class="d-none text-decoration-none">
+                                        <span class="text-button-sm-semi t-primary">
+                                    <div class="card-body p-0">
+                                      <div class="single-line-info border-light">
+                                        <div class="text-paragraph-small">
+                                        <div class="border-light">
+                                          <p class="data-text">
+                                      <div class="single-line-info border-light">
+                                        <div class="text-paragraph-small">
+                                        <div class="border-light">
+                                          <p class="data-text">
+                                    <div class="card-footer p-0 d-none">
+          <div class="cmp-nav-steps">
+            <nav class="steppers-nav">
+              <button class="btn btn-sm steppers-btn-prev p-0">
+                <svg class="icon icon-primary icon-sm">
+                  <use>
+                <span class="text-button-sm t-primary">
+              <button class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-none d-lg-block saveBtn">
+                <span class="text-button-sm t-primary">
+              <button class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-block d-lg-none saveBtn center">
+                <span class="text-button-sm t-primary">
+              <button class="btn btn-primary btn-sm steppers-btn-confirm">
+                <span class="text-button-sm">
+                <svg class="icon icon-white icon-sm">
+                  <use>
+            <div id="alert-message" class="alert alert-success cmp-disclaimer rounded d-none" role="alert">
+              <span class="d-inline-block text-uppercase cmp-disclaimer__message">
+  <div class="bg-grey-card shadow-contacts">
+    <div class="container">
+      <div class="row d-flex justify-content-center p-contacts">
+        <div class="col-12 col-lg-5">
+          <div class="cmp-contacts">
+            <div class="card w-100">
+              <div class="card-body">
+                <h2 class="title-medium-2-semi-bold">
+                <ul class="contact-list p-0">
+                  <li>
+                    <a class="list-item">
+                      <svg class="icon icon-primary icon-sm">
+                        <use>
+                      <span>
+                  <li>
+                    <a class="list-item" data-element="contacts">
+                      <svg class="icon icon-primary icon-sm">
+                        <use>
+                      <span>
+                  <li>
+                    <a class="list-item">
+                      <svg class="icon icon-primary icon-sm">
+                        <use>
+                      <span>
+                  <li>
+                    <a class="list-item" data-element="appointment-booking">
+                      <svg class="icon icon-primary icon-sm">
+                        <use>
+                      <span>
+<div id="search-modal" class="modal fade search-modal" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content perfect-scrollbar">
+      <div class="modal-body">
+        <form>
+          <div class="container">
+            <div class="row variable-gutters">
+              <div class="col">
+                <div class="modal-title">
+                  <button class="search-link d-md-none">
+                    <svg class="icon icon-md">
+                      <use>
+                  <h2>
+                  <button class="search-link d-none d-md-block">
+                    <svg class="icon icon-md">
+                      <use>
+                <div class="form-group autocomplete-wrapper">
+                  <label class="visually-hidden">
+                  <input id="autocomplete-two" class="autocomplete ps-5">
+                  <span class="autocomplete-icon">
+                    <svg class="icon">
+                      <use>
+                  <button class="btn btn-primary">
+                    <span>
+            <div class="row variable-gutters">
+              <div class="col-lg-5">
+                <div class="searches-list-wrapper">
+                  <div class="other-link-title">
+                  <ul class="searches-list">
+                    <li>
+                      <a>
+                    <li>
+                      <a>
+                    <li>
+                      <a>
+                    <li>
+                      <a>
+                    <li>
+                      <a>
+                    <li>
+                      <a>
+<footer id="footer" class="it-footer">
+  <div class="it-footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 footer-items-wrapper logo-wrapper">
+          <img class="ue-logo">
+          <div class="it-brand-wrapper">
+            <a>
+              <svg class="icon">
+                <use>
+              <div class="it-brand-text">
+                <h2 class="no_toc">
+      <div class="row">
+        <div class="col-md-3 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          <ul class="footer-list">
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+        <div class="col-md-6 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="footer-list">
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+            <div class="col-md-6">
+              <ul class="footer-list">
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+                <li>
+                  <a>
+        <div class="col-md-3 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          <ul class="footer-list">
+            <li>
+              <a>
+            <li>
+              <a>
+            <li>
+              <a>
+          <h4 class="footer-heading-title">
+          <ul class="footer-list">
+            <li>
+              <a>
+            <li>
+              <a>
+        <div class="col-md-9 mt-md-4 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          <div class="row">
+            <div class="col-md-4">
+              <p class="footer-info">
+                <br>
+                <br>
+                <br>
+                <br>
+                <a>
+                <br>
+                <br>
+                <br>
+                <br>
+            <div class="col-md-4">
+              <ul class="footer-list">
+                <li>
+                  <a data-element="faq">
+                <li>
+                  <a>
+                <li>
+                  <a data-element="report-inefficiency">
+                <li>
+                  <a>
+            <div class="col-md-4">
+              <ul class="footer-list">
+                <li>
+                  <a>
+                <li>
+                  <a data-element="privacy-policy-link">
+                <li>
+                  <a data-element="legal-notes">
+                <li>
+                  <a data-element="accessibility-link">
+        <div class="col-md-3 mt-md-4 footer-items-wrapper">
+          <h4 class="footer-heading-title">
+          <ul class="list-inline text-start social">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+            <li class="list-inline-item">
+              <a class="p-1 text-white">
+                <svg class="icon icon-sm icon-white align-top">
+                  <use>
+                <span class="visually-hidden">
+      <div class="row">
+        <div class="col-12 footer-items-wrapper">
+          <div class="footer-bottom">
+            <a>
+            <a>

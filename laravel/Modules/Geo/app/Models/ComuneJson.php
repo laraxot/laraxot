@@ -44,6 +44,7 @@ class ComuneJson extends GeoJsonModel
      *     popolazione: int
      * }>
      */
+    #[\Override]
     public static function all(): Collection
     {
         /** @var Collection<int, array{
@@ -135,8 +136,9 @@ class ComuneJson extends GeoJsonModel
     /**
      * Get all comuni by name (case insensitive partial match).
      *
-     * @param  string  $name  Nome parziale del comune da cercare
-     * @param  int  $limit  Numero massimo di risultati (0 = nessun limite)
+     * @param string $name  Nome parziale del comune da cercare
+     * @param int    $limit Numero massimo di risultati (0 = nessun limite)
+     *
      * @return Collection<int, array{
      *     nome: string,
      *     codice: string,
@@ -205,7 +207,7 @@ class ComuneJson extends GeoJsonModel
     }
 
     /**
-     * @param  array<string, mixed>  $item
+     * @param array<string, mixed> $item
      */
     private static function getComuneName(array $item): string
     {
@@ -215,7 +217,8 @@ class ComuneJson extends GeoJsonModel
     }
 
     /**
-     * @param  array<string, mixed>  $item
+     * @param array<string, mixed> $item
+     *
      * @return array<int, string>
      */
     private static function getCapList(array $item): array
@@ -302,7 +305,8 @@ class ComuneJson extends GeoJsonModel
     /**
      * Clear all cached data.
      *
-     * @param  bool  $verbose  Se true, restituisce la lista delle chiavi di cache eliminate
+     * @param bool $verbose Se true, restituisce la lista delle chiavi di cache eliminate
+     *
      * @return array<int, string>|null Lista delle chiavi di cache eliminate se $verbose è true
      */
     public static function clearCache(bool $verbose = false): ?array
@@ -318,7 +322,7 @@ class ComuneJson extends GeoJsonModel
 
         // Chiavi specifiche per regione
         static::allRegions()
-            ->each(static function (mixed $_nome, int|string $code) use (&$clearedKeys): void {
+            ->each(static function ($_nome, $code) use (&$clearedKeys): void {
                 $keys = ["geo_region_{$code}", "geo_region_{$code}_provinces"];
                 foreach ($keys as $key) {
                     Cache::forget($key);
@@ -328,7 +332,7 @@ class ComuneJson extends GeoJsonModel
 
         // Chiavi specifiche per provincia
         static::allProvinces()
-            ->each(static function (mixed $_nome, int|string $code) use (&$clearedKeys): void {
+            ->each(static function ($_nome, $code) use (&$clearedKeys): void {
                 $key = "geo_province_{$code}";
                 Cache::forget($key);
                 $clearedKeys[] = $key;
@@ -344,7 +348,7 @@ class ComuneJson extends GeoJsonModel
 
         // Puliamo alcune chiavi di ricerca comuni per essere sicuri
         foreach ($searchPatterns as $pattern) {
-            for ($i = 0; $i < 10; $i++) {
+            for ($i = 0; $i < 10; ++$i) {
                 $testKey = $pattern.md5((string) $i);
                 Cache::forget($testKey);
             }
@@ -356,7 +360,8 @@ class ComuneJson extends GeoJsonModel
     /**
      * Verifica se il CAP esiste nel database.
      *
-     * @param  string  $cap  CAP da verificare
+     * @param string $cap CAP da verificare
+     *
      * @return bool True se il CAP esiste, false altrimenti
      */
     public static function isValidCap(string $cap): bool
@@ -372,7 +377,8 @@ class ComuneJson extends GeoJsonModel
     /**
      * Ottiene la gerarchia completa per un comune (regione, provincia, comune, cap).
      *
-     * @param  string  $comuneNome  Nome esatto del comune
+     * @param string $comuneNome Nome esatto del comune
+     *
      * @return array{
      *     regione: array{codice: string, nome: string}|null,
      *     provincia: array{codice: string, nome: string}|null,
@@ -425,7 +431,7 @@ class ComuneJson extends GeoJsonModel
                     'codiceCatastale' => $comune['codiceCatastale'],
                     'popolazione' => $comune['popolazione'],
                 ],
-                'cap' => $comune['cap'],
+                'cap' => $comune['cap'] ?? [],
             ];
         });
 
@@ -435,7 +441,8 @@ class ComuneJson extends GeoJsonModel
     /**
      * Restituisce regole di validazione Laravel per form geografici.
      *
-     * @param  bool  $required  Se true, tutti i campi sono obbligatori
+     * @param bool $required Se true, tutti i campi sono obbligatori
+     *
      * @return array<string, array<int, mixed>> Regole di validazione
      */
     public static function getValidationRules(bool $required = true): array

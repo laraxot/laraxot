@@ -1,0 +1,7 @@
+---
+module: theme
+topic: struct2_20260420_220453
+canonical: ../../../../docs/shared-components/struct2_20260420_220359.txt
+---
+
+See canonical documentation: ../../../../docs/shared-components/struct2_20260420_220359.txt

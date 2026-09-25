@@ -14,5 +14,22 @@ class ViewLocation extends XotBaseViewRecord
 {
     protected static string $resource = LocationResource::class;
 
-    
+    /**
+     * @return array<string, Component>
+     */
+    #[\Override]
+    protected function getInfolistSchema(): array
+    {
+        return [
+            'location_info' => Section::make('Informazioni Location')
+                ->schema([
+                    'name' => TextEntry::make('name'),
+                    'address' => TextEntry::make('address'),
+                    'city' => TextEntry::make('city'),
+                    'postal_code' => TextEntry::make('postal_code'),
+                    'country' => TextEntry::make('country'),
+                ])
+                ->columns(2),
+        ];
+    }
 }

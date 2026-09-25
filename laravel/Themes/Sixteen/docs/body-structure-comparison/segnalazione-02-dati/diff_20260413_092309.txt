@@ -1,0 +1,1068 @@
+--- URL1: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-02-dati.html
++++ URL2: http://127.0.0.1:8000/it/tests/segnalazione-02-dati
+@@ -20,7 +20,7 @@
+                   <span>
+                   </span>
+                   <svg class="icon">
+-                    <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
++                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
+                     </use>
+                   </svg>
+                 </button>
+@@ -49,10 +49,10 @@
+                   </div>
+                 </div>
+               </div>
+-              <a class="btn btn-primary btn-icon btn-full" href="../servizi/accesso-servizio.html" data-element="personal-area-login">
++              <a class="btn btn-primary btn-icon btn-full" href="/it/tests/accesso-servizio" data-element="personal-area-login">
+                 <span class="rounded-icon">
+                   <svg class="icon icon-primary">
+-                    <use>
++                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-user">
+                     </use>
+                   </svg>
+                 </span>
+@@ -72,9 +72,9 @@
+           <div class="col-12">
+             <div class="it-header-center-content-wrapper">
+               <div class="it-brand-wrapper">
+-                <a href="homepage.html">
++                <a href="/">
+                   <svg class="icon">
+-                    <image>
++                    <image href="/themes/Sixteen/design-comuni/assets/images/logo-comune.svg">
+                     </image>
+                   </svg>
+                   <div class="it-brand-text">
+@@ -93,7 +93,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -103,7 +103,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -113,7 +113,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -123,7 +123,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -133,7 +133,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -143,7 +143,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -157,7 +157,7 @@
+                   </span>
+                   <button class="search-link rounded-icon" type="button" aria-label="Cerca nel sito">
+                     <svg class="icon">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
+                       </use>
+                     </svg>
+                   </button>
+@@ -175,7 +175,7 @@
+             <div class="navbar navbar-expand-lg has-megamenu">
+               <button class="custom-navbar-toggler" type="button" aria-label="Mostra/Nascondi la navigazione">
+                 <svg class="icon">
+-                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-burger">
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-burger">
+                   </use>
+                 </svg>
+               </button>
+@@ -187,15 +187,15 @@
+                     <span class="visually-hidden">
+                     </span>
+                     <svg class="icon">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big">
+                       </use>
+                     </svg>
+                   </button>
+                 </div>
+                 <div class="menu-wrapper">
+-                  <a href="homepage.html" class="logo-hamburger">
++                  <a href="/" class="logo-hamburger">
+                     <svg class="icon">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
+                       </use>
+                     </svg>
+                     <div class="it-brand-text">
+@@ -206,25 +206,25 @@
+                   <nav aria-label="Principale">
+                     <ul class="navbar-nav" data-element="main-navigation">
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/amministrazione.html" data-element="management">
++                        <a class="nav-link" href="/it/tests/amministrazione" data-element="management">
+                           <span>
+                           </span>
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/novita.html" data-element="news">
++                        <a class="nav-link" href="/it/tests/novita" data-element="news">
+                           <span>
+                           </span>
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link active" href="../sito/servizi.html" data-element="all-services">
++                        <a class="nav-link" href="/it/tests/servizi" data-element="all-services">
+                           <span>
+                           </span>
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/eventi.html" data-element="live">
++                        <a class="nav-link" href="/it/tests/eventi" data-element="live">
+                           <span>
+                           </span>
+                         </a>
+@@ -234,22 +234,22 @@
+                   <nav aria-label="Secondaria">
+                     <ul class="navbar-nav navbar-secondary">
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/argomento.html">
++                        <a class="nav-link" href="#">
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/argomento.html">
++                        <a class="nav-link" href="#">
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/argomento.html">
++                        <a class="nav-link" href="#">
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="argomenti.html" data-element="all-topics">
++                        <a class="nav-link" href="/it/tests/argomenti" data-element="all-topics">
+                           <span>
+                             <svg class="icon icon-sm">
+-                              <use>
++                              <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right">
+                               </use>
+                             </svg>
+                           </span>
+@@ -264,7 +264,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -274,7 +274,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -284,7 +284,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -294,7 +294,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -304,7 +304,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -314,7 +314,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -333,386 +333,392 @@
+   </div>
+ </header>
+ <main>
+-  <div class="container" id="main-container">
+-    <div class="row justify-content-center">
+-      <div class="col-12 col-lg-10">
+-        <div class="cmp-breadcrumbs" role="navigation">
+-          <nav class="breadcrumb-container" aria-label="breadcrumb">
+-            <ol class="breadcrumb p-0" data-element="breadcrumb">
+-              <li class="breadcrumb-item">
+-                <a href="homepage.html">
+-                </a>
+-                <span class="separator">
+-                </span>
+-              </li>
+-              <li class="breadcrumb-item">
+-                <a href="#">
+-                </a>
+-                <span class="separator">
+-                </span>
+-              </li>
+-              <li class="breadcrumb-item active">
+-              </li>
+-            </ol>
+-          </nav>
+-        </div>
+-        <div class="cmp-heading pb-3 pb-lg-4">
+-          <h1 class="title-xxxlarge">
+-          </h1>
++  <div class="tests-view-wrapper">
++    <div class="container" id="main-container">
++      <div class="row justify-content-center">
++        <div class="col-12 col-lg-10">
++          <div class="cmp-breadcrumbs" role="navigation">
++            <nav aria-label="breadcrumb" class="breadcrumb-container">
++              <ol class="breadcrumb p-0" data-element="breadcrumb">
++                <li class="breadcrumb-item">
++                  <a href="http://127.0.0.1:8000/it/tests/homepage">
++                  </a>
++                  <span class="separator">
++                  </span>
++                </li>
++                <li class="breadcrumb-item">
++                  <a href="http://127.0.0.1:8000/it/tests/servizi">
++                  </a>
++                  <span class="separator">
++                  </span>
++                </li>
++                <li class="active breadcrumb-item">
++                </li>
++              </ol>
++            </nav>
++          </div>
++          <div class="cmp-heading pb-3 pb-lg-4">
++            <h1 class="title-xxxlarge">
++            </h1>
++          </div>
+         </div>
+-      </div>
+-      <div class="col-12">
+-        <div class="steppers">
+-          <div class="steppers-header">
+-            <ul>
+-              <li class="confirmed">
+-                <svg class="icon steppers-success">
+-                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-check">
+-                  </use>
+-                </svg>
+-                <span class="visually-hidden">
+-                </span>
+-              </li>
+-              <li class="active">
+-                <span class="visually-hidden">
+-                </span>
+-              </li>
+-              <li>
+-              </li>
+-            </ul>
+-            <span class="steppers-index">
+-            </span>
++        <div class="col-12">
++          <div class="steppers">
++            <div class="steppers-header">
++              <ul>
++                <li class="confirmed">
++                  <svg class="icon steppers-success">
++                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-check">
++                    </use>
++                  </svg>
++                  <span class="visually-hidden">
++                  </span>
++                </li>
++                <li class="active">
++                  <span class="visually-hidden">
++                  </span>
++                </li>
++                <li>
++                </li>
++              </ul>
++              <span class="steppers-index">
++              </span>
++            </div>
+           </div>
++          <p class="title-xsmall d-lg-none my-5">
++          </p>
+         </div>
+-        <p class="title-xsmall d-lg-none my-5">
+-        </p>
+       </div>
+-    </div>
+-    <div class="row">
+-      <div class="col-12 col-lg-3 d-lg-block mb-4 d-none">
+-        <div class="cmp-navscroll sticky-top">
+-          <nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INFORMAZIONI RICHIESTE">
+-            <div class="navbar-custom" id="navbarNavProgress">
+-              <div class="menu-wrapper">
+-                <div class="link-list-wrapper">
+-                  <div class="accordion">
+-                    <div class="accordion-item">
+-                      <span class="accordion-header" id="accordion-title-one">
+-                        <button class="accordion-button pb-10 px-3" type="button">
+-                          <svg class="icon icon-xs right">
+-                            <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
+-                            </use>
+-                          </svg>
+-                        </button>
+-                      </span>
+-                      <div class="progress">
+-                        <div class="progress-bar it-navscroll-progressbar" role="progressbar">
++      <div class="row">
++        <div class="col-12 col-lg-3 d-lg-block mb-4 d-none">
++          <div class="cmp-navscroll sticky-top">
++            <nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INFORMAZIONI RICHIESTE">
++              <div class="navbar-custom" id="navbarNavProgress">
++                <div class="menu-wrapper">
++                  <div class="link-list-wrapper">
++                    <div class="accordion">
++                      <div class="accordion-item">
++                        <span class="accordion-header" id="accordion-title-one">
++                          <button class="accordion-button pb-10 px-3" type="button">
++                            <svg class="icon icon-xs right">
++                              <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
++                              </use>
++                            </svg>
++                          </button>
++                        </span>
++                        <div class="progress">
++                          <div class="progress-bar it-navscroll-progressbar" role="progressbar">
++                          </div>
+                         </div>
+-                      </div>
+-                      <div id="collapse-one" class="accordion-collapse collapse show" role="region">
+-                        <div class="accordion-body">
+-                          <ul class="link-list" data-element="page-index">
+-                            <li class="nav-item">
+-                              <a class="nav-link" href="#report-place">
+-                                <span>
+-                                </span>
+-                              </a>
+-                            </li>
+-                            <li class="nav-item">
+-                              <a class="nav-link" href="#report-info">
+-                                <span>
+-                                </span>
+-                              </a>
+-                            </li>
+-                            <li class="nav-item">
+-                              <a class="nav-link" href="#report-author">
+-                                <span>
+-                                </span>
+-                              </a>
+-                            </li>
+-                          </ul>
++                        <div id="collapse-one" class="accordion-collapse collapse show" role="region">
++                          <div class="accordion-body">
++                            <ul class="link-list" data-element="page-index">
++                              <li class="nav-item">
++                                <a class="nav-link" href="#report-place">
++                                  <span>
++                                  </span>
++                                </a>
++                              </li>
++                              <li class="nav-item">
++                                <a class="nav-link" href="#report-info">
++                                  <span>
++                                  </span>
++                                </a>
++                              </li>
++                              <li class="nav-item">
++                                <a class="nav-link" href="#report-author">
++                                  <span>
++                                  </span>
++                                </a>
++                              </li>
++                            </ul>
++                          </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+-            </div>
+-          </nav>
++            </nav>
++          </div>
+         </div>
+-      </div>
+-      <div class="col-12 col-lg-8 offset-lg-1">
+-        <div class="steppers-content">
+-          <div class="it-page-sections-container">
+-            <section class="it-page-section" id="report-place">
+-              <div class="cmp-card mb-40">
+-                <div class="card has-bkg-grey shadow-sm p-big p-lg-4">
+-                  <div class="card-header border-0 p-0 mb-lg-20 m-0">
+-                    <div class="d-flex">
+-                      <h2 class="title-xxlarge mb-1">
+-                      </h2>
++        <div class="col-12 col-lg-8 offset-lg-1">
++          <div class="steppers-content">
++            <div class="it-page-sections-container">
++              <section class="it-page-section" id="report-place">
++                <div class="cmp-card mb-40">
++                  <div class="card has-bkg-grey shadow-sm p-big p-lg-4">
++                    <div class="card-header border-0 p-0 mb-lg-20 m-0">
++                      <div class="d-flex">
++                        <h2 class="title-xxlarge mb-1">
++                        </h2>
++                      </div>
++                      <p class="subtitle-small mb-0">
++                      </p>
+                     </div>
+-                    <p class="subtitle-small mb-0">
+-                    </p>
+-                  </div>
+-                  <div class="card-body p-0">
+-                    <div class="cmp-input-autocomplete">
+-                      <div class="form-group bg-white p-3 mb-0 mt-3">
+-                        <label class="label-input d-none mb-2" for="autocomplete-regioni">
+-                        </label>
+-                        <input type="search" class="autocomplete" id="autocomplete-regioni" name="autocomplete-regioni">
+-                        <div class="link-wrapper mt-3">
+-                          <a class="list-item active icon-left" href="#">
+-                            <span class="list-item-title-icon-wrapper">
+-                              <svg class="icon icon-sm icon-primary mb-1">
+-                                <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-map-marker">
+-                                </use>
+-                              </svg>
+-                              <span class="list-item-title t-primary">
++                    <div class="card-body p-0">
++                      <div class="cmp-input-autocomplete">
++                        <div class="form-group bg-white p-3 mb-0 mt-3">
++                          <label class="label-input d-none mb-2" for="autocomplete-regioni">
++                          </label>
++                          <input type="search" class="autocomplete" id="autocomplete-regioni" name="autocomplete-regioni">
++                          <div class="link-wrapper mt-3">
++                            <a class="list-item active icon-left" href="#">
++                              <span class="list-item-title-icon-wrapper">
++                                <svg class="icon icon-sm icon-primary mb-1">
++                                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-map-marker">
++                                  </use>
++                                </svg>
++                                <span class="list-item-title t-primary">
++                                </span>
+                               </span>
+-                            </span>
+-                          </a>
++                            </a>
++                          </div>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+-              </div>
+-            </section>
+-            <section class="it-page-section" id="report-info">
+-              <div class="cmp-card mb-40">
+-                <div class="card has-bkg-grey shadow-sm p-big">
+-                  <div class="card-header border-0 p-0 mb-lg-20 m-0">
+-                    <div class="d-flex">
+-                      <h2 class="title-xxlarge mb-3 icon-required">
+-                      </h2>
+-                    </div>
+-                  </div>
+-                  <div class="card-body p-0">
+-                    <div class="select-wrapper p-md-3 p-lg-4 pb-lg-0 select-partials">
+-                      <label for="inefficiency" class="visually-hidden">
+-                      </label>
+-                      <select id="inefficiency" class="u-grey-dark">
+-                        <option>
+-                        </option>
+-                        <option>
+-                        </option>
+-                      </select>
+-                    </div>
+-                    <div class="text-area-wrapper p-3 px-lg-4 pt-lg-5 pb-lg-0 bg-white">
+-                      <div class="form-group cmp-input mb-0">
+-                        <label class="cmp-input__label" for="title">
+-                        </label>
+-                        <input type="text" class="form-control" id="title" name="title">
++              </section>
++              <section class="it-page-section" id="report-info">
++                <div class="cmp-card mb-40">
++                  <div class="card has-bkg-grey shadow-sm p-big">
++                    <div class="card-header border-0 p-0 mb-lg-20 m-0">
++                      <div class="d-flex">
++                        <h2 class="title-xxlarge mb-3 icon-required">
++                        </h2>
+                       </div>
+                     </div>
+-                    <div class="cmp-text-area m-0 p-3 px-lg-4 pt-lg-5 pb-lg-4 bg-white">
+-                      <div class="form-group">
+-                        <label for="details" class="d-block">
++                    <div class="card-body p-0">
++                      <div class="select-wrapper p-md-3 p-lg-4 pb-lg-0 select-partials">
++                        <label for="inefficiency" class="visually-hidden">
+                         </label>
+-                        <textarea class="text-area" id="details">
+-                        </textarea>
+-                        <span class="label">
+-                        </span>
++                        <select id="inefficiency" class="u-grey-dark">
++                          <option>
++                          </option>
++                          <option>
++                          </option>
++                          <option>
++                          </option>
++                          <option>
++                          </option>
++                        </select>
+                       </div>
+-                    </div>
+-                    <div class="btn-wrapper px-3 pt-2 pb-3 px-lg-4 pb-lg-4 pt-lg-0 bg-white">
+-                      <label class="title-xsmall-bold u-grey-dark pb-2 ms-2">
+-                      </label>
+-                      <div class="upload-wrapper d-flex justify-content-between align-items-center">
+-                        <img src="../assets/images/img-disservizio-thumbnail.png" class="img">
+-                        <span class="t-primary fw-bold w-100 ms-2">
+-                        </span>
+-                        <a href="#" class="align-self-center" aria-label="elimina immagina caricata">
+-                          <svg class="icon icon-primary icon-sm mb-1">
+-                            <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-close">
+-                            </use>
+-                          </svg>
+-                        </a>
++                      <div class="text-area-wrapper p-3 px-lg-4 pt-lg-5 pb-lg-0 bg-white">
++                        <div class="form-group cmp-input mb-0">
++                          <label class="cmp-input__label" for="title">
++                          </label>
++                          <input type="text" class="form-control" id="title" name="title">
++                        </div>
++                      </div>
++                      <div class="cmp-text-area m-0 p-3 px-lg-4 pt-lg-5 pb-lg-4 bg-white">
++                        <div class="form-group">
++                          <label for="details" class="d-block">
++                          </label>
++                          <textarea class="text-area" id="details">
++                          </textarea>
++                          <span class="label">
++                          </span>
++                        </div>
++                      </div>
++                      <div class="btn-wrapper px-3 pt-2 pb-3 px-lg-4 pb-lg-4 pt-lg-0 bg-white">
++                        <label class="title-xsmall-bold u-grey-dark pb-2 ms-2">
++                        </label>
++                        <div class="upload-wrapper d-flex justify-content-between align-items-center">
++                          <img src="/themes/Sixteen/design-comuni/assets/images/img-disservizio-thumbnail.png" class="img">
++                          <span class="t-primary fw-bold w-100 ms-2">
++                          </span>
++                          <a href="#" class="align-self-center" aria-label="elimina immagina caricata">
++                            <svg class="icon icon-primary icon-sm mb-1">
++                              <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close">
++                              </use>
++                            </svg>
++                          </a>
++                        </div>
++                        <hr>
++                        <button type="button" aria-label="Carica file per il disservizio" class="btn btn-primary w-100 fw-bold">
++                          <span class="rounded-icon">
++                            <svg class="icon icon-white icon-sm">
++                              <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-upload">
++                              </use>
++                            </svg>
++                          </span>
++                          <span>
++                          </span>
++                        </button>
++                        <p class="title-xsmall u-grey-dark pt-10 mb-0">
++                        </p>
+                       </div>
+-                      <hr>
+-                      <button type="button" aria-label="Carica file per il disservizio" class="btn btn-primary w-100 fw-bold">
+-                        <span class="rounded-icon">
+-                          <svg class="icon icon-white icon-sm">
+-                            <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-upload">
+-                            </use>
+-                          </svg>
+-                        </span>
+-                        <span>
+-                        </span>
+-                      </button>
+-                      <p class="title-xsmall u-grey-dark pt-10 mb-0">
+-                      </p>
+                     </div>
+                   </div>
+                 </div>
+-              </div>
+-            </section>
+-            <section class="it-page-section" id="report-author">
+-              <div class="cmp-card">
+-                <div class="card has-bkg-grey shadow-sm">
+-                  <div class="card-header border-0 p-0 mb-lg-20 m-0">
+-                    <div class="d-flex">
+-                      <h2 class="title-xxlarge mb-1">
+-                      </h2>
++              </section>
++              <section class="it-page-section" id="report-author">
++                <div class="cmp-card">
++                  <div class="card has-bkg-grey shadow-sm">
++                    <div class="card-header border-0 p-0 mb-lg-20 m-0">
++                      <div class="d-flex">
++                        <h2 class="title-xxlarge mb-1">
++                        </h2>
++                      </div>
++                      <p class="subtitle-small mb-0">
++                      </p>
+                     </div>
+-                    <p class="subtitle-small mb-0">
+-                    </p>
+-                  </div>
+-                  <div class="card-body p-0">
+-                    <div class="cmp-info-button-card mt-3">
+-                      <div class="card p-3 p-lg-4">
+-                        <div class="card-body p-0">
+-                          <h3 class="big-title mb-0">
+-                          </h3>
+-                          <p class="card-info">
+-                            <br>
+-                            <span>
+-                            </span>
+-                          </p>
+-                          <div class="accordion-item">
+-                            <div class="accordion-header" id="heading-collapse-parents">
+-                              <button class="collapsed accordion-button" type="button">
+-                                <span class="d-flex align-items-center">
+-                                  <svg class="icon icon-primary icon-sm">
+-                                    <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
+-                                    </use>
+-                                  </svg>
+-                                </span>
+-                              </button>
+-                            </div>
+-                            <div id="collapse-parents" class="accordion-collapse collapse" role="region">
+-                              <div class="accordion-body p-0">
+-                                <div class="cmp-info-summary bg-white has-border">
+-                                  <div class="card">
+-                                    <div class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-conten">
+-                                      <h4 class="title-large-semi-bold mb-3">
+-                                      </h4>
+-                                      <a href="#" class="d-none text-decoration-none">
+-                                        <span class="text-button-sm-semi t-primary">
+-                                        </span>
+-                                      </a>
+-                                    </div>
+-                                    <div class="card-body p-0">
+-                                      <div class="single-line-info border-light">
+-                                        <div class="text-paragraph-small">
+-                                        </div>
+-                                        <div class="border-light">
+-                                          <p class="data-text">
+-                                          </p>
+-                                        </div>
++                    <div class="card-body p-0">
++                      <div class="cmp-info-button-card mt-3">
++                        <div class="card p-3 p-lg-4">
++                          <div class="card-body p-0">
++                            <h3 class="big-title mb-0">
++                            </h3>
++                            <p class="card-info">
++                              <br>
++                              <span>
++                              </span>
++                            </p>
++                            <div class="accordion-item">
++                              <div class="accordion-header" id="heading-collapse-parents">
++                                <button class="collapsed accordion-button" type="button">
++                                  <span class="d-flex align-items-center">
++                                    <svg class="icon icon-primary icon-sm">
++                                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
++                                      </use>
++                                    </svg>
++                                  </span>
++                                </button>
++                              </div>
++                              <div id="collapse-parents" class="accordion-collapse collapse" role="region">
++                                <div class="accordion-body p-0">
++                                  <div class="cmp-info-summary bg-white has-border">
++                                    <div class="card">
++                                      <div class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-conten">
++                                        <h4 class="title-large-semi-bold mb-3">
++                                        </h4>
++                                        <a href="#" class="text-decoration-none">
++                                          <span class="text-button-sm-semi t-primary">
++                                          </span>
++                                        </a>
+                                       </div>
+-                                      <div class="single-line-info border-light">
+-                                        <div class="text-paragraph-small">
++                                      <div class="card-body p-0">
++                                        <div class="single-line-info border-light">
++                                          <div class="text-paragraph-small">
++                                          </div>
++                                          <div class="border-light">
++                                            <p class="data-text">
++                                            </p>
++                                          </div>
+                                         </div>
+-                                        <div class="border-light">
+-                                          <p class="data-text">
+-                                          </p>
++                                        <div class="single-line-info border-light">
++                                          <div class="text-paragraph-small">
++                                          </div>
++                                          <div class="border-light">
++                                            <p class="data-text">
++                                            </p>
++                                          </div>
+                                         </div>
+                                       </div>
+                                     </div>
+-                                    <div class="card-footer p-0 d-none">
+-                                    </div>
+                                   </div>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
++                        <div class="card-footer p-0 d-none">
++                        </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+-              </div>
+-            </section>
+-          </div>
+-          <div class="cmp-nav-steps">
+-            <nav class="steppers-nav" aria-label="Step">
+-              <button type="button" class="btn btn-sm steppers-btn-prev p-0">
+-                <svg class="icon icon-primary icon-sm">
+-                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-left">
+-                  </use>
+-                </svg>
+-                <span class="text-button-sm t-primary">
+-                </span>
+-              </button>
+-              <button type="button" class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-none d-lg-block saveBtn">
+-                <span class="text-button-sm t-primary">
+-                </span>
+-              </button>
+-              <button type="button" class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-block d-lg-none saveBtn center">
+-                <span class="text-button-sm t-primary">
+-                </span>
+-              </button>
+-              <button type="button" class="btn btn-primary btn-sm steppers-btn-confirm">
+-                <span class="text-button-sm">
++              </section>
++            </div>
++            <div class="cmp-nav-steps">
++              <nav class="steppers-nav" aria-label="Step">
++                <button type="button" class="btn btn-sm steppers-btn-prev p-0">
++                  <svg class="icon icon-primary icon-sm">
++                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-left">
++                    </use>
++                  </svg>
++                  <span class="text-button-sm t-primary">
++                  </span>
++                </button>
++                <button type="button" class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-none d-lg-block saveBtn">
++                  <span class="text-button-sm t-primary">
++                  </span>
++                </button>
++                <button type="button" class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-block d-lg-none saveBtn center">
++                  <span class="text-button-sm t-primary">
++                  </span>
++                </button>
++                <button type="button" class="btn btn-primary btn-sm steppers-btn-confirm">
++                  <span class="text-button-sm">
++                  </span>
++                  <svg class="icon icon-white icon-sm">
++                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right">
++                    </use>
++                  </svg>
++                </button>
++              </nav>
++              <div id="alert-message" class="alert alert-success cmp-disclaimer rounded d-none" role="alert">
++                <span class="d-inline-block text-uppercase cmp-disclaimer__message">
+                 </span>
+-                <svg class="icon icon-white icon-sm">
+-                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right">
+-                  </use>
+-                </svg>
+-              </button>
+-            </nav>
+-            <div id="alert-message" class="alert alert-success cmp-disclaimer rounded d-none" role="alert">
+-              <span class="d-inline-block text-uppercase cmp-disclaimer__message">
+-              </span>
++              </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+-  </div>
+-  <div class="bg-grey-card shadow-contacts">
+-    <div class="container">
+-      <div class="row d-flex justify-content-center p-contacts">
+-        <div class="col-12 col-lg-5">
+-          <div class="cmp-contacts">
+-            <div class="card w-100">
+-              <div class="card-body">
+-                <h2 class="title-medium-2-semi-bold">
+-                </h2>
+-                <ul class="contact-list p-0">
+-                  <li>
+-                    <a class="list-item" href="#">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-help-circle">
+-                        </use>
+-                      </svg>
+-                      <span>
+-                      </span>
+-                    </a>
+-                  </li>
+-                  <li>
+-                    <a class="list-item" href="#" data-element="contacts">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-mail">
+-                        </use>
+-                      </svg>
+-                      <span>
+-                      </span>
+-                    </a>
+-                  </li>
+-                  <li>
+-                    <a class="list-item" href="#">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-hearing">
+-                        </use>
+-                      </svg>
+-                      <span>
+-                      </span>
+-                    </a>
+-                  </li>
+-                  <li>
+-                    <a class="list-item" href="#" data-element="appointment-booking">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar">
+-                        </use>
+-                      </svg>
+-                      <span>
+-                      </span>
+-                    </a>
+-                  </li>
+-                </ul>
++    <div class="bg-grey-card shadow-contacts">
++      <div class="container">
++        <div class="row d-flex justify-content-center p-contacts">
++          <div class="col-12 col-lg-5">
++            <div class="cmp-contacts">
++              <div class="card w-100">
++                <div class="card-body">
++                  <h2 class="title-medium-2-semi-bold">
++                  </h2>
++                  <ul class="contact-list p-0">
++                    <li>
++                      <a class="list-item" href="#">
++                        <svg class="icon icon-primary icon-sm">
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-help-circle">
++                          </use>
++                        </svg>
++                        <span>
++                        </span>
++                      </a>
++                    </li>
++                    <li>
++                      <a class="list-item" href="#" data-element="contacts">
++                        <svg class="icon icon-primary icon-sm">
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-mail">
++                          </use>
++                        </svg>
++                        <span>
++                        </span>
++                      </a>
++                    </li>
++                    <li>
++                      <a class="list-item" href="#">
++                        <svg class="icon icon-primary icon-sm">
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-hearing">
++                          </use>
++                        </svg>
++                        <span>
++                        </span>
++                      </a>
++                    </li>
++                    <li>
++                      <a class="list-item" href="#" data-element="appointment-booking">
++                        <svg class="icon icon-primary icon-sm">
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar">
++                          </use>
++                        </svg>
++                        <span>
++                        </span>
++                      </a>
++                    </li>
++                  </ul>
++                </div>
+               </div>
+             </div>
+           </div>
+@@ -732,7 +738,7 @@
+                 <div class="modal-title">
+                   <button class="search-link d-md-none" type="button" aria-label="Chiudi e torna alla pagina precedente">
+                     <svg class="icon icon-md">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-left">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-left">
+                       </use>
+                     </svg>
+                   </button>
+@@ -740,7 +746,7 @@
+                   </h2>
+                   <button class="search-link d-none d-md-block" type="button" aria-label="Chiudi e torna alla pagina precedente">
+                     <svg class="icon icon-md">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big">
+                       </use>
+                     </svg>
+                   </button>
+@@ -751,7 +757,7 @@
+                   <input type="search" class="autocomplete ps-5" id="autocomplete-two" name="autocomplete-two">
+                   <span class="autocomplete-icon">
+                     <svg class="icon">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
+                       </use>
+                     </svg>
+                   </span>
+@@ -807,11 +813,11 @@
+     <div class="container">
+       <div class="row">
+         <div class="col-12 footer-items-wrapper logo-wrapper">
+-          <img class="ue-logo" src="../assets/images/logo-eu-inverted.svg" alt="logo Unione Europea">
++          <img class="ue-logo" src="/themes/Sixteen/design-comuni/assets/images/logo-eu-inverted.svg" alt="logo Unione Europea">
+           <div class="it-brand-wrapper">
+             <a href="#">
+               <svg class="icon">
+-                <use>
++                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
+                 </use>
+               </svg>
+               <div class="it-brand-text">
+@@ -1028,7 +1034,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1038,7 +1044,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1048,7 +1054,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1058,7 +1064,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1068,7 +1074,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1078,7 +1084,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1101,3 +1107,9 @@
+     </div>
+   </div>
+ </footer>
++<link href="http://127.0.0.1:8000/themes/Sixteen/assets/app-BRKXMWAJ.css">
++</link>
++<link href="http://127.0.0.1:8000/themes/Sixteen/assets/app-DPspQb1f.js">
++</link>
++<link href="http://127.0.0.1:8000/themes/Sixteen/assets/app-BRKXMWAJ.css">
++</link>

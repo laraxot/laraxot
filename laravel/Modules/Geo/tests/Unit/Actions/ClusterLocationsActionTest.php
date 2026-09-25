@@ -9,7 +9,10 @@ use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Exceptions\InvalidLocationException;
 use Modules\Geo\Tests\Fixtures\ClusterDistanceStub;
 use Modules\Geo\Tests\Fixtures\FixedPairDistanceStub;
+use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
 
 it('clusters locations that are close together', function (): void {
     $location1 = new LocationData(latitude: 45.4642, longitude: 9.1900);
@@ -105,10 +108,12 @@ it('works with different max distance parameter', function (): void {
 it('updates cluster centers correctly', function (): void {
     $location1 = new LocationData(latitude: 45.0, longitude: 9.0);
     $location2 = new LocationData(latitude: 46.0, longitude: 10.0);
+
     $clusters = (new ClusterLocationsAction(new FixedPairDistanceStub(100)))->execute(
         [$location1, $location2],
         5.0,
     );
+
     Assert::assertCount(1, $clusters);
     $center = $clusters[0]['center'];
     Assert::assertInstanceOf(LocationData::class, $center);

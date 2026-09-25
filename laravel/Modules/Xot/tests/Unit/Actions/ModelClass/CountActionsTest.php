@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Xot\Actions\ModelClass\CountAction;
 use Modules\Xot\Actions\ModelClass\UpdateCountAction;
 use Modules\Xot\Models\XotBaseModel;

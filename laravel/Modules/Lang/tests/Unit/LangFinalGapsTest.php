@@ -187,9 +187,9 @@ test('LocaleSwitcherRefresh applyLocale covers string and non-string locale', fu
     $action->applyLocale(['locale' => 'en']);
     Assert::assertSame('en', app()->getLocale());
     $action->applyLocale(['locale' => 123]);
-    Assert::assertSame('en', app()->getLocale());
+    expect(app()->getLocale())->toBe('en');
     $action->applyLocale([]);
-    Assert::assertSame('en', app()->getLocale());
+    expect(app()->getLocale())->toBe('en');
 });
 
 test('TranslatorAction and Adapter coerce non-string loaded values', function (): void {

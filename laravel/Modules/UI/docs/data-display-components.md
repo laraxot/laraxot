@@ -169,35 +169,7 @@ new Chart(ctx, {
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> laraxot/dev
-=======
-  
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
   @media (max-width: 768px) {
     .table {
       min-width: 600px;
@@ -211,35 +183,7 @@ new Chart(ctx, {
 .chart-container {
   position: relative;
   height: 300px;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> laraxot/dev
-=======
-  
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
   canvas {
     animation: fadeIn 0.5s ease;
   }
@@ -250,28 +194,11 @@ new Chart(ctx, {
 - [Componenti Base](./base-components.md)
 - [Form Avanzati](./advanced-form-components.md)
 - [Accessibilità](./standards/accessibility.md)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-- [Performance](./standards/performance.md) 
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Performance](./standards/performance.md) 
-=======
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Performance](./standards/performance.md) 
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 - [Performance](./standards/performance.md)
 # Componenti Visualizzazione Dati
+
 ## 📊 Tabelle
+
 ### Tabella Base
 ```html
 <div class="table-responsive">
@@ -285,6 +212,7 @@ new Chart(ctx, {
       </tr>
     </thead>
     <tbody>
+      <tr>
         <th scope="row">1</th>
         <td>Mario Rossi</td>
         <td>mario@example.com</td>
@@ -292,11 +220,14 @@ new Chart(ctx, {
           <button class="btn btn-sm btn-primary">Modifica</button>
           <button class="btn btn-sm btn-danger">Elimina</button>
         </td>
+      </tr>
     </tbody>
   </table>
 </div>
 ```
+
 ### Tabella con Ordinamento
+```html
 <table class="table table-sortable">
   <thead>
     <tr>
@@ -309,10 +240,16 @@ new Chart(ctx, {
     <!-- Contenuto tabella -->
   </tbody>
 </table>
+```
+
 ## 📈 Grafici
+
 ### Line Chart
+```html
 <div class="chart-container">
   <canvas id="lineChart"></canvas>
+</div>
+
 <script>
 const ctx = document.getElementById('lineChart').getContext('2d');
 new Chart(ctx, {
@@ -328,24 +265,47 @@ new Chart(ctx, {
   }
 });
 </script>
+```
+
 ### Pie Chart
+```html
+<div class="chart-container">
   <canvas id="pieChart"></canvas>
+</div>
+
+<script>
 const ctx = document.getElementById('pieChart').getContext('2d');
+new Chart(ctx, {
   type: 'pie',
+  data: {
     labels: ['Rosso', 'Blu', 'Giallo'],
+    datasets: [{
       data: [300, 50, 100],
       backgroundColor: ['#ff6384', '#36a2eb', '#ffce56']
+    }]
+  }
+});
+</script>
+```
+
 ## 📋 Lista
+
 ### Lista Ordinata
+```html
 <ol class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     Primo elemento
     <span class="badge bg-primary rounded-pill">14</span>
   </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
     Secondo elemento
     <span class="badge bg-primary rounded-pill">2</span>
+  </li>
 </ol>
+```
+
 ### Lista con Azioni
+```html
 <ul class="list-group">
   <li class="list-group-item">
     <div class="d-flex justify-content-between align-items-center">
@@ -356,10 +316,16 @@ const ctx = document.getElementById('pieChart').getContext('2d');
       <div class="btn-group">
         <button class="btn btn-sm btn-outline-primary">Modifica</button>
         <button class="btn btn-sm btn-outline-danger">Elimina</button>
+      </div>
     </div>
+  </li>
 </ul>
+```
+
 ## 📑 Card
+
 ### Card con Immagine
+```html
 <div class="card">
   <img src="image.jpg" class="card-img-top" alt="Immagine">
   <div class="card-body">
@@ -367,62 +333,62 @@ const ctx = document.getElementById('pieChart').getContext('2d');
     <p class="card-text">Descrizione della card.</p>
     <a href="#" class="btn btn-primary">Azione</a>
   </div>
+</div>
+```
+
 ### Card con Tabella
+```html
+<div class="card">
   <div class="card-header">
     <h5 class="card-title mb-0">Dettagli</h5>
+  </div>
+  <div class="card-body">
     <table class="table table-sm">
       <tbody>
         <tr>
           <th scope="row">Nome</th>
           <td>Mario Rossi</td>
         </tr>
+        <tr>
           <th scope="row">Email</th>
           <td>mario@example.com</td>
+        </tr>
       </tbody>
     </table>
+  </div>
+</div>
+```
+
 ## 🎨 Stili e Comportamenti
+
 ### Responsive Tables
 ```scss
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+
   @media (max-width: 768px) {
     .table {
       min-width: 600px;
     }
+  }
 }
+```
+
 ### Chart Animations
+```scss
 .chart-container {
   position: relative;
   height: 300px;
+
   canvas {
     animation: fadeIn 0.5s ease;
+  }
+}
+```
+
 ## 🔗 Collegamenti
 - [Componenti Base](./base-components.md)
 - [Form Avanzati](./advanced-form-components.md)
 - [Accessibilità](./standards/accessibility.md)
-<<<<<<< HEAD
-
-```
-=======
-<<<<<<< HEAD
-
-```
-=======
 - [Performance](./standards/performance.md)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
-- [Performance](./standards/performance.md) 
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev

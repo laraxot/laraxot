@@ -1,0 +1,43 @@
+bmad-help brainstorming 
+le pagine 
+segnalazione-01-privacy,
+segnalazione-02-dati
+segnalazione-03-riepilogo
+segnalazione-04-conferma
+
+potrebbero essere tutte messe dentro una sola pagina
+segnalazione-crea 
+con dentro un filament widget che fa il wizard con i passi
+
+crei la nuova pagina che alla fine devi solo creare il file .json e creare i vari blocchi , ti ricordo che devi utilizzare https://filamentphp.com/docs/5.x/widgets/overview , le vecchie
+  pagine rimangono
+
+questo widget va creato dentro laravel/Modules/Fixcity/app/Filament/Widgets
+i dati fra uno step e l'altro si arrangia filament
+come salvare i dati si arrangia filament
+le traduzioni potrebbero mantenere il pattern fixcity::segnalazione.steps.<item>.<tipo>
+
+i nomi files dei file .md non devono contenere date, ricordatelo 
+
+Segnalazione lo traduciamo in Ticket per creare classi non usiamo la parola segnalazione ma ticket
+
+sbagliato Modules\Fixcity\Filament\Widgets\CreateSegnalazioneWizardWidget  corretto Modules\Fixcity\Filament\Widgets\CreateTicketWizardWidget
+
+
+percio' http://127.0.0.1:8000/it/tests/segnalazione-crea dovrebbe apparire come segnalazione-01-privacy 
+gli step sono 3 
+
+ IL SUBMIT E' AL STEP3 , poi c'e' 04-conferma che non e' nel wizard, devi analizzare meglio
+
+costantemente devi studiare, aggiornare e migliorare le cartelle docs dentro i moduli e dentro i temi, le tue rules, le tue memories, le tue skills utilizzando anche gli indici e tutti gli strumenti che vuoi
+
+cerca sempre di imparare e di migliorare, non fermarti mai
+
+ti ricordo che tutti i taks vengono dati contemporaneante a piu' agenti ai, percio' comportati di conseguenza, cerca di non pestare i piedi agli altri agenti ai anzi cerca di traerne beneficio e forza 
+
+cerca di capire sempre il perche' delle cose che ti dico di fare , di capirne lo scopo , se qualcosa non e' chiaro domanda
+
+Need to update docs/rules/memories to prevent this from happening again
+
+utilizza BMAD + GSD 
+

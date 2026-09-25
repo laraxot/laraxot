@@ -1,0 +1,1755 @@
+--- URL1: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-area-personale.html
++++ URL2: http://127.0.0.1:8000/it/tests/segnalazione-area-personale
+@@ -20,7 +20,7 @@
+                   <span>
+                   </span>
+                   <svg class="icon">
+-                    <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
++                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
+                     </use>
+                   </svg>
+                 </button>
+@@ -49,67 +49,16 @@
+                   </div>
+                 </div>
+               </div>
+-              <div class="it-user-wrapper nav-item dropdown">
+-                <a class="btn btn-primary btn-icon btn-full" href="#">
+-                  <span class="rounded-icon">
+-                    <img src="https://picsum.photos/20/20" class="border rounded-circle icon-white" alt="Mario Rossi">
+-                  </span>
+-                  <span class="d-none d-lg-block">
+-                  </span>
+-                  <svg class="icon icon-white d-none d-lg-block">
+-                    <use>
++              <a class="btn btn-primary btn-icon btn-full" href="/it/tests/accesso-servizio" data-element="personal-area-login">
++                <span class="rounded-icon">
++                  <svg class="icon icon-primary">
++                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-user">
+                     </use>
+                   </svg>
+-                </a>
+-                <div class="dropdown-menu">
+-                  <div class="row">
+-                    <div class="col-12">
+-                      <div class="link-list-wrapper">
+-                        <ul class="link-list">
+-                          <li>
+-                            <a class="dropdown-item list-item" href="#">
+-                              <span>
+-                              </span>
+-                            </a>
+-                          </li>
+-                          <li>
+-                            <a class="dropdown-item list-item" href="#">
+-                              <span>
+-                              </span>
+-                            </a>
+-                          </li>
+-                          <li>
+-                            <a class="dropdown-item list-item" href="#">
+-                              <span>
+-                              </span>
+-                            </a>
+-                          </li>
+-                          <li>
+-                            <span class="divider">
+-                            </span>
+-                          </li>
+-                          <li>
+-                            <a class="dropdown-item list-item" href="#">
+-                              <span>
+-                              </span>
+-                            </a>
+-                          </li>
+-                          <li>
+-                            <a class="list-item left-icon" href="#">
+-                              <svg class="icon icon-primary icon-sm left">
+-                                <use>
+-                                </use>
+-                              </svg>
+-                              <span class="fw-bold">
+-                              </span>
+-                            </a>
+-                          </li>
+-                        </ul>
+-                      </div>
+-                    </div>
+-                  </div>
+-                </div>
+-              </div>
++                </span>
++                <span class="d-none d-lg-block">
++                </span>
++              </a>
+             </div>
+           </div>
+         </div>
+@@ -123,9 +72,9 @@
+           <div class="col-12">
+             <div class="it-header-center-content-wrapper">
+               <div class="it-brand-wrapper">
+-                <a href="homepage.html">
++                <a href="/">
+                   <svg class="icon">
+-                    <image>
++                    <image href="/themes/Sixteen/design-comuni/assets/images/logo-comune.svg">
+                     </image>
+                   </svg>
+                   <div class="it-brand-text">
+@@ -144,7 +93,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -154,7 +103,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -164,7 +113,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -174,7 +123,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -184,7 +133,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -194,7 +143,7 @@
+                     <li>
+                       <a href="#">
+                         <svg class="icon icon-sm icon-white align-top">
+-                          <use>
++                          <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+                           </use>
+                         </svg>
+                         <span class="visually-hidden">
+@@ -208,7 +157,7 @@
+                   </span>
+                   <button class="search-link rounded-icon" type="button" aria-label="Cerca nel sito">
+                     <svg class="icon">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
+                       </use>
+                     </svg>
+                   </button>
+@@ -226,7 +175,7 @@
+             <div class="navbar navbar-expand-lg has-megamenu">
+               <button class="custom-navbar-toggler" type="button" aria-label="Mostra/Nascondi la navigazione">
+                 <svg class="icon">
+-                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-burger">
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-burger">
+                   </use>
+                 </svg>
+               </button>
+@@ -238,15 +187,15 @@
+                     <span class="visually-hidden">
+                     </span>
+                     <svg class="icon">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big">
+                       </use>
+                     </svg>
+                   </button>
+                 </div>
+                 <div class="menu-wrapper">
+-                  <a href="homepage.html" class="logo-hamburger">
++                  <a href="/" class="logo-hamburger">
+                     <svg class="icon">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
+                       </use>
+                     </svg>
+                     <div class="it-brand-text">
+@@ -257,25 +206,25 @@
+                   <nav aria-label="Principale">
+                     <ul class="navbar-nav" data-element="main-navigation">
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/amministrazione.html" data-element="management">
++                        <a class="nav-link" href="/it/tests/amministrazione" data-element="management">
+                           <span>
+                           </span>
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/novita.html" data-element="news">
++                        <a class="nav-link" href="/it/tests/novita" data-element="news">
+                           <span>
+                           </span>
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/servizi.html" data-element="all-services">
++                        <a class="nav-link" href="/it/tests/servizi" data-element="all-services">
+                           <span>
+                           </span>
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/eventi.html" data-element="live">
++                        <a class="nav-link" href="/it/tests/eventi" data-element="live">
+                           <span>
+                           </span>
+                         </a>
+@@ -285,22 +234,22 @@
+                   <nav aria-label="Secondaria">
+                     <ul class="navbar-nav navbar-secondary">
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/argomento.html">
++                        <a class="nav-link" href="#">
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/argomento.html">
++                        <a class="nav-link" href="#">
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="../sito/argomento.html">
++                        <a class="nav-link" href="#">
+                         </a>
+                       </li>
+                       <li class="nav-item">
+-                        <a class="nav-link" href="argomenti.html" data-element="all-topics">
++                        <a class="nav-link" href="/it/tests/argomenti" data-element="all-topics">
+                           <span>
+                             <svg class="icon icon-sm">
+-                              <use>
++                              <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-chevron-right">
+                               </use>
+                             </svg>
+                           </span>
+@@ -315,7 +264,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -325,7 +274,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -335,7 +284,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -345,7 +294,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -355,7 +304,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -365,7 +314,7 @@
+                       <li>
+                         <a href="#">
+                           <svg class="icon icon-sm icon-white align-top">
+-                            <use>
++                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+                             </use>
+                           </svg>
+                           <span class="visually-hidden">
+@@ -384,955 +333,441 @@
+   </div>
+ </header>
+ <main>
+-  <div class="container" id="main-container">
+-    <div class="row justify-content-center">
+-      <div class="col-12 col-lg-10">
+-        <div class="cmp-breadcrumbs" role="navigation">
+-          <nav class="breadcrumb-container" aria-label="breadcrumb">
+-            <ol class="breadcrumb p-0" data-element="breadcrumb">
+-              <li class="breadcrumb-item">
+-                <a href="homepage.html">
+-                </a>
+-                <span class="separator">
+-                </span>
+-              </li>
+-              <li class="breadcrumb-item active">
+-              </li>
+-            </ol>
+-          </nav>
+-        </div>
+-        <div class="cmp-heading pb-3 pb-lg-4">
+-          <h1 class="title-xxxlarge">
+-          </h1>
+-          <p class="subtitle-small">
+-          </p>
+-        </div>
+-      </div>
+-      <div class="col-12 p-0">
+-        <div class="cmp-nav-tab mb-4 mb-lg-5 mt-lg-4">
+-          <ul class="nav nav-tabs nav-tabs-icon-text w-100 flex-nowrap" id="myTab" role="tablist">
+-            <li class="nav-item w-100" role="tab">
+-              <a class="nav-link justify-content-start text-tab active" href="#data-ex-tab1" role="button">
+-                <svg class="icon me-1 mr-lg-10">
+-                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
+-                  </use>
+-                </svg>
+-              </a>
+-            </li>
+-            <li class="nav-item w-100" role="tab">
+-              <a class="nav-link justify-content-start text-tab" href="#data-ex-tab2" role="button">
+-                <svg class="icon me-1 mr-lg-10">
+-                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-mail">
+-                  </use>
+-                </svg>
+-              </a>
+-            </li>
+-            <li class="nav-item w-100" role="tab">
+-              <a class="nav-link justify-content-start text-tab" href="#data-ex-tab3" role="button">
+-                <svg class="icon me-1 mr-lg-10">
+-                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-files">
+-                  </use>
+-                </svg>
+-              </a>
+-            </li>
+-            <li class="nav-item w-100" role="tab">
+-              <a class="nav-link justify-content-start text-tab" href="#data-ex-tab4" role="button">
+-                <svg class="icon me-1 mr-lg-10">
+-                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-settings">
+-                  </use>
+-                </svg>
+-              </a>
+-            </li>
+-          </ul>
++  <div id="main-container" class="container cms-view-wrapper">
++    <div class="page-content content">
++      <div class="container" id="main-container">
++        <div class="row justify-content-center">
++          <div class="col-12 col-lg-10">
++            <div class="cmp-heading pb-3 pb-lg-4">
++              <h1 class="title-xxxlarge">
++              </h1>
++              <p class="subtitle-small">
++              </p>
++            </div>
++          </div>
++          <div class="col-12 p-0">
++            <div class="cmp-nav-tab mb-4 mb-lg-5 mt-lg-4">
++              <ul class="nav nav-tabs nav-tabs-icon-text w-100 flex-nowrap" id="myTab" role="tablist">
++                <li class="nav-item w-100" role="tab">
++                  <a class="nav-link justify-content-start text-tab active" href="#data-ex-tab1" role="button">
++                    <svg class="icon me-1 mr-lg-10">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
++                      </use>
++                    </svg>
++                  </a>
++                </li>
++                <li class="nav-item w-100" role="tab">
++                  <a class="nav-link justify-content-start text-tab" href="#data-ex-tab2" role="button">
++                    <svg class="icon me-1 mr-lg-10">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-mail">
++                      </use>
++                    </svg>
++                  </a>
++                </li>
++                <li class="nav-item w-100" role="tab">
++                  <a class="nav-link justify-content-start text-tab" href="#data-ex-tab3" role="button">
++                    <svg class="icon me-1 mr-lg-10">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-files">
++                      </use>
++                    </svg>
++                  </a>
++                </li>
++                <li class="nav-item w-100" role="tab">
++                  <a class="nav-link justify-content-start text-tab" href="#data-ex-tab4" role="button">
++                    <svg class="icon me-1 mr-lg-10">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-settings">
++                      </use>
++                    </svg>
++                  </a>
++                </li>
++              </ul>
++            </div>
++          </div>
+         </div>
+-      </div>
+-    </div>
+-    <div class="it-page-sections-container">
+-      <div class="tab-content">
+-        <div class="tab-pane fade show active" id="data-ex-tab1" role="tabpanel">
+-          <div class="row">
+-            <div class="col-12 col-lg-3 d-lg-block mb-4 d-none">
+-              <div class="cmp-navscroll sticky-top">
+-                <nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INDICE DELLA PAGINA">
+-                  <div class="navbar-custom" id="navbarNavProgress">
+-                    <div class="menu-wrapper">
+-                      <div class="link-list-wrapper">
+-                        <div class="accordion">
+-                          <div class="accordion-item">
+-                            <span class="accordion-header" id="accordion-title-one">
+-                              <button class="accordion-button pb-10 px-3" type="button">
+-                                <svg class="icon icon-xs right">
+-                                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
+-                                  </use>
+-                                </svg>
+-                              </button>
+-                            </span>
+-                            <div class="progress">
+-                              <div class="progress-bar it-navscroll-progressbar" role="progressbar">
+-                              </div>
+-                            </div>
+-                            <div id="collapse-one" class="accordion-collapse collapse show" role="region">
+-                              <div class="accordion-body">
+-                                <ul class="link-list" data-element="page-index">
+-                                  <li class="nav-item">
+-                                    <a class="nav-link" href="#latest-posts">
+-                                      <span>
+-                                      </span>
+-                                    </a>
+-                                  </li>
+-                                  <li class="nav-item">
+-                                    <a class="nav-link" href="#latest-activities">
+-                                      <span>
+-                                      </span>
+-                                    </a>
+-                                  </li>
+-                                </ul>
++        <div class="it-page-sections-container">
++          <div class="tab-content">
++            <div class="tab-pane fade show active" id="data-ex-tab1" role="tabpanel">
++              <div class="row">
++                <div class="col-12 col-lg-3 d-lg-block mb-4 d-none">
++                  <div class="cmp-navscroll sticky-top">
++                    <nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INDICE DELLA PAGINA">
++                      <div class="navbar-custom" id="navbarNavProgress">
++                        <div class="menu-wrapper">
++                          <div class="link-list-wrapper">
++                            <div class="accordion">
++                              <div class="accordion-item">
++                                <span class="accordion-header" id="accordion-title-one">
++                                  <button class="accordion-button pb-10 px-3" type="button">
++                                    <svg class="icon icon-xs right">
++                                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
++                                      </use>
++                                    </svg>
++                                  </button>
++                                </span>
++                                <div class="progress">
++                                  <div class="progress-bar it-navscroll-progressbar" role="progressbar">
++                                  </div>
++                                </div>
++                                <div id="collapse-one" class="accordion-collapse collapse show" role="region">
++                                  <div class="accordion-body">
++                                    <ul class="link-list" data-element="page-index">
++                                      <li class="nav-item">
++                                        <a class="nav-link" href="#latest-posts">
++                                          <span>
++                                          </span>
++                                        </a>
++                                      </li>
++                                      <li class="nav-item">
++                                        <a class="nav-link" href="#latest-activities">
++                                          <span>
++                                          </span>
++                                        </a>
++                                      </li>
++                                    </ul>
++                                  </div>
++                                </div>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+-                    </div>
+-                  </div>
+-                </nav>
+-              </div>
+-            </div>
+-            <div class="col-12 col-lg-8 offset-lg-1">
+-              <div class="it-page-section mb-40 mb-lg-60" id="latest-posts">
+-                <div class="cmp-card">
+-                  <div class="card">
+-                    <div class="card-header border-0 p-0 mb-lg-20">
+-                      <div class="d-flex">
+-                        <h2 class="title-xxlarge">
+-                        </h2>
+-                      </div>
+-                    </div>
+-                    <div class="card-body p-0">
+-                      <div class="cmp-card-latest-messages mb-3" id="1">
+-                        <div class="card shadow-sm px-4 pt-4 pb-4">
+-                          <span class="visually-hidden">
+-                          </span>
+-                          <div class="card-header border-0 p-0 m-0">
+-                            <date class="date-xsmall">
+-                            </date>
+-                          </div>
+-                          <div class="card-body p-0 my-2">
+-                            <h3 class="title-small-semi-bold t-primary m-0 mb-1">
+-                              <a href="#" class="text-decoration-none">
+-                              </a>
+-                            </h3>
+-                            <p class="text-paragraph text-truncate">
+-                            </p>
+-                          </div>
+-                        </div>
+-                      </div>
+-                      <div class="cmp-card-latest-messages mb-3" id="2">
+-                        <div class="card shadow-sm px-4 pt-4 pb-4">
+-                          <span class="visually-hidden">
+-                          </span>
+-                          <div class="card-header border-0 p-0 m-0">
+-                            <date class="date-xsmall">
+-                            </date>
+-                          </div>
+-                          <div class="card-body p-0 my-2">
+-                            <h3 class="title-small-semi-bold t-primary m-0 mb-1">
+-                              <a href="#" class="text-decoration-none">
+-                              </a>
+-                            </h3>
+-                            <p class="text-paragraph text-truncate">
+-                            </p>
+-                          </div>
+-                        </div>
+-                      </div>
+-                      <div class="cmp-card-latest-messages mb-3" id="3">
+-                        <div class="card shadow-sm px-4 pt-4 pb-4">
+-                          <span class="visually-hidden">
+-                          </span>
+-                          <div class="card-header border-0 p-0 m-0">
+-                            <date class="date-xsmall">
+-                            </date>
+-                          </div>
+-                          <div class="card-body p-0 my-2">
+-                            <h3 class="title-small-semi-bold t-primary m-0 mb-1">
+-                              <a href="#" class="text-decoration-none">
+-                              </a>
+-                            </h3>
+-                            <p class="text-paragraph text-truncate">
+-                            </p>
+-                          </div>
+-                        </div>
+-                      </div>
+-                      <button type="button" class="btn btn-xs btn-me btn-label t-primary px-0">
+-                        <span>
+-                        </span>
+-                      </button>
+-                    </div>
++                    </nav>
+                   </div>
+                 </div>
+-              </div>
+-              <div class="it-page-section mb-50 mb-lg-90" id="latest-activities">
+-                <div class="cmp-card">
+-                  <div class="card">
+-                    <div class="card-header border-0 p-0 mb-lg-20 m-0">
+-                      <div class="d-flex">
+-                        <h2 class="title-xxlarge mb-3">
+-                        </h2>
+-                      </div>
+-                    </div>
+-                    <div class="card-body p-0">
+-                      <div class="cmp-icon-card mb-3">
+-                        <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
+-                          <div class="cmp-card-title d-flex">
+-                            <svg class="icon icon-sm me-2">
+-                              <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-files">
+-                              </use>
+-                            </svg>
+-                            <h3 class="t-primary mb-2 underline title-small-semi-bold">
+-                              <a href="#">
+-                              </a>
+-                            </h3>
+-                          </div>
+-                          <div class="cmp-icon-card__description">
+-                            <date class="date-xsmall ml-30">
+-                            </date>
+-                          </div>
+-                        </div>
+-                      </div>
+-                      <div class="cmp-icon-card mb-3">
+-                        <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
+-                          <div class="cmp-card-title d-flex">
+-                            <svg class="icon icon-sm me-2">
+-                              <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-files">
+-                              </use>
+-                            </svg>
+-                            <h3 class="t-primary mb-2 underline title-small-semi-bold">
+-                              <a href="#">
+-                              </a>
+-                            </h3>
+-                          </div>
+-                          <div class="cmp-icon-card__description">
+-                            <date class="date-xsmall ml-30">
+-                            </date>
+-                          </div>
+-                        </div>
+-                      </div>
+-                      <div class="cmp-icon-card mb-3">
+-                        <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
+-                          <div class="cmp-card-title d-flex">
+-                            <svg class="icon icon-sm me-2">
+-                              <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-files">
+-                              </use>
+-                            </svg>
+-                            <h3 class="t-primary mb-2 underline title-small-semi-bold">
+-                              <a href="#">
+-                              </a>
+-                            </h3>
+-                          </div>
+-                          <div class="cmp-icon-card__description">
+-                            <date class="date-xsmall ml-30">
+-                            </date>
++                <div class="col-12 col-lg-8 offset-lg-1">
++                  <div class="it-page-section mb-40 mb-lg-60" id="latest-posts">
++                    <div class="cmp-card">
++                      <div class="card">
++                        <div class="card-header border-0 p-0 mb-lg-20">
++                          <div class="d-flex">
++                            <h2 class="title-xxlarge">
++                            </h2>
+                           </div>
+                         </div>
+-                      </div>
+-                      <button type="button" class="btn btn-xs btn-me btn-label t-primary px-0">
+-                        <span>
+-                        </span>
+-                      </button>
+-                    </div>
+-                  </div>
+-                </div>
+-              </div>
+-            </div>
+-          </div>
+-        </div>
+-        <div class="tab-pane" id="data-ex-tab2" role="tabpanel">
+-        </div>
+-        <div class="tab-pane" id="data-ex-tab3" role="tabpanel">
+-          <div class="row">
+-            <div class="d-none d-sm-none d-lg-block col-lg-3">
+-              <div class="cmp-navscroll sticky-top">
+-                <nav class="navbar it-navscroll-wrapper navbar-expand-lg" aria-label="INDICE DELLA PAGINA">
+-                  <div class="navbar-custom" id="navbarNavProgress">
+-                    <div class="menu-wrapper">
+-                      <div class="link-list-wrapper">
+-                        <div class="accordion">
+-                          <div class="accordion-item">
+-                            <span class="accordion-header" id="accordion-title-Three">
+-                              <button class="accordion-button pb-10 px-3" type="button">
+-                                <svg class="icon icon-xs right">
+-                                  <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
+-                                  </use>
+-                                </svg>
+-                              </button>
+-                            </span>
+-                            <div class="progress">
+-                              <div class="progress-bar it-navscroll-progressbar" role="progressbar">
++                        <div class="card-body p-0">
++                          <div class="cmp-card-latest-messages mb-3">
++                            <div class="card shadow-sm px-4 pt-4 pb-4">
++                              <div class="card-header border-0 p-0 m-0">
++                                <date class="date-xsmall">
++                                </date>
+                               </div>
+-                            </div>
+-                            <div id="collapse-Three" class="accordion-collapse collapse show" role="region">
+-                              <div class="accordion-body">
+-                                <ul class="link-list" data-element="page-index">
+-                                  <li class="nav-item">
+-                                    <a class="nav-link" href="#practices">
+-                                      <span>
+-                                      </span>
+-                                    </a>
+-                                  </li>
+-                                  <li class="nav-item">
+-                                    <a class="nav-link" href="#payments">
+-                                      <span>
+-                                      </span>
+-                                    </a>
+-                                  </li>
+-                                </ul>
++                              <div class="card-body p-0 my-2">
++                                <h3 class="title-small-semi-bold t-primary m-0 mb-1">
++                                  <a href="#" class="text-decoration-none">
++                                  </a>
++                                </h3>
++                                <p class="text-paragraph text-truncate">
++                                </p>
+                               </div>
+                             </div>
+                           </div>
+-                        </div>
+-                      </div>
+-                    </div>
+-                  </div>
+-                </nav>
+-              </div>
+-            </div>
+-            <div class="col-12 col-lg-8 offset-lg-1 px-0 px-sm-3">
+-              <section class="it-page-section mb-40 mb-lg-60" id="practices">
+-                <div class="cmp-filter">
+-                  <div class="filter-section">
+-                    <h2 class="cmp-filter__title title-xxlarge">
+-                    </h2>
+-                    <div class="filter-wrapper d-flex align-items-center">
+-                      <button type="button" class="btn p-0 pe-2 t-primary">
+-                        <span class="rounded-icon">
+-                          <svg class="icon icon-primary icon-xs me-1">
+-                            <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-funnel">
+-                            </use>
+-                          </svg>
+-                        </span>
+-                        <span>
+-                        </span>
+-                      </button>
+-                      <div class="dropdown">
+-                        <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenu-pratiche">
+-                          <svg class="icon-expand icon icon-sm icon-primary">
+-                            <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
+-                            </use>
+-                          </svg>
+-                          <span class="dropdown__title">
+-                          </span>
+-                        </button>
+-                        <div class="dropdown-menu">
+-                          <div class="link-list-wrapper">
+-                            <ul class="link-list">
+-                              <li>
+-                                <a class="dropdown-item list-item" href="#">
+-                                  <span>
+-                                  </span>
+-                                </a>
+-                              </li>
+-                              <li>
+-                                <a class="dropdown-item list-item" href="#">
+-                                  <span>
+-                                  </span>
+-                                </a>
+-                              </li>
+-                              <li>
+-                                <a class="dropdown-item list-item" href="#">
+-                                  <span>
+-                                  </span>
+-                                </a>
+-                              </li>
+-                            </ul>
+-                          </div>
+-                        </div>
+-                      </div>
+-                    </div>
+-                  </div>
+-                  <div class="cmp-input-search">
+-                    <div class="form-group autocomplete-wrapper">
+-                      <div class="input-group">
+-                        <label for="autocomplete-pratiche" class="visually-hidden">
+-                        </label>
+-                        <input type="search" class="autocomplete form-control" id="autocomplete-pratiche" name="pratiche">
+-                        <span class="autocomplete-icon">
+-                          <svg class="icon icon-sm">
+-                            <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
+-                            </use>
+-                          </svg>
+-                        </span>
+-                      </div>
+-                    </div>
+-                  </div>
+-                </div>
+-                <div class="cmp-accordion">
+-                  <div class="accordion">
+-                    <div class="accordion-item">
+-                      <div class="accordion-header" id="heading1">
+-                        <button class="accordion-button collapsed title-snall-semi-bold" type="button">
+-                          <div class="button-wrapper">
+-                            <div class="icon-wrapper">
+-                              <img class="icon-folder" src="../assets/images/folder-wating.svg" alt="folder In attesa" role="img">
+-                              <span class="u-main-black">
+-                              </span>
++                          <div class="cmp-card-latest-messages mb-3">
++                            <div class="card shadow-sm px-4 pt-4 pb-4">
++                              <div class="card-header border-0 p-0 m-0">
++                                <date class="date-xsmall">
++                                </date>
++                              </div>
++                              <div class="card-body p-0 my-2">
++                                <h3 class="title-small-semi-bold t-primary m-0 mb-1">
++                                  <a href="#" class="text-decoration-none">
++                                  </a>
++                                </h3>
++                                <p class="text-paragraph text-truncate">
++                                </p>
++                              </div>
+                             </div>
+                           </div>
+-                        </button>
+-                        <p class="accordion-date title-xsmall-regular mb-0">
+-                        </p>
+-                      </div>
+-                      <div id="collapse1" class="accordion-collapse collapse p-0" role="region">
+-                        <div class="accordion-body">
+-                          <p class="mb-2 fw-normal">
+-                            <span class="label">
+-                            </span>
+-                          </p>
+-                          <a href="#" class="mb-2">
+-                            <span class="t-primary">
+-                            </span>
+-                          </a>
+-                          <a class="chip chip-simple" href="#">
+-                            <span class="chip-label">
+-                            </span>
+-                          </a>
+-                          <div class="cmp-icon-list">
+-                            <div class="link-list-wrapper">
+-                              <ul class="link-list">
+-                                <li class="shadow mt-3">
+-                                  <a class="list-item icon-left t-primary title-small-semi-bold" href="#" aria-label="Scarica la Ricevuta pagamento (PDF 80KB)">
+-                                    <span class="list-item-title-icon-wrapper">
+-                                      <svg class="icon icon-sm align-self-start icon-color">
+-                                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-clip">
+-                                        </use>
+-                                      </svg>
+-                                      <span class="list-item-title title-small-semi-bold">
+-                                      </span>
+-                                    </span>
++                          <div class="cmp-card-latest-messages mb-3">
++                            <div class="card shadow-sm px-4 pt-4 pb-4">
++                              <div class="card-header border-0 p-0 m-0">
++                                <date class="date-xsmall">
++                                </date>
++                              </div>
++                              <div class="card-body p-0 my-2">
++                                <h3 class="title-small-semi-bold t-primary m-0 mb-1">
++                                  <a href="#" class="text-decoration-none">
+                                   </a>
+-                                </li>
+-                              </ul>
++                                </h3>
++                                <p class="text-paragraph text-truncate">
++                                </p>
++                              </div>
+                             </div>
+                           </div>
+-                          <button type="button" class="btn btn-primary justify-content-center my-3">
++                          <button type="button" class="btn btn-xs btn-me btn-label t-primary px-0">
+                             <span>
+                             </span>
+                           </button>
+                         </div>
+                       </div>
+                     </div>
+-                    <div class="accordion-item">
+-                      <div class="accordion-header" id="heading2">
+-                        <button class="accordion-button collapsed title-snall-semi-bold" type="button">
+-                          <div class="button-wrapper">
+-                            <div class="icon-wrapper">
+-                              <img class="icon-folder" src="../assets/images/folder-concluded.svg" alt="folder Conclusa" role="img">
+-                              <span>
+-                              </span>
+-                            </div>
++                  </div>
++                  <div class="it-page-section mb-50 mb-lg-90" id="latest-activities">
++                    <div class="cmp-card">
++                      <div class="card">
++                        <div class="card-header border-0 p-0 mb-lg-20 m-0">
++                          <div class="d-flex">
++                            <h2 class="title-xxlarge mb-3">
++                            </h2>
+                           </div>
+-                        </button>
+-                        <p class="accordion-date title-xsmall-regular mb-0">
+-                        </p>
+-                      </div>
+-                      <div id="collapse2" class="accordion-collapse collapse p-0" role="region">
+-                        <div class="accordion-body">
+-                          <p class="mb-2 fw-normal">
+-                            <span class="label">
+-                            </span>
+-                          </p>
+-                          <a href="#" class="mb-2">
+-                            <span class="t-primary">
+-                            </span>
+-                          </a>
+-                          <a class="chip chip-simple" href="#">
+-                            <span class="chip-label">
+-                            </span>
+-                          </a>
+-                          <div class="cmp-icon-list">
+-                            <div class="link-list-wrapper">
+-                              <ul class="link-list">
+-                                <li class="shadow mt-3">
+-                                  <a class="list-item icon-left t-primary title-small-semi-bold" href="#" aria-label="Scarica la Ricevuta pagamento (PDF 80KB)">
+-                                    <span class="list-item-title-icon-wrapper">
+-                                      <svg class="icon icon-sm align-self-start icon-color">
+-                                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-clip">
+-                                        </use>
+-                                      </svg>
+-                                      <span class="list-item-title title-small-semi-bold">
+-                                      </span>
+-                                    </span>
++                        </div>
++                        <div class="card-body p-0">
++                          <div class="cmp-icon-card mb-3">
++                            <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
++                              <div class="cmp-card-title d-flex">
++                                <svg class="icon icon-sm me-2">
++                                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-files">
++                                  </use>
++                                </svg>
++                                <h3 class="t-primary mb-2 underline title-small-semi-bold">
++                                  <a href="#">
+                                   </a>
+-                                </li>
+-                              </ul>
++                                </h3>
++                              </div>
++                              <div class="cmp-icon-card__description">
++                                <date class="date-xsmall ml-30">
++                                </date>
++                              </div>
+                             </div>
+                           </div>
+-                          <button type="button" class="btn btn-primary justify-content-center my-3">
+-                            <span>
+-                            </span>
+-                          </button>
+-                        </div>
+-                      </div>
+-                    </div>
+-                    <div class="accordion-item">
+-                      <div class="accordion-header" id="heading3">
+-                        <button class="accordion-button collapsed title-snall-semi-bold" type="button">
+-                          <div class="button-wrapper">
+-                            <div class="icon-wrapper">
+-                              <img class="icon-folder" src="../assets/images/folder-concluded.svg" alt="folder Conclusa" role="img">
+-                              <span>
+-                              </span>
++                          <div class="cmp-icon-card mb-3">
++                            <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
++                              <div class="cmp-card-title d-flex">
++                                <svg class="icon icon-sm me-2">
++                                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-files">
++                                  </use>
++                                </svg>
++                                <h3 class="t-primary mb-2 underline title-small-semi-bold">
++                                  <a href="#">
++                                  </a>
++                                </h3>
++                              </div>
++                              <div class="cmp-icon-card__description">
++                                <date class="date-xsmall ml-30">
++                                </date>
++                              </div>
+                             </div>
+                           </div>
+-                        </button>
+-                        <p class="accordion-date title-xsmall-regular mb-0">
+-                        </p>
+-                      </div>
+-                      <div id="collapse3" class="accordion-collapse collapse p-0" role="region">
+-                        <div class="accordion-body">
+-                          <p class="mb-2 fw-normal">
+-                            <span class="label">
+-                            </span>
+-                          </p>
+-                          <a href="#" class="mb-2">
+-                            <span class="t-primary">
+-                            </span>
+-                          </a>
+-                          <a class="chip chip-simple" href="#">
+-                            <span class="chip-label">
+-                            </span>
+-                          </a>
+-                          <div class="cmp-icon-list">
+-                            <div class="link-list-wrapper">
+-                              <ul class="link-list">
+-                                <li class="shadow mt-3">
+-                                  <a class="list-item icon-left t-primary title-small-semi-bold" href="#" aria-label="Scarica la Ricevuta pagamento (PDF 80KB)">
+-                                    <span class="list-item-title-icon-wrapper">
+-                                      <svg class="icon icon-sm align-self-start icon-color">
+-                                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-clip">
+-                                        </use>
+-                                      </svg>
+-                                      <span class="list-item-title title-small-semi-bold">
+-                                      </span>
+-                                    </span>
++                          <div class="cmp-icon-card mb-3">
++                            <div class="card pt-20 pb-4 ps-4 pr-30 drop-shadow">
++                              <div class="cmp-card-title d-flex">
++                                <svg class="icon icon-sm me-2">
++                                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-files">
++                                  </use>
++                                </svg>
++                                <h3 class="t-primary mb-2 underline title-small-semi-bold">
++                                  <a href="#">
+                                   </a>
+-                                </li>
+-                              </ul>
++                                </h3>
++                              </div>
++                              <div class="cmp-icon-card__description">
++                                <date class="date-xsmall ml-30">
++                                </date>
++                              </div>
+                             </div>
+                           </div>
+-                          <button type="button" class="btn btn-primary justify-content-center my-3">
++                          <button type="button" class="btn btn-xs btn-me btn-label t-primary px-0">
+                             <span>
+                             </span>
+                           </button>
+                         </div>
+                       </div>
+                     </div>
+-                    <div class="accordion-item">
+-                      <div class="accordion-header" id="heading4">
+-                        <button class="accordion-button collapsed title-snall-semi-bold" type="button">
+-                          <div class="button-wrapper">
+-                            <div class="icon-wrapper">
+-                              <img class="icon-folder" src="../assets/images/folder-concluded.svg" alt="folder Conclusa" role="img">
+-                              <span>
+-                              </span>
+-                            </div>
+-                          </div>
+-                        </button>
+-                        <p class="accordion-date title-xsmall-regular mb-0">
+-                        </p>
+-                      </div>
+-                      <div id="collapse4" class="accordion-collapse collapse p-0" role="region">
+-                        <div class="accordion-body">
+-                          <p class="mb-2 fw-normal">
+-                            <span class="label">
+-                            </span>
+-                          </p>
+-                          <a href="#" class="mb-2">
+-                            <span class="t-primary">
++                  </div>
++                </div>
++              </div>
++            </div>
++            <div class="tab-pane" id="data-ex-tab3" role="tabpanel">
++              <div class="row">
++                <div class="col-12 col-lg-8 offset-lg-1">
++                  <section class="it-page-section mb-40 mb-lg-60" id="practices">
++                    <div class="cmp-filter">
++                      <div class="filter-section">
++                        <h2 class="cmp-filter__title title-xxlarge">
++                        </h2>
++                        <div class="filter-wrapper d-flex align-items-center">
++                          <button type="button" class="btn p-0 pe-2 t-primary">
++                            <span class="rounded-icon">
++                              <svg class="icon icon-primary icon-xs me-1">
++                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-funnel">
++                                </use>
++                              </svg>
+                             </span>
+-                          </a>
+-                          <a class="chip chip-simple" href="#">
+-                            <span class="chip-label">
++                            <span>
+                             </span>
+-                          </a>
+-                          <div class="cmp-icon-list">
+-                            <div class="link-list-wrapper">
+-                              <ul class="link-list">
+-                                <li class="shadow mt-3">
+-                                  <a class="list-item icon-left t-primary title-small-semi-bold" href="#" aria-label="Scarica la Ricevuta pagamento (PDF 80KB)">
+-                                    <span class="list-item-title-icon-wrapper">
+-                                      <svg class="icon icon-sm align-self-start icon-color">
+-                                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-clip">
+-                                        </use>
+-                                      </svg>
+-                                      <span class="list-item-title title-small-semi-bold">
++                          </button>
++                          <div class="dropdown">
++                            <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenu-pratiche">
++                              <span class="dropdown__title">
++                              </span>
++                            </button>
++                            <div class="dropdown-menu">
++                              <div class="link-list-wrapper">
++                                <ul class="link-list">
++                                  <li>
++                                    <a class="dropdown-item list-item" href="#">
++                                      <span>
+                                       </span>
+-                                    </span>
+-                                  </a>
+-                                </li>
+-                              </ul>
++                                    </a>
++                                  </li>
++                                  <li>
++                                    <a class="dropdown-item list-item" href="#">
++                                      <span>
++                                      </span>
++                                    </a>
++                                  </li>
++                                </ul>
++                              </div>
+                             </div>
+                           </div>
+-                          <button type="button" class="btn btn-primary justify-content-center my-3">
+-                            <span>
+-                            </span>
+-                          </button>
+                         </div>
+                       </div>
+                     </div>
+-                  </div>
+-                </div>
+-                <button type="button" class="btn accordion-view-more mb-2 pt-3 t-primary title-xsmall-semi-bold ps-lg-3">
+-                  <span>
+-                  </span>
+-                </button>
+-              </section>
+-              <section class="it-page-section mb-50 mb-lg-90" id="payments">
+-                <div class="cmp-filter">
+-                  <div class="filter-section">
+-                    <h2 class="cmp-filter__title title-xxlarge">
+-                    </h2>
+-                    <div class="filter-wrapper d-flex align-items-center">
+-                      <button type="button" class="btn p-0 pe-2 t-primary">
+-                        <span class="rounded-icon">
+-                          <svg class="icon icon-primary icon-xs me-1">
+-                            <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-funnel">
+-                            </use>
+-                          </svg>
+-                        </span>
+-                        <span>
+-                        </span>
+-                      </button>
+-                      <div class="dropdown">
+-                        <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenu-pagamenti">
+-                          <svg class="icon-expand icon icon-sm icon-primary">
+-                            <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand">
+-                            </use>
+-                          </svg>
+-                          <span class="dropdown__title">
+-                          </span>
+-                        </button>
+-                        <div class="dropdown-menu">
+-                          <div class="link-list-wrapper">
+-                            <ul class="link-list">
+-                              <li>
+-                                <a class="dropdown-item list-item" href="#">
+-                                  <span>
+-                                  </span>
+-                                </a>
+-                              </li>
+-                              <li>
+-                                <a class="dropdown-item list-item" href="#">
+-                                  <span>
++                    <div class="cmp-accordion">
++                      <div class="accordion" id="accordionPratiche">
++                        <div class="accordion-item">
++                          <div class="accordion-header" id="heading0">
++                            <button class="accordion-button collapsed title-snall-semi-bold" type="button">
++                              <div class="button-wrapper">
++                                <div class="icon-wrapper">
++                                  <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-waiting.svg" alt="folder In attesa" role="img">
++                                  <span class="u-main-black">
+                                   </span>
+-                                </a>
+-                              </li>
+-                              <li>
+-                                <a class="dropdown-item list-item" href="#">
+-                                  <span>
+-                                  </span>
+-                                </a>
+-                              </li>
+-                            </ul>
+-                          </div>
+-                        </div>
+-                      </div>
+-                    </div>
+-                  </div>
+-                  <div class="cmp-input-search">
+-                    <div class="form-group autocomplete-wrapper">
+-                      <div class="input-group">
+-                        <label for="autocomplete-pagamenti" class="visually-hidden">
+-                        </label>
+-                        <input type="search" class="autocomplete form-control" id="autocomplete-pagamenti" name="pagamenti">
+-                        <span class="autocomplete-icon">
+-                          <svg class="icon icon-sm">
+-                            <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
+-                            </use>
+-                          </svg>
+-                        </span>
+-                      </div>
+-                    </div>
+-                  </div>
+-                </div>
+-                <div class="cmp-accordion">
+-                  <div class="accordion">
+-                    <div class="accordion-item">
+-                      <div class="accordion-header" id="heading5">
+-                        <button class="accordion-button collapsed title-snall-semi-bold" type="button">
+-                          <div class="button-wrapper">
+-                            <div class="icon-wrapper">
+-                              <img class="icon-folder" src="../assets/images/folder-pay.svg" alt="folder Pagato" role="img">
+-                              <span>
+-                              </span>
+-                            </div>
++                                </div>
++                              </div>
++                            </button>
++                            <p class="accordion-date title-xsmall-regular mb-0">
++                            </p>
+                           </div>
+-                        </button>
+-                        <p class="accordion-date title-xsmall-regular mb-0">
+-                        </p>
+-                      </div>
+-                      <div id="collapse5" class="accordion-collapse collapse p-0" role="region">
+-                        <div class="accordion-body">
+-                          <p class="mb-2 fw-normal">
+-                            <span class="label">
+-                            </span>
+-                          </p>
+-                          <a href="#" class="mb-2">
+-                            <span class="t-primary">
+-                            </span>
+-                          </a>
+-                          <a class="chip chip-simple" href="#">
+-                            <span class="chip-label">
+-                            </span>
+-                          </a>
+-                          <div class="cmp-icon-list">
+-                            <div class="link-list-wrapper">
+-                              <ul class="link-list">
+-                                <li class="shadow mt-3">
+-                                  <a class="list-item icon-left t-primary title-small-semi-bold" href="#" aria-label="Scarica la Ricevuta pagamento (PDF 80KB)">
+-                                    <span class="list-item-title-icon-wrapper">
+-                                      <svg class="icon icon-sm align-self-start icon-color">
+-                                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-clip">
+-                                        </use>
+-                                      </svg>
+-                                      <span class="list-item-title title-small-semi-bold">
+-                                      </span>
+-                                    </span>
+-                                  </a>
+-                                </li>
+-                              </ul>
++                          <div id="collapse0" class="accordion-collapse collapse p-0" role="region">
++                            <div class="accordion-body">
++                              <p class="mb-2 fw-normal">
++                                <span class="label">
++                                </span>
++                              </p>
++                              <a href="#" class="mb-2">
++                                <span class="t-primary">
++                                </span>
++                              </a>
++                              <a class="chip chip-simple" href="#">
++                                <span class="chip-label">
++                                </span>
++                              </a>
++                              <button type="button" class="btn btn-primary justify-content-center my-3">
++                                <span>
++                                </span>
++                              </button>
+                             </div>
+                           </div>
+-                          <button type="button" class="btn btn-primary justify-content-center my-3">
+-                            <span>
+-                            </span>
+-                          </button>
+                         </div>
+-                      </div>
+-                    </div>
+-                    <div class="accordion-item">
+-                      <div class="accordion-header" id="heading6">
+-                        <button class="accordion-button collapsed title-snall-semi-bold" type="button">
+-                          <div class="button-wrapper">
+-                            <div class="icon-wrapper">
+-                              <img class="icon-folder" src="../assets/images/folder-pay.svg" alt="folder Pagato" role="img">
+-                              <span>
+-                              </span>
+-                            </div>
++                        <div class="accordion-item">
++                          <div class="accordion-header" id="heading1">
++                            <button class="accordion-button collapsed title-snall-semi-bold" type="button">
++                              <div class="button-wrapper">
++                                <div class="icon-wrapper">
++                                  <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-concluded.svg" alt="folder Conclusa" role="img">
++                                  <span>
++                                  </span>
++                                </div>
++                              </div>
++                            </button>
++                            <p class="accordion-date title-xsmall-regular mb-0">
++                            </p>
+                           </div>
+-                        </button>
+-                        <p class="accordion-date title-xsmall-regular mb-0">
+-                        </p>
+-                      </div>
+-                      <div id="collapse6" class="accordion-collapse collapse p-0" role="region">
+-                        <div class="accordion-body">
+-                          <p class="mb-2 fw-normal">
+-                            <span class="label">
+-                            </span>
+-                          </p>
+-                          <a href="#" class="mb-2">
+-                            <span class="t-primary">
+-                            </span>
+-                          </a>
+-                          <a class="chip chip-simple" href="#">
+-                            <span class="chip-label">
+-                            </span>
+-                          </a>
+-                          <div class="cmp-icon-list">
+-                            <div class="link-list-wrapper">
+-                              <ul class="link-list">
+-                                <li class="shadow mt-3">
+-                                  <a class="list-item icon-left t-primary title-small-semi-bold" href="#" aria-label="Scarica la Ricevuta pagamento (PDF 80KB)">
+-                                    <span class="list-item-title-icon-wrapper">
+-                                      <svg class="icon icon-sm align-self-start icon-color">
+-                                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-clip">
+-                                        </use>
+-                                      </svg>
+-                                      <span class="list-item-title title-small-semi-bold">
+-                                      </span>
+-                                    </span>
+-                                  </a>
+-                                </li>
+-                              </ul>
++                          <div id="collapse1" class="accordion-collapse collapse p-0" role="region">
++                            <div class="accordion-body">
++                              <p class="mb-2 fw-normal">
++                                <span class="label">
++                                </span>
++                              </p>
++                              <a href="#" class="mb-2">
++                                <span class="t-primary">
++                                </span>
++                              </a>
++                              <a class="chip chip-simple" href="#">
++                                <span class="chip-label">
++                                </span>
++                              </a>
++                              <button type="button" class="btn btn-primary justify-content-center my-3">
++                                <span>
++                                </span>
++                              </button>
+                             </div>
+                           </div>
+-                          <button type="button" class="btn btn-primary justify-content-center my-3">
+-                            <span>
+-                            </span>
+-                          </button>
+                         </div>
+-                      </div>
+-                    </div>
+-                    <div class="accordion-item">
+-                      <div class="accordion-header" id="heading7">
+-                        <button class="accordion-button collapsed title-snall-semi-bold" type="button">
+-                          <div class="button-wrapper">
+-                            <div class="icon-wrapper">
+-                              <img class="icon-folder" src="../assets/images/folder-pay.svg" alt="folder Pagato" role="img">
+-                              <span>
+-                              </span>
+-                            </div>
++                        <div class="accordion-item">
++                          <div class="accordion-header" id="heading2">
++                            <button class="accordion-button collapsed title-snall-semi-bold" type="button">
++                              <div class="button-wrapper">
++                                <div class="icon-wrapper">
++                                  <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-concluded.svg" alt="folder Conclusa" role="img">
++                                  <span>
++                                  </span>
++                                </div>
++                              </div>
++                            </button>
++                            <p class="accordion-date title-xsmall-regular mb-0">
++                            </p>
+                           </div>
+-                        </button>
+-                        <p class="accordion-date title-xsmall-regular mb-0">
+-                        </p>
+-                      </div>
+-                      <div id="collapse7" class="accordion-collapse collapse p-0" role="region">
+-                        <div class="accordion-body">
+-                          <p class="mb-2 fw-normal">
+-                            <span class="label">
+-                            </span>
+-                          </p>
+-                          <a href="#" class="mb-2">
+-                            <span class="t-primary">
+-                            </span>
+-                          </a>
+-                          <a class="chip chip-simple" href="#">
+-                            <span class="chip-label">
+-                            </span>
+-                          </a>
+-                          <div class="cmp-icon-list">
+-                            <div class="link-list-wrapper">
+-                              <ul class="link-list">
+-                                <li class="shadow mt-3">
+-                                  <a class="list-item icon-left t-primary title-small-semi-bold" href="#" aria-label="Scarica la Ricevuta pagamento (PDF 80KB)">
+-                                    <span class="list-item-title-icon-wrapper">
+-                                      <svg class="icon icon-sm align-self-start icon-color">
+-                                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-clip">
+-                                        </use>
+-                                      </svg>
+-                                      <span class="list-item-title title-small-semi-bold">
+-                                      </span>
+-                                    </span>
+-                                  </a>
+-                                </li>
+-                              </ul>
++                          <div id="collapse2" class="accordion-collapse collapse p-0" role="region">
++                            <div class="accordion-body">
++                              <p class="mb-2 fw-normal">
++                                <span class="label">
++                                </span>
++                              </p>
++                              <a href="#" class="mb-2">
++                                <span class="t-primary">
++                                </span>
++                              </a>
++                              <a class="chip chip-simple" href="#">
++                                <span class="chip-label">
++                                </span>
++                              </a>
++                              <button type="button" class="btn btn-primary justify-content-center my-3">
++                                <span>
++                                </span>
++                              </button>
+                             </div>
+                           </div>
+-                          <button type="button" class="btn btn-primary justify-content-center my-3">
+-                            <span>
+-                            </span>
+-                          </button>
+                         </div>
+-                      </div>
+-                    </div>
+-                    <div class="accordion-item">
+-                      <div class="accordion-header" id="heading8">
+-                        <button class="accordion-button collapsed title-snall-semi-bold" type="button">
+-                          <div class="button-wrapper">
+-                            <div class="icon-wrapper">
+-                              <img class="icon-folder" src="../assets/images/folder-pay.svg" alt="folder Pagato" role="img">
+-                              <span>
+-                              </span>
+-                            </div>
++                        <div class="accordion-item">
++                          <div class="accordion-header" id="heading3">
++                            <button class="accordion-button collapsed title-snall-semi-bold" type="button">
++                              <div class="button-wrapper">
++                                <div class="icon-wrapper">
++                                  <img class="icon-folder" src="/themes/Sixteen/design-comuni/assets/images/folder-concluded.svg" alt="folder Conclusa" role="img">
++                                  <span>
++                                  </span>
++                                </div>
++                              </div>
++                            </button>
++                            <p class="accordion-date title-xsmall-regular mb-0">
++                            </p>
+                           </div>
+-                        </button>
+-                        <p class="accordion-date title-xsmall-regular mb-0">
+-                        </p>
+-                      </div>
+-                      <div id="collapse8" class="accordion-collapse collapse p-0" role="region">
+-                        <div class="accordion-body">
+-                          <p class="mb-2 fw-normal">
+-                            <span class="label">
+-                            </span>
+-                          </p>
+-                          <a href="#" class="mb-2">
+-                            <span class="t-primary">
+-                            </span>
+-                          </a>
+-                          <a class="chip chip-simple" href="#">
+-                            <span class="chip-label">
+-                            </span>
+-                          </a>
+-                          <div class="cmp-icon-list">
+-                            <div class="link-list-wrapper">
+-                              <ul class="link-list">
+-                                <li class="shadow mt-3">
+-                                  <a class="list-item icon-left t-primary title-small-semi-bold" href="#" aria-label="Scarica la Ricevuta pagamento (PDF 80KB)">
+-                                    <span class="list-item-title-icon-wrapper">
+-                                      <svg class="icon icon-sm align-self-start icon-color">
+-                                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-clip">
+-                                        </use>
+-                                      </svg>
+-                                      <span class="list-item-title title-small-semi-bold">
+-                                      </span>
+-                                    </span>
+-                                  </a>
+-                                </li>
+-                              </ul>
++                          <div id="collapse3" class="accordion-collapse collapse p-0" role="region">
++                            <div class="accordion-body">
++                              <p class="mb-2 fw-normal">
++                                <span class="label">
++                                </span>
++                              </p>
++                              <a href="#" class="mb-2">
++                                <span class="t-primary">
++                                </span>
++                              </a>
++                              <a class="chip chip-simple" href="#">
++                                <span class="chip-label">
++                                </span>
++                              </a>
++                              <button type="button" class="btn btn-primary justify-content-center my-3">
++                                <span>
++                                </span>
++                              </button>
+                             </div>
+                           </div>
+-                          <button type="button" class="btn btn-primary justify-content-center my-3">
+-                            <span>
+-                            </span>
+-                          </button>
+                         </div>
+                       </div>
+                     </div>
+-                  </div>
++                  </section>
+                 </div>
+-                <button type="button" class="btn accordion-view-more mb-2 t-primary title-xsmall-semi-bold ps-lg-3">
+-                  <span>
+-                  </span>
+-                </button>
+-              </section>
+-            </div>
+-          </div>
+-        </div>
+-        <div class="tab-pane" id="data-ex-tab4" role="tabpanel">
+-        </div>
+-      </div>
+-    </div>
+-  </div>
+-  <div class="bg-grey-card shadow-contacts">
+-    <div class="container">
+-      <div class="row">
+-        <div class="col-12 col-lg-6 offset-lg-3 p-contacts">
+-          <div class="cmp-contacts">
+-            <div class="card w-100">
+-              <div class="card-body">
+-                <h2 class="title-medium-2-semi-bold">
+-                </h2>
+-                <ul class="contact-list p-0">
+-                  <li>
+-                    <a class="list-item" href="#">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-help-circle">
+-                        </use>
+-                      </svg>
+-                      <span>
+-                      </span>
+-                    </a>
+-                  </li>
+-                  <li>
+-                    <a class="list-item" href="#" data-element="contacts">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-mail">
+-                        </use>
+-                      </svg>
+-                      <span>
+-                      </span>
+-                    </a>
+-                  </li>
+-                  <li>
+-                    <a class="list-item" href="#">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-hearing">
+-                        </use>
+-                      </svg>
+-                      <span>
+-                      </span>
+-                    </a>
+-                  </li>
+-                  <li>
+-                    <a class="list-item" href="#" data-element="appointment-booking">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar">
+-                        </use>
+-                      </svg>
+-                      <span>
+-                      </span>
+-                    </a>
+-                  </li>
+-                </ul>
+               </div>
+             </div>
+           </div>
+@@ -1340,34 +775,6 @@
+       </div>
+     </div>
+   </div>
+-  <div class="cmp-modal">
+-    <div class="modal fade it-dialog-scrollable" role="dialog" id="modal-message">
+-      <div class="modal-dialog modal-dialog-centered" role="document">
+-        <div class="modal-content modal-dimensions h-100">
+-          <div class="cmp-modal__header modal-header pb-0">
+-            <button class="btn-close" type="button" aria-label="Chiudi finestra modale">
+-            </button>
+-            <div class="cmp-modal__header mt-30 mt-lg-50">
+-              <date class="date-regular w-100">
+-              </date>
+-              <h2 id="modal-message-modal-title" class="title-xxxlarge mt-2 mb-0">
+-              </h2>
+-            </div>
+-          </div>
+-          <div class="modal-body">
+-            <div class="mb-60 mb-lg-80">
+-              <h5 class="subtitle-large">
+-              </h5>
+-              <p class="text-paragraph mb-4 fw-normal">
+-              </p>
+-              <a href="#" class="text-paragraph t-primary text-decoration-underline">
+-              </a>
+-            </div>
+-          </div>
+-        </div>
+-      </div>
+-    </div>
+-  </div>
+ </main>
+ <div class="modal fade search-modal" id="search-modal" role="dialog">
+   <div class="modal-dialog modal-lg" role="document">
+@@ -1380,7 +787,7 @@
+                 <div class="modal-title">
+                   <button class="search-link d-md-none" type="button" aria-label="Chiudi e torna alla pagina precedente">
+                     <svg class="icon icon-md">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-left">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-left">
+                       </use>
+                     </svg>
+                   </button>
+@@ -1388,7 +795,7 @@
+                   </h2>
+                   <button class="search-link d-none d-md-block" type="button" aria-label="Chiudi e torna alla pagina precedente">
+                     <svg class="icon icon-md">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-close-big">
+                       </use>
+                     </svg>
+                   </button>
+@@ -1399,7 +806,7 @@
+                   <input type="search" class="autocomplete ps-5" id="autocomplete-two" name="autocomplete-two">
+                   <span class="autocomplete-icon">
+                     <svg class="icon">
+-                      <use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
++                      <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-search">
+                       </use>
+                     </svg>
+                   </span>
+@@ -1455,11 +862,11 @@
+     <div class="container">
+       <div class="row">
+         <div class="col-12 footer-items-wrapper logo-wrapper">
+-          <img class="ue-logo" src="../assets/images/logo-eu-inverted.svg" alt="logo Unione Europea">
++          <img class="ue-logo" src="/themes/Sixteen/design-comuni/assets/images/logo-eu-inverted.svg" alt="logo Unione Europea">
+           <div class="it-brand-wrapper">
+             <a href="#">
+               <svg class="icon">
+-                <use>
++                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-pa">
+                 </use>
+               </svg>
+               <div class="it-brand-text">
+@@ -1676,7 +1083,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-twitter">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1686,7 +1093,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-facebook">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1696,7 +1103,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-youtube">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1706,7 +1113,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-telegram">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1716,7 +1123,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-whatsapp">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">
+@@ -1726,7 +1133,7 @@
+             <li class="list-inline-item">
+               <a class="p-1 text-white" href="#">
+                 <svg class="icon icon-sm icon-white align-top">
+-                  <use>
++                  <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-rss">
+                   </use>
+                 </svg>
+                 <span class="visually-hidden">

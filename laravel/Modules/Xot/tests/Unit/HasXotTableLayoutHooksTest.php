@@ -1,15 +1,12 @@
 <?php
 
 declare(strict_types=1);
-
+use Filament\Tables\Columns\Column;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Enums\RecordActionsPosition;
 use Modules\Xot\Filament\Traits\HasXotTable;
 use PHPUnit\Framework\Assert;
 
-/**
- * @param object $instance
- */
 function invokeProtectedTableHook(object $instance, string $method): mixed
 {
     $reflection = new ReflectionMethod($instance, $method);
@@ -24,9 +21,9 @@ test('getTableFiltersLayout default e override', function (): void {
 
         public string $tableSearch = '';
 
-        /** @return array<string, \Filament\Tables\Columns\Column> */
-        /** @return array<string, \Filament\Tables\Columns\Column> */
-    public function getTableColumns(): array
+        /** @return array<string, Column> */
+        /** @return array<string, Column> */
+        public function getTableColumns(): array
         {
             return [];
         }
@@ -40,9 +37,9 @@ test('getTableFiltersLayout default e override', function (): void {
 
         public string $tableSearch = '';
 
-        /** @return array<string, \Filament\Tables\Columns\Column> */
-        /** @return array<string, \Filament\Tables\Columns\Column> */
-    public function getTableColumns(): array
+        /** @return array<string, Column> */
+        /** @return array<string, Column> */
+        public function getTableColumns(): array
         {
             return [];
         }
@@ -63,9 +60,9 @@ test('getTableRecordActionsPosition default e override', function (): void {
 
         public string $tableSearch = '';
 
-        /** @return array<string, \Filament\Tables\Columns\Column> */
-        /** @return array<string, \Filament\Tables\Columns\Column> */
-    public function getTableColumns(): array
+        /** @return array<string, Column> */
+        /** @return array<string, Column> */
+        public function getTableColumns(): array
         {
             return [];
         }
@@ -79,9 +76,9 @@ test('getTableRecordActionsPosition default e override', function (): void {
 
         public string $tableSearch = '';
 
-        /** @return array<string, \Filament\Tables\Columns\Column> */
-        /** @return array<string, \Filament\Tables\Columns\Column> */
-    public function getTableColumns(): array
+        /** @return array<string, Column> */
+        /** @return array<string, Column> */
+        public function getTableColumns(): array
         {
             return [];
         }

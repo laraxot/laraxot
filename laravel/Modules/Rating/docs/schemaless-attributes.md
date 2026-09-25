@@ -76,6 +76,19 @@ Rating::withExtraAttributes(['anno' => 2024, 'type' => 'performance'])->get();
 Rating::where('extra_attributes->anno', 2024)->get();
 ```
 
+### Never `wherePivot('anno', ...)`
+
+`anno` is a schemaless attribute of the `Rating` model itself (stored in
+`extra_attributes`), **not** a column of the `rating_morph` pivot table (none of the
+`rating_morph` migrations declares it). Filtering with `wherePivot('anno', ...)` fails
+or returns wrong results.
+
+To get the ratings of a given year linked to a model:
+
+1. filter the `Rating` records first with `withExtraAttributes('anno', $year)`;
+2. match them through the model relationship by the retrieved Rating IDs
+   (e.g. `syncRatingsWhere` or `whereIn('ratings.id', $ids)`).
+
 ### Scope Implementation (BaseRating)
 
 ```php

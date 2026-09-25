@@ -24,7 +24,7 @@ parameters:
         - identifier: missingType.iterableValue
         - identifier: missingType.generics
         - identifier: larastan.noEnvCallsOutsideOfConfig
-        - identifier: trait.unused
+        - identifier: trait.unused 
         - identifier: method.unused
 
     excludePaths:

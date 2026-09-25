@@ -4,11 +4,7 @@
 **Module Name**: UI  
 **Type**: User Interface & Component Library Module  
 **Status**: ✅ Active  
-<<<<<<< HEAD
-=======
 **Framework**: Laravel 12.x + Filament 4.x + Tailwind CSS  
->>>>>>> laraxot/dev
-**Framework**: Laravel 13.x + Filament 4.x + Tailwind CSS  
 **Component Library**: Custom UI components and styles  
 **Language**: Multi-language (IT/EN/DE)  
 
@@ -64,34 +60,7 @@ The UI module provides comprehensive user interface components and styling:
 ## Integration with Other Modules
 - **User**: Authentication interface components
 - **Cms**: Content display components
-<<<<<<< HEAD
 - **Quaeris**: Dashboard UI components
-- **modulo questionari**: Dashboard UI components
-=======
-<<<<<<< HEAD
-- **Quaeris**: Dashboard UI components
-<<<<<<< HEAD
-- **modulo questionari**: Dashboard UI components
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-- **Quaeris**: Dashboard UI components
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-- **modulo questionari**: Dashboard UI components
-=======
-- **Quaeris**: Dashboard UI components
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 - **Xot**: Base UI infrastructure
 - **Filament**: Component compatibility
 

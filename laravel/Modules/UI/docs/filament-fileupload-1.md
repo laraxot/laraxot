@@ -95,12 +95,4 @@ return [
 
 ## Vedi Anche
 - [Filament File Upload](https://filamentphp.com/docs/forms/fields/file-upload)
-<<<<<<< HEAD
 - [Laravel File Storage](https://laravel.com/docs/filesystem)
-=======
-<<<<<<< HEAD
-- [Laravel File Storage](https://laravel.com/docs/filesystem)
-=======
-- [Laravel File Storage](https://laravel.com/docs/filesystem) 
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev

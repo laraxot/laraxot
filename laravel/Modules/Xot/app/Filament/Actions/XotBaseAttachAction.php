@@ -14,4 +14,5 @@ use Filament\Actions\AttachAction as FilamentAttachAction;
  */
 abstract class XotBaseAttachAction extends FilamentAttachAction
 {
+    // ...
 }

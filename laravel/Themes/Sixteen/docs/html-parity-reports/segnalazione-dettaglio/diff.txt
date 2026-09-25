@@ -1,0 +1,904 @@
+--- URL1: file:///tmp/batch-fix/ref_segnalazione-dettaglio.html
++++ URL2: file:///tmp/batch-fix/local_segnalazione-dettaglio.html
+@@ -114,7 +114,7 @@
+                         <a class="nav-link" data-element="news">
+                           <span>
+                       <li class="nav-item">
+-                        <a class="nav-link active" data-element="all-services">
++                        <a class="nav-link" data-element="all-services">
+                           <span>
+                       <li class="nav-item">
+                         <a class="nav-link" data-element="live">
+@@ -166,447 +166,456 @@
+                             <use>
+                           <span class="visually-hidden">
+ <main>
+-  <div id="main-container" class="container">
+-    <div class="row justify-content-center">
+-      <div class="col-12 col-lg-10">
+-        <div class="cmp-breadcrumbs" role="navigation">
+-          <nav class="breadcrumb-container">
+-            <ol class="breadcrumb p-0" data-element="breadcrumb">
+-              <li class="breadcrumb-item">
+-                <a>
+-                <span class="separator">
+-              <li class="breadcrumb-item">
+-                <a>
+-                <span class="separator">
+-              <li class="breadcrumb-item active">
+-  <div class="container">
+-    <div class="row justify-content-center">
+-      <div class="col-12 col-lg-10">
+-        <div class="cmp-heading pb-3 pb-lg-4">
+-          <div class="row">
+-            <div class="col-lg-8">
+-              <h1 class="title-xxxlarge" data-element="service-title">
+-              <ul class="d-flex flex-wrap gap-1 my-3">
+-                <li>
+-                  <div class="chip chip-simple text-button" data-element="service-status">
+-                    <span class="chip-label">
+-              <p class="subtitle-small mb-3">
+-              <div class="d-lg-flex gap-30 mb-2">
+-                <button class="btn fw-bold btn-primary mr-lg-30">
+-                  <span>
+-                <button class="btn fw-bold btn-outline-primary t-primary">
+-                  <span>
+-            <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
+-              <div class="dropdown">
+-                <button id="shareActions" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0">
+-                  <svg class="icon">
+-                    <use>
+-                  <small>
+-                <div class="dropdown-menu shadow-lg">
+-                  <div class="link-list-wrapper">
+-                    <ul class="link-list" role="menu">
+-                      <li role="none">
+-                        <a class="list-item" role="menuitem">
+-                          <svg class="icon">
+-                            <use>
+-                          <span>
+-                      <li role="none">
+-                        <a class="list-item" role="menuitem">
+-                          <svg class="icon">
+-                            <use>
+-                          <span>
+-                      <li role="none">
+-                        <a class="list-item" role="menuitem">
+-                          <svg class="icon">
+-                            <use>
+-                          <span>
+-                      <li role="none">
+-                        <a class="list-item" role="menuitem">
+-                          <svg class="icon">
+-                            <use>
+-                          <span>
+-              <div class="dropdown">
+-                <button id="viewActions" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0">
+-                  <svg class="icon">
+-                    <use>
+-                  <small>
+-                <div class="dropdown-menu shadow-lg">
+-                  <div class="link-list-wrapper">
+-                    <ul class="link-list" role="menu">
+-                      <li role="none">
+-                        <a class="list-item" role="menuitem">
+-                          <svg class="icon">
+-                            <use>
+-                          <span>
+-                      <li role="none">
+-                        <a class="list-item" role="menuitem">
+-                          <svg class="icon">
+-                            <use>
+-                          <span>
+-                      <li role="none">
+-                        <a class="list-item" role="menuitem">
+-                          <svg class="icon">
+-                            <use>
+-                          <span>
+-      <hr class="d-none d-lg-block mb-0 mt-2">
+-  <div class="container">
+-    <div class="row row-column-menu-left mt-lg-80 mt-3">
+-      <div class="col-12 col-lg-3 mb-4 border-col">
+-        <div class="cmp-navscroll sticky-top">
+-          <nav class="navbar it-navscroll-wrapper navbar-expand-lg">
+-            <div id="navbarNavProgress" class="navbar-custom">
+-              <div class="menu-wrapper">
+-                <div class="link-list-wrapper">
+-                  <div class="accordion">
+-                    <div class="accordion-item">
+-                      <span id="accordion-title-one" class="accordion-header">
+-                        <button class="accordion-button pb-10 px-3">
+-                          <svg class="icon icon-xs right">
+-                            <use>
+-                      <div class="progress">
+-                        <div class="progress-bar it-navscroll-progressbar" role="progressbar">
+-                      <div id="collapse-one" class="accordion-collapse collapse show" role="region">
+-                        <div class="accordion-body">
+-                          <ul class="link-list" data-element="page-index">
+-                            <li class="nav-item">
+-                              <a class="nav-link">
+-                                <span>
+-                            <li class="nav-item">
+-                              <a class="nav-link">
+-                                <span>
+-                            <li class="nav-item">
+-                              <a class="nav-link">
+-                                <span>
+-                            <li class="nav-item">
+-                              <a class="nav-link">
+-                                <span>
+-                            <li class="nav-item">
+-                              <a class="nav-link">
+-                                <span>
+-                            <li class="nav-item">
+-                              <a class="nav-link">
+-                                <span>
+-                            <li class="nav-item">
+-                              <a class="nav-link">
+-                                <span>
+-                            <li class="nav-item">
+-                              <a class="nav-link">
+-                                <span>
+-                            <li class="nav-item">
+-                              <a class="nav-link">
+-                                <span>
+-      <div class="col-12 col-lg-8 offset-lg-1">
+-        <div class="it-page-sections-container">
+-          <section id="who-needs" class="it-page-section mb-30">
+-            <h2 class="title-xxlarge mb-3">
+-            <p class="text-paragraph lora mb-0">
+-          <section id="description" class="it-page-section mb-30">
+-            <h2 class="title-xxlarge mb-3">
+-            <p class="text-paragraph lora mb-0">
+-          <section id="how-to" class="it-page-section mb-30">
+-            <h2 class="title-xxlarge mb-3">
+-            <p class="text-paragraph lora mb-0">
+-              <br>
+-              <br>
+-              <br>
+-              <br>
+-          <section id="needed" class="it-page-section mb-30 has-bg-grey p-3">
+-            <h2 class="title-xxlarge mb-3">
+-            <p class="text-paragraph lora mb-0">
+-            <ul class="list-wrapper link-list lora">
+-              <li class="list-item">
+-                <span>
+-              <li class="list-item">
+-                <span>
+-          <section id="obtain" class="it-page-section mb-30">
+-            <h2 class="title-xxlarge mb-3">
+-            <p class="text-paragraph lora mb-0">
+-          <section id="costs" class="it-page-section mb-30">
+-            <h2 class="title-xxlarge mb-3">
+-            <p class="text-paragraph lora">
+-            <div class="cmp-icon-link">
+-              <a class="list-item icon-left d-inline-block">
+-                <span class="list-item-title-icon-wrapper">
+-                  <svg class="icon icon-primary icon-sm me-1">
+-                    <use>
+-                  <span class="list-item">
+-          <section id="service-access" class="it-page-section mb-30 has-bg-grey p-3">
+-            <h2 class="title-xxlarge mb-3">
+-            <p class="text-paragraph lora">
+-            <button class="btn btn-primary mobile-full">
++  <div class="tests-view-wrapper">
++    <div class="container">
++      <div class="row justify-content-center">
++        <div class="col-12 col-lg-10">
++          <div class="cmp-breadcrumbs" role="navigation">
++            <nav class="breadcrumb-container">
++              <ol class="breadcrumb p-0" data-element="breadcrumb">
++                <li class="breadcrumb-item">
++                  <a>
++                  <span class="separator">
++                <li class="breadcrumb-item">
++                  <a>
++                  <span class="separator">
++                <li class="breadcrumb-item active">
++    <div class="cmp-heading pb-3 pb-lg-4">
++      <div class="row">
++        <div class="col-lg-8">
++          <h1 class="title-xxxlarge" data-element="service-title">
++          <ul class="d-flex flex-wrap gap-1 my-3">
++            <li>
++              <div class="chip chip-simple text-button" data-element="service-status">
++                <span class="chip-label">
++          <p class="subtitle-small mb-3">
++          <div class="d-lg-flex gap-30 mb-2">
++            <button class="btn fw-bold btn-primary mr-lg-30">
+               <span>
+-            <p class="text-paragraph mt-4 lora">
+-            <button class="btn mobile-full btn-outline-primary t-primary bg-white">
++            <button class="btn fw-bold btn-outline-primary t-primary">
+               <span>
+-          <section id="conditions" class="it-page-section mb-30">
+-            <h2 class="title-xxlarge mb-3">
+-            <p class="text-paragraph lora">
+-            <div class="cmp-icon-link">
+-              <a class="list-item icon-left d-inline-block">
+-                <span class="list-item-title-icon-wrapper">
+-                  <svg class="icon icon-primary icon-sm me-1">
+-                    <use>
+-                  <span class="list-item">
+-          <section id="contacts" class="it-page-section">
+-            <h2 class="mb-3">
+-            <div class="row">
+-              <div class="col-12 col-md-8 col-lg-6 mb-30">
+-                <div class="card-wrapper rounded h-auto pb-0">
+-                  <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
+-                    <div class="card-body pe-3">
+-                      <span class="title-small">
+-                        <a class="text-decoration-none" data-element="service-area">
+-                      <p class="subtitle-small mb-0">
+-                        <br>
+-                        <br>
+-                        <a>
+-                    <div class="avatar size-xl">
+-                      <img>
+-              <div class="col-12 mb-30">
+-                <span class="text-paragraph-small">
+-                <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
+-                  <li>
+-                    <a class="chip chip-simple" data-element="service-topic">
+-                      <span class="chip-label">
+-                  <li>
+-                    <a class="chip chip-simple" data-element="service-topic">
+-                      <span class="chip-label">
+-                  <li>
+-                    <a class="chip chip-simple" data-element="service-topic">
+-                      <span class="chip-label">
+-                  <li>
+-                    <a class="chip chip-simple" data-element="service-topic">
+-                      <span class="chip-label">
+-                <p class="text-paragraph-small mb-0">
+-  <div class="bg-primary">
++        <div class="col-lg-3 mt-5 mt-lg-0">
++          <div class="dropdown">
++            <button id="shareActions" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0">
++              <svg class="icon">
++                <use>
++              <small>
++            <div class="dropdown-menu shadow-lg">
++              <div class="link-list-wrapper">
++                <ul class="link-list" role="menu">
++                  <li role="none">
++                    <a class="list-item" role="menuitem">
++                      <svg class="icon">
++                        <use>
++                      <span>
++                  <li role="none">
++                    <a class="list-item" role="menuitem">
++                      <svg class="icon">
++                        <use>
++                      <span>
++                  <li role="none">
++                    <a class="list-item" role="menuitem">
++                      <svg class="icon">
++                        <use>
++                      <span>
++                  <li role="none">
++                    <a class="list-item" role="menuitem">
++                      <svg class="icon">
++                        <use>
++                      <span>
++          <div class="dropdown">
++            <button id="viewActions" class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0">
++              <svg class="icon">
++                <use>
++              <small>
++            <div class="dropdown-menu shadow-lg">
++              <div class="link-list-wrapper">
++                <ul class="link-list" role="menu">
++                  <li role="none">
++                    <a class="list-item" role="menuitem">
++                      <svg class="icon">
++                        <use>
++                      <span>
++                  <li role="none">
++                    <a class="list-item" role="menuitem">
++                      <svg class="icon">
++                        <use>
++                      <span>
++                  <li role="none">
++                    <a class="list-item" role="menuitem">
++                      <svg class="icon">
++                        <use>
++                      <span>
++    <hr class="d-none d-lg-block mb-0 mt-2">
+     <div class="container">
+-      <div class="row d-flex justify-content-center bg-primary">
+-        <div class="col-12 col-lg-6 p-lg-0 px-4">
+-          <div id="rating" class="cmp-rating pt-lg-80 pb-lg-80">
+-            <div class="card shadow card-wrapper" data-element="feedback">
+-              <div class="cmp-rating__card-first">
+-                <div class="card-header border-0">
+-                  <h2 class="title-medium-2-semi-bold mb-0" data-element="feedback-title">
+-                <div class="card-body">
+-                  <fieldset class="rating">
+-                    <legend class="visually-hidden">
+-                    <input id="star5a">
+-                    <label class="full rating-star active" data-element="feedback-rate-5">
+-                      <svg class="icon icon-sm" role="img">
+-                        <path>
+-                        <path>
+-                      <span id="first-star" class="visually-hidden">
+-                    <input id="star4a">
+-                    <label class="full rating-star active" data-element="feedback-rate-4">
+-                      <svg class="icon icon-sm" role="img">
+-                        <path>
+-                        <path>
+-                      <span id="second-star" class="visually-hidden">
+-                    <input id="star3a">
+-                    <label class="full rating-star active" data-element="feedback-rate-3">
+-                      <svg class="icon icon-sm" role="img">
+-                        <path>
+-                        <path>
+-                      <span id="third-star" class="visually-hidden">
+-                    <input id="star2a">
+-                    <label class="full rating-star active" data-element="feedback-rate-2">
+-                      <svg class="icon icon-sm" role="img">
+-                        <path>
+-                        <path>
+-                      <span id="fourth-star" class="visually-hidden">
+-                    <input id="star1a">
+-                    <label class="full rating-star active" data-element="feedback-rate-1">
+-                      <svg class="icon icon-sm" role="img">
+-                        <path>
+-                        <path>
+-                      <span id="fifth-star" class="visually-hidden">
+-              <div class="cmp-rating__card-second d-none">
+-                <div class="card-header border-0 mb-0">
+-                  <h2 id="rating-feedback" class="title-medium-2-bold mb-0">
+-              <div class="form-rating d-none">
+-                <div class="d-none">
+-                  <div class="cmp-steps-rating">
+-                    <fieldset class="fieldset-rating-one d-none" data-element="feedback-rating-positive">
+-                      <legend class="iscrizioni-header w-100">
+-                        <h3 class="step-title d-flex flex-column flex-lg-row align-items-lg-center justify-content-between drop-shadow">
+-                          <span class="d-block text-wrap" data-element="feedback-rating-question">
+-                          <span class="step">
+-                      <div class="cmp-steps-rating__body">
+-                        <div class="cmp-radio-list">
+-                          <div class="card card-teaser shadow-rating">
+-                            <div class="card-body">
+-                              <div class="form-check m-0">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-1">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-2">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-3">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-4">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-5">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                    <fieldset class="fieldset-rating-two d-none" data-element="feedback-rating-negative">
+-                      <legend class="iscrizioni-header w-100">
+-                        <h3 class="step-title d-flex flex-column flex-lg-row flex-wrap align-items-lg-center justify-content-between drop-shadow">
+-                          <span class="d-block text-wrap" data-element="feedback-rating-question">
+-                          <span class="step">
+-                      <div class="cmp-steps-rating__body">
+-                        <div class="cmp-radio-list">
+-                          <div class="card card-teaser shadow-rating">
+-                            <div class="card-body">
+-                              <div class="form-check m-0">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-6">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-7">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-8">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-9">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                                <div class="radio-body border-bottom border-light cmp-radio-list__item">
+-                                  <input id="radio-10">
+-                                  <label class="active" data-element="feedback-rating-answer">
+-                <div class="d-none">
+-                  <div class="cmp-steps-rating">
+-                    <fieldset>
+-                      <legend class="iscrizioni-header w-100">
+-                        <h3 class="step-title d-flex flex-column flex-lg-row flex-wrap align-items-lg-center justify-content-between drop-shadow">
+-                          <span class="d-block text-wrap">
+-                          <span class="step">
++      <div class="row row-column-menu-left mt-lg-80 mt-3">
++        <div class="col-12 col-lg-3 mb-4 border-col">
++          <div class="cmp-navscroll sticky-top">
++            <nav class="navbar it-navscroll-wrapper navbar-expand-lg">
++              <div id="navbarNavProgress" class="navbar-custom">
++                <div class="menu-wrapper">
++                  <div class="link-list-wrapper">
++                    <div class="accordion">
++                      <div class="accordion-item">
++                        <span id="accordion-title-one" class="accordion-header">
++                          <button class="accordion-button pb-10 px-3">
++                            <svg class="icon icon-xs right">
++                              <use>
++                        <div class="progress">
++                          <div class="progress-bar it-navscroll-progressbar" role="progressbar">
++                        <div id="collapse-one" class="accordion-collapse collapse show" role="region">
++                          <div class="accordion-body">
++                            <ul class="link-list" data-element="page-index">
++                              <li class="nav-item">
++                                <a class="nav-link">
++                                  <span>
++                              <li class="nav-item">
++                                <a class="nav-link">
++                                  <span>
++                              <li class="nav-item">
++                                <a class="nav-link">
++                                  <span>
++                              <li class="nav-item">
++                                <a class="nav-link">
++                                  <span>
++                              <li class="nav-item">
++                                <a class="nav-link">
++                                  <span>
++                              <li class="nav-item">
++                                <a class="nav-link">
++                                  <span>
++                              <li class="nav-item">
++                                <a class="nav-link">
++                                  <span>
++                              <li class="nav-item">
++                                <a class="nav-link">
++                                  <span>
++                              <li class="nav-item">
++                                <a class="nav-link">
++                                  <span>
++        <div class="col-12 col-lg-8 offset-lg-1">
++          <div class="it-page-sections-container">
++            <section id="who-needs" class="it-page-section mb-30">
++              <h2 class="title-xxlarge mb-3">
++              <p class="text-paragraph lora mb-0">
++                <p>
++            <section id="description" class="it-page-section mb-30">
++              <h2 class="title-xxlarge mb-3">
++              <p class="text-paragraph lora mb-0">
++                <p>
++            <section id="how-to" class="it-page-section mb-30">
++              <h2 class="title-xxlarge mb-3">
++              <p class="text-paragraph lora mb-0">
++                <p>
++                <p>
++                <p>
++            <section id="needed" class="it-page-section mb-30 has-bg-grey p-3">
++              <h2 class="title-xxlarge mb-3">
++              <p class="text-paragraph lora mb-0">
++                <p>
++                <ul class="list-wrapper link-list lora">
++                  <li class="list-item">
++                    <span>
++                  <li class="list-item">
++                    <span>
++            <section id="obtain" class="it-page-section mb-30">
++              <h2 class="title-xxlarge mb-3">
++              <p class="text-paragraph lora mb-0">
++                <p>
++            <section id="costs" class="it-page-section mb-30">
++              <h2 class="title-xxlarge mb-3">
++              <p class="text-paragraph lora mb-0">
++                <p>
++              <div class="cmp-icon-link">
++                <a class="list-item icon-left d-inline-block">
++                  <span class="list-item-title-icon-wrapper">
++                    <svg class="icon icon-primary icon-sm me-1">
++                      <use>
++                    <span class="list-item">
++            <section id="service-access" class="it-page-section mb-30 has-bg-grey p-3">
++              <h2 class="title-xxlarge mb-3">
++              <p class="text-paragraph lora mb-0">
++                <p>
++              <p class="text-paragraph lora">
++              <button class="btn btn-primary mobile-full">
++                <span>
++              <p class="text-paragraph mt-4 lora">
++              <button class="btn btn-outline-primary t-primary bg-white mobile-full mobile-full">
++                <span>
++            <section id="conditions" class="it-page-section mb-30">
++              <h2 class="title-xxlarge mb-3">
++              <p class="text-paragraph lora mb-0">
++                <p>
++              <div class="cmp-icon-link">
++                <a class="list-item icon-left d-inline-block">
++                  <span class="list-item-title-icon-wrapper">
++                    <svg class="icon icon-primary icon-sm me-1">
++                      <use>
++                    <span class="list-item">
++            <section id="contacts" class="it-page-section">
++              <h2 class="mb-3">
++              <div class="row">
++                <div class="col-12 col-md-8 col-lg-6 mb-30">
++                  <div class="card-wrapper rounded h-auto pb-0">
++                    <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
++                      <div class="card-body pe-3">
++                        <span class="title-small">
++                          <a class="text-decoration-none" data-element="service-area">
++                        <p class="subtitle-small mb-0">
++                          <br>
++                          <br>
++                      <div class="avatar size-xl">
++                        <img>
++                <div class="col-12 mb-30">
++                  <span class="text-paragraph-small">
++                  <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
++                    <li>
++                      <a class="chip chip-simple" data-element="service-topic">
++                        <span class="chip-label">
++                    <li>
++                      <a class="chip chip-simple" data-element="service-topic">
++                        <span class="chip-label">
++                    <li>
++                      <a class="chip chip-simple" data-element="service-topic">
++                        <span class="chip-label">
++                    <li>
++                      <a class="chip chip-simple" data-element="service-topic">
++                        <span class="chip-label">
++                  <p class="text-paragraph-small mb-0">
++    <div class="bg-primary">
++      <div class="container">
++        <div class="row d-flex justify-content-center bg-primary">
++          <div class="col-12 col-lg-6 p-lg-0 px-4">
++            <div id="rating" class="cmp-rating pt-lg-80 pb-lg-80">
++              <div class="card shadow card-wrapper" data-element="feedback">
++                <div class="cmp-rating__card-first">
++                  <div class="card-header border-0">
++                    <h2 class="title-medium-2-semi-bold mb-0" data-element="feedback-title">
++                  <div class="card-body">
++                    <fieldset class="rating">
++                      <legend class="visually-hidden">
++                      <input id="star5a">
++                      <label class="full rating-star active" data-element="feedback-rate-5">
++                        <svg class="icon icon-sm" role="img">
++                          <path>
++                          <path>
++                        <span id="first-star" class="visually-hidden">
++                      <input id="star4a">
++                      <label class="full rating-star active" data-element="feedback-rate-4">
++                        <svg class="icon icon-sm" role="img">
++                          <path>
++                          <path>
++                        <span id="second-star" class="visually-hidden">
++                      <input id="star3a">
++                      <label class="full rating-star active" data-element="feedback-rate-3">
++                        <svg class="icon icon-sm" role="img">
++                          <path>
++                          <path>
++                        <span id="third-star" class="visually-hidden">
++                      <input id="star2a">
++                      <label class="full rating-star active" data-element="feedback-rate-2">
++                        <svg class="icon icon-sm" role="img">
++                          <path>
++                          <path>
++                        <span id="fourth-star" class="visually-hidden">
++                      <input id="star1a">
++                      <label class="full rating-star active" data-element="feedback-rate-1">
++                        <svg class="icon icon-sm" role="img">
++                          <path>
++                          <path>
++                        <span id="fifth-star" class="visually-hidden">
++                <div class="cmp-rating__card-second d-none">
++                  <div class="card-header border-0 mb-0">
++                    <h2 id="rating-feedback" class="title-medium-2-bold mb-0">
++                  <div class="form-rating d-none">
++                    <div class="cmp-steps-rating">
++                      <fieldset class="fieldset-rating-one d-none" data-element="feedback-rating-positive">
++                        <legend class="iscrizioni-header w-100">
++                          <h3 class="step-title d-flex flex-column flex-lg-row align-items-lg-center justify-content-between drop-shadow">
++                            <span class="d-block text-wrap" data-element="feedback-rating-question">
++                            <span class="step">
++                        <div class="cmp-steps-rating__body">
++                          <div class="cmp-radio-list">
++                            <div class="card card-teaser shadow-rating">
++                              <div class="card-body">
++                                <div class="form-check m-0">
++                                  <div class="radio-body border-bottom border-light cmp-radio-list__item">
++                                    <input id="radio-1">
++                                    <label class="active" data-element="feedback-rating-answer">
++                                <div class="form-check m-0">
++                                  <div class="radio-body border-bottom border-light cmp-radio-list__item">
++                                    <input id="radio-2">
++                                    <label class="active" data-element="feedback-rating-answer">
++                                <div class="form-check m-0">
++                                  <div class="radio-body border-bottom border-light cmp-radio-list__item">
++                                    <input id="radio-3">
++                                    <label class="active" data-element="feedback-rating-answer">
++                                <div class="form-check m-0">
++                                  <div class="radio-body border-bottom border-light cmp-radio-list__item">
++                                    <input id="radio-4">
++                                    <label class="active" data-element="feedback-rating-answer">
++                                <div class="form-check m-0">
++                                  <div class="radio-body border-bottom border-light cmp-radio-list__item">
++                                    <input id="radio-5">
++                                    <label class="active" data-element="feedback-rating-answer">
++                    <div class="cmp-steps-rating">
++                      <fieldset class="fieldset-rating-two d-none" data-element="feedback-rating-negative">
++                        <legend class="iscrizioni-header w-100">
++                          <h3 class="step-title d-flex flex-column flex-lg-row flex-wrap align-items-lg-center justify-content-between drop-shadow">
++                            <span class="d-block text-wrap" data-element="feedback-rating-question">
++                            <span class="step">
++                        <div class="cmp-steps-rating__body">
++                          <div class="cmp-radio-list">
++                            <div class="card card-teaser shadow-rating">
++                              <div class="card-body">
++                                <div class="form-check m-0">
++                                  <div class="radio-body border-bottom border-light cmp-radio-list__item">
++                                    <input id="radio-6">
++                                    <label class="active" data-element="feedback-rating-answer">
++                                <div class="form-check m-0">
++                                  <div class="radio-body border-bottom border-light cmp-radio-list__item">
++                                    <input id="radio-7">
++                                    <label class="active" data-element="feedback-rating-answer">
++                                <div class="form-check m-0">
++                                  <div class="radio-body border-bottom border-light cmp-radio-list__item">
++                                    <input id="radio-8">
++                                    <label class="active" data-element="feedback-rating-answer">
++                                <div class="form-check m-0">
++                                  <div class="radio-body border-bottom border-light cmp-radio-list__item">
++                                    <input id="radio-9">
++                                    <label class="active" data-element="feedback-rating-answer">
++                                <div class="form-check m-0">
++                                  <div class="radio-body border-bottom border-light cmp-radio-list__item">
++                                    <input id="radio-10">
++                                    <label class="active" data-element="feedback-rating-answer">
++                    <div class="cmp-steps-rating">
+                       <div class="cmp-steps-rating__body">
+                         <div class="form-group">
+                           <label>
+                           <input id="formGroupExampleInputWithHelp" class="form-control" data-element="feedback-input-text">
+                           <small id="formGroupExampleInputWithHelpDescription" class="form-text">
+-                <div class="d-flex flex-nowrap pt-4 w-100 justify-content-center button-shadow">
+-                  <button class="btn btn-outline-primary fw-bold me-4 btn-back">
+-                  <button class="btn btn-primary fw-bold btn-next">
+-  <div class="bg-grey-card shadow-contacts">
+-    <div class="container">
+-      <div class="row">
+-        <div class="col-12 pt-5">
+-          <div class="it-carousel-wrapper carousel-4-card splide cmp-carousel">
+-            <div class="it-header-block">
+-              <div class="it-header-block-title">
+-                <h2 class="text-center border-0 cmp-carousel__title pb-0">
+-            <div class="splide__track">
+-              <ul class="splide__list it-carousel-all">
+-                <li class="splide__slide">
+-                  <div class="card-wrapper card-space h-100 pb-4">
+-                    <div class="card card-bg single-card rounded shadow-sm">
+-                      <div class="cmp-carousel__header">
+-                        <svg class="icon icon-md">
++                    <div class="d-flex flex-nowrap pt-4 w-100 justify-content-center button-shadow">
++                      <button class="btn btn-outline-primary fw-bold me-4 btn-back">
++                      <button class="btn btn-primary fw-bold btn-next">
++                <div class="cmp-rating__card-second d-none">
++                  <div class="card-header border-0 mb-0">
++                    <h2 class="title-medium-2-bold mb-0">
++    <div class="bg-grey-card shadow-contacts">
++      <div class="container">
++        <div class="row">
++          <div class="col-12 pt-5">
++            <div class="it-carousel-wrapper carousel-4-card splide cmp-carousel">
++              <div class="it-header-block">
++                <div class="it-header-block-title">
++                  <h2 class="text-center border-0 cmp-carousel__title pb-0">
++              <div class="splide__track">
++                <ul class="splide__list it-carousel-all">
++                  <li class="splide__slide">
++                    <div class="card-wrapper card-space h-100 pb-4">
++                      <div class="card card-bg single-card rounded shadow-sm">
++                        <div class="cmp-carousel__header">
++                          <svg class="icon icon-md">
++                            <use>
++                          <span class="ms-3 cmp-carousel__header-title">
++                        <div class="card-body">
++                          <div class="link-list-wrapper">
++                            <ul class="card-body__list">
++                              <li>
++                                <a class="list-item px-0">
++                                  <span>
++                  <li class="splide__slide">
++                    <div class="card-wrapper card-space h-100 pb-4">
++                      <div class="card card-bg single-card rounded shadow-sm">
++                        <div class="cmp-carousel__header">
++                          <svg class="icon icon-md">
++                            <use>
++                          <span class="ms-3 cmp-carousel__header-title">
++                        <div class="card-body">
++                          <div class="link-list-wrapper">
++                            <ul class="card-body__list">
++                              <li>
++                                <a class="list-item px-0">
++                                  <span>
++                              <li>
++                                <a class="list-item px-0">
++                                  <span>
++                  <li class="splide__slide">
++                    <div class="card-wrapper card-space h-100 pb-4">
++                      <div class="card card-bg single-card rounded shadow-sm">
++                        <div class="cmp-carousel__header">
++                          <svg class="icon icon-md">
++                            <use>
++                          <span class="ms-3 cmp-carousel__header-title">
++                        <div class="card-body">
++                          <div class="link-list-wrapper">
++                            <ul class="card-body__list">
++                              <li>
++                                <a class="list-item px-0">
++                                  <span>
++                              <li>
++                                <a class="list-item px-0">
++                                  <span>
++                  <li class="splide__slide">
++                    <div class="card-wrapper card-space h-100 pb-4">
++                      <div class="card card-bg single-card rounded shadow-sm">
++                        <div class="cmp-carousel__header">
++                          <svg class="icon icon-md">
++                            <use>
++                          <span class="ms-3 cmp-carousel__header-title">
++                        <div class="card-body">
++                          <div class="link-list-wrapper">
++                            <ul class="card-body__list">
++                              <li>
++                                <a class="list-item px-0">
++                                  <span>
++                              <li>
++                                <a class="list-item px-0">
++                                  <span>
++                              <li>
++                                <a class="list-item px-0">
++                                  <span>
++                              <li>
++                                <a class="list-item px-0">
++                                  <span>
++                              <li>
++                                <a class="show-more px-0">
++                                  <span class="show-more d-flex align-items-center">
++                                    <svg class="icon icon-primary icon-md">
++                                      <use>
++                                <ul id="collapseExample" class="collapse">
++                                  <li>
++                                    <a class="list-item px-0">
++                                      <span>
++                                  <li>
++                                    <a class="list-item px-0">
++                                      <span>
++              <span class="hr-shadow-sm d-none d-lg-block">
++          <div class="col-12 col-lg-6 offset-lg-3 p-contacts">
++            <div class="cmp-contacts">
++              <div class="card w-100">
++                <div class="card-body">
++                  <h2 class="title-medium-2-semi-bold">
++                  <ul class="contact-list p-0">
++                    <li>
++                      <a class="list-item">
++                        <svg class="icon icon-primary icon-sm">
+                           <use>
+-                        <span class="ms-3 cmp-carousel__header-title">
+-                      <div class="card-body">
+-                        <div class="link-list-wrapper">
+-                          <ul class="card-body__list">
+-                            <li>
+-                              <a class="list-item px-0">
+-                                <span>
+-                <li class="splide__slide">
+-                  <div class="card-wrapper card-space h-100 pb-4">
+-                    <div class="card card-bg single-card rounded shadow-sm">
+-                      <div class="cmp-carousel__header">
+-                        <svg class="icon icon-md">
++                        <span>
++                    <li>
++                      <a class="list-item">
++                        <svg class="icon icon-primary icon-sm">
+                           <use>
+-                        <span class="ms-3 cmp-carousel__header-title">
+-                      <div class="card-body">
+-                        <div class="link-list-wrapper">
+-                          <ul class="card-body__list">
+-                            <li>
+-                              <a class="list-item px-0">
+-                                <span>
+-                            <li>
+-                              <a class="list-item px-0">
+-                                <span>
+-                <li class="splide__slide">
+-                  <div class="card-wrapper card-space h-100 pb-4">
+-                    <div class="card card-bg single-card rounded shadow-sm">
+-                      <div class="cmp-carousel__header">
+-                        <svg class="icon icon-md">
++                        <span>
++                    <li>
++                      <a class="list-item">
++                        <svg class="icon icon-primary icon-sm">
+                           <use>
+-                        <span class="ms-3 cmp-carousel__header-title">
+-                      <div class="card-body">
+-                        <div class="link-list-wrapper">
+-                          <ul class="card-body__list">
+-                            <li>
+-                              <a class="list-item px-0">
+-                                <span>
+-                            <li>
+-                              <a class="list-item px-0">
+-                                <span>
+-                <li class="splide__slide">
+-                  <div class="card-wrapper card-space h-100 pb-4">
+-                    <div class="card card-bg single-card rounded shadow-sm">
+-                      <div class="cmp-carousel__header">
+-                        <svg class="icon icon-md">
++                        <span>
++                    <li>
++                      <a class="list-item">
++                        <svg class="icon icon-primary icon-sm">
+                           <use>
+-                        <span class="ms-3 cmp-carousel__header-title">
+-                      <div class="card-body">
+-                        <div class="link-list-wrapper">
+-                          <ul class="card-body__list">
+-                            <li>
+-                              <a class="list-item px-0">
+-                                <span>
+-                            <li>
+-                              <a class="list-item px-0">
+-                                <span>
+-                            <li>
+-                              <a class="list-item px-0">
+-                                <span>
+-                            <li>
+-                              <a class="list-item px-0">
+-                                <span>
+-                            <li>
+-                              <a class="show-more px-0">
+-                                <span class="show-more d-flex align-items-center">
+-                                  <svg class="icon icon-primary icon-md">
+-                                    <use>
+-                              <ul id="collapseExample" class="collapse">
+-                                <li>
+-                                  <a class="list-item px-0">
+-                                    <span>
+-                                <li>
+-                                  <a class="list-item px-0">
+-                                    <span>
+-            <span class="hr-shadow-sm d-none d-lg-block">
+-        <div class="col-12 col-lg-6 offset-lg-3 p-contacts">
+-          <div class="cmp-contacts">
+-            <div class="card w-100">
+-              <div class="card-body">
+-                <h2 class="title-medium-2-semi-bold">
+-                <ul class="contact-list p-0">
+-                  <li>
+-                    <a class="list-item">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
+-                  <li>
+-                    <a class="list-item" data-element="contacts">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
+-                  <li>
+-                    <a class="list-item">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
+-                  <li>
+-                    <a class="list-item" data-element="appointment-booking">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
++                        <span>
+ <div id="search-modal" class="modal fade search-modal" role="dialog">
+   <div class="modal-dialog modal-lg" role="document">
+     <div class="modal-content perfect-scrollbar">
+@@ -802,3 +811,6 @@
+           <div class="footer-bottom">
+             <a>
+             <a>
++<link>
++<link>
++<link>

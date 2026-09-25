@@ -743,10 +743,18 @@ public function handle($user) {
 
 ### Motivi per utilizzare UserContract
 
-1. **Configurabilità**: Il modello User effettivo può cambiare in base alla configurazione.
+1. **Configurabilità**: Il modello User effettivo può cambiare in base alla configurazione (`XotData::make()->getUserClass()`).
 2. **Disaccoppiamento**: Riduce le dipendenze verso implementazioni specifiche.
 3. **Testabilità**: Facilita il testing con implementazioni mock dell'interfaccia.
 4. **Flessibilità**: Consente di estendere o cambiare l'implementazione senza impattare il codice esistente.
+
+**Anti-pattern**: `Assert::isInstanceOf($user, User::class)` (o `BaseUser::class`) accoppia il codice al leaf. Canon:
+
+```php
+Assert::isInstanceOf($user, UserContract::class);
+```
+
+`UserContract` è `Modules\Xot\Contracts\UserContract`. `getUserClass()` serve per factory/relazioni Eloquent, non per narrowing di `auth()->user()`.
 
 ### Come ottenere la classe User corretta
 

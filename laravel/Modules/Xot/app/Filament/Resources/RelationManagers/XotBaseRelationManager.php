@@ -74,7 +74,7 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
      */
     protected static function getResourceClass(): string
     {
-        if (isset(static::$resource) && '' !== static::$resource) {
+        if (isset(static::$resource) && static::$resource !== '') {
             return static::$resource;
         }
 

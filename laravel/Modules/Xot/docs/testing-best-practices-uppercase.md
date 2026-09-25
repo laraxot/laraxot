@@ -137,11 +137,7 @@ app()->instance(\Modules\Xot\Datas\XotData::class, $mock);
    - Content presence
    - Layout structure
 
-<<<<<<< HEAD
 2. **Middleware** (Raccomandato)
-=======
-2. **Middleware** (Raccomandato) 
->>>>>>> laraxot/dev
    - Authentication flow
    - Authorization checks
    - Redirect behavior
@@ -176,11 +172,7 @@ app()->instance(\Modules\Xot\Datas\XotData::class, $mock);
 - ✅ **Performance**: < 5 secondi per test suite
 - ✅ **Architecture**: Separazione rispettata
 
-<<<<<<< HEAD
 ### Gold Standard Criteria
-=======
-### Gold Standard Criteria  
->>>>>>> laraxot/dev
 - ✅ **Success Rate**: > 90% test passati
 - ✅ **Zero Warnings**: Nessun warning PHP/Pest
 - ✅ **Performance**: < 3 secondi per test suite
@@ -232,14 +224,7 @@ app()->instance(\Modules\Xot\Datas\XotData::class, $mock);
 
 ---
 
-<<<<<<< HEAD
 **Status**: ✅ Best Practices Validate
 **Enforcement**: Obbligatorio per tutti i test
 **Version**: 1.0 - Gold Standard
 **Last Update**: Dicembre 2024
-=======
-**Status**: ✅ Best Practices Validate  
-**Enforcement**: Obbligatorio per tutti i test  
-**Version**: 1.0 - Gold Standard
-**Last Update**: Dicembre 2024 
->>>>>>> laraxot/dev

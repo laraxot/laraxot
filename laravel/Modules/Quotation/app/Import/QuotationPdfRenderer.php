@@ -16,6 +16,7 @@ final class QuotationPdfRenderer
      */
     public function render(string $view, array $data): string
     {
+        self::assertViewExists($view);
         $rendered = ViewFacade::make($view, $data);
         if (! $rendered instanceof View) {
             throw new Html2PdfException('Unable to render PDF view ['.$view.'].');
@@ -26,5 +27,15 @@ final class QuotationPdfRenderer
         $html2pdf->writeHTML($html);
 
         return (string) $html2pdf->output('quotation.pdf', 'S');
+    }
+
+    /**
+     * @phpstan-assert view-string $view
+     */
+    private static function assertViewExists(string $view): void
+    {
+        if (! view()->exists($view)) {
+            throw new Html2PdfException('Unable to render PDF view ['.$view.'].');
+        }
     }
 }

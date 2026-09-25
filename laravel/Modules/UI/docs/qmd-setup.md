@@ -6,6 +6,8 @@ updated: 2026-05-11
 tags: [qmd, search, docs, performance]
 related:
   - ../../docs/wiki/concepts/llm-wiki-operational-discipline.md
+issues: []
+discussions: []
 ---
 
 # QMD Setup per Module **UI**
@@ -64,15 +66,8 @@ qmd search "form" -c ui  # Solo questo modulo
 
 - [Global QMD Config](../qmd.md) (root docs)
 - [Operational Discipline](../../docs/wiki/concepts/llm-wiki-operational-discipline.md)
-<<<<<<< HEAD
-- [On-Demand Pattern](./on-demand-pattern.md)
-=======
 - [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
-<<<<<<< HEAD
 - [On-Demand Pattern](./on-demand-pattern.md)
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 
 ---
 *Cache: ~/.cache/qmd-cache/ | Index: ~/.cache/qmd-cache/index*

@@ -145,9 +145,9 @@ class GetComponentsAction
         foreach ($comps as $comp) {
             if (
                 ! isset($comp['name'], $comp['class'], $comp['ns'])
-                || ! is_string($comp['name']) || '' === $comp['name']
-                || ! is_string($comp['class']) || '' === $comp['class']
-                || ! is_string($comp['ns']) || '' === $comp['ns']
+                || ! is_string($comp['name']) || $comp['name'] === ''
+                || ! is_string($comp['class']) || $comp['class'] === ''
+                || ! is_string($comp['ns']) || $comp['ns'] === ''
             ) {
                 return false;
             }

@@ -16,6 +16,33 @@ class ExportResource extends XotBaseResource
 {
     protected static ?string $model = Export::class;
 
-    
-
+    #[Override]
+    public function getFormSchemaOld(): array
+    {
+        return [
+            'name' => TextInput::make('name')->required()->maxLength(255),
+            'type' => Select::make('type')
+                ->required()
+                ->options([
+                    'csv' => 'CSV',
+                    'excel' => 'Excel',
+                    'pdf' => 'PDF',
+                ])
+                ->default('csv'),
+            'status' => Select::make('status')
+                ->required()
+                ->options([
+                    'pending' => 'Pending',
+                    'processing' => 'Processing',
+                    'completed' => 'Completed',
+                    'failed' => 'Failed',
+                ])
+                ->default('pending'),
+            'error_message' => Textarea::make('error_message')
+                ->maxLength(65535)
+                ->columnSpanFull(),
+            'created_at' => DateTimePicker::make('created_at')->disabled(),
+            'updated_at' => DateTimePicker::make('updated_at')->disabled(),
+        ];
+    }
 }

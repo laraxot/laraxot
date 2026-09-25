@@ -26,14 +26,19 @@ class RatingsHostStub extends AbstractRatingsHost
     /** @var MorphToMany<Rating, $this, MorphPivot, 'pivot'>|null */
     public ?MorphToMany $forcedMorph = null;
 
-    /** @var HasMany<Rating, $this>|null */
+    /**
+     * Relazione forzata dai test: `ratingMorphs()` la legge come
+     * `HasMany<MorphPivot, ...>`, `hasMany(Rating::class)`/`ratingObjectives()`
+     * come `HasMany<Rating, ...>` (es. mock Mockery nei test).
+     *
+     * @var HasMany<MorphPivot, static>|HasMany<Rating, static>|null
+     */
     public ?HasMany $forcedHasMany = null;
 
     /**
      * @template TRelatedModel of Model
      *
-     * @param class-string<TRelatedModel> $related
-     *
+     * @param  class-string<TRelatedModel>  $related
      * @return MorphToMany<TRelatedModel, $this, MorphPivot, 'pivot'>
      */
     public function morphToManyX(
@@ -87,10 +92,26 @@ class RatingsHostStub extends AbstractRatingsHost
     }
 
     /**
+     * Evita Rating::getClassName()/guessMorphPivot nei unit (backtrace fragile).
+     *
+     * @return HasMany<MorphPivot, static>
+     */
+    public function ratingMorphs(): HasMany
+    {
+        if ($this->forcedHasMany instanceof HasMany) {
+            /** @var HasMany<MorphPivot, static> $forcedHasMany */
+            $forcedHasMany = $this->forcedHasMany;
+
+            return $forcedHasMany;
+        }
+
+        return parent::ratingMorphs();
+    }
+
+    /**
      * @template TRelatedModel of Model
      *
-     * @param class-string<TRelatedModel> $related
-     *
+     * @param  class-string<TRelatedModel>  $related
      * @return HasMany<TRelatedModel, $this>
      */
     public function hasMany($related, $foreignKey = null, $localKey = null)

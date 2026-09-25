@@ -1,0 +1,127 @@
+============================================
+HTML Body Structure Comparison Summary
+============================================
+Date: 2026-04-07T16:53:44+02:00
+Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
+Local:     http://127.0.0.1:8000/it/tests/homepage
+
+STRUCTURAL SIMILARITY: 61%
+
+Raw HTML Lines:
+- Reference body: 1306
+- Local body:     815
+
+Structural Elements (unique):
+- Reference: 837
+- Local:     538
+- Common:    517
+- Reference-only: 320
+- Local-only:     21
+
+--- Reference-only elements (first 50) ---
+<a class="btn btn-primary btn-icon btn-full" href="..." data-element="personal-area-login">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="chip chip-simple" href="...">
+<a class="list-item active icon-left mb-2" href="...">
+<a class="list-item active icon-left mb-2" href="...">
+<a class="list-item active icon-left mb-2" href="...">
+<a class="list-item active icon-left mb-2" href="...">
+<a class="list-item active icon-left mb-2" href="...">
+<a class="list-item active icon-left" href="...">
+<a class="list-item active icon-left" href="...">
+<a class="list-item active ps-0" href="...">
+<a class="list-item mb-3 active ps-0" href="...">
+<a class="list-item mb-3 active ps-0" href="...">
+<a class="list-item mb-3 active ps-0" href="...">
+<a class="list-item mb-3 active ps-0" href="...">
+<a class="list-item mb-3 active ps-0" href="...">
+<a class="list-item" href="..." data-element="appointment-booking">
+<a class="list-item" href="..." data-element="contacts">
+<a class="list-item" href="...">
+<a class="list-item" href="...">
+<a class="list-item" href="...">
+<a class="read-more ps-3" href="...">
+<a class="read-more pt-0" href="...">
+<a class="read-more pt-0" href="...">
+<a class="read-more pt-0" href="...">
+<a class="read-more" href="...">
+<a class="read-more" href="...">
+<a href="..." class="btn btn-primary mt-40">
+<a href="..." class="card card-teaser card-bg-blue no-after rounded mt-0 p-3">
+<a href="..." class="card card-teaser card-bg-blue rounded mt-0 p-3">
+<a href="..." class="card card-teaser card-bg-dark rounded p-3 mt-0">
+<a href="..." class="card card-teaser card-bg-warning rounded mt-0 p-3">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+<a href="...">
+
+--- Local-only elements (first 50) ---
+<a class="btn btn-outline-light btn-icon" href="..." data-element="personal-area-login" aria-label="Accedi all'area personale">
+<a href="..." class="all-news-link">
+<body class="dc-homepage-parity">
+<button class="btn btn-outline-primary fw-bold me-4 btn-back" type="button" @click="showStep(step >
+<button class="custom-navbar-toggler d-lg-none me-3" type="button" aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione" data-bs-target="#nav4" data-bs-toggle="navbarcollapsible">
+<div class="cmp-rating__card-first" data-step="0">
+<div class="d-none" data-step="buttons">
+<div class="page-content-content" data-slug="tests.homepage" data-side="content">
+<div class="row text-center mt-4">
+<fieldset class="fieldset-rating-one d-none" data-element="feedback-rating-positive" x-show="isPositive">
+<fieldset class="fieldset-rating-two d-none" data-element="feedback-rating-negative" x-show="!isPositive">
+<fieldset class="rating" id="fieldset-rating-one">
+<form id="rating" x-show="step >
+<input type="radio" id="star1a" name="ratingA" value="1" x-model="rating">
+<input type="radio" id="star2a" name="ratingA" value="2" x-model="rating">
+<input type="radio" id="star3a" name="ratingA" value="3" x-model="rating">
+<input type="radio" id="star4a" name="ratingA" value="4" x-model="rating">
+<input type="radio" id="star5a" name="ratingA" value="5" x-model="rating">
+<label for="formGroupExampleInputWithHelp">
+<label for="radio-5" class="active" data-element="feedback-rating-answer">
+<svg class="icon icon-white">
+
+--- Common elements (first 20) ---
+<a class="chip chip-simple" href="...">
+<a class="d-lg-block navbar-brand" target="_blank" href="..." aria-label="Vai al portale {Nome della Regione} - link esterno - apertura nuova scheda" title="...">
+<a class="dropdown-item list-item" href="...">
+<a class="dropdown-item list-item" href="...">
+<a class="nav-link" href="..." data-element="all-services">
+<a class="nav-link" href="..." data-element="all-topics">
+<a class="nav-link" href="..." data-element="live">
+<a class="nav-link" href="..." data-element="management">
+<a class="nav-link" href="..." data-element="news">
+<a class="nav-link" href="...">
+<a class="nav-link" href="...">
+<a class="nav-link" href="...">
+<a class="p-1 text-white" href="..." target="_blank">
+<a class="p-1 text-white" href="..." target="_blank">
+<a class="p-1 text-white" href="..." target="_blank">
+<a class="p-1 text-white" href="..." target="_blank">
+<a class="p-1 text-white" href="..." target="_blank">
+<a class="p-1 text-white" href="..." target="_blank">
+<a class="read-more pb-3" href="...">
+<a class="visually-hidden-focusable" href="...">
+
+============================================
+Files produced:
+- reference-body.html     (1306 lines)
+- local-body.html         (815 lines)
+- reference-structure.txt (837 elements)
+- local-structure.txt     (538 elements)
+- common-elements.txt     (517 elements)
+- reference-only.txt      (320 elements)
+- local-only.txt          (21 elements)
+============================================

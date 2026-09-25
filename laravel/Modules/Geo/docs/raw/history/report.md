@@ -35,6 +35,7 @@
 ### ✅ 2. Helper Functions Implementate
 
 **File**: `Modules/Xot/helpers/Helper.php`
+**File**: `Modules/Xot/Helpers/Helper.php`
 
 **Funzioni aggiunte** (2 Dicembre 2025):
 
@@ -417,6 +418,7 @@ Moduli con errori da fixare:
 ### PHP Files (5)
 
 1. `Modules/Xot/helpers/Helper.php` - +4 funzioni helper
+1. `Modules/Xot/Helpers/Helper.php` - +4 funzioni helper
 2. `Modules/Sigma/app/Models/Traits/Helpers/SchedaHelper.php` - Null-safe guards
 3. `Modules/Sigma/app/Models/Traits/Mutators/SchedaMutator.php` - Type hints
 4. `Modules/Sigma/app/Models/Traits/Relationships/EnteMatrAnnoRelationship.php` - Template type
@@ -539,6 +541,7 @@ echo function_exists('params2ContainerItem') ? ', params2ContainerItem: OK' : ',
 
 Se una funzione è usata in 78+ luoghi, **deve** essere:
 - ✅ Definita in Xot/helpers/Helper.php
+- ✅ Definita in Xot/Helpers/Helper.php
 - ✅ Type-safe con return types espliciti
 - ✅ Documentata completamente
 - ✅ Testata con PHPStan Level 10

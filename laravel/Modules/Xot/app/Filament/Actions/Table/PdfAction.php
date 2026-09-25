@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://coderflex.com/blog/create-advanced-filters-with-filament
  */
-
-declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Actions\Table;
 
@@ -18,11 +17,12 @@ class PdfAction extends XotBaseAction
     {
         parent::setUp();
         $this->translateLabel()
-            ->tooltip('pdf')
+            ->label('')
+            ->iconButton()
+            ->color('danger')
+            ->tooltip((string) __('xot::export_pdf.tooltip'))
             ->openUrlInNewTab()
-            // ->icon('heroicon-o-cloud-arrow-down')
-            // ->icon('fas-file-excel')
-            ->icon('heroicon-o-document-arrow-down')
+            ->icon('xot-files.pdf')
             ->action(fn (Model $record) => app(PdfByModelAction::class)->execute(model: $record));
     }
 }

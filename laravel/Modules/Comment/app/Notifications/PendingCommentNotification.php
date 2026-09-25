@@ -36,13 +36,18 @@ class PendingCommentNotification extends Notification implements ShouldQueue
 
         $config = CommentConfigData::make();
 
+        $view = 'comment::mail.pending-comment-notification';
+        if (! view()->exists($view)) {
+            throw new \LogicException('The pending comment mail view is not registered.');
+        }
+
         return (new MailMessage)
             ->from(
                 $config->notificationMailFromAddress(),
                 $config->notificationMailFromName(),
             )
             ->subject((string) __('comment::notifications.pending_comment_mail_subject'))
-            ->markdown('comment::mail.pending-comment-notification', [
+            ->markdown($view, [
                 'comment' => $this->comment,
                 'topLevelComment' => $this->comment->topLevel(),
             ]);
@@ -52,4 +57,5 @@ class PendingCommentNotification extends Notification implements ShouldQueue
     {
         static::$sendTo = $sendTo;
     }
+
 }

@@ -114,14 +114,6 @@ Sono stati identificati e risolti conflitti Git in diversi file del progetto <no
 - Risolto conflitto nella gestione del campo postal_code
 
 **Modifiche Applicate**:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-```
-
-=======
->>>>>>> 7f6cf6be (.)
->>>>>>> laraxot/dev
 ```php
 // VERSIONE CORRETTA
 $res=Locality::query()
@@ -236,13 +228,6 @@ php artisan lang:check
 
 ### Modulo Xot
 - [Git Conflicts Resolution](laravel/modules/xot/project_docs/git-conflicts-resolution-2025-01-06.md)
-- [Conflict Resolution](laravel/Modules/Geo/project_docs/conflict-resolution.md)
-
-### Modulo User
-- [Theme Translation Conflicts](laravel/Modules/User/project_docs/theme-translation-conflicts-resolution.md)
-
-### Modulo Xot
-- [Git Conflicts Resolution](laravel/Modules/Xot/project_docs/git-conflicts-resolution-2025-01-06.md)
 
 ## Best Practices Applicate
 
@@ -297,8 +282,6 @@ php artisan lang:check
 ## Collegamenti Correlati
 
 ### Documentazione Moduli
-- [Geo Conflict Resolution](laravel/Modules/Geo/project_docs/conflict-resolution.md)
-- [User Theme Conflicts](laravel/Modules/User/project_docs/theme-translation-conflicts-resolution.md)
 - [Geo Conflict Resolution](laravel/modules/geo/project_docs/conflict-resolution.md)
 - [User Theme Conflicts](laravel/modules/user/project_docs/theme-translation-conflicts-resolution.md)
 
@@ -309,14 +292,6 @@ php artisan lang:check
 
 ---
 
-**Ultimo aggiornamento**: 2025-01-06
+**
 **Autore**: Sistema di correzione automatica
-<<<<<<< HEAD
 **Stato**: ✅ Completato
-=======
-<<<<<<< HEAD
-**Stato**: ✅ Completato
-=======
-**Stato**: ✅ Completato
->>>>>>> 7f6cf6be (.)
->>>>>>> laraxot/dev

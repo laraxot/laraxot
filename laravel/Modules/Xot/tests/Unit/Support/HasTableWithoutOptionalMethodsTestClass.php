@@ -4,7 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Tests\Unit\Support;
 
+use Filament\Schemas\Schema;
+use Filament\Support\Contracts\TranslatableContentDriver;
+use Filament\Tables\Columns\Column;
+use Filament\Tables\Columns\ColumnGroup;
+use Filament\Tables\Columns\Layout\Component;
+use Filament\Tables\Filters\BaseFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Mockery\MockInterface;
 use Modules\Xot\Filament\Traits\HasXotTable;
 
@@ -15,7 +23,7 @@ class HasTableWithoutOptionalMethodsTestClass
 {
     use HasXotTable;
 
-    public function getLayoutView(): mixed
+    public function getLayoutView(): object
     {
         $mock = \Mockery::mock();
         $mock->allows(['getTableColumns' => []]);
@@ -25,7 +33,7 @@ class HasTableWithoutOptionalMethodsTestClass
     }
 
     #[\Override]
-    /** @return array<int, \Filament\Tables\Columns\Column|\Filament\Tables\Columns\ColumnGroup|\Filament\Tables\Columns\Layout\Component> */
+    /** @return array<int, Column|ColumnGroup|Component> */
     public function getTableColumns(): array
     {
         return [];
@@ -62,13 +70,13 @@ class HasTableWithoutOptionalMethodsTestClass
         return null;
     }
 
-    /** @return array<string|int, \Filament\Tables\Filters\BaseFilter> */
+    /** @return array<string|int, BaseFilter> */
     public function getTableFilters(): array
     {
         return [];
     }
 
-    public function getTableFiltersForm(): mixed
+    public function getTableFiltersForm(): ?Schema
     {
         return null;
     }
@@ -95,7 +103,7 @@ class HasTableWithoutOptionalMethodsTestClass
         return [];
     }
 
-    public function getTableColumnToggleForm(): mixed
+    public function getTableColumnToggleForm(): ?Schema
     {
         return null;
     }
@@ -106,12 +114,15 @@ class HasTableWithoutOptionalMethodsTestClass
         return [];
     }
 
-    public function getTableRecord(): mixed
+    /**
+     * @return Model|array<string, mixed>|null
+     */
+    public function getTableRecord(): Model|array|null
     {
         return null;
     }
 
-    public function getTableRecordKey(): mixed
+    public function getTableRecordKey(): ?string
     {
         return null;
     }
@@ -138,27 +149,42 @@ class HasTableWithoutOptionalMethodsTestClass
         return [];
     }
 
-    public function getTableQueryForExport(): mixed
+    /**
+     * @return Builder<Model>|null
+     */
+    public function getTableQueryForExport(): ?Builder
     {
         return null;
     }
 
-    public function getFilteredTableQuery(): mixed
+    /**
+     * @return Builder<Model>|null
+     */
+    public function getFilteredTableQuery(): ?Builder
     {
         return null;
     }
 
-    public function getFilteredSortedTableQuery(): mixed
+    /**
+     * @return Builder<Model>|null
+     */
+    public function getFilteredSortedTableQuery(): ?Builder
     {
         return null;
     }
 
-    public function getAllTableSummaryQuery(): mixed
+    /**
+     * @return Builder<Model>|null
+     */
+    public function getAllTableSummaryQuery(): ?Builder
     {
         return null;
     }
 
-    public function getPageTableSummaryQuery(): mixed
+    /**
+     * @return Builder<Model>|null
+     */
+    public function getPageTableSummaryQuery(): ?Builder
     {
         return null;
     }
@@ -168,17 +194,17 @@ class HasTableWithoutOptionalMethodsTestClass
         return null;
     }
 
-    public function getMountedTableActionForm(): mixed
+    public function getMountedTableActionForm(): ?Schema
     {
         return null;
     }
 
-    public function getMountedTableActionRecord(): mixed
+    public function getMountedTableActionRecord(): ?Model
     {
         return null;
     }
 
-    public function getMountedTableActionRecordKey(): mixed
+    public function getMountedTableActionRecordKey(): ?string
     {
         return null;
     }
@@ -188,7 +214,7 @@ class HasTableWithoutOptionalMethodsTestClass
         return null;
     }
 
-    public function getMountedTableBulkActionForm(): mixed
+    public function getMountedTableBulkActionForm(): ?Schema
     {
         return null;
     }
@@ -234,7 +260,7 @@ class HasTableWithoutOptionalMethodsTestClass
 
     public function mountTableBulkAction(): void {}
 
-    public function mountedTableActionRecord(): mixed
+    public function mountedTableActionRecord(): ?Model
     {
         return null;
     }
@@ -254,7 +280,7 @@ class HasTableWithoutOptionalMethodsTestClass
         return '';
     }
 
-    public function makeFilamentTranslatableContentDriver(): mixed
+    public function makeFilamentTranslatableContentDriver(): ?TranslatableContentDriver
     {
         return null;
     }

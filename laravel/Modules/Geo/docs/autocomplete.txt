@@ -1,0 +1,7 @@
+---
+module: theme
+topic: autocomplete
+canonical: ../../../Themes/docs/shared-components/autocomplete.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/autocomplete.md

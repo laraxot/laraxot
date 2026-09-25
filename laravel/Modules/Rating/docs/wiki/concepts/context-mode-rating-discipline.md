@@ -16,10 +16,41 @@ updated: 2026-05-12
 laravel/Modules/Rating/docs/wiki/
 ├── index.md                         # ≤30 righe
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+├── rules/index.md                   # ≤20 righe
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
 ├── rules/index.md                   # ≤20 righe
 =======
 ├── rules/INDEX.md                   # ≤20 righe
 >>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+├── rules/INDEX.md                   # ≤20 righe
+>>>>>>> laraxot/dev
+>>>>>>> fd7a600 (.)
+=======
+>>>>>>> laraxot/dev
+=======
+├── rules/INDEX.md                   # ≤20 righe
+>>>>>>> e8cf105 (Check & fix styling)
+=======
+├── rules/INDEX.md                   # ≤20 righe
+>>>>>>> 77b9106 (.)
+=======
+├── rules/INDEX.md                   # ≤20 righe
+>>>>>>> c91c8c3 (.)
+=======
+├── rules/INDEX.md                   # ≤20 righe
+>>>>>>> 2025498 (.)
 └── concepts/
     └── filament-resource-zen-pattern.md  # ≤200 righe
 ```

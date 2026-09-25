@@ -1,32 +1,3 @@
----
-title: "UI Module Icon System"
-type: concept
-tags: [icon, system]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "icon-system ui module icon system"
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-=======
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-related:
----
-
 # UI Module Icon System
 
 ## How It Works
@@ -111,34 +82,7 @@ Tables\Columns\IconColumn::make('status')
 ## Cross-Module Icons
 Each module registers its own SVG icons:
 - `Modules/User/resources/svg/` → `user-{name}`
-<<<<<<< HEAD
 - `Modules/TechPlanner/resources/svg/` → `techplanner-{name}`
-- `resources/svg/` → `{name}`
-=======
-<<<<<<< HEAD
-- `Modules/TechPlanner/resources/svg/` → `techplanner-{name}`
-<<<<<<< HEAD
-- `resources/svg/` → `{name}`
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-- `Modules/TechPlanner/resources/svg/` → `techplanner-{name}`
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-- `resources/svg/` → `{name}`
-=======
-- `Modules/TechPlanner/resources/svg/` → `techplanner-{name}`
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 - etc.
 
 The `ui-` prefix is special: contains the global design system icons shared across all modules.

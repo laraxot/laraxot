@@ -1,37 +1,3 @@
----
-title: "Server-Side Chart Generation Actions"
-type: concept
-tags: [server, side, actions]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "server-side-actions server-side chart generation actions"
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-=======
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-related:
-  - "./chartjs-datalabels-multiple-labels-complete-guide.md"
-  - "./chartjs-plugin-datalabels-filament5.md"
-  - "./export-strategy.md"
-  - "./filament-chart-js-guide.md"
-  - "./shared-hosting-strategy.md"
----
-
 # Server-Side Chart Generation Actions
 
 > **Purpose**: Generate chart images (PNG/SVG) in background jobs (Queueable Actions) for email attachments or PDF reports.

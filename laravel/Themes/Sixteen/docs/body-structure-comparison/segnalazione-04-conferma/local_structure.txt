@@ -1,0 +1,225 @@
+<div class="skiplink">
+  <a class="visually-hidden-focusable">
+  <a class="visually-hidden-focusable">
+<header class="it-header-wrapper">
+  <div class="it-header-slim-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="it-header-slim-wrapper-content">
+            <a class="d-lg-block navbar-brand">
+            <div class="it-header-slim-right-zone" role="navigation">
+              <div class="nav-item dropdown">
+                <button class="nav-link dropdown-toggle">
+                  <span class="visually-hidden">
+                  <span>
+                  <svg class="icon">
+                    <use>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="link-list-wrapper">
+                        <ul class="link-list">
+                          <li>
+                            <a class="dropdown-item list-item">
+                              <span>
+                                <span class="visually-hidden">
+                          <li>
+                            <a class="dropdown-item list-item">
+                              <span>
+              <a class="btn btn-primary btn-icon btn-full" data-element="personal-area-login">
+                <span class="rounded-icon">
+                  <svg class="icon icon-primary">
+                    <use>
+                <span class="d-none d-lg-block">
+  <div class="it-nav-wrapper">
+    <div class="it-header-center-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="it-header-center-content-wrapper">
+              <div class="it-brand-wrapper">
+                <a>
+                  <svg class="icon">
+                    <image>
+                  <div class="it-brand-text">
+                    <div class="it-brand-title">
+                    <div class="it-brand-tagline d-none d-md-block">
+              <div class="it-right-zone">
+                <div class="it-socials d-none d-lg-flex">
+                  <span>
+                  <ul>
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                    <li>
+                      <a>
+                        <svg class="icon icon-sm icon-white align-top">
+                          <use>
+                        <span class="visually-hidden">
+                <div class="it-search-wrapper">
+                  <span class="d-none d-md-block">
+                  <button class="search-link rounded-icon">
+                    <svg class="icon">
+                      <use>
+    <div id="header-nav-wrapper" class="it-header-navbar-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="navbar navbar-expand-lg has-megamenu">
+              <button class="custom-navbar-toggler">
+                <svg class="icon">
+                  <use>
+              <div id="nav4" class="navbar-collapsable">
+                <div class="overlay">
+                <div class="close-div">
+                  <button class="btn close-menu">
+                    <span class="visually-hidden">
+                    <svg class="icon">
+                      <use>
+                <div class="menu-wrapper">
+                  <a class="logo-hamburger">
+                    <svg class="icon">
+                      <use>
+                    <div class="it-brand-text">
+                      <div class="it-brand-title">
+                  <nav>
+                    <ul class="navbar-nav" data-element="main-navigation">
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="management">
+                          <span>
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="news">
+                          <span>
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="all-services">
+                          <span>
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="live">
+                          <span>
+                  <nav>
+                    <ul class="navbar-nav navbar-secondary">
+                      <li class="nav-item">
+                        <a class="nav-link">
+                      <li class="nav-item">
+                        <a class="nav-link">
+                      <li class="nav-item">
+                        <a class="nav-link">
+                      <li class="nav-item">
+                        <a class="nav-link" data-element="all-topics">
+                          <span>
+                            <svg class="icon icon-sm">
+                              <use>
+                  <div class="it-socials">
+                    <span>
+                    <ul>
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+                      <li>
+                        <a>
+                          <svg class="icon icon-sm icon-white align-top">
+                            <use>
+                          <span class="visually-hidden">
+<main>
+  <div class="tests-view-wrapper">
+    <section class="stepper-flow-section py-8">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold text-gray-900" data-element="stepper-title">
+          <p class="mt-2 text-gray-600" data-element="stepper-description">
+        <div class="it-stepper" role="group">
+          <div class="stepper-header" role="tablist">
+            <ul class="stepper-header-group">
+              <li class="stepper-step" role="tab">
+                <button class="stepper-number">
+                  <span class="step-dot">
+                    <span class="sr-only">
+                    <svg class="icon icon-sm">
+                      <use>
+                    <span>
+                  <span class="step-label">
+              <li class="stepper-step" role="tab">
+                <button class="stepper-number">
+                  <span class="step-dot">
+                    <span class="sr-only">
+                    <svg class="icon icon-sm">
+                      <use>
+                    <span>
+                  <span class="step-label">
+              <li class="stepper-step" role="tab">
+                <button class="stepper-number">
+                  <span class="step-dot">
+                    <span class="sr-only">
+                    <svg class="icon icon-sm">
+                      <use>
+                    <span>
+                  <span class="step-label">
+              <li class="stepper-step" role="tab">
+                <button class="stepper-number">
+                  <span class="step-dot">
+                    <span class="sr-only">
+                    <svg class="icon icon-sm">
+                      <use>
+                    <span>
+                  <span class="step-label">
+            <div class="stepper-progress" role="progressbar">
+              <div class="stepper-progress-bar">
+          <div class="stepper-content">
+          <nav class="stepper-nav">
+            <button class="btn btn-outline-primary">
+              <svg class="icon icon-primary icon-sm">
+                <use>
+              <span>
+            <button class="btn btn-primary ms-auto">
+              <span>
+              <svg class="icon icon-white icon-sm">
+                <use>
+            <button class="btn btn-success ms-auto">
+              <span>
+              <svg class="icon icon-white icon-sm">
+                <use>

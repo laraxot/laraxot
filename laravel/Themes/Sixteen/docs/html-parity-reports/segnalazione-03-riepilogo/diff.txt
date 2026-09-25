@@ -1,0 +1,352 @@
+--- URL1: file:///tmp/batch-fix/ref_segnalazione-03-riepilogo.html
++++ URL2: file:///tmp/batch-fix/local_segnalazione-03-riepilogo.html
+@@ -114,7 +114,7 @@
+                         <a class="nav-link" data-element="news">
+                           <span>
+                       <li class="nav-item">
+-                        <a class="nav-link active" data-element="all-services">
++                        <a class="nav-link" data-element="all-services">
+                           <span>
+                       <li class="nav-item">
+                         <a class="nav-link" data-element="live">
+@@ -166,166 +166,173 @@
+                             <use>
+                           <span class="visually-hidden">
+ <main>
+-  <div id="main-container" class="container">
+-    <div class="row justify-content-center">
+-      <div class="col-12 col-lg-10">
+-        <div class="cmp-breadcrumbs" role="navigation">
+-          <nav class="breadcrumb-container">
+-            <ol class="breadcrumb p-0" data-element="breadcrumb">
+-              <li class="breadcrumb-item">
+-                <a>
+-                <span class="separator">
+-              <li class="breadcrumb-item">
+-                <a>
+-                <span class="separator">
+-              <li class="breadcrumb-item active">
+-        <div class="cmp-heading pb-3 pb-lg-4">
+-          <h1 class="title-xxxlarge">
+-      <div class="col-12">
+-        <div class="steppers">
+-          <div class="steppers-header">
+-            <ul>
+-              <li class="confirmed">
+-                <svg class="icon steppers-success">
+-                  <use>
+-                <span class="visually-hidden">
+-              <li class="confirmed">
+-                <svg class="icon steppers-success">
+-                  <use>
+-                <span class="visually-hidden">
+-              <li class="active">
+-                <span class="visually-hidden">
+-            <span class="steppers-index">
+-    <div class="row justify-content-center">
+-      <div class="col-12 col-lg-8">
+-        <div class="callout callout-highlight ps-3 warning">
+-          <div class="callout-title mb-20 d-flex align-items-center">
+-            <svg class="icon icon-sm">
+-              <use>
+-            <span>
+-          <p class="titillium text-paragraph">
+-            <span class="d-lg-block">
+-        <h2 class="title-xxlarge mb-4 mt-40">
+-        <div class="cmp-card mb-4">
+-          <div class="card has-bkg-grey shadow-sm mb-0">
+-            <div class="card-header border-0 p-0 mb-lg-20 m-0">
+-              <div class="d-flex">
+-                <h3 class="subtitle-large mb-4">
+-            <div class="card-body p-0">
+-              <div class="cmp-info-summary bg-white p-3 p-lg-4">
+-                <div class="card">
+-                  <div class="card-header border-bottom border-light p-0 mb-0 pb-2 d-flex justify-content-end">
+-                    <a class="text-decoration-none">
+-                      <span class="text-button-sm-semi t-primary">
+-                  <div class="card-body p-0">
+-                    <div class="single-line-info border-light">
+-                      <div class="text-paragraph-small">
+-                      <div class="border-light">
+-                        <p class="data-text">
+-                    <div class="single-line-info border-light">
+-                      <div class="text-paragraph-small">
+-                      <div class="border-light">
+-                        <p class="data-text">
+-                    <div class="single-line-info border-light">
+-                      <div class="text-paragraph-small">
+-                      <div class="border-light">
+-                        <p class="data-text">
+-                    <div class="single-line-info border-light">
+-                      <div class="text-paragraph-small">
+-                      <div class="border-light">
+-                        <p class="data-text">
+-                    <div class="single-line-info border-light">
+-                      <div class="text-paragraph-small">
+-                      <div class="border-light">
+-                        <p class="data-text">
+-                  <div class="card-footer p-0">
+-        <h2 class="title-xxlarge mb-4 mt-40">
+-        <div class="cmp-card mb-4">
+-          <div class="card has-bkg-grey shadow-sm mb-0">
+-            <div class="card-header border-0 p-0 mb-lg-20 m-0">
+-              <div class="d-flex">
+-                <h3 class="subtitle-large mb-4">
+-            <div class="card-body p-0">
+-              <div class="cmp-info-summary bg-white mb-4 mb-lg-30 p-3 p-lg-4">
+-                <div class="card">
+-                  <div class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-content-end">
+-                    <h4 class="title-large-semi-bold mb-3">
+-                  <div class="card-body p-0">
+-                    <div class="single-line-info border-light">
+-                      <div class="text-paragraph-small">
+-                      <div class="border-light">
+-                        <p class="data-text">
+-                  <div class="card-footer p-0 d-none">
+-              <div class="cmp-info-summary bg-white p-3 p-lg-4">
+-                <div class="card">
+-                  <div class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-content-end">
+-                    <h4 class="title-large-semi-bold mb-3">
+-                  <div class="card-body p-0">
+-                    <div class="single-line-info border-light">
+-                      <div class="text-paragraph-small">
+-                      <div class="border-light">
+-                        <p class="data-text">
+-                    <div class="single-line-info border-light">
+-                      <div class="text-paragraph-small">
+-                      <div class="border-light">
+-                        <p class="data-text">
+-                  <div class="card-footer p-0 d-none">
+-        <div class="cmp-nav-steps">
+-          <nav class="steppers-nav">
+-            <button class="btn btn-sm steppers-btn-prev p-0">
+-              <svg class="icon icon-primary icon-sm">
+-                <use>
+-              <span class="text-button-sm t-primary">
+-            <button class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-none d-lg-block saveBtn">
+-              <span class="text-button-sm t-primary">
+-            <button class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-block d-lg-none saveBtn center">
+-              <span class="text-button-sm t-primary">
+-            <button class="btn btn-primary btn-sm steppers-btn-confirm send">
+-              <span class="text-button-sm">
+-          <div id="alert-message" class="alert alert-success cmp-disclaimer rounded d-none" role="alert">
+-            <span class="d-inline-block text-uppercase cmp-disclaimer__message">
+-  <div class="bg-grey-card shadow-contacts">
+-    <div class="container">
+-      <div class="row">
+-        <div class="col-12 col-lg-6 offset-lg-3 p-contacts">
+-          <div class="cmp-contacts">
+-            <div class="card w-100">
+-              <div class="card-body">
+-                <h2 class="title-medium-2-semi-bold">
+-                <ul class="contact-list p-0">
+-                  <li>
+-                    <a class="list-item">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
+-                  <li>
+-                    <a class="list-item" data-element="contacts">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
+-                  <li>
+-                    <a class="list-item">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
+-                  <li>
+-                    <a class="list-item" data-element="appointment-booking">
+-                      <svg class="icon icon-primary icon-sm">
+-                        <use>
+-                      <span>
+-  <div class="cmp-modal">
+-    <div id="modal-terms" class="modal fade" role="dialog">
+-      <div class="modal-dialog modal-dialog-centered small" role="document">
+-        <div class="modal-content modal-dimensions">
+-          <div class="cmp-modal__header modal-header pb-0">
+-            <button class="btn-close">
+-            <h2 id="modal-terms-modal-title" class="cmp-modal__header-title title-mini">
+-            <p class="cmp-modal__header-info header-font">
+-            <a class="cmp-modal__header-link text-success underline mt-1">
+-          <div class="modal-body">
+-          <div class="modal-footer pb-70 pt-0">
+-            <button class="btn btn-primary w-100 mx-0 fw-bold mb-4">
+-            <button class="btn btn-outline-primary w-100 mx-0">
++  <div class="tests-view-wrapper">
++    <div class="skiplink">
++      <a class="visually-hidden-focusable">
++      <a class="visually-hidden-focusable">
++    <div id="main-container" class="container">
++      <div class="row justify-content-center">
++        <div class="col-12 col-lg-10">
++          <div class="cmp-breadcrumbs" role="navigation">
++            <nav class="breadcrumb-container">
++              <ol class="breadcrumb p-0" data-element="breadcrumb">
++                <li class="breadcrumb-item">
++                  <a>
++                  <span class="separator">
++                <li class="breadcrumb-item">
++                  <a>
++                  <span class="separator">
++                <li class="breadcrumb-item active">
++          <div class="cmp-heading pb-3 pb-lg-4">
++            <h1 class="title-xxxlarge">
++        <div class="col-12">
++          <div class="steppers">
++            <div class="steppers-header">
++              <ul>
++                <li class="confirmed">
++                  <svg class="icon steppers-success">
++                    <use>
++                  <span class="visually-hidden">
++                <li class="confirmed">
++                  <svg class="icon steppers-success">
++                    <use>
++                  <span class="visually-hidden">
++                <li class="active">
++                  <span class="visually-hidden">
++              <span class="steppers-index">
++      <div class="row justify-content-center">
++        <div class="col-12 col-lg-8">
++          <div class="steppers-content">
++            <div class="it-page-sections-container">
++              <section class="it-page-section">
++                <div class="callout callout-highlight ps-3 warning">
++                  <div class="callout-title mb-20 d-flex align-items-center">
++                    <svg class="icon icon-sm">
++                      <use>
++                    <span>
++                  <p class="titillium text-paragraph">
++                    <span class="d-lg-block">
++                <h2 class="title-xxlarge mb-4 mt-40">
++                <div class="cmp-card mb-4">
++                  <div class="card has-bkg-grey shadow-sm mb-0">
++                    <div class="card-header border-0 p-0 mb-lg-20 m-0">
++                      <div class="d-flex">
++                        <h3 class="subtitle-large mb-4">
++                    <div class="card-body p-0">
++                      <div class="cmp-info-summary bg-white p-3 p-lg-4">
++                        <div class="card">
++                          <div class="card-header border-bottom border-light p-0 mb-0 pb-2 d-flex justify-content-end">
++                            <a class="text-decoration-none">
++                              <span class="text-button-sm-semi t-primary">
++                          <div class="card-body p-0">
++                            <div class="single-line-info border-light">
++                              <div class="text-paragraph-small">
++                              <div class="border-light">
++                                <p class="data-text">
++                            <div class="single-line-info border-light">
++                              <div class="text-paragraph-small">
++                              <div class="border-light">
++                                <p class="data-text">
++                            <div class="single-line-info border-light">
++                              <div class="text-paragraph-small">
++                              <div class="border-light">
++                                <p class="data-text">
++                            <div class="single-line-info border-light">
++                              <div class="text-paragraph-small">
++                              <div class="border-light">
++                                <p class="data-text">
++                            <div class="single-line-info border-light">
++                              <div class="text-paragraph-small">
++                              <div class="border-light">
++                                <p class="data-text">
++                          <div class="card-footer p-0">
++                <h2 class="title-xxlarge mb-4 mt-40">
++                <div class="cmp-card mb-4">
++                  <div class="card has-bkg-grey shadow-sm mb-0">
++                    <div class="card-header border-0 p-0 mb-lg-20 m-0">
++                      <div class="d-flex">
++                        <h3 class="subtitle-large mb-4">
++                    <div class="card-body p-0">
++                      <div class="cmp-info-summary bg-white mb-4 mb-lg-30 p-3 p-lg-4">
++                        <div class="card">
++                          <div class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-content-end">
++                            <h4 class="title-large-semi-bold mb-3">
++                          <div class="card-body p-0">
++                            <div class="single-line-info border-light">
++                              <div class="text-paragraph-small">
++                              <div class="border-light">
++                                <p class="data-text">
++                          <div class="card-footer p-0 d-none">
++                      <div class="cmp-info-summary bg-white p-3 p-lg-4">
++                        <div class="card">
++                          <div class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-content-end">
++                            <h4 class="title-large-semi-bold mb-3">
++                          <div class="card-body p-0">
++                            <div class="single-line-info border-light">
++                              <div class="text-paragraph-small">
++                              <div class="border-light">
++                                <p class="data-text">
++                            <div class="single-line-info border-light">
++                              <div class="text-paragraph-small">
++                              <div class="border-light">
++                                <p class="data-text">
++                          <div class="card-footer p-0 d-none">
++            <div class="cmp-nav-steps">
++              <nav class="steppers-nav">
++                <button class="btn btn-sm steppers-btn-prev p-0">
++                  <svg class="icon icon-primary icon-sm">
++                    <use>
++                  <span class="text-button-sm t-primary">
++                <button class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-none d-lg-block saveBtn">
++                  <span class="text-button-sm t-primary">
++                <button class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-block d-lg-none saveBtn center">
++                  <span class="text-button-sm t-primary">
++                <button class="btn btn-primary btn-sm steppers-btn-confirm send">
++                  <span class="text-button-sm">
++              <div id="alert-message" class="alert alert-success cmp-disclaimer rounded d-none" role="alert">
++                <span class="d-inline-block text-uppercase cmp-disclaimer__message">
++    <div class="bg-grey-card shadow-contacts">
++      <div class="container">
++        <div class="row">
++          <div class="col-12 col-lg-6 offset-lg-3 p-contacts">
++            <div class="cmp-contacts">
++              <div class="card w-100">
++                <div class="card-body">
++                  <h2 class="title-medium-2-semi-bold">
++                  <ul class="contact-list p-0">
++                    <li>
++                      <a class="list-item">
++                        <svg class="icon icon-primary icon-sm">
++                          <use>
++                        <span>
++                    <li>
++                      <a class="list-item" data-element="contacts">
++                        <svg class="icon icon-primary icon-sm">
++                          <use>
++                        <span>
++                    <li>
++                      <a class="list-item">
++                        <svg class="icon icon-primary icon-sm">
++                          <use>
++                        <span>
++                    <li>
++                      <a class="list-item" data-element="appointment-booking">
++                        <svg class="icon icon-primary icon-sm">
++                          <use>
++                        <span>
++    <div class="cmp-modal">
++      <div id="modal-terms" class="modal fade" role="dialog">
++        <div class="modal-dialog modal-dialog-centered small" role="document">
++          <div class="modal-content modal-dimensions">
++            <div class="cmp-modal__header modal-header pb-0">
++              <button class="btn-close">
++              <h2 id="modal-terms-modal-title" class="cmp-modal__header-title title-mini">
++              <p class="cmp-modal__header-info header-font">
++              <a class="cmp-modal__header-link text-success underline mt-1">
++            <div class="modal-body">
++            <div class="modal-footer pb-70 pt-0">
++              <button class="btn btn-primary w-100 mx-0 fw-bold mb-4">
++              <button class="btn btn-outline-primary w-100 mx-0">
+ <div id="search-modal" class="modal fade search-modal" role="dialog">
+   <div class="modal-dialog modal-lg" role="document">
+     <div class="modal-content perfect-scrollbar">
+@@ -521,3 +528,6 @@
+           <div class="footer-bottom">
+             <a>
+             <a>
++<link>
++<link>
++<link>

@@ -18,19 +18,6 @@ tags: [structure, architecture, module]
 │   ├── concepts/                 # Topic/theme pages
 │   ├── entities/                 # Organization/person pages
 │   ├── rules/                    # ⚠️ 151+ regole progettuali
-<<<<<<< HEAD
-│   │   ├── 00-index.md          # Indice regole
-│   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
-│   │   └── *.md                 # Regole specifiche modulo
-│   ├── skills/                   # Skill progettuali
-│   │   ├── index.md
-│   │   └── *.md
-│   ├── commands/                 # Comandi progettuali
-│   │   ├── index.md
-│   │   └── *.md
-│   ├── memories/                 # Memorie progettuali
-│   │   ├── index.md
-=======
 │   │   ├── 00-INDEX.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -42,30 +29,24 @@ tags: [structure, architecture, module]
 │   │   └── *.md
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── INDEX.md
->>>>>>> laraxot/dev
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
 ├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
-<<<<<<< HEAD
-<<<<<<<< HEAD:docs/project-structure.md
 ├── architecture.md               # (opzionale) Architettura modulo
-========
-=======
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-├── architecture.md               # (opzionale) Architettura modulo
-=======
-├── ARCHITECTURE.md               # (opzionale) Architettura modulo
->>>>>>> laraxot/dev
-<<<<<<< HEAD
->>>>>>>> laraxot/dev:docs/PROJECT-STRUCTURE.md
-=======
->>>>>>> laraxot/dev
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
+
+> Nota (verificata 2026-09-22 via `ls`/`git ls-tree` sul filesystem reale, non per ipotesi):
+> `docs/architecture.md` (minuscolo) è il file realmente presente in questa cartella — non
+> esiste un `ARCHITECTURE.md` sotto `docs/`. Un `ARCHITECTURE.md` esiste invece alla root del
+> modulo (un livello sopra), dove è oggetto di una hygiene separata e in corso — vedi
+> `root-files-hygiene.md`; non va confuso con questo file. Altri file elencati qui hanno
+> tuttora varianti case-duplicate non deduplicate (`index.md`/`INDEX.md`,
+> `on-demand-pattern.md`/`ON-DEMAND-PATTERN.md`, `qmd-setup.md`/`QMD-SETUP.md`) — vedi
+> `case-sensitivity-rules.md`.
 
 ## File Chiave
 
@@ -103,7 +84,7 @@ related:
 
 ### Link Rules
 
-- **Interno modulo**: `[[concepts/page]]` o `link`
+- **Interno modulo**: `[[concepts/page]]` o `[link](./concepts/page.md)`
 - **Modulo altro**: `[[../../OtherModule/docs/wiki/concepts/page]]`
 - **Project wiki**: `[Global rule](../../docs/wiki/rules/rule.md)`
 
@@ -135,11 +116,7 @@ graph TD
 mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,troubleshooting}
 
 # 2. Crea INDEX files (già creati)
-<<<<<<< HEAD
-cp docs/wiki/rules/index.md docs/wiki/rules/
-=======
 cp docs/wiki/rules/INDEX.md docs/wiki/rules/
->>>>>>> laraxot/dev
 # ... etc
 
 # 3. Aggiungi a QMD collection (opzionale, già incluso global)
@@ -152,115 +129,3 @@ git commit -m "docs: add wiki structure for Rating"
 
 ---
 *Pattern: On-Demand | Source: docs/wiki/*
-<<<<<<< HEAD
-
-
----
-
-## Contenuto assorbito da `PROJECT-STRUCTURE.md`
-
-# Project Structure — Module **Rating**
-
-## Directory Structure
-
-\`\`\`
-./laravel/Modules/Rating/docs/
-├── wiki/                          # Knowledge base locale (LLM Wiki)
-│   ├── index.md                  # Master catalog
-│   ├── log.md                    # Activity log
-│   ├── concepts/                 # Topic/theme pages
-│   ├── entities/                 # Organization/person pages
-│   ├── rules/                    # ⚠️ 151+ regole progettuali
-│   │   └── *.md
-│   ├── decisions/                # Architecture decision records
-│   └── troubleshooting/          # Bug fixes, error resolutions
-├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
-├── QMD-SETUP.md                  # Configurazione QMD
-├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
-├── architecture.md               # (opzionale) Architettura modulo
-└── README.md                     # (opzionale) Overview modulo
-\`\`\`
-
-## File Chiave
-
-| File | Purpose |
-|------|---------|
-| `wiki/index.md` | Catalogo di tutto il sapere del modulo |
-| `wiki/log.md` | Storico attività (ingest/query/lint) |
-| `wiki/rules/` | Regole + trigger map locale |
-| `wiki/concepts/` | Concetti specifici del modulo |
-| `ON-DEMAND-PATTERN.md` | **Leggi prima** — pattern da seguire |
-
-## Convenzioni
-
-### Naming
-
-- **Filenames**: lowercase-kebab-case.md
-- **Directories**: lowercase
-- **Titles**: Title Case
-
-### Frontmatter Schema
-
-\`\`\`yaml
----
-title: "Page Title"
-type: concept|entity|source|comparison|decision|troubleshooting
-sources: []  # Solo per raw sources
-confidence: high|medium|low
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
-tags: [tag1, tag2]
-related:
-  - ../concepts/related.md
----
-\`\`\`
-
-### Link Rules
-
-- **Interno modulo**: `[[concepts/page]]` o `link`
-- **Modulo altro**: `[[../../OtherModule/docs/wiki/concepts/page]]`
-- **Project wiki**: `[Global rule](../../docs/wiki/rules/rule.md)`
-
-## Workflow con On-Demand Pattern
-
-\`\`\`mermaid
-graph TD
-    A[Task Received] --> B{Has trigger?}
-    B -->|Yes| C[Read trigger_map]
-    C --> D[Load specific file]
-    B -->|No| E[qmd search]
-    E --> D
-    D --> F[Apply knowledge]
-    F --> G[Update wiki/log]
-\`\`\`
-
-## Riferimenti Globali
-
-- [Project Wiki Root](../../docs/wiki/)
-- [Global Rules](../../docs/wiki/rules/)
-- [Global Skills](../../docs/wiki/skills/)
-- [Global Commands](../../docs/wiki/commands/)
-- [Global Memories](../../docs/wiki/memories/)
-
-## Setup Iniziale (per nuovi moduli)
-
-\`\`\`bash
-# 1. Crea struttura wiki
-mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,troubleshooting}
-
-# 2. Crea INDEX files (già creati)
-cp docs/wiki/rules/index.md docs/wiki/rules/
-# ... etc
-
-# 3. Aggiungi a QMD collection (opzionale, già incluso global)
-# Il .qmd/index.yml include automaticamente docs/**/wiki/
-
-# 4. Committa
-git add docs/
-git commit -m "docs: add wiki structure for Rating"
-\`\`\`
-
----
-*Pattern: On-Demand | Source: docs/wiki/*
-=======
->>>>>>> laraxot/dev

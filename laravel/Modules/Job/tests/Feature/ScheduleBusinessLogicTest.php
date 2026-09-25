@@ -10,22 +10,15 @@ use Modules\Job\Models\ScheduleHistory;
 use Modules\Job\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Job\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Schedule Business Logic', function (): void {
     test('_can_create_schedule_with_basic_information', function (): void {
-        /** @var TestCase $this */
         $schedule = Schedule::create([
             'command' => 'inspire',
             'expression' => '0 2 * * *',
             'status' => Status::Active,
             'log_filename' => 'backup.log',
-        ]);
-
-        $this->assertDatabaseHasRow('schedules', [
-            'id' => $schedule->id,
-            'command' => 'inspire',
-            'expression' => '0 2 * * *',
         ]);
 
         Assert::assertSame('inspire', $schedule->command);

@@ -1,11 +1,10 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://github.com/krlove/eloquent-model-generator
  * @see https://github.com/laracademy/generators
  */
-
-declare(strict_types=1);
 
 namespace Modules\Xot\Actions\Model;
 

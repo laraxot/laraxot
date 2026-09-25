@@ -6,6 +6,8 @@ tags:
   - conventions
   - llm-instructions
 created: 2026-04-15
+issues: []
+discussions: []
 ---
 
 # Wiki Schema - UI
@@ -19,20 +21,9 @@ docs/
 ├── wiki/
 │   ├── index.md           # Catalogo
 │   ├── log.md             # Registro
-<<<<<<< HEAD
+│   ├── schema.md          # Questo file
 │   ├── SCHEMA.md          # Questo file
 │   ├── schema.md          # Questo file
-=======
-<<<<<<< HEAD
-│   ├── SCHEMA.md          # Questo file
-<<<<<<< HEAD
-│   ├── schema.md          # Questo file
-=======
-=======
-│   ├── schema.md          # Questo file
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 │   ├── concepts/          # Pattern, architettura
 │   ├── entities/          # Modelli, azioni
 │   ├── sources/           # Doc esterna
@@ -46,7 +37,6 @@ docs/
 - Frontmatter: title, description, tags, created
 - Cross-ref: `[Link](../concepts/name.md)`
 - NON modificare mai `docs/raw/`
-
 
 ---
 

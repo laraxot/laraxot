@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Xot\Providers\Filament;
 
 use Filament\Actions\Action;
+use Filament\Auth\Pages\Login;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -114,7 +115,7 @@ abstract class XotBaseMainPanelProvider extends PanelProvider
                         });
                     </script>
                     HTML,
-                scopes: \Filament\Auth\Pages\Login::class,
+                scopes: Login::class,
             );
         $navs = app(GetModulesNavigationItems::class)->execute();
         $panel->navigationItems($navs);

@@ -15,12 +15,11 @@ final class PestExpectation
     public function __construct(
         private readonly mixed $value,
         private readonly bool $negated = false,
-    ) {
-    }
+    ) {}
 
     public function __get(string $name): self
     {
-        if ('not' === $name) {
+        if ($name === 'not') {
             return $this->not();
         }
 
@@ -130,7 +129,7 @@ final class PestExpectation
     }
 
     /**
-     * @param class-string $expectedClass
+     * @param  class-string  $expectedClass
      */
     public function toBeInstanceOf(string $expectedClass, string $message = ''): self
     {
@@ -192,7 +191,7 @@ final class PestExpectation
             ? Assert::assertArrayNotHasKey($key, $this->value, $message)
             : Assert::assertArrayHasKey($key, $this->value, $message);
 
-        if (2 === func_num_args() || (3 === func_num_args() && ! $this->negated)) {
+        if (func_num_args() === 2 || (func_num_args() === 3 && ! $this->negated)) {
             Assert::assertArrayHasKey($key, (array) $this->value);
             Assert::assertEquals($value, ((array) $this->value)[$key], $message);
         }
@@ -201,7 +200,7 @@ final class PestExpectation
     }
 
     /**
-     * @param iterable<array-key> $keys
+     * @param  iterable<array-key>  $keys
      */
     public function toHaveKeys(iterable $keys): self
     {
@@ -218,7 +217,7 @@ final class PestExpectation
         $exists = property_exists($this->value, $property) || isset($this->value->{$property});
         $this->negated ? Assert::assertFalse($exists) : Assert::assertTrue($exists);
 
-        if (2 === func_num_args() && ! $this->negated) {
+        if (func_num_args() === 2 && ! $this->negated) {
             Assert::assertEquals($expectedValue, $this->value->{$property});
         }
 
@@ -226,7 +225,7 @@ final class PestExpectation
     }
 
     /**
-     * @param iterable<string> $properties
+     * @param  iterable<string>  $properties
      */
     public function toHaveProperties(iterable $properties): self
     {
@@ -247,7 +246,7 @@ final class PestExpectation
     }
 
     /**
-     * @param array<array-key, mixed> $expectedSubset
+     * @param  array<array-key, mixed>  $expectedSubset
      */
     public function toMatchArray(array $expectedSubset): self
     {
@@ -315,7 +314,7 @@ final class PestExpectation
     }
 
     /**
-     * @param iterable<mixed> $expectedValues
+     * @param  iterable<mixed>  $expectedValues
      */
     public function toBeIn(iterable $expectedValues): self
     {
@@ -329,7 +328,7 @@ final class PestExpectation
 
     public function toStartWith(string $prefix): self
     {
-        if ('' === $prefix) {
+        if ($prefix === '') {
             Assert::fail('Expected a non-empty prefix.');
         }
 
@@ -342,7 +341,7 @@ final class PestExpectation
 
     public function toEndWith(string $suffix): self
     {
-        if ('' === $suffix) {
+        if ($suffix === '') {
             Assert::fail('Expected a non-empty suffix.');
         }
 

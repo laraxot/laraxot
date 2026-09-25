@@ -67,7 +67,6 @@ abstract class XotBaseModel extends EloquentModel
             return isset($value['object'])
             && (Str::contains($value['object']::class, 'Models\\') || Str::contains($value['object']::class, 'Filament\\Resources\\'));
         });
-        
 
         if (! isset($object['object'])) {
             throw new \RuntimeException('Unable to resolve caller object for getClassName()');

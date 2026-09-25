@@ -11,7 +11,7 @@ return [
     'navigation' => [
         'label' => 'Collezioni',
         'group' => 'UI',
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
         'sort' => 68,
     ],
     'fields' => [

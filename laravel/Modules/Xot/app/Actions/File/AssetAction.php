@@ -11,8 +11,6 @@ use Modules\Xot\Datas\XotData;
 use Spatie\QueueableAction\QueueableAction as QueueableActionTrait;
 use Webmozart\Assert\Assert;
 
-use function Safe\copy;
-
 class AssetAction
 {
     use QueueableActionTrait;
@@ -127,18 +125,62 @@ class AssetAction
 
     /**
      * Copies an asset file if it doesn't exist or if forced.
+     *
+     * In APP_ENV=local the caller forces a copy on every request so assets
+     * refresh without a rebuild. PHP-FPM runs as www-data: if the dest was
+     * written by another user, copy fails and MetatagData must not fall back
+     * to asset('module::img/x.png') (404). If the dest already exists and is
+     * readable, serve it instead. Story Xot/5.180.
      */
     private function copyAsset(string $from, string $to, string $path, bool $force = false): void
     {
-        if (! File::exists($to) || $force) {
-            $this->ensureDirectoryExists(\dirname($to));
+        $destinationExists = File::exists($to);
 
-            try {
-                File::copy($from, $to);
-            } catch (Exception $e) {
-                $this->throwCopyException($e, $path, $from, $to);
-            }
+        if ($destinationExists && ! $force) {
+            return;
         }
+
+        if ($destinationExists && ! File::isWritable($to)) {
+            return;
+        }
+
+        $this->ensureDirectoryExists(\dirname($to));
+
+        try {
+            $copied = File::copy($from, $to);
+        } catch (\Throwable $e) {
+            $this->handleCopyFailure($e, $path, $from, $to);
+
+            return;
+        }
+
+        if ($copied) {
+            return;
+        }
+
+        $this->handleCopyFailure(
+            new Exception('Unable to copy asset file'),
+            $path,
+            $from,
+            $to,
+        );
+    }
+
+    /**
+     * If the public dest is already readable, keep serving it.
+     * Otherwise rethrow so the caller can fail loudly.
+     */
+    private function handleCopyFailure(\Throwable $e, string $path, string $from, string $to): void
+    {
+        if (File::exists($to) && File::isReadable($to)) {
+            return;
+        }
+
+        $exception = $e instanceof Exception
+            ? $e
+            : new Exception($e->getMessage(), (int) $e->getCode(), $e);
+
+        $this->throwCopyException($exception, $path, $from, $to);
     }
 
     /**

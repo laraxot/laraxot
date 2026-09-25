@@ -1,0 +1,638 @@
+# HTML Structure Comparison - domande-frequenti
+
+## Reference Structure Tree
+```
+<body>
+  <div.skiplink>
+    <a.visually-hidden-focusable>
+    <a.visually-hidden-focusable>
+  <header.it-header-wrapper>
+    <div.it-header-slim-wrapper>
+      <div.container>
+        <div.row>
+          <div.col-12>
+            <div.it-header-slim-wrapper-content>
+              <a.d-lg-block.navbar-brand>
+              <div.it-header-slim-right-zone>
+                <div.nav-item.dropdown>
+                <a.btn.btn-primary.btn-icon.btn-full>
+    <div.it-nav-wrapper>
+      <div.it-header-center-wrapper>
+        <div.container>
+          <div.row>
+            <div.col-12>
+              <div.it-header-center-content-wrapper>
+                <div.it-brand-wrapper>
+                <div.it-right-zone>
+      <div#header-nav-wrapper.it-header-navbar-wrapper>
+        <div.container>
+          <div.row>
+            <div.col-12>
+              <div.navbar.navbar-expand-lg.has-megamenu>
+                <button.custom-navbar-toggler>
+                <div#nav4.navbar-collapsable>
+  <main>
+    <div#main-container.container>
+      <div.row.justify-content-center>
+        <div.col-12.col-lg-10>
+          <div.cmp-breadcrumbs>
+            <nav.breadcrumb-container>
+              <ol.breadcrumb.p-0>
+                <li.breadcrumb-item>
+                <li.breadcrumb-item.active>
+    <div.container>
+      <div.row.justify-content-center>
+        <div.col-12.col-lg-10>
+          <div.cmp-hero>
+            <section.it-hero-wrapper.bg-white.align-items-start>
+              <div.it-hero-text-wrapper.pt-0.ps-0.pb-4.pb-lg-60>
+                <h1.text-black>
+                <div.hero-text>
+    <div.container>
+      <div.row>
+        <div.col-12.col-lg-8.offset-lg-2.px-sm-3.mt-2>
+          <div.cmp-input-search>
+            <div.form-group.autocomplete-wrapper.mb-2.mb-lg-4>
+              <div.input-group>
+                <label.visually-hidden>
+                <input#autocomplete-autocomplete-three.autocomplete.form-control>
+                <div.input-group-append>
+                <span.autocomplete-icon>
+    <div.container>
+      <div.row>
+        <div.col-12.col-lg-8.offset-lg-2.px-0.px-sm-3>
+          <div.cmp-accordion.faq>
+            <div#accordion-faq.accordion>
+              <div.accordion-item>
+                <div#headingfaq-1.accordion-header>
+                <div#collapsefaq-1.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-2.accordion-header>
+                <div#collapsefaq-2.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-3.accordion-header>
+                <div#collapsefaq-3.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-4.accordion-header>
+                <div#collapsefaq-4.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-5.accordion-header>
+                <div#collapsefaq-5.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-6.accordion-header>
+                <div#collapsefaq-6.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-7.accordion-header>
+                <div#collapsefaq-7.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-8.accordion-header>
+                <div#collapsefaq-8.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-9.accordion-header>
+                <div#collapsefaq-9.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-10.accordion-header>
+                <div#collapsefaq-10.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-11.accordion-header>
+                <div#collapsefaq-11.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-12.accordion-header>
+                <div#collapsefaq-12.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-13.accordion-header>
+                <div#collapsefaq-13.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-14.accordion-header>
+                <div#collapsefaq-14.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-15.accordion-header>
+                <div#collapsefaq-15.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-16.accordion-header>
+                <div#collapsefaq-16.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-17.accordion-header>
+                <div#collapsefaq-17.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-18.accordion-header>
+                <div#collapsefaq-18.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-19.accordion-header>
+                <div#collapsefaq-19.accordion-collapse.collapse.p-0>
+              <div.accordion-item>
+                <div#headingfaq-20.accordion-header>
+                <div#collapsefaq-20.accordion-collapse.collapse.p-0>
+        <div.col-12.col-lg-8.offset-lg-2.px-4>
+          <button.btn.btn-outline-primary.w-100.mt-40.mb-40.title-medium-bold>
+            <span>
+    <div.bg-primary>
+      <div.container>
+        <div.row.d-flex.justify-content-center.bg-primary>
+          <div.col-12.col-lg-6.p-lg-0.px-4>
+            <div#rating.cmp-rating.pt-lg-80.pb-lg-80>
+              <div.card.shadow.card-wrapper>
+                <div.cmp-rating__card-first>
+                <div.cmp-rating__card-second.d-none>
+                <div.form-rating.d-none>
+    <div.bg-grey-card.shadow-contacts>
+      <div.container>
+        <div.row.d-flex.justify-content-center.p-contacts>
+          <div.col-12.col-lg-6>
+            <div.cmp-contacts>
+              <div.card.w-100>
+                <div.card-body>
+  <div#search-modal.modal.fade.search-modal>
+    <div.modal-dialog.modal-lg>
+      <div.modal-content.perfect-scrollbar>
+        <div.modal-body>
+          <form>
+            <div.container>
+              <div.row.variable-gutters>
+                <div.col>
+              <div.row.variable-gutters>
+                <div.col-lg-5>
+  <footer#footer.it-footer>
+    <div.it-footer-main>
+      <div.container>
+        <div.row>
+          <div.col-12.footer-items-wrapper.logo-wrapper>
+            <img.ue-logo>
+            <div.it-brand-wrapper>
+              <a>
+                <svg.icon>
+                <div.it-brand-text>
+        <div.row>
+          <div.col-md-3.footer-items-wrapper>
+            <h4.footer-heading-title>
+            <ul.footer-list>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+          <div.col-md-6.footer-items-wrapper>
+            <h4.footer-heading-title>
+            <div.row>
+              <div.col-md-6>
+                <ul.footer-list>
+              <div.col-md-6>
+                <ul.footer-list>
+          <div.col-md-3.footer-items-wrapper>
+            <h4.footer-heading-title>
+            <ul.footer-list>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+            <h4.footer-heading-title>
+            <ul.footer-list>
+              <li>
+                <a>
+              <li>
+                <a>
+          <div.col-md-9.mt-md-4.footer-items-wrapper>
+            <h4.footer-heading-title>
+            <div.row>
+              <div.col-md-4>
+                <p.footer-info>
+              <div.col-md-4>
+                <ul.footer-list>
+              <div.col-md-4>
+                <ul.footer-list>
+          <div.col-md-3.mt-md-4.footer-items-wrapper>
+            <h4.footer-heading-title>
+            <ul.list-inline.text-start.social>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+        <div.row>
+          <div.col-12.footer-items-wrapper>
+            <div.footer-bottom>
+              <a>
+              <a>
+
+```
+
+## Local Structure Tree
+```
+<body>
+  <div.skiplink>
+    <a.visually-hidden-focusable>
+    <a.visually-hidden-focusable>
+  <header.it-header-wrapper>
+    <div.it-header-slim-wrapper>
+      <div.container>
+        <div.row>
+          <div.col-12>
+            <div.it-header-slim-wrapper-content>
+              <a.d-lg-block.navbar-brand>
+              <div.it-header-slim-right-zone>
+                <div.nav-item.dropdown>
+                <a.btn.btn-primary.btn-icon.btn-full>
+    <div.it-nav-wrapper>
+      <div.it-header-center-wrapper>
+        <div.container>
+          <div.row>
+            <div.col-12>
+              <div.it-header-center-content-wrapper>
+                <div.it-brand-wrapper>
+                <div.it-right-zone>
+      <div#header-nav-wrapper.it-header-navbar-wrapper>
+        <div.container>
+          <div.row>
+            <div.col-12>
+              <div.navbar.navbar-expand-lg.has-megamenu>
+                <button.custom-navbar-toggler>
+                <div#nav4.navbar-collapsable>
+  <main#main-container>
+    <div.container>
+      <div.row>
+        <div.col-12>
+          <nav.breadcrumb-container>
+            <ol.breadcrumb>
+              <li.breadcrumb-item.>
+                <a>
+                <span.separator>
+              <li.breadcrumb-item.active>
+    <div.it-hero-wrapper.it-primary.it-display-hero>
+      <div.container>
+        <div.row>
+          <div.col-12>
+            <div.it-hero-text-wrapper.bg-white>
+              <h1.no_toc>
+              <p.d-none.d-lg-block>
+    <div.cmp-input-search>
+      <div.form-group.autocomplete-wrapper.mb-2.mb-lg-4>
+        <div.input-group>
+          <label.visually-hidden>
+          <input#autocomplete-autocomplete-autocomplete-three.autocomplete.form-control>
+          <div.input-group-append>
+            <button#button-3.btn.btn-primary>
+          <span.autocomplete-icon>
+            <svg.icon.icon-sm.icon-primary>
+              <use>
+    <div.cmp-accordion.faq>
+      <div#accordion-faq.accordion>
+        <div.accordion-item>
+          <div#headingfaq-1.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-1.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-2.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-2.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-3.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-3.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-4.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-4.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-5.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-5.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-6.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-6.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-7.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-7.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-8.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-8.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-9.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-9.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-10.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-10.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-11.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-11.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-12.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-12.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-13.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-13.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-14.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-14.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-15.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-15.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-16.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-16.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-17.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-17.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-18.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-18.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+        <div.accordion-item>
+          <div#headingfaq-19.accordion-header>
+            <button.accordion-button.collapsed.title-small-semi-bold.py-3>
+              <div.button-wrapper>
+                <div.icon-wrapper>
+          <div#collapsefaq-19.accordion-collapse.collapse.p-0>
+            <div.accordion-body>
+              <p.mb-3>
+              <p>
+    <div.bg-primary.faq-rating-section>
+      <div.container>
+        <div.row.d-flex.justify-content-center.bg-primary>
+          <div.col-12.col-lg-6>
+            <div#rating.cmp-rating.pt-lg-80.pb-lg-80>
+              <div.card.shadow.card-wrapper>
+                <div.cmp-rating__card-first>
+    <div.it-footer-main.py-12.bg-[#17324D].text-white>
+      <div.container>
+        <div.row>
+          <div.col-12.col-md-6.col-lg-4.mb-8.mb-lg-0>
+            <h3.text-xl.font-bold.mb-6.uppercase.tracking-wider>
+            <div.it-footer-main-column-content.flex.flex-col.gap-4>
+              <a.flex.items-center.gap-3.text-white.no-underline.hover:opacity-80.transition-opacity.duration-200>
+                <div.p-2.bg-white/10.rounded-lg>
+                <span.font-medium>
+              <a.flex.items-center.gap-3.text-white.no-underline.hover:opacity-80.transition-opacity.duration-200>
+                <div.p-2.bg-white/10.rounded-lg>
+                <span.font-medium>
+              <a.flex.items-center.gap-3.text-white.no-underline.hover:opacity-80.transition-opacity.duration-200>
+                <div.p-2.bg-white/10.rounded-lg>
+                <span.font-medium>
+          <div.col-12.col-md-6.col-lg-4>
+            <h3.text-xl.font-bold.mb-6.uppercase.tracking-wider>
+            <div.it-footer-main-column-content.flex.flex-col.gap-4>
+              <a.flex.items-center.gap-3.text-white.no-underline.hover:opacity-80.transition-opacity.duration-200>
+                <div.p-2.bg-white/10.rounded-lg>
+                <span.font-medium>
+  <div#search-modal.modal.fade.search-modal>
+    <div.modal-dialog.modal-lg>
+      <div.modal-content.perfect-scrollbar>
+        <div.modal-body>
+          <form>
+            <div.container>
+              <div.row.variable-gutters>
+                <div.col>
+              <div.row.variable-gutters>
+                <div.col-lg-5>
+  <footer#footer.it-footer>
+    <div.it-footer-main>
+      <div.container>
+        <div.row>
+          <div.col-12.footer-items-wrapper.logo-wrapper>
+            <img.ue-logo>
+            <div.it-brand-wrapper>
+              <a>
+                <svg.icon>
+                <div.it-brand-text>
+        <div.row>
+          <div.col-md-3.footer-items-wrapper>
+            <h4.footer-heading-title>
+            <ul.footer-list>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+          <div.col-md-6.footer-items-wrapper>
+            <h4.footer-heading-title>
+            <div.row>
+              <div.col-md-6>
+                <ul.footer-list>
+              <div.col-md-6>
+                <ul.footer-list>
+          <div.col-md-3.footer-items-wrapper>
+            <h4.footer-heading-title>
+            <ul.footer-list>
+              <li>
+                <a>
+              <li>
+                <a>
+              <li>
+                <a>
+            <h4.footer-heading-title>
+            <ul.footer-list>
+              <li>
+                <a>
+              <li>
+                <a>
+          <div.col-md-9.mt-md-4.footer-items-wrapper>
+            <h4.footer-heading-title>
+            <div.row>
+              <div.col-md-4>
+                <p.footer-info>
+              <div.col-md-4>
+                <ul.footer-list>
+              <div.col-md-4>
+                <ul.footer-list>
+          <div.col-md-3.mt-md-4.footer-items-wrapper>
+            <h4.footer-heading-title>
+            <ul.list-inline.text-start.social>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+              <li.list-inline-item>
+                <a.p-1.text-white>
+        <div.row>
+          <div.col-12.footer-items-wrapper>
+            <div.footer-bottom>
+              <a>
+              <a>
+
+```
+
+## Element Counts
+### Reference
+{
+  "body": 1,
+  "div": 152,
+  "a": 25,
+  "header": 1,
+  "button": 2,
+  "main": 1,
+  "nav": 1,
+  "ol": 1,
+  "li": 20,
+  "section": 1,
+  "h1": 1,
+  "label": 1,
+  "input": 1,
+  "span": 2,
+  "form": 1,
+  "footer": 1,
+  "img": 1,
+  "svg": 1,
+  "h4": 6,
+  "ul": 8,
+  "p": 1
+}
+
+### Local
+{
+  "body": 1,
+  "div": 199,
+  "a": 30,
+  "header": 1,
+  "button": 21,
+  "main": 1,
+  "nav": 1,
+  "ol": 1,
+  "li": 20,
+  "span": 6,
+  "h1": 1,
+  "p": 40,
+  "label": 1,
+  "input": 1,
+  "svg": 2,
+  "use": 1,
+  "h3": 2,
+  "form": 1,
+  "footer": 1,
+  "img": 1,
+  "h4": 6,
+  "ul": 8
+}

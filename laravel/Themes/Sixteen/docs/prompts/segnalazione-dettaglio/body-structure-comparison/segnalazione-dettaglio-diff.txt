@@ -1,0 +1,912 @@
+--- segnalazione-dettaglio-reference
++++ segnalazione-dettaglio-local
+@@ -114,7 +114,7 @@
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=nav-link | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Novità
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3] | <li> | id=- | class=nav-item | text=-
+-body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=active nav-link | text=-
++body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=nav-link | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Servizi
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4] | <li> | id=- | class=nav-item | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/nav[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=nav-link | text=-
+@@ -165,448 +165,458 @@
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1] | <svg> | id=- | class=align-top icon icon-sm icon-white | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+ body/header[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[6]/a[1]/span[1] | <span> | id=- | class=visually-hidden | text=RSS
+-body/main[1] | <main> | id=- | class=- | text=-
+-body/main[1]/div[1] | <div> | id=main-container | class=container | text=-
+-body/main[1]/div[1]/div[1] | <div> | id=- | class=justify-content-center row | text=-
+-body/main[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-breadcrumbs | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=breadcrumb-container | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1] | <ol> | id=- | class=breadcrumb p-0 | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1] | <li> | id=- | class=breadcrumb-item | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1] | <a> | id=- | class=- | text=Home
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1] | <span> | id=- | class=separator | text=/
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2] | <li> | id=- | class=breadcrumb-item | text=-
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/a[1] | <a> | id=- | class=- | text=Servizi
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/span[1] | <span> | id=- | class=separator | text=/
+-body/main[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[3] | <li> | id=- | class=active breadcrumb-item | text=Segnalazione disservizio
+-body/main[1]/div[2] | <div> | id=- | class=container | text=-
+-body/main[1]/div[2]/div[1] | <div> | id=- | class=justify-content-center row | text=-
+-body/main[1]/div[2]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-heading pb-3 pb-lg-4 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=row | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-lg-8 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/h1[1] | <h1> | id=- | class=title-xxxlarge | text=Segnalazione disservizio
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=d-flex flex-wrap gap-1 my-3 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/div[1] | <div> | id=- | class=chip chip-simple text-button | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[1]/div[1]/span[1] | <span> | id=- | class=chip-label | text=Servizio attivo
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=mb-3 subtitle-small | text=Un servizio aperto a tutti i cittadini per segnalare disservizi, guasti e criticità rilevati sul territorio comunale.
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=d-lg-flex gap-30 mb-2 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=btn btn-primary fw-bold mr-lg-30 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Segnala disservizio
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2] | <button> | id=- | class=btn btn-outline-primary fw-bold t-primary | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[2]/span[1] | <span> | id=- | class=- | text=Tutte le segnalazioni
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=col-lg-3 mt-5 mt-lg-0 offset-lg-1 | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=dropdown | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1] | <button> | id=shareActions | class=align-items-center btn btn-dropdown d-inline-flex dropdown-toggle fs-0 text-decoration-underline | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]/svg[1] | <svg> | id=- | class=icon | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/button[1]/small[1] | <small> | id=- | class=- | text=Condividi
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=dropdown-menu shadow-lg | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Facebook
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Twitter
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Linkedin
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Whatsapp
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2] | <div> | id=- | class=dropdown | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1] | <button> | id=viewActions | class=align-items-center btn btn-dropdown d-inline-flex dropdown-toggle fs-0 text-decoration-underline | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1] | <svg> | id=- | class=icon | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]/small[1] | <small> | id=- | class=- | text=Vedi azioni
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=dropdown-menu shadow-lg | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Stampa
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Ascolta
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Invia
+-body/main[1]/div[2]/div[1]/hr[1] | <hr> | id=- | class=d-lg-block d-none mb-0 mt-2 | text=-
+-body/main[1]/div[3] | <div> | id=- | class=container | text=-
+-body/main[1]/div[3]/div[1] | <div> | id=- | class=mt-3 mt-lg-80 row row-column-menu-left | text=-
+-body/main[1]/div[3]/div[1]/div[1] | <div> | id=- | class=border-col col-12 col-lg-3 mb-4 | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-navscroll sticky-top | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=it-navscroll-wrapper navbar navbar-expand-lg | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1] | <div> | id=navbarNavProgress | class=navbar-custom | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1] | <div> | id=- | class=menu-wrapper | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=accordion-title-one | class=accordion-header | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1] | <button> | id=- | class=accordion-button pb-10 px-3 | text=INDICE DELLA PAGINA
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-xs right | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=progress | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=it-navscroll-progressbar progress-bar | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=collapse-one | class=accordion-collapse collapse show | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=A chi è rivolto
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Descrizione
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Come fare
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Cosa serve
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1] | <span> | id=- | class=- | text=Cosa si ottiene
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/span[1] | <span> | id=- | class=- | text=Costi
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/a[1]/span[1] | <span> | id=- | class=- | text=Accedi al servizio
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[8] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[8]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[8]/a[1]/span[1] | <span> | id=- | class=- | text=Condizioni di servizio
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[9] | <li> | id=- | class=nav-item | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[9]/a[1] | <a> | id=- | class=nav-link | text=-
+-body/main[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[9]/a[1]/span[1] | <span> | id=- | class=- | text=Contatti
+-body/main[1]/div[3]/div[1]/div[2] | <div> | id=- | class=col-12 col-lg-8 offset-lg-1 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1] | <div> | id=- | class=it-page-sections-container | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[1] | <section> | id=who-needs | class=it-page-section mb-30 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[1]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=A chi è rivolto
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[1]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=Possono segnalare un disservizio tutte le persone residenti e non residenti nel comune.
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[2] | <section> | id=description | class=it-page-section mb-30 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[2]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Descrizione
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[2]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=Il servizio permette di segnalare in modo dettagliato un problema all’amministrazione comunale. È possibile indicare il luogo del disservizio su mappa o tramite indirizzo e allegare foto. Le segnalazioni sono gestite dall’Ufficio Relazioni con il Pubblico (URP).
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[3] | <section> | id=how-to | class=it-page-section mb-30 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[3]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Come fare
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[3]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=Si può inviare una segnalazione online da smartphone o computer, oppure a sportello presso l’URP. Alcune tipologie di segnalazioni online richiedono l'accesso con identità digitale SPID o CIE. Non ci sono limitazioni per le segnalazioni generiche. Le segnalazioni per disservizi e guasti possono riguardare solo il territorio comunale.
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[3]/p[1]/br[1] | <br> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[3]/p[1]/br[2] | <br> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[3]/p[1]/br[3] | <br> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[3]/p[1]/br[4] | <br> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[4] | <section> | id=needed | class=has-bg-grey it-page-section mb-30 p-3 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[4]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Cosa serve
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[4]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=Per accedere al servizio, assicurati di avere:
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[4]/ul[1] | <ul> | id=- | class=link-list list-wrapper lora | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[4]/ul[1]/li[1] | <li> | id=- | class=list-item | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[4]/ul[1]/li[1]/span[1] | <span> | id=- | class=- | text=informazioni sul tipo di disservizio e sul luogo all'interno del territorio comunale;
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[4]/ul[1]/li[2] | <li> | id=- | class=list-item | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[4]/ul[1]/li[2]/span[1] | <span> | id=- | class=- | text=foto, se disponibili.
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[5] | <section> | id=obtain | class=it-page-section mb-30 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[5]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Cosa si ottiene
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[5]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=Chi segnala un disservizio online identificandosi con identità digitale riceverà, tramite posta elettronica, gli aggiornamenti sullo stato di avanzamento della segnalazione.
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[6] | <section> | id=costs | class=it-page-section mb-30 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[6]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Costi
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[6]/p[1] | <p> | id=- | class=lora text-paragraph | text=Il servizio è gratuito
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1] | <div> | id=- | class=cmp-icon-link | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1]/a[1] | <a> | id=- | class=d-inline-block icon-left list-item | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm me-1 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item | text=Allegato se necessario
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[7] | <section> | id=service-access | class=has-bg-grey it-page-section mb-30 p-3 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[7]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Fai una segnalazione
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[7]/p[1] | <p> | id=- | class=lora text-paragraph | text=Invia una segnalazione online dal tuo smartphone o computer
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[7]/button[1] | <button> | id=- | class=btn btn-primary mobile-full | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[7]/button[1]/span[1] | <span> | id=- | class=- | text=Segnala disservizio
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[7]/p[2] | <p> | id=- | class=lora mt-4 text-paragraph | text=Oppure, prenota un appuntamento all’Ufficio Relazioni con il Pubblico (URP)
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[7]/button[2] | <button> | id=- | class=bg-white btn btn-outline-primary mobile-full t-primary | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[7]/button[2]/span[1] | <span> | id=- | class=- | text=Prenota appuntamento
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[8] | <section> | id=conditions | class=it-page-section mb-30 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[8]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Condizioni di servizio
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[8]/p[1] | <p> | id=- | class=lora text-paragraph | text=Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1] | <div> | id=- | class=cmp-icon-link | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1]/a[1] | <a> | id=- | class=d-inline-block icon-left list-item | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm me-1 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item | text=Termini e condizioni di servizio (PDF 1MB)
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9] | <section> | id=contacts | class=it-page-section | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/h2[1] | <h2> | id=- | class=mb-3 | text=Contatti
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1] | <div> | id=- | class=row | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 col-md-8 mb-30 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1] | <div> | id=- | class=card-wrapper h-auto pb-0 rounded | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-teaser card-teaser-info p-3 rounded shadow-sm | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body pe-3 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=title-small | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/a[1] | <a> | id=- | class=text-decoration-none | text=Ufficio Servizio pubblico
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=mb-0 subtitle-small | text=Via Dei Transiti 21, 50302 05 0505
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/br[1] | <br> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/br[2] | <br> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/a[1] | <a> | id=- | class=- | text=ufficioserviziopubblico@email.it
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=avatar size-xl | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[2]/img[1] | <img> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2] | <div> | id=- | class=col-12 mb-30 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/span[1] | <span> | id=- | class=text-paragraph-small | text=Argomenti:
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1] | <ul> | id=- | class=d-flex flex-wrap gap-2 mb-3 mt-10 | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[1]/a[1] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=chip-label | text=Gestione rifiuti
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[2]/a[1] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=chip-label | text=Igiene pubblica
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[3]/a[1] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=chip-label | text=Spazi verdi
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[4] | <li> | id=- | class=- | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[4]/a[1] | <a> | id=- | class=chip chip-simple | text=-
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=chip-label | text=Inquinamento
+-body/main[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/p[1] | <p> | id=- | class=mb-0 text-paragraph-small | text=Pagina aggiornata il 14/04/2022
+-body/main[1]/div[4] | <div> | id=- | class=bg-primary | text=-
+-body/main[1]/div[4]/div[1] | <div> | id=- | class=container | text=-
+-body/main[1]/div[4]/div[1]/div[1] | <div> | id=- | class=bg-primary d-flex justify-content-center row | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 p-lg-0 px-4 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1] | <div> | id=rating | class=cmp-rating pb-lg-80 pt-lg-80 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-wrapper shadow | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-rating__card-first | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=mb-0 title-medium-2-semi-bold | text=Quanto è stato facile usare questo servizio?
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1] | <fieldset> | id=- | class=rating | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/legend[1] | <legend> | id=- | class=visually-hidden | text=Valuta da 1 a 5 stelle la pagina
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[1] | <input> | id=star5a | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1] | <label> | id=- | class=active full rating-star | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]/path[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/span[1] | <span> | id=first-star | class=visually-hidden | text=Valuta 5 stelle su 5
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[2] | <input> | id=star4a | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2] | <label> | id=- | class=active full rating-star | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]/path[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/span[1] | <span> | id=second-star | class=visually-hidden | text=Valuta 4 stelle su 5
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[3] | <input> | id=star3a | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3] | <label> | id=- | class=active full rating-star | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]/path[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/span[1] | <span> | id=third-star | class=visually-hidden | text=Valuta 3 stelle su 5
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[4] | <input> | id=star2a | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4] | <label> | id=- | class=active full rating-star | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]/path[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/span[1] | <span> | id=fourth-star | class=visually-hidden | text=Valuta 2 stelle su 5
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[5] | <input> | id=star1a | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5] | <label> | id=- | class=active full rating-star | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]/path[1]/path[1] | <path> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/span[1] | <span> | id=fifth-star | class=visually-hidden | text=Valuta 1 stelle su 5
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=cmp-rating__card-second d-none | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=border-0 card-header mb-0 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h2[1] | <h2> | id=rating-feedback | class=mb-0 title-medium-2-bold | text=Grazie, il tuo parere ci aiuterà a migliorare il servizio!
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=d-none form-rating | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=d-none | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1] | <div> | id=- | class=cmp-steps-rating | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1] | <fieldset> | id=- | class=d-none fieldset-rating-one | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1] | <legend> | id=- | class=iscrizioni-header w-100 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1]/h3[1] | <h3> | id=- | class=align-items-lg-center d-flex drop-shadow flex-column flex-lg-row justify-content-between step-title | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1]/h3[1]/span[1] | <span> | id=- | class=d-block text-wrap | text=Quali sono stati gli aspetti che hai preferito?
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/legend[1]/h3[1]/span[2] | <span> | id=- | class=step | text=1/2
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1] | <div> | id=- | class=cmp-radio-list | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-teaser shadow-rating | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=form-check m-0 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1] | <input> | id=radio-1 | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1] | <label> | id=- | class=active | text=Le indicazioni erano chiare
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1] | <input> | id=radio-2 | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/label[1] | <label> | id=- | class=active | text=Le indicazioni erano complete
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1] | <input> | id=radio-3 | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/label[1] | <label> | id=- | class=active | text=Capivo sempre che stavo procedendo correttamente
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1] | <input> | id=radio-4 | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/label[1] | <label> | id=- | class=active | text=Non ho avuto problemi tecnici
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/input[1] | <input> | id=radio-5 | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/label[1] | <label> | id=- | class=active | text=Altro
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2] | <fieldset> | id=- | class=d-none fieldset-rating-two | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1] | <legend> | id=- | class=iscrizioni-header w-100 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1]/h3[1] | <h3> | id=- | class=align-items-lg-center d-flex drop-shadow flex-column flex-lg-row flex-wrap justify-content-between step-title | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1]/h3[1]/span[1] | <span> | id=- | class=d-block text-wrap | text=Dove hai incontrato le maggiori difficoltà?
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/legend[1]/h3[1]/span[2] | <span> | id=- | class=step | text=1/2
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1] | <div> | id=- | class=cmp-radio-list | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-teaser shadow-rating | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=form-check m-0 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1] | <input> | id=radio-6 | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1] | <label> | id=- | class=active | text=A volte le indicazioni non erano chiare
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1] | <input> | id=radio-7 | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/label[1] | <label> | id=- | class=active | text=A volte le indicazioni non erano complete
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/input[1] | <input> | id=radio-8 | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/label[1] | <label> | id=- | class=active | text=A volte non capivo se stavo procedendo correttamente
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/input[1] | <input> | id=radio-9 | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[4]/label[1] | <label> | id=- | class=active | text=Ho avuto problemi tecnici
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/input[1] | <input> | id=radio-10 | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/fieldset[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[5]/label[1] | <label> | id=- | class=active | text=Altro
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2] | <div> | id=- | class=d-none | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1] | <div> | id=- | class=cmp-steps-rating | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1] | <fieldset> | id=- | class=- | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1] | <legend> | id=- | class=iscrizioni-header w-100 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1] | <h3> | id=- | class=align-items-lg-center d-flex drop-shadow flex-column flex-lg-row flex-wrap justify-content-between step-title | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]/span[1] | <span> | id=- | class=d-block text-wrap | text=Vuoi aggiungere altri dettagli?
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]/span[2] | <span> | id=- | class=step | text=2/2
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1] | <div> | id=- | class=form-group | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/label[1] | <label> | id=- | class=- | text=Dettaglio
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/input[1] | <input> | id=formGroupExampleInputWithHelp | class=form-control | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/small[1] | <small> | id=formGroupExampleInputWithHelpDescription | class=form-text | text=Inserire massimo 200 caratteri
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3] | <div> | id=- | class=button-shadow d-flex flex-nowrap justify-content-center pt-4 w-100 | text=-
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]/button[1] | <button> | id=- | class=btn btn-back btn-outline-primary fw-bold me-4 | text=Indietro
+-body/main[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[3]/button[2] | <button> | id=- | class=btn btn-next btn-primary fw-bold | text=Avanti
+-body/main[1]/div[5] | <div> | id=- | class=bg-grey-card shadow-contacts | text=-
+-body/main[1]/div[5]/div[1] | <div> | id=- | class=container | text=-
+-body/main[1]/div[5]/div[1]/div[1] | <div> | id=- | class=row | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 pt-5 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=carousel-4-card cmp-carousel it-carousel-wrapper splide | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=it-header-block | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=it-header-block-title | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=border-0 cmp-carousel__title pb-0 text-center | text=Contenuti correlati
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=splide__track | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1] | <ul> | id=- | class=it-carousel-all splide__list | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1] | <li> | id=- | class=splide__slide | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1] | <div> | id=- | class=card-space card-wrapper h-100 pb-4 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1] | <div> | id=- | class=card card-bg rounded shadow-sm single-card | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-carousel__header | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-md | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=cmp-carousel__header-title ms-3 | text=Amministrazione
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=card-body__list | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Area Servizi Civici
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2] | <li> | id=- | class=splide__slide | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1] | <div> | id=- | class=card-space card-wrapper h-100 pb-4 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1] | <div> | id=- | class=card card-bg rounded shadow-sm single-card | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-carousel__header | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-md | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=cmp-carousel__header-title ms-3 | text=Servizi
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=card-body__list | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Pagamento retta scolastica
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Servizio di trasporto scolastico
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3] | <li> | id=- | class=splide__slide | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1] | <div> | id=- | class=card-space card-wrapper h-100 pb-4 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1] | <div> | id=- | class=card card-bg rounded shadow-sm single-card | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-carousel__header | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-md | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=cmp-carousel__header-title ms-3 | text=Documenti
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=card-body__list | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Attestazione ISEE
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Carta dei servizi educativi all'infanzia
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4] | <li> | id=- | class=splide__slide | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1] | <div> | id=- | class=card-space card-wrapper h-100 pb-4 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1] | <div> | id=- | class=card card-bg rounded shadow-sm single-card | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-carousel__header | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-md | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=cmp-carousel__header-title ms-3 | text=Notizie
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=card-body__list | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Justo eget magna fermentum
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Dolor magna eget est lorem
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Justo eget magna fermentum
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Dolor magna eget est lorem
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1] | <a> | id=- | class=px-0 show-more | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1] | <span> | id=- | class=align-items-center d-flex show-more | text=Vedi altri 2
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-md icon-primary | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1] | <ul> | id=collapseExample | class=collapse | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Servizio di trasporto scolastico
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item px-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Servizio di trasporto scolastico
+-body/main[1]/div[5]/div[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=d-lg-block d-none hr-shadow-sm | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2] | <div> | id=- | class=col-12 col-lg-6 offset-lg-3 p-contacts | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=cmp-contacts | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=card w-100 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=title-medium-2-semi-bold | text=Contatta il comune
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=contact-list p-0 | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Leggi le domande frequenti
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Richiedi assistenza
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Chiama il numero verde 05 0505
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
+-body/main[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Prenota appuntamento
++body/main[1] | <main> | id=main-container | class=- | text=-
++body/main[1]/div[1] | <div> | id=- | class=cms-view-wrapper | text=-
++body/main[1]/div[1]/div[1] | <div> | id=- | class=content page-content | text=-
++body/main[1]/div[1]/div[1]/div[1] | <div> | id=- | class=container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=justify-content-center row | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-10 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-breadcrumbs | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=breadcrumb-container | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1] | <ol> | id=- | class=breadcrumb p-0 | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1] | <li> | id=- | class=breadcrumb-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/a[1] | <a> | id=- | class=- | text=Home
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[1]/span[1] | <span> | id=- | class=separator | text=/
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2] | <li> | id=- | class=breadcrumb-item | text=-
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/a[1] | <a> | id=- | class=- | text=Servizi
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[2]/span[1] | <span> | id=- | class=separator | text=/
++body/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ol[1]/li[3] | <li> | id=- | class=active breadcrumb-item | text=Segnalazione disservizio
++body/main[1]/div[1]/div[1]/div[2] | <div> | id=- | class=cmp-heading pb-3 pb-lg-4 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=row | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=col-lg-8 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/h1[1] | <h1> | id=- | class=title-xxxlarge | text=Segnalazione disservizio
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1] | <ul> | id=- | class=d-flex flex-wrap gap-1 my-3 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/div[1] | <div> | id=- | class=chip chip-simple text-button | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/div[1]/span[1] | <span> | id=- | class=chip-label | text=Servizio attivo
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/p[1] | <p> | id=- | class=mb-3 subtitle-small | text=Un servizio aperto a tutti i cittadini per segnalare disservizi, guasti e criticita rilevati sul territorio comunale.
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=d-lg-flex gap-30 mb-2 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1] | <button> | id=- | class=btn btn-primary fw-bold mr-lg-30 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/span[1] | <span> | id=- | class=- | text=Segnala disservizio
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[2] | <button> | id=- | class=btn btn-outline-primary fw-bold t-primary | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[2]/span[1] | <span> | id=- | class=- | text=Tutte le segnalazioni
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2] | <div> | id=- | class=col-lg-3 mt-5 mt-lg-0 | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1] | <div> | id=- | class=dropdown | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/button[1] | <button> | id=shareActions | class=align-items-center btn btn-dropdown d-inline-flex dropdown-toggle fs-0 text-decoration-underline | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/button[1]/svg[1] | <svg> | id=- | class=icon | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/button[1]/small[1] | <small> | id=- | class=- | text=Condividi
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=dropdown-menu shadow-lg | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Facebook
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Twitter
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Linkedin
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Whatsapp
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2] | <div> | id=- | class=dropdown | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/button[1] | <button> | id=viewActions | class=align-items-center btn btn-dropdown d-inline-flex dropdown-toggle fs-0 text-decoration-underline | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/button[1]/svg[1] | <svg> | id=- | class=icon | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/button[1]/small[1] | <small> | id=- | class=- | text=Vedi azioni
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=dropdown-menu shadow-lg | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Stampa
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Ascolta
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Invia
++body/main[1]/div[1]/div[1]/hr[1] | <hr> | id=- | class=d-lg-block d-none mb-0 mt-2 | text=-
++body/main[1]/div[1]/div[1]/div[3] | <div> | id=- | class=container | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=mt-3 mt-lg-80 row row-column-menu-left | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1] | <div> | id=- | class=border-col col-12 col-lg-3 mb-4 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-navscroll sticky-top | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1] | <nav> | id=- | class=it-navscroll-wrapper navbar navbar-expand-lg | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1] | <div> | id=navbarNavProgress | class=navbar-custom | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1] | <div> | id=- | class=menu-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=accordion-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=accordion-title-one | class=accordion-header | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1] | <button> | id=- | class=accordion-button pb-10 px-3 | text=INDICE DELLA PAGINA
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1] | <svg> | id=- | class=icon icon-xs right | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/button[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=progress | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=it-navscroll-progressbar progress-bar | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=collapse-one | class=accordion-collapse collapse show | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=accordion-body | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=link-list | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=A chi e rivolto
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Descrizione
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Come fare
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Cosa serve
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1] | <span> | id=- | class=- | text=Cosa si ottiene
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[6]/a[1]/span[1] | <span> | id=- | class=- | text=Costi
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[7]/a[1]/span[1] | <span> | id=- | class=- | text=Fai una segnalazione
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[8] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[8]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[8]/a[1]/span[1] | <span> | id=- | class=- | text=Condizioni di servizio
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[9] | <li> | id=- | class=nav-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[9]/a[1] | <a> | id=- | class=nav-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[9]/a[1]/span[1] | <span> | id=- | class=- | text=Contatti
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2] | <div> | id=- | class=col-12 col-lg-8 offset-lg-1 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1] | <div> | id=- | class=it-page-sections-container | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[1] | <section> | id=who-needs | class=it-page-section mb-30 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[1]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=A chi e rivolto
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[1]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[1]/p[1]/p[1] | <p> | id=- | class=- | text=Possono segnalare un disservizio tutte le persone residenti e non residenti nel comune.
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[2] | <section> | id=description | class=it-page-section mb-30 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[2]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Descrizione
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[2]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[2]/p[1]/p[1] | <p> | id=- | class=- | text=Il servizio permette di segnalare in modo dettagliato un problema all'amministrazione comunale. E possibile indicare il luogo del disservizio su mappa o tramite indirizzo e allegare foto. Le segnalazioni sono gestite dall'Ufficio Relazioni con il Pubblico.
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[3] | <section> | id=how-to | class=it-page-section mb-30 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[3]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Come fare
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[3]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[3]/p[1]/p[1] | <p> | id=- | class=- | text=Si puo inviare una segnalazione online da smartphone o computer, oppure a sportello presso l'URP.
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[3]/p[1]/p[2] | <p> | id=- | class=- | text=Alcune tipologie di segnalazioni online richiedono l'accesso con identita digitale SPID o CIE. Non ci sono limitazioni per le segnalazioni generiche.
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[3]/p[1]/p[3] | <p> | id=- | class=- | text=Le segnalazioni per disservizi e guasti possono riguardare solo il territorio comunale.
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[4] | <section> | id=needed | class=has-bg-grey it-page-section mb-30 p-3 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[4]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Cosa serve
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[4]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[4]/p[1]/p[1] | <p> | id=- | class=- | text=Per accedere al servizio, assicurati di avere:
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[4]/p[1]/ul[1] | <ul> | id=- | class=link-list list-wrapper lora | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[4]/p[1]/ul[1]/li[1] | <li> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[4]/p[1]/ul[1]/li[1]/span[1] | <span> | id=- | class=- | text=informazioni sul tipo di disservizio e sul luogo all'interno del territorio comunale;
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[4]/p[1]/ul[1]/li[2] | <li> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[4]/p[1]/ul[1]/li[2]/span[1] | <span> | id=- | class=- | text=foto, se disponibili.
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[5] | <section> | id=obtain | class=it-page-section mb-30 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[5]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Cosa si ottiene
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[5]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[5]/p[1]/p[1] | <p> | id=- | class=- | text=Chi segnala un disservizio online identificandosi con identita digitale ricevera, tramite posta elettronica, gli aggiornamenti sullo stato di avanzamento della segnalazione.
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[6] | <section> | id=costs | class=it-page-section mb-30 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[6]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Costi
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[6]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[6]/p[1]/p[1] | <p> | id=- | class=- | text=Il servizio e gratuito.
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1] | <div> | id=- | class=cmp-icon-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1]/a[1] | <a> | id=- | class=d-inline-block icon-left list-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm me-1 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[6]/div[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item | text=Allegato se necessario
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[7] | <section> | id=service-access | class=has-bg-grey it-page-section mb-30 p-3 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[7]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Fai una segnalazione
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[7]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[7]/p[1]/p[1] | <p> | id=- | class=- | text=Invia una segnalazione online dal tuo smartphone o computer.
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[7]/p[2] | <p> | id=- | class=lora text-paragraph | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[7]/button[1] | <button> | id=- | class=btn btn-primary mobile-full | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[7]/button[1]/span[1] | <span> | id=- | class=- | text=Segnala disservizio
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[7]/p[3] | <p> | id=- | class=lora mt-4 text-paragraph | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[7]/button[2] | <button> | id=- | class=bg-white btn btn-outline-primary mobile-full mobile-full t-primary | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[7]/button[2]/span[1] | <span> | id=- | class=- | text=Prenota appuntamento
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[8] | <section> | id=conditions | class=it-page-section mb-30 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[8]/h2[1] | <h2> | id=- | class=mb-3 title-xxlarge | text=Condizioni di servizio
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[8]/p[1] | <p> | id=- | class=lora mb-0 text-paragraph | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[8]/p[1]/p[1] | <p> | id=- | class=- | text=Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1] | <div> | id=- | class=cmp-icon-link | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1]/a[1] | <a> | id=- | class=d-inline-block icon-left list-item | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1]/a[1]/span[1] | <span> | id=- | class=list-item-title-icon-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1]/a[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm me-1 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[8]/div[1]/a[1]/span[1]/span[1] | <span> | id=- | class=list-item | text=Termini e condizioni di servizio (PDF 1MB)
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9] | <section> | id=contacts | class=it-page-section | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/h2[1] | <h2> | id=- | class=mb-3 | text=Contatti
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1] | <div> | id=- | class=row | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 col-md-8 mb-30 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1] | <div> | id=- | class=card-wrapper h-auto pb-0 rounded | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-teaser card-teaser-info p-3 rounded shadow-sm | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body pe-3 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=title-small | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/a[1] | <a> | id=- | class=text-decoration-none | text=Ufficio Servizio pubblico
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1] | <p> | id=- | class=mb-0 subtitle-small | text=Via Dei Transiti 21, 50302 05 0505 ufficioserviziopubblico@email.it
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/br[1] | <br> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[1]/p[1]/br[2] | <br> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=avatar size-xl | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[1]/div[1]/div[1]/div[2]/img[1] | <img> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2] | <div> | id=- | class=col-12 mb-30 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/span[1] | <span> | id=- | class=text-paragraph-small | text=Argomenti:
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1] | <ul> | id=- | class=d-flex flex-wrap gap-2 mb-3 mt-10 | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[1]/a[1] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=chip-label | text=Gestione rifiuti
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[2]/a[1] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=chip-label | text=Igiene pubblica
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[3]/a[1] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=chip-label | text=Spazi verdi
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[4] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[4]/a[1] | <a> | id=- | class=chip chip-simple | text=-
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=chip-label | text=Inquinamento
++body/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/section[9]/div[1]/div[2]/p[1] | <p> | id=- | class=mb-0 text-paragraph-small | text=Pagina aggiornata il 14/04/2022
++body/main[1]/div[1]/div[1]/div[4] | <div> | id=- | class=bg-primary | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1] | <div> | id=- | class=container | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1] | <div> | id=- | class=bg-primary d-flex justify-content-center row | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 col-lg-6 p-lg-0 px-4 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1] | <div> | id=rating | class=cmp-rating pb-lg-80 pt-lg-80 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-wrapper shadow | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-rating__card-first | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-0 card-header | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=mb-0 title-medium-2-semi-bold | text=Quanto e stato facile usare questo servizio?
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1] | <fieldset> | id=- | class=rating | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/legend[1] | <legend> | id=- | class=visually-hidden | text=Valuta da 1 a 5 stelle la pagina
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[1] | <input> | id=star5a | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1] | <label> | id=- | class=active full rating-star | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]/path[1] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/svg[1]/path[2] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[1]/span[1] | <span> | id=first-star | class=visually-hidden | text=Valuta 5 stelle su 5
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[2] | <input> | id=star4a | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2] | <label> | id=- | class=active full rating-star | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]/path[1] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/svg[1]/path[2] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[2]/span[1] | <span> | id=second-star | class=visually-hidden | text=Valuta 4 stelle su 5
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[3] | <input> | id=star3a | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3] | <label> | id=- | class=active full rating-star | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]/path[1] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/svg[1]/path[2] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[3]/span[1] | <span> | id=third-star | class=visually-hidden | text=Valuta 3 stelle su 5
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[4] | <input> | id=star2a | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4] | <label> | id=- | class=active full rating-star | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]/path[1] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/svg[1]/path[2] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[4]/span[1] | <span> | id=fourth-star | class=visually-hidden | text=Valuta 2 stelle su 5
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/input[5] | <input> | id=star1a | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5] | <label> | id=- | class=active full rating-star | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1] | <svg> | id=- | class=icon icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]/path[1] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/svg[1]/path[2] | <path> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/fieldset[1]/label[5]/span[1] | <span> | id=fifth-star | class=visually-hidden | text=Valuta 1 stella su 5
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=cmp-rating__card-second d-none | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=border-0 card-header mb-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h2[1] | <h2> | id=rating-feedback | class=mb-0 title-medium-2-bold | text=Grazie, il tuo parere ci aiutera a migliorare il servizio!
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2] | <div> | id=- | class=d-none form-rating | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1] | <div> | id=- | class=cmp-steps-rating | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1] | <fieldset> | id=- | class=d-none fieldset-rating-one | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/legend[1] | <legend> | id=- | class=iscrizioni-header w-100 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1] | <h3> | id=- | class=align-items-lg-center d-flex drop-shadow flex-column flex-lg-row justify-content-between step-title | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]/span[1] | <span> | id=- | class=d-block text-wrap | text=Cosa ritieni di meglio di questa pagina?
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/legend[1]/h3[1]/span[2] | <span> | id=- | class=step | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1] | <div> | id=- | class=cmp-radio-list | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-teaser shadow-rating | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1] | <input> | id=radio-1 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1] | <label> | id=- | class=active | text=Le informazioni sono chiare
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/input[1] | <input> | id=radio-2 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/label[1] | <label> | id=- | class=active | text=Le informazioni sono complete
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1] | <input> | id=radio-3 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/label[1] | <label> | id=- | class=active | text=È facile trovare quello che cerco
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1] | <input> | id=radio-4 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/label[1] | <label> | id=- | class=active | text=Il design è gradevole
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/input[1] | <input> | id=radio-5 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/label[1] | <label> | id=- | class=active | text=Altro
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2] | <div> | id=- | class=cmp-steps-rating | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1] | <fieldset> | id=- | class=d-none fieldset-rating-two | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/legend[1] | <legend> | id=- | class=iscrizioni-header w-100 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/legend[1]/h3[1] | <h3> | id=- | class=align-items-lg-center d-flex drop-shadow flex-column flex-lg-row flex-wrap justify-content-between step-title | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/legend[1]/h3[1]/span[1] | <span> | id=- | class=d-block text-wrap | text=Cosa non va in questa pagina?
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/legend[1]/h3[1]/span[2] | <span> | id=- | class=step | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1] | <div> | id=- | class=cmp-radio-list | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card card-teaser shadow-rating | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1] | <input> | id=radio-6 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1] | <label> | id=- | class=active | text=Le informazioni non sono chiare
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/input[1] | <input> | id=radio-7 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/label[1] | <label> | id=- | class=active | text=Le informazioni sono incomplete
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/input[1] | <input> | id=radio-8 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/label[1] | <label> | id=- | class=active | text=È difficile trovare quello che cerco
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/input[1] | <input> | id=radio-9 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/label[1] | <label> | id=- | class=active | text=Il design non è gradevole
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5] | <div> | id=- | class=form-check m-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1] | <div> | id=- | class=border-bottom border-light cmp-radio-list__item radio-body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/input[1] | <input> | id=radio-10 | class=- | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/div[5]/div[1]/label[1] | <label> | id=- | class=active | text=Altro
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3] | <div> | id=- | class=cmp-steps-rating | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1] | <div> | id=- | class=cmp-steps-rating__body | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1] | <div> | id=- | class=form-group | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/label[1] | <label> | id=- | class=- | text=Dettaglio
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/input[1] | <input> | id=formGroupExampleInputWithHelp | class=form-control | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/small[1] | <small> | id=formGroupExampleInputWithHelpDescription | class=form-text | text=Inserire massimo 200 caratteri
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[4] | <div> | id=- | class=button-shadow d-flex flex-nowrap justify-content-center pt-4 w-100 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[4]/button[1] | <button> | id=- | class=btn btn-back btn-outline-primary fw-bold me-4 | text=Indietro
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[4]/button[2] | <button> | id=- | class=btn btn-next btn-primary fw-bold | text=Avanti
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3] | <div> | id=- | class=cmp-rating__card-second d-none | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1] | <div> | id=- | class=border-0 card-header mb-0 | text=-
++body/main[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/h2[1] | <h2> | id=- | class=mb-0 title-medium-2-bold | text=Grazie per il tuo feedback!
++body/main[1]/div[1]/div[1]/div[5] | <div> | id=- | class=bg-grey-card shadow-contacts | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1] | <div> | id=- | class=container | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1] | <div> | id=- | class=row | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1] | <div> | id=- | class=col-12 pt-5 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=carousel-4-card cmp-carousel it-carousel-wrapper splide | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=it-header-block | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1] | <div> | id=- | class=it-header-block-title | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=border-0 cmp-carousel__title pb-0 text-center | text=Contenuti correlati
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2] | <div> | id=- | class=splide__track | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1] | <ul> | id=- | class=it-carousel-all splide__list | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1] | <li> | id=- | class=splide__slide | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1] | <div> | id=- | class=card-space card-wrapper h-100 pb-4 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1] | <div> | id=- | class=card card-bg rounded shadow-sm single-card | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-carousel__header | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-md | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=cmp-carousel__header-title ms-3 | text=Amministrazione
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=card-body__list | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Area Servizi Civici
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2] | <li> | id=- | class=splide__slide | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1] | <div> | id=- | class=card-space card-wrapper h-100 pb-4 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1] | <div> | id=- | class=card card-bg rounded shadow-sm single-card | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-carousel__header | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-md | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=cmp-carousel__header-title ms-3 | text=Servizi
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=card-body__list | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Pagamento retta scolastica
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Servizio di trasporto scolastico
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3] | <li> | id=- | class=splide__slide | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1] | <div> | id=- | class=card-space card-wrapper h-100 pb-4 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1] | <div> | id=- | class=card card-bg rounded shadow-sm single-card | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-carousel__header | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-md | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=cmp-carousel__header-title ms-3 | text=Documenti
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=card-body__list | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Attestazione ISEE
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[3]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Carta dei servizi educativi all'infanzia
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4] | <li> | id=- | class=splide__slide | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1] | <div> | id=- | class=card-space card-wrapper h-100 pb-4 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1] | <div> | id=- | class=card card-bg rounded shadow-sm single-card | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[1] | <div> | id=- | class=cmp-carousel__header | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[1]/svg[1] | <svg> | id=- | class=icon icon-md | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=cmp-carousel__header-title ms-3 | text=Notizie
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=link-list-wrapper | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1] | <ul> | id=- | class=card-body__list | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Justo eget magna fermentum
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Dolor magna eget est lorem
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Justo eget magna fermentum
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Dolor magna eget est lorem
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1] | <a> | id=- | class=px-0 show-more | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1] | <span> | id=- | class=align-items-center d-flex show-more | text=Vedi altri 2
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1]/svg[1] | <svg> | id=- | class=icon icon-md icon-primary | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/a[1]/span[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1] | <ul> | id=collapseExample | class=collapse | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Servizio di trasporto scolastico
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item px-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[4]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[5]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Servizio di trasporto scolastico
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/span[1] | <span> | id=- | class=d-lg-block d-none hr-shadow-sm | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2] | <div> | id=- | class=col-12 col-lg-6 offset-lg-3 p-contacts | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1] | <div> | id=- | class=cmp-contacts | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1] | <div> | id=- | class=card w-100 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1] | <div> | id=- | class=card-body | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h2[1] | <h2> | id=- | class=title-medium-2-semi-bold | text=Contatta il comune
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1] | <ul> | id=- | class=contact-list p-0 | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]/span[1] | <span> | id=- | class=- | text=Leggi le domande frequenti
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]/span[1] | <span> | id=- | class=- | text=Richiedi assistenza
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]/span[1] | <span> | id=- | class=- | text=Chiama il numero verde 05 0505
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4] | <li> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1] | <a> | id=- | class=list-item | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1] | <svg> | id=- | class=icon icon-primary icon-sm | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/svg[1]/use[1] | <use> | id=- | class=- | text=-
++body/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1] | <span> | id=- | class=- | text=Prenota appuntamento
+ body/div[2] | <div> | id=search-modal | class=fade modal search-modal | text=-
+ body/div[2]/div[1] | <div> | id=- | class=modal-dialog modal-lg | text=-
+ body/div[2]/div[1]/div[1] | <div> | id=- | class=modal-content perfect-scrollbar | text=-

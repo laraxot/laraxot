@@ -69,11 +69,7 @@ return [
 ## XotBaseResource
 
 ### Regole di Estensione
-<<<<<<< HEAD
 1. Implementare `public function getFormSchema(): array`
-=======
-1. Implementare `public function getFormSchema(): array`
->>>>>>> laraxot/dev
 2. NON implementare il metodo `form(Form $form): Form`
 3. NON definire `protected static ?string $navigationIcon`
 4. La navigazione è gestita interamente da XotBaseResource

@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Tests\Unit\Transformers;
 
+use Modules\Geo\Tests\TestCase;
 use Modules\Geo\Transformers\GeoJsonCollection;
 use Modules\Geo\Transformers\GeoJsonResource;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('GeoJsonResource can be instantiated', function () {
     Assert::assertTrue(class_exists(GeoJsonResource::class));
 

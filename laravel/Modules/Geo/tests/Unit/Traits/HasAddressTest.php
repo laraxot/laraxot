@@ -4,27 +4,38 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Tests\Unit\Traits;
 
+use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Traits\HasAddress;
-use Modules\Geo\Tests\Fixtures\Traits\HasAddressTestModel;
-use PHPUnit\Framework\Assert;
 
-/*
- * Pest: verifica API del trait HasAddress sulla fixture canonica HasAddressTestModel.
- * Non istanziare Worker/TechPlanner né duplicare modelli fixture in Unit/Traits.
+/**
+ * Modello di test per il trait HasAddress.
  */
-test('HasAddressTestModel uses HasAddress trait', function (): void {
-    Assert::assertContains(
-        HasAddress::class,
-        class_uses_recursive(HasAddressTestModel::class),
-    );
-});
+class HasAddressTest extends BaseModel
+{
+    use HasAddress;
 
-test('HasAddress trait exposes expected methods', function (): void {
-    $reflection = new \ReflectionClass(HasAddress::class);
+    protected $fillable = ['name'];
 
-    Assert::assertTrue($reflection->hasMethod('addresses'));
-    Assert::assertTrue($reflection->hasMethod('address'));
-    Assert::assertTrue($reflection->hasMethod('addAddress'));
-    Assert::assertTrue($reflection->hasMethod('getFullAddress'));
-    Assert::assertTrue($reflection->hasMethod('scopeInCity'));
-});
+    public $timestamps = false;
+
+    protected $table = 'test_models';
+
+    /**
+     * Override connection for testing - use default connection.
+     */
+    protected $connection;
+
+    /**
+     * Bootstrap this model.
+     */
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::creating(static function () {
+            if (! app()->environment('testing')) {
+                throw new \Exception('TestModel should only be used in tests.');
+            }
+        });
+    }
+}

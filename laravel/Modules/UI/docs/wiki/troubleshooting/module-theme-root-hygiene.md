@@ -1,5 +1,5 @@
 ---
-title: "Root modulo/tema — zero .txt, max 6 .md"
+title: "Root modulo/tema — zero .txt, max 4 .md"
 type: rule
 module: UI
 tags: [hygiene, modules, themes, txt, markdown]
@@ -7,39 +7,8 @@ created: 2026-07-08
 updated: 2026-07-08
 qmd: "module theme root txt md hygiene audit fix"
 related:
-  - "./git-merge-conflict-inventory-1.md"
-  - "./git-merge-conflict-inventory.md"
-<<<<<<< HEAD
-  - "./git-push-lfs-missing-objects.md"
-  - "./git-push-lfs-missing-objects.md"
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  - "./git-push-lfs-missing-objects.md"
-<<<<<<< HEAD
-  - "./git-push-lfs-missing-objects.md"
-=======
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-<<<<<<< HEAD
-=======
-  - "./git-push-lfs-missing-objects.md"
->>>>>>> laraxot/dev
-=======
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-  - "./phpstan-fixes-1.md"
-  - "./phpstan-fixes.md"
+  - ../../../../../../docs/wiki/rules/module-theme-root-no-txt-files.md
+  - ../../../../../../docs/wiki/rules/module-theme-root-md-files-limit.md
 ---
 
 # Root modulo/tema — igiene
@@ -49,7 +18,7 @@ related:
 | Root `Modules/*` e `Themes/*` | Consentito |
 |---------------------------------|------------|
 | `*.txt` | **0** |
-| `*.md` | **max 6**: preferiti `README.md`, `CHANGELOG.md`, `LICENSE.md`, `AGENTS.md`, `CLAUDE.md` +1 |
+| `*.md` | **max 4**: `README.md`, `CHANGELOG.md`, `LICENSE.md`, `AGENTS.md` |
 | Cartelle | solo **lowercase** (`app`, `config`, `docs`, …) |
 
 ## Perché

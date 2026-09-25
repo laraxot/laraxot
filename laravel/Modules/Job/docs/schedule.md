@@ -1,15 +1,3 @@
----
-<<<<<<< HEAD
-title: "Schedule"
-module: "Job"
-type: concept
-tags: [schedule]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "schedule"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
 https://healthchecks.io/
 
 Simple and Effective Cron Job Monitoring
@@ -41,11 +29,3 @@ https://github.com/spatie/laravel-schedule-monitor
 https://github.com/hmazter/laravel-schedule-list
 
 
-=======
-module: theme
-topic: schedule
-canonical: ../../../Themes/docs/shared-components/schedule.txt
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/schedule.txt
->>>>>>> af4545e (.)

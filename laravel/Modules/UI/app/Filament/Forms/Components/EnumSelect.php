@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Forms\Components;
 
+use Filament\Forms\Components\Select;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
-use InvalidArgumentException;
-use Modules\Xot\Filament\Forms\Components\XotBaseSelect;
 
 /**
  * EnumSelect - Reusable component for PHP-backed enums in Filament v5.
  */
-final class EnumSelect extends XotBaseSelect
+final class EnumSelect extends Select
 {
     protected string|\Closure|null $enumClass = null;
 
@@ -200,11 +199,11 @@ final class EnumSelect extends XotBaseSelect
     protected function validateEnumClass(string $enumClass): void
     {
         if (! enum_exists($enumClass)) {
-            throw new InvalidArgumentException("Enum class [{$enumClass}] does not exist.");
+            throw new \InvalidArgumentException("Enum class [{$enumClass}] does not exist.");
         }
 
         if (! is_subclass_of($enumClass, \BackedEnum::class)) {
-            throw new InvalidArgumentException("Enum class [{$enumClass}] must be a backed enum.");
+            throw new \InvalidArgumentException("Enum class [{$enumClass}] must be a backed enum.");
         }
     }
 }

@@ -33,4 +33,4 @@ No caller of `getActives()` existed outside the service itself; `GetActiveSchedu
 - `Modules/Job/tests/Unit/Actions/ClearScheduleCacheActionTest.php`
 - `Modules/Job/tests/Unit/Actions/GetActiveSchedulesActionTest.php`
 
-Legacy `app/Services/ScheduleService.php` and its test (`tests/Unit/Services/ScheduleServiceTest.php`) were renamed to `.bak` (never `git rm`, per repo policy) once no code referenced them.
+Legacy `app/Services/ScheduleService.php` and its test were removed once no code referenced them.

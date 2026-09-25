@@ -1,49 +1,4 @@
-@php
-// UI Blade view — see Modules/UI/docs/wiki.
-@endphp
-
-@php
-// UI Blade view — see Modules/UI/docs/wiki.
-@endphp
-
-@php
-// UI Blade view — see Modules/UI/docs/wiki.
-@endphp
-
-@php
-// UI Blade view — see Modules/UI/docs/wiki.
-@endphp
-
-@php
-// UI Blade view — see Modules/UI/docs/wiki.
-@endphp
-
-@php
-// UI Blade view — see Modules/UI/docs/wiki.
-@endphp
-
-@php
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-// UI Blade view — see Modules/UI/docs/wiki.
-@endphp
-
-                        </div>
+</div>
                         <div class="flex items-center justify-between px-4 py-3 sm:grid sm:grid-cols-2 sm:px-0">
                           <dt class="pr-4 text-gray-600">Exclusive offers</dt>
                           <dd class="flex items-center justify-end sm:justify-center sm:px-4">
@@ -356,4 +311,4 @@
                             <span class="text-gray-900">7 accounts</span>
                           </dd>
                         </div>
-@include('ui::components.blocks.pricing.partials.three_tiers_with_feature_comparison.blade_body')
+@include('ui::components.blocks.pricing.partials.three_tiers_with_feature_comparison_body')

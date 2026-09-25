@@ -24,6 +24,26 @@ class EnvData extends Data implements Wireable
 
     public string $telegram_bot_token = '';
 
+    public string $sms_driver = '';
+
+    public string $netfun_token = '';
+
+    public string $mail_mailer = '';
+
+    public string $mail_host = '';
+
+    public string $mail_port = '';
+
+    public string $mail_encryption = '';
+
+    public string $mail_username = '';
+
+    public string $mail_password = '';
+
+    public string $mail_from_address = '';
+
+    public string $mail_from_name = '';
+
     private static ?self $instance = null;
 
     public static function make(): self
@@ -33,10 +53,10 @@ class EnvData extends Data implements Wireable
 
             foreach ($_ENV as $k => $v) {
                 $k = mb_strtolower($k);
-                if ('false' === $v) {
+                if ($v === 'false') {
                     $v = false;
                 }
-                if ('true' === $v) {
+                if ($v === 'true') {
                     $v = true;
                 }
                 $data[$k] = $v;
@@ -49,7 +69,7 @@ class EnvData extends Data implements Wireable
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function update(array $data): void
     {
@@ -57,7 +77,7 @@ class EnvData extends Data implements Wireable
         $env_content = File::get($env_path);
 
         foreach ($data as $k => $v) {
-            if ($this->$k !== $v && (is_bool($v) || is_int($v) || is_string($v))) {
+            if ($v !== $this->$k && (is_bool($v) || is_int($v) || is_string($v))) {
                 $env_content = $this->updateVar($k, $v, $env_content);
             }
         }
@@ -70,12 +90,12 @@ class EnvData extends Data implements Wireable
         $key = str($key)->upper()->toString();
         $replace = $this->getLine($key, $value);
         $pos_start = mb_strpos($env_content, $key.'=');
-        if (false === $pos_start) {
+        if ($pos_start === false) {
             // throw new \Exception('['.__LINE__.']['.class_basename($this).']');
             return $env_content."\n".$replace;
         }
         $pos_end = mb_strpos($env_content, "\n", $pos_start);
-        if (false === $pos_end) {
+        if ($pos_end === false) {
             throw new \Exception('['.__LINE__.']['.class_basename($this).']');
         }
 

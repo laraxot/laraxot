@@ -10,22 +10,22 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\File;
+use Modules\Geo\Database\Factories\ProvinceFactory;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Sushi\Sushi;
 
 /**
- * @property int|null $region_id
- * @property int $id
- * @property string|null $name
- * @property-read ProfileContract|null $creator
- * @property-read Collection<int, Locality> $localities
- * @property-read int|null $localities_count
- * @property-read Region|null $region
- * @property-read ProfileContract|null $updater
+ * @property int|null                  $region_id
+ * @property int                       $id
+ * @property string|null               $name
+ * @property ProfileContract|null      $creator
+ * @property Collection<int, Locality> $localities
+ * @property int|null                  $localities_count
+ * @property Region|null               $region
+ * @property ProfileContract|null      $updater
  *
- * @method static \Modules\Geo\Database\Factories\ProvinceFactory factory($count = null, $state = [])
  * @method static Builder<static>|Province newModelQuery()
  * @method static Builder<static>|Province newQuery()
  * @method static Builder<static>|Province query()
@@ -33,10 +33,15 @@ use Sushi\Sushi;
  * @method static Builder<static>|Province whereName($value)
  * @method static Builder<static>|Province whereRegionId($value)
  *
+ * @property ProfileContract|null $deleter
+ *
+ * @method static ProvinceFactory factory($count = null, $state = [])
+ *
  * @mixin \Eloquent
  */
 class Province extends BaseModel
 {
+    /**  */
     use HasXotFactory;
     use Sushi;
 
@@ -79,7 +84,7 @@ class Province extends BaseModel
             $regionId = $regione['codice'] ?? null;
             $id = $provincia['codice'] ?? null;
             $name = $provincia['nome'] ?? null;
-            if ($regionId === null || $id === null || $name === null) {
+            if (null === $regionId || null === $id || null === $name) {
                 continue;
             }
 

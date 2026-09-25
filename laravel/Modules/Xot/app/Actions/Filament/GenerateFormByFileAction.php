@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * -WIP.
  */
-
-declare(strict_types=1);
 
 namespace Modules\Xot\Actions\Filament;
 

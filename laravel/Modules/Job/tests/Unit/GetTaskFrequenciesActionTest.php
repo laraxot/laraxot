@@ -8,11 +8,11 @@ use PHPUnit\Framework\Assert;
 use function Safe\class_uses;
 use function Safe\file_get_contents;
 
-uses(\Modules\Job\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('GetTaskFrequenciesAction', function (): void {
     test('can be instantiated', function (): void {
-        $action = new GetTaskFrequenciesAction();
+        $action = new GetTaskFrequenciesAction;
         Assert::assertInstanceOf(GetTaskFrequenciesAction::class, $action);
     });
 

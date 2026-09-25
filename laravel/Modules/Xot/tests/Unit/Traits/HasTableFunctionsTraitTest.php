@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Filament\Actions\Action;
 use Filament\Actions\BulkAction;
 use Filament\Tables\Columns\TextColumn;

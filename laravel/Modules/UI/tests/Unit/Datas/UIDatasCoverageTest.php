@@ -69,13 +69,13 @@ it('SliderData can be instantiated with nulls', function (): void {
 });
 
 it('SliderDataCollection can be instantiated', function (): void {
-    $collection = new SliderDataCollection;
+    $collection = new SliderDataCollection();
 
     Assert::assertInstanceOf(SliderDataCollection::class, $collection);
 });
 
 it('SliderDataCollection is a Spatie Data class', function (): void {
-    $collection = new SliderDataCollection;
+    $collection = new SliderDataCollection();
 
     Assert::assertInstanceOf(Data::class, $collection);
 });

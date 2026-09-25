@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Xot\Tests\TestCase;
 use Modules\Xot\Tests\Unit\Support\DummyTestModel;
 use Modules\Xot\Tests\Unit\Support\OptionLabelProbeForm;

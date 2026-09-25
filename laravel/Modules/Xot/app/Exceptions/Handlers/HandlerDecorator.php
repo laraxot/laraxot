@@ -36,6 +36,7 @@ class HandlerDecorator implements ExceptionHandler
 
     /**
      * @param  array<int, mixed>  $parameters
+     * @return mixed Risultato del metodo delegato al defaultHandler (firmato mixed perché dipende da $name)
      */
     public function __call(string $name, array $parameters): mixed
     {

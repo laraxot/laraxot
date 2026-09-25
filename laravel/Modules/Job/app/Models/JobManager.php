@@ -33,9 +33,9 @@ use Override;
  * @property ProfileContract|null $updater
  *
  * @method static JobManagerFactory factory($count = null, $state = [])
- * @method static Builder<static>|JobManager newModelQuery()
- * @method static Builder<static>|JobManager newQuery()
- * @method static Builder<static>|JobManager query()
+ * @method static Builder<static> newModelQuery()
+ * @method static Builder<static> newQuery()
+ * @method static Builder<static> query()
  * @method static Builder<static>|JobManager whereAttempt($value)
  * @method static Builder<static>|JobManager whereCreatedAt($value)
  * @method static Builder<static>|JobManager whereExceptionMessage($value)
@@ -67,9 +67,9 @@ use Override;
  * @property-read ProfileContract|null $updater
  *
  * @method static JobManagerFactory factory($count = null, $state = [])
- * @method static Builder<static>|JobManager newModelQuery()
- * @method static Builder<static>|JobManager newQuery()
- * @method static Builder<static>|JobManager query()
+ * @method static Builder<static> newModelQuery()
+ * @method static Builder<static> newQuery()
+ * @method static Builder<static> query()
  * @method static Builder<static>|JobManager whereAttempt($value)
  * @method static Builder<static>|JobManager whereExceptionMessage($value)
  * @method static Builder<static>|JobManager whereFailed($value)
@@ -85,7 +85,7 @@ use Override;
  *
  * @mixin \Eloquent
  */
-final class JobManager extends BaseModel
+class JobManager extends BaseModel
 {
     // protected $table = 'job_manager';
 
@@ -101,10 +101,9 @@ final class JobManager extends BaseModel
         'exception_message',
     ];
 
-    public static function getJobId(JobContract $job): string
+    public static function getJobId(JobContract $job): string|int
     {
-        $jobId = $job->getJobId();
-        if ($jobId !== '') {
+        if ($jobId = $job->getJobId()) {
             return $jobId;
         }
 
@@ -159,18 +158,19 @@ final class JobManager extends BaseModel
      */
     public function prunable(): Builder
     {
+        /** @var Builder<static> $query */
+        $query = $this->newQuery();
+
         if (config('jobs.pruning.activate')) {
-            $retentionDays = config('jobs.pruning.retention_days');
-            if (! is_int($retentionDays)) {
-                $retentionDays = 365;
+            $retention_days = config('jobs.pruning.retention_days');
+            if (! is_int($retention_days)) {
+                $retention_days = 365;
             }
 
-            $query = self::query()->where('created_at', '<=', now()->subDays($retentionDays));
-
-            return $query;
+            return $query->where('created_at', '<=', now()->subDays($retention_days));
         }
 
-        return self::query()->whereNotNull('id');
+        return $query;
     }
 
     #[Override]

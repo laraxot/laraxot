@@ -1,6 +1,5 @@
 # 🔧 PSR-4 Fix Implementation Plan - UI Module
 
-**Data**: Dicembre 15, 2025
 **Modulo**: UI
 **Tipo Fix**: Namespace correction (Modules\Notify → Modules\UI)
 
@@ -28,34 +27,7 @@ Tutti in `Modules/UI/app/Filament/Forms/Components/`:
 
 ### Import Statements da Verificare
 
-<<<<<<< HEAD
 **TechPlanner/app/Filament/Resources/ClientResource.php**:
-**modulo operativo/app/Filament/Resources/ClientResource.php**:
-=======
-<<<<<<< HEAD
-**TechPlanner/app/Filament/Resources/ClientResource.php**:
-<<<<<<< HEAD
-**modulo operativo/app/Filament/Resources/ClientResource.php**:
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-**TechPlanner/app/Filament/Resources/ClientResource.php**:
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-**modulo operativo/app/Filament/Resources/ClientResource.php**:
-=======
-**TechPlanner/app/Filament/Resources/ClientResource.php**:
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 ```php
 Line 13: use Modules\Notify\Filament\Forms\Components\ContactSection;
 ```
@@ -170,15 +142,7 @@ Aggiornare:
 - [x] `Modules/UI/docs/psr4-namespace-violations.md` - Aggiungere sezione "Fix Implemented"
 - [x] `Modules/UI/docs/psr4-fix-implementation-plan.md` - Questo file (status update)
 - [ ] `Modules/UI/docs/README.md` - Aggiungere reference a PSR-4 fix
-<<<<<<< HEAD
 - [ ] `Modules/UI/docs/CHANGELOG.md` - Log del fix
-=======
-<<<<<<< HEAD
-- [ ] `Modules/UI/docs/CHANGELOG.md` - Log del fix
-=======
-- [ ] `Modules/UI/docs/changelog.md` - Log del fix
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
 
 ### Step 8: Git Commit
 

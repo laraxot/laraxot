@@ -2,15 +2,6 @@
 name: xotbasefield-no-view-rule
 description: XotBaseField subclasses must not declare a protected $view property; view is computed dynamically.
 type: concept
-related:
-  - "./auth-register-focus-loss-overlay.md"
-  - "./block-rendering-and-optional-services.md"
-  - "./claude-audit-static.md"
-  - "./code-redundancy-ui.md"
-  - "./context-overflow-prevention.md"
-  - "./enum-select-best-practices.md"
-  - "./enum-select-component.md"
-  - "./enum-select-contract-and-false-friends.md"
 ---
 
 # XotBaseField – No `$view` Property Rule

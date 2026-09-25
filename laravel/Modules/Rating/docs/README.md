@@ -36,3 +36,11 @@ Con figli: **Select + Textarea** sempre; option «altro» = `''`; placeholder = 
 Questo README aveva marker di merge non risolti (`<<<<<<< HEAD`); ripulito 2026-09-16.
 Preferire sempre `docs/bmad/` per lavoro in corso; bozze in `docs/stories/` con
 `ALTRO_KEY='altro'` sono superseded-pointer.
+
+## Documentation
+
+- [On-Demand Pattern](./on-demand-pattern.md) — Pattern per caricamento efficiente
+- [QMD Setup](./qmd-setup.md) — Configurazione ricerca locale
+- [Performance](./performance-optimization.md) — Metriche e best practice
+- [Project Structure](./project-structure.md) — Directory layout
+- [Conflict Resolution](./conflict-resolution.md)

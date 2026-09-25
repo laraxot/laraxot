@@ -6,13 +6,9 @@ created: 2026-07-28
 updated: 2026-07-28
 qmd: "rating patterns"
 related:
-<<<<<<< HEAD
   - "./best-practices.md"
-=======
-  - "./BEST_PRACTICES.md"
->>>>>>> laraxot/dev
   - "./architecture.md"
-  - "./TROUBLESHOOTING.md"
+  - "./troubleshooting.md"
 ---
 
 # Architectural Patterns – Rating
@@ -393,15 +389,7 @@ $validated = $request->validate($rating->rules());
 - [ ] Filament resource created (Resource, List, Form)
 - [ ] Permission policy defined (RatingPolicy)
 - [ ] Tests written (create, update, delete, aggregate, validation)
-<<<<<<< HEAD
-- [ ] Documentation added to docs/INDEX.md
-=======
-<<<<<<< HEAD
 - [ ] Documentation added to docs/index.md
-=======
-- [ ] Documentation added to docs/INDEX.md
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 - [ ] PHPStan L10 passes
 - [ ] Links updated in README.md
 
@@ -418,13 +406,7 @@ $validated = $request->validate($rating->rules());
 
 ## Related Resources
 
-<<<<<<< HEAD
 - [Best Practices](./best-practices.md) — DRY, KISS, clean code
 - [Architecture](./architecture.md) — Detailed system design
 - [Troubleshooting](./troubleshooting.md) — Common issues & solutions
-=======
-- [Best Practices](./BEST_PRACTICES.md) — DRY, KISS, clean code
-- [Architecture](./architecture.md) — Detailed system design
-- [Troubleshooting](./TROUBLESHOOTING.md) — Common issues & solutions
->>>>>>> laraxot/dev
 - [Wiki Concepts](./wiki/concepts/) — Schemaless attributes, polymorphism

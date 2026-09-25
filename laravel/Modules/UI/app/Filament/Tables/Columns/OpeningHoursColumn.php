@@ -6,9 +6,10 @@ namespace Modules\UI\Filament\Tables\Columns;
 
 use Filament\Tables\Columns\TextColumn;
 use Modules\UI\Actions\Datetime\GetDaysMappingAction;
+use Modules\UI\Filament\Forms\Components\OpeningHoursField;
 
 /**
- * Controparte in lista di {@see \Modules\UI\Filament\Forms\Components\OpeningHoursField}.
+ * Controparte in lista di {@see OpeningHoursField}.
  *
  * Stesso fatto di dominio (orari settimanali per fascia mattina/pomeriggio), due
  * superfici diverse per forma: il form edita ogni giorno con `TimePicker` dedicati
@@ -55,12 +56,12 @@ class OpeningHoursColumn extends TextColumn
             $slots = is_array($day) ? self::formatSlots($day) : [];
 
             $abbrev = mb_substr($dayLabel, 0, 3);
-            $parts[] = $slots === []
+            $parts[] = [] === $slots
                 ? "{$abbrev} chiuso"
                 : $abbrev.' '.implode(', ', $slots);
         }
 
-        return $parts === [] ? '—' : implode(' · ', $parts);
+        return [] === $parts ? '—' : implode(' · ', $parts);
     }
 
     /**

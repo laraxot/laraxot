@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Job\Filament\Fields;
 
-use Modules\Xot\Filament\Forms\Components\XotBaseRepeater;
+use Filament\Forms\Components\Repeater as ComponentsRepeater;
 use Webmozart\Assert\Assert;
 
-class Repeater extends XotBaseRepeater
+class Repeater extends ComponentsRepeater
 {
     public function getItemLabel(string $uuid, ?int $index = null): ?string
     {

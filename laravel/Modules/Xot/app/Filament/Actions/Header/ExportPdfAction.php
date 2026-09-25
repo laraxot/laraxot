@@ -1,30 +1,47 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://coderflex.com/blog/create-advanced-filters-with-filament
  */
 
-declare(strict_types=1);
-
 namespace Modules\Xot\Filament\Actions\Header;
 
-// Header actions must be an instance of Filament\Actions\Action, or Filament\Actions\ActionGroup.
-// use Filament\Actions\Action;
 use Filament\Resources\Pages\ListRecords;
+use Modules\Xot\Actions\GetTransKeyAction;
 use Modules\Xot\Actions\Pdf\DownloadPdfByViewAction;
 use Modules\Xot\Actions\View\GetViewByModelClassAction;
 use Modules\Xot\Filament\Actions\XotBaseAction;
 use Webmozart\Assert\Assert;
 
+/**
+ * Export PDF da lista: icona `xot-files.pdf`, solo icona (tooltip), view
+ * `{modulo}::{model}.index.pdf` con RichEditor via `{!! $rating->getTxtHtml() !!}`.
+ */
 class ExportPdfAction extends XotBaseAction
 {
     protected function setUp(): void
     {
         parent::setUp();
-        $this->translateLabel()
+        $this
             ->label('')
-            ->tooltip(__('xot::actions.export_pdf.tooltip'))
-            ->icon('ui-files.pdf')
+            ->iconButton()
+            ->color('danger')
+            ->icon('xot-files.pdf')
+            ->tooltip(function (): string {
+                $livewire = $this->getLivewire();
+                if (! $livewire instanceof ListRecords) {
+                    return (string) __('xot::export_pdf.tooltip');
+                }
+                $key = app(GetTransKeyAction::class)->execute($livewire::class).'.actions.export_pdf.tooltip';
+                $translated = __($key);
+
+                if (\is_string($translated) && $translated !== $key && $translated !== 'export_pdf') {
+                    return $translated;
+                }
+
+                return (string) __('xot::export_pdf.tooltip');
+            })
             ->action(static function (ListRecords $livewire) {
                 $filename =
                     class_basename($livewire).
@@ -32,7 +49,7 @@ class ExportPdfAction extends XotBaseAction
                     collect($livewire->tableFilters)->flatten()->implode('-').
                     '.pdf';
                 $query = $livewire->getFilteredTableQuery();
-                if (null === $query) {
+                if ($query === null) {
                     throw new \Exception('Query is null');
                 }
                 $rows = $query->get();

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ---
 title: 'Phpstan error'
 module: Xot
@@ -12,7 +10,6 @@ created: 2026-08-24
 updated: 2026-08-24
 ---
 
->>>>>>> laraxot/dev
 modulo Geo
 
   Line   \Actions\GetLatitudeLongitudeAction.php
@@ -33,7 +30,3 @@ modulo Xot
  ------ -----------------------------------------------------------------------
   28     Method Illuminate\Support\Collection<int,mixed>::get() invoked with 0
          parameters, 1-2 required.
-<<<<<<< HEAD
-
-=======
->>>>>>> laraxot/dev

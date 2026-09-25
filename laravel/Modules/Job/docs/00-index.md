@@ -1,21 +1,10 @@
----
-title: "📚 **Indice Documentazione Modulo Job**"
-module: "Job"
-type: concept
-tags: [00, INDEX]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "00 index"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
 # 📚 **Indice Documentazione Modulo Job**
 
 **Status**: ✅ PHPStan Level 10 Compliant
 **Module Version**: 2.3.0
 
 ## 🎯 **Lettura Essenziale**
-1. [README.md](README.md) - Panoramica completa, Multi-Queue e Scheduling.
+1. [README.md](./readme.md) - Panoramica completa, Multi-Queue e Scheduling.
 2. [roadmap.md](./roadmap.md) - Visione evolutiva e obiettivi 2026.
 3. [philosophy.md](./philosophy.md) - La gestione "Zen" dei flussi asincroni.
 
@@ -35,7 +24,7 @@ related:
 - 🧹 **[PHPMD & Complexity](./cyclomatic-complexity-report.md)** - Analisi della pulizia del codice.
 
 ## 📦 **Pacchetti Composer**
-- [Riferimento composer packages](../../../../bashscripts/ai/wiki/memories/composer-packages-reference.md) - Nessuna dipendenza diretta; usa Xot, spipu/html2pdf (via Xot)
+- [Riferimento](../../../../docs/composer-packages-reference.md) | [Inventario 312 pacchetti](../../../../docs/architecture/composer-packages-full-inventory.md) - Nessuna dipendenza diretta; usa Xot, spipu/html2pdf (via Xot)
 
 ## 🔗 **Moduli Correlati**
 - [Xot](../../xot/docs/readme.md) - Base framework e Page classes.

@@ -153,25 +153,25 @@ trait RatingTrait
         $msg = '<div class="rateit" data-rateit-value="'.$pivot_avg.'" data-rateit-ispreset="true" data-rateit-readonly="true"></div>';
         $msg .= '('.$pivot_avg.') '.$pivot_cout.' Votes ';
 
-        // $ratingUrl = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
-        // $ratingUrl = Panel::make()->get($this)->url('show').'?_act=rate';
-        // $ratingUrl = Panel::make()->get($this)->itemAction('rate_it')->url();
-        $ratingUrl = '#';
+        // $rating_url = Panel::make()->get($this)->relatedUrl('my_rating','index_edit');
+        // $rating_url = Panel::make()->get($this)->url('show').'?_act=rate';
+        // $rating_url = Panel::make()->get($this)->itemAction('rate_it')->url();
+        $rating_url = '#';
         // http://geek.local/public_html/it/article/prova-articolo?_act=rate
         /*
-        return $msg.'<a data-href="'.$ratingUrl.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
+        return $msg.'<a data-href="'.$rating_url.'" class="btn btn-danger" data-toggle="modal" data-target="#myModalAjax" data-title="Rate it">
         Rate It </a>';
         */
         $title = 'Vota '.$this->title;
 
-        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
+        $btn = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueModal" data-title="'.$title.'" data-href="'.$rating_url.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
-        $btnIframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$ratingUrl.'">
+        $btn_iframe = '<button type="button" class="btn btn-red btn-danger" data-toggle="modal" data-target="#vueIframeModal" data-title="'.$title.'" data-href="'.$rating_url.'">
         <span class="font-white"><i class="fa fa-star"></i> Vota ! </span>
         </button>';
 
-        return $msg.$btn.$btnIframe;
+        return $msg.$btn.$btn_iframe;
     }
 }

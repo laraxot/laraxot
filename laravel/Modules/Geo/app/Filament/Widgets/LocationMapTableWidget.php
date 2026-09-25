@@ -6,7 +6,6 @@ namespace Modules\Geo\Filament\Widgets;
 
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
 use Modules\Geo\Models\Location;
 use Modules\Xot\Filament\Widgets\XotBaseTableWidget as BaseWidget;
 
@@ -21,7 +20,7 @@ class LocationMapTableWidget extends BaseWidget
     public function table(Table $table): Table
     {
         return $table
-            ->query(fn (): Builder => Location::query()->latest())
+            ->query(Location::query()->latest())
             ->columns([
                 TextColumn::make('name')
                     ->searchable()

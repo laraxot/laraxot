@@ -23,11 +23,7 @@ final class ImageSpatie
             ->schema([
                 Hidden::make('img_uuid')
                     ->default(Str::uuid()->toString(...))
-                    ->formatStateUsing(static function (mixed $state): string {
-                        $value = $state ?? Str::uuid()->toString();
-
-                        return \is_string($value) ? $value : Str::uuid()->toString();
-                    }),
+                    ->formatStateUsing(fn ($state) => $state ?? Str::uuid()->toString()),
                 // ->live()
                 SpatieMediaLibraryFileUpload::make('image')
                     ->live()
@@ -43,8 +39,8 @@ final class ImageSpatie
                     ->openable()
                     ->downloadable()
                     // ->rules(Rule::dimensions()->maxWidth(600)->maxHeight(800))
-                    ->collection(static fn (Get $get) => $get('img_uuid'))
-                    ->afterStateUpdated(static function (
+                    ->collection(fn (Get $get) => $get('img_uuid'))
+                    ->afterStateUpdated(function (
                         HasForms $_livewire,
                         SpatieMediaLibraryFileUpload $_component,
                         TemporaryUploadedFile $state,
@@ -54,13 +50,13 @@ final class ImageSpatie
                         // Call to an undefined method Filament\Forms\Contracts\HasForms::validateOnly().
                         // $livewire->validateOnly($component->getStatePath());
                         Assert::string(
-                            $collectionName = $get('img_uuid'),
+                            $collection_name = $get('img_uuid'),
                             '['.__LINE__.']['.class_basename(self::class).']',
                         );
-                        $record->addMedia($state)->withResponsiveImages()->toMediaCollection($collectionName);
+                        $res = $record->addMedia($state)->withResponsiveImages()->toMediaCollection($collection_name);
                     }),
                 TextInput::make('caption'),
             ])
-            ->columns($context === 'form' ? 2 : 1);
+            ->columns('form' === $context ? 2 : 1);
     }
 }

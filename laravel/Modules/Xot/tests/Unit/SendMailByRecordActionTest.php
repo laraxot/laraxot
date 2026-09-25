@@ -23,7 +23,7 @@ it('throws if record has no email', function (): void {
         {
             return new class
             {
-                /** @param array<mixed> $data */
+                /** @param array<string, mixed> $data */
                 public function create(array $data): void {}
             };
         }

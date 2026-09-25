@@ -27,8 +27,12 @@ test('geo map dataset exposes point categories only', function (): void {
     $categories = app(GetGeoMapDatasetCategoriesAction::class)->execute($path);
 
     Assert::assertNotEmpty($categories);
-    // `assertContainsOnly()` e' stata rimossa in PHPUnit 13: le varianti per tipo la sostituiscono.
-    Assert::assertContainsOnlyString($categories);
+
+    $nonStringCategories = array_filter(
+        $categories,
+        static fn (mixed $category): bool => ! is_string($category),
+    );
+    Assert::assertSame([], $nonStringCategories);
 });
 
 test('geo map dataset computes stats for points and zones', function (): void {

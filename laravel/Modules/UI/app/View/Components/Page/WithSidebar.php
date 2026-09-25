@@ -25,8 +25,8 @@ final class WithSidebar extends Component
          */
         $view = app(GetViewAction::class)->execute($this->tpl);
 
-        $viewParams = [];
+        $view_params = [];
 
-        return view($view, $viewParams);
+        return view($view, $view_params);
     }
 }

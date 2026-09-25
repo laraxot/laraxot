@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -48,10 +48,10 @@ test('ogni list page concreta risolve la sua Table class', function (): void {
         }
 
         try {
-            /** @var class-string<\Modules\Xot\Filament\Resources\XotBaseResource> $resourceClass */
+            /** @var class-string<XotBaseResource> $resourceClass */
             $resourceClass = $page::getResource();
             $resourceClass::getTableClass();
-        } catch (\Throwable $e) {
+        } catch (Throwable $e) {
             $senzaTable[] = $page.' — '.$e->getMessage();
         }
     }

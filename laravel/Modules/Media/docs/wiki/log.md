@@ -23,3 +23,8 @@ module: "Media"
 - Created module index.md
 - Ready for on-demand loading via QMD
 
+## [2026-09-25] phpstan | Pest helper invocations
+
+- I test Media invocano i metodi di `Tests\TestCase` come helper globali; usare `$this->` per gli helper d'istanza e `TestCase::` per quelli statici.
+- Le firme PHPDoc dei builder payload preservano `array<string, mixed>` e l'inferenza dei dati passati a Eloquent `create()`.
+- Verifica eseguita: `php -l` sui due file di test aggiornati. Analisi PHPStan e test non eseguiti in questa correzione.

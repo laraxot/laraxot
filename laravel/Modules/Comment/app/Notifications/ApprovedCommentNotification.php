@@ -34,16 +34,19 @@ class ApprovedCommentNotification extends Notification implements ShouldQueue
 
         $config = CommentConfigData::make();
 
+        $view = 'comment::mail.approved-comment-notification';
+
         return (new MailMessage)
             ->from(
                 $config->notificationMailFromAddress(),
                 $config->notificationMailFromName(),
             )
             ->subject((string) __('comment::notifications.approved_comment_mail_subject'))
-            ->markdown('comment::mail.approved-comment-notification', [
+            ->markdown($view, [
                 'comment' => $this->comment,
                 'commentator' => $this->commentator,
                 'topLevelComment' => $this->comment->topLevel(),
             ]);
     }
+
 }

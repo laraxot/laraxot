@@ -20,7 +20,7 @@ test('DateTimeRule accepts the documented day month year format', function (): v
     Assert::assertFalse($validator->fails());
 });
 
-$rejectsInvalidDateTime = function (mixed $value): void {
+$rejectsInvalidDateTime = function (int|string $value): void {
     $validator = Validator::make(
         ['published_at' => $value],
         ['published_at' => [new DateTimeRule]],

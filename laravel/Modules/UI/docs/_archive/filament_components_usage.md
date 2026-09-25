@@ -3,7 +3,7 @@
 ## Collegamenti correlati
 - [README modulo UI](/laravel/Modules/UI/docs/README.md)
 - [Architettura Modulare](/docs/architettura-modulare.md)
-- [Percorsi e Asset](/laravel/Modules/UI/docs/PATHS_AND_ASSETS.md)
+- [Percorsi e Asset](/laravel/Modules/UI/docs/paths-and-assets.md)
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 
 ## Panoramica

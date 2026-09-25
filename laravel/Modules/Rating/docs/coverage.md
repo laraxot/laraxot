@@ -2,11 +2,53 @@
 title: "Coverage del modulo Rating"
 type: report
 module: Rating
-updated: 2026-09-08
+updated: 2026-09-22
 qmd: "coverage rating pest misura reale test saltati database"
 ---
 
 # Coverage del modulo Rating
+
+## PHPStan — 22 settembre 2026 (gate post `stuck-rebase-real-divergence-recovery`, commit `d80dc62`)
+
+Baseline dichiarata dal recovery: **9 errori pre-esistenti** su
+`RatingsHostStub::ratingValuePath()` non definito. Verificato con `git log -S"ratingValuePath"`
+nel repo del modulo: introdotto dal recovery `d80dc62`/dal WIP della story
+`18.56.ratings-by-id-accessor` (già `status: done` nella sua story), non da questa sessione.
+
+Fix chiusi (dettaglio in `docs/stories/18.56.ratings-by-id-accessor.story.md#Dev-Agent-Record`):
+
+- `HasRatingsTrait::ratingValuePath()`: `$rating->getKey()` (mixed, `Model::getKey()` non
+  tipizzato nel vendor Eloquent) → `$rating->id` (tipizzato `int` da `@property int $id` su
+  `BaseRating`). Risolveva `binaryOp.invalid` fra `'ratings_by_id.'` e `mixed`.
+- `tests/Unit/HasRatingsTraitRatingsByIdTest.php`, caso "ratingValuePath risolve davvero il
+  valore sull'host": `Collection::first()` può restituire `null`; aggiunta guardia
+  `instanceof BaseRating` + `Assert::fail()` (pattern nativo PHPStan, nessun plugin) e import
+  mancante di `BaseRating`.
+
+`phpstan analyse Modules/Rating --no-progress --memory-limit=-1` → **`[OK] No errors`**
+(9 → 0).
+
+`tools/phpmd.sh Modules/Rating/app`: solo findings preesistenti fuori scope
+(`CamelCaseVariableName`/`ShortVariable` su `HasRating.php`/`RatingTrait.php`,
+`UnusedFormalParameter` su `$model` nelle Policy) più il crash noto e preesistente di PDepend
+su tipi DNF/classe anonima in `StatsOverview.php` (due varianti, Filament/Widgets e
+HasRatingResource/Widgets) — non tocca i file editati qui.
+
+`tools/phpinsights.sh analyse Modules/Rating/app`: Code 92.9, Complexity 100,
+Architecture 85.7, **Style 97.5** (era 85.2 il 16 settembre — miglioramento, non regressione;
+non attribuibile a questa sessione, `app/` non toccato oltre a `HasRatingsTrait.php`).
+
+`vendor/bin/pint --test` sul test file toccato: passed. Su `HasRatingsTrait.php`: fail, ma
+solo su fixer di stile preesistenti nell'intero file (`braces`, `yoda_style`,
+`phpdoc_align`, ...), non sulla riga toccata da questo fix; non applicato per restare nello
+scope della story 18.56 (AC #7, "nessun file fuori scope").
+
+Pest: **DB di test irraggiungibile** (`nc -z -w3 10.100.200.53 3306` → `DB_UNREACHABLE`,
+verificato più volte). `./vendor/bin/pest Modules/Rating/tests/Unit/HasRatingsTraitRatingsByIdTest.php`
+con timeout 60s: nessun output, terminato dal timeout (il bootstrap pende sul DB invece di
+fallire subito). Skip ambientale, non un fallimento del fix — il test è DB-free per
+costruzione (fixture `setRawAttributes()`/`setRelation()`), ma il bootstrap `TestCase` di
+Pest lo precede. Nessuna nuova misura di coverage di riga oggi.
 
 ## Verifica PHPStan dell'8 settembre 2026
 
@@ -194,3 +236,21 @@ fix — il bootstrap pende sul DB irraggiungibile invece di fallire subito, vedi
 | Data | PHPStan Rating | PHPMD | Insights | Pest |
 |---|---|---|---|---|
 | 2026-09-16 | **0 errori** | 0 violazioni sui file toccati (crash preesistente altrove) | 92.9/100/85.7/85.2 | skip — DB `10.100.200.53:3306` unreachable |
+
+## 2026-09-23 — fix generics.notSubtype su RatingContract
+
+Task utente: `phpstan analyse Modules` fleet-wide, fix in ordine random/parallelo
+(swarm+subagents+bmad+second brain+ponytail). Unico finding reale trovato su tutto
+`Modules/`: `RatingContract.php` — `@property Collection<int, RatingContract> $children`
+non e' subtype di `TModel of Model` nel generic `Collection`. Fix: allineato al pattern
+gia' in uso dall'interfaccia madre `HasRecursiveRelationshipsContract` (che usa sempre
+`Collection<int, Model>`, mai l'interfaccia stessa, per le property self-referential con
+`@phpstan-require-extends Model`) — una riga, nessuna invenzione.
+
+- PHPStan `analyse Modules/Rating` → 0 errori (EXIT:0).
+- PHPStan `analyse Modules` (whole-tree) → 0 errori, 0 file_errors (EXIT:0, confermato).
+- PHPMD `tools/phpmd.sh` sul file → 0 violazioni.
+- PHP Insights sul file → 100/100/100/100.
+- Pest → skip, DB `10.100.200.53:3306` UNREACHABLE (`nc -z -w3` fallito).
+
+Story: `laravel/Modules/Rating/docs/bmad/stories/phpstan-fleet-fix-2026-09-23.story.md`.

@@ -18,19 +18,6 @@ tags: [structure, architecture, module]
 │   ├── concepts/                 # Topic/theme pages
 │   ├── entities/                 # Organization/person pages
 │   ├── rules/                    # ⚠️ 151+ regole progettuali
-<<<<<<< HEAD
-│   │   ├── 00-index.md          # Indice regole
-│   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
-│   │   └── *.md                 # Regole specifiche modulo
-│   ├── skills/                   # Skill progettuali
-│   │   ├── index.md
-│   │   └── *.md
-│   ├── commands/                 # Comandi progettuali
-│   │   ├── index.md
-│   │   └── *.md
-│   ├── memories/                 # Memorie progettuali
-│   │   ├── index.md
-=======
 │   │   ├── 00-INDEX.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -42,20 +29,24 @@ tags: [structure, architecture, module]
 │   │   └── *.md
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── INDEX.md
->>>>>>> laraxot/dev
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
 ├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
-<<<<<<< HEAD
 ├── architecture.md               # (opzionale) Architettura modulo
-=======
-├── ARCHITECTURE.md               # (opzionale) Architettura modulo
->>>>>>> laraxot/dev
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
+
+> Nota (verificata 2026-09-22 via `ls`/`git ls-tree` sul filesystem reale, non per ipotesi):
+> `docs/architecture.md` (minuscolo) è il file realmente presente in questa cartella — non
+> esiste un `ARCHITECTURE.md` sotto `docs/`. Un `ARCHITECTURE.md` esiste invece alla root del
+> modulo (un livello sopra), dove è oggetto di una hygiene separata e in corso — vedi
+> `root-files-hygiene.md`; non va confuso con questo file. Altri file elencati qui hanno
+> tuttora varianti case-duplicate non deduplicate (`index.md`/`INDEX.md`,
+> `on-demand-pattern.md`/`ON-DEMAND-PATTERN.md`, `qmd-setup.md`/`QMD-SETUP.md`) — vedi
+> `case-sensitivity-rules.md`.
 
 ## File Chiave
 
@@ -93,7 +84,7 @@ related:
 
 ### Link Rules
 
-- **Interno modulo**: `[[concepts/page]]` o `link`
+- **Interno modulo**: `[[concepts/page]]` o `[link](./concepts/page.md)`
 - **Modulo altro**: `[[../../OtherModule/docs/wiki/concepts/page]]`
 - **Project wiki**: `[Global rule](../../docs/wiki/rules/rule.md)`
 
@@ -125,11 +116,7 @@ graph TD
 mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,troubleshooting}
 
 # 2. Crea INDEX files (già creati)
-<<<<<<< HEAD
-cp docs/wiki/rules/index.md docs/wiki/rules/
-=======
 cp docs/wiki/rules/INDEX.md docs/wiki/rules/
->>>>>>> laraxot/dev
 # ... etc
 
 # 3. Aggiungi a QMD collection (opzionale, già incluso global)

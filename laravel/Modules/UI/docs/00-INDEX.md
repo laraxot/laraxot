@@ -1,172 +1,110 @@
-# 🧩 UI Components - Documentation Index
+# 📚 **Indice Documentazione Modulo UI**
 
-**Path**: `Modules/UI/docs/`  
-**Modulo**: @Modules/UI  
-**Last Updated**: 2026-03-26  
-**Status**: ✅ IN PROGRESS
+**Status**: ✅ PHPStan Level 10 Compliant
+**Module Version**: 2.3.0
 
----
+## 🪮 Ponytail audit
 
-## 🎯 Scopo
+- [ponytail-audit-over-engineering.md](./ponytail-audit-over-engineering.md)
+- [wiki/concepts/ponytail-audit.md](./wiki/concepts/ponytail-audit.md)
 
-Componenti UI riutilizzabili per tutti i temi e moduli.
+## 🎯 **Lettura Essenziale**
+1. [README.md](./readme.md) - Design System e overview componenti.
+2. [roadmap.md](./roadmap.md) - Evoluzione 2026: Tailwind v4 e Flux UI integration.
+3. [philosophy.md](./philosophy.md) - "La Bellezza è Funzionale": filosofia del design in Laraxot.
 
-**Principi**:
-- **Reusable**: Scrivi una volta, usa ovunque
-- **Composable**: Componenti piccoli → componibili → potenti
-- **Accessible**: WCAG 2.2 AA compliant
-- **Themeable**: Personalizzabile dal tema
+## 🏗️ **Core Design System**
+- 🎨 **[Layouts & Themes](./layouts-and-themes.md)** - Gestione dei temi per tenant e dark mode.
+- 📐 **[Architecture Rules](./architecture.md)** - Regole per la creazione di nuovi componenti UI.
+- 🖋️ **[Icon System](./icon-system.md)** - Integrazione di Blade Icons e set personalizzati.
 
----
+## 🧱 **Componenti & Widget**
+- 🧩 **[Blade Components](./blade-components.md)** - Libreria di componenti atomici riutilizzabili.
+- ⚡ **[Filament Components](./filament-components-usage.md)** - Custom columns, fields e widgets per l'Admin Panel.
+- 📍 **[Location Selector](./filament-components-location-studio.md)** - Componente avanzato per la selezione geografica.
+- 🏛️ **[Design Comuni FAQ Components](./design-comuni-faq-components.md)** - Componenti UI per pagina FAQ (Accordion, Hero, Breadcrumb, Search) ✅ 90%
 
-## 📦 Componenti
+## 🏛️ **Design Comuni Italia - Replication**
 
-### Blade Components
+### Documentazione UI
+- [FAQ Components](./design-comuni-faq-components.md) - Componenti UI per pagina FAQ
+- [Blocks System](./blocks-system.md) - Sistema blocchi universali
+- [Design System](./design-system.md) - Design tokens e pattern
 
-| Componente | File | Descrizione | Status |
-|------------|------|-------------|--------|
-| Testimonials | `testimonials.blade.php` | Componente testimonials riutilizzabile | ✅ TODO |
-| Stats Card | `stats-card.blade.php` | Card per statistiche | ⏳ TODO |
-| Feature Card | `feature-card.blade.php` | Card per features | ⏳ TODO |
-| Pricing Card | `pricing-card.blade.php` | Card per pricing | ⏳ TODO |
+### Link Bidirezionali - Tema Sixteen
+- [All Pages Analysis](../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) - Analisi 54 pagine
+- [Progress Report](../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) - Report progresso
+- [Argomenti Analisi](../../Themes/Sixteen/docs/design-comuni/ARGOMENTI_ANALISI.md) - Analisi argomenti
+- [Risultati Ricerca](../../Themes/Sixteen/docs/design-comuni/RISULTATI_RICERCA_ANALISI.md) - Analisi ricerca
+- [FAQ HTML Analysis](../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_HTML_ANALYSIS.md) - Analisi HTML FAQ
+- [Master Index Tema](../../Themes/Sixteen/docs/design-comuni/00-index.md) - Index tema Sixteen
 
----
+### Link Bidirezionali - Modulo Cms
+- [Cms Design Comuni Index](../Cms/docs/DESIGN_COMUNI_INDEX.md) - Index completo modulo Cms
+- [Cms FAQ](../Cms/docs/design-comuni-faq.md) - Architettura pagina FAQ
+- [Cms Homepage](../Cms/docs/design-comuni-homepage.md) - Analisi homepage
 
-## 🧩 Testimonials Component
+### Link Bidirezionali - Master Index
+- [Master Index Globale](../../../docs/design-comuni/MASTER_INDEX.md) - Index globale progetto
 
-### Usage
+### Stato Implementazione
+| Componente | HTML | CSS | JS | Totale |
+|-----------|------|-----|----|--------|
+| Accordion | ✅ 95% | ✅ 90% | ✅ 90% | ✅ 92% |
+| Hero | ✅ 100% | ✅ 95% | N/A | ✅ 98% |
+| Breadcrumb | ✅ 100% | ✅ 100% | N/A | ✅ 100% |
+| Search | ✅ 100% | ✅ 90% | ⏳ 0% | ⏳ 65% |
 
-```blade
-{{-- Basic Usage --}}
-<x-ui::testimonials 
-    :items="$testimonials"
-    title="Cosa dicono i nostri utenti"
-    subtitle="Migliaia di utenti soddisfatti"
-/>
+## 🛠️ **Integrazioni Tecniche**
+- 🏗️ **[Tailwind v4 Upgrade](./filament-v4-theme-upgrade.md)** - Guida alla migrazione verso l'ultima versione di Tailwind.
+- 🛣️ **[Folio & Volt Themes](./struttura-themes-folio.md)** - Gestione dei temi nelle pagine Folio.
+- 🧪 **[Table Layout Enum](./table-layout-enum-complete-guide.md)** - Standardizzazione dei layout tabelle.
 
-{{-- Advanced Usage --}}
-<x-ui::testimonials 
-    :items="[
-        [
-            'name' => 'Mario Rossi',
-            'role' => 'Trader Professionista',
-            'avatar' => 'https://example.com/avatar.jpg',
-            'content' => 'Questa piattaforma ha cambiato il mio modo di fare trading.',
-            'rating' => 5,
-        ],
-        // ...
-    ]"
-    title="Dicono di noi"
-    subtitle="Le recensioni dei nostri utenti"
-    columns="3"
-    autoplay="true"
-    autoplay-speed="5000"
-/>
-```
+## 🧪 **Qualità e Sviluppo**
+- ✅ **[PHPStan Analysis](./phpstan-level-10-cleanup.md)** - Report di conformità Level 10.
+- 🔬 **[Testing UI](./testing.md)** - Test di regressione visuale e componenti.
 
-### Props
+## 🧹 **Manutenzione**
+- 🗑️ **[Cleanup Plan](./consolidation-plan.md)** - Strategia per ridurre i 280+ file di documentazione.
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `items` | array | `[]` | Array di testimonials |
-| `title` | string | `''` | Titolo sezione |
-| `subtitle` | string | `''` | Sottotitolo sezione |
-| `columns` | string | `'3'` | Colonne (1, 2, 3, 4) |
-| `autoplay` | bool | `false` | Autoplay carousel |
-| `autoplay-speed` | int | `5000` | Velocità autoplay (ms) |
-| `showRating` | bool | `true` | Mostra rating stelle |
-| `rounded` | string | `'full'` | Avatar rounded (none, sm, md, lg, full) |
+## 📦 **Pacchetti Composer**
+- [Riferimento completo](../../../../docs/composer-packages-reference.md) | [Inventario 312 pacchetti](../../../../docs/architecture/composer-packages-full-inventory.md)
+- `owenvoke/blade-fontawesome` - Icone FontAwesome
 
-### Item Structure
-
-```php
-[
-    'name' => 'Mario Rossi',           // Nome utente
-    'role' => 'Trader',                // Ruolo (opzionale)
-    'avatar' => 'url...',              // URL avatar (opzionale)
-    'content' => 'Testimonial...',     // Contenuto
-    'rating' => 5,                     // Rating 1-5 (opzionale)
-]
-```
+## 🔗 **Moduli Correlati**
+- [Xot](../../xot/docs/readme.md) - Base framework per i widget.
+- [Cms](../../cms/docs/readme.md) - Layout dei contenuti e blocchi.
 
 ---
 
-## 🔗 Link Bidirezionali
+## 🏛️ **Design Comuni Italia - Replication**
 
-### Da Questo Indice
+### Documentazione FAQ
+- [FAQ Components](./design-comuni-faq-components.md) - Componenti UI per pagina FAQ (Accordion, Hero, Breadcrumb, Search)
+- [Blocks System](./blocks-system.md) - Sistema blocchi universali
+- [Design System](./design-system.md) - Design tokens e pattern
 
-| Da | A | Tipo |
-|----|---|------|
-| Testimonials Component | [Theme Customization](../../Themes/TwentyOne/docs/components/testimonials.md) | Integration |
-<<<<<<< HEAD
-| Testimonials Component | [Predict Homepage](../../Modules/Predict/docs/02-frontend/00-INDEX.md) | Consumer |
-=======
-<<<<<<< HEAD
-| Testimonials Component | [Predict Homepage](../../Modules/Predict/docs/02-frontend/00-INDEX.md) | Consumer |
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-| Testimonials Component | [Predict Homepage](../../Modules/<nome modulo>/docs/02-frontend/00-index.md) | Consumer |
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-| Testimonials Component | [forecast Homepage](../../Modules/Domain/docs/02-frontend/00-index.md) | Consumer |
-=======
-| Testimonials Component | [Predict Homepage](../../Modules/<nome modulo>/docs/02-frontend/00-index.md) | Consumer |
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
+### Link Bidirezionali
+- **Modulo Cms**: [FAQ Page Architecture](../../Cms/docs/design-comuni-faq.md)
+- **Tema Sixteen**:
+  - [Analisi HTML](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_HTML_ANALYSIS.md)
+  - [Implementazione](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md)
+  - [Analisi Visiva](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_ANALISI_VISIVA.md)
+  - [Report Finale](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_REPORT_FINALE.md)
+  - [Design Comuni Index](../../../Themes/Sixteen/docs/design-comuni/00-index.md)
+- **Scripts**: [Screenshot Script](../../../bashscripts/design-comuni/capture-faq-screenshots.js)
 
-### Verso Questo Indice
-
-| Da | A | Tipo |
-|----|---|------|
-<<<<<<< HEAD
-| [Theme Index](../../Themes/TwentyOne/docs/00-INDEX.md) | UI Components | Dependency |
-| [Predict Module Index](../../Modules/Predict/docs/00-INDEX.md) | UI Components | Reference |
-=======
-<<<<<<< HEAD
-| [Theme Index](../../Themes/TwentyOne/docs/00-INDEX.md) | UI Components | Dependency |
-| [Predict Module Index](../../Modules/Predict/docs/00-INDEX.md) | UI Components | Reference |
-=======
-| [Theme Index](../../Themes/TwentyOne/docs/00-index.md) | UI Components | Dependency |
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-| [Predict Module Index](../../Modules/<nome modulo>/docs/00-index.md) | UI Components | Reference |
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-| [forecast Module Index](../../Modules/Domain/docs/00-index.md) | UI Components | Reference |
-=======
-| [Predict Module Index](../../Modules/<nome modulo>/docs/00-index.md) | UI Components | Reference |
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
+### Stato Implementazione
+| Componente | HTML | CSS | JS | Totale |
+|-----------|------|-----|----|--------|
+| Accordion | ✅ 95% | ✅ 90% | ⏳ 0% | ⏳ 62% |
+| Hero | ✅ 100% | ✅ 95% | N/A | ✅ 98% |
+| Breadcrumb | ✅ 100% | ✅ 100% | N/A | ✅ 100% |
+| Search | ✅ 100% | ✅ 90% | ⏳ 0% | ⏳ 65% |
 
 ---
+*Documentazione conforme agli standard Laraxot - DRY + KISS + SOLID*
 
-## 📚 Riferimenti
+## Dependency Intelligence
 
-### Interni
-- [Maintainable CSS - Semantics](https://maintainablecss.com/chapters/semantics/)
-- [WCAG 2.2 Guidelines](https://www.w3.org/WAI/WCAG22/quickref/)
-
-### Esterni
-- [Laravel Blade Components](https://laravel.com/docs/blade#components)
-- [Alpine.js](https://alpinejs.dev/start-here)
-
----
-
-**Maintained By**: AI Agents Team  
-**Review Cycle**: Every sprint  
-**Next Review**: 2026-04-02
+- [Dependency intelligence](dependency-intelligence.md)

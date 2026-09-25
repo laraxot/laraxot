@@ -1,17 +1,3 @@
-<<<<<<< HEAD
----
-title: "Job Module - Comprehensive Job Management System"
-module: "Job"
-type: concept
-tags: [enterprise, job, system, roadmap]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "enterprise job system roadmap"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
-=======
->>>>>>> af4545e (.)
 # Job Module - Comprehensive Job Management System
 
 ## Overview

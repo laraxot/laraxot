@@ -36,7 +36,7 @@ class IDColumn extends XotBaseTextColumn
     {
         $value = is_scalar($state) ? (string) $state : '';
 
-        if ($value === '') {
+        if ('' === $value) {
             return new HtmlString('');
         }
 

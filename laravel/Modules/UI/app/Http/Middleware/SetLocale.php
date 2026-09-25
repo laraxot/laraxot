@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Session;
-use RuntimeException;
 use Symfony\Component\HttpFoundation\Response;
 
 final class SetLocale
@@ -28,7 +27,7 @@ final class SetLocale
 
         $response = $next($request);
         if (! $response instanceof Response) {
-            throw new RuntimeException('Middleware must return a Response instance');
+            throw new \RuntimeException('Middleware must return a Response instance');
         }
 
         return $response;

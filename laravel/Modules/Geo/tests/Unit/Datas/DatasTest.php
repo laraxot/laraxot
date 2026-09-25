@@ -20,8 +20,10 @@ use Modules\Geo\Datas\Routing\RouteData;
 use Modules\Geo\Datas\Routing\TravelTimeData;
 use Modules\Geo\Datas\TimeZoneData;
 use Modules\Geo\Datas\UpdateCoordinatesResult;
+use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('CoordinatesData can be instantiated', function () {
     Assert::assertTrue(class_exists(CoordinatesData::class));
 

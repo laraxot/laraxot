@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name' => 'UI',
     'description' => 'Modulo per la gestione dell\'interfaccia utente e componenti',
-    'icon' => 'ui-icon',
+    'icon' => 'heroicon-o-squares-2x2',
     'navigation' => [
         'enabled' => true,
         'sort' => 90,

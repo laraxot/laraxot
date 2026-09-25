@@ -24,6 +24,7 @@ abstract class GeoJsonModel
      * Restituisce tutti i dati come collection.
      */
     /**
+     *
      * @return Collection<int, array<string, mixed>>
      */
     public static function all(): Collection
@@ -34,10 +35,11 @@ abstract class GeoJsonModel
     /**
      * Filtra la collection per chiave/valore.
      *
+     * @param string|int|bool|null $value
      *
      * @return Collection<int, array<string, mixed>>
      */
-    public static function where(string $key, string|int|bool|null $value): Collection
+    public static function where(string $key, $value): Collection
     {
         /** @var Collection<int, array<string, mixed>> $all */
         $all = static::all();

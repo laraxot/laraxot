@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Tables\Columns;
 
+use Filament\Tables\Columns\ViewColumn;
 use Modules\Geo\Enums\AddressItemEnum;
-use Modules\Xot\Filament\Tables\Columns\XotBaseViewColumn;
 
 /**
  * AddressColumn - Colonna Filament riutilizzabile per rendering indirizzi.
@@ -27,16 +27,26 @@ use Modules\Xot\Filament\Tables\Columns\XotBaseViewColumn;
  *
  * @since 2025-12-12
  */
-class AddressColumn extends XotBaseViewColumn
+class AddressColumn extends ViewColumn
 {
+    /**
+     * View Blade per il rendering della colonna.
+     */
+    protected string $view = 'geo::filament.tables.columns.address';
+
     protected function setUp(): void
     {
         parent::setUp();
 
+        // Passa i componenti indirizzo alla view
+        $addressItems = AddressItemEnum::cases();
+
         /** @var array<string> $searchableArray */
         $searchableArray = AddressItemEnum::getSearchable();
 
-        $this
+        $this->view(static::getView(), [
+            'address_items' => $addressItems,
+        ])
             ->searchable($searchableArray)
             ->sortable(false)
             ->toggleable(isToggledHiddenByDefault: false);

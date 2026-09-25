@@ -6,11 +6,9 @@
 # Mai: filter=lfs / diff=lfs / merge=lfs
 
 * text=auto
-
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
-
 CHANGELOG.md export-ignore
 # Binari come blob git normali — NIENTE git-lfs.
 # `binary` disattiva diff e normalizzazione di fine riga.

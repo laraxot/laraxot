@@ -96,7 +96,7 @@ final class SpatieDocumentUpload
      *
      * @param  string  $name  Nome del campo
      * @param  string  $collection  Nome della collection
-     * @param  array<string>  $mimeTypes  Tipi MIME accettati
+     * @param  list<string>  $mimeTypes  Tipi MIME accettati
      * @param  int  $maxSize  Dimensione massima in KB
      */
     public static function custom(

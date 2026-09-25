@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\UI\View\Composers;
 
-use Exception;
 use Illuminate\View\View;
 
 final class ThemeComposer
@@ -19,14 +18,12 @@ final class ThemeComposer
         return view($view);
     }
 
-    public function metatag(string $index): string|bool|null
+    public function metatag(string $index): mixed
     {
         // $ris = self::__getStatic($index);
         // echo '<br/>['.$index.']['.$ris.']';
         // if ('' === $ris || null === $ris) {
-        $value = config('metatag.'.$index);
-
-        return is_string($value) || is_bool($value) ? $value : null;
+        return config('metatag.'.$index);
     }
 
     public function showScripts(): string
@@ -38,7 +35,7 @@ final class ThemeComposer
     {
         $view = "ui::svg.flags.{$lang}";
         if (! view()->exists($view)) {
-            throw new Exception('view not exits ['.$view.']');
+            throw new \Exception('view not exits ['.$view.']');
         }
 
         return view($view);

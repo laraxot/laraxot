@@ -1,5 +1,26 @@
 # Risoluzione dei Loghi
 
+Il login Filament (`/admin/login`) prende il logo da `MetatagData::getBrandLogo()`,
+che chiama `AssetAction` sulla chiave `logo_header` (es. `ptv::img/icon.png`).
+
+**Sintomo:** HTML con `src="…/ptv::img/icon.png"` → 404. Non è Git LFS.
+`AssetAction` in `APP_ENV=local` forza `File::copy` verso `public_html/assets/{modulo}/…`.
+PHP-FPM è `www-data`: se il dest è di un altro utente, la copy fallisce e
+`MetatagData` non deve chiamare `asset()` sulla notazione `module::`.
+
+Verifica:
+
+```bash
+curl -sS http://personale2022.prov.tv.local/admin/login | rg 'fi-logo|icon\.png'
+file laravel/Modules/Ptv/resources/img/icon.png
+# atteso: PNG image data, non "ASCII text" (puntatore LFS)
+```
+
+Canone path pubblici: `docs/wiki/memories/public-path-is-public-html.md`.
+Story: `docs/bmad/stories/5.223-admin-login-logo-asset-copy.story.md`.
+
+## Processo di Risoluzione
+
 Questo documento descrive il meccanismo di risoluzione dei loghi in un'applicazione Laravel 12.x modulare (PHP 8.2+).
 
 ## Processo di Risoluzione

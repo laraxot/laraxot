@@ -7,16 +7,14 @@ created: 2026-07-09
 updated: 2026-07-12
 qmd: "UI claude-audit static 80 score lang split pricing blade partials SelectStateColumn"
 issues:
+  - "https://github.com/laraxot/module_ui_fila5/issues/1"
 discussions:
+  - "https://github.com/laraxot/base_fixcity_fila5/discussions/304"
 related:
-  - "./auth-register-focus-loss-overlay.md"
-  - "./block-rendering-and-optional-services.md"
-  - "./code-redundancy-ui.md"
-  - "./context-overflow-prevention.md"
-  - "./enum-select-best-practices.md"
-  - "./enum-select-component.md"
-  - "./enum-select-contract-and-false-friends.md"
-  - "./enum-select-usage.md"
+  - ../../../../../../bashscripts/tools/run-claude-audit-module-static.sh
+  - ../../../../../../bashscripts/tools/split-module-lang-monolith-for-audit.php
+  - ../../Xot/docs/wiki/concepts/claude-audit-static-all-modules.md
+  - ../memories/lang-split-ui-claude-audit.md
 ---
 
 # claude-audit static (UI)
@@ -38,9 +36,7 @@ bash bashscripts/tools/run-claude-audit-module-static.sh UI
 
 ## `.gitignore`
 
-`/Tests/` + negazioni `!tests/**` e `!audit-coverage/**` — rimuovere `audit-coverage/` dalla ignore list (altrimenti 0 test in static → 79/100).
-
-Bridge in `audit-coverage/tests/` (path con substring `/tests/`), non `tests/AuditCoverage/`.
+`/Tests/`, `/tests/AuditCoverage/` e `/audit-coverage/` seguono la policy comune dei moduli e sono esclusi da Git. Il bridge di audit generato va rimosso dopo l’uso; non aggiungere negazioni per includerlo. Il punteggio statico va interpretato tenendo conto di queste esclusioni.
 
 ## Verifica
 

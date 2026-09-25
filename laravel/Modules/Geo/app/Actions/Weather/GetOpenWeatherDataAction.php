@@ -15,6 +15,7 @@ class GetOpenWeatherDataAction
     private const string ENDPOINT = 'https://api.openweathermap.org/data/2.5/weather';
 
     /**
+     *
      * @return array<string, mixed>|null
      */
     public function execute(float $latitude, float $longitude): ?array

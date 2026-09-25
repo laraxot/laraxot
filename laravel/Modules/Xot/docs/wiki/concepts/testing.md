@@ -11,7 +11,7 @@ discussions:
   - "https://github.com/laraxot/module_xot_fila5/discussions/29"
 related:
   - phpstan-pest-bridge-discipline.md
-  - ../PHPSTAN-BEST-PRACTICES.md
+  - ../phpstan-best-practices.md
   - ../overviews/platform-completion-roadmap.md
   - module-testcase-xotbase-hierarchy.md
 ---
@@ -40,4 +40,4 @@ php -d memory_limit=2048M ./vendor/bin/phpstan analyse Modules
 
 - PHPStan piattaforma: ✅ (hub owner documentazione)
 - [platform-completion-roadmap](../overviews/platform-completion-roadmap.md)
-- [PHPSTAN-BEST-PRACTICES](../PHPSTAN-BEST-PRACTICES.md)
+- [phpstan-best-practices](../phpstan-best-practices.md)

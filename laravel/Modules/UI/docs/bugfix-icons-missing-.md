@@ -94,12 +94,11 @@ php artisan config:clear
 
 - [Sistema Icone UI](../icon-system.md)
 - [Blade Icons Documentation](../blade-icons.md)
-- [XotBaseServiceProvider](../XotBaseServiceProvider.md)
+- [XotBaseServiceProvider](../xotbaseserviceprovider.md)
 
 ---
 
-**Data**: 27 Gennaio 2025  
-**Modulo**: UI  
-**Tipo**: Bug Fix  
-**Priorità**: Alta  
+**Modulo**: UI
+**Tipo**: Bug Fix
+**Priorità**: Alta
 **Stato**: ✅ Risolto

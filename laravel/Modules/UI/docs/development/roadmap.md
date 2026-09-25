@@ -1,32 +1,3 @@
----
-title: "Roadmap Modulo UI"
-type: concept
-tags: [roadmap]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "roadmap roadmap modulo ui"
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-=======
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-related:
----
-
 ### Versione HEAD
 
 # Roadmap Modulo UI
@@ -322,7 +293,7 @@ Overall Module Completion: 60%
 
 ### Component System Enhancement [75%]
 - [x] Base Components [docs/roadmap/components_base.md]
-- [x] Form Components [docs/roadmap/form-components-2.md]
+- [x] Form Components [docs/roadmap/form_components.md]
 - [ ] Data Display Components [docs/roadmap/data_display.md]
 - [ ] Navigation Components [docs/roadmap/navigation.md]
 - [x] Layout Components [docs/roadmap/layout.md]

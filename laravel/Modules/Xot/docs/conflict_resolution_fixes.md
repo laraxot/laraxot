@@ -69,12 +69,4 @@ Documentazione della risoluzione dei conflitti Git nel modulo Xot che bloccavano
 - [Script Risoluzione Conflitti](../../../bashscripts/docs/conflict_resolution_script_improvements.md)
 - [Report Completo PHPStan Fixes](../../../bashscripts/docs/phpstan_fixes_comprehensive_report.md)
 
-<<<<<<< HEAD
-*Ultimo aggiornamento: Dicembre 2024*
-=======
-<<<<<<< HEAD
-*Ultimo aggiornamento: Dicembre 2024*
-=======
-*Ultimo aggiornamento: Dicembre 2024*
->>>>>>> 7f6cf6be (.)
->>>>>>> laraxot/dev
+*

@@ -36,6 +36,9 @@ trait HasLikes
             return;
         }
 
+        /**
+         * @var Like
+         */
         $where = $this->likesRelation()->where('user_id', $user->id)->first();
         if (null !== $where) {
             $where->delete();
@@ -49,8 +52,9 @@ trait HasLikes
      * eager loading of the polymorphic relationship will fail on queued jobs.
      *
      * @see https://github.com/laravelio/laravel.io/issues/350
+     *
+     * @return MorphMany<Like, $this>
      */
-    /** @return MorphMany<Like, $this> */
     public function likesRelation(): MorphMany
     {
         return $this->morphMany(Like::class, 'likesRelation', 'likeable_type', 'likeable_id');

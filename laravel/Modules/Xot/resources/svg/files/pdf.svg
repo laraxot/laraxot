@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" role="img">
+  <!-- Foglio PDF: piega + badge tipografico semplificato (solo path, niente <text>) -->
+  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75h6.75L18 7.5v11.25a1.5 1.5 0 0 1-1.5 1.5h-9a1.5 1.5 0 0 1-1.5-1.5V5.25a1.5 1.5 0 0 1 1.5-1.5Z"/>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 3.75V7.5H18"/>
+  <!-- Glifo "P" stilizzato a sinistra: riconoscibile a toolbar size -->
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 11.25v6M9 11.25h2.4a1.8 1.8 0 0 1 0 3.6H9"/>
+  <!-- Freccia export a destra: il dato esce dal file -->
+  <path stroke-linecap="round" stroke-linejoin="round" d="M14.4 11.5v5m0 0-1.35-1.35m1.35 1.35 1.35-1.35"/>
+</svg>

@@ -17,8 +17,10 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\In;
 use Modules\Rating\Contracts\RatingsFormCallerContract;
+use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\BaseRating;
+use Modules\Rating\Models\Contracts\RatingContract;
 use Modules\Rating\Models\Rating;
 use Modules\Rating\Tests\Fixtures\RatingsHostStub;
 use Modules\Rating\Tests\TestCase;
@@ -203,9 +205,9 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
     test('ratingFieldName accetta una colonna pivot esplicita restando retrocompatibile', function (): void {
         $rating = makeChildRating(7, 'Prova');
 
-        Assert::assertSame('ratings.7.pivot.value', RatingsHostStub::ratingFieldName($rating));
-        Assert::assertSame('ratings.7.pivot.value', RatingsHostStub::ratingFieldName($rating, 'value'));
-        Assert::assertSame('ratings.7.pivot.note', RatingsHostStub::ratingFieldName($rating, 'note'));
+        Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating));
+        Assert::assertSame('ratings.7.pivot.value', RatingData::ratingFieldName($rating, 'value'));
+        Assert::assertSame('ratings.7.pivot.note', RatingData::ratingFieldName($rating, 'note'));
     });
 
     test('la Textarea e required solo quando Get sul Select restituisce other', function (): void {
@@ -336,7 +338,7 @@ describe('HasRatingsTrait — opzione "altro" (Rating/5.99 + 5.147 Fieldset)', f
             /** @var array<int, class-string> */
             public array $decorated = [];
 
-            public function decorateRatingField(BaseRating $rating, Component $component): Component
+            public function decorateRatingField(RatingContract $rating, Component $component): Component
             {
                 $this->decorated[] = $component::class;
 

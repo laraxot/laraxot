@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Actions\GetCoordinatesAction;
 use Modules\Geo\Datas\LocationData;
+use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 it('returns coordinates for valid address', function (): void {
     $action = new GetCoordinatesAction();
 

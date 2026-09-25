@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Unit;
 
+use Cknow\Money\Money;
 use Illuminate\Database\Eloquent\Builder;
 use Mockery;
 use Modules\Rating\Enums\RuleEnum;
 use Modules\Rating\Models\BaseRating;
 use Modules\Rating\Models\Rating;
+use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\Sluggable\SlugOptions;
@@ -95,5 +97,54 @@ describe('BaseRating (via Rating)', function (): void {
         $result = (new Rating())->scopeWithExtraAttributes($builder, 'anno');
 
         Assert::assertSame($builder, $result);
+    });
+
+    test('getValueHtml restituisce stringa per valori non Importo', function (): void {
+        $rating = new Rating([
+            'title' => 'Punteggio',
+            'txt' => 'Voto',
+        ]);
+        $pivot = new RatingMorph();
+        $pivot->setRawAttributes(['value' => 42]);
+        $rating->setRelation('pivot', $pivot);
+        $rating->setRelation('children', collect());
+
+        Assert::assertSame('42', $rating->getValueHtml());
+    });
+
+    test('getValueHtml restituisce Money quando txt contiene Importo', function (): void {
+        $rating = new Rating([
+            'txt' => 'Importo mensile',
+        ]);
+        $pivot = new RatingMorph();
+        $pivot->setRawAttributes(['value' => 12.5]);
+        $rating->setRelation('pivot', $pivot);
+        $rating->setRelation('children', collect());
+
+        $result = $rating->getValueHtml();
+
+        Assert::assertInstanceOf(Money::class, $result);
+        Assert::assertSame('1250', $result->getAmount());
+    });
+
+    test('getNoteHtml restituisce note pivot quando ci sono figli caricati', function (): void {
+        $rating = new Rating(['txt' => 'Criterio']);
+        $pivot = new RatingMorph();
+        $pivot->setRawAttributes(['value' => 1, 'note' => 'scelta utente']);
+        $rating->setRelation('pivot', $pivot);
+        $rating->setRelation('children', collect([new Rating(['title' => 'Figlio'])]));
+
+        Assert::assertSame('scelta utente', $rating->getNoteHtml());
+    });
+
+    test('getTxtHtml rende HTML RichEditor e decodifica entita doppie', function (): void {
+        $plain = new Rating(['title' => 'Solo titolo']);
+        Assert::assertSame('Solo titolo', $plain->getTxtHtml());
+
+        $html = new Rating(['txt' => '<p><strong>Obiettivo</strong></p>']);
+        Assert::assertSame('<p><strong>Obiettivo</strong></p>', $html->getTxtHtml());
+
+        $encoded = new Rating(['txt' => '&lt;p&gt;Obiettivo&lt;/p&gt;']);
+        Assert::assertSame('<p>Obiettivo</p>', $encoded->getTxtHtml());
     });
 });

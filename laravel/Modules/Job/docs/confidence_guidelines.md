@@ -1,17 +1,3 @@
-<<<<<<< HEAD
----
-title: "Massimizzare il livello di confidenza"
-module: "Job"
-type: how-to
-tags: [confidence, guidelines]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "confidence guidelines"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
-=======
->>>>>>> af4545e (.)
 # Massimizzare il livello di confidenza
 
 1. **Test automatizzati**: copertura >90%, includi test unitari, integrazione, e fine‑to‑end.

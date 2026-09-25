@@ -3,20 +3,6 @@
 declare(strict_types=1);
 
 return [
-    'values' => [
-        'list' => [
-            'label' => 'Liste',
-            'icon' => 'heroicon-o-list-bullet',
-            'color' => 'primary',
-            'description' => 'Liste',
-        ],
-        'grid' => [
-            'label' => 'Raster',
-            'icon' => 'heroicon-o-squares-2x2',
-            'color' => 'secondary',
-            'description' => 'Raster',
-        ],
-    ],
     'actions' => [
         'toggle' => [
             'label' => 'Layout wechseln',

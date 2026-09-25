@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Xot\Actions\Cast\SafeArrayCastAction;
 use Modules\Xot\Actions\Cast\SafeBooleanCastAction;
 use Modules\Xot\Actions\Cast\SafeIntCastAction;

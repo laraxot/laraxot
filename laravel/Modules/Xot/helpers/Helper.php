@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Filament\Facades\Filament;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -30,6 +29,7 @@ if (! function_exists('isRunningTestBench')) {
 }
 
 if (! function_exists('dddx')) {
+    /** @param mixed $params Qualunque valore da dumpare (debug helper) */
     function dddx(mixed $params): void
     {
         $tmp = debug_backtrace();
@@ -197,10 +197,11 @@ if (! function_exists('get')) {
 
 if (! function_exists('post')) {
     /**
+     * @param  array<string, mixed>  $data
      * @param  array<string, mixed>  $options
      * @return TestResponse<Response>
      */
-    function post(string $uri, mixed $data = [], array $options = []): TestResponse
+    function post(string $uri, array $data = [], array $options = []): TestResponse
     {
         throw new RuntimeException('Stub: This function is meant for static analysis only.');
     }
@@ -208,9 +209,10 @@ if (! function_exists('post')) {
 
 if (! function_exists('put')) {
     /**
+     * @param  array<string, mixed>  $data
      * @return TestResponse<Response>
      */
-    function put(string $uri, mixed $data = []): TestResponse
+    function put(string $uri, array $data = []): TestResponse
     {
         throw new RuntimeException('Stub: This function is meant for static analysis only.');
     }
@@ -218,9 +220,10 @@ if (! function_exists('put')) {
 
 if (! function_exists('patch')) {
     /**
+     * @param  array<string, mixed>  $data
      * @return TestResponse<Response>
      */
-    function patch(string $uri, mixed $data = []): TestResponse
+    function patch(string $uri, array $data = []): TestResponse
     {
         throw new RuntimeException('Stub: This function is meant for static analysis only.');
     }

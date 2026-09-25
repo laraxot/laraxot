@@ -10,6 +10,7 @@ use Illuminate\Database\Migrations\Migration as LaravelMigration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\Builder;
 use Illuminate\Database\Schema\ForeignIdColumnDefinition;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
@@ -317,6 +318,9 @@ abstract class XotBaseMigration extends LaravelMigration
         $this->getConn()->table($tableName, $next);
     }
 
+    /**
+     * @param  mixed  $result  Risultato di Connection::selectOne() (atteso array{count?: mixed}|object|null)
+     */
     protected function extractPrimaryKeyCount(mixed $result): int
     {
         if (is_array($result)) {
@@ -497,7 +501,7 @@ abstract class XotBaseMigration extends LaravelMigration
         $table = $this->getTable();
         $conn = DB::connection($this->getConnection());
 
-        $conn->table($table)->orderBy('id')->chunk(100, function (\Illuminate\Support\Collection $rows) use ($table, $conn): void {
+        $conn->table($table)->orderBy('id')->chunk(100, function (Collection $rows) use ($table, $conn): void {
             foreach ($rows as $row) {
                 $row = (object) $row;
                 if (! empty($row->uuid)) {
@@ -594,8 +598,8 @@ abstract class XotBaseMigration extends LaravelMigration
         if ($this->isMysqlFamilyDriver($conn->getDriverName())) {
             $db = $conn->getDatabaseName();
             $constraint = $conn->selectOne(
-                "SELECT CONSTRAINT_NAME FROM information_schema.TABLE_CONSTRAINTS 
-                 WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? 
+                "SELECT CONSTRAINT_NAME FROM information_schema.TABLE_CONSTRAINTS
+                 WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ?
                  AND CONSTRAINT_TYPE = 'UNIQUE' AND CONSTRAINT_NAME LIKE ? LIMIT 1",
                 [$db, $pivotTable, '%'.$fkColumn.'%']
             );

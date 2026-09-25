@@ -110,7 +110,7 @@ return [
         ],
         'label' => 'Marker',
         'sort' => 1,
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
     ],
     'actions' => [
         'create' => [

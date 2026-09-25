@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Xot\Services\ModuleService;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -10,7 +9,7 @@ uses(TestCase::class);
 
 function xotModuleServiceTestInstance(): ModuleService
 {
-    return (new ModuleService())->setName('TestModule');
+    return (new ModuleService)->setName('TestModule');
 }
 
 describe('ModuleService', function () {
@@ -27,8 +26,8 @@ describe('ModuleService', function () {
     });
 
     it('can be instantiated with different module names', function () {
-        $service1 = (new ModuleService())->setName('Chart');
-        $service2 = (new ModuleService())->setName('User');
+        $service1 = (new ModuleService)->setName('Chart');
+        $service2 = (new ModuleService)->setName('User');
 
         Assert::assertInstanceOf(ModuleService::class, $service1);
         Assert::assertInstanceOf(ModuleService::class, $service2);
@@ -88,7 +87,7 @@ describe('ModuleService', function () {
     });
 
     it('handles empty module gracefully', function () {
-        $emptyService = (new ModuleService())->setName('NonExistentModule');
+        $emptyService = (new ModuleService)->setName('NonExistentModule');
         $result = $emptyService->getModels();
 
         Assert::assertSame([], $result);
@@ -119,7 +118,7 @@ describe('ModuleService', function () {
         $reflection = new ReflectionClass(xotModuleServiceTestInstance());
         $methods = $reflection->getMethods();
 
-        $publicMethods = array_filter($methods, fn ($method) => $method->isPublic());
+        $publicMethods = array_filter($methods, fn (ReflectionMethod $method): bool => $method->isPublic());
 
         Assert::assertGreaterThan(0, count($publicMethods));
     });

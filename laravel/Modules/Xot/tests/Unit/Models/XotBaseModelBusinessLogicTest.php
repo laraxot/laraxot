@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Models\XotBaseModel;
 use Modules\Xot\Tests\TestCase;

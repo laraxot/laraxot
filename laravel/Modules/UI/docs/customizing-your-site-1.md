@@ -75,13 +75,6 @@ class Foo extends bar
 </div>
 ### Versione HEAD
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
 ## Collegamenti tra versioni di customizing-your-site.md
 * [customizing-your-site.md](../../../Gdpr/docs/customizing-your-site.md)
 * [customizing-your-site.md](../../../Xot/docs/customizing-your-site.md)
@@ -89,21 +82,6 @@ class Foo extends bar
 * [customizing-your-site.md](../../../Tenant/docs/it/customizing-your-site.md)
 * [customizing-your-site.md](../../../Cms/docs/customizing-your-site.md)
 
-
-### Versione Incoming
-
-
----
-
-<<<<<<< HEAD
 ### Versione Incoming
 
 ---
-=======
-<<<<<<< HEAD
-### Versione Incoming
-
----
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev

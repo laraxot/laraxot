@@ -81,18 +81,64 @@ questo pannello, un `.fi-ac` di Filament non va a capo di default.
   direttamente (vanno a capo su più righe, non esce nulla dallo schermo).
 - AC5: PHPStan pulito sui file toccati.
 
+## Ripristino 2026-09-17
+
+Scoperto lo stesso giorno del ripristino del bottone Passport "Nuove
+credenziali" (`module_user_fila5#98`): Task 1-3 qui sotto risultavano
+"fatti" dal 2026-09-03, ma verificando la pagina dal vivo mancavano di
+nuovo — stessa causa, `ArtisanCommandsManager.php`/
+`AdminPanelProvider.php`/il file CSS esistevano solo nella "fotografia"
+del mono-repo, mai confluiti nel repository reale del modulo Xot
+(`git log --all -S` dentro `Modules/Xot` non trova nessun commit con
+questo contenuto). Unica eccezione: `ExecuteComposerDumpAutoloadAction.php`
+è arrivato per una via diversa ed esisteva già nel repository reale.
+
+Ripristinati: bottone "Composer Dump Autoload" su
+`ArtisanCommandsManager.php` (nuovo metodo
+`executeComposerDumpAutoload()`, riusa l'action già esistente), CSS
+`public_html/assets/xot/header-actions-wrap.css` e la sua registrazione
+in `AdminPanelProvider.php` via `FilamentAsset::register()`, chiavi di
+traduzione mancanti. Verificato via reflection su `getHeaderActions()`:
+9 azioni registrate (le 8 originarie + Composer Dump Autoload), CSS
+raggiungibile via `asset()`. PHPStan pulito. Committato questa volta
+nel repository reale del modulo.
+
 ## Tasks/Subtasks
 
 - [x] Task 1: nuova `ExecuteComposerDumpAutoloadAction` (comando fisso,
       nessun input utente, stesso pattern di `ExecuteArtisanCommandAction`)
 - [x] Task 2: nuovo pulsante header "Composer Dump Autoload" su
-      `ArtisanCommandsManager.php`, con `requiresConfirmation()`
+      `ArtisanCommandsManager.php`, con `requiresConfirmation()` —
+      **ripristinato 2026-09-17**, vedi sopra
 - [x] Task 3: CSS statico (`public_html/assets/xot/header-actions-wrap.css`)
       per il wrap dei pulsanti, registrato in `AdminPanelProvider.php`
       (pannello xot) via `FilamentAsset::register()` — nessun tema Vite
-      creato, il file e' servito staticamente
+      creato, il file e' servito staticamente — **ripristinato 2026-09-17**
 - [ ] Task 4: verifica manuale — rilancio del job fallito per "Job is
       incomplete class" dopo l'azione, deve completare con successo
+
+## Estensione 2026-09-17 — bottone "Importa Vecchi Template Email/SMS"
+
+Fuori dallo scope originale di questa story, ma sulla stessa pagina:
+l'utente deve poter eseguire `notify:migrate-themes-to-mail-templates`
+(copia `notify_themes` → `mail_templates`) senza SSH, in vista del
+go-live. A differenza del bottone "Nuove credenziali" Passport (che
+richiede un form perché il nome del cliente è un input dinamico), questo
+comando non richiede nessun input variabile — aggiunto direttamente alla
+whitelist fissa di `ExecuteArtisanCommandAction`, stesso meccanismo già
+usato per `migrate`/i comandi cache.
+
+Aggiunto: `'notify:migrate-themes-to-mail-templates'` alla whitelist,
+nuovo bottone su `ArtisanCommandsManager.php` (10 azioni totali),
+traduzioni it/en.
+
+**Verificato end-to-end per davvero**, non solo a lettura di codice:
+svuotata `mail_templates` (40→0 righe, dati sorgente intatti in
+`notify_themes`), eseguito il bottone tramite
+`ExecuteArtisanCommandAction::execute()` — stesso risultato di sempre
+(39 migrati, 4 saltati), 0→39 righe. Confermato che ATS
+(`survey-pdf-48-invito`) e Vivaservizi (`survey-pdf-44-invito`) tornano
+completi con lo stesso contenuto reale di prima. PHPStan pulito.
 
 ## Dev Notes
 

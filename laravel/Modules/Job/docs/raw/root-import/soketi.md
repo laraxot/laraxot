@@ -1,14 +1,3 @@
----
-title: "Soketi"
-module: "Job"
-type: concept
-tags: [soketi]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "soketi"
-related:
-  - "./phpstan-fixes-archive-2.md"
----
 https://github.com/Safemood/REAL-TIME-LARAVEL-9-SOKETI/
 
 https://medium.com/@tthdvd/laravel-reactjs-soketi-triumvirates-step-by-step-guide-to-build-a-real-time-webapp-part-2-f1ed815ec539

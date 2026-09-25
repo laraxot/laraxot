@@ -1,38 +1,3 @@
----
-title: "Standard UI"
-type: rule
-tags: [standards]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "ui-standards standard ui"
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
-discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
-<<<<<<< HEAD
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-=======
-=======
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-related:
-  - "./accessibility.md"
-  - "./auth-form-standards-1.md"
-  - "./auth-form-standards.md"
-  - "./form-standards-1.md"
-  - "./form-standards.md"
-  - "./performance.md"
----
-
 # Standard UI
 
 ## 🎨 Design System

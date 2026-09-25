@@ -197,34 +197,7 @@ php phpmd.phar Modules/UI/database/factories text cleancode,codesize,controversi
 - [ ] **AI-Powered Components**
   - Smart forms
   - Auto-completion
-<<<<<<< HEAD
-  - Predictive inputs
-  - forecastive inputs
-=======
-<<<<<<< HEAD
-  - Predictive inputs
-<<<<<<< HEAD
-  - forecastive inputs
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  - Predictive inputs
-=======
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-  - forecastive inputs
-=======
-  - Predictive inputs
->>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
->>>>>>> 92912795 (.)
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
+  - <nome progetto>ive inputs
 
 - [ ] **Real-Time Components**
   - Live updates
@@ -301,7 +274,7 @@ php phpmd.phar Modules/UI/database/factories text cleancode,codesize,controversi
 
 ## 🔗 Collegamenti
 
-- [← UI Module README](../README.md)
+- [← UI Module README](../readme.md)
 - [← Components Documentation](./components.md)
 - [← Project Roadmap](../../../docs/project-analysis-and-roadmap.md)
 - [← Root Documentation](../../../docs/index.md)

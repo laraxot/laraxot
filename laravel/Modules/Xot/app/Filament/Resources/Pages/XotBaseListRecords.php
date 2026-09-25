@@ -58,6 +58,7 @@ abstract class XotBaseListRecords extends FilamentListRecords
     {
         $resource = static::getResource();
         $model = $resource::getModel();
+
         return $model;
     }
 

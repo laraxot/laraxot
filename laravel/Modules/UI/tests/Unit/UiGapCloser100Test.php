@@ -11,6 +11,7 @@ use Illuminate\View\View;
 use Modules\UI\Enums\TableLayoutEnum;
 use Modules\UI\Filament\Blocks\Image;
 use Modules\UI\Filament\Forms\Components\YearSelect;
+use Modules\UI\Filament\Widgets\DarkModeSwitcherWidget;
 use Modules\UI\Filament\Widgets\HeroWidget;
 use Modules\UI\Filament\Widgets\RedirectWidget;
 use Modules\UI\Filament\Widgets\RowWidget;
@@ -27,13 +28,12 @@ use Modules\UI\View\Components\Render\Block;
 use Modules\UI\View\Components\Render\Blocks;
 use Modules\UI\View\Composers\ThemeComposer;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 
 uses(TestCase::class);
 
 describe('UI gap closer 100 — Livewire', function (): void {
     test('DarkModeSwitcher mount toggle and render', function (): void {
-        $component = new DarkModeSwitcher;
+        $component = new DarkModeSwitcher();
         $component->mount();
         Assert::assertFalse($component->darkMode);
         $component->toggleDarkMode();
@@ -41,8 +41,17 @@ describe('UI gap closer 100 — Livewire', function (): void {
         Assert::assertInstanceOf(ViewContract::class, $component->render());
     });
 
+    test('DarkModeSwitcherWidget mount toggle and render (gemello Filament)', function (): void {
+        $widget = new DarkModeSwitcherWidget();
+        $widget->mount();
+        Assert::assertFalse($widget->darkMode);
+        $widget->toggleDarkMode();
+        Assert::assertTrue($widget->darkMode);
+        Assert::assertInstanceOf(ViewContract::class, $widget->render());
+    });
+
     test('Toast render exposes view params', function (): void {
-        $component = new Toast;
+        $component = new Toast();
         Assert::assertInstanceOf(ViewContract::class, $component->render());
     });
 });
@@ -64,7 +73,7 @@ describe('UI gap closer 100 — View components', function (): void {
     });
 
     test('ThemeComposer metatag and scripts', function (): void {
-        $composer = new ThemeComposer;
+        $composer = new ThemeComposer();
         Assert::assertSame('', $composer->showScripts());
         Assert::assertNull($composer->metatag('missing-key'));
         config(['metatag.test_bool' => true]);
@@ -76,14 +85,14 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
     test('RedirectWidget getViewData and canView', function (): void {
         Assert::assertTrue(RedirectWidget::canView());
 
-        $widget = new RedirectWidget;
+        $widget = new RedirectWidget();
         $widget->to = '/admin';
         $widget->label = 'Go';
         $widget->icon = 'heroicon-o-link';
         $widget->class = 'btn';
         $widget->external = true;
 
-        $method = (new ReflectionClass($widget))->getMethod('getViewData');
+        $method = (new \ReflectionClass($widget))->getMethod('getViewData');
         $method->setAccessible(true);
         $data = $method->invoke($widget);
         Assert::assertIsArray($data);
@@ -93,8 +102,8 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
     });
 
     test('StatWithIconWidget getData and RowWidget getColumns', function (): void {
-        $stat = new StatWithIconWidget;
-        $ref = new ReflectionClass($stat);
+        $stat = new StatWithIconWidget();
+        $ref = new \ReflectionClass($stat);
         $label = $ref->getProperty('label');
         $label->setAccessible(true);
         $label->setValue($stat, 'Users');
@@ -107,13 +116,14 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
         Assert::assertSame('Users', $data['label']);
         Assert::assertSame(42, $data['value']);
 
-        $row = new class extends RowWidget {};
-        Assert::assertSame(3, (new ReflectionClass($row))->getMethod('getColumns')->invoke($row));
+        $row = new class extends RowWidget {
+        };
+        Assert::assertSame(3, (new \ReflectionClass($row))->getMethod('getColumns')->invoke($row));
     });
 
     test('HeroWidget getStats and UserCalendarWidget private normalizers', function (): void {
-        $hero = new HeroWidget;
-        $heroRef = new ReflectionClass($hero);
+        $hero = new HeroWidget();
+        $heroRef = new \ReflectionClass($hero);
         foreach (['title' => 'Welcome', 'icon' => 'heroicon-o-star'] as $prop => $val) {
             $p = $heroRef->getProperty($prop);
             $p->setAccessible(true);
@@ -123,8 +133,8 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
         Assert::assertIsIterable($stats);
         Assert::assertCount(1, $stats);
 
-        $calendar = new UserCalendarWidget;
-        $calendarRef = new ReflectionClass($calendar);
+        $calendar = new UserCalendarWidget();
+        $calendarRef = new \ReflectionClass($calendar);
         $normalizeEvents = $calendarRef->getMethod('normalizeEventsArray');
         $normalizeEvents->setAccessible(true);
         Assert::assertSame([], $normalizeEvents->invoke(null, 'not-array'));
@@ -137,7 +147,7 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
 
     test('YearSelect getYearsOptions swaps inverted range', function (): void {
         $select = YearSelect::make('year')->past(5)->future(-3);
-        $method = (new ReflectionClass($select))->getMethod('getYearsOptions');
+        $method = (new \ReflectionClass($select))->getMethod('getYearsOptions');
         $method->setAccessible(true);
         $options = $method->invoke($select);
         Assert::assertIsArray($options);
@@ -148,7 +158,7 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
     test('Image block ratio helpers', function (): void {
         Assert::assertSame('aspect-[3/4]', Image::getRatioClass('3-4'));
         Assert::assertSame('', Image::getRatioClass('unknown'));
-        Assert::assertNotEmpty(Image::getFormSchema());
+        Assert::assertNotEmpty((new Image)->getFormSchema());
         Assert::assertArrayHasKey('4-3', Image::getRatios());
     });
 
@@ -174,43 +184,50 @@ describe('UI gap closer 100 — Filament widgets and forms', function (): void {
 describe('UI gap closer 100 — middleware trait rules', function (): void {
     test('SetLocale handles non-string session locale', function (): void {
         Session::put('locale', 123);
-        $middleware = new SetLocale;
+        $middleware = new SetLocale();
         $response = $middleware->handle(Request::create('/'), static fn () => response('ok'));
         Assert::assertSame(200, $response->getStatusCode());
     });
 
     test('TableLayoutTrait session branches and refresh', function (): void {
-        $subject = new class
-        {
+        $subject = new class {
             use TableLayoutTrait;
 
             public int $dispatched = 0;
 
             public function dispatch(mixed ...$params): void
             {
-                $this->dispatched++;
+                ++$this->dispatched;
             }
         };
 
-        Session::put('table_layout', TableLayoutEnum::LIST);
-        Assert::assertSame(TableLayoutEnum::LIST, $subject->getTableLayout());
+        $cases = [
+            'enum instance' => [TableLayoutEnum::LIST, TableLayoutEnum::LIST],
+            'valid string' => ['list', TableLayoutEnum::LIST],
+            'invalid string' => ['invalid', TableLayoutEnum::GRID],
+            'missing value' => [null, TableLayoutEnum::GRID],
+        ];
 
-        Session::put('table_layout', 'list');
-        Assert::assertSame(TableLayoutEnum::LIST, $subject->getTableLayout());
+        foreach ($cases as $label => [$sessionValue, $expected]) {
+            if (null === $sessionValue) {
+                Session::forget('table_layout');
+            } else {
+                Session::put('table_layout', $sessionValue);
+            }
 
-        Session::put('table_layout', 'invalid');
-        Assert::assertSame(TableLayoutEnum::GRID, $subject->getTableLayout());
+            Assert::assertSame($expected, $subject->getTableLayout(), $label);
+        }
 
-        Session::forget('table_layout');
-        Assert::assertSame(TableLayoutEnum::GRID, $subject->getTableLayout());
+        $subject->setTableLayout(TableLayoutEnum::GRID);
+        Assert::assertSame('grid', Session::get('table_layout'));
 
         $subject->refreshTable();
         Assert::assertGreaterThan(0, $subject->dispatched);
     });
 
     test('OpeningHoursRule cleanTimeValue rejects non-string', function (): void {
-        $rule = new OpeningHoursRule;
-        $method = (new ReflectionClass($rule))->getMethod('cleanTimeValue');
+        $rule = new OpeningHoursRule();
+        $method = (new \ReflectionClass($rule))->getMethod('cleanTimeValue');
         $method->setAccessible(true);
 
         Assert::assertNull($method->invoke($rule, 12345));

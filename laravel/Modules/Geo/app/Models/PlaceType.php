@@ -6,20 +6,24 @@ namespace Modules\Geo\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
+use Modules\Geo\Database\Factories\PlaceTypeFactory;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Models\Traits\HasXotFactory;
 
 /**
- * @property-read ProfileContract|null $creator
- * @property-read ProfileContract|null $updater
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  *
- * @method static \Modules\Geo\Database\Factories\PlaceTypeFactory factory($count = null, $state = [])
  * @method static Builder<static>|PlaceType newModelQuery()
  * @method static Builder<static>|PlaceType newQuery()
  * @method static Builder<static>|PlaceType query()
  *
- * @property int $id
- * @property string $name
+ * @property ProfileContract|null $deleter
+ *
+ * @method static PlaceTypeFactory factory($count = null, $state = [])
+ *
+ * @property string      $id
+ * @property string      $name
  * @property string|null $description
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -34,6 +38,7 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  */
 class PlaceType extends BaseModel
 {
+    /**  */
     use HasXotFactory;
 
     protected $fillable = [

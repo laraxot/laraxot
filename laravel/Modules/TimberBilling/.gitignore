@@ -1,0 +1,17 @@
+# Tooling and development artifacts
+.vendor/
+node_modules/
+venv/
+*.log
+*.lock
+.php-cs-fixer.cache
+.rector.php
+.phpinsights.php
+.php-cs-fixer.dist.php
+.tests/AuditCoverage/
+.agents/
+.codex/
+cursor/
+.opencode/
+qwen/
+audit-coverage/

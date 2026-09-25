@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-https://medium.com/innovies-club/generate-unit-tests-in-a-snap-with-openais-api-3c72fcae6e4e
-=======
 ---
 title: 'Pest — risorse esterne'
 module: Xot
@@ -21,4 +18,3 @@ updated: 2026-08-24
 ## Riferimenti
 
 - <https://medium.com/innovies-club/generate-unit-tests-in-a-snap-with-openais-api-3c72fcae6e4e>
->>>>>>> laraxot/dev

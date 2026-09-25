@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Support\Facades\View as ViewFacade;
 use Illuminate\View\View;
 use Modules\Xot\Actions\GetViewByClassAction;

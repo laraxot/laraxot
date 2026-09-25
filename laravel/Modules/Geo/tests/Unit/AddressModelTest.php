@@ -9,8 +9,10 @@ use Modules\Geo\Contracts\HasGeolocation;
 use Modules\Geo\Database\Factories\AddressFactory;
 use Modules\Geo\Enums\AddressTypeEnum;
 use Modules\Geo\Models\Address;
+use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('Address Model', function () {
     it('can be created with factory', function () {
         $address = AddressFactory::new()->createOne();

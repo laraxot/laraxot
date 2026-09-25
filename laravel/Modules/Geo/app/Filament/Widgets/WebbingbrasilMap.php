@@ -15,7 +15,16 @@ use Modules\Xot\Filament\Widgets\XotBaseWidget;
 class WebbingbrasilMap extends XotBaseWidget
 {
     /** @var view-string */
-    protected string $view = 'geo::filament.widgets.webbingbrasil-map-stub';
+    protected string $view;
+
+    public function __construct()
+    {
+        /** @var view-string $view */
+        $view = 'geo::filament.widgets.webbingbrasil-map-stub';
+        $this->view = $view;
+
+        parent::__construct();
+    }
 
     protected int|string|array $columnSpan = 2;
 

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Actions;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Process;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
@@ -34,6 +33,7 @@ class ExecuteArtisanCommandAction
         'passport:keys',
         'passport:purge',
         'passport:hash',
+        'notify:migrate-themes-to-mail-templates',
     ];
 
     /**
@@ -42,7 +42,7 @@ class ExecuteArtisanCommandAction
      * @param  string  $command  Il comando Artisan da eseguire (senza "php artisan")
      * @return array{
      *     command: string,
-     *     output: array<int, string>,
+     *     output: list<string>,
      *     status: 'completed'|'failed',
      *     exitCode: int
      * } Array con informazioni sull'esecuzione del comando
@@ -57,11 +57,9 @@ class ExecuteArtisanCommandAction
             throw new \RuntimeException("Comando non consentito: {$command}");
         }
 
-        /** @var array<int, string> $output */
+        /** @var list<string> $output */
         $output = [];
         $status = 'running';
-
-        Event::dispatch('artisan-command.started', [$command]);
 
         try {
             $process = Process::path(base_path())
@@ -69,14 +67,16 @@ class ExecuteArtisanCommandAction
                 ->timeout(300)
                 ->start();
 
-            // Cattura l'output in tempo reale
+            // Cattura l'output man mano che il processo produce dati; non e'
+            // "tempo reale" lato browser (questa chiamata resta bloccante
+            // dentro un'unica richiesta Livewire sincrona), ma evita di
+            // rileggere tutto solo alla fine se il processo e' lungo.
             while ($process->running()) {
                 $data = $process->latestOutput();
                 if (! empty($data)) {
                     $formattedData = trim($data);
                     if (! empty($formattedData)) {
                         $output[] = $formattedData;
-                        Event::dispatch('artisan-command.output', [$command, $formattedData]);
                     }
                 }
 
@@ -85,7 +85,6 @@ class ExecuteArtisanCommandAction
                     $formattedError = trim($errorData);
                     if (! empty($formattedError)) {
                         $output[] = '[ERROR] '.$formattedError;
-                        Event::dispatch('artisan-command.output', [$command, '[ERROR] '.$formattedError]);
                     }
                 }
 
@@ -98,22 +97,14 @@ class ExecuteArtisanCommandAction
             $finalOutput = trim($result->output());
             if (! empty($finalOutput)) {
                 $output[] = $finalOutput;
-                Event::dispatch('artisan-command.output', [$command, $finalOutput]);
             }
 
             $finalErrorOutput = trim($result->errorOutput());
             if (! empty($finalErrorOutput)) {
                 $output[] = '[ERROR] '.$finalErrorOutput;
-                Event::dispatch('artisan-command.output', [$command, '[ERROR] '.$finalErrorOutput]);
             }
 
-            if ($result->successful()) {
-                $status = 'completed';
-                Event::dispatch('artisan-command.completed', [$command]);
-            } else {
-                $status = 'failed';
-                Event::dispatch('artisan-command.failed', [$command, $finalErrorOutput]);
-            }
+            $status = $result->successful() ? 'completed' : 'failed';
 
             return [
                 'command' => $command,
@@ -122,7 +113,6 @@ class ExecuteArtisanCommandAction
                 'exitCode' => $result->exitCode() ?? 0,
             ];
         } catch (\Throwable $e) {
-            Event::dispatch('artisan-command.error', [$command, $e->getMessage()]);
             throw new \RuntimeException("Errore durante l'esecuzione del comando {$command}: {$e->getMessage()}", (int) $e->getCode(), $e);
         }
     }
