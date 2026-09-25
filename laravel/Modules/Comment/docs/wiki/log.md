@@ -103,3 +103,10 @@
 - Discussion hub: #11
 - Issue backlog: #8 mentions, #9 Filament, #10 audit ripgrep
 - Commenti cross-link su #7, base #317
+
+---
+
+## [2026-09-25] phpstan | Notification view-string fix (final)
+- Added `ResolveCommentMailViewAction` to validate a named Comment mail template before returning it with the `view-string` contract.
+- Both notifications now resolve their own template through that module-owned action before calling `MailMessage::markdown()`; missing/unregistered templates fail explicitly.
+- This keeps view validation in Comment and avoids inline PHPStan type overrides or a dependency on Cms.

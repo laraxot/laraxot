@@ -9,6 +9,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Modules\Comment\Actions\ResolveCommentMailViewAction;
 use Modules\Comment\Datas\CommentConfigData;
 use Modules\Comment\Models\Comment;
 
@@ -35,10 +36,9 @@ class PendingCommentNotification extends Notification implements ShouldQueue
         unset($notifiable);
 
         $config = CommentConfigData::make();
-        $view = implode('.', ['comment::mail', 'pending-comment-notification']);
-        self::assertMailViewExists($view);
+        $view = app(ResolveCommentMailViewAction::class)->execute('comment::mail.pending-comment-notification');
 
-        return (new MailMessage)
+        return (new MailMessage())
             ->from(
                 $config->notificationMailFromAddress(),
                 $config->notificationMailFromName(),
@@ -50,17 +50,8 @@ class PendingCommentNotification extends Notification implements ShouldQueue
             ]);
     }
 
-    /** @phpstan-assert view-string $view */
-    private static function assertMailViewExists(string $view): void
-    {
-        if (! view()->exists($view)) {
-            throw new \LogicException("Comment notification view [{$view}] does not exist.");
-        }
-    }
-
     public static function sendTo(Closure $sendTo): void
     {
         static::$sendTo = $sendTo;
     }
-
 }

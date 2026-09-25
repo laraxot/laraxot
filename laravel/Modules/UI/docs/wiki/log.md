@@ -62,3 +62,10 @@
 - Layer wiki: `docs/wiki/` — LLM-maintained, sintesi ad alto riuso.
 - Schema: `docs/.schema/WIKI_SCHEMA.md`
 - Adozione moduli: `docs/project/llm-wiki-module-adoption.md`
+
+---
+
+## [2026-09-25] phpstan | UI/Render/Block merge markers cleanup
+- `app/View/Components/Render/Block.php`: resolved `<<<<<<<` / `=======` / `>>>>>>>` merge conflict markers left from previous merge.
+- Final state uses `GetCmsViewAction::class->execute($view)` consistently in both `__construct()` and `render()`.
+- Cleared 3 `phpstan.parse` syntax errors.

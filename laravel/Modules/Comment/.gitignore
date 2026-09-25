@@ -33,3 +33,4 @@ agentdb.rvf
 .claude-audit/
 tests/AuditCoverage/
 graphify-out
+*.lock

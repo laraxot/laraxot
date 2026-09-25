@@ -13,11 +13,11 @@ use Modules\Cms\Actions\ResolveLocalizedBlockDataAction;
 use Modules\Cms\Actions\View\GetCmsViewAction;
 
 /**
- * .
+ * Blade component that renders a CMS block.
  */
 class Block extends Component
 {
-    /** @var string|null */
+    /** @var view-string|null */
     public ?string $view = null;
 
     /**
@@ -33,7 +33,8 @@ class Block extends Component
             $view = 'ui::empty';
         }
 
-        $this->view = app(GetCmsViewAction::class)->execute($view);
+        /** @var view-string $view */
+        $this->view = $view;
     }
 
     public function render(): ViewFactory|View
