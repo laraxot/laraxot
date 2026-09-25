@@ -17,7 +17,7 @@ use Modules\Cms\Actions\View\GetCmsViewAction;
  */
 class Block extends Component
 {
-    /** @var view-string|null */
+    /** @var string|null */
     public ?string $view = null;
 
     /**

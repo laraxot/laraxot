@@ -22,3 +22,10 @@ discussions:
 - Expanded prevention checklist (tenant matrix, regression signals, build guard) after `/it` Sixteen vs Two incident on master.
 - Linked Tenant module doc `tenant-name-to-pub-theme.md` with SSoT TechPlanner = Two and anti-patterns for AI agents.
 - Push master: allineato con `origin/master`; `pub_theme=Two` verificato runtime; `/it` serve solo asset `themes/Two/`.
+=== COMPLETED PHPSTAN FIXES ===
+2026-09-25
+Errors fixed:
+1. Comment/PendingCommentNotification mailView() return type: Changed string to view-string
+2. Comment/ApprovedCommentNotification mailView() return type: Changed string to view-string
+3. UI/Render/Block view property type assertion
+=== RUN BMAD workflow completed ===
