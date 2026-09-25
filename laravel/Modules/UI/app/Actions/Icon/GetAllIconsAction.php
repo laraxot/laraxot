@@ -64,50 +64,44 @@ class GetAllIconsAction
                     continue;
                 }
 
-                $iconsList = array_merge(
-                    $iconsList,
-                    $this->collectSvgIconNamesFromPath($path, $set['prefix'] ?? ''),
-                );
+                $files = File::allFiles($path);
+                if (! is_iterable($files)) {
+                    continue;
+                }
+
+                foreach ($files as $file) {
+                    // Type narrowing per SplFileInfo
+                    if (! $file instanceof \SplFileInfo) {
+                        continue;
+                    }
+
+                    // Simply ignore files that aren't SVGs
+                    if ('svg' !== $file->getExtension()) {
+                        continue;
+                    }
+
+                    $pathname = $file->getPathname();
+                    if (! is_string($pathname)) {
+                        continue;
+                    }
+
+                    // $iconName = $this->getIconName($file, parentPath: $path, prefix: $prefix);
+                    $iconName = str($pathname)
+                        ->after($path.DIRECTORY_SEPARATOR)
+                        ->replace(DIRECTORY_SEPARATOR, '.')
+                        ->basename('.svg')
+                        ->toString();
+
+                    $prefix = $set['prefix'] ?? '';
+                    $prefixString = is_string($prefix) ? $prefix : '';
+                    $iconFullName = '' !== $prefixString ? $prefixString.'-'.$iconName : $iconName;
+                    $iconsList[] = $iconFullName;
+                }
             }
             $set['icons'] = $iconsList;
             $mappedIcons[$name] = $set;
         }
 
         return $mappedIcons;
-    }
-
-    /**
-     * @return list<string>
-     */
-    private function collectSvgIconNamesFromPath(string $path, mixed $prefix): array
-    {
-        $files = File::allFiles($path);
-        if (! is_iterable($files)) {
-            return [];
-        }
-
-        $prefixString = is_string($prefix) ? $prefix : '';
-        $iconNames = [];
-
-        foreach ($files as $file) {
-            if (! $file instanceof \SplFileInfo || 'svg' !== $file->getExtension()) {
-                continue;
-            }
-
-            $pathname = $file->getPathname();
-            if (! is_string($pathname)) {
-                continue;
-            }
-
-            $iconName = str($pathname)
-                ->after($path.DIRECTORY_SEPARATOR)
-                ->replace(DIRECTORY_SEPARATOR, '.')
-                ->basename('.svg')
-                ->toString();
-
-            $iconNames[] = '' !== $prefixString ? $prefixString.'-'.$iconName : $iconName;
-        }
-
-        return $iconNames;
     }
 }

@@ -36,7 +36,9 @@ bash bashscripts/tools/run-claude-audit-module-static.sh UI
 
 ## `.gitignore`
 
-`/Tests/`, `/tests/AuditCoverage/` e `/audit-coverage/` seguono la policy comune dei moduli e sono esclusi da Git. Il bridge di audit generato va rimosso dopo l’uso; non aggiungere negazioni per includerlo. Il punteggio statico va interpretato tenendo conto di queste esclusioni.
+`/Tests/` + negazioni `!tests/**` e `!audit-coverage/**` — rimuovere `audit-coverage/` dalla ignore list (altrimenti 0 test in static → 79/100).
+
+Bridge in `audit-coverage/tests/` (path con substring `/tests/`), non `tests/AuditCoverage/`.
 
 ## Verifica
 

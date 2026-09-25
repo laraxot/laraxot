@@ -6,8 +6,6 @@ updated: 2026-05-11
 tags: [performance, optimization, tokens, context]
 related:
   - ../../docs/wiki/concepts/llm-wiki-operational-discipline.md
-issues: []
-discussions: []
 ---
 
 # Performance Optimization — Module **UI**
@@ -118,10 +116,25 @@ context-mode ctx-stats
 - [Global Performance Guide](../../docs/wiki/concepts/performance-optimization.md)
 - [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
 - [QMD Setup](./QMD-SETUP.md)
+<<<<<<< HEAD
 - [On-Demand Pattern](./on-demand-pattern.md)
 - [QMD Setup](./qmd-setup.md)
+=======
+<<<<<<< HEAD
+<<<<<<< .merge_file_kFmjje
+=======
+<<<<<<< .merge_file_0mDA2X
+=======
+<<<<<<< HEAD
 - [On-Demand Pattern](./on-demand-pattern.md)
 - [QMD Setup](./qmd-setup.md)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_UMtYNh
+>>>>>>> .merge_file_NRyuZu
+=======
+>>>>>>> 804451c (Lint)
+>>>>>>> laraxot/dev
 
 ---
 *Status: Ottimizzato | Token risparmiati: ~48K per session*

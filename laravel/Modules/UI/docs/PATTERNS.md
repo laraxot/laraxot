@@ -9,8 +9,6 @@ related:
   - ./README.md
   - ./INDEX.md
   - ./TROUBLESHOOTING.md
-issues: []
-discussions: []
 ---
 
 # UI — Decisioni Architetturali e Patterns
@@ -358,10 +356,30 @@ Quando aggiungi feature nuova a UI:
 ## 📖 Riferimenti Correlati
 
 - [README](./README.md) — Overview modulo
+<<<<<<< HEAD
 - [INDEX](./index.md) — Documentazione index completo
+=======
+<<<<<<< HEAD
+<<<<<<< .merge_file_KyuCMa
 - [INDEX](./INDEX.md) — Documentazione index completo
+>>>>>>> laraxot/dev
+=======
+<<<<<<< .merge_file_LHqPXO
+- [INDEX](./INDEX.md) — Documentazione index completo
+>>>>>>> laraxot/dev
+=======
+<<<<<<< HEAD
 - [INDEX](./index.md) — Documentazione index completo
+=======
 - [INDEX](./INDEX.md) — Documentazione index completo
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_Z1KmJv
+>>>>>>> .merge_file_xRFpUK
+=======
+- [INDEX](./INDEX.md) — Documentazione index completo
+>>>>>>> laraxot/dev
+>>>>>>> 804451c (Lint)
 - [TROUBLESHOOTING](./TROUBLESHOOTING.md) — Errori comuni e soluzioni
 - [architecture/component-registration](./architecture/component-registration.md) — Registrazione dettagliata
 - [standards/ui-standards](./standards/ui-standards.md) — UI component standards

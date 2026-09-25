@@ -21,9 +21,7 @@ class GetCmsViewAction
      *
      * @throws \Exception If the view does not exist
      *
-     * @return string The resolved and existing view name
-     * @return string The resolved and existing view name
-     * @return string The resolved and existing view name
+     * @return view-string The resolved and existing view name
      */
     public function execute(string $viewName): string
     {

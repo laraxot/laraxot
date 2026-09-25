@@ -137,3 +137,14 @@ Per ogni file modificato: lock file-level, `php -l`, PHPStan canonico mirato sen
 - Il nuovo run è `[ERROR] Found 29 errors`: Activity covariance, Comment view/mail contracts, Job assertion, Rating trait call, UI deprecated/array types, Xot `is_int` narrowing.
 - Activity `CanPaginate.php`, Comment `PendingCommentNotification.php` e Job `TaskBusinessLogicTest.php` sono lockati; UI è in rebase; Rating/Xot target sono dirty. Nessun target è stato modificato sopra il worktree concorrente.
 - La story PHPStan è lockata da un altro owner; la handoff conserva questo esito. Dopo quiet window e rilascio lock, eseguire il gate canonico e correggere solo i file semanticamente confermati.
+
+## Comment lock collision — 2026-09-25 13:41 UTC
+
+- I due finding `MailMessage::markdown()` sono reali: l’helper `assertMailViewExists()` verifica la view ma non restituisce il tipo `view-string`.
+- Fix prepared: far restituire `view-string` dall’helper dopo `view()->exists()` e assegnare `$view = self::assertMailViewExists($view)`.
+- I file sono stati lockati da `codex-root` task `phpstan-comment-view` durante il check; nessuna patch applicata dal coordinatore e nessun lock forzato.
+
+## Post-fix UI / residuo Comment — 2026-09-25 13:xx
+
+- Corretto `UI/app/View/Components/Render/Block.php`: guard `is_string` + `view()->exists`, PHPDoc `view-string` valido; `php -l` e PHPStan mirato verdi.
+- Il gate completo successivo restituisce 4 errori Comment (`impossibleType` su `view()->exists` e `return.type` su `mailView()`); il report è cambiato mentre il worker Comment scriveva. Pending è ancora lockato; Approved è dirty. Nessuna patch Comment applicata sopra WIP.

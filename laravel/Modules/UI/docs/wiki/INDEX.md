@@ -6,28 +6,60 @@ tags: [ui, wiki, index, filament]
 created: 2026-04-15
 updated: 2026-06-05
 qmd: "ui module wiki index filament second brain"
+issues:
+discussions:
 related:
   - "./agents.md"
   - "./bmad-method.md"
   - "./context-compression.md"
   - "./log.md"
   - "./overview.md"
-issues: []
-discussions: []
 ---
 
 # Wiki Locale Index
 
 ## AI / second brain
 
+<<<<<<< HEAD
 - [hackernoon-ai-coding-tips-progetto corrente-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-progetto corrente-map.md)
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< .merge_file_Iakz9A
+=======
+<<<<<<< .merge_file_xjCsIF
+=======
+- [hackernoon-ai-coding-tips-progetto corrente-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-progetto corrente-map.md)
+=======
+<<<<<<< HEAD
+>>>>>>> .merge_file_K6OkW0
+>>>>>>> .merge_file_9qVbN2
+=======
+>>>>>>> 804451c (Lint)
 - [hackernoon-ai-coding-tips-fixcity-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
+=======
+<<<<<<< HEAD
 - [hackernoon-ai-coding-tips-progetto corrente-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-progetto corrente-map.md)
+=======
 - [hackernoon-ai-coding-tips-<nome progetto>-map](../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-<nome progetto>-map.md)
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+<<<<<<< .merge_file_Iakz9A
+=======
+<<<<<<< .merge_file_xjCsIF
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_K6OkW0
+>>>>>>> .merge_file_9qVbN2
+=======
+>>>>>>> 804451c (Lint)
 - [bmad/architecture](../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
 - [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
 - [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
+
 
 ## Karpathy LLM Wiki Standard
 

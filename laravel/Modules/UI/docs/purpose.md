@@ -6,13 +6,13 @@ created: 2026-09-02
 tags: [ui, purpose, design-system, componenti, accessibilita, blade]
 qmd: "ui scopo modulo design system componenti blade widget accessibilita agid coerenza visiva"
 updated: 2026-09-02
+issues:
   # DA CREARE — `gh` non autenticato: mai numeri inventati.
   # gh issue create --repo provtv/module_ui_fila5 --title "<argomento del file>"
   - "https://github.com/provtv/module_ui_fila5/issues/"
+discussions:
   # DA CREARE — vedi sopra.
   - "https://github.com/provtv/module_ui_fila5/discussions/"
-issues: []
-discussions: []
 ---
 
 # UI — perche' esiste
@@ -103,4 +103,16 @@ Come Xot, Notify e Activity: un `index.md` a una schermata, un canonico per argo
 
 - `laravel/Modules/Ptv/docs/form-column-parity.md` — la parita' come regola
 - `docs/wiki/rules/filament-form-components-vocabulary.md` — quando estrarre
+<<<<<<< HEAD
+<<<<<<< .merge_file_vKNsXq
+=======
+<<<<<<< .merge_file_fVQ2Zr
+=======
+<<<<<<< HEAD
 - `./architecture.md` — architettura tecnica del modulo (componenti, Filament, Blocks)
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_tZrhTh
+>>>>>>> .merge_file_crJzrt
+=======
+>>>>>>> 804451c (Lint)

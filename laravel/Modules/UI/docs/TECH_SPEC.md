@@ -4,8 +4,6 @@ type: technical_spec
 tags: [tech spec, ui]
 created: 2026-08-04
 updated: 2026-08-04
-issues: []
-discussions: []
 ---
 # Technical Specification - UI Module
 
@@ -26,7 +24,23 @@ Technical implementation details for the UI module.
 
 ## Dependencies
 - Laravel 12.x
+<<<<<<< HEAD
 - Laravel 13.x
+=======
+<<<<<<< HEAD
+<<<<<<< .merge_file_5PBEki
+=======
+<<<<<<< .merge_file_hR63da
+=======
+<<<<<<< HEAD
+- Laravel 13.x
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_NKQxBc
+>>>>>>> .merge_file_11xZl7
+=======
+>>>>>>> 804451c (Lint)
+>>>>>>> laraxot/dev
 - Filament 5.x
 - Xot Module
 

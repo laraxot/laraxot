@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\UI\Filament\Widgets;
 
 use Filament\Support\RawJs;
-use Illuminate\Support\Facades\File;
 use Modules\Xot\Filament\Widgets\XotBaseChartWidget;
 
 final class TestChartWidget extends XotBaseChartWidget
@@ -53,9 +52,16 @@ final class TestChartWidget extends XotBaseChartWidget
 
     protected function getOptions(): RawJs
     {
-        $path = module_path('UI', 'resources/js/test-chart-y-tick-options.js');
-        $contents = File::exists($path) ? File::get($path) : '{}';
-
-        return RawJs::make($contents);
+        return RawJs::make(<<<'JS'
+            {
+                scales: {
+                    y: {
+                        ticks: {
+                            callback: (value) => '€' + value,
+                        },
+                    },
+                },
+            }
+        JS);
     }
 }

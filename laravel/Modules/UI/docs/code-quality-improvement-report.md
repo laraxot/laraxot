@@ -7,19 +7,58 @@ created: 2026-07-17
 updated: 2026-07-27
 qmd: "code quality baseline PHPStan Pest strict types Laraxot UI git remote"
 story: STORY-001
+<<<<<<< HEAD
 # GRAVE: issue/discussion del modulo — mai base_techplanner / base_workorder / mono.
+<<<<<<< HEAD
+<<<<<<< .merge_file_TBc9qB
+=======
+<<<<<<< .merge_file_WxNu67
+=======
 # GRAVE: issue/discussion del modulo — mai base_project / base_workorder / mono.
+=======
+<<<<<<< HEAD
 # GRAVE: issue/discussion del modulo — mai base_techplanner / base_workorder / mono.
+>>>>>>> .merge_file_uWEk76
+>>>>>>> .merge_file_wkuu6h
+=======
+>>>>>>> 804451c (Lint)
+<<<<<<< HEAD
 # GRAVE: issue/discussion del modulo — mai base_project / base_workorder / mono.
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 # GRAVE: issue/discussion del modulo — mai base_techplanner / base_workorder / mono.
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
 # GRAVE: issue/discussion del modulo — mai base_project / base_workorder / mono.
+=======
 # GRAVE: issue/discussion del modulo — mai base_techplanner / base_workorder / mono.
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+<<<<<<< .merge_file_TBc9qB
+=======
+<<<<<<< .merge_file_WxNu67
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_uWEk76
+>>>>>>> .merge_file_wkuu6h
+=======
+>>>>>>> 804451c (Lint)
 # Resolve: cd laravel/Modules/UI && git remote -v → laraxot/module_ui_fila5
+issues: []
+discussions: []
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
   - "../../../../docs/wiki/memories/module-github-remote-discipline.md"
-issues: []
-discussions: []
 ---
 
 # Code Quality Improvement Report — UI
@@ -33,13 +72,52 @@ cd laravel/Modules/UI && git remote -v
 # atteso: laraxot/module_ui_fila5
 ```
 
+<<<<<<< HEAD
 **Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_techplanner_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+<<<<<<< HEAD
+<<<<<<< .merge_file_TBc9qB
+=======
+<<<<<<< .merge_file_WxNu67
+=======
 **Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_project_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+=======
+<<<<<<< HEAD
 **Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_techplanner_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+>>>>>>> .merge_file_uWEk76
+>>>>>>> .merge_file_wkuu6h
+=======
+>>>>>>> 804451c (Lint)
+<<<<<<< HEAD
 **Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_project_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 **Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_techplanner_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
 **Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_project_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+=======
 **Lezione grave:** in un conflitto Git, *entrambe* le parti possono essere sbagliate (`base_techplanner_*` vs `base_workorder_*`). Non scegliere a caso: `git remote -v` nella cartella del modulo/tema.
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+<<<<<<< .merge_file_TBc9qB
+=======
+<<<<<<< .merge_file_WxNu67
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_uWEk76
+>>>>>>> .merge_file_wkuu6h
+=======
+>>>>>>> 804451c (Lint)
 
 ## Baseline
 
@@ -95,6 +173,7 @@ Rilevazione del 17 luglio 2026 sul working tree locale; esclusi vendor e dipende
 2. **app/Actions/Panel/ApplyCalendarToPanelAction.php:22:        // TODO: Reimplementare quando sarà disponibile un pacchetto FullCalendar compatibile con Filament v4 — debito eseguibile.** Verificare il caller e scegliere una sola uscita: implementare il comportamento con un test che fallisce prima della patch, oppure eliminare ramo e marker se non raggiungibili. Non lasciare il TODO come documentazione.
 3. **app/Http/Controllers/LanguageController.php — confine HTTP.** Cercare route e caller. Se serve il front office, sostituire il controller con pagina Folio/Volt e spostare la logica in una Action owner; se è API/back office, mantenere solo validazione e delega alla Action. Aggiungere un test HTTP della route reale.
 4. **resources/views/components/blocks/pricing/three_tiers_with_feature_comparison.blade.php — file da 86195 byte.** Prima verificare se è sorgente, fixture o artefatto generato. Gli artefatti generati vanno rimossi dal source tree e rigenerati dal build; per sorgenti reali separare per responsabilità mantenendo un solo entrypoint e aggiungere un test/smoke build.
+
 
 - [x] PHPStan L10 scoped senza errori non giustificati. (Modules 2026-07-27)
 - [ ] Pest scoped verde sui flussi critici.

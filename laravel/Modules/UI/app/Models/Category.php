@@ -63,7 +63,6 @@ class Category extends BaseModel
     /** @var list<string> */
     protected $fillable = [
         'name',
-        'title',
         'description',
         'icon',
         'parent_id',

@@ -3,11 +3,47 @@ title: "Workstreams - UI"
 type: concept
 tags: [workstreams]
 created: 2026-07-14
-updated: 2026-09-25
-qmd: "03-workstreams workstreams ui architecture reliability documentation testing"
-issues: []
-discussions: []
+updated: 2026-07-14
+qmd: "03-workstreams workstreams - ui"
+<<<<<<< HEAD
+issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
+discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+<<<<<<< HEAD
+<<<<<<< .merge_file_5UzyiT
+=======
+<<<<<<< .merge_file_cIO98w
+=======
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
+=======
+<<<<<<< HEAD
+issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
+discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+>>>>>>> .merge_file_UKzKnB
+>>>>>>> .merge_file_UmI8tx
+=======
+>>>>>>> 804451c (Lint)
+<<<<<<< HEAD
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
+=======
+=======
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+<<<<<<< .merge_file_5UzyiT
+=======
+<<<<<<< .merge_file_cIO98w
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_UKzKnB
+>>>>>>> .merge_file_UmI8tx
+=======
+>>>>>>> 804451c (Lint)
 related:
+  - "./00-index-1.md"
   - "./00-index.md"
   - "./00-overview.md"
   - "./01-current-state.md"
@@ -22,19 +58,19 @@ related:
 ## WS1 Architecture
 
 - Verifica confini e responsabilita dei componenti.
-- Aggiorna i pattern e i guardrail del modulo.
+- Aggiornamento pattern e guardrail.
 
 ## WS2 Reliability
 
-- Rafforza i flussi principali.
-- Migliora i fallback e i percorsi di recupero.
+- Hardening dei flussi principali.
+- Miglioramento fallback e recovery path.
 
 ## WS3 Documentation
 
-- Consolida i documenti canonici.
-- Elimina la deriva documentale.
+- Consolidamento documenti canonici.
+- Eliminazione drift documentale.
 
 ## WS4 Testing
 
-- Aggiungi test funzionali mirati ai percorsi ad alto rischio.
-- Mantieni una checklist di validazione post-fix.
+- Test funzionali mirati sui percorsi ad alto rischio.
+- Checklist di validazione post-fix.

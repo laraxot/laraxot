@@ -15,7 +15,7 @@ use Filament\Support\Contracts\HasLabel;
 use Modules\Xot\Traits\EnumTrait;
 
 /**
- * Filament form field types supported by the UI module.
+ * Defines the different types of appointments in the system.
  *
  * @method static self        fromName(string $name)
  * @method static self        fromValue(string $value)

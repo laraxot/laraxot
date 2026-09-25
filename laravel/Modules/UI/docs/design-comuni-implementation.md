@@ -126,13 +126,55 @@ All Bootstrap Italia classes are mapped to Tailwind via @apply:
 
 Pages are configured via JSON files:
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< .merge_file_FZ9rvK
+=======
+<<<<<<< .merge_file_eJoKTt
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_tjqS6p
+>>>>>>> .merge_file_ifgoSr
+=======
+>>>>>>> 804451c (Lint)
 **Location**: `config/local/fixcity/database/content/pages/`
 
 **Location**: `config/local/<nome progetto>/database/content/pages/`
 **Location**: `config/local/current/database/content/pages/`
+<<<<<<< HEAD
+<<<<<<< .merge_file_FZ9rvK
+=======
+<<<<<<< .merge_file_eJoKTt
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> .merge_file_tjqS6p
+>>>>>>> .merge_file_ifgoSr
+=======
+>>>>>>> 804451c (Lint)
+=======
+<<<<<<< HEAD
 **Location**: `config/local/fixcity/database/content/pages/`
+=======
+<<<<<<< HEAD
 **Location**: `config/local/current/database/content/pages/`
+=======
 **Location**: `config/local/<nome progetto>/database/content/pages/`
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+<<<<<<< .merge_file_FZ9rvK
+=======
+<<<<<<< .merge_file_eJoKTt
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_tjqS6p
+>>>>>>> .merge_file_ifgoSr
+=======
+>>>>>>> 804451c (Lint)
 
 **Example**: `tests.homepage.json`
 

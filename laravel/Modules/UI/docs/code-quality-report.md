@@ -57,17 +57,58 @@ Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (rule
 | Notify | - | - | 61% | 21 |
 | Rating | - | - | 7% | 0 |
 | Seo | - | - | 100% | 0 |
+<<<<<<< HEAD
 | TechPlanner | - | - | 2% | 0 |
+<<<<<<< HEAD
+<<<<<<< .merge_file_HXxlsw
+=======
+<<<<<<< .merge_file_EE2Scz
+=======
 | modulo operativo | - | - | 2% | 0 |
+=======
+<<<<<<< HEAD
 | TechPlanner | - | - | 2% | 0 |
+>>>>>>> .merge_file_N8YsYF
+>>>>>>> .merge_file_dlurv4
+=======
+>>>>>>> 804451c (Lint)
+<<<<<<< HEAD
 | modulo operativo | - | - | 2% | 0 |
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 | TechPlanner | - | - | 2% | 0 |
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
 | modulo operativo | - | - | 2% | 0 |
+=======
 | TechPlanner | - | - | 2% | 0 |
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+<<<<<<< .merge_file_HXxlsw
+=======
+<<<<<<< .merge_file_EE2Scz
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_N8YsYF
+>>>>>>> .merge_file_dlurv4
+=======
+>>>>>>> 804451c (Lint)
 | Tenant | - | - | 75% | 6 |
 | UI | - | - | 34% | 4 |
 | User | - | - | 23% | 4 |
 | Xot | - | - | 28% | 57 |
+
+
 
 ## Come migliorare — modifiche effettive da fare
 

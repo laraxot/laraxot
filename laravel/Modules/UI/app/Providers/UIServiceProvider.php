@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\UI\Providers;
 
-use Modules\UI\Adapters\Map\NullGeocodingServiceAdapter;
-use Modules\UI\Adapters\Map\NullMapServiceAdapter;
-use Modules\UI\Contracts\GeocodingServiceContract;
-use Modules\UI\Contracts\MapServiceContract;
 use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 
@@ -32,14 +28,6 @@ class UIServiceProvider extends XotBaseServiceProvider
     protected string $module_dir = __DIR__;
 
     protected string $module_ns = __NAMESPACE__;
-
-    public function register(): void
-    {
-        parent::register();
-
-        $this->app->singleton(MapServiceContract::class, NullMapServiceAdapter::class);
-        $this->app->singleton(GeocodingServiceContract::class, NullGeocodingServiceAdapter::class);
-    }
 
     /**
      * Boot del service provider.

@@ -206,7 +206,32 @@ class InlineDatePicker extends XotBaseDatePicker
             $week = collect();
 
             for ($i = 0; $i < 7; ++$i) {
-                $week->push($this->buildCalendarDayCell($currentDay, $targetMonth));
+                $isCurrentMonth = $currentDay->month === $targetMonth->month;
+                $isToday = $currentDay->isToday();
+
+                // Gestione sicura del controllo selezione
+                $isSelected = false;
+                try {
+                    $state = $this->getState();
+                    if ($state && \is_string($state)) {
+                        $isSelected = $currentDay->isSameDay(Carbon::parse($state));
+                    }
+                } catch (\Throwable $e) {
+                    $isSelected = false;
+                }
+
+                $isEnabled = $this->isDateEnabled($currentDay->format('Y-m-d')) && $isCurrentMonth;
+
+                $week->push([
+                    'dateString' => $currentDay->format('Y-m-d'),
+                    'datetime' => $currentDay->format('Y-m-d'),
+                    'day' => $currentDay->day,
+                    'isCurrentMonth' => $isCurrentMonth,
+                    'isToday' => $isToday,
+                    'isSelected' => $isSelected,
+                    'isEnabled' => $isEnabled,
+                ]);
+
                 $currentDay->addDay();
             }
 
@@ -223,38 +248,6 @@ class InlineDatePicker extends XotBaseDatePicker
 
         /* @var array<string, mixed> $res */
         return $res;
-    }
-
-    /**
-     * @return array<string, mixed>
-     */
-    private function buildCalendarDayCell(Carbon $currentDay, Carbon $targetMonth): array
-    {
-        $isCurrentMonth = $currentDay->month === $targetMonth->month;
-
-        return [
-            'dateString' => $currentDay->format('Y-m-d'),
-            'datetime' => $currentDay->format('Y-m-d'),
-            'day' => $currentDay->day,
-            'isCurrentMonth' => $isCurrentMonth,
-            'isToday' => $currentDay->isToday(),
-            'isSelected' => $this->isDaySelected($currentDay),
-            'isEnabled' => $this->isDateEnabled($currentDay->format('Y-m-d')) && $isCurrentMonth,
-        ];
-    }
-
-    private function isDaySelected(Carbon $currentDay): bool
-    {
-        try {
-            $state = $this->getState();
-            if ($state && \is_string($state)) {
-                return $currentDay->isSameDay(Carbon::parse($state));
-            }
-        } catch (\Throwable) {
-            return false;
-        }
-
-        return false;
     }
 
     /**

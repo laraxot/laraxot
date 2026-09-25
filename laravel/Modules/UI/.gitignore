@@ -1,73 +1,97 @@
-# UI module ignore rules. Keep generated files, local tooling, and audit output out of Git.
+# ==============================================
+# LARAXOT MODULE UI - .GITIGNORE
+# ==============================================
+# Modulo UI Laraxot - Template standardizzato
+# Ultimo aggiornamento: 2025-01-31
+# ==============================================
 
-# Dependencies and build output
+
+# ==============================================
+# DEPENDENCIES & PACKAGES
+# ==============================================
 /vendor/
 /node_modules/
-/build/
-/dist/
 /docs/vendor/
-/docs/cache/
-/cache/
 
-# Lockfiles and package manager artifacts
-*.lock
 composer.lock
 package-lock.json
 yarn.lock
 yarn-error.log
-npm-debug.log*
-lerna-debug.log*
+npm-debug.log
 
-# Local configuration and environment
-.env
-.env.*
-!.env.example
-config/local.php
-config/development.php
-Homestead.yaml
-Homestead.json
-/.vagrant/
 
-# IDEs and agent tooling
-/.idea/
-/.vscode/
-/.agents/
-/.codex/
-/.cursor/
-/.opencode/
-/.qwen/
-.windsurf/
-.phpintel
-.phpstorm.meta.php
+# ==============================================
+# BUILD & COMPILED FILES
+# ==============================================
+/build/
+/dist/
+docs/cache/
+cache/
 
-# Local quality-tool configuration
-/rector.php
-/phpinsights.php
-/.php-cs-fixer.php
-/.php-cs-fixer.dist.php
-.php-cs-fixer.cache
-.phpunit.result.cache
 
-# Audit and temporary test output
-/tests/AuditCoverage/
-/audit-coverage/
-/tests/.claude-audit/
-/\.claude-audit/
-/test-results/
-/workbench/
+# ==============================================
+# CACHE & TEMPORARY FILES
+# ==============================================
 *.cache
+*.lock
+*.phar
+*.jar
 *.tmp
 *.swp
 *.swo
 *.stackdump
-*.phar
-*.jar
 *:Zone.Identifier
-v8-compile-cache-*/
+v8-compile-cache-*
 
-# Logs and operating system files
+.php-cs-fixer.cache
+.phpunit.result.cache
+
+
+# ==============================================
+# LOG FILES
+# ==============================================
 *.log
 error_log
+npm-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+
+# ==============================================
+# LARAVEL SPECIFIC
+# ==============================================
+/storage/*.key
+/public/storage
+/public/hot
+/public_html/storage
+/public_html/hot
+
+.env
+.env.*
+!.env.example
+
+
+# ==============================================
+# ENVIRONMENT & IDE
+# ==============================================
+Homestead.yaml
+Homestead.json
+/.vagrant
+/.idea
+.phpintel
+.phpstorm.meta.php
+
+
+# ==============================================
+# GIT SPECIFIC
+# ==============================================
+.git-rewrite/
+.git-blame-ignore-revs
+
+
+# ==============================================
+# SYSTEM FILES
+# ==============================================
 .DS_Store
 .DS_Store?
 ._*
@@ -76,7 +100,10 @@ error_log
 ehthumbs.db
 Thumbs.db
 
-# Backups
+
+# ==============================================
+# BACKUP FILES
+# ==============================================
 *.old
 *.old1
 *.old2
@@ -87,72 +114,84 @@ Thumbs.db
 *.bak
 *.new
 
-# Laravel runtime files
-/storage/*.key
-/public/storage
-/public/hot
-/public_html/storage
-/public_html/hot
-/public/css/compiled/
-/public/js/compiled/
-/public/mix-manifest.json
 
-# Generated or legacy module paths
+# ==============================================
+# DEVELOPMENT TOOLS
+# ==============================================
+.windsurf/
+.cursor/
+
+
+# ==============================================
+# DOCUMENTATION & ANALYSIS CACHE
+# ==============================================
+docs/phpstan/
+docs/cache/
+
+
+# ==============================================
+# LANGUAGE FILES (generated / duplicated)
+# ==============================================
 resources/lang/
+
+
+# ==============================================
+# OLD DIRECTORIES (LEGACY CLEANUP)
+# ==============================================
 resources/views/Components_old/
 database/Migrations_old/
 database/Seeders_old/
 database/Factories_old/
 database_old/
-lang/lang/
-/_docs/
-/docs/archive/
-/docs/archived/
-/docs/legacy/
-/docs/workbench/
-/docs/scripts/
-/docs/bashscripts/
-/docs/**/archive/
-/docs/**/archived/
-/docs/**/legacy/
-/docs/**/workbench/
-/docs/**/scripts/
-/docs/**/bashscripts/
-/docs/phpstan/
-/docs/**/*-[0-9].md
-/docs/**/*-[0-9][0-9].md
-/docs/**/*_[0-9].md
-/docs/**/*_[0-9][0-9].md
 
-# UI design source files and local notes
+
+# ==============================================
+# MODULE SPECIFIC - UI
+# ==============================================
+# Config locale
+config/local.php
+config/development.php
+
+# Asset UI compilati
+public/css/compiled/
+public/js/compiled/
+public/mix-manifest.json
+
+# Design / UI tools
 *.psd
 *.sketch
 *.fig
 design_notes.txt
 
-# Project-specific paths
+
+# ==============================================
+# PROJECT-SPECIFIC
+# ==============================================
 *.fila2
-/laravel/
-/public_html/
-/bashscripts/
-/_bmad/
-/_bmad-output/
-/.circleci/
-/.devcontainer/
-/.kilocode/
-/.kiro/
-/.ralph/
-/scripts/
-/legacy/
-/.ai*
-# Additional merge/rebase artifacts from the UI tooling workflow
-.git-rewrite/
-.git-blame-ignore-revs
+laravel
+public_html
+
+
+# ==============================================
+# END OF UI .GITIGNORE
+# ==============================================
+lang/lang/
+_docs/
+docs/legacy/
+docs/legacy/**
+
+# -----------------------------------------------------------------------------
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
+# -----------------------------------------------------------------------------
 *~HEAD
 *~BASE
 *~LOCAL
 *~REMOTE
-*~head
 *.orig
 *.rej
+*~head
+
 agentdb.rvf
+.vscode/
+.devcontainer/
+.vscode/

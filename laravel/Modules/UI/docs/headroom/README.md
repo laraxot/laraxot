@@ -6,12 +6,12 @@ module: UI
 created: 2026-08-02
 updated: 2026-08-02
 qmd: "headroom modulo UI proxy codex mcp context compression"
+issues:
   - "https://github.com/provtv/base_ptv_fila5/issues/218"
+discussions:
   - "https://github.com/provtv/base_ptv_fila5/discussions/219"
 related:
   - "../../../../../docs/HEADROOM-INTEGRATION.md"
-issues: []
-discussions: []
 ---
 
 # Headroom - Modulo UI
@@ -33,6 +33,19 @@ headroom perf --hours 24
 - Guida root: `../../../../../docs/HEADROOM-INTEGRATION.md`.
 - Non documentare comandi per-modulo non presenti nel CLI Headroom.
 - Coordinare modifiche su issue #218 e discussion #219.
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< .merge_file_irkwG5
+=======
+<<<<<<< .merge_file_QUITJZ
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_aurpfE
+>>>>>>> .merge_file_srI0Cr
+=======
+>>>>>>> 804451c (Lint)
 # UI
 
 [![Module](https://img.shields.io/badge/Module-UI-8B0000.svg)]()
@@ -67,3 +80,23 @@ Core module for the FixCity Platform.
 ---
 
 **Modulo** `UI` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+<<<<<<< HEAD
+<<<<<<< .merge_file_irkwG5
+=======
+>>>>>>> laraxot/dev
+=======
+<<<<<<< .merge_file_QUITJZ
+=======
+>>>>>>> laraxot/dev
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_aurpfE
+>>>>>>> .merge_file_srI0Cr
+=======
+=======
+>>>>>>> laraxot/dev
+>>>>>>> 804451c (Lint)

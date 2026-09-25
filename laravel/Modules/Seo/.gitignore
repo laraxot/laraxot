@@ -46,15 +46,29 @@ tests/AuditCoverage
 # AI/TOOL SCAFFOLD — must never exist in module tree (see docs/wiki/rules/module-theme-root-cleanup.md)
 
 # Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
-.cursor/
 .devcontainer/
 .vscode/
 .windsurf/
 tests/AuditCoverage/
 
 # Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
-phpinsights.php
-rector.php
 graphify-out
 
 node_modules
+.rector.php
+.phpinsights.php
+
+# Root agent tooling and PHP quality configuration
+/.agents/
+/.codex/
+/.cursor/
+/.opencode/
+/.qwen/
+/rector.php
+/phpinsights.php
+/.php-cs-fixer.php
+/.php-cs-fixer.dist.php
+
+# Generated Claude audit coverage scaffold (never commit)
+/audit-coverage/
+*.lock

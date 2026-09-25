@@ -4,8 +4,6 @@ type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [structure, architecture, module]
-issues: []
-discussions: []
 ---
 
 # Project Structure — Module **UI**
@@ -37,9 +35,23 @@ discussions: []
 ├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
+<<<<<<< HEAD
+<<<<<<< .merge_file_CF4qaa
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+=======
+<<<<<<< .merge_file_7vOCMA
+├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+=======
+<<<<<<< HEAD
 ├── architecture.md                # (opzionale) Architettura modulo
+=======
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_zaiyXj
+>>>>>>> .merge_file_k2VWGC
+=======
+├── ARCHITECTURE.md               # (opzionale) Architettura modulo
+>>>>>>> 804451c (Lint)
 └── README.md                     # (opzionale) Overview modulo
 \`\`\`
 

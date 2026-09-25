@@ -228,7 +228,12 @@ final class XotForkedInvoke
                 return false;
             }
             if ($res > 0) {
-                return pcntl_wifexited($status) && pcntl_wexitstatus($status) === 0;
+                $status = filter_var($status, FILTER_VALIDATE_INT);
+                if ($status === false) {
+                    return false;
+                }
+
+                return pcntl_wifexited($status) && 0 === pcntl_wexitstatus($status);
             }
             usleep(100_000);
             ++$waited;

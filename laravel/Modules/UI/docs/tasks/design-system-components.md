@@ -5,6 +5,43 @@ tags: [001, design, system, components]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "001-design-system-components task 001: implement design system and reusable components"
+<<<<<<< HEAD
+issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
+discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+<<<<<<< HEAD
+<<<<<<< .merge_file_nIeX7P
+=======
+<<<<<<< .merge_file_fCBjex
+=======
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
+=======
+<<<<<<< HEAD
+issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
+discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
+>>>>>>> .merge_file_6q3iUE
+>>>>>>> .merge_file_r9Jz2n
+=======
+>>>>>>> 804451c (Lint)
+<<<<<<< HEAD
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
+=======
+=======
+issues: ["https://github.com/provtv/<nome repository>/issues/124"]
+discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+<<<<<<< .merge_file_nIeX7P
+=======
+<<<<<<< .merge_file_fCBjex
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_6q3iUE
+>>>>>>> .merge_file_r9Jz2n
+=======
+>>>>>>> 804451c (Lint)
 related:
   - "./cleanup-redundant-files.md"
   - "./filament-v5-alignment.md"
@@ -13,8 +50,7 @@ related:
   - "./tasks-index.md"
   - "./ui-cleanup-docs.md"
   - "./ui-filament-v5.md"
-issues: []
-discussions: []---
+---
 
 # Task 001: Implement Design System and Reusable Components
 

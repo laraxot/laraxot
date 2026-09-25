@@ -100,7 +100,7 @@ trait CanPaginate
 
         $total = $query->toBase()->getCountForPagination();
 
-        /** @var LengthAwarePaginator<int, Model> $records */
+        /** @var LengthAwarePaginator<int, TModel> $records */
         $records = $query->paginate(
             perPage: $perPage === 'all' ? $total : (int) $perPage,
             pageName: $this->getPaginationPageName(),

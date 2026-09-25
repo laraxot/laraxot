@@ -33,6 +33,11 @@ Come maintainer voglio che tutti i moduli superino PHPStan con la configurazione
 - Architecture: `docs/architecture/phpstan-modules-perfection-2026-09-20.md`
 - Coordination: issue 14 e discussion 23.
 
+## Post-fix UI / residuo Comment — 2026-09-25
+
+- `UI/app/View/Components/Render/Block.php` è stato corretto con narrowing runtime e annotazione `view-string`; PHPStan mirato e lint verdi.
+- Il gate completo successivo ha rilevato 4 errori Comment, con file ancora dirty/lockati e report mutato durante il sync. Nessuna modifica Comment applicata dal coordinatore.
+
 ## Esecuzione 2026-09-25 — Codex
 
 - Il gate completo ha prima rilevato marker Git PHP committati in `Activity/tests/Unit/Actions/Log/BuildLogViewerStateActionTest.php`: rimossi mantenendo l'import tipizzato `LogFileData` e la closure tipizzata.
@@ -41,6 +46,8 @@ Come maintainer voglio che tutti i moduli superino PHPStan con la configurazione
 - Coordinamento su scope disgiunti registrato in `docs/chat/INDEX.md`; questa story resta in corso fino a un run completo exit 0 e al controllo Git di tutti i repository.
 - Non eseguiti test, commit o push; configurazione PHPStan invariata.
 - Nuovo report completo fornito dall'owner: 29 errori in Activity (5), Comment (4), Job (1), Rating (2), UI (16), Xot (1). Wave assegnate per scope: Activity/Rating, Comment/Job, UI/rebase; fix Xot in corso. Da rilanciare il gate completo dopo la quiet window.
+- Verifica scoped successiva: `Activity` + `Rating` analizzati (492 file) con `[OK] No errors`; lint dei file segnalati verde. Gli errori erano stati corretti dal writer del WIP concorrente. `Comment` resta lockato dal suo owner; `Job` in verifica scoped.
+- Nuovo gate globale riportato dall'owner: 2 errori residui in `Comment` (argomento `view-string` passato a `MailMessage::markdown()`); scoped PHPStan ha confermato esattamente questi due. `Job` scoped ora passa; UI rebase è senza conflitti ma non ancora concluso.
 
 ## Bootstrap blocker 2026-09-25
 

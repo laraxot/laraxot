@@ -40,7 +40,59 @@ class IconStateColumn extends IconColumn
             Action::make('change-state')
                 ->schema([
                     Select::make('state')
-                        ->options(fn (Model $record, string $_state): array => $this->resolveTransitionableStateOptions($record))
+                        ->options(function (Model $record, string $_state): array {
+                            $name = $this->getName();
+                            $state = $record->getAttribute($name);
+                            if (null === $state) {
+                                if (! method_exists($record, 'getDefaultStateFor')) {
+                                    return [];
+                                }
+                                $defaultStates = Arr::wrap($record->getDefaultStateFor($name));
+
+                                /** @var array<string, string> $options */
+                                $options = [];
+                                foreach ($defaultStates as $defaultState) {
+                                    if (! is_string($defaultState)) {
+                                        continue;
+                                    }
+
+                                    $options[$defaultState] = $defaultState;
+                                }
+
+                                return $options;
+                            }
+                            if (! is_object($state) || ! method_exists($state, 'transitionableStates')) {
+                                return [];
+                            }
+
+                            try {
+                                /** @var array<int|string, mixed> $statesArray */
+                                $statesArray = $state->transitionableStates();
+                            } catch (\Exception $e) {
+                                if (! method_exists($record, 'getStatesFor')) {
+                                    return [];
+                                }
+                                $fetchedStates = $record->getStatesFor($name);
+                                $statesArray = \is_object($fetchedStates) && method_exists($fetchedStates, 'toArray')
+                                    ? $fetchedStates->toArray()
+                                    : [];
+                            }
+
+                            if (! is_array($statesArray)) {
+                                return [];
+                            }
+
+                            return Arr::mapWithKeys($statesArray, function (mixed $stateItem) use ($record): array {
+                                if (! is_string($stateItem)) {
+                                    return [];
+                                }
+                                $model = Str::of(class_basename($record))->slug()->toString();
+                                /** @var string $label */
+                                $label = __('pub_theme::'.$model.'_states.'.$stateItem.'.label');
+
+                                return [$stateItem => $label];
+                            });
+                        })
                         ->required()
                         ->reactive(),
                     Textarea::make('message')->required(function (Get $get, Model $record): bool {
@@ -116,79 +168,5 @@ class IconStateColumn extends IconColumn
                         ->send();
                 }),
         );
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    private function resolveTransitionableStateOptions(Model $record): array
-    {
-        $name = $this->getName();
-        $state = $record->getAttribute($name);
-        if (null === $state) {
-            return $this->resolveDefaultStateOptions($record, $name);
-        }
-
-        if (! is_object($state) || ! method_exists($state, 'transitionableStates')) {
-            return [];
-        }
-
-        try {
-            $transitionResult = $state->transitionableStates();
-            $statesArray = is_array($transitionResult) ? $transitionResult : [];
-        } catch (\Exception) {
-            if (! method_exists($record, 'getStatesFor')) {
-                return [];
-            }
-
-            $fetchedStates = $record->getStatesFor($name);
-            if (! \is_object($fetchedStates) || ! method_exists($fetchedStates, 'toArray')) {
-                return [];
-            }
-
-            $fallback = $fetchedStates->toArray();
-            $statesArray = \is_array($fallback) ? $fallback : [];
-        }
-
-        if ($statesArray === []) {
-            return [];
-        }
-
-        $model = Str::of(class_basename($record))->slug()->toString();
-        $options = [];
-
-        foreach ($statesArray as $stateItem) {
-            if (! is_string($stateItem)) {
-                continue;
-            }
-
-            /** @var string $label */
-            $label = __('pub_theme::'.$model.'_states.'.$stateItem.'.label');
-            $options[$stateItem] = $label;
-        }
-
-        return $options;
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    private function resolveDefaultStateOptions(Model $record, string $name): array
-    {
-        if (! method_exists($record, 'getDefaultStateFor')) {
-            return [];
-        }
-
-        $defaultStates = Arr::wrap($record->getDefaultStateFor($name));
-        $options = [];
-        foreach ($defaultStates as $defaultState) {
-            if (! is_string($defaultState)) {
-                continue;
-            }
-
-            $options[$defaultState] = $defaultState;
-        }
-
-        return $options;
     }
 }

@@ -9,10 +9,54 @@ qmd: "UI module_ui_fila5 push unrelated histories laraxot provtv loop automatico
 related:
   - "../../multi-org-sync-laraxot-provtv.md"
   - "../../git-multi-org-sync-handoff.md"
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< .merge_file_FnILmH
+=======
+<<<<<<< .merge_file_jVCWBa
+=======
   - "./git-push-lfs-missing-objects.md"
+  - "./git-push-lfs-missing-objects.md"
+=======
+<<<<<<< HEAD
+>>>>>>> .merge_file_Li11im
+>>>>>>> .merge_file_hENJul
+=======
+>>>>>>> 804451c (Lint)
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  - "./git-push-lfs-missing-objects.md"
+<<<<<<< HEAD
+  - "./git-push-lfs-missing-objects.md"
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+  - "./git-push-lfs-missing-objects.md"
+>>>>>>> laraxot/dev
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+<<<<<<< .merge_file_FnILmH
+=======
+<<<<<<< .merge_file_jVCWBa
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_Li11im
+>>>>>>> .merge_file_hENJul
+=======
+>>>>>>> 804451c (Lint)
   - "../../../../User/docs/wiki/troubleshooting/git-push-dual-remote-unrelated.md"
-issues: []
-discussions: []
 ---
 
 # Git push UI — history unrelated (laraxot ↔ provtv) + loop automatico
@@ -43,5 +87,51 @@ A differenza del caso User (diagnosticato una volta, poi fermo), su UI il ri-mer
 ## Relazione con altri playbook
 
 - Stesso pattern, altro modulo: [User git-push-dual-remote-unrelated](../../../../User/docs/wiki/troubleshooting/git-push-dual-remote-unrelated.md)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< .merge_file_FnILmH
+=======
+<<<<<<< .merge_file_jVCWBa
+=======
 - LFS / `--no-thin`: [UI git-push-lfs-missing-objects](./git-push-lfs-missing-objects.md)
+- LFS / `--no-thin`: [UI git-push-lfs-missing-objects](./git-push-lfs-missing-objects.md)
+=======
+<<<<<<< HEAD
+>>>>>>> .merge_file_Li11im
+>>>>>>> .merge_file_hENJul
+=======
+>>>>>>> 804451c (Lint)
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+- LFS / `--no-thin`: [UI git-push-lfs-missing-objects](./git-push-lfs-missing-objects.md)
+<<<<<<< HEAD
+- LFS / `--no-thin`: [UI git-push-lfs-missing-objects](./git-push-lfs-missing-objects.md)
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+=======
+- LFS / `--no-thin`: [UI git-push-lfs-missing-objects](./git-push-lfs-missing-objects.md)
+>>>>>>> laraxot/dev
+=======
+>>>>>>> f6fcbb6f (Fix merge conflict in .gitattributes by removing redundant lines and ensuring proper exclusion of image formats from text processing.)
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> 92912795 (.)
+>>>>>>> laraxot/dev
+<<<<<<< HEAD
+<<<<<<< .merge_file_FnILmH
+=======
+<<<<<<< .merge_file_jVCWBa
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_Li11im
+>>>>>>> .merge_file_hENJul
+=======
+>>>>>>> 804451c (Lint)
 - Storico risoluzione marker di conflitto (73 file, poi ricorsi): [git-merge-conflict-inventory.md](./git-merge-conflict-inventory.md)

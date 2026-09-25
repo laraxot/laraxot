@@ -33,7 +33,7 @@ class ApprovedCommentNotification extends Notification implements ShouldQueue
         unset($notifiable);
 
         $config = CommentConfigData::make();
-
+        /** @var view-string $view */
         $view = 'comment::mail.approved-comment-notification';
 
         return (new MailMessage)

@@ -35,11 +35,8 @@ class PendingCommentNotification extends Notification implements ShouldQueue
         unset($notifiable);
 
         $config = CommentConfigData::make();
-
+        /** @var view-string $view */
         $view = 'comment::mail.pending-comment-notification';
-        if (! view()->exists($view)) {
-            throw new \LogicException('The pending comment mail view is not registered.');
-        }
 
         return (new MailMessage)
             ->from(
