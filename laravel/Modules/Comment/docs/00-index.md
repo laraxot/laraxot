@@ -1,26 +1,14 @@
 ---
-title: "Comment module docs index"
-type: index
-tags: [comment, module, index]
-qmd: true
+title: "redirect — 00-index.md"
+type: redirect
+module: Comment
+updated: 2026-10-16
+status: superseded
+superseded_by: index.md
 ---
 
-# Comment Module Docs Index
+> Superseded dal 2026-10-26: l'indice canonico e' [index.md](./index.md). Contenuto conservato per storia.
 
-**Path**: `laravel/Modules/Comment/docs/`
+# Redirect
 
-## Hub canonici
-
-| File | Scopo |
-|---|---|
-| [raw/reference/ds4-cli-integrations.md](./raw/reference/ds4-cli-integrations.md) | Integrazione ds4 con CLI |
-
-## Regole
-
-- Comment può dipendere da User (per autenticazione)
-- User NON deve dipendere da Comment
-
-## Riferimenti
-
-- [Predict module](../../Modules/Predict/docs/00-INDEX.md)
-- [User module](../User/docs/00-INDEX.md)
+Indice operativo canonico: [index.md](./index.md).

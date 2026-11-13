@@ -1,20 +1,21 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Modules\AI\Database\Seeders;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
 class AIDatabaseSeeder extends Seeder
 {
-    public function run(): void
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
     {
-        $this->call([
-            AiThreadSeeder::class,
-            AiMessageSeeder::class,
-            AiActionProposalSeeder::class,
-            AiToolLogSeeder::class,
-        ]);
+        Model::unguard();
+
+        // $this->call("OthersTableSeeder");
     }
 }

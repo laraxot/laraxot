@@ -1,4 +1,8 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
+issues: []
+discussions: []
 title: Widget FO — no render custom, empty in Blade
 type: rule
 tags: [widget, blade, xotbase, spatie-data]
@@ -6,6 +10,7 @@ qmd:
   index: true
 created_at: 2026-06-10
 updated_at: 2026-06-10
+status: draft
 ---
 
 # Widget FO — no render custom

@@ -1,3 +1,15 @@
+---
+title: "duplicate methods analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "duplicate methods analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Analisi Metodi Duplicati - Modulo Comment
 
 **Data Generazione**: 2025-10-15 06:41:17
@@ -158,6 +170,14 @@ protected function casts(): array
 ---
 
 
+title: "duplicate methods analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "duplicate methods analysis"
+issues: []
+discussions: []
 ---
 
 ## Legenda

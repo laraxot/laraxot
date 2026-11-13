@@ -1,9 +1,16 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "livewire widget epics"
+issues: []
+discussions: []
 title: "Epics — AI"
 type: epics
 module: AI
 related:
   - ./livewire-inventory.md
+status: draft
 ---
 
 # Epics AI

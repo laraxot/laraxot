@@ -1,3 +1,11 @@
+---
+title: "Risoluzione Conflitti Git - Modulo Activity"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity]
+qmd: "risoluzione conflitti git - modulo activity activity"
+---
 # Risoluzione Conflitti Git - Modulo Activity
 
 ## Data Risoluzione
@@ -12,7 +20,11 @@
 ### Documentazione
 - `docs/README.md` - Documentazione principale del modulo
 - `docs/event-sourcing.md` - Architettura event sourcing
+<<<<<<< HEAD
 - `docs/use_cases/<nome progetto>ion_market/` - Documentazione completa casi d'uso
+=======
+- `docs/use_cases/prediction_market/` - Documentazione completa casi d'uso
+>>>>>>> 13cf1831 (.)
 
 ## Modifiche Applicate
 
@@ -29,7 +41,11 @@ La documentazione è stata aggiornata per riflettere:
 - Gestione degli stored events
 - Integrazione con il sistema di attività
 
+<<<<<<< HEAD
 ### <nome progetto>ion Market Use Cases
+=======
+### Prediction Market Use Cases
+>>>>>>> 13cf1831 (.)
 Documentazione completa per:
 - Introduzione e architettura
 - Esempi pratici di implementazione
@@ -47,7 +63,14 @@ Tutti i file risolti rispettano:
 
 - [Documentazione Root Activity](../../../../docs/modules/activity.md)
 - [Event Sourcing Architecture](./event-sourcing.md)
+<<<<<<< HEAD
 - [<nome progetto>ion Market Use Cases](./use_cases/<nome progetto>ion_market/index.md)
 
 ---
 *Aggiornato automaticamente dopo risoluzione conflitti Git*
+=======
+- [Prediction Market Use Cases](./use_cases/prediction_market/index.md)
+
+---
+*Aggiornato automaticamente dopo risoluzione conflitti Git*
+>>>>>>> 13cf1831 (.)

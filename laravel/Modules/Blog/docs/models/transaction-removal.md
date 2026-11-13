@@ -1,3 +1,17 @@
+---
+title: "transaction removal"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "transaction removal"
+issues: []
+discussions: []
+status: stale
+---
+
+> Nota 2026-10-14 (docs-audit): Dichiara 'Completato' la rimozione del modello Transaction; laravel/Modules/Blog/app/Models/Transaction.php esiste ancora e database/migrations/2024_05_02_185212_create_transactions_table.php e' attiva (verificato 2026-10-14). Contenuto non riscritto, verificare prima di usarlo.
+
 # Rimozione Modello Transaction
 
 **Data**: 15 Ottobre 2025  
@@ -162,8 +176,8 @@ Se in futuro servisse un sistema di crediti/transazioni, le opzioni sono:
 - [Duplicate Methods Analysis](../duplicate-methods-analysis.md)
 
 ### Root Progetto
-- [View Cache Fix](../../../../docs/view-cache-components-fix-2025-10-15.md)
-- [Project Analysis](../../../../docs/project-analysis-and-roadmap.md)
+- [View Cache Fix](../../../../docs/view-cache-components-fix-componenti-mancanti.md)
+- [Project Analysis](../../../../../docs/project-analysis-and-roadmap.md)
 
 ## Note Operative
 

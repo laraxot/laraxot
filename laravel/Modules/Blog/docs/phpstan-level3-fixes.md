@@ -1,3 +1,15 @@
+---
+title: "phpstan level3 fixes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan level3 fixes"
+issues: []
+discussions: []
+status: draft
+---
+
 # Correzioni PHPStan - Modulo Blog
 
 Questo documento traccia gli errori PHPStan identificati nel modulo Blog e le relative soluzioni implementate.

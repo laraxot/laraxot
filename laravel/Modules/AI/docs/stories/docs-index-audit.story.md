@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+updated: 2026-09-26
+qmd: "docs index audit.story"
+issues: []
+discussions: []
 title: "Docs index audit - AI module"
 status: done
 type: story

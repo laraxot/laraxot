@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Comment Module — Doctrine"
 type: doctrine
 tags: [comment, social, interaction, module-doctrine]
@@ -8,6 +10,7 @@ qmd: "Comment module doctrine BMAD analysis purpose religion philosophy policy w
 related:
   - "../../Xot/docs/module.md"
   - "../../Notify/docs/module.md"
+status: draft
 ---
 
 # Comment Module — Doctrine

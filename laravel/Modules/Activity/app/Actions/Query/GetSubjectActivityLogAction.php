@@ -19,14 +19,24 @@ class GetSubjectActivityLogAction
      */
     public function execute(string $modelClass, int|string $modelId, int $limit = 500): array
     {
-        /** @var array<int, array<string, mixed>> */
-        return Activity::query()
+        $activities = Activity::typedGet(Activity::typedQuery()
             ->where('subject_type', $modelClass)
             ->where('subject_id', $modelId)
             ->latest()
             ->limit($limit)
-            ->get()
-            ->map(fn (Activity $activity): array => $activity->toArray())
+        );
+
+        return $activities
+            ->map(function (Activity $activity): array {
+                $result = [];
+                foreach ($activity->toArray() as $key => $value) {
+                    if (is_string($key)) {
+                        $result[$key] = $value;
+                    }
+                }
+
+                return $result;
+            })
             ->values()
             ->all();
     }

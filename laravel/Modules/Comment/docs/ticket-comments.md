@@ -1,3 +1,17 @@
+---
+title: "ticket comments"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ticket comments"
+issues: []
+discussions: []
+status: stale
+---
+
+> Nota 2026-10-14 (docs-audit): Descrive il Ticket con il trait Spatie\Comments\Models\Concerns\HasComments e le rotte laravel-comments-livewire.*; il codice (Modules/Fixcity/app/Models/Ticket.php) usa Modules\Comment\Models\Concerns\HasComments e il Ticket implementa Modules\Comment\Models\Contracts\Commentable (verificato 2026-10-14). Contenuto non riscritto, verificare prima di usarlo.
+
 # Ticket Comments Integration
 
 ## Panoramica

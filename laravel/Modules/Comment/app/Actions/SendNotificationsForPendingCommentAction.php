@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Comment\Actions;
 
-use Modules\Comment\Jobs\SendNotificationsForPendingCommentJob;
+use Modules\Comment\Actions\Notification\SendNotificationsForPendingCommentAction as PendingCommentNotificationAction;
 use Modules\Comment\Models\Comment;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -19,6 +19,8 @@ class SendNotificationsForPendingCommentAction
 
     public function handle(Comment $comment): void
     {
-        dispatch(new SendNotificationsForPendingCommentJob($comment));
+        app(PendingCommentNotificationAction::class)
+            ->onQueue()
+            ->execute($comment);
     }
 }

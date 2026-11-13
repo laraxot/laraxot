@@ -122,6 +122,29 @@ class Comment extends BaseModel implements Commentable, SupportsCommentNotificat
         return $this->parent_id === null;
     }
 
+    /**
+     * Quanti antenati ha il commento (0 = primo livello). Segue `parent_id`, che e' presente in entrambe le forme dei dati
+     * (risposta creata da `comment()` con commentable = commento padre, e risposta dei dati di esempio con commentable = articolo).
+     * Il tetto di 50 passi e' solo una cintura contro un ciclo corrotto nei dati.
+     */
+    public function depth(): int
+    {
+        $depth = 0;
+        $node = $this;
+
+        while ($node->parent_id !== null && $depth < 50) {
+            $parent = $node->parentComment;
+            if (! $parent instanceof self) {
+                break;
+            }
+
+            $node = $parent;
+            $depth++;
+        }
+
+        return $depth;
+    }
+
     /** @param Builder<Comment> $builder */
     public function scopeTopLevel(Builder $builder): void
     {

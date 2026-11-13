@@ -1,4 +1,6 @@
 ---
+qmd: "module service provider registration"
+discussions: []
 title: "Module Service Provider Registration Rule"
 type: rule
 tags: [module, service-provider, registration, laravel, architecture]
@@ -10,6 +12,7 @@ related:
   - ../../../composer.json
   - ../../../module.json
   - ../concepts/module-architecture-overview.md
+status: draft
 ---
 
 # Module Service Provider Registration Rule

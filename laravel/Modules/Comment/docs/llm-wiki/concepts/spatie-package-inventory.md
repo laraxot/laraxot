@@ -1,10 +1,15 @@
 ---
+type: note
+qmd: "spatie package inventory"
+issues: []
+discussions: []
 title: "Spatie Package Inventory — Migration Source"
 created: 2026-06-08
-updated: 2026-06-08
+updated: 2026-10-23
 category: "architecture"
 tags: ["comment", "migration", "spatie", "internalization", "inventory"]
 related_issues: ["STORY-158"]
+status: draft
 ---
 
 # Spatie Package Inventory — Migration Source
@@ -100,15 +105,16 @@ This document catalogues the files migrated from Spatie packages to native `Modu
 
 ---
 
-## File Inventory: Jobs
+## Package Jobs → QueueableActions (no `app/Jobs/`)
 
-### Location in Native Module
-`Modules/Comment/app/Jobs/`
+The two package jobs were first copied to `Modules/Comment/app/Jobs/` and then removed: modules have no `app/Jobs/` (rule: [no-module-jobs-queueable-action](../../../../../../bashscripts/ai/wiki/rules/no-module-jobs-queueable-action.md)). A Job that wraps an Action gives one behaviour two classes; the Action alone runs sync or queued and is tested by calling `execute()`.
 
-| File | Original Source | Purpose |
+| Package job (laravel-comments) | Native replacement | Async call |
 |------|---------|---------|
-| `SendNotificationsForApprovedCommentJob.php` | laravel-comments | Queued job wrapper for approved notifications |
-| `SendNotificationsForPendingCommentJob.php` | laravel-comments | Queued job wrapper for pending notifications |
+| `SendNotificationsForApprovedCommentJob` | `app/Actions/Notification/SendNotificationsForApprovedCommentAction.php` | `app(SendNotificationsForApprovedCommentAction::class)->onQueue()->execute($comment)` |
+| `SendNotificationsForPendingCommentJob` | `app/Actions/Notification/SendNotificationsForPendingCommentAction.php` | `app(SendNotificationsForPendingCommentAction::class)->onQueue()->execute($comment)` |
+
+For a delayed run use `ActionJob::dispatch($action, [$comment])->delay(...)`.
 
 ---
 
@@ -375,7 +381,7 @@ This document catalogues the files migrated from Spatie packages to native `Modu
 - **Concerns:** 2
 - **Contracts:** 2
 - **Actions:** 6
-- **Jobs:** 2
+- **Jobs:** 0 (the 2 package jobs became QueueableActions, see above)
 - **Transformers:** 3
 - **Support Classes:** 4
 - **Livewire Components:** 3

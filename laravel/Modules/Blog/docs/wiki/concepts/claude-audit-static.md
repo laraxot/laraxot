@@ -13,6 +13,7 @@ discussions:
 related:
   - ../../../../../../bashscripts/tools/run-claude-audit-module-static.sh
   - ../../../../../../docs/wiki/guidelines/claude-audit-static-free-tier.md
+status: draft
 ---
 
 # claude-audit static (Blog)

@@ -15,6 +15,7 @@ related:
   - ../wiki/concepts/can-comment-contract-php84.md
   - ./comments-widget-livewire-mount.md
   - ./has-comments-implements-commentable.md
+status: draft
 ---
 
 # CommentPolicy — commentator in Blade

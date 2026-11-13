@@ -1,3 +1,15 @@
+---
+title: "roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap"
+issues: []
+discussions: []
+status: draft
+---
+
 # Roadmap Modulo Comment
 
 ## 📊 Progress Overview
@@ -101,7 +113,6 @@ Secondo le "Regole Windsurf per base_predict_fila5_mono", gli obiettivi per l'an
 5. Eseguire regolarmente l'analisi PHPStan durante lo sviluppo
 
 ---
-
 ## Collegamenti
 
 [⬅️ Torna alla Roadmap Principale](/project_docs/roadmap.md)

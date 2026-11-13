@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Comment\Actions;
 
-use Illuminate\Support\Collection;
 use Modules\Comment\Datas\CommentConfigData;
 use Modules\Comment\Models\Comment;
-use Modules\Comment\Transformers\CommentTransformer;
 use Spatie\QueueableAction\QueueableAction;
 
 class ProcessCommentAction

@@ -13,7 +13,12 @@ use Modules\Comment\Models\Comment;
  */
 interface Commentable
 {
-    /** @return MorphMany<Comment, Model> */
+    /**
+     * Relazione morph dei commenti sul commentable.
+     * `covariant Model` rende MorphMany&lt;Comment, $this&gt; del trait compatibile col contratto.
+     *
+     * @return MorphMany<Comment, covariant Model>
+     */
     public function comments(): MorphMany;
 
     public function comment(string $text, ?CanComment $commentator = null): Comment;

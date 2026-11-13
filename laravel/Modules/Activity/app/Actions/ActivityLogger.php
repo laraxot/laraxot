@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use InvalidArgumentException;
 use Modules\Activity\Models\Activity;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -24,6 +24,11 @@ class ActivityLogger
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
+=======
+     * Log activity.
+     *
+>>>>>>> 13cf1831 (.)
      * @param  array<string, mixed>|null  $properties
      */
     public function log(
@@ -36,8 +41,8 @@ class ActivityLogger
         $userId = null;
         if ($user !== null) {
             // Type checking for User model
-            if (! $user instanceof User) {
-                throw new InvalidArgumentException('User must be an instance of User');
+            if (! $user instanceof UserContract) {
+                throw new InvalidArgumentException('User must implement UserContract');
             }
 
             // Type narrowing for user ID - use getAttribute for Eloquent models
@@ -70,54 +75,106 @@ class ActivityLogger
     /**
      * Log created event.
      */
-    public function created(Model $model, ?User $user = null): Activity
+    public function created(Model $model, ?UserContract $user = null): Activity
     {
+<<<<<<< HEAD
+<<<<<<< .merge_file_sFkdDV
         $action = new LogModelCreatedAction($model, $user);
 
         return $action->execute();
+=======
+        return (new LogModelCreatedAction($model, $user instanceof Model ? $user : null))->execute();
+>>>>>>> .merge_file_icBWev
+=======
+        $action = new LogModelCreatedAction($model, $user);
+
+        return $action->execute();
+>>>>>>> 13cf1831 (.)
     }
 
     /**
      * Log updated event.
      */
-    public function updated(Model $model, ?User $user = null): Activity
+    public function updated(Model $model, ?UserContract $user = null): Activity
     {
+<<<<<<< HEAD
+<<<<<<< .merge_file_sFkdDV
         $action = new LogModelUpdatedAction($model, $user);
 
         return $action->execute();
+=======
+        return (new LogModelUpdatedAction($model, $user instanceof Model ? $user : null))->execute();
+>>>>>>> .merge_file_icBWev
+=======
+        $action = new LogModelUpdatedAction($model, $user);
+
+        return $action->execute();
+>>>>>>> 13cf1831 (.)
     }
 
     /**
      * Log deleted event.
      */
-    public function deleted(Model $model, ?User $user = null): Activity
+    public function deleted(Model $model, ?UserContract $user = null): Activity
     {
+<<<<<<< HEAD
+<<<<<<< .merge_file_sFkdDV
         $action = new LogModelDeletedAction($model, $user);
 
         return $action->execute();
+=======
+        return (new LogModelDeletedAction($model, $user instanceof Model ? $user : null))->execute();
+>>>>>>> .merge_file_icBWev
+=======
+        $action = new LogModelDeletedAction($model, $user);
+
+        return $action->execute();
+>>>>>>> 13cf1831 (.)
     }
 
     /**
      * Log login event.
      */
-    public function login(User $user): Activity
+    public function login(UserContract $user): Activity
     {
+<<<<<<< HEAD
+<<<<<<< .merge_file_sFkdDV
         $action = new LogUserLoginAction($user);
 
         return $action->execute();
+=======
+        return (new LogUserLoginAction($user))->execute();
+>>>>>>> .merge_file_icBWev
+=======
+        $action = new LogUserLoginAction($user);
+
+        return $action->execute();
+>>>>>>> 13cf1831 (.)
     }
 
     /**
      * Log logout event.
      */
-    public function logout(User $user): Activity
+    public function logout(UserContract $user): Activity
     {
+<<<<<<< HEAD
+<<<<<<< .merge_file_sFkdDV
+=======
+>>>>>>> 13cf1831 (.)
         $action = new LogUserLogoutAction($user);
 
         return $action->execute();
+=======
+        return (new LogUserLogoutAction($user))->execute();
+>>>>>>> .merge_file_icBWev
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Log custom event.
+     *
+>>>>>>> 13cf1831 (.)
      * @param  array<string, mixed>|null  $properties
      */
     public function custom(
@@ -134,7 +191,7 @@ class ActivityLogger
      *
      * @return Collection<int, Activity>
      */
-    public function getUserActivities(User $user, int $limit = 50): Collection
+    public function getUserActivities(UserContract $user, int $limit = 50): Collection
     {
         if ($limit <= 0) {
             throw new InvalidArgumentException('Limit must be positive');
@@ -146,13 +203,15 @@ class ActivityLogger
             $userKeyValues[] = $userKey;
         }
 
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with('subject')
             ->whereIn('causer_id', $userKeyValues)
             ->where('causer_type', $user::class)
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 
     /**
@@ -162,13 +221,15 @@ class ActivityLogger
      */
     public function getModelActivities(Model $model, int $limit = 50): Collection
     {
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with('causer')
             ->where('subject_type', $model::class)
             ->where('subject_id', $model->getKey())
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 
     /**
@@ -185,12 +246,14 @@ class ActivityLogger
             throw new InvalidArgumentException('Limit must be positive');
         }
 
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with(['causer', 'subject'])
             ->where('event', $type)
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 
     /**
@@ -204,11 +267,13 @@ class ActivityLogger
             throw new InvalidArgumentException('Limit must be positive');
         }
 
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with(['causer', 'subject'])
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 
     /**
@@ -220,7 +285,7 @@ class ActivityLogger
             throw new InvalidArgumentException('Days must be positive');
         }
 
-        $deletedCount = Activity::where('created_at', '<', now()->subDays($days))
+        $deletedCount = Activity::typedQuery()->where('created_at', '<', now()->subDays($days))
             ->delete();
 
         $deleted = is_int($deletedCount) ? $deletedCount : 0;
@@ -238,9 +303,9 @@ class ActivityLogger
      *
      * @return array{total: int, by_type: array<string, int>, today: int, this_week: int, this_month: int}
      */
-    public function getStatistics(?User $user = null): array
+    public function getStatistics(?UserContract $user = null): array
     {
-        $query = Activity::query();
+        $query = Activity::typedQuery();
 
         if ($user) {
             $query->where('causer_id', $user->getKey())
@@ -261,7 +326,11 @@ class ActivityLogger
 
                 // Explicitly map and cast to ensure types
                 /** @var array<string, int> $byType */
+<<<<<<< HEAD
                 $byType = $results->mapWithKeys(function (object $item): array {
+=======
+                $byType = $results->mapWithKeys(function (object $item, int $_key): array {
+>>>>>>> 13cf1831 (.)
                     // PHPStan L10: isset() per magic attributes invece di property_exists()
                     if (! isset($item->event, $item->count)) {
                         return [];

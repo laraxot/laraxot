@@ -6,12 +6,10 @@ return [
     'navigation' => [
         'name' => 'Text Widget',
         'plural' => 'Text Widgets',
-        'group' => [
-            'name' => 'Content',
-        ],
+        'group' => 'Contenuti',
         'sort' => 97,
         'icon' => 'heroicon-o-document-text',
-        'label' => 'Widget Testo',
+        'label' => 'Blocchi di testo',
     ],
     'actions' => [
         'create' => [

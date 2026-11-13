@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Comment\Actions;
 
-use Spatie\Comments\Support\CommentSanitizer;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -21,9 +20,16 @@ final class SanitizeCommentTextAction
 
     public function execute(string $text): string
     {
-        /** @var string $sanitized */
-        $sanitized = app(CommentSanitizer::class)->sanitize($text);
+        $sanitized = $this->sanitizeSymfony($text);
 
         return $sanitized;
+    }
+
+    protected function sanitizeSymfony(string $text): string
+    {
+        // Symfony html sanitizer — l'unica dipendenza esterna necessaria per la sanitizzazione.
+        $sanitizer = app('Symfony\\Component\\HtmlSanitizer\\HtmlSanitizer');
+
+        return $sanitizer->sanitize($text);
     }
 }

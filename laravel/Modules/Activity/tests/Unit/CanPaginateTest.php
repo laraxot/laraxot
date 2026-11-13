@@ -4,15 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Unit;
 
-use Filament\Tables\Enums\PaginationMode;
 use Modules\Activity\Filament\Pages\Concerns\CanPaginate;
+use Modules\Activity\Tests\Fixtures\CanPaginateHarness;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Activity\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Can Paginate', function (): void {
     test('trait exists', function (): void {
+<<<<<<< HEAD
+=======
+        /** @var \Modules\Activity\Tests\TestCase $this */
+>>>>>>> 13cf1831 (.)
         Assert::assertTrue(trait_exists(CanPaginate::class));
     });
 
@@ -38,8 +42,13 @@ describe('Can Paginate', function (): void {
     });
 
     test('default pagination options return array', function (): void {
+<<<<<<< .merge_file_PN0YI8
         // Test the default pagination options via reflection
+<<<<<<< HEAD
         $trait = new class()
+=======
+        $trait = new class
+>>>>>>> 13cf1831 (.)
         {
             use CanPaginate;
 
@@ -65,6 +74,9 @@ describe('Can Paginate', function (): void {
         };
 
         $options = $trait->test_get_records_per_page_select_options();
+=======
+        $options = (new CanPaginateHarness)->exposeOptions();
+>>>>>>> .merge_file_L3fJ0c
         Assert::assertEquals([10, 25, 50], $options);
     });
 });

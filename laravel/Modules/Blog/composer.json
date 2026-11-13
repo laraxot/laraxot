@@ -28,6 +28,11 @@
             "Modules\\Blog\\Database\\Seeders\\": "database/seeders/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Blog\\Tests\\": "tests/"
+        }
+    },
     "repositories": [
         {
             "type": "path",

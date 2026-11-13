@@ -21,7 +21,15 @@ use Modules\Activity\Actions\Query\GetModelActivitiesAction;
 use Modules\Activity\Actions\Query\GetRecentActivitiesAction;
 use Modules\Activity\Actions\Query\GetUserActivitiesAction;
 use Modules\Activity\Models\Activity;
+<<<<<<< .merge_file_PhlRdX
 use Modules\User\Models\User;
+<<<<<<< HEAD
+=======
+use Modules\Xot\Contracts\UserContract;
+>>>>>>> .merge_file_oNAe2Y
+=======
+use Modules\Xot\Contracts\UserContract;
+>>>>>>> 13cf1831 (.)
 
 /**
  * Coordinator — delegates to single-purpose QueueableActions (not an Action: multi-method API).
@@ -38,13 +46,22 @@ class ActivityLogger
         ?array $properties = null,
         ?string $description = null,
     ): Activity {
+<<<<<<< HEAD
         if ($user !== null && ! $user instanceof User) {
             throw new InvalidArgumentException('User must be an instance of User');
+=======
+        if ($user !== null && (! $user instanceof UserContract || ! $user instanceof Model)) {
+            throw new InvalidArgumentException('User must implement UserContract');
+>>>>>>> 13cf1831 (.)
         }
 
         $activity = (new LogActivityAction(
             type: $type,
+<<<<<<< HEAD
             user: $user instanceof User ? $user : null,
+=======
+            user: $user instanceof Model ? $user : null,
+>>>>>>> 13cf1831 (.)
             subject: $subject,
             properties: $properties,
             description: $description,
@@ -58,19 +75,32 @@ class ActivityLogger
         return $activity;
     }
 
+<<<<<<< HEAD
     public function created(Model $model, ?User $user = null): Activity
     {
+<<<<<<< .merge_file_PhlRdX
         return (new LogModelCreatedAction($model, $user))->execute();
+=======
+        return (new LogModelCreatedAction($model, $user instanceof Model ? $user : null))->execute();
+>>>>>>> .merge_file_oNAe2Y
     }
 
     public function updated(Model $model, ?User $user = null): Activity
     {
+<<<<<<< .merge_file_PhlRdX
         return (new LogModelUpdatedAction($model, $user))->execute();
+=======
+        return (new LogModelUpdatedAction($model, $user instanceof Model ? $user : null))->execute();
+>>>>>>> .merge_file_oNAe2Y
     }
 
     public function deleted(Model $model, ?User $user = null): Activity
     {
+<<<<<<< .merge_file_PhlRdX
         return (new LogModelDeletedAction($model, $user))->execute();
+=======
+        return (new LogModelDeletedAction($model, $user instanceof Model ? $user : null))->execute();
+>>>>>>> .merge_file_oNAe2Y
     }
 
     public function login(User $user): Activity
@@ -81,6 +111,37 @@ class ActivityLogger
     public function logout(User $user): Activity
     {
         return (new LogUserLogoutAction($user))->execute();
+=======
+    public function created(Model $model, ?UserContract $user = null): Activity
+    {
+        unset($user);
+
+        return (new LogModelCreatedAction($model))->execute();
+    }
+
+    public function updated(Model $model, ?UserContract $user = null): Activity
+    {
+        unset($user);
+
+        return (new LogModelUpdatedAction($model))->execute();
+    }
+
+    public function deleted(Model $model, ?UserContract $user = null): Activity
+    {
+        unset($user);
+
+        return (new LogModelDeletedAction($model))->execute();
+    }
+
+    public function login(UserContract $user): Activity
+    {
+        return (new LogUserLoginAction($user instanceof User ? $user : null))->execute();
+    }
+
+    public function logout(UserContract $user): Activity
+    {
+        return (new LogUserLogoutAction($user instanceof User ? $user : null))->execute();
+>>>>>>> 13cf1831 (.)
     }
 
     /**
@@ -96,8 +157,17 @@ class ActivityLogger
     }
 
     /** @return Collection<int, Activity> */
+<<<<<<< HEAD
     public function getUserActivities(User $user, int $limit = 50): Collection
     {
+=======
+    public function getUserActivities(UserContract $user, int $limit = 50): Collection
+    {
+        if (! $user instanceof User) {
+            throw new InvalidArgumentException('User must be an instance of User');
+        }
+
+>>>>>>> 13cf1831 (.)
         return app(GetUserActivitiesAction::class)->execute($user, $limit);
     }
 
@@ -127,8 +197,18 @@ class ActivityLogger
     /**
      * @return array{total: int, by_type: array<string, int>, today: int, this_week: int, this_month: int}
      */
+<<<<<<< HEAD
     public function getStatistics(?User $user = null): array
     {
         return app(GetActivityStatisticsAction::class)->execute($user);
+=======
+    public function getStatistics(?UserContract $user = null): array
+    {
+        if ($user !== null && ! $user instanceof User) {
+            throw new InvalidArgumentException('User must be an instance of User');
+        }
+
+        return app(GetActivityStatisticsAction::class)->execute($user instanceof User ? $user : null);
+>>>>>>> 13cf1831 (.)
     }
 }

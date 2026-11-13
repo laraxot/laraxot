@@ -1,4 +1,5 @@
 ---
+qmd: "dashboard provider docs.story"
 title: "Correct AI dashboard contract and provider documentation"
 type: story
 module: AI

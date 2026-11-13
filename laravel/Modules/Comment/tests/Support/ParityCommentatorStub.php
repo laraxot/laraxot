@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Comment\Tests\Support;
 
+use Illuminate\Contracts\Notifications\Dispatcher;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Modules\Comment\Datas\CommentatorProperties;
 use Modules\Comment\Enums\NotificationSubscriptionType;
 use Modules\Comment\Models\CommentNotificationSubscription;
 use Modules\Comment\Models\Contracts\CanComment;
-use Modules\Comment\Datas\CommentatorProperties;
 
 /**
  * Stub CanComment per test unitari — evita Mockery (PHPStan argument.type).
@@ -28,6 +29,11 @@ final class ParityCommentatorStub implements CanComment
     public function getMorphClass(): string
     {
         return 'parity-user';
+    }
+
+    public function notify(mixed $instance): void
+    {
+        app(Dispatcher::class)->send($this, $instance);
     }
 
     public function commentatorProperties(): CommentatorProperties

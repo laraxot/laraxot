@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+updated: 2026-09-26
+qmd: "ai mixed type reduction.story"
+issues: []
+discussions: []
 title: "Reduce mixed type usage - AI module"
 status: done
 type: story

@@ -1,3 +1,15 @@
+---
+title: "deferred operator assistant agent"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "deferred operator assistant agent"
+issues: []
+discussions: []
+status: draft
+---
+
 # Deferred: OperatorAssistantAgent domain tool-calling
 
 Il modulo `AiAssistant` di `gestionale_commesse` include `Application/Neuron/OperatorAssistantAgent.php`

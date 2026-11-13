@@ -1,3 +1,15 @@
+---
+title: "resource table columns"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "resource table columns"
+issues: []
+discussions: []
+status: draft
+---
+
 # Colonne delle Resource — verifica 2026-09-10
 
 ## Evidenze e decisioni

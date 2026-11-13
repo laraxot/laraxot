@@ -6,6 +6,7 @@ namespace Modules\Comment\Actions\Notification;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Modules\Comment\Actions\CommentatorUniqueKeyAction;
 use Modules\Comment\Datas\CommentConfigData;
 use Modules\Comment\Enums\NotificationSubscriptionType;
 use Modules\Comment\Models\Comment;
@@ -93,7 +94,7 @@ class NotifyApprovedCommentAction
         /** @var Collection<int, CanComment> $finalCollection */
         $finalCollection = $subscribingToAll
             ->merge($activeParticipants)
-            ->unique(fn (CanComment $subscriber): string => $subscriber::class.'-'.(string) $subscriber->getKey())
+            ->unique(static fn (CanComment $subscriber): string => app(CommentatorUniqueKeyAction::class)->execute($subscriber))
             ->reject(function (CanComment $subscriber) use ($commentator): bool {
                 if (! $commentator instanceof CanComment) {
                     return false;

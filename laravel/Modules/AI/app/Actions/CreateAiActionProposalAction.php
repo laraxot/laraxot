@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\AI\Actions;
 
+use Modules\AI\Enums\AiActionProposalStatusEnum;
 use Modules\AI\Models\AiActionProposal;
 use Modules\AI\Models\AiThread;
 use Ramsey\Uuid\Uuid;
@@ -26,16 +27,17 @@ class CreateAiActionProposalAction
         array $payload,
         ?string $preview = null,
     ): AiActionProposal {
-        /** @var AiActionProposal $proposal */
-        $proposal = AiActionProposal::query()->create([
+        $proposal = new AiActionProposal;
+        $proposal->fill([
             'public_id' => Uuid::uuid4()->toString(),
             'ai_thread_id' => $thread->getKey(),
             'proposed_by_user_id' => $proposedByUserId,
             'type' => $type,
             'payload' => $payload,
             'preview' => $preview,
-            'status' => AiActionProposal::STATUS_PENDING,
+            'status' => AiActionProposalStatusEnum::PENDING,
         ]);
+        $proposal->save();
 
         return $proposal;
     }

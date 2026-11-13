@@ -6,7 +6,7 @@ use Modules\Comment\Actions\Content\SanitizeCommentHtmlAction;
 use Modules\Comment\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('CommentSanitizer strips script tags and keeps safe elements', function (): void {
     $sanitizer = app(SanitizeCommentHtmlAction::class);

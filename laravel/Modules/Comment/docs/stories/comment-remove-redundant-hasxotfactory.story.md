@@ -1,3 +1,14 @@
+---
+title: "comment remove redundant hasxotfactory.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "comment remove redundant hasxotfactory.story"
+issues: []
+discussions: []
+---
+
 # BMAD Story — Fix PHPStan Comment module: remove redundant HasXotFactory + Model extends
 
 ## Understand

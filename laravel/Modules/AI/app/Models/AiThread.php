@@ -11,43 +11,22 @@ use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Models\XotBaseModel;
 
 /**
- * Class AiThread.
- *
- * A persisted conversation thread between a user and the AI assistant.
+ * Persisted conversation thread owned by the AI module.
  *
  * @property-read ProfileContract|null $creator
  * @property-read Collection<int, AiMessage> $messages
- * @property-read int|null $messages_count
  * @property-read Collection<int, AiActionProposal> $proposals
- * @property-read int|null $proposals_count
  * @property-read Collection<int, AiToolLog> $toolLogs
- * @property-read int|null $tool_logs_count
- * @property-read ProfileContract|null $updater
- *
- * @method static Builder<static>|AiThread newModelQuery()
- * @method static Builder<static>|AiThread newQuery()
- * @method static Builder<static>|AiThread query()
- *
- * @mixin \Eloquent
+ * @method static Builder<static> query()
  */
 class AiThread extends XotBaseModel
 {
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
+    /** @var list<string> */
     protected $fillable = [
-        'public_id',
-        'created_by_user_id',
-        'panel_id',
-        'last_message_at',
-        'meta',
+        'public_id', 'created_by_user_id', 'panel_id', 'last_message_at', 'meta',
     ];
 
-    /**
-     * @return array<string, string>
-     */
+    /** @return array<string, string> */
     protected function casts(): array
     {
         return [
@@ -59,25 +38,19 @@ class AiThread extends XotBaseModel
         ];
     }
 
-    /**
-     * @return HasMany<AiMessage, $this>
-     */
+    /** @return HasMany<AiMessage, $this> */
     public function messages(): HasMany
     {
         return $this->hasMany(AiMessage::class);
     }
 
-    /**
-     * @return HasMany<AiActionProposal, $this>
-     */
+    /** @return HasMany<AiActionProposal, $this> */
     public function proposals(): HasMany
     {
         return $this->hasMany(AiActionProposal::class);
     }
 
-    /**
-     * @return HasMany<AiToolLog, $this>
-     */
+    /** @return HasMany<AiToolLog, $this> */
     public function toolLogs(): HasMany
     {
         return $this->hasMany(AiToolLog::class);

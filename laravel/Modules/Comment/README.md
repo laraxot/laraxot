@@ -1,3 +1,14 @@
+---
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
+---
+
 # 💬 Comment
 
 [![Stars](https://img.shields.io/github/stars/laraxot/module_comment_fila5?style=plastic&color=yellow)]()
@@ -62,4 +73,12 @@ Importa, installa, configura. Il resto ci penseremo noi.
 
 ---
 
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
 **Modulo** `Comment` · **Laraxot** · PHPStan 10 · Filament 5

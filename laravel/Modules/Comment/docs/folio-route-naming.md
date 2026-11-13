@@ -1,3 +1,15 @@
+---
+title: "folio route naming"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "folio route naming"
+issues: []
+discussions: []
+status: draft
+---
+
 # Folio Route Naming Convention Guide
 
 ## Regola DRUCOL

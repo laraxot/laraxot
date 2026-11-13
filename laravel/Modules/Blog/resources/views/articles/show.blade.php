@@ -22,5 +22,11 @@
             <x-article.footer :article="$article" :blocks="$article->footer_blocks" />
 
         </div>
+
+        {{-- Commenti (pure Filament widget, no Livewire custom) --}}
+        @if (auth()->check() && method_exists($article, 'comments'))
+            <hr class="my-12">
+            <x-comment::comment-widget :model="$article" />
+        @endif
     </x-std>
 </div>

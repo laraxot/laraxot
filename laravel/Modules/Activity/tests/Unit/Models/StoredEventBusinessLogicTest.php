@@ -2,28 +2,73 @@
 
 declare(strict_types=1);
 
+namespace Modules\Activity\Tests\Unit\Models;
+
 use Modules\Activity\Models\StoredEvent;
 use Modules\Activity\Tests\TestCase;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use PHPUnit\Framework\Assert;
+use Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEventQueryBuilder;
 
+<<<<<<< HEAD
+<<<<<<< .merge_file_PIJF3v
 uses(\Modules\Activity\Tests\TestCase::class);
 
 describe('StoredEvent Business Logic', function (): void {
     test('stored event has correct connection configured', function (): void {
         $storedEvent = new StoredEvent();
+=======
+uses(TestCase::class);
+
+describe('StoredEvent Business Logic', function (): void {
+    test('stored event has correct connection configured', function (): void {
+        $storedEvent = new StoredEvent;
+>>>>>>> 13cf1831 (.)
 
         Assert::assertSame('activity', $storedEvent->getConnectionName());
     });
 
     test('stored event has correct table configured', function (): void {
+<<<<<<< HEAD
         $storedEvent = new StoredEvent();
+=======
+        $storedEvent = new StoredEvent;
+>>>>>>> 13cf1831 (.)
 
         Assert::assertSame('stored_events', $storedEvent->getTable());
     });
 
     test('stored event has expected fillable fields for event sourcing', function (): void {
+<<<<<<< HEAD
         $storedEvent = new StoredEvent();
+=======
+        $storedEvent = new StoredEvent;
+>>>>>>> 13cf1831 (.)
         $expectedFillable = [
+=======
+use function Safe\class_uses;
+
+uses(TestCase::class);
+
+/**
+ * Verifica il contratto pubblico del model StoredEvent (persistenza eventi).
+ */
+final class StoredEventBusinessLogicTest extends TestCase
+{
+    public function test_uses_dedicated_activity_database_connection(): void
+    {
+        Assert::assertSame('activity', (new StoredEvent)->getConnectionName());
+    }
+
+    public function test_uses_stored_events_table(): void
+    {
+        Assert::assertSame('stored_events', (new StoredEvent)->getTable());
+    }
+
+    public function test_exposes_expected_fillable_attributes_for_event_payload(): void
+    {
+        $expected = [
+>>>>>>> .merge_file_jBDpVF
             'id',
             'aggregate_uuid',
             'aggregate_version',
@@ -36,16 +81,18 @@ describe('StoredEvent Business Logic', function (): void {
             'created_by',
         ];
 
-        Assert::assertEquals($expectedFillable, $storedEvent->getFillable());
-    });
+        Assert::assertSame($expected, (new StoredEvent)->getFillable());
+    }
 
-    test('stored event has query builder methods documented', function (): void {
-        $reflection = new ReflectionClass(StoredEvent::class);
-        $docComment = $reflection->getDocComment();
+    public function test_extends_spatie_eloquent_stored_event(): void {}
 
-        Assert::assertStringContainsString('@method', (string) $docComment);
-        Assert::assertStringContainsString('afterVersion', (string) $docComment);
-        Assert::assertStringContainsString('whereAggregateRoot', (string) $docComment);
-        Assert::assertStringContainsString('whereEvent', (string) $docComment);
-    });
-});
+    public function test_uses_xot_factory_trait_for_test_data(): void
+    {
+        Assert::assertArrayHasKey(HasXotFactory::class, class_uses(StoredEvent::class));
+    }
+
+    public function test_exposes_event_sourcing_query_builder_entry_point(): void
+    {
+        Assert::assertInstanceOf(EloquentStoredEventQueryBuilder::class, StoredEvent::query());
+    }
+}

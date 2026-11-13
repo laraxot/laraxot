@@ -6,9 +6,7 @@ return [
     'navigation' => [
         'name' => 'Profilo',
         'plural' => 'Profili',
-        'group' => [
-            'name' => 'Content',
-        ],
+        'group' => 'Contenuti',
         'sort' => 56,
         'icon' => 'heroicon-o-user',
         'label' => 'Profilo',

@@ -1,10 +1,15 @@
 ---
+type: note
+qmd: "native comments engine workflow"
+issues: []
+discussions: []
 title: "Native Comments Engine Workflow — STORY-158 Phases"
 created: 2026-06-08
 updated: 2026-06-08
 category: "architecture"
 tags: ["comment", "migration", "workflow", "phases", "story-158"]
 related_issues: ["STORY-158"]
+status: draft
 ---
 
 # Native Comments Engine Workflow — STORY-158 Phases

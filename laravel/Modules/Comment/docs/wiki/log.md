@@ -1,3 +1,15 @@
+---
+title: "log"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "log"
+issues: []
+discussions: []
+status: draft
+---
+
 ## [2026-09-25] phpstan | Notification mailView() view-string fix
 - `ApprovedCommentNotification.php` + `PendingCommentNotification.php`: replaced `implode()` + `view()->exists()` pattern with direct `view-string` literal and `@var view-string` annotation.
 - Cleared `method.impossibleType` (Factory::exists always-false) and `return.type` (string&view-string) errors.
@@ -69,7 +81,7 @@
 
 - Core: `CommentConfig`, `HasComments`, `InteractsWithComments`, `CanComment`, Enums, Exceptions
 - Script audit: `bashscripts/tools/comment/audit-spatie-usage.sh`
-- Hub: [native-comments-engine.md](../../native-comments-engine.md)
+- Hub: [native-comments-engine.md](../native-comments-engine.md)
 - `BaseUser` → `InteractsWithComments` (alias `InteractsWithSpatieComments` deprecato)
 
 ## [2026-06-05] docs | HackerNoon harness — tips 001-022 in wiki locale
@@ -105,8 +117,13 @@
 - Commenti cross-link su #7, base #317
 
 ---
-
 ## [2026-09-25] phpstan | Notification view-string fix (final)
 - Added `ResolveCommentMailViewAction` to validate a named Comment mail template before returning it with the `view-string` contract.
 - Both notifications now resolve their own template through that module-owned action before calling `MailMessage::markdown()`; missing/unregistered templates fail explicitly.
 - This keeps view validation in Comment and avoids inline PHPStan type overrides or a dependency on Cms.
+
+## [2026-10-14] docs | verifica degli ingressi contro il codice
+
+- Riscritti `README.md` e `00-INDEX.md` (indice canonico); `index.md` con nota. Segnati `stale`: `AUDIT-MIGRATION-STATUS.md`, `audit-migration-status.md`, `STORY-158-COMPLETION-SUMMARY.md` (dicono `packages/spatie/` eliminata, ma esiste), `ticket-comments.md` (trait Spatie sul Ticket), `INDEX.md`, `00-index.md`. Nota di verifica datata in `native-comments-engine.md`.
+- Verificato: `SanitizeCommentTextAction` importa ancora `Spatie\Comments\Support\CommentSanitizer`; `module.json` `enabled: false` contro `Comment: true` in `modules_statuses.json`; 6 rotte Filament `comment/admin`; Pest: 3 passati, 41 falliti (SQLite).
+- Link rotti negli indici (criterio audit): 32 -> 2 (`raw/`, immutabile). Story: `stories/docs-comment-verifica-ingressi.story.md`.

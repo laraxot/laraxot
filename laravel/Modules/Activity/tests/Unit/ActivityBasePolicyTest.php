@@ -5,14 +5,21 @@ declare(strict_types=1);
 namespace Modules\Activity\Tests\Unit;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
+<<<<<<< HEAD
 use Mockery;
 use Mockery\MockInterface;
+=======
+>>>>>>> 13cf1831 (.)
 use Modules\Activity\Models\Policies\ActivityBasePolicy;
 use Modules\Activity\Tests\TestCase;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
 uses(\Modules\Activity\Tests\TestCase::class);
+=======
+uses(TestCase::class);
+>>>>>>> 13cf1831 (.)
 
 describe('Activity Base Policy', function (): void {
     test('policy is abstract', function (): void {
@@ -30,6 +37,7 @@ describe('Activity Base Policy', function (): void {
     });
 
     test('super admin user always allowed', function (): void {
+<<<<<<< HEAD
         // Create a mock super-admin user
         /** @var MockInterface&User $user */
         $user = Mockery::mock(User::class);
@@ -37,6 +45,15 @@ describe('Activity Base Policy', function (): void {
 
         // Test the policy
         $policy = new class() extends ActivityBasePolicy
+=======
+        /** @var TestCase $this */
+        // Create a mock super-admin user
+        $user = $this->createUnitMock(User::class);
+        $user->method('hasRole')->willReturn(true);
+
+        // Test the policy
+        $policy = new class extends ActivityBasePolicy
+>>>>>>> 13cf1831 (.)
         {
             public function policyBefore(User $user): ?bool
             {

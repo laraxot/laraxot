@@ -14,6 +14,7 @@ related:
   - ./spatie-to-laraxot-namespace-map.md
   - ./spatie-comments-fo-ticket-integration.md
   - ../../../../../../docs/stories/STORY-158-native-comments-engine.md
+status: draft
 ---
 
 # Workflow BMAD — Native Comments Engine

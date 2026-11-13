@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Comment\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Blog\Models\Article;
 use Modules\Comment\Models\Comment;
 use Modules\User\Models\User;
 
@@ -29,22 +30,43 @@ class CommentFactory extends Factory
      */
     public function definition(): array
     {
+        $text = 'Grazie per la guida chiara: ora so quali dettagli inserire nella segnalazione.';
+
         return [
-            'text' => $this->faker->paragraph(),
-            'original_text' => $this->faker->paragraph(),
-            'commentable_type' => $this->faker->randomElement(['Modules\Blog\Models\Post', 'Modules\Predict\Models\Predict']),
-            'commentable_id' => $this->faker->numberBetween(1, 100),
+            'text' => $text,
+            'original_text' => $text,
+            'commentable_type' => Article::class,
+            'commentable_id' => Article::factory(),
             'commentator_type' => User::class,
             'commentator_id' => User::factory(),
             'parent_id' => null,
-            'approved_at' => $this->faker->optional()->dateTime(),
-            'extra' => $this->faker->optional()->randomElement([
-                null,
-                json_encode(['source' => 'web', 'ip' => $this->faker->ipv4()]),
-            ]),
-            'created_by' => $this->faker->optional()->uuid(),
-            'updated_by' => $this->faker->optional()->uuid(),
+            'approved_at' => now(),
+            'extra' => json_encode(['source' => 'demo', 'locale' => 'it']),
+            'created_by' => null,
+            'updated_by' => null,
         ];
+    }
+
+    /**
+     * Commento demo legato a un articolo/evento Blog.
+     */
+    public function forArticle(Article $article): static
+    {
+        return $this->state(fn (array $attributes): array => [
+            'commentable_type' => $article->getMorphClass(),
+            'commentable_id' => $article->getKey(),
+        ]);
+    }
+
+    public function demoCivic(): static
+    {
+        $text = 'Condivido: indicare quartiere e fascia oraria rende la verifica più semplice.';
+
+        return $this->state([
+            'text' => $text,
+            'original_text' => $text,
+            'approved_at' => now(),
+        ]);
     }
 
     /**
@@ -52,7 +74,7 @@ class CommentFactory extends Factory
      */
     public function approved(): static
     {
-        return $this->state(fn (array $attributes) => [ // Unused; state callbacks ignore attributes
+        return $this->state(fn (array $attributes): array => [
             'approved_at' => now(),
         ]);
     }
@@ -62,7 +84,7 @@ class CommentFactory extends Factory
      */
     public function pending(): static
     {
-        return $this->state(fn (array $attributes) => [ // Unused; state callbacks ignore attributes
+        return $this->state(fn (array $attributes): array => [
             'approved_at' => null,
         ]);
     }
@@ -72,7 +94,7 @@ class CommentFactory extends Factory
      */
     public function asReply(Comment $parentComment): static
     {
-        return $this->state(fn (array $attributes) => [ // Unused; state callbacks ignore attributes
+        return $this->state(fn (array $attributes): array => [
             'parent_id' => $parentComment->id,
             'commentable_type' => $parentComment->commentable_type,
             'commentable_id' => $parentComment->commentable_id,

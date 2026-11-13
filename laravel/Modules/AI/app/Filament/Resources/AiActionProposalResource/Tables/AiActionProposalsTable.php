@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Modules\AI\Actions\CancelAiActionProposalAction;
 use Modules\AI\Actions\ConfirmAiActionProposalAction;
 use Modules\AI\Models\AiActionProposal;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 class AiActionProposalsTable extends XotBaseResourceTable
@@ -24,24 +25,24 @@ class AiActionProposalsTable extends XotBaseResourceTable
         $actions = parent::getTableActions();
 
         $actions['confirm'] = Action::make('confirm')
-            ->label(__('ai::action_proposal.actions.confirm'))
+            ->label(\trans_string('ai::action_proposal.actions.confirm'))
             ->icon('heroicon-o-check-circle')
             ->color('success')
             ->requiresConfirmation()
             ->visible(
-                static fn (AiActionProposal $record): bool => $record->status === AiActionProposal::STATUS_PENDING
+                static fn (AiActionProposal $record): bool => $record->status->canBeConfirmed()
             )
             ->action(function (AiActionProposal $record): void {
                 app(ConfirmAiActionProposalAction::class)->execute($record, (int) Auth::id());
             });
 
         $actions['cancel'] = Action::make('cancel')
-            ->label(__('ai::action_proposal.actions.cancel'))
+            ->label(\trans_string('ai::action_proposal.actions.cancel'))
             ->icon('heroicon-o-x-circle')
             ->color('danger')
             ->requiresConfirmation()
             ->visible(
-                static fn (AiActionProposal $record): bool => $record->status === AiActionProposal::STATUS_PENDING
+                static fn (AiActionProposal $record): bool => $record->status->canBeCancelled()
             )
             ->action(function (AiActionProposal $record): void {
                 app(CancelAiActionProposalAction::class)->execute($record);
@@ -56,22 +57,15 @@ class AiActionProposalsTable extends XotBaseResourceTable
     public function getTableColumns(): array
     {
         return [
-            'id' => TextColumn::make('id')->sortable()->searchable(),
+            'id' => IDColumn::make('id')->sortable()->searchable(),
             'thread.public_id' => TextColumn::make('thread.public_id')
                 ->limit(12),
             'type' => TextColumn::make('type')
                 ->badge()
                 ->searchable(),
+            // badge(): etichetta, colore e icona arrivano dall'enum (HasLabel/HasColor/HasIcon).
             'status' => TextColumn::make('status')
                 ->badge()
-                ->colors([
-                    'warning' => AiActionProposal::STATUS_PENDING,
-                    'secondary' => AiActionProposal::STATUS_CANCELLED,
-                    'info' => AiActionProposal::STATUS_CONFIRMED,
-                    'success' => AiActionProposal::STATUS_EXECUTED,
-                    'danger' => AiActionProposal::STATUS_FAILED,
-                ])
-                ->formatStateUsing(fn (string $state): string => __("ai::action_proposal.statuses.{$state}"))
                 ->sortable(),
             'preview' => TextColumn::make('preview')
                 ->limit(50)

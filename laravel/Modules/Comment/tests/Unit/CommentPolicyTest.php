@@ -3,12 +3,13 @@
 declare(strict_types=1);
 
 use Modules\Comment\Datas\CommentConfigData;
+use Modules\Comment\Models\Comment;
 use Modules\Comment\Policies\CommentPolicy;
 use Modules\Comment\Tests\Support\ParityCommentatorStub;
 use Modules\Comment\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('CommentPolicy create accepts Laraxot CanComment user', function (): void {
     $policy = new CommentPolicy;
@@ -25,7 +26,7 @@ test('comments config uses native CommentPolicy not Spatie', function (): void {
 test('CommentPolicy see accepts Comment CanComment contract', function (): void {
     $policy = new CommentPolicy;
     $user = new ParityCommentatorStub(42);
-    $comment = new \Modules\Comment\Models\Comment();
+    $comment = new Comment;
 
     Assert::assertFalse($policy->see($user, $comment));
 });

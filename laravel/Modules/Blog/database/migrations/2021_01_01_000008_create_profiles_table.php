@@ -7,46 +7,48 @@ use Modules\Blog\Models\Profile;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
- * Migrazione per la creazione della tabella dei profili utente.
+ * Class CreateProfilesTable.
  */
 return new class extends XotBaseMigration {
     protected ?string $model_class = Profile::class;
 
     /**
-     * Esegue la migrazione del database.
+     * db up.
      */
     public function up(): void
     {
+        // -- CREATE --
         $this->tableCreate(
             static function (Blueprint $table): void {
-                $table->id();
-                $table->foreignId('user_id')
-                    ->nullable()
-                    ->constrained('users')
-                    ->nullOnDelete();
+                $table->increments('id');
+                $table->integer('user_id')->nullable()->index();
                 $table->string('first_name')->nullable();
                 $table->string('last_name')->nullable();
                 $table->string('email')->nullable();
-                $table->string('phone')->nullable();
-                $table->string('slug')->nullable()->unique();
-                $table->text('bio')->nullable();
-                $table->string('website')->nullable();
-                $table->string('twitter')->nullable();
-                $table->string('facebook')->nullable();
-                $table->string('instagram')->nullable();
-                $table->string('linkedin')->nullable();
-                $table->string('youtube')->nullable();
-                $table->string('github')->nullable();
-                $table->string('avatar')->nullable();
-                $table->string('cover_image')->nullable();
-                $table->boolean('is_verified')->default(false);
-                $table->timestamp('last_login_at')->nullable();
-                $table->schemalessAttributes('extra');
-                $table->timestamps();
-                $table->softDeletes();
+            }
+        );
+        // -- UPDATE --
+        $this->tableUpdate(
+            function (Blueprint $table): void {
+                /*
+                if ($this->hasColumn('auth_user_id')) {
+                    $table->dropColumn('user_id');
+                    $table->renameColumn('auth_user_id', 'user_id');
+                }
+                */
+                if ($this->hasColumn('user_id')) {
+                    $table->string('user_id')->change();
+                }
 
-                $table->index(['first_name', 'last_name']);
-                $table->index('email');
+                if (! $this->hasColumn('slug')) {
+                    $table->string('slug')->nullable();
+                }
+
+                if (! $this->hasColumn('extra')) {
+                    $table->schemalessAttributes('extra');
+                }
+
+                $this->updateTimestamps(table: $table, hasSoftDeletes: true);
             }
         );
     }

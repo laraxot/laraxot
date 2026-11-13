@@ -1,16 +1,34 @@
 <<<<<<< HEAD
+<<<<<<< .merge_file_QykLnt
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> .merge_file_aTS9yn
 ---
 module: theme
 topic: aws_test_vs_database_connection
 canonical: ../../../Themes/docs/shared-components/aws-test-vs-database-connection.md
+<<<<<<< .merge_file_QykLnt
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/aws-test-vs-database-connection.md
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+>>>>>>> 13cf1831 (.)
 # AWS Test Bugfix vs Database Connection Configuration
+=======
+title: "aws test vs database connection"
+type: note
+status: stub
+updated: 2026-10-08
+tags: [docs, activity]
+qmd: "aws test vs database connection activity"
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/aws-test-vs-database-connection.md# AWS Test Bugfix vs Database Connection Configuration
+>>>>>>> .merge_file_aTS9yn
 
 ## Overview
 This document clarifies the distinction between two separate concepts that may appear related but serve completely different purposes:
@@ -54,8 +72,12 @@ This is required for proper database transaction management in the multi-tenant 
 
 ## Docblock Comments
 <<<<<<< HEAD
+<<<<<<< HEAD
 The pattern `/** @reference/to/documentation.md type */` may be used to document that a property can have a specific type while referencing documentation, but this pattern is specifically NOT appropriate for the Activity module's database connection property, which must always be 'activity'.
 >>>>>>> 0a02158a (.)
 =======
 The pattern `/** @reference/to/documentation.md type */` may be used to document that a property can have a specific type while referencing documentation, but this pattern is specifically NOT appropriate for the Activity module's database connection property, which must always be 'activity'.
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+The pattern `/** @reference/to/documentation.md type */` may be used to document that a property can have a specific type while referencing documentation, but this pattern is specifically NOT appropriate for the Activity module's database connection property, which must always be 'activity'.
+>>>>>>> 13cf1831 (.)

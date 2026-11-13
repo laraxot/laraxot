@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Token efficiency — disciplina locale AI"
 type: concept
 module: AI
@@ -12,6 +14,7 @@ related:
   - ./ollama-actions-ownership.md
   - ../../../../../../docs/wiki/concepts/token-efficiency-2026.md
   - ../../../../../../docs/wiki/rules/token-optimization-discipline.md
+status: draft
 ---
 
 # Token efficiency — modulo AI

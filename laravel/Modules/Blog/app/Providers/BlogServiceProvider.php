@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Providers;
 
+use Modules\Blog\Actions\Article\ListPublishedArticlePathsAction;
+use Modules\Seo\Contracts\SitemapPathsContract;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 
 /**
@@ -25,5 +27,8 @@ class BlogServiceProvider extends XotBaseServiceProvider
     public function register(): void
     {
         parent::register();
+
+        // Post ed eventi pubblicati entrano nella sitemap di Seo senza che Seo conosca Blog (DCP-273).
+        $this->app->tag([ListPublishedArticlePathsAction::class], SitemapPathsContract::TAG);
     }
 }

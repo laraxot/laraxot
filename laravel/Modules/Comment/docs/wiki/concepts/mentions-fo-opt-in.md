@@ -1,4 +1,6 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
 title: Mentions FO opt-in
 type: concept
 tags:
@@ -14,6 +16,7 @@ discussions:
   - https://github.com/laraxot/module_comment_fila5/discussions/11
 created_at: 2026-06-10
 updated_at: 2026-06-10
+status: draft
 ---
 
 # Mentions FO opt-in

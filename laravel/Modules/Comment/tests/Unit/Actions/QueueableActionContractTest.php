@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Modules\Comment\Tests\Unit\Actions;
 
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use Spatie\QueueableAction\QueueableAction;
 
-uses(\PHPUnit\Framework\TestCase::class);
+uses(TestCase::class);
 
 it('keeps Comment actions queueable with execute entrypoints', function (): void {
     $actionsPath = dirname(__DIR__, 3).'/app/Actions';

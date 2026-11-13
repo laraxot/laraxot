@@ -13,7 +13,8 @@ discussions:
 related:
   - ./phpstan-zero-errors-pest-assert.md
   - ./widget-ui-spatie-data.md
-  - ../../../../docs/wiki/memories/phpstan-module-owner-scope.md
+  - ../../../../../docs/wiki/memories/phpstan-module-owner-scope.md
+status: draft
 ---
 
 # PHPStan — scope modulo owner (Comment)

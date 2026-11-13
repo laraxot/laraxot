@@ -9,12 +9,12 @@ use Modules\Blog\Filament\Resources\CategoryResource\Pages\CreateCategory;
 use Modules\Blog\Filament\Resources\CategoryResource\Pages\EditCategory;
 use Modules\Blog\Filament\Resources\CategoryResource\Pages\ListCategories;
 use Modules\Blog\Filament\Resources\CategoryResource\Schemas\CategoryFormSchema;
-use Modules\Xot\Filament\Resources\XotBaseResource;
-use Webmozart\Assert\Assert;
+use Modules\Lang\Filament\Resources\LangBaseResource;
 
-class CategoryResource extends XotBaseResource
+class CategoryResource extends LangBaseResource
 {
-    // use Translatable; // Temporarily disabled until lara-zeus package is working
+    // Le pagine estendono LangBase*Record (Translatable): la risorsa deve estendere LangBaseResource,
+    // altrimenti "getDefaultTranslatableLocale does not exist" (500 su crea/modifica).
 
     // protected static ?string $model = Category::class;
 

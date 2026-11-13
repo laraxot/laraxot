@@ -1,3 +1,15 @@
+---
+title: "case variant collisions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "case variant collisions"
+issues: []
+discussions: []
+status: draft
+---
+
 # Collisioni di nome per sola differenza di maiuscole
 
 **Misurato**: 2026-08-31
@@ -51,3 +63,7 @@ Modules/Blog/tests/Unit/SumTest.php
 
 Serve un test che impedisca la ricomparsa del difetto: senza, il conteggio torna a
 crescere. Vedi il punto 4 del quadro generale.
+
+## 2026-10-16 — docs root UPPERCASE
+
+Le coppie `PRD.md`/`prd.md` (e simili) in `docs/` root: il file UPPERCASE è stato ridotto a **redirect stub** verso il twin minuscolo. Canonico: minuscolo. Indice operativo: `00-INDEX.md` (alias `index.md`/`INDEX.md`/`00-index.md` redirect).

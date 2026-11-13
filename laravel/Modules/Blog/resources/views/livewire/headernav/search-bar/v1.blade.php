@@ -1,6 +1,6 @@
 <div>
     <div class="flex items-center justify-between h-8 max-w-lg gap-2 px-3 mx-auto transition-colors bg-gray-100 rounded-full search-box hover:bg-gray-50 focus:bg-gray-50">
-        <input type="text" wire:model.live="search" placeholder="{{ (string) __('pub_theme::headernav.search') }}..." class="block w-full p-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 text-sm"/>
+        <input type="text" wire:model.live="search" placeholder="{{ (string) __('pub_theme::headernav.search') }}..." aria-label="{{ (string) __('pub_theme::headernav.search') }}" class="block w-full p-0 bg-transparent border-none outline-none focus:outline-none focus:ring-0 text-sm text-gray-900 placeholder:text-gray-500"/>
 
         <x-heroicon-o-magnifying-glass class="w-4 h-4 text-gray-400" />
     </div>

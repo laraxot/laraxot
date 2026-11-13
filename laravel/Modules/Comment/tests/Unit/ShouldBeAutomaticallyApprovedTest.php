@@ -10,7 +10,7 @@ use Modules\Comment\Tests\Support\ParityCommentatorStub;
 use Modules\Comment\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 beforeEach(function (): void {
     config(['comments.automatically_approve_all_comments' => false]);

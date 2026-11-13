@@ -11,8 +11,9 @@ issues:
 discussions:
   - "https://github.com/laraxot/module_comment_fila5/discussions/11"
 related:
-  - ../../../../docs/wiki/guidelines/xotbase-extension-rules.md
+  - ../../../../../../docs/wiki/guidelines/xotbase-extension-rules.md
   - CommentResource.php
+status: draft
 ---
 
 # Filament Resource — triade Schemas/Tables
@@ -57,5 +58,5 @@ Traduzioni: `CommentResource::trans()` — mai `->label()` hardcoded.
 
 ## Collegamenti
 
-- [comment-policy-blade-commentator.md](../concepts/comment-policy-blade-commentator.md)
-- [widgets-subject-subfolders](../../../../docs/wiki/rules/widgets-subject-subfolders.md)
+- [comment-policy-blade-commentator.md](../../concepts/comment-policy-blade-commentator.md)
+- [widgets-subject-subfolders](../../../../../../docs/wiki/rules/widgets-subject-subfolders.md)

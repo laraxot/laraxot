@@ -15,8 +15,7 @@ final class AnalyzeTransformersSentimentAction
 
     public function __construct(
         private readonly AnalyzeBasicSentimentAction $analyzeBasicSentimentAction,
-    ) {
-    }
+    ) {}
 
     /**
      * @return array<string, mixed>

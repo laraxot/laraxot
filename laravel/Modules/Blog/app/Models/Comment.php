@@ -22,23 +22,23 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 /**
  * Modules\Blog\Models\Comment.
  *
- * @property int                      $id
- * @property string                   $comment
- * @property int                      $post_id
- * @property int                      $user_id
- * @property Carbon|null              $created_at
- * @property Carbon|null              $updated_at
- * @property int|null                 $parent_id
- * @property Article|null             $article
- * @property Profile|null             $author
+ * @property int $id
+ * @property string $comment
+ * @property int $post_id
+ * @property int $user_id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property int|null $parent_id
+ * @property Article|null $article
+ * @property Profile|null $author
  * @property Collection<int, Comment> $childrens
- * @property int|null                 $childrens_count
+ * @property int|null $childrens_count
  * @property Collection<int, Comment> $comments
- * @property int|null                 $comments_count
- * @property Comment|null             $parentComment
- * @property UserContract|null        $user
+ * @property int|null $comments_count
+ * @property Comment|null $parentComment
+ * @property UserContract|null $user
  *
- * @method static CommentFactory  factory($count = null, $state = [])
+ * @method static CommentFactory factory($count = null, $state = [])
  * @method static Builder|Comment newModelQuery()
  * @method static Builder|Comment newQuery()
  * @method static Builder|Comment onlyTrashed()
@@ -65,14 +65,14 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
- * @property string|null          $commentable_type
- * @property string|null          $commentable_id
- * @property string|null          $commentator_type
- * @property string|null          $commentator_id
- * @property string               $text
- * @property string|null          $extra
- * @property string|null          $approved_at
- * @property string               $original_text
+ * @property string|null $commentable_type
+ * @property string|null $commentable_id
+ * @property string|null $commentator_type
+ * @property string|null $commentator_id
+ * @property string $text
+ * @property string|null $extra
+ * @property string|null $approved_at
+ * @property string $original_text
  *
  * @method static Builder|Comment whereApprovedAt($value)
  * @method static Builder|Comment whereCommentableId($value)
@@ -83,18 +83,18 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static Builder|Comment whereOriginalText($value)
  * @method static Builder|Comment whereText($value)
  *
- * @property ProfileContract|null        $creator
- * @property ProfileContract|null        $updater
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  * @property MediaCollection<int, Media> $media
- * @property int|null                    $media_count
+ * @property int|null $media_count
  *
- * @method static Comment|null             first()
+ * @method static Comment|null first()
  * @method static Collection<int, Comment> get()
- * @method static Comment                  create(array<string, mixed> $attributes = [])
- * @method static Comment                  firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
- * @method static Builder<static>|Comment  where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
- * @method static Builder<static>|Comment  whereNotNull((string|Expression) $columns)
- * @method static int                      count(string $columns = '*')
+ * @method static Comment create(array<string, mixed> $attributes = [])
+ * @method static Comment firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
+ * @method static Builder<static>|Comment where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
+ * @method static Builder<static>|Comment whereNotNull((string|Expression) $columns)
+ * @method static int count(string $columns = '*')
  *
  * @property ProfileContract|null $deleter
  *

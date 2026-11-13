@@ -20,7 +20,6 @@ use Modules\Comment\Enums\NotificationSubscriptionType;
  * @property NotificationSubscriptionType $type
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- *
  * @property-read BaseMorphPivot|null $commentable
  * @property-read BaseMorphPivot|null $subscriber
  *
@@ -30,7 +29,15 @@ use Modules\Comment\Enums\NotificationSubscriptionType;
  */
 class CommentNotificationSubscription extends BaseMorphPivot
 {
-    protected $guarded = [];
+    /** @var list<string> */
+    protected $fillable = [
+        'id',
+        'commentable_type',
+        'commentable_id',
+        'subscriber_type',
+        'subscriber_id',
+        'type',
+    ];
 
     protected $casts = [
         'type' => NotificationSubscriptionType::class,

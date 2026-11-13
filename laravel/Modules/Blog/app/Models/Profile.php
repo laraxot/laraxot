@@ -34,55 +34,55 @@ use Spatie\SchemalessAttributes\SchemalessAttributes;
 /**
  * Modules\Blog\Models\Profile.
  *
- * @property float                                                      $credits
- * @property int                                                        $id
- * @property string|null                                                $user_id
- * @property string|null                                                $first_name
- * @property string|null                                                $last_name
- * @property string|null                                                $email
- * @property Carbon|null                                                $created_at
- * @property Carbon|null                                                $updated_at
- * @property string|null                                                $updated_by
- * @property string|null                                                $created_by
- * @property string|null                                                $deleted_at
- * @property string|null                                                $deleted_by
- * @property string|null                                                $slug
- * @property SchemalessAttributes|null                                  $extra
- * @property \Illuminate\Database\Eloquent\Collection<int, Article>     $articles
- * @property int|null                                                   $articles_count
- * @property string                                                     $avatar
- * @property \Illuminate\Database\Eloquent\Collection<int, DeviceUser>  $deviceUsers
- * @property int|null                                                   $device_users_count
- * @property \Illuminate\Database\Eloquent\Collection<int, Device>      $devices
- * @property int|null                                                   $devices_count
- * @property string|null                                                $full_name
- * @property MediaCollection<int, Media>                                $media
- * @property int|null                                                   $media_count
- * @property \Illuminate\Database\Eloquent\Collection<int, DeviceUser>  $mobileDeviceUsers
- * @property int|null                                                   $mobile_device_users_count
- * @property \Illuminate\Database\Eloquent\Collection<int, Device>      $mobileDevices
- * @property int|null                                                   $mobile_devices_count
- * @property DatabaseNotificationCollection<int, DatabaseNotification>  $notifications
- * @property int|null                                                   $notifications_count
- * @property \Illuminate\Database\Eloquent\Collection<int, Permission>  $permissions
- * @property int|null                                                   $permissions_count
+ * @property float $credits
+ * @property int $id
+ * @property string|null $user_id
+ * @property string|null $first_name
+ * @property string|null $last_name
+ * @property string|null $email
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string|null $updated_by
+ * @property string|null $created_by
+ * @property string|null $deleted_at
+ * @property string|null $deleted_by
+ * @property string|null $slug
+ * @property SchemalessAttributes|null $extra
+ * @property \Illuminate\Database\Eloquent\Collection<int, Article> $articles
+ * @property int|null $articles_count
+ * @property string $avatar
+ * @property \Illuminate\Database\Eloquent\Collection<int, DeviceUser> $deviceUsers
+ * @property int|null $device_users_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Device> $devices
+ * @property int|null $devices_count
+ * @property string|null $full_name
+ * @property MediaCollection<int, Media> $media
+ * @property int|null $media_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, DeviceUser> $mobileDeviceUsers
+ * @property int|null $mobile_device_users_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Device> $mobileDevices
+ * @property int|null $mobile_devices_count
+ * @property DatabaseNotificationCollection<int, DatabaseNotification> $notifications
+ * @property int|null $notifications_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Permission> $permissions
+ * @property int|null $permissions_count
  * @property \Illuminate\Database\Eloquent\Collection<int, RatingMorph> $ratingMorphs
- * @property int|null                                                   $rating_morphs_count
- * @property \Illuminate\Database\Eloquent\Collection<int, Rating>      $ratings
- * @property int|null                                                   $ratings_count
- * @property \Illuminate\Database\Eloquent\Collection<int, Role>        $roles
- * @property int|null                                                   $roles_count
- * @property \Illuminate\Database\Eloquent\Collection<int, Team>        $teams
- * @property int|null                                                   $teams_count
- * @property UserContract|null                                          $user
- * @property string|null                                                $user_name
+ * @property int|null $rating_morphs_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Rating> $ratings
+ * @property int|null $ratings_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Role> $roles
+ * @property int|null $roles_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, Team> $teams
+ * @property int|null $teams_count
+ * @property UserContract|null $user
+ * @property string|null $user_name
  *
- * @method static ProfileFactory                                factory($count = null, $state = [])
+ * @method static ProfileFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Profile newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Profile newQuery()
- * @method static EloquentBuilder|BaseProfile                   permission($permissions, $without = false)
+ * @method static EloquentBuilder|BaseProfile permission($permissions, $without = false)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile query()
- * @method static EloquentBuilder|BaseProfile                   role($roles, $guard = null, $without = false)
+ * @method static EloquentBuilder|BaseProfile role($roles, $guard = null, $without = false)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCredits($value)
@@ -97,28 +97,28 @@ use Spatie\SchemalessAttributes\SchemalessAttributes;
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Profile whereUserId($value)
- * @method static EloquentBuilder|BaseProfile                   withExtraAttributes()
- * @method static EloquentBuilder|BaseProfile                   withoutPermission($permissions)
- * @method static EloquentBuilder|BaseProfile                   withoutRole($roles, $guard = null)
+ * @method static EloquentBuilder|BaseProfile withExtraAttributes()
+ * @method static EloquentBuilder|BaseProfile withoutPermission($permissions)
+ * @method static EloquentBuilder|BaseProfile withoutRole($roles, $guard = null)
  *
- * @property DeviceUser           $pivot
- * @property Membership           $membership
+ * @property DeviceUser $pivot
+ * @property Membership $membership
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
- * @property int                  $oauth_enable
- * @property int                  $credentials_enable
+ * @property int $oauth_enable
+ * @property int $credentials_enable
  *
- * @method static \Illuminate\Database\Eloquent\Builder|Profile          whereCredentialsEnable($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Profile          whereOauthEnable($value)
- * @method static Profile|null                                           first()
+ * @method static \Illuminate\Database\Eloquent\Builder|Profile whereCredentialsEnable($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Profile whereOauthEnable($value)
+ * @method static Profile|null first()
  * @method static \Illuminate\Database\Eloquent\Collection<int, Profile> get()
- * @method static Profile                                                create(array<string, mixed> $attributes = [])
- * @method static Profile                                                firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile  where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile  whereNotNull((string|Expression) $columns)
- * @method static int                                                    count(string $columns = '*')
+ * @method static Profile create(array<string, mixed> $attributes = [])
+ * @method static Profile firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|Profile whereNotNull((string|Expression) $columns)
+ * @method static int count(string $columns = '*')
  *
- * @property string               $display_name
+ * @property string $display_name
  * @property ProfileContract|null $deleter
  *
  * @method static \Illuminate\Database\Eloquent\Builder<static> byUuid(string $uuid)
@@ -168,7 +168,7 @@ class Profile extends BaseProfile
     public function getAvatarUrl(): string
     {
         $url = $this->getFirstMediaUrl('photo_profile');
-        if ('' === $url) {
+        if ($url === '') {
             return asset('modules/blog/img/no_user.webp');
         }
 

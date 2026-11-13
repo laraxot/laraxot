@@ -1,15 +1,21 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "index"
+issues: []
+discussions: []
 title: Modulo Comment Index
 type: index
 tags: [comment, index, modulo]
 date: '2026-06-29'
+status: draft
 ---
 
 # Comment Module Documentation Index
 
 ## Concepts
 
-- [CanComment Contract Ownership](concepts/can-comment-contract-owner.md)
+- [CanComment Contract Ownership](../concepts/can-comment-contract-owner.md)
 
 ## Architecture
 

@@ -1,14 +1,35 @@
+---
+title: "phpstan fixes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan fixes"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Fixes - Modulo Comment
 
 ## ✅ Status: COMPLETATO - 0 Errori
 
-**Data**: 11 Ottobre 2025  
+**Ultimo gate**: 2026-10-20 (Comment + Media + UI, wave `phpstan-r3`)  
 **PHPStan Level**: Max  
-**Errori Risolti**: 1 → 0 ✅
+**Errori Risolti**: 0 su `Modules/Comment`, `Modules/Media`, `Modules/UI`
+
+### Wave 2026-10-20
+
+| Area | Fix |
+|------|-----|
+| `HasComments::comments()` | `@var MorphMany<Comment, Model>` sul risultato di `morphMany()` — contratto `Commentable` resta `Model`, LSP cross-modulo |
+| Notifiche | SSoT `app/Support/CommentatorUniqueKey.php` (`morphClass` + chiave scalare) |
+| Test Media/UI | Assert su ereditarietà via `is_a`/`class_parents`; niente `assertInstanceOf` ridondanti |
+
+Dettaglio pattern test: [phpstan-pest-test-patterns](wiki/concepts/phpstan-pest-test-patterns.md).
 
 ---
-
-## 📊 Correzioni Implementate
+## 📊 Correzioni Implementate (storico)
 
 ### 1. Rimozione Generic Type da HasXotFactory ✅
 

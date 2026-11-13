@@ -2,6 +2,12 @@
 module: theme
 topic: module-activity
 canonical: ../../../../../Themes/docs/shared-components/module-activity.md
+title: "module activity"
+type: note
+status: stub
+updated: 2026-10-08
+tags: [docs, activity, tecnico]
+qmd: "module activity activity"
 ---
 
 ## Overview
@@ -56,10 +62,15 @@ Activity::log('Utente ha modificato il profilo', [
 // Log automatico per modelli
 protected static $logAttributes = ['name', 'email'];
 protected static $logOnlyDirty = true;
+<<<<<<< HEAD
 ```
 
 ### Query Attività
 ```php
+=======
+
+### Query Attività
+>>>>>>> 13cf1831 (.)
 // Recupera tutte le attività
 $activities = Activity::all();
 
@@ -68,11 +79,15 @@ $userActivities = Activity::where('user_id', $userId)->get();
 
 // Filtra per tipo
 $modelChanges = Activity::where('type', 'model_change')->get();
+<<<<<<< HEAD
 ```
+=======
+>>>>>>> 13cf1831 (.)
 
 ## Integrazione con Filament
 
 ### Resource
+<<<<<<< HEAD
 ```php
 use Modules\Activity\Filament\Resources\ActivityResource;
 
@@ -82,6 +97,14 @@ class ActivityResource extends XotBaseResource
     
     public static function getTableColumns(): array
     {
+=======
+use Modules\Activity\Filament\Resources\ActivityResource;
+
+class ActivityResource extends XotBaseResource
+    protected static ?string $model = Activity::class;
+    
+    public static function getTableColumns(): array
+>>>>>>> 13cf1831 (.)
         return [
             TextColumn::make('user.name')
                 ->label('Utente'),
@@ -91,6 +114,7 @@ class ActivityResource extends XotBaseResource
                 ->label('Data')
                 ->dateTime('d/m/Y H:i:s'),
         ];
+<<<<<<< HEAD
     }
 }
 ```
@@ -102,10 +126,18 @@ class ActivityTest extends TestCase
 {
     public function test_can_log_activity(): void
     {
+=======
+
+## Testing
+
+class ActivityTest extends TestCase
+    public function test_can_log_activity(): void
+>>>>>>> 13cf1831 (.)
         $user = User::factory()->create();
 
         Activity::log('Test activity', [
             'user_id' => $user->id
+<<<<<<< HEAD
         ]);
 
         $this->assertDatabaseHas('activities', [
@@ -115,6 +147,11 @@ class ActivityTest extends TestCase
     }
 }
 ```
+=======
+
+        $this->assertDatabaseHas('activities', [
+            'description' => 'Test activity',
+>>>>>>> 13cf1831 (.)
 
 ## Best Practices
 
@@ -148,7 +185,9 @@ class ActivityTest extends TestCase
 3. **Manutenzione**:
    - Pulizia periodica dei log
    - Backup dei dati di attività
+<<<<<<< HEAD
    - Monitoraggio delle performance
+<<<<<<< .merge_file_Nzy9mv
 <<<<<<< HEAD
 
 =======
@@ -299,10 +338,44 @@ class ActivityTest extends TestCase
    - Pulizia periodica dei log
    - Backup dei dati di attività
    - Monitoraggio delle performance
+=======
+# Modulo Activity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 13cf1831 (.)
 ---
 module: theme
 topic: module-activity
 canonical: ../../../../../Themes/docs/shared-components/module-activity.md
+<<<<<<< HEAD
 ---
 
 <<<<<<< HEAD
@@ -315,3 +388,9 @@ See canonical documentation: ../../../../../Themes/docs/shared-components/module
 See canonical documentation: ../../../../../Themes/docs/shared-components/module-activity.md
 >>>>>>> 4fb998e0 (.)
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+>>>>>>> .merge_file_e6hdK7
+=======
+
+See canonical documentation: ../../../../../Themes/docs/shared-components/module-activity.md
+>>>>>>> 13cf1831 (.)

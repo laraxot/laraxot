@@ -13,6 +13,7 @@ discussions:
 related:
   - ./filament-widgets-subject-subfolders.md
   - ./xot-base-filament-widgets.md
+status: draft
 ---
 
 # Filament Resource — religione Schemas/Tables

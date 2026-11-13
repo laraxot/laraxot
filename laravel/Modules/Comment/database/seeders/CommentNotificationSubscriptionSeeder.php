@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Comment\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Console\Command;
 use Modules\Comment\Models\CommentNotificationSubscription;
 
 /**
@@ -16,6 +17,8 @@ class CommentNotificationSubscriptionSeeder extends Seeder
     {
         CommentNotificationSubscription::query()->delete();
 
-        $this->command->info('Comment notification subscriptions cleared.');
+        if ($this->command instanceof Command) {
+            $this->command->info('Comment notification subscriptions cleared.');
+        }
     }
 }

@@ -1,4 +1,5 @@
 ---
+discussions: []
 title: "ADR — Commentable/ vs Comment/ (naming widget)"
 type: decision
 status: accepted
@@ -64,4 +65,4 @@ Canon: [comments-widget-livewire-mount.md](../concepts/comments-widget-livewire-
 ## Collegamenti
 
 - [filament-widgets-subject-subfolders.md](../concepts/filament-widgets-subject-subfolders.md)
-- [widgets-subject-subfolders.md](../../../../docs/wiki/rules/widgets-subject-subfolders.md)
+- [widgets-subject-subfolders.md](../../../../../docs/wiki/rules/widgets-subject-subfolders.md)

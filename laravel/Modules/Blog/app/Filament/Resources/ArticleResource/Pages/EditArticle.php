@@ -43,7 +43,7 @@ class EditArticle extends LangBaseEditRecord
                     app(TranslateContentAction::class)->execute(
                         'article',
                         $record->id,
-                        array_values(array_map(fn ($locale) => (string) $locale, $locales)),
+                        array_values(array_map(fn (mixed $locale) => (string) $locale, $locales)),
                         $safeData,
                         Article::class
                     );

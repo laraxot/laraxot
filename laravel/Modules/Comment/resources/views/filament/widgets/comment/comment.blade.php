@@ -1,121 +1,175 @@
-@if(! $comment instanceof \Modules\Comment\Models\Comment)
-    <div wire:key="comment-empty"></div>
-@else
 @php
     use Illuminate\Support\Facades\Auth;
-    use Modules\Comment\Policies\CommentPolicy;
+    use Modules\Comment\Datas\CommentConfigData;
+    use Modules\Comment\Models\Comment;
     use Modules\Comment\Models\Contracts\CanComment;
-
-    $commentPolicy = app(CommentPolicy::class);
-    $commentator = Auth::user();
-    $commentator = $commentator instanceof CanComment ? $commentator : null;
-    $props = $comment->commentatorProperties();
-    $avatarUrl = $props?->avatar
-        ?? ($comment->commentator
-            ? 'https://www.gravatar.com/avatar/'.md5(strtolower((string) ($comment->commentator->email ?? ''))).'?d=mp&size=40'
-            : '');
-    $displayName = $props?->name ?? $comment->commentator?->name ?? __('comment::txt.anonymous');
+    use Modules\Comment\Policies\CommentPolicy;
 @endphp
-<div
-    id="comment-{{ $comment->id }}"
-    class="comment-thread border-b border-gray-200 pb-4 mb-4 dark:border-gray-700"
-    wire:key="comment-{{ $comment->id }}"
->
-    <div class="flex gap-3">
+{{--
+    Un commento (CMT-022). Livewire vuole UN solo elemento radice, sempre presente: un `@if` in testa lascia un commento HTML
+    come primo nodo e al secondo render il componente figlio fallisce con "Invalid Livewire child tag name". Per questo la radice
+    c'e' anche quando il commento e' stato eliminato, e tutto il resto vive dentro.
+--}}
+<div class="cmt-comment" @if($comment instanceof Comment) id="comment-{{ $comment->id }}" @endif>
+@if($comment instanceof Comment)
+    @php
+        $commentPolicy = app(CommentPolicy::class);
+        $commentator = Auth::user();
+        $commentator = $commentator instanceof CanComment ? $commentator : null;
+        $props = $comment->commentatorProperties();
+        $displayName = $props?->name ?? $comment->commentator?->name ?? __('comment::txt.anonymous');
+        $storedAvatar = is_string($props?->avatar ?? null) ? trim((string) $props->avatar) : '';
+        // CMT-022: avatar del profilo o Gravatar (richiesta esplicita dell'utente, supera D-03); iniziali se manca.
+        $useRemoteAvatar = $storedAvatar !== '';
+        $initials = '';
+        foreach (preg_split('/\s+/u', trim((string) $displayName)) ?: [] as $part) {
+            if ($part === '') {
+                continue;
+            }
+            $initials .= mb_strtoupper(mb_substr($part, 0, 1));
+            if (mb_strlen($initials) >= 2) {
+                break;
+            }
+        }
+        if ($initials === '') {
+            $initials = '?';
+        }
+        $canReply = $uiConfig->showReplies && $uiConfig->writable && $commentPolicy->create($commentator) && $this->canReply();
+        $replyFormId = 'cmt-reply-'.$comment->id;
+    @endphp
+    <article class="cmt-item" aria-label="{{ __('comment::txt.comment_by', ['name' => $displayName]) }}">
         @if($uiConfig->showAvatar && $comment->commentator)
-            <img
-                src="{{ $avatarUrl }}"
-                alt="{{ $displayName }}"
-                class="h-10 w-10 shrink-0 rounded-full"
-                width="40"
-                height="40"
-            >
+            @if($useRemoteAvatar)
+                <img
+                    src="{{ $storedAvatar }}"
+                    alt=""
+                    referrerpolicy="no-referrer"
+                    class="cmt-avatar"
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                    decoding="async"
+                >
+            @else
+                <span class="cmt-avatar cmt-avatar--initials" aria-hidden="true">{{ $initials }}</span>
+            @endif
         @endif
-        <div class="min-w-0 flex-1">
-            <div class="mb-1 flex flex-wrap items-center justify-between gap-2">
-                <strong class="text-sm text-gray-900 dark:text-gray-100">{{ $displayName }}</strong>
-                <small class="text-xs text-gray-500 dark:text-gray-400">{{ $comment->created_at?->diffForHumans() }}</small>
-            </div>
+
+        <div class="cmt-content">
+            <header class="cmt-meta">
+                <strong class="cmt-author">{{ $displayName }}</strong>
+                <time class="cmt-time" datetime="{{ $comment->created_at?->toIso8601String() }}">{{ $comment->created_at?->diffForHumans() }}</time>
+            </header>
+
+            <div class="cmt-status" role="status" aria-live="polite">{{ $statusMessage }}</div>
 
             @if($uiConfig->isEditing)
-                <form wire:submit="edit" class="mb-2 space-y-2">
-                    <textarea wire:model="ui.editText" class="w-full rounded-md border border-gray-300 p-2 text-sm dark:border-gray-600 dark:bg-gray-800" rows="3"></textarea>
-                    @error('ui.editText') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-                    <div class="flex gap-2">
-                        <button type="submit" class="rounded-md bg-blue-600 px-3 py-1 text-sm text-white">{{ __('comment::txt.submit') }}</button>
-                        <button type="button" wire:click="stopEditing" class="rounded-md border px-3 py-1 text-sm">{{ __('comment::txt.cancel') }}</button>
+                <form wire:submit="edit" class="cmt-form" novalidate>
+                    {{ $this->form }}
+                    <div class="cmt-form-actions">
+                        <button type="submit" class="cmt-btn cmt-btn--primary" wire:target="edit" wire:loading.attr="disabled">
+                            {{ __('comment::txt.save_changes') }}
+                        </button>
+                        <button type="button" class="cmt-btn cmt-btn--secondary" wire:click="stopEditing">
+                            {{ __('comment::txt.cancel') }}
+                        </button>
                     </div>
                 </form>
             @else
-                <div class="prose prose-sm mb-2 max-w-none text-gray-800 dark:text-gray-200">
+                <div class="cmt-body">
                     {!! $comment->text ?? e($comment->original_text) !!}
                 </div>
             @endif
 
             @if($comment->isPending())
-                <p class="mb-2 text-xs text-amber-600">{{ __('comment::txt.pending_approval') }}</p>
+                <p class="cmt-pending">{{ __('comment::txt.pending_approval') }}</p>
                 @if($uiConfig->writable)
-                    @can('approve', $comment)
-                        <button type="button" wire:click="approve" class="mr-2 text-xs text-green-600 underline">{{ __('comment::txt.approve') }}</button>
-                    @endcan
-                    @can('reject', $comment)
-                        <button type="button" wire:click="reject" class="text-xs text-red-600 underline">{{ __('comment::txt.reject') }}</button>
-                    @endcan
+                    <div class="cmt-actions">
+                        @can('approve', $comment)
+                            <button type="button" class="cmt-link cmt-link--success" wire:click="approve">{{ __('comment::txt.approve') }}</button>
+                        @endcan
+                        @can('reject', $comment)
+                            <button type="button" class="cmt-link cmt-link--danger" wire:click="reject">{{ __('comment::txt.reject') }}</button>
+                        @endcan
+                    </div>
                 @endif
             @endif
 
             @if($uiConfig->showReactions && $comment->reactions->isNotEmpty())
-                <div class="mb-2 flex flex-wrap gap-1">
+                <div class="cmt-reactions">
                     @foreach($comment->reactions as $reaction)
-                        <span class="rounded-full bg-gray-100 px-2 py-0.5 text-xs dark:bg-gray-700">{{ $reaction->reaction }}</span>
+                        <span class="cmt-reaction">{{ $reaction->reaction }}</span>
                     @endforeach
                 </div>
             @endif
 
             @if($uiConfig->writable)
-                <div class="mb-2 flex flex-wrap gap-3 text-xs">
+                <div class="cmt-actions">
+                    @if($canReply && ! $uiConfig->isReplying)
+                        <button
+                            type="button"
+                            class="cmt-link"
+                            wire:click="startReplying"
+                            aria-label="{{ __('comment::txt.reply_to', ['name' => $displayName]) }}"
+                            aria-expanded="false"
+                            aria-controls="{{ $replyFormId }}"
+                        >{{ __('comment::txt.reply') }}</button>
+                    @endif
                     @can('update', $comment)
                         @unless($uiConfig->isEditing)
-                            <button type="button" wire:click="startEditing" class="text-blue-600 underline">{{ __('comment::txt.edit') }}</button>
+                            <button type="button" class="cmt-link" wire:click="startEditing">{{ __('comment::txt.edit') }}</button>
                         @endunless
                     @endcan
                     @can('delete', $comment)
-                        <button type="button" wire:click="delete" class="text-red-600 underline">{{ __('comment::txt.delete') }}</button>
+                        <button
+                            type="button"
+                            class="cmt-link cmt-link--danger"
+                            wire:click="delete"
+                            wire:confirm="{{ __('comment::txt.confirm_delete') }}"
+                        >{{ __('comment::txt.delete') }}</button>
                     @endcan
                     @if($uiConfig->showReactions)
-                        @foreach($commentConfig->allowedReactions as $reaction)
-                            <button type="button" wire:click="toggleReaction('{{ $reaction }}')" class="hover:opacity-80">{{ $reaction }}</button>
+                        @foreach(CommentConfigData::make()->allowedReactions as $reaction)
+                            <button type="button" class="cmt-reaction cmt-reaction--button" wire:click="toggleReaction('{{ $reaction }}')">{{ $reaction }}</button>
                         @endforeach
                     @endif
                 </div>
             @endif
 
-            @if($uiConfig->showReplies && $uiConfig->writable && $commentPolicy->create($commentator))
-                <form wire:submit="reply" class="mb-3 space-y-2">
-                    <textarea wire:model="ui.replyText" class="w-full rounded-md border border-gray-300 p-2 text-sm dark:border-gray-600 dark:bg-gray-800" rows="2" placeholder="{{ __('comment::txt.write_comment') }}"></textarea>
-                    @error('ui.replyText') <span class="text-sm text-red-600">{{ $message }}</span> @enderror
-                    <button type="submit" class="rounded-md bg-blue-600 px-3 py-1 text-sm text-white">{{ __('comment::txt.submit') }}</button>
+            {{-- Il form di risposta esiste solo dopo «Rispondi»: l'editor non si monta sotto ogni commento. --}}
+            @if($uiConfig->isReplying && $canReply)
+                <form wire:submit="reply" id="{{ $replyFormId }}" class="cmt-form cmt-form--reply" novalidate>
+                    <p class="cmt-replying-to">{{ __('comment::txt.replying_to', ['name' => $displayName]) }}</p>
+                    {{ $this->form }}
+                    <div class="cmt-form-actions">
+                        <button type="submit" class="cmt-btn cmt-btn--primary" wire:target="reply" wire:loading.attr="disabled">
+                            {{ __('comment::txt.post_reply') }}
+                        </button>
+                        <button type="button" class="cmt-btn cmt-btn--secondary" wire:click="stopReplying">
+                            {{ __('comment::txt.cancel') }}
+                        </button>
+                    </div>
                 </form>
             @endif
 
             @if($uiConfig->showReplies && $comment->nestedComments->isNotEmpty())
-                <div class="ms-4 mt-3 space-y-3 border-s border-gray-200 ps-4 dark:border-gray-700">
+                <ul class="cmt-replies" aria-label="{{ __('comment::txt.replies_to', ['name' => $displayName]) }}">
                     @foreach($comment->nestedComments as $nested)
                         @continue(! $commentPolicy->see($commentator, $nested))
-                        @livewire(\Modules\Comment\Filament\Widgets\Comment\CommentWidget::class, [
-                            'comment' => $nested,
-                            'ui' => [
+                        <li class="cmt-replies-item">
+                            @livewire(\Modules\Comment\Filament\Widgets\Comment\CommentWidget::class, [
+                                'comment' => $nested,
                                 'showAvatar' => $uiConfig->showAvatar,
                                 'newestFirst' => $uiConfig->newestFirst,
                                 'writable' => $uiConfig->writable,
-                                'showReplies' => false,
+                                'showReplies' => $uiConfig->showReplies,
                                 'showReactions' => $uiConfig->showReactions,
-                            ],
-                        ], key('nested-comment-'.$nested->id))
+                            ], key('nested-comment-'.$nested->id))
+                        </li>
                     @endforeach
-                </div>
+                </ul>
             @endif
         </div>
-    </div>
-</div>
+    </article>
 @endif
+</div>

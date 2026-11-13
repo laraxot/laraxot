@@ -1,16 +1,18 @@
 ---
+discussions: []
 title: "Inventario packages/spatie — mapping migrazione"
 type: concept
 module: Comment
 tags: [comment, spatie, inventory, migration, mapping]
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-10-23
 qmd: "spatie laravel-comments inventory mapping Modules Comment internalize packages"
 issues:
   - "https://github.com/laraxot/module_comment_fila5/issues/4"
 related:
   - native-comments-architecture.md
   - ../decisions/adr-internalize-spatie-comments.md
+status: draft
 ---
 
 # Inventario `packages/spatie` → `Modules\Comment`
@@ -40,7 +42,7 @@ Legenda fase: **P1** core, **P2** UI, **P3** HTTP/mail, **P4** drop.
 | `Support/CommentatorProperties.php` | `app/Support/CommentatorProperties.php` | P1 | |
 | `Enums/NotificationSubscriptionType.php` | `app/Enums/NotificationSubscriptionType.php` | P1 | |
 | `Events/CommentApprovedEvent.php` etc. | `app/Events/` | P1 | |
-| `Jobs/SendNotifications*.php` | `app/Jobs/` | P1 | |
+| `Jobs/SendNotifications*.php` | **nessun Job**: `app/Actions/Notification/SendNotificationsFor{Approved,Pending}CommentAction.php` | P1 | Async con `app(...Action::class)->onQueue()->execute($comment)`; regola [no-module-jobs-queueable-action](../../../../../../bashscripts/ai/wiki/rules/no-module-jobs-queueable-action.md) |
 | `Notifications/*` | `app/Notifications/` | P1 | Integrare Notify module |
 | `Exceptions/*` | `app/Exceptions/` | P1 | |
 | `CommentsServiceProvider.php` | merge `CommentServiceProvider` | P1 | Route macro `comments()` |

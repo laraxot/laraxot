@@ -14,6 +14,7 @@ related:
   - ./second-brain-local-discipline.md
   - ../../../../Xot/docs/wiki/concepts/module-dashboard-page-mandatory.md
   - ../../../../../Themes/docs/wiki/concepts/ai-harness-theme-discipline.md
+status: draft
 ---
 
 # AI provider support and documentation ownership

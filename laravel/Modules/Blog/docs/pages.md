@@ -1,3 +1,17 @@
+---
+title: "pages"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "pages"
+issues: []
+discussions: []
+status: stale
+---
+
+> Nota 2026-10-14 (docs-audit): Descrive la gestione delle pagine con blocchi in Filament come funzione del modulo; Blog non ha PageResource (risorse: Article, Banner, Category, Profile, TextWidget) e la migrazione create_blog_pages_table e' marcata .to_cms, cioe' spostata nel modulo Cms (verificato 2026-10-14). Contenuto non riscritto, verificare prima di usarlo.
+
 ## Gestione delle pagine
 
 ![page_list](img/page_list.jpg)
@@ -80,7 +94,7 @@ class ArticleContent
 }
 ```
 
-## [Esempio di Blocchi](docs/blocks.md)
+## [Esempio di Blocchi](blocks.md)
 
 ## Visualizzare i blocchi in una blade
 

@@ -12,6 +12,7 @@ discussions: []
 related:
   - ../concepts/native-comments-engine-workflow.md
   - ../concepts/spatie-to-laraxot-namespace-map.md
+status: draft
 ---
 
 # Architettura — Native Comments Engine

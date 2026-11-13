@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Comment\Database\Factories\ReactionFactory;
 use Modules\Comment\Models\Collections\ReactionCollection;
-use Modules\Comment\Models\Comment;
 use Modules\Xot\Contracts\ProfileContract;
 
 /**
@@ -79,5 +78,4 @@ class Reaction extends BaseModel
     {
         return $this->morphTo();
     }
-
 }

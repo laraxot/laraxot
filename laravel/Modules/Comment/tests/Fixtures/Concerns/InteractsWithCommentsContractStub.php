@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Comment\Tests\Fixtures\Concerns;
 
+use Illuminate\Contracts\Notifications\Dispatcher;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Notifications\Notifiable;
+use Modules\Comment\Datas\CommentatorProperties;
 use Modules\Comment\Models\CommentNotificationSubscription;
 use Modules\Comment\Models\Concerns\InteractsWithComments;
 use Modules\Comment\Models\Contracts\CanComment;
-use Modules\Comment\Datas\CommentatorProperties;
 
 final class InteractsWithCommentsContractStub extends Model implements CanComment
 {
@@ -33,6 +34,11 @@ final class InteractsWithCommentsContractStub extends Model implements CanCommen
     public function getMorphClass(): string
     {
         return 'interacts-comments-contract';
+    }
+
+    public function notify(mixed $instance): void
+    {
+        app(Dispatcher::class)->send($this, $instance);
     }
 
     public function commentatorProperties(): CommentatorProperties

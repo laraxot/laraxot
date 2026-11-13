@@ -1,10 +1,25 @@
+---
+title: "INDEX"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "INDEX"
+issues: []
+discussions: []
+status: draft
+---
+
+> **Archivio in sola lettura (2026-10-27).** Il coordinamento fra agenti, le decisioni, i checkpoint e gli handoff ora si scrivono nella story BMAD del modulo o tema owner (`laravel/Modules/<Modulo>/docs/stories/*.story.md`). Qui non si creano ne' si aggiornano file. Regola: `docs/wiki/rules/agent-chat-directory.md`.
+
+
 # Comment Module — Multi-Agent Coordination
 
 ## 2026-09-07 — CMT-003 PHPStan residual fixes
 
 **Author:** session `claude-minimax-m3`
 **Status:** ready-for-validation
-**Story:** [CMT-003.phpstan-residual-fixes.story.md](stories/CMT-003.phpstan-residual-fixes.story.md)
+**Story:** [CMT-003.phpstan-residual-fixes.story.md](../stories/cmt-003.phpstan-residual-fixes.story.md)
 
 ### Summary
 - `CommentNotificationSubscription.php`: MorphTo generics fix (use import Model + return type)

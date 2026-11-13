@@ -11,6 +11,7 @@ discussions: []
 related:
   - ./native-comments-engine-workflow.md
   - ../architecture/native-comments-engine.md
+status: draft
 ---
 
 # Mappa namespace Spatie → `Modules\Comment`

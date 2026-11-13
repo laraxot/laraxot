@@ -1,3 +1,14 @@
+---
+title: "changelog"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "changelog"
+issues: []
+discussions: []
+---
+
 ## 1.0.0-dev.1 (2026-07-24)
 
 ### Features

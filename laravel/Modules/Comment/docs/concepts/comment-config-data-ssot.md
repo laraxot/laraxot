@@ -14,7 +14,8 @@ discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/323"
 related:
   - ./no-comment-config-ssot.md
-  - ../../../../docs/stories/STORY-292-remove-comment-config.md
+  - ../../../../../docs/stories/STORY-292-remove-comment-config.md
+status: draft
 ---
 
 # CommentConfigData — KISS

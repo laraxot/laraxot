@@ -1,4 +1,22 @@
 <<<<<<< HEAD
+<<<<<<< .merge_file_5jewXC
+<<<<<<< HEAD
+=======
+---
+module: theme
+topic: best-practices
+canonical: ../../../Themes/docs/shared-components/BEST_PRACTICES.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/BEST_PRACTICES.md
+title: Best Practices – Activity
+type: rule
+tags: [activity, best-practices, dry, kiss]
+created: 2026-06-10
+updated: 2026-06-10
+qmd: self
+
+>>>>>>> 13cf1831 (.)
 # Best Practices – Activity
 
 ## Principi DRY/KISS
@@ -17,18 +35,29 @@
 ## Documentazione
 - Aggiorna `docs/INDEX.md` con nuovi modelli e relazioni.
 - Collega a `Projects` e `Tasks` per contesto operativo.
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+---
+title: "Best Practices – Activity"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, activity]
+qmd: "best practices   activity activity"
+---
+>>>>>>> .merge_file_HM2FiY
 # Best Practices – Activity
 
 ## Principi DRY/KISS
-- **DRY**: Centralizza logica di orchestrazione in `ActivityService`. Usa repository pattern per entità.
+- **DRY**: Centralizza la logica di orchestrazione in Actions (es. `LogActivityAction`), mai in Services.
 - **KISS**: Usa ID semplici per identificatori esterni, non UUID complessi in interfacce.
 - **Clean Code**: Applica `Spatie Color` per icone tematiche senza duplicare codice.
 
 ## Componenti
-- Usa `ActivityLog` per registrare eventi critici.
+- Usa `LogActivityAction` per registrare eventi critici (modello `Activity`).
 - Usa progetti con `status` calcolato (`active`, `paused`, `completed`).
 
 ## Test
@@ -36,8 +65,9 @@
 - Copri casi limite come transizioni di stato non valide.
 
 ## Documentazione
-- Aggiorna `docs/INDEX.md` con nuovi modelli e relazioni.
+- Aggiorna `docs/00-index.md` con nuovi modelli e relazioni.
 - Collega a `Projects` e `Tasks` per contesto operativo.
+<<<<<<< .merge_file_5jewXC
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
@@ -53,3 +83,9 @@ See canonical documentation: ../../../Themes/docs/shared-components/BEST_PRACTIC
 =======
 >>>>>>> 35d8cf69 (Initial commit)
 >>>>>>> laraxot/dev
+=======
+>>>>>>> .merge_file_HM2FiY
+=======
+
+
+>>>>>>> 13cf1831 (.)

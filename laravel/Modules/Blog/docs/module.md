@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Blog Module — Doctrine"
 type: doctrine
 tags: [blog, publishing, module-doctrine]
@@ -9,6 +11,7 @@ related:
   - "../../Xot/docs/module.md"
   - "../../Cms/docs/module.md"
   - "../../Comment/docs/module.md"
+status: draft
 ---
 
 # Blog Module — Doctrine

@@ -4,11 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Feature;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Carbon;
 use Modules\Activity\Models\BaseModel;
 use Modules\Xot\Models\Traits\HasXotFactory;
+<<<<<<< .merge_file_2XtIQo
+=======
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\Factory;
+>>>>>>> .merge_file_OA1j6N
+=======
+use Illuminate\Support\Carbon;
+use Modules\Activity\Models\BaseModel;
+>>>>>>> 13cf1831 (.)
 
 /**
  * Classe concreta di test per BaseModel.
@@ -25,15 +35,20 @@ use Modules\Xot\Models\Traits\HasXotFactory;
  * @property int|null $updated_by
  * @property int|null $deleted_by
  *
+<<<<<<< HEAD
  * @method static Factory<static> factory()
  *
+=======
+>>>>>>> 13cf1831 (.)
  * @coversNothing
  */
 class TestActivityModel extends BaseModel
 {
+<<<<<<< HEAD
     /**
      * @use HasFactory<Factory<self>>
      *
+<<<<<<< .merge_file_2XtIQo
      * newFactory() è fornito da HasXotFactory (già tipizzato `: Factory`, ereditato da
      * XotBaseModel tramite BaseModel): senza insteadof la versione non tipizzata di
      * HasFactory::newFactory() viola la firma dell'antenato e PHP va in fatal error
@@ -41,9 +56,19 @@ class TestActivityModel extends BaseModel
      */
     use HasFactory, HasXotFactory {
         HasXotFactory::newFactory insteadof HasFactory;
+=======
+     * I test asseriscono che il modello usi HasFactory; factory() resta quello di HasXotFactory
+     * (risolve la factory a runtime via GetFactoryAction), perche' quello di HasFactory cerca
+     * `Database\Factories\<Modello>Factory` e qui non esiste. HasXotFactory non espone piu'
+     * newFactory(): una regola insteadof su di esso e' un fatal error PHP, che PHPStan non vede.
+     */
+    use HasFactory, HasXotFactory {
+>>>>>>> .merge_file_OA1j6N
         HasXotFactory::factory insteadof HasFactory;
     }
 
+=======
+>>>>>>> 13cf1831 (.)
     /** @var string */
     protected $table = 'test_models';
 

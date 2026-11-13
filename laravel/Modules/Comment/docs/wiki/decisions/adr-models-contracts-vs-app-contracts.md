@@ -1,4 +1,6 @@
 ---
+qmd: "adr models contracts vs app contracts"
+discussions: []
 title: "ADR — Models/Contracts vs app/Contracts nel modulo"
 type: decision
 module: Comment

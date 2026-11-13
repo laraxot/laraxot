@@ -22,7 +22,7 @@ class Chunk extends Component
     {
         $articles = Article::whereIn('id', $this->postIds)->get()->keyBy('id');
 
-        $orderedPosts = collect($this->postIds)->map(static fn ($id) => (is_array($articles) ? $articles[$id] : null));
+        $orderedPosts = collect($this->postIds)->map(static fn (mixed $id) => (is_array($articles) ? $articles[$id] : null));
 
         /**
          * @phpstan-var view-string

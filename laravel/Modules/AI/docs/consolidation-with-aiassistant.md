@@ -1,3 +1,15 @@
+---
+title: "consolidation with aiassistant"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "consolidation with aiassistant"
+issues: []
+discussions: []
+status: draft
+---
+
 # Consolidation Strategy: AI + AiAssistant
 
 **Conclusion:** Do NOT merge modules. Instead, extract handlers from AiAssistant into AI, making AiAssistant a thin consumer of AI's abstraction.

@@ -12,7 +12,8 @@ discussions:
   - "https://github.com/laraxot/module_comment_fila5/discussions/17"
 related:
   - ./actions-domain-subfolders.md
-  - ../../../../docs/wiki/rules/no-module-jobs-queueable-action.md
+  - ../../../../../docs/wiki/rules/no-module-jobs-queueable-action.md
+status: draft
 ---
 
 # No Jobs nel modulo Comment

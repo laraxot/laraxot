@@ -17,7 +17,7 @@ use Modules\Comment\Tests\Support\ParityCommentatorStub;
 use Modules\Comment\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 function parityCommentator(int|string $key): CanComment
 {
@@ -53,7 +53,7 @@ test('nested reply stores parent_id and nestedComments relation', function (): v
     $parent = Comment::factory()->approved()->create(baseCommentAttributes());
     $reply = $parent->comment('Risposta annidata', parityCommentator(2));
 
-    Assert::assertSame($parent->id, $reply->parent_id);
+    Assert::assertSame((string) $parent->id, (string) $reply->parent_id);
     $parentKey = $parent->getKey();
     Assert::assertSame($parentKey !== null && is_scalar($parentKey) ? (string) $parentKey : '', is_scalar($reply->commentable_id) ? (string) $reply->commentable_id : '');
 

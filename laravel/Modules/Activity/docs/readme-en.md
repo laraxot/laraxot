@@ -1,7 +1,19 @@
+---
+title: "Activity — English presentation"
+type: note
+status: draft
+updated: 2026-10-20
+tags: [docs, activity]
+qmd: "activity   english presentation activity"
+---
 # 📋 Activity — English presentation
 
 [![Domain-Audit](https://img.shields.io/badge/Domain-Activity%20Log-455A64.svg)](#)
+<<<<<<< HEAD
 [![Laravel 13](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+=======
+[![Laravel 12](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
+>>>>>>> 13cf1831 (.)
 [![Filament 5](https://img.shields.io/badge/Filament-5-ffab00.svg)](https://filamentphp.com/)
 [![PHP 8.4+](https://img.shields.io/badge/PHP-8.4+-777BB4.svg)](https://php.net/)
 [![PHPStan Level 10](https://img.shields.io/badge/PHPStan-Level%2010-brightgreen.svg)](https://phpstan.org/)
@@ -39,7 +51,7 @@ Traceability on sensitive system entities.
 
 Accountability is **non-negotiable** in digital government.
 
-Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
+Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
 
 ---
 

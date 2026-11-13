@@ -6,6 +6,7 @@ namespace Modules\Comment\Transformers;
 
 use Modules\Comment\Datas\CommentConfigData;
 use Modules\Comment\Models\Comment;
+
 use function Safe\preg_replace_callback;
 
 class MentionsTransformer implements CommentTransformer

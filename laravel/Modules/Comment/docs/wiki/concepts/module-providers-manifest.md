@@ -13,8 +13,9 @@ discussions:
 related:
   - ../../../../../../docs/wiki/bmad/architecture-module-providers-manifest.md
   - ../../../../Themes/docs/shared-components/service-provider-aration-zen.md
-  - ../../../../../docs/wiki/memories/module-providers-manifest-not-manual-register.md
+  - ../../../../../../docs/wiki/memories/module-providers-manifest-not-manual-register.md
   - native-comments-architecture.md
+status: draft
 ---
 
 # Provider modulo — manifest, non `$this->app->register()`
@@ -86,5 +87,5 @@ class CommentServiceProvider extends XotBaseServiceProvider
 
 ## Backlink
 
-- Canon User: [service-provider-architecture.md](../../../User/docs/service-provider-architecture.md)
+- Canon User: [service-provider-architecture.md](../../../../User/docs/service-provider-architecture.md)
 - Zen: [service-provider-aration-zen.md](../../../../Themes/docs/shared-components/service-provider-aration-zen.md)

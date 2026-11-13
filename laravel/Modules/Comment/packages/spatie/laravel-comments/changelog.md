@@ -7,7 +7,7 @@ All notable changes to `laravel-comments` will be documented in this file.
 ### What's Changed
 
 * Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/spatie/laravel-comments/pull/212
-* Add Laravel 13 support by @timvandijck in https://github.com/spatie/laravel-comments/pull/214
+* Add Laravel 12 support by @timvandijck in https://github.com/spatie/laravel-comments/pull/214
 
 **Full Changelog**: https://github.com/spatie/laravel-comments/compare/2.1.1...2.2.0
 

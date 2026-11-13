@@ -9,33 +9,35 @@ use Modules\User\Models\BaseUser;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('CanComment getKey and getMorphClass are compatible with Eloquent Model on PHP 8.4', function (): void {
-    foreach (['getKey', 'getMorphClass'] as $method) {
-        $interface = new ReflectionMethod(CommentCanComment::class, $method);
-        $model = new ReflectionMethod(Model::class, $method);
+    $interfaceGetKey = new ReflectionMethod(CommentCanComment::class, 'getKey');
+    $modelGetKey = new ReflectionMethod(Model::class, 'getKey');
+    $interfaceMorphClass = new ReflectionMethod(CommentCanComment::class, 'getMorphClass');
+    $modelMorphClass = new ReflectionMethod(Model::class, 'getMorphClass');
 
-        Assert::assertFalse($interface->hasReturnType(), $method);
-        Assert::assertFalse($model->hasReturnType(), $method);
-    }
+    Assert::assertSame('mixed', (string) $interfaceGetKey->getReturnType());
+    Assert::assertFalse($modelGetKey->hasReturnType());
+    Assert::assertSame('string', (string) $interfaceMorphClass->getReturnType());
+    Assert::assertFalse($modelMorphClass->hasReturnType());
 });
 
-test('BaseUser implements Comment CanComment contract', function (): void {
-    Assert::assertTrue((new ReflectionClass(BaseUser::class))->implementsInterface(CommentCanComment::class));
+test('BaseUser does not depend on optional Comment module', function (): void {
+    Assert::assertFalse((new ReflectionClass(BaseUser::class))->implementsInterface(CommentCanComment::class));
 });
 
-test('User model implements Comment CanComment via BaseUser', function (): void {
+test('User model does not depend on optional Comment module', function (): void {
     Assert::assertTrue(class_exists(User::class));
-    Assert::assertTrue((new ReflectionClass(User::class))->implementsInterface(CommentCanComment::class));
+    Assert::assertFalse((new ReflectionClass(User::class))->implementsInterface(CommentCanComment::class));
 });
 
-test('User CanComment retired from app Contracts to Models Contracts old', function (): void {
+test('User CanComment contracts are fully retired from User module', function (): void {
     $userModule = dirname(__DIR__, 3).'/User';
 
     Assert::assertFileDoesNotExist($userModule.'/app/Contracts/CanComment.php');
-    Assert::assertFileExists($userModule.'/app/Contracts/CanComment.php.old');
-    Assert::assertFileExists($userModule.'/app/Models/Contracts/CanComment.php.old');
+    Assert::assertFileDoesNotExist($userModule.'/app/Contracts/CanComment.php.old');
+    Assert::assertFileDoesNotExist($userModule.'/app/Models/Contracts/CanComment.php.old');
 });
 
 test('autoload User class does not fatal on getKey signature (PHP 8.4)', function (): void {

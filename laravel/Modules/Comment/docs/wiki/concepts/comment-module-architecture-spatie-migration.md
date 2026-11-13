@@ -1,4 +1,6 @@
 ---
+qmd: "comment module architecture spatie migration"
+discussions: []
 title: "Comment Module Architecture - Spatie Migration"
 type: concept
 tags: [comments, spatie-comments, livewire, migration]
@@ -7,6 +9,7 @@ updated: 2026-06-05
 sources: ["laravel/Modules/Comment/packages/spatie/laravel-comments-livewire/src/Livewire/CommentsComponent.php"]
 issues:
   - "https://github.com/laraxot/base_fixcity_fila5/issues/296"
+status: draft
 ---
 
 # Comment Module Architecture

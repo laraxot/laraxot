@@ -1,3 +1,15 @@
+---
+title: "prd"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "prd"
+issues: []
+discussions: []
+status: draft
+---
+
 # Product Requirements Document (PRD) - Comment Module
 
 **Module**: Comment
@@ -6,7 +18,6 @@
 **Author**: Product Team
 
 ---
-
 ## Document Control
 
 | Version | Date | Author | Changes |
@@ -502,10 +513,10 @@ CREATE TABLE comment_votes (
 - [Laravel Documentation](https://laravel.com/docs)
 
 ### 12.3 Related PRDs
-- [Blog Module PRD](../Blog/docs/PRD.md)
-- [Notify Module PRD](../Notify/docs/PRD.md)
-- [AI Module PRD](../AI/docs/PRD.md)
-- [User Module PRD](../User/docs/PRD.md)
+- [Blog Module PRD](../../Blog/docs/prd.md)
+- [Notify Module PRD](../../Notify/docs/PRD.md)
+- [AI Module PRD](../../AI/docs/prd-corporate.md)
+- [User Module PRD](../../User/docs/prd.md)
 
 ---
 

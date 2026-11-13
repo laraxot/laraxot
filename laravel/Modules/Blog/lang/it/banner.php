@@ -6,9 +6,7 @@ return [
     'navigation' => [
         'name' => 'Banner',
         'plural' => 'Banners',
-        'group' => [
-            'name' => 'Content',
-        ],
+        'group' => 'Contenuti',
         'sort' => 28,
         'icon' => 'heroicon-o-rectangle-stack',
         'label' => 'Banner',

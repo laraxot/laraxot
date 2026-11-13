@@ -14,6 +14,7 @@ related:
   - ../wiki/concepts/spatie-v2-parity-gap-analysis.md
   - ../wiki/concepts/spatie-package-inventory.md
   - ../migrate-spatie-comments-to-custom.md
+status: draft
 ---
 
 # Spatie laravel-comments v2 — Analisi Gap Residuo
@@ -58,4 +59,4 @@ Nessun integratore Shiki/Torchlight. Valutare solo se emerge richiesta reale.
 
 - Epic: [#319](https://github.com/laraxot/base_fixcity_fila5/issues/319)
 - Discussion: [#320](https://github.com/laraxot/base_fixcity_fila5/discussions/320)
-- Story: [STORY-291](../../../../docs/stories/STORY-291-comment-spatie-v2-parity.md)
+- Story: [STORY-291](../../../../../docs/stories/STORY-291-comment-spatie-v2-parity.md)

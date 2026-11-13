@@ -20,6 +20,12 @@ class CommentatorProperties
         return $this->properties[$name] ?? null;
     }
 
+    /** Senza `__isset`, `isset($props->name)` era sempre false (autore "—" nella moderazione). */
+    public function __isset(string $name): bool
+    {
+        return isset($this->properties[$name]);
+    }
+
     public static function email(string $email): self
     {
         return new self(['email' => $email]);

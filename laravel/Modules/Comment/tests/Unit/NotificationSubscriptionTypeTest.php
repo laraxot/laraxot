@@ -6,7 +6,7 @@ use Modules\Comment\Enums\NotificationSubscriptionType;
 use Modules\Comment\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('NotificationSubscriptionType has english-backed string cases', function (): void {
     Assert::assertSame('participating', NotificationSubscriptionType::Participating->value);

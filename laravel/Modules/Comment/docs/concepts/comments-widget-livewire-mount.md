@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "CommentsWidget — mount Livewire annidato (commentableType/Key)"
 type: concept
 module: Comment
@@ -10,6 +12,7 @@ related:
   - ./filament-widgets-subject-subfolders.md
   - ./has-comments-implements-commentable.md
   - ../decisions/commentable-widget-naming.md
+status: draft
 ---
 
 # CommentsWidget — mount in FO annidato

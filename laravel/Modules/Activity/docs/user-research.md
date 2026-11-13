@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+<<<<<<< .merge_file_pOYZKu
+<<<<<<< HEAD
 # Activity Module - User Research
 
 **Module:** Activity  
@@ -103,6 +105,16 @@ Legal teams need configurable retention periods.
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+---
+title: "Activity Module - User Research"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, activity]
+qmd: "activity module - user research activity"
+---
+>>>>>>> .merge_file_UXAm4Q
 # Activity Module - User Research
 
 **Module:** Activity  
@@ -203,16 +215,28 @@ Legal teams need configurable retention periods.
 
 ---
 
+<<<<<<< .merge_file_pOYZKu
 *Last Updated: March 12, 2026*
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+>>>>>>> 13cf1831 (.)
 # User Research: Activity Module
 
 ## 🔬 Research Goals
 Identify user needs for Activity functionality.
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
 >>>>>>> laraxot/dev
+=======
+*Last Updated: March 12, 2026*# User Research: Activity Module
+
+## 🔬 Research Goals
+Identify user needs for Activity functionality.
+>>>>>>> .merge_file_UXAm4Q
+=======
+>>>>>>> 13cf1831 (.)

@@ -1,4 +1,8 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
+issues: []
+discussions: []
 title: "User-Comment Module Dependency Architecture"
 type: concepts
 tags: [architecture, user, comment, dependencies, modules]

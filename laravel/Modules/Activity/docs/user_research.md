@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_CPAcU9
+=======
+---
+title: "Activity Module - User Research"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity]
+qmd: "activity module - user research activity"
+---
+>>>>>>> .merge_file_anjiN9
 # Activity Module - User Research
 
 **Module:** Activity  

@@ -1,4 +1,6 @@
 ---
+qmd: "adr internalize spatie comments"
+discussions: []
 title: "ADR — Internalizzare Spatie comments nel modulo Comment"
 type: decision
 module: Comment

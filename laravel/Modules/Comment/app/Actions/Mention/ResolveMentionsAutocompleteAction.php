@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Comment\Actions\Mention;
 
-use Modules\Comment\Datas\CommentConfigData;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Comment\Datas\CommentConfigData;
 use Spatie\QueueableAction\QueueableAction;
 
 class ResolveMentionsAutocompleteAction

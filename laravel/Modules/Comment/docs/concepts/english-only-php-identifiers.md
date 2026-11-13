@@ -11,7 +11,8 @@ issues:
 discussions:
   - "https://github.com/laraxot/module_comment_fila5/discussions/14"
 related:
-  - ../../../../docs/wiki/decisions/css-filenames-english-no-italian.md
+  - ../../../../../docs/wiki/decisions/css-filenames-english-no-italian.md
+status: draft
 ---
 
 # PHP — nomi file/classe solo inglese

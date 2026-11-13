@@ -1,4 +1,8 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
+issues: []
+discussions: []
 title: PHPStan — analisi per modulo (cwd laravel)
 type: rule
 tags: [phpstan, quality-gate, comment]
@@ -6,6 +10,7 @@ qmd:
   index: true
 created_at: 2026-06-10
 updated_at: 2026-06-10
+status: draft
 ---
 
 # PHPStan — analisi per modulo

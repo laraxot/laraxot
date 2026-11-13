@@ -8,6 +8,7 @@ use Filament\Tables\Enums\PaginationMode;
 use Illuminate\Contracts\Pagination\CursorPaginator;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Modules\Activity\Filament\Pages\Concerns\CanPaginate;
 
@@ -40,8 +41,15 @@ final class CanPaginateHarness
     }
 
     /**
+<<<<<<< .merge_file_zvgYZq
      * @param  Builder<\Illuminate\Database\Eloquent\Model>  $query
      * @return Paginator<int, \Illuminate\Database\Eloquent\Model>|CursorPaginator<int, \Illuminate\Database\Eloquent\Model>|LengthAwarePaginator<int, \Illuminate\Database\Eloquent\Model>
+=======
+     * @template TModel of Model
+     *
+     * @param  Builder<TModel>  $query
+     * @return Paginator<int, TModel>|CursorPaginator<int, TModel>|LengthAwarePaginator<int, TModel>
+>>>>>>> .merge_file_dU31nx
      */
     public function exposePaginateQuery(Builder $query): Paginator|CursorPaginator|LengthAwarePaginator
     {
@@ -58,6 +66,10 @@ final class CanPaginateHarness
 
     public function setDefaultPerPage(int|string|null $value): void
     {
+<<<<<<< HEAD
         $this->defaultPerPageOption = $value;
+=======
+        $this->defaultRecordsPerPageSelectOption = $value;
+>>>>>>> 13cf1831 (.)
     }
 }

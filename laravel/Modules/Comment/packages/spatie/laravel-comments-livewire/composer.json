@@ -25,9 +25,9 @@
     "require": {
         "php": "^8.1",
         "illuminate/contracts": "^11.0|^12.0",
-        "livewire/livewire": "*",
+        "livewire/livewire": "^3.5",
         "spatiex/laravel-comments": "*",
-        "spatie/laravel-markdown": "*",
+        "spatie/laravel-markdown": "^2.6",
         "spatie/laravel-package-tools": "^1.10.0"
     },
     "require-dev": {

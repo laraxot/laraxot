@@ -3,13 +3,14 @@
 declare(strict_types=1);
 
 use Modules\Comment\Datas\CommentConfigData;
+use Modules\Comment\Datas\CommentsWidgetUiData;
 use Modules\Comment\Filament\Widgets\Commentable\CommentsWidget;
 use Modules\Comment\Models\Comment;
 use Modules\Comment\Tests\TestCase;
 use Modules\Comment\Transformers\MentionsTransformer;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 afterEach(function (): void {
     config(['comments' => require base_path('Modules/Comment/config/comments.php')]);
@@ -39,9 +40,10 @@ it('insertMention sostituisce la query @ con token mention', function (): void {
     config(['comments.mentions.enabled' => true]);
 
     $component = app(CommentsWidget::class);
-    $component->mount(uiConfig: new \Modules\Comment\Datas\CommentsWidgetUiData);
-    $component->uiConfig->text = 'Salve @Mar';
+    $component->mount(uiConfig: new CommentsWidgetUiData);
+    // Il testo sta nello stato del form Filament (`data.text`), non piu' in `uiConfig` (CMT-022).
+    $component->data = ['text' => 'Salve @Mar'];
     $component->insertMention(99, 'Mario Rossi');
 
-    Assert::assertSame('Salve @{99|Mario Rossi} ', $component->uiConfig->text);
+    Assert::assertSame('Salve @{99|Mario Rossi} ', $component->data['text'] ?? null);
 });

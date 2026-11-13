@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\AI\Contracts;
 
 use Modules\AI\Models\AiActionProposal;
-use Modules\AI\Support\AiActionHandlerRegistry;
+use Modules\AI\Adapters\AiActionHandlerRegistry;
 
 /**
  * Contract for a handler capable of executing a specific type of

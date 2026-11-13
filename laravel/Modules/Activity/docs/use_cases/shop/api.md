@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_vMvm4A
+=======
+---
+title: "Linee Guida API per uno Shop Event Sourced"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity, use_cases]
+qmd: "linee guida api per uno shop event sourced activity"
+---
+>>>>>>> .merge_file_o7GGjZ
 # Linee Guida API per uno Shop Event Sourced
 
 ## 1. Endpoints Principali

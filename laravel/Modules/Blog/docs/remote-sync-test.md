@@ -1,6 +1,14 @@
-# Remote Sync Test File
+---
+title: "redirect — remote sync test"
+type: redirect
+status: archived-redirect
+module: Blog
+canonical: ./remote_sync_test.md
+updated: 2026-10-22
+tags: [docs, blog]
+qmd: "redirect blog"
+---
 
-**Created**: 2026-03-13 via GitHub API
-**Purpose**: Test remote → local sync
+# Redirect
 
-This file was created on GitHub to test if sync pulls it back locally.
+Contenuto canonico: [remote_sync_test.md](./remote_sync_test.md).

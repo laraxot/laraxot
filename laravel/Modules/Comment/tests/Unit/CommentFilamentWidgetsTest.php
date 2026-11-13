@@ -9,9 +9,10 @@ use Modules\Comment\Providers\CommentEngineServiceProvider;
 use Modules\Comment\Tests\TestCase;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 use PHPUnit\Framework\Assert;
+
 use function Safe\file_get_contents;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('Comment FO widgets exist and provider does not register raw Livewire aliases', function (): void {
     $source = file_get_contents(

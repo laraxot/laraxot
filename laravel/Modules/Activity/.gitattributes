@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+# Prototype: laravel/Modules/* e laravel/Themes/*
+# Canon: docs/wiki/rules/no-git-lfs.md
+# Sync: bash bashscripts/templates/sync-gitattributes-modules.sh
+#
+# Git LFS VIETATO. Binari = blob git normali.
+# Mai: filter=lfs / diff=lfs / merge=lfs
+
+>>>>>>> 13cf1831 (.)
 * text=auto
 *.css linguist-vendored
 *.scss linguist-vendored

@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 ---
 title: "Rimando a changelog.md"
 description: "Documento unificato: il contenuto canonico vive in changelog.md."
 status: merged
 tags: [merge, duplicato, case-only]
+<<<<<<< .merge_file_xo7vMo
+=======
+type: note
+updated: 2026-10-07
+qmd: "documento unificato activity"
+>>>>>>> .merge_file_1E0VRv
 ---
 
 # Documento unificato
@@ -14,6 +21,8 @@ Questo file era un duplicato esatto che differiva solo per maiuscole/minuscole, 
 
 <!-- Merged from changelog.md, which collided with this file on case-insensitive filesystems. -->
 
+=======
+>>>>>>> 13cf1831 (.)
 # Changelog
 
 All notable changes to this project will be documented in this file.

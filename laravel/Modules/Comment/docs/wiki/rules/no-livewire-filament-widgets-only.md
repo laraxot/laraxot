@@ -1,4 +1,7 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
+discussions: []
 title: Regola — FO commenti solo Filament widget
 type: rule
 tags: [comment, filament, livewire, fo]
@@ -8,6 +11,7 @@ issues:
   - https://github.com/laraxot/module_comment_fila5/issues/7
 created_at: 2026-06-10
 updated_at: 2026-06-10
+status: draft
 ---
 
 # Regola — FO commenti solo Filament widget

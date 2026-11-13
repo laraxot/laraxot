@@ -1,8 +1,31 @@
 <<<<<<< HEAD
+<<<<<<< .merge_file_WiSs5m
+<<<<<<< HEAD
+=======
+---
+title: "Event Sourcing in `saluteora`"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, activity]
+qmd: "event sourcing in `saluteora` activity"
+---
+>>>>>>> .merge_file_A4pPHf
 # Event Sourcing in `saluteora`
 
 ## Introduction to Event Sourcing
 Event Sourcing is an architectural pattern where application state is derived from a sequence of events. Instead of storing the current state in a database, the application stores all events that led to the current state. This approach is particularly beneficial in a healthcare context like `saluteora` for tracking patient activities, medical records, and system interactions with full auditability.
+=======
+---
+module: theme
+topic: event-sourcing-introduction
+canonical: ../../../Themes/docs/shared-components/event-sourcing-introduction-duplicate.md
+
+# Event Sourcing in `<nome progetto>`
+
+## Introduction to Event Sourcing
+Event Sourcing is an architectural pattern where application state is derived from a sequence of events. Instead of storing the current state in a database, the application stores all events that led to the current state. This approach is particularly beneficial in a healthcare context like `<nome progetto>` for tracking patient activities, medical records, and system interactions with full auditability.
+>>>>>>> 13cf1831 (.)
 
 ### Key Concepts
 - **Events**: Discrete actions or changes in the system (e.g., `PatientRegistered`, `AppointmentScheduled`).
@@ -32,6 +55,178 @@ php artisan migrate
 2. **Events**: Define what happened in the system.
 3. **Projectors**: Build read models from events for efficient querying.
 4. **Reactors**: Handle side effects like notifications or external API calls.
+<<<<<<< HEAD
+<<<<<<< .merge_file_WiSs5m
+=======
+
+## Application in `saluteora`
+In a healthcare system like `saluteora`, event sourcing can be applied to:
+=======
+
+## Application in `<nome progetto>`
+In a healthcare system like `<nome progetto>`, event sourcing can be applied to:
+>>>>>>> 13cf1831 (.)
+- **Patient Management**: Track registration, updates to personal information, and medical history as events.
+- **Appointment Scheduling**: Record scheduling, rescheduling, and cancellation of appointments.
+- **Medical Records**: Log diagnoses, treatments, and prescriptions with full history.
+- **Billing and Insurance**: Track financial transactions and claims processing.
+
+### Example: Patient Registration
+```php
+// app/Aggregates/PatientAggregate.php
+namespace App\Aggregates;
+
+use Spatie\EventSourcing\AggregateRoots\AggregateRoot;
+use App\Events\PatientRegistered;
+use App\Events\PatientUpdated;
+
+class PatientAggregate extends AggregateRoot
+{
+    public function register(array $data)
+<<<<<<< HEAD
+    {
+=======
+>>>>>>> 13cf1831 (.)
+        $this->recordThat(new PatientRegistered($data));
+        return $this;
+    }
+
+    public function update(array $data)
+<<<<<<< HEAD
+    {
+        $this->recordThat(new PatientUpdated($data));
+        return $this;
+    }
+}
+=======
+        $this->recordThat(new PatientUpdated($data));
+>>>>>>> 13cf1831 (.)
+
+// app/Events/PatientRegistered.php
+namespace App\Events;
+
+use Spatie\EventSourcing\StoredEvents\ShouldBeStored;
+
+class PatientRegistered extends ShouldBeStored
+<<<<<<< HEAD
+{
+    public function __construct(public array $data)
+    {
+    }
+}
+
+// app/Events/PatientUpdated.php
+namespace App\Events;
+
+use Spatie\EventSourcing\StoredEvents\ShouldBeStored;
+
+class PatientUpdated extends ShouldBeStored
+{
+    public function __construct(public array $data)
+    {
+    }
+}
+=======
+    public function __construct(public array $data)
+
+// app/Events/PatientUpdated.php
+
+
+class PatientUpdated extends ShouldBeStored
+>>>>>>> 13cf1831 (.)
+
+// app/Projectors/PatientProjector.php
+namespace App\Projectors;
+
+use Spatie\EventSourcing\Projectionist\EloquentStoredEventRepository;
+use Spatie\EventSourcing\Projectionist\Projector;
+<<<<<<< HEAD
+use App\Events\PatientRegistered;
+use App\Events\PatientUpdated;
+use App\Models\Patient;
+
+class PatientProjector implements Projector
+{
+    public function onPatientRegistered(PatientRegistered $event, string $aggregateUuid)
+    {
+=======
+use App\Models\Patient;
+
+class PatientProjector implements Projector
+    public function onPatientRegistered(PatientRegistered $event, string $aggregateUuid)
+>>>>>>> 13cf1831 (.)
+        Patient::create([
+            'uuid' => $aggregateUuid,
+            'data' => $event->data,
+        ]);
+<<<<<<< HEAD
+    }
+
+    public function onPatientUpdated(PatientUpdated $event, string $aggregateUuid)
+    {
+        $patient = Patient::where('uuid', $aggregateUuid)->first();
+        $patient->update(['data' => array_merge($patient->data, $event->data)]);
+    }
+}
+```
+
+### Usage in Controller
+```php
+=======
+
+    public function onPatientUpdated(PatientUpdated $event, string $aggregateUuid)
+        $patient = Patient::where('uuid', $aggregateUuid)->first();
+        $patient->update(['data' => array_merge($patient->data, $event->data)]);
+
+### Usage in Controller
+>>>>>>> 13cf1831 (.)
+// app/Http/Controllers/PatientController.php
+use App\Aggregates\PatientAggregate;
+
+public function store(Request $request)
+<<<<<<< HEAD
+{
+=======
+>>>>>>> 13cf1831 (.)
+    $patientData = $request->validate([
+        'name' => 'required',
+        'dob' => 'required|date',
+        'address' => 'required',
+<<<<<<< HEAD
+    ]);
+=======
+>>>>>>> 13cf1831 (.)
+
+    PatientAggregate::make()->register($patientData)->persist();
+
+    return redirect()->route('patients.index');
+<<<<<<< HEAD
+}
+```
+
+## Best Practices for `saluteora`
+=======
+
+## Best Practices for `<nome progetto>`
+>>>>>>> 13cf1831 (.)
+1. **Granular Events**: Define specific events for each action (e.g., `PatientRegistered`, `AppointmentScheduled`) to ensure detailed tracking.
+2. **Audit Compliance**: Store events indefinitely to meet healthcare audit requirements.
+3. **Performance Optimization**: Use projectors to build efficient read models for frequent queries, avoiding real-time event replay in production.
+4. **Security**: Encrypt sensitive event data (e.g., patient information) within the event store.
+5. **Reactors for Notifications**: Implement reactors for sending emails or SMS notifications on critical events like appointment confirmations.
+
+## Resources
+- [Spatie Laravel Event Sourcing](https://github.com/spatie/laravel-event-sourcing)
+- [Spatie Documentation](https://docs.spatie.be/laravel-event-projector/v1/introduction)
+- [Microsoft Azure Event Sourcing Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
+- [Larabank Examples](https://github.com/spatie/larabank-traditional)
+
+<<<<<<< HEAD
+This introduction to event sourcing sets the foundation for implementing a robust activity tracking system in `saluteora`, ensuring full traceability and compliance with healthcare standards.---
+module: theme
+topic: event-sourcing-introduction
+canonical: ../../../Themes/docs/shared-components/event-sourcing-introduction-duplicate.md
+>>>>>>> .merge_file_A4pPHf
 
 ## Application in `saluteora`
 In a healthcare system like `saluteora`, event sourcing can be applied to:
@@ -299,6 +494,7 @@ public function store(Request $request)
 - [Microsoft Azure Event Sourcing Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
 - [Larabank Examples](https://github.com/spatie/larabank-traditional)
 
+<<<<<<< .merge_file_WiSs5m
 This introduction to event sourcing sets the foundation for implementing a robust activity tracking system in `saluteora`, ensuring full traceability and compliance with healthcare standards.
 =======
 =======
@@ -315,3 +511,11 @@ See canonical documentation: ../../../Themes/docs/shared-components/event-sourci
 =======
 >>>>>>> 35d8cf69 (Initial commit)
 >>>>>>> laraxot/dev
+=======
+This introduction to event sourcing sets the foundation for implementing a robust activity tracking system in `saluteora`, ensuring full traceability and compliance with healthcare standards.
+>>>>>>> .merge_file_A4pPHf
+=======
+This introduction to event sourcing sets the foundation for implementing a robust activity tracking system in `<nome progetto>`, ensuring full traceability and compliance with healthcare standards.
+
+See canonical documentation: ../../../Themes/docs/shared-components/event-sourcing-introduction-duplicate.md
+>>>>>>> 13cf1831 (.)

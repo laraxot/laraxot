@@ -39,7 +39,9 @@ class CommentInfolist extends XotBaseResourceInfolist
                 ->state(static fn (Comment $record): string => $record->isApproved()
                     ? CommentResource::trans('fields.status.approved')
                     : CommentResource::trans('fields.status.pending'))
-                ->color(static fn (string $state): string => $state === 'approved' ? 'success' : 'warning'),
+                ->color(static fn (string $state): string => $state === CommentResource::trans('fields.status.approved')
+                    ? 'success'
+                    : 'warning'),
             'parent_id' => TextEntry::make('parent_id')->placeholder('—'),
             'approved_at' => TextEntry::make('approved_at')->dateTime()->placeholder('—'),
             'created_at' => TextEntry::make('created_at')->dateTime(),

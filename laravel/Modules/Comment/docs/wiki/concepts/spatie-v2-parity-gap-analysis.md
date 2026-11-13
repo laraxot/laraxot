@@ -16,6 +16,7 @@ related:
   - spatie-package-inventory.md
   - native-comments-engine-workflow.md
   - spatie-to-laraxot-namespace-map.md
+status: draft
 ---
 
 # Gap analysis — Spatie v2 vs motore nativo
@@ -57,4 +58,4 @@ Reference: [Spatie laravel-comments v2](https://spatie.be/docs/laravel-comments/
 
 - [Workflow internalizzazione](./native-comments-engine-workflow.md)
 - [Integrazione FO tema](../../../../Themes/docs/concepts/comment-module-fo-integration.md)
-- [STORY-291](../../../../../docs/stories/STORY-291-spatie-v2-parity.md)
+- [STORY-291](../../../../../../docs/stories/STORY-291-spatie-v2-parity.md)

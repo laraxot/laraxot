@@ -1,9 +1,13 @@
 ---
+qmd: "spatie data usage"
+issues: []
+discussions: []
 title: "Widget property consolidation with Spatie Laravel‑Data"
 type: decision
 tags: [widget, data, spatie, refactor]
 created: 2026-06-10
 updated: 2026-06-10
+status: draft
 ---
 
 ## Decision

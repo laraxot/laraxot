@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Comment\View\Components;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\HtmlString;
 use Illuminate\View\Component;
 use RuntimeException;
@@ -12,7 +13,7 @@ use function Safe\file_get_contents;
 
 class Styles extends Component
 {
-    public function render(): \Illuminate\Contracts\View\View
+    public function render(): View
     {
         $path = dirname(__DIR__, 3).'/resources/css/livewire-comments.css';
 

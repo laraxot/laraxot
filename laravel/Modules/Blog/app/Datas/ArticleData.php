@@ -5,39 +5,9 @@ declare(strict_types=1);
 namespace Modules\Blog\Datas;
 
 use Carbon\Carbon;
+use Illuminate\Support\Collection;
 use Modules\Blog\Actions\Category\GetBloodline;
 use Spatie\LaravelData\Data;
-
-class ArticleDataCore extends Data
-{
-    public function __construct(
-        public string $id,
-        public string $uuid,
-        public string $slug,
-        public ?int $categoryId,
-        public ?string $status,
-        public bool $showOnHomepage,
-        public ?string $publishedAt,
-        public ?string $url,
-        public ?string $closedAt,
-    ) {
-    }
-}
-
-class ArticleDataBlocks extends Data
-{
-    /**
-     * @param array<int|string, mixed>|null $contentBlocks
-     * @param array<int|string, mixed>|null $sidebarBlocks
-     * @param array<int|string, mixed>|null $footerBlocks
-     */
-    public function __construct(
-        public ?array $contentBlocks,
-        public ?array $sidebarBlocks,
-        public ?array $footerBlocks,
-    ) {
-    }
-}
 
 /**
  * @phpstan-consistent-constructor
@@ -165,7 +135,7 @@ class ArticleData extends Data implements \Stringable
             ratings: $article->getArrayRatingsWithImage(),
             closedAtDate: $closedAtDate,
             timeLeftForHumans: $article->getTimeLeftForHumans(),
-            tags: $article->tags->map(
+            tags: new Collection($article->tags->map(
                 static function (mixed $tag): string {
                     if (! is_object($tag)) {
                         return '';
@@ -175,7 +145,7 @@ class ArticleData extends Data implements \Stringable
 
                     return is_string($name) ? $name : (is_scalar($name) ? (string) $name : '');
                 },
-            ),
+            )->all()),
         );
     }
 

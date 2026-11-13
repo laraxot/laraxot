@@ -6,7 +6,7 @@ All notable changes to `laravel-comments` will be documented in this file.
 
 ### What's Changed
 
-* Update for Laravel 13. by @timvandijck in https://github.com/spatie/laravel-comments-livewire/pull/79
+* Update for Laravel 12. by @timvandijck in https://github.com/spatie/laravel-comments-livewire/pull/79
 
 **Full Changelog**: https://github.com/spatie/laravel-comments-livewire/compare/3.1.1...3.2.1
 
@@ -21,7 +21,7 @@ All notable changes to `laravel-comments` will be documented in this file.
 ### What's Changed
 
 * Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/spatie/laravel-comments-livewire/pull/75
-* Add Laravel 13 support by @timvandijck in https://github.com/spatie/laravel-comments-livewire/pull/78
+* Add Laravel 12 support by @timvandijck in https://github.com/spatie/laravel-comments-livewire/pull/78
 * Fixing a bug with anonymous comments by @ChrisThompsonTLDR in https://github.com/spatie/laravel-comments-livewire/pull/77
 
 **Full Changelog**: https://github.com/spatie/laravel-comments-livewire/compare/3.1.0...3.2.0

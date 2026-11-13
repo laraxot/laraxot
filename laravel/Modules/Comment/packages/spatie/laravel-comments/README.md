@@ -1,34 +1,32 @@
 # Associate comments with Eloquent models
 
-[![Module](https://img.shields.io/badge/Module-Associate comments with Eloquent models-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+[![run-tests](https://github.com/spatie/laravel-comments/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/laravel-comments/actions/workflows/run-tests.yml)
 
-> **Core module for the FixCity Platform.**
+Welcome to Laravel Comments. All documentation is available [on our documentation site](https://spatie.be/project_docs/laravel-comments).
 
-## Perché esiste
+## Testing
 
-Core module for the FixCity Platform.
+```bash
+composer test
+```
 
-## Superpoteri
+## Changelog
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Documentazione
+## Contributing
 
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTING.md) for details.
 
----
+## Security Vulnerabilities
 
-**Modulo** `Comment` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+
+## Credits
+
+- [Freek Van der Herten](https://github.com/freekmurze)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

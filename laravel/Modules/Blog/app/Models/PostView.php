@@ -17,15 +17,15 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 /**
  * Modules\Blog\Models\PostView.
  *
- * @property int         $id
- * @property string      $ip_address
- * @property string      $user_agent
- * @property int         $post_id
- * @property int         $user_id
+ * @property int $id
+ * @property string $ip_address
+ * @property string $user_agent
+ * @property int $post_id
+ * @property int $user_id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
- * @method static PostViewFactory  factory($count = null, $state = [])
+ * @method static PostViewFactory factory($count = null, $state = [])
  * @method static Builder|PostView newModelQuery()
  * @method static Builder|PostView newQuery()
  * @method static Builder|PostView onlyTrashed()
@@ -50,18 +50,18 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static Builder|PostView whereDeletedBy($value)
  * @method static Builder|PostView whereUpdatedBy($value)
  *
- * @property ProfileContract|null        $creator
- * @property ProfileContract|null        $updater
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  * @property MediaCollection<int, Media> $media
- * @property int|null                    $media_count
+ * @property int|null $media_count
  *
- * @method static PostView|null             first()
+ * @method static PostView|null first()
  * @method static Collection<int, PostView> get()
- * @method static PostView                  create(array<string, mixed> $attributes = [])
- * @method static PostView                  firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
- * @method static Builder<static>|PostView  where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
- * @method static Builder<static>|PostView  whereNotNull((string|Expression) $columns)
- * @method static int                       count(string $columns = '*')
+ * @method static PostView create(array<string, mixed> $attributes = [])
+ * @method static PostView firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
+ * @method static Builder<static>|PostView where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
+ * @method static Builder<static>|PostView whereNotNull((string|Expression) $columns)
+ * @method static int count(string $columns = '*')
  *
  * @property ProfileContract|null $deleter
  *

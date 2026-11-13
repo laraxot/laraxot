@@ -1,9 +1,13 @@
 ---
+qmd: "index"
+issues: []
+discussions: []
 title: "concepts index — Comment"
 type: index
 tags: [concepts, Comment]
 created: 2026-05-11
 updated: 2026-06-29
+status: draft
 ---
 
 # concepts Index — Comment

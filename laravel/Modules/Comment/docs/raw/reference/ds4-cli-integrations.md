@@ -1,4 +1,8 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
+issues: []
+discussions: []
 title: "ds4 CLI Integrations Reference"
 type: reference
 tags: [ds4, integration, cli, opencode, claude-code, kilo, agent]

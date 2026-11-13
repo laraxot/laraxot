@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\AI\Tests\Unit\Actions;
 
+use Modules\AI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 use Spatie\QueueableAction\QueueableAction;
+
+uses(TestCase::class);
 
 it('keeps AI actions queueable with execute entrypoints', function (): void {
     $actionsPath = dirname(__DIR__, 3).'/app/Actions';

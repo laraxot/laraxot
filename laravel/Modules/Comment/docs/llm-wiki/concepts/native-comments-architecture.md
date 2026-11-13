@@ -1,10 +1,15 @@
 ---
+type: note
+qmd: "native comments architecture"
+issues: []
+discussions: []
 title: "Native Comments Architecture"
 created: 2026-06-08
 updated: 2026-06-08
 category: "architecture"
 tags: ["comment", "module", "architecture", "internalization"]
 related_issues: ["STORY-158"]
+status: draft
 ---
 
 # Native Comments Architecture

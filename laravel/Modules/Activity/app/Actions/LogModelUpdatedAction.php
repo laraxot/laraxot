@@ -10,30 +10,49 @@ use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Log Model Updated Action.
+<<<<<<< HEAD
  *
  * Logs when a model is updated using Queueable Actions
+=======
+ * Optimized for Laraxot architecture.
+>>>>>>> 13cf1831 (.)
  */
 class LogModelUpdatedAction
 {
     use QueueableAction;
 
     public function __construct(
+<<<<<<< .merge_file_Z5AVm0
         public Model $model,
+=======
+        public ?Model $model = null,
+>>>>>>> .merge_file_gdn0g7
         public ?Model $user = null,
     ) {
+<<<<<<< HEAD
         if ($user !== null) {
             // Type already narrowed to Model|null, assertion not needed
         }
     }
 
+<<<<<<< .merge_file_Z5AVm0
     public function execute(): Activity
     {
+=======
+    public function execute(?Model $model = null): Activity
+    {
+        $model = $model ?? $this->model;
+        if (! $model instanceof Model) {
+            throw new \InvalidArgumentException('A model is required');
+        }
+>>>>>>> .merge_file_gdn0g7
         // PHPStan Level 10: Explicit type guard for nullable Model
         $user = $this->user instanceof Model ? $this->user : null;
 
         $action = new LogActivityAction(
             type: 'updated',
             user: $user,
+<<<<<<< .merge_file_Z5AVm0
             subject: $this->model,
             properties: [
                 'old' => $this->model->getOriginal(),
@@ -41,8 +60,35 @@ class LogModelUpdatedAction
                 'changes' => $this->model->getChanges(),
             ],
             description: sprintf('%s updated', class_basename($this->model))
+=======
+            subject: $model,
+            properties: [
+                'old' => $model->getOriginal(),
+                'new' => $model->getAttributes(),
+                'changes' => $model->getChanges(),
+            ],
+            description: sprintf('%s updated', class_basename($model))
+>>>>>>> .merge_file_gdn0g7
         );
 
         return $action->execute();
+=======
+    }
+
+    /**
+     * Execute the action.
+     */
+    public function execute(): Activity
+    {
+        return (new LogActivityAction(
+            type: 'updated',
+            subject: $this->model,
+            properties: [
+                'old' => $this->model->getOriginal(),
+                'attributes' => $this->model->getChanges(),
+            ],
+            description: sprintf('%s was updated', class_basename($this->model)),
+        ))->execute();
+>>>>>>> 13cf1831 (.)
     }
 }

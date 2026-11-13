@@ -15,14 +15,14 @@ use Modules\Xot\Contracts\ProfileContract;
 /**
  * Modules\Blog\Models\Taggable.
  *
- * @property int                  $id
- * @property int                  $tag_id
- * @property string               $taggable_type
- * @property int                  $taggable_id
- * @property Carbon|null          $created_at
- * @property Carbon|null          $updated_at
- * @property string|null          $updated_by
- * @property string|null          $created_by
+ * @property int $id
+ * @property int $tag_id
+ * @property string $taggable_type
+ * @property int $taggable_id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string|null $updated_by
+ * @property string|null $created_by
  * @property array<string, mixed> $custom_properties
  *
  * @method static Builder|Taggable newModelQuery()
@@ -49,13 +49,13 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
  *
- * @method static Taggable|null             first()
+ * @method static Taggable|null first()
  * @method static Collection<int, Taggable> get()
- * @method static Taggable                  create(array<string, mixed> $attributes = [])
- * @method static Taggable                  firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
- * @method static Builder<static>|Taggable  where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
- * @method static Builder<static>|Taggable  whereNotNull((string|Expression) $columns)
- * @method static int                       count(string $columns = '*')
+ * @method static Taggable create(array<string, mixed> $attributes = [])
+ * @method static Taggable firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
+ * @method static Builder<static>|Taggable where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
+ * @method static Builder<static>|Taggable whereNotNull((string|Expression) $columns)
+ * @method static int count(string $columns = '*')
  *
  * @mixin \Eloquent
  */
@@ -86,7 +86,7 @@ class Taggable extends BaseMorphPivot
     ];
 
     /**
-     * @param array<string, mixed> $customProperties
+     * @param  array<string, mixed>  $customProperties
      */
     public function withCustomProperties(array $customProperties): self
     {
@@ -110,11 +110,10 @@ class Taggable extends BaseMorphPivot
     }
 
     /**
-     * @param array<string, mixed>|int|string|float|null $value
-     *
+     * @param  array<string, mixed>|int|string|float|null  $value
      * @return $this
      */
-    public function setCustomProperty(string $name, int|string|float|array|null $value): self
+    public function setCustomProperty(string $name, int|string|float|array|null $value): static
     {
         $customProperties = $this->custom_properties;
 
@@ -137,8 +136,7 @@ class Taggable extends BaseMorphPivot
     }
 
     /**
-     * @param array<mixed, mixed> $properties
-     *
+     * @param  array<mixed, mixed>  $properties
      * @return array<string, mixed>
      */
     private static function normalizeCustomProperties(array $properties): array

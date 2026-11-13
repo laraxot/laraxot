@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Filament Widgets — sottocartelle per soggetto (Commentable ≠ Comment)"
 type: concept
 module: Comment
@@ -9,7 +11,8 @@ qmd: "widgets subfolder subject Commentable CommentsWidget CommentableWidget ali
 related:
   - ./actions-domain-subfolders.md
   - ./has-comments-implements-commentable.md
-  - ../../../../docs/wiki/rules/widgets-subject-subfolders.md
+  - ../../../../../docs/wiki/rules/widgets-subject-subfolders.md
+status: draft
 ---
 
 # Widgets — sottocartella = soggetto a cui il widget si lega

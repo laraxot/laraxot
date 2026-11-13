@@ -34,7 +34,7 @@ test('comment resource usa il modello Comment', function (): void {
 });
 
 test('list comments espone azioni approve reject e bulk moderation', function (): void {
-    $table = new CommentsTable();
+    $table = new CommentsTable;
 
     $actions = invokeDeprecatedTableActions($table);
     $bulkActions = $table->getTableBulkActions();
@@ -47,7 +47,7 @@ test('list comments espone azioni approve reject e bulk moderation', function ()
 });
 
 test('list comments definisce colonne id testo e stato moderazione', function (): void {
-    $table = new CommentsTable();
+    $table = new CommentsTable;
     $columns = $table->getTableColumns();
 
     foreach (['id', 'original_text', 'commentator', 'commentable', 'status', 'created_at'] as $key) {
@@ -60,6 +60,6 @@ test('comment resource schema classes exist and delegate zen table', function ()
     Assert::assertNotEmpty($form);
     $infolist = app(CommentInfolist::class)->getInfolistSchema();
     Assert::assertNotEmpty($infolist);
-    Assert::assertNotEmpty((new CommentsTable())->getTableColumns());
-    Assert::assertArrayHasKey('moderation', (new CommentsTable())->getTableFilters());
+    Assert::assertNotEmpty((new CommentsTable)->getTableColumns());
+    Assert::assertArrayHasKey('moderation', (new CommentsTable)->getTableFilters());
 });

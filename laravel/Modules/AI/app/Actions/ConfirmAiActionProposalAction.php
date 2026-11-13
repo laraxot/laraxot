@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace Modules\AI\Actions;
 
 use Illuminate\Support\Carbon;
+use Modules\AI\Enums\AiActionProposalStatusEnum;
 use Modules\AI\Models\AiActionProposal;
-use Modules\AI\Support\AiActionHandlerRegistry;
+use Modules\AI\Adapters\AiActionHandlerRegistry;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -25,7 +26,7 @@ class ConfirmAiActionProposalAction
     public function execute(AiActionProposal $proposal, int $confirmedByUserId): AiActionProposal
     {
         $proposal->forceFill([
-            'status' => AiActionProposal::STATUS_CONFIRMED,
+            'status' => AiActionProposalStatusEnum::CONFIRMED,
             'confirmed_by_user_id' => $confirmedByUserId,
             'confirmed_at' => Carbon::now(),
         ])->save();
@@ -34,7 +35,7 @@ class ConfirmAiActionProposalAction
 
         if ($handler === null) {
             $proposal->forceFill([
-                'status' => AiActionProposal::STATUS_FAILED,
+                'status' => AiActionProposalStatusEnum::FAILED,
                 'error' => "No AiActionHandler registered for type [{$proposal->type}].",
             ])->save();
 
@@ -45,13 +46,13 @@ class ConfirmAiActionProposalAction
             $result = $handler->handle($proposal);
 
             $proposal->forceFill([
-                'status' => AiActionProposal::STATUS_EXECUTED,
+                'status' => AiActionProposalStatusEnum::EXECUTED,
                 'executed_at' => Carbon::now(),
                 'result' => $result,
             ])->save();
         } catch (\Throwable $throwable) {
             $proposal->forceFill([
-                'status' => AiActionProposal::STATUS_FAILED,
+                'status' => AiActionProposalStatusEnum::FAILED,
                 'error' => $throwable->getMessage(),
             ])->save();
         }

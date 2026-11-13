@@ -1,3 +1,11 @@
+---
+title: "Analisi Modelli, Factory e Seeder - Moduli Activity, Gdpr, Tenant, UI, SaluteMo, Xot"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity]
+qmd: "analisi modelli, factory e seeder - moduli activity, gdpr, tenant, ui, salutemo, xot activity"
+---
 # Analisi Modelli, Factory e Seeder - Moduli Activity, Gdpr, Tenant, UI, SaluteMo, Xot
 
 ## Modulo Activity
@@ -184,4 +192,8 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 6. **Xot** - Framework base ✅ Completo
 
 *Ultimo aggiornamento: Gennaio 2025*
+<<<<<<< HEAD
 *Analisi completa sistema SaluteOra: 150+ modelli, 14 moduli*
+=======
+*Analisi completa sistema SaluteOra: 150+ modelli, 14 moduli*
+>>>>>>> 13cf1831 (.)

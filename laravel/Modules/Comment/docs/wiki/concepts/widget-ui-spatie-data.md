@@ -1,4 +1,6 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
 title: Widget FO — stato UI in Spatie Laravel Data
 type: concept
 tags: [comment, filament, widget, spatie-data, livewire, ui]
@@ -10,6 +12,7 @@ discussions:
   - https://github.com/laraxot/module_comment_fila5/discussions/15
 created_at: 2026-06-10
 updated_at: 2026-06-10
+status: draft
 ---
 
 # Widget FO — stato UI in Spatie Laravel Data

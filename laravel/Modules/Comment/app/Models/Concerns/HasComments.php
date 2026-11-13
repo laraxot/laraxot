@@ -7,8 +7,8 @@ namespace Modules\Comment\Models\Concerns;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Collection;
+use Modules\Comment\Actions\Resolve\ResolveCommentatorModelsAction;
 use Modules\Comment\Datas\CommentConfigData;
 use Modules\Comment\Enums\NotificationSubscriptionType;
 use Modules\Comment\Exceptions\CannotCreateComment;
@@ -19,13 +19,17 @@ use RuntimeException;
 
 trait HasComments
 {
-    /** @return MorphMany<Comment, $this> */
-    public function comments(): MorphMany // @phpstan-ignore method.childReturnType
+    /**
+     * Thread di commenti sul soggetto (article, ticket, comment stesso).
+     *
+     * @return MorphMany<Comment, $this>
+     */
+    public function comments(): MorphMany
     {
         /** @var class-string<Comment> $commentClass */
         $commentClass = CommentConfigData::make()->models['comment'];
 
-        return $this->morphMany($commentClass, 'commentable'); // @phpstan-ignore return.type
+        return $this->morphMany($commentClass, 'commentable');
     }
 
     /** @return MorphMany<CommentNotificationSubscription, $this> */
@@ -34,7 +38,7 @@ trait HasComments
         /** @var class-string<CommentNotificationSubscription> $subscriptionClass */
         $subscriptionClass = CommentConfigData::make()->models['comment_notification_subscription'];
 
-        return $this->morphMany($subscriptionClass, 'commentable'); // @phpstan-ignore return.type
+        return $this->morphMany($subscriptionClass, 'commentable');
     }
 
     /** @return Collection<int, CanComment> */
@@ -99,59 +103,22 @@ trait HasComments
     }
 
     /**
+     * Tutti i commentator del commentable, qualunque sia lo stato dei commenti e senza escludere nessuno
+     * (a differenza di {@see Comment::participatingCommentators()}, che parte da un commento).
+     *
      * @return Collection<int, CanComment>
      */
     public function participatingCommentators(): Collection
     {
-        /** @var Collection<int, CanComment> $participants */
-        $participants = $this->comments()
+        $references = $this->comments()
             ->distinct('commentator_id', 'commentator_type')
             ->get()
-            ->map(function (Comment $comment): array {
-                return [
-                    'commentator_id' => $comment->commentator_id,
-                    'commentator_type' => $comment->commentator_type,
-                ];
-            })
-            ->filter(function (array $related): bool {
-                return $related['commentator_type'] !== null;
-            })
-            ->groupBy('commentator_type')
-            ->map(fn (Collection $related): array => $related->pluck('commentator_id')->toArray())
-            ->flatMap(function (array $ids, string $class): Collection {
-                if (! class_exists($class)) {
-                    $resolved = Relation::getMorphedModel($class);
-                    $class = is_string($resolved) ? $resolved : $class;
-                }
+            ->map(fn (Comment $comment): array => [
+                'commentator_id' => $comment->commentator_id,
+                'commentator_type' => $comment->commentator_type,
+            ]);
 
-                if (! class_exists($class)) {
-                    /** @var Collection<int, CanComment> $empty */
-                    $empty = new Collection;
-
-                    return $empty;
-                }
-
-                /** @var class-string<Model> $modelClass */
-                $modelClass = $class;
-                /** @var Model $model */
-                $model = new $modelClass;
-
-                $resolved = $modelClass::query()
-                    ->whereIn($model->getKeyName(), $ids)
-                    ->get()
-                    ->filter(static fn (Model $item): bool => $item instanceof CanComment)
-                    ->map(static fn (Model $item): CanComment => $item);
-
-                /** @var Collection<int, CanComment> $resolved */
-                return $resolved;
-            });
-
-        return $participants->pipe(static function (Collection $collection): Collection {
-            /** @var Collection<int, CanComment> $typed */
-            $typed = $collection;
-
-            return $typed;
-        });
+        return app(ResolveCommentatorModelsAction::class)->execute($references);
     }
 
     abstract public function commentableName(): string;

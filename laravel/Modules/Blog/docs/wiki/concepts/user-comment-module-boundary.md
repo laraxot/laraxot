@@ -12,8 +12,9 @@ discussions:
   - "https://github.com/laraxot/base_predict_fila5/discussions/217"
 related:
   - ../../../../../../docs/wiki/concepts/module-user-comment-dependency-direction.md
-  - ../../../User/docs/wiki/concepts/no-comment-module-dependency.md
-  - ../../../Comment/docs/wiki/concepts/depends-on-user-module.md
+  - ../../../../User/docs/wiki/concepts/no-comment-module-dependency.md
+  - ../../../../Comment/docs/wiki/concepts/depends-on-user-module.md
+status: draft
 ---
 
 # Blog — User e Comment

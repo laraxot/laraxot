@@ -9,14 +9,18 @@
     $commentator = $commentator instanceof CanComment ? $commentator : null;
 @endphp
 
-<section class="comment-section space-y-4" @class(['comment-section-newest-first' => $uiConfig->newestFirst])>
+<section class="cmt-section" @class(['cmt-section--newest-first' => $uiConfig->newestFirst])>
+    <x-comment::styles />
+
+    {{-- Esito dell'ultima azione (pubblicato, in attesa di approvazione): sempre nel DOM, cosi' lo screen reader lo annuncia. --}}
+    <div class="cmt-status" role="status" aria-live="polite">{{ $statusMessage }}</div>
+
     @if($uiConfig->writable && $uiConfig->notifyOptions && Auth::check())
-        <div class="text-end text-sm">
-            <label for="comment-subscription" class="sr-only">{{ __('comment::txt.notification_subscription') }}</label>
+        <div class="cmt-subscription">
+            <label for="comment-subscription" class="cmt-sr-only">{{ __('comment::txt.notification_subscription') }}</label>
             <select
                 id="comment-subscription"
                 wire:change="updateSelectedNotificationSubscriptionType($event.target.value)"
-                class="rounded-md border border-gray-300 text-sm dark:border-gray-600 dark:bg-gray-800"
             >
                 @foreach(NotificationSubscriptionType::cases() as $case)
                     <option value="{{ $case->value }}" @selected($uiConfig->notifySubType === $case->value)>
@@ -35,28 +39,22 @@
 
     @forelse($this->comments as $comment)
         @continue(! $commentPolicy->see($commentator, $comment))
-        @if($uiConfig->showReplies || $uiConfig->showReactions)
-            @livewire(\Modules\Comment\Filament\Widgets\Comment\CommentWidget::class, [
-                'comment' => $comment,
-                'uiConfig' => [
-                    'showAvatar' => $uiConfig->showAvatars,
-                    'newestFirst' => $uiConfig->newestFirst,
-                    'writable' => $uiConfig->writable,
-                    'showReplies' => $uiConfig->showReplies,
-                    'showReactions' => $uiConfig->showReactions,
-                ],
-            ], key('comment-'.$comment->id))
-        @else
-            <x-comment::comment-item :comment="$comment" :show-avatars="$uiConfig->showAvatars" />
-        @endif
+        @livewire(\Modules\Comment\Filament\Widgets\Comment\CommentWidget::class, [
+            'comment' => $comment,
+            'showAvatar' => $uiConfig->showAvatars,
+            'newestFirst' => $uiConfig->newestFirst,
+            'writable' => $uiConfig->writable,
+            'showReplies' => $uiConfig->showReplies,
+            'showReactions' => $uiConfig->showReactions,
+        ], key('comment-'.$comment->id))
     @empty
-        <p class="text-sm text-gray-500 dark:text-gray-400">
+        <p class="cmt-empty">
             {{ $uiConfig->noCommentsText ?? __('comment::txt.no_comments') }}
         </p>
     @endforelse
 
     @if($this->comments->hasPages())
-        <div class="mt-3">
+        <div class="cmt-pagination">
             {{ $this->comments->links() }}
         </div>
     @endif

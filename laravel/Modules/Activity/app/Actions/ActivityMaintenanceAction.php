@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Activity\Actions;
 
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use InvalidArgumentException;
 use Modules\Activity\Models\Activity;
@@ -29,10 +29,10 @@ class ActivityMaintenanceAction
         }
 
         $deleted = 0;
-        Activity::where('created_at', '<', now()->subDays($days))
+        Activity::typedQuery()->where('created_at', '<', now()->subDays($days))
             ->chunkById(1000, function (Collection $chunk) use (&$deleted): void {
                 $deleted += $chunk->count();
-                Activity::whereIn('id', $chunk->pluck('id'))->delete();
+                Activity::typedQuery()->whereIn('id', $chunk->pluck('id')->all())->delete();
             });
 
         Log::debug('Old activities cleaned', [

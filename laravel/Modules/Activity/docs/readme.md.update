@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Aggiornamento README Activity - Sezione Testing
 
 ## Sezione da Aggiungere
@@ -64,3 +65,12 @@ php artisan test --filter=Snapshot
 php artisan test Modules/Activity --coverage
 ```
 
+=======
+---
+module: theme
+topic: readme.md
+canonical: ../../../Themes/docs/shared-components/README.md.update
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/README.md.update
+>>>>>>> 13cf1831 (.)

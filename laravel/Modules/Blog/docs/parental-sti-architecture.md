@@ -1,3 +1,15 @@
+---
+title: "parental sti architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "parental sti architecture"
+issues: []
+discussions: []
+status: draft
+---
+
 # Parental/STI Architecture - Blog & Predict
 
 **Data**: 2026-03-20  
@@ -6,7 +18,6 @@
 **Package**: [tightenco/parental](https://github.com/tighten/parental)
 
 ---
-
 ## 🔴 CRITICAL: Multi-Database Architecture
 
 ### Database Configuration

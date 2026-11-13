@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\AI\Actions;
 
-use OpenAI\OpenAI;
 use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\preg_split;
@@ -41,56 +40,23 @@ class ContextCompressorAction
     {
         try {
             $apiKey = getenv('OPENAI_API_KEY');
-            if (! class_exists('OpenAI\OpenAI') || ! is_string($apiKey) || $apiKey === '') {
-                return null;
-            }
-
-            $client = OpenAI::client($apiKey);
-            if (! is_object($client)) {
-                return null;
-            }
-
-            $clientVars = get_object_vars($client);
-            $responses = $clientVars['responses'] ?? null;
-            if (! is_object($responses) || ! method_exists($responses, 'create')) {
+            if (! class_exists(\OpenAI::class) || ! is_string($apiKey) || $apiKey === '') {
                 return null;
             }
 
             $prompt = "Compress the following text preserving key facts and meaning. Target characters: {$targetChars}\n\n".$text;
-            $response = $responses->create([
+            $response = \OpenAI::client($apiKey)->responses()->create([
                 'model' => 'gpt-4o-mini',
                 'input' => $prompt,
                 'max_output_tokens' => 3200,
             ]);
 
-            return self::extractCompressedText($response);
+            $compressed = trim($response->outputText ?? '');
+
+            return $compressed === '' ? null : $compressed;
         } catch (\Throwable) {
             return null;
         }
-    }
-
-    private static function extractCompressedText(mixed $response): ?string
-    {
-        if (! is_array($response) || ! isset($response['output']) || ! is_array($response['output'])) {
-            return null;
-        }
-
-        foreach ($response['output'] as $outputItem) {
-            if (! is_array($outputItem) || ! isset($outputItem['content']) || ! is_array($outputItem['content'])) {
-                continue;
-            }
-
-            foreach ($outputItem['content'] as $contentItem) {
-                if (is_array($contentItem) && isset($contentItem['text']) && is_string($contentItem['text'])) {
-                    $textOut = trim($contentItem['text']);
-                    if ($textOut !== '') {
-                        return $textOut;
-                    }
-                }
-            }
-        }
-
-        return null;
     }
 
     private static function extractiveFallback(string $text, int $targetChars): string

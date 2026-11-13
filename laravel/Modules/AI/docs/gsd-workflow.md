@@ -1,3 +1,15 @@
+---
+title: "gsd workflow"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "gsd workflow"
+issues: []
+discussions: []
+status: draft
+---
+
 # GSD Workflow — Modulo AI
 
 > Workflow spec-driven per lo sviluppo del modulo AI usando GSD e BMAD.

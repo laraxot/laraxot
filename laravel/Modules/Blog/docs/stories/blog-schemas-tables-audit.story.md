@@ -1,4 +1,10 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "blog schemas tables audit.story"
+issues: []
+discussions: []
 title: "Blog: Schemas/Tables audit — UserResource assente"
 type: bmad-story
 module: Blog

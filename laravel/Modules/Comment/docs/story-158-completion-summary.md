@@ -1,4 +1,9 @@
 ---
+type: note
+tags: [documentation]
+qmd: "story 158 completion summary"
+issues: []
+discussions: []
 title: "STORY-158: Native Comments Engine Completion Summary"
 created: 2026-06-08
 updated: 2026-06-08

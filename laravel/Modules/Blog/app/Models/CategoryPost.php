@@ -14,9 +14,9 @@ use Modules\Xot\Contracts\ProfileContract;
 /**
  * Modules\Blog\Models\CategoryPost.
  *
- * @property string      $id
- * @property int         $category_id
- * @property int         $post_id
+ * @property string $id
+ * @property int $category_id
+ * @property int $post_id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
@@ -45,13 +45,13 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
  *
- * @method static CategoryPost|null             first()
+ * @method static CategoryPost|null first()
  * @method static Collection<int, CategoryPost> get()
- * @method static CategoryPost                  create(array<string, mixed> $attributes = [])
- * @method static CategoryPost                  firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
- * @method static Builder<static>|CategoryPost  where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
- * @method static Builder<static>|CategoryPost  whereNotNull((string|Expression) $columns)
- * @method static int                           count(string $columns = '*')
+ * @method static CategoryPost create(array<string, mixed> $attributes = [])
+ * @method static CategoryPost firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
+ * @method static Builder<static>|CategoryPost where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
+ * @method static Builder<static>|CategoryPost whereNotNull((string|Expression) $columns)
+ * @method static int count(string $columns = '*')
  *
  * @property ProfileContract|null $deleter
  *

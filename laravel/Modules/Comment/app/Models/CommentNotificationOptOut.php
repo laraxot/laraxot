@@ -14,7 +14,6 @@ use Modules\Comment\Datas\CommentConfigData;
 /**
  * @property int|string|null $commentator_id
  * @property string|null $commentator_type
- *
  * @property-read Model|null $commentable
  * @property-read Model|null $commentator
  *
@@ -26,7 +25,7 @@ class CommentNotificationOptOut extends BaseModel
 {
     protected $guarded = [];
 
-    /** @return \Illuminate\Database\Eloquent\Relations\BelongsTo<Model, $this> */
+    /** @return BelongsTo<Model, $this> */
     public function user(): BelongsTo
     {
         $commentatorClass = CommentConfigData::make()->models['commentator'] ?? null;

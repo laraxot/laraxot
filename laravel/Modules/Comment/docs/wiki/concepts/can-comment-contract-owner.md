@@ -1,8 +1,14 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "can comment contract owner"
+issues: []
+discussions: []
 title: Modulo Comment - Governance
 type: concept
 tags: [comment, modulo, governance, architecture]
 date: '2026-06-29'
+status: draft
 ---
 
 # Comment Module Governance

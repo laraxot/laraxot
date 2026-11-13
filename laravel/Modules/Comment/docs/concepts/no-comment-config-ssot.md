@@ -12,8 +12,9 @@ discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/323"
 related:
   - ./actions-domain-subfolders.md
-  - ../../../../docs/wiki/rules/no-comment-config-ssot.md
-  - ../../../../docs/stories/STORY-292-remove-comment-config.md
+  - ../../../../../docs/wiki/rules/no-comment-config-ssot.md
+  - ../../../../../docs/stories/STORY-292-remove-comment-config.md
+status: draft
 ---
 
 # config/comments.php — unica fonte, zero facade statica

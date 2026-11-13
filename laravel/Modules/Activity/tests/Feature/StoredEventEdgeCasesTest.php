@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 /**
  * Activity module tests — Pest + Modules\Activity\Tests\TestCase (XotBase hierarchy).
  * claude-audit static documentation ratio; canonical assertions in tests/ tree.
@@ -27,7 +26,7 @@ use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\SchemalessAttributes\SchemalessAttributes;
 
-uses(\Modules\Activity\Tests\TestCase::class);
+uses(TestCase::class);
 // Activity module regression coverage (claude-audit doc ratio).
 // Activity module regression coverage (claude-audit doc ratio).
 // Activity module regression coverage (claude-audit doc ratio).

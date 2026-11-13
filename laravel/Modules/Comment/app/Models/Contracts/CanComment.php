@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Modules\Comment\Models\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
-use Modules\Comment\Enums\NotificationSubscriptionType;
 use Modules\Comment\Datas\CommentatorProperties;
+use Modules\Comment\Enums\NotificationSubscriptionType;
 
 /**
  * Capacità commentator — owner **Comment** (dominio moderazione/FO).
@@ -19,17 +19,24 @@ interface CanComment
 {
     public function commentatorProperties(): CommentatorProperties;
 
-    /** @return int|string|null */
-    public function getKey();
-
-    /** @return string */
-    public function getMorphClass();
+    /**
+     * Chiave primaria — delega a `Model::getKey()`.
+     *
+     * Il tipo nativo e' obbligatorio: i modelli che implementano questo contratto
+     * (Predict\\User, Blog\\DemoCommentator, CommentatorUser dei test) lo re-dichiarano
+     * con lo stesso tipo per la covariance PHP.
+     */
+    public function getKey(): mixed;
 
     /**
-     * @param  mixed  $instance
-     * @return void
+     * Morph class — delega a `Model::getMorphClass()`.
      */
-    public function notify($instance);
+    public function getMorphClass(): string;
+
+    /**
+     * Notifica — compatibile con `Notifiable::notify($instance)` del framework.
+     */
+    public function notify(mixed $instance): void;
 
     /**
      * @param  Model&Commentable  $hasComments

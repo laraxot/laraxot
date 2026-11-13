@@ -26,7 +26,7 @@ class RecordSubjectActivityAction
         ?string $description = null,
     ): Activity {
         /** @var Activity */
-        return Activity::create([
+        return Activity::typedQuery()->create([
             'log_name' => 'default',
             'description' => $description ?? sprintf('%s %s', class_basename($subjectType), $event),
             'subject_type' => $subjectType,

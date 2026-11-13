@@ -7,6 +7,7 @@ namespace Modules\AI\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use Modules\AI\Enums\AiActionProposalStatusEnum;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Models\XotBaseModel;
 
@@ -26,7 +27,7 @@ use Modules\Xot\Models\XotBaseModel;
  * @property string $type
  * @property array<string, mixed> $payload
  * @property string|null $preview
- * @property string $status
+ * @property AiActionProposalStatusEnum $status
  * @property int|null $confirmed_by_user_id
  * @property Carbon|null $confirmed_at
  * @property Carbon|null $executed_at
@@ -42,20 +43,9 @@ use Modules\Xot\Models\XotBaseModel;
  * @method static Builder<static>|AiActionProposal newQuery()
  * @method static Builder<static>|AiActionProposal query()
  *
- * @mixin \Eloquent
  */
 class AiActionProposal extends XotBaseModel
 {
-    public const string STATUS_PENDING = 'pending';
-
-    public const string STATUS_CANCELLED = 'cancelled';
-
-    public const string STATUS_CONFIRMED = 'confirmed';
-
-    public const string STATUS_EXECUTED = 'executed';
-
-    public const string STATUS_FAILED = 'failed';
-
     /**
      * @var list<string>
      */
@@ -83,6 +73,7 @@ class AiActionProposal extends XotBaseModel
             'public_id' => 'string',
             'payload' => 'array',
             'result' => 'array',
+            'status' => AiActionProposalStatusEnum::class,
             'confirmed_at' => 'datetime',
             'executed_at' => 'datetime',
             'created_at' => 'datetime',

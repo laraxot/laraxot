@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_dvArvi
+=======
+---
+title: "Activity Module - Product Launch Plan"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity]
+qmd: "activity module - product launch plan activity"
+---
+>>>>>>> .merge_file_ik5FTS
 # Activity Module - Product Launch Plan
 
 **Module:** Activity  

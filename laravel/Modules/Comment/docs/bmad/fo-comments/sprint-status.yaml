@@ -1,0 +1,42 @@
+# GateGuard: none prior; linked from README/epics; BMAD sprint tracker;
+# user: crea tutte le bmad stories e documenti.
+---
+title: sprint-status-fo-comments
+module: Comment
+updated: "2026-10-26"
+initiative: fo-comments-filament
+stories:
+  CMT-010:
+    status: verify
+  CMT-011:
+    status: superseded_by_CMT-016
+  CMT-012:
+    status: superseded_by_CMT-016
+  CMT-013:
+    status: superseded_by_CMT-017
+  CMT-014:
+    status: verify
+  CMT-015:
+    status: done_verify
+  CMT-016:
+    status: done
+    owner_scope: Themes/Sixteen/.../blog/detail + events/detail
+  CMT-017:
+    status: done
+    owner_scope: Modules/Fixcity/.../ticket-comments*
+  CMT-018:
+    status: done
+    owner_scope: Modules/Comment/app/Http/Livewire + views/livewire
+  CMT-019:
+    status: ready-for-dev
+  CMT-020:
+    status: ready-for-dev
+  CMT-021:
+    status: ready-for-dev
+  CMT-022:
+    status: done
+    owner_scope: Modules/Comment (widget, viste, CSS, lang, test) + Themes/Sixteen (blocchi, postcss) + Modules/User (StoreIntendedUrlAction)
+  CMT-023:
+    status: blocked_decision_D-CMT-6
+  CMT-024:
+    status: backlog

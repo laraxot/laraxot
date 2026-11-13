@@ -1,4 +1,12 @@
-# Activity Module — Database Connection: Pattern Corretto
+---
+title: "Activity Module: Database Connection: Pattern Corretto"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, activity, architecture]
+qmd: "activity module   database connection: pattern corretto activity"
+---
+# Activity Module: Database Connection: Pattern Corretto
 
 ## Regola definitiva
 
@@ -16,7 +24,7 @@ Questo vale per: `BaseModel`, `Activity`, `Snapshot`, `StoredEvent`.
 ## Perché `/** @var string */` e NON `/** @var string|null */`
 
 - La connessione `'activity'` è **garantita e sempre presente** in `database.php`
-- Il tipo `string` (non nullable) è più preciso — non c'è caso in cui la connessione sia null
+- Il tipo `string` (non nullable) è più preciso: non c'è caso in cui la connessione sia null
 - `XotBaseModel` usa la stessa convenzione: `/** @var string */ $connection = 'xot'`
 - I moduli che sovrascrivono `$connection` mantengono il tipo `string` non nullable
 
@@ -52,10 +60,12 @@ Il **doppio fallback** `env('DB_DATABASE_ACTIVITY', env('DB_DATABASE'))` è la c
 
 ---
 
-## .env.testing — NESSUNA variabile ACTIVITY
+## .env.testing: NESSUNA variabile ACTIVITY
 
 ```bash
+<<<<<<< .merge_file_zAIF5k
 # ✅ CORRETTO — .env.testing
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 DB_DATABASE=<nome progetto>_data_test
@@ -65,12 +75,22 @@ DB_DATABASE=techplanner_data_test
 =======
 DB_DATABASE=techplanner_data_test
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+# ✅ CORRETTO: .env.testing
+DB_DATABASE=<nome progetto>_data_test=======
+DB_DATABASE=techplanner_data_test
+>>>>>>> .merge_file_WrIoz4
+=======
+DB_DATABASE=<nome progetto>_data_test
+>>>>>>> 13cf1831 (.)
 DB_USERNAME=marco
-DB_PASSWORD=marco
+DB_PASSWORD=[segreto locale, non nel repo]
 # NESSUNA DB_DATABASE_ACTIVITY, DB_USERNAME_ACTIVITY, DB_PASSWORD_ACTIVITY
 ```
 
 Il fallback in `database.php` garantisce che la connessione `activity` usi automaticamente
+<<<<<<< HEAD
+<<<<<<< .merge_file_zAIF5k
 <<<<<<< HEAD
 <<<<<<< HEAD
 `<nome progetto>_data_test` senza configurazione aggiuntiva nei test.
@@ -80,10 +100,17 @@ Il fallback in `database.php` garantisce che la connessione `activity` usi autom
 =======
 `techplanner_data_test` senza configurazione aggiuntiva nei test.
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+`<nome progetto>_data_test` senza configurazione aggiuntiva nei test.=======
+`techplanner_data_test` senza configurazione aggiuntiva nei test.
+>>>>>>> .merge_file_WrIoz4
+=======
+`<nome progetto>_data_test` senza configurazione aggiuntiva nei test.
+>>>>>>> 13cf1831 (.)
 
 ---
 
-## TestCase — connectionsToTransact
+## TestCase: connectionsToTransact
 
 Il `TestCase` del modulo Activity deve includere `'activity'` per il rollback automatico:
 
@@ -100,14 +127,14 @@ protected $connectionsToTransact = [
 ## Anti-Pattern da evitare
 
 ```php
-// ❌ SBAGLIATO — nullable quando non serve
+// ❌ SBAGLIATO: nullable quando non serve
 /** @var string|null */
 protected $connection = 'activity';
 
-// ❌ SBAGLIATO — null annulla la connessione dedicata, usa mysql default
+// ❌ SBAGLIATO: null annulla la connessione dedicata, usa mysql default
 protected $connection = null;
 
-// ❌ SBAGLIATO — nessuna connessione = eredita 'xot' da XotBaseModel
+// ❌ SBAGLIATO: nessuna connessione = eredita 'xot' da XotBaseModel
 // (per modelli Activity NON è corretto usare la connessione 'xot')
 ```
 
@@ -115,7 +142,7 @@ protected $connection = null;
 
 ## Lezione appresa
 
-- La connessione `'activity'` deve **esistere in database.php** — senza di essa tutti i test falliscono
+- La connessione `'activity'` deve **esistere in database.php**: senza di essa tutti i test falliscono
 - Il fallback `env('DB_DATABASE_ACTIVITY', env('DB_DATABASE'))` permette testing senza DB separato
 - Il pattern `user` (OAuth/Passport) e il pattern `activity` seguono la stessa logica: connessione named con fallback
 - Doc correlata: `laravel/Modules/Activity/docs/database-connections.md`

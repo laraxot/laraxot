@@ -10,7 +10,7 @@ use Modules\Comment\Tests\Support\ParityCommentatorStub;
 use Modules\Comment\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('CommentConfigData make legge allow_anonymous_comments da config', function (): void {
     config(['comments.allow_anonymous_comments' => true]);

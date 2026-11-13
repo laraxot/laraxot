@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_mkpwDB
+=======
+---
+title: "Testing Bank (Event Sourcing)"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity, use_cases]
+qmd: "testing bank (event sourcing) activity"
+---
+>>>>>>> .merge_file_zWET9Z
 # Testing Bank (Event Sourcing)
 
 ## Unit Test

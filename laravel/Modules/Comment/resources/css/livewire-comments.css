@@ -1,11 +1,328 @@
-.comment-section {
-    --comment-gap: 1rem;
+/*
+ * Commenti del front office (CMT-022). Prefisso cmt-: il tema Bootstrap Italia / Design Comuni non compila le utility Tailwind
+ * (un pulsante `bg-blue-600 text-white` restava bianco su bianco), quindi gli stili stanno qui e usano solo variabili del tema
+ * con un valore di ripiego. Pulsanti e link-azione sono elementi nativi (`cmt-btn`, `cmt-link`): sulle pagine Design Comuni il CSS `fi-*`
+ * e' spento dal plugin PostCSS del tema. L'editor Markdown e' il campo Filament e riceve gli stili del vendor (Themes/Sixteen/postcss).
+ */
+.cmt-section {
+    --cmt-border: var(--bs-border-color, #d9dadb);
+    --cmt-muted: var(--bs-secondary-color, #4d5a68);
+    --cmt-accent: var(--bs-primary, #0066cc);
+    --cmt-danger: #b3261e;
+    --cmt-success: #00694a;
+    --cmt-field-border: #5c6f82;
+
+    display: grid;
+    gap: 1rem;
 }
 
-.comment-section-newest-first .comment-thread:last-of-type {
+.cmt-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Esito dell'ultima azione: sempre nel DOM per lo screen reader, visibile solo quando c'e' un messaggio. */
+.cmt-status {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--cmt-muted);
+}
+
+.cmt-status:empty {
+    display: none;
+}
+
+.cmt-empty {
+    margin: 0;
+    color: var(--cmt-muted);
+}
+
+.cmt-subscription {
+    text-align: end;
+    font-size: 0.875rem;
+}
+
+.cmt-section > .cmt-comment + .cmt-comment {
+    border-top: 1px solid var(--cmt-border);
+    padding-top: 1rem;
+}
+
+.cmt-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.cmt-content {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.cmt-avatar {
+    flex: 0 0 auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cmt-avatar--initials {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cmt-accent);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.cmt-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.cmt-author {
+    font-weight: 600;
+}
+
+.cmt-time {
+    font-size: 0.8125rem;
+    color: var(--cmt-muted);
+}
+
+.cmt-body {
+    overflow-wrap: anywhere;
+}
+
+.cmt-body > :last-child {
     margin-bottom: 0;
 }
 
-.comment-thread .prose p {
-    margin-bottom: 0.25rem;
+.cmt-body p,
+.cmt-body ul,
+.cmt-body ol,
+.cmt-body blockquote {
+    margin: 0 0 0.5rem;
+}
+
+.cmt-body ul,
+.cmt-body ol {
+    padding-inline-start: 1.25rem;
+}
+
+.cmt-body blockquote {
+    padding-inline-start: 0.75rem;
+    border-inline-start: 3px solid var(--cmt-border);
+    color: var(--cmt-muted);
+}
+
+.cmt-pending {
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+    color: var(--cmt-muted);
+}
+
+.cmt-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 1rem;
+    margin-top: 0.25rem;
+}
+
+.cmt-actions:empty {
+    display: none;
+}
+
+.cmt-reactions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+.cmt-reaction {
+    padding: 0.125rem 0.5rem;
+    border: 1px solid var(--cmt-border);
+    border-radius: 999px;
+    background: transparent;
+    font-size: 0.875rem;
+}
+
+.cmt-form {
+    margin-top: 0.75rem;
+}
+
+.cmt-form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.cmt-replying-to {
+    margin: 0 0 0.5rem;
+    font-size: 0.875rem;
+    color: var(--cmt-muted);
+}
+
+/* Le risposte rientrano poco: a 320 px con tre livelli la colonna del testo deve restare leggibile. */
+.cmt-replies {
+    margin: 0.75rem 0 0;
+    padding: 0 0 0 0.75rem;
+    list-style: none;
+    border-inline-start: 2px solid var(--cmt-border);
+}
+
+.cmt-replies-item + .cmt-replies-item {
+    margin-top: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .cmt-replies {
+        padding-inline-start: 1.25rem;
+    }
+}
+
+/* Dal secondo livello in poi, su schermi stretti, niente avatar: il testo non deve restare in una colonna di pochi caratteri. */
+@media (max-width: 575.98px) {
+    .cmt-replies .cmt-replies .cmt-avatar {
+        display: none;
+    }
+}
+
+/*
+ * Pulsanti e link-azione: elementi nativi, non componenti Filament, perche' sulle pagine Design Comuni il CSS `fi-*` e' spento dal tema.
+ * Il tema azzera ogni <button> con `body:has(.page-content[data-dc]) button { background: transparent; padding: 0; color: inherit }`
+ * (specificita' 0,2,2): per batterlo senza `!important` i selettori sono `.cmt-section button.cmt-btn[type]` (0,3,1).
+ */
+.cmt-section button.cmt-btn[type] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font: inherit;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.cmt-section button.cmt-btn--primary[type] {
+    background: var(--cmt-accent);
+    border-color: var(--cmt-accent);
+    color: #fff;
+}
+
+.cmt-section button.cmt-btn--primary[type]:hover {
+    filter: brightness(0.88);
+}
+
+.cmt-section button.cmt-btn--secondary[type] {
+    background: transparent;
+    border-color: var(--cmt-accent);
+    color: var(--cmt-accent);
+}
+
+.cmt-section button.cmt-btn--secondary[type]:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.cmt-section button.cmt-btn[type][disabled] {
+    opacity: 0.6;
+    cursor: progress;
+}
+
+.cmt-section button.cmt-link[type] {
+    padding: 0.25rem 0.125rem;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--cmt-accent);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cmt-section button.cmt-link--danger[type] {
+    color: var(--cmt-danger);
+}
+
+.cmt-section button.cmt-link--success[type] {
+    color: var(--cmt-success);
+}
+
+.cmt-section button.cmt-btn[type]:focus-visible,
+.cmt-section button.cmt-link[type]:focus-visible {
+    outline: 3px solid var(--cmt-accent);
+    outline-offset: 2px;
+}
+
+/* Il campo e' un MarkdownEditor Filament: etichetta, riquadro, aiuto ed errore (id che finisce per -helper-text / -error) li disegna il modulo. */
+.cmt-form .fi-fo-field-label-content {
+    font-weight: 600;
+}
+
+.cmt-form .fi-fo-field-label-required-mark {
+    margin-inline-start: 0.125rem;
+    color: var(--cmt-danger);
+}
+
+.cmt-form .fi-input-wrp {
+    border: 1px solid var(--cmt-field-border);
+    border-radius: 0.25rem;
+    background: #fff;
+}
+
+.cmt-form .fi-input-wrp:focus-within {
+    outline: 3px solid var(--cmt-accent);
+    outline-offset: 2px;
+}
+
+.cmt-form .fi-input-wrp.fi-invalid {
+    border-color: var(--cmt-danger);
+}
+
+/* Il monospace lo imposta `.fi-fo-markdown-editor`: `inherit` su `.CodeMirror` da solo lo riceverebbe dal padre, per questo si parte dal riquadro. */
+.cmt-form .fi-fo-markdown-editor,
+.cmt-form .CodeMirror {
+    font-family: inherit;
+    font-size: 1rem;
+    color: inherit;
+}
+
+.cmt-form [id$="-helper-text"] {
+    font-size: 0.875rem;
+    color: var(--cmt-muted);
+}
+
+.cmt-form [id$="-error"] {
+    font-size: 0.875rem;
+    color: var(--cmt-danger);
+}
+
+.cmt-section button.cmt-reaction[type] {
+    padding: 0.125rem 0.5rem;
+    border: 1px solid var(--cmt-border);
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Il segnaposto di CodeMirror e' un <pre> senza la classe delle righe: prende il monospace del browser se non lo si eredita. */
+.cmt-form .CodeMirror pre {
+    font-family: inherit;
 }

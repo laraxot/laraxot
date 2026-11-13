@@ -1,4 +1,16 @@
+<<<<<<< .merge_file_GruKZz
 # Activity — Migrazioni
+=======
+---
+title: "Activity: Migrazioni"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity]
+qmd: "activity   migrazioni activity"
+---
+# Activity: Migrazioni
+>>>>>>> .merge_file_cknjYZ
 
 Bridge minimale alla **fonte canonica**:
 

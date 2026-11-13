@@ -11,7 +11,8 @@ issues:
 discussions:
   - "https://github.com/laraxot/module_comment_fila5/discussions/19"
 related:
-  - ../../../../docs/wiki/rules/no-module-livewire-use-filament-widgets.md
+  - ../../../../../docs/wiki/rules/no-module-livewire-use-filament-widgets.md
+status: draft
 ---
 
 # No `Http/Livewire` — Filament widgets

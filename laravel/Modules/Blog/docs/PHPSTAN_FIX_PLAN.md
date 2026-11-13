@@ -1,3 +1,15 @@
+---
+title: "PHPSTAN FIX PLAN"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PHPSTAN FIX PLAN"
+issues: []
+discussions: []
+status: draft
+---
+
 # Blog Module - PHPStan Level 10 Fix Plan
 
 ## Analysis Date

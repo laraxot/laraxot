@@ -4,82 +4,69 @@ declare(strict_types=1);
 
 namespace Modules\AI\Actions\Prompt;
 
+/**
+ * Template dei prompt per le varie operazioni AI.
+ *
+ * Contiene i prompt costruiti in modo statico per tipo; i valori vengono iniettati
+ * tramite placeholder. I template sono riusati da `BuildAIPromptAction` e da
+ * `ClassifyTicketAction`/`SuggestSolutionsAction`.
+ */
 final class AIPromptTemplates
 {
-    public const string ROUTING_JSON = <<<'JSON'
-{
-  "assignments": [
+    /**
+     * Prompt per la classificazione automatica di un ticket.
+     */
+    public static function classification(string $title, string $description): string
     {
-      "ticket_id": 123,
-      "agent_id": 456,
-      "reason": "motivazione assegnazione",
-      "estimated_completion": "2024-01-15",
-      "confidence": 0.85
-    }
-  ],
-  "unassigned_tickets": [789],
-  "overload_warnings": ["agent1 ha troppi ticket"],
-  "efficiency_score": 0.92
-}
-JSON;
+        return "Classifica il seguente ticket per il servizio di gestione ticket cittadini:
 
-    public const string PATTERN_JSON = <<<'JSON'
+Titolo: {$title}
+Descrizione: {$description}
+
+Categorie disponibili:
+- infrastruttura (strade, ponti, illuminazione, segnaletica)
+- ambiente (rifiuti, inquinamento, verde pubblico)
+- trasporti (trasporto pubblico, parcheggi, ciclabili)
+- sicurezza (sicurezza urbana, emergenze)
+- servizi (uffici pubblici, documenti, pratiche)
+- altro
+
+Rispondi in formato JSON con:
 {
-  "temporal_trends": {
-    "peak_hours": ["9-11", "14-16"],
-    "peak_days": ["lunedì", "martedì"],
-    "seasonal_patterns": {"estate": "+20%"}
-  },
-  "geographic_hotspots": [
-    {"area": "centro", "count": 45, "trend": "increasing"}
-  ],
-  "category_insights": {
-    "most_common": "infrastruttura",
-    "growing": "ambiente",
-    "declining": "trasporti"
-  },
-  "recommendations": [
-    "Aumentare personale nelle ore di picco",
-    "Focus su area centro"
-  ]
-}
-JSON;
+  \"category\": \"categoria_principale\",
+  \"subcategory\": \"sottocategoria\",
+  \"confidence\": 0.95,
+  \"tags\": [\"tag1\", \"tag2\"],
+  \"urgency_indicators\": [\"indicatore1\", \"indicatore2\"]
+}";
+    }
 
-    public const string IMPROVEMENTS_JSON = <<<'JSON'
+    /**
+     * Prompt per il suggerimento di soluzioni per un ticket.
+     */
+    public static function solutions(string $title, string $description, string $category): string
+    {
+        return "Suggerisci soluzioni per questo ticket di {$category}:
 
-Fornisci suggerimenti per:
-- Processi operativi
-- Tecnologie
-- Formazione personale
-- Comunicazione cittadini
-- Metriche di performance
+Titolo: {$title}
+Descrizione: {$description}
+
+Fornisci 3-5 soluzioni pratiche e concrete, specifiche per il contesto italiano e le amministrazioni pubbliche.
 
 Rispondi in formato JSON:
 {
-  "process_improvements": [
+  \"solutions\": [
     {
-      "area": "assegnazione ticket",
-      "suggestion": "Implementare sistema di priorità dinamica",
-      "impact": "high",
-      "effort": "medium"
+      \"title\": \"Titolo soluzione\",
+      \"description\": \"Descrizione dettagliata\",
+      \"steps\": [\"passo1\", \"passo2\"],
+      \"estimated_time\": \"2-3 giorni\",
+      \"required_resources\": [\"risorsa1\", \"risorsa2\"],
+      \"priority\": \"high|medium|low\"
     }
   ],
-  "technology_upgrades": [
-    {
-      "technology": "AI routing",
-      "description": "Sistema di assegnazione automatica",
-      "benefits": ["efficienza", "soddisfazione"],
-      "cost_estimate": "€50k"
+  \"preventive_measures\": [\"misura1\", \"misura2\"],
+  \"follow_up_actions\": [\"azione1\", \"azione2\"]
+}";
     }
-  ],
-  "training_recommendations": [
-    {
-      "role": "operatori",
-      "topics": ["comunicazione", "tecniche risoluzione"],
-      "format": "workshop",
-      "duration": "2 giorni"
-    }
-  ]
-}
-JSON;
 }

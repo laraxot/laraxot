@@ -1,4 +1,5 @@
 ---
+discussions: []
 title: "Architettura commenti nativi — post-Spatie"
 type: concept
 module: Comment
@@ -13,8 +14,9 @@ related:
   - spatie-package-inventory.md
   - spatie-comments-fo-ticket-integration.md
   - ../decisions/adr-internalize-spatie-comments.md
-  - ../../../../../docs/wiki/memories/no-laravel-app-services-nwidart.md
-  - ../../../../../docs/wiki/decisions/ticket-fo-spatie-comments.md
+  - ../../../../../../docs/wiki/memories/no-laravel-app-services-nwidart.md
+  - ../../../../../../docs/wiki/decisions/ticket-fo-spatie-comments.md
+status: draft
 ---
 
 # Architettura commenti nativi (Modules\Comment)

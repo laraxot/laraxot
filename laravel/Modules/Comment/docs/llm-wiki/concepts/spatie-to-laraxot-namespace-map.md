@@ -1,10 +1,15 @@
 ---
+type: note
+qmd: "spatie to laraxot namespace map"
+issues: []
+discussions: []
 title: "Spatie to Native Namespace Migration Map"
 created: 2026-06-08
 updated: 2026-06-08
 category: "architecture"
 tags: ["comment", "migration", "namespace", "reference"]
 related_issues: ["STORY-158"]
+status: draft
 ---
 
 # Spatie to Native Namespace Migration Map

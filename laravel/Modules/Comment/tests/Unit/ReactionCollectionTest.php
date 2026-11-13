@@ -8,7 +8,7 @@ use Modules\Comment\Tests\Support\ParityCommentatorStub;
 use Modules\Comment\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('ReactionCollection summary returns reaction count and commentator_reacted parity Spatie', function (): void {
     $commentator = new ParityCommentatorStub(1);

@@ -1,4 +1,12 @@
 ---
+title: "ai root md txt hygiene.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ai root md txt hygiene.story"
+issues: []
+discussions: []
 name: ai-root-md-txt-hygiene
 description: Pulizia file .txt in root del modulo AI, spostati sotto docs/root-txt-files/
 status: done

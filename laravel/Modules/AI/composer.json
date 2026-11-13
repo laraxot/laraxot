@@ -1,6 +1,6 @@
 {
     "name": "laraxot/module_ai_fila5",
-    "description": "AI integration module for the Laraxot ecosystem",
+    "description": "",
     "homepage": "https://github.com/laraxot/module_ai_fila5",
     "license": "MIT",
     "authors": [
@@ -16,7 +16,9 @@
                 "Modules\\AI\\Providers\\AIServiceProvider",
                 "Modules\\AI\\Providers\\Filament\\AdminPanelProvider"
             ],
-            "aliases": {}
+            "aliases": {
+
+            }
         }
     },
     "autoload": {
@@ -32,11 +34,20 @@
         }
     },
     "require": {
-        "openai-php/laravel": "^0.20",
-        "php": "^8.3"
+        "openai-php/laravel": "*"
     },
-    "require-dev": {
-        "codewithkyrian/transformers": "^0.5.2"
+    "require-dev_comment": {
+        "codewithkyrian/transformers": "^0.5.2",
+        "laravel/pint": "^1.13",
+        "nunomaduro/phpinsights": "^2.11",
+        "larastan/larastan": "*",
+        "vimeo/psalm": "^5.17",
+        "psalm/plugin-laravel": "^2.8",
+        "enlightn/enlightn": "^2.7",
+        "driftingly/rector-laravel": "^0.26.2",
+        "symplify/phpstan-rules": "*",
+        "rector/rector": "^0.18.12",
+        "thecodingmachine/phpstan-safe-rule": "^1.2"
     },
     "repositories": [
         {
@@ -53,7 +64,6 @@
         }
     ],
     "config": {
-        "sort-packages": true,
         "allow-plugins": {
             "php-http/discovery": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,

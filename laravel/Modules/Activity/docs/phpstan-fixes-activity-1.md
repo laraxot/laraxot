@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Correzioni PHPStan - Modulo Activity
 
 ## 🚨 Errori PHPStan Risolti
@@ -44,12 +45,15 @@ $activities = \Modules\Activity\Database\Factories\ActivityFactory::new()
 
 *Ultimo aggiornamento: gennaio 2025*
 =======
+=======
+>>>>>>> 13cf1831 (.)
 ---
 module: theme
 topic: phpstan-fixes-activity-1
 canonical: ../../../Themes/docs/shared-components/phpstan-fixes-activity-1.md
 ---
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -64,3 +68,6 @@ See canonical documentation: ../../../Themes/docs/shared-components/phpstan-fixe
 See canonical documentation: ../../../Themes/docs/shared-components/phpstan-fixes-activity-1.md
 >>>>>>> 2d6a374 (.)
 >>>>>>> laraxot/dev
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/phpstan-fixes-activity-1.md
+>>>>>>> 13cf1831 (.)

@@ -12,7 +12,8 @@ discussions:
   - "https://github.com/laraxot/module_comment_fila5/discussions/25"
 related:
   - ./xot-base-filament-widgets.md
-  - ../../../../docs/wiki/memories/filament-widget-ui-data-bag.md
+  - ../../../../../docs/wiki/memories/filament-widget-ui-data-bag.md
+status: draft
 ---
 
 # Widget FO — bag UI Spatie Laravel Data

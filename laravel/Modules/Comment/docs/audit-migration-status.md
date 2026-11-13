@@ -1,10 +1,18 @@
 ---
+type: note
+tags: [documentation]
+updated: 2026-09-26
+qmd: "audit migration status"
+issues: []
+discussions: []
 title: "comment module migration audit — internalizzazione spatie completata"
 created: 2026-06-08
 last_updated: 2026-06-11
 phase: "cutover"
-status: "implemented"
+status: stale
 ---
+
+> Nota 2026-10-14 (docs-audit): Dichiara l'internalizzazione di spatie/laravel-comments completata e 'packages/spatie/ eliminata'; il 2026-10-14 laravel/Modules/Comment/packages/spatie/ esiste ancora (tracciata in git, ultimo commit 2026-09-28), l'autoload del progetto la risolve (vendor/composer/autoload_psr4.php) e app/Actions/SanitizeCommentTextAction.php importa Spatie\Comments\Support\CommentSanitizer. Contenuto non riscritto, verificare prima di usarlo.
 
 # Comment module — audit post-internalizzazione
 

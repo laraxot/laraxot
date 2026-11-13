@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_5RW9y5
 return [
     'fields' => [
         'id' => [
@@ -19,6 +20,7 @@ return [
         'updated_at' => [
             'label' => 'updated_at',
         ],
+<<<<<<< HEAD
         'aggregate_uuid' => [
             'label' => 'aggregate_uuid',
         ],
@@ -36,5 +38,10 @@ return [
         'delete' => [
             'tooltip' => 'delete',
         ],
+=======
+>>>>>>> 13cf1831 (.)
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_iyQAXk

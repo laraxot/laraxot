@@ -1,3 +1,15 @@
+---
+title: "phpstan fixes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan fixes"
+issues: []
+discussions: []
+status: draft
+---
+
 # Blog Module - PHPStan Level 7 Fixes - Gennaio 2025
 
 ## ✅ Stato: 0 errori (level max)

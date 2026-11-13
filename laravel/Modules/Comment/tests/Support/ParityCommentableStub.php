@@ -24,6 +24,7 @@ final class ParityCommentableStub extends Model implements Commentable
         return 'parity-commentable';
     }
 
+    /** @return MorphMany<Comment, Model> */
     public function comments(): MorphMany
     {
         /** @var MorphMany<Comment, Model> $relation */

@@ -25,10 +25,12 @@ class GetRecentActivitiesAction
             throw new InvalidArgumentException('Limit must be positive');
         }
 
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with(['causer', 'subject'])
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 }

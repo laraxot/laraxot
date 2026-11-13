@@ -7,7 +7,7 @@ use Modules\Comment\Models\Comment;
 use Modules\Comment\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 it('copia original_text quando non ci sono transformer', function (): void {
     config()->set('comments.comment_transformers', []);

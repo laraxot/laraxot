@@ -39,7 +39,7 @@ class ViewArticle extends XotBaseViewRecord
                     DateTimePicker::make('closed_at')
                         ->native(false),
                 ])
-                ->action(function (array $data, $record): void {
+                ->action(function (array $data, mixed $record): void {
                     Assert::notNull($record, 'Record cannot be null');
                     if (is_object($record) && method_exists($record, 'update')) {
                         $record->update($data);
@@ -53,17 +53,17 @@ class ViewArticle extends XotBaseViewRecord
                 ->requiresConfirmation()
                 ->modalDescription('Assicurati che la versione italiana sia stata settata e salvata')
                 ->form([
-                    Checkbox::make('content_blocks')->inline(),
-                    Checkbox::make('sidebar_blocks')->inline(),
-                    Checkbox::make('footer_blocks')->inline(),
+                Checkbox::make('content_blocks')->inline(),
+                Checkbox::make('sidebar_blocks')->inline(),
+                Checkbox::make('footer_blocks')->inline(),
                 ])
                 ->action(function (Article $record, ArticleResource $article_resource, array $data) {
-                    return app(TranslateContentAction::class)->execute(
-                        'article',
-                        $record->id, $article_resource->getTranslatableLocales(),
-                        $data,
-                        Article::class
-                    );
+                return app(TranslateContentAction::class)->execute(
+                    'article',
+                    $record->id, $article_resource->getTranslatableLocales(),
+                    $data,
+                    Article::class
+                );
                 }),
             */
         ];

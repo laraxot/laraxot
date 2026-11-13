@@ -1,8 +1,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
+---
+title: "Activity Module LLM Wiki Agent Instructions======="
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, activity, wiki]
+qmd: "activity module llm wiki agent instructions======= activity"
+=======
+>>>>>>> 13cf1831 (.)
 ---
 title: "Agent instructions"
 type: reference
@@ -17,14 +27,22 @@ related:
 ---
 
 <<<<<<< HEAD
+<<<<<<< .merge_file_fLtwnA
+<<<<<<< HEAD
 # Activity Module LLM Wiki Agent Instructions
 =======
 <<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+# Activity Module LLM Wiki Agent Instructions=======
+>>>>>>> .merge_file_uMuNkL
 # Activity {{TYPE^}} LLM Wiki Agent Instructions
 >>>>>>> laraxot/dev
+=======
+# Activity {{TYPE^}} LLM Wiki Agent Instructions
+>>>>>>> 13cf1831 (.)
 
 > **Module/Theme:** Activity
 > **Scope:** Activity-specific knowledge only
@@ -164,7 +182,12 @@ Related:
 - [Project Wiki Integration](../../docs/wiki/README.md)
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
 <<<<<<< HEAD
+<<<<<<< .merge_file_fLtwnA
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+- [Module Documentation](../README.md)=======
+>>>>>>> .merge_file_uMuNkL
 - [Module Documentation](../README.md)
 =======
 - [Module Documentation](../README.md)
@@ -172,3 +195,6 @@ Related:
 =======
 - [Module Documentation](../README.md)
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+- [Module Documentation](../README.md)
+>>>>>>> 13cf1831 (.)

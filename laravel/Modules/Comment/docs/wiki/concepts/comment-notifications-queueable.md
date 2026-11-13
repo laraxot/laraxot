@@ -1,14 +1,17 @@
 ---
+issues: []
+discussions: []
 title: "Comment — notifiche via QueueableAction"
 type: concept
 tags: [comment, notifications, queueable-action, no-jobs, kiss]
 created: 2026-07-01
-updated: 2026-07-01
+updated: 2026-10-23
 qmd: "comment notifications queueable action pending approved onQueue"
 related:
-  - ../../../concepts/no-jobs-queueable-action-only.md
+  - ../../concepts/no-jobs-queueable-action-only.md
   - native-comments-architecture.md
   - ponytail-audit.md
+status: draft
 ---
 
 # Notifiche commento — solo QueueableAction
@@ -40,7 +43,7 @@ CommentConfigNotifications::sendPendingAction()->onQueue()->execute($comment);
 
 ## Vietato in `app/`
 
-- `app/Jobs/SendNotificationsFor*CommentJob.php` — archiviati in `.bak`
+- `app/Jobs/SendNotificationsFor*CommentJob.php` — rimossi insieme alla cartella `app/Jobs/` (regola [no-module-jobs-queueable-action](../../../../../../bashscripts/ai/wiki/rules/no-module-jobs-queueable-action.md))
 - `app/Actions/QueueNotifyApprovedCommentAction.php` — duplicato di `NotifyApprovedCommentAction`
 - `app/Actions/SendNotificationsForPendingCommentAction.php` (root) — wrapper che dispatchava il job
 
@@ -52,5 +55,5 @@ Il pacchetto Spatie in `packages/spatie/laravel-comments/` conserva i job origin
 
 ## Collegamenti
 
-- [No Jobs — regola modulo](../../../concepts/no-jobs-queueable-action-only.md)
+- [No Jobs — regola modulo](../../concepts/no-jobs-queueable-action-only.md)
 - [Architettura commenti nativi](native-comments-architecture.md)

@@ -1,82 +1,74 @@
-/vendor/
-node_modules/
-npm-debug.log
-*.cache
-*.phar
-*.lock
-package-lock.json
-yarn-error.log
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
-
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-
-# Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
-
-storage/*.key
-.env
-Homestead.yaml
-Homestead.json
-/.vagrant
-.phpunit.result.cache
-*.lock
-package-lock.json
-build
-/docs/package-lock.json
-.git-blame-ignore-revs
-
-*.phar
-*.cache
-*.log
-*.lock
-.git-blame-ignore-revs
-package-lock.json
-.php-cs-fixer.cache
-package-lock.json
-.git-rewrite/
-
-node_modules
-
-.git-blame-ignore-revs
-/vendor
-vendor
-vendor/
-build/docs/cache/
-cache/
--e 
-# PHPStan documentation
-docs/phpstan/
-
-# Backup files
-*.old
-*.old1
-*.backup
-*.backup.*
-lang/lang/
-_docs/
-_docs/
-
-# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
-docs/archive/
-# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
-*~HEAD
 *~BASE
+*~head
+*~HEAD
 *~LOCAL
 *~REMOTE
-*.orig
-*.rej
-*~head
-
 agentdb.rvf
+app/storage/
 audit-coverage/
+# --- Audit coverage bridge (never commit) ---
+*.backup
+*.backup.*
+# --- Backup / old files ---
+*.bak
+bootstrap/compiled.php
+build/
+# --- Build & compiled ---
+*.cache
+cache/
+# --- Cache & temporary ---
+composer.lock
 .cursor/
-.vscode/
-.windsurf/
+# --- Dependencies & packages ---
 .devcontainer/
-graphify-out
+dist/
+docs/archive/
+docs/cache/
+docs/phpstan/
+.DS_Store
+ehthumbs.db
+.env
+.env.*
+!.env.example
+# --- Environment & IDE ---
+.git-blame-ignore-revs
+# --- Git leftovers ---
+.git-rewrite/
+# Grouped, deduped. See docs/wiki/rules/module-theme-root-cleanup.md
+.idea
+lang/lang/
+# --- Laravel runtime ---
+# LARAXOT MODULE: BLOG — .gitignore (organized)
+# --- Legacy directories ---
+*.log
+# --- Log files ---
+# --- Module specific ---
+/node_modules/
+npm-debug.log*
+*.old
+*.old1
+*.orig
+package-lock.json
+# --- Project scratch ---
+public/hot
+public_html/hot
+public_html/storage
+public/storage
+*.rej
+.Spotlight-V100
+storage/*.key
+# --- System files ---
+tests/AuditCoverage/
+Thumbs.db
+*.tmp
+.Trashes
+/vendor/
+.vscode/
+yarn.lock
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out/
+.claude/
+.claude-audit/
+test-results/
+blog.code-workspace

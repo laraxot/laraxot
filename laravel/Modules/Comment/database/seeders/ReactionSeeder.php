@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Comment\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Console\Command;
 use Modules\Comment\Models\Reaction;
 
 /**
@@ -16,6 +17,8 @@ class ReactionSeeder extends Seeder
     {
         Reaction::query()->delete();
 
-        $this->command->info('Reactions cleared - will be seeded with comments.');
+        if ($this->command instanceof Command) {
+            $this->command->info('Reactions cleared - will be seeded with comments.');
+        }
     }
 }

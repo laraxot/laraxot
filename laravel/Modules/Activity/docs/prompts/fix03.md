@@ -8,6 +8,11 @@ tags: [migrato-da-txt, activity]
 converted_from: fix03.txt
 created: 2026-08-24
 updated: 2026-08-24
+<<<<<<< .merge_file_VmmP0A
+=======
+status: draft
+qmd: "fix: .env.testing - non usare variabili db_*_activity activity"
+>>>>>>> .merge_file_cJgKlY
 ---
 
 # Fix: .env.testing - NON usare variabili DB_*_ACTIVITY
@@ -29,6 +34,7 @@ env("DB_PASSWORD_ACTIVITY", $passwordFallback)
 ```
 
 Se le variabili non sono impostate, usa i valori della connessione default (mysql). In testing:
+<<<<<<< .merge_file_VmmP0A
 <<<<<<< HEAD
 <<<<<<< HEAD
 - **DRY**: stesso DB per tutto (<nome progetto>_data_test)
@@ -38,6 +44,10 @@ Se le variabili non sono impostate, usa i valori della connessione default (mysq
 =======
 - **DRY**: stesso DB per tutto (techplanner_data_test)
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+- **DRY**: stesso DB per tutto (<nome progetto>_data_test)=======
+- **DRY**: stesso DB per tutto (techplanner_data_test)
+>>>>>>> .merge_file_cJgKlY
 - **Semplicità**: una sola configurazione DB da gestire
 - **Coerenza**: activity e mysql puntano allo stesso database di test
 

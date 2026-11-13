@@ -1,6 +1,24 @@
-<<<<<<< .merge_file_LrVRI9
+---
+title: "CHANGELOG"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "CHANGELOG"
+issues: []
+discussions: []
+---
+
 ## [1.0.0-dev.3](https://github.com/laraxot/module_ai_fila5/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2026-08-25)
-=======
+---
+title: "CHANGELOG"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "CHANGELOG"
+issues: []
+discussions: []
 ## [1.0.0-dev.8](https://github.com/laraxot/module_ai_fila5/compare/v1.0.0-dev.7...v1.0.0-dev.8) (2026-09-25)
 
 ### Features
@@ -26,7 +44,6 @@
 * PHPStan AI, bmad story, docs/stories, second brain ([cac5274](https://github.com/laraxot/module_ai_fila5/commit/cac52748f67f9907616a8777d159763cc5d71204))
 
 # Changelog
->>>>>>> .merge_file_vkWYbP
 
 ### Bug Fixes
 

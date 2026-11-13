@@ -1,4 +1,7 @@
 ---
+qmd: "dashboard page contract"
+issues: []
+discussions: []
 title: "AI Dashboard page contract"
 type: concept
 module: AI

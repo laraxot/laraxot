@@ -12,7 +12,8 @@ discussions:
   - "https://github.com/laraxot/module_comment_fila5/discussions/23"
 related:
   - ./phpstan-module-owner-scope.md
-  - ../../../../docs/wiki/memories/phpstan-pest-assert-pattern.md
+  - ../../../../../docs/wiki/memories/phpstan-pest-assert-pattern.md
+status: draft
 ---
 
 # PHPStan 0 errori — test Pest nel modulo Comment

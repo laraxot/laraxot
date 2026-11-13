@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\AI\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\AI\Enums\AiMessageRoleEnum;
 use Modules\AI\Models\AiMessage;
 
 /**
@@ -20,16 +21,12 @@ class AiMessageFactory extends Factory
      */
     public function definition(): array
     {
-        $role = $this->faker->randomElement([
-            AiMessage::ROLE_USER,
-            AiMessage::ROLE_ASSISTANT,
-            AiMessage::ROLE_TOOL,
-            AiMessage::ROLE_SYSTEM,
-        ]);
+        $roles = AiMessageRoleEnum::cases();
+        $role = $roles[$this->faker->numberBetween(0, count($roles) - 1)];
 
         return [
-            'ai_thread_id' => AiThreadFactory::new()->createOne()->id,
-            'user_id' => $role === AiMessage::ROLE_USER ? $this->faker->numberBetween(1, 50) : null,
+            'ai_thread_id' => AiThreadFactory::new()->createOne()->getKey(),
+            'user_id' => $role->isUser() ? $this->faker->numberBetween(1, 50) : null,
             'role' => $role,
             'content' => $this->faker->sentence(),
             'payload' => null,

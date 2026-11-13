@@ -1,4 +1,7 @@
 ---
+qmd: "queueable actions"
+issues: []
+discussions: []
 title: "Queueable Actions — AI Module"
 type: concept
 created: 2026-07-12
@@ -7,6 +10,7 @@ confidence: high
 tags: [queueable-action, spatie, architecture, laraxot, ai]
 related:
   - Modules/Xot/docs/queueable-actions.md
+status: draft
 ---
 
 # Queueable Actions — AI Module Doctrine
@@ -73,7 +77,7 @@ vendor/bin/pint Modules/AI/app/Actions
 | Path | Ruolo |
 |------|-------|
 | `Actions/Prompt/BuildAIPromptAction` | Dispatcher prompt per tipo (`classification`, `solutions`, …) |
-| `Actions/Prompt/AIPromptTemplates` | Costanti JSON schema (routing, pattern, improvements) |
+| `Actions/Prompt/AIPromptTemplates` | Template prompt per (`classification`, `solutions`) |
 | `Actions/Support/MakeAIRequestAction` | HTTP chat/completions OpenAI + retry |
 | `Actions/AiJsonResponseDecoderAction` | Decode JSON risposta AI (sostituisce `AIServiceJsonDecoder`) |
 | `Actions/ClassifyTicketAction` | Classificazione ticket (cache + prompt + request + decode) |
@@ -96,3 +100,13 @@ $raw = app(MakeAIRequestAction::class, [
 
 $data = AiJsonResponseDecoderAction::decodeObject($raw);
 ```
+
+### Stato implementazione (2026-10-20)
+
+- **ClassifyTicketAction**: convertito da `AIService::classifyTicket()` → preserva logica di cache, prompt, richiesta, decodifica.
+- **SuggestSolutionsAction**: convertito da `AIService::suggestSolutions()` → preserva logica di cache, prompt, richiesta, decodifica.
+- **AIService**: delega a `ClassifyTicketAction` e `SuggestSolutionsAction` mantenendo tutti gli altri metodi (`analyzeSentiment`, `predictPriority`, `optimizeRouting`, `generateAutoResponse`, `analyzePatterns`, `suggestImprovements`) intatti.
+- **MakeAIRequestAction**: nuovo action riusabile per HTTP AI + retry.
+- **BuildAIPromptAction** + **AIPromptTemplates**: nuovi dispatcher/template per costruire prompt riusabili.
+
+**Avanti**: migrare `AnalyzeSentimentAction`, `PredictPriorityAction`, ecc., in modo che tutti i metodi AI usino azioni queueable.

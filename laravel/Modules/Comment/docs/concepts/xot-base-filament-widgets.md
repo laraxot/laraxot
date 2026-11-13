@@ -12,7 +12,8 @@ discussions:
   - "https://github.com/laraxot/module_comment_fila5/discussions/21"
 related:
   - ./no-livewire-filament-widgets-only.md
-  - ../../../../docs/wiki/rules/xot-base-filament-widgets.md
+  - ../../../../../docs/wiki/rules/xot-base-filament-widgets.md
+status: draft
 ---
 
 # Mai `Filament\*` — sempre `Modules\Xot\Filament\Widgets\XotBase*`

@@ -1,3 +1,15 @@
+---
+title: "migrate spatie comments to custom"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "migrate spatie comments to custom"
+issues: []
+discussions: []
+status: draft
+---
+
 # Migration of Spatie Comments Packages to Custom Comment Module
 
 ## Overview
@@ -131,5 +143,4 @@ Update the following documentation files:
 - [Design System Documentation](../design-system.md)
 
 ---
-
 *Document maintained by the Development Team. Last updated: 2026-06-06.*

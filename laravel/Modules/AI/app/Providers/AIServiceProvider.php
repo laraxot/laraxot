@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\AI\Providers;
 
 // ---- bases --
-use Modules\AI\Support\AiActionHandlerRegistry;
+use Modules\AI\Adapters\AiActionHandlerRegistry;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 
 class AIServiceProvider extends XotBaseServiceProvider

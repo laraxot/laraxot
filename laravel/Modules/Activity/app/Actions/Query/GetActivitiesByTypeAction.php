@@ -28,11 +28,13 @@ class GetActivitiesByTypeAction
             throw new InvalidArgumentException('Limit must be positive');
         }
 
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with(['causer', 'subject'])
             ->where('event', $type)
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 }

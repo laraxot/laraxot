@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Blog\Database\Factories;
 
+use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use Modules\Blog\Models\Article;
 
-use function Safe\json_decode;
 use function Safe\preg_replace;
 
 /**
@@ -32,14 +32,106 @@ class ArticleFactory extends Factory
     {
         $title = preg_replace('/\./', '', fake()->sentence(6));
         $title = is_string($title) ? $title : implode('', $title);
+        $image = '/themes/Sixteen/design-comuni/assets/images/notizia-sicurezza.png';
+        $body = 'Contenuto di prova per ambienti di sviluppo: sostituire con testi curati tramite DemoContentSeeder.';
 
         return [
             'slug' => Str::slug($title),
             'title' => $title,
-            'main_image_url' => 'https://picsum.photos/id/353/800/600',
-            // 'category_id' => 1,
-            'content_blocks' => json_decode('[{"type":"title","data":{"text":"Sed eu consequat purus","level":"h2"}},{"type":"paragraph","data":{"text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed tortor vitae sem cursus ullamcorper. In pellentesque purus et ante eleifend finibus. Fusce quis sapien nunc. Donec molestie arcu vel suscipit tincidunt. Nunc non neque risus. Aliquam fringilla sed quam eu condimentum. Nam viverra enim ut iaculis vulputate. Aenean quis laoreet mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas vel venenatis magna.<\/p><p>Curabitur feugiat sagittis imperdiet. Vestibulum cursus massa sed convallis aliquet. Proin in purus diam. Cras blandit justo in massa imperdiet euismod. Aliquam erat volutpat. Sed quis ornare urna. Cras quis tempus nunc. Vestibulum quis quam a ipsum accumsan gravida in nec arcu. Praesent ut eros eros. Proin vel bibendum eros. In egestas suscipit purus vel efficitur. Proin at elit risus. Nam volutpat massa in lacus bibendum placerat. Suspendisse auctor elit odio, in dapibus risus blandit ut. Sed eu consequat purus.<\/p>"}},{"type":"image","data":{"image":null,"url":"https:\/\/picsum.photos\/id\/390\/800\/600","caption":"Vivamus ultrices vehicula nunc quis mollis.","alt":null}},{"type":"title","data":{"text":"Aliquam eget tortor urna","level":"h3"}},{"type":"paragraph","data":{"text":"<p>Sed sit amet fringilla nunc. Proin consequat dui suscipit magna porta blandit. Nam vel felis commodo, mattis sapien ac, laoreet ligula. Vestibulum egestas cursus nulla in tincidunt. Ut efficitur, purus in faucibus mattis, justo enim mollis elit, vitae rutrum sem orci nec mi. Duis tempus mattis elementum. Etiam faucibus et eros vel dictum. Cras ut elit massa. Fusce tristique lacus ac risus pulvinar tempor. Etiam ultricies sit amet lacus sed gravida. Suspendisse potenti. Donec in massa a sem egestas tincidunt eu at sem.<\/p><p>Aliquam eget tortor urna. Integer vel tincidunt tellus. Donec ultrices efficitur tortor, vel ullamcorper justo. Proin nec placerat diam, at malesuada metus. Praesent vitae blandit neque. Nulla gravida nulla et molestie placerat. Phasellus porta tortor eu massa laoreet egestas. In sed ultrices magna. Curabitur ut vestibulum metus. Integer porttitor risus at venenatis lobortis. Pellentesque eu libero purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a cursus leo.<\/p><p>Donec at diam ex. In eleifend commodo suscipit. Vivamus ultrices vehicula nunc quis mollis. Aliquam erat volutpat. Nam id dui consectetur, tristique ex non, fermentum dolor. Morbi lorem purus, lobortis at mauris vel, laoreet pretium dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus semper rhoncus augue at facilisis. Pellentesque ut iaculis justo. Suspendisse sed cursus quam. Duis sollicitudin velit vel eros pulvinar egestas. Donec feugiat massa ac dui elementum, quis mollis sem venenatis. Cras euismod, mauris non lobortis pulvinar, dolor risus gravida nisi, eu tristique mauris nulla eget sapien.<\/p>"}}]', true),
-            'footer_blocks' => json_decode('[{"type":"post_card","data":{"text":null,"post_id":"26"}},{"type":"page_card","data":{"text":null,"page_id":"1"}}]', true),
+            'main_image_url' => $image,
+            'content_blocks' => [
+                ['type' => 'title', 'data' => ['text' => $title, 'level' => 'h2']],
+                ['type' => 'paragraph', 'data' => ['text' => '<p>'.$body.'</p>']],
+                ['type' => 'image', 'data' => [
+                    'url' => $image,
+                    'alt' => 'Immagine di prova del tema Sixteen',
+                    'caption' => 'Asset locale — non usare Lorem Ipsum in demo pubbliche.',
+                ]],
+            ],
+            'footer_blocks' => [],
+            'sidebar_blocks' => [],
+            'description' => 'Sintesi di prova senza Lorem Ipsum.',
+            // `type` = alias Parental STI: post (Post) | event (Event)
+            'type' => 'post',
         ];
+    }
+
+    /**
+     * Post editoriale demo (type=post) — testi civici + immagine Design Comuni.
+     */
+    public function demoArticle(): static
+    {
+        return $this->demoPost();
+    }
+
+    /**
+     * Post editoriale demo (agnostico: novità/guida/storytelling).
+     */
+    public function demoPost(): static
+    {
+        $title = 'Come preparare una segnalazione utile';
+        $image = '/themes/Sixteen/design-comuni/assets/images/img-disservizio-thumbnail.png';
+        $body = 'Indica indirizzo, contesto e una fotografia leggibile: l’ufficio può verificare prima e intervenire meglio.';
+
+        return $this->state([
+            'slug' => Str::slug($title).'-'.Str::random(5),
+            'title' => $title,
+            'description' => 'Tre informazioni bastano a rendere una segnalazione azionabile.',
+            'excerpt' => 'Tre informazioni bastano a rendere una segnalazione azionabile.',
+            'type' => 'post',
+            'status' => 'published',
+            'published_at' => now()->subDays(7),
+            'closed_at' => null,
+            'main_image_url' => $image,
+            'content_blocks' => [
+                ['type' => 'title', 'data' => ['text' => $title, 'level' => 'h2']],
+                ['type' => 'paragraph', 'data' => ['text' => '<p>'.$body.'</p>']],
+                ['type' => 'image', 'data' => [
+                    'url' => $image,
+                    'alt' => 'Cittadino che documenta un problema nello spazio pubblico',
+                    'caption' => 'Una foto chiara accelera la presa in carico.',
+                    'credit' => 'Asset Design Comuni / tema Sixteen — uso demo FixCity',
+                ]],
+            ],
+            'sidebar_blocks' => [],
+            'footer_blocks' => [],
+        ]);
+    }
+
+    /**
+     * Evento demo = Article con type=event (nessun modulo Event).
+     * Non toccare la colonna Parental `type`.
+     */
+    public function demoEvent(CarbonInterface $startsAt, CarbonInterface $endsAt): static
+    {
+        $title = 'Laboratorio civico: segnalare bene in cinque minuti';
+        $image = '/themes/Sixteen/design-comuni/assets/images/eventi-biblioteca-parco.png';
+        $body = 'Un appuntamento pratico con smartphone: posizione, descrizione e fotografia rispettosa della privacy.';
+
+        return $this->state([
+            'slug' => Str::slug($title).'-'.Str::random(5),
+            'title' => $title,
+            'description' => 'Imparare insieme a usare il servizio digitale comunale.',
+            'excerpt' => 'Imparare insieme a usare il servizio digitale comunale.',
+            'type' => 'event',
+            'status' => 'published',
+            'published_at' => now()->subDays(3),
+            'event_start_date' => $startsAt,
+            'event_end_date' => $endsAt,
+            'closed_at' => null,
+            'main_image_url' => $image,
+            'content_blocks' => [
+                ['type' => 'title', 'data' => ['text' => $title, 'level' => 'h2']],
+                ['type' => 'paragraph', 'data' => ['text' => '<p>'.$body.'</p>']],
+                ['type' => 'image', 'data' => [
+                    'url' => $image,
+                    'alt' => 'Laboratorio civico sull’uso dello smartphone',
+                    'caption' => 'Formazione pratica per cittadini e associazioni.',
+                    'credit' => 'Asset Design Comuni / tema Sixteen — uso demo FixCity',
+                ]],
+            ],
+            'sidebar_blocks' => [],
+            'footer_blocks' => [],
+        ]);
     }
 }

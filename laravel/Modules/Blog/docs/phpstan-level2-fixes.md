@@ -1,3 +1,15 @@
+---
+title: "phpstan level2 fixes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan level2 fixes"
+issues: []
+discussions: []
+status: draft
+---
+
 # Correzioni PHPStan Livello 2 - Modulo Blog
 
 Questo documento traccia gli errori PHPStan di livello 2 identificati nel modulo Blog e le relative soluzioni implementate.

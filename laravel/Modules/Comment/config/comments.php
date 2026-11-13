@@ -102,7 +102,9 @@ return [
         'show_avatars' => true,
         'autoload_fontawesome' => true,
         'show_avatars_in_mentions_autocomplete' => true,
-        'editor' => 'comment::editors.textarea',
+        'editor' => 'comment::editors.easymde',
+        // Livelli di risposta oltre il commento di primo livello: a 3 una discussione resta leggibile anche a 320 px (CMT-022).
+        'max_reply_depth' => 3,
     ],
 
     'pagination' => [

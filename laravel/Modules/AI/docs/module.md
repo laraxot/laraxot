@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "AI Module — Doctrine"
 type: doctrine
 tags: [ai, artificial-intelligence, module-doctrine]
@@ -8,6 +10,7 @@ qmd: "AI module doctrine BMAD analysis purpose religion philosophy policy why ze
 related:
   - "../../Xot/docs/module.md"
   - "../AiAssistant/docs/module.md"
+status: draft
 ---
 
 # AI Module — Doctrine

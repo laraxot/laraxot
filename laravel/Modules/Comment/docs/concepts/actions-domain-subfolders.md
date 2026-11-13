@@ -1,4 +1,5 @@
 ---
+discussions: []
 title: "Actions — sottocartelle per dominio e risoluzione container"
 type: concept
 module: Comment
@@ -9,8 +10,9 @@ qmd: "actions domain subfolders context actor app execute CommentConfig SSOT que
 issues:
   - "https://github.com/laraxot/base_fixcity_fila5/issues/319"
 related:
-  - ../../../../docs/wiki/rules/actions-domain-subfolders.md
+  - ../../../../../docs/wiki/rules/actions-domain-subfolders.md
   - ./spatie-v2-residual-gap-analysis.md
+status: draft
 ---
 
 # Actions — dominio in cartella, app() al call site

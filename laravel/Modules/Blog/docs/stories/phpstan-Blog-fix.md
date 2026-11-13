@@ -1,4 +1,10 @@
 ---
+title: "phpstan Blog fix"
+type: note
+tags: [documentation]
+qmd: "phpstan Blog fix"
+issues: []
+discussions: []
 id: phpstan-Blog-fix
 slug: phpstan-Blog
 scope: [module:Blog, project:base_workorder_fila5]

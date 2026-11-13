@@ -1,6 +1,9 @@
 # PHPStan Tests Corrections - Activity Module
 
+<<<<<<< HEAD
 **Data**: 2025-10-10
+=======
+>>>>>>> 13cf1831 (.)
 **Livello PHPStan**: max
 **Errori Totali**: 353
 

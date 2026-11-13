@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 If you have found any issue regarding security, please send an email [marco.sottana@gmail.com](mailto:marco.sottana@gmail.com) instead of using the issue tracker and we will quickly work on it.
 # Security Policy
@@ -12,4 +13,9 @@ If you have found any issue regarding security, please send an email [marco.sott
 # Security Policy
 
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+If you have found any issue regarding security, please send an email [marco.sottana@gmail.com](mailto:marco.sottana@gmail.com) instead of using the issue tracker and we will quickly work on it.
+# Security Policy
+
+>>>>>>> 13cf1831 (.)
 If you have found any issue regarding security, please send an email [marco.sottana@gmail.com](mailto:marco.sottana@gmail.com) instead of using the issue tracker and we will quickly work on it.

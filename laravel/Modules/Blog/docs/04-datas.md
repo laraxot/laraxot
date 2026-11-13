@@ -1,3 +1,15 @@
+---
+title: "04 datas"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "04 datas"
+issues: []
+discussions: []
+status: draft
+---
+
 # Datas in Blog Module
 
 All data objects in the Blog module use the `Spatie\LaravelData\Data` contract for type safety and serialization.

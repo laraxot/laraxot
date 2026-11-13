@@ -1,3 +1,15 @@
+---
+title: "phpstan analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Analysis - Blog Module
 
 **Data**: 2025-10-10T12:40:18+02:00  
@@ -5,7 +17,6 @@
 **Files Analizzati**: 139
 
 ---
-
 ## 🎉 RISULTATO PERFETTO
 
 ### ✅ Errori Totali: **0**

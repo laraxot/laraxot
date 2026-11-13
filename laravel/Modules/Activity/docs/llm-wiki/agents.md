@@ -1,10 +1,20 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
+---
+title: "agents"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, activity, llm-wiki]
+qmd: "agents activity"
+=======
+>>>>>>> 13cf1831 (.)
 ---
 title: "Agent instructions"
 type: reference
@@ -19,11 +29,17 @@ related:
 ---
 
 <<<<<<< HEAD
+<<<<<<< .merge_file_NsxX3K
+<<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
 >>>>>>> laraxot/dev
+=======
+>>>>>>> 13cf1831 (.)
 # Activity Module LLM Wiki Agent Instructions
+=======
+>>>>>>> .merge_file_NbpiRD
 
 > **Module/Theme:** Activity
 > **Scope:** Activity-specific knowledge only
@@ -80,7 +96,12 @@ related:
 ### Rule 3: Link Heavily
 - Every page MUST have 3+ incoming links
 <<<<<<< HEAD
+<<<<<<< .merge_file_NsxX3K
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+- Every page MUST have 3+ outgoing links=======
+>>>>>>> .merge_file_NbpiRD
 - Every page MUST have 3+ outgoing links
 =======
 - Every page MUST have 3+ outgoing links
@@ -88,3 +109,6 @@ related:
 =======
 - Every page MUST have 3+ outgoing links
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+- Every page MUST have 3+ outgoing links
+>>>>>>> 13cf1831 (.)

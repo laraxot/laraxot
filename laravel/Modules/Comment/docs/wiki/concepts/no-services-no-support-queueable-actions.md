@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "No Services / No Support — QueueableAction only"
 type: concept
 module: Comment
@@ -9,6 +11,7 @@ qmd: "Comment module Services and Support banned use app Actions QueueableAction
 related:
   - no-app-support-queueable-actions.md
   - ../../../Xot/docs/wiki/concepts/queueable-action-trait-mandatory.md
+status: draft
 ---
 
 # Comment — Services/Support vietati: solo Actions

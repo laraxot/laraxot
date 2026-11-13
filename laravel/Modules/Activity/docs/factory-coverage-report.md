@@ -1,7 +1,18 @@
+---
+title: "Factory Coverage Report - Activity Module"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity]
+qmd: "factory coverage report - activity module activity"
+---
 # Factory Coverage Report - Activity Module
 
 ## 📊 Status Report
+<<<<<<< HEAD
 **Date:** 2025-08-22
+=======
+>>>>>>> 13cf1831 (.)
 **Module:** Activity
 
 ## ✅ Factory Coverage Complete

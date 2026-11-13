@@ -1,26 +1,48 @@
-# Documentation Index
+---
+title: "Comment: indice della documentazione"
+type: index
+status: active
+module: Comment
+created: 2026-10-16
+updated: 2026-10-26
+tags: [docs, comment, indice]
+qmd: "comment indice documentazione commenti front office bmad stories fo-comments"
+issues: []
+discussions: []
+---
 
-Modulo: Comment
+# Comment: indice
 
-## Hub
+Questo e' l'indice canonico. `00-index.md` rimandava qui e questa pagina rimandava a `00-INDEX.md`, che non esiste: il giro a vuoto e' chiuso il 2026-10-26.
+La descrizione del modulo (identita', cosa contiene, limiti) e' in [README.md](./README.md).
 
-- [native-comments-engine.md](native-comments-engine.md) — internalizzazione Spatie, workflow BMAD, stato fasi
+## Stato (2026-10-26)
 
-## Integrazione FO
+Il front office dei commenti (blog, eventi, segnalazioni) permette di pubblicare, rispondere al singolo commento, modificare ed eliminare, con il `MarkdownEditor` di Filament.
+Prove, difetti trovati e decisioni aperte: [CMT-022](./stories/cmt-022.fo-comments-write-reply-markdown-editor.story.md). Decisioni che aspettano l'utente: D-CMT-1..6 in fondo alla story.
 
-- [ticket-comments.md](ticket-comments.md)
-- [wiki/concepts/spatie-comments-fo-ticket-integration.md](wiki/concepts/spatie-comments-fo-ticket-integration.md)
+## Dove si trova cosa
 
-## Architettura & migrazione
+| Cosa | Dove |
+|---|---|
+| Dossier BMAD dei commenti del front office (brief, PRD, architettura con ADR-001..008, UX, epic, registro decisioni, stato sprint) | [bmad/fo-comments/README.md](./bmad/fo-comments/README.md) |
+| Story del modulo, `cmt-NNN.slug.story.md` (le `phpstan-*` sono storia dei lavori di qualita') | [stories/](./stories/) |
+| Regole stabili (config, policy, mount del widget, sottocartelle di Actions e widget) | [concepts/](./concepts/) |
+| Wiki del modulo (architettura, comandi, decisioni, entita') | [wiki/](./wiki/00-index.md) |
+| Notifiche e commenti dei ticket | [ticket-comments.md](./ticket-comments.md) |
+| Regola sul CSS di terzi nelle pagine Design Comuni (esenzione nel guard PostCSS) | [Sixteen: vendor-css-on-data-dc-pages-needs-guard-exemption](../../../Themes/Sixteen/docs/wiki/concepts/vendor-css-on-data-dc-pages-needs-guard-exemption.md) |
 
-- [wiki/concepts/module-providers-manifest.md](wiki/concepts/module-providers-manifest.md) — **provider solo manifest, no register manuale**
-- [wiki/concepts/native-comments-architecture.md](wiki/concepts/native-comments-architecture.md)
-- [wiki/concepts/native-comments-engine-workflow.md](wiki/concepts/native-comments-engine-workflow.md)
-- [wiki/concepts/spatie-package-inventory.md](wiki/concepts/spatie-package-inventory.md)
-- [wiki/concepts/spatie-to-laraxot-namespace-map.md](wiki/concepts/spatie-to-laraxot-namespace-map.md)
-- [wiki/decisions/adr-internalize-spatie-comments.md](wiki/decisions/adr-internalize-spatie-comments.md)
-- [wiki/decisions/adr-models-contracts-vs-app-contracts.md](wiki/decisions/adr-models-contracts-vs-app-contracts.md)
+## Come si prova
 
-## Altro
+```bash
+cd laravel
+bash ../bashscripts/tools/pest-scratch-db.sh Modules/Comment/tests          # mai sul DB di sviluppo
+./vendor/bin/phpstan analyse Modules/Comment                                # configurazione unica laravel/phpstan.neon
+# nel browser, su un'istanza con DB di prova (scrive commenti):
+ORIGIN=http://127.0.0.1:8091 FO_PATH=/it/blog/<slug> FO_COOKIES=<file privato> FO_OUT=<cartella> \
+  node ../bashscripts/tools/visual/fo-comment-flow-probe.mjs
+```
 
-- [folio-route-naming.md](folio-route-naming.md)
+## Cartelle superate
+
+`docs/bmad/architecture-comment-enhancements.md`, `docs/bmad/brainstorming/` e `docs/bmad/planning/` sono marcate `superseded` e rimandano al dossier `bmad/fo-comments/`; restano come cronologia.

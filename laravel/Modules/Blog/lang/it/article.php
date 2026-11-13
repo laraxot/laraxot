@@ -10,8 +10,10 @@ return [
         'navigation_icon' => 'heroicon-o-document-text',
         'navigation_sort' => 1,
         'description' => 'Gestione completa degli articoli del blog',
+        'sort' => 47,
+        'icon' => 'heroicon-o-document-text',
+        'group' => 'Contenuti',
     ],
-
     'fields' => [
         'id' => [
             'label' => 'ID',
@@ -105,8 +107,25 @@ return [
             'tooltip' => 'Abilita i commenti per questo articolo',
             'help' => 'I commenti permettono ai lettori di interagire con l\'articolo',
         ],
+        'content_blocks' => [
+            'label' => 'Blocchi del contenuto',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'sidebar_blocks' => [
+            'label' => 'Blocchi della barra laterale',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'footer_blocks' => [
+            'label' => 'Blocchi del piè di pagina',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
     ],
-
     'actions' => [
         'create' => [
             'label' => 'Nuovo articolo',
@@ -119,6 +138,7 @@ return [
             'tooltip' => 'Modifica l\'articolo selezionato',
             'success' => 'Articolo aggiornato con successo',
             'error' => 'Errore durante l\'aggiornamento dell\'articolo',
+            'icon' => 'edit',
         ],
         'delete' => [
             'label' => 'Elimina articolo',
@@ -126,6 +146,7 @@ return [
             'success' => 'Articolo eliminato con successo',
             'error' => 'Errore durante l\'eliminazione dell\'articolo',
             'confirmation' => 'Sei sicuro di voler eliminare questo articolo? Questa azione è irreversibile.',
+            'icon' => 'delete',
         ],
         'publish' => [
             'label' => 'Pubblica articolo',
@@ -149,8 +170,95 @@ return [
             'label' => 'Anteprima',
             'tooltip' => 'Visualizza l\'anteprima dell\'articolo',
         ],
+        'reorderRecords' => [
+            'tooltip' => '',
+            'icon' => 'reorderRecords',
+            'label' => 'reorderRecords',
+        ],
+        'logout' => [
+            'tooltip' => '',
+            'icon' => 'logout',
+            'label' => 'Esci',
+        ],
+        'cancel' => [
+            'tooltip' => '',
+            'label' => 'Annulla',
+            'icon' => 'cancel',
+        ],
+        'translate' => [
+            'label' => 'Translate',
+            'icon' => 'translate',
+            'tooltip' => '',
+        ],
+        'save' => [
+            'label' => 'Salva',
+            'icon' => 'save',
+            'tooltip' => '',
+        ],
+        'createOption' => [
+            'label' => 'Crea nuova voce',
+            'icon' => 'createOption',
+            'tooltip' => '',
+        ],
+        'add' => [
+            'label' => 'Add',
+            'icon' => 'add',
+            'tooltip' => '',
+        ],
+        'addBetween' => [
+            'label' => 'Inserisci qui',
+            'icon' => 'addBetween',
+            'tooltip' => '',
+        ],
+        'clone' => [
+            'label' => 'Clone',
+            'icon' => 'clone',
+            'tooltip' => '',
+        ],
+        'collapse' => [
+            'label' => 'Collapse',
+            'icon' => 'collapse',
+            'tooltip' => '',
+        ],
+        'collapseAll' => [
+            'label' => 'Chiudi tutto',
+            'icon' => 'collapseAll',
+            'tooltip' => '',
+        ],
+        'expand' => [
+            'label' => 'Expand',
+            'icon' => 'expand',
+            'tooltip' => '',
+        ],
+        'expandAll' => [
+            'label' => 'Apri tutto',
+            'icon' => 'expandAll',
+            'tooltip' => '',
+        ],
+        'moveDown' => [
+            'label' => 'Sposta giù',
+            'icon' => 'moveDown',
+            'tooltip' => '',
+        ],
+        'moveUp' => [
+            'label' => 'Sposta su',
+            'icon' => 'moveUp',
+            'tooltip' => '',
+        ],
+        'reorder' => [
+            'label' => 'Reorder',
+            'icon' => 'reorder',
+            'tooltip' => '',
+        ],
+        'profile' => [
+            'label' => 'Profile',
+            'icon' => 'profile',
+            'tooltip' => '',
+        ],
+        'createAnother' => [
+            'tooltip' => 'createAnother',
+        ],
     ],
-
     'validation' => [
         'title' => [
             'required' => 'Il titolo è obbligatorio',
@@ -193,7 +301,6 @@ return [
             'max' => 'La meta description non può superare i :max caratteri',
         ],
     ],
-
     'filters' => [
         'status' => [
             'label' => 'Stato',
@@ -216,7 +323,6 @@ return [
             'placeholder' => 'Cerca negli articoli...',
         ],
     ],
-
     'stats' => [
         'total' => [
             'label' => 'Totale articoli',
@@ -235,14 +341,12 @@ return [
             'description' => 'Articoli pubblicati negli ultimi 7 giorni',
         ],
     ],
-
     'empty_states' => [
         'no_articles' => 'Nessun articolo trovato',
         'no_published_articles' => 'Nessun articolo pubblicato',
         'no_draft_articles' => 'Nessuna bozza trovata',
         'create_first' => 'Crea il tuo primo articolo per iniziare',
     ],
-
     'help' => [
         'title' => 'Il titolo dell\'articolo deve essere descrittivo e accattivante per attirare i lettori',
         'slug' => 'Lo slug viene utilizzato nell\'URL dell\'articolo. Viene generato automaticamente dal titolo ma può essere personalizzato',
@@ -253,4 +357,5 @@ return [
         'published_at' => 'La data di pubblicazione determina quando l\'articolo diventa visibile ai lettori',
         'seo' => 'I meta tag aiutano i motori di ricerca a comprendere e indicizzare il contenuto dell\'articolo',
     ],
+    'label' => 'article',
 ];

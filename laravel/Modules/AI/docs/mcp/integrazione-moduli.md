@@ -1,3 +1,15 @@
+---
+title: "integrazione moduli"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "integrazione moduli"
+issues: []
+discussions: []
+status: draft
+---
+
 # Integrazione dei Server MCP con i Moduli Laravel
 
 ## Panoramica
@@ -975,5 +987,4 @@ Hai imparato come integrare i server MCP con i moduli Laravel nel progetto base_
 Seguendo le regole di sviluppo e le convenzioni di codice stabilite, è possibile creare integrazioni robuste e tipizzate che migliorano significativamente le funzionalità del sistema.
 
 ---
-
-Continua con la sezione [Implementazione Pratica](./05_IMPLEMENTAZIONE_PRATICA.md) per vedere esempi concreti di implementazione dei server MCP in progetti Laravel.
+Continua con la sezione [Implementazione Pratica](./05_implementazione_pratica.md) per vedere esempi concreti di implementazione dei server MCP in progetti Laravel.

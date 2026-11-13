@@ -34,7 +34,15 @@ class ArticleInfolist extends XotBaseResourceInfolist
                 ->color(fn (bool $state): string => $state ? 'success' : 'gray'),
             'published_at' => TextEntry::make('published_at')->date(),
             'closed_at' => TextEntry::make('closed_at')->date(),
-            'type' => TextEntry::make('type'),
+            'type' => TextEntry::make('type')
+                ->label('Tipo contenuto')
+                ->badge(),
+            'event_start_date' => TextEntry::make('event_start_date')
+                ->label('Inizio evento')
+                ->dateTime(),
+            'event_end_date' => TextEntry::make('event_end_date')
+                ->label('Fine evento')
+                ->dateTime(),
             'created_at' => TextEntry::make('created_at')->dateTime(),
             'updated_at' => TextEntry::make('updated_at')->dateTime(),
         ];

@@ -1,3 +1,15 @@
+---
+title: "native comments engine"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "native comments engine"
+issues: []
+discussions: []
+status: draft
+---
+
 # Native Comments Engine — hub documentazione
 
 Modulo **Comment** owner del dominio commenti Laraxot. Obiettivo: eliminare `packages/spatie/` e possedere stack morph + Livewire + notifiche.
@@ -30,9 +42,11 @@ Modulo **Comment** owner del dominio commenti Laraxot. Obiettivo: eliminare `pac
 
 Comando: `/bmad/internalize-spatie-comments`  
 File: `bashscripts/ai/.agents/commands/bmad/internalize-spatie-comments.md`  
-Story: [STORY-158](../../../docs/stories/STORY-158-native-comments-internalization.md)
+Story: [STORY-158](../../../../docs/stories/STORY-158-native-comments-internalization.md)
 
 ## Stato implementazione (2026-06-06)
+
+> Verifica 2026-10-14: la tabella sotto e' ferma al 6 giugno. `app/Support/CommentConfig.php` non esiste (la configurazione e' in `app/Datas/CommentConfigData.php` e `config/comments.php`). I componenti Livewire sono in `app/Http/Livewire/` e i widget Filament in `app/Filament/Widgets/`; `config/comments.php` punta alle Actions di `Modules\Comment\Actions`. Restano pero' `packages/spatie/` (tracciata in git) e l'import `Spatie\Comments\Support\CommentSanitizer` in `SanitizeCommentTextAction`: la fase 4 non e' fatta. Il blocco `route('comment::assets.styles')` piu' sotto non ha riscontro nelle rotte (`routes/` vuoto, 6 rotte Filament).
 
 ### Fase 1 avviata — core nativo
 
@@ -70,5 +84,5 @@ Blade FO (invariato fino a cutover):
 
 ## Collegamenti
 
-- [STORY-158](../../../docs/stories/STORY-158-native-comments-internalization.md)
+- [STORY-158](../../../../docs/stories/STORY-158-native-comments-internalization.md)
 - [ticket-comments.md](ticket-comments.md)

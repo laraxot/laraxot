@@ -10,9 +10,10 @@ issues:
 discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
 related:
-  - ../../../../docs/wiki/rules/queueable-action-trait-mandatory.md
+  - ../../../../../../docs/wiki/rules/queueable-action-trait-mandatory.md
   - native-comments-engine-workflow.md
-  - ../../User/docs/wiki/concepts/no-app-support-queueable-actions.md
+  - ../../../../User/docs/wiki/concepts/no-app-support-queueable-actions.md
+status: draft
 ---
 
 # no `app/Support/` — business logic in QueueableAction
@@ -83,4 +84,4 @@ Wrapper e duplicati root **senza consumer** (modello `Comment` usa solo sottocar
 
 - [comment-notifications-queueable.md](comment-notifications-queueable.md)
 - [native-comments-engine-workflow.md](native-comments-engine-workflow.md)
-- [queueable-action-trait-mandatory](../../../../docs/wiki/rules/queueable-action-trait-mandatory.md)
+- [queueable-action-trait-mandatory](../../../../../../docs/wiki/rules/queueable-action-trait-mandatory.md)

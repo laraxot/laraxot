@@ -5,16 +5,22 @@ declare(strict_types=1);
 namespace Modules\AI\Tests\Unit\Actions;
 
 use Modules\AI\Actions\PredictionDraftFallbackTemplatesAction;
+use Modules\AI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
 
 describe('PredictionDraftFallbackTemplates Action', function (): void {
     test('_returns_expected_template_categories', function (): void {
-        $action = new PredictionDraftFallbackTemplatesAction();
+        $action = new PredictionDraftFallbackTemplatesAction;
         $result = $action->execute();
 
         Assert::assertNotEmpty($result);
 
-        Assert::assertEqualsCanonicalizing(['category', 'title', 'subtitle', 'description', 'analysis', 'tags', 'options'], array_keys($result[0]));
+        Assert::assertEqualsCanonicalizing(
+            ['category', 'title', 'subtitle', 'description', 'analysis', 'tags', 'options'],
+            array_keys($result[0]),
+        );
 
         // Verify that we have multiple categories
         $categories = array_unique(array_column($result, 'category'));
@@ -33,7 +39,7 @@ describe('PredictionDraftFallbackTemplates Action', function (): void {
     });
 
     test('_has_expected_categories_present', function (): void {
-        $action = new PredictionDraftFallbackTemplatesAction();
+        $action = new PredictionDraftFallbackTemplatesAction;
         $result = $action->execute();
 
         $categories = array_column($result, 'category');
@@ -46,7 +52,7 @@ describe('PredictionDraftFallbackTemplates Action', function (): void {
     });
 
     test('_templates_contain_options', function (): void {
-        $action = new PredictionDraftFallbackTemplatesAction();
+        $action = new PredictionDraftFallbackTemplatesAction;
         $result = $action->execute();
 
         foreach ($result as $template) {
@@ -63,7 +69,7 @@ describe('PredictionDraftFallbackTemplates Action', function (): void {
     });
 
     test('_templates_have_tags', function (): void {
-        $action = new PredictionDraftFallbackTemplatesAction();
+        $action = new PredictionDraftFallbackTemplatesAction;
         $result = $action->execute();
 
         foreach ($result as $template) {
@@ -74,7 +80,7 @@ describe('PredictionDraftFallbackTemplates Action', function (): void {
     });
 
     test('_template_structure_matches_expectation', function (): void {
-        $action = new PredictionDraftFallbackTemplatesAction();
+        $action = new PredictionDraftFallbackTemplatesAction;
         $result = $action->execute();
 
         Assert::assertNotEmpty($result);

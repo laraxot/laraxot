@@ -10,11 +10,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Modules\Comment\Datas\CommentConfigData;
-use Modules\Comment\Models\Comment;
 use Modules\Comment\Models\Contracts\CanComment;
-use Modules\Comment\Models\Reaction;
-use Modules\Comment\Policies\CommentPolicy;
-use Modules\Comment\Policies\ReactionPolicy;
 use Modules\Xot\Datas\XotData;
 use Webmozart\Assert\Assert;
 

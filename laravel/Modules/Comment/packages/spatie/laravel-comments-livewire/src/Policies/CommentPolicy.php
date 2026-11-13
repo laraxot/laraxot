@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Spatie\LivewireComments\Policies;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Comments\Models\Comment;
-use Modules\Comment\Models\Contracts\CanComment;
+use Spatie\Comments\Models\Concerns\Interfaces\CanComment;
 use Spatie\LivewireComments\Support\Config;
 
 class CommentPolicy

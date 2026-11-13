@@ -1,25 +1,22 @@
 ---
 title: "no app/Support — AI QueueableAction"
 type: concept
-tags: [ai, actions, queueable-action, support, sentiment]
+tags: [ai, actions, queueable-action, support, adapters]
 created: 2026-07-12
-updated: 2026-07-12
-qmd: "AI module no Support sentiment ScalarCaster PredictionDraft templates"
-issues:
-  - "https://github.com/laraxot/base_fixcity_fila5/issues/372"
-discussions:
-  - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
+updated: 2026-10-22
+qmd: "AI module no Support AiActionHandlerRegistry JsonDecoder ScalarCaster PredictionDraft"
 related:
-  - ../../../../docs/wiki/concepts/no-app-support-monorepo-migration.md
+  - ../../../../../../docs/second-brain/process/no-app-support-queueable-actions.md
+status: draft
 ---
 
 # AI — `app/Support/` eliminato
 
-| Legacy | Action |
-|--------|--------|
-| `Sentiment/BasicSentimentAnalyzer` | `AnalyzeBasicSentimentAction` |
-| `Sentiment/TransformersSentimentAnalyzer` | `AnalyzeTransformersSentimentAction` |
-| `ScalarCaster` | `CastScalarToStringAction`, `CastScalarToNullableStringAction`, `CastScalarToStringListAction` |
-| `PredictionDraftFallbackTemplates` | `GetPredictionFallbackTemplatesAction` |
+| Legacy Support | Destinazione |
+|----------------|--------------|
+| `AiActionHandlerRegistry` | `Adapters/AiActionHandlerRegistry` (singleton binding, **non** Action) |
+| `AiJsonResponseDecoder` | `Actions/AiJsonResponseDecoderAction` |
+| `ScalarCaster` | `Actions/Cast/ScalarCasterAction` |
+| `PredictionDraftFallbackTemplates` | `Actions/PredictionDraftFallbackTemplatesAction` (+ Predict variant) |
 
-`SentimentAction` orchestra le action sentiment; `OpenAiPredictionMapper` usa le cast action.
+Wave 2026-10-22: registry spostato da faux-Action ad Adapter (religione: multi-metodo ≠ use-case).

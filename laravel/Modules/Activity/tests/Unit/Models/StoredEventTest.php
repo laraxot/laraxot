@@ -7,13 +7,16 @@ use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEvent;
 
+<<<<<<< HEAD
 uses(\Modules\Activity\Tests\TestCase::class);
+=======
+uses(TestCase::class);
+>>>>>>> 13cf1831 (.)
 
 test('StoredEvent model can be instantiated', function () {
     $reflection = new ReflectionClass(StoredEvent::class);
     $storedEvent = $reflection->newInstanceWithoutConstructor();
 
-    Assert::assertIsObject($storedEvent);
     // Verifichiamo che estenda il modello corretto da Spatie
     Assert::assertInstanceOf(EloquentStoredEvent::class, $storedEvent);
 });

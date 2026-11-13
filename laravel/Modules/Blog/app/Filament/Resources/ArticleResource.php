@@ -7,11 +7,12 @@ namespace Modules\Blog\Filament\Resources;
 use Filament\Schemas\Components\Component;
 use Modules\Blog\Filament\Resources\ArticleResource\Schemas\ArticleFormSchema;
 use Modules\Blog\Models\Article;
-use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\Lang\Filament\Resources\LangBaseResource;
 
-class ArticleResource extends XotBaseResource
+class ArticleResource extends LangBaseResource
 {
-    // use Translatable; // Temporarily disabled until lara-zeus package is working
+    // Le pagine estendono LangBase*Record (Translatable): la risorsa deve estendere LangBaseResource,
+    // altrimenti "getDefaultTranslatableLocale does not exist" (500 su crea/modifica).
 
     protected static ?string $model = Article::class;
 

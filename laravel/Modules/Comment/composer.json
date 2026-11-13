@@ -34,9 +34,7 @@
             "Modules\\Comment\\": "app/",
             "Modules\\Comment\\Database\\Factories\\": "database/factories/",
             "Modules\\Comment\\Database\\Seeders\\": "database/seeders/",
-            "Modules\\Comment\\Tests\\": "tests/",
-            "Spatie\\Comments\\": "packages/spatie/laravel-comments/src",
-            "Spatie\\LivewireComments\\": "packages/spatie/laravel-comments-livewire/src"
+            "Modules\\Comment\\Tests\\": "tests/"
         }
     },
     "autoload-dev": {

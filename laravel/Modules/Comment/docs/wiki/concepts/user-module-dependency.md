@@ -1,12 +1,16 @@
 ---
+updated: 2026-09-26
+issues: []
+discussions: []
 title: "Dipendenza da User module"
 type: concept
 tags: [comment, user, dependency, module]
 created: 2026-06-29
 qmd: "Comment module depends on User module unidirectional"
 related:
-  - ../../../User/docs/wiki/concepts/no-comment-module-dependency.md
+  - ../../../../User/docs/wiki/concepts/no-comment-module-dependency.md
   - ../rules/module-dependency-rules.md
+status: draft
 ---
 
 # Comment → User: dipendenza unidirezionale

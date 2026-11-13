@@ -6,13 +6,20 @@ This document outlines the key changes and upgrades implemented for Filament v4 
 ## Key Changes Made
 
 ### 1. Schema-based Resource Definitions
+<<<<<<< HEAD
 - **Updated**: `ActivityResource` now uses `getFormSchema()` method
+=======
+>>>>>>> 13cf1831 (.)
 - **New Pattern**: Returns array of `Filament\Schemas\Components\Component`
 - **Migration**: Moved from v3 `form(Form $form)` to v4 schema approach
 
 ```php
 // v4 Approach (Current)
+<<<<<<< HEAD
 public function getFormSchema(): array
+=======
+public static function getFormSchema(): array
+>>>>>>> 13cf1831 (.)
 {
     return [
         'log_name' => TextInput::make('log_name')->required()->maxLength(255),
@@ -23,8 +30,11 @@ public function getFormSchema(): array
 ```
 
 ### 2. Table Method Updates
+<<<<<<< HEAD
 - **Updated**: Table actions now use `recordActions()` instead of `actions()`
 - **Updated**: Bulk actions now use `toolbarActions()`
+=======
+>>>>>>> 13cf1831 (.)
 - **Base Class**: `XotBaseListRecords` properly implements v4 table patterns
 
 ### 3. Base Resource Updates

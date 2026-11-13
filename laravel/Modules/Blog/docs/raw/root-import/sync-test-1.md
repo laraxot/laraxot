@@ -1,3 +1,14 @@
+---
+title: "sync test 1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sync test 1"
+issues: []
+discussions: []
+---
+
 # Sync Test File
 
 **Created**: 2026-03-13  
@@ -9,4 +20,12 @@ This file is used to verify that:
 
 ---
 
+title: "sync test 1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sync test 1"
+issues: []
+discussions: []
 **Test Status**: Created locally, waiting for sync

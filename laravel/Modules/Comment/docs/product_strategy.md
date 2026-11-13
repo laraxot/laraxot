@@ -1,3 +1,15 @@
+---
+title: "product strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product strategy"
+issues: []
+discussions: []
+status: draft
+---
+
 # Comment Module - Product Strategy
 
 **Module:** Comment  
@@ -5,7 +17,6 @@
 **Owner:** Product Team
 
 ---
-
 ## Executive Summary
 
 The Comment module enables community discussions across the platform, driving engagement and providing valuable user insights while maintaining content quality.

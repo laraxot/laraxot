@@ -1,36 +1,39 @@
-vendor/
-docs/cache/
-cache/
--e 
-# PHPStan documentation
-docs/phpstan/
 
-# Backup files
-*.old
-*.old1
-*.backup
-*.backup.*
-lang/lang/
-_docs/
-_docs/
+.env
+.env.*
+!.env.example
 
-# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
-docs/archive/
-# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
-*~HEAD
 *~BASE
+*~head
+*~HEAD
 *~LOCAL
 *~REMOTE
-*.orig
-*.rej
-*~head
-
 agentdb.rvf
+*.backup
+*.backup.*
+# Backup files
+cache/
+.claude-audit/
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
 .cursor/
+.devcontainer/
+_docs/
+docs/archive/
+docs/cache/
+docs/phpstan/
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out/
+lang/lang/
+*.lock
+*.old
+*.old1
+*.orig
+# PHPStan documentation
+*.rej
+# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
+tests/AuditCoverage/
+vendor/
 .vscode/
 .windsurf/
-.devcontainer/
-.claude-audit/
-tests/AuditCoverage/
-graphify-out
-*.lock
+test-results/
+comment.code-workspace

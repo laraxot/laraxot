@@ -1,4 +1,6 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
 title: FO commenti — Filament widget, no Livewire diretto
 type: concept
 tags: [comment, filament, widget, front-office, architecture]
@@ -11,6 +13,7 @@ discussions:
   - https://github.com/laraxot/module_comment_fila5/discussions/15
 created_at: 2026-06-10
 updated_at: 2026-06-10
+status: draft
 ---
 
 # FO commenti — Filament widget, no Livewire diretto

@@ -1,9 +1,16 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "livewire widget product brief"
+issues: []
+discussions: []
 title: "Product brief — AI"
 type: product-brief
 module: AI
 related:
   - ./livewire-inventory.md
+status: draft
 ---
 
 # Brief AI

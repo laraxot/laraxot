@@ -1,4 +1,10 @@
 ---
+title: "phpstan Comment fix"
+type: note
+tags: [documentation]
+qmd: "phpstan Comment fix"
+issues: []
+discussions: []
 id: phpstan-Comment-fix
 slug: phpstan-Comment
 scope: [module:Comment, project:base_workorder_fila5]

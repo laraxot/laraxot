@@ -1,11 +1,15 @@
 ---
+qmd: "qmd setup"
+issues: []
+discussions: []
 title: "QMD Setup — Module Blog"
 type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [qmd, search, docs, performance]
 related:
-  - ../../docs/wiki/concepts/llm-wiki-operational-discipline.md
+  - ../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md
+status: draft
 ---
 
 # QMD Setup per Module **Blog**
@@ -87,8 +91,8 @@ graph TD
 ## Riferimenti
 
 - [Global QMD Config](../qmd.md) (root docs)
-- [Operational Discipline](../../docs/wiki/concepts/llm-wiki-operational-discipline.md)
-- [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
+- [Operational Discipline](../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md)
+- [On-Demand Pattern](on-demand-pattern.md)
 
 ---
 *Cache: ~/.cache/qmd-cache/ | Index: ~/.cache/qmd-cache/index*

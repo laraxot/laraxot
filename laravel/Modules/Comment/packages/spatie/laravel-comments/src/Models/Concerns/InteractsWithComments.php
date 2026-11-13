@@ -4,7 +4,7 @@ namespace Spatie\Comments\Models\Concerns;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Notifications\RoutesNotifications;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\URL;
 use Spatie\Comments\Enums\NotificationSubscriptionType;
 use Spatie\Comments\Support\CommentatorProperties;
@@ -12,7 +12,7 @@ use Spatie\Comments\Support\Config;
 
 trait InteractsWithComments
 {
-    use RoutesNotifications;
+    use Notifiable;
 
     public function commentatorComments(): MorphMany
     {

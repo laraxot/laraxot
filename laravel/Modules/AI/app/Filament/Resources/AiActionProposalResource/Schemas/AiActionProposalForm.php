@@ -9,7 +9,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
-use Modules\AI\Models\AiActionProposal;
+use Modules\AI\Enums\AiActionProposalStatusEnum;
 use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 
 /**
@@ -17,7 +17,7 @@ use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
  *
  * Nessun ->label(): le etichette arrivano da `ai::action_proposal.fields.*.label`
  * per convenzione (vedi docs/wiki/rules/no-filament-labels.md). Le opzioni della
- * Select restano tradotte esplicitamente: sono valori, non etichette di campo.
+ * Select arrivano da AiActionProposalStatusEnum (HasLabel, chiavi lang dell'enum).
  */
 class AiActionProposalForm extends XotBaseResourceForm
 {
@@ -33,13 +33,7 @@ class AiActionProposalForm extends XotBaseResourceForm
                         ->required(),
 
                     'status' => Select::make('status')
-                        ->options([
-                            AiActionProposal::STATUS_PENDING => __('ai::action_proposal.statuses.pending'),
-                            AiActionProposal::STATUS_CANCELLED => __('ai::action_proposal.statuses.cancelled'),
-                            AiActionProposal::STATUS_CONFIRMED => __('ai::action_proposal.statuses.confirmed'),
-                            AiActionProposal::STATUS_EXECUTED => __('ai::action_proposal.statuses.executed'),
-                            AiActionProposal::STATUS_FAILED => __('ai::action_proposal.statuses.failed'),
-                        ])
+                        ->options(AiActionProposalStatusEnum::class)
                         ->required(),
 
                     'preview' => Textarea::make('preview')

@@ -4,15 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Comment\Filament\Widgets\Commentable;
 
-use Filament\Schemas\Components\Component;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Gate;
 use Livewire\Attributes\Computed;
+use Livewire\Attributes\Locked;
 use Livewire\WithPagination;
+use Modules\Comment\Actions\Comment\EnsureCommentRateLimitAction;
 use Modules\Comment\Datas\CommentConfigData;
 use Modules\Comment\Datas\CommentsWidgetUiData;
 use Modules\Comment\Enums\NotificationSubscriptionType;
+use Modules\Comment\Filament\Widgets\Schemas\CommentTextForm;
 use Modules\Comment\Models\Comment;
 use Modules\Comment\Models\Contracts\CanComment;
 use Modules\Comment\Models\Contracts\Commentable;
@@ -27,14 +30,27 @@ class CommentsWidget extends XotBaseSchemaWidget
 
     protected static bool $isDiscovered = false;
 
-    // protected string $view = 'comment::filament.widgets.commentable.comments';
+    // Callers: Themes/Sixteen blog/detail + events/detail + Fixcity ticket-comments
+    // (@livewire CommentsWidget). Unique FO comments UI; schema Comment morph.
+    // User: «al posto di aggiungere i commenti non si vede piu' il contenuto».
+    protected string $view = 'comment::filament.widgets.commentable.comments';
 
     public ?Model $model = null;
 
-    /** @var class-string<Model>|null Persistito per Livewire annidato (no Eloquent dehydrate). */
+    /**
+     * Persistito per Livewire annidato (no Eloquent dehydrate). Bloccato: le proprieta' pubbliche le puo' scrivere il browser, e
+     * senza `#[Locked]` un utente potrebbe puntare il widget a un'altra entita' commentabile (un altro articolo, una segnalazione).
+     *
+     * @var class-string<Model>|null
+     */
+    #[Locked]
     public ?string $commentableType = null;
 
+    #[Locked]
     public ?string $commentableKey = null;
+
+    /** Esito dell'ultima azione, annunciato agli screen reader (`role="status"`). */
+    public ?string $statusMessage = null;
 
     public CommentsWidgetUiData $uiConfig;
 
@@ -118,16 +134,35 @@ class CommentsWidget extends XotBaseSchemaWidget
     }
 
     /**
-     * @return array<int|string, Component>
+     * @return class-string<CommentTextForm>
      */
-    public function getFormSchema(): array
+    protected static function formClass(): string
     {
-        return [];
+        return CommentTextForm::class;
     }
 
-    public function updatedUiConfigText(string $value): void
+    protected static function schemaMethod(): string
     {
-        if (! (CommentConfigData::make()->mentions['enabled'] ?? false)) {
+        return 'getCommentFormSchema';
+    }
+
+    public function updatedDataText(string $value): void
+    {
+        $this->dispatchMentionSearch($value);
+    }
+
+    public function updatedData(?string $value, string $key): void
+    {
+        if ($key !== 'text' || $value === null) {
+            return;
+        }
+
+        $this->dispatchMentionSearch($value);
+    }
+
+    private function dispatchMentionSearch(string $value): void
+    {
+        if (! CommentConfigData::make()->mentionsEnabled()) {
             return;
         }
 
@@ -155,21 +190,27 @@ class CommentsWidget extends XotBaseSchemaWidget
         }
 
         $token = '@{'.$userId.'|'.$displayName.'}';
-        $replaced = preg_replace('/@[^\s{]*$/', $token.' ', $this->uiConfig->text);
-        if (is_string($replaced)) {
-            $this->uiConfig->text = $replaced;
-        } else {
-            $this->uiConfig->text = $this->uiConfig->text.' '.$token;
-        }
+        $current = is_string($this->data['text'] ?? null) ? $this->data['text'] : '';
+        $replaced = preg_replace('/@[^\s{]*$/', $token.' ', $current);
+        $this->data['text'] = is_string($replaced) ? $replaced : $current.' '.$token;
     }
 
     public function comment(): void
     {
-        $this->validate(['uiConfig.text' => ['required', 'string', 'min:1']]);
+        $commentable = $this->resolveCommentable();
 
-        $this->resolveCommentable()->comment($this->uiConfig->text);
+        // Un ospite o chi non puo' commentare riceve 403: senza questo controllo l'anonimo arrivava a `HasComments::comment()` e
+        // finiva in un'eccezione (500). La policy e' la fonte di verita': le proprieta' pubbliche del widget le scrive il browser.
+        Gate::authorize('create', Comment::class);
+        app(EnsureCommentRateLimitAction::class)->execute('data.text');
 
-        $this->uiConfig->text = '';
+        $state = $this->form->getState();
+        $text = trim(is_string($state['text'] ?? null) ? $state['text'] : '');
+
+        $comment = $commentable->comment($text);
+
+        $this->form->fill([]);
+        $this->statusMessage = $comment->isApproved() ? __('comment::txt.comment_posted') : __('comment::txt.pending_approval');
 
         $pageName = (string) (CommentConfigData::make()->pagination['page_name'] ?? 'page');
         if ($this->uiConfig->newestFirst) {
@@ -197,8 +238,8 @@ class CommentsWidget extends XotBaseSchemaWidget
             return;
         }
 
-        /** @var \Modules\Comment\Models\Contracts\CanComment|null $currentUser */
-         $currentUser = auth()->user();
+        /** @var CanComment|null $currentUser */
+        $currentUser = auth()->user();
         if (! $currentUser instanceof CanComment) {
             return;
         }
@@ -222,11 +263,17 @@ class CommentsWidget extends XotBaseSchemaWidget
     {
         $query = $this->resolveCommentable()
             ->comments()
+            ->approved()
+            // Solo il primo livello: le risposte si leggono da `nestedComments`. I dati di esempio salvano le risposte con lo
+            // stesso commentable del padre e `parent_id` valorizzato, e senza questo filtro comparivano anche in lista.
+            ->whereNull('parent_id')
             ->with([
                 'commentator',
-                'nestedComments.commentator',
                 'reactions.commentator',
-                'nestedComments.reactions.commentator',
+                'nestedComments' => static function (mixed $nested): void {
+                    // Eager-load constraint riceve Relation (HasMany), non Builder tipizzato.
+                    $nested->whereNotNull('approved_at')->with(['commentator', 'reactions.commentator']);
+                },
             ])
             ->when(
                 $this->uiConfig->newestFirst,
@@ -282,6 +329,13 @@ class CommentsWidget extends XotBaseSchemaWidget
 
     private function resolveCommentable(): Commentable
     {
-        return CommentsWidgetCommentableResolver::resolve($this);
+        $commentable = CommentsWidgetCommentableResolver::resolve($this);
+        if (Gate::getPolicyFor($commentable) !== null) {
+            // Reading an approved public thread is not an update operation. Write actions
+            // still authorize `create`/`update` at their own trust boundary.
+            Gate::authorize('view', $commentable);
+        }
+
+        return $commentable;
     }
 }

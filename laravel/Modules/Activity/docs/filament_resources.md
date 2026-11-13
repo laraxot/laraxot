@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_rn5ILG
+=======
+---
+title: "Filament Resources nel Modulo Activity"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity]
+qmd: "filament resources nel modulo activity activity"
+---
+>>>>>>> .merge_file_gSHSYu
 # Filament Resources nel Modulo Activity
 
 ## Struttura delle Risorse

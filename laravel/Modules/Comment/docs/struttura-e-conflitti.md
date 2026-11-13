@@ -1,3 +1,15 @@
+---
+title: "struttura e conflitti"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "struttura e conflitti"
+issues: []
+discussions: []
+status: draft
+---
+
 # Modulo Comment - Documentazione
 
 ## Struttura del Modulo

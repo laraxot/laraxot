@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Prototype: laravel/Modules/* e laravel/Themes/*
 # Canon: docs/wiki/rules/no-git-lfs.md
 # Sync: bash bashscripts/templates/sync-gitattributes-modules.sh
@@ -30,6 +31,8 @@ CHANGELOG.md export-ignore
 *.phar binary !filter
 *.db binary !filter
 *.sqlite binary !filter
+=======
+>>>>>>> a99fbfa (.)
 *.png !text !filter !merge !diff
 *.svg !text !filter !merge !diff
 *.jpg !text !filter !merge !diff

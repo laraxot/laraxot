@@ -3,7 +3,10 @@
 declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Unit\Providers;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 13cf1831 (.)
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Logout;
 use Modules\Activity\Listeners\LoginListener;
@@ -12,7 +15,11 @@ use Modules\Activity\Providers\EventServiceProvider;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
 uses(TestCase::class);
+=======
+uses(\Modules\Activity\Tests\TestCase::class);
+>>>>>>> 13cf1831 (.)
 
 test('event service provider registers login and logout listeners', function () {
     $provider = new EventServiceProvider(app());

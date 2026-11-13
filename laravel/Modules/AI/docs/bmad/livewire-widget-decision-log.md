@@ -1,9 +1,16 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "livewire widget decision log"
+issues: []
+discussions: []
 title: "Decision log — AI"
 type: decision-log
 module: AI
 related:
   - ./livewire-inventory.md
+status: draft
 ---
 
 # Decision log AI

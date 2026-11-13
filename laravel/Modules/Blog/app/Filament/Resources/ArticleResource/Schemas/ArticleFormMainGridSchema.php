@@ -9,6 +9,7 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Support\Str;
 use Modules\Blog\Filament\Resources\CategoryResource;
 use Modules\Blog\Models\Category;
@@ -22,8 +23,8 @@ final class ArticleFormMainGridSchema
             TextInput::make('title')
                 ->columnSpan(1)
                 ->required()
-                ->lazy()
-                ->afterStateUpdated(static function ($set, $get, $state): void {
+                ->live(onBlur: true)
+                ->afterStateUpdated(static function (mixed $set, mixed $get, mixed $state): void {
                     Assert::isCallable($set, 'set must be callable');
                     Assert::isCallable($get, 'get must be callable');
 
@@ -36,10 +37,28 @@ final class ArticleFormMainGridSchema
             TextInput::make('slug')
                 ->columnSpan(1)
                 ->required(),
+            Select::make('type')
+                ->label('Tipo contenuto')
+                ->options([
+                    'post' => 'Post / Novità',
+                    'event' => 'Evento',
+                ])
+                ->default('post')
+                ->required()
+                ->live(),
             DateTimePicker::make('closed_at')
                 ->columnSpan(1)
                 ->helperText('Determina fino a quando è possibile visualizzare l\'articolo')
                 ->required(),
+            DateTimePicker::make('event_start_date')
+                ->label('Inizio evento')
+                ->visible(static fn (Get $get): bool => 'event' === $get('type'))
+                ->required(static fn (Get $get): bool => 'event' === $get('type')),
+            DateTimePicker::make('event_end_date')
+                ->label('Fine evento')
+                ->visible(static fn (Get $get): bool => 'event' === $get('type'))
+                ->required(static fn (Get $get): bool => 'event' === $get('type'))
+                ->after('event_start_date'),
             DateTimePicker::make('published_at')
                 ->columnSpan(1)
                 ->nullable(),

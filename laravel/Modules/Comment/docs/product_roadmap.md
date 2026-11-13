@@ -1,3 +1,15 @@
+---
+title: "product roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product roadmap"
+issues: []
+discussions: []
+status: draft
+---
+
 # Comment Module - Product Roadmap
 
 **Module:** Comment  
@@ -6,7 +18,6 @@
 **Status:** In Development
 
 ---
-
 ## Vision Statement
 
 To build a **robust commenting system** that fosters healthy community discussions, drives engagement, and provides valuable user insights while maintaining quality and safety.

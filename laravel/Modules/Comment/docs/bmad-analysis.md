@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Comment - Analisi BMAD Completa"
 type: decision
 tags: [bmad, comment, reviews, community]
@@ -10,6 +12,7 @@ related:
   - ./README.md
   - ./index.md
   - ../Xot/docs/bmad-analysis-core-foundation.md
+status: draft
 ---
 
 # Comment - Analisi BMAD Completa

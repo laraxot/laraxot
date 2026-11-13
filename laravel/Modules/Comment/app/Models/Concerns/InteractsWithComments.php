@@ -7,10 +7,12 @@ namespace Modules\Comment\Models\Concerns;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Facades\URL;
+use Modules\Comment\Actions\ResolveGravatarUrlAction;
+use Modules\Comment\Datas\CommentatorProperties;
 use Modules\Comment\Datas\CommentConfigData;
 use Modules\Comment\Enums\NotificationSubscriptionType;
 use Modules\Comment\Models\CommentNotificationSubscription;
-use Modules\Comment\Datas\CommentatorProperties;
+use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * CanComment senza RoutesNotifications — BaseUser usa già Notifiable.
@@ -25,17 +27,19 @@ trait InteractsWithComments
 
     public function commentatorProperties(): CommentatorProperties
     {
-        $email = (string) ($this->email ?? '');
-        $segment = md5(strtolower($email));
+        // Caller: commentatorProperties() da comment-item FO + Filament comment widget.
+        // CMT-022: avatar del profilo (media o Gravatar) — supera D-03 su richiesta esplicita dell'utente.
+        $email = is_string($this->email) ? $this->email : '';
         $config = CommentConfigData::make();
-        $defaultImage = (string) ($config->gravatar['default_image'] ?? 'mp');
         $nameField = (string) ($config->models['name'] ?? 'name');
         $avatarField = (string) ($config->models['avatar'] ?? 'avatar');
         $name = is_string($this->{$nameField} ?? null) ? $this->{$nameField} : '';
-        $avatar = $this->{$avatarField} ?? null;
-        $avatarUrl = is_string($avatar) && $avatar !== ''
-            ? $avatar
-            : "https://www.gravatar.com/avatar/{$segment}?d={$defaultImage}";
+        $profile = $this->getRelationValue('profile');
+        $avatar = $profile instanceof ProfileContract ? $profile->getAvatarUrl() : ($this->{$avatarField} ?? null);
+        $avatarUrl = is_string($avatar) && $avatar !== '' ? $avatar : '';
+        if ($avatarUrl === '' && $email !== '') {
+            $avatarUrl = app(ResolveGravatarUrlAction::class)->execute($email);
+        }
 
         return CommentatorProperties::email($email)
             ->name($name)

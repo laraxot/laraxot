@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+<<<<<<< .merge_file_e3G4Km
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< .merge_file_1tS9SI
+>>>>>>> 13cf1831 (.)
+---
+title: "Filament v4 Upgrade Documentation"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity, filament]
+qmd: "filament v4 upgrade documentation activity"
+---
+<<<<<<< HEAD
+>>>>>>> .merge_file_t4dkV6
+=======
+
+See canonical documentation: ../../../../Themes/docs/shared-components/FILAMENT_V4_UPGRADE.md
+=======
+=======
+>>>>>>> 472c43a3 (.)
+>>>>>>> 13cf1831 (.)
 # Filament v4 Upgrade Documentation
 
 ## Overview
@@ -48,4 +72,13 @@ public static function getFormSchema(): array
 ## References
 
 - [Filament v4 Upgrade Guide](https://filamentphp.com/docs/4.x/upgrade-guide)
+<<<<<<< HEAD
 - [Filament v4 Schema Documentation](https://filamentphp.com/docs/4.x/forms/fields)
+=======
+<<<<<<< HEAD
+- [Filament v4 Schema Documentation](https://filamentphp.com/docs/4.x/forms/fields)
+>>>>>>> .merge_file_IToZlK
+=======
+- [Filament v4 Schema Documentation](https://filamentphp.com/docs/4.x/forms/fields)
+>>>>>>> 472c43a3 (.)
+>>>>>>> 13cf1831 (.)

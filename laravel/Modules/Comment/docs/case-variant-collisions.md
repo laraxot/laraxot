@@ -1,3 +1,15 @@
+---
+title: "case variant collisions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "case variant collisions"
+issues: []
+discussions: []
+status: draft
+---
+
 # Collisioni di nome per sola differenza di maiuscole
 
 **Misurato**: 2026-08-31
@@ -168,3 +180,10 @@ Modules/Comment/packages/spatie/laravel-comments/src/View/Components/Mentions/Me
 
 Serve un test che impedisca la ricomparsa del difetto: senza, il conteggio torna a
 crescere. Vedi il punto 4 del quadro generale.
+
+## 2026-10-16 — igiene docs
+
+- Root UPPERCASE → stub redirect al twin minuscolo.
+- Story `CMT-*` rinominate in `cmt-*` (kebab minuscolo).
+- Indice: `00-INDEX.md`; alias redirect.
+- FO track: [bmad/fo-comments/](./bmad/fo-comments/).

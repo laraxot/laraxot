@@ -1,4 +1,11 @@
 ---
+title: "phpstan ai fix"
+type: note
+tags: [documentation]
+updated: 2026-09-26
+qmd: "phpstan ai fix"
+issues: []
+discussions: []
 id: phpstan-ai-fix
 slug: phpstan-ai
 scope: [module:AI, project:base_workorder_fila5]

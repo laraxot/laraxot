@@ -2,10 +2,11 @@
 
 namespace Spatie\LivewireComments\View\Components;
 
+use function Safe\file_get_contents;
+
+
 use Illuminate\Support\HtmlString;
 use Illuminate\View\Component;
-
-use function Safe\file_get_contents;
 
 class Styles extends Component
 {

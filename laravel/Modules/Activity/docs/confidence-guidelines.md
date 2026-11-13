@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_edLNlj
+=======
+---
+title: "Massimizzare il livello di confidenza"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity]
+qmd: "massimizzare il livello di confidenza activity"
+---
+>>>>>>> .merge_file_C1DMsG
 # Massimizzare il livello di confidenza
 
 1. **Test automatizzati**: copertura >90%, includi test unitari, integrazione, e fine‑to‑end.

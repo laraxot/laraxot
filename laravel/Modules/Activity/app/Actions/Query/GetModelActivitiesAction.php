@@ -21,12 +21,14 @@ class GetModelActivitiesAction
      */
     public function execute(Model $model, int $limit = 50): Collection
     {
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with('causer')
             ->where('subject_type', $model::class)
             ->where('subject_id', $model->getKey())
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 }

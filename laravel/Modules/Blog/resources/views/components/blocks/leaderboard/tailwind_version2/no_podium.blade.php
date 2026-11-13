@@ -6,7 +6,7 @@
         <div class="flex items-center">
         <div class="h-11 w-11 flex-shrink-0">
             <img class="h-11 w-11 rounded-full" 
-                {{-- src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"  --}}ù
+                {{-- src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"  --}}
                 src="{{ $profile->getAvatarUrl() }}"
                 alt="">
         </div>
@@ -16,6 +16,6 @@
         </div>
     </td>
     <td class="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
-        <span class="text-base leading-none">{{ $profile->credits }}</span>
+        <span class="text-base leading-none">{{ number_format((float) $profile->credits, 0, ',', '.') }}</span>
     </td>
 </tr>

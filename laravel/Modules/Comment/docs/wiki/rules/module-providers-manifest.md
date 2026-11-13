@@ -13,6 +13,7 @@ discussions:
 related:
   - ../concepts/module-providers-manifest.md
   - ../../../../../../docs/wiki/rules/module-providers-manifest.md
+status: draft
 ---
 
 # Provider modulo — canon locale

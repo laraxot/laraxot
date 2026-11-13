@@ -1,3 +1,15 @@
+---
+title: "00 index"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "00 index"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📚 Wiki Index
 
 **Directory**: `bashscripts/ai/.agents/wiki/`  
@@ -6,7 +18,6 @@
 **Version**: 2.0
 
 ---
-
 ## 🎯 Overview
 
 Index of all documentation files in the `wiki` directory.
@@ -21,7 +32,7 @@ Index of all documentation files in the `wiki` directory.
 
 | File | Purpose |
 |------|---------|
-| [AGENTS.md](AGENTS.md) | Agents |
+| [AGENTS.md](agents.md) | Agents |
 | [README.md](README.md) | Readme |
 | [index.md](index.md) | Index |
 | [log.md](log.md) | Log |
@@ -45,13 +56,13 @@ Index of all documentation files in the `wiki` directory.
 
 | File | Purpose |
 |------|---------|
-| [INDEX.md](commands/INDEX.md) | Index |
+| [INDEX.md](commands/index.md) | Index |
 
 ### concepts/
 
 | File | Purpose |
 |------|---------|
-| [INDEX.md](concepts/INDEX.md) | Index |
+| [INDEX.md](concepts/index.md) | Index |
 | [can-comment-contract-owner.md](concepts/can-comment-contract-owner.md) | Can Comment Contract Owner |
 | [can-comment-contract-php84.md](concepts/can-comment-contract-php84.md) | Can Comment Contract Php84 |
 | [comment-module-architecture-spatie-migration.md](concepts/comment-module-architecture-spatie-migration.md) | Comment Module Architecture Spatie Migration |
@@ -90,13 +101,13 @@ Index of all documentation files in the `wiki` directory.
 
 | File | Purpose |
 |------|---------|
-| [INDEX.md](memories/INDEX.md) | Index |
+| [INDEX.md](memories/index.md) | Index |
 
 ### rules/
 
 | File | Purpose |
 |------|---------|
-| [INDEX.md](rules/INDEX.md) | Index |
+| [INDEX.md](rules/index.md) | Index |
 | [comment-widget-render.md](rules/comment-widget-render.md) | Comment Widget Render |
 | [filament-resource-schema-triad.md](rules/filament-resource-schema-triad.md) | Filament Resource Schema Triad |
 | [module-providers-manifest.md](rules/module-providers-manifest.md) | Module Providers Manifest |
@@ -109,30 +120,30 @@ Index of all documentation files in the `wiki` directory.
 
 | File | Purpose |
 |------|---------|
-| [INDEX.md](skills/INDEX.md) | Index |
+| [INDEX.md](skills/index.md) | Index |
 
 ### troubleshooting/
 
 | File | Purpose |
 |------|---------|
-| [git-merge-conflict-inventory-2026-04-28.md](troubleshooting/git-merge-conflict-inventory-2026-04-28.md) | Git Merge Conflict Inventory 2026 04 28 |
+| git-merge-conflict-inventory-2026-04-28.md _(riferimento non presente nel repository, verificato 2026-10-14)_ | Git Merge Conflict Inventory 2026 04 28 |
 
 
 ## 🔗 Cross-References
 
 ### Parent Directory
-- [../00-MASTER-INDEX.md](../00-MASTER-INDEX.md) - Master index
+- ../00-MASTER-INDEX.md _(riferimento non presente nel repository, verificato 2026-10-14)_ - Master index
 
 ### Related Directories
-- [concepts/](../concepts/00-INDEX.md) - Concepts index
-- [decisions/](../decisions/00-INDEX.md) - Decisions index
-- [entities/](../entities/00-INDEX.md) - Entities index
-- [llm-wiki/](../llm-wiki/00-INDEX.md) - Llm Wiki index
-- [raw/](../raw/00-INDEX.md) - Raw index
-- [roadmap/](../roadmap/00-INDEX.md) - Roadmap index
-- [root-md-files/](../root-md-files/00-INDEX.md) - Root Md Files index
-- [sources/](../sources/00-INDEX.md) - Sources index
-- [summaries/](../summaries/00-INDEX.md) - Summaries index
+- concepts/ _(riferimento non presente nel repository, verificato 2026-10-14)_ - Concepts index
+- decisions/ _(riferimento non presente nel repository, verificato 2026-10-14)_ - Decisions index
+- entities/ _(riferimento non presente nel repository, verificato 2026-10-14)_ - Entities index
+- llm-wiki/ _(riferimento non presente nel repository, verificato 2026-10-14)_ - Llm Wiki index
+- raw/ _(riferimento non presente nel repository, verificato 2026-10-14)_ - Raw index
+- roadmap/ _(riferimento non presente nel repository, verificato 2026-10-14)_ - Roadmap index
+- root-md-files/ _(riferimento non presente nel repository, verificato 2026-10-14)_ - Root Md Files index
+- sources/ _(riferimento non presente nel repository, verificato 2026-10-14)_ - Sources index
+- summaries/ _(riferimento non presente nel repository, verificato 2026-10-14)_ - Summaries index
 
 ---
 

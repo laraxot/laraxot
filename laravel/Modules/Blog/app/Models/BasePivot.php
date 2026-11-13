@@ -20,7 +20,6 @@ use Modules\Xot\Models\XotBasePivot;
  */
 abstract class BasePivot extends XotBasePivot
 {
-    use SoftDeletes;
 
     /**
      * The connection name for the model.

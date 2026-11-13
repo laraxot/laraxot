@@ -1,10 +1,15 @@
 ---
+type: note
+qmd: "module providers manifest"
+issues: []
+discussions: []
 title: "Module Providers Manifest — No Controllers"
 created: 2026-06-08
 updated: 2026-06-08
 category: "architecture"
 tags: ["comment", "provider", "folio", "livewire", "no-controllers"]
 related_issues: ["STORY-158"]
+status: draft
 ---
 
 # Module Providers Manifest — No Controllers

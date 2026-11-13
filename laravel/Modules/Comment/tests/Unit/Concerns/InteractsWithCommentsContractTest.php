@@ -6,7 +6,7 @@ use Modules\Comment\Tests\Fixtures\Concerns\InteractsWithCommentsContractStub;
 use Modules\Comment\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Comment\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('exposes InteractsWithComments for consumer modules', function (): void {
     $stub = new InteractsWithCommentsContractStub;

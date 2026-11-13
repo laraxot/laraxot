@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "HasComments ⇒ implements Commentable (obbligatorio)"
 type: concept
 module: Comment
@@ -8,6 +10,7 @@ updated: 2026-06-10
 qmd: "HasComments implements Commentable instanceof InvalidArgumentException CommentsWidget requires Commentable model 500"
 related:
   - ./filament-widgets-subject-subfolders.md
+status: draft
 ---
 
 # HasComments ⇒ implements Commentable

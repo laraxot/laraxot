@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\AI\Actions;
 
+use Modules\AI\Enums\AiActionProposalStatusEnum;
 use Modules\AI\Models\AiActionProposal;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -17,7 +18,7 @@ class CancelAiActionProposalAction
     public function execute(AiActionProposal $proposal): AiActionProposal
     {
         $proposal->forceFill([
-            'status' => AiActionProposal::STATUS_CANCELLED,
+            'status' => AiActionProposalStatusEnum::CANCELLED,
         ])->save();
 
         return $proposal;

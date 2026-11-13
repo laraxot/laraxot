@@ -23,13 +23,11 @@ class CommentsWidgetUiData extends Data implements Wireable
 
     public bool $newestFirst = false;
 
-    public bool $showReplies = false;
+    public bool $showReplies = true;
 
     public bool $showReactions = false;
 
     public string $notifySubType = '';
 
     public ?string $noCommentsText = null;
-
-    public string $text = '';
 }

@@ -156,21 +156,21 @@ class ShowArticleCommand extends Command
         Collection $ratings,
         mixed $ratingId,
     ): Article {
-        return $article->loadSum(['ratings as value_sum' => static function ($query) use ($ratingId): void {
+        return $article->loadSum(['ratings as value_sum' => static function (Builder $query) use ($ratingId): void {
             Assert::isInstanceOf($query, Builder::class);
             $query
                 ->where('ratings.id', $ratingId)
                 ->where('rating_morph.user_id', '!=', null);
         },
         ], 'rating_morph.value')
-            ->loadSum(['ratings as value_tot' => static function ($query) use ($ratings): void {
+            ->loadSum(['ratings as value_tot' => static function (Builder $query) use ($ratings): void {
                 Assert::isInstanceOf($query, Builder::class);
                 $query
                     ->whereIn('ratings.id', $ratings->modelKeys())
                     ->where('rating_morph.user_id', '!=', null);
             },
             ], 'rating_morph.value')
-            ->loadCount(['ratings as value_count' => static function ($query) use ($ratingId): void {
+            ->loadCount(['ratings as value_count' => static function (Builder $query) use ($ratingId): void {
                 Assert::isInstanceOf($query, Builder::class);
                 $query
                     ->where('ratings.id', $ratingId)

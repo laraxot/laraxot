@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Auto-generated forbidden paths — do not edit manually
 # Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
 
@@ -10,6 +11,10 @@ _docs
 docs/archive
 docs/archived
 docs/legacy
+<<<<<<< .merge_file_MJw3PR
+=======
+docs/archive/
+>>>>>>> .merge_file_VsHgto
 docs/workbench
 .kilocode
 .kiro
@@ -21,7 +26,23 @@ tests/.claude-audit
 # LARAXOT MODULE ACTIVITY - .GITIGNORE
 # Modulo Activity Laraxot - Template standardizzato
 # Ultimo aggiornamento: 2025-01-31
+<<<<<<< .merge_file_MJw3PR
+=======
+
+>>>>>>> .merge_file_VsHgto
 # DEPENDENCIES & PACKAGES
+=======
+# ==============================================
+# LARAXOT MODULE ACTIVITY - .GITIGNORE
+# ==============================================
+# Modulo Activity Laraxot - Template standardizzato
+# Ultimo aggiornamento: 2025-01-31
+# ==============================================
+
+# ==============================================
+# DEPENDENCIES & PACKAGES
+# ==============================================
+>>>>>>> 13cf1831 (.)
 /vendor/
 /vendor
 /node_modules/
@@ -32,14 +53,36 @@ yarn.lock
 composer.lock
 yarn-error.log
 npm-debug.log
+<<<<<<< HEAD
+<<<<<<< .merge_file_MJw3PR
+=======
+
+>>>>>>> .merge_file_VsHgto
 # BUILD & COMPILED FILES
+=======
+
+# ==============================================
+# BUILD & COMPILED FILES
+# ==============================================
+>>>>>>> 13cf1831 (.)
 /build
 /build/
 build/
 dist/
 docs/cache/
 cache/
+<<<<<<< HEAD
+<<<<<<< .merge_file_MJw3PR
+=======
+
+>>>>>>> .merge_file_VsHgto
 # CACHE & TEMPORARY FILES
+=======
+
+# ==============================================
+# CACHE & TEMPORARY FILES
+# ==============================================
+>>>>>>> 13cf1831 (.)
 *.cache
 *.lock
 *.phar
@@ -52,13 +95,35 @@ cache/
 v8-compile-cache-*
 .php-cs-fixer.cache
 .phpunit.result.cache
+<<<<<<< HEAD
+<<<<<<< .merge_file_MJw3PR
+=======
+
+>>>>>>> .merge_file_VsHgto
 # LOG FILES
+=======
+
+# ==============================================
+# LOG FILES
+# ==============================================
+>>>>>>> 13cf1831 (.)
 *.log
 error_log
 npm-debug.log*
 yarn-error.log*
 lerna-debug.log*
+<<<<<<< HEAD
+<<<<<<< .merge_file_MJw3PR
+=======
+
+>>>>>>> .merge_file_VsHgto
 # LARAVEL SPECIFIC
+=======
+
+# ==============================================
+# LARAVEL SPECIFIC
+# ==============================================
+>>>>>>> 13cf1831 (.)
 bootstrap/compiled.php
 app/storage/
 public/storage
@@ -69,18 +134,51 @@ storage/*.key
 .env
 .env.*
 !.env.example
+<<<<<<< HEAD
+<<<<<<< .merge_file_MJw3PR
+=======
+
+>>>>>>> .merge_file_VsHgto
 # ENVIRONMENT & CONFIGURATION
+=======
+
+# ==============================================
+# ENVIRONMENT & CONFIGURATION
+# ==============================================
+>>>>>>> 13cf1831 (.)
 Homestead.yaml
 Homestead.json
 /.vagrant
 /.idea
 .phpintel
 .vscode/
+<<<<<<< HEAD
+<<<<<<< .merge_file_MJw3PR
+=======
+
+>>>>>>> .merge_file_VsHgto
 # GIT SPECIFIC
 .git-rewrite/
 .git-rewrite
 .git-blame-ignore-revs
+<<<<<<< .merge_file_MJw3PR
+=======
+
+>>>>>>> .merge_file_VsHgto
 # SYSTEM FILES
+=======
+
+# ==============================================
+# GIT SPECIFIC
+# ==============================================
+.git-rewrite/
+.git-rewrite
+.git-blame-ignore-revs
+
+# ==============================================
+# SYSTEM FILES
+# ==============================================
+>>>>>>> 13cf1831 (.)
 .DS_Store
 .DS_Store?
 ._*
@@ -89,7 +187,18 @@ Homestead.json
 ehthumbs.db
 Thumbs.db
 *~
+<<<<<<< HEAD
+<<<<<<< .merge_file_MJw3PR
+=======
+
+>>>>>>> .merge_file_VsHgto
 # BACKUP FILES
+=======
+
+# ==============================================
+# BACKUP FILES
+# ==============================================
+>>>>>>> 13cf1831 (.)
 *.old
 *.old1
 *.old2
@@ -100,21 +209,50 @@ Thumbs.db
 *.bak
 *.bakcup
 *.new
+<<<<<<< HEAD
+<<<<<<< .merge_file_MJw3PR
+=======
+=======
+>>>>>>> 13cf1831 (.)
+
+>>>>>>> .merge_file_VsHgto
 # DEVELOPMENT TOOLS
 .windsurf/
 .cursor/
 .phpstorm.meta.php
+<<<<<<< .merge_file_MJw3PR
 # DOCUMENTATION CACHE
 docs/phpstan/
 # LANGUAGE FILES
 lang/lang/
 resources/lang/
+=======
+
+# DOCUMENTATION CACHE
+docs/phpstan/
+docs/legacy/
+docs/legacy/**
+
+# LANGUAGE FILES
+lang/lang/
+resources/lang/
+
+>>>>>>> .merge_file_VsHgto
 # OLD DIRECTORIES (LEGACY CLEANUP)
+<<<<<<< HEAD
+=======
+# ==============================================
+>>>>>>> 13cf1831 (.)
 resources/views/Components_old/
 database/Migrations_old/
 database/Seeders_old/
 database/Factories_old/
 database_old/
+<<<<<<< HEAD
+<<<<<<< .merge_file_MJw3PR
+=======
+
+>>>>>>> .merge_file_VsHgto
 # MODULE SPECIFIC - ACTIVITY
 # File di configurazione locale
 config/local.php
@@ -125,17 +263,62 @@ storage/logs/
 # File di test activity
 activity_test_data.json
 test_activity_logs.sql
+<<<<<<< .merge_file_MJw3PR
 # END OF ACTIVITY .GITIGNORE
+=======
+
+# END OF ACTIVITY .GITIGNORE
+
+>>>>>>> .merge_file_VsHgto
+=======
+
+# ==============================================
+# MODULE SPECIFIC - ACTIVITY
+# ==============================================
+# File di configurazione locale
+config/local.php
+config/development.php
+
+# Cache activity log
+storage/activity/
+storage/logs/
+
+# File di test activity
+activity_test_data.json
+test_activity_logs.sql
+
+# ==============================================
+# END OF ACTIVITY .GITIGNORE
+# ==============================================
+
+>>>>>>> 13cf1831 (.)
 # File specifici del progetto
 *.fila2
 laravel
 public_html
 tests/coverage
+<<<<<<< HEAD
+<<<<<<< .merge_file_MJw3PR
+=======
+_docs/
+>>>>>>> .merge_file_VsHgto
 tests/coverage/
 tests/coverage.xml/
 activity_coverage.xml
 # -----------------------------------------------------------------------------
 # Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
+=======
+lang/lang/
+_docs/
+_docs/
+tests/coverage/
+tests/coverage.xml/
+activity_coverage.xml
+
+# -----------------------------------------------------------------------------
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
+# -----------------------------------------------------------------------------
+>>>>>>> 13cf1831 (.)
 *~HEAD
 *~BASE
 *~LOCAL
@@ -143,8 +326,13 @@ activity_coverage.xml
 *.orig
 *.rej
 *~head
+<<<<<<< HEAD
 agentdb.rvf
 tests/AuditCoverage
+<<<<<<< .merge_file_MJw3PR
+=======
+audit-coverage/
+>>>>>>> .merge_file_VsHgto
 # AI/TOOL SCAFFOLD — must never exist in module tree (see docs/wiki/rules/module-theme-root-cleanup.md)
 
 # Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
@@ -154,7 +342,11 @@ tests/AuditCoverage/
 # Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
 phpinsights.php
 rector.php
+<<<<<<< .merge_file_MJw3PR
 graphify-out
+=======
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+>>>>>>> .merge_file_VsHgto
 graphify-out/
 .agents
 tools
@@ -182,3 +374,31 @@ workbench/
 .cursor~*
 .windsurf~*
 tests/activity_coverage.xml
+<<<<<<< .merge_file_MJw3PR
+=======
+
+# module-root-hygiene (story module-root-hygiene)
+/.github/skills/
+docs/graphify
+resources/lang
+Activity
+>>>>>>> .merge_file_VsHgto
+=======
+tests/coverage/
+tests/coverage.xml/
+activity_coverage.xml
+*~head
+agentdb.rvf
+build/
+docs/legacy
+audit-coverage/
+.claude-audit
+.claude-audit-ai
+.claude-audit-ai-agent
+.devcontainer/
+.vscode/
+workbench/
+
+# Laraxot — tests/AuditCoverage forbidden (AI scaffold, never commit)
+tests/AuditCoverage/
+>>>>>>> 13cf1831 (.)

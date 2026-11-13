@@ -1,3 +1,11 @@
+---
+title: "Filament Resources nel Modulo Activity"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, activity]
+qmd: "filament resources nel modulo activity activity"
+---
 # Filament Resources nel Modulo Activity
 
 ## Struttura delle Risorse
@@ -163,6 +171,8 @@ class ListSnapshots extends XotBaseListRecords
 ## Riferimenti
 
 <<<<<<< HEAD
+<<<<<<< .merge_file_7YMjT9
+<<<<<<< HEAD
 <<<<<<< HEAD
 - [Documentazione Filament](https://filamentphp.com/project_docs/tables)
 - [XotBaseListRecords](../Xot/project_docs/filament-pages.md)
@@ -171,11 +181,19 @@ class ListSnapshots extends XotBaseListRecords
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+>>>>>>> 13cf1831 (.)
 - [Documentazione Filament](https://filamentphp.com/docs/tables)
+=======
+- [Documentazione Filament](https://filamentphp.com/project_docs/tables)
+- [XotBaseListRecords](../Xot/project_docs/filament-pages.md)
+- [Best Practices Filament](../Xot/project_docs/filament-best-practices.md)
+- [Compatibilità dei Metodi in PHP](https://www.php.net/manual/en/language.oop5.inheritance.php) - [Documentazione Filament](https://filamentphp.com/docs/tables)
+>>>>>>> .merge_file_4MJdfN
 - [XotBaseListRecords](../Xot/docs/filament-pages.md)
-- [Best Practices Filament](../Xot/docs/filament-best-practices.md)
+- [Best Practices Filament](../../Xot/docs/filament-best-practices.md)
 - [XotBaseListRecords](../xot/docs/filament-pages.md)
-- [Best Practices Filament](../xot/docs/filament-best-practices.md)
+- [Best Practices Filament](../../Xot/docs/filament-best-practices.md)
 - [Compatibilità dei Metodi in PHP](https://www.php.net/manual/en/language.oop5.inheritance.php)
 # Filament Resources nel Modulo Activity
 
@@ -347,8 +365,12 @@ class ListSnapshots extends XotBaseListRecords
 - [XotBaseListRecords](../xot/project_docs/filament-pages.md)
 - [Best Practices Filament](../xot/project_docs/filament-best-practices.md)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Compatibilità dei Metodi in PHP](https://www.php.net/manual/en/language.oop5.inheritance.php)
 >>>>>>> 0a02158a (.)
 =======
 - [Compatibilità dei Metodi in PHP](https://www.php.net/manual/en/language.oop5.inheritance.php)
 >>>>>>> 35d8cf69 (Initial commit)
+=======
+- [Compatibilità dei Metodi in PHP](https://www.php.net/manual/en/language.oop5.inheritance.php)
+>>>>>>> 13cf1831 (.)

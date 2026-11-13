@@ -12,10 +12,11 @@ issues:
 discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/issues/297#issuecomment-4633157264"
 related:
-  - ../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
-  - ../../../../docs/wiki/bmad/architecture.md
-  - ../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
+  - ../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
+  - ../../../../../docs/wiki/bmad/architecture.md
+  - ../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
   - ../../docs/wiki/concepts/ai-harness-module-discipline.md
+status: draft
 ---
 
 # Comment Module LLM Wiki
@@ -25,7 +26,7 @@ related:
 - [hackernoon-ai-coding-tips-fixcity-map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
 - [bmad/architecture](../../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
-- [ai-harness-module-discipline](../../../docs/wiki/concepts/ai-harness-module-discipline.md)
+- ai-harness-module-discipline _(riferimento non presente nel repository, verificato 2026-10-14)_
 - [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
 
 
@@ -45,17 +46,17 @@ Indice operativo del wiki Comment.
 - [spatie-package-inventory](./concepts/spatie-package-inventory.md) — mapping migrazione
 - [adr-internalize-spatie-comments](./decisions/adr-internalize-spatie-comments.md)
 - [spatie-comments-fo-ticket-integration](./concepts/spatie-comments-fo-ticket-integration.md) — stato attuale FO ticket
-- Fixcity: [ticket-view-fo-enrichment](../Fixcity/docs/wiki/concepts/ticket-view-fo-enrichment-map-media-comments.md)
+- Fixcity: [ticket-view-fo-enrichment](../../../Fixcity/docs/wiki/concepts/ticket-view-fo-enrichment-map-media-comments.md)
 
 ## Struttura canonica (sacred)
 
 - [concepts/](./concepts/): Pattern architetturali e metodologie.
 - [entities/](./entities/): Modelli e componenti chiave.
-- [sources/](./sources/): Dati di ricerca e link esterni.
+- sources/ _(riferimento non presente nel repository, verificato 2026-10-14)_: Dati di ricerca e link esterni.
 - [comparisons/](./comparisons/): Implementazioni alternative.
 - [decisions/](./decisions/): ADL (Architectural Decision Log).
 - [troubleshooting/](./troubleshooting/): Problemi noti e soluzioni.
-- [_archive/](./_archive/): Documentazione legacy.
+- _archive/ _(riferimento non presente nel repository, verificato 2026-10-14)_: Documentazione legacy.
 - [_templates/](./_templates/): Template standard.
 
 ## Regole collegate
@@ -75,15 +76,15 @@ Gestione commenti con moderazione, nesting, e relazioni polimorfiche.
 
 ## Best Practices
 
-- Usare relazioni polimorfiche Eloquent per commenti (vedi [eloquent-best-practices](../../../../docs/wiki/concepts/eloquent-best-practices.md))
-- Implementare `casts()` method non `$casts` property (vedi [model-casts-phpstan](../../../../docs/wiki/concepts/model-casts-phpstan.md))
+- Usare relazioni polimorfiche Eloquent per commenti (vedi eloquent-best-practices _(riferimento non presente nel repository, verificato 2026-10-14)_)
+- Implementare `casts()` method non `$casts` property (vedi model-casts-phpstan _(riferimento non presente nel repository, verificato 2026-10-14)_)
 - Usare Actions per moderazione (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 
 ## Bad Practices
 
 - NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 - NON usare `dehydrated(false)` nei trait - blocca salvataggio (vedi Geo CoordinatePicker fix)
-- NON hardcodare stati moderazione - usare Enums (vedi [laravel-enums](../../../../docs/wiki/concepts/laravel-enums.md))
+- NON hardcodare stati moderazione - usare Enums (vedi laravel-enums _(riferimento non presente nel repository, verificato 2026-10-14)_)
 
 ## False Friends
 

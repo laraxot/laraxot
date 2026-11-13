@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+updated: 2026-09-26
+qmd: "xotbaseresourcetable model audit batch tenant limesurvey lang ai.story"
+issues: []
+discussions: []
 title: "XotBaseResourceTable model audit - AI/AiActionProposalsTable"
 status: done
 type: story

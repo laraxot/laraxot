@@ -13,7 +13,8 @@ discussions:
 related:
   - ./can-comment-contract-owner.md
   - ../../../../../../docs/wiki/concepts/module-user-comment-dependency-direction.md
-  - ../../../User/docs/wiki/concepts/no-comment-module-dependency.md
+  - ../../../../User/docs/wiki/concepts/no-comment-module-dependency.md
+status: draft
 ---
 
 # Comment → User (consentito)

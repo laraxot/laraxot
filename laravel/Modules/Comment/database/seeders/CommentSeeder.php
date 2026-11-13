@@ -7,6 +7,7 @@ namespace Modules\Comment\Database\Seeders;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Seeder;
+use Illuminate\Console\Command;
 use Modules\Comment\Database\Factories\CommentFactory;
 use Modules\Comment\Models\Comment;
 use Modules\User\Models\User;
@@ -79,6 +80,8 @@ class CommentSeeder extends Seeder
                 },
             ]);
 
-        $this->command->info('Commenti creati con successo!');
+        if ($this->command instanceof Command) {
+            $this->command->info('Commenti creati con successo!');
+        }
     }
 }
