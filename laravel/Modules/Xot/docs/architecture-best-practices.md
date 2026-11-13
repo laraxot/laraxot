@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "architecture best practices"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "architecture best practices xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ## Convenzioni di naming per le azioni (Actions)
 
 Per tutte le azioni che operano su chiavi di aggregazione specifiche (es. stabi, valutatore_id, ecc.), si raccomanda l'uso esplicito del suffisso `By<Chiave>` nel nome della classe. Esempio:

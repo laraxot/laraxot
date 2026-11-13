@@ -28,16 +28,16 @@ return [
     'digits_between' => ':attribute mus zwischen :min und :max Ziffern enthalten.',
     'dimensions' => 'The :attribute has invalid image dimensions.',
 <<<<<<< HEAD
-    'distinct' => 'The :attribute field has a duplicate value.',
-    'email' => ':attribute muss eine gültige E-Mailadresse sein.',
-    'exists' => ':attribute ist ungültig.',
-    'file' => 'The :attribute must be a file.',
-=======
     'distinct' => ':attribute beinhaltet einen bereits vorhandenen Wert.',
     'email' => ':attribute muss eine gültige E-Mailadresse sein.',
     'exists' => ':attribute ist ungültig.',
     'file' => ':attribute muss eine Datei sein.',
->>>>>>> laraxot/dev
+=======
+    'distinct' => 'The :attribute field has a duplicate value.',
+    'email' => ':attribute muss eine gültige E-Mailadresse sein.',
+    'exists' => ':attribute ist ungültig.',
+    'file' => 'The :attribute must be a file.',
+>>>>>>> 77b1e2748 (first)
     'filled' => ':attribute ist erforderlich.',
     'image' => ':attribute muss ein Bild sein.',
     'in' => ':attribute ist ungültig.',
@@ -53,9 +53,9 @@ return [
     ],
     'mimes' => ':attribute muss eine Datei des folgenden Typs sein: :values.',
 <<<<<<< HEAD
-=======
     'mimetypes' => ':attribute muss eine Datei des folgenden Typs sein: :values.',
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     'min' => [
         'numeric' => ':attribute muss mindestens :min sein.',
         'file' => ':attribute muss mindestens :min Kilobytes gross sein.',
@@ -142,10 +142,10 @@ return [
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
 <<<<<<< HEAD
+=======
     'fields' => [
     ],
     'actions' => [
     ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ];

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "continuous_integration_tools"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "continuous_integration_tools xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # continuous_integration_tools
 
 <!-- Contenuto migrato da _docs/continuous_integration_tools.txt -->

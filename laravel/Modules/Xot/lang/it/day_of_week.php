@@ -66,10 +66,10 @@ return [
             'description' => 'General Settings',
         ],
 <<<<<<< HEAD
-        'label' => 'Day Of Week',
-=======
         'label' => 'Giorno della Settimana',
->>>>>>> laraxot/dev
+=======
+        'label' => 'Day Of Week',
+>>>>>>> 77b1e2748 (first)
         'sort' => 1,
         'icon' => 'heroicon-o-collection',
     ],
@@ -93,6 +93,18 @@ return [
             'description' => '',
         ],
 <<<<<<< HEAD
+    ],
+    'actions' => [
+        'create' => [
+            'label' => 'Crea Day Of Week',
+        ],
+        'edit' => [
+            'label' => 'Modifica Day Of Week',
+        ],
+        'delete' => [
+            'label' => 'Elimina Day Of Week',
+        ],
+=======
         1 => ['label' => '1', 'placeholder' => '1', 'helper_text' => '1', 'description' => '1'],
         2 => ['label' => '2', 'placeholder' => '2', 'helper_text' => '2', 'description' => '2'],
         3 => ['label' => '3', 'placeholder' => '3', 'helper_text' => '3', 'description' => '3'],
@@ -105,18 +117,6 @@ return [
         'create' => ['label' => 'Crea Day Of Week'],
         'edit' => ['label' => 'Modifica Day Of Week'],
         'delete' => ['label' => 'Elimina Day Of Week'],
-=======
-    ],
-    'actions' => [
-        'create' => [
-            'label' => 'Crea Day Of Week',
-        ],
-        'edit' => [
-            'label' => 'Modifica Day Of Week',
-        ],
-        'delete' => [
-            'label' => 'Elimina Day Of Week',
-        ],
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     ],
 ];

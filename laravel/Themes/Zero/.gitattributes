@@ -6,7 +6,10 @@
 *.scss linguist-vendored
 *.js linguist-vendored
 CHANGELOG.md export-ignore
+<<<<<<< HEAD
 
+=======
+>>>>>>> 61c2e77 (fix: remove LFS and merge markers from attributes)
 # Binary files: binary disables text normalization; !filter blocks inherited LFS.
 *.png binary !filter
 *.jpg binary !filter

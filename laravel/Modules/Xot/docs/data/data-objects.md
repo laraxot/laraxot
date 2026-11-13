@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Data Objects in Laraxot"
 type: note
@@ -11,13 +9,14 @@ module: Xot
 tags: [xot, data]
 qmd: "Data Objects in Laraxot"
 ---
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
 # Data Objects in Laraxot
 
 I Data Objects sono classi che incapsulano dati strutturati utilizzati in tutto il framework Laraxot. Utilizzano la libreria `spatie/laravel-data` e sono progettati per essere immutabili e facilmente trasferibili tra i vari componenti dell'applicazione.
 
 <<<<<<< HEAD
-=======
 ## Cartella canonica
 
 I data object dei moduli vivono in `app/Datas/` e usano il namespace
@@ -39,7 +38,8 @@ ora `commands.make.namespace` vale `Datas`. La guardia e'
 sta in `app/` o nei test sotto `Data`, `DTOs`, `DataObjects`, `DataTransferObjects`.
 Story: [datas-folder-convention-guard](../stories/datas-folder-convention-guard.story.md).
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ## Struttura Tipica di un Data Object
 
 ```php

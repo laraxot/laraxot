@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "app"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, install]
 qmd: "app"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ~~~ php
 <?php
 
@@ -26,14 +26,6 @@ return [
 ### Versione HEAD
 
 <<<<<<< HEAD
-## Collegamenti tra versioni di app.md
-* [app.md](../../../xot/project_docs/install/app.md)
-* [app.md](../../../tenant/project_docs/it/config/app.md)
-
-### Versione Incoming
-
----
-=======
 
 ## Collegamenti tra versioni di app.md
 * [app.md](../../../Xot/docs/install/app.md)
@@ -45,4 +37,12 @@ return [
 
 ---
 
->>>>>>> laraxot/dev
+=======
+## Collegamenti tra versioni di app.md
+* [app.md](../../../xot/project_docs/install/app.md)
+* [app.md](../../../tenant/project_docs/it/config/app.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

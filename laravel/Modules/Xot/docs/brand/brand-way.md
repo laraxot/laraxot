@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "La Via del Brand"
 type: note
@@ -11,7 +9,9 @@ module: Xot
 tags: [xot, brand]
 qmd: "La Via del Brand"
 ---
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
 # La Via del Brand
 
 ## L'Essenza del Brand
@@ -167,7 +167,7 @@ Ogni volta che scrivi un getter del brand, chiediti:
 - [Filosofia Zen Avanzata](../philosophy/getter_zen_advanced.md)
 - [Convenzioni di Naming](../naming-conventions.md)
 <<<<<<< HEAD
-- [Linee Guida Filament](../filament-best-practices.md)
-=======
 - [Linee Guida Filament](../filament-best-practices.md) 
->>>>>>> laraxot/dev
+=======
+- [Linee Guida Filament](../filament-best-practices.md)
+>>>>>>> 77b1e2748 (first)

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Guida all'Installazione Base <nome progetto>"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, getting-started]
 qmd: "Guida all'Installazione Base <nome progetto>"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Guida all'Installazione Base <nome progetto>
 
 ## Prerequisiti
@@ -125,10 +125,10 @@ Aggiungi al tuo virtual host:
     ServerName base_<nome progetto>.local
     DocumentRoot "/path/to/base_<nome progetto>/public"
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     <Directory "/path/to/base_<nome progetto>/public">
         AllowOverride All
         Require all granted

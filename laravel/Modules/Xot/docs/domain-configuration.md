@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Gestione Domini e Configurazioni"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Gestione Domini e Configurazioni"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Gestione Domini e Configurazioni
 
 ## Prerequisiti
@@ -90,21 +90,21 @@ patient::images/logo-horizontal.svg -> /Modules/Patient/resources/images/logo-ho
 
 ## Collegamenti
 <<<<<<< HEAD
-- [Configurazione Generale](configuration.md)
-=======
 - [Configurazione Generale](CONFIGURATION.md)
->>>>>>> laraxot/dev
+=======
+- [Configurazione Generale](configuration.md)
+>>>>>>> 77b1e2748 (first)
 - [Risoluzione dei Loghi](LOGO_RESOLUTION.md) - **IMPORTANTE**: Processo dettagliato di risoluzione dei loghi
 - [Gestione Asset](assets.md)
 - [Struttura Temi](themes.md)
 - [Linee Guida per i Loghi](../../../docs/standards/logo_guidelines.md)
 <<<<<<< HEAD
-- [Documentazione Principale](../../../docs/README.md)
-- [Standard di Progetto](../../../docs/standards/README.md)
-=======
 - [Documentazione Principale](../../../../docs/README.md)
 - [Standard di Progetto](standards/README.md)
->>>>>>> laraxot/dev
+=======
+- [Documentazione Principale](../../../docs/README.md)
+- [Standard di Progetto](../../../docs/standards/README.md)
+>>>>>>> 77b1e2748 (first)
 - [Gestione Media](../../Media/docs/README.md)
 - [Gestione UI](../../UI/docs/README.md)
 - [Gestione Temi](../../Cms/docs/themes.md)
@@ -112,10 +112,10 @@ patient::images/logo-horizontal.svg -> /Modules/Patient/resources/images/logo-ho
 ## Collegamenti Correlati
 - [Configurazione Moduli](MODULE_CONFIGURATION.md)
 <<<<<<< HEAD
-- [Gestione Risorse](assets.md)
-=======
 - [Gestione Risorse](ASSETS.md)
->>>>>>> laraxot/dev
+=======
+- [Gestione Risorse](assets.md)
+>>>>>>> 77b1e2748 (first)
 - [Linee Guida Sviluppo](DEVELOPMENT_GUIDELINES.md)
 - [Troubleshooting](troubleshooting.md)
 
@@ -196,11 +196,11 @@ patient::images/logo-horizontal.svg -> /Modules/Patient/resources/images/logo-ho
 
 ## Collegamenti
 <<<<<<< HEAD
-- [Configurazione Generale](configuration.md)
-- [Gestione Asset](assets.md)
-- [Struttura Temi](themes.md)
-=======
 - [Configurazione Generale](CONFIGURATION.md)
 - [Gestione Asset](assets.md)
 - [Struttura Temi](themes.md) 
->>>>>>> laraxot/dev
+=======
+- [Configurazione Generale](configuration.md)
+- [Gestione Asset](assets.md)
+- [Struttura Temi](themes.md)
+>>>>>>> 77b1e2748 (first)

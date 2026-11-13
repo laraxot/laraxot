@@ -17,9 +17,9 @@ declare(strict_types=1);
  */
 
 <<<<<<< HEAD
-=======
 use Modules\Xot\Tests\TestCase;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Symfony\Component\Process\Process;
 
 use function Safe\file_get_contents;
@@ -27,10 +27,10 @@ use function Safe\file_put_contents;
 use function Safe\json_decode;
 
 <<<<<<< HEAD
-=======
 uses(TestCase::class);
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 function repoRoot(): string
 {
     return \dirname(__DIR__, 5);

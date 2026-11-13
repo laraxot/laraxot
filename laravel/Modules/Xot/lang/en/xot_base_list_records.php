@@ -6,60 +6,61 @@ return [
     'fields' => [
         'create' => [
 <<<<<<< HEAD
-            'label' => 'create',
 =======
->>>>>>> laraxot/dev
+            'label' => 'create',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'layout' => [
 <<<<<<< HEAD
-            'label' => 'layout',
 =======
->>>>>>> laraxot/dev
+            'label' => 'layout',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'view' => [
 <<<<<<< HEAD
-            'label' => 'view',
 =======
->>>>>>> laraxot/dev
+            'label' => 'view',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'edit' => [
 <<<<<<< HEAD
-            'label' => 'edit',
 =======
->>>>>>> laraxot/dev
+            'label' => 'edit',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'delete' => [
 <<<<<<< HEAD
-            'label' => 'delete',
 =======
->>>>>>> laraxot/dev
+            'label' => 'delete',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'message' => [
 <<<<<<< HEAD
-            'label' => 'message',
 =======
->>>>>>> laraxot/dev
+            'label' => 'message',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
     ],
 <<<<<<< HEAD
+=======
     'actions' => [
         'create' => [
             'label' => 'create',
@@ -68,8 +69,7 @@ return [
             'label' => 'export_xls',
         ],
     ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     'navigation' => [
         'label' => 'Missing Navigation Label',
         'plural_label' => 'Missing Navigation Plural Label',

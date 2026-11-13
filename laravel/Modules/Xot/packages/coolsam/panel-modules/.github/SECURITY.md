@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "SECURITY"
 type: note
@@ -11,7 +10,8 @@ issues: []
 discussions: []
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Security Policy
 
 If you discover any security related issues, please email smaosa@savannabits.com instead of using the issue tracker.

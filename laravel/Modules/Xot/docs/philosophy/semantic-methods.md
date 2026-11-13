@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Filosofia dei Metodi Semantici"
 type: note
@@ -11,7 +9,9 @@ module: Xot
 tags: [xot, philosophy]
 qmd: "Filosofia dei Metodi Semantici"
 ---
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
 # Filosofia dei Metodi Semantici
 
 ## Principio Fondamentale
@@ -125,7 +125,7 @@ class MetatagData
 - [MetatagData](../datas/metatag-data.md)
 - [ApplyMetatagToPanelAction](../actions/applymetatagtopanelaction.md)
 <<<<<<< HEAD
-- [Best Practices](../best-practices.md)
-=======
 - [Best Practices](../best-practices.md) 
->>>>>>> laraxot/dev
+=======
+- [Best Practices](../best-practices.md)
+>>>>>>> 77b1e2748 (first)

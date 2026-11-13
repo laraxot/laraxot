@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "badges"
 type: note
@@ -15,4 +13,6 @@ qmd: "badges"
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/laraxot/module_ai_fila3/run-tests?label=tests)](https://github.com/laraxot/module_ai_fila3/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/laraxot/module_ai_fila3/Check%20&%20fix%20styling?label=code%20style)](https://github.com/laraxot/module_ai_fila3/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/laraxot/module_ai_fila3.svg?style=flat-square)](https://packagist.org/packages/laraxot/module_ai_fila3)
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

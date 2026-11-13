@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Panoramica del Progetto <nome progetto>"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, introduction]
 qmd: "Panoramica del Progetto <nome progetto>"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Panoramica del Progetto <nome progetto>
 
 ## Cos'è <nome progetto>
@@ -142,7 +142,7 @@ Per contribuire al progetto:
 ## Licenza
 
 <<<<<<< HEAD
-<nome progetto> è un software proprietario. Tutti i diritti riservati.
-=======
 <nome progetto> è un software proprietario. Tutti i diritti riservati. 
->>>>>>> laraxot/dev
+=======
+<nome progetto> è un software proprietario. Tutti i diritti riservati.
+>>>>>>> 77b1e2748 (first)

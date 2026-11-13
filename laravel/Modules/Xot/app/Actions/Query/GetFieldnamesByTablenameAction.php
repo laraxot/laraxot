@@ -16,11 +16,100 @@ final class GetFieldnamesByTablenameAction
     /**
      * Get column names from a table with specific database connection.
      *
+<<<<<<< HEAD
+=======
+<<<<<<< .merge_file_I8Idnw
+>>>>>>> 77b1e2748 (first)
      * @param  string  $table  Table name to get columns from
      * @param  string|null  $connectionName  Database connection name (optional)
      * @return list<string>
      *
      * @throws \InvalidArgumentException
+<<<<<<< HEAD
+=======
+=======
+     * <<<<<<< HEAD
+     *
+     * @param string      $table          Table name to get columns from
+     * @param string|null $connectionName Database connection name (optional)
+     * @param string      $table          Table name to get columns from
+     * @param string|null $connectionName Database connection name (optional)
+     * @param string      $table          Table name to get columns from
+     * @param string|null $connectionName Database connection name (optional)
+     * @param string      $table          Table name to get columns from
+     * @param string|null $connectionName Database connection name (optional)
+     * @param string      $table          Table name to get columns from
+     * @param string|null $connectionName Database connection name (optional)
+     * @param string      $table          Table name to get columns from
+     * @param string|null $connectionName Database connection name (optional)
+     *                                    <<<<<<< HEAD
+     * @param string      $table          Table name to get columns from
+     * @param string|null $connectionName Database connection name (optional)
+     * @param string      $table          Table name to get columns from
+     * @param string|null $connectionName Database connection name (optional)
+     *
+     * @throws \InvalidArgumentException
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   <<<<<<< HEAD
+     *                                   <<<<<<< .merge_file_Jfzn7Q
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   >>>>>>> laraxot/dev
+     * @throws \InvalidArgumentException
+     *                                   =======
+     *                                   =======
+     * @throws \InvalidArgumentException
+     *                                   =======
+     *                                   <<<<<<< .merge_file_9lJc4S
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   <<<<<<< .merge_file_Jfzn7Q
+     *                                   >>>>>>> .merge_file_G3Zryu
+     * @throws \InvalidArgumentException
+     *                                   <<<<<<< .merge_file_9lJc4S
+     *                                   =======
+     *                                   =======
+     *                                   >>>>>>> laraxot/dev
+     *                                   <<<<<<< .merge_file_AaGd7c
+     * @throws \InvalidArgumentException
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     * @throws \InvalidArgumentException
+     *                                   =======
+     * @throws \InvalidArgumentException
+     * @throws \InvalidArgumentException
+     *                                   >>>>>>> 9e11d472 (Fix merge conflicts in PHPDoc comments across multiple action classes and contracts, ensuring consistent parameter annotations and removing redundant lines.)
+     *                                   <<<<<<< HEAD
+     *                                   =======
+     * @throws \InvalidArgumentException
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> laraxot/dev
+     *
+     * @return list<string>
+     * @return list<string>
+     * @return list<string>
+     * @return list<string>
+     * @return list<string>
+     *                      <<<<<<< HEAD
+     *                      =======
+     * @return list<string>
+     *                      >>>>>>> laraxot/dev
+     *                      >>>>>>> laraxot/dev
+     *                      >>>>>>> .merge_file_46hKcJ
+     *                      >>>>>>> .merge_file_hUuUgC
+     *                      =======
+     * @return list<string>
+     *                      <<<<<<< HEAD
+     *                      =======
+     *                      >>>>>>> .merge_file_G3Zryu
+     *                      >>>>>>> laraxot/dev
+     *                      =======
+     * @return list<string>
+     *                      >>>>>>> laraxot/dev
+     *                      >>>>>>> laraxot/dev
+>>>>>>> .merge_file_VNYnnU
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(string $table, ?string $connectionName = null): array
     {

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "RelationX Trait"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, traits]
 qmd: "relationx trait xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # RelationX Trait
 
 ## Scopo Business

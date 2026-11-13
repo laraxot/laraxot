@@ -16,11 +16,11 @@ class ModulesOverviewWidget extends XotBaseWidget
 {
     /** @var view-string */
 <<<<<<< HEAD
+    protected string $view = 'xot::filament.widgets.modules-overview';
+=======
     /** @var view-string */
     protected string $view;
-=======
-    protected string $view = 'xot::filament.widgets.modules-overview';
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
     protected int|string|array $columnSpan = 'full';
 

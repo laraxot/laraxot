@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "PHP Strict Types in Laravel Modules"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "php strict types in laravel modules xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # PHP Strict Types in Laravel Modules
 
 ## Overview
@@ -73,10 +73,10 @@ This document provides guidelines for using strict typing in PHP within a Larave
 - [Filament Best Practices](filament-best-practices.md)
 
 <<<<<<< HEAD
-## 2026-09-21 — follow-up 2 blade
-=======
 ## 2026-09-21: follow-up 2 blade
->>>>>>> laraxot/dev
+=======
+## 2026-09-21 — follow-up 2 blade
+>>>>>>> 77b1e2748 (first)
 
 **Perché**: wizard submit e PDF Spatie sono punti di uscita (click / byte PDF).
 Senza `declare` sulla vista, i tipi già strict in `XotBase*` possono essere

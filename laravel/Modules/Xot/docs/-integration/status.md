@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "status"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "status xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # status
 
 <!-- Contenuto migrato da _docs/status.txt -->

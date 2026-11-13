@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Modulo Xot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Modulo Xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Modulo Xot
 
 ## Descrizione
@@ -23,18 +23,18 @@ Modulo core che fornisce funzionalità di base e utility per l'intero sistema.
 
 ### Datas
 <<<<<<< HEAD
-- [MetatagData](../../Modules/Xot/docs/datas/MetatagData.md) - Gestione meta tag e configurazione Filament
-
-### Actions
-- Panel
-  - [ApplyMetatagToPanelAction](../../Modules/Xot/docs/actions/panel/ApplyMetatagToPanelAction.md) - Applica configurazioni metatag al pannello Filament
-=======
 - [MetatagData](datas/metatagdata.md) - Gestione meta tag e configurazione Filament
 
 ### Actions
 - Panel
   - [ApplyMetatagToPanelAction](actions/panel/applymetatagtopanelaction.md) - Applica configurazioni metatag al pannello Filament
->>>>>>> laraxot/dev
+=======
+- [MetatagData](../../Modules/Xot/docs/datas/MetatagData.md) - Gestione meta tag e configurazione Filament
+
+### Actions
+- Panel
+  - [ApplyMetatagToPanelAction](../../Modules/Xot/docs/actions/panel/ApplyMetatagToPanelAction.md) - Applica configurazioni metatag al pannello Filament
+>>>>>>> 77b1e2748 (first)
 
 ## Errori PHPStan Comuni
 - [Registro Errori](../../Modules/Xot/docs/phpstan/errors.md)
@@ -42,14 +42,6 @@ Modulo core che fornisce funzionalità di base e utility per l'intero sistema.
 
 ## Best Practices
 <<<<<<< HEAD
-- [Convenzioni Namespace](../../Modules/Xot/docs/NAMESPACE-CONVENTIONS.md)
-- [Linee Guida PHPStan](../../Modules/Xot/docs/PHPSTAN_LIVELLO10_LINEE_GUIDA.md)
-
-## Collegamenti
-- [Roadmap](../../Modules/Xot/docs/roadmap.md)
-- [Implementazione](../../Modules/Xot/docs/implementation.md)
-- [Integrazione](../../Modules/Xot/docs/integration.md)
-=======
 - [Convenzioni Namespace](namespace-conventions.md)
 - [Linee Guida PHPStan](../../Modules/Xot/docs/PHPSTAN_LIVELLO10_LINEE_GUIDA.md)
 
@@ -57,4 +49,12 @@ Modulo core che fornisce funzionalità di base e utility per l'intero sistema.
 - [Roadmap](roadmap.md)
 - [Implementazione](../../Modules/Xot/docs/implementation.md)
 - [Integrazione](../../Modules/Xot/docs/integration.md) 
->>>>>>> laraxot/dev
+=======
+- [Convenzioni Namespace](../../Modules/Xot/docs/NAMESPACE-CONVENTIONS.md)
+- [Linee Guida PHPStan](../../Modules/Xot/docs/PHPSTAN_LIVELLO10_LINEE_GUIDA.md)
+
+## Collegamenti
+- [Roadmap](../../Modules/Xot/docs/roadmap.md)
+- [Implementazione](../../Modules/Xot/docs/implementation.md)
+- [Integrazione](../../Modules/Xot/docs/integration.md)
+>>>>>>> 77b1e2748 (first)

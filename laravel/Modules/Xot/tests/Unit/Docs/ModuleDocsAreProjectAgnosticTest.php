@@ -83,10 +83,10 @@ function moduleDocsWithHostProjectName(): array
  * Quando bonifichi, abbassalo: un ratchet che non scende torna verde per inerzia.
  */
 <<<<<<< HEAD
-const MODULE_DOCS_HOST_NAME_FILE_BASELINE = 1642;
-=======
 const MODULE_DOCS_HOST_NAME_FILE_BASELINE = 1261;
->>>>>>> laraxot/dev
+=======
+const MODULE_DOCS_HOST_NAME_FILE_BASELINE = 1642;
+>>>>>>> 77b1e2748 (first)
 
 test('nessun documento nuovo di modulo nomina il progetto ospite', function (): void {
     $hits = moduleDocsWithHostProjectName();

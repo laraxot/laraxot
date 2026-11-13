@@ -4,12 +4,12 @@ declare(strict_types=1);
 use Filament\Tables\Table;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 <<<<<<< HEAD
-use Modules\Xot\Tests\TestCase;
-use Modules\Xot\Tests\Unit\Fixtures\XotBaseResourceTableConfigureFixture;
-=======
 use Modules\Xot\Tests\Fixtures\Filament\Resources\ExtraResource\Tables\XotBaseResourceTableConfigureFixture;
 use Modules\Xot\Tests\TestCase;
->>>>>>> laraxot/dev
+=======
+use Modules\Xot\Tests\TestCase;
+use Modules\Xot\Tests\Unit\Fixtures\XotBaseResourceTableConfigureFixture;
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Tests\Unit\Fixtures\XotTableConfigureLivewireHarness;
 use PHPUnit\Framework\Assert;
 
@@ -22,10 +22,10 @@ test('XotBaseResourceTable configure applica colonne e filtri dalla classe table
     $configured = XotBaseResourceTableConfigureFixture::configure($table);
 
 <<<<<<< HEAD
-    Assert::assertInstanceOf(Table::class, $configured);
-=======
     Assert::assertSame($table, $configured);
->>>>>>> laraxot/dev
+=======
+    Assert::assertInstanceOf(Table::class, $configured);
+>>>>>>> 77b1e2748 (first)
 });
 
 test('XotBaseResourceTable configure su classe astratta solleva LogicException', function (): void {

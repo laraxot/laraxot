@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Risoluzione Conflitti Git - Modulo Xot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Risoluzione Conflitti Git - Modulo Xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Risoluzione Conflitti Git - Modulo Xot
 
 ## Panoramica
@@ -83,7 +83,7 @@ Documentazione della risoluzione dei conflitti Git nel modulo Xot che bloccavano
 - [Report Completo PHPStan Fixes](../../../bashscripts/docs/phpstan_fixes_comprehensive_report.md)
 
 <<<<<<< HEAD
-*
-=======
 *Ultimo aggiornamento: Dicembre 2024*
->>>>>>> laraxot/dev
+=======
+*
+>>>>>>> 77b1e2748 (first)

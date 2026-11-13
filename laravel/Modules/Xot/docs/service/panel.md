@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: PanelService
 description: Handle panels with PanelService
@@ -14,4 +12,6 @@ qmd: "panelservice xot"
 ---
 
 # PanelService
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

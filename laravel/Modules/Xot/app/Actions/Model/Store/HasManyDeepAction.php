@@ -16,9 +16,9 @@ class HasManyDeepAction
     {
         // Assert::isInstanceOf($rows = $relationDTO->rows, BelongsToMany::class);
 <<<<<<< HEAD
-        dddx('wip');
-=======
         throw new \LogicException('Store\HasManyDeepAction not implemented');
->>>>>>> laraxot/dev
+=======
+        dddx('wip');
+>>>>>>> 77b1e2748 (first)
     }
 }

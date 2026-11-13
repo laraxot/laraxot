@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "forbidden methods"
 type: note
@@ -12,7 +11,8 @@ discussions: []
 status: draft
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Metodi da NON implementare in classi che estendono XotBaseResource
 
 ## Regola fondamentale
@@ -50,12 +50,6 @@ class ProductResource extends XotBaseResource
 
     // UNICI metodi che dovrebbero essere implementati
 <<<<<<< HEAD
-<<<<<<< HEAD
-    public function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
-=======
     public function getFormSchema(): array
 ---
 title: "forbidden methods"
@@ -67,7 +61,13 @@ qmd: "forbidden methods"
 issues: []
 discussions: []
     public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+    public function getFormSchema(): array
+=======
+    public function getFormSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             'name' => Forms\Components\TextInput::make('name')

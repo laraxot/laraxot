@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "database"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, install]
 qmd: "database"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ~~~ php
 <?php
 
@@ -98,15 +98,6 @@ return $def1;
 ### Versione HEAD
 
 <<<<<<< HEAD
-## Collegamenti tra versioni di database.md
-* [database.md](docs/tecnico/database/database.md)
-* [database.md](../../../xot/project_docs/install/database.md)
-* [database.md](../../../tenant/project_docs/it/config/database.md)
-
-### Versione Incoming
-
----
-=======
 
 ## Collegamenti tra versioni di database.md
 * [database.md](docs/tecnico/database/database.md)
@@ -119,4 +110,13 @@ return $def1;
 
 ---
 
->>>>>>> laraxot/dev
+=======
+## Collegamenti tra versioni di database.md
+* [database.md](docs/tecnico/database/database.md)
+* [database.md](../../../xot/project_docs/install/database.md)
+* [database.md](../../../tenant/project_docs/it/config/database.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

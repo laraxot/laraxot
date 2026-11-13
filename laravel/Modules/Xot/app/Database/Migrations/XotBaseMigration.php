@@ -228,7 +228,6 @@ abstract class XotBaseMigration extends LaravelMigration
         $connection = $this->getConn()->getConnection();
         $table = $this->getTable();
 <<<<<<< HEAD
-=======
 
         if ($connection->getDriverName() === 'sqlite') {
             $infos = $connection->select("PRAGMA table_info({$table})");
@@ -242,7 +241,8 @@ abstract class XotBaseMigration extends LaravelMigration
             return false;
         }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
         $database = $connection->getDatabaseName();
 
         $query = "SELECT COUNT(*) as count
@@ -336,7 +336,6 @@ abstract class XotBaseMigration extends LaravelMigration
 
     /**
 <<<<<<< HEAD
-=======
      * Crea solo gli indici che mancano, sulla connessione del modello della migrazione.
      *
      * Idempotente: un indice c'e' gia' se esiste con quel nome oppure sulle stesse colonne nello stesso
@@ -385,7 +384,8 @@ abstract class XotBaseMigration extends LaravelMigration
     }
 
     /**
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * @param  mixed  $result  Risultato di Connection::selectOne() (atteso array{count?: mixed}|object|null)
      */
     protected function extractPrimaryKeyCount(mixed $result): int
@@ -409,38 +409,6 @@ abstract class XotBaseMigration extends LaravelMigration
         $userClass = $xot->getUserClass();
 
 <<<<<<< HEAD
-        // Check and add each timestamp column only if it doesn't exist
-        if (! $this->hasColumn('created_at')) {
-            $table->timestamp('created_at')->nullable();
-        }
-
-        if (! $this->hasColumn('updated_at')) {
-            $table->timestamp('updated_at')->nullable();
-        }
-
-        // Check and add foreign key columns only if they don't exist
-        if (! $this->hasColumn('updated_by')) {
-            $table->foreignIdFor($userClass, 'updated_by')->nullable();
-        }
-
-        if (! $this->hasColumn('created_by')) {
-            $table->foreignIdFor($userClass, 'created_by')->nullable();
-        }
-
-        // Handle soft deletes
-        if ($hasSoftDeletes) {
-            if (! $this->hasColumn('deleted_at')) {
-                $table->softDeletes();
-            }
-            if (! $this->hasColumn('deleted_by')) {
-                $table->foreignIdFor($userClass, 'deleted_by')->nullable();
-            }
-        } else {
-            // If soft deletes are not requested but deleted_at exists, add deleted_by
-            if ($this->hasColumn('deleted_at') && ! $this->hasColumn('deleted_by')) {
-                $table->foreignIdFor($userClass, 'deleted_by')->nullable();
-            }
-=======
         // Listing fresca: evita "Duplicate column" quando RefreshDatabase / migrate
         // in-process lasciano la cache Schema fuori sync rispetto a information_schema.
         $columns = array_map(
@@ -473,7 +441,39 @@ abstract class XotBaseMigration extends LaravelMigration
             }
         } elseif (in_array('deleted_at', $columns, true) && ! in_array('deleted_by', $columns, true)) {
             $table->foreignIdFor($userClass, 'deleted_by')->nullable();
->>>>>>> laraxot/dev
+=======
+        // Check and add each timestamp column only if it doesn't exist
+        if (! $this->hasColumn('created_at')) {
+            $table->timestamp('created_at')->nullable();
+        }
+
+        if (! $this->hasColumn('updated_at')) {
+            $table->timestamp('updated_at')->nullable();
+        }
+
+        // Check and add foreign key columns only if they don't exist
+        if (! $this->hasColumn('updated_by')) {
+            $table->foreignIdFor($userClass, 'updated_by')->nullable();
+        }
+
+        if (! $this->hasColumn('created_by')) {
+            $table->foreignIdFor($userClass, 'created_by')->nullable();
+        }
+
+        // Handle soft deletes
+        if ($hasSoftDeletes) {
+            if (! $this->hasColumn('deleted_at')) {
+                $table->softDeletes();
+            }
+            if (! $this->hasColumn('deleted_by')) {
+                $table->foreignIdFor($userClass, 'deleted_by')->nullable();
+            }
+        } else {
+            // If soft deletes are not requested but deleted_at exists, add deleted_by
+            if ($this->hasColumn('deleted_at') && ! $this->hasColumn('deleted_by')) {
+                $table->foreignIdFor($userClass, 'deleted_by')->nullable();
+            }
+>>>>>>> 77b1e2748 (first)
         }
     }
 
@@ -507,7 +507,6 @@ abstract class XotBaseMigration extends LaravelMigration
     }
 
 <<<<<<< HEAD
-=======
     /**
      * Converte user_id da bigint a UUID, solo se la colonna e' ancora bigint.
      *
@@ -604,7 +603,8 @@ abstract class XotBaseMigration extends LaravelMigration
         $table->uuid('user_id')->change();
     }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     public function updateUserKeyInt(Blueprint $table): void
     {
         if (! $this->hasColumn('id')) {

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "metatag"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, install]
 qmd: "metatag"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ~~~ php
 <?php
 declare(strict_types=1);
@@ -49,14 +49,6 @@ return [
 ### Versione HEAD
 
 <<<<<<< HEAD
-## Collegamenti tra versioni di metatag.md
-* [metatag.md](../../../xot/project_docs/install/metatag.md)
-* [metatag.md](../../../tenant/project_docs/it/config/metatag.md)
-
-### Versione Incoming
-
----
-=======
 
 ## Collegamenti tra versioni di metatag.md
 * [metatag.md](../../../Xot/docs/install/metatag.md)
@@ -68,4 +60,12 @@ return [
 
 ---
 
->>>>>>> laraxot/dev
+=======
+## Collegamenti tra versioni di metatag.md
+* [metatag.md](../../../xot/project_docs/install/metatag.md)
+* [metatag.md](../../../tenant/project_docs/it/config/metatag.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

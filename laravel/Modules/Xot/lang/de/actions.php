@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
-=======
     'back' => [
         'label' => 'Zurück zur Liste',
     ],
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     'export_xls' => 'Esporta Dati',
     'navigation' => [
         'label' => 'Missing Navigation Label',
@@ -20,10 +20,10 @@ return [
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
 <<<<<<< HEAD
+=======
     'fields' => [
     ],
     'actions' => [
     ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ];

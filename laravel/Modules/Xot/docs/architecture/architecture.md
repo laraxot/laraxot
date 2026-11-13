@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot - architecture.md"
 module: Xot
 bmad: true
 status: active
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # 🏗️ **Architettura Modulo Xot**
 
 ## 📋 **Panoramica Architetturale**
@@ -107,14 +107,14 @@ abstract class XotBaseResource extends Resource
     use HasXotTable;
 
 <<<<<<< HEAD
+    public function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return static::getFormSchemaImplementation();
     }
@@ -414,4 +414,4 @@ test('all models extend base model', function () {
 *Ultimo aggiornamento: giugno 2025 - Versione 2.0.0*
 =======
 *Ultimo aggiornamento: giugno 2025 - Versione 2.0.0*
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

@@ -1,14 +1,14 @@
 ---
 <<<<<<< HEAD
-title: "Story — ExportXlsLazyAction: label degradate a path tecnico"
-=======
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
 issues: []
 discussions: []
 title: "Story: ExportXlsLazyAction: label degradate a path tecnico"
->>>>>>> laraxot/dev
+=======
+title: "Story — ExportXlsLazyAction: label degradate a path tecnico"
+>>>>>>> 77b1e2748 (first)
 type: story
 module: Xot
 epic: export
@@ -29,10 +29,10 @@ related:
 Canale lazy/streaming (`ExportXlsLazyAction`) estrae solo i percorsi da
 `getXlsFields()`: le label esplicite (`path => title`) degradano a path
 <<<<<<< HEAD
-tecnico nell'header — stessa UX rotta risolta altrove per
-=======
 tecnico nell'header: stessa UX rotta risolta altrove per
->>>>>>> laraxot/dev
+=======
+tecnico nell'header — stessa UX rotta risolta altrove per
+>>>>>>> 77b1e2748 (first)
 `CollectionExport`/`ExportXlsByCollection`.
 
 ## Task
@@ -48,7 +48,7 @@ tecnico nell'header: stessa UX rotta risolta altrove per
 ## Priorita'
 
 <<<<<<< HEAD
-Bassa — canale secondario. Verificare prima se qualcuno lo monta.
-=======
 Bassa: canale secondario. Verificare prima se qualcuno lo monta.
->>>>>>> laraxot/dev
+=======
+Bassa — canale secondario. Verificare prima se qualcuno lo monta.
+>>>>>>> 77b1e2748 (first)

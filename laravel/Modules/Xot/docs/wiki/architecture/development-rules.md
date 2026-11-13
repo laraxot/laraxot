@@ -1,20 +1,20 @@
 ---
 <<<<<<< HEAD
-=======
 qmd: "development rules"
 issues: []
 discussions: []
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 title: "Development Rules"
 type: reference
 tags: [wiki, no-frontmatter-fix]
 created: 2026-08-24
 updated: 2026-08-24
 <<<<<<< HEAD
-=======
 status: superseded
 superseded_by: ../../consolidated/archive/development-rules.md
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 # Regole Generali di Sviluppo del Progetto

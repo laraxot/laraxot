@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "webpack"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "webpack xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # webpack
 
 <!-- Contenuto migrato da _docs/webpack.txt -->

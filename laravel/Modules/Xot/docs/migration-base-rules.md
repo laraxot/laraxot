@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "MIGRATION BASE RULES"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "migration base rules xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # MIGRATION BASE RULES
 
 ## Regola universale
@@ -87,7 +87,6 @@ Ultimo aggiornamento: 2025-05-13
 
 ---
 <<<<<<< HEAD
-=======
 
 ## Indici: `ensureIndexes()` (2026-11-04)
 
@@ -112,4 +111,5 @@ Quando usarlo: aggiunta di soli indici a tabelle gia' create. La regola "copia l
 Ordine delle colonne: prima quelle confrontate con `=`, poi quella usata per intervallo o ordinamento. Prima di proporre un indice controlla il **tipo** delle due colonne messe a confronto: una colonna `varchar` confrontata con un intero fa scandire tutto l'indice (provato su `contacts.survey_pdf_id`, vedi [Quaeris: query lente e indici](../../Quaeris/docs/stories/quaeris-query-lente-e-indici.story.md)).
 
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)

@@ -1,10 +1,6 @@
 ---
 title: Filter
 <<<<<<< HEAD
-description:
-extends: _layouts.documentation
-section: content
-=======
 description: 
 extends: _layouts.documentation
 section: content
@@ -13,7 +9,11 @@ status: draft
 updated: 2026-10-18
 tags: [docs, xot, links]
 qmd: "links filter xot"
->>>>>>> laraxot/dev
+=======
+description:
+extends: _layouts.documentation
+section: content
+>>>>>>> 77b1e2748 (first)
 ---
 
 # links filter
@@ -23,14 +23,6 @@ https://medium.com/@dkthelearner/mastering-laravel-pipeline-and-query-builder-fo
 ### Versione HEAD
 
 <<<<<<< HEAD
-## Collegamenti tra versioni di filter.md
-* [filter.md](../../../xot/project_docs/actions/filter.md)
-* [filter.md](../../../xot/project_docs/links/filter.md)
-
-### Versione Incoming
-
----
-=======
 
 ## Collegamenti tra versioni di filter.md
 * [filter.md](../../../Xot/docs/actions/filter.md)
@@ -42,4 +34,12 @@ https://medium.com/@dkthelearner/mastering-laravel-pipeline-and-query-builder-fo
 
 ---
 
->>>>>>> laraxot/dev
+=======
+## Collegamenti tra versioni di filter.md
+* [filter.md](../../../xot/project_docs/actions/filter.md)
+* [filter.md](../../../xot/project_docs/links/filter.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

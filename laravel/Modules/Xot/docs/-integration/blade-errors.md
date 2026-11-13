@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "blade_errors"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "blade_errors xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # blade_errors
 
 <!-- Contenuto migrato da _docs/blade_errors.txt -->

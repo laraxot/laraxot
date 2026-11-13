@@ -6,9 +6,9 @@ namespace Modules\Xot\Actions;
 
 use Filament\Support\Colors\Color;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Enums\PaDesignColorEnum;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -24,14 +24,14 @@ final class PaDesignColorsAction
     use QueueableAction;
 
 <<<<<<< HEAD
-    public const string PRIMARY_HEX = '#007A52';
-
-    public const string INSTITUTIONAL_BLUE_HEX = '#0066CC';
-=======
     public const string PRIMARY_HEX = PaDesignColorEnum::Primary->value;
 
     public const string INSTITUTIONAL_BLUE_HEX = PaDesignColorEnum::InstitutionalBlue->value;
->>>>>>> laraxot/dev
+=======
+    public const string PRIMARY_HEX = '#007A52';
+
+    public const string INSTITUTIONAL_BLUE_HEX = '#0066CC';
+>>>>>>> 77b1e2748 (first)
 
     /**
      * @return array{primary: string, institutional_blue: string, danger: string, gray: string, info: string, success: string, warning: string}
@@ -40,12 +40,12 @@ final class PaDesignColorsAction
     {
         return [
 <<<<<<< HEAD
-            'primary' => self::PRIMARY_HEX,
-            'institutional_blue' => self::INSTITUTIONAL_BLUE_HEX,
-=======
             'primary' => PaDesignColorEnum::Primary->value,
             'institutional_blue' => PaDesignColorEnum::InstitutionalBlue->value,
->>>>>>> laraxot/dev
+=======
+            'primary' => self::PRIMARY_HEX,
+            'institutional_blue' => self::INSTITUTIONAL_BLUE_HEX,
+>>>>>>> 77b1e2748 (first)
             'danger' => 'red',
             'gray' => 'zinc',
             'info' => 'blue',

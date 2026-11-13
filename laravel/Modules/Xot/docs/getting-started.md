@@ -4,13 +4,13 @@ description: Getting started with Jigsaw's docs starter template is as easy as 1
 extends: _layouts.documentation
 section: content
 <<<<<<< HEAD
-=======
 type: note
 status: draft
 updated: 2026-10-18
 tags: [docs, xot]
 qmd: "getting started {#getting-started} xot"
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 # Getting Started {#getting-started}
@@ -430,9 +430,9 @@ The first section of each content page contains a YAML header that specifies how
 ```yaml
 ---
 <<<<<<< HEAD
-title: Navigation
 =======
->>>>>>> laraxot/dev
+title: Navigation
+>>>>>>> 77b1e2748 (first)
 description: Building a navigation menu for your site
 extends: _layouts.documentation
 section: content

@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
+    'actions' => [
+        'delete' => [
+            'icon' => 'delete',
+        ],
+=======
     'fields' => [
         'id' => ['label' => 'id'],
         'name' => ['label' => 'name'],
@@ -12,11 +17,6 @@ return [
     ],
     'actions' => [
         'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
-=======
-    'actions' => [
-        'delete' => [
-            'icon' => 'delete',
-        ],
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     ],
 ];

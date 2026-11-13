@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Il Tao del Codice"
 type: note
@@ -11,7 +9,9 @@ module: Xot
 tags: [xot, tao]
 qmd: "Il Tao del Codice"
 ---
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
 # Il Tao del Codice
 
 ## Il Principio Fondamentale
@@ -175,7 +175,7 @@ Ogni volta che scrivi un getter, chiediti:
 - [La Via del Brand](../brand/brand_way.md)
 - [Convenzioni di Naming](../naming-conventions.md)
 <<<<<<< HEAD
-- [Linee Guida Filament](../filament-best-practices.md)
-=======
 - [Linee Guida Filament](../filament-best-practices.md) 
->>>>>>> laraxot/dev
+=======
+- [Linee Guida Filament](../filament-best-practices.md)
+>>>>>>> 77b1e2748 (first)

@@ -14,7 +14,36 @@ class DiffAssocRecursiveAction
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
      * @param  array<int|string, mixed>  $data
+=======
+<<<<<<< .merge_file_MTTKIT
+     * @param  array<int|string, mixed>  $data
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param array<int|string, mixed> $data
+     *                                       =======
+     *                                       <<<<<<< HEAD
+     * @param array<int|string, mixed> $data
+     *                                       =======
+     *                                       <<<<<<< HEAD
+     *                                       <<<<<<< HEAD
+     * @param array<int|string, mixed> $data
+     *                                       =======
+     * @param array<int|string, mixed> $data
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * =======
+     * @param array<int|string, mixed> $data
+     *                                       >>>>>>> laraxot/dev
+     *                                       >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_YnjzhC
+>>>>>>> 77b1e2748 (first)
      * @return array<int|string, array<int|string, mixed>>
      */
     public static function fixType(array $data): array
@@ -37,8 +66,43 @@ class DiffAssocRecursiveAction
     }
 
     /**
+<<<<<<< HEAD
      * @param  array<int|string, mixed>  $arr_1
      * @param  array<int|string, mixed>  $arr_2
+=======
+<<<<<<< .merge_file_MTTKIT
+     * @param  array<int|string, mixed>  $arr_1
+     * @param  array<int|string, mixed>  $arr_2
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param array<int|string, mixed> $arr_1
+     * @param array<int|string, mixed> $arr_2
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     * @param array<int|string, mixed> $arr_1
+     * @param array<int|string, mixed> $arr_2
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     *                                        <<<<<<< HEAD
+     * @param array<int|string, mixed> $arr_1
+     * @param array<int|string, mixed> $arr_2
+     *                                        =======
+     * @param array<int|string, mixed> $arr_1
+     * @param array<int|string, mixed> $arr_2
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * =======
+     * @param array<int|string, mixed> $arr_1
+     * @param array<int|string, mixed> $arr_2
+     *                                        >>>>>>> laraxot/dev
+     *                                        >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_YnjzhC
+>>>>>>> 77b1e2748 (first)
      * @return array<int|string, array<int|string, mixed>>
      */
     public function execute(array $arr_1, array $arr_2): array

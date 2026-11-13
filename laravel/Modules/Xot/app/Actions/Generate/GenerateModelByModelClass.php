@@ -82,10 +82,10 @@ class GenerateModelByModelClass
         $artisan_cmd = 'module:make-model';
         $artisan_params = ['model' => $model_name, 'module' => $module_name];
 <<<<<<< HEAD
-        $res = Artisan::call($artisan_cmd, $artisan_params);
-=======
         Artisan::call($artisan_cmd, $artisan_params);
->>>>>>> laraxot/dev
+=======
+        $res = Artisan::call($artisan_cmd, $artisan_params);
+>>>>>>> 77b1e2748 (first)
 
         /*
          * $output=Artisan::output();
@@ -93,9 +93,9 @@ class GenerateModelByModelClass
          * dddx(
          * [
 <<<<<<< HEAD
-         * 'res'=>$res,
 =======
->>>>>>> laraxot/dev
+         * 'res'=>$res,
+>>>>>>> 77b1e2748 (first)
          * 'output'=>$output,
          * 'model_name'=>$model_name,
          * 'module_name'=>$module_name,

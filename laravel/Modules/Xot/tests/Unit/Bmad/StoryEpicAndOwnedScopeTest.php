@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 <<<<<<< HEAD
-=======
 use Modules\Xot\Tests\TestCase;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
@@ -12,10 +12,10 @@ use function Safe\preg_match;
 use function Safe\preg_match_all;
 
 <<<<<<< HEAD
-=======
 uses(TestCase::class);
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 /**
  * Le story BMAD si shardano da `docs/epics.md`: il numero non si sceglie.
  *

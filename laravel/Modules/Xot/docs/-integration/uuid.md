@@ -9,10 +9,10 @@ converted_from: UUID.txt
 created: 2026-08-24
 updated: 2026-08-24
 <<<<<<< HEAD
-=======
 status: draft
 qmd: "_uuid xot"
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 Using UUIDs in Laravel Models

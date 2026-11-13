@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: Detach Action
 description: Detach Model with Queuable Action
@@ -12,4 +10,6 @@ superseded_by: ../../consolidated/archive/detach.md
 # Detach Action {#detach-action}
 
 This is an example Detach action
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

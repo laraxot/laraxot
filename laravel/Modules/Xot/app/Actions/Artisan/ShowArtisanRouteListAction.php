@@ -21,9 +21,9 @@ class ShowArtisanRouteListAction
         $routeCollection = Route::getRoutes();
 
 <<<<<<< HEAD
-        /** @var view-string $view */
 =======
->>>>>>> laraxot/dev
+        /** @var view-string $view */
+>>>>>>> 77b1e2748 (first)
         $view = 'xot::acts.artisan.show_route_list';
         $view_params = [
             'view' => $view,
@@ -32,10 +32,10 @@ class ShowArtisanRouteListAction
         ];
 
 <<<<<<< HEAD
-        $result = view($view, $view_params);
-=======
         $result = view('xot::acts.artisan.show_route_list', $view_params);
->>>>>>> laraxot/dev
+=======
+        $result = view($view, $view_params);
+>>>>>>> 77b1e2748 (first)
         Assert::isInstanceOf($result, View::class);
 
         return $result->render();

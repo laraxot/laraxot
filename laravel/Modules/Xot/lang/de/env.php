@@ -11,10 +11,10 @@ return [
             'description' => 'Gestione delle variabili d\'ambiente e configurazione del sistema',
         ],
 <<<<<<< HEAD
-        'label' => 'env',
-=======
         'label' => 'Umgebung',
->>>>>>> laraxot/dev
+=======
+        'label' => 'env',
+>>>>>>> 77b1e2748 (first)
         'sort' => '12',
         'icon' => 'xot-env',
     ],
@@ -100,9 +100,9 @@ return [
         ],
         'telegram_bot_token' => [
 <<<<<<< HEAD
-            'description' => 'telegram_bot_token',
 =======
->>>>>>> laraxot/dev
+            'description' => 'telegram_bot_token',
+>>>>>>> 77b1e2748 (first)
             'label' => '',
             'tooltip' => '',
             'helper_text' => '',
@@ -170,10 +170,10 @@ return [
         ],
     ],
 <<<<<<< HEAD
-    'title' => 'env',
-=======
     'title' => 'Umgebung',
->>>>>>> laraxot/dev
+=======
+    'title' => 'env',
+>>>>>>> 77b1e2748 (first)
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
 ];

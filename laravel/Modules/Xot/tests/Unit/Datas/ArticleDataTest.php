@@ -15,9 +15,9 @@ describe('Article Data', function (): void {
         $data = ArticleData::make();
 
 <<<<<<< HEAD
-        Assert::assertInstanceOf(ArticleData::class, $data);
 =======
->>>>>>> laraxot/dev
+        Assert::assertInstanceOf(ArticleData::class, $data);
+>>>>>>> 77b1e2748 (first)
         Assert::assertEquals(['post', 'page', 'news'], $data->types);
         Assert::assertEquals([], $data->categories);
         Assert::assertEquals('markdown', $data->editor);

@@ -11,10 +11,10 @@ return [
             'description' => 'Monitoraggio e diagnostica del sistema',
         ],
 <<<<<<< HEAD
-        'label' => 'health',
-=======
         'label' => 'Zustand',
->>>>>>> laraxot/dev
+=======
+        'label' => 'health',
+>>>>>>> 77b1e2748 (first)
         'sort' => '14',
         'icon' => 'xot-health',
     ],
@@ -182,10 +182,6 @@ return [
         ],
     ],
 <<<<<<< HEAD
-    'title' => 'health',
-    'label' => 'Missing Label',
-    'plural_label' => 'Missing Plural label',
-=======
     'title' => 'Zustand',
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
@@ -194,5 +190,9 @@ return [
             'label' => 'Letzte Prüfung',
         ],
     ],
->>>>>>> laraxot/dev
+=======
+    'title' => 'health',
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+>>>>>>> 77b1e2748 (first)
 ];

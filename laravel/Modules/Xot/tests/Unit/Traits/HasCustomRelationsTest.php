@@ -40,8 +40,8 @@ it('creates custom relation', function (): void {
     );
 
 <<<<<<< HEAD
-    Assert::assertInstanceOf(CustomRelation::class, $relation);
-=======
     Assert::assertSame(CustomRelation::class, $relation::class);
->>>>>>> laraxot/dev
+=======
+    Assert::assertInstanceOf(CustomRelation::class, $relation);
+>>>>>>> 77b1e2748 (first)
 });

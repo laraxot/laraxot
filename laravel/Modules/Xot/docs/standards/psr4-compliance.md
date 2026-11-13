@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "psr4 compliance"
 type: note
@@ -8,5 +7,6 @@ updated: 2026-10-18
 tags: [docs, xot, standards]
 qmd: "psr4 compliance xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 

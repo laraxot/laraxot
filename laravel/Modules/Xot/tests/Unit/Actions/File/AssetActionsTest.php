@@ -11,13 +11,13 @@ use Modules\Xot\Tests\TestCase;
 use Nwidart\Modules\Facades\Module;
 use PHPUnit\Framework\Assert;
 <<<<<<< HEAD
+
+=======
 use ReflectionMethod;
 
 use function Safe\chmod;
 use function Safe\file_get_contents;
-=======
-
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 use function Safe\file_put_contents;
 use function Safe\mkdir;
 use function Safe\unlink;
@@ -49,8 +49,6 @@ it('returns path if asset already exists in public folder', function (): void {
 });
 
 <<<<<<< HEAD
-it('publishes module asset to public assets path', function (): void {
-=======
 /**
  * public_html/assets/<module> is a symlink to Modules/<Module>/public, so the asset is served from
  * there. The action used to copy resources/ into public_html on every request and failed with
@@ -58,7 +56,9 @@ it('publishes module asset to public assets path', function (): void {
  * (git core.symlinks=false). It must now only resolve the URL and write nothing.
  */
 it('resolves a module asset to its public url without copying anything into public', function (): void {
->>>>>>> laraxot/dev
+=======
+it('publishes module asset to public assets path', function (): void {
+>>>>>>> 77b1e2748 (first)
     $moduleRoot = sys_get_temp_dir().'/xot_mod_'.uniqid('', true);
     $resourceFile = $moduleRoot.'/resources/css/style.css';
     mkdir(\dirname($resourceFile), 0o755, true);
@@ -66,11 +66,11 @@ it('resolves a module asset to its public url without copying anything into publ
 
     $dest = public_path('assets/XotAssetTest/css/style.css');
 <<<<<<< HEAD
+=======
     if (is_file($dest)) {
         unlink($dest);
     }
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
     app()->instance(GetModulePathAction::class, new class($moduleRoot) extends GetModulePathAction
     {
@@ -85,13 +85,6 @@ it('resolves a module asset to its public url without copying anything into publ
     try {
         $result = app(AssetAction::class)->execute('XotAssetTest::css/style.css');
 <<<<<<< HEAD
-        Assert::assertStringContainsString('assets/XotAssetTest/css/style.css', $result);
-        Assert::assertFileExists($dest);
-    } finally {
-        if (is_file($dest)) {
-            unlink($dest);
-        }
-=======
 <<<<<<< .merge_file_Y82CzO
         Assert::assertStringContainsString('assets/XotAssetTest/css/style.css', $result);
 =======
@@ -99,7 +92,14 @@ it('resolves a module asset to its public url without copying anything into publ
 >>>>>>> .merge_file_8NTV05
         Assert::assertFileDoesNotExist($dest, 'the asset must be served through the symlink, never copied');
     } finally {
->>>>>>> laraxot/dev
+=======
+        Assert::assertStringContainsString('assets/XotAssetTest/css/style.css', $result);
+        Assert::assertFileExists($dest);
+    } finally {
+        if (is_file($dest)) {
+            unlink($dest);
+        }
+>>>>>>> 77b1e2748 (first)
         if (is_file($resourceFile)) {
             unlink($resourceFile);
         }
@@ -107,6 +107,35 @@ it('resolves a module asset to its public url without copying anything into publ
 });
 
 <<<<<<< HEAD
+it('does not throw when public assets dir is a plain file left by a checkout without symlinks', function (): void {
+    $moduleRoot = sys_get_temp_dir().'/xot_mod_'.uniqid('', true);
+    $publicFile = $moduleRoot.'/public/css/style.css';
+    mkdir(\dirname($publicFile), 0o755, true);
+    file_put_contents($publicFile, 'body{}');
+
+    $standIn = public_path('assets/xotstandintest'); // link in minuscolo, come gli URL
+    file_put_contents($standIn, '../../laravel/Modules/XotStandInTest/public');
+
+    app()->instance(GetModulePathAction::class, new class($moduleRoot) extends GetModulePathAction
+    {
+        public function __construct(private string $modulePath) {}
+
+        public function execute(string $module): string
+        {
+            return $this->modulePath;
+        }
+    });
+
+    try {
+        $result = app(AssetAction::class)->execute('XotStandInTest::css/style.css');
+        Assert::assertStringContainsString('assets/xotstandintest/css/style.css', $result);
+        Assert::assertTrue(is_file($standIn), 'the stand-in file must be left untouched');
+    } finally {
+        foreach ([$standIn, $publicFile] as $file) {
+            if (is_file($file)) {
+                unlink($file);
+            }
+=======
 it('keeps published dest when force-copy fails (best-effort via copyAsset)', function (): void {
     $from = sys_get_temp_dir().'/xot_asset_from_'.uniqid('', true).'.bin';
     $to = sys_get_temp_dir().'/xot_asset_to_'.uniqid('', true).'.bin';
@@ -152,36 +181,7 @@ it('skips force-copy when destination exists but is not writable', function (): 
         }
         if (is_file($to)) {
             unlink($to);
-=======
-it('does not throw when public assets dir is a plain file left by a checkout without symlinks', function (): void {
-    $moduleRoot = sys_get_temp_dir().'/xot_mod_'.uniqid('', true);
-    $publicFile = $moduleRoot.'/public/css/style.css';
-    mkdir(\dirname($publicFile), 0o755, true);
-    file_put_contents($publicFile, 'body{}');
-
-    $standIn = public_path('assets/xotstandintest'); // link in minuscolo, come gli URL
-    file_put_contents($standIn, '../../laravel/Modules/XotStandInTest/public');
-
-    app()->instance(GetModulePathAction::class, new class($moduleRoot) extends GetModulePathAction
-    {
-        public function __construct(private string $modulePath) {}
-
-        public function execute(string $module): string
-        {
-            return $this->modulePath;
-        }
-    });
-
-    try {
-        $result = app(AssetAction::class)->execute('XotStandInTest::css/style.css');
-        Assert::assertStringContainsString('assets/xotstandintest/css/style.css', $result);
-        Assert::assertTrue(is_file($standIn), 'the stand-in file must be left untouched');
-    } finally {
-        foreach ([$standIn, $publicFile] as $file) {
-            if (is_file($file)) {
-                unlink($file);
-            }
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         }
     }
 });
@@ -198,7 +198,6 @@ it('calculates asset path correctly in AssetPathAction', function (): void {
     Assert::assertSame('/path/to/User/resources/js/app.js', $result);
 });
 <<<<<<< HEAD
-=======
 
 it('resolves a public URL path to a file under the document root', function (): void {
     $action = app(AssetPathAction::class);
@@ -206,4 +205,5 @@ it('resolves a public URL path to a file under the document root', function (): 
     Assert::assertSame(public_path('themes/Trattoria/images/logo.svg'), $action->execute('/themes/Trattoria/images/logo.svg?v=2'));
     Assert::assertSame(public_path('images/logo.png'), $action->execute('images/logo.png'));
 });
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)

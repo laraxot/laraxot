@@ -11,18 +11,18 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
 use Modules\Xot\Contracts\UserContract;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Models\Policies\Concerns\DeniesUndeclaredFilamentAbilities;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 
 // use Modules\Xot\Datas\XotData;
 
 abstract class XotBasePolicy
 {
 <<<<<<< HEAD
-=======
     use DeniesUndeclaredFilamentAbilities;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     use HandlesAuthorization;
 
     public function before(UserContract $user, string $_ability): ?bool
@@ -32,10 +32,6 @@ abstract class XotBasePolicy
                 return true;
             }
 <<<<<<< HEAD
-        });
-    }
-
-=======
 
             // Chi ha il ruolo `{modulo}::admin` (lo stesso che apre il pannello del modulo)
             // gestisce tutto il modulo. Senza questa regola le policy con `hasPermissionTo`
@@ -64,7 +60,11 @@ abstract class XotBasePolicy
         return strtolower($parts[1]).'::admin';
     }
 
->>>>>>> laraxot/dev
+=======
+        });
+    }
+
+>>>>>>> 77b1e2748 (first)
     public function viewAny(UserContract $user): Response|bool
     {
         return false;

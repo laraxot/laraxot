@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Risoluzione Conflitto in MediaConvertResource"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, git]
 qmd: "Risoluzione Conflitto in MediaConvertResource"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Risoluzione Conflitto in MediaConvertResource
 
 ## Panoramica
@@ -22,10 +22,10 @@ Questo documento descrive in dettaglio la risoluzione del conflitto git nel file
 Il file presenta conflitti multipli relativi alla definizione della risorsa Filament per la conversione dei media. I principali conflitti riguardano:
 
 <<<<<<< HEAD
-1. **Struttura dello schema del form**:
-=======
 1. **Struttura dello schema del form**: 
->>>>>>> laraxot/dev
+=======
+1. **Struttura dello schema del form**:
+>>>>>>> 77b1e2748 (first)
    - Alcune versioni usano un array associativo con chiavi (es: `'format' => Radio::make('format')`)
    - Altre versioni utilizzano i componenti direttamente (es: `Radio::make('format')`)
 
@@ -81,10 +81,10 @@ class MediaConvertResource extends XotBaseResource
 {
     protected static ?string $model = MediaConvert::class;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     /**
@@ -92,14 +92,14 @@ class MediaConvertResource extends XotBaseResource
      * @return array<int, \Filament\Forms\Components\Component>
      */
 <<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             Radio::make('format')
@@ -171,8 +171,8 @@ class MediaConvertResource extends XotBaseResource
 
 - [Documento principale risoluzione conflitti](risoluzione_conflitti.md)
 <<<<<<< HEAD
+- [Documentazione modulo Media](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md) 
+=======
 - [Documentazione modulo Media](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md)
 - [Documentazione modulo Media](../../media/docs/conflitti_merge_risolti.md)
-=======
-- [Documentazione modulo Media](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md) 
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Standard di Sviluppo"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, development]
 qmd: "Standard di Sviluppo"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Standard di Sviluppo
 
 ## 1. Principi Generali
@@ -93,18 +93,18 @@ final class UserData extends Data
         #[Validation\StringType]
         public readonly string $name,
 <<<<<<< HEAD
-
+        
         #[Validation\Required]
         #[Validation\Email]
         public readonly string $email,
-
+        
 =======
-        
+
         #[Validation\Required]
         #[Validation\Email]
         public readonly string $email,
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         #[Validation\Nullable]
         #[Validation\StringType]
         public readonly ?string $phone = null,
@@ -138,10 +138,10 @@ class CreateUserAction
 {
     use QueueableAction;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public function execute(UserData $data): User
     {
         return User::create([
@@ -179,14 +179,14 @@ class CreateUserActionTest extends TestCase
             'email' => 'john@example.com',
         ]);
 <<<<<<< HEAD
-
+        
         $user = CreateUserAction::execute($userData);
-
+        
 =======
-        
+
         $user = CreateUserAction::execute($userData);
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         $this->assertInstanceOf(User::class, $user);
         $this->assertEquals('John Doe', $user->name);
         $this->assertEquals('john@example.com', $user->email);
@@ -212,10 +212,10 @@ class UserManagementTest extends TestCase
             'email' => 'john@example.com',
         ]);
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $response->assertCreated();
         $this->assertDatabaseHas('users', [
             'name' => 'John Doe',
@@ -358,7 +358,7 @@ Log::error('User creation failed', [
 - Mantenere commenti aggiornati
 - Evitare commenti ovvi
 <<<<<<< HEAD
-- Utilizzare PHPDoc per API pubbliche
-=======
 - Utilizzare PHPDoc per API pubbliche 
->>>>>>> laraxot/dev
+=======
+- Utilizzare PHPDoc per API pubbliche
+>>>>>>> 77b1e2748 (first)

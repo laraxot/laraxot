@@ -1,20 +1,4 @@
 <<<<<<< HEAD
-# 🎨 Theme Assets Workflow - CSS/JS Frontend
-
-**⚠️ REGOLA CRITICA**: Per modifiche CSS/JS del frontend, lavorare SEMPRE nella cartella del tema, NON nella root Laravel.
-
-## 📁 Struttura Corretta
-
-### Directory Temi
-```
-/Themes/
-├── One/           # Tema principale
-│   ├── resources/ # Sorgenti CSS/JS/Sass
-│   └── public/    # Assets compilati
-└── Two/           # Tema alternativo
-```
-
-=======
 ---
 title: "Theme Assets Workflow - CSS/JS Frontend"
 type: note
@@ -53,7 +37,23 @@ public_html/assets/<modulo> ->   ../../laravel/Modules/<Modulo>/public   (symlin
 
 =======
 <<<<<<< .merge_file_N6jv8e
->>>>>>> laraxot/dev
+=======
+# 🎨 Theme Assets Workflow - CSS/JS Frontend
+
+**⚠️ REGOLA CRITICA**: Per modifiche CSS/JS del frontend, lavorare SEMPRE nella cartella del tema, NON nella root Laravel.
+
+## 📁 Struttura Corretta
+
+### Directory Temi
+```
+/Themes/
+├── One/           # Tema principale
+│   ├── resources/ # Sorgenti CSS/JS/Sass
+│   └── public/    # Assets compilati
+└── Two/           # Tema alternativo
+```
+
+>>>>>>> 77b1e2748 (first)
 ### Workflow Corretto
 ```bash
 # 🚨 SEMPRE lavorare nella cartella del tema
@@ -69,37 +69,25 @@ npm run build
 
 # 3. Copia nella directory pubblica Laravel
 <<<<<<< HEAD
-npm run copy
-=======
 # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
->>>>>>> laraxot/dev
+=======
+npm run copy
+>>>>>>> 77b1e2748 (first)
 ```
 
 ## ⚠️ NON Fare Mai
 ❌ **NON modificare** `/public/css/` o `/public/js/` direttamente
 ❌ **NON usare** `npm run build` dalla root Laravel
 <<<<<<< HEAD
-❌ **NON dimenticare** il comando `npm run copy`
-=======
 niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
->>>>>>> laraxot/dev
+=======
+❌ **NON dimenticare** il comando `npm run copy`
+>>>>>>> 77b1e2748 (first)
 
 ## ✅ Processo Corretto
 1. **Modifica sorgenti** in `/Themes/[Theme]/resources/`
 2. **Build assets** con `npm run build` dalla cartella tema
 <<<<<<< HEAD
-3. **Copy assets** con `npm run copy` dalla cartella tema
-4. **Verifica risultato** nel browser
-
-## 🔄 Comandi di Build per Tema
-
-### Tema One
-```bash
-cd Themes/One
-npm install          # Prima volta
-npm run build        # Compila Sass/JS
-npm run copy         # Copia in /public/
-=======
 3. niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
 4. **Verifica risultato** nel browser
 =======
@@ -145,7 +133,19 @@ cd Themes/One
 npm install          # Prima volta
 npm run build        # Compila Sass/JS
 # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
->>>>>>> laraxot/dev
+=======
+3. **Copy assets** con `npm run copy` dalla cartella tema
+4. **Verifica risultato** nel browser
+
+## 🔄 Comandi di Build per Tema
+
+### Tema One
+```bash
+cd Themes/One
+npm install          # Prima volta
+npm run build        # Compila Sass/JS
+npm run copy         # Copia in /public/
+>>>>>>> 77b1e2748 (first)
 ```
 
 ### Tema Two
@@ -154,10 +154,10 @@ cd Themes/Two
 npm install
 npm run build
 <<<<<<< HEAD
-npm run copy
-=======
 # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
->>>>>>> laraxot/dev
+=======
+npm run copy
+>>>>>>> 77b1e2748 (first)
 ```
 
 ## 🎯 File di Configurazione
@@ -186,10 +186,10 @@ export default defineConfig({
 ### Modifiche Non Visibili?
 1. Verificare di aver eseguito `npm run build`
 <<<<<<< HEAD
-2. Verificare di aver eseguito `npm run copy`
-=======
 2. niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
->>>>>>> laraxot/dev
+=======
+2. Verificare di aver eseguito `npm run copy`
+>>>>>>> 77b1e2748 (first)
 3. Svuotare cache browser (Ctrl+F5)
 4. Verificare path corretti in vite.config.js
 
@@ -203,7 +203,6 @@ export default defineConfig({
 
 **⚠️ RICORDA**: Il workflow dei temi è DIVERSO dal normale workflow Laravel. Sempre theme → build → copy → public!
 <<<<<<< HEAD
-=======
 =======
 cd laravel/Themes/Sixteen
 npm install
@@ -255,4 +254,5 @@ Modulo nuovo con asset pubblici: crea `Modules/<Modulo>/public`, aggiungi `<modu
 =======
 >>>>>>> .merge_file_qKVgEi
 >>>>>>> .merge_file_wx9g7A
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)

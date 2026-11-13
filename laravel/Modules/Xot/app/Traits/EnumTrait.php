@@ -122,10 +122,10 @@ trait EnumTrait
         foreach (static::getColumnDefinitions() as $name => $definition) {
             if ($migration === null || ! $migration->hasColumn($name)) {
 <<<<<<< HEAD
-                $definition($table); // @phpstan-ignore callable.nonCallable
-=======
                 $definition($table);
->>>>>>> laraxot/dev
+=======
+                $definition($table); // @phpstan-ignore callable.nonCallable
+>>>>>>> 77b1e2748 (first)
             }
         }
     }

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Gestione del Tema"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, theme]
 qmd: "Gestione del Tema"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Gestione del Tema
 
 ## Principi Fondamentali
@@ -91,18 +91,18 @@ class ThemeConfigurator
         $colors = $metatag->getThemeColors();
         $settings = $metatag->getThemeSettings();
 <<<<<<< HEAD
-
-        $this->applyColors($colors);
-        $this->applySettings($settings);
-    }
-
-=======
         
         $this->applyColors($colors);
         $this->applySettings($settings);
     }
     
->>>>>>> laraxot/dev
+=======
+
+        $this->applyColors($colors);
+        $this->applySettings($settings);
+    }
+
+>>>>>>> 77b1e2748 (first)
     private function applyColors(array $colors): void
     {
         foreach ($colors as $type => $color) {
@@ -126,10 +126,10 @@ class ColorValidator
         return true;
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     private function isValidColor(string $color): bool
     {
         return preg_match('/^#[a-f0-9]{6}$/i', $color) === 1;
@@ -149,10 +149,10 @@ class DarkModeManager
         );
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     private function adjustColorForDarkMode(string $color): string
     {
         // Logica per adattare i colori alla dark mode
@@ -188,7 +188,7 @@ class DarkModeManager
 - [Semantic Methods](../philosophy/semantic_methods.md)
 - [Best Practices](../best-practices.md)
 <<<<<<< HEAD
-- [Testing Guide](../testing/theme_testing.md)
-=======
 - [Testing Guide](../testing/theme_testing.md) 
->>>>>>> laraxot/dev
+=======
+- [Testing Guide](../testing/theme_testing.md)
+>>>>>>> 77b1e2748 (first)

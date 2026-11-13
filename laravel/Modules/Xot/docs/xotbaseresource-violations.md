@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "VIOLAZIONI CRITICHE XotBaseResource - Regole Globali Laraxot PTVX"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "VIOLAZIONI CRITICHE XotBaseResource - Regole Globali Laraxot PTVX"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # VIOLAZIONI CRITICHE XotBaseResource - Regole Globali Laraxot PTVX
 
 ## 🚨 ERRORI GRAVISSIMI DA EVITARE SEMPRE
@@ -86,10 +86,10 @@ public static function getPages(): array
 XotBaseResource (Classe Base)
 ├── Gestione automatica form() [FINAL]
 <<<<<<< HEAD
-├── Gestione automatica table() [FINAL]
-=======
 ├── Gestione automatica table() [FINAL]  
->>>>>>> laraxot/dev
+=======
+├── Gestione automatica table() [FINAL]
+>>>>>>> 77b1e2748 (first)
 ├── Gestione automatica traduzioni
 ├── Gestione automatica route standard
 └── Configurazione centralizzata
@@ -146,14 +146,14 @@ class {ModelName}Resource extends XotBaseResource
 
     // UNICO metodo necessario nella Resource principale
 <<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             Section::make()  // NO ->label() - gestito automaticamente
@@ -165,10 +165,10 @@ class {ModelName}Resource extends XotBaseResource
         ];
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // NESSUN altro metodo se standard:
     // - NO getTableColumns(), getTableFilters(), getTableActions(), getTableBulkActions()
     // - NO getPages() se contiene solo route standard
@@ -208,10 +208,10 @@ class List{ModelName}s extends XotBaseListRecords
         ];
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public function getTableActions(): array
     {
         return [
@@ -219,10 +219,10 @@ class List{ModelName}s extends XotBaseListRecords
         ];
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public function getTableBulkActions(): array
     {
         return [
@@ -336,10 +336,10 @@ return [
 ### Documentazione Moduli
 - [Progressioni: XotBaseResource Violations](../laravel/Modules/Progressioni/docs/xotbaseresource-violations-critical.md)
 <<<<<<< HEAD
-- [Xot: XotBaseResource Rules](../laravel/Modules/Xot/docs/filament/resources/xot-base-resource.md)
-=======
 - [Xot: XotBaseResource Rules](filament/resources/xot-base-resource.md)
->>>>>>> laraxot/dev
+=======
+- [Xot: XotBaseResource Rules](../laravel/Modules/Xot/docs/filament/resources/xot-base-resource.md)
+>>>>>>> 77b1e2748 (first)
 - [Xot: Filament Resource Guidelines](../laravel/Modules/Xot/docs/rules/filament-resource-guidelines.md)
 
 ### Regole Correlate
@@ -352,4 +352,4 @@ return [
 *Ultimo aggiornamento: agosto 2025*
 =======
 *Ultimo aggiornamento: agosto 2025*
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

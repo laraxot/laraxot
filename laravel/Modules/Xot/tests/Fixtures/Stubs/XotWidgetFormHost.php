@@ -10,10 +10,10 @@ use Modules\Xot\Models\Cache as CacheModel;
 final class XotWidgetFormHost extends XotBaseWidget
 {
 <<<<<<< HEAD
-    protected string $view;
-=======
     protected string $view = 'xot::filament.widgets.base';
->>>>>>> laraxot/dev
+=======
+    protected string $view;
+>>>>>>> 77b1e2748 (first)
 
     public function getFormSchema(): array
     {

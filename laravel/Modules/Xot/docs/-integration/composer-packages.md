@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "composer_packages"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "composer_packages xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # composer_packages
 
 <!-- Contenuto migrato da _docs/composer_packages.txt -->

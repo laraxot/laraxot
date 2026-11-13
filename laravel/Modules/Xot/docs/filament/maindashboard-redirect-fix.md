@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Fix Redirect Loop - MainDashboard"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, filament]
 qmd: "fix redirect loop - maindashboard xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Fix Redirect Loop - MainDashboard
 
 ## Problema Risolto

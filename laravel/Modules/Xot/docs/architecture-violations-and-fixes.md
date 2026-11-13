@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Violazioni Architetturali e Correzioni - Pattern XotData"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "violazioni architetturali e correzioni - pattern xotdata xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Violazioni Architetturali e Correzioni - Pattern XotData
 
 ## 🚨 **Violazioni Architetturali Critiche**

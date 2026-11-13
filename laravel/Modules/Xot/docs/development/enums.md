@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Enums Naming Convention"
 type: note
@@ -61,4 +59,6 @@ When renaming enums to follow this convention:
 2. Update the class name to include `Enum` suffix
 3. Update all references to the enum in your codebase
 4. Run tests to ensure everything works as expected
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

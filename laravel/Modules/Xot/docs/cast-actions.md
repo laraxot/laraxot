@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Azioni di Cast Sicure - Sostituzione di property_exists"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "azioni di cast sicure - sostituzione di property_exists xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Azioni di Cast Sicure - Sostituzione di property_exists
 
 ## Panoramica

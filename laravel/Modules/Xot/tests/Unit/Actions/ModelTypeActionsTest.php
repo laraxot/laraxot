@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 <<<<<<< HEAD
-=======
 use Illuminate\Database\Eloquent\Model as EloquentModel;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Illuminate\Support\Facades\Config;
 use Modules\Xot\Actions\GetModelClassByModelTypeAction;
 use Modules\Xot\Actions\GetModelTypeByModelAction;
@@ -23,9 +23,9 @@ it('resolves model types correctly', function (): void {
 
     $typeAction = app(GetModelTypeByModelAction::class);
 <<<<<<< HEAD
-    $result = $typeAction->execute(new class extends Log implements ModelContract {});
-=======
     $result = $typeAction->execute(new class extends EloquentModel implements ModelContract {});
->>>>>>> laraxot/dev
+=======
+    $result = $typeAction->execute(new class extends Log implements ModelContract {});
+>>>>>>> 77b1e2748 (first)
     Assert::assertIsString($result);
 });

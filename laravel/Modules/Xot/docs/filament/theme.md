@@ -1,17 +1,4 @@
 <<<<<<< HEAD
-https://fly.io/laravel-bytes/filamentphp-adding-some-style/
-### Versione HEAD
-
-## Collegamenti tra versioni di theme.md
-* [theme.md](../../../Xot/docs/filament/theme.md)
-* [theme.md](../../../../Themes/One/docs/theme.md)
-* [theme.md](../../../xot/docs/filament/theme.md)
-* [theme.md](../../../../themes/one/docs/theme.md)
-
-### Versione Incoming
-
----
-=======
 ---
 title: "theme"
 type: note
@@ -36,4 +23,17 @@ https://fly.io/laravel-bytes/filamentphp-adding-some-style/
 
 ---
 
->>>>>>> laraxot/dev
+=======
+https://fly.io/laravel-bytes/filamentphp-adding-some-style/
+### Versione HEAD
+
+## Collegamenti tra versioni di theme.md
+* [theme.md](../../../Xot/docs/filament/theme.md)
+* [theme.md](../../../../Themes/One/docs/theme.md)
+* [theme.md](../../../xot/docs/filament/theme.md)
+* [theme.md](../../../../themes/one/docs/theme.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

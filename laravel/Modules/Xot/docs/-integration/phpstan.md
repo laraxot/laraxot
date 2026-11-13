@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "phpstan"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "phpstan xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # phpstan
 
 <!-- Contenuto migrato da _docs/phpstan.txt -->
@@ -17,4 +17,4 @@ qmd: "phpstan xot"
 https://laravel-news.com/running-phpstan-on-max-with-laravel
 =======
 https://laravel-news.com/running-phpstan-on-max-with-laravel
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

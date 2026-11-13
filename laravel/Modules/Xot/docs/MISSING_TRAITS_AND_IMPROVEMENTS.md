@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Trait Mancanti e Miglioramenti Architetturali"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Trait Mancanti e Miglioramenti Architetturali"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Trait Mancanti e Miglioramenti Architetturali
 
 ## Panoramica
@@ -626,10 +626,10 @@ class AlertWidget extends BaseTableWidget
 ## 🔗 Collegamenti Correlati
 
 <<<<<<< HEAD
+=======
 - [Analisi Completa Codice](./comprehensive_code_analysis.md)
 - [Architettura Moduli](architecture.md)
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 - [Analisi Completa Codice](./COMPREHENSIVE_CODE_ANALYSIS.md)
 - [Architettura Moduli](./ARCHITECTURE.md)
 - [Performance Guide](./PERFORMANCE_GUIDE.md)

@@ -15,12 +15,6 @@ use function Safe\mkdir;
 uses(TestCase::class);
 
 <<<<<<< HEAD
-it('normalizes nested numeric strings in diff fixType', function (): void {
-    $input = ['items' => [
-        ['a' => '1', 'b' => 'x'],
-        ['c' => '2.5'],
-    ]];
-=======
 it('normalizes numeric strings in diff rows through fixType', function (): void {
     $input = [
         'a' => [
@@ -31,16 +25,18 @@ it('normalizes numeric strings in diff rows through fixType', function (): void 
             'value' => '2.5',
         ],
     ];
->>>>>>> laraxot/dev
+=======
+it('normalizes nested numeric strings in diff fixType', function (): void {
+    $input = ['items' => [
+        ['a' => '1', 'b' => 'x'],
+        ['c' => '2.5'],
+    ]];
+>>>>>>> 77b1e2748 (first)
 
     $normalized = DiffAssocRecursiveAction::fixType($input);
 
     Assert::assertSame([
 <<<<<<< HEAD
-        ['a' => 1, 'b' => 'x'],
-        ['c' => 2.5],
-    ], $normalized['items']);
-=======
         'a' => [
             'id' => 1,
             'name' => 'x',
@@ -49,7 +45,11 @@ it('normalizes numeric strings in diff rows through fixType', function (): void 
             'value' => 2.5,
         ],
     ], $normalized);
->>>>>>> laraxot/dev
+=======
+        ['a' => 1, 'b' => 'x'],
+        ['c' => 2.5],
+    ], $normalized['items']);
+>>>>>>> 77b1e2748 (first)
 });
 
 it('throws when fixType receives a non-array item', function (): void {
@@ -62,20 +62,6 @@ it('throws when fixType receives a non-array item', function (): void {
 });
 
 <<<<<<< HEAD
-it('returns recursive diff', function (): void {
-    $action = new DiffAssocRecursiveAction;
-    $left = ['items' => [
-        ['id' => '1', 'name' => 'a'],
-        ['id' => '2', 'name' => 'b'],
-    ]];
-    $right = ['items' => [
-        ['id' => 2, 'name' => 'b'],
-    ]];
-
-    Assert::assertSame([
-        ['id' => 1, 'name' => 'a'],
-    ], $action->execute($left, $right)['items']);
-=======
 it('returns rows of left that are missing in right', function (): void {
     $action = new DiffAssocRecursiveAction;
     $left = [
@@ -101,7 +87,21 @@ it('returns rows of left that are missing in right', function (): void {
             'name' => 'a',
         ],
     ], $action->execute($left, $right));
->>>>>>> laraxot/dev
+=======
+it('returns recursive diff', function (): void {
+    $action = new DiffAssocRecursiveAction;
+    $left = ['items' => [
+        ['id' => '1', 'name' => 'a'],
+        ['id' => '2', 'name' => 'b'],
+    ]];
+    $right = ['items' => [
+        ['id' => 2, 'name' => 'b'],
+    ]];
+
+    Assert::assertSame([
+        ['id' => 1, 'name' => 'a'],
+    ], $action->execute($left, $right)['items']);
+>>>>>>> 77b1e2748 (first)
 });
 
 it('covers all branches of range intersect', function (): void {
@@ -114,10 +114,10 @@ it('covers all branches of range intersect', function (): void {
     Assert::assertFalse($action->execute(7, 6, 5, 8));
     Assert::assertSame([4, 4], $action->execute(4, 10, 2, 4));
 <<<<<<< HEAD
-    Assert::assertFalse($action->execute(1, 5, 2, 7));
-=======
     Assert::assertSame([2, 5], $action->execute(1, 5, 2, 7));
->>>>>>> laraxot/dev
+=======
+    Assert::assertFalse($action->execute(1, 5, 2, 7));
+>>>>>>> 77b1e2748 (first)
 });
 
 it('writes JSON and PHP arrays', function (): void {

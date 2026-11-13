@@ -88,6 +88,7 @@ Main_files
 test-results
 laravel
 .supermemory
+<<<<<<< HEAD
 # Ancorate alla radice del tema: senza slash iniziale ignoravano anche resources/views/components e resources/views/layouts,
 # e le viste nuove sparivano da git (sync 6cb55f0d: pagine in 500, nessun file da committare).
 /components
@@ -97,6 +98,10 @@ laravel
 /docs/bmad/*
 !/docs/bmad/front-office-readiness-brainstorming.md
 !/docs/bmad/front-office-production-readiness-plan.md
+=======
+components
+layouts
+>>>>>>> f08c6884 (.)
 agentdb.rvf
 ruvector.db
 # AI/TOOL SCAFFOLD — must never exist in module/theme tree (see docs/wiki/rules/module-theme-root-cleanup.md, Rule 5)

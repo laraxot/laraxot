@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Testing Strategy: MySQL-Based Testing Without RefreshDatabase"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Testing Strategy: MySQL-Based Testing Without RefreshDatabase"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Testing Strategy: MySQL-Based Testing Without RefreshDatabase
 
 ## Overview
@@ -33,9 +33,9 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 <<<<<<< HEAD
-DB_DATABASE=<nome progetto>_data_test
 =======
->>>>>>> laraxot/dev
+DB_DATABASE=<nome progetto>_data_test
+>>>>>>> 77b1e2748 (first)
 DB_DATABASE=test_database
 DB_USERNAME=root
 DB_PASSWORD=
@@ -106,20 +106,20 @@ test('user can login', function () {
     // Arrange
     $user = User::factory()->create();
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // Act & Assert
     $this->post('/login', [
         'email' => $user->email,
         'password' => 'password'
     ])->assertRedirect('/dashboard');
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // Cleanup (if needed)
     $user->forceDelete();
 });

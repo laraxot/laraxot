@@ -26,11 +26,11 @@ uses(TestCase::class);
  * TernaryFilter`, `WorkerTypeFilter extends Filter`. Nessuna delle tre dava errore.
  *
 <<<<<<< HEAD
- * Debito storico misurato: 6 RelationManager estendono `RelationManager` di Filament.
-=======
  * Debito storico residuo: 0 file (wave 2026-10-22: tutti i componenti
  * Notify, Blog, Fixcity, UI, Xot mock bonificati a XotBase*).
->>>>>>> laraxot/dev
+=======
+ * Debito storico misurato: 6 RelationManager estendono `RelationManager` di Filament.
+>>>>>>> 77b1e2748 (first)
  * Tetto decrescente: la guardia non pretende zero, impedisce che il numero salga.
  *
  * @see docs/wiki/rules/fundamental-xotbase-rule.md
@@ -55,10 +55,6 @@ function filamentBasesWithXotEquivalent(): array
         'Filter' => 'XotBaseFilter',
         'Section' => 'XotBaseSection',
 <<<<<<< HEAD
-    ];
-}
-
-=======
         // Wave qualità 2026-10-20 — blueprint Filament
         'Select' => 'XotBaseSelect',
         'Field' => 'XotBaseField',
@@ -72,7 +68,11 @@ function filamentBasesWithXotEquivalent(): array
  * existing file this; user: "migliora qualità codice , fa tutto con bmad + second brain + filament blueprint"
  */
 
->>>>>>> laraxot/dev
+=======
+    ];
+}
+
+>>>>>>> 77b1e2748 (first)
 /**
  * @return array<string, string> file => violazione
  */
@@ -127,19 +127,19 @@ function classesExtendingFilamentDirectly(): array
 
 /**
 <<<<<<< HEAD
+ * Tetto dopo wave qualità Notify+UI XotBase*: **0 file** residuo
+ * Tutte le classi Filament ora si estendono via XotBase.
+ * Non deve salire mai.
+ */
+const FILAMENT_DIRECT_EXTENDS_BASELINE = 0;
+=======
  * Tetto misurato il 2026-09-08 dopo la bonifica del modulo Rating: **27 file**.
  * Per classe: Section 12, RelationManager 6, SelectFilter 4, Filter 2, poi
  * ViewColumn, SelectColumn e TextColumn uno ciascuno. Scende con la bonifica, non
  * sale mai.
  */
 const FILAMENT_DIRECT_EXTENDS_BASELINE = 27;
-=======
- * Tetto dopo wave qualità Notify+UI XotBase*: **0 file** residuo
- * Tutte le classi Filament ora si estendono via XotBase.
- * Non deve salire mai.
- */
-const FILAMENT_DIRECT_EXTENDS_BASELINE = 0;
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
 test('nessuna classe nuova estende Filament al posto della sua XotBase', function (): void {
     $offenders = classesExtendingFilamentDirectly();

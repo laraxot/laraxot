@@ -6,12 +6,6 @@ namespace Modules\Xot\Tests\Feature;
 
 use Illuminate\Database\ConnectionInterface;
 <<<<<<< HEAD
-use Illuminate\Database\Eloquent\Model;
-use Modules\Xot\Models\BaseModel;
-use Modules\Xot\Models\Module;
-use Modules\Xot\Models\XotBaseModel;
-use Modules\Xot\Tests\TestCase;
-=======
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
@@ -23,7 +17,13 @@ use Modules\Xot\Models\Traits\RelationX;
 use Modules\Xot\Tests\Fixtures\Models\TestConcreteBaseModel;
 use Modules\Xot\Tests\TestCase;
 use Modules\Xot\Traits\Updater;
->>>>>>> laraxot/dev
+=======
+use Illuminate\Database\Eloquent\Model;
+use Modules\Xot\Models\BaseModel;
+use Modules\Xot\Models\Module;
+use Modules\Xot\Models\XotBaseModel;
+use Modules\Xot\Tests\TestCase;
+>>>>>>> 77b1e2748 (first)
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
@@ -32,10 +32,6 @@ use function Safe\unserialize;
 uses(TestCase::class);
 
 <<<<<<< HEAD
-function createXotBaseModelFixture(): BaseModel
-{
-    return new class extends BaseModel {};
-=======
 /**
  * Classe concreta con nome: PHP non permette di serializzare classi anonime.
  */
@@ -51,7 +47,11 @@ function createXotBaseModelFixture(): BaseModel
 final class XotBaseModelFixtureObserver
 {
     public function saving(Model $model): void {}
->>>>>>> laraxot/dev
+=======
+function createXotBaseModelFixture(): BaseModel
+{
+    return new class extends BaseModel {};
+>>>>>>> 77b1e2748 (first)
 }
 
 describe('Xot Base Model Business Logic', function (): void {
@@ -61,27 +61,27 @@ describe('Xot Base Model Business Logic', function (): void {
 
         // Assert
 <<<<<<< HEAD
+        Assert::assertSame('id', $baseModel->getKeyName());
+=======
         Assert::assertInstanceOf(XotBaseModel::class, $baseModel);
         Assert::assertInstanceOf(Model::class, $baseModel);
-=======
-        Assert::assertSame('id', $baseModel->getKeyName());
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it has required traits', function (): void {
         // Arrange & Act
 <<<<<<< HEAD
-        $baseModel = createXotBaseModelFixture();
-
-        // Assert
-=======
         $traits = class_uses_recursive(createXotBaseModelFixture());
 
         // Assert
         Assert::assertContains(HasXotFactory::class, $traits);
         Assert::assertContains(RelationX::class, $traits);
         Assert::assertContains(Updater::class, $traits);
->>>>>>> laraxot/dev
+=======
+        $baseModel = createXotBaseModelFixture();
+
+        // Assert
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it can be instantiated without database', function (): void {
@@ -90,10 +90,10 @@ describe('Xot Base Model Business Logic', function (): void {
 
         // Assert
 <<<<<<< HEAD
-        Assert::assertInstanceOf(BaseModel::class, $baseModel);
-=======
         Assert::assertFalse($baseModel->exists);
->>>>>>> laraxot/dev
+=======
+        Assert::assertInstanceOf(BaseModel::class, $baseModel);
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it supports table name override', function (): void {
@@ -138,11 +138,11 @@ describe('Xot Base Model Business Logic', function (): void {
 
         // Act & Assert
 <<<<<<< HEAD
+        Assert::assertSame('modules', $module->getTable());
+=======
         Assert::assertInstanceOf(XotBaseModel::class, $module);
         Assert::assertInstanceOf(Model::class, $module);
-=======
-        Assert::assertSame('modules', $module->getTable());
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it supports model configuration', function (): void {
@@ -164,14 +164,14 @@ describe('Xot Base Model Business Logic', function (): void {
         // Arrange & Act
         $baseModel = createXotBaseModelFixture();
 <<<<<<< HEAD
-
-        // Assert - Soft deletes may or may not be configured
-=======
         $usesSoftDeletes = in_array(SoftDeletes::class, class_uses_recursive($baseModel), true);
 
         // Assert - Soft deletes may or may not be configured: il trait e trashed() vanno sempre insieme
         Assert::assertSame($usesSoftDeletes, method_exists($baseModel, 'trashed'));
->>>>>>> laraxot/dev
+=======
+
+        // Assert - Soft deletes may or may not be configured
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it supports timestamps when configured', function (): void {
@@ -191,20 +191,17 @@ describe('Xot Base Model Business Logic', function (): void {
         $baseModel = createXotBaseModelFixture();
 
 <<<<<<< HEAD
-        // Assert - Tenant isolation may or may not be configured
-=======
         // Assert - Tenant isolation may or may not be configured: la base non applica scope globali impliciti
         Assert::assertSame([], $baseModel->getGlobalScopes());
->>>>>>> laraxot/dev
+=======
+        // Assert - Tenant isolation may or may not be configured
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it supports audit trail when configured', function (): void {
         // Arrange & Act
         $baseModel = createXotBaseModelFixture();
 <<<<<<< HEAD
-
-        // Assert - Audit trail may or may not be configured
-=======
         $dispatcher = Model::getEventDispatcher();
 
         // Assert - Updater popola created_by/updated_by/deleted_by agganciandosi a questi eventi
@@ -212,7 +209,10 @@ describe('Xot Base Model Business Logic', function (): void {
         foreach (['creating', 'updating', 'deleting'] as $event) {
             Assert::assertTrue($dispatcher->hasListeners('eloquent.'.$event.': '.$baseModel::class));
         }
->>>>>>> laraxot/dev
+=======
+
+        // Assert - Audit trail may or may not be configured
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it can be serialized', function (): void {
@@ -248,9 +248,9 @@ describe('Xot Base Model Business Logic', function (): void {
         // Assert
         Assert::assertNotEmpty($json);
 <<<<<<< HEAD
-        Assert::assertNotFalse($json);
 =======
->>>>>>> laraxot/dev
+        Assert::assertNotFalse($json);
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it supports array conversion', function (): void {
@@ -258,20 +258,20 @@ describe('Xot Base Model Business Logic', function (): void {
         $baseModel = createXotBaseModelFixture();
 
 <<<<<<< HEAD
-=======
         $baseModel->setAttribute('name', 'Test Model');
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
         // Act
         $array = $baseModel->toArray();
 
         // Assert
         Assert::assertIsArray($array);
 <<<<<<< HEAD
-        Assert::assertNotEmpty($array);
-=======
         Assert::assertSame('Test Model', $array['name']);
->>>>>>> laraxot/dev
+=======
+        Assert::assertNotEmpty($array);
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it supports json conversion', function (): void {
@@ -288,18 +288,6 @@ describe('Xot Base Model Business Logic', function (): void {
 
     test('it supports relationship loading', function (): void {
 <<<<<<< HEAD
-        // Arrange & Act
-        $baseModel = createXotBaseModelFixture();
-
-        // Assert
-    });
-
-    test('it supports attribute access', function (): void {
-        // Arrange & Act
-        $baseModel = createXotBaseModelFixture();
-
-        // Assert
-=======
         // Arrange
         $baseModel = createXotBaseModelFixture();
 
@@ -322,7 +310,19 @@ describe('Xot Base Model Business Logic', function (): void {
         // Assert
         Assert::assertSame('Xot', $baseModel->getAttribute('title'));
         Assert::assertSame(['title' => 'Xot'], $baseModel->getAttributes());
->>>>>>> laraxot/dev
+=======
+        // Arrange & Act
+        $baseModel = createXotBaseModelFixture();
+
+        // Assert
+    });
+
+    test('it supports attribute access', function (): void {
+        // Arrange & Act
+        $baseModel = createXotBaseModelFixture();
+
+        // Assert
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it supports mass assignment protection', function (): void {
@@ -341,31 +341,6 @@ describe('Xot Base Model Business Logic', function (): void {
     test('it supports model events', function (): void {
         // Arrange & Act
 <<<<<<< HEAD
-        $baseModel = createXotBaseModelFixture();
-
-        // Assert
-    });
-
-    test('it supports observers', function (): void {
-        // Arrange & Act
-        $baseModel = createXotBaseModelFixture();
-
-        // Assert
-    });
-
-    test('it supports scopes', function (): void {
-        // Arrange & Act
-        $baseModel = createXotBaseModelFixture();
-
-        // Assert
-    });
-
-    test('it supports accessors and mutators', function (): void {
-        // Arrange & Act
-        $baseModel = createXotBaseModelFixture();
-
-        // Assert
-=======
         $events = createXotBaseModelFixture()->getObservableEvents();
 
         // Assert
@@ -420,7 +395,32 @@ describe('Xot Base Model Business Logic', function (): void {
         // Assert
         Assert::assertSame(['title' => 'xot'], $baseModel->getAttributes());
         Assert::assertSame('XOT', $baseModel->getAttribute('title'));
->>>>>>> laraxot/dev
+=======
+        $baseModel = createXotBaseModelFixture();
+
+        // Assert
+    });
+
+    test('it supports observers', function (): void {
+        // Arrange & Act
+        $baseModel = createXotBaseModelFixture();
+
+        // Assert
+    });
+
+    test('it supports scopes', function (): void {
+        // Arrange & Act
+        $baseModel = createXotBaseModelFixture();
+
+        // Assert
+    });
+
+    test('it supports accessors and mutators', function (): void {
+        // Arrange & Act
+        $baseModel = createXotBaseModelFixture();
+
+        // Assert
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it supports casting', function (): void {

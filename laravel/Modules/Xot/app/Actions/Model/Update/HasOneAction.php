@@ -24,11 +24,94 @@ class HasOneAction
     /**
      * Execute the update operation for a HasOne relationship.
      *
+<<<<<<< HEAD
+=======
+<<<<<<< .merge_file_YEzYiV
+>>>>>>> 77b1e2748 (first)
      * @param  Model  $model  The parent model instance
      * @param  RelationDTO  $relationDTO  Data transfer object containing relationship information
      *
      * @throws \InvalidArgumentException When relationship type is invalid
      * @throws \RuntimeException When relationship data is invalid
+<<<<<<< HEAD
+=======
+=======
+     * <<<<<<< HEAD
+     *
+     * @param Model       $model       The parent model instance
+     * @param RelationDTO $relationDTO Data transfer object containing relationship information
+     * @param Model       $model       The parent model instance
+     * @param RelationDTO $relationDTO Data transfer object containing relationship information
+     * @param Model       $model       The parent model instance
+     * @param RelationDTO $relationDTO Data transfer object containing relationship information
+     * @param Model       $model       The parent model instance
+     * @param RelationDTO $relationDTO Data transfer object containing relationship information
+     * @param Model       $model       The parent model instance
+     * @param RelationDTO $relationDTO Data transfer object containing relationship information
+     * @param Model       $model       The parent model instance
+     * @param RelationDTO $relationDTO Data transfer object containing relationship information
+     *                                 <<<<<<< HEAD
+     *                                 =======
+     * @param Model       $model       The parent model instance
+     * @param RelationDTO $relationDTO Data transfer object containing relationship information
+     * @param Model       $model       The parent model instance
+     * @param RelationDTO $relationDTO Data transfer object containing relationship information
+     *                                 >>>>>>> laraxot/dev
+     *
+     * @throws \InvalidArgumentException When relationship type is invalid
+     * @throws \RuntimeException         When relationship data is invalid
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   <<<<<<< HEAD
+     *                                   <<<<<<< .merge_file_T31w2M
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   >>>>>>> laraxot/dev
+     * @throws \InvalidArgumentException When relationship type is invalid
+     * @throws \RuntimeException         When relationship data is invalid
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   =======
+     *                                   <<<<<<< .merge_file_nJ1IDE
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   <<<<<<< .merge_file_T31w2M
+     *                                   >>>>>>> .merge_file_rWwxNa
+     * @throws \InvalidArgumentException When relationship type is invalid
+     * @throws \RuntimeException         When relationship data is invalid
+     *                                   <<<<<<< .merge_file_nJ1IDE
+     *                                   =======
+     *                                   =======
+     *                                   >>>>>>> laraxot/dev
+     *                                   <<<<<<< .merge_file_3gk7Nx
+     * @throws \InvalidArgumentException When relationship type is invalid
+     * @throws \RuntimeException         When relationship data is invalid
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     * @throws \InvalidArgumentException When relationship type is invalid
+     * @throws \RuntimeException         When relationship data is invalid
+     *                                   =======
+     * @throws \InvalidArgumentException When relationship type is invalid
+     * @throws \RuntimeException         When relationship data is invalid
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> .merge_file_SqQcWu
+     *                                   >>>>>>> .merge_file_tFlRWf
+     *                                   =======
+     * @throws \InvalidArgumentException When relationship type is invalid
+     * @throws \RuntimeException         When relationship data is invalid
+     *                                   >>>>>>> 9e11d472 (Fix merge conflicts in PHPDoc comments across multiple action classes and contracts, ensuring consistent parameter annotations and removing redundant lines.)
+     *                                   <<<<<<< HEAD
+     *                                   =======
+     *                                   >>>>>>> .merge_file_rWwxNa
+     *                                   >>>>>>> laraxot/dev
+     *                                   =======
+     * @throws \InvalidArgumentException When relationship type is invalid
+     * @throws \RuntimeException         When relationship data is invalid
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> laraxot/dev
+>>>>>>> .merge_file_v4OMat
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(Model $model, RelationDTO $relationDTO): void
     {

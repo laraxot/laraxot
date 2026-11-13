@@ -51,9 +51,9 @@ describe('Create Directory For Filename Action', function () use (&$workDir): vo
     test('handles root level file', function () use (&$workDir): void {
         $filename = $workDir.'/rootfile.txt';
 <<<<<<< HEAD
-        File::makeDirectory($workDir, 0755, true);
 =======
->>>>>>> laraxot/dev
+        File::makeDirectory($workDir, 0755, true);
+>>>>>>> 77b1e2748 (first)
 
         app(CreateDirectoryForFilenameAction::class)->execute($filename);
 

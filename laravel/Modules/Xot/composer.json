@@ -25,10 +25,10 @@
         "coolsam/panel-modules": "*",
         "doctrine/dbal": "*",
 <<<<<<< HEAD
-        "filament/filament": "^5.0",
-=======
         "filament/filament": "^5.11.2",
->>>>>>> laraxot/dev
+=======
+        "filament/filament": "^5.0",
+>>>>>>> 77b1e2748 (first)
         "filament/spatie-laravel-media-library-plugin": "*",
         "guzzlehttp/guzzle": "*",
         "laravel/folio": "^1.1",
@@ -70,10 +70,10 @@
         "fruitcake/laravel-debugbar": "^4.2",
         "larastan/larastan": "*",
 <<<<<<< HEAD
-        "laravel/boost": "^2.0",
-=======
         "laravel/boost": "^2.10",
->>>>>>> laraxot/dev
+=======
+        "laravel/boost": "^2.0",
+>>>>>>> 77b1e2748 (first)
         "laravel/pint": "^1.18",
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
@@ -119,9 +119,9 @@
             "Modules\\Xot\\Database\\Factories\\": "database/factories/",
             "Modules\\Xot\\Database\\Seeders\\": "database/seeders/",
 <<<<<<< HEAD
-            "Modules\\Xot\\Tests\\": "tests/",
 =======
->>>>>>> laraxot/dev
+            "Modules\\Xot\\Tests\\": "tests/",
+>>>>>>> 77b1e2748 (first)
             "Coolsam\\FilamentModules\\": "packages/coolsam/panel-modules/src/"
         },
         "files": [
@@ -130,10 +130,6 @@
     },
     "autoload-dev": {
 <<<<<<< HEAD
-        "files": [
-            "tests/Support/helpers.php"
-        ]
-=======
         "psr-4": {
             "Modules\\Xot\\Tests\\": "tests/"
         },
@@ -148,7 +144,11 @@
         "classmap": ["tests/"]
 >>>>>>> .merge_file_Uisczg
 >>>>>>> .merge_file_wjCvWt
->>>>>>> laraxot/dev
+=======
+        "files": [
+            "tests/Support/helpers.php"
+        ]
+>>>>>>> 77b1e2748 (first)
     },
     "scripts": {
         "analyse": "vendor/bin/phpstan analyse",
@@ -183,4 +183,4 @@
 }
 =======
 }
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

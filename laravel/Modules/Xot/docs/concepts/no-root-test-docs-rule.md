@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot - no-root-test-docs-rule.md"
 module: Xot
 bmad: true
 status: active
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # REGOLA CRITICA: Test Docs NEI MODULI/TEMI
 
 ## PROBLEMA

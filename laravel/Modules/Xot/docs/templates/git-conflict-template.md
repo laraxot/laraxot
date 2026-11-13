@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "📝 Documentazione Conflitti Git"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, templates]
 qmd: "📝 Documentazione Conflitti Git"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # 📝 Documentazione Conflitti Git
 
 ## 🔍 Analisi Conflitto
@@ -96,7 +96,7 @@ qmd: "📝 Documentazione Conflitti Git"
 - Data risoluzione: [data]
 - Data verifica: [data]
 <<<<<<< HEAD
-- Data follow-up: [data]
-=======
 - Data follow-up: [data] 
->>>>>>> laraxot/dev
+=======
+- Data follow-up: [data]
+>>>>>>> 77b1e2748 (first)

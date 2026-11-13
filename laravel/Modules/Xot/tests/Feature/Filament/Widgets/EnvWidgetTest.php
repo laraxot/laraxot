@@ -5,11 +5,6 @@ declare(strict_types=1);
 namespace Modules\Xot\Tests\Feature\Filament\Widgets;
 
 <<<<<<< HEAD
-use Filament\Schemas\Components\Section;
-use Illuminate\Support\Facades\File;
-use Modules\Xot\Filament\Widgets\EnvWidget;
-use Tests\TestCase;
-=======
 use Filament\Facades\Filament;
 use Filament\Schemas\Components\Section;
 use Illuminate\Support\Facades\Artisan;
@@ -30,7 +25,12 @@ use Modules\Xot\Tests\TestCase;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 >>>>>>> .merge_file_PiAXvq
 >>>>>>> .merge_file_nwu73B
->>>>>>> laraxot/dev
+=======
+use Filament\Schemas\Components\Section;
+use Illuminate\Support\Facades\File;
+use Modules\Xot\Filament\Widgets\EnvWidget;
+use Tests\TestCase;
+>>>>>>> 77b1e2748 (first)
 
 uses(TestCase::class);
 
@@ -50,10 +50,6 @@ uses(TestCase::class);
  * questi test lascerebbero il .env reale della macchina alterato.
  */
 <<<<<<< HEAD
-beforeEach(function (): void {
-    $this->envPath = base_path('.env');
-    $this->originalEnvContent = File::get($this->envPath);
-=======
 /**
  * submit() è riservato al super-admin: i test che scrivono partono da un super-admin,
  * quelli sul rifiuto lo sostituiscono con envWidgetLoginAs(false).
@@ -71,7 +67,11 @@ beforeEach(function (): void {
     $this->envPath = base_path('.env');
     $this->originalEnvContent = File::get($this->envPath);
     envWidgetLoginAs(true);
->>>>>>> laraxot/dev
+=======
+beforeEach(function (): void {
+    $this->envPath = base_path('.env');
+    $this->originalEnvContent = File::get($this->envPath);
+>>>>>>> 77b1e2748 (first)
 });
 
 afterEach(function (): void {
@@ -187,7 +187,6 @@ it('does not drop a field that is selected but missing from the GROUPS map', fun
 });
 
 <<<<<<< HEAD
-=======
 it('refuses to write .env for a user who is not super-admin', function (): void {
     envWidgetLoginAs(false);
 
@@ -216,7 +215,8 @@ it('does not write a key that EnvData does not declare, even if the client adds 
     expect($debugLines->all())->toBe($debugLinesBefore->all());
 });
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 it('resolves field labels and section headings from the translation file, not from hardcoded strings', function (): void {
     app()->setLocale('it');
 
@@ -225,7 +225,6 @@ it('resolves field labels and section headings from the translation file, not fr
     expect(trans('xot::env.sections.Mail.heading'))->toBe('Mail');
 });
 <<<<<<< HEAD
-=======
 
 /*
  * module_quaeris_fila5#47. Scrivere nel .env non basta: con la configurazione
@@ -247,4 +246,5 @@ it('clears the config cache after writing, otherwise a cached config keeps the o
 
     $artisan->shouldHaveReceived('call')->with('config:clear')->once();
 });
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)

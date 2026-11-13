@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Filament Forms"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, development]
 qmd: "Filament Forms"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Filament Forms
 
 ## Best Practices
@@ -29,14 +29,14 @@ class PerformanceResource extends XotBaseResource
     protected static ?string $model = Performance::class;
 
 <<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             Forms\Components\Card::make()
@@ -56,10 +56,10 @@ class PerformanceResource extends XotBaseResource
                 ->string()
                 ->maxLength(255),
 <<<<<<< HEAD
-
-=======
                 
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
             Forms\Components\TextInput::make('punteggio')
                 ->required()
                 ->numeric()
@@ -75,10 +75,10 @@ class PerformanceResource extends XotBaseResource
                 ->nullable()
                 ->displayFormat('d/m/Y'),
 <<<<<<< HEAD
-
-=======
                 
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
             Forms\Components\Select::make('stato')
                 ->options([
                     'bozza' => 'Bozza',
@@ -262,14 +262,14 @@ Forms\Components\Grid::make()
 
 ```php
 <<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         Forms\Components\TextInput::make('codice')
@@ -279,10 +279,10 @@ public static function getFormSchema(): array
                 $component->state(strtoupper($state));
             }),
 <<<<<<< HEAD
-
-=======
             
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         Forms\Components\Select::make('tipo')
             ->options([
                 'A' => 'Tipo A',

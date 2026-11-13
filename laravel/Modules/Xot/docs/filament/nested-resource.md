@@ -4,13 +4,13 @@ description: Nested Resource
 extends: _layouts.documentation
 section: content
 <<<<<<< HEAD
-=======
 type: note
 status: draft
 updated: 2026-10-18
 tags: [docs, xot, filament]
 qmd: "nested resource {#nested-resource} xot"
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 # Nested Resource {#nested-resource}
@@ -30,10 +30,10 @@ https://github.com/laraxot/filament-nested-resources.git
 ```
 
 <<<<<<< HEAD
-Per utilizzare il pacchetto bisogna installarlo come package.
-=======
 Per utilizzare il pacchetto bisogna installarlo come package. 
->>>>>>> laraxot/dev
+=======
+Per utilizzare il pacchetto bisogna installarlo come package.
+>>>>>>> 77b1e2748 (first)
 
 Quindi segui la seguente procedura:
 

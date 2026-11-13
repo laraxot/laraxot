@@ -2,12 +2,6 @@
 
 declare(strict_types=1);
 <<<<<<< HEAD
-/*
- * Bootstrap Pest — modulo Xot.
- * Helper globali: tests/Support/helpers.php (composer autoload-dev files).
- * Ogni file test dichiara uses(\Modules\Xot\Tests\TestCase::class).
- */
-=======
 
 /*
  * |--------------------------------------------------------------------------
@@ -51,4 +45,10 @@ declare(strict_types=1);
 // function something() {
 //     // ...
 // }
->>>>>>> laraxot/dev
+=======
+/*
+ * Bootstrap Pest — modulo Xot.
+ * Helper globali: tests/Support/helpers.php (composer autoload-dev files).
+ * Ogni file test dichiara uses(\Modules\Xot\Tests\TestCase::class).
+ */
+>>>>>>> 77b1e2748 (first)

@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
+    'fields' => [
+        'created_from' => [
+            'tooltip' => '',
+        ],
+        'created_until' => [
+=======
     'sections' => [
         'Filtri' => [
             'label' => 'Filtri',
@@ -23,13 +29,7 @@ return [
             'placeholder' => 'created_until',
             'helper_text' => 'created_until',
             'description' => 'created_until',
-=======
-    'fields' => [
-        'created_from' => [
-            'tooltip' => '',
-        ],
-        'created_until' => [
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
         ],
     ],
@@ -57,11 +57,11 @@ return [
             'label' => 'Elimina Filter Form',
         ],
 <<<<<<< HEAD
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-=======
         'save' => [
             'icon' => 'save',
         ],
->>>>>>> laraxot/dev
+=======
+        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
+>>>>>>> 77b1e2748 (first)
     ],
 ];

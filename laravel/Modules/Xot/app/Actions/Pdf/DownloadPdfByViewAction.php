@@ -21,9 +21,46 @@ class DownloadPdfByViewAction
     /**
      * Genera PDF dalla view e restituisce StreamedResponse per il download.
      *
+<<<<<<< HEAD
      * @param  string  $view  Nome view (es. indennita-responsabilita::indennita_responsabilita.index.pdf)
      * @param  array<string, mixed>  $viewParams  Dati per la view (es. ['rows' => $rows])
      * @param  string|null  $filename  Nome file per il download (opzionale)
+=======
+<<<<<<< .merge_file_x3vWG1
+     * @param  string  $view  Nome view (es. indennita-responsabilita::indennita_responsabilita.index.pdf)
+     * @param  array<string, mixed>  $viewParams  Dati per la view (es. ['rows' => $rows])
+     * @param  string|null  $filename  Nome file per il download (opzionale)
+=======
+     * <<<<<<< HEAD
+     *
+     * @param string               $view       Nome view (es. indennita-responsabilita::indennita_responsabilita.index.pdf)
+     * @param array<string, mixed> $viewParams Dati per la view (es. ['rows' => $rows])
+     * @param string|null          $filename   Nome file per il download (opzionale)
+     *                                         =======
+     *                                         <<<<<<< HEAD
+     * @param string               $view       Nome view (es. indennita-responsabilita::indennita_responsabilita.index.pdf)
+     * @param array<string, mixed> $viewParams Dati per la view (es. ['rows' => $rows])
+     * @param string|null          $filename   Nome file per il download (opzionale)
+     *                                         =======
+     *                                         <<<<<<< HEAD
+     *                                         <<<<<<< HEAD
+     * @param string               $view       Nome view (es. indennita-responsabilita::indennita_responsabilita.index.pdf)
+     * @param array<string, mixed> $viewParams Dati per la view (es. ['rows' => $rows])
+     * @param string|null          $filename   Nome file per il download (opzionale)
+     *                                         =======
+     * @param string               $view       Nome view (es. indennita-responsabilita::indennita_responsabilita.index.pdf)
+     * @param array<string, mixed> $viewParams Dati per la view (es. ['rows' => $rows])
+     * @param string|null          $filename   Nome file per il download (opzionale)
+     *                                         >>>>>>> laraxot/dev
+     *                                         =======
+     * @param string               $view       Nome view (es. indennita-responsabilita::indennita_responsabilita.index.pdf)
+     * @param array<string, mixed> $viewParams Dati per la view (es. ['rows' => $rows])
+     * @param string|null          $filename   Nome file per il download (opzionale)
+     *                                         >>>>>>> laraxot/dev
+     *                                         >>>>>>> laraxot/dev
+     *                                         >>>>>>> laraxot/dev
+>>>>>>> .merge_file_DW2lqS
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(
         string $view,

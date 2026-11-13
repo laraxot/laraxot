@@ -38,9 +38,9 @@ class MeasureAction
 
         $metrics = [
 <<<<<<< HEAD
-            'label' => $label,
 =======
->>>>>>> laraxot/dev
+            'label' => $label,
+>>>>>>> 77b1e2748 (first)
             'execution_time' => round($execution_time, 2).' ms',
             'memory_usage' => round($memory_usage, 2).' KB',
             // 'peak_memory' => round(memory_get_peak_usage() / 1024 / 1024, 2).' MB',

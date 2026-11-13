@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Struttura dei Moduli Laravel (nwidart/laravel-modules)"
 type: note
@@ -95,4 +93,6 @@ Se si riceve un errore "File not found" quando si tenta di accedere a un file:
 
 1. Verificare che il percorso fisico sia corretto (dovrebbe includere "app/")
 2. Utilizzare helper come `module_path()` per costruire percorsi invece di concatenarli manualmente
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

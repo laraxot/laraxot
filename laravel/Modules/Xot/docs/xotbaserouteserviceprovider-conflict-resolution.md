@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Risoluzione conflitto XotBaseRouteServiceProvider.php"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "risoluzione conflitto xotbaserouteserviceprovider.php xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Risoluzione conflitto XotBaseRouteServiceProvider.php
 
 ## Problema

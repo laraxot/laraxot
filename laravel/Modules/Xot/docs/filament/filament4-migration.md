@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Filament 5.x Migration Guide"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, filament]
 qmd: "filament 5.x migration guide xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Filament 5.x Migration Guide
 
 **Data**: 2026-01-30

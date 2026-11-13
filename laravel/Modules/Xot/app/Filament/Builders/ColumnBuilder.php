@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace Modules\Xot\Filament\Builders;
 
 <<<<<<< HEAD
-use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\TextColumn;
-=======
 use Carbon\Carbon;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
->>>>>>> laraxot/dev
+=======
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+>>>>>>> 77b1e2748 (first)
 
 /**
  * Column Builder for common Filament table columns.
@@ -42,10 +42,10 @@ class ColumnBuilder
     public static function id(bool $sortable = true, bool $searchable = true): TextColumn
     {
 <<<<<<< HEAD
-        return TextColumn::make('id')
-=======
         return IDColumn::make('id')
->>>>>>> laraxot/dev
+=======
+        return TextColumn::make('id')
+>>>>>>> 77b1e2748 (first)
             ->sortable($sortable)
             ->searchable($searchable)
             ->label('ID');
@@ -59,12 +59,12 @@ class ColumnBuilder
         $column = TextColumn::make('name')
             ->searchable($searchable)
 <<<<<<< HEAD
-            ->sortable($sortable);
-=======
             ->sortable($sortable)
             ->label(__('xot::fields.name.label'))
             ->toggleable();
->>>>>>> laraxot/dev
+=======
+            ->sortable($sortable);
+>>>>>>> 77b1e2748 (first)
 
         if ($wrap) {
             $column->wrap();
@@ -81,14 +81,14 @@ class ColumnBuilder
         $column = TextColumn::make('title')
             ->searchable($searchable)
 <<<<<<< HEAD
-            ->sortable($sortable);
-=======
             ->sortable($sortable)
             ->label(__('xot::fields.title.label'))
             ->limit(50)
             ->tooltip(static fn (mixed $record): string => \is_object($record) && isset($record->title) ? SafeStringCastAction::cast($record->title) : '')
             ->toggleable();
->>>>>>> laraxot/dev
+=======
+            ->sortable($sortable);
+>>>>>>> 77b1e2748 (first)
 
         if ($wrap) {
             $column->wrap();
@@ -106,13 +106,13 @@ class ColumnBuilder
             ->searchable($searchable)
             ->sortable($sortable)
 <<<<<<< HEAD
-            ->copyable();
-=======
             ->copyable()
             ->label(__('xot::fields.email.label'))
             ->icon('heroicon-o-envelope')
             ->toggleable();
->>>>>>> laraxot/dev
+=======
+            ->copyable();
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -124,19 +124,69 @@ class ColumnBuilder
             ->limit($limit)
             ->searchable($searchable)
 <<<<<<< HEAD
-            ->wrap();
-=======
             ->wrap()
             ->label(__('xot::fields.description.label'))
             ->tooltip(static fn (mixed $record): string => \is_object($record) && isset($record->description) ? SafeStringCastAction::cast($record->description) : '')
             ->toggleable();
->>>>>>> laraxot/dev
+=======
+            ->wrap();
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
      * Status badge column with standard colors.
      *
+<<<<<<< HEAD
      * @param  array<string, string>  $customColors  Custom color mappings
+=======
+<<<<<<< .merge_file_KnsZu8
+     * @param  array<string, string>  $customColors  Custom color mappings
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            <<<<<<< HEAD
+     *                                            <<<<<<< HEAD
+     *                                            <<<<<<< .merge_file_EWEHSW
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            =======
+     *                                            <<<<<<< HEAD
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            <<<<<<< .merge_file_8og3Hu
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            <<<<<<< HEAD
+     *                                            <<<<<<< .merge_file_EWEHSW
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            >>>>>>> laraxot/dev
+     *                                            <<<<<<< .merge_file_7zKQmf
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            <<<<<<< HEAD
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            >>>>>>> laraxot/dev
+     *                                            >>>>>>> .merge_file_aPYjex
+     *                                            >>>>>>> .merge_file_Kk5VfB
+     *                                            =======
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            >>>>>>> 9e11d472 (Fix merge conflicts in PHPDoc comments across multiple action classes and contracts, ensuring consistent parameter annotations and removing redundant lines.)
+     *                                            <<<<<<< HEAD
+     *                                            =======
+     *                                            >>>>>>> .merge_file_NLfj6K
+     *                                            >>>>>>> laraxot/dev
+     *                                            =======
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            >>>>>>> laraxot/dev
+     *                                            >>>>>>> laraxot/dev
+     *                                            >>>>>>> laraxot/dev
+>>>>>>> .merge_file_1cGI0n
+>>>>>>> 77b1e2748 (first)
      */
     public static function statusBadge(array $customColors = []): TextColumn
     {
@@ -154,7 +204,6 @@ class ColumnBuilder
 
     /**
 <<<<<<< HEAD
-=======
      * Standard status column with badge.
      */
     public static function status(): TextColumn
@@ -173,10 +222,60 @@ class ColumnBuilder
     }
 
     /**
->>>>>>> laraxot/dev
      * Priority badge column.
      *
      * @param  array<string, string>  $customColors  Custom color mappings
+=======
+     * Priority badge column.
+     *
+<<<<<<< .merge_file_KnsZu8
+     * @param  array<string, string>  $customColors  Custom color mappings
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            <<<<<<< HEAD
+     *                                            <<<<<<< HEAD
+     *                                            <<<<<<< .merge_file_EWEHSW
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            =======
+     *                                            <<<<<<< HEAD
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            <<<<<<< .merge_file_8og3Hu
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            <<<<<<< HEAD
+     *                                            <<<<<<< .merge_file_EWEHSW
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            >>>>>>> laraxot/dev
+     *                                            <<<<<<< .merge_file_7zKQmf
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     *                                            <<<<<<< HEAD
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            =======
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            >>>>>>> laraxot/dev
+     *                                            >>>>>>> .merge_file_aPYjex
+     *                                            >>>>>>> .merge_file_Kk5VfB
+     *                                            =======
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            >>>>>>> 9e11d472 (Fix merge conflicts in PHPDoc comments across multiple action classes and contracts, ensuring consistent parameter annotations and removing redundant lines.)
+     *                                            <<<<<<< HEAD
+     *                                            =======
+     *                                            >>>>>>> .merge_file_NLfj6K
+     *                                            >>>>>>> laraxot/dev
+     *                                            =======
+     * @param array<string, string> $customColors Custom color mappings
+     *                                            >>>>>>> laraxot/dev
+     *                                            >>>>>>> laraxot/dev
+     *                                            >>>>>>> laraxot/dev
+>>>>>>> .merge_file_1cGI0n
+>>>>>>> 77b1e2748 (first)
      */
     public static function priorityBadge(array $customColors = []): TextColumn
     {
@@ -208,12 +307,12 @@ class ColumnBuilder
     public static function isActive(bool $sortable = true): IconColumn
     {
 <<<<<<< HEAD
-        return self::booleanIcon('is_active', $sortable);
-=======
         return self::booleanIcon('is_active', $sortable)
             ->label(__('xot::fields.is_active.label'))
             ->toggleable();
->>>>>>> laraxot/dev
+=======
+        return self::booleanIcon('is_active', $sortable);
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -272,12 +371,12 @@ class ColumnBuilder
         }
 
 <<<<<<< HEAD
-        return $column;
-=======
         return $column
             ->label(__('xot::fields.updated_at.label'))
             ->since();
->>>>>>> laraxot/dev
+=======
+        return $column;
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -295,8 +394,6 @@ class ColumnBuilder
         }
 
 <<<<<<< HEAD
-        return $column;
-=======
         return $column
             ->label(__('xot::fields.published_at.label'))
             ->badge()
@@ -310,7 +407,9 @@ class ColumnBuilder
                     : 'warning';
             })
             ->toggleable();
->>>>>>> laraxot/dev
+=======
+        return $column;
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -335,12 +434,12 @@ class ColumnBuilder
             ->searchable($searchable)
             ->sortable($sortable)
 <<<<<<< HEAD
-            ->copyable();
-=======
             ->copyable()
             ->label(__('xot::fields.slug.label'))
             ->toggleable();
->>>>>>> laraxot/dev
+=======
+            ->copyable();
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -408,7 +507,6 @@ class ColumnBuilder
         return $column;
     }
 <<<<<<< HEAD
-=======
 
     /**
      * Standard deleted_at column.
@@ -496,5 +594,6 @@ class ColumnBuilder
             'deleted_at' => self::deletedAt(),
         ];
     }
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 }

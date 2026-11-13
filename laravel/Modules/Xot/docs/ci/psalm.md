@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "psalm"
 type: note
@@ -10,5 +9,6 @@ module: Xot
 tags: [xot, ci]
 qmd: "psalm"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 [psalm](https://psalm.dev/)

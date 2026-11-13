@@ -16,15 +16,15 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Support\Carbon;
 use Modules\Xot\Tests\Fixtures\Models\HasCommonScopesProbe;
 <<<<<<< HEAD
-use PHPUnit\Framework\Assert;
-
-=======
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
->>>>>>> laraxot/dev
+=======
+use PHPUnit\Framework\Assert;
+
+>>>>>>> 77b1e2748 (first)
 beforeEach(function (): void {
     $capsule = new Capsule;
     $capsule->addConnection([

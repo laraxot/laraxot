@@ -1,10 +1,10 @@
 ---
 <<<<<<< HEAD
-=======
 qmd: "xotbasemanagerelatedrecords convention over configuration brainstorm"
 issues: []
 discussions: []
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 title: "Convenzione e delega: due decisioni separate"
 type: architecture
 status: discussion

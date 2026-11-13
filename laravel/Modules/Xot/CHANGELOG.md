@@ -1,4 +1,15 @@
 <<<<<<< HEAD
+---
+title: "CHANGELOG"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-10-25
+qmd: "CHANGELOG"
+issues: []
+discussions: []
+---
+=======
 # Changelog
 
 All notable changes to `:package_name` will be documented in this file.
@@ -11,18 +22,7 @@ All notable changes to `:package_name` will be documented in this file.
 
 ## Contenuto assorbito da `CHANGELOG.MD`
 
-=======
----
-title: "CHANGELOG"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-10-25
-qmd: "CHANGELOG"
-issues: []
-discussions: []
----
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 # Changelog - Modulo Xot
 
 Tutte le modifiche significative al modulo Xot sono documentate in questo file.
@@ -129,7 +129,6 @@ All notable changes to `:package_name` will be documented in this file.
 ---
 
 <<<<<<< HEAD
-=======
 ## [2025-06-04] - Sessione Fix Critica
 
 ### Fixed
@@ -143,10 +142,7 @@ All notable changes to `:package_name` will be documented in this file.
 ### Added
 - Pattern identificato: "Triplice Mostro del Merge"
 - Analisi critica degli script bash con dialettica interna
-
----
-
->>>>>>> laraxot/dev
+=======
 ## Pattern di Versioning
 
 ### Major (x.0.0)
@@ -170,7 +166,6 @@ All notable changes to `:package_name` will be documented in this file.
 
 ### Documenti Correlati
 - [README.md](./docs/README.md) - Entry point
-<<<<<<< HEAD
 - [File Locking Pattern](./docs/file-locking-pattern.md) - Nuova regola
 - [Architecture Rules](./docs/laraxot-architecture-rules.md) - Regole base
 - [Merge Conflict Resolution](./docs/merge-conflict-resolution-2025-11-04.md) - Latest fix
@@ -293,6 +288,7 @@ All notable changes to `:package_name` will be documented in this file.
 - Comprehensive improvement recommendations
 - Architecture violations fixes
 - Code quality standards documentation
+>>>>>>> 77b1e2748 (first)
 
 ---
 
@@ -318,15 +314,17 @@ All notable changes to `:package_name` will be documented in this file.
 ## 🔗 Collegamenti
 
 ### Documenti Correlati
+<<<<<<< HEAD
+- [README.md](./docs/README.md) - Entry point
+- [File Locking Pattern](../../../docs/wiki/rules/file-lock-workflow.md) - Regola di coordinamento
+- [Architecture Rules](./docs/wiki/architecture/laraxot-architecture-rules.md) - Regole base
+- [Merge Conflict Resolution](./docs/git-conflict-resolution.md) - Latest fix
+=======
 - [README.md](./docs/readme.md) - Entry point
 - [File Locking Pattern](./docs/file-locking-pattern.md) - Nuova regola
 - [Architecture Rules](./docs/laraxot-architecture-rules.md) - Regole base
 - [Merge Conflict Resolution](./docs/merge-conflict-resolution-2025-11-04.md) - Latest fix
-=======
-- [File Locking Pattern](../../../docs/wiki/rules/file-lock-workflow.md) - Regola di coordinamento
-- [Architecture Rules](./docs/wiki/architecture/laraxot-architecture-rules.md) - Regole base
-- [Merge Conflict Resolution](./docs/git-conflict-resolution.md) - Latest fix
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
 ### Repository
 - **Branch:** develop

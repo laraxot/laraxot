@@ -23,10 +23,10 @@ describe('Get Tenant Config Actions', function (): void {
         $configData = ['key' => 'value'];
 
 <<<<<<< HEAD
-        File::put($tempPath, 'return '.var_export($configData, true).';');
-=======
         File::put($tempPath, "<?php\nreturn ".var_export($configData, true).";\n");
->>>>>>> laraxot/dev
+=======
+        File::put($tempPath, 'return '.var_export($configData, true).';');
+>>>>>>> 77b1e2748 (first)
 
         /** @var GetTenantFilePathAction&MockInterface $mock */
         $mock = Mockery::mock(GetTenantFilePathAction::class);

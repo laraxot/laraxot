@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "install_module"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "install_module xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # install_module
 
 <!-- Contenuto migrato da _docs/install_module.txt -->

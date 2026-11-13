@@ -37,16 +37,16 @@ return [
     ],
     'status' => [
 <<<<<<< HEAD
-        'completed' => 'Completato',
-        'failed' => 'Fallito',
-        'waiting' => 'In attesa dell\'output...',
-        'running' => 'In esecuzione...',
-=======
         'completed' => 'Abgeschlossen',
         'failed' => 'Fehlgeschlagen',
         'waiting' => 'Warten auf Ausgabe...',
         'running' => 'Wird ausgeführt...',
->>>>>>> laraxot/dev
+=======
+        'completed' => 'Completato',
+        'failed' => 'Fallito',
+        'waiting' => 'In attesa dell\'output...',
+        'running' => 'In esecuzione...',
+>>>>>>> 77b1e2748 (first)
     ],
     'messages' => [
         'command_started' => 'Comando Avviato',
@@ -56,19 +56,6 @@ return [
         'command_failed' => 'Comando Fallito',
         'command_failed_desc' => 'Il comando :command è fallito. Controlla l\'output per i dettagli.',
 <<<<<<< HEAD
-    ],
-    'hints' => [
-        'running' => 'Il comando è in esecuzione. L\'output apparirà in tempo reale.',
-        'disabled' => 'Non è possibile eseguire altri comandi mentre un comando è in esecuzione.',
-        'scroll' => 'L\'output si aggiorna automaticamente e scorre verso il basso.',
-    ],
-    'label' => 'Missing Label',
-    'plural_label' => 'Missing Plural label',
-    'fields' => [
-    ],
-    'actions' => [
-    ],
-=======
         'running_command' => [
             'message' => 'Laufender Befehl: :command',
         ],
@@ -81,5 +68,18 @@ return [
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
     'select_command' => 'Wählen Sie im Header einen Befehl aus, um zu beginnen.',
->>>>>>> laraxot/dev
+=======
+    ],
+    'hints' => [
+        'running' => 'Il comando è in esecuzione. L\'output apparirà in tempo reale.',
+        'disabled' => 'Non è possibile eseguire altri comandi mentre un comando è in esecuzione.',
+        'scroll' => 'L\'output si aggiorna automaticamente e scorre verso il basso.',
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'fields' => [
+    ],
+    'actions' => [
+    ],
+>>>>>>> 77b1e2748 (first)
 ];

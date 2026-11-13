@@ -56,11 +56,11 @@ return [
         'command_failed' => 'Comando Fallito',
         'command_failed_desc' => 'Il comando :command è fallito. Controlla l\'output per i dettagli.',
 <<<<<<< HEAD
-=======
         'running_command' => [
             'message' => 'Comando in esecuzione: :command',
         ],
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     ],
     'hints' => [
         'running' => 'Il comando è in esecuzione. L\'output apparirà in tempo reale.',
@@ -101,7 +101,7 @@ return [
         ],
     ],
 <<<<<<< HEAD
-=======
     'select_command' => 'Seleziona un comando dall\'intestazione per iniziare.',
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ];

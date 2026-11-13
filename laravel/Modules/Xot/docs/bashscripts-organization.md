@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Organizzazione Cartella BashScripts"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "organizzazione cartella bashscripts xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Organizzazione Cartella BashScripts
 
 ## Regola Fondamentale

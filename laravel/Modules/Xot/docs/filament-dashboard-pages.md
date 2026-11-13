@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Pagine Dashboard Filament - Documentazione Root"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Pagine Dashboard Filament - Documentazione Root"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Pagine Dashboard Filament - Documentazione Root
 
 ## Panoramica
@@ -104,10 +104,10 @@ class Dashboard extends BaseDashboard
 {
     protected static ?string $navigationIcon = 'heroicon-o-home';
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public function getWidgets(): array
     {
         return [
@@ -224,18 +224,18 @@ return [
             {{ __('{modulename}::dashboard.title') }}
         </h2>
 <<<<<<< HEAD
-
+        
         <p class="text-gray-600">
             {{ __('{modulename}::dashboard.description') }}
         </p>
-
+        
 =======
-        
+
         <p class="text-gray-600">
             {{ __('{modulename}::dashboard.description') }}
         </p>
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         {{-- Contenuto specifico del modulo --}}
     </div>
 </x-filament::page>
@@ -267,10 +267,10 @@ class DashboardTest extends TestCase
         $user = User::factory()->create();
         $user->assignRole('{modulename}::admin');
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $this->actingAs($user)
             ->get(route('filament.pages.dashboard'))
             ->assertOk();
@@ -283,18 +283,18 @@ class DashboardTest extends TestCase
 - [XotBasePanelProvider](../laravel/Modules/Xot/docs/filament/xotbasepanelprovider.md) - Configurazione panel provider
 - [Filament Integration](../laravel/Modules/Xot/docs/filament/filament_integration.md) - Integrazione generale Filament
 <<<<<<< HEAD
-- [Best Practices](../laravel/Modules/Xot/docs/BEST-PRACTICES.md) - Best practices generali
-
-## Collegamenti
-
-- [Documentazione Modulo Xot](../laravel/Modules/Xot/docs/filament/dashboard-pages.md)
-=======
 - [Best Practices](best-practices.md) - Best practices generali
 
 ## Collegamenti
 
 - [Documentazione Modulo Xot](filament/dashboard-pages.md)
->>>>>>> laraxot/dev
+=======
+- [Best Practices](../laravel/Modules/Xot/docs/BEST-PRACTICES.md) - Best practices generali
+
+## Collegamenti
+
+- [Documentazione Modulo Xot](../laravel/Modules/Xot/docs/filament/dashboard-pages.md)
+>>>>>>> 77b1e2748 (first)
 - [Filament Documentation](https://filamentphp.com/docs)
 - [Heroicons](https://heroicons.com/)
 
@@ -303,7 +303,7 @@ class DashboardTest extends TestCase
 **Ultimo aggiornamento**: Giugno 2025
 **Stato**: Analisi completa completata, implementazione in corso
 <<<<<<< HEAD
-**Moduli da implementare**: 13 moduli identificati
-=======
 **Moduli da implementare**: 13 moduli identificati 
->>>>>>> laraxot/dev
+=======
+**Moduli da implementare**: 13 moduli identificati
+>>>>>>> 77b1e2748 (first)

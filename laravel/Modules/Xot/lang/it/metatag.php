@@ -8,21 +8,21 @@ return [
     'widgets' => 'Widgets',
     'navigation' => [
 <<<<<<< HEAD
-        'name' => 'metatag',
-=======
         'name' => 'Metatag',
->>>>>>> laraxot/dev
+=======
+        'name' => 'metatag',
+>>>>>>> 77b1e2748 (first)
         'plural' => 'metatags',
         'group' => [
             'name' => 'Admin',
         ],
 <<<<<<< HEAD
-        'label' => 'metatag.navigation',
-        'icon' => 'metatag.navigation',
-=======
         'label' => 'Meta Tag',
         'icon' => 'heroicon-o-document-text',
->>>>>>> laraxot/dev
+=======
+        'label' => 'metatag.navigation',
+        'icon' => 'metatag.navigation',
+>>>>>>> 77b1e2748 (first)
         'sort' => 95,
     ],
     'fields' => [
@@ -234,6 +234,17 @@ return [
             'helper_text' => '',
             'description' => '',
 <<<<<<< HEAD
+        ],
+        'color' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'hex' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+=======
             'placeholder' => 'key',
         ],
         'color' => [
@@ -249,18 +260,7 @@ return [
             'helper_text' => '',
             'description' => '',
             'placeholder' => 'hex',
-=======
-        ],
-        'color' => [
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
-        ],
-        'hex' => [
-            'tooltip' => '',
-            'helper_text' => '',
-            'description' => '',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
         'timezone' => [
             'label' => 'Fuso orario',
@@ -351,19 +351,19 @@ return [
         ],
         'save' => [
 <<<<<<< HEAD
+            'icon' => 'save',
+=======
             'label' => 'save',
             'icon' => 'save',
             'tooltip' => 'save',
-=======
-            'icon' => 'save',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
     'label' => 'Metatag',
     'plural_label' => 'Metatag (Plurale)',
 <<<<<<< HEAD
-    'title' => 'metatag',
-=======
     'title' => 'Metatag',
->>>>>>> laraxot/dev
+=======
+    'title' => 'metatag',
+>>>>>>> 77b1e2748 (first)
 ];

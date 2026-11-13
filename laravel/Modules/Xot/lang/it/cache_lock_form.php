@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+return [];
+=======
 return [
     'fields' => [
         'key' => [
@@ -25,6 +27,4 @@ return [
         ],
     ],
 ];
-=======
-return [];
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

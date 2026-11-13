@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: ProfileService
 description: Handle profiles with ProfileService
@@ -14,4 +12,6 @@ qmd: "profileservice xot"
 ---
 
 # ProfileService
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

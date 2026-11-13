@@ -20,9 +20,51 @@ class AssetTransformer implements Transformer
     /**
      * Trasforma un riferimento di file in un percorso completo.
      *
+<<<<<<< HEAD
      * @param  DataProperty  $_property  La proprietà di dati (non utilizzata)
      * @param  mixed  $value  Il valore da trasformare (es. "user::image.png")
      * @param  TransformationContext  $_context  Il contesto di trasformazione (non utilizzato)
+=======
+<<<<<<< .merge_file_qra3Jh
+     * @param  DataProperty  $_property  La proprietà di dati (non utilizzata)
+     * @param  mixed  $value  Il valore da trasformare (es. "user::image.png")
+     * @param  TransformationContext  $_context  Il contesto di trasformazione (non utilizzato)
+=======
+     * <<<<<<< HEAD
+     *
+     * @param DataProperty          $_property La proprietà di dati (non utilizzata)
+     * @param mixed                 $value     Il valore da trasformare (es. "user::image.png")
+     * @param TransformationContext $_context  Il contesto di trasformazione (non utilizzato)
+     *                                         =======
+     *                                         <<<<<<< HEAD
+     *                                         <<<<<<< HEAD
+     *                                         =======
+     *                                         <<<<<<< HEAD
+     *                                         >>>>>>> laraxot/dev
+     * @param DataProperty          $_property La proprietà di dati (non utilizzata)
+     * @param mixed                 $value     Il valore da trasformare (es. "user::image.png")
+     * @param TransformationContext $_context  Il contesto di trasformazione (non utilizzato)
+     *                                         =======
+     * @param DataProperty          $_property La proprietà di dati (non utilizzata)
+     * @param mixed                 $value     Il valore da trasformare (es. "user::image.png")
+     * @param TransformationContext $_context  Il contesto di trasformazione (non utilizzato)
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * <<<<<<< HEAD
+     * =======
+     * =======
+     * @param DataProperty          $_property La proprietà di dati (non utilizzata)
+     * @param mixed                 $value     Il valore da trasformare (es. "user::image.png")
+     * @param TransformationContext $_context  Il contesto di trasformazione (non utilizzato)
+     *                                         >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_idYVs6
+>>>>>>> 77b1e2748 (first)
      * @return string Il percorso completo (es. "/modules/user/resources/image.png")
      */
     public function transform(DataProperty $_property, mixed $value, TransformationContext $_context): string

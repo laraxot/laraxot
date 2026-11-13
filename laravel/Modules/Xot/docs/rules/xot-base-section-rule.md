@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot - xot-base-section-rule.md"
 module: Xot
 bmad: true
 status: active
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regola XotBaseSection - Politica, Filosofia, Religione, Zen
 
 ## Scopo (Purpose)
@@ -167,12 +167,12 @@ class CompanySection extends XotBaseSection
 
 ---
 <<<<<<< HEAD
-
 **Data creazione**: 2025-12-12
 **Status**: ✅ Regola attiva e obbligatoria
 **Priorità**: CRITICA - Violazioni bloccano il codice
 =======
+
 **Data creazione**: 2025-12-12
 **Status**: ✅ Regola attiva e obbligatoria
 **Priorità**: CRITICA - Violazioni bloccano il codice
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

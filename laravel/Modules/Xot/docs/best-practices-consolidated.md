@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "best practices consolidated"
 type: note
@@ -12,7 +11,8 @@ discussions: []
 status: draft
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Best Practices - Documentazione Consolidata DRY + KISS
 
 > **🎯 Single Source of Truth**: Questo documento centralizza TUTTE le best practices del progetto
@@ -268,12 +268,6 @@ use Filament\Forms\Components\TextInput;
 class ExampleResource extends XotBaseResource
 {
 <<<<<<< HEAD
-<<<<<<< HEAD
-    public function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
-=======
     public function getFormSchema(): array
 ---
 title: "best practices consolidated"
@@ -285,7 +279,13 @@ qmd: "best practices consolidated"
 issues: []
 discussions: []
     public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+    public function getFormSchema(): array
+=======
+    public function getFormSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             TextInput::make('name')->required(),
@@ -326,16 +326,16 @@ class UserModerationResource extends XotBaseResource
  * @return array<string, \Filament\Forms\Components\Component>
  */
 <<<<<<< HEAD
+public function getFormSchema(): array
+---
+public function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public function getFormSchema(): array
----
-public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         // Schema del form

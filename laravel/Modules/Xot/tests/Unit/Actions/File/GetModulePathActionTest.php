@@ -12,17 +12,17 @@ uses(TestCase::class);
 it('gets module path from facade correctly', function (): void {
     // Spy on Module facade
 <<<<<<< HEAD
+    // allows(['metodo' => closure]) restituisce la closure, non il suo risultato: serve andReturnUsing().
+    Module::partialMock()->shouldReceive('getModulePath')->andReturnUsing(
+        fn (string $module): string => $module === 'Xot' ? '/path/to/Xot/' : '',
+    );
+=======
     Module::partialMock()->allows([
         'getModulePath' => function (string $module): string {
             return $module === 'Xot' ? '/path/to/Xot/' : '';
         },
     ]);
-=======
-    // allows(['metodo' => closure]) restituisce la closure, non il suo risultato: serve andReturnUsing().
-    Module::partialMock()->shouldReceive('getModulePath')->andReturnUsing(
-        fn (string $module): string => $module === 'Xot' ? '/path/to/Xot/' : '',
-    );
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
     $action = app(GetModulePathAction::class);
     $result = $action->execute('Xot');
@@ -45,19 +45,6 @@ it('gets module path from fallback correctly', function (): void {
 
     // Spy on Module facade to throw exception, forcing fallback
 <<<<<<< HEAD
-    Module::partialMock()->allows([
-        'getModulePath' => function (string $module): string {
-            throw new Exception('Module not found');
-        },
-    ]);
-
-    $action = app(GetModulePathAction::class);
-    // Case-insensitive search
-    $result = $action->execute('testmodule');
-
-    Assert::assertSame($dummyModule, $result);
-    File::deleteDirectory($dummyModule);
-=======
     Module::partialMock()->shouldReceive('getModulePath')->andReturnUsing(
         static function (string $module): string {
             throw new Exception('Module not found: '.$module);
@@ -74,5 +61,18 @@ it('gets module path from fallback correctly', function (): void {
     }
 
     Assert::assertSame($dummyModule, $result);
->>>>>>> laraxot/dev
+=======
+    Module::partialMock()->allows([
+        'getModulePath' => function (string $module): string {
+            throw new Exception('Module not found');
+        },
+    ]);
+
+    $action = app(GetModulePathAction::class);
+    // Case-insensitive search
+    $result = $action->execute('testmodule');
+
+    Assert::assertSame($dummyModule, $result);
+    File::deleteDirectory($dummyModule);
+>>>>>>> 77b1e2748 (first)
 });

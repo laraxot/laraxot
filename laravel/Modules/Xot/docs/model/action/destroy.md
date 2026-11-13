@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: Destroy Action
 description: Destroy Model with Queuable Action
@@ -12,4 +10,6 @@ superseded_by: ../../consolidated/archive/destroy.md
 # Destroy Action {#destroy-action}
 
 This is an example Destroy action
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

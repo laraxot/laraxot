@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "route"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "route xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # route
 
 <!-- Contenuto migrato da _docs/route.txt -->

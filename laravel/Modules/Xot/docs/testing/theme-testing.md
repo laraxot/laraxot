@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Testing del Tema"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, testing]
 qmd: "Testing del Tema"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Testing del Tema
 
 ## Principi di Testing
@@ -25,10 +25,10 @@ class ThemeTest extends TestCase
     {
         $metatag = MetatagData::make();
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $this->assertEquals(
             $metatag->getThemeColors(),
             $this->getExpectedColors()
@@ -47,10 +47,10 @@ class ThemeConsistencyTest extends TestCase
     {
         $metatag = MetatagData::make();
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $this->assertNotEmpty($metatag->getThemeColors());
         $this->assertNotEmpty($metatag->getThemeSettings());
         $this->assertValidColors($metatag->getThemeColors());
@@ -69,10 +69,10 @@ class ThemeValidationTest extends TestCase
         $metatag = MetatagData::make();
         $validator = new ColorValidator();
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $this->assertTrue(
             $validator->validateColors($metatag->getThemeColors())
         );
@@ -108,14 +108,14 @@ class ThemeConfigurationTest extends TestCase
         $metatag = MetatagData::make();
         $configurator = new ThemeConfigurator();
 <<<<<<< HEAD
-
+        
         $configurator->configureTheme($metatag);
-
+        
 =======
-        
+
         $configurator->configureTheme($metatag);
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         $this->assertEquals(
             $metatag->getThemeColors(),
             $configurator->getAppliedColors()
@@ -132,19 +132,19 @@ class ColorTest extends TestCase
     {
         $metatag = MetatagData::make();
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         foreach ($metatag->getThemeColors() as $color) {
             $this->assertColorIsValid($color);
         }
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     private function assertColorIsValid(string $color): void
     {
         $this->assertMatchesRegularExpression(
@@ -164,27 +164,27 @@ class DarkModeTest extends TestCase
         $metatag = MetatagData::make();
         $manager = new DarkModeManager();
 <<<<<<< HEAD
-
+        
         $darkColors = $manager->getDarkModeColors(
             $metatag->getThemeColors()
         );
-
+        
 =======
-        
+
         $darkColors = $manager->getDarkModeColors(
             $metatag->getThemeColors()
         );
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         foreach ($darkColors as $color) {
             $this->assertColorIsDarkMode($color);
         }
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     private function assertColorIsDarkMode(string $color): void
     {
         $this->assertLessThan(
@@ -223,7 +223,7 @@ class DarkModeTest extends TestCase
 - [Semantic Methods](../philosophy/semantic_methods.md)
 - [Best Practices](../best-practices.md)
 <<<<<<< HEAD
-- [Testing Guide](../testing.md)
-=======
 - [Testing Guide](../testing.md) 
->>>>>>> laraxot/dev
+=======
+- [Testing Guide](../testing.md)
+>>>>>>> 77b1e2748 (first)

@@ -9,10 +9,10 @@ converted_from: content_selection_and_highlighting.txt
 created: 2026-08-24
 updated: 2026-08-24
 <<<<<<< HEAD
-=======
 status: draft
 qmd: "content selection and highlighting xot"
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 https://javascript.plainenglish.io/medium-like-text-highlighting-in-react-afa35a29a81a

@@ -1,6 +1,27 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full" data-theme="light">
 @push('styles')
+=======
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    <!-- AGID Required Meta -->
+    <meta name="description" content="Accesso sicuro ai servizi digitali - {{ config('app.name') }}">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0066CC">
+    
+    <!-- Title -->
+    <title>{{ $title ?? __('pub_theme::components_common.nav.access.label') }} - {{ config('app.name') }}</title>
+    
+    <!-- Assets -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'], 'themes/Sixteen')
+    
+    <!-- AGID Custom Styles -->
+>>>>>>> f08c6884 (.)
     <style>
         :root {
             --agid-primary: #0066CC;

@@ -1,4 +1,17 @@
 <<<<<<< HEAD
+---
+title: "Risoluzione dei Loghi"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Risoluzione dei Loghi"
+---
+# Risoluzione dei Loghi
+
+=======
 # Risoluzione dei Loghi
 
 Il login Filament (`/admin/login`) prende il logo da `MetatagData::getBrandLogo()`,
@@ -22,20 +35,7 @@ Story: `docs/bmad/stories/5.223-admin-login-logo-asset-copy.story.md`.
 
 ## Processo di Risoluzione
 
-=======
----
-title: "Risoluzione dei Loghi"
-type: note
-status: unverified
-created: 2026-09-24
-updated: 2026-10-20
-module: Xot
-tags: [xot, docs]
-qmd: "Risoluzione dei Loghi"
----
-# Risoluzione dei Loghi
-
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 Questo documento descrive il meccanismo di risoluzione dei loghi in un'applicazione Laravel 12.x modulare (PHP 8.2+).
 
 ## Processo di Risoluzione
@@ -97,10 +97,10 @@ function resolveModulePath($path) {
     // Esempio: 'module::images/logo.svg'
     list($module, $resourcePath) = explode('::', $path);
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // Converte in: '/path/to/project/laravel/Modules/Module/resources/images/logo.svg'
     return module_path(ucfirst($module)) . '/resources/' . $resourcePath;
 }
@@ -118,12 +118,12 @@ Per la versione dark:
 
 ```blade
 <<<<<<< HEAD
-<img src="{{ Theme::asset($metatag['logo_header_dark']) }}"
-     alt="{{ $metatag['logo_alt'] ?? 'Logo' }}"
-=======
 <img src="{{ Theme::asset($metatag['logo_header_dark']) }}" 
      alt="{{ $metatag['logo_alt'] ?? 'Logo' }}" 
->>>>>>> laraxot/dev
+=======
+<img src="{{ Theme::asset($metatag['logo_header_dark']) }}"
+     alt="{{ $metatag['logo_alt'] ?? 'Logo' }}"
+>>>>>>> 77b1e2748 (first)
      class="hidden dark:block">
 ```
 
@@ -149,10 +149,10 @@ Per la versione dark:
 ### Collegamenti ad Altri Moduli
 - [Gestione Domini e Configurazioni](DOMAIN_CONFIGURATION.md)
 <<<<<<< HEAD
-- [Configurazione Generale](configuration.md)
-=======
 - [Configurazione Generale](CONFIGURATION.md)
->>>>>>> laraxot/dev
+=======
+- [Configurazione Generale](configuration.md)
+>>>>>>> 77b1e2748 (first)
 - [Struttura dei Moduli](MODULE_STRUCTURE.md)
 - [Architettura Folio + Volt](FOLIO_VOLT_ARCHITECTURE.md)
 - [Regole per la Case Sensitivity](directory-case-sensitivity.md)

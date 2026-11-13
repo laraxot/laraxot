@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Template Classi Base - Modulo Xot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, templates]
 qmd: "Template Classi Base - Modulo Xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Template Classi Base - Modulo Xot
 
 ## 🎯 Panoramica
@@ -111,14 +111,14 @@ class {ModelName}Resource extends XotBaseResource
      * @return array<int, \Filament\Forms\Components\Component>
      */
 <<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             Forms\Components\TextInput::make('name')
@@ -338,8 +338,8 @@ class Create{ModelName}Action
 ---
 
 <<<<<<< HEAD
-**Ultimo aggiornamento:** Gennaio 2025
-=======
 **Ultimo aggiornamento:** Gennaio 2025  
->>>>>>> laraxot/dev
+=======
+**Ultimo aggiornamento:** Gennaio 2025
+>>>>>>> 77b1e2748 (first)
 **Versione:** 2.0 - Consolidata DRY + KISS

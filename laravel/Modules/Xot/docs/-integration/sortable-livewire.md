@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "sortable_livewire"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "sortable_livewire xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # sortable_livewire
 
 <!-- Contenuto migrato da _docs/sortable_livewire.txt -->

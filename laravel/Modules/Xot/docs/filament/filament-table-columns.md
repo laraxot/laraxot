@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regola Globale: Metodo getTableColumns per Filament Table"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, filament]
 qmd: "Regola Globale: Metodo getTableColumns per Filament Table"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regola Globale: Metodo getTableColumns per Filament Table
 
 ## Descrizione
@@ -30,11 +30,11 @@ Questa pagina raccoglie la regola e i collegamenti per l’adozione del metodo `
 - [Regola e Applicazione - Modulo Performance](../laravel/Modules/Performance/docs/filament-resources.md)
 - [Esempio e Applicazione - Modulo User](../laravel/Modules/User/docs/filament/FILAMENT_TABLE_COLUMNS.md)
 <<<<<<< HEAD
+=======
 - [Regola Generale - Modulo Xot](../laravel/modules/xot/docs/filament_table_columns.md)
 - [Regola e Applicazione - Modulo Performance](../laravel/modules/performance/docs/filament-resources.md)
 - [Esempio e Applicazione - Modulo User](../laravel/modules/user/docs/filament/filament_table_columns.md)
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
 **Nota:** Nei moduli Laraxot, le pagine tabellari devono estendere `Modules\Xot\Filament\Resources\Pages\XotBaseListRecords` e non la classe base Filament.
 
@@ -50,4 +50,4 @@ Questa pagina raccoglie la regola e i collegamenti per l’adozione del metodo `
 **Link bidirezionale:** Aggiornare anche le docs dei moduli coinvolti.
 =======
 **Link bidirezionale:** Aggiornare anche le docs dei moduli coinvolti.
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

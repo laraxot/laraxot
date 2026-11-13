@@ -11,10 +11,10 @@ return [
             'description' => 'Gestione della cache del sistema',
         ],
 <<<<<<< HEAD
-        'label' => 'cache',
-=======
         'label' => 'Cache',
->>>>>>> laraxot/dev
+=======
+        'label' => 'cache',
+>>>>>>> 77b1e2748 (first)
         'sort' => '29',
         'icon' => 'xot-cache',
     ],
@@ -87,45 +87,45 @@ return [
         ],
         'toggleColumns' => [
 <<<<<<< HEAD
-            'label' => 'toggleColumns',
 =======
->>>>>>> laraxot/dev
+            'label' => 'toggleColumns',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
 <<<<<<< HEAD
-            'label' => 'reorderRecords',
 =======
->>>>>>> laraxot/dev
+            'label' => 'reorderRecords',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
 <<<<<<< HEAD
-            'label' => 'resetFilters',
 =======
->>>>>>> laraxot/dev
+            'label' => 'resetFilters',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'applyFilters' => [
 <<<<<<< HEAD
-            'label' => 'applyFilters',
 =======
->>>>>>> laraxot/dev
+            'label' => 'applyFilters',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'openFilters' => [
 <<<<<<< HEAD
-            'label' => 'openFilters',
 =======
->>>>>>> laraxot/dev
+            'label' => 'openFilters',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',

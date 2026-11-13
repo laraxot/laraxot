@@ -6,49 +6,49 @@ return [
     'fields' => [
         'message' => [
 <<<<<<< HEAD
-            'label' => 'message',
 =======
->>>>>>> laraxot/dev
+            'label' => 'message',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'delete' => [
 <<<<<<< HEAD
-            'label' => 'delete',
 =======
->>>>>>> laraxot/dev
+            'label' => 'delete',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'edit' => [
 <<<<<<< HEAD
-            'label' => 'edit',
 =======
->>>>>>> laraxot/dev
+            'label' => 'edit',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'view' => [
 <<<<<<< HEAD
-            'label' => 'view',
 =======
->>>>>>> laraxot/dev
+            'label' => 'view',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
     ],
 <<<<<<< HEAD
+=======
     'actions' => [
         'create' => [
             'label' => 'create',
         ],
     ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     'label' => 'Xot Base List Records',
     'plural_label' => 'Xot Base List Records (Plurale)',
     'navigation' => [

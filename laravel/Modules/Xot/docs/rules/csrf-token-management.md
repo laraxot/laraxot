@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Gestione Token CSRF nei Widget XotBase"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, rules]
 qmd: "Gestione Token CSRF nei Widget XotBase"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Gestione Token CSRF nei Widget XotBase
 
 ## Descrizione
@@ -55,12 +55,12 @@ class MyWidget extends XotBaseWidget
 
 ## Collegamenti Correlati
 <<<<<<< HEAD
-- [Documentazione Livewire](https://livewire.laravel.com/project_docs/security)
-- [Documentazione Laravel CSRF](https://laravel.com/project_docs/csrf)
-=======
 - [Documentazione Livewire](https://livewire.laravel.com/docs/security)
 - [Documentazione Laravel CSRF](https://laravel.com/docs/csrf)
->>>>>>> laraxot/dev
+=======
+- [Documentazione Livewire](https://livewire.laravel.com/project_docs/security)
+- [Documentazione Laravel CSRF](https://laravel.com/project_docs/csrf)
+>>>>>>> 77b1e2748 (first)
 - [XotBaseWidget Implementation](../xot_base_classes.md)
 
 ## Esempio di Correzione
@@ -91,7 +91,7 @@ class FindDoctorAndAppointmentWidget extends XotBaseWidget
 - [ ] Token presente nella vista
 - [ ] Meta tag CSRF nel layout
 <<<<<<< HEAD
-- [ ] Dipendenze Livewire aggiornate
-=======
 - [ ] Dipendenze Livewire aggiornate 
->>>>>>> laraxot/dev
+=======
+- [ ] Dipendenze Livewire aggiornate
+>>>>>>> 77b1e2748 (first)

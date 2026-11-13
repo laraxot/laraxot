@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Risoluzione Conflitto in components.json"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, git]
 qmd: "Risoluzione Conflitto in components.json"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Risoluzione Conflitto in _components.json
 
 ## Panoramica
@@ -76,8 +76,8 @@ La soluzione proposta adotta il formato più leggibile e manutenibile della vers
 
 - [Documento principale risoluzione conflitti](risoluzione_conflitti.md)
 <<<<<<< HEAD
+- [Documentazione modulo Tenant](../../Tenant/docs/risoluzione_conflitti.md) 
+=======
 - [Documentazione modulo Tenant](../../Tenant/docs/risoluzione_conflitti.md)
 - [Documentazione modulo Tenant](../../tenant/docs/risoluzione_conflitti.md)
-=======
-- [Documentazione modulo Tenant](../../Tenant/docs/risoluzione_conflitti.md) 
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace Modules\Xot\Tests\Unit;
 
 <<<<<<< HEAD
-use Mockery;
-use Modules\Xot\Filament\Builders\ColumnBuilder;
-use Modules\Xot\Filament\Builders\FilterBuilder;
-use Modules\Xot\Filament\Support\ColumnBuilder as SupportColumnBuilder;
-use Modules\Xot\Filament\Support\RecordAnchor;
-=======
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Xot\Filament\Builders\ColumnBuilder;
 use Modules\Xot\Filament\Builders\FilterBuilder;
 use Modules\Xot\Filament\Links\RecordAnchor;
->>>>>>> laraxot/dev
+=======
+use Mockery;
+use Modules\Xot\Filament\Builders\ColumnBuilder;
+use Modules\Xot\Filament\Builders\FilterBuilder;
+use Modules\Xot\Filament\Support\ColumnBuilder as SupportColumnBuilder;
+use Modules\Xot\Filament\Support\RecordAnchor;
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
@@ -25,9 +25,6 @@ use ReflectionMethod;
 uses(TestCase::class)->group('no-xot-db');
 
 <<<<<<< HEAD
-afterEach(function (): void {
-    Mockery::close();
-=======
 /**
  * Record non persistito: i closure delle colonne leggono solo gli attributi.
  *
@@ -199,17 +196,20 @@ describe('Xot filament builders', function (): void {
         Assert::assertStringNotContainsString('deleted_at', $query->toSql());
         Assert::assertSame([], $query->getQuery()->wheres);
     });
->>>>>>> laraxot/dev
+=======
+afterEach(function (): void {
+    Mockery::close();
+>>>>>>> 77b1e2748 (first)
 });
 
 describe('Xot filament support hundred', function (): void {
     test('Support ColumnBuilder e RecordAnchor reflection', function (): void {
         $n = 0;
 <<<<<<< HEAD
-        foreach ([SupportColumnBuilder::class, RecordAnchor::class, ColumnBuilder::class, FilterBuilder::class] as $class) {
-=======
         foreach ([RecordAnchor::class, ColumnBuilder::class, FilterBuilder::class] as $class) {
->>>>>>> laraxot/dev
+=======
+        foreach ([SupportColumnBuilder::class, RecordAnchor::class, ColumnBuilder::class, FilterBuilder::class] as $class) {
+>>>>>>> 77b1e2748 (first)
             if (! class_exists($class)) {
                 continue;
             }
@@ -220,10 +220,10 @@ describe('Xot filament support hundred', function (): void {
                     $inst = $ref->newInstanceWithoutConstructor();
                 } catch (\Throwable) {
 <<<<<<< HEAD
-                    $inst = null;
-=======
                     // istanza non creabile senza costruttore: $inst resta null, si invocano solo i metodi statici
->>>>>>> laraxot/dev
+=======
+                    $inst = null;
+>>>>>>> 77b1e2748 (first)
                 }
             }
             foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC | ReflectionMethod::IS_PROTECTED | ReflectionMethod::IS_PRIVATE) as $method) {

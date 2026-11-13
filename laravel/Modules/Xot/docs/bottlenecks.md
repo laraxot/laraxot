@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Colli di Bottiglia e Soluzioni - Modulo Xot"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "colli di bottiglia e soluzioni - modulo xot xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Colli di Bottiglia e Soluzioni - Modulo Xot
 
 ## Panoramica

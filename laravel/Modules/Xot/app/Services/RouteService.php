@@ -65,9 +65,6 @@ class RouteService
         $route_action = (string) Route::currentRouteAction();
         Str::snake(Str::after($route_action, '@'));
 <<<<<<< HEAD
-        // Cannot call method getName() on mixed.
-        $routename = ''; // Request::route()->getName();
-=======
         $route_current = Route::current();
         $route_params = [];
         $routename = '';
@@ -76,7 +73,10 @@ class RouteService
             $routename = $route_current->getName() ?? '';
         }
 
->>>>>>> laraxot/dev
+=======
+        // Cannot call method getName() on mixed.
+        $routename = ''; // Request::route()->getName();
+>>>>>>> 77b1e2748 (first)
         $old_act_route = last(explode('.', $routename));
         if (! \is_string($old_act_route)) {
             throw new Exception('['.__LINE__.']['.class_basename(self::class).']');
@@ -84,14 +84,14 @@ class RouteService
 
         $routename_act = Str::before($routename, $old_act_route).''.$act;
 <<<<<<< HEAD
+=======
         $route_current = Route::current();
         $route_params = [];
         if ($route_current instanceof \Illuminate\Routing\Route) {
             $route_params = $route_current->parameters();
             $routename = $route_current->getName();
         }
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
         /*
          * try {

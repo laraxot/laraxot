@@ -28,9 +28,9 @@ trait TransTrait
         $tmp = static::getKeyTrans($key);
         /** @var array<string, mixed>|Translator|string $res */
 <<<<<<< HEAD
-        // @phpstan-ignore argument.type (trans() $replace param: already typed correctly at method signature)
 =======
->>>>>>> laraxot/dev
+        // @phpstan-ignore argument.type (trans() $replace param: already typed correctly at method signature)
+>>>>>>> 77b1e2748 (first)
         $res = trans($tmp, $params);
 
         if (is_string($res)) {
@@ -124,9 +124,9 @@ trait TransTrait
 
         $translationKey = $moduleNameLow.'::'.$slug.'.'.$key;
 <<<<<<< HEAD
-        // @phpstan-ignore argument.type (__() $replace param: already typed correctly at method signature)
 =======
->>>>>>> laraxot/dev
+        // @phpstan-ignore argument.type (__() $replace param: already typed correctly at method signature)
+>>>>>>> 77b1e2748 (first)
         $translation = __($translationKey, $replace, $locale);
 
         if ($translation === $translationKey && App::environment('local', 'development', 'testing')) {

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Validazione"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Validazione"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Validazione
 
 ## Configurazione Base
@@ -233,7 +233,7 @@ Validator::make($request->all(), [
     }
 });
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)

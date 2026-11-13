@@ -7,9 +7,9 @@ namespace Modules\Xot\Filament\Resources\Pages;
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
 <<<<<<< HEAD
-=======
 use Filament\Actions\BulkAction;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Filament\Resources\Pages\ManageRelatedRecords as FilamentManageRelatedRecords;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Schema;
@@ -24,9 +24,9 @@ use Modules\Xot\Actions\Filament\GetRelatedResourceClassAction;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 <<<<<<< HEAD
-use Modules\Xot\Filament\Traits\TransTrait;
 =======
->>>>>>> laraxot/dev
+use Modules\Xot\Filament\Traits\TransTrait;
+>>>>>>> 77b1e2748 (first)
 use Webmozart\Assert\Assert;
 
 /**
@@ -139,9 +139,9 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
 {
     use NavigationLabelTrait;
 <<<<<<< HEAD
-    use TransTrait;
 =======
->>>>>>> laraxot/dev
+    use TransTrait;
+>>>>>>> 77b1e2748 (first)
 
     /**
      * Stato conservato sulla pagina per gli schemi Xot con statePath('data').
@@ -268,21 +268,21 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
 
         return $this->relatedResourceTable
 <<<<<<< HEAD
-            // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
             ->columns($this->getTableColumns())
-            // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
             ->headerActions($this->getTableHeaderActions())
-            // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
             ->recordActions($this->getTableActions())
-            // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
             ->toolbarActions($this->getTableBulkActions())
-            // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
 =======
+            // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
             ->columns($this->getTableColumns())
+            // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
             ->headerActions($this->getTableHeaderActions())
+            // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
             ->recordActions($this->getTableActions())
+            // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
             ->toolbarActions($this->getTableBulkActions())
->>>>>>> laraxot/dev
+            // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
+>>>>>>> 77b1e2748 (first)
             ->filters($this->getTableFilters());
     }
 
@@ -294,7 +294,36 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * non li sostituisce: aggiungere questo hook non perde nessuno scoping
      * (es. tenant) gia' applicato da `$resourceClass::table()`.
      *
+<<<<<<< HEAD
      * @param  Builder<Model>  $query
+=======
+<<<<<<< .merge_file_QZC6m9
+     * @param  Builder<Model>  $query
+=======
+     * <<<<<<< HEAD
+     *
+     * @param Builder<Model> $query
+     *                              =======
+     *                              <<<<<<< HEAD
+     * @param Builder<Model> $query
+     *                              =======
+     *                              <<<<<<< HEAD
+     *                              <<<<<<< HEAD
+     * @param Builder<Model> $query
+     *                              =======
+     * @param Builder<Model> $query
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * =======
+     * @param Builder<Model> $query
+     *                              >>>>>>> laraxot/dev
+     *                              >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_cmTFEy
+>>>>>>> 77b1e2748 (first)
      * @return Builder<Model>
      */
     protected function modifyRelatedQuery(Builder $query): Builder
@@ -308,10 +337,10 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * implicito); per estendere: `[...proprie, ...parent::getTableColumns()]`.
      *
 <<<<<<< HEAD
-=======
      * @not-deprecated Hook di progetto omonimo a un nome deprecato di Filament: API attiva di questa classe.
      *
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * @return array<string, Column>
      */
     public function getTableColumns(): array
@@ -327,12 +356,12 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * correlata non le conosce comunque.
      *
 <<<<<<< HEAD
-     * @return array<string, Action|ActionGroup>
-=======
      * @not-deprecated Hook di progetto omonimo a un nome deprecato di Filament: API attiva di questa classe.
      *
      * @return array<int|string, Action|BulkAction|ActionGroup>
->>>>>>> laraxot/dev
+=======
+     * @return array<string, Action|ActionGroup>
+>>>>>>> 77b1e2748 (first)
      */
     public function getTableHeaderActions(): array
     {
@@ -343,10 +372,10 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * Override point per le azioni riga (record actions). Stessa semantica.
      *
 <<<<<<< HEAD
-=======
      * @not-deprecated Hook di progetto omonimo a un nome deprecato di Filament: API attiva di questa classe.
      *
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * @return array<int|string, Action|ActionGroup>
      */
     public function getTableActions(): array
@@ -361,10 +390,10 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * (es. make-token/send-invite/send-spatie-email di `ContactsTable`).
      *
 <<<<<<< HEAD
-=======
      * @not-deprecated Hook di progetto omonimo a un nome deprecato di Filament: API attiva di questa classe.
      *
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * @return array<int|string, Action|ActionGroup>
      */
     public function getTableBulkActions(): array
@@ -376,10 +405,10 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * Override point per i filtri. Stessa semantica.
      *
 <<<<<<< HEAD
-=======
      * @not-deprecated Hook di progetto omonimo a un nome deprecato di Filament: API attiva di questa classe.
      *
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * @return array<string, BaseFilter>
      */
     public function getTableFilters(): array
@@ -400,9 +429,42 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * NON usare mai `$this->getResource()` qui: identifica la Resource
      * PROPRIETARIA della pagina, non quella della relazione.
      *
+<<<<<<< HEAD
      * @return class-string<XotBaseResource>
      *
      * @throws \InvalidArgumentException Se nessuna Resource e' risolvibile — fallire rumorosamente e' preferibile a un default silenzioso su una pagina che si aspetta dati reali.
+=======
+<<<<<<< .merge_file_QZC6m9
+     * @return class-string<XotBaseResource>
+     *
+     * @throws \InvalidArgumentException Se nessuna Resource e' risolvibile — fallire rumorosamente e' preferibile a un default silenzioso su una pagina che si aspetta dati reali.
+=======
+     * <<<<<<< HEAD
+     *
+     * @throws \InvalidArgumentException Se nessuna Resource e' risolvibile — fallire rumorosamente e' preferibile a un default silenzioso su una pagina che si aspetta dati reali.
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     * @throws \InvalidArgumentException se nessuna Resource e' risolvibile — fallire rumorosamente e' preferibile a un default silenzioso su una pagina che si aspetta dati reali
+     *
+     * =======
+     * <<<<<<< HEAD
+     * <<<<<<< HEAD
+     * @throws \InvalidArgumentException Se nessuna Resource e' risolvibile — fallire rumorosamente e' preferibile a un default silenzioso su una pagina che si aspetta dati reali.
+     *                                   =======
+     * @throws \InvalidArgumentException se nessuna Resource e' risolvibile — fallire rumorosamente e' preferibile a un default silenzioso su una pagina che si aspetta dati reali
+     * @throws \InvalidArgumentException Se nessuna Resource e' risolvibile — fallire rumorosamente e' preferibile a un default silenzioso su una pagina che si aspetta dati reali.
+     *                                   >>>>>>> laraxot/dev
+     *
+     * @return class-string<XotBaseResource>
+     * @return class-string<XotBaseResource>
+     * @return class-string<XotBaseResource>
+     *                                       >>>>>>> laraxot/dev
+     *                                       =======
+     *                                       >>>>>>> laraxot/dev
+     * @return class-string<XotBaseResource>
+     *                                       >>>>>>> laraxot/dev
+>>>>>>> .merge_file_cmTFEy
+>>>>>>> 77b1e2748 (first)
      */
     protected function getRelatedResourceClass(): string
     {

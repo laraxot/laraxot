@@ -31,204 +31,636 @@ use Pest\PendingCalls\UsesCall;
 function actingAs(Authenticatable|int|string|null $user = null, ?string $driver = null): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('actingAs', $user, $driver);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a GET request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
  * @param  array<string, mixed>  $options
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+ * @param  array<string, mixed>  $options
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $options
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $options
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $options
+ *                                                 =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $options
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $options
+ *                                                 >>>>>>> laraxot/dev
+ *                                                 >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function get(string|array $uri = '', array $options = []): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('get', $uri, $options);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a POST request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
  * @param  array<string, mixed>  $data
  * @param  array<string, mixed>  $options
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+ * @param  array<string, mixed>  $data
+ * @param  array<string, mixed>  $options
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $options
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $options
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $options
+ *                                                 =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $options
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $options
+ *                                                 >>>>>>> laraxot/dev
+ *                                                 >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function post(string|array $uri, array $data = [], array $options = []): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('post', $uri, $data, $options);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a PUT request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
  * @param  array<string, mixed>  $data
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+ * @param  array<string, mixed>  $data
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ *                                              =======
+ *                                              <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ *                                              =======
+ *                                              <<<<<<< HEAD
+ *                                              <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ *                                              =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ *                                              >>>>>>> laraxot/dev
+ *                                              >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function put(string|array $uri, array $data = []): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('put', $uri, $data);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a PATCH request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
  * @param  array<string, mixed>  $data
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+ * @param  array<string, mixed>  $data
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ *                                              =======
+ *                                              <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ *                                              =======
+ *                                              <<<<<<< HEAD
+ *                                              <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ *                                              =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ *                                              >>>>>>> laraxot/dev
+ *                                              >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function patch(string|array $uri, array $data = []): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('patch', $uri, $data);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a DELETE request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ *                                             =======
+ *                                             <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ *                                             =======
+ *                                             <<<<<<< HEAD
+ *                                             <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ *                                             =======
+ * @param string|array<int|string, mixed> $uri
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ *                                             >>>>>>> laraxot/dev
+ *                                             >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function delete(string|array $uri): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('delete', $uri);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a HEAD request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ *                                             =======
+ *                                             <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ *                                             =======
+ *                                             <<<<<<< HEAD
+ *                                             <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ *                                             =======
+ * @param string|array<int|string, mixed> $uri
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ *                                             >>>>>>> laraxot/dev
+ *                                             >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function head(string|array $uri): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('head', $uri);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform an OPTIONS request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ *                                             =======
+ *                                             <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ *                                             =======
+ *                                             <<<<<<< HEAD
+ *                                             <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ *                                             =======
+ * @param string|array<int|string, mixed> $uri
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ *                                             >>>>>>> laraxot/dev
+ *                                             >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function options(string|array $uri): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('options', $uri);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a JSON GET request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
  * @param  array<string, mixed>  $headers
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+ * @param  array<string, mixed>  $headers
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $headers
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $headers
+ *                                                 >>>>>>> laraxot/dev
+ *                                                 >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function getJson(string|array $uri, array $headers = []): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('getJson', $uri, $headers);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a JSON POST request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
  * @param  array<string, mixed>  $data
  * @param  array<string, mixed>  $headers
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+ * @param  array<string, mixed>  $data
+ * @param  array<string, mixed>  $headers
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 >>>>>>> laraxot/dev
+ *                                                 >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function postJson(string|array $uri, array $data = [], array $headers = []): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('postJson', $uri, $data, $headers);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a JSON PUT request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
  * @param  array<string, mixed>  $data
  * @param  array<string, mixed>  $headers
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+ * @param  array<string, mixed>  $data
+ * @param  array<string, mixed>  $headers
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 >>>>>>> laraxot/dev
+ *                                                 >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function putJson(string|array $uri, array $data = [], array $headers = []): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('putJson', $uri, $data, $headers);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a JSON PATCH request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
  * @param  array<string, mixed>  $data
  * @param  array<string, mixed>  $headers
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+ * @param  array<string, mixed>  $data
+ * @param  array<string, mixed>  $headers
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 >>>>>>> laraxot/dev
+ *                                                 >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function patchJson(string|array $uri, array $data = [], array $headers = []): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('patchJson', $uri, $data, $headers);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Perform a JSON DELETE request.
  *
+<<<<<<< HEAD
  * @param  string|array<int|string, mixed>  $uri
  * @param  array<string, mixed>  $data
  * @param  array<string, mixed>  $headers
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  string|array<int|string, mixed>  $uri
+ * @param  array<string, mixed>  $data
+ * @param  array<string, mixed>  $headers
+=======
+ * <<<<<<< HEAD
+ *
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ *                                                 <<<<<<< HEAD
+ *                                                 <<<<<<< HEAD
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param string|array<int|string, mixed> $uri
+ * @param array<string, mixed>            $data
+ * @param array<string, mixed>            $headers
+ *                                                 >>>>>>> laraxot/dev
+ *                                                 >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_8X1b3T
+>>>>>>> 77b1e2748 (first)
  * @return TestResponse<Response>
  */
 function deleteJson(string|array $uri, array $data = [], array $headers = []): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('deleteJson', $uri, $data, $headers);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
@@ -239,10 +671,10 @@ function deleteJson(string|array $uri, array $data = [], array $headers = []): T
 function followingRedirects(int $number = 5): TestResponse
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('followingRedirects', $number);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
@@ -251,10 +683,10 @@ function followingRedirects(int $number = 5): TestResponse
 function test(string $description, ?\Closure $closure = null): TestCall
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('test', $description, $closure);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
@@ -263,10 +695,10 @@ function test(string $description, ?\Closure $closure = null): TestCall
 function it(string $description, ?\Closure $closure = null): TestCall
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('it', $description, $closure);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
@@ -275,10 +707,10 @@ function it(string $description, ?\Closure $closure = null): TestCall
 function describe(string $description, \Closure $closure): DescribeCall
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('describe', $description, $closure);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
@@ -287,10 +719,10 @@ function describe(string $description, \Closure $closure): DescribeCall
 function beforeEach(\Closure $closure): BeforeEachCall
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('beforeEach', $closure);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
@@ -299,22 +731,47 @@ function beforeEach(\Closure $closure): BeforeEachCall
 function afterEach(\Closure $closure): AfterEachCall
 {
 <<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('afterEach', $closure);
->>>>>>> laraxot/dev
+=======
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }
 
 /**
  * Define a test class.
  *
+<<<<<<< HEAD
  * @param  class-string  ...$classes
  */
 function uses(string ...$classes): UsesCall
 {
-<<<<<<< HEAD
-    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
-=======
     \xotPestStubFailure('uses', ...$classes);
->>>>>>> laraxot/dev
+=======
+<<<<<<< .merge_file_qtOMws
+ * @param  class-string  ...$classes
+=======
+ * <<<<<<< HEAD
+ *
+ * @param class-string ...$classes
+ *                                 =======
+ *                                 <<<<<<< HEAD
+ * @param class-string ...$classes
+ *                                 =======
+ *                                 <<<<<<< HEAD
+ *                                 <<<<<<< HEAD
+ * @param class-string ...$classes
+ *                                 =======
+ * @param class-string ...$classes
+ *                                 >>>>>>> laraxot/dev
+ *                                 =======
+ * @param class-string ...$classes
+ *                                 >>>>>>> laraxot/dev
+ *                                 >>>>>>> laraxot/dev
+ *                                 >>>>>>> laraxot/dev
+>>>>>>> .merge_file_8X1b3T
+ */
+function uses(string ...$classes): UsesCall
+{
+    throw new \RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
 }

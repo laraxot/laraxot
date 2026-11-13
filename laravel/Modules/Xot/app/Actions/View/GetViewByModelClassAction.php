@@ -16,21 +16,6 @@ class GetViewByModelClassAction
      * ---.
      */
 <<<<<<< HEAD
-    public function execute(string $model_class, string $suffix): string
-    {
-        $module = app(GetModuleNameByModelClassAction::class)->execute($model_class);
-        $module_low = Str::of($module)->lower()->toString();
-        $model_name = class_basename($model_class);
-        $model_name = Str::of($model_name)->snake()->toString();
-
-        $view = $module_low.'::'.$model_name.$suffix;
-
-        if (! view()->exists($view)) {
-            throw new \Exception('view ['.$view.'] not Exists');
-        }
-
-        return $view;
-=======
     /**
      * `{modulo}::{modello_snake}{suffisso}`, es. `progressioni::scheda.index.pdf`.
      *
@@ -79,6 +64,21 @@ class GetViewByModelClassAction
         }
 
         return array_values(array_unique(array_filter($modules)));
->>>>>>> laraxot/dev
+=======
+    public function execute(string $model_class, string $suffix): string
+    {
+        $module = app(GetModuleNameByModelClassAction::class)->execute($model_class);
+        $module_low = Str::of($module)->lower()->toString();
+        $model_name = class_basename($model_class);
+        $model_name = Str::of($model_name)->snake()->toString();
+
+        $view = $module_low.'::'.$model_name.$suffix;
+
+        if (! view()->exists($view)) {
+            throw new \Exception('view ['.$view.'] not Exists');
+        }
+
+        return $view;
+>>>>>>> 77b1e2748 (first)
     }
 }

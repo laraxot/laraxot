@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Trait HasTeams"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, traits]
 qmd: "Trait HasTeams"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Trait HasTeams
 
 ## Descrizione
@@ -69,10 +69,10 @@ class User extends Authenticatable
 {
     use HasTeams;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // ... resto del codice
 }
 ```
@@ -81,7 +81,7 @@ class User extends Authenticatable
 - Il trait richiede che il modello utilizzi anche il trait `HasRoles` per la gestione dei ruoli
 - È necessario avere una tabella pivot `team_user` con le colonne `user_id`, `team_id`, `role` e `timestamps`
 <<<<<<< HEAD
-- La tabella dei team deve avere le colonne `id`, `name`, `personal_team`, `owner_id` e `timestamps`
-=======
 - La tabella dei team deve avere le colonne `id`, `name`, `personal_team`, `owner_id` e `timestamps` 
->>>>>>> laraxot/dev
+=======
+- La tabella dei team deve avere le colonne `id`, `name`, `personal_team`, `owner_id` e `timestamps`
+>>>>>>> 77b1e2748 (first)

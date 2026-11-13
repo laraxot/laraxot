@@ -24,11 +24,11 @@ abstract class XotBaseInfolistWidget extends XotBaseWidget implements HasSchemas
 
     /** @var view-string */
 <<<<<<< HEAD
+    protected string $view = 'xot::filament.widgets.infolist';
+=======
     /** @var view-string */
     protected string $view;
-=======
-    protected string $view = 'xot::filament.widgets.infolist';
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
     protected int|string|array $columnSpan = 'full';
 

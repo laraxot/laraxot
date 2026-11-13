@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "attach"
 type: note
@@ -22,4 +20,6 @@ fn ($select) => $select->getOptionLabelFromRecordUsing(fn ($record) => $record->
 AttachAction::make()
     ->recordTitle(fn (Model $record) => "{$record->name} ({$record->organisation->name})")
 ```
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

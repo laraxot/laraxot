@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Filosofia dei Metodi Getter in Xot"
 type: note
@@ -11,7 +9,9 @@ module: Xot
 tags: [xot, datas]
 qmd: "Filosofia dei Metodi Getter in Xot"
 ---
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
 # Filosofia dei Metodi Getter in Xot
 
 ## Principi Fondamentali
@@ -74,7 +74,7 @@ I metodi getter devono nascondere i dettagli di implementazione:
 - [Convenzioni di Naming](../naming-conventions.md)
 - [Documentazione MetatagData](../datas/metatagdata.md)
 <<<<<<< HEAD
-- [Linee Guida Filament](../filament-best-practices.md)
-=======
 - [Linee Guida Filament](../filament-best-practices.md) 
->>>>>>> laraxot/dev
+=======
+- [Linee Guida Filament](../filament-best-practices.md)
+>>>>>>> 77b1e2748 (first)

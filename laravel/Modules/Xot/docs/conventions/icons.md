@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Convenzioni per le Icone SVG"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, conventions]
 qmd: "Convenzioni per le Icone SVG"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Convenzioni per le Icone SVG
 
 ## Struttura Directory

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "CRITICAL FIX: Loop Infinito in getStepByName() - XotBaseResource"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, filament]
 qmd: "CRITICAL FIX: Loop Infinito in getStepByName() - XotBaseResource"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # CRITICAL FIX: Loop Infinito in getStepByName() - XotBaseResource
 
 ## 🚨 **PROBLEMA CRITICO RISOLTO**
@@ -55,10 +55,10 @@ return Forms\Components\Wizard\Step::make($name)
 $schema = Str::of($name)
     ->snake()      // 'studio_step' → 'studio_step'
 <<<<<<< HEAD
-    ->studly()     // 'studio_step' → 'StudioStep'
-=======
     ->studly()     // 'studio_step' → 'StudioStep'  
->>>>>>> laraxot/dev
+=======
+    ->studly()     // 'studio_step' → 'StudioStep'
+>>>>>>> 77b1e2748 (first)
     ->prepend('get') // 'StudioStep' → 'getStudioStep'
     ->append('Schema') // 'getStudioStep' → 'getStudioStepSchema'
     ->toString();
@@ -100,10 +100,10 @@ $attachments = property_exists($model, 'attachments') ? $model::$attachments : [
 ### **Verifica Wizard Steps**
 - [ ] studio_step → Chiama `getStudioStepSchema()` ✅
 <<<<<<< HEAD
-- [ ] availability_step → Chiama `getAvailabilityStepSchema()` ✅
-=======
 - [ ] availability_step → Chiama `getAvailabilityStepSchema()` ✅  
->>>>>>> laraxot/dev
+=======
+- [ ] availability_step → Chiama `getAvailabilityStepSchema()` ✅
+>>>>>>> 77b1e2748 (first)
 - [ ] personal_info_step → Chiama `getPersonalInfoStepSchema()` ✅
 
 ### **Verifica No Loop**
@@ -126,10 +126,10 @@ $methodName = 'getMethodName';
 static::{$methodName}();
 
 <<<<<<< HEAD
-// ✅ Property existence check
-=======
 // ✅ Property existence check  
->>>>>>> laraxot/dev
+=======
+// ✅ Property existence check
+>>>>>>> 77b1e2748 (first)
 $prop = property_exists($class, 'property') ? $class::$property : [];
 ```
 
@@ -137,36 +137,36 @@ $prop = property_exists($class, 'property') ? $class::$property : [];
 
 ### **File Modificati**
 <<<<<<< HEAD
+- [XotBaseResource.php](../../app/Filament/Resources/XotBaseResource.php) - Fix principale
+- [DoctorResource.php](../../../Modules/SaluteOra/app/Filament/Resources/DoctorResource.php) - Utilizzo step
+
+### **Documentazione Correlata**
+- [Wizard Step Implementation](../../../Modules/SaluteOra/docs/wizard-step-implementation.md)
+=======
 - [XotBaseResource.php](../../../Modules/Xot/app/Filament/Resources/XotBaseResource.php) - Fix principale
 - [DoctorResource.php](../../../Modules/<main module>/app/Filament/Resources/DoctorResource.php) - Utilizzo step
 
 ### **Documentazione Correlata**
 - [Wizard Step Implementation](../../../Modules/<main module>/docs/wizard-step-implementation.md)
 - [Wizard Step Implementation](../../../modules/<main module>/docs/wizard-step-implementation.md)
-=======
-- [XotBaseResource.php](../../app/Filament/Resources/XotBaseResource.php) - Fix principale
-- [DoctorResource.php](../../../Modules/SaluteOra/app/Filament/Resources/DoctorResource.php) - Utilizzo step
-
-### **Documentazione Correlata**
-- [Wizard Step Implementation](../../../Modules/SaluteOra/docs/wizard-step-implementation.md)
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 - [Infinite Loop Prevention](../critical-fixes/infinite-loop-prevention.md)
 
 ---
 
 <<<<<<< HEAD
-**Priorità**: 🚨 **P0 - CRITICA**
-**Creato**: Gennaio 2025
-**Risolto**: Gennaio 2025
-**Impatto**: Blocco completo sistema registrazione dottori
-**Tempo risoluzione**: < 10 minuti dalla diagnosi
-=======
 **Priorità**: 🚨 **P0 - CRITICA**  
 **Creato**: Gennaio 2025  
 **Risolto**: Gennaio 2025  
 **Impatto**: Blocco completo sistema registrazione dottori  
 **Tempo risoluzione**: < 10 minuti dalla diagnosi  
->>>>>>> laraxot/dev
+=======
+**Priorità**: 🚨 **P0 - CRITICA**
+**Creato**: Gennaio 2025
+**Risolto**: Gennaio 2025
+**Impatto**: Blocco completo sistema registrazione dottori
+**Tempo risoluzione**: < 10 minuti dalla diagnosi
+>>>>>>> 77b1e2748 (first)
 
 ## 💡 **Lesson Learned**
 
@@ -177,7 +177,7 @@ Questo fix dimostra l'importanza di:
 4. **Xdebug monitoring** per rilevazione loop infiniti
 
 <<<<<<< HEAD
-*Il sistema <main module> ora è resiliente a questo tipo di errori critici.*
-=======
 *Il sistema SaluteOra ora è resiliente a questo tipo di errori critici.* 
->>>>>>> laraxot/dev
+=======
+*Il sistema <main module> ora è resiliente a questo tipo di errori critici.*
+>>>>>>> 77b1e2748 (first)

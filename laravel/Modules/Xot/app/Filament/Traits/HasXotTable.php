@@ -19,9 +19,9 @@ use Filament\Actions\ViewAction;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
 <<<<<<< HEAD
-=======
 use Filament\Resources\Resource;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\ColumnGroup;
 use Filament\Tables\Columns\Layout\Component as LayoutComponent;
@@ -38,27 +38,27 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\Relation;
 <<<<<<< HEAD
-=======
 use Illuminate\Support\Facades\Gate;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Illuminate\Support\Str;
 use Livewire\Component;
 use Modules\UI\Enums\TableLayoutEnum;
 use Modules\UI\Filament\Actions\Table\TableLayoutToggleTableAction;
 <<<<<<< HEAD
-=======
 use Modules\UI\Filament\Tables\Columns\IDColumn;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Modules\UI\Filament\Traits\HasTableLayoutPage;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Actions\Filament\PlainTextFromFilamentValueAction;
 use Modules\Xot\Actions\GetTransKeyAction;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Actions\Model\ModelHasColumnAction;
 use Modules\Xot\Filament\Links\RecordAnchor;
 use ReflectionMethod;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use RuntimeException;
 use Webmozart\Assert\Assert;
 
@@ -102,23 +102,23 @@ trait HasXotTable
      *
      * @return array<int|string, Action|ActionGroup>
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     public function getTableHeaderActions(): array
     {
         $resource = $this;
 <<<<<<< HEAD
+        if ($this instanceof ListRecords) {
+            $resourceClass = $this->getResource();
+=======
         /* @phpstan-ignore-next-line */
         if ($this instanceof ListRecords) {
             $resourceClass = $this->getResource();
             // @phpstan-ignore-next-line staticMethod.alreadyNarrowedType
-=======
-        if ($this instanceof ListRecords) {
-            $resourceClass = $this->getResource();
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             Assert::string($resourceClass);
             $resource = app($resourceClass);
         }
@@ -126,10 +126,6 @@ trait HasXotTable
         // dddx(method_exists($resource, 'canAttach'));
 
 <<<<<<< HEAD
-        $actions = [
-            CreateAction::make(),
-        ];
-=======
         $actions = [];
         // Niente "Nuovo" se la risorsa non ha la pagina `create` (es. moderazione commenti):
         // il pulsante portava a una rotta inesistente.
@@ -137,7 +133,11 @@ trait HasXotTable
         if ($createPageResource === null || array_key_exists('create', $createPageResource::getPages())) {
             $actions[] = CreateAction::make();
         }
->>>>>>> laraxot/dev
+=======
+        $actions = [
+            CreateAction::make(),
+        ];
+>>>>>>> 77b1e2748 (first)
 
         if ($this->shouldShowAssociateAction()) {
             $actions[] = AssociateAction::make()
@@ -162,16 +162,21 @@ trait HasXotTable
      *
      * In content-grid ogni riga mostra label e valore sulla stessa linea (es. «Ente: 123»).
      *
+<<<<<<< HEAD
      * @return array<int, Column|ColumnGroup|LayoutComponent>
+=======
+     * @return list<Column|ColumnGroup|LayoutComponent>
+     * @phpstan-return list<Column|ColumnGroup|LayoutComponent>
+>>>>>>> 77b1e2748 (first)
      */
     public function getGridTableColumns(): array
     {
         $columns = [];
 
 <<<<<<< HEAD
-        // @phpstan-ignore method.deprecated
 =======
->>>>>>> laraxot/dev
+        // @phpstan-ignore method.deprecated
+>>>>>>> 77b1e2748 (first)
         foreach (array_values($this->getTableColumns()) as $column) {
             if ($column instanceof ColumnGroup) {
                 // Stack::make() non accetta ColumnGroup: nella vista a griglia le colonne
@@ -230,9 +235,9 @@ trait HasXotTable
     public function getTableFiltersFormColumns(): int
     {
 <<<<<<< HEAD
-        // @phpstan-ignore method.deprecated
 =======
->>>>>>> laraxot/dev
+        // @phpstan-ignore method.deprecated
+>>>>>>> 77b1e2748 (first)
         $count = count($this->getTableFilters()) + 1;
 
         return min($count, 6);
@@ -282,9 +287,6 @@ trait HasXotTable
         // (fallback deprecato di Filament): si filtrano per restare coerenti col tipo
         // atteso da TableLayoutEnum::getTableColumns().
 <<<<<<< HEAD
-        $tableColumns = array_values(array_filter(
-            // @phpstan-ignore method.deprecated
-=======
         // Le Resource costruiscono la tabella da un'istanza della `*Table` class, che non e' un
         // componente Livewire: bootHasXotTable() non scatta e $layoutView resterebbe sempre LIST.
         // Qui si legge la scelta dell'utente (griglia per il cellulare) dalla sessione.
@@ -293,7 +295,10 @@ trait HasXotTable
         }
 
         $tableColumns = array_values(array_filter(
->>>>>>> laraxot/dev
+=======
+        $tableColumns = array_values(array_filter(
+            // @phpstan-ignore method.deprecated
+>>>>>>> 77b1e2748 (first)
             $this->getTableColumns(),
             static fn (mixed $column): bool => $column instanceof Column || $column instanceof ColumnGroup || $column instanceof LayoutComponent,
         ));
@@ -303,6 +308,11 @@ trait HasXotTable
         $table = $table
             ->recordTitleAttribute($this->getTableRecordTitleAttribute())
 <<<<<<< HEAD
+            ->heading($this->getTableHeading())
+            ->headerActions($this->getTableHeaderActions())
+            ->columns($columns)
+            ->contentGrid($this->layoutView->getTableContentGrid())
+=======
             // @phpstan-ignore method.deprecated
             ->heading($this->getTableHeading())
             // @phpstan-ignore method.deprecated, argument.type
@@ -310,17 +320,28 @@ trait HasXotTable
             ->columns($columns)
             ->contentGrid($this->layoutView->getTableContentGrid())
             // @phpstan-ignore method.deprecated
-=======
-            ->heading($this->getTableHeading())
-            ->headerActions($this->getTableHeaderActions())
-            ->columns($columns)
-            ->contentGrid($this->layoutView->getTableContentGrid())
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             ->filters($this->getTableFilters())
             ->filtersLayout($this->getTableFiltersLayout())
             ->filtersFormColumns($this->getTableFiltersFormColumns())
             ->deferFilters($this->shouldDeferTableFilters())
 <<<<<<< HEAD
+            ->persistFiltersInSession($this->shouldPersistTableFiltersInSession())
+            ->recordActions($this->getTableActions())
+            ->toolbarActions($this->getTableBulkActions())
+            ->recordActionsPosition($this->getTableRecordActionsPosition())
+            ->emptyStateActions($this->getTableEmptyStateActions())
+            ->striped($this->isTableStriped())
+            // Mobile: sotto `sm` (640 px) ogni riga diventa una card con etichetta + valore per
+            // cella, ordinamento in un select e "seleziona tutti" nell'intestazione: niente scroll
+            // orizzontale. Da `sm` in su la tabella resta identica. Vedi
+            // Modules/UI/docs/stories/mobile-ux-pass.story.md
+            ->stackedOnMobile()
+            ->paginated($this->getTablePaginated());
+
+        // Configurazioni opzionali personalizzabili
+        $sortColumn = $this->getDefaultTableSortColumn();
+=======
             // @phpstan-ignore method.deprecated
             ->persistFiltersInSession($this->shouldPersistTableFiltersInSession())
             // @phpstan-ignore method.deprecated, method.childReturnType, argument.type
@@ -338,23 +359,7 @@ trait HasXotTable
         // @phpstan-ignore method.deprecated
         $sortColumn = $this->getDefaultTableSortColumn();
         // @phpstan-ignore method.deprecated
-=======
-            ->persistFiltersInSession($this->shouldPersistTableFiltersInSession())
-            ->recordActions($this->getTableActions())
-            ->toolbarActions($this->getTableBulkActions())
-            ->recordActionsPosition($this->getTableRecordActionsPosition())
-            ->emptyStateActions($this->getTableEmptyStateActions())
-            ->striped($this->isTableStriped())
-            // Mobile: sotto `sm` (640 px) ogni riga diventa una card con etichetta + valore per
-            // cella, ordinamento in un select e "seleziona tutti" nell'intestazione: niente scroll
-            // orizzontale. Da `sm` in su la tabella resta identica. Vedi
-            // Modules/UI/docs/stories/mobile-ux-pass.story.md
-            ->stackedOnMobile()
-            ->paginated($this->getTablePaginated());
-
-        // Configurazioni opzionali personalizzabili
-        $sortColumn = $this->getDefaultTableSortColumn();
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         $sortDirection = $this->getDefaultTableSortDirection();
         if ($sortColumn !== null && $sortDirection !== null) {
             $table = $table->defaultSort($sortColumn, $sortDirection);
@@ -379,10 +384,10 @@ trait HasXotTable
      *
      * @return array<string|int, Filter|TernaryFilter|BaseFilter>
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     public function getTableFilters(): array
     {
@@ -397,19 +402,19 @@ trait HasXotTable
      *
      * @return array<int|string, Action|ActionGroup>
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     public function getTableActions(): array
     {
         $actions = [];
         $resource = $this;
 <<<<<<< HEAD
-        /* @phpstan-ignore-next-line */
 =======
->>>>>>> laraxot/dev
+        /* @phpstan-ignore-next-line */
+>>>>>>> 77b1e2748 (first)
         // Ripristinato a method_exists() il 2026-09-11: un giro precedente
         // aveva ristretto questo controllo a `$this instanceof ListRecords`,
         // pensato per le pagine, ma XotBaseResourceTable::getTableActions()
@@ -425,33 +430,6 @@ trait HasXotTable
         if (method_exists($this, 'getResource')) {
             $resourceClass = $this->getResource();
 <<<<<<< HEAD
-            // @phpstan-ignore-next-line staticMethod.alreadyNarrowedType
-            Assert::string($resourceClass);
-            $resource = app($resourceClass);
-        }
-        // @phpstan-ignore-next-line staticMethod.alreadyNarrowedType
-        Assert::object($resource);
-
-        // @phpstan-ignore-next-line function.alreadyNarrowedType
-        if (method_exists($resource, 'canView')) {
-            $actions['view'] = ViewAction::make()
-                ->iconButton()
-                ->visible(static fn (Model $record): bool => (bool) $resource->canView($record));
-        }
-
-        // @phpstan-ignore-next-line function.alreadyNarrowedType
-        if (method_exists($resource, 'canEdit')) {
-            $actions['edit'] = EditAction::make()
-                ->iconButton()
-                ->visible(static fn (Model $record): bool => (bool) $resource->canEdit($record));
-        }
-
-        // @phpstan-ignore-next-line function.alreadyNarrowedType
-        if (method_exists($resource, 'canDelete')) {
-            $actions['delete'] = DeleteAction::make()
-                ->iconButton()
-                ->visible(static fn (Model $record): bool => (bool) $resource->canDelete($record));
-=======
             Assert::string($resourceClass);
             $resource = app($resourceClass);
         }
@@ -481,7 +459,34 @@ trait HasXotTable
             $actions['delete'] = DeleteAction::make()
                 ->iconButton()
                 ->visible(static fn (mixed $record): bool => $record instanceof Model && (bool) $resource->canDelete($record));
->>>>>>> laraxot/dev
+=======
+            // @phpstan-ignore-next-line staticMethod.alreadyNarrowedType
+            Assert::string($resourceClass);
+            $resource = app($resourceClass);
+        }
+        // @phpstan-ignore-next-line staticMethod.alreadyNarrowedType
+        Assert::object($resource);
+
+        // @phpstan-ignore-next-line function.alreadyNarrowedType
+        if (method_exists($resource, 'canView')) {
+            $actions['view'] = ViewAction::make()
+                ->iconButton()
+                ->visible(static fn (Model $record): bool => (bool) $resource->canView($record));
+        }
+
+        // @phpstan-ignore-next-line function.alreadyNarrowedType
+        if (method_exists($resource, 'canEdit')) {
+            $actions['edit'] = EditAction::make()
+                ->iconButton()
+                ->visible(static fn (Model $record): bool => (bool) $resource->canEdit($record));
+        }
+
+        // @phpstan-ignore-next-line function.alreadyNarrowedType
+        if (method_exists($resource, 'canDelete')) {
+            $actions['delete'] = DeleteAction::make()
+                ->iconButton()
+                ->visible(static fn (Model $record): bool => (bool) $resource->canDelete($record));
+>>>>>>> 77b1e2748 (first)
         }
 
         if ($this->shouldShowReplicateAction()) {
@@ -492,9 +497,9 @@ trait HasXotTable
         // Check if class has the getRelationship method
         // Note: In some contexts (ListRecords), getRelationship() may not exist
 <<<<<<< HEAD
-        // @phpstan-ignore-next-line function.alreadyNarrowedType (needed for contexts where method doesn't exist)
 =======
->>>>>>> laraxot/dev
+        // @phpstan-ignore-next-line function.alreadyNarrowedType (needed for contexts where method doesn't exist)
+>>>>>>> 77b1e2748 (first)
         if ($this->shouldShowDetachAction() && method_exists($this, 'getRelationship')) {
             $relationship = $this->getRelationship();
 
@@ -510,7 +515,6 @@ trait HasXotTable
 
     /**
 <<<<<<< HEAD
-=======
      * Azione di riga con `return_to`: dalla pagina view/edit si torna all'elenco sulla stessa riga
      * (`#record-N`, vedi IDColumn). L'URL di destinazione e' quello che Filament assegnerebbe
      * comunque; dove non ce n'e' uno (modale, widget) resta `null`.
@@ -568,7 +572,8 @@ trait HasXotTable
     }
 
     /**
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * Get table bulk actions.
      *
      * CRITICO: Deve essere public perché viene chiamato da Filament/Livewire dall'esterno.
@@ -577,10 +582,10 @@ trait HasXotTable
      *
      * @return array<int|string, BulkAction>
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     public function getTableBulkActions(): array
     {
@@ -621,9 +626,9 @@ trait HasXotTable
         }
 
 <<<<<<< HEAD
-        /* @phpstan-ignore-next-line function.alreadyNarrowedType */
 =======
->>>>>>> laraxot/dev
+        /* @phpstan-ignore-next-line function.alreadyNarrowedType */
+>>>>>>> 77b1e2748 (first)
         if (method_exists($this, 'getModel')) {
             $model = $this->getModel();
             Assert::string($model);
@@ -664,20 +669,20 @@ trait HasXotTable
      *
      * @return array<string, Column|ColumnGroup|LayoutComponent>
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     abstract protected function getTableColumns(): array;
 
     /**
      * Get table heading.
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     protected function getTableHeading(): ?string
     {
@@ -710,10 +715,10 @@ trait HasXotTable
      *
      * @return array<int|string, Action>
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     protected function getTableEmptyStateActions(): array
     {
@@ -726,10 +731,6 @@ trait HasXotTable
     }
 
 <<<<<<< HEAD
-    protected function shouldShowAttachAction(): bool
-    {
-        // @phpstan-ignore-next-line
-=======
     /**
      * La Resource le cui pagine dicono se il pulsante "Nuovo" porta da qualche parte.
      *
@@ -755,16 +756,20 @@ trait HasXotTable
 
     protected function shouldShowAttachAction(): bool
     {
->>>>>>> laraxot/dev
+=======
+    protected function shouldShowAttachAction(): bool
+    {
+        // @phpstan-ignore-next-line
+>>>>>>> 77b1e2748 (first)
         return method_exists($this, 'getRelationship');
     }
 
     protected function shouldShowDetachAction(): bool
     {
 <<<<<<< HEAD
-        // @phpstan-ignore-next-line
 =======
->>>>>>> laraxot/dev
+        // @phpstan-ignore-next-line
+>>>>>>> 77b1e2748 (first)
         return method_exists($this, 'getRelationship');
     }
 
@@ -787,18 +792,22 @@ trait HasXotTable
      * Get header actions.
      *
      * @return array<string, Action>
+<<<<<<< HEAD
      */
     protected function getHeaderActions(): array
     {
-<<<<<<< HEAD
-        return [
-            'create' => CreateAction::make()->icon('heroicon-o-plus'),
-        ];
-=======
         $create = CreateAction::make()->icon('heroicon-o-plus');
 
         return ['create' => $create];
->>>>>>> laraxot/dev
+=======
+     * @phpstan-return array<string, Action>
+     */
+    protected function getHeaderActions(): array
+    {
+        return [
+            'create' => CreateAction::make()->icon('heroicon-o-plus'),
+        ];
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -820,10 +829,10 @@ trait HasXotTable
     /**
      * Whether table rows are striped.
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     protected function isTableStriped(): bool
     {
@@ -833,10 +842,10 @@ trait HasXotTable
     /**
      * Whether table filters persist in session.
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     protected function shouldPersistTableFiltersInSession(): bool
     {
@@ -848,6 +857,10 @@ trait HasXotTable
      * Can return bool (true/false) or array of page sizes [10, 25, 50, 100].
      *
      * @return bool|array<int, int|string>
+<<<<<<< HEAD
+=======
+     * @phpstan-return bool|array<int, int|string>
+>>>>>>> 77b1e2748 (first)
      */
     protected function getTablePaginated(): bool|array
     {
@@ -857,10 +870,10 @@ trait HasXotTable
     /**
      * Get default table sort column.
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     protected function getDefaultTableSortColumn(): ?string
     {
@@ -879,10 +892,10 @@ trait HasXotTable
     /**
      * Get default table sort direction.
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     protected function getDefaultTableSortDirection(): ?string
     {
@@ -939,7 +952,12 @@ trait HasXotTable
     /**
      * Get searchable columns.
      *
+<<<<<<< HEAD
      * @return array<string>
+=======
+     * @return list<string>
+     * @phpstan-return list<string>
+>>>>>>> 77b1e2748 (first)
      */
     protected function getSearchableColumns(): array
     {
@@ -965,14 +983,14 @@ trait HasXotTable
         Assert::isInstanceOf($model, Model::class);
 
 <<<<<<< HEAD
-        return $model->getConnection()
-            ->getSchemaBuilder()
-            ->hasColumn($model->getTable(), $column);
-=======
         // Cache per connessione.tabella.colonna ora in ModelHasColumnAction, condivisa con i componenti
         // Filament che si nascondono dove la colonna manca.
         return app(ModelHasColumnAction::class)->execute($model, $column);
->>>>>>> laraxot/dev
+=======
+        return $model->getConnection()
+            ->getSchemaBuilder()
+            ->hasColumn($model->getTable(), $column);
+>>>>>>> 77b1e2748 (first)
     }
 
     /**

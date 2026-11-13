@@ -14,6 +14,13 @@ return [
             'icon' => 'logout',
             'label' => 'logout',
 <<<<<<< HEAD
+        ],
+        'profile' => [
+            'icon' => 'profile',
+        ],
+        'il-mio-profilo' => [
+            'icon' => 'il-mio-profilo',
+=======
             'tooltip' => 'logout',
         ],
         'profile' => [
@@ -25,14 +32,7 @@ return [
             'icon' => 'il-mio-profilo',
             'label' => 'il-mio-profilo',
             'tooltip' => 'il-mio-profilo',
-=======
-        ],
-        'profile' => [
-            'icon' => 'profile',
-        ],
-        'il-mio-profilo' => [
-            'icon' => 'il-mio-profilo',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
     'label' => 'Main Dashboard',

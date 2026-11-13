@@ -21,14 +21,14 @@ use Illuminate\Support\Str;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 // Remove if not used elsewhere implicitly
 <<<<<<< HEAD
-use Modules\Xot\Actions\Panel\ApplyMetatagToPanelAction;
-use Modules\Xot\Datas\XotData;
-=======
 use Modules\Xot\Actions\Filament\GetSidebarStateScriptAction;
 use Modules\Xot\Actions\Panel\ApplyMetatagToPanelAction;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Filament\AvatarProviders\InitialsAvatarProvider;
->>>>>>> laraxot/dev
+=======
+use Modules\Xot\Actions\Panel\ApplyMetatagToPanelAction;
+use Modules\Xot\Datas\XotData;
+>>>>>>> 77b1e2748 (first)
 use Webmozart\Assert\Assert;
 
 abstract class XotBasePanelProvider extends PanelProvider
@@ -62,7 +62,6 @@ abstract class XotBasePanelProvider extends PanelProvider
     protected bool $discoverModuleComponents = true;
 
 <<<<<<< HEAD
-=======
     /**
      * Sottocartella di `app/Filament` da cui scoprire i componenti.
      *
@@ -82,7 +81,8 @@ abstract class XotBasePanelProvider extends PanelProvider
      */
     protected bool $hasTenancy = false;
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     public function panel(Panel $panel): Panel
     {
         $moduleNamespace = $this->getModuleNamespace();
@@ -98,10 +98,10 @@ abstract class XotBasePanelProvider extends PanelProvider
             // ->emailVerification()
             // ->profile()
 <<<<<<< HEAD
-=======
             // avatar predefinito generato in locale: il provider di Filament carica ui-avatars.com a ogni pagina (DCP-139)
             ->defaultAvatarProvider(InitialsAvatarProvider::class)
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
             ->sidebarFullyCollapsibleOnDesktop();
 
         $panel = app(ApplyMetatagToPanelAction::class)->execute(panel: $panel);
@@ -112,11 +112,11 @@ abstract class XotBasePanelProvider extends PanelProvider
             ->readOnlyRelationManagersOnResourceViewPagesByDefault(false)
             ->navigation($this->navigation)
 <<<<<<< HEAD
+=======
             // ->tenant($teamClass)
             // ->tenant($teamClass,ownershipRelationship:'users')
             // ->tenant($teamClass)
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             ->id($this->panelId ?? $moduleLow.'::admin')
             ->path($this->panelPath ?? $moduleLow.'/admin')
             ->middleware([
@@ -158,27 +158,6 @@ abstract class XotBasePanelProvider extends PanelProvider
                     HTML,
                 scopes: Login::class,
 <<<<<<< HEAD
-            );
-
-        if ($this->discoverModuleComponents) {
-            $panel
-                ->discoverResources(
-                    base_path('Modules/'.$this->module.'/app/Filament/Resources'),
-                    sprintf('%s\\Filament\\Resources', $moduleNamespace),
-                )
-                ->discoverPages(
-                    base_path('Modules/'.$this->module.'/app/Filament/Pages'),
-                    sprintf('%s\\Filament\\Pages', $moduleNamespace),
-                )
-                ->discoverWidgets(
-                    base_path('Modules/'.$this->module.'/app/Filament/Widgets'),
-                    sprintf('%s\\Filament\\Widgets', $moduleNamespace),
-                )
-                ->discoverClusters(
-                    base_path('Modules/'.$this->module.'/app/Filament/Clusters'),
-                    sprintf('%s\\Filament\\Clusters', $moduleNamespace),
-                );
-=======
             )
             ->renderHook(
                 PanelsRenderHook::HEAD_END,
@@ -202,7 +181,28 @@ abstract class XotBasePanelProvider extends PanelProvider
                 ->discoverPages($path.'/Pages', $namespace.'\\Pages')
                 ->discoverWidgets($path.'/Widgets', $namespace.'\\Widgets')
                 ->discoverClusters($path.'/Clusters', $namespace.'\\Clusters');
->>>>>>> laraxot/dev
+=======
+            );
+
+        if ($this->discoverModuleComponents) {
+            $panel
+                ->discoverResources(
+                    base_path('Modules/'.$this->module.'/app/Filament/Resources'),
+                    sprintf('%s\\Filament\\Resources', $moduleNamespace),
+                )
+                ->discoverPages(
+                    base_path('Modules/'.$this->module.'/app/Filament/Pages'),
+                    sprintf('%s\\Filament\\Pages', $moduleNamespace),
+                )
+                ->discoverWidgets(
+                    base_path('Modules/'.$this->module.'/app/Filament/Widgets'),
+                    sprintf('%s\\Filament\\Widgets', $moduleNamespace),
+                )
+                ->discoverClusters(
+                    base_path('Modules/'.$this->module.'/app/Filament/Clusters'),
+                    sprintf('%s\\Filament\\Clusters', $moduleNamespace),
+                );
+>>>>>>> 77b1e2748 (first)
         }
 
         return $panel;

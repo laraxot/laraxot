@@ -28,16 +28,16 @@ return [
     'digits_between' => ':attribute deve avere tra :min e :max cifre.',
     'dimensions' => 'The :attribute has invalid image dimensions.',
 <<<<<<< HEAD
-    'distinct' => 'The :attribute field has a duplicate value.',
-    'email' => ':attribute deve essere un indirizzo email valido.',
-    'exists' => 'La selezione per :attribute non è valida.',
-    'file' => 'The :attribute must be a file.',
-=======
     'distinct' => ':attribute ha un valore duplicato.',
     'email' => ':attribute deve essere un indirizzo email valido.',
     'exists' => 'La selezione per :attribute non è valida.',
     'file' => ':attribute deve essere un file.',
->>>>>>> laraxot/dev
+=======
+    'distinct' => 'The :attribute field has a duplicate value.',
+    'email' => ':attribute deve essere un indirizzo email valido.',
+    'exists' => 'La selezione per :attribute non è valida.',
+    'file' => 'The :attribute must be a file.',
+>>>>>>> 77b1e2748 (first)
     'filled' => ':attribute è obbligatorio.',
     'image' => ':attribute deve essere un\'immagine.',
     'in' => 'La selezione per :attribute non è valida.',
@@ -53,9 +53,9 @@ return [
     ],
     'mimes' => ':attribute deve essere un file di questo formato: :values.',
 <<<<<<< HEAD
-=======
     'mimetypes' => ':attribute deve essere un file di questo tipo: :values.',
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     'min' => [
         'numeric' => ':attribute deve essere almeno :min.',
         'file' => ':attribute deve essere di almeno :min kilobytes.',
@@ -91,10 +91,10 @@ return [
     'timezone' => ':attribute deve essere un fuso orario valido.',
     'unique' => ':attribute è già stato utilizzato.',
 <<<<<<< HEAD
-=======
     // Senza :attribute: Livewire passa il nome interno del campo (`data.images.f…`), che non si traduce. Frase intera, nessuna chiave grezza.
     'uploaded' => 'Caricamento non riuscito: il file potrebbe essere troppo grande. Riprova con un file più piccolo.',
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     'url' => 'Il formato di :attribute non è valido.',
     'custom' => [
         'attribute-name' => [

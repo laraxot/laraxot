@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "xotbaseresource"
 type: note
@@ -12,7 +11,8 @@ discussions: []
 status: draft
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # XotBaseResource
 
 ## Panoramica
@@ -41,12 +41,6 @@ Questo significa che:
 
 ```php
 <<<<<<< HEAD
-<<<<<<< HEAD
-abstract public function getFormSchema(): array;
-=======
-abstract public function getFormSchema(): array;
->>>>>>> laraxot/dev
-=======
 abstract public function getFormSchema(): array;
 ---
 title: "xotbaseresource"
@@ -58,7 +52,13 @@ qmd: "xotbaseresource"
 issues: []
 discussions: []
 abstract public function getFormSchema(): array;
+=======
+<<<<<<< HEAD
+abstract public function getFormSchema(): array;
+=======
+abstract public function getFormSchema(): array;
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ```
 
 Questo metodo DEVE essere implementato nelle classi figlie e deve restituire un array di componenti del form.
@@ -93,16 +93,16 @@ class NotificationResource extends XotBaseResource
     protected static ?string $model = 'Modules\Notify\Models\Notification';
 
 <<<<<<< HEAD
+    public function getFormSchema(): array
+---
+    public function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public function getFormSchema(): array
----
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             Forms\Components\TextInput::make('title')

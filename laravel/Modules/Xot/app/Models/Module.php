@@ -10,9 +10,9 @@ use Illuminate\Support\Carbon;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Database\Factories\ModuleFactory;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Models\Traits\ModuleStatus;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Nwidart\Modules\Facades\Module as ModuleFacade;
 use Nwidart\Modules\Module as NModule;
 use Sushi\Sushi;
@@ -21,11 +21,11 @@ use function Safe\json_encode;
 
 /**
 <<<<<<< HEAD
-=======
  * Registry Sushi dei moduli nwidart: espone name/slug/status/path per Filament e query.
  * Non esiste un campo `alias` (nwidart alias → `slug` / `name`); i timestamp seguono BaseModel.
  *
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
  * @property int $id
  * @property string|null $name
  * @property string|null $slug
@@ -46,10 +46,10 @@ use function Safe\json_encode;
  * @property Carbon|null $installation_date
  * @property array<array-key, mixed>|null $update_history
 <<<<<<< HEAD
-=======
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
  *
  * @method static Builder<static>|Module newModelQuery()
  * @method static Builder<static>|Module newQuery()
@@ -63,10 +63,10 @@ use function Safe\json_encode;
  * @method static Builder<static>|Module wherePriority($value)
  * @method static Builder<static>|Module whereStatus($value)
 <<<<<<< HEAD
-=======
  * @method static Builder<static>|Module whereSlug($value)
  * @method static Builder<static>|Module whereEnabled($value)
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $deleter
@@ -79,9 +79,9 @@ use function Safe\json_encode;
 final class Module extends BaseModel
 {
 <<<<<<< HEAD
-=======
     use ModuleStatus;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     use Sushi;
 
     protected $fillable = [
@@ -116,9 +116,6 @@ final class Module extends BaseModel
     public function getRows(): array
     {
 <<<<<<< HEAD
-        $modules = ModuleFacade::all();
-        $modules = Arr::map($modules, function (NModule $module): array {
-=======
         $rows = [];
 
         foreach (ModuleFacade::all() as $module) {
@@ -126,7 +123,10 @@ final class Module extends BaseModel
                 continue;
             }
 
->>>>>>> laraxot/dev
+=======
+        $modules = ModuleFacade::all();
+        $modules = Arr::map($modules, function (NModule $module): array {
+>>>>>>> 77b1e2748 (first)
             $config = config('tenant::config');
             if (! is_array($config)) {
                 $config = [];
@@ -134,10 +134,10 @@ final class Module extends BaseModel
             $colors = Arr::get($config, 'colors', []);
 
 <<<<<<< HEAD
-            return [
-=======
             $rows[] = [
->>>>>>> laraxot/dev
+=======
+            return [
+>>>>>>> 77b1e2748 (first)
                 'name' => $module->getName(),
                 // 'alias' => $module->getAlias(),
                 'description' => $module->getDescription(),
@@ -148,13 +148,13 @@ final class Module extends BaseModel
                 'colors' => json_encode($colors),
             ];
 <<<<<<< HEAD
+        }
+=======
         });
 
         /** @var array<int, array<string, mixed>> $rows */
         $rows = array_values($modules);
-=======
-        }
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
         return $rows;
     }
@@ -173,6 +173,7 @@ final class Module extends BaseModel
         ];
     }
 <<<<<<< HEAD
+=======
 
     public function isEnabled(): bool
     {
@@ -191,6 +192,5 @@ final class Module extends BaseModel
     {
         return ! $this->isEnabled();
     }
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 }

@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Development Workflow in Laraxot"
 type: note
@@ -117,4 +115,6 @@ return [
 - Mantenere la documentazione aggiornata
 - Utilizzare il versionamento semantico
 - Implementare il logging appropriato
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

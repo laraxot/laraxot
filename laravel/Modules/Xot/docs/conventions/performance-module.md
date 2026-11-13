@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Convenzioni di Codifica del Modulo Performance"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, conventions]
 qmd: "Convenzioni di Codifica del Modulo Performance"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Convenzioni di Codifica del Modulo Performance
 
 ## Struttura delle Directory
@@ -89,20 +89,20 @@ class IndividualePesi extends XotBaseModel
     protected $connection = 'performance';
     protected $table = 'peso_performance_individuale';
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     protected $fillable = [
         'type',
         'lista_propro',
         // ...
     ];
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     protected $casts = [
         'type' => WorkerType::class,
         // ...
@@ -123,19 +123,19 @@ class IndividualePesiResource extends Resource
 {
     protected static ?string $model = IndividualePesi::class;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public static function getNavigationGroup(): ?string
     {
         return __('Performance');
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // ...
 }
 ```
@@ -152,10 +152,10 @@ class CalculatePerformanceScoreAction
 {
     use QueueableAction;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public function execute(IndividualePesi $pesi): float
     {
         // Implementazione
@@ -242,7 +242,7 @@ try {
     throw $e;
 }
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)

@@ -8,9 +8,9 @@ use Filament\Panel;
 use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Actions\File\AssetAction;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Filament\Pages\MainDashboard;
 
 class AdminPanelProvider extends XotBasePanelProvider
@@ -35,10 +35,6 @@ class AdminPanelProvider extends XotBasePanelProvider
         // con molte azioni su ArtisanCommandsManager, quelle in eccesso
         // escono dallo schermo invece di scendere su una riga successiva.
 <<<<<<< HEAD
-        FilamentAsset::register(
-            [
-                Css::make('xot-header-actions-wrap', asset('assets/xot/header-actions-wrap.css')),
-=======
         // Il CSS appartiene al modulo Xot: pubblicarlo tramite AssetAction
         // rende disponibile il file prima che Filament emetta l'URL.
         $headerActionsCss = app(AssetAction::class)->execute('xot::css/header-actions-wrap.css');
@@ -62,7 +58,11 @@ class AdminPanelProvider extends XotBasePanelProvider
                     'xot-record-anchor-highlight',
                     asset($recordAnchorCss),
                 ),
->>>>>>> laraxot/dev
+=======
+        FilamentAsset::register(
+            [
+                Css::make('xot-header-actions-wrap', asset('assets/xot/header-actions-wrap.css')),
+>>>>>>> 77b1e2748 (first)
             ],
             'xot::admin',
         );

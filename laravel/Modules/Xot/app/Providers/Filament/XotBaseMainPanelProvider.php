@@ -22,12 +22,12 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Modules\User\Filament\Pages\MyProfilePage;
 use Modules\Xot\Actions\Filament\GetModulesNavigationItems;
 <<<<<<< HEAD
-use Modules\Xot\Actions\Panel\ApplyMetatagToPanelAction;
-=======
 use Modules\Xot\Actions\Filament\GetSidebarStateScriptAction;
 use Modules\Xot\Actions\Panel\ApplyMetatagToPanelAction;
 use Modules\Xot\Filament\AvatarProviders\InitialsAvatarProvider;
->>>>>>> laraxot/dev
+=======
+use Modules\Xot\Actions\Panel\ApplyMetatagToPanelAction;
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Filament\Pages\MainDashboard;
 
 abstract class XotBaseMainPanelProvider extends PanelProvider
@@ -52,10 +52,10 @@ abstract class XotBaseMainPanelProvider extends PanelProvider
         $panel = $panel
             ->passwordReset()
 <<<<<<< HEAD
-=======
             // avatar predefinito generato in locale: il provider di Filament carica ui-avatars.com a ogni pagina (DCP-139)
             ->defaultAvatarProvider(InitialsAvatarProvider::class)
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
             ->sidebarFullyCollapsibleOnDesktop()
             ->spa()
             ->profile(null, true);
@@ -128,9 +128,6 @@ abstract class XotBaseMainPanelProvider extends PanelProvider
                     HTML,
                 scopes: Login::class,
 <<<<<<< HEAD
-            );
-        $navs = app(GetModulesNavigationItems::class)->execute();
-=======
             )
             ->renderHook(
                 PanelsRenderHook::HEAD_END,
@@ -151,7 +148,10 @@ abstract class XotBaseMainPanelProvider extends PanelProvider
             // ...
         ];
          */
->>>>>>> laraxot/dev
+=======
+            );
+        $navs = app(GetModulesNavigationItems::class)->execute();
+>>>>>>> 77b1e2748 (first)
         $panel->navigationItems($navs);
 
         // Temporaneamente disabilitato per debug tenancy

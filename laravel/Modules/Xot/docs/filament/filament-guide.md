@@ -1,12 +1,5 @@
 ---
 <<<<<<< HEAD
-module: theme
-topic: filament-guide
-canonical: ../../../../Themes/docs/shared-components/filament-guide.md
----
-
-See canonical documentation: ../../../../Themes/docs/shared-components/filament-guide.md
-=======
 title: "Guida a Filament"
 type: note
 created: 2026-09-24
@@ -36,4 +29,11 @@ superseded_by: ../filament-guide.md
 - [Filament Widgets](https://filamentphp.com/docs/3.x/widgets/installation)
 - [Filament Actions](https://filamentphp.com/docs/3.x/actions/installation)
 - [Filament Resources](https://filamentphp.com/docs/3.x/resources/installation) 
->>>>>>> laraxot/dev
+=======
+module: theme
+topic: filament-guide
+canonical: ../../../../Themes/docs/shared-components/filament-guide.md
+---
+
+See canonical documentation: ../../../../Themes/docs/shared-components/filament-guide.md
+>>>>>>> 77b1e2748 (first)

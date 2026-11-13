@@ -5,6 +5,9 @@ declare(strict_types=1);
 return [
     'fields' => [
 <<<<<<< HEAD
+        'value' => [
+            'helper_text' => '',
+=======
         'key' => [
             'label' => 'key',
             'placeholder' => 'key',
@@ -22,10 +25,7 @@ return [
             'placeholder' => 'value',
             'helper_text' => '',
             'description' => 'value',
-=======
-        'value' => [
-            'helper_text' => '',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
 ];

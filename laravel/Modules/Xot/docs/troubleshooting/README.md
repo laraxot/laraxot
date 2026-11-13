@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Troubleshooting Guide"
 type: index
@@ -8,7 +7,8 @@ updated: 2026-10-20
 tags: [docs, xot, troubleshooting]
 qmd: "troubleshooting guide xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Troubleshooting Guide
 
 ## Common Issues

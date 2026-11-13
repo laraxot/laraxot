@@ -11,10 +11,10 @@ return [
             'description' => 'Gestione delle sessioni utente e sicurezza',
         ],
 <<<<<<< HEAD
-        'label' => 'session',
-=======
         'label' => 'Session',
->>>>>>> laraxot/dev
+=======
+        'label' => 'session',
+>>>>>>> 77b1e2748 (first)
         'sort' => '18',
         'icon' => 'xot-session',
     ],

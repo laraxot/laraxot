@@ -126,10 +126,10 @@ class XotData extends Data implements Wireable
     {
         $user_class = $this->getUserClass();
 <<<<<<< HEAD
-        $userInstance = new $user_class;
-=======
         $userInstance = new $user_class();
->>>>>>> laraxot/dev
+=======
+        $userInstance = new $user_class;
+>>>>>>> 77b1e2748 (first)
         if (! in_array('email', $userInstance->getFillable(), true)) {
             throw new \Exception("Attribute 'email' not found in model ".$userInstance::class);
         }
@@ -347,10 +347,10 @@ class XotData extends Data implements Wireable
     public function save(): void
     {
 <<<<<<< HEAD
-        dddx('wip');
-=======
         throw new \LogicException('XotData::save() not implemented');
->>>>>>> laraxot/dev
+=======
+        dddx('wip');
+>>>>>>> 77b1e2748 (first)
     }
 
     public function getPubThemeViewPath(string $key = ''): string
@@ -375,10 +375,6 @@ class XotData extends Data implements Wireable
     }
 
 <<<<<<< HEAD
-    public function getMailHtmlLayoutPath(string $key = ''): string
-    {
-        return base_path('Themes/'.$this->pub_theme.'/resources/mail-layouts/'.$key);
-=======
     /**
 <<<<<<< .merge_file_GruKBe
      * Layout HTML delle e-mail: prima quelli del tema pubblico, poi quelli del modulo Notify.
@@ -409,7 +405,11 @@ class XotData extends Data implements Wireable
 
         return is_file($notifyPath) ? $notifyPath : $themePath;
 >>>>>>> .merge_file_hDNmRA
->>>>>>> laraxot/dev
+=======
+    public function getMailHtmlLayoutPath(string $key = ''): string
+    {
+        return base_path('Themes/'.$this->pub_theme.'/resources/mail-layouts/'.$key);
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -539,7 +539,6 @@ class XotData extends Data implements Wireable
             return false;
         }
 <<<<<<< HEAD
-=======
         // IP privato/riservato (LAN, 192.168.x.x, 10.x, 172.16-31.x): niente TLS reale
         // dietro `php artisan serve` — forzare https romperebbe tutti gli asset.
         $serverName = $_SERVER['SERVER_NAME'] ?? null;
@@ -550,7 +549,8 @@ class XotData extends Data implements Wireable
         ) {
             return false;
         }
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
         // AWS ELB
         if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
             return true;

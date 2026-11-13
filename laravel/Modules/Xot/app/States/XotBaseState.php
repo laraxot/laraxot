@@ -19,7 +19,32 @@ use Modules\Xot\Filament\Traits\TransTrait;
  * Defines the state machine configuration and required methods
  * that must be implemented by each concrete state class.
  *
+<<<<<<< HEAD
  * @property string $name Il nome dello stato
+=======
+<<<<<<< .merge_file_27fnXR
+ * @property string $name Il nome dello stato
+=======
+ * <<<<<<< HEAD
+ *
+ * @property string $name  Il nome dello stato
+ *                         =======
+ *                         <<<<<<< HEAD
+ * @property string $name  Il nome dello stato
+ *                         =======
+ *                         <<<<<<< HEAD
+ *                         <<<<<<< HEAD
+ * @property string $name  Il nome dello stato
+ *                         =======
+ * @property string $name  Il nome dello stato
+ *                         >>>>>>> laraxot/dev
+ *                         =======
+ * @property string $name  Il nome dello stato
+ *                         >>>>>>> laraxot/dev
+ *                         >>>>>>> laraxot/dev
+ *                         >>>>>>> laraxot/dev
+>>>>>>> .merge_file_LHDU0U
+>>>>>>> 77b1e2748 (first)
  * @property string $value Il valore dello stato nel database
  */
 abstract class XotBaseState implements StateContract
@@ -88,8 +113,43 @@ abstract class XotBaseState implements StateContract
     /**
      * Fill form data for modal.
      *
+<<<<<<< HEAD
      * @param  array<string, mixed>  $arguments
      * @param  array<string, mixed>  $data
+=======
+<<<<<<< .merge_file_27fnXR
+     * @param  array<string, mixed>  $arguments
+     * @param  array<string, mixed>  $data
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     *                                        <<<<<<< HEAD
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * =======
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        >>>>>>> laraxot/dev
+     *                                        >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_LHDU0U
+>>>>>>> 77b1e2748 (first)
      * @return array<string, mixed>
      */
     public function modalFillForm(array $arguments, array $data): array
@@ -110,8 +170,39 @@ abstract class XotBaseState implements StateContract
     /**
      * Execute modal action.
      *
+<<<<<<< HEAD
      * @param  array<string, mixed>  $arguments
      * @param  array<string, mixed>  $data
+=======
+<<<<<<< .merge_file_27fnXR
+     * @param  array<string, mixed>  $arguments
+     * @param  array<string, mixed>  $data
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     *                                        <<<<<<< HEAD
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        >>>>>>> laraxot/dev
+     *                                        =======
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        >>>>>>> laraxot/dev
+     *                                        >>>>>>> laraxot/dev
+     *                                        >>>>>>> laraxot/dev
+>>>>>>> .merge_file_LHDU0U
+>>>>>>> 77b1e2748 (first)
      */
     public function modalAction(array $arguments, array $data): void
     {
@@ -121,12 +212,44 @@ abstract class XotBaseState implements StateContract
     /**
      * Process state action.
      *
+<<<<<<< HEAD
      * @param  array<string, mixed>  $arguments
      * @param  array<string, mixed>  $data
      */
     public function processStateAction(array $arguments, array $data): void
     {
-<<<<<<< HEAD
+=======
+<<<<<<< .merge_file_27fnXR
+     * @param  array<string, mixed>  $arguments
+     * @param  array<string, mixed>  $data
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     *                                        <<<<<<< HEAD
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        >>>>>>> laraxot/dev
+     *                                        =======
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        >>>>>>> laraxot/dev
+     *                                        >>>>>>> laraxot/dev
+     *                                        >>>>>>> laraxot/dev
+>>>>>>> .merge_file_LHDU0U
+     */
+    public function processStateAction(array $arguments, array $data): void
+    {
         $message = Arr::get($data, 'message');
         $stateClass = static::class;
         /*
@@ -136,8 +259,7 @@ abstract class XotBaseState implements StateContract
          *
          * $appointment?->state->transitionTo($stateClass,$message);
          */
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         // Fallback safe-mode when model-states package is not available.
         // Transition by generic arguments is intentionally a no-op.
     }
@@ -145,7 +267,32 @@ abstract class XotBaseState implements StateContract
     /**
      * Execute modal action by record.
      *
+<<<<<<< HEAD
      * @param  array<string, mixed>  $data
+=======
+<<<<<<< .merge_file_27fnXR
+     * @param  array<string, mixed>  $data
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<string, mixed> $data
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     * @param array<string, mixed> $data
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   <<<<<<< HEAD
+     * @param array<string, mixed> $data
+     *                                   =======
+     * @param array<string, mixed> $data
+     *                                   >>>>>>> laraxot/dev
+     *                                   =======
+     * @param array<string, mixed> $data
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> laraxot/dev
+>>>>>>> .merge_file_LHDU0U
+>>>>>>> 77b1e2748 (first)
      */
     public function modalActionByRecord(Model $record, array $data): void
     {
@@ -155,7 +302,32 @@ abstract class XotBaseState implements StateContract
     /**
      * Process state action by record.
      *
+<<<<<<< HEAD
      * @param  array<string, mixed>  $data
+=======
+<<<<<<< .merge_file_27fnXR
+     * @param  array<string, mixed>  $data
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<string, mixed> $data
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     * @param array<string, mixed> $data
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   <<<<<<< HEAD
+     * @param array<string, mixed> $data
+     *                                   =======
+     * @param array<string, mixed> $data
+     *                                   >>>>>>> laraxot/dev
+     *                                   =======
+     * @param array<string, mixed> $data
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> laraxot/dev
+>>>>>>> .merge_file_LHDU0U
+>>>>>>> 77b1e2748 (first)
      */
     public function processStateActionByRecord(Model $record, array $data): void
     {

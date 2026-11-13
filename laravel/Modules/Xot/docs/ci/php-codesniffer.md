@@ -1,12 +1,5 @@
 ---
 <<<<<<< HEAD
-module: theme
-topic: php-codesniffer
-canonical: ../../../../Themes/docs/shared-components/php-codesniffer-2.md
----
-
-See canonical documentation: ../../../../Themes/docs/shared-components/php-codesniffer-2.md
-=======
 title: "php codesniffer"
 type: note
 status: unverified
@@ -17,4 +10,11 @@ tags: [xot, ci]
 qmd: "php codesniffer"
 ---
 [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
->>>>>>> laraxot/dev
+=======
+module: theme
+topic: php-codesniffer
+canonical: ../../../../Themes/docs/shared-components/php-codesniffer-2.md
+---
+
+See canonical documentation: ../../../../Themes/docs/shared-components/php-codesniffer-2.md
+>>>>>>> 77b1e2748 (first)

@@ -1,12 +1,12 @@
 ---
 <<<<<<< HEAD
-=======
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
 issues: []
 discussions: []
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 title: "Rimuovere l'artefatto .git-rewrite/t/ (leftover filter-branch)"
 type: story
 module: Xot
@@ -26,18 +26,18 @@ vuoto, `git log --all -- .git-rewrite` vuoto): non e' storia git, e' la
 directory di lavoro temporanea che `git filter-branch` crea (`t/` = checkout
 di lavoro, `map/` = mapping vecchi->nuovi commit) e normalmente cancella da
 <<<<<<< HEAD
-sola a fine run. Qui e' rimasta sul disco — la run e' stata interrotta o e'
-crashata prima della pulizia automatica.
-
-`.git-rewrite/t/` mirror l'intero albero del modulo (`app/`, `docs/`, `tests/`,
-`config/`, `lang/`, `routes/`, ecc. — non solo `docs/`, correzione rispetto
-=======
 sola a fine run. Qui e' rimasta sul disco: la run e' stata interrotta o e'
 crashata prima della pulizia automatica.
 
 `.git-rewrite/t/` mirror l'intero albero del modulo (`app/`, `docs/`, `tests/`,
 `config/`, `lang/`, `routes/`, ecc.: non solo `docs/`, correzione rispetto
->>>>>>> laraxot/dev
+=======
+sola a fine run. Qui e' rimasta sul disco — la run e' stata interrotta o e'
+crashata prima della pulizia automatica.
+
+`.git-rewrite/t/` mirror l'intero albero del modulo (`app/`, `docs/`, `tests/`,
+`config/`, `lang/`, `routes/`, ecc. — non solo `docs/`, correzione rispetto
+>>>>>>> 77b1e2748 (first)
 alla nota precedente che la descriveva come mirror di `docs/` soltanto).
 
 ## Verifica gia' fatta (questa sessione)
@@ -47,35 +47,35 @@ alla nota precedente che la descriveva come mirror di `docs/` soltanto).
   (nessuna storia, mai committato)
 - `git -C laravel/Modules/Xot status --short .git-rewrite` → vuoto (non e'
 <<<<<<< HEAD
-  nemmeno untracked secondo git — probabilmente coperto da `.gitignore`,
-=======
   nemmeno untracked secondo git: probabilmente coperto da `.gitignore`,
->>>>>>> laraxot/dev
+=======
+  nemmeno untracked secondo git — probabilmente coperto da `.gitignore`,
+>>>>>>> 77b1e2748 (first)
   o il working tree e' fuori dal path che git status esamina di default;
   da confermare con `git status --short --ignored .git-rewrite`)
 
 Per la memoria progetto "verificare prima di cancellare una copia"
 (28% dei presunti duplicati in questo repo erano l'unica copia buona):
 <<<<<<< HEAD
-qui il criterio e' diverso e piu' forte — non e' un duplicato di contenuto,
-=======
 qui il criterio e' diverso e piu' forte: non e' un duplicato di contenuto,
->>>>>>> laraxot/dev
+=======
+qui il criterio e' diverso e piu' forte — non e' un duplicato di contenuto,
+>>>>>>> 77b1e2748 (first)
 e' un artefatto di processo (git lo confermerebbe come storia se fosse reale).
 
 ## Task
 
 <<<<<<< HEAD
-- [ ] `git status --short --ignored laravel/Modules/Xot/.git-rewrite` — confermare
-      se e' gia' in `.gitignore` (in tal caso aggiungere la regola se manca,
-      cosi' non ricapita) o del tutto invisibile a git
-- [ ] `du -sh laravel/Modules/Xot/.git-rewrite` — dimensione, per capire impatto
-=======
 - [ ] `git status --short --ignored laravel/Modules/Xot/.git-rewrite`: confermare
       se e' gia' in `.gitignore` (in tal caso aggiungere la regola se manca,
       cosi' non ricapita) o del tutto invisibile a git
 - [ ] `du -sh laravel/Modules/Xot/.git-rewrite`: dimensione, per capire impatto
->>>>>>> laraxot/dev
+=======
+- [ ] `git status --short --ignored laravel/Modules/Xot/.git-rewrite` — confermare
+      se e' gia' in `.gitignore` (in tal caso aggiungere la regola se manca,
+      cosi' non ricapita) o del tutto invisibile a git
+- [ ] `du -sh laravel/Modules/Xot/.git-rewrite` — dimensione, per capire impatto
+>>>>>>> 77b1e2748 (first)
       di un `rm -rf` (operazione distruttiva locale, non su dati applicativi:
       non ricade sotto la regola "dati sacri", ma resta un `rm -rf` da fare con
       conferma esplicita)

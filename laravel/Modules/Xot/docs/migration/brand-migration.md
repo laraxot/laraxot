@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Migrazione al Nuovo Sistema Brand"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, migration]
 qmd: "migrazione al nuovo sistema brand xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 
 # Migrazione al Nuovo Sistema Brand
 

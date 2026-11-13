@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "serviceprovider best practices"
 type: note
@@ -10,4 +8,6 @@ tags: [docs, xot]
 qmd: "serviceprovider best practices xot"
 ---
  
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

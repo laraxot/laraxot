@@ -5,11 +5,11 @@ declare(strict_types=1);
 return [
     'actions' => [
 <<<<<<< HEAD
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-=======
         'save' => [
             'icon' => 'save',
         ],
->>>>>>> laraxot/dev
+=======
+        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
+>>>>>>> 77b1e2748 (first)
     ],
 ];

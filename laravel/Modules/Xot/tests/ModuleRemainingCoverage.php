@@ -224,10 +224,10 @@ final class ModuleRemainingCoverage
 
         if (! is_dir($appRoot)) {
 <<<<<<< HEAD
+=======
             Assert::assertSame(0, $executed);
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             return;
         }
 
@@ -1094,10 +1094,10 @@ final class ModuleRemainingCoverage
 
     /**
 <<<<<<< HEAD
-     * @return array<string, mixed>
-=======
      * @return array<string, int|string>
->>>>>>> laraxot/dev
+=======
+     * @return array<string, mixed>
+>>>>>>> 77b1e2748 (first)
      */
     private static function defaultModelAttributes(): array
     {

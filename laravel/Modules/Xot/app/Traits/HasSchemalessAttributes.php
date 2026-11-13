@@ -19,11 +19,6 @@ use function Safe\json_encode;
  *
  * @see https://github.com/spatie/laravel-schemaless-attributes
 <<<<<<< HEAD
- *
- * @phpstan-ignore trait.unused
- */
-trait HasSchemalessAttributes
-=======
 <<<<<<< .merge_file_nnfyhd
 =======
  *
@@ -31,7 +26,12 @@ trait HasSchemalessAttributes
  * @phpstan-ignore trait.unused
  */
 trait HasSchemalessAttributes // @phpstan-ignore trait.unused
->>>>>>> laraxot/dev
+=======
+ *
+ * @phpstan-ignore trait.unused
+ */
+trait HasSchemalessAttributes
+>>>>>>> 77b1e2748 (first)
 {
     /**
      * Aggiunge extra_attributes al fillable.
@@ -115,10 +115,10 @@ trait HasSchemalessAttributes // @phpstan-ignore trait.unused
      * @return mixed Valore schemaless (scalar|array|null nel dominio JSON)
      */
 <<<<<<< HEAD
-    public function getExtraAttribute(string $key, mixed $default = null): mixed
-=======
     public function getExtraValue(string $key, mixed $default = null): mixed
->>>>>>> laraxot/dev
+=======
+    public function getExtraAttribute(string $key, mixed $default = null): mixed
+>>>>>>> 77b1e2748 (first)
     {
         return $this->extraAttributesWrapper()->get($key, $default);
     }
@@ -129,10 +129,10 @@ trait HasSchemalessAttributes // @phpstan-ignore trait.unused
      * @param  scalar|array<array-key, mixed>|null  $value  Valore JSON-serializzabile
      */
 <<<<<<< HEAD
-    public function setExtraAttribute(string $key, mixed $value): void
-=======
     public function setExtraValue(string $key, mixed $value): void
->>>>>>> laraxot/dev
+=======
+    public function setExtraAttribute(string $key, mixed $value): void
+>>>>>>> 77b1e2748 (first)
     {
         $this->extraAttributesWrapper()->set($key, $value);
         $this->syncExtraAttributesWrapper();

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Testing Best Practices - Modules/Xot"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "testing best practices - modules/xot xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Testing Best Practices - Modules/Xot
 
 This document outlines best practices for writing and maintaining Pest tests under the Xot module, specifically addressing static analysis type safety.

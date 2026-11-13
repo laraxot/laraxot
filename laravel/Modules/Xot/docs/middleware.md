@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Middleware"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Middleware"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Middleware
 
 ## Configurazione Base
@@ -206,10 +206,10 @@ try {
         'error' => $e->getMessage(),
     ]);
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     return response()->json([
         'message' => 'Errore interno del server',
     ], 500);
@@ -294,7 +294,7 @@ class Cors
     }
 }
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)

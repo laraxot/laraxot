@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "xot module code and documentation optimization analysis"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "xot module code and documentation optimization analysis"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # xot module code and documentation optimization analysis
 
 ## comprehensive analysis
@@ -184,4 +184,4 @@ app/
 this comprehensive optimization will transform xot from a complex, hard-to-maintain module into a streamlined, efficient component following modern software architecture principles.
 =======
 this comprehensive optimization will transform xot from a complex, hard-to-maintain module into a streamlined, efficient component following modern software architecture principles.
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-# BMAD Story — Fix Merge Conflicts in All Modules
-=======
 ---
 title: "fix merge conflicts"
 type: note
@@ -13,7 +11,9 @@ discussions: []
 ---
 
 # BMAD Story: Fix Merge Conflicts in All Modules
->>>>>>> laraxot/dev
+=======
+# BMAD Story — Fix Merge Conflicts in All Modules
+>>>>>>> 77b1e2748 (first)
 
 ## Understand
 - **Problem**: 890 PHP files across all modules contain unresolved git merge conflict markers (`<<<<<<< HEAD`, `=======`, `>>>>>>> laraxot/dev`) causing syntax errors and preventing PHPStan analysis

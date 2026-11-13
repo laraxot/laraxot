@@ -39,8 +39,39 @@ class ViewCopyAction extends XotBaseAction
     }
 
     /**
+<<<<<<< HEAD
      * @param  array<string, mixed>  $arguments
      * @param  array<string, mixed>  $data
+=======
+<<<<<<< .merge_file_o26QPR
+     * @param  array<string, mixed>  $arguments
+     * @param  array<string, mixed>  $data
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     *                                        <<<<<<< HEAD
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        =======
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        >>>>>>> laraxot/dev
+     *                                        =======
+     * @param array<string, mixed> $arguments
+     * @param array<string, mixed> $data
+     *                                        >>>>>>> laraxot/dev
+     *                                        >>>>>>> laraxot/dev
+     *                                        >>>>>>> laraxot/dev
+>>>>>>> .merge_file_PmxrqW
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(array $arguments, array $data): void
     {

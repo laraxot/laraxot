@@ -5,6 +5,27 @@ declare(strict_types=1);
 return [
     'fields' => [
 <<<<<<< HEAD
+        'user' => [
+            'name' => [
+                'label' => 'user.name',
+            ],
+        ],
+        'owner' => [
+            'name' => [
+                'label' => 'owner.name',
+            ],
+        ],
+        'creator' => [
+            'name' => [
+                'label' => 'creator.name',
+            ],
+        ],
+        'updater' => [
+            'name' => [
+                'label' => 'updater.name',
+            ],
+        ],
+=======
         'id' => ['label' => 'id'],
         'name' => ['label' => 'name'],
         'title' => ['label' => 'title'],
@@ -34,27 +55,6 @@ return [
             'name' => ['label' => 'updater.name'],
         ],
         'name_count' => ['label' => 'name_count'],
-=======
-        'user' => [
-            'name' => [
-                'label' => 'user.name',
-            ],
-        ],
-        'owner' => [
-            'name' => [
-                'label' => 'owner.name',
-            ],
-        ],
-        'creator' => [
-            'name' => [
-                'label' => 'creator.name',
-            ],
-        ],
-        'updater' => [
-            'name' => [
-                'label' => 'updater.name',
-            ],
-        ],
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     ],
 ];

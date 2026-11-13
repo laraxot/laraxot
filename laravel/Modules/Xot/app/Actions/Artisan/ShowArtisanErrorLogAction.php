@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Modules\Xot\Actions\Artisan;
 
 <<<<<<< HEAD
-=======
 use Illuminate\Support\Str;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\File;
@@ -26,9 +26,9 @@ class ShowArtisanErrorLogAction
     public function execute(): Renderable
     {
 <<<<<<< HEAD
-        /** @var view-string $view */
 =======
->>>>>>> laraxot/dev
+        /** @var view-string $view */
+>>>>>>> 77b1e2748 (first)
         $view = 'xot::acts.artisan.error-show';
         $files = File::files(storage_path('logs'));
         $log = request('log', '');
@@ -37,16 +37,6 @@ class ShowArtisanErrorLogAction
         }
         $content = '';
 <<<<<<< HEAD
-        if ($log !== '' && File::exists(storage_path('logs/'.$log))) {
-            $content = File::get(storage_path('logs/'.$log));
-        }
-
-        $pattern = '/url":"([^"]*)"/';
-        $matches = [];
-        preg_match_all($pattern, $content, $matches);
-
-        $urls = array_values(array_unique($matches[1]));
-=======
         // basename(): `log` arriva dalla query string, niente path traversal fuori da storage/logs.
         $logPath = storage_path('logs/'.basename($log));
         if ($log !== '' && File::isFile($logPath)) {
@@ -56,7 +46,17 @@ class ShowArtisanErrorLogAction
         $pattern = '/url":"([^"]*)"/';
         // Str::matchAll restituisce il primo gruppo di ogni occorrenza (lista vuota se nessun match).
         $urls = Str::matchAll($pattern, $content)->unique()->values()->all();
->>>>>>> laraxot/dev
+=======
+        if ($log !== '' && File::exists(storage_path('logs/'.$log))) {
+            $content = File::get(storage_path('logs/'.$log));
+        }
+
+        $pattern = '/url":"([^"]*)"/';
+        $matches = [];
+        preg_match_all($pattern, $content, $matches);
+
+        $urls = array_values(array_unique($matches[1]));
+>>>>>>> 77b1e2748 (first)
         $view_params = [
             'view' => $view,
             'lang' => app()->getLocale(),
@@ -66,10 +66,10 @@ class ShowArtisanErrorLogAction
         ];
 
 <<<<<<< HEAD
-        $result = view($view, $view_params);
-=======
         $result = view('xot::acts.artisan.error-show', $view_params);
->>>>>>> laraxot/dev
+=======
+        $result = view($view, $view_params);
+>>>>>>> 77b1e2748 (first)
         Assert::isInstanceOf($result, View::class);
 
         return $result;

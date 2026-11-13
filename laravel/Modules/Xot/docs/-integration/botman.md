@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "botman"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "botman xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # botman
 
 <!-- Contenuto migrato da _docs/botman.txt -->

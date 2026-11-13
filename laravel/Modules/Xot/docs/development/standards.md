@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Standard di Sviluppo"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, development]
 qmd: "Standard di Sviluppo"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Standard di Sviluppo
 
 ## Best Practices Laravel

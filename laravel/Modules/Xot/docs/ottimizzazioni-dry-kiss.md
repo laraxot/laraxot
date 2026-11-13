@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Ottimizzazioni DRY + KISS - Modulo Xot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Ottimizzazioni DRY + KISS - Modulo Xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Ottimizzazioni DRY + KISS - Modulo Xot
 
 ## Analisi Problematiche Identificate
@@ -23,10 +23,10 @@ qmd: "Ottimizzazioni DRY + KISS - Modulo Xot"
 - architecture_best_practices.md + architecture-best-practices.md
 - best_practices.md + best-practices.md
 <<<<<<< HEAD
-- actions-pattern.md + actions-standardization.md
-=======
 - actions-pattern.md + actions-standardization.md  
->>>>>>> laraxot/dev
+=======
+- actions-pattern.md + actions-standardization.md
+>>>>>>> 77b1e2748 (first)
 - directory_structure_guide.md + directory-structure-guide.md
 - naming_conventions.md + naming-conventions.md
 - phpstan_fixes.md + phpstan-fixes-2025.md + phpstan-fixes-gennaio-2025.md
@@ -96,14 +96,6 @@ docs/
 ```bash
 # Merge intelligente di file duplicati
 <<<<<<< HEAD
-merge architecture_best_practices.md + architecture-best-practices.md
-  → architecture/best-practices.md
-
-merge actions-pattern.md + actions-standardization.md
-  → development/actions-guide.md
-
-merge tutti i phpstan_*.md
-=======
 merge architecture_best_practices.md + architecture-best-practices.md 
   → architecture/best-practices.md
 
@@ -111,7 +103,15 @@ merge actions-pattern.md + actions-standardization.md
   → development/actions-guide.md
 
 merge tutti i phpstan_*.md 
->>>>>>> laraxot/dev
+=======
+merge architecture_best_practices.md + architecture-best-practices.md
+  → architecture/best-practices.md
+
+merge actions-pattern.md + actions-standardization.md
+  → development/actions-guide.md
+
+merge tutti i phpstan_*.md
+>>>>>>> 77b1e2748 (first)
   → phpstan/guide.md (sezioni cronologiche)
 ```
 
@@ -135,10 +135,10 @@ mv *architecture* docs/architecture/
 Descrizione breve e chiara dello scopo.
 
 <<<<<<< HEAD
-## Quick Start
-=======
 ## Quick Start  
->>>>>>> laraxot/dev
+=======
+## Quick Start
+>>>>>>> 77b1e2748 (first)
 Passi essenziali per iniziare.
 
 ## Dettagli Implementazione
@@ -172,10 +172,10 @@ Codice pratico.
 - [Patterns](architecture/patterns.md)
 
 <<<<<<< HEAD
-### 💻 Sviluppo
-=======
 ### 💻 Sviluppo  
->>>>>>> laraxot/dev
+=======
+### 💻 Sviluppo
+>>>>>>> 77b1e2748 (first)
 - [Coding Standards](development/coding-standards.md)
 - [Testing](development/testing.md)
 - [Actions Guide](development/actions-guide.md)
@@ -218,10 +218,10 @@ DOPO:
 3. Merge file Migration → `database/migrations.md`
 
 <<<<<<< HEAD
-### Fase 2 - Riorganizzazione (2-3 giorni)
-=======
 ### Fase 2 - Riorganizzazione (2-3 giorni)  
->>>>>>> laraxot/dev
+=======
+### Fase 2 - Riorganizzazione (2-3 giorni)
+>>>>>>> 77b1e2748 (first)
 1. Creazione struttura cartelle
 2. Spostamento file per categoria
 3. Aggiornamento collegamenti interni

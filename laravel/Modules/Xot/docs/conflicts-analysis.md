@@ -1,7 +1,4 @@
 <<<<<<< HEAD
-# Analisi Conflitti - composer.json
-
-=======
 ---
 title: "Analisi Conflitti - composer.json"
 type: note
@@ -15,7 +12,10 @@ qmd: "Analisi Conflitti - composer.json"
 # Analisi Conflitti - composer.json
 
 
->>>>>>> laraxot/dev
+=======
+# Analisi Conflitti - composer.json
+
+>>>>>>> 77b1e2748 (first)
 ## Obiettivi Funzionali
 
 ## Decisioni Architetturali
@@ -23,8 +23,8 @@ qmd: "Analisi Conflitti - composer.json"
 ## Impatto
 
 <<<<<<< HEAD
-=======
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ## Collegamenti correlati
 - [[conflicts_overview]]

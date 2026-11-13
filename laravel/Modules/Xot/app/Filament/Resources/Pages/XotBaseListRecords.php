@@ -10,9 +10,9 @@ use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords as FilamentListRecords;
 use Illuminate\Support\Str;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Filament\Links\RecordAnchor;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use Webmozart\Assert\Assert;
 
@@ -35,7 +35,32 @@ use Webmozart\Assert\Assert;
 abstract class XotBaseListRecords extends FilamentListRecords
 {
     /**
+<<<<<<< HEAD
      * @param  array<string, bool|float|int|string|null>  $params
+=======
+<<<<<<< .merge_file_gfY0Nm
+     * @param  array<string, bool|float|int|string|null>  $params
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param array<string, bool|float|int|string|null> $params
+     *                                                          =======
+     *                                                          <<<<<<< HEAD
+     * @param array<string, bool|float|int|string|null> $params
+     *                                                          =======
+     *                                                          <<<<<<< HEAD
+     *                                                          <<<<<<< HEAD
+     * @param array<string, bool|float|int|string|null> $params
+     *                                                          =======
+     * @param array<string, bool|float|int|string|null> $params
+     *                                                          >>>>>>> laraxot/dev
+     *                                                          =======
+     * @param array<string, bool|float|int|string|null> $params
+     *                                                          >>>>>>> laraxot/dev
+     *                                                          >>>>>>> laraxot/dev
+     *                                                          >>>>>>> laraxot/dev
+>>>>>>> .merge_file_szMb4F
+>>>>>>> 77b1e2748 (first)
      */
     public static function trans(string $key, array $params = []): string
     {
@@ -67,13 +92,13 @@ abstract class XotBaseListRecords extends FilamentListRecords
     }
 
 <<<<<<< HEAD
-=======
     public static function getModuleName(): string
     {
         return Str::of(static::class)->between('Modules\\', '\Filament\\')->toString();
     }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     /**
      * Get the header actions.
      *
@@ -82,12 +107,6 @@ abstract class XotBaseListRecords extends FilamentListRecords
     protected function getHeaderActions(): array
     {
 <<<<<<< HEAD
-        return [
-            'create' => CreateAction::make()->icon('heroicon-o-plus'),
-        ];
-    }
-
-=======
         // Risorse senza pagina `create` (es. moderazione commenti): niente "Nuovo",
         // altrimenti `getUrl('create')` lancia RouteNotFound e l'elenco va in 500.
         if (! \array_key_exists('create', static::getResource()::getPages())) {
@@ -109,13 +128,18 @@ abstract class XotBaseListRecords extends FilamentListRecords
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
      */
->>>>>>> laraxot/dev
+=======
+        return [
+            'create' => CreateAction::make()->icon('heroicon-o-plus'),
+        ];
+    }
+
+>>>>>>> 77b1e2748 (first)
     public function getTableColumns(): array
     {
         return [];
     }
 <<<<<<< HEAD
-=======
 
     /**
      * DEVE ESSERE FINAL
@@ -146,5 +170,6 @@ abstract class XotBaseListRecords extends FilamentListRecords
     {
         return [];
     }
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 }

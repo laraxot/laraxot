@@ -1,7 +1,5 @@
 ---
 <<<<<<< HEAD
-title: "Decision log — Livewire → widget"
-=======
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-10-20
@@ -9,7 +7,9 @@ qmd: "livewire widget decision log"
 issues: []
 discussions: []
 title: "Decision log: Livewire → widget"
->>>>>>> laraxot/dev
+=======
+title: "Decision log — Livewire → widget"
+>>>>>>> 77b1e2748 (first)
 type: decision-log
 module: Xot
 status: active
@@ -18,17 +18,16 @@ related:
   - ./livewire-inventory.md
   - ./livewire-widget-advantages.md
 <<<<<<< HEAD
-=======
   - ./livewire-to-filament-widgets-brainstorming.md
   - ./livewire-to-filament-widgets-inventory.md
   - ./stories/livewire-to-filament-widgets-fleet.story.md
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 # Decision log
 
 <<<<<<< HEAD
-=======
 ## [2026-10-20] Blueprint di piattaforma e scope definitivo
 
 **Decision:** il piano operativo è consolidato in
@@ -48,7 +47,8 @@ dipendenza implementativa e non è un residuo da eliminare.
 verifica dei caller e ritiro. L'ordine casuale è ammesso soltanto dentro wave
 con ownership disgiunta; non si randomizzano dipendenze, gate o rollback.
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ## [2026-09-21] Religione in Xot, inventario nei foglia
 
 **Decision:** Xot possiede la legge (`XotBaseWidget`). Ogni modulo scrive il proprio `docs/bmad/livewire-inventory.md`. User resta il pilota identità (Epic 9–10).
@@ -70,8 +70,6 @@ sottoclassi di `XotBaseComponent` repo-wide; `_components.json` di Xot = `[]`; p
 deprecation di `RegisterLivewireComponentsAction` subordinato al ritiro degli
 `Http/Livewire` dei moduli foglia (rimozione chiamata da `XotBaseServiceProvider::boot()`
 <<<<<<< HEAD
-riga 44, non svuotamento directory — `GetComponentsAction.php:41-45` la ricreerebbe).
-=======
 riga 44, non svuotamento directory: `GetComponentsAction.php:41-45` la ricreerebbe).
 
 ## [2026-10-20] Piano fleet aggiornato
@@ -252,4 +250,6 @@ fenomeno dei file ritirati che tornano dal pull di `laraxot/dev`.
 **Next:** nessuna wave aperta; questa voce non autorizza edit PHP. Ordine
 aggiornato W1 stabilizzare, W2 ritiri a rischio basso, W3 auth, W4 Volt/Folio,
 W5 guardia: vedi la nota di verifica della story.
->>>>>>> laraxot/dev
+=======
+riga 44, non svuotamento directory — `GetComponentsAction.php:41-45` la ricreerebbe).
+>>>>>>> 77b1e2748 (first)

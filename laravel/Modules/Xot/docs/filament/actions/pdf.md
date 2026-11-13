@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: Filament Action PDF
 description: Azioni Filament per creare PDF
@@ -116,4 +114,6 @@ class PdfController extends Controller
     // ...
 }
  ```
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

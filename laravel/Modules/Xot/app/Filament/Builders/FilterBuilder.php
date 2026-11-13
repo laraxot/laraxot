@@ -89,10 +89,10 @@ class FilterBuilder
     {
         return Filter::make($column)
 <<<<<<< HEAD
-            ->schema([
-=======
             ->form([
->>>>>>> laraxot/dev
+=======
+            ->schema([
+>>>>>>> 77b1e2748 (first)
                 DatePicker::make('from')
                     ->label('From'),
                 DatePicker::make('until')

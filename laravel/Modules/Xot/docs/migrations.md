@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Migrazioni"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Migrazioni"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Migrazioni
 
 ## Configurazione Base
@@ -234,10 +234,10 @@ try {
         'error' => $e->getMessage(),
     ]);
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     throw $e;
 }
 ```
@@ -316,7 +316,7 @@ return new class extends Migration
     }
 };
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)

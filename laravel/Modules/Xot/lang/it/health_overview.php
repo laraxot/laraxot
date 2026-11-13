@@ -4,13 +4,6 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
-    'sections' => [
-        'empty' => [
-            'label' => 'empty',
-            'heading' => 'empty',
-        ],
-    ],
-=======
 <<<<<<< .merge_file_AFpPZR
 =======
 <<<<<<< .merge_file_gCPAV8
@@ -23,7 +16,14 @@ return [
 =======
 >>>>>>> .merge_file_ITDUXA
 >>>>>>> .merge_file_sA26uV
->>>>>>> laraxot/dev
+=======
+    'sections' => [
+        'empty' => [
+            'label' => 'empty',
+            'heading' => 'empty',
+        ],
+    ],
+>>>>>>> 77b1e2748 (first)
     'label' => 'Health Overview',
     'plural_label' => 'Health Overview (Plurale)',
     'navigation' => [

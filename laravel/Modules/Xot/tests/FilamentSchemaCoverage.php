@@ -88,9 +88,9 @@ final class FilamentSchemaCoverage
         foreach (array_keys($schema) as $chiave) {
             Assert::assertNotEmpty($chiave, "chiave numerica in {$context}");
 <<<<<<< HEAD
-            Assert::assertNotSame('', $chiave);
 =======
->>>>>>> laraxot/dev
+            Assert::assertNotSame('', $chiave);
+>>>>>>> 77b1e2748 (first)
         }
     }
 
@@ -109,10 +109,10 @@ final class FilamentSchemaCoverage
 
             try {
 <<<<<<< HEAD
-                # @phpstan-ignore-next-line
-=======
                 /* @phpstan-ignore-next-line */
->>>>>>> laraxot/dev
+=======
+                # @phpstan-ignore-next-line
+>>>>>>> 77b1e2748 (first)
                 $schema = $class::getFormSchema();
                 $executed++;
                 if ($schema === []) {

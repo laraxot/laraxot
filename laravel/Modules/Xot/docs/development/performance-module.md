@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Modulo Performance"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, development]
 qmd: "Modulo Performance"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Modulo Performance
 
 ## Overview
@@ -152,7 +152,7 @@ enum WorkerType: string
    - Mantenere aggiornata la documentazione
    - Documentare le modifiche al database
 <<<<<<< HEAD
-   - Documentare le API e i servizi
-=======
    - Documentare le API e i servizi 
->>>>>>> laraxot/dev
+=======
+   - Documentare le API e i servizi
+>>>>>>> 77b1e2748 (first)

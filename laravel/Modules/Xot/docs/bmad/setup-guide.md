@@ -1,7 +1,5 @@
 ---
 <<<<<<< HEAD
-title: "Xot — BMAD Setup Guide"
-=======
 type: note
 tags: [documentation]
 created: 2026-09-26
@@ -10,22 +8,24 @@ qmd: "setup guide"
 issues: []
 discussions: []
 title: "Xot: BMAD Setup Guide"
->>>>>>> laraxot/dev
+=======
+title: "Xot — BMAD Setup Guide"
+>>>>>>> 77b1e2748 (first)
 description: "Setup e configurazione BMAD per il modulo Xot"
 module: "Xot"
 alias: "xot"
 documentation_date: "2026-05-27"
 bmad_version: "6.2.0"
 <<<<<<< HEAD
----
-
-# Xot — BMAD Setup Guide
-=======
 status: draft
 ---
 
 # Xot: BMAD Setup Guide
->>>>>>> laraxot/dev
+=======
+---
+
+# Xot — BMAD Setup Guide
+>>>>>>> 77b1e2748 (first)
 
 ## Scopo
 
@@ -42,15 +42,6 @@ In questo modulo, BMAD serve a:
 ## Struttura Directory (Canonical)
 
 <<<<<<< HEAD
-- **`_bmad/`**: moduli/agent/skills + configurazione
-- **`_bmad-output/`**: artefatti generati (contesto, prd, architettura, ui spec, ecc.)
-- **`docs/bmad/`**: questa documentazione
-
-## Configurazione Lingua e Output
-
-- **`_bmad/config.yaml`**: lingua output documenti + cartella output
-- **`_bmad/config.user.yaml`**: preferenze utente (lingua comunicazione, nome)
-=======
 - **`docs/bmad/`**: questa documentazione
 - **`_bmad-output/`**: artefatti generati (repo root: `_bmad-output/implementation-artifacts/`)
 - **`_bmad/`**: framework BMAD esterno (non incluso nel repo; installato via BMAD CLI)
@@ -59,19 +50,28 @@ In questo modulo, BMAD serve a:
 
 - **`_bmad/config.yaml`**: lingua output documenti + cartella output (esterno al repo)
 - **`_bmad/config.user.yaml`**: preferenze utente (lingua comunicazione, nome) (esterno al repo)
->>>>>>> laraxot/dev
+=======
+- **`_bmad/`**: moduli/agent/skills + configurazione
+- **`_bmad-output/`**: artefatti generati (contesto, prd, architettura, ui spec, ecc.)
+- **`docs/bmad/`**: questa documentazione
+
+## Configurazione Lingua e Output
+
+- **`_bmad/config.yaml`**: lingua output documenti + cartella output
+- **`_bmad/config.user.yaml`**: preferenze utente (lingua comunicazione, nome)
+>>>>>>> 77b1e2748 (first)
 
 ## Verifica Minima ("Funziona")
 
 La verifica pratica è: gli artefatti vanno dove devono andare, e le skill risultano invocabili.
 
 <<<<<<< HEAD
-- **skills disponibili**: cartella `_bmad/` presente e popolata
-- **output**: la cartella `_bmad-output/` contiene almeno `project-context.md`
-=======
 - **skills disponibili**: BMAD CLI installato e configurato (`_bmad/` esterno al repo)
 - **output**: la cartella `_bmad-output/` (repo root) contiene `implementation-artifacts/`
->>>>>>> laraxot/dev
+=======
+- **skills disponibili**: cartella `_bmad/` presente e popolata
+- **output**: la cartella `_bmad-output/` contiene almeno `project-context.md`
+>>>>>>> 77b1e2748 (first)
 - **lingua**: le config utente/progetto non si resettano dopo update
 
 ## Check Post-Update (Anti-Regressione)
@@ -92,9 +92,9 @@ Dopo un update, ricontrollare che non si sia "spaccata" la coerenza tra moduli:
 
 - [quick-reference](quick-reference.md)
 <<<<<<< HEAD
-- [Project Context](../../_bmad-output/project-context.md)
 =======
->>>>>>> laraxot/dev
+- [Project Context](../../_bmad-output/project-context.md)
+>>>>>>> 77b1e2748 (first)
 
 ---
 

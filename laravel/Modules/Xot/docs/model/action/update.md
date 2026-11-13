@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: Updaet Action
 description: Update Model with Queuable Action
@@ -12,4 +10,6 @@ superseded_by: ../../consolidated/archive/update.md
 # Update Action {#update-action}
 
 This is an example Update action
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

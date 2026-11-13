@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Risoluzione Conflitto: XotBaseServiceProvider"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Risoluzione Conflitto: XotBaseServiceProvider"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Risoluzione Conflitto: XotBaseServiceProvider
 
 ## Contesto
@@ -40,17 +40,17 @@ Questa scelta garantisce:
 ## Collegamenti
 - [Struttura moduli Xot](./MODULE_NAMESPACE_RULES.md)
 <<<<<<< HEAD
-- [Best Practices Provider](best-practices.md)
-=======
 - [Best Practices Provider](./best-practices.md)
->>>>>>> laraxot/dev
+=======
+- [Best Practices Provider](best-practices.md)
+>>>>>>> 77b1e2748 (first)
 - [docs/links.md globale](../../../../docs/links.md)
 
 ## Backlink
 - [docs/links.md](../../../../docs/links.md)
 - [docs/MODULE_NAMESPACE_RULES.md](./MODULE_NAMESPACE_RULES.md)
 <<<<<<< HEAD
-- [docs/BEST-PRACTICES.md](best-practices.md)
-=======
 - [docs/BEST-PRACTICES.md](./best-practices.md)
->>>>>>> laraxot/dev
+=======
+- [docs/BEST-PRACTICES.md](best-practices.md)
+>>>>>>> 77b1e2748 (first)

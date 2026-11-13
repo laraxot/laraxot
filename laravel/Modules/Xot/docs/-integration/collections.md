@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "collections"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "collections xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # collections
 
 <!-- Contenuto migrato da _docs/collections.txt -->

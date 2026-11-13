@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "sail"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docker]
 qmd: "sail"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 Bind for 0.0.0.0:3306 failed: port is already allocated
 ------------------
 Error starting userland proxy: listen tcp4 0.0.0.0:80: bind: address already in use

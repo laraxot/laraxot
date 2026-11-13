@@ -5,13 +5,13 @@ declare(strict_types=1);
 return [
     'title' => 'Pannello di Amministrazione',
 <<<<<<< HEAD
-=======
     'back_to_main_panel' => 'Pannello principale',
     'sidebar_types' => [
         'admin' => 'Amministrazione',
         'customer' => 'Area clienti',
     ],
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     'description' => 'Gestione del pannello di amministrazione',
     'navigation' => [
         'dashboard' => 'Dashboard',

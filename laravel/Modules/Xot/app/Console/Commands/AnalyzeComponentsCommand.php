@@ -6,9 +6,9 @@ namespace Modules\Xot\Console\Commands;
 
 use Illuminate\Console\Command;
 <<<<<<< HEAD
-=======
 use Illuminate\Support\Str;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Actions\File\GetComponentsAction;
 use Modules\Xot\Datas\ComponentFileData;
 
@@ -50,17 +50,6 @@ class AnalyzeComponentsCommand extends Command
         $components = $getComponentsAction->execute($path, $namespace, $prefix, $force);
 
 <<<<<<< HEAD
-        $this->table(
-            ['Componente', 'Tipo', 'Modulo', 'Path'],
-            collect($components)->map(static function (ComponentFileData $component): array {
-                return [
-                    $component->name,
-                    $component->class,
-                    $component->module ?? 'N/A',
-                    $component->path ?? 'N/A',
-                ];
-            })
-=======
         $typeFilter = is_string($type) ? $type : '';
 
         $this->table(
@@ -76,7 +65,18 @@ class AnalyzeComponentsCommand extends Command
                         $component->path ?? 'N/A',
                     ];
                 })
->>>>>>> laraxot/dev
+=======
+        $this->table(
+            ['Componente', 'Tipo', 'Modulo', 'Path'],
+            collect($components)->map(static function (ComponentFileData $component): array {
+                return [
+                    $component->name,
+                    $component->class,
+                    $component->module ?? 'N/A',
+                    $component->path ?? 'N/A',
+                ];
+            })
+>>>>>>> 77b1e2748 (first)
         );
 
         return Command::SUCCESS;

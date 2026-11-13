@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "DatabaseSchemaExporter Command Documentation"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, console]
 qmd: "databaseschemaexporter command documentation xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # DatabaseSchemaExporter Command Documentation
 
 ## Overview

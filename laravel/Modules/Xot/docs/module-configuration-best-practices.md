@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Module Configuration Best Practices"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "module configuration best practices xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Module Configuration Best Practices
 
 ## 📋 Overview

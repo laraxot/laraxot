@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot Contracts and Interfaces Documentation"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Xot Contracts and Interfaces Documentation"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Xot Contracts and Interfaces Documentation
 
 **Last Updated**: 2025-01-23
@@ -59,10 +59,10 @@ interface UserContract extends
     // API Token Management
     public function tokens(): MorphMany;
 <<<<<<< HEAD
-    public function createToken($name, array $scopes = []): PersonalAccessTokenResult;
-=======
     public function createToken(string $name, array $scopes = []): Token;
->>>>>>> laraxot/dev
+=======
+    public function createToken($name, array $scopes = []): PersonalAccessTokenResult;
+>>>>>>> 77b1e2748 (first)
     public function token(): ?Token;
 
     // Device Management
@@ -81,6 +81,7 @@ interface UserContract extends
 ```
 
 <<<<<<< HEAD
+=======
 > **Update 17-11-2025**
 > La PHPDoc di `UserContract` è stata estesa con:
 > - `@property TeamContract|null $currentTeam`
@@ -89,8 +90,7 @@ interface UserContract extends
 >
 > Questo consente a PHPStan level 10 di riconoscere correttamente i magic attribute Eloquent quando i moduli (es. User, Quaeris) lavorano solo contro il contratto Xot.
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ### 2. ProfileContract
 **File**: `app/Contracts/ProfileContract.php`
 **Purpose**: Standardizes profile functionality across modules
@@ -557,4 +557,4 @@ class AppointmentService
 *This documentation provides comprehensive guidance for implementing and using contracts within the Xot ecosystem, ensuring type safety and consistency across all modules.*
 =======
 *This documentation provides comprehensive guidance for implementing and using contracts within the Xot ecosystem, ensuring type safety and consistency across all modules.*
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

@@ -1,12 +1,5 @@
 ---
 <<<<<<< HEAD
-module: theme
-topic: migrations
-canonical: ../../../../Themes/docs/shared-components/migrations.md
----
-
-See canonical documentation: ../../../../Themes/docs/shared-components/migrations.md
-=======
 title: "Migrazioni"
 type: note
 created: 2026-09-24
@@ -318,4 +311,11 @@ return new class extends Migration
     }
 };
 ``` 
->>>>>>> laraxot/dev
+=======
+module: theme
+topic: migrations
+canonical: ../../../../Themes/docs/shared-components/migrations.md
+---
+
+See canonical documentation: ../../../../Themes/docs/shared-components/migrations.md
+>>>>>>> 77b1e2748 (first)

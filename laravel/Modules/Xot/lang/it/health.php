@@ -28,15 +28,6 @@ return [
     'actions' => [
         'refresh' => [
 <<<<<<< HEAD
-            'label' => 'refresh',
-            'tooltip' => 'refresh',
-            'icon' => 'refresh',
-        ],
-        'logout' => [
-            'tooltip' => 'logout',
-        ],
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-=======
             'label' => 'Aggiorna',
             'tooltip' => '',
             'icon' => 'refresh',
@@ -50,7 +41,16 @@ return [
             'icon' => 'save',
             'tooltip' => '',
         ],
->>>>>>> laraxot/dev
+=======
+            'label' => 'refresh',
+            'tooltip' => 'refresh',
+            'icon' => 'refresh',
+        ],
+        'logout' => [
+            'tooltip' => 'logout',
+        ],
+        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
+>>>>>>> 77b1e2748 (first)
     ],
     'label' => 'Health',
     'plural_label' => 'Health (Plurale)',
@@ -75,11 +75,11 @@ return [
         ],
     ],
 <<<<<<< HEAD
-=======
     'page' => [
         'last_check' => [
             'label' => 'Ultimo controllo',
         ],
     ],
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ];

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Guida alla Migrazione Filament 4"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Guida alla Migrazione Filament 4"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Guida alla Migrazione Filament 4
 
 ## Cambiamenti Principali da Filament 3 a Filament 4

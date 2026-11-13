@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Analisi Completa Modulo Xot - Factory, Seeder e Test"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "analisi completa modulo xot - factory, seeder e test xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Analisi Completa Modulo Xot - Factory, Seeder e Test
 
 ## 📊 Panoramica Generale

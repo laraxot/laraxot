@@ -4,16 +4,6 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
-    'steps' => [
-        'privacy' => [
-            'label' => 'privacy',
-        ],
-        'data' => [
-            'label' => 'data',
-        ],
-        'summary' => [
-            'label' => 'summary',
-=======
     'actions' => [
         'submit' => [
             'label' => 'Invia',
@@ -34,7 +24,17 @@ return [
         ],
         'summary' => [
             'label' => 'Riepilogo',
->>>>>>> laraxot/dev
+=======
+    'steps' => [
+        'privacy' => [
+            'label' => 'privacy',
+        ],
+        'data' => [
+            'label' => 'data',
+        ],
+        'summary' => [
+            'label' => 'summary',
+>>>>>>> 77b1e2748 (first)
         ],
     ],
 ];

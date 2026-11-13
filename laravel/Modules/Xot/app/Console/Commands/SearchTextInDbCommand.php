@@ -85,10 +85,6 @@ class SearchTextInDbCommand extends Command
                 }
 
 <<<<<<< HEAD
-                $results = DB::table($tableName)
-                    ->select('*')
-                    ->where($column, 'LIKE', '%'.addslashes($searchString).'%')
-=======
                 // SECURITY NOTE: $tableName comes from SHOW TABLES metadata (not raw user input)
                 // and is validated by Schema::hasTable() at line 57. $column comes from Schema::getColumnListing()
                 // which returns actual column names — never interpolated. The search string is bound as a
@@ -98,7 +94,11 @@ class SearchTextInDbCommand extends Command
                 $results = DB::table($tableName)
                     ->select('*')
                     ->where($column, 'LIKE', '%'.$searchString.'%')
->>>>>>> laraxot/dev
+=======
+                $results = DB::table($tableName)
+                    ->select('*')
+                    ->where($column, 'LIKE', '%'.addslashes($searchString).'%')
+>>>>>>> 77b1e2748 (first)
                     ->get();
 
                 if ($results->isNotEmpty()) {

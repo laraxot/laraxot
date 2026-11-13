@@ -25,33 +25,27 @@ class GenerateModelClassCommand extends GeneratorCommand
     protected $description = 'Create a new ModelClass.';
 
 <<<<<<< HEAD
-    protected function getStub()
-=======
     protected function getStub(): string
->>>>>>> laraxot/dev
+=======
+    protected function getStub()
+>>>>>>> 77b1e2748 (first)
     {
         return realpath(__DIR__.'/../stubs/model.stub');
     }
 
 <<<<<<< HEAD
-    protected function getDefaultNamespace($rootNamespace)
-=======
     /**
      * @param  string  $rootNamespace
      */
     protected function getDefaultNamespace($rootNamespace): string
->>>>>>> laraxot/dev
+=======
+    protected function getDefaultNamespace($rootNamespace)
+>>>>>>> 77b1e2748 (first)
     {
         return $rootNamespace.'\Models';
     }
 
 <<<<<<< HEAD
-    protected function replaceClass($stub, $name)
-    {
-        $class = str_replace($this->getNamespace($name).'\\', '', $name);
-
-        // Do string replacement
-=======
     /**
      * @param  string  $stub
      * @param  string  $name
@@ -60,7 +54,13 @@ class GenerateModelClassCommand extends GeneratorCommand
     {
         $class = str_replace($this->getNamespace($name).'\\', '', $name);
 
->>>>>>> laraxot/dev
+=======
+    protected function replaceClass($stub, $name)
+    {
+        $class = str_replace($this->getNamespace($name).'\\', '', $name);
+
+        // Do string replacement
+>>>>>>> 77b1e2748 (first)
         return str_replace('{{service_name}}', $class, $stub);
     }
 }

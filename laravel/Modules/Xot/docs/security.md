@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Sicurezza"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Sicurezza"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Sicurezza
 
 ## Configurazione Base
@@ -218,7 +218,7 @@ class SecurityMonitor
     }
 }
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)

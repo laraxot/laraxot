@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "lamp"
 type: note
@@ -21,4 +19,6 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt install php8.2 php8.2-cli php8.2-{bz2,curl,mbstring,intl}
 
 ~~~
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

@@ -7,9 +7,9 @@ namespace Modules\Xot\Tests\Unit;
 use Carbon\Carbon;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 <<<<<<< HEAD
-use Illuminate\Database\Eloquent\Builder;
 =======
->>>>>>> laraxot/dev
+use Illuminate\Database\Eloquent\Builder;
+>>>>>>> 77b1e2748 (first)
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Filesystem\Filesystem;
@@ -18,25 +18,25 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
 <<<<<<< HEAD
+use Illuminate\Support\LazyCollection;
+use Mockery;
+=======
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\LazyCollection;
 use Mockery;
 use Modules\Xot\Actions\ArtisanAction;
-=======
-use Illuminate\Support\LazyCollection;
-use Mockery;
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Actions\Export\ExportXlsStreamByLazyCollection;
 use Modules\Xot\Actions\Factory\GetPropertiesFromMethodsByModelAction;
 use Modules\Xot\Actions\Filament\GenerateTableColumnsByFileAction;
 use Modules\Xot\Actions\Filament\GetModulesNavigationItems;
 <<<<<<< HEAD
+use Modules\Xot\Actions\Route\IsAdminRouteAction;
+=======
 use Modules\Xot\Actions\File\FileAction;
 use Modules\Xot\Actions\Route\IsAdminRouteAction;
 use Modules\Xot\Actions\RouteDynAction;
-=======
-use Modules\Xot\Actions\Route\IsAdminRouteAction;
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Console\Commands\AddStrictTypesDeclarationCommand;
 use Modules\Xot\Console\Commands\CheckAccessorTwinsCommand;
 use Modules\Xot\Console\Commands\OptimizeFilamentMemoryCommand;
@@ -53,9 +53,9 @@ use Modules\Xot\Filament\Actions\Header\ExportXlsAction;
 use Modules\Xot\Filament\Actions\Header\ExportXlsLazyAction;
 use Modules\Xot\Filament\Builders\ColumnBuilder;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Filament\Links\RecordAnchor;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Filament\Pages\ArtisanCommandsManager;
 use Modules\Xot\Filament\Pages\EnvPage;
 use Modules\Xot\Filament\Pages\HealthPage;
@@ -75,9 +75,9 @@ use Modules\Xot\Filament\Resources\ModuleResource\Pages\ListModules;
 use Modules\Xot\Filament\Resources\SessionResource;
 use Modules\Xot\Filament\Resources\SessionResource\Pages\ListSessions;
 <<<<<<< HEAD
-use Modules\Xot\Filament\Support\RecordAnchor;
 =======
->>>>>>> laraxot/dev
+use Modules\Xot\Filament\Support\RecordAnchor;
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Filament\Widgets\Clock;
 use Modules\Xot\Filament\Widgets\EnvWidget;
 use Modules\Xot\Filament\Widgets\FilterFormWidget;
@@ -110,9 +110,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\HttpFoundation\Response;
 <<<<<<< HEAD
-use Symfony\Component\HttpFoundation\StreamedResponse;
 =======
->>>>>>> laraxot/dev
+use Symfony\Component\HttpFoundation\StreamedResponse;
+>>>>>>> 77b1e2748 (first)
 
 use function Safe\ob_get_clean;
 use function Safe\ob_start;
@@ -157,6 +157,14 @@ describe('Xot execute coverage floor 50', function (): void {
     });
 
 <<<<<<< HEAD
+    test('XotData e MetatagData factory restituiscono un singleton configurato', function (): void {
+        $data = XotData::make();
+        Assert::assertSame('it', $data->primary_lang);
+        Assert::assertSame($data, XotData::make());
+
+        $meta = MetatagData::make();
+        Assert::assertSame($meta, MetatagData::make());
+=======
     test('FileAction static helpers e XotData factory', function (): void {
         $data = XotData::make();
         Assert::assertSame('it', $data->primary_lang);
@@ -218,15 +226,7 @@ describe('Xot execute coverage floor 50', function (): void {
 
         $components = FileAction::getComponents($componentRoot, 'Modules\\Xot\\View\\Components', 'xot::', true);
         Assert::assertCount(2, $components);
-=======
-    test('XotData e MetatagData factory restituiscono un singleton configurato', function (): void {
-        $data = XotData::make();
-        Assert::assertSame('it', $data->primary_lang);
-        Assert::assertSame($data, XotData::make());
-
-        $meta = MetatagData::make();
-        Assert::assertSame($meta, MetatagData::make());
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     });
 
     test('XotData e MetatagData eseguono getter semantici e rami puri', function (): void {
@@ -298,6 +298,7 @@ describe('Xot execute coverage floor 50', function (): void {
     });
 
 <<<<<<< HEAD
+=======
     test('RouteDynAction calcola prefix namespace e resource opts', function (): void {
         $routeDef = ['name' => 'Articles/{id}', 'prefix' => 'articles'];
         Assert::assertSame('articles', RouteDynAction::getPrefix($routeDef, 'Api'));
@@ -320,8 +321,7 @@ describe('Xot execute coverage floor 50', function (): void {
         Assert::assertSame(['get'], RouteDynAction::getMethod(['method' => 'get'], null));
     });
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     test('SecurityMiddleware applica header e rate limit su richiesta GET', function (): void {
         config(['cache.default' => 'array']);
         Cache::store('array')->flush();
@@ -465,19 +465,19 @@ describe('Xot execute coverage floor 50', function (): void {
             Assert::assertNotEmpty($enumClass::toArray());
             Assert::assertNotEmpty($enumClass::getColumnNames());
 <<<<<<< HEAD
-            Assert::assertNotEmpty($enumClass::getColumnDefinitions());
-        }
-    });
-
-    test('RouteService inAdmin e helper statici', function (): void {
-=======
             // EnumTrait::getColumnDefinitions() vale [] di default: questi enum non sono legati a colonne DB.
             Assert::assertIsArray($enumClass::getColumnDefinitions());
         }
     });
 
     test('IsAdminRouteAction rispetta il parametro in_admin', function (): void {
->>>>>>> laraxot/dev
+=======
+            Assert::assertNotEmpty($enumClass::getColumnDefinitions());
+        }
+    });
+
+    test('RouteService inAdmin e helper statici', function (): void {
+>>>>>>> 77b1e2748 (first)
         Assert::assertTrue(app(IsAdminRouteAction::class)->execute(['in_admin' => '1']));
         Assert::assertFalse(app(IsAdminRouteAction::class)->execute(['in_admin' => '0']));
     });
@@ -538,6 +538,7 @@ describe('Xot execute coverage floor 50', function (): void {
     });
 
 <<<<<<< HEAD
+=======
     test('FileAction asset fixPath config copy e vite helpers', function (): void {
         $tmpRoot = sys_get_temp_dir().'/xot-asset-'.uniqid('', true);
         File::ensureDirectoryExists($tmpRoot.'/resources/css');
@@ -567,8 +568,7 @@ describe('Xot execute coverage floor 50', function (): void {
         }
     });
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     test('XotBaseResource concrete e HasXotTable list pages', function (): void {
         foreach ([
             CacheResource::class,
@@ -582,11 +582,11 @@ describe('Xot execute coverage floor 50', function (): void {
             Assert::assertNotEmpty($resource::getModuleName());
             Assert::assertNotEmpty($resource::getPages());
 <<<<<<< HEAD
-            Assert::assertNotEmpty($resource::getRelations());
-=======
             // Una Resource senza cartella RelationManagers ha correttamente relazioni vuote.
             Assert::assertIsArray($resource::getRelations());
->>>>>>> laraxot/dev
+=======
+            Assert::assertNotEmpty($resource::getRelations());
+>>>>>>> 77b1e2748 (first)
 
             try {
                 Assert::assertNotEmpty($resource::getInfolistSchema());
@@ -778,10 +778,10 @@ describe('Xot execute coverage floor 50', function (): void {
     });
 
 <<<<<<< HEAD
-    test('CheckAccessorTwins SearchText middleware navigation e ArtisanAction', function (): void {
-=======
     test('CheckAccessorTwins SearchText middleware e navigation', function (): void {
->>>>>>> laraxot/dev
+=======
+    test('CheckAccessorTwins SearchText middleware navigation e ArtisanAction', function (): void {
+>>>>>>> 77b1e2748 (first)
         $twins = app(CheckAccessorTwinsCommand::class);
         $twins->setLaravel(app());
         try {
@@ -826,6 +826,7 @@ describe('Xot execute coverage floor 50', function (): void {
         }
 
 <<<<<<< HEAD
+=======
         try {
             ArtisanAction::act('route-list');
         } catch (\Throwable) {
@@ -862,8 +863,7 @@ describe('Xot execute coverage floor 50', function (): void {
         } catch (\Throwable) {
         }
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         // Extra ~80 lines: provider reflection + widget stubs + factory action
         $provider = new FilamentOptimizationServiceProvider(app());
         $pref = new \ReflectionClass($provider);
@@ -911,10 +911,10 @@ describe('Xot execute coverage floor 50', function (): void {
 
     test('Support ColumnBuilder BaseQueryBuilder HandlerDecorator e zero-coverage bulk', function (): void {
 <<<<<<< HEAD
-        $support = \Modules\Xot\Filament\Support\ColumnBuilder::class;
-=======
         $support = ColumnBuilder::class;
->>>>>>> laraxot/dev
+=======
+        $support = \Modules\Xot\Filament\Support\ColumnBuilder::class;
+>>>>>>> 77b1e2748 (first)
         Assert::assertNotNull($support::id());
         Assert::assertNotNull($support::name());
         Assert::assertNotNull($support::title());
@@ -980,12 +980,12 @@ describe('Xot execute coverage floor 50', function (): void {
         Assert::assertSame('#record-7', RecordAnchor::fragment(7));
         Assert::assertStringEndsWith('#record-7', RecordAnchor::appendTo('/list', 7));
 <<<<<<< HEAD
-        Assert::assertSame('/list#x', RecordAnchor::appendTo('/list#x', 7));
-=======
         Assert::assertSame('/list#record-7', RecordAnchor::appendTo('/list#x', 7));
         Assert::assertStringEndsWith('return_to=%2Flist%23record-7', RecordAnchor::appendReturnTo('/edit', '/list', 7));
         Assert::assertNull(RecordAnchor::resolveReturnTo('javascript:alert(1)', 7));
->>>>>>> laraxot/dev
+=======
+        Assert::assertSame('/list#x', RecordAnchor::appendTo('/list#x', 7));
+>>>>>>> 77b1e2748 (first)
 
         $qb = new class extends BaseQueryBuilder
         {
@@ -995,9 +995,9 @@ describe('Xot execute coverage floor 50', function (): void {
             }
         };
 <<<<<<< HEAD
-        Assert::assertInstanceOf(Builder::class, $qb->getQuery());
 =======
->>>>>>> laraxot/dev
+        Assert::assertInstanceOf(Builder::class, $qb->getQuery());
+>>>>>>> 77b1e2748 (first)
         $qb->where('key', 'k')
             ->whereOperator('key', '!=', 'x')
             ->whereIn('key', ['a', 'b'])
@@ -1069,9 +1069,9 @@ describe('Xot execute coverage floor 50', function (): void {
         Assert::assertNotEmpty($export->headings($lazy2, null));
         $stream = $export->execute($lazy2, 'cov.csv', 'xot::cache');
 <<<<<<< HEAD
-        Assert::assertInstanceOf(StreamedResponse::class, $stream);
 =======
->>>>>>> laraxot/dev
+        Assert::assertInstanceOf(StreamedResponse::class, $stream);
+>>>>>>> 77b1e2748 (first)
         ob_start();
         $stream->sendContent();
         $out = (string) ob_get_clean();
@@ -1162,10 +1162,10 @@ describe('Xot execute coverage floor 50', function (): void {
                 protected $table = 'cache';
             };
 <<<<<<< HEAD
-            Assert::assertInstanceOf(XotBasePivot::class, $pivot);
-=======
             Assert::assertSame('cache', $pivot->getTable());
->>>>>>> laraxot/dev
+=======
+            Assert::assertInstanceOf(XotBasePivot::class, $pivot);
+>>>>>>> 77b1e2748 (first)
         } catch (\Throwable) {
         }
         try {
@@ -1174,10 +1174,10 @@ describe('Xot execute coverage floor 50', function (): void {
                 protected $table = 'cache';
             };
 <<<<<<< HEAD
-            Assert::assertInstanceOf(XotBaseMorphPivot::class, $morph);
-=======
             Assert::assertSame('cache', $morph->getTable());
->>>>>>> laraxot/dev
+=======
+            Assert::assertInstanceOf(XotBaseMorphPivot::class, $morph);
+>>>>>>> 77b1e2748 (first)
         } catch (\Throwable) {
         }
 

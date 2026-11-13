@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Migrations - Documentazione Consolidata DRY + KISS"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "migrations - documentazione consolidata dry + kiss xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Migrations - Documentazione Consolidata DRY + KISS
 
 > **🎯 Single Source of Truth**: Questo documento centralizza TUTTA la documentazione migrazioni del progetto

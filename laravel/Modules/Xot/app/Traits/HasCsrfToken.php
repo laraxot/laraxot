@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
 <<<<<<< HEAD
-/** @phpstan-ignore trait.unused */
-trait HasCsrfToken
-=======
 /**
  * @phpstan-ignore trait.unused
  */
 trait HasCsrfToken // @phpstan-ignore trait.unused
->>>>>>> laraxot/dev
+=======
+/** @phpstan-ignore trait.unused */
+trait HasCsrfToken
+>>>>>>> 77b1e2748 (first)
 {
     /**
      * CSRF token for the current request.

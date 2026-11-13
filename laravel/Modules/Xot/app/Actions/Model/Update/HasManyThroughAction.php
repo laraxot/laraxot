@@ -19,9 +19,9 @@ class HasManyThroughAction
     {
         // Assert::isInstanceOf($relation = $relationDTO->rows, HasMany::class);
 <<<<<<< HEAD
-        dddx('wip');
-=======
         throw new \LogicException('Update\HasManyThroughAction not implemented');
->>>>>>> laraxot/dev
+=======
+        dddx('wip');
+>>>>>>> 77b1e2748 (first)
     }
 }

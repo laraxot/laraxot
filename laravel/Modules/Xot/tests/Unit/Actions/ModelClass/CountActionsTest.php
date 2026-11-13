@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 <<<<<<< HEAD
-use Modules\Xot\Actions\ModelClass\CountAction;
-use Modules\Xot\Actions\ModelClass\UpdateCountAction;
-use Modules\Xot\Models\XotBaseModel;
-=======
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
@@ -14,7 +10,11 @@ use Modules\Tenant\Actions\Config\GetTenantFilePathAction;
 use Modules\Xot\Actions\ModelClass\CountAction;
 use Modules\Xot\Actions\ModelClass\UpdateCountAction;
 use Modules\Xot\Tests\Fixtures\Models\TestConcreteXotBaseModel;
->>>>>>> laraxot/dev
+=======
+use Modules\Xot\Actions\ModelClass\CountAction;
+use Modules\Xot\Actions\ModelClass\UpdateCountAction;
+use Modules\Xot\Models\XotBaseModel;
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -22,18 +22,6 @@ uses(TestCase::class);
 
 test('count actions work', function (): void {
 <<<<<<< HEAD
-    $action = app(CountAction::class);
-    $updateAction = app(UpdateCountAction::class);
-
-    $modelClass = XotBaseModel::class;
-
-    try {
-        $count = $action->execute($modelClass);
-        Assert::assertIsInt($count);
-        $updateAction->execute($modelClass, 10);
-    } catch (Throwable $e) {
-        Assert::assertStringContainsString('table', $e->getMessage());
-=======
     $modelClass = TestConcreteXotBaseModel::class;
     $tenantDir = sys_get_temp_dir().'/xot-count-actions-'.uniqid('', true);
     File::makeDirectory($tenantDir.'/database/content', 0755, true);
@@ -57,6 +45,18 @@ test('count actions work', function (): void {
     } finally {
         Schema::dropIfExists('test_xot_table');
         File::deleteDirectory($tenantDir);
->>>>>>> laraxot/dev
+=======
+    $action = app(CountAction::class);
+    $updateAction = app(UpdateCountAction::class);
+
+    $modelClass = XotBaseModel::class;
+
+    try {
+        $count = $action->execute($modelClass);
+        Assert::assertIsInt($count);
+        $updateAction->execute($modelClass, 10);
+    } catch (Throwable $e) {
+        Assert::assertStringContainsString('table', $e->getMessage());
+>>>>>>> 77b1e2748 (first)
     }
 });

@@ -12,6 +12,10 @@ use Illuminate\Support\Carbon;
 use Spatie\Health\Models\HealthCheckResultHistoryItem as BaseHealthCheckResultHistoryItem;
 
 /**
+<<<<<<< HEAD
+=======
+<<<<<<< .merge_file_1QvcIp
+>>>>>>> 77b1e2748 (first)
  * @property int $id
  * @property string $check_name
  * @property string $check_label
@@ -25,6 +29,80 @@ use Spatie\Health\Models\HealthCheckResultHistoryItem as BaseHealthCheckResultHi
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
+<<<<<<< HEAD
+=======
+=======
+ * <<<<<<< HEAD.
+ *
+ * @property int                     $id
+ * @property string                  $check_name
+ * @property string                  $check_label
+ * @property string                  $status
+ * @property string|null             $notification_message
+ * @property string|null             $short_summary
+ * @property array<array-key, mixed> $meta
+ * @property string                  $ended_at
+ * @property string                  $batch
+ * @property Carbon|null             $created_at
+ * @property Carbon|null             $updated_at
+ * @property string|null             $updated_by
+ * @property string|null             $created_by
+ *                                                         =======
+ *                                                         <<<<<<< HEAD
+ *                                                         =======
+ *                                                         <<<<<<< HEAD
+ *                                                         <<<<<<< HEAD.
+ *
+ * >>>>>>> laraxot/dev
+ * @property int                     $id
+ * @property string                  $check_name
+ * @property string                  $check_label
+ * @property string                  $status
+ * @property string|null             $notification_message
+ * @property string|null             $short_summary
+ * @property array<array-key, mixed> $meta
+ * @property string                  $ended_at
+ * @property string                  $batch
+ * @property Carbon|null             $created_at
+ * @property Carbon|null             $updated_at
+ * @property string|null             $updated_by
+ * @property string|null             $created_by
+ *                                                         <<<<<<< HEAD
+ *                                                         =======
+ *                                                         =======
+ * @property int                     $id
+ * @property string                  $check_name
+ * @property string                  $check_label
+ * @property string                  $status
+ * @property string|null             $notification_message
+ * @property string|null             $short_summary
+ * @property array<array-key, mixed> $meta
+ * @property string                  $ended_at
+ * @property string                  $batch
+ * @property Carbon|null             $created_at
+ * @property Carbon|null             $updated_at
+ * @property string|null             $updated_by
+ * @property string|null             $created_by
+ *                                                         >>>>>>> laraxot/dev
+ *                                                         =======
+ * @property int                     $id
+ * @property string                  $check_name
+ * @property string                  $check_label
+ * @property string                  $status
+ * @property string|null             $notification_message
+ * @property string|null             $short_summary
+ * @property array<array-key, mixed> $meta
+ * @property string                  $ended_at
+ * @property string                  $batch
+ * @property Carbon|null             $created_at
+ * @property Carbon|null             $updated_at
+ * @property string|null             $updated_by
+ * @property string|null             $created_by
+ *                                                         >>>>>>> laraxot/dev
+ *                                                         >>>>>>> laraxot/dev
+ *                                                         >>>>>>> laraxot/dev
+>>>>>>> .merge_file_6rTHWj
+>>>>>>> 77b1e2748 (first)
  *
  * @method static Builder<static>|HealthCheckResultHistoryItem newModelQuery()
  * @method static Builder<static>|HealthCheckResultHistoryItem newQuery()

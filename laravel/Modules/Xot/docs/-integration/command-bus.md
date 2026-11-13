@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "command_bus"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "command_bus xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # command_bus
 
 <!-- Contenuto migrato da _docs/command_bus.txt -->

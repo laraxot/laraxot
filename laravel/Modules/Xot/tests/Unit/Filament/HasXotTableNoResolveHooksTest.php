@@ -6,18 +6,18 @@ namespace Modules\Xot\Tests\Unit\Filament;
 
 use Modules\Xot\Filament\Traits\HasXotTable;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Tests\TestCase;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use ReflectionClass;
 
 use function Safe\file_get_contents;
 
 <<<<<<< HEAD
-=======
 uses(TestCase::class);
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 /**
  * Guardia della regola docs/wiki/rules/xot-table-method-names.md:
  * `table()` non decide, chiede — e lo chiede direttamente all'hook.

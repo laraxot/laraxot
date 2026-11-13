@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "_performance"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "_performance xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # _performance
 
 <!-- Contenuto migrato da _docs/_performance.txt -->

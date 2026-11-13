@@ -13,9 +13,9 @@ use Exception;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
 <<<<<<< HEAD
-=======
 use Illuminate\Contracts\Support\Htmlable;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Actions\Export\ExportXlsByCollection;
 use Modules\Xot\Actions\Export\GetExportFileNameAction;
@@ -32,16 +32,16 @@ class ExportXlsAction extends XotBaseAction
         parent::setUp();
         $this->translateLabel()
 <<<<<<< HEAD
-            ->label('')
-            ->iconButton()
-            ->color('success')
-=======
             // Bottone (vista di default) con etichetta solo per screen reader, come le altre
             // azioni dell'header (Trova esclusi, ...). Prima `iconButton()`: un glifo grigio senza
             // area cliccabile, che non sembrava un comando.
             ->label(fn (): Htmlable|string|null => $this->getTooltip())
             ->hiddenLabel()
->>>>>>> laraxot/dev
+=======
+            ->label('')
+            ->iconButton()
+            ->color('success')
+>>>>>>> 77b1e2748 (first)
             ->tooltip(function (): string {
                 $livewire = $this->getLivewire();
                 if (! $livewire instanceof ListRecords) {

@@ -31,10 +31,10 @@ return [
             'description' => 'General Settings',
         ],
 <<<<<<< HEAD
-        'label' => 'Yes No Enum',
-=======
         'label' => 'Sì/No',
->>>>>>> laraxot/dev
+=======
+        'label' => 'Yes No Enum',
+>>>>>>> 77b1e2748 (first)
         'sort' => 1,
         'icon' => 'heroicon-o-collection',
     ],

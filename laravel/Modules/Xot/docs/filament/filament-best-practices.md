@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "filament best practices"
 type: note
@@ -12,7 +11,8 @@ discussions: []
 status: draft
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Filament Best Practices (Moduli Riutilizzabili)
 
 ## Descrizione
@@ -58,12 +58,6 @@ Tutte le risorse Filament devono implementare il metodo `getFormSchema()` che re
 
 ```php
 <<<<<<< HEAD
-<<<<<<< HEAD
-public function getFormSchema(): array
-=======
-public function getFormSchema(): array
->>>>>>> laraxot/dev
-=======
 public function getFormSchema(): array
 ---
 title: "filament best practices"
@@ -75,7 +69,13 @@ qmd: "filament best practices"
 issues: []
 discussions: []
 public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+public function getFormSchema(): array
+=======
+public function getFormSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         TextInput::make('nome')->required(),
@@ -162,16 +162,16 @@ class SocioResource extends XotBaseResource
 
     // Form Schema - CORRETTO ✅
 <<<<<<< HEAD
+    public function getFormSchema(): array
+---
+    public function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public function getFormSchema(): array
----
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             TextInput::make('cognome')
@@ -352,16 +352,16 @@ Utilizzare componenti come `Section`, `Tabs` e `Fieldset` per organizzare logica
 
 ```php
 <<<<<<< HEAD
+public function getFormSchema(): array
+---
+public function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public function getFormSchema(): array
----
-public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         Forms\Components\Tabs::make('Tabs')
@@ -616,16 +616,16 @@ class SocioResource extends XotBaseResource
     protected static ?string $model = Socio::class;
 
 <<<<<<< HEAD
+    public function getFormSchema(): array
+---
+    public function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public function getFormSchema(): array
----
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             TextInput::make('nome')->required(),
@@ -1001,16 +1001,16 @@ class ReportResource extends XotBaseResource
      * @return array<int, \Filament\Forms\Components\Component>
      */
 <<<<<<< HEAD
+    public function getFormSchema(): array
+---
+    public function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public function getFormSchema(): array
----
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             // ✅ NO ->label(): Tutte le label gestite da LangServiceProvider

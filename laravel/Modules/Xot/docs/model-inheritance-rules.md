@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regole di Ereditarietà dei Modelli - Laraxot PTVX"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Regole di Ereditarietà dei Modelli - Laraxot PTVX"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole di Ereditarietà dei Modelli - Laraxot PTVX
 
 ## Principio Fondamentale
@@ -85,10 +85,10 @@ class Wstr01lx extends Model
     public $timestamps = false;
     protected $table = 'wstr01f'; // Tabella diversa
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // Configurazioni specifiche che non possono essere nel BaseModel
 }
 ```
@@ -159,10 +159,10 @@ class Integparam extends BaseModel
         'anvist', 'anvpar', 'anvimp', 'anvqta', 'anvvoc', 'anvdes'
     ];
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // Cast specifici se necessari (altrimenti ereditati dal BaseModel)
     protected function casts(): array
     {
@@ -189,10 +189,10 @@ class Wstr01lx extends Model
     public $timestamps = false;
     protected $table = 'wstr01f'; // Tabella specifica
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // Configurazioni specifiche che non possono essere nel BaseModel
 }
 ```
@@ -203,10 +203,10 @@ Tutti i modelli devono passare la validazione PHPStan livello 9+:
 
 ```bash
 <<<<<<< HEAD
-cd laravel
-=======
 cd /var/www/html/ptvx/laravel
->>>>>>> laraxot/dev
+=======
+cd laravel
+>>>>>>> 77b1e2748 (first)
 ./vendor/bin/phpstan analyse --level=9 --memory-limit=2G Modules/Sigma/app/Models/Integparam.php
 ```
 
@@ -223,7 +223,7 @@ Ogni nuovo modello deve essere documentato in:
 - [Regole Migrazioni](migrations.md)
 
 <<<<<<< HEAD
-*Ultimo aggiornamento: giugno 2025*
-=======
 *Ultimo aggiornamento: giugno 2025* 
->>>>>>> laraxot/dev
+=======
+*Ultimo aggiornamento: giugno 2025*
+>>>>>>> 77b1e2748 (first)

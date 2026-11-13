@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Problemi Comuni e Soluzioni"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, troubleshooting]
 qmd: "Problemi Comuni e Soluzioni"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Problemi Comuni e Soluzioni
 
 ## Errori HTTP

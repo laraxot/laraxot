@@ -148,7 +148,32 @@ class PdfData extends Data
     }
 
     /**
+<<<<<<< HEAD
      * @param  array<string, mixed>  $params
+=======
+<<<<<<< .merge_file_2n9SJZ
+     * @param  array<string, mixed>  $params
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param array<string, mixed> $params
+     *                                     =======
+     *                                     <<<<<<< HEAD
+     * @param array<string, mixed> $params
+     *                                     =======
+     *                                     <<<<<<< HEAD
+     *                                     <<<<<<< HEAD
+     * @param array<string, mixed> $params
+     *                                     =======
+     * @param array<string, mixed> $params
+     *                                     >>>>>>> laraxot/dev
+     *                                     =======
+     * @param array<string, mixed> $params
+     *                                     >>>>>>> laraxot/dev
+     *                                     >>>>>>> laraxot/dev
+     *                                     >>>>>>> laraxot/dev
+>>>>>>> .merge_file_Ql0dwr
+>>>>>>> 77b1e2748 (first)
      */
     public function view(string $view, array $params = []): self
     {

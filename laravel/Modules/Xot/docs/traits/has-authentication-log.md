@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Trait HasAuthenticationLogTrait"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, traits]
 qmd: "Trait HasAuthenticationLogTrait"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Trait HasAuthenticationLogTrait
 
 ## Descrizione
@@ -50,10 +50,10 @@ class User extends Authenticatable
 {
     use HasAuthenticationLogTrait;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // ... resto del codice
 }
 ```
@@ -72,7 +72,7 @@ class User extends Authenticatable
 - I log vengono automaticamente creati quando un utente tenta di autenticarsi
 - Le notifiche vengono inviate tramite email per default
 <<<<<<< HEAD
-- Il trait supporta il tracciamento di tentativi di login falliti e riusciti
-=======
 - Il trait supporta il tracciamento di tentativi di login falliti e riusciti 
->>>>>>> laraxot/dev
+=======
+- Il trait supporta il tracciamento di tentativi di login falliti e riusciti
+>>>>>>> 77b1e2748 (first)

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: Filter Relations Action
 description: Filter Relations Model with Queuable Action
@@ -98,5 +97,6 @@ function ($item) use ($model) {
 return $res;
 ```
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 

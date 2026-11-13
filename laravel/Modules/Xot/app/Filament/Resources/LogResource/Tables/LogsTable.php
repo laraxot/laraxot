@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace Modules\Xot\Filament\Resources\LogResource\Tables;
 
 <<<<<<< HEAD
-use Filament\Tables\Columns\Column;
-use Filament\Tables\Columns\TextColumn;
-=======
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
->>>>>>> laraxot/dev
+=======
+use Filament\Tables\Columns\Column;
+use Filament\Tables\Columns\TextColumn;
+>>>>>>> 77b1e2748 (first)
 use Illuminate\Support\Number;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 use Modules\Xot\Models\Log;
@@ -40,7 +40,6 @@ class LogsTable extends XotBaseResourceTable
         ];
     }
 <<<<<<< HEAD
-=======
 
     public function getTableFilters(): array
     {
@@ -73,5 +72,6 @@ class LogsTable extends XotBaseResourceTable
             'delete' => DeleteBulkAction::make(),
         ];
     }
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 }

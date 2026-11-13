@@ -47,15 +47,15 @@ class PerformanceMonitoringMiddleware
         Assert::isInstanceOf($response, Response::class);
         $statusCode = $response->getStatusCode();
 <<<<<<< HEAD
+        $this->recordRequest($responseTime, $statusCode);
+=======
         $this->recordRequest(
             $request->method(),
             $request->path(),
             $responseTime,
             $statusCode
         );
-=======
-        $this->recordRequest($responseTime, $statusCode);
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
         // Registra utilizzo memoria finale
         $this->recordMemoryUsage();
@@ -106,10 +106,10 @@ class PerformanceMonitoringMiddleware
      * Registra richiesta.
      */
 <<<<<<< HEAD
-    private function recordRequest(string $method, string $path, float $responseTime, int $statusCode): void
-=======
     private function recordRequest(float $responseTime, int $statusCode): void
->>>>>>> laraxot/dev
+=======
+    private function recordRequest(string $method, string $path, float $responseTime, int $statusCode): void
+>>>>>>> 77b1e2748 (first)
     {
         Cache::increment('total_requests');
         Cache::increment('requests_per_minute');

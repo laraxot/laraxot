@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "filament best practices uppercase"
 type: note
@@ -12,7 +11,8 @@ discussions: []
 status: draft
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Best Practices per Filament Resources in Laraxot
 
 Questo documento definisce le linee guida ufficiali e le best practices per l'implementazione delle risorse Filament all'interno del framework Laraxot.
@@ -54,12 +54,6 @@ Tutte le risorse Filament devono implementare il metodo `getFormSchema()` che re
 
 ```php
 <<<<<<< HEAD
-<<<<<<< HEAD
-public function getFormSchema(): array
-=======
-public function getFormSchema(): array
->>>>>>> laraxot/dev
-=======
 public function getFormSchema(): array
 ---
 title: "filament best practices uppercase"
@@ -71,7 +65,13 @@ qmd: "filament best practices uppercase"
 issues: []
 discussions: []
 public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+public function getFormSchema(): array
+=======
+public function getFormSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         TextInput::make('nome')->required(),
@@ -209,16 +209,16 @@ class SocioResource extends XotBaseResource
     
     // Form Schema - CORRETTO ✅
 <<<<<<< HEAD
+    public function getFormSchema(): array
+---
+    public function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public function getFormSchema(): array
----
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             TextInput::make('cognome')
@@ -399,16 +399,16 @@ Utilizzare componenti come `Section`, `Tabs` e `Fieldset` per organizzare logica
 
 ```php
 <<<<<<< HEAD
+public function getFormSchema(): array
+---
+public function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public function getFormSchema(): array
----
-public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         Forms\Components\Tabs::make('Tabs')
@@ -656,16 +656,16 @@ class SocioResource extends XotBaseResource
     protected static ?string $model = Socio::class;
     
 <<<<<<< HEAD
+    public function getFormSchema(): array
+---
+    public function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public function getFormSchema(): array
----
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             TextInput::make('nome')->required(),

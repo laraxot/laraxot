@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Code Quality Standards - Xot Module"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Code Quality Standards - Xot Module"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Code Quality Standards - Xot Module
 
 ## 🎯 Purpose

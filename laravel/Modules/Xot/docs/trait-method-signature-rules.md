@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Trait Method Signature Rules"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "trait method signature rules xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Trait Method Signature Rules
 
 ## 🚨 Critical Rule: Static vs Non-Static Methods

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Laraxot Best Practices"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, laraxot]
 qmd: "Laraxot Best Practices"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Laraxot Best Practices
 
 ## Form Schema Best Practices
@@ -29,24 +29,24 @@ qmd: "Laraxot Best Practices"
 ### Implementazione
 ```php
 <<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         // Campi modificabili dall'utente
         TextInput::make('name')->required(),
         Select::make('type')->options([...]),
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         // NO: Non includere campi automatici
         // TextInput::make('created_at')
         // TextInput::make('updated_at')
@@ -73,10 +73,10 @@ return [
                 'name' => 'Nome',
                 'type' => 'Tipo',
 <<<<<<< HEAD
-
-=======
                 
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
                 // Campi automatici (da mantenere)
                 'created_at' => 'Data Creazione',
                 'updated_at' => 'Ultima Modifica'
@@ -95,10 +95,10 @@ return [
 
 ### Regole di Estensione
 <<<<<<< HEAD
-1. Implementare `public function getFormSchema(): array`
-=======
 1. Implementare `public static function getFormSchema(): array`
->>>>>>> laraxot/dev
+=======
+1. Implementare `public function getFormSchema(): array`
+>>>>>>> 77b1e2748 (first)
 2. NON implementare il metodo `form(Form $form): Form`
 3. NON definire `protected static ?string $navigationIcon`
 4. La navigazione è gestita interamente da XotBaseResource
@@ -110,14 +110,14 @@ class MyResource extends XotBaseResource
     protected static ?string $model = MyModel::class;
 
 <<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             TextInput::make('name')->required(),
@@ -146,16 +146,6 @@ class MyResource extends XotBaseResource
 ### Versione HEAD
 
 <<<<<<< HEAD
-## Collegamenti tra versioni di best-practices.md
-* [best-practices.md](docs/tecnico/filament/best-practices.md)
-* [best-practices.md](../../../xot/project_docs/laraxot/best-practices.md)
-* [best-practices.md](../../../ui/project_docs/best-practices.md)
-* [best-practices.md](../../../../themes/one/project_docs/best-practices.md)
-
-### Versione Incoming
-
----
-=======
 
 ## Collegamenti tra versioni di best-practices.md
 * [best-practices.md](docs/tecnico/filament/best-practices.md)
@@ -169,4 +159,14 @@ class MyResource extends XotBaseResource
 
 ---
 
->>>>>>> laraxot/dev
+=======
+## Collegamenti tra versioni di best-practices.md
+* [best-practices.md](docs/tecnico/filament/best-practices.md)
+* [best-practices.md](../../../xot/project_docs/laraxot/best-practices.md)
+* [best-practices.md](../../../ui/project_docs/best-practices.md)
+* [best-practices.md](../../../../themes/one/project_docs/best-practices.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

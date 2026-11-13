@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 /** @return list<string> */
 function folioBladePaths(string $themeRoot): array
 {
@@ -19,6 +20,8 @@ function folioBladePaths(string $themeRoot): array
     return $paths;
 }
 
+=======
+>>>>>>> f08c6884 (.)
 /**
  * Contratto pagine Folio dinamiche: mount() con params route, no request()->route() in @php.
  */
@@ -107,7 +110,11 @@ test('le pagine CMS container0 non hanno route Folio esplicite concorrenti', fun
 
 test('folio pages con Component vietano props extends section e php slug hack', function (): void {
     $themeRoot = dirname(__DIR__, 2);
+<<<<<<< HEAD
     foreach (folioBladePaths($themeRoot) as $path) {
+=======
+    foreach (glob($themeRoot.'/resources/views/pages/**/*.blade.php') ?: [] as $path) {
+>>>>>>> f08c6884 (.)
         if (str_contains($path, '.old')) {
             continue;
         }
@@ -117,7 +124,7 @@ test('folio pages con Component vietano props extends section e php slug hack', 
         }
         expect($html)->not->toContain('@props(');
         expect($html)->not->toContain("@extends('layouts.app')");
-        expect($html)->not->toContain('@extends("layouts.app")');
+        expect($html)->not->toContain("@extends(\"layouts.app\")");
         expect($html)->not->toContain("@section('content')");
         expect($html)->not->toMatch('/@php\s+\$pageSlug\s*=/');
     }
@@ -125,7 +132,11 @@ test('folio pages con Component vietano props extends section e php slug hack', 
 
 test('folio pages non usano @volt con variabile dinamica', function (): void {
     $themeRoot = dirname(__DIR__, 2);
+<<<<<<< HEAD
     foreach (folioBladePaths($themeRoot) as $path) {
+=======
+    foreach (glob($themeRoot.'/resources/views/pages/**/*.blade.php') ?: [] as $path) {
+>>>>>>> f08c6884 (.)
         $html = (string) file_get_contents($path);
         if (! str_contains($html, 'extends Component')) {
             continue;

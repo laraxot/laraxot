@@ -4,13 +4,13 @@ description: Installazione Filament
 extends: _layouts.documentation
 section: content
 <<<<<<< HEAD
-=======
 type: note
 status: draft
 updated: 2026-10-18
 tags: [docs, xot, filament]
 qmd: "installazione filament {#installazione-filament} xot"
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 # Installazione Filament {#installazione-filament}
@@ -34,10 +34,10 @@ qmd: "installazione filament {#installazione-filament} xot"
 - php artisan vendor:publish --tag="filament-jet-views"
 
 <<<<<<< HEAD
-- mettere in composer
-=======
 - mettere in composer 
->>>>>>> laraxot/dev
+=======
+- mettere in composer
+>>>>>>> 77b1e2748 (first)
 
 ```bash
 "repositories": [
@@ -65,10 +65,10 @@ qmd: "installazione filament {#installazione-filament} xot"
 
 - php artisan module:use Modulo
 <<<<<<< HEAD
--
-=======
 - 
->>>>>>> laraxot/dev
+=======
+-
+>>>>>>> 77b1e2748 (first)
 - php artisan module:make-filament-context Filament
 
 ### Versione HEAD
@@ -76,6 +76,7 @@ qmd: "installazione filament {#installazione-filament} xot"
 - php artisan make:filament-user per creare utente
 ## Collegamenti tra versioni di installation.md
 <<<<<<< HEAD
+=======
 * [installation.md](../../../xot/docs/filament/installation.md)
 * [installation.md](../../../xot/docs/installation.md)
 * [installation.md](../../../xot/docs/base/installation.md)
@@ -83,8 +84,7 @@ qmd: "installazione filament {#installazione-filament} xot"
 * [installation.md](../../../lang/docs/installation.md)
 * [installation.md](../../../cms/docs/installation.md)
 * [installation.md](../../../../themes/one/docs/installation.md)
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 * [installation.md](../../../Xot/docs/filament/installation.md)
 * [installation.md](../../../Xot/docs/installation.md)
 * [installation.md](../../../Xot/docs/base/installation.md)
@@ -94,16 +94,16 @@ qmd: "installazione filament {#installazione-filament} xot"
 * [installation.md](../../../../Themes/One/docs/installation.md)
 
 <<<<<<< HEAD
-=======
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ### Versione Incoming
 
 - php artisan make:filament-user per creare utente
 
 <<<<<<< HEAD
 ---
+
 =======
 ---
-
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

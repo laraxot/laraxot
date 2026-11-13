@@ -5,10 +5,6 @@ declare(strict_types=1);
 return [
     'actions' => [
 <<<<<<< HEAD
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-    ],
-    'navigation' => ['label' => 'Orologio'],
-=======
         'save' => [
             'icon' => 'save',
         ],
@@ -16,5 +12,9 @@ return [
     'navigation' => [
         'label' => 'Orologio',
     ],
->>>>>>> laraxot/dev
+=======
+        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
+    ],
+    'navigation' => ['label' => 'Orologio'],
+>>>>>>> 77b1e2748 (first)
 ];

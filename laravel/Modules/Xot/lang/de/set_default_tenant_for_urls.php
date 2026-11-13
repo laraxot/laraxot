@@ -4,6 +4,24 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
+    'fields' => [
+        'email' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'password' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'remember' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'cap' => [
+            'tooltip' => '',
+        ],
+        'city' => [
+=======
     'actions' => [
         'authenticate' => [
             'label' => 'authenticate',
@@ -46,25 +64,7 @@ return [
         ],
         'city' => [
             'description' => 'city',
-=======
-    'fields' => [
-        'email' => [
-            'helper_text' => '',
-            'tooltip' => '',
-        ],
-        'password' => [
-            'helper_text' => '',
-            'tooltip' => '',
-        ],
-        'remember' => [
-            'helper_text' => '',
-            'tooltip' => '',
-        ],
-        'cap' => [
-            'tooltip' => '',
-        ],
-        'city' => [
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             'label' => '',
             'tooltip' => '',
             'helper_text' => '',

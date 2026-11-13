@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "DIVIETO ASSOLUTO DI IMPLEMENTARE table()"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, filament]
 qmd: "DIVIETO ASSOLUTO DI IMPLEMENTARE table()"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # DIVIETO ASSOLUTO DI IMPLEMENTARE table()
 
 ## Regola Fondamentale Inviolabile
@@ -49,10 +49,10 @@ class EsempioRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'nomeRelazione';
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     /**
      * @return array<int, \Filament\Tables\Columns\Column>
      */
@@ -63,10 +63,10 @@ class EsempioRelationManager extends XotBaseRelationManager
         ];
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     /**
      * @return array<string, \Filament\Tables\Actions\Action>
      */
@@ -77,10 +77,10 @@ class EsempioRelationManager extends XotBaseRelationManager
         ];
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     /**
      * @return array<string, \Filament\Tables\Actions\Action>
      */
@@ -91,10 +91,10 @@ class EsempioRelationManager extends XotBaseRelationManager
         ];
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     /**
      * @return array<string, \Filament\Tables\Actions\BulkAction>
      */
@@ -123,10 +123,10 @@ class EsempioRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'nomeRelazione';
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // ❌ GRAVEMENTE ERRATO - MAI IMPLEMENTARE QUESTO METODO
     public function table(Table $table): Table
     {
@@ -167,8 +167,8 @@ Se trovi un `RelationManager` che implementa il metodo `table()`:
 
 <<<<<<< HEAD
 *Ultimo aggiornamento: 3 Giugno 2025*
-- [Divieto di usare label(), placeholder() e helperText()](/laravel/modules/xot/docs/filament/no_labels.md)
-- [Esempio TeamsRelationManager](/laravel/modules/user/docs/filament/teams_relation_manager.md)
 =======
 *Ultimo aggiornamento: 3 Giugno 2025*
->>>>>>> laraxot/dev
+- [Divieto di usare label(), placeholder() e helperText()](/laravel/modules/xot/docs/filament/no_labels.md)
+- [Esempio TeamsRelationManager](/laravel/modules/user/docs/filament/teams_relation_manager.md)
+>>>>>>> 77b1e2748 (first)

@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot - development-rules.md"
 module: Xot
 bmad: true
 status: active
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole Generali di Sviluppo del Progetto
 
 ## Collegamenti
@@ -434,8 +434,6 @@ TextInput::make('name')
 ---
 
 <<<<<<< HEAD
-**Nota**: Queste regole sono fondamentali per mantenere la qualità e la consistenza del progetto. Devono essere sempre seguite e aggiornate quando necessario.
-=======
 title: "development rules"
 type: note
 tags: [documentation]
@@ -445,4 +443,6 @@ qmd: "development rules"
 issues: []
 discussions: []
 **Nota**: Queste regole sono fondamentali per mantenere la qualità e la consistenza del progetto. Devono essere sempre seguite e aggiornate quando necessario.
->>>>>>> laraxot/dev
+=======
+**Nota**: Queste regole sono fondamentali per mantenere la qualità e la consistenza del progetto. Devono essere sempre seguite e aggiornate quando necessario.
+>>>>>>> 77b1e2748 (first)

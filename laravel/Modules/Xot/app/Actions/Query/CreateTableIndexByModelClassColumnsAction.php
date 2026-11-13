@@ -23,10 +23,10 @@ class CreateTableIndexByModelClassColumnsAction
      * Execute the action.
      *
 <<<<<<< HEAD
-     * @param  class-string<Model>  $modelClass  fully qualified model class name
-=======
      * @param  string  $modelClass  fully qualified model class name, validated at runtime
->>>>>>> laraxot/dev
+=======
+     * @param  class-string<Model>  $modelClass  fully qualified model class name
+>>>>>>> 77b1e2748 (first)
      * @param  array<string>  $columns  array of column names to include in the index
      *
      * @throws \InvalidArgumentException|\RuntimeException

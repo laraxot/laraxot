@@ -5,20 +5,20 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseManageRelatedRecords;
 use Modules\Xot\Filament\Traits\HasXotTable;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 <<<<<<< HEAD
-use Modules\Xot\Filament\Traits\TransTrait;
-=======
 use Modules\Xot\Filament\Traits\TransFuncTrait;
 use Modules\Xot\Tests\TestCase;
->>>>>>> laraxot/dev
+=======
+use Modules\Xot\Filament\Traits\TransTrait;
+>>>>>>> 77b1e2748 (first)
 use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
 
 <<<<<<< HEAD
-=======
 uses(TestCase::class);
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 /**
  * Guardia meccanica contro due regressioni avvenute nello stesso giorno
  * (2026-09-11):
@@ -41,12 +41,6 @@ uses(TestCase::class);
  * @see Modules/Xot/docs/stories/18.27.hasxottable-fuori-dai-componenti-filament.story.md
  */
 <<<<<<< HEAD
-it('usa i trait richiesti (NavigationLabelTrait, TransTrait) e NON HasXotTable', function (): void {
-    $traits = class_uses_recursive(XotBaseManageRelatedRecords::class);
-
-    Assert::assertArrayHasKey(NavigationLabelTrait::class, $traits);
-    Assert::assertArrayHasKey(TransTrait::class, $traits);
-=======
 it('usa i trait richiesti (NavigationLabelTrait, TransFuncTrait) e NON HasXotTable', function (): void {
     $traits = class_uses_recursive(XotBaseManageRelatedRecords::class);
 
@@ -54,7 +48,13 @@ it('usa i trait richiesti (NavigationLabelTrait, TransFuncTrait) e NON HasXotTab
     // da NavigationLabelTrait (vedi la docblock della classe). TransTrait non serve qui.
     Assert::assertArrayHasKey(NavigationLabelTrait::class, $traits);
     Assert::assertArrayHasKey(TransFuncTrait::class, $traits);
->>>>>>> laraxot/dev
+=======
+it('usa i trait richiesti (NavigationLabelTrait, TransTrait) e NON HasXotTable', function (): void {
+    $traits = class_uses_recursive(XotBaseManageRelatedRecords::class);
+
+    Assert::assertArrayHasKey(NavigationLabelTrait::class, $traits);
+    Assert::assertArrayHasKey(TransTrait::class, $traits);
+>>>>>>> 77b1e2748 (first)
 
     // Story 18.27: XotBaseManageRelatedRecords e' nominata esplicitamente
     // fra le classi che NON devono usare HasXotTable (implementa HasTable,

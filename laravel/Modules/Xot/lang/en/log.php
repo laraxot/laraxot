@@ -11,10 +11,10 @@ return [
             'description' => 'Gestione e monitoraggio dei log di sistema',
         ],
 <<<<<<< HEAD
-        'label' => 'log',
-=======
         'label' => 'Log',
->>>>>>> laraxot/dev
+=======
+        'label' => 'log',
+>>>>>>> 77b1e2748 (first)
         'sort' => '15',
         'icon' => 'xot-log',
     ],

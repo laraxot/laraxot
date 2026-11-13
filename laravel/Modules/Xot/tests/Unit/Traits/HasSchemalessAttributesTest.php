@@ -37,14 +37,14 @@ it('handles where extra attribute scope', function (): void {
 it('gets and sets extra attributes', function (): void {
     $model = new SchemalessTestModel;
 <<<<<<< HEAD
-    $model->setExtraAttribute('foo', 'bar');
-
-    Assert::assertSame('bar', $model->getExtraAttribute('foo'));
-=======
     $model->setExtraValue('foo', 'bar');
 
     Assert::assertSame('bar', $model->getExtraValue('foo'));
->>>>>>> laraxot/dev
+=======
+    $model->setExtraAttribute('foo', 'bar');
+
+    Assert::assertSame('bar', $model->getExtraAttribute('foo'));
+>>>>>>> 77b1e2748 (first)
     Assert::assertTrue($model->hasExtraAttribute('foo'));
     Assert::assertFalse($model->hasExtraAttribute('baz'));
 });
@@ -52,10 +52,10 @@ it('gets and sets extra attributes', function (): void {
 it('returns all extra attributes as array', function (): void {
     $model = new SchemalessTestModel;
 <<<<<<< HEAD
-    $model->setExtraAttribute('a', 1);
-=======
     $model->setExtraValue('a', 1);
->>>>>>> laraxot/dev
+=======
+    $model->setExtraAttribute('a', 1);
+>>>>>>> 77b1e2748 (first)
 
     Assert::assertSame(['a' => 1], $model->getExtraAttributes());
 });
@@ -63,10 +63,10 @@ it('returns all extra attributes as array', function (): void {
 it('removes extra attribute', function (): void {
     $model = new SchemalessTestModel;
 <<<<<<< HEAD
-    $model->setExtraAttribute('temp', 'val');
-=======
     $model->setExtraValue('temp', 'val');
->>>>>>> laraxot/dev
+=======
+    $model->setExtraAttribute('temp', 'val');
+>>>>>>> 77b1e2748 (first)
 
     Assert::assertTrue($model->hasExtraAttribute('temp'));
     $model->removeExtraAttribute('temp');

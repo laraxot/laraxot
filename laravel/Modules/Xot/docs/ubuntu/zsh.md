@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "zsh"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, ubuntu]
 qmd: "zsh"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ~~~ bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 touch ~/.zshrc
@@ -34,13 +34,13 @@ usefull links:
 - https://zsh-prompt-generator.site/
 
 <<<<<<< HEAD
-## Collegamenti tra versioni di zsh.md
-* [zsh.md](../../../xot/project_docs/install/zsh.md)
-* [zsh.md](../../../xot/project_docs/ubuntu/zsh.md)
-=======
 
 ## Collegamenti tra versioni di zsh.md
 * [zsh.md](../../../Xot/docs/install/zsh.md)
 * [zsh.md](../../../Xot/docs/ubuntu/zsh.md)
 
->>>>>>> laraxot/dev
+=======
+## Collegamenti tra versioni di zsh.md
+* [zsh.md](../../../xot/project_docs/install/zsh.md)
+* [zsh.md](../../../xot/project_docs/ubuntu/zsh.md)
+>>>>>>> 77b1e2748 (first)

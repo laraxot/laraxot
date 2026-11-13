@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "CSRF Token Handling in Xot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, security]
 qmd: "CSRF Token Handling in Xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # CSRF Token Handling in Xot
 
 ## Table of Contents
@@ -108,10 +108,10 @@ public function mount(): void
 
 ## Related Documentation
 <<<<<<< HEAD
-- [Laravel CSRF Protection](https://laravel.com/project_docs/csrf)
-- [Livewire Forms](https://laravel-livewire.com/project_docs/2.x/input)
-=======
 - [Laravel CSRF Protection](https://laravel.com/docs/csrf)
 - [Livewire Forms](https://laravel-livewire.com/docs/2.x/input)
->>>>>>> laraxot/dev
+=======
+- [Laravel CSRF Protection](https://laravel.com/project_docs/csrf)
+- [Livewire Forms](https://laravel-livewire.com/project_docs/2.x/input)
+>>>>>>> 77b1e2748 (first)
 - [Xot Widget Development](xot-widgets.md)

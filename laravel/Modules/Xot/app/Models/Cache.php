@@ -13,9 +13,50 @@ use Modules\Xot\Database\Factories\CacheFactory;
  *
  * @property string $key
  * @property string $value
+<<<<<<< HEAD
  * @property int $expiration
  *
  * @method static CacheFactory factory($count = null, $state = [])
+=======
+<<<<<<< .merge_file_XrvvUG
+ * @property int $expiration
+ *
+ * @method static CacheFactory factory($count = null, $state = [])
+=======
+ *                              <<<<<<< HEAD
+ * @property int    $expiration
+ *
+ * @method static CacheFactory factory($count = null, $state = [])
+ *                                                                 =======
+ *                                                                 <<<<<<< HEAD
+ *                                                                 <<<<<<< HEAD
+ *                                                                 =======
+ *                                                                 <<<<<<< HEAD
+ *                                                                 >>>>>>> laraxot/dev
+ *
+ * @property int $expiration
+ *
+ * @method static CacheFactory factory($count = null, $state = [])
+ *                                                                 =======
+ *
+ * @property int $expiration
+ *
+ * <<<<<<< HEAD
+ * =======
+ *
+ * @method static CacheFactory factory($count = null, $state = [])
+ *                                                                 >>>>>>> laraxot/dev
+ *                                                                 =======
+ *
+ * @property int $expiration
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * @method static CacheFactory          factory($count = null, $state = [])
+ *                                                                          >>>>>>> laraxot/dev
+ *                                                                          >>>>>>> laraxot/dev
+>>>>>>> .merge_file_zcOSvc
+>>>>>>> 77b1e2748 (first)
  * @method static Builder<static>|Cache newModelQuery()
  * @method static Builder<static>|Cache newQuery()
  * @method static Builder<static>|Cache query()

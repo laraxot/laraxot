@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regola generale: Label e traduzioni in Filament"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "regola generale: label e traduzioni in filament xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regola generale: Label e traduzioni in Filament
 
 ## Regola

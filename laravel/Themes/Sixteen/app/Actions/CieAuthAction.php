@@ -262,6 +262,7 @@ class CieAuthAction
             throw new Exception('JWT signature verification failed');
         }
 
+<<<<<<< HEAD
         $jwks = Http::acceptJson()->get($jwksUri);
         if (! $jwks->successful() || ! is_array($keySet = $jwks->json())) {
             throw new Exception('JWT signature verification failed');
@@ -273,6 +274,8 @@ class CieAuthAction
             throw new Exception('JWT signature verification failed', previous: $exception);
         }
 
+=======
+>>>>>>> f08c6884 (.)
         if (! isset($payload['nonce']) || $payload['nonce'] !== Session::get('cie.nonce')) {
             throw new Exception('Nonce verification failed');
         }

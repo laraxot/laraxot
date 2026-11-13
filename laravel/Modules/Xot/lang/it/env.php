@@ -10,12 +10,12 @@ return [
             'name' => 'Admin',
         ],
 <<<<<<< HEAD
-        'label' => 'env.navigation',
-        'icon' => 'env.navigation',
-=======
         'label' => 'Ambiente',
         'icon' => 'heroicon-o-home',
->>>>>>> laraxot/dev
+=======
+        'label' => 'env.navigation',
+        'icon' => 'env.navigation',
+>>>>>>> 77b1e2748 (first)
         'sort' => 94,
     ],
     'pages' => [
@@ -151,24 +151,25 @@ return [
         ],
         'save' => [
 <<<<<<< HEAD
+            'icon' => 'save',
+        ],
+    ],
+    'title' => 'Ambiente',
+=======
             'label' => 'save',
             'icon' => 'save',
             'tooltip' => 'save',
         ],
     ],
     'title' => 'env',
-=======
-            'icon' => 'save',
-        ],
-    ],
-    'title' => 'Ambiente',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     'sections' => [
         'General' => [
             'label' => 'Generale',
             'heading' => 'Generale',
         ],
 <<<<<<< HEAD
+=======
         'SMS' => [
             'label' => 'SMS',
             'heading' => 'SMS',
@@ -177,7 +178,6 @@ return [
             'label' => 'Mail',
             'heading' => 'Mail',
         ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     ],
 ];

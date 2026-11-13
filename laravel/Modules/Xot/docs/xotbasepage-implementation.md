@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "xotbasepage: implementazione e best practices"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "xotbasepage: implementazione e best practices"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # xotbasepage: implementazione e best practices
 
 ## descrizione
@@ -20,10 +20,10 @@ la classe `XotBasePage` è una classe base astratta per tutte le pagine filament
 la classe `XotBasePage` estende `Filament\Pages\Page` e si trova in:
 ```
 <<<<<<< HEAD
-Modules/Xot/app/Filament/Pages/XotBasePage.php
-=======
 /var/www/html/base_saluteora/laravel/Modules/Xot/app/Filament/Pages/XotBasePage.php
->>>>>>> laraxot/dev
+=======
+Modules/Xot/app/Filament/Pages/XotBasePage.php
+>>>>>>> 77b1e2748 (first)
 ```
 
 ## namespace
@@ -87,10 +87,10 @@ class SettingsPage extends XotBasePage
 
 ```php
 <<<<<<< HEAD
-namespace Modules\<nome progetto>\Filament\Pages;
-=======
 namespace Modules\SaluteOra\Filament\Pages;
->>>>>>> laraxot/dev
+=======
+namespace Modules\<nome progetto>\Filament\Pages;
+>>>>>>> 77b1e2748 (first)
 
 use Modules\Xot\Filament\Pages\XotBasePage;
 use Filament\Forms\Components\TextInput;
@@ -100,14 +100,14 @@ class DashboardSettings extends XotBasePage
 {
     protected static ?string $navigationIcon = 'heroicon-o-cog';
 <<<<<<< HEAD
-
-    protected static string $view = '<nome progetto>::filament.pages.dashboard-settings';
-
-=======
     
     protected static string $view = 'saluteora::filament.pages.dashboard-settings';
     
->>>>>>> laraxot/dev
+=======
+
+    protected static string $view = '<nome progetto>::filament.pages.dashboard-settings';
+
+>>>>>>> 77b1e2748 (first)
     protected function getFormFields(): array
     {
         return [
@@ -131,10 +131,10 @@ class DashboardSettings extends XotBasePage
         ];
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public function submit(): void
     {
         $this->form->validate();
@@ -204,12 +204,12 @@ class DashboardSettingsPolicy
 
 ## collegamento ad altre documentazioni
 <<<<<<< HEAD
-- [pattern di estensione filament](../Xot/docs/filament_extension_pattern.md)
-- [best practices filament](../<nome progetto>/docs/filament-best-practices.md)
-=======
 - [pattern di estensione filament](/var/www/html/base_saluteora/laravel/Modules/Xot/docs/filament_extension_pattern.md)
 - [best practices filament](/var/www/html/base_saluteora/laravel/Modules/SaluteOra/docs/filament-best-practices.md)
->>>>>>> laraxot/dev
+=======
+- [pattern di estensione filament](../Xot/docs/filament_extension_pattern.md)
+- [best practices filament](../<nome progetto>/docs/filament-best-practices.md)
+>>>>>>> 77b1e2748 (first)
 
 ## ATTENZIONE: errori critici da evitare
 - NON dichiarare mai abstract getFormSchema() in XotBasePage: la classe base Filament lo implementa già. Fornire sempre una implementazione di default (array vuoto).

@@ -14,23 +14,6 @@ class BuildActionUrlAction
     use QueueableAction;
 
 <<<<<<< HEAD
-    /** @param array<string, mixed> $params */
-    public function execute(array $params): string
-    {
-        $action = is_string($params['act'] ?? null) ? $params['act'] : 'show';
-        $row = $params['row'] ?? (object) [];
-        $query = is_array($params['query'] ?? null) ? $params['query'] : [];
-        $route = request()->route();
-        if (! $route instanceof Route || $route->getName() === null) {
-            return '#'.$action;
-        }
-
-        $target = Str::beforeLast($route->getName(), '.').'.'.$action;
-        $routeParams = $route->parameters();
-        $router = app(Router::class);
-
-        return $router->has($target) ? route($target, array_merge($routeParams, [$row], $query)) : '#'.$target;
-=======
     /**
      * URL dell'azione `act` sorella della route corrente (`x.items.index` -> `x.items.show`).
      *
@@ -59,6 +42,23 @@ class BuildActionUrlAction
         $row = $params['row'] ?? null;
 
         return route($target, array_merge($route->parameters(), $row === null ? [] : [$row], $query));
->>>>>>> laraxot/dev
+=======
+    /** @param array<string, mixed> $params */
+    public function execute(array $params): string
+    {
+        $action = is_string($params['act'] ?? null) ? $params['act'] : 'show';
+        $row = $params['row'] ?? (object) [];
+        $query = is_array($params['query'] ?? null) ? $params['query'] : [];
+        $route = request()->route();
+        if (! $route instanceof Route || $route->getName() === null) {
+            return '#'.$action;
+        }
+
+        $target = Str::beforeLast($route->getName(), '.').'.'.$action;
+        $routeParams = $route->parameters();
+        $router = app(Router::class);
+
+        return $router->has($target) ? route($target, array_merge($routeParams, [$row], $query)) : '#'.$target;
+>>>>>>> 77b1e2748 (first)
     }
 }

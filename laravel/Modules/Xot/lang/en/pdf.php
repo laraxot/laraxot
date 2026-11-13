@@ -6,10 +6,10 @@ return [
     'fields' => [
         'pdf' => [
 <<<<<<< HEAD
-            'label' => 'pdf',
-=======
             'label' => 'PDF',
->>>>>>> laraxot/dev
+=======
+            'label' => 'pdf',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -25,8 +25,8 @@ return [
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
 <<<<<<< HEAD
+=======
     'actions' => [
     ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ];

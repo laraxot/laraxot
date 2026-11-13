@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Notifiche"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Notifiche"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Notifiche
 
 ## Configurazione Base
@@ -262,7 +262,7 @@ class InvoicePaid extends Notification
     }
 }
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)

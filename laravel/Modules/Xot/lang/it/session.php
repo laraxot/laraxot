@@ -10,12 +10,12 @@ return [
             'name' => 'Admin',
         ],
 <<<<<<< HEAD
-        'label' => 'session.navigation',
-        'icon' => 'session.navigation',
-=======
         'label' => 'Sessione',
         'icon' => 'heroicon-o-user',
->>>>>>> laraxot/dev
+=======
+        'label' => 'session.navigation',
+        'icon' => 'session.navigation',
+>>>>>>> 77b1e2748 (first)
         'sort' => 21,
     ],
     'pages' => [
@@ -42,9 +42,9 @@ return [
             'helper_text' => '',
             'description' => '',
 <<<<<<< HEAD
-            'placeholder' => 'id',
 =======
->>>>>>> laraxot/dev
+            'placeholder' => 'id',
+>>>>>>> 77b1e2748 (first)
         ],
         'created_at' => [
             'label' => 'Data Creazione',
@@ -59,6 +59,7 @@ return [
             'description' => '',
         ],
 <<<<<<< HEAD
+=======
         'user_id' => [
             'label' => 'user_id',
             'placeholder' => 'user_id',
@@ -89,30 +90,39 @@ return [
             'helper_text' => 'last_activity',
             'description' => 'last_activity',
         ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     ],
     'actions' => [
         'create' => [
             'label' => 'Crea Session',
             'icon' => 'create',
 <<<<<<< HEAD
-            'tooltip' => 'create',
 =======
->>>>>>> laraxot/dev
+            'tooltip' => 'create',
+>>>>>>> 77b1e2748 (first)
         ],
         'edit' => [
             'label' => 'Modifica Session',
             'icon' => 'edit',
 <<<<<<< HEAD
-            'tooltip' => 'edit',
 =======
->>>>>>> laraxot/dev
+            'tooltip' => 'edit',
+>>>>>>> 77b1e2748 (first)
         ],
         'delete' => [
             'label' => 'Elimina Session',
             'icon' => 'delete',
 <<<<<<< HEAD
+        ],
+        'createAnother' => [
+            'icon' => 'createAnother',
+        ],
+        'save' => [
+            'icon' => 'save',
+        ],
+        'view' => [
+            'icon' => 'view',
+=======
             'tooltip' => 'delete',
         ],
         'createAnother' => [
@@ -129,17 +139,7 @@ return [
             'label' => 'view',
             'icon' => 'view',
             'tooltip' => 'view',
-=======
-        ],
-        'createAnother' => [
-            'icon' => 'createAnother',
-        ],
-        'save' => [
-            'icon' => 'save',
-        ],
-        'view' => [
-            'icon' => 'view',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
 ];

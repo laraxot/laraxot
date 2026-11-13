@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Safe Casting Actions - DRY & KISS Implementation"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "safe casting actions - dry & kiss implementation xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Safe Casting Actions - DRY & KISS Implementation
 
 ## Overview

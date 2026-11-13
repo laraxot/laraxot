@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Analisi Violazioni Critiche XotBaseResource"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, filament]
 qmd: "Analisi Violazioni Critiche XotBaseResource"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Analisi Violazioni Critiche XotBaseResource
 
 ## 🚨 Violazioni Identificate
@@ -29,14 +29,6 @@ class NotificationTemplateResource extends XotBaseResource
     // ❌ VIOLAZIONE: navigationIcon dichiarato
     protected static ?string $navigationIcon = 'heroicon-o-bell';
 <<<<<<< HEAD
-
-    // ❌ VIOLAZIONE: navigationGroup dichiarato
-    protected static ?string $navigationGroup = 'Sistema';
-
-    // ❌ VIOLAZIONE: navigationSort dichiarato
-    protected static ?int $navigationSort = 48;
-
-=======
     
     // ❌ VIOLAZIONE: navigationGroup dichiarato  
     protected static ?string $navigationGroup = 'Sistema';
@@ -44,7 +36,15 @@ class NotificationTemplateResource extends XotBaseResource
     // ❌ VIOLAZIONE: navigationSort dichiarato
     protected static ?int $navigationSort = 48;
     
->>>>>>> laraxot/dev
+=======
+
+    // ❌ VIOLAZIONE: navigationGroup dichiarato
+    protected static ?string $navigationGroup = 'Sistema';
+
+    // ❌ VIOLAZIONE: navigationSort dichiarato
+    protected static ?int $navigationSort = 48;
+
+>>>>>>> 77b1e2748 (first)
     // ❌ VIOLAZIONE: Override metodi gestiti da NavigationLabelTrait
     public static function getNavigationLabel(): string
     public static function getNavigationGroup(): string
@@ -62,22 +62,22 @@ class NotificationLogResource extends XotBaseResource
     // ❌ VIOLAZIONE: navigationIcon dichiarato
     protected static ?string $navigationIcon = 'heroicon-o-bell';
 <<<<<<< HEAD
-
+    
     // ❌ VIOLAZIONE: navigationGroup dichiarato
     protected static ?string $navigationGroup = 'Notifiche';
-
+    
     // ❌ VIOLAZIONE: navigationSort dichiarato
     protected static ?int $navigationSort = 100;
-
+    
 =======
-    
+
     // ❌ VIOLAZIONE: navigationGroup dichiarato
     protected static ?string $navigationGroup = 'Notifiche';
-    
+
     // ❌ VIOLAZIONE: navigationSort dichiarato
     protected static ?int $navigationSort = 100;
-    
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
     // ❌ VIOLAZIONE: Override metodi gestiti da NavigationLabelTrait
     public static function getNavigationLabel(): string
     public static function getModelLabel(): string
@@ -156,13 +156,13 @@ class NotificationLogResource extends XotBaseResource
 - [Notify Module README](../../../Notify/docs/README.md)
 - [User Module README](../../../User/docs/README.md)
 <<<<<<< HEAD
+- [SaluteOra Module README](../../../SaluteOra/docs/README.md)
+=======
 - [<nome progetto> Module README](../../../<nome progetto>/docs/README.md)
 - [Notify Module README](../../../notify/docs/readme.md)
 - [User Module README](../../../user/docs/readme.md)
 - [<nome progetto> Module README](../../../<nome progetto>/docs/readme.md)
-=======
-- [SaluteOra Module README](../../../SaluteOra/docs/README.md)
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
 ### Standard di Riferimento
 - [NavigationLabelTrait](../traits/navigation-label-trait.md)
@@ -182,16 +182,16 @@ class NotificationLogResource extends XotBaseResource
 ### Mantra per il Futuro
 - **Prima di estendere**: Leggi la documentazione della classe base
 <<<<<<< HEAD
-- **Prima di dichiarare**: Verifica se è già gestito automaticamente
-=======
 - **Prima di dichiarare**: Verifica se è già gestito automaticamente  
->>>>>>> laraxot/dev
+=======
+- **Prima di dichiarare**: Verifica se è già gestito automaticamente
+>>>>>>> 77b1e2748 (first)
 - **Prima di sovrascrivere**: Comprendi il perché dell'implementazione esistente
 
 ---
 
 <<<<<<< HEAD
-**Questo documento serve come promemoria permanente dell'importanza di seguire l'architettura stabilita e consultare sempre la documentazione prima di implementare soluzioni.**
-=======
 **Questo documento serve come promemoria permanente dell'importanza di seguire l'architettura stabilita e consultare sempre la documentazione prima di implementare soluzioni.** 
->>>>>>> laraxot/dev
+=======
+**Questo documento serve come promemoria permanente dell'importanza di seguire l'architettura stabilita e consultare sempre la documentazione prima di implementare soluzioni.**
+>>>>>>> 77b1e2748 (first)

@@ -117,20 +117,6 @@ final class XotBasePest
      * il risultato giusto, non un fallimento.
      *
 <<<<<<< HEAD
-     * Stesso schema di `assertString()`: `Assert::fail()` è dichiarato `never`, quindi
-     * PHPStan restringe davvero il tipo. `assertNotEmpty()` non restringe niente e in
-     * più **rifiuta un array vuoto legittimo**: un `flattenArray([])` che torna `[]` è
-     * il risultato giusto, non un fallimento.
-     *
-     * @return array<string, mixed>
-     */
-    public static function assertArray(mixed $value): array
-    {
-        Assert::assertNotEmpty($value);
-
-        /** @var array<string, mixed> $value */
-        return $value;
-=======
      * @return array<string, mixed>
      */
     public static function assertArray(mixed $value, string $message = ''): array
@@ -146,7 +132,21 @@ final class XotBasePest
         }
 
         return $normalized;
->>>>>>> laraxot/dev
+=======
+     * Stesso schema di `assertString()`: `Assert::fail()` è dichiarato `never`, quindi
+     * PHPStan restringe davvero il tipo. `assertNotEmpty()` non restringe niente e in
+     * più **rifiuta un array vuoto legittimo**: un `flattenArray([])` che torna `[]` è
+     * il risultato giusto, non un fallimento.
+     *
+     * @return array<string, mixed>
+     */
+    public static function assertArray(mixed $value): array
+    {
+        Assert::assertNotEmpty($value);
+
+        /** @var array<string, mixed> $value */
+        return $value;
+>>>>>>> 77b1e2748 (first)
     }
 
     /**

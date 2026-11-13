@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Laravel XOT Architecture Documentation"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "laravel xot architecture documentation xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Laravel XOT Architecture Documentation
 
 ## Overview
@@ -3569,10 +3569,10 @@ yarn install
 
 # Build e copia
 <<<<<<< HEAD
-yarn run build && yarn run copy
-=======
 yarn run build   # asset serviti via symlink: niente copy
->>>>>>> laraxot/dev
+=======
+yarn run build && yarn run copy
+>>>>>>> 77b1e2748 (first)
 ```
 
 ## 2. Importazione CSS
@@ -3659,10 +3659,10 @@ yarn run build   # asset serviti via symlink: niente copy
        "scripts": {
            "build": "vite build",
 <<<<<<< HEAD
-           "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
-=======
            "_note": "niente script copy: public_html/themes/<Tema> e' un symlink (xot:theme-link)"
->>>>>>> laraxot/dev
+=======
+           "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
+>>>>>>> 77b1e2748 (first)
        }
    }
    ```
@@ -3683,10 +3683,10 @@ yarn run build   # asset serviti via symlink: niente copy
 
    # Production + Copy
 <<<<<<< HEAD
-   yarn run build && yarn run copy
-=======
    yarn run build   # asset serviti via symlink: niente copy
->>>>>>> laraxot/dev
+=======
+   yarn run build && yarn run copy
+>>>>>>> 77b1e2748 (first)
    ```
 
 4. **Verifica Installazione**:
@@ -3780,10 +3780,10 @@ yarn cache clean
 
 # Build e copia
 <<<<<<< HEAD
-yarn run build && yarn run copy
-=======
 yarn run build   # asset serviti via symlink: niente copy
->>>>>>> laraxot/dev
+=======
+yarn run build && yarn run copy
+>>>>>>> 77b1e2748 (first)
 ```
 
 ### 2. Verifica Build
@@ -3828,10 +3828,10 @@ ls public_html/themes/Sixteen/dist
        "scripts": {
            "build": "vite build",
 <<<<<<< HEAD
-           "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
-=======
            "_note": "niente script copy: public_html/themes/<Tema> e' un symlink (xot:theme-link)"
->>>>>>> laraxot/dev
+=======
+           "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
+>>>>>>> 77b1e2748 (first)
        }
    }
    ```
@@ -6293,10 +6293,10 @@ yarn install
 
 # Build e copia
 <<<<<<< HEAD
-yarn run build && yarn run copy
-=======
 yarn run build   # asset serviti via symlink: niente copy
->>>>>>> laraxot/dev
+=======
+yarn run build && yarn run copy
+>>>>>>> 77b1e2748 (first)
 ```
 
 ## 2. Importazione CSS
@@ -6383,10 +6383,10 @@ yarn run build   # asset serviti via symlink: niente copy
        "scripts": {
            "build": "vite build",
 <<<<<<< HEAD
-           "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
-=======
            "_note": "niente script copy: public_html/themes/<Tema> e' un symlink (xot:theme-link)"
->>>>>>> laraxot/dev
+=======
+           "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
+>>>>>>> 77b1e2748 (first)
        }
    }
    ```
@@ -6407,10 +6407,10 @@ yarn run build   # asset serviti via symlink: niente copy
 
    # Production + Copy
 <<<<<<< HEAD
-   yarn run build && yarn run copy
-=======
    yarn run build   # asset serviti via symlink: niente copy
->>>>>>> laraxot/dev
+=======
+   yarn run build && yarn run copy
+>>>>>>> 77b1e2748 (first)
    ```
 
 4. **Verifica Installazione**:
@@ -6504,10 +6504,10 @@ yarn cache clean
 
 # Build e copia
 <<<<<<< HEAD
-yarn run build && yarn run copy
-=======
 yarn run build   # asset serviti via symlink: niente copy
->>>>>>> laraxot/dev
+=======
+yarn run build && yarn run copy
+>>>>>>> 77b1e2748 (first)
 ```
 
 ### 2. Verifica Build
@@ -6552,10 +6552,10 @@ ls public_html/themes/Sixteen/dist
        "scripts": {
            "build": "vite build",
 <<<<<<< HEAD
-           "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
-=======
            "_note": "niente script copy: public_html/themes/<Tema> e' un symlink (xot:theme-link)"
->>>>>>> laraxot/dev
+=======
+           "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
+>>>>>>> 77b1e2748 (first)
        }
    }
    ```

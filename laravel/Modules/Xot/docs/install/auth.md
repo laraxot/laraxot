@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "auth"
 type: note
@@ -10,17 +9,18 @@ module: Xot
 tags: [xot, install]
 qmd: "auth"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ~~~ php
 <?php
 
 declare(strict_types=1);
 
 <<<<<<< HEAD
+
+
 =======
-
-
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 return [
     /*
     |--------------------------------------------------------------------------
@@ -126,18 +126,6 @@ return [
 ];
 
 <<<<<<< HEAD
-~~~
-### Versione HEAD
-
-## Collegamenti tra versioni di auth.md
-* [auth.md](../../../xot/project_docs/install/auth.md)
-* [auth.md](../../../user/project_docs/lang/en/auth.md)
-* [auth.md](../../../tenant/project_docs/it/config/auth.md)
-
-### Versione Incoming
-
----
-=======
 
 ~~~
 ### Versione HEAD
@@ -154,4 +142,16 @@ return [
 
 ---
 
->>>>>>> laraxot/dev
+=======
+~~~
+### Versione HEAD
+
+## Collegamenti tra versioni di auth.md
+* [auth.md](../../../xot/project_docs/install/auth.md)
+* [auth.md](../../../user/project_docs/lang/en/auth.md)
+* [auth.md](../../../tenant/project_docs/it/config/auth.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

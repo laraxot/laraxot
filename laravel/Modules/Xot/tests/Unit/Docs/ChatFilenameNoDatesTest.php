@@ -24,11 +24,11 @@ uses(TestCase::class);
  * regola effettiva senza bloccare il repo su una bonifica di 96 file.
  */
 <<<<<<< HEAD
-const CHAT_FILES_WITH_DATE_BASELINE = 94;
-=======
 // Azzerato il 2026-10-15 dalla rinomina di massa (DCP-201, `md-filenames.py apply`): 0 file con data in docs/chat. Non deve piu' salire.
 const CHAT_FILES_WITH_DATE_BASELINE = 0;
->>>>>>> laraxot/dev
+=======
+const CHAT_FILES_WITH_DATE_BASELINE = 94;
+>>>>>>> 77b1e2748 (first)
 
 /**
  * @return list<string>

@@ -5,21 +5,21 @@ declare(strict_types=1);
 return [
     'navigation' => [
 <<<<<<< HEAD
-        'name' => 'cache lock',
-=======
         'name' => 'Blocco cache',
->>>>>>> laraxot/dev
+=======
+        'name' => 'cache lock',
+>>>>>>> 77b1e2748 (first)
         'plural' => 'cache locks',
         'group' => [
             'name' => 'Admin',
         ],
 <<<<<<< HEAD
-        'label' => 'cache lock.navigation',
-        'icon' => 'cache lock.navigation',
-=======
         'label' => 'Lock Cache',
         'icon' => 'heroicon-o-shield-exclamation',
->>>>>>> laraxot/dev
+=======
+        'label' => 'cache lock.navigation',
+        'icon' => 'cache lock.navigation',
+>>>>>>> 77b1e2748 (first)
         'sort' => 95,
     ],
     'pages' => [
@@ -59,6 +59,7 @@ return [
             'description' => '',
         ],
 <<<<<<< HEAD
+=======
         'key' => [
             'label' => 'key',
             'placeholder' => 'key',
@@ -77,30 +78,39 @@ return [
             'helper_text' => 'expiration',
             'description' => 'expiration',
         ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     ],
     'actions' => [
         'create' => [
             'label' => 'Crea Cache Lock',
             'icon' => 'create',
 <<<<<<< HEAD
-            'tooltip' => 'create',
 =======
->>>>>>> laraxot/dev
+            'tooltip' => 'create',
+>>>>>>> 77b1e2748 (first)
         ],
         'edit' => [
             'label' => 'Modifica Cache Lock',
             'icon' => 'edit',
 <<<<<<< HEAD
-            'tooltip' => 'edit',
 =======
->>>>>>> laraxot/dev
+            'tooltip' => 'edit',
+>>>>>>> 77b1e2748 (first)
         ],
         'delete' => [
             'label' => 'Elimina Cache Lock',
             'icon' => 'delete',
 <<<<<<< HEAD
+        ],
+        'createAnother' => [
+            'icon' => 'createAnother',
+        ],
+        'save' => [
+            'icon' => 'save',
+        ],
+        'view' => [
+            'icon' => 'view',
+=======
             'tooltip' => 'delete',
         ],
         'createAnother' => [
@@ -117,17 +127,7 @@ return [
             'label' => 'view',
             'icon' => 'view',
             'tooltip' => 'view',
-=======
-        ],
-        'createAnother' => [
-            'icon' => 'createAnother',
-        ],
-        'save' => [
-            'icon' => 'save',
-        ],
-        'view' => [
-            'icon' => 'view',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
 ];

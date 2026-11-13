@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "RelationX SQLite Cross-Database Fix"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, fixes]
 qmd: "RelationX SQLite Cross-Database Fix"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # RelationX SQLite Cross-Database Fix
 
 ## Problema Risolto
@@ -88,10 +88,10 @@ echo $tenants->count(); // ✅ Output: 1
 
 - [Customer User Fix Summary](../../Quaeris/docs/customer_user_fix_summary.md)
 <<<<<<< HEAD
-- [Cross Database Relations](../../User/docs/cross_database_relations_issue.md)
-=======
 - [Cross Database Relations](../../../User/docs/cross_database_relations_issue.md)
->>>>>>> laraxot/dev
+=======
+- [Cross Database Relations](../../User/docs/cross_database_relations_issue.md)
+>>>>>>> 77b1e2748 (first)
 - [Multi-Tenant Architecture](../architecture/multi_tenant_design.md)
 
 ## Note per Manutenzione Futura

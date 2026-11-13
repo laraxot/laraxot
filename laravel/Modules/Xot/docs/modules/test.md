@@ -4,13 +4,13 @@ description: Modulo Test
 extends: _layouts.documentation
 section: content
 <<<<<<< HEAD
-=======
 type: note
 status: draft
 updated: 2026-10-18
 tags: [docs, xot, modules]
 qmd: "modulo test {#modulo-test} xot"
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 # Modulo Test {#modulo-Test}
@@ -22,14 +22,6 @@ Modulo test serve per mettere azioni da testare.
 ### Versione HEAD
 
 <<<<<<< HEAD
-## Collegamenti tra versioni di test.md
-* [test.md](../../../xot/project_docs/modules/test.md)
-* [test.md](../../../lang/project_docs/test.md)
-
-### Versione Incoming
-
----
-=======
 
 ## Collegamenti tra versioni di test.md
 * [test.md](../../../Xot/docs/modules/test.md)
@@ -41,4 +33,12 @@ Modulo test serve per mettere azioni da testare.
 
 ---
 
->>>>>>> laraxot/dev
+=======
+## Collegamenti tra versioni di test.md
+* [test.md](../../../xot/project_docs/modules/test.md)
+* [test.md](../../../lang/project_docs/test.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "bad_practices"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "bad_practices xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # bad_practices
 
 <!-- Contenuto migrato da _docs/bad_practices.txt -->

@@ -11,10 +11,10 @@ return [
             'description' => 'Gestione delle funzionalità aggiuntive del sistema',
         ],
 <<<<<<< HEAD
-        'label' => 'extra',
-=======
         'label' => 'Extra',
->>>>>>> laraxot/dev
+=======
+        'label' => 'extra',
+>>>>>>> 77b1e2748 (first)
         'sort' => '13',
         'icon' => 'xot-extra',
     ],
@@ -120,99 +120,99 @@ return [
         ],
         'id' => [
 <<<<<<< HEAD
-            'label' => 'id',
 =======
->>>>>>> laraxot/dev
+            'label' => 'id',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'model_type' => [
 <<<<<<< HEAD
-            'label' => 'model_type',
 =======
->>>>>>> laraxot/dev
+            'label' => 'model_type',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'model_id' => [
 <<<<<<< HEAD
-            'label' => 'model_id',
 =======
->>>>>>> laraxot/dev
+            'label' => 'model_id',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'extra_attributes' => [
 <<<<<<< HEAD
-            'label' => 'extra_attributes',
 =======
->>>>>>> laraxot/dev
+            'label' => 'extra_attributes',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'create' => [
 <<<<<<< HEAD
-            'label' => 'create',
 =======
->>>>>>> laraxot/dev
+            'label' => 'create',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'edit' => [
 <<<<<<< HEAD
-            'label' => 'edit',
 =======
->>>>>>> laraxot/dev
+            'label' => 'edit',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'openFilters' => [
 <<<<<<< HEAD
-            'label' => 'openFilters',
 =======
->>>>>>> laraxot/dev
+            'label' => 'openFilters',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'applyFilters' => [
 <<<<<<< HEAD
-            'label' => 'applyFilters',
 =======
->>>>>>> laraxot/dev
+            'label' => 'applyFilters',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
 <<<<<<< HEAD
-            'label' => 'resetFilters',
 =======
->>>>>>> laraxot/dev
+            'label' => 'resetFilters',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
 <<<<<<< HEAD
-            'label' => 'reorderRecords',
 =======
->>>>>>> laraxot/dev
+            'label' => 'reorderRecords',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'toggleColumns' => [
 <<<<<<< HEAD
-            'label' => 'toggleColumns',
 =======
->>>>>>> laraxot/dev
+            'label' => 'toggleColumns',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',

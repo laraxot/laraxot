@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regole per i file di traduzione in Laraxot PTVX"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "regole per i file di traduzione in laraxot ptvx xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole per i file di traduzione in Laraxot PTVX
 
 ## Struttura dei file di traduzione

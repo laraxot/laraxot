@@ -5,21 +5,21 @@ declare(strict_types=1);
 return [
     'navigation' => [
 <<<<<<< HEAD
-        'name' => 'extra',
-=======
         'name' => 'Extra',
->>>>>>> laraxot/dev
+=======
+        'name' => 'extra',
+>>>>>>> 77b1e2748 (first)
         'plural' => 'estras',
         'group' => [
             'name' => 'Admin',
         ],
 <<<<<<< HEAD
-        'label' => 'extra.navigation',
-        'icon' => 'extra.navigation',
-=======
         'label' => 'Extra',
         'icon' => 'heroicon-o-plus',
->>>>>>> laraxot/dev
+=======
+        'label' => 'extra.navigation',
+        'icon' => 'extra.navigation',
+>>>>>>> 77b1e2748 (first)
         'sort' => 38,
     ],
     'pages' => [
@@ -46,9 +46,9 @@ return [
             'helper_text' => '',
             'description' => '',
 <<<<<<< HEAD
-            'placeholder' => 'id',
 =======
->>>>>>> laraxot/dev
+            'placeholder' => 'id',
+>>>>>>> 77b1e2748 (first)
         ],
         'created_at' => [
             'label' => 'Data Creazione',
@@ -63,6 +63,9 @@ return [
             'description' => '',
         ],
 <<<<<<< HEAD
+        'value' => [
+            'helper_text' => '',
+=======
         'model_type' => [
             'label' => 'model_type',
         ],
@@ -89,10 +92,7 @@ return [
             'placeholder' => 'value',
             'helper_text' => '',
             'description' => 'value',
-=======
-        'value' => [
-            'helper_text' => '',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
     'actions' => [
@@ -100,22 +100,29 @@ return [
             'label' => 'Crea Extra',
             'icon' => 'create',
 <<<<<<< HEAD
-            'tooltip' => 'create',
 =======
->>>>>>> laraxot/dev
+            'tooltip' => 'create',
+>>>>>>> 77b1e2748 (first)
         ],
         'edit' => [
             'label' => 'Modifica Extra',
             'icon' => 'edit',
 <<<<<<< HEAD
-            'tooltip' => 'edit',
 =======
->>>>>>> laraxot/dev
+            'tooltip' => 'edit',
+>>>>>>> 77b1e2748 (first)
         ],
         'delete' => [
             'label' => 'Elimina Extra',
             'icon' => 'delete',
 <<<<<<< HEAD
+        ],
+        'createAnother' => [
+            'icon' => 'createAnother',
+        ],
+        'save' => [
+            'icon' => 'save',
+=======
             'tooltip' => 'delete',
         ],
         'createAnother' => [
@@ -127,14 +134,7 @@ return [
             'label' => 'save',
             'icon' => 'save',
             'tooltip' => 'save',
-=======
-        ],
-        'createAnother' => [
-            'icon' => 'createAnother',
-        ],
-        'save' => [
-            'icon' => 'save',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
 ];

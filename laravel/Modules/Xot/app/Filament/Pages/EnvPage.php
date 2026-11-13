@@ -6,17 +6,17 @@ namespace Modules\Xot\Filament\Pages;
 
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Filament\Traits\SuperAdminOnlyTrait;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 
 class EnvPage extends XotBasePage
 {
     use NavigationLabelTrait;
 <<<<<<< HEAD
-=======
     use SuperAdminOnlyTrait;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-home';
 

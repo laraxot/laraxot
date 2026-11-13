@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Errore Cache Path Mancante"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, errors]
 qmd: "Errore Cache Path Mancante"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Errore Cache Path Mancante
 
 ## Descrizione dell'Errore
@@ -58,9 +58,9 @@ Per prevenire questo errore in futuro:
 
 ## Riferimenti
 <<<<<<< HEAD
-- [Documentazione Laravel Cache](https://laravel.com/project_docs/cache)
-- [Documentazione Xot Component System](../structure.md)
-=======
 - [Documentazione Laravel Cache](https://laravel.com/docs/cache)
 - [Documentazione Xot Component System](../structure.md) 
->>>>>>> laraxot/dev
+=======
+- [Documentazione Laravel Cache](https://laravel.com/project_docs/cache)
+- [Documentazione Xot Component System](../structure.md)
+>>>>>>> 77b1e2748 (first)

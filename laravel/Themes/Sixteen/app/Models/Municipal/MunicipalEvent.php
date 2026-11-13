@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace Themes\Sixteen\Models\Municipal;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -36,7 +33,18 @@ use Themes\Sixteen\Enums\MunicipalEventTypeEnum;
  * @property string|null $subcategory
  * @property int|null $organizational_unit_id
  * @property string|null $organizer
- * @property array<array-key, mixed>|null $co_organizers
+ * @property array|null $co_organizers
+ * @property string $event_status
+ * @property string $visibility
+ * @property array|null $target_audience
+ * @property \Carbon\Carbon|null $start_date
+ * @property \Carbon\Carbon|null $end_date
+ * @property \Carbon\Carbon|null $start_time
+ * @property \Carbon\Carbon|null $end_time
+ * @property string|null $timezone
+ * @property bool $is_all_day
+ * @property bool $is_recurring
+ * @property array|null $recurrence_pattern * @property array<array-key, mixed>|null $co_organizers
  * @property string $event_status
  * @property string $visibility
  * @property array<array-key, mixed>|null $target_audience
@@ -52,7 +60,7 @@ use Themes\Sixteen\Enums\MunicipalEventTypeEnum;
  * @property string|null $venue_name
  * @property string|null $address
  * @property string|null $room
- * @property array<array-key, mixed>|null $coordinates
+ * @property array|null $coordinates * @property array<array-key, mixed>|null $coordinates
  * @property string|null $online_url
  * @property string|null $streaming_url
  * @property bool $hybrid_mode
@@ -60,7 +68,23 @@ use Themes\Sixteen\Enums\MunicipalEventTypeEnum;
  * @property int $current_attendees
  * @property bool $registration_required
  * @property string|null $registration_url
- * @property Carbon|null $registration_deadline
+ * @property \Carbon\Carbon|null $registration_deadline
+ * @property float|null $registration_cost
+ * @property array|null $contact_info
+ * @property array|null $speaker_info
+ * @property array|null $agenda
+ * @property array|null $materials
+ * @property array|null $requirements
+ * @property array|null $accessibility_info
+ * @property array|null $transport_info
+ * @property array|null $parking_info
+ * @property array|null $catering_info
+ * @property string|null $image
+ * @property array|null $gallery
+ * @property array|null $documents
+ * @property array|null $related_events
+ * @property array|null $tags
+ * @property array|null $social_links * @property Carbon|null $registration_deadline
  * @property string|null $registration_cost
  * @property array<array-key, mixed>|null $contact_info
  * @property array<int, mixed>|null $speaker_info
@@ -80,10 +104,14 @@ use Themes\Sixteen\Enums\MunicipalEventTypeEnum;
  * @property string|null $feedback_url
  * @property string|null $recording_url
  * @property bool $is_published
- * @property Carbon|null $published_at
+ * @property \Carbon\Carbon|null $published_at
  * @property bool $featured
  * @property int $priority_level
- * @property array<array-key, mixed>|null $metadata
+ * @property array|null $metadata
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property \Carbon\Carbon|null $deleted_at
+ * * @property array<array-key, mixed>|null $metadata
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
@@ -98,16 +126,73 @@ use Themes\Sixteen\Enums\MunicipalEventTypeEnum;
  * @property-read int|null $available_spots
  * @property-read string|null $duration
  * @property-read string $url
+ *
  * @property-read OrganizationalUnit|null $organizationalUnit
- * @property-read Collection<int, ContactPoint> $contacts
- * @property-read Collection<int, PublicPerson> $participants
- * @property-read Collection<int, PublicPerson> $speakers
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, ContactPoint> $contacts
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, PublicPerson> $participants
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, PublicPerson> $speakers
  */
 class MunicipalEvent extends Model
 {
-    /** @use HasFactory<Factory<self>> */
     use HasFactory, SoftDeletes;
 
+    /**
+     * Tipologie di evento secondo AGID
+     */
+    public const EVENT_TYPES = [
+        'council_meeting' => 'Consiglio Comunale',
+        'committee_meeting' => 'Commissione',
+        'public_meeting' => 'Assemblea Pubblica',
+        'public_hearing' => 'Udienza Pubblica',
+        'conference' => 'Conferenza',
+        'workshop' => 'Workshop',
+        'seminar' => 'Seminario',
+        'training' => 'Formazione',
+        'cultural_event' => 'Evento Culturale',
+        'sports_event' => 'Evento Sportivo',
+        'celebration' => 'Celebrazione',
+        'ceremony' => 'Cerimonia',
+        'exhibition' => 'Mostra/Esposizione',
+        'fair' => 'Fiera',
+        'festival' => 'Festival',
+        'competition' => 'Concorso',
+        'tender_opening' => 'Apertura Gara',
+        'public_consultation' => 'Consultazione Pubblica',
+        'other' => 'Altro',
+    ];
+
+    /**
+     * Stati dell'evento
+     */
+    public const EVENT_STATUSES = [
+        'scheduled' => 'Programmato',
+        'confirmed' => 'Confermato',
+        'cancelled' => 'Annullato',
+        'postponed' => 'Rinviato',
+        'in_progress' => 'In Corso',
+        'completed' => 'Completato',
+        'draft' => 'Bozza',
+    ];
+
+    /**
+     * Tipologie di location
+     */
+    public const LOCATION_TYPES = [
+        'physical' => 'Fisica',
+        'online' => 'Online',
+        'hybrid' => 'Ibrida',
+        'tbd' => 'Da Definire',
+    ];
+
+    /**
+     * Livelli di visibilità
+     */
+    public const VISIBILITY_LEVELS = [
+        'public' => 'Pubblico',
+        'restricted' => 'Riservato',
+        'internal' => 'Interno',
+        'invite_only' => 'Solo su Invito',
+    ];
     protected $table = 'sixteen_municipal_events';
 
     protected $fillable = [
@@ -170,55 +255,46 @@ class MunicipalEvent extends Model
         'metadata',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'start_date' => 'date',
-            'end_date' => 'date',
-            'start_time' => 'datetime',
-            'end_time' => 'datetime',
-            'registration_deadline' => 'datetime',
-            'published_at' => 'datetime',
-            'is_all_day' => 'boolean',
-            'is_recurring' => 'boolean',
-            'hybrid_mode' => 'boolean',
-            'registration_required' => 'boolean',
-            'is_published' => 'boolean',
-            'featured' => 'boolean',
-            'capacity' => 'integer',
-            'current_attendees' => 'integer',
-            'registration_cost' => 'decimal:2',
-            'priority_level' => 'integer',
-            'co_organizers' => 'json',
-            'target_audience' => 'json',
-            'recurrence_pattern' => 'json',
-            'coordinates' => 'json',
-            'contact_info' => 'json',
-            'speaker_info' => 'json',
-            'agenda' => 'json',
-            'materials' => 'json',
-            'requirements' => 'json',
-            'accessibility_info' => 'json',
-            'transport_info' => 'json',
-            'parking_info' => 'json',
-            'catering_info' => 'json',
-            'gallery' => 'json',
-            'documents' => 'json',
-            'related_events' => 'json',
-            'tags' => 'json',
-            'social_links' => 'json',
-            'metadata' => 'json',
-        ];
-    }
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
+        'start_time' => 'datetime',
+        'end_time' => 'datetime',
+        'registration_deadline' => 'datetime',
+        'published_at' => 'datetime',
+        'is_all_day' => 'boolean',
+        'is_recurring' => 'boolean',
+        'hybrid_mode' => 'boolean',
+        'registration_required' => 'boolean',
+        'is_published' => 'boolean',
+        'featured' => 'boolean',
+        'capacity' => 'integer',
+        'current_attendees' => 'integer',
+        'registration_cost' => 'decimal:2',
+        'priority_level' => 'integer',
+        'co_organizers' => 'json',
+        'target_audience' => 'json',
+        'recurrence_pattern' => 'json',
+        'coordinates' => 'json',
+        'contact_info' => 'json',
+        'speaker_info' => 'json',
+        'agenda' => 'json',
+        'materials' => 'json',
+        'requirements' => 'json',
+        'accessibility_info' => 'json',
+        'transport_info' => 'json',
+        'parking_info' => 'json',
+        'catering_info' => 'json',
+        'gallery' => 'json',
+        'documents' => 'json',
+        'related_events' => 'json',
+        'tags' => 'json',
+        'social_links' => 'json',
+        'metadata' => 'json',
+    ];
 
     /**
-     * Relazione con l'unità organizzativa
-     *
+     * Relazione con l'unità organizzativa     *
      * @return BelongsTo<OrganizationalUnit, $this>
      */
     public function organizationalUnit(): BelongsTo
@@ -227,8 +303,7 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Relazione con i punti di contatto
-     *
+     * Relazione con i punti di contatto     *
      * @return MorphMany<ContactPoint, $this>
      */
     public function contacts(): MorphMany
@@ -237,8 +312,7 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Relazione con le persone pubbliche (relatori, partecipanti)
-     *
+     * Relazione con le persone pubbliche (relatori, partecipanti)     *
      * @return BelongsToMany<PublicPerson, $this>
      */
     public function participants(): BelongsToMany
@@ -250,8 +324,7 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Relazione con i relatori
-     *
+     * Relazione con i relatori     *
      * @return BelongsToMany<PublicPerson, $this>
      */
     public function speakers(): BelongsToMany
@@ -261,11 +334,8 @@ class MunicipalEvent extends Model
 
     /**
      * Scope per eventi pubblicati
-     *
-     * @param  Builder<static>  $query
-     * @return Builder<static>
      */
-    public function scopePublished(Builder $query): Builder
+    public function scopePublished($query)    public function scopePublished(Builder $query): Builder
     {
         return $query->where('is_published', true)
             ->where('published_at', '<=', now());
@@ -273,22 +343,16 @@ class MunicipalEvent extends Model
 
     /**
      * Scope per eventi pubblici
-     *
-     * @param  Builder<static>  $query
-     * @return Builder<static>
      */
-    public function scopePublic(Builder $query): Builder
+    public function scopePublic($query)    public function scopePublic(Builder $query): Builder
     {
         return $query->where('visibility', 'public');
     }
 
     /**
      * Scope per eventi futuri
-     *
-     * @param  Builder<static>  $query
-     * @return Builder<static>
      */
-    public function scopeUpcoming(Builder $query): Builder
+    public function scopeUpcoming($query)    public function scopeUpcoming(Builder $query): Builder
     {
         return $query->where('start_date', '>=', now()->toDateString())
             ->where('event_status', '!=', 'cancelled');
@@ -296,14 +360,11 @@ class MunicipalEvent extends Model
 
     /**
      * Scope per eventi passati
-     *
-     * @param  Builder<static>  $query
-     * @return Builder<static>
      */
-    public function scopePast(Builder $query): Builder
+    public function scopePast($query)    public function scopePast(Builder $query): Builder
     {
         return $query->where('end_date', '<', now()->toDateString())
-            ->orWhere(function (Builder $q): void {
+            ->orWhere(function ($q): void {
                 $q->where('start_date', '<', now()->toDateString())
                     ->whereNull('end_date');
             });
@@ -311,16 +372,13 @@ class MunicipalEvent extends Model
 
     /**
      * Scope per eventi in corso
-     *
-     * @param  Builder<static>  $query
-     * @return Builder<static>
      */
-    public function scopeOngoing(Builder $query): Builder
+    public function scopeOngoing($query)    public function scopeOngoing(Builder $query): Builder
     {
         $today = now()->toDateString();
 
         return $query->where('start_date', '<=', $today)
-            ->where(function (Builder $q) use ($today): void {
+            ->where(function ($q) use ($today): void {
                 $q->where('end_date', '>=', $today)
                     ->orWhereNull('end_date');
             })
@@ -329,34 +387,24 @@ class MunicipalEvent extends Model
 
     /**
      * Scope per tipologia di evento
-     *
-     * @param  Builder<static>  $query
-     * @return Builder<static>
      */
-    public function scopeOfType(Builder $query, string $type): Builder
+    public function scopeOfType($query, string $type)    public function scopeOfType(Builder $query, string $type): Builder
     {
         return $query->where('event_type', $type);
     }
 
     /**
      * Scope per eventi in evidenza
-     *
-     * @param  Builder<static>  $query
-     * @return Builder<static>
      */
-    public function scopeFeatured(Builder $query): Builder
+    public function scopeFeatured($query)    public function scopeFeatured(Builder $query): Builder
     {
         return $query->where('featured', true);
     }
 
     /**
      * Scope ordinati per data di inizio
-     *
-     * @param  Builder<static>  $query
-     * @param  'asc'|'desc'  $direction
-     * @return Builder<static>
      */
-    public function scopeOrdered(Builder $query, string $direction = 'asc'): Builder
+    public function scopeOrdered($query, string $direction = 'asc')
     {
         return $query->orderBy('start_date', $direction)
             ->orderBy('start_time', $direction);
@@ -366,14 +414,13 @@ class MunicipalEvent extends Model
      * Ottiene la data/ora di inizio come Carbon
      */
     public function getStartDateTime(): Carbon
-    {
-        $startDate = $this->start_date ?? Carbon::now();
+    {        $startDate = $this->start_date ?? Carbon::now();
 
         if ($this->is_all_day) {
-            return $startDate->startOfDay();
+            return $this->start_date->startOfDay();
         }
 
-        return $this->start_time ?: $startDate->startOfDay();
+        return $this->start_time ?: $this->start_date->startOfDay();        return $this->start_time ?: $startDate->startOfDay();
     }
 
     /**
@@ -382,7 +429,7 @@ class MunicipalEvent extends Model
     public function getEndDateTime(): ?Carbon
     {
         if ($this->is_all_day) {
-            if ($this->end_date) {
+            return $this->end_date ? $this->end_date->endOfDay() : $this->start_date->endOfDay();            if ($this->end_date) {
                 return $this->end_date->endOfDay();
             }
 
@@ -397,21 +444,15 @@ class MunicipalEvent extends Model
      */
     public function getFormattedDateTime(): string
     {
-        $startDate = $this->start_date;
-
-        if ($startDate === null) {
-            return '';
-        }
-
         if ($this->is_all_day) {
-            if ($this->end_date && ! $startDate->isSameDay($this->end_date)) {
-                return $startDate->format('d/m/Y').' - '.$this->end_date->format('d/m/Y');
-            }
+            if ($this->end_date && ! $this->start_date->isSameDay($this->end_date)) {
+                return $this->start_date->format('d/m/Y').' - '.$this->end_date->format('d/m/Y');
+            }        $startDate = $this->start_date;
 
-            return $startDate->format('d/m/Y').' (tutto il giorno)';
+            return $this->start_date->format('d/m/Y').' (tutto il giorno)';
         }
 
-        $formatted = $startDate->format('d/m/Y');
+        $formatted = $this->start_date->format('d/m/Y');
 
         if ($this->start_time) {
             $formatted .= ' alle '.$this->start_time->format('H:i');
@@ -429,19 +470,17 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Ottiene l'agenda formattata
-     *
+     * Ottiene l'agenda formattata     *
      * @return array<int|string, mixed>
      */
     public function getFormattedAgenda(): array
     {
-        $agenda = $this->agenda;
-
-        if (! is_array($agenda)) {
+        if (! $this->agenda || ! is_array($this->agenda)) {
             return [];
         }
 
-        return collect($agenda)
+        return collect($this->agenda)
+            ->map(function ($item, $index) {        return collect($agenda)
             ->map(function (mixed $item, int $index): mixed {
                 if (is_string($item)) {
                     return [
@@ -453,10 +492,6 @@ class MunicipalEvent extends Model
                     ];
                 }
 
-                if (! is_array($item)) {
-                    return $item;
-                }
-
                 return array_merge(['order' => $index], $item);
             })
             ->sortBy('order')
@@ -465,19 +500,17 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Ottiene i relatori formattati
-     *
+     * Ottiene i relatori formattati     *
      * @return array<int|string, mixed>
      */
     public function getFormattedSpeakers(): array
     {
-        $speakerInfo = $this->speaker_info;
-
-        if (! is_array($speakerInfo)) {
+        if (! $this->speaker_info || ! is_array($this->speaker_info)) {
             return [];
         }
 
-        return collect($speakerInfo)
+        return collect($this->speaker_info)
+            ->map(function ($speaker) {        return collect($speakerInfo)
             ->map(function (mixed $speaker): mixed {
                 if (is_string($speaker)) {
                     return ['name' => $speaker];
@@ -489,19 +522,17 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Ottiene i requisiti di partecipazione
-     *
+     * Ottiene i requisiti di partecipazione     *
      * @return array<int|string, mixed>
      */
     public function getFormattedRequirements(): array
     {
-        $requirements = $this->requirements;
-
-        if (! is_array($requirements)) {
+        if (! $this->requirements || ! is_array($this->requirements)) {
             return [];
         }
 
-        return collect($requirements)
+        return collect($this->requirements)
+            ->map(function ($requirement) {        return collect($requirements)
             ->map(function (mixed $requirement): mixed {
                 if (is_string($requirement)) {
                     return ['description' => $requirement, 'mandatory' => true];
@@ -525,7 +556,7 @@ class MunicipalEvent extends Model
             return false;
         }
 
-        if (! $this->has_available_spots) {
+        if (! $this->hasAvailableSpots) {
             return false;
         }
 
@@ -534,19 +565,14 @@ class MunicipalEvent extends Model
 
     /**
      * Verifica se l'evento è gratuito
-     *
-     * registration_cost è castato 'decimal:2': Eloquent lo restituisce come stringa
-     * numerica (es. "0.00"), mai come int 0, quindi il confronto va fatto sul
-     * valore numerico e non su una stringa "falsy" (che "0.00" non è).
      */
     public function isFree(): bool
     {
-        return $this->registration_cost === null || (float) $this->registration_cost === 0.0;
+        return ! $this->registration_cost || $this->registration_cost === 0;        return $this->registration_cost === null || (float) $this->registration_cost === 0.0;
     }
 
     /**
-     * Ottiene informazioni complete sull'evento
-     *
+     * Ottiene informazioni complete sull'evento     *
      * @return array<string, mixed>
      */
     public function getEventDetails(): array
@@ -596,8 +622,7 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Accessor per il nome del tipo di evento
-     *
+     * Accessor per il nome del tipo di evento     *
      * @return Attribute<string, never>
      */
     protected function eventTypeName(): Attribute
@@ -608,8 +633,7 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Accessor per il nome dello stato
-     *
+     * Accessor per il nome dello stato     *
      * @return Attribute<string, never>
      */
     protected function eventStatusName(): Attribute
@@ -620,8 +644,7 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Accessor per il nome del tipo di location
-     *
+     * Accessor per il nome del tipo di location     *
      * @return Attribute<string, never>
      */
     protected function locationTypeName(): Attribute
@@ -632,14 +655,14 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Accessor per verificare se l'evento è futuro
-     *
+     * Accessor per verificare se l'evento è futuro     *
      * @return Attribute<bool, never>
      */
     protected function isUpcoming(): Attribute
     {
         return Attribute::make(
-            get: function (): bool {
+            get: fn () => $this->start_date->isFuture() ||
+                ($this->start_date->isToday() && $this->start_time?->isFuture())            get: function (): bool {
                 $startDate = $this->start_date;
 
                 if ($startDate === null) {
@@ -653,37 +676,35 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Accessor per verificare se l'evento è in corso
-     *
+     * Accessor per verificare se l'evento è in corso     *
      * @return Attribute<bool, never>
      */
     protected function isOngoing(): Attribute
     {
         return Attribute::make(
-            get: function (): bool {
+            get: function () {
                 $now = now();
                 $startDateTime = $this->getStartDateTime();
                 $endDateTime = $this->getEndDateTime();
 
                 return $startDateTime <= $now &&
-                       ($endDateTime === null || $endDateTime >= $now) &&
+                       ($endDateTime >= $now || ! $endDateTime) &&
                        $this->event_status === 'in_progress';
             }
         );
     }
 
     /**
-     * Accessor per verificare se l'evento è passato
-     *
+     * Accessor per verificare se l'evento è passato     *
      * @return Attribute<bool, never>
      */
     protected function isPast(): Attribute
     {
         return Attribute::make(
-            get: function (): bool {
+            get: function () {
                 $endDateTime = $this->getEndDateTime();
 
-                if ($endDateTime !== null) {
+                return $endDateTime ? $endDateTime->isPast() : $this->start_date->isPast();                if ($endDateTime !== null) {
                     return $endDateTime->isPast();
                 }
 
@@ -693,8 +714,7 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Accessor per verificare se l'evento è cancellato
-     *
+     * Accessor per verificare se l'evento è cancellato     *
      * @return Attribute<bool, never>
      */
     protected function isCancelled(): Attribute
@@ -705,8 +725,7 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Accessor per verificare se ha posti disponibili
-     *
+     * Accessor per verificare se ha posti disponibili     *
      * @return Attribute<bool, never>
      */
     protected function hasAvailableSpots(): Attribute
@@ -717,8 +736,7 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Accessor per i posti rimanenti
-     *
+     * Accessor per i posti rimanenti     *
      * @return Attribute<int|null, never>
      */
     protected function availableSpots(): Attribute
@@ -729,23 +747,16 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Accessor per la durata dell'evento
-     *
+     * Accessor per la durata dell'evento     *
      * @return Attribute<string|null, never>
      */
     protected function duration(): Attribute
     {
         return Attribute::make(
-            get: function (): ?string {
-                $startDate = $this->start_date;
-
+            get: function () {
                 if ($this->is_all_day) {
-                    if ($startDate === null) {
-                        return null;
-                    }
-
                     return $this->end_date
-                        ? $startDate->diffInDays($this->end_date) + 1 .' giorni'
+                        ? $this->start_date->diffInDays($this->end_date) + 1 .' giorni'                        ? $startDate->diffInDays($this->end_date) + 1 .' giorni'
                         : '1 giorno';
                 }
 
@@ -760,16 +771,13 @@ class MunicipalEvent extends Model
                     }
 
                     return "{$diff}m";
-                }
-
-                return null;
+                }                return null;
             }
         );
     }
 
     /**
-     * Accessor per l'URL dell'evento
-     *
+     * Accessor per l'URL dell'evento     *
      * @return Attribute<string, never>
      */
     protected function url(): Attribute
@@ -780,14 +788,13 @@ class MunicipalEvent extends Model
     }
 
     /**
-     * Mutator per il titolo (genera automaticamente lo slug)
-     *
+     * Mutator per il titolo (genera automaticamente lo slug)     *
      * @return Attribute<string, string>
      */
     protected function title(): Attribute
     {
         return Attribute::make(
-            set: function (string $value): string {
+            set: function ($value) {            set: function (string $value): string {
                 $this->attributes['title'] = $value;
                 if (empty($this->attributes['slug'])) {
                     $this->attributes['slug'] = Str::slug($value);
@@ -806,14 +813,14 @@ class MunicipalEvent extends Model
         parent::boot();
 
         // Genera slug se mancante
-        static::creating(function (self $model): void {
+        static::creating(function ($model): void {        static::creating(function (self $model): void {
             if (empty($model->slug)) {
                 $model->slug = Str::slug($model->title);
             }
         });
 
         // Assicura unicità dello slug
-        static::creating(function (self $model): void {
+        static::creating(function ($model): void {        static::creating(function (self $model): void {
             $originalSlug = $model->slug;
             $counter = 1;
 
@@ -824,7 +831,7 @@ class MunicipalEvent extends Model
         });
 
         // Set default values
-        static::creating(function (self $model): void {
+        static::creating(function ($model): void {        static::creating(function (self $model): void {
             if (is_null($model->event_status)) {
                 $model->event_status = 'scheduled';
             }

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Gestione della Documentazione e delle Regole"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Gestione della Documentazione e delle Regole"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Gestione della Documentazione e delle Regole
 
 ## Struttura della Documentazione
@@ -157,7 +157,7 @@ Quando si identifica una nuova regola o pattern importante:
    - [ ] Aggiornare .windsurfrules
    - [ ] Verificare coerenza
 <<<<<<< HEAD
-   - [ ] Testare applicabilità
-=======
    - [ ] Testare applicabilità 
->>>>>>> laraxot/dev
+=======
+   - [ ] Testare applicabilità
+>>>>>>> 77b1e2748 (first)

@@ -27,11 +27,6 @@ class GetFactoryAction
 
     /**
 <<<<<<< HEAD
-     * Execute the function with the given model class.
-     *
-     * @param  string  $model_class  the class name of the model
-     * @return Factory<covariant Model>
-=======
      * Resolve (or generate) the Eloquent factory for a model class.
      *
      * Scopo: unico punto di risoluzione per HasXotFactory (runtime). Per PHPStan
@@ -43,7 +38,12 @@ class GetFactoryAction
      *
      * @param  class-string<TModel>  $model_class  the class name of the model
      * @return Factory<TModel>
->>>>>>> laraxot/dev
+=======
+     * Execute the function with the given model class.
+     *
+     * @param  string  $model_class  the class name of the model
+     * @return Factory<covariant Model>
+>>>>>>> 77b1e2748 (first)
      *
      * @throws \Exception when the factory file cannot be loaded or generated
      */
@@ -60,10 +60,10 @@ class GetFactoryAction
 
         if (class_exists($factory_class)) {
 <<<<<<< HEAD
-            return $this->instantiateFactory($factory_class);
-=======
             return $this->instantiateFactory($factory_class, $model_class);
->>>>>>> laraxot/dev
+=======
+            return $this->instantiateFactory($factory_class);
+>>>>>>> 77b1e2748 (first)
         }
 
         $this->createFactory($model_class);
@@ -80,10 +80,10 @@ class GetFactoryAction
         );
 
 <<<<<<< HEAD
-        return $this->instantiateFactory($factory_class);
-=======
         return $this->instantiateFactory($factory_class, $model_class);
->>>>>>> laraxot/dev
+=======
+        return $this->instantiateFactory($factory_class);
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -192,12 +192,6 @@ class GetFactoryAction
 
     /**
 <<<<<<< HEAD
-     * @param  class-string  $factory_class
-     * @return Factory<covariant Model>
-     */
-    private function instantiateFactory(string $factory_class): Factory
-    {
-=======
      * @template TModel of Model
      *
      * @param  class-string  $factory_class
@@ -208,7 +202,13 @@ class GetFactoryAction
     {
         Assert::classExists($model_class, "La classe del modello {$model_class} non esiste");
 
->>>>>>> laraxot/dev
+=======
+     * @param  class-string  $factory_class
+     * @return Factory<covariant Model>
+     */
+    private function instantiateFactory(string $factory_class): Factory
+    {
+>>>>>>> 77b1e2748 (first)
         $factory = $factory_class::new();
 
         Assert::isInstanceOf(

@@ -1,17 +1,4 @@
 <<<<<<< HEAD
-- [Errori comuni nei file di traduzione](/laravel/Modules/Lang/project_docs/errori_comuni_traduzione.md)
-- [Convenzioni di documentazione](/laravel/Modules/Xot/project_docs/documentation_conventions.md)
-- [Documentazione principale sulle traduzioni](/project_docs/translation_rules.md)
-
-*Ultimo aggiornamento: 3 Giugno 2025*
----
-module: theme
-topic: translation-rules
-canonical: ../../../../Themes/docs/shared-components/translation-rules.md
----
-
-See canonical documentation: ../../../../Themes/docs/shared-components/translation-rules.md
-=======
 ---
 title: "Regole per i file di traduzione in Laraxot PTVX"
 type: note
@@ -74,4 +61,17 @@ Un errore comune è la duplicazione di percorsi (`lang/lang/it/` invece di `lang
 Un altro errore frequente è l'utilizzo della sintassi vecchia degli array (`array()`) invece della sintassi breve (`[]`), che è più leggibile e meno soggetta a errori.
 
 *Ultimo aggiornamento: 3 Giugno 2025*
->>>>>>> laraxot/dev
+=======
+- [Errori comuni nei file di traduzione](/laravel/Modules/Lang/project_docs/errori_comuni_traduzione.md)
+- [Convenzioni di documentazione](/laravel/Modules/Xot/project_docs/documentation_conventions.md)
+- [Documentazione principale sulle traduzioni](/project_docs/translation_rules.md)
+
+*Ultimo aggiornamento: 3 Giugno 2025*
+---
+module: theme
+topic: translation-rules
+canonical: ../../../../Themes/docs/shared-components/translation-rules.md
+---
+
+See canonical documentation: ../../../../Themes/docs/shared-components/translation-rules.md
+>>>>>>> 77b1e2748 (first)

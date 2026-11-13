@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "sortable"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "sortable xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # sortable
 
 <!-- Contenuto migrato da _docs/sortable.txt -->

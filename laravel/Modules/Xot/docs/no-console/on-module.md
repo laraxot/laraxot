@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: Comandi per il singolo modulo
 description: Comandi per il singolo modulo
@@ -22,4 +20,6 @@ nell'esempio della migrazione nell'input degli `Artisan Command`:
 > artisan migrate:module NomeModulo  
 
 e dopo cliccare sul tasto `exe`
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

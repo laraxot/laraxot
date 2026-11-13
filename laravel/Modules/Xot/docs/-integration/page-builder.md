@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "page_builder"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "page_builder xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # page_builder
 
 <!-- Contenuto migrato da _docs/page_builder.txt -->

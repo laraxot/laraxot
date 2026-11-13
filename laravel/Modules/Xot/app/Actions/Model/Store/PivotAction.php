@@ -16,11 +16,11 @@ class PivotAction
     {
         // Assert::isInstanceOf($rows = $relationDTO->rows, MorphToOne::class);
 <<<<<<< HEAD
+        throw new \LogicException('Store\PivotAction not implemented');
+=======
         dddx('wip');
 
-=======
-        throw new \LogicException('Store\PivotAction not implemented');
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         /*
          *
          * $parent_panel = $this->panel->getParent();

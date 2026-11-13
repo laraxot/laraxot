@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+return [];
+=======
 return [
     'fields' => [
         'id' => ['label' => 'id'],
@@ -13,6 +15,4 @@ return [
         'last_activity' => ['label' => 'last_activity'],
     ],
 ];
-=======
-return [];
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

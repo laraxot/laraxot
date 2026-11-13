@@ -16,19 +16,19 @@ declare(strict_types=1);
         @endslot
         @slot('btns')
 <<<<<<< HEAD
-            <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary" data-dismiss="modal">Close</button>
-=======
             <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary" data-dismiss="modal">{{ __('xot::rate.actions.close.label') }}</button>
->>>>>>> laraxot/dev
+=======
+            <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary" data-dismiss="modal">Close</button>
+>>>>>>> 77b1e2748 (first)
         @endslot
     @endcomponent
 
     <button data-toggle="modal" data-target="#{{ $modal_guid }}" class="btn btn-primary mb-2">
 <<<<<<< HEAD
-        Vota <i class="fas fa-star"></i>
-=======
         {{ __('xot::rate.actions.vote.label') }} <i class="fas fa-star"></i>
->>>>>>> laraxot/dev
+=======
+        Vota <i class="fas fa-star"></i>
+>>>>>>> 77b1e2748 (first)
     </button>
 
 </div>

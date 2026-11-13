@@ -22,7 +22,32 @@ class XotBaseController extends RoutingController
     /**
      * success response method.
      *
+<<<<<<< HEAD
      * @param  array<string, mixed>  $result
+=======
+<<<<<<< .merge_file_XfojiI
+     * @param  array<string, mixed>  $result
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<string, mixed> $result
+     *                                     =======
+     *                                     <<<<<<< HEAD
+     * @param array<string, mixed> $result
+     *                                     =======
+     *                                     <<<<<<< HEAD
+     *                                     <<<<<<< HEAD
+     * @param array<string, mixed> $result
+     *                                     =======
+     * @param array<string, mixed> $result
+     *                                     >>>>>>> laraxot/dev
+     *                                     =======
+     * @param array<string, mixed> $result
+     *                                     >>>>>>> laraxot/dev
+     *                                     >>>>>>> laraxot/dev
+     *                                     >>>>>>> laraxot/dev
+>>>>>>> .merge_file_vPTvja
+>>>>>>> 77b1e2748 (first)
      */
     public function sendResponse(string $message, array $result): JsonResponse
     {
@@ -38,7 +63,32 @@ class XotBaseController extends RoutingController
     /**
      * return error response.
      *
+<<<<<<< HEAD
      * @param  array<string, mixed>  $errorMessages
+=======
+<<<<<<< .merge_file_XfojiI
+     * @param  array<string, mixed>  $errorMessages
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<string, mixed> $errorMessages
+     *                                            =======
+     *                                            <<<<<<< HEAD
+     * @param array<string, mixed> $errorMessages
+     *                                            =======
+     *                                            <<<<<<< HEAD
+     *                                            <<<<<<< HEAD
+     * @param array<string, mixed> $errorMessages
+     *                                            =======
+     * @param array<string, mixed> $errorMessages
+     *                                            >>>>>>> laraxot/dev
+     *                                            =======
+     * @param array<string, mixed> $errorMessages
+     *                                            >>>>>>> laraxot/dev
+     *                                            >>>>>>> laraxot/dev
+     *                                            >>>>>>> laraxot/dev
+>>>>>>> .merge_file_vPTvja
+>>>>>>> 77b1e2748 (first)
      */
     public function sendError(string $error, array $errorMessages = [], int $code = 404): JsonResponse
     {

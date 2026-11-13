@@ -13,9 +13,50 @@ use Modules\Xot\Database\Factories\CacheLockFactory;
  *
  * @property string $key
  * @property string $owner
+<<<<<<< HEAD
  * @property int $expiration
  *
  * @method static CacheLockFactory factory($count = null, $state = [])
+=======
+<<<<<<< .merge_file_VvqUlZ
+ * @property int $expiration
+ *
+ * @method static CacheLockFactory factory($count = null, $state = [])
+=======
+ *                              <<<<<<< HEAD
+ * @property int    $expiration
+ *
+ * @method static CacheLockFactory factory($count = null, $state = [])
+ *                                                                     =======
+ *                                                                     <<<<<<< HEAD
+ *                                                                     <<<<<<< HEAD
+ *                                                                     =======
+ *                                                                     <<<<<<< HEAD
+ *                                                                     >>>>>>> laraxot/dev
+ *
+ * @property int $expiration
+ *
+ * @method static CacheLockFactory factory($count = null, $state = [])
+ *                                                                     =======
+ *
+ * @property int $expiration
+ *
+ * <<<<<<< HEAD
+ * =======
+ *
+ * @method static CacheLockFactory factory($count = null, $state = [])
+ *                                                                     >>>>>>> laraxot/dev
+ *                                                                     =======
+ *
+ * @property int $expiration
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * @method static CacheLockFactory          factory($count = null, $state = [])
+ *                                                                              >>>>>>> laraxot/dev
+ *                                                                              >>>>>>> laraxot/dev
+>>>>>>> .merge_file_xQ2ap7
+>>>>>>> 77b1e2748 (first)
  * @method static Builder<static>|CacheLock newModelQuery()
  * @method static Builder<static>|CacheLock newQuery()
  * @method static Builder<static>|CacheLock query()

@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Modules\Xot\Filament\Resources\ExtraResource\Pages;
 
 <<<<<<< HEAD
+=======
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Filters\BaseFilter;
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Filament\Resources\ExtraResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
@@ -23,6 +23,7 @@ class ListExtras extends XotBaseListRecords
 {
     protected static string $resource = ExtraResource::class;
 <<<<<<< HEAD
+=======
 
     /**
      * @return array<BaseFilter>
@@ -54,6 +55,5 @@ class ListExtras extends XotBaseListRecords
             'delete' => DeleteBulkAction::make(),
         ];
     }
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 }

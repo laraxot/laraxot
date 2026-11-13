@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "ExceptionHandler Types - Tipizzazione e Best Practices"
 type: note
@@ -202,4 +200,6 @@ class ModuleExceptionHandler
 - [Exception Handling Guidelines](../development-rules.md)
 
 *Ultimo aggiornamento: Gennaio 2025* 
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

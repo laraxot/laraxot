@@ -31,9 +31,9 @@ class PdfByModelAction
             'transKey' => app(GetTransKeyByModelClassAction::class)->execute($model::class, '.fields'),
         ];
 <<<<<<< HEAD
-
 =======
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         $view = view($view_name, $view_params);
 
         $html = $view->render();

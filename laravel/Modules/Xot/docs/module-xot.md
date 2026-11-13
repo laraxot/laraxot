@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Modulo Xot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Modulo Xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Modulo Xot
 
 ## Informazioni Generali
@@ -119,7 +119,7 @@ composer format        # Formatta il codice
 
 ## Changelog
 <<<<<<< HEAD
-Le modifiche vengono tracciate nel repository GitHub.
-=======
 Le modifiche vengono tracciate nel repository GitHub. 
->>>>>>> laraxot/dev
+=======
+Le modifiche vengono tracciate nel repository GitHub.
+>>>>>>> 77b1e2748 (first)

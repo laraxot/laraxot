@@ -11,9 +11,9 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Schemas\Components\Wizard\Step;
 <<<<<<< HEAD
-=======
 use Filament\Schemas\Concerns\RestrictsFileUploadsToSchemaComponents;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Filament\Schemas\Schema;
 use Filament\Widgets\Widget as FilamentWidget;
 use Illuminate\Contracts\Support\Htmlable;
@@ -40,11 +40,11 @@ abstract class XotBaseWidget extends FilamentWidget implements HasActions, HasFo
     use InteractsWithActions;
     use InteractsWithForms;
 <<<<<<< HEAD
-=======
 
     // Upload di Livewire solo verso campi di caricamento dello schema: senza, un ospite poteva usare `_startUpload` su qualunque widget (audit DCP-181, A-2)
     use RestrictsFileUploadsToSchemaComponents;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     use TransTrait;
 
     public string $title = '';
@@ -62,15 +62,15 @@ abstract class XotBaseWidget extends FilamentWidget implements HasActions, HasFo
      * Vista predefinita per widget che estendono XotBaseWidget.
      * Deve essere sovrascritta nelle classi figlie.
 <<<<<<< HEAD
-     */
-    /** @var view-string */
-    protected string $view;
-=======
      *
      * @var view-string
      */
     protected string $view = 'xot::filament.widgets.base';
->>>>>>> laraxot/dev
+=======
+     */
+    /** @var view-string */
+    protected string $view;
+>>>>>>> 77b1e2748 (first)
 
     protected int|string|array $columnSpan = 'full';
 
@@ -243,15 +243,6 @@ abstract class XotBaseWidget extends FilamentWidget implements HasActions, HasFo
     private function resolveView(): void
     {
 <<<<<<< HEAD
-        /** @var view-string $defaultView */
-        $defaultView = 'xot::filament.widgets.base';
-
-        /** @var view-string $view */
-        $view = app(GetViewByClassAction::class)->execute(static::class);
-        $this->view = $view;
-        // fallback to default if action fails or view not exists
-        $this->view = $defaultView;
-=======
         $defaultView = 'xot::filament.widgets.base';
 
         if ($this->view !== $defaultView && view()->exists($this->view)) {
@@ -268,7 +259,16 @@ abstract class XotBaseWidget extends FilamentWidget implements HasActions, HasFo
                 throw $e;
             }
         }
->>>>>>> laraxot/dev
+=======
+        /** @var view-string $defaultView */
+        $defaultView = 'xot::filament.widgets.base';
+
+        /** @var view-string $view */
+        $view = app(GetViewByClassAction::class)->execute(static::class);
+        $this->view = $view;
+        // fallback to default if action fails or view not exists
+        $this->view = $defaultView;
+>>>>>>> 77b1e2748 (first)
     }
 
     /**

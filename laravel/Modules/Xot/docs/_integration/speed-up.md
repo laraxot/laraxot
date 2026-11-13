@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "speed up"
 type: note
@@ -8,5 +7,6 @@ updated: 2026-10-18
 tags: [docs, xot, _integration]
 qmd: "speed up xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 

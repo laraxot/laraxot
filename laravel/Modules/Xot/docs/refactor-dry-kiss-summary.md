@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Refactor Radicale DRY + KISS - Riepilogo Completo"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "refactor radicale dry + kiss - riepilogo completo xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Refactor Radicale DRY + KISS - Riepilogo Completo
 
 > **🎯 Obiettivo Raggiunto**: Eliminazione massiva duplicazioni documentali

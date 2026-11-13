@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "pdf_to_txt"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "pdf_to_txt xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # pdf_to_txt
 
 <!-- Contenuto migrato da _docs/pdf_to_txt.txt -->

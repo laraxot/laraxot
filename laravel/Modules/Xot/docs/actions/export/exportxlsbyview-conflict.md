@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Risoluzione Conflitto in ExportXlsByView"
 type: note
@@ -12,7 +10,9 @@ qmd: "Risoluzione Conflitto in ExportXlsByView"
 status: superseded
 superseded_by: ../../consolidated/archive/exportxlsbyview-conflict.md
 ---
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
 # Risoluzione Conflitto in ExportXlsByView
 
 ## Problema
@@ -44,22 +44,22 @@ public function execute(string $view, array $data, string $filename): BinaryFile
     $html = view($view, $data)->render();
     $tempFile = tempnam(sys_get_temp_dir(), 'xls_');
 <<<<<<< HEAD
-
+    
     if ($tempFile === false) {
         throw new \RuntimeException('Could not create temporary file');
     }
-
+    
     file_put_contents($tempFile, $html);
-
+    
 =======
-    
+
     if ($tempFile === false) {
         throw new \RuntimeException('Could not create temporary file');
     }
-    
+
     file_put_contents($tempFile, $html);
-    
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
     return response()->download($tempFile, $filename, [
         'Content-Type' => 'application/vnd.ms-excel',
     ])->deleteFileAfterSend(true);

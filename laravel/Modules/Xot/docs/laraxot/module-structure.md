@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Module Structure in Laraxot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, laraxot]
 qmd: "Module Structure in Laraxot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Module Structure in Laraxot
 
 ## Directory Structure
@@ -116,14 +116,6 @@ Route::middleware('api')->prefix('api')->group(function () {
 ### Versione HEAD
 
 <<<<<<< HEAD
-## Collegamenti tra versioni di module-structure.md
-* [module-structure.md](../../../xot/project_docs/laraxot/module-structure.md)
-* [module-structure.md](../../../xot/project_docs/architecture/module-structure.md)
-
-### Versione Incoming
-
----
-=======
 
 ## Collegamenti tra versioni di module-structure.md
 * [module-structure.md](../../../Xot/docs/laraxot/module-structure.md)
@@ -135,4 +127,12 @@ Route::middleware('api')->prefix('api')->group(function () {
 
 ---
 
->>>>>>> laraxot/dev
+=======
+## Collegamenti tra versioni di module-structure.md
+* [module-structure.md](../../../xot/project_docs/laraxot/module-structure.md)
+* [module-structure.md](../../../xot/project_docs/architecture/module-structure.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

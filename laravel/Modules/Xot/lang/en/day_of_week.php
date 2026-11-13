@@ -59,10 +59,10 @@ return [
     ],
     'navigation' => [
 <<<<<<< HEAD
-        'label' => 'Missing Navigation Label',
-=======
         'label' => 'Day of Week',
->>>>>>> laraxot/dev
+=======
+        'label' => 'Missing Navigation Label',
+>>>>>>> 77b1e2748 (first)
         'plural_label' => 'Missing Navigation Plural Label',
         'group' => 'Missing Group',
         'icon' => 'heroicon-o-puzzle-piece',
@@ -70,10 +70,10 @@ return [
     ],
     'plural_label' => 'Missing Plural label',
 <<<<<<< HEAD
+=======
     'fields' => [
     ],
     'actions' => [
     ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ];

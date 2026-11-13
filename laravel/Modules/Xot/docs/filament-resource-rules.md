@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "filament resource rules"
 type: note
@@ -12,7 +11,8 @@ discussions: []
 status: draft
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole per le Risorse Filament in
 
 ## Panoramica
@@ -90,12 +90,6 @@ Le classi che estendono `XotBaseResource` **DEVONO** dichiarare solo:
 protected static ?string $model = YourModel::class;
 
 <<<<<<< HEAD
-<<<<<<< HEAD
-public function getFormSchema(): array
-=======
-public function getFormSchema(): array
->>>>>>> laraxot/dev
-=======
 public function getFormSchema(): array
 ---
 title: "filament resource rules"
@@ -107,7 +101,13 @@ qmd: "filament resource rules"
 issues: []
 discussions: []
 public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+public function getFormSchema(): array
+=======
+public function getFormSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         'field_name' => Forms\Components\TextInput::make('field_name'),
@@ -203,16 +203,16 @@ class DoctorResource extends XotBaseResource
     protected static ?string $model = Doctor::class;
 
 <<<<<<< HEAD
+    public function getFormSchema(): array
+---
+    public function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public function getFormSchema(): array
----
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             'first_name' => Forms\Components\TextInput::make('first_name')

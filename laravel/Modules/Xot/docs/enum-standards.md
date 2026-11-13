@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Enum Standards in <nome progetto>"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "enum standards in <nome progetto> xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Enum Standards in <nome progetto>
 
 This document defines the standards and best practices for working with Enums in the <nome progetto> project.

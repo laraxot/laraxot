@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Modules\Xot\Tests\Feature;
 
 <<<<<<< HEAD
-use Illuminate\Database\Eloquent\Relations\Pivot;
 =======
->>>>>>> laraxot/dev
+use Illuminate\Database\Eloquent\Relations\Pivot;
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Tests\Fixtures\Models\TestConcreteMorphPivot;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -21,10 +21,10 @@ describe('Base Morph Pivot Business Logic', function (): void {
 
         // Assert
 <<<<<<< HEAD
-        Assert::assertInstanceOf(Pivot::class, $pivot);
-=======
         Assert::assertSame('test_morph_pivots', $pivot->getTable());
->>>>>>> laraxot/dev
+=======
+        Assert::assertInstanceOf(Pivot::class, $pivot);
+>>>>>>> 77b1e2748 (first)
     });
 
     test('it can manage morph type', function (): void {
@@ -96,11 +96,11 @@ describe('Base Morph Pivot Business Logic', function (): void {
         // Arrange
         $pivot = new TestConcreteMorphPivot;
 <<<<<<< HEAD
-        $now = now();
-=======
         // Le date passano per fromDateTime(): la precisione e' al secondo, come la colonna DB.
         $now = now()->startOfSecond();
->>>>>>> laraxot/dev
+=======
+        $now = now();
+>>>>>>> 77b1e2748 (first)
         $pivot->setAttribute('created_at', $now);
         $pivot->setAttribute('updated_at', $now);
 
@@ -117,10 +117,10 @@ describe('Base Morph Pivot Business Logic', function (): void {
         // Arrange
         $pivot = new TestConcreteMorphPivot;
 <<<<<<< HEAD
-        $deletedAt = now();
-=======
         $deletedAt = now()->startOfSecond();
->>>>>>> laraxot/dev
+=======
+        $deletedAt = now();
+>>>>>>> 77b1e2748 (first)
         $pivot->setAttribute('deleted_at', $deletedAt);
 
         // Act

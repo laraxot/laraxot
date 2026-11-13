@@ -10,17 +10,17 @@ use Illuminate\Support\Facades\Log;
 use Modules\Xot\Actions\Cast\SafeIntCastAction;
 use Safe\Exceptions\JsonException;
 <<<<<<< HEAD
+use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\json_decode;
-
-use Spatie\QueueableAction\QueueableAction;
 
 =======
-use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\json_decode;
 
->>>>>>> laraxot/dev
+use Spatie\QueueableAction\QueueableAction;
+
+>>>>>>> 77b1e2748 (first)
 class ChatOllamaAction
 {
     use QueueableAction;
@@ -52,9 +52,9 @@ class ChatOllamaAction
      *     options?: array<string, float|int>
      * } $options
 <<<<<<< HEAD
-     *
 =======
->>>>>>> laraxot/dev
+     *
+>>>>>>> 77b1e2748 (first)
      * @return array{
      *     content: string,
      *     thinking: string|null,

@@ -36,8 +36,12 @@ class CieAuthController extends Controller
     public function login(Request $request): RedirectResponse
     {
         try {
+<<<<<<< HEAD
             $fallbackUrl = app(GetPostLoginUrlAction::class)->execute();
             $returnUrl = app(SanitizeReturnUrlAction::class)->execute($request, $request->query('return_url'), $fallbackUrl);
+=======
+            $returnUrl = $request->query('return_url', app(GetPostLoginUrlAction::class)->execute());
+>>>>>>> f08c6884 (.)
 
             Log::info('CIE login initiated', [
                 'method' => 'web',
@@ -66,8 +70,12 @@ class CieAuthController extends Controller
     public function mobileLogin(Request $request): RedirectResponse|JsonResponse
     {
         try {
+<<<<<<< HEAD
             $fallbackUrl = app(GetPostLoginUrlAction::class)->execute();
             $returnUrl = app(SanitizeReturnUrlAction::class)->execute($request, $request->query('return_url'), $fallbackUrl);
+=======
+            $returnUrl = $request->query('return_url', app(GetPostLoginUrlAction::class)->execute());
+>>>>>>> f08c6884 (.)
 
             Log::info('CIE mobile login initiated', [
                 'method' => 'mobile',
@@ -139,7 +147,11 @@ class CieAuthController extends Controller
 
             // Redirect all'URL di ritorno
             $returnUrl = Session::pull('cie.return_url');
+<<<<<<< HEAD
             $returnUrl = app(SanitizeReturnUrlAction::class)->execute($request, $returnUrl, app(GetPostLoginUrlAction::class)->execute());
+=======
+            $returnUrl = is_string($returnUrl) && $returnUrl !== '' ? $returnUrl : app(GetPostLoginUrlAction::class)->execute();
+>>>>>>> f08c6884 (.)
 
             return redirect()->to($returnUrl)
                 ->with('success', 'Autenticazione CIE completata con successo.');

@@ -6,10 +6,6 @@ namespace Modules\Xot\Filament\Resources\Pages;
 
 use Filament\Resources\Pages\CreateRecord as FilamentCreateRecord;
 <<<<<<< HEAD
-
-abstract class XotBaseCreateRecord extends FilamentCreateRecord
-{
-=======
 use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Filament\Links\RecordAnchor;
 
@@ -35,7 +31,11 @@ abstract class XotBaseCreateRecord extends FilamentCreateRecord
         return $this->getRecordReturnUrl(parent::getRedirectUrl());
     }
 
->>>>>>> laraxot/dev
+=======
+
+abstract class XotBaseCreateRecord extends FilamentCreateRecord
+{
+>>>>>>> 77b1e2748 (first)
     /**
      * Get default form data.
      *

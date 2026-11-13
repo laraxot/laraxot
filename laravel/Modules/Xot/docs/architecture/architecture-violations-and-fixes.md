@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot - architecture-violations-and-fixes.md"
 module: Xot
 bmad: true
 status: active
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Violazioni Architetturali e Correzioni - Pattern XotData
 
 ## 🚨 **Violazioni Architetturali Critiche**
@@ -342,12 +342,12 @@ grep -r "function.*\\\Modules\\\.*\\\Models\\\User" --include="*.php" ./
 ### **Esempi Implementazione**
 - [CreateUserAction](../app/Actions/Socialite/CreateUserAction.php)
 <<<<<<< HEAD
-- [XotBaseMigration](../app/Database/Migrations/XotBaseMigration.php)
-- [IsTenant Trait](../../User/app/Models/Traits/IsTenant.php)
-=======
 - [XotBaseMigration](../../app/Database/Migrations/XotBaseMigration.php)
 - [IsTenant Trait](../../../User/app/Models/Traits/IsTenant.php)
->>>>>>> laraxot/dev
+=======
+- [XotBaseMigration](../app/Database/Migrations/XotBaseMigration.php)
+- [IsTenant Trait](../../User/app/Models/Traits/IsTenant.php)
+>>>>>>> 77b1e2748 (first)
 
 ### **Documentazione Moduli**
 - [Cms Architecture](../../Cms/project_docs/architecture-xotdata-pattern.md)
@@ -356,9 +356,9 @@ grep -r "function.*\\\Modules\\\.*\\\Models\\\User" --include="*.php" ./
 
 ---
 <<<<<<< HEAD
-
 =======
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
 **Ultimo Aggiornamento**: Gennaio 2025
 **Stato**: ✅ Pattern Documentato e Implementato
 ---
@@ -369,4 +369,4 @@ grep -r "function.*\\\Modules\\\.*\\\Models\\\User" --include="*.php" ./
 **Responsabile**: Team Architettura Laraxot
 =======
 **Responsabile**: Team Architettura Laraxot
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

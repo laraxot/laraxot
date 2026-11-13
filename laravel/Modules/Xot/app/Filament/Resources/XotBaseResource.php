@@ -37,7 +37,32 @@ use function Safe\glob;
  */
 abstract class XotBaseResource extends FilamentResource
 {
+<<<<<<< HEAD
     use NavigationLabelTrait;
+=======
+    use NavigationLabelTrait {
+        resolveTransFuncValue as private resolveNavigationTransFuncValue;
+        formatTransFuncResult as private formatNavigationTransFuncResult;
+    }
+
+    /**
+     * @return string|array<int|string, mixed>|\Illuminate\Contracts\Translation\Translator|null
+     * @phpstan-return string|array<int|string, mixed>|\Illuminate\Contracts\Translation\Translator|null
+     */
+    protected static function resolveTransFuncValue(string $key): string|array|\Illuminate\Contracts\Translation\Translator|null
+    {
+        return static::resolveNavigationTransFuncValue($key);
+    }
+
+    /**
+     * @param string|array<int|string, mixed>|\Illuminate\Contracts\Translation\Translator|null $trans
+     * @phpstan-param string|array<int|string, mixed>|\Illuminate\Contracts\Translation\Translator|null $trans
+     */
+    protected static function formatTransFuncResult(string $key, string|array|\Illuminate\Contracts\Translation\Translator|null $trans): string
+    {
+        return static::formatNavigationTransFuncResult($key, $trans);
+    }
+>>>>>>> 77b1e2748 (first)
 
     protected static ?string $model = null;
 
@@ -72,10 +97,10 @@ abstract class XotBaseResource extends FilamentResource
     public static function getModuleName(): string
     {
 <<<<<<< HEAD
-        return Str::between(static::class, 'Modules\\', '\Filament');
-=======
         return Str::before(Str::after(static::class, 'Modules\\'), '\\');
->>>>>>> laraxot/dev
+=======
+        return Str::between(static::class, 'Modules\\', '\Filament');
+>>>>>>> 77b1e2748 (first)
     }
 
     public function hasCombinedRelationManagerTabsWithContent(): bool
@@ -131,17 +156,17 @@ abstract class XotBaseResource extends FilamentResource
     /**
      * @return array<int|string, \Filament\Schemas\Components\Component>
 <<<<<<< HEAD
-     */
-    final public function getFormSchema(): array
-    {
-        return static::getFormSchemaOld();
-=======
      *                                                                   DEVE ESSERE FINAL !!
      */
     final public function getFormSchema(): array
     {
         return [];
->>>>>>> laraxot/dev
+=======
+     */
+    final public function getFormSchema(): array
+    {
+        return static::getFormSchemaOld();
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -155,12 +180,12 @@ abstract class XotBaseResource extends FilamentResource
      * `getFormSchemaOld` su `Modules/*`) — vedi docs/chat/STOP-*-getformschema-*.md.
      *
 <<<<<<< HEAD
-=======
      * NON final: ~55 Resource in Modules/* sovrascrivono questo metodo durante
      * la migrazione. Con `final` ogni override fallisce al bootstrap
      * ("Cannot override final method") e blocca anche PHPStan.
      *
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * @return array<int|string, \Filament\Schemas\Components\Component>
      */
     public function getFormSchemaOld(): array
@@ -174,6 +199,16 @@ abstract class XotBaseResource extends FilamentResource
     public static function getFormClass(): string
     {
 <<<<<<< HEAD
+        // return AuthorForm::configure($schema); -- esempio della doc Filament, tenuto come riferimento.
+        $resource = static::getResourceBaseName();
+
+        return static::resolveResourcePartClass(
+            folder: 'Schemas',
+            byModel: class_basename(static::getModel()).'Form',
+            byResource: $resource.'Form',
+            baseClass: XotBaseResourceForm::class,
+        );
+=======
         // return AuthorForm::configure($schema);
         $name = class_basename(static::getModel());
         $class = static::class.'\Schemas\\'.$name.'Form';
@@ -188,17 +223,7 @@ abstract class XotBaseResource extends FilamentResource
 
         return $class1;
 
-=======
-        // return AuthorForm::configure($schema); -- esempio della doc Filament, tenuto come riferimento.
-        $resource = static::getResourceBaseName();
-
-        return static::resolveResourcePartClass(
-            folder: 'Schemas',
-            byModel: class_basename(static::getModel()).'Form',
-            byResource: $resource.'Form',
-            baseClass: XotBaseResourceForm::class,
-        );
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     }
 
     final public static function form(Schema $schema): Schema
@@ -216,6 +241,15 @@ abstract class XotBaseResource extends FilamentResource
     public static function getTableClass(): string
     {
 <<<<<<< HEAD
+        $resource = static::getResourceBaseName();
+
+        return static::resolveResourcePartClass(
+            folder: 'Tables',
+            byModel: Str::plural(class_basename(static::getModel())).'Table',
+            byResource: Str::plural($resource).'Table',
+            baseClass: XotBaseResourceTable::class,
+        );
+=======
         $name = Str::plural(class_basename(static::getModel()));
         $class = static::class.'\Tables\\'.$name.'Table';
         if (class_exists($class)) {
@@ -229,16 +263,7 @@ abstract class XotBaseResource extends FilamentResource
         Assert::subclassOf($class1, XotBaseResourceTable::class);
 
         return $class1;
-=======
-        $resource = static::getResourceBaseName();
-
-        return static::resolveResourcePartClass(
-            folder: 'Tables',
-            byModel: Str::plural(class_basename(static::getModel())).'Table',
-            byResource: Str::plural($resource).'Table',
-            baseClass: XotBaseResourceTable::class,
-        );
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     }
 
     public static function table(Table $table): Table
@@ -271,21 +296,6 @@ abstract class XotBaseResource extends FilamentResource
     public static function getInfolistClass(): string
     {
 <<<<<<< HEAD
-        // return AuthorForm::configure($schema);
-        $name = class_basename(static::getModel());
-        $class = static::class.'\Schemas\\'.$name.'Infolist';
-        if (class_exists($class)) {
-            Assert::subclassOf($class, XotBaseResourceInfolist::class);
-
-            return $class;
-        }
-        $class1 = app(GetResourceClassNameByModelClassAction::class)->execute(static::getModel());
-        $class1 = $class1.'\Schemas\\'.$name.'Infolist';
-        Assert::subclassOf($class1, XotBaseResourceInfolist::class);
-
-        return $class1;
-
-=======
         // return AuthorForm::configure($schema); -- esempio della doc Filament, tenuto come riferimento.
         $resource = static::getResourceBaseName();
 
@@ -343,7 +353,22 @@ abstract class XotBaseResource extends FilamentResource
     protected static function getResourceBaseName(): string
     {
         return Str::beforeLast(class_basename(static::class), 'Resource');
->>>>>>> laraxot/dev
+=======
+        // return AuthorForm::configure($schema);
+        $name = class_basename(static::getModel());
+        $class = static::class.'\Schemas\\'.$name.'Infolist';
+        if (class_exists($class)) {
+            Assert::subclassOf($class, XotBaseResourceInfolist::class);
+
+            return $class;
+        }
+        $class1 = app(GetResourceClassNameByModelClassAction::class)->execute(static::getModel());
+        $class1 = $class1.'\Schemas\\'.$name.'Infolist';
+        Assert::subclassOf($class1, XotBaseResourceInfolist::class);
+
+        return $class1;
+
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -383,12 +408,12 @@ abstract class XotBaseResource extends FilamentResource
 
             return number_format($count, 0).'';
 <<<<<<< HEAD
-        } catch (\Exception $e) {
-=======
         } catch (\Throwable $e) {
             report($e);
 
->>>>>>> laraxot/dev
+=======
+        } catch (\Exception $e) {
+>>>>>>> 77b1e2748 (first)
             return '--';
         }
     }

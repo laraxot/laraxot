@@ -3,10 +3,10 @@
 declare(strict_types=1);
 /**
 <<<<<<< HEAD
-=======
  * Mirror di Modules\DbForge\Console\Commands\ViewDatabaseConfigCommand (canonico, stessa signature).
  *
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
  * @see ---
  */
 
@@ -15,16 +15,15 @@ namespace Modules\Xot\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 <<<<<<< HEAD
-use Webmozart\Assert\Assert;
-=======
 use Illuminate\Support\Str;
->>>>>>> laraxot/dev
+=======
+use Webmozart\Assert\Assert;
+>>>>>>> 77b1e2748 (first)
 
 class ViewDatabaseConfigCommand extends Command
 {
     /**
 <<<<<<< HEAD
-=======
      * Frammenti (minuscoli) che marcano una chiave di config come segreta:
      * il valore non viene mai stampato. `url` e `dsn` perche' possono
      * contenere le credenziali inline (mysql://utente:password@host).
@@ -34,7 +33,8 @@ class ViewDatabaseConfigCommand extends Command
     private const array SECRET_KEY_PARTS = ['password', 'passwd', 'secret', 'token', 'key', 'url', 'dsn'];
 
     /**
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * The name and signature of the console command.
      *
      * @var string
@@ -47,12 +47,6 @@ class ViewDatabaseConfigCommand extends Command
      * @var string
      */
 <<<<<<< HEAD
-    protected $description = ' esplode';
-
-    /**
-     * Create a new command instance.
-     */
-=======
     protected $description = 'Mostra la config delle connessioni database con le credenziali mascherate';
 
     /**
@@ -64,24 +58,18 @@ class ViewDatabaseConfigCommand extends Command
     {
         parent::__construct();
     }
->>>>>>> laraxot/dev
+=======
+    protected $description = ' esplode';
+
+    /**
+     * Create a new command instance.
+     */
+>>>>>>> 77b1e2748 (first)
 
     /**
      * Execute the console command.
      */
 <<<<<<< HEAD
-    public function handle(): void
-    {
-        Assert::isArray($connections = config('database.connections'));
-        $database = Arr::map($connections, function (array $item) {
-            $item['password'] = '********';
-
-            return $item;
-
-            // return Arr::except($item, ['password']);
-        });
-        dddx($database);
-=======
     public function handle(): int
     {
         $connections = config('database.connections');
@@ -112,6 +100,18 @@ class ViewDatabaseConfigCommand extends Command
     private function isSecret(string $path): bool
     {
         return Str::contains(Str::lower(Str::afterLast($path, '.')), self::SECRET_KEY_PARTS);
->>>>>>> laraxot/dev
+=======
+    public function handle(): void
+    {
+        Assert::isArray($connections = config('database.connections'));
+        $database = Arr::map($connections, function (array $item) {
+            $item['password'] = '********';
+
+            return $item;
+
+            // return Arr::except($item, ['password']);
+        });
+        dddx($database);
+>>>>>>> 77b1e2748 (first)
     }
 }

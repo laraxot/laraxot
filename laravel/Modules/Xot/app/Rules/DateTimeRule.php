@@ -18,8 +18,39 @@ class DateTimeRule implements ValidationRule
     /**
      * Run the validation rule.
      *
+<<<<<<< HEAD
      * @param  mixed  $value  Valore sotto validazione (atteso stringa nel formato 'd/m/Y H:i')
      * @param  \Closure(string, string|null=): PotentiallyTranslatedString  $fail
+=======
+<<<<<<< .merge_file_mX3sIS
+     * @param  mixed  $value  Valore sotto validazione (atteso stringa nel formato 'd/m/Y H:i')
+     * @param  \Closure(string, string|null=): PotentiallyTranslatedString  $fail
+=======
+     * <<<<<<< HEAD
+     *
+     * @param mixed                                                       $value Valore sotto validazione (atteso stringa nel formato 'd/m/Y H:i')
+     * @param \Closure(string, string|null=): PotentiallyTranslatedString $fail
+     *                                                                           =======
+     *                                                                           <<<<<<< HEAD
+     * @param mixed                                                       $value Valore sotto validazione (atteso stringa nel formato 'd/m/Y H:i')
+     * @param \Closure(string, string|null=): PotentiallyTranslatedString $fail
+     *                                                                           =======
+     *                                                                           <<<<<<< HEAD
+     *                                                                           <<<<<<< HEAD
+     * @param mixed                                                       $value Valore sotto validazione (atteso stringa nel formato 'd/m/Y H:i')
+     * @param \Closure(string, string|null=): PotentiallyTranslatedString $fail
+     *                                                                           =======
+     * @param mixed                                                       $value Valore sotto validazione (atteso stringa nel formato 'd/m/Y H:i')
+     * @param \Closure(string, string|null=): PotentiallyTranslatedString $fail
+     *                                                                           >>>>>>> laraxot/dev
+     *                                                                           =======
+     * @param mixed                                                       $value Valore sotto validazione (atteso stringa nel formato 'd/m/Y H:i')
+     * @param \Closure(string, string|null=): PotentiallyTranslatedString $fail
+     *                                                                           >>>>>>> laraxot/dev
+     *                                                                           >>>>>>> laraxot/dev
+     *                                                                           >>>>>>> laraxot/dev
+>>>>>>> .merge_file_KbOJzw
+>>>>>>> 77b1e2748 (first)
      */
     public function validate(string $attribute, mixed $value, \Closure $fail): void
     {

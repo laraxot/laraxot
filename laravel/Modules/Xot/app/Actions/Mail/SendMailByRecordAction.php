@@ -18,8 +18,39 @@ class SendMailByRecordAction
     /**
      * Invia una mail utilizzando un record come dati.
      *
+<<<<<<< HEAD
      * @param  Model  $record  Il record da utilizzare come dati per la mail
      * @param  string  $mailClass  La classe Mailable da utilizzare
+=======
+<<<<<<< .merge_file_gFRW24
+     * @param  Model  $record  Il record da utilizzare come dati per la mail
+     * @param  string  $mailClass  La classe Mailable da utilizzare
+=======
+     * <<<<<<< HEAD
+     *
+     * @param Model  $record    Il record da utilizzare come dati per la mail
+     * @param string $mailClass La classe Mailable da utilizzare
+     *                          =======
+     *                          <<<<<<< HEAD
+     * @param Model  $record    Il record da utilizzare come dati per la mail
+     * @param string $mailClass La classe Mailable da utilizzare
+     *                          =======
+     *                          <<<<<<< HEAD
+     *                          <<<<<<< HEAD
+     * @param Model  $record    Il record da utilizzare come dati per la mail
+     * @param string $mailClass La classe Mailable da utilizzare
+     *                          =======
+     * @param Model  $record    Il record da utilizzare come dati per la mail
+     * @param string $mailClass La classe Mailable da utilizzare
+     *                          >>>>>>> laraxot/dev
+     *                          =======
+     * @param Model  $record    Il record da utilizzare come dati per la mail
+     * @param string $mailClass La classe Mailable da utilizzare
+     *                          >>>>>>> laraxot/dev
+     *                          >>>>>>> laraxot/dev
+     *                          >>>>>>> laraxot/dev
+>>>>>>> .merge_file_dk3pmy
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(Model $record, string $mailClass): void
     {
@@ -41,12 +72,12 @@ class SendMailByRecordAction
         }
 
 <<<<<<< HEAD
+=======
         if (! method_exists($record, 'option')) {
             throw new \InvalidArgumentException('Model must implement option method');
         }
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         if (! method_exists($record, 'myLogs')) {
             throw new \InvalidArgumentException('Model ['.$record::class.'] must implement myLogs method');
         }
@@ -54,9 +85,6 @@ class SendMailByRecordAction
         $to = $record->email;
         // $to = 'marco.sottana@gmail.com'; //4 debug non cancellare
 <<<<<<< HEAD
-        $subject = $record->option('mail_oggetto');
-        $bodyHtml = $record->option('mail_testo');
-=======
         // Le schede (SchedaContract) espongono i testi con msg(); option() esiste solo in
         // Performance. Prima si chiedeva sempre option(): l'invio mail falliva per ogni scheda
         // di Progressioni/Ptv/IR ("Model must implement option method").
@@ -69,7 +97,10 @@ class SendMailByRecordAction
         } else {
             throw new \InvalidArgumentException('Model must implement msg or option method');
         }
->>>>>>> laraxot/dev
+=======
+        $subject = $record->option('mail_oggetto');
+        $bodyHtml = $record->option('mail_testo');
+>>>>>>> 77b1e2748 (first)
 
         if (! is_string($to)) {
             throw new \InvalidArgumentException('Email must be a string');

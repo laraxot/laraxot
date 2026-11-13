@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regole Generali di Comportamento"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, conventions]
 qmd: "Regole Generali di Comportamento"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole Generali di Comportamento
 
 ## 1. Struttura del Codice
@@ -24,10 +24,10 @@ qmd: "Regole Generali di Comportamento"
   // -- CREATE --
   $this->tableCreate(...)
 <<<<<<< HEAD
-
-=======
   
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
   // -- UPDATE --
   $this->tableUpdate(...)
   ```
@@ -66,14 +66,14 @@ qmd: "Regole Generali di Comportamento"
 - Utilizzare `match` per logiche condizionali semplici
 
 <<<<<<< HEAD
-### 2.2 Data Transfer Objects
-- Utilizzare Spatie Laravel Data
-=======
 ### 2.2 Data Transfer Objects (Datas/)
 - Utilizzare Spatie Laravel Data
 - Ogni oggetto dati vive in `app/Datas/` (plurale), mai `app/Data/` (singolare), `DTOs/`, `DataObjects/` o `DataTransferObjects/`
 - Nome della classe: `*Data`, estende `Spatie\LaravelData\Data`
->>>>>>> laraxot/dev
+=======
+### 2.2 Data Transfer Objects
+- Utilizzare Spatie Laravel Data
+>>>>>>> 77b1e2748 (first)
 - Definire proprietà pubbliche con tipi
 - Implementare `from()` per la creazione da array
 - Utilizzare `toArray()` per la serializzazione
@@ -181,7 +181,7 @@ app/
 - Aggiornare documentazione
 - Verificare test
 <<<<<<< HEAD
-- Comunicare cambiamenti
-=======
 - Comunicare cambiamenti 
->>>>>>> laraxot/dev
+=======
+- Comunicare cambiamenti
+>>>>>>> 77b1e2748 (first)

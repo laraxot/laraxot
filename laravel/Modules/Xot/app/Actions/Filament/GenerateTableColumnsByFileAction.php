@@ -31,7 +31,32 @@ class GenerateTableColumnsByFileAction
     /**
      * Genera colonne per tabelle e form Filament basate su un file di risorsa.
      *
+<<<<<<< HEAD
      * @param  File  $file  Il file della risorsa Filament
+=======
+<<<<<<< .merge_file_rJLEL6
+     * @param  File  $file  Il file della risorsa Filament
+=======
+     * <<<<<<< HEAD
+     *
+     * @param File $file Il file della risorsa Filament
+     *                   =======
+     *                   <<<<<<< HEAD
+     * @param File $file Il file della risorsa Filament
+     *                   =======
+     *                   <<<<<<< HEAD
+     *                   <<<<<<< HEAD
+     * @param File $file Il file della risorsa Filament
+     *                   =======
+     * @param File $file Il file della risorsa Filament
+     *                   >>>>>>> laraxot/dev
+     *                   =======
+     * @param File $file Il file della risorsa Filament
+     *                   >>>>>>> laraxot/dev
+     *                   >>>>>>> laraxot/dev
+     *                   >>>>>>> laraxot/dev
+>>>>>>> .merge_file_FUkuvk
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(File $file): void
     {
@@ -110,7 +135,32 @@ class GenerateTableColumnsByFileAction
     /**
      * Mostra informazioni di debug su un file.
      *
+<<<<<<< HEAD
      * @param  File  $file  Il file da analizzare
+=======
+<<<<<<< .merge_file_rJLEL6
+     * @param  File  $file  Il file da analizzare
+=======
+     * <<<<<<< HEAD
+     *
+     * @param File $file Il file da analizzare
+     *                   =======
+     *                   <<<<<<< HEAD
+     * @param File $file Il file da analizzare
+     *                   =======
+     *                   <<<<<<< HEAD
+     *                   <<<<<<< HEAD
+     * @param File $file Il file da analizzare
+     *                   =======
+     * @param File $file Il file da analizzare
+     *                   >>>>>>> laraxot/dev
+     *                   =======
+     * @param File $file Il file da analizzare
+     *                   >>>>>>> laraxot/dev
+     *                   >>>>>>> laraxot/dev
+     *                   >>>>>>> laraxot/dev
+>>>>>>> .merge_file_FUkuvk
+>>>>>>> 77b1e2748 (first)
      */
     public function ddFile(File $file): void
     {

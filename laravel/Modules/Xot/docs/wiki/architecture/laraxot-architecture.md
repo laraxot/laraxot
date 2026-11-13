@@ -1,19 +1,19 @@
 ---
 <<<<<<< HEAD
-=======
 qmd: "laraxot architecture"
 issues: []
 discussions: []
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 title: "Laraxot Architecture"
 type: reference
 tags: [wiki, no-frontmatter-fix]
 created: 2026-08-24
 updated: 2026-08-24
 <<<<<<< HEAD
-=======
 status: draft
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 # Laraxot Architecture: Philosophy, Religion, Politics, and Zen

@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: staudenmeir/laravel-adjacency-list
 description: staudenmeir/laravel-adjacency-list package
@@ -18,4 +16,6 @@ qmd: "staudenmeir/laravel-adjacency-list {#staudenmeir/laravel-adjacency-list} x
 Pacchetto utilizzato per la gestione delle relazioni padre/figlio
 
 https://github.com/staudenmeir/laravel-adjacency-list
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

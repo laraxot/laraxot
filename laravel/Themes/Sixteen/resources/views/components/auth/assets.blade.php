@@ -18,6 +18,7 @@
     .auth-login-card .auth-login-links a,
     .auth-login-card form a { color: #007a52; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
     .auth-login-shell__crumb a:focus-visible,
+<<<<<<< HEAD
     .auth-login-card a:focus-visible,
     .auth-login-card .auth-login-links button.auth-link-button:focus-visible { outline: 2px solid #007a52; outline-offset: 2px; }
     /* Azioni secondarie che non sono link (resend verifica email, logout da verify): stesso aspetto dei link. */
@@ -31,6 +32,9 @@
     @keyframes auth-link-spin { to { transform: rotate(360deg); } }
     /* Con "riduci animazioni" il movimento resta, piu' lento: e' l'unico segnale che l'invio e' in corso. */
     @media (prefers-reduced-motion: reduce) { .auth-link-button__spinner { animation-duration: 2.4s; } }
+=======
+    .auth-login-card a:focus-visible { outline: 2px solid #007a52; outline-offset: 2px; }
+>>>>>>> f08c6884 (.)
     /* Niente pannello con bordo: le pagine di accesso, registrazione e nuova password hanno la stessa resa delle altre pagine
        (titolo allineato al breadcrumb, contenuto sullo sfondo della pagina). Il riquadro c'era solo qui: incoerente. */
     .auth-login-card { background: transparent; border: 0; border-radius: 0; padding: 1rem 0 2.5rem; }

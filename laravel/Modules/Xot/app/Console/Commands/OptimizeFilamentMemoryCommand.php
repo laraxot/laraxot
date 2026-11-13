@@ -63,10 +63,10 @@ class OptimizeFilamentMemoryCommand extends Command
 
         // Applica le ottimizzazioni
 <<<<<<< HEAD
-        $this->applyOptimizations($issues, $verbose);
-=======
         $this->applyOptimizations();
->>>>>>> laraxot/dev
+=======
+        $this->applyOptimizations($issues, $verbose);
+>>>>>>> 77b1e2748 (first)
 
         $this->info('✅ Ottimizzazione completata!');
         $this->newLine();
@@ -320,14 +320,14 @@ class OptimizeFilamentMemoryCommand extends Command
     /**
      * Applica le ottimizzazioni.
 <<<<<<< HEAD
+     */
+    private function applyOptimizations(): void
+=======
      *
      * @param  array<string, array<int, string>>  $issues
      */
     private function applyOptimizations(array $issues, bool $verbose = false): void
-=======
-     */
-    private function applyOptimizations(): void
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         $this->info('🔧 Applicazione ottimizzazioni...');
 

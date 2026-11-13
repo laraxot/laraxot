@@ -171,10 +171,10 @@ class MetatagData extends Data implements Wireable
             $path = app(AssetAction::class)->execute($this->logo_header);
 
 <<<<<<< HEAD
-            return asset($path);
-=======
             return $this->normalizeBrandLogoUrl($path);
->>>>>>> laraxot/dev
+=======
+            return asset($path);
+>>>>>>> 77b1e2748 (first)
         } catch (\Throwable $e) {
             return $this->fallbackPublicAssetUrl($this->logo_header);
         }
@@ -196,10 +196,10 @@ class MetatagData extends Data implements Wireable
             $path = app(AssetAction::class)->execute($this->logo_header_dark);
 
 <<<<<<< HEAD
-            return asset($path);
-=======
             return $this->normalizeBrandLogoUrl($path);
->>>>>>> laraxot/dev
+=======
+            return asset($path);
+>>>>>>> 77b1e2748 (first)
         } catch (\Throwable $e) {
             return $this->fallbackPublicAssetUrl($this->logo_header_dark);
         }
@@ -230,7 +230,6 @@ class MetatagData extends Data implements Wireable
     }
 
 <<<<<<< HEAD
-=======
     private function normalizeBrandLogoUrl(string $path): string
     {
         if (Str::startsWith($path, ['http://', 'https://'])) {
@@ -242,7 +241,8 @@ class MetatagData extends Data implements Wireable
         return '/'.ltrim($path, '/');
     }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     /**
      * Get the brand logo height.
      * This method reflects the semantic purpose of getting the brand logo height.
@@ -626,13 +626,13 @@ class MetatagData extends Data implements Wireable
         $path = base_path('Modules/'.$xot->main_module.'/resources/svg/logo.svg');
 
 <<<<<<< HEAD
-=======
         // Il modulo principale puo' non avere un logo.svg: chi costruisce l'email non deve fallire (come getBrandLogoBase64()).
         if (! File::exists($path)) {
             return '';
         }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
         return file_get_contents($path);
     }
 

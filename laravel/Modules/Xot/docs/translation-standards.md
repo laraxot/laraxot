@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Standard di Traduzione - Documentazione Root"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Standard di Traduzione - Documentazione Root"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Standard di Traduzione - Documentazione Root
 
 ## Panoramica
@@ -121,10 +121,10 @@ declare(strict_types=1);
 /**
  * Traduzioni per [descrizione]
 <<<<<<< HEAD
- *
-=======
  * 
->>>>>>> laraxot/dev
+=======
+ *
+>>>>>>> 77b1e2748 (first)
  * @package Modules\{ModuleName}\Resources
  */
 
@@ -290,7 +290,7 @@ return [
 4. **Naming**: Convenzioni standardizzate
 
 <<<<<<< HEAD
-*Ultimo aggiornamento: Giugno 2025*
-=======
 *Ultimo aggiornamento: Giugno 2025* 
->>>>>>> laraxot/dev
+=======
+*Ultimo aggiornamento: Giugno 2025*
+>>>>>>> 77b1e2748 (first)

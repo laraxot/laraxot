@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "star_rating"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "star_rating xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # star_rating
 
 <!-- Contenuto migrato da _docs/star_rating.txt -->

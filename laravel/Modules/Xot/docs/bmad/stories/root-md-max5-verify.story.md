@@ -1,11 +1,11 @@
 ---
 <<<<<<< HEAD
-=======
 tags: [documentation]
 qmd: "root md max5 verify.story"
 issues: []
 discussions: []
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 title: "Verifica e correzione max 5 .md in root modulo ($MODULO)"
 type: story
 module: $MODULO
@@ -18,10 +18,10 @@ updated: 2026-09-22
 ---
 
 <<<<<<< HEAD
-# 5.126 — Verifica e correzione max 5 .md in root modulo ($MODULO)
-=======
 # 5.126: Verifica e correzione max 5 .md in root modulo ($MODULO)
->>>>>>> laraxot/dev
+=======
+# 5.126 — Verifica e correzione max 5 .md in root modulo ($MODULO)
+>>>>>>> 77b1e2748 (first)
 
 ## Story
 

@@ -40,7 +40,32 @@ class HasManyAction
     /**
      * Determine if the update is a direct update.
      *
+<<<<<<< HEAD
      * @param  array<string, mixed>  $data
+=======
+<<<<<<< .merge_file_btq6Ux
+     * @param  array<string, mixed>  $data
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<string, mixed> $data
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     * @param array<string, mixed> $data
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   <<<<<<< HEAD
+     * @param array<string, mixed> $data
+     *                                   =======
+     * @param array<string, mixed> $data
+     *                                   >>>>>>> laraxot/dev
+     *                                   =======
+     * @param array<string, mixed> $data
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> laraxot/dev
+>>>>>>> .merge_file_tT1yvd
+>>>>>>> 77b1e2748 (first)
      */
     private function isDirectUpdate(array $data): bool
     {
@@ -94,7 +119,32 @@ class HasManyAction
     /**
      * Clean up orphaned records after batch update.
      *
+<<<<<<< HEAD
      * @param  array<int, int|string>  $updatedIds
+=======
+<<<<<<< .merge_file_btq6Ux
+     * @param  array<int, int|string>  $updatedIds
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<int, int|string> $updatedIds
+     *                                           =======
+     *                                           <<<<<<< HEAD
+     * @param array<int, int|string> $updatedIds
+     *                                           =======
+     *                                           <<<<<<< HEAD
+     *                                           <<<<<<< HEAD
+     * @param array<int, int|string> $updatedIds
+     *                                           =======
+     * @param array<int, int|string> $updatedIds
+     *                                           >>>>>>> laraxot/dev
+     *                                           =======
+     * @param array<int, int|string> $updatedIds
+     *                                           >>>>>>> laraxot/dev
+     *                                           >>>>>>> laraxot/dev
+     *                                           >>>>>>> laraxot/dev
+>>>>>>> .merge_file_tT1yvd
+>>>>>>> 77b1e2748 (first)
      */
     private function cleanupOrphanedRecords(
         RelationData $relationDTO,

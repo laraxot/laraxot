@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Risoluzione Conflitto in SushiToJsons"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, git]
 qmd: "Risoluzione Conflitto in SushiToJsons"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Risoluzione Conflitto in SushiToJsons
 
 ## Panoramica
@@ -38,10 +38,10 @@ Sono state identificate tre principali versioni in conflitto:
 
 ### Versione 2 (Intermedia)
 <<<<<<< HEAD
-- Implementazione con controlli aggiuntivi
-=======
 - Implementazione con controlli aggiuntivi 
->>>>>>> laraxot/dev
+=======
+- Implementazione con controlli aggiuntivi
+>>>>>>> 77b1e2748 (first)
 - Eccezioni personalizzate per la validazione
 
 ### Versione 3 (Più recente)
@@ -151,10 +151,10 @@ trait SushiToJsons
             }
         );
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         /*
          * Aggiornamento del modello.
          */
@@ -168,10 +168,10 @@ trait SushiToJsons
             }
         );
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         /*
          * Eliminazione del modello.
          */
@@ -199,8 +199,8 @@ trait SushiToJsons
 
 - [Documento principale risoluzione conflitti](risoluzione_conflitti.md)
 <<<<<<< HEAD
+- [Documentazione modulo Tenant](../../Tenant/docs/risoluzione_conflitti.md) 
+=======
 - [Documentazione modulo Tenant](../../Tenant/docs/risoluzione_conflitti.md)
 - [Documentazione modulo Tenant](../../tenant/docs/risoluzione_conflitti.md)
-=======
-- [Documentazione modulo Tenant](../../Tenant/docs/risoluzione_conflitti.md) 
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

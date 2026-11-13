@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Fix: ExportXlsByCollection Problemi di Sintassi e Compatibilità"
 type: note
@@ -143,4 +141,6 @@ $response = $action->execute(
 **Autore**: AI Assistant  
 **Priorità**: Media  
 **Status**: ✅ Risolto 
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

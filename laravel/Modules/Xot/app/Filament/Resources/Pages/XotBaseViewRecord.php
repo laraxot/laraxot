@@ -9,17 +9,18 @@ use Filament\Actions\ActionGroup;
 use Filament\Pages\Dashboard\Concerns\HasFiltersForm;
 use Filament\Resources\Pages\ViewRecord as FilamentViewRecord;
 <<<<<<< HEAD
+use Modules\Xot\Filament\Links\RecordAnchor;
+=======
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Schema;
-=======
-use Modules\Xot\Filament\Links\RecordAnchor;
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
 abstract class XotBaseViewRecord extends FilamentViewRecord
 {
     use HasFiltersForm;
 
 <<<<<<< HEAD
+=======
     final public function infolist(Schema $schema): Schema
     {
         return $schema->components($this->getInfolistSchema());
@@ -36,8 +37,7 @@ abstract class XotBaseViewRecord extends FilamentViewRecord
         return [];
     }
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     /**
      * Get the header actions.
      *
@@ -46,8 +46,6 @@ abstract class XotBaseViewRecord extends FilamentViewRecord
     protected function getHeaderActions(): array
     {
 <<<<<<< HEAD
-        return [];
-=======
         return [
             'back' => Action::make('back')
 <<<<<<< .merge_file_cFMRkg
@@ -72,6 +70,8 @@ abstract class XotBaseViewRecord extends FilamentViewRecord
                     return $returnTo ?? $this->getResourceUrl();
                 }),
         ];
->>>>>>> laraxot/dev
+=======
+        return [];
+>>>>>>> 77b1e2748 (first)
     }
 }

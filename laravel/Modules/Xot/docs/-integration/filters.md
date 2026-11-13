@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "filters"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "filters xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # filters
 
 <!-- Contenuto migrato da _docs/filters.txt -->

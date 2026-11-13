@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-- [XotBaseWidget](../Xot/docs/filament/widgets/xotbasewidget.md) - Classe base per tutti i widget
-=======
 ---
 title: "Filament Widgets"
 type: note
@@ -26,7 +24,9 @@ Il sistema di widget è organizzato attorno a classi base che forniscono funzion
 ### Widget Base
 
 - [XotBaseWidget](/var/www/html/base_generic/laravel/Modules/Xot/docs/filament/widgets/xotbasewidget.md) - Classe base per tutti i widget
->>>>>>> laraxot/dev
+=======
+- [XotBaseWidget](../Xot/docs/filament/widgets/xotbasewidget.md) - Classe base per tutti i widget
+>>>>>>> 77b1e2748 (first)
 
 ## Best Practices
 
@@ -44,10 +44,10 @@ class DashboardStatsWidget extends XotBaseWidget
 {
     protected static string $view = 'dashboard::widgets.stats';
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     protected function getData(): array
     {
         return [
@@ -57,6 +57,8 @@ class DashboardStatsWidget extends XotBaseWidget
     }
 }
 <<<<<<< HEAD
+``` 
+=======
 ```
 # Wizard Widget Documentation — Indice Completo
 
@@ -267,6 +269,4 @@ Prima di committare un wizard widget, verifica TUTTI i punti:
 ---
 
 *Ultimo aggiornamento: 2026-04-14*
-=======
-``` 
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

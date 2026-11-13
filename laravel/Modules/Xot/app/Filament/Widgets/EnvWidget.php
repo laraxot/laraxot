@@ -12,11 +12,6 @@ use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
 use Illuminate\Support\Arr;
 <<<<<<< HEAD
-use Modules\Xot\Datas\EnvData;
-
-class EnvWidget extends XotBaseSchemaWidget
-{
-=======
 use Illuminate\Support\Facades\Artisan;
 use Modules\Xot\Datas\EnvData;
 use Modules\Xot\Filament\Traits\SuperAdminOnlyTrait;
@@ -25,7 +20,12 @@ class EnvWidget extends XotBaseSchemaWidget
 {
     use SuperAdminOnlyTrait;
 
->>>>>>> laraxot/dev
+=======
+use Modules\Xot\Datas\EnvData;
+
+class EnvWidget extends XotBaseSchemaWidget
+{
+>>>>>>> 77b1e2748 (first)
     /** @var array<string, mixed>|null */
     public ?array $data = [];
 
@@ -34,11 +34,11 @@ class EnvWidget extends XotBaseSchemaWidget
 
     /** @var view-string */
 <<<<<<< HEAD
+    protected string $view = 'xot::filament.widgets.env';
+=======
     /** @var view-string */
     protected string $view;
-=======
-    protected string $view = 'xot::filament.widgets.env';
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
     /**
      * Raggruppamento visivo dei campi per Section, stile Laravel — un
@@ -64,13 +64,6 @@ class EnvWidget extends XotBaseSchemaWidget
     }
 
 <<<<<<< HEAD
-    public function submit(): void
-    {
-        if (! is_array($this->data)) {
-            return;
-        }
-        EnvData::make()->update($this->data);
-=======
     public static function canView(): bool
     {
         return static::canAccess();
@@ -108,7 +101,14 @@ class EnvWidget extends XotBaseSchemaWidget
         // sbagliare, rispetto a un'impostazione che non si applica in silenzio.
         Artisan::call('config:clear');
 
->>>>>>> laraxot/dev
+=======
+    public function submit(): void
+    {
+        if (! is_array($this->data)) {
+            return;
+        }
+        EnvData::make()->update($this->data);
+>>>>>>> 77b1e2748 (first)
         Notification::make()
             ->title('Saved successfully')
             ->success()

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Risoluzione Conflitto in VideoEntry"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, git]
 qmd: "Risoluzione Conflitto in VideoEntry"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Risoluzione Conflitto in VideoEntry
 
 ## Panoramica
@@ -108,8 +108,8 @@ public function getHeight(): ?string
 
 - [Documento principale risoluzione conflitti](risoluzione_conflitti.md)
 <<<<<<< HEAD
+- [Documentazione modulo Media](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md) 
+=======
 - [Documentazione modulo Media](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md)
 - [Documentazione modulo Media](../../media/docs/conflitti_merge_risolti.md)
-=======
-- [Documentazione modulo Media](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md) 
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" role="img">
 <<<<<<< HEAD
-=======
   <!--
     Foglio di calcolo, export immediato (ExportXlsAction: il file si scarica subito).
     Stile Heroicons outline (story Xot 8.5): pagina = path `document` di Heroicons, identico.
@@ -18,7 +17,8 @@
     quindi lo spazio serve meglio al solo glifo che le distingue.
   -->
   <path stroke-linecap="round" stroke-linejoin="round" d="M9 11.25h6a.75.75 0 0 1 .75.75v6a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v-6a.75.75 0 0 1 .75-.75ZM8.25 15h7.5M12 11.25v7.5"/>
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
   <!-- Foglio con angolo piegato (variante legacy xls: griglia 2 colonne, senza barra header piena) -->
   <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75h6.75L18 7.5v11.25a1.5 1.5 0 0 1-1.5 1.5h-9a1.5 1.5 0 0 1-1.5-1.5V5.25a1.5 1.5 0 0 1 1.5-1.5Z"/>
   <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 3.75V7.5H18"/>

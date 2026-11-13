@@ -15,7 +15,69 @@ class GetViewNameSpacePathAction
     /**
      * Ottiene il percorso di un namespace di vista.
      *
+<<<<<<< HEAD
      * @param  string  $ns  Il namespace della vista
+=======
+<<<<<<< .merge_file_Cm9scj
+     * @param  string  $ns  Il namespace della vista
+=======
+     * <<<<<<< HEAD
+     *
+     * @param string $ns Il namespace della vista
+     *                   =======
+     *                   <<<<<<< HEAD
+     *                   <<<<<<< HEAD
+     *                   <<<<<<< .merge_file_LSM7m3
+     * @param string $ns Il namespace della vista
+     *                   =======
+     *                   <<<<<<< .merge_file_VWWH0a
+     * @param string $ns Il namespace della vista
+     *                   =======
+     *                   <<<<<<< HEAD
+     * @param string $ns Il namespace della vista
+     *                   =======
+     * @param string $ns Il namespace della vista
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * >>>>>>> .merge_file_PeG9JM
+     *
+     * >>>>>>> .merge_file_WayvAh
+     *
+     * =======
+     * <<<<<<< HEAD
+     * @param string $ns Il namespace della vista
+     *                   =======
+     *                   <<<<<<< .merge_file_nRDung
+     *                   =======
+     *                   <<<<<<< HEAD
+     *                   <<<<<<< .merge_file_LSM7m3
+     *                   >>>>>>> .merge_file_e535D9
+     * @param string $ns Il namespace della vista
+     *
+     * <<<<<<< .merge_file_nRDung
+     * =======
+     * >>>>>>> laraxot/dev
+     * =======
+     * @param string $ns Il namespace della vista
+     *                   >>>>>>> 9e11d472 (Fix merge conflicts in PHPDoc comments across multiple action classes and contracts, ensuring consistent parameter annotations and removing redundant lines.)
+     *
+     * <<<<<<< HEAD
+     * =======
+     * >>>>>>> .merge_file_e535D9
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * =======
+     * @param string $ns Il namespace della vista
+     *                   >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_u1dRUF
+>>>>>>> 77b1e2748 (first)
      * @return string|null Il percorso del namespace o null se non trovato
      */
     public function execute(string $ns): ?string

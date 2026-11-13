@@ -56,16 +56,21 @@ abstract class XotBaseWizardWidget extends XotBaseSchemaWidget
     use HasWizard {
         getWizardComponent as getParentWizardComponent;
     }
+<<<<<<< HEAD
     use HasXotFormAction;
+=======
+    use HasXotFormAction {
+        getResourceUrl as private getResourceUrlWithTypedParameters;
+    }
+>>>>>>> 77b1e2748 (first)
 
     /** @var ?int Step iniziale (1..N) dopo mount o navigazione; null = ancora da risolvere da ?step=. */
     public ?int $wizardStartStep = null;
 
+<<<<<<< HEAD
     protected int|string|array $columnSpan = 'full';
 
     /**
-<<<<<<< HEAD
-=======
      * Redeclared on purpose, but NOT a fix: `callSchemaComponentMethod` is
      * already public in Filament's `InteractsWithSchemas`
      * (vendor/filament/schemas/src/Concerns/InteractsWithSchemas.php) and
@@ -82,8 +87,20 @@ abstract class XotBaseWizardWidget extends XotBaseSchemaWidget
         return parent::callSchemaComponentMethod($componentKey, $method, $arguments);
     }
 
+=======
     /**
->>>>>>> laraxot/dev
+     * @param array<string, mixed> $parameters
+     * @phpstan-param array<string, mixed> $parameters
+     */
+    public function getResourceUrl(?string $name = null, array $parameters = [], bool $isAbsolute = true, ?string $panel = null, ?\Illuminate\Database\Eloquent\Model $tenant = null, bool $shouldGuessMissingParameters = true): string
+    {
+        return $this->getResourceUrlWithTypedParameters($name, $parameters, $isAbsolute, $panel, $tenant, $shouldGuessMissingParameters);
+    }
+
+    protected int|string|array $columnSpan = 'full';
+
+>>>>>>> 77b1e2748 (first)
+    /**
      * @return array<int, Wizard>
      */
     public function getFormSchema(): array

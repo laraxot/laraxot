@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Struttura dei Moduli in il progetto"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "struttura dei moduli in il progetto xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Struttura dei Moduli in il progetto
 
 ## Panoramica

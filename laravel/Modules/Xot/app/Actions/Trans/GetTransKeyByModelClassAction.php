@@ -23,15 +23,15 @@ class GetTransKeyByModelClassAction
         $model_name = Str::of($model_name)->snake()->toString();
 
 <<<<<<< HEAD
+        $view = $module_low.'::'.$model_name.$suffix;
+        // str_plural ?
+
+=======
         $view=$module_low.'::'.$model_name.$suffix;
         //str_plural ?
         
         
-=======
-        $view = $module_low.'::'.$model_name.$suffix;
-        // str_plural ?
-
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         return $view;
     }
 }

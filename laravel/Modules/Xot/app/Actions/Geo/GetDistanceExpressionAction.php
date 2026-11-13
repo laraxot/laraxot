@@ -21,9 +21,50 @@ class GetDistanceExpressionAction
     /**
      * Genera l'espressione SQL per calcolare la distanza tra due punti.
      *
+<<<<<<< HEAD
      * @param  float  $latitude  Latitudine del punto di riferimento
      * @param  float  $longitude  Longitudine del punto di riferimento
      * @param  string|null  $alias  Alias per l'espressione (opzionale)
+=======
+<<<<<<< .merge_file_bn7Phq
+     * @param  float  $latitude  Latitudine del punto di riferimento
+     * @param  float  $longitude  Longitudine del punto di riferimento
+     * @param  string|null  $alias  Alias per l'espressione (opzionale)
+=======
+     * <<<<<<< HEAD
+     *
+     * @param float       $latitude  Latitudine del punto di riferimento
+     * @param float       $longitude Longitudine del punto di riferimento
+     * @param string|null $alias     Alias per l'espressione (opzionale)
+     *                               =======
+     *                               <<<<<<< HEAD
+     * @param float       $latitude  Latitudine del punto di riferimento
+     * @param float       $longitude Longitudine del punto di riferimento
+     * @param string|null $alias     Alias per l'espressione (opzionale)
+     *                               =======
+     *                               <<<<<<< HEAD
+     *                               <<<<<<< HEAD
+     * @param float       $latitude  Latitudine del punto di riferimento
+     * @param float       $longitude Longitudine del punto di riferimento
+     * @param string|null $alias     Alias per l'espressione (opzionale)
+     *                               =======
+     * @param float       $latitude  Latitudine del punto di riferimento
+     * @param float       $longitude Longitudine del punto di riferimento
+     * @param string|null $alias     Alias per l'espressione (opzionale)
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * =======
+     * @param float       $latitude  Latitudine del punto di riferimento
+     * @param float       $longitude Longitudine del punto di riferimento
+     * @param string|null $alias     Alias per l'espressione (opzionale)
+     *                               >>>>>>> laraxot/dev
+     *                               >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_gonqvM
+>>>>>>> 77b1e2748 (first)
      * @return Expression Espressione SQL per il calcolo della distanza
      */
     public function execute(

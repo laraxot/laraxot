@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "XotBaseServiceProvider: Architettura, Ruolo e Best Practice"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "XotBaseServiceProvider: Architettura, Ruolo e Best Practice"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # XotBaseServiceProvider: Architettura, Ruolo e Best Practice
 
 ## Ruolo della Classe
@@ -72,10 +72,10 @@ public function registerTranslations(): void
 - Questa regola va rispettata anche da tutte le classi che estendono il provider
 
 <<<<<<< HEAD
-**Backlink:** Vedi anche [CONFLITTI_MERGE_RISOLTI.md](conflitti_merge_risolti.md)
-=======
 **Backlink:** Vedi anche [CONFLITTI_MERGE_RISOLTI.md](./conflitti_merge_risolti.md)
->>>>>>> laraxot/dev
+=======
+**Backlink:** Vedi anche [CONFLITTI_MERGE_RISOLTI.md](conflitti_merge_risolti.md)
+>>>>>>> 77b1e2748 (first)
 
 ## Esempio di Override Sicuro
 ```php
@@ -97,14 +97,14 @@ class CustomModuleServiceProvider extends XotBaseServiceProvider
 
 ## Collegamenti e Backlink
 <<<<<<< HEAD
-- [COMPONENTI_PERSONALIZZATI.md](./COMPONENTI_PERSONALIZZATI.md) — Regole e path per Blade components modulari
-- [CONFLITTI_MERGE_RISOLTI.md](conflitti_merge_risolti.md) — Tracciamento conflitti risolti su ServiceProvider
-- [FILAMENT_TABLE_COLUMNS.md](./FILAMENT_TABLE_COLUMNS.md) — Standardizzazione metodi colonne Filament
-=======
 - [COMPONENTI_PERSONALIZZATI.md](./COMPONENTI_PERSONALIZZATI.md): Regole e path per Blade components modulari
 - [CONFLITTI_MERGE_RISOLTI.md](./conflitti_merge_risolti.md): Tracciamento conflitti risolti su ServiceProvider
 - [FILAMENT_TABLE_COLUMNS.md](./FILAMENT_TABLE_COLUMNS.md): Standardizzazione metodi colonne Filament
->>>>>>> laraxot/dev
+=======
+- [COMPONENTI_PERSONALIZZATI.md](./COMPONENTI_PERSONALIZZATI.md) — Regole e path per Blade components modulari
+- [CONFLITTI_MERGE_RISOLTI.md](conflitti_merge_risolti.md) — Tracciamento conflitti risolti su ServiceProvider
+- [FILAMENT_TABLE_COLUMNS.md](./FILAMENT_TABLE_COLUMNS.md) — Standardizzazione metodi colonne Filament
+>>>>>>> 77b1e2748 (first)
 
 ---
 

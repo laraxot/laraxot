@@ -7,10 +7,10 @@ namespace Modules\Xot\Http\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 <<<<<<< HEAD
-use Modules\Xot\Actions\Cast\SafeIntCastAction;
-=======
 use Illuminate\Support\Facades\RateLimiter;
->>>>>>> laraxot/dev
+=======
+use Modules\Xot\Actions\Cast\SafeIntCastAction;
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Symfony\Component\HttpFoundation\Response;
 use Webmozart\Assert\Assert;
@@ -27,7 +27,6 @@ use function Safe\preg_match;
 class SecurityMiddleware
 {
 <<<<<<< HEAD
-=======
     /** Richieste al minuto per IP (pagine, Livewire, API). */
     private const int DEFAULT_LIMIT = 300;
 
@@ -41,7 +40,8 @@ class SecurityMiddleware
         'password/reset' => 5,
     ];
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     /**
      * Handle an incoming request.
      */
@@ -51,21 +51,6 @@ class SecurityMiddleware
         $this->applyAdvancedRateLimiting($request);
 
 <<<<<<< HEAD
-        // 2. Headers di sicurezza
-        $response = $next($request);
-        Assert::isInstanceOf($response, Response::class);
-        $this->addSecurityHeaders($response);
-
-        // 3. Logging sicurezza
-        $this->logSecurityEvents($request, $response);
-
-        // 4. Validazione input avanzata
-        $this->validateInputs($request);
-
-        // 5. Protezione CSRF avanzata
-        $this->enhanceCSRFProtection($request);
-
-=======
         // 2. Validazione input e CSRF PRIMA di eseguire la richiesta.
         // Eseguiti dopo $next() erano inutili come protezione (l'azione era già avvenuta)
         // e rompevano il login: Filament rigenera sessione e token CSRF all'accesso,
@@ -82,12 +67,56 @@ class SecurityMiddleware
         // 4. Logging sicurezza
         $this->logSecurityEvents($request, $response);
 
->>>>>>> laraxot/dev
+=======
+        // 2. Headers di sicurezza
+        $response = $next($request);
+        Assert::isInstanceOf($response, Response::class);
+        $this->addSecurityHeaders($response);
+
+        // 3. Logging sicurezza
+        $this->logSecurityEvents($request, $response);
+
+        // 4. Validazione input avanzata
+        $this->validateInputs($request);
+
+        // 5. Protezione CSRF avanzata
+        $this->enhanceCSRFProtection($request);
+
+>>>>>>> 77b1e2748 (first)
         return $response;
     }
 
     /**
 <<<<<<< HEAD
+     * Rate limiting per IP e per gruppo di indirizzi (finestra fissa di 60 secondi).
+     *
+     * Prima c'erano tre contatori che bloccavano il sito intero (ADR security-middleware-rate-limit):
+     * - per IP su tutte le pagine, ma con il limite dell'indirizzo richiesto: dopo 5 pagine
+     *   qualsiasi, la pagina di accesso (limite 5) rispondeva 429;
+     * - per User-Agent e per indirizzo, condivisi tra tutti i visitatori: 5 accessi al minuto
+     *   in tutto il mondo bastavano a bloccare il login per chiunque;
+     * - `cache()->put(+1, 60)` rinnovava la scadenza a ogni richiesta: il blocco non finiva mai.
+     */
+    private function applyAdvancedRateLimiting(Request $request): void
+    {
+        $this->checkIPRateLimit($request->ip() ?? 'unknown', $request->path(), $request->isMethodSafe());
+    }
+
+    /**
+     * Controlla rate limit per IP sul gruppo dell'indirizzo (login, registrazione, … o "default").
+     * I limiti stretti valgono solo per gli invii (POST, PUT, …): aprire la pagina non conta.
+     */
+    private function checkIPRateLimit(string $ip, string $endpoint, bool $safeMethod = true): void
+    {
+        [$bucket, $limit] = $this->getRateLimitBucket($endpoint, $safeMethod);
+        $key = "security:rate_limit:{$bucket}:{$ip}";
+
+        if (RateLimiter::tooManyAttempts($key, $limit)) {
+            Log::warning('Rate limit exceeded for IP', [
+                'ip' => $ip,
+                'endpoint' => $endpoint,
+                'bucket' => $bucket,
+=======
      * Applica rate limiting avanzato.
      */
     private function applyAdvancedRateLimiting(Request $request): void
@@ -121,36 +150,7 @@ class SecurityMiddleware
                 'ip' => $ip,
                 'endpoint' => $endpoint,
                 'current' => $current,
-=======
-     * Rate limiting per IP e per gruppo di indirizzi (finestra fissa di 60 secondi).
-     *
-     * Prima c'erano tre contatori che bloccavano il sito intero (ADR security-middleware-rate-limit):
-     * - per IP su tutte le pagine, ma con il limite dell'indirizzo richiesto: dopo 5 pagine
-     *   qualsiasi, la pagina di accesso (limite 5) rispondeva 429;
-     * - per User-Agent e per indirizzo, condivisi tra tutti i visitatori: 5 accessi al minuto
-     *   in tutto il mondo bastavano a bloccare il login per chiunque;
-     * - `cache()->put(+1, 60)` rinnovava la scadenza a ogni richiesta: il blocco non finiva mai.
-     */
-    private function applyAdvancedRateLimiting(Request $request): void
-    {
-        $this->checkIPRateLimit($request->ip() ?? 'unknown', $request->path(), $request->isMethodSafe());
-    }
-
-    /**
-     * Controlla rate limit per IP sul gruppo dell'indirizzo (login, registrazione, … o "default").
-     * I limiti stretti valgono solo per gli invii (POST, PUT, …): aprire la pagina non conta.
-     */
-    private function checkIPRateLimit(string $ip, string $endpoint, bool $safeMethod = true): void
-    {
-        [$bucket, $limit] = $this->getRateLimitBucket($endpoint, $safeMethod);
-        $key = "security:rate_limit:{$bucket}:{$ip}";
-
-        if (RateLimiter::tooManyAttempts($key, $limit)) {
-            Log::warning('Rate limit exceeded for IP', [
-                'ip' => $ip,
-                'endpoint' => $endpoint,
-                'bucket' => $bucket,
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
                 'limit' => $limit,
             ]);
 
@@ -158,6 +158,24 @@ class SecurityMiddleware
         }
 
 <<<<<<< HEAD
+        RateLimiter::hit($key, 60);
+    }
+
+    /**
+     * @return array{0: string, 1: int} gruppo e limite al minuto
+     */
+    private function getRateLimitBucket(string $endpoint, bool $safeMethod): array
+    {
+        if (! $safeMethod) {
+            foreach (self::STRICT_LIMITS as $pattern => $limit) {
+                if (str_contains($endpoint, $pattern)) {
+                    return [$pattern, $limit];
+                }
+            }
+        }
+
+        return ['default', self::DEFAULT_LIMIT];
+=======
         cache()->put($key, $current + 1, 60); // 1 minuto
     }
 
@@ -230,40 +248,13 @@ class SecurityMiddleware
         }
 
         return 60; // Default limit
-=======
-        RateLimiter::hit($key, 60);
-    }
-
-    /**
-     * @return array{0: string, 1: int} gruppo e limite al minuto
-     */
-    private function getRateLimitBucket(string $endpoint, bool $safeMethod): array
-    {
-        if (! $safeMethod) {
-            foreach (self::STRICT_LIMITS as $pattern => $limit) {
-                if (str_contains($endpoint, $pattern)) {
-                    return [$pattern, $limit];
-                }
-            }
-        }
-
-        return ['default', self::DEFAULT_LIMIT];
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
      * Aggiungi header di sicurezza.
      */
 <<<<<<< HEAD
-    private function addSecurityHeaders(Response $response): void
-    {
-        // Content Security Policy
-        $csp = $this->buildCSP();
-        $response->headers->set('Content-Security-Policy', $csp);
-
-        // Strict Transport Security
-        $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
-=======
     private function addSecurityHeaders(Response $response, Request $request): void
     {
         $secure = $request->secure();
@@ -278,7 +269,16 @@ class SecurityMiddleware
         if ($secure) {
             $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
         }
->>>>>>> laraxot/dev
+=======
+    private function addSecurityHeaders(Response $response): void
+    {
+        // Content Security Policy
+        $csp = $this->buildCSP();
+        $response->headers->set('Content-Security-Policy', $csp);
+
+        // Strict Transport Security
+        $response->headers->set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+>>>>>>> 77b1e2748 (first)
 
         // X-Frame-Options
         $response->headers->set('X-Frame-Options', 'DENY');
@@ -306,10 +306,10 @@ class SecurityMiddleware
      * Costruisci Content Security Policy.
      */
 <<<<<<< HEAD
-    private function buildCSP(): string
-=======
     private function buildCSP(bool $secure = false): string
->>>>>>> laraxot/dev
+=======
+    private function buildCSP(): string
+>>>>>>> 77b1e2748 (first)
     {
         $csp = [
             "default-src 'self'",
@@ -325,11 +325,6 @@ class SecurityMiddleware
             "form-action 'self'",
             "frame-ancestors 'none'",
 <<<<<<< HEAD
-            'upgrade-insecure-requests',
-            'block-all-mixed-content',
-        ];
-
-=======
         ];
 
         // Solo quando la risposta e' servita in HTTPS: altrimenti il browser
@@ -340,7 +335,12 @@ class SecurityMiddleware
             $csp[] = 'block-all-mixed-content';
         }
 
->>>>>>> laraxot/dev
+=======
+            'upgrade-insecure-requests',
+            'block-all-mixed-content',
+        ];
+
+>>>>>>> 77b1e2748 (first)
         return implode('; ', $csp);
     }
 
@@ -359,27 +359,27 @@ class SecurityMiddleware
             'gyroscope=()',
             'accelerometer=()',
 <<<<<<< HEAD
+            'autoplay=()',
+=======
             'ambient-light-sensor=()',
             'autoplay=()',
             'battery=()',
             'bluetooth=()',
-=======
-            'autoplay=()',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             'display-capture=()',
             'fullscreen=(self)',
             'gamepad=()',
             'midi=()',
 <<<<<<< HEAD
+            'screen-wake-lock=()',
+=======
             'notifications=(self)',
             'persistent-storage=(self)',
             'push=()',
             'screen-wake-lock=()',
             'speaker=()',
             'web-share=()',
-=======
-            'screen-wake-lock=()',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             'xr-spatial-tracking=()',
         ];
 
@@ -407,10 +407,10 @@ class SecurityMiddleware
 
         // Log solo eventi sospetti
 <<<<<<< HEAD
-        if ($this->isSuspiciousRequest($request, $response)) {
-=======
         if ($this->isSuspiciousRequest($request)) {
->>>>>>> laraxot/dev
+=======
+        if ($this->isSuspiciousRequest($request, $response)) {
+>>>>>>> 77b1e2748 (first)
             Log::warning('Suspicious request detected', $securityData);
         }
 
@@ -429,10 +429,10 @@ class SecurityMiddleware
      * Verifica se la richiesta è sospetta.
      */
 <<<<<<< HEAD
-    private function isSuspiciousRequest(Request $request, Response $response): bool
-=======
     private function isSuspiciousRequest(Request $request): bool
->>>>>>> laraxot/dev
+=======
+    private function isSuspiciousRequest(Request $request, Response $response): bool
+>>>>>>> 77b1e2748 (first)
     {
         // Pattern sospetti negli URL
         $suspiciousPatterns = [

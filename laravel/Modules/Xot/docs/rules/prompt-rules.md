@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot - prompt-rules.md"
 module: Xot
 bmad: true
 status: active
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole per i Prompt
 
 ## Regola Universale
@@ -94,4 +94,4 @@ Non è necessario applicare questa regola a:
 * [prompt_rules.md](../prompt_rules.md)
 =======
 * [prompt_rules.md](../prompt_rules.md)
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

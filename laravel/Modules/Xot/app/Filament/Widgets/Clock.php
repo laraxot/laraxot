@@ -10,11 +10,11 @@ class Clock extends XotBaseWidget
 
     /** @var view-string */
 <<<<<<< HEAD
+    protected string $view = 'xot::filament.widgets.clock';
+=======
     /** @var view-string */
     protected string $view;
-=======
-    protected string $view = 'xot::filament.widgets.clock';
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
     public function begin(): void
     {

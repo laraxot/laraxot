@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "big_projects"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "big_projects xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # big_projects
 
 <!-- Contenuto migrato da _docs/big_projects.txt -->

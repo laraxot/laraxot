@@ -8,21 +8,21 @@ return [
     'widgets' => 'Widgets',
     'navigation' => [
 <<<<<<< HEAD
-        'name' => 'log',
-=======
         'name' => 'Registro',
->>>>>>> laraxot/dev
+=======
+        'name' => 'log',
+>>>>>>> 77b1e2748 (first)
         'plural' => 'logs',
         'group' => [
             'name' => 'Admin',
         ],
 <<<<<<< HEAD
-        'label' => 'log.navigation',
-        'icon' => 'log.navigation',
-=======
         'label' => 'Log',
         'icon' => 'heroicon-o-clipboard-document-list',
->>>>>>> laraxot/dev
+=======
+        'label' => 'log.navigation',
+        'icon' => 'log.navigation',
+>>>>>>> 77b1e2748 (first)
         'sort' => 61,
     ],
     'fields' => [
@@ -32,9 +32,9 @@ return [
             'helper_text' => '',
             'description' => '',
 <<<<<<< HEAD
-            'placeholder' => 'name',
 =======
->>>>>>> laraxot/dev
+            'placeholder' => 'name',
+>>>>>>> 77b1e2748 (first)
         ],
         'guard_name' => [
             'label' => 'Guard',
@@ -75,6 +75,7 @@ return [
             'description' => '',
         ],
 <<<<<<< HEAD
+=======
         'id' => [
             'label' => 'id',
         ],
@@ -108,8 +109,7 @@ return [
         'file-content' => [
             'label' => 'file-content',
         ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     ],
     'actions' => [
         'import' => [
@@ -126,6 +126,23 @@ return [
         ],
         'create' => [
 <<<<<<< HEAD
+            'icon' => 'create',
+        ],
+        'createAnother' => [
+            'icon' => 'createAnother',
+        ],
+        'delete' => [
+            'icon' => 'delete',
+        ],
+        'save' => [
+            'icon' => 'save',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
+        'logout' => [
+            'icon' => 'logout',
+=======
             'label' => 'create',
             'icon' => 'create',
             'tooltip' => 'create',
@@ -154,31 +171,14 @@ return [
             'tooltip' => 'logout',
             'icon' => 'logout',
             'label' => 'logout',
-=======
-            'icon' => 'create',
-        ],
-        'createAnother' => [
-            'icon' => 'createAnother',
-        ],
-        'delete' => [
-            'icon' => 'delete',
-        ],
-        'save' => [
-            'icon' => 'save',
-        ],
-        'view' => [
-            'icon' => 'view',
-        ],
-        'logout' => [
-            'icon' => 'logout',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
     'label' => 'Log',
     'plural_label' => 'Log (Plurale)',
 <<<<<<< HEAD
-    'title' => 'log',
-=======
     'title' => 'Registro',
->>>>>>> laraxot/dev
+=======
+    'title' => 'log',
+>>>>>>> 77b1e2748 (first)
 ];

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Modulo Xot - Ottimizzazioni per Modularità"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "modulo xot - ottimizzazioni per modularità xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Modulo Xot - Ottimizzazioni per Modularità
 
 ## Problemi Identificati

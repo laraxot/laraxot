@@ -1,4 +1,5 @@
 // Pagine /tests: qualunque toggler/pannello `navbarcollapsible` del riferimento (es. `#navbarNavB` del catalogo), non solo `#nav4`
+<<<<<<< HEAD
 const withDesignComuni = (base, extra) =>
     isDesignComuniPage() ? `${base}, ${extra}` : base;
 const navToggleSelector = () =>
@@ -15,6 +16,13 @@ const navOverlaySelector = () =>
     '.navbar-collapsable > .overlay, [data-mobile-nav-overlay]';
 const navCloseSelector = () =>
     '.navbar-collapsable .close-menu, [data-mobile-nav-close]';
+=======
+const withDesignComuni = (base, extra) => (isDesignComuniPage() ? `${base}, ${extra}` : base);
+const navToggleSelector = () => withDesignComuni('.custom-navbar-toggler[data-bs-target="#nav4"], [data-mobile-nav-toggle]', '[data-bs-toggle="navbarcollapsible"]');
+const navPanelSelector = () => withDesignComuni('#nav4.navbar-collapsable, [data-mobile-nav-panel]', '.navbar-collapsable');
+const navOverlaySelector = () => '.navbar-collapsable > .overlay, [data-mobile-nav-overlay]';
+const navCloseSelector = () => '.navbar-collapsable .close-menu, [data-mobile-nav-close]';
+>>>>>>> f08c6884 (.)
 const panelOpeners = new WeakMap();
 
 /**
@@ -27,9 +35,14 @@ export const isDesignComuniPage = () =>
     ) !== null;
 
 function getTargetPanel(toggle) {
+<<<<<<< HEAD
     const selector =
         toggle.getAttribute('data-bs-target') ??
         toggle.getAttribute('data-mobile-nav-target');
+=======
+    const selector = toggle.getAttribute('data-bs-target')
+        ?? toggle.getAttribute('data-mobile-nav-target');
+>>>>>>> f08c6884 (.)
 
     return selector
         ? document.querySelector(selector)
@@ -37,10 +50,14 @@ function getTargetPanel(toggle) {
 }
 
 function getRelatedOverlays(panel) {
+<<<<<<< HEAD
     const root =
         panel.closest('[data-mobile-nav]') ||
         panel.closest('.it-nav-wrapper') ||
         document;
+=======
+    const root = panel.closest('[data-mobile-nav]') || panel.closest('.it-nav-wrapper') || document;
+>>>>>>> f08c6884 (.)
     const overlays = root.querySelectorAll(navOverlaySelector());
 
     return overlays.length > 0
@@ -60,6 +77,7 @@ function updateBodyLock() {
     );
 }
 
+<<<<<<< HEAD
 const isDesktopViewport = () =>
     typeof window.matchMedia === 'function' &&
     window.matchMedia('(min-width: 992px)').matches;
@@ -82,6 +100,8 @@ function syncPanelAria(panel) {
     );
 }
 
+=======
+>>>>>>> f08c6884 (.)
 function setPanelOpen(panel, open, focusFirstLink = false, opener = null) {
     if (!panel) {
         return;
@@ -93,7 +113,11 @@ function setPanelOpen(panel, open, focusFirstLink = false, opener = null) {
 
     panel.classList.toggle('is-open', open);
     panel.classList.toggle('show', open);
+<<<<<<< HEAD
     syncPanelAria(panel);
+=======
+    panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+>>>>>>> f08c6884 (.)
     // pagine Design Comuni (/tests, stesso ambito del CSS generato): `expanded`, display e aria-expanded sul pannello, come nel riferimento
     if (isDesignComuniPage()) {
         panel.classList.toggle('expanded', open);
@@ -129,10 +153,14 @@ function setPanelOpen(panel, open, focusFirstLink = false, opener = null) {
 
     if (!open) {
         const previousOpener = opener ?? panelOpeners.get(panel);
+<<<<<<< HEAD
         if (
             previousOpener?.isConnected &&
             panel.contains(document.activeElement)
         ) {
+=======
+        if (previousOpener?.isConnected && panel.contains(document.activeElement)) {
+>>>>>>> f08c6884 (.)
             previousOpener.focus();
         }
         panelOpeners.delete(panel);
@@ -146,12 +174,17 @@ function setPanelOpen(panel, open, focusFirstLink = false, opener = null) {
 }
 
 function closeAllPanels() {
+<<<<<<< HEAD
     document.querySelectorAll(navPanelSelector()).forEach(panel => {
+=======
+    document.querySelectorAll(navPanelSelector()).forEach((panel) => {
+>>>>>>> f08c6884 (.)
         setPanelOpen(panel, false, false, panelOpeners.get(panel));
     });
 }
 
 function getFocusableElements(panel) {
+<<<<<<< HEAD
     return [
         ...panel.querySelectorAll(
             'a[href], area[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
@@ -160,6 +193,11 @@ function getFocusableElements(panel) {
         element =>
             element.offsetParent !== null || element === document.activeElement
     );
+=======
+    return [...panel.querySelectorAll(
+        'a[href], area[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )].filter((element) => element.offsetParent !== null || element === document.activeElement);
+>>>>>>> f08c6884 (.)
 }
 
 function keepFocusInsideOpenPanel(event) {
@@ -167,12 +205,16 @@ function keepFocusInsideOpenPanel(event) {
         return;
     }
 
+<<<<<<< HEAD
     const panel = document.querySelector(
         `${navPanelSelector()
             .split(',')
             .map(part => `${part.trim()}.is-open`)
             .join(', ')}`
     );
+=======
+    const panel = document.querySelector(`${navPanelSelector().split(',').map((part) => `${part.trim()}.is-open`).join(', ')}`);
+>>>>>>> f08c6884 (.)
     if (!panel) {
         return;
     }
@@ -197,14 +239,23 @@ function keepFocusInsideOpenPanel(event) {
 }
 
 export function initHeaderMobileNav() {
+<<<<<<< HEAD
     document.querySelectorAll(navPanelSelector()).forEach(syncPanelAria);
 
     document.querySelectorAll(navToggleSelector()).forEach(toggle => {
+=======
+    document.querySelectorAll(navPanelSelector()).forEach((panel) => {
+        panel.setAttribute('aria-hidden', panel.classList.contains('is-open') ? 'false' : 'true');
+    });
+
+    document.querySelectorAll(navToggleSelector()).forEach((toggle) => {
+>>>>>>> f08c6884 (.)
         if (toggle.dataset.mobileNavBound === 'true') {
             return;
         }
 
         toggle.dataset.mobileNavBound = 'true';
+<<<<<<< HEAD
         toggle.addEventListener('click', event => {
             event.preventDefault();
             const panel = getTargetPanel(toggle);
@@ -218,6 +269,16 @@ export function initHeaderMobileNav() {
     });
 
     document.querySelectorAll(navOverlaySelector()).forEach(overlay => {
+=======
+        toggle.addEventListener('click', (event) => {
+            event.preventDefault();
+            const panel = getTargetPanel(toggle);
+            setPanelOpen(panel, !(panel?.classList.contains('is-open')), true, toggle);
+        });
+    });
+
+    document.querySelectorAll(navOverlaySelector()).forEach((overlay) => {
+>>>>>>> f08c6884 (.)
         if (overlay.dataset.mobileNavBound === 'true') {
             return;
         }
@@ -226,24 +287,38 @@ export function initHeaderMobileNav() {
         overlay.addEventListener('click', closeAllPanels);
     });
 
+<<<<<<< HEAD
     document.querySelectorAll(navCloseSelector()).forEach(closeButton => {
+=======
+    document.querySelectorAll(navCloseSelector()).forEach((closeButton) => {
+>>>>>>> f08c6884 (.)
         if (closeButton.dataset.mobileNavBound === 'true') {
             return;
         }
 
         closeButton.dataset.mobileNavBound = 'true';
+<<<<<<< HEAD
         closeButton.addEventListener('click', event => {
             event.preventDefault();
             const panel =
                 closeButton.closest(navPanelSelector()) ||
                 document.querySelector(navPanelSelector());
+=======
+        closeButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            const panel = closeButton.closest(navPanelSelector()) || document.querySelector(navPanelSelector());
+>>>>>>> f08c6884 (.)
             setPanelOpen(panel, false, false, panelOpeners.get(panel));
         });
     });
 }
 
 if (typeof document !== 'undefined') {
+<<<<<<< HEAD
     document.addEventListener('keydown', event => {
+=======
+    document.addEventListener('keydown', (event) => {
+>>>>>>> f08c6884 (.)
         keepFocusInsideOpenPanel(event);
         if (event.key === 'Escape') {
             closeAllPanels();

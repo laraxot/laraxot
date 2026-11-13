@@ -4,13 +4,13 @@ description: Handle models with ModelService
 extends: _layouts.documentation
 section: content
 <<<<<<< HEAD
-=======
 type: note
 status: draft
 updated: 2026-10-18
 tags: [docs, xot, service]
 qmd: "modelservice xot"
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 # ModelService
@@ -112,10 +112,10 @@ function ($item, $key) use ($methods) {
 + related model
 + related attributes
 <<<<<<< HEAD
-+ name of the relation (user, profile, relatedModelName, ecc)
-=======
 + name of the relation (user, profile, relatedModelName, ecc) 
->>>>>>> laraxot/dev
+=======
++ name of the relation (user, profile, relatedModelName, ecc)
+>>>>>>> 77b1e2748 (first)
 + relationship itself
 
 ```php
@@ -125,10 +125,10 @@ function ($item, $key) use ($methods) {
             dddx([$k, $v, $data]);
         }
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $rows = $model->$k();
         $related = null;
         if (\is_object($rows) && method_exists($rows, 'getRelated')) {
@@ -165,10 +165,10 @@ Reads *morph_map* value from the morph_map.php configuration, inside every domai
 $models = config('morph_map');
 
 <<<<<<< HEAD
-/*
-=======
 /* 
->>>>>>> laraxot/dev
+=======
+/*
+>>>>>>> 77b1e2748 (first)
 Example
 
 return [
@@ -192,10 +192,10 @@ if (false === $post_type) {
     $post_type = snake_case(class_basename($model));
 
 <<<<<<< HEAD
-/*
-=======
 /*  
->>>>>>> laraxot/dev
+=======
+/*
+>>>>>>> 77b1e2748 (first)
 $post_type='press_post'*/
 ```
 
@@ -239,10 +239,10 @@ ModelService::make()->setModel($profile)->getRelations();
 ```
 
 <<<<<<< HEAD
-* The reflection class is used to get information about the current state of the application.
-=======
 * The reflection class is used to get information about the current state of the application. 
->>>>>>> laraxot/dev
+=======
+* The reflection class is used to get information about the current state of the application.
+>>>>>>> 77b1e2748 (first)
 * It's called reflection, because it looks at itself, and can tell you information about the program your running, at runtime.
 
 ```php
@@ -267,10 +267,10 @@ Get the method name (inside foreach)
 ```php
     $res = $method->getName();
 <<<<<<< HEAD
-```
-=======
 ```  
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)
 * If the number of required parameters for this methos are Zero
 * If the class of this method is $model
 * If the method's $doc isn't false and strpos has the substring *\\Relations\\*
@@ -286,10 +286,10 @@ if (0 === $method->getNumberOfRequiredParameters() && $method->class === \get_cl
 
 return $relations;
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)
 
 ### Get relationships from *model*
 
@@ -300,9 +300,9 @@ public function getRelationships(): array {
 Example
 
 <<<<<<< HEAD
-=======
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ```php
 $profile=PressPost::get()->first();
 ModelService::make()->setModel($profile)->getRelationships();
@@ -312,9 +312,9 @@ ModelService::make()->setModel($profile)->getRelationships();
 * Gets the public methods from reflection class, and iterates on themù
 
 <<<<<<< HEAD
-=======
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 * If the current function name (getRelationships) is equal to the method name
 * OR If the method has more then 0 parameters
 * OR if the method class name is different then model class name
@@ -334,11 +334,11 @@ foreach ((new ReflectionClass($model))->getMethods(ReflectionMethod::IS_PUBLIC) 
 ```
 ## Collegamenti tra versioni di model.md
 <<<<<<< HEAD
-* [model.md](../../../xot/project_docs/model.md)
-* [model.md](../../../xot/project_docs/service/model.md)
-=======
 * [model.md](../../../Xot/docs/model.md)
 * [model.md](../../../Xot/docs/service/model.md)
->>>>>>> laraxot/dev
+=======
+* [model.md](../../../xot/project_docs/model.md)
+* [model.md](../../../xot/project_docs/service/model.md)
+>>>>>>> 77b1e2748 (first)
 
 ```

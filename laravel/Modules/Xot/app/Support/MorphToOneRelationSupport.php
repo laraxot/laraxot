@@ -14,7 +14,24 @@ use Webmozart\Assert\Assert;
 final class MorphToOneRelationSupport
 {
     /**
+<<<<<<< .merge_file_ILFu1w
      * @param  array<string, mixed>  $attributes
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param array<string, mixed> $attributes
+     *                                         =======
+     *                                         <<<<<<< HEAD
+     * @param array<string, mixed> $attributes
+     *                                         =======
+     *                                         <<<<<<< HEAD
+     * @param array<string, mixed> $attributes
+     *                                         =======
+     * @param array<string, mixed> $attributes
+     *                                         >>>>>>> laraxot/dev
+     *                                         >>>>>>> laraxot/dev
+     *                                         >>>>>>> laraxot/dev
+>>>>>>> .merge_file_4OEKsu
      */
     public static function create(object $relation, array $attributes): Model
     {

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "delete related models"
 type: note
@@ -8,5 +7,6 @@ updated: 2026-10-18
 tags: [docs, xot, _integration]
 qmd: "delete related models xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 

@@ -167,10 +167,10 @@ abstract class XotBasePage extends FilamentPage implements HasForms
      * @return class-string<Model>|null
      */
 <<<<<<< HEAD
-    protected function getFormModel(): Model|string|null
-=======
     protected function getFormModel(): ?string
->>>>>>> laraxot/dev
+=======
+    protected function getFormModel(): Model|string|null
+>>>>>>> 77b1e2748 (first)
     {
         return static::$model;
     }

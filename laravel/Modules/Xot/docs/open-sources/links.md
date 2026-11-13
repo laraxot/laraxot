@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "links"
 type: note
@@ -56,5 +55,6 @@ https://github.com/jigar-dhulla/exchange-rate
 
 
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 

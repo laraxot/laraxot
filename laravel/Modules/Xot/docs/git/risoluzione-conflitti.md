@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Risoluzione Conflitti Git nel Progetto"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, git]
 qmd: "Risoluzione Conflitti Git nel Progetto"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Risoluzione Conflitti Git nel Progetto
 
 ## Panoramica
@@ -21,6 +21,7 @@ Questo documento descrive i file con conflitti git identificati nel progetto e l
 
 ### Modulo Media
 <<<<<<< HEAD
+=======
 - [Documentazione dettagliata del modulo Media](../../media/docs/conflitti_merge_risolti.md)
 - [Azioni delle tabelle Filament](../../media/docs/filament_table_actions_conflict_resolution.md)
 
@@ -29,8 +30,7 @@ Questo documento descrive i file con conflitti git identificati nel progetto e l
 
 ### Modulo Job
 - [Documentazione dettagliata del modulo Job](../../job/docs/conflict_resolution.md)
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 - [Documentazione dettagliata del modulo Media](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md)
 - [Azioni delle tabelle Filament](../../Media/docs/filament_table_actions_conflict_resolution.md)
 
@@ -122,12 +122,12 @@ I file modificati sono stati documentati sia nel loro specifico modulo che in qu
 
 - [PHPStan Report](../../Media/docs/phpstan_report.md)
 <<<<<<< HEAD
+- [Test Report](test_report.md) 
+- [Documentazione Conflitti Job](../../Job/docs/conflict_resolution.md) 
+=======
 - [Test Report](test_report.md)
 - [Documentazione Conflitti Job](../../Job/docs/conflict_resolution.md)
 - [PHPStan Report](../../media/docs/phpstan_report.md)
 - [Test Report](test_report.md)
 - [Documentazione Conflitti Job](../../job/docs/conflict_resolution.md)
-=======
-- [Test Report](test_report.md) 
-- [Documentazione Conflitti Job](../../Job/docs/conflict_resolution.md) 
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

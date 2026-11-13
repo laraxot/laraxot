@@ -16,13 +16,13 @@ class MorphManyAction
 
     /**
 <<<<<<< HEAD
-     * Undocumented function.
-=======
      * Aggiorna i record figli della relazione morphMany dal payload del form e li (ri)associa al padre.
      *
      * UpdateAction salva i campi di ogni riga, poi saveMany() scrive morph type/id sul figlio.
      * Le righe non presenti nel payload non vengono staccate ne' cancellate.
->>>>>>> laraxot/dev
+=======
+     * Undocumented function.
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(Model $model, RelationDTO $relationDTO): void
     {
@@ -42,9 +42,9 @@ class MorphManyAction
         $keyName = $related->getKeyName();
         $models = [];
 <<<<<<< HEAD
-        $ids = [];
 =======
->>>>>>> laraxot/dev
+        $ids = [];
+>>>>>>> 77b1e2748 (first)
         foreach ($relationDTO->data as $data) {
             Assert::isArray($data);
             if (\in_array($keyName, array_keys($data), false)) {
@@ -57,15 +57,15 @@ class MorphManyAction
                 $safeData = $data;
                 $res = app(UpdateAction::class)->execute($related, $safeData, []);
 <<<<<<< HEAD
+                $models[] = $res;
+            } else {
+                throw new \LogicException('Update\MorphManyAction: rows without primary key not implemented, relation ['.$relationDTO->name.']');
+=======
                 $ids[] = $res->getKey();
                 $models[] = $res;
             } else {
                 dddx(['model' => $model, 'relationDTO' => $relationDTO]);
-=======
-                $models[] = $res;
-            } else {
-                throw new \LogicException('Update\MorphManyAction: rows without primary key not implemented, relation ['.$relationDTO->name.']');
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             }
         }
 

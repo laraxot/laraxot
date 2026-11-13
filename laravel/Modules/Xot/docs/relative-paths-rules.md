@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regole per i Percorsi Relativi nella Documentazione"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Regole per i Percorsi Relativi nella Documentazione"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole per i Percorsi Relativi nella Documentazione
 
 > **Collegamenti correlati**
@@ -50,10 +50,10 @@ Questa regola è fondamentale per garantire la portabilità della documentazione
 1. **MAI utilizzare percorsi assoluti** come:
    ```markdown
 <<<<<<< HEAD
-   [ERRATO](../Xot/docs/README.md)
-=======
    [ERRATO](/var/www/html/saluteora/laravel/Modules/Xot/docs/README.md)
->>>>>>> laraxot/dev
+=======
+   [ERRATO](../Xot/docs/README.md)
+>>>>>>> 77b1e2748 (first)
    ```
 
 2. **MAI utilizzare percorsi che iniziano con /**:
@@ -66,10 +66,10 @@ Questa regola è fondamentale per garantire la portabilità della documentazione
    ```markdown
    [ERRATO](Modules/Xot/docs/README.md) <!-- Da un file nella root -->
 <<<<<<< HEAD
-   [ERRATO](../Xot/docs/README.md) <!-- Da un file in un modulo, senza contare correttamente i livelli -->
-=======
    [ERRATO](README.md) <!-- Da un file in un modulo, senza contare correttamente i livelli -->
->>>>>>> laraxot/dev
+=======
+   [ERRATO](../Xot/docs/README.md) <!-- Da un file in un modulo, senza contare correttamente i livelli -->
+>>>>>>> 77b1e2748 (first)
    ```
 
 ## Come Calcolare Correttamente i Percorsi Relativi

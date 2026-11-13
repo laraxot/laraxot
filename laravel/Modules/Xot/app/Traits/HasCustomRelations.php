@@ -17,10 +17,6 @@ use Webmozart\Assert\Assert;
 /**
  * Trait HasCustomRelations.
 <<<<<<< HEAD
- */
-// @phpstan-ignore trait.unused
-trait HasCustomRelations
-=======
 <<<<<<< .merge_file_KQvLHL
 =======
  *
@@ -28,7 +24,11 @@ trait HasCustomRelations
  * @phpstan-ignore trait.unused
  */
 trait HasCustomRelations // @phpstan-ignore trait.unused
->>>>>>> laraxot/dev
+=======
+ */
+// @phpstan-ignore trait.unused
+trait HasCustomRelations
+>>>>>>> 77b1e2748 (first)
 {
     public function customRelation(
         string $related,

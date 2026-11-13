@@ -3,15 +3,15 @@
 declare(strict_types=1);
 use Modules\Xot\Actions\Route\GetRouteMethodAction;
 <<<<<<< HEAD
-use PHPUnit\Framework\Assert;
-
-=======
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
->>>>>>> laraxot/dev
+=======
+use PHPUnit\Framework\Assert;
+
+>>>>>>> 77b1e2748 (first)
 test('GetRouteMethodAction restituisce il metodo dichiarato as-is (Arr::wrap non filtra)', function (): void {
     // Nota: il test originale (RouteDynServiceTest) asseriva un filtro dei
     // valori non stringa che il codice reale (Arr::wrap) non esegue mai —

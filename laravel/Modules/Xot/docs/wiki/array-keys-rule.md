@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot - array-keys-rule.md"
 module: Xot
 bmad: true
 status: active
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Array Keys Rule for Filament Schemas
 
 ## Regola
@@ -89,12 +89,6 @@ public static function getTableColumns(): array
 ### Form
 ```php
 <<<<<<< HEAD
-<<<<<<< HEAD
-public function getFormSchema(): array
-=======
-public function getFormSchema(): array
->>>>>>> laraxot/dev
-=======
 public function getFormSchema(): array
 public function getFormSchema(): array
 public function getFormSchema(): array
@@ -108,7 +102,13 @@ qmd: "array keys rule"
 issues: []
 discussions: []
 public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+public function getFormSchema(): array
+=======
+public function getFormSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         'title' => TextInput::make('title')->required()->maxLength(255),
@@ -121,18 +121,18 @@ public function getFormSchema(): array
 ### Infolist
 ```php
 <<<<<<< HEAD
-<<<<<<< HEAD
-public function getInfolistSchema(): array
-=======
-public function getInfolistSchema(): array
->>>>>>> laraxot/dev
-=======
 public function getInfolistSchema(): array
 public function getInfolistSchema(): array
 public function getInfolistSchema(): array
 ---
 public function getInfolistSchema(): array
+=======
+<<<<<<< HEAD
+public function getInfolistSchema(): array
+=======
+public function getInfolistSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         'title' => TextEntry::make('title'),
@@ -152,4 +152,4 @@ public function getInfolistSchema(): array
 **Modulo**: Xot
 =======
 **Modulo**: Xot
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

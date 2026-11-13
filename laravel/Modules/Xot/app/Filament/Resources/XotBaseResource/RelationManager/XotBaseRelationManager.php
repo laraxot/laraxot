@@ -22,11 +22,57 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
     use HasRelationshipModelClass;
     use HasXotTable {
         HasRelationshipModelClass::getModelClass insteadof HasXotTable;
+<<<<<<< HEAD
+=======
+        getGridTableColumns as private getXotGridTableColumns;
+        getHeaderActions as private getXotHeaderActions;
+        getTablePaginated as private getXotTablePaginated;
+        getSearchableColumns as private getXotSearchableColumns;
+>>>>>>> 77b1e2748 (first)
     }
 
     protected static string $relationship = '';
 
     /**
+<<<<<<< HEAD
+=======
+     * @return list<\Filament\Tables\Columns\Column|\Filament\Tables\Columns\ColumnGroup|\Filament\Tables\Columns\Layout\Component>
+     * @phpstan-return list<\Filament\Tables\Columns\Column|\Filament\Tables\Columns\ColumnGroup|\Filament\Tables\Columns\Layout\Component>
+     */
+    public function getGridTableColumns(): array
+    {
+        return $this->getXotGridTableColumns();
+    }
+
+    /**
+     * @return array<string, \Filament\Actions\Action>
+     * @phpstan-return array<string, \Filament\Actions\Action>
+     */
+    protected function getHeaderActions(): array
+    {
+        return $this->getXotHeaderActions();
+    }
+
+    /**
+     * @return bool|array<int, int|string>
+     * @phpstan-return bool|array<int, int|string>
+     */
+    protected function getTablePaginated(): bool|array
+    {
+        return $this->getXotTablePaginated();
+    }
+
+    /**
+     * @return list<string>
+     * @phpstan-return list<string>
+     */
+    protected function getSearchableColumns(): array
+    {
+        return $this->getXotSearchableColumns();
+    }
+
+    /**
+>>>>>>> 77b1e2748 (first)
      * @var class-string<XotBaseResource>
      */
     protected static string $resource;
@@ -69,10 +115,10 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
      *
      * @return array<string, Tables\Columns\Column>
 <<<<<<< HEAD
-=======
      *
      * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     #[\Override]
     public function getTableColumns(): array

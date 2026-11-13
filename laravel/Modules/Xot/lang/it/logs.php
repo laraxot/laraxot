@@ -4,6 +4,22 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
+    'actions' => [
+        'create' => [
+            'icon' => 'create',
+        ],
+        'layout' => [
+            'icon' => 'layout',
+        ],
+        'delete' => [
+            'icon' => 'delete',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
+        'edit' => [
+            'icon' => 'edit',
+=======
     'fields' => [
         'id' => ['label' => 'id'],
         'name' => ['label' => 'name'],
@@ -23,23 +39,7 @@ return [
             'label' => 'edit',
             'icon' => 'edit',
             'tooltip' => 'edit',
-=======
-    'actions' => [
-        'create' => [
-            'icon' => 'create',
-        ],
-        'layout' => [
-            'icon' => 'layout',
-        ],
-        'delete' => [
-            'icon' => 'delete',
-        ],
-        'view' => [
-            'icon' => 'view',
-        ],
-        'edit' => [
-            'icon' => 'edit',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
 ];

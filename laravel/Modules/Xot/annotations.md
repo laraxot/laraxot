@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "annotations"
 type: note
@@ -11,7 +10,8 @@ issues: []
 discussions: []
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 //---
 continuo di type_hinting
 --//

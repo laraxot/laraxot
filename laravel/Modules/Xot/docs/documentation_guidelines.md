@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Linee Guida per la Documentazione in Laraxot"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "linee guida per la documentazione in laraxot xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 
 # Linee Guida per la Documentazione in Laraxot
 

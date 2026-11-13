@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Best Practices Filament - Modulo Xot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, filament]
 qmd: "Best Practices Filament - Modulo Xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Best Practices Filament - Modulo Xot
 
 ## 🎯 Principi Fondamentali
@@ -72,24 +72,24 @@ abstract class XotBaseRelationManager extends RelationManager
 class UserResource extends XotBaseResource
 {
 <<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             // Schema del form
         ];
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public static function getTableColumns(): array
     {
         return [
@@ -165,32 +165,32 @@ class UserResource extends XotBaseResource
 ### **2. Schema Form Standardizzato**
 ```php
 <<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         Forms\Components\TextInput::make('name')
             ->required()
             ->maxLength(255),
 <<<<<<< HEAD
-
+            
         Forms\Components\EmailInput::make('email')
             ->required()
             ->unique(ignoreRecord: true),
-
+            
 =======
-            
+
         Forms\Components\EmailInput::make('email')
             ->required()
             ->unique(ignoreRecord: true),
-            
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         Forms\Components\Select::make('role')
             ->options([
                 'admin' => 'Amministratore',
@@ -210,26 +210,26 @@ public static function getTableColumns(): array
             ->searchable()
             ->sortable(),
 <<<<<<< HEAD
-
+            
         Tables\Columns\TextColumn::make('email')
             ->searchable()
             ->sortable(),
-
+            
         Tables\Columns\TextColumn::make('role')
             ->badge()
             ->color('primary'),
-
+            
 =======
-            
+
         Tables\Columns\TextColumn::make('email')
             ->searchable()
             ->sortable(),
-            
+
         Tables\Columns\TextColumn::make('role')
             ->badge()
             ->color('primary'),
-            
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         Tables\Columns\TextColumn::make('created_at')
             ->dateTime()
             ->sortable(),
@@ -266,10 +266,10 @@ public function boot(): void
 {
     parent::boot();
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // Registrazione risorse Filament
     Filament::registerResources([
         UserResource::class,
@@ -321,17 +321,17 @@ return [
 - [Architettura Modulo Xot](../core/architecture.md)
 - [Convenzioni di Naming](../core/naming-conventions.md)
 <<<<<<< HEAD
-- [Best Practices Sistema](../../../../docs/core/best-practices.md)
-=======
 - [Best Practices Sistema](../../../docs/core/best-practices.md)
->>>>>>> laraxot/dev
+=======
+- [Best Practices Sistema](../../../../docs/core/best-practices.md)
+>>>>>>> 77b1e2748 (first)
 - [Template Filament](../templates/filament.md)
 
 ---
 
 <<<<<<< HEAD
-**Ultimo aggiornamento:** Gennaio 2025
-=======
 **Ultimo aggiornamento:** Gennaio 2025  
->>>>>>> laraxot/dev
+=======
+**Ultimo aggiornamento:** Gennaio 2025
+>>>>>>> 77b1e2748 (first)
 **Versione:** 2.0 - Consolidata DRY + KISS

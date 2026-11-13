@@ -31,10 +31,10 @@ return [
             'description' => 'General Settings',
         ],
 <<<<<<< HEAD
-        'label' => 'Gender Enum',
-=======
         'label' => 'Genere',
->>>>>>> laraxot/dev
+=======
+        'label' => 'Gender Enum',
+>>>>>>> 77b1e2748 (first)
         'sort' => 1,
         'icon' => 'heroicon-o-collection',
     ],

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "best practices"
 type: note
@@ -12,7 +11,8 @@ discussions: []
 status: draft
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Best Practices
 
 ## Laravel
@@ -304,12 +304,6 @@ class MioModelloResource extends XotBaseResource
      * @return array<int, \Filament\Forms\Components\Component>
      */
 <<<<<<< HEAD
-<<<<<<< HEAD
-    public function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
-=======
     public function getFormSchema(): array
 ---
 title: "best practices"
@@ -321,7 +315,13 @@ qmd: "best practices"
 issues: []
 discussions: []
     public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+    public function getFormSchema(): array
+=======
+    public function getFormSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             Forms\Components\TextInput::make('nome')

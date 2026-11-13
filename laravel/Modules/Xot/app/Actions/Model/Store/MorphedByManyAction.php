@@ -16,9 +16,9 @@ class MorphedByManyAction
     {
         // Assert::isInstanceOf($rows = $relationDTO->rows, HasOne::class);
 <<<<<<< HEAD
-        dddx('wip');
-=======
         throw new \LogicException('Store\MorphedByManyAction not implemented');
->>>>>>> laraxot/dev
+=======
+        dddx('wip');
+>>>>>>> 77b1e2748 (first)
     }
 }

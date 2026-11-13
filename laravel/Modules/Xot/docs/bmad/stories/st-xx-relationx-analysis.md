@@ -1,6 +1,5 @@
 ---
 <<<<<<< HEAD
-=======
 type: note
 tags: [documentation]
 created: 2026-09-26
@@ -8,7 +7,8 @@ updated: 2026-09-26
 qmd: "st xx relationx analysis"
 issues: []
 discussions: []
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 id: ST-XX RelationX Analysis
 title: "RelationX Trait Analysis and Documentation"
 description: "Studies laravel/Modules/Xot/app/Models/Traits/RelationX.php and documents cross-database relationship handling"

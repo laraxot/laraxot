@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 <<<<<<< HEAD
-use Filament\Schemas\Components\Wizard\Step;
 =======
->>>>>>> laraxot/dev
+use Filament\Schemas\Components\Wizard\Step;
+>>>>>>> 77b1e2748 (first)
 use Illuminate\Support\HtmlString;
 use Modules\Media\Actions\GetAttachmentsSchemaAction;
 use Modules\Xot\Actions\GetTransKeyAction;
@@ -206,13 +206,13 @@ it('covers wizard submit action success and failure paths', function (): void {
 
 it('covers step builder branches', function (): void {
 <<<<<<< HEAD
-    Assert::assertInstanceOf(Step::class, ProbeResource::callGetStepByName('missing_step'));
-    Assert::assertInstanceOf(Step::class, ProbeResource::callGetStepByName('custom_step'));
-=======
     $step = ProbeResource::callGetStepByName('details');
 
     Assert::assertSame('details', $step->getLabel());
->>>>>>> laraxot/dev
+=======
+    Assert::assertInstanceOf(Step::class, ProbeResource::callGetStepByName('missing_step'));
+    Assert::assertInstanceOf(Step::class, ProbeResource::callGetStepByName('custom_step'));
+>>>>>>> 77b1e2748 (first)
 });
 
 it('covers simple base helpers', function (): void {

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Esempi Pratici di Utilizzo di SafeFloatCastAction"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, examples]
 qmd: "esempi pratici di utilizzo di safefloatcastaction xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Esempi Pratici di Utilizzo di SafeFloatCastAction
 
 ## Panoramica

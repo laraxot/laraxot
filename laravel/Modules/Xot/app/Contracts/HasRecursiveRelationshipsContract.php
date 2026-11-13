@@ -21,25 +21,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\Relations\Siblings;
  * Modules\Xot\Contracts\HasRecursiveRelationshipsContract.
  *
 <<<<<<< HEAD
- * @property int $id
- * @property string $name
- * @property int $depth
- * @property Collection<int, Model> $children
- * @property int|null $children_count
- * @property Collection<int, Model> $ancestors The model's recursive parents.
- * @property int|null $ancestors_count
- * @property Collection<int, Model> $ancestorsAndSelf The model's recursive parents and itself.
- * @property int|null $ancestors_and_self_count
- * @property Collection<int, Model> $bloodline The model's ancestors, descendants and itself.
- * @property int|null $bloodline_count
- * @property Collection<int, Model> $childrenAndSelf The model's direct children and itself.
- * @property int|null $children_and_self_count
- * @property Collection<int, Model> $descendants The model's recursive children.
- * @property int|null $descendants_count
- * @property Collection<int, Model> $descendantsAndSelf The model's recursive children and itself.
- * @property int|null $descendants_and_self_count
- * @property Collection<int, Model> $parentAndSelf The model's direct parent and itself.
-=======
  * @template TModel of Model
  *
  * @property int $id
@@ -60,14 +41,10 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\Relations\Siblings;
  * @property Collection<int, TModel> $descendantsAndSelf The model's recursive children and itself.
  * @property int|null $descendants_and_self_count
  * @property Collection<int, TModel> $parentAndSelf The model's direct parent and itself.
->>>>>>> laraxot/dev
  * @property int|null $parent_and_self_count
  *
  * @phpstan-require-extends Model
  *
-<<<<<<< HEAD
- * @mixin \Eloquent
-=======
  * Tipi di ritorno solo nel `@return`, non nativi, sui metodi che il trait vendor
  * `Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships` dichiara senza
  * tipo (`getParentKeyName()`, `getPathName()`, `hasNestedPath()`, ...): i modelli che usano
@@ -80,18 +57,137 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\Relations\Siblings;
  * intentionally untyped, so this contract keeps runtime-compatible signatures and
  * documents the types for static analysis instead.
  * @mixin Model
->>>>>>> laraxot/dev
+=======
+<<<<<<< .merge_file_y0eAgw
+ * @property int $id
+ * @property string $name
+ * @property int $depth
+ * @property Collection<int, Model> $children
+ * @property int|null $children_count
+ * @property Collection<int, Model> $ancestors The model's recursive parents.
+ * @property int|null $ancestors_count
+ * @property Collection<int, Model> $ancestorsAndSelf The model's recursive parents and itself.
+ * @property int|null $ancestors_and_self_count
+ * @property Collection<int, Model> $bloodline The model's ancestors, descendants and itself.
+ * @property int|null $bloodline_count
+ * @property Collection<int, Model> $childrenAndSelf The model's direct children and itself.
+ * @property int|null $children_and_self_count
+ * @property Collection<int, Model> $descendants The model's recursive children.
+ * @property int|null $descendants_count
+ * @property Collection<int, Model> $descendantsAndSelf The model's recursive children and itself.
+ * @property int|null $descendants_and_self_count
+ * @property Collection<int, Model> $parentAndSelf The model's direct parent and itself.
+ * @property int|null $parent_and_self_count
+=======
+ * <<<<<<< HEAD
+ *
+ * @property int                    $id
+ * @property string                 $name
+ * @property int                    $depth
+ * @property Collection<int, Model> $children
+ * @property int|null               $children_count
+ * @property Collection<int, Model> $ancestors                  The model's recursive parents.
+ * @property int|null               $ancestors_count
+ * @property Collection<int, Model> $ancestorsAndSelf           The model's recursive parents and itself.
+ * @property int|null               $ancestors_and_self_count
+ * @property Collection<int, Model> $bloodline                  The model's ancestors, descendants and itself.
+ * @property int|null               $bloodline_count
+ * @property Collection<int, Model> $childrenAndSelf            The model's direct children and itself.
+ * @property int|null               $children_and_self_count
+ * @property Collection<int, Model> $descendants                The model's recursive children.
+ * @property int|null               $descendants_count
+ * @property Collection<int, Model> $descendantsAndSelf         The model's recursive children and itself.
+ * @property int|null               $descendants_and_self_count
+ * @property Collection<int, Model> $parentAndSelf              The model's direct parent and itself.
+ * @property int|null               $parent_and_self_count
+ *                                                              =======
+ *                                                              <<<<<<< HEAD
+ *                                                              <<<<<<< HEAD
+ *                                                              =======
+ *                                                              <<<<<<< HEAD
+ *                                                              >>>>>>> laraxot/dev
+ * @property int                    $id
+ * @property string                 $name
+ * @property int                    $depth
+ * @property Collection<int, Model> $children
+ * @property int|null               $children_count
+ * @property Collection<int, Model> $ancestors                  The model's recursive parents.
+ * @property int|null               $ancestors_count
+ * @property Collection<int, Model> $ancestorsAndSelf           The model's recursive parents and itself.
+ * @property int|null               $ancestors_and_self_count
+ * @property Collection<int, Model> $bloodline                  The model's ancestors, descendants and itself.
+ * @property int|null               $bloodline_count
+ * @property Collection<int, Model> $childrenAndSelf            The model's direct children and itself.
+ * @property int|null               $children_and_self_count
+ * @property Collection<int, Model> $descendants                The model's recursive children.
+ * @property int|null               $descendants_count
+ * @property Collection<int, Model> $descendantsAndSelf         The model's recursive children and itself.
+ * @property int|null               $descendants_and_self_count
+ * @property Collection<int, Model> $parentAndSelf              The model's direct parent and itself.
+ * @property int|null               $parent_and_self_count
+ *                                                              =======
+ * @property int                    $id
+ * @property string                 $name
+ * @property int                    $depth
+ * @property Collection<int, Model> $children
+ * @property int|null               $children_count
+ * @property Collection<int, Model> $ancestors                  The model's recursive parents.
+ * @property int|null               $ancestors_count
+ * @property Collection<int, Model> $ancestorsAndSelf           The model's recursive parents and itself.
+ * @property int|null               $ancestors_and_self_count
+ * @property Collection<int, Model> $bloodline                  The model's ancestors, descendants and itself.
+ * @property int|null               $bloodline_count
+ * @property Collection<int, Model> $childrenAndSelf            The model's direct children and itself.
+ * @property int|null               $children_and_self_count
+ * @property Collection<int, Model> $descendants                The model's recursive children.
+ * @property int|null               $descendants_count
+ * @property Collection<int, Model> $descendantsAndSelf         The model's recursive children and itself.
+ * @property int|null               $descendants_and_self_count
+ * @property Collection<int, Model> $parentAndSelf              The model's direct parent and itself.
+ * @property int|null               $parent_and_self_count
+ *                                                              >>>>>>> laraxot/dev
+ *                                                              <<<<<<< HEAD
+ *                                                              =======
+ *                                                              =======
+ * @property int                    $id
+ * @property string                 $name
+ * @property int                    $depth
+ * @property Collection<int, Model> $children
+ * @property int|null               $children_count
+ * @property Collection<int, Model> $ancestors                  The model's recursive parents.
+ * @property int|null               $ancestors_count
+ * @property Collection<int, Model> $ancestorsAndSelf           The model's recursive parents and itself.
+ * @property int|null               $ancestors_and_self_count
+ * @property Collection<int, Model> $bloodline                  The model's ancestors, descendants and itself.
+ * @property int|null               $bloodline_count
+ * @property Collection<int, Model> $childrenAndSelf            The model's direct children and itself.
+ * @property int|null               $children_and_self_count
+ * @property Collection<int, Model> $descendants                The model's recursive children.
+ * @property int|null               $descendants_count
+ * @property Collection<int, Model> $descendantsAndSelf         The model's recursive children and itself.
+ * @property int|null               $descendants_and_self_count
+ * @property Collection<int, Model> $parentAndSelf              The model's direct parent and itself.
+ * @property int|null               $parent_and_self_count
+ *                                                              >>>>>>> laraxot/dev
+ *                                                              >>>>>>> laraxot/dev
+ *                                                              >>>>>>> laraxot/dev
+>>>>>>> .merge_file_XaLzGh
+ *
+ * @phpstan-require-extends Model
+ *
+ * @mixin \Eloquent
+>>>>>>> 77b1e2748 (first)
  */
 interface HasRecursiveRelationshipsContract
 {
     /**
      * Execute a query with a maximum depth constraint for the recursive query.
 <<<<<<< HEAD
-=======
      *
      * Il ritorno e' `mixed` perche' il trait vendor `HasAdjacencyList` lo dichiara cosi':
      * un tipo piu' stretto qui rende fatale il caricamento di ogni classe che usa il trait.
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      */
     public static function withMaxDepth(int $maxDepth, callable $query): mixed;
 
@@ -159,44 +255,6 @@ interface HasRecursiveRelationshipsContract
     public function getExpressionName();
 
 <<<<<<< HEAD
-    /** @return Ancestors<Model, Model> */
-    public function ancestors();
-
-    /** @return Ancestors<Model, Model> */
-    public function ancestorsAndSelf();
-
-    /** @return Bloodline<Model, Model> */
-    public function bloodline();
-
-    /** @return HasMany<Model, Model> */
-    public function children();
-
-    /** @return Descendants<Model, Model> */
-    public function childrenAndSelf();
-
-    /** @return Descendants<Model, Model> */
-    public function descendants();
-
-    /** @return Descendants<Model, Model> */
-    public function descendantsAndSelf();
-
-    /** @return BelongsTo<Model, Model> */
-    public function parent();
-
-    /** @return Ancestors<Model, Model> */
-    public function parentAndSelf();
-
-    /** @return RootAncestor<Model, Model> */
-    public function rootAncestor();
-
-    /** @return RootAncestorOrSelf<Model, Model> */
-    public function rootAncestorOrSelf();
-
-    /** @return Siblings<Model, Model> */
-    public function siblings();
-
-    /** @return Siblings<Model, Model> */
-=======
     /** @return Ancestors<TModel, TModel> */
     public function ancestors();
 
@@ -234,7 +292,45 @@ interface HasRecursiveRelationshipsContract
     public function siblings();
 
     /** @return Siblings<TModel, TModel> */
->>>>>>> laraxot/dev
+=======
+    /** @return Ancestors<Model, Model> */
+    public function ancestors();
+
+    /** @return Ancestors<Model, Model> */
+    public function ancestorsAndSelf();
+
+    /** @return Bloodline<Model, Model> */
+    public function bloodline();
+
+    /** @return HasMany<Model, Model> */
+    public function children();
+
+    /** @return Descendants<Model, Model> */
+    public function childrenAndSelf();
+
+    /** @return Descendants<Model, Model> */
+    public function descendants();
+
+    /** @return Descendants<Model, Model> */
+    public function descendantsAndSelf();
+
+    /** @return BelongsTo<Model, Model> */
+    public function parent();
+
+    /** @return Ancestors<Model, Model> */
+    public function parentAndSelf();
+
+    /** @return RootAncestor<Model, Model> */
+    public function rootAncestor();
+
+    /** @return RootAncestorOrSelf<Model, Model> */
+    public function rootAncestorOrSelf();
+
+    /** @return Siblings<Model, Model> */
+    public function siblings();
+
+    /** @return Siblings<Model, Model> */
+>>>>>>> 77b1e2748 (first)
     public function siblingsAndSelf();
 
     /**
@@ -255,30 +351,76 @@ interface HasRecursiveRelationshipsContract
      * Determine if an attribute is an integer.
      *
 <<<<<<< HEAD
-=======
      *
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * @return bool
      */
     public function isIntegerAttribute(string $attribute);
 
     /**
 <<<<<<< HEAD
-     * @return AdjacencyBuilder<Model>
-=======
      * @return AdjacencyBuilder<TModel>
->>>>>>> laraxot/dev
+=======
+<<<<<<< .merge_file_y0eAgw
+=======
+     * <<<<<<< HEAD
+     * =======
+     * <<<<<<< HEAD
+     * <<<<<<< HEAD.
+     *
+     * =======
+     * >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_XaLzGh
+     * @return AdjacencyBuilder<Model>
+>>>>>>> 77b1e2748 (first)
      */
     public function newEloquentBuilder(Builder $query);
 
     /**
 <<<<<<< HEAD
-     * @param  list<Model>  $models
-     * @return Collection<int, Model>
-=======
      * @param  list<TModel>  $models
      * @return Collection<int, TModel>
->>>>>>> laraxot/dev
+=======
+<<<<<<< .merge_file_y0eAgw
+     * @param  list<Model>  $models
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param Builder $query
+     *
+     * @return AdjacencyBuilder<Model>
+     */
+    public function newEloquentBuilder($query);
+
+    /**
+     * =======
+     * <<<<<<< HEAD
+     * <<<<<<< HEAD.
+     *
+     * @param list<Model> $models
+     *                            =======
+     *                            >>>>>>> laraxot/dev
+     * @param list<Model> $models
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * <<<<<<< HEAD
+     * =======
+     * =======
+     * @param list<Model> $models
+     *                            >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_XaLzGh
+     * @return Collection<int, Model>
+>>>>>>> 77b1e2748 (first)
      */
     public function newCollection(array $models = []);
 

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Template Gestione Conflitti Git - gitsubtreeerrorresolution.md"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, templates]
 qmd: "Template Gestione Conflitti Git - gitsubtreeerrorresolution.md"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Template Gestione Conflitti Git - git_subtree_error_resolution.md
 
 ## File: bashscripts/git_subtree_error_resolution.md
@@ -54,7 +54,7 @@ qmd: "Template Gestione Conflitti Git - gitsubtreeerrorresolution.md"
 - [x] Verifica post-risoluzione
 - [x] Aggiornamento documentazione
 <<<<<<< HEAD
-- [x] Notifica team
-=======
 - [x] Notifica team 
->>>>>>> laraxot/dev
+=======
+- [x] Notifica team
+>>>>>>> 77b1e2748 (first)

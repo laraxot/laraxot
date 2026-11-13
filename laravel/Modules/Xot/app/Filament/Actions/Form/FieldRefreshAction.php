@@ -8,11 +8,6 @@ declare(strict_types=1);
 namespace Modules\Xot\Filament\Actions\Form;
 
 <<<<<<< HEAD
-use Filament\Notifications\Notification;
-use Filament\Schemas\Components\Utilities\Set;
-use Modules\Xot\Filament\Actions\XotBaseAction;
-
-=======
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Utilities\Set;
@@ -27,7 +22,12 @@ use Modules\Xot\Filament\Actions\XotBaseAction;
  * ridotta alla sola notifica "Valore ricalcolato": il bottone mentiva su tutte le schede. Guardia:
  * Xot/tests/Unit/Filament/FieldRefreshActionTest.php.
  */
->>>>>>> laraxot/dev
+=======
+use Filament\Notifications\Notification;
+use Filament\Schemas\Components\Utilities\Set;
+use Modules\Xot\Filament\Actions\XotBaseAction;
+
+>>>>>>> 77b1e2748 (first)
 class FieldRefreshAction extends XotBaseAction
 {
     protected function setUp(): void
@@ -41,6 +41,9 @@ class FieldRefreshAction extends XotBaseAction
             ->action(function (mixed $record, Set $set): void {
                 $name = $this->getName();
 <<<<<<< HEAD
+                if (! is_string($name) || $name === '' || ! is_object($record)) {
+                    $this->notify('Errore', 'Campo o record non valido', false);
+=======
                 if ($name === null) {
                     return;
                 }
@@ -51,24 +54,12 @@ class FieldRefreshAction extends XotBaseAction
                         ->body('Record non valido')
                         ->danger()
                         ->send();
-=======
-                if (! is_string($name) || $name === '' || ! is_object($record)) {
-                    $this->notify('Errore', 'Campo o record non valido', false);
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
                     return;
                 }
 
 <<<<<<< HEAD
-                Notification::make()
-                    ->title('Valore ricalcolato')
-                    ->body('Il valore del campo è stato ricalcolato con successo')
-                    ->success()
-                    ->send();
-            });
-    }
-
-=======
                 $getter = self::getterName($name);
                 if (! self::hasPublicGetter($record, $getter)) {
                     $this->notify('Errore', sprintf('Metodo %s non disponibile (o non public) su [%s]', $getter, $record::class), false);
@@ -115,18 +106,27 @@ class FieldRefreshAction extends XotBaseAction
         return method_exists($record, $getter) && (new \ReflectionMethod($record, $getter))->isPublic();
     }
 
->>>>>>> laraxot/dev
+=======
+                Notification::make()
+                    ->title('Valore ricalcolato')
+                    ->body('Il valore del campo è stato ricalcolato con successo')
+                    ->success()
+                    ->send();
+            });
+    }
+
+>>>>>>> 77b1e2748 (first)
     public static function getDefaultName(): ?string
     {
         return 'field_refresh';
     }
 <<<<<<< HEAD
-=======
 
     private function notify(string $title, string $body, bool $success): void
     {
         $notification = Notification::make()->title($title)->body($body);
         ($success ? $notification->success() : $notification->danger())->send();
     }
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 }

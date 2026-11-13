@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regole Namespace PSR-4 per Tutti i Moduli (Regola Globale)"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "regole namespace psr-4 per tutti i moduli (regola globale) xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole Namespace PSR-4 per Tutti i Moduli (Regola Globale)
 
 ## Regola Fondamentale

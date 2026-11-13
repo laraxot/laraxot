@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Filament Integration in Laraxot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, laraxot]
 qmd: "Filament Integration in Laraxot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Filament Integration in Laraxot
 
 ## Resource Implementation
@@ -23,14 +23,14 @@ qmd: "Filament Integration in Laraxot"
 ### Form Schema
 ```php
 <<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         // Campi base
@@ -38,18 +38,18 @@ public static function getFormSchema(): array
             ->required()
             ->maxLength(255),
 <<<<<<< HEAD
-
+            
         // Relazioni
         Select::make('type')
             ->relationship('type', 'name'),
-
+            
 =======
-            
+
         // Relazioni
         Select::make('type')
             ->relationship('type', 'name'),
-            
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         // File e Media
         FileUpload::make('avatar')
             ->image()
@@ -94,15 +94,6 @@ public static function getFormSchema(): array
 ### Versione HEAD
 
 <<<<<<< HEAD
-## Collegamenti tra versioni di filament-integration.md
-* [filament-integration.md](../../../xot/project_docs/laraxot/filament-integration.md)
-* [filament-integration.md](../../../cms/project_docs/roadmap/features/filament-integration.md)
-* [filament-integration.md](../../../cms/project_docs/filament-integration.md)
-
-### Versione Incoming
-
----
-=======
 
 ## Collegamenti tra versioni di filament-integration.md
 * [filament-integration.md](../../../Xot/docs/laraxot/filament-integration.md)
@@ -115,4 +106,13 @@ public static function getFormSchema(): array
 
 ---
 
->>>>>>> laraxot/dev
+=======
+## Collegamenti tra versioni di filament-integration.md
+* [filament-integration.md](../../../xot/project_docs/laraxot/filament-integration.md)
+* [filament-integration.md](../../../cms/project_docs/roadmap/features/filament-integration.md)
+* [filament-integration.md](../../../cms/project_docs/filament-integration.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

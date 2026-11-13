@@ -7,9 +7,9 @@ namespace Modules\Xot\Actions\Export;
 use Illuminate\Support\Facades\Storage;
 use Spatie\QueueableAction\QueueableAction;
 <<<<<<< HEAD
-use Spipu\Html2Pdf\Exception\HtmlParsingException;
 =======
->>>>>>> laraxot/dev
+use Spipu\Html2Pdf\Exception\HtmlParsingException;
+>>>>>>> 77b1e2748 (first)
 use Spipu\Html2Pdf\Html2Pdf;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
@@ -27,15 +27,15 @@ class PdfByHtmlAction
         $html2pdf = new Html2Pdf($orientation, 'A4', 'it');
         $html2pdf->setTestTdInOnePage(false);
 <<<<<<< HEAD
+        // Un HtmlParsingException risale all'handler: continuare significherebbe scrivere un PDF incompleto.
+        $html2pdf->writeHTML($html);
+=======
         try {
             $html2pdf->writeHTML($html);
         } catch (HtmlParsingException $e) {
             dddx($html);
         }
-=======
-        // Un HtmlParsingException risale all'handler: continuare significherebbe scrivere un PDF incompleto.
-        $html2pdf->writeHTML($html);
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         $path = Storage::disk($disk)->path($filename);
         $html2pdf->output($path, 'F');
 

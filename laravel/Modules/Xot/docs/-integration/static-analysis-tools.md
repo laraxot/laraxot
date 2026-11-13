@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "static-analysis-tools"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "static-analysis-tools xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # static-analysis-tools
 
 <!-- Contenuto migrato da _docs/static-analysis-tools.txt -->

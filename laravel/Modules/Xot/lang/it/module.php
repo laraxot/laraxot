@@ -10,12 +10,12 @@ return [
             'name' => 'Admin',
         ],
 <<<<<<< HEAD
-        'label' => 'module.navigation',
-        'icon' => 'module.navigation',
-=======
         'label' => 'Moduli',
         'icon' => 'heroicon-o-cube',
->>>>>>> laraxot/dev
+=======
+        'label' => 'module.navigation',
+        'icon' => 'module.navigation',
+>>>>>>> 77b1e2748 (first)
         'sort' => 65,
     ],
     'fields' => [
@@ -83,30 +83,30 @@ return [
         ],
         'color' => [
 <<<<<<< HEAD
-            'label' => 'color',
-=======
             'label' => 'Colore',
->>>>>>> laraxot/dev
+=======
+            'label' => 'color',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'value' => [
 <<<<<<< HEAD
-            'label' => 'value',
-=======
             'label' => 'Valore',
->>>>>>> laraxot/dev
+=======
+            'label' => 'value',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'hex' => [
 <<<<<<< HEAD
-            'label' => 'hex',
-=======
             'label' => 'Hex',
->>>>>>> laraxot/dev
+=======
+            'label' => 'hex',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -127,16 +127,16 @@ return [
         ],
         'path' => [
 <<<<<<< HEAD
-            'label' => 'path',
-        ],
-        'enabled' => [
-            'label' => 'enabled',
-=======
             'label' => 'Percorso',
         ],
         'enabled' => [
             'label' => 'Attivo',
->>>>>>> laraxot/dev
+=======
+            'label' => 'path',
+        ],
+        'enabled' => [
+            'label' => 'enabled',
+>>>>>>> 77b1e2748 (first)
         ],
     ],
     'pages' => [
@@ -161,41 +161,24 @@ return [
             'label' => 'Crea Module',
             'icon' => 'create',
 <<<<<<< HEAD
-            'tooltip' => 'create',
-=======
             'tooltip' => '',
->>>>>>> laraxot/dev
+=======
+            'tooltip' => 'create',
+>>>>>>> 77b1e2748 (first)
         ],
         'edit' => [
             'label' => 'Modifica Module',
             'icon' => 'edit',
 <<<<<<< HEAD
-            'tooltip' => 'edit',
-=======
             'tooltip' => '',
->>>>>>> laraxot/dev
+=======
+            'tooltip' => 'edit',
+>>>>>>> 77b1e2748 (first)
         ],
         'delete' => [
             'label' => 'Elimina Module',
             'icon' => 'delete',
 <<<<<<< HEAD
-            'tooltip' => 'delete',
-        ],
-        'createAnother' => [
-            'label' => 'createAnother',
-            'icon' => 'createAnother',
-            'tooltip' => 'createAnother',
-        ],
-        'save' => [
-            'label' => 'save',
-            'icon' => 'save',
-            'tooltip' => 'save',
-        ],
-        'view' => [
-            'label' => 'view',
-            'icon' => 'view',
-            'tooltip' => 'view',
-=======
             'tooltip' => '',
         ],
         'createAnother' => [
@@ -216,7 +199,24 @@ return [
         'logout' => [
             'tooltip' => '',
             'icon' => 'logout',
->>>>>>> laraxot/dev
+=======
+            'tooltip' => 'delete',
+        ],
+        'createAnother' => [
+            'label' => 'createAnother',
+            'icon' => 'createAnother',
+            'tooltip' => 'createAnother',
+        ],
+        'save' => [
+            'label' => 'save',
+            'icon' => 'save',
+            'tooltip' => 'save',
+        ],
+        'view' => [
+            'label' => 'view',
+            'icon' => 'view',
+            'tooltip' => 'view',
+>>>>>>> 77b1e2748 (first)
         ],
     ],
 ];

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Log delle Correzioni Filament"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "log delle correzioni filament xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Log delle Correzioni Filament
 
 ## Data: 2024-12-19

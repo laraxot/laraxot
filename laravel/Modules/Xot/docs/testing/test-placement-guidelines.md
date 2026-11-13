@@ -1,14 +1,14 @@
 ---
 description: Regole di posizionamento dei test per il core Xot
 <<<<<<< HEAD
-=======
 title: "Test Placement Guidelines (Xot)"
 type: note
 status: draft
 updated: 2026-10-18
 tags: [docs, xot, testing]
 qmd: "test placement guidelines (xot) xot"
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 # Test Placement Guidelines (Xot)
@@ -25,8 +25,6 @@ Modules/Xot/tests/
 ```
 
 <<<<<<< HEAD
-* **NON** creare o lasciare file di test in `/laravel/tests/` fatta eccezione per gli stub installati automaticamente da Laravel.
-=======
 * **NON** creare file di test in `/laravel/tests/`. Dal 2026-11-11 quella
   cartella **non esiste piu'**: e' stata sciolta e i suoi test spostati nei
   moduli di competenza. Nemmeno gli stub di Laravel (`ExampleTest`) tornano
@@ -38,7 +36,9 @@ Modules/Xot/tests/
 * Un job della CI (`guard.yml`, "Nessun test fuori dai moduli") fallisce se
   compare un file sotto `laravel/tests/` o un riferimento al namespace della
   radice.
->>>>>>> laraxot/dev
+=======
+* **NON** creare o lasciare file di test in `/laravel/tests/` fatta eccezione per gli stub installati automaticamente da Laravel.
+>>>>>>> 77b1e2748 (first)
 * Ogni nuovo test del core Xot **deve** essere inserito nella sotto-cartella opportuna del percorso sopra.
 
 ## 2. Namespace
@@ -70,8 +70,6 @@ class MetatagDataTest extends TestCase
 ## 3. Spostamento automatico
 
 <<<<<<< HEAD
-Quando si individuano test errati in `/laravel/tests/`, spostarli manualmente o usare il comando helper:
-=======
 Se un test ricompare in `/laravel/tests/`, va spostato nel modulo che verifica.
 Dove andarono quelli che c'erano (2026-11-11):
 
@@ -86,7 +84,9 @@ Dove andarono quelli che c'erano (2026-11-11):
 | `tests/TestCase.php`, `tests/Pest.php` | cancellati: ogni modulo ha i propri |
 
 Per spostare, manualmente o con il comando helper:
->>>>>>> laraxot/dev
+=======
+Quando si individuano test errati in `/laravel/tests/`, spostarli manualmente o usare il comando helper:
+>>>>>>> 77b1e2748 (first)
 
 ```bash
 php artisan xot:fix-test-paths
@@ -95,7 +95,6 @@ php artisan xot:fix-test-paths
 Questo comando cerca test con il prefisso `Modules\Xot\` in percorsi sbagliati e li sposta nella cartella corretta.
 
 <<<<<<< HEAD
-=======
 ### Dopo lo spostamento: percorsi calcolati e prima esecuzione
 
 Spostare un file non basta: un test che calcola percorsi da `__DIR__`
@@ -112,7 +111,8 @@ passato (doppio di `tenants()` di tipo sbagliato, 5 casi su 8 in `TypeError`).
 Story: [5.302](../bmad/stories/5.302-release-readiness-asset-temi-document-root.story.md),
 seguito 2026-11-12.
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ## 4. Aggiornamento della documentazione
 
 Dopo aver aggiunto o spostato test:
@@ -128,15 +128,15 @@ Dopo aver aggiunto o spostato test:
 - [ ] Il test è nella cartella corretta `Modules/Xot/tests/...`
 - [ ] Il namespace corrisponde al percorso della cartella
 <<<<<<< HEAD
-- [ ] Non esistono test duplicati nella root `/laravel/tests/`
-- [ ] PHPStan livello 9+ passa senza errori
-- [ ] Documentazione aggiornata (questo file & root docs)
-
-*Ultimo aggiornamento: 2025-07-06 – aggiunte linee guida per prevenire posizionamenti errati (es. `MetatagDataTest`).*
-=======
 - [ ] La cartella `/laravel/tests/` non esiste (la CI lo verifica)
 - [ ] PHPStan livello 9+ passa senza errori
 - [ ] Documentazione aggiornata (questo file & root docs)
 
 *Ultimo aggiornamento: 2025-07-06 – aggiunte linee guida per prevenire posizionamenti errati (es. `MetatagDataTest`).*
->>>>>>> laraxot/dev
+=======
+- [ ] Non esistono test duplicati nella root `/laravel/tests/`
+- [ ] PHPStan livello 9+ passa senza errori
+- [ ] Documentazione aggiornata (questo file & root docs)
+
+*Ultimo aggiornamento: 2025-07-06 – aggiunte linee guida per prevenire posizionamenti errati (es. `MetatagDataTest`).*
+>>>>>>> 77b1e2748 (first)

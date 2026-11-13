@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Code e Job"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Code e Job"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Code e Job
 
 ## Configurazione Base
@@ -253,7 +253,7 @@ class JobFailedNotification extends Notification
     }
 }
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)

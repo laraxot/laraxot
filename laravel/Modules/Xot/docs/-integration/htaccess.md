@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "htaccess"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "htaccess xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # htaccess
 
 <!-- Contenuto migrato da _docs/htaccess.txt -->

@@ -1,16 +1,4 @@
 <<<<<<< HEAD
-# Best Practices per Proprietà Modelli Eloquent - Modulo Xot
-
-## ✅ STATO: property_exists() ELIMINATO (Data: 2025-01-05)
-
-**Nel modulo Xot, `property_exists()` è stato completamente eliminato dal codice eseguibile.**
-
-### Correzioni Applicate
-- ✅ `Console/Commands/SearchTextInDbCommand.php` - sostituito con `isset()`
-- ✅ `Filament/Support/ColumnBuilder.php` - sostituito con `isset()` (3 occorrenze)
-- ✅ PHPDoc generati automaticamente per tutti i modelli con `php artisan ide-helper:models`
-
-=======
 ---
 title: "Best Practices per Proprietà Modelli Eloquent - Modulo Xot"
 type: note
@@ -23,7 +11,19 @@ qmd: "Best Practices per Proprietà Modelli Eloquent - Modulo Xot"
 ---
 # Best Practices per Proprietà Modelli Eloquent - Modulo Xot
 
->>>>>>> laraxot/dev
+=======
+# Best Practices per Proprietà Modelli Eloquent - Modulo Xot
+
+## ✅ STATO: property_exists() ELIMINATO (Data: 2025-01-05)
+
+**Nel modulo Xot, `property_exists()` è stato completamente eliminato dal codice eseguibile.**
+
+### Correzioni Applicate
+- ✅ `Console/Commands/SearchTextInDbCommand.php` - sostituito con `isset()`
+- ✅ `Filament/Support/ColumnBuilder.php` - sostituito con `isset()` (3 occorrenze)
+- ✅ PHPDoc generati automaticamente per tutti i modelli con `php artisan ide-helper:models`
+
+>>>>>>> 77b1e2748 (first)
 ## ⚠️ Regola Critica: property_exists() VIETATO
 
 **Nel modulo Xot e in tutti i moduli che lo estendono, MAI utilizzare `property_exists()` con modelli Eloquent o oggetti che implementano `__get()`/`__set()`.**
@@ -162,18 +162,18 @@ public function getDisplayName(): string
         return $this->full_name;
     }
 <<<<<<< HEAD
-
+    
     if (isset($this->first_name) && $this->first_name) {
         return $this->first_name;
     }
-
+    
 =======
-    
+
     if (isset($this->first_name) && $this->first_name) {
         return $this->first_name;
     }
-    
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
     return 'Utente';
 }
 ```
@@ -187,10 +187,10 @@ public function getScore(): float
         return $this->calculated_score;
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     return 0.0;
 }
 ```
@@ -204,10 +204,10 @@ public function getStatus(): string
         return $this->current_status;
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     return 'pending';
 }
 ```
@@ -218,10 +218,10 @@ Tutti i file devono passare la validazione PHPStan livello 9+:
 
 ```bash
 <<<<<<< HEAD
-cd laravel
-=======
 cd /var/www/html/ptvx/laravel
->>>>>>> laraxot/dev
+=======
+cd laravel
+>>>>>>> 77b1e2748 (first)
 ./vendor/bin/phpstan analyze Modules --level=9
 ```
 
@@ -242,10 +242,10 @@ Prima di ogni commit in qualsiasi modulo, verificare:
 
 - [Regola Cursor](../../.cursor/rules/eloquent-properties.md)
 <<<<<<< HEAD
-- [Memoria Cursor](../../.cursor/memories)
-=======
 - [Memoria Cursor](../../../../.cursor/memories)
->>>>>>> laraxot/dev
+=======
+- [Memoria Cursor](../../.cursor/memories)
+>>>>>>> 77b1e2748 (first)
 - [Linee Guida AI](../../.ai/guidelines/CORE.md)
 - [Esempio Corretto](../../Notify/app/Notifications/GenericNotification.php)
 

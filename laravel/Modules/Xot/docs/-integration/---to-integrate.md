@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "___to_integrate"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "___to_integrate xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # ___to_integrate
 
 <!-- Contenuto migrato da _docs/___to_integrate.txt -->

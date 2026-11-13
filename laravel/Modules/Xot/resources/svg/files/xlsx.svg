@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" role="img">
 <<<<<<< HEAD
-=======
   <!--
     Foglio di calcolo esportato in coda (ExportXlsxAction: export nativo Filament,
     il file arriva con una notifica). Leggibile a 16-24 px senza testo.
@@ -26,7 +25,8 @@
   <path stroke-linecap="round" stroke-linejoin="round" d="M9 11.25h3a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75V12a.75.75 0 0 1 .75-.75ZM8.25 13.875h4.5"/>
   <!-- Orologio in basso a destra: export in coda, il file arriva dopo -->
   <path stroke-linecap="round" stroke-linejoin="round" d="M18 16.5V18h1.125M21 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
   <!-- Foglio con angolo piegato: leggibile a 16-24px senza testo -->
   <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75h6.75L18 7.5v11.25a1.5 1.5 0 0 1-1.5 1.5h-9a1.5 1.5 0 0 1-1.5-1.5V5.25a1.5 1.5 0 0 1 1.5-1.5Z"/>
   <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 3.75V7.5H18"/>

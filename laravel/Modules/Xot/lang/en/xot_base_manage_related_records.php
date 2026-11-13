@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
+    'fields' => [
+        'delete' => [
+=======
     'actions' => [
         'create' => [
             'label' => 'create',
@@ -12,55 +15,52 @@ return [
     'fields' => [
         'delete' => [
             'label' => 'delete',
-=======
-    'fields' => [
-        'delete' => [
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'edit' => [
 <<<<<<< HEAD
-            'label' => 'edit',
 =======
->>>>>>> laraxot/dev
+            'label' => 'edit',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'view' => [
 <<<<<<< HEAD
-            'label' => 'view',
 =======
->>>>>>> laraxot/dev
+            'label' => 'view',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'attach' => [
 <<<<<<< HEAD
-            'label' => 'attach',
 =======
->>>>>>> laraxot/dev
+            'label' => 'attach',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'detach' => [
 <<<<<<< HEAD
-            'label' => 'detach',
 =======
->>>>>>> laraxot/dev
+            'label' => 'detach',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'create' => [
 <<<<<<< HEAD
-            'label' => 'create',
 =======
->>>>>>> laraxot/dev
+            'label' => 'create',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',

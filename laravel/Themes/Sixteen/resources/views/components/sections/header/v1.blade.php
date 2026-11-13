@@ -84,6 +84,7 @@
 
         return $resolved !== '' && $resolved !== '#' ? $resolved : null;
     };
+<<<<<<< HEAD
     // Voce attiva: `element` dichiarato dal layout ($dcHeaderActive) oppure, se assente, la voce il cui URL coincide con la
     // pagina o la contiene, scegliendo il percorso PIU' LUNGO: /it/tickets/track e' "Traccia", non "Segnalazioni" (/it/tickets).
     $currentNavPath = '/'.trim((string) parse_url(url()->current(), PHP_URL_PATH), '/');
@@ -92,14 +93,31 @@
         $declared = view()->shared('dcHeaderActive');
         if (filled($declared)) {
             return $element === $declared ? PHP_INT_MAX : 0;
+=======
+    // Voce attiva: `element` dichiarato dal layout ($dcHeaderActive) oppure, se assente, il percorso della pagina che
+    // coincide con l'URL della voce o vi sta sotto (/it/blog/articolo -> Novità). Prima nessuna voce risultava attiva.
+    $currentNavPath = '/'.trim((string) parse_url(url()->current(), PHP_URL_PATH), '/');
+    $isActiveNavItem = static function (array $item) use ($storedNavHref, $currentNavPath): bool {
+        $element = $item['element'] ?? null;
+        $declared = view()->shared('dcHeaderActive');
+        if (filled($declared)) {
+            return $element === $declared;
+>>>>>>> f08c6884 (.)
         }
         $href = $storedNavHref((string) ($item['url'] ?? ''));
         $itemPath = '/'.trim((string) parse_url((string) $href, PHP_URL_PATH), '/');
         if ($href === null || $itemPath === '/' || preg_match('#^/[a-z]{2}$#', $itemPath) === 1) {
+<<<<<<< HEAD
             return 0;
         }
 
         return $currentNavPath === $itemPath || str_starts_with($currentNavPath, $itemPath.'/') ? strlen($itemPath) : 0;
+=======
+            return false;
+        }
+
+        return $currentNavPath === $itemPath || str_starts_with($currentNavPath, $itemPath.'/');
+>>>>>>> f08c6884 (.)
     };
     $ente = app(\Modules\Tenant\Actions\Ente\GetEnteDataAction::class)->execute();
     // Social: config('ente') (DCP-289); in assenza, i `social_links` del blocco (fallback config('comune.social')), solo URL http(s).
@@ -228,8 +246,13 @@
                                     </a>
                                     <nav aria-label="{{ $d('menu.main_label') }}">
                                         <ul class="navbar-nav" data-element="main-navigation">
+<<<<<<< HEAD
                                             @foreach ($navigation as $navIndex => $item)
                                                 <li class="nav-item">@php($navActive = $navIndex === $activeNavIndex)<a @class(['nav-link', 'active' => $navActive]) href="{{ $storedNavHref((string) $item['url']) }}"@if (filled($item['element'] ?? null)) data-element="{{ $item['element'] }}"@endif @if ($navActive) aria-current="page"@endif><span>{{ $item['label'] ?? '' }}</span></a></li>
+=======
+                                            @foreach ($navigation as $item)
+                                                <li class="nav-item">@php($navActive = $isActiveNavItem($item))<a @class(['nav-link', 'active' => $navActive]) href="{{ $storedNavHref((string) $item['url']) }}"@if (filled($item['element'] ?? null)) data-element="{{ $item['element'] }}"@endif @if ($navActive) aria-current="page"@endif><span>{{ $item['label'] ?? '' }}</span></a></li>
+>>>>>>> f08c6884 (.)
                                             @endforeach
                                         </ul>
                                     </nav>

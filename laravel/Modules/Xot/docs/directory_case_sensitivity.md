@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Case Sensitivity e Struttura Corretta delle Directory nei Moduli Laravel"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "case sensitivity e struttura corretta delle directory nei moduli laravel xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Case Sensitivity e Struttura Corretta delle Directory nei Moduli Laravel
 
 ## Problemi Identificati

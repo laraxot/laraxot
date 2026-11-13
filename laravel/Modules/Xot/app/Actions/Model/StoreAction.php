@@ -14,8 +14,69 @@ class StoreAction
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
      * @param  array<string, mixed>  $data
      * @param  array<string, mixed>  $rules
+=======
+<<<<<<< .merge_file_fUwGFn
+     * @param  array<string, mixed>  $data
+     * @param  array<string, mixed>  $rules
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param array<string, mixed> $data
+     * @param array<string, mixed> $rules
+     *                                    =======
+     *                                    <<<<<<< HEAD
+     *                                    <<<<<<< HEAD
+     *                                    <<<<<<< .merge_file_EBFvzt.
+     *                                    =======
+     *                                    <<<<<<< HEAD.
+     *                                    >>>>>>> laraxot/dev.
+     * @param array<string, mixed> $data
+     * @param array<string, mixed> $rules
+     *                                    =======
+     *                                    <<<<<<< HEAD
+     *                                    =======
+     *                                    <<<<<<< .merge_file_pJAByG.
+     * @param array<string, mixed> $data
+     * @param array<string, mixed> $rules
+     *                                    =======
+     *                                    <<<<<<< HEAD
+     *                                    <<<<<<< .merge_file_EBFvzt.
+     * @param array<string, mixed> $data
+     * @param array<string, mixed> $rules
+     *                                    =======
+     *                                    >>>>>>> laraxot/dev
+     *                                    <<<<<<< .merge_file_AXPigS.
+     * @param array<string, mixed> $data
+     * @param array<string, mixed> $rules
+     *                                    =======
+     *                                    <<<<<<< HEAD
+     * @param array<string, mixed> $data
+     * @param array<string, mixed> $rules
+     *                                    =======
+     * @param array<string, mixed> $data
+     * @param array<string, mixed> $rules
+     *                                    >>>>>>> laraxot/dev
+     *                                    >>>>>>> .merge_file_0Whyk8
+     *                                    >>>>>>> .merge_file_zPKMkq
+     *                                    =======
+     * @param array<string, mixed> $data
+     * @param array<string, mixed> $rules
+     *                                    >>>>>>> 9e11d472 (Fix merge conflicts in PHPDoc comments across multiple action classes and contracts, ensuring consistent parameter annotations and removing redundant lines.)
+     *                                    <<<<<<< HEAD
+     *                                    =======
+     *                                    >>>>>>> .merge_file_DoCQvn
+     *                                    >>>>>>> laraxot/dev
+     *                                    =======
+     * @param array<string, mixed> $data
+     * @param array<string, mixed> $rules
+     *                                    >>>>>>> laraxot/dev
+     *                                    >>>>>>> laraxot/dev
+     *                                    >>>>>>> laraxot/dev
+>>>>>>> .merge_file_4fqtPY
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(Model $model, array $data, array $rules): Model
     {

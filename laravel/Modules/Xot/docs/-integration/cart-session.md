@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "cart_session"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "cart_session xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # cart_session
 
 <!-- Contenuto migrato da _docs/cart_session.txt -->

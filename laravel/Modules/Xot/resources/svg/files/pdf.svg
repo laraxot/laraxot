@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" role="img">
 <<<<<<< HEAD
-=======
   <!--
     Foglio PDF in stile Heroicons outline (story Xot 8.5): solo path, niente <text>.
     La pagina e' il path `document` di Heroicons, identico, cosi' l'icona sta accanto
@@ -18,7 +17,8 @@
     tutte le icone xot-files sono export, quindi non distingueva nulla.
   -->
   <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 18v-6.75h2.25a2.25 2.25 0 0 1 0 4.5H9.75"/>
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
   <!-- Foglio PDF: piega + badge tipografico semplificato (solo path, niente <text>) -->
   <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75h6.75L18 7.5v11.25a1.5 1.5 0 0 1-1.5 1.5h-9a1.5 1.5 0 0 1-1.5-1.5V5.25a1.5 1.5 0 0 1 1.5-1.5Z"/>
   <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 3.75V7.5H18"/>

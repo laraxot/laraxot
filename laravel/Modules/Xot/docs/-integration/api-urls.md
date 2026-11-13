@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "api_urls"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "api_urls xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # api_urls
 
 <!-- Contenuto migrato da _docs/api_urls.txt -->

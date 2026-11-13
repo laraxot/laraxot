@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Ottimizzazioni Approfondite Modulo Xot - DRY + KISS"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Ottimizzazioni Approfondite Modulo Xot - DRY + KISS"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Ottimizzazioni Approfondite Modulo Xot - DRY + KISS
 
 ## Panoramica
@@ -241,18 +241,18 @@ grep -r "extends.*Resource" app/Filament/Resources/
 ## 🔗 Collegamenti Sistema
 
 <<<<<<< HEAD
-- [**Documentazione Core Sistema**](../../docs/core/)
-- [**PHPStan Guide**](../../docs/core/phpstan-guide.md)
-- [**Filament Best Practices**](../../docs/core/filament-best-practices.md)
-- [**Convenzioni Sistema**](../../docs/core/conventions.md)
-- [**Template Moduli**](../../docs/templates/)
-=======
 - [**Documentazione Core Sistema**](core)
 - [**PHPStan Guide**](../../docs/core/phpstan-guide.md)
 - [**Filament Best Practices**](../../docs/core/filament-best-practices.md)
 - [**Convenzioni Sistema**](../../docs/core/conventions.md)
 - [**Template Moduli**](templates)
->>>>>>> laraxot/dev
+=======
+- [**Documentazione Core Sistema**](../../docs/core/)
+- [**PHPStan Guide**](../../docs/core/phpstan-guide.md)
+- [**Filament Best Practices**](../../docs/core/filament-best-practices.md)
+- [**Convenzioni Sistema**](../../docs/core/conventions.md)
+- [**Template Moduli**](../../docs/templates/)
+>>>>>>> 77b1e2748 (first)
 
 ---
 

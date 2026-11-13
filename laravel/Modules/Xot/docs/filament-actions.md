@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Azioni Filament"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Azioni Filament"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Azioni Filament
 
 ## Best Practices per le Azioni
@@ -34,10 +34,10 @@ class CustomAction extends Action
     {
         parent::setUp();
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $this->translateLabel()
             ->tooltip('Descrizione azione')
             ->icon('heroicon-o-icon-name')
@@ -78,10 +78,10 @@ class MakePdfAction extends Action
     {
         parent::setUp();
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $this->translateLabel()
             ->tooltip('Genera PDF')
             ->icon('heroicon-o-document-arrow-down')
@@ -126,7 +126,7 @@ Le traduzioni per le azioni devono essere definite nel file di traduzione del mo
 5. Mantenere le azioni semplici e focalizzate
 6. Utilizzare azioni in coda per operazioni pesanti
 <<<<<<< HEAD
-7. Fornire feedback appropriati all'utente
-=======
 7. Fornire feedback appropriati all'utente 
->>>>>>> laraxot/dev
+=======
+7. Fornire feedback appropriati all'utente
+>>>>>>> 77b1e2748 (first)

@@ -7,9 +7,9 @@ use Modules\Xot\Tests\TestCase;
 use Modules\Xot\Tests\Unit\Fixtures\FormSchemaPageFixture;
 use PHPUnit\Framework\Assert;
 <<<<<<< HEAD
-use ReflectionMethod;
 =======
->>>>>>> laraxot/dev
+use ReflectionMethod;
+>>>>>>> 77b1e2748 (first)
 
 uses(TestCase::class);
 

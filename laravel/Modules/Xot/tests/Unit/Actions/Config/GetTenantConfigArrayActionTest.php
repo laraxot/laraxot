@@ -8,18 +8,18 @@ use Mockery\MockInterface;
 use Modules\Xot\Actions\Config\GetTenantConfigArrayAction;
 use Modules\Xot\Actions\Config\GetTenantConfigPathAction;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Tests\TestCase;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 
 use function Safe\file_put_contents;
 use function Safe\unlink;
 
 <<<<<<< HEAD
-=======
 uses(TestCase::class);
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 it('returns empty array when tenant config file does not exist', function (): void {
     /** @var GetTenantConfigPathAction&MockInterface $pathAction */
     $pathAction = \Mockery::mock(GetTenantConfigPathAction::class);

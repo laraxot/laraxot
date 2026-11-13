@@ -126,6 +126,7 @@ coordinate-picker-lit:fullscreen .map-picker-leaflet-pane,
 coordinate-picker-lit .map-container.is-fullscreen .map-picker-leaflet-pane {
   height: 100vh !important;
   height: 100dvh !important;
+<<<<<<< HEAD
 }
 
 /*
@@ -168,4 +169,6 @@ body:has(.page-content[data-dc]) .fi-btn .fi-loading-indicator {
 .fi-btn:has(svg.animate-spin) .fi-loading-indicator,
 body:has(.page-content[data-dc]) .fi-btn:has(svg.animate-spin) .fi-loading-indicator {
   display: none !important;
+=======
+>>>>>>> f08c6884 (.)
 }

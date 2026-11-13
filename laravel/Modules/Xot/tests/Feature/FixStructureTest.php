@@ -73,10 +73,10 @@ describe('Fix Structure', function () use (&$testDir): void {
 
         // Copiamo lo script nella directory di test
 <<<<<<< HEAD
-        $script = base_path('../bashscripts/fix_structure.sh');
-=======
         $script = base_path('../bashscripts/utils/fix_structure.sh');
->>>>>>> laraxot/dev
+=======
+        $script = base_path('../bashscripts/fix_structure.sh');
+>>>>>>> 77b1e2748 (first)
         $scriptContent = file_get_contents($script);
         file_put_contents($testDir.'/fix_structure.sh', $scriptContent);
         chmod($testDir.'/fix_structure.sh', 0o755);
@@ -97,10 +97,10 @@ describe('Fix Structure', function () use (&$testDir): void {
 
         // Copiamo lo script nella directory di test
 <<<<<<< HEAD
-        $script = base_path('../bashscripts/fix_structure.sh');
-=======
         $script = base_path('../bashscripts/utils/fix_structure.sh');
->>>>>>> laraxot/dev
+=======
+        $script = base_path('../bashscripts/fix_structure.sh');
+>>>>>>> 77b1e2748 (first)
         $scriptContent = file_get_contents($script);
         file_put_contents($testDir.'/fix_structure.sh', $scriptContent);
         chmod($testDir.'/fix_structure.sh', 0o755);
@@ -124,10 +124,10 @@ describe('Fix Structure', function () use (&$testDir): void {
 
         // Copiamo lo script nella directory di test
 <<<<<<< HEAD
-        $script = base_path('../bashscripts/fix_structure.sh');
-=======
         $script = base_path('../bashscripts/utils/fix_structure.sh');
->>>>>>> laraxot/dev
+=======
+        $script = base_path('../bashscripts/fix_structure.sh');
+>>>>>>> 77b1e2748 (first)
         $scriptContent = file_get_contents($script);
         file_put_contents($testDir.'/fix_structure.sh', $scriptContent);
         chmod($testDir.'/fix_structure.sh', 0o755);

@@ -40,10 +40,10 @@ declare(strict_types=1);
             :class="autoScroll ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-300'"
         >
 <<<<<<< HEAD
-            Auto-scroll: <span x-text="autoScroll ? 'ON' : 'OFF'"></span>
-=======
             {{ __('xot::terminal.actions.auto_scroll.label') }}: <span x-text="autoScroll ? 'ON' : 'OFF'"></span>
->>>>>>> laraxot/dev
+=======
+            Auto-scroll: <span x-text="autoScroll ? 'ON' : 'OFF'"></span>
+>>>>>>> 77b1e2748 (first)
         </button>
         
         <button
@@ -51,10 +51,10 @@ declare(strict_types=1);
             class="px-3 py-1 text-sm bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600"
         >
 <<<<<<< HEAD
-            Scroll to Bottom
-=======
             {{ __('xot::terminal.actions.scroll_to_bottom.label') }}
->>>>>>> laraxot/dev
+=======
+            Scroll to Bottom
+>>>>>>> 77b1e2748 (first)
         </button>
     </div>
 </div>

@@ -1,8 +1,4 @@
 <<<<<<< HEAD
-
-
-https://github.com/siubie/kaido-kit
-=======
 ---
 title: "starter kit"
 type: note
@@ -15,4 +11,8 @@ qmd: "starter kit"
 ---
 https://github.com/siubie/kaido-kit
 
->>>>>>> laraxot/dev
+=======
+
+
+https://github.com/siubie/kaido-kit
+>>>>>>> 77b1e2748 (first)

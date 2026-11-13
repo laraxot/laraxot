@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+return [];
+=======
 return [
     'steps' => [
         'custom_step' => [
@@ -13,6 +15,4 @@ return [
         ],
     ],
 ];
-=======
-return [];
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

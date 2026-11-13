@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "__to_study"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "__to_study xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # __to_study
 
 <!-- Contenuto migrato da _docs/__to_study.txt -->

@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot - namespace-rules.md"
 module: Xot
 bmad: true
 status: active
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole di Namespace
 
 ## Struttura dei Namespace
@@ -143,17 +143,17 @@ Se si verificano errori "Class not found" o problemi di autoloading:
 ## Collegamenti Correlati
 
 <<<<<<< HEAD
-- [Convenzioni](../../../../docs/conventions.md)
-- [Naming Conventions](../../../../docs/naming-conventions.md)
-- [Documentazione Xot](../code-standards.md)
-- [Collegamenti Documentazione](../../../../../docs/collegamenti-documentazione.md)
-
-Ultima modifica: 31/03/2025
-=======
 - [Convenzioni](../conventions.md)
 - [Naming Conventions](../naming-conventions.md)
 - [Documentazione Xot](../code-standards.md)
 - [Collegamenti Documentazione](../../../../../docs/collegamenti-documentazione.md)
 
 Ultima modifica: 31/03/2025
->>>>>>> laraxot/dev
+=======
+- [Convenzioni](../../../../docs/conventions.md)
+- [Naming Conventions](../../../../docs/naming-conventions.md)
+- [Documentazione Xot](../code-standards.md)
+- [Collegamenti Documentazione](../../../../../docs/collegamenti-documentazione.md)
+
+Ultima modifica: 31/03/2025
+>>>>>>> 77b1e2748 (first)

@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Best Practices per la Risoluzione dei Conflitti"
 type: note
@@ -11,7 +9,9 @@ module: Xot
 tags: [xot, conflicts]
 qmd: "Best Practices per la Risoluzione dei Conflitti"
 ---
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
 # Best Practices per la Risoluzione dei Conflitti
 
 ## Principi Generali
@@ -121,7 +121,7 @@ namespace Modules\ModuleName\App\Models;
    - Verificare le modifiche con PHPStan
    - Testare la compatibilità
 <<<<<<< HEAD
-   - Validare le funzionalità
-=======
    - Validare le funzionalità 
->>>>>>> laraxot/dev
+=======
+   - Validare le funzionalità
+>>>>>>> 77b1e2748 (first)

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "video_player"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "video_player xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # video_player
 
 <!-- Contenuto migrato da _docs/video_player.txt -->

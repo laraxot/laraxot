@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Testing del Brand"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, testing]
 qmd: "Testing del Brand"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Testing del Brand
 
 ## Principi di Testing
@@ -25,10 +25,10 @@ class BrandTest extends TestCase
     {
         $metatag = MetatagData::make();
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $this->assertEquals(
             $metatag->getBrandName(),
             $metatag->title
@@ -47,10 +47,10 @@ class BrandConsistencyTest extends TestCase
     {
         $metatag = MetatagData::make();
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $this->assertNotEmpty($metatag->getBrandName());
         $this->assertNotEmpty($metatag->getBrandLogo());
         $this->assertNotEmpty($metatag->getDarkModeBrandLogo());
@@ -69,18 +69,18 @@ class BrandValidationTest extends TestCase
     {
         $metatag = MetatagData::make();
 <<<<<<< HEAD
-
+        
         $this->assertFileExists(
             public_path($metatag->getBrandLogo())
         );
-
+        
 =======
-        
+
         $this->assertFileExists(
             public_path($metatag->getBrandLogo())
         );
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         $this->assertFileExists(
             public_path($metatag->getDarkModeBrandLogo())
         );
@@ -117,23 +117,23 @@ class PanelBrandTest extends TestCase
         $action = new ApplyMetatagToPanelAction();
         $metatag = MetatagData::make();
 <<<<<<< HEAD
-
+        
         $panel = $action->execute($panel);
-
+        
 =======
-        
+
         $panel = $action->execute($panel);
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         $this->assertEquals(
             $metatag->getBrandName(),
             $panel->getBrandName()
         );
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $this->assertEquals(
             $metatag->getBrandLogo(),
             $panel->getBrandLogo()
@@ -150,27 +150,27 @@ class BrandImageTest extends TestCase
     {
         $metatag = MetatagData::make();
 <<<<<<< HEAD
-
+        
         $this->assertImageIsValid(
             $metatag->getBrandLogo()
         );
-
+        
 =======
-        
+
         $this->assertImageIsValid(
             $metatag->getBrandLogo()
         );
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         $this->assertImageIsValid(
             $metatag->getDarkModeBrandLogo()
         );
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     private function assertImageIsValid(string $path): void
     {
         $this->assertFileExists($path);
@@ -187,22 +187,22 @@ class BrandPerformanceTest extends TestCase
     {
         $start = microtime(true);
 <<<<<<< HEAD
-
+        
         $metatag = MetatagData::make();
         $metatag->getBrandLogo();
         $metatag->getDarkModeBrandLogo();
-
+        
         $end = microtime(true);
-
+        
 =======
-        
+
         $metatag = MetatagData::make();
         $metatag->getBrandLogo();
         $metatag->getDarkModeBrandLogo();
-        
+
         $end = microtime(true);
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         $this->assertLessThan(
             0.1, // 100ms
             $end - $start
@@ -233,7 +233,7 @@ class BrandPerformanceTest extends TestCase
 - [Semantic Methods](../philosophy/semantic_methods.md)
 - [Best Practices](../best-practices.md)
 <<<<<<< HEAD
-- [Testing Guide](../testing.md)
-=======
 - [Testing Guide](../testing.md) 
->>>>>>> laraxot/dev
+=======
+- [Testing Guide](../testing.md)
+>>>>>>> 77b1e2748 (first)

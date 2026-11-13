@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "Risoluzione Errore Configurazione Cache"
 type: note
@@ -98,4 +96,6 @@ Se il comando viene eseguito con successo, il problema è stato risolto.
 Questo errore si verifica perché Laravel sta tentando di creare un driver di cache di tipo 'file' utilizzando la configurazione dello store 'database', ma non trova il parametro 'path' richiesto dal `FileStore`.
 
 La classe `FileStore` nel file `vendor/laravel/framework/src/Illuminate/Cache/FileStore.php` richiede un percorso per sapere dove memorizzare i file di cache. Quando questo parametro manca, viene generato l'errore "Undefined array key 'path'".
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

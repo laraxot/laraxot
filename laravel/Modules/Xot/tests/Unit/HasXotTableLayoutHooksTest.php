@@ -6,15 +6,15 @@ use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Enums\RecordActionsPosition;
 use Modules\Xot\Filament\Traits\HasXotTable;
 <<<<<<< HEAD
-use PHPUnit\Framework\Assert;
-
-=======
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
->>>>>>> laraxot/dev
+=======
+use PHPUnit\Framework\Assert;
+
+>>>>>>> 77b1e2748 (first)
 function invokeProtectedTableHook(object $instance, string $method): mixed
 {
     $reflection = new ReflectionMethod($instance, $method);
@@ -31,9 +31,9 @@ test('getTableFiltersLayout default e override', function (): void {
 
         /** @return array<string, Column> */
 <<<<<<< HEAD
-        /** @return array<string, Column> */
 =======
->>>>>>> laraxot/dev
+        /** @return array<string, Column> */
+>>>>>>> 77b1e2748 (first)
         public function getTableColumns(): array
         {
             return [];
@@ -50,9 +50,9 @@ test('getTableFiltersLayout default e override', function (): void {
 
         /** @return array<string, Column> */
 <<<<<<< HEAD
-        /** @return array<string, Column> */
 =======
->>>>>>> laraxot/dev
+        /** @return array<string, Column> */
+>>>>>>> 77b1e2748 (first)
         public function getTableColumns(): array
         {
             return [];
@@ -76,9 +76,9 @@ test('getTableRecordActionsPosition default e override', function (): void {
 
         /** @return array<string, Column> */
 <<<<<<< HEAD
-        /** @return array<string, Column> */
 =======
->>>>>>> laraxot/dev
+        /** @return array<string, Column> */
+>>>>>>> 77b1e2748 (first)
         public function getTableColumns(): array
         {
             return [];
@@ -95,9 +95,9 @@ test('getTableRecordActionsPosition default e override', function (): void {
 
         /** @return array<string, Column> */
 <<<<<<< HEAD
-        /** @return array<string, Column> */
 =======
->>>>>>> laraxot/dev
+        /** @return array<string, Column> */
+>>>>>>> 77b1e2748 (first)
         public function getTableColumns(): array
         {
             return [];

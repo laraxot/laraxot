@@ -5,13 +5,13 @@ declare(strict_types=1);
 return [
     'title' => 'Pannello di Amministrazione',
 <<<<<<< HEAD
-=======
     'back_to_main_panel' => 'Main panel',
     'sidebar_types' => [
         'admin' => 'Administration',
         'customer' => 'Customer area',
     ],
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     'description' => 'Gestione del pannello di amministrazione',
     'navigation' => [
         'dashboard' => 'Dashboard',
@@ -113,8 +113,8 @@ return [
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
 <<<<<<< HEAD
+=======
     'fields' => [
     ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ];

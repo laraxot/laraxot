@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Common Filament Trait Conflicts - Xot Module"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Common Filament Trait Conflicts - Xot Module"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Common Filament Trait Conflicts - Xot Module
 
 ## 📋 Panoramica

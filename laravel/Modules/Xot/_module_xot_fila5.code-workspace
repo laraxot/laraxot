@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+{"folders":[{"path":"."}],"settings":{}}
+=======
 {
 	"folders": [
 		{
@@ -33,6 +35,4 @@
 		"git.autofetch": "all"
 	}
 }
-=======
-{"folders":[{"path":"."}],"settings":{}}
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

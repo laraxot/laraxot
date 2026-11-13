@@ -72,10 +72,10 @@ class MetatagPage extends XotBasePage
                         Select::make('color')
                             ->options(array_combine(array_keys(Color::all()), array_keys(Color::all())))
 <<<<<<< HEAD
-                            ->reactive(),
-=======
                             ->live(),
->>>>>>> laraxot/dev
+=======
+                            ->reactive(),
+>>>>>>> 77b1e2748 (first)
                         ColorPicker::make('hex')
                             ->required(),
                     ])

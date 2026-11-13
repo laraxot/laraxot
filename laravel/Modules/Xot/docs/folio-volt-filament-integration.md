@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Integrazione Folio, Volt e Filament"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Integrazione Folio, Volt e Filament"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Integrazione Folio, Volt e Filament
 
 > **NOTA**: Questo documento è stato unificato con la documentazione sull'architettura Folio + Volt + Filament. Consulta il documento aggiornato nel link sottostante.
@@ -24,14 +24,14 @@ qmd: "Integrazione Folio, Volt e Filament"
 
 ### Moduli Collegati
 <<<<<<< HEAD
-- [UI](../UI/docs/README.md) - Componenti di interfaccia
-- [Cms](../Cms/docs/README.md) - Gestione contenuti
-- [Lang](../Lang/docs/README.md) - Traduzioni
-=======
 - [UI](../../UI/docs/README.md) - Componenti di interfaccia
 - [Cms](../../Cms/docs/README.md) - Gestione contenuti
 - [Lang](../../Lang/docs/README.md) - Traduzioni
->>>>>>> laraxot/dev
+=======
+- [UI](../UI/docs/README.md) - Componenti di interfaccia
+- [Cms](../Cms/docs/README.md) - Gestione contenuti
+- [Lang](../Lang/docs/README.md) - Traduzioni
+>>>>>>> 77b1e2748 (first)
 
 ## Struttura
 
@@ -139,45 +139,45 @@ $submit = function() {
 
 ### Modulo UI
 <<<<<<< HEAD
-- [Componenti Volt](../UI/docs/components/volt.md)
-- [Layout](../UI/docs/layouts.md)
-- [Temi](../UI/docs/themes.md)
-- [Best Practices](../UI/docs/best-practices.md)
-=======
 - [Componenti Volt](../../UI/docs/components/volt.md)
 - [Layout](../UI/docs/layouts.md)
 - [Temi](../UI/docs/themes.md)
 - [Best Practices](../../UI/docs/best-practices.md)
->>>>>>> laraxot/dev
+=======
+- [Componenti Volt](../UI/docs/components/volt.md)
+- [Layout](../UI/docs/layouts.md)
+- [Temi](../UI/docs/themes.md)
+- [Best Practices](../UI/docs/best-practices.md)
+>>>>>>> 77b1e2748 (first)
 
 ### Modulo Cms
 - [Frontend](../Cms/docs/frontend.md)
 - [Temi](../Cms/docs/themes.md)
 <<<<<<< HEAD
-- [Contenuti](../Cms/docs/content.md)
-- [Convenzioni Filament](../Cms/docs/convenzioni-namespace-filament.md)
-
-### Modulo Lang
-- [Traduzioni](../Lang/docs/translations.md)
-=======
 - [Contenuti](../../Cms/docs/content.md)
 - [Convenzioni Filament](../../Cms/docs/convenzioni-namespace-filament.md)
 
 ### Modulo Lang
 - [Traduzioni](../../Lang/docs/translations.md)
->>>>>>> laraxot/dev
+=======
+- [Contenuti](../Cms/docs/content.md)
+- [Convenzioni Filament](../Cms/docs/convenzioni-namespace-filament.md)
+
+### Modulo Lang
+- [Traduzioni](../Lang/docs/translations.md)
+>>>>>>> 77b1e2748 (first)
 - [Localizzazione](../Lang/docs/localization.md)
 - [API Traduzioni](../Lang/docs/api.md)
 
 ### Modulo User
 - [Autenticazione](../User/docs/auth.md)
 <<<<<<< HEAD
-- [Permessi](../User/docs/permissions.md)
-- [Profilo](../User/docs/profile.md)
-=======
 - [Permessi](../../User/docs/permissions.md)
 - [Profilo](../../User/docs/profile.md)
->>>>>>> laraxot/dev
+=======
+- [Permessi](../User/docs/permissions.md)
+- [Profilo](../User/docs/profile.md)
+>>>>>>> 77b1e2748 (first)
 
 ### Modulo Patient
 - [Gestione Pazienti](../Patient/docs/patients.md)
@@ -192,10 +192,10 @@ $submit = function() {
 ### Modulo Tenant
 - [Multi-tenant](../Tenant/docs/multi-tenant.md)
 <<<<<<< HEAD
-- [Configurazione](../Tenant/docs/configuration.md)
-=======
 - [Configurazione](../../Tenant/docs/configuration.md)
->>>>>>> laraxot/dev
+=======
+- [Configurazione](../Tenant/docs/configuration.md)
+>>>>>>> 77b1e2748 (first)
 - [Migrazione](../Tenant/docs/migration.md)
 
 ### Modulo Media
@@ -205,14 +205,14 @@ $submit = function() {
 
 ### Modulo Notify
 <<<<<<< HEAD
-- [Notifiche](../Notify/docs/notifications.md)
-- [Email](../Notify/docs/email.md)
-- [SMS](../Notify/docs/sms.md)
-=======
 - [Notifiche](../../Notify/docs/notifications.md)
 - [Email](../Notify/docs/email.md)
 - [SMS](../../Notify/docs/sms.md)
->>>>>>> laraxot/dev
+=======
+- [Notifiche](../Notify/docs/notifications.md)
+- [Email](../Notify/docs/email.md)
+- [SMS](../Notify/docs/sms.md)
+>>>>>>> 77b1e2748 (first)
 
 ### Modulo Reporting
 - [Report](../Reporting/docs/reports.md)
@@ -222,12 +222,12 @@ $submit = function() {
 ### Modulo Gdpr
 - [Privacy](../Gdpr/docs/privacy.md)
 <<<<<<< HEAD
-- [Consensi](../Gdpr/docs/consents.md)
-- [Sicurezza](../Gdpr/docs/security.md)
-=======
 - [Consensi](../../Gdpr/docs/consents.md)
 - [Sicurezza](../../Gdpr/docs/security.md)
->>>>>>> laraxot/dev
+=======
+- [Consensi](../Gdpr/docs/consents.md)
+- [Sicurezza](../Gdpr/docs/security.md)
+>>>>>>> 77b1e2748 (first)
 
 ### Modulo Job
 - [Jobs](../Job/docs/jobs.md)

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Common Anti-Patterns - Xot Module"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Common Anti-Patterns - Xot Module"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Common Anti-Patterns - Xot Module
 
 ## 🚨 Anti-Patterns to Avoid
@@ -342,14 +342,14 @@ public function canAccess($user): bool
 class MyWidget extends XotBaseWidget
 {
 <<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         // Filament methods should not be static
     }

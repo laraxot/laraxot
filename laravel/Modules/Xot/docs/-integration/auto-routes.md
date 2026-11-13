@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "auto_routes"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "auto_routes xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # auto_routes
 
 <!-- Contenuto migrato da _docs/auto_routes.txt -->

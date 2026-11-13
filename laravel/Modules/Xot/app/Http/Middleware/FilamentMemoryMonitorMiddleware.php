@@ -17,7 +17,32 @@ class FilamentMemoryMonitorMiddleware
     /**
      * Handle an incoming request.
      *
+<<<<<<< HEAD
      * @param  \Closure(Request):Response  $next
+=======
+<<<<<<< .merge_file_ml9Q9Q
+     * @param  \Closure(Request):Response  $next
+=======
+     * <<<<<<< HEAD
+     *
+     * @param \Closure(Request):Response $next
+     *                                         =======
+     *                                         <<<<<<< HEAD
+     * @param \Closure(Request):Response $next
+     *                                         =======
+     *                                         <<<<<<< HEAD
+     *                                         <<<<<<< HEAD
+     * @param \Closure(Request):Response $next
+     *                                         =======
+     * @param \Closure(Request):Response $next
+     *                                         >>>>>>> laraxot/dev
+     *                                         =======
+     * @param \Closure(Request):Response $next
+     *                                         >>>>>>> laraxot/dev
+     *                                         >>>>>>> laraxot/dev
+     *                                         >>>>>>> laraxot/dev
+>>>>>>> .merge_file_e7djpR
+>>>>>>> 77b1e2748 (first)
      */
     public function handle(Request $request, \Closure $next): Response
     {
@@ -113,7 +138,32 @@ class FilamentMemoryMonitorMiddleware
     /**
      * Logga l'uso della memoria.
      *
+<<<<<<< HEAD
      * @param  array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null}  $metrics
+=======
+<<<<<<< .merge_file_ml9Q9Q
+     * @param  array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null}  $metrics
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null} $metrics
+     *                                                                                                                                                                                                       =======
+     *                                                                                                                                                                                                       <<<<<<< HEAD
+     * @param array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null} $metrics
+     *                                                                                                                                                                                                       =======
+     *                                                                                                                                                                                                       <<<<<<< HEAD
+     *                                                                                                                                                                                                       <<<<<<< HEAD
+     * @param array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null} $metrics
+     *                                                                                                                                                                                                       =======
+     * @param array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null} $metrics
+     *                                                                                                                                                                                                       >>>>>>> laraxot/dev
+     *                                                                                                                                                                                                       =======
+     * @param array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null} $metrics
+     *                                                                                                                                                                                                       >>>>>>> laraxot/dev
+     *                                                                                                                                                                                                       >>>>>>> laraxot/dev
+     *                                                                                                                                                                                                       >>>>>>> laraxot/dev
+>>>>>>> .merge_file_e7djpR
+>>>>>>> 77b1e2748 (first)
      */
     private function logMemoryUsage(Request $request, array $metrics): void
     {
@@ -147,7 +197,32 @@ class FilamentMemoryMonitorMiddleware
     /**
      * Determina il livello di log basato sulle metriche.
      *
+<<<<<<< HEAD
      * @param  array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null}  $metrics
+=======
+<<<<<<< .merge_file_ml9Q9Q
+     * @param  array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null}  $metrics
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null} $metrics
+     *                                                                                                                                                                                                       =======
+     *                                                                                                                                                                                                       <<<<<<< HEAD
+     * @param array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null} $metrics
+     *                                                                                                                                                                                                       =======
+     *                                                                                                                                                                                                       <<<<<<< HEAD
+     *                                                                                                                                                                                                       <<<<<<< HEAD
+     * @param array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null} $metrics
+     *                                                                                                                                                                                                       =======
+     * @param array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null} $metrics
+     *                                                                                                                                                                                                       >>>>>>> laraxot/dev
+     *                                                                                                                                                                                                       =======
+     * @param array{memory_used_mb: float, memory_peak_mb: float, memory_total_mb: float, execution_time_ms: float, is_filament_admin: bool, url: string, method: string, user_id: int|string|null} $metrics
+     *                                                                                                                                                                                                       >>>>>>> laraxot/dev
+     *                                                                                                                                                                                                       >>>>>>> laraxot/dev
+     *                                                                                                                                                                                                       >>>>>>> laraxot/dev
+>>>>>>> .merge_file_e7djpR
+>>>>>>> 77b1e2748 (first)
      */
     private function determineLogLevel(array $metrics): string
     {

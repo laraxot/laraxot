@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Action Usage Patterns - Regole Fondamentali"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, actions]
 qmd: "action usage patterns - regole fondamentali xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Action Usage Patterns - Regole Fondamentali
 
 ## 🎯 **REGOLA CRITICA: Pattern di Uso delle Action**

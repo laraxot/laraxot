@@ -18,9 +18,9 @@ class ImportButton
             ->icon('heroicon-o-arrow-up-on-square')
             // ->visible(null != $year)
 <<<<<<< HEAD
-            ->action(static fn () => dddx('WIP'));
-=======
             ->action(static fn (): never => throw new \LogicException('ImportButton action not implemented'));
->>>>>>> laraxot/dev
+=======
+            ->action(static fn () => dddx('WIP'));
+>>>>>>> 77b1e2748 (first)
     }
 }

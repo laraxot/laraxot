@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Service Provider"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Service Provider"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Service Provider
 
 ## Configurazione Base
@@ -163,10 +163,10 @@ class CommandServiceProvider extends ServiceProvider
         $this->app->booted(function () {
             $schedule = $this->app->make(Schedule::class);
 <<<<<<< HEAD
-
-=======
             
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
             $schedule->command('emails:send')
                     ->daily()
                     ->at('13:00');
@@ -209,10 +209,10 @@ try {
         'error' => $e->getMessage(),
     ]);
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     throw $e;
 }
 ```
@@ -276,6 +276,8 @@ class ValidationServiceProvider extends ServiceProvider
     }
 }
 <<<<<<< HEAD
+``` 
+=======
 ```
 
 ## 🔧 Merge Conflicts Resolution - 2025-11-04
@@ -360,6 +362,4 @@ vendor/bin/pint --dirty Modules/Xot/app
 - [File Locking Pattern](./file-locking-pattern.md) - Nuova regola fondamentale
 - [RouteServiceProvider Documentation](./consolidated/route-service-provider.md) - Linee guida esistenti
 - [Laraxot Architecture Rules](./laraxot-architecture-rules.md) - Convenzioni namespace
-=======
-``` 
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

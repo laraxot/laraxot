@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "XotBase Quick Reference"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "xotbase quick reference xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # 🚀 XotBase Quick Reference
 
 ## ⚡ Immediate Action Required

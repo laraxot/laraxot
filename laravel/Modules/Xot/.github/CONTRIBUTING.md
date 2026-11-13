@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "CONTRIBUTING"
 type: note
@@ -11,7 +10,8 @@ issues: []
 discussions: []
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Contributing
 
 Contributions are **welcome** and will be fully **credited**.

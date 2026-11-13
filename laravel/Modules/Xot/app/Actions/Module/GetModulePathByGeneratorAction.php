@@ -7,9 +7,9 @@ namespace Modules\Xot\Actions\Module;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 <<<<<<< HEAD
-=======
 use Nwidart\Modules\Exceptions\ModuleNotFoundException;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 
 class GetModulePathByGeneratorAction
 {
@@ -18,6 +18,10 @@ class GetModulePathByGeneratorAction
         $relativePath = Config::string('modules.paths.generator.'.$generatorPath.'.path');
         try {
 <<<<<<< HEAD
+            return module_path($moduleName, $relativePath);
+        } catch (ModuleNotFoundException $exception) {
+            $fullPath = base_path('Modules/'.$moduleName).'/'.$relativePath;
+=======
             $res = module_path($moduleName, $relativePath);
             if ($res !== '') {
                 return $res;
@@ -27,16 +31,15 @@ class GetModulePathByGeneratorAction
             $modulePath = base_path('Modules/'.$moduleName);
             $fullPath = $modulePath.'/'.$relativePath;
 
-=======
-            return module_path($moduleName, $relativePath);
-        } catch (ModuleNotFoundException $exception) {
-            $fullPath = base_path('Modules/'.$moduleName).'/'.$relativePath;
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             if (File::exists($fullPath)) {
                 return $fullPath;
             }
 
 <<<<<<< HEAD
+            throw new \RuntimeException('Module path not found: name:['.$moduleName.'] generatorPath:['.$generatorPath.'] relativePath:['.$relativePath.']', 0, $exception);
+        }
+=======
             // Se path non esiste e non è opzionale, lancia eccezione
             throw new \Exception('Module path not found: 
             name:['.$moduleName.'] 
@@ -49,9 +52,6 @@ class GetModulePathByGeneratorAction
         name:['.$moduleName.'] 
         generatorPath:['.$generatorPath.']
         relativePath:['.$relativePath.']');
-=======
-            throw new \RuntimeException('Module path not found: name:['.$moduleName.'] generatorPath:['.$generatorPath.'] relativePath:['.$relativePath.']', 0, $exception);
-        }
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     }
 }

@@ -16,9 +16,9 @@ class MorphManyAction
     {
         // Assert::isInstanceOf($rows = $relationDTO->rows, HasOne::class);
 <<<<<<< HEAD
-        dddx('wip');
-=======
         throw new \LogicException('Store\MorphManyAction not implemented');
->>>>>>> laraxot/dev
+=======
+        dddx('wip');
+>>>>>>> 77b1e2748 (first)
     }
 }

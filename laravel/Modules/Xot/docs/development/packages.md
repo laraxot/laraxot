@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Pacchetti e Risorse Consigliate"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, development]
 qmd: "Pacchetti e Risorse Consigliate"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Pacchetti e Risorse Consigliate
 
 ## Frontend

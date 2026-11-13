@@ -1,14 +1,14 @@
 ---
 <<<<<<< HEAD
-title: "Story — gap tooling quality: phpinsights assente, qmd embed backlog, graphify lento"
-=======
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
 issues: []
 discussions: []
 title: "Story: gap tooling quality: phpinsights assente, qmd embed backlog, graphify lento"
->>>>>>> laraxot/dev
+=======
+title: "Story — gap tooling quality: phpinsights assente, qmd embed backlog, graphify lento"
+>>>>>>> 77b1e2748 (first)
 type: story
 module: Xot
 epic: quality
@@ -18,10 +18,10 @@ track: quality/tooling
 qmd: "phpinsights install qmd embed backlog graphify update lento phpmd ruleset quality tooling gap"
 related:
 <<<<<<< HEAD
-  - ../../../../../bashscripts/docs/prompts/03-quality-gates.md
-=======
   - ../../../../../../bashscripts/docs/prompts/03-quality-gates.md
->>>>>>> laraxot/dev
+=======
+  - ../../../../../bashscripts/docs/prompts/03-quality-gates.md
+>>>>>>> 77b1e2748 (first)
   - ../../../docs/bmad/stories/quality-gates-03-exec-improve.story.md
 ---
 
@@ -43,10 +43,10 @@ Quality gates (prompt 03 v3.32.0) girano ma con buchi documentati:
 - [ ] Schedulare `qmd embed` in batch notturno o CI (fuori sessione agente)
 - [ ] Valutare `graphify update` scoped per modulo (`graphify update laravel/Modules/X`)
 <<<<<<< HEAD
-      invece di `.` — misurare tempi
-=======
       invece di `.`: misurare tempi
->>>>>>> laraxot/dev
+=======
+      invece di `.` — misurare tempi
+>>>>>>> 77b1e2748 (first)
 - [ ] Documentare policy Pest: suite smoke senza DB (unit pure) vs suite DB
 - [ ] Verificare `laravel/.php-cs-fixer.php` presente (peer segnala possibile
       `.php_cs` legacy)

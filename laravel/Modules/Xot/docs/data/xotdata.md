@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: XotData
 description: XotData
@@ -16,4 +14,6 @@ qmd: "xotdata xot"
 # XotData
 
 Sono le variabili di xra.php
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

@@ -31,10 +31,10 @@ return [
             'description' => 'General Settings',
         ],
 <<<<<<< HEAD
-        'label' => 'Pdf Engine Enum',
-=======
         'label' => 'Motore PDF',
->>>>>>> laraxot/dev
+=======
+        'label' => 'Pdf Engine Enum',
+>>>>>>> 77b1e2748 (first)
         'sort' => 1,
         'icon' => 'heroicon-o-collection',
     ],
@@ -58,9 +58,9 @@ return [
             'description' => '',
         ],
 <<<<<<< HEAD
-        'spipu' => ['label' => 'spipu', 'placeholder' => 'spipu', 'helper_text' => 'spipu', 'description' => 'spipu'],
 =======
->>>>>>> laraxot/dev
+        'spipu' => ['label' => 'spipu', 'placeholder' => 'spipu', 'helper_text' => 'spipu', 'description' => 'spipu'],
+>>>>>>> 77b1e2748 (first)
     ],
     'actions' => [
         'create' => [

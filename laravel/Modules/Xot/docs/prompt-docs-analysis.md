@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Analisi e Miglioramenti del Prompt docs.txt"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Analisi e Miglioramenti del Prompt docs.txt"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Analisi e Miglioramenti del Prompt docs.txt
 
 > **Collegamenti correlati**

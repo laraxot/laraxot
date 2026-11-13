@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "CHANGELOG"
 type: note
@@ -11,7 +10,8 @@ issues: []
 discussions: []
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Changelog
 
 All notable changes to `modules` will be documented in this file.

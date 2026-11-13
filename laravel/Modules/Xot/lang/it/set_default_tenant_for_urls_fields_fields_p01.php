@@ -3,6 +3,25 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+return [
+    'fields' => [
+        'email' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'password' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'remember' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'cap' => [
+            'tooltip' => '',
+        ],
+        'city' => [
+=======
 // Xot translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
 // Canon: Modules/Xot/docs/wiki — domain i18n only.
 // File: lang/it/set_default_tenant_for_urls_fields_fields_p01.php
@@ -55,26 +74,7 @@ return [
         ],
         'city' => [
             'description' => 'city',
-=======
-return [
-    'fields' => [
-        'email' => [
-            'helper_text' => '',
-            'tooltip' => '',
-        ],
-        'password' => [
-            'helper_text' => '',
-            'tooltip' => '',
-        ],
-        'remember' => [
-            'helper_text' => '',
-            'tooltip' => '',
-        ],
-        'cap' => [
-            'tooltip' => '',
-        ],
-        'city' => [
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             'label' => '',
             'tooltip' => '',
             'helper_text' => '',
@@ -271,12 +271,12 @@ return [
         ],
         'itemIsDefault' => [
 <<<<<<< HEAD
+=======
             'description' => 'itemIsDefault',
             'helper_text' => 'itemIsDefault',
             'placeholder' => 'itemIsDefault',
             'label' => 'itemIsDefault',
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
         ],
         'zeusData' => [
@@ -311,6 +311,25 @@ return [
         ],
         'user_id' => [
 <<<<<<< HEAD
+            'tooltip' => '',
+        ],
+        'name' => [
+            'tooltip' => '',
+        ],
+        'slug' => [
+            'tooltip' => '',
+        ],
+        'category_id' => [
+            'tooltip' => '',
+        ],
+        'description' => [
+            'tooltip' => '',
+        ],
+        'details' => [
+            'tooltip' => '',
+        ],
+        'is_active' => [
+=======
             'label' => 'user_id',
             'placeholder' => 'user_id',
             'helper_text' => 'user_id',
@@ -357,26 +376,7 @@ return [
             'placeholder' => 'is_active',
             'helper_text' => 'is_active',
             'description' => 'is_active',
-=======
-            'tooltip' => '',
-        ],
-        'name' => [
-            'tooltip' => '',
-        ],
-        'slug' => [
-            'tooltip' => '',
-        ],
-        'category_id' => [
-            'tooltip' => '',
-        ],
-        'description' => [
-            'tooltip' => '',
-        ],
-        'details' => [
-            'tooltip' => '',
-        ],
-        'is_active' => [
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
         ],
     ],

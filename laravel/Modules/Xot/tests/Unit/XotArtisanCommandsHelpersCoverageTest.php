@@ -6,26 +6,26 @@ namespace Modules\Xot\Tests\Unit;
 
 use Illuminate\Console\Command;
 <<<<<<< HEAD
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Process;
+use Mockery;
+=======
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Process;
 use Illuminate\Support\Facades\Request;
 use Mockery;
 use Modules\Xot\Actions\ArtisanAction;
-=======
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Process;
-use Mockery;
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Console\Commands\BuildTestSqliteCommand;
 use Modules\Xot\Console\Commands\ExecuteSqlFileCommand;
 use Modules\Xot\Console\Commands\GenerateFilamentResources;
 use Modules\Xot\Console\Commands\SearchTextInDbCommand;
 use Modules\Xot\Helpers\ResourceFormSchemaGenerator;
 <<<<<<< HEAD
-use Modules\Xot\Services\RouteService;
 =======
->>>>>>> laraxot/dev
+use Modules\Xot\Services\RouteService;
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\States\Transitions\XotBaseTransition;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -42,6 +42,8 @@ afterEach(function (): void {
 
 describe('Xot artisan commands helpers coverage', function (): void {
 <<<<<<< HEAD
+    test('console commands helpers ResourceFormSchema Transition', function (): void {
+=======
     test('ArtisanAction act branches con Artisan fake', function (): void {
         Http::fake();
         Process::fake();
@@ -80,9 +82,7 @@ describe('Xot artisan commands helpers coverage', function (): void {
     });
 
     test('console commands helpers RouteService ResourceFormSchema Transition', function (): void {
-=======
-    test('console commands helpers ResourceFormSchema Transition', function (): void {
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         Http::fake();
         Process::fake();
         $n = 0;
@@ -92,9 +92,9 @@ describe('Xot artisan commands helpers coverage', function (): void {
             GenerateFilamentResources::class,
             SearchTextInDbCommand::class,
 <<<<<<< HEAD
-            RouteService::class,
 =======
->>>>>>> laraxot/dev
+            RouteService::class,
+>>>>>>> 77b1e2748 (first)
             ResourceFormSchemaGenerator::class,
             XotBaseTransition::class,
         ] as $class) {

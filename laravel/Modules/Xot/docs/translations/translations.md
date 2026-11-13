@@ -1,4 +1,79 @@
 <<<<<<< HEAD
+---
+title: "Gestione delle Traduzioni"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, translations]
+qmd: "Gestione delle Traduzioni"
+---
+# Gestione delle Traduzioni
+
+## Configurazione Base
+
+### Lingue
+```php
+// config/app.php
+return [
+    'locale' => 'it',
+    'fallback_locale' => 'en',
+    'available_locales' => ['it', 'en', 'fr', 'de', 'es'],
+];
+```
+
+### Traduzioni
+```php
+// config/translations.php
+return [
+    'default' => 'it',
+    'fallback' => 'en',
+    'paths' => [
+        resource_path('lang'),
+        resource_path('lang/vendor'),
+    ],
+];
+```
+
+## Traduzioni Base
+
+### File di Traduzione
+```php
+// resources/lang/it/validation.php
+return [
+    'required' => 'Il campo :attribute è obbligatorio.',
+    'email' => 'Il campo :attribute deve essere un indirizzo email valido.',
+    'min' => [
+        'string' => 'Il campo :attribute deve contenere almeno :min caratteri.',
+    ],
+    'attributes' => [
+        'email' => 'indirizzo email',
+        'password' => 'password',
+    ],
+];
+
+// resources/lang/it/auth.php
+return [
+    'failed' => 'Credenziali non valide.',
+    'password' => 'La password non è corretta.',
+    'throttle' => 'Troppi tentativi di accesso. Riprova tra :seconds secondi.',
+];
+```
+
+### Utilizzo
+```php
+// Traduzione semplice
+__('auth.failed');
+trans('auth.failed');
+
+// Traduzione con parametri
+__('auth.throttle', ['seconds' => 60]);
+trans('auth.throttle', ['seconds' => 60]);
+
+// Traduzione con pluralizzazione
+trans_choice('messages.apples', 10, ['count' => 10]);
+=======
 ### Versione HEAD
 
 # Traduzioni
@@ -185,46 +260,10 @@ return [
                 // ...
             ],
         ],
-=======
----
-title: "Gestione delle Traduzioni"
-type: note
-status: unverified
-created: 2026-09-24
-updated: 2026-10-20
-module: Xot
-tags: [xot, translations]
-qmd: "Gestione delle Traduzioni"
----
-# Gestione delle Traduzioni
-
-## Configurazione Base
-
-### Lingue
-```php
-// config/app.php
-return [
-    'locale' => 'it',
-    'fallback_locale' => 'en',
-    'available_locales' => ['it', 'en', 'fr', 'de', 'es'],
-];
-```
-
-### Traduzioni
-```php
-// config/translations.php
-return [
-    'default' => 'it',
-    'fallback' => 'en',
-    'paths' => [
-        resource_path('lang'),
-        resource_path('lang/vendor'),
->>>>>>> laraxot/dev
     ],
 ];
 ```
 
-<<<<<<< HEAD
 ---
 
 ## Utilizzo
@@ -247,246 +286,12 @@ SelectFilter::make('stato_pratica_id')
 ```php
 trans('broker.resources.polizza_convenzione.label')
 __('broker.resources.polizza_convenzione.columns.numero_adesione')
-=======
-## Traduzioni Base
-
-### File di Traduzione
-```php
-// resources/lang/it/validation.php
-return [
-    'required' => 'Il campo :attribute è obbligatorio.',
-    'email' => 'Il campo :attribute deve essere un indirizzo email valido.',
-    'min' => [
-        'string' => 'Il campo :attribute deve contenere almeno :min caratteri.',
-    ],
-    'attributes' => [
-        'email' => 'indirizzo email',
-        'password' => 'password',
-    ],
-];
-
-// resources/lang/it/auth.php
-return [
-    'failed' => 'Credenziali non valide.',
-    'password' => 'La password non è corretta.',
-    'throttle' => 'Troppi tentativi di accesso. Riprova tra :seconds secondi.',
-];
-```
-
-### Utilizzo
-```php
-// Traduzione semplice
-__('auth.failed');
-trans('auth.failed');
-
-// Traduzione con parametri
-__('auth.throttle', ['seconds' => 60]);
-trans('auth.throttle', ['seconds' => 60]);
-
-// Traduzione con pluralizzazione
-trans_choice('messages.apples', 10, ['count' => 10]);
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ```
 
 ## Best Practices
 
 <<<<<<< HEAD
-### 1. Struttura Chiavi
-- Utilizzare nomi descrittivi
-- Mantenere una gerarchia logica
-- Evitare duplicazioni
-- Usare snake_case per le chiavi
-
-### 2. Organizzazione File
-- Un file per modulo
-- Separare le traduzioni per contesto
-- Mantenere coerenza tra lingue
-- Documentare struttura complessa
-
-### 3. Gestione Traduzioni
-- Non cancellare traduzioni esistenti
-- Aggiungere nuove traduzioni in modo incrementale
-- Mantenere le traduzioni aggiornate
-- Verificare completezza traduzioni
-
-### 4. Performance
-- Utilizzare cache delle traduzioni
-- Caricare solo le traduzioni necessarie
-- Evitare traduzioni dinamiche
-- Ottimizzare file di grandi dimensioni
-
-## LangService
-
-### Caratteristiche
-- Caricamento automatico traduzioni
-- Fallback su lingua predefinita
-- Cache delle traduzioni
-- Supporto per più lingue
-
-### Configurazione
-```php
-// config/xot.php
-return [
-    'translations' => [
-        'default_locale' => 'it',
-        'fallback_locale' => 'en',
-        'cache_translations' => true,
-        'cache_key' => 'translations',
-        'cache_duration' => 3600,
-    ],
-];
-```
-
-### Metodi Principali
-```php
-// Carica tutte le traduzioni per una lingua
-LangService::loadTranslations(string $locale): array
-
-// Ottiene una traduzione con fallback
-LangService::get(string $key, array $replace = []): string
-
-// Verifica esistenza traduzione
-LangService::has(string $key): bool
-
-// Aggiunge traduzioni runtime
-LangService::add(string $key, string $value): void
-```
-
-## Esempi Comuni
-
-### Resource
-```php
-// Definizione traduzioni
-'resources' => [
-    'polizza_convenzione' => [
-        'label' => 'Polizza in Convenzione',
-        'columns' => [
-            'numero_adesione' => 'Numero Adesione',
-        ],
-    ],
-],
-
-// Utilizzo in Resource
-TextColumn::make('numero_adesione')
-```
-
-### Form
-```php
-// Definizione traduzioni
-'forms' => [
-    'cliente' => [
-        'fields' => [
-            'nome' => 'Nome',
-            'cognome' => 'Cognome',
-        ],
-    ],
-],
-
-// Utilizzo in Form
-TextInput::make('nome')
-TextInput::make('cognome')
-```
-
-### Actions
-```php
-// Definizione traduzioni
-'actions' => [
-    'save' => 'Salva',
-    'cancel' => 'Annulla',
-    'delete' => [
-        'label' => 'Elimina',
-        'confirm' => 'Sei sicuro?',
-    ],
-],
-
-// Utilizzo in Actions
-Action::make('save')
-Action::make('delete')
-
-### Versione HEAD
-
-```
-
-## Nuove Best Practices
-
-### 1. Gestione Errori
-- Traduzioni per messaggi di errore
-- Codici errore standardizzati
-- Messaggi di errore descrittivi
-- Supporto multilingua per errori
-
-### 2. Validazione
-- Traduzioni per regole di validazione
-- Messaggi di validazione personalizzati
-- Supporto per regole custom
-- Coerenza nei messaggi
-
-### 3. SEO
-- Traduzioni per meta tag
-- Descrizioni multilingua
-- Keywords localizzate
-- URL localizzati
-
-### 4. Accessibilità
-- Testi alternativi per immagini
-- Descrizioni per elementi interattivi
-- Messaggi di stato
-- Supporto per screen reader
-
-### 5. Performance
-- Lazy loading traduzioni
-- Bundle per lingua
-- Preload traduzioni critiche
-- Ottimizzazione cache
-
-### 6. Testing
-- Verifica traduzioni mancanti
-- Test di coerenza
-- Validazione formati
-- Test di performance
-
-## Collegamenti tra versioni di translations.md
-* [translations.md](../../../chart/project_docs/translations.md)
-* [translations.md](../../../reporting/project_docs/translations.md)
-* [translations.md](../../../gdpr/project_docs/translations.md)
-* [translations.md](../../../notify/project_docs/translations.md)
-* [translations.md](../../../xot/project_docs/roadmap/lang/translations.md)
-* [translations.md](../../../xot/project_docs/translations.md)
-* [translations.md](../../../dental/project_docs/translations.md)
-* [translations.md](../../../user/project_docs/translations.md)
-* [translations.md](../../../ui/project_docs/translations.md)
-* [translations.md](../../../lang/project_docs/packages/translations.md)
-* [translations.md](../../../lang/project_docs/translations.md)
-* [translations.md](../../../job/project_docs/translations.md)
-* [translations.md](../../../media/project_docs/translations.md)
-* [translations.md](../../../tenant/project_docs/translations.md)
-* [translations.md](../../../activity/project_docs/translations.md)
-* [translations.md](../../../patient/project_docs/translations.md)
-* [translations.md](../../../cms/project_docs/translations.md)
-* [translations.md](../../../Chart/project_docs/translations.md)
-* [translations.md](../../../Reporting/project_docs/translations.md)
-* [translations.md](../../../Gdpr/project_docs/translations.md)
-* [translations.md](../../../Notify/project_docs/translations.md)
-* [translations.md](../../../Xot/project_docs/roadmap/lang/translations.md)
-* [translations.md](../../../Xot/project_docs/translations.md)
-* [translations.md](../../../Dental/project_docs/translations.md)
-* [translations.md](../../../User/project_docs/translations.md)
-* [translations.md](../../../UI/project_docs/translations.md)
-* [translations.md](../../../Lang/project_docs/packages/translations.md)
-* [translations.md](../../../Lang/project_docs/translations.md)
-* [translations.md](../../../Job/project_docs/translations.md)
-* [translations.md](../../../Media/project_docs/translations.md)
-* [translations.md](../../../Tenant/project_docs/translations.md)
-* [translations.md](../../../Activity/project_docs/translations.md)
-* [translations.md](../../../Patient/project_docs/translations.md)
-* [translations.md](../../../Cms/project_docs/translations.md)
-
-### Versione Incoming
-
-```
-
----
-=======
 ### 1. Struttura
 - Organizzare per dominio
 - Utilizzare chiavi descrittive
@@ -878,4 +683,200 @@ I permessi principali includono:
 - Eliminazione utenti
 - Impersonificazione utenti
 - Gestione ruoli
->>>>>>> laraxot/dev
+=======
+### 1. Struttura Chiavi
+- Utilizzare nomi descrittivi
+- Mantenere una gerarchia logica
+- Evitare duplicazioni
+- Usare snake_case per le chiavi
+
+### 2. Organizzazione File
+- Un file per modulo
+- Separare le traduzioni per contesto
+- Mantenere coerenza tra lingue
+- Documentare struttura complessa
+
+### 3. Gestione Traduzioni
+- Non cancellare traduzioni esistenti
+- Aggiungere nuove traduzioni in modo incrementale
+- Mantenere le traduzioni aggiornate
+- Verificare completezza traduzioni
+
+### 4. Performance
+- Utilizzare cache delle traduzioni
+- Caricare solo le traduzioni necessarie
+- Evitare traduzioni dinamiche
+- Ottimizzare file di grandi dimensioni
+
+## LangService
+
+### Caratteristiche
+- Caricamento automatico traduzioni
+- Fallback su lingua predefinita
+- Cache delle traduzioni
+- Supporto per più lingue
+
+### Configurazione
+```php
+// config/xot.php
+return [
+    'translations' => [
+        'default_locale' => 'it',
+        'fallback_locale' => 'en',
+        'cache_translations' => true,
+        'cache_key' => 'translations',
+        'cache_duration' => 3600,
+    ],
+];
+```
+
+### Metodi Principali
+```php
+// Carica tutte le traduzioni per una lingua
+LangService::loadTranslations(string $locale): array
+
+// Ottiene una traduzione con fallback
+LangService::get(string $key, array $replace = []): string
+
+// Verifica esistenza traduzione
+LangService::has(string $key): bool
+
+// Aggiunge traduzioni runtime
+LangService::add(string $key, string $value): void
+```
+
+## Esempi Comuni
+
+### Resource
+```php
+// Definizione traduzioni
+'resources' => [
+    'polizza_convenzione' => [
+        'label' => 'Polizza in Convenzione',
+        'columns' => [
+            'numero_adesione' => 'Numero Adesione',
+        ],
+    ],
+],
+
+// Utilizzo in Resource
+TextColumn::make('numero_adesione')
+```
+
+### Form
+```php
+// Definizione traduzioni
+'forms' => [
+    'cliente' => [
+        'fields' => [
+            'nome' => 'Nome',
+            'cognome' => 'Cognome',
+        ],
+    ],
+],
+
+// Utilizzo in Form
+TextInput::make('nome')
+TextInput::make('cognome')
+```
+
+### Actions
+```php
+// Definizione traduzioni
+'actions' => [
+    'save' => 'Salva',
+    'cancel' => 'Annulla',
+    'delete' => [
+        'label' => 'Elimina',
+        'confirm' => 'Sei sicuro?',
+    ],
+],
+
+// Utilizzo in Actions
+Action::make('save')
+Action::make('delete')
+
+### Versione HEAD
+
+```
+
+## Nuove Best Practices
+
+### 1. Gestione Errori
+- Traduzioni per messaggi di errore
+- Codici errore standardizzati
+- Messaggi di errore descrittivi
+- Supporto multilingua per errori
+
+### 2. Validazione
+- Traduzioni per regole di validazione
+- Messaggi di validazione personalizzati
+- Supporto per regole custom
+- Coerenza nei messaggi
+
+### 3. SEO
+- Traduzioni per meta tag
+- Descrizioni multilingua
+- Keywords localizzate
+- URL localizzati
+
+### 4. Accessibilità
+- Testi alternativi per immagini
+- Descrizioni per elementi interattivi
+- Messaggi di stato
+- Supporto per screen reader
+
+### 5. Performance
+- Lazy loading traduzioni
+- Bundle per lingua
+- Preload traduzioni critiche
+- Ottimizzazione cache
+
+### 6. Testing
+- Verifica traduzioni mancanti
+- Test di coerenza
+- Validazione formati
+- Test di performance
+
+## Collegamenti tra versioni di translations.md
+* [translations.md](../../../chart/project_docs/translations.md)
+* [translations.md](../../../reporting/project_docs/translations.md)
+* [translations.md](../../../gdpr/project_docs/translations.md)
+* [translations.md](../../../notify/project_docs/translations.md)
+* [translations.md](../../../xot/project_docs/roadmap/lang/translations.md)
+* [translations.md](../../../xot/project_docs/translations.md)
+* [translations.md](../../../dental/project_docs/translations.md)
+* [translations.md](../../../user/project_docs/translations.md)
+* [translations.md](../../../ui/project_docs/translations.md)
+* [translations.md](../../../lang/project_docs/packages/translations.md)
+* [translations.md](../../../lang/project_docs/translations.md)
+* [translations.md](../../../job/project_docs/translations.md)
+* [translations.md](../../../media/project_docs/translations.md)
+* [translations.md](../../../tenant/project_docs/translations.md)
+* [translations.md](../../../activity/project_docs/translations.md)
+* [translations.md](../../../patient/project_docs/translations.md)
+* [translations.md](../../../cms/project_docs/translations.md)
+* [translations.md](../../../Chart/project_docs/translations.md)
+* [translations.md](../../../Reporting/project_docs/translations.md)
+* [translations.md](../../../Gdpr/project_docs/translations.md)
+* [translations.md](../../../Notify/project_docs/translations.md)
+* [translations.md](../../../Xot/project_docs/roadmap/lang/translations.md)
+* [translations.md](../../../Xot/project_docs/translations.md)
+* [translations.md](../../../Dental/project_docs/translations.md)
+* [translations.md](../../../User/project_docs/translations.md)
+* [translations.md](../../../UI/project_docs/translations.md)
+* [translations.md](../../../Lang/project_docs/packages/translations.md)
+* [translations.md](../../../Lang/project_docs/translations.md)
+* [translations.md](../../../Job/project_docs/translations.md)
+* [translations.md](../../../Media/project_docs/translations.md)
+* [translations.md](../../../Tenant/project_docs/translations.md)
+* [translations.md](../../../Activity/project_docs/translations.md)
+* [translations.md](../../../Patient/project_docs/translations.md)
+* [translations.md](../../../Cms/project_docs/translations.md)
+
+### Versione Incoming
+
+```
+
+---
+>>>>>>> 77b1e2748 (first)

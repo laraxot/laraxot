@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot - agents.md"
 module: Xot
 bmad: true
 status: active
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Xot {{TYPE^}} LLM Wiki Agent Instructions
 
 > **Module/Theme:** Xot
@@ -32,11 +32,11 @@ You are the **Xot Wiki Maintainer**. Your job is to:
 ```yaml
 ---
 <<<<<<< HEAD
-=======
 qmd: "agents"
 issues: []
 discussions: []
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 title: "Page Title"
 type: concept|entity|source|comparison|decision|troubleshooting
 sources: ["raw/articles/filename.md"]
@@ -151,11 +151,11 @@ Related:
 ## Related Documentation
 
 <<<<<<< HEAD
-- [Project Wiki Integration](../../docs/wiki/README.md)
-- [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
-- [Module Documentation](../README.md)
-=======
 - [Project Wiki Integration](readme.md)
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
 - [Module Documentation](../README.md)
->>>>>>> laraxot/dev
+=======
+- [Project Wiki Integration](../../docs/wiki/README.md)
+- [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
+- [Module Documentation](../README.md)
+>>>>>>> 77b1e2748 (first)

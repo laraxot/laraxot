@@ -9,13 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Mockery;
 <<<<<<< HEAD
+use Modules\Xot\Database\Migrations\XotBaseMigration;
+=======
 use Modules\Xot\Actions\File\FileAction;
 use Modules\Xot\Actions\RouteDynAction;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Datas\XotData;
-=======
-use Modules\Xot\Database\Migrations\XotBaseMigration;
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Filament\Actions\XotBaseAction;
 use Modules\Xot\Filament\Builders\ColumnBuilder;
 use Modules\Xot\Filament\Builders\FilterBuilder;
@@ -59,10 +59,10 @@ final class ModuleExecuteCoverage
         self::testInvokePublicMethodsOnModels($appRoot, $moduleNamespace);
         self::testActionsStaticMethods($appRoot, $moduleNamespace);
 <<<<<<< HEAD
+=======
         self::testRouteDynActionStatics();
         self::testFileActionStatics();
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         self::testXotBaseMigrationHelpers();
         self::testAllMiddleware($appRoot, $moduleNamespace);
         self::testAllConsoleCommands($appRoot, $moduleNamespace);
@@ -333,6 +333,7 @@ final class ModuleExecuteCoverage
     }
 
 <<<<<<< HEAD
+=======
     public static function testRouteDynActionStatics(): void
     {
         $executed = 0;
@@ -412,8 +413,7 @@ final class ModuleExecuteCoverage
         Assert::assertGreaterThan(0, $executed);
     }
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     public static function testXotBaseMigrationHelpers(): void
     {
         $migration = new class extends XotBaseMigration
@@ -528,6 +528,8 @@ final class ModuleExecuteCoverage
     {
         $executed = 0;
 <<<<<<< HEAD
+        foreach (ModuleBusinessCoverage::discoverPhpClasses($appRoot, $moduleNamespace, 'Actions') as $class) {
+=======
         $skipClasses = [
             FileAction::class,
         ];
@@ -537,9 +539,7 @@ final class ModuleExecuteCoverage
                 continue;
             }
 
-=======
-        foreach (ModuleBusinessCoverage::discoverPhpClasses($appRoot, $moduleNamespace, 'Actions') as $class) {
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             $ref = new ReflectionClass($class);
             $sourceFile = $ref->getFileName();
             if (is_string($sourceFile) && is_file($sourceFile)) {
@@ -1096,10 +1096,10 @@ final class ModuleExecuteCoverage
     /**
      * @param  ReflectionClass<Model>  $ref
 <<<<<<< HEAD
-     * @return array<string, list<mixed>>
-=======
      * @return array<string, list<int>>
->>>>>>> laraxot/dev
+=======
+     * @return array<string, list<mixed>>
+>>>>>>> 77b1e2748 (first)
      */
     private static function discoverLocalScopes(ReflectionClass $ref): array
     {
@@ -1133,10 +1133,10 @@ final class ModuleExecuteCoverage
 
     /**
 <<<<<<< HEAD
-     * @return array<string, mixed>
-=======
      * @return array<string, int|string>
->>>>>>> laraxot/dev
+=======
+     * @return array<string, mixed>
+>>>>>>> 77b1e2748 (first)
      */
     private static function defaultModelAttributes(): array
     {

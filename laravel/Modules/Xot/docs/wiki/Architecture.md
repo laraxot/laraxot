@@ -1,11 +1,5 @@
 ---
 <<<<<<< HEAD
-module: Xot
-concept: Architecture
-last_updated: 2026-04-15
----
-
-=======
 title: "Architecture"
 type: note
 tags: [documentation]
@@ -23,7 +17,13 @@ superseded_by: architecture.md
 
 > Nota 2026-10-14 (docs-audit): Copia di wiki/architecture.md con le stesse affermazioni non verificate (getFormSchemaImplementation() assente, trait HasXotTable/HasExtra non usati da BaseModel, vincolo * presente in 23 requisiti su 37 di composer.json, nessun test arch()). Contenuto non riscritto, verificare prima di usarlo.
 
->>>>>>> laraxot/dev
+=======
+module: Xot
+concept: Architecture
+last_updated: 2026-04-15
+---
+
+>>>>>>> 77b1e2748 (first)
 # Xot Module Architecture
 
 The **Xot** module serves as the core foundation for the Laraxot ecosystem. It implements a multi-layered architectural pattern based on DRY, KISS, and SOLID principles.

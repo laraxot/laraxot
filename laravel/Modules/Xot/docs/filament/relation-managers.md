@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "XotBaseRelationManager per Laraxot PTVX"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, filament]
 qmd: "XotBaseRelationManager per Laraxot PTVX"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # XotBaseRelationManager per Laraxot PTVX
 
 ## Panoramica
@@ -44,14 +44,14 @@ class EsempioRelationManager extends XotBaseRelationManager
 {
     protected static string $relationship = 'nomeRelazione';
 <<<<<<< HEAD
-
+    
     protected static ?string $recordTitleAttribute = 'nome_attributo';
-
+    
 =======
-    
+
     protected static ?string $recordTitleAttribute = 'nome_attributo';
-    
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
     // Resto dell'implementazione...
 }
 ```
@@ -138,12 +138,12 @@ Il trait `HasXotTable` fornisce funzionalità aggiuntive per la gestione delle t
 - Gestione avanzata dei filtri e delle ricerche
 
 <<<<<<< HEAD
+=======
 **⚠️ IMPORTANTE**: `XotBaseRelationManager` **già include** `HasXotTable` (riga 32). **NON aggiungere** `use HasXotTable;` nelle classi che estendono `XotBaseRelationManager` - è **ridondante** e viola il principio DRY!
 
 Vedi [Regole Anti-Ridondanza](./redundancy-rules.md) per maggiori dettagli.
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ## Best Practices
 
 1. **Sempre estendere XotBaseRelationManager**:
@@ -151,10 +151,10 @@ Vedi [Regole Anti-Ridondanza](./redundancy-rules.md) per maggiori dettagli.
    // ✅ CORRETTO
    class MioRelationManager extends XotBaseRelationManager
 <<<<<<< HEAD
-
-=======
    
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
    // ❌ ERRATO
    class MioRelationManager extends RelationManager
    ```
@@ -169,10 +169,10 @@ Vedi [Regole Anti-Ridondanza](./redundancy-rules.md) per maggiori dettagli.
    TextColumn::make('nome')
        ->label(trans('nomemodulo::relation.fields.nome.label'))
 <<<<<<< HEAD
-
-=======
        
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
    // ❌ ERRATO
    TextColumn::make('nome')
        ->label('Nome')
@@ -227,12 +227,12 @@ Per garantire la compatibilità con PHPStan livello 9, assicurarsi di:
 ## Collegamenti alla Documentazione Correlata
 
 <<<<<<< HEAD
+=======
 - [Filament Resources](/laravel/modules/xot/docs/filament/resources.md)
 - [HasXotTable Trait](/laravel/modules/xot/docs/filament/xot_table.md)
 - [Regole di Traduzione](/laravel/modules/xot/docs/translation_rules.md)
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 - [Filament Resources](/laravel/Modules/Xot/docs/filament/resources.md)
 - [HasXotTable Trait](/laravel/Modules/Xot/docs/filament/xot_table.md)
 - [Regole di Traduzione](/laravel/Modules/Xot/docs/translation_rules.md)

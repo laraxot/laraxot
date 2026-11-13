@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Linee Guida per l'Implementazione di getInfolistSchema"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, filament]
 qmd: "Linee Guida per l'Implementazione di getInfolistSchema"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Linee Guida per l'Implementazione di getInfolistSchema
 
 ## Requisiti Fondamentali
@@ -81,10 +81,10 @@ protected function getInfolistSchema(): array
                     ]),
             ]),
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         'dettagli_account' => Section::make('Dettagli Account')
             ->schema([
                 // Altri componenti...
@@ -217,10 +217,10 @@ return [
 ## Conclusione
 
 <<<<<<< HEAD
-Seguendo queste linee guida, garantirai un'implementazione corretta e coerente del metodo `getInfolistSchema()`, facilitando la manutenzione del codice e prevenendo errori di tipo rilevati da PHPStan. Ricorda: usa **sempre** chiavi di tipo stringa per gli array restituiti.
-=======
 Seguendo queste linee guida, garantirai un'implementazione corretta e coerente del metodo `getInfolistSchema()`, facilitando la manutenzione del codice e prevenendo errori di tipo rilevati da PHPStan. Ricorda: usa **sempre** chiavi di tipo stringa per gli array restituiti. 
->>>>>>> laraxot/dev
+=======
+Seguendo queste linee guida, garantirai un'implementazione corretta e coerente del metodo `getInfolistSchema()`, facilitando la manutenzione del codice e prevenendo errori di tipo rilevati da PHPStan. Ricorda: usa **sempre** chiavi di tipo stringa per gli array restituiti.
+>>>>>>> 77b1e2748 (first)
 
 ## Non Utilizzare il Metodo ->label()
 
@@ -245,7 +245,7 @@ return [
 Il `LangServiceProvider` gestisce automaticamente le traduzioni delle label basandosi sulla struttura dei file di traduzione. Aggiungere manualmente le label compromette questo meccanismo automatico e crea incoerenze nel sistema.
 
 <<<<<<< HEAD
-Infatti, il servizio `AutoLabelAction` intercetta la creazione dei componenti e applica automaticamente le traduzioni corrette, rendendo superfluo (e dannoso) l'uso esplicito del metodo `->label()`.
-=======
 Infatti, il servizio `AutoLabelAction` intercetta la creazione dei componenti e applica automaticamente le traduzioni corrette, rendendo superfluo (e dannoso) l'uso esplicito del metodo `->label()`. 
->>>>>>> laraxot/dev
+=======
+Infatti, il servizio `AutoLabelAction` intercetta la creazione dei componenti e applica automaticamente le traduzioni corrette, rendendo superfluo (e dannoso) l'uso esplicito del metodo `->label()`.
+>>>>>>> 77b1e2748 (first)

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 return [
 <<<<<<< HEAD
-=======
     'back' => [
         'label' => 'Torna all\'elenco',
     ],
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     'export_xls' => 'Esporta Dati',
     'label' => 'Actions',
     'plural_label' => 'Actions (Plurale)',

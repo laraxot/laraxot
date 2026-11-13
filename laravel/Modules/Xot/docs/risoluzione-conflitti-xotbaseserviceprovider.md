@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Risoluzione Conflitti in XotBaseServiceProvider"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Risoluzione Conflitti in XotBaseServiceProvider"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Risoluzione Conflitti in XotBaseServiceProvider
 
 ## File Coinvolto
@@ -46,20 +46,20 @@ Due approcci in conflitto:
    ```php
    $configPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'config');
 <<<<<<< HEAD
-
-=======
    
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
    /*
    $this->publishes([
        $configPath => config_path($this->nameLower.'.php'),
    ], 'config');
    */
 <<<<<<< HEAD
-
-=======
    
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
    $this->mergeConfigFrom($configPath, $this->nameLower);
    ```
 
@@ -68,10 +68,10 @@ Due approcci in conflitto:
 1. **Approccio diretto** (version aurmich/dev):
    Non utilizza `GetModulePathByGeneratorAction` per componenti view
 <<<<<<< HEAD
-
-=======
    
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
 2. **Approccio con action** (version HEAD):
    ```php
    $componentsViewPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'component-view');
@@ -119,20 +119,20 @@ protected function registerConfig(): void
     try {
         $configPath = app(GetModulePathByGeneratorAction::class)->execute($this->name, 'config');
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         /*
         $this->publishes([
             $configPath => config_path($this->nameLower.'.php'),
         ], 'config');
         */
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $this->mergeConfigFrom($configPath, $this->nameLower);
     } catch (\Exception $e) {
         // Ignore missing configuration
@@ -172,14 +172,14 @@ public function execute(string $moduleName, string $generatorPath): string
     $res = module_path($moduleName, $relativePath);
     Assert::string($res);
 <<<<<<< HEAD
-
+    
     Assert::directory($res, 'The path '.$res.' is not a directory ['.$moduleName.']['.$generatorPath.']');
-
+    
 =======
-    
+
     Assert::directory($res, 'The path '.$res.' is not a directory ['.$moduleName.']['.$generatorPath.']');
-    
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
     return $res;
 }
 ```
@@ -197,7 +197,7 @@ Per maggiori dettagli sui vantaggi di questo approccio, consultare la documentaz
 ---
 
 <<<<<<< HEAD
-*Collegamento bidirezionale: vedi anche `/docs/providers/service_provider_best_practices.md`*
-=======
 *Collegamento bidirezionale: vedi anche `/docs/providers/service_provider_best_practices.md`* 
->>>>>>> laraxot/dev
+=======
+*Collegamento bidirezionale: vedi anche `/docs/providers/service_provider_best_practices.md`*
+>>>>>>> 77b1e2748 (first)

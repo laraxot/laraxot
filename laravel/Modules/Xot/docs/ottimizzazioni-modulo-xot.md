@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Ottimizzazioni Modulo Xot - DRY + KISS"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Ottimizzazioni Modulo Xot - DRY + KISS"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Ottimizzazioni Modulo Xot - DRY + KISS
 
 ## Panoramica
@@ -297,10 +297,10 @@ OBIETTIVO DRASTICO: ~50 file (-90%)
 ELIMINAZIONI IMMEDIATE:
 - Tutti file underscore variants (~150 file)
 <<<<<<< HEAD
-- Intera cartella _integration/ (~100 file)
-=======
 - Intera cartella _integration/ (~100 file)  
->>>>>>> laraxot/dev
+=======
+- Intera cartella _integration/ (~100 file)
+>>>>>>> 77b1e2748 (first)
 - Intera cartella archive/ (~200 file)
 - File obsoleti/duplicati concettuali (~100 file)
 ```
@@ -313,10 +313,10 @@ docs/
 ├── architecture/
 │   ├── system-overview.md
 <<<<<<< HEAD
-│   ├── module-structure.md
-=======
 │   ├── module-structure.md  
->>>>>>> laraxot/dev
+=======
+│   ├── module-structure.md
+>>>>>>> 77b1e2748 (first)
 │   └── design-patterns.md
 ├── development/
 │   ├── coding-standards.md

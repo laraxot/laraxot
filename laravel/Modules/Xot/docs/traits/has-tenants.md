@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Trait HasTenants"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, traits]
 qmd: "Trait HasTenants"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Trait HasTenants
 
 ## Descrizione
@@ -56,10 +56,10 @@ class User extends Authenticatable
 {
     use HasTenants;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // ... resto del codice
 }
 ```
@@ -69,7 +69,7 @@ class User extends Authenticatable
 - È necessario avere una tabella pivot `tenant_user` con le colonne `user_id`, `tenant_id`, `role` e `timestamps`
 - La tabella dei tenant deve avere le colonne `id`, `name`, `domain`, `settings`, `owner_id` e `timestamps`
 <<<<<<< HEAD
-- Il trait è integrato con Filament per la gestione dei tenant nel pannello amministrativo
-=======
 - Il trait è integrato con Filament per la gestione dei tenant nel pannello amministrativo 
->>>>>>> laraxot/dev
+=======
+- Il trait è integrato con Filament per la gestione dei tenant nel pannello amministrativo
+>>>>>>> 77b1e2748 (first)

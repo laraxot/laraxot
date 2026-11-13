@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Analisi Dettagliata dei Colli di Bottiglia - Modulo Xot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Analisi Dettagliata dei Colli di Bottiglia - Modulo Xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Analisi Dettagliata dei Colli di Bottiglia - Modulo Xot
 
 ## Panoramica
@@ -156,26 +156,26 @@ final class XotCacheService
     {
         $tags = ['xot'];
 <<<<<<< HEAD
-
+        
         if (str_contains($key, 'config')) {
             $tags[] = 'config';
         }
-
+        
         if (str_contains($key, 'menu')) {
             $tags[] = 'menu';
         }
-
+        
 =======
-        
+
         if (str_contains($key, 'config')) {
             $tags[] = 'config';
         }
-        
+
         if (str_contains($key, 'menu')) {
             $tags[] = 'menu';
         }
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         return $tags;
     }
 }
@@ -210,10 +210,10 @@ private function setupPerformanceMonitoring(): void
     $this->app->terminating(function () {
         $memoryUsage = memory_get_peak_usage(true) / 1024 / 1024;
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         if ($memoryUsage > 100) {
             Log::channel('xot_performance')
                 ->warning('Alto utilizzo memoria', [
@@ -311,22 +311,16 @@ trait HasXotOptimizations
 ### Versione HEAD
 
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)
 ## Collegamenti tra versioni di bottlenecks_detailed.md
 * [bottlenecks_detailed.md](../../../Xot/docs/bottlenecks_detailed.md)
 * [bottlenecks_detailed.md](../../../Job/docs/bottlenecks_detailed.md)
 * [bottlenecks_detailed.md](../../../Media/docs/bottlenecks_detailed.md)
 
 <<<<<<< HEAD
-### Versione Incoming
-
-```
-
----
-=======
 
 ### Versione Incoming
 
@@ -334,4 +328,10 @@ trait HasXotOptimizations
 
 ---
 
->>>>>>> laraxot/dev
+=======
+### Versione Incoming
+
+```
+
+---
+>>>>>>> 77b1e2748 (first)

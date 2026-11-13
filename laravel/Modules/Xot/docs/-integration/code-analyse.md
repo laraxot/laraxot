@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "code_analyse"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "code_analyse xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # code_analyse
 
 <!-- Contenuto migrato da _docs/code_analyse.txt -->

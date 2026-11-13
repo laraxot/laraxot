@@ -8,7 +8,6 @@ use Nwidart\Modules\Facades\Module;
 use Spatie\QueueableAction\QueueableAction;
 
 <<<<<<< HEAD
-=======
 /**
  * Percorso su disco di un asset.
  *
@@ -16,7 +15,8 @@ use Spatie\QueueableAction\QueueableAction;
  * - percorso pubblico (`/themes/Trattoria/images/logo.svg`, anche con `?v=...`) -> file sotto la document root,
  *   cosi' i logo configurati come URL (metatag.logo_header) funzionano anche nelle email che li allegano.
  */
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 class AssetPathAction
 {
     use QueueableAction;
@@ -24,8 +24,6 @@ class AssetPathAction
     public function execute(string $asset): string
     {
 <<<<<<< HEAD
-        [$ns, $file] = explode('::', $asset);
-=======
         if (! str_contains($asset, '::')) {
             // Toglie query string e frammento (`logo.svg?v=2#x`).
             $path = strtok($asset, '?#');
@@ -35,7 +33,9 @@ class AssetPathAction
         }
 
         [$ns, $file] = explode('::', $asset, 2);
->>>>>>> laraxot/dev
+=======
+        [$ns, $file] = explode('::', $asset);
+>>>>>>> 77b1e2748 (first)
         $module_path = Module::getModulePath($ns).'resources';
 
         return $module_path.'/'.$file;

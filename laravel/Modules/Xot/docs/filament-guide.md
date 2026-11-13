@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Guida a Filament"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Guida a Filament"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Guida a Filament
 
 ## Risorse Utili
@@ -30,7 +30,7 @@ qmd: "Guida a Filament"
 - [Filament Widgets](https://filamentphp.com/docs/3.x/widgets/installation)
 - [Filament Actions](https://filamentphp.com/docs/3.x/actions/installation)
 <<<<<<< HEAD
-- [Filament Resources](https://filamentphp.com/docs/3.x/resources/installation)
-=======
 - [Filament Resources](https://filamentphp.com/docs/3.x/resources/installation) 
->>>>>>> laraxot/dev
+=======
+- [Filament Resources](https://filamentphp.com/docs/3.x/resources/installation)
+>>>>>>> 77b1e2748 (first)

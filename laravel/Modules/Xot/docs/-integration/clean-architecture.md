@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "clean_architecture"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "clean_architecture xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # clean_architecture
 
 <!-- Contenuto migrato da _docs/clean_architecture.txt -->

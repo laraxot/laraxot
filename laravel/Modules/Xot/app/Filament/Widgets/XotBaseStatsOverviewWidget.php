@@ -17,7 +17,6 @@ abstract class XotBaseStatsOverviewWidget extends FilamentStatsOverviewWidget
 {
     use TransTrait;
 <<<<<<< HEAD
-=======
 
     /*
      * Filament aggiorna gli StatsOverview ogni 5 secondi di default: ogni scheda aperta riesegue i conteggi
@@ -26,5 +25,6 @@ abstract class XotBaseStatsOverviewWidget extends FilamentStatsOverviewWidget
      * "live" lo dichiara nella propria classe.
      */
     protected ?string $pollingInterval = null;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 }

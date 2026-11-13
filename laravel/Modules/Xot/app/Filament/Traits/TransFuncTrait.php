@@ -42,6 +42,10 @@ trait TransFuncTrait
 
     /**
      * @return string|array<int|string, mixed>|Translator|null
+<<<<<<< HEAD
+=======
+     * @phpstan-return string|array<int|string, mixed>|Translator|null
+>>>>>>> 77b1e2748 (first)
      */
     protected static function resolveTransFuncValue(string $key): string|array|Translator|null
     {
@@ -86,6 +90,10 @@ trait TransFuncTrait
 
     /**
      * @param  string|array<int|string, mixed>|Translator|null  $trans
+<<<<<<< HEAD
+=======
+     * @phpstan-param string|array<int|string, mixed>|Translator|null $trans
+>>>>>>> 77b1e2748 (first)
      */
     protected static function formatTransFuncResult(string $key, string|array|Translator|null $trans): string
     {

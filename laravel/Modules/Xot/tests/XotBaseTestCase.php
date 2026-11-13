@@ -14,19 +14,19 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;
 <<<<<<< HEAD
-=======
 use Mockery\Expectation;
 use Mockery\ExpectationDirector;
 use Mockery\LegacyMockInterface;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Mockery\MockInterface;
 use Modules\User\Database\Factories\TenantFactory;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\Tenant;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Actions\Testing\ResolveSharedSqlitePathAction;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Database\Factories\ModuleFactory;
 use Modules\Xot\Datas\XotData;
@@ -34,9 +34,9 @@ use Modules\Xot\Models\Module;
 use Modules\Xot\Providers\XotServiceProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 <<<<<<< HEAD
-use Safe\Exceptions\FilesystemException;
 =======
->>>>>>> laraxot/dev
+use Safe\Exceptions\FilesystemException;
+>>>>>>> 77b1e2748 (first)
 
 /**
  * Class XotBaseTestCase.
@@ -142,7 +142,6 @@ abstract class XotBaseTestCase extends BaseTestCase
     }
 
 <<<<<<< HEAD
-=======
     /**
      * Mockery 1.6 shouldReceive() always returns a CompositeExpectation, whatever its docblock says, so a
      * wrapper with a native `Expectation` return type throws TypeError at runtime. The director holds the real
@@ -160,7 +159,8 @@ abstract class XotBaseTestCase extends BaseTestCase
         return $expectation;
     }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     public function skipTest(string $message = ''): never
     {
         $this->markTestSkipped($message);
@@ -188,7 +188,6 @@ abstract class XotBaseTestCase extends BaseTestCase
     }
 
 <<<<<<< HEAD
-=======
     /**
      * Dati sacri: nessun TestCase modulo puo' lanciare migrate:fresh.
      * I figli che `use RefreshDatabase` lo riattivano — quel trait e' vietato
@@ -196,7 +195,8 @@ abstract class XotBaseTestCase extends BaseTestCase
      */
     protected function refreshDatabase(): void {}
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     protected function setUp(): void
     {
         parent::setUp();
@@ -301,6 +301,12 @@ abstract class XotBaseTestCase extends BaseTestCase
     public static function sharedSqlitePath(): string
     {
 <<<<<<< HEAD
+<<<<<<< .merge_file_7FZABj
+        return app(\Modules\Xot\Actions\Testing\ResolveSharedSqlitePathAction::class)->execute();
+=======
+        return app(ResolveSharedSqlitePathAction::class)->execute();
+>>>>>>> .merge_file_5MLM2g
+=======
         $configured = config('xot.testing.sqlite_file');
 
         if (is_string($configured) && $configured !== '') {
@@ -319,13 +325,7 @@ abstract class XotBaseTestCase extends BaseTestCase
         }
 
         return database_path('test_data.sqlite');
-=======
-<<<<<<< .merge_file_7FZABj
-        return app(\Modules\Xot\Actions\Testing\ResolveSharedSqlitePathAction::class)->execute();
-=======
-        return app(ResolveSharedSqlitePathAction::class)->execute();
->>>>>>> .merge_file_5MLM2g
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     }
 
     /**

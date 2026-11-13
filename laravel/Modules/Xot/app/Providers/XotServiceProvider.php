@@ -6,9 +6,9 @@ namespace Modules\Xot\Providers;
 
 use Composer\Autoload\ClassLoader;
 <<<<<<< HEAD
-=======
 use Filament\Actions\DeleteBulkAction;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Filament\Actions\Exports\Jobs\CreateXlsxFile;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
@@ -21,9 +21,9 @@ use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\BaseFilter;
 <<<<<<< HEAD
-=======
 use Illuminate\Database\Eloquent\Factories\Factory;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Illuminate\Database\Events\MigrationsEnded;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Event;
@@ -31,12 +31,6 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 <<<<<<< HEAD
-use Modules\Xot\Actions\Composer\RegisterRuntimePsr4NamespacesAction;
-use Modules\Xot\Actions\PaDesignColorsAction;
-use Modules\Xot\Console\Commands\GenerateFilamentResources;
-use Modules\Xot\Datas\XotData;
-use Modules\Xot\Exports\Jobs\XotCreateXlsxFile;
-=======
 use Illuminate\Support\Str;
 use Modules\Xot\Actions\Composer\RegisterRuntimePsr4NamespacesAction;
 use Modules\Xot\Actions\Factory\GetFactoryAction;
@@ -50,7 +44,13 @@ use Modules\Xot\Console\Commands\ThemeLinkCommand;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Exports\Jobs\XotCreateXlsxFile;
 use Modules\Xot\Filament\Traits\HasXotTable;
->>>>>>> laraxot/dev
+=======
+use Modules\Xot\Actions\Composer\RegisterRuntimePsr4NamespacesAction;
+use Modules\Xot\Actions\PaDesignColorsAction;
+use Modules\Xot\Console\Commands\GenerateFilamentResources;
+use Modules\Xot\Datas\XotData;
+use Modules\Xot\Exports\Jobs\XotCreateXlsxFile;
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\View\Composers\XotComposer;
 use Webmozart\Assert\Assert;
 
@@ -79,9 +79,9 @@ class XotServiceProvider extends XotBaseServiceProvider
         $this->registerFilamentMacros();
         $this->registerPaFilamentColors();
 <<<<<<< HEAD
-=======
         $this->registerBulkDeleteAuthorization();
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
         $this->registerXotLivewireComponents();
         $this->registerProviders();
     }
@@ -98,9 +98,9 @@ class XotServiceProvider extends XotBaseServiceProvider
         $this->registerCommands();
         $this->registerExportJobs();
 <<<<<<< HEAD
-=======
         $this->registerFactoryNameResolver();
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -115,7 +115,6 @@ class XotServiceProvider extends XotBaseServiceProvider
     }
 
 <<<<<<< HEAD
-=======
     /**
      * `Model::factory()` risolve la factory con `GetFactoryAction` (`Modules\<M>\Models\X` ->
      * `Modules\<M>\Database\Factories\XFactory`), ma `Factory::factoryForModel()` (relazioni magiche
@@ -142,7 +141,8 @@ class XotServiceProvider extends XotBaseServiceProvider
         });
     }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     public function registerProviders(): void
     {
         // $this->app->register(Filament\ModulesServiceProvider::class);
@@ -163,10 +163,10 @@ class XotServiceProvider extends XotBaseServiceProvider
         }
 
 <<<<<<< HEAD
-        (new RegisterRuntimePsr4NamespacesAction)->execute($loader);
-=======
         (new RegisterRuntimePsr4NamespacesAction())->execute($loader);
->>>>>>> laraxot/dev
+=======
+        (new RegisterRuntimePsr4NamespacesAction)->execute($loader);
+>>>>>>> 77b1e2748 (first)
     }
 
     public function registerTimezone(): void
@@ -195,7 +195,6 @@ class XotServiceProvider extends XotBaseServiceProvider
 
     /**
 <<<<<<< HEAD
-=======
      * Eliminazione di gruppo: Filament autorizza una volta sola con `deleteAny()`, che 35 policy del progetto non definiscono (audit DCP-181, A-1).
      * Un solo punto per tutti i siti, presenti e futuri: ogni record passa da `delete()` se il modello ha una policy.
      */
@@ -207,7 +206,8 @@ class XotServiceProvider extends XotBaseServiceProvider
     }
 
     /**
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * Palette PA su widget FO (login, wizard) senza panel attivo — allineata ai panel admin.
      */
     public function registerPaFilamentColors(): void
@@ -290,13 +290,13 @@ class XotServiceProvider extends XotBaseServiceProvider
             $this->commands([
                 GenerateFilamentResources::class,
 <<<<<<< HEAD
-=======
                 CheckAccessorTwinsCommand::class,
                 BuildTestSqliteCommand::class,
                 ThemeLinkCommand::class,
                 ModuleLinkCommand::class,
                 SymlinkPublishCommand::class,
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
                 // \Modules\Xot\Console\Commands\OptimizeFilamentMemoryCommand::class,
             ]);
         }

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Template Gestione Conflitti Git - package.json"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, templates]
 qmd: "Template Gestione Conflitti Git - package.json"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Template Gestione Conflitti Git - package.json
 
 ## File: bashscripts/package.json
@@ -54,7 +54,7 @@ qmd: "Template Gestione Conflitti Git - package.json"
 - [x] Verifica post-risoluzione
 - [x] Aggiornamento documentazione
 <<<<<<< HEAD
-- [x] Notifica team
-=======
 - [x] Notifica team 
->>>>>>> laraxot/dev
+=======
+- [x] Notifica team
+>>>>>>> 77b1e2748 (first)

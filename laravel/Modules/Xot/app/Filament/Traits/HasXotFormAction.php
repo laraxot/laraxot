@@ -38,6 +38,10 @@ trait HasXotFormAction
 
     /**
      * @param  array<string, mixed>  $parameters
+<<<<<<< HEAD
+=======
+     * @phpstan-param array<string, mixed> $parameters
+>>>>>>> 77b1e2748 (first)
      */
     public function getResourceUrl(?string $name = null, array $parameters = [], bool $isAbsolute = true, ?string $panel = null, ?Model $tenant = null, bool $shouldGuessMissingParameters = true): string
     {

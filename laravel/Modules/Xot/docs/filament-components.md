@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Componenti Filament - Guida di Riferimento"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Componenti Filament - Guida di Riferimento"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Componenti Filament - Guida di Riferimento
 
 ## FileUpload Component
@@ -104,10 +104,10 @@ DatePicker::make('field_name')
 2. Usa l'autocompletamento dell'IDE per verificare i metodi disponibili
 3. Mantieni consistenza nei nomi dei metodi in tutto il progetto
 <<<<<<< HEAD
-4. Aggiorna questa documentazione quando trovi nuovi metodi o pattern utili
-=======
 4. Aggiorna questa documentazione quando trovi nuovi metodi o pattern utili 
->>>>>>> laraxot/dev
+=======
+4. Aggiorna questa documentazione quando trovi nuovi metodi o pattern utili
+>>>>>>> 77b1e2748 (first)
 ## Collegamenti tra versioni di FILAMENT_COMPONENTS.md
 * [FILAMENT_COMPONENTS.md](../../../Xot/docs/FILAMENT_COMPONENTS.md)
 * [FILAMENT_COMPONENTS.md](../../../../Themes/One/docs/FILAMENT_COMPONENTS.md)
@@ -122,6 +122,6 @@ DatePicker::make('field_name')
 
 **Collegamento:** Vedi anche [FILAMENT_TABLE_COLUMNS.md](./FILAMENT_TABLE_COLUMNS.md)
 <<<<<<< HEAD
-=======
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)

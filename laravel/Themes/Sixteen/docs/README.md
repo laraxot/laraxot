@@ -62,7 +62,11 @@ Tema pubblico (front office) di Fixcity: resa Design Comuni su Laravel 13, PHP 8
 
 ## Come si costruisce (da `package.json`)
 
+<<<<<<< HEAD
 - `npm run build`: `npm run prepare:static-assets` (`resources/scripts/prepare-static-assets.mjs`) e poi `vite build` (uscita in `public/`, collegata a `public_html/themes/Sixteen`). Il package non espone uno script `copy`: il webroot è già collegato alla cartella `public/` del tema.
+=======
+- `npm run build`: `npm run prepare:static-assets` (`resources/scripts/prepare-static-assets.mjs`) e poi `vite build` (uscita in `public/`, collegata a `public_html/themes/Sixteen`). `build:with-webroot` e' `vite build` + `npm run copy`; la vecchia catena `vite build` + `copy` + `php artisan view:clear` e' ora `build1`.
+>>>>>>> f08c6884 (.)
 - `npm run dev`: server Vite. `npm test`: Jest. `npm run lint` e `npm run format`.
 - Smoke del browser: `test:map-picker-smoke`, `test:map-lit-smoke`, `test:map-lit-stress`, `test:auth-register-smoke`.
 - Riferimento esteso: le 14 guide Vite in [build/](build/) (nessun indice proprio; partire da [vite-configuration-guide.md](build/vite-configuration-guide.md)).

@@ -39,6 +39,10 @@ return [
         ],
     ],
 <<<<<<< HEAD
+    'title' => 'Artisan-Befehlsverwaltung',
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+=======
     'actions' => [
         'queue_restart' => [
             'label' => 'queue_restart',
@@ -70,9 +74,5 @@ return [
     'plural_label' => 'Missing Plural label',
     'fields' => [
     ],
-=======
-    'title' => 'Artisan-Befehlsverwaltung',
-    'label' => 'Missing Label',
-    'plural_label' => 'Missing Plural label',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ];

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "CoolModules Double Registration Fix"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "CoolModules Double Registration Fix"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # CoolModules Double Registration Fix
 
 ## 🚨 Problema Identificato
@@ -24,10 +24,10 @@ Il `CoolModulesServiceProvider` veniva registrato **due volte** causando duplica
 ### Doppia Registrazione del Service Provider
 
 <<<<<<< HEAD
-1. **Auto-discovery dal modulo Xot**:
-=======
 1. **Auto-discovery dal modulo Xot**: 
->>>>>>> laraxot/dev
+=======
+1. **Auto-discovery dal modulo Xot**:
+>>>>>>> 77b1e2748 (first)
    - Package definito in `Modules/Xot/composer.json`
    - Laravel auto-discovery registra automaticamente il service provider
 
@@ -77,10 +77,10 @@ class CoolModulesServiceProvider extends PackageServiceProvider
             $this->app->afterResolving('filament', function () {
                 // ... logica di registrazione hook ...
 <<<<<<< HEAD
-
-=======
                 
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
                 self::$hooksRegistered = true;
             });
         }
@@ -155,13 +155,13 @@ class CoolModulesServiceProvider extends PackageServiceProvider
 ---
 
 <<<<<<< HEAD
-**Risolto**: Gennaio 2025
-**Tipo**: Bug Fix - Duplicate Registration
-**Impatto**: UI/UX Improvement
-**Priorità**: Media (non bloccante ma fastidioso)
-=======
 **Risolto**: Gennaio 2025  
 **Tipo**: Bug Fix - Duplicate Registration  
 **Impatto**: UI/UX Improvement  
 **Priorità**: Media (non bloccante ma fastidioso) 
->>>>>>> laraxot/dev
+=======
+**Risolto**: Gennaio 2025
+**Tipo**: Bug Fix - Duplicate Registration
+**Impatto**: UI/UX Improvement
+**Priorità**: Media (non bloccante ma fastidioso)
+>>>>>>> 77b1e2748 (first)

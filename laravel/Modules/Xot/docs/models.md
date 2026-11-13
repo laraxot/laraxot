@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Modelli"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Modelli"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Modelli
 
 ## Configurazione Base
@@ -260,10 +260,10 @@ try {
         'error' => $e->getMessage(),
     ]);
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     throw $e;
 }
 ```
@@ -328,7 +328,7 @@ class Comment extends Model
     }
 }
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)

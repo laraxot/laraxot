@@ -5,14 +5,6 @@ declare(strict_types=1);
 return [
     'navigation' => [
 <<<<<<< HEAD
-        'name' => 'cache',
-        'plural' => 'cache',
-        'group' => [
-            'name' => 'Admin',
-        ],
-        'label' => 'cache.navigation',
-        'icon' => 'cache.navigation',
-=======
         'name' => 'Cache',
         'plural' => 'Cache',
         'group' => [
@@ -20,7 +12,15 @@ return [
         ],
         'label' => 'Cache',
         'icon' => 'heroicon-o-circle-stack',
->>>>>>> laraxot/dev
+=======
+        'name' => 'cache',
+        'plural' => 'cache',
+        'group' => [
+            'name' => 'Admin',
+        ],
+        'label' => 'cache.navigation',
+        'icon' => 'cache.navigation',
+>>>>>>> 77b1e2748 (first)
         'sort' => 90,
     ],
     'pages' => [
@@ -60,6 +60,9 @@ return [
             'description' => '',
         ],
 <<<<<<< HEAD
+        'value' => [
+            'helper_text' => '',
+=======
         'key' => [
             'label' => 'key',
             'placeholder' => 'key',
@@ -77,10 +80,7 @@ return [
             'placeholder' => 'expiration',
             'helper_text' => 'expiration',
             'description' => 'expiration',
-=======
-        'value' => [
-            'helper_text' => '',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
     'actions' => [
@@ -88,22 +88,44 @@ return [
             'label' => 'Crea Cache',
             'icon' => 'create',
 <<<<<<< HEAD
-            'tooltip' => 'create',
 =======
->>>>>>> laraxot/dev
+            'tooltip' => 'create',
+>>>>>>> 77b1e2748 (first)
         ],
         'edit' => [
             'label' => 'Modifica Cache',
             'icon' => 'edit',
 <<<<<<< HEAD
-            'tooltip' => 'edit',
 =======
->>>>>>> laraxot/dev
+            'tooltip' => 'edit',
+>>>>>>> 77b1e2748 (first)
         ],
         'delete' => [
             'label' => 'Elimina Cache',
             'icon' => 'delete',
 <<<<<<< HEAD
+        ],
+        'createAnother' => [
+            'icon' => 'createAnother',
+        ],
+        'save' => [
+            'icon' => 'save',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
+        'route:list' => [
+            'icon' => 'route:list',
+        ],
+        'icons:cache' => [
+            'icon' => 'icons:cache',
+        ],
+        'filament:cache-components' => [
+            'icon' => 'filament:cache-components',
+        ],
+        'filament:clear-cached-components' => [
+            'icon' => 'filament:clear-cached-components',
+=======
             'tooltip' => 'delete',
         ],
         'createAnother' => [
@@ -140,29 +162,7 @@ return [
             'label' => 'filament:clear-cached-components',
             'icon' => 'filament:clear-cached-components',
             'tooltip' => 'filament:clear-cached-components',
-=======
-        ],
-        'createAnother' => [
-            'icon' => 'createAnother',
-        ],
-        'save' => [
-            'icon' => 'save',
-        ],
-        'view' => [
-            'icon' => 'view',
-        ],
-        'route:list' => [
-            'icon' => 'route:list',
-        ],
-        'icons:cache' => [
-            'icon' => 'icons:cache',
-        ],
-        'filament:cache-components' => [
-            'icon' => 'filament:cache-components',
-        ],
-        'filament:clear-cached-components' => [
-            'icon' => 'filament:clear-cached-components',
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         ],
     ],
 ];

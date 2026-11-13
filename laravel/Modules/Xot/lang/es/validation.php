@@ -46,9 +46,9 @@ return [
     ],
     'mimes' => 'El fichero :attribute debe tener el formato/s :values.',
 <<<<<<< HEAD
-=======
     'mimetypes' => 'El fichero :attribute debe ser de tipo: :values.',
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     'min' => [
         'numeric' => 'El número :attribute debe ser mayor o igual a :min.',
         'file' => 'El fichero :attribute debe ser mayor o igual a :min kilobytes.',
@@ -135,10 +135,10 @@ return [
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
 <<<<<<< HEAD
+=======
     'fields' => [
     ],
     'actions' => [
     ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ];

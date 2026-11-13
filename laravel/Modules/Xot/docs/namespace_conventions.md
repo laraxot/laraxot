@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Convenzioni per i Namespace nei Moduli"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "convenzioni per i namespace nei moduli xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Convenzioni per i Namespace nei Moduli
 
 ## Struttura Base

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Analisi Ottimizzazioni Modulo Xot - DRY + KISS"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Analisi Ottimizzazioni Modulo Xot - DRY + KISS"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Analisi Ottimizzazioni Modulo Xot - DRY + KISS
 
 ## 🎯 Obiettivo Analisi
@@ -32,10 +32,10 @@ class ModuleServiceProvider extends XotBaseServiceProvider
 {
     public string $name = 'ModuleName';
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public function boot(): void
     {
         parent::boot();
@@ -62,10 +62,10 @@ abstract class XotBaseServiceProvider extends ServiceProvider
         $modulePath = dirname($reflection->getFileName(), 3);
         $moduleNamespace = $this->extractModuleNamespace($reflection);
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         // Auto-load resources basato su convenzioni
         $this->autoLoadViews($modulePath, $moduleNamespace);
         $this->autoLoadTranslations($modulePath, $moduleNamespace);
@@ -98,10 +98,10 @@ protected function getHeading(): ?string
 }
 
 <<<<<<< HEAD
-protected function getDescription(): ?string
-=======
 protected function getDescription(): ?string  
->>>>>>> laraxot/dev
+=======
+protected function getDescription(): ?string
+>>>>>>> 77b1e2748 (first)
 {
     return __($this->getTranslationKey() . '.description');
 }
@@ -122,10 +122,10 @@ trait HasWidgetConfigurationTrait
     use HasTranslationPatternsTrait;
     use HasCachingPatternsTrait;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     protected function configureWidget(): void
     {
         $this->heading = $this->getTranslatedHeading();
@@ -133,10 +133,10 @@ trait HasWidgetConfigurationTrait
         $this->configureCaching();
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     protected function getWidgetTranslationPrefix(): string
     {
         return 'widgets.' . Str::snake(class_basename($this));
@@ -163,20 +163,20 @@ abstract class XotBaseFormComponent extends Field
     use HasValidationPatternsTrait;
     use HasTranslationPatternsTrait;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     protected function setUp(): void
     {
         parent::setUp();
         $this->autoConfigureField();
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     protected function autoConfigureField(): void
     {
         $this->label($this->getAutoLabel())
@@ -206,19 +206,19 @@ class QueryAnalysisService
         // Logica centralizzata per analisi query duplicate
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public function identifySlowQueries(array $queries, int $threshold = 100): array
     {
         // Logica per identificazione query lente
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public function generateOptimizationSuggestions(array $analysis): array
     {
         // Generazione automatica suggerimenti ottimizzazione
@@ -246,27 +246,27 @@ abstract class XotBaseMigration extends Migration
             return;
         }
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         Schema::create($tableName, function (Blueprint $table) use ($schemaCallback) {
             $table->id();
             $schemaCallback($table);
             $table->timestamps();
 <<<<<<< HEAD
-
-            // Standard indexes
-            $this->addStandardIndexes($table);
-        });
-
-=======
             
             // Standard indexes
             $this->addStandardIndexes($table);
         });
         
->>>>>>> laraxot/dev
+=======
+
+            // Standard indexes
+            $this->addStandardIndexes($table);
+        });
+
+>>>>>>> 77b1e2748 (first)
         $this->addTableComment($tableName, $this->getTableComment());
     }
 }
@@ -325,16 +325,16 @@ abstract class XotBaseMigration extends Migration
 
 ## 🔗 Collegamenti Correlati
 <<<<<<< HEAD
-- [XotBaseServiceProvider.php](Modules/Xot/app/Providers/XotBaseServiceProvider.php)
-- [XotBaseWidget.php](Modules/Xot/app/Filament/Widgets/XotBaseWidget.php)
-- [XotBaseFormComponent.php](Modules/Xot/app/Filament/Forms/Components/XotBaseFormComponent.php)
-- [AnalyzePerformanceCommand.php](Modules/Xot/app/Console/Commands/AnalyzePerformanceCommand.php)
-=======
 - [XotBaseServiceProvider.php](/var/www/html/_bases/base_quaeris_fila3_mono/laravel/Modules/Xot/app/Providers/XotBaseServiceProvider.php)
 - [XotBaseWidget.php](/var/www/html/_bases/base_quaeris_fila3_mono/laravel/Modules/Xot/app/Filament/Widgets/XotBaseWidget.php)
 - [XotBaseFormComponent.php](/var/www/html/_bases/base_quaeris_fila3_mono/laravel/Modules/Xot/app/Filament/Forms/Components/XotBaseFormComponent.php)
 - [AnalyzePerformanceCommand.php](/var/www/html/_bases/base_quaeris_fila3_mono/laravel/Modules/Xot/app/Console/Commands/AnalyzePerformanceCommand.php)
->>>>>>> laraxot/dev
+=======
+- [XotBaseServiceProvider.php](Modules/Xot/app/Providers/XotBaseServiceProvider.php)
+- [XotBaseWidget.php](Modules/Xot/app/Filament/Widgets/XotBaseWidget.php)
+- [XotBaseFormComponent.php](Modules/Xot/app/Filament/Forms/Components/XotBaseFormComponent.php)
+- [AnalyzePerformanceCommand.php](Modules/Xot/app/Console/Commands/AnalyzePerformanceCommand.php)
+>>>>>>> 77b1e2748 (first)
 
 ---
 *Analisi completata con principi DRY + KISS | Data: $(date)*

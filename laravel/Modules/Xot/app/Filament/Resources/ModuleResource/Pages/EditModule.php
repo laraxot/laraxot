@@ -74,7 +74,69 @@ class EditModule extends XotBaseEditRecord
     }
 
     /**
+<<<<<<< HEAD
      * @param  array<array-key, mixed>  $config
+=======
+<<<<<<< .merge_file_17mZ2B
+     * @param  array<array-key, mixed>  $config
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param array<array-key, mixed> $config
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     *                                        <<<<<<< HEAD
+     *                                        <<<<<<< .merge_file_bxS1IY.
+     * @param array<array-key, mixed> $config
+     *                                        =======
+     *                                        <<<<<<< .merge_file_avv74w.
+     * @param array<array-key, mixed> $config
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     * @param array<array-key, mixed> $config
+     *                                        =======
+     * @param array<mixed, mixed>     $config
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * >>>>>>> .merge_file_1D6iYr
+     *
+     * >>>>>>> .merge_file_GjSVoo
+     *
+     * =======
+     * <<<<<<< HEAD.
+     * @param array<array-key, mixed> $config
+     *                                        =======
+     *                                        <<<<<<< .merge_file_R22bCP
+     *                                        =======
+     *                                        <<<<<<< HEAD
+     *                                        <<<<<<< .merge_file_bxS1IY.
+     *                                        >>>>>>> .merge_file_gDEies.
+     * @param array<array-key, mixed> $config
+     *
+     * <<<<<<< .merge_file_R22bCP
+     * =======
+     * >>>>>>> laraxot/dev
+     * =======
+     * @param array<array-key, mixed> $config
+     *                                        >>>>>>> 9e11d472 (Fix merge conflicts in PHPDoc comments across multiple action classes and contracts, ensuring consistent parameter annotations and removing redundant lines.)
+     *
+     * <<<<<<< HEAD
+     * =======
+     * >>>>>>> .merge_file_gDEies
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * =======
+     * @param array<array-key, mixed> $config
+     *                                        >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_LNNhuP
+>>>>>>> 77b1e2748 (first)
      * @return array<string, mixed>
      */
     private function normalizeConfigArray(array $config): array

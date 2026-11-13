@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Convenzioni di Traduzione"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, conventions]
 qmd: "Convenzioni di Traduzione"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Convenzioni di Traduzione
 
 ## Struttura Base

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "GetViewByClassAction"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, actions]
 qmd: "GetViewByClassAction"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # GetViewByClassAction
 
 ## Panoramica
@@ -76,7 +76,7 @@ $view = $action->execute(YourPage::class);
 - [Documentazione XotBasePage](../filament/pages/xot-base-page.md)
 - [Best Practices Views](../../best-practices/views.md)
 <<<<<<< HEAD
-- [Guida Namespace](../../namespace-guide.md)
-=======
 - [Guida Namespace](../../namespace-guide.md) 
->>>>>>> laraxot/dev
+=======
+- [Guida Namespace](../../namespace-guide.md)
+>>>>>>> 77b1e2748 (first)

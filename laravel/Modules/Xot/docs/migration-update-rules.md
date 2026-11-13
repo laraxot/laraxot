@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regole generali per aggiornamento colonne e gestione errori schema"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Regole generali per aggiornamento colonne e gestione errori schema"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole generali per aggiornamento colonne e gestione errori schema
 
 ## Collegamento bidirezionale

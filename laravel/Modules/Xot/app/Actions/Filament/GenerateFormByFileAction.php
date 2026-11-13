@@ -10,18 +10,18 @@ namespace Modules\Xot\Actions\Filament;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 <<<<<<< HEAD
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 =======
->>>>>>> laraxot/dev
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
+>>>>>>> 77b1e2748 (first)
 use Spatie\QueueableAction\QueueableAction;
 use Symfony\Component\Finder\SplFileInfo as File;
 use Webmozart\Assert\Assert;
 
 <<<<<<< HEAD
+=======
 use function Safe\file;
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 class GenerateFormByFileAction
 {
     use QueueableAction;
@@ -30,11 +30,11 @@ class GenerateFormByFileAction
      * Genera un form Filament basato su un file di risorsa.
      *
 <<<<<<< HEAD
-=======
      * WIP: la generazione dello schema non e' implementata, oggi si conta soltanto. Per riscrivere il corpo di
      * form() usare GetMethodBodyAction come fa GenerateTableColumnsByFileAction per table().
      *
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * @param  File  $file  Il file della risorsa Filament
      * @return int Numero di input aggiunti
      */
@@ -89,6 +89,7 @@ class GenerateFormByFileAction
         }
 
 <<<<<<< HEAD
+=======
         $form_method = $reflection_class->getMethod('form');
         $start_line = $form_method->getStartLine() - 1;
         // it's actually - 1, otherwise you wont get the function() block
@@ -103,8 +104,7 @@ class GenerateFormByFileAction
             $body .= SafeStringCastAction::cast($line);
         }
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
         // Otteniamo i metodi della classe risorsa
         $resourceMethods = get_class_methods($resourceInstance);
 

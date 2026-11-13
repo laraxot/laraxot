@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "FileUpload Components in XotBaseResource"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "FileUpload Components in XotBaseResource"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # FileUpload Components in XotBaseResource
 
 ## Overview
@@ -34,10 +34,10 @@ class Patient extends BaseModel
     public static array $attachments = [
         'health_card',
 <<<<<<< HEAD
-        'identity_document',
-=======
         'identity_document', 
->>>>>>> laraxot/dev
+=======
+        'identity_document',
+>>>>>>> 77b1e2748 (first)
         'isee_certificate',
         'pregnancy_certificate'
     ];
@@ -54,10 +54,10 @@ public static function getAttachmentsSchema(bool $multiple=true): array
     $uuid = Str::uuid()->toString();
     $schema = [];
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     foreach ($attachments as $attachment) {
         $schema[] = Forms\Components\FileUpload::make($attachment)
             ->disk('local')
@@ -71,20 +71,20 @@ public static function getAttachmentsSchema(bool $multiple=true): array
             ->afterStateUpdated(function ($state, Forms\Set $set) use ($attachment, $multiple) {
                 if (!$state) return;
 <<<<<<< HEAD
-
-=======
                 
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
                 // Normalizza sempre come array per consistenza
                 $files = is_array($state) ? $state : [$state];
                 $sessionId = session()->getId();
                 $sessionDir = "session-uploads/{$sessionId}";
                 $sessionFiles = [];
 <<<<<<< HEAD
-
-=======
                 
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
                 foreach ($files as $file) {
                     if ($file instanceof \Livewire\Features\SupportFileUploads\TemporaryUploadedFile) {
                         // Nuovo file caricato
@@ -97,20 +97,20 @@ public static function getAttachmentsSchema(bool $multiple=true): array
                     }
                 }
 <<<<<<< HEAD
-
-=======
                 
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
                 // Imposta il valore corretto nel form
                 $finalValue = $multiple ? $sessionFiles : ($sessionFiles[0] ?? null);
                 $set($attachment, $finalValue);
             });
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     return $schema;
 }
 ```
@@ -173,10 +173,10 @@ if ($file instanceof \Livewire\Features\SupportFileUploads\TemporaryUploadedFile
 ->afterStateUpdated(function ($state, Forms\Set $set) use ($attachment, $multiple) {
     if (!$state) return;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     try {
         // Logica di gestione file
     } catch (\Exception $e) {
@@ -239,16 +239,16 @@ class FileUploadTest extends TestCase
     {
         $file = UploadedFile::fake()->create('test.pdf', 1024);
 <<<<<<< HEAD
-
-        // Test logic
-    }
-
-=======
         
         // Test logic
     }
     
->>>>>>> laraxot/dev
+=======
+
+        // Test logic
+    }
+
+>>>>>>> 77b1e2748 (first)
     /** @test */
     public function it_handles_multiple_files_upload()
     {
@@ -257,25 +257,25 @@ class FileUploadTest extends TestCase
             UploadedFile::fake()->create('test2.pdf', 1024)
         ];
 <<<<<<< HEAD
-
-        // Test logic
-    }
-
-=======
         
         // Test logic
     }
     
->>>>>>> laraxot/dev
+=======
+
+        // Test logic
+    }
+
+>>>>>>> 77b1e2748 (first)
     /** @test */
     public function it_validates_file_types()
     {
         $invalidFile = UploadedFile::fake()->create('test.exe', 1024);
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         // Test validation
     }
 }
@@ -292,10 +292,10 @@ class RegistrationWidgetTest extends TestCase
         // Test file persistence across steps
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     /** @test */
     public function it_handles_session_expiry()
     {
@@ -332,14 +332,14 @@ class RegistrationWidgetTest extends TestCase
 ```php
 ->acceptedFileTypes([
 <<<<<<< HEAD
-    'application/pdf',
-    'image/jpeg',
-    'image/png',
-=======
     'application/pdf', 
     'image/jpeg', 
     'image/png', 
->>>>>>> laraxot/dev
+=======
+    'application/pdf',
+    'image/jpeg',
+    'image/png',
+>>>>>>> 77b1e2748 (first)
     'image/jpg'
 ])
 ```
@@ -417,7 +417,7 @@ class CleanupTemporaryFilesJob extends Job
 - [Modules/User/docs/registration-widget.md](../../User/docs/registration-widget.md)
 
 <<<<<<< HEAD
-*Ultimo aggiornamento: 2025-01-03*
-=======
 *Ultimo aggiornamento: 2025-01-03* 
->>>>>>> laraxot/dev
+=======
+*Ultimo aggiornamento: 2025-01-03*
+>>>>>>> 77b1e2748 (first)

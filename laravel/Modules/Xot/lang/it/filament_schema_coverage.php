@@ -5,6 +5,13 @@ declare(strict_types=1);
 return [
     'fields' => [
 <<<<<<< HEAD
+        'value' => [
+            'helper_text' => '',
+        ],
+        'anno' => [
+            'helper_text' => '',
+        ],
+=======
         'id' => ['label' => 'id', 'placeholder' => 'id', 'helper_text' => 'id', 'description' => 'id'],
         'name' => ['label' => 'name', 'placeholder' => 'name', 'helper_text' => 'name', 'description' => 'name'],
         'field_name' => ['label' => 'field_name', 'placeholder' => 'field_name', 'helper_text' => 'field_name', 'description' => 'field_name'],
@@ -62,13 +69,6 @@ return [
         'rep' => ['label' => 'rep', 'heading' => 'rep'],
         'periodo' => ['label' => 'periodo', 'heading' => 'periodo'],
         'assenze' => ['label' => 'assenze', 'heading' => 'assenze'],
-=======
-        'value' => [
-            'helper_text' => '',
-        ],
-        'anno' => [
-            'helper_text' => '',
-        ],
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     ],
 ];

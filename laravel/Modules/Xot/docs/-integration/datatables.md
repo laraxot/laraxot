@@ -9,10 +9,10 @@ converted_from: DataTables.txt
 created: 2026-08-24
 updated: 2026-08-24
 <<<<<<< HEAD
-=======
 status: draft
 qmd: "datatables xot"
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 Server-Side Rendering of DataTables in Laravel

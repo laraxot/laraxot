@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "__tips"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "__tips xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # __tips
 
 <!-- Contenuto migrato da _docs/__tips.txt -->

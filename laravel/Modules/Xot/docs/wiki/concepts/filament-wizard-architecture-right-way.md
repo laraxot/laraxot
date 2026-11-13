@@ -1,10 +1,10 @@
 ---
 <<<<<<< HEAD
-=======
 qmd: "filament wizard architecture right way"
 issues: []
 discussions: []
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 title: "Filament Wizard Architecture - The Right Way"
 type: concept
 sources: ["https://github.com/filamentphp/filament/blob/5.x/packages/schemas/src/Components/Wizard.php"]
@@ -15,11 +15,11 @@ tags: [filament, wizard, architecture, haswizard, zen]
 related:
   - concepts/filament-haswizard-traits-analysis.md
 <<<<<<< HEAD
-  - ../../../../docs/wiki/concepts/filament-admin-pub-theme-wizard-boundary.md
-=======
   - ../../../../../../docs/wiki/concepts/filament-admin-pub-theme-wizard-boundary.md
 status: draft
->>>>>>> laraxot/dev
+=======
+  - ../../../../docs/wiki/concepts/filament-admin-pub-theme-wizard-boundary.md
+>>>>>>> 77b1e2748 (first)
 ---
 
 # Filament Wizard Architecture - The Right Way
@@ -27,10 +27,10 @@ status: draft
 ## The Problem with XotBaseWizardWidget (545 lines)
 
 <<<<<<< HEAD
-**User feedback:** "Hai reinventato la ruota" — you reinvented the wheel.
-=======
 **User feedback:** "Hai reinventato la ruota": you reinvented the wheel.
->>>>>>> laraxot/dev
+=======
+**User feedback:** "Hai reinventato la ruota" — you reinvented the wheel.
+>>>>>>> 77b1e2748 (first)
 
 `XotBaseWizardWidget` reimplements:
 - `resolveInitialStepFromQuery()` → Already in `Wizard::getStartStep()`

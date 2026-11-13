@@ -1,6 +1,14 @@
 ---
 title: "Regola Generale: Metodo getTableColumns per Filament Table (Xot)"
 <<<<<<< HEAD
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Regola Generale: Metodo getTableColumns per Filament Table (Xot)"
+=======
 module: "Xot"
 type: concept
 tags: [filament, table, columns]
@@ -9,15 +17,7 @@ updated: 2026-07-14
 qmd: "filament table columns"
 related:
   - "./eloquent-magic-properties-rule.md"
-=======
-type: note
-status: unverified
-created: 2026-09-24
-updated: 2026-10-20
-module: Xot
-tags: [xot, docs]
-qmd: "Regola Generale: Metodo getTableColumns per Filament Table (Xot)"
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ---
 # Regola Generale: Metodo getTableColumns per Filament Table (Xot)
 
@@ -50,10 +50,10 @@ public function getTableColumns(): array
 
 ## Collegamenti
 <<<<<<< HEAD
-- [Esempio e Applicazione - Modulo User](filament_table_columns.md)
-=======
 - [Esempio e Applicazione - Modulo User](../../User/docs/filament/filament_table_columns.md)
->>>>>>> laraxot/dev
+=======
+- [Esempio e Applicazione - Modulo User](filament_table_columns.md)
+>>>>>>> 77b1e2748 (first)
 - [Regola Globale - Root Docs](../../../../docs/filament-table-columns.md)
 
 ## Nota storica: correzione XotBaseManageRelatedRecords

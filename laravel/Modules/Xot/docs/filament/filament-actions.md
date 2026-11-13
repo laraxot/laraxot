@@ -1,12 +1,5 @@
 ---
 <<<<<<< HEAD
-module: theme
-topic: filament-actions
-canonical: ../../../../Themes/docs/shared-components/filament-actions.md
----
-
-See canonical documentation: ../../../../Themes/docs/shared-components/filament-actions.md
-=======
 title: "Azioni Filament"
 type: note
 created: 2026-09-24
@@ -124,4 +117,11 @@ Le traduzioni per le azioni devono essere definite nel file di traduzione del mo
 5. Mantenere le azioni semplici e focalizzate
 6. Utilizzare azioni in coda per operazioni pesanti
 7. Fornire feedback appropriati all'utente 
->>>>>>> laraxot/dev
+=======
+module: theme
+topic: filament-actions
+canonical: ../../../../Themes/docs/shared-components/filament-actions.md
+---
+
+See canonical documentation: ../../../../Themes/docs/shared-components/filament-actions.md
+>>>>>>> 77b1e2748 (first)

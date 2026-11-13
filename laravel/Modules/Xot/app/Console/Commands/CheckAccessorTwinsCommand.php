@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 <<<<<<< HEAD
-
-=======
 use Symfony\Component\Finder\Finder;
 
 use function Safe\file_get_contents;
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
 use function Safe\glob;
 use function Safe\preg_match;
 
@@ -40,12 +40,12 @@ class CheckAccessorTwinsCommand extends Command
     {
         $module = $this->option('module');
 <<<<<<< HEAD
-        $pattern = base_path('Modules/'.(is_string($module) && $module !== '' ? $module : '*').'/app/Models/*.php');
-=======
         $moduleName = is_string($module) && $module !== '' ? $module : null;
         $pattern = base_path('Modules/'.($moduleName ?? '*').'/app/Models/*.php');
         $files = $this->modelFiles($moduleName);
->>>>>>> laraxot/dev
+=======
+        $pattern = base_path('Modules/'.(is_string($module) && $module !== '' ? $module : '*').'/app/Models/*.php');
+>>>>>>> 77b1e2748 (first)
 
         if ($this->option('orphans') === true) {
             return $this->reportOrphanTwins($pattern);
@@ -57,14 +57,14 @@ class CheckAccessorTwinsCommand extends Command
         $analyzed = 0;
 
 <<<<<<< HEAD
+        foreach ($files as $file) {
+=======
         foreach (glob($pattern) as $file) {
             if (! is_string($file)) {
                 continue;
             }
 
-=======
-        foreach ($files as $file) {
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             $class = $this->classFromPath($file);
             if ($class === null) {
                 continue;
@@ -85,11 +85,6 @@ class CheckAccessorTwinsCommand extends Command
                 }
 
 <<<<<<< HEAD
-                $accessors++;
-
-                if (! $reflection->hasMethod($twin)) {
-                    $missing[$class][] = $method->getName();
-=======
                 // Esclude metodi di dominio ereditati da trait/framework vendor
                 // (es. HasFactory::getUseFactoryAttribute, HasTranslations::getTranslatableColumnsFromAttribute).
                 if ($this->methodFromVendor($reflection, $method)) {
@@ -140,7 +135,12 @@ class CheckAccessorTwinsCommand extends Command
 
                 if (! $this->delegatesToTwin($method, $twin)) {
                     $missing[$class][] = $method->getName().'() non delega a $this->'.$twin.'()';
->>>>>>> laraxot/dev
+=======
+                $accessors++;
+
+                if (! $reflection->hasMethod($twin)) {
+                    $missing[$class][] = $method->getName();
+>>>>>>> 77b1e2748 (first)
                 }
             }
         }
@@ -150,12 +150,12 @@ class CheckAccessorTwinsCommand extends Command
         foreach ($missing as $class => $methods) {
             $this->line($class);
 <<<<<<< HEAD
-            foreach (array_unique($methods) as $method) {
-                $this->line('  - '.$method.'()  =>  manca '.$this->twinLabel($method).'()');
-=======
             foreach (array_unique($methods) as $finding) {
                 $this->line('  - '.$finding);
->>>>>>> laraxot/dev
+=======
+            foreach (array_unique($methods) as $method) {
+                $this->line('  - '.$method.'()  =>  manca '.$this->twinLabel($method).'()');
+>>>>>>> 77b1e2748 (first)
             }
         }
 
@@ -285,10 +285,6 @@ class CheckAccessorTwinsCommand extends Command
     }
 
 <<<<<<< HEAD
-    private function twinLabel(string $accessor): string
-    {
-        return (string) substr($accessor, 0, -\strlen('Attribute'));
-=======
     /**
      * Verifica se un metodo `get{X}Attribute()` origina da un trait/vendor class
      * (es. HasFactory::getUseFactoryAttribute, HasTranslations::getTranslatableColumnsFromAttribute).
@@ -397,7 +393,11 @@ class CheckAccessorTwinsCommand extends Command
         }
 
         return false;
->>>>>>> laraxot/dev
+=======
+    private function twinLabel(string $accessor): string
+    {
+        return (string) substr($accessor, 0, -\strlen('Attribute'));
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -406,15 +406,6 @@ class CheckAccessorTwinsCommand extends Command
     private function classFromPath(string $file): ?string
     {
 <<<<<<< HEAD
-        $relative = str_replace(base_path('Modules').\DIRECTORY_SEPARATOR, '', $file);
-        $parts = explode(\DIRECTORY_SEPARATOR, $relative);
-
-        if (\count($parts) < 2) {
-            return null;
-        }
-
-        $class = 'Modules\\'.$parts[0].'\\Models\\'.basename($file, '.php');
-=======
         $modulesRoot = base_path('Modules').\DIRECTORY_SEPARATOR;
         if (! str_starts_with($file, $modulesRoot)) {
             return null;
@@ -433,7 +424,16 @@ class CheckAccessorTwinsCommand extends Command
             $class .= '\\'.implode('\\', $subnamespace);
         }
         $class .= '\\'.basename($file, '.php');
->>>>>>> laraxot/dev
+=======
+        $relative = str_replace(base_path('Modules').\DIRECTORY_SEPARATOR, '', $file);
+        $parts = explode(\DIRECTORY_SEPARATOR, $relative);
+
+        if (\count($parts) < 2) {
+            return null;
+        }
+
+        $class = 'Modules\\'.$parts[0].'\\Models\\'.basename($file, '.php');
+>>>>>>> 77b1e2748 (first)
 
         if (! class_exists($class) || ! is_subclass_of($class, Model::class)) {
             return null;

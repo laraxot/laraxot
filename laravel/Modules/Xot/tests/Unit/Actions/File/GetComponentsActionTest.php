@@ -9,9 +9,9 @@ use Modules\Xot\Actions\File\GetComponentsAction;
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 <<<<<<< HEAD
-use Spatie\LaravelData\DataCollection;
 =======
->>>>>>> laraxot/dev
+use Spatie\LaravelData\DataCollection;
+>>>>>>> 77b1e2748 (first)
 
 uses(TestCase::class);
 
@@ -32,11 +32,11 @@ class TestComp {}";
     $result = $action->execute($tempDir, 'My/Test/Comps', 'prefix-');
 
 <<<<<<< HEAD
+    Assert::assertCount(1, $result);
+=======
     Assert::assertInstanceOf(DataCollection::class, $result);
     Assert::assertSame(1, $result->count());
-=======
-    Assert::assertCount(1, $result);
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     $first = $result->toCollection()->first();
     Assert::assertNotNull($first);
     Assert::assertSame('prefix-test-comp', $first->name);
@@ -44,10 +44,10 @@ class TestComp {}";
     Assert::assertTrue(File::exists($jsonCache));
     $result2 = $action->execute($tempDir, 'My/Test/Comps', 'prefix-');
 <<<<<<< HEAD
-    Assert::assertSame(1, $result2->count());
-=======
     Assert::assertCount(1, $result2);
->>>>>>> laraxot/dev
+=======
+    Assert::assertSame(1, $result2->count());
+>>>>>>> 77b1e2748 (first)
     File::deleteDirectory($tempDir);
 });
 
@@ -66,9 +66,9 @@ it('skips abstract classes', function (): void {
     $result = $action->execute($tempDir, 'My/Test/Comps', 'prefix-');
 
 <<<<<<< HEAD
-    Assert::assertSame(0, $result->count());
-=======
     Assert::assertCount(0, $result);
->>>>>>> laraxot/dev
+=======
+    Assert::assertSame(0, $result->count());
+>>>>>>> 77b1e2748 (first)
     File::deleteDirectory($tempDir);
 });

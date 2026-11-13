@@ -8,12 +8,12 @@ return [
     'widgets' => 'Widgets',
     'navigation' => [
 <<<<<<< HEAD
-        'name' => 'dashboard',
-        'plural' => 'dashboard',
-=======
         'name' => 'Dashboard',
         'plural' => 'Dashboard',
->>>>>>> laraxot/dev
+=======
+        'name' => 'dashboard',
+        'plural' => 'dashboard',
+>>>>>>> 77b1e2748 (first)
         'group' => [
             'name' => '',
         ],

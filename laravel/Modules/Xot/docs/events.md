@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Eventi"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Eventi"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Eventi
 
 ## Configurazione Base
@@ -250,7 +250,7 @@ class SendShipmentNotification implements ShouldQueue
     }
 }
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)

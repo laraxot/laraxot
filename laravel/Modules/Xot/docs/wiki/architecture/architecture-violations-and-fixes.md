@@ -1,19 +1,19 @@
 ---
 <<<<<<< HEAD
-=======
 qmd: "architecture violations and fixes"
 issues: []
 discussions: []
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 title: "Architecture Violations And Fixes"
 type: reference
 tags: [wiki, no-frontmatter-fix]
 created: 2026-08-24
 updated: 2026-08-24
 <<<<<<< HEAD
-=======
 status: draft
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 # Violazioni Architetturali e Correzioni - Pattern XotData
@@ -351,12 +351,12 @@ grep -r "function.*\\\Modules\\\.*\\\Models\\\User" --include="*.php" ./
 ### **Esempi Implementazione**
 - [CreateUserAction](../app/Actions/Socialite/CreateUserAction.php)
 <<<<<<< HEAD
-- [XotBaseMigration](../app/Database/Migrations/XotBaseMigration.php)
-- [IsTenant Trait](../../User/app/Models/Traits/IsTenant.php)
-=======
 - [XotBaseMigration](../../../app/Database/Migrations/XotBaseMigration.php)
 - [IsTenant Trait](../../../../User/app/Models/Traits/IsTenant.php)
->>>>>>> laraxot/dev
+=======
+- [XotBaseMigration](../app/Database/Migrations/XotBaseMigration.php)
+- [IsTenant Trait](../../User/app/Models/Traits/IsTenant.php)
+>>>>>>> 77b1e2748 (first)
 
 ### **Documentazione Moduli**
 - [Cms Architecture](../../Cms/project_docs/architecture-xotdata-pattern.md)

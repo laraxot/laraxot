@@ -38,6 +38,7 @@
                 <p>{{ __('pub_theme::auth_components.verify.check_email.message') }}</p>
 
                 <p class="mt-3">
+<<<<<<< HEAD
                     {{ __('pub_theme::auth_components.verify.not_received.message') }} <a wire:click="resend" class="text-indigo-700 cursor-pointer hover:text-indigo-600 focus:outline-none focus:underline transition ease-in-out duration-150" wire:loading.attr="disabled">
                         <span class="inline-flex items-center gap-2">
                             <span wire:loading>
@@ -49,6 +50,9 @@
                             <span wire:loading.remove>{{ __('pub_theme::auth_components.verify.resend.label') }}</span>
                         </span>
                     </a>.
+=======
+                    {{ __('pub_theme::auth_components.verify.not_received.message') }} <a wire:click="resend" class="text-indigo-700 cursor-pointer hover:text-indigo-600 focus:outline-none focus:underline transition ease-in-out duration-150">{{ __('pub_theme::auth_components.verify.resend.label') }}</a>.
+>>>>>>> f08c6884 (.)
                 </p>
             </div>
         </div>

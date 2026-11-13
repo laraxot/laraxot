@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "livewire_components"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "livewire_components xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # livewire_components
 
 <!-- Contenuto migrato da _docs/livewire_components.txt -->

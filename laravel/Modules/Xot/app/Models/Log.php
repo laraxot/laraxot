@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\File;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Database\Factories\LogFactory;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Models\Traits\LogMutators;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Sushi\Sushi;
 
 // --- services
@@ -41,9 +41,9 @@ use Sushi\Sushi;
 class Log extends BaseModel
 {
 <<<<<<< HEAD
-=======
     use LogMutators;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     use Sushi;
 
     protected $fillable = ['id', 'name', 'size'];
@@ -70,13 +70,13 @@ class Log extends BaseModel
     }
 
 <<<<<<< HEAD
+=======
     public function getFileContentAttribute(?string $value): ?string
     {
         return File::get(storage_path('logs/'.$this->id.'.log'));
     }
 
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     /** @return array<string, string> */
     #[\Override]
     protected function casts(): array

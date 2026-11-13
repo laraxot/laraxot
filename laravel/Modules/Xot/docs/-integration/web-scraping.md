@@ -9,10 +9,10 @@ converted_from: web_scraping.txt
 created: 2026-08-24
 updated: 2026-08-24
 <<<<<<< HEAD
-=======
 status: draft
 qmd: "web scraping xot"
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ---
 
 Introduction to Web Scraping With Laravel

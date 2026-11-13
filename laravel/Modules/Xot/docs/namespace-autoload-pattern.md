@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Pattern di Autoload nei Moduli Laravel"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Pattern di Autoload nei Moduli Laravel"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Pattern di Autoload nei Moduli Laravel
 
 ## Il Pattern Corretto
@@ -96,9 +96,9 @@ namespace Modules\ModuleName\App\Console\Commands;
 ## Collegamenti
 
 <<<<<<< HEAD
-- [Convenzioni di Namespace](../Xot/docs/namespace_conventions.md)
-- [Struttura Moduli](../Xot/docs/module_structure.md)
-=======
 - [Convenzioni di Namespace](/var/www/html/base_saluteora/laravel/Modules/Xot/docs/namespace_conventions.md)
 - [Struttura Moduli](/var/www/html/base_saluteora/laravel/Modules/Xot/docs/module_structure.md)
->>>>>>> laraxot/dev
+=======
+- [Convenzioni di Namespace](../Xot/docs/namespace_conventions.md)
+- [Struttura Moduli](../Xot/docs/module_structure.md)
+>>>>>>> 77b1e2748 (first)

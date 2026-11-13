@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Spatie QueueableActions"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, development]
 qmd: "Spatie QueueableActions"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Spatie QueueableActions
 
 ## Introduzione
@@ -101,19 +101,19 @@ class UpdateUserAction
     {
         $user = User::findOrFail($userData->id);
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         $user->update([
             'name' => $userData->name,
             'email' => $userData->email,
         ]);
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         return $user;
     }
 }
@@ -145,10 +145,10 @@ class RegisterUserAction
         $user = $this->createUserAction->execute($userData);
         $this->sendWelcomeEmailAction->execute($user);
 <<<<<<< HEAD
-
-=======
         
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
         return $user;
     }
 }
@@ -170,16 +170,16 @@ class CreateUserActionTest extends TestCase
             email: 'test@example.com',
         );
 <<<<<<< HEAD
-
+        
         // Act
         $user = $action->execute($userData);
-
+        
 =======
-        
+
         // Act
         $user = $action->execute($userData);
-        
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
         // Assert
         $this->assertInstanceOf(User::class, $user);
         $this->assertEquals('Test User', $user->name);
@@ -224,7 +224,7 @@ class CreateUserActionTest extends TestCase
 ## Conclusioni
 
 <<<<<<< HEAD
-L'utilizzo di Spatie QueueableActions rappresenta un approccio moderno e efficace alla gestione della logica di business in Laravel. Questo pattern promuove la scrittura di codice pulito, testabile e manutenibile, allineandosi perfettamente con i principi di Domain-Driven Design e SOLID.
-=======
 L'utilizzo di Spatie QueueableActions rappresenta un approccio moderno e efficace alla gestione della logica di business in Laravel. Questo pattern promuove la scrittura di codice pulito, testabile e manutenibile, allineandosi perfettamente con i principi di Domain-Driven Design e SOLID. 
->>>>>>> laraxot/dev
+=======
+L'utilizzo di Spatie QueueableActions rappresenta un approccio moderno e efficace alla gestione della logica di business in Laravel. Questo pattern promuove la scrittura di codice pulito, testabile e manutenibile, allineandosi perfettamente con i principi di Domain-Driven Design e SOLID.
+>>>>>>> 77b1e2748 (first)

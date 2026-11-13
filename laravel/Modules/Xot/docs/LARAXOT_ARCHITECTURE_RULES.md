@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Laraxot Architecture Rules - Xot Module"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Laraxot Architecture Rules - Xot Module"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Laraxot Architecture Rules - Xot Module
 
 ## 🎯 Regole Fondamentali Laraxot
@@ -61,14 +61,14 @@ class MyResource extends XotBaseResource
     protected static ?string $model = MyModel::class;
     
 <<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             // Form components
@@ -172,19 +172,19 @@ class MyAction
 declare(strict_types=1);
 
 <<<<<<< HEAD
-namespace Modules\healthcare_app\Filament\Resources\SurveyPdfResource\Resources\QuestionCharts\Pages;
-=======
 namespace Modules\Quaeris\Filament\Resources\SurveyPdfResource\Resources\QuestionCharts\Pages;
->>>>>>> laraxot/dev
+=======
+namespace Modules\healthcare_app\Filament\Resources\SurveyPdfResource\Resources\QuestionCharts\Pages;
+>>>>>>> 77b1e2748 (first)
 
 use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 <<<<<<< HEAD
-use Modules\healthcare_app\Filament\Resources\SurveyPdfResource\Resources\QuestionCharts\QuestionChartResource;
-=======
 use Modules\Quaeris\Filament\Resources\SurveyPdfResource\Resources\QuestionCharts\QuestionChartResource;
->>>>>>> laraxot/dev
+=======
+use Modules\healthcare_app\Filament\Resources\SurveyPdfResource\Resources\QuestionCharts\QuestionChartResource;
+>>>>>>> 77b1e2748 (first)
 
 class ViewQuestionChart extends XotBaseViewRecord
 {
@@ -227,10 +227,10 @@ class ViewQuestionChart extends XotBaseViewRecord
 declare(strict_types=1);
 
 <<<<<<< HEAD
-namespace Modules\healthcare_app\Filament\Widgets;
-=======
 namespace Modules\Quaeris\Filament\Widgets;
->>>>>>> laraxot/dev
+=======
+namespace Modules\healthcare_app\Filament\Widgets;
+>>>>>>> 77b1e2748 (first)
 
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
@@ -287,30 +287,30 @@ class QuestionChartFilterWidget extends XotBaseWidget
 declare(strict_types=1);
 
 <<<<<<< HEAD
-namespace Modules\healthcare_app\Filament\Resources;
-
-use Modules\Xot\Filament\Resources\XotBaseResource;
-use Modules\healthcare_app\Models\QuestionChart;
-=======
 namespace Modules\Quaeris\Filament\Resources;
 
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use Modules\Quaeris\Models\QuestionChart;
->>>>>>> laraxot/dev
+=======
+namespace Modules\healthcare_app\Filament\Resources;
+
+use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\healthcare_app\Models\QuestionChart;
+>>>>>>> 77b1e2748 (first)
 
 class QuestionChartResource extends XotBaseResource
 {
     protected static ?string $model = QuestionChart::class;
 
 <<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             // Form components

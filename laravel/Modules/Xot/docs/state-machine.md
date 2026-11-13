@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regole Generali sulle State Machine"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Regole Generali sulle State Machine"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole Generali sulle State Machine
 
 ## Transizioni
@@ -23,9 +23,9 @@ qmd: "Regole Generali sulle State Machine"
 
 ## Collegamenti
 <<<<<<< HEAD
-- [../../<nome progetto>/docs/state-machine.md](../../<nome progetto>/docs/state-machine.md)
-=======
 - [../../saluteora/docs/state-machine.md](../../saluteora/docs/state-machine.md)
->>>>>>> laraxot/dev
+=======
+- [../../<nome progetto>/docs/state-machine.md](../../<nome progetto>/docs/state-machine.md)
+>>>>>>> 77b1e2748 (first)
 - [../../.windsurf/rules/filament-state-transitions.mdc](../../.windsurf/rules/filament-state-transitions.mdc)
 - [../../.cursor/rules/filament-state-transitions.mdc](../../.cursor/rules/filament-state-transitions.mdc)

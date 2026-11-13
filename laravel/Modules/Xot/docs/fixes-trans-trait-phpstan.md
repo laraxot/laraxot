@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Fix PHPStan TransTrait - Tipizzazione Array Completa"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Fix PHPStan TransTrait - Tipizzazione Array Completa"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Fix PHPStan TransTrait - Tipizzazione Array Completa
 
 ## Data: 2025-01-27
@@ -21,10 +21,10 @@ Errori PHPStan livello 9 nel trait `TransTrait`:
 
 1. **Parametri array non tipizzati**: `array $params` senza specificazione del tipo di valore
 <<<<<<< HEAD
-2. **Variabili array non tipizzate**: `$res` senza specificazione del tipo di valore
-=======
 2. **Variabili array non tipizzate**: `$res` senza specificazione del tipo di valore  
->>>>>>> laraxot/dev
+=======
+2. **Variabili array non tipizzate**: `$res` senza specificazione del tipo di valore
+>>>>>>> 77b1e2748 (first)
 3. **Tipo di ritorno inconsistente**: `transClass()` poteva restituire `array|string` invece di `string`
 
 ## Errori Specifici
@@ -125,10 +125,10 @@ protected function transChoice(string $key, int $number, array $replace = []): s
 ## Collegamenti
 
 <<<<<<< HEAD
-- [TransTrait.php](../../app/Filament/Traits/TransTrait.php)
-=======
 - [TransTrait.php](../app/Filament/Traits/TransTrait.php)
->>>>>>> laraxot/dev
+=======
+- [TransTrait.php](../../app/Filament/Traits/TransTrait.php)
+>>>>>>> 77b1e2748 (first)
 - [PHPStan Fixes](./phpstan-fixes.md)
 - [Translation System](./translation-system.md)
 

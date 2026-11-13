@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "CONTRIBUTING"
 type: note
@@ -11,7 +10,8 @@ issues: []
 discussions: []
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Contributing to Xot
 
 Xot is the foundation of Laraxot. Changes here propagate to 47 other modules. Contribution workflow and quality gates.
@@ -247,7 +247,6 @@ Before submitting PR, self-review:
 ---
 
 <<<<<<< HEAD
-=======
 title: "CONTRIBUTING"
 type: note
 tags: [documentation]
@@ -256,5 +255,6 @@ updated: 2026-09-26
 qmd: "CONTRIBUTING"
 issues: []
 discussions: []
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 **Remember:** Xot changes affect 47 modules. Code quality and backward compatibility are non-negotiable.

@@ -25,13 +25,6 @@ describe('GetAllModelsByModuleNameAction Integration', function () {
 
     it('returns models from existing modules', function () {
 <<<<<<< HEAD
-        $models = app(GetAllModelsByModuleNameAction::class)->execute('Chart');
-
-        $hasChartModel = false;
-        foreach ($models as $modelClass) {
-            if (str_contains($modelClass, 'Chart\\Models\\Chart')) {
-                $hasChartModel = true;
-=======
         // Il modulo Chart non esiste in questo repo: si usa un modulo presente con app/Models.
         $models = app(GetAllModelsByModuleNameAction::class)->execute('User');
 
@@ -39,16 +32,23 @@ describe('GetAllModelsByModuleNameAction Integration', function () {
         foreach ($models as $modelClass) {
             if (str_contains($modelClass, 'User\\Models\\User')) {
                 $hasUserModel = true;
->>>>>>> laraxot/dev
+=======
+        $models = app(GetAllModelsByModuleNameAction::class)->execute('Chart');
+
+        $hasChartModel = false;
+        foreach ($models as $modelClass) {
+            if (str_contains($modelClass, 'Chart\\Models\\Chart')) {
+                $hasChartModel = true;
+>>>>>>> 77b1e2748 (first)
                 break;
             }
         }
 
 <<<<<<< HEAD
-        Assert::assertTrue($hasChartModel);
-=======
         Assert::assertTrue($hasUserModel);
->>>>>>> laraxot/dev
+=======
+        Assert::assertTrue($hasChartModel);
+>>>>>>> 77b1e2748 (first)
     });
 
     it('handles User module models correctly', function () {
@@ -118,17 +118,17 @@ describe('GetAllModelsByModuleNameAction Integration', function () {
 
     it('handles namespace construction correctly', function () {
 <<<<<<< HEAD
-        $models = app(GetAllModelsByModuleNameAction::class)->execute('Chart');
-
-        foreach ($models as $modelClass) {
-            Assert::assertStringContainsString('Modules\\Chart\\', $modelClass);
-=======
         $models = app(GetAllModelsByModuleNameAction::class)->execute('User');
 
         Assert::assertNotEmpty($models);
         foreach ($models as $modelClass) {
             Assert::assertStringContainsString('Modules\\User\\', $modelClass);
->>>>>>> laraxot/dev
+=======
+        $models = app(GetAllModelsByModuleNameAction::class)->execute('Chart');
+
+        foreach ($models as $modelClass) {
+            Assert::assertStringContainsString('Modules\\Chart\\', $modelClass);
+>>>>>>> 77b1e2748 (first)
         }
     });
 

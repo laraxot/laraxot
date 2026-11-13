@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "send_sms"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "send_sms xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # send_sms
 
 <!-- Contenuto migrato da _docs/send_sms.txt -->

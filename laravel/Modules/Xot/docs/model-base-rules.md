@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regole di Estensione dei Modelli Laraxot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Regole di Estensione dei Modelli Laraxot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole di Estensione dei Modelli Laraxot
 
 ## Regola Fondamentale di Ereditarietà
@@ -105,7 +105,7 @@ abstract class BaseModel extends XotBaseModel
 - [modules/performance/docs/organizzativa-models.md](../Performance/docs/organizzativa-models.md)
 
 <<<<<<< HEAD
-*Ultimo aggiornamento: maggio 2025*
-=======
 *Ultimo aggiornamento: maggio 2025* 
->>>>>>> laraxot/dev
+=======
+*Ultimo aggiornamento: maggio 2025*
+>>>>>>> 77b1e2748 (first)

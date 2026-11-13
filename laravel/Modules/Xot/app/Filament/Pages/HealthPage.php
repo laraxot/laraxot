@@ -13,9 +13,9 @@ use Filament\Widgets\WidgetConfiguration;
 use Illuminate\Support\Facades\Artisan;
 use Laraxot\SmtpHealthCheck\SmtpCheck;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Filament\Traits\SuperAdminOnlyTrait;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Filament\Widgets\HealthOverviewWidget;
 use Spatie\CpuLoadHealthCheck\CpuLoadCheck;
 use Spatie\Health\Checks\Check;
@@ -42,10 +42,10 @@ use Spatie\SecurityAdvisoriesHealthCheck\SecurityAdvisoriesCheck;
 class HealthPage extends XotBasePage
 {
 <<<<<<< HEAD
-=======
     use SuperAdminOnlyTrait;
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     /**
      * @var array<string, string>
      */

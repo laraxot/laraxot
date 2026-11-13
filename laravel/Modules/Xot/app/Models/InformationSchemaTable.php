@@ -6,18 +6,18 @@ namespace Modules\Xot\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 <<<<<<< HEAD
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Carbon;
-use Modules\Tenant\Models\Traits\SushiToJson;
-use Modules\Xot\Contracts\ProfileContract;
-use Modules\Xot\Database\Factories\InformationSchemaTableFactory;
-=======
 use Illuminate\Support\Carbon;
 use Modules\Tenant\Models\BaseModelJson;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Database\Factories\InformationSchemaTableFactory;
 use Modules\Xot\Models\Traits\InformationSchemaTableCounters;
->>>>>>> laraxot/dev
+=======
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
+use Modules\Tenant\Models\Traits\SushiToJson;
+use Modules\Xot\Contracts\ProfileContract;
+use Modules\Xot\Database\Factories\InformationSchemaTableFactory;
+>>>>>>> 77b1e2748 (first)
 
 /**
  * @property int|null $table_rows
@@ -50,14 +50,14 @@ use Modules\Xot\Models\Traits\InformationSchemaTableCounters;
  * @mixin \Eloquent
  */
 <<<<<<< HEAD
-class InformationSchemaTable extends BaseModel
-{
-    use SushiToJson;
-=======
 class InformationSchemaTable extends BaseModelJson
 {
     use InformationSchemaTableCounters;
->>>>>>> laraxot/dev
+=======
+class InformationSchemaTable extends BaseModel
+{
+    use SushiToJson;
+>>>>>>> 77b1e2748 (first)
 
     /**
      * @var list<string>
@@ -113,6 +113,7 @@ class InformationSchemaTable extends BaseModelJson
         return $rows;
     }
 <<<<<<< HEAD
+=======
 
     /**
      * Aggiorna il numero di record memorizzato per un modello.
@@ -177,6 +178,5 @@ class InformationSchemaTable extends BaseModelJson
 
         return (int) $record->table_rows;
     }
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 }

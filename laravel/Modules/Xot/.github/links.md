@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "links"
 type: note
@@ -11,7 +10,8 @@ issues: []
 discussions: []
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 https://gist.github.com/stevebauman/90e4190202e4262951f9339b99f895dc
 
 

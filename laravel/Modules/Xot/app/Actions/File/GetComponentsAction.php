@@ -86,9 +86,9 @@ class GetComponentsAction
 
             if ($relative_path !== '') {
 <<<<<<< HEAD
-                $comp_name = '';
 =======
->>>>>>> laraxot/dev
+                $comp_name = '';
+>>>>>>> 77b1e2748 (first)
                 $piece = collect(explode('\\', $relative_path))
                     ->map(fn (string $item) => Str::slug(Str::snake($item)))
                     ->implode('.');

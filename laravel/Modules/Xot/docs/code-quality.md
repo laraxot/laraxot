@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "code quality"
 type: note
@@ -12,7 +11,8 @@ discussions: []
 status: draft
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Laraxot Code Quality Standards
 
 ## Overview
@@ -143,12 +143,6 @@ return [
 ```php
 // ✅ CORRECT
 <<<<<<< HEAD
-<<<<<<< HEAD
-public function getFormSchema(): array
-=======
-public function getFormSchema(): array
->>>>>>> laraxot/dev
-=======
 public function getFormSchema(): array
 ---
 title: "code quality"
@@ -160,7 +154,13 @@ qmd: "code quality"
 issues: []
 discussions: []
 public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+public function getFormSchema(): array
+=======
+public function getFormSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         'name' => TextInput::make('name'),
@@ -170,16 +170,16 @@ public function getFormSchema(): array
 
 // ❌ WRONG
 <<<<<<< HEAD
+public function getFormSchema(): array
+---
+public function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public function getFormSchema(): array
----
-public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         TextInput::make('name')->label('Nome'),

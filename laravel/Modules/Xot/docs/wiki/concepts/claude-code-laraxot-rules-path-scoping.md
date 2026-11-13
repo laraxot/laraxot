@@ -1,12 +1,12 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Xot - claude-code-laraxot-rules-path-scoping.md"
 module: Xot
 bmad: true
 status: active
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Claude Code Laraxot Rules Path Scoping
 
 ## Decisione
@@ -59,4 +59,4 @@ paths:
 - `xotbasepage-inheritance.md`
 =======
 - `xotbasepage-inheritance.md`
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

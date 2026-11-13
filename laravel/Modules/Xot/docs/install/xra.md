@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "xra"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, install]
 qmd: "xra"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ~~~ php
 <?php
 
@@ -34,15 +34,6 @@ return [
 ### Versione HEAD
 
 <<<<<<< HEAD
-## Collegamenti tra versioni di xra.md
-* [xra.md](../../../xot/project_docs/install/xra.md)
-* [xra.md](../../../tenant/project_docs/it/xra.md)
-* [xra.md](../../../tenant/project_docs/it/config/xra.md)
-
-### Versione Incoming
-
----
-=======
 
 ## Collegamenti tra versioni di xra.md
 * [xra.md](../../../Xot/docs/install/xra.md)
@@ -55,4 +46,13 @@ return [
 
 ---
 
->>>>>>> laraxot/dev
+=======
+## Collegamenti tra versioni di xra.md
+* [xra.md](../../../xot/project_docs/install/xra.md)
+* [xra.md](../../../tenant/project_docs/it/xra.md)
+* [xra.md](../../../tenant/project_docs/it/config/xra.md)
+
+### Versione Incoming
+
+---
+>>>>>>> 77b1e2748 (first)

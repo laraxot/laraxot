@@ -15,6 +15,13 @@ class GetCurrentRouteViewAction
     public function execute(): string
     {
 <<<<<<< HEAD
+        $routeAction = app(GetCurrentRouteHandlerAction::class)->execute();
+        $controller = Str::between($routeAction, 'Http\\Controllers\\', 'Controller');
+        /** @var array<string, mixed> $params */
+        $params = [];
+        $route = request()->route();
+        foreach ($route instanceof Route ? $route->parameters() : [] as $key => $value) {
+=======
         $route = request()->route();
         if (! $route instanceof Route) {
             throw new \RuntimeException('Current route action is not available.');
@@ -25,14 +32,7 @@ class GetCurrentRouteViewAction
         /** @var array<string, mixed> $params */
         $params = [];
         foreach ($route->parameters() as $key => $value) {
-=======
-        $routeAction = app(GetCurrentRouteHandlerAction::class)->execute();
-        $controller = Str::between($routeAction, 'Http\\Controllers\\', 'Controller');
-        /** @var array<string, mixed> $params */
-        $params = [];
-        $route = request()->route();
-        foreach ($route instanceof Route ? $route->parameters() : [] as $key => $value) {
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
             if (is_string($key)) {
                 $params[$key] = $value;
             }

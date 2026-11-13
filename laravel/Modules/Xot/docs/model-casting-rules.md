@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Regole per Model Casting in Laraxot - CRITICO"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "regole per model casting in laraxot - critico xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Regole per Model Casting in Laraxot - CRITICO
 
 ## ERRORE ARCHITETTURALE GRAVE: Proprietà $casts Deprecata

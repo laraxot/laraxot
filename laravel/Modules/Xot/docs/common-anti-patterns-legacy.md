@@ -351,7 +351,30 @@ class MyWidget extends XotBaseWidget
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
+<<<<<<< HEAD
     public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    public function getFormSchema(): array
+=======
+<<<<<<< .merge_file_HG80X2
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
+<<<<<<< HEAD
+    public function getFormSchema(): array
+=======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_BnwPcw
+=======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
 >>>>>>> laraxot/dev
     {
         // Filament methods should not be static

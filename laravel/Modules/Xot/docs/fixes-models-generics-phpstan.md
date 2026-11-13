@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Fix PHPStan Modelli - Generics e Tipizzazione Completa"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Fix PHPStan Modelli - Generics e Tipizzazione Completa"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Fix PHPStan Modelli - Generics e Tipizzazione Completa
 
 ## Data: 2025-01-27
@@ -22,10 +22,10 @@ Errori PHPStan livello 9 nei modelli base del modulo Xot:
 1. **BaseModel**: PHPDoc `@extends` con errore di parsing
 2. **BaseExtra**: Mancanza di template generics per Factory
 <<<<<<< HEAD
-3. **BaseTreeModel**: Mancanza di template generics per Factory
-=======
 3. **BaseTreeModel**: Mancanza di template generics per Factory  
->>>>>>> laraxot/dev
+=======
+3. **BaseTreeModel**: Mancanza di template generics per Factory
+>>>>>>> 77b1e2748 (first)
 4. **Cache**: PHPDoc `@extends` con errore di parsing e mancanza generics
 5. **Proprietà $fillable**: Mancanza di tipizzazione `list<string>`
 
@@ -47,10 +47,10 @@ Property $fillable type has no value type specified in iterable type array
 /**
  * Class BaseModel.
 <<<<<<< HEAD
- *
-=======
  * 
->>>>>>> laraxot/dev
+=======
+ *
+>>>>>>> 77b1e2748 (first)
  * @extends Model
  * @template TFactory of \Illuminate\Database\Eloquent\Factories\Factory
  */
@@ -120,10 +120,10 @@ class Cache extends BaseModel
 protected $fillable = [
     'key',
 <<<<<<< HEAD
-    'value',
-=======
     'value', 
->>>>>>> laraxot/dev
+=======
+    'value',
+>>>>>>> 77b1e2748 (first)
     'expiration',
 ];
 ```
@@ -135,10 +135,10 @@ protected $fillable = [
     'key',
     'value',
 <<<<<<< HEAD
-    'expiration',
-=======
     'expiration', 
->>>>>>> laraxot/dev
+=======
+    'expiration',
+>>>>>>> 77b1e2748 (first)
 ];
 ```
 
@@ -174,18 +174,18 @@ php artisan test Modules/Xot/tests/Unit/Models/BaseModelTest.php
 ## Collegamenti
 
 <<<<<<< HEAD
-- [BaseModel.php](../../app/Models/BaseModel.php)
-- [BaseExtra.php](../../app/Models/BaseExtra.php)
-- [BaseTreeModel.php](../../app/Models/BaseTreeModel.php)
-- [Cache.php](../../app/Models/Cache.php)
-- [BaseModelTest.php](../../tests/Unit/Models/BaseModelTest.php)
-=======
 - [BaseModel.php](../app/Models/BaseModel.php)
 - [BaseExtra.php](../app/Models/BaseExtra.php)
 - [BaseTreeModel.php](../app/Models/BaseTreeModel.php)
 - [Cache.php](../app/Models/Cache.php)
 - [BaseModelTest.php](../tests/Unit/Models/BaseModelTest.php)
->>>>>>> laraxot/dev
+=======
+- [BaseModel.php](../../app/Models/BaseModel.php)
+- [BaseExtra.php](../../app/Models/BaseExtra.php)
+- [BaseTreeModel.php](../../app/Models/BaseTreeModel.php)
+- [Cache.php](../../app/Models/Cache.php)
+- [BaseModelTest.php](../../tests/Unit/Models/BaseModelTest.php)
+>>>>>>> 77b1e2748 (first)
 - [PHPStan Fixes](./phpstan-fixes.md)
 
 ## Note per il Futuro

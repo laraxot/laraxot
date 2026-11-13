@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Icone e SVG nei Moduli"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, development]
 qmd: "Icone e SVG nei Moduli"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Icone e SVG nei Moduli
 
 ## Configurazione delle Icone di Navigazione
@@ -134,10 +134,10 @@ class UserResource extends XotBaseResource
 
     protected static ?string $model = User::class;
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     // L'icona verrà automaticamente recuperata dal file di traduzione
     // o dagli SVG personalizzati nella cartella resources/svg
 }

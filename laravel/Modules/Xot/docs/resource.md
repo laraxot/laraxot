@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "resource"
 type: note
@@ -12,7 +11,8 @@ discussions: []
 status: draft
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # XotBaseResource
 
 ## Overview
@@ -71,12 +71,6 @@ class MyResource extends XotBaseResource
     protected static ?string $model = MyModel::class;
 
 <<<<<<< HEAD
-<<<<<<< HEAD
-    public function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
-=======
     public function getFormSchema(): array
 ---
 title: "resource"
@@ -88,7 +82,13 @@ qmd: "resource"
 issues: []
 discussions: []
     public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+    public function getFormSchema(): array
+=======
+    public function getFormSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             // Schema del form
@@ -234,16 +234,16 @@ class ListRecords extends XotBaseListRecords
 ### 1. Form Schema con Relazioni
 ```php
 <<<<<<< HEAD
+public function getFormSchema(): array
+---
+public function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public function getFormSchema(): array
----
-public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         Forms\Components\Select::make('cliente_id')
@@ -573,16 +573,16 @@ public function getTableColumns(): array
  * @return array<string, Forms\Components\Component>
  */
 <<<<<<< HEAD
+public function getFormSchema(): array
+---
+public function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public function getFormSchema(): array
----
-public function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         'nome' => TextInput::make('nome'),

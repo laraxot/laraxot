@@ -45,10 +45,10 @@ class ExportTreeXlsAction extends XotBaseAction
                 // $rows = $query->get();
                 Assert::implementsInterface($record, HasRecursiveRelationshipsContract::class);
 <<<<<<< HEAD
-                /** @var Model&HasRecursiveRelationshipsContract $treeRecord */
-=======
                 /** @var Model&HasRecursiveRelationshipsContract<Model> $treeRecord */
->>>>>>> laraxot/dev
+=======
+                /** @var Model&HasRecursiveRelationshipsContract $treeRecord */
+>>>>>>> 77b1e2748 (first)
                 $treeRecord = $record;
                 $rows = $treeRecord->descendantsAndSelf;
                 Assert::isInstanceOf($rows, Collection::class);

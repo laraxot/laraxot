@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: Store Action
 description: Store Model with Queuable Action
@@ -95,4 +93,6 @@ Session::flash('status', $msg); // .
 
 return $row;
 ```
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

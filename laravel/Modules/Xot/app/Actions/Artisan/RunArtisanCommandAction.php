@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Artisan;
 use Spatie\QueueableAction\QueueableAction;
 
 <<<<<<< HEAD
-=======
 use function Safe\define;
 use function Safe\fopen;
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 /**
  * Replaces Modules\Xot\Services\ArtisanService::exe().
  *
@@ -26,18 +26,18 @@ class RunArtisanCommandAction
 
     /**
 <<<<<<< HEAD
-     * @param  array<string, mixed>  $arguments
-     */
-    public function execute(string $command, array $arguments = []): string
-    {
-=======
      * @param  array<string, bool|int|string|list<string>>  $arguments
      */
     public function execute(string $command, array $arguments = []): string
     {
         $this->ensureStdin();
 
->>>>>>> laraxot/dev
+=======
+     * @param  array<string, mixed>  $arguments
+     */
+    public function execute(string $command, array $arguments = []): string
+    {
+>>>>>>> 77b1e2748 (first)
         try {
             Artisan::call($command, $arguments);
 
@@ -47,7 +47,6 @@ class RunArtisanCommandAction
         }
     }
 <<<<<<< HEAD
-=======
 
     /**
      * Con SAPI web `STDIN` non esiste e il QuestionHelper di Symfony lo legge senza guardia
@@ -60,5 +59,6 @@ class RunArtisanCommandAction
             define('STDIN', fopen('php://stdin', 'r'));
         }
     }
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 }

@@ -1,14 +1,14 @@
 ---
 <<<<<<< HEAD
-title: "Story — bonifica marker merge residui fleet"
-=======
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
 issues: []
 discussions: []
 title: "Story: bonifica marker merge residui fleet"
->>>>>>> laraxot/dev
+=======
+title: "Story — bonifica marker merge residui fleet"
+>>>>>>> 77b1e2748 (first)
 type: story
 module: Xot
 epic: quality
@@ -19,10 +19,10 @@ qmd: "merge marker conflitto residui fleet bonifica gitmodules HEAD checkout mar
 related:
   - ../../../docs/bmad/stories/git-status-fleet-sync.story.md
 <<<<<<< HEAD
-  - ../../../../../bashscripts/docs/prompts/03-quality-gates.md
-=======
   - ../../../../../../bashscripts/docs/prompts/03-quality-gates.md
->>>>>>> laraxot/dev
+=======
+  - ../../../../../bashscripts/docs/prompts/03-quality-gates.md
+>>>>>>> 77b1e2748 (first)
 ---
 
 # merge-marker-fleet-residue
@@ -53,4 +53,4 @@ file PHP/JSON/blade = boot rotto o output corrotto.
 - [ ] Memoria aggiornata con conteggio residuo trovato
 =======
 - [ ] Memoria aggiornata con conteggio residuo trovato
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)

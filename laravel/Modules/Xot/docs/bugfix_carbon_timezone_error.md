@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Bugfix: Carbon Timezone Error in XotServiceProvider"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "bugfix: carbon timezone error in xotserviceprovider xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Bugfix: Carbon Timezone Error in XotServiceProvider
 
 ## Problema Identificato

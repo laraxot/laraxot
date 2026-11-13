@@ -47,12 +47,22 @@ test('FrontofficeRoutes e SearchSuggestions esistono e usano solo container0', f
 
 test('mobile views usano solo rotte pubbliche canoniche', function (): void {
     $themeRoot = dirname(__DIR__, 2);
+<<<<<<< HEAD
     $mobileViews = iterator_to_array((new Finder)->files()->name('*.blade.php')->in($themeRoot.'/resources/views/mobile'), false);
 
     expect($mobileViews)->not->toBeEmpty();
 
     foreach ($mobileViews as $view) {
         $html = file_get_contents($view->getPathname());
+=======
+    $mobileViews = glob($themeRoot.'/resources/views/mobile/**/*.blade.php') ?: [];
+    $mobileViews = array_merge($mobileViews, glob($themeRoot.'/resources/views/mobile/*.blade.php') ?: []);
+
+    expect($mobileViews)->not->toBeEmpty();
+
+    foreach (array_unique($mobileViews) as $path) {
+        $html = file_get_contents($path);
+>>>>>>> f08c6884 (.)
         expect($html)->not->toContain('/mobile');
         expect($html)->not->toContain("route('area-personale.");
         expect($html)->not->toContain('two::');

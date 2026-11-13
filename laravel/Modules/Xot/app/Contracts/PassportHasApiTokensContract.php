@@ -47,7 +47,36 @@ interface PassportHasApiTokensContract
     /**
      * Create a new personal access token for the user.
      *
+<<<<<<< HEAD
      * @param  array<int, string>  $scopes
+=======
+<<<<<<< .merge_file_QCGDn7
+     * @param  array<int, string>  $scopes
+=======
+     * <<<<<<< HEAD
+     *
+     * @param array<int, string> $scopes
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     * @param array<int, string> $scopes
+     *                                   =======
+     *                                   <<<<<<< HEAD
+     *                                   <<<<<<< HEAD
+     * @param array<int, string> $scopes
+     *                                   =======
+     * @param array<int, string> $scopes
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * =======
+     * @param array<int, string> $scopes
+     *                                   >>>>>>> laraxot/dev
+     *                                   >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_noCPfE
+>>>>>>> 77b1e2748 (first)
      * @return PersonalAccessTokenResult<Token>
      */
     public function createToken(string $name, array $scopes = []): PersonalAccessTokenResult;

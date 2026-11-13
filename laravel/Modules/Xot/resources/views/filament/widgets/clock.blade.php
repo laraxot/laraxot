@@ -7,13 +7,13 @@ declare(strict_types=1);
         {{-- Widget content --}}
 
 <<<<<<< HEAD
-        <x-filament::button wire:click="begin">Start/Stop</x-filament::button>
-
-        <h1>Time: <span wire:stream="count">{{ $time }}</span></h1>
-=======
         <x-filament::button wire:click="begin">{{ __('xot::common.actions.start_stop.label') }}</x-filament::button>
 
         <h1>{{ __('xot::common.fields.time.label') }}: <span wire:stream="count">{{ $time }}</span></h1>
->>>>>>> laraxot/dev
+=======
+        <x-filament::button wire:click="begin">Start/Stop</x-filament::button>
+
+        <h1>Time: <span wire:stream="count">{{ $time }}</span></h1>
+>>>>>>> 77b1e2748 (first)
     </x-filament::section>
 </x-filament-widgets::widget>

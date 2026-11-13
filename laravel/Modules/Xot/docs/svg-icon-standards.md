@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "SVG Icon Standards for Laraxot Modules"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "svg icon standards for laraxot modules xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # SVG Icon Standards for Laraxot Modules
 
 ## 🎯 Design Principles

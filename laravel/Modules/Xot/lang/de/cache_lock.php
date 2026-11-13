@@ -91,81 +91,81 @@ return [
         ],
         'create' => [
 <<<<<<< HEAD
-            'label' => 'create',
 =======
->>>>>>> laraxot/dev
+            'label' => 'create',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'view' => [
 <<<<<<< HEAD
-            'label' => 'view',
 =======
->>>>>>> laraxot/dev
+            'label' => 'view',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'edit' => [
 <<<<<<< HEAD
-            'label' => 'edit',
 =======
->>>>>>> laraxot/dev
+            'label' => 'edit',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'delete' => [
 <<<<<<< HEAD
-            'label' => 'delete',
 =======
->>>>>>> laraxot/dev
+            'label' => 'delete',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'openFilters' => [
 <<<<<<< HEAD
-            'label' => 'openFilters',
 =======
->>>>>>> laraxot/dev
+            'label' => 'openFilters',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'applyFilters' => [
 <<<<<<< HEAD
-            'label' => 'applyFilters',
 =======
->>>>>>> laraxot/dev
+            'label' => 'applyFilters',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
 <<<<<<< HEAD
-            'label' => 'resetFilters',
 =======
->>>>>>> laraxot/dev
+            'label' => 'resetFilters',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
 <<<<<<< HEAD
-            'label' => 'reorderRecords',
 =======
->>>>>>> laraxot/dev
+            'label' => 'reorderRecords',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'toggleColumns' => [
 <<<<<<< HEAD
-            'label' => 'toggleColumns',
 =======
->>>>>>> laraxot/dev
+            'label' => 'toggleColumns',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',

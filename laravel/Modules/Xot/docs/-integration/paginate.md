@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "paginate"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "paginate xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # paginate
 
 <!-- Contenuto migrato da _docs/paginate.txt -->

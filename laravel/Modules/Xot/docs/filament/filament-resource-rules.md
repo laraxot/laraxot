@@ -1,14 +1,5 @@
 ---
 <<<<<<< HEAD
-module: Xot
-topic: filament-resource-rules
-canonical: ../filament-resource-rules.md
----
-
-Documentazione canonica: [filament-resource-rules.md](../filament-resource-rules.md)
-
-Regole `getPages()`: [getpages-redundancy-rule.md](./getpages-redundancy-rule.md)
-=======
 title: "Regole Critiche per Filament Resources - Laraxot PTVX"
 type: note
 status: unverified
@@ -311,4 +302,13 @@ class IntegparamResource extends XotBaseResource
 **Soluzione**: Rimuovere i metodi non necessari
 
 *Ultimo aggiornamento: 5 giugno 2025* 
->>>>>>> laraxot/dev
+=======
+module: Xot
+topic: filament-resource-rules
+canonical: ../filament-resource-rules.md
+---
+
+Documentazione canonica: [filament-resource-rules.md](../filament-resource-rules.md)
+
+Regole `getPages()`: [getpages-redundancy-rule.md](./getpages-redundancy-rule.md)
+>>>>>>> 77b1e2748 (first)

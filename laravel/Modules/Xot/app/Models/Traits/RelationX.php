@@ -6,12 +6,12 @@ namespace Modules\Xot\Models\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 <<<<<<< HEAD
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 =======
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
@@ -55,6 +55,8 @@ trait RelationX
         $pivotFields = $pivot->getFillable();
 
 <<<<<<< HEAD
+        $table = $this->qualifyPivotTable($pivot, $related_model, $table);
+=======
         $pivotDbName = $pivot->getConnection()->getDatabaseName();
         $dbName = $this->getConnection()->getDatabaseName();
         $relatedDbName = $related_model->getConnection()->getDatabaseName();
@@ -68,9 +70,7 @@ trait RelationX
             }
         }
         // }
-=======
-        $table = $this->qualifyPivotTable($pivot, $related_model, $table);
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 
         return $this->belongsToMany(
             related: $related,
@@ -88,7 +88,6 @@ trait RelationX
 
     /**
 <<<<<<< HEAD
-=======
      * Relazione polimorfica per tabella: il padre sta in una tabella condivisa (es. log) e le righe
      * si riconoscono da due colonne, il nome della tabella del padre e la sua chiave.
      *
@@ -111,7 +110,8 @@ trait RelationX
     }
 
     /**
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
      * Define a polymorphic many-to-many relationship.
      *
      * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
@@ -131,6 +131,14 @@ trait RelationX
         bool $inverse = false,
     ): MorphToMany {
 <<<<<<< HEAD
+        Assert::subclassOf($related, Model::class);
+        Assert::isInstanceOf($related_model = app($related), Model::class);
+
+        $pivot = $this->guessMorphPivot($related);
+        $table = $this->qualifyPivotTable($pivot, $related_model, $pivot->getTable());
+        $pivotFields = $pivot->getFillable();
+
+=======
         $pivot = $this->guessMorphPivot($related);
         $table = $pivot->getTable();
         $pivotFields = $pivot->getFillable();
@@ -141,15 +149,8 @@ trait RelationX
         if ($table === null) {
             $table = $pivot->getTable();
         }
-=======
-        Assert::subclassOf($related, Model::class);
-        Assert::isInstanceOf($related_model = app($related), Model::class);
 
-        $pivot = $this->guessMorphPivot($related);
-        $table = $this->qualifyPivotTable($pivot, $related_model, $pivot->getTable());
-        $pivotFields = $pivot->getFillable();
->>>>>>> laraxot/dev
-
+>>>>>>> 77b1e2748 (first)
         return $this->morphToMany(
             related: $related,
             name: $name,
@@ -167,7 +168,6 @@ trait RelationX
     }
 
 <<<<<<< HEAD
-=======
     /**
      * Prefissa la tabella pivot col nome del database quando pivot, model e related
      * stanno su database diversi (relazioni cross-database tra moduli).
@@ -191,7 +191,8 @@ trait RelationX
         return $pivotDbName.'.'.$table;
     }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     public function guessMorphPivot(string $related, ?string $_class = null): MorphPivot
     {
         $class = $this::class;

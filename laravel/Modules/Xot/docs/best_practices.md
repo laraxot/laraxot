@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Best Practices per Laraxot"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "best practices per laraxot xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Best Practices per Laraxot
 
 ## Riferimenti al modello User

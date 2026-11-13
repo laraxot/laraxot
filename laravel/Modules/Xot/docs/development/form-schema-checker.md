@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Form Schema Checker"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, development]
 qmd: "Form Schema Checker"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Form Schema Checker
 
 ## Perché
@@ -51,11 +51,11 @@ Lo script produce:
 
 ## Collegamenti Correlati
 <<<<<<< HEAD
-- [Filament Best Practices](../FILAMENT_BEST_PRACTICES.md)
-- [XotBaseResource Documentation](../architecture/xot_base_resource.md)
-- [PHPStan Configuration](../phpstan-usage.md)
-=======
 - [Filament Best Practices](../filament_best_practices.md)
 - [XotBaseResource Documentation](../architecture/xot_base_resource.md)
 - [PHPStan Configuration](../phpstan-usage.md) 
->>>>>>> laraxot/dev
+=======
+- [Filament Best Practices](../FILAMENT_BEST_PRACTICES.md)
+- [XotBaseResource Documentation](../architecture/xot_base_resource.md)
+- [PHPStan Configuration](../phpstan-usage.md)
+>>>>>>> 77b1e2748 (first)

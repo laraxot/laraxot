@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Analisi Completa del Codice - Sistema Laraxot"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Analisi Completa del Codice - Sistema Laraxot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Analisi Completa del Codice - Sistema Laraxot
 
 ## Panoramica
@@ -22,10 +22,10 @@ Analisi sistematica di tutti i moduli del progetto per identificare violazioni d
 
 #### Singleton Pattern Duplicato
 <<<<<<< HEAD
-**File**: `Modules/healthcare_app/app/Services/LimeJsonService.php`, `Modules/healthcare_app/app/Services/healthcare_appService.php`
-=======
 **File**: `Modules/Quaeris/app/Services/LimeJsonService.php`, `Modules/Quaeris/app/Services/QuaerisService.php`
->>>>>>> laraxot/dev
+=======
+**File**: `Modules/healthcare_app/app/Services/LimeJsonService.php`, `Modules/healthcare_app/app/Services/healthcare_appService.php`
+>>>>>>> 77b1e2748 (first)
 
 ```php
 // DUPLICATO in LimeJsonService.php
@@ -33,28 +33,28 @@ private static ?self $instance = null;
 public static function getInstance(): self
 {
 <<<<<<< HEAD
-    if (! self::$instance instanceof \Modules\healthcare_app\Services\LimeJsonService) {
-=======
     if (! self::$instance instanceof \Modules\Quaeris\Services\LimeJsonService) {
->>>>>>> laraxot/dev
+=======
+    if (! self::$instance instanceof \Modules\healthcare_app\Services\LimeJsonService) {
+>>>>>>> 77b1e2748 (first)
         self::$instance = new self();
     }
     return self::$instance;
 }
 
 <<<<<<< HEAD
-// DUPLICATO in healthcare_appService.php
-private static ?self $instance = null;
-public static function getInstance(): self
-{
-    if (! self::$instance instanceof \Modules\healthcare_app\Services\healthcare_appService) {
-=======
 // DUPLICATO in QuaerisService.php
 private static ?self $instance = null;
 public static function getInstance(): self
 {
     if (! self::$instance instanceof \Modules\Quaeris\Services\QuaerisService) {
->>>>>>> laraxot/dev
+=======
+// DUPLICATO in healthcare_appService.php
+private static ?self $instance = null;
+public static function getInstance(): self
+{
+    if (! self::$instance instanceof \Modules\healthcare_app\Services\healthcare_appService) {
+>>>>>>> 77b1e2748 (first)
         self::$instance = new self();
     }
     return self::$instance;
@@ -65,20 +65,20 @@ public static function getInstance(): self
 
 #### Connection Hardcoded Duplicata
 <<<<<<< HEAD
-**Problema**: `protected $connection = 'healthcare_app';` ripetuto in tutti i modelli healthcare_app
-=======
 **Problema**: `protected $connection = 'quaeris';` ripetuto in tutti i modelli Quaeris
->>>>>>> laraxot/dev
+=======
+**Problema**: `protected $connection = 'healthcare_app';` ripetuto in tutti i modelli healthcare_app
+>>>>>>> 77b1e2748 (first)
 **Soluzione**: Centralizzare in BaseModel o configurazione
 
 ### 2. Violazioni SOLID
 
 #### Single Responsibility Principle Violato
 <<<<<<< HEAD
-**File**: `Modules/healthcare_app/app/Models/BaseModel.php`
-=======
 **File**: `Modules/Quaeris/app/Models/BaseModel.php`
->>>>>>> laraxot/dev
+=======
+**File**: `Modules/healthcare_app/app/Models/BaseModel.php`
+>>>>>>> 77b1e2748 (first)
 
 ```php
 abstract class BaseModel extends Model implements ModelContract, HasMedia
@@ -127,10 +127,10 @@ abstract class BaseUser extends Authenticatable implements
 
 #### Customer Model - Lazy Loading
 <<<<<<< HEAD
-**File**: `Modules/healthcare_app/app/Models/Customer.php`
-=======
 **File**: `Modules/Quaeris/app/Models/Customer.php`
->>>>>>> laraxot/dev
+=======
+**File**: `Modules/healthcare_app/app/Models/Customer.php`
+>>>>>>> 77b1e2748 (first)
 
 ```php
 public function surveyPdfsActive()
@@ -144,10 +144,10 @@ public function surveyPdfsActive()
 
 #### AlertWidget - Query Complessa
 <<<<<<< HEAD
-**File**: `Modules/healthcare_app/app/Filament/Widgets/AlertWidget.php`
-=======
 **File**: `Modules/Quaeris/app/Filament/Widgets/AlertWidget.php`
->>>>>>> laraxot/dev
+=======
+**File**: `Modules/healthcare_app/app/Filament/Widgets/AlertWidget.php`
+>>>>>>> 77b1e2748 (first)
 
 ```php
 return SurveyFlipResponse::where('survey_id', $this->getSurveyId())
@@ -171,10 +171,10 @@ return SurveyFlipResponse::where('survey_id', $this->getSurveyId())
 
 #### QuestionChart Model - Metodi Complessi
 <<<<<<< HEAD
-**File**: `Modules/healthcare_app/app/Models/QuestionChart.php`
-=======
 **File**: `Modules/Quaeris/app/Models/QuestionChart.php`
->>>>>>> laraxot/dev
+=======
+**File**: `Modules/healthcare_app/app/Models/QuestionChart.php`
+>>>>>>> 77b1e2748 (first)
 
 ```php
 public function participants(): CustomRelation
@@ -202,10 +202,10 @@ public function participants(): CustomRelation
 
 #### SendInviteAction - Catch Vuoti
 <<<<<<< HEAD
-**File**: `Modules/healthcare_app/app/Actions/SendInviteAction.php`
-=======
 **File**: `Modules/Quaeris/app/Actions/SendInviteAction.php`
->>>>>>> laraxot/dev
+=======
+**File**: `Modules/healthcare_app/app/Actions/SendInviteAction.php`
+>>>>>>> 77b1e2748 (first)
 
 ```php
 try {
@@ -226,6 +226,12 @@ try {
 
 #### Schema Duplicato
 <<<<<<< HEAD
+**File**: `Modules/Quaeris/app/Filament/Resources/ContactResource.php`, `CustomerResource.php`
+
+```php
+// ContactResource.php
+public static function getFormSchema(): array
+=======
 **File**: `Modules/healthcare_app/app/Filament/Resources/ContactResource.php`, `CustomerResource.php`
 
 ```php
@@ -235,13 +241,7 @@ public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-**File**: `Modules/Quaeris/app/Filament/Resources/ContactResource.php`, `CustomerResource.php`
-
-```php
-// ContactResource.php
-public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         TextInput::make('first_name'),
@@ -251,14 +251,14 @@ public static function getFormSchema(): array
 
 // CustomerResource.php - PATTERN SIMILE
 <<<<<<< HEAD
+public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 {
     return [
         TextInput::make('name')->required(),
@@ -295,14 +295,14 @@ public function customer(): HasOneThrough
 
 ```php
 <<<<<<< HEAD
-class healthcare_appServiceProvider extends XotBaseServiceProvider
-{
-    public string $name = 'healthcare_app';
-=======
 class QuaerisServiceProvider extends XotBaseServiceProvider
 {
     public string $name = 'Quaeris';
->>>>>>> laraxot/dev
+=======
+class healthcare_appServiceProvider extends XotBaseServiceProvider
+{
+    public string $name = 'healthcare_app';
+>>>>>>> 77b1e2748 (first)
     
     protected string $module_dir = __DIR__;
     protected string $module_ns = __NAMESPACE__;
@@ -361,14 +361,14 @@ protected function casts(): array
 class ContactResource extends XotBaseResource
 {
 <<<<<<< HEAD
+    public static function getFormSchema(): array
+=======
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             TextInput::make('first_name'),
@@ -411,10 +411,10 @@ trait SingletonTrait
 
 #### B. Separare BaseModel Responsibilities
 <<<<<<< HEAD
-**File**: `Modules/healthcare_app/app/Models/BaseModel.php`
-=======
 **File**: `Modules/Quaeris/app/Models/BaseModel.php`
->>>>>>> laraxot/dev
+=======
+**File**: `Modules/healthcare_app/app/Models/BaseModel.php`
+>>>>>>> 77b1e2748 (first)
 ```php
 abstract class BaseModel extends Model implements ModelContract
 {
@@ -428,10 +428,10 @@ abstract class BaseModel extends Model implements ModelContract
 
 #### C. Implementare Repository Pattern
 <<<<<<< HEAD
-**File**: `Modules/healthcare_app/app/Repositories/SurveyFlipResponseRepository.php`
-=======
 **File**: `Modules/Quaeris/app/Repositories/SurveyFlipResponseRepository.php`
->>>>>>> laraxot/dev
+=======
+**File**: `Modules/healthcare_app/app/Repositories/SurveyFlipResponseRepository.php`
+>>>>>>> 77b1e2748 (first)
 ```php
 class SurveyFlipResponseRepository
 {
@@ -493,16 +493,16 @@ try {
 #### B. Configuration Centralization
 ```php
 <<<<<<< HEAD
-// config/healthcare_app.php
-return [
-    'database' => [
-        'connection' => env('healthcare_app_DB_CONNECTION', 'healthcare_app'),
-=======
 // config/quaeris.php
 return [
     'database' => [
         'connection' => env('QUAERIS_DB_CONNECTION', 'quaeris'),
->>>>>>> laraxot/dev
+=======
+// config/healthcare_app.php
+return [
+    'database' => [
+        'connection' => env('healthcare_app_DB_CONNECTION', 'healthcare_app'),
+>>>>>>> 77b1e2748 (first)
     ],
     'limesurvey' => [
         'api' => [
@@ -517,10 +517,10 @@ return [
 ## 🔗 Collegamenti Correlati
 
 <<<<<<< HEAD
-- [Architettura Moduli](architecture.md)
-=======
 - [Architettura Moduli](./ARCHITECTURE.md)
->>>>>>> laraxot/dev
+=======
+- [Architettura Moduli](architecture.md)
+>>>>>>> 77b1e2748 (first)
 - [Best Practices Laravel 12](./LARAVEL_12_GUIDE.md)
 - [Pattern Filament](./FILAMENT_PATTERNS.md)
 - [Performance Optimization](./PERFORMANCE_GUIDE.md)

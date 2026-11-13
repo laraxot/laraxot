@@ -65,6 +65,7 @@ nuova struttura.
 6. [header/footer parity](bmad/header-footer-parity-report.md) — gate Playwright;
 7. [header/footer data model](bmad/header-footer-data-model.md) — elementi, forma JSON e AC;
 8. [header/footer rationale](second-brain/header-footer-rationale.md) — decisione e perché;
+<<<<<<< HEAD
 9. [front-office readiness plan](bmad/front-office-production-readiness-plan.md) — copertura guest/auth e gate;
 10. [front-office readiness brainstorming](bmad/front-office-readiness-brainstorming.md) — otto tecniche BMAD;
 11. [Cms Head adoption plan](../../../Modules/Cms/docs/bmad/head-component-adoption-plan.md) — ownership, decisioni e parita';
@@ -75,6 +76,15 @@ nuova struttura.
 16. [stories](stories/) — storie BMAD e acceptance criteria;
 17. [visual-parity](visual-parity/) — verifiche, screenshot per pagina e report;
 18. [investigation](investigation/) — analisi riproducibili, non decisioni canoniche.
+=======
+9. [wiki](wiki/README.md) — conoscenza consolidata e regole on-demand;
+10. [design-comuni](design-comuni/design-comuni-canonical.md) — vincoli visuali;
+11. [design-system](design-system/README.md) — token e componenti del tema;
+12. [pages](pages/) — contratti delle pagine e parity;
+13. [stories](stories/) — storie BMAD e acceptance criteria;
+14. [visual-parity](visual-parity/) — verifiche, screenshot per pagina e report;
+15. [investigation](investigation/) — analisi riproducibili, non decisioni canoniche.
+>>>>>>> f08c6884 (.)
 
 Per le pagine CMS di primo livello, leggere anche il contratto
 [FAQ route ownership](bmad/faq-route-ownership.md): una pagina come

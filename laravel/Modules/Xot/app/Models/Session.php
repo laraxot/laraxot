@@ -12,6 +12,10 @@ use Modules\Xot\Database\Factories\SessionFactory;
 /**
  * Modules\Xot\Models\Session.
  *
+<<<<<<< HEAD
+=======
+<<<<<<< .merge_file_Dsc7lI
+>>>>>>> 77b1e2748 (first)
  * @property string $id
  * @property string|null $user_id
  * @property string|null $ip_address
@@ -24,10 +28,102 @@ use Modules\Xot\Database\Factories\SessionFactory;
  * @property string|null $created_by
  * @property Carbon|null $deleted_at
  * @property string|null $deleted_by
+<<<<<<< HEAD
+=======
+=======
+ * <<<<<<< HEAD
+ *
+ * @property string               $id
+ * @property string|null          $user_id
+ * @property string|null          $ip_address
+ * @property string|null          $user_agent
+ * @property string               $payload
+ * @property int                  $last_activity
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ *                                               =======
+ *                                               <<<<<<< HEAD
+ *                                               <<<<<<< HEAD
+ *                                               =======
+ *                                               <<<<<<< HEAD
+ *                                               >>>>>>> laraxot/dev
+ * @property string               $id
+ * @property string|null          $user_id
+ * @property string|null          $ip_address
+ * @property string|null          $user_agent
+ * @property string               $payload
+ * @property int                  $last_activity
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ *                                               <<<<<<< HEAD
+ *                                               =======
+ *                                               =======
+ * @property string               $id
+ * @property string|null          $user_id
+ * @property string|null          $ip_address
+ * @property string|null          $user_agent
+ * @property string               $payload
+ * @property int                  $last_activity
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ *                                               >>>>>>> laraxot/dev
+ *                                               >>>>>>> laraxot/dev
+ *                                               >>>>>>> laraxot/dev
+>>>>>>> .merge_file_r29pL3
+>>>>>>> 77b1e2748 (first)
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
  *
  * @method static SessionFactory factory($count = null, $state = [])
+<<<<<<< HEAD
+=======
+<<<<<<< .merge_file_Dsc7lI
+=======
+ *                                                                   <<<<<<< HEAD
+ *                                                                   =======
+ *                                                                   <<<<<<< HEAD
+ *                                                                   =======
+ *                                                                   <<<<<<< HEAD
+ *                                                                   >>>>>>> laraxot/dev
+ *                                                                   =======
+ *
+ * @property string               $id
+ * @property string|null          $user_id
+ * @property string|null          $ip_address
+ * @property string|null          $user_agent
+ * @property string               $payload
+ * @property int                  $last_activity
+ * @property Carbon|null          $created_at
+ * @property Carbon|null          $updated_at
+ * @property string|null          $updated_by
+ * @property string|null          $created_by
+ * @property Carbon|null          $deleted_at
+ * @property string|null          $deleted_by
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
+ *
+ * @method static SessionFactory          factory($count = null, $state = [])
+ *                                                                            >>>>>>> laraxot/dev
+ *                                                                            <<<<<<< HEAD
+ *                                                                            =======
+ *                                                                            =======
+ *                                                                            >>>>>>> laraxot/dev
+ *                                                                            >>>>>>> laraxot/dev
+ *                                                                            >>>>>>> laraxot/dev
+>>>>>>> .merge_file_r29pL3
+>>>>>>> 77b1e2748 (first)
  * @method static Builder<static>|Session newModelQuery()
  * @method static Builder<static>|Session newQuery()
  * @method static Builder<static>|Session query()

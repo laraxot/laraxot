@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Convenzioni per la documentazione in Laraxot PTVX"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Convenzioni per la documentazione in Laraxot PTVX"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Convenzioni per la documentazione in Laraxot PTVX
 
 ## Convenzioni di naming
@@ -37,22 +37,22 @@ qmd: "Convenzioni per la documentazione in Laraxot PTVX"
    ```markdown
    # Titolo principale
 <<<<<<< HEAD
-
+   
    ## Sezione 1
-
+   
    ### Sottosezione 1.1
-
+   
    ### Sottosezione 1.2
-
+   
 =======
-   
+
    ## Sezione 1
-   
+
    ### Sottosezione 1.1
-   
+
    ### Sottosezione 1.2
-   
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
    ## Sezione 2
    ```
 
@@ -67,10 +67,10 @@ qmd: "Convenzioni per la documentazione in Laraxot PTVX"
    ```markdown
    > **Nota**: Informazione importante.
 <<<<<<< HEAD
-
-=======
    
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
    > **Attenzione**: Avvertimento critico.
    ```
 
@@ -128,17 +128,17 @@ Utilizzare script nella cartella `bashscripts` per automatizzare le verifiche e 
 ## Collegamenti a documentazione correlata
 
 <<<<<<< HEAD
-- [Documentazione generale](../../../docs/documentation_rules.md)
-- [Convenzioni di naming in generale](../../../docs/naming_conventions.md)
-- [Regole per ServiceProvider](../../IndennitaCondizioniLavoro/docs/service_provider.md)
-- [Regole per file di traduzione](../../../.cursor/rules/translation_files_rules.mdc)
-
-*Ultimo aggiornamento: Giugno 2025*
-=======
 - [Documentazione generale](documentation_rules.md)
 - [Convenzioni di naming in generale](../../../../docs/naming_conventions.md)
 - [Regole per ServiceProvider](../../IndennitaCondizioniLavoro/docs/service_provider.md)
 - [Regole per file di traduzione](../../../.cursor/rules/translation_files_rules.mdc)
 
 *Ultimo aggiornamento: Giugno 2025*
->>>>>>> laraxot/dev
+=======
+- [Documentazione generale](../../../docs/documentation_rules.md)
+- [Convenzioni di naming in generale](../../../docs/naming_conventions.md)
+- [Regole per ServiceProvider](../../IndennitaCondizioniLavoro/docs/service_provider.md)
+- [Regole per file di traduzione](../../../.cursor/rules/translation_files_rules.mdc)
+
+*Ultimo aggiornamento: Giugno 2025*
+>>>>>>> 77b1e2748 (first)

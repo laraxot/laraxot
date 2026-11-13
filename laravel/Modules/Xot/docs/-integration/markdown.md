@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "markdown"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "markdown xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # markdown
 
 <!-- Contenuto migrato da _docs/markdown.txt -->

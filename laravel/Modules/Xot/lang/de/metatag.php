@@ -11,10 +11,10 @@ return [
             'description' => 'Gestione dei meta tag e SEO del sito',
         ],
 <<<<<<< HEAD
-        'label' => 'metatag',
-=======
         'label' => 'Metatag',
->>>>>>> laraxot/dev
+=======
+        'label' => 'metatag',
+>>>>>>> 77b1e2748 (first)
         'sort' => '16',
         'icon' => 'xot-metatag',
     ],

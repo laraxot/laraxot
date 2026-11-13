@@ -2,7 +2,11 @@
 
 declare(strict_types=1);
 use Filament\Facades\Filament;
+<<<<<<< HEAD
 use Illuminate\Contracts\Auth\Authenticatable;
+=======
+use Illuminate\Contracts\Auth\Authenticatable as AuthContract;
+>>>>>>> 77b1e2748 (first)
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\File;
@@ -19,7 +23,6 @@ use function Safe\define;
 use function Safe\preg_match;
 
 <<<<<<< HEAD
-=======
 if (! function_exists('merge_translation_files')) {
     /**
      * Merge split PHP translation files while preserving nested translation keys.
@@ -83,7 +86,8 @@ if (! function_exists('merge_translation_files')) {
     }
 }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 if (! function_exists('isRunningTestBench')) {
     function isRunningTestBench(): bool
     {
@@ -241,7 +245,6 @@ if (! function_exists('isJson')) {
 */
 
 <<<<<<< HEAD
-=======
 if (! function_exists('xotPestStubFailure')) {
     /**
      * Errore comune dei finti helper Pest (actingAs, get, post, ...).
@@ -257,18 +260,21 @@ if (! function_exists('xotPestStubFailure')) {
     }
 }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 if (! function_exists('actingAs')) {
     /**
      * @return TestResponse<Response>
      */
+<<<<<<< HEAD
     function actingAs(Authenticatable|int|string|null $user = null, ?string $driver = null): TestResponse
     {
-<<<<<<< HEAD
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-=======
         xotPestStubFailure('actingAs', $user, $driver);
->>>>>>> laraxot/dev
+=======
+    function actingAs(AuthContract|int|string|null $user = null, ?string $driver = null): TestResponse
+    {
+        throw new RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
     }
 }
 
@@ -280,10 +286,10 @@ if (! function_exists('get')) {
     function get(string $uri = '', array $options = []): TestResponse
     {
 <<<<<<< HEAD
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-=======
         xotPestStubFailure('get', $uri, $options);
->>>>>>> laraxot/dev
+=======
+        throw new RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
     }
 }
 
@@ -296,10 +302,10 @@ if (! function_exists('post')) {
     function post(string $uri, array $data = [], array $options = []): TestResponse
     {
 <<<<<<< HEAD
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-=======
         xotPestStubFailure('post', $uri, $data, $options);
->>>>>>> laraxot/dev
+=======
+        throw new RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
     }
 }
 
@@ -311,10 +317,10 @@ if (! function_exists('put')) {
     function put(string $uri, array $data = []): TestResponse
     {
 <<<<<<< HEAD
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-=======
         xotPestStubFailure('put', $uri, $data);
->>>>>>> laraxot/dev
+=======
+        throw new RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
     }
 }
 
@@ -326,10 +332,10 @@ if (! function_exists('patch')) {
     function patch(string $uri, array $data = []): TestResponse
     {
 <<<<<<< HEAD
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-=======
         xotPestStubFailure('patch', $uri, $data);
->>>>>>> laraxot/dev
+=======
+        throw new RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
     }
 }
 
@@ -340,10 +346,10 @@ if (! function_exists('delete')) {
     function delete(string $uri): TestResponse
     {
 <<<<<<< HEAD
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-=======
         xotPestStubFailure('delete', $uri);
->>>>>>> laraxot/dev
+=======
+        throw new RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
     }
 }
 
@@ -354,10 +360,10 @@ if (! function_exists('head')) {
     function head(string $uri): TestResponse
     {
 <<<<<<< HEAD
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-=======
         xotPestStubFailure('head', $uri);
->>>>>>> laraxot/dev
+=======
+        throw new RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
     }
 }
 
@@ -368,10 +374,10 @@ if (! function_exists('options')) {
     function options(string $uri): TestResponse
     {
 <<<<<<< HEAD
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-=======
         xotPestStubFailure('options', $uri);
->>>>>>> laraxot/dev
+=======
+        throw new RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
     }
 }
 
@@ -382,10 +388,10 @@ if (! function_exists('followingRedirects')) {
     function followingRedirects(int $number = 5): TestResponse
     {
 <<<<<<< HEAD
-        throw new RuntimeException('Stub: This function is meant for static analysis only.');
-=======
         xotPestStubFailure('followingRedirects', $number);
->>>>>>> laraxot/dev
+=======
+        throw new RuntimeException('Stub: This function is meant for static analysis only.');
+>>>>>>> 77b1e2748 (first)
     }
 }
 

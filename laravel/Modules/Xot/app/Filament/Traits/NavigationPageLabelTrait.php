@@ -7,9 +7,9 @@ namespace Modules\Xot\Filament\Traits;
 use Illuminate\Contracts\Support\Htmlable;
 
 <<<<<<< HEAD
-/** @phpstan-ignore trait.unused */
 =======
->>>>>>> laraxot/dev
+/** @phpstan-ignore trait.unused */
+>>>>>>> 77b1e2748 (first)
 trait NavigationPageLabelTrait
 {
     use TransTrait;

@@ -4,9 +4,9 @@ declare(strict_types=1);
 use Modules\Xot\Actions\PaDesignColorsAction;
 use Modules\Xot\Datas\MetatagData;
 <<<<<<< HEAD
-=======
 use Modules\Xot\Datas\XotData;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -15,11 +15,11 @@ uses(TestCase::class);
 test('MetatagData puo essere istanziata', function () {
     $metatagData = new MetatagData;
 <<<<<<< HEAD
-    Assert::assertInstanceOf(MetatagData::class, $metatagData);
-=======
 
     Assert::assertSame('xot', $metatagData->generator);
->>>>>>> laraxot/dev
+=======
+    Assert::assertInstanceOf(MetatagData::class, $metatagData);
+>>>>>>> 77b1e2748 (first)
 });
 
 test('getFilamentColors restituisce i colori Filament corretti', function (): void {
@@ -73,7 +73,6 @@ test('Le proprieta hanno i valori di default corretti', function () {
     Assert::assertSame('/favicon.ico', $metatagData->favicon);
 });
 <<<<<<< HEAD
-=======
 
 test('getBrandLogoSvg restituisce stringa vuota se il modulo principale non ha un logo.svg', function (): void {
     $xot = XotData::make();
@@ -98,4 +97,5 @@ test('getBrandLogoSvg legge il logo.svg del modulo principale quando esiste', fu
         $xot->main_module = $original;
     }
 });
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)

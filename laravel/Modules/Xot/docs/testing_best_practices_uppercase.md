@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Testing Best Practices - Laraxot Framework"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "testing best practices - laraxot framework xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Testing Best Practices - Laraxot Framework
 
 ## 🏆 **Gold Standard Pattern**

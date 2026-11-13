@@ -8,11 +8,11 @@ See canonical documentation: ../../../Themes/docs/shared-components/.gitignore-M
 consolidated
 agentdb.rvf
 <<<<<<< HEAD
-=======
 # Story BMAD: cronologia e backlog (modular-bmad-story-policy), mai nascoste da archive/ o consolidated/ annidati.
 # Le regole archive/consolidated restano per il resto di docs/. Ultima regola vince: queste stanno dopo `consolidated`.
 !stories/**/archive/
 !stories/**/consolidated/
 !bmad/stories/**/archive/
 !bmad/stories/**/consolidated/
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)

@@ -10,17 +10,17 @@ use Illuminate\Support\Facades\Log;
 use Modules\Xot\Actions\Cast\SafeIntCastAction;
 use Safe\Exceptions\JsonException;
 <<<<<<< HEAD
+use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\json_decode;
-
-use Spatie\QueueableAction\QueueableAction;
 
 =======
-use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\json_decode;
 
->>>>>>> laraxot/dev
+use Spatie\QueueableAction\QueueableAction;
+
+>>>>>>> 77b1e2748 (first)
 class GenerateOllamaAction
 {
     use QueueableAction;
@@ -51,9 +51,9 @@ class GenerateOllamaAction
      *     options?: array<string, float|int>
      * } $options
 <<<<<<< HEAD
-     *
 =======
->>>>>>> laraxot/dev
+     *
+>>>>>>> 77b1e2748 (first)
      * @return array{
      *     response: string,
      *     done: bool,

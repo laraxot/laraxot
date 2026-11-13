@@ -6,36 +6,36 @@ return [
     'fields' => [
         'matr' => [
 <<<<<<< HEAD
-            'label' => 'matr',
 =======
->>>>>>> laraxot/dev
+            'label' => 'matr',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'cognome' => [
 <<<<<<< HEAD
-            'label' => 'cognome',
 =======
->>>>>>> laraxot/dev
+            'label' => 'cognome',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'value' => [
 <<<<<<< HEAD
-            'label' => 'value',
 =======
->>>>>>> laraxot/dev
+            'label' => 'value',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'remember' => [
 <<<<<<< HEAD
-            'label' => 'remember',
 =======
->>>>>>> laraxot/dev
+            'label' => 'remember',
+>>>>>>> 77b1e2748 (first)
             'fields' => [
                 'label' => 'remember',
             ],
@@ -45,9 +45,9 @@ return [
         ],
         'password' => [
 <<<<<<< HEAD
-            'label' => 'password',
 =======
->>>>>>> laraxot/dev
+            'label' => 'password',
+>>>>>>> 77b1e2748 (first)
             'fields' => [
                 'label' => 'password',
             ],
@@ -63,18 +63,18 @@ return [
         ],
         'updated_at' => [
 <<<<<<< HEAD
-            'label' => 'updated_at',
 =======
->>>>>>> laraxot/dev
+            'label' => 'updated_at',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'created_at' => [
 <<<<<<< HEAD
-            'label' => 'created_at',
 =======
->>>>>>> laraxot/dev
+            'label' => 'created_at',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -108,27 +108,27 @@ return [
         ],
         'email_verified_at' => [
 <<<<<<< HEAD
-            'label' => 'email_verified_at',
 =======
->>>>>>> laraxot/dev
+            'label' => 'email_verified_at',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'password_expires_at' => [
 <<<<<<< HEAD
-            'label' => 'password_expires_at',
 =======
->>>>>>> laraxot/dev
+            'label' => 'password_expires_at',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'values' => [
 <<<<<<< HEAD
-            'label' => 'values',
 =======
->>>>>>> laraxot/dev
+            'label' => 'values',
+>>>>>>> 77b1e2748 (first)
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -174,8 +174,8 @@ return [
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
 <<<<<<< HEAD
+=======
     'actions' => [
     ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ];

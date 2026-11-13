@@ -11,10 +11,10 @@ return [
             'description' => 'Gestione dei moduli e delle estensioni',
         ],
 <<<<<<< HEAD
-        'label' => 'module',
-=======
         'label' => 'Module',
->>>>>>> laraxot/dev
+=======
+        'label' => 'module',
+>>>>>>> 77b1e2748 (first)
         'sort' => '17',
         'icon' => 'xot-module',
     ],

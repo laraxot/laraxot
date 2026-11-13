@@ -39,15 +39,72 @@ class ExecuteArtisanCommandAction
     /**
      * Esegue un comando Artisan e restituisce i risultati.
      *
+<<<<<<< HEAD
      * @param  string  $command  Il comando Artisan da eseguire (senza "php artisan")
+=======
+<<<<<<< .merge_file_hZ4KPP
+     * @param  string  $command  Il comando Artisan da eseguire (senza "php artisan")
+=======
+     * <<<<<<< HEAD
+     *
+     * @param string $command Il comando Artisan da eseguire (senza "php artisan")
+     *                        =======
+     *                        <<<<<<< HEAD
+     * @param string $command Il comando Artisan da eseguire (senza "php artisan")
+     * @param string $command Il comando Artisan da eseguire (senza "php artisan")
+     *                        =======
+     * @param string $command Il comando Artisan da eseguire (senza "php artisan")
+     * @param string $command Il comando Artisan da eseguire (senza "php artisan")
+     *                        >>>>>>> laraxot/dev
+     *
+     * @throws \RuntimeException Se il comando non è consentito o si verifica un errore
+     *
+     * =======
+     * <<<<<<< HEAD
+     * <<<<<<< HEAD
+     * @throws \RuntimeException Se il comando non è consentito o si verifica un errore
+     *
+     * >>>>>>> laraxot/dev
+     * @throws \RuntimeException Se il comando non è consentito o si verifica un errore
+     *                           =======
+     *                           >>>>>>> laraxot/dev
+     *
+     * =======
+     * @throws \RuntimeException Se il comando non è consentito o si verifica un errore
+     *                           >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     * @throws \RuntimeException Se il comando non è consentito o si verifica un errore
+     *                           =======
+     *                           <<<<<<< HEAD
+     *                           =======
+     *                           <<<<<<< HEAD
+     *                           <<<<<<< HEAD
+     *                           =======
+     *                           >>>>>>> laraxot/dev
+     *                           >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_a970nv
+>>>>>>> 77b1e2748 (first)
      * @return array{
      *     command: string,
      *     output: list<string>,
      *     status: 'completed'|'failed',
      *     exitCode: int
      * } Array con informazioni sull'esecuzione del comando
+<<<<<<< HEAD
      *
      * @throws \RuntimeException Se il comando non è consentito o si verifica un errore
+=======
+<<<<<<< .merge_file_hZ4KPP
+     *
+     * @throws \RuntimeException Se il comando non è consentito o si verifica un errore
+=======
+     * <<<<<<< HEAD
+>>>>>>> .merge_file_a970nv
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(string $command): array
     {
@@ -60,9 +117,9 @@ class ExecuteArtisanCommandAction
         /** @var list<string> $output */
         $output = [];
 <<<<<<< HEAD
-        $status = 'running';
 =======
->>>>>>> laraxot/dev
+        $status = 'running';
+>>>>>>> 77b1e2748 (first)
 
         try {
             $process = Process::path(base_path())
@@ -123,7 +180,36 @@ class ExecuteArtisanCommandAction
     /**
      * Verifica se un comando è presente nella lista dei comandi consentiti.
      *
+<<<<<<< HEAD
      * @param  string  $command  Il comando da verificare
+=======
+<<<<<<< .merge_file_hZ4KPP
+     * @param  string  $command  Il comando da verificare
+=======
+     * <<<<<<< HEAD
+     *
+     * @param string $command Il comando da verificare
+     *                        =======
+     *                        <<<<<<< HEAD
+     * @param string $command Il comando da verificare
+     *                        =======
+     *                        <<<<<<< HEAD
+     *                        <<<<<<< HEAD
+     * @param string $command Il comando da verificare
+     *                        =======
+     * @param string $command Il comando da verificare
+     *
+     * >>>>>>> laraxot/dev
+     *
+     * =======
+     * @param string $command Il comando da verificare
+     *                        >>>>>>> laraxot/dev
+     *                        >>>>>>> laraxot/dev
+     *
+     * >>>>>>> laraxot/dev
+     *
+>>>>>>> .merge_file_a970nv
+>>>>>>> 77b1e2748 (first)
      * @return bool True se il comando è consentito, false altrimenti
      */
     private function isCommandAllowed(string $command): bool

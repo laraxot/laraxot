@@ -12,7 +12,36 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
+<<<<<<< HEAD
  * @param  MockInterface&Table  $tableMock
+=======
+<<<<<<< .merge_file_1KO786
+ * @param  MockInterface&Table  $tableMock
+=======
+ * <<<<<<< HEAD.
+ *
+ * @param MockInterface&Table $tableMock
+ *                                       =======
+ *                                       <<<<<<< HEAD
+ * @param MockInterface&Table $tableMock
+ *                                       =======
+ *                                       <<<<<<< HEAD
+ *                                       <<<<<<< HEAD
+ * @param MockInterface&Table $tableMock
+ *                                       =======
+ * @param MockInterface&Table $tableMock
+ *
+ * >>>>>>> laraxot/dev
+ *
+ * =======
+ * @param MockInterface&Table $tableMock
+ *                                       >>>>>>> laraxot/dev
+ *                                       >>>>>>> laraxot/dev
+ *
+ * >>>>>>> laraxot/dev
+ *
+>>>>>>> .merge_file_S7RwYV
+>>>>>>> 77b1e2748 (first)
  * @return MockInterface&Table
  */
 function stubTableChain(MockInterface $tableMock): MockInterface
@@ -37,9 +66,9 @@ function stubTableChain(MockInterface $tableMock): MockInterface
         'emptyStateActions',
         'striped',
 <<<<<<< HEAD
-=======
         'stackedOnMobile',
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
         'paginated',
         'defaultSort',
         'poll',

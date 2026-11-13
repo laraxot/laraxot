@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Viste"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Viste"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Viste
 
 ## Configurazione Base
@@ -311,7 +311,7 @@ php artisan make:component Alert
     </div>
 </x-app-layout>
 <<<<<<< HEAD
-```
-=======
 ``` 
->>>>>>> laraxot/dev
+=======
+```
+>>>>>>> 77b1e2748 (first)

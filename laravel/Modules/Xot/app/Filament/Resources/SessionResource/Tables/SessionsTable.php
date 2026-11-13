@@ -7,9 +7,9 @@ namespace Modules\Xot\Filament\Resources\SessionResource\Tables;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 <<<<<<< HEAD
-=======
 use Modules\UI\Filament\Tables\Columns\IDColumn;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 use Modules\Xot\Models\Session;
 
@@ -34,10 +34,10 @@ class SessionsTable extends XotBaseResourceTable
                 ->sortable(),
             'user_agent' => TextColumn::make('user_agent')->searchable()->limit(60)->wrap()->toggleable(isToggledHiddenByDefault: true),
 <<<<<<< HEAD
-            'id' => TextColumn::make('id')->searchable()->toggleable(isToggledHiddenByDefault: true),
-=======
             'id' => IDColumn::make('id')->searchable()->toggleable(isToggledHiddenByDefault: true),
->>>>>>> laraxot/dev
+=======
+            'id' => TextColumn::make('id')->searchable()->toggleable(isToggledHiddenByDefault: true),
+>>>>>>> 77b1e2748 (first)
         ];
     }
 }

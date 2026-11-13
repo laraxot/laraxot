@@ -38,8 +38,8 @@ return [
         'sort' => 100,
     ],
 <<<<<<< HEAD
+=======
     'fields' => [
     ],
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ];

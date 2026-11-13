@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Deprecazione Comandi MCP e Migrazione Azioni Database"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Deprecazione Comandi MCP e Migrazione Azioni Database"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Deprecazione Comandi MCP e Migrazione Azioni Database
 
 ## Panoramica
@@ -153,7 +153,7 @@ Aggiornare la documentazione del progetto per riflettere i nuovi percorsi dei co
 ---
 
 <<<<<<< HEAD
-*Ultimo aggiornamento: Giugno 2025*
-=======
 *Ultimo aggiornamento: Giugno 2025* 
->>>>>>> laraxot/dev
+=======
+*Ultimo aggiornamento: Giugno 2025*
+>>>>>>> 77b1e2748 (first)

@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Strumenti di Correzione Automatica della Struttura delle Directory"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "strumenti di correzione automatica della struttura delle directory xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Strumenti di Correzione Automatica della Struttura delle Directory
 
 ## Introduzione

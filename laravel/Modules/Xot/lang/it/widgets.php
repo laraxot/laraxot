@@ -61,7 +61,6 @@ return [
         ],
     ],
 <<<<<<< HEAD
-=======
     'base' => [
         'title' => 'Widget base',
         'description' => 'Widget di base da cui derivano gli altri widget.',
@@ -73,5 +72,6 @@ return [
             'label' => 'Invia',
         ],
     ],
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 ];

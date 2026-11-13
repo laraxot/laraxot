@@ -19,19 +19,19 @@ class AssetAction
 
     /**
 <<<<<<< HEAD
-     * Gestisce i percorsi degli asset, copiandoli nella directory pubblica se necessario.
-=======
      * Risolve il percorso pubblico di un asset (servito dal symlink verso la cartella `public` del modulo/tema).
->>>>>>> laraxot/dev
+=======
+     * Gestisce i percorsi degli asset, copiandoli nella directory pubblica se necessario.
+>>>>>>> 77b1e2748 (first)
      *
      * @param  string  $path  Il percorso dell'asset
      * @return string Il percorso pubblico dell'asset
      *
 <<<<<<< HEAD
-     * @throws Exception Se il file sorgente non esiste o non può essere copiato
-=======
      * @throws Exception Se l'asset del modulo non esiste né in `public/` né in `resources/`
->>>>>>> laraxot/dev
+=======
+     * @throws Exception Se il file sorgente non esiste o non può essere copiato
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(string $path): string
     {
@@ -86,6 +86,8 @@ class AssetAction
         Assert::string($theme, 'Il tema deve essere una stringa');
 
 <<<<<<< HEAD
+        return $this->publicUrl('themes/'.$theme.'/'.$ns_after);
+=======
         $themeResourcePath = 'Themes/'.$theme.'/resources/'.$ns_after;
         $filename_from = app(FixPathAction::class)->execute(base_path($themeResourcePath));
 
@@ -98,9 +100,7 @@ class AssetAction
         Assert::string($asset, '['.__LINE__.']['.class_basename(static::class).']');
 
         return $asset;
-=======
-        return $this->publicUrl('themes/'.$theme.'/'.$ns_after);
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     }
 
     /**
@@ -115,22 +115,6 @@ class AssetAction
         }
 
 <<<<<<< HEAD
-        $filename_from = app(FixPathAction::class)->execute($module_path.'/resources/'.$ns_after);
-
-        if (! File::exists($filename_from)) {
-            if (isRunningTestBench()) {
-                return $originalPath;
-            }
-            throw new Exception('file ['.$filename_from.'] not Exists , path ['.$originalPath.']');
-        }
-
-        $assetPath = 'assets/'.$ns.'/'.$ns_after;
-        $filename_to = app(FixPathAction::class)->execute(public_path($assetPath));
-
-        $forceCopy = app()->environment() !== 'production';
-        $this->copyAsset($filename_from, $filename_to, $assetPath, $forceCopy);
-
-=======
 <<<<<<< .merge_file_Un8UMe
         // Asset statici del modulo in Modules/<Modulo>/public: serviti dal symlink
         // public_html/assets/<modulo> -> ../../laravel/Modules/<Modulo>/public (deploy.sh). Niente copia.
@@ -176,13 +160,30 @@ class AssetAction
      */
     private function publicUrl(string $assetPath): string
     {
->>>>>>> laraxot/dev
+=======
+        $filename_from = app(FixPathAction::class)->execute($module_path.'/resources/'.$ns_after);
+
+        if (! File::exists($filename_from)) {
+            if (isRunningTestBench()) {
+                return $originalPath;
+            }
+            throw new Exception('file ['.$filename_from.'] not Exists , path ['.$originalPath.']');
+        }
+
+        $assetPath = 'assets/'.$ns.'/'.$ns_after;
+        $filename_to = app(FixPathAction::class)->execute(public_path($assetPath));
+
+        $forceCopy = app()->environment() !== 'production';
+        $this->copyAsset($filename_from, $filename_to, $assetPath, $forceCopy);
+
+>>>>>>> 77b1e2748 (first)
         $asset = Str::replace(url(''), '', asset($assetPath));
         Assert::string($asset, '['.__LINE__.']['.class_basename(static::class).']');
 
         return $asset;
     }
 <<<<<<< HEAD
+=======
 
     /**
      * Copies an asset file if it doesn't exist or if forced.
@@ -265,6 +266,5 @@ class AssetAction
             file from ['.$from.']
             file to ['.$to.']', $e->getCode(), $e, );
     }
-=======
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 }

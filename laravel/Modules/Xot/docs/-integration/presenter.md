@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "presenter"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot, -integration]
 qmd: "presenter xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # presenter
 
 <!-- Contenuto migrato da _docs/presenter.txt -->

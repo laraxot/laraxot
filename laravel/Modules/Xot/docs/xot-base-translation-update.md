@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Aggiornamento File di Traduzione xot_base.php"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "aggiornamento file di traduzione xot_base.php xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Aggiornamento File di Traduzione xot_base.php
 
 ## Data Aggiornamento

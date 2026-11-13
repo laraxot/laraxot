@@ -11,10 +11,10 @@ return [
             'description' => 'Gestione dei lock di cache',
         ],
 <<<<<<< HEAD
-        'label' => 'cache-lock',
-=======
         'label' => 'Cache lock',
->>>>>>> laraxot/dev
+=======
+        'label' => 'cache-lock',
+>>>>>>> 77b1e2748 (first)
         'sort' => '20',
         'icon' => 'xot-lock',
     ],

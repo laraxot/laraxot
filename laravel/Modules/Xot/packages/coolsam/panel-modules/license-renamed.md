@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "license renamed"
 type: note
@@ -11,7 +10,8 @@ issues: []
 discussions: []
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 The MIT License (MIT)
 
 Copyright (c) coolsam <smaosa@savannabits.com>

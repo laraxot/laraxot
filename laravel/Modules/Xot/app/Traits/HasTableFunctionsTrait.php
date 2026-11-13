@@ -11,17 +11,17 @@ use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 <<<<<<< HEAD
-
-/** @phpstan-ignore trait.unused */
-trait HasTableFunctionsTrait
-=======
 use Modules\UI\Filament\Tables\Columns\IDColumn;
 
 /**
  * @phpstan-ignore trait.unused
  */
 trait HasTableFunctionsTrait // @phpstan-ignore trait.unused
->>>>>>> laraxot/dev
+=======
+
+/** @phpstan-ignore trait.unused */
+trait HasTableFunctionsTrait
+>>>>>>> 77b1e2748 (first)
 {
     /**
      * Get the table columns for the list view.
@@ -32,10 +32,10 @@ trait HasTableFunctionsTrait // @phpstan-ignore trait.unused
     {
         return [
 <<<<<<< HEAD
-            'id' => TextColumn::make('id'),
-=======
             'id' => IDColumn::make('id'),
->>>>>>> laraxot/dev
+=======
+            'id' => TextColumn::make('id'),
+>>>>>>> 77b1e2748 (first)
             'name' => TextColumn::make('name'),
             'created_at' => TextColumn::make('created_at')->dateTime(),
             'updated_at' => TextColumn::make('updated_at')->dateTime(),

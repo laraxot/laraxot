@@ -10,13 +10,13 @@ use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord as FilamentEditRecord;
 use Filament\Support\Components\Component;
 <<<<<<< HEAD
-use Illuminate\Database\Eloquent\Model;
-=======
 use Filament\Support\Facades\FilamentView;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Js;
 use Modules\Xot\Filament\Links\RecordAnchor;
->>>>>>> laraxot/dev
+=======
+use Illuminate\Database\Eloquent\Model;
+>>>>>>> 77b1e2748 (first)
 use Modules\Xot\Filament\Traits\TransTrait;
 
 abstract class XotBaseEditRecord extends FilamentEditRecord
@@ -24,7 +24,6 @@ abstract class XotBaseEditRecord extends FilamentEditRecord
     use TransTrait;
 
 <<<<<<< HEAD
-=======
     protected function getRecordReturnUrl(string $fallback): string
     {
         $returnTo = request()->query(RecordAnchor::RETURN_TO_PARAMETER);
@@ -71,7 +70,8 @@ abstract class XotBaseEditRecord extends FilamentEditRecord
         );
     }
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
     public static function getNavigationLabel(): string
     {
         return static::transFunc(__FUNCTION__);

@@ -30,10 +30,10 @@ it('throws when morph map config is not an array', function (): void {
         Assert::fail('Expected exception not thrown');
     } catch (Exception $e) {
 <<<<<<< HEAD
-        Assert::assertInstanceOf(Exception::class, $e);
-=======
         Assert::assertNotEmpty($e->getMessage());
->>>>>>> laraxot/dev
+=======
+        Assert::assertInstanceOf(Exception::class, $e);
+>>>>>>> 77b1e2748 (first)
     }
 });
 
@@ -44,10 +44,10 @@ it('throws when model type key is missing in morph map', function (): void {
         app(GetModelClassByModelTypeAction::class)->execute('missing');
     } catch (Throwable $e) {
 <<<<<<< HEAD
-        Assert::assertInstanceOf(InvalidArgumentException::class, $e);
-=======
         Assert::assertNotEmpty($e->getMessage());
->>>>>>> laraxot/dev
+=======
+        Assert::assertInstanceOf(InvalidArgumentException::class, $e);
+>>>>>>> 77b1e2748 (first)
 
         return;
     }
@@ -60,10 +60,10 @@ it('instantiates model by type when id is null', function (): void {
     $result = app(GetModelByModelTypeAction::class)->execute('demo', null);
 
 <<<<<<< HEAD
-    Assert::assertInstanceOf(DemoModel::class, $result);
-=======
     Assert::assertFalse($result->exists);
->>>>>>> laraxot/dev
+=======
+    Assert::assertInstanceOf(DemoModel::class, $result);
+>>>>>>> 77b1e2748 (first)
 });
 
 it('loads model by id when record exists', function (): void {
@@ -74,9 +74,9 @@ it('loads model by id when record exists', function (): void {
     $result = app(GetModelByModelTypeAction::class)->execute('demo', '123');
 
 <<<<<<< HEAD
-    Assert::assertInstanceOf(DemoModel::class, $result);
 =======
->>>>>>> laraxot/dev
+    Assert::assertInstanceOf(DemoModel::class, $result);
+>>>>>>> 77b1e2748 (first)
     Assert::assertSame(123, SafeIntCastAction::cast($result->getKey()));
 });
 
@@ -89,10 +89,10 @@ it('throws when model id is provided but record is missing', function (): void {
         Assert::fail('Expected exception not thrown');
     } catch (Exception $e) {
 <<<<<<< HEAD
-        Assert::assertInstanceOf(Exception::class, $e);
-=======
         Assert::assertNotEmpty($e->getMessage());
->>>>>>> laraxot/dev
+=======
+        Assert::assertInstanceOf(Exception::class, $e);
+>>>>>>> 77b1e2748 (first)
     }
 });
 

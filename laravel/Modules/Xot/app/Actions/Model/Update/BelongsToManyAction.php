@@ -39,9 +39,9 @@ class BelongsToManyAction
         }
 
 <<<<<<< HEAD
-        $models = [];
 =======
->>>>>>> laraxot/dev
+        $models = [];
+>>>>>>> 77b1e2748 (first)
         $ids = [];
         $related = $relationDTO->related;
         $keyName = $relationDTO->related->getKeyName();
@@ -59,9 +59,9 @@ class BelongsToManyAction
 
                 $ids[] = $res->getKey();
 <<<<<<< HEAD
-                $models[] = $res;
 =======
->>>>>>> laraxot/dev
+                $models[] = $res;
+>>>>>>> 77b1e2748 (first)
             } else {
                 throw new \RuntimeException(sprintf('Key "%s" not found in relation data.', $keyName));
             }

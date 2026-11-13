@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Integrazione Cross-Module - Laraxot PTVX"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Integrazione Cross-Module - Laraxot PTVX"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Integrazione Cross-Module - Laraxot PTVX
 
 ## Panoramica
@@ -54,26 +54,26 @@ class IntegparamResource extends XotBaseResource
 {
     protected static ?string $model = Integparam::class;
 <<<<<<< HEAD
+    
+    public static function getFormSchema(): array
+=======
 
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             // Schema del form
         ];
     }
 <<<<<<< HEAD
-
-=======
     
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)
     public static function getTableColumns(): array
     {
         return [
@@ -144,16 +144,16 @@ class IntegparamResource extends XotBaseResource
 {
     protected static ?string $model = \Modules\Sigma\Models\Integparam::class;
 <<<<<<< HEAD
+    
+    public static function getFormSchema(): array
+=======
 
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
-=======
-    
-    public static function getFormSchema(): array
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             Section::make('Dati Anagrafici')
@@ -259,7 +259,7 @@ Il modulo Progressioni integra il modello `Integparam` del modulo Sigma per gest
 - [Translation Standards](/docs/translation-standards.md)
 
 <<<<<<< HEAD
-*Ultimo aggiornamento: 5 giugno 2025*
-=======
 *Ultimo aggiornamento: 5 giugno 2025* 
->>>>>>> laraxot/dev
+=======
+*Ultimo aggiornamento: 5 giugno 2025*
+>>>>>>> 77b1e2748 (first)

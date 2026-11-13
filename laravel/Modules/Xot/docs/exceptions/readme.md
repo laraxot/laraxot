@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Gestione delle Eccezioni"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, exceptions]
 qmd: "Gestione delle Eccezioni"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Gestione delle Eccezioni
 
 Questo documento fornisce una panoramica del sistema di gestione delle eccezioni nel modulo Xot.
@@ -44,14 +44,14 @@ Questo documento fornisce una panoramica del sistema di gestione delle eccezioni
 
 ## Collegamenti
 <<<<<<< HEAD
-- [Exception Handling Guidelines](../exception-handling-guide.md)
-- [Logging Best Practices](../logging-best-practices.md)
-- [PHPStan Level 9 Guide](../phpstan-level9-guide.md)
-=======
 - [Exception Handling Guidelines](../EXCEPTION-HANDLING-GUIDE.md)
 - [Logging Best Practices](../LOGGING-BEST-PRACTICES.md)
 - [PHPStan Level 9 Guide](../PHPSTAN-LEVEL9-GUIDE.md) 
->>>>>>> laraxot/dev
+=======
+- [Exception Handling Guidelines](../exception-handling-guide.md)
+- [Logging Best Practices](../logging-best-practices.md)
+- [PHPStan Level 9 Guide](../phpstan-level9-guide.md)
+>>>>>>> 77b1e2748 (first)
 ## Collegamenti tra versioni di README.md
 * [README.md](bashscripts/docs/README.md)
 * [README.md](bashscripts/docs/it/README.md)
@@ -65,10 +65,10 @@ Questo documento fornisce una panoramica del sistema di gestione delle eccezioni
 * [README.md](docs/moduli/comandi/README.md)
 * [README.md](docs/phpstan/README.md)
 <<<<<<< HEAD
-* [README.md](docs/README.md)
-=======
 * [README.md](../README.md)
->>>>>>> laraxot/dev
+=======
+* [README.md](docs/README.md)
+>>>>>>> 77b1e2748 (first)
 * [README.md](docs/module-links/README.md)
 * [README.md](docs/troubleshooting/git-conflicts/README.md)
 * [README.md](docs/tecnico/laraxot/README.md)
@@ -102,12 +102,12 @@ Questo documento fornisce una panoramica del sistema di gestione delle eccezioni
 * [README.md](../../../Xot/docs/README.md)
 * [README.md](../../../Xot/docs/standards/README.md)
 <<<<<<< HEAD
-* [README.md](../../../Xot/docs/conventions/README.md)
-* [README.md](../../../Xot/docs/development/README.md)
-=======
 * [README.md](../conventions/readme.md)
 * [README.md](../development/readme.md)
->>>>>>> laraxot/dev
+=======
+* [README.md](../../../Xot/docs/conventions/README.md)
+* [README.md](../../../Xot/docs/development/README.md)
+>>>>>>> 77b1e2748 (first)
 * [README.md](../../../Dental/docs/README.md)
 * [README.md](../../../User/docs/phpstan/README.md)
 * [README.md](../../../User/docs/README.md)

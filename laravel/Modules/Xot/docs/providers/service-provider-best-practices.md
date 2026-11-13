@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Best Practices nei Service Provider"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, providers]
 qmd: "Best Practices nei Service Provider"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Best Practices nei Service Provider
 
 ## Decisione Architetturale (2025-05-13)
@@ -41,6 +41,8 @@ Il provider `XotBaseServiceProvider` rappresenta la base architetturale per tutt
 
 ## Backlink
 <<<<<<< HEAD
+- [Torna a README.md del modulo Xot](../README.md)
+=======
 - [Torna a README.md del modulo Xot](../readme.md)
 - [Collegamento a docs/links.md della root](../../../../project_docs/links.md)
 
@@ -209,9 +211,7 @@ Il provider `XotBaseServiceProvider` rappresenta la base architetturale per tutt
 
 ## Backlink
 - [Torna a README.md del modulo Xot](../readme.md)
-=======
-- [Torna a README.md del modulo Xot](../README.md)
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 - [Collegamento a docs/links.md della root](../../../../../docs/links.md)
 
 ## Utilizzo di GetModulePathByGeneratorAction
@@ -331,14 +331,14 @@ public function execute(string $moduleName, string $generatorPath): string
     $res = module_path($moduleName, $relativePath);
     Assert::string($res);
 <<<<<<< HEAD
-
+    
     Assert::directory($res, 'The path '.$res.' is not a directory ['.$moduleName.']['.$generatorPath.']');
-
+    
 =======
-    
+
     Assert::directory($res, 'The path '.$res.' is not a directory ['.$moduleName.']['.$generatorPath.']');
-    
->>>>>>> laraxot/dev
+
+>>>>>>> 77b1e2748 (first)
     return $res;
 }
 ```
@@ -355,7 +355,7 @@ Questa implementazione:
 L'utilizzo di `GetModulePathByGeneratorAction` anziché chiamate dirette a `module_path` rappresenta una best practice importante nel progetto il progetto. Questo approccio migliora la robustezza, la leggibilità e la manutenibilità del codice nei service provider.
 
 <<<<<<< HEAD
-Si raccomanda di seguire questo pattern in tutti i service provider personalizzati per garantire coerenza e affidabilità nell'accesso ai percorsi dei moduli.
-=======
 Si raccomanda di seguire questo pattern in tutti i service provider personalizzati per garantire coerenza e affidabilità nell'accesso ai percorsi dei moduli. 
->>>>>>> laraxot/dev
+=======
+Si raccomanda di seguire questo pattern in tutti i service provider personalizzati per garantire coerenza e affidabilità nell'accesso ai percorsi dei moduli.
+>>>>>>> 77b1e2748 (first)

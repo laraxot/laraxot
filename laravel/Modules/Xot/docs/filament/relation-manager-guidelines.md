@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "relation manager guidelines"
 type: note
@@ -10,4 +8,6 @@ tags: [docs, xot, filament]
 qmd: "relation manager guidelines xot"
 ---
  
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

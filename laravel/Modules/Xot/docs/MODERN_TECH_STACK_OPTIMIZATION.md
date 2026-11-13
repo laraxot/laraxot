@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Modern Tech Stack Optimization Guide"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "Modern Tech Stack Optimization Guide"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Modern Tech Stack Optimization Guide
 ## Filament 4 + Laravel 12 + PHP 8.3 Best Practices
 

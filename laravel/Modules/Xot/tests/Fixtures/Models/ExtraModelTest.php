@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\Xot\Contracts\ExtraContract;
 <<<<<<< HEAD
-=======
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes as SchemalessAttributesCast;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Spatie\SchemalessAttributes\SchemalessAttributes;
 
 /**
@@ -30,10 +30,10 @@ class ExtraModelTest extends Model implements ExtraContract
     {
         return [
 <<<<<<< HEAD
-            'extra_attributes' => SchemalessAttributes::class,
-=======
             'extra_attributes' => SchemalessAttributesCast::class,
->>>>>>> laraxot/dev
+=======
+            'extra_attributes' => SchemalessAttributes::class,
+>>>>>>> 77b1e2748 (first)
         ];
     }
 

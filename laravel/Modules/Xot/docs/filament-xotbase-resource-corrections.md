@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "filament xotbase resource corrections"
 type: note
@@ -12,7 +11,8 @@ discussions: []
 status: draft
 ---
 
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Correzioni Implementate - Regola Critica XotBaseResource
 
 ## 🚨 Regola Critica Violata
@@ -182,12 +182,6 @@ use Filament\Forms\Components\TextInput;
 class ExampleResource extends XotBaseResource
 {
 <<<<<<< HEAD
-<<<<<<< HEAD
-    public function getFormSchema(): array
-=======
-    public function getFormSchema(): array
->>>>>>> laraxot/dev
-=======
     public function getFormSchema(): array
 ---
 title: "filament xotbase resource corrections"
@@ -199,7 +193,13 @@ qmd: "filament xotbase resource corrections"
 issues: []
 discussions: []
     public function getFormSchema(): array
+=======
+<<<<<<< HEAD
+    public function getFormSchema(): array
+=======
+    public function getFormSchema(): array
 >>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
     {
         return [
             TextInput::make('name')->required(),

@@ -16,8 +16,39 @@ class PlainTextFromFilamentValueAction
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
      * @param  mixed  $value  Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
      * @param  string|int|float|bool|\Stringable|null  $fallback  Valore di riserva se $value non è testo
+=======
+<<<<<<< .merge_file_1vkH2y
+     * @param  mixed  $value  Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param  string|int|float|bool|\Stringable|null  $fallback  Valore di riserva se $value non è testo
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param mixed                                  $value    Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param string|int|float|bool|\Stringable|null $fallback valore di riserva se $value non è testo
+     *                                                         =======
+     *                                                         <<<<<<< HEAD
+     * @param mixed                                  $value    Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param string|int|float|bool|\Stringable|null $fallback valore di riserva se $value non è testo
+     *                                                         =======
+     *                                                         <<<<<<< HEAD
+     *                                                         <<<<<<< HEAD
+     * @param mixed                                  $value    Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param string|int|float|bool|\Stringable|null $fallback Valore di riserva se $value non è testo
+     *                                                         =======
+     * @param mixed                                  $value    Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param string|int|float|bool|\Stringable|null $fallback Valore di riserva se $value non è testo
+     *                                                         >>>>>>> laraxot/dev
+     *                                                         =======
+     * @param mixed                                  $value    Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param string|int|float|bool|\Stringable|null $fallback Valore di riserva se $value non è testo
+     *                                                         >>>>>>> laraxot/dev
+     *                                                         >>>>>>> laraxot/dev
+     *                                                         >>>>>>> laraxot/dev
+>>>>>>> .merge_file_wsjSCJ
+>>>>>>> 77b1e2748 (first)
      */
     public function execute(mixed $value, string|int|float|bool|\Stringable|null $fallback = ''): string
     {
@@ -45,8 +76,39 @@ class PlainTextFromFilamentValueAction
     }
 
     /**
+<<<<<<< HEAD
      * @param  mixed  $value  Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
      * @param  string|int|float|bool|\Stringable|null  $fallback  Valore di riserva se $value non è testo
+=======
+<<<<<<< .merge_file_1vkH2y
+     * @param  mixed  $value  Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param  string|int|float|bool|\Stringable|null  $fallback  Valore di riserva se $value non è testo
+=======
+     * <<<<<<< HEAD.
+     *
+     * @param mixed                                  $value    Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param string|int|float|bool|\Stringable|null $fallback valore di riserva se $value non è testo
+     *                                                         =======
+     *                                                         <<<<<<< HEAD
+     * @param mixed                                  $value    Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param string|int|float|bool|\Stringable|null $fallback valore di riserva se $value non è testo
+     *                                                         =======
+     *                                                         <<<<<<< HEAD
+     *                                                         <<<<<<< HEAD
+     * @param mixed                                  $value    Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param string|int|float|bool|\Stringable|null $fallback Valore di riserva se $value non è testo
+     *                                                         =======
+     * @param mixed                                  $value    Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param string|int|float|bool|\Stringable|null $fallback Valore di riserva se $value non è testo
+     *                                                         >>>>>>> laraxot/dev
+     *                                                         =======
+     * @param mixed                                  $value    Valore Filament eterogeneo (Htmlable|string|scalar|\Stringable|HasLabel|null)
+     * @param string|int|float|bool|\Stringable|null $fallback Valore di riserva se $value non è testo
+     *                                                         >>>>>>> laraxot/dev
+     *                                                         >>>>>>> laraxot/dev
+     *                                                         >>>>>>> laraxot/dev
+>>>>>>> .merge_file_wsjSCJ
+>>>>>>> 77b1e2748 (first)
      */
     public static function cast(mixed $value, string|int|float|bool|\Stringable|null $fallback = ''): string
     {

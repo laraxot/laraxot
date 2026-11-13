@@ -1,6 +1,14 @@
 ---
 title: "Piano di Risoluzione Conflitti Git"
 <<<<<<< HEAD
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-18
+module: Xot
+tags: [xot, git]
+qmd: "Piano di Risoluzione Conflitti Git"
+=======
 module: "Xot"
 type: concept
 tags: [conflict, resolution, plan]
@@ -9,15 +17,7 @@ updated: 2026-07-14
 qmd: "conflict resolution plan"
 related:
   - "./eloquent-magic-properties-rule.md"
-=======
-type: note
-status: unverified
-created: 2026-09-24
-updated: 2026-10-18
-module: Xot
-tags: [xot, git]
-qmd: "Piano di Risoluzione Conflitti Git"
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
 ---
 # Piano di Risoluzione Conflitti Git
 
@@ -97,7 +97,7 @@ Per ogni file risolto, verrà creata o aggiornata la documentazione seguendo que
 ## Monitoraggio e avanzamento
 
 <<<<<<< HEAD
-L'avanzamento della risoluzione sarà tracciato in un documento dedicato in `docs/logs/conflict_resolution_progress.md`.
-=======
 L'avanzamento della risoluzione sarà tracciato in un documento dedicato in `docs/logs/conflict_resolution_progress.md`. 
->>>>>>> laraxot/dev
+=======
+L'avanzamento della risoluzione sarà tracciato in un documento dedicato in `docs/logs/conflict_resolution_progress.md`.
+>>>>>>> 77b1e2748 (first)

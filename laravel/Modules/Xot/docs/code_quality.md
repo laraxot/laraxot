@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "Code Quality Guidelines for Laravel Modules"
 type: note
@@ -8,7 +7,8 @@ updated: 2026-10-18
 tags: [docs, xot]
 qmd: "code quality guidelines for laravel modules xot"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # Code Quality Guidelines for Laravel Modules
 
 ## Overview

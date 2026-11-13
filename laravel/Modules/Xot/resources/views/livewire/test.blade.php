@@ -61,27 +61,27 @@ declare(strict_types=1);
         <h3>{{ $product->title }}</h3>
         @foreach ($change_cats as $change_cat)
 <<<<<<< HEAD
-            <h4>[{{ $change_cat-> }}]{{ $change_cat->title }}</h4>
-            @foreach ($changes->where('id_cat', $change_cat->) as $change)
-                <h5>[{{ $change-> }}]{{ $change->title }}</h5>
-=======
             <h4>[{{ $change_cat->id }}]{{ $change_cat->title }}</h4>
             @foreach ($changes->where('id_cat', $change_cat->id) as $change)
                 <h5>[{{ $change->id }}]{{ $change->title }}</h5>
->>>>>>> laraxot/dev
+=======
+            <h4>[{{ $change_cat-> }}]{{ $change_cat->title }}</h4>
+            @foreach ($changes->where('id_cat', $change_cat->) as $change)
+                <h5>[{{ $change-> }}]{{ $change->title }}</h5>
+>>>>>>> 77b1e2748 (first)
 
 
                 <div class="btn-group btn-group-toggle">
                     <label class="btn btn-danger">
 <<<<<<< HEAD
-                        <input type="radio" wire:model="qty.{{ $change_cat-> }}.{{ $change-> }}"
-                            name="qty[{{ $change_cat-> }}][{{ $change-> }}]" autocomplete="off" value="-1">
-                        @if (isset($qty[$change_cat->][$change->]) && $qty[$change_cat->][$change->] == -1)
-=======
                         <input type="radio" wire:model="qty.{{ $change_cat->id }}.{{ $change->id }}"
                             name="qty[{{ $change_cat->id }}][{{ $change->id }}]" autocomplete="off" value="-1">
                         @if (isset($qty[$change_cat->id][$change->id]) && $qty[$change_cat->id][$change->id] == -1)
->>>>>>> laraxot/dev
+=======
+                        <input type="radio" wire:model="qty.{{ $change_cat-> }}.{{ $change-> }}"
+                            name="qty[{{ $change_cat-> }}][{{ $change-> }}]" autocomplete="off" value="-1">
+                        @if (isset($qty[$change_cat->][$change->]) && $qty[$change_cat->][$change->] == -1)
+>>>>>>> 77b1e2748 (first)
                             [-]
                         @else
                             -
@@ -89,14 +89,14 @@ declare(strict_types=1);
                     </label>
                     <label class="btn btn-secondary">
 <<<<<<< HEAD
-                        <input type="radio" wire:model="qty.{{ $change_cat-> }}.{{ $change-> }}"
-                            name="qty[{{ $change_cat-> }}][{{ $change-> }}]" autocomplete="off" value="0">
-                        @if (isset($qty[$change_cat->][$change->]) && $qty[$change_cat->][$change->] == 0)
-=======
                         <input type="radio" wire:model="qty.{{ $change_cat->id }}.{{ $change->id }}"
                             name="qty[{{ $change_cat->id }}][{{ $change->id }}]" autocomplete="off" value="0">
                         @if (isset($qty[$change_cat->id][$change->id]) && $qty[$change_cat->id][$change->id] == 0)
->>>>>>> laraxot/dev
+=======
+                        <input type="radio" wire:model="qty.{{ $change_cat-> }}.{{ $change-> }}"
+                            name="qty[{{ $change_cat-> }}][{{ $change-> }}]" autocomplete="off" value="0">
+                        @if (isset($qty[$change_cat->][$change->]) && $qty[$change_cat->][$change->] == 0)
+>>>>>>> 77b1e2748 (first)
                             [&nbsp;]
                         @else
                             &nbsp;
@@ -104,14 +104,14 @@ declare(strict_types=1);
                     </label>
                     <label class="btn btn-primary active">
 <<<<<<< HEAD
-                        <input type="radio" wire:model="qty.{{ $change_cat-> }}.{{ $change-> }}"
-                            name="qty[{{ $change_cat-> }}][{{ $change-> }}]" autocomplete="off" value="1">
-                        @if (isset($qty[$change_cat->][$change->]) && $qty[$change_cat->][$change->] == 1)
-=======
                         <input type="radio" wire:model="qty.{{ $change_cat->id }}.{{ $change->id }}"
                             name="qty[{{ $change_cat->id }}][{{ $change->id }}]" autocomplete="off" value="1">
                         @if (isset($qty[$change_cat->id][$change->id]) && $qty[$change_cat->id][$change->id] == 1)
->>>>>>> laraxot/dev
+=======
+                        <input type="radio" wire:model="qty.{{ $change_cat-> }}.{{ $change-> }}"
+                            name="qty[{{ $change_cat-> }}][{{ $change-> }}]" autocomplete="off" value="1">
+                        @if (isset($qty[$change_cat->][$change->]) && $qty[$change_cat->][$change->] == 1)
+>>>>>>> 77b1e2748 (first)
                             [+]
                         @else
                             +

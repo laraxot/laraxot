@@ -37,8 +37,12 @@ class SpidAuthController extends Controller
     {
         try {
             $level = (int) $request->query('level', 2);
+<<<<<<< HEAD
             $fallbackUrl = app(GetPostLoginUrlAction::class)->execute();
             $returnUrl = app(SanitizeReturnUrlAction::class)->execute($request, $request->query('return_url'), $fallbackUrl);
+=======
+            $returnUrl = $request->query('return_url', app(GetPostLoginUrlAction::class)->execute());
+>>>>>>> f08c6884 (.)
 
             // Valida il provider
             $providers = $this->spidService->getProviders();
@@ -103,7 +107,11 @@ class SpidAuthController extends Controller
 
             // Redirect all'URL di ritorno
             $returnUrl = Session::pull('spid.return_url');
+<<<<<<< HEAD
             $returnUrl = app(SanitizeReturnUrlAction::class)->execute($request, $returnUrl, app(GetPostLoginUrlAction::class)->execute());
+=======
+            $returnUrl = is_string($returnUrl) && $returnUrl !== '' ? $returnUrl : app(GetPostLoginUrlAction::class)->execute();
+>>>>>>> f08c6884 (.)
 
             return redirect()->to($returnUrl)
                 ->with('success', 'Autenticazione SPID completata con successo.');

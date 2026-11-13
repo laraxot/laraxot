@@ -85,10 +85,10 @@ test('safe int cast action works', function (): void {
     Assert::assertSame(50, $action->executeWithRange(50, 0, 100));
     Assert::assertSame(10, $action->executeAsId(10));
 <<<<<<< HEAD
-    Assert::assertSame(0, $action->executeAsId(0));
-=======
     Assert::assertSame(1, $action->executeAsId(0));
->>>>>>> laraxot/dev
+=======
+    Assert::assertSame(0, $action->executeAsId(0));
+>>>>>>> 77b1e2748 (first)
     Assert::assertSame(99, SafeIntCastAction::cast('99'));
 });
 

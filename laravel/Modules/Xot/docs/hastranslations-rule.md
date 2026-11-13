@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-=======
 ---
 title: "🚨 REGOLA FONDAMENTALE: HasTranslations"
 type: note
@@ -10,7 +9,8 @@ module: Xot
 tags: [xot, docs]
 qmd: "🚨 REGOLA FONDAMENTALE: HasTranslations"
 ---
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 # 🚨 REGOLA FONDAMENTALE: HasTranslations
 
 ## Regola Critica
@@ -140,7 +140,7 @@ grep -r "use HasTranslations" laravel/Modules/*/app/Models/
 - [Pattern di Estensione Filament](filament_extension_pattern.md)
 - [Log Correzioni](filament_corrections_log.md)
 <<<<<<< HEAD
-- [Best Practices Filament](filament_best_practices.md)
-=======
 - [Best Practices Filament](filament_best_practices.md) 
->>>>>>> laraxot/dev
+=======
+- [Best Practices Filament](filament_best_practices.md)
+>>>>>>> 77b1e2748 (first)

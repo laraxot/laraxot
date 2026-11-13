@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-=======
 ---
 title: "env"
 type: note
@@ -37,4 +35,6 @@ TELESCOPE_ENABLED=false
 PHP_CS_FIXER_IGNORE_ENV=true
 
 ~~~
->>>>>>> laraxot/dev
+=======
+
+>>>>>>> 77b1e2748 (first)

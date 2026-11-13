@@ -6,10 +6,10 @@ namespace Coolsam\FilamentModules;
 
 use Filament\Facades\Filament;
 <<<<<<< HEAD
-=======
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use Nwidart\Modules\LaravelModulesServiceProvider;
@@ -54,6 +54,13 @@ class CoolModulesServiceProvider extends PackageServiceProvider
 
                 if ($id->contains('::')) {
 <<<<<<< HEAD
+                    $panel->renderHook(
+                        'panels::sidebar.nav.start',
+                        static fn (): HtmlString => new HtmlString("<h2 class='m-2 p-2 font-black text-xl'>".e(self::sidebarTitle($panelId)).'</h2>'),
+                    )->renderHook(
+                        'panels::sidebar.nav.end',
+                        static fn (): HtmlString => self::mainPanelLink(),
+=======
                     $title = $id->replace(['::', '-'], [' ', ' '])->title()->toString();
                     $panel->renderHook(
                         'panels::sidebar.nav.start',
@@ -69,14 +76,7 @@ class CoolModulesServiceProvider extends PackageServiceProvider
                                         Main Panel
                                       </a>
                                      '),
-=======
-                    $panel->renderHook(
-                        'panels::sidebar.nav.start',
-                        static fn (): HtmlString => new HtmlString("<h2 class='m-2 p-2 font-black text-xl'>".e(self::sidebarTitle($panelId)).'</h2>'),
-                    )->renderHook(
-                        'panels::sidebar.nav.end',
-                        static fn (): HtmlString => self::mainPanelLink(),
->>>>>>> laraxot/dev
+>>>>>>> 77b1e2748 (first)
                     );
 
                     // Marca questo panel come processato
@@ -88,7 +88,6 @@ class CoolModulesServiceProvider extends PackageServiceProvider
         parent::register();
     }
 <<<<<<< HEAD
-=======
 
     /**
      * `roosko::customer` -> "Roosko · Area clienti": il nome del modulo piu' il tipo di pannello tradotto
@@ -124,5 +123,6 @@ class CoolModulesServiceProvider extends PackageServiceProvider
             .'<path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" /></svg>'
             .$label.'</a>');
     }
->>>>>>> laraxot/dev
+=======
+>>>>>>> 77b1e2748 (first)
 }
