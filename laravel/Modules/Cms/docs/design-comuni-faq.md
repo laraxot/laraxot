@@ -1,4 +1,22 @@
+---
+title: "design comuni faq"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni faq"
+issues: []
+discussions: []
+status: draft
+---
+
 # Design Comuni - Domande Frequenti (FAQ)
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 ## Panoramica
 
@@ -131,7 +149,10 @@ Universal Blocks Renderer
 ```bash
 cd laravel/Themes/Sixteen
 npm run build    # Compila CSS/JS
-npm run copy     # Copia in public_html/themes/Sixteen/
+<<<<<<< .merge_file_jF3tFw
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
+=======
+>>>>>>> .merge_file_MjumZN
 ```
 
 ## Testing
@@ -169,8 +190,8 @@ Output: `Themes/Sixteen/docs/design-comuni/screenshots/`
 - [Documentazione Script](../../../bashscripts/docs/DESIGN_COMUNI_SCREENSHOT_SCRIPT.md)
 
 ### Moduli Correlati
-- [UI Module - Blocks System](../UI/docs/blocks-system.md)
-- [UI Module - Design System](../UI/docs/design-system.md)
+- [UI Module - Blocks System](../../UI/docs/blocks-system.md)
+- [UI Module - Design System](../../UI/docs/design-system.md)
 
 ## Prossimi Passi
 
@@ -207,7 +228,6 @@ Icone utilizzate:
 - `#it-search` - Icona search input
 
 ---
-
 **Ultimo Aggiornamento**: 2026-04-03  
 **Stato**: ✅ 90% Completato  
 **Responsabile**: AI Agent Team
@@ -215,7 +235,7 @@ Icone utilizzate:
 ## Verifica corrente 2026-04-03
 
 Verifica rilanciata sui render attuali:
-- [Theme parity report](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-parity-2026-04-03.md)
+- [Theme parity report](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-parity.md)
 - [Structure diff](../../../Themes/Sixteen/docs/pages/domande-frequenti/STRUCTURE-DIFF.md)
 
 Esito aggiornato:

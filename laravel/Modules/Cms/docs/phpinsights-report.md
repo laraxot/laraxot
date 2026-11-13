@@ -1,3 +1,15 @@
+---
+title: "phpinsights report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpinsights report"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHP Insights Report (CMS)
 
 ## sintesi esecuzione [DATE]

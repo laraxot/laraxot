@@ -3,5 +3,6 @@
 declare(strict_types=1);
 
 it('GET /it/patient/referto acceptable', function (): void {
-    $res = cmsGet('/it/patient/referto');
+    $res = $this->get('/it/patient/referto');
+    expect($res->getStatusCode())->toBeIn([200, 204, 301, 302, 303, 307, 308, 401, 403]);
 });

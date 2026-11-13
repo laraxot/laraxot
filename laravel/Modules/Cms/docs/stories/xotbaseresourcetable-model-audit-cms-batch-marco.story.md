@@ -1,4 +1,8 @@
 ---
+tags: [documentation]
+qmd: "xotbaseresourcetable model audit cms batch marco.story"
+issues: []
+discussions: []
 title: "Cms: audit $model + colonne + UX su 5 XotBaseResourceTable"
 type: story
 module: Cms

@@ -1,3 +1,15 @@
+---
+title: "screenshot analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "screenshot analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📸 Screenshot Analysis - Homepage FixCity
 
 ## Reference: Bootstrap Italia
@@ -24,7 +36,6 @@ URL: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
 - Hover: `#0052A3`
 
 ---
-
 ### 2. Hero Section
 ```
 Screenshot: hero_bootstrap_italia.png

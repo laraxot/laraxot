@@ -5,72 +5,98 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
-use Illuminate\Support\Collection;
 use Modules\Cms\Models\Module;
-use Modules\User\Models\User as CmsUser;
+use Modules\User\Models\User;
 use Modules\Xot\Actions\Filament\GetModulesNavigationItems;
+use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Tests\CreatesApplication;
 
+/**
+ * @method mixed getAttribute(string $key)
+ */
 abstract class TestHelper extends BaseTestCase
 {
-    public ?CmsUser $super_admin_user = null;
+    // use CreatesApplication;
 
-    public ?CmsUser $no_super_admin_user = null;
-
-    public function getSuperAdminUser(): ?CmsUser
+    // in User
+    public function getSuperAdminUser(): ?UserContract
     {
-        /** @var CmsUser|null $user */
-        $user = CmsUser::role('super-admin')->first();
+        return User::role('super-admin')->first();
+    }
+
+    // in User
+    public function getNoSuperAdminUser(): ?UserContract
+    {
+        /** @var UserContract|null $user */
+        $user = User::all()
+            ->map(function (UserContract $item): ?UserContract {
+                if (! $item->hasRole('super-admin')) {
+                    return $item;
+                }
+
+                return null;
+            })
+            ->filter(fn ($value): bool => $value !== null)
+            ->first();
 
         return $user;
     }
 
-    public function getNoSuperAdminUser(): ?CmsUser
-    {
-        /** @var CmsUser|null $user */
-        $user = CmsUser::all()
-            ->first(fn (CmsUser $item): bool => ! $item->hasRole('super-admin'));
-
-        return $user;
-    }
-
-    /**
-     * @return list<string>
-     */
+    // in Tenant o Cms
+    /** @return array<int, string> */
     public function getModuleNameLists(): array
     {
-        /** @var list<string> $names */
-        $names = collect(app(Module::class)->getRows())->pluck('name')->all();
+        /** @var Module $module */
+        $module = app(Module::class);
+
+        /** @var array<int, array<string, mixed>> $rows */
+        $rows = $module->getRows();
+
+        $names = [];
+        foreach ($rows as $row) {
+            $name = $row['name'] ?? null;
+            if (is_string($name)) {
+                $names[] = $name;
+            }
+        }
 
         return $names;
     }
 
-    /**
-     * @return Collection<int, string|null>
-     */
-    public function getMainAdminNavigationUrlItems(): Collection
+    // in Tenant o Cms
+    /** @return array<int, string> */
+    public function getMainAdminNavigationUrlItems(): array
     {
-        return collect(app(GetModulesNavigationItems::class)->execute())
-            ->map(fn (mixed $item): ?string => $item->getUrl());
-    }
-
-    /**
-     * @return Collection<int, string>
-     */
-    public function getUserNavigationItemUrlRoles(CmsUser $user): Collection
-    {
-        /** @var Collection<int, string> $urls */
-        $urls = $user
-            ->getRoleNames()
-            ->map(function (mixed $item): ?string {
-                if (! is_string($item) || 'super-admin' === $item) {
-                    return null;
+        $items = collect(app(GetModulesNavigationItems::class)->execute())
+            ->map(function ($item): ?string {
+                $url = $item->getUrl();
+                if (is_string($url) && $url) {
+                    return $url;
                 }
 
-                return '/'.mb_substr($item, 0, -7).'/admin';
+                return null;
             })
-            ->filter(fn (?string $value): bool => ! is_null($value))
-            ->values();
+            ->filter(fn ($url): bool => $url !== null)
+            ->values()
+            ->all();
 
-        return $urls;
+        /** @var array<int, string> $result */
+        $result = $items;
+
+        return $result;
+    }
+
+    // in Tenant o Cms
+    /** @return array<int, string> */
+    public function getUserNavigationItemUrlRoles(UserContract $user): array
+    {
+        $result = [];
+        foreach ($user->roles()->pluck('name') as $roleName) {
+            if (is_string($roleName) && $roleName !== 'super-admin') {
+                $result[] = '/'.mb_substr($roleName, 0, -7).'/admin';
+            }
+        }
+
+        return $result;
     }
 }

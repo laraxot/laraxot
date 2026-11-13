@@ -1,4 +1,10 @@
 ---
+type: note
+tags: [documentation]
+updated: 2026-09-26
+qmd: "models migrations coverage"
+issues: []
+discussions: []
 title: "Cms — copertura Models / Migration / Seeder / Factory"
 created: 2026-07-24
 last_updated: 2026-07-24

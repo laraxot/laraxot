@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Cms Module — Doctrine"
 type: doctrine
 tags: [cms, content-management, module-doctrine]
@@ -8,6 +10,7 @@ qmd: "Cms module doctrine BMAD analysis purpose religion philosophy policy why z
 related:
   - "../../Xot/docs/module.md"
   - "../../UI/docs/module.md"
+status: draft
 ---
 
 # Cms Module — Doctrine

@@ -1,3 +1,14 @@
+---
+title: "Cms.Deprecation Fix.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "Cms.Deprecation Fix.story"
+issues: []
+discussions: []
+---
+
 # Cms.Deprecation-Fix: Spatie LaravelData v5 Migration
 
 **Story ID:** Cms.Deprecation-Fix

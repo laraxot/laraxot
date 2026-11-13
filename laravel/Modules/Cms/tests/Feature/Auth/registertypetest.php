@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
-use Modules\Cms\Tests\TestCase;
-
-use function Pest\Laravel\actingAs;
-use function Pest\Laravel\get;
-
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+beforeEach(function (): void {
+    /* @var \Modules\Cms\Tests\TestCase $this */
+    cmsSkipTest('patient/doctor registration types not configured in this install.');
+});
 /*
  * Tests for dynamic registration pages rendered by Themes/One
  * Route pattern: /{locale}/auth/{type}/register

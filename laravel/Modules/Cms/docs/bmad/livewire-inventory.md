@@ -1,4 +1,10 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-10-20
+qmd: "livewire inventory cms page show keep fo folio xot fleet"
+issues: []
+discussions: []
 title: "Inventario Http/Livewire → Filament widget — Cms"
 type: inventory
 module: Cms
@@ -10,14 +16,17 @@ related:
   - ./livewire-widget-decision-log.md
   - ./livewire-widget-epics.md
   - ../stories/12.1.cms-page-show-not-widget.story.md
-  - ../../User/docs/bmad/livewire-inventory.md
+  - ../00-index.md
+  - ../scopo.md
+  - ../../../User/docs/bmad/livewire-inventory.md
+  - ../../../Xot/docs/bmad/livewire-to-filament-widgets-inventory.md
 ---
 
 # Inventario: Livewire HTTP → Filament — modulo Cms
 
 **Solo documentazione. Nessun PHP toccato in questo audit.**
 
-Questo file è la SSoT del modulo Cms per la campagna di conversione Livewire → Filament widget. Formato e metodo sono ripresi da [Modules/User/docs/bmad/livewire-inventory.md](../../User/docs/bmad/livewire-inventory.md), adattati al fatto che qui, a differenza di User, non esiste alcun candidato reale.
+Questo file è la SSoT del modulo Cms per la campagna di conversione Livewire → Filament widget. Formato e metodo sono ripresi da [Modules/User/docs/bmad/livewire-inventory.md](../../../User/docs/bmad/livewire-inventory.md), adattati al fatto che qui, a differenza di User, non esiste alcun candidato reale.
 
 ## Metodo (codice, non assunzione)
 
@@ -89,6 +98,8 @@ Il documento originale del 2026-08-25 (ora rinominato in `livewire-widget-conver
 ## Verdetto
 
 Nessuna story di implementazione: zero candidati reali nei Cluster A/B. Resta valida come gate anti-scope-creep la story [12.1](../stories/12.1.cms-page-show-not-widget.story.md), aggiornata in questo audit con le citazioni file:riga raccolte qui.
+
+**Allineamento fleet (2026-10-20):** in [Xot livewire-to-filament-widgets-inventory](../../../Xot/docs/bmad/livewire-to-filament-widgets-inventory.md) la riga Cms `Page\Show` e' **KEEP FO Folio** (W2). Ingresso modulo: [00-INDEX.md](../00-index.md) · [scopo.md](../scopo.md).
 
 ## Riferimenti correlati (non SSoT, coerenti col verdetto)
 

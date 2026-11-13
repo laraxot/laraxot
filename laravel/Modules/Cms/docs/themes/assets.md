@@ -1,4 +1,22 @@
+---
+title: "assets"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "assets"
+issues: []
+discussions: []
+status: draft
+---
+
 # Gestione degli Assets dei Temi
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 ## Documentazione Dettagliata
 
@@ -26,12 +44,20 @@
 ## Best Practices
 
 1. **Sviluppo**
-   - Utilizzare `npm run dev` seguito da `npm run copy`
+<<<<<<< .merge_file_HV41t7
+   - niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
+=======
+   - Utilizzare `npm run dev`
+>>>>>>> .merge_file_OQg5Zq
    - Verificare il corretto caricamento degli assets
    - Mantenere la documentazione aggiornata
 
 2. **Produzione**
-   - Eseguire `npm run build` seguito da `npm run copy`
+<<<<<<< .merge_file_HV41t7
+   - niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
+=======
+   - Eseguire `npm run build` (servito via symlink, niente copy)
+>>>>>>> .merge_file_OQg5Zq
    - Verificare la presenza e l'accessibilità degli assets
    - Testare il funzionamento completo del tema
 

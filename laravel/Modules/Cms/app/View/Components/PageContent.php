@@ -26,9 +26,17 @@ class PageContent extends Component
             '['.__LINE__.']['.__FILE__.']',
         );
         $blocks = $page->content_blocks;
-        if (! is_array($blocks)) {
-            $primary_lang = XotData::make()->primary_lang;
-            $blocks = $page->getTranslation('content_blocks', $primary_lang);
+        if (is_array($blocks)) {
+            $locale = app()->getLocale();
+            $localeKeys = ['it', 'en', 'fr', 'de', 'es', XotData::make()->primary_lang];
+            if (count(array_intersect(array_keys($blocks), $localeKeys)) > 0) {
+                $blocks = $page->getTranslation('content_blocks', $locale, false);
+                if (! is_array($blocks)) {
+                    $blocks = $page->getTranslation('content_blocks', XotData::make()->primary_lang, false);
+                }
+            }
+        } else {
+            $blocks = $page->getTranslation('content_blocks', XotData::make()->primary_lang, false);
         }
 
         if (! is_array($blocks)) {

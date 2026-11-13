@@ -1,4 +1,8 @@
 ---
+tags: [documentation]
+qmd: "docs index audit.story"
+issues: []
+discussions: []
 title: "CMS-docs: audit e indice della documentazione modulo Cms"
 type: story
 module: Cms

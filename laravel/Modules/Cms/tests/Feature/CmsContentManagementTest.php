@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\Collection;
 use Modules\Cms\Database\Factories\PageContentFactory;
 use Modules\Cms\Database\Factories\PageFactory;
 use Modules\Cms\Database\Factories\SectionFactory;
@@ -12,7 +13,7 @@ use PHPUnit\Framework\Assert;
 
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
-    cmsSkipTest('Requires full Cms DB schema + container wiring; not available in minimal sqlite test bootstrap.');
+    cmsSkipTest('Requires full Cms DB schema + container wiring; the MySQL test database is not available in this workspace.');
 });
 
 test('cms module models work together in content management', function () {
@@ -48,6 +49,9 @@ test('cms module models work together in content management', function () {
     Assert::assertCount(1, $pages);
     Assert::assertCount(1, $pageContents);
     Assert::assertCount(1, $sections);
+    Assert::assertTrue($pages->first()?->is($page));
+    Assert::assertTrue($pageContents->first()?->is($pageContent));
+    Assert::assertTrue($sections->first()?->is($section));
 });
 
 test('cms module handles multilingual content correctly', function () {
@@ -321,7 +325,7 @@ test('cms module handles bulk operations efficiently', function () {
     $pageContentsData = [];
     $sectionsData = [];
 
-    for ($i = 0; $i < 50; ++$i) {
+    for ($i = 0; $i < 50; $i++) {
         $pagesData[] = [
             'slug' => "page-{$i}",
             'title' => ['en' => "Page {$i}", 'it' => "Pagina {$i}"],
@@ -386,6 +390,10 @@ test('cms module supports complex query patterns', function () {
         ->create([
             'blocks' => [['type' => 'testimonial', 'title' => 'Testimonials']],
         ]);
+
+    Assert::assertCount(10, Collection::wrap($pages));
+    Assert::assertCount(8, Collection::wrap($pageContents));
+    Assert::assertCount(6, Collection::wrap($sections));
 
     $complexQuery = Page::query()->whereJsonContains('content_blocks', [['type' => 'hero']])->orderBy(
         'created_at',

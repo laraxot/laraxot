@@ -39,13 +39,13 @@ class SetFolioLocale
         // Priority 1: Check if first segment is a supported locale (URL Overrides User Preference)
         if (in_array($firstSegment, $supportedLocales, true)) {
             $locale = $firstSegment;
-        // Priority 2: If user is logged in and has a saved language, use that
+            // Priority 2: If user is logged in and has a saved language, use that
         } else {
-            $user = $request->user();
-            $locale = match (true) {
-                null !== $user && is_object($user) && property_exists($user, 'lang') && is_string($user->lang) => $user->lang,
-                default => $defaultLocale,
-            };
+            // data_get legge gli attributi magici Eloquent (users.lang e' una colonna: property_exists e'
+            // sempre false e questo ramo non scattava mai) e le proprieta' di uno stdClass. La lingua
+            // salvata dall'utente e' libera: si applica solo se e' tra quelle supportate.
+            $userLang = data_get($request->user(), 'lang');
+            $locale = is_string($userLang) && in_array($userLang, $supportedLocales, true) ? $userLang : $defaultLocale;
         }
 
         // CRITICAL: Set locale on BOTH app AND LaravelLocalization facade.

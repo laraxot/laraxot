@@ -4,26 +4,20 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature\Auth;
 
-use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
-use Modules\Cms\Tests\TestCase;
 
-uses(TestCase::class);
+use function Pest\Laravel\get;
 
 test('login screen can be rendered', function (): void {
     $lang = app()->getLocale();
-    $this->get('/'.$lang.'/auth/login');
+    get('/'.$lang.'/auth/login')->assertStatus(200);
 });
 
 test('users can authenticate using the login screen', function (): void {
-    $email = TestCase::pestGenerateUniqueEmail();
-    TestCase::pestCreateTestUser([
-        'email' => $email,
-        'password' => Hash::make('password'),
-    ]);
+    $user = $this->createTestUser();
 
     $response = LivewireVolt::test('auth.login')
-        ->set('email', $email)
+        ->set('email', $user->email)
         ->set('password', 'password')
         ->call('authenticate');
 
@@ -34,8 +28,7 @@ test('users can authenticate using the login screen', function (): void {
 
 /*
  * test('users cannot authenticate with invalid password', function (): void {
- * $userClass = XotData::make()->getUserClass();
- * $user = $userClass::factory()->create();
+ * $user = $this->createTestUser();
  *
  * $response = LivewireVolt::test('auth.login')
  * ->set('email', $user->email)
@@ -48,8 +41,7 @@ test('users can authenticate using the login screen', function (): void {
  * });
  *
  * test('users can logout', function (): void {
- * $userClass = XotData::make()->getUserClass();
- * $user = $userClass::factory()->create();
+ * $user = $this->createTestUser();
  *
  * $response = actingAs($user)->post('/logout');
  *

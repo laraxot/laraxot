@@ -1,3 +1,15 @@
+---
+title: "page component architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page component architecture"
+issues: []
+discussions: []
+status: draft
+---
+
 # Page Component Architecture - Cms Module
 
 **Project:** FixCity Fila5
@@ -6,7 +18,6 @@
 **Priority:** 🔴 **Critical Architecture**
 
 ---
-
 ## 🎯 Scopo
 
 Questo documento spiega l'architettura del componente `Page` nel modulo Cms e come i temi devono (o non devono) overridearlo.
@@ -310,15 +321,15 @@ class BlockData extends Data {
 
 ### Internal Documents
 
-- → [Layout Architecture](Themes/Sixteen/docs/LAYOUT_ARCHITECTURE_AND_NAMESPACE.md) - Layout hierarchy
-- → [Fix Tests Pages](Themes/Sixteen/docs/FIX_TESTS_PAGES_ARCHITECTURE.md) - Troubleshooting
+- → [Layout Architecture](../../../Themes/Sixteen/docs/LAYOUT_ARCHITECTURE_AND_NAMESPACE.md) - Layout hierarchy
+- → [Fix Tests Pages](../../../Themes/Sixteen/docs/FIX_TESTS_PAGES_ARCHITECTURE.md) - Troubleshooting
 - → [BMad Architecture](_bmad-output/design-comuni-architecture.md) - System design
 - → [Block Analysis](_bmad-output/design-comuni-block-analysis.md) - 47 componenti
 
 ### Module Documentation
 
-- → [Cms Module Docs](Modules/Cms/docs/README.md) - Cms documentation
-- → [BlockData](Modules/Cms/docs/block-data.md) - Block data structure
+- → [Cms Module Docs](README.md) - Cms documentation
+- → [BlockData](data/block-data.md) - Block data structure
 - → [Page Model](Modules/Cms/docs/page-model.md) - Page model docs
 
 ---

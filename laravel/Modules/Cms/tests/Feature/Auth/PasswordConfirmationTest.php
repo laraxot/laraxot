@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
+namespace Modules\Cms\Tests\Feature\Auth;
+
+// I test reali della conferma password stanno in passwordconfirmationtest.php.
 describe('Password Confirmation', function () {
-    test('password confirmation placeholder', function () {
-    })->todo('Serve il pannello con le rotte di conferma password: il test va scritto sul flusso, non sul segnaposto.');
-    test('password confirmation placeholder #2', function () {
-    })->todo('Serve il pannello con le rotte di conferma password: il test va scritto sul flusso, non sul segnaposto.');
+    test('password confirmation placeholder')->skip('Password confirmation: see passwordconfirmationtest.php');
 });

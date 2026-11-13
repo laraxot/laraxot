@@ -4,16 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature\Auth;
 
-use Livewire\Volt\Volt as LivewireVolt;
 use Illuminate\Support\Facades\Hash;
-use Modules\Cms\Tests\TestCase;
+use Livewire\Volt\Volt as LivewireVolt;
 
 use function Pest\Laravel\actingAs;
 
-uses(TestCase::class);
-
 test('confirm password screen can be rendered', function () {
-    $user = TestCase::pestCreateTestUser(['password' => Hash::make('password')]);
+    $user = cmsCreateTestUser(['password' => Hash::make('password')]);
 
     actingAs($user);
     $lang = app()->getLocale();
@@ -23,7 +20,7 @@ test('confirm password screen can be rendered', function () {
 });
 
 test('password can be confirmed', function () {
-    $user = TestCase::pestCreateTestUser(['password' => Hash::make('password')]);
+    $user = cmsCreateTestUser(['password' => Hash::make('password')]);
 
     actingAs($user);
 
@@ -34,7 +31,7 @@ test('password can be confirmed', function () {
 });
 
 test('password is not confirmed with invalid password', function () {
-    $user = TestCase::pestCreateTestUser(['password' => Hash::make('password')]);
+    $user = cmsCreateTestUser(['password' => Hash::make('password')]);
 
     actingAs($user);
 

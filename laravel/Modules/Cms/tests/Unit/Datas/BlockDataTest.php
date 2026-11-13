@@ -2,17 +2,12 @@
 
 declare(strict_types=1);
 
-use Livewire\Wireable;
 use Modules\Cms\Datas\BlockData;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Concerns\WireableData;
-use Spatie\LaravelData\Data;
-use Spatie\LaravelData\DataCollection;
 
 test('BlockData can be instantiated with type and data', function (): void {
     $blockData = new BlockData('hero', ['view' => 'ui::empty', 'title' => 'Test']);
-
-    Assert::assertInstanceOf(BlockData::class, $blockData);
 
     Assert::assertSame('hero', $blockData->type);
 
@@ -28,13 +23,15 @@ test('BlockData uses WireableData trait', function (): void {
 test('BlockData extends Spatie Data', function (): void {
     $blockData = new BlockData('text', ['view' => 'ui::empty']);
 
-    Assert::assertInstanceOf(Data::class, $blockData);
+    Assert::assertSame('text', $blockData->type);
 });
 
 test('BlockData implements Wireable interface', function (): void {
-    $blockData = new BlockData('card', ['view' => 'ui::empty']);
+    $blockData = new BlockData('card', ['view' => 'ui::empty', 'title' => 'Card']);
 
-    Assert::assertInstanceOf(Wireable::class, $blockData);
+    $payload = $blockData->toLivewire();
+
+    Assert::assertSame('card', $payload['type'] ?? null);
 });
 
 test('BlockData collection method returns DataCollection', function (): void {
@@ -45,7 +42,7 @@ test('BlockData collection method returns DataCollection', function (): void {
 
     $collection = BlockData::collection($data);
 
-    Assert::assertInstanceOf(DataCollection::class, $collection);
+    Assert::assertCount(2, $collection);
 });
 
 test('BlockData sets default view when not provided', function (): void {

@@ -61,11 +61,6 @@
 {-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
 {-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
 {-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-<?php
-
-declare(strict_types=1);
-
-?>
 <div>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -87,16 +82,14 @@ declare(strict_types=1);
 
                                 <div class="manage-menus">
                                     <form method="get" action="">
-                                        <label for="menu" class="selected-menu">Select the menu you want to
-                                            edit:</label>
+                                        <label for="menu" class="selected-menu">{{ __('cms::menu_builder.actions.select_menu.label') }}</label>
                                         <select wire:model="selectedMenu" wire:change="chooseMenu">
                                             @foreach ($menulist as $itemKey => $itemVal)
                                                 <option value="{{ $itemKey }}">{{ $itemVal }}</option>
                                             @endforeach
                                         </select>
 
-                                        <span class="add-new-menu-action"> or <a wire:click="createMenu">Create new
-                                                menu</a>. </span>
+                                        <span class="add-new-menu-action"> {{ __('cms::menu_builder.sections.or.label') }} <a wire:click="createMenu">{{ __('cms::menu_builder.sections.create_new_menu.label') }}</a>. </span>
                                     </form>
                                 </div>
                                 <div id="nav-menus-frame">
@@ -113,8 +106,7 @@ declare(strict_types=1);
                                                         <li class="control-section accordion-section  open add-page"
                                                             id="add-page">
                                                             <h3 class="accordion-section-title hndle" tabindex="0">
-                                                                Custom Link <span class="screen-reader-text">Press
-                                                                    return or enter to expand</span></h3>
+                                                                {{ __('cms::menu_builder.sections.custom_link.label') }} <span class="screen-reader-text">{{ __('cms::menu_builder.sections.press_to_expand.label') }}</span></h3>
                                                             <div class="accordion-section-content ">
                                                                 <div class="inside">
                                                                     <div class="customlinkdiv" id="customlinkdiv">
@@ -132,11 +124,11 @@ declare(strict_types=1);
                                                                         <p id="menu-item-name-wrap">
                                                                             <label class="howto"
                                                                                 for="custom-menu-item-name">
-                                                                                <span>Label</span>&nbsp;
+                                                                                <span>{{ __('cms::menu_builder.fields.label.label') }}</span>&nbsp;
                                                                                 <input id="custom-menu-item-name"
                                                                                     wire:model="label" type="text"
                                                                                     class="regular-text menu-item-textbox input-with-default-title"
-                                                                                    title="Label menu">
+                                                                                    title="{{ __('cms::menu_builder.sections.label_menu.label') }}">
                                                                             </label>
                                                                         </p>
 
@@ -144,12 +136,11 @@ declare(strict_types=1);
                                                                             <p id="menu-item-role_id-wrap">
                                                                                 <label class="howto"
                                                                                     for="custom-menu-item-name">
-                                                                                    <span>Role</span>&nbsp;
+                                                                                    <span>{{ __('cms::menu_builder.sections.role.label') }}</span>&nbsp;
                                                                                     <select id="custom-menu-item-role"
                                                                                         name="role"
                                                                                         wire:model="role">
-                                                                                        <option value="0">Select
-                                                                                            Role
+                                                                                        <option value="0">{{ __('cms::menu_builder.actions.select_role.label') }}
                                                                                         </option>
                                                                                         @foreach ($roles as $role)
                                                                                             <option
@@ -166,8 +157,7 @@ declare(strict_types=1);
 
                                                                             <a href="javascript:void(0)"
                                                                                 wire:click="addMenuItem"
-                                                                                class="button-secondary submit-add-to-menu right">Add
-                                                                                menu item</a>
+                                                                                class="button-secondary submit-add-to-menu right">{{ __('cms::menu_builder.sections.add_item.label') }}</a>
                                                                             <span class="spinner"
                                                                                 id="spincustomu"></span>
                                                                         </p>
@@ -191,11 +181,11 @@ declare(strict_types=1);
                                                     <div id="nav-menu-header">
                                                         <div class="major-publishing-actions">
                                                             <label class="menu-name-label howto open-label"
-                                                                for="menu-name"> <span>Name</span>
+                                                                for="menu-name"> <span>{{ __('cms::menu_builder.sections.name.label') }}</span>
                                                                 <input name="menu-name" wire:model="menuName"
                                                                     id="menu-name" type="text"
                                                                     class="menu-name regular-text menu-item-textbox"
-                                                                    title="Enter menu name"
+                                                                    title="{{ __('cms::menu_builder.sections.enter_name.label') }}"
                                                                     value="@if (isset($indmenu)) {{ $indmenu->name }} @endif">
                                                                 <input type="hidden" id="idmenu"
                                                                     value="@if (isset($indmenu)) {{ $indmenu->id }} @endif" />
@@ -204,13 +194,13 @@ declare(strict_types=1);
                                                             @if ($selectedMenu)
                                                                 <div class="publishing-action">
                                                                     <a wire:click="updateMenu"
-                                                                        class="button button-primary ">Save menu</a>
+                                                                        class="button button-primary ">{{ __('cms::menu_builder.actions.save_menu.label') }}</a>
                                                                     <span class="spinner" id="spincustomu2"></span>
                                                                 </div>
                                                             @else
                                                                 <div class="publishing-action">
                                                                     <a wire:click="createMenu"
-                                                                        class="button button-primary ">Create menu</a>
+                                                                        class="button button-primary ">{{ __('cms::menu_builder.sections.create_menu.label') }}</a>
                                                                 </div>
                                                             @endif
                                                         </div>
@@ -219,22 +209,19 @@ declare(strict_types=1);
                                                         <div id="post-body-content">
 
                                                             @if (request()->has('menu'))
-                                                                <h3>Menu Structure</h3>
+                                                                <h3>{{ __('cms::menu_builder.sections.structure.title') }}</h3>
                                                                 <div class="drag-instructions post-body-plain"
                                                                     style="">
                                                                     <p>
-                                                                        Place each item in the order you prefer. Click
-                                                                        on the arrow to the right of the item to display
-                                                                        more configuration options.
+                                                                        {{ __('cms::menu_builder.fields.structure.helper_text') }}
                                                                     </p>
                                                                 </div>
                                                             @else
-                                                                <h3>Menu Creation</h3>
+                                                                <h3>{{ __('cms::menu_builder.sections.creation.title') }}</h3>
                                                                 <div class="drag-instructions post-body-plain"
                                                                     style="">
                                                                     <p>
-                                                                        Please enter the name and select "Create menu"
-                                                                        button
+                                                                        {{ __('cms::menu_builder.fields.creation.helper_text') }}
                                                                     </p>
                                                                 </div>
                                                             @endif
@@ -263,7 +250,7 @@ declare(strict_types=1);
                                                                                                 style="color: transparent;">|{{ $m['id'] }}|</span>
                                                                                         </span> <span
                                                                                             class="is-submenu"
-                                                                                            style="@if ($m['depth'] == 0) display: none; @endif">Subelement</span>
+                                                                                            style="@if ($m['depth'] == 0) display: none; @endif">{{ __('cms::menu_builder.sections.subelement.label') }}</span>
                                                                                     </span>
                                                                                     <span class="item-controls"> <span
-                                                                                            class="item-type">Link</span>
+                                                                                            class="item-type">{{ __('cms::menu_builder.sections.link.label') }}</span>

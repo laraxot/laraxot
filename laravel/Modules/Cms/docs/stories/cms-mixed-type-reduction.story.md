@@ -1,4 +1,8 @@
 ---
+tags: [documentation]
+qmd: "cms mixed type reduction.story"
+issues: []
+discussions: []
 title: "Cms: riduzione uso del tipo mixed dove il tipo reale e' noto"
 type: story
 module: Cms

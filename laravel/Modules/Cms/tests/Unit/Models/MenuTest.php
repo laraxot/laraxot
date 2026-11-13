@@ -8,13 +8,12 @@ use PHPUnit\Framework\Assert;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 test('Menu model can be instantiated', function () {
-    $menu = new Menu();
+    Assert::assertSame(Menu::class, (new Menu)::class);
 
-    Assert::assertInstanceOf(Menu::class, $menu);
 });
 
 test('Menu model has expected fillable fields', function () {
-    $menu = new Menu();
+    $menu = new Menu;
 
     $fillable = $menu->getFillable();
 

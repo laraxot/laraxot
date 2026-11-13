@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-// Placeholder — full feature tests require Volt components
+namespace Modules\Cms\Tests\Feature\Auth;
+
+// I test del componente Volt auth.login stanno in loginvolttest.php e LoginVoltComponentTest.php.
 describe('Login Volt Component', function () {
-    test('volt component tests require full setup', function () {
-    })->todo('Serve il componente Volt auth.login registrato dal tema: senza, non c\'e\' niente da montare.');
+    test('volt component tests require full setup')->skip('Volt auth.login component: see loginvolttest.php and LoginVoltComponentTest.php');
 });

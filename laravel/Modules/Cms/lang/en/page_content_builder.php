@@ -5,10 +5,6 @@ declare(strict_types=1);
 return [
     'fields' => [
         'blocks' => [
-            'label' => 'blocks',
-            'placeholder' => 'blocks',
-            'helper_text' => 'blocks',
-            'description' => 'blocks',
             'tooltip' => '',
         ],
     ],
@@ -21,6 +17,10 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
-    'actions' => [
+    'messages' => [
+        'block_unavailable' => [
+            'title' => 'Block unavailable',
+            'body' => 'The block ":block" could not be loaded and is not shown in the editor. Check the log before saving.',
+        ],
     ],
 ];

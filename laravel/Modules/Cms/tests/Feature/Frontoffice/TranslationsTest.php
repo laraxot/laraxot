@@ -28,7 +28,7 @@ test('auth buttons show correct translation for German locale on login page', fu
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         cmsSkipTest("Route /de/auth/login returned {$status} (redirect). Cannot verify translations.");
 
         return;
@@ -54,7 +54,7 @@ test('auth buttons show correct translation for Italian locale on login page', f
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         cmsSkipTest("Route /it/auth/login returned {$status} (redirect). Cannot verify translations.");
 
         return;
@@ -78,7 +78,7 @@ test('auth buttons show correct translation for English locale on login page', f
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         cmsSkipTest("Route /en/auth/login returned {$status} (redirect). Cannot verify translations.");
 
         return;
@@ -102,7 +102,6 @@ test('no hardcoded Italian strings in theme header components', function () {
         }
 
         $raw = file_get_contents($path);
-        Assert::assertNotFalse($raw);
         $content = $raw;
 
         Assert::assertStringNotContainsString("__('Accedi')", $content);

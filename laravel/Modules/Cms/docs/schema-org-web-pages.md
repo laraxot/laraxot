@@ -1,3 +1,15 @@
+---
+title: "schema org web pages"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "schema org web pages"
+issues: []
+discussions: []
+status: draft
+---
+
 # schema.org web page types
 
 Reference: https://schema.org/WebPage and subtypes.
@@ -121,7 +133,7 @@ Use for about/company pages.
 |---|---|---|---|
 | `home` | `home.json` | `WebPage` | General landing page. |
 | `events` | `events.json` | `CollectionPage` | List of events. |
-| `events.view` (event detail) | `events_view.json` | `ItemPage` | Single event. Combine with `Event` as `mainEntity`. |
+| `events.view` (event detail) | `events/view.json` | `ItemPage` | Single event. Combine with `Event` as `mainEntity`. |
 | `about` | `about.json` | `AboutPage` | Community about page. |
 | `contact` | `contact.json` | `ContactPage` | Contact form page. |
 | `privacy` | `privacy.json` | `WebPage` | Legal page; no more specific type exists. |

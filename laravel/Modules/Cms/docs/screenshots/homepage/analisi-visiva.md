@@ -1,3 +1,15 @@
+---
+title: "analisi visiva"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "analisi visiva"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📸 Analisi Visiva Homepage FixCity vs Bootstrap Italia
 
 ## Data: {{ date('Y-m-d H:i:s') }}
@@ -7,7 +19,6 @@
 - **FixCity**: http://fixcity.local/it/tests/homepage
 
 ---
-
 ## 1. Header Structure
 
 ### Bootstrap Italia

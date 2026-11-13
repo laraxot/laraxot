@@ -1,3 +1,15 @@
+---
+title: "bugfix applayout view path"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "bugfix applayout view path"
+issues: []
+discussions: []
+status: draft
+---
+
 # Bugfix: `AppLayout` puntava a una view inesistente
 
 ## 🐛 Errore

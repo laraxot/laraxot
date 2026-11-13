@@ -8,43 +8,44 @@ use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
 test('FooterData can be instantiated', function (): void {
-    $footerData = new FooterData();
+    $footerData = new FooterData;
 
-    Assert::assertInstanceOf(FooterData::class, $footerData);
+    Assert::assertSame('cms::components.footer', $footerData->view);
 });
 
 test('FooterData extends Spatie Data', function (): void {
-    $footerData = new FooterData();
+    $parent = (new ReflectionClass(FooterData::class))->getParentClass();
 
-    Assert::assertInstanceOf(Data::class, $footerData);
+    Assert::assertNotFalse($parent);
+    Assert::assertSame(Data::class, $parent->getName());
 });
 
 test('FooterData implements Wireable interface', function (): void {
-    $footerData = new FooterData();
+    $interfaces = \Safe\class_implements(FooterData::class);
 
-    Assert::assertInstanceOf(Wireable::class, $footerData);
+    Assert::assertContains(Wireable::class, $interfaces);
 });
 
 test('FooterData has default view path', function (): void {
-    $footerData = new FooterData();
+    $footerData = new FooterData;
 
     Assert::assertSame('cms::components.footer', $footerData->view);
 });
 
 test('FooterData has nullable background_color property', function (): void {
-    $footerData = new FooterData();
+    $footerData = new FooterData;
 
     Assert::assertNull($footerData->background_color);
 });
 
 test('FooterData has nullable background property', function (): void {
-    $footerData = new FooterData();
+    $footerData = new FooterData;
 
     Assert::assertNull($footerData->background);
 });
 
 test('FooterData has nullable overlay_color property', function (): void {
-    $footerData = new FooterData();
+    $footerData = new FooterData;
 
     Assert::assertNull($footerData->overlay_color);
 });
@@ -69,8 +70,6 @@ test('FooterData can be created from array using from method', function (): void
     ];
 
     $footerData = FooterData::from($data);
-
-    Assert::assertInstanceOf(FooterData::class, $footerData);
 
     Assert::assertSame('#ffffff', $footerData->background_color);
 

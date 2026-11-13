@@ -1,3 +1,15 @@
+---
+title: "phpstan fixes sumy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan fixes sumy"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Fixes Summary - CMS Module
 
 **Date**: [DATE]

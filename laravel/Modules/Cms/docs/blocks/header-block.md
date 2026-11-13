@@ -1,4 +1,20 @@
+---
+title: "header block"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header block"
+issues: []
+discussions: []
+status: draft
+---
+
 # Header Block
+
+> Contratto corrente Sixteen: il renderer pubblico è `Themes/Sixteen/resources/views/components/sections/header/v1.blade.php`, montato dalla sezione CMS `header`. Il payload è data-driven (`brand`, `navigation`, `items`, `utility_links`, `account`, `social_links`, `cta_*`); se il CMS non fornisce il blocco, Sixteen usa fallback sicuri da `config('comune.*')` e protegge le relazioni nullable. Le URL interne passano da `FrontofficeUrl::fromStoredUrl`/`FrontofficeRoutes`; non creare un secondo layout Design Comuni o link `#`.
+
+La configurazione generica sotto è una guida Blueprint legacy per l'editor e non un renderer runtime alternativo. Verificare il renderer a 375, 768 e 1440 px, il nome accessibile dei controlli e l'esistenza delle destinazioni.
 
 ## Panoramica
 Il blocco header è un componente generico e riutilizzabile che può essere utilizzato per creare diverse tipologie di header. È progettato per essere flessibile e adattabile a diversi contesti e stili.
@@ -173,5 +189,5 @@ class HeaderBlock extends Block
 
 - [Documentazione Blocchi](content-blocks.md)
 - [Gestione Navigazione](../navigation.md)
-- [Best Practices UI](../../ui/docs/best-practices.md)
+- [Best Practices UI](../../../UI/docs/best-practices.md)
 - [Accessibilità](../../ui/docs/accessibility.md)

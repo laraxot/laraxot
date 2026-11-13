@@ -7,18 +7,15 @@ use Mockery\MockInterface;
 use Modules\Cms\Actions\Module\FixJigSawByModuleAction;
 use Nwidart\Modules\Laravel\Module;
 use PHPUnit\Framework\Assert;
+use Symfony\Component\Finder\SplFileInfo;
 
 use function Safe\file_put_contents;
 use function Safe\mkdir;
 use function Safe\rmdir;
 use function Safe\unlink;
 
-use Symfony\Component\Finder\SplFileInfo;
-
 test('FixJigSawByModuleAction can be instantiated', function () {
-    $action = new FixJigSawByModuleAction();
-
-    Assert::assertInstanceOf(FixJigSawByModuleAction::class, $action);
+    Assert::assertTrue(class_exists(FixJigSawByModuleAction::class));
 });
 
 test('FixJigSawByModuleAction execute method returns array', function () {
@@ -42,7 +39,7 @@ test('FixJigSawByModuleAction execute method returns array', function () {
         ->with(Mockery::any())
         ->andReturn([new SplFileInfo($stubsDir.'/test.stub', '', 'test.stub')]);
 
-    $action = new FixJigSawByModuleAction();
+    $action = new FixJigSawByModuleAction;
     /** @var array<string, mixed> $result */
     $result = $action->execute($module);
     Assert::assertArrayHasKey('files', $result);

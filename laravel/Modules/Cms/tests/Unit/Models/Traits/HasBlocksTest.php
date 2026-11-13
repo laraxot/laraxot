@@ -2,27 +2,87 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Models\BaseModel;
+use Modules\Cms\Models\Page;
+use Modules\Cms\Models\Section;
 use Modules\Cms\Models\Traits\HasBlocks;
+use PHPUnit\Framework\Assert;
 
-test('HasBlocks trait can be used', function () {
-    // Create an anonymous class that uses the trait
-    $model = new class extends BaseModel {
-        use HasBlocks;
+// Si usano i modelli reali che adottano il trait (Page, Section): un'anonymous class
+// ereditata da BaseModel farebbe analizzare il trait fuori dal suo contesto e falserebbe
+// i tipi dei suoi metodi.
+test('HasBlocks trait can be used', function (): void {
+    $model = new Page;
 
-        protected $table = 'pages'; // Use existing table
-    };
-
-    // Check if the trait methods exist
+    Assert::assertContains(HasBlocks::class, class_uses_recursive($model));
+    Assert::assertSame(['title' => 'plain'], $model->compile(['title' => 'plain']));
 });
 
-test('HasBlocks trait has static method getBlocksBySlug', function () {
-    // Create an anonymous class that uses the trait
-    $modelClass = new class extends BaseModel {
-        use HasBlocks;
+// Filament Blueprint C-3 + FO religion (container0.view, mai localizeURL).
+// Under test: Modules\Cms\Models\Traits\HasBlocks::compile. Existing file: this.
+// User: «localizeUrl è sbagliato… corretta era route(container0.view)… non rifarlo più».
+test('compile renders the allowlisted route expression', function (): void {
+    $compiled = (new Page)->compile([
+        'nested' => [
+            'href' => "{{ route('container0.index',['container0'=>'tickets']) }}",
+        ],
+    ]);
 
-        protected $table = 'pages'; // Use existing table
-    };
+    Assert::assertIsArray($compiled['nested']);
+    Assert::assertIsString($compiled['nested']['href']);
+    Assert::assertStringEndsWith('/tickets', $compiled['nested']['href']);
+    Assert::assertStringNotContainsString('{{', $compiled['nested']['href']);
+});
 
-    // Check if the static trait method exists on the trait itself
+test('compile leaves localizeURL expressions as text', function (): void {
+    $payload = "{{ LaravelLocalization::localizeURL('/tickets') }}";
+    Assert::assertSame(
+        ['href' => $payload],
+        (new Page)->compile(['href' => $payload]),
+    );
+});
+
+test('compile leaves arbitrary expressions and directives as text', function (string $payload): void {
+    Assert::assertSame(['v' => ['deep' => $payload]], (new Page)->compile(['v' => ['deep' => $payload]]));
+})->with([
+    'arithmetic' => '{{ 1 + 1 }}',
+    'function call' => "{{ system('id') }}",
+    'allowed callee followed by code' => "{{ route('x') . system('id') }}",
+    'directive inside an argument' => "{{ route('@php system(1) @endphp') }}",
+    'directive outside the braces' => "@php echo 'pwned'; @endphp {{ 'a' }}",
+    'triple braces' => "{{{ system('id') }}}",
+    'newline before code' => "{{ route('a')\n . system('id') }}",
+    'call inside an array argument' => "{{ route('a', ['b' => system('id')]) }}",
+    'verbatim wrapper' => "@verbatim {{ system('id') }} @endverbatim",
+    'assignment' => "{{ \$x = system('id') }}",
+    'interpolation in a string' => '{{ route("a{$x}") }}',
+    'backslash escape in a string' => "{{ route('a\\') . system('id') }}",
+]);
+
+// Under test: HasBlocks::compile, ramo trans()/__() con chiave letterale (home.json LaravelPizza).
+test('compile translates literal trans and __ keys', function (): void {
+    app('translator')->addLines(['home.hero_title' => 'Ciao <Laravel>'], 'it', 'cmstest');
+    app()->setLocale('it');
+
+    $compiled = (new Page)->compile([
+        'a' => "{{ trans('cmstest::home.hero_title') }}",
+        'b' => '{{ __("cmstest::home.hero_title") }}',
+    ]);
+
+    Assert::assertSame('Ciao &lt;Laravel&gt;', $compiled['a']);
+    Assert::assertSame('Ciao &lt;Laravel&gt;', $compiled['b']);
+});
+
+test('compile leaves trans with non literal arguments as text', function (string $payload): void {
+    Assert::assertSame(['v' => $payload], (new Page)->compile(['v' => $payload]));
+})->with([
+    'variable key' => '{{ trans($key) }}',
+    'concatenation' => "{{ trans('a') . system('id') }}",
+    'replace array' => "{{ trans('a', ['x' => system('id')]) }}",
+]);
+
+test('HasBlocks trait has static method getBlocksBySlug', function (): void {
+    $reflection = new ReflectionMethod(Section::class, 'getBlocksBySlug');
+
+    Assert::assertTrue($reflection->isStatic());
+    Assert::assertContains(HasBlocks::class, class_uses_recursive(Section::class));
 });

@@ -11,8 +11,7 @@ use Modules\Xot\Datas\MetatagData;
 use PHPUnit\Framework\Assert;
 
 /**
- * @param array<string, mixed> $schema
- *
+ * @param  array<string, mixed>  $schema
  * @return array<string, mixed>
  */
 function pageSchemaMainEntity(array $schema): array
@@ -87,7 +86,7 @@ describe('Page Schema Builder', function (): void {
             'name' => 'Mario Rossi',
         ]);
 
-        $schema = app(BuildPageSchemaAction::class)->execute(
+        $schema = $builder->execute(
             meta: MetatagData::make(),
             routeName: 'profile.edit',
             path: 'profile/edit',
@@ -108,7 +107,7 @@ describe('Page Schema Builder', function (): void {
     test('it resolves public profile detail route as profile page with person identifier', function (): void {
         $builder = app(BuildPageSchemaAction::class);
 
-        $schema = app(BuildPageSchemaAction::class)->execute(
+        $schema = $builder->execute(
             meta: MetatagData::make(),
             routeName: 'container0.view',
             path: 'it/profile/019cca1b-1f72-700a-ba0b-0bb414ca0c88',

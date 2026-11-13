@@ -1,20 +1,43 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Cms\Tests\TestCase;
 
 /*
+ * Bootstrap Pest — modulo Cms.
+ * Helper globali (cmsHomepageBlocks, cmsGet, …) in PestHelpers.php.
+ * Binding TestCase solo qui: i file test non dichiarano uses(TestCase) ridondanti.
+ * @see docs/stories/phpstan-cms-zero.story.md
+ */
+require_once __DIR__.'/PestHelpers.php';
+
+uses(TestCase::class)->in(__DIR__.'/Feature', __DIR__.'/Unit');
+
+/*
  * |--------------------------------------------------------------------------
- * | Test Case
+ * | Expectations
  * |--------------------------------------------------------------------------
  * |
- * | `pest()->extend(TestCase::class)->in(...)` è la forma **consigliata**
- * | (Pest configuring-tests, XOT-5.41 + pest-plugin-phpstan).
- * | Non duplicare `uses(TestCase::class)` nei file di test: XOR → TestCaseAlreadyInUse.
+ * | Qui puoi definire aspettative globali per il modulo Cms.
+ * | Quando definisci here expectation globali, saranno disponibili
+ * | in tutti i test del modulo.
  * |
  */
 
-require_once __DIR__.'/PestHelpers.php';
+// expect()->extend('toBeValidHtml', function () {
+//     return $this->toContain('<html');
+// });
 
-pest()->extend(TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
+/*
+ * |--------------------------------------------------------------------------
+ * | Functions
+ * |--------------------------------------------------------------------------
+ * |
+ * | Qui puoi definire funzioni helper globali per i test del modulo.
+ * | Queste funzioni saranno disponibili in tutti i test.
+ * |
+ */
+
+// function createTestUser() {
+//     return User::factory()->create();
+// }

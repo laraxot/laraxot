@@ -69,7 +69,7 @@
                                                                                         value="{{ $m['id'] }}" />
                                                                                     <p
                                                                                         class="description description-thin">
-                                                                                        <label> Label
+                                                                                        <label> {{ __('cms::menu_builder.fields.label.label') }}
                                                                                             <br>
                                                                                             <input type="text"
                                                                                                 class="widefat edit-menu-item-title"
@@ -78,7 +78,7 @@
                                                                                     </p>
                                                                                     <p
                                                                                         class="field-css-classes description description-thin">
-                                                                                        <label> Class CSS (optional)
+                                                                                        <label> {{ __('cms::menu_builder.sections.class_css.label') }}
                                                                                             <br>
                                                                                             <input type="text"
                                                                                                 class="widefat code edit-menu-item-classes"
@@ -100,14 +100,14 @@
                                                                                             class="field-css-role description description-wide">
                                                                                             <label
                                                                                                 for="edit-menu-item-role-{{ $m['id'] }}">
-                                                                                                Role
+                                                                                                {{ __('cms::menu_builder.sections.role.label') }}
                                                                                                 <br>
                                                                                                 <select
                                                                                                     class="widefat code edit-menu-item-role"
                                                                                                     wire:model="menuItemRole">
                                                                                                     <option
                                                                                                         value="0">
-                                                                                                        Select Role
+                                                                                                        {{ __('cms::menu_builder.actions.select_role.label') }}
                                                                                                     </option>
                                                                                                     @foreach ($roles as $role)
                                                                                                         <option
@@ -122,26 +122,24 @@
                                                                                     @if (count($menuItems) > 1)
                                                                                         <p
                                                                                             class="field-move hide-if-no-js description description-wide">
-                                                                                            <label> <span>Move</span>
+                                                                                            <label> <span>{{ __('cms::menu_builder.sections.move.label') }}</span>
                                                                                                 @if ($mk != 0)
                                                                                                     <a href="javascript:void(0)"
                                                                                                         class="menus-move-up"
                                                                                                         wire:click="changeOrder({{ $m['id'] }},'up')"
-                                                                                                        style="display: inline;">Move
-                                                                                                        up</a>
+                                                                                                        style="display: inline;">{{ __('cms::menu_builder.sections.move_up.label') }}</a>
                                                                                                 @endif
                                                                                                 @if ($mk != count($menuItems) - 1 && count($menuItems) > 1)
                                                                                                     <a href="javascript:void(0)"
                                                                                                         class="menus-move-down"
                                                                                                         wire:click="changeOrder({{ $m['id'] }},'down')"
-                                                                                                        style="display: inline;">Move
-                                                                                                        Down</a>
+                                                                                                        style="display: inline;">{{ __('cms::menu_builder.sections.move_down.label') }}</a>
                                                                                                 @endif
                                                                                                 @if ($mk != 0 && count($menuItems) > 1)
                                                                                                     <a href="javascript:void(0)"
                                                                                                         class="menus-move-top"
                                                                                                         wire:click="changeOrder({{ $m['id'] }},'top')"
-                                                                                                        style="display: inline;">Top</a>
+                                                                                                        style="display: inline;">{{ __('cms::menu_builder.sections.top.label') }}</a>
                                                                                             </label>
                                                                                     @endif
                                                                                     </p>
@@ -151,18 +149,17 @@
 
                                                                                 <a href="javascript:void(0)"
                                                                                     class="item-delete submitdelete deletion"
-                                                                                    wire:click="deleteMenuItem({{ $m['id'] }})">Delete</a>
+                                                                                    wire:click="deleteMenuItem({{ $m['id'] }})">{{ __('cms::menu_builder.actions.delete.label') }}</a>
                                                                                 <span class="meta-sep hide-if-no-js"> |
                                                                                 </span>
                                                                                 <a href="javascript:void(0)"
                                                                                     wire:click="selectMenuItem({{ $m['id'] }})"
-                                                                                    class="item-cancel submitcancel hide-if-no-js button-secondary">Cancel</a>
+                                                                                    class="item-cancel submitcancel hide-if-no-js button-secondary">{{ __('cms::menu_builder.actions.cancel.label') }}</a>
                                                                                 <span class="meta-sep hide-if-no-js"> |
                                                                                 </span>
                                                                                 <a wire:click="updateMenuItem()"
                                                                                     class="button button-primary updatemenu"
-                                                                                    href="javascript:void(0)">Update
-                                                                                    item</a>
+                                                                                    href="javascript:void(0)">{{ __('cms::menu_builder.actions.update_item.label') }}</a>
 
                                                                             </div>
 
@@ -184,20 +181,18 @@
                                                             <span class="delete-action"> <a
                                                                     class="submitdelete deletion menu-delete"
                                                                     wire:click="deleteMenu({{ $selectedMenu }})"
-                                                                    href="javascript:void(9)">Delete menu</a> </span>
+                                                                    href="javascript:void(9)">{{ __('cms::menu_builder.actions.delete_menu.label') }}</a> </span>
                                                             <div class="publishing-action">
                                                                 <a wire:click="updateMenu()" name="save_menu"
                                                                     id="save_menu_header"
-                                                                    class="button button-primary menu-save">Save
-                                                                    menu</a>
+                                                                    class="button button-primary menu-save">{{ __('cms::menu_builder.actions.save_menu.label') }}</a>
                                                                 <span class="spinner" id="spincustomu2"></span>
                                                             </div>
                                                         @else
                                                             <div class="publishing-action">
                                                                 <a wire:click="createMenu" name="save_menu"
                                                                     id="save_menu_header"
-                                                                    class="button button-primary menu-save">Create
-                                                                    menu</a>
+                                                                    class="button button-primary menu-save">{{ __('cms::menu_builder.sections.create_menu.label') }}</a>
                                                             </div>
                                                         @endif
                                                     </div>

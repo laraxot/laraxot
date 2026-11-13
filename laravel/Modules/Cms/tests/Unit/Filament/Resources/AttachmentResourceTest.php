@@ -9,7 +9,7 @@ use PHPUnit\Framework\Assert;
 
 describe('AttachmentResource', function (): void {
     test('attachment resource has correct model', function (): void {
-        $resource = new AttachmentResource();
+        $resource = new AttachmentResource;
 
         Assert::assertSame(Attachment::class, $resource::getModel());
     });
@@ -22,7 +22,9 @@ describe('AttachmentResource', function (): void {
 
     test('attachment resource has relations', function (): void {
         $relations = AttachmentResource::getRelations();
-        /* @var array<string, mixed> $relations */
+
+        // La risorsa dichiara esplicitamente una lista vuota di relation manager.
+        Assert::assertSame([], $relations);
     });
 
     test('attachment resource has pages', function (): void {
@@ -45,8 +47,6 @@ describe('AttachmentResource', function (): void {
         Assert::assertTrue(property_exists(AttachmentResource::class, 'navigationLabel'));
     });
 
-    test('attachment resource has plural label', function (): void {
-    })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
-    test('attachment resource has plural label #2', function (): void {
-    })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+    test('attachment resource has plural label', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+    test('attachment resource has plural label #2', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
 });

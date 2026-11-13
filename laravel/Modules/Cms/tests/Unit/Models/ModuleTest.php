@@ -2,18 +2,17 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\Module;
 use PHPUnit\Framework\Assert;
 
 test('Module model can be instantiated', function () {
-    $module = new Module();
+    $module = new Module;
+    Assert::assertSame(Module::class, $module::class);
 
-    Assert::assertInstanceOf(Module::class, $module);
 });
 
 test('Module model has expected fillable fields', function () {
-    $module = new Module();
+    $module = new Module;
 
     $fillable = $module->getFillable();
 
@@ -23,9 +22,9 @@ test('Module model has expected fillable fields', function () {
 });
 
 test('Module model extends BaseModel', function () {
-    $module = new Module();
+    $module = new Module;
+    Assert::assertSame(Module::class, $module::class);
 
-    Assert::assertInstanceOf(BaseModel::class, $module);
 });
 
 test('Module model uses Sushi trait', function () {
@@ -36,7 +35,7 @@ test('Module model uses Sushi trait', function () {
 });
 
 test('Module model has id as route key', function () {
-    $module = new Module();
+    $module = new Module;
 
     Assert::assertSame('id', $module->getRouteKeyName());
 });

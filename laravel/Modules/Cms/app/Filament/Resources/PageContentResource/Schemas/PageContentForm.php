@@ -23,7 +23,7 @@ class PageContentForm extends XotBaseResourceForm
         return [
             'name' => TextInput::make('name')
                 ->required()
-                ->lazy()
+                ->live(onBlur: true)
                 ->afterStateUpdated(static function (Set $set, Get $get, string $state): void {
                     if ($get('slug')) {
                         return;

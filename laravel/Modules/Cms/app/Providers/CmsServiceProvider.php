@@ -6,6 +6,9 @@ namespace Modules\Cms\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
+use Modules\Cms\View\Components\Foot;
+use Modules\Cms\View\Components\Head;
+use Modules\Cms\View\Components\Page;
 use Modules\Xot\Actions\File\FixPathAction;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Providers\XotBaseServiceProvider;
@@ -25,6 +28,12 @@ class CmsServiceProvider extends XotBaseServiceProvider
     public function boot(): void
     {
         parent::boot();
+
+        // Keep the canonical CMS contract deterministic in optimized/native
+        // bundles where filesystem component discovery may be unavailable.
+        Blade::component('page', Page::class);
+        Blade::component('cms::head', Head::class);
+        Blade::component('cms::foot', Foot::class);
 
         $this->xot = XotData::make();
 
@@ -85,9 +94,9 @@ class CmsServiceProvider extends XotBaseServiceProvider
             ->execute(base_path($resource_path.'/views/components'));
 
         Blade::anonymousComponentPath($componentViewPath);
-        Blade::anonymousComponentNamespace(
-            $theme_type.'::',
-            app(FixPathAction::class)->execute(base_path($resource_path.'/views'))
-        );
+        // Prefisso esplicito (<x-pub_theme::layouts.guest>): senza, un componente omonimo di un modulo registrato
+        // prima (es. UI layouts.guest) vince su quello del tema. anonymousComponentNamespace() vuole
+        // (directory dei view, prefisso) e qui riceveva gli argomenti invertiti, quindi il prefisso non esisteva.
+        Blade::anonymousComponentPath($componentViewPath, $theme_type);
     }
 }

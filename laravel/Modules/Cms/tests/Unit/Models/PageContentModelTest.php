@@ -9,13 +9,12 @@ use Spatie\Translatable\HasTranslations;
 
 describe('PageContent Model', function (): void {
     test('page content model can be instantiated', function (): void {
-        $model = new PageContent();
+        Assert::assertSame(PageContent::class, (new PageContent)::class);
 
-        Assert::assertInstanceOf(PageContent::class, $model);
     });
 
     test('page content model has expected fillable fields', function (): void {
-        $model = new PageContent();
+        $model = new PageContent;
 
         $fillable = $model->getFillable();
 
@@ -27,7 +26,7 @@ describe('PageContent Model', function (): void {
     });
 
     test('page content model has expected casts', function (): void {
-        $model = new PageContent();
+        $model = new PageContent;
 
         $casts = $model->getCasts();
 
@@ -39,7 +38,7 @@ describe('PageContent Model', function (): void {
     });
 
     test('page content model has translatable fields', function (): void {
-        $model = new PageContent();
+        $model = new PageContent;
 
         Assert::assertContains('name', $model->translatable);
 
@@ -47,21 +46,22 @@ describe('PageContent Model', function (): void {
     });
 
     test('page content model uses HasTranslations trait', function (): void {
-        $model = new PageContent();
+        $model = new PageContent;
 
         Assert::assertTrue(in_array(HasTranslations::class, class_uses_recursive($model)));
     });
 
     test('page content model uses SushiToJsons trait', function (): void {
-        $model = new PageContent();
+        $model = new PageContent;
 
         Assert::assertTrue(in_array(SushiToJsons::class, class_uses_recursive($model)));
     });
 
     test('page content model has getRows method', function (): void {
-        $model = new PageContent();
+        $model = new PageContent;
+
+        Assert::assertContainsOnlyArray($model->getRows());
     });
 
-    test('page content model has sluggable method', function (): void {
-    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    test('page content model has sluggable method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 });

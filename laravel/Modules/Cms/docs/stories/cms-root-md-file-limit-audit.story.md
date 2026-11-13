@@ -1,4 +1,12 @@
 ---
+title: "cms root md file limit audit.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "cms root md file limit audit.story"
+issues: []
+discussions: []
 name: cms-root-md-file-limit-audit
 description: Enforce the module-root max-6-.md / zero-.txt hygiene rule on Modules/Cms
 metadata:

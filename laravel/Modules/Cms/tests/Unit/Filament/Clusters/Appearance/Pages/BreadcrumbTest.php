@@ -6,7 +6,7 @@ use Modules\Cms\Filament\Clusters\Appearance\Pages\Breadcrumb;
 use PHPUnit\Framework\Assert;
 
 test('Breadcrumb page uses correct view', function () {
-    $page = new Breadcrumb();
+    $page = new Breadcrumb;
     // Access protected property via reflection
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('view');
@@ -16,11 +16,12 @@ test('Breadcrumb page uses correct view', function () {
 });
 
 test('Breadcrumb page can be instantiated', function () {
-    $page = new Breadcrumb();
+    Assert::assertSame(Breadcrumb::class, (new Breadcrumb)::class);
+
 });
 
 test('Breadcrumb page has data property', function () {
-    $page = new Breadcrumb();
+    $page = new Breadcrumb;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
@@ -28,11 +29,8 @@ test('Breadcrumb page has data property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-test('Breadcrumb page has mount method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+test('Breadcrumb page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Breadcrumb page has schema method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+test('Breadcrumb page has schema method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Breadcrumb page has updateData method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+test('Breadcrumb page has updateData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');

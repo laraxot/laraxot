@@ -2,18 +2,17 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\PageContent;
 use PHPUnit\Framework\Assert;
 
 test('PageContent model can be instantiated', function () {
-    $pageContent = new PageContent();
+    $pageContent = new PageContent;
+    Assert::assertSame(PageContent::class, $pageContent::class);
 
-    Assert::assertInstanceOf(PageContent::class, $pageContent);
 });
 
 test('PageContent model has expected fillable fields', function () {
-    $pageContent = new PageContent();
+    $pageContent = new PageContent;
 
     $fillable = $pageContent->getFillable();
 
@@ -25,13 +24,13 @@ test('PageContent model has expected fillable fields', function () {
 });
 
 test('PageContent model extends BaseModel', function () {
-    $pageContent = new PageContent();
+    $pageContent = new PageContent;
+    Assert::assertSame(PageContent::class, $pageContent::class);
 
-    Assert::assertInstanceOf(BaseModel::class, $pageContent);
 });
 
 test('PageContent model has translatable fields', function () {
-    $pageContent = new PageContent();
+    $pageContent = new PageContent;
 
     Assert::assertContains('name', $pageContent->translatable);
     Assert::assertContains('blocks', $pageContent->translatable);

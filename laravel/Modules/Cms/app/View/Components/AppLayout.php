@@ -7,6 +7,7 @@ namespace Modules\Cms\View\Components;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Modules\Cms\Actions\View\GetCmsViewAction;
 
 class AppLayout extends Component
 {
@@ -15,8 +16,8 @@ class AppLayout extends Component
      */
     public function render(): Factory|View
     {
-        $view_params = [];
+        $view = app(GetCmsViewAction::class)->execute('pub_theme::components.layouts.app');
 
-        return view('pub_theme::components.layouts.app', $view_params);
+        return view($view);
     }
 }

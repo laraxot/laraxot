@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Cms\Http\Middleware\SetFolioLocale;
 use PHPUnit\Framework\Assert;
-use Symfony\Component\HttpFoundation\Response;
 
 test('it uses user language with highest priority', function (): void {
     LaravelLocalization::shouldReceive('setLocale')->once()->with('fr');
@@ -14,9 +13,8 @@ test('it uses user language with highest priority', function (): void {
     $request = Request::create('/en/some-page', 'GET');
     $request->setUserResolver(fn (): object => (object) ['lang' => 'fr']);
 
-    $middleware = new SetFolioLocale();
+    $middleware = new SetFolioLocale;
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
-    Assert::assertInstanceOf(Response::class, $response);
 
     Assert::assertSame(200, $response->getStatusCode());
 
@@ -34,9 +32,8 @@ test('it uses first url segment when locale is supported', function (): void {
     $request = Request::create('/de/some-page', 'GET');
     $request->setUserResolver(fn () => null);
 
-    $middleware = new SetFolioLocale();
+    $middleware = new SetFolioLocale;
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
-    Assert::assertInstanceOf(Response::class, $response);
 
     Assert::assertSame(200, $response->getStatusCode());
 
@@ -56,9 +53,8 @@ test('it falls back to default app locale when url segment is not supported', fu
     $request = Request::create('/blog/post-1', 'GET');
     $request->setUserResolver(fn () => null);
 
-    $middleware = new SetFolioLocale();
+    $middleware = new SetFolioLocale;
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
-    Assert::assertInstanceOf(Response::class, $response);
 
     Assert::assertSame(200, $response->getStatusCode());
 

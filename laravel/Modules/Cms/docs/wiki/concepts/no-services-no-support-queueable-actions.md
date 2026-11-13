@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "No Services / No Support — QueueableAction only"
 type: concept
 module: Cms
@@ -9,6 +11,7 @@ qmd: "Cms module Services and Support banned use app Actions QueueableAction pol
 related:
   - no-app-support-queueable-actions.md
   - ../../../Xot/docs/wiki/concepts/queueable-action-trait-mandatory.md
+status: draft
 ---
 
 # Cms — Services/Support vietati: solo Actions

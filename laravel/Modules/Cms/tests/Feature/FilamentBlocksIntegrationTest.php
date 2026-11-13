@@ -2,30 +2,15 @@
 
 declare(strict_types=1);
 
-use Illuminate\Http\Response;
-use Illuminate\Testing\TestResponse;
+namespace Modules\Cms\Tests\Feature;
 
 use function Pest\Laravel\get;
-
-use PHPUnit\Framework\Assert;
-
-beforeEach(function (): void {
-    /* @var \Modules\Cms\Tests\TestCase $this */
-    if (! \is_string(config('app.key')) || '' === config('app.key')) {
-        $key = 'base64:'.base64_encode(str_repeat('x', 32));
-        config()->set('app.key', $key);
-        $_ENV['APP_KEY'] = $key;
-    }
-    cmsSkipTest('Filament blocks homepage integration requires full theme + block wiring in this install.');
-});
 
 describe('Filament Blocks Integration', function () {
     it('integrates with PageContentBuilder correctly', function () {
         $response = get('/');
 
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
+        $response->assertStatus(200);
 
         // Verifica che il PageContentBuilder funzioni correttamente
         // Questo test verifica l'integrazione tra CMS e frontend
@@ -34,18 +19,21 @@ describe('Filament Blocks Integration', function () {
     it('displays blocks with correct data structure', function () {
         $response = get('/');
 
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
+        $response->assertStatus(200);
         // Verifica struttura dati blocchi
+        $response->assertSee('landing-page');
+        $response->assertSee('view');
+        $response->assertSee('title');
+        $response->assertSee('subtitle');
+        $response->assertSee('image');
+        $response->assertSee('cta_text');
+        $response->assertSee('cta_link');
     });
 
     it('renders blocks using correct view templates', function () {
         $response = get('/');
 
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
+        $response->assertStatus(200);
 
         // Verifica che i blocchi usino i template corretti
         // Questo test verifica l'integrazione con il sistema di view
@@ -54,18 +42,18 @@ describe('Filament Blocks Integration', function () {
     it('handles block configuration correctly', function () {
         $response = get('/');
 
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
-        // Avoid brittle CSS class assertions in this base install
+        $response->assertStatus(200);
+        // Verifica configurazione blocchi
+        $response->assertSee('bg-white');
+        $response->assertSee('text-gray-900');
+        $response->assertSee('bg-indigo-600');
+        $response->assertSee('hover:bg-indigo-700');
     });
 
     it('displays block content with proper formatting', function () {
         $response = get('/');
 
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
+        $response->assertStatus(200);
 
         // Verifica formattazione contenuto blocchi
         // Titolo e sottotitolo devono essere formattati correttamente
@@ -74,9 +62,7 @@ describe('Filament Blocks Integration', function () {
     it('handles block relationships correctly', function () {
         $response = get('/');
 
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
+        $response->assertStatus(200);
 
         // Verifica relazioni tra blocchi
         // Questo test verifica che i blocchi si integrino correttamente
@@ -85,19 +71,17 @@ describe('Filament Blocks Integration', function () {
     it('renders blocks with correct styling', function () {
         $response = get('/');
 
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
-        // Avoid brittle markup assertions in this base install
+        $response->assertStatus(200);
+        // Verifica styling blocchi
+        $response->assertSee('class="');
+
         // Verifica che le classi CSS siano applicate correttamente
     });
 
     it('handles block validation correctly', function () {
         $response = get('/');
 
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
+        $response->assertStatus(200);
 
         // Verifica validazione blocchi
         // Questo test verifica che i blocchi siano validati correttamente
@@ -106,22 +90,17 @@ describe('Filament Blocks Integration', function () {
     it('displays blocks with correct localization', function () {
         // Test italiano
         $response = get('/');
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
-        // Avoid brittle project-name assertions in this base install
+        $response->assertStatus(200);
+        $response->assertSee('Benvenuta su <nome progetto>');
+
         // Test inglese
         $response = get('/en');
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302, 404], true));
+        $response->assertStatus(200);
         // Verifica localizzazione blocchi
 
         // Test tedesco
         $response = get('/de');
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302, 404], true));
+        $response->assertStatus(200);
 
         // Verifica localizzazione blocchi
     });
@@ -129,9 +108,7 @@ describe('Filament Blocks Integration', function () {
     it('handles block errors gracefully', function () {
         $response = get('/');
 
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
+        $response->assertStatus(200);
 
         // Verifica gestione errori blocchi
         // Questo test verifica che gli errori siano gestiti correttamente
@@ -142,16 +119,12 @@ describe('Filament Blocks Integration', function () {
 
         $response = get('/');
 
-        /** @var TestResponse<Response> $response */
         $endTime = microtime(true);
         $loadTime = ($endTime - $startTime) * 1000;
 
-        $status = $response->getStatusCode();
-        if (200 !== $status) {
-            cmsSkipTest('Homepage is not directly renderable (redirect/non-200) in this install; performance check is not applicable.');
-        }
+        $response->assertStatus(200);
 
         // Verifica che i blocchi si carichino entro tempi accettabili
-        Assert::assertLessThan(500, $loadTime);
+        expect($loadTime)->toBeLessThan(500);
     });
 });

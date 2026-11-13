@@ -1,3 +1,15 @@
+---
+title: "folio routing system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "folio routing system"
+issues: []
+discussions: []
+status: draft
+---
+
 # Sistema di Routing e Localizzazione con Laravel Folio + Volt
 
 ## Risorse Ufficiali
@@ -203,7 +215,7 @@ new class extends Component {
 **Principio chiave (REGOLA OBBLIGATORIA):** 
 - Il file di routing **NON DEVE** contenere logica di business
 - Deve **SOLO** passare `$pageSlug` e `$data` al componente `<x-page>`
-- Il componente `<x-page>` carica il JSON (es. `events_view.json`) che contiene i blocchi
+- Il componente `<x-page>` carica il JSON (es. `events/view.json`) che contiene i blocchi
 - Il view path nel JSON (es. `components.blocks.events.detail`) gestisce il rendering
 
 **Perché?**

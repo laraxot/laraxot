@@ -1,4 +1,20 @@
+---
+title: "footer"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "footer"
+issues: []
+discussions: []
+status: draft
+---
+
 # Footer
+
+> Contratto corrente Sixteen: il footer pubblico è la sezione CMS `footer`, resa dal partial condiviso Sixteen. Il CMS fornisce label, URL, contatti e social; Sixteen usa `config('comune.*')` solo come fallback sicuro, filtra URL vuoti/hash e protegge dati tenant nullable. Il markup deve rimanere riusabile e data-driven: non aggiungere una pagina o un footer duplicato al tema.
+
+Il riferimento di produzione è il renderer del tema e i test `FooterV1DesignComuniStructureTest`/`HeaderTenantFallbackTest`. Il blocco generico seguente resta una guida Blueprint per l'editor, non descrive un renderer alternativo.
 
 ## Panoramica
 Il footer è una sezione **generica** che consente di inserire **qualsiasi** blocco disponibile nel sistema. Non ci sono blocchi dedicati esclusivamente al footer: si possono usare Hero, Paragraph, Navigation, Stats, CTA, ecc.
@@ -17,10 +33,10 @@ Questo permette di aggiungere, ordinare e rimuovere ogni tipo di blocco.
 3. Testare su diversi dispositivi per la responsività.
 
 ## Collegamenti
-- [Documentazione Blocchi](../blocks/readme.md)
+- [Documentazione Blocchi](README.md)
 - [PageContentBuilder](../filament-forms.md)
 - [Gestione Sezioni](../sections/footer-section.md)
-- [Documentazione UI](../../ui/docs/readme.md)
+- [Documentazione UI](../../../UI/docs/README.md)
 - [Documentazione Moduli](../../xot/docs/modules.md)
 - [Linee guida etichette Filament](/docs/filament-block-labels.md)
 
@@ -36,9 +52,9 @@ Le etichette dei Filament Blocks **NON** devono essere definite con `->label()`.
 ## Collegamenti tra versioni di footer.md
 * [footer.md](docs/laravel-app/themes/one/components/footer.md)
 * [footer.md](docs/sections/footer.md)
-* [footer.md](laravel/modules/ui/docs/components/footer.md)
+* [footer.md](../../../UI/docs/components/footer.md)
 * [footer.md](laravel/modules/cms/docs/blocks/footer.md)
-* [footer.md](laravel/modules/cms/docs/themes/one/footer.md)
-* [footer.md](laravel/modules/cms/docs/components/footer.md)
+* [footer.md](../themes/one/footer.md)
+* [footer.md](../components/footer.md)
 * [footer.md](laravel/themes/one/docs/components/layouts/footer.md)
 * [footer.md](laravel/themes/one/docs/sections/footer.md)

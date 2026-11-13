@@ -14,8 +14,9 @@ related:
   - ./index-legacy-2.md
   - ../sections/index.md
   - ../README.md
-  - ../INDEX.md
+  - ../index.md
   - ../roadmap/README.md
+status: draft
 ---
 <!-- ponytail: variante legacy con contenuto duplicato/divergente dal canonico index.md, conservata per non perdere link storici. Consolidare manualmente e poi rimuovere. -->
 
@@ -23,11 +24,11 @@ related:
 
 ## Collegamenti Correlati
 - [Indice CMS](../index.md)
-- [README CMS](../readme.md)
+- [README CMS](../README.md)
 - [Blocchi](../blocks.md)
 - [Componenti Blocchi Contenuto](../componenti-blocchi-contenuto.md)
 - [Namespace Componenti Blocchi](../namespace-componenti-blocchi.md)
-- [Documentazione Generale](../../../../../../docs/readme.md)
+- [Documentazione Generale](../../../../../docs/README.md)
 - [Collegamenti Documentazione](../../../../../../docs/collegamenti-documentazione.md)
 
 ## Panoramica

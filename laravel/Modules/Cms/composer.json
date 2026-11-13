@@ -30,12 +30,12 @@
     "autoload-dev": {
         "psr-4": {
             "Modules\\Cms\\Tests\\": "tests/"
-        },
-        "files": [
-            "tests/PestHelpers.php"
-        ]
+        }
     },
-    "require": {},
+    "require": {
+        "laravel/head": "^0.2.2",
+        "ezyang/htmlpurifier": "^4.17"
+    },
     "repositories": [
         {
             "type": "path",
@@ -51,10 +51,10 @@
         }
     ],
     "scripts": {
-        "post-autoload-dump": [
+        "post-autoload-dump-comment": [
             "@php vendor/bin/testbench package:discover --ansi"
         ],
-        "post-update-cmd": [
+        "post-update-cmd-comment": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ],
         "analyse": "vendor/bin/phpstan analyse",

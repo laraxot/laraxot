@@ -1,141 +1,145 @@
-# Auto-generated forbidden paths — do not edit manually
-# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
 
+._*
+# ==============================================
+*~BASE
+*~head
+*~HEAD
+*~LOCAL
+*~REMOTE
+agentdb.rvf
+# AI / TOOL SCAFFOLD — must never exist in the module tree
+app/storage/
+audit-coverage/
+# Auto-generated forbidden paths — do not edit manually
+*.backup
+*.backup.*
+# BACKUP / MERGE RESIDUE (never commit)
+*.bak
+*.bakcup
 bashscripts
 _bmad-output
+bootstrap/compiled.php
+/build/
+# BUILD & COMPILED FILES
+*.cache
+cache/
+# CACHE & TEMPORARY FILES
 .circleci
 .claude-audit
+cms_test_data.sql
+composer.lock
+config/development.php
+config/local.php
+content/drafts/
+content/temp/
+content/uploads/temp/
+.cursor/
+database/Factories_old/
+database/Migrations_old/
+database_old/
+database/Seeders_old/
+# DEPENDENCIES & PACKAGES
 .devcontainer
+.devcontainer/
+dist/
 _docs
 docs/archive
 docs/archived
-docs/legacy
-docs/workbench
-.kilocode
-.kiro
-.ralph
-scripts
-test-results
-tests/.claude-audit
-# ==============================================
-# LARAXOT MODULE CMS — .gitignore
-# DEPENDENCIES & PACKAGES
-/vendor/
-/node_modules/
-/docs/vendor/
-package-lock.json
-yarn.lock
-composer.lock
-# BUILD & COMPILED FILES
-/build/
-dist/
 docs/cache/
-cache/
-# CACHE & TEMPORARY FILES
-*.cache
-*.lock
-*.phar
-*.jar
-*.tmp
-*.swp
-*.swo
-*.stackdump
-*:Zone.Identifier
-v8-compile-cache-*
-.php-cs-fixer.cache
-.phpunit.result.cache
-# LOG FILES
-*.log
-error_log
-npm-debug.log*
-yarn-error.log*
-lerna-debug.log*
-# LARAVEL SPECIFIC
-bootstrap/compiled.php
-app/storage/
-public/storage
-public/hot
-public_html/storage
-public_html/hot
-storage/*.key
+docs/legacy
+docs/archive/
+docs/phpstan/
+/docs/vendor/
+#  docs/wiki/rules/module-theme-root-cleanup.md)
+docs/workbench
+.DS_Store
+.DS_Store?
+ehthumbs.db
 .env
 .env.*
 !.env.example
 # ENVIRONMENT & CONFIGURATION
-Homestead.yaml
-Homestead.json
-/.vagrant
-/.idea
-.phpintel
-.phpstorm.meta.php
-# IDE / DEV TOOLS (personal, never commit)
-.windsurf/
-.cursor/
-.vscode/
-# GIT SPECIFIC
-.git-rewrite/
+error_log
+*.fila2
 .git-blame-ignore-revs
-# SYSTEM FILES
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-# BACKUP / MERGE RESIDUE (never commit)
+.git-rewrite/
+# GIT SPECIFIC
+Homestead.json
+Homestead.yaml
+/.idea
+# IDE / DEV TOOLS (personal, never commit)
+*.jar
+.kilocode
+.kiro
+lang/lang/
+laravel
+# LARAVEL SPECIFIC
+# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
+# LARAXOT MODULE CMS — .gitignore
+# Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
+# LEGACY / OLD DIRECTORIES
+lerna-debug.log*
+*.lock
+*.log
+# LOG FILES
+# MODULE SPECIFIC — CMS
+*.new
+/node_modules/
+npm-debug.log*
 *.old
 *.old1
 *.old2
-*.backup
-*.backup.*
-*.bak
-*.bakcup
-*.new
-*.fila2
 *.orig
-*.rej
-*~HEAD
-*~BASE
-*~LOCAL
-*~REMOTE
-*~head
+package-lock.json
+*.phar
+.php-cs-fixer.cache
+phpinsights.php
+.phpintel
 # PHPSTAN / DOCS CACHE
-docs/phpstan/
-# LEGACY / OLD DIRECTORIES
+.phpstorm.meta.php
+.phpunit.result.cache
+# PROJECT SCRATCH
+public/hot
+public_html
+public_html/hot
+public_html/storage
+public/storage
+.ralph
+# Reason: root cleanup policy (see docs/wiki/rules/root-cleanup-policy.md)
+rector.php
+*.rej
 resources/lang/
 resources/views/Components_old/
-database/Migrations_old/
-database/Seeders_old/
-database/Factories_old/
-database_old/
-laravel
-public_html
-lang/lang/
-# MODULE SPECIFIC — CMS
-config/local.php
-config/development.php
-content/temp/
-content/drafts/
-content/uploads/temp/
+scripts
+# (see docs/module-root-hygiene.md and
+.Spotlight-V100
+*.stackdump
 storage/cms/
 storage/content/
+storage/*.key
+*.swo
+*.swp
+# SYSTEM FILES
 test_content.json
-cms_test_data.sql
-# PROJECT SCRATCH
-agentdb.rvf
-audit-coverage/
+test-results
 tests/AuditCoverage/
-# AI / TOOL SCAFFOLD — must never exist in the module tree
-# (see docs/module-root-hygiene.md and
-#  docs/wiki/rules/module-theme-root-cleanup.md)
-
-# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
-.cursor/
-.devcontainer/
+tests/.claude-audit
+Thumbs.db
+*.tmp
+.Trashes
+v8-compile-cache-*
+/.vagrant
+/vendor/
 .vscode/
 .windsurf/
-
-# Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
-phpinsights.php
-rector.php
+yarn-error.log*
+yarn.lock
+*:Zone.Identifier
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out/
+.claude/
+.claude-audit/
+test-results/
+cms.code-workspace
+ruvector.db
+.windsurfrules

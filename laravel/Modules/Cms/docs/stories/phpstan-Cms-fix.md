@@ -1,4 +1,11 @@
 ---
+title: "phpstan Cms fix"
+type: note
+tags: [documentation]
+updated: 2026-09-26
+qmd: "phpstan Cms fix"
+issues: []
+discussions: []
 id: phpstan-Cms-fix
 slug: phpstan-Cms
 scope: [module:Cms, project:base_workorder_fila5]

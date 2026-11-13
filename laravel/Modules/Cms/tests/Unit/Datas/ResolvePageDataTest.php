@@ -9,7 +9,7 @@ use Spatie\LaravelData\Data;
 test('ResolvePageData can be instantiated with constructor', function (): void {
     $data = new ResolvePageData('folio', null, 'home');
 
-    Assert::assertInstanceOf(ResolvePageData::class, $data);
+    Assert::assertSame('home', $data->pageSlug);
 });
 
 test('ResolvePageData stores renderMode correctly', function (): void {
@@ -31,7 +31,7 @@ test('ResolvePageData can store null item', function (): void {
 });
 
 test('ResolvePageData can store object item', function (): void {
-    $item = new stdClass();
+    $item = new stdClass;
     $item->title = 'Test Page';
 
     $data = new ResolvePageData('cms', $item, 'test');
@@ -50,9 +50,10 @@ test('ResolvePageData can store array cast as object', function (): void {
 });
 
 test('ResolvePageData extends Spatie Data', function (): void {
-    $data = new ResolvePageData('folio', null, 'home');
+    $parent = (new ReflectionClass(ResolvePageData::class))->getParentClass();
 
-    Assert::assertInstanceOf(Data::class, $data);
+    Assert::assertTrue($parent instanceof ReflectionClass);
+    Assert::assertSame(Data::class, $parent->getName());
 });
 
 test('ResolvePageData with different renderModes', function (): void {

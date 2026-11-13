@@ -6,6 +6,7 @@ namespace Modules\Cms\Filament\Fields;
 
 use Filament\Forms\Components\Builder;
 use Filament\Forms\Components\Builder\Block;
+use Filament\Notifications\Notification;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\Xot\Datas\ComponentFileData;
 use Spatie\LaravelData\DataCollection;
@@ -27,8 +28,7 @@ class PageContentBuilder
     }
 
     /**
-     * @param DataCollection<int, ComponentFileData> $blocks
-     *
+     * @param  DataCollection<int, ComponentFileData>  $blocks
      * @return list<Block>
      */
     private static function buildBlockList(DataCollection $blocks, string $context): array
@@ -38,23 +38,28 @@ class PageContentBuilder
         foreach ($blocks as $block) {
             Assert::isInstanceOf($block, ComponentFileData::class, '['.__LINE__.']['.__FILE__.']');
             $class = $block->class;
-            $blockInstance = null;
 
             try {
-                $blockInstance = $class::make(
-                    name: $block->name,
-                    context: $context,
-                );
-            } catch (\Error $e) {
-                if (app()->environment('testing')) {
-                    continue;
+                // Non tutti i blocchi accettano `$context` (es. Rating estende direttamente Builder\Block):
+                // passarlo sempre dava "Unknown named parameter $context" e il blocco spariva dall'editor.
+                $acceptsContext = \array_filter(
+                    (new \ReflectionMethod($class, 'make'))->getParameters(),
+                    static fn (\ReflectionParameter $parameter): bool => $parameter->getName() === 'context',
+                ) !== [];
+                $blockInstance = $acceptsContext
+                    ? $class::make(name: $block->name, context: $context)
+                    : $class::make(name: $block->name);
+            } catch (\Error|\ReflectionException $e) {
+                if (! app()->environment('testing')) {
+                    report($e);
+                    Notification::make()
+                        ->danger()
+                        ->title(__('cms::page_content_builder.messages.block_unavailable.title'))
+                        ->body(__('cms::page_content_builder.messages.block_unavailable.body', ['block' => $block->name]))
+                        ->send();
                 }
 
-                dddx([
-                    'e' => $e->getMessage(),
-                    'block' => $block,
-                    'class' => $class,
-                ]);
+                continue;
             }
 
             Assert::isInstanceOf(

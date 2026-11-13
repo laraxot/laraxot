@@ -1,9 +1,16 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "livewire widget prd"
+issues: []
+discussions: []
 title: "PRD — Cms"
 type: prd
 module: Cms
 related:
   - ./livewire-inventory.md
+status: draft
 ---
 
 # PRD Cms

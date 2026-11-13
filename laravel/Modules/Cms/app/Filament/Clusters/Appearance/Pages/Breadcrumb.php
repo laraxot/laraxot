@@ -66,7 +66,7 @@ class Breadcrumb extends XotBasePage
         try {
             $data = $this->form->getState();
 
-            // Save the data using TenantService
+            // Persist via SaveTenantConfigAction (ex TenantService::saveConfig)
             $up = [
                 'breadcrumb' => $data,
             ];

@@ -7,8 +7,10 @@ namespace Modules\Cms\Providers;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Folio\Folio;
+use Laravel\Folio\FolioRoutes;
 use Livewire\Volt\Volt;
 use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter;
 use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes;
@@ -17,19 +19,17 @@ use Modules\Cms\Http\Middleware\SetFolioLocale;
 use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
 use Modules\Xot\Datas\XotData;
 use Nwidart\Modules\Facades\Module;
-
-use function Safe\realpath;
-
 use Webmozart\Assert\Assert;
+
+use function Safe\preg_replace;
+use function Safe\realpath;
 
 class FolioVoltServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
      */
-    public function register(): void
-    {
-    }
+    public function register(): void {}
 
     /**
      * Bootstrap services.
@@ -47,6 +47,38 @@ class FolioVoltServiceProvider extends ServiceProvider
         $this->app->booted(function (): void {
             $this->registerFolioPaths();
         });
+    }
+
+    /**
+     * Le pagine Folio sono montate una volta per lingua con lo stesso nome di rotta e FolioRoutes tiene
+     * l'ultima (`it`): `route('container0.view')` rimandava a `/it/...` anche da `/de` (DCP-123).
+     * Il resolver di Folio viene sostituito da uno che sposta il prefisso sulla lingua corrente.
+     *
+     * @param  list<string>  $supportedLocales
+     */
+    protected function localizeFolioNamedRoutes(array $supportedLocales): void
+    {
+        $localePrefix = '#^((?:https?://[^/]+)?)/(?:'.implode('|', array_map(preg_quote(...), $supportedLocales)).')(?=[/?\#]|$)#';
+
+        URL::resolveMissingNamedRoutesUsing(
+            static function (string $name, mixed $parameters, bool $absolute) use ($localePrefix): ?string {
+                $routes = app(FolioRoutes::class);
+                // route('nome', $modello) passa un singolo valore, non un array: prima TypeError.
+                $parameters = \is_array($parameters) ? $parameters : [$parameters];
+
+                if (! $routes->has($name)) {
+                    return null;
+                }
+                $url = $routes->get($name, $parameters, $absolute);
+
+                if (! \is_string($url)) {
+                    return null;
+                }
+                $localized = preg_replace($localePrefix, '${1}/'.app()->getLocale(), $url, 1);
+
+                return \is_string($localized) ? $localized : $url;
+            }
+        );
     }
 
     /**
@@ -103,7 +135,6 @@ class FolioVoltServiceProvider extends ServiceProvider
         Assert::isArray($supportedLocalesConfig);
         /** @var array<string, mixed> $supportedLocalesConfig */
         $supportedLocales = array_map('strval', array_keys($supportedLocalesConfig));
-        $defaultLocale = config('app.locale', 'it');
 
         /**
          * @var Collection<int, \Nwidart\Modules\Module> $modules
@@ -138,6 +169,13 @@ class FolioVoltServiceProvider extends ServiceProvider
         }
 
         foreach ($modules as $module) {
+            // Moduli disabilitati (es. Mobile in smantellamento) non devono
+            // esporre pagine Folio/Volt: le loro view non avrebbero namespace
+            // registrato e farebbero fallire `view:cache`.
+            if (! $module->isEnabled()) {
+                continue;
+            }
+
             $path = $module->getPath().'/resources/views/pages';
             if (! File::exists($path) || ! File::isDirectory($path)) {
                 continue;
@@ -164,6 +202,8 @@ class FolioVoltServiceProvider extends ServiceProvider
                     ]);
             }
         }
+
+        $this->localizeFolioNamedRoutes($supportedLocales);
 
         if (! empty($paths)) {
             Volt::mount($paths);

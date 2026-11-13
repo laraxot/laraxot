@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Modules\Cms\Models\Page;
+use Webmozart\Assert\Assert;
 
 use function Safe\preg_replace;
-
-use Webmozart\Assert\Assert;
 
 /**
  * @extends Factory<Page>
@@ -30,7 +29,7 @@ class PageFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         Assert::string($title = preg_replace('/\./', '', fake()->sentence(3)));
 

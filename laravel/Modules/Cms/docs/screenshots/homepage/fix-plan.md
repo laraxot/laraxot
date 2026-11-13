@@ -1,3 +1,15 @@
+---
+title: "fix plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "fix plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🚀 Fix Homepage Bootstrap Italia - Piano Esecutivo
 
 ## Panoramica
@@ -7,7 +19,6 @@ Allineare la homepage FixCity (`/it/tests/homepage`) al design Bootstrap Italia 
 **Target**: http://fixcity.local/it/tests/homepage
 
 ---
-
 ## Fase 1: Header & Hero (Settimana 1)
 
 ### Task 1.1: Header Slim Component
@@ -143,8 +154,8 @@ Allineare la homepage FixCity (`/it/tests/homepage`) al design Bootstrap Italia 
 
 ### Documentazione
 - [Bootstrap Italia Docs](https://italia.github.io/design-web-toolkit/)
-- [Analisi Visiva](docs/screenshots/homepage/ANALISI_VISIVA.md)
-- [Screenshot Analysis](docs/screenshots/homepage/SCREENSHOT_ANALYSIS.md)
+- [Analisi Visiva](analisi-visiva.md)
+- [Screenshot Analysis](screenshot-analysis.md)
 
 ### File Correlati
 - `Themes/Sixteen/resources/css/bootstrap-italia.css`
