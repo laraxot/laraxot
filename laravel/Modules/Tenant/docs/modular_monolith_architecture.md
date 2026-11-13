@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Modular Monolith Architecture for Tenant Module"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "modular monolith architecture"
 related:
   - "./phpstan-corrections-january.md"
+status: superseded
+superseded_by: modular-monolith-architecture.md
 ---
 # Modular Monolith Architecture for Tenant Module
 

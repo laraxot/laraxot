@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_sxig6g
 title: "Brainstorming — solo widget vs Livewire HTTP"
+=======
+title: "Brainstorming: solo widget vs Livewire HTTP"
+>>>>>>> .merge_file_e83GV8
 type: brainstorming
 module: User
 status: done
@@ -7,6 +11,12 @@ related:
   - ./brainstorming.md
   - ./livewire-inventory.md
   - ./decision-log.md
+<<<<<<< .merge_file_sxig6g
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "brainstorming: perché un solo contenitore user"
+>>>>>>> .merge_file_e83GV8
 ---
 
 # Brainstorming: perché un solo contenitore

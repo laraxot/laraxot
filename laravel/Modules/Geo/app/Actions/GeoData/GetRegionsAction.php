@@ -6,6 +6,8 @@ namespace Modules\Geo\Actions\GeoData;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
+use Modules\Geo\Infrastructure\Config\GeoDataConfig;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -15,22 +17,21 @@ class GetRegionsAction
 {
     use QueueableAction;
 
-    public const string CACHE_KEY = 'geo.regions';
-
-    public const int CACHE_TTL = 86400;
-
     /**
-     * @return Collection<int, array{name: string, code: string}>
+     * Regioni come mappa codice => nome.
+     *
+     * @return Collection<string, string>
      */
     public function execute(): Collection
     {
-        /** @var Collection<int, array{name: string, code: string}> $result */
-        $result = Cache::remember(
-            self::CACHE_KEY,
-            self::CACHE_TTL,
-            fn (): Collection => app(LoadGeoDataAction::class)->execute()->pluck('name', 'code'),
+        return Cache::remember(
+            GeoDataConfig::CACHE_KEY_REGIONS,
+            GeoDataConfig::CACHE_TTL,
+            fn (): Collection => app(LoadGeoDataAction::class)->execute()->mapWithKeys(
+                static fn (array $region): array => [
+                    SafeStringCastAction::cast($region['code'] ?? '') => SafeStringCastAction::cast($region['name'] ?? ''),
+                ],
+            ),
         );
-
-        return $result;
     }
 }

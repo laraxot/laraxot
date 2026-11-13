@@ -12,6 +12,7 @@ use Modules\Gdpr\Enums\ConsentType;
 use Modules\Gdpr\Models\Consent;
 use Modules\Gdpr\Models\Treatment;
 use Modules\Gdpr\Tests\Unit\Traits\HasGdprTraitTest;
+use Stringable;
 
 /**
  * Trait HasGdpr.
@@ -21,7 +22,13 @@ use Modules\Gdpr\Tests\Unit\Traits\HasGdprTraitTest;
  * @property Collection<int, Consent> $consents
  * @property Collection<int, Consent> $activeConsents
  *
+<<<<<<< .merge_file_F1ZziF
  * @see HasGdprTraitTest
+ *
+ * @phpstan-ignore trait.unused
+=======
+ * @see \Modules\Gdpr\Tests\Unit\Traits\HasGdprTraitTest
+>>>>>>> .merge_file_Zo0Ch6
  */
 trait HasGdpr
 {
@@ -91,8 +98,8 @@ trait HasGdpr
     /**
      * Give consent for a specific type.
      *
-     * @param array<string, mixed> $metadata
-     * @param array<string, mixed> $metadata
+     * @param  array<string, mixed>  $metadata
+     * @param  array<string, mixed>  $metadata
      */
     public function giveConsent(ConsentType|string $type, array $metadata = []): Consent
     {
@@ -138,20 +145,19 @@ trait HasGdpr
     /**
      * Get all required consents that the user hasn't given yet.
      *
-     * @return array<string>
+     * @return list<string>
      */
-    /** @return array<string> */
     public function getMissingRequiredConsents(): array
     {
         $givenConsents = $this->activeConsents()->pluck('type')->toArray();
 
-        /** @var array<string> $consentTypes */
+        /** @var list<string> $consentTypes */
         $consentTypes = ConsentType::getRequiredConsentTypes();
 
         /** @var array<string> $given */
         $given = $givenConsents;
 
-        return array_diff($consentTypes, $given);
+        return array_values(array_diff($consentTypes, $given));
     }
 
     /**
@@ -174,7 +180,7 @@ trait HasGdpr
     {
         $key = $this->getKey();
 
-        if (! is_scalar($key) && ! $key instanceof \Stringable) {
+        if (! is_scalar($key) && ! $key instanceof Stringable) {
             throw new \LogicException('The model key must be scalar or stringable.');
         }
 

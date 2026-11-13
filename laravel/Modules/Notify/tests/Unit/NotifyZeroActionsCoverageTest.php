@@ -15,8 +15,10 @@ use Modules\Notify\Actions\SMS\SendAgiletelecomSMSv2Action;
 use Modules\Notify\Datas\FirebaseNotificationData;
 use Modules\Notify\Datas\SmsData;
 use Modules\Notify\Notifications\FirebaseAndroidNotification;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 afterEach(function (): void {
     Mockery::close();
 });

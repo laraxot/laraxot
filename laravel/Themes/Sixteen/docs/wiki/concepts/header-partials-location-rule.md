@@ -1,13 +1,18 @@
 ---
+created: 2026-09-26
+qmd: "header partials location rule"
+issues: []
+discussions: []
 title: "Header partials location rule"
 type: concept
 confidence: high
 updated: 2026-04-21
 tags: [header, partials, ownership, dry, kiss, blade]
 sources:
-  - ../../../../resources/views/components/sections/header/v1.blade.php
+  - ../../../resources/views/components/sections/header/v1.blade.php
   - ../../../../../../docs/wiki/concepts/sixteen-header-composition-rule.md
   - ../../../../../../_bmad-output/implementation-artifacts/8-37-blade-reusable-components-extraction-and-header-partials-governance.md
+status: draft
 ---
 
 # Header partials location rule

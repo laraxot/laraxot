@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Models;
 
 use Modules\Notify\Models\NotifyThemeable;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\withoutExceptionHandling;
 
+uses(TestCase::class);
 beforeEach(function (): void {
     withoutExceptionHandling();
 });

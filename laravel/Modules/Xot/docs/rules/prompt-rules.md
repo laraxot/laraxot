@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+---
+title: "Xot - prompt-rules.md"
+module: Xot
+bmad: true
+status: active
+---
+>>>>>>> laraxot/dev
 # Regole per i Prompt
 
 ## Regola Universale
@@ -81,4 +90,8 @@ Non è necessario applicare questa regola a:
 * [PROMPT_RULES.md](../../../xot/docs/rules/prompt_rules.md)
 
 ## Collegamenti tra versioni di prompt_rules.md
+<<<<<<< HEAD
 * [prompt_rules.md](../prompt_rules.md)
+=======
+* [prompt_rules.md](../prompt_rules.md)
+>>>>>>> laraxot/dev

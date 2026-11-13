@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_nihJxm
 title: "Brainstorming — User module: findings grezzi (5 fork paralleli)"
+=======
+title: "Brainstorming: User module: findings grezzi (5 fork paralleli)"
+>>>>>>> .merge_file_YffdA1
 type: brainstorming
 module: User
 status: approved
@@ -9,37 +13,68 @@ related:
   - ./module-excellence-prd.md
   - ./module-excellence-architecture.md
   - ./epics.md
+<<<<<<< .merge_file_nihJxm
 ---
 
 # Brainstorming: User module — findings grezzi
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "brainstorming: user module   findings grezzi user"
+---
+
+# Brainstorming: User module: findings grezzi
+>>>>>>> .merge_file_YffdA1
 
 Findings raccolti da 5 ricerche parallele (sola lettura, `Agent
 subagent_type: fork`, 2026-09-22), prima della prioritizzazione in
 [epics.md](./epics.md). Ordinati per fork, non per priorita'.
 
+<<<<<<< .merge_file_nihJxm
 ## Fork 1 — Docs hygiene
+=======
+## Fork 1: Docs hygiene
+>>>>>>> .merge_file_YffdA1
 
 - 3377 file `.md` in `docs/`; 1532 al primo livello.
 - Cluster di 270 file `*phpstan*.md`, molti chiaramente corrotti
   (`phpstanes.md`, `phpstanebate.md`, `phpstanry-kiss-improvements.md`,
+<<<<<<< .merge_file_nihJxm
   `phpstan-fixes-1-1.md`, `phpstan-level10es.md`). Root cause: uno script
+=======
+  `phpstan-fixes.md`, `phpstan-level10es.md`). Root cause: uno script
+>>>>>>> .merge_file_YffdA1
   di generazione slug ha rimosso le sottostringhe `-fix` e `-d` dai nomi
   file derivati dai titoli, eseguito almeno due volte nella stessa
   giornata (cluster di mtime alle 08:28 e 09:35). Originali e corrotti
   **coesistono** (non rinominati: rigenerati), con dimensioni byte
+<<<<<<< .merge_file_nihJxm
   leggermente diverse — contenuto rigenerato, non solo il nome.
 - `docs/index.md`: 3424 righe, elenco piatto auto-generato. Verificati
   tutti i 3138 link unici: 942 rotti (30.0%).
 - `docs/permissions.md`: 107 righe, ma e' contenuto copiato da un altro
   modulo — dominio "Moderazione Medici" (Patient/Gdpr), frontmatter
+=======
+  leggermente diverse: contenuto rigenerato, non solo il nome.
+- `docs/index.md`: 3424 righe, elenco piatto auto-generato. Verificati
+  tutti i 3138 link unici: 942 rotti (30.0%).
+- `docs/permissions.md`: 107 righe, ma e' contenuto copiato da un altro
+  modulo: dominio "Moderazione Medici" (Patient/Gdpr), frontmatter
+>>>>>>> .merge_file_YffdA1
   `issues`/`discussions` che punta a `provtv/base_ptv_fila5` (repo
   sbagliata), link interni a `./00-index.md`, `./2fa-guide.md` che non
   hanno nulla a che fare col modulo User.
 - 6+ cartelle con lo stesso concetto: `archive/`, `_archive/`,
   `wiki-archive/`, `fixes/`, `bug-fixes/`, `bugfix/`, `bugs/`,
+<<<<<<< .merge_file_nihJxm
   `bug-tracking/` — 1090+ file totali, nessuna relazione dichiarata.
 - `docs/.gitignore` linee 8-9: pattern bare `archive`/`legacy` (nessuno
   slash) — `git check-ignore -v` conferma che qualunque nuovo file sotto
+=======
+  `bug-tracking/`: 1090+ file totali, nessuna relazione dichiarata.
+- `docs/.gitignore` linee 8-9: pattern bare `archive`/`legacy` (nessuno
+  slash): `git check-ignore -v` conferma che qualunque nuovo file sotto
+>>>>>>> .merge_file_YffdA1
   `docs/archive/` o `docs/legacy/` viene ignorato silenziosamente da ora
   in poi. Story root gia' esistente: `5.37-gitignore-archive-legacy-bug-user`.
   Il `.gitignore` di root modulo (500 righe) ha lo stesso blocco
@@ -47,13 +82,21 @@ subagent_type: fork`, 2026-09-22), prima della prioritizzazione in
 - `purpose.md` e `scopo.md`: stesso contenuto, due lingue, mai
   dichiarato quale sia la fonte di verita'.
 
+<<<<<<< .merge_file_nihJxm
 ## Fork 2 — Codice/architettura/PHPStan
+=======
+## Fork 2: Codice/architettura/PHPStan
+>>>>>>> .merge_file_YffdA1
 
 - `./vendor/bin/phpstan analyse Modules/User --memory-limit=-1`: **0
   errori** a livello `max`. I doc storici che citano N errori residui
   sono tutti obsoleti.
 - 0/30 classi `*Table.php` con `protected static ?string $model`
+<<<<<<< .merge_file_nihJxm
   esplicito — in contraddizione diretta con issue #91 ("audit gia'
+=======
+  esplicito: in contraddizione diretta con issue #91 ("audit gia'
+>>>>>>> .merge_file_YffdA1
   fatto, $model presente su tutti" per 13 file). Nessuna delle due fonti
   assunta vera senza riverifica.
 - `OauthClientResource` referenzia il modello Passport vanilla, non il
@@ -69,20 +112,31 @@ subagent_type: fork`, 2026-09-22), prima della prioritizzazione in
 - 2 marker di conflitto Git residui su 114 originari (issue #47),
   entrambi in file non-PHP (non autoloaded, nessun rischio runtime).
 
+<<<<<<< .merge_file_nihJxm
 ## Fork 3 — Copertura test
 
 - Host verificato: non e' `10.100.200.15` (hostname `NOLWA004`) — via
+=======
+## Fork 3: Copertura test
+
+- Host verificato: non e' `10.100.200.15` (hostname `NOLWA004`): via
+>>>>>>> .merge_file_YffdA1
   libera per eseguire Pest secondo la regola dati sacri.
 - ~1054 casi Pest dichiarati nell'albero `tests/`.
 - Bootstrap anomalmente lento: 3-9 secondi per un'asserzione banale
   ("puo' essere istanziato"). Suite intera mai eseguita per intero da
   nessuno; stima seriale 85-90 minuti.
 - Campione eseguito: alcuni test passano, alcuni falliscono, alcuni
+<<<<<<< .merge_file_nihJxm
   warning — non rappresentativo abbastanza per un numero di coverage
+=======
+  warning: non rappresentativo abbastanza per un numero di coverage
+>>>>>>> .merge_file_YffdA1
   affidabile senza prima risolvere il bootstrap lento.
 - 25 Filament Resource: 3 con test dedicato (12%) -> 22 scoperte (88%).
 - 22 Widget: 7 con test dedicato (32%) -> 15 scoperti (68%).
 - `tests/Playwright/`: 1 solo file, 50 righe, un solo flusso
+<<<<<<< .merge_file_nihJxm
   (registrazione) — scaffold, non suite E2E.
 - Issue #31 ("coverage circa 0%, target 100%") resta pienamente attuale.
 
@@ -90,6 +144,15 @@ subagent_type: fork`, 2026-09-22), prima della prioritizzazione in
 
 - `laraxot/module_user_fila5`: 27 issue aperte, 13 discussion aperte.
 - `provtv/module_user_fila5`: 9 issue aperte, 4 discussion aperte —
+=======
+  (registrazione): scaffold, non suite E2E.
+- Issue #31 ("coverage circa 0%, target 100%") resta pienamente attuale.
+
+## Fork 4: Catalogo GitHub
+
+- `laraxot/module_user_fila5`: 27 issue aperte, 13 discussion aperte.
+- `provtv/module_user_fila5`: 9 issue aperte, 4 discussion aperte -
+>>>>>>> .merge_file_YffdA1
   **tracker separato e divergente**, non uno specchio del remote
   laraxot (numerazione diversa, contenuti diversi). Decisione di
   governance su quale remote e' canone: non presa, da documentare
@@ -105,7 +168,11 @@ subagent_type: fork`, 2026-09-22), prima della prioritizzazione in
   (#29/#28/#27/#25/#20/#19/#11, tutte superate dal riscontro 0 errori
   del Fork 2) e coverage (#31/#30/#32, tre issue per lo stesso tema).
 
+<<<<<<< .merge_file_nihJxm
 ## Fork 5 — Dominio/sicurezza (verifica delle 5 azioni di `purpose.md`)
+=======
+## Fork 5: Dominio/sicurezza (verifica delle 5 azioni di `purpose.md`)
+>>>>>>> .merge_file_YffdA1
 
 1. README badge falsi: **FALSO/STALE**. Il README e' gia' stato
    corretto il 2026-09-02 (stesso giorno di `purpose.md`) con badge
@@ -133,8 +200,15 @@ subagent_type: fork`, 2026-09-22), prima della prioritizzazione in
 ## Contraddizioni da non risolvere unilateralmente (richiedono riaudit)
 
 - Issue #91 ("XotBaseResourceTable audit gia' fatto") vs grep diretto
+<<<<<<< .merge_file_nihJxm
   (0/30 classi con `$model` esplicito) — FR-13.1.
 - `purpose.md` azione #1 (badge falsi) vs README gia' corretto — risolto
   nella sintesi correggendo `purpose.md`, non il README.
 - `purpose.md` azione #5 (nessuno legge auth log) vs UI gia' esistente —
+=======
+  (0/30 classi con `$model` esplicito): FR-13.1.
+- `purpose.md` azione #1 (badge falsi) vs README gia' corretto: risolto
+  nella sintesi correggendo `purpose.md`, non il README.
+- `purpose.md` azione #5 (nessuno legge auth log) vs UI gia' esistente -
+>>>>>>> .merge_file_YffdA1
   risolto restringendo il gap alla sola euristica di anomalia.

@@ -1,3 +1,15 @@
+---
+title: "login4 component verification"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login4 component verification"
+issues: []
+discussions: []
+status: draft
+---
+
 # Verifica Componenti Login4 - Tema Sixteen
 
 ## 🔍 Verifica Esistenza Componenti

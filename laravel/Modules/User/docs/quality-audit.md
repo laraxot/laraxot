@@ -4,9 +4,11 @@ type: report
 module: User
 updated: 2026-09-01
 qmd: "audit qualita user phpstan phpmd phpinsights pest coverage soppressioni collisioni case"
+status: draft
+tags: [docs, user]
 ---
 
-# Audit di qualita — modulo User
+# Audit di qualita: modulo User
 
 Misurato il 1 settembre 2026 a tree fermo. Ogni numero viene da un comando
 eseguito, non da una stima; i comandi sono in fondo, cosi la misura si puo
@@ -23,10 +25,10 @@ rifare e contestare.
 | Casi di test per file PHP | 0.63 |
 | `@phpstan-ignore` nel codice | 1 |
 | Rilievi PHPMD su `app/` | 471 |
-| PHPInsights — Code | 91.8 % |
-| PHPInsights — Complexity | 100.0 % |
-| PHPInsights — Architecture | 78.6 % |
-| PHPInsights — Style | 96.3 % |
+| PHPInsights: Code | 91.8 % |
+| PHPInsights: Complexity | 100.0 % |
+| PHPInsights: Architecture | 78.6 % |
+| PHPInsights: Style | 96.3 % |
 | File `.md` sotto `docs/` | 3151 |
 | `TODO`/`FIXME`/`HACK` | 122 |
 | Test con casi che non girano (senza suffisso `Test.php`) | 0 |

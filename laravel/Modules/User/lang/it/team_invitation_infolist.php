@@ -2,17 +2,21 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_IZdi4V
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'uuid' => ['label' => 'uuid'],
-        'team_id' => ['label' => 'team_id'],
-        'email' => ['label' => 'email'],
-        'role' => ['label' => 'role'],
-        'user_id' => ['label' => 'user_id'],
-        'accepted_at' => ['label' => 'accepted_at'],
-        'declined_at' => ['label' => 'declined_at'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'id' => ['label' => 'ID'],
+        'uuid' => ['label' => 'UUID'],
+        'team_id' => ['label' => 'Team'],
+        'email' => ['label' => 'E-mail'],
+        'role' => ['label' => 'Ruolo'],
+        'user_id' => ['label' => 'Utente'],
+        'accepted_at' => ['label' => 'Accettato il'],
+        'declined_at' => ['label' => 'Rifiutato il'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_RW7I8Z

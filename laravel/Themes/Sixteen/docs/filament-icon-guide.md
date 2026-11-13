@@ -1,3 +1,15 @@
+---
+title: "filament icon guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament icon guide"
+issues: []
+discussions: []
+status: draft
+---
+
 # Filament Icon Usage Guide (Filament 5)
 
 > *"Usa `<x-filament::icon>` per tutte le icone nei componenti Blade."*
@@ -11,7 +23,6 @@
 **Documentation**: https://filamentphp.com/docs/5.x/forms/icon-picker
 
 ---
-
 ## 📖 Syntax
 
 ```blade

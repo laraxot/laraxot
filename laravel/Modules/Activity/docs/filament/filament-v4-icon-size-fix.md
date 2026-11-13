@@ -42,7 +42,6 @@ In Filament v4, the `size` attribute for icons changed from accepting string val
    - Removed `:size="24"` from icon component
    - Size controlled via CSS classes `h-36`
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_leGcld
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -54,11 +53,6 @@ In Filament v4, the `size` attribute for icons changed from accepting string val
 =======
 3. **Modules/Quaeris/resources/views/filament/widgets/overlook-stats.blade.php**3. **Modules/<nome progetto>/resources/views/filament/widgets/overlook-stats.blade.php**
 >>>>>>> .merge_file_uUNtfU
-=======
-3. **Modules/<nome progetto>/resources/views/filament/widgets/overlook-stats.blade.php**
-3. **Modules/Quaeris/resources/views/filament/widgets/overlook-stats.blade.php**
-3. **Modules/healthcare_app/resources/views/filament/widgets/overlook-stats.blade.php**
->>>>>>> 13cf1831 (.)
    - Removed `:size="24"` from two icon instances
    - Size controlled via CSS classes `size-4` and `h-36`
 
@@ -129,14 +123,11 @@ In Filament v4, the `size` attribute for icons changed from accepting string val
 3. **Modules/Quaeris/resources/views/filament/widgets/overlook-stats.blade.php**
 3. **Modules/Quaeris/resources/views/filament/widgets/overlook-stats.blade.php**
 3. **Modules/healthcare_app/resources/views/filament/widgets/overlook-stats.blade.php**
-<<<<<<< HEAD
 <<<<<<< .merge_file_leGcld
 <<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
    - Removed `:size="24"` from two icon instances
    - Size controlled via CSS classes `size-4` and `h-36`
 
@@ -169,7 +160,6 @@ After applying these fixes:
 - [Filament v4 Upgrade Guide](https://filamentphp.com/docs/4.x/upgrade-guide)
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 - [Filament v4 Icon Component](https://filamentphp.com/docs/4.x/support/icons)
 >>>>>>> 0a02158a (.)
@@ -178,7 +168,4 @@ After applying these fixes:
 >>>>>>> .merge_file_uUNtfU
 - [Filament v4 Icon Component](https://filamentphp.com/docs/4.x/support/icons)
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-- [Filament v4 Icon Component](https://filamentphp.com/docs/4.x/support/icons)
->>>>>>> 13cf1831 (.)
 - [Filament v4 Icon Component](https://filamentphp.com/docs/4.x/support/icons)

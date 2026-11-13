@@ -17,18 +17,19 @@ use Filament\Schemas\Schema;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Notification;
 use Modules\Notify\Datas\FirebaseNotificationData;
 use Modules\Notify\Filament\Clusters\Test;
-use Modules\Notify\Notifications\PushNotification;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Filament\Pages\XotBasePage;
-use Override;
+use Modules\Xot\Filament\Traits\SuperAdminOnlyTrait;
 
 /**
  * @property Schema $pushForm
  */
 class SendFirebasePushNotificationPage extends XotBasePage
 {
+    use SuperAdminOnlyTrait;
+
     /** @var array<string, mixed>|null */
     public ?array $pushData = [];
 
@@ -103,16 +104,11 @@ class SendFirebasePushNotificationPage extends XotBasePage
 
     public function sendPushNotification(): void
     {
+        abort_unless(static::canAccess(), 403);
+
         $data = $this->pushForm->getState();
 
         try {
-            // Creare i dati della notifica Firebase
-            $notificationData = FirebaseNotificationData::from([
-                'type' => $data['notification_type'] ?? 'message',
-                'title' => $data['title'] ?? '',
-                'body' => $data['body'] ?? '',
-                'data' => $data['custom_data'] ?? []]);
-
             // TODO: Implementare PushNotification class
             // Inviare la notifica push
             // Notification::route('firebase', $data['token'])
@@ -145,6 +141,24 @@ class SendFirebasePushNotificationPage extends XotBasePage
         }
     }
 
+    /**
+     * FCM accetta solo coppie chiave non vuota => stringa: il tipo viaggia come chiave `type`.
+     *
+     * @return array<non-empty-string, string>
+     */
+    protected function getMessageData(FirebaseNotificationData $notificationData): array
+    {
+        $messageData = ['type' => $notificationData->type];
+
+        foreach ($notificationData->data as $key => $value) {
+            if ($key !== '') {
+                $messageData[$key] = SafeStringCastAction::cast($value);
+            }
+        }
+
+        return $messageData;
+    }
+
     /** @return array<string, Action> */
     protected function getPushFormActions(): array
     {
@@ -153,6 +167,7 @@ class SendFirebasePushNotificationPage extends XotBasePage
                 ->label(__('notify::push.actions.send'))
                 ->submit('sendPushNotification')];
     }
+
     protected function getUser(): Authenticatable&Model
     {
         $user = Filament::auth()->user();

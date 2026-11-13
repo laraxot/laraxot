@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Tests\Unit\Datas;
 
+use Illuminate\Support\Collection;
 use Modules\Geo\Datas\Elevation\ElevationData;
 use Modules\Geo\Datas\Elevation\ElevationResultDTO;
 use Modules\Geo\Datas\Geocoding\AddressData;
@@ -27,36 +28,62 @@ uses(TestCase::class);
 test('CoordinatesData can be instantiated', function () {
     Assert::assertTrue(class_exists(CoordinatesData::class));
 
-    $coordinates = CoordinatesData::from(['lat' => 41.9028, 'lng' => 12.4964]);
-    Assert::assertInstanceOf(CoordinatesData::class, $coordinates);
+    $coordinates = CoordinatesData::from(['latitude' => 41.9028, 'longitude' => 12.4964]);
+
+    Assert::assertSame(41.9028, $coordinates->latitude);
+    Assert::assertSame(12.4964, $coordinates->longitude);
 });
 
 test('AddressData can be instantiated', function () {
     Assert::assertTrue(class_exists(AddressData::class));
 
-    $address = AddressData::from(['city' => 'Roma']);
-    Assert::assertInstanceOf(AddressData::class, $address);
+    // latitude/longitude are required constructor parameters
+    $address = AddressData::from(['latitude' => 41.9028, 'longitude' => 12.4964, 'city' => 'Roma']);
+
+    Assert::assertSame('Roma', $address->city);
+    Assert::assertSame(41.9028, $address->latitude);
 });
 
 test('LocationData can be instantiated', function () {
     Assert::assertTrue(class_exists(LocationData::class));
 
-    $location = LocationData::from(['name' => 'Rome']);
-    Assert::assertInstanceOf(LocationData::class, $location);
+    // from(array) is routed to the magic LocationData::fromArray(), which requires latitude/longitude
+    $location = LocationData::from(['latitude' => 41.9028, 'longitude' => 12.4964, 'name' => 'Rome']);
+
+    Assert::assertSame('Rome', $location->name);
+    Assert::assertSame(41.9028, $location->latitude);
 });
 
 test('PlaceData can be instantiated', function () {
     Assert::assertTrue(class_exists(PlaceData::class));
 
-    $place = PlaceData::from(['name' => 'Test Place']);
-    Assert::assertInstanceOf(PlaceData::class, $place);
+    $place = new PlaceData(
+        placeId: 1,
+        displayName: 'Test Place',
+        latitude: 41.9028,
+        longitude: 12.4964,
+        type: 'city',
+    );
+
+    Assert::assertSame('Test Place', $place->displayName);
 });
 
 test('GeoData can be instantiated', function () {
     Assert::assertTrue(class_exists(GeoData::class));
 
-    $geoData = GeoData::from([]);
-    Assert::assertInstanceOf(GeoData::class, $geoData);
+    $geoData = GeoData::from([
+        'latlng' => [41.9028, 12.4964],
+        'route' => 'Via del Corso',
+        'street_number' => '1',
+        'postal_code' => '00186',
+        'administrative_area_level_3' => 'Roma',
+        'administrative_area_level_2_short' => 'RM',
+        'value' => 'Via del Corso 1, Roma',
+    ]);
+
+    Assert::assertSame('Via del Corso', $geoData->route);
+    Assert::assertSame('00186', $geoData->postal_code);
+    Assert::assertSame([41.9028, 12.4964], $geoData->toArray()['latlng']);
 });
 
 test('ElevationData can be instantiated', function () {
@@ -68,7 +95,8 @@ test('ElevationData can be instantiated', function () {
         'longitude' => 12.4964,
         'resolution' => 30.0,
     ]);
-    Assert::assertInstanceOf(ElevationData::class, $elevationData);
+
+    Assert::assertSame(100.0, $elevationData->elevation);
 });
 
 test('ElevationResultDTO can be instantiated', function () {
@@ -79,7 +107,8 @@ test('ElevationResultDTO can be instantiated', function () {
         latitude: 41.9028,
         longitude: 12.4964
     );
-    Assert::assertInstanceOf(ElevationResultDTO::class, $elevationResult);
+
+    Assert::assertSame(100.0, $elevationResult->elevation);
 });
 
 test('LocationDTO can be instantiated', function () {
@@ -90,7 +119,8 @@ test('LocationDTO can be instantiated', function () {
         longitude: 12.4964,
         address: 'Test Address'
     );
-    Assert::assertInstanceOf(LocationDTO::class, $locationDTO);
+
+    Assert::assertSame('Test Address', $locationDTO->address);
 });
 
 test('BingMapData can be instantiated', function () {
@@ -112,7 +142,8 @@ test('BingMapData can be instantiated', function () {
             'houseNumber' => null,
         ],
     ]);
-    Assert::assertInstanceOf(BingMapData::class, $bingMapData);
+
+    Assert::assertSame('Rome', $bingMapData->toArray()['address']['locality']);
 });
 
 test('MapboxMapData can be instantiated', function () {
@@ -132,38 +163,49 @@ test('MapboxMapData can be instantiated', function () {
             'neighborhood' => null,
         ],
     ]);
-    Assert::assertInstanceOf(MapboxMapData::class, $mapboxMapData);
+
+    Assert::assertSame('Rome', $mapboxMapData->toArray()['text']);
 });
 
 test('UpdateCoordinatesResult can be instantiated', function () {
     Assert::assertTrue(class_exists(UpdateCoordinatesResult::class));
 
-    $updateResult = UpdateCoordinatesResult::from([
-        'success' => true,
-        'message' => 'Coordinates updated',
-    ]);
-    Assert::assertInstanceOf(UpdateCoordinatesResult::class, $updateResult);
+    $updateResult = new UpdateCoordinatesResult(
+        totalProcessed: 5,
+        successCount: 5,
+        failureCount: 0,
+        errors: new Collection,
+    );
+
+    Assert::assertTrue($updateResult->isCompleteSuccess());
 });
 
 test('RouteData can be instantiated', function () {
     Assert::assertTrue(class_exists(RouteData::class));
 
-    $routeData = RouteData::from([
-        'origin' => ['lat' => 41.9028, 'lng' => 12.4964],
-        'destination' => ['lat' => 41.8931, 'lng' => 12.4778],
-        'distance' => 1000.0,
-    ]);
-    Assert::assertInstanceOf(RouteData::class, $routeData);
+    $routeData = new RouteData(
+        waypoints: new Collection,
+        originalWaypoints: new Collection,
+        totalDistance: 1000,
+        totalDuration: 600,
+        steps: [],
+    );
+
+    Assert::assertSame(1000, $routeData->totalDistance);
 });
 
 test('TravelTimeData can be instantiated', function () {
     Assert::assertTrue(class_exists(TravelTimeData::class));
 
-    $travelTimeData = TravelTimeData::from([
-        'duration' => 1800,
-        'distance' => 10000,
-    ]);
-    Assert::assertInstanceOf(TravelTimeData::class, $travelTimeData);
+    $travelTimeData = new TravelTimeData(
+        duration_seconds: 1800,
+        duration_in_traffic_seconds: 1800,
+        distance_meters: 10000,
+        formatted_duration: '30 min',
+        formatted_distance: '10 km',
+    );
+
+    Assert::assertSame(1800, $travelTimeData->duration_seconds);
 });
 
 test('IPLocationData can be instantiated', function () {
@@ -174,18 +216,30 @@ test('IPLocationData can be instantiated', function () {
         'latitude' => 37.751,
         'longitude' => -97.822,
     ]);
-    Assert::assertInstanceOf(IPLocationData::class, $ipLocationData);
+
+    Assert::assertSame('8.8.8.8', $ipLocationData->ip);
 });
 
 test('GeocodingData can be instantiated', function () {
     Assert::assertTrue(class_exists(GeocodingData::class));
 
+    // from(array) is routed to the magic GeocodingData::fromGoogleResponse(): it expects a Google Geocoding payload
     $geocodingData = GeocodingData::from([
-        'latitude' => 41.9028,
-        'longitude' => 12.4964,
-        'formatted_address' => 'Rome, Italy',
+        'status' => 'OK',
+        'results' => [[
+            'geometry' => ['location' => ['lat' => 41.9028, 'lng' => 12.4964]],
+            'formatted_address' => 'Rome, Italy',
+            'address_components' => [
+                ['long_name' => 'Roma', 'short_name' => 'Roma', 'types' => ['locality']],
+                ['long_name' => 'Italia', 'short_name' => 'IT', 'types' => ['country']],
+            ],
+        ]],
     ]);
-    Assert::assertInstanceOf(GeocodingData::class, $geocodingData);
+
+    Assert::assertSame('Rome, Italy', $geocodingData->formatted_address);
+    Assert::assertSame(41.9028, $geocodingData->latitude);
+    Assert::assertSame('Roma', $geocodingData->locality);
+    Assert::assertNull($geocodingData->error);
 });
 
 test('TimeZoneData can be instantiated', function () {
@@ -196,6 +250,10 @@ test('TimeZoneData can be instantiated', function () {
         'timeZoneName' => 'Central European Time',
         'rawOffset' => 3600,
         'dstOffset' => 3600,
+        // required by the magic TimeZoneData::fromGoogleMaps() used by from(array)
+        'countryCode' => 'IT',
     ]);
-    Assert::assertInstanceOf(TimeZoneData::class, $timeZoneData);
+
+    Assert::assertSame('Europe/Rome', $timeZoneData->timeZoneId);
+    Assert::assertSame(7200, $timeZoneData->getTotalOffset());
 });

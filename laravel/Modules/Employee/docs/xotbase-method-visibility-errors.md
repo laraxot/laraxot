@@ -1,3 +1,9 @@
+---
+title: "Employee - XOTBASE-METHOD-VISIBILITY-ERRORS"
+module: Employee
+bmad: true
+status: active
+---
 # XotBase Method Visibility Errors - Lessons Learned
 
 ## Overview

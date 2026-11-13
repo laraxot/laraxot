@@ -174,8 +174,8 @@ Pattern avanzato per testare widget Filament Livewire con form, validazione, not
 
 ### **Project Documentation**
 - [LoginTest.php](../laravel/Modules/Cms/tests/Feature/Auth/LoginTest.php) - Main test file
-- [Implementation Guide](../laravel/modules/cms/docs/tests/login-test-implementation.md) - Complete documentation
 <<<<<<< HEAD
+- [Implementation Guide](../laravel/modules/cms/docs/tests/login-test-implementation.md) - Complete documentation
 =======
 <<<<<<< HEAD
 - [Implementation Guide](../laravel/modules/cms/docs/tests/login-test-implementation.md) - Complete documentation
@@ -183,17 +183,14 @@ Pattern avanzato per testare widget Filament Livewire con form, validazione, not
 - [Implementation Guide](../laravel/Modules/Cms/docs/tests/login-test-implementation.md) - Complete documentation
 >>>>>>> c18fbe2 (.)
 >>>>>>> laraxot/dev
-=======
-- [Implementation Guide](../laravel/Modules/Cms/docs/tests/login-test-implementation.md) - Complete documentation
->>>>>>> 13cf1831 (.)
 - [LoginWidget](../laravel/Modules/User/app/Filament/Widgets/LoginWidget.php) - Widget under test
 - [Login Page](../laravel/Themes/One/resources/views/pages/auth/login.blade.php) - UI page
 
 ### **Related Components**
+<<<<<<< HEAD
 - [UserFactory Implementation](../laravel/modules/<nome progetto>/docs/factories/userfactory-implementation-final.md) - Enterprise factory
 - [STI Architecture](../laravel/modules/<nome progetto>/docs/models/sti-architecture.md) - User type system
 - [Authentication Flow](../laravel/modules/user/docs/authentication-flow.md) - Login process
-<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 - [UserFactory Implementation](../laravel/modules/<nome progetto>/docs/factories/userfactory-implementation-final.md) - Enterprise factory
@@ -205,11 +202,6 @@ Pattern avanzato per testare widget Filament Livewire con form, validazione, not
 - [Authentication Flow](../laravel/Modules/User/docs/authentication-flow.md) - Login process
 >>>>>>> c18fbe2 (.)
 >>>>>>> laraxot/dev
-=======
-- [UserFactory Implementation](../laravel/Modules/<nome progetto>/docs/factories/UserFactory-implementation-final.md) - Enterprise factory
-- [STI Architecture](../laravel/Modules/<nome progetto>/docs/models/sti-architecture.md) - User type system
-- [Authentication Flow](../laravel/Modules/User/docs/authentication-flow.md) - Login process
->>>>>>> 13cf1831 (.)
 
 ### **Testing Framework**
 - [Pest PHP](https://pestphp.com/) - Modern testing framework

@@ -1,4 +1,16 @@
-# NO Hardcoded Language — La Religione i18n
+---
+title: "no hardcoded language religion"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "no hardcoded language religion"
+issues: []
+discussions: []
+status: draft
+---
+
+# NO Hardcoded Language: La Religione i18n
 
 **Status**: Active  
 **Created**: 2026-04-14  
@@ -7,7 +19,6 @@
 **Audience**: All developers + AI agents
 
 ---
-
 ## LA REGOLA AUREA
 
 **NON scriverai MAI parole in italiano (o qualsiasi lingua) nel codice PHP.**

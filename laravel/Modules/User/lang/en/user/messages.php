@@ -22,4 +22,9 @@ return [
     'login_success' => 'Login successful',
     'validation_error' => 'Validation error',
     'login_error' => 'An error occurred during login. Please try again later.',
+    'activity' => [
+        'log_registered' => 'User registered',
+    ],
+    'user_not_found' => 'User not found',
+    'user_invalid' => 'Invalid user',
 ];

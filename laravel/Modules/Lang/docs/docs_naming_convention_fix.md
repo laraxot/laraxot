@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Correzione Convenzione Naming Cartelle Docs - Gennaio 2025"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "links"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Correzione Convenzione Naming Cartelle Docs - Gennaio 2025
 

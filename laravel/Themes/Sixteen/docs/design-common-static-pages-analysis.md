@@ -1,3 +1,15 @@
+---
+title: "design common static pages analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design common static pages analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Analisi Design Comuni Pagine Statiche vs Tema Sixteen ✅
 
 ## 📊 Confronto Completo Componenti

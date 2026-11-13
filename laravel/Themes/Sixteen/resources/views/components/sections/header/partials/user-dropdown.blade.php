@@ -1,6 +1,6 @@
 <div class="it-user-wrapper nav-item dropdown">
-    <a
-        href="#"
+    <button
+        type="button"
         class="btn btn-primary btn-icon btn-full"
         id="header-user-toggle"
         data-bs-toggle="dropdown"
@@ -9,13 +9,13 @@
         aria-expanded="false"
         aria-controls="header-user-menu"
         aria-haspopup="true"
-        role="button"
-        aria-label="{{ __('pub_theme::header.user.aria.toggle_menu.label') }}"
+        aria-label="{{ $displayName }}"
     >
         <span class="rounded-icon" aria-hidden="true">
             @if ($avatarUrl)
                 <img
                     src="{{ $avatarUrl }}"
+                    referrerpolicy="no-referrer"
                     alt="{{ $displayName }}"
                     class="border rounded-circle icon-white"
                     width="20"
@@ -27,11 +27,12 @@
                 <strong class="user-initial-fallback fw-bold text-uppercase">{{ $userInitial !== '' ? $userInitial : 'U' }}</strong>
             @endif
         </span>
+        {{-- aria-label = nome visibile: nome accessibile a ogni larghezza, senza label-content-name-mismatch (axe). --}}
         <span class="d-none d-lg-block">{{ $displayName }}</span>
         <svg class="icon icon-white d-none d-lg-block" aria-hidden="true">
             <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
         </svg>
-    </a>
+    </button>
 
     <div
         class="dropdown-menu"
@@ -49,21 +50,27 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item list-item" href="{{ route('dashboard') }}" role="menuitem">
+                            <a class="dropdown-item list-item" href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaPratiche() }}" role="menuitem">
                                 <span>{{ __('pub_theme::header.user.dropdown.my_practices.label') }}</span>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item list-item" href="{{ route('notifications') }}" role="menuitem">
+                            <a class="dropdown-item list-item" href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaSeguite() }}" role="menuitem">
+                                <span>{{ __('pub_theme::header.user.dropdown.followed_reports.label') }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item list-item" href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaNotifiche() }}" role="menuitem">
                                 <span>{{ __('pub_theme::header.user.dropdown.notifications.label') }}</span>
                                 @if (($unreadNotificationsCount ?? 0) > 0)
-                                    <span class="badge badge-primary ml-2">{{ $unreadNotificationsCount }}</span>
+                                    <span class="badge badge-primary ml-2" data-element="unread-notifications">{{ $unreadNotificationsCount }}<span class="visually-hidden"> {{ __('pub_theme::header.user.unread_notifications') }}</span></span>
                                 @endif
                             </a>
                         </li>
                         <li><span class="divider"></span></li>
                         <li>
-                            <a class="dropdown-item list-item" href="{{ route('profile.edit') }}" role="menuitem">
+                            {{-- Canon: FrontofficeRoutes (mai localizeUrl / tickets.*). --}}
+                            <a class="dropdown-item list-item" href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeRoutes::personalAreaImpostazioni() }}" role="menuitem">
                                 <span>{{ __('pub_theme::header.user.dropdown.settings.label') }}</span>
                             </a>
                         </li>

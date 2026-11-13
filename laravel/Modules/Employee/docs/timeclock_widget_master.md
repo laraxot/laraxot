@@ -1,3 +1,9 @@
+---
+title: "Employee - TIMECLOCK_WIDGET_MASTER"
+module: Employee
+bmad: true
+status: active
+---
 # TimeClockWidget - Master Documentation
 
 ## 📋 Widget Overview

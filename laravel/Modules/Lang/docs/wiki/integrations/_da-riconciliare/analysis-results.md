@@ -1,4 +1,8 @@
 ---
+tags: [documentation]
+qmd: "analysis results"
+issues: []
+discussions: []
 title: "Risultati Analisi Modulo Lang"
 type: concept
 module: "Lang"

@@ -1,3 +1,15 @@
+---
+title: "ponytail audit"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ponytail audit"
+issues: []
+discussions: []
+status: draft
+---
+
 # Ponytail-audit 2026-07-02: Geo module findings
 
 Source: repo-wide ponytail-audit follow-up, same pass that produced the Xot and Notify findings dated 2026-07-02.
@@ -30,4 +42,4 @@ While preparing this fix, a `git stash` / `git stash pop` cycle in `Modules/Geo`
 
 ## Related
 
-- `Modules/Xot/docs/ponytail-audit-2026-07-02.md`, `Modules/Notify/docs/ponytail-audit-2026-07-02.md`: same audit pass, same day.
+- `Modules/Xot/docs/ponytail-audit-user-module-findings.md`, `Modules/Notify/docs/ponytail-audit-notify-module.md`: same audit pass, same day.

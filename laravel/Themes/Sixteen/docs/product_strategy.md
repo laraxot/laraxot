@@ -1,3 +1,15 @@
+---
+title: "product strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product strategy"
+issues: []
+discussions: []
+status: draft
+---
+
 # Product Strategy - Theme Sixteen
 
 ## AGID-Compliant Public Administration Theme
@@ -8,7 +20,6 @@
 **Owner:** Theme Product Team
 
 ---
-
 ## Executive Summary
 
 Theme Sixteen occupies a unique position in the Italian public administration technology stack as the only fully AGID-compliant, open-source theme built on modern Laravel and Filament foundations. This document outlines our strategic approach to maintaining market leadership, expanding adoption, and building a sustainable ecosystem around the theme.
@@ -545,9 +556,9 @@ Theme Sixteen occupies a unique position in the Italian public administration te
 
 ### Related Documents
 - [Product Requirements Document](prd.md)
-- [Product Roadmap](product_roadmap.md)
-- [Product Launch Plan](product_launch_plan.md)
-- [User Research](user_research.md)
+- [Product Roadmap](product-roadmap.md)
+- [Product Launch Plan](product-launch-plan.md)
+- [User Research](user-research.md)
 
 ### References
 - AGID Guidelines: https://www.agid.gov.it/

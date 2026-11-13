@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Struttura dei percorsi nel progetto <nome progetto>"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, architecture]
+qmd: "struttura dei percorsi nel progetto <nome progetto> xot"
+---
+>>>>>>> laraxot/dev
 # Struttura dei percorsi nel progetto <nome progetto>
 
 ## Regola fondamentale

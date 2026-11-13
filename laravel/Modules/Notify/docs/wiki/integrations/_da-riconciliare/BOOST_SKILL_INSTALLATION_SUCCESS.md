@@ -1,10 +1,15 @@
 ---
+qmd: "BOOST SKILL INSTALLATION SUCCESS"
+issues: []
+discussions: []
 title: "Boost Skill Installation - Success Report"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: boost_skill_installation_success.md
 ---
 
 # Boost Skill Installation - Success Report

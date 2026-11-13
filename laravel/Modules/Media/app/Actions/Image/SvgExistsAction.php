@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Media\Actions\Image;
 
 use Modules\UI\Actions\Icon\GetAllIconsAction;
+use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
 /**
@@ -14,6 +15,8 @@ use Webmozart\Assert\Assert;
  */
 class SvgExistsAction
 {
+    use QueueableAction;
+
     /**
      * Verifica se l'SVG esiste nei set di icone registrati.
      *
@@ -22,7 +25,7 @@ class SvgExistsAction
      */
     public function execute(string $svgName): bool
     {
-        if ($svgName === '') {
+        if (empty($svgName)) {
             return false;
         }
 

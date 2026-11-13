@@ -1,3 +1,15 @@
+---
+title: "mustache variables"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "mustache variables"
+issues: []
+discussions: []
+status: draft
+---
+
 # Mustache Variables for Sixteen Theme Mail Layouts
 
 The following variables are available in the Sixteen theme email layout templates. They are rendered using Mustache syntax (`{{ variable }}`) and can be passed from a Laravel Mailable or from the `SendRecordNotificationAction`.

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "License Renamed"
 module: "Tenant"
 type: concept

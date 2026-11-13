@@ -8,17 +8,21 @@ qmd: "label-hardcoded-prevention prevenzione ->label() hardcoded - modulo user"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Prevenzione ->label() Hardcoded - Modulo User
 
 ## 🚨 **REGOLA ASSOLUTA**
@@ -207,10 +211,12 @@ return [
 
 ## 🔗 **Collegamenti**
 
-- [Translation Standards](../../../docs/translation-standards.md)
-- [PHPStan Fixes](../../../docs/phpstan_level10_fixes.md)
-- [Best Practices](../../../docs/best-practices.md)
->>>>>>> 87273113 (.)
+- [Translation Standards](../../../../docs/translation-standards.md)
+- [PHPStan Fixes](../../../../docs/phpstan_level10_fixes.md)
+- [Best Practices](../../../../docs/best-practices.md)
+- [Translation Standards](../../../../docs/translation-standards.md)
+- [PHPStan Fixes](../../../../docs/phpstan_level10_fixes.md)
+- [Best Practices](../../../../docs/best-practices.md)
 
 ---
 
@@ -218,7 +224,4 @@ return [
 **📦 Versione**: 3.1.0  
 **🎯 Obiettivo**: Zero ->label() hardcoded  
 **✅ Status**: Prevenzione attiva e monitorata
->>>>>>> 87273113 (.)
-=======
 **✅ Status**: Prevenzione attiva e monitorata
->>>>>>> laraxot/dev

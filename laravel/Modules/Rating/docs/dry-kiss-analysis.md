@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "🐄 DRY & KISS Analysis - Rating"
 type: concept
 tags: [dry, kiss, analysis, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "dry kiss analysis"
 related:
   - "./duplicate-methods-analysis.md"
+status: draft
 ---
 
 # 🐄 DRY & KISS Analysis - Rating

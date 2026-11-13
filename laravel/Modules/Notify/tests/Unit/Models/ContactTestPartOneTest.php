@@ -25,11 +25,13 @@ namespace Modules\Notify\Tests\Unit\Models;
 
 use Modules\Notify\Database\Factories\ContactFactory;
 use Modules\Notify\Models\Contact;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\withoutExceptionHandling;
 
+uses(TestCase::class);
 beforeEach(function (): void {
     withoutExceptionHandling();
 });
@@ -238,8 +240,8 @@ describe('Contact PartOne', function (): void {
             'email' => 'new.email@example.com',
             'mobile_phone' => '+393331111111']);
 
-        Assert::assertNotNull(assertFreshModel($contact, Contact::class)->verified_at);
-        Assert::assertEquals('new-token-123', assertFreshModel($contact, Contact::class)->token);
+        Assert::assertNotNull(XotBasePest::assertFreshModel($contact, Contact::class)->verified_at);
+        Assert::assertEquals('new-token-123', XotBasePest::assertFreshModel($contact, Contact::class)->token);
     });
 
     test('_can_find_by_model_type_and_id', function (): void {
@@ -281,8 +283,8 @@ describe('Contact PartOne', function (): void {
 
         Assert::assertCount(2, $emailContacts);
         Assert::assertCount(1, $phoneContacts);
-        Assert::assertEquals('email', assertFirstModel($emailContacts, Contact::class)->contact_type);
-        Assert::assertEquals('phone', assertFirstModel($phoneContacts, Contact::class)->contact_type);
+        Assert::assertEquals('email', XotBasePest::assertFirstModel($emailContacts, Contact::class)->contact_type);
+        Assert::assertEquals('phone', XotBasePest::assertFirstModel($phoneContacts, Contact::class)->contact_type);
     });
 
     test('_can_find_by_user_id', function (): void {
@@ -312,11 +314,11 @@ describe('Contact PartOne', function (): void {
 
         Assert::assertCount(2, $user456Contacts);
         Assert::assertCount(1, $user789Contacts);
-        Assert::assertEquals('456', assertFirstModel($user456Contacts, Contact::class)->user_id);
+        Assert::assertEquals('456', XotBasePest::assertFirstModel($user456Contacts, Contact::class)->user_id);
         $secondUserContact = $user456Contacts->get(1);
         Assert::assertInstanceOf(Contact::class, $secondUserContact);
         Assert::assertEquals('456', $secondUserContact->user_id);
-        Assert::assertEquals('789', assertFirstModel($user789Contacts, Contact::class)->user_id);
+        Assert::assertEquals('789', XotBasePest::assertFirstModel($user789Contacts, Contact::class)->user_id);
     });
 
     test('_can_find_by_email', function (): void {

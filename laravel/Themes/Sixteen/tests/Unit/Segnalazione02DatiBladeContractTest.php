@@ -2,59 +2,71 @@
 
 declare(strict_types=1);
 
+use PHPUnit\Framework\Assert;
+use Tests\TestCase;
+
 use function Safe\file_get_contents;
 
-/**
- * Contratto markup story 7-3: niente handler JS assente; navigazione come link.
- */
-test('il blade segnalazione-02-dati espone stepper nav e non usa confirmAndProceed', function (): void {
-    $bladePath = dirname(__DIR__, 4).'/Themes/Sixteen/resources/views/components/blocks/tests/segnalazione-02-dati.blade.php';
-    expect(file_exists($bladePath))->toBeTrue('Blade tema mancante: '.$bladePath);
+uses(TestCase::class);
 
-    $html = file_get_contents($bladePath);
-    expect($html)->toContain('steppers-btn-confirm');
-    expect($html)->toContain('steppers-btn-prev');
-    expect($html)->toContain('fixcity::segnalazione.actions.next.label');
-    expect($html)->toContain('fixcity::segnalazione.breadcrumb.home.label');
-    expect($html)->not->toContain('fixcity::common.');
-    expect($html)->not->toContain('confirmAndProceed()');
+/**
+ * @return array{view: string, layout: string, nav: array{next: string, ...}, steps: array{index: string, ...}, ...}
+ */
+function segnalazioneDatiPayload(): array
+{
+    $path = dirname(__DIR__, 4).'/Modules/Fixcity/config/database/content/pages/tests.segnalazione-02-dati.json';
+    $page = json_decode(file_get_contents($path), true, 512, JSON_THROW_ON_ERROR);
+
+    Assert::assertIsArray($page);
+    Assert::assertIsArray($page['content_blocks']);
+    Assert::assertIsArray($page['content_blocks']['it']);
+    Assert::assertIsArray($page['content_blocks']['it'][0]);
+    Assert::assertIsArray($page['content_blocks']['it'][0]['data']);
+
+    $data = $page['content_blocks']['it'][0]['data'];
+    Assert::assertIsString($data['view']);
+    Assert::assertIsString($data['layout']);
+    Assert::assertIsArray($data['nav']);
+    Assert::assertIsString($data['nav']['next']);
+    Assert::assertIsArray($data['steps']);
+    Assert::assertIsString($data['steps']['index']);
+
+    return $data;
+}
+
+test('the data step uses the shared CMS block instead of a page-specific Blade', function (): void {
+    $data = segnalazioneDatiPayload();
+    expect($data['view'])->toBe('pub_theme::components.blocks.report-step.design-comuni');
+    expect($data['layout'])->toBe('sidebar');
+    Assert::assertIsArray($data['nav']);
+    Assert::assertIsString($data['nav']['next']);
+    $this->view('pub_theme::components.blocks.report-step.design-comuni', ['data' => $data])
+        ->assertSee('steppers-btn-confirm', false)
+        ->assertSee('steppers-btn-prev', false)
+        ->assertSee($data['nav']['next'])
+        ->assertDontSee('confirmAndProceed()', false);
 });
 
-/**
- * Story 7-7: il blade espone gli elementi strutturali necessari per lo stepper responsive.
- */
-test('il blade segnalazione-02-dati ha steppers-header e steppers-index per la responsive', function (): void {
-    $bladePath = dirname(__DIR__, 4).'/Themes/Sixteen/resources/views/components/blocks/tests/segnalazione-02-dati.blade.php';
-    $html = file_get_contents($bladePath);
-
-    // Elementi strutturali del stepper necessari per il CSS responsive
-    expect($html)->toContain('steppers-header');
-    expect($html)->toContain('steppers-index');
-    // Il blade usa classi dinamiche Blade (non literal 'class="active"')
-    expect($html)->toContain("'active'");
-    expect($html)->toContain("'confirmed'");
+test('the data step exposes responsive step states from its CMS payload', function (): void {
+    $data = segnalazioneDatiPayload();
+    Assert::assertIsArray($data['steps']);
+    Assert::assertIsString($data['steps']['index']);
+    $this->view('pub_theme::components.blocks.report-step.design-comuni', ['data' => $data])
+        ->assertSee('steppers-header', false)
+        ->assertSee('steppers-index', false)
+        ->assertSee($data['steps']['index'])
+        ->assertSee('class="active"', false)
+        ->assertSee('class="confirmed"', false);
 });
 
-/**
- * Story 7-7: il CSS §27.18 usa la strategia "nasconde non-active" invece di overflow-x scroll.
- */
-test('segnalazione-parity.css §27.18 nasconde i passi non-attivi su mobile/tablet', function (): void {
-    $cssPath = dirname(__DIR__, 4).'/Themes/Sixteen/resources/css/segnalazione-parity.css';
-    expect(file_exists($cssPath))->toBeTrue('CSS parity mancante: '.$cssPath);
-
-    $css = file_get_contents($cssPath);
-
-    // Deve contenere il nuovo titolo sezione §27.18 responsive
-    expect($css)->toContain('27.18 Stepper — responsive tablet/mobile');
-
-    // Deve avere la regola che nasconde i li:not(.active)
-    expect($css)->toContain('.steppers-header ul li:not(.active)');
-
-    // Deve riabilitare .steppers-index sul breakpoint < 992px per 02-dati
-    // Verificiamo che il selettore scoped esista nel contesto del media query
-    expect($css)->toContain('.page-content[data-slug="tests.segnalazione-02-dati"] .steppers-index');
-
-    // NON deve più usare overflow-x: auto per il blocco §27.18 (era il bug)
-    // Ricercando il pattern specifico della vecchia riga bugata
-    expect($css)->not->toContain('27.18 Stepper — scroll orizzontale');
+test('the compiled CSS retains responsive step visibility without relying on source comments', function (): void {
+    $root = dirname(__DIR__, 2);
+    $manifest = json_decode(file_get_contents($root.'/public/manifest.json'), true, 512, JSON_THROW_ON_ERROR);
+    Assert::assertIsArray($manifest);
+    Assert::assertIsArray($manifest['resources/css/app.css']);
+    Assert::assertIsString($manifest['resources/css/app.css']['file']);
+    $css = file_get_contents($root.'/public/'.$manifest['resources/css/app.css']['file']);
+    expect($css)->toContain('.steppers-header ul li:not(.active)')
+        ->toContain('.steppers-index')
+        ->toContain('@media');
 });

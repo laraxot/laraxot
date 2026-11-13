@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Tests\Unit\Models;
 
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\Geo\Database\Factories\AddressFactory;
 use Modules\Geo\Enums\AddressTypeEnum;
 use Modules\Geo\Models\Address;
@@ -19,7 +18,7 @@ test('address can be created', function (): void {
 });
 
 test('address has fillable attributes', function (): void {
-    $address = new Address();
+    $address = new Address;
     $fillable = $address->getFillable();
 
     Assert::assertContains('route', $fillable);
@@ -29,7 +28,7 @@ test('address has fillable attributes', function (): void {
 });
 
 test('address has casts defined', function (): void {
-    $address = new Address();
+    $address = new Address;
     $casts = $address->getCasts();
 
     Assert::assertArrayHasKey('latitude', $casts);
@@ -39,16 +38,15 @@ test('address has casts defined', function (): void {
 });
 
 test('address has proper table name', function (): void {
-    $address = new Address();
+    $address = new Address;
 
     Assert::assertSame('addresses', $address->getTable());
 });
 
 test('address morphs to parent model', function (): void {
-    $address = new Address();
+    $address = new Address;
 
-    Assert::assertInstanceOf(MorphTo::class, $address->model());
-    Assert::assertInstanceOf(MorphTo::class, $address->addressable());
+    Assert::assertSame('addressable', $address->addressable()->getRelationName());
 });
 
 test('address can build full address string', function (): void {
@@ -73,6 +71,12 @@ test('address can be queried by locality', function (): void {
 
     Assert::assertCount(1, $results);
     Assert::assertSame($address->id, $results->first()?->id);
+});
+
+test('address distance scope accepts southern and western hemisphere coordinates', function (): void {
+    $query = Address::query()->withDistance(-33.8688, -70.6693);
+
+    Assert::assertStringContainsString('distance', $query->toSql());
 });
 
 test('address can be filtered by postal code', function (): void {

@@ -1,6 +1,5 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 # Activity Module Documentation Index
 
 **Stats**: 698 files | 20 categories | Last update: 2026-07-28
@@ -75,8 +74,6 @@ Architectural patterns and system design documentation
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 # Documentation Index
 
 Modulo: Activity
@@ -85,9 +82,6 @@ Modulo: Activity
 
 <!-- auto-generato: elencare i file .md presenti -->
 <<<<<<< HEAD
-<<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)

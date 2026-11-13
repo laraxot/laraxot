@@ -9,6 +9,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\Schema;
@@ -17,14 +18,20 @@ use Illuminate\Testing\PendingCommand;
 use Modules\Notify\Actions\EsendexSendAction;
 use Modules\Notify\Actions\Mail\Engines\Duocircle\TryDuocircleMailAction;
 use Modules\Notify\Actions\NetfunSendAction;
+use Modules\Notify\Actions\Push\SchedulePushNotificationAction;
+use Modules\Notify\Actions\Push\SendPushToAllUsersAction;
+use Modules\Notify\Actions\Push\SendPushToDeviceAction;
 use Modules\Notify\Actions\Push\SendPushToDevicesAction;
 use Modules\Notify\Actions\Push\SendPushToPlatformAction;
 use Modules\Notify\Actions\Push\SendPushToTopicAction;
+use Modules\Notify\Actions\Push\SendPushWithTargetingAction;
+use Modules\Notify\Actions\Push\SendPushWithTemplateAction;
 use Modules\Notify\Actions\SendNotificationAction;
 use Modules\Notify\Actions\SMS\SendGammuSMSAction;
 use Modules\Notify\Actions\SMS\SendNetfunSMSAction;
 use Modules\Notify\Actions\SMS\SendNexmoSMSAction;
 use Modules\Notify\Actions\SMS\SendPlivoSMSAction;
+use Modules\Notify\Actions\SMS\SendSmsAction;
 use Modules\Notify\Actions\SMS\SendTwilioSMSAction;
 use Modules\Notify\Actions\Telegram\SendBotmanTelegramAction;
 use Modules\Notify\Actions\Telegram\SendNutgramTelegramAction;
@@ -34,6 +41,7 @@ use Modules\Notify\Actions\WhatsApp\SendFacebookWhatsAppAction;
 use Modules\Notify\Actions\WhatsApp\SendTwilioWhatsAppAction;
 use Modules\Notify\Actions\WhatsApp\SendVonageWhatsAppAction;
 use Modules\Notify\Database\Factories\NotificationTemplateFactory;
+use Modules\Notify\Datas\PushCriteriaData;
 use Modules\Notify\Datas\PushNotificationData;
 use Modules\Notify\Datas\SmsData;
 use Modules\Notify\Datas\TelegramData;
@@ -60,8 +68,7 @@ use Modules\Notify\Models\MailTemplate;
 use Modules\Notify\Models\NotificationTemplate;
 use Modules\Notify\Models\NotifyTheme;
 use Modules\Notify\Notifications\GenericNotification;
-use Modules\Notify\Services\PushNotificationService;
-use Modules\Notify\Services\SmsService;
+use Modules\Notify\Tests\TestCase;
 use Modules\Notify\Tests\Unit\Traits\NotifyTrackingDummy;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
@@ -72,6 +79,7 @@ use function Pest\Laravel\artisan;
 use function Safe\file_put_contents;
 use function Safe\unlink;
 
+uses(TestCase::class);
 /**
  * @param  class-string  $class
  */
@@ -172,69 +180,92 @@ describe('Notify highest-miss coverage', function (): void {
         }
     });
 
-    test('resources expose model pages and legacy form schema', function (): void {
+    test('resources expose model pages and form class schema', function (): void {
         Assert::assertSame(NotificationTemplate::class, NotificationTemplateResource::getModel());
-        Assert::assertArrayHasKey('name', app(NotificationTemplateResource::class)->getFormSchema());
+        Assert::assertArrayHasKey('name', (new (NotificationTemplateResource::getFormClass()))->getFormSchema());
         Assert::assertNotEmpty(NotificationTemplateResource::getPages());
 
         Assert::assertSame(NotifyTheme::class, NotifyThemeResource::getModel());
-        Assert::assertArrayHasKey('subject', app(NotifyThemeResource::class)->getFormSchema());
+        Assert::assertArrayHasKey('subject', (new (NotifyThemeResource::getFormClass()))->getFormSchema());
         Assert::assertNotEmpty(NotifyThemeResource::getPages());
 
         Assert::assertSame(MailTemplate::class, MailTemplateResource::getModel());
-        Assert::assertNotEmpty(app(MailTemplateResource::class)->getFormSchema());
+        Assert::assertNotEmpty((new (MailTemplateResource::getFormClass()))->getFormSchema());
         Assert::assertNotEmpty(MailTemplateResource::getPages());
 
         Assert::assertSame(\Modules\Notify\Models\Notification::class, NotificationResource::getModel());
-        Assert::assertNotEmpty(app(NotificationResource::class)->getFormSchema());
+        Assert::assertNotEmpty((new (NotificationResource::getFormClass()))->getFormSchema());
 
         Assert::assertSame(Contact::class, ContactResource::getModel());
-        Assert::assertNotEmpty(app(ContactResource::class)->getFormSchema());
+        Assert::assertNotEmpty((new (ContactResource::getFormClass()))->getFormSchema());
         Assert::assertNotEmpty(ContactResource::getPages());
     });
 
-    test('PushNotificationService sends fakes schedules and guards empty targets', function (): void {
+    test('push actions fan out, schedule and guard empty targets', function (): void {
         config([
             'notify.fcm.server_key' => 'test-key',
-            'notify.apns.certificate' => null,
-            'notify.apns.passphrase' => null,
-            'notify.apns.url' => 'https://api.push.apple.com',
-            'notify.webpush.vapid_public' => 'pub',
-            'notify.webpush.vapid_private' => 'priv',
-            'notify.webpush.vapid_subject' => 'mailto:test@example.com']);
+            'cache.default' => 'array']);
         Http::fake([
             'https://fcm.googleapis.com/*' => Http::response(['message_id' => 'mid-1'], 200)]);
         Queue::fake();
-        config(['cache.default' => 'array']);
 
-        $service = new PushNotificationService;
-        $notification = ['title' => 'Ciao', 'body' => 'Test'];
+        $notification = PushNotificationData::from(['title' => 'Ciao', 'body' => 'Test']);
         $fcmToken = str_repeat('a', 80).':'.str_repeat('b', 40);
         $apnsToken = str_repeat('ab', 32);
 
-        $one = $service->sendToDevice($fcmToken, $notification, ['k' => 'v']);
+        $one = (new SendPushToDeviceAction)->execute($fcmToken, $notification, ['k' => 'v']);
         Assert::assertArrayHasKey('fcm', $one);
         Assert::assertTrue($one['fcm']['success']);
         Assert::assertTrue($one['apns']['success']);
         Assert::assertTrue($one['webpush']['success']);
 
-        $batch = $service->sendToDevices([$fcmToken, $apnsToken, 'web-token'], $notification);
+        $batch = (new SendPushToDevicesAction)->execute([$fcmToken, $apnsToken, 'web-token'], $notification);
         Assert::assertArrayHasKey('fcm', $batch);
 
-        $topic = $service->sendToTopic('news', $notification);
+        $topic = (new SendPushToTopicAction)->execute('news', $notification);
         Assert::assertArrayHasKey('fcm', $topic);
+        Assert::assertSame('news', $topic['apns']['topic']);
+        Assert::assertSame('news', $topic['webpush']['topic']);
 
-        $emptyAll = $service->sendToAll($notification);
+        $emptyAll = (new SendPushToAllUsersAction)->execute($notification);
         Assert::assertFalse($emptyAll['success']);
 
-        $emptyTarget = $service->sendWithTargeting(['platform' => 'unknown'], $notification);
+        $emptyTarget = (new SendPushWithTargetingAction)->execute(PushCriteriaData::from(['platform' => 'unknown']), $notification);
         Assert::assertFalse($emptyTarget['success']);
 
-        expect(fn (): mixed => $service->sendWithTemplate('missing', ['t']))
+        expect(fn (): array => (new SendPushWithTemplateAction)->execute('missing', ['t']))
             ->toThrow(\Exception::class);
 
-        $jobId = $service->scheduleNotification(['t1'], $notification, [], new DateTime('+1 hour'));
+        $jobId = (new SchedulePushNotificationAction)->execute(['t1'], $notification, [], new DateTime('+1 hour'));
         Assert::assertStringStartsWith('push_', $jobId);
+    });
+
+    test('simulated apns and webpush deliveries are traced in the log', function (): void {
+        config(['notify.fcm.server_key' => 'test-key']);
+        Http::fake([
+            'https://fcm.googleapis.com/*' => Http::response(['message_id' => 'mid-3'], 200)]);
+        $traced = [];
+        Log::shouldReceive('notice')->times(4)->andReturnUsing(static function (string $message, array $context) use (&$traced): void {
+            $traced[] = $context;
+        });
+
+        $notification = PushNotificationData::from(['title' => 'T', 'body' => 'B']);
+
+        (new SendPushToPlatformAction)->execute('apns', str_repeat('ab', 32), $notification, ['k' => 'v']);
+        (new SendPushToPlatformAction)->execute('webpush', 'web-token', $notification);
+        (new SendPushToTopicAction)->execute('news', $notification);
+
+        Assert::assertSame(['apns', 'webpush', 'apns', 'webpush'], array_column($traced, 'platform'));
+        Assert::assertSame(['news', 'news'], array_column(array_column($traced, 'payload'), 'topic'));
+    });
+
+    test('push targeting explains why it resolved no tokens', function (): void {
+        Log::shouldReceive('warning')->once();
+        Log::shouldReceive('notice')->once();
+        $notification = PushNotificationData::from(['title' => 'T', 'body' => 'B']);
+
+        (new SendPushWithTargetingAction)->execute(PushCriteriaData::from(['platform' => 'unknown']), $notification);
+        (new SendPushWithTargetingAction)->execute(PushCriteriaData::from(['platform' => 'fcm']), $notification);
     });
 
     test('ConfigHelper replaces template variables from notify config', function (): void {
@@ -268,8 +299,7 @@ describe('Notify highest-miss coverage', function (): void {
 
     test('push actions send across fcm apns and webpush with fakes', function (): void {
         config([
-            'notify.fcm.server_key' => 'test-key',
-            'notify.fcm.url' => 'https://fcm.googleapis.com/fcm/send']);
+            'notify.fcm.server_key' => 'test-key']);
         Http::fake([
             'https://fcm.googleapis.com/*' => Http::response(['message_id' => 'mid-2'], 200)]);
 
@@ -327,15 +357,14 @@ describe('Notify highest-miss coverage', function (): void {
         }
     });
 
-    test('SmsService validates missing engine and accepts local vars', function (): void {
-        $service = SmsService::make()
-            ->setLocalVars(['to' => '+390000000000', 'body' => 'Test'])
-            ->mergeVars(['foo' => 'bar']);
-        Assert::assertSame('+390000000000', $service->to);
-        Assert::assertSame('bar', $service->vars['foo']);
+    test('SendSmsAction validates missing engine and accepts local vars', function (): void {
+        $action = new SendSmsAction;
 
-        expect(fn (): SmsService => $service->send())
+        expect(fn (): array => $action->execute(['to' => '+390000000000', 'body' => 'Test', 'foo' => 'bar']))
             ->toThrow(\RuntimeException::class);
+
+        Assert::assertSame('+390000000000', $action->to);
+        Assert::assertSame('bar', $action->vars['foo']);
     });
 
     test('sms actions normalize recipients before provider call', function (): void {
@@ -406,7 +435,7 @@ describe('Notify highest-miss coverage', function (): void {
         Assert::assertNull($result);
         Notification::assertSentTo($recipient, GenericNotification::class);
 
-        expect(fn (): mixed => (new SendNotificationAction)->handle(
+        expect(fn (): ?Model => (new SendNotificationAction)->handle(
             $recipient,
             'missing-template',
         ))->toThrow(\Exception::class);

@@ -8,6 +8,7 @@ use Modules\Notify\Channels\TelegramChannel;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('TelegramChannel', function () {
     it('can be instantiated', function () {
         // TelegramChannel requires TelegramActionFactory in constructor

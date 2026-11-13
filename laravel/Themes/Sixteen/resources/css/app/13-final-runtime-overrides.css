@@ -4,7 +4,7 @@
  */
 
 /* STORY-147: slim logged toggle — verde comune su fascia dark (parity logged-original-closed) */
-.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full {
+.it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full {
   display: inline-flex !important;
   align-items: center !important;
   height: 3rem !important;
@@ -14,24 +14,31 @@
   color: #fff !important;
 }
 
-.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full:hover,
-.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full:focus-visible {
+@media (max-width: 359.98px) {
+  .it-header-center-content-wrapper .it-brand-title {
+    font-size: 1rem !important;
+    letter-spacing: -0.015em !important;
+  }
+}
+
+.it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full:hover,
+.it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full:focus-visible {
   background: #00684a !important;
   color: #fff !important;
 }
 
-.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full .rounded-icon {
+.it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full .rounded-icon {
   background: #fff !important;
 }
 
-.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full .rounded-icon img {
+.it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full .rounded-icon img {
   width: 20px !important;
   height: 20px !important;
   object-fit: cover !important;
 }
 
 /* Iniziale verde su cerchio bianco (parity logged-original); vince su ticket-parity span{color:#fff} */
-.it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full .rounded-icon .user-initial-fallback {
+.it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full .rounded-icon .user-initial-fallback {
   color: #00402b !important;
   font-size: 0.75rem !important;
   line-height: 1 !important;
@@ -130,13 +137,13 @@
 /* STORY-147 UX: mobile slim logged — solo avatar (vince su ticket-parity span inline-block) */
 @media (max-width: 991.98px) {
   .it-header-slim-wrapper .it-user-wrapper .d-none.d-lg-block,
-  .it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full > span.d-none.d-lg-block,
-  .it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full > svg.d-none.d-lg-block,
-  .it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full > span:not(.rounded-icon) {
+  .it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full > span.d-none.d-lg-block,
+  .it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full > svg.d-none.d-lg-block,
+  .it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full > span:not(.rounded-icon) {
     display: none !important;
   }
 
-  .it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full {
+  .it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full {
     width: 48px !important;
     min-width: 48px !important;
     max-width: 48px !important;
@@ -146,13 +153,13 @@
     gap: 0 !important;
   }
 
-  .it-header-slim-wrapper .it-user-wrapper > a.btn.btn-primary.btn-icon.btn-full .rounded-icon {
+  .it-header-slim-wrapper .it-user-wrapper > :is(a, button).btn.btn-primary.btn-icon.btn-full .rounded-icon {
     width: 24px !important;
     height: 24px !important;
     min-width: 24px !important;
   }
 }
-.navbar-collapsable[data-sixteen-mobile-nav-panel].is-open {
+.navbar-collapsable[data-mobile-nav-panel].is-open {
   display: flex !important;
   transform: translateX(0) !important;
 }
@@ -425,6 +432,11 @@ body[data-page="ticket-list"] .categoy-list .checkbox-body input[type="checkbox"
 .it-brand-wrapper svg image {
   width: 100% !important;
   height: 100% !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+.it-brand-wrapper > a > svg {
+  filter: brightness(0) invert(1) !important;
 }
 
 /* Hamburger: mobile-header-fix.css usa grid con navbar-wrapper a z-index:1 sotto il center (z-index:20).
@@ -497,4 +509,47 @@ body[data-page="ticket-list"] .categoy-list .checkbox-body input[type="checkbox"
     pointer-events: auto !important;
   }
 }
+/* Tracking search: keep the complete code field usable on narrow screens. */
+.ticket-track-search-group {
+  column-gap: 0.5rem;
+}
 
+@media (max-width: 575.98px) {
+  .ticket-track-search-group {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ticket-track-search-group > .form-control,
+  .ticket-track-search-group > .btn {
+    width: 100%;
+    flex: 0 0 auto;
+    border-radius: 0.25rem;
+  }
+}
+
+/* DCP-221: tipografia FO leggibile (WCAG / ipovedenti).
+   Vince su ticket-parity !important 700: Titillium semibold 600, niente Black fallback. */
+.it-brand-title,
+.it-header-center-content-wrapper .it-brand-title,
+.it-header-center-wrapper .it-brand-title,
+.navbar-collapsable .logo-hamburger .it-brand-title {
+  font-weight: 600 !important;
+}
+
+/* DCP-228: the homepage hero must touch the mobile/tablet header.
+   ticket-parity.css reserves 18px above #main-container to protect inner
+   page titles; that rule also matched /it and rendered as a white strip.
+   Keep the spacing for ticket/detail pages, but remove it only for the
+   homepage shell where the hero owns the first visual block. */
+@media (max-width: 991.98px) {
+  body:has(.fc-home) #main-container {
+    padding-top: 0 !important;
+  }
+}
+
+.it-header-navbar-wrapper .navbar-nav .nav-link,
+.it-header-navbar-wrapper .navbar-secondary .nav-link {
+  font-weight: 600 !important;
+}

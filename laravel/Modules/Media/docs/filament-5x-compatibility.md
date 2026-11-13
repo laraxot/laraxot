@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Filament 5.x compatibility - modulo Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "filament 5x compatibility"
 related:
   - "./webm.md"
+status: draft
 ---
 # Filament 5.x compatibility - modulo Media
 

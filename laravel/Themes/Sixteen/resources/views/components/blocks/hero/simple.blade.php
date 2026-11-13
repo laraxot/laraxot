@@ -3,9 +3,9 @@
     $title = $data['title'] ?? '';
     $subtitle = $data['subtitle'] ?? '';
     $primaryCtaLabel = $data['primary_cta_label'] ?? '';
-    $primaryCtaUrl = $data['primary_cta_url'] ?? '#';
+    $primaryCtaUrl = $data['primary_cta_url'] ?? null;
     $secondaryCtaLabel = $data['secondary_cta_label'] ?? '';
-    $secondaryCtaUrl = $data['secondary_cta_url'] ?? '#';
+    $secondaryCtaUrl = $data['secondary_cta_url'] ?? null;
     $image = $data['image'] ?? '';
 
     if ($image === '/images/hero-bg.jpg') {
@@ -23,10 +23,10 @@
                     <p class="hero-subtitle lead mb-4">{{ $subtitle }}</p>
                 @endif
                 <div class="hero-cta d-flex gap-3 flex-wrap">
-                    @if ($primaryCtaLabel)
+                    @if ($primaryCtaLabel && filled($primaryCtaUrl) && $primaryCtaUrl !== '#')
                         <a href="{{ $primaryCtaUrl }}" class="btn btn-primary btn-lg">{{ $primaryCtaLabel }}</a>
                     @endif
-                    @if ($secondaryCtaLabel)
+                    @if ($secondaryCtaLabel && filled($secondaryCtaUrl) && $secondaryCtaUrl !== '#')
                         <a href="{{ $secondaryCtaUrl }}" class="btn btn-outline-primary btn-lg">{{ $secondaryCtaLabel }}</a>
                     @endif
                 </div>

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Tenant {{TYPE^}} LLM Wiki Agent Instructions"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "agents"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 # Tenant {{TYPE^}} LLM Wiki Agent Instructions
 

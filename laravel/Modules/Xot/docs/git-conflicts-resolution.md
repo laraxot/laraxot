@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Risoluzione Conflitti Git - 6 Gennaio 2025"
+type: note
+status: draft
+updated: 2026-10-22
+tags: [docs, xot]
+qmd: "risoluzione conflitti git - 6 gennaio 2025 xot"
+---
+>>>>>>> laraxot/dev
 # Risoluzione Conflitti Git - 6 Gennaio 2025
 
 ## Data: 2025-01-06

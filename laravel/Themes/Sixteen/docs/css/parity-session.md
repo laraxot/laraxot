@@ -1,3 +1,15 @@
+---
+title: "parity session"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "parity session"
+issues: []
+discussions: []
+status: draft
+---
+
 # CSS/JS Parity Session - segnalazione-01-privacy
 
 **Date**: 2026-04-09  

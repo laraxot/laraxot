@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Sushi To Json Trait Analysis"
 module: "Tenant"
 type: pattern
@@ -8,5 +10,6 @@ updated: 2026-07-14
 qmd: "sushi to json trait analysis"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 

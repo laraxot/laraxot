@@ -26,7 +26,6 @@ describe('Event Classes', function (): void {
         $user = UserFactory::new()->makeOne();
         $event = new RecoveryCodesGenerated($user);
 
-        Assert::assertInstanceOf(RecoveryCodesGenerated::class, $event);
         Assert::assertSame($user, $event->userContract);
     });
 
@@ -35,7 +34,8 @@ describe('Event Classes', function (): void {
         $user = UserFactory::new()->makeOne();
         $event = new TeamMemberAdded($team, $user);
 
-        Assert::assertInstanceOf(TeamMemberAdded::class, $event);
+        Assert::assertSame($team, $event->teamContract);
+        Assert::assertSame($user, $event->userContract);
     });
 
     test('team member removed event can be instantiated', function (): void {
@@ -43,14 +43,14 @@ describe('Event Classes', function (): void {
         $user = UserFactory::new()->makeOne();
         $event = new TeamMemberRemoved($team, $user);
 
-        Assert::assertInstanceOf(TeamMemberRemoved::class, $event);
+        Assert::assertSame($team, $event->teamContract);
+        Assert::assertSame($user, $event->userContract);
     });
 
     test('two factor authentication enabled event can be instantiated', function (): void {
         $user = UserFactory::new()->makeOne();
         $event = new TwoFactorAuthenticationEnabled($user);
 
-        Assert::assertInstanceOf(TwoFactorAuthenticationEnabled::class, $event);
         Assert::assertSame($user, $event->userContract);
     });
 
@@ -58,7 +58,6 @@ describe('Event Classes', function (): void {
         $user = UserFactory::new()->makeOne();
         $event = new TwoFactorAuthenticationDisabled($user);
 
-        Assert::assertInstanceOf(TwoFactorAuthenticationDisabled::class, $event);
         Assert::assertSame($user, $event->userContract);
     });
 
@@ -66,7 +65,6 @@ describe('Event Classes', function (): void {
         $user = UserFactory::new()->makeOne();
         $event = new RecoveryCodeReplaced($user, 'test_code');
 
-        Assert::assertInstanceOf(RecoveryCodeReplaced::class, $event);
         Assert::assertSame($user, $event->user);
         Assert::assertSame('test_code', $event->code);
     });
@@ -76,14 +74,14 @@ describe('Event Classes', function (): void {
         $user = UserFactory::new()->makeOne();
         $event = new TeamMemberUpdated($team, $user);
 
-        Assert::assertInstanceOf(TeamMemberUpdated::class, $event);
+        Assert::assertSame($team, $event->teamContract);
+        Assert::assertSame($user, $event->userContract);
     });
 
     test('adding team event can be instantiated', function (): void {
         $user = UserFactory::new()->makeOne();
         $event = new AddingTeam($user);
 
-        Assert::assertInstanceOf(AddingTeam::class, $event);
         Assert::assertSame($user, $event->owner);
     });
 
@@ -92,7 +90,8 @@ describe('Event Classes', function (): void {
         $user = UserFactory::new()->makeOne();
         $event = new AddingTeamMember($team, $user);
 
-        Assert::assertInstanceOf(AddingTeamMember::class, $event);
+        Assert::assertSame($team, $event->teamContract);
+        Assert::assertSame($user, $event->userContract);
     });
 
     test('team switched event can be instantiated', function (): void {
@@ -100,6 +99,7 @@ describe('Event Classes', function (): void {
         $user = UserFactory::new()->makeOne();
         $event = new TeamSwitched($team, $user);
 
-        Assert::assertInstanceOf(TeamSwitched::class, $event);
+        Assert::assertSame($team, $event->teamContract);
+        Assert::assertSame($user, $event->userContract);
     });
 });

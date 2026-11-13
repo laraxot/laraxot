@@ -1,3 +1,9 @@
+---
+title: "Employee - LE_MIE_RICHIESTE_IN_ATTESA_WIDGET"
+module: Employee
+bmad: true
+status: active
+---
 # LE MIE RICHIESTE IN ATTESA Widget - Documentazione
 
 ## 🎯 Panoramica

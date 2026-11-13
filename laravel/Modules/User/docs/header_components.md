@@ -1,3 +1,11 @@
+---
+title: "Componenti Header"
+type: note
+status: draft
+updated: 2026-10-13
+tags: [docs, user]
+qmd: "componenti header user"
+---
 # Componenti Header
 
 ## Struttura e Convenzioni
@@ -87,4 +95,5 @@
 ## Collegamenti Correlati
 - [Documentazione Filament](https://filamentphp.com/docs)
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
-- [Gestione Sessione](./SESSION_MANAGEMENT.md) 
+- [Gestione Sessione](./session_management.md) 
+- [Gestione Sessione](./session_management.md) 

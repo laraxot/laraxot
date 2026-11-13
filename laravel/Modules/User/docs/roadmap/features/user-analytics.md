@@ -15,9 +15,9 @@ related:
   - "./gestione-utenti.md"
   - "./legacy-code-cleanup.md"
   - "./user-traits.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # User Analytics
 
 ## Overview
@@ -64,7 +64,6 @@ Sistema di analisi e monitoraggio degli utenti, inclusi pattern di utilizzo, met
 ### Pending
 - Real-time monitoring
 - <nome progetto>ive analytics
->>>>>>> 87273113 (.)
 - Custom metrics
 - Export system
 

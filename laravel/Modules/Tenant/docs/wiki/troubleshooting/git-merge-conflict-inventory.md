@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Git Conflict Inventory"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "git merge conflict inventory"
 related:
   - "./phpstan-corrections-january.md"
+  - "../../phpstan-corrections-january.md"
+status: draft
 ---
 # Git Conflict Inventory
 

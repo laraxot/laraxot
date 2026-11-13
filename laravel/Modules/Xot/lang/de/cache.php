@@ -10,7 +10,11 @@ return [
             'name' => 'Sistema',
             'description' => 'Gestione della cache del sistema',
         ],
+<<<<<<< HEAD
         'label' => 'cache',
+=======
+        'label' => 'Cache',
+>>>>>>> laraxot/dev
         'sort' => '29',
         'icon' => 'xot-cache',
     ],
@@ -82,31 +86,46 @@ return [
             'description' => '',
         ],
         'toggleColumns' => [
+<<<<<<< HEAD
             'label' => 'toggleColumns',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
+<<<<<<< HEAD
             'label' => 'reorderRecords',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
+<<<<<<< HEAD
             'label' => 'resetFilters',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'applyFilters' => [
+<<<<<<< HEAD
             'label' => 'applyFilters',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'openFilters' => [
+<<<<<<< HEAD
             'label' => 'openFilters',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',

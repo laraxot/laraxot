@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Models;
 
+use Cknow\Money\Money;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -64,7 +65,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property int|null        $parent_id
  * @property Model|\Eloquent $linkedTo
  * @property BaseRatingMorph $pivot
- * @property-read mixed      $xls_export_value
+ * @property mixed           $xls_export_value
  *
  * @method static Builder|BaseRating whereColor($value)
  * @method static Builder|BaseRating whereCreatedAt($value)
@@ -94,10 +95,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  */
 abstract class BaseRating extends BaseModel implements HasMedia, RatingContract, Sortable
 {
-    // L'albero dei rating vive su `parent_id`, che e' gia' la colonna di default del
-    // trait: niente getParentKeyName() da riscrivere. Il trait porta parent() e
-    // children() **piu'** il ricorsivo — ancestors(), descendants(), toTree() — che
-    // due relazioni scritte a mano non possono dare.
+    // The vendor trait is the single source of truth for adjacency-list behavior.
     use HasRecursiveRelationships;
     use HasSlug;
     use InteractsWithMedia;
@@ -223,7 +221,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     public function getTxtHtml(): string
     {
         $raw = $this->txt;
-        if (! is_string($raw) || $raw === '') {
+        if (! is_string($raw) || '' === $raw) {
             return e((string) ($this->title ?? ''));
         }
 
@@ -245,7 +243,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
         }
 
         $value = $this->pivot->value ?? null;
-        if ($value === null || $value === '') {
+        if (null === $value || '' === $value) {
             return null;
         }
 
@@ -267,6 +265,11 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
      */
     public function getXlsExportValueAttribute(): mixed
     {
+        return $this->getXlsExportValue();
+    }
+
+    public function getXlsExportValue(): mixed
+    {
         if ($this->hasChildRatings()) {
             $child = $this->resolveSelectedChild();
             if (! $child instanceof self) {
@@ -275,7 +278,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
 
             $text = $child->txt ?? $child->title;
 
-            return \is_string($text) && $text !== '' ? strip_tags($text) : '';
+            return \is_string($text) && '' !== $text ? strip_tags($text) : '';
         }
 
         return $this->pivot->value ?? null;
@@ -284,7 +287,7 @@ abstract class BaseRating extends BaseModel implements HasMedia, RatingContract,
     /**
      * HTML o Money per il valore pivot (usato in PDF scheda IR).
      */
-    public function getValueHtml(): string|\Cknow\Money\Money
+    public function getValueHtml(): string|Money
     {
         if (Str::contains((string) ($this->txt ?? $this->title ?? ''), 'Importo')) {
             return money((int) round((float) $this->pivot->value * 100), 'EUR');

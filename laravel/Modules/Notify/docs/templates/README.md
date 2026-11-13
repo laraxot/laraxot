@@ -13,9 +13,10 @@ discussions:
 related:
   - ../README.md
   - ../wiki/index.md
-  - ../notifications/readme.md
-  - ../integrations/readme.md
+  - ../notifications/README.md
+  - ../integrations/README.md
   - readme.md
+status: draft
 ---
 # Template Email
 

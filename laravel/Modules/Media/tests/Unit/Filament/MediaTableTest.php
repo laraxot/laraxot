@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Media\Tests\Unit\Filament;
 
-use Filament\Actions\Action;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Modules\Media\Filament\Resources\MediaResource\Tables\MediaTable;
 use Modules\Media\Tests\TestCase;
@@ -21,7 +18,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class)->group('no-media-db');
 
 test('the table exposes the media columns in a stable order', function (): void {
-    $columns = (new MediaTable())->getTableColumns();
+    $columns = (new MediaTable)->getTableColumns();
 
     Assert::assertSame([
         'id',
@@ -40,14 +37,14 @@ test('the table exposes the media columns in a stable order', function (): void 
 });
 
 test('every column is a text column named after its own key', function (): void {
-    foreach ((new MediaTable())->getTableColumns() as $key => $column) {
+    foreach ((new MediaTable)->getTableColumns() as $key => $column) {
         Assert::assertInstanceOf(TextColumn::class, $column, $key);
         Assert::assertSame($key, $column->getName());
     }
 });
 
 test('the searchable columns are the descriptive ones, not the numeric ones', function (): void {
-    $columns = (new MediaTable())->getTableColumns();
+    $columns = (new MediaTable)->getTableColumns();
 
     foreach (['name', 'file_name', 'mime_type', 'collection_name', 'model_type', 'model_id'] as $key) {
         Assert::assertTrue($columns[$key]->isSearchable(), "{$key} dovrebbe essere ricercabile");
@@ -59,9 +56,8 @@ test('the searchable columns are the descriptive ones, not the numeric ones', fu
 });
 
 test('updated_at is the only column hidden behind the toggle', function (): void {
-    $columns = (new MediaTable())->getTableColumns();
+    $columns = (new MediaTable)->getTableColumns();
 
     Assert::assertTrue($columns['updated_at']->isToggledHiddenByDefault());
     Assert::assertFalse($columns['created_at']->isToggledHiddenByDefault());
 });
-

@@ -1,4 +1,11 @@
 ---
+<<<<<<< HEAD
+=======
+type: note
+tags: [documentation]
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 id: "xot-quality-gates-prompt-exec"
 title: "Esegui e migliora 03-quality-gates.md"
 status: review
@@ -7,9 +14,15 @@ created: 2026-09-22
 updated: 2026-09-22
 qmd: "quality gates prompt phpmd-ruleset pint parallel session files nested git pest skip"
 related:
+<<<<<<< HEAD
   - ../../../../../bashscripts/docs/prompts/03-quality-gates.md
   - ../../stories/3.30.quality-gates-prompt-improve-and-exec.story.md
   - ../../../../../docs/wiki/memories/03-quality-gates-workflow.md
+=======
+  - ../../../../../../bashscripts/docs/prompts/03-quality-gates.md
+  - ../../stories/3.30.quality-gates-prompt-improve-and-exec.story.md
+  - ../../../../../../docs/wiki/memories/03-quality-gates-workflow.md
+>>>>>>> laraxot/dev
   - ./cleanup-all-modules.story.md
 ---
 
@@ -34,7 +47,11 @@ Scope (`laravel/storage/app/ai/qg-session-files.txt`): `SendNetfunSMSAction.php`
 | Pint `--test` (no parallel) | **0** | `{"tool":"pint","result":"passed"}` → `build/pint.txt` |
 | PHPStan session (no tests/) | **0** | `[OK] No errors` → `build/phpstan.txt` |
 | PHPMD 3-arg `phpmd.xml` (come prompt) | **1** | `Cannot find specified rule-set "phpmd.xml"` |
+<<<<<<< HEAD
 | PHPMD 1-arg wrapper | **2** | violazioni = exit 2 PHPMD, non timeout. 3× UnusedPrivateField su `$token/$endpoint/$vars` (usati in `execute()` — falso positivo PDepend) |
+=======
+| PHPMD 1-arg wrapper | **2** | violazioni = exit 2 PHPMD, non timeout. 3× UnusedPrivateField su `$token/$endpoint/$vars` (usati in `execute()`: falso positivo PDepend) |
+>>>>>>> laraxot/dev
 | Pest | **3** | DB irraggiungibile; `hostname -I` vuoto (host `zorin`, non 10.100.200.15) |
 | Insights | **3** | `vendor/bin/phpinsights` **assente**; wrapper `tools/phpinsights.sh` c'è |
 
@@ -62,4 +79,8 @@ Scope (`laravel/storage/app/ai/qg-session-files.txt`): `SendNetfunSMSAction.php`
 
 - Non toccato `phpstan.neon`.
 - Non commit.
+<<<<<<< HEAD
 - Non rubato lock prompt / sprint-status (codex `quality-gates-prompt-improve-20260922`).
+=======
+- Non rubato lock prompt / sprint-status (codex `quality-gates-prompt-improve-20260922`).
+>>>>>>> laraxot/dev

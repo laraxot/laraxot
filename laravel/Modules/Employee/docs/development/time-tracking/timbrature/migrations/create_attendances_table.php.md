@@ -1,3 +1,9 @@
+---
+title: "Employee - CREATE_ATTENDANCES_TABLE.PHP"
+module: Employee
+bmad: true
+status: active
+---
 <?php
 
 declare(strict_types=1);

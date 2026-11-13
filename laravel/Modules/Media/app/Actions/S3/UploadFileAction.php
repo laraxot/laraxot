@@ -6,6 +6,7 @@ namespace Modules\Media\Actions\S3;
 
 use Aws\S3\ObjectUploader;
 use Exception;
+use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\fclose;
 use function Safe\filesize;
@@ -14,6 +15,8 @@ use function Safe\mime_content_type;
 
 class UploadFileAction extends BaseS3Action
 {
+    use QueueableAction;
+
     /**
      * Upload a file to S3
      *

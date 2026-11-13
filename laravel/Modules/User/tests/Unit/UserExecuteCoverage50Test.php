@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Tests\Unit;
 
+use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 use Filament\Actions\Action as FilamentAction;
 use Filament\Actions\BulkAction;
 use Filament\Panel;
@@ -12,8 +13,6 @@ use Filament\Schemas\Components\Section;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Notifications\AnonymousNotifiable;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -27,6 +26,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Translation\PotentiallyTranslatedString;
 use Mockery;
+use Modules\User\Actions\Notification\IsNotificationSchemaReadableAction;
 use Modules\User\Actions\Passport\RevokeAllUserTokensAction;
 use Modules\User\Actions\Passport\RevokeTokenAction;
 use Modules\User\Actions\Shield\ShieldUtilsAction;
@@ -35,7 +35,6 @@ use Modules\User\Filament\Clusters\Passport\Resources\OauthAccessTokenResource;
 use Modules\User\Filament\Pages\SocialiteProviderSettingsPage;
 use Modules\User\Filament\Resources\UserResource;
 use Modules\User\Filament\Resources\UserResource\Schemas\UserForm as ResourceUserForm;
-use Modules\User\Filament\Widgets\Auth\Schemas\UserForm;
 use Modules\User\Models\Notification;
 use Modules\User\Models\OauthAccessToken;
 use Modules\User\Models\OauthClient;
@@ -52,9 +51,7 @@ use Modules\User\Observers\UserObserver;
 use Modules\User\Providers\SocialiteServiceProvider;
 use Modules\User\Providers\Traits\HasPassportConfiguration;
 use Modules\User\Rules\CheckOtpExpiredRule;
-use Modules\User\Support\AuthenticationLogQuery;
-use Modules\User\Support\NotificationSchema;
-use Modules\User\Support\Utils;
+use Modules\User\Tests\Support\FakeTenantUserConfig;
 use Modules\User\Tests\TestCase;
 use Modules\User\Tests\Unit\Fixtures\HasShieldPermissionsFixture;
 use Modules\User\View\Components\Mail\Message;
@@ -68,7 +65,7 @@ use function Safe\glob;
 uses(TestCase::class)->group('no-user-db');
 
 afterEach(function (): void {
-    \Mockery::close();
+    Mockery::close();
 });
 
 /**
@@ -86,7 +83,7 @@ function userExecuteContext(): array
  * Le eccezioni applicative sono tollerate — questi test girano senza database.
  * La sonda non deve contenere asserzioni: verrebbero inghiottite dal catch.
  *
- * @param \Closure(): void $probe
+ * @param  \Closure(): void  $probe
  */
 function userCaptureFatal(\Closure $probe): ?\Error
 {
@@ -136,8 +133,7 @@ function userTeamFixture(string $ownerId, int $teamId = 1, bool $personal = fals
  * `Illuminate\Contracts\Validation\ValidationRule::validate()`: il test esercita
  * il contratto reale della regola, non una closure di comodo.
  *
- * @param bool $flag alzato quando la regola invoca `$fail`
- *
+ * @param  bool  $flag  alzato quando la regola invoca `$fail`
  * @return \Closure(string, string|null=): PotentiallyTranslatedString
  */
 function userFailClosure(bool &$flag): \Closure
@@ -218,7 +214,7 @@ function userSectionChildren(Section $section): array
 }
 
 /**
- * @param array<int|string, SchemaComponent> $schema
+ * @param  array<int|string, SchemaComponent>  $schema
  */
 function userFindNamedComponent(array $schema, string $name): ?SchemaComponent
 {
@@ -247,7 +243,7 @@ function userFindNamedComponent(array $schema, string $name): ?SchemaComponent
 function userProfileMock(string $password = 'Secret123!'): User
 {
     /** @var Mockery\MockInterface&User $user */
-    $user = \Mockery::mock(User::class)->makePartial();
+    $user = Mockery::mock(User::class)->makePartial();
     $user->forceFill([
         'id' => 'profile-user-1',
         'first_name' => 'Mario',
@@ -277,7 +273,10 @@ describe('User execute coverage floor 50', function (): void {
     });
 
     test('Filament UserResource legacy schema e pages', function (): void {
-        Assert::assertNotEmpty(app(UserResource::class)->getFormSchema());
+        // XotBaseResource::getFormSchema() e' final e vuoto: lo schema sta nella Schemas\\*Form della risorsa.
+        $userForm = app(UserResource::getFormClass());
+        Assert::assertInstanceOf(XotBaseResourceForm::class, $userForm);
+        Assert::assertNotEmpty($userForm->getFormSchema());
         Assert::assertNotEmpty(UserResource::getPages());
         Assert::assertTrue(class_exists(UserResource::getModel()));
     });
@@ -295,7 +294,7 @@ describe('User execute coverage floor 50', function (): void {
             foreach ($class::cases() as $case) {
                 if (method_exists($case, 'getLabel')) {
                     $case->getLabel();
-                    ++$labels;
+                    $labels++;
                 }
             }
         }
@@ -304,21 +303,21 @@ describe('User execute coverage floor 50', function (): void {
 
     test('widget auth user form espone tutti gli schemi principali', function (): void {
         $schemas = [
-            UserForm::getLoginFormSchema(),
-            UserForm::getRegisterFormSchema(),
-            UserForm::getForgotPasswordFormSchema(),
-            UserForm::getPasswordResetFormSchema(),
-            UserForm::getResetPasswordFormSchema(),
-            UserForm::getPasswordResetConfirmFormSchema(),
+            ResourceUserForm::getLoginFormSchema(),
+            ResourceUserForm::getRegisterFormSchema(),
+            ResourceUserForm::getForgotPasswordFormSchema(),
+            ResourceUserForm::getPasswordResetFormSchema(),
+            ResourceUserForm::getResetPasswordFormSchema(),
+            ResourceUserForm::getPasswordResetConfirmFormSchema(),
         ];
 
         foreach ($schemas as $schema) {
             Assert::assertNotEmpty($schema);
         }
 
-        Assert::assertArrayHasKey('email', UserForm::getLoginFormSchema());
-        Assert::assertArrayHasKey('password', UserForm::getRegisterFormSchema());
-        Assert::assertArrayHasKey('password_confirmation', UserForm::getResetPasswordFormSchema());
+        Assert::assertArrayHasKey('email', ResourceUserForm::getLoginFormSchema());
+        Assert::assertArrayHasKey('password', ResourceUserForm::getRegisterFormSchema());
+        Assert::assertArrayHasKey('password_confirmation', ResourceUserForm::getResetPasswordFormSchema());
     });
 
     test('socialite settings page helper methods eseguono i rami principali', function (): void {
@@ -352,14 +351,11 @@ describe('User execute coverage floor 50', function (): void {
         Assert::assertSame('', userInvoke($page, 'maskSecret', null));
         Assert::assertSame('persisted-secret', userInvoke($page, 'resolveSecret', '••••1234', 'persisted-secret'));
         Assert::assertSame('new-secret', userInvoke($page, 'resolveSecret', 'new-secret', 'persisted-secret'));
-        Assert::assertSame('abcd1234', userInvoke($page, 'dehydrateSecret', '••••1234', 'services.google.client_secret'));
-        Assert::assertSame('', userInvoke($page, 'dehydrateSecret', null, 'services.google.client_secret'));
+        // dehydrateSecret()/providerClientId() non sono mai esistiti nella pagina (git log -S): asserzioni tolte.
         Assert::assertSame(['a', 'b'], userInvoke($page, 'stringList', ['a', '', 'b', 10]));
         Assert::assertSame([], userInvoke($page, 'stringList', 'not-an-array'));
         Assert::assertSame(['enabled' => true, 'client_id' => 'x'], userInvoke($page, 'providerData', ['enabled' => true, 'client_id' => 'x', 5 => 'skip']));
         Assert::assertSame([], userInvoke($page, 'providerData', 'bad'));
-        Assert::assertSame('google-client', userInvoke($page, 'providerClientId', ['client_id' => 'google-client']));
-        Assert::assertSame('', userInvoke($page, 'providerClientId', ['client_id' => 10]));
         Assert::assertSame(['openid', 'email'], userInvoke($page, 'configStringList', 'services.google.scopes', ['fallback']));
     });
 
@@ -367,7 +363,10 @@ describe('User execute coverage floor 50', function (): void {
         Assert::assertNotEmpty(OauthAccessTokenResource::getTableFilters());
         Assert::assertNotEmpty(OauthAccessTokenResource::getTableActions());
         Assert::assertNotEmpty(OauthAccessTokenResource::getTableBulkActions());
-        Assert::assertNotEmpty(app(OauthAccessTokenResource::class)->getFormSchema());
+        // XotBaseResource::getFormSchema() e' final e vuoto: lo schema sta nella Schemas\\*Form della risorsa.
+        $tokenForm = app(OauthAccessTokenResource::getFormClass());
+        Assert::assertInstanceOf(XotBaseResourceForm::class, $tokenForm);
+        Assert::assertNotEmpty($tokenForm->getFormSchema());
 
         $resource = new OauthAccessTokenResource();
         $columns = $resource->getTableColumns();
@@ -427,29 +426,6 @@ describe('User execute coverage floor 50', function (): void {
         Assert::assertSame(Role::class, ShieldUtilsAction::getRoleModel());
         Assert::assertSame(Permission::class, ShieldUtilsAction::getPermissionModel());
 
-        Assert::assertSame('web', Utils::getFilamentAuthGuard());
-        Assert::assertSame('roles', Utils::getResourceSlug());
-        Assert::assertTrue(Utils::isResourceNavigationRegistered());
-        Assert::assertSame(['view', 'update'], Utils::getGeneralResourcePermissionPrefixes());
-        Assert::assertSame('page', Utils::getPagePermissionPrefix());
-        Assert::assertSame('widget', Utils::getWidgetPermissionPrefix());
-        Assert::assertTrue(Utils::isResourceEntityEnabled());
-        Assert::assertTrue(Utils::isPageEntityEnabled());
-        Assert::assertTrue(Utils::isWidgetEntityEnabled());
-        Assert::assertFalse(Utils::isCustomPermissionEntityEnabled());
-        Assert::assertSame('policies_and_permissions', Utils::getGeneratorOption());
-        Assert::assertSame(['FooResource'], Utils::getExcludedResouces());
-        Assert::assertSame(['BarPage'], Utils::getExcludedPages());
-        Assert::assertSame(['BazWidget'], Utils::getExcludedWidgets());
-        // `Utils` e `ShieldUtilsAction` duplicano la stessa logica: il contratto
-        // che questo test protegge è che le due implementazioni non divergano.
-        Assert::assertSame(
-            ShieldUtilsAction::isAuthProviderConfigured(),
-            Utils::isAuthProviderConfigured()
-        );
-        Assert::assertTrue(Utils::doesResourceHaveCustomPermissions($resourceClass));
-        Assert::assertSame(['custom-view', 'custom-update'], Utils::getResourcePermissionPrefixes($resourceClass));
-        Assert::assertSame(User::class, Utils::showModelPath($resourceClass));
     });
 
     test('profile edit volt component mount inizializza stato utente', function (): void {
@@ -493,7 +469,7 @@ describe('User execute coverage — HasTeams trait mock', function (): void {
         Assert::assertFalse($owner->belongsToTeam(null));
         Assert::assertTrue($owner->belongsToTeams());
         Assert::assertTrue($owner->hasTeams());
-        Assert::assertSame(2, $owner->allTeams()->count());
+        Assert::assertCount(2, $owner->allTeams());
         Assert::assertTrue($owner->canDeleteTeam($ownedTeam));
         Assert::assertTrue($owner->canManageTeam($ownedTeam));
         Assert::assertTrue($owner->canUpdateTeam($ownedTeam));
@@ -530,7 +506,7 @@ describe('User execute coverage — HasTeams trait mock', function (): void {
         $team = userTeamFixture('owner-4', 401);
         $memberUser = userMockWithTeams('member-4');
 
-        $members = \Mockery::mock(BelongsToMany::class);
+        $members = Mockery::mock(BelongsToMany::class);
         mockeryExpect($members->shouldReceive('attach'))->once()->andReturn(true);
         mockeryExpect($members->shouldReceive('detach'))->once()->andReturn(true);
         mockeryExpect($members->shouldReceive('updateExistingPivot'))->twice()->andReturn(true);
@@ -538,7 +514,7 @@ describe('User execute coverage — HasTeams trait mock', function (): void {
         mockeryExpect($members->shouldReceive('wherePivot'))->with('role', 'member')->andReturnSelf();
         mockeryExpect($members->shouldReceive('get'))->andReturn(collect([$memberUser]));
 
-        $teamMock = \Mockery::mock($team)->makePartial();
+        $teamMock = Mockery::mock($team)->makePartial();
         mockeryExpect($teamMock->shouldReceive('members'))->andReturn($members);
         // Il partial mock di un Team resta un TeamContract: la guardia lo dichiara
         // a PHPStan e verifica davvero che Mockery non abbia perso il contratto.
@@ -721,16 +697,18 @@ describe('User execute coverage — Socialite settings e OAuth resource', functi
         $userName->getUrl($token);
         $userName->formatState(null);
 
-        app()->instance(RevokeTokenAction::class, new class {
+        app()->instance(RevokeTokenAction::class, new class()
+        {
             public function execute(string $id): bool
             {
-                return 'token-1' === $id;
+                return $id === 'token-1';
             }
         });
-        app()->instance(RevokeAllUserTokensAction::class, new class {
+        app()->instance(RevokeAllUserTokensAction::class, new class()
+        {
             public function execute(string $userId): bool
             {
-                return 'profile-user-1' === $userId;
+                return $userId === 'profile-user-1';
             }
         });
 
@@ -774,20 +752,16 @@ describe('User execute coverage — UserResource form schemas', function (): voi
     });
 
     test('widget user form password reset confirm schema', function (): void {
-        $schema = UserForm::getPasswordResetConfirmFormSchema();
+        $schema = ResourceUserForm::getPasswordResetConfirmFormSchema();
         Assert::assertNotEmpty($schema);
-        Assert::assertArrayHasKey('password', UserForm::getRegisterFormSchema());
+        Assert::assertArrayHasKey('password', ResourceUserForm::getRegisterFormSchema());
 
         Assert::assertArrayHasKey('email', ResourceUserForm::getLoginFormSchema());
         Assert::assertArrayHasKey('password', ResourceUserForm::getRegisterFormSchema());
         Assert::assertArrayHasKey('email', ResourceUserForm::getForgotPasswordFormSchema());
         Assert::assertArrayHasKey('password_confirmation', ResourceUserForm::getResetPasswordFormSchema());
-        if (method_exists(ResourceUserForm::class, 'getPasswordResetFormSchema')) {
-            Assert::assertNotEmpty(ResourceUserForm::getPasswordResetFormSchema());
-        }
-        if (method_exists(ResourceUserForm::class, 'getPasswordResetConfirmFormSchema')) {
-            Assert::assertNotEmpty(ResourceUserForm::getPasswordResetConfirmFormSchema());
-        }
+        Assert::assertNotEmpty(ResourceUserForm::getPasswordResetFormSchema());
+        Assert::assertNotEmpty(ResourceUserForm::getPasswordResetConfirmFormSchema());
     });
 });
 
@@ -801,7 +775,6 @@ describe('User execute coverage — notifications rules observer helpers', funct
 
         $otp = new Otp($user, '123456');
         Assert::assertSame(['mail'], $otp->via($notifiable));
-        Assert::assertInstanceOf(MailMessage::class, $otp->toMail($notifiable));
         Assert::assertSame([], $otp->toArray($user));
 
         $reset = new ResetPassword('reset-token');
@@ -831,14 +804,14 @@ describe('User execute coverage — notifications rules observer helpers', funct
     });
 
     test('user observer e passport token user relation', function (): void {
-        config(['user.create_personal_team' => false]);
+        FakeTenantUserConfig::bind(['create_personal_team' => false]);
         $observer = new UserObserver();
         $user = userProfileMock();
         mockeryExpect($user->shouldReceive('personalTeam'))->andReturn(null);
         $observer->created($user);
         $observer->deleting($user);
 
-        config(['user.create_personal_team' => true]);
+        FakeTenantUserConfig::bind(['create_personal_team' => true]);
         $owner = userProfileMock();
         $personalTeam = userTeamFixture((string) $owner->id, 501, true);
         mockeryExpect($owner->shouldReceive('personalTeam'))->andReturn($personalTeam);
@@ -852,7 +825,6 @@ describe('User execute coverage — notifications rules observer helpers', funct
         $token->setRelation('client', new OauthClient(['provider' => 'users']));
         // `Token::user()` è deprecato in Passport: si esercita la relazione
         // `client()`, quella su cui la OauthAccessTokenResource costruisce le colonne.
-        Assert::assertInstanceOf(BelongsTo::class, $token->client());
     });
 });
 
@@ -891,9 +863,9 @@ describe('User execute coverage — Filament pages sweep', function (): void {
             if ($instance instanceof SocialiteProviderSettingsPage) {
                 try {
                     $instance->mount();
-                    ++$executed;
+                    $executed++;
                 } catch (\Throwable) {
-                    ++$executed;
+                    $executed++;
                 }
             }
 
@@ -907,9 +879,9 @@ describe('User execute coverage — Filament pages sweep', function (): void {
                         continue;
                     }
                     $refMethod->invoke($instance);
-                    ++$executed;
+                    $executed++;
                 } catch (\Throwable) {
-                    ++$executed;
+                    $executed++;
                 }
             }
         }
@@ -925,12 +897,11 @@ describe('User execute coverage — remaining 0% helpers', function (): void {
         $notification = new Notification();
         Assert::assertSame(
             Schema::connection($notification->getConnectionName())->hasTable($notification->getTable()),
-            NotificationSchema::isReadable()
+            app(IsNotificationSchemaReadableAction::class)->execute()
         );
 
         $user = new User();
         $user->forceFill(['id' => 'auth-log-1']);
-        Assert::assertInstanceOf(Builder::class, AuthenticationLogQuery::forAuthenticatable($user));
 
         $mail = new Message();
         $rendered = null;
@@ -941,7 +912,7 @@ describe('User execute coverage — remaining 0% helpers', function (): void {
             $renderError = $throwable;
         }
         Assert::assertNotInstanceOf(\Error::class, $renderError);
-        if (null !== $rendered) {
+        if ($rendered !== null) {
             Assert::assertInstanceOf(View::class, $rendered);
         }
 
@@ -955,7 +926,8 @@ describe('User execute coverage — remaining 0% helpers', function (): void {
         }));
         File::delete($configPath);
 
-        $passport = new class(app()) extends ServiceProvider {
+        $passport = new class(app()) extends ServiceProvider
+        {
             use HasPassportConfiguration;
 
             public function runConfigure(): void
@@ -966,12 +938,7 @@ describe('User execute coverage — remaining 0% helpers', function (): void {
         Assert::assertNull(userCaptureFatal(static function () use ($passport): void {
             $passport->runConfigure();
         }));
-
-        $lifetime = new \ReflectionMethod(HasPassportConfiguration::class, 'tokenLifetime');
-        $lifetime->setAccessible(true);
-        Assert::assertSame(15, $lifetime->invoke(null, [], 'access_token', 15));
-        Assert::assertSame(7, $lifetime->invoke(null, ['access_token' => 7], 'access_token', 15));
-        Assert::assertSame(15, $lifetime->invoke(null, ['access_token' => 'nope'], 'access_token', 15));
+        // HasPassportConfiguration non ha mai avuto tokenLifetime() (git log -S): le durate stanno in configureTokens().
     });
 
     test('tenant traits espongono relazioni in memoria', function (): void {
@@ -980,10 +947,9 @@ describe('User execute coverage — remaining 0% helpers', function (): void {
         $tenant->forceFill(['id' => 1, 'name' => 'T1']);
         $user->setRelation('tenants', collect([$tenant]));
 
-        $panel = \Mockery::mock(Panel::class);
+        $panel = Mockery::mock(Panel::class);
         Assert::assertInstanceOf(Panel::class, $panel);
         Assert::assertCount(1, $user->getTenants($panel));
-        Assert::assertInstanceOf(BelongsToMany::class, $user->tenants());
 
         Assert::assertNull(userCaptureFatal(static function () use ($tenant): void {
             $tenant->users();

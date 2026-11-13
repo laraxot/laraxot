@@ -170,7 +170,6 @@ class ListSnapshots extends ListRecords
 - [ ] Testare il funzionamento delle liste dopo le modifiche
 - [ ] Aggiornare i test unitari se presenti
 - [ ] Documentare le modifiche nel CHANGELOG
-<<<<<<< HEAD
 <<<<<<< .merge_file_vksbQL
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -178,8 +177,6 @@ class ListSnapshots extends ListRecords
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 - [ ] Eseguire PHPStan per verificare altri possibili errori
 =======
 - [ ] Eseguire PHPStan per verificare altri possibili errori - [ ] Eseguire PHPStan per verificare altri possibili errori
@@ -350,9 +347,6 @@ class ListSnapshots extends ListRecords
 - [ ] Documentare le modifiche nel CHANGELOG
 - [ ] Eseguire PHPStan per verificare altri possibili errori
 <<<<<<< HEAD
-<<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)

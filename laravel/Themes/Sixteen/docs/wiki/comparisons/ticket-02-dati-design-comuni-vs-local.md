@@ -1,4 +1,7 @@
 ---
+qmd: "ticket 02 dati design comuni vs local"
+issues: []
+discussions: []
 title: "Segnalazione step2 (dati) — Design Comuni static vs wizard locale"
 type: comparison
 sources:
@@ -13,6 +16,7 @@ related:
   - "../concepts/design-comuni-site-wide-component-css-rule.md"
   - "../../../../../Modules/Fixcity/docs/wiki/comparisons/segnalazione-02-dati-design-comuni-vs-local.md"
   - "../../../../../_bmad-output/implementation-artifacts/7-106-segnalazione-crea-step2-header-visual-parity.md"
+status: draft
 ---
 
 # Confronto: `segnalazione-02-dati` (statico) vs `/it/tests/segnalazione-crea?step=form.data::data::wizard-step` (step2)

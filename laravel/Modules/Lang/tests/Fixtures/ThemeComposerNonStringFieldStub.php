@@ -9,7 +9,7 @@ use Modules\Lang\View\Composers\ThemeComposer;
 
 final class ThemeComposerNonStringFieldStub extends ThemeComposer
 {
-    protected function langFieldValue(LangData $lang, string $field): mixed
+    protected function langFieldValue(LangData $lang, string $field): int
     {
         return 42;
     }

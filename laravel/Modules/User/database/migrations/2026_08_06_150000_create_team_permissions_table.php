@@ -1,12 +1,12 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Database\Schema\Blueprint;
 use Modules\User\Models\TeamPermission;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends XotBaseMigration {
+return new class extends XotBaseMigration
+{
     protected ?string $model_class = TeamPermission::class;
 
     /**
@@ -59,14 +59,14 @@ return new class extends XotBaseMigration {
             // Il tipo va riallineato a `teams.id` solo se diverge, e solo finche' nessuna
             // FK lo blocca (MySQL 1833: "Cannot change column used in a foreign key").
             $teamIdIsInt = in_array($this->getColumnType('team_id'), ['int', 'integer', 'mediumint', 'smallint'], true);
-            if ($teamIdIsInt !== $teamsIdIsInt && ! $this->localHasForeignKey('team_permissions_team_id_foreign')) {
+            if ($teamIdIsInt !== $teamsIdIsInt && ! $this->getConn()->hasForeignKey($this->getTable(), 'team_permissions_team_id_foreign')) {
                 if ($teamsIdIsInt) {
                     $table->unsignedInteger('team_id')->change();
                 } else {
                     $table->unsignedBigInteger('team_id')->change();
                 }
             }
-            if (! $this->localHasForeignKey('team_permissions_team_id_foreign')) {
+            if (! $this->getConn()->hasForeignKey($this->getTable(), 'team_permissions_team_id_foreign')) {
                 $table->foreign('team_id')->references('id')->on('teams')->cascadeOnDelete();
             }
 
@@ -79,36 +79,5 @@ return new class extends XotBaseMigration {
 
             $this->updateTimestamps(table: $table, hasSoftDeletes: true);
         });
-    }
-
-    /**
-     * Verifica se un vincolo di chiave esterna esiste già sulla tabella corrente.
-     *
-     * XotBaseMigration non espone un metodo dedicato: si interroga
-     * information_schema, coerentemente con l'approccio già usato da
-     * hasPrimaryKey() nella classe base.
-     */
-    private function localHasForeignKey(string $constraintName): bool
-    {
-        $connection = $this->getConn()->getConnection();
-        $database = $connection->getDatabaseName();
-        $table = $this->getTable();
-
-        $query = "SELECT COUNT(*) as count
-              FROM information_schema.table_constraints
-              WHERE table_schema = ?
-              AND table_name = ?
-              AND constraint_name = ?
-              AND constraint_type = 'FOREIGN KEY'";
-
-        $result = $connection->selectOne($query, [$database, $table, $constraintName]);
-
-        if (! is_object($result) || ! property_exists($result, 'count')) {
-            return false;
-        }
-
-        $count = $result->count;
-
-        return is_numeric($count) && ((int) $count) > 0;
     }
 };

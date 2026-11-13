@@ -1,3 +1,11 @@
+---
+title: "Struttura Navigazione"
+type: note
+status: draft
+updated: 2026-10-13
+tags: [docs, user]
+qmd: "struttura navigazione user"
+---
 # Struttura Navigazione
 
 ## Overview
@@ -139,6 +147,9 @@ Event::dispatch('user.action', [
    - Input validation
 
 ## Collegamenti Correlati
-- [Header Components](./HEADER_COMPONENTS.md)
+- [Header Components](./header_components.md)
 - [Security Best Practices](./SECURITY_BEST_PRACTICES.md)
-- [Session Management](./SESSION_MANAGEMENT.md) 
+- [Session Management](./session_management.md) 
+- [Header Components](./header_components.md)
+- [Security Best Practices](./SECURITY_BEST_PRACTICES.md)
+- [Session Management](./session_management.md) 

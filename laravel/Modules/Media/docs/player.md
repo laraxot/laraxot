@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Player"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "player"
 related:
   - "./webm.md"
+status: draft
 ---
 https://github.com/spatie/laravel-sitemap/blob/main/resources/views/video.blade.php
 

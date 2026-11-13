@@ -1,3 +1,9 @@
+---
+title: "Employee - README"
+module: Employee
+bmad: true
+status: active
+---
 # 01. Anagrafica Dipendenti
 
 [![Module](https://img.shields.io/badge/Module-01. Anagrafica Dipendenti-8B0000.svg)]()

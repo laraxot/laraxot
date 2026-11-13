@@ -55,14 +55,14 @@ function makeAssociatedOauthClientForDissociationTest(User $owner): OauthClient
 
 function getDissociateClientActionFunction(User $owner): \Closure
 {
-    $manager = new ClientsRelationManager();
+    $manager = new ClientsRelationManager;
     $manager->ownerRecord = $owner;
     $manager->pageClass = EditUser::class;
     $manager->bootedInteractsWithTable();
 
     $action = null;
     foreach ($manager->getTable()->getRecordActions() as $candidate) {
-        if ($candidate instanceof Action && 'dissociateClient' === $candidate->getName()) {
+        if ($candidate instanceof Action && $candidate->getName() === 'dissociateClient') {
             $action = $candidate;
 
             break;

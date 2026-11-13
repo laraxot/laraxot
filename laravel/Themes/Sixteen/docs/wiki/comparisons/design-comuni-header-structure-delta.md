@@ -1,4 +1,7 @@
 ---
+qmd: "design comuni header structure delta"
+issues: []
+discussions: []
 title: "Segnalazione step 1 — Design Comuni header HTML structure delta"
 type: comparison
 sources:
@@ -12,7 +15,8 @@ tags: [design-comuni, header, html-parity, structure, delta, sixteentheme]
 related:
   - "../sources/design-comuni-header-reference.md"
   - "../concepts/header-section-owner-rule.md"
-  - "../../../../docs/wiki/concepts/header-style-layer-rule.md"
+  - "../concepts/header-style-layer-rule.md"
+status: draft
 ---
 
 # Header HTML Structure Delta — Design Comuni vs Sixteen

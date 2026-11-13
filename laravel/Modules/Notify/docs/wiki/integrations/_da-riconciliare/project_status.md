@@ -1,10 +1,15 @@
 ---
+qmd: "project status"
+issues: []
+discussions: []
 title: "Notify Platform - Project Status Report"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: project-status.md
 ---
 
 # Notify Platform - Project Status Report

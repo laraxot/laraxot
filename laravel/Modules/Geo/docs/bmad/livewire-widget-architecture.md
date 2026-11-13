@@ -1,10 +1,17 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "livewire widget architecture"
+issues: []
+discussions: []
 title: "Architecture — Geo"
 type: architecture
 module: Geo
 related:
   - ./livewire-inventory.md
   - ./livewire-widget-prd.md
+status: draft
 ---
 
 # Architecture Geo

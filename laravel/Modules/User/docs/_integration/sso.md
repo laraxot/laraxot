@@ -16,9 +16,10 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: superseded
+superseded_by: ../-integration/sso.md
 ---
 
->>>>>>> 87273113 (.)
 # sso
 
 <!-- Contenuto migrato da _docs/sso.txt -->

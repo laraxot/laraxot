@@ -1,3 +1,9 @@
+---
+title: "Employee - DOCS-REFACTORING-PLAN"
+module: Employee
+bmad: true
+status: active
+---
 # Docs Refactoring Plan - Employee Module
 
 ## Analisi Situazione Attuale

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Media Module Icon Usage Guidelines"
 module: "Media"
 type: how-to
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "icon usage guidelines"
 related:
   - "./webm.md"
+status: draft
 ---
 # Media Module Icon Usage Guidelines
 

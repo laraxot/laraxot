@@ -86,4 +86,15 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
+    'privacy_policy' => [
+        'title' => 'Datenschutzerklärung',
+        'description' => 'Wie wir mit Ihren personenbezogenen Daten umgehen.',
+    ],
+    'delete_account' => [
+        'title' => 'Konto löschen',
+        'description' => 'Sobald Ihr Konto gelöscht ist, werden alle zugehörigen Ressourcen und Daten endgültig gelöscht. Laden Sie vor dem Fortfahren alle Daten herunter, die Sie behalten möchten.',
+        'password_confirmation' => 'Bestätigen Sie Ihr Passwort',
+        'delete' => 'Konto löschen',
+        'button' => 'Konto löschen',
+    ],
 ];

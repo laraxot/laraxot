@@ -1,3 +1,9 @@
+---
+title: "Employee - NESTEDSET-MIGRATION-BEST-PRACTICES"
+module: Employee
+bmad: true
+status: active
+---
 # NestedSet Migration Best Practices - Employee Module
 
 ## Overview

@@ -1,5 +1,7 @@
 ---
-title: "Conflict Resolution — Module Lang"
+issues: []
+discussions: []
+title: "Conflict Resolution: Module Lang"
 module: "Lang"
 type: concept
 tags: [ottimizzazioni, correzioni]
@@ -8,8 +10,9 @@ updated: 2026-07-14
 qmd: "ottimizzazioni correzioni"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
-# Conflict Resolution — Module Lang
+# Conflict Resolution: Module Lang
 
 ## Summary
 - **Files resolved**: 14

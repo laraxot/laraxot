@@ -1,10 +1,15 @@
 ---
+qmd: "SYNC TEST RESULTS"
+issues: []
+discussions: []
 title: "SYNC TEST RESULTS"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: sync-test-results.md
 ---
 
 ## ✅ BIDIRECTIONAL SYNC TEST - SUCCESS!

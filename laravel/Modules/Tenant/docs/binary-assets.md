@@ -1,3 +1,15 @@
+---
+title: "binary assets"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "binary assets"
+issues: []
+discussions: []
+status: draft
+---
+
 # Asset binari
 
 Gli asset binari sono file normali del repository.

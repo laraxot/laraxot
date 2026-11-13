@@ -1,3 +1,9 @@
+---
+title: "Employee - ARCHITECTURE-PATTERNS"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - Architecture Patterns Documentation
 
 > **Documento generato**: 2024-09-03  

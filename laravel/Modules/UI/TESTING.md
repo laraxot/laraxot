@@ -1,4 +1,24 @@
+<<<<<<< .merge_file_oiVrIM
+<<<<<<< .merge_file_bmbiYq
 <<<<<<< HEAD
+=======
+=======
+>>>>>>> .merge_file_PwrpvZ
+---
+title: "TESTING"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "TESTING"
+issues: []
+discussions: []
+---
+
+<<<<<<< .merge_file_oiVrIM
+>>>>>>> .merge_file_VD2IlN
+=======
+>>>>>>> .merge_file_PwrpvZ
 # Testing $MOD
 
 ## Quick Start
@@ -15,7 +35,25 @@ Coverage report: docs/coverage.md (auto-generated).
 Target: ≥85% coverage.
 
 See Xot module (TESTING.md) for base test patterns.
+<<<<<<< .merge_file_oiVrIM
+<<<<<<< .merge_file_bmbiYq
 =======
+=======
+=======
+>>>>>>> .merge_file_PwrpvZ
+---
+title: "TESTING"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "TESTING"
+issues: []
+discussions: []
+<<<<<<< .merge_file_oiVrIM
+>>>>>>> .merge_file_VD2IlN
+=======
+>>>>>>> .merge_file_PwrpvZ
 # UI Module Testing
 
 ## Component Testing
@@ -37,4 +75,10 @@ See Xot module (TESTING.md) for base test patterns.
 ```bash
 ./vendor/bin/pest Modules/UI/tests
 ```
+<<<<<<< .merge_file_oiVrIM
+<<<<<<< .merge_file_bmbiYq
 >>>>>>> laraxot/dev
+=======
+>>>>>>> .merge_file_VD2IlN
+=======
+>>>>>>> .merge_file_PwrpvZ

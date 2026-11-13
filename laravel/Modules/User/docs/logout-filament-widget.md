@@ -8,14 +8,19 @@ qmd: "logout-filament-widget implementazione del logout con widget filament"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # Implementazione del Logout con Widget Filament
@@ -24,11 +29,13 @@ related:
 - [Documentazione centrale](/docs/readme.md)
 - [Collegamenti documentazione](/docs/collegamenti-documentazione.md)
 - [Implementazione Auth Pages](auth-pages-implementation.md)
-- [Implementazione Logout](logout-blade-implementation-2.md)
-- [Analisi Errore Logout](logout-implementation-error-3.md)
-- [Struttura Widget](widgets-structure-2.md)
+- [Implementazione Logout](logout-blade-implementation.md)
+- [Analisi Errore Logout](logout-implementation-error.md)
+- [Struttura Widget](widgets-structure.md)
+- [Implementazione Logout](logout-blade-implementation-posizione-corretta.md)
+- [Analisi Errore Logout](logout-implementation-error-analisi-dell.md)
+- [Struttura Widget](widgets-structure-user.md)
 - [Documentazione Auth Tema One](/laravel/themes/one/docs/auth.md)
->>>>>>> 87273113 (.)
 
 ## Introduzione
 
@@ -160,7 +167,6 @@ class LogoutWidget extends XotBaseWidget
 
                 <div class="mt-6 flex flex-col gap-3">
                     <x-filament::button
->>>>>>> 87273113 (.)
                         type="submit"
                         color="danger"
                         size="lg"
@@ -171,7 +177,6 @@ class LogoutWidget extends XotBaseWidget
 
                     <x-filament::button
                         tag="a"
->>>>>>> 87273113 (.)
                         :href="'/' . app()->getLocale()"
                         color="gray"
                         size="lg"
@@ -250,7 +255,8 @@ FilamentView::registerRenderHook(
 
 ## Alternativa: Logout Immediato
 
-Se non è necessaria una conferma per il logout, è preferibile utilizzare l'approccio "Folio con PHP puro" come descritto in [LOGOUT_BLADE_IMPLEMENTATION.md](logout-blade-implementation-2.md), che esegue il logout immediatamente senza richiedere conferma.
+Se non è necessaria una conferma per il logout, è preferibile utilizzare l'approccio "Folio con PHP puro" come descritto in [LOGOUT_BLADE_IMPLEMENTATION.md](logout-blade-implementation.md), che esegue il logout immediatamente senza richiedere conferma.
+Se non è necessaria una conferma per il logout, è preferibile utilizzare l'approccio "Folio con PHP puro" come descritto in [LOGOUT_BLADE_IMPLEMENTATION.md](logout-blade-implementation-posizione-corretta.md), che esegue il logout immediatamente senza richiedere conferma.
 
 ## Conclusione
 
@@ -261,9 +267,12 @@ L'implementazione del logout con un widget Filament offre un approccio flessibil
 - [Documentazione centrale](/docs/readme.md)
 - [Collegamenti documentazione](/docs/collegamenti-documentazione.md)
 - [Implementazione Auth Pages](auth-pages-implementation.md)
-- [Implementazione Logout](logout-blade-implementation-2.md)
-- [Analisi Errore Logout](logout-implementation-error-3.md)
-- [Struttura Widget](widgets-structure-2.md)
+- [Implementazione Logout](logout-blade-implementation.md)
+- [Analisi Errore Logout](logout-implementation-error.md)
+- [Struttura Widget](widgets-structure.md)
+- [Implementazione Logout](logout-blade-implementation-posizione-corretta.md)
+- [Analisi Errore Logout](logout-implementation-error-analisi-dell.md)
+- [Struttura Widget](widgets-structure-user.md)
 - [Documentazione Auth Tema One](/laravel/themes/one/docs/auth.md)
 
 ## Introduzione
@@ -484,8 +493,8 @@ FilamentView::registerRenderHook(
 
 ## Alternativa: Logout Immediato
 
-Se non è necessaria una conferma per il logout, è preferibile utilizzare l'approccio "Folio con PHP puro" come descritto in [LOGOUT_BLADE_IMPLEMENTATION.md](logout-blade-implementation-2.md), che esegue il logout immediatamente senza richiedere conferma.
->>>>>>> 87273113 (.)
+Se non è necessaria una conferma per il logout, è preferibile utilizzare l'approccio "Folio con PHP puro" come descritto in [LOGOUT_BLADE_IMPLEMENTATION.md](logout-blade-implementation.md), che esegue il logout immediatamente senza richiedere conferma.
+Se non è necessaria una conferma per il logout, è preferibile utilizzare l'approccio "Folio con PHP puro" come descritto in [LOGOUT_BLADE_IMPLEMENTATION.md](logout-blade-implementation-posizione-corretta.md), che esegue il logout immediatamente senza richiedere conferma.
 
 ## Conclusione
 

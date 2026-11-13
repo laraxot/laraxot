@@ -145,6 +145,9 @@ database/Factories_old/
 database_old/
 
 
+# Test artifacts
+/tests/AuditCoverage/
+
 # ==============================================
 # MODULE SPECIFIC - UI
 # ==============================================
@@ -192,6 +195,60 @@ docs/legacy/**
 *~head
 
 agentdb.rvf
+<<<<<<< HEAD
+
+
+# Root quality tools
+phpstan*
+phpmd*
+rector.php
+phpmd.ruleset.xml
+phpmd.ruleset.xml.bak
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out/
+docs/_archive
+
+phpinsights.php
+
+# Laraxot — forbidden at module/theme root (rector.php, phpinsights.php, .cursor, .windsurf, .vscode)
+/rector.php
+/phpinsights.php
+/.cursor
+/.windsurf
+/.vscode
+.cursor~*
+.windsurf~*
+
+# Cartelle vietate nella root del modulo (direttiva root-cleanup)
+/tools/
+/.agents/
+/.claude/
+/.codex/
+/.opencode/
+/tests/graphify-out/
+bashscripts
+tools
+scripts
+.agents
+.claude-audit
+.vscode
+build
+.claude
+/.github/skills/
+.github/skills
+docs/graphify
+resources/lang
+
+# docs/chat — coordination notes replaced by BMAD stories in docs/bmad/
+docs/chat
+
+# Laraxot — app/Application forbidden (belongs to laravel/app/, not module app/)
+app/Application
+/.docs-archive/
+# Artefatti audit vietati (rule: tests-auditcoverage-forbidden)
+audit-coverage/
+=======
 .vscode/
 .devcontainer/
 .vscode/
+>>>>>>> f5ffd8b4 (.)

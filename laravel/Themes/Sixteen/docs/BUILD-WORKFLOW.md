@@ -1,3 +1,16 @@
+---
+title: "BUILD WORKFLOW"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "BUILD WORKFLOW"
+issues: []
+discussions: []
+status: superseded
+superseded_by: build-workflow.md
+---
+
 # Sixteen Theme Build Workflow
 
 ## Overview

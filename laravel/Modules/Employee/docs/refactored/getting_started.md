@@ -1,3 +1,9 @@
+---
+title: "Employee - GETTING_STARTED"
+module: Employee
+bmad: true
+status: active
+---
 # Getting Started - Employee Module
 
 ## 🚀 Quick Installation Guide

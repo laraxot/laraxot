@@ -1,10 +1,15 @@
 ---
+qmd: "documentation link conventions.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: documentation_link_conventions.md"
 module: Lang
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: documentation_link_conventions.divergenza.md
 ---
 
 # Divergenza: `documentation_link_conventions.md`

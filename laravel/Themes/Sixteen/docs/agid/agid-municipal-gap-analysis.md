@@ -1,3 +1,15 @@
+---
+title: "agid municipal gap analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agid municipal gap analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Analisi Completa: Tema Sixteen vs Requisiti AGID per Siti Comunali
 
 ## 📋 Executive Summary
@@ -297,7 +309,6 @@ Il tema Sixteen ha un'**eccellente base architettonica** e implementa correttame
 Con questi sviluppi, il tema Sixteen diventerà una soluzione completa e conforme per i siti web dei comuni italiani, supportando tutti i requisiti PNRR e AGID.
 
 ---
-
 *Documento generato il: 2025-09-02*  
 *Versione: 1.0*  
 *Autore: Claude Code Analysis System*

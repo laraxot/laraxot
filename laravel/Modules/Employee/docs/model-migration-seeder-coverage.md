@@ -1,3 +1,9 @@
+---
+title: "Employee - MODEL-MIGRATION-SEEDER-COVERAGE"
+module: Employee
+bmad: true
+status: active
+---
 # Employee — Copertura Modello / Migration / Seeder / Factory
 
 Stato aggiornato: 2026-07-24

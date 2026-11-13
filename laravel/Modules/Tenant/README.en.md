@@ -1,3 +1,14 @@
+---
+title: "README.en"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README.en"
+issues: []
+discussions: []
+---
+
 # Tenant
 
 The **Tenant** module enables multi-tenancy in the Laraxot modular monolith: it resolves the current tenant (domain / path / context), isolates configuration and data, and provides the foundation to run multiple organizations on a single installation.

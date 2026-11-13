@@ -7,37 +7,36 @@ namespace Modules\Media\Actions\Diagnostic\S3;
 use Aws\Exception\AwsException;
 use Aws\S3\S3Client;
 use Exception;
-use Modules\Media\Actions\Diagnostic\Support\CreateFilesystemS3ClientAction;
+use Modules\Media\Actions\Diagnostic\Aws\CreateFilesystemS3ClientAction;
 use Spatie\QueueableAction\QueueableAction;
 
 class TestBucketPermissionsAction
 {
     use QueueableAction;
 
+    private const string TITLE = '🔒 S3 Permissions';
+
     /**
      * @return array<string, mixed>
      */
     public function execute(string $testKeyPrefix = 'test-permissions-'): array
     {
-        $results = [
-            'title' => '🔒 S3 Permissions',
-            'status' => 'info',
-            'data' => [],
-        ];
-
         try {
-            $s3 = app(CreateFilesystemS3ClientAction::class)->execute();
-            $bucket = app(CreateFilesystemS3ClientAction::class)->bucket();
+            $client = app(CreateFilesystemS3ClientAction::class);
             $testKey = $testKeyPrefix.time().'.txt';
 
-            $results['data'] = $this->probePermissions($s3, $bucket, $testKey);
-            $results['status'] = 'success';
+            return [
+                'title' => self::TITLE,
+                'status' => 'success',
+                'data' => $this->probePermissions($client->execute(), $client->bucket(), $testKey),
+            ];
         } catch (Exception $exception) {
-            $results['status'] = 'error';
-            $results['data']['Error'] = $exception->getMessage();
+            return [
+                'title' => self::TITLE,
+                'status' => 'error',
+                'data' => ['Error' => $exception->getMessage()],
+            ];
         }
-
-        return $results;
     }
 
     /**
@@ -47,8 +46,9 @@ class TestBucketPermissionsAction
     {
         $data = [];
         $data['ListBucket'] = $this->probeListBucket($s3, $bucket);
+        $data = array_merge($data, $this->probeObjectCrud($s3, $bucket, $testKey));
 
-        return array_merge($data, $this->probeObjectCrud($s3, $bucket, $testKey));
+        return $data;
     }
 
     private function probeListBucket(S3Client $s3, string $bucket): string

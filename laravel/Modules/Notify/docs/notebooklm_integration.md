@@ -1,3 +1,15 @@
+---
+title: "notebooklm integration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "notebooklm integration"
+issues: []
+discussions: []
+status: draft
+---
+
 # NotebookLM Integration
 
 ## Overview

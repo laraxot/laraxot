@@ -1,10 +1,21 @@
+---
+title: "analisi colori header footer"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "analisi colori header footer"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📸 Analisi Visiva Header & Footer - FixCity vs Bootstrap Italia
 # 📸 Analisi Visiva Header & Footer - Notify vs Bootstrap Italia
 
 ## Data: {{ date('Y-m-d H:i:s') }}
 
 ---
-
 ## 🎯 Problema Identificato
 
 **URL Reference**: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html  

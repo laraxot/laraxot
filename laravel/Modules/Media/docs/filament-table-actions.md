@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Convenzioni per le Table Actions in Filament"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "filament table actions"
 related:
   - "./webm.md"
+status: draft
 ---
 # Convenzioni per le Table Actions in Filament
 

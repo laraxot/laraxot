@@ -1,9 +1,17 @@
 ---
+title: "sto00f basedaterangemodel"
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sto00f basedaterangemodel"
+issues: []
+discussions: []
 agent: opencode
 type: session-summary
 module: Sigma
 topic: Sto00f -> BaseDateRangeModel
 date: 2026-06-15
+status: draft
 ---
 
 # Sto00f — refactoring su BaseDateRangeModel

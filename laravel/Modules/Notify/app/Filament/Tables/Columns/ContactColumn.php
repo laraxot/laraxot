@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Tables\Columns;
 
-use Filament\Tables\Columns\ViewColumn;
 use Modules\Notify\Enums\ContactTypeEnum;
+use Modules\Xot\Filament\Tables\Columns\XotBaseViewColumn;
 
 /**
  * ContactColumn - Colonna Filament riutilizzabile per rendering contatti
@@ -24,7 +24,7 @@ use Modules\Notify\Enums\ContactTypeEnum;
  *
  * @since 2025-01-06
  */
-class ContactColumn extends ViewColumn
+class ContactColumn extends XotBaseViewColumn
 {
     /**
      * View Blade per il rendering della colonna

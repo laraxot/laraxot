@@ -1,3 +1,9 @@
+---
+title: "Employee - WHOISINTODAYWIDGET"
+module: Employee
+bmad: true
+status: active
+---
 # WhoIsInTodayWidget (CHI C'È OGGI)
 
 ## Overview

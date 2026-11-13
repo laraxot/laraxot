@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Changelog"
 module: "Media"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "changelog"
 related:
   - "./webm.md"
+status: superseded
+superseded_by: CHANGELOG.md
 ---
 # Changelog
 

@@ -8,17 +8,21 @@ qmd: "volt-folio errore voltdirectivemissingexception in folio"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Errore VoltDirectiveMissingException in Folio
 
 ## Il Problema
@@ -75,5 +79,5 @@ The [@volt] directive is required when using Volt anonymous components in Folio 
 ## Collegamenti
 - [Documentazione Volt](https://livewire.laravel.com/docs/volt)
 - [Documentazione Folio](https://laravel.com/docs/folio)
-- [Best Practices Routing](./routing-best-practices-2.md) 
->>>>>>> 87273113 (.)
+- [Best Practices Routing](./routing-best-practices.md) 
+- [Best Practices Routing](./routing-best-practices-architettura-volt-folio-filament.md) 

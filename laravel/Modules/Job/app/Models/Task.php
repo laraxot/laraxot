@@ -13,6 +13,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
 use Modules\Job\Database\Factories\TaskFactory;
 use Modules\Job\Models\Traits\FrontendSortable;
+use Modules\Job\Models\Traits\TaskMutators;
+use Modules\Job\Models\Traits\TaskRelations;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Models\Traits\HasXotFactory;
@@ -100,6 +102,8 @@ class Task extends BaseModel
     use HasXotFactory;
 
     use Notifiable;
+    use TaskMutators;
+    use TaskRelations;
 
     protected $fillable = [
         'id',
@@ -164,65 +168,27 @@ class Task extends BaseModel
     /**
      * Activated Accessor.
      */
-    public function getActivatedAttribute(): bool
-    {
-        return (bool) $this->is_active;
-    }
 
     /**
      * Upcoming Accessor.
      *
      * throws \Exception
      */
-    public function getUpcomingAttribute(): string
-    {
-        // return CronExpression::factory($this->getCronExpression())->getNextRunDate()->format('Y-m-d H:i:s');
-        return 'preso';
-    }
-
     /**
      * Frequencies Relation.
      *
      * @return HasMany<Frequency, $this>
      */
-    public function frequencies(): HasMany
-    {
-        return $this->hasMany(Frequency::class, 'task_id', 'id')->with('parameters');
-    }
 
     /**
      * Results Relation.
      *
      * @return HasMany<Result, $this>
      */
-    public function results(): HasMany
-    {
-        return $this->hasMany(Result::class, 'task_id', 'id');
-    }
 
     /**
      * Returns the most recent result entry for this task.
      */
-    public function getLastResultAttribute(): ?Result
-    {
-        $res = $this->results()->orderBy('id', 'desc')->first();
-        if ($res === null) {
-            return null;
-        }
-        Assert::isInstanceOf($res, Result::class);
-
-        return $res;
-    }
-
-    public function getAverageRuntimeAttribute(): float
-    {
-        /**
-         * @var float $avg_duration
-         */
-        $avg_duration = $this->results()->avg('duration');
-
-        return (float) $avg_duration;
-    }
 
     /**
      * Route notifications for the mail channel.

@@ -28,7 +28,11 @@ class Image
                 TextInput::make('alt')->columnSpanFull(),
                 TextInput::make('caption')->columnSpanFull(),
             ])
+<<<<<<< HEAD
             ->columns('form' === $context ? 2 : 1);
+=======
+            ->columns($context === 'form' ? 2 : 1);
+>>>>>>> f5ffd8b4 (.)
     }
 
     /**

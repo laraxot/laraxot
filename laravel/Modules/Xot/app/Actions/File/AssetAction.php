@@ -18,12 +18,20 @@ class AssetAction
     private XotData $xot;
 
     /**
+<<<<<<< HEAD
      * Gestisce i percorsi degli asset, copiandoli nella directory pubblica se necessario.
+=======
+     * Risolve il percorso pubblico di un asset (servito dal symlink verso la cartella `public` del modulo/tema).
+>>>>>>> laraxot/dev
      *
      * @param  string  $path  Il percorso dell'asset
      * @return string Il percorso pubblico dell'asset
      *
+<<<<<<< HEAD
      * @throws Exception Se il file sorgente non esiste o non può essere copiato
+=======
+     * @throws Exception Se l'asset del modulo non esiste né in `public/` né in `resources/`
+>>>>>>> laraxot/dev
      */
     public function execute(string $path): string
     {
@@ -77,6 +85,7 @@ class AssetAction
         $theme = $this->xot->{$ns};
         Assert::string($theme, 'Il tema deve essere una stringa');
 
+<<<<<<< HEAD
         $themeResourcePath = 'Themes/'.$theme.'/resources/'.$ns_after;
         $filename_from = app(FixPathAction::class)->execute(base_path($themeResourcePath));
 
@@ -89,6 +98,9 @@ class AssetAction
         Assert::string($asset, '['.__LINE__.']['.class_basename(static::class).']');
 
         return $asset;
+=======
+        return $this->publicUrl('themes/'.$theme.'/'.$ns_after);
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -102,6 +114,7 @@ class AssetAction
             $module_path = Str::beforeLast($module_path, '/');
         }
 
+<<<<<<< HEAD
         $filename_from = app(FixPathAction::class)->execute($module_path.'/resources/'.$ns_after);
 
         if (! File::exists($filename_from)) {
@@ -117,11 +130,59 @@ class AssetAction
         $forceCopy = app()->environment() !== 'production';
         $this->copyAsset($filename_from, $filename_to, $assetPath, $forceCopy);
 
+=======
+<<<<<<< .merge_file_Un8UMe
+        // Asset statici del modulo in Modules/<Modulo>/public: serviti dal symlink
+        // public_html/assets/<modulo> -> ../../laravel/Modules/<Modulo>/public (deploy.sh). Niente copia.
+        $publicFile = app(FixPathAction::class)->execute($module_path.'/public/'.$ns_after);
+        if (File::exists($publicFile)) {
+            $asset = Str::replace(url(''), '', asset('assets/'.Str::lower($ns).'/'.$ns_after));
+            Assert::string($asset, '['.__LINE__.']['.class_basename(static::class).']');
+
+            return $asset;
+        }
+
+        // Ripiego storico: file in resources/ copiato in public_html/assets/<ns>.
+=======
+>>>>>>> .merge_file_zvSUle
+        $filename_from = app(FixPathAction::class)->execute($module_path.'/resources/'.$ns_after);
+        $filename_public = app(FixPathAction::class)->execute($module_path.'/public/'.$ns_after);
+
+        if (! File::exists($filename_public) && ! File::exists($filename_from)) {
+            if (isRunningTestBench()) {
+                return $originalPath;
+            }
+            throw new Exception('file ['.$filename_public.'] not Exists , path ['.$originalPath.']');
+        }
+
+<<<<<<< .merge_file_Un8UMe
+        return $this->publicUrl('assets/'.$ns.'/'.$ns_after);
+=======
+        // public_html/assets/<modulo in minuscolo> -> ../../laravel/Modules/<Modulo>/public (deploy.sh, regola in CLAUDE.md):
+        // il nome del link e' sempre minuscolo, quindi anche l'URL (su Linux `assets/Xot` e `assets/xot` sono cartelle diverse).
+        return $this->publicUrl('assets/'.Str::lower($ns).'/'.$ns_after);
+>>>>>>> .merge_file_zvSUle
+    }
+
+    /**
+     * Nothing is copied: public_html/assets/<module> and public_html/themes/<Theme> are symlinks
+<<<<<<< .merge_file_Un8UMe
+     * (xot:module-link, xot:theme-link) to the module/theme `public` folder, so the URL is
+=======
+     * (created by deploy.sh) to the module/theme `public` folder, so the URL is
+>>>>>>> .merge_file_zvSUle
+     * served straight from there. The old per-request copy wrote through the symlink and failed
+     * with "Failed to open stream" whenever the link was missing or broken.
+     */
+    private function publicUrl(string $assetPath): string
+    {
+>>>>>>> laraxot/dev
         $asset = Str::replace(url(''), '', asset($assetPath));
         Assert::string($asset, '['.__LINE__.']['.class_basename(static::class).']');
 
         return $asset;
     }
+<<<<<<< HEAD
 
     /**
      * Copies an asset file if it doesn't exist or if forced.
@@ -204,4 +265,6 @@ class AssetAction
             file from ['.$from.']
             file to ['.$to.']', $e->getCode(), $e, );
     }
+=======
+>>>>>>> laraxot/dev
 }

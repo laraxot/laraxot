@@ -1,3 +1,15 @@
+---
+title: "DOCUMENTATION ANALYSIS AND IMPROVEMENT PLAN"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "DOCUMENTATION ANALYSIS AND IMPROVEMENT PLAN"
+issues: []
+discussions: []
+status: draft
+---
+
 # Documentation Analysis and Improvement Plan
 
 **Date**: 2026-03-13  
@@ -5,7 +17,6 @@
 **Owner**: Architecture Team
 
 ---
-
 ## 📊 Executive Summary
 
 ### Current State
@@ -393,6 +404,7 @@ echo "  snake_case: $(find laravel/Modules/*/docs/ -name '*_*.md' | wc -l)"
 
 - [DOCUMENTATION_GOVERNANCE.md](DOCUMENTATION_GOVERNANCE.md) - Governance framework
 - [agents.md](../../../agents.md) - Agent guidelines
+- [agents.md](../../../AGENTS.md) - Agent guidelines
 - [.windsurfrules](../../../.windsurfrules) - IDE rules
 
 ---

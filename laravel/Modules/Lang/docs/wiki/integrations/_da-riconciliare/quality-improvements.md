@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Miglioramenti Qualità Codice - Modulo Lang - 2025-01-06"
 module: "Lang"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "redundancy analysis"
 related:
   - "./italian-text-refined-audit-report.md"
+  - "../../../italian-text-refined-audit-report.md"
+status: draft
 ---
 # Miglioramenti Qualità Codice - Modulo Lang - 2025-01-06
 
@@ -46,6 +50,7 @@ Migliorare la qualità del codice del modulo Lang utilizzando PHPStan livello 10
 Rilevato con `laravel/tools/phpmd.sh` e il ruleset di progetto (`laravel/phpmd-ruleset.xml`), rimisurato il 2026-08-05:
 
 - ~~**CouplingBetweenObjects**: 16, soglia 13~~ → **non è un finding**: il ruleset di progetto porta la soglia a **20** (default PHPMD 13). Misurato con il ruleset sbagliato. Soglie reali: [phpmd-laraxot-conventions](../../../../../bashscripts/ai/wiki/concepts/phpmd-laraxot-conventions.md)
+- ~~**CouplingBetweenObjects**: 16, soglia 13~~ → **non è un finding**: il ruleset di progetto porta la soglia a **20** (default PHPMD 13). Misurato con il ruleset sbagliato. Soglie reali: [phpmd-laraxot-conventions](../../../../../../../bashscripts/ai/wiki/concepts/phpmd-laraxot-conventions.md)
 - **CyclomaticComplexity**: `execute()` a 34, soglia 10 (era 35)
 - **NPathComplexity**: `execute()` a 25.878.528, soglia 200 (era 51.757.056)
 - **ExcessiveMethodLength**: `execute()` 133 righe, soglia 100 (era 178)
@@ -77,6 +82,7 @@ Rilevato con `laravel/tools/phpmd.sh` e il ruleset di progetto (`laravel/phpmd-r
 - [Index Documentation](./index.md)
 - [Best Practices](./BEST_PRACTICES.md)
 - [Troubleshooting](troubleshooting.md)
+- [Troubleshooting](../../../troubleshooting.md)
 
 *Ultimo aggiornamento: 2025-01-06*
 *Ultimo aggiornamento: [DATE]*

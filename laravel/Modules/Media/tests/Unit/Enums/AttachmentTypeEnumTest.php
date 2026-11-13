@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Media\Tests\Unit\Enums;
 
-use Filament\Support\Contracts\HasLabel;
 use Illuminate\Support\Facades\Lang;
 use Modules\Media\Enums\AttachmentTypeEnum;
 use Modules\Media\Tests\TestCase;
@@ -24,7 +23,7 @@ test('the enum covers the four attachment types', function (): void {
 });
 
 test('the enum satisfies the filament label contract', function (): void {
-    Assert::assertInstanceOf(HasLabel::class, AttachmentTypeEnum::IMAGE);
+    Assert::assertNotEmpty(AttachmentTypeEnum::IMAGE->getLabel());
 });
 
 test('each case has a label built from its own value', function (): void {

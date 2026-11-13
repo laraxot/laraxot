@@ -1,3 +1,9 @@
+---
+title: "Employee - UPCOMINGSCHEDULEWIDGET"
+module: Employee
+bmad: true
+status: active
+---
 # UpcomingScheduleWidget (PROSSIMI 7 GIORNI)
 
 ## Overview

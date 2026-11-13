@@ -1,3 +1,9 @@
+---
+title: "Employee - SESSION-SUMMARY"
+module: Employee
+bmad: true
+status: active
+---
 # Session Summary - Employee Module Analysis & Documentation
 
 **Data**: 2025-01-06  

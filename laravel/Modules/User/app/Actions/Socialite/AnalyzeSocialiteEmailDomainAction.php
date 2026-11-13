@@ -15,7 +15,7 @@ final class AnalyzeSocialiteEmailDomainAction
 
     public function execute(SocialiteUserContract $oauthUser, string $provider): SocialiteEmailDomainAnalysisData
     {
-        if ('' === $provider) {
+        if ($provider === '') {
             throw new \InvalidArgumentException('Il provider SSO non può essere vuoto');
         }
 
@@ -31,12 +31,12 @@ final class AnalyzeSocialiteEmailDomainAction
         string $domainKind,
     ): bool {
         $email = $oauthUser->getEmail();
-        if (! is_string($email) || '' === $email) {
+        if (! is_string($email) || $email === '') {
             return false;
         }
 
         $configuredDomain = config(sprintf('services.%s.email_domains.%s.tld', $provider, $domainKind));
-        if (! is_string($configuredDomain) || '' === $configuredDomain) {
+        if (! is_string($configuredDomain) || $configuredDomain === '') {
             return false;
         }
 

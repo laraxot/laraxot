@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "TemporaryUploadPathGenerator Documentation"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "temporary upload path generator"
 related:
   - "./webm.md"
+status: draft
 ---
 # TemporaryUploadPathGenerator Documentation
 

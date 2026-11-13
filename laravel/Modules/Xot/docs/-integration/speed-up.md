@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "speed_up"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "speed_up xot"
+---
+>>>>>>> laraxot/dev
 # speed_up
 
 <!-- Contenuto migrato da _docs/speed_up.txt -->

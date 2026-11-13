@@ -1,3 +1,15 @@
+---
+title: "sync remote repo test plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sync remote repo test plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Sync Remote Repo - Test Plan
 
 > **Purpose**: Verify that sync_remote_repo.sh and GitHub Actions workflow work correctly  
@@ -6,7 +18,6 @@
 > **Date**: 2026-03-13
 
 ---
-
 ## 🎯 Test Objectives
 
 ### Primary Goal

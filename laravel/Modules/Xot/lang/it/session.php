@@ -9,8 +9,13 @@ return [
         'group' => [
             'name' => 'Admin',
         ],
+<<<<<<< HEAD
         'label' => 'session.navigation',
         'icon' => 'session.navigation',
+=======
+        'label' => 'Sessione',
+        'icon' => 'heroicon-o-user',
+>>>>>>> laraxot/dev
         'sort' => 21,
     ],
     'pages' => [
@@ -36,7 +41,10 @@ return [
             'tooltip' => 'Identificativo univoco del record',
             'helper_text' => '',
             'description' => '',
+<<<<<<< HEAD
             'placeholder' => 'id',
+=======
+>>>>>>> laraxot/dev
         ],
         'created_at' => [
             'label' => 'Data Creazione',
@@ -50,6 +58,7 @@ return [
             'helper_text' => '',
             'description' => '',
         ],
+<<<<<<< HEAD
         'user_id' => [
             'label' => 'user_id',
             'placeholder' => 'user_id',
@@ -80,21 +89,30 @@ return [
             'helper_text' => 'last_activity',
             'description' => 'last_activity',
         ],
+=======
+>>>>>>> laraxot/dev
     ],
     'actions' => [
         'create' => [
             'label' => 'Crea Session',
             'icon' => 'create',
+<<<<<<< HEAD
             'tooltip' => 'create',
+=======
+>>>>>>> laraxot/dev
         ],
         'edit' => [
             'label' => 'Modifica Session',
             'icon' => 'edit',
+<<<<<<< HEAD
             'tooltip' => 'edit',
+=======
+>>>>>>> laraxot/dev
         ],
         'delete' => [
             'label' => 'Elimina Session',
             'icon' => 'delete',
+<<<<<<< HEAD
             'tooltip' => 'delete',
         ],
         'createAnother' => [
@@ -111,6 +129,17 @@ return [
             'label' => 'view',
             'icon' => 'view',
             'tooltip' => 'view',
+=======
+        ],
+        'createAnother' => [
+            'icon' => 'createAnother',
+        ],
+        'save' => [
+            'icon' => 'save',
+        ],
+        'view' => [
+            'icon' => 'view',
+>>>>>>> laraxot/dev
         ],
     ],
 ];

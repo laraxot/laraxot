@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Sicurezza"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Sicurezza"
+---
+>>>>>>> laraxot/dev
 # Sicurezza
 
 ## Configurazione Base
@@ -204,4 +217,8 @@ class SecurityMonitor
         ]);
     }
 }
+<<<<<<< HEAD
 ```
+=======
+``` 
+>>>>>>> laraxot/dev

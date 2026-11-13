@@ -8,17 +8,21 @@ qmd: "login-widget-fix loginwidget form data binding fix"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # LoginWidget Form Data Binding Fix
 
 ## Problema
@@ -65,7 +69,6 @@ Per `LoginWidget`, che non ha un modello associato (`getFormModel()` restituisce
 ### 2. Schema con chiavi stringa e NO label/placeholder
 
 Corretto lo schema per usare array associativo con chiavi stringa (conforme alle regole Filament). **MAI usare `->label()`, `->placeholder()` o `->helperText()`**: il LangServiceProvider risolve automaticamente da `user::login_widget.fields.*` (file `lang/it/login_widget.php`).
->>>>>>> 87273113 (.)
 
 ```php
 #[\Override]
@@ -165,7 +168,8 @@ Tutti i widget Filament che estendono `XotBaseWidget` e usano `statePath('data')
 
 ## Riferimenti
 
-- [XotBaseWidget Documentation](../../xot/docs/readme.md)
+- [XotBaseWidget Documentation](../../Xot/docs/README.md)
+- [XotBaseWidget Documentation](../../Xot/docs/README.md)
 - [Filament Form State Management](https://filamentphp.com/docs/3.x/forms/fields#state-management)
 - [RegisterWidget Implementation](../app/Filament/Widgets/Auth/RegisterWidget.php) - Esempio corretto
 
@@ -186,5 +190,3 @@ Tutti i widget Filament che estendono `XotBaseWidget` e usano `statePath('data')
 - [x] Documentazione aggiornata
 
 ---
-
->>>>>>> 87273113 (.)

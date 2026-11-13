@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< HEAD
     'actions' => [
         'create' => [
             'label' => 'create',
@@ -11,36 +12,55 @@ return [
     'fields' => [
         'delete' => [
             'label' => 'delete',
+=======
+    'fields' => [
+        'delete' => [
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'edit' => [
+<<<<<<< HEAD
             'label' => 'edit',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'view' => [
+<<<<<<< HEAD
             'label' => 'view',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'attach' => [
+<<<<<<< HEAD
             'label' => 'attach',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'detach' => [
+<<<<<<< HEAD
             'label' => 'detach',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'create' => [
+<<<<<<< HEAD
             'label' => 'create',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',

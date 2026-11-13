@@ -1,10 +1,15 @@
 ---
+qmd: "SUPER MUCCA COMPLETION"
+issues: []
+discussions: []
 title: "SUPER MUCCA MODE - COMPLETAMENTO TOTALE"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: super_mucca_completion.md
 ---
 
 # 🐄⚡ SUPER MUCCA MODE - COMPLETAMENTO TOTALE

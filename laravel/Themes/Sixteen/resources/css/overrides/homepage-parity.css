@@ -258,7 +258,7 @@ body {
   height: 82px;
   flex: 0 0 82px;
   display: block;
-  background: url('/themes/Sixteen/images/logo.svg') center center / contain no-repeat;
+  background: url('../../../public/images/logo.svg') center center / contain no-repeat;
 }
 
 .dc-homepage-parity .it-brand-wrapper .it-brand-text,

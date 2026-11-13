@@ -1,4 +1,4 @@
-@section('title', __('Accedi'))
+@section('title', __('pub_theme::header.guest.login.label'))
 
 <div class="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
@@ -7,15 +7,15 @@
             class="mx-auto h-12 w-12 text-primary-600"
         />
         
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            {{ __('Accedi a FixCity') }}
-        </h2>
+        <h1 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            {{ __('pub_theme::auth_components.login.title.label') }}
+        </h1>
         
         @if (Route::has('register'))
             <p class="mt-2 text-center text-sm text-gray-600">
-                {{ __('Non hai un account?') }}
+                {{ __('pub_theme::auth_components.login.no_account.label') }}
                 <x-filament::link href="{{ route('register') }}">
-                    {{ __('Registrati') }}
+                    {{ __('pub_theme::header.guest.register.label') }}
                 </x-filament::link>
             </p>
         @endif
@@ -35,7 +35,7 @@
                             </div>
                             <div class="ml-3">
                                 <h3 class="text-sm font-medium text-danger-800">
-                                    {{ __('Le credenziali fornite non sono corrette.') }}
+                                    {{ __('pub_theme::auth_components.login.invalid_credentials.message') }}
                                 </h3>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                             wire:loading
                             class="h-4 w-4 mr-2"
                         />
-                        <span>{{ __('Accedi') }}</span>
+                        <span>{{ __('pub_theme::header.guest.login.label') }}</span>
                     </button>
 
                     @if (Route::has('password.request'))
@@ -62,7 +62,7 @@
                                 href="{{ route('password.request') }}"
                                 class="text-sm"
                             >
-                                {{ __('Password dimenticata?') }}
+                                {{ __('pub_theme::auth_components.login.forgot_password.label') }}
                             </x-filament::link>
                         </div>
                     @endif

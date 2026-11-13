@@ -16,6 +16,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Themes\Sixteen\Enums\MunicipalEventLocationTypeEnum;
+use Themes\Sixteen\Enums\MunicipalEventStatusEnum;
+use Themes\Sixteen\Enums\MunicipalEventTypeEnum;
 
 /**
  * Modello per gli eventi municipali (Municipal Event)
@@ -104,64 +107,6 @@ class MunicipalEvent extends Model
 {
     /** @use HasFactory<Factory<self>> */
     use HasFactory, SoftDeletes;
-
-    /**
-     * Tipologie di evento secondo AGID
-     */
-    public const EVENT_TYPES = [
-        'council_meeting' => 'Consiglio Comunale',
-        'committee_meeting' => 'Commissione',
-        'public_meeting' => 'Assemblea Pubblica',
-        'public_hearing' => 'Udienza Pubblica',
-        'conference' => 'Conferenza',
-        'workshop' => 'Workshop',
-        'seminar' => 'Seminario',
-        'training' => 'Formazione',
-        'cultural_event' => 'Evento Culturale',
-        'sports_event' => 'Evento Sportivo',
-        'celebration' => 'Celebrazione',
-        'ceremony' => 'Cerimonia',
-        'exhibition' => 'Mostra/Esposizione',
-        'fair' => 'Fiera',
-        'festival' => 'Festival',
-        'competition' => 'Concorso',
-        'tender_opening' => 'Apertura Gara',
-        'public_consultation' => 'Consultazione Pubblica',
-        'other' => 'Altro',
-    ];
-
-    /**
-     * Stati dell'evento
-     */
-    public const EVENT_STATUSES = [
-        'scheduled' => 'Programmato',
-        'confirmed' => 'Confermato',
-        'cancelled' => 'Annullato',
-        'postponed' => 'Rinviato',
-        'in_progress' => 'In Corso',
-        'completed' => 'Completato',
-        'draft' => 'Bozza',
-    ];
-
-    /**
-     * Tipologie di location
-     */
-    public const LOCATION_TYPES = [
-        'physical' => 'Fisica',
-        'online' => 'Online',
-        'hybrid' => 'Ibrida',
-        'tbd' => 'Da Definire',
-    ];
-
-    /**
-     * Livelli di visibilità
-     */
-    public const VISIBILITY_LEVELS = [
-        'public' => 'Pubblico',
-        'restricted' => 'Riservato',
-        'internal' => 'Interno',
-        'invite_only' => 'Solo su Invito',
-    ];
 
     protected $table = 'sixteen_municipal_events';
 
@@ -658,7 +603,7 @@ class MunicipalEvent extends Model
     protected function eventTypeName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::EVENT_TYPES[$this->event_type] ?? $this->event_type
+            get: fn () => MunicipalEventTypeEnum::tryFrom($this->event_type)?->getLabel() ?? $this->event_type
         );
     }
 
@@ -670,7 +615,7 @@ class MunicipalEvent extends Model
     protected function eventStatusName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::EVENT_STATUSES[$this->event_status] ?? $this->event_status
+            get: fn () => MunicipalEventStatusEnum::tryFrom($this->event_status)?->getLabel() ?? $this->event_status
         );
     }
 
@@ -682,7 +627,7 @@ class MunicipalEvent extends Model
     protected function locationTypeName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::LOCATION_TYPES[$this->location_type] ?? $this->location_type
+            get: fn () => MunicipalEventLocationTypeEnum::tryFrom($this->location_type)?->getLabel() ?? $this->location_type
         );
     }
 

@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Media\Datas;
 
-use Modules\Media\Actions\SaveAttachmentsAction;
 use Spatie\LaravelData\Data;
 
 /**
- * Typed parameter bag for {@see SaveAttachmentsAction}.
+ * Typed bag of attachments to persist on one disk.
+ *
+ * `SaveAttachmentsAction::execute()` still takes the legacy parallel arrays:
+ * {@see self::fromNamesAndPaths()} converts that shape into this one.
  */
 class SaveAttachmentsData extends Data
 {

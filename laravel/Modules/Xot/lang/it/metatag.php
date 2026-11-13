@@ -7,13 +7,22 @@ return [
     'pages' => 'Pagine',
     'widgets' => 'Widgets',
     'navigation' => [
+<<<<<<< HEAD
         'name' => 'metatag',
+=======
+        'name' => 'Metatag',
+>>>>>>> laraxot/dev
         'plural' => 'metatags',
         'group' => [
             'name' => 'Admin',
         ],
+<<<<<<< HEAD
         'label' => 'metatag.navigation',
         'icon' => 'metatag.navigation',
+=======
+        'label' => 'Meta Tag',
+        'icon' => 'heroicon-o-document-text',
+>>>>>>> laraxot/dev
         'sort' => 95,
     ],
     'fields' => [
@@ -224,6 +233,7 @@ return [
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+<<<<<<< HEAD
             'placeholder' => 'key',
         ],
         'color' => [
@@ -239,6 +249,18 @@ return [
             'helper_text' => '',
             'description' => '',
             'placeholder' => 'hex',
+=======
+        ],
+        'color' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'hex' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+>>>>>>> laraxot/dev
         ],
         'timezone' => [
             'label' => 'Fuso orario',
@@ -328,12 +350,20 @@ return [
             ],
         ],
         'save' => [
+<<<<<<< HEAD
             'label' => 'save',
             'icon' => 'save',
             'tooltip' => 'save',
+=======
+            'icon' => 'save',
+>>>>>>> laraxot/dev
         ],
     ],
     'label' => 'Metatag',
     'plural_label' => 'Metatag (Plurale)',
+<<<<<<< HEAD
     'title' => 'metatag',
+=======
+    'title' => 'Metatag',
+>>>>>>> laraxot/dev
 ];

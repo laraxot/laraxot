@@ -9,11 +9,7 @@ use Modules\Activity\Models\Activity;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
 uses(\Modules\Activity\Tests\TestCase::class);
-=======
-uses(TestCase::class);
->>>>>>> 13cf1831 (.)
 
 /**
  * Verifica il contratto pubblico del model Activity (connessione, mass assignment, query scopes).

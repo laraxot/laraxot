@@ -1,10 +1,15 @@
 ---
+qmd: "theme system dynamic"
+issues: []
+discussions: []
 title: "Theme System - Dynamic Theme Registration"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: theme-system-dynamic.md
 ---
 
 # 🎨 Theme System - Dynamic Theme Registration

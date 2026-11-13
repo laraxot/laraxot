@@ -1,11 +1,22 @@
-# Perfection Audit — Notify Module
+---
+title: "PERFECTION AUDIT"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PERFECTION AUDIT"
+issues: []
+discussions: []
+status: draft
+---
+
+# Perfection Audit: Notify Module
 
 **Data**: 2026-09-01
 **Scope**: `laravel/Modules/Notify/docs/`
 **Metodo**: BMAD document-project + fix_docs_naming_convention.sh
 
 ---
-
 ## TL;DR
 
 Notify ha **1,516 file .md** (100% uppercase) con **44 stub vuoti**. Secondo modulo più bloat dopo Xot. Tutti i file violano la convenzione `kebab-case.md`. Ogni file è `SOMETHING.md` maiuscolo.
@@ -26,7 +37,7 @@ Notify ha **1,516 file .md** (100% uppercase) con **44 stub vuoti**. Secondo mod
 
 ## Problemi P0
 
-### P0.1 — 100% uppercase
+### P0.1: 100% uppercase
 Tutti i file in `Notify/docs/` sono maiuscoli. Esempi:
 - `ACTIONS.md`
 - `AGENTS.md`
@@ -35,10 +46,10 @@ Tutti i file in `Notify/docs/` sono maiuscoli. Esempi:
 - `PROJECT-STRUCTURE.md`
 - `PRD.md`
 
-### P0.2 — 44 stub vuoti
+### P0.2: 44 stub vuoti
 Residui di iterazioni agenti, 0-100 byte ciascuno.
 
-### P0.3 — Nessun indice consolidato
+### P0.3: Nessun indice consolidato
 Nessun `00-index.md` o `INDEX.md` (a parte l'uppercase `INDEX.md`). Impossibile trovare contenuti.
 
 ---
@@ -53,12 +64,12 @@ Nessun `00-index.md` o `INDEX.md` (a parte l'uppercase `INDEX.md`). Impossibile 
 
 ## Piano bonifica
 
-### Fase 1 — Emergency
+### Fase 1: Emergency
 ```bash
 find laravel/Modules/Notify/docs -name "*.md" -size -100c -delete
 ```
 
-### Fase 2 — Rename ricorsivo
+### Fase 2: Rename ricorsivo
 ```bash
 find laravel/Modules/Notify/docs -type f -name "*.md" \
   -not -name "README.md" \
@@ -70,7 +81,7 @@ find laravel/Modules/Notify/docs -type f -name "*.md" \
   done
 ```
 
-### Fase 3 — Consolidamento
+### Fase 3: Consolidamento
 - Merge `INDEX.md` → `00-index.md`
 - Merge `AGENTS.md` → `agents.md`
 - Merge `ACTIONS.md` → `actions.md`

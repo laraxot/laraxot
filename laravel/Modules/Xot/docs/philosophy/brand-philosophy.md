@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 
+=======
+---
+title: "Filosofia del Brand nel Sistema"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, philosophy]
+qmd: "Filosofia del Brand nel Sistema"
+---
+>>>>>>> laraxot/dev
 # Filosofia del Brand nel Sistema
 
 ## Principi Fondamentali
@@ -122,7 +135,11 @@ class ThemeManager
     {
         $colors = $metatag->getThemeColors();
         $settings = $metatag->getThemeSettings();
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> laraxot/dev
         $this->applyColors($colors);
         $this->applySettings($settings);
     }
@@ -170,4 +187,8 @@ class BrandValidator
 - [MetatagData](../datas/metatag-data.md)
 - [ApplyMetatagToPanelAction](../actions/applymetatagtopanelaction.md)
 - [Best Practices](../best-practices.md)
+<<<<<<< HEAD
 - [Theme Management](../theme/theme_management.md)
+=======
+- [Theme Management](../theme/theme_management.md) 
+>>>>>>> laraxot/dev

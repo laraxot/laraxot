@@ -1,11 +1,10 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://github.com/protonemedia/laravel-ffmpeg
  * Azione per convertire un video utilizzando il modello MediaConvert.
  */
-
-declare(strict_types=1);
 
 namespace Modules\Media\Actions\Video;
 
@@ -39,9 +38,9 @@ class ConvertVideoByMediaConvertAction
         }
 
         // Instanziamo il formato prima di usarlo
-        $formatInstance = new $format();
+        $formatInstance = new $format;
 
-        $export = FFMpeg::fromDisk($data->disk)
+        FFMpeg::fromDisk($data->disk)
             ->open($data->file)
             ->export()
             ->onProgress(function (float $percentage, float $remaining, float $rate) use ($record): void {
@@ -51,15 +50,10 @@ class ConvertVideoByMediaConvertAction
                     'rate' => $rate,
                 ]);
             })
+            ->addFilter('-preset', 'ultrafast')
             // Utilizziamo il formato istanziato come parametro
-            ->inFormat($formatInstance);
-
-        // addFilter() e' inoltrato al driver PHPFFMpeg via __call/@mixin: la sua
-        // firma dichiarata restituisce il tipo del driver, non del MediaExporter.
-        // Non lo si concatena per non perdere il tipo corretto di $export.
-        $export->addFilter('-preset', 'ultrafast');
-
-        $export->save($file_new);
+            // @phpstan-ignore-next-line method.notFound
+            ->save($file_new, $formatInstance);
 
         $record->update([
             'status' => 'completed',

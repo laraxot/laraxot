@@ -16,6 +16,7 @@ related:
   - ../conventions/README.md
   - ../rules/README.md
   - naming-conventions.md
+status: draft
 ---
 # Convenzioni dei Path in Laravel e 
 

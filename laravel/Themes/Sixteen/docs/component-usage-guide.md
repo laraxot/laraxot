@@ -1,3 +1,15 @@
+---
+title: "component usage guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "component usage guide"
+issues: []
+discussions: []
+status: draft
+---
+
 # Bootstrap Italia Component Usage Guide
 ## Advanced Examples and Best Practices for Sixteen Theme
 
@@ -291,5 +303,4 @@ window.addEventListener('bootstrapItaliaReady', function(e) {
 ```
 
 ---
-
 *This guide is part of the Sixteen theme Bootstrap Italia compliance project. For technical support, refer to the main documentation or create an issue in the project repository.*

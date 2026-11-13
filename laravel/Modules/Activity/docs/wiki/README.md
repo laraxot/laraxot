@@ -10,7 +10,6 @@ qmd: "llm wiki (module) activity"
 
 # LLM Wiki (module)
 
-<<<<<<< HEAD
 [![Module](https://img.shields.io/badge/Module-LLM Wiki (module)-8B0000.svg)]()
 [![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
 [![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
@@ -84,13 +83,3 @@ qmd search "Activity <argomento>" --limit 5
 
 I documenti sorgente grezzi stanno in `../raw/` (immutabile). Prima di creare una pagina nuova controllare [INDEX.md](./INDEX.md) e le pagine di `concepts/` per non duplicarla.
 >>>>>>> .merge_file_2ycT6I
-=======
-This folder is the module's LLM wiki (docs/wiki). Use it to store synthesized, curated docs optimized for LLM ingestion.
-
-Structure:
-- raw/: original source docs
-- wiki/: distilled summaries and canonical pages for LLM
-- archived/: historical/obsolete docs
-
-Use qmd to serve or convert these documents (https://github.com/tobi/qmd).
->>>>>>> 13cf1831 (.)

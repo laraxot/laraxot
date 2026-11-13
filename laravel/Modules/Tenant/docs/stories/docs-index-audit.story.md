@@ -1,4 +1,8 @@
 ---
+tags: [documentation]
+qmd: "docs index audit.story"
+issues: []
+discussions: []
 title: "Tenant: audit e riorganizzazione indice docs/"
 type: story
 module: Tenant

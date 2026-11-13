@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Widgets;
 
+<<<<<<< HEAD
+=======
+use Filament\Tables\Columns\Column;
+use Filament\Tables\Columns\ColumnGroup;
+use Filament\Tables\Columns\Layout\Component as LayoutComponent;
+>>>>>>> laraxot/dev
 use Filament\Widgets\Concerns\InteractsWithPageFilters;
 use Filament\Widgets\TableWidget as FilamentTableWidget;
 use Illuminate\Database\Eloquent\Model;
@@ -19,6 +25,22 @@ abstract class XotBaseTableWidget extends FilamentTableWidget
     use TransTrait;
 
     /**
+<<<<<<< HEAD
+=======
+     * Colonne della tabella: le sottoclassi le dichiarano qui e `HasXotTable::table()` le legge.
+     *
+     * @return array<int|string, Column|ColumnGroup|LayoutComponent>
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+     */
+    #[\Override]
+    protected function getTableColumns(): array
+    {
+        return [];
+    }
+
+    /**
+>>>>>>> laraxot/dev
      * Ascolta evento di aggiornamento filtri.
      *
      * @param  array<string, mixed>  $filters

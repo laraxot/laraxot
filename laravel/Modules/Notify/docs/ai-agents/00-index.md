@@ -1,3 +1,15 @@
+---
+title: "00 index"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "00 index"
+issues: []
+discussions: []
+status: draft
+---
+
 # AI agents docs index
 
 **Path**: `bashscripts/ai/.agents/docs/`
@@ -33,8 +45,9 @@
 |------|-------|
 | [accessor-auto-persistence.md](./accessor-auto-persistence.md) | Pattern SACRO Accessor con Auto-Persistenza |
 | [ai-agents/index.md](./ai-agents/index.md) | Master index regole condivise Claude/Gemini/Qwen |
-| [ai-agents/shared/accessor-mutator.md](./ai-agents/shared/accessor-mutator.md) | Pattern Accessor/Mutator — Livelli 1–4, auto-persistenza |
+| [ai-agents/shared/accessor-mutator.md](./ai-agents/shared/accessor-mutator.md) | Pattern Accessor/Mutator: Livelli 1–4, auto-persistenza |
 | [ai-agents/shared/critical-rules.md](./ai-agents/shared/critical-rules.md) | PHPStan L10, array syntax, DI, MCP |
+| [ai-agents/shared/critical-rules.md](./critical-rules.md) | PHPStan L10, array syntax, DI, MCP |
 | [ai-agents/shared/translation-rules.md](./ai-agents/shared/translation-rules.md) | Struttura obbligatoria 5 chiavi per campo |
 
 ## Riferimenti bidirezionali
@@ -47,5 +60,11 @@
 - [QWEN.md](../../../QWEN.md)
 - [Predict docs index](../../../laravel/Modules/Predict/docs/00-INDEX.md)
 - [TwentyOne docs index](../../../laravel/Themes/TwentyOne/docs/00-INDEX.md)
+- [AGENTS.md](../../../../AGENTS.md)
+- [CLAUDE.md](../../../../CLAUDE.md)
+- [GEMINI.md](../../../../GEMINI.md)
+- [QWEN.md](../../../QWEN.md)
+- [Predict docs index](../../../laravel/Modules/Predict/docs/00-INDEX.md)
+- [TwentyOne docs index](../../../../Themes/TwentyOne/docs/00-INDEX.md)
 - [Frontend rules index](../rules/frontend/00-INDEX.md)
 - [Semantic CSS Rule](../rules/frontend/semantic-css-rule.md)

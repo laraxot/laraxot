@@ -1,3 +1,15 @@
+---
+title: "phpstan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Phpstan
 
 PHPStan è già installato nella cartella laravel e si esegue con ./vendor/bin/phpstan. Analizza ogni modulo in laravel/Modules (dal livello 1 al 10) in modo sistematico e strutturato, salvando i report JSON nella cartella docs/phpstan di ciascun modulo (es: laravel/Modules/Auth/docs/phpstan/level_1.json). Prima di correggere, studia e aggiorna la documentazione specifica del modulo e crea collegamenti bidirezionali con la documentazione generale nella cartella docs della root, che funge da indice centrale.

@@ -6,7 +6,6 @@ namespace Modules\Activity\Filament\Resources\StoredEventResource\Tables;
 
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
-<<<<<<< HEAD
 <<<<<<< .merge_file_BQmGKC
 use Modules\Activity\Models\StoredEvent;
 =======
@@ -26,21 +25,12 @@ class StoredEventsTable extends XotBaseResourceTable
 
     /**
      * @return array<string, Column>
-=======
-use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
-
-class StoredEventsTable extends XotBaseResourceTable
-{
-    /**
-     * @return array<int|string, Column>
->>>>>>> 13cf1831 (.)
      */
     public function getTableColumns(): array
     {
         $eventPropertiesView = 'activity::filament.tables.columns.event-properties';
 
         return [
-<<<<<<< HEAD
 <<<<<<< .merge_file_BQmGKC
             'event_class' => TextColumn::make('event_class')->searchable()->sortable()->wrap(),
             'aggregate_uuid' => TextColumn::make('aggregate_uuid')->searchable()->sortable()->copyable(),
@@ -60,13 +50,6 @@ class StoredEventsTable extends XotBaseResourceTable
             'created_at' => TextColumn::make('created_at')->dateTime(),
             'updated_at' => TextColumn::make('updated_at')->dateTime(),
 >>>>>>> .merge_file_h4AXSP
-=======
-            'id' => TextColumn::make('id')->searchable()->sortable(),
-            'event_class' => TextColumn::make('event_class')->searchable(),
-            'properties' => TextColumn::make('properties')->limit(50),
-            'created_at' => TextColumn::make('created_at')->dateTime(),
-            'updated_at' => TextColumn::make('updated_at')->dateTime(),
->>>>>>> 13cf1831 (.)
         ];
     }
 }

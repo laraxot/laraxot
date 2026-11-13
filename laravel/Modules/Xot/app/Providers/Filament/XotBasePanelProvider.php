@@ -20,8 +20,15 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Str;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 // Remove if not used elsewhere implicitly
+<<<<<<< HEAD
 use Modules\Xot\Actions\Panel\ApplyMetatagToPanelAction;
 use Modules\Xot\Datas\XotData;
+=======
+use Modules\Xot\Actions\Filament\GetSidebarStateScriptAction;
+use Modules\Xot\Actions\Panel\ApplyMetatagToPanelAction;
+use Modules\Xot\Datas\XotData;
+use Modules\Xot\Filament\AvatarProviders\InitialsAvatarProvider;
+>>>>>>> laraxot/dev
 use Webmozart\Assert\Assert;
 
 abstract class XotBasePanelProvider extends PanelProvider
@@ -54,6 +61,28 @@ abstract class XotBasePanelProvider extends PanelProvider
      */
     protected bool $discoverModuleComponents = true;
 
+<<<<<<< HEAD
+=======
+    /**
+     * Sottocartella di `app/Filament` da cui scoprire i componenti.
+     *
+     * Null per il pannello admin del modulo (`app/Filament/Resources`, ...). Un pannello
+     * trasversale ospitato dal modulo (es. 'Customer') scopre solo
+     * `app/Filament/Customer/{Resources,Pages,Widgets,Clusters}`, cosi' non eredita le
+     * resource amministrative e l'admin non eredita le sue.
+     */
+    protected ?string $componentsDirectory = null;
+
+    /**
+     * Tenancy Filament del pannello (https://filamentphp.com/docs/5.x/users/tenancy).
+     *
+     * Spenta per i pannelli di gestione; accesa per le aree in cui l'utente lavora
+     * dentro un tenant (es. il cliente che vede solo i suoi dati). Il modello tenant
+     * e' `XotData::getTenantClass()`, identificato nell'URL dallo slug.
+     */
+    protected bool $hasTenancy = false;
+
+>>>>>>> laraxot/dev
     public function panel(Panel $panel): Panel
     {
         $moduleNamespace = $this->getModuleNamespace();
@@ -68,6 +97,11 @@ abstract class XotBasePanelProvider extends PanelProvider
             ->passwordReset()
             // ->emailVerification()
             // ->profile()
+<<<<<<< HEAD
+=======
+            // avatar predefinito generato in locale: il provider di Filament carica ui-avatars.com a ogni pagina (DCP-139)
+            ->defaultAvatarProvider(InitialsAvatarProvider::class)
+>>>>>>> laraxot/dev
             ->sidebarFullyCollapsibleOnDesktop();
 
         $panel = app(ApplyMetatagToPanelAction::class)->execute(panel: $panel);
@@ -77,9 +111,12 @@ abstract class XotBasePanelProvider extends PanelProvider
             ->globalSearch($this->globalSearch)
             ->readOnlyRelationManagersOnResourceViewPagesByDefault(false)
             ->navigation($this->navigation)
+<<<<<<< HEAD
             // ->tenant($teamClass)
             // ->tenant($teamClass,ownershipRelationship:'users')
             // ->tenant($teamClass)
+=======
+>>>>>>> laraxot/dev
             ->id($this->panelId ?? $moduleLow.'::admin')
             ->path($this->panelPath ?? $moduleLow.'/admin')
             ->middleware([
@@ -120,6 +157,7 @@ abstract class XotBasePanelProvider extends PanelProvider
                     </script>
                     HTML,
                 scopes: Login::class,
+<<<<<<< HEAD
             );
 
         if ($this->discoverModuleComponents) {
@@ -140,6 +178,31 @@ abstract class XotBasePanelProvider extends PanelProvider
                     base_path('Modules/'.$this->module.'/app/Filament/Clusters'),
                     sprintf('%s\\Filament\\Clusters', $moduleNamespace),
                 );
+=======
+            )
+            ->renderHook(
+                PanelsRenderHook::HEAD_END,
+                fn (): string => app(GetSidebarStateScriptAction::class)->execute(),
+            );
+
+        if ($this->hasTenancy) {
+            $panel->tenant(XotData::make()->getTenantClass(), slugAttribute: 'slug');
+        }
+
+        if ($this->discoverModuleComponents) {
+            $path = base_path('Modules/'.$this->module.'/app/Filament');
+            $namespace = $moduleNamespace.'\\Filament';
+            if ($this->componentsDirectory !== null) {
+                $path .= '/'.$this->componentsDirectory;
+                $namespace .= '\\'.$this->componentsDirectory;
+            }
+
+            $panel
+                ->discoverResources($path.'/Resources', $namespace.'\\Resources')
+                ->discoverPages($path.'/Pages', $namespace.'\\Pages')
+                ->discoverWidgets($path.'/Widgets', $namespace.'\\Widgets')
+                ->discoverClusters($path.'/Clusters', $namespace.'\\Clusters');
+>>>>>>> laraxot/dev
         }
 
         return $panel;

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_pOYZKu
 <<<<<<< HEAD
 # Activity Module - User Research
@@ -220,13 +219,10 @@ Legal teams need configurable retention periods.
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 # User Research: Activity Module
 
 ## 🔬 Research Goals
 Identify user needs for Activity functionality.
-<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
@@ -238,5 +234,3 @@ Identify user needs for Activity functionality.
 ## 🔬 Research Goals
 Identify user needs for Activity functionality.
 >>>>>>> .merge_file_UXAm4Q
-=======
->>>>>>> 13cf1831 (.)

@@ -1,3 +1,15 @@
+---
+title: "farmshops integration complete"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "farmshops integration complete"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🗺️ FARMSHOPS.EU INTEGRATION - COMPLETE
 
 **Data**: 2025-10-02  
@@ -5,7 +17,6 @@
 **Status**: ✅ INTEGRATION COMPLETE  
 
 ---
-
 ## 🎯 OBIETTIVO RAGGIUNTO
 
 Analizzato il progetto farmshops.eu e integrato le sue migliori pratiche e tecnologie in FixCity per creare una mappa interattiva di livello mondiale per la visualizzazione delle segnalazioni.

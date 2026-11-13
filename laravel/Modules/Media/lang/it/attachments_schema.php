@@ -95,10 +95,7 @@ return [
             'tooltip' => '',
         ],
         'doctor_certificate' => [
-            'description' => 'doctor_certificate',
             'helper_text' => 'doctor_certificate1',
-            'label' => 'doctor_certificate',
-            'placeholder' => 'doctor_certificate',
             'tooltip' => '',
         ],
     ],
@@ -125,7 +122,7 @@ return [
         ],
         'label' => 'Attachments Schema',
         'sort' => 1,
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
     ],
     'actions' => [
         'create' => [

@@ -1,10 +1,14 @@
 ---
+qmd: "git commit push rule"
+issues: []
+discussions: []
 title: "Git Commit & Push Workflow - AI Agent Rules"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Git Commit & Push Workflow - AI Agent Rules

@@ -13,13 +13,14 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
+uses(TestCase::class);
 describe('NotifyTheme\Attachment\Pdf', function () {
     it('can be instantiated', function () {
         Assert::assertTrue(class_exists(Pdf::class));
     });
 
     it('uses QueueableAction trait', function () {
-        $traits = class_uses(AttachmentData::class);
+        $traits = class_uses(Pdf::class);
         Assert::assertArrayHasKey(QueueableAction::class, $traits);
     });
 

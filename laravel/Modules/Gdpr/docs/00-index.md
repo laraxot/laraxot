@@ -1,25 +1,10 @@
----
-title: "Gdpr — indice della documentazione"
-description: "Documentazione del modulo Gdpr: funzionalita del modulo."
-module: Gdpr
-tags: [gdpr, documentazione, modulo, laraxot]
-status: active
-repository: https://github.com/laraxot/module_gdpr_fila5
-related:
-  - ./00-index.md
-  - ./index.md
-  - ../../../../docs/wiki/audits/docs-redundancy-audit.md
-issues: https://github.com/laraxot/module_gdpr_fila5/issues
-discussions: https://github.com/laraxot/module_gdpr_fila5/discussions
----
-
 # 📚 **Indice Documentazione Modulo Gdpr**
 
 **Status**: ✅ PHPStan Level 10 Compliant
 **Module Version**: 2.3.0
 
 ## 🎯 **Lettura Essenziale**
-1. [README.md](./README.md) - Panoramica completa e Business Logic dei consensi.
+1. [README.md](./readme.md) - Panoramica completa e Business Logic dei consensi.
 2. [roadmap.md](./roadmap.md) - Qualità del codice e obiettivi di conformità.
 3. [philosophy.md](./philosophy.md) - Privacy by Design e Commandment della compliance.
 
@@ -38,7 +23,7 @@ discussions: https://github.com/laraxot/module_gdpr_fila5/discussions
 - 🧹 **[PHPMD Analysis](./phpmd-report.txt)** - Risoluzione della complessità nei modelli di privacy.
 
 ## 📦 **Pacchetti Composer**
-- [Riferimento composer packages](../../../../bashscripts/ai/wiki/memories/composer-packages-reference.md)
+- [Riferimento completo](../../../../docs/composer-packages-reference.md) | [Inventario 312 pacchetti](../../../../docs/architecture/composer-packages-full-inventory.md)
 - `statikbe/laravel-cookie-consent` - Banner cookie consent
 
 ## 📊 Documenti Product & Development
@@ -59,9 +44,9 @@ discussions: https://github.com/laraxot/module_gdpr_fila5/discussions
 | [USER_RESEARCH.md](./USER_RESEARCH.md) | User Research |
 
 ## 🔗 **Moduli Correlati**
-- [User](../../User/docs/README.md) - Soggetti dei consensi.
-- [Activity](../../Activity/docs/README.md) - Log di sistema integrato.
-- [Xot](../../Xot/docs/README.md) - Base framework e trait UUID.
+- [User](../../user/docs/readme.md) - Soggetti dei consensi.
+- [Activity](../../activity/docs/readme.md) - Log di sistema integrato.
+- [Xot](../../xot/docs/readme.md) - Base framework e trait UUID.
 # Documentation Index
 - [AGENTS.md](../../../../AGENTS.md) - Project guidelines
 

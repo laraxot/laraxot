@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+---
+title: "Xot - laraxot-architecture.md"
+module: Xot
+bmad: true
+status: active
+---
+>>>>>>> laraxot/dev
 # Laraxot Architecture: Philosophy, Religion, Politics, and Zen
 
 ## Core Philosophy (Filosofia)

@@ -6,29 +6,22 @@ namespace Modules\Media\Tests\Unit\Actions;
 
 use Exception;
 use Illuminate\Support\Facades\Storage;
-use Mockery;
-use Mockery\MockInterface;
 use Modules\Media\Actions\SaveAttachmentsAction;
 use Modules\Media\Models\Media;
 use Modules\Media\Tests\TestCase;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\MediaCollections\FileAdder;
 
-uses(TestCase::class)->group('no-media-db');
+uses(TestCase::class);
 
 beforeEach(function (): void {
     Storage::fake('attachments');
 });
 
-afterEach(function (): void {
-    Mockery::close();
-});
-
 it('executes save attachments successfully', function (): void {
-    $action = new SaveAttachmentsAction();
+    $action = new SaveAttachmentsAction;
 
-    /** @var MockInterface&HasMedia $record */
-    $record = $this->makeHasMediaRecordMock();
+    $record = $this->makeTestMock(HasMedia::class);
 
     $media = $this->makeTestMock(Media::class);
     $media->method('getPathRelativeToRoot')->willReturn('media/test-path');
@@ -37,8 +30,8 @@ it('executes save attachments successfully', function (): void {
     $fileAdder->method('usingFileName')->willReturnSelf();
     $fileAdder->method('toMediaCollection')->willReturn($media);
 
-    $record->shouldReceive('addMedia')->andReturn($fileAdder);
-    $record->shouldReceive('update')->andReturn(true);
+    $record->method('addMedia')->willReturn($fileAdder);
+    $record->method('update')->willReturn(true);
 
     $attachments = ['invoice', 'contract'];
     $data = [
@@ -56,21 +49,19 @@ it('executes save attachments successfully', function (): void {
 });
 
 it('handles empty attachments', function (): void {
-    $action = new SaveAttachmentsAction();
+    $action = new SaveAttachmentsAction;
 
-    /** @var MockInterface&HasMedia $record */
-    $record = $this->makeHasMediaRecordMock();
-    $record->shouldReceive('update')->never();
+    $record = $this->makeTestMock(HasMedia::class);
+    $record->expects($this->never())->method('update');
 
     $action->execute($record, [], [], 'attachments');
 });
 
 it('skips nonexistent files', function (): void {
-    $action = new SaveAttachmentsAction();
+    $action = new SaveAttachmentsAction;
 
-    /** @var MockInterface&HasMedia $record */
-    $record = $this->makeHasMediaRecordMock();
-    $record->shouldReceive('update')->never();
+    $record = $this->makeTestMock(HasMedia::class);
+    $record->expects($this->never())->method('update');
 
     $attachments = ['invoice'];
     $data = [
@@ -81,11 +72,10 @@ it('skips nonexistent files', function (): void {
 });
 
 it('handles storage errors gracefully', function (): void {
-    $action = new SaveAttachmentsAction();
+    $action = new SaveAttachmentsAction;
 
-    /** @var MockInterface&HasMedia $record */
-    $record = $this->makeHasMediaRecordMock();
-    $record->shouldReceive('addMedia')->andThrow(new Exception('Storage error'));
+    $record = $this->makeTestMock(HasMedia::class);
+    $record->method('addMedia')->willThrowException(new Exception('Storage error'));
 
     $attachments = ['invoice'];
     $data = [
@@ -99,10 +89,9 @@ it('handles storage errors gracefully', function (): void {
 });
 
 it('uses correct disk', function (): void {
-    $action = new SaveAttachmentsAction();
+    $action = new SaveAttachmentsAction;
 
-    /** @var MockInterface&HasMedia $record */
-    $record = $this->makeHasMediaRecordMock();
+    $record = $this->makeTestMock(HasMedia::class);
 
     $media = $this->makeTestMock(Media::class);
     $media->method('getPathRelativeToRoot')->willReturn('media/test-path');
@@ -111,8 +100,8 @@ it('uses correct disk', function (): void {
     $fileAdder->method('usingFileName')->willReturnSelf();
     $fileAdder->method('toMediaCollection')->willReturn($media);
 
-    $record->shouldReceive('addMedia')->andReturn($fileAdder);
-    $record->shouldReceive('update')->andReturn(true);
+    $record->method('addMedia')->willReturn($fileAdder);
+    $record->method('update')->willReturn(true);
 
     $attachments = ['invoice'];
     $data = [
@@ -128,10 +117,9 @@ it('uses correct disk', function (): void {
 });
 
 it('cleans up temp files', function (): void {
-    $action = new SaveAttachmentsAction();
+    $action = new SaveAttachmentsAction;
 
-    /** @var MockInterface&HasMedia $record */
-    $record = $this->makeHasMediaRecordMock();
+    $record = $this->makeTestMock(HasMedia::class);
 
     $media = $this->makeTestMock(Media::class);
     $media->method('getPathRelativeToRoot')->willReturn('media/test-path');
@@ -140,8 +128,8 @@ it('cleans up temp files', function (): void {
     $fileAdder->method('usingFileName')->willReturnSelf();
     $fileAdder->method('toMediaCollection')->willReturn($media);
 
-    $record->shouldReceive('addMedia')->andReturn($fileAdder);
-    $record->shouldReceive('update')->andReturn(true);
+    $record->method('addMedia')->willReturn($fileAdder);
+    $record->method('update')->willReturn(true);
 
     $attachments = ['invoice'];
     $data = [
@@ -151,13 +139,14 @@ it('cleans up temp files', function (): void {
     Storage::disk('attachments')->put('temp/invoice.pdf', 'fake content');
 
     $action->execute($record, $attachments, $data, 'attachments');
+
+    expect(Storage::disk('attachments')->exists('temp/invoice.pdf'))->toBeTrue();
 });
 
 it('handles multiple attachments', function (): void {
-    $action = new SaveAttachmentsAction();
+    $action = new SaveAttachmentsAction;
 
-    /** @var MockInterface&HasMedia $record */
-    $record = $this->makeHasMediaRecordMock();
+    $record = $this->makeTestMock(HasMedia::class);
 
     $media = $this->makeTestMock(Media::class);
     $media->method('getPathRelativeToRoot')->willReturn('media/test-path');
@@ -166,8 +155,8 @@ it('handles multiple attachments', function (): void {
     $fileAdder->method('usingFileName')->willReturnSelf();
     $fileAdder->method('toMediaCollection')->willReturn($media);
 
-    $record->shouldReceive('addMedia')->andReturn($fileAdder);
-    $record->shouldReceive('update')->andReturn(true);
+    $record->method('addMedia')->willReturn($fileAdder);
+    $record->method('update')->willReturn(true);
 
     $attachments = ['invoice', 'contract', 'receipt'];
     $data = [

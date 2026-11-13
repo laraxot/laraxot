@@ -11,10 +11,21 @@ use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
 use Illuminate\Support\Arr;
+<<<<<<< HEAD
 use Modules\Xot\Datas\EnvData;
 
 class EnvWidget extends XotBaseSchemaWidget
 {
+=======
+use Illuminate\Support\Facades\Artisan;
+use Modules\Xot\Datas\EnvData;
+use Modules\Xot\Filament\Traits\SuperAdminOnlyTrait;
+
+class EnvWidget extends XotBaseSchemaWidget
+{
+    use SuperAdminOnlyTrait;
+
+>>>>>>> laraxot/dev
     /** @var array<string, mixed>|null */
     public ?array $data = [];
 
@@ -22,8 +33,12 @@ class EnvWidget extends XotBaseSchemaWidget
     public array $only = [];
 
     /** @var view-string */
+<<<<<<< HEAD
     /** @var view-string */
     protected string $view;
+=======
+    protected string $view = 'xot::filament.widgets.env';
+>>>>>>> laraxot/dev
 
     /**
      * Raggruppamento visivo dei campi per Section, stile Laravel — un
@@ -48,12 +63,52 @@ class EnvWidget extends XotBaseSchemaWidget
         $this->form->fill($this->data);
     }
 
+<<<<<<< HEAD
     public function submit(): void
     {
         if (! is_array($this->data)) {
             return;
         }
         EnvData::make()->update($this->data);
+=======
+    public static function canView(): bool
+    {
+        return static::canAccess();
+    }
+
+    public function submit(): void
+    {
+        abort_unless(static::canAccess(), 403);
+
+        try {
+            // getState(), non $this->data: lo stato Livewire è modificabile dal client, il form no.
+            EnvData::make()->update($this->form->getState());
+        } catch (\InvalidArgumentException $e) {
+            Notification::make()
+                ->title($e->getMessage())
+                ->danger()
+                ->send();
+
+            return;
+        }
+
+        // Scrivere nel .env non basta: con la configurazione in cache
+        // (`php artisan config:cache`, che è la norma in produzione) Laravel
+        // legge i valori dal file compilato in bootstrap/cache/config.php e il
+        // .env nuovo viene ignorato. Senza questa riga l'utente cambiava
+        // MAIL_HOST dal pannello, non succedeva niente, e concludeva che la
+        // pagina non funziona — proprio il motivo per cui questa pagina esiste
+        // (module_quaeris_fila5#47: nessun accesso SSH al server).
+        //
+        // `config:clear` e non `config:cache`: è quello che fa già
+        // SocialiteProviderSettingsPage dopo aver scritto la sua
+        // configurazione, e soprattutto non può lasciare una cache a metà. Il
+        // prezzo è che da qui al prossimo deploy la configurazione si rilegge a
+        // ogni richiesta, cioè un po' più lenta: è il verso giusto in cui
+        // sbagliare, rispetto a un'impostazione che non si applica in silenzio.
+        Artisan::call('config:clear');
+
+>>>>>>> laraxot/dev
         Notification::make()
             ->title('Saved successfully')
             ->success()

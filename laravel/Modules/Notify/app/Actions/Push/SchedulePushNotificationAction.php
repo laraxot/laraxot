@@ -7,7 +7,7 @@ namespace Modules\Notify\Actions\Push;
 use DateTime;
 use Illuminate\Support\Facades\Cache;
 use Modules\Notify\Datas\PushNotificationData;
-use Modules\Notify\Jobs\SendScheduledPushNotification;
+use Spatie\QueueableAction\ActionJob;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -31,7 +31,7 @@ class SchedulePushNotificationAction
             'data' => $data,
             'schedule_time' => $scheduleTime->getTimestamp()], $scheduleTime);
 
-        SendScheduledPushNotification::dispatch($jobId)
+        dispatch(new ActionJob(app(SendScheduledPushNotificationAction::class), [$jobId]))
             ->delay($scheduleTime);
 
         return $jobId;

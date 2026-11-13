@@ -1,10 +1,14 @@
 ---
+qmd: "factory"
+issues: []
+discussions: []
 title: "Analisi del Pattern Factory per le Notifiche"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Analisi del Pattern Factory per le Notifiche

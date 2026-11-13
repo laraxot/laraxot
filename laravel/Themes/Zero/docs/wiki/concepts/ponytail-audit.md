@@ -9,6 +9,14 @@ related:
   - "./code-redundancy-theme.md"
   - "./context-overflow-prevention.md"
   - "./method-name-homonyms.md"
+id: zero-docs-wiki-concepts-ponytail-audit
+slug: ponytail-audit
+description: "Delta tema only here. Ranked list, gate e remediation globale negli hub progetto."
+document_type: guide
+category: documentation
+status: active
+issues: []
+discussions: []
 ---
 
 # Ponytail audit — Zero

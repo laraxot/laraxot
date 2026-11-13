@@ -1,13 +1,31 @@
 ---
+<<<<<<< HEAD
 title: "Xot — BMAD Quick Reference"
+=======
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "quick reference"
+issues: []
+discussions: []
+title: "Xot: BMAD Quick Reference"
+>>>>>>> laraxot/dev
 description: "Comandi rapidi BMAD per il modulo Xot"
 module: "Xot"
 alias: "xot"
 documentation_date: "2026-05-27"
 bmad_version: "6.2.0"
+<<<<<<< HEAD
 ---
 
 # Xot — BMAD Quick Reference
+=======
+status: draft
+---
+
+# Xot: BMAD Quick Reference
+>>>>>>> laraxot/dev
 
 ## Comandi Rapidi
 
@@ -51,14 +69,23 @@ bmad-quick-spec "Specifica tecnica XotBaseResource"
 
 ## Cartelle Chiave
 
+<<<<<<< HEAD
 - `_bmad/` — moduli, agenti, skill, config
 - `_bmad-output/` — artefatti generati
 - `docs/bmad/` — questa documentazione
+=======
+- `docs/bmad/`: questa documentazione BMAD
+- `_bmad-output/`: artefatti generati (repo root)
+- `_bmad/`: framework BMAD esterno (non incluso nel repo; installato via BMAD CLI)
+>>>>>>> laraxot/dev
 
 ## Vedi Anche
 
 - [setup-guide](setup-guide.md)
+<<<<<<< HEAD
 - [merge proposals](MERGE_PROPOSAL_AI_VS_AIASSISTANT.md)
+=======
+>>>>>>> laraxot/dev
 
 ---
 

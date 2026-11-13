@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_CLOCK_WIDGET_BADGE_IMPLEMENTATION"
+module: Employee
+bmad: true
+status: active
+---
 # TimeClockWidget Badge Implementation - Completed
 
 ## Panoramica delle Migliorie Implementate

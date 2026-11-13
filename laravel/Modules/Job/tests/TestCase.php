@@ -7,8 +7,8 @@ namespace Modules\Job\Tests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
-use Modules\User\Models\User;
 use Modules\Job\Providers\JobServiceProvider;
+use Modules\User\Models\User;
 use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
 use PHPUnit\Framework\Assert;
@@ -28,6 +28,11 @@ abstract class TestCase extends XotBaseTestCase
     /** @var list<string> */
     protected $connectionsToTransact = ['job', 'sqlite', 'xot', 'user'];
 
+    /**
+     * Action instance under test.
+     *
+     * @var mixed Must stay `mixed`: overrides XotBaseTestCase::$action (property types are invariant).
+     */
     public mixed $action = null;
 
     /**
@@ -44,9 +49,13 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
+        // Prima di parent::setUp(): DatabaseTransactions apre le transazioni subito; senza questo la
+        // connessione `user` (mysql) va in "Connection refused" dove non c'e' MariaDB (vedi XotBaseTestCase).
+        $this->prepareSharedSqliteForTesting();
+
         parent::setUp();
 
-        $database = database_path('fixcity_data.sqlite');
+        $database = self::sharedSqlitePath();
 
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);

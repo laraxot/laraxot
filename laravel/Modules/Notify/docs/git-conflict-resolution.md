@@ -1,9 +1,16 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "git conflict resolution"
+issues: []
+discussions: []
 title: "Audit collisioni Git committate in bashscripts"
 type: report
 module: Notify
 created_at: '2026-07-31'
 updated_at: '2026-07-31'
+status: draft
 ---
 
 # Audit collisioni Git committate in bashscripts

@@ -1,3 +1,15 @@
+---
+title: "docs1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs1"
+issues: []
+discussions: []
+status: draft
+---
+
 # Docs1
 
 # Regole Operative Complete per Laraxot
@@ -20,7 +32,6 @@
 ### 13. RIFERIMENTI E COLLEGAMENTI
 
 ---
-
 ## 1. ARCHITETTURA E STRUTTURA
 
 ### 1.1 Stack Tecnologico Laraxot
@@ -814,12 +825,12 @@ protected function casts(): array
 - [Architecture Overview](../../docs/architecture-overview.md)
 - [Coding Standards](../../docs/coding-standards.md)
 - [Testing Guidelines](../../docs/testing-guidelines.md)
-- [Filament Best Practices](../../docs/filament-best-practices.md)
+- [Filament Best Practices](../raw/history/filament-best-practices.md)
 
 ### 13.2 Moduli Principali
-- [Xot Module](../../laravel/Modules/Xot/docs/README.md)
-- [User Module](../../laravel/Modules/User/docs/README.md)
-- [UI Module](../../laravel/Modules/UI/docs/README.md)
+- [Xot Module](../../../Xot/docs/README.md)
+- [User Module](../../../User/docs/README.md)
+- [UI Module](../../../UI/docs/README.md)
 - [{MainModule} Module](../../laravel/Modules/{MainModule}/docs/README.md)
 
 ### 13.3 Tools e Script

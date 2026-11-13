@@ -1,4 +1,7 @@
 ---
+qmd: "filament custom field binding modifiers theme boundary"
+issues: []
+discussions: []
 title: "Filament Custom Field — State Binding Modifiers: confine tema/modulo"
 type: concept
 confidence: verified
@@ -7,6 +10,7 @@ updated: 2026-04-28
 tags: [filament5, custom-field, entangle, state-binding, livewire, alpine, blade, theme-boundary]
 source: "https://filamentphp.com/docs/5.x/forms/custom-fields"
 canonical: "Modules/Geo/docs/wiki/concepts/filament5-custom-field-entangle-contract.md"
+status: stub
 ---
 
 # Filament Custom Field — State Binding Modifiers: confine tema/modulo

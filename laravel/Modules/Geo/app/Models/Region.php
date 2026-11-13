@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\File;
+use Modules\Geo\Actions\GeoData\GetItalianMunicipalitiesPathAction;
 use Modules\Geo\Database\Factories\RegionFactory;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
@@ -16,14 +17,14 @@ use Modules\Xot\Models\Traits\HasXotFactory;
 use Sushi\Sushi;
 
 /**
- * @property int                       $id
- * @property string|null               $name
- * @property ProfileContract|null      $creator
+ * @property int $id
+ * @property string|null $name
+ * @property ProfileContract|null $creator
  * @property Collection<int, Province> $provinces
- * @property int|null                  $provinces_count
- * @property ProfileContract|null      $updater
+ * @property int|null $provinces_count
+ * @property ProfileContract|null $updater
  *
- * @method static RegionFactory          factory($count = null, $state = [])
+ * @method static RegionFactory factory($count = null, $state = [])
  * @method static Builder<static>|Region newModelQuery()
  * @method static Builder<static>|Region newQuery()
  * @method static Builder<static>|Region query()
@@ -36,7 +37,6 @@ use Sushi\Sushi;
  */
 class Region extends BaseModel
 {
-    /**  */
     use HasXotFactory;
     use Sushi;
 
@@ -54,11 +54,26 @@ class Region extends BaseModel
     ];
 
     /**
+     * Cache su file della tabella Sushi: senza, ogni richiesta che usa il modello rileggeva il JSON dei
+     * comuni (1,9 MB) e reinseriva le righe in un database in memoria (salvataggio di un indirizzo > 10 s).
+     * La cache si rigenera quando cambia il file dei comuni.
+     */
+    protected function sushiShouldCache(): bool
+    {
+        return true;
+    }
+
+    protected function sushiCacheReferencePath(): string
+    {
+        return app(GetItalianMunicipalitiesPathAction::class)->execute();
+    }
+
+    /**
      * @return array<int, array<string, mixed>>
      */
     public function getRows(): array
     {
-        $path = module_path('Geo', 'resources/json/comuni.json');
+        $path = app(GetItalianMunicipalitiesPathAction::class)->execute();
         if (! file_exists($path)) {
             return [];
         }
@@ -87,7 +102,7 @@ class Region extends BaseModel
                 continue;
             }
 
-            if (null === $id || null === $name) {
+            if ($id === null || $name === null) {
                 continue;
             }
 

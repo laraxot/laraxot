@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Form Schema Checker"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, development]
+qmd: "Form Schema Checker"
+---
+>>>>>>> laraxot/dev
 # Form Schema Checker
 
 ## Perché
@@ -37,6 +50,12 @@ Lo script produce:
 - Gestione appropriata dei valori di ritorno nullable
 
 ## Collegamenti Correlati
+<<<<<<< HEAD
 - [Filament Best Practices](../FILAMENT_BEST_PRACTICES.md)
 - [XotBaseResource Documentation](../architecture/xot_base_resource.md)
 - [PHPStan Configuration](../phpstan-usage.md)
+=======
+- [Filament Best Practices](../filament_best_practices.md)
+- [XotBaseResource Documentation](../architecture/xot_base_resource.md)
+- [PHPStan Configuration](../phpstan-usage.md) 
+>>>>>>> laraxot/dev

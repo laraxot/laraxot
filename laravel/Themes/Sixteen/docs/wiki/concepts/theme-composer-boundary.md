@@ -1,4 +1,7 @@
 ---
+qmd: "theme composer boundary"
+issues: []
+discussions: []
 title: "Theme Composer Boundary"
 type: concept
 theme: Sixteen
@@ -8,7 +11,8 @@ updated: 2026-06-30
 related:
   - ../../../../Modules/Xot/docs/wiki/concepts/composer-root-skeleton-modular.md
   - ../../../../Modules/Xot/docs/wiki/concepts/theme-psr4-autoload-without-merge.md
-  - ../../../TwentyOne/docs/wiki/concepts/theme-composer-boundary.md
+  - ../../../../TwentyOne/docs/wiki/concepts/theme-composer-boundary.md
+status: draft
 ---
 
 # Theme Composer Boundary

@@ -1,4 +1,7 @@
 ---
+qmd: "segnalazioni elenco filament tabs"
+issues: []
+discussions: []
 title: "Segnalazioni elenco — tab Design Comuni su /it (Alpine.js)"
 type: concept
 status: active

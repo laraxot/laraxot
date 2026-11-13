@@ -1,10 +1,15 @@
 ---
+qmd: "master implementation plan"
+issues: []
+discussions: []
 title: "NOTIFY - MASTER IMPLEMENTATION PLAN"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: master-implementation-plan.md
 ---
 
 # 🎯 NOTIFY - MASTER IMPLEMENTATION PLAN

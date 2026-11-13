@@ -1,3 +1,9 @@
+---
+title: "Employee - 04-GESTIONE-PRESENZE"
+module: Employee
+bmad: true
+status: active
+---
 # 04 - Gestione Presenze
 
 ## Panoramica

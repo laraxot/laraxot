@@ -35,8 +35,12 @@ class GetUserActivitiesAction
             ->whereIn('causer_id', [$user->getKey()])
             ->where('causer_type', $user::class)
             ->latest()
+<<<<<<< .merge_file_tmqFAF
             ->limit($limit)
             ;
+=======
+            ->limit($limit);
+>>>>>>> .merge_file_88H1Ne
 
         return Activity::typedGet($query);
     }

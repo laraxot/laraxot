@@ -1,3 +1,60 @@
+<<<<<<< HEAD
+---
+title: "roadmap"
+type: note
+tags: [documentation, roadmap]
+created: 2026-09-26
+updated: 2026-10-07
+qmd: "roadmap"
+issues: []
+discussions: []
+status: draft
+---
+
+# Roadmap del modulo UI
+
+**Modulo**: UI (componenti di interfaccia e design system)
+**Priorita'**: alta
+**PHPStan**: livello 10, `phpstan analyse Modules` a zero errori (verifica del 2026-10-07)
+**Filament**: la roadmap 2025 fu scritta per 4.x; il modulo oggi e' su Filament 5 (vedi [README](../README.md))
+
+Questo file unisce due versioni della roadmap che il merge `HEAD` vs `laraxot/dev` aveva concatenato: la direzione 2026 (Tailwind v4, Flux UI) e il piano 2025 (AGID, mobile, qualita'). Il piano 2025 e' storico e non e' stato riallineato.
+
+> "L'interfaccia e' l'essenza: rendere l'esperienza indimenticabile."
+
+## Visione (evoluzione 2026)
+
+Creare un ecosistema UI "Headless-first" che permetta di cambiare radicalmente il look-and-feel di un tenant tramite semplici configurazioni JSON, sfruttando Tailwind CSS v4 e le animazioni native del browser.
+
+### Fasi di sviluppo
+
+**Fase 1: Modernization (in corso)**
+- [x] PHPStan Level 10 compliance
+- [ ] Completamento migrazione a **Tailwind CSS v4**
+- [ ] Implementazione di **Flux UI** per i componenti interattivi di base
+- [ ] Rimozione definitiva dei 280+ file obsoleti
+
+**Fase 2: Component Studio (pianificata)**
+- [ ] "Gallery" live per testare i componenti UI isolati
+- [ ] Sistema di **Design Tokens** centralizzato, esportabile in vari formati
+- [ ] Nuovi componenti avanzati per **Data Visualization** (integrazione Chart)
+
+**Fase 3: AI Design (futura)**
+- [ ] **AI Theme Generator**: palette colori accessibili generate da un'immagine di brand
+- [ ] **Dynamic Layout Optimization**: l'AI suggerisce layout migliori in base al contenuto
+- [ ] **Predictive Prefetching**: caricamento anticipato delle risorse UI in base ai pattern di navigazione
+
+### Checklist qualita'
+
+- [x] PHPStan Level 10
+- [ ] Accessibilita' WCAG 2.1 (AA) verificata su tutti i componenti core
+- [ ] Performance Lighthouse > 90 su pagine UI intensive
+
+## Panoramica del modulo
+
+Il modulo **UI** e' il sistema di componenti e design system della piattaforma: una libreria di componenti riutilizzabili, conformi alle linee guida AGID e compatibili con Filament.
+
+=======
 # 🎨 UI MODULE - ROADMAP 2025
 ||||||| parent of 9a84589 (.)
 # UI Module Roadmap
@@ -15,67 +72,62 @@
 Il modulo **UI** è il sistema di componenti e design system della piattaforma FixCity, fornendo una libreria completa di componenti riutilizzabili, conformi alle linee guida AGID e compatibili con Filament 4.x.
 
 ### 🏗️ Architettura Modulo
+>>>>>>> f5ffd8b4 (.)
 ```
 UI Module
-├── 🎨 Design System (Core)
-│   ├── AGID Components
-│   ├── Color Palette
-│   ├── Typography System
-│   └── Spacing System
-│
-├── 🧩 Component Library
-│   ├── Form Components
-│   ├── Layout Components
-│   ├── Data Components
-│   └── Interactive Components
-│
-├── 🎭 Filament Integration
-│   ├── Custom Resources
-│   ├── Custom Actions
-│   ├── Custom Widgets
-│   └── Theme Customization
-│
-└── 📱 Responsive System
-    ├── Mobile Components
-    ├── Touch Interfaces
-    ├── Breakpoint System
-    └── Orientation Handling
+├── Design System (core): componenti AGID, palette, tipografia, spaziatura
+├── Component Library: form, layout, data, interattivi
+├── Filament Integration: risorse, azioni, widget, personalizzazione tema
+└── Responsive System: mobile, touch, breakpoint, orientamento
 ```
 
----
+## Piano 2025 (storico)
 
-## ✅ COMPLETED FEATURES
+### Funzionalita' completate
 
-### 🎨 Design System
-- [x] **AGID Base Components**: Componenti base conformi AGID
-- [x] **Color Palette**: Palette colori AGID compliant
-- [x] **Typography System**: Sistema tipografico consistente
-- [x] **Spacing System**: Sistema spaziatura unificato
-- [x] **Icon Library**: Libreria icone AGID
-- [x] **Grid System**: Sistema griglia responsive
+- **Design system**: componenti base AGID, palette AGID, tipografia, spaziatura, libreria icone, griglia responsive
+- **Component library**: form (Input, Select, Checkbox, Radio, Textarea), layout (Header, Footer, Sidebar, Container), data (Table, List, Card, Badge), interattivi (Button, Modal, Dropdown, Tooltip), navigazione (Menu, Breadcrumb, Pagination), feedback (Alert, Notification, Loading)
+- **Filament integration**: risorse, azioni e widget personalizzati, tema, componenti form e tabella
+- **Responsive**: mobile-first, breakpoint, interfacce touch, gestione orientamento
+- **Eccellenza tecnica**: PHPStan level 10 a zero errori, type hints completi, gestione errori, setup test, strumenti qualita' (PHPMD, PHPCS, Laravel Pint, Psalm, HTMLHint, Markdownlint, ESLint, Biome), pre-commit hooks e CI/CD
 
-### 🧩 Component Library
-- [x] **Form Components**: Input, Select, Checkbox, Radio, Textarea
-- [x] **Layout Components**: Header, Footer, Sidebar, Container
-- [x] **Data Components**: Table, List, Card, Badge
-- [x] **Interactive Components**: Button, Modal, Dropdown, Tooltip
-- [x] **Navigation Components**: Menu, Breadcrumb, Pagination
-- [x] **Feedback Components**: Alert, Notification, Loading
+### In corso
 
-### 🎭 Filament Integration
-- [x] **Custom Resources**: Risorse Filament personalizzate
-- [x] **Custom Actions**: Azioni personalizzate
-- [x] **Custom Widgets**: Widget dashboard personalizzati
-- [x] **Theme Customization**: Personalizzazione tema Filament
-- [x] **Form Components**: Componenti form Filament
-- [x] **Table Components**: Componenti tabella Filament
+**Completamento AGID** (priorita' critica, 85% completato, previsto Q1 2025)
+- WCAG 2.1 AA completo: contrasto colori 4.5:1, indicatori di focus, ottimizzazione per screen reader, navigazione da tastiera, testi alternativi, associazione label dei form
+- Libreria componenti AGID: header, footer, menu di navigazione, form, button, card
+- Test di accessibilita': automatici, manuali, screen reader, solo tastiera, daltonismo, mobile
+- Criteri di successo: WCAG 2.1 AA al 100%, tutti i componenti AGID implementati, test di accessibilita' superati
 
-### 📱 Responsive System
-- [x] **Mobile-First**: Approccio mobile-first implementato
-- [x] **Breakpoint System**: Sistema breakpoint responsive
-- [x] **Touch Interfaces**: Interfacce touch-friendly
-- [x] **Orientation Handling**: Gestione orientamento dispositivo
+**Ottimizzazione mobile** (priorita' alta, 70% completato, previsto Q1 2025)
+- Mobile-first: touch target minimo 44px, gesture, navigazione e form mobile, performance mobile
+- Progressive Web App (media): manifest, service worker, offline, push, esperienza app-like
+- Test cross-platform (media): iOS Safari, Android Chrome, responsive, performance
+- Criteri di successo: usabilita' mobile > 90%, PWA completa, compatibilita' verificata
 
+<<<<<<< HEAD
+### Miglioramenti tecnici (priorita' alta)
+
+- Copertura test: unit test per i model, feature test per le resource, integration test per le API, browser test per la UI
+- Performance (media): ottimizzazione query, caching, memoria, tempi di risposta
+- Obiettivi: copertura > 80%, risposta < 200ms, memoria < 50MB, zero problemi critici
+
+### Metriche di successo
+
+- Tecniche: PHPStan level 10 a zero errori (raggiunto), compatibilita' Filament 4.x (raggiunta), copertura 80%, risposta < 200ms, memoria < 50MB, uptime > 99.9%
+- Business: adozione feature > 80%, soddisfazione utenti > 4.5/5, performance score > 90, error rate < 1%
+
+### Piano trimestrale Q1 2025
+
+- Gennaio: setup del modulo, funzionalita' di base, setup test
+- Febbraio: funzionalita' avanzate, integration test, ottimizzazione, documentazione
+- Marzo: test finali, deploy in produzione, formazione utenti, monitoraggio
+
+### Obiettivi 2025
+
+- Q1: funzionalita' core implementate, test di base completi, documentazione avviata, integrazioni funzionanti
+- Fine anno: tutte le funzionalita' pianificate, copertura > 80%, performance ottimizzata, documentazione completa, pronto per la produzione, soddisfazione > 4.5/5
+=======
 ### 🛠️ Technical Excellence
 - [x] **PHPStan level 10**: 0 errori
 - [x] **Filament 4.x**: Compatibilità completa
@@ -85,11 +137,16 @@ UI Module
 - [x] **Quality Tools Ecosystem**: PHPMD, PHPCS, Laravel Pint, Psalm
 - [x] **Frontend Quality Tools**: HTMLHint, Markdownlint, ESLint, Biome
 - [x] **Code Quality Automation**: Pre-commit hooks, CI/CD integration
+>>>>>>> f5ffd8b4 (.)
 
 ---
 
-## 🚧 IN PROGRESS FEATURES
+**Ultimo aggiornamento della sezione 2025**: 2025-10-01 (prossima revisione prevista 2025-11-01, stato "sviluppo attivo", confidenza 90%)
+**Unione delle due versioni**: 2026-10-07
 
+<<<<<<< HEAD
+*Questa roadmap e' specifica per il modulo UI e va aggiornata in base ai progressi e alle nuove esigenze.*
+=======
 ### ♿ AGID Compliance Completion (Priority: CRITICAL)
 **Status**: 85% COMPLETATO  
 **Timeline**: Q1 2025
@@ -330,3 +387,4 @@ Creare un ecosistema UI "Headless-first" che permetta di cambiare radicalmente i
 
 ---
 **
+>>>>>>> f5ffd8b4 (.)

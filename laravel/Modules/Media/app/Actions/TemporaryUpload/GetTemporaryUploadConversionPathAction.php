@@ -11,7 +11,7 @@ use Webmozart\Assert\Assert;
 /**
  * Genera il path per le conversioni di un upload temporaneo.
  */
-class GetTemporaryUploadConversionPathAction
+final class GetTemporaryUploadConversionPathAction
 {
     use QueueableAction;
 

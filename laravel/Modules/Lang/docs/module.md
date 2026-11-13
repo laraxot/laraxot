@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Lang Module - Comprehensive Analysis"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "migration filament 4"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Lang Module - Comprehensive Analysis
 

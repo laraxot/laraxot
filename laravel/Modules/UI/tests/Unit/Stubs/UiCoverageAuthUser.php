@@ -20,7 +20,11 @@ final class UiCoverageAuthUser extends AuthenticatableUser
             return false;
         }
 
+<<<<<<< HEAD
         return 'profile' === $key && null !== $this->profile;
+=======
+        return $key === 'profile' && $this->profile !== null;
+>>>>>>> f5ffd8b4 (.)
     }
 
     /**

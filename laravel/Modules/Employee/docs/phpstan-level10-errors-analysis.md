@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-LEVEL10-ERRORS-ANALYSIS"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - PHPStan Level 10 Errors Analysis
 
 ## 🚨 STATO ATTUALE: 110 ERRORI IDENTIFICATI

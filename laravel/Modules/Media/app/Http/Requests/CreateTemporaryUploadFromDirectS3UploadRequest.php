@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Media\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Lang;
 use Modules\Media\Models\Media;
 use Webmozart\Assert\Assert;
 
-// phpmd: LongClassName — nome esplicito per upload diretto S3
 class CreateTemporaryUploadFromDirectS3UploadRequest extends FormRequest
 {
     /**
@@ -29,12 +29,12 @@ class CreateTemporaryUploadFromDirectS3UploadRequest extends FormRequest
     }
 
     /**
-     * @return array<string, string|array<string, string>>
+     * @return array<string, string>
      */
     public function messages(): array
     {
         return [
-            'uuid.unique' => trans('medialibrary-pro::upload_request.uuid_not_unique'),
+            'uuid.unique' => Lang::string('medialibrary-pro::upload_request.uuid_not_unique'),
         ];
     }
 
@@ -60,6 +60,6 @@ class CreateTemporaryUploadFromDirectS3UploadRequest extends FormRequest
         Assert::string($mediaModelClass);
         Assert::subclassOf($mediaModelClass, Media::class);
 
-        return new $mediaModelClass();
+        return new $mediaModelClass;
     }
 }

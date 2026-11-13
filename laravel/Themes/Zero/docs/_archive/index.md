@@ -1,3 +1,21 @@
+---
+id: zero-docs-archive-index
+slug: index
+title: "Indice della Documentazione - Tema Zero"
+description: "Questo documento serve come indice centrale per il tema Zero, fornendo una guida per la personalizzazione e l'utilizzo del tema all'interno dell'applicazione Laravel. Il tema..."
+document_type: index
+type: index
+category: documentation
+status: archived
+tags: []
+created: "2026-09-24"
+updated: "2026-10-08"
+qmd: "indice della documentazione - tema zero"
+issues: []
+discussions: []
+canonical: ../README.md
+---
+
 # Indice della Documentazione - Tema Zero
 
 ## Panoramica
@@ -19,7 +37,7 @@ Questo documento serve come indice centrale per il tema Zero, fornendo una guida
 - **Integrazione Filament**: Compatibilità completa con i componenti Filament
 
 ## Collegamenti Correlati
-- [AI Methodologies](./ai-methodologies.md)
+- [AI Methodologies](../wiki/how-to/ai-methodologies.md)
 - [Documentazione Generale Progetto](../../../docs/README.md) (docs: replace project-specific references with generic placeholders across documentation)
 - [Collegamenti Documentazione](../../../docs/collegamenti-documentazione.md)
 - [Standard di Documentazione](../../../docs/DOCUMENTATION_STANDARDS.md)
@@ -27,22 +45,22 @@ Questo documento serve come indice centrale per il tema Zero, fornendo una guida
 - [Modulo Xot](../../Modules/Xot/docs/README.md)
 
 ### Moduli Integrati
-- [Performance Actions Reference](./performance-actions-reference.md) - Riferimento action calcolo performance
+- [Performance Actions Reference](../bmad/performance-actions-reference.md) - Riferimento action calcolo performance
 
 ## Categorie Principali
 
 ### Architettura e Struttura
 - [README](./README.md) - Panoramica generale del tema
 - [Architettura](./architecture.md) - Architettura generale del tema
-- [Struttura](./layouts.md) - Struttura delle directory e dei layout
-- [Componenti](./components.md) - Componenti Blade disponibili
+- [Struttura](../bmad/layouts.md) - Struttura delle directory e dei layout
+- [Componenti](../bmad/components.md) - Componenti Blade disponibili
 
 ### Personalizzazione
-- [Personalizzazione](./customization.md) - Guida alla personalizzazione del tema
-- [Readonly Field Styling](./readonly-field-styling.md) - Pattern UI/UX per campi readonly/calcolati
-- [Esempi](./examples.md) - Esempi pratici di personalizzazione
-- [Autenticazione](./authentication.md) - Componenti di autenticazione
-- [Esempi Autenticazione](./auth_examples.md) - Esempi di pagine di autenticazione
+- [Personalizzazione](../bmad/customization.md) - Guida alla personalizzazione del tema
+- [Readonly Field Styling](../bmad/readonly-field-styling.md) - Pattern UI/UX per campi readonly/calcolati
+- [Esempi](../bmad/examples.md) - Esempi pratici di personalizzazione
+- [Autenticazione](../bmad/authentication.md) - Componenti di autenticazione
+- [Esempi Autenticazione](../bmad/auth-examples.md) - Esempi di pagine di autenticazione
 
 ### Sviluppo e Configurazione
 - [Configurazione](./configuration.md) - Configurazione del tema
@@ -51,13 +69,13 @@ Questo documento serve come indice centrale per il tema Zero, fornendo una guida
 - [Vite](./vite.md) - Configurazione e ottimizzazione Vite
 
 ### Traduzioni
-- [Sistema Traduzioni](./translations.md) - Sistema di traduzioni del tema
+- [Sistema Traduzioni](../bmad/translations.md) - Sistema di traduzioni del tema
 - [File Lingua](./language-files.md) - Gestione dei file di traduzione
 - [Localizzazione](./localization.md) - Localizzazione del tema
 
 ### Testing e Qualità
 - [Testing](./testing.md) - Strategie e approcci per il testing del tema
-- [ide-helper-phpdoc-boundary](./ide-helper-phpdoc-boundary.md) - Confine PHPDoc moduli ↔ tema
+- [ide-helper-phpdoc-boundary](../bmad/ide-helper-phpdoc-boundary.md) - Confine PHPDoc moduli ↔ tema
 - [Performance](./performance.md) - Ottimizzazioni e analisi performance
 - [Accessibilità](./accessibility.md) - Linee guida per l'accessibilità
 
@@ -151,10 +169,10 @@ module.exports = {
 
 ## Collegamenti alla Documentazione Correlata
 - [Panoramica Architettura](./architecture.md)
-- [Personalizzazione](./customization.md)
-- [Componenti](./components.md)
-- [Esempi](./examples.md)
-- [Troubleshooting](./troubleshooting.md)
+- [Personalizzazione](../bmad/customization.md)
+- [Componenti](../bmad/components.md)
+- [Esempi](../bmad/examples.md)
+- [Troubleshooting](../bmad/troubleshooting.md)
 
 ## Note sulla Manutenzione
 Questa documentazione viene aggiornata regolarmente. Prima di apportare modifiche al tema, consultare la documentazione pertinente e aggiornare i documenti correlati.

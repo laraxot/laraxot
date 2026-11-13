@@ -36,6 +36,10 @@ function stubTableChain(MockInterface $tableMock): MockInterface
         'recordActionsPosition',
         'emptyStateActions',
         'striped',
+<<<<<<< HEAD
+=======
+        'stackedOnMobile',
+>>>>>>> laraxot/dev
         'paginated',
         'defaultSort',
         'poll',

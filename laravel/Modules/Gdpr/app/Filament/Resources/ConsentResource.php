@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Gdpr\Filament\Resources;
 
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\TextColumn;
 use Modules\Gdpr\Filament\Resources\ConsentResource\Pages\CreateConsent;
 use Modules\Gdpr\Filament\Resources\ConsentResource\Pages\EditConsent;
 use Modules\Gdpr\Filament\Resources\ConsentResource\Pages\ListConsents;
 use Modules\Gdpr\Models\Consent;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
 class ConsentResource extends XotBaseResource
@@ -18,27 +17,12 @@ class ConsentResource extends XotBaseResource
     protected static ?string $model = Consent::class;
 
     /**
-     * Schema legacy del form: la sorgente di verità è ConsentForm::getFormSchema().
-     *
-     * @return array<string, \Filament\Schemas\Components\Component>
-     */
-    public function getFormSchemaOld(): array
-    {
-        return [
-            'treatment_id' => Select::make('treatment_id')
-                ->relationship('treatment', 'name')
-                ->required(),
-            'subject_id' => TextInput::make('subject_id')->required()->maxLength(191),
-        ];
-    }
-
-    /**
      * @return array<int|string, TextColumn>
      */
     public function getTableColumns(): array
     {
         return [
-            'id' => TextColumn::make('id')->searchable(),
+            'id' => IDColumn::make('id')->searchable(),
             TextColumn::make('treatment.name')->searchable(),
             'subject_id' => TextColumn::make('subject_id')->searchable(),
             'created_at' => TextColumn::make('created_at')

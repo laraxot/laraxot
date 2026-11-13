@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Filament\Forms\Components;
 
-use Filament\Forms\Components\Select;
 use Illuminate\Support\Facades\File;
 use Modules\Xot\Datas\XotData;
+use Modules\Xot\Filament\Forms\Components\XotBaseSelect;
 
-class HtmlLayoutPathSelect extends Select
+class HtmlLayoutPathSelect extends XotBaseSelect
 {
     protected function setUp(): void
     {
@@ -17,7 +17,7 @@ class HtmlLayoutPathSelect extends Select
         $xot = XotData::make();
         $path = $xot->getMailHtmlLayoutPath();
 
-        $files = File::files($path);
+        $files = File::isDirectory($path) ? File::files($path) : [];
         $options = [];
         foreach ($files as $file) {
             if ($file->getExtension() !== 'html') {

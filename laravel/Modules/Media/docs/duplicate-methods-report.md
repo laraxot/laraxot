@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Report: Metodi con nome duplicato nei moduli e nei temi"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "duplicate methods report"
 related:
   - "./webm.md"
+status: draft
 ---
 # Report: Metodi con nome duplicato nei moduli e nei temi
 

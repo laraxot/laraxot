@@ -37,4 +37,8 @@ return [
     'email_already_taken' => 'Questa email è già in uso',
     'login_success' => 'Accesso effettuato con successo',
     'validation_error' => 'Errore di validazione',
+    'activity' => [
+        'log_registered' => 'Utente registrato',
+    ],
+    'user_invalid' => 'Utente non valido',
 ];

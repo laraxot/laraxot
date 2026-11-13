@@ -1,12 +1,20 @@
-<<<<<<< HEAD
 ---
+title: "merge conflicts list"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "merge conflicts list"
+issues: []
+discussions: []
 module: theme
 topic: merge-conflicts-list
-canonical: ../../../Themes/docs/shared-components/merge-conflicts-list.md
+canonical: ../../../Themes/docs/shared-components/merge-conflicts-list.md  # target mancante, verificato 2026-10-08
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/merge-conflicts-list.md
-=======
+---
 # Merge conflict markers — file list
 
 Elenco dei file trovati contenenti marker di merge (<<<<<<<, >>>>>>>, .merge_file). Seguire la lista per assegnare task agli agenti.
@@ -60,5 +68,3 @@ Elenco dei file trovati contenenti marker di merge (<<<<<<<, >>>>>>>, .merge_fil
 
 - Regola: ogni modulo e tema deve avere un file `docs/merge-conflicts-list.md` con la lista locale e lo stato di avanzamento.
 - Quando si risolve un file, aggiornare lo stato nella lista e sincronizzare l'LLM Wiki (qmd embed) per ingestione.
-
->>>>>>> laraxot/dev

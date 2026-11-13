@@ -1,3 +1,15 @@
+---
+title: "installazione strumenti"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "installazione strumenti"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🚀 Installazione Strumenti di Sviluppo
 
 ## Superpowers
@@ -60,7 +72,6 @@ Aggiungi a `~/.cursor/mcp.json`:
 ```
 
 ---
-
 ## Documentazione Progetto
 
 ### Struttura

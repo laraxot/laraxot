@@ -39,5 +39,9 @@ it('creates custom relation', function (): void {
         $eagerMatcher
     );
 
+<<<<<<< HEAD
     Assert::assertInstanceOf(CustomRelation::class, $relation);
+=======
+    Assert::assertSame(CustomRelation::class, $relation::class);
+>>>>>>> laraxot/dev
 });

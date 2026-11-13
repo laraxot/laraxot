@@ -236,12 +236,9 @@ return [
             'confirmation' => 'ATTENZIONE: Vuoi eseguire il replay di tutti gli eventi selezionati? Questa è un\'operazione critica.',
             'requires_permission' => 'events.bulk_replay',
         ],
-<<<<<<< HEAD
         'logout' => [
             'tooltip' => 'logout',
         ],
-=======
->>>>>>> 13cf1831 (.)
     ],
     'messages' => [
         'no_events' => 'Nessun evento trovato',

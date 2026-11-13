@@ -9,8 +9,10 @@ use Modules\Notify\Datas\SmsData;
 use Modules\Notify\Emails\SpatieEmail;
 use Modules\Notify\Models\MailTemplate;
 use Modules\Notify\Notifications\RecordNotification;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 /**
  * Story quaeris-send-invite-migrate-to-record-notification.md, Difetto 17
  * (2026-09-15): un survey senza `sms_template` configurato non lanciava

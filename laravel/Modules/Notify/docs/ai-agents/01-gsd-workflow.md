@@ -1,10 +1,21 @@
-# 🚀 GSD Workflow (Get Shit Done)
-
-**Part of**: [00-INDEX.md](00-INDEX.md) — AI Agents Coordination  
-**Related**: [02-BMAD-WORKFLOW.md](02-BMAD-WORKFLOW.md) — BMAD Method
-
+---
+title: "01 gsd workflow"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "01 gsd workflow"
+issues: []
+discussions: []
+status: draft
 ---
 
+# 🚀 GSD Workflow (Get Shit Done)
+
+**Part of**: [00-INDEX.md](00-INDEX.md): AI Agents Coordination  
+**Related**: [02-BMAD-WORKFLOW.md](02-BMAD-WORKFLOW.md): BMAD Method
+
+---
 ## 📋 Overview
 
 GSD is a spec-driven development system for AI coding agents.

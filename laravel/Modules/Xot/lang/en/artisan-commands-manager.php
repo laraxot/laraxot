@@ -43,10 +43,17 @@ return [
         ],
     ],
     'status' => [
+<<<<<<< HEAD
         'completed' => 'Completato',
         'failed' => 'Fallito',
         'waiting' => 'In attesa dell\'output...',
         'running' => 'In esecuzione...',
+=======
+        'completed' => 'Completed',
+        'failed' => 'Failed',
+        'waiting' => 'Waiting for output...',
+        'running' => 'Running...',
+>>>>>>> laraxot/dev
     ],
     'messages' => [
         'command_started' => 'Comando Avviato',
@@ -55,6 +62,7 @@ return [
         'command_completed_desc' => 'Il comando :command è stato completato con successo',
         'command_failed' => 'Comando Fallito',
         'command_failed_desc' => 'Il comando :command è fallito. Controlla l\'output per i dettagli.',
+<<<<<<< HEAD
     ],
     'hints' => [
         'running' => 'Il comando è in esecuzione. L\'output apparirà in tempo reale.',
@@ -67,4 +75,18 @@ return [
     ],
     'actions' => [
     ],
+=======
+        'running_command' => [
+            'message' => 'Running command: :command',
+        ],
+    ],
+    'hints' => [
+        'running' => 'The command is running. The output will appear in real time.',
+        'disabled' => 'Other commands cannot be run while a command is running.',
+        'scroll' => 'The output updates automatically and scrolls down.',
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+    'select_command' => 'Select a command from the header to begin.',
+>>>>>>> laraxot/dev
 ];

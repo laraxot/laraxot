@@ -1,3 +1,9 @@
+---
+title: "Employee - CHI_CE_OGGI_WIDGET"
+module: Employee
+bmad: true
+status: active
+---
 # CHI C'È OGGI Widget - Documentazione
 
 ## 👥 Panoramica
@@ -112,6 +118,20 @@ CHI C'È OGGI                          Vedi dettaglio ➤
 
 ## 💾 Data Models
 
+### DailyAttendanceStatusEnum
+```php
+enum DailyAttendanceStatusEnum: string
+{
+    case PRESENT = 'present';
+    case ABSENT = 'absent';
+    case LATE = 'late';
+    case REMOTE = 'remote';
+    case SICK = 'sick';
+    case VACATION = 'vacation';
+    case UNKNOWN = 'unknown';
+}
+```
+
 ### DailyAttendance Model
 ```php
 class DailyAttendance extends Model
@@ -133,17 +153,11 @@ class DailyAttendance extends Model
         'check_in_time' => 'datetime',
         'check_out_time' => 'datetime',
         'total_hours' => 'decimal:2',
-        'is_remote' => 'boolean'
+        'is_remote' => 'boolean',
+        'status' => DailyAttendanceStatusEnum::class,
     ];
     
-    // Status Constants
-    const STATUS_PRESENT = 'present';
-    const STATUS_ABSENT = 'absent';
-    const STATUS_LATE = 'late';
-    const STATUS_REMOTE = 'remote';
-    const STATUS_SICK = 'sick';
-    const STATUS_VACATION = 'vacation';
-    const STATUS_UNKNOWN = 'unknown';
+    // Stato: backed enum DailyAttendanceStatusEnum (cast 'status'), mai costanti STATUS_*
     
     public function employee(): BelongsTo
     {
@@ -153,26 +167,26 @@ class DailyAttendance extends Model
     public function getStatusDisplayAttribute(): string
     {
         return match($this->status) {
-            self::STATUS_PRESENT => 'Presente',
-            self::STATUS_ABSENT => 'Assente', 
-            self::STATUS_LATE => 'In ritardo',
-            self::STATUS_REMOTE => 'Smart working',
-            self::STATUS_SICK => 'Malattia',
-            self::STATUS_VACATION => 'Ferie',
-            self::STATUS_UNKNOWN => 'Non specificato',
-            default => ucfirst($this->status)
+            DailyAttendanceStatusEnum::PRESENT => 'Presente',
+            DailyAttendanceStatusEnum::ABSENT => 'Assente', 
+            DailyAttendanceStatusEnum::LATE => 'In ritardo',
+            DailyAttendanceStatusEnum::REMOTE => 'Smart working',
+            DailyAttendanceStatusEnum::SICK => 'Malattia',
+            DailyAttendanceStatusEnum::VACATION => 'Ferie',
+            DailyAttendanceStatusEnum::UNKNOWN => 'Non specificato',
+            default => $this->status->value
         };
     }
     
     public function getStatusClassAttribute(): string
     {
         return match($this->status) {
-            self::STATUS_PRESENT => 'status-present',
-            self::STATUS_REMOTE => 'status-remote',
-            self::STATUS_LATE => 'status-late',
-            self::STATUS_ABSENT => 'status-absent',
-            self::STATUS_SICK => 'status-sick',
-            self::STATUS_VACATION => 'status-vacation',
+            DailyAttendanceStatusEnum::PRESENT => 'status-present',
+            DailyAttendanceStatusEnum::REMOTE => 'status-remote',
+            DailyAttendanceStatusEnum::LATE => 'status-late',
+            DailyAttendanceStatusEnum::ABSENT => 'status-absent',
+            DailyAttendanceStatusEnum::SICK => 'status-sick',
+            DailyAttendanceStatusEnum::VACATION => 'status-vacation',
             default => 'status-unknown'
         };
     }
@@ -180,12 +194,12 @@ class DailyAttendance extends Model
     public function getStatusDotClassAttribute(): string
     {
         return match($this->status) {
-            self::STATUS_PRESENT => 'dot-green',
-            self::STATUS_REMOTE => 'dot-blue',
-            self::STATUS_LATE => 'dot-yellow',
-            self::STATUS_ABSENT => 'dot-red',
-            self::STATUS_SICK => 'dot-orange',
-            self::STATUS_VACATION => 'dot-purple',
+            DailyAttendanceStatusEnum::PRESENT => 'dot-green',
+            DailyAttendanceStatusEnum::REMOTE => 'dot-blue',
+            DailyAttendanceStatusEnum::LATE => 'dot-yellow',
+            DailyAttendanceStatusEnum::ABSENT => 'dot-red',
+            DailyAttendanceStatusEnum::SICK => 'dot-orange',
+            DailyAttendanceStatusEnum::VACATION => 'dot-purple',
             default => 'dot-gray'
         };
     }

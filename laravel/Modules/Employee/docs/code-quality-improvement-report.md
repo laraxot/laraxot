@@ -8,15 +8,9 @@ updated: 2026-07-17
 qmd: "code quality baseline PHPStan Pest strict types Laraxot Employee"
 story: STORY-001
 issues:
-<<<<<<< HEAD
   - "https://github.com/laraxot/base_techplanner_fila5/issues/46"
 discussions:
   - "https://github.com/laraxot/base_techplanner_fila5/discussions/47"
-=======
-  - "https://github.com/laraxot/base_workorder_fila5/issues/46"
-discussions:
-  - "https://github.com/laraxot/base_workorder_fila5/discussions/47"
->>>>>>> 4fe3cd7 (Refactor LeaveBalanceWidget and PendingRequestsWidget to compute leave balances and pending requests from real AbsenceRequest records instead of hardcoded values. Update TimeEntry and TimeRecord factories to generate realistic data. Remove obsolete work_hours migration file and adjust EmployeeDatabaseSeeder to include new seeders. Enhance documentation for widgets and PHPStan compliance.)
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
 ---

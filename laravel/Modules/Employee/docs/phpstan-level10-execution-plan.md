@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-LEVEL10-EXECUTION-PLAN"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Level 10 - Employee Module Execution Plan
 
 ## 🎯 **Obiettivo**

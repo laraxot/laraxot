@@ -1,34 +1,155 @@
+---
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📊 Analysis Folder
 
-[![Module](https://img.shields.io/badge/Module-📊 Analysis Folder-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
+> Structural and technical analysis of HTML, CSS, and component differences between reference and local homepage
 
-> **Structural and technical analysis of HTML, CSS, and component differences between reference and local homepage**
+**Status**: In Progress  
+**Last Updated**: 2026-04-02  
+**Related**: [← Master Index](../00-HOMEPAGE-REPLICATION-INDEX.md)
 
-## Perché esiste
+---
 
-Structural and technical analysis of HTML, CSS, and component differences between reference and local homepage
+## 📄 Documents in This Folder
 
-## Superpoteri
+### 1. **01-HTML-STRUCTURE-ANALYSIS.md**
+**Purpose**: Element-by-element structural comparison
 
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
+- Reference vs. local element count
+- Semantic HTML preservation
+- DOM tree hierarchy differences
+- Missing/extra elements inventory
 
-## Documentazione
+🔗 [Read](./01-HTML-STRUCTURE-ANALYSIS.md) | [← Back](#-documents-in-this-folder)
+
+---
+
+### 2. **02-CSS-FRAMEWORK-AUDIT.md**
+**Purpose**: Bootstrap Italia classes currently in use
+
+- All `.container`, `.row`, `.col-*` usages
+- Component classes: `.card`, `.btn-primary`, `.chip-simple`, etc.
+- Typography classes: `.title-xsmall-semi-bold`, `.text-paragraph-medium`
+- Icon and image classes
+- Utility classes: `.d-none`, `.d-lg-block`, `.mb-5`, etc.
+
+🔗 [Read](./02-CSS-FRAMEWORK-AUDIT.md) | [← Back](#-documents-in-this-folder)
+
+---
+
+### 3. **03-COMPONENT-BREAKDOWN.md**
+**Purpose**: Visual component inventory
+
+Analyzes each major section:
+- **Hero section** - Image + news card layout
+- **Governance cards** - 3-column grid with variants
+- **Topics blocks** - Featured + secondary grids
+- **Calendar carousel** - Event slides
+- **Useful links** - Search + quick link grid
+- **Contact blocks** - Icon + text patterns
+
+🔗 [Read](./03-COMPONENT-BREAKDOWN.md) | [← Back](#-documents-in-this-folder)
+
+---
+
+### 4. **04-RESPONSIVE-PATTERNS.md**
+**Purpose**: Responsive design behavior mapping
+
+- Breakpoint triggers (mobile: <768px, tablet: 768-1024px, desktop: >1024px)
+- Element reflow patterns at each breakpoint
+- Grid reordering (`order-2 order-lg-1` patterns)
+- Image/text stacking behavior
+- Hidden/shown elements by viewport
+
+🔗 [Read](./04-RESPONSIVE-PATTERNS.md) | [← Back](#-documents-in-this-folder)
+
+---
+
+## 🔍 How to Use Analysis Results
+
+1. **Starting a component refactor?** → Read [03-COMPONENT-BREAKDOWN.md](./03-COMPONENT-BREAKDOWN.md)
+2. **Creating Tailwind mappings?** → Review [02-CSS-FRAMEWORK-AUDIT.md](./02-CSS-FRAMEWORK-AUDIT.md)
+3. **Debugging structure issues?** → Check [01-HTML-STRUCTURE-ANALYSIS.md](./01-HTML-STRUCTURE-ANALYSIS.md)
+4. **Implementing responsive CSS?** → See [04-RESPONSIVE-PATTERNS.md](./04-RESPONSIVE-PATTERNS.md)
+
+---
+
+## 🎯 Next Steps
+
+1. **Capture screenshots** at 3 viewports
+2. **Feed analysis data** into [Mappings Folder](../mappings/)
+3. **Reference components** from [Visual Comparison](../visual-comparison/)
+4. **Execute phases** from [Phases Folder](../phases/)
+
+---
+
+## 🔗 Related Documents
+
+| Document | Purpose |
+|----------|---------|
+| [Screenshots](../screenshots/) | Raw visual data |
+| [Visual Comparison](../visual-comparison/) | Annotated screenshots |
+| [Mappings](../mappings/) | Bootstrap → Tailwind translation |
+| [Phases](../phases/) | Execution plans using analysis |
+
+---
+
+**Navigation**: 
+- [← Back to Master Index](../00-HOMEPAGE-REPLICATION-INDEX.md)
+- [Next: Screenshots →](../screenshots/README.md)
+
+
+---
+
+## 📄 FAQ Page Analysis
+
+### 5. **FAQ-STRUCTURE-ANALYSIS.md**
+**Purpose**: HTML structure comparison for FAQ page (domande-frequenti)
+
+- Reference vs. local HTML element count
+- Structural parity assessment (98.3% match)
+- Size analysis (87.6 KB vs 103.7 KB)
+- Element differences inventory
+- Recommendation: Proceed to CSS/JS phase
+
+🔗 [Read](./FAQ-STRUCTURE-ANALYSIS.md) | [← Back](#-documents-in-this-folder)
+
+---
+
+### 6. **FAQ-VISUAL-ANALYSIS.md**
+**Purpose**: Visual appearance comparison for FAQ page
+
+- Screenshots captured at 3 viewports (desktop, mobile, tablet)
+- Visual analysis framework
+- Key areas to check (search bar, accordion, centering)
+- Expected Tailwind CSS classes
+- Implementation roadmap
+
+🔗 [Read](./FAQ-VISUAL-ANALYSIS.md) | [← Back](#-documents-in-this-folder)
+
+---
+
+### Screenshots for FAQ
+- Desktop: `domande-frequenti-reference-viewport.png` vs `domande-frequenti-local-viewport.png`
+- Full page: `domande-frequenti-reference-full.png` vs `domande-frequenti-local-full.png`
+- Mobile: `domande-frequenti-reference-mobile.png` vs `domande-frequenti-local-mobile.png`
+- Tablet: `domande-frequenti-reference-tablet.png` vs `domande-frequenti-local-tablet.png`
 
 | Lingua | Link |
 |--------|------|
 | 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+| 🇬🇧 Business card | [docs/readme-en.md](../readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](..) |
 
 ---
-
 **Modulo** `Sixteen` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5

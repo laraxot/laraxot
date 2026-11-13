@@ -16,9 +16,9 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # socialite
 
 <!-- Contenuto migrato da _docs/socialite.txt -->

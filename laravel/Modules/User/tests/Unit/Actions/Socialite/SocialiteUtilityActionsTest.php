@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
@@ -83,7 +82,8 @@ describe('Socialite utility actions', function (): void {
     });
 
     it('validates configured provider without throwing', function (): void {
-        config(['services.github' => ['client_id' => 'id']]);
+        // DCP-271: "configurato" = client_id, client_secret e redirect veri; il solo client_id non basta piu'.
+        config(['services.github' => ['client_id' => 'id', 'client_secret' => 'secret', 'redirect' => 'https://example.org/it/auth/login/github/callback']]);
 
         app(ValidateProviderAction::class)->execute('github');
     });
@@ -93,7 +93,6 @@ describe('Socialite utility actions', function (): void {
             app(ValidateProviderAction::class)->execute('pest-missing-socialite-provider');
             Assert::fail('Expected ProviderNotConfigured was not thrown');
         } catch (ProviderNotConfigured $exception) {
-            Assert::assertInstanceOf(ProviderNotConfigured::class, $exception);
         }
     });
 
@@ -118,14 +117,14 @@ describe('Socialite utility actions', function (): void {
     });
 
     it('checks if provider is configured', function (): void {
-        config(['services.github' => ['client_id' => 'id']]);
+        config(['services.github' => ['client_id' => 'id', 'client_secret' => 'secret', 'redirect' => 'https://example.org/it/auth/login/github/callback']]);
 
         Assert::assertTrue(app(IsProviderConfiguredAction::class)->execute('github'));
         Assert::assertFalse(app(IsProviderConfiguredAction::class)->execute('pest-missing-socialite-provider'));
     });
 
-    it('logs out user token and device sessions', function (): void {
-        $accessToken = new DeletableAccessTokenFixture();
+    it('logs out by revoking the user token and marking device sessions', function (): void {
+        $accessToken = new DeletableAccessTokenFixture;
         $refreshTokenId = 'rtok-'.uniqid();
         $deviceId = 'dev-'.uniqid();
         $userId = 'user-'.uniqid();
@@ -152,9 +151,11 @@ describe('Socialite utility actions', function (): void {
 
         app(LogoutUserAction::class)->execute($user);
 
-        Assert::assertSame(0, DB::connection('user')->table('oauth_refresh_tokens')->where('access_token_id', 'tok-1')->count());
+        // Revoca, non cancellazione (come Passport): il refresh token resta, revocato, e il token d'accesso e' revocato.
+        Assert::assertSame(1, DB::connection('user')->table('oauth_refresh_tokens')->where('access_token_id', 'tok-1')->where('revoked', true)->count());
         Assert::assertSame(1, DB::connection('user')->table('device_user')->where('user_id', $userId)->whereNotNull('logout_at')->count());
-        Assert::assertTrue($accessToken->deleted);
+        Assert::assertTrue($accessToken->revoked);
+        Assert::assertFalse($accessToken->deleted);
     });
 
     it('redirects to login route with error', function (): void {

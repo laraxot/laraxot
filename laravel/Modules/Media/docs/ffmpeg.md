@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Ffmpeg"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "ffmpeg"
 related:
   - "./webm.md"
+status: draft
 ---
 WINDOWS
 

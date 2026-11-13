@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "NestedSet Migration Best Practices - Lang Module"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "google translate"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # NestedSet Migration Best Practices - Lang Module
 

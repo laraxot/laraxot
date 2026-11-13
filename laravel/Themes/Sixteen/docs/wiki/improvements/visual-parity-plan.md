@@ -1,3 +1,15 @@
+---
+title: "visual parity plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "visual parity plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Piano Miglioramento Visual Parity - Segnalazione
 
 ## Analisi Differenze con Design Comuni

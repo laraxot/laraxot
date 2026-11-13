@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION"
 module: "Lang"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "readme.es 1"
 related:
   - "./italian-text-refined-audit-report.md"
+  - "../../../italian-text-refined-audit-report.md"
+status: draft
 ---
 # 🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION
 

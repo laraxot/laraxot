@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Modulo Media - Gestione File Multimediali"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "module"
 related:
   - "./webm.md"
+status: draft
 ---
 # Modulo Media - Gestione File Multimediali
 

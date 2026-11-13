@@ -10,6 +10,14 @@ qmd: "duplicate method bodies theme Zero zero presentation boundary"
 related:
   - ../../../../../../docs/wiki/duplicate-method-bodies-census.md
   - ./method-name-homonyms.md
+id: zero-docs-wiki-concepts-duplicate-method-bodies
+slug: duplicate-method-bodies
+description: "Il tema Zero e' strato presentazione (Blade, CSS, asset): le poche classi PHP"
+document_type: analysis
+category: documentation
+status: active
+issues: []
+discussions: []
 ---
 
 # Corpi metodo duplicati — Theme Zero

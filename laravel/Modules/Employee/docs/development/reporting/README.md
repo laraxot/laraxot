@@ -1,3 +1,9 @@
+---
+title: "Employee - README"
+module: Employee
+bmad: true
+status: active
+---
 # Reporting Development Guide
 
 [![Module](https://img.shields.io/badge/Module-Reporting Development Guide-8B0000.svg)]()

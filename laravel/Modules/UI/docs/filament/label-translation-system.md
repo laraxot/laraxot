@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "label translation system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "label translation system"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Sistema di Traduzione Automatica delle Etichette (Label) in Filament
 
 ## Regola Fondamentale

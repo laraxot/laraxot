@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\Seo\Adapters;
 
 use DateTimeInterface;
-use Modules\Seo\Data\MetatagData;
+use Modules\Seo\Datas\MetatagData;
 use Modules\Seo\Facades\Metatag;
 use Webmozart\Assert\Assert;
 
@@ -31,7 +31,7 @@ class MetatagManager
      */
     public function __construct()
     {
-        $this->metatagData = new MetatagData();
+        $this->metatagData = new MetatagData;
     }
 
     /**

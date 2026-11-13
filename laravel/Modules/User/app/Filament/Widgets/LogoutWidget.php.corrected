@@ -6,7 +6,6 @@ namespace Modules\User\Filament\Widgets;
 
 use Filament\Forms\Components\Actions\Action;
 use Filament\Schemas\Components\Component;
->>>>>>> 87273113 (.)
 use Filament\Forms\Components\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Event;

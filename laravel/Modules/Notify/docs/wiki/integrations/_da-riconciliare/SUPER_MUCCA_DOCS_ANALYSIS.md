@@ -1,10 +1,15 @@
 ---
+qmd: "SUPER MUCCA DOCS ANALYSIS"
+issues: []
+discussions: []
 title: "SUPER MUCCA - Analisi Completa Documentazione"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: super-mucca-docs-analysis.md
 ---
 
 # 🐄 SUPER MUCCA - Analisi Completa Documentazione

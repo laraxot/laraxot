@@ -3,14 +3,24 @@ description:
 globs:
 alwaysApply: false
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+title: "Regola Windsurf: Migrazioni XotBaseMigration"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "regola windsurf: migrazioni xotbasemigration user"
 ---
 # Regola Windsurf: Migrazioni XotBaseMigration
 

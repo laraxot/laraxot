@@ -1,3 +1,15 @@
+---
+title: "block view bridge missing pages"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "block view bridge missing pages"
+issues: []
+discussions: []
+status: draft
+---
+
 # Block View Bridge For Missing Pages
 
 ## Contesto

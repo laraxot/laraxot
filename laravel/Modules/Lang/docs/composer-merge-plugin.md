@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Composer Merge Plugin nel Modulo Lang"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "ottimizzazioni correzioni"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Composer Merge Plugin nel Modulo Lang
 

@@ -8,6 +8,7 @@ use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Modules\Notify\Models\NotificationTemplate;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 class NotificationTemplatesTable extends XotBaseResourceTable
@@ -23,7 +24,7 @@ class NotificationTemplatesTable extends XotBaseResourceTable
     public function getTableColumns(): array
     {
         return [
-            'id' => TextColumn::make('id')->sortable(),
+            'id' => IDColumn::make('id')->sortable(),
             'name' => TextColumn::make('name')->searchable()->sortable(),
             'code' => TextColumn::make('code')->searchable()->sortable(),
             'type' => TextColumn::make('type')->searchable()->sortable()->badge(),

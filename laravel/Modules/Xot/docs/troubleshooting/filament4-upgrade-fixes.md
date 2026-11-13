@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Risoluzione Errori Upgrade Filament 4 - Laraxot PTVX"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, troubleshooting]
+qmd: "Risoluzione Errori Upgrade Filament 4 - Laraxot PTVX"
+---
+>>>>>>> laraxot/dev
 # Risoluzione Errori Upgrade Filament 4 - Laraxot PTVX
 
 ## Problema Iniziale: ProviderRepository array_merge()
@@ -169,3 +182,8 @@ Laravel Framework 12.28.1
 ✅ **DOCUMENTATO**: Soluzione centralizzata implementata
 
 *Ultimo aggiornamento: 19 Settembre 2025*
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> laraxot/dev

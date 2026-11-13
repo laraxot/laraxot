@@ -1,10 +1,15 @@
 ---
+qmd: "GITHUB SYNC RULE"
+issues: []
+discussions: []
 title: "Sync .github with bashscripts/ai/.github"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: github-sync-rule.md
 ---
 
 # 🔄 Sync .github with bashscripts/ai/.github

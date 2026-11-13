@@ -1,6 +1,18 @@
+---
+title: "segnalazioni elenco structure"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "segnalazioni elenco structure"
+issues: []
+discussions: []
+status: draft
+---
+
 # Segnalazioni Elenco - Structure Analysis
 
-- **Batch score**: 32.4% (see `laravel/Themes/Sixteen/docs/design-comuni/BATCH_BODY_PARITY_REPORT.md`). Both reference and local endpoints return HTTP 200, but the ordered tag sequence diverges heavily.
+- **Batch score**: 32.4% (see `laravel/Themes/Sixteen/docs/design-comuni/batch-body-parity-report.md`). Both reference and local endpoints return HTTP 200, but the ordered tag sequence diverges heavily.
 - **Reference**: rich hero + breadcrumb overlay, tabs/mappa/lista con filters, CTA, contact list, footer sections.
 - **Local**: simplified hero, placeholder scenario block, governance alert, CTA link, and unchanged global footer. No map, no filters or tabs structure.
 

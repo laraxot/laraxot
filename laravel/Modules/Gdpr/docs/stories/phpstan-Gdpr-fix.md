@@ -1,4 +1,11 @@
 ---
+title: "phpstan Gdpr fix"
+type: note
+tags: [documentation]
+updated: 2026-09-26
+qmd: "phpstan Gdpr fix"
+issues: []
+discussions: []
 id: phpstan-Gdpr-fix
 slug: phpstan-Gdpr
 scope: [module:Gdpr, project:base_workorder_fila5]

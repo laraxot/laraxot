@@ -1,10 +1,15 @@
 ---
+qmd: "ALLINEAMENTO BOOTSTRAP ITALIA"
+issues: []
+discussions: []
 title: "Allineamento HTML con Bootstrap Italia"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: allineamento-bootstrap-italia.md
 ---
 
 # 🎯 Allineamento HTML con Bootstrap Italia

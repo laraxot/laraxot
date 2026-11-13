@@ -8,17 +8,21 @@ qmd: "mcp-configuration mcp server configuration - user module"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # MCP Server Configuration - User Module
 
 
@@ -58,7 +62,6 @@ The User module's MCP configuration enables AI assistants to interact with:
     "filesystem": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-filesystem", "/var/www/_bases/base_<nome progetto>/laravel"],
->>>>>>> 87273113 (.)
       "description": "Access to User module files"
     },
     "database": {
@@ -66,7 +69,6 @@ The User module's MCP configuration enables AI assistants to interact with:
       "args": ["-y", "@bytebase/dbhub"],
       "env": {
         "DATABASE_URL": "sqlite:///var/www/_bases/base_<nome progetto>/laravel/database/database.sqlite"
->>>>>>> 87273113 (.)
       },
       "description": "SQLite database queries"
     }
@@ -82,7 +84,6 @@ The User module's MCP configuration enables AI assistants to interact with:
 ```bash
 # Create task
 "Create task in '<nome progetto> - User Module' project: 'Implement two-factor authentication'"
->>>>>>> 87273113 (.)
 
 # Track security improvements
 "Create task: 'Add device fingerprinting for security alerts'"
@@ -161,7 +162,6 @@ Map User module roadmap tasks to Asana:
 | Security alerts | <nome progetto> - User Module | High |
 | Device management | <nome progetto> - User Module | Medium |
 | Test coverage 90%+ | <nome progetto> - User Module | High |
->>>>>>> 87273113 (.)
 
 ---
 
@@ -177,7 +177,6 @@ Map User module roadmap tasks to Asana:
 
 ### Windsurf
 - **Config File**: `/var/www/_bases/base_<nome progetto>/laravel/.windsurf-mcp.json`
->>>>>>> 87273113 (.)
 - **Command**: `npx mcp-remote https://mcp.asana.com/sse`
 
 ---
@@ -193,7 +192,6 @@ Map User module roadmap tasks to Asana:
 
 2. **Project Organization**:
    - Create dedicated Asana project: "<nome progetto> - User Module"
->>>>>>> 87273113 (.)
    - Use sections: "Authentication", "Authorization", "Security", "Testing", "Documentation"
 
 3. **Tagging System**:
@@ -240,7 +238,6 @@ Map User module roadmap tasks to Asana:
 - [Asana MCP Configuration](../../../../docs/mcp-asana-configuration.md)
 - [ClickUp MCP Configuration](../../../../docs/mcp-clickup-configuration.md)
 - [Redmine MCP Configuration](../../../../docs/mcp-redmine-configuration.md)
->>>>>>> 87273113 (.)
 - [User Module Roadmap](./roadmap-[date].md)
 
 ---

@@ -12,14 +12,13 @@ use Laravel\Socialite\Contracts\User as SocialiteUserContract;
 final class SocialiteUserWithRawFixture implements SocialiteUserContract
 {
     /**
-     * @param array<string, mixed> $raw
+     * @param  array<string, mixed>  $raw
      */
     public function __construct(
         private readonly ?string $name,
         private readonly ?string $email,
         private readonly array $raw = [],
-    ) {
-    }
+    ) {}
 
     public function getId(): string
     {

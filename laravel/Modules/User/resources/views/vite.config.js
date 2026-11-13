@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import laravel from 'laravel-vite-plugin'
->>>>>>> 87273113 (.)
 
 export default defineConfig({
     build: {

@@ -19,4 +19,9 @@ return [
     'login_success' => 'Anmeldung erfolgreich',
     'validation_error' => 'Validierungsfehler',
     'login_error' => 'Bei der Anmeldung ist ein Fehler aufgetreten. Versuchen Sie es später erneut',
+    'activity' => [
+        'log_registered' => 'Benutzer registriert',
+    ],
+    'user_not_found' => 'Benutzer nicht gefunden',
+    'user_invalid' => 'Ungültiger Benutzer',
 ];

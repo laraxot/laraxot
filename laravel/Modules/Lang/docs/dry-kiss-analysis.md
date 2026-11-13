@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "🐄 DRY & KISS Analysis - Lang"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "ottimizzazioni correzioni"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 **Data:** 2025-10-15 | **Status:** ✅
 # 🐄 DRY & KISS Analysis - Lang

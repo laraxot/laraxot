@@ -16,6 +16,7 @@ related:
   - "./final-implementation-report-1.md"
   - "./final-implementation-report.md"
   - "./final-refactoring-report.md"
+status: draft
 ---
 
 # 📚 DOCUMENTATION STATUS - Ottobre 2025
@@ -412,6 +413,7 @@ consolidamento seguendo le roadmap definite. Focus attuale: completamento docume
 
 ### Roadmap Principali
 - [Master Roadmap](../laravel/master-roadmap.md)
+- [Master Roadmap](../master-roadmap.md)
 - [Roadmap Status Summary](../roadmap-status-summary.md)
 - [Roadmap Technical](./roadmaps/roadmap-technical.md)
 - [Roadmap Quality](./roadmaps/roadmap-quality.md)

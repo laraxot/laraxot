@@ -16,9 +16,9 @@ related:
   - "./payment.md"
   - "./phpstan.md"
   - "./profile.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # links
 
 <!-- Contenuto migrato da _docs/links.txt -->

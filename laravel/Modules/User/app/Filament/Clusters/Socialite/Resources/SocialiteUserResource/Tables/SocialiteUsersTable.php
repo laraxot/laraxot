@@ -6,6 +6,7 @@ namespace Modules\User\Filament\Clusters\Socialite\Resources\SocialiteUserResour
 
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\User\Models\SocialiteUser;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
@@ -27,7 +28,7 @@ class SocialiteUsersTable extends XotBaseResourceTable
             'provider' => TextColumn::make('provider')->searchable()->sortable(),
             'provider_id' => TextColumn::make('provider_id')->searchable()->sortable(),
             'user_id' => TextColumn::make('user_id')->sortable(),
-            'id' => TextColumn::make('id')->sortable()->copyable()->toggleable(isToggledHiddenByDefault: true),
+            'id' => IDColumn::make('id')->sortable()->copyable()->toggleable(isToggledHiddenByDefault: true),
             'created_at' => TextColumn::make('created_at')->dateTime()->sortable()->placeholder('—'),
             'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->placeholder('—')->toggleable(isToggledHiddenByDefault: true),
         ];

@@ -1,9 +1,10 @@
 ---
+discussions: []
 title: "Notify Services/Support -> Actions migration"
 type: concept
 tags: [notify, actions, queueable-action, services, refactor]
 created: 2026-07-13
-updated: 2026-07-13
+updated: 2026-10-08
 qmd: "Notify app Services Support converted to QueueableAction migration mapping"
 issues:
 related:
@@ -15,6 +16,7 @@ related:
   - "./llm-wiki-governance.md"
   - "./method-name-homonyms.md"
   - "./module-root-uppercase-folders-archive.md"
+status: draft
 ---
 
 # Notify `app/Services` -> `app/Actions` migration
@@ -33,24 +35,22 @@ da un passaggio precedente. `Modules/Notify/app/Support` era gia` vuoto
 | `MailService` (facade `send()`/`try()`) | `Actions\Mail\SendMailAction`, `Actions\Mail\TryMailAction` | dispatch dinamico per driver a `Actions\Mail\Engines\{Driver}\Send{Driver}MailAction` |
 | `MailEngines\DuocircleEngine::send()` | `Actions\Mail\Engines\Duocircle\SendDuocircleMailAction` | WIP (throw RuntimeException) |
 | `MailEngines\DuocircleEngine::try()` | `Actions\Mail\Engines\Duocircle\TryDuocircleMailAction` | IMAP via `Webklex\PHPIMAP` (pkg non installato) |
-| `PushNotificationService` (multi-method) | `Actions\PushNotificationAction` + `Actions\PushNotificationPlatformDelivery` + `Actions\SendPushNotificationAction` | 1 Action per public method (`sendToDevice`, `sendToDevices`, `sendToTopic`, `sendToAll`, `scheduleNotification`, `sendWithTemplate`, `sendWithTargeting`) |
+| `PushNotificationService` (multi-method) | `Actions\Push\*` (7 Action + `SendPushToPlatformAction`, `LogSimulatedPushDeliveryAction`) | 1 Action per caso d'uso (`sendToDevice`, `sendToDevices`, `sendToTopic`, `sendToAll`, `scheduleNotification`, `sendWithTemplate`, `sendWithTargeting`); i due tentativi intermedi `PushNotificationAction`/`SendPushNotificationAction` + `PushNotificationPlatformDelivery` sono stati rimossi, vedi [services-to-actions-migration.md](services-to-actions-migration.md) |
+| `NotificationManager` | `Actions\NotificationManager` (gia' esistente) | multi-metodo senza `execute()`: debito noto, da spezzare in una Action per caso d'uso |
+| `SmsService` | `Actions\SMS\SendSmsAction` | il recapito SMS reale passa da `Factories\SmsActionFactory` + `SmsChannel`, non da qui |
+| `MailEngines\MailtrapEngine` | `Actions\Mail\SendMailtrapMailAction` | |
 
 ## Pulizia file morti
 
-I file residui non autoloadabili in `app/Services` sono stati archiviati con
-suffisso `.old` (convenzione repo per questo modulo; storia in git preservata
-via `git mv`, mai `git rm`):
+Il 2026-07-13 i residui non autoloadabili erano stati archiviati con suffisso `.old` (poi annullato da un merge: i file
+originali sono tornati). Stato definitivo al 2026-10-08: **`app/Services` non esiste piu'** (file cancellati, recuperabili
+da HEAD del repo del modulo; nessun `.gitkeep` a preservare la cartella). Dettaglio nella story
+`stories/2026-10-08-services-to-actions-notify.story.md`.
+`stories/services-to-actions-notify.story.md`.
 
-- `app/Services/PushNotificationService.php` -> `PushNotificationService.php.old`
-- `app/Services/MailService.to_action` -> `MailService.to_action.old`
-- `app/Services/MailEngines/DuocircleEngine.test` -> `DuocircleEngine.test.old`
-- `app/Services/MailEngines/duocircleengine.test` -> `duocircleengine.test.old`
+Callers repo-wide di `Modules\Notify\Services\*`: 0.
 
-Rimane `app/Services/.gitkeep` a preservare la directory (archivio).
-
-Callers repo-wide di `Modules\Notify\Services\*`: 0 (solo riferimenti in `docs/*.md`).
-
-## Aggiornamento 2026-07-16 — pulizia residui
+## Aggiornamento 2026-07-16: pulizia residui
 
 Verifica finale monorepo-wide (`laravel/Modules/*`, `laravel/Themes/*`,
 `laravel/app/`): l'unico riferimento a codice `Modules\Notify\Services\*`

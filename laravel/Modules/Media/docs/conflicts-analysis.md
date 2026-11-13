@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Analisi Conflitti - README.md"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "conflicts analysis"
 related:
   - "./webm.md"
+status: draft
 ---
 # Analisi Conflitti - README.md
 

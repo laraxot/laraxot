@@ -1,3 +1,9 @@
+---
+title: "Employee - SVG-ICON-SYSTEM"
+module: Employee
+bmad: true
+status: active
+---
 # SVG Icon System - Employee Module
 
 ## Overview

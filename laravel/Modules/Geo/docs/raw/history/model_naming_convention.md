@@ -1,3 +1,14 @@
+---
+title: "model naming convention"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "model naming convention"
+issues: []
+discussions: []
+---
+
 # Naming Convention per Modelli in Laraxot PTVX
 
 ## Principio Fondamentale
@@ -81,6 +92,14 @@ Nei PHPDoc delle relazioni, usare il nome singolare:
 
 ---
 
+title: "model naming convention"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "model naming convention"
+issues: []
+discussions: []
 **Ultimo aggiornamento**: 2026-03-10  
 **Autore**: Cascade AI Agent
 **Modulo**: Progressioni (esempio refactor Schede → Scheda)

@@ -1,10 +1,14 @@
 ---
+qmd: "ai methodologies"
+issues: []
+discussions: []
 title: "AI Methodologies Handbook"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # AI Methodologies Handbook

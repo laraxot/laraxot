@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Linee Guida per la Documentazione in Laraxot"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "linee guida per la documentazione in laraxot xot"
+---
+>>>>>>> laraxot/dev
 
 # Linee Guida per la Documentazione in Laraxot
 

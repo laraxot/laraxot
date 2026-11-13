@@ -1,13 +1,12 @@
 <x-layouts.main>
     <div class="skiplink">
-        <a class="visually-hidden-focusable" href="#main-container">Vai ai contenuti</a>
-        <a class="visually-hidden-focusable" href="#footer">Vai al
-            footer</a>
+        <a class="visually-hidden-focusable" href="#main-container">{{ __('pub_theme::ui.skip_to_content') }}</a>
+        <a class="visually-hidden-focusable" href="#footer">{{ __('pub_theme::ui.skip_to_footer') }}</a>
     </div><!-- /skiplink -->
 
     <x-section slug="header" />
 
-    <main id="main-container">
+    <main id="main-container" tabindex="-1" @if(!empty($bodyPage)) data-page="{{ $bodyPage }}" @endif>
         @hasSection('content')
             @yield('content')
         @else

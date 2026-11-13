@@ -1,3 +1,15 @@
+---
+title: "leaflet partial tile theme rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "leaflet partial tile theme rule"
+issues: []
+discussions: []
+status: draft
+---
+
 # Leaflet Partial Tile Theme Rule
 
 ## Regola

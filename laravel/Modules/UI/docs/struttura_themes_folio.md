@@ -1,4 +1,19 @@
+<<<<<<< HEAD
+---
+title: "Struttura Themes e Folio in SaluteOra"
+type: note
+status: draft
+created: 2026-01-20
+updated: 2026-10-18
+module: UI
+tags: [docs, ui]
+qmd: "struttura themes e folio in saluteora ui"
+---
+
+# Struttura Themes e Folio in SaluteOra
+=======
 # Struttura Themes e Folio in <nome progetto>
+>>>>>>> f5ffd8b4 (.)
 
 ## ⚠️ ATTENZIONE CRITICA
 
@@ -8,7 +23,11 @@
 
 ## Struttura del Progetto
 
+<<<<<<< HEAD
+Il progetto SaluteOra utilizza un sistema di **Themes** che modifica la struttura standard di Laravel Folio:
+=======
 Il progetto <nome progetto> utilizza un sistema di **Themes** che modifica la struttura standard di Laravel Folio:
+>>>>>>> f5ffd8b4 (.)
 
 ```
 /laravel/

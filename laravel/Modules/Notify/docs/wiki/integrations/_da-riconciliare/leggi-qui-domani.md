@@ -8,14 +8,20 @@ qmd: "leggi-qui-domani 📖 leggi qui domani mattina - 2 ottobre 2025"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "../../../00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-notify-completamento-assoluto.md"
+  - "../../../acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
+status: draft
 ---
 
 # 📖 LEGGI QUI DOMANI MATTINA - 2 Ottobre 2025
@@ -60,6 +66,7 @@ Buongiorno! Ecco tutto quello che abbiamo fatto ieri e cosa fare oggi.
 7. `XotBaseResource.php:98` - Filament 4 compatibility (45 min)
 
 **Guida**: [Xot Roadmap](../Modules/Xot/docs/roadmap-and-issues.md)
+**Guida**: [Xot Roadmap](../../../roadmap-and-issues.md)
 
 **Comando verifica**:
 ```bash
@@ -100,6 +107,7 @@ cd /var/www/_bases/<nome repitory>_mono/laravel
 - Relations return types
 
 **Guida**: [User Roadmap](../Modules/User/docs/roadmap-and-issues.md)
+**Guida**: [User Roadmap](../../../roadmap-and-issues.md)
 
 ---
 
@@ -155,6 +163,11 @@ cd /var/www/_bases/<nome repitory>_mono/laravel
 
 ### Fine Giornata (update)
 4. **[Master Roadmap](./roadmap-master-index.md)** - Aggiornare status
+2. **[Xot Roadmap](../../../roadmap-and-issues.md)** - Errori dettagliati Xot
+3. **[User Roadmap](../../../roadmap-and-issues.md)** - Errori dettagliati User
+
+### Fine Giornata (update)
+4. **[Master Roadmap](../../../roadmap-master-index.md)** - Aggiornare status
 5. **[Analisi Completa](./analisi-completa.md)** - Executive summary
 
 ---
@@ -315,6 +328,7 @@ Buongiorno! Ecco tutto quello che abbiamo fatto ieri e cosa fare oggi.
 7. `XotBaseResource.php:98` - Filament 4 compatibility (45 min)
 
 **Guida**: [Xot Roadmap](../Modules/Xot/docs/roadmap-and-issues.md)
+**Guida**: [Xot Roadmap](../../../roadmap-and-issues.md)
 
 **Comando verifica**:
 ```bash
@@ -356,6 +370,7 @@ cd /var/www/_bases/<nome repitory>_mono/laravel
 - Relations return types
 
 **Guida**: [User Roadmap](../Modules/User/docs/roadmap-and-issues.md)
+**Guida**: [User Roadmap](../../../roadmap-and-issues.md)
 
 ---
 
@@ -404,7 +419,7 @@ cd /var/www/_bases/<nome repitory>_mono/laravel
 ## 📂 DOCUMENTI IMPORTANTI DA LEGGERE
 
 ### Prima di Iniziare (5 minuti)
-1. **[Session Summary](./phpstan/session-summary-2025-10-01.md)** - Recap ieri
+1. **[Session Summary](./phpstan/session-summary.md)** - Recap ieri
 
 ### Durante il Lavoro (reference)
 2. **[Xot Roadmap](../Modules/Xot/docs/roadmap-and-issues.md)** - Errori dettagliati Xot
@@ -412,7 +427,13 @@ cd /var/www/_bases/<nome repitory>_mono/laravel
 
 ### Fine Giornata (update)
 4. **[Master Roadmap](./roadmap-master-index.md)** - Aggiornare status
-5. **[Analisi Completa](./ANALISI-COMPLETA-2025-10-01.md)** - Executive summary
+5. **[Analisi Completa](./ANALISI-COMPLETA.md)** - Executive summary
+2. **[Xot Roadmap](../../../roadmap-and-issues.md)** - Errori dettagliati Xot
+3. **[User Roadmap](../../../roadmap-and-issues.md)** - Errori dettagliati User
+
+### Fine Giornata (update)
+4. **[Master Roadmap](../../../roadmap-master-index.md)** - Aggiornare status
+5. **[Analisi Completa](../../../analisi-completa-ottobre-data.md)** - Executive summary
 
 ---
 

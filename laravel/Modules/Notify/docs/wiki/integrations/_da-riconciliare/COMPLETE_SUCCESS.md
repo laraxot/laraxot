@@ -1,10 +1,15 @@
 ---
+qmd: "COMPLETE SUCCESS"
+issues: []
+discussions: []
 title: "NOTIFY - COMPLETE SUCCESS"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: complete_success.md
 ---
 
 # 🏆 NOTIFY - COMPLETE SUCCESS

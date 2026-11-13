@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://github.com/DutchCodingCompany/filament-socialite
  */
-
-declare(strict_types=1);
 
 namespace Modules\User\Actions\Socialite;
 
@@ -19,6 +18,9 @@ class IsRegistrationEnabledAction
      */
     public function execute(): bool
     {
-        return (bool) config('socialite.registration', true);
+        // Chiave assente o valorizzata a null (es. env non impostata): vale il default, registrazione attiva.
+        $registration = config('socialite.registration');
+
+        return $registration === null ? true : (bool) $registration;
     }
 }

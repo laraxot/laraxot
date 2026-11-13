@@ -19,8 +19,11 @@ class StatesChartWidget extends XotBaseChartWidget
 
     protected static ?int $sort = 4;
 
+<<<<<<< HEAD
     protected static bool $isLazy = true;
 
+=======
+>>>>>>> laraxot/dev
     #[\Override]
     public function getHeading(): ?string
     {

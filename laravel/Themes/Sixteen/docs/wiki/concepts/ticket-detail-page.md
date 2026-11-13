@@ -1,3 +1,15 @@
+---
+title: "ticket detail page"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ticket detail page"
+issues: []
+discussions: []
+status: draft
+---
+
 # Ticket Detail Page - Static Map + Comments
 
 ## Requirements

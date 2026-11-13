@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_sdFlWE
 title: "Project context — solo Filament widget"
+=======
+title: "Project context: solo Filament widget"
+>>>>>>> .merge_file_HeXH8x
 type: constitution
 module: User
 status: approved
@@ -9,9 +13,18 @@ related:
   - ./livewire-inventory.md
   - ./livewire-widget-prd.md
   - ./decision-log.md
+<<<<<<< .merge_file_sdFlWE
 ---
 
 # Project context — campagna Livewire HTTP → widget
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "project context   campagna livewire http → widget user"
+---
+
+# Project context: campagna Livewire HTTP → widget
+>>>>>>> .merge_file_HeXH8x
 
 Costituzione della **campagna**, non del solo slice SuperAdmin. Lo slice SuperAdmin resta in [project-context.md](./project-context.md).
 
@@ -21,9 +34,15 @@ Il panel Filament è la porta dell’identità. L’UI di quella porta deve vive
 
 ## Utenti
 
+<<<<<<< .merge_file_sdFlWE
 - Operatore panel (`/admin`) — menu, team, login social.
 - Utente FO auth — login/register/password: già coperti da widget; gli HTTP sono gemelli orfani.
 - Maintainer User — un solo albero da far passare a PHPStan e agli upgrade Filament.
+=======
+- Operatore panel (`/admin`): menu, team, login social.
+- Utente FO auth: login/register/password: già coperti da widget; gli HTTP sono gemelli orfani.
+- Maintainer User: un solo albero da far passare a PHPStan e agli upgrade Filament.
+>>>>>>> .merge_file_HeXH8x
 
 ## Vincoli non negoziabili
 

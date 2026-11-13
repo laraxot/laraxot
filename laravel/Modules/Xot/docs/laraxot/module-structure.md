@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Module Structure in Laraxot"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, laraxot]
+qmd: "Module Structure in Laraxot"
+---
+>>>>>>> laraxot/dev
 # Module Structure in Laraxot
 
 ## Directory Structure
@@ -102,6 +115,7 @@ Route::middleware('api')->prefix('api')->group(function () {
 - Fornire valori predefiniti sensati
 ### Versione HEAD
 
+<<<<<<< HEAD
 ## Collegamenti tra versioni di module-structure.md
 * [module-structure.md](../../../xot/project_docs/laraxot/module-structure.md)
 * [module-structure.md](../../../xot/project_docs/architecture/module-structure.md)
@@ -109,3 +123,16 @@ Route::middleware('api')->prefix('api')->group(function () {
 ### Versione Incoming
 
 ---
+=======
+
+## Collegamenti tra versioni di module-structure.md
+* [module-structure.md](../../../Xot/docs/laraxot/module-structure.md)
+* [module-structure.md](../../../Xot/docs/architecture/module-structure.md)
+
+
+### Versione Incoming
+
+
+---
+
+>>>>>>> laraxot/dev

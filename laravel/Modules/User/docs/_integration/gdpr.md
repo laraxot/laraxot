@@ -16,9 +16,9 @@ related:
   - "./payment.md"
   - "./phpstan.md"
   - "./profile.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # gdpr
 
 <!-- Contenuto migrato da _docs/gdpr.txt -->

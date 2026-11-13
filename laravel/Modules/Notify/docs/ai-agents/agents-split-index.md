@@ -1,3 +1,15 @@
+---
+title: "agents split index"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agents split index"
+issues: []
+discussions: []
+status: draft
+---
+
 # agents.md Split Index
 
 > Documentazione agents.md originale spezzata in file più piccoli e organizzati.
@@ -21,6 +33,8 @@
 
 - [AGENTS.md originale](../../AGENTS.md) - File completo (deprecato)
 - [agents.md originale](../../agents.md) - File completo (deprecato)
+- [AGENTS.md originale](../AGENTS.md) - File completo (deprecato)
+- [agents.md originale](../agents.md) - File completo (deprecato)
 - [Index principale](./index.md) - Torna all'indice
 
 ## 📝 Note

@@ -52,5 +52,6 @@ class MediaConvertForm extends XotBaseResourceForm
             'threads' => TextInput::make('threads'),
             'speed' => TextInput::make('speed'),
         ];
+
     }
 }

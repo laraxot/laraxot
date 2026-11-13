@@ -67,7 +67,7 @@ class TimeClockPage extends XotBasePage implements HasTable
                         WorkHourStatusEnum::REJECTED->value => 'danger',
                         default => 'gray',
                     }),
-                TextColumn::make('location_name')->label('Location')->searchable(),
+                TextColumn::make('location_name')->label('Location')->searchable()->visibleFrom('md'),
                 TextColumn::make('notes')->label('Notes')->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('created_at')
                     ->label('Created')

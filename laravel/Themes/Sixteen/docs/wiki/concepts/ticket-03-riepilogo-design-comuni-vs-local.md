@@ -1,4 +1,7 @@
 ---
+qmd: "ticket 03 riepilogo design comuni vs local"
+issues: []
+discussions: []
 title: "Segnalazione-03-Riepilogo: Design Comuni vs Local Wizard"
 type: comparison
 sources: 
@@ -10,9 +13,10 @@ updated: 2026-05-04
 tags: [segnalazione, riepilogo, design-comuni, comparison, visual-parity, tailwind, alpine, lit]
 related:
   - ../../laravel/Modules/Fixcity/docs/wiki/concepts/segnalazione-design-comuni-comparison.md
-  - ../../laravel/Themes/Sixteen/docs/wiki/concepts/segnalazione-visual-parity-correction-plan.md
+  - segnalazione-visual-parity-correction-plan.md
   - segnalazione-01-privacy-design-comuni-vs-local.md
   - segnalazione-02-dati-design-comuni-vs-local.md
+status: draft
 ---
 
 # Segnalazione-03-Riepilogo: Design Comuni vs Local Wizard

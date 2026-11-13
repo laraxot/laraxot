@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Ottimizzazioni Super DRY + KISS - Modulo Xot"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Ottimizzazioni Super DRY + KISS - Modulo Xot"
+---
+>>>>>>> laraxot/dev
 # Ottimizzazioni Super DRY + KISS - Modulo Xot
 
 ## 🎯 Panoramica
@@ -291,7 +304,11 @@ class ExampleService implements ServiceInterface
 
 ## 🔗 Collegamenti
 
+<<<<<<< HEAD
 - [Documentazione Core](../../../docs/core/)
+=======
+- [Documentazione Core](core)
+>>>>>>> laraxot/dev
 - [Best Practices Filament](../../../docs/core/filament-best-practices.md)
 - [Convenzioni Sistema](../../../docs/core/conventions.md)
 - [Template Modulo](../../../docs/templates/module-template.md)

@@ -1,10 +1,14 @@
 ---
+qmd: "reusabilitylines"
+issues: []
+discussions: []
 title: "Linee Guida per la Riusabilità del Modulo Notify"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Linee Guida per la Riusabilità del Modulo Notify

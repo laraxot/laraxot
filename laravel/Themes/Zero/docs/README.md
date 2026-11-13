@@ -1,95 +1,76 @@
-# Theme Documentation
-
-<<<<<<< HEAD
-[![Module](https://img.shields.io/badge/Module-Theme Documentation-8B0000.svg)]()
-[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
-[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
-[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
-[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
-[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
-]()
-
-> **Core module for the FixCity Platform.**
-
-## Perché esiste
-
-Core module for the FixCity Platform.
-
-## Superpoteri
-
-- Modular component with XotBase patterns
-- Professional-grade implementation
-- Integrated with FixCity Platform
-
-## Documentazione
-
-| Lingua | Link |
-|--------|------|
-| 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
-
+---
+id: zero-docs-readme
+slug: readme
+title: "Documentazione del tema Zero"
+description: "Punto di ingresso della docs del tema Zero: scopo del tema, mappa delle cartelle, documenti chiave e regole di manutenzione."
+document_type: index
+type: index
+category: documentation
+status: active
+module: Zero
+tags: [zero, tema, docs, indice]
+created: "2026-09-24"
+updated: "2026-10-08"
+qmd: "tema zero docs indice mappa cartelle bmad wiki stories archivio frontmatter duplicati"
+issues: []
+discussions: []
+related:
+  - ./inventory.md
+  - ./wiki/index.md
+  - ./bmad/00-index.md
 ---
 
-**Modulo** `Zero` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
-=======
-# Tema Zero - Documentazione
+# Documentazione del tema Zero
 
-## Gestionale / replica
+## Scopo del tema
 
-Tema alternativo/sperimentale. Hub: [gestionale-docs-index.md](../../docs/gestionale-docs-index.md) · [tenant-modules-navigation-discipline.md](../../docs/tenant-modules-navigation-discipline.md) · [panels vs Zero](./gestionale-panels-vs-themes.md).
+`laravel/Themes/Zero` e' l'unico tema frontend del monorepo (tipo `pub`, vedi `theme.json`). Contiene solo presentazione: viste Blade, asset e traduzioni. La cartella `app/` e' vuota.
 
-## Overview
+| Parte | Cosa c'e' | Dove |
+|---|---|---|
+| Viste | layout `app`, pagine `home`, `index`, login, componenti `layouts`, `blocks`, `ui`, override Filament per il login | `resources/views/` |
+| Asset | Tailwind 3.4, Alpine 3, Flowbite 4, Vite 6 con `laravel-vite-plugin`; build in `public/` | `resources/css`, `resources/js`, `vite.config.js` |
+| Mail | layout HTML `base`, `clean`, `christmas-professional` | `resources/mail-layouts/` |
+| Lingue | `navigation` e `ui` in it, en, de | `lang/` |
 
-Il tema **Zero** è il tema principale di default per l'applicazione Laraxot PTVX.
+Il tema non contiene logica di dominio. Survey, autorizzazione e dati Pulse sono del modulo Quaeris: contratto in [Quaeris docs, BMAD](../../../Modules/Quaeris/docs/bmad/README.md). Non copiare nel tema metriche o decisioni di dominio.
 
-## Scopo (business)
+## Mappa delle cartelle
 
-- **Frontoffice**: layout e pagine base, con convenzioni condivise.
-- **Coerenza**: integrazione con `UI` per componenti, e con `Xot` per regole architetturali.
+| Percorso | Ruolo | Ingresso |
+|---|---|---|
+| [`bmad/`](bmad/) | guide, architettura, report e pianificazione del tema (la parte piu' grande) | [`bmad/00-index.md`](bmad/00-index.md), [`bmad/README.md`](bmad/README.md) |
+| [`wiki/`](wiki/) | conoscenza curata per gli agenti: concetti, regole, how-to, memorie, fonti | [`wiki/index.md`](wiki/index.md) |
+| [`stories/`](stories/) | story BMAD del tema (posizione prevista dalla policy) | vedi sotto |
+| [`bmad/stories/`](bmad/stories/) | altre due story, nate prima della policy | vedi sotto |
+| [`concepts/`](concepts/) | vincolo XotBase al posto di Filament | [`xotbase-never-extend-filament.md`](concepts/xotbase-never-extend-filament.md) |
+| [`skills/`](skills/) | note sulle skill del tema | [`readme.md`](skills/readme.md) |
+| [`_archive/`](_archive/) | copie storiche, non canoniche; ogni file ha `canonical:` verso il documento vivo | [`index.md`](_archive/index.md) |
 
-## Struttura
+File nella radice: [`changelog.md`](changelog.md) (cronologia), [`inventory.md`](inventory.md) (conteggi verificati), [`index.md`](index.md) (indice storico, `status: superseded`: usare questa pagina).
 
-```
-Zero/
-├── app/
-│   ├── Http/
-│   ├── View/
-│   └── ...
-├── config/
-├── docs/
-├── lang/
-├── resources/
-│   ├── views/
-│   └── svg/
-└── routes/
-```
+## Documenti chiave
 
-## Configurazione
+- Architettura: [`bmad/architecture.md`](bmad/architecture.md), [`wiki/rules/architecture-rules.md`](wiki/rules/architecture-rules.md), [`concepts/xotbase-never-extend-filament.md`](concepts/xotbase-never-extend-filament.md).
+- Viste e UI: [`bmad/layouts.md`](bmad/layouts.md), [`bmad/components.md`](bmad/components.md), [`bmad/customization.md`](bmad/customization.md), [`bmad/mail-layouts.md`](bmad/mail-layouts.md).
+- Grafici: [`bmad/filament-chart-integration.md`](bmad/filament-chart-integration.md), [`wiki/concepts/jpgraph-guide.md`](wiki/concepts/jpgraph-guide.md).
+- Qualita': [`bmad/phpstan-dry-kiss-theme-guidelines.md`](bmad/phpstan-dry-kiss-theme-guidelines.md), [`bmad/php-quality-gates-rule.md`](bmad/php-quality-gates-rule.md).
 
-### Regole Fondamentali
+## Story
 
-1. **PHPStan**: Configurazione centralizzata in `laravel/phpstan.neon`
-2. **Output files**: `phpstan*.json` ignorati (NON committare)
-3. **Namespace**: `Themes\Zero\`
+- In `stories/`: [salute della docs, 2026-10-08](stories/2026-10-08-zero-docs-health.story.md), [audit documentazione](stories/docs-theme-zero-audit-2026-09-11.story.md), [audit indice](stories/docs-index-audit.story.md), [pulizia marker di conflitto](stories/zero-conflict-markers-cleanup-2026-09-22.story.md), [restyling login](stories/auth-login-ui-ux-redesign-2026-09-17.story.md).
+- In `bmad/stories/`: [gate PHPStan e swarm](bmad/stories/quality-gates-phpstan-swarm-2026-09-23.story.md), [dedup e frontmatter](bmad/stories/theme-docs-dedup-frontmatter.story.md).
 
-## Repo indipendente
+## Regole di manutenzione
 
-Path in `gitmodules.ini`: `laravel/Themes/Zero` → remote `laraxot/theme_zero_fila5`. Entrare con `cd`, non trattarlo come submodule della root. Protocollo: [17-gitmodules-path-iteration.md](../../../../bashscripts/tools/prompts/17-gitmodules-path-iteration.md).
+1. Ogni `.md` apre con front matter completo (`id`, `slug`, `title`, `description`, `document_type`, `category`, `status`); regola in `bashscripts/ai/wiki/rules/markdown-file-naming-and-frontmatter.md`.
+2. Un solo canonico per argomento. Il duplicato resta ma con `status: superseded` e `superseded_by`, oppure sta in `_archive/` con `canonical:`. Non cancellare, non rinumerare le story.
+3. Nomi in kebab-case senza date (le story seguono la propria convenzione).
+4. Nuove pagine nella cartella piu' specifica gia' esistente, con link dall'indice di quella cartella.
 
-## Collegamenti
+## Debito noto
 
-- [PHPStan Docs](./phpstan.md)
-- [Configurazione Root](../../../docs/THEME_ZERO.md)
-- [Metodologia GSD](../../../../docs/project/gsd-methodology.md)
-- [GSD templates locali](../../../../.gsd/README.md)
-
-## Backlinks
-
-- [Xot Module](../../Modules/Xot/docs/)
-- [UI Module](../../Modules/UI/docs/)
-
-## AI Workflows
-- [AI Methodologies](./ai-methodologies.md)
->>>>>>> laraxot/dev
+- 30 file contengono ancora marker di conflitto Git con lati divergenti o annidati: elenco e stato in [`inventory.md`](inventory.md). Si risolvono uno per uno, tenendo entrambe le parti utili, in un task dedicato.
+- Molti link relativi ereditati dalla vecchia struttura piatta non risolvono (conteggio in `inventory.md`).
+- Le guide in `bmad/` citano Tailwind v4, Livewire 4 e Flux UI; il tema reale usa Tailwind 3.4, Alpine e Flowbite. Allineare quando si tocca la guida.
+- Il gemello `bmad/readme.md` (maiuscola diversa) collide su filesystem case-insensitive: vedi [`bmad/README.md`](bmad/README.md).

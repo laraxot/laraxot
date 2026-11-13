@@ -1,4 +1,7 @@
 ---
+qmd: "bootstrap italia class inventory"
+issues: []
+discussions: []
 title: "Bootstrap Italia — inventario classi per le 7 pagine segnalazione"
 type: entity
 sources:
@@ -18,6 +21,7 @@ related:
   - "../concepts/segnalazione-html-samples-class-token-extraction.md"
   - "../concepts/segnalazione-local-html-class-token-table.md"
   - "../../../../../../_bmad-output/implementation-artifacts/7-105-bootstrap-italia-tailwind-class-map-sette-pagine-segnalazione.md"
+status: draft
 ---
 
 # Bootstrap Italia — Inventario classi (7 pagine segnalazione)

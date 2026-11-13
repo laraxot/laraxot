@@ -1,9 +1,16 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "module readme template"
+issues: []
+discussions: []
 title: [Module Name]
 module: [module-slug]
 status: production
 related:
-  - "./readme.md"
+  - "./README.md"
 ---
 
 # [Module Name] Module
@@ -169,10 +176,11 @@ composer test -- Modules/[ModuleName]
 - [Guides](./guides/) - How-to guides
 
 ### Related Modules
-- [Xot Module](../xot/README.md) - Base classes
+- [Xot Module](../../../Xot/README.md) - Base classes
+- [Xot Module](../../../Xot/README.md) - Base classes
 
 ---
 
-Navigation: [Project Home](../../docs/INDEX.md) | [Modules](../../docs/modules/README.md)
+Navigation: [Project Home](../index.md) | [Modules](../../docs/modules/README.md)
 Navigation: [Project Home](../../docs/index.md) | [Modules](../../docs/modules/README.md)
 

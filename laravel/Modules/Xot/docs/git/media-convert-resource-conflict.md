@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Risoluzione Conflitto in MediaConvertResource"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, git]
+qmd: "Risoluzione Conflitto in MediaConvertResource"
+---
+>>>>>>> laraxot/dev
 # Risoluzione Conflitto in MediaConvertResource
 
 ## Panoramica
@@ -8,7 +21,11 @@ Questo documento descrive in dettaglio la risoluzione del conflitto git nel file
 
 Il file presenta conflitti multipli relativi alla definizione della risorsa Filament per la conversione dei media. I principali conflitti riguardano:
 
+<<<<<<< HEAD
 1. **Struttura dello schema del form**:
+=======
+1. **Struttura dello schema del form**: 
+>>>>>>> laraxot/dev
    - Alcune versioni usano un array associativo con chiavi (es: `'format' => Radio::make('format')`)
    - Altre versioni utilizzano i componenti direttamente (es: `Radio::make('format')`)
 
@@ -63,7 +80,11 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 class MediaConvertResource extends XotBaseResource
 {
     protected static ?string $model = MediaConvert::class;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     /**
@@ -71,9 +92,13 @@ class MediaConvertResource extends XotBaseResource
      * @return array<int, \Filament\Forms\Components\Component>
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public static function getFormSchema(): array
 >>>>>>> laraxot/dev
     {
         return [
@@ -145,5 +170,9 @@ class MediaConvertResource extends XotBaseResource
 ## Collegamenti Bidirezionali
 
 - [Documento principale risoluzione conflitti](risoluzione_conflitti.md)
+<<<<<<< HEAD
 - [Documentazione modulo Media](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md)
 - [Documentazione modulo Media](../../media/docs/conflitti_merge_risolti.md)
+=======
+- [Documentazione modulo Media](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md) 
+>>>>>>> laraxot/dev

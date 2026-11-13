@@ -1,3 +1,16 @@
+---
+title: "document root architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "document root architecture"
+issues: []
+discussions: []
+status: superseded
+superseded_by: document-root-architecture.md
+---
+
 # Document Root Architecture
 
 ## Overview

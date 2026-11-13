@@ -9,9 +9,9 @@ issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./2fa.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Colli di Bottiglia - Modulo User
 
 ## 1. Autenticazione 2FA [70%]

@@ -1,10 +1,15 @@
 ---
+qmd: "ZEN OF APP"
+issues: []
+discussions: []
 title: "Zen of Notify - Complete Philosophy"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: zen_of_app.md
 ---
 
 # 🧘 Zen of Notify - Complete Philosophy
@@ -23,18 +28,21 @@ updated: 2026-08-24
 > **Non si torna mai indietro. Si studia il passato per migliorare.**
 
 **Principi**:
-- ✅ `git rebase` invece di `git reset`
-- ✅ `git revert` invece di `git checkout <old-commit>`
+- ✅ Git forward-only: un cambiamento si corregge scrivendo un nuovo commit in avanti
+- ✅ Mai `git reset`, `git revert`, `git checkout`/`git restore`, `git stash`, `git rebase`
 - ✅ Studiare commit history per capire decisioni
 - ✅ Documentare lezioni apprese
 - ✅ Mai force-push su branch condivisi
 
 **Comandi**:
 ```bash
-# ✅ CORRETTO: Rebase per pulire history
+# ✅ CORRETTO: correggi il file e registra la correzione con un nuovo commit
+git commit -m "fix: correggi il comportamento"
+
+# ❌ SBAGLIATO: riscrive la history
 git rebase -i HEAD~5
 
-# ✅ CORRETTO: Revert per annullare cambiamenti
+# ❌ SBAGLIATO: annulla con un commit inverso
 git revert <commit-hash>
 
 # ❌ SBAGLIATO: Reset che distrugge history

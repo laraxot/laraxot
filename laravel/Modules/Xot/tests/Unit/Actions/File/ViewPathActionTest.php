@@ -18,7 +18,11 @@ it('calculates view path correctly', function (): void {
     /** @var GetViewNameSpacePathAction&MockInterface $nsMock */
     $nsMock = Mockery::mock(GetViewNameSpacePathAction::class);
     $nsMock->shouldReceive('execute')
+<<<<<<< HEAD
         ->with('test_ns')
+=======
+        ->with('Xot')
+>>>>>>> laraxot/dev
         ->andReturn('/path/to/views');
 
     app()->instance(GetViewNameSpacePathAction::class, $nsMock);

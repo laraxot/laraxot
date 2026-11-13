@@ -25,7 +25,6 @@ Tests:    28 failed, 2 skipped, 203 passed (831 assertions)
 **Descrizione:**
 ```
 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'state' in 'field list'
-<<<<<<< HEAD
 <<<<<<< .merge_file_tzn9K3
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -40,9 +39,6 @@ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'state' in 'field list'
 (Connection: user, Host: 127.0.0.1, Port: 3306, Database: <nome progetto>_data)=======
 (Connection: user, Host: 127.0.0.1, Port: 3306, Database: techplanner_data)
 >>>>>>> .merge_file_uyvOYA
-=======
-(Connection: user, Host: 127.0.0.1, Port: 3306, Database: <nome progetto>_data)
->>>>>>> 13cf1831 (.)
 ```
 
 **Causa:**
@@ -70,7 +66,6 @@ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'state' in 'field list'
 **Descrizione:**
 ```
 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'state' in 'field list'
-<<<<<<< HEAD
 <<<<<<< .merge_file_tzn9K3
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -85,9 +80,6 @@ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'state' in 'field list'
 (Connection: user, Host: 127.0.0.1, Port: 3306, Database: <nome progetto>_data)=======
 (Connection: user, Host: 127.0.0.1, Port: 3306, Database: techplanner_data)
 >>>>>>> .merge_file_uyvOYA
-=======
-(Connection: user, Host: 127.0.0.1, Port: 3306, Database: <nome progetto>_data)
->>>>>>> 13cf1831 (.)
 ```
 
 **Causa:**

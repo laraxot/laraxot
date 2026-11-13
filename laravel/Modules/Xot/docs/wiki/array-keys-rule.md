@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+---
+title: "Xot - array-keys-rule.md"
+module: Xot
+bmad: true
+status: active
+---
+>>>>>>> laraxot/dev
 # Array Keys Rule for Filament Schemas
 
 ## Regola
@@ -80,8 +89,24 @@ public static function getTableColumns(): array
 ### Form
 ```php
 <<<<<<< HEAD
+<<<<<<< HEAD
 public function getFormSchema(): array
 =======
+public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+public function getFormSchema(): array
+public function getFormSchema(): array
+public function getFormSchema(): array
+---
+title: "array keys rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "array keys rule"
+issues: []
+discussions: []
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
 {
@@ -96,8 +121,16 @@ public function getFormSchema(): array
 ### Infolist
 ```php
 <<<<<<< HEAD
+<<<<<<< HEAD
 public function getInfolistSchema(): array
 =======
+public function getInfolistSchema(): array
+>>>>>>> laraxot/dev
+=======
+public function getInfolistSchema(): array
+public function getInfolistSchema(): array
+public function getInfolistSchema(): array
+---
 public function getInfolistSchema(): array
 >>>>>>> laraxot/dev
 {
@@ -115,4 +148,8 @@ public function getInfolistSchema(): array
 
 ---
 **Creato**: 2026-05-07
+<<<<<<< HEAD
 **Modulo**: Xot
+=======
+**Modulo**: Xot
+>>>>>>> laraxot/dev

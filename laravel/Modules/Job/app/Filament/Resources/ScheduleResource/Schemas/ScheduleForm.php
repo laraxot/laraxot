@@ -46,7 +46,7 @@ class ScheduleForm extends XotBaseResourceForm
             'main_section' => Section::make([
                 Select::make('command')
                     ->options(fn () => $commands_opts)
-                    ->reactive()
+                    ->live()
                     ->searchable()
                     ->required()
                     ->afterStateUpdated(function (Set $set, ?string $state): void {

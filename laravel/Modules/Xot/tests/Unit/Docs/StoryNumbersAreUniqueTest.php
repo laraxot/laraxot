@@ -76,7 +76,11 @@ function storyNumberCollisions(): array
 /**
  * Tetto misurato il 2026-09-08. Scende con la bonifica, non sale mai.
  */
+<<<<<<< HEAD
 const STORY_NUMBER_COLLISION_BASELINE = 74;
+=======
+const STORY_NUMBER_COLLISION_BASELINE = 57;
+>>>>>>> laraxot/dev
 
 test('nessuna story nuova riusa un numero gia preso', function (): void {
     $collisions = storyNumberCollisions();

@@ -1,3 +1,15 @@
+---
+title: "documentation governance"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "documentation governance"
+issues: []
+discussions: []
+status: draft
+---
+
 # Documentation Governance Framework
 
 **Version**: 1.0  
@@ -5,7 +17,6 @@
 **Applies to**: All modules and themes
 
 ---
-
 ## 🎯 Purpose
 
 This document establishes the governance framework for all documentation in the FixCity platform, ensuring consistency, quality, and maintainability across all modules and themes.
@@ -428,6 +439,9 @@ jobs:
 - [agents.md](../../../agents.md) - Agent guidelines
 - [.windsurfrules](../../../.windsurfrules) - IDE rules
 - [DOCUMENTATION_INDEX.md](../../../docs/DOCUMENTATION_INDEX.md) - Master index
+- [agents.md](../../../AGENTS.md) - Agent guidelines
+- [.windsurfrules](../../../.windsurfrules) - IDE rules
+- [DOCUMENTATION_INDEX.md](../../../../docs/DOCUMENTATION_INDEX.md) - Master index
 
 ---
 

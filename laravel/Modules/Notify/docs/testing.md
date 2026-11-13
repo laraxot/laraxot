@@ -1,3 +1,15 @@
+---
+title: "testing"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "testing"
+issues: []
+discussions: []
+status: draft
+---
+
 # Testing Rules Summary
 
 ## Coverage baseline (story 5.26)
@@ -59,6 +71,10 @@ Ogni modulo può avere il proprio `Pest.php` con:
 - Estensioni personalizzate
 - Helper functions
 - Custom expectations
+
+In Notify `tests/Pest.php` contiene solo il bind `pest()->extend(TestCase::class)->in('Feature', 'Unit')`. Gli helper di test non sono funzioni globali (nella run full-suite Pest carica il `Pest.php` di ogni modulo nello stesso processo: due funzioni con lo stesso nome sono un fatal `cannot redeclare`) ma metodi statici:
+- `Modules\Notify\Tests\TestCase`: `assertNotifyArray`, `notifyArrayGet`, `notifyReflectionSource`, `notifyReflectionPropertyNames`
+- `Modules\Xot\Tests\XotBasePest` (condiviso, per autoload): `assertFreshModel`, `assertFirstModel`, `assertTableHas`, `assertArray`, `assertString`, `assertReflectionTypeName`
 
 ## Comandi Importanti
 
@@ -380,6 +396,7 @@ protected function createApplication()
 - [Testing Setup Guide](../../docs/testing-setup.md)
 - [Testing Best Practices](../../docs/testing-best-practices.md)
 - [Troubleshooting Guide](../../docs/troubleshooting.md)
+- [Troubleshooting Guide](troubleshooting.md)
 
 ## Testing Examples
 
@@ -490,7 +507,6 @@ Following these guidelines will ensure your Notify module tests are:
 Remember: Good tests are the foundation of reliable software development.
 
 ---
-
 *Last updated: January 2025*
 
 ---
@@ -504,7 +520,7 @@ tags: [notify, testing, pest]
 created: 2026-07-28
 ---
 
-# Notify Module — Testing
+# Notify Module: Testing
 
 ```php
 test('sends welcome notification', function () {

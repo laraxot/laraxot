@@ -1,3 +1,9 @@
+---
+title: "Employee - FEATURE_COMPARISON"
+module: Employee
+bmad: true
+status: active
+---
 # Confronto Funzionalità: dipendentincloud.it vs Modulo Employee
 
 ## Panoramica

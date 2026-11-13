@@ -16,9 +16,9 @@ related:
   - "./payment.md"
   - "./phpstan.md"
   - "./profile.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # eav
 
 <!-- Contenuto migrato da _docs/eav.txt -->
@@ -37,14 +37,11 @@ https://github.com/rinvex/laravel-attributes
 https://github.com/spatie/laravel-schemaless-attributes
 
 
-
 //---- >getEmailFormComponent,getPasswordFormComponent 
 --- 
 https://laraveldaily.com/post/filament-registration-form-extra-fields-choose-user-role
 
 
-
 https://learn.userfrosting.com/recipes/extending-the-user-model
-
 
 

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Task: Ridurre Suppressioni PHPStan Inline - Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "task ridurre phpstan suppressioni"
 related:
   - "./webm.md"
+status: draft
 ---
 # Task: Ridurre Suppressioni PHPStan Inline - Media
 

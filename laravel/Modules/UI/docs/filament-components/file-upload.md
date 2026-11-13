@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "file upload"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "file upload"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Componente FileUpload
 
 ## Collegamenti Bidirezionali

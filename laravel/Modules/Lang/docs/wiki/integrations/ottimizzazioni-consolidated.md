@@ -1,13 +1,17 @@
 ---
-title: "ottimizzazioni — Consolidated Documentation"
+qmd: "ottimizzazioni consolidated"
+issues: []
+discussions: []
+title: "ottimizzazioni: Consolidated Documentation"
 module: lang
 type: integration
 tags: [integrations, modules, lang]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
-# ottimizzazioni — Consolidated Documentation
+# ottimizzazioni: Consolidated Documentation
 
 Consolidated from **5** individual files.
 
@@ -330,6 +334,11 @@ php artisan test --testsuite=Lang
 - [**Filament Best Practices**](../../docs/core/filament-best-practices.md)
 - [**Convenzioni Sistema**](../../docs/core/conventions.md)
 - [**Template Moduli**](../../docs/templates/)
+- [**Documentazione Core Sistema**](../../core)
+- [**PHPStan Guide**](../../docs/core/phpstan-guide.md)
+- [**Filament Best Practices**](../../docs/core/filament-best-practices.md)
+- [**Convenzioni Sistema**](../../docs/core/conventions.md)
+- [**Template Moduli**](../../templates)
 
 ---
 
@@ -942,6 +951,7 @@ class Language extends Model
 ## 🔗 Collegamenti
 
 - [Documentazione Core](../../../../docs/core/)
+- [Documentazione Core](../../core)
 - [Best Practices Filament](../../../../docs/core/filament-best-practices.md)
 - [Convenzioni Sistema](../../../../docs/core/conventions.md)
 - [Template Modulo](../../../../docs/templates/module-template.md)
@@ -1286,6 +1296,7 @@ class Language extends Model
 ## 🔗 Collegamenti
 
 - [Documentazione Core](../../../../docs/core/)
+- [Documentazione Core](../../core)
 - [Best Practices Filament](../../../../docs/core/filament-best-practices.md)
 - [Convenzioni Sistema](../../../../docs/core/conventions.md)
 - [Template Modulo](../../../../docs/templates/module-template.md)

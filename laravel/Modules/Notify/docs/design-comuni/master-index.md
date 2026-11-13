@@ -10,6 +10,7 @@ discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./documentazione-report-finale.md"
   - "./index.md"
+status: draft
 ---
 
 # Design Comuni Italia - Master Documentation Index
@@ -43,42 +44,43 @@ Replicazione delle 38 pagine statiche del progetto [Design Comuni Italia](https:
 |-----------|------|-------------|
 | **Index** | [00-index.md](../laravel/Themes/Sixteen/docs/design-comuni/00-index.md) | Indice principale Design Comuni |
 | **Analisi HTML** | [DOMANDE_FREQUENTI_HTML_analysis.md](../laravel/Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_HTML_analysis.md) | Confronto struttura HTML reference vs local |
-| **Implementazione** | [DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md](../laravel/Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md) | Report implementazione completo |
+| **Implementazione** | [DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md](../laravel/Themes/Sixteen/docs/design-comuni/domande-frequenti-implementazione.md) | Report implementazione completo |
 | **Analisi Visiva** | [DOMANDE_FREQUENTI_analisi-visiva.md](../laravel/Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_analisi-visiva.md) | Analisi screenshots comparativi |
 | **Report Finale** | [DOMANDE_FREQUENTI_report-finale.md](../laravel/Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_report-finale.md) | Stato finale e prossimi passi |
-| **Stato Attuale** | [STATO_ATTUALE_FAQ.md](../laravel/Themes/Sixteen/docs/design-comuni/STATO_ATTUALE_FAQ.md) | Analisi problemi e piano di fix |
-| **Fix Parity JS** | [FIX_ACCORDION_PARITY_JS.md](../laravel/Themes/Sixteen/docs/design-comuni/FIX_ACCORDION_PARITY_JS.md) | Rimozione domande-frequenti-parity.js |
-| **Fix Accordion Finale** | [FIX_ACCORDION_FINALE.md](../laravel/Themes/Sixteen/docs/design-comuni/FIX_ACCORDION_FINALE.md) | Report fix accordion completo |
-| **Analisi Struttura** | [ANALISI_STRUTTURA_HTML_FAQ.md](../laravel/Themes/Sixteen/docs/design-comuni/ANALISI_STRUTTURA_HTML_FAQ.md) | Analisi dettagliata struttura HTML |
-| **Alpine.js Accordion** | [ALPINE_JS_ACCORDION_IMPLEMENTAZIONE.md](../laravel/Themes/Sixteen/docs/design-comuni/ALPINE_JS_ACCORDION_IMPLEMENTAZIONE.md) | Implementazione Alpine.js |
-| **Report Fix Completo** | [REPORT_FIX_COMPLETO_FAQ.md](../laravel/Themes/Sixteen/docs/design-comuni/REPORT_FIX_COMPLETO_FAQ.md) | Report finale tutti i fix |
-| **Risultati Ricerca Analisi** | [RISULTATI_RICERCA_ANALISI.md](../laravel/Themes/Sixteen/docs/design-comuni/RISULTATI_RICERCA_ANALISI.md) | Analisi struttura risultati ricerca |
-| **Risultati Ricerca Report** | [RISULTATI_RICERCA_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/RISULTATI_RICERCA_REPORT.md) | Report implementazione risultati ricerca |
+| **Stato Attuale** | [STATO_ATTUALE_FAQ.md](../laravel/Themes/Sixteen/docs/design-comuni/stato-attuale-faq.md) | Analisi problemi e piano di fix |
+| **Fix Parity JS** | [FIX_ACCORDION_PARITY_JS.md](../laravel/Themes/Sixteen/docs/design-comuni/fix-accordion-parity-js.md) | Rimozione domande-frequenti-parity.js |
+| **Fix Accordion Finale** | [FIX_ACCORDION_FINALE.md](../laravel/Themes/Sixteen/docs/design-comuni/fix-accordion-finale.md) | Report fix accordion completo |
+| **Analisi Struttura** | [ANALISI_STRUTTURA_HTML_FAQ.md](../laravel/Themes/Sixteen/docs/design-comuni/analisi-struttura-html-faq.md) | Analisi dettagliata struttura HTML |
+| **Alpine.js Accordion** | [ALPINE_JS_ACCORDION_IMPLEMENTAZIONE.md](../laravel/Themes/Sixteen/docs/design-comuni/alpine-js-accordion-implementazione.md) | Implementazione Alpine.js |
+| **Report Fix Completo** | [REPORT_FIX_COMPLETO_FAQ.md](../laravel/Themes/Sixteen/docs/design-comuni/report-fix-completo-faq.md) | Report finale tutti i fix |
+| **Risultati Ricerca Analisi** | [RISULTATI_RICERCA_ANALISI.md](../laravel/Themes/Sixteen/docs/design-comuni/risultati-ricerca-analisi.md) | Analisi struttura risultati ricerca |
+| **Risultati Ricerca Report** | [RISULTATI_RICERCA_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/risultati-ricerca-report.md) | Report implementazione risultati ricerca |
 | **Risultati Ricerca Report Finale** | [RISULTATI_RICERCA_report-finale.md](../laravel/Themes/Sixteen/docs/design-comuni/RISULTATI_RICERCA_report-finale.md) | Report finale completo |
-| **Argomenti Analisi** | [ARGOMENTI_ANALISI.md](../laravel/Themes/Sixteen/docs/design-comuni/ARGOMENTI_ANALISI.md) | Analisi struttura argomenti |
+| **Argomenti Analisi** | [ARGOMENTI_ANALISI.md](../laravel/Themes/Sixteen/docs/design-comuni/argomenti-analisi.md) | Analisi struttura argomenti |
 | **Argomenti Report Finale** | [ARGOMENTI_report-finale.md](../laravel/Themes/Sixteen/docs/design-comuni/ARGOMENTI_report-finale.md) | Report finale argomenti |
-| **Argomenti Report Aggiornato** | [ARGOMENTI_REPORT_AGGIORNATO.md](../laravel/Themes/Sixteen/docs/design-comuni/ARGOMENTI_REPORT_AGGIORNATO.md) | Report aggiornato post-cache clear |
+| **Argomenti Report Aggiornato** | [ARGOMENTI_REPORT_AGGIORNATO.md](../laravel/Themes/Sixteen/docs/design-comuni/argomenti-report-aggiornato.md) | Report aggiornato post-cache clear |
 | **Screenshots FAQ** | [screenshots/](../laravel/Themes/Sixteen/docs/design-comuni/screenshots/) | 150+ files comparativi FAQ |
 | **Screenshots Ricerca** | [screenshots/risultati-ricerca/](../laravel/Themes/Sixteen/docs/design-comuni/screenshots/risultati-ricerca/) | Screenshots risultati ricerca |
 | **Screenshots Argomenti** | [screenshots/argomenti/](../laravel/Themes/Sixteen/docs/design-comuni/screenshots/argomenti/) | Screenshots argomenti |
 | **Screenshots All Pages** | [screenshots/all-pages/](../laravel/Themes/Sixteen/docs/design-comuni/screenshots/all-pages/) | Screenshots tutte 54 pagine |
 | **All Pages Analysis** | [ALL_PAGES_analysis.md](../laravel/Themes/Sixteen/docs/design-comuni/ALL_PAGES_analysis.md) | Analisi completa 54 pagine |
 | **Progress Report** | [progress-report.md](../laravel/Themes/Sixteen/docs/design-comuni/progress-report.md) | Report progresso aggiornato |
+| **Progress Report** | [progress-report.md](../progress-report.md) | Report progresso aggiornato |
 | **Fail Pages Analysis** | [FAIL_PAGES_analysis.md](../laravel/Themes/Sixteen/docs/design-comuni/FAIL_PAGES_analysis.md) | Analisi pagine fail |
-| **Skills & Rules** | [SKILLS_RULES.md](../laravel/Themes/Sixteen/docs/design-comuni/SKILLS_RULES.md) | Skills, rules e best practices |
-| **Segnalazioni Elenco Analisi** | [SEGNALAZIONI_ELENCO_ANALISI.md](../laravel/Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_ANALISI.md) | Analisi segnalazioni elenco (95.7%) |
-| **Segnalazioni Elenco Report** | [SEGNALAZIONI_ELENCO_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_REPORT.md) | Report segnalazioni elenco - TARGET RAGGIUNTO |
+| **Skills & Rules** | [SKILLS_RULES.md](../laravel/Themes/Sixteen/docs/design-comuni/skills-rules.md) | Skills, rules e best practices |
+| **Segnalazioni Elenco Analisi** | [SEGNALAZIONI_ELENCO_ANALISI.md](../laravel/Themes/Sixteen/docs/design-comuni/segnalazioni-elenco-analisi.md) | Analisi segnalazioni elenco (95.7%) |
+| **Segnalazioni Elenco Report** | [SEGNALAZIONI_ELENCO_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/segnalazioni-elenco-report.md) | Report segnalazioni elenco - TARGET RAGGIUNTO |
 | **Segnalazioni Elenco Visual** | [SEGNALAZIONI_ELENCO_VISUAL_analysis.md](../laravel/Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_VISUAL_analysis.md) | Analisi visiva dettagliata |
-| **Segnalazioni Elenco CSS** | [SEGNALAZIONI_ELENCO_CSS_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_CSS_REPORT.md) | Report CSS fix (+327 lines) |
-| **Segnalazioni Elenco Layout Fix** | [SEGNALAZIONI_ELENCO_LAYOUT_FIX.md](../laravel/Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_LAYOUT_FIX.md) | Fix layout mappa/filtri (101.1%) |
-| **Segnalazioni Elenco Rating Fix** | [SEGNALAZIONI_ELENCO_RATING_FIX.md](../laravel/Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_RATING_FIX.md) | Fix rating duplicato (99.1%) |
+| **Segnalazioni Elenco CSS** | [SEGNALAZIONI_ELENCO_CSS_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/segnalazioni-elenco-css-report.md) | Report CSS fix (+327 lines) |
+| **Segnalazioni Elenco Layout Fix** | [SEGNALAZIONI_ELENCO_LAYOUT_FIX.md](../laravel/Themes/Sixteen/docs/design-comuni/segnalazioni-elenco-layout-fix.md) | Fix layout mappa/filtri (101.1%) |
+| **Segnalazioni Elenco Rating Fix** | [SEGNALAZIONI_ELENCO_RATING_FIX.md](../laravel/Themes/Sixteen/docs/design-comuni/segnalazioni-elenco-rating-fix.md) | Fix rating duplicato (99.1%) |
 | **Segnalazioni Elenco Tabs Analysis** | [SEGNALAZIONI_ELENCO_TABS_analysis.md](../laravel/Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_TABS_analysis.md) | Analisi tabs e bottoni |
-| **Segnalazioni Elenco Elementi Analisi** | [SEGNALAZIONI_ELENCO_ELEMENTI_ANALISI.md](../laravel/Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_ELEMENTI_ANALISI.md) | Analisi completa elementi e fix modal |
-| **Segnalazioni Elenco Fix Completi** | [SEGNALAZIONI_ELENCO_FIX_COMPLETI.md](../laravel/Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_FIX_COMPLETI.md) | Fix completi e analisi elementi (92.5%) |
+| **Segnalazioni Elenco Elementi Analisi** | [SEGNALAZIONI_ELENCO_ELEMENTI_ANALISI.md](../laravel/Themes/Sixteen/docs/design-comuni/segnalazioni-elenco-elementi-analisi.md) | Analisi completa elementi e fix modal |
+| **Segnalazioni Elenco Fix Completi** | [SEGNALAZIONI_ELENCO_FIX_COMPLETI.md](../laravel/Themes/Sixteen/docs/design-comuni/segnalazioni-elenco-fix-completi.md) | Fix completi e analisi elementi (92.5%) |
 | **Batch Pages Analysis** | [BATCH_PAGES_analysis.md](../laravel/Themes/Sixteen/docs/design-comuni/BATCH_PAGES_analysis.md) | Analisi completa 49 pagine |
 | **Batch Progress Report** | [BATCH_progress-report.md](../laravel/Themes/Sixteen/docs/design-comuni/BATCH_progress-report.md) | Report progresso batch |
-| **Fail Pages Detail** | [FAIL_PAGES_DETAIL_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/FAIL_PAGES_DETAIL_REPORT.md) | Analisi dettagliata 3 pagine fail |
-| **Fail Pages Fix Report** | [FAIL_PAGES_FIX_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/FAIL_PAGES_FIX_REPORT.md) | Report fix pagine fail |
+| **Fail Pages Detail** | [FAIL_PAGES_DETAIL_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/fail-pages-detail-report.md) | Analisi dettagliata 3 pagine fail |
+| **Fail Pages Fix Report** | [FAIL_PAGES_FIX_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/fail-pages-fix-report.md) | Report fix pagine fail |
 
 ### 🐙 GitHub Integration
 

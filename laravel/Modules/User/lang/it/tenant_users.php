@@ -3,25 +3,38 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< .merge_file_KFIY3f
     'fields' => [
-        'id' => ['label' => 'id'],
-        'uuid' => ['label' => 'uuid'],
-        'user_id' => ['label' => 'user_id'],
-        'tenant_id' => ['label' => 'tenant_id'],
-        'role' => ['label' => 'role'],
-        'permissions' => ['label' => 'permissions'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
-        'deleted_at' => ['label' => 'deleted_at'],
-        'updated_by' => ['label' => 'updated_by'],
-        'created_by' => ['label' => 'created_by'],
-        'deleted_by' => ['label' => 'deleted_by'],
+        'id' => ['label' => 'ID'],
+        'uuid' => ['label' => 'UUID'],
+        'user_id' => ['label' => 'Utente'],
+        'tenant_id' => ['label' => 'Tenant'],
+        'role' => ['label' => 'Ruolo'],
+        'permissions' => ['label' => 'Permessi'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
+        'deleted_at' => ['label' => 'Eliminato il'],
+        'updated_by' => ['label' => 'Modificato da'],
+        'created_by' => ['label' => 'Creato da'],
+        'deleted_by' => ['label' => 'Eliminato da'],
     ],
+=======
+>>>>>>> .merge_file_T16JXM
     'actions' => [
-        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
-        'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
-        'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
-        'edit' => ['tooltip' => 'edit', 'label' => 'edit', 'icon' => 'edit'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
+        'create' => [
+            'icon' => 'create',
+        ],
+        'layout' => [
+            'icon' => 'layout',
+        ],
+        'delete' => [
+            'icon' => 'delete',
+        ],
+        'edit' => [
+            'icon' => 'edit',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
     ],
 ];

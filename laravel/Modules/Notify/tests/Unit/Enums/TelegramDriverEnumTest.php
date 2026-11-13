@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Enums;
 
 use Modules\Notify\Enums\TelegramDriverEnum;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 it('has correct cases', function (): void {
     Assert::assertCount(3, TelegramDriverEnum::cases());
 
@@ -49,7 +51,6 @@ it('get default returns default driver', function (): void {
 
     $default = TelegramDriverEnum::getDefault();
 
-    Assert::assertInstanceOf(TelegramDriverEnum::class, $default);
     Assert::assertContains($default, TelegramDriverEnum::cases());
 });
 
@@ -65,7 +66,7 @@ it('cases returns all enum instances', function (): void {
     Assert::assertCount(3, $cases);
 
     foreach ($cases as $case) {
-        Assert::assertInstanceOf(TelegramDriverEnum::class, $case);
+        Assert::assertNotSame('', $case->value);
     }
 });
 

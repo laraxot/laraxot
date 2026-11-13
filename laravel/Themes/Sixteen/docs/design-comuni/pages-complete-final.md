@@ -1,3 +1,15 @@
+---
+title: "pages complete final"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "pages complete final"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🎉 Design Comuni Pages - COMPLETE!
 
 **Date**: 2026-03-30  
@@ -5,7 +17,6 @@
 **Owner**: Multi-Agent Team
 
 ---
-
 ## 📊 Final Status
 
 ### ✅ All Pages Created (38 total)
@@ -97,17 +108,14 @@
 - `blocks/service/details.blade.php`
 - And 8 more...
 
-### Page Templates (38)
-- `pages/tests/homepage.blade.php`
-- `pages/tests/argomenti.blade.php`
-- `pages/tests/appuntamento-*.blade.php` (7 files)
-- `pages/tests/assistenza-*.blade.php` (2 files)
-- `pages/tests/segnalazione-*.blade.php` (7 files)
-- `pages/tests/domande-frequenti.blade.php`
-- `pages/tests/servizi.blade.php`
-- `pages/tests/eventi.blade.php`
-- `pages/tests/novita.blade.php`
-- And 18 more...
+### Page entrypoints (dynamic)
+- `pages/tests/index.blade.php` — only the `/it/tests` catalogue.
+- `pages/tests/[slug].blade.php` — the single Folio/Volt entrypoint for every
+  `/it/tests/{slug}` page, including `homepage`.
+
+There must be no `pages/tests/homepage.blade.php`, `argomenti.blade.php` or
+other page-specific Folio file. The page identity and visible content belong to
+`config/local/fixcity/database/content/pages/tests.<slug>.json`.
 
 ---
 

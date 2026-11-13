@@ -1,3 +1,15 @@
+---
+title: "collision current"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "collision current"
+issues: []
+discussions: []
+status: draft
+---
+
 # Collision Current
 
 dentro il progetto ci sono molti files con dentro <git marker>, per risolverli velocemente potresti fare uno script ,

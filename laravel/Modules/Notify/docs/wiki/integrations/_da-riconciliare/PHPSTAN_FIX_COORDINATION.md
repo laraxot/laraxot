@@ -1,10 +1,14 @@
 ---
+qmd: "PHPSTAN FIX COORDINATION"
+issues: []
+discussions: []
 title: "PHPStan Fix Coordination Plan"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # PHPStan Fix Coordination Plan

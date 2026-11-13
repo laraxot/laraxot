@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Debugging Guide"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, troubleshooting]
+qmd: "Debugging Guide"
+---
+>>>>>>> laraxot/dev
 # Debugging Guide
 
 ## Strumenti di Debug
@@ -18,9 +31,16 @@
 
 ### Laravel Debugbar
 ```php
+<<<<<<< HEAD
 // Controllata da config/debugbar.php
 // (nel progetto: DEBUGBAR_ENABLED ha precedenza su APP_DEBUG)
 $enabled = (bool) config('debugbar.enabled');
+=======
+// Solo in ambiente di sviluppo
+if (env('APP_DEBUG')) {
+    Debugbar::enable();
+}
+>>>>>>> laraxot/dev
 ```
 
 - **Features**:

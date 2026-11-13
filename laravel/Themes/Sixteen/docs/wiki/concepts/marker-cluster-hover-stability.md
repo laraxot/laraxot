@@ -1,3 +1,15 @@
+---
+title: "marker cluster hover stability"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "marker cluster hover stability"
+issues: []
+discussions: []
+status: draft
+---
+
 # Stabilità cluster marker al hover (Leaflet.markercluster)
 
 ## Scopo

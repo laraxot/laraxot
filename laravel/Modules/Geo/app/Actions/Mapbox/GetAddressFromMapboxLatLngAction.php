@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\Geocoding\AddressData;
 use Modules\Geo\Datas\MapPlatforms\MapboxMapData;
 use Modules\Geo\Exceptions\InvalidLocationException;
+use Modules\Geo\Infrastructure\Config\GeoApiEndpoints;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -19,7 +20,7 @@ class GetAddressFromMapboxLatLngAction
 {
     use QueueableAction;
 
-    private const string BASE_URL = 'https://api.mapbox.com/geocoding/v5/mapbox.places';
+    private const string BASE_URL = GeoApiEndpoints::MAPBOX_PLACES;
 
     /**
      * Ottiene l'indirizzo da coordinate geografiche.
@@ -90,7 +91,7 @@ class GetAddressFromMapboxLatLngAction
     }
 
     /**
-     * @param array<mixed> $response
+     * @param  array<mixed>  $response
      */
     private function parseResponse(array $response): MapboxMapData
     {

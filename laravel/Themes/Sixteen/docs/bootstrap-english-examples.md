@@ -1,3 +1,15 @@
+---
+title: "bootstrap english examples"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "bootstrap english examples"
+issues: []
+discussions: []
+status: draft
+---
+
 # Bootstrap Italia Examples - Implementazione Tailwind
 
 ## Panoramica

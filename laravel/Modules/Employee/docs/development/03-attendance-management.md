@@ -1,3 +1,9 @@
+---
+title: "Employee - 03-ATTENDANCE-MANAGEMENT"
+module: Employee
+bmad: true
+status: active
+---
 # 03 - Gestione Presenze (Attendance Management)
 
 ## 🎯 Obiettivo

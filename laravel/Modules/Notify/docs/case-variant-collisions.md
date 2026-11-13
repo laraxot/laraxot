@@ -1,8 +1,20 @@
+---
+title: "case variant collisions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "case variant collisions"
+issues: []
+discussions: []
+status: draft
+---
+
 # Collisioni di nome per sola differenza di maiuscole
 
 **Misurato**: 2026-08-31
 **Regola violata**: `no-case-variations`, `case_sensitive_naming_critical`
-**Quadro generale**: [Modules/Xot/docs/stato-qualita-progetto-2026-08-31.md](../../Xot/docs/stato-qualita-progetto-2026-08-31.md)
+**Quadro generale**: [Modules/Xot/docs/stato-qualita-progetto.md](../../Xot/docs/stato-qualita-progetto.md)
 
 ## Il problema
 

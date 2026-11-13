@@ -8,17 +8,21 @@ qmd: "theme-translations-resolution risoluzione conflitti traduzioni tema two - 
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Risoluzione Conflitti Traduzioni Tema Two - Modulo User
 
 ## Data: [DATE]
@@ -416,11 +420,11 @@ php artisan lang:missing --locale=it,en,de
 ### Collegamenti Interni
 - [User States](user_states.mdc)
 - [Moderation Strategy](user-moderation-strategy-3.md)
+- [Moderation Strategy](user-moderation-strategy-documentation-themes.md)
 - [Filament Best Practices](filament_best_practices.md)
 
 ### Collegamenti Esterni
 - [Translation Standards](../../../../docs/project/translation-standards.md)
->>>>>>> 87273113 (.)
 - [Theme Documentation](../../../themes/two/project_docs/readme.md)
 
 ## Note per Sviluppatori

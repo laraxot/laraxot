@@ -1,10 +1,14 @@
 ---
+qmd: "perfection achieved"
+issues: []
+discussions: []
 title: "NOTIFY - PERFEZIONE RAGGIUNTA"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # 🏆 NOTIFY - PERFEZIONE RAGGIUNTA

@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Componenti Filament Personalizzati in Laraxot"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Componenti Filament Personalizzati in Laraxot"
+---
+>>>>>>> laraxot/dev
 # Componenti Filament Personalizzati in Laraxot
 
 Questo documento descrive i componenti personalizzati di Filament disponibili nel framework Laraxot e come utilizzarli correttamente.
@@ -22,18 +35,27 @@ class ClienteResource extends XotBaseResource
     protected static ?string $model = Cliente::class;
     protected static ?string $navigationIcon = 'heroicon-o-users';
     protected static ?string $cluster = ClienteCluster::class;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
+=======
+    
+    public static function getFormSchema(): array
+>>>>>>> laraxot/dev
     {
         return [
             // Schema del form
         ];
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     public static function table(Table $table): Table
     {
         return $table
@@ -64,12 +86,20 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 class CreateCliente extends XotBaseCreateRecord
 {
     protected static string $resource = ClienteResource::class;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     public function getFormSchema(): array
     {
         return parent::getFormSchema();
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // Opzionale
     protected function getFormDefaults(): array
     {
@@ -78,7 +108,11 @@ class CreateCliente extends XotBaseCreateRecord
             // Altri valori predefiniti
         ];
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // Necessario anche se vuoto
     public function fillForm(): void
     {
@@ -104,12 +138,20 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 class EditCliente extends XotBaseEditRecord
 {
     protected static string $resource = ClienteResource::class;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     public function getFormSchema(): array
     {
         return parent::getFormSchema();
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // Necessario per il ciclo di vita
     public function fillForm(): void
     {
@@ -135,7 +177,11 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 class ListClienti extends XotBaseListRecords
 {
     protected static string $resource = ClienteResource::class;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // Personalizzazioni...
 }
 ```
@@ -154,9 +200,15 @@ use Filament\Clusters\Cluster;
 class ClienteCluster extends Cluster
 {
     protected static ?string $navigationIcon = 'heroicon-o-users';
+<<<<<<< HEAD
 
     protected static ?int $navigationSort = 1;
 
+=======
+    
+    protected static ?int $navigationSort = 1;
+    
+>>>>>>> laraxot/dev
     public static function getNavigationLabel(): string
     {
         return trans('broker::cliente.cluster.navigation_label');

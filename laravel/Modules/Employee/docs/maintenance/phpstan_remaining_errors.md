@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN_REMAINING_ERRORS"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Level 10 - Remaining Errors Analysis
 
 ## Summary

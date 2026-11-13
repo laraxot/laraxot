@@ -1,3 +1,15 @@
+---
+title: "rating query with extra attributes scope.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating query with extra attributes scope.story"
+issues: []
+discussions: []
+status: draft
+---
+
 # Story: rating-query-with-extra-attributes-scope
 **Status**: done
 **Modulo**: Rating / IndennitaResponsabilita

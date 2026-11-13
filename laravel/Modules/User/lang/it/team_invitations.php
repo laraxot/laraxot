@@ -3,27 +3,42 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< .merge_file_ogculZ
     'fields' => [
-        'id' => ['label' => 'id'],
-        'uuid' => ['label' => 'uuid'],
-        'team_id' => ['label' => 'team_id'],
-        'email' => ['label' => 'email'],
-        'role' => ['label' => 'role'],
-        'accepted_at' => ['label' => 'accepted_at'],
-        'declined_at' => ['label' => 'declined_at'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
-        'deleted_at' => ['label' => 'deleted_at'],
-        'updated_by' => ['label' => 'updated_by'],
-        'created_by' => ['label' => 'created_by'],
-        'deleted_by' => ['label' => 'deleted_by'],
+        'id' => ['label' => 'ID'],
+        'uuid' => ['label' => 'UUID'],
+        'team_id' => ['label' => 'Team'],
+        'email' => ['label' => 'E-mail'],
+        'role' => ['label' => 'Ruolo'],
+        'accepted_at' => ['label' => 'Accettato il'],
+        'declined_at' => ['label' => 'Rifiutato il'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
+        'deleted_at' => ['label' => 'Eliminato il'],
+        'updated_by' => ['label' => 'Modificato da'],
+        'created_by' => ['label' => 'Creato da'],
+        'deleted_by' => ['label' => 'Eliminato da'],
     ],
+=======
+>>>>>>> .merge_file_SwMfPk
     'actions' => [
-        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
-        'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
-        'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
+        'create' => [
+            'icon' => 'create',
+        ],
+        'layout' => [
+            'icon' => 'layout',
+        ],
+        'delete' => [
+            'icon' => 'delete',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
+        'edit' => [
+            'icon' => 'edit',
+        ],
+        'save' => [
+            'icon' => 'save',
+        ],
     ],
 ];

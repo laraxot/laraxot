@@ -1,3 +1,9 @@
+---
+title: "Employee - EMPLOYEE-MODULE-CRITICAL-FIXES"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - Correzioni Critiche
 
 ## ERRORE CRITICO PRIORITÀ ASSOLUTA ⚠️

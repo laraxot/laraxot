@@ -12,11 +12,13 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
+uses(TestCase::class);
 describe('FormatSmsMessageAction', function () {
     it('can be instantiated', function () {
-        $action = new FormatSmsMessageAction;
-
-        Assert::assertInstanceOf(FormatSmsMessageAction::class, $action);
+        Assert::assertSame(
+            'Modules\\Notify\\Actions\\SMS',
+            (new \ReflectionClass(FormatSmsMessageAction::class))->getNamespaceName(),
+        );
     });
 
     it('has execute method with correct signature', function () {
@@ -71,11 +73,11 @@ describe('FormatSmsMessageAction', function () {
         $reflection = new \ReflectionClass($action);
         $content = TestCase::notifyReflectionSource($reflection);
         Assert::assertStringContainsString('declare(strict_types=1)', $content);
+        Assert::assertStringContainsString('use Spatie\\QueueableAction\\QueueableAction;', $content);
+        Assert::assertStringContainsString('use function Safe\\preg_split;', $content);
     });
 
     it('is not using QueueableAction trait', function () {
-        $action = new FormatSmsMessageAction;
-
         $traits = class_uses(FormatSmsMessageAction::class);
 
         Assert::assertArrayHasKey(QueueableAction::class, $traits);

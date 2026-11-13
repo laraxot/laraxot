@@ -18,9 +18,15 @@ class BelongsToAction
     {
         Assert::isInstanceOf($rows = $relationDTO->rows, BelongsTo::class);
 
+<<<<<<< HEAD
         $related = $relationDTO->rows->create($relationDTO->data);
 
         $relationDTO->rows->associate($related);
+=======
+        $related = $rows->create($relationDTO->data);
+
+        $rows->associate($related);
+>>>>>>> laraxot/dev
 
         // $rows = $relation->rows;
         /*

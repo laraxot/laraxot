@@ -1,3 +1,9 @@
+---
+title: "Employee - NAMING-STANDARDS"
+module: Employee
+bmad: true
+status: active
+---
 # Naming Standards - Employee Module
 
 ## Regole Critiche per Naming

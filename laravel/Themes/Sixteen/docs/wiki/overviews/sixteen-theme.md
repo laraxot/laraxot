@@ -1,4 +1,10 @@
 ---
+title: "sixteen theme"
+tags: [documentation]
+created: 2026-09-26
+qmd: "sixteen theme"
+issues: []
+discussions: []
 type: overview
 theme: Sixteen
 sources:
@@ -8,6 +14,7 @@ sources:
   - ../../../docs/sixteen-agid-naming-rules.md
 confidence: high
 updated: 2026-04-15
+status: draft
 ---
 
 # Sixteen Theme — Overview

@@ -1,4 +1,16 @@
-# Brainstorming — metodo riutilizzabile per getXlsFields dei rating
+---
+title: "rating export fields reusable"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating export fields reusable"
+issues: []
+discussions: []
+status: draft
+---
+
+# Brainstorming: metodo riutilizzabile per getXlsFields dei rating
 
 ## Contesto
 Il blocco `getXlsFields` in `IndennitaResponsabilitaResource.php` contiene logica per:
@@ -30,9 +42,9 @@ Questa logica è potenzialmente riutilizzabile da altri resource host (es. Ptv, 
   - Contro: BaseRating è astratto, potrebbe diventare troppo pesante con logica host-specifica
 
 ### 2. Quali parametri prendere?
-- **Anno e type** (obbligatori) — per filtrare i rating via `extra_attributes`
-- **Modello host** (opzionale, dedotto da `static::getModel()` nel contesto del resource) — per risolvere l'alias tipo
-- **Array di where extra_attributes** (più generico) — permette di passare qualsiasi filtro su extra_attributes (es. anno, type, altri campi custom)
+- **Anno e type** (obbligatori): per filtrare i rating via `extra_attributes`
+- **Modello host** (opzionale, dedotto da `static::getModel()` nel contesto del resource): per risolvere l'alias tipo
+- **Array di where extra_attributes** (più generico): permette di passare qualsiasi filtro su extra_attributes (es. anno, type, altri campi custom)
 
 ### 3. Dubbi e punti deboli
 - **Dubbio (30%)**: Se spostiamo la logica in un posto centrale, dobbiamo assicurarci che tutti i resource host chiamino il metodo nello stesso modo (rischio di inconsistenza se qualcuno continua a duplicare).
@@ -41,15 +53,15 @@ Questa logica è potenzialmente riutilizzabile da altri resource host (es. Ptv, 
 - **Punto debole (15%)**: Se mettiamo il metodo in `HasRatingsTrait.php`, il trait potrebbe accumulare responsabilità non strettamente legate alle relazioni rating (violazione SRP).
 
 ### 4. Punti di forza
-- **Forza (85%)**: Eliminare duplicazione di codice tra resource host (IR, Ptv, Performance, ecc.) — attualmente la stessa logica appare in più luoghi.
+- **Forza (85%)**: Eliminare duplicazione di codice tra resource host (IR, Ptv, Performance, ecc.): attualmente la stessa logica appare in più luoghi.
 - **Forza (75%)**: Centralizzare la logica di risoluzione dei rating tramite `extra_attributes` (anno, type, ecc.) rende più facile cambiare la struttura in futuro.
 - **Forza (65%)**: Riusare helper esistenti del trait (`ratingXlsValuePath`, `ratingValuePath`, `formFieldLabel`) garantisce coerenza.
 - **Forza (50%)**: Se fatto bene, apre la strada a un servizio di export rating riutilizzabile anche in altri contesti (es. API, PDF).
 
 ### 5. Motivazioni per l'implementazione
-- **Motivazione principale (90%)**: DRY principle — evitare copia-incolla di logica complessa che è soggetta a errori e inconsistente.
-- **Motivazione secondaria (80%)**: Migliorare la manutenibilità — se cambia il modo di filtrare i rating (es. aggiungere un nuovo campo in extra_attributes), si modifica in un solo posto.
-- **Motivazione terziaria (70%)**: Facilitare il testing — la logica può essere unit-testata in isolamento senza bisogno di creare un resource host fittizio.
+- **Motivazione principale (90%)**: DRY principle: evitare copia-incolla di logica complessa che è soggetta a errori e inconsistente.
+- **Motivazione secondaria (80%)**: Migliorare la manutenibilità: se cambia il modo di filtrare i rating (es. aggiungere un nuovo campo in extra_attributes), si modifica in un solo posto.
+- **Motivazione terziaria (70%)**: Facilitare il testing: la logica può essere unit-testata in isolamento senza bisogno di creare un resource host fittizio.
 
 ### 6. Decisione preliminare
 Basandomi sull'analisi:

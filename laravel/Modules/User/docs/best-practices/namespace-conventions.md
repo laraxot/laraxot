@@ -16,9 +16,9 @@ related:
   - "./component-verification-rules.md"
   - "./component-verification.md"
   - "./dependency-rules.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Convenzioni di Namespace nel Modulo User
 
 ## Principi Fondamentali
@@ -215,5 +215,4 @@ Se l'override del tema non funziona:
 ---
 
 *Documento creato: Dicembre 2024*
->>>>>>> 87273113 (.)
 

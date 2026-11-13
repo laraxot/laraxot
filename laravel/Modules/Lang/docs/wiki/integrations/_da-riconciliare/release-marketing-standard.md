@@ -1,14 +1,18 @@
 ---
-title: "Release e README marketing — Lang"
+qmd: "release marketing standard"
+issues: []
+discussions: []
+title: "Release e README marketing: Lang"
 type: reference
-status: approved
 tags: [release, semantic-versioning, changelog, readme, marketing]
 created: "2026-05-26"
 updated: "2026-05-26"
 issue: "https://github.com/provtv/<nome repository>/issues/153"
+status: superseded
+superseded_by: ../../../release-marketing-standard.md
 ---
 
-# Release e README marketing — Lang
+# Release e README marketing: Lang
 
 ## Scopo
 

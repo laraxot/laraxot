@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_TRACKING_WIDGET_COMPLETED"
+module: Employee
+bmad: true
+status: active
+---
 # TimeTrackingWidget - Implementazione Completata
 
 ## ✅ Widget Completato Secondo Specifica Utente

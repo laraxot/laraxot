@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 return [
     'fields' => [
         'name' => ['label' => 'name'],
@@ -13,3 +14,6 @@ return [
         'colors' => ['label' => 'colors'],
     ],
 ];
+=======
+return [];
+>>>>>>> laraxot/dev

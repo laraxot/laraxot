@@ -1,9 +1,20 @@
 ---
+<<<<<<< HEAD
+=======
+qmd: "architecture best practices"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Architecture Best Practices"
 type: reference
 tags: [wiki, no-frontmatter-fix]
 created: 2026-08-24
 updated: 2026-08-24
+<<<<<<< HEAD
+=======
+status: superseded
+superseded_by: ../../architecture-best-practices.md
+>>>>>>> laraxot/dev
 ---
 
 ## Convenzioni di naming per le azioni (Actions)

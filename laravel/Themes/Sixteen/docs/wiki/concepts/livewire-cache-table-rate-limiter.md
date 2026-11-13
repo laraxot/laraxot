@@ -1,3 +1,15 @@
+---
+title: "livewire cache table rate limiter"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "livewire cache table rate limiter"
+issues: []
+discussions: []
+status: draft
+---
+
 # livewire cache table rate limiter
 
 ## Contesto tema
@@ -24,4 +36,4 @@ senza queste tabelle, le interazioni Livewire possono fallire.
 ## Allineamento con modulo Fixcity
 
 Vedi regola modulo:
-- [livewire-cache-table-rate-limiter](../../../../Modules/Fixcity/docs/wiki/concepts/livewire-cache-table-rate-limiter.md)
+- [livewire-cache-table-rate-limiter](../../../../../Modules/Fixcity/docs/wiki/concepts/livewire-cache-table-rate-limiter.md)

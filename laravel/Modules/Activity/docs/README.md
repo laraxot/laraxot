@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_2UWizJ
 <<<<<<< HEAD
 # Activity
@@ -38,8 +37,6 @@ Core module for the FixCity Platform.
 =======
 <<<<<<< HEAD
 =======
-=======
->>>>>>> 13cf1831 (.)
 # Modulo Activity - Documentazione Completa
 
 [![Laravel 12.x](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com/)
@@ -109,21 +106,15 @@ use Modules\Activity\Actions\LogActivityAction;
 
 <<<<<<< .merge_file_2UWizJ
 ### 🎯 **Event Sourcing**
-<<<<<<< HEAD
 ```php
 // Eventi di dominio
 class UserRegisteredEvent
 {
-=======
-// Eventi di dominio
-class UserRegisteredEvent
->>>>>>> 13cf1831 (.)
     public function __construct(
         public readonly string $userId,
         public readonly string $email,
         public readonly DateTimeImmutable $registeredAt,
     ) {}
-<<<<<<< HEAD
 }
 
 // Event Store
@@ -131,19 +122,12 @@ class EventStore
 {
     public function store(DomainEvent $event): void
     {
-=======
-
-// Event Store
-class EventStore
-    public function store(DomainEvent $event): void
->>>>>>> 13cf1831 (.)
         Event::create([
             'aggregate_id' => $event->aggregateId,
             'event_type' => get_class($event),
             'event_data' => $event->toArray(),
             'occurred_at' => $event->occurredAt,
         ]);
-<<<<<<< HEAD
     }
 }
 ```
@@ -157,15 +141,6 @@ class ActivityStatsWidget extends XotBaseWidget
 
     public function getViewData(): array
     {
-=======
-
-### 📈 **Analytics Dashboard**
-// Widget analytics attività
-class ActivityStatsWidget extends XotBaseWidget
-    protected static string $view = 'activity::filament.widgets.activity-stats';
-
-    public function getViewData(): array
->>>>>>> 13cf1831 (.)
         return [
             'total_activities' => Activity::count(),
             'today_activities' => Activity::whereDate('created_at', today())->count(),
@@ -175,15 +150,12 @@ class ActivityStatsWidget extends XotBaseWidget
                 ->limit(5)
                 ->get(),
         ];
-<<<<<<< HEAD
     }
 }
 ```
 =======
 Controllare la qualita' del modulo (eseguito il 2026-10-14 con `laravel/phpstan.neon`: uscita 0, nessun errore):
 >>>>>>> .merge_file_YsBaIo
-=======
->>>>>>> 13cf1831 (.)
 
 ```bash
 <<<<<<< .merge_file_2UWizJ
@@ -198,18 +170,12 @@ php artisan vendor:publish --tag=activity-config
 
 # Configurare cleanup automatico
 php artisan activity:setup-cleanup
-<<<<<<< HEAD
 ```
 
 ### ⚙️ **Configurazione**
 ```php
 // config/activity.php
 return [
-=======
-
-### ⚙️ **Configurazione**
-// config/activity.php
->>>>>>> 13cf1831 (.)
     'enabled' => env('ACTIVITY_LOGGER_ENABLED', true),
 
     'log_events' => [
@@ -222,27 +188,19 @@ return [
             'login' => true,
             'logout' => true,
             'failed' => true,
-<<<<<<< HEAD
         ],
     ],
-=======
->>>>>>> 13cf1831 (.)
 
     'cleanup' => [
         'enabled' => true,
         'older_than_days' => 90,
         'batch_size' => 1000,
-<<<<<<< HEAD
     ],
 ];
 ```
 
 ### 🧪 **Testing**
 ```bash
-=======
-
-### 🧪 **Testing**
->>>>>>> 13cf1831 (.)
 # Test del modulo
 php artisan test --testsuite=Activity
 
@@ -251,16 +209,12 @@ php artisan test --testsuite=Activity
 
 # Test event sourcing
 php artisan activity:test-events
-<<<<<<< HEAD
 ```
 
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> 4fb998e0 (.)
-=======
-
->>>>>>> 13cf1831 (.)
 ## 🎛️ **Filament Integration**
 
 - **ListLogActivitiesAction** - Action per visualizzare lo storico attività da tabella Resource
@@ -268,13 +222,10 @@ php artisan activity:test-events
 - **ActivityServiceProvider** - Registrazione moduli, route, view, traduzioni
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 >>>>>>> 77d3d692 (.)
 =======
 >>>>>>> 4fb998e0 (.)
-=======
->>>>>>> 13cf1831 (.)
 ## 📚 **Documentazione Completa**
 
 ### 🏗️ **Architettura**
@@ -297,7 +248,6 @@ php artisan activity:test-events
 ## 🎨 **Componenti Filament**
 
 ### 📊 **Activity Resource**
-<<<<<<< HEAD
 ```php
 // Filament Resource per gestione attività
 class ActivityResource extends XotBaseResource
@@ -307,29 +257,18 @@ class ActivityResource extends XotBaseResource
     public static function getFormSchema(): array
     {
         return [
-=======
-// Filament Resource per gestione attività
-class ActivityResource extends XotBaseResource
-    protected static ?string $model = Activity::class;
-
-    public static function getFormSchema(): array
->>>>>>> 13cf1831 (.)
             Forms\Components\TextInput::make('log_name')
                 ->label(__('activity::fields.log_name.label'))
                 ->required(),
             Forms\Components\TextInput::make('description')
                 ->label(__('activity::fields.description.label'))
-<<<<<<< HEAD
                 ->required(),
-=======
->>>>>>> 13cf1831 (.)
             Forms\Components\Select::make('causer_type')
                 ->label(__('activity::fields.causer_type.label'))
                 ->options([
                     'App\Models\User' => 'User',
                     'App\Models\Admin' => 'Admin',
                 ]),
-<<<<<<< HEAD
         ];
     }
 }
@@ -353,46 +292,28 @@ class ActivityStatsWidget extends XotBaseWidget
     }
 }
 ```
-=======
-
-### 📈 **Activity Stats Widget**
-// Widget statistiche attività
-
-            'weekly_trend' => $this->getWeeklyTrend(),
-            'top_actions' => $this->getTopActions(),
->>>>>>> 13cf1831 (.)
 
 ## 🔧 **Best Practices**
 
 ### 1️⃣ **Activity Logging**
-<<<<<<< HEAD
 ```php
 // ✅ CORRETTO - Logging strutturato
 class UserService
 {
     public function updateProfile(User $user, array $data): void
     {
-=======
-// ✅ CORRETTO - Logging strutturato
-class UserService
-    public function updateProfile(User $user, array $data): void
->>>>>>> 13cf1831 (.)
         $oldData = $user->toArray();
 
         $user->update($data);
 
-<<<<<<< HEAD
         activity()
             ->performedOn($user)
             ->causedBy(auth()->user())
-=======
->>>>>>> 13cf1831 (.)
             ->withProperties([
                 'old_data' => $oldData,
                 'new_data' => $data,
                 'changed_fields' => array_keys(array_diff($oldData, $user->toArray())),
             ])
-<<<<<<< HEAD
             ->log('User profile updated');
     }
 }
@@ -427,28 +348,10 @@ class ActivityRepository
 {
     public function getRecentActivities(int $limit = 50): Collection
     {
-=======
-
-### 2️⃣ **Event Sourcing**
-// ✅ CORRETTO - Eventi immutabili
-class UserRegisteredEvent implements DomainEvent
-        public readonly DateTimeImmutable $occurredAt,
-
-    public function toArray(): array
-            'user_id' => $this->userId,
-            'email' => $this->email,
-            'occurred_at' => $this->occurredAt->format('Y-m-d H:i:s'),
-
-### 3️⃣ **Performance Optimization**
-// ✅ CORRETTO - Query ottimizzate
-class ActivityRepository
-    public function getRecentActivities(int $limit = 50): Collection
->>>>>>> 13cf1831 (.)
         return Activity::with(['causer', 'subject'])
             ->orderBy('created_at', 'desc')
             ->limit($limit)
             ->get();
-<<<<<<< HEAD
     }
 
     public function getActivitiesByUser(User $user): Collection
@@ -461,29 +364,18 @@ class ActivityRepository
     }
 }
 ```
-=======
-
-    public function getActivitiesByUser(User $user): Collection
-        return Activity::where('causer_id', $user->id)
-            ->where('causer_type', get_class($user))
-            ->with('subject')
->>>>>>> 13cf1831 (.)
 
 ## 🐛 **Troubleshooting**
 
 ### **Problemi Comuni**
 
 #### 📊 **Performance Issues**
-<<<<<<< HEAD
 ```bash
-=======
->>>>>>> 13cf1831 (.)
 # Verificare indici database
 php artisan activity:check-indexes
 
 # Pulire log vecchi
 php artisan activity:cleanup --older-than=90
-<<<<<<< HEAD
 ```
 **Soluzione**: Consulta [Performance Monitoring](bottlenecks.md)
 
@@ -505,17 +397,6 @@ php artisan activity:cleanup --older-than=90
 # Verificare widget Filament
 php artisan activity:test-dashboard
 ```
-=======
-**Soluzione**: Consulta [Performance Monitoring](bottlenecks.md)
-
-#### 🔍 **Missing Activities**
-// Verificare configurazione logging
-**Soluzione**: Consulta [Activity Logging](structure.md)
-
-#### 📈 **Dashboard Issues**
-# Verificare widget Filament
-php artisan activity:test-dashboard
->>>>>>> 13cf1831 (.)
 **Soluzione**: Consulta [Filament Integration](filament.md)
 
 ## 🤝 **Contributing**
@@ -579,10 +460,7 @@ php artisan activity:test-dashboard
 - **🧪 Test Coverage**: 94%
 - **⚡ Performance Score**: 94/100
 
-<<<<<<< HEAD
 ---
-=======
->>>>>>> 13cf1831 (.)
 
 **🔄 Ultimo aggiornamento**: 27 Gennaio 2025
 **📦 Versione**: 2.3.0
@@ -616,21 +494,16 @@ Il modulo Activity gestisce il tracciamento delle attività e degli eventi all'i
 ## Implementazione
 
 ### Configurazione
-<<<<<<< HEAD
 ```php
 // config/activity.php
 return [
     'enabled' => env('ACTIVITY_ENABLED', true),
     'log_events' => [
-=======
-    'enabled' => env('ACTIVITY_ENABLED', true),
->>>>>>> 13cf1831 (.)
         'user_login',
         'user_logout',
         'model_created',
         'model_updated',
         'model_deleted',
-<<<<<<< HEAD
     ],
     'prune_after_days' => 90,
 ];
@@ -638,11 +511,6 @@ return [
 
 ### Utilizzo Base
 ```php
-=======
-    'prune_after_days' => 90,
-
-### Utilizzo Base
->>>>>>> 13cf1831 (.)
 use Modules\Activity\Models\Activity;
 
 // Creare un'attività
@@ -651,21 +519,15 @@ Activity::create([
     'type' => 'user_login',
     'description' => 'User logged in',
     'properties' => ['ip' => request()->ip()],
-<<<<<<< HEAD
 ]);
 ```
 
 ### Tracciamento Automatico
 ```php
-=======
-
-### Tracciamento Automatico
->>>>>>> 13cf1831 (.)
 // Nel modello
 use Modules\Activity\Traits\LogsActivity;
 
 class User extends Authenticatable
-<<<<<<< HEAD
 {
     use LogsActivity;
 
@@ -673,10 +535,6 @@ class User extends Authenticatable
     protected static $logOnlyDirty = true;
 }
 ```
-=======
-
-    protected static $logAttributes = ['name', 'email'];
->>>>>>> 13cf1831 (.)
 
 ## API Endpoints
 
@@ -729,20 +587,14 @@ Elimina un'attività (soft delete).
 - [Deployment](./deployment.md)
 
 *Ultimo aggiornamento: gennaio 2025*
-<<<<<<< HEAD
 >>>>>>> 35d8cf69 (Initial commit)
 ---
-=======
->>>>>>> 13cf1831 (.)
 title: "Activity Module Documentation"
 type: documentation
 tags: [module, documentation]
 created: 2026-06-05
 updated: 2026-06-05
-<<<<<<< HEAD
 ---
-=======
->>>>>>> 13cf1831 (.)
 
 # Modulo Activity
 
@@ -752,7 +604,6 @@ Il modulo **Activity** fa parte dell'ecosistema Laraxot PTVX.
 
 ## Scopo
 
-<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Fornisce audit trail e activity logging basato su `spatie/laravel-activitylog` ed `spatie/laravel-event-sourcing`. Espone `LogActivityAction` (`app/Actions/LogActivityAction.php`) come entrypoint per registrare eventi (type, causer, subject, properties) e risorse Filament per consultare/analizzare i log.
@@ -766,12 +617,6 @@ Questo modulo gestisce [DESCRIZIONE SPECIFICA DA COMPLETARE].
 ## Struttura
 
 ```
-=======
-Questo modulo gestisce [DESCRIZIONE SPECIFICA DA COMPLETARE].
-
-## Struttura
-
->>>>>>> 13cf1831 (.)
 Activity/
 ├── app/
 │   ├── Models/
@@ -780,10 +625,7 @@ Activity/
 ├── docs/
 ├── lang/
 └── resources/
-<<<<<<< HEAD
 ```
-=======
->>>>>>> 13cf1831 (.)
 
 ## Dipendenze
 
@@ -791,39 +633,11 @@ Activity/
 - [User Module](../User/docs/) (se usa autenticazione)
 - [Tenant Module](../Tenant/docs/) (se multi-tenant)
 
-<<<<<<< HEAD
 ## Collegamenti
-=======
->>>>>>> 13cf1831 (.)
 
 - [Documentazione Root](../../../docs/ACTIVITY_MODULE.md)
 - [Regole Architecture](../Xot/docs/architecture/)
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 13cf1831 (.)
 ## Backlinks
 
 - [Indice Moduli](../README.md)
@@ -840,7 +654,6 @@ I test Pest non sono stati rieseguiti in questa sessione: non verificato che pas
 <<<<<<< .merge_file_2UWizJ
 ## AI Workflows
 - [AI Methodologies](./ai-methodologies.md)
-<<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 ## Limiti noti
@@ -851,6 +664,3 @@ I test Pest non sono stati rieseguiti in questa sessione: non verificato che pas
 - La connessione `activity` e' dichiarata nei modelli (`$connection = 'activity'`) ma non e' definita in `laravel/config/database.php`: dove venga creata non e' verificato.
 - Documenti che non descrivono il codice: [ARCHITECTURE.md](./ARCHITECTURE.md) (Repositories, Services, Projections inesistenti), [API.md](./api.md) (firma `execute(array $data)` inesistente), [readme.md](./readme.md) (`ActivityStatsWidget`, `EventStore`, monitoraggio in tempo reale inesistenti). Sono marcati `stale`.
 >>>>>>> .merge_file_YsBaIo
-=======
-
->>>>>>> 13cf1831 (.)

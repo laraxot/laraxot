@@ -63,7 +63,7 @@ function makeOrphanOauthClientForAssociationTest(): OauthClient
 
 function getAssociateExistingClientActionFunction(User $owner): \Closure
 {
-    $manager = new ClientsRelationManager();
+    $manager = new ClientsRelationManager;
     $manager->ownerRecord = $owner;
     $manager->pageClass = EditUser::class;
     $manager->bootedInteractsWithTable();
@@ -72,7 +72,7 @@ function getAssociateExistingClientActionFunction(User $owner): \Closure
     // chiavi stringa di getTableHeaderActions()) — si cerca per nome.
     $action = null;
     foreach ($manager->getTable()->getHeaderActions() as $candidate) {
-        if ($candidate instanceof Action && 'associateExistingClient' === $candidate->getName()) {
+        if ($candidate instanceof Action && $candidate->getName() === 'associateExistingClient') {
             $action = $candidate;
 
             break;

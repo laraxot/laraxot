@@ -1,3 +1,15 @@
+---
+title: "upgrade guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "upgrade guide"
+issues: []
+discussions: []
+status: draft
+---
+
 # Guida all'Upgrade Laravel 13
 
 ## Introduzione

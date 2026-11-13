@@ -1,10 +1,15 @@
 ---
+qmd: "MCP SERVERS"
+issues: []
+discussions: []
 title: "MCP Servers - Master Index"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: mcp_servers.md
 ---
 
 # MCP Servers - Master Index
@@ -41,7 +46,7 @@ MCP (Model Context Protocol) servers provide AI assistants with persistent memor
 - **Type**: Laravel-specific
 - **Command**: `php artisan boost:mcp`
 - **Use**: Laravel 12, Filament, Livewire documentation and best practices
-- **Module Docs**: [Xot MCP Guide](../Modules/Xot/docs/MCP_SERVERS.md) | [Theme MCP Guide](../Themes/Sixteen/docs/MCP_SERVERS.md)
+- **Module Docs**: [Xot MCP Guide](../Modules/Xot/docs/MCP_SERVERS.md) | [Theme MCP Guide](../Themes/Sixteen/docs/mcp-servers.md)
 
 ### fetch
 - **Type**: Web content
@@ -138,6 +143,7 @@ MCP (Model Context Protocol) servers provide AI assistants with persistent memor
   - `qmd embed` - Generate vector embeddings
 - **MCP**: `qmd mcp` (stdio transport)
 - **Docs**: [qmd-local-docs-search.md](./project/qmd-local-docs-search.md)
+- **Docs**: [qmd-local-docs-search.md](../../../project/qmd-local-docs-search.md)
 
 ## Configuration
 
@@ -200,7 +206,7 @@ Each module has specific MCP usage guidelines. See module-specific docs:
 
 ## Theme-Specific Usage
 
-- **Sixteen**: [Theme MCP Servers](../Themes/Sixteen/docs/MCP_SERVERS.md)
+- **Sixteen**: [Theme MCP Servers](../Themes/Sixteen/docs/mcp-servers.md)
   - Frontoffice page testing
   - Visual parity verification
   - CSS/JS build process

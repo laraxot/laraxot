@@ -1,10 +1,15 @@
 ---
+qmd: "ralph loop execution.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: ralph-loop-execution.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: ralph-loop-execution.divergenza.md
 ---
 
 # Divergenza: `ralph-loop-execution.md`

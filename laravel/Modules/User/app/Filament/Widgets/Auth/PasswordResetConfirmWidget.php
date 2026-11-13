@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
-use Modules\User\Filament\Widgets\Auth\Schemas\UserForm;
+use Modules\User\Filament\Resources\UserResource\Schemas\UserForm;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
@@ -64,7 +64,7 @@ class PasswordResetConfirmWidget extends XotBaseSchemaWidget
 
     public function confirmPasswordReset(): void
     {
-        if ('form' !== $this->currentState) {
+        if ($this->currentState !== 'form') {
             return;
         }
 
@@ -89,20 +89,19 @@ class PasswordResetConfirmWidget extends XotBaseSchemaWidget
                 },
             );
 
-            if (Password::PASSWORD_RESET === $response) {
+            if ($response === Password::PASSWORD_RESET) {
                 $this->currentState = 'success';
 
                 Notification::make()
-                    ->title(__('user::auth.password_reset.success.title'))
-                    ->body(__('user::auth.password_reset.success.message'))
+                    ->title(__('user::auth.password.error.text_reset.success.title'))
+                    ->body(__('user::auth.password.error.text_reset.success.message'))
                     ->success()
                     ->duration(8000)
                     ->send();
 
                 Assert::string($email = $data['email'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
-                /** @var UserContract $user */
                 $user = XotData::make()->getUserByEmail($email);
-                Assert::isInstanceOf($user, Authenticatable::class);
+                Assert::isInstanceOf($user, UserContract::class);
                 Auth::guard()->login($user);
 
                 $this->js('setTimeout(() => { window.location.href = "'.route('login').'"; }, 3000);');
@@ -138,17 +137,17 @@ class PasswordResetConfirmWidget extends XotBaseSchemaWidget
 
     public function isLoading(): bool
     {
-        return 'loading' === $this->currentState;
+        return $this->currentState === 'loading';
     }
 
     public function isSuccess(): bool
     {
-        return 'success' === $this->currentState;
+        return $this->currentState === 'success';
     }
 
     public function hasError(): bool
     {
-        return 'error' === $this->currentState;
+        return $this->currentState === 'error';
     }
 
     protected function handleResetError(string $response): void
@@ -156,15 +155,15 @@ class PasswordResetConfirmWidget extends XotBaseSchemaWidget
         $this->currentState = 'error';
 
         $errorMessages = [
-            Password::INVALID_TOKEN => __('user::auth.password_reset.errors.invalid_token'),
-            Password::INVALID_USER => __('user::auth.password_reset.errors.invalid_user'),
-            'passwords.generic_error' => __('user::auth.password_reset.errors.generic'),
+            Password::INVALID_TOKEN => __('user::auth.password.error.text_reset.errors.invalid_token'),
+            Password::INVALID_USER => __('user::auth.password.error.text_reset.errors.invalid_user'),
+            'passwords.generic_error' => __('user::auth.password.error.text_reset.errors.generic'),
         ];
 
         $this->errorMessage = $errorMessages[$response] ?? trans($response);
 
         Notification::make()
-            ->title(__('user::auth.password_reset.errors.title'))
+            ->title(__('user::auth.password.error.text_reset.errors.title'))
             ->body($this->errorMessage)
             ->danger()
             ->duration(10000)

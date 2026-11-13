@@ -125,7 +125,7 @@ class TimeRecord extends BaseModel
      * @param  Builder<static>  $query
      * @return Builder<static>
      */
-    public function scopeForUser($query, int|string $userId)
+    public function scopeForUser(Builder $query, int|string $userId)
     {
         return $query->where('user_id', $userId);
     }
@@ -136,7 +136,7 @@ class TimeRecord extends BaseModel
      * @param  Builder<static>  $query
      * @return Builder<static>
      */
-    public function scopeOfType($query, string $type)
+    public function scopeOfType(Builder $query, string $type)
     {
         return $query->where('type', $type);
     }
@@ -147,7 +147,7 @@ class TimeRecord extends BaseModel
      * @param  Builder<static>  $query
      * @return Builder<static>
      */
-    public function scopeForDate($query, Carbon $date)
+    public function scopeForDate(Builder $query, Carbon $date)
     {
         return $query->whereDate('timestamp', $date);
     }
@@ -158,7 +158,7 @@ class TimeRecord extends BaseModel
      * @param  Builder<static>  $query
      * @return Builder<static>
      */
-    public function scopeValid($query)
+    public function scopeValid(Builder $query)
     {
         return $query->where('status', 'valid');
     }

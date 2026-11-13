@@ -1,3 +1,9 @@
+---
+title: "Employee - WORKHOUR_ENUM_IMPLEMENTATION"
+module: Employee
+bmad: true
+status: active
+---
 # WorkHour Enum Implementation - Corrections Made
 
 ## Problem Identified

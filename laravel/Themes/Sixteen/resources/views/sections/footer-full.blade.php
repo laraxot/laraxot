@@ -12,7 +12,7 @@
             {{-- Logo Section --}}
             <div class="row">
                 <div class="col-12 footer-items-wrapper logo-wrapper">
-                    <img class="ue-logo" src="{{ asset('themes/Sixteen/design-comuni/assets/images/logo-eu-inverted.svg') }}" alt="logo Unione Europea">
+                    <img class="ue-logo" src="{{ asset('themes/Sixteen/design-comuni/assets/images/logo-eu-inverted.svg') }}" alt="{{ __('pub_theme::footer_full.logo.eu.label') }}">
                     <div class="it-brand-wrapper">
                         <a href="{{ $data['home_url'] ?? '/it' }}">
                             <svg class="icon" aria-hidden="true">
@@ -30,7 +30,7 @@
             <div class="row mt-8">
                 {{-- Column 1: Amministrazione --}}
                 <div class="col-md-3 footer-items-wrapper">
-                    <h4 class="footer-heading-title">{{ $data['admin_title'] ?? 'Amministrazione' }}</h4>
+                    <h4 class="footer-heading-title">{{ $data['admin_title'] ?? __('pub_theme::footer_full.admin.heading.title') }}</h4>
                     <ul class="footer-list">
                         @foreach($data['admin_links'] ?? [
                             ['label' => 'Organi di governo', 'url' => '#'],
@@ -49,7 +49,7 @@
                 
                 {{-- Column 2: Categorie di servizio --}}
                 <div class="col-md-6 footer-items-wrapper">
-                    <h4 class="footer-heading-title">{{ $data['services_title'] ?? 'Categorie di servizio' }}</h4>
+                    <h4 class="footer-heading-title">{{ $data['services_title'] ?? __('pub_theme::footer_full.services.heading.title') }}</h4>
                     <div class="row">
                         <div class="col-md-6">
                             <ul class="footer-list">
@@ -92,7 +92,7 @@
                 
                 {{-- Column 3: Contatti --}}
                 <div class="col-md-3 footer-items-wrapper">
-                    <h4 class="footer-heading-title">{{ $data['contact_title'] ?? 'Contatti' }}</h4>
+                    <h4 class="footer-heading-title">{{ $data['contact_title'] ?? __('pub_theme::footer_full.contacts.heading.title') }}</h4>
                     <address class="footer-list">
                         <div class="footer-list-item">
                             <strong>{{ $data['contact']['name'] ?? 'Comune di Example' }}</strong>
@@ -103,13 +103,13 @@
                         </div>
                         <div class="footer-list-item">
                             <p>
-                                Tel: {{ $data['contact']['phone'] ?? '+39 0123 456789' }}<br>
-                                Email: {{ $data['contact']['email'] ?? 'info@comune.example.it' }}<br>
-                                PEC: {{ $data['contact']['pec'] ?? 'comune@pec.it' }}
+                                {{ __('pub_theme::footer_full.contacts.phone.label') }} {{ $data['contact']['phone'] ?? '+39 0123 456789' }}<br>
+                                {{ __('pub_theme::footer_full.contacts.email.label') }} {{ $data['contact']['email'] ?? 'info@comune.example.it' }}<br>
+                                {{ __('pub_theme::footer_full.contacts.pec.label') }} {{ $data['contact']['pec'] ?? 'comune@pec.it' }}
                             </p>
                         </div>
                         <div class="footer-list-item">
-                            <p>Orario sportello: {{ $data['contact']['hours'] ?? 'Lun-Ven 9:00-13:00' }}</p>
+                            <p>{{ __('pub_theme::footer_full.contacts.hours.label') }} {{ $data['contact']['hours'] ?? 'Lun-Ven 9:00-13:00' }}</p>
                         </div>
                     </address>
                 </div>
@@ -119,7 +119,7 @@
             @if($data['show_social'] ?? true)
             <div class="row mt-8">
                 <div class="col-12 footer-items-wrapper social-wrapper">
-                    <h4 class="footer-heading-title">{{ $data['social_title'] ?? 'Seguici su' }}</h4>
+                    <h4 class="footer-heading-title">{{ $data['social_title'] ?? __('pub_theme::footer_full.social.heading.title') }}</h4>
                     <ul class="list-inline text-left social-list">
                         @foreach($data['social_links'] ?? [
                             ['label' => 'Facebook', 'url' => '#', 'icon' => 'it-facebook'],
@@ -138,9 +138,32 @@
                 </div>
             </div>
             @endif
+
+            {{-- Sponsor: solo se configurati nel JSON del footer. Nessun segnaposto "Spazio in vendita" su un sito PA (PRD-13). --}}
+            @if(! empty($data['sponsors']))
+            <div class="row mt-12 mb-4">
+                <div class="col-12 footer-items-wrapper sponsor-wrapper">
+                    <h4 class="footer-heading-title">{{ $data['sponsor_title'] ?? __('pub_theme::footer_full.sponsor.heading.title') }}</h4>
+                    <p class="sponsor-subtitle">{{ $data['sponsor_subtitle'] ?? __('pub_theme::footer_full.sponsor.subtitle.help') }}</p>
+                    <div class="sponsors-grid">
+                        @foreach($data['sponsors'] as $sponsor)
+                        <div class="sponsor-card">
+                            <a href="{{ $sponsor['url'] }}" class="sponsor-link" aria-label="{{ $sponsor['label'] }}">
+                                <img src="{{ asset($sponsor['img']) }}" alt="{{ $sponsor['label'] }}" class="sponsor-img" loading="lazy">
+                                <div class="sponsor-overlay">
+                                    <span class="sponsor-tag">{{ $sponsor['label'] }}</span>
+                                    <span class="sponsor-type">{{ $sponsor['type'] }}</span>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            @endif
         </div>
     </div>
-    
+
     {{-- Footer Bottom --}}
     <div class="it-footer-bottom">
         <div class="container">

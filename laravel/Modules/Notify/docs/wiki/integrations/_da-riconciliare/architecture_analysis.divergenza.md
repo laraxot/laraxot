@@ -1,10 +1,15 @@
 ---
+qmd: "architecture analysis.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: ARCHITECTURE_ANALYSIS.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: architecture-analysis.divergenza.md
 ---
 
 # Divergenza: `ARCHITECTURE_ANALYSIS.md`

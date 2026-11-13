@@ -1,4 +1,7 @@
 ---
+qmd: "loc struct"
+issues: []
+discussions: []
 title: 'Loc struct'
 module: Notify
 type: reference

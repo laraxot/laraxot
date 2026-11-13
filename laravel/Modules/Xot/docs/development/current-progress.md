@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Stato Attuale del Progetto (15 marzo 2024)"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, development]
+qmd: "Stato Attuale del Progetto (15 marzo 2024)"
+---
+>>>>>>> laraxot/dev
 # Stato Attuale del Progetto (15 marzo 2024)
 
 ## Correzioni PHPStan Completate
@@ -32,7 +45,11 @@ Abbiamo lavorato sulla correzione dei seguenti file per risolvere problemi rilev
 
 - **Spatie Laravel Data**: Utilizzato per la tipizzazione dei dati nell'applicazione (vedi XotData.php)
 - **Spatie QueableActions**: Preferito all'uso di servizi per azioni come le esportazioni Excel
+<<<<<<< HEAD
 - **Filament**: Utilizzato per la gestione dell'interfaccia amministrativa
+=======
+- **Filament**: Utilizzato per la gestione dell'interfaccia amministrativa 
+>>>>>>> laraxot/dev
 - **LazyCollection**: Implementato per gestire efficacemente grandi set di dati durante l'esportazione
 
 ## Prossimi Passi
@@ -40,4 +57,8 @@ Abbiamo lavorato sulla correzione dei seguenti file per risolvere problemi rilev
 1. Completare la correzione di `ExportTreeXlsAction.php`
 2. Verificare che tutti i problemi PHPStan siano risolti eseguendo nuovamente l'analisi
 3. Testare le funzionalità di esportazione con vari volumi di dati
+<<<<<<< HEAD
 4. Documentare le modifiche apportate e le best practices implementate
+=======
+4. Documentare le modifiche apportate e le best practices implementate 
+>>>>>>> laraxot/dev

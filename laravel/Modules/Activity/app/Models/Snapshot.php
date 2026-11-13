@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Activity\Models;
 
 use Illuminate\Support\Carbon;
-use Modules\Activity\Database\Factories\SnapshotFactory;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Spatie\EventSourcing\Snapshots\EloquentSnapshot as SpatieSnapshot;
 
@@ -20,38 +19,18 @@ use Spatie\EventSourcing\Snapshots\EloquentSnapshot as SpatieSnapshot;
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
  * @property string|null $created_by
+<<<<<<< .merge_file_49T30b
  *
+=======
+>>>>>>> .merge_file_NQxa9R
  */
 class Snapshot extends SpatieSnapshot
 {
-<<<<<<< HEAD
-=======
-    /** > */
->>>>>>> 13cf1831 (.)
     use HasXotFactory;
 
     /** @laravel/Modules/UI/docs/bugfix-awstest-undefined-variable.md string */
     protected $connection = 'activity';
 
-<<<<<<< HEAD
-=======
-    protected $table = 'snapshots';
-
-    /**
-     * @return string|null
-     */
-    public function getConnectionName()
-    {
-        if (app()->environment('testing')) {
-            $default = config('database.default');
-
-            return is_string($default) ? $default : 'mysql';
-        }
-
-        return $this->connection instanceof \UnitEnum ? $this->connection->name : $this->connection;
-    }
-
->>>>>>> 13cf1831 (.)
     /** @var list<string> */
     protected $fillable = ['id', 'aggregate_uuid', 'aggregate_version', 'state', 'created_at', 'updated_at'];
 }

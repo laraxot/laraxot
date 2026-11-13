@@ -1,3 +1,15 @@
+---
+title: "ticket riepilogo reference gap plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ticket riepilogo reference gap plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Segnalazione Riepilogo Reference Gap Plan
 
 ## Fonte

@@ -1,3 +1,9 @@
+---
+title: "Employee - 07-BACHECA-DIGITALE-COMUNICAZIONI"
+module: Employee
+bmad: true
+status: active
+---
 # 07 - Bacheca Digitale e Comunicazioni
 
 ## Panoramica

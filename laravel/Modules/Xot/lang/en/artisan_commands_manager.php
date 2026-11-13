@@ -38,6 +38,7 @@ return [
             ],
         ],
     ],
+<<<<<<< HEAD
     'actions' => [
         'queue_restart' => [
             'label' => 'queue_restart',
@@ -69,4 +70,9 @@ return [
     'plural_label' => 'Missing Plural label',
     'fields' => [
     ],
+=======
+    'title' => 'Artisan Commands Manager',
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+>>>>>>> laraxot/dev
 ];

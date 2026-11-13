@@ -9,20 +9,16 @@ use Illuminate\View\Component;
 use Modules\Xot\Actions\GetViewAction;
 
 /**
- * Undocumented class.
+ * Render a flag icon for a locale.
  */
 class Flag extends Component
 {
     public function __construct(
         public string $name,
-    ) {
-    }
+    ) {}
 
     public function render(): Renderable
     {
-        /**
-         * @phpstan-var view-string $view
-         */
         $view = app(GetViewAction::class)->execute();
 
         $viewParams = [
@@ -30,6 +26,6 @@ class Flag extends Component
             'name' => $this->name,
         ];
 
-        return view($view, $viewParams);
+        return view()->make($view, $viewParams);
     }
 }

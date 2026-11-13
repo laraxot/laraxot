@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Analisi Approfondita del Modulo Lang"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "google translate"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Analisi Approfondita del Modulo Lang
 

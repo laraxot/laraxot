@@ -247,4 +247,24 @@ return [
         'time_clock' => 'Zeiterfassung',
         'view_all' => 'Alle Einträge anzeigen',
     ],
+    'dashboard' => [
+        'overview' => [
+            'label' => 'Übersicht',
+        ],
+        'period_month' => [
+            'label' => 'Dieser Monat',
+        ],
+        'progress_of_target' => [
+            'label' => ':percentage% des Ziels von :target',
+        ],
+        'week_number' => [
+            'label' => 'Woche :number',
+        ],
+    ],
+    'timeclock' => [
+        'notes' => [
+            'label' => 'Notizen (optional)',
+            'placeholder' => 'Notiz zu diesem Eintrag hinzufügen...',
+        ],
+    ],
 ];

@@ -4,17 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Unit\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Modules\Notify\Models\BaseModel;
+use Modules\Notify\Tests\TestCase;
+use Modules\Xot\Models\XotBaseModel;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('base model extends eloquent model', function () {
-    $baseModel = new class extends BaseModel
-    {
-        protected $table = 'test_notify_table';
-    };
-
-    Assert::assertInstanceOf(Model::class, $baseModel);
+    $parent = (new \ReflectionClass(BaseModel::class))->getParentClass();
+    Assert::assertNotFalse($parent);
+    Assert::assertSame(XotBaseModel::class, $parent->getName());
 });
 
 test('base model has correct table name', function () {
@@ -32,17 +31,13 @@ test('base model can be instantiated', function () {
         protected $table = 'test_notify_table';
     };
 
-    Assert::assertInstanceOf(BaseModel::class, $baseModel);
+    Assert::assertFalse($baseModel->exists);
 });
 
 test('base model has proper inheritance chain', function () {
-    $baseModel = new class extends BaseModel
-    {
-        protected $table = 'test_notify_table';
-    };
-
-    Assert::assertInstanceOf(BaseModel::class, $baseModel);
-    Assert::assertInstanceOf(Model::class, $baseModel);
+    $parent = (new \ReflectionClass(BaseModel::class))->getParentClass();
+    Assert::assertNotFalse($parent);
+    Assert::assertSame(XotBaseModel::class, $parent->getName());
 });
 
 test('base model has timestamps enabled', function () {

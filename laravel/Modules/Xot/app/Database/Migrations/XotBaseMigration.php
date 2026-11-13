@@ -227,6 +227,22 @@ abstract class XotBaseMigration extends LaravelMigration
         // return $this->getTableDetails()->hasPrimaryKey();
         $connection = $this->getConn()->getConnection();
         $table = $this->getTable();
+<<<<<<< HEAD
+=======
+
+        if ($connection->getDriverName() === 'sqlite') {
+            $infos = $connection->select("PRAGMA table_info({$table})");
+            foreach ($infos as $info) {
+                $info = (array) $info;
+                if (isset($info['pk']) && $info['pk'] > 0) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+>>>>>>> laraxot/dev
         $database = $connection->getDatabaseName();
 
         $query = "SELECT COUNT(*) as count
@@ -319,6 +335,57 @@ abstract class XotBaseMigration extends LaravelMigration
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Crea solo gli indici che mancano, sulla connessione del modello della migrazione.
+     *
+     * Idempotente: un indice c'e' gia' se esiste con quel nome oppure sulle stesse colonne nello stesso
+     * ordine (`Builder::hasIndex()` accetta l'elenco), cosi' un indice equivalente con altro nome non viene
+     * duplicato. Salta la tabella o l'indice se manca una colonna: lo schema di un ambiente puo' essere piu'
+     * vecchio. Non toglie mai nulla: eliminare un indice in produzione e' una decisione dell'utente.
+     *
+     * Per una colonna di testo confrontata con un intero l'indice non basta (MySQL scandisce tutto l'indice):
+     * la query deve passare il valore come stringa.
+     *
+     * @param  array<string, array<string, list<string>>>  $indexes  tabella => nome indice => colonne in ordine
+     */
+    protected function ensureIndexes(array $indexes): void
+    {
+        $schema = $this->getConn();
+
+        foreach ($indexes as $tableName => $tableIndexes) {
+            if (! $schema->hasTable($tableName)) {
+                continue;
+            }
+
+            foreach ($tableIndexes as $indexName => $columns) {
+                if ($this->shouldSkipIndex($schema, $tableName, $indexName, $columns)) {
+                    continue;
+                }
+
+                $schema->table($tableName, static function (Blueprint $table) use ($columns, $indexName): void {
+                    $table->index($columns, $indexName);
+                });
+            }
+        }
+    }
+
+    /**
+     * @param  list<string>  $columns
+     */
+    private function shouldSkipIndex(Builder $schema, string $tableName, string $indexName, array $columns): bool
+    {
+        foreach ($columns as $column) {
+            if (! $schema->hasColumn($tableName, $column)) {
+                return true;
+            }
+        }
+
+        return $schema->hasIndex($tableName, $indexName) || $schema->hasIndex($tableName, $columns);
+    }
+
+    /**
+>>>>>>> laraxot/dev
      * @param  mixed  $result  Risultato di Connection::selectOne() (atteso array{count?: mixed}|object|null)
      */
     protected function extractPrimaryKeyCount(mixed $result): int
@@ -341,6 +408,7 @@ abstract class XotBaseMigration extends LaravelMigration
         $xot = XotData::make();
         $userClass = $xot->getUserClass();
 
+<<<<<<< HEAD
         // Check and add each timestamp column only if it doesn't exist
         if (! $this->hasColumn('created_at')) {
             $table->timestamp('created_at')->nullable();
@@ -372,6 +440,40 @@ abstract class XotBaseMigration extends LaravelMigration
             if ($this->hasColumn('deleted_at') && ! $this->hasColumn('deleted_by')) {
                 $table->foreignIdFor($userClass, 'deleted_by')->nullable();
             }
+=======
+        // Listing fresca: evita "Duplicate column" quando RefreshDatabase / migrate
+        // in-process lasciano la cache Schema fuori sync rispetto a information_schema.
+        $columns = array_map(
+            static fn (mixed $name): string => is_string($name) ? strtolower($name) : '',
+            $this->getConn()->getColumnListing($this->getTable()),
+        );
+
+        if (! in_array('created_at', $columns, true)) {
+            $table->timestamp('created_at')->nullable();
+        }
+
+        if (! in_array('updated_at', $columns, true)) {
+            $table->timestamp('updated_at')->nullable();
+        }
+
+        if (! in_array('updated_by', $columns, true)) {
+            $table->foreignIdFor($userClass, 'updated_by')->nullable();
+        }
+
+        if (! in_array('created_by', $columns, true)) {
+            $table->foreignIdFor($userClass, 'created_by')->nullable();
+        }
+
+        if ($hasSoftDeletes) {
+            if (! in_array('deleted_at', $columns, true)) {
+                $table->softDeletes();
+            }
+            if (! in_array('deleted_by', $columns, true)) {
+                $table->foreignIdFor($userClass, 'deleted_by')->nullable();
+            }
+        } elseif (in_array('deleted_at', $columns, true) && ! in_array('deleted_by', $columns, true)) {
+            $table->foreignIdFor($userClass, 'deleted_by')->nullable();
+>>>>>>> laraxot/dev
         }
     }
 
@@ -404,6 +506,105 @@ abstract class XotBaseMigration extends LaravelMigration
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Converte user_id da bigint a UUID, solo se la colonna e' ancora bigint.
+     *
+     * Rifiuta la conversione se esistono valori: un id intero non diventa un UUID,
+     * e uno schema cambiato in silenzio corrompe i dati. Il mapping va deciso prima.
+<<<<<<< .merge_file_V4OxRm
+     */
+    public function convertUserIdToUuidIfLegacyBigint(Blueprint $table, bool $nullable = true): void
+    {
+=======
+     *
+     * Con `preserveLegacyValues: true` la guardia non si applica: su MariaDB il
+     * passo intermedio bigint -> char(36) conserva i valori esatti come stringhe
+     * (niente dato cancellato) e la colonna converge a uuid. Le righe con valori
+     * senza utente corrispondente restano come stringa: referenza orfana ma
+     * reversibile, mai un CAST distruttivo.
+     */
+    public function convertUserIdToUuidIfLegacyBigint(
+        Blueprint $table,
+        bool $nullable = true,
+        bool $preserveLegacyValues = false,
+    ): void {
+>>>>>>> .merge_file_x6IwHV
+        if (! $this->hasColumn('user_id') || $this->getColumnType('user_id') !== 'bigint') {
+            return;
+        }
+
+<<<<<<< .merge_file_V4OxRm
+        $legacyRows = DB::connection($this->getConnection())
+            ->table($this->getTable())
+            ->whereNotNull('user_id')
+            ->count();
+
+        if ($legacyRows > 0) {
+            throw new \RuntimeException(sprintf(
+                'Conversione user_id bloccata su %s: %d righe con valore bigint. Serve un mapping verso UUID prima della migrazione.',
+                $this->getTable(),
+                $legacyRows,
+            ));
+        }
+
+=======
+        $legacyQuery = DB::connection($this->getConnection())
+            ->table($this->getTable())
+            ->whereNotNull('user_id');
+        $legacyRows = $legacyQuery->count();
+
+        if ($legacyRows > 0 && ! $preserveLegacyValues) {
+            /** @var list<mixed> $legacyIds */
+            $legacyIds = $legacyQuery
+                ->distinct()
+                ->orderBy('user_id')
+                ->pluck('user_id')
+                ->all();
+            $legacyIdList = implode(', ', array_map(
+                static fn (mixed $value): string => SafeStringCastAction::cast($value),
+                $legacyIds,
+            ));
+
+            throw new \RuntimeException(sprintf(
+                'Conversione user_id bloccata su %s: %d righe con valore bigint (%s). Serve un mapping esplicito verso UUID prima della migrazione.',
+                $this->getTable(),
+                $legacyRows,
+                $legacyIdList,
+            ));
+        }
+
+        if ($legacyRows > 0 && $preserveLegacyValues) {
+            // Preserve numeric legacy IDs as strings; a later verified mapping can resolve them to UUID users.
+            $legacyColumn = $table->char('user_id', 36);
+            if ($nullable) {
+                $legacyColumn->nullable();
+            }
+            $legacyColumn->change();
+
+            return;
+        }
+
+>>>>>>> .merge_file_x6IwHV
+        // MariaDB 10.7+ ha un tipo `uuid` nativo e rifiuta ALTER bigint -> uuid anche a tabella vuota
+        // (errore 4078 "Cannot cast 'bigint unsigned' as 'uuid'"), mentre char(36) -> uuid e' accettato.
+        // MySQL mappa uuid() su char(36) e non ha bisogno del passo intermedio. Lo stesso Blueprint emette
+        // un ALTER per colonna, in ordine: prima char(36), poi uuid.
+        if ($this->driver() === 'mariadb') {
+            $table->char('user_id', 36)->nullable()->change();
+        }
+
+        if ($nullable) {
+            $table->uuid('user_id')->nullable()->change();
+
+            return;
+        }
+
+        $table->uuid('user_id')->change();
+    }
+
+>>>>>>> laraxot/dev
     public function updateUserKeyInt(Blueprint $table): void
     {
         if (! $this->hasColumn('id')) {

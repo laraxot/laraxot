@@ -45,6 +45,15 @@ class SmsChannel
 
         $smsData = $notification->toSms($notifiable);
 
+        // Story quaeris-send-invite-migrate-to-record-notification.md, Difetto 17
+        // (2026-09-15): toSms() e' tipizzato ?SmsData proprio per poter dire "niente
+        // da inviare" (nessun destinatario, o corpo vuoto) senza che sia un errore
+        // di programmazione — ma questo metodo trattava `null` come qualunque altro
+        // valore non valido, lanciando un'eccezione invece di saltare in modo pulito.
+        if ($smsData === null) {
+            return null;
+        }
+
         if (! ($smsData instanceof SmsData)) {
             throw new Exception('toSms method must return an instance of SmsData');
         }
@@ -55,7 +64,7 @@ class SmsChannel
         $driver = null;
         if (method_exists($notification, 'getProvider')) {
             $provider = $notification->getProvider();
-            $driver = \is_string($provider) && '' !== $provider ? $provider : null;
+            $driver = \is_string($provider) && $provider !== '' ? $provider : null;
         }
 
         return $this->factory->create($driver)->execute($smsData);

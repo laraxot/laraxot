@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Risoluzione Conflitto in VideoEntry"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "conflict resolution video entry"
 related:
   - "./webm.md"
+status: draft
 ---
 # Risoluzione Conflitto in VideoEntry
 

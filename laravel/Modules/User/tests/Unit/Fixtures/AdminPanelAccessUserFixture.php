@@ -22,7 +22,7 @@ final class AdminPanelAccessUserFixture extends BaseUser
     }
 
     /**
-     * @param array<int, string>|Collection<int, string> $roles
+     * @param  array<int, string>|Collection<int, string>  $roles
      */
     public function hasRole($roles, ?string $guard = null): bool
     {

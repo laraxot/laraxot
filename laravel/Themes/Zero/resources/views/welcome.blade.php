@@ -37,10 +37,10 @@
 <body>
     <div class="container">
         <div class="title">
-            Welcome to Zero Theme
+            {{ __('pub_theme::welcome.hero.title.title') }}
         </div>
         <div class="subtitle">
-            Your custom theme is ready for development
+            {{ __('pub_theme::welcome.hero.subtitle.description') }}
         </div>
     </div>
 </body>

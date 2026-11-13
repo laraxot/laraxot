@@ -1,3 +1,15 @@
+---
+title: "karpathy llm wiki adoption"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "karpathy llm wiki adoption"
+issues: []
+discussions: []
+status: draft
+---
+
 # Karpathy LLM Wiki per Notify
 
 > Stato: proposta applicata al repository
@@ -175,7 +187,7 @@ Ma il risultato utile non deve restare solo nel notebook:
 
 ### Con QMD
 
-Karpathy cita QMD come upgrade naturale quando il wiki cresce ([gist — Optional: CLI tools](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)). Per noi ha senso soprattutto per:
+Karpathy cita QMD come upgrade naturale quando il wiki cresce ([gist: Optional: CLI tools](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)). Per noi ha senso soprattutto per:
 
 - ricerca rapida su `docs/`, `laravel/Modules/*/docs/`, `laravel/Themes/*/docs/`, `bashscripts/docs/`, `design-artifacts/`;
 - retrieval per agenti (CLI, **MCP** `qmd mcp`, o SDK) senza rileggere centinaia di file;

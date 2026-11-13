@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Risoluzione Conflitti Git - SubtitleService.php"
 module: "Media"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "risoluzione conflitti subtitleservice"
 related:
   - "./webm.md"
+status: superseded
+superseded_by: conflict-resolution-subtitleservice.md
 ---
 # Risoluzione Conflitti Git - SubtitleService.php
 

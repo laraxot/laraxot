@@ -15,14 +15,14 @@ uses(TestCase::class);
  */
 function renderCategoryTabsHtml(array $data = []): ?string
 {
-    /** @var view-string $viewName */
-    $viewName = 'pub_theme::components.blocks.navigation.category-tabs';
-
-    if (! View::exists($viewName)) {
+    if (! View::exists('pub_theme::components.blocks.navigation.category-tabs')) {
         return null;
     }
 
     try {
+        /** @var view-string $viewName */
+        $viewName = 'pub_theme::components.blocks.navigation.category-tabs';
+
         return View::make($viewName, $data)->render();
     } catch (\Throwable) {
         return null;

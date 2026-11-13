@@ -1,8 +1,17 @@
 ---
+title: "theme stack daisyui"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "theme stack daisyui"
+issues: []
+discussions: []
 name: Theme Stack - DaisyUI + Tailwind + Alpine + Lit
 description: Architettura frontend per Sixteen theme con DaisyUI, Design Comuni Italia e componenti moderni
 metadata:
   type: decision
+status: draft
 ---
 
 # Theme Stack - DaisyUI + Tailwind + Alpine + Lit

@@ -32,13 +32,11 @@ return [
         ],
     ],
     'navigation' => [
-        'label' => 'Missing Navigation Label',
+        'label' => 'Anhang hochladen',
         'plural_label' => 'Missing Navigation Plural Label',
         'group' => 'Missing Group',
         'icon' => 'heroicon-o-puzzle-piece',
         'sort' => 100,
     ],
     'plural_label' => 'Missing Plural label',
-    'actions' => [
-    ],
 ];

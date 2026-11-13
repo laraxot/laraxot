@@ -38,6 +38,14 @@ related:
   - "../model-docs-governance.md"
   - "../index.md"
   - "../00-index.md"
+id: zero-docs-stories-docs-theme-zero-audit-2026-09-11-story
+description: "Come manutentore del monorepo, voglio un audit reale (non assunto) di"
+document_type: story
+category: bmad-story
+tags: []
+qmd: "audit e correzione docs/ - theme zero (2026-09-11)"
+issues: []
+discussions: []
 ---
 
 # Audit e correzione docs/ — Theme Zero (2026-09-11)

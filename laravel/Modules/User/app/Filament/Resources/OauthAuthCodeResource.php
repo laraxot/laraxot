@@ -40,7 +40,7 @@ class OauthAuthCodeResource extends XotBaseResource
                 TextColumn::make('id')
                     ->searchable()
                     ->sortable()
-                    ->formatStateUsing(function (mixed $state): string {
+                    ->formatStateUsing(function (string|int|null $state): string {
                         if (! is_string($state)) {
                             return '';
                         }
@@ -59,7 +59,7 @@ class OauthAuthCodeResource extends XotBaseResource
                     ->limit(30)
                     ->tooltip(function (TextColumn $column): ?string {
                         $state = $column->getState();
-                        if (null === $state) {
+                        if ($state === null) {
                             return null;
                         }
                         if (is_array($state)) {

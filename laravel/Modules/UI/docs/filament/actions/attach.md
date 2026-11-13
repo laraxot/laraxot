@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "attach"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "attach"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 ```php
 AttachAction::make()->modifyRecordSelectUsing(
 fn ($select) => $select->getOptionLabelFromRecordUsing(fn ($record) => $record->name . ' ' . $record->organization)

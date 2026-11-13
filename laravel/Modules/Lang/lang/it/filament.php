@@ -44,7 +44,7 @@ return [
             'description' => 'General Settings',
         ],
         'label' => 'Filament',
-        'sort' => 1,
+        'sort' => '1',
         'icon' => 'heroicon-o-rectangle-stack',
     ],
     'fields' => [

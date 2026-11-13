@@ -10,9 +10,9 @@ discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./has-authentication-log.md"
   - "./has-teams.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Trait HasTenants
 
 ## Descrizione

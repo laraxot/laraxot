@@ -6,8 +6,13 @@ declare(strict_types=1);
     <table class="table">
         <thead>
             <tr>
+<<<<<<< HEAD
                 <th>Name</th>
                 <th>Size</th>
+=======
+                <th>{{ __('xot::manage_lang_module.fields.name.label') }}</th>
+                <th>{{ __('xot::manage_lang_module.fields.size.label') }}</th>
+>>>>>>> laraxot/dev
                 <th></th>
             </tr>
         </thead>
@@ -17,7 +22,11 @@ declare(strict_types=1);
                     <td>{{ $file->getFilenameWithoutExtension() }}</td>
                     <td>{{ $file->getSize() }}</td>
                     <td><button wire:click="edit('{{ $file->getFilenameWithoutExtension() }}')"
+<<<<<<< HEAD
                             class="btn btn-primary">Modifica</button></td>
+=======
+                            class="btn btn-primary">{{ __('xot::manage_lang_module.actions.edit.label') }}</button></td>
+>>>>>>> laraxot/dev
                 </tr>
             @endforeach
         <tbody>

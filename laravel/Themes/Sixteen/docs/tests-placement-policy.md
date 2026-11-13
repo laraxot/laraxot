@@ -1,3 +1,15 @@
+---
+title: "tests placement policy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "tests placement policy"
+issues: []
+discussions: []
+status: draft
+---
+
 # Test Placement Policy — Sixteen Theme
 
 ## Rule: Playwright Tests Live Inside Modules/Themes

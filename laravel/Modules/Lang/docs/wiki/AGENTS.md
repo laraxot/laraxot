@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Lang {{TYPE^}} LLM Wiki Agent Instructions"
 module: "Lang"
 type: concept
@@ -7,7 +9,9 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "migration filament"
 related:
-  - "./italian-text-refined-audit-report.md"
+  - "../italian-text-refined-audit-report.md"
+status: superseded
+superseded_by: ../llm-wiki/AGENTS.md
 ---
 # Lang {{TYPE^}} LLM Wiki Agent Instructions
 

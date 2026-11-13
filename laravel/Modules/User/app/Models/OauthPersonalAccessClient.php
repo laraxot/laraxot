@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\User\Models;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use Modules\User\Models\Traits\OauthPersonalAccessClientRelationsTrait;
 
 /**
- * @property string           $id
- * @property string           $client_id
+ * @property string $id
+ * @property string $client_id
  * @property OauthClient|null $client
- * @property Carbon|null      $created_at
- * @property Carbon|null      $updated_at
- * @property string|null      $updated_by
- * @property string|null      $created_by
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string|null $updated_by
+ * @property string|null $created_by
  *
- * @method static \Modules\User\Database\Factories\OauthPersonalAccessClientFactory       factory($count = null, $state = [])
+ * @method static \Modules\User\Database\Factories\OauthPersonalAccessClientFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder<static>|OauthPersonalAccessClient newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|OauthPersonalAccessClient newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|OauthPersonalAccessClient query()
@@ -31,6 +31,11 @@ use Illuminate\Support\Carbon;
  */
 class OauthPersonalAccessClient extends BaseModel
 {
+<<<<<<< .merge_file_o50TdI
+    use OauthPersonalAccessClientRelationsTrait;
+
+=======
+>>>>>>> .merge_file_Q65McG
     protected $table = 'oauth_personal_access_clients';
 
     protected $connection = 'user';
@@ -41,11 +46,5 @@ class OauthPersonalAccessClient extends BaseModel
         'client_id',
     ];
 
-    /**
-     * @return BelongsTo<OauthClient, $this>
-     */
-    public function client(): BelongsTo
-    {
-        return $this->belongsTo(OauthClient::class, 'client_id');
-    }
+    use OauthPersonalAccessClientRelationsTrait;
 }

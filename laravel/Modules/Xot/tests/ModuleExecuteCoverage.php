@@ -8,10 +8,14 @@ use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Mockery;
+<<<<<<< HEAD
 use Modules\Xot\Actions\File\FileAction;
 use Modules\Xot\Actions\RouteDynAction;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Datas\XotData;
+=======
+use Modules\Xot\Database\Migrations\XotBaseMigration;
+>>>>>>> laraxot/dev
 use Modules\Xot\Filament\Actions\XotBaseAction;
 use Modules\Xot\Filament\Builders\ColumnBuilder;
 use Modules\Xot\Filament\Builders\FilterBuilder;
@@ -54,8 +58,11 @@ final class ModuleExecuteCoverage
         self::testAllEnums($appRoot, $moduleNamespace);
         self::testInvokePublicMethodsOnModels($appRoot, $moduleNamespace);
         self::testActionsStaticMethods($appRoot, $moduleNamespace);
+<<<<<<< HEAD
         self::testRouteDynActionStatics();
         self::testFileActionStatics();
+=======
+>>>>>>> laraxot/dev
         self::testXotBaseMigrationHelpers();
         self::testAllMiddleware($appRoot, $moduleNamespace);
         self::testAllConsoleCommands($appRoot, $moduleNamespace);
@@ -325,6 +332,7 @@ final class ModuleExecuteCoverage
         Assert::assertGreaterThanOrEqual(0, $executed);
     }
 
+<<<<<<< HEAD
     public static function testRouteDynActionStatics(): void
     {
         $executed = 0;
@@ -404,6 +412,8 @@ final class ModuleExecuteCoverage
         Assert::assertGreaterThan(0, $executed);
     }
 
+=======
+>>>>>>> laraxot/dev
     public static function testXotBaseMigrationHelpers(): void
     {
         $migration = new class extends XotBaseMigration
@@ -517,6 +527,7 @@ final class ModuleExecuteCoverage
     public static function testActionsStaticMethods(string $appRoot, string $moduleNamespace): void
     {
         $executed = 0;
+<<<<<<< HEAD
         $skipClasses = [
             FileAction::class,
         ];
@@ -526,6 +537,9 @@ final class ModuleExecuteCoverage
                 continue;
             }
 
+=======
+        foreach (ModuleBusinessCoverage::discoverPhpClasses($appRoot, $moduleNamespace, 'Actions') as $class) {
+>>>>>>> laraxot/dev
             $ref = new ReflectionClass($class);
             $sourceFile = $ref->getFileName();
             if (is_string($sourceFile) && is_file($sourceFile)) {
@@ -1081,7 +1095,11 @@ final class ModuleExecuteCoverage
 
     /**
      * @param  ReflectionClass<Model>  $ref
+<<<<<<< HEAD
      * @return array<string, list<mixed>>
+=======
+     * @return array<string, list<int>>
+>>>>>>> laraxot/dev
      */
     private static function discoverLocalScopes(ReflectionClass $ref): array
     {
@@ -1114,7 +1132,11 @@ final class ModuleExecuteCoverage
     }
 
     /**
+<<<<<<< HEAD
      * @return array<string, mixed>
+=======
+     * @return array<string, int|string>
+>>>>>>> laraxot/dev
      */
     private static function defaultModelAttributes(): array
     {

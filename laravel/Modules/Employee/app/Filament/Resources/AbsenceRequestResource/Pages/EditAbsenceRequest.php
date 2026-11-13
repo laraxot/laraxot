@@ -25,7 +25,20 @@ class EditAbsenceRequest extends XotBaseEditRecord
 
     protected function getRedirectUrl(): string
     {
-        /** @var string */
-        return $this->getResource()::getUrl('index');
+        return $this->getRecordReturnUrl($this->getResourceUrl('index'));
+    }
+
+    /**
+     * @param  array<string, mixed>  $data
+     * @return array<string, mixed>
+     */
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        // Il form non e' una fonte fidata: chi non gestisce le richieste di tutti non cambia ne' lo stato ne' il dipendente.
+        if (! AbsenceRequestResource::canManageAll()) {
+            unset($data['status'], $data['user_id']);
+        }
+
+        return $data;
     }
 }

@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Analisi di Ottimizzazione - Modulo Xot (Framework Base)"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "analisi di ottimizzazione - modulo xot (framework base) xot"
+---
+>>>>>>> laraxot/dev
 # Analisi di Ottimizzazione - Modulo Xot (Framework Base)
 
 ## 🎯 Principi Applicati: DRY + KISS + SOLID + ROBUST + Laraxot

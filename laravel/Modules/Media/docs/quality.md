@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Quality Analysis Report - Media Module"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "quality"
 related:
   - "./webm.md"
+status: draft
 ---
 # Quality Analysis Report - Media Module
 **Date**: [DATE]

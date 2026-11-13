@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\User\Models\User;
 
 // config for DutchCodingCompany/FilamentSocialite

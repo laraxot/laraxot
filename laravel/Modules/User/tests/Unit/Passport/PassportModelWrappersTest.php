@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Passport\Passport;
 use Modules\User\Models\OauthAuthCode;
@@ -20,7 +19,7 @@ test('every eloquent passport model has a local oauth wrapper', function (): voi
     /** @var list<string> $files */
     $files = glob(base_path('vendor/laravel/passport/src').'/*.php');
 
-    if ([] === $files) {
+    if ($files === []) {
         Assert::fail('Unable to read Passport source directory.');
     }
 

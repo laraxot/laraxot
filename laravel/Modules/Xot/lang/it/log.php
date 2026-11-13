@@ -7,13 +7,22 @@ return [
     'pages' => 'Pagine',
     'widgets' => 'Widgets',
     'navigation' => [
+<<<<<<< HEAD
         'name' => 'log',
+=======
+        'name' => 'Registro',
+>>>>>>> laraxot/dev
         'plural' => 'logs',
         'group' => [
             'name' => 'Admin',
         ],
+<<<<<<< HEAD
         'label' => 'log.navigation',
         'icon' => 'log.navigation',
+=======
+        'label' => 'Log',
+        'icon' => 'heroicon-o-clipboard-document-list',
+>>>>>>> laraxot/dev
         'sort' => 61,
     ],
     'fields' => [
@@ -22,7 +31,10 @@ return [
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+<<<<<<< HEAD
             'placeholder' => 'name',
+=======
+>>>>>>> laraxot/dev
         ],
         'guard_name' => [
             'label' => 'Guard',
@@ -62,6 +74,7 @@ return [
             'helper_text' => '',
             'description' => '',
         ],
+<<<<<<< HEAD
         'id' => [
             'label' => 'id',
         ],
@@ -95,6 +108,8 @@ return [
         'file-content' => [
             'label' => 'file-content',
         ],
+=======
+>>>>>>> laraxot/dev
     ],
     'actions' => [
         'import' => [
@@ -110,6 +125,7 @@ return [
             ],
         ],
         'create' => [
+<<<<<<< HEAD
             'label' => 'create',
             'icon' => 'create',
             'tooltip' => 'create',
@@ -138,9 +154,31 @@ return [
             'tooltip' => 'logout',
             'icon' => 'logout',
             'label' => 'logout',
+=======
+            'icon' => 'create',
+        ],
+        'createAnother' => [
+            'icon' => 'createAnother',
+        ],
+        'delete' => [
+            'icon' => 'delete',
+        ],
+        'save' => [
+            'icon' => 'save',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
+        'logout' => [
+            'icon' => 'logout',
+>>>>>>> laraxot/dev
         ],
     ],
     'label' => 'Log',
     'plural_label' => 'Log (Plurale)',
+<<<<<<< HEAD
     'title' => 'log',
+=======
+    'title' => 'Registro',
+>>>>>>> laraxot/dev
 ];

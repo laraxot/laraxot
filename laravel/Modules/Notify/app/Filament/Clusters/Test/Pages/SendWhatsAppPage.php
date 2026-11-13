@@ -21,13 +21,15 @@ use Modules\Notify\Enums\WhatsAppDriverEnum;
 use Modules\Notify\Filament\Clusters\Test;
 use Modules\Notify\Notifications\WhatsAppNotification;
 use Modules\Xot\Filament\Pages\XotBasePage;
-use Override;
+use Modules\Xot\Filament\Traits\SuperAdminOnlyTrait;
 
 /**
  * @property Schema $whatsappForm
  */
 class SendWhatsAppPage extends XotBasePage
 {
+    use SuperAdminOnlyTrait;
+
     /** @var array<string, mixed>|null */
     public ?array $whatsappData = [];
 
@@ -101,10 +103,10 @@ class SendWhatsAppPage extends XotBasePage
 
     public function sendWhatsApp(): void
     {
+        abort_unless(static::canAccess(), 403);
+
         try {
             $data = $this->whatsappForm->getState();
-            $user = $this->getUser();
-
             $message = is_string($data['message']) ? $data['message'] : '';
 
             Notification::route('whatsapp', $data['recipient'])->notify(
@@ -137,6 +139,7 @@ class SendWhatsAppPage extends XotBasePage
         return [
             'submit' => Action::make('whatsappFormActions')->submit('whatsappFormActions')];
     }
+
     protected function getUser(): Authenticatable&Model
     {
         $user = Filament::auth()->user();

@@ -1,5 +1,7 @@
 ---
-title: "Tenant Module — Doctrine"
+issues: []
+discussions: []
+title: "Tenant Module: Doctrine"
 type: doctrine
 tags: [tenant, multi-tenancy, module-doctrine]
 created: 2026-09-05
@@ -8,9 +10,10 @@ qmd: "Tenant module doctrine BMAD analysis purpose religion philosophy policy wh
 related:
   - "../../Xot/docs/module.md"
   - "../../Platform/docs/module.md"
+status: draft
 ---
 
-# Tenant Module — Doctrine
+# Tenant Module: Doctrine
 
 ## Scope (Scopo)
 
@@ -18,7 +21,7 @@ Tenant gestisce l'isolamento multi-tenant del monorepo. Ogni tenant ha il propri
 
 ## Religion (Religione)
 
-**"Un tenant, un database, una configurazione, invisibile agli altri."** La convinzione non negoziabile è che i dati di un tenant NON devono mai essere accessibili da un altro tenant, nemmeno per errore. L'isolamento è a livello di database, non di `tenant_id` column — quest'ultimo è considerato un anti-pattern per rischio di data leak.
+**"Un tenant, un database, una configurazione, invisibile agli altri."** La convinzione non negoziabile è che i dati di un tenant NON devono mai essere accessibili da un altro tenant, nemmeno per errore. L'isolamento è a livello di database, non di `tenant_id` column: quest'ultimo è considerato un anti-pattern per rischio di data leak.
 
 ## Philosophy (Filosofia)
 

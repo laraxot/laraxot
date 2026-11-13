@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Next (Module Media)"
 module: "Media"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "02 next"
 related:
   - "./webm.md"
+status: superseded
+superseded_by: next.md
 ---
 # Next (Module Media)
 

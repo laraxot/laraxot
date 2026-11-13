@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "SafeFloatCastAction"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "safefloatcastaction xot"
+---
+>>>>>>> laraxot/dev
 # SafeFloatCastAction
 
 ## Descrizione

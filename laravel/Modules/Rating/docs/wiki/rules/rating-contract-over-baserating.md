@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "Helper rating: tipizzare RatingContract, non BaseRating"
 type: rule
 module: Rating
@@ -10,15 +13,15 @@ related:
   - ../../../../../../bashscripts/ai/wiki/rules/prefer-contracts-over-abstract-classes.md
   - ../../../../../../bashscripts/ai/wiki/skills/prefer-contracts-over-abstract-classes.md
   - ../../../../../../bashscripts/ai/wiki/memories/prefer-contracts-over-abstract-classes.md
-  - ../architecture/rating-entity-helpers-home-in-ratingdata.md
-  - ../stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md
-  - ../stories/5.240-ratingcontract-closures-not-baserating.story.md
-  - ../stories/5.241-prefer-contracts-over-abstract-classes-second-brain.story.md
-  - ../../app/Models/Contracts/RatingContract.php
+  - ../../bmad/architecture/rating-entity-helpers-home-in-ratingdata.md
+  - ../../bmad/stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md
+  - ../../bmad/stories/5.240-ratingcontract-closures-not-baserating.story.md
+  - ../../bmad/stories/5.241-prefer-contracts-over-abstract-classes-second-brain.story.md
+  - ../../../app/Models/Contracts/RatingContract.php
   - ../../../../../IndennitaResponsabilita/docs/prompts/04.md
 ---
 
-# Rating — applicazione della legge generale
+# Rating: applicazione della legge generale
 
 **SSoT progetto:** [`prefer-contracts-over-abstract-classes.md`](../../../../../../bashscripts/ai/wiki/rules/prefer-contracts-over-abstract-classes.md)
 

@@ -1,10 +1,15 @@
 ---
+qmd: "documentation index"
+issues: []
+discussions: []
 title: "Indice Generale Documentazione - App"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: documentation-index.md
 ---
 
 # 📚 Indice Generale Documentazione - App
@@ -43,6 +48,7 @@ updated: 2026-08-24
 ### Documentazione Architetturale
 - [Design Patterns](./architecture.md) - Pattern architetturali
 - [Database Schema](./database/schema.md) - Schema database
+- [Database Schema](../../schema.md) - Schema database
 - [API Documentation](./api/README.md) - Documentazione API
 - [Security](./security/README.md) - Sicurezza e conformità
 
@@ -206,12 +212,20 @@ updated: 2026-08-24
 ### Coding Guidelines
 - [PHP Standards](./standards/php.md) - Standard PHP (PSR-12)
 - [Laravel Best Practices](./standards/laravel.md) - Best practices Laravel
+- [Environment Setup](../../../ai-agents/setup.md) - Configurazione ambiente
+- [Docker Setup](./development/docker.md) - Configurazione Docker
+- [Database Setup](../../../ai-agents/setup.md) - Setup database
+
+### Coding Guidelines
+- [PHP Standards](./standards/php.md) - Standard PHP (PSR-12)
+- [Laravel Best Practices](../../../html2pdf/laravel.md) - Best practices Laravel
 - [Filament Guidelines](./standards/filament.md) - Linee guida Filament
 - [Blade Components](./standards/blade.md) - Componenti Blade
 
 ### Quality Assurance
 - [PHPStan Configuration](./phpstan/README.md) - Analisi statica
 - [Testing Strategy](./testing/strategy.md) - Strategia testing
+- [Testing Strategy](../../../strategy.md) - Strategia testing
 - [CI/CD Pipeline](./ci-cd/README.md) - Continuous integration
 
 ---
@@ -253,6 +267,7 @@ updated: 2026-08-24
 
 ### Analytics
 - [Usage Analytics](./analytics/usage.md) - Analisi utilizzo
+- [Usage Analytics](../../../html2pdf/usage.md) - Analisi utilizzo
 - [Business Metrics](./analytics/business.md) - Metriche business
 
 ---
@@ -261,6 +276,7 @@ updated: 2026-08-24
 
 ### Security Documentation
 - [Security Guidelines](./security/guidelines.md) - Linee guida sicurezza
+- [Security Guidelines](../../../ai-agents/agents-guide/01-project-overview/guidelines.md) - Linee guida sicurezza
 - [GDPR Compliance](./security/gdpr.md) - Conformità GDPR
 - [Authentication](./security/authentication.md) - Sistema autenticazione
 - [Authorization](./security/authorization.md) - Sistema autorizzazioni

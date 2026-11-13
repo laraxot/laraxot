@@ -1,10 +1,15 @@
 ---
+qmd: "working with locales.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: working_with_locales.md"
 module: Lang
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: working-with-locales.divergenza.md
 ---
 
 # Divergenza: `working_with_locales.md`

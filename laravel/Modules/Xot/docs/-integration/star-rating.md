@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "star_rating"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "star_rating xot"
+---
+>>>>>>> laraxot/dev
 # star_rating
 
 <!-- Contenuto migrato da _docs/star_rating.txt -->

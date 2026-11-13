@@ -32,8 +32,12 @@ class GetActivitiesByTypeAction
             ->with(['causer', 'subject'])
             ->where('event', $type)
             ->latest()
+<<<<<<< .merge_file_hTqtvr
             ->limit($limit)
             ;
+=======
+            ->limit($limit);
+>>>>>>> .merge_file_6xodnG
 
         return Activity::typedGet($query);
     }

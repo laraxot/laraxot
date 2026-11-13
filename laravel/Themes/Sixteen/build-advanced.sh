@@ -106,13 +106,7 @@ else
     log_warning "Test non disponibili o falliti"
 fi
 
-# Copia asset
-log_info "Copia asset in directory finale..."
-if npm run copy; then
-    log_success "Asset copiati"
-else
-    log_warning "Impossibile copiare asset automaticamente"
-fi
+# Niente copia: public_html/themes/Sixteen e' un symlink a laravel/Themes/Sixteen/public (lo crea deploy.sh).
 
 # Verifica finale
 log_info "Verifica finale build..."
@@ -145,6 +139,6 @@ log_info "Informazioni aggiuntive:"
 echo "  • Per sviluppo: npm run dev"
 echo "  • Per preview: npm run preview"
 echo "  • Per analisi bundle: npm run bundle-report"
-echo "  • Per watch mode: npm run copy:watch"
+echo "  • Per watch mode: npm run dev"
 
 log_success "Build avanzato completato!"

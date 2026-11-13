@@ -1,4 +1,21 @@
+---
+title: "login correction implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login correction implementation"
+issues: []
+discussions: []
+status: draft
+---
+
 # Correzione Implementazione Login - Tema Sixteen
+
+> **Nota 2026-10-08**: `Themes\Sixteen\Services\ThemeService` (descritto sotto) e' stato eliminato: il sostituto vivo e'
+> `Themes\Sixteen\Adapters\ThemeAdapter` (singleton `sixteen.theme`); `MenuBuilder`, `CieAuthService` e `SpidAuthService` sono
+> ora `Actions/MenuBuilderAction`, `Actions/CieAuthAction`, `Actions/SpidAuthAction`. Il tema non ha piu' `app/Services/`
+> (regola: `architecture-queueable-action.md`). Dettagli: [stories/services-to-actions-sixteen.story.md](stories/services-to-actions-sixteen.story.md).
 
 ## 🚨 REGOLA CRITICA FONDAMENTALE
 
@@ -39,7 +56,6 @@ class AdminPanelProvider extends XotBaseMainPanelProvider
 ```
 
 ---
-
 ## Problema Identificato
 
 Il tema Sixteen non era configurato correttamente per funzionare con il sistema di autenticazione. Inoltre, non ho seguito la **REGOLA CRITICA** per l'autenticazione: **per i form di autenticazione utilizzare SEMPRE widget Filament, NON Volt!**

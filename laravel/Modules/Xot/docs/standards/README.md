@@ -1,18 +1,40 @@
+<<<<<<< HEAD
+=======
+---
+title: "Xot - README.md"
+module: Xot
+bmad: true
+status: active
+---
+>>>>>>> laraxot/dev
 # Standard di Codice
 
 Questa cartella contiene gli standard di codice e le convenzioni utilizzate nel progetto.
 
 ## File Contenuti
 
+<<<<<<< HEAD
 - `coding-standards.md` - Standard di codice generali
 - `phpstan-rules.md` - Regole PHPStan specifiche
 - `testing-standards.md` - Standard per i test
+=======
+- [coding-standards.md](coding-standards.md) - Standard di codice generali
+- [namespace-rules.md](namespace-rules.md) - Regole sui namespace
+- [naming-conventions.md](naming-conventions.md) - Convenzioni di nome
+- `phpstan-rules.md` e `testing-standards.md` erano elencati qui ma non esistono (verificato 2026-10-14 con `ls`); lo stato PHPStan vive in [../bmad/phpstan-status.md](../bmad/phpstan-status.md); `../phpstan/` contiene solo report per livello (evidence).
+>>>>>>> laraxot/dev
 
 ## Note
 
 Questi standard si applicano a tutti i moduli del progetto e devono essere seguiti per mantenere la coerenza del codice.
 
 ## Collegamenti tra versioni di README.md
+<<<<<<< HEAD
+=======
+
+> Nota 2026-10-14 (docs-audit): Il blocco 'Collegamenti tra versioni di README.md' punta in larga parte a percorsi di altri progetti (docs/moduli, patient, dental, isee) e la sezione STI cita il modulo Patient, che non esiste in questo progetto (`laravel/Modules/` non contiene alcun modulo Patient). L'elenco dei file e stato corretto il 2026-10-14. Contenuto non riscritto, verificare prima di usarlo.
+
+>>>>>>> laraxot/dev
 * [README.md](docs/laravel-app/phpstan/readme.md)
 * [README.md](docs/laravel-app/readme.md)
 * [README.md](docs/moduli/struttura/readme.md)
@@ -27,7 +49,11 @@ Questi standard si applicano a tutti i moduli del progetto e devono essere segui
 * [README.md](docs/troubleshooting/git-conflicts/readme.md)
 * [README.md](docs/tecnico/laraxot/readme.md)
 * [README.md](docs/modules/readme.md)
+<<<<<<< HEAD
 * [README.md](docs/conventions/readme.md)
+=======
+* [README.md](../conventions/readme.md)
+>>>>>>> laraxot/dev
 * [README.md](docs/amministrazione/backup/readme.md)
 * [README.md](docs/amministrazione/monitoraggio/readme.md)
 * [README.md](docs/amministrazione/deployment/readme.md)
@@ -44,6 +70,7 @@ Questi standard si applicano a tutti i moduli del progetto e devono essere segui
 * [README.md](docs/implementazione/isee/readme.md)
 * [README.md](docs/it/readme.md)
 * [README.md](laravel/vendor/mockery/mockery/docs/readme.md)
+<<<<<<< HEAD
 * [README.md](../../../chart/docs/readme.md)
 * [README.md](../../../reporting/docs/readme.md)
 * [README.md](../../../gdpr/docs/phpstan/readme.md)
@@ -85,6 +112,49 @@ Questi standard si applicano a tutti i moduli del progetto e devono essere segui
 * [README.md](../../../cms/docs/content/readme.md)
 * [README.md](../../../cms/docs/frontoffice/readme.md)
 * [README.md](../../../cms/docs/components/readme.md)
+=======
+* [README.md](../../../Chart/docs/README.md)
+* [README.md](../../../reporting/docs/readme.md)
+* [README.md](../../../gdpr/docs/phpstan/readme.md)
+* [README.md](../../../Gdpr/docs/README.md)
+* [README.md](../../../Notify/docs/phpstan/README.md)
+* [README.md](../../../Notify/docs/README.md)
+* [README.md](../filament/README.md)
+* [README.md](../../../xot/docs/phpstan/readme.md)
+* [README.md](../exceptions/readme.md)
+* [README.md](../README.md)
+* [README.md](../../../xot/docs/standards/readme.md)
+* [README.md](../conventions/readme.md)
+* [README.md](../development/readme.md)
+* [README.md](../../../dental/docs/readme.md)
+* [README.md](../../../user/docs/phpstan/readme.md)
+* [README.md](../../../User/docs/README.md)
+* [README.md](../../../User/docs/README.md)
+* [README.md](../../../ui/docs/phpstan/readme.md)
+* [README.md](../../../UI/docs/README.md)
+* [README.md](../../../UI/docs/standards/README.md)
+* [README.md](../../../UI/docs/themes/README.md)
+* [README.md](../../../UI/docs/components/README.md)
+* [README.md](../../../lang/docs/phpstan/readme.md)
+* [README.md](../../../Lang/docs/README.md)
+* [README.md](../../../job/docs/phpstan/readme.md)
+* [README.md](../../../Job/docs/README.md)
+* [README.md](../../../media/docs/phpstan/readme.md)
+* [README.md](../../../Media/docs/README.md)
+* [README.md](../../../tenant/docs/phpstan/readme.md)
+* [README.md](../../../Tenant/docs/README.md)
+* [README.md](../../../activity/docs/phpstan/readme.md)
+* [README.md](../../../Activity/docs/README.md)
+* [README.md](../../../patient/docs/readme.md)
+* [README.md](../../../patient/docs/standards/readme.md)
+* [README.md](../../../patient/docs/value-objects/readme.md)
+* [README.md](../../../Cms/docs/blocks/README.md)
+* [README.md](../../../Cms/docs/README.md)
+* [README.md](../../../Cms/docs/standards/README.md)
+* [README.md](../../../Cms/docs/content/README.md)
+* [README.md](../../../Cms/docs/frontoffice/README.md)
+* [README.md](../../../Cms/docs/components/README.md)
+>>>>>>> laraxot/dev
 * [README.md](../../../../themes/two/docs/readme.md)
 * [README.md](../../../../themes/one/docs/readme.md)
 
@@ -124,4 +194,8 @@ class Doctor extends User
 ```
 
 ## Moduli che applicano questa regola
+<<<<<<< HEAD
 // Aggiungere qui altri moduli se necessario
+=======
+// Aggiungere qui altri moduli se necessario
+>>>>>>> laraxot/dev

@@ -1,4 +1,7 @@
 ---
+qmd: "filament wizard custom component"
+issues: []
+discussions: []
 title: "Filament Wizard Custom Component - Theme Sixteen"
 type: concept
 sources: []
@@ -7,8 +10,9 @@ created: 2026-05-04
 updated: 2026-05-04
 tags: [filament, wizard, component, blade, architecture, theme, design-comuni]
 related:
-  - ../../../../Modules/Fixcity/docs/wiki/concepts/wizard-theme-integration.md
+  - ../../../../../Modules/Fixcity/docs/wiki/concepts/wizard-theme-integration.md
   - ../../../../../docs/wiki/concepts/laraxot-theme-module-separation.md
+status: draft
 ---
 
 # Filament Wizard Custom Component - Theme Sixteen

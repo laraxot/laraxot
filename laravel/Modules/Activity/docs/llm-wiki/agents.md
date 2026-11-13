@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -13,8 +12,6 @@ status: draft
 updated: 2026-10-08
 tags: [docs, activity, llm-wiki]
 qmd: "agents activity"
-=======
->>>>>>> 13cf1831 (.)
 ---
 title: "Agent instructions"
 type: reference
@@ -28,15 +25,12 @@ related:
   - ./coding-agent-manifests.md
 ---
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_NsxX3K
 <<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
 >>>>>>> laraxot/dev
-=======
->>>>>>> 13cf1831 (.)
 # Activity Module LLM Wiki Agent Instructions
 =======
 >>>>>>> .merge_file_NbpiRD
@@ -95,7 +89,6 @@ related:
 
 ### Rule 3: Link Heavily
 - Every page MUST have 3+ incoming links
-<<<<<<< HEAD
 <<<<<<< .merge_file_NsxX3K
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -109,6 +102,3 @@ related:
 =======
 - Every page MUST have 3+ outgoing links
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-- Every page MUST have 3+ outgoing links
->>>>>>> 13cf1831 (.)

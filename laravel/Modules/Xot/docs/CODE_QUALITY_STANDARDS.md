@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Code Quality Standards - Xot Module"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Code Quality Standards - Xot Module"
+---
+>>>>>>> laraxot/dev
 # Code Quality Standards - Xot Module
 
 ## 🎯 Purpose

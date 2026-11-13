@@ -9,13 +9,14 @@ issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./agents.md"
-  - "./architecture.md"
+  - "./Architecture.md"
   - "./auth-patterns.md"
   - "./bmad-method.md"
   - "./index.md"
   - "./log.md"
   - "./overview.md"
   - "./socialite-architecture.md"
+status: draft
 ---
 
 # Context Compression - User Module

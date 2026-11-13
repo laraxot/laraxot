@@ -1,14 +1,3 @@
----
-title: "Services"
-module: "Tenant"
-type: concept
-tags: [services]
-created: 2026-07-14
-updated: 2026-07-14
-qmd: "services"
-related:
-  - "./phpstan-corrections-january.md"
----
 <?php
 
 declare(strict_types=1);
@@ -49,6 +38,8 @@ return [
 ### Versione HEAD
 
 ## Collegamenti tra versioni di services.md
+* [services.md](../../../Xot/docs/services.md)
+* [services.md](../../../Tenant/docs/it/config/services.md)
 * [services.md](../../../xot/docs/services.md)
 * [services.md](../../../tenant/docs/it/config/services.md)
 

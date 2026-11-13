@@ -1,3 +1,15 @@
+---
+title: "html parity analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "html parity analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Fase 1: HTML Body Structure Parity — `segnalazione-dettaglio`
 
 - **Data**: 2026-04-08
@@ -101,6 +113,6 @@ Per raggiungere 90% servono ~152 elementi aggiuntivi identici:
 - [Report completo](../../body-structure-comparison/segnalazione-dettaglio/report.md)
 - [Reference HTML](../../prompts/tests/reference_segnalazione-dettaglio.html)
 - [Local HTML](../../prompts/tests/local_segnalazione-dettaglio.html)
-- [JSON content](../../../../config/local/fixcity/database/content/pages/tests.segnalazione-dettaglio.json)
-- [Block view](../../../../resources/views/components/blocks/tests/ticket-detail.blade.php)
+- [JSON content](../../../../../config/local/fixcity/database/content/pages/tests.segnalazione-dettaglio.json)
+- [Block view](../../../resources/views/components/blocks/tests/ticket-detail.blade.php)
 - [Analisi ticket-list](../segnalazione_disservizio/ticket-list-html-parity-analysis.md)

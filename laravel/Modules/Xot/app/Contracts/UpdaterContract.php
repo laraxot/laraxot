@@ -17,6 +17,10 @@ use Illuminate\Support\Carbon;
  *
  * @phpstan-require-extends Model
  *
+<<<<<<< HEAD
  * @mixin \Eloquent
+=======
+ * @mixin Model
+>>>>>>> laraxot/dev
  */
 interface UpdaterContract {}

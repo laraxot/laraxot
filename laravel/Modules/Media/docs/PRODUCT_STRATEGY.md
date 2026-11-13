@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Media Module - Product Strategy"
 module: "Media"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "product strategy"
 related:
   - "./webm.md"
+status: superseded
+superseded_by: product_strategy.md
 ---
 # Media Module - Product Strategy
 

@@ -1,12 +1,16 @@
 ---
-title: "Project Structure — Module Rating"
+qmd: "project structure"
+issues: []
+discussions: []
+title: "Project Structure: Module Rating"
 type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [structure, architecture, module]
+status: draft
 ---
 
-# Project Structure — Module **Rating**
+# Project Structure: Module **Rating**
 
 ## Directory Structure
 
@@ -32,7 +36,7 @@ tags: [structure, architecture, module]
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
-├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
+├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE: Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
 ├── architecture.md               # (opzionale) Architettura modulo
@@ -40,12 +44,12 @@ tags: [structure, architecture, module]
 \`\`\`
 
 > Nota (verificata 2026-09-22 via `ls`/`git ls-tree` sul filesystem reale, non per ipotesi):
-> `docs/architecture.md` (minuscolo) è il file realmente presente in questa cartella — non
+> `docs/architecture.md` (minuscolo) è il file realmente presente in questa cartella: non
 > esiste un `ARCHITECTURE.md` sotto `docs/`. Un `ARCHITECTURE.md` esiste invece alla root del
-> modulo (un livello sopra), dove è oggetto di una hygiene separata e in corso — vedi
+> modulo (un livello sopra), dove è oggetto di una hygiene separata e in corso: vedi
 > `root-files-hygiene.md`; non va confuso con questo file. Altri file elencati qui hanno
 > tuttora varianti case-duplicate non deduplicate (`index.md`/`INDEX.md`,
-> `on-demand-pattern.md`/`ON-DEMAND-PATTERN.md`, `qmd-setup.md`/`QMD-SETUP.md`) — vedi
+> `on-demand-pattern.md`/`ON-DEMAND-PATTERN.md`, `qmd-setup.md`/`QMD-SETUP.md`): vedi
 > `case-sensitivity-rules.md`.
 
 ## File Chiave
@@ -56,7 +60,7 @@ tags: [structure, architecture, module]
 | `wiki/log.md` | Storico attività (ingest/query/lint) |
 | `wiki/rules/` | Regole + trigger map locale |
 | `wiki/concepts/` | Concetti specifici del modulo |
-| `ON-DEMAND-PATTERN.md` | **Leggi prima** — pattern da seguire |
+| `ON-DEMAND-PATTERN.md` | **Leggi prima**: pattern da seguire |
 
 ## Convenzioni
 
@@ -104,10 +108,10 @@ graph TD
 ## Riferimenti Globali
 
 - [Project Wiki Root](../../docs/wiki/)
-- [Global Rules](../../docs/wiki/rules/)
-- [Global Skills](../../docs/wiki/skills/)
-- [Global Commands](../../docs/wiki/commands/)
-- [Global Memories](../../docs/wiki/memories/)
+- [Global Rules](wiki/rules)
+- [Global Skills](wiki/skills)
+- [Global Commands](wiki/commands)
+- [Global Memories](wiki/memories)
 
 ## Setup Iniziale (per nuovi moduli)
 

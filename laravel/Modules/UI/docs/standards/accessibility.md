@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "accessibility"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "accessibility"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Standard di Accessibilità
 
 ## 🎯 WCAG 2.1

@@ -1,3 +1,9 @@
+---
+title: "Employee - WORK_HOURS_PAGE"
+module: Employee
+bmad: true
+status: active
+---
 ## WorkHoursPage – design and implementation guide
 
 This guide documents how to implement the WorkHoursPage for the Employee module, replicating the target UI while adhering to Laraxot and PHPStan L10.

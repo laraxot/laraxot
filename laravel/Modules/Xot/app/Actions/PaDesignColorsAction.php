@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Modules\Xot\Actions;
 
 use Filament\Support\Colors\Color;
+<<<<<<< HEAD
+=======
+use Modules\Xot\Enums\PaDesignColorEnum;
+>>>>>>> laraxot/dev
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -19,9 +23,15 @@ final class PaDesignColorsAction
 {
     use QueueableAction;
 
+<<<<<<< HEAD
     public const string PRIMARY_HEX = '#007A52';
 
     public const string INSTITUTIONAL_BLUE_HEX = '#0066CC';
+=======
+    public const string PRIMARY_HEX = PaDesignColorEnum::Primary->value;
+
+    public const string INSTITUTIONAL_BLUE_HEX = PaDesignColorEnum::InstitutionalBlue->value;
+>>>>>>> laraxot/dev
 
     /**
      * @return array{primary: string, institutional_blue: string, danger: string, gray: string, info: string, success: string, warning: string}
@@ -29,8 +39,13 @@ final class PaDesignColorsAction
     public function execute(): array
     {
         return [
+<<<<<<< HEAD
             'primary' => self::PRIMARY_HEX,
             'institutional_blue' => self::INSTITUTIONAL_BLUE_HEX,
+=======
+            'primary' => PaDesignColorEnum::Primary->value,
+            'institutional_blue' => PaDesignColorEnum::InstitutionalBlue->value,
+>>>>>>> laraxot/dev
             'danger' => 'red',
             'gray' => 'zinc',
             'info' => 'blue',

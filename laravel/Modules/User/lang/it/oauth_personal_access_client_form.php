@@ -2,13 +2,17 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_vEcrlk
 return [
     'sections' => [
         'OAuth Personal Access Client Information' => ['label' => 'OAuth Personal Access Client Information', 'heading' => 'OAuth Personal Access Client Information'],
-        'empty' => ['label' => 'empty', 'heading' => 'empty'],
+        'empty' => ['label' => '', 'heading' => 'empty'],
     ],
     'fields' => [
-        'client_id' => ['label' => 'client_id', 'placeholder' => 'client_id', 'helper_text' => 'client_id', 'description' => 'client_id'],
-        'name' => ['label' => 'name', 'placeholder' => 'name', 'helper_text' => 'name', 'description' => 'name'],
+        'client_id' => ['label' => 'Client ID', 'placeholder' => 'client_id', 'helper_text' => 'client_id', 'description' => 'client_id'],
+        'name' => ['label' => 'Nome', 'placeholder' => 'name', 'helper_text' => 'name', 'description' => 'name'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_MguEd4

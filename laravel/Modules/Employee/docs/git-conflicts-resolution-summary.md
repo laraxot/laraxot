@@ -1,3 +1,9 @@
+---
+title: "Employee - GIT-CONFLICTS-RESOLUTION-SUMMARY"
+module: Employee
+bmad: true
+status: active
+---
 # Git Conflicts Resolution Summary - Employee Module
 
 ## Overview

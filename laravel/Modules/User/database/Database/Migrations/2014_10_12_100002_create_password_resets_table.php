@@ -1,11 +1,19 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< .merge_file_JFkUBp
 
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 return new class extends XotBaseMigration {
+=======
+use Illuminate\Database\Schema\Blueprint;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
+
+return new class extends XotBaseMigration
+{
+>>>>>>> .merge_file_Qi0xMv
     /**
      * Run the migrations.
      */
@@ -27,7 +35,11 @@ return new class extends XotBaseMigration {
             //    $table->string('email')->nullable();
             // }
             // $this->updateUser($table);
+<<<<<<< .merge_file_JFkUBp
             if ('uuid' === $this->getColumnType('id')) {
+=======
+            if ($this->getColumnType('id') === 'uuid') {
+>>>>>>> .merge_file_Qi0xMv
                 $table->dropColumn('id');
             }
             if (! $this->hasColumn('id')) {

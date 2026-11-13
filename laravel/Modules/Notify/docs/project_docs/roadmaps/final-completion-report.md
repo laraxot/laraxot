@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "FINAL_COMPLETION_REPORT_2025-10-01"
 type: concept
 tags: [deprecated]

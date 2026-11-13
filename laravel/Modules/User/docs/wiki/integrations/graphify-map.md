@@ -1,13 +1,15 @@
 ---
-title: "User Module — Mappa Graphify"
+title: "User Module: Mappa Graphify"
 module: user
 type: integration
 tags: [integrations, modules, user]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
+qmd: "user module   mappa graphify user"
 ---
 
-# User Module — Mappa Graphify
+# User Module: Mappa Graphify
 
 **Versione:** 2.0.0 | **Modulo:** User | **Data:** 2026-08-02 | **Autore:** @marco76tv
 
@@ -30,7 +32,7 @@ Il modulo **User** è il **cuore dell'autenticazione e autorizzazione** del sist
 
 ## 🏗️ Architettura Essenziale
 
-### Entry Points — Models (Database Layer)
+### Entry Points: Models (Database Layer)
 
 #### Core Identity
 | Classe | Path | Scopo |
@@ -116,7 +118,7 @@ Il modulo **User** è il **cuore dell'autenticazione e autorizzazione** del sist
 | `BaseInteractsWithExtra` | `app/Models/BaseInteractsWithExtra.php` | Schemaless extras trait |
 | `BaseIsTenant` | `app/Models/BaseIsTenant.php` | Tenant container trait |
 
-### Entry Points — Actions (Business Logic)
+### Entry Points: Actions (Business Logic)
 
 | Classe | Path | Scopo |
 |--------|------|-------|
@@ -124,7 +126,7 @@ Il modulo **User** è il **cuore dell'autenticazione e autorizzazione** del sist
 | `GetPermissionModelAction` | `app/Actions/GetPermissionModelAction.php` | Query model-level permissions |
 | `GetCurrentDeviceAction` | `app/Actions/GetCurrentDeviceAction.php` | Detect current device from request |
 
-### Entry Points — Events (Observer Pattern)
+### Entry Points: Events (Observer Pattern)
 
 | Evento | Path | Trigger |
 |--------|------|---------|
@@ -143,7 +145,7 @@ Il modulo **User** è il **cuore dell'autenticazione e autorizzazione** del sist
 | `SocialiteUserConnected` | `app/Events/SocialiteUserConnected.php` | Social login linked |
 | `RecoveryCodesGenerated` | `app/Events/RecoveryCodesGenerated.php` | 2FA recovery codes issued |
 
-### Entry Points — Enums
+### Entry Points: Enums
 
 | Enum | Path | Valori |
 |------|------|--------|
@@ -152,7 +154,7 @@ Il modulo **User** è il **cuore dell'autenticazione e autorizzazione** del sist
 | `SocialProviderEnum` | `app/Enums/SocialProviderEnum.php` | Social platforms (google, github, microsoft, etc.) |
 | `LanguageEnum` | `app/Enums/LanguageEnum.php` | Supported languages (it, en, de, etc.) |
 
-### Entry Points — Data Classes (DTOs)
+### Entry Points: Data Classes (DTOs)
 
 | Data Class | Path | Scopo |
 |------------|------|-------|
@@ -167,50 +169,50 @@ Il modulo **User** è il **cuore dell'autenticazione e autorizzazione** del sist
 | `DeviceData` | `app/Datas/DeviceData.php` | Device fingerprint DTO |
 | `PasswordData` | `app/Datas/PasswordData.php` | Password change DTO |
 
-### Entry Points — Filament Resources (Admin UI)
+### Entry Points: Filament Resources (Admin UI)
 
 **Core Entities:**
-- `UserResource` — User management
-- `ProfileResource` — User profiles
-- `TeamResource` — Teams/organizations
-- `TeamUserResource` — Team members
-- `TeamInvitationResource` — Invites
-- `TenantResource` — Tenant management
-- `TenantUserResource` — Tenant members
+- `UserResource`: User management
+- `ProfileResource`: User profiles
+- `TeamResource`: Teams/organizations
+- `TeamUserResource`: Team members
+- `TeamInvitationResource`: Invites
+- `TenantResource`: Tenant management
+- `TenantUserResource`: Tenant members
 
 **RBAC & Security:**
-- `RoleResource` — Roles management
-- `PermissionResource` — Permission management
-- `ModelHasRoleResource` — Model-role assignments (polymorphic)
+- `RoleResource`: Roles management
+- `PermissionResource`: Permission management
+- `ModelHasRoleResource`: Model-role assignments (polymorphic)
 
 **Authentication & Tracking:**
-- `AuthenticationLogResource` — Login history
-- `DeviceResource` — Trusted device management
-- `PersonalAccessTokenResource` — API tokens
+- `AuthenticationLogResource`: Login history
+- `DeviceResource`: Trusted device management
+- `PersonalAccessTokenResource`: API tokens
 
 **OAuth & Social:**
-- `ClientResource` (OauthClientResource) — Passport clients
-- `OauthAccessTokenResource` — Active tokens
-- `OauthAuthCodeResource` — Auth codes
-- `OauthRefreshTokenResource` — Refresh tokens
-- `OauthPersonalAccessClientResource` — PAC clients
-- `SocialiteUserResource` — Social logins
-- `SocialProviderResource` — Social config
-- `SsoProviderResource` — SSO config
+- `ClientResource` (OauthClientResource): Passport clients
+- `OauthAccessTokenResource`: Active tokens
+- `OauthAuthCodeResource`: Auth codes
+- `OauthRefreshTokenResource`: Refresh tokens
+- `OauthPersonalAccessClientResource`: PAC clients
+- `SocialiteUserResource`: Social logins
+- `SocialProviderResource`: Social config
+- `SsoProviderResource`: SSO config
 
 **Misc:**
-- `BaseUserResource`, `BaseProfileResource` — Base classes
-- `FeatureResource` — Feature flags
-- `PasswordResetResource` — Reset tokens
+- `BaseUserResource`, `BaseProfileResource`: Base classes
+- `FeatureResource`: Feature flags
+- `PasswordResetResource`: Reset tokens
 
-### Entry Points — Controllers
+### Entry Points: Controllers
 
 | Controller | Path | Routes |
 |------------|------|--------|
 | `Controller` | `app/Http/Controllers/Controller.php` | Base controller |
 | `UpgradeController` | `app/Http/Controllers/UpgradeController.php` | Upgrade/migration endpoints |
 
-### Entry Points — Contracts & Interfaces
+### Entry Points: Contracts & Interfaces
 
 | Interface | Path | Scopo |
 |-----------|------|-------|

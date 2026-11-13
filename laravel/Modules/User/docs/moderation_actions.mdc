@@ -1,8 +1,7 @@
 ---
 module: theme
 topic: moderation_actions
-canonical: ../../../Themes/docs/shared-components/moderation-actions.md
+canonical: ../../../Themes/Barthelemy/docs/shared-components/moderation-actions.md
 ---
 
-See canonical documentation: ../../../Themes/docs/shared-components/moderation-actions.md
->>>>>>> 87273113 (.)
+See canonical documentation: ../../../Themes/Barthelemy/docs/shared-components/moderation-actions.md

@@ -38,7 +38,10 @@ class BelongsToManyAction
             return;
         }
 
+<<<<<<< HEAD
         $models = [];
+=======
+>>>>>>> laraxot/dev
         $ids = [];
         $related = $relationDTO->related;
         $keyName = $relationDTO->related->getKeyName();
@@ -55,7 +58,10 @@ class BelongsToManyAction
                 Assert::isInstanceOf($res, Model::class, 'UpdateAction must return an instance of Model.');
 
                 $ids[] = $res->getKey();
+<<<<<<< HEAD
                 $models[] = $res;
+=======
+>>>>>>> laraxot/dev
             } else {
                 throw new \RuntimeException(sprintf('Key "%s" not found in relation data.', $keyName));
             }

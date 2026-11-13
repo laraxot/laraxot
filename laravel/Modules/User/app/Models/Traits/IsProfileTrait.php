@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 /**
  * Modulo User - Trait per il profilo utente.
  *
@@ -21,6 +20,7 @@ declare(strict_types=1);
 namespace Modules\User\Models\Traits;
 
 use Filament\Notifications\Notification;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -30,7 +30,6 @@ use Illuminate\Support\Collection;
 use Modules\User\Models\Device;
 use Modules\User\Models\DeviceUser;
 use Modules\User\Models\Role;
-use Modules\User\Models\User;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -67,58 +66,69 @@ trait IsProfileTrait
      * Ottiene il nome completo dell'utente.
      * Utilizza prima i dati del profilo, altrimenti ricade sul nome dell'utente.
      *
-     * @param string|null $value Il valore attuale dell'attributo
-     *
+     * @param  string|null  $value  Il valore attuale dell'attributo
      * @return string|null Il nome completo dell'utente
      */
     public function getFullNameAttribute(?string $value): ?string
     {
-        if (null !== $value) {
+        if ($value !== null) {
             return $value;
         }
 
+        return $this->getFullName();
+    }
+
+    public function getFullName(): ?string
+    {
         $user = $this->user;
-        if (null === $user) {
+        if ($user === null) {
             return null;
         }
-        Assert::isInstanceOf($user, User::class);
+        Assert::isInstanceOf($user, UserContract::class);
 
         $res = trim(($this->first_name ?? '').' '.($this->last_name ?? ''));
-        if ('' !== $res) {
+        if ($res !== '') {
             return $res;
         }
 
         $userName = $user->getAttribute('name');
 
-        return \is_string($userName) && '' !== $userName ? $userName : null;
+        return \is_string($userName) && $userName !== '' ? $userName : null;
     }
 
     /**
      * Ottiene il nome dell'utente.
      * Se non presente nel profilo, lo recupera dall'utente collegato.
      *
-     * @param string|null $value Il valore attuale dell'attributo
-     *
+     * @param  string|null  $value  Il valore attuale dell'attributo
      * @return string|null Il nome dell'utente
      */
     public function getFirstNameAttribute(?string $value): ?string
     {
-        if (null !== $value) {
+        if ($value !== null) {
             return $value;
         }
 
+        $firstName = $this->getFirstName();
+        if ($firstName !== null) {
+            $this->update(['first_name' => $firstName]);
+        }
+
+        return $firstName;
+    }
+
+    public function getFirstName(): ?string
+    {
         $user = $this->user;
-        if (null === $user) {
+        if ($user === null) {
             return null;
         }
-        Assert::isInstanceOf($user, User::class);
+        Assert::isInstanceOf($user, UserContract::class);
 
         $firstName = $user->getAttribute('first_name');
-        if (! \is_string($firstName) || '' === $firstName) {
+        if (! \is_string($firstName) || $firstName === '') {
             return null;
         }
-
-        $this->update(['first_name' => $firstName]);
 
         return $firstName;
     }
@@ -127,28 +137,35 @@ trait IsProfileTrait
      * Ottiene il cognome dell'utente.
      * Se non presente nel profilo, lo recupera dall'utente collegato.
      *
-     * @param string|null $value Il valore attuale dell'attributo
-     *
+     * @param  string|null  $value  Il valore attuale dell'attributo
      * @return string|null Il cognome dell'utente
      */
     public function getLastNameAttribute(?string $value): ?string
     {
-        if (null !== $value) {
+        if ($value !== null) {
             return $value;
         }
 
+        $lastName = $this->getLastName();
+        if ($lastName !== null) {
+            $this->update(['last_name' => $lastName]);
+        }
+
+        return $lastName;
+    }
+
+    public function getLastName(): ?string
+    {
         $user = $this->user;
-        if (null === $user) {
+        if ($user === null) {
             return null;
         }
-        Assert::isInstanceOf($user, User::class);
+        Assert::isInstanceOf($user, UserContract::class);
 
         $lastName = $user->getAttribute('last_name');
-        if (! \is_string($lastName) || '' === $lastName) {
+        if (! \is_string($lastName) || $lastName === '') {
             return null;
         }
-
-        $this->update(['last_name' => $lastName]);
 
         return $lastName;
     }
@@ -160,7 +177,7 @@ trait IsProfileTrait
      */
     public function isSuperAdmin(): bool
     {
-        if (null === $this->user) {
+        if ($this->user === null) {
             return false;
         }
 
@@ -174,7 +191,7 @@ trait IsProfileTrait
      */
     public function isNegateSuperAdmin(): bool
     {
-        if (null === $this->user) {
+        if ($this->user === null) {
             return false;
         }
 
@@ -187,14 +204,20 @@ trait IsProfileTrait
      * Se l'utente non è super-admin, assegna super-admin e rimuove negate-super-admin.
      *
      * @throws \Exception Se l'utente non è disponibile
+     * @throws AuthorizationException Se l'utente non ha né super-admin né negate-super-admin
      */
     public function toggleSuperAdmin(): void
     {
         $user = $this->user;
-        if (null === $user) {
+        if ($user === null) {
             throw new \Exception('['.__LINE__.']['.class_basename($this).']');
         }
-        Assert::isInstanceOf($user, User::class);
+        Assert::isInstanceOf($user, UserContract::class);
+        // Si puo' invertire solo un ruolo che si ha gia' (criterio della vista del pulsante). Senza questo controllo l'azione Livewire pubblica
+        // `SuperAdminWidget::toggleSuperAdmin()`, resa nel menu utente di ogni pannello, dava `super-admin` a qualsiasi utente (audit DCP-181, A-3).
+        if (! $this->isSuperAdmin() && ! $this->isNegateSuperAdmin()) {
+            throw new AuthorizationException('Solo chi ha gia\' il ruolo super-admin o negate-super-admin puo\' cambiarlo.');
+        }
         $to_assign = 'super-admin';
         $to_remove = 'negate-super-admin';
         if ($this->isSuperAdmin()) {
@@ -269,7 +292,7 @@ trait IsProfileTrait
     {
         $tokens = $this->mobileDeviceUsers()
             ->pluck('token')
-            ->filter(static fn (mixed $value): bool => is_string($value) && '' !== $value)
+            ->filter(static fn (mixed $value): bool => is_string($value) && $value !== '')
             ->map(static fn (mixed $value): string => (string) $value);
 
         /* @var Collection<int|string, non-empty-string> $tokens */
@@ -286,14 +309,14 @@ trait IsProfileTrait
         return Attribute::make(
             get: function (): ?string {
                 $user = $this->user;
-                if (null === $user) {
+                if ($user === null) {
                     return null;
                 }
-                Assert::isInstanceOf($user, User::class);
+                Assert::isInstanceOf($user, UserContract::class);
 
                 $name = $user->getAttribute('name');
 
-                return \is_string($name) && '' !== $name ? $name : null;
+                return \is_string($name) && $name !== '' ? $name : null;
             }
         );
     }

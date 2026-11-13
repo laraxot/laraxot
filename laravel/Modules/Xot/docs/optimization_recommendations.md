@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Raccomandazioni di Ottimizzazione - Modulo Xot"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "raccomandazioni di ottimizzazione - modulo xot xot"
+---
+>>>>>>> laraxot/dev
 # Raccomandazioni di Ottimizzazione - Modulo Xot
 
 ## 🎯 Stato Attuale e Problemi Critici

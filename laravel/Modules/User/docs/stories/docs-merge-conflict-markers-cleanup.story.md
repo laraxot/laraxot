@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_QLsYqf
 title: "User: marker di conflitto git residui in docs/ (866 file) — pulizia + aggiornamento indice"
+=======
+title: "User: marker di conflitto git residui in docs/ (866 file): pulizia + aggiornamento indice"
+>>>>>>> .merge_file_WGnPto
 type: story
 module: User
 epic: null
@@ -20,14 +24,22 @@ owned_scope:
   - "laravel/Modules/User/docs/"
 ---
 
+<<<<<<< .merge_file_QLsYqf
 # User: marker di conflitto git residui in docs/ — pulizia + aggiornamento indice
+=======
+# User: marker di conflitto git residui in docs/: pulizia + aggiornamento indice
+>>>>>>> .merge_file_WGnPto
 
 ## Contesto
 
 Story figlia del follow-up second-brain segnalato (ma non eseguito) in
 `uppercase-root-dirs-database-application.story.md`: "`Modules/User/docs/` ha
 rumore evidente da ripulire in una story dedicata". Task delegato con lock
+<<<<<<< .merge_file_QLsYqf
 `laravel/Modules/User:docs` (non l'intero modulo — un'altra sessione lavorava
+=======
+`laravel/Modules/User:docs` (non l'intero modulo: un'altra sessione lavorava
+>>>>>>> .merge_file_WGnPto
 in parallelo su `Application/`/`Database/` a root modulo, esplicitamente
 esclusi da questa story).
 
@@ -40,19 +52,31 @@ stile setext (`Titolo\n=======`). Raffinato in
 `grep -rlE '^<<<<<<< |^>>>>>>> ' docs/` per i candidati, poi verificato con
 un classificatore ad adiacenza in Python: ogni riga `=======` rimasta in
 `docs/` (22 occorrenze totali) è risultata adiacente (riga precedente o
+<<<<<<< .merge_file_QLsYqf
 successiva) a un marker `<<<<<<<`/`>>>>>>> ` — 0 anomalie, nessuna
+=======
+successiva) a un marker `<<<<<<<`/`>>>>>>> `: 0 anomalie, nessuna
+>>>>>>> .merge_file_WGnPto
 intestazione genuina scambiata per corruzione.
 
 **Scala reale**: 866 file `.md`/`.mdc` su ~3399 in `docs/`, non i 5 elencati
 nell'inventario storico 2026-04-28 in
 `docs/wiki/troubleshooting/git-merge-conflict-inventory.md`. Causa
 identificata: quell'inventario (stato 2026-07-08, "0 marker") rigenerava la
+<<<<<<< .merge_file_QLsYqf
 lista con `git grep -l '^<<<<<<<'` — cieco ai marker `>>>>>>> ` orfani senza
+=======
+lista con `git grep -l '^<<<<<<<'`: cieco ai marker `>>>>>>> ` orfani senza
+>>>>>>> .merge_file_WGnPto
 apertura corrispondente, la classe di corruzione reale qui.
 
 Pattern di corruzione: marker `>>>>>>> <ref> (.)` (varianti `87273113`,
 `2024e2e7`, `60a2c9a9`, `f548be94`, `laraxot/dev`) senza `<<<<<<<` di
+<<<<<<< .merge_file_QLsYqf
 apertura — probabile artefatto di un processo di commit "." precedente che
+=======
+apertura: probabile artefatto di un processo di commit "." precedente che
+>>>>>>> .merge_file_WGnPto
 aveva già rimosso l'apertura lasciando `=======`/`>>>>>>> ` orfani a livello
 di riga grezza (confermato presente anche dentro fence di codice, quindi
 processo non markdown-aware). Confermato **committato**, non un merge locale
@@ -74,7 +98,11 @@ risolti a mano fondendo senza perdita di informazione:
   frammento HEAD superato.
 
 **856 file di rumore orfano puro**, risolti con script Python deterministico
+<<<<<<< .merge_file_QLsYqf
 (non manuale — scala incompatibile con revisione per-file):
+=======
+(non manuale: scala incompatibile con revisione per-file):
+>>>>>>> .merge_file_WGnPto
 
 1. Rimuove ogni riga che combacia con `^<<<<<<< .*$` o `^>>>>>>> .*$`.
 2. Rimuove una riga `^=======$` solo se adiacente (prima o dopo) a una riga
@@ -82,13 +110,21 @@ risolti a mano fondendo senza perdita di informazione:
 3. Dopo la rimozione, collassa una riga duplicata immediatamente adiacente
    **solo se** una riga è stata rimossa fra le due occorrenze identiche
    (pattern "riga di chiusura duplicata attorno al divisore a fine
+<<<<<<< .merge_file_QLsYqf
    documento" — es. `docs/xotbasemigration-laraxot.md`: la stessa riga
+=======
+   documento": es. `docs/xotbasemigration-laraxot.md`: la stessa riga
+>>>>>>> .merge_file_WGnPto
    `**Ricorda: XotBaseMigration è Dio. Non deviare.**` appariva prima e dopo
    il blocco di marker).
 
 Risultato: 1384 righe marker rimosse, 68 righe duplicate collassate (48
 righe vuote coincidentali, 20 cluster di contenuto reale duplicato attorno
+<<<<<<< .merge_file_QLsYqf
 al divisore — verificati a campione, nessun caso di contenuto legittimamente
+=======
+al divisore: verificati a campione, nessun caso di contenuto legittimamente
+>>>>>>> .merge_file_WGnPto
 ripetuto per enfasi scambiato per corruzione).
 
 ## Verifica
@@ -104,14 +140,22 @@ marker residui in tutti, script non li ha ritoccati.
 
 `docs/root-md-files/*.md` (7 file: changelog.md + 2 varianti numerate,
 git-reset.md + 1 variante, pest-test-report.md, philosophy.md) verificato
+<<<<<<< .merge_file_QLsYqf
 pulito — nessun artefatto tipo `(.)` a fine riga, nessuna intestazione H1
+=======
+pulito: nessun artefatto tipo `(.)` a fine riga, nessuna intestazione H1
+>>>>>>> .merge_file_WGnPto
 duplicata.
 
 `docs/index.md` (indice auto-generato, 3419 righe) aveva la sezione
 `## root-md-files` disallineata: elencava solo 2 dei 7 file `.md` presenti
 (`git-reset.md`, `pest-test-report.md`), mancavano `changelog.md`,
 `changelog-1.md`, `changelog-2.md`, `git-reset-1.md`, `philosophy.md`.
+<<<<<<< .merge_file_QLsYqf
 Corretta chirurgicamente (solo quella sezione, non rigenerazione completa —
+=======
+Corretta chirurgicamente (solo quella sezione, non rigenerazione completa -
+>>>>>>> .merge_file_WGnPto
 fuori scope per questa story).
 
 `docs/00-index.md`, `docs/README.md`, `docs/purpose.md`: verificati, nessun
@@ -122,14 +166,22 @@ riferimento stale a path root-modulo rimossi (`PHILOSOPHY.md`,
 
 - Duplicati case-only (`INDEX.md`/`index.md`, `00-INDEX.md`/`00-index.md`,
   ecc.): problema noto e già tracciato in `docs/case-conflicts.md`
+<<<<<<< .merge_file_QLsYqf
   (issue #124, discussion #1). Non consolidato qui — richiede aggiornamento
+=======
+  (issue #124, discussion #1). Non consolidato qui: richiede aggiornamento
+>>>>>>> .merge_file_WGnPto
   riferimenti a livello di progetto, story separata.
 - `Application/`/`Database/` a root modulo: riservato all'altra sessione
   (`uppercase-root-dirs-database-application.story.md`, status `done`).
 - Un file (`docs/stories/uppercase-root-dirs-database-application.story.md`)
   è stato trovato modificato in working tree da quella sessione parallela
   durante l'esecuzione di questa story (status `blocked` → `done` + nota
+<<<<<<< .merge_file_QLsYqf
   finale) — **escluso esplicitamente** dallo staging di questo commit
+=======
+  finale): **escluso esplicitamente** dallo staging di questo commit
+>>>>>>> .merge_file_WGnPto
   (verificato via parsing del diff: unica modifica fra 867 file con
   inserimenti non riconducibili allo script di pulizia marker).
 
@@ -144,5 +196,10 @@ di rilevazione (`grep -rlE '^<<<<<<< |^=======$|^>>>>>>> '` al posto di
 
 Lock `laravel/Modules/User:docs` acquisito e rilasciato correttamente
 (scope limitato a `docs/`, non l'intero modulo). Commit unico, 867 file
+<<<<<<< .merge_file_QLsYqf
 (`git add` con lista esplicita di path, mai `-A` — repo con ~5000
 modifiche non correlate di altre sessioni in corso).
+=======
+(`git add` con lista esplicita di path, mai `-A`: repo con ~5000
+modifiche non correlate di altre sessioni in corso).
+>>>>>>> .merge_file_WGnPto

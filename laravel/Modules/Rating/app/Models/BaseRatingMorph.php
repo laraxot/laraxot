@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
@@ -17,19 +18,19 @@ use Modules\Xot\Datas\XotData;
 /**
  * Modules\Rating\Models\RatingMorph.
  *
- * @property int         $id
- * @property bool        $is_winner
+ * @property int $id
+ * @property bool $is_winner
  * @property string|null $post_type
- * @property int|null    $post_id
+ * @property int|null $post_id
  * @property string|null $related_type
- * @property int|null    $related_id
+ * @property int|null $related_id
  * @property Rating|null $rating
  * @property string|null $created_by
  * @property string|null $updated_by
  * @property string|null $deleted_by
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property int|null    $auth_user_id
+ * @property int|null $auth_user_id
  *
  * @method static Builder|RatingMorph newModelQuery()
  * @method static Builder|RatingMorph newQuery()
@@ -49,9 +50,9 @@ use Modules\Xot\Datas\XotData;
  *
  * @property string|null $user_id
  * @property string|null $model_type
- * @property int|null    $model_id
- * @property int         $rating_id
- * @property int|null    $value
+ * @property int|null $model_id
+ * @property int $rating_id
+ * @property int|null $value
  * @property string|null $note
  * @property string|null $deleted_at
  *
@@ -64,20 +65,20 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder|RatingMorph whereUserId($value)
  * @method static Builder|RatingMorph whereValue($value)
  *
- * @property Model|\Eloquent   $model
- * @property Model|null        $profile
+ * @property Model|Eloquent $model
+ * @property Model|null $profile
  * @property UserContract|null $user
- * @property string            $reward
+ * @property string $reward
  *
  * @method static Builder|RatingMorph whereReward($value)
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
- * @property string               $sum_credit_yes
- * @property string               $sum_credit_no
- * @property int                  $count_credit_yes
- * @property int                  $count_credit_no
- * @property string               $percentage
+ * @property string $sum_credit_yes
+ * @property string $sum_credit_no
+ * @property int $count_credit_yes
+ * @property int $count_credit_no
+ * @property string $percentage
  *
  * @method static Builder<static>|RatingMorph whereCountCreditNo($value)
  * @method static Builder<static>|RatingMorph whereCountCreditYes($value)
@@ -109,11 +110,27 @@ abstract class BaseRatingMorph extends BaseMorphPivot
     // -------- RELATIONSHIP -----------
 
     /**
-     * @return BelongsTo<Rating, $this>
+     * Il criterio sta nella tabella `ratings` dello stesso modulo (e connection) del pivot:
+     * `Modules\{Modulo}\Models\Rating` se esiste, altrimenti quello del modulo Rating. Prima
+     * puntava sempre a Rating\Models\Rating (connection `rating`): per Progressioni, IR, ICL, Ptv
+     * leggeva i criteri di un altro database.
+     *
+     * @return BelongsTo<BaseRating, $this>
      */
     public function rating(): BelongsTo
     {
-        return $this->belongsTo(Rating::class, 'rating_id');
+        return $this->belongsTo(static::getRatingClass(), 'rating_id');
+    }
+
+    /**
+     * @return class-string<BaseRating>
+     */
+    public static function getRatingClass(): string
+    {
+        $module = Str::before(Str::after(static::class, 'Modules\\'), '\\');
+        $class = 'Modules\\'.$module.'\\Models\\Rating';
+
+        return class_exists($class) && is_subclass_of($class, BaseRating::class) ? $class : Rating::class;
     }
 
     /**

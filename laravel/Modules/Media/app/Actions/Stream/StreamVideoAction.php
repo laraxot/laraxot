@@ -6,8 +6,9 @@ namespace Modules\Media\Actions\Stream;
 
 use Exception;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
+use Modules\Media\Actions\Storage\GetFilesystemAdapterAction;
 use Modules\Media\Models\Media;
+use Modules\Xot\Contracts\UserContract;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
@@ -59,15 +60,15 @@ class StreamVideoAction
     {
         if ($media !== null && Auth::check()) {
             $user = Auth::user();
-            if ($user === null) {
+            if (! $user instanceof UserContract) {
                 abort(403, 'Unauthorized to stream this media');
             }
-            if ($media->created_by !== $user->getKey() && ! $user->hasRole('super-admin')) {
+            if ($media->created_by != $user->getAuthIdentifier() && ! $user->hasRole('super-admin')) {
                 abort(403, 'Unauthorized to stream this media');
             }
         }
 
-        $filesystem = Storage::disk($disk);
+        $filesystem = app(GetFilesystemAdapterAction::class)->execute($disk);
 
         if (! $filesystem->exists($path)) {
             throw new Exception("File does not exist at path: {$path}");

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_9UaLhb
 return [
     'fields' => [
         'identity_document' => ['label' => 'identity_document', 'placeholder' => 'identity_document', 'helper_text' => 'identity_document', 'description' => 'identity_document'],
@@ -10,3 +11,6 @@ return [
         'custom_doc' => ['label' => 'custom_doc', 'placeholder' => 'custom_doc', 'helper_text' => 'custom_doc', 'description' => 'custom_doc'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_j3uxzu

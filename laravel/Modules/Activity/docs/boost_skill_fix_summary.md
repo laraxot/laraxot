@@ -2,7 +2,6 @@
 module: theme
 topic: boost_skill_fix_summary
 canonical: ../../../Themes/docs/shared-components/boost-skill-fix-summary-Modules.md
-<<<<<<< HEAD
 <<<<<<< .merge_file_7n1Xvv
 =======
 title: "Boost Skill Fix Summary - Activity Module"
@@ -13,17 +12,11 @@ tags: [docs, activity]
 qmd: "boost skill fix summary - activity module activity"
 >>>>>>> .merge_file_8zWR0a
 ---
-=======
->>>>>>> 13cf1831 (.)
 
 See canonical documentation: ../../../Themes/docs/shared-components/boost-skill-fix-summary-Modules.md
 # Boost Skill Fix Summary - Activity Module
 
-<<<<<<< HEAD
 **Date**: 2026-03-02
-=======
-**Date**: 2026-03-02  
->>>>>>> 13cf1831 (.)
 **Module**: Activity (Activity Tracking & Logging)
 
 ## Issue Overview
@@ -52,9 +45,4 @@ See `/docs/BOOST_SKILL_SOLUTION_PLAN.md` for complete solution details.
 - Activity logging
 - User action tracking
 - Activity reports
-<<<<<<< HEAD
 - Module integration
-=======
-- Module integration
-
->>>>>>> 13cf1831 (.)

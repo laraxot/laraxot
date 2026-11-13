@@ -40,9 +40,13 @@ class RecordMail extends Mailable
      */
     public function build(): self
     {
+<<<<<<< HEAD
         /** @var view-string $view */
         $view = 'xot::emails.record';
 
         return $this->view($view)->with(['data' => $this->recordData]);
+=======
+        return $this->view((string) 'xot::emails.record')->with(['data' => $this->recordData]);
+>>>>>>> laraxot/dev
     }
 }

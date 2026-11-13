@@ -1,3 +1,14 @@
+<<<<<<< .merge_file_2sqrWt
+=======
+---
+title: "User Module Architecture (BMAD)"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "user module architecture (bmad) user"
+---
+>>>>>>> .merge_file_yiHOlD
 # User Module Architecture (BMAD)
 
 **Status**: ✅ Finalized

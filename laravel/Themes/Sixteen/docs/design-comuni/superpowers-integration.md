@@ -1,3 +1,15 @@
+---
+title: "superpowers integration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "superpowers integration"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🚀 Superpowers Integration Guide
 
 **Data**: 2026-03-31  
@@ -247,7 +259,6 @@ Output: tests.novita-dettaglio.json
 - [FINAL_SESSION_REPORT.md](FINAL_SESSION_REPORT.md)
 
 ---
-
 **Stato**: ✅ **SUPERPOWERS INTEGRATO**  
 **Pattern**: **Folio + Volt + JSON**  
 **Agenti**: **4 (planner, executor, verifier, debugger)**  

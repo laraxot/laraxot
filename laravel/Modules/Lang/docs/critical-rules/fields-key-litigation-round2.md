@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "FURIOUS LITIGATION: Why 'fields' Key is SACRED and IMMUTABLE"
 module: "Lang"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "redundancy analysis"
 related:
   - "./italian-text-refined-audit-report.md"
+  - "../italian-text-refined-audit-report.md"
+status: draft
 ---
 # FURIOUS LITIGATION: Why "fields" Key is SACRED and IMMUTABLE
 
@@ -479,4 +483,4 @@ If 'fields' key missing:
 > Touch it, and the system breaks.
 > Respect it, and the system thrives."
 
-**— The Architect (Winner of the Litigation)**
+**- The Architect (Winner of the Litigation)**

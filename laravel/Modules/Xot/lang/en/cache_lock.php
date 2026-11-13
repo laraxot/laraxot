@@ -90,55 +90,82 @@ return [
             'description' => '',
         ],
         'create' => [
+<<<<<<< HEAD
             'label' => 'create',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'view' => [
+<<<<<<< HEAD
             'label' => 'view',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'edit' => [
+<<<<<<< HEAD
             'label' => 'edit',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'delete' => [
+<<<<<<< HEAD
             'label' => 'delete',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'openFilters' => [
+<<<<<<< HEAD
             'label' => 'openFilters',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'applyFilters' => [
+<<<<<<< HEAD
             'label' => 'applyFilters',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
+<<<<<<< HEAD
             'label' => 'resetFilters',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
+<<<<<<< HEAD
             'label' => 'reorderRecords',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'toggleColumns' => [
+<<<<<<< HEAD
             'label' => 'toggleColumns',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',

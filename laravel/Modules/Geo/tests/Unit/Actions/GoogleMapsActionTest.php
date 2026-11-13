@@ -8,8 +8,9 @@ use Modules\Geo\Actions\GoogleMapsAction;
 use PHPUnit\Framework\Assert;
 
 it('can be instantiated', function (): void {
-    $service = new GoogleMapsAction();
-    Assert::assertInstanceOf(GoogleMapsAction::class, $service);
+    $service = new GoogleMapsAction;
+
+    Assert::assertSame(GoogleMapsAction::class, $service::class);
 });
 
 it('has correct constants defined', function (): void {
@@ -25,5 +26,10 @@ it('has correct constants defined', function (): void {
 });
 
 it('has required methods', function (): void {
-    $service = new GoogleMapsAction();
+    $reflection = new \ReflectionClass(GoogleMapsAction::class);
+
+    foreach (['reverseGeocode', 'getDistanceMatrix', 'getElevation'] as $method) {
+        Assert::assertTrue($reflection->hasMethod($method), "Missing method {$method}");
+        Assert::assertTrue($reflection->getMethod($method)->isPublic(), "Method {$method} must be public");
+    }
 });

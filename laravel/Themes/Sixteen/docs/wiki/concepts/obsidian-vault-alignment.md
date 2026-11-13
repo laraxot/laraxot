@@ -1,3 +1,15 @@
+---
+title: "obsidian vault alignment"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "obsidian vault alignment"
+issues: []
+discussions: []
+status: draft
+---
+
 # Obsidian vault alignment
 
 ## Scopo
@@ -20,4 +32,4 @@ Allineare l'uso del vault Obsidian con la governance docs del tema Sixteen.
 ## Riferimenti
 
 - [filament admin style ownership boundary](./filament-admin-style-ownership-boundary.md)
-- [obsidian skills and ingest checklist](../../../Modules/Fixcity/docs/wiki/concepts/obsidian-skills-and-ingest-checklist.md)
+- [obsidian skills and ingest checklist](../../../../../Modules/Fixcity/docs/wiki/concepts/obsidian-skills-and-ingest-checklist.md)

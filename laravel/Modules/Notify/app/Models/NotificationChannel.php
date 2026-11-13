@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Modules\Media\Models\Media;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
@@ -15,6 +16,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @property bool $is_enabled
  * @property int|null $priority
  * @property-read ProfileContract|null $creator
+ * @property-read ProfileContract|null $deleter
  * @property-read MediaCollection<int, Media> $media
  * @property-read int|null $media_count
  * @property-read ProfileContract|null $updater
@@ -23,7 +25,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|NotificationChannel newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|NotificationChannel query()
  *
- * @mixin \Eloquent
+ * @mixin Model
  */
 class NotificationChannel extends BaseModel
 {

@@ -16,13 +16,12 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # tips
 
 <!-- Contenuto migrato da _docs/tips.txt -->
-
 
 
 https://medium.com/@prevailexcellent/deep-dive-into-eloquent-40-rarely-used-eloquent-orm-methods-every-laravel-developer-must-know-9c75b58f456b

@@ -16,9 +16,9 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./profile.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # phpstan
 
 <!-- Contenuto migrato da _docs/phpstan.txt -->

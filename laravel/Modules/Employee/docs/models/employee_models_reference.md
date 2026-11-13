@@ -1,3 +1,9 @@
+---
+title: "Employee - EMPLOYEE_MODELS_REFERENCE"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - Models Reference
 
 ## 🚨 MODELLI CORRETTI DA UTILIZZARE

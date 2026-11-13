@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Convenzioni per i Link nella Documentazione"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "filament4 migration"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Convenzioni per i Link nella Documentazione
 

@@ -8,7 +8,6 @@ qmd: "use case shop   event sourcing e console commands activity"
 ---
 # Use Case Shop – Event Sourcing e Console Commands
 
-<<<<<<< HEAD
 [![Module](https://img.shields.io/badge/Module-Use Case Shop – Event Sourcing e Console Commands-8B0000.svg)]()
 [![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
 [![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
@@ -17,10 +16,6 @@ qmd: "use case shop   event sourcing e console commands activity"
 [![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
 [![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
 ]()
-=======
-## Introduzione
-Questo modulo implementa la gestione di uno shop tramite event sourcing, aggregate root e proiezioni, ispirandosi alle best practice di progetti open source come [event-sourcing-with-laravel](https://github.com/cnastasi/event-sourcing-with-laravel).
->>>>>>> 13cf1831 (.)
 
 > **Core module for the FixCity Platform.**
 
@@ -78,7 +73,6 @@ Core module for the FixCity Platform.
 - [Build from Scratch](./build-from-scratch.md)
 - [README Prediction Market](../prediction_market/README.md)
 - [README Bank](../bank/README.md)
-<<<<<<< HEAD
 
 | Lingua | Link |
 |--------|------|
@@ -90,10 +84,3 @@ Core module for the FixCity Platform.
 ---
 
 **Modulo** `Activity` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
-=======
-- [README <nome progetto>ion Market](../<nome progetto>ion_market/readme.md)
-- [README Bank](../bank/readme.md)
-
----
-**Questa documentazione è neutra e riutilizzabile, senza riferimenti a progetti specifici, e segue le regole di neutralità e modularità.**
->>>>>>> 13cf1831 (.)

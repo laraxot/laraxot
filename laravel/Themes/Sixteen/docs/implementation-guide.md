@@ -1,3 +1,15 @@
+---
+title: "implementation guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "implementation guide"
+issues: []
+discussions: []
+status: draft
+---
+
 # Sixteen Theme Implementation Guide
 
 ## Component Development Process
@@ -23,7 +35,7 @@
 
 ## Naming Conventions
 
-- **Files**: lowercase_with_underscores.ext (e.g., `tab_system.md`)
+- **Files**: lowercase_with_underscores.ext (e.g., `tab-system.md`)
 - **Directories**: lowercase-with-hyphens (e.g., `components/`)
 - **Exceptions**: `README.md` (must be uppercase)
 - **Language**: English only in documentation

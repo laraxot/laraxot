@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_sVgmhj
 title: "PRD — Perfezione assoluta del modulo User"
+=======
+title: "PRD: Perfezione assoluta del modulo User"
+>>>>>>> .merge_file_IkKbWl
 type: prd
 module: User
 status: draft
@@ -12,6 +16,12 @@ related:
   - ./perfection-decision-log.md
   - ./prd.md
   - ./epics.md
+<<<<<<< .merge_file_sVgmhj
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "prd: perfezione assoluta del modulo user user"
+>>>>>>> .merge_file_IkKbWl
 ---
 
 # PRD: Perfezione assoluta del modulo User
@@ -49,14 +59,24 @@ Questo PRD e i documenti collegati sono **prodotti da una sessione di sola
 documentazione**: nessun codice, config, migration o dato e' stato toccato. Ogni
 requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
 
+<<<<<<< .merge_file_sVgmhj
 ## Requisiti — stato obiettivo per dimensione
 
 ### RQ-SEC — Sicurezza (Epic 11, priorita' massima)
+=======
+## Requisiti: stato obiettivo per dimensione
+
+### RQ-SEC: Sicurezza (Epic 11, priorita' massima)
+>>>>>>> .merge_file_IkKbWl
 
 - **RQ-SEC-001**: `UserPolicy::view/create/update/delete` applicano un controllo di
   autorizzazione reale (ruolo o self-check), non un `return true` incondizionato.
   *Verifica:* test comportamentale che asserisce `Gate::denies('update', $altroUser)`
+<<<<<<< .merge_file_sVgmhj
   per un utente non-admin — oggi assente (vedi RQ-TEST-001), va scritto insieme al
+=======
+  per un utente non-admin: oggi assente (vedi RQ-TEST-001), va scritto insieme al
+>>>>>>> .merge_file_IkKbWl
   fix.
 - **RQ-SEC-002**: il login Filament ha rate limiting attivo (per IP e/o per
   identificativo). *Verifica:* tentativi ripetuti oltre soglia restituiscono
@@ -69,10 +89,17 @@ requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
   *Verifica:* lettura diretta della colonna via query raw non espone il token in
   chiaro.
 - **RQ-SEC-005**: i DTO/Actions di creazione utente non espongono campi privilegiati
+<<<<<<< .merge_file_sVgmhj
   (`is_active`, `email_verified_at`, `state`, `id`) a input non fidato — o vengono
   rimossi se dead code confermato.
 
 ### RQ-ARCH — Architettura (Epic 15)
+=======
+  (`is_active`, `email_verified_at`, `state`, `id`) a input non fidato: o vengono
+  rimossi se dead code confermato.
+
+### RQ-ARCH: Architettura (Epic 15)
+>>>>>>> .merge_file_IkKbWl
 
 - **RQ-ARCH-001**: una sola classe `CreateUserAction` nel modulo, basata sul
   pattern gia' corretto (`UserContract` + `XotData::make()->getUserClass()`).
@@ -80,7 +107,11 @@ requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
 - **RQ-ARCH-002**: `app/Adapters/**` non esiste piu' (dead code rimosso, non solo
   documentato). *Verifica:* directory assente.
 - **RQ-ARCH-003**: zero type-hint pubblici su `User`/`Profile` concreti dove il
+<<<<<<< .merge_file_sVgmhj
   contratto (`UserContract`/`ProfileContract`) e' sufficiente — eccetto Observer
+=======
+  contratto (`UserContract`/`ProfileContract`) e' sufficiente: eccetto Observer
+>>>>>>> .merge_file_IkKbWl
   legati a eventi Eloquent nativi. *Verifica:* grep mirato con lista di eccezioni
   esplicite e motivate.
 - **RQ-ARCH-004**: nessun fallback hardcoded verso un modulo di progetto specifico
@@ -91,11 +122,19 @@ requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
   *Verifica:* `find app database/migrations -regextype posix-extended -iregex
   '.*\.(bak|old|no|corrected|wip|to_xot)$|.*\.backup-.*'` → 0 risultati.
 
+<<<<<<< .merge_file_sVgmhj
 ### RQ-QUAL — Qualita' codice (Epic 15/16)
 
 - **RQ-QUAL-001**: PHPMD e PHPInsights sono eseguibili nell'ambiente (phar
   funzionante o toolchain composer riparata) e producono un report reale, non un
   fatal error. *Nota:* riguarda l'intero repo, non solo User — la story va aperta
+=======
+### RQ-QUAL: Qualita' codice (Epic 15/16)
+
+- **RQ-QUAL-001**: PHPMD e PHPInsights sono eseguibili nell'ambiente (phar
+  funzionante o toolchain composer riparata) e producono un report reale, non un
+  fatal error. *Nota:* riguarda l'intero repo, non solo User: la story va aperta
+>>>>>>> .merge_file_IkKbWl
   a livello infrastruttura/tooling, referenziata da qui.
   Correlato: [[quality-tooling-entrypoints]].
 - **RQ-QUAL-002**: ogni `@phpstan-ignore` inline nel modulo ha un commento che
@@ -116,10 +155,17 @@ requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
 - **RQ-QUAL-006**: zero `dddx()`/debug code residuo in produzione (oggi
   `TermsOfService.php:32`).
 - **RQ-QUAL-007**: `livewire-inventory.md` non contiene claim di bug non
+<<<<<<< .merge_file_sVgmhj
   riproducibili nel codice attuale — correzione dei 2 claim falsi identificati,
   prerequisito per sbloccare la story `10.4` esistente.
 
 ### RQ-TEST — Test coverage (Epic 17)
+=======
+  riproducibili nel codice attuale: correzione dei 2 claim falsi identificati,
+  prerequisito per sbloccare la story `10.4` esistente.
+
+### RQ-TEST: Test coverage (Epic 17)
+>>>>>>> .merge_file_IkKbWl
 
 - **RQ-TEST-001**: `UserPolicy` ha test comportamentale reale (non solo
   instanziazione) che copre tutti e 4 i metodi con asserzioni su casi
@@ -130,7 +176,11 @@ requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
   sono riattivati, non piu' skip.
 - **RQ-TEST-004**: esiste almeno un guard test automatizzato per: no-
   `RefreshDatabase`, XotBase-only extension, array one-key-per-line (nello scope
+<<<<<<< .merge_file_sVgmhj
   Filament/Actions del modulo). *Rationale:* [[regola-senza-test-regredisce]] — una
+=======
+  Filament/Actions del modulo). *Rationale:* [[regola-senza-test-regredisce]]: una
+>>>>>>> .merge_file_IkKbWl
   regola vera "per fortuna" oggi puo' regredire silenziosamente domani.
 - **RQ-TEST-005**: `tests/Helpers.php` e `tests/Support/helpers.php` sono
   consolidati in un'unica fonte (la sovrapposizione quasi totale va risolta, non
@@ -140,12 +190,20 @@ requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
 - **RQ-TEST-007**: `tests/Unit/graphify-out/` non esiste piu' dentro l'albero test
   (cache spostata/ignorata correttamente).
 
+<<<<<<< .merge_file_sVgmhj
 ### RQ-PERF — Performance (Epic 16)
+=======
+### RQ-PERF: Performance (Epic 16)
+>>>>>>> .merge_file_IkKbWl
 
 - **RQ-PERF-001**: `OauthClientResource` (cluster Passport) carica `owner` con
   eager loading, allineato al gemello non-cluster.
 - **RQ-PERF-002**: `PassportStatsWidget` non esegue 5 query COUNT non cachate ogni
+<<<<<<< .merge_file_sVgmhj
   5 secondi di default — polling interval aumentato e/o risultati cachati con TTL
+=======
+  5 secondi di default: polling interval aumentato e/o risultati cachati con TTL
+>>>>>>> .merge_file_IkKbWl
   esplicito.
 - **RQ-PERF-003**: i widget grafico (`UsersChartWidget`, `
   UserTypeRegistrationsChartWidget`) cachano il risultato della query `Trend` con
@@ -156,6 +214,7 @@ requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
   ->update(...)` invece di un loop per-utente.
 - **RQ-PERF-006**: i 4 `getEloquentQuery()->with(...)` che caricano relazioni mai
   usate dalla Table sono corretti (rimossi, o la colonna aggiunta se il dato serve
+<<<<<<< .merge_file_sVgmhj
   davvero all'utente finale — miglioramento UX collaterale accettabile).
 - **RQ-PERF-007**: le 144 righe di hook tabella duplicati e mai invocati in
   `OauthAccessTokenResource.php:166-309` sono rimosse.
@@ -167,6 +226,19 @@ requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
 - **RQ-SCHEMA-002**: le tabelle collegate a un utente (`oauth_access_tokens`,
   `oauth_auth_codes`, `socialite_user`, e le altre identificate dall'agente schema)
   hanno FK con `cascadeOnDelete()` dove il flusso GDPR (RQ-SEC-003) lo richiede —
+=======
+  davvero all'utente finale: miglioramento UX collaterale accettabile).
+- **RQ-PERF-007**: le 144 righe di hook tabella duplicati e mai invocati in
+  `OauthAccessTokenResource.php:166-309` sono rimosse.
+
+### RQ-SCHEMA: Schema/migrazioni (Epic 18)
+
+- **RQ-SCHEMA-001**: `profiles.id` ha lo stesso pattern di generazione (UUID vs
+  autoincrement) in `Modules\Ptv` e `Modules\User`: nessun drift cross-modulo.
+- **RQ-SCHEMA-002**: le tabelle collegate a un utente (`oauth_access_tokens`,
+  `oauth_auth_codes`, `socialite_user`, e le altre identificate dall'agente schema)
+  hanno FK con `cascadeOnDelete()` dove il flusso GDPR (RQ-SEC-003) lo richiede -
+>>>>>>> .merge_file_IkKbWl
   additivo, mai una migration distruttiva su dati esistenti.
 - **RQ-SCHEMA-003**: `BaseTenant.php` genera UUID in modo coerente col resto del
   modulo (gap da verificare puntualmente).
@@ -178,17 +250,26 @@ requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
   `model_has_permissions`) e' rimossa con migration additiva di deprecazione (mai
   un DROP su dati sacri senza verifica esplicita che sia davvero orfana ovunque).
 
+<<<<<<< .merge_file_sVgmhj
 ### RQ-DOCS — Documentazione (Epic 19)
 
 - **RQ-DOCS-001**: zero cartelle self-nested (`X/X/...`) sotto `Modules/User/docs`.
   *Verifica:* script che cammina l'albero e segnala ogni path con un segmento
   ripetuto consecutivo — oggi 612 file coinvolti.
+=======
+### RQ-DOCS: Documentazione (Epic 19)
+
+- **RQ-DOCS-001**: zero cartelle self-nested (`X/X/...`) sotto `Modules/User/docs`.
+  *Verifica:* script che cammina l'albero e segnala ogni path con un segmento
+  ripetuto consecutivo: oggi 612 file coinvolti.
+>>>>>>> .merge_file_IkKbWl
 - **RQ-DOCS-002**: zero file con nome base >100 caratteri o con spazi.
   *Verifica:* `find docs -iname "*.md" | awk -F/ '{print length($NF), $0}' | sort
   -rn | head` → prima riga <100.
 - **RQ-DOCS-003**: `docs/index.md` e' rigenerato/aggiornato e riflette le cartelle
   reali (oggi ne menziona 6 su 60+).
 - **RQ-DOCS-004**: `docs/.gitignore` righe `archive/**`/`legacy/**` sono ancorate
+<<<<<<< .merge_file_sVgmhj
   (`/archive/**`) — riattiva la story esistente `5.37-gitignore-archive-legacy-bug-
   user` (backlog, root `sprint-status.yaml`), non ne serve una nuova.
 - **RQ-DOCS-005**: i cluster di cartelle sovrapposte (`bugfix`/`bugs`/`bug-fixes`/
@@ -200,6 +281,19 @@ requisito sotto e' backlog per esecuzione futura, non lavoro gia' fatto.
   documentare qui, aprire l'issue sullo strumento altrove).
 
 ## Criteri di "perfezione assoluta" — definizione operativa
+=======
+  (`/archive/**`): riattiva la story esistente `5.37-gitignore-archive-legacy-bug-
+  user` (backlog, root `sprint-status.yaml`), non ne serve una nuova.
+- **RQ-DOCS-005**: i cluster di cartelle sovrapposte (`bugfix`/`bugs`/`bug-fixes`/
+  `bug-tracking`/`fixes`/`fixed`) hanno una cartella canonica designata, le altre
+  marcate `superseded` con link: **mai cancellate**.
+- **RQ-DOCS-006**: causa radice del bug di self-nesting identificata e comando
+  suggerito per non farlo ripetere (probabile fix nello strumento di generazione
+  doc, fuori scope di questo modulo se lo strumento e' condiviso: solo
+  documentare qui, aprire l'issue sullo strumento altrove).
+
+## Criteri di "perfezione assoluta": definizione operativa
+>>>>>>> .merge_file_IkKbWl
 
 Il modulo si considera "alla perfezione assoluta" quando, in un solo comando
 riproducibile per categoria:
@@ -217,7 +311,13 @@ riproducibile per categoria:
 ## Out of scope (questa campagna)
 
 - Le campagne Epic 9 (SuperAdmin widget) ed Epic 10 (ritiro Livewire) restano
+<<<<<<< .merge_file_sVgmhj
   autonome — questa campagna le referenzia ma non le assorbe.
 - Nessun refactor speculativo non ancorato a un finding reale dell'audit.
 - Nessuna modifica al modulo `Tenant` (morph map) — confermato conforme, out of
+=======
+  autonome: questa campagna le referenzia ma non le assorbe.
+- Nessun refactor speculativo non ancorato a un finding reale dell'audit.
+- Nessuna modifica al modulo `Tenant` (morph map): confermato conforme, out of
+>>>>>>> .merge_file_IkKbWl
   scope per definizione.

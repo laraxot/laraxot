@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "xra"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, install]
+qmd: "xra"
+---
+>>>>>>> laraxot/dev
 ~~~ php
 <?php
 
@@ -20,6 +33,7 @@ return [
 ~~~
 ### Versione HEAD
 
+<<<<<<< HEAD
 ## Collegamenti tra versioni di xra.md
 * [xra.md](../../../xot/project_docs/install/xra.md)
 * [xra.md](../../../tenant/project_docs/it/xra.md)
@@ -28,3 +42,17 @@ return [
 ### Versione Incoming
 
 ---
+=======
+
+## Collegamenti tra versioni di xra.md
+* [xra.md](../../../Xot/docs/install/xra.md)
+* [xra.md](../../../Tenant/docs/it/xra.md)
+* [xra.md](../../../Tenant/docs/it/config/xra.md)
+
+
+### Versione Incoming
+
+
+---
+
+>>>>>>> laraxot/dev

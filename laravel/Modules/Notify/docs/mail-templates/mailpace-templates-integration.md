@@ -1,3 +1,15 @@
+---
+title: "mailpace templates integration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "mailpace templates integration"
+issues: []
+discussions: []
+status: draft
+---
+
 # Integrazione MailPace Templates
 
 ## Panoramica

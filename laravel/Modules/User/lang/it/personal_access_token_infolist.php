@@ -2,16 +2,20 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_BjunNL
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'tokenable_type' => ['label' => 'tokenable_type'],
-        'tokenable_id' => ['label' => 'tokenable_id'],
-        'name' => ['label' => 'name'],
-        'abilities' => ['label' => 'abilities'],
-        'last_used_at' => ['label' => 'last_used_at'],
-        'expires_at' => ['label' => 'expires_at'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'id' => ['label' => 'ID'],
+        'tokenable_type' => ['label' => 'Tipo di proprietario'],
+        'tokenable_id' => ['label' => 'Proprietario'],
+        'name' => ['label' => 'Nome'],
+        'abilities' => ['label' => 'Permessi'],
+        'last_used_at' => ['label' => 'Ultimo uso'],
+        'expires_at' => ['label' => 'Scade il'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_3REkZ2

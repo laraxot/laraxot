@@ -1,0 +1,111 @@
+/* Search results: CSS parity layer for Design Comuni, implemented without Bootstrap runtime. */
+.search-results-page {
+  font-family: "Titillium Web", sans-serif;
+  color: #17324d;
+}
+
+.search-results-page .cmp-input-search-button {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  width: 100%;
+}
+
+.search-results-page .cmp-input-search-button .input-group {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.search-results-page .cmp-input-search-button .input-group-text {
+  width: 64px;
+  justify-content: center;
+  border-bottom: 2px solid #5d7083;
+  box-shadow: none;
+}
+
+.search-results-page .cmp-input-search-button .form-control {
+  height: 73px;
+  border-bottom: 2px solid #5d7083;
+  box-shadow: none;
+  color: #5d7083;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.search-results-page .cmp-input-search-button .form-control::placeholder {
+  color: #5d7083;
+  opacity: 1;
+}
+
+.search-results-page .cmp-input-search-button .btn.btn-primary,
+.search-results-page .btn.btn-primary.btn-next {
+  min-width: 86px;
+  min-height: 48px;
+  background-color: #007a52 !important;
+  border-color: #007a52 !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.search-results-page .cmp-input-search-button .btn.btn-primary:hover,
+.search-results-page .cmp-input-search-button .btn.btn-primary:focus-visible,
+.search-results-page .btn.btn-primary.btn-next:hover,
+.search-results-page .btn.btn-primary.btn-next:focus-visible {
+  background-color: #006b4f !important;
+  border-color: #006b4f !important;
+  color: #fff !important;
+}
+
+.search-results-page .btn.btn-outline-primary {
+  color: #007a52 !important;
+  border-color: #007a52 !important;
+}
+
+.search-results-page .btn.btn-outline-primary:hover,
+.search-results-page .btn.btn-outline-primary:focus-visible {
+  color: #006b4f !important;
+  box-shadow: inset 0 0 0 2px #006b4f !important;
+}
+
+.search-results-page .btn-result:disabled {
+  color: #baccd9 !important;
+  opacity: 1;
+}
+
+.search-results-page .scroll-filter-wrapper {
+  position: sticky;
+  top: 32px;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+.search-results-page .cmp-card-latest-messages .card {
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+}
+
+.search-results-page .cmp-card-latest-messages .green-title-big,
+.search-results-page .cmp-card-latest-messages .green-title-big a {
+  color: #007a52 !important;
+}
+
+.search-results-page .cmp-card-latest-messages .category {
+  color: #0066cc !important;
+}
+
+@media (max-width: 991px) {
+  .search-results-page .cmp-input-search-button {
+    gap: 12px;
+    margin-top: 0.5rem !important;
+  }
+
+  .search-results-page .cmp-input-search-button .form-control {
+    height: 48px;
+    font-size: 24px;
+  }
+
+  .search-results-page .cmp-input-search-button .input-group-text {
+    width: 48px;
+  }
+}

@@ -16,6 +16,7 @@ related:
   - "./module-commit-push-after-change.md"
   - "./navigation-properties.md"
   - "./no-notifications-migration-in-user-module.md"
+status: draft
 ---
 
 # No Filament Labels Rule

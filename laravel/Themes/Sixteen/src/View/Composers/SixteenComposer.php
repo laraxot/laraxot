@@ -6,11 +6,17 @@ namespace Themes\Sixteen\View\Composers;
 
 use Illuminate\View\View;
 use Themes\Sixteen\Events\BuildingSixteenMenu;
-use Themes\Sixteen\Actions\MenuBuilderAction;
+use Themes\Sixteen\Services\MenuBuilder;
 
 /**
  * View Composer per il tema Sixteen
  *
+use Themes\Sixteen\Actions\MenuBuilderAction;
+use Themes\Sixteen\Events\BuildingSixteenMenu;
+
+/**
+ * View Composer per il tema Sixteen
+ * 
  * Questo composer inietta le configurazioni del tema e i menu
  * costruiti dinamicamente nelle viste del layout
  */
@@ -31,6 +37,10 @@ class SixteenComposer
         // Costruzione dinamica dei menu tramite eventi
         $this->buildMenus();
 
+        
+        // Costruzione dinamica dei menu tramite eventi
+        $this->buildMenus();
+        
         // Inietta i dati nella vista
         $view->with([
             'sixteenConfig' => $config,
@@ -59,6 +69,10 @@ class SixteenComposer
         // Lancia eventi per permettere modifiche dinamiche
         $locations = ['slim_header', 'header', 'footer', 'footer_bar'];
 
+        
+        // Lancia eventi per permettere modifiche dinamiche
+        $locations = ['slim_header', 'header', 'footer', 'footer_bar'];
+        
         foreach ($locations as $location) {
             event(new BuildingSixteenMenu($this->menuBuilder, $location));
         }
@@ -83,8 +97,25 @@ class SixteenComposer
             $this->menuBuilder->addFooter($menuConfig['footer']);
         }
 
+        
+        if (isset($menuConfig['slim_header'])) {
+            $this->menuBuilder->addSlimHeader($menuConfig['slim_header']);
+        }
+        
+        if (isset($menuConfig['header'])) {
+            $this->menuBuilder->addHeader($menuConfig['header']);
+        }
+        
+        if (isset($menuConfig['footer'])) {
+            $this->menuBuilder->addFooter($menuConfig['footer']);
+        }
+        
         if (isset($menuConfig['footer_bar'])) {
             $this->menuBuilder->addFooterBar($menuConfig['footer_bar']);
         }
     }
 }
+
+
+
+

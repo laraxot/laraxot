@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Media\Actions\Subtitle;
 
+use RuntimeException;
 use Spatie\QueueableAction\QueueableAction;
 
+use function Safe\fclose;
 use function Safe\file_put_contents;
 use function Safe\fopen;
 
@@ -20,15 +22,15 @@ class ConvertSrtToVttAction
     {
         $fileHandle = fopen(public_path($srtFile), 'r');
         $lines = [];
-        if ($fileHandle) {
-            while (($line = fgets($fileHandle, 8192)) !== false) {
-                $lines[] = $line;
-            }
-
-            if (! feof($fileHandle)) {
-                exit("Error: unexpected fgets() fail\n");
-            }
+        while (($line = fgets($fileHandle)) !== false) {
+            $lines[] = $line;
         }
+
+        if (! feof($fileHandle)) {
+            throw new RuntimeException("Unexpected fgets() failure while reading {$srtFile}");
+        }
+
+        fclose($fileHandle);
 
         $length = \count($lines);
         for ($index = 1; $index < $length; $index++) {

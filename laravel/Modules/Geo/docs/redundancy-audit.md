@@ -1,4 +1,8 @@
 ---
+updated: 2026-09-26
+qmd: "redundancy audit"
+issues: []
+discussions: []
 title: "Geo redundancy audit 2026-05-21"
 type: audit
 module: Geo
@@ -6,6 +10,7 @@ tags: [redundancy, casing, frontend-assets, docs]
 created: 2026-05-21
 related:
   - https://github.com/laraxot/base_fixcity_fila5/issues/89
+status: draft
 ---
 
 # Geo redundancy audit 2026-05-21

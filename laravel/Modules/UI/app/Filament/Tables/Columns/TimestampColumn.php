@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Tables\Columns;
 
+<<<<<<< .merge_file_4pI6B2
 use Filament\Tables\Columns\TextColumn;
+=======
+use Modules\Xot\Filament\Tables\Columns\XotBaseTextColumn;
+>>>>>>> .merge_file_LFRZAZ
 
 /**
  * Colonna data/ora standard del progetto: `dateTime()`, `sortable()`,
@@ -24,11 +28,23 @@ use Filament\Tables\Columns\TextColumn;
  *
  * @see Modules/UI/docs/form-column-parity.md
  */
+<<<<<<< .merge_file_4pI6B2
 class TimestampColumn extends TextColumn
 {
     public static function make(?string $name = null): static
     {
         return parent::make($name)
+=======
+/*
+ * GateGuard: callers TimestampColumnTest + 30+ Tables created_at/updated_at;
+ * unique datetime column helper; reads datetime scalars; user: "migliora qualità codice , fa tutto con bmad + second brain + filament blueprint"
+ */
+class TimestampColumn extends XotBaseTextColumn
+{
+    public static function make(?string $name = null): static
+    {
+        return parent::make($name ?? 'created_at')
+>>>>>>> .merge_file_LFRZAZ
             ->dateTime()
             ->sortable()
             ->placeholder('—');

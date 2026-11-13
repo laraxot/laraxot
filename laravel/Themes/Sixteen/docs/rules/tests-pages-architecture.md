@@ -1,3 +1,15 @@
+---
+title: "tests pages architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "tests pages architecture"
+issues: []
+discussions: []
+status: draft
+---
+
 # Tests Pages Architecture Rules
 
 **Scope:** `laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php`
@@ -45,7 +57,7 @@ new class extends Component {
 
 ## Reference
 - See: `pages/[container0]/[slug].blade.php` for correct pattern
-- See: `docs/architecture/PAGE_ROUTING_ARCHITECTURE.md`
+- See: `docs/architecture/page-routing-architecture.md`
 
 ### 7. HTML Parity Tooling
 - Use `bashscripts/html/html-structure-compare.sh` as the canonical parity script

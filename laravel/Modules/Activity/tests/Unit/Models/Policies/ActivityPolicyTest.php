@@ -10,18 +10,11 @@ use Modules\Activity\Tests\TestCase;
 use Modules\User\Models\Policies\UserBasePolicy;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
 uses(\Modules\Activity\Tests\TestCase::class);
 
 test('ActivityPolicy can be instantiated', function () {
 <<<<<<< .merge_file_5PNKnv
     $policy = new ActivityPolicy();
-=======
-uses(TestCase::class);
-
-test('ActivityPolicy can be instantiated', function () {
-    $policy = new ActivityPolicy;
->>>>>>> 13cf1831 (.)
 
     Assert::assertInstanceOf(ActivityPolicy::class, $policy);
 =======
@@ -38,22 +31,14 @@ test('ActivityBasePolicy is an abstract class', function () {
 });
 
 test('SnapshotPolicy can be instantiated', function () {
-<<<<<<< HEAD
 <<<<<<< .merge_file_5PNKnv
     $policy = new SnapshotPolicy();
-=======
-    $policy = new SnapshotPolicy;
->>>>>>> 13cf1831 (.)
 
     Assert::assertInstanceOf(SnapshotPolicy::class, $policy);
 });
 
 test('StoredEventPolicy can be instantiated', function () {
-<<<<<<< HEAD
     $policy = new StoredEventPolicy();
-=======
-    $policy = new StoredEventPolicy;
->>>>>>> 13cf1831 (.)
 
     Assert::assertInstanceOf(StoredEventPolicy::class, $policy);
 =======
@@ -70,11 +55,7 @@ test('StoredEventPolicy can be instantiated', function () {
 });
 
 test('ActivityPolicy method signatures', function () {
-<<<<<<< HEAD
     $policy = new ActivityPolicy();
-=======
-    $policy = new ActivityPolicy;
->>>>>>> 13cf1831 (.)
     $reflection = new ReflectionClass($policy);
     $expectedMethods = ['view', 'create', 'update', 'delete', 'restore', 'forceDelete'];
 

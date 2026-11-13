@@ -1,3 +1,15 @@
+---
+title: "route target recheck rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "route target recheck rule"
+issues: []
+discussions: []
+status: draft
+---
+
 # Route Target Recheck Rule
 
 ## Regola

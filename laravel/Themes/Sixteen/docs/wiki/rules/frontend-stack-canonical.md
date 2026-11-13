@@ -1,4 +1,7 @@
 ---
+qmd: "frontend stack canonical"
+issues: []
+discussions: []
 title: "Frontend Stack Canonico — Tailwind + Alpine + Lit + DaisyUI + Flowbite + Filament"
 type: rule
 confidence: high
@@ -8,6 +11,7 @@ tags: [frontend, tailwind, alpine, lit, daisyui, flowbite, filament, no-bootstra
 related:
   - rules/cms-block-naming-tailwind-flowbite.md
   - rules/00-TRIGGER_MAP.md
+status: draft
 ---
 
 # Frontend Stack Canonico

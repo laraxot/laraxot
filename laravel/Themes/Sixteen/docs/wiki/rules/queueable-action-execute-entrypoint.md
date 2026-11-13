@@ -1,4 +1,7 @@
 ---
+qmd: "queueable action execute entrypoint"
+issues: []
+discussions: []
 title: "QueueableAction execute entrypoint"
 type: rule
 theme: Sixteen
@@ -7,7 +10,8 @@ created: 2026-07-12
 updated: 2026-07-12
 tags: [sixteen, actions, queueable-action, execute]
 related:
-  - ../../../../../docs/wiki/rules/queueable-action-execute-entrypoint.md
+  - ../../../../../../docs/wiki/rules/queueable-action-execute-entrypoint.md
+status: draft
 ---
 
 # QueueableAction execute entrypoint

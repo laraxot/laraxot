@@ -1,9 +1,20 @@
+---
+title: "09 contacts section"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "09 contacts section"
+issues: []
+discussions: []
+status: draft
+---
+
 # Block 09: Contacts Section
 
 > Contatti comune + segnalazione disservizi
 
 ---
-
 ## Reference
 **URL**: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html  
 **Selettore**: `.bg-grey-card.shadow-contacts`  

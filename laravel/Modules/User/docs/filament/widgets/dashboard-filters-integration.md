@@ -12,9 +12,9 @@ related:
   - "./registration-widget-fileupload-fix.md"
   - "./registration-widget-fileupload.md"
   - "./registration-widget.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Dashboard Filters Integration per Widget Filament
 
 ## Problema Risolto
@@ -144,10 +144,14 @@ protected function getFooterWidgets(): array
 - [ ] Fallback appropriati attivati
 ## Riferimenti e Collegamenti
 ### Documentazione Correlata
-- [Modules/User/docs/best-practices/filament-widgets.md](../best-practices/filament-widgets.md)
+- [Modules/User/docs/best-practices/filament-widgets.md](../../best-practices/filament-widgets.md)
 - [Modules/Xot/docs/filament/widgets/base-chart-widget.md](../../../xot/docs/filament/widgets/base-chart-widget.md)
 - [Modules/<nome progetto>/docs/dashboard-implementation.md](../../../<nome progetto>/docs/dashboard-implementation.md)
-- [Modules/User/project_docs/best-practices/filament-widgets.md](../best-practices/filament-widgets.md)
+- [Modules/User/project_docs/best-practices/filament-widgets.md](../../best-practices/filament-widgets.md)
+- [Modules/User/docs/best-practices/filament-widgets.md](../../best-practices/filament-widgets.md)
+- [Modules/Xot/docs/filament/widgets/base-chart-widget.md](../../../xot/docs/filament/widgets/base-chart-widget.md)
+- [Modules/<nome progetto>/docs/dashboard-implementation.md](../../../<nome progetto>/docs/dashboard-implementation.md)
+- [Modules/User/project_docs/best-practices/filament-widgets.md](../../best-practices/filament-widgets.md)
 - [Modules/Xot/project_docs/filament/widgets/base-chart-widget.md](../../../xot/project_docs/filament/widgets/base-chart-widget.md)
 - [Modules/<nome progetto>/project_docs/dashboard-implementation.md](../../../<nome progetto>/project_docs/dashboard-implementation.md)
 ### Widget Correlati
@@ -163,4 +167,3 @@ protected function getFooterWidgets(): array
 - **Problema**: Widget non riceveva filtri Dashboard
 - **Soluzione**: Accesso sicuro con fallback appropriati
 - **Impatto**: Risolto per tutti i widget che usano lo stesso pattern
->>>>>>> 87273113 (.)

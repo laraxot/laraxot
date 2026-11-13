@@ -36,7 +36,10 @@ describe('TranslatorAdapter business logic', function () {
     });
 
     it('extends the Laravel translator', function () {
-        Assert::assertInstanceOf(Translator::class, makeTranslatorAdapter());
+        $parent = (new \ReflectionClass(TranslatorAdapter::class))->getParentClass();
+
+        Assert::assertInstanceOf(\ReflectionClass::class, $parent);
+        Assert::assertSame(Translator::class, $parent->getName());
     });
 
     it('has correct namespace', function () {

@@ -1,3 +1,14 @@
+---
+title: "apache ollama fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "apache ollama fix"
+issues: []
+discussions: []
+---
+
 # Apache & Ollama Fix Summary
 
 **Date**: 2026-03-13  
@@ -5,6 +16,14 @@
 
 ---
 
+title: "apache ollama fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "apache ollama fix"
+issues: []
+discussions: []
 ## 🔧 Apache2 Fix
 
 ### Problem

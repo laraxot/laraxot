@@ -1,3 +1,15 @@
+---
+title: "sigma phpstan analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sigma phpstan analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Analisi PHPStan Modulo Sigma — 2026-06-15
 
 **Status:** ❌ ERRORE CRITICO  
@@ -57,5 +69,4 @@ interface DateRangeFieldsContract
 3. ⏳ Correggere gli errori di tipo identificati
 
 ---
-
 **Nota:** PHPStan non riesce a procedere fino al completamento di questo errore interno.

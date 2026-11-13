@@ -135,19 +135,16 @@ return [
             'description' => '',
         ],
         'toggleColumns' => [
-            'label' => 'toggleColumns',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
-            'label' => 'reorderRecords',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
-            'label' => 'resetFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -279,5 +276,21 @@ return [
         'delete' => [
             'label' => 'Elimina Schedule',
         ],
+    ],
+    'crud_widget' => [
+        'heading' => 'Attività pianificate',
+        'new_task' => 'Nuova attività',
+        'columns' => [
+            'description' => 'Descrizione',
+            'average_runtime' => 'Durata media',
+            'last_run' => 'Ultima esecuzione',
+            'next_run' => 'Prossima esecuzione',
+        ],
+        'average_runtime_value' => ':seconds secondi',
+        'run_now' => 'Esegui ora',
+        'empty' => 'Nessuna attività trovata.',
+    ],
+    'status_widget' => [
+        'heading' => 'Stato della schedulazione',
     ],
 ];

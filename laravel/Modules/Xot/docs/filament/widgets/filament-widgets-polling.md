@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Polling nei Widget Filament"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, filament]
+qmd: "Polling nei Widget Filament"
+---
+>>>>>>> laraxot/dev
 # Polling nei Widget Filament
 
 Questo documento descrive come implementare il polling automatico nei widget Filament utilizzando il trait `CanPoll` nel progetto il progetto.
@@ -43,17 +56,28 @@ use Modules\Xot\Filament\Widgets\XotBaseWidget;
 class DashboardStatsWidget extends XotBaseWidget
 {
     use CanPoll;
+<<<<<<< HEAD
 
     // Personalizzare l'intervallo di polling (default: 5s)
     protected static ?string $pollingInterval = '10s';
 
+=======
+    
+    // Personalizzare l'intervallo di polling (default: 5s)
+    protected static ?string $pollingInterval = '10s';
+    
+>>>>>>> laraxot/dev
     // Opzionale: sovrascrivere il metodo getPollingInterval
     protected function getPollingInterval(): ?string
     {
         // Logica personalizzata per determinare l'intervallo
         return static::$pollingInterval;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // Il contenuto del widget verrà aggiornato automaticamente
     public function getFormSchema(): array
     {
@@ -96,6 +120,7 @@ use Filament\Forms\Components\Card;
 class ActiveUsersWidget extends XotBaseWidget
 {
     use CanPoll;
+<<<<<<< HEAD
 
     protected static ?string $pollingInterval = '30s';
     protected int | string | array $columnSpan = 'full';
@@ -105,6 +130,17 @@ class ActiveUsersWidget extends XotBaseWidget
     {
         $activeUsers = $this->getActiveUsers();
 
+=======
+    
+    protected static ?string $pollingInterval = '30s';
+    protected int | string | array $columnSpan = 'full';
+    public string $title = 'Utenti Attivi';
+    
+    public function getFormSchema(): array
+    {
+        $activeUsers = $this->getActiveUsers();
+        
+>>>>>>> laraxot/dev
         return [
             'stats' => Card::make()
                 ->schema([
@@ -116,7 +152,11 @@ class ActiveUsersWidget extends XotBaseWidget
                 ]),
         ];
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     private function getActiveUsers(): int
     {
         // Logica per ottenere il numero di utenti attivi
@@ -134,12 +174,19 @@ Questa funzionalità è compatibile con:
 
 ## Collegamenti Bidirezionali
 
+<<<<<<< HEAD
 - [README.md](../../readme.md) - Indice principale della documentazione
 - [xot-base-widget.md](./xot-base-widget.md) - Documentazione su XotBaseWidget
 - [FOLIO_VOLT_FILAMENT_INTEGRATION.md](../../folio_volt_filament_integration.md) - Integrazione Folio, Volt e Filament
 - [MODULE_STRUCTURE.md](../../module_structure.md) - Struttura standard dei moduli
+=======
+>>>>>>> laraxot/dev
 - [README.md](../../README.md) - Indice principale della documentazione
 - [xot-base-widget.md](./xot-base-widget.md) - Documentazione su XotBaseWidget
 - [FOLIO_VOLT_FILAMENT_INTEGRATION.md](../../FOLIO_VOLT_FILAMENT_INTEGRATION.md) - Integrazione Folio, Volt e Filament
 - [MODULE_STRUCTURE.md](../../MODULE_STRUCTURE.md) - Struttura standard dei moduli
+<<<<<<< HEAD
 - [Documentazione Filament](https://filamentphp.com/docs/3.x/widgets/installation)
+=======
+- [Documentazione Filament](https://filamentphp.com/docs/3.x/widgets/installation)
+>>>>>>> laraxot/dev

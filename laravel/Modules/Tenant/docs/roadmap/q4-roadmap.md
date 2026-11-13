@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Tenant Module Roadmap (2025 Q4)"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "q4 roadmap"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 # Tenant Module Roadmap (2025 Q4)
 

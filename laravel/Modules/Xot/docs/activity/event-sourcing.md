@@ -3,6 +3,14 @@ title: Event Sourcing
 description: Event Sourcing
 extends: _layouts.documentation
 section: content
+<<<<<<< HEAD
+=======
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, activity]
+qmd: "video xot"
+>>>>>>> laraxot/dev
 ---
 
 # Video

@@ -373,7 +373,6 @@ class ListMyModelActivities extends ListLogActivities
 
 ---
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_03hLsT
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -387,8 +386,5 @@ class ListMyModelActivities extends ListLogActivities
 =======
 **Ultimo aggiornamento**: 27 Ottobre 2025
 >>>>>>> .merge_file_Cg7s4T
-=======
-**
->>>>>>> 13cf1831 (.)
 **Pattern**: DRY + KISS per Actions riutilizzabili
 **Conformità**: ✅ PHPStan livello 9+, ✅ Pint, ✅ Test Suite

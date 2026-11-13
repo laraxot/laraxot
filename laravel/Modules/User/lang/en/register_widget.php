@@ -3,12 +3,18 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< .merge_file_kSiRoB
+=======
+<<<<<<< .merge_file_MKFRfM
     'sections' => [
         'empty' => [
-            'label' => 'empty',
-            'heading' => 'empty',
+            'label' => '',
+            'heading' => '',
         ],
     ],
+=======
+>>>>>>> .merge_file_tuAX6h
+>>>>>>> .merge_file_nsLiOS
     'fields' => [
         'first_name' => [
             'label' => 'First Name',
@@ -89,6 +95,4 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
-    'actions' => [
-    ],
 ];

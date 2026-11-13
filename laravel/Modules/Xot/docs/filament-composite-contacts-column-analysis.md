@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Analisi e Implementazione Colonna Composita 'Contatti' - TechPlanner"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "analisi e implementazione colonna composita 'contatti' - techplanner xot"
+---
+>>>>>>> laraxot/dev
 # Analisi e Implementazione Colonna Composita "Contatti" - TechPlanner
 
 ## Richiesta Utente

@@ -1,10 +1,15 @@
 ---
+qmd: "BOOST SKILL SOLUTION PLAN"
+issues: []
+discussions: []
 title: "Boost Skill Installation - Solution Plan"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: boost_skill_solution_plan.md
 ---
 
 # Boost Skill Installation - Solution Plan

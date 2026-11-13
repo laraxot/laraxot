@@ -1,5 +1,8 @@
 ---
-title: "Queueable Actions — Job Module"
+qmd: "queueable actions"
+issues: []
+discussions: []
+title: "Queueable Actions: Job Module"
 type: concept
 created: 2026-07-12
 updated: 2026-07-12
@@ -7,9 +10,10 @@ confidence: high
 tags: [queueable-action, spatie, architecture, laraxot, job]
 related:
   - Modules/Xot/docs/queueable-actions.md
+status: draft
 ---
 
-# Queueable Actions — Job Module Doctrine
+# Queueable Actions: Job Module Doctrine
 
 > The full doctrine lives in `Modules/Xot/docs/queueable-actions.md`.
 > This module follows the same rules.
@@ -18,7 +22,7 @@ related:
 
 1. Every class under `app/Actions/` is a [Spatie Laravel Queueable Action](https://github.com/spatie/laravel-queueable-action).
 2. The only public entry point is `execute()`.
-3. No repository pattern — no `*Repository` classes, no repository injection.
+3. No repository pattern: no `*Repository` classes, no repository injection.
 4. No inline `new ...Action` or `new ...Repository` in constructor default parameters.
 5. Retire files by renaming with `.old` suffix; do not `rm` and do not create `archive/` directories.
 6. YAGNI: reuse existing code, prefer stdlib/native Laravel, keep it minimal.

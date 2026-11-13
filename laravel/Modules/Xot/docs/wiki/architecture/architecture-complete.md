@@ -1,9 +1,19 @@
 ---
+<<<<<<< HEAD
+=======
+qmd: "architecture complete"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Architecture Complete"
 type: reference
 tags: [wiki, no-frontmatter-fix]
 created: 2026-08-24
 updated: 2026-08-24
+<<<<<<< HEAD
+=======
+status: draft
+>>>>>>> laraxot/dev
 ---
 
 # Xot Module - Complete Architecture Guide (2025)
@@ -151,8 +161,16 @@ All Filament resources extend this base class:
 **Required Methods:**
 ```php
 <<<<<<< HEAD
+<<<<<<< HEAD
 abstract public function getFormSchema(): array;
 =======
+abstract public function getFormSchema(): array;
+>>>>>>> laraxot/dev
+=======
+abstract public function getFormSchema(): array;
+abstract public function getFormSchema(): array;
+abstract public function getFormSchema(): array;
+---
 abstract public function getFormSchema(): array;
 >>>>>>> laraxot/dev
 abstract public static function getTableColumns(): array;
@@ -277,7 +295,11 @@ Each action encapsulates a single, focused operation using the QueueableAction p
 **HasCommonScopes**
 - Query scope helpers
 - Common filtering patterns
+<<<<<<< HEAD
 - Date scopes (`createdAfter` / `createdBefore` / `updatedAfter`): `Carbon|string|\DateTimeInterface` — è il tipo reale di un filtro su `created_at`/`updated_at`, non `mixed`
+=======
+- Date scopes (`createdAfter` / `createdBefore` / `updatedAfter`): `Carbon|string|\DateTimeInterface`: è il tipo reale di un filtro su `created_at`/`updated_at`, non `mixed`
+>>>>>>> laraxot/dev
 
 **TypedHasRecursiveRelationships**
 - Tree/hierarchical structure support
@@ -593,8 +615,16 @@ class MyResource extends XotBaseResource
     protected static ?string $model = MyModel::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public function getFormSchema(): array
+    public function getFormSchema(): array
+    public function getFormSchema(): array
+---
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
     {
@@ -674,8 +704,16 @@ class ArticleResource extends XotBaseResource
     protected static ?string $model = Article::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public function getFormSchema(): array
+    public function getFormSchema(): array
+    public function getFormSchema(): array
+---
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
     {

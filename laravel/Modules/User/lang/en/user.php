@@ -29,25 +29,23 @@ return [
         'unblock' => 'Sblocca',
         'send_reset_link' => 'Invia Link Reset Password',
         'verify_email' => 'Verifica Email',
+        'attach_role' => 'Assign Role',
     ],
     'fields' => [
         'name' => [
             'label' => 'Nome',
             'placeholder' => 'Inserisci il nome',
-            'description' => 'name',
             'helper_text' => '',
             'tooltip' => '',
         ],
         'email' => [
             'label' => 'Email',
             'placeholder' => 'Inserisci l\'email',
-            'description' => 'email',
             'helper_text' => '',
         ],
         'password' => [
             'label' => 'Password',
             'placeholder' => 'Inserisci la password',
-            'description' => 'password',
             'helper_text' => '',
             'tooltip' => '',
         ],
@@ -175,5 +173,13 @@ return [
         'delete_users' => 'Elimina utenti',
         'impersonate_users' => 'Impersona utenti',
         'manage_roles' => 'Gestisci ruoli',
+    ],
+    'relation_groups' => [
+        'security' => [
+            'label' => 'Security',
+        ],
+        'organization' => [
+            'label' => 'Organization',
+        ],
     ],
 ];

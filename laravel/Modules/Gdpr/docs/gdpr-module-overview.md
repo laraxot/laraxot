@@ -202,6 +202,7 @@ $consent->delete();
 
 ### Guide Principali
 
+- [README.md](./README.md) - Overview modulo
 - [README.md](./readme.md) - Overview modulo
 - [implementation-guide.md](./implementation-guide.md) - Guida implementazione
 - [api.md](./api.md) - API reference

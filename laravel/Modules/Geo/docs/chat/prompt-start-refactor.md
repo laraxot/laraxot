@@ -1,3 +1,15 @@
+---
+title: "prompt start refactor"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "prompt start refactor"
+issues: []
+discussions: []
+status: draft
+---
+
 # Refactor prompt start
 
 Data: 2026-07-06

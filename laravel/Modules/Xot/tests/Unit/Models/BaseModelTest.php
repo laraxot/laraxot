@@ -14,7 +14,11 @@ $baseModel = new class extends BaseModel
 };
 
 test('base model extends eloquent model', function () use ($baseModel): void {
+<<<<<<< HEAD
     Assert::assertInstanceOf(Model::class, $baseModel);
+=======
+    Assert::assertTrue((new ReflectionClass($baseModel))->isSubclassOf(Model::class));
+>>>>>>> laraxot/dev
 });
 
 test('base model has correct table name', function () use ($baseModel): void {
@@ -30,5 +34,9 @@ test('base model has timestamps disabled by default', function () use ($baseMode
 });
 
 test('base model can be instantiated', function () use ($baseModel): void {
+<<<<<<< HEAD
     Assert::assertInstanceOf(BaseModel::class, $baseModel);
+=======
+    Assert::assertFalse($baseModel->exists);
+>>>>>>> laraxot/dev
 });

@@ -1,3 +1,15 @@
+---
+title: "agents filament widgets"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agents filament widgets"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🏛 Filament Widgets Architecture
 
 **File**: `.agents/docs/architecture/agents-filament-widgets.md`  
@@ -5,7 +17,6 @@
 **Stato**: ✅ CRITICAL RULE
 
 ---
-
 ## 🔴 REGOLA FONDAMENTALE
 
 > **SEMPRE usare Filament Table Widgets per le liste**  

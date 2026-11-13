@@ -29,11 +29,11 @@
     <div class="cookiebar-buttons">
         <a href="{{ $preferencesUrl }}" class="cookiebar-btn">
             {{ $preferencesText }}
-            <span class="visually-hidden">cookies</span>
+            <span class="visually-hidden">{{ __('pub_theme::utilities_components.cookiebar.preferences_sr.label') }}</span>
         </a>
         <button data-bs-accept="cookiebar" class="cookiebar-btn cookiebar-confirm">
             {{ $acceptText }}
-            <span class="visually-hidden"> i cookies</span>
+            <span class="visually-hidden"> {{ __('pub_theme::utilities_components.cookiebar.accept_sr.label') }}</span>
         </button>
     </div>
 </section>

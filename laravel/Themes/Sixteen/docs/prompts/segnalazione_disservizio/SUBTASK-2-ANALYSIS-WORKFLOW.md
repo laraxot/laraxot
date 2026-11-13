@@ -1,3 +1,15 @@
+---
+title: "SUBTASK 2 ANALYSIS WORKFLOW"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "SUBTASK 2 ANALYSIS WORKFLOW"
+issues: []
+discussions: []
+status: draft
+---
+
 # SUBTASK 2: ANALYSIS & FINDINGS
 ## Researcher Workflow Guide
 
@@ -7,7 +19,6 @@
 **Duration**: 20-30 minutes
 
 ---
-
 ## 🎯 YOUR MISSION
 
 Once Executor #1 (Subtask 1) completes the comparison script:
@@ -250,9 +261,9 @@ Once PHASE-1-FINDINGS.md is ready:
 
 ## 🔗 REFERENCE DOCUMENTS
 
-- **Design Comuni Analysis**: PHASE-1-STRATEGY.md § ticket-list Analysis
-- **Execution Plan**: GSD-PHASE-1-EXECUTION.md § Subtask 2
-- **Template for Findings**: PHASE-1-FINDINGS-TEMPLATE.md
+- **Design Comuni Analysis**: phase-1-strategy.md § ticket-list Analysis
+- **Execution Plan**: gsd-phase-1-execution.md § Subtask 2
+- **Template for Findings**: phase-1-findings-template.md
 - **Tools Documentation**: bashscripts/docs/html/INDEX.md
 
 ---

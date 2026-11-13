@@ -12,9 +12,16 @@ related:
   - "./database-directory-naming-fix.md"
   - "./database-naming-fix-summary.md"
   - "./database-naming-verification-report.md"
+status: draft
 ---
 
 # ✅ SQLite Database Permission Fix - COMPLETE
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 **Date**: 2026-03-30  
 **Status**: ✅ **FIXED**  
@@ -117,7 +124,7 @@ php artisan serve
 
 | Issue | Status | Fix |
 |-------|--------|-----|
-| **Vite Manifest Missing** | ✅ Fixed | `npm run build && npm run copy` |
+| **Vite Manifest Missing** | ✅ Fixed | `npm run build` |
 | **SQLite Readonly** | ✅ Fixed | `chmod 775 database/` |
 | **NotebookLM MCP** | ✅ Installed | `claude mcp add notebooklm` |
 
@@ -165,7 +172,7 @@ Add to deployment docs:
 2. Build theme assets:
    ```bash
    cd laravel/Themes/Sixteen
-   npm run build && npm run copy
+   npm run build
    ```
 ```
 

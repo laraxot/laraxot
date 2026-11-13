@@ -1,3 +1,15 @@
+---
+title: "agid implementation guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agid implementation guide"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🚀 AGID Implementation Guide - Practical Developer Guide
 
 **Date**: 2025-10-02  
@@ -6,7 +18,6 @@
 **Estimated Time**: Follow step-by-step tutorials
 
 ---
-
 ## 📚 Table of Contents
 
 1. [Multi-Step Form Wizard](#multi-step-form-wizard)

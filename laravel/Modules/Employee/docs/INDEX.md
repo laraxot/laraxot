@@ -1,3 +1,9 @@
+---
+title: "Employee - INDEX"
+module: Employee
+bmad: true
+status: active
+---
 # Docs Index — Employee
 
 Canoni: README.md, architecture.md, rules-index.md

@@ -10,27 +10,29 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\RateLimiter;
 use Modules\Geo\Exceptions\GoogleMaps\GoogleMapsApiException;
+use Modules\Geo\Infrastructure\Config\GeoApiEndpoints;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Client HTTP Google Maps (geocoding, distance matrix, elevation).
  *
  * Sostituisce GoogleMapsService + BaseGeoService.
+ * Usa FetchGoogleMapsElevationAction / GetAddressFromGoogleMapsAction / GoogleMapsHttpAction.
  */
 class GoogleMapsHttpAction
 {
     use QueueableAction;
 
-    private const string GEOCODING_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
+    private const string GEOCODING_URL = GeoApiEndpoints::GOOGLE_GEOCODING;
 
-    private const string DISTANCE_MATRIX_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json';
+    private const string DISTANCE_MATRIX_URL = GeoApiEndpoints::GOOGLE_DISTANCE_MATRIX;
 
-    private const string ELEVATION_URL = 'https://maps.googleapis.com/maps/api/elevation/json';
+    private const string ELEVATION_URL = GeoApiEndpoints::GOOGLE_ELEVATION;
 
     /**
-     * @throws GoogleMapsApiException
-     *
      * @return array<string, mixed>
+     *
+     * @throws GoogleMapsApiException
      */
     public function executeReverseGeocode(float $latitude, float $longitude): array
     {
@@ -46,12 +48,11 @@ class GoogleMapsHttpAction
     }
 
     /**
-     * @param array<string> $origins
-     * @param array<string> $destinations
+     * @param  array<string>  $origins
+     * @param  array<string>  $destinations
+     * @return array<string, mixed>
      *
      * @throws GoogleMapsApiException
-     *
-     * @return array<string, mixed>
      */
     public function executeDistanceMatrix(array $origins, array $destinations): array
     {
@@ -69,9 +70,9 @@ class GoogleMapsHttpAction
     }
 
     /**
-     * @throws GoogleMapsApiException
-     *
      * @return array<string, mixed>
+     *
+     * @throws GoogleMapsApiException
      */
     public function executeElevation(float $latitude, float $longitude): array
     {
@@ -98,8 +99,7 @@ class GoogleMapsHttpAction
     }
 
     /**
-     * @param array<string, mixed> $params
-     *
+     * @param  array<string, mixed>  $params
      * @return array<string, mixed>
      */
     private function makeRequest(string $method, string $url, array $params = [], bool $useCache = true): array
@@ -109,7 +109,7 @@ class GoogleMapsHttpAction
         if ($useCache && config('geo.cache.enabled')) {
             /** @var array<string, mixed>|null $cached */
             $cached = Cache::get($cacheKey);
-            if (null !== $cached) {
+            if ($cached !== null) {
                 return $cached;
             }
         }
@@ -168,7 +168,7 @@ class GoogleMapsHttpAction
     }
 
     /**
-     * @param array<string, mixed> $params
+     * @param  array<string, mixed>  $params
      */
     private function getCacheKey(string $method, string $url, array $params): string
     {

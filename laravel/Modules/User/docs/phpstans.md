@@ -8,17 +8,21 @@ qmd: "phpstans filosofia laraxot: risoluzione errori phpstan"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Filosofia Laraxot: Risoluzione Errori PHPStan
 
 **Data Creazione**: [DATE]
@@ -252,7 +256,7 @@ public function getTableBulkActions()
 ## 📚 Riferimenti
 
 - [PHPStan Documentation](https://phpstan.org/)
-- [Filament 4 Migration Guide](../../xot/docs/filament-4-migration-guide.md)
+- [Filament 4 Migration Guide](../../Xot/docs/filament-4-migration-guide.md)
 - [Type Safety Best Practices](../../xot/docs/type-safety-best-practices.md)
 
 ---

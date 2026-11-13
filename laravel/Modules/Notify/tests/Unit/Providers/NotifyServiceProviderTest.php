@@ -6,8 +6,10 @@ namespace Modules\Notify\Tests\Unit\Providers;
 
 use Illuminate\Support\Facades\Mail;
 use Modules\Notify\Providers\NotifyServiceProvider;
+use Modules\Notify\Tests\TestCase;
 use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
 
+uses(TestCase::class);
 test('notify service provider boot sets fallback recipient when configured', function () {
     app()->instance(ResolveTenantConfigValueAction::class, new class
     {

@@ -4,8 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Builders;
 
+<<<<<<< HEAD
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+=======
+use Carbon\Carbon;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
+>>>>>>> laraxot/dev
 
 /**
  * Column Builder for common Filament table columns.
@@ -32,7 +41,11 @@ class ColumnBuilder
      */
     public static function id(bool $sortable = true, bool $searchable = true): TextColumn
     {
+<<<<<<< HEAD
         return TextColumn::make('id')
+=======
+        return IDColumn::make('id')
+>>>>>>> laraxot/dev
             ->sortable($sortable)
             ->searchable($searchable)
             ->label('ID');
@@ -45,7 +58,13 @@ class ColumnBuilder
     {
         $column = TextColumn::make('name')
             ->searchable($searchable)
+<<<<<<< HEAD
             ->sortable($sortable);
+=======
+            ->sortable($sortable)
+            ->label(__('xot::fields.name.label'))
+            ->toggleable();
+>>>>>>> laraxot/dev
 
         if ($wrap) {
             $column->wrap();
@@ -61,7 +80,15 @@ class ColumnBuilder
     {
         $column = TextColumn::make('title')
             ->searchable($searchable)
+<<<<<<< HEAD
             ->sortable($sortable);
+=======
+            ->sortable($sortable)
+            ->label(__('xot::fields.title.label'))
+            ->limit(50)
+            ->tooltip(static fn (mixed $record): string => \is_object($record) && isset($record->title) ? SafeStringCastAction::cast($record->title) : '')
+            ->toggleable();
+>>>>>>> laraxot/dev
 
         if ($wrap) {
             $column->wrap();
@@ -78,7 +105,14 @@ class ColumnBuilder
         return TextColumn::make('email')
             ->searchable($searchable)
             ->sortable($sortable)
+<<<<<<< HEAD
             ->copyable();
+=======
+            ->copyable()
+            ->label(__('xot::fields.email.label'))
+            ->icon('heroicon-o-envelope')
+            ->toggleable();
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -89,7 +123,14 @@ class ColumnBuilder
         return TextColumn::make('description')
             ->limit($limit)
             ->searchable($searchable)
+<<<<<<< HEAD
             ->wrap();
+=======
+            ->wrap()
+            ->label(__('xot::fields.description.label'))
+            ->tooltip(static fn (mixed $record): string => \is_object($record) && isset($record->description) ? SafeStringCastAction::cast($record->description) : '')
+            ->toggleable();
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -112,6 +153,27 @@ class ColumnBuilder
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Standard status column with badge.
+     */
+    public static function status(): TextColumn
+    {
+        return TextColumn::make('status')
+            ->label(__('xot::fields.status.label'))
+            ->badge()
+            ->color(static fn (string $state): string => match ($state) {
+                'published' => 'success',
+                'draft' => 'warning',
+                'archived' => 'danger',
+                default => 'gray',
+            })
+            ->sortable()
+            ->toggleable();
+    }
+
+    /**
+>>>>>>> laraxot/dev
      * Priority badge column.
      *
      * @param  array<string, string>  $customColors  Custom color mappings
@@ -145,7 +207,13 @@ class ColumnBuilder
      */
     public static function isActive(bool $sortable = true): IconColumn
     {
+<<<<<<< HEAD
         return self::booleanIcon('is_active', $sortable);
+=======
+        return self::booleanIcon('is_active', $sortable)
+            ->label(__('xot::fields.is_active.label'))
+            ->toggleable();
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -203,7 +271,13 @@ class ColumnBuilder
             $column->toggleable(isToggledHiddenByDefault: $hiddenByDefault);
         }
 
+<<<<<<< HEAD
         return $column;
+=======
+        return $column
+            ->label(__('xot::fields.updated_at.label'))
+            ->since();
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -220,7 +294,23 @@ class ColumnBuilder
             $column->date();
         }
 
+<<<<<<< HEAD
         return $column;
+=======
+        return $column
+            ->label(__('xot::fields.published_at.label'))
+            ->badge()
+            ->color(static function (mixed $record): string {
+                if (! \is_object($record) || ! isset($record->published_at)) {
+                    return 'warning';
+                }
+
+                return $record->published_at instanceof Carbon && $record->published_at->isPast()
+                    ? 'success'
+                    : 'warning';
+            })
+            ->toggleable();
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -244,7 +334,13 @@ class ColumnBuilder
         return TextColumn::make('slug')
             ->searchable($searchable)
             ->sortable($sortable)
+<<<<<<< HEAD
             ->copyable();
+=======
+            ->copyable()
+            ->label(__('xot::fields.slug.label'))
+            ->toggleable();
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -311,4 +407,94 @@ class ColumnBuilder
 
         return $column;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Standard deleted_at column.
+     */
+    public static function deletedAt(): TextColumn
+    {
+        return TextColumn::make('deleted_at')
+            ->label(__('xot::fields.deleted_at.label'))
+            ->dateTime()
+            ->sortable()
+            ->toggleable(isToggledHiddenByDefault: true);
+    }
+
+    /**
+     * Standard avatar/image column.
+     */
+    public static function avatar(string $field = 'avatar'): ImageColumn
+    {
+        return ImageColumn::make($field)
+            ->label(__('xot::fields.'.$field.'.label'))
+            ->circular()
+            ->defaultImageUrl(url('/images/default-avatar.png'))
+            ->toggleable();
+    }
+
+    /**
+     * Standard image column.
+     */
+    public static function image(string $field = 'image'): ImageColumn
+    {
+        return ImageColumn::make($field)
+            ->label(__('xot::fields.'.$field.'.label'))
+            ->square()
+            ->toggleable();
+    }
+
+    /**
+     * Created by column (with user relationship).
+     */
+    public static function createdBy(): TextColumn
+    {
+        return TextColumn::make('creator.name')
+            ->label(__('xot::fields.created_by.label'))
+            ->sortable()
+            ->toggleable(isToggledHiddenByDefault: true);
+    }
+
+    /**
+     * Updated by column (with user relationship).
+     */
+    public static function updatedBy(): TextColumn
+    {
+        return TextColumn::make('updater.name')
+            ->label(__('xot::fields.updated_by.label'))
+            ->sortable()
+            ->since()
+            ->toggleable(isToggledHiddenByDefault: true);
+    }
+
+    /**
+     * Get common audit columns.
+     *
+     * @return array<string, TextColumn>
+     */
+    public static function auditColumns(): array
+    {
+        return [
+            'created_at' => self::createdAt(),
+            'updated_at' => self::updatedAt(),
+            'created_by' => self::createdBy(),
+            'updated_by' => self::updatedBy(),
+        ];
+    }
+
+    /**
+     * Get soft delete columns.
+     *
+     * @return array<string, TextColumn>
+     */
+    public static function softDeleteColumns(): array
+    {
+        return [
+            'created_at' => self::createdAt(),
+            'updated_at' => self::updatedAt(),
+            'deleted_at' => self::deletedAt(),
+        ];
+    }
+>>>>>>> laraxot/dev
 }

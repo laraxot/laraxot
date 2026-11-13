@@ -1,3 +1,9 @@
+---
+title: "Employee - README"
+module: Employee
+bmad: true
+status: active
+---
 # Organizational Management Development Guide
 
 [![Module](https://img.shields.io/badge/Module-Organizational Management Development Guide-8B0000.svg)]()

@@ -1,5 +1,7 @@
 ---
-title: "🏢 Tenant — English presentation"
+issues: []
+discussions: []
+title: "🏢 Tenant: English presentation"
 module: "Tenant"
 type: concept
 tags: [readme, en]
@@ -8,8 +10,9 @@ updated: 2026-07-14
 qmd: "readme en"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
-# 🏢 Tenant — English presentation
+# 🏢 Tenant: English presentation
 
 [![Domain-Multi-Tenant](https://img.shields.io/badge/Domain-Multi--Tenant-283593.svg)](#)
 [![Laravel 13](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
@@ -21,7 +24,7 @@ related:
 [![Laraxot Modules](https://img.shields.io/badge/Architecture-Modular-purple.svg)](#)
 [![Current Platform](https://img.shields.io/badge/Platform-progetto corrente-008758.svg)](#)
 
-> **One codebase, many municipalities.** Data isolation, teams, per-tenant config — PA-ready SaaS.
+> **One codebase, many municipalities.** Data isolation, teams, per-tenant config: PA-ready SaaS.
 
 ---
 
@@ -50,7 +53,7 @@ progetto corrente scales across entities without forking code.
 
 **Multi-municipality** architecture without monolith duplication.
 
-Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
+Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5**: see [STORY-133](../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
 
 ---
 

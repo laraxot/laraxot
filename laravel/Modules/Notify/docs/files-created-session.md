@@ -8,17 +8,32 @@ qmd: "files-created-session-007 files created in session 007"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
+  - "./action-plan-immediate.md"
+status: draft
 ---
 
 # Files Created in Session 007
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 **Session**: 007 - Complete Visual Parity Assessment & Roadmap
 **Date**: 2026-04-03
@@ -50,11 +65,11 @@ bashscripts/
 laravel/Themes/Sixteen/docs/
 ├── INDEX.md                                     ✨ NEW (theme index)
 ├── index.md                                     ✨ NEW (theme index)
-├── COMPLETE-VISUAL-PARITY-REPORT.md            ✨ NEW (54-page ranking)
+├── complete-visual-parity-report.md            ✨ NEW (54-page ranking)
 ├── PRIORITY-MATRIX.json                        ✨ NEW (work planning)
-├── CONTAINER-WIDTH-RESOLUTION.md               ✅ EXISTING (from prior sessions)
-├── SECTION-STRUCTURE-DIFF.md                   ✅ EXISTING
-├── PARITY-ASSESSMENT-FINDINGS.md               ✅ EXISTING
+├── container-width-resolution.md               ✅ EXISTING (from prior sessions)
+├── section-structure-diff.md                   ✅ EXISTING
+├── parity-assessment-findings.md               ✅ EXISTING
 ├── GITHUB-ISSUES-MAPPING.json                  ⏳ TO BE CREATED (by GitHub script)
 └── visual-parity-data.json                     ✨ NEW (machine-readable rankings)
 ```
@@ -80,7 +95,7 @@ bashscripts/docs/
 ```
 laravel/Themes/Sixteen/docs/pages/segnalazioni-elenco/
 ├── DETAILED-analysis.md                        ✨ NEW
-├── HTML-STRUCTURE-DIFF.md                      ✨ NEW
+├── html-structure-diff.md                      ✨ NEW
 ├── VISUAL-COMPARISON.md                        ✨ NEW
 ├── local-full.png                              ✨ NEW (screenshot)
 ├── reference-full.png                          ✨ NEW (screenshot)
@@ -101,6 +116,7 @@ laravel/Themes/Sixteen/docs/pages/segnalazioni-elenco/
 Project Root/
 ├── design-conversion-roadmap.md                ✨ NEW (executive summary)
 ├── files-created-session-007.md                ✨ NEW (this file)
+├── files-created-session-inventory.md                ✨ NEW (this file)
 └── [existing files unchanged]
 ```
 
@@ -174,7 +190,7 @@ Project Root/
    - Can re-run weekly to track progress
    - Output feeds all reports
 
-4. **laravel/Themes/Sixteen/docs/COMPLETE-VISUAL-PARITY-REPORT.md**
+4. **laravel/Themes/Sixteen/docs/complete-visual-parity-report.md**
    - All 54 pages ranked
    - Reference for priority decisions
 
@@ -202,7 +218,7 @@ Project Root/
 
 **For QA**:
 - Use: pages/<page-name>/local-full.png vs reference-full.png (visual regression)
-- Reference: COMPLETE-VISUAL-PARITY-REPORT.md (parity tracking)
+- Reference: complete-visual-parity-report.md (parity tracking)
 
 ---
 
@@ -221,7 +237,7 @@ batch-visual-assessment-parallel.mjs
     ↓ (outputs JSON)
 visual-parity-data.json
     ↓ (feeds)
-COMPLETE-VISUAL-PARITY-REPORT.md
+complete-visual-parity-report.md
     ↓ (analyzed to create)
 PRIORITY-MATRIX.json
     ↓ (used for)
@@ -273,7 +289,7 @@ cat laravel/Themes/Sixteen/docs/pages/persona/DETAILED-analysis.md
 # 4. Start CSS fixing
 cd laravel/Themes/Sixteen
 vim resources/css/app.css
-npm run build && npm run copy
+npm run build
 ```
 
 ### Weekly
@@ -294,7 +310,7 @@ diff <(cat laravel/Themes/Sixteen/docs/visual-parity-data.json) <(previous.json)
 2. Take screenshots (provided by script)
 3. Identify CSS changes needed
 4. Apply fixes
-5. Run npm run build && npm run copy
+5. Run npm run build
 6. Take new screenshots
 7. Compare old vs new
 8. Commit with before/after attached
@@ -319,7 +335,7 @@ diff <(cat laravel/Themes/Sixteen/docs/visual-parity-data.json) <(previous.json)
 
 ### Update Regularly
 - visual-parity-data.json (weekly)
-- COMPLETE-VISUAL-PARITY-REPORT.md (weekly)
+- complete-visual-parity-report.md (weekly)
 - PRIORITY-MATRIX.json (as pages complete)
 
 ---

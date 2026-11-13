@@ -1,4 +1,8 @@
 ---
+updated: 2026-09-26
+qmd: "no controllers folio volt filament"
+issues: []
+discussions: []
 title: "No Controllers — Solo Folio + Volt + Filament"
 type: concept
 confidence: high
@@ -8,6 +12,7 @@ related:
   - ../../../../../Modules/Fixcity/docs/wiki/concepts/no-controllers-folio-volt-filament.md
   - ../../../../../Modules/Fixcity/docs/wiki/concepts/fixcity-best-practices.md
   - ../../../../../docs/wiki/concepts/stack-folio-volt-filament.md
+status: draft
 ---
 
 # No Controllers — Solo Folio + Volt + Filament

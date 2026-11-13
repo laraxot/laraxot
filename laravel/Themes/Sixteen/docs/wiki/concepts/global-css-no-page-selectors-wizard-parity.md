@@ -1,8 +1,13 @@
 ---
+created: 2026-09-26
+qmd: "global css no page selectors wizard parity"
+issues: []
+discussions: []
 title: Theme CSS discipline - global site CSS, no per-page selectors (wizard parity)
 type: concept
 updated: 2026-04-23
 tags: [sixteen, css, parity, bootstrap-italia, wizard, best-practices, false-friends]
+status: draft
 ---
 
 # Regola

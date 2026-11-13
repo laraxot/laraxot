@@ -1,3 +1,15 @@
+---
+title: "social sharing component"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "social sharing component"
+issues: []
+discussions: []
+status: active
+---
+
 # Social Sharing Component Design
 
 ## Overview

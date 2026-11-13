@@ -1,3 +1,15 @@
+---
+title: "markdown linking conventions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "markdown linking conventions"
+issues: []
+discussions: []
+status: draft
+---
+
 # Convenzioni per i Collegamenti nei File Markdown
 
 ## Regola Fondamentale

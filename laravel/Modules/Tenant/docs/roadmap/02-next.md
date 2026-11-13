@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Next (Module Tenant)"
 module: "Tenant"
 type: concept
@@ -8,6 +10,9 @@ updated: 2026-07-14
 qmd: "02 next"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: superseded
+superseded_by: next.md
 ---
 # Next (Module Tenant)
 

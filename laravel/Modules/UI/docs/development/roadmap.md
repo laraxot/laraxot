@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 ### Versione HEAD
 
 # Roadmap Modulo UI
@@ -195,7 +210,6 @@
 * [roadmap.md](../../../../themes/one/docs/roadmap.md)
 
 ---
-
 ### Versione Incoming
 
 # UI Module Roadmap

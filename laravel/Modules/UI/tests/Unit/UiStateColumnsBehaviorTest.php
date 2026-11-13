@@ -11,6 +11,10 @@ use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
+<<<<<<< HEAD
+=======
+use Mockery;
+>>>>>>> f5ffd8b4 (.)
 use Modules\UI\Actions\Icon\GetAllIconsAction;
 use Modules\UI\Filament\Forms\Components\AddressField;
 use Modules\UI\Filament\Forms\Components\InlineDatePicker;
@@ -25,6 +29,10 @@ use Modules\UI\Tests\Unit\Stubs\UiCoverageRecordWithThrowingState;
 use Modules\UI\Tests\Unit\Stubs\UiCoverageStateContract;
 use Modules\UI\Tests\Unit\Stubs\UiCoverageThrowingTransitionState;
 use PHPUnit\Framework\Assert;
+<<<<<<< HEAD
+=======
+use ReflectionClass;
+>>>>>>> f5ffd8b4 (.)
 
 use function Safe\mkdir;
 
@@ -32,13 +40,21 @@ uses(TestCase::class);
 
 afterEach(function (): void {
     UiCoverageRecord::$findMap = [];
+<<<<<<< HEAD
     \Mockery::close();
+=======
+    Mockery::close();
+>>>>>>> f5ffd8b4 (.)
 });
 
 describe('UI state columns — comportamento IconStateColumn', function (): void {
     test('icon color tooltip rispondono allo StateContract', function (): void {
         $column = IconStateColumn::make('state');
+<<<<<<< HEAD
         $state = new UiCoverageStateContract();
+=======
+        $state = new UiCoverageStateContract;
+>>>>>>> f5ffd8b4 (.)
 
         Assert::assertSame('heroicon-o-clock', $column->getIcon($state));
         Assert::assertSame('warning', $column->getColor($state));
@@ -234,7 +250,11 @@ describe('UI actions — GetAllIconsAction con factory mock', function (): void 
         File::put($tmp.'/sample.svg', '<svg></svg>');
 
         $factory = App::make(IconFactory::class);
+<<<<<<< HEAD
         $ref = new \ReflectionClass($factory);
+=======
+        $ref = new ReflectionClass($factory);
+>>>>>>> f5ffd8b4 (.)
         $prop = $ref->getProperty('sets');
         $prop->setAccessible(true);
         $prop->setValue($factory, [
@@ -254,7 +274,11 @@ describe('UI actions — GetAllIconsAction con factory mock', function (): void 
     });
 
     test('ritorna array vuoto se reflection fallisce', function (): void {
+<<<<<<< HEAD
         $factory = \Mockery::mock(App::make(IconFactory::class))->makePartial();
+=======
+        $factory = Mockery::mock(App::make(IconFactory::class))->makePartial();
+>>>>>>> f5ffd8b4 (.)
         App::instance(IconFactory::class, $factory);
 
         Assert::assertSame([], app(GetAllIconsAction::class)->execute());
@@ -264,14 +288,22 @@ describe('UI actions — GetAllIconsAction con factory mock', function (): void 
 /** @return array<int|string, string> */
 function uiEvaluateSelectOptions(Select $select, Model $record, ?string $state): array
 {
+<<<<<<< HEAD
     $ref = new \ReflectionClass($select);
+=======
+    $ref = new ReflectionClass($select);
+>>>>>>> f5ffd8b4 (.)
     $prop = $ref->getProperty('options');
     $prop->setAccessible(true);
     $options = $prop->getValue($select);
     Assert::assertInstanceOf(\Closure::class, $options);
 
     /** @var array<int|string, string> $result */
+<<<<<<< HEAD
     $result = $options->call($select, $record, $state ?? '');
+=======
+    $result = ($options)->call($select, $record, $state ?? '');
+>>>>>>> f5ffd8b4 (.)
 
     return $result;
 }
@@ -279,21 +311,33 @@ function uiEvaluateSelectOptions(Select $select, Model $record, ?string $state):
 /** @return array<int|string, string> */
 function uiEvaluateColumnOptions(SelectStateColumn $column, Model $record, ?object $state): array
 {
+<<<<<<< HEAD
     $ref = new \ReflectionClass($column);
+=======
+    $ref = new ReflectionClass($column);
+>>>>>>> f5ffd8b4 (.)
     $prop = $ref->getProperty('options');
     $prop->setAccessible(true);
     $options = $prop->getValue($column);
     Assert::assertInstanceOf(\Closure::class, $options);
 
     /** @var array<int|string, string> $result */
+<<<<<<< HEAD
     $result = $options->call($column, $record, $state);
+=======
+    $result = ($options)->call($column, $record, $state);
+>>>>>>> f5ffd8b4 (.)
 
     return $result;
 }
 
 function uiInvokeBeforeStateUpdated(SelectStateColumn $column, Model $record, string $state): void
 {
+<<<<<<< HEAD
     $ref = new \ReflectionClass($column);
+=======
+    $ref = new ReflectionClass($column);
+>>>>>>> f5ffd8b4 (.)
     $prop = $ref->getProperty('beforeStateUpdated');
     $prop->setAccessible(true);
     $closure = $prop->getValue($column);
@@ -303,7 +347,11 @@ function uiInvokeBeforeStateUpdated(SelectStateColumn $column, Model $record, st
 
 function uiFirstActionSchemaComponent(Action $action): Select
 {
+<<<<<<< HEAD
     $ref = new \ReflectionClass($action);
+=======
+    $ref = new ReflectionClass($action);
+>>>>>>> f5ffd8b4 (.)
     $prop = $ref->getProperty('schema');
     $prop->setAccessible(true);
     /** @var callable|array<int, mixed>|null $schema */

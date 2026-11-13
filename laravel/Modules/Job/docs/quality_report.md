@@ -1,14 +1,18 @@
 ---
-title: "Quality Report — Job"
+issues: []
+discussions: []
+title: "Quality Report: Job"
 type: report
 tags: [quality, phpstan, pest, coverage]
 module: Job
 created: 2026-08-24
 updated: 2026-08-24
 qmd: "Job quality report phpstan pest coverage test ratio"
+status: superseded
+superseded_by: quality-report.md
 ---
 
-# Quality Report — Job
+# Quality Report: Job
 
 Aggiornato: 2026-08-24. Rigenera con: `bashscripts/tools/quality-report.sh Job`
 

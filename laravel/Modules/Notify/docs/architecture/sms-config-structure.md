@@ -16,6 +16,7 @@ related:
   - ../conventions/README.md
   - ../rules/README.md
   - ../best-practices/naming-conventions.md
+status: draft
 ---
 # Struttura della Configurazione SMS 
 
@@ -171,6 +172,7 @@ $retryDelay = $config['drivers'][$driver]['retry_delay'] ?? $config['retry']['de
 ## Collegamenti
 
 - [Configurazione Netfun](./netfun_config_requirements.md)
+- [Configurazione Netfun](../netfun_config_requirements.md)
 - [Provider SMS Supportati](./notifications/sms_provider_configuration.md)
 
 ---

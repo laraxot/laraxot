@@ -1,3 +1,15 @@
+---
+title: "html parity analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "html parity analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # HTML Parity Analysis — segnalazione-03-riepilogo
 
 **Date:** 2026-04-08

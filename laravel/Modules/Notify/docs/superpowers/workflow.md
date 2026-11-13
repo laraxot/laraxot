@@ -1,3 +1,15 @@
+---
+title: "workflow"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "workflow"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🦸 Superpowers Workflow Guide
 
 > **Last Updated**: 2026-03-31  
@@ -5,7 +17,6 @@
 > **Version**: v5.0.6
 
 ---
-
 ## 📋 Overview
 
 The Superpowers workflow is a structured development process that ensures quality through:

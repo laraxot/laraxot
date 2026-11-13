@@ -1,4 +1,7 @@
 ---
+qmd: "up"
+issues: []
+discussions: []
 title: 'Up'
 module: Rating
 type: reference
@@ -8,7 +11,10 @@ tags: [migrato-da-txt, rating]
 converted_from: up.txt
 created: 2026-08-24
 updated: 2026-08-24
+status: stale
 ---
+
+> Nota 2026-10-14 (docs-audit): Chiede di modificare laravel/Modules/IndennitaResponsabilita/app/Models/Rating.php, percorso che non esiste in questo repository (verificato 2026-10-14). Appunto di un altro progetto. Contenuto non riscritto, verificare prima di usarlo.
 
 aggiungere   al file laravel/Modules/IndennitaResponsabilita/app/Models/Rating.php
  /**

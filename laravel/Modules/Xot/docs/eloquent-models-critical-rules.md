@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Eloquent Models - Regole Critiche per Laraxot PTVX"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Eloquent Models - Regole Critiche per Laraxot PTVX"
+---
+>>>>>>> laraxot/dev
 # Eloquent Models - Regole Critiche per Laraxot PTVX
 
 ## DIVIETO ASSOLUTO: property_exists() con Modelli Eloquent
@@ -14,6 +27,7 @@ I modelli Eloquent utilizzano il pattern delle proprietà magiche:
 
 ### Alternative Corrette per Laraxot PTVX
 
+<<<<<<< HEAD
 **REGOLA CRITICA**: Per i modelli Eloquent, utilizzare SEMPRE `isset()` invece di `property_exists()` perché gli attributi sono magici (gestiti tramite `__get()`, `__set()`, `__isset()`).
 
 #### 1. Verificare Attributi del Modello
@@ -29,15 +43,25 @@ if (isset($model->field_name)) {
 }
 
 // ✅ CORRETTO - Verificare se un attributo esiste nel modello
+=======
+#### 1. Verificare Attributi del Modello
+```php
+// ✅ Verificare se un attributo esiste nel modello
+>>>>>>> laraxot/dev
 if ($model->hasAttribute('field_name')) {
     // logica corretta
 }
 
+<<<<<<< HEAD
 // ✅ CORRETTO - Verificare se un campo è fillable
+=======
+// ✅ Verificare se un campo è fillable
+>>>>>>> laraxot/dev
 if ($model->isFillable('field_name')) {
     // logica corretta per campi modificabili
 }
 
+<<<<<<< HEAD
 // ✅ CORRETTO - Verificare se un attributo non è null
 if (!is_null($model->field_name)) {
     // verifica valore non null
@@ -47,6 +71,16 @@ if (!is_null($model->field_name)) {
 $value = $model->getAttribute('field_name');
 if ($value !== null) {
     // Usa $value
+=======
+// ✅ Verificare se un attributo è stato impostato
+if (isset($model->field_name)) {
+    // verifica se l'attributo ha un valore
+}
+
+// ✅ Verificare se un attributo non è null
+if (!is_null($model->field_name)) {
+    // verifica valore non null
+>>>>>>> laraxot/dev
 }
 ```
 
@@ -180,4 +214,8 @@ $this->assertTrue(property_exists($model, 'field_name')); // Sempre false
 4. Verifica di logiche correlate nei trait e BaseModel
 5. Aggiornamento documentazione moduli specifici
 
+<<<<<<< HEAD
 *Ultimo aggiornamento: agosto 2025 - Regola critica per architettura Laraxot PTVX*
+=======
+*Ultimo aggiornamento: agosto 2025 - Regola critica per architettura Laraxot PTVX*
+>>>>>>> laraxot/dev

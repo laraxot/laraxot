@@ -1,10 +1,14 @@
 ---
+qmd: "zen of documentation"
+issues: []
+discussions: []
 title: "Zen of Documentation - Filosofia Unificata"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # 🧘 Zen of Documentation - Filosofia Unificata
@@ -84,6 +88,7 @@ Ogni documento deve essere:
 ```bash
 # ❌ CATTIVO
 phpstan-analysis-2026-03-02.md
+phpstan-analysis-level-report.md
 session-report-january.md
 achievement-2025-10-10.md
 
@@ -378,6 +383,8 @@ python scripts/run.py ask_question.py \
 
 - [Documentation Governance](../../docs/DOCUMENTATION_GOVERNANCE.md)
 - [Multi-Agent Collaboration](../../docs/MULTI_AGENT_COLLABORATION.md)
+- [Documentation Governance](../../../DOCUMENTATION_GOVERNANCE.md)
+- [Multi-Agent Collaboration](../../../MULTI_AGENT_COLLABORATION.md)
 - [Filament Blocks System](../blocks/content-blocks-system.md)
 - [OpenViking Global Context](../../bashscripts/ai/openviking.md)
 

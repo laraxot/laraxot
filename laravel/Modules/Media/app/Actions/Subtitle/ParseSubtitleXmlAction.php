@@ -16,13 +16,15 @@ use function Safe\simplexml_load_string;
 /**
  * Parses a subtitle file (currently only XML is supported) into structured
  * sentence/item timing data.
+ *
+ * @phpstan-type SubtitleRow array{sentence_i: int, item_i: int, start: float|int, end: float|int, time: string, text: string}
  */
 class ParseSubtitleXmlAction
 {
     use QueueableAction;
 
     /**
-     * @return array<int, array<string, float|int|string|mixed>>
+     * @return list<SubtitleRow>
      */
     public function execute(string $filePath): array
     {
@@ -38,7 +40,7 @@ class ParseSubtitleXmlAction
     }
 
     /**
-     * @return array<int, array<string, float|int|string|mixed>>
+     * @return list<SubtitleRow>
      */
     private function getFromXml(string $filePath): array
     {

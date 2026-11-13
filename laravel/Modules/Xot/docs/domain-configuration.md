@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Gestione Domini e Configurazioni"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Gestione Domini e Configurazioni"
+---
+>>>>>>> laraxot/dev
 # Gestione Domini e Configurazioni
 
 ## Prerequisiti
@@ -76,20 +89,33 @@ patient::images/logo-horizontal.svg -> /Modules/Patient/resources/images/logo-ho
 ```
 
 ## Collegamenti
+<<<<<<< HEAD
 - [Configurazione Generale](configuration.md)
+=======
+- [Configurazione Generale](CONFIGURATION.md)
+>>>>>>> laraxot/dev
 - [Risoluzione dei Loghi](LOGO_RESOLUTION.md) - **IMPORTANTE**: Processo dettagliato di risoluzione dei loghi
 - [Gestione Asset](assets.md)
 - [Struttura Temi](themes.md)
 - [Linee Guida per i Loghi](../../../docs/standards/logo_guidelines.md)
+<<<<<<< HEAD
 - [Documentazione Principale](../../../docs/README.md)
 - [Standard di Progetto](../../../docs/standards/README.md)
+=======
+- [Documentazione Principale](../../../../docs/README.md)
+- [Standard di Progetto](standards/README.md)
+>>>>>>> laraxot/dev
 - [Gestione Media](../../Media/docs/README.md)
 - [Gestione UI](../../UI/docs/README.md)
 - [Gestione Temi](../../Cms/docs/themes.md)
 
 ## Collegamenti Correlati
 - [Configurazione Moduli](MODULE_CONFIGURATION.md)
+<<<<<<< HEAD
 - [Gestione Risorse](assets.md)
+=======
+- [Gestione Risorse](ASSETS.md)
+>>>>>>> laraxot/dev
 - [Linee Guida Sviluppo](DEVELOPMENT_GUIDELINES.md)
 - [Troubleshooting](troubleshooting.md)
 
@@ -169,6 +195,12 @@ patient::images/logo-horizontal.svg -> /Modules/Patient/resources/images/logo-ho
    - Assicurarsi che tutte le versioni necessarie del logo siano presenti
 
 ## Collegamenti
+<<<<<<< HEAD
 - [Configurazione Generale](configuration.md)
 - [Gestione Asset](assets.md)
 - [Struttura Temi](themes.md)
+=======
+- [Configurazione Generale](CONFIGURATION.md)
+- [Gestione Asset](assets.md)
+- [Struttura Temi](themes.md) 
+>>>>>>> laraxot/dev

@@ -1,3 +1,15 @@
+---
+title: "layout usage patterns"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "layout usage patterns"
+issues: []
+discussions: []
+status: draft
+---
+
 # Pattern di Utilizzo Layout - Tema Sixteen
 
 ## Problema Identificato

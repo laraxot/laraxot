@@ -1,3 +1,11 @@
+---
+title: "Analisi Violazione Filosofia Laraxot - Migration Teams"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, user]
+qmd: "analisi violazione filosofia laraxot - migration teams user"
+---
 # Analisi Violazione Filosofia Laraxot - Migration Teams
 
 ## Data
@@ -77,7 +85,6 @@ Rimuovere il file `2025_05_16_221811_add_owner_id_to_teams_table.php` dopo aver 
 - [Filosofia Migrazioni Laraxot](./laraxot-migration-philosophy.md)
 - [Principi Migrazioni UUID e Polimorfismo](../../Geo/docs_project/archive/principi_migrazioni_laraxot_uuid_polimorfismo.md)
 - [Regole Aggiornamento Migrazioni](../../Xot/docs/migration-update-rules.md)
->>>>>>> 87273113 (.)
 
 ## Checklist Correzione
 

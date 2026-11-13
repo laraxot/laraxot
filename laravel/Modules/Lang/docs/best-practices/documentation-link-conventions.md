@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Convenzioni per i Link nella Documentazione"
 module: "Lang"
 type: concept
@@ -7,7 +9,8 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "links01"
 related:
-  - "./italian-text-refined-audit-report.md"
+  - "../italian-text-refined-audit-report.md"
+status: draft
 ---
 # Convenzioni per i Link nella Documentazione
 

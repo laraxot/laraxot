@@ -1,3 +1,15 @@
+---
+title: "xotbasepivot executive summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "xotbasepivot executive summary"
+issues: []
+discussions: []
+status: draft
+---
+
 # XotBasePivot - Executive Summary
 
 ## 🎯 Decisione Strategica: APPROVATO
@@ -8,7 +20,6 @@
 **Raccomandazione:** ✅ **IMPLEMENTARE IMMEDIATAMENTE**
 
 ---
-
 ## 📊 The Bottom Line
 
 ### Problema
@@ -152,11 +163,13 @@
    - Rollback plan
 
 5. **[User Module Guide](../Modules/User/docs/models/xotbasepivot-migration.md)** (2.500+ parole)
+5. **[User Module Guide](../../User/docs/models/xotbasepivot-migration.md)** (2.500+ parole)
    - 7 Pivot concreti
    - Permission system
    - Teams & Devices
 
 6. **[Blog Module Guide](../Modules/Blog/docs/models/xotbasepivot-migration.md)** (2.500+ parole)
+6. **[Blog Module Guide](../../Blog/docs/models/xotbasepivot-migration.md)** (2.500+ parole)
    - Caso speciale SoftDeletes
    - Pattern a 3 livelli
    - Best practices

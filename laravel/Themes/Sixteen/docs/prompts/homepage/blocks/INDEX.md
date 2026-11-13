@@ -1,3 +1,15 @@
+---
+title: "INDEX"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "INDEX"
+issues: []
+discussions: []
+status: draft
+---
+
 # Homepage Blocks - Index Completo
 
 **Pagina di Riferimento:** https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html  
@@ -48,7 +60,6 @@ La homepage di riferimento contiene **6 blocchi principali** organizzati vertica
 **Tailwind:** Da implementare con `@apply` + Alpine.js per toggle menu
 
 ---
-
 ### Block 01: Hero/Contenuti in Evidenza
 
 **Sezione principale** - Notizia in primo piano con immagine
@@ -206,8 +217,8 @@ La homepage di riferimento contiene **6 blocchi principali** organizzati vertica
 
 - [Design Comuni Blocks Analysis](../../design-comuni/design-comuni-block-analysis.md)
 - [HTML Comparison Tools](../../../../../../bashscripts/docs/html-comparison/README.md)
-- [Page Routing Architecture](../../architecture/PAGE_ROUTING_ARCHITECTURE.md)
-- [Component System](../../components/)
+- [Page Routing Architecture](../../../architecture/page-routing-architecture.md)
+- [Component System](../../../components)
 
 ## 📝 Note
 

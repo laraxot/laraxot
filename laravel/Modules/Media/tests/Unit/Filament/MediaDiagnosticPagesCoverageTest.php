@@ -12,6 +12,10 @@ use ReflectionClass;
 
 uses(TestCase::class)->group('no-media-db');
 
+/**
+ * Invoker via reflection: `mixed ...$args` e ritorno `mixed` sono voluti,
+ * gli argomenti e i ritorni dei metodi diagnostici sono eterogenei.
+ */
 function mediaInvoke(object $target, string $method, mixed ...$args): mixed
 {
     $ref = new ReflectionClass($target);
@@ -23,6 +27,8 @@ function mediaInvoke(object $target, string $method, mixed ...$args): mixed
 
 /**
  * Invoca un metodo che il contratto dichiara `string` e ne verifica il tipo di ritorno.
+ *
+ * @param  mixed  ...$args  Argomenti eterogenei per reflection
  */
 function mediaInvokeString(object $target, string $method, mixed ...$args): string
 {
@@ -37,6 +43,7 @@ function mediaInvokeString(object $target, string $method, mixed ...$args): stri
 /**
  * Invoca un metodo che il contratto dichiara `array` e ne verifica il tipo di ritorno.
  *
+ * @param  mixed  ...$args  Argomenti eterogenei per reflection
  * @return array<array-key, mixed>
  */
 function mediaInvokeArray(object $target, string $method, mixed ...$args): array

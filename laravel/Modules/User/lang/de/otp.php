@@ -92,7 +92,7 @@ return [
             'name' => 'Gestione Utenti',
             'description' => 'Gestione delle password usa e getta',
         ],
-        'label' => 'otp',
+        'label' => 'OTP',
         'sort' => '31',
         'icon' => 'user-user-otp',
     ],

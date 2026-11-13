@@ -1,5 +1,14 @@
 ---
+title: "no phpstan probe policy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "no phpstan probe policy"
+issues: []
+discussions: []
 description: Divieto di creare cartelle o file probe per PHPStan in questo modulo.
+status: draft
 ---
 
 # No PHPStan probe files in Tenant
@@ -30,7 +39,7 @@ necessaria sui trait sottostanti: `SushiToCsv` e `SushiToPhpArray` avevano già
 `@phpstan-ignore trait.unused`; `SushiToJsons` è già consumato in produzione
 (`Modules/Tenant/app/Models/BaseModelJsons.php` e diversi modelli Cms), quindi
 visibile a PHPStan senza bisogno di probe o ignore. I probe duplicavano fix già
-applicati altrove o coprivano un falso problema — pura zavorra.
+applicati altrove o coprivano un falso problema: pura zavorra.
 
 ## Riferimento
 

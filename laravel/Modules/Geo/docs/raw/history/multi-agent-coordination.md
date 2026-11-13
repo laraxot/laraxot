@@ -1,3 +1,14 @@
+---
+title: "multi agent coordination"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "multi agent coordination"
+issues: []
+discussions: []
+---
+
 # Multi-Agent AI Coordination Guide
 
 > **For**: All AI Agents working on PTVX bases  
@@ -6,6 +17,14 @@
 
 ---
 
+title: "multi agent coordination"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "multi agent coordination"
+issues: []
+discussions: []
 ## Project Structure
 
 ### Multiple Bases, Same Pattern

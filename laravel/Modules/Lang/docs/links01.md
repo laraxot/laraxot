@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Links01"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "links01"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 https://github.com/JoggApp/laravel-google-translate
 

@@ -1,6 +1,15 @@
 ---
+title: "leaflet map flicker visual contract"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "leaflet map flicker visual contract"
+issues: []
+discussions: []
 name: leaflet-map-flicker-visual-contract
 description: Theme-side visual contract for stable Leaflet rendering inside public wizards
+status: draft
 ---
 
 # Leaflet Map Flicker Visual Contract

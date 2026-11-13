@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Employee\Database\Factories\WorkHourFactory;
 use Modules\Employee\Enums\WorkHourStatusEnum;
 use Modules\Employee\Enums\WorkHourTypeEnum;
+use Modules\TechPlanner\Models\Profile;
 use Modules\User\Models\User;
-use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Class WorkHour.
@@ -34,11 +34,11 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property Carbon|null $updated_at
  * @property-read Employee $employee
  * @property-read User|null $approvedBy
- * @property-read ProfileContract|null $creator
+ * @property-read Profile|null $creator
  * @property-read string $formatted_date
  * @property-read string $formatted_date_time
  * @property-read string $formatted_time
- * @property-read ProfileContract|null $updater
+ * @property-read Profile|null $updater
  *
  * @method static Builder<static>|WorkHour forDate(\Carbon\Carbon $date)
  * @method static Builder<static>|WorkHour forEmployee(int $employeeId)
@@ -63,7 +63,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|WorkHour whereType($value)
  * @method static Builder<static>|WorkHour whereUpdatedAt($value)
  *
- * @property-read ProfileContract|null $deleter
+ * @property-read Profile|null $deleter
  *
  * @method static WorkHourFactory factory($count = null, $state = [])
  *
@@ -71,16 +71,14 @@ use Modules\Xot\Contracts\ProfileContract;
  */
 class WorkHour extends BaseModel
 {
-    /** @var list<string> */
-    public const array TYPES = [
+    public const TYPES = [
         WorkHourTypeEnum::CLOCK_IN->value,
         WorkHourTypeEnum::CLOCK_OUT->value,
         WorkHourTypeEnum::BREAK_START->value,
         WorkHourTypeEnum::BREAK_END->value,
     ];
 
-    /** @var list<string> */
-    public const array STATUSES = [
+    public const STATUSES = [
         'pending',
         'approved',
         'rejected',

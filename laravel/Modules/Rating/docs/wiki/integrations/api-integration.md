@@ -1,7 +1,13 @@
 ---
-module: theme
-topic: api-integration
-canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
+title: "api integration"
+type: alias
+status: superseded
+canonical: "api-integration.md"
+qmd: "api-integration alias superseded"
 ---
 
-See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
+# api integration
+
+Documento identico al canonico: [api-integration.md](../../api-integration.md).
+
+Canonico: `laravel/Modules/Rating/docs/api-integration.md`. Qui non ci sono istruzioni: seguire il file collegato.

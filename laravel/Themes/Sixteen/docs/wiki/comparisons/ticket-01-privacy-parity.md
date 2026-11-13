@@ -1,7 +1,13 @@
 ---
+title: "ticket 01 privacy parity"
+updated: 2026-09-26
+qmd: "ticket 01 privacy parity"
+issues: []
+discussions: []
 type: comparison
 created: 2026-05-04
 tags: [design-comuni, visual-parity, segnalazione, privacy]
+status: draft
 ---
 
 # Comparison: Design Comuni vs Local Segnalazione (Step 1)

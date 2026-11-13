@@ -1,11 +1,17 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "frontend design anthropic civic mode"
+issues: []
+discussions: []
 title: frontend design anthropic — modalità civic su sixteen
 type: memory
 module: Sixteen
 updated: 2026-06-03
 related:
   - ../concepts/frontend-design-civic-anthropic-adaptation.md
-  - ../../../../docs/wiki/skills/frontend-design-civic-pa.md
+  - ../../../../../../docs/wiki/skills/frontend-design-civic-pa.md
+status: draft
 ---
 
 # Memoria — Anthropic frontend-design su Fixcity

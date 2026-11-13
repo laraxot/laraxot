@@ -1,3 +1,9 @@
+---
+title: "Employee - MODULE_SETUP_GUIDE"
+module: Employee
+bmad: true
+status: active
+---
 # Guida Configurazione Modulo Employee
 
 ## Panoramica

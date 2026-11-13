@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Unit;
 
-use Filament\Forms\Components\Builder\Block;
 use Illuminate\Support\Facades\App;
-use Modules\Rating\Datas\RatingData;
 use Modules\Rating\Enums\SupportedLocale;
 use Modules\Rating\Filament\Blocks\Rating;
 use Modules\Rating\Tests\TestCase;
@@ -17,7 +15,6 @@ uses(TestCase::class);
 test('create costruisce il blocco con il tipo canonico', function (): void {
     $block = Rating::create();
 
-    Assert::assertInstanceOf(Block::class, $block);
     Assert::assertSame(Rating::BLOCK_TYPE, $block->getName());
 });
 
@@ -36,7 +33,6 @@ test('createFromFormData produce un RatingData', function (): void {
         'locale' => 'en',
     ]);
 
-    Assert::assertInstanceOf(RatingData::class, $data);
     Assert::assertSame('Dal form', $data->title);
     Assert::assertSame(2, $data->position);
     Assert::assertSame(SupportedLocale::EN, $data->locale);
@@ -45,7 +41,6 @@ test('createFromFormData produce un RatingData', function (): void {
 test('createAdvanced accetta opzioni esplicite senza toccare il container', function (): void {
     $block = Rating::createAdvanced(options: ['vista-a' => 'Vista A', 'vista-b' => 'Vista B']);
 
-    Assert::assertInstanceOf(Block::class, $block);
     Assert::assertSame(Rating::BLOCK_TYPE, $block->getName());
 });
 

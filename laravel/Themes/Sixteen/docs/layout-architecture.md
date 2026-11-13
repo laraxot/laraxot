@@ -1,3 +1,15 @@
+---
+title: "layout architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "layout architecture"
+issues: []
+discussions: []
+status: draft
+---
+
 # Layout Architecture - Sixteen Theme
 
 **Date:** 2026-04-01  
@@ -5,7 +17,6 @@
 **Type:** Architecture Decision Record (ADR)  
 
 ---
-
 ## Executive Summary
 
 Il tema Sixteen utilizza un'**architettura a livelli** per i componenti layout Blade, con responsabilità ben definite e relazioni gerarchiche documentate tramite indici bidirezionali.

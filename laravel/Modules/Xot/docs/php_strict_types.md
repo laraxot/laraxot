@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "PHP Strict Types in Laravel Modules"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "php strict types in laravel modules xot"
+---
+>>>>>>> laraxot/dev
 # PHP Strict Types in Laravel Modules
 
 ## Overview

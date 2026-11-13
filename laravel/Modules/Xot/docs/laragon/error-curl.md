@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "Error Curl"
 module: "Xot"
 type: concept
@@ -23,6 +24,23 @@ Locate your php.ini file and find the line ;curl.cainfo =.
 Change it to: curl.cainfo = "C:\path\to\cacert.pem" (replace with the actual path where you saved the cacert.pem file).
 Restart Laragon:
 After making these changes, restart your Laragon server to apply the new settings.
+=======
+title: "error curl"
+type: note
+status: draft
+updated: 2026-10-22
+tags: [docs, xot, laragon]
+qmd: "error curl xot"
+---
+Download the latest cacert.pem file from
+https://curl.se/docs/caextract.html
+
+Update your php.ini file:  
+Locate your php.ini file and find the line ;curl.cainfo =.  
+Change it to: curl.cainfo = "C:\path\to\cacert.pem" (replace with the actual path where you saved the cacert.pem file).  
+Restart Laragon:  
+After making these changes, restart your Laragon server to apply the new settings.  
+>>>>>>> laraxot/dev
 
 ---------------------------------
 c:\laragon\etc\ssl\solo.cer
@@ -37,6 +55,7 @@ openssl.cafile = "C:\xampp\php\extras\ssl\cacert.pem"
 
 [curl]
 curl.cainfo = "PATH/TO/cacert.pem"
+<<<<<<< HEAD
 
 [openssl]
 openssl.capath = "PATH/TO/cacert.pem"
@@ -45,11 +64,23 @@ openssl.cafile = "PATH/TO/cacert.pem"
 var_dump(openssl_get_cert_locations());
 echo "openssl.cafile: ", ini_get('openssl.cafile'), "\n";
 echo "curl.cainfo: ", ini_get('curl.cainfo'), "\n";
+=======
+ 
+
+[openssl]
+openssl.capath = "PATH/TO/cacert.pem"  
+openssl.cafile = "PATH/TO/cacert.pem"
+
+var_dump(openssl_get_cert_locations());  
+echo "openssl.cafile: ", ini_get('openssl.cafile'), "\n";  
+echo "curl.cainfo: ", ini_get('curl.cainfo'), "\n";  
+>>>>>>> laraxot/dev
 
 $http = new GuzzleHttp\Client(['verify' => '/path/to/cacert.pem']);
 $client = new Google_Client();
 $client->setHttpClient($http);
 
+<<<<<<< HEAD
 --------------------
 composer config -g -- disable-tls true
 composer config -g secure-http false
@@ -59,3 +90,18 @@ composer config --global cafile PATH/TO/cacert.pem
 composer config --global capath PATH/TO/DIRECTORY/WHERE cacert.pem is placed
 
 See canonical documentation: ../../../../Themes/docs/shared-components/error-curl-60-Modules.md
+=======
+
+
+--------------------
+composer config -g -- disable-tls true  
+composer config -g secure-http false   
+composer clearcache   
+
+composer config --global cafile PATH/TO/cacert.pem  
+composer config --global capath PATH/TO/DIRECTORY/WHERE cacert.pem is placed  
+
+
+
+
+>>>>>>> laraxot/dev

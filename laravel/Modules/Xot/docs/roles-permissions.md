@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Regole generali su roles, permissions e guardname"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Regole generali su roles, permissions e guardname"
+---
+>>>>>>> laraxot/dev
 # Regole generali su roles, permissions e guard_name
 
 ## Regola generale
@@ -25,6 +38,7 @@ UPDATE roles SET guard_name = 'web' WHERE guard_name = '' OR guard_name IS NULL;
 UPDATE permissions SET guard_name = 'web' WHERE guard_name = '' OR guard_name IS NULL;
 ```
 
+<<<<<<< HEAD
 ## Estensione User: `hasPermissionToOrCreate`
 
 Il contratto `UserContract` dichiara il metodo di auto-creazione del permesso. L'implementazione canonica e la semantica di guard/team sono documentate in User:
@@ -33,5 +47,7 @@ Il contratto `UserContract` dichiara il metodo di auto-creazione del permesso. L
 - [Trait `HasSpatiePermission`](../../User/app/Models/Traits/HasSpatiePermission.php)
 - [SSoT permessi User](../../User/docs/permissions.md)
 
+=======
+>>>>>>> laraxot/dev
 ## Collegamento documentazione specifica
 Vedi anche: ../../User/docs/roles-permissions.md

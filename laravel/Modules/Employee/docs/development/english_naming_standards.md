@@ -1,3 +1,9 @@
+---
+title: "Employee - ENGLISH_NAMING_STANDARDS"
+module: Employee
+bmad: true
+status: active
+---
 # English Naming Standards - Employee Module
 
 ## ⚠️ REGOLA CRITICA ASSOLUTA ⚠️

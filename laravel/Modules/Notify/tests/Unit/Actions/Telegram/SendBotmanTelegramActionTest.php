@@ -12,6 +12,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
 
+uses(TestCase::class);
 describe('SendBotmanTelegramAction', function () {
     it('can be referenced via ReflectionClass without instantiation', function () {
         $reflection = new \ReflectionClass(SendBotmanTelegramAction::class);
@@ -55,11 +56,13 @@ describe('SendBotmanTelegramAction', function () {
     });
 
     it('has required imports', function () {
-        $reflection = new \ReflectionClass(SendBotmanTelegramAction::class);
-        $filename = $reflection->getFileName();
         $content = TestCase::notifyReflectionSource(new \ReflectionClass(SendBotmanTelegramAction::class));
 
-        Assert::assertStringContainsString('declare(strict_types=1)', (string) $content);
+        Assert::assertStringContainsString('declare(strict_types=1)', $content);
+        Assert::assertStringContainsString('use Modules\\Notify\\Contracts\\TelegramProviderActionInterface;', $content);
+        Assert::assertStringContainsString('use Modules\\Notify\\Datas\\TelegramData;', $content);
+        Assert::assertStringContainsString('use Spatie\\QueueableAction\\QueueableAction;', $content);
+        Assert::assertStringContainsString('use Modules\\Xot\\Actions\\Cast\\SafeIntCastAction;', $content);
     });
 
     it('uses QueueableAction trait', function () {

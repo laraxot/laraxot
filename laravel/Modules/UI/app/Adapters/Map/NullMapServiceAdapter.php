@@ -12,8 +12,7 @@ use Modules\UI\Contracts\MapServiceContract;
 final class NullMapServiceAdapter implements MapServiceContract
 {
     /**
-     * @param array<string, mixed> $filters
-     *
+     * @param  array<string, mixed>  $filters
      * @return list<array<string, mixed>>
      */
     public function getMarkers(array $filters): array
@@ -22,8 +21,7 @@ final class NullMapServiceAdapter implements MapServiceContract
     }
 
     /**
-     * @param array<string, mixed> $filters
-     *
+     * @param  array<string, mixed>  $filters
      * @return array<string, mixed>
      */
     public function getMapStats(array $filters): array
@@ -32,7 +30,7 @@ final class NullMapServiceAdapter implements MapServiceContract
     }
 
     /**
-     * @param array<string, mixed> $filters
+     * @param  array<string, mixed>  $filters
      */
     public function exportData(array $filters, string $format): string
     {

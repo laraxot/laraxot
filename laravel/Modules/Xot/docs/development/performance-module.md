@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Modulo Performance"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, development]
+qmd: "Modulo Performance"
+---
+>>>>>>> laraxot/dev
 # Modulo Performance
 
 ## Overview
@@ -138,4 +151,8 @@ enum WorkerType: string
 3. **Documentazione**
    - Mantenere aggiornata la documentazione
    - Documentare le modifiche al database
+<<<<<<< HEAD
    - Documentare le API e i servizi
+=======
+   - Documentare le API e i servizi 
+>>>>>>> laraxot/dev

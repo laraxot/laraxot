@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Trait Mancanti e Miglioramenti Architetturali"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Trait Mancanti e Miglioramenti Architetturali"
+---
+>>>>>>> laraxot/dev
 # Trait Mancanti e Miglioramenti Architetturali
 
 ## Panoramica
@@ -612,8 +625,11 @@ class AlertWidget extends BaseTableWidget
 
 ## 🔗 Collegamenti Correlati
 
+<<<<<<< HEAD
 - [Analisi Completa Codice](./comprehensive_code_analysis.md)
 - [Architettura Moduli](architecture.md)
+=======
+>>>>>>> laraxot/dev
 - [Analisi Completa Codice](./COMPREHENSIVE_CODE_ANALYSIS.md)
 - [Architettura Moduli](./ARCHITECTURE.md)
 - [Performance Guide](./PERFORMANCE_GUIDE.md)

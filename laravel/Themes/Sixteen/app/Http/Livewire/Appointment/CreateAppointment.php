@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Themes\Sixteen\Enums\AppointmentStatusEnum;
 use Themes\Sixteen\Models\Appointment;
 use Themes\Sixteen\Models\Citizen;
 use Themes\Sixteen\Models\Office;
@@ -251,7 +252,7 @@ class CreateAppointment extends Component
                 'purpose' => $this->purpose,
                 'notes' => $this->notes,
                 'required_documents' => $this->requiredDocuments,
-                'status' => Appointment::STATUS_PENDING,
+                'status' => AppointmentStatusEnum::PENDING,
                 'metadata' => [
                     'emergency_contact' => $this->emergencyContact,
                     'is_self_booking' => $this->isSelf,

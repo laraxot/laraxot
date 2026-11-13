@@ -13,51 +13,53 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-<<<<<<< HEAD
+<<<<<<< .merge_file_Dh7BvK
 describe('List Log Activities Page Coverage', function (): void {
     test('get breadcrumb returns string', function (): void {
         $result = TestCase::makeListLogActivitiesPage()->getBreadcrumb();
 =======
+<<<<<<< .merge_file_2Y6j17
 beforeEach(function (): void {
-    /** @var \Modules\Activity\Tests\TestCase $this */
-$this->page = new class extends ListLogActivities
+    /** @var TestCase $this */
+    $this->page = new class extends ListLogActivities
+    {
+        public static function getResource(): string
         {
-            public static function getResource(): string
-            {
-                return ActivityResource::class;
-            }
+            return ActivityResource::class;
+        }
 
-            public function exposeRestoreSuccess(): Notification
-            {
-                return $this->sendRestoreSuccessNotification();
-            }
+        public function exposeRestoreSuccess(): Notification
+        {
+            return $this->sendRestoreSuccessNotification();
+        }
 
-            public function exposeRestoreFailure(?string $message = null): Notification
-            {
-                return $this->sendRestoreFailureNotification($message);
-            }
-        };
+        public function exposeRestoreFailure(?string $message = null): Notification
+        {
+            return $this->sendRestoreFailureNotification($message);
+        }
+    };
 });
 
 describe('List Log Activities Page Coverage', function (): void {
     test('get breadcrumb returns string', function (): void {
-        /** @var \Modules\Activity\Tests\TestCase $this */
-$result = $this->requirePage()->getBreadcrumb();
->>>>>>> 13cf1831 (.)
+        /** @var TestCase $this */
+        $result = $this->requirePage()->getBreadcrumb();
+=======
+describe('List Log Activities Page Coverage', function (): void {
+    test('get breadcrumb returns string', function (): void {
+        $result = TestCase::makeListLogActivitiesPage()->getBreadcrumb();
+>>>>>>> .merge_file_wl2poY
+>>>>>>> .merge_file_kDmH6S
 
         Assert::assertNotEmpty($result);
     });
 
     test('get breadcrumb uses static breadcrumb when set', function (): void {
-<<<<<<< HEAD
 <<<<<<< .merge_file_Gisxmu
         $page = new class() extends ListLogActivities
 =======
         $page = new class extends ListLogActivities
 >>>>>>> .merge_file_m6CipQ
-=======
-$page = new class extends ListLogActivities
->>>>>>> 13cf1831 (.)
         {
             protected static ?string $breadcrumb = 'Custom Breadcrumb';
 
@@ -72,7 +74,6 @@ $page = new class extends ListLogActivities
     });
 
     test('can restore activity returns false when resource class does not exist', function (): void {
-<<<<<<< HEAD
         Assert::assertFalse(class_exists('NonExistentClass\That\Does\Not\Exist'));
     });
 
@@ -82,13 +83,6 @@ $page = new class extends ListLogActivities
 =======
         $page = new class extends ListLogActivities
 >>>>>>> .merge_file_m6CipQ
-=======
-Assert::assertFalse(class_exists('NonExistentClass\That\Does\Not\Exist'));
-    });
-
-    test('can restore activity returns false when resource lacks can restore method', function (): void {
-$page = new class extends ListLogActivities
->>>>>>> 13cf1831 (.)
         {
             public static function getResource(): string
             {
@@ -100,42 +94,42 @@ $page = new class extends ListLogActivities
     });
 
     test('get pagination mode returns default', function (): void {
-<<<<<<< HEAD
+<<<<<<< .merge_file_Dh7BvK
         $mode = TestCase::makeListLogActivitiesPage()->getPaginationMode();
 =======
-$mode = $this->requirePage()->getPaginationMode();
->>>>>>> 13cf1831 (.)
+<<<<<<< .merge_file_2Y6j17
+        $mode = $this->requirePage()->getPaginationMode();
+=======
+        $mode = TestCase::makeListLogActivitiesPage()->getPaginationMode();
+>>>>>>> .merge_file_wl2poY
+>>>>>>> .merge_file_kDmH6S
 
         Assert::assertSame(PaginationMode::Default, $mode);
     });
 
     test('get field label returns name when not in map', function (): void {
-<<<<<<< HEAD
         try {
+<<<<<<< .merge_file_Dh7BvK
             $label = TestCase::makeListLogActivitiesPage()->getFieldLabel('nonexistent_field');
+=======
+<<<<<<< .merge_file_2Y6j17
+            $label = $this->requirePage()->getFieldLabel('nonexistent_field');
+=======
+            $label = TestCase::makeListLogActivitiesPage()->getFieldLabel('nonexistent_field');
+>>>>>>> .merge_file_wl2poY
+>>>>>>> .merge_file_kDmH6S
             Assert::assertSame('nonexistent_field', $label);
         } catch (\Throwable $e) {
             Assert::markTestSkipped('getFieldLabel() method not available in test context');
-=======
-try {
-            $label = $this->requirePage()->getFieldLabel('nonexistent_field');
-            Assert::assertSame('nonexistent_field', $label);
-        } catch (\Throwable $e) {
-            $this->skipTest('getFieldLabel() method not available in test context');
->>>>>>> 13cf1831 (.)
         }
     });
 
     test('send restore success notification returns notification', function (): void {
-<<<<<<< HEAD
 <<<<<<< .merge_file_Gisxmu
         $page = new class() extends ListLogActivities
 =======
         $page = new class extends ListLogActivities
 >>>>>>> .merge_file_m6CipQ
-=======
-$page = new class extends ListLogActivities
->>>>>>> 13cf1831 (.)
         {
             /** @return class-string */
             public static function getResource(): string
@@ -154,15 +148,11 @@ $page = new class extends ListLogActivities
     });
 
     test('send restore failure notification without message returns notification', function (): void {
-<<<<<<< HEAD
 <<<<<<< .merge_file_Gisxmu
         $page = new class() extends ListLogActivities
 =======
         $page = new class extends ListLogActivities
 >>>>>>> .merge_file_m6CipQ
-=======
-$page = new class extends ListLogActivities
->>>>>>> 13cf1831 (.)
         {
             /** @return class-string */
             public static function getResource(): string
@@ -181,15 +171,11 @@ $page = new class extends ListLogActivities
     });
 
     test('send restore failure notification with message includes body', function (): void {
-<<<<<<< HEAD
 <<<<<<< .merge_file_Gisxmu
         $page = new class() extends ListLogActivities
 =======
         $page = new class extends ListLogActivities
 >>>>>>> .merge_file_m6CipQ
-=======
-$page = new class extends ListLogActivities
->>>>>>> 13cf1831 (.)
         {
             /** @return class-string */
             public static function getResource(): string
@@ -208,11 +194,15 @@ $page = new class extends ListLogActivities
     });
 
     test('can restore activity with record executes resource check', function (): void {
-<<<<<<< HEAD
+<<<<<<< .merge_file_Dh7BvK
         $result = TestCase::makeListLogActivitiesPage()->canRestoreActivity();
 =======
-$result = $this->requirePage()->canRestoreActivity();
->>>>>>> 13cf1831 (.)
+<<<<<<< .merge_file_2Y6j17
+        $result = $this->requirePage()->canRestoreActivity();
+=======
+        $result = TestCase::makeListLogActivitiesPage()->canRestoreActivity();
+>>>>>>> .merge_file_wl2poY
+>>>>>>> .merge_file_kDmH6S
         Assert::assertFalse($result);
     });
 });

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 return [
     'navigation' => [
-        'label' => 'notification log.navigation',
-        'group' => 'notification log.navigation',
-        'icon' => 'notification log.navigation',
+        'label' => 'Log notifiche',
+        'group' => 'Sistema',
+        'icon' => 'heroicon-o-bell',
         'sort' => 73,
     ],
 ];

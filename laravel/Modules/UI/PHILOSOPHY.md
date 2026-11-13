@@ -1,3 +1,23 @@
+<<<<<<< .merge_file_TYxrYU
+<<<<<<< .merge_file_PJHSdd
+=======
+=======
+>>>>>>> .merge_file_062KgR
+---
+title: "PHILOSOPHY"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PHILOSOPHY"
+issues: []
+discussions: []
+---
+
+<<<<<<< .merge_file_TYxrYU
+>>>>>>> .merge_file_MiXxFD
+=======
+>>>>>>> .merge_file_062KgR
 # UI Module Philosophy
 
 Reusable components, design system, and patterns for Filament, Folio, and Volt across all 47 modules.

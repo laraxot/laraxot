@@ -9,11 +9,18 @@ use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Xot\Actions\Cast\SafeIntCastAction;
 use Safe\Exceptions\JsonException;
+<<<<<<< HEAD
 
 use function Safe\json_decode;
 
 use Spatie\QueueableAction\QueueableAction;
 
+=======
+use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\json_decode;
+
+>>>>>>> laraxot/dev
 class ChatOllamaAction
 {
     use QueueableAction;
@@ -44,7 +51,10 @@ class ChatOllamaAction
      *     think?: string,
      *     options?: array<string, float|int>
      * } $options
+<<<<<<< HEAD
      *
+=======
+>>>>>>> laraxot/dev
      * @return array{
      *     content: string,
      *     thinking: string|null,

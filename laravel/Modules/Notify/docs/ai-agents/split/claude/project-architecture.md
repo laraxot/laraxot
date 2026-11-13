@@ -1,3 +1,22 @@
+---
+title: "project architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "project architecture"
+issues: []
+discussions: []
+status: draft
+---
+
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 === project architecture rules ===
 
 ## FIXCITY PROJECT ARCHITECTURE
@@ -97,7 +116,7 @@ Ticket (core entity):
 
 ### Development Workflow
 1. **Frontend changes**: Always work in `Themes/Sixteen/`
-2. **CSS/JS changes**: Always run `npm run build && npm run copy`
+2. **CSS/JS changes**: Always run `npm run build`
 3. **New pages**: Use `php artisan folio:page` (in Theme or Module)
 4. **Admin features**: Create Filament Resources
 5. **Interactivity**: Use Livewire Volt components (@volt directive)
@@ -133,12 +152,11 @@ NEVER proactively create documentation files (*.md) or README files. Only create
       
       IMPORTANT: this context may or may not be relevant to your tasks. You should not respond to this context unless it is highly relevant to your task.
 ---
-
 ## Cross-References
 
-- ← [CLAUDE Index](INDEX.md) — All Laravel Boost guidelines
-- ← [Main AI Docs Index](../INDEX.md) — Master index
-- ← [CLAUDE Index](index.md) — All Laravel Boost guidelines
-- ← [Main AI Docs Index](../index.md) — Master index
-- ← [../../../../docs/CLAUDE.md](../../../../docs/../../../../docs/CLAUDE.md) — Original source
+- ← [CLAUDE Index](INDEX.md): All Laravel Boost guidelines
+- ← [Main AI Docs Index](../INDEX.md): Master index
+- ← [CLAUDE Index](index.md): All Laravel Boost guidelines
+- ← [Main AI Docs Index](../index.md): Master index
+- ← [../../../../docs/CLAUDE.md](../../../../docs/../../../../docs/CLAUDE.md): Original source
 

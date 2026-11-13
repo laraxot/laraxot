@@ -16,9 +16,9 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # two_factor
 
 <!-- Contenuto migrato da _docs/two_factor.txt -->

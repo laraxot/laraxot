@@ -1,9 +1,14 @@
 ---
+created: 2026-09-26
+qmd: "daisyui pro contro metriche"
+issues: []
+discussions: []
 title: DaisyUI — pro, contro, metriche (tema Sixteen)
 type: concept
 module: Sixteen
 tags: [daisyui, tailwind, sixteen, governance]
 updated: 2026-05-15
+status: draft
 ---
 
 # DaisyUI nel tema Sixteen: sintesi

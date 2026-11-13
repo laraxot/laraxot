@@ -1,0 +1,37 @@
+/* Shared Design Comuni shell accessibility guardrails. */
+.design-comuni-header a {
+    @apply no-underline;
+}
+
+.design-comuni-header a:hover,
+.design-comuni-header nav a:hover {
+    @apply underline underline-offset-4;
+}
+
+/* Icon-only controls must never acquire a text underline from legacy global rules. */
+.design-comuni-header a[aria-label],
+.design-comuni-header a[aria-label]:hover {
+    text-decoration-line: none !important;
+}
+
+.design-comuni-header a:focus-visible,
+.design-comuni-header button:focus-visible,
+#footer a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+@media (max-width: 991.98px) {
+    body:has(.page-content[data-dc]) #header-user-toggle > .dc-header-user-name {
+        position: absolute !important;
+        display: inline !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip-path: inset(50%) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+    }
+}

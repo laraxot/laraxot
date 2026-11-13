@@ -16,9 +16,9 @@ related:
   - "./component-verification-rules.md"
   - "./component-verification.md"
   - "./dependency-rules.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # NestedSet Migration Best Practices - User Module
 
 ## Overview

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Tenant Module - Sprint Planning"
 module: "Tenant"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "sprint planning"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # Tenant Module - Sprint Planning
 

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Standard per Modal Heading e Description nelle Traduzioni <nome progetto>"
 module: "Lang"
 type: rule
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "filament4 migration"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Standard per Modal Heading e Description nelle Traduzioni <nome progetto>
 

@@ -1,3 +1,15 @@
+---
+title: "root file policy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "root file policy"
+issues: []
+discussions: []
+status: draft
+---
+
 # Root file policy
 
 Updated: 2026-07-08

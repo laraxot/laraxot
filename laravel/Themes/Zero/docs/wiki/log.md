@@ -1,6 +1,19 @@
 ---
 title: "Activity Log"
 module: "Zero"
+id: zero-docs-wiki-log
+slug: log
+description: "[2026-06-15] [DOCS] Censimento omonimi metodi - method-name-homonyms. Business logic nei moduli, non nel tema."
+document_type: guide
+type: guide
+category: documentation
+status: active
+tags: []
+created: "2026-09-24"
+updated: "2026-10-08"
+qmd: "activity log"
+issues: []
+discussions: []
 ---
 
 # Activity Log — Zero
@@ -9,11 +22,13 @@ module: "Zero"
 
 ## Log Entries
 
+[2026-10-08] [DOCS] Salute della docs: front matter completo su tutti i file, duplicati marcati `superseded`, indici rifatti. Vedi [story](../stories/2026-10-08-zero-docs-health.story.md).
+
 [2026-06-15] [DOCS] Censimento omonimi metodi — [method-name-homonyms](./concepts/method-name-homonyms.md). Business logic nei moduli, non nel tema.
 
 ## [2026-05-26] ops | ptvx.local ripristinato (PHP 8.4 handler)
 
-- Vedi [ptvx-local-php84-apache-handler.md](../../../Modules/Xot/docs/wiki/troubleshooting/ptvx-local-php84-apache-handler.md) (modulo Xot).
+- Vedi [ptvx-local-php84-apache-handler.md](../../../../Modules/Xot/docs/wiki/troubleshooting/ptvx-local-php84-apache-handler.md) (modulo Xot).
 
 ### Format
 

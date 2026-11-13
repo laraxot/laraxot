@@ -1,3 +1,9 @@
+---
+title: "Employee - GESTIONE_ORARI_DIPENDENTI"
+module: Employee
+bmad: true
+status: active
+---
 # Widget Gestione Orari Dipendenti - Filament
 
 ## 📋 Indice

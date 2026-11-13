@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Best Practices per le Chiavi di Traduzione"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "ottimizzazioni correzioni"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Best Practices per le Chiavi di Traduzione
 

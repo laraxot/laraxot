@@ -1,3 +1,9 @@
+---
+title: "Employee - 04-GESTIONE-TURNI-LAVORO"
+module: Employee
+bmad: true
+status: active
+---
 # 04 - Gestione Turni di Lavoro
 
 ## Panoramica

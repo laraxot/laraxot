@@ -1,15 +1,17 @@
-<<<<<<< HEAD
 ---
+qmd: "binary assets"
+issues: []
+discussions: []
 title: "Asset binari"
 module: lang
 type: integration
 tags: [integrations, modules, lang]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
-=======
->>>>>>> laraxot/dev
+---
 # Asset binari
 
 Gli asset binari sono file normali del repository.

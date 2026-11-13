@@ -1,3 +1,16 @@
+---
+title: "translation file merge function"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "translation file merge function"
+issues: []
+discussions: []
+status: superseded
+superseded_by: translation-file-merge-function.md
+---
+
 # Translation File Merge Function
 
 ## Purpose

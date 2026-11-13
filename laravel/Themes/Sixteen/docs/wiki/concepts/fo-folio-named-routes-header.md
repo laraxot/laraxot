@@ -1,87 +1,53 @@
 ---
+discussions: []
 title: "Header FO — named route Folio verificate"
 type: concept
-tags: [folio, header, routing, named-routes, six]
+tags: [folio, header, routing, named-routes, sixteen]
 created: 2026-06-05
-updated: 2026-06-10
-qmd: "folio named route header services.categories notifications dashboard profile.edit logout area-personale forbidden"
+updated: 2026-10-22
+qmd: "folio named route header container0.view localizeUrl vietato tickets.show"
 issues:
   - https://github.com/laraxot/base_fixcity_fila5/issues/289
 related:
   - fo-folio-routing-zen.md
   - fo-folio-links-multilingua.md
-  - ../troubleshooting/route-not-found-view-cache.md
-  - ../../../../Modules/Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md
-  - ../../../../../../docs/wiki/rules/folio-frontoffice-navigation-links.md
+  - ../../../../../Modules/Fixcity/docs/frontoffice-link-conventions.md
+  - ../../../../../Modules/Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md
+status: active
 ---
 
-# Header FO — named route Folio verificate
+<!--
+Supersedes: mapping 2026-06-10 che vietava area-personale e puntava a dashboard/profile.edit.
+Linked from: frontoffice-link-conventions, prompts/04, fo-link-coherence-audit.
+User: localizeUrl sbagliato; tickets.show sbagliato; corretta container0.view; non rifarlo.
+-->
 
-## Regola
+# Header FO — named route Folio
 
-Il dropdown utente usa **`route('<name>')`** solo per pagine Folio con `name()` registrato. La rotta **non** si definisce in `web.php` — nasce dal file in `pages/` ([fo-folio-routing-zen.md](fo-folio-routing-zen.md)).
+## Religione (2026-10-22)
 
-**Non** usare wrapper path inventati (`FrontofficeUrl::personalArea*`).
+SSoT: [frontoffice-link-conventions.md](../../../../../Modules/Fixcity/docs/frontoffice-link-conventions.md).
 
-```bash
-cd laravel && php artisan folio:list
-```
+- Obbligatorio: `route('container0.view'|'container0.index', …)`
+- Vietato Blade: `LaravelLocalization::localizeUrl` / `localizeURL`
+- Vietato FO: `route('tickets.show'|create|track)`
 
-## Mapping menu (2026-06-10)
+## Mapping menu autenticato
 
-| Voce UI (traduzione) | `route()` | File Folio |
-|----------------------|-----------|------------|
-| I miei servizi | `services.categories` | `Themes/Sixteen/.../lista-categorie.blade.php` |
-| Le mie pratiche | `dashboard` | `Modules/User/.../dashboard/index.blade.php` |
-| Notifiche | `notifications` | `Modules/User/.../notifications/index.blade.php` |
-| Impostazioni | `profile.edit` | `Modules/User/.../profile/edit.blade.php` |
-| Esci | `logout` | `Themes/Sixteen/.../auth/logout.blade.php` |
-| Accedi (guest) | `login` | `Themes/Sixteen/.../auth/login*.blade.php` |
-
-## Esempio canonico
+| Voce UI | `route()` |
+|---------|-----------|
+| I miei servizi | `services.categories` |
+| Le mie pratiche | `container0.view` area-personale/pratiche |
+| Notifiche | `container0.view` area-personale/notifiche |
+| Impostazioni | `container0.view` area-personale/impostazioni |
+| Esci (POST) | `logout` |
+| Esci (GET conferma) | `auth.logout` |
+| Accedi | `login` / `auth.login` |
 
 ```blade
-<a href="{{ route('notifications') }}" role="menuitem">
+<a href="{{ route('container0.view', ['container0' => 'area-personale', 'slug0' => 'notifiche']) }}" role="menuitem">
     <span>{{ __('pub_theme::header.user.dropdown.notifications.label') }}</span>
 </a>
 ```
 
-Copy menu: sempre `pub_theme::header.user.dropdown.*.label` — **mai** stringhe italiane hardcoded nel Blade.
-
-## Vietato
-
-```blade
-route('area-personale.notifiche')   {{-- nome inventato, italiano --}}
-route('area-personale.*')
-route('user.services')
-route('tests.view', ['slug' => 'servizi'])
-FrontofficeUrl::personalAreaNotifications()
-href="/{{ app()->getLocale() }}/profilo/notifiche"
-<span>I miei servizi</span>           {{-- usare __() --}}
-```
-
-## `FrontofficeUrl` — solo CMS JSON
-
-`path()`, `fromStoredUrl()`, `testsParity()` — **non** per voci menu dropdown.
-
-## Perché (zen)
-
-- **Label** menu in italiano (traduzioni tema).
-- **`name()` Folio** sempre in inglese, allineato al filesystem `pages/`.
-- `route()` = URL verso file Folio; `web.php` = anti‑pattern FO.
-
-
-
-## Imparato (sintesi sessione)
-
-1. **`route()` nel Blade non definisce rotte** — legge named route Folio già registrate con `name()` nel file `pages/`.
-2. **Audit FO = `folio:list`** — `route:list` può mostrare solo Filament; `route('notifications')` funziona comunque se Folio ha la pagina.
-3. **Errore con sorgente corretto** → `view:clear` + riavvio `artisan serve` ([route-not-found-view-cache.md](../troubleshooting/route-not-found-view-cache.md)).
-4. **Partial canonico**: `sections/header/partials/user-dropdown.blade.php` (non legacy `components/header/user-dropdown`).
-
-
-## Verifica
-
-- Pest: `tests/Unit/HeaderAreaPersonaleLinksContractTest.php`
-- CLI: `php artisan folio:list | grep notifications`
-- Troubleshooting cache: [route-not-found-view-cache.md](../troubleshooting/route-not-found-view-cache.md)
+Path da JSON CMS: `FrontofficeUrl::fromStoredUrl()` — non la facciata Mcamara.

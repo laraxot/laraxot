@@ -45,14 +45,7 @@ interface MetatagDataContract
 
     public function getModifiedTime(): ?DateTimeInterface;
 
-    /**
-     * Get a metadata value by key.
-     *
-     * @param  string  $key  The metadata key
-     * @param  array<string, mixed>|string|int|float|bool|null  $default  Default value if key doesn't exist
-     * @return array<string, mixed>|string|int|float|bool|null The metadata value or default
-     */
-    public function get(string $key, array|string|int|float|bool|null $default = null): array|string|int|float|bool|null;
+    public function get(string $key, mixed $default = null): mixed;
 
     public function has(string $key): bool;
 

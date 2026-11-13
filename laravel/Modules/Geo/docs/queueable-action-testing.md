@@ -1,3 +1,15 @@
+---
+title: "queueable action testing"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "queueable action testing"
+issues: []
+discussions: []
+status: draft
+---
+
 # Testare le QueueableAction: convenzione di chiamata
 
 Documenta la correzione PHPStan (livello max) del modulo Geo che ha eliminato

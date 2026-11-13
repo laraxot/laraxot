@@ -1,4 +1,22 @@
+---
+title: "SUPERMEMORY QUICKSTART"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "SUPERMEMORY QUICKSTART"
+issues: []
+discussions: []
+status: draft
+---
+
 # SuperMemory - AI Memory Infrastructure
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 **Project**: FixCity Platform  
 **Last Updated**: 2026-04-09  
@@ -11,6 +29,7 @@
 SuperMemory is the long-term and short-term memory and context infrastructure for AI agents. It provides persistent memory across conversations, semantic search, and knowledge graph capabilities.
 
 **Master MCP Docs**: [Project MCP Servers](../../../docs/MCP_SERVERS.md)
+**Master MCP Docs**: [Project MCP Servers](../../../../docs/MCP_SERVERS.md)
 
 ## Quick Start
 
@@ -75,13 +94,17 @@ supermemory add --tag ptv --content "Fixcity module: Ticket model extends XotBas
 ### 3. Theme Conventions
 Store theme development patterns:
 ```bash
-supermemory add --tag ptv --content "Sixteen theme: Bootstrap Italia classes replicated with Tailwind @apply. Vite outDir: './public', then npm run copy to public_html/themes/Sixteen/."
+<<<<<<< .merge_file_JFXEOE
+niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
+=======
+supermemory add --tag ptv --content "Sixteen theme: Bootstrap Italia classes replicated with Tailwind @apply. Vite outDir: './public', served via symlink public_html/themes/Sixteen (no copy)."
+>>>>>>> .merge_file_s3iLiC
 ```
 
 ### 4. Development Workflows
 Store build processes:
 ```bash
-supermemory remember "After ANY CSS/JS change in theme: cd Themes/Sixteen && npm run build && npm run copy" --tag ptv
+supermemory remember "After ANY CSS/JS change in theme: cd Themes/Sixteen && npm run build" --tag ptv
 ```
 
 ### 5. Architectural Decisions
@@ -189,10 +212,12 @@ supermemory init --api-key YOUR_KEY --container-tag ptv --scope project
 
 - **Master MCP Docs**: [Project MCP Servers](../../../docs/MCP_SERVERS.md)
 - **Xot Module MCP**: [Xot MCP Guide](../../Modules/Xot/docs/MCP_SERVERS.md)
-- **Theme MCP**: [Sixteen Theme MCP](../../Themes/Sixteen/docs/MCP_SERVERS.md)
+- **Theme MCP**: [Sixteen Theme MCP](../../Themes/Sixteen/docs/mcp-servers.md)
+- **Master MCP Docs**: [Project MCP Servers](../../../../docs/MCP_SERVERS.md)
+- **Xot Module MCP**: [Xot MCP Guide](../../Modules/Xot/docs/MCP_SERVERS.md)
+- **Theme MCP**: [Sixteen Theme MCP](../../../Themes/Sixteen/docs/mcp-servers.md)
 - **SuperMemory Skill**: [.qwen/skills/supermemory/](.qwen/skills/supermemory/)
 - **SuperMemory Console**: https://console.supermemory.ai
 
 ---
-
 *This document follows DRY+KISS principles. For general MCP server info, see the master doc.*

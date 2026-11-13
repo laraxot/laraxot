@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Struttura Traduzioni Espansa - Modulo Xot"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "struttura traduzioni espansa - modulo xot xot"
+---
+>>>>>>> laraxot/dev
 # Struttura Traduzioni Espansa - Modulo Xot
 
 ## Scopo

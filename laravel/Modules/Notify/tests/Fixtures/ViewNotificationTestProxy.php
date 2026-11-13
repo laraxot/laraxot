@@ -8,5 +8,5 @@ use Modules\Notify\Filament\Resources\NotificationResource\Pages\ViewNotificatio
 
 final class ViewNotificationTestProxy extends ViewNotification
 {
-   //...
+    // ...
 }

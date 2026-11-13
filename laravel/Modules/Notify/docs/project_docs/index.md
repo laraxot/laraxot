@@ -1,12 +1,10 @@
 ---
-title: "📚 Documentation Index - FixCity Project"
 title: "📚 Documentation Index - Notify Project"
 type: index
 tags: [notify, docs, project_docs]
 module: Notify
 created: 2026-07-20
 updated: 2026-07-20
-qmd: "notify documentazione project_docs index 📚 documentation index - fixcity project index readme frontmatter qmd search"
 qmd: "notify documentazione project_docs index 📚 documentation index - laraxot project index readme frontmatter qmd search"
 issues:
   - "https://github.com/laraxot/module_notify_fila5/issues/56"
@@ -18,6 +16,7 @@ related:
   - ../notifications/readme.md
   - ../integrations/readme.md
   - ../templates/readme.md
+status: draft
 ---
 # 📚 Documentation Index - FixCity Project
 # 📚 Documentation Index - Notify Project
@@ -159,6 +158,7 @@ Each module has a `docs/` directory containing:
 
 #### Xot Module
 - [Cyclomatic Complexity Report](../Modules/Xot/docs/cyclomatic-complexity-report.md)
+- [Cyclomatic Complexity Report](../cyclomatic-complexity-report.md)
 - [Refactoring Plan](../Modules/Xot/docs/refactoring/cyclomatic-complexity-refactoring-plan.md)
 - [Refactoring Report](../Modules/Xot/docs/refactoring/artisan-service-refactoring-report.md)
 
@@ -168,6 +168,11 @@ Each module has a `docs/` directory containing:
 #### User Module
 - [Cyclomatic Complexity Report](../Modules/User/docs/cyclomatic-complexity-report.md)
 - [Extensive documentation](../Modules/User/docs/)
+- [Cyclomatic Complexity Report](../../../Tenant/docs/cyclomatic-complexity-report.md)
+
+#### User Module
+- [Cyclomatic Complexity Report](../../../User/docs/cyclomatic-complexity-report.md)
+- [Extensive documentation](../../../User/docs)
 
 #### Other Modules
 - AI, Activity, Blog, Cms, Comment, Fixcity, Gdpr, Geo, Job, Lang, Media, Notify, Rating, Seo, UI
@@ -184,7 +189,13 @@ Each module has a `docs/` directory containing:
 - [Roadmap 2025](../Themes/Sixteen/docs/ROADMAP_2025.md)
 
 ### TwentyOne Theme
-- [Code Quality Analysis](../Themes/TwentyOne/docs/CODE_QUALITY_ANALYSIS.md)
+- [Code Quality Analysis](../Themes/TwentyOne/docs/code-quality-analysis.md)
+- [Code Quality Analysis](../../../../Themes/Sixteen/docs/CODE_QUALITY_ANALYSIS.md)
+- [README](../../../../Themes/Sixteen/docs/README.md)
+- [Roadmap 2025](../../../../Themes/Sixteen/docs/ROADMAP_2025.md)
+
+### TwentyOne Theme
+- [Code Quality Analysis](../../../../Themes/TwentyOne/docs/code-quality-analysis.md)
 
 ---
 
@@ -199,6 +210,9 @@ Each module has a `docs/` directory containing:
 - [Package.json](../package.json) - NPM scripts
 - [PHPStan Config](../phpstan.neon) - Static analysis
 - [Composer](../composer.json) - PHP dependencies
+- [Package.json](../../package.json) - NPM scripts
+- [PHPStan Config](../../../../phpstan.neon) - Static analysis
+- [Composer](../../composer.json) - PHP dependencies
 
 ### Analysis Tools
 - [Complexity Analyzer](../analyze_complexity.php)

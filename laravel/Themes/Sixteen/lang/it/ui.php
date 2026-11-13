@@ -174,4 +174,23 @@ return [
 
     // Hero
     'highlighted_content' => 'Contenuti in evidenza',
+    'mobile' => [
+        'home_title' => 'FixCity', 'home_subtitle' => 'La tua città, le tue segnalazioni',
+        'new_report' => 'Nuova', 'report_action' => 'Segnala', 'map' => 'Mappa', 'explore' => 'Esplora',
+        'recent_reports' => 'Segnalazioni recenti', 'profile' => 'Profilo', 'citizen' => 'Cittadino',
+        'my_reports' => 'Le mie segnalazioni', 'notifications' => 'Notifiche', 'settings' => 'Impostazioni', 'home' => 'Home',
+        'reports' => 'Segnalazioni', 'new_report_title' => 'Nuova segnalazione', 'back_reports' => 'Torna alle segnalazioni', 'detail_report' => 'Dettaglio segnalazione',
+        'title' => 'Titolo', 'category' => 'Categoria', 'select_category' => 'Seleziona categoria', 'photo' => 'Foto',
+        'take_photo' => 'Tocca per scattare una foto', 'open_camera' => 'Apri fotocamera', 'location' => 'Posizione',
+        'detect' => 'Rileva', 'description' => 'Descrizione', 'submit_report' => 'Invia segnalazione', 'describe_problem' => 'Descrivi il problema', 'gps_location' => 'Posizione automatica GPS', 'describe_detail' => 'Descrivi il problema in dettaglio',
+        'categories' => [
+            'road_maintenance' => 'Manutenzione stradale',
+            'street_lighting' => 'Illuminazione',
+            'waste' => 'Rifiuti',
+            'public_green' => 'Verde pubblico',
+            'vandalism' => 'Vandalismo',
+            'signage' => 'Segnaletica',
+            'transport' => 'Trasporti',
+        ],
+    ],
 ];

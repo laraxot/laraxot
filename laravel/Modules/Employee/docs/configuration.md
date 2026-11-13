@@ -1,3 +1,9 @@
+---
+title: "Employee - CONFIGURATION"
+module: Employee
+bmad: true
+status: active
+---
 # Configurazione Modulo Employee
 
 ## Panoramica

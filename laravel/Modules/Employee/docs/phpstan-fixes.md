@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-FIXES"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Fixes - Employee Module
 
 ## Problemi Risolti

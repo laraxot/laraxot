@@ -6,6 +6,10 @@ namespace Modules\Xot\Tests;
 
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Application;
+<<<<<<< HEAD
+=======
+use Modules\Xot\Tests\Support\TestDatabaseGuard;
+>>>>>>> laraxot/dev
 
 use function Safe\realpath;
 
@@ -59,6 +63,12 @@ trait CreatesApplication
         // by reading DB_DATABASE from .env.testing
         // Forcing connections here destroys the dynamic configuration system
 
+<<<<<<< HEAD
+=======
+        // Guardia: aborta prima di qualunque test se l'ambiente non e' testing o un DB non finisce per _test.
+        TestDatabaseGuard::assertApplication($app);
+
+>>>>>>> laraxot/dev
         return $app;
     }
 

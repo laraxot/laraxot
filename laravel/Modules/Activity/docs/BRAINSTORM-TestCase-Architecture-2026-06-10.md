@@ -4,15 +4,9 @@ date: 2026-06-10
 objective: "Valutare se Modules/<Module>/tests/TestCase.php debba estendere XotBaseTestCase e se XotBaseTestCase debba estendere un BaseTestCase Nwidart"
 status: "completed"
 issues:
-<<<<<<< HEAD
   - https://github.com/laraxot/base_ptv_fila5/issues/316
 discussions:
   - https://github.com/laraxot/base_ptv_fila5/discussions/316
-=======
-  - https://github.com/laraxot/base_fixcity_fila5/issues/316
-discussions:
-  - https://github.com/laraxot/base_fixcity_fila5/discussions/316
->>>>>>> 13cf1831 (.)
 sources:
   - https://laravelmodules.com/docs/13/advanced/tests
   - https://github.com/nWidart/laravel-modules

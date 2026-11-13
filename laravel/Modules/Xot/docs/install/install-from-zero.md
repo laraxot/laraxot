@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "install from zero"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, install]
+qmd: "install from zero xot"
+---
+>>>>>>> laraxot/dev
 #Install from zero
 
 ~~~ bash

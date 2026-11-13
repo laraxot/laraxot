@@ -1,5 +1,6 @@
 ---
 title: "Risoluzione Conflitti Git - Report di Intervento"
+<<<<<<< HEAD
 module: "Xot"
 type: concept
 tags: [conflict, resolution, report]
@@ -8,6 +9,15 @@ updated: 2026-07-14
 qmd: "conflict resolution report"
 related:
   - "./eloquent-magic-properties-rule.md"
+=======
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-18
+module: Xot
+tags: [xot, git]
+qmd: "Risoluzione Conflitti Git - Report di Intervento"
+>>>>>>> laraxot/dev
 ---
 # Risoluzione Conflitti Git - Report di Intervento
 
@@ -24,9 +34,15 @@ Questo documento descrive le risoluzioni applicate ai file con conflitti git ide
 **Soluzione**: Unificazione delle annotazioni PHPDoc e mantenimento della definizione dell'interfaccia con stile coerente.
 
 **Dettagli**:
+<<<<<<< HEAD
 - Rimossi i marcatori di conflitto git
 - Mantenute tutte le definizioni di proprietà senza duplicazioni
 - Aggiunto il metodo `treeSonsCount()` presente in alcune versioni
+=======
+- Rimossi i marcatori di conflitto git 
+- Mantenute tutte le definizioni di proprietà senza duplicazioni
+- Aggiunto il metodo `treeSonsCount()` presente in alcune versioni 
+>>>>>>> laraxot/dev
 - Adottato uno stile coerente per la dichiarazione dell'interfaccia
 
 **Documentazione correlata**: [Dettagli risoluzione](../conflicts/model_with_pos_contract_resolution.md)
@@ -54,7 +70,10 @@ Questo documento descrive le risoluzioni applicate ai file con conflitti git ide
 - Mantenuta la coerenza con la documentazione `@psalm-return`
 
 **Documentazione correlata**: [CONFLITTI_MERGE_RISOLTI.md](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md)
+<<<<<<< HEAD
 **Documentazione correlata**: [CONFLITTI_MERGE_RISOLTI.md](../../media/docs/conflitti_merge_risolti.md)
+=======
+>>>>>>> laraxot/dev
 
 ### 4. _components.json
 
@@ -95,7 +114,10 @@ Questo documento descrive le risoluzioni applicate ai file con conflitti git ide
 - [Risoluzione conflitti git generale](risoluzione_conflitti.md)
 - [Documentazione conflitti Modulo Xot](../conflicts/model_with_pos_contract_resolution.md)
 - [Documentazione conflitti Modulo Media](../../Media/docs/CONFLITTI_MERGE_RISOLTI.md)
+<<<<<<< HEAD
 - [Documentazione conflitti Modulo Media](../../media/docs/conflitti_merge_risolti.md)
+=======
+>>>>>>> laraxot/dev
 
 ## Test Effettuati
 
@@ -108,4 +130,8 @@ I file modificati sono stati analizzati con particolare attenzione a:
 
 ## Conclusioni
 
+<<<<<<< HEAD
 Tutti i conflitti git identificati sono stati risolti con successo, ripristinando la coerenza del codice e mantenendo le convenzioni del progetto. È stata data priorità alla qualità del codice, alla tipizzazione forte e alla documentazione adeguata.
+=======
+Tutti i conflitti git identificati sono stati risolti con successo, ripristinando la coerenza del codice e mantenendo le convenzioni del progetto. È stata data priorità alla qualità del codice, alla tipizzazione forte e alla documentazione adeguata. 
+>>>>>>> laraxot/dev

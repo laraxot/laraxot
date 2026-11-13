@@ -1,3 +1,15 @@
+---
+title: "filament 4 login widget implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament 4 login widget implementation"
+issues: []
+discussions: []
+status: draft
+---
+
 # Implementazione Login Widget Filament 4 - Tema Sixteen
 
 **Data**: 14 Ottobre 2025  
@@ -287,7 +299,7 @@ protected string $view = 'pub_theme::filament.widgets.auth.login';
 - [Filament 4 Widgets Documentation](https://filamentphp.com/docs/4.x/widgets)
 - [AGID Design System](https://designers.italia.it/)
 - [Bootstrap Italia](https://italia.github.io/bootstrap-italia/)
-- [Laraxot Widget Rules](../../Modules/User/docs/auth_widget_rules.md)
+- [Laraxot Widget Rules](../../../Modules/User/docs/auth_widget_rules.md)
 
 ## 🎯 Prossimi Passi
 

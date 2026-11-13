@@ -1,5 +1,6 @@
 ---
 title: "Stato Avanzamento Risoluzione Conflitti Git"
+<<<<<<< HEAD
 module: "Xot"
 type: concept
 tags: [conflict, resolution, progress]
@@ -8,6 +9,15 @@ updated: 2026-07-14
 qmd: "conflict resolution progress"
 related:
   - "./eloquent-magic-properties-rule.md"
+=======
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-18
+module: Xot
+tags: [xot, git]
+qmd: "Stato Avanzamento Risoluzione Conflitti Git"
+>>>>>>> laraxot/dev
 ---
 # Stato Avanzamento Risoluzione Conflitti Git
 
@@ -106,4 +116,8 @@ Ultimo aggiornamento: Gennaio 2025
 
 1. Continuare la risoluzione dei conflitti nel modulo Xot, in particolare nei contratti e interfacce
 2. Procedere con la documentazione aggiornata per ogni file risolto
+<<<<<<< HEAD
 3. Eseguire test per verificare il funzionamento corretto delle modifiche
+=======
+3. Eseguire test per verificare il funzionamento corretto delle modifiche 
+>>>>>>> laraxot/dev

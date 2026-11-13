@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Unit;
 
+use Illuminate\Database\Eloquent\Model;
 use Mockery;
 use Modules\Rating\Models\Policies\RatingMorphPolicy;
 use Modules\Rating\Models\Policies\RatingPolicy;
@@ -181,7 +182,7 @@ describe('RatingMorphPolicy', function (): void {
         $morph = new RatingMorph();
         $morph->user_id = 'u-2';
 
-        $ratedModel = new class extends \Illuminate\Database\Eloquent\Model {
+        $ratedModel = new class extends Model {
             protected $table = 'rated_stub';
         };
         // `setAttribute()` invece di `$ratedModel->user_id = ...`: su un model anonimo

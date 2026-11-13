@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Errore Cache Path Mancante"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, errors]
+qmd: "Errore Cache Path Mancante"
+---
+>>>>>>> laraxot/dev
 # Errore Cache Path Mancante
 
 ## Descrizione dell'Errore
@@ -44,5 +57,10 @@ Per prevenire questo errore in futuro:
 3. Utilizzare il pattern try-catch quando si accede alla cache in punti critici del sistema
 
 ## Riferimenti
+<<<<<<< HEAD
 - [Documentazione Laravel Cache](https://laravel.com/project_docs/cache)
 - [Documentazione Xot Component System](../structure.md)
+=======
+- [Documentazione Laravel Cache](https://laravel.com/docs/cache)
+- [Documentazione Xot Component System](../structure.md) 
+>>>>>>> laraxot/dev

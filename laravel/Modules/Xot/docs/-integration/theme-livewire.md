@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "theme_livewire"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "theme_livewire xot"
+---
+>>>>>>> laraxot/dev
 # theme_livewire
 
 <!-- Contenuto migrato da _docs/theme_livewire.txt -->

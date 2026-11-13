@@ -61,11 +61,7 @@ class GetCurrentEmployeeDataAction
                     $data['status'] = is_string($statusValue) ? $statusValue : 'active';
                 } elseif (is_string($employee->status)) {
                     $data['status'] = $employee->status;
-                } else {
-                    $data['status'] = 'active';
                 }
-            } else {
-                $data['status'] = 'active';
             }
 
             // Hire date from work_data array

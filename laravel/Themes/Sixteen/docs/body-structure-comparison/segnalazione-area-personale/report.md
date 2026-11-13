@@ -1,3 +1,15 @@
+---
+title: "report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "report"
+issues: []
+discussions: []
+status: draft
+---
+
 # Confronto struttura HTML — `segnalazione-area-personale`
 
 **Aggiornato**: 2026-04-20  
@@ -46,5 +58,4 @@ bash bashscripts/html/compare-html.sh \
 I file timestampati (`report_*.md`, `diff_*.txt`, `page*.html`) generati nello stesso percorso sono allegati opzionali dell’ultima esecuzione.
 
 ---
-
 *Script: [`bashscripts/html/compare-html.sh`](../../../../../../bashscripts/html/compare-html.sh)*

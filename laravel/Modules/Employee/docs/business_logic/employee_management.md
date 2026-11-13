@@ -1,3 +1,9 @@
+---
+title: "Employee - EMPLOYEE_MANAGEMENT"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Management Business Logic
 
 ## 👥 Employee Lifecycle Management

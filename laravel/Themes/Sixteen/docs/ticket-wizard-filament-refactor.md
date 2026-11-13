@@ -1,3 +1,15 @@
+---
+title: "ticket wizard filament refactor"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ticket wizard filament refactor"
+issues: []
+discussions: []
+status: draft
+---
+
 # Ticket Wizard Filament Refactor
 
 **Status**: Active  
@@ -12,7 +24,7 @@
 `CreateTicketWizardWidget.php` usa gia `Wizard::make([...])` con `Step::make(...)` — corretto per Filament way.
 
 ### Blade View (PROBLEMA)
-`ticket-create-wizard.blade.php` contiene HTML hardcoded:
+`create-ticket-wizard.blade.php` contiene HTML hardcoded:
 - Wrapper Design Comuni (`container`, `cmp-heading`, `ticket-wizard-root`)
 - Sezione contatti (`bg-grey-card shadow-contacts`)
 - Form wrapping (`<x-filament-widgets::widget>`, `<form wire:submit="submit">`)
@@ -37,13 +49,13 @@
 ## Files Involved
 
 - `laravel/Modules/Fixcity/app/Filament/Widgets/CreateTicketWizardWidget.php` — wizard PHP
-- `laravel/Modules/Fixcity/resources/views/filament/widgets/ticket-create-wizard.blade.php` — blade view (da semplificare)
+- `laravel/Modules/Fixcity/resources/views/filament/widgets/create-ticket-wizard.blade.php` — blade view (da semplificare)
 - `laravel/Themes/Sixteen/resources/css/ticket-wizard-filament.css` — NUOVO CSS scoped
 
 ## Related Documentation
 
-- [CreateTicketWizardWidget.md](../../../laravel/Modules/Fixcity/docs/CreateTicketWizardWidget.md) — Widget docs
-- [TICKET-CREATION-WIZARD.md](../../../laravel/Themes/Sixteen/docs/design-comuni/TICKET-CREATION-WIZARD.md) — Theme docs
+- [CreateTicketWizardWidget.md](../../../Modules/Fixcity/docs/CreateTicketWizardWidget.md) — Widget docs
+- [TICKET-CREATION-WIZARD.md](design-comuni/TICKET-CREATION-WIZARD.md) — Theme docs
 - [Story 7-34](../../../_bmad-output/implementation-artifacts/7-34-create-ticket-wizard-filament-schema-wizard-refactor.md) — Wizard Filament v5 Schema (done)
 - [Story 7-35](../../../_bmad-output/implementation-artifacts/7-35-segnalazione-crea-filament-wizard-way-audit-and-refactor.md) — Audit wizard
 - [Story 7-30](../../../_bmad-output/implementation-artifacts/7-30-refactor-ticket-wizard-to-filament-pure.md) — Refactor story
@@ -51,3 +63,5 @@
 ## Notes
 
 Il widget PHP e gia corretto — il problema e SOLO la blade view che ha troppo HTML hardcoded invece di affidarsi a Filament per il rendering.
+
+Correzione verificata 2026-10-13 (DCP-35 S4): lo stato descritto sopra è superato. `Themes/Sixteen/resources/views/filament/widgets/create-ticket-wizard.blade.php` non contiene più `<form wire:submit>` né `ticket-wizard-root` (0 occorrenze di `<form`, `ticket-wizard-root`, `wire:submit` al momento della verifica; la shell è in evoluzione in DCP-33/34); la vista usata dal widget è questa del tema (risolta da `GetViewByClassAction`), non quella del modulo.

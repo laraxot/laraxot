@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Tests\Feature\Filament\Resources;
 
+use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
 use Filament\Forms\Components\Field;
@@ -17,10 +18,29 @@ use Modules\User\Enums\UserType;
 use Modules\User\Filament\Resources\UserResource;
 use Modules\User\Filament\Resources\UserResource\Widgets\UserOverview;
 use Modules\User\Tests\TestCase;
+use Modules\Xot\Datas\XotData;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
+
+/**
+ * Lo schema del form non vive piu' sulla Resource (XotBaseResource::getFormSchema() e' final e
+ * restituisce []): e' in Schemas\UserForm, risolta da UserResource::getFormClass().
+ *
+ * @return array<int|string, Component>
+ */
+function userResourceFormSchema(): array
+{
+    $formClass = UserResource::getFormClass();
+    $form = app($formClass);
+    Assert::assertInstanceOf(XotBaseResourceForm::class, $form);
+
+    /** @var array<int|string, Component> $schema */
+    $schema = $form->getFormSchema();
+
+    return $schema;
+}
 
 beforeEach(function (): void {
     UserFactory::new()
@@ -45,7 +65,7 @@ describe('User Resource', function (): void {
 
     test('user resource has correct form schema', function (): void {
         /** @var TestCase $this */
-        $form = app(UserResource::class)->getFormSchema();
+        $form = userResourceFormSchema();
 
         Assert::assertArrayHasKey('section01', $form);
         Assert::assertArrayHasKey('section02', $form);
@@ -70,19 +90,15 @@ describe('User Resource', function (): void {
     });
 
     test('user resource has combined relation manager tabs', function (): void {
-        $resource = new UserResource();
-
-        Assert::assertTrue($resource->hasCombinedRelationManagerTabsWithContent());
+        Assert::assertTrue((new UserResource)->hasCombinedRelationManagerTabsWithContent());
     });
 
     test('user resource extends correct base class', function (): void {
-        $resource = new UserResource();
-
-        Assert::assertInstanceOf(XotBaseResource::class, $resource);
+        Assert::assertSame(XotBaseResource::class, get_parent_class(UserResource::class));
     });
 
     test('user resource form schema has correct column spans', function (): void {
-        $form = app(UserResource::class)->getFormSchema();
+        $form = userResourceFormSchema();
 
         $section01 = $form['section01'];
         $section02 = $form['section02'];
@@ -93,13 +109,13 @@ describe('User Resource', function (): void {
 
     test('user resource name field is required', function (): void {
         /** @var TestCase $this */
-        $form = app(UserResource::class)->getFormSchema();
+        $form = userResourceFormSchema();
         $section01 = $form['section01'];
         $section01Schema = userResourceSectionComponents($this, $section01);
 
         $nameField = userResourceFindComponentByName($section01Schema, 'name');
 
-        if (null === $nameField) {
+        if ($nameField === null) {
             $this->skipTest('name field not found in section01 schema');
         }
 
@@ -108,13 +124,13 @@ describe('User Resource', function (): void {
 
     test('user resource email field is required', function (): void {
         /** @var TestCase $this */
-        $form = app(UserResource::class)->getFormSchema();
+        $form = userResourceFormSchema();
         $section01 = $form['section01'];
         $section01Schema = userResourceSectionComponents($this, $section01);
 
         $emailField = userResourceFindComponentByName($section01Schema, 'email');
 
-        if (null === $emailField) {
+        if ($emailField === null) {
             $this->skipTest('email field not found in section01 schema');
         }
 
@@ -123,13 +139,13 @@ describe('User Resource', function (): void {
 
     test('user resource password field is required only on create', function (): void {
         /** @var TestCase $this */
-        $form = app(UserResource::class)->getFormSchema();
+        $form = userResourceFormSchema();
         $section01 = $form['section01'];
         $section01Schema = userResourceSectionComponents($this, $section01);
 
         $passwordField = userResourceFindComponentByName($section01Schema, 'password');
 
-        if (null === $passwordField) {
+        if ($passwordField === null) {
             $this->skipTest('password field not found in section01 schema');
         }
 
@@ -138,7 +154,7 @@ describe('User Resource', function (): void {
 
     test('user resource password field has correct type', function (): void {
         /** @var TestCase $this */
-        $form = app(UserResource::class)->getFormSchema();
+        $form = userResourceFormSchema();
         $section01 = $form['section01'];
         $section01Schema = userResourceSectionComponents($this, $section01);
 
@@ -151,13 +167,13 @@ describe('User Resource', function (): void {
 
     test('user resource email field has unique validation', function (): void {
         /** @var TestCase $this */
-        $form = app(UserResource::class)->getFormSchema();
+        $form = userResourceFormSchema();
         $section01 = $form['section01'];
         $section01Schema = userResourceSectionComponents($this, $section01);
 
         $emailField = userResourceFindComponentByName($section01Schema, 'email');
 
-        if (null === $emailField) {
+        if ($emailField === null) {
             $this->skipTest('email field not found in section01 schema');
         }
 
@@ -166,13 +182,13 @@ describe('User Resource', function (): void {
 
     test('user resource created at field shows diff for humans', function (): void {
         /** @var TestCase $this */
-        $form = app(UserResource::class)->getFormSchema();
+        $form = userResourceFormSchema();
         $section02 = $form['section02'];
         $section02Schema = userResourceSectionComponents($this, $section02);
 
         $createdAtField = userResourceFindComponentByName($section02Schema, 'created_at');
 
-        if (null === $createdAtField) {
+        if ($createdAtField === null) {
             $this->skipTest('created_at field not found in section02 schema');
         }
 
@@ -180,14 +196,10 @@ describe('User Resource', function (): void {
     });
 
     test('user resource can be instantiated', function (): void {
-        $resource = new UserResource();
-
-        Assert::assertInstanceOf(UserResource::class, $resource);
+        Assert::assertSame(UserResource::class, get_class(new UserResource));
     });
 
     test('user resource has correct model', function (): void {
-        $resource = new UserResource();
-
-        Assert::assertInstanceOf(UserResource::class, $resource);
+        Assert::assertSame(XotData::make()->getUserClass(), UserResource::getModel());
     });
 });

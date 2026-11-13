@@ -1,5 +1,7 @@
 ---
-title: "Ponytail audit — Media"
+issues: []
+discussions: []
+title: "Ponytail audit: Media"
 module: "Media"
 type: concept
 tags: [ponytail, audit]
@@ -8,8 +10,9 @@ updated: 2026-07-14
 qmd: "ponytail audit"
 related:
   - "./webm.md"
+status: draft
 ---
-# Ponytail audit — Media
+# Ponytail audit: Media
 
 **Delta modulo only here.** Ranked list, gate e remediation globale negli hub progetto.
 

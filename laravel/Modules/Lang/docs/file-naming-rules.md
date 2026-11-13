@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Regole di Naming per File"
 module: "Lang"
 type: rule
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "migration filament"
 related:
   - "./italian-text-refined-audit-report.md"
+status: superseded
+superseded_by: file-naming.md
 ---
 # Regole di Naming per File
 

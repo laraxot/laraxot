@@ -3,11 +3,6 @@
 declare(strict_types=1);
 
 return [
-    'actions' => [
-        'activeLocale' => [
-            'label' => 'activeLocale',
-        ],
-    ],
     'label' => 'Lang Base Edit Record',
     'plural_label' => 'Lang Base Edit Record (Plurale)',
     'navigation' => [
@@ -18,7 +13,7 @@ return [
             'description' => 'General Settings',
         ],
         'label' => 'Lang Base Edit Record',
-        'sort' => 1,
+        'sort' => '1',
         'icon' => 'heroicon-o-rectangle-stack',
     ],
     'fields' => [

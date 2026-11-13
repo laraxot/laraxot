@@ -1,10 +1,15 @@
 ---
+qmd: "current work status.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: current_work_status.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: current-work-status.divergenza.md
 ---
 
 # Divergenza: `current_work_status.md`

@@ -13,6 +13,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
 
+uses(TestCase::class);
 describe('SendTwilioWhatsAppAction', function () {
     it('can be referenced via ReflectionClass without instantiation', function () {
         $reflection = new \ReflectionClass(SendTwilioWhatsAppAction::class);
@@ -63,12 +64,12 @@ describe('SendTwilioWhatsAppAction', function () {
     });
 
     it('has required imports', function () {
-        $reflection = new \ReflectionClass(SendTwilioWhatsAppAction::class);
-        $filename = $reflection->getFileName();
         $content = TestCase::notifyReflectionSource(new \ReflectionClass(SendTwilioWhatsAppAction::class));
 
-        Assert::assertStringContainsString('declare(strict_types=1)', (string) $content);
-        Assert::assertStringContainsString('declare(strict_types=1)', (string) $content);
+        Assert::assertStringContainsString('declare(strict_types=1)', $content);
+        Assert::assertStringContainsString('use Modules\\Notify\\Contracts\\WhatsAppProviderActionInterface;', $content);
+        Assert::assertStringContainsString('use Modules\\Notify\\Datas\\WhatsAppData;', $content);
+        Assert::assertStringContainsString('use Spatie\\QueueableAction\\QueueableAction;', $content);
     });
 
     it('uses QueueableAction trait', function () {

@@ -1,3 +1,15 @@
+---
+title: "schema conventions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "schema conventions"
+issues: []
+discussions: []
+status: draft
+---
+
 # Schema Conventions in Notify Module
 
 ## Field Definitions
@@ -66,4 +78,12 @@ Here's a complete example of a properly formatted schema:
 ---
 
 
+title: "schema conventions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "schema conventions"
+issues: []
+discussions: []
 ```

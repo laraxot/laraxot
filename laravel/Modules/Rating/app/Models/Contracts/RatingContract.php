@@ -36,18 +36,20 @@ use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
  * - `title` e `txt` — il nome tecnico e quello leggibile, che **non sono la stessa cosa**;
  * - `slug` — l'identificativo stabile, l'unico che sopravvive a un rename.
  *
+ * @extends HasRecursiveRelationshipsContract<Model>
+ *
  * @phpstan-require-extends Model
  *
- * @property int                    $id
- * @property int|null               $parent_id
- * @property string|null            $title
- * @property string|null            $txt
- * @property string|null            $slug
- * @property bool|null              $is_readonly
- * @property bool|null              $is_disabled
- * @property int|null               $order_column
+ * @property int $id
+ * @property int|null $parent_id
+ * @property string|null $title
+ * @property string|null $txt
+ * @property string|null $slug
+ * @property bool|null $is_readonly
+ * @property bool|null $is_disabled
+ * @property int|null $order_column
  * @property Collection<int, Model> $children
- * @property RuleEnum               $rule
+ * @property RuleEnum $rule
  */
 interface RatingContract extends HasRecursiveRelationshipsContract
 {

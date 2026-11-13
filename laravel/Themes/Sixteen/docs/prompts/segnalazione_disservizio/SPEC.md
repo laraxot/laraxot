@@ -1,3 +1,15 @@
+---
+title: "SPEC"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "SPEC"
+issues: []
+discussions: []
+status: draft
+---
+
 # SPEC.md - Segnalazioni Elenco HTML Parity
 
 ## Obiettivo

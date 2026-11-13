@@ -1,3 +1,15 @@
+---
+title: "roadmap update system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap update system"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🔄 SISTEMA AGGIORNAMENTO ROADMAP - FIXCITY PLATFORM
 # 🔄 SISTEMA AGGIORNAMENTO ROADMAP - NOTIFY PLATFORM
 
@@ -138,6 +150,14 @@ class RoadmapMetricsUpdater
 
 ---
 
+title: "roadmap update system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap update system"
+issues: []
+discussions: []
 ## 🎯 MODULE OVERVIEW
 [Module description and architecture]
 

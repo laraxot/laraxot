@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "**Troubleshooting Modulo Xot**"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "**troubleshooting modulo xot** xot"
+---
+>>>>>>> laraxot/dev
 # 🚨 **Troubleshooting Modulo Xot**
 
 ## 📋 **Panoramica**
@@ -53,7 +64,11 @@ use Filament\Resources\XotBaseResource;
 # ✅ additivo, mai distruttivo (dati sacri)
 cd laravel && php artisan migrate
 
+<<<<<<< HEAD
 # ❌ VIETATO — distrugge i dati
+=======
+# ❌ VIETATO: distrugge i dati
+>>>>>>> laraxot/dev
 # php artisan migrate:fresh
 # php artisan migrate --force
 # php artisan db:wipe
@@ -437,7 +452,11 @@ SQLSTATE[23000]: Integrity constraint violation
 
 #### **Soluzioni**
 
+<<<<<<< HEAD
 **Mai `RefreshDatabase` (dati sacri)** — usare `DatabaseTransactions` / TestCase modulo + `.env.testing`:
+=======
+**Mai `RefreshDatabase` (dati sacri)**: usare `DatabaseTransactions` / TestCase modulo + `.env.testing`:
+>>>>>>> laraxot/dev
 
 ```php
 use Illuminate\Foundation\Testing\DatabaseTransactions;

@@ -78,7 +78,7 @@
     class="{{ $navClasses->implode(' ') }}"
     id="{{ $navId }}"
     role="navigation"
-    aria-label="Navigazione principale"
+    aria-label="{{ __('pub_theme::navigation.main') }}"
     {{ $attributes->except(['fixed', 'variant', 'size', 'id', 'class', 'showLabels', 'background', 'shadow']) }}
 >
     <div class="bottom-nav-container">

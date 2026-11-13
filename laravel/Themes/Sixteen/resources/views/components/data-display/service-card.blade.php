@@ -94,7 +94,7 @@ $contentClasses = $sizeClasses[$size] ?? $sizeClasses['md'];
         
         @if($link)
             <div class="flex items-center text-blue-600 font-medium text-sm mt-4 group-hover:text-blue-800 transition-colors">
-                <span>Accedi al servizio</span>
+                <span>{{ __('pub_theme::service_report.access.title') }}</span>
                 <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>

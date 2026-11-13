@@ -1,3 +1,9 @@
+---
+title: "Employee - TECHNICAL_ARCHITECTURE"
+module: Employee
+bmad: true
+status: active
+---
 # Architettura Tecnica Modulo Employee
 
 ## 🏗️ Panoramica Architetturale

@@ -1,3 +1,15 @@
+---
+title: "7 12 segnalazione 04 confirma html parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "7 12 segnalazione 04 confirma html parity"
+issues: []
+discussions: []
+status: draft
+---
+
 # Story 7.12: HTML Parity — segnalazione-04-conferma
 
 Status: ready-for-dev

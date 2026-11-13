@@ -1,3 +1,9 @@
+---
+title: "Employee - COVERAGE"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module: Test & Quality Coverage
 
 Generated: 2026-09-06

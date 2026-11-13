@@ -5,7 +5,10 @@ declare(strict_types=1);
 return [
     'fields' => [
         'anno' => [
+<<<<<<< HEAD
             'label' => 'anno',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',

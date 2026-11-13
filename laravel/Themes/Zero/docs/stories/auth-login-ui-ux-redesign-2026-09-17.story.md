@@ -10,6 +10,14 @@ created: "2026-09-17"
 updated: "2026-09-17"
 depends_on: []
 feeds: []
+id: zero-docs-stories-auth-login-ui-ux-redesign-2026-09-17-story
+description: "Story di restyling della pagina di login del tema Zero con skill di motion e design."
+document_type: story
+category: bmad-story
+tags: []
+qmd: "zero theme - redesign ui/ux pagina login (/it/auth/login)"
+issues: []
+discussions: []
 ---
 
 # Story — Redesign UI/UX pagina login

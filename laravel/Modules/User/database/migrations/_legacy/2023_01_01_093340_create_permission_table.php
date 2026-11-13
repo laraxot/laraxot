@@ -1,50 +1,33 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends XotBaseMigration {
+return new class extends XotBaseMigration
+{
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        /**
-         * @var array<string, string|null> $tableNames
-         */
-        $tableNames = config('permission.table_names');
-        /**
-         * @var array<string, string|null> $columnNames
-         */
-        $columnNames = config('permission.column_names');
-        /**
-         * @var array<string, mixed>|null $teams
-         */
-        $teams = config('permission.teams');
+        $teams = config()->boolean('permission.teams', false);
 
-        if (empty($tableNames)) {
+        if (config()->array('permission.table_names', []) === []) {
             throw new Exception('Error: config/permission.php not loaded. Run [php artisan config:clear] and try again.');
         }
 
-        if ($teams && empty($columnNames['team_foreign_key'] ?? null)) {
+        $teamForeignKey = config('permission.column_names.team_foreign_key');
+        if ($teams && (! is_string($teamForeignKey) || $teamForeignKey === '')) {
             throw new Exception('Error: team_foreign_key on config/permission.php not loaded. Run [php artisan config:clear] and try again.');
         }
-
-        /**
-         * @var string|null $cache_store
-         */
-        $cache_store = config('permission.cache.store');
-
-        /**
-         * @var string $cache_key
-         */
-        $cache_key = config('permission.cache.key');
 
         try {
             // Verifica se l'applicazione è completamente inizializzata
             if (app()->bound('cache')) {
-                app('cache')->store('default' !== $cache_store ? $cache_store : null)->forget($cache_key);
+                $cacheStore = config()->string('permission.cache.store', 'default');
+                app('cache')
+                    ->store($cacheStore === 'default' ? null : $cacheStore)
+                    ->forget(config()->string('permission.cache.key'));
             }
         } catch (Exception $e) {
             // Silently ignore cache errors during package discovery

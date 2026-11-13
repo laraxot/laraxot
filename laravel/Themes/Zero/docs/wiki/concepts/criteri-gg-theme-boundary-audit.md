@@ -17,6 +17,14 @@ related:
   - ../../../../Modules/Ptv/docs/wiki/concepts/base-criteri-precedenza.md
   - ../../../../Modules/Ptv/docs/wiki/concepts/base-valutatore.md
   - ../../../../Modules/Progressioni/docs/wiki/concepts/no-services-queueable-actions.md
+id: zero-docs-wiki-concepts-criteri-gg-theme-boundary-audit
+slug: criteri-gg-theme-boundary-audit
+description: "Dopo l’audit moduli (Ptv/Sigma/Progressioni): il tema non è il posto dove “sistemare” duplicati di calcolo."
+document_type: concept
+category: architecture
+status: active
+issues: []
+discussions: []
 ---
 
 # Boundary tema: campi gg materializzati
@@ -36,7 +44,7 @@ Dopo l’audit moduli (Ptv/Sigma/Progressioni): il tema **non** è il posto dove
 
 ## `MinGg*` = A_config (non consolidare nel tema né nei moduli)
 
-Corpi *simili* ma campi diversi → **A_config**, non B_business. Il tema mostra valori materializzati; non unisce né ricalcola. Dettaglio: [duplicate-method-bodies Progressioni](../../../../Modules/Progressioni/docs/wiki/concepts/duplicate-method-bodies.md) · [tassonomia Ptv](../../../../Modules/Ptv/docs/wiki/concepts/criteri-esclusione-action-taxonomy.md).
+Corpi *simili* ma campi diversi → **A_config**, non B_business. Il tema mostra valori materializzati; non unisce né ricalcola. Dettaglio: [duplicate-method-bodies Progressioni](../../../../../Modules/Progressioni/docs/wiki/concepts/duplicate-method-bodies.md) · [tassonomia Ptv](../../../../../Modules/Ptv/docs/wiki/concepts/criteri-esclusione-action-taxonomy.md).
 
 ## Replica “giusta” vs “sbagliata” lato UI
 
@@ -47,6 +55,6 @@ Corpi *simili* ma campi diversi → **A_config**, non B_business. Il tema mostra
 
 - [gg-integ theme boundary](./gg-integ-params-no-asz-theme-boundary.md)
 - [performance-actions-reference](../../performance-actions-reference.md)
-- [Ptv taxonomy](../../../../Modules/Ptv/docs/wiki/concepts/criteri-esclusione-action-taxonomy.md)
-- [Progressioni duplicate bodies (A vs B)](../../../../Modules/Progressioni/docs/wiki/concepts/duplicate-method-bodies.md)
-- [Sigma getter audit](../../../../Modules/Sigma/docs/wiki/concepts/scheda-gg-getter-duplication-audit.md)
+- [Ptv taxonomy](../../../../../Modules/Ptv/docs/wiki/concepts/criteri-esclusione-action-taxonomy.md)
+- [Progressioni duplicate bodies (A vs B)](../../../../../Modules/Progressioni/docs/wiki/concepts/duplicate-method-bodies.md)
+- [Sigma getter audit](../../../../../Modules/Sigma/docs/wiki/concepts/scheda-gg-getter-duplication-audit.md)

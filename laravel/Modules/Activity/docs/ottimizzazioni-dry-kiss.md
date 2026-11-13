@@ -188,11 +188,7 @@ class Activity extends SpatieActivity {}
 #### D. Ottimizzazione Form Schema (KISS)
 ```php
 // PRIMA: Metodo getFormSchema con array hardcoded
-<<<<<<< HEAD
 public function getFormSchema(): array
-=======
-public static function getFormSchema(): array
->>>>>>> 13cf1831 (.)
 {
     return [
         'log_name' => TextInput::make('log_name')->required(),

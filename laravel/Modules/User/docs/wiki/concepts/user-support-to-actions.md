@@ -16,6 +16,7 @@ related:
   - "./filament-langserviceprovider-governance.md"
   - "./filament-widget-linear-crud-model-create.md"
   - "./filament-widget-resource-form-delegation.md"
+status: draft
 ---
 
 # User Support → Actions migration
@@ -30,7 +31,7 @@ Legacy `app/Support/` files converted to QueueableAction or confirmed dead code.
 
 ## Caller updates
 
-- `Themes/Sixteen/resources/views/components/sections/header/v1.blade.php` — switched from `NotificationSchema::isReadable()` to `app(IsNotificationSchemaReadableAction::class)->execute()`.
+- `Themes/Sixteen/resources/views/components/sections/header/v1.blade.php`: switched from `NotificationSchema::isReadable()` to `app(IsNotificationSchemaReadableAction::class)->execute()`.
 
 ## Verification
 

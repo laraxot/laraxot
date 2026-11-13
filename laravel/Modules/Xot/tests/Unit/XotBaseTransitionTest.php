@@ -4,6 +4,10 @@ declare(strict_types=1);
 use Modules\Notify\Datas\RecordNotificationData;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\Xot\States\Transitions\XotBaseTransition;
+<<<<<<< HEAD
+=======
+use Modules\Xot\Tests\Fixtures\XotBaseTransitionFixture;
+>>>>>>> laraxot/dev
 use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -11,31 +15,51 @@ uses(TestCase::class);
 
 describe('XotBaseTransition', function (): void {
     it('can be instantiated', function (): void {
+<<<<<<< HEAD
         [, $transition] = xotBaseTransitionFixture();
+=======
+        [, $transition] = XotBaseTransitionFixture::make();
+>>>>>>> laraxot/dev
 
         Assert::assertInstanceOf(XotBaseTransition::class, $transition);
     });
 
     it('has static name property', function (): void {
+<<<<<<< HEAD
         [, $transition] = xotBaseTransitionFixture();
+=======
+        [, $transition] = XotBaseTransitionFixture::make();
+>>>>>>> laraxot/dev
 
         Assert::assertTrue(property_exists($transition, 'name'));
     });
 
     it('has record property', function (): void {
+<<<<<<< HEAD
         [, $transition] = xotBaseTransitionFixture();
+=======
+        [, $transition] = XotBaseTransitionFixture::make();
+>>>>>>> laraxot/dev
 
         Assert::assertTrue((new ReflectionObject($transition))->hasProperty('record'));
     });
 
     it('can get record', function (): void {
+<<<<<<< HEAD
         [$record, $transition] = xotBaseTransitionFixture();
+=======
+        [$record, $transition] = XotBaseTransitionFixture::make();
+>>>>>>> laraxot/dev
 
         Assert::assertSame($record, $transition->record);
     });
 
     it('has sendNotifications method', function (): void {
+<<<<<<< HEAD
         [, $transition] = xotBaseTransitionFixture();
+=======
+        [, $transition] = XotBaseTransitionFixture::make();
+>>>>>>> laraxot/dev
 
         Assert::assertTrue((new ReflectionObject($transition))->hasMethod('sendNotifications'));
     });
@@ -54,7 +78,11 @@ describe('XotBaseTransition', function (): void {
     });
 
     it('has getNotificationRecipients method', function (): void {
+<<<<<<< HEAD
         [, $transition] = xotBaseTransitionFixture();
+=======
+        [, $transition] = XotBaseTransitionFixture::make();
+>>>>>>> laraxot/dev
 
         Assert::assertTrue((new ReflectionObject($transition))->hasMethod('getNotificationRecipients'));
     });
@@ -74,7 +102,11 @@ describe('XotBaseTransition', function (): void {
     });
 
     it('has sendRecipientNotification method', function (): void {
+<<<<<<< HEAD
         [, $transition] = xotBaseTransitionFixture();
+=======
+        [, $transition] = XotBaseTransitionFixture::make();
+>>>>>>> laraxot/dev
 
         Assert::assertTrue((new ReflectionObject($transition))->hasMethod('sendRecipientNotification'));
     });

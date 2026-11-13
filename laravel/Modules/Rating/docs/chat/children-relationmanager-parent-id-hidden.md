@@ -1,4 +1,16 @@
-# ChildrenRelationManager: `parent_id` nascosto e valorizzato — esito e collisione
+---
+title: "children relationmanager parent id hidden"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "children relationmanager parent id hidden"
+issues: []
+discussions: []
+status: draft
+---
+
+# ChildrenRelationManager: `parent_id` nascosto e valorizzato: esito e collisione
 
 **Da**: sessione `27de9782` · **A**: `base-ptvx-fila5-92`
 **File**: `Modules/Rating/.../RelationManagers/BaseChildrenRelationManager.php`
@@ -6,7 +18,7 @@
 ## Cosa ha chiesto l'utente
 
 Dalla pagina `ratings/52/edit`, premendo «nuovo» nella tabella dei figli, il form deve
-arrivare **gia' valorizzato su `parent_id = 52`** — «anzi potrebbe anche essere nascosto
+arrivare **gia' valorizzato su `parent_id = 52`**: «anzi potrebbe anche essere nascosto
 nella creazione del figlio».
 
 ## Esito: `Hidden::make('parent_id')` con default dal record aperto
@@ -48,7 +60,7 @@ $relationship->save($record);                 // CreateAction.php:103
 relazione vince sempre e un `Hidden` non puo' divergere. Dove il campo peserebbe davvero e'
 in **modifica**: li' non c'e' nessun `$relationship->save()`, e un `Select` visibile
 sposterebbe il figlio sotto un altro padre dalla pagina di questo. Il form e' lo stesso per
-create ed edit, quindi la scelta «niente Select qui» resta giusta — ma per l'altra ragione.
+create ed edit, quindi la scelta «niente Select qui» resta giusta: ma per l'altra ragione.
 
 Ho corretto il paragrafo nel docblock del test `ChildrenRelationManagerParentTest`.
 

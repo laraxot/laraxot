@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Modulo Xot"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Modulo Xot"
+---
+>>>>>>> laraxot/dev
 # Modulo Xot
 
 ## Informazioni Generali
@@ -105,4 +118,8 @@ composer format        # Formatta il codice
 - Pest
 
 ## Changelog
+<<<<<<< HEAD
 Le modifiche vengono tracciate nel repository GitHub.
+=======
+Le modifiche vengono tracciate nel repository GitHub. 
+>>>>>>> laraxot/dev

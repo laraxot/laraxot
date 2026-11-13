@@ -1,3 +1,15 @@
+---
+title: "docs4"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs4"
+issues: []
+discussions: []
+status: draft
+---
+
 # Docs4
 
 ```text
@@ -20,6 +32,14 @@
 
 ---
 
+title: "docs4"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs4"
+issues: []
+discussions: []
 ## 1. ARCHITETTURA E STACK TECNOLOGICO
 ### Stack Principale Identificato
 - **Laravel Framework**: 12.0+ con PHP 8.2+ (composer.json analysis)
@@ -335,7 +355,7 @@ bashscripts/update-doc-links.sh       # Aggiorna collegamenti
 
 ## 13. BACKEND E ARCHITETTURA
 - **Namespace**: mai includere segmento 'app' (es: `Modules\{ModuleName}\Models`)
-- **Spatie Data Objects**: in `Modules/{ModuleName}/Data/`
+- **Spatie Data Objects**: in `Modules/{ModuleName}/app/Datas/`
 - **Spatie QueueableAction**: in `Modules/{ModuleName}/Actions/`
 - **Usare `Modules\Xot\Contracts\UserContract`**
 - **Ottenere classe User**: `XotData::make()->getUserClass()`

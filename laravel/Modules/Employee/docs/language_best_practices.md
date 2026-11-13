@@ -1,3 +1,9 @@
+---
+title: "Employee - LANGUAGE_BEST_PRACTICES"
+module: Employee
+bmad: true
+status: active
+---
 # Best Practices per File di Lingua - Modulo Employee
 
 ## Principi Fondamentali

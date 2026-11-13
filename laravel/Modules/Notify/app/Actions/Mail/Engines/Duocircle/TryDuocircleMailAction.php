@@ -93,6 +93,10 @@ class TryDuocircleMailAction
         return $result;
     }
 
+    /**
+     * Invoker via reflection verso la libreria Webklex: `mixed ...$arguments` e
+     * ritorno `mixed` sono voluti — la libreria non dichiara tipi.
+     */
     private function invoke(object|string $target, string $method, mixed ...$arguments): mixed
     {
         $reflection = new ReflectionMethod($target, $method);

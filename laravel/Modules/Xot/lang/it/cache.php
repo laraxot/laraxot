@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 return [
     'navigation' => [
+<<<<<<< HEAD
         'name' => 'cache',
         'plural' => 'cache',
         'group' => [
@@ -11,6 +12,15 @@ return [
         ],
         'label' => 'cache.navigation',
         'icon' => 'cache.navigation',
+=======
+        'name' => 'Cache',
+        'plural' => 'Cache',
+        'group' => [
+            'name' => 'Admin',
+        ],
+        'label' => 'Cache',
+        'icon' => 'heroicon-o-circle-stack',
+>>>>>>> laraxot/dev
         'sort' => 90,
     ],
     'pages' => [
@@ -49,6 +59,7 @@ return [
             'helper_text' => '',
             'description' => '',
         ],
+<<<<<<< HEAD
         'key' => [
             'label' => 'key',
             'placeholder' => 'key',
@@ -66,22 +77,33 @@ return [
             'placeholder' => 'expiration',
             'helper_text' => 'expiration',
             'description' => 'expiration',
+=======
+        'value' => [
+            'helper_text' => '',
+>>>>>>> laraxot/dev
         ],
     ],
     'actions' => [
         'create' => [
             'label' => 'Crea Cache',
             'icon' => 'create',
+<<<<<<< HEAD
             'tooltip' => 'create',
+=======
+>>>>>>> laraxot/dev
         ],
         'edit' => [
             'label' => 'Modifica Cache',
             'icon' => 'edit',
+<<<<<<< HEAD
             'tooltip' => 'edit',
+=======
+>>>>>>> laraxot/dev
         ],
         'delete' => [
             'label' => 'Elimina Cache',
             'icon' => 'delete',
+<<<<<<< HEAD
             'tooltip' => 'delete',
         ],
         'createAnother' => [
@@ -118,6 +140,29 @@ return [
             'label' => 'filament:clear-cached-components',
             'icon' => 'filament:clear-cached-components',
             'tooltip' => 'filament:clear-cached-components',
+=======
+        ],
+        'createAnother' => [
+            'icon' => 'createAnother',
+        ],
+        'save' => [
+            'icon' => 'save',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
+        'route:list' => [
+            'icon' => 'route:list',
+        ],
+        'icons:cache' => [
+            'icon' => 'icons:cache',
+        ],
+        'filament:cache-components' => [
+            'icon' => 'filament:cache-components',
+        ],
+        'filament:clear-cached-components' => [
+            'icon' => 'filament:clear-cached-components',
+>>>>>>> laraxot/dev
         ],
     ],
 ];

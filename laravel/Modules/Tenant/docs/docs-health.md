@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Docs Health - Tenant"
 module: "Tenant"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "docs health"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # Docs Health - Tenant
 

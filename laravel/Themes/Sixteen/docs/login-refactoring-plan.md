@@ -1,3 +1,15 @@
+---
+title: "login refactoring plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login refactoring plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Piano Rifattorizzazione Pagina Login - AGID Compliance
 
 ## Obiettivo
@@ -294,5 +306,5 @@ document.addEventListener('DOMContentLoaded', function() {
 - [Analisi Problemi Login](agid-login-problems-analysis.md)
 - [AGID Login Implementation](agid-login-implementation.md)
 - [Layout Usage Patterns](layout-usage-patterns.md)
-- [Vite Theme Integration](vite-theme-integration.md)
+- [Vite Theme Integration](build/vite-theme-integration.md)
 

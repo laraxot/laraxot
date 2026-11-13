@@ -1,3 +1,14 @@
+---
+title: "Ottimizzazioni Super DRY + KISS - Modulo UI"
+type: note
+status: draft
+created: 2026-01-20
+updated: 2026-10-18
+module: UI
+tags: [docs, ui]
+qmd: "ottimizzazioni super dry + kiss - modulo ui ui"
+---
+
 # Ottimizzazioni Super DRY + KISS - Modulo UI
 
 ## 🎯 Panoramica

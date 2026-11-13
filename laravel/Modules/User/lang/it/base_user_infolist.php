@@ -2,22 +2,26 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_aLgj54
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'name' => ['label' => 'name'],
-        'first_name' => ['label' => 'first_name'],
-        'last_name' => ['label' => 'last_name'],
-        'email' => ['label' => 'email'],
-        'lang' => ['label' => 'lang'],
-        'current_team_id' => ['label' => 'current_team_id'],
-        'is_active' => ['label' => 'is_active'],
-        'is_otp' => ['label' => 'is_otp'],
-        'password_expires_at' => ['label' => 'password_expires_at'],
-        'email_verified_at' => ['label' => 'email_verified_at'],
-        'type' => ['label' => 'type'],
-        'state' => ['label' => 'state'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'id' => ['label' => 'ID'],
+        'name' => ['label' => 'Nome'],
+        'first_name' => ['label' => 'Nome'],
+        'last_name' => ['label' => 'Cognome'],
+        'email' => ['label' => 'E-mail'],
+        'lang' => ['label' => 'Lingua'],
+        'current_team_id' => ['label' => 'Team attuale'],
+        'is_active' => ['label' => 'Attivo'],
+        'is_otp' => ['label' => 'Password temporanea'],
+        'password_expires_at' => ['label' => 'Password scade il'],
+        'email_verified_at' => ['label' => 'E-mail verificata il'],
+        'type' => ['label' => 'Tipo'],
+        'state' => ['label' => 'Stato'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_Vq8mEy

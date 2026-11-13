@@ -1,10 +1,15 @@
 ---
+qmd: "farmshops integration complete.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: farmshops-integration-complete.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: farmshops-integration-complete.divergenza.md
 ---
 
 # Divergenza: `farmshops-integration-complete.md`

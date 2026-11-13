@@ -2,21 +2,25 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_5yajCX
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'name' => ['label' => 'name'],
-        'slug' => ['label' => 'slug'],
-        'domain' => ['label' => 'domain'],
-        'email_address' => ['label' => 'email_address'],
-        'phone' => ['label' => 'phone'],
-        'mobile' => ['label' => 'mobile'],
-        'address' => ['label' => 'address'],
-        'primary_color' => ['label' => 'primary_color'],
-        'secondary_color' => ['label' => 'secondary_color'],
-        'is_active' => ['label' => 'is_active'],
-        'trial_ends_at' => ['label' => 'trial_ends_at'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'id' => ['label' => 'ID'],
+        'name' => ['label' => 'Nome'],
+        'slug' => ['label' => 'Codice'],
+        'domain' => ['label' => 'Dominio'],
+        'email_address' => ['label' => 'E-mail'],
+        'phone' => ['label' => 'Telefono'],
+        'mobile' => ['label' => 'Cellulare'],
+        'address' => ['label' => 'Indirizzo'],
+        'primary_color' => ['label' => 'Colore principale'],
+        'secondary_color' => ['label' => 'Colore secondario'],
+        'is_active' => ['label' => 'Attivo'],
+        'trial_ends_at' => ['label' => 'Fine prova'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_YXnp2M

@@ -1,3 +1,15 @@
+---
+title: "geo map popup leaflet boundary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "geo map popup leaflet boundary"
+issues: []
+discussions: []
+status: draft
+---
+
 # geo-map-popup — confine tema sixteen / leaflet
 
 ## scopo
@@ -18,7 +30,7 @@ Il tema Sixteen non ridefinisce la struttura interna del popup Geo; limita confl
 
 ## block bem interno (modulo)
 
-- `popup`, `popup--loading`, `popup__footer` — [geo-map-popup-bem.md](../../../../Modules/Geo/docs/wiki/concepts/geo-map-popup-bem.md)
+- `popup`, `popup--loading`, `popup__footer` — [geo-map-popup-bem.md](../../../../../Modules/Geo/docs/wiki/concepts/geo-map-popup-bem.md)
 
 ## marker (tema)
 
@@ -46,13 +58,13 @@ colpiscono qualsiasi tag `<header>` nel DOM — **incluso** un vecchio `<header 
 3. `13-final-runtime-overrides.css` — stesso override in coda cascade
 4. Parity sito: `header` ristretto a `header.it-header-wrapper` dove possibile
 
-Runbook: [map-popup-header-whitespace-fix.md](../../../../Modules/Geo/docs/wiki/troubleshooting/map-popup-header-whitespace-fix.md) · [global-header-css-leak-leaflet-popup.md](../troubleshooting/global-header-css-leak-leaflet-popup.md)
+Runbook: [map-popup-header-whitespace-fix.md](../../../../../Modules/Geo/docs/wiki/troubleshooting/map-popup-header-whitespace-fix.md) · [global-header-css-leak-leaflet-popup.md](../troubleshooting/global-header-css-leak-leaflet-popup.md)
 
 ## ricostruzione
 
-- [geo-map-lit-reconstruction-guide.md](../../../../Modules/Geo/docs/wiki/concepts/geo-map-lit-reconstruction-guide.md)
-- [geo-map-fixes-registry.md](../../../../Modules/Geo/docs/wiki/concepts/geo-map-fixes-registry.md)
-- [map-lit-reconstruction-hub.md](../../../../../docs/wiki/memories/map-lit-reconstruction-hub.md)
+- [geo-map-lit-reconstruction-guide.md](../../../../../Modules/Geo/docs/wiki/concepts/geo-map-lit-reconstruction-guide.md)
+- [geo-map-fixes-registry.md](../../../../../Modules/Geo/docs/wiki/concepts/geo-map-fixes-registry.md)
+- [map-lit-reconstruction-hub.md](../../../../../../docs/wiki/memories/map-lit-reconstruction-hub.md)
 
 ## collegamenti
 

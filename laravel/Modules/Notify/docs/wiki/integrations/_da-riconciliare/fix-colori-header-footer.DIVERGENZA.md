@@ -1,10 +1,15 @@
 ---
+qmd: "fix colori header footer.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: fix-colori-header-footer.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: fix-colori-header-footer.divergenza.md
 ---
 
 # Divergenza: `fix-colori-header-footer.md`

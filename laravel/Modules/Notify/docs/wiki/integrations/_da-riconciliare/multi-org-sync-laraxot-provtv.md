@@ -1,4 +1,7 @@
 ---
+qmd: "multi org sync laraxot provtv"
+issues: []
+discussions: []
 title: "Sincronizzazione multi-organizzazione (laraxot + provtv)"
 type: concept
 tags: [git, sync, multi-org, laraxot, provtv, quality-gates]
@@ -6,6 +9,7 @@ created: "2026-07-21"
 updated: "2026-07-29"
 related:
   - "../../../bashscripts/tools/prompts/02-gitmodules-sync.md"
+status: draft
 ---
 
 # Sincronizzazione multi-organizzazione (laraxot + provtv)
@@ -53,7 +57,7 @@ Canon: [../User/docs/wiki/troubleshooting/git-push-dual-remote-unrelated.md](../
 ### Caso Notify 2026-07-23 (già allineato, nessuna azione)
 
 Working tree pulito, nessun merge/rebase in corso. Fetch `laraxot` + `provtv`:
-entrambi **`0 0`** (merge-base presente, storie correlate — la risoluzione
+entrambi **`0 0`** (merge-base presente, storie correlate: la risoluzione
 "unrelated" del 2026-07-21 sopra è rimasta stabile stavolta, a differenza di
 `Xot`). Nessun commit da fare, nessun push necessario.
 

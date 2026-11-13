@@ -1,3 +1,15 @@
+---
+title: "case variant collisions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "case variant collisions"
+issues: []
+discussions: []
+status: draft
+---
+
 # Collisioni di nome per sola differenza di maiuscole
 
 **Misurato**: 2026-08-31

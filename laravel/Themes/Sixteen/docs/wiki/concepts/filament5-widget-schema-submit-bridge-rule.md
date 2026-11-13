@@ -1,3 +1,15 @@
+---
+title: "filament5 widget schema submit bridge rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament5 widget schema submit bridge rule"
+issues: []
+discussions: []
+status: draft
+---
+
 # Filament 5 Widget Schema Submit Bridge Rule
 
 ## Regola Tema

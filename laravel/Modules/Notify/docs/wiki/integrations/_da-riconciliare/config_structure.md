@@ -1,10 +1,14 @@
 ---
+qmd: "config structure"
+issues: []
+discussions: []
 title: "Struttura di Configurazione nei Moduli <nome progetto>"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Struttura di Configurazione nei Moduli <nome progetto>

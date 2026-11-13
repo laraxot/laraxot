@@ -374,7 +374,6 @@ public function it_logs_activity_when_sending_email(): void
 
 ---
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_5LQsOd
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -388,9 +387,6 @@ public function it_logs_activity_when_sending_email(): void
 =======
 **Ultimo Aggiornamento:** 2025-01-22
 >>>>>>> .merge_file_Jzpd2i
-=======
-**
->>>>>>> 13cf1831 (.)
 **Versione:** 1.0
 **Autore:** System Integration Documentation
 **Stato:** ✅ Production Ready

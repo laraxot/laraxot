@@ -1,4 +1,9 @@
 ---
+type: note
+updated: 2026-09-26
+qmd: "schema"
+issues: []
+discussions: []
 title: Wiki Schema
 description: Schema e convenzioni per la manutenzione della wiki
 tags:
@@ -6,6 +11,7 @@ tags:
   - conventions
   - llm-instructions
 created: 2026-04-15
+status: draft
 ---
 
 # Wiki Schema - Job

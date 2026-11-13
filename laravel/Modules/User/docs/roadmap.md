@@ -1,21 +1,22 @@
 ---
-title: "User Module - Complete Roadmap 2026"
+title: "👥 USER MODULE - ROADMAP 2025"
 type: concept
-tags: [roadmap]
+tags: [roadmap, 2025]
 created: 2026-07-14
 updated: 2026-07-14
-qmd: "roadmap- user module - complete roadmap 2026"
+qmd: "roadmap-2025 👥 user module - roadmap 2025"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # User Module - Complete Roadmap 2026
@@ -511,6 +512,19 @@ User Module Dependencies:
 **Priority**: HIGH
 **PHPStan**: ✅ Level 10 (0 errori)
 **Filament**: ✅ 4.x Compatibile
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
+---
+
+# 👥 USER MODULE - ROADMAP 2025
+
+**Modulo**: User (Authentication & Authorization)  
+**Status**: 90% COMPLETATO  
+**Priority**: HIGH  
+**PHPStan**: ✅ Level 10 (0 errori)  
+**Filament**: ✅ 4.x Compatibile  
 
 ---
 
@@ -601,7 +615,7 @@ User Module
 ## 🚧 IN PROGRESS FEATURES
 
 ### 🌐 Social Login Integration (Priority: MEDIUM)
-**Status**: 40% COMPLETATO
+**Status**: 40% COMPLETATO  
 **Timeline**: Q1 2025
 
 #### 📋 Tasks
@@ -631,7 +645,7 @@ User Module
 - [ ] GDPR compliance verified
 
 ### 📱 Mobile Authentication (Priority: HIGH)
-**Status**: 30% COMPLETATO
+**Status**: 30% COMPLETATO  
 **Timeline**: Q1 2025
 
 #### 📋 Tasks
@@ -980,6 +994,8 @@ User Module
 
 **Status**: 🚧 ACTIVE DEVELOPMENT
 **Confidence Level**: 98%
+**Status**: 🚧 ACTIVE DEVELOPMENT  
+**Confidence Level**: 98%  
 
 ---
 
@@ -1030,13 +1046,13 @@ qmd: "roadmap product roadmap - user module"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
   - "./actions-path-convention.md"
 ---
 

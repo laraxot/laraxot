@@ -1,5 +1,7 @@
 ---
-title: "Media — mai Filament\*, sempre XotBase*"
+issues: []
+discussions: []
+title: "Media — mai Filament*, sempre XotBase*"
 type: concept
 module: Media
 tags: [media, filament, xotbase, architecture]
@@ -7,14 +9,15 @@ created: 2026-07-16
 updated: 2026-07-16
 qmd: "Media filament never extend Filament class XotBase mirror path"
 related:
-  - ../../../../docs/wiki/rules/xotbase-critical-rules.md
-  - ../../../../docs/wiki/rules/xot-base-filament-widgets.md
-  - ../../../../docs/wiki/memories/xotbase-never-extend-filament.md
+  - ../../../../../docs/wiki/rules/xotbase-critical-rules.md
+  - ../../../../../docs/wiki/rules/xot-base-filament-widgets.md
+  - ../../../../../docs/wiki/memories/xotbase-never-extend-filament.md
+status: draft
 ---
 
 # Mai `Filament\*` — sempre `Modules\Xot\Filament\...\XotBase*`
 
-Bridge on-demand. Contenuto canonico: [docs/wiki/rules/xotbase-critical-rules.md](../../../../docs/wiki/rules/xotbase-critical-rules.md).
+Bridge on-demand. Contenuto canonico: [docs/wiki/rules/xotbase-critical-rules.md](../../../../../docs/wiki/rules/xotbase-critical-rules.md).
 
 ## Zen (riassunto)
 

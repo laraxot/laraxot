@@ -43,8 +43,13 @@ class AddressField extends XotBaseField
             $relationship = $this->getRelationship();
             if ($relationship && $record->relationLoaded($relationship)) {
                 $address = $record->getRelationValue($relationship);
+<<<<<<< HEAD
+                if ($address !== null && is_object($address) && method_exists($address, 'toArray')) {
+                    $address->toArray();
+=======
                 if (null !== $address && is_object($address) && method_exists($address, 'toArray')) {
                     $data = $address->toArray();
+>>>>>>> f5ffd8b4 (.)
                 }
             }
 

@@ -6,7 +6,6 @@ namespace Modules\Activity\Filament\Resources\SnapshotResource\Tables;
 
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
-<<<<<<< HEAD
 <<<<<<< .merge_file_5qdCEs
 use Modules\Activity\Models\Snapshot;
 =======
@@ -28,19 +27,10 @@ class SnapshotsTable extends XotBaseResourceTable
 
     /**
      * @return array<string, Column>
-=======
-use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
-
-class SnapshotsTable extends XotBaseResourceTable
-{
-    /**
-     * @return array<int|string, Column>
->>>>>>> 13cf1831 (.)
      */
     public function getTableColumns(): array
     {
         return [
-<<<<<<< HEAD
             'aggregate_uuid' => TextColumn::make('aggregate_uuid')->searchable()->sortable()->copyable(),
             'aggregate_version' => TextColumn::make('aggregate_version')->numeric()->sortable(),
             'state' => TextColumn::make('state')
@@ -74,14 +64,6 @@ class SnapshotsTable extends XotBaseResourceTable
                     ->all())
                 ->getOptionLabelUsing(fn (string $value): string => $value),
 >>>>>>> .merge_file_BzTneY
-=======
-            'id' => TextColumn::make('id')->searchable()->sortable(),
-            'aggregate_uuid' => TextColumn::make('aggregate_uuid')->searchable()->limit(30),
-            'aggregate_version' => TextColumn::make('aggregate_version')->searchable()->sortable(),
-            'state' => TextColumn::make('state')->limit(50),
-            'created_at' => TextColumn::make('created_at')->dateTime(),
-            'updated_at' => TextColumn::make('updated_at')->dateTime(),
->>>>>>> 13cf1831 (.)
         ];
     }
 }

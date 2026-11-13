@@ -20,7 +20,7 @@ return [
             'description' => 'General Settings',
         ],
         'label' => 'Header',
-        'sort' => 1,
+        'sort' => '1',
         'icon' => 'heroicon-o-rectangle-stack',
     ],
     'fields' => [

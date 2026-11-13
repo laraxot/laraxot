@@ -1,5 +1,20 @@
+---
+title: "spatie media library migration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "spatie media library migration"
+issues: []
+discussions: []
+status: draft
+---
+
+<<<<<<< HEAD
 # Migrazione da FileUpload a Spatie Media Library
 
+=======
+>>>>>>> f5ffd8b4 (.)
 ## 🌍 Analisi Multidimensionale della Migrazione
 # Migrazione da FileUpload a Spatie Media Library
 

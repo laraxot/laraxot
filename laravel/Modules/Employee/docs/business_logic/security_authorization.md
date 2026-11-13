@@ -1,3 +1,9 @@
+---
+title: "Employee - SECURITY_AUTHORIZATION"
+module: Employee
+bmad: true
+status: active
+---
 # Security & Authorization Business Logic
 
 ## 🔐 Role-Based Access Control (RBAC)

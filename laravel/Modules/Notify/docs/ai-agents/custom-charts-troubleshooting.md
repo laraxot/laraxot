@@ -1,3 +1,15 @@
+---
+title: "custom charts troubleshooting"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "custom charts troubleshooting"
+issues: []
+discussions: []
+status: draft
+---
+
 # Custom Charts Troubleshooting Guide
 
 **Version**: 1.0.0  
@@ -6,7 +18,6 @@
 **Complexity**: All Levels
 
 ---
-
 ## Quick Reference
 
 | Error | Severity | Quick Fix |

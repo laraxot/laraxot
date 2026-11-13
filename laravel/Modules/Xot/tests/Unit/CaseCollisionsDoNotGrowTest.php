@@ -16,12 +16,21 @@ declare(strict_types=1);
  * Bonifica: python3 bashscripts/tools/audit/audit-case-collisions.py --fix-identical
  */
 
+<<<<<<< HEAD
+=======
+use Modules\Xot\Tests\TestCase;
+>>>>>>> laraxot/dev
 use Symfony\Component\Process\Process;
 
 use function Safe\file_get_contents;
 use function Safe\file_put_contents;
 use function Safe\json_decode;
 
+<<<<<<< HEAD
+=======
+uses(TestCase::class);
+
+>>>>>>> laraxot/dev
 function repoRoot(): string
 {
     return \dirname(__DIR__, 5);

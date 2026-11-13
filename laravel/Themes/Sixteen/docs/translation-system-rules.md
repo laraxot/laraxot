@@ -1,3 +1,15 @@
+---
+title: "translation system rules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "translation system rules"
+issues: []
+discussions: []
+status: draft
+---
+
 # Translation System Rules - CRITICAL RULES
 
 ## ❌ ERRORE GRAVE COMMESSO
@@ -5,13 +17,13 @@ Ho erroneamente cambiato chiavi di traduzione strutturate in stringhe dirette.
 
 **SBAGLIATO:**
 ```php
-// DA: {{ __('pub_theme::auth.login.submit') }}
+// DA: {{ __('pub_theme::auth.login.submit.text') }}
 // A: {{ __('Accedi') }}  ❌ ERRORE GRAVE!
 ```
 
 **GIUSTO:**
 ```php
-{{ __('pub_theme::auth.login.submit') }}  ✅ CORRETTO
+{{ __('pub_theme::auth.login.submit.text') }}  ✅ CORRETTO
 ```
 
 ## 🎯 REGOLE FONDAMENTALI
@@ -20,11 +32,11 @@ Ho erroneamente cambiato chiavi di traduzione strutturate in stringhe dirette.
 Laravel usa un sistema di namespace per le traduzioni:
 
 ```php
-__('namespace::file.key.subkey')
+__('namespace::context.collection.key.type')
 ```
 
 **Esempi:**
-- `pub_theme::auth.login.submit` → `/lang/it/auth.php` → `['login' => ['submit' => 'Accedi']]`
+- `pub_theme::auth.login.submit.text` → `/lang/it/auth.php` → `['login' => ['submit' => ['text' => 'Accedi']]]`
 - `user::profile.settings` → Modulo User → `['profile' => ['settings' => 'Impostazioni']]`
 
 ### 2. STRUTTURA CORRETTA
@@ -44,6 +56,14 @@ Themes/Sixteen/lang/it/
 // Da: {{ __('pub_theme::auth.login.remember') }}
 // A:  {{ __('Ricordami') }}  ← ERRORE!
 ```
+
+### 4. FALLBACK CMS
+
+I blocchi CMS della lingua attiva hanno precedenza sui fallback tema. I fallback
+visibili al cittadino devono usare chiavi `pub_theme::` complete per tutte le
+lingue servite. Configurazioni globali non localizzate non devono sovrascrivere i
+cataloghi della lingua corrente; mantenerle solo come compatibilità della lingua
+per cui sono state scritte.
 
 **✅ GIUSTO - Creare la traduzione:**
 ```php

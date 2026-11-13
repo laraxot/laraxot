@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "view_models"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "view_models xot"
+---
+>>>>>>> laraxot/dev
 # view_models
 
 <!-- Contenuto migrato da _docs/view_models.txt -->

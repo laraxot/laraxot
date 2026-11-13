@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating Module - Product Strategy"
 type: guide
 tags: [product, strategy, rating]
@@ -7,6 +9,8 @@ updated: 2026-07-14
 qmd: "PRODUCT STRATEGY"
 related:
   - "./PROJECT-STRUCTURE.md"
+status: superseded
+superseded_by: bmad/product_strategy.md
 ---
 
 # Rating Module - Product Strategy

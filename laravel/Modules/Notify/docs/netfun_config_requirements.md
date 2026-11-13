@@ -1,3 +1,15 @@
+---
+title: "netfun config requirements"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "netfun config requirements"
+issues: []
+discussions: []
+status: draft
+---
+
 # Requisiti di Configurazione per Netfun SMS
 
 Questa guida descrive la configurazione necessaria per utilizzare il provider Netfun come driver SMS nel modulo Notify.
@@ -85,13 +97,14 @@ NETFUN_API_URL=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 - [Struttura Standardizzata della Configurazione SMS](./STANDARDIZED_SMS_CONFIG_STRUCTURE.md)
 - [Canale SMS Netfun](./SMS_NETFUN_CHANNEL.md)
+- [Struttura Standardizzata della Configurazione SMS](./standardized_sms_config_structure.md)
+- [Canale SMS Netfun](./sms_netfun_channel.md)
 
 ## Supporto
 
 Per problemi di configurazione o domande sull'integrazione con Netfun, consultare la documentazione ufficiale di Netfun o contattare il team di supporto.
 
 ---
-
 *Ultimo aggiornamento: 2025-05-12*
 
 ## 2. Esempio di .env
@@ -141,6 +154,8 @@ NETFUN_ENDPOINT=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 - [Documentazione Completa Netfun Channel](./SMS_NETFUN_CHANNEL.md)
 - [Esempi di Utilizzo Netfun](./NETFUN_EXAMPLES.md)
+- [Documentazione Completa Netfun Channel](./sms_netfun_channel.md)
+- [Esempi di Utilizzo Netfun](./netfun_examples.md)
 - [Risoluzione Conflitti Netfun](./netfunchannel_conflict_resolution.md)
 
 ---

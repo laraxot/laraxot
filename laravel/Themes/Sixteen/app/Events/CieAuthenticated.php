@@ -6,7 +6,7 @@ namespace Themes\Sixteen\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use Modules\Xot\Contracts\UserContract;
+use Modules\User\Models\User;
 
 /**
  * Evento lanciato quando un utente si autentica con successo tramite CIE
@@ -17,12 +17,11 @@ use Modules\Xot\Contracts\UserContract;
 class CieAuthenticated
 {
     use Dispatchable, SerializesModels;
-
     /**
      * @param  array<string, mixed>  $cieAttributes
      */
     public function __construct(
-        public UserContract $user,
+        public User $user,
         public array $cieAttributes
     ) {}
 
@@ -94,8 +93,7 @@ class CieAuthenticated
 
     /**
      * Ottiene tutti gli attributi CIE ricevuti
-     */
-    /**
+     */    /**
      * @return array<string, mixed>
      */
     public function getCieAttributes(): array
@@ -104,8 +102,7 @@ class CieAuthenticated
     }
 
     /**
-     * Ottiene attributi specifici per logging sicuro
-     */
+     * Ottiene attributi specifici per logging sicuro     */
     /**
      * @return array<string, mixed>
      */

@@ -51,7 +51,7 @@
 <body class="h-full font-sans antialiased bg-gray-50">
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50">
-        {{ __('Skip to main content') }}
+        {{ __('pub_theme::layout.skip_link.main_content.label') }}
     </a>
 
     <!-- Header -->
@@ -86,33 +86,33 @@
                     <div>
                         <h3 class="text-lg font-semibold mb-4">{{ config('app.name', 'Laravel') }}</h3>
                         <p class="text-gray-300 text-sm">
-                            {{ __('Your application description here.') }}
+                            {{ __('pub_theme::layout.footer.description.description') }}
                         </p>
                     </div>
 
                     <!-- Quick Links -->
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">{{ __('Quick Links') }}</h3>
+                        <h3 class="text-lg font-semibold mb-4">{{ __('pub_theme::layout.footer.quick_links.title') }}</h3>
                         <ul class="space-y-2 text-sm">
-                            <li><a href="{{ route('home') }}" class="text-gray-300 hover:text-white transition-colors">{{ __('Home') }}</a></li>
-                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">{{ __('About') }}</a></li>
-                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">{{ __('Contact') }}</a></li>
+                            <li><a href="{{ route('home') }}" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::layout.nav.home.label') }}</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::layout.nav.about.label') }}</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::layout.nav.contact.label') }}</a></li>
                         </ul>
                     </div>
 
                     <!-- Contact Info -->
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">{{ __('Contact') }}</h3>
+                        <h3 class="text-lg font-semibold mb-4">{{ __('pub_theme::layout.footer.contact.title') }}</h3>
                         <div class="text-sm text-gray-300 space-y-2">
-                            <p>{{ __('Email: info@example.com') }}</p>
-                            <p>{{ __('Phone: +1 234 567 890') }}</p>
+                            <p>{{ __('pub_theme::layout.footer.email.label', ['email' => 'info@example.com']) }}</p>
+                            <p>{{ __('pub_theme::layout.footer.phone.label', ['phone' => '+1 234 567 890']) }}</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Copyright -->
                 <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300">
-                    <p>&copy; {{ date('Y') }} {{ config('app.name', 'Laravel') }}. {{ __('All rights reserved.') }}</p>
+                    <p>&copy; {{ date('Y') }} {{ config('app.name', 'Laravel') }}. {{ __('pub_theme::layout.footer.rights.label') }}</p>
                 </div>
             </div>
         @endif

@@ -1,3 +1,15 @@
+---
+title: "report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "report"
+issues: []
+discussions: []
+status: draft
+---
+
 # HTML Structure Parity Report: segnalazione-01-privacy
 
 **Date:** 2026-04-08T16:39:24+02:00  
@@ -6,7 +18,6 @@
 **Local:** http://127.0.0.1:8000/it/tests/segnalazione-01-privacy
 
 ---
-
 ## 📊 Summary
 
 | Metric | Value |

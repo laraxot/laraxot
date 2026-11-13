@@ -1,3 +1,15 @@
+---
+title: "tests pages architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "tests pages architecture"
+issues: []
+discussions: []
+status: draft
+---
+
 # Tests Pages Architecture: Why NO design-comuni.blade.php
 
 **Decision:** We DO NOT use `<x-layouts.design-comuni>` for tests pages.
@@ -5,7 +17,6 @@
 **Pattern:** Tests pages MUST use `<x-layouts.app>` EXACTLY like CMS pages.
 
 ---
-
 ## ✅ Correct Pattern
 
 ### File: `laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php`
@@ -33,7 +44,7 @@ new class extends Component {
     public function mount(string $slug = ''): void
     {
         $this->slug = $slug;
-        $this->pageSlug = $slug ? 'tests.'.$slug : 'tests';
+        $this->pageSlug = $slug ? 'tests.'.$slug : 'tests.index';
 
         $this->data = [
             'slug' => $slug,
@@ -159,8 +170,8 @@ Render blocks dynamically
 
 ## 🔗 Related Documentation
 
-- [CMS Page Component Architecture](../../Modules/Cms/docs/PAGE_COMPONENT_ARCHITECTURE.md)
-- [Page Routing Architecture](../architecture/PAGE_ROUTING_ARCHITECTURE.md)
+- [CMS Page Component Architecture](../../../../../Modules/Cms/docs/page-component-architecture.md)
+- [Page Routing Architecture](../../architecture/page-routing-architecture.md)
 - [Folio Pages Architecture](../architecture/FOLIO_PAGES.md)
 - [Design Comuni Block Analysis](_bmad-output/design-comuni-block-analysis.md)
 

@@ -10,6 +10,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Exceptions\GoogleMaps\GoogleMapsApiException;
+use Modules\Geo\Infrastructure\Config\GeoApiEndpoints;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -19,21 +20,20 @@ class CalculateDistanceMatrixAction
 {
     use QueueableAction;
 
-    private const string BASE_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json';
+    private const string BASE_URL = GeoApiEndpoints::GOOGLE_DISTANCE_MATRIX;
 
     /**
      * Calcola la matrice delle distanze tra origini e destinazioni.
      *
-     * @param Collection<int, LocationData> $origins      Punti di origine
-     * @param Collection<int, LocationData> $destinations Punti di destinazione
-     *
-     * @throws GoogleMapsApiException Se la richiesta fallisce o i dati non sono validi
-     *
+     * @param  Collection<int, LocationData>  $origins  Punti di origine
+     * @param  Collection<int, LocationData>  $destinations  Punti di destinazione
      * @return array<array<array{
      *     distance: array{text: string, value: int},
      *     duration: array{text: string, value: int},
      *     status: string
      * }>>
+     *
+     * @throws GoogleMapsApiException Se la richiesta fallisce o i dati non sono validi
      */
     public function execute(Collection $origins, Collection $destinations): array
     {
@@ -56,7 +56,7 @@ class CalculateDistanceMatrixAction
 
         /** @var Response $response */
         if (! $response->successful()) {
-            throw GoogleMapsApiException::requestFailed((string) $response->status());
+            throw GoogleMapsApiException::requestFailed('Richiesta a Google Maps fallita: HTTP '.$response->status());
         }
 
         /** @var array{status?: string, rows?: array<int, array{elements?: array<int, array{distance?: array{text: string, value: int}, duration?: array{text: string, value: int}, status?: string}>}>} $data */

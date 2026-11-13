@@ -1,5 +1,5 @@
 /**
- * Check HTML parity and take screenshots for all 6 pages
+ * Check HTML parity and take screenshots for all seven pages
  * Pages: segnalazione-area-personale, segnalazioni-elenco, segnalazione-dettaglio,
  *        segnalazione-01-privacy, segnalazione-02-dati, segnalazione-03-riepilogo, segnalazione-04-conferma
  */
@@ -19,8 +19,8 @@ const PAGES = [
 ];
 
 const BASE_REF = 'https://italia.github.io/design-comuni-pagine-statiche/sito';
-const BASE_LOCAL = 'http://127.0.0.1:8000';
-const OUTPUT_DIR = '/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/docs/screenshots/segnalazione-pages';
+const BASE_LOCAL = process.env.FIXCITY_BASE_URL || 'http://127.0.0.1:8000';
+const OUTPUT_DIR = path.join(__dirname, 'docs/screenshots/segnalazione-pages');
 
 async function analyzeFonts(page, url, label) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });

@@ -1,12 +1,18 @@
+---
+title: "Employee - INDEX"
+module: Employee
+bmad: true
+status: active
+---
 # Indice documentazione — Modulo Employee
 
-Indice per argomento di `Modules/Employee/docs/` (293 file `.md`). Nessun file esistente è stato spostato, rinominato o cancellato: questo indice si limita a collegare e a segnalare i doppioni noti.
+Indice per argomento di `Modules/Employee/docs/`. Nessun file esistente è stato spostato, rinominato o cancellato: questo indice si limita a collegare e a segnalare i doppioni noti.
 
 Vedi anche [INDEX.md](INDEX.md) (nota rapida preesistente su canoni/duplicati) e [docs-structure.md](docs-structure.md) / [maintenance/docs-structure.md](maintenance/docs-structure.md) per la storia della riorganizzazione.
 
 ## Punto di partenza
 
-- [README.md](README.md) — overview del modulo, stack tecnico, regole di compliance
+- [README.md](README.md) — ingresso breve alla documentazione del modulo (la panoramica estesa e' ancora in bozza in `refactored/README.md`)
 - [getting_started.md](getting_started.md) — installazione e primo avvio
 - [philosophy.md](philosophy.md), [philosophy-complete.md](philosophy-complete.md) — filosofia del modulo
 - [roadmap.md](roadmap.md) — roadmap funzionale
@@ -154,7 +160,15 @@ Cluster con tre alberi paralleli su contenuti correlati ma **non identici** (div
 ## Story BMAD
 
 - [stories/7.1.phpstan-paramtype-coverage.story.md](stories/7.1.phpstan-paramtype-coverage.story.md)
+- [stories/7.1.phpstan-paramtype-coverage.dev.md](stories/7.1.phpstan-paramtype-coverage.dev.md)
+- [stories/git-conflict-resolution.md](stories/git-conflict-resolution.md)
 - [stories/docs-index-audit.story.md](stories/docs-index-audit.story.md) — story di questo audit
+- [stories/mobile-ux-pass.story.md](stories/mobile-ux-pass.story.md) — UX da telefono: widget di timbratura, ore, richieste di assenza (fatti verificati: il pannello non ha tema Tailwind)
+- [stories/absence-request-authorization.story.md](stories/absence-request-authorization.story.md) — chi chiede e chi decide le assenze: in Filament il silenzio di una policy consente, policy esplicita + form + pagine (aperto: chi e' il responsabile, `WorkHourPolicy`)
+- Altre story: [8.1.attendance-overview-widget-syntax-fix.story.md](stories/8.1.attendance-overview-widget-syntax-fix.story.md) · [fix-phpstan-timeclock-argument.story.md](stories/fix-phpstan-timeclock-argument.story.md) · [phpstan-batch.story.md](stories/phpstan-batch.story.md) · [phpstan-Employee-fix.md](stories/phpstan-Employee-fix.md)
+- [stories/blade-i18n-no-hardcoded-text.story.md](stories/blade-i18n-no-hardcoded-text.story.md) — niente testi fissi nelle Blade: chiavi `employee::` in it, en, de, es, numeri e residui
+- [bmad/README.md](bmad/README.md), [bmad/domain-enums-over-model-constants.md](bmad/domain-enums-over-model-constants.md) — regola: enum di dominio al posto delle costanti nel modello
+- Non indicizzati altrove: [PHILOSOPHY.md](PHILOSOPHY.md) (contenuto diverso da `philosophy.md`, collisione di sola maiuscola: vedi case-variant-collisions.md; cita "FixCity", da riconciliare) · [coverage.md](coverage.md) · [phpstan-quality-gate.md](phpstan-quality-gate.md) · [wiki/AGENTS.md](wiki/AGENTS.md) · [wiki/readme.md](wiki/readme.md)
 
 ## Wiki interno (second brain di modulo)
 
@@ -178,8 +192,8 @@ File non cancellati né rinominati (per vincolo del task), raggruppati perché d
 
 ### Bozza `refactored/` (quasi-duplicato di README/getting_started in root)
 
-- `refactored/README.md` — quasi identico a [README.md](README.md) (285 vs 281 righe, testo diverso in alcuni punti: verificare quale versione è più aggiornata prima di consolidare)
-- `refactored/getting_started.md` — bozza precedente di [getting_started.md](getting_started.md) (236 vs 285 righe)
+- `refactored/README.md` — bozza di panoramica del modulo, piu' estesa dell'attuale [README.md](README.md) (ingresso di poche righe): decidere quale tenere prima di consolidare
+- `refactored/getting_started.md` — bozza precedente di [getting_started.md](getting_started.md) (testo piu' corto, link interni ancora rotti)
 
 ### Contenuto divergente sotto lo stesso nome logico (da leggere e riconciliare a mano, non scegliere a caso)
 

@@ -3,6 +3,12 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< HEAD
+=======
+    'back' => [
+        'label' => 'Back to list',
+    ],
+>>>>>>> laraxot/dev
     'export_xls' => 'Esporta Dati',
     'navigation' => [
         'label' => 'Missing Navigation Label',
@@ -13,8 +19,11 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
+<<<<<<< HEAD
     'fields' => [
     ],
     'actions' => [
     ],
+=======
+>>>>>>> laraxot/dev
 ];

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "CRITICAL ARCHITECTURE RULE: NO MIGRATE:FRESH"
 module: "Lang"
 type: rule
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "google translate"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # CRITICAL ARCHITECTURE RULE: NO MIGRATE:FRESH
 

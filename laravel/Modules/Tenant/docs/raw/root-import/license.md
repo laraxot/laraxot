@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "License"
 module: "Tenant"
 type: concept

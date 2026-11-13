@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< .merge_file_EDRNaQ
 ## [2026-09-25] phpstan | OpeningHoursField deprecated Placeholder fix
 - `app/Filament/Forms/Components/OpeningHoursField.php`: replaced deprecated `Placeholder::make()` with `TextEntry::make()->state()` (Filament v5 migration).
 - PHPStan `method.deprecatedClass` / `staticMethod.deprecatedClass` cleared.
@@ -15,6 +17,8 @@
 - `app/View/Components/Render/Block.php`: removed inline `@var view-string` inside `if (null === $view)` block that confused PHPStan's assign.propertyType; moved assertion after `Assert::string()`.
 - Cleared `assign.propertyType` error.
 
+=======
+>>>>>>> f5ffd8b4 (.)
 ## [2026-06-05] docs | HackerNoon harness — tips 001-022 in wiki locale
 
 - Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
@@ -62,6 +66,7 @@
 - Layer wiki: `docs/wiki/` — LLM-maintained, sintesi ad alto riuso.
 - Schema: `docs/.schema/WIKI_SCHEMA.md`
 - Adozione moduli: `docs/project/llm-wiki-module-adoption.md`
+<<<<<<< HEAD
 
 ---
 
@@ -69,3 +74,36 @@
 - `app/View/Components/Render/Block.php`: resolved `<<<<<<<` / `=======` / `>>>>>>>` merge conflict markers left from previous merge.
 - Final state uses `GetCmsViewAction::class->execute($view)` consistently in both `__construct()` and `render()`.
 - Cleared 3 `phpstan.parse` syntax errors.
+=======
+---
+title: "UI wiki log"
+type: log
+status: active
+created: 2026-10-14
+updated: 2026-10-14
+module: UI
+tags: [ui, log, docs]
+qmd: "ui wiki log docs studio ingressi"
+---
+
+# UI wiki log
+
+Registro cronologico inverso. Esisteva solo come riferimento (`./log.md`) da `INDEX.md`, `overview.md` e `readme.md` di questa cartella,
+senza il file. Le decisioni stanno in [decision-log](../decision-log.md).
+
+## 2026-10-14
+
+Studio del modulo contro i docs (story [2026-10-14-docs-ui-studio-e-ingressi](../stories/docs-ui-studio-e-ingressi.story.md)).
+
+- `README.md` e `00-INDEX.md` riscritti con percorsi e conteggi verificati sul codice; il link a `schema/` (cartella inesistente alla
+  radice di `docs/`) e' stato tolto.
+- Codice: 17 colonne, 19 campi form, 14 blocchi, 12 widget, 6 Actions, 3 modelli piu' `BaseModel`; nessuna Resource CRUD; rotte vuote.
+- PHPStan `Modules/UI` exit 0. Pest `Modules/UI/tests`: 218 passati, 16 falliti, 1 risky, 109 saltati (sqlite in memoria, 99 s).
+- Link non risolti nel perimetro: 1522 eventi in 159 file (misura con `--busy-minutes 0`); 891 vengono da `_archive/INDEX.md`, un elenco
+  generato che punta a sottocartelle che non esistono piu'.
+- `bmad/architecture.md` e `wiki/purpose.md`: aggiunta in coda una verifica datata (la mappa del codice conteneva numeri e percorsi superati).
+- `bmad/purpose.md` e `wiki/purpose.md` hanno lo stesso corpo (diff vuoto): il canonico e' quello in `wiki/`.
+- Segnalato fuori perimetro: `laravel/Modules/UI/README.md` contiene marker di merge non risolti.
+>>>>>>> .merge_file_SE5hEu
+=======
+>>>>>>> f5ffd8b4 (.)

@@ -8,14 +8,19 @@ qmd: "user-factory-integration userfactory integration - modulo user e <nome pro
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # UserFactory Integration - Modulo User e <nome progetto>
@@ -23,7 +28,6 @@ related:
 ## Overview
 
 Questo documento descrive l'integrazione tra la `UserFactory` del modulo <nome progetto> e la base `BaseUser` del modulo User, evidenziando l'architettura Single Table Inheritance (STI) implementata con Parental.
->>>>>>> 87273113 (.)
 
 ## Architettura STI
 
@@ -35,7 +39,6 @@ BaseUser (Modules\User\Models\BaseUser)
     ├── Patient (Modules\<nome progetto>\Models\Patient) - uses HasParent
     ├── Doctor (Modules\<nome progetto>\Models\Doctor) - uses HasParent
     └── Admin (Modules\<nome progetto>\Models\Admin) - uses HasParent
->>>>>>> 87273113 (.)
 ```
 
 ### Database Connection Strategy
@@ -46,7 +49,6 @@ protected $connection = 'user'; // Default connection
 
 // User (Modulo <nome progetto>)
 protected $connection = '<nome progetto>'; // Override for healthcare domain
->>>>>>> 87273113 (.)
 ```
 
 ## Trait Distribution
@@ -69,7 +71,6 @@ Aggiunge trait specifici per il dominio sanitario:
 
 ```php
 // In <nome progetto>\Models\User
->>>>>>> 87273113 (.)
 use LogsActivity;        // Spatie Activity Log
 use HasStates;           // Spatie Model States
 use HasGdpr;             // GDPR compliance
@@ -95,7 +96,6 @@ La `UserFactory` è implementata **nel modulo <nome progetto>** perché:
 2. **Enum Integration**: Usa `UserTypeEnum` e `UserState` del modulo <nome progetto>
 3. **Business Logic**: Gestisce logica sanitaria (ISEE, pregnancy, certifications)
 4. **Connection Override**: Usa database '<nome progetto>'
->>>>>>> 87273113 (.)
 
 ### Integration Pattern
 
@@ -107,7 +107,6 @@ class UserFactory extends Factory
 {
     protected $model = \Modules\<nome progetto>\Models\User::class;
 
->>>>>>> 87273113 (.)
     // Genera dati compatibili con tutti i modelli della gerarchia
     public function definition(): array
     {
@@ -122,7 +121,6 @@ class UserFactory extends Factory
             'state' => Pending::class,
             'is_active' => true,
 
->>>>>>> 87273113 (.)
             // Campi sanitari specifici
             'date_of_birth' => $this->faker->dateTimeBetween('-80 years', '-18 years'),
             'gender' => $this->faker->randomElement(['M', 'F', 'Other']),
@@ -150,7 +148,6 @@ public function patient(): static
         'dental_problems' => $this->faker->optional()->sentence(),
         'last_dental_visit' => $this->faker->optional()->dateTimeBetween('-2 years'),
 
->>>>>>> 87273113 (.)
         // Dati socio-economici
         'family_members' => $this->faker->numberBetween(1, 6),
         'children_count' => $this->faker->numberBetween(0, 4),
@@ -171,7 +168,6 @@ public function doctor(): static
         'registration_number' => 'OMD' . $this->faker->unique()->numberBetween(10000, 99999),
         'status' => 'active',
 
->>>>>>> 87273113 (.)
         // Specializzazioni odontoiatriche
         'certifications' => [
             'odontoiatria_generale' => true,
@@ -200,7 +196,6 @@ public function admin(): static
 ### Field Mapping
 
 | BaseUser (User Module) | <nome progetto> User | Usage |
->>>>>>> 87273113 (.)
 |------------------------|----------------|-------|
 | `name` | `name` | Full name compatibility |
 | `email` | `email` | Authentication |
@@ -225,7 +220,6 @@ protected function casts(): array
 }
 
 // <nome progetto> User - Domain-specific casts
->>>>>>> 87273113 (.)
 protected function casts(): array
 {
     return array_merge(parent::casts(), [
@@ -289,13 +283,11 @@ expect($user->isActive())->toBeTrue();
 
 - **BaseUser**: Campi generici per autenticazione e autorizzazione
 - **<nome progetto> User**: Campi specifici del dominio sanitario
->>>>>>> 87273113 (.)
 - **STI Children**: Campi altamente specializzati per tipo
 
 ### 2. Factory Responsibility
 
 - **UserFactory in <nome progetto>**: Genera dati completi per testing del dominio
->>>>>>> 87273113 (.)
 - **Compatibility**: Rispetta i vincoli del BaseUser del modulo User
 - **Extensibility**: Facilmente estendibile per nuovi tipi di utente
 
@@ -307,7 +299,6 @@ public function test_base_user_compatibility()
 {
     $user = User::factory()->create();
 
->>>>>>> 87273113 (.)
     // Test authentication contracts
     expect($user->email)->toBeString();
     expect($user->password)->toBeString();
@@ -320,7 +311,6 @@ public function test_sti_functionality()
     $patient = User::factory()->patient()->create();
     $doctor = User::factory()->doctor()->create();
 
->>>>>>> 87273113 (.)
     expect($patient)->toBeInstanceOf(Patient::class);
     expect($doctor)->toBeInstanceOf(Doctor::class);
     expect($patient->type)->toBe(UserTypeEnum::PATIENT);
@@ -343,7 +333,6 @@ public function test_bulk_sti_creation()
 
     User::insert($users->toArray());
 
->>>>>>> 87273113 (.)
     expect(User::count())->toBe(75);
     expect(Patient::count())->toBe(50);
     expect(Doctor::count())->toBe(20);
@@ -361,19 +350,16 @@ public function test_bulk_sti_creation()
 ### 2. Domain Separation
 - Modulo User: Generics per autenticazione/autorizzazione
 - Modulo <nome progetto>: Specifics per dominio sanitario
->>>>>>> 87273113 (.)
 - Clear boundaries e responsibilities
 
 ### 3. Testing Flexibility
 - Test generici nel modulo User
 - Test specifici sanitari nel modulo <nome progetto>
->>>>>>> 87273113 (.)
 - Factory supporta entrambi i livelli
 
 ### 4. Maintenance
 - Changes al BaseUser automaticamente ereditati
 - Healthcare-specific changes isolati nel modulo <nome progetto>
->>>>>>> 87273113 (.)
 - Factory evolution indipendente
 
 ## Links to Documentation
@@ -385,8 +371,10 @@ public function test_bulk_sti_creation()
 
 ### User Module
 - [BaseUser Documentation](../user/docs/baseuser_conflicts.md)
-- [Traits Complete Guide](../user/docs/traits-complete-guide-2.md)
-- [Authentication Framework](../user/docs/authentication.md)
+- [Traits Complete Guide](traits-complete-guide-aggiornato-post.md)
+- [Authentication Framework](authentication.md)
+- [Traits Complete Guide](traits-complete-guide-aggiornato-post.md)
+- [Authentication Framework](authentication.md)
 
 ---
 
@@ -742,8 +730,10 @@ public function test_bulk_sti_creation()
 
 ### User Module
 - [BaseUser Documentation](../user/docs/baseuser_conflicts.md)
-- [Traits Complete Guide](../user/docs/traits-complete-guide-2.md)
-- [Authentication Framework](../user/docs/authentication.md)
+- [Traits Complete Guide](traits-complete-guide-aggiornato-post.md)
+- [Authentication Framework](authentication.md)
+- [Traits Complete Guide](traits-complete-guide-aggiornato-post.md)
+- [Authentication Framework](authentication.md)
 
 ---
 
@@ -751,4 +741,3 @@ public function test_bulk_sti_creation()
 **Purpose**: Document cross-module factory integration
 **Maintainer**: Development Team
 **Review Status**: Ready for implementation
->>>>>>> 87273113 (.)

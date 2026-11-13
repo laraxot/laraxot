@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Tests\Feature\Filament\Clusters\Passport\Pages;
 
+use Illuminate\Support\Collection;
 use Laravel\Passport\ClientRepository;
 use Livewire\Livewire;
 use Modules\User\Filament\Clusters\Passport\Pages\PassportDashboard;
@@ -26,17 +27,16 @@ uses(TestCase::class);
  */
 function makeMockUser(bool $isSuper): BaseUser
 {
-    return new class($isSuper) extends BaseUser {
-        public function __construct(private readonly bool $isSuper)
-        {
-        }
+    return new class($isSuper) extends BaseUser
+    {
+        public function __construct(private readonly bool $isSuper) {}
 
         /**
-         * @param array<int, string>|\Illuminate\Support\Collection<int, string>|string $roles
+         * @param  array<int, string>|Collection<int, string>|string  $roles
          */
         public function hasRole($roles, ?string $guard = null): bool
         {
-            if ('super-admin' === $roles) {
+            if ($roles === 'super-admin') {
                 return $this->isSuper;
             }
 

@@ -6,8 +6,6 @@ return [
     'add_attachment' => [
         'title' => 'Allegati',
         'label' => 'Carica allegato',
-        'fields' => [
-        ],
     ],
     'label' => 'Actions',
     'plural_label' => 'Actions (Plurale)',
@@ -20,7 +18,7 @@ return [
         ],
         'label' => 'Actions',
         'sort' => 1,
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
     ],
     'fields' => [
         'id' => [

@@ -7,8 +7,10 @@
     <x-section slug="footer" tpl="slim" /> ← Slim footer
 --}}
 
-@props(['tpl' => 'full'])
+@props(['blocks' => [], 'tpl' => 'full'])
 
 @if($tpl === 'slim')
+    @include('pub_theme::components.sections.footer.v1', ['blocks' => $blocks])
 @else
+    @include('pub_theme::components.sections.footer.full', ['blocks' => $blocks])
 @endif

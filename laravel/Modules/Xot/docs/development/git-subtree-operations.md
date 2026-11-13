@@ -1,18 +1,39 @@
+<<<<<<< HEAD
 # Git Subtree Operations
 
 ## Perché
 
 Gli script di gestione dei subtree sono stati creati per semplificare e standardizzare le operazioni di gestione dei repository Git con subtree. Questi script garantiscono:
 
+=======
+---
+title: "Git Subtree Operations"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, development]
+qmd: "Git Subtree Operations"
+---
+# Git Subtree Operations
+
+## Perché
+Gli script di gestione dei subtree sono stati creati per semplificare e standardizzare le operazioni di gestione dei repository Git con subtree. Questi script garantiscono:
+>>>>>>> laraxot/dev
 - Gestione robusta degli errori
 - Logging dettagliato delle operazioni
 - Standardizzazione delle operazioni comuni
 - Manutenzione automatica del repository
 
 ## Cosa
+<<<<<<< HEAD
 
 Gli script forniscono:
 
+=======
+Gli script forniscono:
+>>>>>>> laraxot/dev
 1. Pull di subtree con gestione degli errori
 2. Push di subtree con strategie di fallback
 3. Backup automatico dei dati
@@ -20,9 +41,13 @@ Gli script forniscono:
 5. Pulizia e manutenzione del repository
 
 ## Implementazione
+<<<<<<< HEAD
 
 Gli script utilizzano:
 
+=======
+Gli script utilizzano:
+>>>>>>> laraxot/dev
 - Funzioni di logging colorate per una migliore leggibilità
 - Gestione robusta degli errori con messaggi descrittivi
 - Backup automatico dei dati prima delle operazioni critiche
@@ -30,9 +55,13 @@ Gli script utilizzano:
 - Librerie incorporate per la gestione delle dipendenze
 
 ### git_push_subtree.sh
+<<<<<<< HEAD
 
 Questo script specifico gestisce il push dei subtree con:
 
+=======
+Questo script specifico gestisce il push dei subtree con:
+>>>>>>> laraxot/dev
 - Validazione degli input e dei prerequisiti
 - Gestione delle dipendenze tramite `custom.sh`
 - Strategie di fallback per il push
@@ -40,7 +69,10 @@ Questo script specifico gestisce il push dei subtree con:
 - Gestione degli errori con rollback
 
 ## Sicurezza e Robustezza
+<<<<<<< HEAD
 
+=======
+>>>>>>> laraxot/dev
 - Validazione degli input
 - Backup automatico dei dati
 - Gestione degli errori con rollback
@@ -48,6 +80,7 @@ Questo script specifico gestisce il push dei subtree con:
 - Verifica delle dipendenze
 - Utilizzo di librerie incorporate testate
 
+<<<<<<< HEAD
 ## Sync monorepo (tutti i subtrees)
 
 Nel monorepo, la sincronizzazione massiva dei repository configurati in `gitmodules.ini` avviene tramite:
@@ -71,3 +104,10 @@ Principio di sicurezza:
 - [Repository Management](../repositories.md)
 - [Error Handling](../errors.txt)
 - [Custom Library Documentation](../lib/custom.md)
+=======
+## Collegamenti Correlati
+- [Git Best Practices](../git_tips.txt)
+- [Repository Management](../repositories.md)
+- [Error Handling](../errors.txt)
+- [Custom Library Documentation](../lib/custom.md) 
+>>>>>>> laraxot/dev

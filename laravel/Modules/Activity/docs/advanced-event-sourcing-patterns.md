@@ -19,7 +19,6 @@ qmd: "advanced event sourcing patterns for healthcare applications activity"
 
 ## Introduction
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_CzoBjr
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -35,10 +34,6 @@ Event Sourcing is particularly valuable in healthcare applications like `<nome p
 Event Sourcing is particularly valuable in healthcare applications like `<nome progetto>` where data integrity, audit trails, and historical tracking are crucial. This document expands on the basic concepts with advanced patterns and practical implementations.
 Event Sourcing is particularly valuable in healthcare applications like `<nome progetto>` where data integrity, audit trails, and historical tracking are crucial. This document expands on the basic concepts with advanced patterns and practical implementations.
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-Event Sourcing is particularly valuable in healthcare applications like `<nome progetto>` where data integrity, audit trails, and historical tracking are crucial. This document expands on the basic concepts with advanced patterns and practical implementations.
-Event Sourcing is particularly valuable in healthcare applications like `<nome progetto>` where data integrity, audit trails, and historical tracking are crucial. This document expands on the basic concepts with advanced patterns and practical implementations.
->>>>>>> 13cf1831 (.)
 
 ## Core Concepts
 
@@ -65,7 +60,6 @@ sequenceDiagram
     participant ES as Event Store
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
     
 =======
 
@@ -73,9 +67,6 @@ sequenceDiagram
 =======
 
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-
->>>>>>> 13cf1831 (.)
     C->>A: Register Patient
     A->>AR: handle(RegisterPatientCommand)
     AR->>ES: store(PatientRegistered)
@@ -84,7 +75,6 @@ sequenceDiagram
     A-->>C: Patient ID
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
     
 =======
 
@@ -92,9 +82,6 @@ sequenceDiagram
 =======
 
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-
->>>>>>> 13cf1831 (.)
     Note right of ES: Projectors update read models asynchronously
 ```
 
@@ -111,7 +98,6 @@ class PrescriptionAggregate extends AggregateRoot
 {
     private array $medications = [];
     private bool $isApproved = false;
-<<<<<<< HEAD
 <<<<<<< .merge_file_CzoBjr
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -125,19 +111,14 @@ class PrescriptionAggregate extends AggregateRoot
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 
     public function prescribe(
         string $patientId,
         string $medicationId,
 <<<<<<< HEAD
-<<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
         string $dosage,
         string $doctorId
     ): void {
@@ -152,7 +133,6 @@ class PrescriptionAggregate extends AggregateRoot
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
     
 =======
 
@@ -165,9 +145,6 @@ class PrescriptionAggregate extends AggregateRoot
 >>>>>>> .merge_file_qtXEz5
 
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-
->>>>>>> 13cf1831 (.)
     protected function applyMedicationPrescribed(MedicationPrescribed $event): void
     {
         $this->medications[$event->medicationId] = [
@@ -189,7 +166,6 @@ class ScheduleAppointmentHandler
     ) {}
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
     
 =======
 
@@ -197,9 +173,6 @@ class ScheduleAppointmentHandler
 =======
 
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-
->>>>>>> 13cf1831 (.)
     public function handle(ScheduleAppointmentCommand $command): void
     {
         $appointment = Appointment::schedule(
@@ -209,7 +182,6 @@ class ScheduleAppointmentHandler
             $command->scheduledTime,
             $command->duration
         );
-<<<<<<< HEAD
 <<<<<<< .merge_file_CzoBjr
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -229,11 +201,6 @@ class ScheduleAppointmentHandler
         $this->appointments->save($appointment);
 
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-
-        $this->appointments->save($appointment);
-
->>>>>>> 13cf1831 (.)
         $this->eventBus->publish(new AppointmentScheduled(
             $appointment->id,
             $appointment->patientId,
@@ -253,7 +220,6 @@ class PatientAggregate extends AggregateRoot
 {
     private int $version = 0;
     private array $events = [];
-<<<<<<< HEAD
 <<<<<<< .merge_file_CzoBjr
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -268,20 +234,15 @@ class PatientAggregate extends AggregateRoot
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 
     public static function reconstituteFromEvents(UuidInterface $uuid, array $events): self
     {
         $aggregate = new static($uuid);
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
         // Apply all events
         foreach ($events as $event) {
             $aggregate->apply($event);
@@ -289,7 +250,6 @@ class PatientAggregate extends AggregateRoot
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
         
         return $aggregate;
     }
@@ -302,20 +262,15 @@ class PatientAggregate extends AggregateRoot
     {
         $aggregate = new static($uuid);
 >>>>>>> .merge_file_qtXEz5
-=======
->>>>>>> 13cf1831 (.)
 
         return $aggregate;
     }
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_CzoBjr
 <<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
     public function snapshot(): PatientSnapshot
     {
         return new PatientSnapshot([
@@ -352,7 +307,6 @@ class PatientRegistrationTest extends TestCase
         $patientId = PatientId::generate();
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
         
 =======
 
@@ -362,9 +316,6 @@ class PatientRegistrationTest extends TestCase
 >>>>>>> .merge_file_qtXEz5
 
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-
->>>>>>> 13cf1831 (.)
         $this->given()
             ->when(new RegisterPatient($patientId, 'John', 'Doe', 'john@example.com'))
             ->then([
@@ -398,7 +349,6 @@ class PatientRegistrationTest extends TestCase
 
 ## Conclusion
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_CzoBjr
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -414,8 +364,6 @@ Event Sourcing provides a robust foundation for healthcare applications by ensur
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 Event Sourcing provides a robust foundation for healthcare applications by ensuring data integrity, auditability, and flexibility. By implementing these advanced patterns, `<nome progetto>` can build a system that not only meets current requirements but can also evolve with future needs.
 =======
 - [Domain-Driven Design by Eric Evans](https://domainlanguage.com/ddd/)Event Sourcing provides a robust foundation for healthcare applications by ensuring data integrity, auditability, and flexibility. By implementing these advanced patterns, `<nome progetto>` can build a system that not only meets current requirements but can also evolve with future needs.
@@ -432,11 +380,8 @@ Event Sourcing provides a robust foundation for healthcare applications by ensur
 <<<<<<< .merge_file_CzoBjr
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
 =======
 >>>>>>> .merge_file_qtXEz5
-=======
->>>>>>> 13cf1831 (.)

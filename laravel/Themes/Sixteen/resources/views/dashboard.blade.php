@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('pub_theme::auth.navigation.dashboard') }}
         </h2>
     </x-slot>
 
@@ -11,7 +11,7 @@
                 {{--  
                 <x-welcome />
                 --}}
-                Welcome to the dashboard
+                {{ __('pub_theme::account_menu.dashboard.welcome.message') }}
             </div>
         </div>
     </div>

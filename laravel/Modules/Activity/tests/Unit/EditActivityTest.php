@@ -9,11 +9,19 @@ use Modules\Activity\Filament\Resources\ActivityResource\Pages\EditActivity;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< .merge_file_7IeQIu
 uses(\Modules\Activity\Tests\TestCase::class);
 
 describe('Edit Activity', function (): void {
     test('edit activity has correct resource', function (): void {
 $page = new EditActivity;
+=======
+uses(TestCase::class);
+
+describe('Edit Activity', function (): void {
+    test('edit activity has correct resource', function (): void {
+        $page = new EditActivity;
+>>>>>>> .merge_file_UkqT34
         Assert::assertEquals(
             ActivityResource::class,
             $page::getResource()

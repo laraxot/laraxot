@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Troubleshooting Guide"
+type: index
+status: draft
+updated: 2026-10-20
+tags: [docs, xot, troubleshooting]
+qmd: "troubleshooting guide xot"
+---
+>>>>>>> laraxot/dev
 # Troubleshooting Guide
 
 ## Common Issues

@@ -230,16 +230,16 @@ footer a:hover {
 }
 
 .it-header-center-wrapper {
-  background: #fff !important;
+  background: #007a52 !important;
 }
 
 .it-header-navbar-wrapper {
-  background: #fff !important;
+  background: #007a52 !important;
 }
 
 .navbar-nav .nav-link,
 .navbar-secondary .nav-link {
-  color: #0066CC !important;
+  color: #fff !important;
 }
 
 /* ============================================================================

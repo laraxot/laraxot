@@ -1,17 +1,16 @@
 <?php
 
+declare(strict_types=1);
 /**
  * This is the start of the PHP code block.
  */
-
-declare(strict_types=1);
 
 namespace Modules\User\Http\Controllers\Api;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Modules\User\Models\BaseUser;
+use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Http\Controllers\XotBaseController;
 use Webmozart\Assert\Assert;
 
@@ -22,10 +21,17 @@ class LoginController extends XotBaseController
      */
     public function __invoke(Request $request): JsonResponse
     {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        // Input malformato (es. email come array) -> 422, non un 500 dalla query di Auth::attempt().
+        /** @var array{email: string, password: string} $credentials */
+        $credentials = $request->validate([
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'max:255'],
+        ]);
+
+        if (Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
             Assert::notNull($user = Auth::user(), '['.__LINE__.']['.class_basename($this).']');
 
-            Assert::isInstanceOf($user, BaseUser::class, '['.__LINE__.']['.class_basename($this).']');
+            Assert::isInstanceOf($user, UserContract::class, '['.__LINE__.']['.class_basename($this).']');
 
             $success = [];
             $success['token'] = $user->createToken('MyApp')->accessToken;
@@ -34,6 +40,7 @@ class LoginController extends XotBaseController
             return $this->sendResponse('User login successfully.', $success);
         }
 
-        return $this->sendError('Unauthorised.', ['error' => 'Unauthorised']);
+        // 401, non il 404 predefinito di sendError: credenziali errate o account cancellato (SEC-05, escluso dal provider utenti).
+        return $this->sendError('Unauthorised.', ['error' => 'Unauthorised'], 401);
     }
 }

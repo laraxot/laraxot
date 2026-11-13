@@ -1,5 +1,11 @@
 ---
-title: "Continuazione BMAD — Domani (post prompt 04)"
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "continuazione domani"
+issues: []
+discussions: []
+title: "Continuazione BMAD: Domani (post prompt 04)"
 type: module-fix
 scope: Rating
 epic: "5"
@@ -14,7 +20,7 @@ related:
   - ../../../IndennitaResponsabilita/docs/prompts/04.md
 ---
 
-# Rating — Continuazione Domani
+# Rating: Continuazione Domani
 
 **SSoT pack:** [`5.244-continuazione-domani-post-prompt-04-pack.story.md`](./5.244-continuazione-domani-post-prompt-04-pack.story.md)
 
@@ -25,10 +31,10 @@ related:
 
 ## Domani (ordine)
 
-1. **P0** [`5.242`](./5.242-close-ratingcontract-closures-and-align-index.story.md) — chiudi formalità 5.240
-2. **P1** [`5.243`](./5.243-sprint-architecture-post-ratingdata-residual.story.md) — sprint/architecture stale
-3. **P2** [`5.245`](./5.245-ratings-by-id-hoststub-harness-verify.story.md) — 18.59 harness
-4. Coordinare Xot [`5.247`](../../../Xot/docs/bmad/stories/5.247-tomorrow-pack-export-lazy-and-trigger-map.story.md) (lazy + TRIGGER_MAP)
+1. **P0** [`5.242`](./5.242-close-ratingcontract-closures-and-align-index.story.md): chiudi formalità 5.240
+2. **P1** [`5.243`](./5.243-sprint-architecture-post-ratingdata-residual.story.md): sprint/architecture stale
+3. **P2** [`5.245`](./5.245-ratings-by-id-hoststub-harness-verify.story.md): 18.59 harness
+4. Coordinare Xot [`5.247`](../../../../Xot/docs/bmad/stories/5.247-tomorrow-pack-export-lazy-and-trigger-map.story.md) (lazy + TRIGGER_MAP)
 
 ## Non rifare
 

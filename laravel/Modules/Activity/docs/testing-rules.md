@@ -111,16 +111,12 @@ Ogni modulo e tema deve documentare:
 I file di documentazione vanno nelle cartelle `docs/` dentro ogni modulo/tema.
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 13cf1831 (.)
 
 ### Regola TestCase Base (Laraxot)
 - Ogni `Modules/*/tests/TestCase.php` deve estendere `Modules\\Xot\\Tests\\XotBaseTestCase`.
 - Non estendere direttamente `Illuminate\\Foundation\\Testing\\TestCase` nei moduli.
 <<<<<<< .merge_file_qzkDMu
 - Motivazione: DRY + KISS + bootstrap uniforme (container, translator, helper comuni).
-<<<<<<< HEAD
 =======
 >>>>>>> 0a02158a (.)
 =======
@@ -128,5 +124,3 @@ I file di documentazione vanno nelle cartelle `docs/` dentro ogni modulo/tema.
 =======
 - Motivazione: DRY + KISS + bootstrap uniforme (container, translator, helper comuni).
 >>>>>>> .merge_file_RIGl6Z
-=======
->>>>>>> 13cf1831 (.)

@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 
+=======
+---
+title: "Risoluzione Conflitto in ExportXlsByCollection"
+type: note
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, actions]
+qmd: "Risoluzione Conflitto in ExportXlsByCollection"
+status: superseded
+superseded_by: ../../consolidated/archive/exportxlsbycollection-conflict.md
+---
+>>>>>>> laraxot/dev
 # Risoluzione Conflitto in ExportXlsByCollection
 
 ## Problema
@@ -38,4 +52,8 @@ protected function writeRows(Collection $rows, array $head, int $startRow = 2): 
 
 ## Impatto
 
+<<<<<<< HEAD
 Questa modifica migliora la documentazione del codice e facilita l'analisi statica con PHPStan, mantenendo la compatibilità con il livello massimo di analisi.
+=======
+Questa modifica migliora la documentazione del codice e facilita l'analisi statica con PHPStan, mantenendo la compatibilità con il livello massimo di analisi. 
+>>>>>>> laraxot/dev

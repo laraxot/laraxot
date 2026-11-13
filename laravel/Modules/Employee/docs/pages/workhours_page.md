@@ -1,3 +1,9 @@
+---
+title: "Employee - WORKHOURS_PAGE"
+module: Employee
+bmad: true
+status: active
+---
 # WorkHoursPage - Timbrature Implementation
 
 ## 📋 Page Overview

@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "XotComposer - Loop Infinito Fix"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "xotcomposer - loop infinito fix xot"
+---
+>>>>>>> laraxot/dev
 # XotComposer - Loop Infinito Fix
 
 ## 🚨 Problema Critico Risolto

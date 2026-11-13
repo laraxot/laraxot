@@ -1,3 +1,9 @@
+---
+title: "Employee - FEATURES_SPECIFICATION"
+module: Employee
+bmad: true
+status: active
+---
 # Specifica Funzionalità Modulo Employee
 
 ## 1. Gestione Anagrafica Dipendenti

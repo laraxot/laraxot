@@ -12,6 +12,5 @@ final class SocialiteNameFieldsData extends Data
         public string $name,
         public string $firstName,
         public string $lastName,
-    ) {
-    }
+    ) {}
 }

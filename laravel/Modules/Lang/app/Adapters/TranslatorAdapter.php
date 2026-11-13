@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 /**
  * @see https://github.com/barryvdh/laravel-translation-manager/blob/master/src/Translator.php
  */
@@ -21,14 +20,18 @@ use Modules\Lang\Actions\Translation\RecordMissingTranslationAction;
  */
 class TranslatorAdapter extends LaravelTranslator
 {
-    /** @var Dispatcher */
-    protected $events;
+    protected Dispatcher $events;
 
     /**
      * Get the translation for the given key.
      *
-     * @param array<string, mixed> $replace
+     * I parametri nativi restano `mixed` per compatibilita' LSP con
+     * `Illuminate\Translation\Translator::get()`, che non dichiara tipi.
      *
+     * @param  array<string, mixed>  $replace
+     * @param  string  $key
+     * @param  string|null  $locale
+     * @param  bool  $fallback
      * @return string|array<array-key, mixed>
      */
     public function get(mixed $key, array $replace = [], mixed $locale = null, mixed $fallback = true): string|array
@@ -60,7 +63,7 @@ class TranslatorAdapter extends LaravelTranslator
      * }
      */
     /**
-     * Undocumented function.
+     * Record missing translation key.
      */
     protected function notifyMissingKey(string $key): void
     {

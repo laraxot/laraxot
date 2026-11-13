@@ -43,23 +43,18 @@ class TokensRelationManager extends XotBaseRelationManager
                 ->sortable(),
             'scopes' => TextColumn::make('scopes')
                 ->limit(30)
-                ->tooltip(function (mixed $state): ?string {
-                    if (null === $state) {
-                        return null;
+                ->tooltip(
+                    /** @param list<string>|string|null $state 'scopes' column state: the JSON-cast list, or one of its items. */
+                    function (array|string|null $state): ?string {
+                        return is_array($state) ? json_encode($state) : $state;
                     }
-                    if (is_array($state)) {
-                        return json_encode($state);
+                )
+                ->formatStateUsing(
+                    /** @param list<string>|string|null $state 'scopes' column state: the JSON-cast list, or one of its items. */
+                    function (array|string|null $state): string {
+                        return is_array($state) ? implode(', ', array_filter($state, is_string(...))) : ($state ?? '');
                     }
-
-                    return is_string($state) ? $state : null;
-                })
-                ->formatStateUsing(function (mixed $state): string {
-                    if (is_array($state)) {
-                        return implode(', ', array_map(fn (mixed $s): string => is_scalar($s) ? (string) $s : '', $state));
-                    }
-
-                    return is_scalar($state) ? (string) $state : '';
-                }),
+                ),
             'revoked' => IconColumn::make('revoked')
                 ->boolean()
                 ->color(fn (bool $state): string => $state ? 'danger' : 'success'),
@@ -69,7 +64,7 @@ class TokensRelationManager extends XotBaseRelationManager
             'expires_at' => TextColumn::make('expires_at')
                 ->dateTime()
                 ->sortable()
-                ->formatStateUsing(function (mixed $state): string {
+                ->formatStateUsing(function (Carbon|string|null $state): string {
                     if ($state instanceof Carbon) {
                         $now = Carbon::now();
                         if ($state->lt($now)) {

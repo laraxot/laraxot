@@ -1,3 +1,15 @@
+---
+title: "implemented components update"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "implemented components update"
+issues: []
+discussions: []
+status: draft
+---
+
 # Aggiornamento Componenti Bootstrap Italia - Tema Sixteen
 
 ## 🎯 Panoramica Aggiornamento
@@ -451,7 +463,6 @@ L'aggiornamento del tema Sixteen rappresenta un **significativo passo avanti** v
 Il tema Sixteen è ora **pronto per l'uso in produzione** per applicazioni della Pubblica Amministrazione italiana, offrendo una base solida e conforme alle Linee Guida AGID.
 
 ---
-
 **Ultimo aggiornamento**: Gennaio 2025  
 **Versione**: 2.1.0  
 **Componenti implementati**: 49/54 (91%)  

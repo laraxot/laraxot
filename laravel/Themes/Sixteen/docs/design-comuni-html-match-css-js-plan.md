@@ -1,3 +1,15 @@
+---
+title: "design comuni html match css js plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni html match css js plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Design Comuni HTML Match - Stato Lavoro
 
 **Status**: IN PROGRESS - CSS/JS fixes in corso  
@@ -6,7 +18,6 @@
 **Priority**: CRITICAL
 
 ---
-
 ## Risultato Analisi HTML
 
 | Metrica | Valore |

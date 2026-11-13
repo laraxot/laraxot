@@ -1,5 +1,7 @@
 ---
-title: "Notify — one migration consolidamento wave 2"
+issues: []
+discussions: []
+title: "Notify: one migration consolidamento wave 2"
 type: concept
 status: canonical
 module: Notify
@@ -14,7 +16,7 @@ related:
   - ../../../../Quaeris/docs/stories/quaeris-send-invite-migrate-to-record-notification.md
 ---
 
-# Notify — consolidamento migrazioni
+# Notify: consolidamento migrazioni
 
 Un owner attivo per `mail_templates`, `notifications`, `notify_contacts`,
 `notification_logs`, `mail_template_versions`. Duplicati: **`git rm`** (storia in git).
@@ -40,7 +42,7 @@ Laravel lo rivede come pending e riesegue il solo blocco `tableUpdate()`
 (idempotente, guardie `hasColumn`); `tableCreate()` resta un no-op perché la
 tabella esiste già.
 
-### Esempio applicato — `mail_templates.sms_from` (2026-09-10, Difetto 9)
+### Esempio applicato: `mail_templates.sms_from` (2026-09-10, Difetto 9)
 
 Story `quaeris-send-invite-migrate-to-record-notification.md`
 ([module_quaeris_fila5#38](https://github.com/laraxot/module_quaeris_fila5/issues/38)):

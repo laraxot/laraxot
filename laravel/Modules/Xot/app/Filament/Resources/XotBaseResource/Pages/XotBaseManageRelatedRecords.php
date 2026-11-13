@@ -14,6 +14,10 @@ use Filament\Tables\Columns\TextColumn;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+<<<<<<< HEAD
+=======
+use Modules\UI\Filament\Tables\Columns\IDColumn;
+>>>>>>> laraxot/dev
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Filament\Traits\HasRelationshipModelClass;
 use Modules\Xot\Filament\Traits\HasXotTable;
@@ -76,11 +80,20 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * Questo metodo può essere sovrascritto nelle classi figlie.
      *
      * @return array<string, TextColumn>
+<<<<<<< HEAD
+=======
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+>>>>>>> laraxot/dev
      */
     public function getTableColumns(): array
     {
         return [
+<<<<<<< HEAD
             'id' => TextColumn::make('id')->label('ID')->sortable(),
+=======
+            'id' => IDColumn::make('id'),
+>>>>>>> laraxot/dev
             'name' => TextColumn::make('name')
                 ->label('Nome')
                 ->searchable()
@@ -97,11 +110,20 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * Questo metodo può essere sovrascritto nelle classi figlie.
      *
      * @return array<string, Action>
+<<<<<<< HEAD
+=======
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+>>>>>>> laraxot/dev
      */
     public function getTableHeaderActions(): array
     {
         return [
+<<<<<<< HEAD
             'create' => CreateAction::make()->label('Crea Nuovo')->disableCreateAnother(),
+=======
+            'create' => CreateAction::make()->label('Crea Nuovo')->createAnother(false),
+>>>>>>> laraxot/dev
         ];
     }
 
@@ -110,6 +132,11 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * Questo metodo può essere sovrascritto nelle classi figlie.
      *
      * @return array<string, Action>
+<<<<<<< HEAD
+=======
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+>>>>>>> laraxot/dev
      */
     public function getTableActions(): array
     {
@@ -186,6 +213,7 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      */
     public function getTitle(): string
     {
+<<<<<<< HEAD
         $resource = static::getResource();
         $recordTitle = $this->getRecordTitle();
         $relationship = static::getRelationshipName();
@@ -196,6 +224,12 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
         } else {
             $titleString = (string) $recordTitle;
         }
+=======
+        $recordTitle = $this->getRecordTitle();
+        $relationship = static::getRelationshipName();
+
+        $titleString = $recordTitle instanceof Htmlable ? $recordTitle->toHtml() : (string) $recordTitle;
+>>>>>>> laraxot/dev
 
         return Str::of($relationship)
             ->title()

@@ -7,7 +7,10 @@ namespace Modules\Xot\Actions\Model\Update;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Arr;
+<<<<<<< HEAD
 use Illuminate\Support\Collection;
+=======
+>>>>>>> laraxot/dev
 use Modules\Xot\Datas\RelationData as RelationDTO;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
@@ -21,9 +24,12 @@ class MorphToManyAction
 {
     use QueueableAction;
 
+<<<<<<< HEAD
     /** @var Collection<int, mixed> */
     public Collection $res;
 
+=======
+>>>>>>> laraxot/dev
     /**
      * Execute the action to update morphToMany relationships.
      *
@@ -34,10 +40,16 @@ class MorphToManyAction
      */
     public function execute(Model $row, RelationDTO $relationDTO): void
     {
+<<<<<<< HEAD
         Assert::isInstanceOf($relation = $relationDTO->rows, MorphToMany::class);
         $data = $relationDTO->data;
         $name = $relationDTO->name;
         $model = $row;
+=======
+        $relation = $relationDTO->rows;
+        Assert::isInstanceOf($relation, MorphToMany::class);
+        $data = $relationDTO->data;
+>>>>>>> laraxot/dev
 
         if (\in_array('to', array_keys($data), false) || \in_array('from', array_keys($data), false)) {
             if (! isset($data['to'])) {

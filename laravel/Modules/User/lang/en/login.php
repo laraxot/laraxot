@@ -3,6 +3,15 @@
 declare(strict_types=1);
 
 return [
+    'logout_in_progress' => 'Signing out…',
+    'email_verified' => 'Email address verified. Thank you!',
+    'password_reset_page' => [
+        'title' => 'Reset your password',
+        'intro' => 'Enter your account email and we will send you a link to choose a new password.',
+        'return_to_login' => 'Back to sign in',
+        'email_label' => 'Email address',
+        'submit' => 'Send reset link',
+    ],
     'fields' => [
         'email' => [
             'label' => 'Email',
@@ -50,6 +59,7 @@ return [
             'label' => 'Login',
             'success' => 'Successfully logged in',
             'error' => 'Invalid credentials',
+            'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
         ],
         'register' => [
             'label' => 'Register',
@@ -67,6 +77,10 @@ return [
             'error' => 'Unable to reset password',
         ],
     ],
+    'no_account' => 'Do not have an account yet?',
+    'register_now' => 'Create your account',
+    'forgot_password_text' => 'Forgot your password?',
+    'reset_it' => 'Reset it',
     'messages' => [
         'logout_success' => 'Successfully logged out',
         'logout_error' => 'An error occurred during logout',
@@ -76,4 +90,10 @@ return [
         'general_error' => 'An error occurred. Please try again later.',
         'unauthorized' => 'You do not have the necessary permissions for this operation.',
     ],
+    'page' => [
+        'title' => 'Log in to FixCity',
+        'subtitle' => 'Sign in to report a problem and follow your cases',
+    ],
+    'already_registered' => 'Don\'t have an account yet?',
+    'register' => 'Register now',
 ];

@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Ottimizzazioni Modulo Xot - DRY + KISS"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Ottimizzazioni Modulo Xot - DRY + KISS"
+---
+>>>>>>> laraxot/dev
 # Ottimizzazioni Modulo Xot - DRY + KISS
 
 ## Panoramica
@@ -283,7 +296,11 @@ OBIETTIVO DRASTICO: ~50 file (-90%)
 
 ELIMINAZIONI IMMEDIATE:
 - Tutti file underscore variants (~150 file)
+<<<<<<< HEAD
 - Intera cartella _integration/ (~100 file)
+=======
+- Intera cartella _integration/ (~100 file)  
+>>>>>>> laraxot/dev
 - Intera cartella archive/ (~200 file)
 - File obsoleti/duplicati concettuali (~100 file)
 ```
@@ -295,7 +312,11 @@ docs/
 ├── quick-start.md
 ├── architecture/
 │   ├── system-overview.md
+<<<<<<< HEAD
 │   ├── module-structure.md
+=======
+│   ├── module-structure.md  
+>>>>>>> laraxot/dev
 │   └── design-patterns.md
 ├── development/
 │   ├── coding-standards.md

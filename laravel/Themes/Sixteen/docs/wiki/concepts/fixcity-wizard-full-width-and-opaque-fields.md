@@ -1,3 +1,15 @@
+---
+title: "fixcity wizard full width and opaque fields"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "fixcity wizard full width and opaque fields"
+issues: []
+discussions: []
+status: draft
+---
+
 # Wizard Design Comuni Matching Container
 
 ## Problem

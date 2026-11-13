@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "webpack"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "webpack xot"
+---
+>>>>>>> laraxot/dev
 # webpack
 
 <!-- Contenuto migrato da _docs/webpack.txt -->

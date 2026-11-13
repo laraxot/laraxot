@@ -12,8 +12,7 @@ use Themes\Sixteen\Contracts\MenuFilterInterface;
  * Nasconde elementi del menu basati su permessi utente
  */
 class GateMenuFilter implements MenuFilterInterface
-{
-    /**
+{    /**
      * @param  array<array-key, mixed>  $item
      * @return array<array-key, mixed>|false
      */

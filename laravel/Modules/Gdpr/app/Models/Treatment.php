@@ -141,25 +141,8 @@ class Treatment extends BaseModel
 {
     use HasUuids;
 
+    // protected $table = 'treatment';
     public $incrementing = false;
-
-    protected static function booted(): void
-    {
-        if (! app()->environment('testing')) {
-            return;
-        }
-
-        static::creating(function (Treatment $treatment): void {
-            $name = $treatment->name;
-            if (! is_string($name) || '' === $name) {
-                return;
-            }
-
-            if (static::query()->where('name', $name)->exists()) {
-                $treatment->name = $name.'-'.uniqid('', true);
-            }
-        });
-    }
 
     protected $fillable = [
         'id',

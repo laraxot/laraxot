@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_TRACKING"
+module: Employee
+bmad: true
+status: active
+---
 # Time Tracking Business Logic - Actions Implementation
 
 ## 📚 Overview

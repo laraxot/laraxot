@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Collegamenti agli Standard di Traduzione"
 module: "Lang"
 type: rule
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "migration filament 4"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Collegamenti agli Standard di Traduzione
 

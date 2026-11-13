@@ -23,7 +23,18 @@
             @endphp
 
             @if ($isActive)
-                @include($block->view, array_merge($data, $block->data, ['data' => $block->data]))
+                @php
+                    $blockData = is_array($block->data) ? $block->data : [];
+                    $pageData = is_array($data) ? $data : [];
+                    /*
+                     * The page data bag is runtime context (for example the
+                     * ticket confirmation code). It must be merged into the
+                     * block payload as well as exposed as top-level include
+                     * variables; otherwise blocks receive only CMS defaults.
+                     */
+                    $resolvedData = array_merge($blockData, $pageData);
+                @endphp
+                @include($block->view, array_merge($blockData, $pageData, ['data' => $resolvedData]))
             @endif
         @endforeach
     @endif

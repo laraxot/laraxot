@@ -5,7 +5,13 @@ declare(strict_types=1);
 namespace Modules\Xot\Models\Traits;
 
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+=======
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+>>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
@@ -48,6 +54,7 @@ trait RelationX
         $table = $pivot->getTable();
         $pivotFields = $pivot->getFillable();
 
+<<<<<<< HEAD
         $pivotDbName = $pivot->getConnection()->getDatabaseName();
         $dbName = $this->getConnection()->getDatabaseName();
         $relatedDbName = $related_model->getConnection()->getDatabaseName();
@@ -61,6 +68,9 @@ trait RelationX
             }
         }
         // }
+=======
+        $table = $this->qualifyPivotTable($pivot, $related_model, $table);
+>>>>>>> laraxot/dev
 
         return $this->belongsToMany(
             related: $related,
@@ -77,6 +87,31 @@ trait RelationX
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Relazione polimorfica per tabella: il padre sta in una tabella condivisa (es. log) e le righe
+     * si riconoscono da due colonne, il nome della tabella del padre e la sua chiave.
+     *
+     * Non e' un morph di Laravel: non usa il morph map, quindi non dipende dal morph class del tenant.
+     *
+     * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
+     *
+     * @param  class-string<TRelatedModel>  $related
+     * @return HasMany<TRelatedModel, $this>
+     */
+    public function tableMorphMany(
+        string $related,
+        string $typeColumn = 'tbl',
+        string $idColumn = 'id_tbl',
+    ): HasMany {
+        Assert::subclassOf($related, Model::class);
+
+        return $this->hasMany($related, $idColumn, 'id')
+            ->where($typeColumn, $this->getTable());
+    }
+
+    /**
+>>>>>>> laraxot/dev
      * Define a polymorphic many-to-many relationship.
      *
      * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
@@ -95,6 +130,7 @@ trait RelationX
         ?string $relation = null,
         bool $inverse = false,
     ): MorphToMany {
+<<<<<<< HEAD
         $pivot = $this->guessMorphPivot($related);
         $table = $pivot->getTable();
         $pivotFields = $pivot->getFillable();
@@ -105,6 +141,14 @@ trait RelationX
         if ($table === null) {
             $table = $pivot->getTable();
         }
+=======
+        Assert::subclassOf($related, Model::class);
+        Assert::isInstanceOf($related_model = app($related), Model::class);
+
+        $pivot = $this->guessMorphPivot($related);
+        $table = $this->qualifyPivotTable($pivot, $related_model, $pivot->getTable());
+        $pivotFields = $pivot->getFillable();
+>>>>>>> laraxot/dev
 
         return $this->morphToMany(
             related: $related,
@@ -122,6 +166,32 @@ trait RelationX
             ->withTimestamps();
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Prefissa la tabella pivot col nome del database quando pivot, model e related
+     * stanno su database diversi (relazioni cross-database tra moduli).
+     *
+     * SQLite non supporta la sintassi `database.table`: li' la tabella resta invariata.
+     */
+    private function qualifyPivotTable(Model $pivot, Model $related, string $table): string
+    {
+        $pivotDbName = $pivot->getConnection()->getDatabaseName();
+        $dbName = $this->getConnection()->getDatabaseName();
+        $relatedDbName = $related->getConnection()->getDatabaseName();
+
+        if ($pivotDbName === $dbName && $relatedDbName === $dbName) {
+            return $table;
+        }
+
+        if ($pivot->getConnection()->getDriverName() === 'sqlite') {
+            return $table;
+        }
+
+        return $pivotDbName.'.'.$table;
+    }
+
+>>>>>>> laraxot/dev
     public function guessMorphPivot(string $related, ?string $_class = null): MorphPivot
     {
         $class = $this::class;

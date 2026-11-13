@@ -8,21 +8,25 @@ qmd: "mcp-database-tools mcp (management control panel) tools for database analy
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # MCP (Management Control Panel) Tools for Database Analysis
 
 ## Overview
 MCP (Model Context Protocol) tools provide enhanced capabilities for database analysis, including access to the survey database used in the Limesurvey integration.
->>>>>>> 87273113 (.)
 
 ## Available MCP Tools for Database Work
 
@@ -34,13 +38,11 @@ MCP (Model Context Protocol) tools provide enhanced capabilities for database an
   "command": "node",
   "args": [
     "/var/www/_bases/base_techplanner_fila5_mono/bashscripts/mcp/mysql-db-connector.js"
->>>>>>> 87273113 (.)
   ]
 }
 ```
 
 **Use Cases for survey Database**:
->>>>>>> 87273113 (.)
 - Query Limesurvey tables directly
 - Analyze survey responses in `lime_survey_{sid}` tables
 - Examine question structures in `lime_questions`
@@ -75,7 +77,6 @@ MCP (Model Context Protocol) tools provide enhanced capabilities for database an
 ### Direct Database Queries (using MySQL MCP)
 ```sql
 -- List all survey tables in app_survey database
->>>>>>> 87273113 (.)
 SHOW TABLES LIKE 'lime_survey_%';
 
 -- Analyze question structure
@@ -118,13 +119,11 @@ Ensure database connections are properly configured in:
 Location: `~/.cursor/mcp.json`
 
 Current configuration includes MySQL access that automatically uses Laravel's .env credentials, making it ideal for accessing the app_survey database without additional configuration.
->>>>>>> 87273113 (.)
 
 ## Best Practices for Database Analysis
 
 1. **Always verify survey IDs** before querying dynamic tables like `lime_survey_{id}`
 2. **Use proper connection** (`limesurvey` connection for app_survey database)
->>>>>>> 87273113 (.)
 3. **Limit result sets** when exploring large survey response tables
 4. **Check table existence** before querying survey-specific tables
 5. **Respect data privacy** when handling survey responses

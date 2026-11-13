@@ -1,10 +1,14 @@
 ---
+qmd: "seasonal email system recommendations"
+issues: []
+discussions: []
 title: "Raccomandazioni per lo Sviluppo del Sistema Email Stagionali"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Raccomandazioni per lo Sviluppo del Sistema Email Stagionali

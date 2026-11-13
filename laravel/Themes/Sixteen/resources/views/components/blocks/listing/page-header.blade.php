@@ -7,7 +7,7 @@
 
 <div class="container">
     @if($breadcrumbs !== [])
-        <nav class="cmp-breadcrumbs mt-4" aria-label="Breadcrumb">
+        <nav class="cmp-breadcrumbs mt-4" aria-label="{{ __('pub_theme::components_common.a11y.breadcrumb.label') }}">
             <ol class="breadcrumb">
                 @foreach($breadcrumbs as $index => $item)
                     @if($index === count($breadcrumbs) - 1)

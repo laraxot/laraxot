@@ -1,3 +1,9 @@
+---
+title: "Employee - NO_REDUNDANT_STATIC_METHODS"
+module: Employee
+bmad: true
+status: active
+---
 # Regola Architetturale: No Redundant Static Methods
 
 ## 🚨 Problema Identificato

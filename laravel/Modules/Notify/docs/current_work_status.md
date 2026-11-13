@@ -1,3 +1,15 @@
+---
+title: "current work status"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "current work status"
+issues: []
+discussions: []
+status: draft
+---
+
 # Stato Attuale del Lavoro - 12 Maggio 2025
 
 ## Problematiche Identificate

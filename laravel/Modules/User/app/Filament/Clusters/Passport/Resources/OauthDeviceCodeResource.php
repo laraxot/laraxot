@@ -13,6 +13,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Modules\User\Filament\Clusters\Passport;
 use Modules\User\Filament\Clusters\Passport\Resources\OauthDeviceCodeResource\Pages\ListOauthDeviceCodes;
 use Modules\User\Filament\Clusters\Passport\Resources\OauthDeviceCodeResource\Pages\ViewOauthDeviceCode;
@@ -85,7 +86,7 @@ class OauthDeviceCodeResource extends XotBaseResource
                     ->color('danger')
                     ->requiresConfirmation()
                     ->modalHeading(static::trans('actions.revoke.label'))
-                    ->action(function (mixed $record): void {
+                    ->action(function (Model|array|null $record): void {
                         if ($record instanceof OauthDeviceCode) {
                             $record->revoked = true;
                             $record->save();
@@ -95,7 +96,7 @@ class OauthDeviceCodeResource extends XotBaseResource
                                 ->send();
                         }
                     })
-                    ->visible(fn (mixed $record) => $record instanceof OauthDeviceCode && ! $record->revoked),
+                    ->visible(fn (Model|array|null $record) => $record instanceof OauthDeviceCode && ! $record->revoked),
                 DeleteAction::make(),
             ])
             ->defaultSort('expires_at', 'desc');

@@ -1,6 +1,18 @@
+---
+title: "login widget form binding"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login widget form binding"
+issues: []
+discussions: []
+status: draft
+---
+
 # LoginWidget Form Data Binding - Fix e Pattern
 
-> **2026-07-24:** base class canonica = `XotBaseSchemaWidget` (non `XotBaseWidget`). API Filament 5 = `Schema` + `getState()` + `fill()`. Vedi [filament-v5-form-in-blade](../../../../../../docs/wiki/concepts/filament-v5-form-in-blade.md). Dopo edit Blade: `php artisan view:cache`.
+> **2026-07-24:** base class canonica = `XotBaseSchemaWidget` (non `XotBaseWidget`). API Filament 5 = `Schema` + `getState()` + `fill()`. Vedi [filament-v5-form-in-blade](../../../../../docs/wiki/concepts/filament-v5-form-in-blade.md). Dopo edit Blade: `php artisan view:cache`.
 
 ## Problema Risolto
 
@@ -90,8 +102,7 @@ class RegisterWidget extends XotBaseWidget
 ## Riferimenti
 
 - [XotBaseWidget Documentation](../../../Modules/Xot/docs/filament-class-extension-rules.md)
-- [LoginWidget Fix Documentation](../../../Modules/User/docs/login-widget-fix.md)
+- [LoginWidget Fix Documentation](../../../../Modules/User/docs/login-widget-fix.md)
 - [Filament Form State Management](https://filamentphp.com/docs/5.x/forms/fields#state-management)
 
 ---
-

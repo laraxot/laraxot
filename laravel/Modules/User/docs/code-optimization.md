@@ -8,17 +8,21 @@ qmd: "code-optimization user module code and documentation optimization analysis
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # user module code and documentation optimization analysis
 
 ## comprehensive analysis
@@ -49,8 +53,8 @@ docs/
 │   └── troubleshooting.md
 ├── user_management/
 │   ├── crud_operations.md
-│   ├── profile-management-2.md
->>>>>>> 87273113 (.)
+│   ├── profile-management.md
+│   ├── profile-management-laravel-modules.md
 │   ├── role_permissions.md
 │   └── team_management.md
 ├── filament_integration/
@@ -61,9 +65,10 @@ docs/
 ├── integrations/
 │   ├── socialite.md
 │   ├── passport.md
-│   ├── spatie-permissions-2.md
-│   └── two-factor-2.md
->>>>>>> 87273113 (.)
+│   ├── spatie-permissions.md
+│   └── two-factor.md
+│   ├── spatie-permissions-documentation-themes.md
+│   └── two-factor-documentation-themes.md
 ├── api/
 │   ├── rest_api.md
 │   ├── graphql_api.md

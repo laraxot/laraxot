@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Risoluzione Conflitto in components.json"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, git]
+qmd: "Risoluzione Conflitto in components.json"
+---
+>>>>>>> laraxot/dev
 # Risoluzione Conflitto in _components.json
 
 ## Panoramica
@@ -62,5 +75,9 @@ La soluzione proposta adotta il formato più leggibile e manutenibile della vers
 ## Collegamenti Bidirezionali
 
 - [Documento principale risoluzione conflitti](risoluzione_conflitti.md)
+<<<<<<< HEAD
 - [Documentazione modulo Tenant](../../Tenant/docs/risoluzione_conflitti.md)
 - [Documentazione modulo Tenant](../../tenant/docs/risoluzione_conflitti.md)
+=======
+- [Documentazione modulo Tenant](../../Tenant/docs/risoluzione_conflitti.md) 
+>>>>>>> laraxot/dev

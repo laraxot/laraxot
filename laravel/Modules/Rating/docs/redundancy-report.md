@@ -1,5 +1,7 @@
 ---
-title: "Redundancy Report — Modulo Rating"
+issues: []
+discussions: []
+title: "Redundancy Report: Modulo Rating"
 type: guide
 tags: [redundancy, report, rating]
 created: 2026-07-14
@@ -7,20 +9,21 @@ updated: 2026-07-14
 qmd: "redundancy report"
 related:
   - "./release-marketing-standard.md"
+status: draft
 ---
 
 - Inventario [ridondanze cross-modulo](../docs/redundancy-report.md)
 - Concetti [ridondanze cross-cutting](../Xot/docs/wiki/concepts/ridondanze-cross-cutting-codebase.md)
 
-# Redundancy Report — Modulo Rating
+# Redundancy Report: Modulo Rating
 
 > Generato: 2026-05-21 | Analisi automatica deep-scan
 
 ## Rilevamenti rapidi (scan modulo)
 
-- **Filament:** 2 `*Resource.php` (`RatingResource`, `RatingMorphResource`); nessun nome Resource duplicato a livello root, ma **classi Table gemelle** in `RatingResource/Tables/` (`RatingTable.php` + `RatingsTable.php`) e in `RatingMorphResource/Tables/` (`RatingMorphTable.php` + `RatingMorphsTable.php`) — verificare quale è referenziata e rimuovere l’altra.
+- **Filament:** 2 `*Resource.php` (`RatingResource`, `RatingMorphResource`); nessun nome Resource duplicato a livello root, ma **classi Table gemelle** in `RatingResource/Tables/` (`RatingTable.php` + `RatingsTable.php`) e in `RatingMorphResource/Tables/` (`RatingMorphTable.php` + `RatingMorphsTable.php`): verificare quale è referenziata e rimuovere l’altra.
 - **Widget / RelationManager duplicati:** `StatsOverview` in `Filament/Widgets/` e in `HasRatingResource/Widgets/`; `RatingsRelationManager` in `RelationManagers/` e in `HasRatingResource/RelationManagers/`.
-- **Migrazioni:** 5 file in `database/migrations/`; **doppio `create_ratings_table`** (`2023_01_01_000000` e `2026_03_12_180000`) — allineare a una sola create + alter (vedi tabella §12 nel [report cross-modulo](../docs/redundancy-report.md)).
+- **Migrazioni:** 5 file in `database/migrations/`; **doppio `create_ratings_table`** (`2023_01_01_000000` e `2026_03_12_180000`): allineare a una sola create + alter (vedi tabella §12 nel [report cross-modulo](../docs/redundancy-report.md)).
 - **Modelli base:** `BaseRating` canonico qui; copia parallela in `Modules/Xot/app/Models/BaseRating.php` da eliminare o delegare.
 - **Conformità Laraxot:** `BaseMorphPivot` estende `MorphPivot` invece di `XotBaseMorphPivot`; `EventServiceProvider` non usa `XotBaseEventServiceProvider`.
 
@@ -41,7 +44,7 @@ abstract class BaseMorphPivot extends MorphPivot
 abstract class BaseMorphPivot extends XotBaseMorphPivot {}
 ```
 
-### 2. 🟠 BaseRating — Duplicato in Xot
+### 2. 🟠 BaseRating: Duplicato in Xot
 
 **File**: `app/Models/BaseRating.php`
 
@@ -49,13 +52,13 @@ Esiste una copia in `Modules/Xot/app/Models/BaseRating.php`. Rating è il modulo
 
 **Azione suggerita**: Eliminare la copia in Xot. Tutti gli import dovrebbero puntare a `Modules\Rating\Models\BaseRating`.
 
-### 3. 🟡 EventServiceProvider — Non usa XotBaseEventServiceProvider
+### 3. 🟡 EventServiceProvider: Non usa XotBaseEventServiceProvider
 
 **File**: `app/Providers/EventServiceProvider.php`
 
 Estende `BaseEventServiceProvider` (Laravel) invece di `XotBaseEventServiceProvider`.
 
-### 4. 🟠 Filament — Table e widget duplicati nello stesso modulo
+### 4. 🟠 Filament: Table e widget duplicati nello stesso modulo
 
 | Coppia | Path |
 |--------|------|
@@ -66,7 +69,7 @@ Estende `BaseEventServiceProvider` (Laravel) invece di `XotBaseEventServiceProvi
 
 **Azione suggerita:** Una sola implementazione per tipo; `HasRatingResource` dovrebbe riusare classi condivise, non clonarle.
 
-### 5. 🔴 Migrazioni `ratings` — Doppia create
+### 5. 🔴 Migrazioni `ratings`: Doppia create
 
 | File | Tabella |
 |------|---------|

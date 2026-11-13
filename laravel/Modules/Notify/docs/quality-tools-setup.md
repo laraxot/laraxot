@@ -1,10 +1,14 @@
 ---
+qmd: "quality tools setup"
+issues: []
+discussions: []
 title: "Setup strumenti qualità codice"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Setup strumenti qualità codice
@@ -13,7 +17,7 @@ updated: 2026-08-24
 
 **NON modificare mai** `laravel/phpstan.neon`. Le correzioni vanno fatte solo nel codice sorgente.
 
-## PHPMD e PHPInsights — SOLO formato .phar
+## PHPMD e PHPInsights: SOLO formato .phar
 
 **Regola**: PHPMD e PHPInsights **NON** vanno installati con Composer. Si usano in formato **.phar** e si invocano con php phpmd.phar e php phpinsights.phar.
 
@@ -32,7 +36,7 @@ updated: 2026-08-24
 
 ### PHPInsights
 
-- **Installazione**: Build locale con box — vedi [phpinsights-phar-build](phpinsights-phar-build.md)
+- **Installazione**: Build locale con box: vedi [phpinsights-phar-build](phpinsights-phar-build.md)
 - **Build**: `cd laravel/tools/build-phpinsights && ./build.sh`
 - **Comando**: `cd laravel && php tools/phpinsights.phar analyse Modules --no-interaction`
 

@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_dfwmzM
 title: "Tech spec — SuperAdmin widget"
+=======
+title: "Tech spec: SuperAdmin widget"
+>>>>>>> .merge_file_dn7fCT
 type: tech-spec
 module: User
 status: approved
@@ -10,6 +14,12 @@ related:
   - ./architecture.md
   - ./ux-design.md
   - ./epics.md
+<<<<<<< .merge_file_dfwmzM
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "technical specification: superadmin widget user"
+>>>>>>> .merge_file_dn7fCT
 ---
 
 # Technical specification: SuperAdmin widget
@@ -46,7 +56,11 @@ Oggi `SuperAdmin` è `Livewire\Component` in `Http/Livewire/Profile`. Il panel l
 - `mount()`: profilo corrente + URL corrente (stesso del Livewire).
 - `toggleSuperAdmin()`: `$this->profile->toggleSuperAdmin()` + `redirect($this->url, 303)`.
 - `getViewData()`: `profile`.
+<<<<<<< .merge_file_dfwmzM
 - `protected static bool $isDiscovered = false` — **obbligatorio** perché `XotBasePanelProvider` fa `discoverWidgets` su tutta `Filament/Widgets`.
+=======
+- `protected static bool $isDiscovered = false`: **obbligatorio** perché `XotBasePanelProvider` fa `discoverWidgets` su tutta `Filament/Widgets`.
+>>>>>>> .merge_file_dn7fCT
 - Non dichiarare `$view` se la vista esiste al path convenzionale; altrimenti `user::filament.widgets.profile.super-admin`.
 
 **Non fare:** `XotBaseSchemaWidget`, form schema, registrazione in `->widgets([...])`.
@@ -62,7 +76,11 @@ Due bottoni distinti (`user-super-admin` / `user-negate-super-admin`), `wire:cli
 
 (file lang da creare, struttura espansa).
 
+<<<<<<< .merge_file_dfwmzM
 ### AdminPanelProvider — modifiche (cuore della 9.2)
+=======
+### AdminPanelProvider: modifiche (cuore della 9.2)
+>>>>>>> .merge_file_dn7fCT
 
 File: `laravel/Modules/User/app/Providers/Filament/AdminPanelProvider.php`
 

@@ -15,8 +15,7 @@ class ValidateUserDataAction
     use QueueableAction;
 
     /**
-     * @param array<string, string> $formData
-     *
+     * @param  array<string, mixed>  $formData
      * @return array<string, mixed>
      */
     public function execute(array $formData): array
@@ -25,7 +24,7 @@ class ValidateUserDataAction
 
         // Prevent duplicate email before hitting DB unique constraint.
         // User model already uses 'user' connection via $connection property
-        if (User::where('email', $email)->exists()) {
+        if (User::query()->where('email', $email)->exists()) {
             throw ValidationException::withMessages(['email' => [__('validation.unique', ['attribute' => 'email'])]]);
         }
 
@@ -38,7 +37,8 @@ class ValidateUserDataAction
             ),
             'type' => 'customer_user',
             'lang' => app()->getLocale(),
-            'email_verified_at' => now(),
+            // Mai verificata alla registrazione (PRD-02, SEC-14): la verifica arriva solo dal link firmato nella mail.
+            'email_verified_at' => null,
         ];
     }
 }

@@ -1,3 +1,15 @@
+---
+title: "auth login ux fixes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "auth login ux fixes"
+issues: []
+discussions: []
+status: draft
+---
+
 # Correzioni UX pagina login FO
 
 ## URL
@@ -25,6 +37,6 @@
 
 - [fo-pa-tokens-uniformity](fo-pa-tokens-uniformity.md)
 - [auth-login-ux-design-wcag](../design/auth-login-ux-design-wcag.md)
-- [login-page-design-comuni](../../../Modules/User/docs/wiki/concepts/login-page-design-comuni.md)
+- [login-page-design-comuni](../../../../../Modules/User/docs/wiki/concepts/login-page-design-comuni.md)
 - `resources/views/pages/auth/login.blade.php`
 - `resources/views/filament/widgets/auth/login.blade.php`

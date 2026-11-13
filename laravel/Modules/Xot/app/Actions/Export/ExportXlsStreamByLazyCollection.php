@@ -47,7 +47,11 @@ class ExportXlsStreamByLazyCollection
 
                 fputcsv($file, $headStrings);
 
+<<<<<<< HEAD
                 foreach ($data as $key => $value) {
+=======
+                foreach ($data as $value) {
+>>>>>>> laraxot/dev
                     // Gestiamo sia oggetti che possono essere convertiti ad array che array diretti
                     if (is_object($value) && method_exists($value, 'toArray')) {
                         /** @var array<string|int|float|bool|null> $rowData */

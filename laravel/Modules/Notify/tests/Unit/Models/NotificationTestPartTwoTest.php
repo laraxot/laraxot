@@ -33,6 +33,7 @@ use PHPUnit\Framework\Assert;
 use function Pest\Laravel\withoutExceptionHandling;
 use function Safe\json_encode;
 
+uses(TestCase::class);
 beforeEach(function (): void {
     withoutExceptionHandling();
 });

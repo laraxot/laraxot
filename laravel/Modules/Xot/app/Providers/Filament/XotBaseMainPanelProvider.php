@@ -21,7 +21,13 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Modules\User\Filament\Pages\MyProfilePage;
 use Modules\Xot\Actions\Filament\GetModulesNavigationItems;
+<<<<<<< HEAD
 use Modules\Xot\Actions\Panel\ApplyMetatagToPanelAction;
+=======
+use Modules\Xot\Actions\Filament\GetSidebarStateScriptAction;
+use Modules\Xot\Actions\Panel\ApplyMetatagToPanelAction;
+use Modules\Xot\Filament\AvatarProviders\InitialsAvatarProvider;
+>>>>>>> laraxot/dev
 use Modules\Xot\Filament\Pages\MainDashboard;
 
 abstract class XotBaseMainPanelProvider extends PanelProvider
@@ -45,6 +51,11 @@ abstract class XotBaseMainPanelProvider extends PanelProvider
 
         $panel = $panel
             ->passwordReset()
+<<<<<<< HEAD
+=======
+            // avatar predefinito generato in locale: il provider di Filament carica ui-avatars.com a ogni pagina (DCP-139)
+            ->defaultAvatarProvider(InitialsAvatarProvider::class)
+>>>>>>> laraxot/dev
             ->sidebarFullyCollapsibleOnDesktop()
             ->spa()
             ->profile(null, true);
@@ -116,8 +127,31 @@ abstract class XotBaseMainPanelProvider extends PanelProvider
                     </script>
                     HTML,
                 scopes: Login::class,
+<<<<<<< HEAD
             );
         $navs = app(GetModulesNavigationItems::class)->execute();
+=======
+            )
+            ->renderHook(
+                PanelsRenderHook::HEAD_END,
+                fn (): string => app(GetSidebarStateScriptAction::class)->execute(),
+            );
+        $navs = app(GetModulesNavigationItems::class)->execute();
+        /*  4 debug
+        $navs=[
+            NavigationItem::make('Analytics')
+                ->url('https://filament.pirsch.io', shouldOpenInNewTab: true)
+                ->icon(Heroicon::OutlinedPresentationChartLine)
+                ->group('Reports')
+                ->sort(3),
+            NavigationItem::make('dashboard')
+                ->label(fn (): string => __('filament-panels::pages/dashboard.title'))
+                ->url(fn (): string => Dashboard::getUrl())
+                ->isActiveWhen(fn () => original_request()->routeIs('filament.admin.pages.dashboard')),
+            // ...
+        ];
+         */
+>>>>>>> laraxot/dev
         $panel->navigationItems($navs);
 
         // Temporaneamente disabilitato per debug tenancy

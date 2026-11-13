@@ -1,4 +1,7 @@
 ---
+qmd: "session learnings modules config"
+issues: []
+discussions: []
 title: session learnings modules and tenant config
 type: concept
 module: Tenant
@@ -10,13 +13,15 @@ related:
   - ./it/config/modules-statuses.md
   - ../WorkOrder/docs/modules-statuses-workorder.md
   - ../User/docs/wiki/concepts/spatie-permission-table-names.md
+  - ../../User/docs/wiki/concepts/spatie-permission-table-names.md
   - ../Xot/docs/wiki/concepts/module-admin-panel-provider-mandatory.md
   - ../Xot/docs/wiki/concepts/module-filament-panel-triad.md
   - ../Xot/docs/wiki/concepts/basemodel-connection-religion.md
   - ../WorkOrder/docs/profile-schema-ownership.md
+status: draft
 ---
 
-# Lezioni 2026-07-27 — moduli, tenant, config
+# Lezioni 2026-07-27: moduli, tenant, config
 
 Hub sintetico per agenti: cosa è successo, perché, dove documentare.
 
@@ -38,17 +43,18 @@ Hub sintetico per agenti: cosa è successo, perché, dove documentare.
 
 **Doc:** [Xot/module-config-php-religion.md](../Xot/docs/wiki/concepts/module-config-php-religion.md)
 
-## 3. `permission.php` — `table_names` intoccabile
+## 3. `permission.php`: `table_names` intoccabile
 
 **Problema:** agente ha rinominato tabelle / hardcodato `model_has_roles` invece di leggere config.
 
 **Regola:** `laravel/config/permission.php` → pivot **singolari** (`model_has_role`, …). Codice e migrazioni **seguono** config. Overlay tenant: solo `models`, mai `table_names`.
 
 **Doc:** [User/spatie-permission-table-names.md](../User/docs/wiki/concepts/spatie-permission-table-names.md)
+**Doc:** [User/spatie-permission-table-names.md](../../User/docs/wiki/concepts/spatie-permission-table-names.md)
 
-## 4. `profiles` — owner schema WorkOrder
+## 4. `profiles`: owner schema WorkOrder
 
-**Problema:** `Field 'id' doesn't have a default value` — legacy UUID PK senza default.
+**Problema:** `Field 'id' doesn't have a default value`: legacy UUID PK senza default.
 
 **Fix:** migrazione canonica in **WorkOrder** (`main_module`); duplicati User in `_bak`.
 
@@ -56,13 +62,13 @@ Hub sintetico per agenti: cosa è successo, perché, dove documentare.
 
 ## 5. `BaseModel::$connection` obbligatorio
 
-Ogni modulo dichiara `protected $connection = '{snake}'` nel proprio `BaseModel` — mai `null`.
+Ogni modulo dichiara `protected $connection = '{snake}'` nel proprio `BaseModel`: mai `null`.
 
 **Doc:** [Xot/basemodel-connection-religion.md](../Xot/docs/wiki/concepts/basemodel-connection-religion.md)
 
 ## 6. `app/Filament/Pages/Dashboard.php` per ogni modulo
 
-**Problema:** panel `{modulo}/admin` senza landing — `discoverPages()` non trova `Dashboard`.
+**Problema:** panel `{modulo}/admin` senza landing: `discoverPages()` non trova `Dashboard`.
 
 **Regola:** classe vuota `extends XotBaseDashboard`.
 
@@ -70,7 +76,7 @@ Ogni modulo dichiara `protected $connection = '{snake}'` nel proprio `BaseModel`
 
 ## 7. `AdminPanelProvider` + doppia registrazione
 
-**Problema:** nessun panel `{modulo}/admin` — file assente, non in `module.json`, o mancante in `composer.json`.
+**Problema:** nessun panel `{modulo}/admin`: file assente, non in `module.json`, o mancante in `composer.json`.
 
 **Regola:** `extends XotBasePanelProvider` + `protected string $module` + **stessi provider** in `module.json` e `composer.json`.
 

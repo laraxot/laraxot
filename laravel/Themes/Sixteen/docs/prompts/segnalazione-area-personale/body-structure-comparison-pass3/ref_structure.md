@@ -1,9 +1,0 @@
-# Ref structure
-
----
-module: theme
-topic: ref_structure
-canonical: ../../../../../docs/shared-components/ref_structure.txt
----
-
-See canonical documentation: ../../../../../docs/shared-components/ref_structure.txt

@@ -30,7 +30,7 @@
     <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #d1d5db;">
         <div style="display: flex; align-items: center; font-size: 0.75rem; color: #6b7280;">
             <div style="width: 8px; height: 8px; background: #10b981; border-radius: 50%; margin-right: 0.5rem;"></div>
-            Sistema Operativo
+            {{ __('pub_theme::blocks.system_info.operational.label') }}
         </div>
     </div>
 </div>

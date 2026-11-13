@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "MCP Server Consigliati per il Modulo Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "mcp server recommended"
 related:
   - "./webm.md"
+status: draft
 ---
 # MCP Server Consigliati per il Modulo Media
 

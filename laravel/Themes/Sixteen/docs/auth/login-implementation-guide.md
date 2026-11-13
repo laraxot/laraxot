@@ -1,3 +1,15 @@
+---
+title: "login implementation guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login implementation guide"
+issues: []
+discussions: []
+status: draft
+---
+
 # Guida Implementazione Login AGID - Tema Sixteen
 
 > **Consolidato da**: login1-4.md, agid-login-*.md, login-agid-*.md  
@@ -353,7 +365,6 @@ namespace Modules\User\Filament\Widget\Auth;
 - [Filament Auth](https://filamentphp.com/docs/panels/users)
 
 ---
-
 **Versione**: 3.0 (Consolidata)  
 **Status**: Implementazione verificata e funzionante  
 **Compatibilità**: Laravel 10+, Filament 3.x, AGID 2024

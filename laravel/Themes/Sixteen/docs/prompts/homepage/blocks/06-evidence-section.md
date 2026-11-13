@@ -1,3 +1,15 @@
+---
+title: "06 evidence section"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "06 evidence section"
+issues: []
+discussions: []
+status: draft
+---
+
 # Block 06: Evidence Section
 
 **Fonte**: `https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html`

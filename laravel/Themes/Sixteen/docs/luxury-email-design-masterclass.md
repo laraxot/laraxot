@@ -1,3 +1,15 @@
+---
+title: "luxury email design masterclass"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "luxury email design masterclass"
+issues: []
+discussions: []
+status: draft
+---
+
 # Luxury Email Design Masterclass 2025: Christmas Edition
 
 This document details the creation of a new, ultra-premium Christmas email template, `christmas-luxury-2026.html`. The goal is to push the boundaries of email design, creating a truly memorable and professional experience.

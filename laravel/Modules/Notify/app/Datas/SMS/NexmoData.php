@@ -25,7 +25,7 @@ class NexmoData extends Data
     {
         if (! (self::$instance instanceof NexmoData)) {
             /*
-             * $data = TenantService::getConfig('sms');
+             * Was: TenantService::getConfig('sms') — use GetTenantConfigArrayAction::execute('sms').
              * $data = Arr::get($data, 'drivers.nexmo', []);
              */
             $data = Config::array('sms.drivers.nexmo');

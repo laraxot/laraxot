@@ -18,7 +18,7 @@ use Override;
  * Enhanced Time Clock Widget - Primary time tracking interface with improved UI/UX.
  *
  * Features (2025 Enhanced Version):
- * - 3-column responsive layout: [Time+Date+Stats] | [Enhanced Sessions] | [Smart Action Button]
+ * - Responsive layout (auto-fit, 1 colonna su telefono): [Time+Date] | [Smart Action Button] | [Sessions]
  * - Interactive session cards with status badges
  * - Action buttons with count badges
  * - Real-time statistics and duration tracking
@@ -52,11 +52,6 @@ class TimeClockWidget extends XotBaseSchemaWidget
      * Occupa tutta la larghezza della riga.
      */
     protected int|string|array $columnSpan = 'full';
-
-    /**
-     * Polling per aggiornamento real-time.
-     */
-    protected static ?string $pollingInterval = '1s';
 
     /**
      * Ora corrente per display.
@@ -184,13 +179,19 @@ class TimeClockWidget extends XotBaseSchemaWidget
      */
     public function clockIn(): void
     {
+        // Mobile, rete lenta: la vista si aggiorna ogni 15 s e il telefono puo' essere rimasto
+        // indietro (altro dispositivo, tab in background). `isClockedIn` e' una proprieta'
+        // pubblica tenuta dal client: va riletta dal DB prima di decidere, altrimenti un doppio
+        // tocco o una vista vecchia creano due entrate.
+        $this->updateData();
+
         if ($this->isClockedIn) {
-            $this->notifyWarning('Sei già in sessione');
+            $this->notifyWarning('already_clocked_in');
 
             return;
         }
 
-        $this->createWorkHour(WorkHourTypeEnum::CLOCK_IN, 'Entrata registrata');
+        $this->createWorkHour(WorkHourTypeEnum::CLOCK_IN, 'Entrata registrata', 'clock_in_success');
     }
 
     /**
@@ -198,54 +199,58 @@ class TimeClockWidget extends XotBaseSchemaWidget
      */
     public function clockOut(): void
     {
+        $this->updateData();
+
         if (! $this->isClockedIn) {
-            $this->notifyWarning('Devi prima timbrare l\'entrata');
+            $this->notifyWarning('must_clock_in_first');
 
             return;
         }
 
-        $this->createWorkHour(WorkHourTypeEnum::CLOCK_OUT, 'Uscita registrata');
+        $this->createWorkHour(WorkHourTypeEnum::CLOCK_OUT, 'Uscita registrata', 'clock_out_success');
     }
 
     /**
      * Create a work-hour entry.
+     *
+     * `$notes` e' il testo salvato in `work_hours.notes` (invariato); `$successKey` e' la chiave
+     * `employee::widgets.time_clock.notifications.*` mostrata nel toast.
      */
-    private function createWorkHour(WorkHourTypeEnum $type, string $successMessage): void
+    private function createWorkHour(WorkHourTypeEnum $type, string $notes, string $successKey): void
     {
         $userId = Auth::id();
+        $now = Carbon::now();
 
         WorkHour::query()->create([
             'employee_id' => $userId,
             'type' => $type,
-            'timestamp' => Carbon::now(),
+            'timestamp' => $now,
             'status' => WorkHourStatusEnum::PENDING,
-            'notes' => $successMessage.' da dashboard widget',
+            'notes' => $notes.' da dashboard widget',
         ]);
 
         $this->updateData();
-        $this->notifySuccess($successMessage.' alle '.Carbon::now()->format('H:i'));
+        $this->notifySuccess($successKey, $now->format('H:i'));
     }
 
     /**
-     * Notifica di successo (DRY principle).
+     * Toast di successo: solo titolo, una riga leggibile su schermo stretto.
      */
-    private function notifySuccess(string $message): void
+    private function notifySuccess(string $key, string $time): void
     {
         Notification::make()
-            ->title('Successo')
-            ->body($message)
+            ->title((string) __('employee::widgets.time_clock.notifications.'.$key, ['time' => $time]))
             ->success()
             ->send();
     }
 
     /**
-     * Notifica di avviso (DRY principle).
+     * Toast di avviso: solo titolo, una riga leggibile su schermo stretto.
      */
-    private function notifyWarning(string $message): void
+    private function notifyWarning(string $key): void
     {
         Notification::make()
-            ->title('Attenzione')
-            ->body($message)
+            ->title((string) __('employee::widgets.time_clock.notifications.'.$key))
             ->warning()
             ->send();
     }

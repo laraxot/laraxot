@@ -1,0 +1,11 @@
+{
+  "slug": "auth.register",
+  "name": "auth.register",
+  "route": "auth.register",
+  "pageSlug": "auth.register",
+  "layout": "design-comuni",
+  "view": "pages.auth.register",
+  "blocks": [],
+  "data": {},
+  "locale": "it"
+}

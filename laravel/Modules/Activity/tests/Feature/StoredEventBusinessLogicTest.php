@@ -12,7 +12,11 @@ use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\SchemalessAttributes\SchemalessAttributes;
 
+<<<<<<< .merge_file_msykZG
 uses(\Modules\Activity\Tests\TestCase::class);
+=======
+uses(TestCase::class);
+>>>>>>> .merge_file_sTlsAN
 
 test('can create stored event with basic information', function (): void {
     $eventData = [

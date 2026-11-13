@@ -1,10 +1,15 @@
 ---
+qmd: "ZEN OF DOCUMENTATION.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: ZEN_OF_DOCUMENTATION.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: zen_of_documentation.divergenza.md
 ---
 
 # Divergenza: `ZEN_OF_DOCUMENTATION.md`

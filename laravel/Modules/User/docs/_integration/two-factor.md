@@ -16,9 +16,10 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: superseded
+superseded_by: ../-integration/two-factor.md
 ---
 
->>>>>>> 87273113 (.)
 # two_factor
 
 <!-- Contenuto migrato da _docs/two_factor.txt -->

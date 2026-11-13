@@ -1,4 +1,7 @@
 ---
+qmd: "design comuni header reference"
+issues: []
+discussions: []
 title: "Design Comuni Header Structure Reference"
 type: source
 sources:

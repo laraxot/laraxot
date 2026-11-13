@@ -1,8 +1,13 @@
 ---
+title: "design comuni class mapping"
+qmd: "design comuni class mapping"
+issues: []
+discussions: []
 type: entity
 created: 2026-05-04
 updated: 2026-05-15
 tags: [design-comuni, bootstrap, tailwind, daisyui, mapping]
+status: draft
 ---
 
 # CSS Class Mapping: Design Comuni (Bootstrap) to Sixteen (Tailwind)

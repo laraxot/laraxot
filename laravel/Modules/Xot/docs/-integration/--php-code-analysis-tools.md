@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "__php-code-analysis-tools"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "__php-code-analysis-tools xot"
+---
+>>>>>>> laraxot/dev
 # __php-code-analysis-tools
 
 <!-- Contenuto migrato da _docs/__php-code-analysis-tools.txt -->

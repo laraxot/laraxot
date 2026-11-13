@@ -12,7 +12,7 @@ interface HasTranslationsContract
     /**
      * Ottiene la traduzione di un attributo in una specifica lingua.
      *
-     * @return string|array<mixed>|int|null Il valore tradotto dell'attributo, o null se non disponibile
+     * @return string|array<string, mixed>|int|null Il valore tradotto dell'attributo, o null se non disponibile
      */
     public function getTranslation(string $key, string $locale, bool $useFallbackLocale = true): string|array|int|null;
 

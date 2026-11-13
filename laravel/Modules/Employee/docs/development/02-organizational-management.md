@@ -1,3 +1,9 @@
+---
+title: "Employee - 02-ORGANIZATIONAL-MANAGEMENT"
+module: Employee
+bmad: true
+status: active
+---
 # 02 - Gestione Organizzativa (Organizational Management)
 
 ## 🎯 Obiettivo

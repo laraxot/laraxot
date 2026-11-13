@@ -1,4 +1,7 @@
 ---
+qmd: "sixteen best practices"
+issues: []
+discussions: []
 title: "Sixteen Theme Best Practices"
 type: concept
 sources: ["../../Themes/Sixteen/resources/"]
@@ -10,6 +13,7 @@ related:
   - concepts/header-section-owner-rule.md
   - concepts/theme-owned-wizard-css-parity-rule.md
   - concepts/design-comuni-header-auth-state.md
+status: draft
 ---
 
 # Sixteen Theme Best Practices

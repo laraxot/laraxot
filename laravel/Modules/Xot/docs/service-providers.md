@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Service Provider"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Service Provider"
+---
+>>>>>>> laraxot/dev
 # Service Provider
 
 ## Configurazione Base
@@ -149,7 +162,11 @@ class CommandServiceProvider extends ServiceProvider
     {
         $this->app->booted(function () {
             $schedule = $this->app->make(Schedule::class);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             $schedule->command('emails:send')
                     ->daily()
                     ->at('13:00');
@@ -191,7 +208,11 @@ try {
         'provider' => get_class($this),
         'error' => $e->getMessage(),
     ]);
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     throw $e;
 }
 ```
@@ -254,6 +275,7 @@ class ValidationServiceProvider extends ServiceProvider
         });
     }
 }
+<<<<<<< HEAD
 ```
 
 ## 🔧 Merge Conflicts Resolution - 2025-11-04
@@ -338,3 +360,6 @@ vendor/bin/pint --dirty Modules/Xot/app
 - [File Locking Pattern](./file-locking-pattern.md) - Nuova regola fondamentale
 - [RouteServiceProvider Documentation](./consolidated/route-service-provider.md) - Linee guida esistenti
 - [Laraxot Architecture Rules](./laraxot-architecture-rules.md) - Convenzioni namespace
+=======
+``` 
+>>>>>>> laraxot/dev

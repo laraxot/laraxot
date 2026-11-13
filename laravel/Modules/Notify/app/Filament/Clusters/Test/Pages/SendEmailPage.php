@@ -21,13 +21,15 @@ use Modules\Notify\Emails\EmailDataEmail;
 use Modules\Notify\Filament\Clusters\Test;
 use Modules\Xot\Filament\Pages\XotBasePage;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
-use Override;
+use Modules\Xot\Filament\Traits\SuperAdminOnlyTrait;
 
 /**
  * @property Schema $emailForm
  */
 class SendEmailPage extends XotBasePage
 {
+    use SuperAdminOnlyTrait;
+
     // use NavigationLabelTrait;
 
     /** @var array<string, mixed>|null */
@@ -71,6 +73,8 @@ class SendEmailPage extends XotBasePage
 
     public function sendEmail(): void
     {
+        abort_unless(static::canAccess(), 403);
+
         $data = $this->emailForm->getState();
         $email_data = EmailData::from($data);
 
@@ -97,6 +101,7 @@ class SendEmailPage extends XotBasePage
 
                 ->submit('emailFormActions')];
     }
+
     protected function getUser(): Authenticatable&Model
     {
         $user = Filament::auth()->user();

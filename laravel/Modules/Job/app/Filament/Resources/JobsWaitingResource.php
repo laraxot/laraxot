@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://github.com/mooxphp/jobs/blob/main/src/resources/JobsWaitingResource.php
  */
-
-declare(strict_types=1);
 
 namespace Modules\Job\Filament\Resources;
 

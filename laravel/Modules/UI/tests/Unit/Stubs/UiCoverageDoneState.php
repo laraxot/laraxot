@@ -12,12 +12,20 @@ final class UiCoverageDoneState implements StateContract
 {
     /** @param array<array-key, mixed>|Model|string|null $record */
     /**
+<<<<<<< HEAD
      * @param Model|array<string, mixed>|string|null $record
      */
     public function __construct(
         public Model|array|string|null $record = null,
     ) {
     }
+=======
+     * @param  Model|array<string, mixed>|string|null  $record
+     */
+    public function __construct(
+        public Model|array|string|null $record = null,
+    ) {}
+>>>>>>> f5ffd8b4 (.)
 
     public function label(): string
     {
@@ -66,11 +74,17 @@ final class UiCoverageDoneState implements StateContract
     }
 
     /**
+<<<<<<< HEAD
      * @param array<string, mixed> $data
      */
     public function modalActionByRecord(Model $record, array $data): void
     {
     }
+=======
+     * @param  array<string, mixed>  $data
+     */
+    public function modalActionByRecord(Model $record, array $data): void {}
+>>>>>>> f5ffd8b4 (.)
 
     public function isMessageRequired(): bool
     {

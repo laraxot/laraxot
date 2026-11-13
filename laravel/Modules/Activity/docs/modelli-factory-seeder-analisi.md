@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_6XVNjo
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -20,9 +19,6 @@ qmd: "analisi modelli, factory e seeder - moduli activity, gdpr, tenant, ui, sal
 =======
 # Analisi Modelli, Factory e Seeder - Moduli Activity, Gdpr, Tenant, UI, <nome progetto>, Xot
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-# Analisi Modelli, Factory e Seeder - Moduli Activity, Gdpr, Tenant, UI, <nome progetto>, Xot
->>>>>>> 13cf1831 (.)
 
 ## Modulo Activity
 
@@ -96,7 +92,6 @@ Il modulo UI contiene solo componenti Blade e risorse frontend, nessun modello E
 
 ---
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_6XVNjo
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -110,9 +105,6 @@ Il modulo UI contiene solo componenti Blade e risorse frontend, nessun modello E
 >>>>>>> .merge_file_AtE68h
 ## Modulo <nome progetto>
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-## Modulo <nome progetto>
->>>>>>> 13cf1831 (.)
 
 ### Modelli Attivi e Business Logic
 | Modello | Factory | Seeder | Utilizzo Business Logic |
@@ -128,7 +120,6 @@ Il modulo UI contiene solo componenti Blade e risorse frontend, nessun modello E
 
 ### Seeder Obsoleti
 - **PatientSeeder.php.old** - 🗑️ Da rimuovere
-<<<<<<< HEAD
 <<<<<<< .merge_file_6XVNjo
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -142,9 +133,6 @@ Il modulo UI contiene solo componenti Blade e risorse frontend, nessun modello E
 =======
 - **<nome progetto>DatabaseSeeder.php** - ✅ Mantiene struttura
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-- **<nome progetto>DatabaseSeeder.php** - ✅ Mantiene struttura
->>>>>>> 13cf1831 (.)
 
 ### Note
 Modulo specifico per Modena, attualmente non utilizzato attivamente.
@@ -195,7 +183,6 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 ## Riepilogo Generale
 
 ### Totale Modelli Analizzati
-<<<<<<< HEAD
 <<<<<<< .merge_file_6XVNjo
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -209,9 +196,6 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 >>>>>>> .merge_file_AtE68h
 - ****: 20 modelli attivi, 7 obsoleti
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-- ****: 20 modelli attivi, 7 obsoleti
->>>>>>> 13cf1831 (.)
 - **User**: 35+ modelli attivi
 - **Geo**: 12 modelli attivi, 1 obsoleto
 - **Media**: 4 modelli attivi
@@ -223,7 +207,6 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 - **Gdpr**: 7 modelli
 - **Tenant**: 3 modelli, 2 obsoleti
 - **UI**: 0 modelli (solo componenti)
-<<<<<<< HEAD
 <<<<<<< .merge_file_6XVNjo
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -237,9 +220,6 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 =======
 - **<nome progetto>**: 2 modelli base, 1 obsoleto
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-- **<nome progetto>**: 2 modelli base, 1 obsoleto
->>>>>>> 13cf1831 (.)
 - **Xot**: 12+ modelli sistema, molti base abstract
 
 ### Factory Coverage
@@ -257,7 +237,6 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 4. **Documentazione**: Aggiornare documentazione moduli
 
 ### Moduli Critici per Business Logic
-<<<<<<< HEAD
 <<<<<<< .merge_file_6XVNjo
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -275,10 +254,6 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 1. **** - Core sanitario ✅ Completo
 2. **User** - Autenticazione ✅ Completo
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-1. **** - Core sanitario ✅ Completo
-2. **User** - Autenticazione ✅ Completo
->>>>>>> 13cf1831 (.)
 3. **Notify** - Comunicazioni ✅ Completo
 4. **Media** - File management ✅ Completo
 5. **Geo** - Localizzazione ✅ Completo
@@ -292,7 +267,6 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 6. **Xot** - Framework base ✅ Completo
 
 *Ultimo aggiornamento: Gennaio 2025*
-<<<<<<< HEAD
 <<<<<<< .merge_file_6XVNjo
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -300,8 +274,6 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 *Analisi completa sistema : 150+ modelli, 14 moduli*
 =======
 *Analisi completa sistema SaluteOra: 150+ modelli, 14 moduli**Analisi completa sistema : 150+ modelli, 14 moduli*
@@ -493,12 +465,8 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 
 *Ultimo aggiornamento: Gennaio 2025*
 <<<<<<< HEAD
-<<<<<<< HEAD
 *Analisi completa sistema <nome progetto>: 150+ modelli, 14 moduli*
 >>>>>>> 0a02158a (.)
 =======
 *Analisi completa sistema <nome progetto>: 150+ modelli, 14 moduli*
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-*Analisi completa sistema <nome progetto>: 150+ modelli, 14 moduli*
->>>>>>> 13cf1831 (.)

@@ -44,7 +44,12 @@ test('ogni file citato nei CLAUDE.md esiste nel repo', function (): void {
         preg_match_all('/`([A-Za-z0-9_.\/-]+\.(?:md|mdc|sh|php|yaml|json))`/', $source, $matches);
 
         foreach ($matches[1] as $reference) {
+<<<<<<< HEAD
             if (referenceExistsInRepo($reference)) {
+=======
+            // `-1.md`, `appunti-continuous-integration-tools.md`, `-3.md` nelle istruzioni sono l'ESEMPIO di cosa e' vietato nei nomi dei file (regola dell'utente 2026-10-15), non file.
+            if (str_starts_with($reference, '-') || referenceExistsInRepo($reference)) {
+>>>>>>> laraxot/dev
                 continue;
             }
 

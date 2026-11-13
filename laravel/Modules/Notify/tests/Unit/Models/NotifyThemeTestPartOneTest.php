@@ -23,8 +23,8 @@ use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\withoutExceptionHandling;
-use function Safe\json_encode;
 
+uses(TestCase::class);
 beforeEach(function (): void {
     withoutExceptionHandling();
 });
@@ -63,11 +63,11 @@ describe('Notify Theme PartOne', function (): void {
             'theme' => 'default',
             'logo_src' => '/images/logo.png',
             'logo_width' => 200,
-            'logo_height' => 80,
-            'view_params' => json_encode([
-                'company_name' => 'Example Corp',
-                'primary_color' => '#3b82f6',
-                'secondary_color' => '#64748b'])]);
+            'logo_height' => 80, ]);
+        TestCase::assertNotifyJsonColumn('notify_themes', $theme->id, 'view_params', [
+            'company_name' => 'Example Corp',
+            'primary_color' => '#3b82f6',
+            'secondary_color' => '#64748b']);
 
         Assert::assertInstanceOf(NotifyTheme::class, $theme);
     });
@@ -139,8 +139,8 @@ describe('Notify Theme PartOne', function (): void {
             'subject' => 'Test Theme',
             'view_params' => $viewParams]);
         XotBasePest::assertTableHas('notify', 'notify_themes', [
-            'id' => $theme->id,
-            'view_params' => json_encode($viewParams)]);
+            'id' => $theme->id, ]);
+        TestCase::assertNotifyJsonColumn('notify_themes', $theme->id, 'view_params', $viewParams);
         Assert::assertEquals('Test Company', TestCase::notifyArrayGet($theme->view_params, 'company_name'));
         Assert::assertEquals('#ef4444', TestCase::notifyArrayGet($theme->view_params, 'primary_color'));
         Assert::assertEquals('Inter', TestCase::notifyArrayGet($theme->view_params, 'fonts', 'primary'));
@@ -192,8 +192,8 @@ describe('Notify Theme PartOne', function (): void {
             'id' => $theme->id,
             'subject' => 'Updated Subject',
             'body' => 'Updated body text',
-            'theme' => 'updated',
-            'view_params' => json_encode(['updated' => true, 'version' => '2.0'])]);
+            'theme' => 'updated', ]);
+        TestCase::assertNotifyJsonColumn('notify_themes', $theme->id, 'view_params', ['updated' => true, 'version' => '2.0']);
 
         Assert::assertEquals('Updated Subject', XotBasePest::assertFreshModel($theme, NotifyTheme::class)->subject);
         Assert::assertEquals('Updated body text', XotBasePest::assertFreshModel($theme, NotifyTheme::class)->body);

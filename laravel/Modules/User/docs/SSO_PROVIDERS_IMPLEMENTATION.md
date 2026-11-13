@@ -1,3 +1,12 @@
+---
+title: "User Module - SSO Providers Implementation"
+type: note
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "user module - sso providers implementation user"
+status: superseded
+superseded_by: SSO-PROVIDERS-IMPLEMENTATION.md
+---
 # User Module - SSO Providers Implementation
 
 ## Overview

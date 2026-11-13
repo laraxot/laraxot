@@ -67,7 +67,7 @@ return [
             'description' => 'General Settings',
         ],
         'label' => 'Actions',
-        'sort' => 1,
+        'sort' => '1',
         'icon' => 'heroicon-o-rectangle-stack',
     ],
     'fields' => [

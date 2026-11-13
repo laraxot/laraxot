@@ -1,12 +1,20 @@
 ---
+title: "index"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "index"
+issues: []
+discussions: []
 module: theme
 topic: index
-canonical: ../../../../Themes/docs/shared-components/00-index.md
+canonical: ../../../../Themes/docs/shared-components/00-index.md  # target mancante, verificato 2026-10-08
+status: stub
 ---
 
 See canonical documentation: ../../../../Themes/docs/shared-components/00-index.md
-<<<<<<< HEAD
-=======
+---
 # Seo Module - Roadmap
 
 > Gestione SEO automatizzata: meta tags, sitemap, social sharing.
@@ -33,4 +41,3 @@ See canonical documentation: ../../../../Themes/docs/shared-components/00-index.
 ## Collegamenti
 
 - [00-index modulo](../00-index.md)
->>>>>>> laraxot/dev

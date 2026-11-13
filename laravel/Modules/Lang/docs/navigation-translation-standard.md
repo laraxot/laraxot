@@ -1,4 +1,7 @@
 ---
+qmd: "navigation translation standard"
+issues: []
+discussions: []
 title: "Standard per le traduzioni di navigazione Filament"
 type: standard
 module: Lang
@@ -8,6 +11,7 @@ tags: [traduzioni, filament, navigazione]
 related:
   - ./translation-keys-best-practices.md
   - ./TRANSLATION_PROCESS.md
+status: draft
 ---
 
 # Standard per le traduzioni di navigazione Filament

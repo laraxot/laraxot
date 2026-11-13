@@ -28,8 +28,12 @@ class GetRecentActivitiesAction
         $query = Activity::typedQuery()
             ->with(['causer', 'subject'])
             ->latest()
+<<<<<<< .merge_file_Odir0U
             ->limit($limit)
             ;
+=======
+            ->limit($limit);
+>>>>>>> .merge_file_RsfDWD
 
         return Activity::typedGet($query);
     }

@@ -1,3 +1,12 @@
+---
+title: "User Module - Product Launch Plan"
+type: note
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "user module - product launch plan user"
+status: superseded
+superseded_by: product-launch-plan-user-module.md
+---
 # User Module - Product Launch Plan
 
 **Module:** User  

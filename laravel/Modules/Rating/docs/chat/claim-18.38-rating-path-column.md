@@ -1,5 +1,12 @@
 ---
-title: "Claim — Aggiunta colonna path per adjacency list (18.38)"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "claim 18.38 rating path column"
+issues: []
+discussions: []
+title: "Claim: Aggiunta colonna path per adjacency list (18.38)"
 status: open
 agent: claude-opus-5-session-base-ptvx-fila5-92 [6a95f1]
 module: Rating
@@ -8,7 +15,7 @@ coordinate_with:
   - "nessun altro agente sulla topic path column"
 ---
 
-# Claim — Aggiunta colonna `path` per adjacency list (storia 18.38)
+# Claim: Aggiunta colonna `path` per adjacency list (storia 18.38)
 
 ## Contesto
 
@@ -21,7 +28,7 @@ Dalla revisione in corso (sessione `base-ptvx-fila5-92`, data 2026-09-08):
 ## Coordinamento con altri agenti
 
 - **Prima della modifica:** verificato che non esistano lock attivi su file Rating (`bashscripts/lock/` vuoto).
-- **Second brain:** controllato che la colonna `parent_id` esista già — sì, in `RatingData::updateColumns()`.
+- **Second brain:** controllato che la colonna `parent_id` esista già: sì, in `RatingData::updateColumns()`.
 - **Regola uscita da STOP-ratingscolumn:** il gruppo Column+Section non è sovrapposto a questa modifica (scope diverso: schema tabella).
 
 ## Scope del task

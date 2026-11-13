@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Themes\Sixteen\Http\Controllers;
 
+use Modules\User\Actions\Auth\GetPostLoginUrlAction;
+use Modules\User\Actions\Auth\UpsertUserFromDigitalIdentityAction;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -12,8 +14,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Modules\Xot\Contracts\UserContract;
-use Modules\Xot\Datas\XotData;
 use Themes\Sixteen\Actions\SpidAuthAction;
+use Themes\Sixteen\Actions\Auth\SanitizeReturnUrlAction;
 use Themes\Sixteen\Events\SpidAuthenticated;
 use Themes\Sixteen\Events\SpidLoggedOut;
 
@@ -35,7 +37,8 @@ class SpidAuthController extends Controller
     {
         try {
             $level = (int) $request->query('level', 2);
-            $returnUrl = $request->query('return_url', route('dashboard'));
+            $fallbackUrl = app(GetPostLoginUrlAction::class)->execute();
+            $returnUrl = app(SanitizeReturnUrlAction::class)->execute($request, $request->query('return_url'), $fallbackUrl);
 
             // Valida il provider
             $providers = $this->spidService->getProviders();
@@ -100,7 +103,7 @@ class SpidAuthController extends Controller
 
             // Redirect all'URL di ritorno
             $returnUrl = Session::pull('spid.return_url');
-            $returnUrl = is_string($returnUrl) && $returnUrl !== '' ? $returnUrl : route('dashboard');
+            $returnUrl = app(SanitizeReturnUrlAction::class)->execute($request, $returnUrl, app(GetPostLoginUrlAction::class)->execute());
 
             return redirect()->to($returnUrl)
                 ->with('success', 'Autenticazione SPID completata con successo.');
@@ -198,8 +201,7 @@ class SpidAuthController extends Controller
     public function singleLogout(Request $request): Response
     {
         try {
-            // Processa la richiesta SLO
-            $logoutRequest = $request->input('SAMLRequest');
+            // Processa la richiesta SLO (la SAMLRequest non viene ancora interpretata: oggi si registra e si chiude la sessione)
             $relayState = $request->string('RelayState')->toString();
 
             Log::info('SPID SLO received', [
@@ -263,122 +265,22 @@ class SpidAuthController extends Controller
     }
 
     /**
-     * Trova o crea un utente basato sui dati SPID
+     * Trova o crea l'utente dai dati SPID (logica condivisa con l'altro metodo in UpsertUserFromDigitalIdentityAction).
      *
      * @param  array<string, mixed>  $attributes
      */
     protected function findOrCreateUser(array $attributes): UserContract
     {
-        $fiscalCode = $attributes['fiscal_code'] ?? null;
-
-        if (! is_string($fiscalCode) || $fiscalCode === '') {
-            throw new \Exception('Codice fiscale mancante nei dati SPID');
-        }
-
-        // Cerca utente per codice fiscale
-        $userClass = XotData::make()->getUserClass();
-        $user = $userClass::where('fiscal_code', $fiscalCode)->first();
-
-        if ($user instanceof UserContract) {
-            // Aggiorna i dati se necessario
-            $this->updateUserFromSpid($user, $attributes);
-
-            return $user;
-        }
-
-        if ($user !== null) {
-            Log::error('SPID: existing user record does not implement UserContract', [
-                'user_class' => $user::class,
-                'fiscal_code' => $fiscalCode,
-            ]);
-        }
-
-        // Crea nuovo utente
-        return $this->createUserFromSpid($attributes);
-    }
-
-    /**
-     * Crea un nuovo utente dai dati SPID
-     *
-     * @param  array<string, mixed>  $attributes
-     */
-    protected function createUserFromSpid(array $attributes): UserContract
-    {
-        $fiscalCode = $attributes['fiscal_code'] ?? null;
-
-        if (! is_string($fiscalCode) || $fiscalCode === '') {
-            throw new \Exception('Codice fiscale mancante nei dati SPID');
-        }
-
+        $provider = $attributes['provider'] ?? null;
         $email = $attributes['email'] ?? null;
-        $emailIsValid = is_string($email) && $email !== '';
 
-        $userData = [
-            'name' => $attributes['name'] ?? null,
-            'surname' => $attributes['surname'] ?? null,
-            'email' => $emailIsValid ? $email : null,
-            'fiscal_code' => $fiscalCode,
-            'birth_date' => $attributes['birth_date'] ?? null,
-            'birth_place' => $attributes['birth_place'] ?? null,
-            'gender' => $attributes['gender'] ?? null,
-            'mobile_phone' => $attributes['mobile'] ?? null,
-            'address' => $attributes['address'] ?? null,
-            'spid_provider' => $attributes['provider'] ?? null,
-            'auth_method' => 'spid',
-            'email_verified_at' => $emailIsValid ? now() : null,
-        ];
-
-        // Genera email temporanea se mancante
-        if (empty($userData['email'])) {
-            $userData['email'] = 'spid.'.$fiscalCode.'@noemail.local';
-        }
-
-        $userClass = XotData::make()->getUserClass();
-        $user = $userClass::create($userData);
-
-        if (! $user instanceof UserContract) {
-            throw new \Exception('La classe utente configurata non implementa UserContract');
-        }
-
-        return $user;
-    }
-
-    /**
-     * Aggiorna un utente esistente con i dati SPID
-     *
-     * @param  array<string, mixed>  $attributes
-     */
-    protected function updateUserFromSpid(UserContract $user, array $attributes): void
-    {
-        $updateData = [];
-
-        // Aggiorna campi se diversi
-        if ($user->name !== $attributes['name']) {
-            $updateData['name'] = $attributes['name'];
-        }
-
-        if ($user->getAttribute('surname') !== $attributes['surname']) {
-            $updateData['surname'] = $attributes['surname'];
-        }
-
-        if ($attributes['email'] && $user->email !== $attributes['email']) {
-            $updateData['email'] = $attributes['email'];
-            $updateData['email_verified_at'] = now();
-        }
-
-        if ($attributes['mobile'] && $user->getAttribute('mobile_phone') !== $attributes['mobile']) {
-            $updateData['mobile_phone'] = $attributes['mobile'];
-        }
-
-        // Aggiorna provider se diverso
-        if ($user->getAttribute('spid_provider') !== $attributes['provider']) {
-            $updateData['spid_provider'] = $attributes['provider'];
-        }
-
-        // Aggiorna ultimo accesso
-        $updateData['last_login_at'] = now();
-
-        $user->update($updateData);
+        // SPID: l'email e' un attributo verificato dall'identity provider.
+        return app(UpsertUserFromDigitalIdentityAction::class)->execute(
+            'spid',
+            $attributes,
+            emailVerified: is_string($email) && $email !== '',
+            identityProvider: is_string($provider) && $provider !== '' ? $provider : null,
+        );
     }
 
     /**

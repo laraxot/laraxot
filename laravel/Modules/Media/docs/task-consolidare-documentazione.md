@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Task: Consolidare Documentazione - Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "task consolidare documentazione"
 related:
   - "./webm.md"
+status: draft
 ---
 # Task: Consolidare Documentazione - Media
 

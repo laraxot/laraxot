@@ -16,7 +16,28 @@ class NotificationManager
     use QueueableAction;
 
     /**
-     * Entry point per QueueableAction — delega a send().
+     * Entry point Spatie QueueableAction (coda e sync).
+     *
+     * Scopo: orchestrare invio da template code verso un destinatario Eloquent.
+     * Delega a {@see send()}. Vive in Actions/, mai in Services/ (la copia
+     * riesumata sotto Services/ produceva i 7 errori PHPStan su array nudi).
+     *
+     * @param  array<string, mixed>  $data
+     * @param  list<string>  $channels
+     * @param  array<string, mixed>  $options
+     */
+    public function execute(
+        Model $recipient,
+        string $templateCode,
+        array $data = [],
+        array $channels = [],
+        array $options = [],
+    ): ?Notification {
+        return $this->send($recipient, $templateCode, $data, $channels, $options);
+    }
+
+    /**
+     * Invia una notifica a un destinatario risolvendo il template attivo.
      *
      * @param  array<string, mixed>  $data
      * @param  list<string>  $channels
@@ -36,7 +57,6 @@ class NotificationManager
         }
 
         $action = app(SendNotificationAction::class);
-        /** @var list<string> $channelList */
         $channelList = array_values($channels);
         $notification = $action->handle($recipient, $templateCode, $data, $channelList, $options);
 
@@ -120,11 +140,11 @@ class NotificationManager
 
         // return [
         //     'total' => $logs->count(),
-        //     'sent' => $logs->where('status', NotificationLog::STATUS_SENT)->count(),
-        //     'delivered' => $logs->where('status', NotificationLog::STATUS_DELIVERED)->count(),
-        //     'failed' => $logs->where('status', NotificationLog::STATUS_FAILED)->count(),
-        //     'opened' => $logs->where('status', NotificationLog::STATUS_OPENED)->count(),
-        //     'clicked' => $logs->where('status', NotificationLog::STATUS_CLICKED)->count(),
+        //     'sent' => $logs->where('status', NotificationLogStatusEnum::SENT->value)->count(),
+        //     'delivered' => $logs->where('status', NotificationLogStatusEnum::DELIVERED->value)->count(),
+        //     'failed' => $logs->where('status', NotificationLogStatusEnum::FAILED->value)->count(),
+        //     'opened' => $logs->where('status', NotificationLogStatusEnum::OPENED->value)->count(),
+        //     'clicked' => $logs->where('status', NotificationLogStatusEnum::CLICKED->value)->count(),
         // ];
 
         return [
@@ -149,11 +169,11 @@ class NotificationManager
 
         // return [
         //     'total' => $logs->count(),
-        //     'sent' => $logs->where('status', NotificationLog::STATUS_SENT)->count(),
-        //     'delivered' => $logs->where('status', NotificationLog::STATUS_DELIVERED)->count(),
-        //     'failed' => $logs->where('status', NotificationLog::STATUS_FAILED)->count(),
-        //     'opened' => $logs->where('status', NotificationLog::STATUS_OPENED)->count(),
-        //     'clicked' => $logs->where('status', NotificationLog::STATUS_CLICKED)->count(),
+        //     'sent' => $logs->where('status', NotificationLogStatusEnum::SENT->value)->count(),
+        //     'delivered' => $logs->where('status', NotificationLogStatusEnum::DELIVERED->value)->count(),
+        //     'failed' => $logs->where('status', NotificationLogStatusEnum::FAILED->value)->count(),
+        //     'opened' => $logs->where('status', NotificationLogStatusEnum::OPENED->value)->count(),
+        //     'clicked' => $logs->where('status', NotificationLogStatusEnum::CLICKED->value)->count(),
         // ];
 
         return [

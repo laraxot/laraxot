@@ -1,13 +1,17 @@
 ---
-title: "conflict — Consolidated Documentation"
+qmd: "conflict consolidated"
+issues: []
+discussions: []
+title: "conflict: Consolidated Documentation"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
-# conflict — Consolidated Documentation
+# conflict: Consolidated Documentation
 
 Consolidated from **15** individual files.
 
@@ -21,7 +25,7 @@ Consolidated from **15** individual files.
 - [Risoluzione Conflitti SmsChannel.php](#conflict-resolution-smschannel)
 - [---](#conflict-resolution-smsdriverenum-1)
 - [Risoluzione Conflitto SmsDriverEnum](#conflict-resolution-smsdriverenum)
-- [Conflict Resolution — Module Notify](#conflict-resolution)
+- [Conflict Resolution: Module Notify](#conflict-resolution)
 - [Risoluzione Conflitti RecordNotification.php](#conflict_resolution_recordnotification)
 - [Risoluzione Conflitti SendSmsPage.php](#conflict_resolution_sendsmspage)
 - [Risoluzione Conflitti SmsChannel.php](#conflict_resolution_smschannel)
@@ -33,7 +37,7 @@ Consolidated from **15** individual files.
 
 ## conflict-resolution-recordnotification-1
 
-*Consolidated from: `conflict-resolution-recordnotification-1.md`*
+*Consolidated from: `conflict-resolution-recordnotification.md`*
 
 title: "Risoluzione Conflitti RecordNotification.php"
 type: concept
@@ -44,12 +48,17 @@ qmd: "conflict-resolution-recordnotification-1 risoluzione conflitti recordnotif
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -133,13 +142,13 @@ Verificare che:
 ## Collegamenti
 - [Notify Module Documentation](README.md)
 - [RecordNotification Implementation](notifications/record_notification.md)
-- [SpatieEmail Integration](spatie-email-usage-guide-1.md)
+- [SpatieEmail Integration](spatie-email-usage-guide.md)
 - [Root Conflict Resolution Guidelines](../../../project_docs/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
 - [Notify Module Documentation](readme.md)
 - [RecordNotification Implementation](notifications/record_notification.md)
-- [SpatieEmail Integration](spatie-email-usage-guide-1.md)
+- [SpatieEmail Integration](spatie-email-usage-guide.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -227,6 +236,7 @@ Verificare che:
 - [Notify Module Documentation](README.md)
 - [RecordNotification Implementation](notifications/record_notification.md)
 - [SpatieEmail Integration](spatie-email-usage-guide.md)
+- [SpatieEmail Integration](../../spatie-email-usage-guide.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -309,6 +319,7 @@ Verificare che:
 - [Notify Module Documentation](README.md)
 - [RecordNotification Implementation](notifications/record_notification.md)
 - [SpatieEmail Integration](spatie-email-usage-guide.md)
+- [SpatieEmail Integration](../../spatie-email-usage-guide.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -317,7 +328,7 @@ Verificare che:
 
 ## conflict-resolution-sendsmspage-1
 
-*Consolidated from: `conflict-resolution-sendsmspage-1.md`*
+*Consolidated from: `conflict-resolution-sendsmspage.md`*
 
 title: "Risoluzione Conflitti SendSmsPage.php"
 type: concept
@@ -328,12 +339,17 @@ qmd: "conflict-resolution-sendsmspage-1 risoluzione conflitti sendsmspage.php"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -404,13 +420,13 @@ Verificare che:
 ## Collegamenti
 - [Notify Module Documentation](README.md)
 - [SMS Testing Guide](sms/testing.md)
-- [MailTemplate Integration](mail-templates-structure-1.md)
+- [MailTemplate Integration](mail-templates-structure.md)
 - [Root Conflict Resolution Guidelines](../../../project_docs/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
 - [Notify Module Documentation](readme.md)
 - [SMS Testing Guide](sms/testing.md)
-- [MailTemplate Integration](mail-templates-structure-1.md)
+- [MailTemplate Integration](mail-templates-structure.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -486,6 +502,7 @@ Verificare che:
 - [Notify Module Documentation](README.md)
 - [SMS Testing Guide](sms/testing.md)
 - [MailTemplate Integration](mail_templates_structure.md)
+- [MailTemplate Integration](../../mail_templates_structure.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -556,6 +573,7 @@ Verificare che:
 - [Notify Module Documentation](README.md)
 - [SMS Testing Guide](sms/testing.md)
 - [MailTemplate Integration](mail_templates_structure.md)
+- [MailTemplate Integration](../../mail_templates_structure.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -564,7 +582,7 @@ Verificare che:
 
 ## conflict-resolution-smschannel-1
 
-*Consolidated from: `conflict-resolution-smschannel-1.md`*
+*Consolidated from: `conflict-resolution-smschannel.md`*
 
 title: "Risoluzione Conflitti SmsChannel.php"
 type: concept
@@ -575,12 +593,17 @@ qmd: "conflict-resolution-smschannel-1 risoluzione conflitti smschannel.php"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -638,12 +661,12 @@ return $action->execute($smsData);
 
 ## Collegamenti
 - [Notify Module Documentation](README.md)
-- [SMS Channel Architecture](sms-channel-action-resolution-1.md)
+- [SMS Channel Architecture](sms-channel-action-resolution.md)
 - [Root Conflict Resolution Guidelines](../../../project_docs/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
 - [Notify Module Documentation](readme.md)
-- [SMS Channel Architecture](sms-channel-action-resolution-1.md)
+- [SMS Channel Architecture](sms-channel-action-resolution.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -706,6 +729,7 @@ return $action->execute($smsData);
 ## Collegamenti
 - [Notify Module Documentation](readme.md)
 - [SMS Channel Architecture](sms-channel-action-resolution.md)
+- [SMS Channel Architecture](../../sms-channel-action-resolution.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -763,6 +787,7 @@ return $action->execute($smsData);
 ## Collegamenti
 - [Notify Module Documentation](README.md)
 - [SMS Channel Architecture](sms-channel-action-resolution.md)
+- [SMS Channel Architecture](../../sms-channel-action-resolution.md)
 - [Root Conflict Resolution Guidelines](../../../../docs/project/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -771,7 +796,7 @@ return $action->execute($smsData);
 
 ## conflict-resolution-smsdriverenum-1
 
-*Consolidated from: `conflict-resolution-smsdriverenum-1.md`*
+*Consolidated from: `conflict-resolution-smsdriverenum.md`*
 
 title: "Risoluzione Conflitto SmsDriverEnum"
 type: concept
@@ -782,12 +807,17 @@ qmd: "conflict-resolution-smsdriverenum-1 risoluzione conflitto smsdriverenum"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -1012,6 +1042,7 @@ enum SmsDriverEnum: string implements HasLabel, HasIcon, HasColor
 - [Notify Module](../README.md)
 - [SMS Configuration](../sms-configuration.md)
 - [Translation Standards](../../Lang/project_docs/translation-standards.md)
+- [Translation Standards](../../translation-standards.md)
 - [Filament Integration](../../Xot/project_docs/filament-translations.md)
 
 ## Note per Sviluppatori Futuri
@@ -1253,6 +1284,7 @@ enum SmsDriverEnum: string implements HasLabel, HasIcon, HasColor
 - [Notify Module](../readme.md)
 - [SMS Configuration](../sms-configuration.md)
 - [Translation Standards](../../lang/docs/translation-standards.md)
+- [Translation Standards](../../../../Lang/docs/translation-standards.md)
 - [Filament Integration](../../xot/docs/filament-translations.md)
 
 ## Note per Sviluppatori Futuri
@@ -1419,6 +1451,7 @@ Verificare che:
 - [Notify Module Documentation](README.md)
 - [RecordNotification Implementation](notifications/record_notification.md)
 - [SpatieEmail Integration](spatie-email-usage-guide.md)
+- [SpatieEmail Integration](../../spatie-email-usage-guide.md)
 - [Root Conflict Resolution Guidelines](../../../project_docs/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -1495,6 +1528,7 @@ Verificare che:
 - [Notify Module Documentation](README.md)
 - [SMS Testing Guide](sms/testing.md)
 - [MailTemplate Integration](mail_templates_structure.md)
+- [MailTemplate Integration](../../mail_templates_structure.md)
 - [Root Conflict Resolution Guidelines](../../../project_docs/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -1558,6 +1592,7 @@ return $action->execute($smsData);
 ## Collegamenti
 - [Notify Module Documentation](README.md)
 - [SMS Channel Architecture](sms-channel-action-resolution.md)
+- [SMS Channel Architecture](../../sms-channel-action-resolution.md)
 - [Root Conflict Resolution Guidelines](../../../project_docs/conflict-resolution-guidelines.md)
 
 *Ultimo aggiornamento: giugno 2025*
@@ -1787,6 +1822,7 @@ enum SmsDriverEnum: string implements HasLabel, HasIcon, HasColor
 - [Notify Module](../README.md)
 - [SMS Configuration](../sms-configuration.md)
 - [Translation Standards](../../Lang/project_docs/translation-standards.md)
+- [Translation Standards](../../translation-standards.md)
 - [Filament Integration](../../Xot/project_docs/filament-translations.md)
 
 ## Note per Sviluppatori Futuri

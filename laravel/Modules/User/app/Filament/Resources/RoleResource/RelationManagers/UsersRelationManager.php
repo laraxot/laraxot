@@ -79,16 +79,16 @@ final class UsersRelationManager extends XotBaseRelationManager
         return [
             Filter::make('active')->query(fn (Builder $query): Builder => $query->where('is_active', true))->toggle(),
             Filter::make('created_at')
-                ->schema([
+                ->form([
                     DatePicker::make('created_from'),
                     DatePicker::make('created_until'),
                 ])
                 ->query(function (Builder $query, array $data): Builder {
-                    if (isset($data['created_from']) && is_string($data['created_from']) && '' !== $data['created_from']) {
+                    if (isset($data['created_from']) && is_string($data['created_from']) && $data['created_from'] !== '') {
                         $query->whereDate('created_at', '>=', $data['created_from']);
                     }
 
-                    if (isset($data['created_until']) && is_string($data['created_until']) && '' !== $data['created_until']) {
+                    if (isset($data['created_until']) && is_string($data['created_until']) && $data['created_until'] !== '') {
                         $query->whereDate('created_at', '<=', $data['created_until']);
                     }
 

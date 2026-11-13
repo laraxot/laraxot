@@ -5,6 +5,8 @@ type: integration
 tags: [integrations, modules, user]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
+qmd: "gestione delle sessioni user"
 ---
 
 # Gestione delle Sessioni
@@ -78,11 +80,17 @@ Questo documento fornisce linee guida per la gestione delle sessioni utente all'
 ## Collegamenti a Documentazione Correlata
 - [Indice del Modulo Utente](./index.md)
 
-- [Indice del Modulo Utente](./INDEX.md)
-- [Modello BaseUser](./BaseUser.md)
-- [Implementazione delle Pagine di Autenticazione](./AUTH_PAGES_IMPLEMENTATION.md)
-- [Gestione del Profilo](./PROFILE_MANAGEMENT.md)
-- [Best Practices per il Routing](./ROUTING_BEST_PRACTICES.md)
+- [Indice del Modulo Utente](./index.md)
+- [Modello BaseUser](./baseuser.md)
+- [Implementazione delle Pagine di Autenticazione](./auth_pages_implementation.md)
+- [Gestione del Profilo](./profile_management.md)
+- [Best Practices per il Routing](./routing_best_practices.md)
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
-- [Documentazione Volt](./VOLT_BLADE_IMPLEMENTATION.md)
+- [Documentazione Volt](./volt_blade_implementation.md)
+- [Modello BaseUser](./baseuser.md)
+- [Implementazione delle Pagine di Autenticazione](./auth_pages_implementation.md)
+- [Gestione del Profilo](./profile_management.md)
+- [Best Practices per il Routing](./routing_best_practices.md)
+- [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
+- [Documentazione Volt](./volt_blade_implementation.md)
 - [Tema One Documentation](../../Themes/One/docs/README.md) 

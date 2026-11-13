@@ -8,7 +8,11 @@ use Modules\Activity\Models\BaseModel;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< .merge_file_sjlwIB
 uses(\Modules\Activity\Tests\TestCase::class);
+=======
+uses(TestCase::class);
+>>>>>>> .merge_file_CX9mp5
 
 it('base model is abstract', function (): void {
     $reflection = new \ReflectionClass(BaseModel::class);

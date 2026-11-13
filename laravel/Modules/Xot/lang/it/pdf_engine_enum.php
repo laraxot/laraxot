@@ -30,7 +30,11 @@ return [
             'name' => 'General',
             'description' => 'General Settings',
         ],
+<<<<<<< HEAD
         'label' => 'Pdf Engine Enum',
+=======
+        'label' => 'Motore PDF',
+>>>>>>> laraxot/dev
         'sort' => 1,
         'icon' => 'heroicon-o-collection',
     ],
@@ -53,7 +57,10 @@ return [
             'helper_text' => '',
             'description' => '',
         ],
+<<<<<<< HEAD
         'spipu' => ['label' => 'spipu', 'placeholder' => 'spipu', 'helper_text' => 'spipu', 'description' => 'spipu'],
+=======
+>>>>>>> laraxot/dev
     ],
     'actions' => [
         'create' => [

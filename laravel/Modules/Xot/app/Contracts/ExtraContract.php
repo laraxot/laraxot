@@ -45,6 +45,10 @@ use Spatie\SchemalessAttributes\SchemalessAttributes;
  *
  * @phpstan-require-extends Model
  *
+<<<<<<< HEAD
  * @mixin \Eloquent
+=======
+ * @mixin Model
+>>>>>>> laraxot/dev
  */
 interface ExtraContract {}

@@ -16,6 +16,7 @@ related:
   - "./commit-message.md"
   - "./configuration.md"
   - "./design-comuni-bmad-master-plan.md"
+status: draft
 ---
 
 # NotebookLM Skill - Configuration & Usage Guide

@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Media\Tests\Unit\Filament;
 
-use Filament\Actions\Action;
 use Filament\Actions\BulkAction;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\TextInput;
@@ -28,7 +25,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class)->group('no-media-db');
 
 test('the form exposes one component per conversion parameter', function (): void {
-    $schema = (new MediaConvertForm())->getFormSchema();
+    $schema = (new MediaConvertForm)->getFormSchema();
 
     Assert::assertSame(
         ['format', 'codec_video', 'codec_audio', 'preset', 'bitrate', 'width', 'height', 'threads', 'speed'],
@@ -43,7 +40,7 @@ test('the form exposes one component per conversion parameter', function (): voi
 });
 
 test('codec and preset are radio choices, sizes are text inputs', function (): void {
-    $schema = (new MediaConvertForm())->getFormSchema();
+    $schema = (new MediaConvertForm)->getFormSchema();
 
     foreach (['format', 'codec_video', 'codec_audio', 'preset'] as $key) {
         Assert::assertInstanceOf(Radio::class, $schema[$key]);
@@ -55,7 +52,7 @@ test('codec and preset are radio choices, sizes are text inputs', function (): v
 });
 
 test('the video codec offers both vp9 and vp8', function (): void {
-    $codec = (new MediaConvertForm())->getFormSchema()['codec_video'];
+    $codec = (new MediaConvertForm)->getFormSchema()['codec_video'];
     Assert::assertInstanceOf(Radio::class, $codec);
 
     Assert::assertSame(
@@ -65,7 +62,7 @@ test('the video codec offers both vp9 and vp8', function (): void {
 });
 
 test('the table lists the identifier and both timestamps', function (): void {
-    $columns = (new MediaConvertsTable())->getTableColumns();
+    $columns = (new MediaConvertsTable)->getTableColumns();
 
     Assert::assertSame(['id', 'created_at', 'updated_at'], array_keys($columns));
 
@@ -75,9 +72,8 @@ test('the table lists the identifier and both timestamps', function (): void {
     }
 });
 
-
 test('the table exposes bulk actions keyed by name', function (): void {
-    $bulk = (new MediaConvertsTable())->getTableBulkActions();
+    $bulk = (new MediaConvertsTable)->getTableBulkActions();
 
     Assert::assertNotSame([], $bulk);
     Assert::assertArrayHasKey('delete', $bulk);

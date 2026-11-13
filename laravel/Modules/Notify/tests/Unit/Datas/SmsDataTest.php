@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Datas;
 
 use Modules\Notify\Datas\SmsData;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
+uses(TestCase::class);
 describe('SmsData', function () {
     it('can be referenced via reflection without instantiation', function () {
         $reflection = new \ReflectionClass(SmsData::class);

@@ -1,3 +1,14 @@
+---
+title: "session summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "session summary"
+issues: []
+discussions: []
+---
+
 # Session Summary - 2 Dicembre 2025
 
 ## 🎯 Obiettivi Completati
@@ -16,6 +27,14 @@
 
 ---
 
+title: "session summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "session summary"
+issues: []
+discussions: []
 ### 2. ✅ Fix Errore Collation SQL (Rating)
 
 **Problema**: `Illegal mix of collations (utf8_general_ci,COERCIBLE) and (utf8_unicode_ci,COERCIBLE)`

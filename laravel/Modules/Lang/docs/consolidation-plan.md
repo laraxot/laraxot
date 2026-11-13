@@ -1,3 +1,15 @@
+---
+title: "consolidation plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "consolidation plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Lang Module Docs Consolidation Plan
 
 **Phase:** 2d Aggressive Merge  
@@ -6,7 +18,6 @@
 **Strategy:** Delete duplicates → Consolidate by topic → Move research to wiki/
 
 ---
-
 ## Quick Stats
 
 | Category | Current | Target | Action |
@@ -24,7 +35,7 @@
 
 ## Consolidation Steps
 
-### 1. DELETE DUPLICATES (Kebab vs Snake Case) — ~30 files
+### 1. DELETE DUPLICATES (Kebab vs Snake Case): ~30 files
 
 Keep kebab-case (e.g., `translation-system.md`); delete snake_case (`translation_system.md`).
 
@@ -48,7 +59,7 @@ validation_*.md (all snake_case)
 working_with_locales.md
 ```
 
-### 2. DELETE OBSOLETE FILES — ~20 files
+### 2. DELETE OBSOLETE FILES: ~20 files
 
 Italian corrections, outdated analyses, and non-canonical content.
 
@@ -104,17 +115,17 @@ Merge: All `conflict-resolution-*.md`, `conflicts*.md`, `case-conflicts.md`, `ca
 ### 5. CONSOLIDATE VALIDATION (4 → 2)
 
 Keep both (complementary):
-- **validation-messages.md** — Structure & standards
-- **translating-validation-messages.md** — Usage with plurals
+- **validation-messages.md**: Structure & standards
+- **translating-validation-messages.md**: Usage with plurals
 
 Merge: `translating-plural-singular-forms.md`
 
 ### 6. CONSOLIDATE PHPSTAN (3 → 2)
 
-- **PHPSTAN_L10.md** — Merge PHPSTAN-FIXES.md + PHPSTAN_STATUS.md into this
+- **PHPSTAN_L10.md**: Merge PHPSTAN-FIXES.md + PHPSTAN_STATUS.md into this
 - Delete: `PHPSTAN-FIXES.md`, `PHPSTAN_STATUS.md`
 
-### 7. MOVE TO WIKI/ SUBDIRECTORIES — ~40 files
+### 7. MOVE TO WIKI/ SUBDIRECTORIES: ~40 files
 
 Create subdirs and move strategy/research content (not essential to module root):
 
@@ -277,7 +288,7 @@ mv MCAMARA_IMPLEMENTATION_GUIDE.md wiki/overviews/ 2>/dev/null || true
 # 9. Move rules
 mv ON-DEMAND-PATTERN.md wiki/rules/ 2>/dev/null || true
 
-# 10. Merge PHPSTAN files (manual step — see section below)
+# 10. Merge PHPSTAN files (manual step: see section below)
 # (Requires reading PHPSTAN-FIXES.md + PHPSTAN_STATUS.md into PHPSTAN_L10.md)
 ```
 
@@ -337,7 +348,7 @@ Example workflow:
 ```bash
 cd /var/www/_bases/base_ptvx_fila5
 git add -A
-git commit -m "chore: Lang docs aggressive consolidation — 579→150 files, 339→24 root
+git commit -m "chore: Lang docs aggressive consolidation: 579→150 files, 339→24 root
 
 - Delete 40 duplicates (kebab/snake case variants)
 - Delete 20 obsolete files (Italian corrections, analysis artifacts)
@@ -369,17 +380,17 @@ laravel/Modules/Lang/docs/
 ### After
 ```
 laravel/Modules/Lang/docs/
-├── 24 .md files (root) — essential only
+├── 24 .md files (root): essential only
 ├── ~150 total files
 ├── 4 translation-* canonical files
 ├── 1 conflict-resolution.md
 ├── 0 duplicates
 ├── 0 obsolete files
 ├── 1 index anchor (README.md)
-├── wiki/strategies/ — product/planning
-├── wiki/how-to/ — guides
-├── wiki/overviews/ — technical reference
-├── wiki/rules/ — patterns & rules
+├── wiki/strategies/: product/planning
+├── wiki/how-to/: guides
+├── wiki/overviews/: technical reference
+├── wiki/rules/: patterns & rules
 └── Clean: clear separation (root=essential, wiki=research)
 ```
 

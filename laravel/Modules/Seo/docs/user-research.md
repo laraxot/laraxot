@@ -1,12 +1,20 @@
 ---
+title: "user research"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "user research"
+issues: []
+discussions: []
 module: theme
 topic: user-research
-canonical: ../../../Themes/docs/shared-components/USER_RESEARCH.md
+canonical: ../../../Themes/docs/shared-components/USER_RESEARCH.md  # target mancante, verificato 2026-10-08
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/USER_RESEARCH.md
-<<<<<<< HEAD
-=======
+---
 # Seo Module - User Research
 
 **Module:** Seo  
@@ -92,5 +100,3 @@ Long-tail keywords drive qualified traffic.
 - Develop AI suggestions
 
 ---
-
->>>>>>> laraxot/dev

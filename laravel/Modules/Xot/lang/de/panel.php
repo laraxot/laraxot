@@ -104,6 +104,9 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
+<<<<<<< HEAD
     'fields' => [
     ],
+=======
+>>>>>>> laraxot/dev
 ];

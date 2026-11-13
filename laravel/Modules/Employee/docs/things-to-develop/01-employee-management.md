@@ -1,3 +1,9 @@
+---
+title: "Employee - 01-EMPLOYEE-MANAGEMENT"
+module: Employee
+bmad: true
+status: active
+---
 # 01 - Gestione Dipendenti (Employee Management)
 
 ## 🎯 Obiettivo

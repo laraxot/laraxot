@@ -49,7 +49,7 @@ class AttendanceOverviewWidget extends XotBaseSchemaWidget
                         ->options($this->getDepartmentOptions())
                         ->default($this->selectedDepartment)
                         ->live()
-                        ->afterStateUpdated(function ($state): void {
+                        ->afterStateUpdated(function (mixed $state): void {
                             if (is_string($state) || $state === null) {
                                 $this->selectedDepartment = $state;
                             }
@@ -134,8 +134,6 @@ class AttendanceOverviewWidget extends XotBaseSchemaWidget
     protected function getAbsences(): array
     {
         $startDate = Carbon::today();
-        $endDate = Carbon::today()->addDays(7);
-
         // Since we don't have 'absence' type in WorkHour schema,
         // we'll look for employees who haven't clocked in recently
         // This is a mock implementation for widget display

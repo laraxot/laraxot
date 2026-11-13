@@ -23,32 +23,32 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
 
 /**
- * @property int                                                       $id
- * @property string                                                    $uuid
- * @property \Spatie\SchemalessAttributes\SchemalessAttributes         $extra
- * @property string                                                    $avatar
- * @property Collection<int, DeviceUser>                               $deviceUsers
- * @property int|null                                                  $device_users_count
- * @property Collection<int, Device>                                   $devices
- * @property int|null                                                  $devices_count
- * @property string|null                                               $first_name
- * @property string|null                                               $full_name
- * @property string|null                                               $last_name
- * @property string|null                                               $lang
- * @property MediaCollection<int, Media>                               $media
- * @property int|null                                                  $media_count
- * @property Collection<int, DeviceUser>                               $mobileDeviceUsers
- * @property int|null                                                  $mobile_device_users_count
- * @property Collection<int, Device>                                   $mobileDevices
- * @property int|null                                                  $mobile_devices_count
+ * @property int $id
+ * @property string $uuid
+ * @property \Spatie\SchemalessAttributes\SchemalessAttributes $extra
+ * @property string $avatar
+ * @property Collection<int, DeviceUser> $deviceUsers
+ * @property int|null $device_users_count
+ * @property Collection<int, Device> $devices
+ * @property int|null $devices_count
+ * @property string|null $first_name
+ * @property string|null $full_name
+ * @property string|null $last_name
+ * @property string|null $lang
+ * @property MediaCollection<int, Media> $media
+ * @property int|null $media_count
+ * @property Collection<int, DeviceUser> $mobileDeviceUsers
+ * @property int|null $mobile_device_users_count
+ * @property Collection<int, Device> $mobileDevices
+ * @property int|null $mobile_devices_count
  * @property DatabaseNotificationCollection<int, DatabaseNotification> $notifications
- * @property int|null                                                  $notifications_count
- * @property Collection<int, Permission>                               $permissions
- * @property int|null                                                  $permissions_count
- * @property Collection<int, Role>                                     $roles
- * @property int|null                                                  $roles_count
- * @property UserContract|null                                         $user
- * @property string|null                                               $user_name
+ * @property int|null $notifications_count
+ * @property Collection<int, Permission> $permissions
+ * @property int|null $permissions_count
+ * @property Collection<int, Role> $roles
+ * @property int|null $roles_count
+ * @property UserContract|null $user
+ * @property string|null $user_name
  *
  * @method static Builder<static> newModelQuery()
  * @method static Builder<static> newQuery()
@@ -120,8 +120,7 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
     /**
      * Scope per lookup da API/Android/Postgres (usa uuid, non id).
      *
-     * @param Builder<static> $query
-     *
+     * @param  Builder<static>  $query
      * @return Builder<static>
      */
     public function scopeByUuid(Builder $query, string $uuid): Builder
@@ -141,7 +140,7 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
     public function getAvatarUrl(): string
     {
         $avatar = $this->getFirstMediaUrl('avatar');
-        if ('' !== $avatar) {
+        if ($avatar !== '') {
             return $avatar;
         }
 
@@ -150,9 +149,22 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
         // 'MyEmailAddress@example.com'
         $email = mb_strtolower($email);
         // 'myemailaddress@example.com'
+        if ($email === '') {
+            // Nulla da cifrare: l'hash della stringa vuota e' uguale per tutti e farebbe partire una richiesta
+            // a gravatar.com per niente. Stringa vuota = le viste mostrano l'iniziale (CMT-022).
+            return '';
+        }
+
+        // Gravatar e' una richiesta a un sito terzo che riceve l'IP del visitatore: un progetto puo' spegnerlo
+        // con `xra.gravatar = false` (le viste mostrano allora le iniziali).
+        if (config('xra.gravatar', true) === false) {
+            return '';
+        }
+
         $hash = hash('sha256', $email);
 
-        return 'https://gravatar.com/avatar/'.$hash.'?s=64';
+        // d=mp: silhouette neutra quando l'email non ha un Gravatar (mai il logo Gravatar).
+        return 'https://gravatar.com/avatar/'.$hash.'?s=80&d=mp';
 
         // https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80
         // in caso eseguire php artisan module:publish
@@ -173,19 +185,18 @@ abstract class BaseProfile extends BaseModel implements ProfileContract
         $locale = config('app.locale');
         $defaultLocale = 'it';
 
-        if (null === $locale || ! is_string($locale)) {
+        if ($locale === null || ! is_string($locale)) {
             $locale = $defaultLocale;
         }
 
         $userLang = $this->lang;
 
-        if (null === $userLang || ! is_string($userLang)) {
+        if ($userLang === null || ! is_string($userLang)) {
             return $locale;
         }
 
         return $userLang;
     }
-    // use SoftDeletes;
 
     /**
      * The "booted" method of the model.

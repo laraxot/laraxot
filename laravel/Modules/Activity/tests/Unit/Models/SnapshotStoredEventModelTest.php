@@ -10,7 +10,11 @@ use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
 
+<<<<<<< .merge_file_CjvpF9
 uses(\Modules\Activity\Tests\TestCase::class);
+=======
+uses(TestCase::class);
+>>>>>>> .merge_file_Bk5vH2
 
 test('snapshot getConnectionName resolves activity connection', function (): void {
     $snapshot = new Snapshot;

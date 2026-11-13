@@ -129,6 +129,55 @@ h3, h4, h5, h6 {
   color: #1a1a1a !important;
 }
 
+/* The public FixCity hero uses Tailwind text utilities on a dark background.
+   Restore their intended contrast after the legacy global color overrides.
+   The map (and its Leaflet popups, white cards) lives in the same section: exclude it, otherwise
+   popup text becomes white on white. */
+main section:has(#welcome-heading) h1:not(.leaflet-container *),
+main section:has(#welcome-heading) h2:not(.leaflet-container *),
+main section:has(#welcome-heading) p:not(.leaflet-container *) {
+  color: #fff !important;
+}
+
+main section:has(#welcome-heading) a:not(.leaflet-container *) {
+  color: #fff !important;
+}
+
+main section:has(#welcome-heading) a:first-of-type:not(.leaflet-container *) {
+  color: #172554 !important;
+}
+
+main section:has(#welcome-heading) a.btn:first-of-type:not(.leaflet-container *) {
+  background-color: #fff !important;
+  border-color: #fff !important;
+  color: #007a52 !important;
+}
+
+main section:has(#welcome-heading) a.btn-outline-light:not(.leaflet-container *) {
+  background-color: transparent !important;
+  border: 1px solid #fff !important;
+}
+
+main section:has(#welcome-heading) {
+  padding-inline: 1.5rem !important;
+}
+
+/* The services page has a green hero; override the legacy global heading color. */
+main section:has(#services-title) #services-title,
+main section:has(#services-title) p {
+  color: #fff !important;
+}
+
+main section:has(#welcome-heading) a:not(.leaflet-container *) {
+  text-decoration: none !important;
+}
+
+@media (min-width: 640px) {
+  main section:has(#welcome-heading) {
+    padding-inline: 2.5rem !important;
+  }
+}
+
 p, span, body {
   color: #1a1a1a !important;
 }
@@ -137,8 +186,23 @@ p, span, body {
    5. FOOTER HEIGHT ADJUSTMENT (-19px issue)
    ============================================================================ */
 
+/* Altezza naturale: il vecchio `min-height: 775px` (copiato dalla pagina di riferimento) lasciava sotto i link
+   una fascia vuota di ~300px e spingeva il copyright fuori dal piede scuro. */
 .it-footer-main {
-  min-height: 775px !important;
+  min-height: 0 !important;
+}
+
+/* Riga del copyright: stessa fascia scura del piede (prima era su sfondo bianco, staccata dal footer). */
+footer#footer .it-footer-small-prints {
+  background-color: #202a2e !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 0;
+}
+
+footer#footer .it-footer-small-prints,
+footer#footer .it-footer-small-prints .list-inline-item {
+  color: #ffffff !important;
+  font-size: 0.875rem;
 }
 
 .footer-column {

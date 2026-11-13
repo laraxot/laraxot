@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Lang Module: Philosophy, Purpose, and Design Principles"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "guida migrazione step by step"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Lang Module: Philosophy, Purpose, and Design Principles
 

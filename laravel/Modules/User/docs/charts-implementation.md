@@ -8,17 +8,21 @@ qmd: "charts-implementation user module - charts implementation"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # User Module - Charts Implementation
 
 ## 📋 Panoramica
@@ -571,7 +575,7 @@ class UsersChartWidgetTest extends TestCase
 ### Documentazione Correlata
 - [Filament Charts Complete Guide](../../xot/docs/filament-charts-complete-guide.md)
 - [Chart Export Guide](../../xot/docs/chart-export-guide.md)
-- [User Module README](./readme.md)
+- [User Module README](./README.md)
 
 ### Chart.js
 - [Chart.js Documentation](https://www.chartjs.org/docs/latest/)
@@ -582,7 +586,6 @@ class UsersChartWidgetTest extends TestCase
 
 ---
 
->>>>>>> 87273113 (.)
 **Modulo:** User
 **Framework:** Laraxot/PTVX
 **Filament:** 4.x

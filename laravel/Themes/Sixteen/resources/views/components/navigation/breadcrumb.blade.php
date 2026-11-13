@@ -8,7 +8,7 @@
 ])
 
 @if(!empty($items) || $showHome)
-<nav aria-label="Breadcrumb" class="py-3">
+<nav aria-label="{{ __('pub_theme::common.aria.breadcrumb.label') }}" class="py-3">
     <div class="container-italia">
         <ol class="breadcrumb-italia">
             @if($showHome)

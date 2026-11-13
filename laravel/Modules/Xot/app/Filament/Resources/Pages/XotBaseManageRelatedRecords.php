@@ -6,6 +6,10 @@ namespace Modules\Xot\Filament\Resources\Pages;
 
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
+<<<<<<< HEAD
+=======
+use Filament\Actions\BulkAction;
+>>>>>>> laraxot/dev
 use Filament\Resources\Pages\ManageRelatedRecords as FilamentManageRelatedRecords;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Schema;
@@ -19,7 +23,10 @@ use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Actions\Filament\GetRelatedResourceClassAction;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use Modules\Xot\Filament\Traits\NavigationLabelTrait;
+<<<<<<< HEAD
 use Modules\Xot\Filament\Traits\TransTrait;
+=======
+>>>>>>> laraxot/dev
 use Webmozart\Assert\Assert;
 
 /**
@@ -131,7 +138,10 @@ use Webmozart\Assert\Assert;
 abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
 {
     use NavigationLabelTrait;
+<<<<<<< HEAD
     use TransTrait;
+=======
+>>>>>>> laraxot/dev
 
     /**
      * Stato conservato sulla pagina per gli schemi Xot con statePath('data').
@@ -257,6 +267,7 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
             ->modifyQueryUsing(fn (Builder $query): Builder => $this->modifyRelatedQuery($query));
 
         return $this->relatedResourceTable
+<<<<<<< HEAD
             // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
             ->columns($this->getTableColumns())
             // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
@@ -266,6 +277,12 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
             // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
             ->toolbarActions($this->getTableBulkActions())
             // @phpstan-ignore method.deprecated (hook di progetto omonimo a un nome deprecato Filament, vedi docblock di classe)
+=======
+            ->columns($this->getTableColumns())
+            ->headerActions($this->getTableHeaderActions())
+            ->recordActions($this->getTableActions())
+            ->toolbarActions($this->getTableBulkActions())
+>>>>>>> laraxot/dev
             ->filters($this->getTableFilters());
     }
 
@@ -290,6 +307,11 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * correlata (vedi table() sopra). Un override sostituisce (nessun merge
      * implicito); per estendere: `[...proprie, ...parent::getTableColumns()]`.
      *
+<<<<<<< HEAD
+=======
+     * @not-deprecated Hook di progetto omonimo a un nome deprecato di Filament: API attiva di questa classe.
+     *
+>>>>>>> laraxot/dev
      * @return array<string, Column>
      */
     public function getTableColumns(): array
@@ -304,7 +326,13 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * `survey_pdf_id` in `ManageContacts`) — il default della Resource
      * correlata non le conosce comunque.
      *
+<<<<<<< HEAD
      * @return array<string, Action|ActionGroup>
+=======
+     * @not-deprecated Hook di progetto omonimo a un nome deprecato di Filament: API attiva di questa classe.
+     *
+     * @return array<int|string, Action|BulkAction|ActionGroup>
+>>>>>>> laraxot/dev
      */
     public function getTableHeaderActions(): array
     {
@@ -314,6 +342,11 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
     /**
      * Override point per le azioni riga (record actions). Stessa semantica.
      *
+<<<<<<< HEAD
+=======
+     * @not-deprecated Hook di progetto omonimo a un nome deprecato di Filament: API attiva di questa classe.
+     *
+>>>>>>> laraxot/dev
      * @return array<int|string, Action|ActionGroup>
      */
     public function getTableActions(): array
@@ -327,6 +360,11 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
      * azione bulk — invece delle azioni reali della Resource correlata
      * (es. make-token/send-invite/send-spatie-email di `ContactsTable`).
      *
+<<<<<<< HEAD
+=======
+     * @not-deprecated Hook di progetto omonimo a un nome deprecato di Filament: API attiva di questa classe.
+     *
+>>>>>>> laraxot/dev
      * @return array<int|string, Action|ActionGroup>
      */
     public function getTableBulkActions(): array
@@ -337,6 +375,11 @@ abstract class XotBaseManageRelatedRecords extends FilamentManageRelatedRecords
     /**
      * Override point per i filtri. Stessa semantica.
      *
+<<<<<<< HEAD
+=======
+     * @not-deprecated Hook di progetto omonimo a un nome deprecato di Filament: API attiva di questa classe.
+     *
+>>>>>>> laraxot/dev
      * @return array<string, BaseFilter>
      */
     public function getTableFilters(): array

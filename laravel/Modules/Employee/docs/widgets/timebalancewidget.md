@@ -1,3 +1,9 @@
+---
+title: "Employee - TIMEBALANCEWIDGET"
+module: Employee
+bmad: true
+status: active
+---
 # TimeBalanceWidget (LE MIE RIMANENZE DI SETTEMBRE)
 
 ## Overview

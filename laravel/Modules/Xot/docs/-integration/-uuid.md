@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "_uuid"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "_uuid xot"
+---
+>>>>>>> laraxot/dev
 # _uuid
 
 <!-- Contenuto migrato da _docs/_uuid.txt -->

@@ -1,3 +1,9 @@
+---
+title: "Employee - CODE-ERRORS-ANALYSIS"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - Code Errors Analysis & Implementation Plan
 
 ## Summary of Issues Found

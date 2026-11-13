@@ -1,5 +1,6 @@
-<<<<<<< HEAD
 ---
+issues: []
+discussions: []
 title: "Media Module - Comprehensive Analysis"
 module: "Media"
 type: concept
@@ -9,6 +10,7 @@ updated: 2026-07-14
 qmd: "module analysis"
 related:
   - "./webm.md"
+status: draft
 ---
 # Media Module - Comprehensive Analysis
 
@@ -105,7 +107,6 @@ The Media module provides comprehensive media file management:
 - Advanced search
 - Metadata management
 - Performance optimization
-=======
+---
 - Performance optimization
 - Performance optimization
->>>>>>> laraxot/dev

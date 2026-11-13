@@ -1,3 +1,15 @@
+---
+title: "css wizard notes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "css wizard notes"
+issues: []
+discussions: []
+status: draft
+---
+
 # CSS Wizard and Header Best Practices
 
 ## Global CSS Principles

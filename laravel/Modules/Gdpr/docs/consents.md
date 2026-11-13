@@ -5,6 +5,3 @@ https://github.com/papertank/origami-consent
 https://github.com/foothing/laravel-gdpr-consent
 
 https://github.com/maize-tech/laravel-legal-consent
-
-
-

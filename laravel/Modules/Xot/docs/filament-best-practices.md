@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Best Practices per Risorse Filament in Laraxot"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "best practices per risorse filament in laraxot xot"
+---
+>>>>>>> laraxot/dev
 # Best Practices per Risorse Filament in Laraxot
 
 Questo documento riassume le migliori pratiche per la creazione e gestione delle risorse Filament all'interno dell'ecosistema Laraxot. Seguire queste linee guida garantirà compatibilità e coerenza in tutto il progetto.

@@ -1,3 +1,15 @@
+---
+title: "theme owned scripts rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "theme owned scripts rule"
+issues: []
+discussions: []
+status: draft
+---
+
 # Theme-Owned Scripts Rule
 
 ## ⚖️ Decision: Localized Inspection Scripts

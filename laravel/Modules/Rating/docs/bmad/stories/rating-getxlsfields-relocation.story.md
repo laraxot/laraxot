@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "rating getxlsfields relocation.story"
+issues: []
+discussions: []
 title: "rating-getxlsfields-relocation"
 type: story
 module: Rating
@@ -8,7 +13,7 @@ updated: 2026-09-23
 superseded_by: ./5.238-rating-export-early-stories-supersede.story.md
 ---
 
-> **SUPERSEDED** — implementato come `RatingData::getXlsFields` (5.229 / move). Vedi `5.238`.
+> **SUPERSEDED**: implementato come `RatingData::getXlsFields` (5.229 / move). Vedi `5.238`.
 
 # Story: rating-getxlsfields-relocation (storico)
 **Status**: superseded
@@ -18,10 +23,10 @@ superseded_by: ./5.238-rating-export-early-stories-supersede.story.md
 ## Analisi architetturale (BMAD)
 
 ### Dove era
-`IndennitaResponsabilitaResource::getXlsFields(array $data)` — static method sul Resource Filament.
+`IndennitaResponsabilitaResource::getXlsFields(array $data)`: static method sul Resource Filament.
 
 ### Dove va
-`Modules\Rating\Datas\RatingData::getXlsFields(array $where)` — static method sul Data class del modulo Rating.
+`Modules\Rating\Datas\RatingData::getXlsFields(array $where)`: static method sul Data class del modulo Rating.
 
 ### Perché non HasRatingsTrait (motivazione tecnica)
 - `HasRatingsTrait` è un **trait sui modelli host** (`IndennitaResponsabilita`, `SchedaDip`, …): tutti i suoi metodi usano `$this` (`$this->ratings()`, `$this->ratingMorphs()`).
@@ -37,7 +42,7 @@ superseded_by: ./5.238-rating-export-early-stories-supersede.story.md
 
 ### Punti deboli / dubbi (45% incertezza)
 1. `RatingData` porta **due concetti** già (UI block + colonne tabella); aggiungerne un terzo (export fields) rischia di diventare un "god object"
-2. Spatie Data class sono DTO immutabili — query builder statico è fuori dal suo scope originale
+2. Spatie Data class sono DTO immutabili: query builder statico è fuori dal suo scope originale
 3. `classToAlias()` del host non è disponibile in `RatingData`: va passato come `$where['type']` (soluzione già accettata dall'utente)
 4. PHPStan dovrà verificare i generics del trait `Data` di Spatie
 

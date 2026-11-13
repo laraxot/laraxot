@@ -1,7 +1,14 @@
 ---
+type: note
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "playwright visual testing"
+issues: []
+discussions: []
 title: Playwright — Visual Testing Tema Sixteen
 description: Verifica visuale e regressione per il tema Sixteen (Bootstrap Italia) nel 2026
 tags: [playwright, visual-testing, sixteen, bootstrap-italia, laravel, frontend]
+status: draft
 ---
 
 # Playwright — Visual Testing Tema Sixteen
@@ -10,7 +17,7 @@ Il testing visivo per il tema Sixteen assicura la parità con il design "Comuni"
 
 ## 1. Tooling & Workflow
 
-Seguire gli standard in [Visual Control Mastery](../../../../docs/wiki/concepts/visual-control-mastery.md).
+Seguire gli standard in [Visual Control Mastery](../../../../../docs/wiki/concepts/visual-control-mastery.md).
 
 ### Laravel Headless Browser Tester
 Comando rapido per screenshot veloci del tema:
@@ -64,5 +71,5 @@ Conservare gli screenshot di riferimento in:
 
 ---
 *Vedi anche:*
-- [Visual Control Mastery](../../../../docs/wiki/concepts/visual-control-mastery.md)
+- [Visual Control Mastery](../../../../../docs/wiki/concepts/visual-control-mastery.md)
 - [Header Authenticated State](./concepts/header-authenticated-state.md)

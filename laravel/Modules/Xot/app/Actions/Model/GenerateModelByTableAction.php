@@ -16,6 +16,10 @@ class GenerateModelByTableAction
 
     public function execute(): void
     {
+<<<<<<< HEAD
         dddx('WIP');
+=======
+        throw new \LogicException('GenerateModelByTableAction::execute() not implemented');
+>>>>>>> laraxot/dev
     }
 }

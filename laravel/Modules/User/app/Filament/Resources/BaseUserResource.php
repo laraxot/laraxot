@@ -1,11 +1,10 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://github.com/ryangjchandler/filament-user-resource/blob/main/src/resources/UserResource.php
  * @see https://github.com/3x1io/filament-user/blob/main/src/resources/UserResource.php
  */
-
-declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources;
 

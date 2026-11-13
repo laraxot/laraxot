@@ -9,8 +9,12 @@ use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
 use Modules\Notify\Enums\ContactTypeEnum;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+use function Safe\class_implements;
+
+uses(TestCase::class);
 it('has correct cases', function (): void {
     Assert::assertCount(6, ContactTypeEnum::cases());
     Assert::assertSame('phone', ContactTypeEnum::PHONE->value);
@@ -22,9 +26,11 @@ it('has correct cases', function (): void {
 });
 
 it('implements filament contracts', function (): void {
-    Assert::assertInstanceOf(HasLabel::class, ContactTypeEnum::PHONE);
-    Assert::assertInstanceOf(HasIcon::class, ContactTypeEnum::PHONE);
-    Assert::assertInstanceOf(HasColor::class, ContactTypeEnum::PHONE);
+    $interfaces = class_implements(ContactTypeEnum::class) ?: [];
+
+    Assert::assertArrayHasKey(HasLabel::class, $interfaces);
+    Assert::assertArrayHasKey(HasIcon::class, $interfaces);
+    Assert::assertArrayHasKey(HasColor::class, $interfaces);
 });
 
 it('has trans trait', function (): void {
@@ -35,8 +41,10 @@ it('has trans trait', function (): void {
 });
 
 it('has required methods', function (): void {
+    $reflection = new \ReflectionClass(ContactTypeEnum::class);
+
     foreach (['getLabel', 'getIcon', 'getColor', 'getSearchable', 'getFormSchema'] as $method) {
-        Assert::assertTrue(method_exists(ContactTypeEnum::PHONE, $method));
+        Assert::assertTrue($reflection->hasMethod($method));
     }
 });
 
@@ -53,7 +61,7 @@ it('getFormSchema returns TextInput components', function (): void {
     $schema = ContactTypeEnum::PHONE->getFormSchema();
     Assert::assertCount(6, $schema);
     foreach ($schema as $component) {
-        Assert::assertInstanceOf(TextInput::class, $component);
+        Assert::assertSame(TextInput::class, $component::class);
     }
 });
 

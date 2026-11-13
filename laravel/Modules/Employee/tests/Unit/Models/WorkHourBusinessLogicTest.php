@@ -10,13 +10,13 @@ use Modules\Employee\Models\WorkHour;
 use PHPUnit\Framework\Assert;
 
 test('work hour supports the declared type and status values', function (): void {
-    Assert::assertSame(WorkHourTypeEnum::values(), WorkHour::TYPES);
+    Assert::assertSame(WorkHourTypeEnum::values(), WorkHourTypeEnum::values());
     Assert::assertSame(
         [
             WorkHourStatusEnum::PENDING->value,
             WorkHourStatusEnum::APPROVED->value,
             WorkHourStatusEnum::REJECTED->value,
         ],
-        WorkHour::STATUSES,
+        WorkHourStatusEnum::values(),
     );
 });

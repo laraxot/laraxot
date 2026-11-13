@@ -1,10 +1,15 @@
 ---
+qmd: "docs monitoring system"
+issues: []
+discussions: []
 title: "DOCS MONITORING SYSTEM - Sistema di Monitoraggio Documentazione"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: docs-monitoring-system.md
 ---
 
 # 📚 DOCS MONITORING SYSTEM - Sistema di Monitoraggio Documentazione

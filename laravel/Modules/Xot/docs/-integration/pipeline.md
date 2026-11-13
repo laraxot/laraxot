@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "pipeline"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "pipeline xot"
+---
+>>>>>>> laraxot/dev
 # pipeline
 
 <!-- Contenuto migrato da _docs/pipeline.txt -->

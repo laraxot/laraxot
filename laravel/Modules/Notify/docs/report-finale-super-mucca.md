@@ -8,14 +8,23 @@ qmd: "report-finale-super-mucca 🐄✨ report finale - super mucca livello infi
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
+  - "./action-plan-immediate.md"
+status: draft
 ---
 
 # 🐄✨ REPORT FINALE - SUPER MUCCA LIVELLO INFINITO ✨🐄
@@ -142,7 +151,7 @@ Ogni file contiene:
 #### B. Master Documents Creati (10+ files) ✅
 
 1. `docs/dry-kiss-analysis-master.md` - Riepilogo globale
-2. `docs/analisi-metodi-duplicati-master-1.md` - Analisi duplicazioni
+2. `docs/analisi-metodi-duplicati-master.md` - Analisi duplicazioni
 3. `docs/analisi-metodi-duplicati-index.md` - Indice navigabile
 4. `docs/implementazione-refactoring-basemodel.md` - Report BaseModel
 5. `docs/refactoring-completato.md` - Riepilogo refactoring
@@ -150,7 +159,7 @@ Ogni file contiene:
 7. `docs/README_REFACTORING.md` - Quick start
 8. `docs/missione-super-mucca-completata.md` - Missione report
 9. `docs/report-finale-super-mucca.md` - Questo file
-10. Aggiornati 18× `metodi-duplicati-analisi-1.md`
+10. Aggiornati 18× `metodi-duplicati-analisi.md`
 
 ---
 
@@ -260,7 +269,7 @@ Ogni file contiene:
 ✅ 20× dry-kiss-analysis.md (ogni modulo/tema)
 ✅ 1× dry-kiss-analysis-master.md
 ✅ 10× Master docs (analisi, implementazione, reports)
-✅ 18× metodi-duplicati-analisi-1.md (aggiornati)
+✅ 18× metodi-duplicati-analisi.md (aggiornati)
 ```
 
 ### Backup (10 files)

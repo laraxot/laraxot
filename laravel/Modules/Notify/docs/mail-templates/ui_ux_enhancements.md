@@ -1,3 +1,15 @@
+---
+title: "ui ux enhancements"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ui ux enhancements"
+issues: []
+discussions: []
+status: draft
+---
+
 # UI/UX Enhancements per i Campi `name` e `slug` in MailTemplateResource
 
 ## Introduzione
@@ -236,3 +248,5 @@ L'implementazione di questi miglioramenti rispetta le convenzioni del progetto <
 - [Documentazione Filament Forms](https://filamentphp.com/docs/forms/fields/text-input)
 - [Implementazione Modello con Slug](./MODEL_SLUG_IMPLEMENTATION.md)
 - [Implementazione Risorsa con Slug](./RESOURCE_SLUG_IMPLEMENTATION.md)
+- [Implementazione Modello con Slug](./model_slug_implementation.md)
+- [Implementazione Risorsa con Slug](./resource_slug_implementation.md)

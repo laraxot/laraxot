@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Lang - Sprint Planning Meeting"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "migration filament"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Lang - Sprint Planning Meeting
 

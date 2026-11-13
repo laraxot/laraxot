@@ -10,6 +10,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Notify\Models\Contact;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 class ContactsTable extends XotBaseResourceTable
@@ -34,7 +35,7 @@ class ContactsTable extends XotBaseResourceTable
     public function getTableColumns(): array
     {
         return [
-            'id' => TextColumn::make('id')->sortable(),
+            'id' => IDColumn::make('id'),
             'contact_type' => TextColumn::make('contact_type')->searchable()->sortable(),
             'value' => TextColumn::make('value')->searchable()->sortable()->copyable()->wrap(),
             'first_name' => TextColumn::make('first_name')->searchable()->sortable(),
@@ -51,7 +52,7 @@ class ContactsTable extends XotBaseResourceTable
     public static function contactTableColumns(): array
     {
         return [
-            'id' => TextColumn::make('id')->numeric()->sortable(),
+            'id' => IDColumn::make('id'),
             'name' => TextColumn::make('name')->searchable()->sortable(),
             'email' => TextColumn::make('email')->searchable()->sortable(),
             'phone' => TextColumn::make('phone')->searchable()->sortable(),

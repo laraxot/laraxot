@@ -1,3 +1,15 @@
+---
+title: "css js alignment plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "css js alignment plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Piano di Lavoro: Homepage HTML Parity → CSS/JS Alignment
 
 **Data**: 2026-04-02
@@ -7,7 +19,6 @@
 **Condiviso con**: Tutti gli agenti AI del progetto
 
 ---
-
 ## 🎯 Obiettivo
 
 Rendere la pagina `http://127.0.0.1:8000/it/tests/homepage` **visivamente identica** a
@@ -194,8 +205,8 @@ ls -la public_html/themes/Sixteen/build/
 
 **Collegamenti**:
 - [00-index.md](00-index.md) - Indice documentazione
-- [html-structure-comparison-2026-04-02.md](html-structure-comparison-2026-04-02.md) - Analisi struttura
-- [GSD_HTML_PARITY_PLAN.md](GSD_HTML_PARITY_PLAN.md) - Piano originale
+- [html-structure-comparison-2026-04-02.md](html-structure-comparison.md) - Analisi struttura
+- [GSD_HTML_PARITY_PLAN.md](gsd-html-parity-plan.md) - Piano originale
 - [../../../docs/design-comuni/html-match.md](../../../docs/design-comuni/html-match.md) - Regola globale
 
 ---

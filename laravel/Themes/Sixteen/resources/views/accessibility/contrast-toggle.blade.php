@@ -14,11 +14,11 @@ Persisted via localStorage key: `agid_high_contrast`.
     x-on:click="on = !on; document.documentElement.classList.toggle('high-contrast', on); localStorage.setItem('agid_high_contrast', on ? '1' : '0');"
     aria-pressed="false"
 >
-    <span class="sr-only">Attiva/disattiva contrasto elevato</span>
+    <span class="sr-only">{{ __('pub_theme::accessibility.high_contrast_toggle') }}</span>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
         <path d="M12 2a10 10 0 100 20 10 10 0 010-20Zm1 2.07v15.86A8.001 8.001 0 0012 4c.34 0 .67.02 1 .07Z" />
     </svg>
-    <span class="text-sm">Contrasto</span>
+    <span class="text-sm">{{ __('pub_theme::accessibility.contrast') }}</span>
 </button>
 
 {{-- Minimal high-contrast style (can be extended in CSS global) --}}

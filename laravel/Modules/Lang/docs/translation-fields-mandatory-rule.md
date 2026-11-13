@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Regola Critica: Sezione 'fields' Obbligatoria nelle Traduzioni"
 module: "Lang"
 type: rule
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "migrazione filament 4"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Regola Critica: Sezione "fields" Obbligatoria nelle Traduzioni
 

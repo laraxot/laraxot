@@ -1,10 +1,11 @@
 @props([
     'cta' => [],
+    'headingId' => null,
 ])
 
 @if ($cta !== [])
     <div class="cmp-text-button mt-0">
-        <h2 class="title-xxlarge mb-0">{{ $cta['title'] ?? '' }}</h2>
+        <h2 @if ($headingId !== null) id="{{ $headingId }}" @endif class="title-xxlarge mb-0">{{ $cta['title'] ?? '' }}</h2>
         @if (! empty($cta['text']))
             <div class="text-wrapper">
                 <p class="subtitle-small mb-3 mt-3">{{ $cta['text'] }}</p>

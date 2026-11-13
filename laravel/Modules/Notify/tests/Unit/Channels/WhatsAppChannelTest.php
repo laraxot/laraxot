@@ -8,6 +8,7 @@ use Modules\Notify\Channels\WhatsAppChannel;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('WhatsAppChannel', function () {
     it('can be instantiated', function () {
         // WhatsAppChannel requires WhatsAppActionFactory in constructor

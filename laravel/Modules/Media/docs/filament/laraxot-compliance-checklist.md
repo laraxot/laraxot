@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Checklist Conformità Laraxot - Modulo Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "laraxot compliance checklist"
 related:
   - "./webm.md"
+status: draft
 ---
 # Checklist Conformità Laraxot - Modulo Media
 
@@ -207,7 +210,7 @@ class ExamplePage extends XotBasePage
 ## 🔗 **Collegamenti Documentazione**
 
 - [S3Test Refactoring Analysis](s3test-refactoring-analysis.md)
-- [Media Module README](../readme.md)
+- [Media Module README](../README.md)
 - [Laraxot Best Practices](../../../../../docs/laraxot-best-practices.md)
 - [PHPStan Guidelines](../../../../../docs/phpstan-guidelines.md)
 

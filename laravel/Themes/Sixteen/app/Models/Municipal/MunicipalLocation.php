@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Themes\Sixteen\Enums\MunicipalLocationCategoryEnum;
+use Themes\Sixteen\Enums\MunicipalLocationTypeEnum;
 
 /**
  * Modello per le sedi comunali (Municipal Location)
@@ -94,65 +96,6 @@ class MunicipalLocation extends Model
 {
     /** @use HasFactory<Factory<self>> */
     use HasFactory, SoftDeletes;
-
-    /**
-     * Tipologie di location secondo AGID
-     */
-    public const LOCATION_TYPES = [
-        'headquarters' => 'Sede Principale',
-        'office' => 'Ufficio',
-        'service_center' => 'Centro Servizi',
-        'library' => 'Biblioteca',
-        'school' => 'Scuola',
-        'sports_facility' => 'Impianto Sportivo',
-        'cultural_center' => 'Centro Culturale',
-        'healthcare' => 'Struttura Sanitaria',
-        'social_center' => 'Centro Sociale',
-        'cemetery' => 'Cimitero',
-        'market' => 'Mercato',
-        'parking' => 'Parcheggio',
-        'park' => 'Parco',
-        'square' => 'Piazza',
-        'monument' => 'Monumento',
-        'tourist_office' => 'Ufficio Turistico',
-        'waste_center' => 'Centro Raccolta Rifiuti',
-        'emergency' => 'Struttura di Emergenza',
-        'other' => 'Altro',
-    ];
-
-    /**
-     * Categorie principali
-     */
-    public const CATEGORIES = [
-        'administrative' => 'Amministrativo',
-        'cultural' => 'Culturale',
-        'educational' => 'Educativo',
-        'sports' => 'Sportivo',
-        'social' => 'Sociale',
-        'healthcare' => 'Sanitario',
-        'tourist' => 'Turistico',
-        'commercial' => 'Commerciale',
-        'environmental' => 'Ambientale',
-        'emergency' => 'Emergenza',
-    ];
-
-    /**
-     * Servizi disponibili
-     */
-    public const AVAILABLE_SERVICES = [
-        'citizen_services' => 'Servizi al Cittadino',
-        'document_collection' => 'Ritiro Documenti',
-        'payments' => 'Pagamenti',
-        'appointments' => 'Appuntamenti',
-        'information' => 'Informazioni',
-        'complaints' => 'Reclami/Segnalazioni',
-        'wifi' => 'WiFi Gratuito',
-        'photocopies' => 'Fotocopie',
-        'parking' => 'Parcheggio',
-        'accessibility' => 'Accessibilità',
-        'translation' => 'Servizi di Traduzione',
-        'assistance' => 'Assistenza',
-    ];
 
     protected $table = 'sixteen_municipal_locations';
 
@@ -695,7 +638,7 @@ class MunicipalLocation extends Model
     protected function locationTypeName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::LOCATION_TYPES[$this->location_type] ?? $this->location_type
+            get: fn () => MunicipalLocationTypeEnum::tryFrom($this->location_type)?->getLabel() ?? $this->location_type
         );
     }
 
@@ -707,7 +650,7 @@ class MunicipalLocation extends Model
     protected function categoryName(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->category === null ? null : (self::CATEGORIES[$this->category] ?? $this->category)
+            get: fn () => $this->category === null ? null : (MunicipalLocationCategoryEnum::tryFrom($this->category)?->getLabel() ?? $this->category)
         );
     }
 

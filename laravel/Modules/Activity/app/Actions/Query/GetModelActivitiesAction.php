@@ -26,8 +26,12 @@ class GetModelActivitiesAction
             ->where('subject_type', $model::class)
             ->where('subject_id', $model->getKey())
             ->latest()
+<<<<<<< .merge_file_UXLzfs
             ->limit($limit)
             ;
+=======
+            ->limit($limit);
+>>>>>>> .merge_file_2kH9Q0
 
         return Activity::typedGet($query);
     }

@@ -1,3 +1,9 @@
+---
+title: "Employee - COSE_DA_FARE_WIDGET"
+module: Employee
+bmad: true
+status: active
+---
 # COSE DA FARE Widget - Documentazione
 
 ## 📋 Panoramica

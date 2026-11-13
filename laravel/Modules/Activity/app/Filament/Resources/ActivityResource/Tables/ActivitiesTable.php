@@ -6,7 +6,6 @@ namespace Modules\Activity\Filament\Resources\ActivityResource\Tables;
 
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
-<<<<<<< HEAD
 <<<<<<< .merge_file_CNaw6Q
 use Modules\Activity\Models\Activity;
 =======
@@ -25,21 +24,12 @@ class ActivitiesTable extends XotBaseResourceTable
 
     /**
      * @return array<string, Column>
-=======
-use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
-
-class ActivitiesTable extends XotBaseResourceTable
-{
-    /**
-     * @return array<int|string, Column>
->>>>>>> 13cf1831 (.)
      */
     public function getTableColumns(): array
     {
         return [
 <<<<<<< .merge_file_CNaw6Q
             'id' => TextColumn::make('id')->searchable()->sortable(),
-<<<<<<< HEAD
             'log_name' => TextColumn::make('log_name')->searchable()->sortable(),
             'description' => TextColumn::make('description')->searchable()->wrap()->limit(100),
             'event' => TextColumn::make('event')->searchable()->sortable(),
@@ -57,8 +47,6 @@ class ActivitiesTable extends XotBaseResourceTable
             'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable(),
 =======
             'id' => IDColumn::make('id')->searchable()->sortable(),
-=======
->>>>>>> 13cf1831 (.)
             'log_name' => TextColumn::make('log_name')->searchable(),
             'description' => TextColumn::make('description')->searchable(),
             'event' => TextColumn::make('event')->searchable(),
@@ -70,10 +58,7 @@ class ActivitiesTable extends XotBaseResourceTable
             'batch_uuid' => TextColumn::make('batch_uuid')->limit(30),
             'created_at' => TextColumn::make('created_at')->dateTime(),
             'updated_at' => TextColumn::make('updated_at')->dateTime(),
-<<<<<<< HEAD
 >>>>>>> .merge_file_Y3yRGI
-=======
->>>>>>> 13cf1831 (.)
         ];
     }
 }

@@ -3,7 +3,7 @@ title: "Header FO — contratto URL Folio + chiavi traduzione 5 livelli"
 type: concept
 tags: [folio, header, i18n, translation, frontoffice, six]
 created: 2026-06-05
-updated: 2026-06-05
+updated: 2026-10-22
 qmd: "header frontoffice route services.categories translation five levels pub_theme header.user.dropdown no profilo getLocale"
 issues:
   - "https://github.com/laraxot/base_fixcity_fila5/issues/289"
@@ -14,7 +14,10 @@ related:
   - fo-folio-links-multilingua.md
   - ../../../../../../docs/wiki/memories/no-hardcoded-locale-italian-in-fo-blade.md
   - ../../../../../../docs/wiki/agents/rules/translations.md
+status: draft
 ---
+
+> **Correzione 2026-10-30.** Gli esempi `route('notifications')` e `pages/notifications/` di questo documento sono superati: le pagine CMS (area personale, ticket, FAQ) si linkano con `route('container0.view', ['container0' => 'area-personale', 'slug0' => 'notifiche'])` e `route('container0.index', ['container0' => '...'])` (nome generico, valori nei parametri). Vedi `docs/wiki/memories/translation-protocol-memory-aid.md` §2 e `docs/wiki/rules/folio-named-routes-route-helper.md` nel repo root.
 
 # Header FO — contratto URL + traduzioni
 
@@ -22,9 +25,9 @@ related:
 
 | # | Pilastro | Vietato | Corretto |
 |---|----------|---------|----------|
-| 1 | **URL** | `href="/{{ app()->getLocale() }}/profilo/notifiche"` | `route('notifications')` |
-| 2 | **Path** | segmenti italiani inventati (`profilo`, wrapper `personalArea*`) | named route Folio verificata (`folio:list`) |
-| 3 | **Copy** | `__('ui::ui.profile.notifications')` | `__('pub_theme::header.user.dropdown.notifications.label')` |
+| 1 | **URL** | `href="/{{ app()->getLocale() }}/…"` / `localizeUrl` | `route('container0.view|index', …)` (o `login` / POST `logout`) |
+| 2 | **Path** | segmenti inventati (`profilo`, `tickets.show`) | Folio shell `[container0]/[slug0]` |
+| 3 | **Copy** | stringhe hardcoded / `__('ui::…')` sbagliate | `__('pub_theme::header…label')` / `navigation.*` |
 
 ## Perché `app()->getLocale()` nell'href è sbagliato
 
@@ -34,14 +37,13 @@ related:
 
 ## Mapping voci menu (2026-06-05)
 
-| Voce | `route()` | Chiave 5 livelli |
-|------|-----------|------------------|
-| I miei servizi | `services.categories` | `pub_theme::header.user.dropdown.my_services.label` |
-| Le mie pratiche | `dashboard` | `pub_theme::header.user.dropdown.my_practices.label` |
-| Notifiche | `notifications` | `pub_theme::header.user.dropdown.notifications.label` |
-| Impostazioni | `profile.edit` | `pub_theme::header.user.dropdown.settings.label` |
-| Esci | `logout` | `pub_theme::header.user.dropdown.logout.label` |
+| Voce | `route()` | Chiave |
+|------|-----------|--------|
+| Notifiche | `container0.view` area-personale/notifiche | `pub_theme::header.user.dropdown.notifications.label` |
+| Impostazioni | `container0.view` area-personale/impostazioni | `pub_theme::header.user.dropdown.settings.label` |
+| Esci (conferma GET) | Folio `auth.logout` → POST `logout` | `pub_theme::auth.logout.*` |
 | Accedi (guest) | `login` | `pub_theme::header.guest.cta.label` |
+| Breadcrumb Home / Novità / Eventi | `home` / `container0.index` blog\|events | `pub_theme::navigation.home` / `homepage.news` / `homepage.events` |
 
 ## Anti-pattern completo
 

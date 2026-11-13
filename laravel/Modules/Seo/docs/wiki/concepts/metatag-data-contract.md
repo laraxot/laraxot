@@ -16,6 +16,7 @@ related:
   - ../../../../../../docs/wiki/rules/models-contracts-placement.md
   - ../../../../../../docs/wiki/memories/contract-suffix-no-interfaces-folder.md
   - ../../../../../../docs/wiki/bmad/architecture-models-contracts-placement.md
+status: active
 ---
 
 # MetatagDataContract
@@ -80,5 +81,5 @@ public function get(): MetatagDataContract
 
 ## Collegamenti
 
-- [provider-contracts-naming](../../../Notify/docs/provider-contracts-naming.md) — suffisso `Contract` (modulo Notify)
+- [provider-contracts-naming](../../../../Notify/docs/provider-contracts-naming.md) — suffisso `Contract` (modulo Notify)
 - [ponytail-audit-over-engineering](../../ponytail-audit-over-engineering.md) — S1 aggiornato: contratto valido, path/nome corretti

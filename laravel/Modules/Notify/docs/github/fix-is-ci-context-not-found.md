@@ -15,6 +15,7 @@ related:
   - "./issue-subtree-sync-test.md"
   - "./sync-remote-repo-docs-summary.md"
   - "./sync-remote-repo-test-plan.md"
+status: draft
 ---
 
 # Fix Risolto: Errore `is_ci_context: command not found`

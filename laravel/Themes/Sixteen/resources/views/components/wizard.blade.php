@@ -60,7 +60,39 @@
         {{ $step }}
     @endforeach
 
-    <div x-cloak class="fi-sc-wizard-footer">
+    {{--
+        Navigazione di ripiego dei passi non finali (DCP-33/91): primo passo = solo "Avanti" (`btn btn-primary mobile-full`), poi Indietro / Avanti
+        (`cmp-nav-steps`) come nel riferimento; niente "Salva richiesta" (`save()` qui crea il ticket). Si nasconde da sola se la vista del passo ha la
+        propria navigazione (`[data-wizard-nav]`, overrides.css). L'ultimo passo ha la sua (wizard/summary-step). Testi dal JSON della pagina (`nav.*`).
+    --}}
+    @php
+        $navData = (array) data_get($this->blockData ?? [], 'nav', []);
+        $navIcon = \Themes\Sixteen\Infrastructure\Assets\DesignComuniAssets::base().'/bootstrap-italia/dist/svg/sprites.svg';
+    @endphp
+    <div x-cloak class="dc-wizard-footer" x-show="! isLastStep()">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 pb-40 pb-lg-80">
+                <div x-show="isFirstStep()">
+                    <button type="button" class="btn btn-primary mobile-full" x-on:click="requestNextStep()"><span class="">{{ $navData['next_step'] ?? '' }}</span></button>
+                </div>
+                <div x-show="! isFirstStep()" class="cmp-nav-steps">
+                    <nav class="steppers-nav" aria-label="{{ $navData['aria_label'] ?? '' }}">
+                        <button type="button" class="btn btn-sm steppers-btn-prev p-0" x-on:click="goToPreviousStep">
+                            <svg class="icon icon-primary icon-sm" aria-hidden="true"><use href="{{ $navIcon }}#it-chevron-left"></use></svg>
+                            <span class="text-button-sm t-primary">{{ $navData['back'] ?? '' }}</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm steppers-btn-confirm" x-on:click="requestNextStep()">
+                            <span class="text-button-sm">{{ $navData['next_step'] ?? '' }}</span>
+                            <svg class="icon icon-white icon-sm" aria-hidden="true"><use href="{{ $navIcon }}#it-chevron-right"></use></svg>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Azioni canoniche di Filament: restano nel DOM (submit, previous, next) ma non sono mostrate; la navigazione visibile e' quella sopra o della vista del passo. --}}
+    <div x-cloak hidden class="fi-sc-wizard-footer" x-show="false" aria-hidden="true">
         <div
             x-cloak
             @if (! $previousAction->isDisabled())

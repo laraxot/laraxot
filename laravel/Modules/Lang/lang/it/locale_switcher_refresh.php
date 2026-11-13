@@ -5,10 +5,6 @@ declare(strict_types=1);
 return [
     'fields' => [
         'locale' => [
-            'label' => 'locale',
-            'placeholder' => 'locale',
-            'helper_text' => 'locale',
-            'description' => 'locale',
             'tooltip' => '',
         ],
     ],
@@ -22,7 +18,7 @@ return [
             'description' => 'General Settings',
         ],
         'label' => 'Locale Switcher Refresh',
-        'sort' => 1,
+        'sort' => '1',
         'icon' => 'heroicon-o-rectangle-stack',
     ],
     'actions' => [

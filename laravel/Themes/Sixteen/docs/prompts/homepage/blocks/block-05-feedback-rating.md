@@ -1,3 +1,15 @@
+---
+title: "block 05 feedback rating"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "block 05 feedback rating"
+issues: []
+discussions: []
+status: draft
+---
+
 # Block 05: Feedback Widget (Rating Pagina)
 
 **ID:** `feedback-rating`  

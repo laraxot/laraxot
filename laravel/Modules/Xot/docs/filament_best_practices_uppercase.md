@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+---
+title: "filament best practices uppercase"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament best practices uppercase"
+issues: []
+discussions: []
+status: draft
+---
+
+>>>>>>> laraxot/dev
 # Best Practices per Filament Resources in Laraxot
 
 Questo documento definisce le linee guida ufficiali e le best practices per l'implementazione delle risorse Filament all'interno del framework Laraxot.
@@ -39,8 +54,22 @@ Tutte le risorse Filament devono implementare il metodo `getFormSchema()` che re
 
 ```php
 <<<<<<< HEAD
+<<<<<<< HEAD
 public function getFormSchema(): array
 =======
+public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+public function getFormSchema(): array
+---
+title: "filament best practices uppercase"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament best practices uppercase"
+issues: []
+discussions: []
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
 {
@@ -180,8 +209,14 @@ class SocioResource extends XotBaseResource
     
     // Form Schema - CORRETTO ✅
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public function getFormSchema(): array
+---
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
     {
@@ -364,8 +399,14 @@ Utilizzare componenti come `Section`, `Tabs` e `Fieldset` per organizzare logica
 
 ```php
 <<<<<<< HEAD
+<<<<<<< HEAD
 public function getFormSchema(): array
 =======
+public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+public function getFormSchema(): array
+---
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
 {
@@ -615,8 +656,14 @@ class SocioResource extends XotBaseResource
     protected static ?string $model = Socio::class;
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public function getFormSchema(): array
+---
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
     {

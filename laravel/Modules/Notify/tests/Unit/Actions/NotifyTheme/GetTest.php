@@ -13,13 +13,14 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
+uses(TestCase::class);
 describe('NotifyTheme\Get', function () {
     it('can be instantiated', function () {
         Assert::assertTrue(class_exists(Get::class));
     });
 
     it('uses QueueableAction trait', function () {
-        $traits = class_uses(NotifyThemeData::class);
+        $traits = class_uses(Get::class);
         Assert::assertArrayHasKey(QueueableAction::class, $traits);
     });
 

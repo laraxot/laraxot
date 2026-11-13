@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Regole Generali di Sviluppo del Progetto"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Regole Generali di Sviluppo del Progetto"
+---
+>>>>>>> laraxot/dev
 # Regole Generali di Sviluppo del Progetto
 
 ## Collegamenti
@@ -83,7 +96,11 @@ Modules/<nome>/
 // ❌ ERRATO
 class PatientResource extends \Filament\Resources\Resource
 
+<<<<<<< HEAD
 // ✅ CORRETTO
+=======
+// ✅ CORRETTO  
+>>>>>>> laraxot/dev
 class PatientResource extends \Modules\Xot\Filament\Resources\XotBaseResource
 
 // MODELLO con HasTranslations
@@ -158,7 +175,11 @@ TextInput::make('name')
 ### Metodi NON Implementare
 Chi estende `XotBaseResource` NON deve implementare:
 - `getTableColumn`
+<<<<<<< HEAD
 - `getTableFilters`
+=======
+- `getTableFilters` 
+>>>>>>> laraxot/dev
 - `getBulkActions`
 - `table`
 - `getPages` (se restituisce solo index,create,edit o index,create,edit,view)

@@ -29,11 +29,27 @@ return [
             'helper_text' => '',
             'description' => '',
         ],
+        'client_name' => [
+            'label' => 'Nome cliente',
+        ],
+<<<<<<< .merge_file_OB6AiR
         'force' => [
             'description' => 'force',
         ],
+        'name' => [
+            'label' => 'Nome',
+            'placeholder' => 'name',
+            'helper_text' => 'name',
+            'description' => 'name',
+        ],
+=======
+>>>>>>> .merge_file_u6avVi
     ],
     'actions' => [
+        'new_credentials' => [
+            'label' => 'Nuove credenziali',
+            'icon' => 'new_credentials',
+        ],
         'create' => [
             'label' => 'Crea Client',
             'tooltip' => 'Crea un nuovo client OAuth',
@@ -57,12 +73,48 @@ return [
             'label' => 'Hash Secret',
             'modal_description' => 'Applica l\'hashing a tutti i client secret esistenti.',
         ],
+        'passport_install' => [
+            'icon' => 'passport_install',
+        ],
+        'passport_keys' => [
+            'icon' => 'passport_keys',
+        ],
+        'passport_purge' => [
+            'icon' => 'passport_purge',
+        ],
+        'passport_hash' => [
+            'icon' => 'passport_hash',
+        ],
+        'save' => [
+            'icon' => 'save',
+        ],
+        'profile' => [
+            'icon' => 'profile',
+        ],
+        'logout' => [
+            'icon' => 'logout',
+        ],
+        'submit' => [
+            'icon' => 'submit',
+        ],
+        'cancel' => [
+            'icon' => 'cancel',
+        ],
     ],
     'status' => [
         'public_key' => 'Chiave Pubblica',
         'private_key' => 'Chiave Privata',
         'present' => 'Presente',
         'missing' => 'Mancante',
+        'completed' => [
+            'message' => 'Completato',
+        ],
+        'failed' => [
+            'message' => 'Fallito',
+        ],
+        'running' => [
+            'message' => 'In esecuzione...',
+        ],
     ],
     'messages' => [
         'client_created' => 'Client creato con successo',
@@ -71,5 +123,26 @@ return [
         'command_completed' => 'Comando completato con successo',
         'command_failed' => 'Esecuzione comando fallita',
         'command_error' => 'Errore durante l\'esecuzione del comando',
+        'credentials_created' => 'Credenziali create con successo',
+    ],
+    'view' => [
+        'running_notice' => [
+            'message' => 'Il comando è in esecuzione. Non chiudere questa finestra.',
+        ],
+        'actions_disabled' => [
+            'description' => 'Le altre azioni sono disabilitate fino al termine del comando.',
+        ],
+        'running_command' => [
+            'message' => 'Comando in esecuzione: php artisan',
+        ],
+        'waiting_output' => [
+            'message' => 'In attesa dell\'output...',
+        ],
+        'select_command' => [
+            'label' => 'Seleziona un comando dall\'intestazione per iniziare.',
+        ],
+        'scroll' => [
+            'helper_text' => 'Usa la rotellina del mouse per scorrere l\'output.',
+        ],
     ],
 ];

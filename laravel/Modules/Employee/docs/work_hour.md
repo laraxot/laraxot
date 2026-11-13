@@ -1,3 +1,9 @@
+---
+title: "Employee - WORK_HOUR"
+module: Employee
+bmad: true
+status: active
+---
 # WorkHour Module - Complete Implementation Guide
 
 ## Overview
@@ -134,7 +140,7 @@ return new class extends XotBaseMigration
 **Models and Database**:
 
 - ✅ `app/Models/WorkHour.php` - Main model with business logic
-- ✅ `database/migrations/2025_08_27_121400_create_work_hours_table.php` - Database migration
+- ✅ `database/migrations/2025_08_27_121401_create_work_hours_table.php` - Database migration
 - ✅ `database/factories/WorkHourFactory.php` - Factory for testing data
 - ✅ `database/seeders/WorkHourSeeder.php` - Seeder for sample data
 

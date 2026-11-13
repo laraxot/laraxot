@@ -1,4 +1,8 @@
 ---
+created: 2026-09-26
+qmd: "theme root uppercase folders"
+issues: []
+discussions: []
 title: "Cartelle root maiuscole — tema Sixteen"
 type: concept
 module: Sixteen

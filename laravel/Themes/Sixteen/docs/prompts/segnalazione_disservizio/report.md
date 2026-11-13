@@ -1,3 +1,15 @@
+---
+title: "report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "report"
+issues: []
+discussions: []
+status: draft
+---
+
 # HTML Body Structure Comparison — ticket-list
 
 - Data: 2026-04-08 12:19:48

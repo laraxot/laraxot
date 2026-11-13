@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Filament Forms"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, development]
+qmd: "Filament Forms"
+---
+>>>>>>> laraxot/dev
 # Filament Forms
 
 ## Best Practices
@@ -16,9 +29,13 @@ class PerformanceResource extends XotBaseResource
     protected static ?string $model = Performance::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public static function getFormSchema(): array
 >>>>>>> laraxot/dev
     {
         return [
@@ -38,7 +55,11 @@ class PerformanceResource extends XotBaseResource
                 ->required()
                 ->string()
                 ->maxLength(255),
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> laraxot/dev
             Forms\Components\TextInput::make('punteggio')
                 ->required()
                 ->numeric()
@@ -53,7 +74,11 @@ class PerformanceResource extends XotBaseResource
             Forms\Components\DatePicker::make('data_valutazione')
                 ->nullable()
                 ->displayFormat('d/m/Y'),
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> laraxot/dev
             Forms\Components\Select::make('stato')
                 ->options([
                     'bozza' => 'Bozza',
@@ -237,9 +262,13 @@ Forms\Components\Grid::make()
 
 ```php
 <<<<<<< HEAD
+<<<<<<< HEAD
 public function getFormSchema(): array
 =======
 public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+public static function getFormSchema(): array
 >>>>>>> laraxot/dev
 {
     return [
@@ -249,7 +278,11 @@ public function getFormSchema(): array
             ->afterStateUpdated(function (Forms\Components\TextInput $component, $state) {
                 $component->state(strtoupper($state));
             }),
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
         Forms\Components\Select::make('tipo')
             ->options([
                 'A' => 'Tipo A',

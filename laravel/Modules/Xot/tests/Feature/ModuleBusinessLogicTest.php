@@ -98,7 +98,10 @@ describe('Module Business Logic', function (): void {
             ]);
             Assert::fail('Expected QueryException was not thrown');
         } catch (QueryException $e) {
+<<<<<<< HEAD
             Assert::assertInstanceOf(QueryException::class, $e);
+=======
+>>>>>>> laraxot/dev
         }
     });
 
@@ -318,7 +321,10 @@ describe('Module Business Logic', function (): void {
                 Module::create($moduleData);
                 Assert::fail("Expected QueryException for missing field: $field");
             } catch (QueryException $e) {
+<<<<<<< HEAD
                 Assert::assertInstanceOf(QueryException::class, $e);
+=======
+>>>>>>> laraxot/dev
             }
         }
     });

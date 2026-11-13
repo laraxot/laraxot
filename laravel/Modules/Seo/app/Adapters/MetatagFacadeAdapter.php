@@ -11,7 +11,7 @@ use Modules\Seo\Actions\Metatag\ReplaceMetatagDataAction;
 use Modules\Seo\Contracts\MetatagDataContract;
 
 /**
- * Facade adapter: delega ogni setter a QueueableAction, mantiene API legacy MetatagService.
+ * Facade adapter: delega ogni setter a QueueableAction, mantiene la stessa API dell'ex MetatagService (rimosso).
  */
 final class MetatagFacadeAdapter
 {

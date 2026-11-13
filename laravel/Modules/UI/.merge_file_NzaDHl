@@ -1,0 +1,62 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\UI\Filament\Tables\Columns;
+
+<<<<<<< .merge_file_NzaDHl
+<<<<<<< .merge_file_4pI6B2
+use Filament\Tables\Columns\TextColumn;
+=======
+use Modules\Xot\Filament\Tables\Columns\XotBaseTextColumn;
+>>>>>>> .merge_file_LFRZAZ
+=======
+use Modules\Xot\Filament\Tables\Columns\XotBaseTextColumn;
+>>>>>>> .merge_file_PTe6T2
+
+/**
+ * Colonna data/ora standard del progetto: `dateTime()`, `sortable()`,
+ * placeholder `—` per i valori nulli.
+ *
+ * Stesso trio (`dateTime()->sortable()->placeholder('—')`) ripetuto
+ * identico per `created_at`/`updated_at` in 30+ classi `Tables/*.php`.
+ * `toggleable()` NON e' incluso qui: `created_at` e `updated_at` differiscono
+ * su questo punto nel codice esistente (`updated_at` di solito nascosta di
+ * default, `created_at` no) — resta una scelta del chiamante, componibile
+ * come qualunque altro metodo Filament:
+ *
+ * ```php
+ * 'created_at' => TimestampColumn::make('created_at'),
+ * 'updated_at' => TimestampColumn::make('updated_at')->toggleable(isToggledHiddenByDefault: true),
+ * ```
+ *
+ * @see Modules/UI/docs/form-column-parity.md
+ */
+<<<<<<< .merge_file_NzaDHl
+<<<<<<< .merge_file_4pI6B2
+class TimestampColumn extends TextColumn
+{
+    public static function make(?string $name = null): static
+    {
+        return parent::make($name)
+=======
+=======
+>>>>>>> .merge_file_PTe6T2
+/*
+ * GateGuard: callers TimestampColumnTest + 30+ Tables created_at/updated_at;
+ * unique datetime column helper; reads datetime scalars; user: "migliora qualità codice , fa tutto con bmad + second brain + filament blueprint"
+ */
+class TimestampColumn extends XotBaseTextColumn
+{
+    public static function make(?string $name = null): static
+    {
+        return parent::make($name ?? 'created_at')
+<<<<<<< .merge_file_NzaDHl
+>>>>>>> .merge_file_LFRZAZ
+=======
+>>>>>>> .merge_file_PTe6T2
+            ->dateTime()
+            ->sortable()
+            ->placeholder('—');
+    }
+}

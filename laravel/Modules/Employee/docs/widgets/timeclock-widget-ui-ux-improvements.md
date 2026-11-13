@@ -1,3 +1,9 @@
+---
+title: "Employee - TIMECLOCK-WIDGET-UI-UX-IMPROVEMENTS"
+module: Employee
+bmad: true
+status: active
+---
 # TimeClockWidget UI/UX Improvements - Badge Integration
 
 ## 📋 Current Analysis

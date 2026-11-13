@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "navigation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "navigation"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Navigation Component
 
 This document describes the Navigation component used in section headers and its proper implementation.

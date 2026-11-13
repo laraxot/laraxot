@@ -1,3 +1,9 @@
+---
+title: "Employee - FIX-PHPSTAN-TIMECLOCK-ARGUMENT.STORY"
+module: Employee
+bmad: true
+status: active
+---
 # Story 5.2: Fix PHPStan Errors — TimeClockPage + WorkHour
 
 **Status**: ready-for-dev  

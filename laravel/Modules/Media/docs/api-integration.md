@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "API Integration"
 module: "Media"
 type: concept
@@ -8,5 +10,6 @@ updated: 2026-07-14
 qmd: "api integration"
 related:
   - "./webm.md"
+status: draft
 ---
 # API Integration

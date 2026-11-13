@@ -113,7 +113,7 @@ class SpidAuthAction
             throw new Exception('SAMLResponse non decodificabile');
         }
 
-        $responseDoc = new DOMDocument();
+        $responseDoc = new DOMDocument;
         $responseDoc->loadXML($decodedResponse);
 
         $this->validateSamlResponse($responseDoc);
@@ -333,6 +333,55 @@ class SpidAuthAction
         }
 
         if ($statusCode->item(0)?->nodeValue !== 'urn:oasis:names:tc:SAML:2.0:status:Success') {
+            throw new Exception('SPID authentication failed');
+        }
+
+        $xpath->registerNamespace('ds', 'http://www.w3.org/2000/09/xmldsig#');
+        $signature = $xpath->query('//ds:Signature');
+        if ($signature === false || $signature->length === 0) {
+            throw new Exception('SPID authentication failed');
+        }
+
+        $signedInfo = $xpath->query('//ds:Signature/ds:SignedInfo')->item(0);
+        $signatureValue = $xpath->query('//ds:Signature/ds:SignatureValue')->item(0)?->nodeValue;
+        $certificate = $xpath->query('//ds:Signature/ds:KeyInfo/ds:X509Data/ds:X509Certificate')->item(0)?->nodeValue;
+
+        if ($signedInfo === null || ! is_string($signatureValue) || ! is_string($certificate)) {
+            throw new Exception('SPID authentication failed');
+        }
+
+        $provider = Session::get('spid.provider');
+        $certFile = is_string($provider) ? config('spid.providers.'.$provider.'.cert_file') : null;
+        if (! is_string($certFile) || $certFile === '') {
+            throw new Exception('SPID authentication failed');
+        }
+
+        $trustedCertificate = @file_get_contents(storage_path('certificates/spid/'.$certFile));
+        $embeddedCertificate = base64_decode(preg_replace('/\s+/', '', $certificate) ?: '', true);
+        if (! is_string($trustedCertificate) || $trustedCertificate === '' || ! is_string($embeddedCertificate)) {
+            throw new Exception('SPID authentication failed');
+        }
+
+        $embeddedCertificate = "-----BEGIN CERTIFICATE-----\n".chunk_split($embeddedCertificate, 64, "\n")."-----END CERTIFICATE-----\n";
+        if (openssl_x509_fingerprint($trustedCertificate) === false
+            || openssl_x509_fingerprint($embeddedCertificate) === false
+            || ! hash_equals(openssl_x509_fingerprint($trustedCertificate), openssl_x509_fingerprint($embeddedCertificate))) {
+            throw new Exception('SPID authentication failed');
+        }
+
+        $algorithm = $xpath->query('//ds:Signature/ds:SignedInfo/ds:SignatureMethod/@Algorithm')->item(0)?->nodeValue;
+        $opensslAlgorithm = match ($algorithm) {
+            'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256' => OPENSSL_ALGO_SHA256,
+            'http://www.w3.org/2000/09/xmldsig#rsa-sha1' => OPENSSL_ALGO_SHA1,
+            default => null,
+        };
+        $publicKey = openssl_pkey_get_public($trustedCertificate);
+        if ($opensslAlgorithm === null || $publicKey === false || openssl_verify(
+            $signedInfo->C14N(true, false),
+            base64_decode(preg_replace('/\s+/', '', $signatureValue) ?: '', true) ?: '',
+            $publicKey,
+            $opensslAlgorithm
+        ) !== 1) {
             throw new Exception('SPID authentication failed');
         }
     }

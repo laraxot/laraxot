@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Adapters;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
 
 /**
@@ -39,7 +40,7 @@ class HereClient
         }
 
         if (! isset($json['routes'])) {
-            dddx($json);
+            Log::warning('HereClient: routes not found in response', ['json' => $json]);
 
             return null;
         }

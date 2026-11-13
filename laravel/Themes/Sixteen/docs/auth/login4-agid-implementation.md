@@ -1,3 +1,15 @@
+---
+title: "login4 agid implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login4 agid implementation"
+issues: []
+discussions: []
+status: draft
+---
+
 # Login AGID Migliorato - Tema Sixteen
 
 ## Implementazione Login4 AGID
@@ -235,11 +247,11 @@ Il tema Sixteen usa `<x-layouts.guest>` che include già:
 ## Collegamenti
 
 ### Documentazione Correlata
-- [Auth Implementation Guide](../../../laravel/Modules/User/docs/auth_login_implementation.md)
-- [Volt Folio Auth](../../../laravel/Modules/User/docs/volt_folio_auth_implementation.md)
-- [Theme Translation Rules](../../../laravel/Modules/User/docs/theme-translation-conflicts-resolution.md)
-- [Sixteen Theme Naming Conventions](./sixteen-theme-naming-conventions.md)
-- [Critical Rules](./critical-rules.md)
+- [Auth Implementation Guide](../../../../Modules/User/docs/auth_login_implementation.md)
+- [Volt Folio Auth](../../../../Modules/User/docs/volt_folio_auth_implementation.md)
+- [Theme Translation Rules](../../../../Modules/User/docs/theme-translation-conflicts-resolution.md)
+- [Sixteen Theme Naming Conventions](../sixteen-theme-naming-conventions.md)
+- [Critical Rules](../critical-rules.md)
 
 ### File Correlati
 - `login.blade.php` - Login base

@@ -1,10 +1,21 @@
 ---
+<<<<<<< .merge_file_lcSIYR
 title: "Architecture — UI widget"
+=======
+title: "Architecture: UI widget"
+>>>>>>> .merge_file_IHuonR
 type: architecture
 module: UI
 related:
   - ./livewire-inventory.md
   - ./livewire-widget-prd.md
+<<<<<<< .merge_file_lcSIYR
+=======
+status: draft
+updated: 2026-10-07
+tags: [docs, ui, bmad]
+qmd: "architecture ui ui"
+>>>>>>> .merge_file_IHuonR
 ---
 
 # Architecture UI

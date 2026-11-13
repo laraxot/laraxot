@@ -1,3 +1,15 @@
+---
+title: "christmas email layout"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "christmas email layout"
+issues: []
+discussions: []
+status: draft
+---
+
 # Christmas Email Layout Template
 
 **Date**: 2025-12-18  
@@ -187,7 +199,6 @@ This template is intended for use during the Christmas season (typically Decembe
 - **Interactive Elements**: Holiday-themed interactive components (limitato da email client support)
 
 ---
-
 **Created by**: iFlow CLI  
 **Compliance**: DRY + KISS + Accessibility standards  
 **Theme**: Sixteen

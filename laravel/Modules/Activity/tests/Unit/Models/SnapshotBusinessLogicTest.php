@@ -11,12 +11,8 @@ use Modules\Xot\Models\Traits\HasXotFactory;
 use PHPUnit\Framework\Assert;
 use Spatie\EventSourcing\Snapshots\EloquentSnapshot as SpatieSnapshot;
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_6gjBxx
 uses(\Modules\Activity\Tests\TestCase::class);
-=======
-uses(TestCase::class);
->>>>>>> 13cf1831 (.)
 
 test('Snapshot Business Logic', function () {
     test('snapshot has correct connection configured', function () {

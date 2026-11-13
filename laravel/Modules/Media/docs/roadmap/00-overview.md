@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Roadmap overview (Module Media)"
 module: "Media"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "00 overview"
 related:
   - "./webm.md"
+status: superseded
+superseded_by: overview.md
 ---
 # Roadmap overview (Module Media)
 

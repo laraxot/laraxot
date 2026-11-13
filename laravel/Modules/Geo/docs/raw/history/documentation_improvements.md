@@ -1,3 +1,14 @@
+---
+title: "documentation improvements"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "documentation improvements"
+issues: []
+discussions: []
+---
+
 # Miglioramenti Documentazione - Riepilogo
 
 ## Completato

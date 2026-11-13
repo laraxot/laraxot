@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # mail
 
 <!-- Contenuto migrato da _docs/mail.txt -->
@@ -110,3 +111,13 @@ https://stackoverflow.com/questions/46141652/running-laravel-queuework-on-a-shar
 
 //--- extra
 https://codegits.com/how-to-use-multiple-databases-in-laravel/
+=======
+---
+title: "mail"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "mail xot"
+---
+>>>>>>> laraxot/dev

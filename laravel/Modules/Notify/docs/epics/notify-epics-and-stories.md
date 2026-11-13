@@ -1,9 +1,13 @@
 ---
+qmd: "notify epics and stories"
+issues: []
+discussions: []
 title: "Notify Epics and User Stories"
 type: user_stories
 tags: [user stories, epics, notify]
 created: 2026-08-04
 updated: 2026-08-04
+status: draft
 ---
 # Notify Epics and User Stories
 

@@ -13,13 +13,12 @@ uses(TestCase::class);
 describe('User Model Basic', function (): void {
     test('user model can be created', function (): void {
         /** @var TestCase $this */
-        $user = new User();
+        new User;
 
-        Assert::assertInstanceOf(User::class, $user);
     });
 
     test('user model can access connection', function (): void {
-        $user = new User();
+        $user = new User;
 
         Assert::assertSame('user', $user->getConnectionName());
     });
@@ -36,11 +35,10 @@ describe('User Model Basic', function (): void {
             'is_active' => true,
         ]);
 
-        Assert::assertInstanceOf(User::class, $user);
         Assert::assertSame('Test User', $user->name);
         Assert::assertNotEmpty($user->email);
         Assert::assertSame('it', $user->lang);
-        Assert::assertSame(true, $user->is_active);
+        Assert::assertTrue($user->is_active);
     });
 
     test('user model can query records', function (): void {

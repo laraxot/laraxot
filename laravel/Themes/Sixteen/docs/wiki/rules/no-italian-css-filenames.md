@@ -1,4 +1,7 @@
 ---
+qmd: "no italian css filenames"
+issues: []
+discussions: []
 title: "No Italian CSS filenames"
 type: rule
 confidence: high
@@ -6,8 +9,9 @@ created: 2026-06-04
 updated: 2026-06-04
 tags: [css, naming, sixten]
 related:
-  - ../../../../../docs/wiki/decisions/css-filenames-english-no-italian.md
+  - ../../../../../../docs/wiki/decisions/css-filenames-english-no-italian.md
   - ../../architecture/css-filename-english-naming.md
+status: draft
 ---
 
 # Regola tema — CSS filename in inglese

@@ -1,3 +1,9 @@
+---
+title: "Employee - MODEL_ARCHITECTURE"
+module: Employee
+bmad: true
+status: active
+---
 # Architettura Modelli - Modulo Employee
 
 ## Panoramica

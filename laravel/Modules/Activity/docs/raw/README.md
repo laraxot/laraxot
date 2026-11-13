@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Activity
 
 [![Module](https://img.shields.io/badge/Module-Activity-8B0000.svg)]()
@@ -33,12 +32,3 @@ Core module for the FixCity Platform.
 ---
 
 **Modulo** `Activity` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
-=======
----
-module: theme
-topic: README
-canonical: ../../../../Themes/docs/shared-components/README-Modules.md
----
-
-See canonical documentation: ../../../../Themes/docs/shared-components/README-Modules.md
->>>>>>> 13cf1831 (.)

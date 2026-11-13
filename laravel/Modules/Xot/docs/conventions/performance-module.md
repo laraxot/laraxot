@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Convenzioni di Codifica del Modulo Performance"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, conventions]
+qmd: "Convenzioni di Codifica del Modulo Performance"
+---
+>>>>>>> laraxot/dev
 # Convenzioni di Codifica del Modulo Performance
 
 ## Struttura delle Directory
@@ -75,13 +88,21 @@ class IndividualePesi extends XotBaseModel
 {
     protected $connection = 'performance';
     protected $table = 'peso_performance_individuale';
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     protected $fillable = [
         'type',
         'lista_propro',
         // ...
     ];
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     protected $casts = [
         'type' => WorkerType::class,
         // ...
@@ -101,12 +122,20 @@ use Modules\Performance\Models\IndividualePesi;
 class IndividualePesiResource extends Resource
 {
     protected static ?string $model = IndividualePesi::class;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     public static function getNavigationGroup(): ?string
     {
         return __('Performance');
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // ...
 }
 ```
@@ -122,7 +151,11 @@ use Spatie\QueueableAction\QueueableAction;
 class CalculatePerformanceScoreAction
 {
     use QueueableAction;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     public function execute(IndividualePesi $pesi): float
     {
         // Implementazione
@@ -208,4 +241,8 @@ try {
     ]);
     throw $e;
 }
+<<<<<<< HEAD
 ```
+=======
+``` 
+>>>>>>> laraxot/dev

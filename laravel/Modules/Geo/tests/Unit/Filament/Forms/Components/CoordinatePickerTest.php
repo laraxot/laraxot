@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Tests\Unit\Filament\Forms\Components;
 
 use Modules\Geo\Filament\Forms\Components\CoordinatePicker;
+use Modules\Geo\Filament\Forms\Components\CoordinatePickerHelpers;
 use Modules\Geo\Filament\Forms\Components\LatitudeLongitudeInput;
 use Modules\Geo\Filament\Forms\Components\MapPicker;
 use Modules\Geo\Tests\UnitTestCase;
@@ -77,8 +78,15 @@ test('CoordinatePicker can extract coordinates from data', function (): void {
     Assert::assertSame(9.1900, $extracted['longitude']);
 });
 
-test('CoordinatePicker is not dehydrated by default', function (): void {
+test('CoordinatePicker is dehydrated by default so coordinates are saved', function (): void {
+    // Intentional: setUp() calls dehydrated() (see HasCoordinatePicker::setUpCoordinatePicker note),
+    // otherwise the picked latitude/longitude would never reach the saved form state.
     $field = CoordinatePicker::make('test');
 
-    Assert::assertFalse($field->isDehydrated());
+    Assert::assertTrue($field->isDehydrated());
+});
+
+test('coordinate picker helpers stay in the semantic UI namespace', function (): void {
+    Assert::assertSame(45.4642, CoordinatePickerHelpers::normalizeCoordinate('45.4642'));
+    Assert::assertNull(CoordinatePickerHelpers::normalizeCoordinate('invalid'));
 });

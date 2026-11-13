@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-LEVEL-10-ANALYSIS-AND-RECOMMENDATION"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Level 10 Analysis - Employee Module
 
 ## Executive Summary

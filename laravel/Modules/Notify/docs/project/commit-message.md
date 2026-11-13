@@ -16,6 +16,7 @@ related:
   - "./configuration.md"
   - "./design-comuni-bmad-master-plan.md"
   - "./docs-governance.md"
+status: draft
 ---
 
 # feat: PHPStan MAX Level - Codice Produzione a 0 Errori

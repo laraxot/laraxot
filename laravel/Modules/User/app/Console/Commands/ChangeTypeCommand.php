@@ -7,14 +7,13 @@ namespace Modules\User\Console\Commands;
 use Filament\Support\Contracts\HasLabel;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Support\Htmlable;
-
-use function Laravel\Prompts\select;
-use function Laravel\Prompts\text;
-
 use Modules\Xot\Actions\Cast\SafeObjectCastAction;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use Webmozart\Assert\Assert;
+
+use function Laravel\Prompts\select;
+use function Laravel\Prompts\text;
 
 /**
  * Command to change user type based on project configuration.
@@ -101,7 +100,7 @@ class ChangeTypeCommand extends Command
         $newType = select('Select new user type:', $options);
 
         $newTypeEnum = $typeClass::tryFrom($newType);
-        if (null === $newTypeEnum) {
+        if ($newTypeEnum === null) {
             throw new \InvalidArgumentException('Invalid user type selected.');
         }
         Assert::isInstanceOf($newTypeEnum, HasLabel::class);
@@ -111,15 +110,8 @@ class ChangeTypeCommand extends Command
         $user->type = (string) $newTypeEnum->value;
         $user->save();
 
-        $label = $newTypeEnum->getLabel();
-        $labelString = '';
-        if (\is_string($label)) {
-            $labelString = $label;
-        } elseif ($label instanceof Htmlable) {
-            $labelString = $label->toHtml();
-        } else {
-            $labelString = (string) $label;
-        }
+        $label = $newTypeEnum->getLabel() ?? (string) $newTypeEnum->value;
+        $labelString = $label instanceof Htmlable ? $label->toHtml() : $label;
         $this->info("User type changed to '{$labelString}' for {$email}");
     }
 }

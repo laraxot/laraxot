@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'location' => [
         'title' => 'Selezione Località',
-        'submit' => 'Seleziona',
+        'submit' => 'Auswählen',
         'messages' => [
             'success' => 'Località selezionata con successo',
             'error' => 'Errore durante la selezione della località',
@@ -20,8 +20,12 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
-    'fields' => [
-    ],
-    'actions' => [
+    'base_map' => [
+        'aria_label' => 'Interaktive Karte',
+        'fullscreen' => 'Vollbild',
+        'fullscreen_exit' => 'Vollbild beenden',
+        'locate' => 'Auf meinen Standort zentrieren',
+        'layer_satellite' => 'Satellit',
+        'markers_shown' => 'Zeige :count Marker',
     ],
 ];

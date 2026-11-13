@@ -7,6 +7,9 @@ return [
         'title' => 'Password changed successfully!',
         'message' => 'Your password has been updated.',
     ],
+    'settings_saved' => [
+        'title' => 'Settings saved',
+    ],
     'table_missing' => [
         'title' => 'Tabella Mancante',
         'body' => 'Tabella Mancante',

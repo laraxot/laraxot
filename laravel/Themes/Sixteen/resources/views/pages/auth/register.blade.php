@@ -1,44 +1,56 @@
-<x-layouts.app bodyPage="auth-register">
-    <x-slot name="title">
-        {{ __('user::auth.register.title.text') }}
-    </x-slot>
+<?php
 
-    <x-slot name="metaDescription">
-        {{ __('user::auth.register.description.text') }}
-    </x-slot>
+declare(strict_types=1);
 
-    <section class="bg-slate-50 py-10 sm:py-14">
-        <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <header class="mb-8">
-                <p class="text-sm font-semibold tracking-wide text-primary-700 uppercase">
-                    {{ __('user::auth.register.subtitle.text') }}
-                </p>
-                <h1 class="mt-1 text-3xl font-bold text-slate-900" id="auth-register-heading">
-                    {{ __('user::auth.register.title.text') }}
-                </h1>
-                <p class="mt-2 max-w-2xl text-sm text-slate-600">
-                    {{ __('user::auth.register.description.text') }}
-                </p>
-            </header>
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
+use Livewire\Attributes\Locked;
+use Livewire\Volt\Component;
+use Modules\Cms\Http\Middleware\PageSlugMiddleware;
+use Modules\User\Actions\Auth\GetPostLoginUrlAction;
 
-            <div class="grid gap-6 lg:grid-cols-3">
-                <div class="lg:col-span-2">
-                    <div class="auth-register-card overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                        @livewire(\Modules\User\Filament\Widgets\Auth\RegisterWidget::class)
-                    </div>
-                </div>
+use function Laravel\Folio\middleware;
+use function Laravel\Folio\name;
+use function Laravel\Folio\render;
 
-                <aside class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm" aria-labelledby="auth-register-support-heading">
-                    <h2 class="text-base font-semibold text-slate-900" id="auth-register-support-heading">
-                        {{ __('user::auth.register.sidebar.support_title.text') }}
-                    </h2>
-                    <ul class="mt-4 list-disc space-y-3 pl-5 text-sm text-slate-600" role="list">
-                        <li id="auth-register-hint-email">{{ __('user::auth.register.sidebar.help_email.text') }}</li>
-                        <li id="auth-register-hint-password">{{ __('user::auth.register.sidebar.help_password.text') }}</li>
-                        <li>{{ __('user::auth.register.sidebar.help_support.text') }}</li>
-                    </ul>
-                </aside>
-            </div>
+name('auth.register');
+middleware(PageSlugMiddleware::class);
+
+// A signed-in user has nothing to do here: send them to the personal area instead of the registration widget (its canView() would answer a bare 403).
+// Not the `guest` middleware: its default target is route('dashboard'), which answers 404 in the front office.
+render(function (View $view): View|RedirectResponse {
+    if (Auth::check()) {
+        return redirect()->to(app(GetPostLoginUrlAction::class)->execute());
+    }
+
+    return $view;
+});
+
+new class extends Component
+{
+    #[Locked]
+    public string $pageSlug = '';
+
+    /** @var array<string, mixed> */
+    #[Locked]
+    public array $data = [];
+
+    public function mount(): void
+    {
+        $this->pageSlug = 'auth.register';
+        $this->data = [];
+    }
+};
+?>
+
+<x-layouts.app
+    :title="__('fixcity::auth.register.title.text')"
+    :meta-description="__('fixcity::auth.register.intro.text')"
+>
+    @volt('auth.register')
+        <div class="page-content content" data-dc data-slug="{{ $this->pageSlug }}" data-side="content">
+            <x-page side="content" :slug="$this->pageSlug" :data="$this->data" />
         </div>
-    </section>
+    @endvolt
 </x-layouts.app>

@@ -12,6 +12,7 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
+uses(TestCase::class);
 describe('SMS\NormalizePhoneNumberAction', function () {
     it('can be instantiated', function () {
         Assert::assertTrue(class_exists(NormalizePhoneNumberAction::class));
@@ -60,9 +61,9 @@ describe('SMS\NormalizePhoneNumberAction', function () {
         Assert::assertStringContainsString('use function Safe\preg_replace', $content);
     });
 
-    it('is not using QueueableAction trait', function () {
+    it('uses QueueableAction trait', function () {
         $traits = class_uses(NormalizePhoneNumberAction::class);
 
-        Assert::assertArrayNotHasKey(QueueableAction::class, $traits);
+        Assert::assertArrayHasKey(QueueableAction::class, $traits);
     });
 });

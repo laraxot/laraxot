@@ -1,3 +1,15 @@
+---
+title: "agents"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agents"
+issues: []
+discussions: []
+status: draft
+---
+
 # LLM Wiki Agent Instructions
 
 > **Purpose**: This file transforms generic LLM agents into disciplined LLM Wiki maintainers
@@ -83,6 +95,9 @@ Themes/{Name}/docs/llm-wiki/
 
 ```yaml
 ---
+qmd: "agents"
+issues: []
+discussions: []
 title: "Descriptive Title"
 type: concept  # concept | entity | source | comparison | decision | troubleshooting
 sources: ["raw/articles/source-filename.md"]

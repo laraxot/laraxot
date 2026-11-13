@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Media\Tests\Unit\Exceptions;
 
-use Exception;
 use Modules\Media\Exceptions\CouldNotAddUpload;
 use Modules\Media\Exceptions\TemporaryUploadDoesNotBelongToCurrentSession;
 use Modules\Media\Tests\TestCase;
@@ -20,8 +19,6 @@ uses(TestCase::class);
 test('uuidAlreadyExists builds the duplicate upload exception', function (): void {
     $exception = CouldNotAddUpload::uuidAlreadyExists();
 
-    Assert::assertInstanceOf(CouldNotAddUpload::class, $exception);
-    Assert::assertInstanceOf(Exception::class, $exception);
     Assert::assertSame(
         'The given uuid is being used for an existing media item.',
         $exception->getMessage(),
@@ -31,7 +28,6 @@ test('uuidAlreadyExists builds the duplicate upload exception', function (): voi
 test('create builds the session mismatch exception', function (): void {
     $exception = TemporaryUploadDoesNotBelongToCurrentSession::create();
 
-    Assert::assertInstanceOf(TemporaryUploadDoesNotBelongToCurrentSession::class, $exception);
     Assert::assertSame(
         'The session id of the given temporary upload does not match the current session id.',
         $exception->getMessage(),

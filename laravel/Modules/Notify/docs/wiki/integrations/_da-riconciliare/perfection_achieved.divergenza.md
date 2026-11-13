@@ -1,10 +1,14 @@
 ---
+qmd: "perfection achieved.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: PERFECTION_ACHIEVED.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Divergenza: `PERFECTION_ACHIEVED.md`

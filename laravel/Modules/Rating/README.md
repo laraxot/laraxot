@@ -1,3 +1,14 @@
+---
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
+---
+
 # ⭐ Rating — il modulo che misura senza uno schema fisso
 
 [![PHP](https://img.shields.io/badge/PHP-%5E8.3-777BB4.svg)](composer.json)
@@ -15,6 +26,14 @@ errori, `level: max`). Rilanciabile: `cd laravel && ./vendor/bin/phpstan analyse
 
 ---
 
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
 ## Scopo e confini
 
 Rating è un modulo di piattaforma, non una foglia: **10 classi fuori dal modulo

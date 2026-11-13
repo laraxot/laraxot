@@ -27,8 +27,7 @@ class RatingMorphData extends Data
         public readonly ?float $reward = null,
         public readonly ?Carbon $created_at = null,
         public readonly ?Carbon $updated_at = null,
-    ) {
-    }
+    ) {}
 
     // ──────────────────────────────────────────────────────────────────────────
     // Schema della tabella pivot `rating_morph` — pattern SchedaData / NestedSet::columns()
@@ -60,14 +59,23 @@ class RatingMorphData extends Data
      * Nota: questa versione aggiunge solo value, note, is_winner, reward in un'unica
      * ALTER TABLE, evitando i problemi di variabili undefined come nella versione precedente.
      */
+    /**
+     * Completa la tabella con tutte le colonne che il pivot usa (fillable di BaseRatingMorph),
+     * solo se mancano. Gira sempre dopo createColumns() (tableUpdate dopo tableCreate), quindi
+     * una tabella nuova esce completa: createColumns() da sola non crea model_id, user_id ne' i
+     * timestamp, e la relation morph non funzionerebbe. Su tabelle esistenti e' un no-op per le
+     * colonne gia' presenti (verificato il 2026-10-28 su progressione, IR, ICL, ptv, rating).
+     */
     public static function updateColumns(Blueprint $table, XotBaseMigration $migration): void
     {
-        $missing = static fn (string $column): bool => ! $migration->hasColumn($column);
-
+        self::addIfMissing($migration, 'model_id', static fn () => $table->unsignedBigInteger('model_id')->nullable()->index());
+        // uuid come nella maggior parte dei moduli (in IR resta bigint: non si cambia un tipo esistente).
+        self::addIfMissing($migration, 'user_id', static fn () => $table->string('user_id', 36)->nullable()->index());
         self::addIfMissing($migration, 'value', static fn () => $table->integer('value')->nullable());
         self::addIfMissing($migration, 'note', static fn () => $table->text('note')->nullable());
         self::addIfMissing($migration, 'is_winner', static fn () => $table->boolean('is_winner')->default(false));
         self::addIfMissing($migration, 'reward', static fn () => $table->decimal('reward', 10, 3)->nullable());
+        $migration->updateTimestamps($table);
     }
 
     /**

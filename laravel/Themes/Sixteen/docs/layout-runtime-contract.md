@@ -1,3 +1,15 @@
+---
+title: "layout runtime contract"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "layout runtime contract"
+issues: []
+discussions: []
+status: draft
+---
+
 # Layout Runtime Contract
 
 ## Scopo
@@ -11,6 +23,20 @@ Il tema deve separare in modo netto tre responsabilita:
 Questa separazione evita che una pagina CMS ridefinisca header, footer o skiplinks.
 
 ## Contratto
+
+### Identità del layout pubblico
+
+`Sixteen` è già la resa Design Comuni. Per questo il componente pubblico
+canonico è `components/layouts/app.blade.php` (`x-layouts.app`): il valore CMS
+storico `layout: design-comuni` viene interpretato dal resolver come la stessa
+shell e non come un nome di view. `components/layouts/design-comuni.blade.php`
+non deve esistere, nemmeno come alias, perché reintrodurrebbe il secondo
+entrypoint che questa regola elimina.
+
+`design-comuni-authenticated` e `design-comuni-bare` restano solo per i template
+di test che dichiarano esplicitamente quei contratti: il primo modifica lo
+stato del menu account, il secondo omette intenzionalmente il chrome globale.
+Non sono sostituti del layout pubblico.
 
 ### `pub_theme::layouts.app`
 
@@ -45,6 +71,14 @@ Deve contenere solo:
 - `<x-layouts.app>`
 - `<x-page side="content" :slug="$pageSlug" :data="$data" />`
 
+Non deve importare `File`, consultare `tests.catalog.json`, eseguire fallback
+per slug speciali o includere blocchi direttamente. Il JSON canonico è
+`database/content/pages/tests/<slug>.json` (lo slug nel file è l'ultimo pezzo, la cartella `tests` lo prefissa); la risoluzione e il rendering dei
+blocchi restano responsabilità del CMS e del tema.
+
+Se il componente viene montato senza parametro, il valore canonico è
+`tests.index`, mai `tests`: il file è `pages/tests/` con slug `index`.
+
 ## Perche
 
 ### DRY
@@ -69,4 +103,4 @@ Per mantenere una sola fonte di verita, quel file deve fare da bridge verso `res
 
 - [README.md](./README.md)
 - [design-comuni-page-census.md](./design-comuni-page-census.md)
-- [../../Modules/Cms/docs/layout-runtime-contract.md](../../Modules/Cms/docs/layout-runtime-contract.md)
+- [../../Modules/Cms/docs/layout-runtime-contract.md](../../../Modules/Cms/docs/layout-runtime-contract.md)

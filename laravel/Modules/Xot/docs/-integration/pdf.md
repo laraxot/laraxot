@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "pdf"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "pdf xot"
+---
+>>>>>>> laraxot/dev
 # pdf
 
 <!-- Contenuto migrato da _docs/pdf.txt -->

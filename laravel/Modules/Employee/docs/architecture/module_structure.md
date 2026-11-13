@@ -1,3 +1,9 @@
+---
+title: "Employee - MODULE_STRUCTURE"
+module: Employee
+bmad: true
+status: active
+---
 # Struttura del Modulo Employee
 
 ## Panoramica

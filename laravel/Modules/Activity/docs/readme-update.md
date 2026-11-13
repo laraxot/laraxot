@@ -43,7 +43,6 @@ test('snapshot test', function () {
 **Documentazione**:
 - [No RefreshDatabase Policy](./testing/no-refresh-database-policy.md)
 - [Snapshot Testing Patterns](./testing/snapshot-testing-patterns.md)
-<<<<<<< HEAD
 <<<<<<< .merge_file_oiRPTa
 <<<<<<< HEAD
 - [Xot Testing Strategy](../../Xot/docs/testing-strategy.md)
@@ -62,9 +61,6 @@ test('snapshot test', function () {
 - [Xot Testing Strategy](../../Xot/docs/testing-strategy.md)=======
 - [Xot Testing Strategy](../../Xot/docs/testing-strategy.md)
 >>>>>>> .merge_file_LZtWEu
-=======
-- [Xot Testing Strategy](../../xot/docs/testing-strategy.md)
->>>>>>> 13cf1831 (.)
 
 #### Test Coverage
 
@@ -93,7 +89,6 @@ php artisan test --filter=Snapshot
 php artisan test Modules/Activity --coverage
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 ```
 =======
 ```
@@ -106,7 +101,3 @@ php artisan test Modules/Activity --coverage
 >>>>>>> 35d8cf69 (Initial commit)
 =======
 >>>>>>> .merge_file_LZtWEu
-=======
-```
-
->>>>>>> 13cf1831 (.)

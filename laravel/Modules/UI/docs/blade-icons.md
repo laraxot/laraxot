@@ -1,3 +1,14 @@
+---
+title: "Documentazione del Metodo registerBladeIcons"
+type: note
+status: draft
+created: 2026-01-20
+updated: 2026-10-18
+module: UI
+tags: [docs, ui]
+qmd: "documentazione del metodo registerbladeicons ui"
+---
+
 # Documentazione del Metodo registerBladeIcons
 
 ## Panoramica
@@ -179,4 +190,4 @@ MenuItem::make()
 **Collegamento:** Vedi anche [XotBaseServiceProvider.md](./xotbaseserviceprovider.md)
 
 ## Conclusione
-Il metodo `registerBladeIcons` rappresenta un esempio di come la filosofia zen e i principi di design software possano convergere in una soluzione elegante ed efficace. La sua implementazione bilancia perfettamente la necessità di flessibilità con la robustezza del sistema, creando un ponte tra la modularità del codice e l'espressività dell'interfaccia utente.
+Il metodo `registerBladeIcons` rappresenta un esempio di come la filosofia zen e i principi di design software possano convergere in una soluzione elegante ed efficace. La sua implementazione bilancia perfettamente la necessità di flessibilità con la robustezza del sistema, creando un ponte tra la modularità del codice e l'espressività dell'interfaccia utente. 

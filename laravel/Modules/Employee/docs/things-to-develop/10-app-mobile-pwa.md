@@ -1,3 +1,9 @@
+---
+title: "Employee - 10-APP-MOBILE-PWA"
+module: Employee
+bmad: true
+status: active
+---
 # 10 - App Mobile PWA
 
 ## Panoramica

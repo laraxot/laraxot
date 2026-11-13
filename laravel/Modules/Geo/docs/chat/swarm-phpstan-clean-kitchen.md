@@ -1,4 +1,8 @@
 ---
+tags: [documentation]
+qmd: "swarm phpstan clean kitchen"
+issues: []
+discussions: []
 title: PHPStan Swarm - Clean Kitchen Session 2026
 type: swarm-coordination
 status: active

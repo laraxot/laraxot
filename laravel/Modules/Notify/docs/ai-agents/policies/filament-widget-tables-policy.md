@@ -1,3 +1,15 @@
+---
+title: "filament widget tables policy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament widget tables policy"
+issues: []
+discussions: []
+status: draft
+---
+
 # Filament Widget Tables Policy
 
 > Indice: [./00-INDEX.md](./00-INDEX.md)

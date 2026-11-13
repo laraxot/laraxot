@@ -1,10 +1,15 @@
 ---
+qmd: "MASTER PLAN"
+issues: []
+discussions: []
 title: "Notify Platform - Master Plan 🚀"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: master_plan.md
 ---
 
 # Notify Platform - Master Plan 🚀

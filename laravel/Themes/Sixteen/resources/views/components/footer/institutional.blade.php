@@ -1,6 +1,6 @@
 {{-- Bootstrap Italia Footer Component for PA - Institutional Footer --}}
 @props([
-    'institutionName' => config('app.name', 'Comune di '),
+    'institutionName' => config('app.name', __('pub_theme::components_header.brand.municipality_of.label').' '),
     'institutionLogo' => null,
     'institutionAddress' => 'Piazza del Municipio, 1',
     'institutionPhone' => '+39 0123 456789',
@@ -72,7 +72,7 @@
                 {{-- Quick Links --}}
                 @if(!empty($quickLinks))
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 border-b border-italia-gray-700 pb-2">Link rapidi</h4>
+                    <h4 class="text-lg font-semibold mb-4 border-b border-italia-gray-700 pb-2">{{ __('pub_theme::components_footer.institutional.quick_links.label') }}</h4>
                     <ul class="space-y-2">
                         @foreach($quickLinks as $link)
                         <li>
@@ -90,7 +90,7 @@
                 {{-- Services --}}
                 @if(!empty($serviceLinks))
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 border-b border-italia-gray-700 pb-2">Servizi</h4>
+                    <h4 class="text-lg font-semibold mb-4 border-b border-italia-gray-700 pb-2">{{ __('pub_theme::header.center.nav.servizi.label') }}</h4>
                     <ul class="space-y-2">
                         @foreach($serviceLinks as $link)
                         <li>
@@ -117,7 +117,7 @@
                            target="_blank"
                            rel="noopener noreferrer"
                            class="text-italia-gray-400 hover:text-primary-300 transition-colors"
-                           aria-label="{{ $social['name'] ?? 'Social' }}">
+                           aria-label="{{ $social['name'] ?? __('pub_theme::components_common.fallback.social.label') }}">
                             @if(isset($social['icon']))
                                 {!! $social['icon'] !!}
                             @else
@@ -152,7 +152,7 @@
         <div class="container-italia">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div class="text-italia-gray-400 text-sm mb-2 md:mb-0">
-                    &copy; {{ date('Y') }} {{ $institutionName }} - Tutti i diritti riservati
+                    &copy; {{ date('Y') }} {{ $institutionName }} - {{ __('pub_theme::components_copyright.copyright.rights_reserved.label') }}
                 </div>
                 
                 <div class="text-italia-gray-400 text-sm">
@@ -185,7 +185,7 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
-        <span class="sr-only">Torna all'inizio</span>
+        <span class="sr-only">{{ __('pub_theme::components_common.a11y.back_to_top.label') }}</span>
     </button>
     @endif
 </footer>

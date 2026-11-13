@@ -1,10 +1,14 @@
 ---
+qmd: "ABSOLUTE COMPLETION 100"
+issues: []
+discussions: []
 title: "NOTIFY - COMPLETAMENTO ASSOLUTO 100%"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # 🏆 NOTIFY - COMPLETAMENTO ASSOLUTO 100%

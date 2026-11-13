@@ -16,9 +16,19 @@ use Webmozart\Assert\Assert;
 
 /**
  * Trait HasCustomRelations.
+<<<<<<< HEAD
  */
 // @phpstan-ignore trait.unused
 trait HasCustomRelations
+=======
+<<<<<<< .merge_file_KQvLHL
+=======
+ *
+>>>>>>> .merge_file_wDl9JR
+ * @phpstan-ignore trait.unused
+ */
+trait HasCustomRelations // @phpstan-ignore trait.unused
+>>>>>>> laraxot/dev
 {
     public function customRelation(
         string $related,

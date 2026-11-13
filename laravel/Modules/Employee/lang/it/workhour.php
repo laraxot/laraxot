@@ -247,4 +247,24 @@ return [
         'time_clock' => 'Timbratura',
         'view_all' => 'Visualizza Tutte le Voci',
     ],
+    'dashboard' => [
+        'overview' => [
+            'label' => 'Panoramica',
+        ],
+        'period_month' => [
+            'label' => 'Questo Mese',
+        ],
+        'progress_of_target' => [
+            'label' => ':percentage% dell\'obiettivo di :target',
+        ],
+        'week_number' => [
+            'label' => 'Settimana :number',
+        ],
+    ],
+    'timeclock' => [
+        'notes' => [
+            'label' => 'Note (facoltative)',
+            'placeholder' => 'Aggiungi una nota per questa voce...',
+        ],
+    ],
 ];

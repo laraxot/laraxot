@@ -44,19 +44,26 @@ class RatingData extends Data
         public readonly SupportedLocale $locale = SupportedLocale::IT,
         public readonly ?string $image_url = null,
         public readonly ?int $parent_id = null,
-    ) {}
+    ) {
+    }
 
-    /**
-     * Costruisce il DTO da un payload di form.
-     *
-     * Delega al casting automatico di Spatie LaravelData (niente conversione manuale
-     * di tipo: PHPStan verifica i rami tramite i tipi delle proprietà).
-     *
-     * @param  array<string, mixed>  $data
-     */
+    /** @param array<string, mixed> $data */
     public static function fromArray(array $data): self
     {
-        return self::from($data);
+        $title = $data['title'] ?? '';
+        $description = $data['description'] ?? '';
+        $locale = $data['locale'] ?? 'it';
+        $imageUrl = $data['image_url'] ?? null;
+
+        return new self(
+            title: is_scalar($title) ? (string) $title : '',
+            description: is_scalar($description) ? (string) $description : '',
+            disabled: (bool) ($data['disabled'] ?? false),
+            position: is_numeric($data['position'] ?? null) ? (int) $data['position'] : 0,
+            locale: SupportedLocale::fromString(is_string($locale) ? $locale : 'it'),
+            image_url: is_string($imageUrl) ? $imageUrl : null,
+            parent_id: is_numeric($data['parent_id'] ?? null) ? (int) $data['parent_id'] : null,
+        );
     }
 
     /**
@@ -115,8 +122,9 @@ class RatingData extends Data
      * (connection propria) e la firma non deve mentire con un default che
      * esplode a runtime dai call site statici reali (Resource Filament).
      *
-     * @param  array<string, mixed>  $where
-     * @param  class-string<BaseRating>  $ratingClass
+     * @param array<string, mixed>     $where
+     * @param class-string<BaseRating> $ratingClass
+     *
      * @return array<string, string>
      */
     public static function getXlsFields(array $where, string $ratingClass): array
@@ -126,7 +134,7 @@ class RatingData extends Data
         /** @var EloquentCollection<int, BaseRating> $ratings */
         $ratings = $ratingClass::withExtraAttributes($where)->ordered()->get();
         $ratings = $ratings
-            ->reject(static fn (RatingContract $rating): bool => $rating->parent_id !== null)
+            ->reject(static fn (RatingContract $rating): bool => null !== $rating->parent_id)
             ->values();
         $ratings->loadMissing('children');
 
@@ -134,7 +142,8 @@ class RatingData extends Data
     }
 
     /**
-     * @param  iterable<int, RatingContract>  $ratings
+     * @param iterable<int, RatingContract> $ratings
+     *
      * @return array<string, string>
      */
     public static function criteriaToXlsFields(iterable $ratings): array
@@ -146,12 +155,12 @@ class RatingData extends Data
         $fields = [];
 
         foreach ($ratings as $rating) {
-            if ($rating->parent_id !== null) {
+            if (null !== $rating->parent_id) {
                 continue;
             }
 
             $label = self::formFieldLabel($rating);
-            if ($label === '') {
+            if ('' === $label) {
                 $label = 'Rating '.$rating->id;
             }
 

@@ -1,3 +1,15 @@
+---
+title: "official laravel design theme analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "official laravel design theme analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Analisi Tema Ufficiale Laravel Bootstrap Italia
 
 ## 🎯 Executive Summary

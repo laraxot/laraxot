@@ -1,3 +1,15 @@
+---
+title: "it homepage agid alignment"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "it homepage agid alignment"
+issues: []
+discussions: []
+status: draft
+---
+
 ## obiettivo
 
 Rendere la homepage localizzata `/it/` identica al riferimento AGID (Design Comuni) per struttura, gerarchie tipografiche, spaziature, colori e componenti.

@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Modules\UI\Actions\Block;
 
 use Spatie\QueueableAction\QueueableAction;
+<<<<<<< HEAD
+use UnexpectedValueException;
+=======
+>>>>>>> f5ffd8b4 (.)
 
 /**
  * Risolve dati block localizzati; delega al modulo Cms se presente.
@@ -14,8 +18,12 @@ final class ResolveLocalizedBlockDataAction
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
+     * @param  array<string, mixed>  $viewParams
+=======
      * @param array<string, mixed> $viewParams
      *
+>>>>>>> f5ffd8b4 (.)
      * @return array<string, mixed>
      */
     public function execute(array $viewParams): array
@@ -37,6 +45,10 @@ final class ResolveLocalizedBlockDataAction
     }
 
     /**
+<<<<<<< HEAD
+     * @param  array<array-key, mixed>  $data
+=======
+>>>>>>> f5ffd8b4 (.)
      * @return array<string, mixed>
      */
     private function normalizeViewData(mixed $data): array
@@ -49,7 +61,11 @@ final class ResolveLocalizedBlockDataAction
 
         foreach ($data as $key => $value) {
             if (! is_string($key)) {
+<<<<<<< HEAD
+                throw new UnexpectedValueException('Block view data must have string keys.');
+=======
                 throw new \UnexpectedValueException('Block view data must have string keys.');
+>>>>>>> f5ffd8b4 (.)
             }
 
             $viewData[$key] = $value;

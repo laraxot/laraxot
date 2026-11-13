@@ -5,20 +5,14 @@ declare(strict_types=1);
 return [
     'fields' => [
         'newstate' => [
-            'label' => 'newstate',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'pack' => [
-            'label' => 'pack',
-            'description' => 'pack',
-            'helper_text' => 'pack',
-            'placeholder' => 'pack',
             'tooltip' => '',
         ],
         'icon' => [
-            'label' => 'icon',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -35,7 +29,7 @@ return [
         ],
         'label' => 'Icon Picker',
         'sort' => 1,
-        'icon' => 'heroicon-o-collection',
+        'icon' => 'heroicon-o-rectangle-stack',
     ],
     'actions' => [
         'create' => [
@@ -46,6 +40,9 @@ return [
         ],
         'delete' => [
             'label' => 'Elimina Icon Picker',
+        ],
+        'icon' => [
+            'icon' => 'icon',
         ],
     ],
 ];

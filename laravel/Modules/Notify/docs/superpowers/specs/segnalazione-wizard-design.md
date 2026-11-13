@@ -1,3 +1,15 @@
+---
+title: "segnalazione wizard design"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "segnalazione wizard design"
+issues: []
+discussions: []
+status: draft
+---
+
 # Design: Ticket Wizard Widget (Filament)
 
 ## Obiettivo

@@ -1,11 +1,15 @@
 ---
+qmd: "performance optimization"
+issues: []
+discussions: []
 title: "Performance Optimization — Module Seo"
 type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [performance, optimization, tokens, context]
 related:
-  - ../../docs/wiki/concepts/llm-wiki-operational-discipline.md
+  - ../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md
+status: active
 ---
 
 # Performance Optimization — Module **Seo**
@@ -113,7 +117,7 @@ context-mode ctx-stats
 
 ## Riferimenti
 
-- [Global Performance Guide](../../docs/wiki/concepts/performance-optimization.md)
+- [Global Performance Guide](../../docs/wiki/concepts/performance-optimization.md) _(target mancante, verificato 2026-10-08)_
 - [On-Demand Pattern](./ON-DEMAND-PATTERN.md)
 - [QMD Setup](./QMD-SETUP.md)
 

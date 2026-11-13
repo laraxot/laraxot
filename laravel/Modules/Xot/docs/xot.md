@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Modulo Xot"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Modulo Xot"
+---
+>>>>>>> laraxot/dev
 # Modulo Xot
 
 ## Descrizione
@@ -9,17 +22,26 @@ Modulo core che fornisce funzionalità di base e utility per l'intero sistema.
 ## Componenti Principali
 
 ### Datas
+<<<<<<< HEAD
 - [MetatagData](../../Modules/Xot/docs/datas/MetatagData.md) - Gestione meta tag e configurazione Filament
 
 ### Actions
 - Panel
   - [ApplyMetatagToPanelAction](../../Modules/Xot/docs/actions/panel/ApplyMetatagToPanelAction.md) - Applica configurazioni metatag al pannello Filament
+=======
+- [MetatagData](datas/metatagdata.md) - Gestione meta tag e configurazione Filament
+
+### Actions
+- Panel
+  - [ApplyMetatagToPanelAction](actions/panel/applymetatagtopanelaction.md) - Applica configurazioni metatag al pannello Filament
+>>>>>>> laraxot/dev
 
 ## Errori PHPStan Comuni
 - [Registro Errori](../../Modules/Xot/docs/phpstan/errors.md)
 - [Guide alla Correzione](../../Modules/Xot/docs/phpstan/fixes.md)
 
 ## Best Practices
+<<<<<<< HEAD
 - [Convenzioni Namespace](../../Modules/Xot/docs/NAMESPACE-CONVENTIONS.md)
 - [Linee Guida PHPStan](../../Modules/Xot/docs/PHPSTAN_LIVELLO10_LINEE_GUIDA.md)
 
@@ -27,3 +49,12 @@ Modulo core che fornisce funzionalità di base e utility per l'intero sistema.
 - [Roadmap](../../Modules/Xot/docs/roadmap.md)
 - [Implementazione](../../Modules/Xot/docs/implementation.md)
 - [Integrazione](../../Modules/Xot/docs/integration.md)
+=======
+- [Convenzioni Namespace](namespace-conventions.md)
+- [Linee Guida PHPStan](../../Modules/Xot/docs/PHPSTAN_LIVELLO10_LINEE_GUIDA.md)
+
+## Collegamenti
+- [Roadmap](roadmap.md)
+- [Implementazione](../../Modules/Xot/docs/implementation.md)
+- [Integrazione](../../Modules/Xot/docs/integration.md) 
+>>>>>>> laraxot/dev

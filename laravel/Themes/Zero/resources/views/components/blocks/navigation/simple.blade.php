@@ -9,7 +9,7 @@
  */
 --}}
 
-<nav class="simple-navigation" role="navigation" aria-label="Navigation">
+<nav class="simple-navigation" role="navigation" aria-label="{{ __('pub_theme::blocks.navigation_simple.main.aria_label') }}">
     <div class="navigation-wrapper">
         {{-- Contenuto di base della navigazione --}}
         @if(isset($data['title']) || isset($data['brand']))
@@ -28,7 +28,7 @@
                             class="nav-link"
                             @if($item['external'] ?? false) target="_blank" rel="noopener noreferrer" @endif
                         >
-                            {{ $item['label'] ?? $item['title'] ?? 'Menu Item' }}
+                            {{ $item['label'] ?? $item['title'] ?? __('pub_theme::blocks.navigation_simple.fallback_item.label') }}
                         </a>
                     </li>
                 @endforeach
@@ -38,7 +38,7 @@
         {{-- Fallback content --}}
         @if(!isset($data['menu_items']) || empty($data['menu_items']))
             <div class="nav-placeholder">
-                <p>Simple navigation component loaded successfully</p>
+                <p>{{ __('pub_theme::blocks.navigation_simple.placeholder.message') }}</p>
             </div>
         @endif
     </div>

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Risoluzione Conflitto IconMediaColumn.php"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "conflict resolution iconmediacolumn"
 related:
   - "./webm.md"
+status: draft
 ---
 # Risoluzione Conflitto IconMediaColumn.php
 
@@ -86,12 +89,10 @@ Il file `Modules/Media/app/Filament/Tables/Columns/IconMediaColumn.php` presenta
 
 ## Collegamenti
 
-- [module_media.md](module_media.md)
-- [filament_table_actions.md](filament_table_actions.md)
+- [module_media.md](module-media.md)
+- [filament_table_actions.md](filament-table-actions.md)
 - [Modules/Media/docs/](../docs/)
 
-<<<<<<< HEAD
 *Ultimo aggiornamento: 29 luglio 2025*
-=======
+---
 *Ultimo aggiornamento: 29 luglio 2025*
->>>>>>> laraxot/dev

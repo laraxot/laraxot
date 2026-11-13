@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Risoluzione Problemi PHPStan"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, troubleshooting]
+qmd: "Risoluzione Problemi PHPStan"
+---
+>>>>>>> laraxot/dev
 # Risoluzione Problemi PHPStan
 
 Questo documento fornisce soluzioni per i problemi comuni che si possono incontrare durante l'esecuzione di PHPStan nel progetto Laraxot.
@@ -171,4 +184,8 @@ Per ulteriori dettagli sulle soluzioni ai problemi di PHPStan, consulta:
 
 - [Documentazione PHPStan](https://phpstan.org/user-guide/getting-started)
 - [Modulo Xot - Documentazione PHPStan](../laravel/Modules/Xot/docs/PHPStan/PHPSTAN-SOLUTIONS.md)
+<<<<<<< HEAD
 - [Modulo Xot - Correzioni PDO](../laravel/Modules/Xot/docs/PHPStan/PDO_CONSTANTS_FIXES.md)
+=======
+- [Modulo Xot - Correzioni PDO](../laravel/Modules/Xot/docs/PHPStan/PDO_CONSTANTS_FIXES.md) 
+>>>>>>> laraxot/dev

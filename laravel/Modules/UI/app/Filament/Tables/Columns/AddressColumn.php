@@ -51,7 +51,11 @@ class AddressColumn extends GroupColumn
     /**
      * Sostituisce l'elenco dei campi mostrati.
      *
+<<<<<<< HEAD
+     * @param  list<string>  $fields
+=======
      * @param list<string> $fields
+>>>>>>> f5ffd8b4 (.)
      */
     public function fields(array $fields): static
     {

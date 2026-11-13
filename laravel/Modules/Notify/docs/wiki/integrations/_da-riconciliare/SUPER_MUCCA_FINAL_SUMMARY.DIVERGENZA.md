@@ -1,10 +1,15 @@
 ---
+qmd: "SUPER MUCCA FINAL SUMMARY.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: SUPER_MUCCA_FINAL_SUMMARY.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: super-mucca-final-summary.divergenza.md
 ---
 
 # Divergenza: `SUPER_MUCCA_FINAL_SUMMARY.md`

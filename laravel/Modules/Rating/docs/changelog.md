@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Changelog (pointer)"
 type: reference
 tags: [changelog, pointer, rating]
@@ -8,9 +10,10 @@ qmd: "rating changelog pointer canonical"
 canonical: ./CHANGELOG.md
 related:
   - ./CHANGELOG.md
+status: stub
 ---
 
-# Changelog — pointer
+# Changelog: pointer
 
 Il changelog canonico del modulo Rating è **[CHANGELOG.md](./CHANGELOG.md)**.
 

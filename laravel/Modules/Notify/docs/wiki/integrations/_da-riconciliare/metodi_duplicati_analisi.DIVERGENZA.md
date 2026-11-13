@@ -1,10 +1,15 @@
 ---
+qmd: "metodi duplicati analisi.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: metodi_duplicati_analisi.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: metodi_duplicati_analisi.divergenza.md
 ---
 
 # Divergenza: `metodi_duplicati_analisi.md`

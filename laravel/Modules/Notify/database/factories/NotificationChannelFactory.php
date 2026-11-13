@@ -7,8 +7,6 @@ namespace Modules\Notify\Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Notify\Models\NotificationChannel;
 
-use function Safe\json_encode;
-
 /**
  * @extends Factory<NotificationChannel>
  */
@@ -27,7 +25,7 @@ class NotificationChannelFactory extends Factory
         return [
             'name' => $this->faker->word(),
             'driver' => 'email',
-            'config' => json_encode(['smtp_host' => 'localhost']),
+            'config' => ['smtp_host' => 'localhost'],
             'is_enabled' => true,
             'priority' => 1];
     }

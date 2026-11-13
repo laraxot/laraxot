@@ -12,6 +12,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
+uses(TestCase::class);
 describe('Notification Type Business Logic', function () {
     it('can create notification type with basic information', function () {
         $typeData = [

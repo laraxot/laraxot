@@ -1,4 +1,5 @@
 ---
+created: 2026-09-26
 title: "Header logged — dropdown UX spec"
 type: concept
 updated: 2026-06-05
@@ -11,8 +12,9 @@ related:
   - header-logged-in-parity-delta.md
   - ../../../../../../docs/stories/STORY-147-ux-design-header-logged-in.md
   - ../../visual-comparison/header/logged-dropdown.png
-  - ../design-comuni/raw/cmp-header.hbs
+  - ../../design-comuni/raw/cmp-header.hbs
 qmd: "header logged dropdown mobile avatar only design comuni slim ux segnalazione area personale"
+status: draft
 ---
 
 # Header logged — dropdown UX

@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN_COVARIANCE_ISSUES"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Covariance Issues - Eloquent Relationships
 
 ## Problema

@@ -1,10 +1,15 @@
 ---
+qmd: "sessione 100 percent.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: SESSIONE_100_PERCENT.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: sessione-100-percent.divergenza.md
 ---
 
 # Divergenza: `SESSIONE_100_PERCENT.md`

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Notify\Database\Factories\NotificationTypeFactory;
-use Override;
 
 /**
  * @property int $id
@@ -25,7 +24,7 @@ use Override;
  * @method static Builder<static>|NotificationType newQuery()
  * @method static Builder<static>|NotificationType query()
  *
- * @mixin \Eloquent
+ * @mixin Model
  */
 class NotificationType extends Model
 {

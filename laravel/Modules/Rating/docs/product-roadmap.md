@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating - Product Roadmap"
 type: guide
 tags: [product, roadmap, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "product roadmap"
 related:
   - "./product-strategy.md"
+status: draft
 ---
 
 # Rating - Product Roadmap

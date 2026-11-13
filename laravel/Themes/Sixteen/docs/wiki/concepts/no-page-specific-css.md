@@ -1,7 +1,15 @@
 ---
+title: "no page specific css"
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "no page specific css"
+issues: []
+discussions: []
 name: no-page-specific-css
 description: CSS globale per componenti — vietato selettori per pagina o widget specifico
 type: concept
+status: draft
 ---
 
 # No Page-Specific CSS Rule

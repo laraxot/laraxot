@@ -1,3 +1,9 @@
+---
+title: "Employee - 08-DASHBOARD-ANALYTICS-REPORTING"
+module: Employee
+bmad: true
+status: active
+---
 # 08 - Dashboard Analytics e Reporting
 
 ## Panoramica

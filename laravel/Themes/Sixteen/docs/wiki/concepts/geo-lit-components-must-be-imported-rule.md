@@ -1,7 +1,15 @@
 ---
+title: "geo lit components must be imported rule"
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "geo lit components must be imported rule"
+issues: []
+discussions: []
 name: geo-lit-components-must-be-imported-rule
 description: "OGNI componente Lit nel modulo Geo deve essere importato in Themes/Sixteen/resources/js/app.js — altrimenti il browser non riconosce il custom element"
 type: rule
+status: draft
 ---
 
 # Geo Lit Components Must Be Imported Rule

@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Pacchetti e Risorse Consigliate"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, development]
+qmd: "Pacchetti e Risorse Consigliate"
+---
+>>>>>>> laraxot/dev
 # Pacchetti e Risorse Consigliate
 
 ## Frontend

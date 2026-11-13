@@ -17,7 +17,7 @@ declare(strict_types=1);
             type="button"
             wire:click="$set('{{ $getStatePath() }}', {{ (int) ($getState() ?? 0) }} - 1)"
             class="fi-icon-btn flex h-6 w-6 items-center justify-center rounded-full text-gray-400 outline-none transition duration-75 hover:text-gray-500 focus-visible:ring-2 focus-visible:ring-primary-600"
-            aria-label="Move up"
+            aria-label="{{ __('ui::components.order_column.move_up.label') }}"
         >
             <x-heroicon-m-chevron-up class="h-4 w-4" />
         </button>
@@ -30,7 +30,7 @@ declare(strict_types=1);
             type="button"
             wire:click="$set('{{ $getStatePath() }}', {{ (int) ($getState() ?? 0) }} + 1)"
             class="fi-icon-btn flex h-6 w-6 items-center justify-center rounded-full text-gray-400 outline-none transition duration-75 hover:text-gray-500 focus-visible:ring-2 focus-visible:ring-primary-600"
-            aria-label="Move down"
+            aria-label="{{ __('ui::components.order_column.move_down.label') }}"
         >
             <x-heroicon-m-chevron-down class="h-4 w-4" />
         </button>

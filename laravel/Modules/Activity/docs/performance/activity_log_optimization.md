@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_2EloWs
 =======
-=======
-<<<<<<< HEAD
-<<<<<<< .merge_file_I8cEDd
->>>>>>> 13cf1831 (.)
 ---
 title: "Activity Log Optimization - Activity Module"
 type: note
@@ -13,15 +8,7 @@ updated: 2026-10-23
 tags: [docs, activity, performance]
 qmd: "activity log optimization - activity module activity"
 ---
-<<<<<<< HEAD
 >>>>>>> .merge_file_MK3VGw
-=======
-
-See canonical documentation: ../../../../Themes/docs/shared-components/ACTIVITY_LOG_OPTIMIZATION.md
-=======
-=======
->>>>>>> 472c43a3 (.)
->>>>>>> 13cf1831 (.)
 # Activity Log Optimization - Activity Module
 
 ## 🚨 Critical Issues Identified
@@ -305,10 +292,3 @@ CREATE INDEX idx_activity_log_causer_type ON activity_log(causer_type);
 4. **Long-term**: Advanced performance strategies
 
 This document provides the roadmap for resolving the performance issues in the Activity module while maintaining data integrity and functionality.
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> .merge_file_v597Wq
-=======
->>>>>>> 472c43a3 (.)
->>>>>>> 13cf1831 (.)

@@ -3,8 +3,8 @@
     "private": true,
     "version": "1.0.0",
     "type": "module",
-    "description": "Sixteen Theme - Bootstrap Italia compliant theme for Italian PA websites",
-    "keywords": ["bootstrap-italia", "laravel", "theme", "italian-pa", "accessibility"],
+    "description": "Sixteen Theme - DesignComuni-compatible Tailwind theme for Italian PA websites",
+    "keywords": ["design-comuni", "laravel", "theme", "italian-pa", "accessibility"],
     "scripts": {
         "dev": "vite",
         "build": "vite build --config vite.config.optimized.js",
@@ -31,8 +31,6 @@
         "preflight": "npm run validate && npm run build:production"
     },
     "dependencies": {
-        "bootstrap-italia": "^2.8.8",
-        "@popperjs/core": "^2.11.8",
         "alpinejs": "^3.14.1",
         "@alpinejs/intersect": "^3.14.1",
         "@alpinejs/persist": "^3.14.1",

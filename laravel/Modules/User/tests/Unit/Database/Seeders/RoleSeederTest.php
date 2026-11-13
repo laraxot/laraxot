@@ -1,7 +1,10 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< .merge_file_JYRCcw
 
+=======
+>>>>>>> .merge_file_QJ0gdB
 use Modules\User\Database\Seeders\RoleSeeder;
 use Modules\User\Models\Role;
 use Modules\User\Tests\TestCase;
@@ -22,7 +25,11 @@ it('creates expected roles', function (): void {
         'guest',
     ];
 
+<<<<<<< .merge_file_JYRCcw
     $seeder = new RoleSeeder();
+=======
+    $seeder = new RoleSeeder;
+>>>>>>> .merge_file_QJ0gdB
     $seeder->setContainer(app());
     $seeder->run();
 
@@ -35,7 +42,11 @@ it('creates expected roles', function (): void {
 });
 
 it('is idempotent when run multiple times', function (): void {
+<<<<<<< .merge_file_JYRCcw
     $seeder = new RoleSeeder();
+=======
+    $seeder = new RoleSeeder;
+>>>>>>> .merge_file_QJ0gdB
     $seeder->setContainer(app());
 
     $seeder->run();

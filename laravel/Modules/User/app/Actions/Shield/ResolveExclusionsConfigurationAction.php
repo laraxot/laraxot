@@ -64,10 +64,7 @@ class ResolveExclusionsConfigurationAction
             return [];
         }
 
-        return array_values(array_map(
-            static fn (mixed $item): string => is_string($item) ? $item : '',
-            $res
-        ));
+        return array_values(array_filter($res, is_string(...)));
     }
 
     /**
@@ -81,10 +78,7 @@ class ResolveExclusionsConfigurationAction
             return [];
         }
 
-        return array_values(array_map(
-            static fn (mixed $item): string => is_string($item) ? $item : '',
-            $res
-        ));
+        return array_values(array_filter($res, is_string(...)));
     }
 
     /**
@@ -98,9 +92,6 @@ class ResolveExclusionsConfigurationAction
             return [];
         }
 
-        return array_values(array_map(
-            static fn (mixed $item): string => is_string($item) ? $item : '',
-            $res
-        ));
+        return array_values(array_filter($res, is_string(...)));
     }
 }

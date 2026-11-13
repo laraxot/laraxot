@@ -1,4 +1,15 @@
-<<<<<<< HEAD
+---
+title: "roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap"
+issues: []
+discussions: []
+status: active
+---
+
 # 🎯 SEO MODULE - ROADMAP 2025
 
 **Modulo**: Seo ([Description])  
@@ -8,7 +19,6 @@
 **Filament**: 🚧 4.x Compatibile  
 
 ---
-
 ## 🎯 MODULE OVERVIEW
 
 Il modulo **Seo** [descrizione del modulo].
@@ -214,7 +224,7 @@ Seo Module
 ---
 
 *Questa roadmap è specifica per il modulo Seo e viene aggiornata regolarmente in base ai progressi e alle nuove esigenze.*
-=======
+---
 # Roadmap (Module Seo)
 
 ## Current roadmap
@@ -270,17 +280,17 @@ Seo Module
 - **Tech Stack**: Laravel 11.x, Filament 4.x, PHPStan Level 9
 
 ## Analisi PHPStan
-- [Livello 1](phpstan/level_1.md) - Errori base e struttura
-- [Livello 2](phpstan/level_2.md) - Tipi di base
-- [Livello 3](phpstan/level_3.md) - Tipi più rigorosi
-- [Livello 4](phpstan/level_4.md) - Tipi di array
-- [Livello 5](phpstan/level_5.md) - Tipi di oggetti
-- [Livello 6](phpstan/level_6.md) - Tipi di callback
-- [Livello 7](phpstan/level_7.md) - Tipi generici
-- [Livello 8](phpstan/level_8.md) - Tipi union
-- [Livello 9](phpstan/level_9.md) - Tipi avanzati
-- [Livello 10](phpstan/level_10.md) - Tipi massimi
-- [Livello Max](phpstan/level_max.md) - Analisi completa
+- [Livello 1](phpstan/level_1.md) _(target mancante, verificato 2026-10-08)_ - Errori base e struttura
+- [Livello 2](phpstan/level_2.md) _(target mancante, verificato 2026-10-08)_ - Tipi di base
+- [Livello 3](phpstan/level_3.md) _(target mancante, verificato 2026-10-08)_ - Tipi più rigorosi
+- [Livello 4](phpstan/level_4.md) _(target mancante, verificato 2026-10-08)_ - Tipi di array
+- [Livello 5](phpstan/level_5.md) _(target mancante, verificato 2026-10-08)_ - Tipi di oggetti
+- [Livello 6](phpstan/level_6.md) _(target mancante, verificato 2026-10-08)_ - Tipi di callback
+- [Livello 7](phpstan/level_7.md) _(target mancante, verificato 2026-10-08)_ - Tipi generici
+- [Livello 8](phpstan/level_8.md) _(target mancante, verificato 2026-10-08)_ - Tipi union
+- [Livello 9](phpstan/level_9.md) _(target mancante, verificato 2026-10-08)_ - Tipi avanzati
+- [Livello 10](phpstan/level_10.md) _(target mancante, verificato 2026-10-08)_ - Tipi massimi
+- [Livello Max](phpstan/level_max.md) _(target mancante, verificato 2026-10-08)_ - Analisi completa
 
 ## Task & Progress
 
@@ -309,21 +319,21 @@ Seo Module
 ## Analisi di Sistema
 
 ### Performance
-- [Analisi Performance](roadmap/performance.md)
+- [Analisi Performance](roadmap/performance.md) _(target mancante, verificato 2026-10-08)_
   - Page analysis
   - Sitemap generation
   - Analytics processing
   - Cache strategy
 
 ### Design e UX
-- [Design System](roadmap/design_ux.md)
+- [Design System](roadmap/design_ux.md) _(target mancante, verificato 2026-10-08)_
   - SEO Manager
   - Analytics Dashboard
   - Content Analyzer
   - Report Generator
 
 ### Sicurezza
-- [Analisi Sicurezza](roadmap/sicurezza.md)
+- [Analisi Sicurezza](roadmap/sicurezza.md) _(target mancante, verificato 2026-10-08)_
   - Data Protection
   - Access Control
   - Analytics Security
@@ -373,17 +383,17 @@ Seo Module
 ## Documentazione
 
 ### Tecnica
-- [API Reference](roadmap/api_reference.md)
-- [Architecture](roadmap/architecture.md)
-- [Performance Guide](roadmap/performance_guide.md)
-- [Security Guide](roadmap/security_guide.md)
-- [PHPStan Analysis](phpstan/)
+- [API Reference](roadmap/api_reference.md) _(target mancante, verificato 2026-10-08)_
+- [Architecture](roadmap/architecture.md) _(target mancante, verificato 2026-10-08)_
+- [Performance Guide](roadmap/performance_guide.md) _(target mancante, verificato 2026-10-08)_
+- [Security Guide](roadmap/security_guide.md) _(target mancante, verificato 2026-10-08)_
+- [PHPStan Analysis](phpstan/) _(target mancante, verificato 2026-10-08)_
 
 ### Utente
-- [SEO Guide](roadmap/seo_guide.md)
-- [Admin Guide](roadmap/admin_guide.md)
-- [Best Practices](roadmap/best_practices.md)
-- [Troubleshooting](roadmap/troubleshooting.md)
+- [SEO Guide](roadmap/seo_guide.md) _(target mancante, verificato 2026-10-08)_
+- [Admin Guide](roadmap/admin_guide.md) _(target mancante, verificato 2026-10-08)_
+- [Best Practices](roadmap/best_practices.md) _(target mancante, verificato 2026-10-08)_
+- [Troubleshooting](roadmap/troubleshooting.md) _(target mancante, verificato 2026-10-08)_
 
 ## Next Steps
 
@@ -408,7 +418,7 @@ Seo Module
 ## Analisi Statica del Codice (PHPStan)
 
 L'analisi statica del codice è stata effettuata utilizzando PHPStan a diversi livelli di rigore.
-I risultati completi sono disponibili nella cartella [docs/phpstan](phpstan/).
+I risultati completi sono disponibili nella cartella [docs/phpstan](phpstan/) _(target mancante, verificato 2026-10-08)_.
 
 ### Stato Attuale
 
@@ -452,5 +462,3 @@ Secondo le "Regole Windsurf per base_predict_fila3_mono", gli obiettivi per l'an
 ## Collegamenti
 
 [⬅️ Torna alla Roadmap Principale](/project_docs/roadmap.md)
-
->>>>>>> laraxot/dev

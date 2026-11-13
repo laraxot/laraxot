@@ -15,25 +15,41 @@ class CustomRelationAction
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
      * Undocumented function.
+=======
+     * Aggiorna i record correlati di una CustomRelation dal payload del form.
+     *
+     * La relazione custom non ha un'operazione di associazione (save/attach/sync): resta solo
+     * l'aggiornamento dei campi di ogni riga, quindi il risultato di UpdateAction non serve.
+>>>>>>> laraxot/dev
      */
     public function execute(Model $model, RelationDTO $relationDTO): void
     {
         // Assert::isInstanceOf($rows = $relationDTO->rows, BelongsToMany::class);
         // dddx(['model' => $model, 'relationDTO' => $relationDTO]);
+<<<<<<< HEAD
         $models = [];
         $ids = [];
+=======
+>>>>>>> laraxot/dev
         $related = $relationDTO->related;
         $keyName = $relationDTO->related->getKeyName();
         foreach ($relationDTO->data as $data) {
             Assert::isArray($data);
             /** @var array<string, mixed> $data PHPStan: ensure correct type */
             if (\in_array($keyName, array_keys($data), false)) {
+<<<<<<< HEAD
                 $res = app(UpdateAction::class)->execute($related, $data, []);
                 $ids[] = $res->getKey();
                 $models[] = $res;
             } else {
                 dddx(['model' => $model, 'relationDTO' => $relationDTO]);
+=======
+                app(UpdateAction::class)->execute($related, $data, []);
+            } else {
+                throw new \LogicException('Update\CustomRelationAction: rows without primary key not implemented, relation ['.$relationDTO->name.']');
+>>>>>>> laraxot/dev
             }
         }
     }

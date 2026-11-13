@@ -5,6 +5,10 @@ use Modules\Xot\Tests\TestCase;
 
 use function Safe\file_get_contents;
 use function Safe\glob;
+<<<<<<< HEAD
+=======
+use function Safe\preg_match;
+>>>>>>> laraxot/dev
 
 uses(TestCase::class);
 
@@ -52,6 +56,15 @@ it('every list page declares its table columns', function (): void {
                 continue;
             }
 
+<<<<<<< HEAD
+=======
+            // Una base astratta non e' mai renderizzata: la pagina concreta che la estende
+            // dichiara le colonne (o la Resource ospitante ha la sua classe Tables/).
+            if (preg_match('/^\s*abstract\s+class\s/m', $source) === 1) {
+                continue;
+            }
+
+>>>>>>> laraxot/dev
             // La pagina va bene se dichiara le colonne, oppure se la Resource
             // che la ospita ha la classe Tables/ che XotBaseResource cerca.
             $resourceDir = dirname($path, 2);

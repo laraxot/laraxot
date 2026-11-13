@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Consolidamento documentazione"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "documentation consolidation"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 # Consolidamento documentazione
 

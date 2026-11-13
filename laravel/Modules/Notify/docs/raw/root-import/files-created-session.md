@@ -1,4 +1,21 @@
+---
+title: "files created session"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "files created session"
+issues: []
+discussions: []
+---
+
 # Files Created in Session 007
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 **Session**: 007 - Complete Visual Parity Assessment & Roadmap
 **Date**: 2026-04-03
@@ -6,6 +23,14 @@
 
 ---
 
+title: "files created session"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "files created session"
+issues: []
+discussions: []
 ## 📊 File Inventory
 
 ### Scripts (Executable)
@@ -253,7 +278,7 @@ cat laravel/Themes/Sixteen/docs/pages/persona/DETAILED-ANALYSIS.md
 # 4. Start CSS fixing
 cd laravel/Themes/Sixteen
 vim resources/css/app.css
-npm run build && npm run copy
+npm run build
 ```
 
 ### Weekly
@@ -274,7 +299,7 @@ diff <(cat laravel/Themes/Sixteen/docs/visual-parity-data.json) <(previous.json)
 2. Take screenshots (provided by script)
 3. Identify CSS changes needed
 4. Apply fixes
-5. Run npm run build && npm run copy
+5. Run npm run build
 6. Take new screenshots
 7. Compare old vs new
 8. Commit with before/after attached

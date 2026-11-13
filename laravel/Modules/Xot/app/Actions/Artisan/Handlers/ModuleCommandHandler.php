@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Actions\Artisan\Handlers;
 
+<<<<<<< HEAD
 use Modules\Xot\Actions\Artisan\Contracts\CommandHandlerInterface;
+=======
+>>>>>>> laraxot/dev
 use Modules\Xot\Actions\Artisan\RunArtisanCommandAction;
 use Webmozart\Assert\Assert;
 
 /**
  * Handles module-related artisan commands.
+<<<<<<< HEAD
  */
 class ModuleCommandHandler implements CommandHandlerInterface
 {
@@ -31,11 +35,34 @@ class ModuleCommandHandler implements CommandHandlerInterface
         }
 
         return '';
+=======
+ *
+ * @deprecated Residuo: l'interfaccia dei handler e il registry sono stati rimossi, i comandi `module-*`
+ *             li serve `HandleArtisanActRequestAction` tramite `ArtisanActEnum`. Nessun chiamante.
+ */
+class ModuleCommandHandler
+{
+    /** @var list<string> */
+    private const array MODULE_COMMANDS = ['module-list', 'module-disable', 'module-enable'];
+
+    public function handle(string $moduleName = ''): string
+    {
+        return match ($this->getCurrentCommand()) {
+            'module-list' => $this->listModules(),
+            'module-disable' => $this->disableModule($moduleName),
+            'module-enable' => $this->enableModule($moduleName),
+            default => '',
+        };
+>>>>>>> laraxot/dev
     }
 
     public function supports(string $command): bool
     {
+<<<<<<< HEAD
         return isset(self::MODULE_COMMANDS[$command]);
+=======
+        return in_array($command, self::MODULE_COMMANDS, true);
+>>>>>>> laraxot/dev
     }
 
     private function getCurrentCommand(): string
@@ -46,7 +73,11 @@ class ModuleCommandHandler implements CommandHandlerInterface
         return $command;
     }
 
+<<<<<<< HEAD
     private function listModules(string $moduleName): string
+=======
+    private function listModules(): string
+>>>>>>> laraxot/dev
     {
         return app(RunArtisanCommandAction::class)->execute('module:list');
     }

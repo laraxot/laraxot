@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "NestedSet Migration Best Practices - Tenant Module"
 module: "Tenant"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "nestedset migration best practices"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # NestedSet Migration Best Practices - Tenant Module
 

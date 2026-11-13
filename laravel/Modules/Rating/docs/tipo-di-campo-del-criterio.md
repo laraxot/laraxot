@@ -1,3 +1,15 @@
+---
+title: "tipo di campo del criterio"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "tipo di campo del criterio"
+issues: []
+discussions: []
+status: draft
+---
+
 # Il tipo di campo di un criterio: intero, decimale, select, radio, testo libero
 
 Analisi, non implementazione. Prosegue

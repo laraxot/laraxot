@@ -14,6 +14,7 @@ related:
   - ../concepts/folio-route-params-mount.md
   - ../../../../../../docs/wiki/memories/volt-route-params-mount-contract.md
   - ../../../../../../docs/wiki/rules/laravel/volt-route-params-via-mount.md
+status: draft
 ---
 
 # Volt in pagine Folio — `@volt` statico obbligatorio

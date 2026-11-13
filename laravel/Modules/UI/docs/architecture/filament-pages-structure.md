@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "filament pages structure"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament pages structure"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Struttura Pagine Filament - Modulo UI
 
 ## Panoramica

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 return [
     'fields' => [
         'key' => ['label' => 'key'],
@@ -9,3 +10,6 @@ return [
         'expiration' => ['label' => 'expiration'],
     ],
 ];
+=======
+return [];
+>>>>>>> laraxot/dev

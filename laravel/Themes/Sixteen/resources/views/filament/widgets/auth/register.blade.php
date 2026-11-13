@@ -1,74 +1,69 @@
-{{-- RegisterWidget — vestito Sixteen; logica in Modules\User\Filament\Widgets\Auth\RegisterWidget --}}
+{{--
+  Callers: Themes/Sixteen auth-register.blade.php → @livewire(Gdpr RegisterWidget).
+  Vestito FO: campi <x-auth.field>/<x-auth.check> e riepilogo <x-auth.error-summary>, gli stessi componenti e la stessa resa
+  del login (stile in components/auth/assets.blade.php, DCP-290). Logica create-user/consensi nel widget modulo.
+--}}
+<div>
+    <x-auth.error-summary />
 
-<x-filament-widgets::widget>
-    <x-filament::section class="rounded-none border-0 shadow-none">
-        <div class="space-y-6 p-5 sm:p-7">
-            @php
-                $registerErrors = collect($errors->all())->filter()->unique()->values();
-            @endphp
+    <form
+        wire:submit="submit"
+        class="w-full min-w-0"
+        aria-labelledby="auth-register-heading"
+        novalidate
+    >
+        <fieldset>
+            <legend>{{ __('gdpr::register.sections.user_info') }}</legend>
+            <div class="auth-fields">
+                <x-auth.field name="first_name" :label="__('gdpr::register.fields.first_name.label')" autocomplete="given-name" />
+                <x-auth.field name="last_name" :label="__('gdpr::register.fields.last_name.label')" autocomplete="family-name" />
+                <x-auth.field name="email" type="email" :label="__('gdpr::register.fields.email.label')" autocomplete="email" :hint="__('gdpr::register.fields.email.helper_text')" />
+                <x-auth.field name="password" type="password" :label="__('gdpr::register.fields.password.label')" autocomplete="new-password" :hint="__('gdpr::register.fields.password.helper_text')" revealable />
+                <x-auth.field name="password_confirmation" type="password" :label="__('gdpr::register.fields.password_confirmation.label')" autocomplete="new-password" revealable />
+            </div>
+        </fieldset>
 
-            @if ($registerErrors->isNotEmpty())
-                <div
-                    class="rounded-xl border-2 border-red-300 bg-red-50 px-4 py-4 shadow-sm"
-                    role="alert"
-                    aria-live="assertive"
-                >
-                    <div class="flex items-start gap-3">
-                        <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-700" aria-hidden="true">
-                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M18 10A8 8 0 114.293 4.293 8 8 0 0118 10zm-8.75-3.25a.75.75 0 011.5 0v3.5a.75.75 0 01-1.5 0v-3.5zm.75 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                            </svg>
-                        </span>
-                        <div class="min-w-0">
-                            <p class="text-sm font-semibold text-red-800">
-                                {{ __('user::auth.register.failed.text') }}
-                            </p>
-                            <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-red-700">
-                                @foreach ($registerErrors as $message)
-                                    <li>{{ $message }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            @endif
+        <fieldset class="auth-consents">
+            <legend>{{ __('gdpr::register.consents.title') }}</legend>
+            <x-auth.check name="privacy_accepted" required>
+                {{ __('gdpr::register.consents.privacy_policy_label') }}
+                <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/privacy') }}" target="_blank" rel="noopener">
+                    {{ __('gdpr::register.consents.privacy_policy_link') }}
+                    <span class="sr-only"> ({{ __('gdpr::register.consents.opens_new_tab') }})</span>
+                </a>
+            </x-auth.check>
+            <x-auth.check name="terms_accepted" required>
+                {{ __('gdpr::register.consents.terms_label') }}
+                <a href="{{ \Themes\Sixteen\Infrastructure\Url\FrontofficeUrl::fromStoredUrl('/terms') }}" target="_blank" rel="noopener">
+                    {{ __('gdpr::register.consents.terms_link') }}
+                    <span class="sr-only"> ({{ __('gdpr::register.consents.opens_new_tab') }})</span>
+                </a>
+            </x-auth.check>
+            <x-auth.check name="marketing_consent">{{ __('gdpr::register.consents.marketing_label') }}</x-auth.check>
+        </fieldset>
 
-            <form
-                wire:submit="submit"
-                class="space-y-6"
-                aria-labelledby="auth-register-heading"
-                novalidate
-            >
-                <div
-                    @class([
-                        'fo-filament-form-shell rounded-xl border border-slate-200 p-4 transition-colors',
-                        'border-red-300 bg-red-50/40' => $registerErrors->isNotEmpty(),
-                    ])
-                >
-                    {{ $this->form }}
-                </div>
-
-                <x-filament::button
-                    type="submit"
-                    color="primary"
-                    wire:loading.attr="disabled"
-                    class="w-full min-h-[44px]"
-                >
-                    {{ __('user::auth.register.submit.text') }}
-                </x-filament::button>
-
-                <nav class="border-t border-slate-200 pt-4 text-sm" aria-label="{{ __('user::auth.register.already_have_account.text') }}">
-                    <p class="text-slate-600">
-                        {{ __('user::auth.register.already_have_account.text') }}
-                        <a
-                            href="{{ url('/' . app()->getLocale() . '/auth/login') }}"
-                            class="font-semibold text-italia-blue-700 underline decoration-italia-blue-500 underline-offset-2 hover:text-italia-blue-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2"
-                        >
-                            {{ __('user::auth.register.login.text') }}
-                        </a>
-                    </p>
-                </nav>
-            </form>
-        </div>
-    </x-filament::section>
-</x-filament-widgets::widget>
+        <x-filament::button
+            type="submit"
+            color="primary"
+            wire:loading.attr="disabled"
+            wire:loading.class="opacity-70"
+            wire:target="submit"
+            class="w-full min-h-[44px]"
+            aria-describedby="auth-register-submit-status"
+        >
+            <span wire:loading.remove wire:target="submit">
+                {{ __('user::registration.actions.register.label') }}
+            </span>
+            <span wire:loading wire:target="submit" class="inline-flex items-center gap-2" role="status" aria-live="polite">
+                <svg class="h-5 w-5 animate-spin" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                </svg>
+                {{ __('fixcity::auth.register.loading.text') }}
+            </span>
+        </x-filament::button>
+        <span id="auth-register-submit-status" class="sr-only visually-hidden" wire:loading wire:target="submit" role="status" aria-live="polite">
+            {{ __('fixcity::auth.register.loading.text') }}
+        </span>
+    </form>
+</div>

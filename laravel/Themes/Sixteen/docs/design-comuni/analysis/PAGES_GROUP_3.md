@@ -1,9 +1,20 @@
+---
+title: "PAGES GROUP 3"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PAGES GROUP 3"
+issues: []
+discussions: []
+status: draft
+---
+
 # Design Comuni Pages HTML Structure Parity Analysis
 
 ## Group 3 Analysis Results
 
 ---
-
 ## Page: amministrazione
 
 ### Status: Working

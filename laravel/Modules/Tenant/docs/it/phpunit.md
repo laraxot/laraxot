@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Phpunit"
 module: "Tenant"
 type: concept
@@ -8,5 +10,7 @@ updated: 2026-07-14
 qmd: "phpunit"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 https://iwasherefirst2.medium.com/how-to-test-eloquent-models-in-a-laravel-package-3dbf30b44a19

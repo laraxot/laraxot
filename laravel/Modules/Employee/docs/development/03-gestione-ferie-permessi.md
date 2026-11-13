@@ -1,3 +1,9 @@
+---
+title: "Employee - 03-GESTIONE-FERIE-PERMESSI"
+module: Employee
+bmad: true
+status: active
+---
 # 03 - Gestione Ferie e Permessi
 
 ## Panoramica

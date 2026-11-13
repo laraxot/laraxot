@@ -1,3 +1,9 @@
+---
+title: "Employee - FILAMENT-WIDGET-3-COLUMN-BEST-PRACTICES"
+module: Employee
+bmad: true
+status: active
+---
 # Filament Widget 3-Column Layout - Ultimate Best Practices Guide
 
 ## 🏆 THE PROVEN PERFECT SOLUTION

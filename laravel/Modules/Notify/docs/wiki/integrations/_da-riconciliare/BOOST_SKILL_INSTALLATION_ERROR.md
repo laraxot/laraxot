@@ -1,10 +1,15 @@
 ---
+qmd: "BOOST SKILL INSTALLATION ERROR"
+issues: []
+discussions: []
 title: "Boost Skill Installation Error Analysis"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: boost-skill-installation-error.md
 ---
 
 # Boost Skill Installation Error Analysis

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Guida Migrazione Step By Step"
 module: "Media"
 type: concept
@@ -8,8 +10,8 @@ updated: 2026-07-14
 qmd: "guida migrazione step by step"
 related:
   - "./webm.md"
-<<<<<<< HEAD
+status: superseded
+superseded_by: migration-filament.md
 ---
-=======
 ---
->>>>>>> laraxot/dev
+---

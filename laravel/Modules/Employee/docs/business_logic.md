@@ -1,3 +1,9 @@
+---
+title: "Employee - BUSINESS_LOGIC"
+module: Employee
+bmad: true
+status: active
+---
 ## business logic – employee module
 
 This document describes the core business logic of the Employee module: time tracking, presence, scheduling, data model, and UI widgets integration. It follows Laraxot rules (strict typing, no hardcoded labels, docs in lowercase, bidirectional links).

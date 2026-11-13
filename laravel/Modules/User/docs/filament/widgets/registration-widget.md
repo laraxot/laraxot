@@ -12,9 +12,9 @@ related:
   - "./edit-user-widget.md"
   - "./registration-widget-fileupload-fix.md"
   - "./registration-widget-fileupload.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # RegistrationWidget: Widget generico per la registrazione utente
 
 ## Scopo e filosofia
@@ -43,14 +43,16 @@ Queste Action devono occuparsi di:
 4. **Documentare i punti di estensione**: ogni progetto può aggiungere nuove Action per nuovi tipi di utente.
 5. **Non citare mai tipi di utente o logiche di dominio nel modulo User**: mantenere la massima riusabilità.
 ## Collegamenti
-- [RegistrationWidget.php](../../app/Filament/Widgets/RegistrationWidget.php)
-- [EditUserWidget.php](../../app/Filament/Widgets/EditUserWidget.php) - Widget per modifica dati utente
+- [RegistrationWidget.php](../../../app/Filament/Widgets/RegistrationWidget.php)
+- [EditUserWidget.php](../../../app/Filament/Widgets/EditUserWidget.php) - Widget per modifica dati utente
+- [RegistrationWidget.php](../../../app/Filament/Widgets/RegistrationWidget.php)
+- [EditUserWidget.php](../../../app/Filament/Widgets/EditUserWidget.php) - Widget per modifica dati utente
 - [Documentazione EditUserWidget](./edit-user-widget.md) - Documentazione completa dell'EditUserWidget
 - [Documentazione Xot sulla proprietà $data](../../../xot/docs/filament/widgets/data-property.md)
 - [Esempio di Action di registrazione Doctor](../../../../Patient/app/Actions/Doctor/RegisterAction.php)
 - [Esempio di Action di registrazione Patient](../../../../Patient/app/Actions/Patient/RegisterAction.php)
-- [Documentazione generale: Registrazione Odontoiatra](../../../../../../docs/doctor-registration.md)
->>>>>>> 87273113 (.)
+- [Documentazione generale: Registrazione Odontoiatra](../../doctor-registration.md)
+- [Documentazione generale: Registrazione Odontoiatra](../../doctor-registration.md)
 - [Documentazione Xot sulla proprietà $data](../../../xot/project_docs/filament/widgets/data-property.md)
 - [Documentazione generale: Registrazione Odontoiatra](../../../../../project_docs/doctor-registration.md)
 ---

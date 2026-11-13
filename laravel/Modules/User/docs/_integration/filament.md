@@ -16,9 +16,10 @@ related:
   - "./payment.md"
   - "./phpstan.md"
   - "./profile.md"
+status: superseded
+superseded_by: ../-integration/filament.md
 ---
 
->>>>>>> 87273113 (.)
 # filament
 
 <!-- Contenuto migrato da _docs/filament.txt -->

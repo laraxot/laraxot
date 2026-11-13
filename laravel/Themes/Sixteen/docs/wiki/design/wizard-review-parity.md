@@ -1,8 +1,20 @@
+---
+title: "wizard review parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "wizard review parity"
+issues: []
+discussions: []
+status: draft
+---
+
 # Wizard Review Step — Parity tema Sixteen
 
 ## Semantica schema (priorità tecnica Filament)
 
-Prima delle regole visive vale la **vera parità DX/DI**: sul path **[`segnalazione-crea`](../../../../Modules/Fixcity/docs/ticket-wizard-frontoffice.md)** lo step **`form.summary::data::wizard-step`** mostra il recap degli step precedenti con **`TextEntry`** (Infolists, `TicketFormReviewInfolist` — classi **`fi-in-entry`**). **Sotto** il recap, autore e contatti restano **`TextInput`** (classi **`fi-fo-*`**) perché vanno compilati nello stesso step. Riferimento: [filament-summary-infolist-guidance.md](../../../../Modules/Fixcity/docs/filament-summary-infolist-guidance.md) e [overview Infolists Filament 5.x](https://filamentphp.com/docs/5.x/infolists/overview).
+Prima delle regole visive vale la **vera parità DX/DI**: sul path **[`segnalazione-crea`](../../../../../Modules/Fixcity/docs/ticket-wizard-frontoffice.md)** lo step **`form.summary::data::wizard-step`** mostra il recap degli step precedenti con **`TextEntry`** (Infolists, `TicketFormReviewInfolist` — classi **`fi-in-entry`**). **Sotto** il recap, autore e contatti restano **`TextInput`** (classi **`fi-fo-*`**) perché vanno compilati nello stesso step. Riferimento: [filament-summary-infolist-guidance.md](../../../../../Modules/Fixcity/docs/filament-summary-infolist-guidance.md) e [overview Infolists Filament 5.x](https://filamentphp.com/docs/5.x/infolists/overview).
 
 ## Obiettivo Estetico
 Raggiungere la massima fedeltà visiva con il template statico `segnalazione-03-riepilogo.html`.

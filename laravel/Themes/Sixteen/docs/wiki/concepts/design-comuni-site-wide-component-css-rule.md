@@ -1,4 +1,7 @@
 ---
+qmd: "design comuni site wide component css rule"
+issues: []
+discussions: []
 title: Design Comuni Site-Wide Component CSS Rule
 type: concept
 tags: [sixteen, design-comuni, css, parity, governance, daisyui]
@@ -6,6 +9,7 @@ created: 2026-04-22
 updated: 2026-05-15
 sources:
   - https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-02-dati.html
+status: draft
 ---
 
 # Design Comuni Site-Wide Component CSS Rule
@@ -36,7 +40,7 @@ Nel kit statico Design Comuni la pagina e' una composizione di componenti coeren
 
 ## Riferimenti
 
-- Token PA FO (no hex per `data-page`): [fo-pa-tokens-uniformity](fo-pa-tokens-uniformity.md) · ADR [fo-pa-tokens-no-per-page-hex.md](../../../../../docs/wiki/decisions/fo-pa-tokens-no-per-page-hex.md)
+- Token PA FO (no hex per `data-page`): [fo-pa-tokens-uniformity](fo-pa-tokens-uniformity.md) · ADR [fo-pa-tokens-no-per-page-hex.md](../../../../../../docs/wiki/decisions/fo-pa-tokens-no-per-page-hex.md)
 - Architettura CSS/HTML nel repo ufficiale (stylesheets + `cmp-*`): [entities/design-comuni-class-mapping.md](../entities/design-comuni-class-mapping.md).
 - Plugin UI Tailwind: [DaisyUI — documentazione](https://daisyui.com/docs/) (tema Sixteen); linee guida modulo Cms: [daisyui-componenti](../../../../../Modules/Cms/docs/daisyui-componenti.md); **pro/contro e percentuali**: [daisyui-pro-contro-metriche](../../../../../Modules/Cms/docs/daisyui-pro-contro-metriche.md).
 

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Modules\Employee\Actions\ApproveAbsenceRequestAction;
 use Modules\Employee\Actions\RejectAbsenceRequestAction;
 use Modules\Employee\Models\AbsenceRequest;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 class AbsenceRequestsTable extends XotBaseResourceTable
@@ -27,8 +28,9 @@ class AbsenceRequestsTable extends XotBaseResourceTable
             ->label(__('employee::absence_request.actions.approve'))
             ->icon('heroicon-o-check-circle')
             ->color('success')
+            ->authorize('approve')
             ->requiresConfirmation()
-            ->visible(static fn (AbsenceRequest $record): bool => $record->status === AbsenceRequest::STATUS_PENDING)
+            ->visible(static fn (AbsenceRequest $record): bool => $record->status === \Modules\Employee\Enums\AbsenceRequestStatusEnum::PENDING->value)
             ->action(function (AbsenceRequest $record): void {
                 app(ApproveAbsenceRequestAction::class)->execute($record, (int) Auth::id());
             });
@@ -37,8 +39,9 @@ class AbsenceRequestsTable extends XotBaseResourceTable
             ->label(__('employee::absence_request.actions.reject'))
             ->icon('heroicon-o-x-circle')
             ->color('danger')
+            ->authorize('reject')
             ->requiresConfirmation()
-            ->visible(static fn (AbsenceRequest $record): bool => $record->status === AbsenceRequest::STATUS_PENDING)
+            ->visible(static fn (AbsenceRequest $record): bool => $record->status === \Modules\Employee\Enums\AbsenceRequestStatusEnum::PENDING->value)
             ->action(function (AbsenceRequest $record): void {
                 app(RejectAbsenceRequestAction::class)->execute($record, (int) Auth::id());
             });
@@ -52,7 +55,8 @@ class AbsenceRequestsTable extends XotBaseResourceTable
     public function getTableColumns(): array
     {
         return [
-            'id' => TextColumn::make('id')->sortable()->searchable(),
+            // Telefono: la card mostra chi, che tipo, dal/al, stato; id e decisore compaiono da `md`.
+            'id' => IDColumn::make('id')->sortable()->searchable()->visibleFrom('md'),
             'user.name' => TextColumn::make('user.name')
                 ->label(__('employee::absence_request.fields.user'))
                 ->sortable()
@@ -73,15 +77,16 @@ class AbsenceRequestsTable extends XotBaseResourceTable
                 ->label(__('employee::absence_request.fields.status'))
                 ->badge()
                 ->colors([
-                    'warning' => AbsenceRequest::STATUS_PENDING,
-                    'success' => AbsenceRequest::STATUS_APPROVED,
-                    'danger' => AbsenceRequest::STATUS_REJECTED,
+                    'warning' => \Modules\Employee\Enums\AbsenceRequestStatusEnum::PENDING->value,
+                    'success' => \Modules\Employee\Enums\AbsenceRequestStatusEnum::APPROVED->value,
+                    'danger' => \Modules\Employee\Enums\AbsenceRequestStatusEnum::REJECTED->value,
                 ])
                 ->formatStateUsing(fn (string $state): string => __("employee::absence_request.statuses.{$state}"))
                 ->sortable(),
             'decidedBy.name' => TextColumn::make('decidedBy.name')
                 ->label(__('employee::absence_request.fields.decided_by'))
-                ->sortable(),
+                ->sortable()
+                ->visibleFrom('md'),
             'decided_at' => TextColumn::make('decided_at')
                 ->label(__('employee::absence_request.fields.decided_at'))
                 ->dateTime('d/m/Y H:i')

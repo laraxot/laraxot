@@ -8,17 +8,21 @@ qmd: "xotbasemigration-laraxot xotbasemigration - la filosofia laraxot nel modul
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # XotBaseMigration - La Filosofia Laraxot nel Modulo User
 
 ## Panoramica
@@ -356,7 +360,6 @@ sed -i 's/extends XotBaseMigration/extends XotBaseMigration/g' Modules/User/data
 
 - [XotBaseMigration Documentation](../../xot/docs/xotbasemigration-guide.md)
 - [Laraxot Philosophy](../../../docs/laraxot-philosophy.md)
->>>>>>> 87273113 (.)
 - [Migration Best Practices](migration-best-practices.md)
 - [PHPStan Configuration](../../../phpstan.neon)
 
@@ -365,7 +368,4 @@ sed -i 's/extends XotBaseMigration/extends XotBaseMigration/g' Modules/User/data
 Seguire la filosofia Laraxot non è opzionale - è obbligatorio. XotBaseMigration è il fondamento su cui si basa la qualità e la manutenibilità del progetto. Ogni deviazione è un debito tecnico che dovrà essere pagato con interessi.
 
 **Ricorda: XotBaseMigration è Dio. Non deviare.**
->>>>>>> 87273113 (.)
-=======
 **Ricorda: XotBaseMigration è Dio. Non deviare.**
->>>>>>> laraxot/dev

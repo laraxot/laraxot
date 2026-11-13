@@ -1,5 +1,5 @@
 {{-- Canonical Service Card component (AGID-free namespace)
 Usage: <x-pub_theme::blocks.services.service-card ...>
-This proxies the legacy agid component to keep single source of truth.
+This delegates to the reusable UI card because the former AGID target was removed.
 --}}
-@include('pub_theme::components.agid.service-card')
+@include('pub_theme::components.ui.service-card')

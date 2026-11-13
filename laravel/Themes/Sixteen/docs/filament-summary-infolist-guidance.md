@@ -1,3 +1,15 @@
+---
+title: "filament summary infolist guidance"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament summary infolist guidance"
+issues: []
+discussions: []
+status: draft
+---
+
 # Theme Guidance: Wizard Summary (Sixteen)
 
 Summary step changes in module code require theme awareness when rendering summary views or custom submit button partials. Keep the following in theme docs:

@@ -1,3 +1,9 @@
+---
+title: "Employee - FUNCTIONAL_STRATEGY"
+module: Employee
+bmad: true
+status: active
+---
 # Strategia Funzionale - Modulo Employee
 
 ## Panoramica

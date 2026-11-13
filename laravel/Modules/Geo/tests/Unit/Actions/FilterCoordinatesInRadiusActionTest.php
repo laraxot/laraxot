@@ -7,21 +7,22 @@ namespace Modules\Geo\Tests\Unit\Actions;
 use Modules\Geo\Actions\CalculateDistanceAction;
 use Modules\Geo\Actions\FilterCoordinatesInRadiusAction;
 use Modules\Geo\Actions\GoogleMaps\CalculateDistanceMatrixAction;
+use Modules\Geo\Contracts\CalculateDistanceActionContract;
 use Modules\Geo\Tests\Fixtures\CalculateDistanceMatrixQueueStub;
 use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-/**
- * @param CalculateDistanceMatrixQueueStub $matrixStub
- */
 function makeFilterCoordinatesInRadiusAction(CalculateDistanceMatrixQueueStub $matrixStub): FilterCoordinatesInRadiusAction
 {
     app()->instance(CalculateDistanceMatrixAction::class, $matrixStub);
-    app()->instance(CalculateDistanceAction::class, new CalculateDistanceAction());
+    app()->instance(CalculateDistanceAction::class, new CalculateDistanceAction);
 
-    return new FilterCoordinatesInRadiusAction();
+    /** @var CalculateDistanceActionContract $distanceCalculator */
+    $distanceCalculator = app(CalculateDistanceAction::class);
+
+    return new FilterCoordinatesInRadiusAction($distanceCalculator);
 }
 
 it('filters coordinates within radius', function (): void {
@@ -39,6 +40,13 @@ it('filters coordinates within radius', function (): void {
     ], 5000);
 
     Assert::assertCount(2, $result);
+});
+
+it('resolves the distance contract from the application container', function (): void {
+    Assert::assertInstanceOf(
+        CalculateDistanceAction::class,
+        app(CalculateDistanceActionContract::class),
+    );
 });
 
 it('returns empty array when no coordinates within radius', function (): void {
@@ -74,7 +82,7 @@ it('returns all coordinates when all within radius', function (): void {
 });
 
 it('handles empty coordinates array', function (): void {
-    $action = makeFilterCoordinatesInRadiusAction(new CalculateDistanceMatrixQueueStub());
+    $action = makeFilterCoordinatesInRadiusAction(new CalculateDistanceMatrixQueueStub);
 
     $result = $action->execute(45.4642, 9.1900, [], 5000);
 

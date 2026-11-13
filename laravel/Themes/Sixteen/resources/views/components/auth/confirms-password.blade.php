@@ -1,4 +1,4 @@
-@props(['title' => __('Confirm Password'), 'content' => __('For your security, please confirm your password to continue.'), 'button' => __('Confirm')])
+@props(['title' => __('pub_theme::auth_pages.shared.confirm_password.label'), 'content' => __('pub_theme::auth_pages.confirms_password.for_your_security_please_confirm_your.message'), 'button' => __('pub_theme::auth_pages.shared.confirm.label')])
 
 @php
     $confirmableId = md5($attributes->wire('then'));
@@ -25,8 +25,8 @@
         {{ $content }}
 
         <div class="mt-4" x-data="{}" x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
-            <x-input type="password" class="mt-1 block w-3/4" placeholder="{{ __('Password') }}" autocomplete="current-password"
-            <x-input type="password" class="mt-1 block w-3/4" placeholder="{{ __('Password') }}" autocomplete="current-password"
+            <x-input type="password" class="mt-1 block w-3/4" placeholder="{{ __('pub_theme::auth_pages.shared.password.label') }}" autocomplete="current-password"
+            <x-input type="password" class="mt-1 block w-3/4" placeholder="{{ __('pub_theme::auth_pages.shared.password.label') }}" autocomplete="current-password"
                         x-ref="confirmable_password"
                         wire:model="confirmablePassword"
                         wire:keydown.enter="confirmPassword" />
@@ -38,7 +38,7 @@
 
     <x-slot name="footer">
         <x-secondary-button wire:click="stopConfirmingPassword" wire:loading.attr="disabled">
-            {{ __('Cancel') }}
+            {{ __('pub_theme::blocks_common.shared.cancel.label') }}
         </x-secondary-button>
 
         <x-button class="ms-3" dusk="confirm-password-button" wire:click="confirmPassword" wire:loading.attr="disabled">

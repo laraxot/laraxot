@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Ottimizzazioni Correzioni"
 module: "Media"
 type: concept
@@ -8,8 +10,8 @@ updated: 2026-07-14
 qmd: "ottimizzazioni correzioni"
 related:
   - "./webm.md"
-<<<<<<< HEAD
+status: superseded
+superseded_by: migration-filament.md
 ---
-=======
 ---
->>>>>>> laraxot/dev
+---

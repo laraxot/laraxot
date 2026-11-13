@@ -6,8 +6,8 @@ return [
     'resource' => [
         'name' => 'send_email_parameters'],
     'navigation' => [
-        'name' => 'send_email_parameters',
-        'plural' => 'send_email_parameters',
+        'name' => 'E-Mail-Sendeparameter',
+        'plural' => 'E-Mail-Sendeparameter',
         'group' => [
             'name' => 'Invia']],
     'fields' => [

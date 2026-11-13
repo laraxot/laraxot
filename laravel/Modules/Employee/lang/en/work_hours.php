@@ -24,4 +24,12 @@ return [
     'hours_worked' => 'Hours Worked',
     'sessions' => 'Sessions',
     'no_records_found' => 'No records found',
+    'page' => [
+        'current_status' => [
+            'label' => 'Current Status',
+        ],
+        'hours_today' => [
+            'label' => 'Hours Today',
+        ],
+    ],
 ];

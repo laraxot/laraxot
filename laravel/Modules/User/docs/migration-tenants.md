@@ -8,17 +8,21 @@ qmd: "migration-tenants 🔧 migration fix: create_tenants_table"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # 🔧 Migration Fix: create_tenants_table
 
 **File**: `database/migrations/2023_01_01_000008_create_tenants_table.php`
@@ -227,12 +231,11 @@ done
 
 - [Database Migrations](../../../../../docs/database-migrations.md)
 - [Laraxot Philosophy](../../../../../docs/architettura_filosofia_religione_politica_zen.md)
->>>>>>> 87273113 (.)
 
 ### This Analysis
 
 - [Migration Violations](./migration-violations-tenants.md) - Detailed analysis
-- [User Module README](./readme.md)
+- [User Module README](./README.md)
 
 ---
 

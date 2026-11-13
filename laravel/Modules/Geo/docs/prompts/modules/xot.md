@@ -1,3 +1,15 @@
+---
+title: "xot"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "xot"
+issues: []
+discussions: []
+status: draft
+---
+
 # Xot
 
 # Modulo Xot (Core)
@@ -132,7 +144,7 @@ trait HasXotTable
 ```
 
 ## Documentazione Essenziale
-- [XotBaseModel](../../Xot/docs/models.md)
+- [XotBaseModel](../../architecture/models.md)
 - [XotBaseResource](../../Xot/docs/resources.md)
 - [XotBaseServiceProvider](../../Xot/docs/providers.md)
 

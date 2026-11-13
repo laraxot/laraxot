@@ -1,3 +1,15 @@
+---
+title: "homepage gap analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "homepage gap analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🏠 HOMEPAGE GAP ANALYSIS
 
 **Data**: 2026-03-31  
@@ -5,7 +17,6 @@
 **Priority**: CRITICAL
 
 ---
-
 ## 📊 CURRENT STATUS
 
 ### Homepage URL

@@ -1,16 +1,18 @@
 ---
+qmd: "folio page shell pattern"
 title: "Folio Page Shell Pattern - Volt Component"
 type: concept
 tags: [folio, volt, page-shell, pattern, architecture]
 created: 2026-06-06
-updated: 2026-06-06
+updated: 2026-10-16
 issues:
   - "https://github.com/laraxot/theme_sixteen_fila5/issues/65"
 discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/287"
 related:
-  - ../../../docs/wiki/rules/folio-frontoffice-navigation-links.md
+  - ../../../../../../docs/wiki/rules/folio-frontoffice-navigation-links.md
   - ../../../docs/wiki/concepts/fo-folio-links-multilingua.md
+status: draft
 ---
 
 # Folio Page Shell Pattern - Volt Component
@@ -63,33 +65,41 @@ new class extends Component {
 
 @php
     $pageSlug = $container0.'.index';
+    $nativePage = in_array($container0, ['services', 'segnalazioni'], true) ? $container0 : null;
 ?>
 @extends('layouts.app')
 
 @section('content')
-    <x-layouts.app>
-        @volt('container0.index')
-        ...
-    @endvolt
+    <x-dynamic-component :component="$layoutComponent">
+        @include('pub_theme::components.pages.'.$nativePage)
+    </x-dynamic-component>
 @endsection
 ```
+
+Anche aprire `<x-layouts.app>` e chiudere `</x-dynamic-component>` è un bug
+di refactor: i tag devono combaciare.
 
 ## Perché questo pattern
 
 1. **Folio routing**: `name('container0.index')` è il nome della route Folio
 2. **Volt component**: `new class extends Component` definisce il montante
 3. **Middleware**: `PageSlugMiddleware` gestisce lo slug della pagina
-4. **Layout**: `<x-layouts.app>` è il layout principale
-5. **Page component**: `<x-page>` renderizza il contenuto dinamico
+4. **Layout**: `<x-layouts.app>` è il layout principale FO
+5. **Page component**: `<x-page>` renderizza il contenuto dinamico dal JSON
+6. **Niente native/utility match**: il dominio sta in `{container0}.index` (D20)
 
 ## Regola
-> **Le pagine Folio devono usare il Volt Component pattern, non @props/@php/@extends.**
+> **Le pagine Folio devono usare il Volt Component pattern, non @props/@php/@extends/@include nativi.**
 
 ## Verifica
 - [ ] `name('container0.index')` corretto
 - [ ] `new class extends Component` presente
 - [ ] Nessun `@props` o `@extends`
 - [ ] `@volt('container0.index')` coerente con il nome
+- [ ] Apertura/chiusura `<x-layouts.app>` … `</x-layouts.app>`
+- [ ] Nessun `x-dynamic-component` / `nativePage` / `@include` pages
 
 ## Backlink
-- [TRIGGER_MAP](../../../docs/wiki/rules/00-TRIGGER_MAP.md)
+- [TRIGGER_MAP](../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)
+- [Contratto BMAD D20](../../bmad/container0-index-shell-contract.md)
+- [container0-index-folio-pattern](../rules/container0-index-folio-pattern.md)

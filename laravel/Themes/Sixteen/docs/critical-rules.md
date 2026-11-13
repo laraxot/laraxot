@@ -1,3 +1,15 @@
+---
+title: "critical rules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "critical rules"
+issues: []
+discussions: []
+status: draft
+---
+
 # Regole Critiche del Progetto - Tema Sixteen
 
 ## 🚨 REGOLE FONDAMENTALI - DA RICORDARE SEMPRE
@@ -367,7 +379,6 @@ php artisan route:list | grep pages
 ```
 
 ---
-
 **Data Creazione**: Dicembre 2024  
 **Versione**: 1.0  
 **Status**: Regole Critiche Documentate  

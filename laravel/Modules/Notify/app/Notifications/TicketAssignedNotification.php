@@ -17,7 +17,7 @@ class TicketAssignedNotification extends Notification
      * @return void
      */
     public function __construct(
-        public mixed $ticket, // Using mixed type since Ticket model doesn't exist
+        public object $ticket, // Object type since a dedicated Ticket model doesn't exist yet
         public User $assignedBy
     ) {}
 

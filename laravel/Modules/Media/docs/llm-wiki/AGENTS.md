@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Media {{TYPE^}} LLM Wiki Agent Instructions"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "agents"
 related:
   - "./webm.md"
+status: draft
 ---
 # Media {{TYPE^}} LLM Wiki Agent Instructions
 
@@ -148,7 +151,6 @@ Related:
 
 - [Project Wiki Integration](../../docs/wiki/README.md)
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
-<<<<<<< HEAD
 - [Module Documentation](../README.md)
 
 ---
@@ -308,6 +310,5 @@ Related:
 - [Project Wiki Integration](../../docs/wiki/README.md)
 - [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
 - [Module Documentation](../README.md)
-=======
+---
 - [Module Documentation](../README.md)
->>>>>>> laraxot/dev

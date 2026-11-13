@@ -12,7 +12,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
                     <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
-                        {{ __('Home') }}
+                        {{ __('pub_theme::layout.nav.home.label') }}
                     </x-nav-link>
                 </div>
             </div>

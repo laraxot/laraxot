@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "No Services / No Support — QueueableAction only"
 type: concept
 module: Media
@@ -9,6 +11,7 @@ qmd: "Media module Services and Support banned use app Actions QueueableAction p
 related:
   - no-app-support-queueable-actions.md
   - ../../../Xot/docs/wiki/concepts/queueable-action-trait-mandatory.md
+status: draft
 ---
 
 # Media — Services/Support vietati: solo Actions
@@ -21,6 +24,9 @@ related:
 - **Entrypoint**: unico metodo `execute(...)`
 - **Chiamata**: `app(FooAction::class)->execute(...)`
 - **Gruppi**: sottocartelle per attore/contesto
+
+Lo streaming HTTP resta in `Actions/Stream/StreamVideoAction`: range response, headers e ciclo di vita
+dello stream sono parte dell'use-case invocabile, non un servizio.
 
 ## Conversione
 

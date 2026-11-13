@@ -7,6 +7,11 @@ namespace Modules\UI\Filament\Forms\Components;
 use Filament\Forms\Components\Select;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
+<<<<<<< HEAD
+use InvalidArgumentException;
+use Modules\Xot\Filament\Forms\Components\XotBaseSelect;
+=======
+>>>>>>> f5ffd8b4 (.)
 
 /**
  * EnumSelect - Reusable component for PHP-backed enums in Filament v5.
@@ -65,7 +70,7 @@ final class EnumSelect extends Select
     {
         $enumClass = $this->evaluate($this->enumClass);
 
-        return is_string($enumClass) && '' !== $enumClass ? $enumClass : null;
+        return is_string($enumClass) && $enumClass !== '' ? $enumClass : null;
     }
 
     public function hasIcons(): bool
@@ -89,7 +94,7 @@ final class EnumSelect extends Select
     {
         $enumClass = $this->getEnumClass();
 
-        if (null === $enumClass || null === $value || '' === $value) {
+        if ($enumClass === null || $value === null || $value === '') {
             return null;
         }
 
@@ -111,7 +116,7 @@ final class EnumSelect extends Select
     {
         $enumClass = $this->evaluate($this->enumClass);
 
-        if (! is_string($enumClass) || '' === $enumClass) {
+        if (! is_string($enumClass) || $enumClass === '') {
             return [];
         }
 
@@ -147,14 +152,14 @@ final class EnumSelect extends Select
         if ($case instanceof HasLabel) {
             $label = $case->getLabel();
 
-            if (is_string($label) && '' !== $label) {
+            if (is_string($label) && $label !== '') {
                 return $label;
             }
         }
 
         if (method_exists($case, 'label')) {
             $label = $case->label();
-            if (is_string($label) && '' !== $label) {
+            if (is_string($label) && $label !== '') {
                 return $label;
             }
         }
@@ -171,13 +176,13 @@ final class EnumSelect extends Select
         if ($case instanceof HasIcon) {
             $icon = $case->getIcon();
 
-            return is_string($icon) && '' !== $icon ? $icon : null;
+            return is_string($icon) && $icon !== '' ? $icon : null;
         }
 
         if (method_exists($case, 'icon')) {
             $icon = $case->icon();
 
-            return is_string($icon) && '' !== $icon ? $icon : null;
+            return is_string($icon) && $icon !== '' ? $icon : null;
         }
 
         return null;
@@ -199,11 +204,19 @@ final class EnumSelect extends Select
     protected function validateEnumClass(string $enumClass): void
     {
         if (! enum_exists($enumClass)) {
+<<<<<<< HEAD
+            throw new InvalidArgumentException("Enum class [{$enumClass}] does not exist.");
+        }
+
+        if (! is_subclass_of($enumClass, \BackedEnum::class)) {
+            throw new InvalidArgumentException("Enum class [{$enumClass}] must be a backed enum.");
+=======
             throw new \InvalidArgumentException("Enum class [{$enumClass}] does not exist.");
         }
 
         if (! is_subclass_of($enumClass, \BackedEnum::class)) {
             throw new \InvalidArgumentException("Enum class [{$enumClass}] must be a backed enum.");
+>>>>>>> f5ffd8b4 (.)
         }
     }
 }

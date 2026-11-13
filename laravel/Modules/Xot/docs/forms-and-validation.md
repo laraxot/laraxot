@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Form e Validazione nel Progetto il progetto"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Form e Validazione nel Progetto il progetto"
+---
+>>>>>>> laraxot/dev
 # Form e Validazione nel Progetto il progetto
 
 ## Filament Widgets vs Form Blade Tradizionali
@@ -66,7 +79,11 @@ class RegistrationWidget extends XotBaseWidget
 class RegisterForm extends Component
 {
     public $first_name;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     protected $rules = [
         'first_name' => 'required|max:255',
     ];
@@ -107,14 +124,22 @@ class RegisterForm extends Component
    class MyFormWidget extends XotBaseWidget
    {
        protected static ?string $heading = 'Form Title';
+<<<<<<< HEAD
 
+=======
+       
+>>>>>>> laraxot/dev
        public function getFormSchema(): array
        {
            return [
                // Schema qui...
            ];
        }
+<<<<<<< HEAD
 
+=======
+       
+>>>>>>> laraxot/dev
        protected function getFormModel(): Model
        {
            return YourModel::class;
@@ -172,4 +197,8 @@ Per migrare form esistenti:
    - Testa i widget come componenti
    - Usa i test browser quando necessario
    - Implementa test di integrazione
+<<<<<<< HEAD
    - Verifica la validazione
+=======
+   - Verifica la validazione 
+>>>>>>> laraxot/dev

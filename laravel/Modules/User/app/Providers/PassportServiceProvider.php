@@ -12,6 +12,7 @@ use Laravel\Passport\DeviceCode;
 use Laravel\Passport\Passport;
 use Laravel\Passport\RefreshToken;
 use Laravel\Passport\Token;
+use Modules\User\Datas\UserConfigData;
 use Modules\User\Models\OauthAuthCode;
 use Modules\User\Models\OauthClient;
 use Modules\User\Models\OauthDeviceCode;
@@ -139,7 +140,7 @@ class PassportServiceProvider extends ServiceProvider
      */
     protected function configurePasswordGrant(): void
     {
-        if (config('user.passport.enable_password_grant', true)) {
+        if (UserConfigData::make()->passport_enable_password_grant) {
             Passport::enablePasswordGrant();
         }
     }

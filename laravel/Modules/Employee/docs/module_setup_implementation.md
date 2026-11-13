@@ -1,3 +1,9 @@
+---
+title: "Employee - MODULE_SETUP_IMPLEMENTATION"
+module: Employee
+bmad: true
+status: active
+---
 # Implementazione Modulo Employee - Setup Completo
 
 ## Panoramica

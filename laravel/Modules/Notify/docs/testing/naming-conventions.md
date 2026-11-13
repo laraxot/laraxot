@@ -1,3 +1,15 @@
+---
+title: "naming conventions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "naming conventions"
+issues: []
+discussions: []
+status: draft
+---
+
 # Convenzioni di Naming per i Test
 
 ## Problema: Duplicati Lowercase in Filesystem Case-Insensitive
@@ -165,5 +177,6 @@ Modules/Xot/tests/Feature/fixstructuretest.pest.php
 
 - [../quality/phpstan-fixes.md](../quality/phpstan-fixes.md)
 - [../../Modules/Activity/docs/testing-guidelines.md](../../laravel/Modules/Activity/docs/testing-guidelines.md)
+- [../../Modules/Activity/docs/testing-guidelines.md](../../../Activity/docs/testing-guidelines.md)
 - [./test-structure.md](./test-structure.md)
 

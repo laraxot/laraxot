@@ -1,11 +1,30 @@
+---
+title: "seo frontend optimization guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-10-28
+qmd: "seo frontend optimization guide"
+issues: []
+discussions: []
+status: draft
+---
+
 # SEO & Frontend Optimization Guide - Sixteen Theme
 
 ## Executive Summary
 
 This document provides comprehensive SEO and performance optimization strategies for the **Sixteen Theme**, the citizen-facing frontend of FixCity. These optimizations target Google's 2025 ranking factors and Core Web Vitals to achieve first-page rankings for local civic engagement keywords.
 
----
+## Stato implementato (2026-10-14, DCP-166)
+Il resto di questa guida e' un'analisi generale; quanto segue e' cio' che il tema fa davvero.
+- **canonical e hreflang**: `resources/views/components/layouts/seo-links.blade.php`, incluso da `main.blade.php` (tutti i layout passano da li). Gli indirizzi si costruiscono dal percorso della richiesta (`request()->path()`) sostituendo la lingua, per `it`, `en`, `de`, `es` piu' `x-default` sulla lingua predefinita. Il canonical non ha mai la query: `?code=` del tracciamento e' un dato personale. Senza prefisso di lingua nel percorso non produce link. Non usare `LaravelLocalization::getLocalizedURL()`: dipende da una richiesta memorizzata nel singleton e fuori dal browser perde il percorso.
+- **sitemap.xml**: rotta `/sitemap.xml` (`routes/web.php`) servita da `Modules\Fixcity\Actions\BuildSitemapAction`, costruita dalle pagine CMS: esclude `tests.*`, le pagine con `auth`, `tickets.confirmation` e `segnalazione-dettaglio`; ogni URL ha le alternative `xhtml:link`. Nessun `lastmod` finche' non c'e' una data affidabile (DCP-167). La riga `Sitemap:` in `public_html/robots.txt` va scritta quando il dominio e' deciso (DCP-155).
+- **titolo e meta description**: ogni pagina passa `title` e `description` a `main.blade.php`; le pagine di accesso e registrazione li prendono da `fixcity::auth.*` in 4 lingue (prima erano in italiano ovunque). Lo scan `bashscripts/tools/compliance/lg-design-scan.py` verifica la presenza di canonical, hreflang e description di almeno 20 caratteri.
+- **Test**: `Modules/Fixcity/tests/Feature/Pages/SeoLinksTest.php`.
 
+
+---
 ## Frontend SEO Architecture
 
 ### 1. HTML Semantic Structure
@@ -892,6 +911,7 @@ if ('serviceWorker' in navigator) {
 
 ### 6. Content Freshness Signals
 
+#### Dynamic "Last Updated" Timestamps
 
 ```blade
 {{-- Ticket detail page --}}

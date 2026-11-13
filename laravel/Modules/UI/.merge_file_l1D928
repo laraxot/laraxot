@@ -1,0 +1,47 @@
+---
+id: "ui-root-hygiene-conflict-markers"
+title: "UI: README/contributing marker + md uppercase in root"
+status: review
+scope: module:UI
+created: 2026-09-22
+updated: 2026-09-22
+qmd: "ui readme contributing nested conflict markers architecture testing philosophy root hygiene"
+related:
+  - ../livewire-inventory.md
+  - ../../architecture.md
+  - ../../../../Xot/docs/bmad/stories/cleanup-all-modules.story.md
+<<<<<<< .merge_file_l1D928
+<<<<<<< .merge_file_v63yYO
+---
+
+# UI — marker nidificati in README + igiene root
+=======
+=======
+>>>>>>> .merge_file_MWyEse
+type: story
+tags: [docs, ui, bmad]
+---
+
+# UI: marker nidificati in README + igiene root
+<<<<<<< .merge_file_l1D928
+>>>>>>> .merge_file_nHSQNu
+=======
+>>>>>>> .merge_file_MWyEse
+
+**Perché.** `git status` pulito, HEAD con 20 hunk `<<<<<<<` in `README.md` (anche nidificati: theirs iniziava con `<<<<<<< HEAD`) e contributing duplicato. Root teneva `ARCHITECTURE.md`/`TESTING.md`/`PHILOSOPHY.md` (SSoT è `docs/architecture.md`, kebab).
+
+## Scelta
+
+Innermost-first strip; tenere frontmatter HEAD; footer project-agnostic (niente FixCity). Contributing: un solo PSR-12. Delete root uppercase md.
+
+## Gate
+
+<<<<<<< .merge_file_l1D928
+<<<<<<< .merge_file_v63yYO
+PHPStan `Modules/UI`: 0. Commit deferred.
+=======
+PHPStan `Modules/UI`: 0. Commit deferred.
+>>>>>>> .merge_file_nHSQNu
+=======
+PHPStan `Modules/UI`: 0. Commit deferred.
+>>>>>>> .merge_file_MWyEse

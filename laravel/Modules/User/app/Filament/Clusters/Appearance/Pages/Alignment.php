@@ -9,7 +9,6 @@ use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
-use Filament\Support\Exceptions\Halt;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Filament\Clusters\Appearance;
 use Modules\Xot\Filament\Pages\XotBasePage;
@@ -73,18 +72,13 @@ class Alignment extends XotBasePage
             ->statePath('data');
     }
 
+    /**
+     * Persistenza non ancora implementata: meglio un errore esplicito che un falso salvataggio.
+     * Da completare salvando `$this->form->getState()` (vedi Pages\Password + SaveTenantConfigAction).
+     */
     public function updateData(): void
     {
-        try {
-            $data = $this->form->getState();
-            dddx($data);
-
-            // $this->handleRecordUpdate($this->getUser(), $data);
-        } catch (Halt $exception) {
-            dddx($exception->getMessage());
-
-            return;
-        }
+        throw new \LogicException('Alignment::updateData() non implementato');
     }
 
     protected function fillForms(): void
@@ -106,7 +100,7 @@ class Alignment extends XotBasePage
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     protected function handleRecordUpdate(Model $record, array $data): Model
     {

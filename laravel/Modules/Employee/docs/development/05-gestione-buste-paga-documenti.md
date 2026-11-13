@@ -1,3 +1,9 @@
+---
+title: "Employee - 05-GESTIONE-BUSTE-PAGA-DOCUMENTI"
+module: Employee
+bmad: true
+status: active
+---
 # 05 - Gestione Buste Paga e Documenti
 
 ## Panoramica
@@ -86,10 +92,10 @@ Schema::create('payroll_documents', function (Blueprint $table) {
 });
 ```
 
-3. **Creare Service PayrollDistributionService**
+3. **Creare Action PayrollDistributionAction** (convenzione progetto: Actions/QueueableAction con `execute()`, mai Services; i metodi sotto sono la bozza e diventano Action dedicate)
 ```php
-// app/Services/PayrollDistributionService.php
-class PayrollDistributionService
+// app/Actions/Payroll/PayrollDistributionAction.php
+class PayrollDistributionAction
 {
     public function uploadBulkPayslips(UploadedFile $zipFile, int $month, int $year): array
     {
@@ -317,7 +323,7 @@ class PayrollDocumentResource extends XotBaseResource
                     ->icon('heroicon-o-arrow-down-tray')
                     ->action(function (PayrollDocument $record) {
                         return response()->streamDownload(function () use ($record) {
-                            echo app(PayrollDistributionService::class)->decryptFile($record);
+                            echo app(PayrollDistributionAction::class)->decryptFile($record);
                         }, $record->file_name);
                     }),
                     
@@ -365,7 +371,7 @@ class PayrollDocumentResource extends XotBaseResource
                     ])
                     ->action(function (array $data) {
                         $zipFile = $data['zip_file'];
-                        $results = app(PayrollDistributionService::class)
+                        $results = app(PayrollDistributionAction::class)
                             ->uploadBulkPayslips($zipFile, $data['month'], $data['year']);
                             
                         $message = "Elaborate {$results['success']} buste paga.";
@@ -431,7 +437,7 @@ class EmployeeDocumentsWidget extends XotBaseWidget
         }
         
         return response()->streamDownload(function () use ($document) {
-            echo app(PayrollDistributionService::class)->decryptFile($document);
+            echo app(PayrollDistributionAction::class)->decryptFile($document);
         }, $document->file_name);
     }
 }
@@ -600,9 +606,9 @@ class PayslipAvailableNotification extends Notification
 
 **Implementazione**:
 
-1. **Estendere PayrollDistributionService con crittografia avanzata**
+1. **Estendere PayrollDistributionAction con crittografia avanzata**
 ```php
-// Aggiungere al PayrollDistributionService
+// Aggiungere al PayrollDistributionAction
 public function decryptFile(PayrollDocument $document): string
 {
     if (!$document->is_encrypted) {
@@ -710,8 +716,8 @@ class DocumentDistributionStatsWidget extends XotBaseWidget
 - [ ] Implementare Model PayrollDocument con relazioni
 - [ ] Configurare storage sicuro per documenti
 
-### Phase 2: Core Services
-- [ ] Implementare PayrollDistributionService per upload massivo
+### Phase 2: Core Actions
+- [ ] Implementare PayrollDistributionAction per upload massivo
 - [ ] Creare sistema crittografia documenti
 - [ ] Implementare identificazione automatica dipendenti
 

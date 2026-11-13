@@ -20,7 +20,13 @@ class ProfileForm extends XotBaseResourceForm
             // Forms\Components\TextInput::make('user_id'),
             // Forms\Components\TextInput::make('user_id')->readonly(),
             'user_name' => TextInput::make('user.name'),
-            'email' => TextInput::make('email'),
+            // Stesse regole di `TeamInvitationForm` e `PasswordResetForm`: senza
+            // `->email()` il campo accetta qualsiasi testo e il salvataggio fallisce
+            // solo sul server, dove l'utente non vede piu' cosa correggere.
+            'email' => TextInput::make('email')
+                ->email()
+                ->required()
+                ->maxLength(255),
             'first_name' => TextInput::make('first_name'),
             'last_name' => TextInput::make('last_name'),
             'photo_profile' => SpatieMediaLibraryFileUpload::make('photo_profile')

@@ -16,9 +16,10 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: superseded
+superseded_by: ../-integration/spatie-permissions.md
 ---
 
->>>>>>> 87273113 (.)
 # spatie_permissions
 
 <!-- Contenuto migrato da _docs/spatie_permissions.txt -->

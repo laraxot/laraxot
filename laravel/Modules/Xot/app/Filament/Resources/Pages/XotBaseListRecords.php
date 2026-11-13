@@ -9,6 +9,10 @@ use Filament\Actions\ActionGroup;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords as FilamentListRecords;
 use Illuminate\Support\Str;
+<<<<<<< HEAD
+=======
+use Modules\Xot\Filament\Links\RecordAnchor;
+>>>>>>> laraxot/dev
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use Webmozart\Assert\Assert;
 
@@ -62,6 +66,14 @@ abstract class XotBaseListRecords extends FilamentListRecords
         return $model;
     }
 
+<<<<<<< HEAD
+=======
+    public static function getModuleName(): string
+    {
+        return Str::of(static::class)->between('Modules\\', '\Filament\\')->toString();
+    }
+
+>>>>>>> laraxot/dev
     /**
      * Get the header actions.
      *
@@ -69,13 +81,70 @@ abstract class XotBaseListRecords extends FilamentListRecords
      */
     protected function getHeaderActions(): array
     {
+<<<<<<< HEAD
         return [
             'create' => CreateAction::make()->icon('heroicon-o-plus'),
         ];
     }
 
+=======
+        // Risorse senza pagina `create` (es. moderazione commenti): niente "Nuovo",
+        // altrimenti `getUrl('create')` lancia RouteNotFound e l'elenco va in 500.
+        if (! \array_key_exists('create', static::getResource()::getPages())) {
+            return [];
+        }
+
+        return [
+            'create' => CreateAction::make()
+                ->icon('heroicon-o-plus')
+                ->url(fn (): string => RecordAnchor::appendReturnTo(
+                    static::getResource()::getUrl('create'),
+                    RecordAnchor::currentUrl(),
+                )),
+        ];
+    }
+
+    /**
+     * DEVE ESSERE FINAL
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+     */
+>>>>>>> laraxot/dev
     public function getTableColumns(): array
     {
         return [];
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * DEVE ESSERE FINAL
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+     */
+    public function getTableActions(): array
+    {
+        return [];
+    }
+
+    /**
+     * DEVE ESSERE FINAL
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+     */
+    public function getTableFilters(): array
+    {
+        return [];
+    }
+
+    /**
+     * DEVE ESSERE FINAL
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+     */
+    public function getTableBulkActions(): array
+    {
+        return [];
+    }
+>>>>>>> laraxot/dev
 }

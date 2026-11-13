@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Utilizzo Base e Layout"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "usage"
 related:
   - "./webm.md"
+status: draft
 ---
 # Utilizzo Base e Layout
 

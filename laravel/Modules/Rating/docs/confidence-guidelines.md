@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Massimizzare il livello di confidenza"
 type: rule
 tags: [confidence, guidelines, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "confidence guidelines"
 related:
   - "./configuration.md"
+status: draft
 ---
 
 # Massimizzare il livello di confidenza

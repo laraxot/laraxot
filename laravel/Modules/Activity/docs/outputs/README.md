@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_jiQvwB
 # Activity
 
@@ -79,12 +78,3 @@ Core module for the FixCity Platform.
 
 See canonical documentation: ../../../../Themes/docs/shared-components/README-Modules.md
 >>>>>>> .merge_file_v3IBTL
-=======
----
-module: theme
-topic: README
-canonical: ../../../../Themes/docs/shared-components/README-Modules.md
----
-
-See canonical documentation: ../../../../Themes/docs/shared-components/README-Modules.md
->>>>>>> 13cf1831 (.)

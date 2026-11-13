@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 return [
     'fields' => [
         'alpha' => [
@@ -18,3 +19,6 @@ return [
         ],
     ],
 ];
+=======
+return [];
+>>>>>>> laraxot/dev

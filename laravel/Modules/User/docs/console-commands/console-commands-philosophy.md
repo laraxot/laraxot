@@ -11,10 +11,10 @@ related:
   - "./assign-module-command.md"
   - "./change-password-command.md"
   - "./console-commands.md"
-  - "./readme.md"
+  - "./README.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Filosofia dei Comandi Console - Modulo User
 
 ## Principi Fondamentali
@@ -456,7 +456,7 @@ private function getPasswordLegacy(): string
 ```
 
 ## Collegamenti
-- [README Comandi Console](readme.md)
+- [README Comandi Console](README.md)
 - [ChangePasswordCommand](change-password-command.md)
 - [AssignModuleCommand](assign-module-command.md)
 - [Testing Strategy](../testing/console-commands-testing.md)
@@ -471,6 +471,3 @@ private function getPasswordLegacy(): string
 - ✅ **Security Framework**: Validazione, audit trail e controlli accesso
 - ✅ **Testing Strategy**: Test unitari, integrazione e performance
 - ✅ **Maintenance Policy**: Versioning, changelog e deprecation
-
->>>>>>> 87273113 (.)
-

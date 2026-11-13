@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Task: Test Isolamento Dati - Tenant"
 module: "Tenant"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "task test isolamento dati"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # Task: Test Isolamento Dati - Tenant
 

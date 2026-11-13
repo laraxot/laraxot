@@ -551,7 +551,7 @@ main[data-page="amministrazione"] .card-wrapper {
 .leaflet-popup.popup-wrapper .leaflet-popup-content {
   margin: 0 !important;
   padding: 0 !important;
-  height: auto !important;
+  /* niente `height: auto !important`: annullerebbe il maxHeight/scroll che Leaflet imposta inline (popup piu' alto della mappa) */
   min-height: 0 !important;
 }
 

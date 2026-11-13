@@ -6,10 +6,12 @@ namespace Modules\Notify\Tests\Unit\Actions\SMS;
 
 use Modules\Notify\Actions\SMS\SendAgiletelecomSMSAction;
 use Modules\Notify\Datas\SmsData;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 use ReflectionNamedType;
 
+uses(TestCase::class);
 it('SendAgiletelecomSMSAction can be instantiated', function () {
     Assert::assertTrue(class_exists(SendAgiletelecomSMSAction::class));
 });
@@ -71,9 +73,9 @@ it('SendAgiletelecomSMSAction has required imports', function () {
     expect($content)->toContain('use Modules\\Notify\\Datas\\SmsData;');
 });
 
-it('SendAgiletelecomSMSAction does not use QueueableAction trait', function () {
+it('SendAgiletelecomSMSAction uses QueueableAction trait', function () {
     $action = new SendAgiletelecomSMSAction;
     $traits = \Safe\class_uses($action);
 
-    expect($traits)->not->toContain('Spatie\\QueueableAction\\QueueableAction');
+    expect($traits)->toContain('Spatie\\QueueableAction\\QueueableAction');
 });

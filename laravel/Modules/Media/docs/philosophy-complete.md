@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Media - Filosofia Completa: Logica, Religione, Politica, Zen"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "philosophy complete"
 related:
   - "./webm.md"
+status: draft
 ---
 # Media - Filosofia Completa: Logica, Religione, Politica, Zen
 
@@ -119,7 +122,7 @@ class Media extends BaseModel
 
 Il modulo Media **è utilizzato da** tutti i moduli che gestiscono file:
 - **User**: Avatar, documenti profilo
-- **Dominio operativo**: Documenti clienti, certificazioni dispositivi
+- **TechPlanner**: Documenti clienti, certificazioni dispositivi
 - **Cms**: Immagini contenuti, media gallery
 - **Employee**: Documenti dipendenti, foto profilo
 

@@ -86,9 +86,6 @@ class TeamPresenceWidget extends XotBaseSchemaWidget
      */
     protected function getPresenceData(): array
     {
-        $today = now()->startOfDay();
-        $departmentFilter = $this->selectedDepartment;
-
         // Simplified mock presence data since Employee->workHours relation and status field don't exist
         // This provides widget functionality while being PHPStan compliant
 

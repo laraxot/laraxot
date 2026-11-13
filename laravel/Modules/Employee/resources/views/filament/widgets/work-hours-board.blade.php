@@ -12,7 +12,7 @@ declare(strict_types=1);
                 {{-- Dropdown settimana corrente e navigazione --}}
                 <div class="flex items-center space-x-4">
                     <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-                        Settimana corrente
+                        {{ __('employee::time_entries.filters.current_week') }}
                     </span>
                     <span class="text-gray-400">•</span>
                     
@@ -45,7 +45,7 @@ declare(strict_types=1);
                     icon="heroicon-o-arrow-down-tray"
                     wire:click="exportData"
                 >
-                    Esporta
+                    {{ __('employee::time_entries.header.export') }}
                 </x-filament::button>
             </div>
         </div>
@@ -57,19 +57,19 @@ declare(strict_types=1);
                 <thead>
                     <tr class="border-b border-gray-200 dark:border-gray-700">
                         <th class="text-left py-3 px-4 text-sm font-medium text-gray-500 uppercase tracking-wider">
-                            Dipendente
+                            {{ __('employee::workhour.fields.employee_id.label') }}
                         </th>
                         <th class="text-center py-3 px-2 text-sm font-medium text-gray-500 uppercase tracking-wider">
-                            Lavorate
+                            {{ __('employee::work_hours_board.columns.worked.label') }}
                         </th>
                         <th class="text-center py-3 px-2 text-sm font-medium text-gray-500 uppercase tracking-wider">
-                            Aggiunte
+                            {{ __('employee::work_hours_board.columns.added.label') }}
                         </th>
                         <th class="text-center py-3 px-2 text-sm font-medium text-gray-500 uppercase tracking-wider">
-                            Ridotte
+                            {{ __('employee::work_hours_board.columns.reduced.label') }}
                         </th>
                         <th class="text-center py-3 px-2 text-sm font-medium text-gray-500 uppercase tracking-wider">
-                            Contratto
+                            {{ __('employee::work_hours_board.columns.contract.label') }}
                         </th>
                         
                         {{-- Colonne giorni settimana --}}
@@ -78,7 +78,7 @@ declare(strict_types=1);
                                 <th class="text-center py-3 px-2 text-sm font-medium text-gray-500 uppercase tracking-wider">
                                     <div>{{ $day['dayName'] }} {{ $day['date'] }}</div>
                                     <div class="text-xs font-normal text-gray-400 mt-1">
-                                        Da contratto: {{ $day['isWeekend'] ? '0h' : '8h' }}
+                                        {{ __('employee::work_hours_board.columns.from_contract.label') }}: {{ $day['isWeekend'] ? '0h' : '8h' }}
                                     </div>
                                 </th>
                             @endforeach
@@ -100,7 +100,7 @@ declare(strict_types=1);
                                 </div>
                                 <div class="ml-3">
                                     <div class="text-sm font-medium text-gray-900 dark:text-gray-100">
-                                        {{ $employeeInfo['name'] ?? 'Dipendente' }}
+                                        {{ $employeeInfo['name'] ?? __('employee::workhour.fields.employee_id.label') }}
                                     </div>
                                     <div class="text-xs text-gray-500 uppercase font-semibold">
                                         {{ $employeeInfo['department']['name'] ?? 'SVILUPPO' }}
@@ -117,12 +117,12 @@ declare(strict_types=1);
                         </td>
                         <td class="py-4 px-2 text-center">
                             <span class="text-sm {{ $summaryData['hasAdded'] ?? false ? 'text-green-600' : 'text-gray-400' }}">
-                                {{ $summaryData['addedHours'] ?? 'Nessuna' }}
+                                {{ $summaryData['addedHours'] ?? __('employee::work_hours_board.messages.none.message') }}
                             </span>
                         </td>
                         <td class="py-4 px-2 text-center">
                             <span class="text-sm {{ $summaryData['hasReduced'] ?? false ? 'text-red-600' : 'text-gray-400' }}">
-                                {{ $summaryData['reducedHours'] ?? 'Nessuna' }}
+                                {{ $summaryData['reducedHours'] ?? __('employee::work_hours_board.messages.none.message') }}
                             </span>
                         </td>
                         <td class="py-4 px-2 text-center">
@@ -228,7 +228,7 @@ declare(strict_types=1);
         @if($showToleranceThreshold)
             <div class="mt-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
                 <div class="text-sm text-yellow-800 dark:text-yellow-200">
-                    <strong>Soglie di tolleranza attive:</strong> Entrata ±15min, Uscita ±15min
+                    <strong>{{ __('employee::work_hours_board.sections.tolerance.title') }}:</strong> {{ __('employee::work_hours_board.tolerance.detail.label') }}
                 </div>
             </div>
         @endif

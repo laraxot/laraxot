@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Bad Practices – Rating"
 type: guide
 tags: [bad, practices, rating]
@@ -7,6 +9,8 @@ updated: 2026-07-14
 qmd: "BAD PRACTICES"
 related:
   - "./BEST_PRACTICES.md"
+status: superseded
+superseded_by: bad-practices.md
 ---
 
 # Bad Practices – Rating

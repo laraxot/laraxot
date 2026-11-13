@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Correzione Struttura Cartelle Docs - Riepilogo Completo"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "correzione struttura cartelle docs - riepilogo completo xot"
+---
+>>>>>>> laraxot/dev
 # Correzione Struttura Cartelle Docs - Riepilogo Completo
 
 ## Contesto e Problema Identificato

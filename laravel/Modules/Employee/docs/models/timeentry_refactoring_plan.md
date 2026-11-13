@@ -1,3 +1,9 @@
+---
+title: "Employee - TIMEENTRY_REFACTORING_PLAN"
+module: Employee
+bmad: true
+status: active
+---
 # TimeEntry Model Refactoring Plan
 
 ## Analisi Iniziale

@@ -1,12 +1,23 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< .merge_file_PQ4Act
+=======
+<<<<<<< .merge_file_DzFHbb
+
+namespace Modules\Activity\Tests\Unit\Listeners;
+
+=======
+>>>>>>> .merge_file_fqFfwv
 <<<<<<< .merge_file_FqmI1T
 
-<<<<<<< HEAD
 =======
 namespace Modules\Activity\Tests\Unit\Listeners;
 >>>>>>> .merge_file_j7MpLz
+<<<<<<< .merge_file_PQ4Act
+=======
+>>>>>>> .merge_file_gb8vYD
+>>>>>>> .merge_file_fqFfwv
 use Illuminate\Auth\Events\Login;
 use Modules\Activity\Listeners\LoginListener;
 use Modules\Activity\Providers\EventServiceProvider;
@@ -21,57 +32,25 @@ test('login listener is registered for login event', function () {
     $listen = $reflection->getDefaultProperties()['listen'] ?? [];
     /** @var list<class-string> $handlers */
     $handlers = $listen[Login::class] ?? [];
-=======
-namespace Modules\Activity\Tests\Unit\Listeners;
-
-use Illuminate\Auth\Events\Login;
-use Modules\Activity\Providers\EventServiceProvider;
-use Modules\Activity\Listeners\LoginListener;
-use Modules\Activity\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-use ReflectionClass;
-
-uses(TestCase::class);
-
-test('login listener is registered for login event', function () {
-    $reflection = new ReflectionClass(EventServiceProvider::class);
-    $properties = $reflection->getDefaultProperties();
-    $listen = $properties['listen'] ?? null;
-    Assert::assertIsArray($listen);
-    $handlers = $listen[Login::class] ?? [];
-    Assert::assertIsArray($handlers);
->>>>>>> 13cf1831 (.)
 
     Assert::assertContains(LoginListener::class, $handlers);
 });
 
 test('login listener can be instantiated', function () {
-<<<<<<< HEAD
     $listener = new LoginListener();
-=======
-    $listener = new LoginListener;
->>>>>>> 13cf1831 (.)
 
     Assert::assertTrue((new ReflectionClass($listener))->hasMethod('handle'));
 });
 
 test('login listener has handle method', function () {
-<<<<<<< HEAD
     $listener = new LoginListener();
-=======
-    $listener = new LoginListener;
->>>>>>> 13cf1831 (.)
     $reflection = new ReflectionClass($listener);
 
     Assert::assertTrue($reflection->hasMethod('handle'));
 });
 
 test('login listener handle method is callable', function () {
-<<<<<<< HEAD
     $listener = new LoginListener();
-=======
-    $listener = new LoginListener;
->>>>>>> 13cf1831 (.)
 
     $listener->handle();
 });

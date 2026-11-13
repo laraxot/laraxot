@@ -1,3 +1,15 @@
+---
+title: "SCRIPTS INDEX"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "SCRIPTS INDEX"
+issues: []
+discussions: []
+status: draft
+---
+
 # Sixteen Theme Scripts Index
 
 > Utility screenshot/parity scripts executed with Playwright or Puppeteer.
@@ -61,7 +73,6 @@ node map-picker-smoke.cjs
 | `visual-compare-02-dati.cjs` | Full-page + computed-styles comparison for segnalazione-02-dati; saves JSON pair |
 
 ---
-
 ## Pre-existing scripts
 
 ### inspect-fixcity-admin-ticket-create-map.cjs

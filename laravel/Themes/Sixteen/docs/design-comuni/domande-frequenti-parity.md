@@ -1,4 +1,51 @@
+---
+title: "domande frequenti parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-10-20
+qmd: "domande frequenti parity"
+issues: []
+discussions: []
+status: draft
+---
+
 # Domande Frequenti Parity Report
+
+## Stato
+
+`/it/domande-frequenti` è `domande-frequenti.index`: blocco `content-page`,
+ricerca, accordion `source: faq`, parere e contatti. Non esiste
+`pages/domande-frequenti/index.blade.php`. Il perché:
+[why-domande-frequenti-blade-php-must-not-exist.md](../bmad/knowledge/why-domande-frequenti-blade-php-must-not-exist.md).
+
+`components/pages/faq.blade.php` non è nel JSON del tenant. Un vecchio vestito
+a card con sidebar «Categorie» leggeva `$faqs` / `$categories` che nessuno
+passa: il riferimento è hero, ricerca, accordion e «Carica altre domande».
+
+Grammatica comune delle pagine studiate (argomenti, argomento,
+lista-risorse, lista-risorse-categorie, novità, novità-dettaglio, eventi,
+evento-dettaglio, domande frequenti):
+
+| Pagina | Blocco proprio | Chiusura comune |
+|---|---|---|
+| Liste (argomenti, novità, eventi, lista risorse) | `cmp-hero` + card o ricerca | `cmp-rating` + `cmp-contacts` |
+| Schede (argomento, dettaglio novità, dettaglio evento) | corpo + `cmp-navscroll` | `cmp-rating` + `cmp-contacts` |
+| Domande frequenti | `cmp-hero` + ricerca + accordion + «Carica altre domande» | `cmp-rating` + `cmp-contacts` |
+
+La sidebar a badge è il blocco delle categorie, non della FAQ. I blog
+[AFC Formazione](https://www.afcformazione.it/blog/),
+[A. Ferrari](https://www.aferrari.it/articoli/) e
+[Asso della vendita](https://www.assodellavendita.it/blog/) confermano lo
+scopo: ogni voce risponde a una domanda che una persona scriverebbe nella
+ricerca, e la prima frase chiude il dubbio. Per questo le risposte parlano
+di segnalazione, tracciamento e area personale, non di lorem ipsum.
+
+Il vestito sta in `components/blocks/content-page/` e nel foglio
+`resources/css/app/20-dc-components.css`. Tailwind + Alpine. Bootstrap Italia
+è solo riferimento visivo.
+
+## Storico
 
 Data: 2026-04-03
 
@@ -47,9 +94,9 @@ Residuo principale:
 ## Verifica corrente 2026-04-03
 
 Analisi automatica aggiornata:
-- [STRUCTURE-DIFF.md](../../pages/domande-frequenti/STRUCTURE-DIFF.md)
-- [domande-frequenti-structure-comparison.json](../../analysis/domande-frequenti-structure-comparison.json)
-- [domande-frequenti-element-trees.txt](../../analysis/domande-frequenti-element-trees.txt)
+- [STRUCTURE-DIFF.md](../pages/domande-frequenti/structure-diff.md)
+- [domande-frequenti-structure-comparison.json](../analysis/domande-frequenti-structure-comparison.json)
+- [domande-frequenti-element-trees.txt](../analysis/domande-frequenti-element-trees.txt)
 
 Esito corrente:
 - parity strutturale misurata sul confronto automatico: `57%`

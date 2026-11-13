@@ -45,8 +45,9 @@
        TYPOGRAPHY - EXACT VALUES
        ========================================================================== */
     
-    /* Font Families */
+    /* Font Families — Bootstrap Italia: Titillium / Lora / Roboto Mono */
     --dc-font-sans: 'Titillium Web', system-ui, -apple-system, sans-serif;
+    --dc-font-serif: 'Lora', Georgia, serif;
     --dc-font-mono: 'Roboto Mono', monospace;
     
     /* Font Sizes - EXACT */
@@ -187,6 +188,11 @@
 .font-dc-semibold { font-weight: var(--dc-font-weight-semibold); }
 .font-dc-bold { font-weight: var(--dc-font-weight-bold); }
 
+/* Bootstrap Italia family utilities (tipografia docs) */
+.font-sans-serif { font-family: var(--dc-font-sans); }
+.font-serif { font-family: var(--dc-font-serif); }
+.font-monospace { font-family: var(--dc-font-mono); }
+
 /* Spacing */
 .spacing-dc-2 { padding: var(--dc-spacing-2); }
 .spacing-dc-4 { padding: var(--dc-spacing-4); }
@@ -232,11 +238,11 @@
     padding: var(--dc-spacing-6) 0;
 }
 
-/* Brand */
+/* Brand: semibold (600) — leggibilita' FO / WCAG; bold 700 solo per enfasi breve. */
 .it-brand-title {
     color: var(--dc-blue-primary);
     font-size: var(--dc-font-size-xl);
-    font-weight: var(--dc-font-weight-bold);
+    font-weight: var(--dc-font-weight-semibold);
     line-height: var(--dc-line-height-tight);
     margin: 0;
 }

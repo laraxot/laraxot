@@ -1,3 +1,9 @@
+---
+title: "Employee - CODE-QUALITY-REPORT"
+module: Employee
+bmad: true
+status: active
+---
 # Code quality — modulo Employee
 
 Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (ruleset codesize+unusedcode), grep mirati (TODO/FIXME/@deprecated, dd()/dump(), facade in app/Actions, extends Filament diretto), rapporto file test/app.

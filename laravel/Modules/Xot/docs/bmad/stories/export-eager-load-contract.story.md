@@ -1,5 +1,14 @@
 ---
+<<<<<<< HEAD
 title: "Story — contratto getXlsEagerLoad su Resource"
+=======
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+issues: []
+discussions: []
+title: "Story: contratto getXlsEagerLoad su Resource"
+>>>>>>> laraxot/dev
 type: story
 module: Xot
 epic: export
@@ -19,7 +28,11 @@ related:
 ## Perche'
 
 `ExportXlsAction` (Xot, generico) oggi hardcoda `['ratings','ratingMorphs']`
+<<<<<<< HEAD
 con guard `method_exists` — conosce dettagli del dominio Rating. Stesso eager
+=======
+con guard `method_exists`: conosce dettagli del dominio Rating. Stesso eager
+>>>>>>> laraxot/dev
 in `SchedaExporter::modifyQuery`. Funziona ma e' accoppiamento Xot→Rating.
 
 ## Proposta
@@ -43,4 +56,8 @@ public static function getXlsEagerLoad(): array; // ['ratings','ratingMorphs']
 
 ## Priorita'
 
+<<<<<<< HEAD
 Bassa — refactor di pulizia, non bug. Fare dopo 5.152/5.153 Ptv.
+=======
+Bassa: refactor di pulizia, non bug. Fare dopo 5.152/5.153 Ptv.
+>>>>>>> laraxot/dev

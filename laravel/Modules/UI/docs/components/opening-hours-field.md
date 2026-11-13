@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "opening hours field"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "opening hours field"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # OpeningHoursField Component
 
 ## Introduzione
@@ -413,4 +428,3 @@ class Doctor extends BaseModel
 - [Filament Custom Fields Documentation](https://filamentphp.com/docs/forms/fields/custom)
 
 ---
-

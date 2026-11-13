@@ -16,9 +16,9 @@ related:
   - "./component-verification-rules.md"
   - "./component-verification.md"
   - "./dependency-rules.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Best Practices per il Routing in Architettura Volt + Folio + Filament
 
 ## Il Principio Fondamentale
@@ -157,7 +157,6 @@ Ogni volta che pensi di aggiungere una rotta in `web.php`, chiediti:
 - [Il Tao del Codice](../Xot/docs/tao/code_tao.md)
 - [Best Practices Filament](./filament-best-practices.md) 
 - [Best Practices Filament](./filament_best_practices.md) 
->>>>>>> 87273113 (.)
 
 ## Principi Fondamentali
 
@@ -376,7 +375,6 @@ class UserResource extends Resource
 
 ## Collegamenti
 - [Filament Best Practices](./filament-best-practices.md)
->>>>>>> 87273113 (.)
 - [Volt Documentation](https://livewire.laravel.com/docs/volt)
 - [Folio Documentation](https://laravel.com/docs/folio)
 - [Filament Documentation](https://filamentphp.com/docs) 
@@ -496,7 +494,7 @@ public function logout()
 - [Documentazione Volt](./volt-logout.md)
 - [Struttura Directory](./directory-structure-checklist.md)
 - [Gestione Errori](./error-handling.md) 
-- [Documentazione Volt](./volt-logout-2.md)
+- [Documentazione Volt](./volt-logout.md)
+- [Documentazione Volt](../volt-logout.md)
 - [Struttura Directory](./directory-structure-checklist.md)
 - [Gestione Errori](./error-handling.md) 
->>>>>>> 87273113 (.)

@@ -15,6 +15,10 @@ class HasManyThroughAction
     public function execute(Model $_model, RelationDTO $_relationDTO): void
     {
         // Assert::isInstanceOf($rows = $relationDTO->rows, BelongsToMany::class);
+<<<<<<< HEAD
         dddx('wip');
+=======
+        throw new \LogicException('Store\HasManyThroughAction not implemented');
+>>>>>>> laraxot/dev
     }
 }

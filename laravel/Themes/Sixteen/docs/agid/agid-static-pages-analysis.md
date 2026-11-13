@@ -1,3 +1,15 @@
+---
+title: "agid static pages analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agid static pages analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Analisi Template Pagine Statiche AGID per Comuni
 
 ## Cosa Manca nel Tema Sixteen Rispetto alle Linee Guida AGID

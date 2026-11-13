@@ -1,3 +1,15 @@
+---
+title: "attachments usage"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-10-23
+qmd: "attachments usage"
+issues: []
+discussions: []
+status: draft
+---
+
 # Utilizzo Corretto degli Allegati nelle Email Spatie
 
 Questa documentazione descrive come utilizzare correttamente il metodo `addAttachments()` nella classe `SpatieEmail` del modulo Notify.
@@ -16,15 +28,14 @@ Il metodo `addAttachments()` supporta **due formati** per gli allegati:
 // Formato corretto - allegato da file su filesystem
 $attachments = [
     [
-'path' => '/var/www/html/Quaeris/public_html/images/avatars/default-3.svg',
-'path' => '/var/www/_bases/base_ptvx_fila5/public_html/images/avatars/default-3.svg',
+        // public_path() punta a public_html/ (vedi laravel/app/Application.php): mai percorsi assoluti di un'installazione
+        'path' => public_path('images/avatars/default-3.svg'),
         'as' => 'logo.svg',  // Opzionale: nome del file da mostrare nell'email
         'mime' => 'image/svg+xml',  // Opzionale: MIME type del file
     ],
     // Eventualmente altri allegati...
     [
-'path' => '/var/www/html/Quaeris/public_html/documents/terms.pdf',
-'path' => '/var/www/_bases/base_ptvx_fila5/public_html/documents/terms.pdf',
+        'path' => public_path('documents/terms.pdf'),
         'as' => 'termini.pdf',
         'mime' => 'application/pdf',
     ],

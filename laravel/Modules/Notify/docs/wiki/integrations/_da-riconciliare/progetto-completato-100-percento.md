@@ -8,17 +8,29 @@ qmd: "progetto-completato-100-percento 🏆 progetto <nome progetto> - 100% comp
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "../../../00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-notify-completamento-assoluto.md"
+  - "../../../acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
+status: draft
 ---
 
 # 🏆 PROGETTO <nome progetto> - 100% COMPLETATO!
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 **Data**: 1 Ottobre 2025 - Ore 22:30  
 **Status**: ✅✅✅ **PROGETTO COMPLETO AL 100%!** ✅✅✅  
@@ -343,6 +355,7 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 
 ### 🗺️ ROADMAP
 **[→ Master Roadmap Index](./roadmap-master-index.md)** - Indice completo roadmap moduli
+**[→ Master Roadmap Index](../../../roadmap-master-index.md)** - Indice completo roadmap moduli
 
 ### 📊 TECHNICAL
 **[→ Session Summary](./phpstan/session-summary-.md.md)** - Dettagli tecnici sessione
@@ -366,6 +379,21 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 
 ### 🎨 THEMES
 - [Sixteen](../Themes/Sixteen/docs/roadmap-and-issues.md) - Frontend cittadini
+- [Xot](../../../roadmap-and-issues.md) - Framework base
+- [User](../../../roadmap-and-issues.md) - Authentication
+
+**Features**:
+- [AI](../../../roadmap-and-issues.md) - Auto-categorization roadmap
+- [Notify](../../../roadmap-and-issues.md) - Real-time roadmap
+- [Geo](../../../roadmap-and-issues.md) - Maps integration
+
+**Supporto**:
+- [UI](../../../roadmap-and-issues.md) - Components
+- [Cms](../../../roadmap-and-issues.md) - Content
+- [Activity](../../../roadmap-and-issues.md) - Audit
+
+### 🎨 THEMES
+- [Sixteen](../../../roadmap-and-issues.md) - Frontend cittadini
 
 ---
 
@@ -384,7 +412,7 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 ```bash
 # Production build
 cd Themes/Sixteen
-npm run build && npm run copy
+npm run build
 
 # Run migrations
 php artisan migrate --force
@@ -547,6 +575,7 @@ php artisan queue:work --queue=high,notifications,default
 
 - [← Torna all'Indice](./index.md)
 - [← Master Roadmap](./roadmap-master-index.md)
+- [← Master Roadmap](../../../roadmap-master-index.md)
 - [← Analisi Completa](./analisi-completa.md)
 
 ---
@@ -731,13 +760,13 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 
 ✅ **Root Docs** (9):
 1. PROGETTO-COMPLETATO-100-PERCENTO.md (questo!)
-2. COMPLETAMENTO-PROGETTO-2025-10-01.md
-3. ANALISI-COMPLETA-2025-10-01.md
+2. COMPLETAMENTO-PROGETTO.md
+3. ANALISI-COMPLETA.md
 4. LEGGI-QUI-DOMANI.md
 5. roadmap-master-index.md
 6. project-analysis-and-roadmap.md
-7. phpstan/session-summary-2025-10-01.md
-8. phpstan/final-report-session-2025-10-01.md
+7. phpstan/session-summary.md
+8. phpstan/final-report-session.md
 9. phpstan/filament-v4-fixes-session.md
 
 ✅ **Module Roadmaps** (9):
@@ -906,13 +935,17 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 ## 📚 GUIDA RAPIDA ALLA DOCUMENTAZIONE
 
 ### 🌟 START HERE
-**[→ ANALISI COMPLETA](./ANALISI-COMPLETA-2025-10-01.md)** - Executive Summary del progetto
+**[→ ANALISI COMPLETA](./ANALISI-COMPLETA.md)** - Executive Summary del progetto
 
 ### 🗺️ ROADMAP
 **[→ Master Roadmap Index](./roadmap-master-index.md)** - Indice completo roadmap moduli
+**[→ ANALISI COMPLETA](../../../analisi-completa-ottobre-data.md)** - Executive Summary del progetto
+
+### 🗺️ ROADMAP
+**[→ Master Roadmap Index](../../../roadmap-master-index.md)** - Indice completo roadmap moduli
 
 ### 📊 TECHNICAL
-**[→ Session Summary](./phpstan/session-summary-2025-10-01.md)** - Dettagli tecnici sessione
+**[→ Session Summary](./phpstan/session-summary.md)** - Dettagli tecnici sessione
 
 ### 🎯 MODULES (Dettagli per ogni modulo)
 
@@ -934,6 +967,23 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 
 ### 🎨 THEMES
 - [Sixteen](../Themes/Sixteen/docs/roadmap-and-issues.md) - Frontend cittadini
+- [App](../../../roadmap-and-issues.md) - Core business + Performance fixes
+- [<nome progetto>](../Modules/<nome progetto>/docs/roadmap-and-issues.md) - Core business + Performance fixes
+- [Xot](../../../roadmap-and-issues.md) - Framework base
+- [User](../../../roadmap-and-issues.md) - Authentication
+
+**Features**:
+- [AI](../../../roadmap-and-issues.md) - Auto-categorization roadmap
+- [Notify](../../../roadmap-and-issues.md) - Real-time roadmap
+- [Geo](../../../roadmap-and-issues.md) - Maps integration
+
+**Supporto**:
+- [UI](../../../roadmap-and-issues.md) - Components
+- [Cms](../../../roadmap-and-issues.md) - Content
+- [Activity](../../../roadmap-and-issues.md) - Audit
+
+### 🎨 THEMES
+- [Sixteen](../../../roadmap-and-issues.md) - Frontend cittadini
 
 ---
 
@@ -952,7 +1002,7 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 ```bash
 # Production build
 cd Themes/Sixteen
-npm run build && npm run copy
+npm run build
 
 # Run migrations
 php artisan migrate --force
@@ -1116,7 +1166,9 @@ php artisan queue:work --queue=high,notifications,default
 
 - [← Torna all'Indice](./index.md)
 - [← Master Roadmap](./roadmap-master-index.md)
-- [← Analisi Completa](./ANALISI-COMPLETA-2025-10-01.md)
+- [← Analisi Completa](./ANALISI-COMPLETA.md)
+- [← Master Roadmap](../../../roadmap-master-index.md)
+- [← Analisi Completa](../../../analisi-completa-ottobre-data.md)
 
 ---
 

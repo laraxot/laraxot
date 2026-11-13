@@ -4,24 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Widgets;
 
-use Filament\Actions\Action;
-use Filament\Actions\Concerns\InteractsWithActions;
-use Filament\Actions\Contracts\HasActions;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
 use Flowframe\Trend\Trend;
-// use Filament\Widgets\Concerns\InteractsWithPageFilters; // Temporaneamente commentato per evitare conflitti trait in Filament 4.x
 use Illuminate\Support\Carbon;
 use Modules\User\Models\AuthenticationLog;
 use Modules\Xot\Filament\Widgets\XotBaseChartWidget;
 use Webmozart\Assert\Assert;
 
-class UsersChartWidget extends XotBaseChartWidget implements HasActions, HasForms
+final class UsersChartWidget extends XotBaseChartWidget
 {
-    use InteractsWithActions;
-    use InteractsWithForms;
-    // use InteractsWithPageFilters; // Temporaneamente commentato per evitare conflitti trait in Filament 4.x
-
     /**
      * @var array<string, mixed>|null
      */
@@ -33,21 +23,9 @@ class UsersChartWidget extends XotBaseChartWidget implements HasActions, HasForm
 
     protected static ?int $sort = 2;
 
-    public function getHeading(): ?string
+    public function getHeading(): string
     {
         return __('user::widgets.users_chart.heading');
-    }
-
-    /**
-     * Define the action to be tested.
-     */
-    public function testAction(): Action
-    {
-        return Action::make('test')
-            ->requiresConfirmation()
-            ->action(function (array $arguments): void {
-                // Test action - no logging
-            });
     }
 
     protected function getType(): string
@@ -60,10 +38,6 @@ class UsersChartWidget extends XotBaseChartWidget implements HasActions, HasForm
      */
     protected function getData(): array
     {
-        // Rimuovere chiamate di test non necessarie per ridurre overhead
-        // $this->mountAction('test', ['id' => 5]);
-        // $this->testAction();
-
         try {
             // Type narrowing for PHPStan Level 10
             $pageFilters = isset($this->pageFilters) && is_array($this->pageFilters) ? $this->pageFilters : null;
@@ -73,10 +47,10 @@ class UsersChartWidget extends XotBaseChartWidget implements HasActions, HasForm
 
             Assert::nullOrString($startDate = $startDateValue);
             Assert::nullOrString($endDate = $endDateValue);
-            if (null === $endDate) {
+            if ($endDate === null) {
                 $endDate = Carbon::now()->format('Y-m-d H:i:s');
             }
-            if (null === $startDate) {
+            if ($startDate === null) {
                 $startDate = Carbon::now()->subMonth()->format('Y-m-d H:i:s');
             }
             Assert::notNull($startDate = Carbon::createFromFormat('Y-m-d H:i:s', $startDate));
@@ -98,22 +72,8 @@ class UsersChartWidget extends XotBaseChartWidget implements HasActions, HasForm
                 end: $endDate,
             )
             ->perDay()
-            // ->perMonth()
             ->count()
             ->take(1000); // Limite massimo di 1000 record
-        /*
-         * // Update callbacks to match expected signature
-         * $chartData = $data->map(function ($value) {
-         * Assert::isInstanceOf($value, TrendValue::class);
-         *
-         * return $value->aggregate;
-         * })->toArray();
-         * $chartLabels = $data->map(function ($value) {
-         * Assert::isInstanceOf($value, TrendValue::class);
-         *
-         * return $value->date->format('Y-m-d');
-         * })->toArray();
-         */
 
         $chartData = $data->pluck('aggregate')->toArray();
         $chartLabels = $data->pluck('date')->toArray();

@@ -1,3 +1,9 @@
+---
+title: "Employee - 01-SISTEMA-TIMBRATURA-PRESENZE"
+module: Employee
+bmad: true
+status: active
+---
 # 🕐 Sistema Timbratura Presenze - Guida Implementazione Step-by-Step
 
 ## 📋 Cosa Stiamo Costruendo

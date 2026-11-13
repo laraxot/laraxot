@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Rating\Tests\Unit;
 
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Mockery\MockInterface;
 use Modules\Rating\Models\Rating;
+use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\Fixtures\RatingsHostStub;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -22,8 +24,7 @@ afterEach(function (): void {
 });
 
 /**
- * @param array<string, int|string|null> $payload
- *
+ * @param  array<string, int|string|null>  $payload
  * @return HasMany<MorphPivot, RatingsHostStub>&MockInterface
  */
 function mockRatingMorphsQuery(int|string $ratingId, array $payload, int $updated = 1): HasMany
@@ -37,6 +38,33 @@ function mockRatingMorphsQuery(int|string $ratingId, array $payload, int $update
     return $relation;
 }
 
+/**
+ * Host con le sole righe pivot `rating_morph` caricate: `hydrateRatingsFormData()` legge
+ * da `ratings_by_id`, cioe' da `ratingMorphs` (entrambe le forme di `model_type`).
+ *
+ * @param  list<array{0: int, 1: int|float|null, 2: string|null}>  $rows  [rating_id, value, note]
+ */
+function hostWithMorphRows(array $rows): RatingsHostStub
+{
+    $morphs = array_map(static function (array $row): RatingMorph {
+        $pivot = new RatingMorph;
+        $pivot->setRawAttributes([
+            'rating_id' => $row[0],
+            'model_type' => RatingsHostStub::class,
+            'value' => $row[1],
+            'note' => $row[2],
+        ]);
+
+        return $pivot;
+    }, $rows);
+
+    $host = new RatingsHostStub;
+    $host->setRelation('ratings', new EloquentCollection);
+    $host->setRelation('ratingMorphs', new EloquentCollection($morphs));
+
+    return $host;
+}
+
 /*
  * Story Rating/5.145 — refactor: fill/save del pivot ratings.{id}.pivot.{value,note}
  * spostato da CompilaIndennitaResponsabilita (duplicato, parziale, con un cast a 0 buggato)
@@ -48,11 +76,7 @@ function mockRatingMorphsQuery(int|string $ratingId, array $payload, int $update
  */
 describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     test('mappa value e note per ogni riga gia caricata', function (): void {
-        $host = new RatingsHostStub();
-        $host->setRelation('ratings', collect([
-            (object) ['id' => 1, 'pivot' => (object) ['value' => 5, 'note' => null]],
-            (object) ['id' => 2, 'pivot' => (object) ['value' => null, 'note' => null]],
-        ]));
+        $host = hostWithMorphRows([[1, 5, null], [2, null, null]]);
 
         $data = $host->hydrateRatingsFormData(['dal' => 'x']);
 
@@ -64,10 +88,7 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     });
 
     test('rimappa value null + note valorizzata sulla chiave "other" (altro)', function (): void {
-        $host = new RatingsHostStub();
-        $host->setRelation('ratings', collect([
-            (object) ['id' => 3, 'pivot' => (object) ['value' => null, 'note' => 'motivo libero']],
-        ]));
+        $host = hostWithMorphRows([[3, null, 'motivo libero']]);
 
         $data = $host->hydrateRatingsFormData([]);
 
@@ -77,10 +98,7 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
     });
 
     test('non rimappa se value e un numero reale, anche zero', function (): void {
-        $host = new RatingsHostStub();
-        $host->setRelation('ratings', collect([
-            (object) ['id' => 4, 'pivot' => (object) ['value' => 0, 'note' => 'commento']],
-        ]));
+        $host = hostWithMorphRows([[4, 0, 'commento']]);
 
         $data = $host->hydrateRatingsFormData([]);
 
@@ -92,7 +110,7 @@ describe('HasRatingsTrait::hydrateRatingsFormData', function (): void {
 
 describe('HasRatingsTrait::syncRatingsFormData', function (): void {
     test('scrive value numerico e note invariata via ratingMorphs', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forceFill(['id' => 1001]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(7, ['value' => 5, 'note' => 'ok'], 1);
@@ -103,7 +121,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
     });
 
     test('normalizza a null la chiave "other" (altro), mai a zero', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forceFill(['id' => 1002]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(8, ['value' => null, 'note' => 'motivo'], 1);
@@ -114,7 +132,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
     });
 
     test('normalizza a null un valore non numerico, mai a zero', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forceFill(['id' => 1003]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(9, ['value' => null], 1);
@@ -125,7 +143,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
     });
 
     test('value null resta null (nessuna scelta), mai a zero', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forceFill(['id' => 1004]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(10, ['value' => null], 1);
@@ -136,7 +154,7 @@ describe('HasRatingsTrait::syncRatingsFormData', function (): void {
     });
 
     test('se nessuna pivot esiste per questo host, attach una sola volta', function (): void {
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forceFill(['id' => 1005]);
         $host->exists = true;
         $host->forcedHasMany = mockRatingMorphsQuery(11, ['value' => 3], 0);
@@ -161,7 +179,7 @@ describe('HasRatingsTrait::clearEvaluation / clearRatingsFormData', function ():
             'note' => null,
         ])->andReturn(3);
 
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forceFill(['id' => 9408]);
         $host->exists = true;
         $host->forcedHasMany = $relation;
@@ -177,7 +195,7 @@ describe('HasRatingsTrait::clearEvaluation / clearRatingsFormData', function ():
             'note' => null,
         ])->andReturn(1);
 
-        $host = new RatingsHostStub();
+        $host = new RatingsHostStub;
         $host->forceFill(['id' => 9409]);
         $host->exists = true;
         $host->forcedHasMany = $relation;

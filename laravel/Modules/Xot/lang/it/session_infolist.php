@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 return [
     'fields' => [
         'id' => ['label' => 'id'],
@@ -12,3 +13,6 @@ return [
         'last_activity' => ['label' => 'last_activity'],
     ],
 ];
+=======
+return [];
+>>>>>>> laraxot/dev

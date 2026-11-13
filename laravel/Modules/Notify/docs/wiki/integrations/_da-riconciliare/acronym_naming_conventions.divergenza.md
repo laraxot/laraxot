@@ -1,10 +1,15 @@
 ---
+qmd: "acronym naming conventions.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: acronym_naming_conventions.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: acronym-naming-conventions.divergenza.md
 ---
 
 # Divergenza: `acronym_naming_conventions.md`

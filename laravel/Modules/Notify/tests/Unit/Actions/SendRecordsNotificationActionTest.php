@@ -14,9 +14,11 @@ use Modules\Notify\Tests\Fixtures\SendRecordNotificationThrowStub;
 use Modules\Notify\Tests\Fixtures\SendRecordsNotificationRecordDummy;
 use Modules\Notify\Tests\Fixtures\SendRecordsSafeEloquentCastEmptyStub;
 use Modules\Notify\Tests\Fixtures\SendRecordsSafeEloquentCastStub;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Actions\Cast\SafeEloquentCastAction;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 /**
  * @param  array<string, mixed>  $attributes
  */
@@ -41,7 +43,7 @@ test('send records notification action counts successful sends', function (): vo
 
     Assert::assertSame(4, $result->successCount);
     Assert::assertSame(0, $result->errorCount);
-    Assert::assertSame(0, $result->errors->count());
+    Assert::assertCount(0, $result->errors);
     Assert::assertSame(4, $result->totalProcessed);
 });
 
@@ -61,7 +63,7 @@ test('send records notification action accumulates errors per channel', function
 
     Assert::assertSame(2, $result->successCount);
     Assert::assertSame(2, $result->errorCount);
-    Assert::assertSame(2, $result->errors->count());
+    Assert::assertCount(2, $result->errors);
     Assert::assertSame('Fail Record', $result->errors->first()['record'] ?? null);
     Assert::assertSame(4, $result->totalProcessed);
 });

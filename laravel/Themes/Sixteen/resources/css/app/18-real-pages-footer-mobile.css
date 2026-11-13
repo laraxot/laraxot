@@ -1,0 +1,23 @@
+/* Footer delle pagine reali senza scope Design Comuni (home `/it`, accesso, registrazione) sotto i 768 px (DCP-129).
+ * Le regole del footer di Bootstrap Italia valgono solo sotto `body:has(.page-content[data-dc])`; fuori da quello scope restava la regola legacy
+ * `.footer-items-wrapper.logo-wrapper { flex nowrap gap-12 }` (style-apply.css): logo UE e marchio in riga, il nome del Comune finiva oltre il bordo destro
+ * (misurato a 375 px: blocco a x=314, larghezza 204) e `.container` lo tagliava. Qui lo stesso assetto del riferimento: logo UE al massimo meta' larghezza
+ * e marchio sotto, in colonna, con l'icona a 48 px (altezza del logo automatica: limitando solo la larghezza lo schiacciava). Solo mobile: da 768 px il footer resta quello gia' misurato. */
+@media (max-width: 767.98px) {
+  body:not(:has(.page-content[data-dc])) footer#footer .footer-items-wrapper.logo-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  body:not(:has(.page-content[data-dc])) footer#footer .logo-wrapper .ue-logo {
+    max-width: 50%;
+    height: auto;
+  }
+
+  body:not(:has(.page-content[data-dc])) footer#footer .it-footer-main .it-brand-wrapper .icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+}

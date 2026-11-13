@@ -1,11 +1,22 @@
 ---
+<<<<<<< .merge_file_WhMqAP
 title: "Story — bonifica marker merge residui modulo UI"
+=======
+title: "Story: bonifica marker merge residui modulo UI"
+>>>>>>> .merge_file_poqshv
 type: story
 module: UI
 epic: quality
 status: done
 related:
+<<<<<<< .merge_file_WhMqAP
   - ../../../Xot/docs/bmad/stories/merge-marker-fleet-residue.story.md
+=======
+  - ../../../../Xot/docs/bmad/stories/merge-marker-fleet-residue.story.md
+updated: 2026-10-23
+tags: [docs, ui, bmad]
+qmd: "git-status-fleet-merge-markers-ui ui"
+>>>>>>> .merge_file_poqshv
 ---
 
 # git-status-fleet-merge-markers-ui
@@ -173,7 +184,11 @@ concatenate o interleaved** (2-9 copie dello stesso doc): in quei casi tenuta un
 
 ### Altri duplicati stale eliminati (convenzione kebab, canonico presente)
 
+<<<<<<< .merge_file_WhMqAP
 `blade-data-handling_1.md`, `_integration/{carousel_slider,custom_firm_fields,custom_theme,
+=======
+`blade-data-handling.md`, `_integration/{carousel_slider,custom_firm_fields,custom_theme,
+>>>>>>> .merge_file_poqshv
 flip_cards,page_builder,tailwind_themes}.md`, `standards/{form_standards,auth_form_standards}.md`,
 `svg_icons_automatic_registration.md`, `DESIGN_COMUNI_IMPLEMENTATION.md`,
 `_archive/{svg_icons_automatic_registration,brands_icons_integration}.md`,
@@ -187,7 +202,11 @@ Tutti verificati come sottoinsiemi/duplicati del canonico kebab (0 righe uniche 
 righe stale `saluteora`/`fixcity`/`project_docs`). Refs rotte verso i file eliminati corrette
 in `architecture-patterns.md`, `svg-icons-automatic-registration.md`,
 `_archive/svg-icons-automatic-registration.md`, `filament-components-usage.md`,
+<<<<<<< .merge_file_WhMqAP
 `legacy/filament-components-usage.md`, `roadmap/2025-q4-roadmap.md`, `conflitti_merge_risolti.md`,
+=======
+`legacy/filament-components-usage.md`, `roadmap/roadmap.md`, `conflitti_merge_risolti.md`,
+>>>>>>> .merge_file_poqshv
 `_archive/conflitti_merge_risolti.md`, `_archive/filament_components_usage.md`.
 
 ### Esito verifica
@@ -195,9 +214,18 @@ in `architecture-patterns.md`, `svg-icons-automatic-registration.md`,
 - `grep -rn '^<<<<<<<\|^=======$\|^>>>>>>>\|^|||||||'` su `laravel/Modules/UI` → **0 hit**.
 - File con menzioni `<<<<<<<` in prosa/backtick (story/doc sui marker): lasciati intatti.
 - `PHILOSOPHY.md` (1311 righe, doc diverso e più ricco di `philosophy.md`) **mantenuto**:
+<<<<<<< .merge_file_WhMqAP
   contenuto distinto, non un duplicato — solo naming non conforme (segnalato).
 - Debris `ours+theirs` residui (righe duplicate consecutive) restano in ~35 file NON nel pack
   (es. `readme.md`, `frontend.md`, `studio-card-selector-implementation.md`,
   `overview-extended.md`): non toccati, fuori scope del pack — da instradare a batch dedicato.
 - `docs/raw/root-import/` contiene varianti `-1` dei doc importati (es. `changelog-1.md`):
   non toccate, area `raw/` dichiarata immutable dal wiki schema.
+=======
+  contenuto distinto, non un duplicato: solo naming non conforme (segnalato).
+- Debris `ours+theirs` residui (righe duplicate consecutive) restano in ~35 file NON nel pack
+  (es. `readme.md`, `frontend.md`, `studio-card-selector-implementation.md`,
+  `overview-extended.md`): non toccati, fuori scope del pack: da instradare a batch dedicato.
+- `docs/raw/root-import/` contiene varianti `-1` dei doc importati (es. `changelog-1.md`):
+  non toccate, area `raw/` dichiarata immutable dal wiki schema.
+>>>>>>> .merge_file_poqshv

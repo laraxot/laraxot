@@ -5,6 +5,15 @@ tags: [docs, migrated-from-txt]
 created: 2026-08-24
 updated: 2026-08-24
 source: laravel/Themes/Zero/docs/jpgraph-guide.txt
+id: zero-docs-wiki-concepts-jpgraph-guide
+slug: jpgraph-guide
+description: "JpGraph 4.4.2 is a PHP charting library with 200+ functions for server-side chart generation with PDF embedding support."
+document_type: concept
+category: ui-frontend
+status: active
+qmd: "jpgraph guide"
+issues: []
+discussions: []
 ---
 
 # JpGraph 4.4.2 Guide

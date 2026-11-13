@@ -1,3 +1,15 @@
+---
+title: "visual fix report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "visual fix report"
+issues: []
+discussions: []
+status: draft
+---
+
 # Visual Fix Report - 2026-04-02
 
 **Reference**: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html

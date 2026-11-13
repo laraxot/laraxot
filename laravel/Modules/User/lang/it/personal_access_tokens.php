@@ -3,28 +3,33 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< .merge_file_HExs3Y
     'fields' => [
-        'id' => ['label' => 'id'],
-        'uuid' => ['label' => 'uuid'],
-        'tokenable_type' => ['label' => 'tokenable_type'],
-        'tokenable_id' => ['label' => 'tokenable_id'],
-        'name' => ['label' => 'name'],
-        'token' => ['label' => 'token'],
-        'abilities' => ['label' => 'abilities'],
-        'last_used_at' => ['label' => 'last_used_at'],
-        'expires_at' => ['label' => 'expires_at'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
-        'deleted_at' => ['label' => 'deleted_at'],
-        'updated_by' => ['label' => 'updated_by'],
-        'created_by' => ['label' => 'created_by'],
-        'deleted_by' => ['label' => 'deleted_by'],
-        'user_id' => ['label' => 'user_id'],
-        'client_id' => ['label' => 'client_id'],
-        'revoked' => ['label' => 'revoked'],
-        'scopes' => ['label' => 'scopes'],
+        'id' => ['label' => 'ID'],
+        'uuid' => ['label' => 'UUID'],
+        'tokenable_type' => ['label' => 'Tipo di proprietario'],
+        'tokenable_id' => ['label' => 'Proprietario'],
+        'name' => ['label' => 'Nome'],
+        'token' => ['label' => 'Token'],
+        'abilities' => ['label' => 'Permessi'],
+        'last_used_at' => ['label' => 'Ultimo uso'],
+        'expires_at' => ['label' => 'Scade il'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
+        'deleted_at' => ['label' => 'Eliminato il'],
+        'updated_by' => ['label' => 'Modificato da'],
+        'created_by' => ['label' => 'Creato da'],
+        'deleted_by' => ['label' => 'Eliminato da'],
+        'user_id' => ['label' => 'Utente'],
+        'client_id' => ['label' => 'Client ID'],
+        'revoked' => ['label' => 'Revocato'],
+        'scopes' => ['label' => 'Ambiti'],
     ],
+=======
+>>>>>>> .merge_file_ieicW7
     'actions' => [
-        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
+        'create' => [
+            'icon' => 'create',
+        ],
     ],
 ];

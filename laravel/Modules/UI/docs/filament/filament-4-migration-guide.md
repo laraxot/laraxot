@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+---
+title: "Filament 4 Migration Guide"
+type: note
+status: draft
+created: 2026-01-20
+updated: 2026-10-18
+module: UI
+tags: [docs, ui, filament]
+qmd: "filament 4 migration guide ui"
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Filament 4 Migration Guide
 
 ## Overview
@@ -7,7 +21,7 @@ This document outlines the migration from Filament 3 to Filament 4, highlighting
 ## Version Information
 
 - **Current Filament Version**: 4.0.19
-- **Laravel Version**: 12.30.1
+- **Laravel Version**: 12.30.1  
 - **PHP Version**: 8.3.25
 
 ## Major Changes from Filament 3 to 4
@@ -43,7 +57,7 @@ class CustomColumn extends Column
         parent::setUp();
         // Configuration logic here
     }
-
+    
     public function table(?Table $table): static
     {
         parent::table($table);
@@ -70,7 +84,7 @@ use Filament\Schemas\Schema;
 class CreatePost extends Component implements HasSchemas
 {
     use InteractsWithSchemas;
-
+    
     public function form(Schema $schema): Schema
     {
         return $schema
@@ -91,7 +105,7 @@ class ListProducts extends Component implements HasTable, HasSchemas
 {
     use InteractsWithTable;
     use InteractsWithSchemas;
-
+    
     public function table(Table $table): Table
     {
         return $table->query(Product::query());
@@ -106,7 +120,7 @@ class ListProducts extends Component implements HasTable, HasSchemas
 - Need to use `setUp()` for initialization
 - Parent-child table assignment requires manual handling
 
-### 2. LocationSelector Issues
+### 2. LocationSelector Issues  
 - Namespace imports need updating
 - Dependency on missing `Comune` model
 - Schema structure needs alignment with Filament 4

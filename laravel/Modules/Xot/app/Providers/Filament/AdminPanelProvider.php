@@ -7,6 +7,10 @@ namespace Modules\Xot\Providers\Filament;
 use Filament\Panel;
 use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;
+<<<<<<< HEAD
+=======
+use Modules\Xot\Actions\File\AssetAction;
+>>>>>>> laraxot/dev
 use Modules\Xot\Filament\Pages\MainDashboard;
 
 class AdminPanelProvider extends XotBasePanelProvider
@@ -30,9 +34,35 @@ class AdminPanelProvider extends XotBasePanelProvider
         // delle azioni header di Filament (.fi-ac) non va a capo di default —
         // con molte azioni su ArtisanCommandsManager, quelle in eccesso
         // escono dallo schermo invece di scendere su una riga successiva.
+<<<<<<< HEAD
         FilamentAsset::register(
             [
                 Css::make('xot-header-actions-wrap', asset('assets/xot/header-actions-wrap.css')),
+=======
+        // Il CSS appartiene al modulo Xot: pubblicarlo tramite AssetAction
+        // rende disponibile il file prima che Filament emetta l'URL.
+        $headerActionsCss = app(AssetAction::class)->execute('xot::css/header-actions-wrap.css');
+        // Story UI mobile-ux-pass: bersaglio di tocco >= 44 px per le azioni di riga sotto 640 px.
+        // Gli asset Filament sono globali: valgono per tutti i pannelli, non solo per quello Xot.
+        $mobileTouchCss = app(AssetAction::class)->execute('xot::css/mobile-touch-targets.css');
+        // Riga di elenco raggiunta da un ritorno con ancora (#record-N): offset sotto la barra sticky + evidenziazione.
+        $recordAnchorCss = app(AssetAction::class)->execute('xot::css/record-anchor-highlight.css');
+
+        FilamentAsset::register(
+            [
+                Css::make(
+                    'xot-header-actions-wrap',
+                    asset($headerActionsCss),
+                ),
+                Css::make(
+                    'xot-mobile-touch-targets',
+                    asset($mobileTouchCss),
+                ),
+                Css::make(
+                    'xot-record-anchor-highlight',
+                    asset($recordAnchorCss),
+                ),
+>>>>>>> laraxot/dev
             ],
             'xot::admin',
         );

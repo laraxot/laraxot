@@ -1,3 +1,9 @@
+---
+title: "Employee - DASHBOARD"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Dashboard - Documentazione Completa
 
 ## 📊 Panoramica Dashboard

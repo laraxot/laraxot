@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "IMPLEMENTATION_STATUS_2025-10-02.deprecated"
 type: concept
 tags: [deprecated]
@@ -9,7 +11,7 @@ status: deprecated
 related:
   - "./2025-excellence-achievement.md"
   - "./agid-implementation-guide.md"
-  - "./architecture.md"
+  - "./ARCHITECTURE.md"
   - "./complete-refactoring-analysis.md"
   - "./documentation-status.md"
   - "./final-implementation-report-.md"

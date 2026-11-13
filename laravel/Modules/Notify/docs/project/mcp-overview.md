@@ -1,11 +1,28 @@
+---
+title: "mcp overview"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "mcp overview"
+issues: []
+discussions: []
+status: draft
+---
+
 # MCP Servers - Project Overview
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 **Project**: Notify Platform  
 **Last Updated**: 2026-04-09  
 **Status**: Active - Memory and Development Workflow MCP Servers Configured
 
 ---
-
 ## 🎯 Purpose
 
 MCP (Model Context Protocol) servers enhance AI agent capabilities for:
@@ -24,6 +41,7 @@ MCP (Model Context Protocol) servers enhance AI agent capabilities for:
 - **Container Tag**: `laraxot-sixteen`
 - **API Key**: Configured in `.env`
 - **Documentation**: [Sixteen Theme SuperMemory Docs](../../laravel/Themes/Sixteen/docs/supermemory.md)
+- **Documentation**: [Sixteen Theme SuperMemory Docs](../../../../Themes/Sixteen/docs/supermemory.md)
 
 ### 2. Context7 (✅ Installed - Context)
 - **Package**: `@upstash/context7-mcp`
@@ -72,6 +90,7 @@ docs/
 **Cross-References**:
 - [MCP Servers Detailed Docs](../../.qwen/mcp-servers/README.md)
 - [Sixteen Theme SuperMemory](../../laravel/Themes/Sixteen/docs/supermemory.md)
+- [Sixteen Theme SuperMemory](../../../../Themes/Sixteen/docs/supermemory.md)
 - [AI Workflow](ai-workflow/)
 - [Project Configuration](configuration.md)
 
@@ -108,7 +127,7 @@ await client.add({
 ```bash
 # Using Chrome DevTools MCP
 cd laravel/Themes/Sixteen
-npm run build && npm run copy
+npm run build
 # Then capture screenshots for comparison
 ```
 
@@ -135,6 +154,7 @@ npm run build && npm run copy
 - [Master Index](../README.md)
 - [MCP Servers Full Documentation](../../.qwen/mcp-servers/README.md)
 - [Sixteen Theme SuperMemory](../../laravel/Themes/Sixteen/docs/supermemory.md)
+- [Sixteen Theme SuperMemory](../../../../Themes/Sixteen/docs/supermemory.md)
 - [AI Workflow](ai-workflow/)
 - [Conventions](conventions/)
 

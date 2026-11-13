@@ -11,7 +11,6 @@ qmd: "collegamento alle traduzioni del modulo activity activity"
 Questo modulo utilizza le traduzioni centralizzate nella cartella [Lang](../../Lang/docs/).
 
 Consulta la documentazione delle traduzioni qui:
-<<<<<<< HEAD
 <<<<<<< .merge_file_2JZKzg
 <<<<<<< HEAD
 - [Introduzione alle Traduzioni](../../Lang/docs/introduction.md)
@@ -22,16 +21,10 @@ Consulta la documentazione delle traduzioni qui:
 - [Struttura delle Traduzioni](../../lang/docs/structure.md)
 - [Gestione dei File di Lingua](../../lang/docs/module_lang.md)
 >>>>>>> laraxot/dev
-=======
-- [Introduzione alle Traduzioni](../../lang/docs/introduction.md)
-- [Struttura delle Traduzioni](../../lang/docs/structure.md)
-- [Gestione dei File di Lingua](../../lang/docs/module_lang.md)
->>>>>>> 13cf1831 (.)
 
 Questo modulo utilizza le traduzioni centralizzate nella cartella [Lang](../../Lang/docs/).
 
 Consulta la documentazione delle traduzioni qui:
-<<<<<<< HEAD
 <<<<<<< HEAD
 - [Introduzione alle Traduzioni](../../Lang/docs/introduction.md)
 - [Struttura delle Traduzioni](../../Lang/docs/structure.md)
@@ -41,11 +34,6 @@ Consulta la documentazione delle traduzioni qui:
 - [Struttura delle Traduzioni](../../lang/docs/structure.md)
 - [Gestione dei File di Lingua](../../lang/docs/module_lang.md)
 >>>>>>> laraxot/dev
-=======
-- [Introduzione alle Traduzioni](../../lang/docs/introduction.md)
-- [Struttura delle Traduzioni](../../lang/docs/structure.md)
-- [Gestione dei File di Lingua](../../lang/docs/module_lang.md)
->>>>>>> 13cf1831 (.)
 
 =======
 - [Introduzione alle Traduzioni](../../Lang/docs/introduction.md)
@@ -62,16 +50,12 @@ Consulta la documentazione delle traduzioni qui:
 
 ## Collegamenti
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_2JZKzg
 <<<<<<< HEAD
 - [Torna a README](./README.md)
 =======
 - [Torna a README](./readme.md)
 >>>>>>> laraxot/dev
-=======
-- [Torna a README](./readme.md)
->>>>>>> 13cf1831 (.)
 - [Vai a Struttura](./structure.md)
 =======
 - [Torna a README](./README.md)- [Vai a Struttura](./structure.md)
@@ -87,7 +71,6 @@ Per ogni risorsa o campo localizzato, vedi anche il file corrispondente in quest
 > Aggiorna entrambi i riferimenti se aggiungi nuove chiavi di traduzione o modifichi la struttura.
 
 ## Collegamenti tra versioni di lang-link.md
-<<<<<<< HEAD
 <<<<<<< .merge_file_2JZKzg
 <<<<<<< HEAD
 =======
@@ -123,8 +106,6 @@ Per ogni risorsa o campo localizzato, vedi anche il file corrispondente in quest
 <<<<<<< .merge_file_2JZKzg
 * [lang-link.md](laravel/Modules/Cms/docs/lang-link.md)
 =======
-=======
->>>>>>> 13cf1831 (.)
 * [lang-link.md](laravel/modules/chart/docs/lang-link.md)
 * [lang-link.md](laravel/modules/reporting/docs/lang-link.md)
 * [lang-link.md](laravel/modules/gdpr/docs/lang-link.md)
@@ -153,12 +134,8 @@ Per ogni risorsa o campo localizzato, vedi anche il file corrispondente in quest
 * [lang-link.md](laravel/modules/tenant/docs/lang-link.md)
 * [lang-link.md](laravel/modules/activity/docs/lang-link.md)
 * [lang-link.md](laravel/modules/patient/docs/lang-link.md)
-<<<<<<< HEAD
 * [lang-link.md](laravel/modules/cms/docs/lang-link.md)
 >>>>>>> laraxot/dev
 =======
 * [lang-link.md](laravel/Modules/Cms/docs/lang-link.md)
 >>>>>>> .merge_file_OZcs2h
-=======
-* [lang-link.md](laravel/modules/cms/docs/lang-link.md)
->>>>>>> 13cf1831 (.)

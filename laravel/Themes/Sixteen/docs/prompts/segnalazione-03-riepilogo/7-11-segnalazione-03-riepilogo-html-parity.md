@@ -1,3 +1,15 @@
+---
+title: "7 11 segnalazione 03 riepilogo html parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "7 11 segnalazione 03 riepilogo html parity"
+issues: []
+discussions: []
+status: draft
+---
+
 # Story 7.11: HTML Parity — segnalazione-03-riepilogo
 
 Status: ready-for-dev

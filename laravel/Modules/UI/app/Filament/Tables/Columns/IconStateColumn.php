@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Tables\Columns;
 
+<<<<<<< HEAD
+use Exception;
+=======
+>>>>>>> f5ffd8b4 (.)
 use Filament\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -43,7 +47,11 @@ class IconStateColumn extends IconColumn
                         ->options(function (Model $record, string $_state): array {
                             $name = $this->getName();
                             $state = $record->getAttribute($name);
+<<<<<<< HEAD
+                            if ($state === null) {
+=======
                             if (null === $state) {
+>>>>>>> f5ffd8b4 (.)
                                 if (! method_exists($record, 'getDefaultStateFor')) {
                                     return [];
                                 }
@@ -68,7 +76,11 @@ class IconStateColumn extends IconColumn
                             try {
                                 /** @var array<int|string, mixed> $statesArray */
                                 $statesArray = $state->transitionableStates();
+<<<<<<< HEAD
+                            } catch (Exception $e) {
+=======
                             } catch (\Exception $e) {
+>>>>>>> f5ffd8b4 (.)
                                 if (! method_exists($record, 'getStatesFor')) {
                                     return [];
                                 }
@@ -94,7 +106,7 @@ class IconStateColumn extends IconColumn
                             });
                         })
                         ->required()
-                        ->reactive(),
+                        ->live(),
                     Textarea::make('message')->required(function (Get $get, Model $record): bool {
                         $newState = $get('state');
                         $name = $this->getName();
@@ -142,7 +154,11 @@ class IconStateColumn extends IconColumn
                 ->action(function ($record, $data): void {
                     /** @var array<string, mixed> $data */
                     if (! isset($data['state']) || ! is_string($data['state'])) {
+<<<<<<< HEAD
+                        throw new Exception('State is required and must be a string');
+=======
                         throw new \Exception('State is required and must be a string');
+>>>>>>> f5ffd8b4 (.)
                     }
                     $state = $data['state'];
                     /** @var Model $record */
@@ -155,7 +171,11 @@ class IconStateColumn extends IconColumn
 
                     $currentState = $record->getAttribute($this->getName());
                     if (! is_object($currentState) || ! method_exists($currentState, 'transitionTo')) {
+<<<<<<< HEAD
+                        throw new Exception('Current state is not a valid State instance');
+=======
                         throw new \Exception('Current state is not a valid State instance');
+>>>>>>> f5ffd8b4 (.)
                     }
 
                     /** @var string|null $message */

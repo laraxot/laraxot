@@ -1,3 +1,15 @@
+---
+title: "INDEX"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "INDEX"
+issues: []
+discussions: []
+status: draft
+---
+
 # Visual Analysis & Implementation Documentation Index
 
 **Project**: FixCity Homepage Design Replication  
@@ -6,14 +18,13 @@
 **Phase**: CSS/JS Visual Alignment (Implementation Ready)  
 
 ---
-
 ## 📑 Documentation Structure
 
 This folder contains comprehensive analysis, strategy, and implementation planning for achieving visual parity between the reference Design Comuni homepage and our local FixCity implementation.
 
 ### Primary Documents
 
-#### 1. [HTML-STRUCTURAL-ANALYSIS.md](./HTML-STRUCTURAL-ANALYSIS.md)
+#### 1. [HTML-STRUCTURAL-ANALYSIS.md](./html-structural-analysis.md)
 **Status**: ✅ Complete  
 **Purpose**: Verify HTML structural parity between reference and local implementations  
 **Key Findings**:
@@ -31,7 +42,7 @@ This folder contains comprehensive analysis, strategy, and implementation planni
 
 ---
 
-#### 2. [VISUAL-DIFFERENCES-ANALYSIS.md](./VISUAL-DIFFERENCES-ANALYSIS.md)
+#### 2. [VISUAL-DIFFERENCES-ANALYSIS.md](./visual-differences-analysis.md)
 **Status**: ✅ Complete  
 **Purpose**: Document all visual differences between reference and local homepages  
 **Key Findings**:
@@ -61,7 +72,7 @@ This folder contains comprehensive analysis, strategy, and implementation planni
 
 ---
 
-#### 3. [BMAD-VISUAL-ALIGNMENT-DISCUSSION.md](./BMAD-VISUAL-ALIGNMENT-DISCUSSION.md)
+#### 3. [BMAD-VISUAL-ALIGNMENT-DISCUSSION.md](./bmad-visual-alignment-discussion.md)
 **Status**: ✅ Ready for Discussion  
 **Purpose**: Strategic planning document for BMAD team consultation  
 **Key Topics**:
@@ -83,7 +94,7 @@ This folder contains comprehensive analysis, strategy, and implementation planni
 
 ---
 
-#### 4. [GSD-IMPLEMENTATION-PLAN.md](./GSD-IMPLEMENTATION-PLAN.md)
+#### 4. [GSD-IMPLEMENTATION-PLAN.md](./gsd-implementation-plan.md)
 **Status**: ✅ Ready for Execution  
 **Purpose**: Detailed implementation roadmap using GSD (Get Shit Done) methodology  
 **Key Components**:
@@ -116,7 +127,7 @@ This folder contains comprehensive analysis, strategy, and implementation planni
 
 ---
 
-#### 5. [IMPLEMENTATION-REPORT.md](./IMPLEMENTATION-REPORT.md)
+#### 5. [IMPLEMENTATION-REPORT.md](../implementation-report.md)
 **Status**: ⏳ Pending (Created after implementation)  
 **Purpose**: Document actual changes made, results achieved, and verification  
 **Expected Content**:
@@ -245,11 +256,11 @@ HTML-STRUCTURAL-ANALYSIS
 ```
 laravel/Themes/Sixteen/docs/visual-analysis/
 ├── INDEX.md (this file)
-├── HTML-STRUCTURAL-ANALYSIS.md
-├── VISUAL-DIFFERENCES-ANALYSIS.md
-├── BMAD-VISUAL-ALIGNMENT-DISCUSSION.md
-├── GSD-IMPLEMENTATION-PLAN.md
-├── IMPLEMENTATION-REPORT.md (pending)
+├── html-structural-analysis.md
+├── visual-differences-analysis.md
+├── bmad-visual-alignment-discussion.md
+├── gsd-implementation-plan.md
+├── implementation-report.md (pending)
 ├── Screenshots/
 │   ├── reference-homepage-1920.png
 │   ├── reference-homepage-768.png
@@ -316,7 +327,7 @@ A: No. Use Tailwind CSS + Alpine.js only. Bootstrap Italia classes may be in HTM
 A: Document in implementation report and adjust GSD plan. Maintain CSS-only approach unless critical.
 
 **Q: What's the rollback strategy?**  
-A: Git commit atomic changes. Each wave can be tested before proceeding to the next. Rollback via git revert if needed.
+A: Git commit atomic changes. Each wave can be tested before proceeding to the next. Rollback is forward-only: fix with a new commit (never `git revert`/`reset`/`checkout`).
 
 ### Getting Help
 
@@ -352,11 +363,11 @@ A: Git commit atomic changes. Each wave can be tested before proceeding to the n
 ## 🚀 LIVE IMPLEMENTATION REPORTS
 
 ### Wave Implementation Reports
-- **WAVE-2-IMPLEMENTATION-REPORT.md** - Featured Topics gradient fix (COMPLETED ✅)
-- **FEATURED-TOPICS-GRADIENT-ANALYSIS.md** - Detailed gradient issue analysis
+- **wave-2-implementation-report.md** - Featured Topics gradient fix (COMPLETED ✅)
+- **featured-topics-gradient-analysis.md** - Detailed gradient issue analysis
 
 ### Component Analysis
-- **FEATURED-TOPICS-GRADIENT-ANALYSIS.md** - Visual diff, CSS changes, fix strategy
+- **featured-topics-gradient-analysis.md** - Visual diff, CSS changes, fix strategy
 
 ### Build & Deploy Status
 - ✅ Build: 1.31s (Successful)
@@ -376,19 +387,19 @@ A: Git commit atomic changes. Each wave can be tested before proceeding to the n
 ## 🔗 Quick Navigation by Phase
 
 ### For Developers Currently Implementing
-→ **WAVE-2-IMPLEMENTATION-REPORT.md** - Current progress and next steps  
-→ **FEATURED-TOPICS-GRADIENT-ANALYSIS.md** - Analysis of the gradient fix  
-→ **GSD-IMPLEMENTATION-PLAN.md** - Full 7-wave roadmap  
+→ **wave-2-implementation-report.md** - Current progress and next steps  
+→ **featured-topics-gradient-analysis.md** - Analysis of the gradient fix  
+→ **gsd-implementation-plan.md** - Full 7-wave roadmap  
 
 ### For Managers Tracking Progress
 → **CURRENT_CHECKPOINT.md** (in .planning/) - Overall progress status  
-→ **WAVE-2-IMPLEMENTATION-REPORT.md** - Current wave completion  
-→ **GSD-IMPLEMENTATION-PLAN.md** - Timeline and milestones  
+→ **wave-2-implementation-report.md** - Current wave completion  
+→ **gsd-implementation-plan.md** - Timeline and milestones  
 
 ### For QA/Verification
-→ **VISUAL-DIFFERENCES-ANALYSIS.md** - What was originally different  
-→ **FEATURED-TOPICS-GRADIENT-ANALYSIS.md** - Specific fix verification points  
-→ **WAVE-2-IMPLEMENTATION-REPORT.md** - Build status and deployment verification  
+→ **visual-differences-analysis.md** - What was originally different  
+→ **featured-topics-gradient-analysis.md** - Specific fix verification points  
+→ **wave-2-implementation-report.md** - Build status and deployment verification  
 
 ---
 
@@ -396,11 +407,11 @@ A: Git commit atomic changes. Each wave can be tested before proceeding to the n
 
 | Phase | Status | Completion | Documents |
 |-------|--------|-----------|-----------|
-| Planning | ✅ Complete | 100% | INDEX.md, GSD-IMPLEMENTATION-PLAN.md |
-| Wave 1 | ✅ Complete | 100% | GSD-IMPLEMENTATION-PLAN.md (updated) |
-| Wave 2 | 🔄 In Progress | 33% | WAVE-2-IMPLEMENTATION-REPORT.md |
-| Waves 3-4 | ⏳ Pending | 0% | GSD-IMPLEMENTATION-PLAN.md |
-| Wave 5 | ⏳ Pending | 0% | GSD-IMPLEMENTATION-PLAN.md |
-| Wave 6 | ⏳ Pending | 0% | GSD-IMPLEMENTATION-PLAN.md |
-| Wave 7 | ⏳ Pending | 0% | GSD-IMPLEMENTATION-PLAN.md |
+| Planning | ✅ Complete | 100% | INDEX.md, gsd-implementation-plan.md |
+| Wave 1 | ✅ Complete | 100% | gsd-implementation-plan.md (updated) |
+| Wave 2 | 🔄 In Progress | 33% | wave-2-implementation-report.md |
+| Waves 3-4 | ⏳ Pending | 0% | gsd-implementation-plan.md |
+| Wave 5 | ⏳ Pending | 0% | gsd-implementation-plan.md |
+| Wave 6 | ⏳ Pending | 0% | gsd-implementation-plan.md |
+| Wave 7 | ⏳ Pending | 0% | gsd-implementation-plan.md |
 

@@ -1,6 +1,7 @@
 # 📊 GDPR Charts - Privacy & Compliance Reporting
 
 **Modulo**: GDPR
+**Data**: 2025-12-09
 **Status**: ✅ Production Ready
 
 ---
@@ -291,3 +292,4 @@ class ComplianceHeatmapChart extends HeatmapChartWidget
 ---
 
 **Autore**: PTVX Development Team
+**Ultimo Aggiornamento**: 2025-12-09

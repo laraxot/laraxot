@@ -1,3 +1,9 @@
+---
+title: "Employee - PENDINGREQUESTSWIDGET"
+module: Employee
+bmad: true
+status: active
+---
 # PendingRequestsWidget (LE MIE RICHIESTE IN ATTESA)
 
 ## Overview

@@ -13,10 +13,13 @@ uses(TestCase::class);
 
 describe('Can Paginate', function (): void {
     test('trait exists', function (): void {
-<<<<<<< HEAD
+<<<<<<< .merge_file_Mgu4Lu
 =======
-        /** @var \Modules\Activity\Tests\TestCase $this */
->>>>>>> 13cf1831 (.)
+<<<<<<< .merge_file_fSj2Ps
+        /** @var TestCase $this */
+=======
+>>>>>>> .merge_file_ytZmvy
+>>>>>>> .merge_file_PblYhK
         Assert::assertTrue(trait_exists(CanPaginate::class));
     });
 
@@ -44,11 +47,7 @@ describe('Can Paginate', function (): void {
     test('default pagination options return array', function (): void {
 <<<<<<< .merge_file_PN0YI8
         // Test the default pagination options via reflection
-<<<<<<< HEAD
         $trait = new class()
-=======
-        $trait = new class
->>>>>>> 13cf1831 (.)
         {
             use CanPaginate;
 

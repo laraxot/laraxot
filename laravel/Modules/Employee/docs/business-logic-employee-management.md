@@ -1,3 +1,9 @@
+---
+title: "Employee - BUSINESS-LOGIC-EMPLOYEE-MANAGEMENT"
+module: Employee
+bmad: true
+status: active
+---
 # Business Logic - Employee Management System
 
 ## Panoramica

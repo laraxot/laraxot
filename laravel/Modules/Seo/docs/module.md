@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Seo Module — Doctrine"
 type: doctrine
 tags: [seo, search-engine-optimization, module-doctrine]
@@ -8,6 +10,7 @@ qmd: "Seo module doctrine BMAD analysis purpose religion philosophy policy why z
 related:
   - "../../Xot/docs/module.md"
   - "../../Cms/docs/module.md"
+status: active
 ---
 
 # Seo Module — Doctrine

@@ -3,14 +3,24 @@ module: theme
 topic: translation-fixes
 canonical: ../../../Themes/docs/shared-components/translation-fixes.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+title: "translation fixes"
+type: note
+status: stub
+updated: 2026-10-08
+tags: [docs, user]
+qmd: "translation fixes user"
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/translation-fixes.md
@@ -106,5 +116,3 @@ Il file ora segue la struttura espansa obbligatoria per le regole Laraxot:
 ---
 
 *Ultimo aggiornamento: 2025-01-06*
->>>>>>> 60a2c9a9 (.)
->>>>>>> 87273113 (.)

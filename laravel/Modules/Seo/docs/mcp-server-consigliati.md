@@ -1,12 +1,20 @@
 ---
+title: "mcp server consigliati"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "mcp server consigliati"
+issues: []
+discussions: []
 module: theme
 topic: mcp-server-consigliati
-canonical: ../../../Themes/docs/shared-components/MCP_SERVER_CONSIGLIATI.md
+canonical: ../../../Themes/docs/shared-components/MCP_SERVER_CONSIGLIATI.md  # target mancante, verificato 2026-10-08
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/MCP_SERVER_CONSIGLIATI.md
-<<<<<<< HEAD
-=======
+---
 # Server MCP consigliati per il modulo Seo
 
 ## Scopo del modulo
@@ -32,4 +40,3 @@ Analisi SEO, automazione di audit, recupero dati da web, generazione di report.
 
 **Nota:**
 Aggiungi solo i server che realmente ti servono per il tuo workflow. 
->>>>>>> laraxot/dev

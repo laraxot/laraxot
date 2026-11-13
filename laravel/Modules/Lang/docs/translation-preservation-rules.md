@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Regole Critiche per la Preservazione delle Traduzioni"
 module: "Lang"
 type: rule
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "migrazione filament 4"
 related:
   - "./italian-text-refined-audit-report.md"
+status: superseded
+superseded_by: translation-preservation.md
 ---
 # Regole Critiche per la Preservazione delle Traduzioni
 

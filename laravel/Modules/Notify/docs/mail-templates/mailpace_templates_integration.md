@@ -1,3 +1,15 @@
+---
+title: "mailpace templates integration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "mailpace templates integration"
+issues: []
+discussions: []
+status: draft
+---
+
 # Integrazione MailPace Templates
 
 ## Panoramica
@@ -97,3 +109,5 @@ $mailTemplate->send($user->email, [
 - [Repository MailPace Templates](https://github.com/mailpace/templates)
 - [Guida Spatie Email](../SPATIE_EMAIL_USAGE_GUIDE.md)
 - [Implementazione Slug Field](./SLUG_FIELD_IMPLEMENTATION.md)
+- [Guida Spatie Email](../spatie_email_usage_guide.md)
+- [Implementazione Slug Field](./slug_field_implementation.md)

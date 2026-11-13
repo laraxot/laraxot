@@ -1,13 +1,17 @@
 ---
-title: "whatsapp — Consolidated Documentation"
+qmd: "whatsapp consolidated"
+issues: []
+discussions: []
+title: "whatsapp: Consolidated Documentation"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
-# whatsapp — Consolidated Documentation
+# whatsapp: Consolidated Documentation
 
 Consolidated from **12** individual files.
 
@@ -30,7 +34,7 @@ Consolidated from **12** individual files.
 
 ## whatsapp-channel-1
 
-*Consolidated from: `whatsapp-channel-1.md`*
+*Consolidated from: `whatsapp-channel-implementazione-canale.md`*
 
 
 ## 1. Struttura Base
@@ -120,7 +124,7 @@ La logica di selezione del provider WhatsApp è implementata in `WhatsAppProvide
 
 ## whatsapp-channel-2
 
-*Consolidated from: `whatsapp-channel-2.md`*
+*Consolidated from: `whatsapp-channel.md`*
 
 title: "Implementazione Canale WhatsApp"
 type: concept
@@ -131,12 +135,17 @@ qmd: "whatsapp-channel-2 implementazione canale whatsapp"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -834,7 +843,7 @@ class WhatsAppTest extends TestCase
 
 ## whatsapp-integration-1
 
-*Consolidated from: `whatsapp-integration-1.md`*
+*Consolidated from: `whatsapp-integration.md`*
 
 
 ## Panoramica
@@ -1379,7 +1388,7 @@ Seguendo questa architettura, l'integrazione WhatsApp si inserisce perfettamente
 
 ## whatsapp-integration-2
 
-*Consolidated from: `whatsapp-integration-2.md`*
+*Consolidated from: `whatsapp-integration.md`*
 
 title: "Integrazione WhatsApp"
 type: concept
@@ -1390,12 +1399,17 @@ qmd: "whatsapp-integration-2 integrazione whatsapp"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -2488,7 +2502,7 @@ Seguendo questa architettura, l'integrazione WhatsApp si inserisce perfettamente
 
 ## whatsapp-sending-standard-1
 
-*Consolidated from: `whatsapp-sending-standard-1.md`*
+*Consolidated from: `whatsapp-sending-standard.md`*
 
 title: "Standard per Invio Messaggi WhatsApp nel Modulo Notify"
 type: rule
@@ -2499,12 +2513,17 @@ qmd: "whatsapp-sending-standard-1 standard per invio messaggi whatsapp nel modul
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---

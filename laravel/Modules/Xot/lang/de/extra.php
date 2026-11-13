@@ -10,7 +10,11 @@ return [
             'name' => 'Sistema',
             'description' => 'Gestione delle funzionalità aggiuntive del sistema',
         ],
+<<<<<<< HEAD
         'label' => 'extra',
+=======
+        'label' => 'Extra',
+>>>>>>> laraxot/dev
         'sort' => '13',
         'icon' => 'xot-extra',
     ],
@@ -115,67 +119,100 @@ return [
             'description' => '',
         ],
         'id' => [
+<<<<<<< HEAD
             'label' => 'id',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'model_type' => [
+<<<<<<< HEAD
             'label' => 'model_type',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'model_id' => [
+<<<<<<< HEAD
             'label' => 'model_id',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'extra_attributes' => [
+<<<<<<< HEAD
             'label' => 'extra_attributes',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'create' => [
+<<<<<<< HEAD
             'label' => 'create',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'edit' => [
+<<<<<<< HEAD
             'label' => 'edit',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'openFilters' => [
+<<<<<<< HEAD
             'label' => 'openFilters',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'applyFilters' => [
+<<<<<<< HEAD
             'label' => 'applyFilters',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
+<<<<<<< HEAD
             'label' => 'resetFilters',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
+<<<<<<< HEAD
             'label' => 'reorderRecords',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'toggleColumns' => [
+<<<<<<< HEAD
             'label' => 'toggleColumns',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',

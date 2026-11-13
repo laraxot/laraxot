@@ -8,10 +8,7 @@ qmd: "activity module: philosophy, purpose, and design principles activity"
 ---
 # Activity Module: Philosophy, Purpose, and Design Principles
 
-<<<<<<< HEAD
 **Date:** December 23, 2025
-=======
->>>>>>> 13cf1831 (.)
 
 ## 🎯 Purpose and Core Responsibilities
 

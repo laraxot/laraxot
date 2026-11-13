@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_CLOCK_WIDGET_ENHANCED"
+module: Employee
+bmad: true
+status: active
+---
 # Enhanced TimeClockWidget - Badge-Based Time Entries Visualization
 
 ## Panoramica

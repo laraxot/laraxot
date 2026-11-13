@@ -1,10 +1,14 @@
 ---
+qmd: "notebooklm installation summary"
+issues: []
+discussions: []
 title: "NotebookLM Skill - Installation & Integration Summary"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # NotebookLM Skill - Installation & Integration Summary

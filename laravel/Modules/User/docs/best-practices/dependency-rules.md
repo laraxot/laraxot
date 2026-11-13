@@ -16,9 +16,9 @@ related:
   - "./component-verification-rules.md"
   - "./component-verification.md"
   - "./dependency.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # dependency-rules
 
 ## Principle (MANDATORY)

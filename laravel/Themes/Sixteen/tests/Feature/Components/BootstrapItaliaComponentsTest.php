@@ -2,16 +2,10 @@
 
 declare(strict_types=1);
 
+use PHPUnit\Framework\Assert;
 use Tests\TestCase;
 
 uses(TestCase::class);
-
-beforeEach(function (): void {
-    /** @var TestCase $this */
-    $this->markTestSkipped(
-        'View legacy pub_theme::bootstrap-italia.* assenti in base workorder — componenti attivi sotto sixteen::components/bootstrap-italia/.'
-    );
-});
 
 test('skiplinks component renders correctly', function (): void {
     /** @var TestCase $this */
@@ -30,17 +24,16 @@ test('skiplinks component renders correctly', function (): void {
 
 test('cookiebar component has gdpr features', function (): void {
     /** @var TestCase $this */
-    $view = $this->view('pub_theme::bootstrap-italia.cookiebar', [
-        'acceptText' => 'Accetta tutti',
-        'rejectText' => 'Rifiuta tutti',
-        'customizeText' => 'Personalizza',
-    ]);
+    $html = view('cookie-consent::index')->render();
 
-    $view->assertSee('cookiebar');
-    $view->assertSee('Accetta tutti');
-    $view->assertSee('Rifiuta tutti');
-    $view->assertSee('Personalizza');
-    $view->assertSee('role="alert"');
+    Assert::assertStringContainsString('class="gdpr-cookiebar"', $html);
+    Assert::assertStringContainsString('data-cookie-key="__cookie_consent"', $html);
+    Assert::assertStringContainsString('data-cookiebar="info"', $html, 'Con soli cookie tecnici il banner informa, non chiede consenso');
+    Assert::assertStringContainsString('Ho capito', $html, 'Etichetta `alert_ok` di Modules/Gdpr/lang/cookie-consent/it/texts.php');
+    Assert::assertStringContainsString('data-cookie-action="reject"', $html);
+    Assert::assertStringContainsString('data-cookie-preferences', $html, 'Link «Gestisci cookie» per riaprire le preferenze');
+    Assert::assertStringNotContainsString('lcc-modal', $html, 'La vista di statikbe non deve comparire: quella del modulo Gdpr la sostituisce');
+    Assert::assertStringNotContainsString('js-lcc-', $html);
 });
 
 test('hero component variants', function (): void {
@@ -156,7 +149,7 @@ test('radio component grouping', function (): void {
     $view->assertSee('Radio Group');
     $view->assertSee('Radio 1');
     $view->assertSee('Radio 2');
-    $view->assertSee('type="radio"');
+    $view->assertSee('type="radio"', false);
 });
 
 test('upload component features', function (): void {
@@ -320,7 +313,7 @@ test('rating component accessibility', function (): void {
     $view->assertSee('rating');
     $view->assertSee('fieldset');
     $view->assertSee('Rate this service');
-    $view->assertSee('type="radio"');
+    $view->assertSee('type="radio"', false);
     $view->assertSee('it-star-full');
     $view->assertSee('4 stelle');
 });
@@ -399,16 +392,27 @@ test('component prop defaults', function (): void {
         'name' => 'default_rating',
     ]);
     $rating->assertSee('rating');
-    $rating->assertSee('Rating');
+    // Il default e' una legend tradotta (prima: nessuna legend, gruppo radio senza nome accessibile), non la stringa inglese "Rating".
+    $rating->assertSee('<legend class="rating-legend">'.e(__('pub_theme::ui.feedback_rate_stars')).'</legend>', false);
 });
 
 test('complete form integration', function (): void {
     /** @var TestCase $this */
-    $view = $this->view('tests.bootstrap-italia-form-integration');
+    // La vista `tests.bootstrap-italia-form-integration` non e' mai esistita in nessun commit (test nato in 14c648dc5d):
+    // il form si compone qui con i componenti reali del tema.
+    $view = $this->blade(<<<'BLADE'
+        <form method="post" action="#">
+            @include('pub_theme::bootstrap-italia.select', ['name' => 'category', 'label' => 'Categoria', 'options' => ['a' => 'A', 'b' => 'B']])
+            @include('pub_theme::bootstrap-italia.radio', ['name' => 'priority', 'legend' => 'Priorita', 'radios' => [['id' => 'p1', 'value' => 'low', 'label' => 'Bassa'], ['id' => 'p2', 'value' => 'high', 'label' => 'Alta']]])
+            @include('pub_theme::bootstrap-italia.toggle', ['name' => 'notify', 'label' => 'Avvisami'])
+            @include('pub_theme::bootstrap-italia.upload', ['name' => 'photos', 'label' => 'Foto'])
+            @include('pub_theme::bootstrap-italia.rating', ['name' => 'satisfaction', 'legend' => 'Valutazione'])
+        </form>
+        BLADE);
 
     // Should contain multiple Bootstrap Italia components
     $view->assertSee('form-select'); // Select component
-    $view->assertSee('type="radio"'); // Radio component
+    $view->assertSee('type="radio"', false); // Radio component
     $view->assertSee('toggles'); // Toggle component
     $view->assertSee('upload'); // Upload component
     $view->assertSee('rating'); // Rating component

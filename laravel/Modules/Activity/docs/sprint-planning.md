@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_Kz98Hn
 <<<<<<< HEAD
 # Activity Module - Sprint Planning
@@ -180,13 +179,10 @@ Complete core activity tracking infrastructure with admin dashboard for viewing 
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 # Sprint Planning: Activity Module
 
 ## 🏁 Sprint Goal
 Finalize documentation and validation for Activity.
-<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
@@ -198,5 +194,3 @@ Finalize documentation and validation for Activity.
 ## 🏁 Sprint Goal
 Finalize documentation and validation for Activity.
 >>>>>>> .merge_file_N35a7a
-=======
->>>>>>> 13cf1831 (.)

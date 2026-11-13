@@ -1,9 +1,28 @@
+---
+title: "copilot instructions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "copilot instructions"
+issues: []
+discussions: []
+---
+
 # Copilot Instructions for FixCity
 
 This file helps Copilot sessions work effectively in this repository. It captures essential commands, architecture, conventions, and critical patterns to maintain code quality and consistency.
 
 ---
 
+title: "copilot instructions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "copilot instructions"
+issues: []
+discussions: []
 ## 🚀 Quick Commands
 
 ### Development

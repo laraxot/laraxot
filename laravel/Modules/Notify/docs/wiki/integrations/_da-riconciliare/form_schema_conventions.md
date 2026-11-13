@@ -1,10 +1,14 @@
 ---
+qmd: "form schema conventions"
+issues: []
+discussions: []
 title: "Convenzioni per i Form Schema"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Convenzioni per i Form Schema 

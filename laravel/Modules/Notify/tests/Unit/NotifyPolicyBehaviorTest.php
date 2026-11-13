@@ -10,9 +10,11 @@ use Modules\Notify\Models\Policies\MailTemplatePolicy;
 use Modules\Notify\Models\Policies\NotificationPolicy;
 use Modules\Notify\Models\Policies\NotificationTemplatePolicy;
 use Modules\Notify\Tests\Fixtures\NotifyPolicyBehaviorConcretePolicy;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 /**
  * @param  list<string>  $roles
  * @return Mockery\MockInterface&UserContract
@@ -21,14 +23,14 @@ function notifyBehaviorUser(array $roles = []): UserContract
 {
     /** @var Mockery\MockInterface&UserContract $user */
     $user = Mockery::mock(UserContract::class);
-    mockExpectation($user, 'hasRole')
+    TestCase::mockExpectation($user, 'hasRole')
         ->andReturnUsing(static function (array|string $richiesti) use ($roles): bool {
             /** @var list<string> $normalizzati */
             $normalizzati = is_array($richiesti) ? $richiesti : [$richiesti];
 
             return array_intersect($normalizzati, $roles) !== [];
         });
-    mockExpectation($user, 'hasPermissionTo')->andReturn(false);
+    TestCase::mockExpectation($user, 'hasPermissionTo')->andReturn(false);
 
     return $user;
 }

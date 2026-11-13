@@ -8,17 +8,21 @@ qmd: "third-party-model-patterns user module - third-party model patterns"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # User Module - Third-Party Model Patterns
 
 ## Spatie Permission Package Integration
@@ -248,7 +252,6 @@ $this->tableCreate(function (Blueprint $table) {
 ### Laraxot Philosophy
 - [Third-Party Model Inheritance](../Xot/docs/third-party-model-inheritance-philosophy.md)
 - [Model Architecture](../Xot/docs/models/MODEL_ARCHITECTURE.md)
->>>>>>> 87273113 (.)
 - [Third-Party Model Inheritance](../xot/docs/third-party-model-inheritance-philosophy.md)
 - [Model Architecture](../xot/docs/models/model_architecture.md)
 
@@ -257,7 +260,4 @@ $this->tableCreate(function (Blueprint $table) {
 **Integration Status**: ✅ Fully compatible with Spatie package architecture
 **Maintenance**: Low - leverages package maintenance
 **Security**: High - benefits from package security updates
->>>>>>> 87273113 (.)
-=======
 **Security**: High - benefits from package security updates
->>>>>>> laraxot/dev

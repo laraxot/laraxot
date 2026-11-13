@@ -17,7 +17,7 @@
     'small' => false,
     'responsive' => true,
     'caption' => null,
-    'emptyMessage' => 'Nessun dato disponibile',
+    'emptyMessage' => __('pub_theme::components_forms.table.empty.message'),
     'loading' => false,
     'class' => null,
     'tableClass' => null,
@@ -89,7 +89,7 @@ $cellClasses = [
         <div class="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center z-10">
             <div class="flex items-center space-x-2">
                 <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-italia-blue-500"></div>
-                <span class="text-sm text-gray-600">Caricamento...</span>
+                <span class="text-sm text-gray-600">{{ __('pub_theme::components_common.states.loading.label') }}</span>
             </div>
         </div>
     @endif
@@ -114,7 +114,7 @@ $cellClasses = [
                             class="rounded border-gray-300 text-italia-blue-600 focus:ring-italia-blue-500"
                             x-model="selectAll"
                             @change="toggleSelectAll()"
-                            aria-label="Seleziona tutti"
+                            aria-label="{{ __('pub_theme::components_forms.table.select_all.label') }}"
                         >
                     </th>
                 @endif
@@ -238,7 +238,7 @@ $cellClasses = [
         <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-md">
             <div class="flex items-center justify-between">
                 <span class="text-sm text-blue-700">
-                    {{ count($selected) }} elemento/i selezionato/i
+                    {{ count($selected) }} {{ __('pub_theme::components_forms.table.items_selected.label') }}
                 </span>
                 <div class="flex space-x-2">
                     <button 
@@ -246,7 +246,7 @@ $cellClasses = [
                         class="text-sm text-blue-600 hover:text-blue-800"
                         @click="clearSelection()"
                     >
-                        Deseleziona tutto
+                        {{ __('pub_theme::components_forms.table.deselect_all.label') }}
                     </button>
                 </div>
             </div>

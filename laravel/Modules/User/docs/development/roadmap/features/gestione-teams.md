@@ -15,9 +15,10 @@ related:
   - "./legacy-code-cleanup.md"
   - "./user-analytics.md"
   - "./user-traits.md"
+status: superseded
+superseded_by: ../../../roadmap/features/gestione-teams.md
 ---
 
->>>>>>> 87273113 (.)
 # Gestione Teams
 
 ⬅️ [Torna alla Roadmap](../../roadmap.md)

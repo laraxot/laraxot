@@ -8,17 +8,21 @@ qmd: "structure modulo user"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Modulo User
 
 Data: 2025-04-23 19:09:56
@@ -27,7 +31,6 @@ Data: 2025-04-23 19:09:56
 Modules\\User\\Database\\Factories
 Modules\\User\\Database\\Seeders
 - **Pacchetto Composer**: laraxot/module_user_fila5
->>>>>>> 87273113 (.)
 Marco Sottana
 - **Dipendenze**: flowframe/laravel-trend * jenssegers/agent * laravel/passport * socialiteproviders/auth0 * spatie/laravel-personal-data-export * repositories type path url ../Xot type path url ../Tenant type path url ../UI
 - **Totale file PHP**: 673
@@ -617,21 +620,31 @@ tests_old
 - [Report PHPStan](/docs/phpstan/)
 ## Collegamenti tra versioni di structure.md
 * [structure.md](bashscripts/docs/structure.md)
-* [structure.md](../../../gdpr/docs/structure.md)
-* [structure.md](../../../notify/docs/structure.md)
-* [structure.md](../../../xot/docs/structure.md)
+* [structure.md](../../Gdpr/docs/structure.md)
+* [structure.md](../../Notify/docs/structure.md)
+* [structure.md](../../Gdpr/docs/structure.md)
+* [structure.md](../../Notify/docs/structure.md)
+* [structure.md](../../Xot/docs/structure.md)
 * [structure.md](../../../xot/docs/base/structure.md)
-* [structure.md](../../../xot/docs/config/structure.md)
+* [structure.md](../../Xot/docs/config/structure.md)
 * [structure.md](../../../user/docs/structure.md)
-* [structure.md](../../../ui/docs/structure.md)
-* [structure.md](../../../lang/docs/structure.md)
-* [structure.md](../../../job/docs/structure.md)
-* [structure.md](../../../media/docs/structure.md)
-* [structure.md](../../../tenant/docs/structure.md)
-* [structure.md](../../../activity/docs/structure.md)
+* [structure.md](../../UI/docs/structure.md)
+* [structure.md](../../Lang/docs/structure.md)
+* [structure.md](../../Job/docs/structure.md)
+* [structure.md](../../Media/docs/structure.md)
+* [structure.md](../../Tenant/docs/structure.md)
+* [structure.md](../../Activity/docs/structure.md)
 * [structure.md](../../../cms/docs/structure.md)
-* [structure.md](../../../cms/docs/themes/structure.md)
-* [structure.md](../../../cms/docs/components/structure.md)
+* [structure.md](../../Cms/docs/themes/structure.md)
+* [structure.md](../../Cms/docs/components/structure.md)
+* [structure.md](../../Lang/docs/structure.md)
+* [structure.md](../../Job/docs/structure.md)
+* [structure.md](../../Media/docs/structure.md)
+* [structure.md](../../Tenant/docs/structure.md)
+* [structure.md](../../Activity/docs/structure.md)
+* [structure.md](../../../cms/docs/structure.md)
+* [structure.md](../../Cms/docs/themes/structure.md)
+* [structure.md](../../Cms/docs/components/structure.md)
 - [Analisi strutturale complessiva](/project_docs/phpstan/modules_structure_analysis.md)
 - [Report PHPStan](/project_docs/phpstan/)
 * [structure.md](bashscripts/project_docs/structure.md)

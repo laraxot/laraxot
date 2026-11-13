@@ -13,6 +13,7 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
+uses(TestCase::class);
 describe('BuildMailMessageAction', function () {
     // Test strutturali - non richiede container per la classe
     it('has correct class definition', function () {
@@ -67,7 +68,7 @@ describe('BuildMailMessageAction', function () {
 
         Assert::assertStringContainsString('use Modules\Notify\Actions\NotifyTheme\Get;', $content);
         Assert::assertStringContainsString('use Modules\Notify\Datas\AttachmentData;', $content);
-        Assert::assertStringContainsString('use Spatie\LaravelData\DataCollection;', $content);
+        Assert::assertStringContainsString('use Modules\Notify\Datas\NotifyThemeData;', $content);
     });
 
     it('has QueueableAction trait applied correctly', function () {

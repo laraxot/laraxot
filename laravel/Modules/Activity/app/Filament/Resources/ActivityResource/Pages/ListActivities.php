@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Activity\Filament\Resources\ActivityResource\Pages;
 
-<<<<<<< HEAD
-=======
-use Filament\Tables\Columns\TextColumn;
->>>>>>> 13cf1831 (.)
 use Modules\Activity\Filament\Resources\ActivityResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
@@ -17,34 +13,17 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 class ListActivities extends XotBaseListRecords
 {
     protected static string $resource = ActivityResource::class;
-<<<<<<< HEAD
+<<<<<<< .merge_file_pOjb4K
+=======
+<<<<<<< .merge_file_1RKkR1
+=======
+>>>>>>> .merge_file_nTjXH9
 <<<<<<< .merge_file_JuqrM2
 =======
 
 >>>>>>> .merge_file_QK2Jp3
+<<<<<<< .merge_file_pOjb4K
 =======
-
-    public function getTableColumns(): array
-    {
-        return [
-            'id' => TextColumn::make('id')
-                ->sortable()
-                ->searchable(),
-            'description' => TextColumn::make('description')
-                ->searchable()
-                ->limit(50),
-            'subject_type' => TextColumn::make('subject_type')
-                ->searchable(),
-            'subject_id' => TextColumn::make('subject_id')
-                ->searchable(),
-            'causer_type' => TextColumn::make('causer_type')
-                ->searchable(),
-            'causer_id' => TextColumn::make('causer_id')
-                ->searchable(),
-            'created_at' => TextColumn::make('created_at')
-                ->dateTime()
-                ->sortable(),
-        ];
-    }
->>>>>>> 13cf1831 (.)
+>>>>>>> .merge_file_ZrTGYg
+>>>>>>> .merge_file_nTjXH9
 }

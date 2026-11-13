@@ -13,6 +13,7 @@ related:
   - ../../../../../../docs/wiki/memories/contract-suffix-no-interfaces-folder.md
   - ../../../../../../docs/wiki/memories/models-contracts-vs-app-contracts.md
   - ../concepts/metatag-data-contract.md
+status: active
 ---
 
 # Rule: naming e path dei contratti
@@ -49,7 +50,7 @@ namespace Modules\Comment\Contracts;
 interface CanComment { }
 ```
 
-Vedi anche [contract-naming-suffix.md](./contract-naming-suffix.md#corretto) per l'elenco
+Vedi anche [contract-naming-suffix.md](./contract-naming-suffix.md#corretto) _(target mancante, verificato 2026-10-08)_ per l'elenco
 delle eccezioni riconosciute (`CanComment`, `HasTableFunctions`, ...).
 
 ## Placement (con Models)
@@ -81,4 +82,4 @@ L'implementazione concreta (`MetatagData`, model, adapter) dichiara `implements 
 ## Canon
 
 - [contract-suffix-no-interfaces-folder.md](../../../../../../docs/wiki/memories/contract-suffix-no-interfaces-folder.md)
-- Notify: [provider-contracts-naming.md](../../../Notify/docs/provider-contracts-naming.md)
+- Notify: [provider-contracts-naming.md](../../../../Notify/docs/provider-contracts-naming.md)

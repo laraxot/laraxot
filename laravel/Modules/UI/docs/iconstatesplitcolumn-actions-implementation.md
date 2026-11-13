@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "iconstatesplitcolumn actions implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "iconstatesplitcolumn actions implementation"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # IconStateSplitColumn Actions Implementation - Soluzione Semplice
 
 ## Problem Statement
@@ -141,6 +156,17 @@ La soluzione semplice è la migliore perché:
 ---
 
 
+<<<<<<< HEAD
+title: "iconstatesplitcolumn actions implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "iconstatesplitcolumn actions implementation"
+issues: []
+discussions: []
+=======
+>>>>>>> f5ffd8b4 (.)
 **Compatibility**: Filament 3.x, Laravel 10.x
 # IconStateSplitColumn Actions Implementation - Soluzione Semplice
 

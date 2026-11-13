@@ -1,10 +1,16 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "theme page shell"
+issues: []
+discussions: []
 title: folio page-shell — data-page presentation only
 type: concept
 theme: sixteen
 updated: 2026-05-29
 related:
   - ../../../../../../docs/wiki/concepts/theme-as-vestito-philosophy.md
+status: draft
 ---
 
 # Sixteen — `data-page="page-shell"`

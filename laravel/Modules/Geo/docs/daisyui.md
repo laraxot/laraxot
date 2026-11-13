@@ -1,3 +1,15 @@
+---
+title: "daisyui"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "daisyui"
+issues: []
+discussions: []
+status: draft
+---
+
 # Geo Module — daisyUI Documentation
 
 ## Panoramica
@@ -14,7 +26,6 @@ Nel contesto del modulo **Geo**, daisyUI **non è attualmente installato**.
 | Stack canonico | Tailwind v4 + DaisyUI v5 + Filament v5 + Alpine + Lit (definito nel tema, vedi `laravel/Themes/Sixteen/docs/DAISYUI.md`) |
 
 ---
-
 ## Perché Geo non usa daisyUI (e perché non serve)
 
 Il modulo **Geo** gestisce asset pubblici autonomi: `coordinate-picker-lit`, `map-lit`, widget mappa Leaflet.

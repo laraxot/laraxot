@@ -1,9 +1,20 @@
+---
+title: "GITHUB ISSUES WORKFLOW"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "GITHUB ISSUES WORKFLOW"
+issues: []
+discussions: []
+status: draft
+---
+
 # GitHub Issues - CORRECT WORKFLOW
 
 **CRITICAL RULE**: GitHub Issues e Discussions si creano **ONLINE** su GitHub, NON come file locali!
 
 ---
-
 ## Repository
 
 - **URL**: https://github.com/laraxot/base_ptvx_fila5

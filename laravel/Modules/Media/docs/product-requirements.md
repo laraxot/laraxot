@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Product Requirements Document (PRD)"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "product requirements"
 related:
   - "./webm.md"
+status: draft
 ---
 # Product Requirements Document (PRD)
 

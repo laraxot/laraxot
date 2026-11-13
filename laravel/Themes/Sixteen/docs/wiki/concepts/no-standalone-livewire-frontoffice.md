@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+updated: 2026-09-26
+qmd: "no standalone livewire frontoffice"
+issues: []
+discussions: []
 title: "Sixteen — no Livewire standalone in frontoffice"
 type: concept
 status: active

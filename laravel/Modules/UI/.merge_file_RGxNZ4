@@ -1,0 +1,40 @@
+---
+<<<<<<< .merge_file_RGxNZ4
+<<<<<<< .merge_file_0VFRHW
+title: "Brainstorming — dark mode HTTP"
+=======
+title: "Brainstorming: dark mode HTTP"
+>>>>>>> .merge_file_4puljG
+=======
+title: "Brainstorming: dark mode HTTP"
+>>>>>>> .merge_file_O0JAb6
+type: brainstorming
+module: UI
+related:
+  - ./livewire-inventory.md
+<<<<<<< .merge_file_RGxNZ4
+<<<<<<< .merge_file_0VFRHW
+=======
+=======
+>>>>>>> .merge_file_O0JAb6
+status: draft
+updated: 2026-10-07
+tags: [docs, ui, bmad]
+qmd: "brainstorming ui"
+<<<<<<< .merge_file_RGxNZ4
+>>>>>>> .merge_file_4puljG
+=======
+>>>>>>> .merge_file_O0JAb6
+---
+
+# Brainstorming
+
+<<<<<<< .merge_file_RGxNZ4
+<<<<<<< .merge_file_0VFRHW
+Scartato: terzo switcher; convertire Toast in widget dashboard (non è KPI); convertire `InteractiveMap` in widget panel (è contenuto FO, non chrome — e oggi non è nemmeno registrato/montato, vedi [livewire-inventory.md](./livewire-inventory.md)).
+=======
+Scartato: terzo switcher; convertire Toast in widget dashboard (non è KPI); convertire `InteractiveMap` in widget panel (è contenuto FO, non chrome: e oggi non è nemmeno registrato/montato, vedi [livewire-inventory.md](./livewire-inventory.md)).
+>>>>>>> .merge_file_4puljG
+=======
+Scartato: terzo switcher; convertire Toast in widget dashboard (non è KPI); convertire `InteractiveMap` in widget panel (è contenuto FO, non chrome: e oggi non è nemmeno registrato/montato, vedi [livewire-inventory.md](./livewire-inventory.md)).
+>>>>>>> .merge_file_O0JAb6

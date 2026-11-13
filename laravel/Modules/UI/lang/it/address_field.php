@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_9sbE2q
 return [
     'fields' => [
         'country' => ['label' => 'country', 'placeholder' => 'country', 'helper_text' => 'country', 'description' => 'country'],
@@ -11,3 +12,6 @@ return [
         'zip' => ['label' => 'zip', 'placeholder' => 'zip', 'helper_text' => 'zip', 'description' => 'zip'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_7Jc7gi

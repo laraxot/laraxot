@@ -1,0 +1,55 @@
+/**
+ * Cookiebar Tokens — Tailwind + DaisyUI + Flowbite
+ * NO Bootstrap CSS. All values derived from DESIGN.md tokens.
+ */
+
+:root {
+  --cookiebar-bg: #f5f7f9;
+  --cookiebar-border: #d9e2e8;
+  --cookiebar-text: #191919;
+  --cookiebar-text-muted: #5c6f82;
+  --cookiebar-primary: #007a52;
+  --cookiebar-primary-dark: #006945;
+  --cookiebar-shadow: 0 4px 12px rgb(0 0 0 / 18%);
+}
+
+.cookiebar {
+  background: var(--cookiebar-bg);
+  border-top: 1px solid var(--cookiebar-border);
+  color: var(--cookiebar-text);
+  box-shadow: var(--cookiebar-shadow);
+}
+
+.cookiebar p {
+  color: var(--cookiebar-text-muted);
+}
+
+.cookiebar button,
+.cookiebar a {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cookiebar button:hover,
+.cookiebar a:hover {
+  outline: 2px solid var(--cookiebar-primary);
+  outline-offset: 2px;
+}
+
+.cookiebar button:focus-visible,
+.cookiebar a:focus-visible {
+  outline: 2px solid var(--cookiebar-primary);
+  outline-offset: 2px;
+}
+
+.cookiebar button:disabled,
+.cookiebar a:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookiebar button,
+  .cookiebar a {
+    transition: none;
+  }
+}

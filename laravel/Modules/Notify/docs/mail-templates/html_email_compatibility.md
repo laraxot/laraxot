@@ -1,3 +1,15 @@
+---
+title: "html email compatibility"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "html email compatibility"
+issues: []
+discussions: []
+status: draft
+---
+
 # Guida alla Compatibilità HTML per Email
 
 ## Introduzione
@@ -130,5 +142,7 @@ I template nella directory `mail-layouts` seguono queste linee guida di compatib
 
 - [Guida ai Layout Email](../MAIL_LAYOUTS_GUIDE.md)
 - [Integrazione MailPace](./MAILPACE_TEMPLATES_INTEGRATION.md)
+- [Guida ai Layout Email](../mail_layouts_guide.md)
+- [Integrazione MailPace](./mailpace_templates_integration.md)
 - [Campaign Monitor Guide](https://www.campaignmonitor.com/css/)
 - [Email Client Market Share](https://emailclientmarketshare.com/)

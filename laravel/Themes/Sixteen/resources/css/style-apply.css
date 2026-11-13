@@ -76,7 +76,7 @@ html, body {
 .it-header-slim-wrapper {
   background-color: var(--bs-primary-dark);
   @apply py-0 text-base flex;
-  color: #191919;
+  color: #ffffff !important;
 }
 
 .it-header-slim-wrapper-content {
@@ -1233,8 +1233,14 @@ footer.it-footer {
   @apply flex items-center gap-4 no-underline;
 }
 
-.it-footer .it-brand-wrapper .icon {
-  @apply w-16 h-16 flex-shrink-0;
+/* Callers: footer design-comuni .fc-brand-mark; style-apply già in bundle tema.
+ * Nessun altro file forza la size del marchio footer. Istruzione: logo footer = header. */
+.it-footer .it-brand-wrapper .icon.fc-brand-mark,
+.it-footer .it-brand-wrapper .fc-brand-mark {
+  @apply flex-shrink-0;
+  width: 82px !important;
+  height: 82px !important;
+  max-width: 82px;
 }
 
 /* Footer social links styling */
@@ -2200,11 +2206,6 @@ section.py-4 {
   @apply px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200;
   font-family: 'Titillium Web';
 }
-/* FAQ Parity Styles */
-.dc-faq-hero-section {
-    @apply bg-white;
-}
-
 .it-rating-section {
     @apply py-12;
 }

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Correzione Errori Traduzioni - 2025"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "links"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Correzione Errori Traduzioni - 2025
 
@@ -195,6 +198,7 @@ Durante l'audit delle traduzioni, sono state identificate numerose traduzioni ch
 
 ### Collegamenti Bidirezionali
 - [Root Docs: Translation Standards](../../../docs/translation_standards.md)
+- [Root Docs: Translation Standards](../../../../docs/translation_standards.md)
 - [Lang Module: Translation Best Practices](translation_best_practices.md)
 - [<nome progetto> Module: Translation Guidelines](../<nome progetto>/docs/translation_guidelines.md)
 
@@ -447,6 +451,7 @@ Durante l'audit delle traduzioni, sono state identificate numerose traduzioni ch
 
 ### Collegamenti Bidirezionali
 - [Root Docs: Translation Standards](../../../docs/translation_standards.md)
+- [Root Docs: Translation Standards](../../../../docs/translation_standards.md)
 - [Lang Module: Translation Best Practices](translation_best_practices.md)
 - [<nome progetto> Module: Translation Guidelines](../<nome progetto>/docs/translation_guidelines.md)
 

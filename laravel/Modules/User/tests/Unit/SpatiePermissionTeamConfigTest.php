@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\User\Models\Permission;
 use Modules\User\Models\Role;
 use Modules\User\Models\Team;
@@ -23,4 +22,10 @@ test('spatie permission registrar uses user module models for teams', function (
     Assert::assertSame(Team::class, $registrar->getTeamClass());
     Assert::assertSame(Team::class, PermissionConfig::teamModel());
     Assert::assertTrue(config('permission.teams'));
+    Assert::assertSame('user', (new Permission)->getConnectionName());
+    Assert::assertSame('user', (new Role)->getConnectionName());
+    Assert::assertNotSame(
+        config('database.connections.user.database'),
+        config('database.connections.fixcity.database'),
+    );
 });

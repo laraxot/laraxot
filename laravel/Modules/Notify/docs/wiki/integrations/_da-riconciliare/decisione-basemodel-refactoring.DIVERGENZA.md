@@ -1,10 +1,15 @@
 ---
+qmd: "decisione basemodel refactoring.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: decisione-basemodel-refactoring.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: decisione-basemodel-refactoring.divergenza.md
 ---
 
 # Divergenza: `decisione-basemodel-refactoring.md`

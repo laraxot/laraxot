@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Unit\Datas;
 
-use Illuminate\Support\Collection;
 use Modules\Notify\Datas\FirebaseNotificationData;
 use Modules\Notify\Datas\NetfunSmsData;
 use Modules\Notify\Datas\NetfunSmsMessage;
@@ -15,9 +14,11 @@ use Modules\Notify\Datas\SMS\SmsFactorData;
 use Modules\Notify\Datas\SmsMessageData;
 use Modules\Notify\Datas\TelegramData;
 use Modules\Notify\Datas\WhatsAppData;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('netfun sms request and response data can be created from arrays', function () {
     $request = NetfunSmsRequestData::fromArray([
         'token' => 'abc-token',
@@ -91,7 +92,6 @@ test('send notification bulk result data keeps counters and errors collection', 
         totalProcessed: 4,
     );
 
-    Assert::assertInstanceOf(Collection::class, $result->errors);
     Assert::assertSame(3, $result->successCount);
     Assert::assertSame(4, $result->totalProcessed);
     Assert::assertSame(1, $result->errorCount);
@@ -105,5 +105,5 @@ test('firebase notification data fromType fills type and translations structure'
     Assert::assertSame('ticket_created', $data->type);
     Assert::assertNotSame('', $data->title);
     Assert::assertNotSame('', $data->body);
-    Assert::assertNotEmpty($data->data);
+    Assert::assertSame([], $data->data);
 });

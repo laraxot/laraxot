@@ -1,8 +1,26 @@
+<<<<<<< HEAD
+=======
+---
+title: "auth"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, install]
+qmd: "auth"
+---
+>>>>>>> laraxot/dev
 ~~~ php
 <?php
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> laraxot/dev
 return [
     /*
     |--------------------------------------------------------------------------
@@ -107,6 +125,7 @@ return [
     ],
 ];
 
+<<<<<<< HEAD
 ~~~
 ### Versione HEAD
 
@@ -118,3 +137,21 @@ return [
 ### Versione Incoming
 
 ---
+=======
+
+~~~
+### Versione HEAD
+
+
+## Collegamenti tra versioni di auth.md
+* [auth.md](../../../Xot/docs/install/auth.md)
+* [auth.md](../../../User/docs/lang/en/auth.md)
+* [auth.md](../../../Tenant/docs/it/config/auth.md)
+
+
+### Versione Incoming
+
+
+---
+
+>>>>>>> laraxot/dev

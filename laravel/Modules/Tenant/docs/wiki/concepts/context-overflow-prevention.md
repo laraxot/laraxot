@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Context Overflow Prevention"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "context overflow prevention"
 related:
   - "./phpstan-corrections-january.md"
+  - "../../phpstan-corrections-january.md"
+status: draft
 ---
 ## Context Overflow Prevention
 

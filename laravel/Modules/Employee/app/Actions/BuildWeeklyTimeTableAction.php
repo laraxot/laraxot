@@ -42,7 +42,6 @@ class BuildWeeklyTimeTableAction
             'totalWorked' => 0.0,
             'totalContract' => 0.0,
             'totalVariance' => 0.0,
-            'averageDaily' => 0.0,
         ];
 
         // Costruisci dati per ogni giorno della settimana
@@ -51,7 +50,7 @@ class BuildWeeklyTimeTableAction
             $dateKey = $currentDate->toDateString();
 
             // Filtra entries per questo giorno
-            $dayEntries = $entries->filter(fn ($entry) => $entry->timestamp->isSameDay($currentDate));
+            $dayEntries = $entries->filter(fn (WorkHour $entry) => $entry->timestamp->isSameDay($currentDate));
 
             // Costruisci sessioni per questo giorno
             $sessions = $this->buildDaySessions($dayEntries);
@@ -103,7 +102,7 @@ class BuildWeeklyTimeTableAction
         }
 
         // Calcola media giornaliera
-        $workDays = collect($days)->filter(fn ($day) => ! $day['isWeekend'])->count();
+        $workDays = collect($days)->filter(fn (array $day) => ! $day['isWeekend'])->count();
         $weekSummary['averageDaily'] = $workDays > 0 ? round($weekSummary['totalWorked'] / $workDays, 2) : 0;
 
         return [

@@ -7,9 +7,13 @@ namespace Modules\Xot\Tests\Unit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\View;
 use Mockery;
 use Modules\Xot\Actions\File\FileAction;
+=======
+use Mockery;
+>>>>>>> laraxot/dev
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Datas\MetatagData;
 use Modules\Xot\Datas\XotData;
@@ -132,6 +136,7 @@ PHP);
         }
     });
 
+<<<<<<< HEAD
     test('FileAction rami asset theme module config vite copy getRealFile', function (): void {
         $tmp = sys_get_temp_dir().'/xot100-fa-'.uniqid('', true);
         File::ensureDirectoryExists($tmp.'/Themes/One/resources/images');
@@ -277,6 +282,8 @@ PHP);
         }
     });
 
+=======
+>>>>>>> laraxot/dev
     test('XotData rami SSL tenant profile team child e update', function (): void {
         $xot = new XotData;
         $xot->main_module = 'User';
@@ -296,7 +303,10 @@ PHP);
         Assert::assertTrue($xot->forceSSL());
         unset($_SERVER['HTTPS']);
 
+<<<<<<< HEAD
         Assert::assertInstanceOf(XotData::class, $xot->update(['primary_lang' => 'it']));
+=======
+>>>>>>> laraxot/dev
         Assert::assertSame('Modules\\User', $xot->getProjectNamespace());
         Assert::assertStringContainsString('HomeController', $xot->getHomeController());
         Assert::assertStringContainsString('themes/One/', $xot->getPubThemePublicPath('logo.svg'));
@@ -308,8 +318,11 @@ PHP);
         } catch (\Throwable) {
         }
 
+<<<<<<< HEAD
         $made = XotData::make();
         Assert::assertInstanceOf(XotData::class, $made);
+=======
+>>>>>>> laraxot/dev
     });
 
     test('MetatagData rami brand colors social og twitter favicon', function (): void {
@@ -342,7 +355,10 @@ PHP);
         Assert::assertSame($meta, $meta->concatDescription('E'));
 
         $empty = MetatagData::make();
+<<<<<<< HEAD
         Assert::assertInstanceOf(MetatagData::class, $empty);
+=======
+>>>>>>> laraxot/dev
         try {
             $empty->getBrandLogoBase64();
         } catch (\Throwable) {
@@ -396,7 +412,11 @@ PHP);
             'buildCSP' => [],
             'buildPermissionsPolicy' => [],
             'logSecurityEvents' => [$ok, response('l', 200)],
+<<<<<<< HEAD
             'isSuspiciousRequest' => [$bad, response('s', 403)],
+=======
+            'isSuspiciousRequest' => [$bad],
+>>>>>>> laraxot/dev
             'validateInputs' => [$deep],
             'validateStringInput' => ['q', "1' OR 1=1 --"],
             'validateArrayInput' => ['nested', ['x' => 'y']],
@@ -478,11 +498,20 @@ PHP);
                     Assert::assertNotEmpty($case->getDescription());
                 }
             }
+<<<<<<< HEAD
             foreach (['getSearchable', 'getFormSchema', 'toArray', 'getColumnNames', 'getColumnDefinitions'] as $m) {
+=======
+            foreach (['getSearchable', 'getFormSchema', 'toArray', 'getColumnNames'] as $m) {
+>>>>>>> laraxot/dev
                 if (method_exists($enum, $m)) {
                     Assert::assertNotEmpty($enum::$m());
                 }
             }
+<<<<<<< HEAD
+=======
+            // EnumTrait::getColumnDefinitions() vale [] di default: questi enum non sono legati a colonne DB.
+            Assert::assertIsArray($enum::getColumnDefinitions());
+>>>>>>> laraxot/dev
         }
     });
 });

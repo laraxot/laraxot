@@ -25,9 +25,9 @@ use Modules\Notify\Filament\Resources\NotificationLogResource;
 use Modules\Notify\Filament\Resources\NotificationLogResource\Schemas\NotificationLogForm;
 use Modules\Notify\Filament\Resources\NotificationLogResource\Schemas\NotificationLogInfolist;
 use Modules\Notify\Filament\Resources\NotificationLogResource\Tables\NotificationLogsTable;
-use Modules\Notify\Filament\Resources\NotificationResource\Pages\ListNotifications;
 use Modules\Notify\Filament\Resources\NotificationResource\Schemas\NotificationForm;
 use Modules\Notify\Filament\Resources\NotificationResource\Schemas\NotificationInfolist;
+use Modules\Notify\Filament\Resources\NotificationResource\Tables\NotificationsTable;
 use Modules\Notify\Filament\Resources\NotificationTemplateResource;
 use Modules\Notify\Filament\Resources\NotificationTemplateResource\Pages\PreviewNotificationTemplate;
 use Modules\Notify\Filament\Resources\NotificationTemplateResource\Schemas\NotificationTemplateForm;
@@ -37,19 +37,20 @@ use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 function makeEditContactTestProxy(): EditContactTestProxy
 {
-    return new EditContactTestProxy();
+    return new EditContactTestProxy;
 }
 
 function makePreviewMailTemplateTestProxy(): PreviewMailTemplateTestProxy
 {
-    return new PreviewMailTemplateTestProxy();
+    return new PreviewMailTemplateTestProxy;
 }
 
 function makePreviewNotificationTemplateTestProxy(): PreviewNotificationTemplate
 {
-    return new class() extends PreviewNotificationTemplate {};
+    return new class extends PreviewNotificationTemplate {};
 }
 
 test('contact resource form schema exposes expected fields', function (): void {
@@ -98,8 +99,8 @@ test('preview mail template page title and header actions are configured', funct
 });
 
 test('list notifications page exposes expected columns and filters', function (): void {
-    $columns = XotBasePest::assertArray(ListNotifications::notificationTableColumns());
-    $filters = XotBasePest::assertArray(ListNotifications::notificationTableFilters());
+    $columns = XotBasePest::assertArray(app(NotificationsTable::class)->getTableColumns());
+    $filters = XotBasePest::assertArray(app(NotificationsTable::class)->getTableFilters());
 
     Assert::assertArrayHasKey('id', $columns);
     Assert::assertInstanceOf(TextColumn::class, $columns['id']);
@@ -119,7 +120,7 @@ test('notification resource infolist schema exposes expected text entries', func
     Assert::assertArrayHasKey('id', $schema);
     Assert::assertArrayHasKey('type', $schema);
     Assert::assertArrayHasKey('read_at', $schema);
-    Assert::assertNotEmpty($schema);
+    Assert::assertGreaterThanOrEqual(1, count($schema));
 });
 
 test('mail template resource form schema exposes expected components', function (): void {
@@ -199,7 +200,7 @@ test('notification log infolist schema exposes expected entries', function (): v
     Assert::assertArrayHasKey('status', $schema);
     Assert::assertArrayHasKey('notifiable_type', $schema);
     Assert::assertArrayHasKey('sent_at', $schema);
-    Assert::assertNotEmpty($schema);
+    Assert::assertGreaterThanOrEqual(1, count($schema));
 });
 
 test('notification log table columns match the notification_logs schema', function (): void {

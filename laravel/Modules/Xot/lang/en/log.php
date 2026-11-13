@@ -10,7 +10,11 @@ return [
             'name' => 'Sistema',
             'description' => 'Gestione e monitoraggio dei log di sistema',
         ],
+<<<<<<< HEAD
         'label' => 'log',
+=======
+        'label' => 'Log',
+>>>>>>> laraxot/dev
         'sort' => '15',
         'icon' => 'xot-log',
     ],

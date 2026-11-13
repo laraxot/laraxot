@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_wt4yAm
 title: "Architecture — Audit UI/Filament modulo User (epic 12)"
+=======
+title: "Architecture: Audit UI/Filament modulo User (epic 12)"
+>>>>>>> .merge_file_1wfgg5
 type: architecture
 module: User
 status: approved
@@ -12,9 +16,17 @@ related:
   - ./livewire-widget-architecture.md
   - ./architecture.md
   - docs/wiki/rules pers. XotBase / lang
+<<<<<<< .merge_file_wt4yAm
 ---
 
 # Architecture: epic 12 — gap UI/Filament modulo User
+=======
+tags: [docs, user, bmad]
+qmd: "architecture: epic 12   gap ui/filament modulo user user"
+---
+
+# Architecture: epic 12: gap UI/Filament modulo User
+>>>>>>> .merge_file_1wfgg5
 
 **Track:** BMad Method (feature di qualità UI con requisiti e architettura da allineare)  
 **Brainstorming:** [filament-ux-brainstorming.md](./filament-ux-brainstorming.md)
@@ -39,25 +51,45 @@ resource dichiara la propria policy.
 
 ## 3. ADR
 
+<<<<<<< .merge_file_wt4yAm
 ### ADR-001 — `BaseEditUser extends XotBaseEditRecord`
+=======
+### ADR-001: `BaseEditUser extends XotBaseEditRecord`
+>>>>>>> .merge_file_1wfgg5
 
 SSoT: `Modules/Xot/app/Filament/Resources/Pages/XotBaseEditRecord.php`. Allinea i 4 Base*
 della `UserResource` (`BaseCreateUser`→XotBaseCreateRecord già ok, `BaseListUsers`→XotBaseListRecords già ok,
 `BaseViewUser`→XotBaseViewRecord già ok). `UserColumn extends XotBaseColumnGroup`
 (`Modules/Xot/app/Filament/Tables/Columns/XotBaseColumnGroup.php`).
 
+<<<<<<< .merge_file_wt4yAm
 ### ADR-002 — Label in lang, mai in linea
+=======
+### ADR-002: Label in lang, mai in linea
+>>>>>>> .merge_file_1wfgg5
 
 Ogni `->label(...)`, `helperText`, `placeholder` e `tooltip` diventa `__('user::<file>.<key>')`
 nell'albero lang esistente (additivo, nessun file lang nuovo se esiste già il tema).
 
+<<<<<<< .merge_file_wt4yAm
 ### ADR-003 — Zero `dddx()` in produzione
+=======
+### ADR-003: Zero `dddx()` in produzione
+>>>>>>> .merge_file_1wfgg5
 
 Rimozione dead-code nei punti elencati. Dove il `dddx` era "debug provvisorio" (Appearance
 pages) la logica resta invariata, senza output accidentale. `Http/Livewire/TermsOfService.php`
 è da ritirare (10.4), non da "riparare".
 
+<<<<<<< .merge_file_wt4yAm
 ### ADR-004 — Passport SSoT nel cluster
+=======
+Nota 2026-10-20: per le pagine Appearance "la logica resta invariata" non era vero: il salvataggio non e' mai stato scritto, il `dddx` lo
+sostituiva. Ora `updateData()` lancia `LogicException` finche' la persistenza non c'e' (vedi
+[debug-calls-removal-user](../stories/debug-calls-removal-user.story.md)).
+
+### ADR-004: Passport SSoT nel cluster
+>>>>>>> .merge_file_1wfgg5
 
 Le resource Passport vivono **solo** in `Clusters/Passport/Resources`. Cancellazione dei
 doppioni radice: `Resources/OauthClientResource`, `Resources/OauthPersonalAccessClientResource`,
@@ -65,13 +97,21 @@ doppioni radice: `Resources/OauthClientResource`, `Resources/OauthPersonalAccess
 unico `OauthClientForm`: tabella `oauth_clients` (verificata col modello), `secret`
 criptorilasciabile, campi booleani coerenti col modello reale.
 
+<<<<<<< .merge_file_wt4yAm
 ### ADR-005 — Igiene: niente dipendenze né file tooling nel modulo
+=======
+### ADR-005: Igiene: niente dipendenze né file tooling nel modulo
+>>>>>>> .merge_file_1wfgg5
 
 `resources/views/node_modules/` cancellato (92 MB); `lang/it/*.backup_*` cancellati (98 file);
 `.php-cs-fixer.dist.php` nel namespace applicativo cancellati; artefatti `.wip/.no/.test/.corrected`
 e `@components.json` rimossi (quelli ancora tracciati da 10.3/10.4 restano programmati lì).
 
+<<<<<<< .merge_file_wt4yAm
 ### ADR-006 — Policies collegate via `getPolicy()`
+=======
+### ADR-006: Policies collegate via `getPolicy()`
+>>>>>>> .merge_file_1wfgg5
 
 SSoT classe: `app/Models/Policies/`. Ogni Resource estende XotBaseResource e override
 `getPolicy()` → classe esistente. Nessuna `Gate::policy` nuova nel provider (resta il solo
@@ -104,7 +144,11 @@ fs module/
 ## 5. Data model
 
 Invariato. Attenzione: il fix `unique()` su `oauth_clients` cambia *comportamento di validazione*
+<<<<<<< .merge_file_wt4yAm
 su tabella esistente — nessuna migrazione, ma verifica che `oauth_clients.name` abbia già unique
+=======
+su tabella esistente: nessuna migrazione, ma verifica che `oauth_clients.name` abbia già unique
+>>>>>>> .merge_file_1wfgg5
 constraint (in tal caso la UI era solo "più permissiva" di prima).
 
 ## 6. API

@@ -1,3 +1,9 @@
+---
+title: "Employee - EMPLOYEE-MODULE-OPTIMIZATIONS"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - Ottimizzazioni e Miglioramenti
 
 ## Performance Ottimizzazioni

@@ -38,4 +38,9 @@ return [
             'icon' => 'showPassword',
         ],
     ],
+    'ui' => [
+        'errors_title' => 'Please check the data you entered',
+        'login_button' => 'Sign in',
+        'forgot_password' => 'Forgot your password?',
+    ],
 ];

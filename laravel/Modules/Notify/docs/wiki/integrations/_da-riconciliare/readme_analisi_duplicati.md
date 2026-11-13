@@ -1,10 +1,14 @@
 ---
+qmd: "readme analisi duplicati"
+issues: []
+discussions: []
 title: "Analisi Metodi Duplicati - Guida Rapida"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # 🐄 Analisi Metodi Duplicati - Guida Rapida

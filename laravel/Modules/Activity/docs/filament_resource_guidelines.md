@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_MaQ8F5
 # Activity Module Filament Resource Guidelines
 
@@ -121,12 +120,3 @@ qmd: "activity module filament resource guidelines activity"
 
 See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
 >>>>>>> .merge_file_sLPcHC
-=======
----
-module: theme
-topic: filament_resource_guidelines
-canonical: ../../../Themes/docs/shared-components/.gitkeep-Modules
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/.gitkeep-Modules
->>>>>>> 13cf1831 (.)

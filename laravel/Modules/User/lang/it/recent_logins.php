@@ -3,6 +3,13 @@
 declare(strict_types=1);
 
 return [
+    'heading' => 'Accessi Recenti',
+    'columns' => [
+        'user' => 'Utente',
+        'login_at' => 'Ora Accesso',
+        'ip_address' => 'Indirizzo IP',
+        'user_agent' => 'User Agent',
+    ],
     'fields' => [
         'authenticatable' => [
             'name' => [
@@ -14,108 +21,124 @@ return [
             'description' => '',
         ],
         'login_at' => [
-            'label' => 'login_at',
+<<<<<<< .merge_file_S7Bdzj
+            'label' => 'Accesso il',
+=======
+>>>>>>> .merge_file_5Puhq8
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+            'label' => 'login_at',
         ],
         'ip_address' => [
-            'label' => 'ip_address',
+<<<<<<< .merge_file_S7Bdzj
+            'label' => 'Indirizzo IP',
+=======
+>>>>>>> .merge_file_5Puhq8
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+            'label' => 'ip_address',
         ],
         'user_agent' => [
-            'label' => 'user_agent',
+<<<<<<< .merge_file_S7Bdzj
+            'label' => 'Browser (user agent)',
+=======
+>>>>>>> .merge_file_5Puhq8
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+            'label' => 'user_agent',
         ],
         'toggleColumns' => [
-            'label' => 'toggleColumns',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
-            'label' => 'reorderRecords',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
-            'label' => 'resetFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'applyFilters' => [
-            'label' => 'applyFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'openFilters' => [
-            'label' => 'openFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'user' => [
-            'label' => 'user',
+<<<<<<< .merge_file_S7Bdzj
+            'label' => 'Utente',
+=======
+>>>>>>> .merge_file_5Puhq8
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+            'label' => 'user',
         ],
     ],
     'actions' => [
         'reorderRecords' => [
             'icon' => 'reorderRecords',
             'label' => 'reorderRecords',
-            'tooltip' => 'reorderRecords',
         ],
         'openColumnManager' => [
             'icon' => 'openColumnManager',
             'label' => 'openColumnManager',
-            'tooltip' => 'openColumnManager',
         ],
         'applyTableColumnManager' => [
             'icon' => 'applyTableColumnManager',
             'label' => 'applyTableColumnManager',
-            'tooltip' => 'applyTableColumnManager',
         ],
         'resetFilters' => [
             'icon' => 'resetFilters',
             'label' => 'resetFilters',
-            'tooltip' => 'resetFilters',
         ],
         'applyFilters' => [
             'icon' => 'applyFilters',
-            'tooltip' => 'applyFilters',
             'label' => 'applyFilters',
         ],
         'openFilters' => [
-            'tooltip' => 'openFilters',
             'icon' => 'openFilters',
             'label' => 'openFilters',
         ],
         'resetColumnManager' => [
-            'tooltip' => 'resetColumnManager',
             'icon' => 'resetColumnManager',
             'label' => 'resetColumnManager',
         ],
+        'delete' => [
+            'icon' => 'delete',
+            'label' => 'delete',
+        ],
+        'layout' => [
+            'icon' => 'layout',
+            'label' => 'layout',
+        ],
+        'create' => [
+            'icon' => 'create',
+            'label' => 'create',
+        ],
     ],
     'navigation' => [
-        'name' => 'Recent Logins',
-        'plural' => 'Recent Logins',
+        'name' => 'Accessi Recenti',
+        'plural' => 'Accessi Recenti',
         'group' => [
-            'name' => 'General',
-            'description' => 'General Settings',
+            'name' => 'Generale',
+            'description' => 'Impostazioni Generali',
         ],
-        'label' => 'Recent Logins',
+        'label' => 'Accessi Recenti',
         'sort' => 1,
         'icon' => 'heroicon-o-collection',
     ],
-    'label' => 'Recent Logins',
-    'plural_label' => 'Recent Logins (Plurale)',
+    'label' => 'Accessi Recenti',
+    'plural_label' => 'Accessi Recenti (Plurale)',
 ];

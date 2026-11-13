@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "presenter"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "presenter xot"
+---
+>>>>>>> laraxot/dev
 # presenter
 
 <!-- Contenuto migrato da _docs/presenter.txt -->

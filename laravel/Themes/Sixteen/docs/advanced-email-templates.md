@@ -1,3 +1,15 @@
+---
+title: "advanced email templates"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "advanced email templates"
+issues: []
+discussions: []
+status: draft
+---
+
 # Christmas Email Templates (Advanced)
 
 This document outlines the structure and features of the advanced, professional Christmas-themed email templates available in the `Sixteen` theme.

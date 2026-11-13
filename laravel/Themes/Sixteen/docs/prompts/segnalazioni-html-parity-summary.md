@@ -1,3 +1,15 @@
+---
+title: "segnalazioni html parity summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "segnalazioni html parity summary"
+issues: []
+discussions: []
+status: draft
+---
+
 # Segnalazioni HTML Parity Summary
 
 Batch run eseguito con `bashscripts/html/html-structure-compare.sh` contro le reference Design Comuni e le route locali `/it/tests/*`.

@@ -1,3 +1,16 @@
+---
+title: "ROADMAP 2025"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ROADMAP 2025"
+issues: []
+discussions: []
+status: superseded
+superseded_by: roadmap-2025.md
+---
+
 # 🎨 SIXTEEN THEME - ROADMAP 2025
 
 **Tema**: Sixteen (AGID Compliant)  
@@ -8,7 +21,6 @@
 **Last Updated**: 2025-10-01
 
 ---
-
 ## 🎯 THEME OVERVIEW
 
 Il tema **Sixteen** è il tema principale della piattaforma FixCity, progettato per essere completamente conforme alle linee guida AGID (Agenzia per l'Italia Digitale) per l'accessibilità e l'usabilità.

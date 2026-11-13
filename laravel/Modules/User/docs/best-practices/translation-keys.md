@@ -16,9 +16,9 @@ related:
   - "./component-verification-rules.md"
   - "./component-verification.md"
   - "./dependency-rules.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Regole per le Chiavi di Traduzione
 
 ## Principi Fondamentali
@@ -133,7 +133,9 @@ return [
 
 ## Collegamenti Correlati
 
-- [Best Practices per le Traduzioni](translation-best-practices-2.md)
-- [Struttura del Modulo](module-structure-2.md)
+- [Best Practices per le Traduzioni](translation-best-practices.md)
+- [Struttura del Modulo](module-structure.md)
 - [Convenzioni di Codice](code-conventions.md)
->>>>>>> 87273113 (.)
+- [Best Practices per le Traduzioni](../translation-best-practices-traduzioni.md)
+- [Struttura del Modulo](../module-structure-user.md)
+- [Convenzioni di Codice](../code-conventions.md)

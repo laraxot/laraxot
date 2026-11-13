@@ -1,3 +1,15 @@
+---
+title: "monitoring"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "monitoring"
+issues: []
+discussions: []
+status: draft
+---
+
 
 
 # 📊 Fase 5: Monitoraggio

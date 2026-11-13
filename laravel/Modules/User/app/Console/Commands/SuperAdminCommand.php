@@ -23,7 +23,7 @@ class SuperAdminCommand extends Command
     {
         $email = $this->resolveEmail();
 
-        if (null === $email) {
+        if ($email === null) {
             return self::FAILURE;
         }
 
@@ -35,7 +35,7 @@ class SuperAdminCommand extends Command
 
         $user = XotData::make()->findUserByEmail($email);
 
-        if (null === $user) {
+        if ($user === null) {
             $this->error("Utente non trovato per email: {$email}");
 
             return self::FAILURE;
@@ -57,12 +57,12 @@ class SuperAdminCommand extends Command
     private function resolveEmail(): ?string
     {
         $fromOption = $this->option('email');
-        if (is_string($fromOption) && '' !== $fromOption) {
+        if (is_string($fromOption) && $fromOption !== '') {
             return strtolower(trim($fromOption));
         }
 
         $fromArgument = $this->argument('email');
-        if (is_string($fromArgument) && '' !== $fromArgument) {
+        if (is_string($fromArgument) && $fromArgument !== '') {
             return strtolower(trim($fromArgument));
         }
 
@@ -83,7 +83,7 @@ class SuperAdminCommand extends Command
 
             $line = fgets(STDIN);
 
-            if (! is_string($line) || '' === trim($line)) {
+            if (! is_string($line) || trim($line) === '') {
                 $this->error('Email non fornita. Usa: php artisan user:super-admin --email=tuo@email.com');
                 $this->error($exception->getMessage());
 

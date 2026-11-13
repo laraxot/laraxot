@@ -1,3 +1,15 @@
+---
+title: "solution summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "solution summary"
+issues: []
+discussions: []
+status: draft
+---
+
 # Riepilogo Soluzione - Problema Layout Tema Sixteen
 
 ## Problema Risolto

@@ -1,13 +1,17 @@
 ---
-title: "TransChoice DRY — La Religione dell'Unica Fonte di Verita"
+qmd: "trans choice dry religion"
+issues: []
+discussions: []
+title: "TransChoice DRY: La Religione dell'Unica Fonte di Verita"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
-# TransChoice DRY — La Religione dell'Unica Fonte di Verita
+# TransChoice DRY: La Religione dell'Unica Fonte di Verita
 
 **Status**: Active  
 **Created**: 2026-04-14  
@@ -343,6 +347,8 @@ Amen.
 - [ticket.php (corretto)](../../Modules/<nome progetto>/lang/it/ticket.php)
 - [Translation Namespace Religion](../../docs/translation-namespace-religion.md)
 - [No Hardcoded Language Religion](../../docs/no-hardcoded-language-religion.md)
+- [Translation Namespace Religion](../../../translation-namespace-religion.md)
+- [No Hardcoded Language Religion](../../../no-hardcoded-language-religion.md)
 
 ---
 

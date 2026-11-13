@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "code_analyse"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "code_analyse xot"
+---
+>>>>>>> laraxot/dev
 # code_analyse
 
 <!-- Contenuto migrato da _docs/code_analyse.txt -->

@@ -9,6 +9,25 @@ yarn.lock
 # Build outputs
 build/
 dist/
+# The stable Design Comuni sprite is a source input for Vite, not build output.
+!resources/static/
+!resources/static/design-comuni/
+!resources/static/design-comuni/assets/
+!resources/static/design-comuni/assets/bootstrap-italia/
+!resources/static/design-comuni/assets/bootstrap-italia/dist/
+!resources/static/design-comuni/assets/bootstrap-italia/dist/svg/
+!resources/static/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg
+!resources/scripts/
+!resources/scripts/prepare-static-assets.mjs
+# Lo sprite in public/ NON si ignora: deploy.sh non esegue il build del tema e serve public/ cosi' com'e' nel repository.
+# Ignorarlo (come prima) lasciava un checkout pulito senza icone e senza errori (404 su ogni pagina). Vedi DesignComuniIconSpriteIsDeployableTest.
+# `dist/` (sopra) esclude la cartella: git non rientra in una cartella esclusa, quindi si riaprono tutti i livelli fino al file.
+!public/design-comuni/
+!public/design-comuni/assets/
+!public/design-comuni/assets/bootstrap-italia/
+!public/design-comuni/assets/bootstrap-italia/dist/
+!public/design-comuni/assets/bootstrap-italia/dist/svg/
+!public/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg
 test-results/
 
 # Cache / temp
@@ -19,8 +38,8 @@ docs/cache/
 
 # Environment
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
 # Logs
 *.log
@@ -61,11 +80,32 @@ Main_files/
 *.orig
 *.rej
 
+.c*
+.claude-flow
+.supermemory
+bmad
+Main_files
+test-results
+laravel
+.supermemory
+# Ancorate alla radice del tema: senza slash iniziale ignoravano anche resources/views/components e resources/views/layouts,
+# e le viste nuove sparivano da git (sync 6cb55f0d: pagine in 500, nessun file da committare).
+/components
+/layouts
+
+!/docs/bmad/
+/docs/bmad/*
+!/docs/bmad/front-office-readiness-brainstorming.md
+!/docs/bmad/front-office-production-readiness-plan.md
+agentdb.rvf
+ruvector.db
 # AI/TOOL SCAFFOLD — must never exist in module/theme tree (see docs/wiki/rules/module-theme-root-cleanup.md, Rule 5)
 # Reports/audit artifacts belong under the monorepo build/, not inside the theme tree.
 _docs/
-scripts/
+/scripts/
 bashscripts/
+!resources/scripts/
+!resources/scripts/prepare-static-assets.mjs
 docs/archive/
 docs/archived/
 docs/legacy/
@@ -84,6 +124,12 @@ tests/AuditCoverage/
 .git-blame-ignore-revs
 
 # Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
+# Artefatti di strumenti AI locali
+.claude-flow
+.supermemory
+test-results
+agentdb.rvf
+ruvector.db
 .cursor/
 .devcontainer/
 .vscode/
@@ -93,3 +139,6 @@ tests/AuditCoverage/
 phpinsights.php
 rector.php
 storage/
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out/
+*.lock

@@ -16,9 +16,9 @@ related:
   - "./component-verification-rules.md"
   - "./component-verification.md"
   - "./dependency-rules.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Best Practices per Componenti Filament
 
 ## Verifica delle Dipendenze
@@ -112,6 +112,8 @@ composer show filament/spatie-laravel-media-library-plugin
 
 ## Collegamenti tra versioni di filament-components.md
 * [filament-components.md](../../../user/docs/best-practices/filament-components.md)
-* [filament-components.md](../../../cms/docs/best-practices/filament-components.md)
-* [filament-components.md](../../../cms/docs/filament-components.md)
+* [filament-components.md](../../../Cms/docs/best-practices/filament-components.md)
+* [filament-components.md](../../../Cms/docs/filament-components.md)
+* [filament-components.md](../../../Cms/docs/best-practices/filament-components.md)
+* [filament-components.md](../../../Cms/docs/filament-components.md)
 * [filament-components.md](laravel/docs/rules/filament-components.md)

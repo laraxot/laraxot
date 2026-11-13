@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Spatie Laravel Data Objects"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, development]
+qmd: "Spatie Laravel Data Objects"
+---
+>>>>>>> laraxot/dev
 # Spatie Laravel Data Objects
 
 ## Introduzione
@@ -24,10 +37,17 @@ class PerformanceData extends Data
     public function __construct(
         #[Validation('required|string|max:255')]
         public readonly string $nome,
+<<<<<<< HEAD
 
         #[Validation('required|numeric|min:0|max:100')]
         public readonly float $punteggio,
 
+=======
+        
+        #[Validation('required|numeric|min:0|max:100')]
+        public readonly float $punteggio,
+        
+>>>>>>> laraxot/dev
         #[Validation('nullable|date')]
         public readonly ?Carbon $data_valutazione = null,
     ) {}
@@ -104,9 +124,13 @@ use Filament\Forms;
 class PerformanceResource extends XotBaseResource
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
     public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public static function getFormSchema(): array
 >>>>>>> laraxot/dev
     {
         return [
@@ -114,13 +138,21 @@ class PerformanceResource extends XotBaseResource
                 ->required()
                 ->string()
                 ->maxLength(255),
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> laraxot/dev
             Forms\Components\TextInput::make('punteggio')
                 ->required()
                 ->numeric()
                 ->min(0)
                 ->max(100),
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> laraxot/dev
             Forms\Components\DatePicker::make('data_valutazione')
                 ->nullable(),
         ];
@@ -172,7 +204,11 @@ class PerformanceData extends Data
         return new self(
             nome: $request->input('nome'),
             punteggio: (float) $request->input('punteggio'),
+<<<<<<< HEAD
             data_valutazione: $request->has('data_valutazione')
+=======
+            data_valutazione: $request->has('data_valutazione') 
+>>>>>>> laraxot/dev
                 ? Carbon::parse($request->input('data_valutazione'))
                 : null,
         );

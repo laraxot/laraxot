@@ -17,6 +17,10 @@ class ExportButton
             ->tooltip('export XLS')
             ->icon('xot-files.xls')
             // ->visible(null != $year)
+<<<<<<< HEAD
             ->action(static fn () => dddx('WIP'));
+=======
+            ->action(static fn (): never => throw new \LogicException('ExportButton action not implemented'));
+>>>>>>> laraxot/dev
     }
 }

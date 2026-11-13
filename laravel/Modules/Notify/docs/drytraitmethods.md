@@ -1,3 +1,15 @@
+---
+title: "drytraitmethods"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "drytraitmethods"
+issues: []
+discussions: []
+status: draft
+---
+
 # DRY Principle for Trait Methods
 
 ## Critical Rule: Never Duplicate Trait Methods

@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+---
+title: "Utilizzo dei Componenti Filament Dropdown e Avatar"
+type: note
+status: draft
+created: 2026-01-20
+updated: 2026-10-18
+module: UI
+tags: [docs, ui]
+qmd: "utilizzo dei componenti filament dropdown e avatar ui"
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Utilizzo dei Componenti Filament Dropdown e Avatar 
 
 ## Collegamenti correlati
@@ -200,7 +214,11 @@ $this->mount(function () {
 
 ## Gestione delle Traduzioni
 
+<<<<<<< HEAD
+Le traduzioni per il dropdown utente sono definite nei file di traduzione di Laravel sotto il namespace `auth.user_dropdown`. È importante seguire lo standard di SaluteOra per le traduzioni, utilizzando sempre le chiavi di traduzione appropriate e mantenendo la coerenza tra le diverse lingue.
+=======
 Le traduzioni per il dropdown utente sono definite nei file di traduzione di Laravel sotto il namespace `auth.user_dropdown`. È importante seguire lo standard di <nome progetto> per le traduzioni, utilizzando sempre le chiavi di traduzione appropriate e mantenendo la coerenza tra le diverse lingue.
+>>>>>>> f5ffd8b4 (.)
 
 ### Struttura delle Traduzioni
 

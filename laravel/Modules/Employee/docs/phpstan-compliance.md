@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-COMPLIANCE"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Compliance - Employee Module
 
 ## Status: ✅ FULLY COMPLIANT
@@ -42,3 +48,10 @@ The module maintains high standards:
 - Comprehensive type hints throughout
 - Safe and secure coding practices
 - Modern PHP 8.2+ feature utilization
+
+## Param type coverage (aggiornato 2026-10-28)
+
+La soglia `typeCoverage.paramTypeCoverage` (99 %) e' calcolata sull'**intero** albero `Modules`, non sul singolo modulo:
+verificare sempre col run full-tree (`phpstan analyse Modules`). Regola per Employee: ogni closure/scope tipizza il
+parametro col tipo reale (`WorkHour`, `Collection`, `Builder`, `float`); `mixed` solo per state Filament. Dettagli e tabella:
+[stories/7.1.phpstan-paramtype-coverage.story.md](stories/7.1.phpstan-paramtype-coverage.story.md).

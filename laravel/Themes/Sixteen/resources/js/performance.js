@@ -267,8 +267,6 @@ class PerformanceManager {
      */
     dnsPrefetchExternalDomains() {
         const externalDomains = [
-            'https://fonts.googleapis.com',
-            'https://fonts.gstatic.com',
             'https://cdn.jsdelivr.net'
         ];
         

@@ -1,3 +1,15 @@
+---
+title: "css js pass"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "css js pass"
+issues: []
+discussions: []
+status: draft
+---
+
 # CSS/JS Pass 2026-04-04
 
 ## Scope
@@ -88,8 +100,8 @@ Regola confermata dal pass:
 ## Link bidirezionali
 
 - Indice Design Comuni: [00-index.md](./00-index.md)
-- Piano master: [MASTER_IMPLEMENTATION_PLAN.md](./MASTER_IMPLEMENTATION_PLAN.md)
-- Report batch body parity: [BATCH_BODY_PARITY_REPORT.md](./BATCH_BODY_PARITY_REPORT.md)
+- Piano master: [MASTER_IMPLEMENTATION_PLAN.md](./master-implementation-plan.md)
+- Report batch body parity: [BATCH_BODY_PARITY_REPORT.md](./batch-body-parity-report.md)
 
 ## Secondo loop 2026-04-05
 
@@ -107,7 +119,7 @@ Decisione aggiornata:
 
 ## Segnalazioni: struttura e next steps
 
-Il batch `BATCH_BODY_PARITY_REPORT.md` segnala queste percentuali di match tra body reference e locale:
+Il batch `batch-body-parity-report.md` segnala queste percentuali di match tra body reference e locale:
 
 - `segnalazione-disservizio`: match 23.8% (reference 404, locale 500) → pagina non renderizzata; serve ripristinare il JSON/Blade prima di qualsiasi CSS.
 - `segnalazione-01-privacy`: match 57.9% (tag-count 430/384); struttura molto diversa → non vale il pass CSS-only.

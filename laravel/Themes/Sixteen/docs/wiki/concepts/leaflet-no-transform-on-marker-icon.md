@@ -1,4 +1,7 @@
 ---
+qmd: "leaflet no transform on marker icon"
+issues: []
+discussions: []
 title: "Map-lit cluster fix — lezione cascade + lezioni operative multi-repo"
 type: concept
 confidence: high
@@ -8,6 +11,7 @@ tags: [leaflet, markercluster, css-cascade, lit, light-dom, git, multi-repo, STO
 related:
   - marker-cluster-hover-stability.md
   - leaflet-z-index-layering.md
+status: draft
 ---
 
 # Map-lit cluster fix — cascade + lezioni operative

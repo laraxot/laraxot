@@ -14,11 +14,11 @@ uses(TestCase::class);
 test('CalculateGeoDistanceAction can be resolved', function (): void {
     $action = app(CalculateGeoDistanceAction::class);
 
-    Assert::assertInstanceOf(CalculateGeoDistanceAction::class, $action);
+    Assert::assertSame(CalculateGeoDistanceAction::class, $action::class);
 });
 
 test('GoogleMapsAction can be instantiated', function (): void {
-    $service = new GoogleMapsAction();
+    $service = new GoogleMapsAction;
 
-    Assert::assertInstanceOf(GoogleMapsAction::class, $service);
+    Assert::assertSame(GoogleMapsAction::class, $service::class);
 });

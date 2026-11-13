@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "SUPER MUCCA - Script Risoluzione Conflitti Git"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "super mucca - script risoluzione conflitti git xot"
+---
+>>>>>>> laraxot/dev
 # 🐄 SUPER MUCCA - Script Risoluzione Conflitti Git
 
 ## SCRIPT CREATI

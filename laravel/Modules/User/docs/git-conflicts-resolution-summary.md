@@ -8,17 +8,21 @@ qmd: "git-conflicts-resolution-summary risoluzione conflitti git - modulo user"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Risoluzione Conflitti Git - Modulo User
 
 ## Data Risoluzione
@@ -57,7 +61,7 @@ related:
 - `docs/baseuser.md` - Documentazione BaseUser
 - `docs/registration-widget.md` - Widget registrazione
 - `docs/phpstan-fixes-8.md` - Fix PHPStan
->>>>>>> 87273113 (.)
+- `docs/phpstan-fixes.md` - Fix PHPStan
 - `docs/filament/widgets/registration-widget.md` - Widget Filament
 
 ## Modifiche Applicate
@@ -127,7 +131,7 @@ Funzionalità team includono:
 - [BaseUser Documentation](./baseuser.md)
 - [Registration Widget](./registration-widget.md)
 - [PHPStan Fixes](./phpstan-fixes-8.md)
->>>>>>> 87273113 (.)
+- [PHPStan Fixes](./phpstan-fixes.md)
 
 ---
 *Aggiornato automaticamente dopo risoluzione conflitti Git*

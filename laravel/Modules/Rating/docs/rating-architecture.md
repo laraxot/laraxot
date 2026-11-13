@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating System - Architecture Analysis & Fixes"
 type: concept
 tags: [rating, architecture]
@@ -7,7 +9,10 @@ updated: 2026-07-14
 qmd: "rating architecture"
 related:
   - "./readme-en.md"
+status: stale
 ---
+
+> Nota 2026-10-14 (docs-audit): Analisi nata da un errore di compilazione in IndennitaResponsabilita, modulo che non esiste in questo repository (ls laravel/Modules, 2026-10-14); lo stato 'Implementation Ready' non descrive il codice di Modules/Rating. Contenuto non riscritto, verificare prima di usarlo.
 
 # Rating System - Architecture Analysis & Fixes
 

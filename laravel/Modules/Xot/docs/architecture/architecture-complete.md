@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+---
+title: "Xot - architecture-complete.md"
+module: Xot
+bmad: true
+status: active
+---
+>>>>>>> laraxot/dev
 # Xot Module - Complete Architecture Guide (2025)
 
 > **Last Updated:** 2025-11-19
@@ -14,7 +23,10 @@
 6. [Best Practices](#best-practices)
 
 ---
+<<<<<<< HEAD
 
+=======
+>>>>>>> laraxot/dev
 ## Module Overview
 
 ### Primary Purpose
@@ -143,8 +155,17 @@ All Filament resources extend this base class:
 **Required Methods:**
 ```php
 <<<<<<< HEAD
+<<<<<<< HEAD
 abstract public function getFormSchema(): array;
 =======
+abstract public function getFormSchema(): array;
+>>>>>>> laraxot/dev
+=======
+abstract public function getFormSchema(): array;
+abstract public function getFormSchema(): array;
+---
+abstract public function getFormSchema(): array;
+---
 abstract public function getFormSchema(): array;
 >>>>>>> laraxot/dev
 abstract public static function getTableColumns(): array;
@@ -584,8 +605,17 @@ class MyResource extends XotBaseResource
     protected static ?string $model = MyModel::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public function getFormSchema(): array
+    public function getFormSchema(): array
+---
+    public function getFormSchema(): array
+---
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
     {
@@ -665,8 +695,17 @@ class ArticleResource extends XotBaseResource
     protected static ?string $model = Article::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public function getFormSchema(): array
+    public function getFormSchema(): array
+---
+    public function getFormSchema(): array
+---
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
     {
@@ -873,4 +912,8 @@ The Xot module is a comprehensive foundation providing:
 
 **Document Version:** 1.0
 **Generated:** 2025-11-19
+<<<<<<< HEAD
 **Author:** Claude Code Analysis
+=======
+**Author:** Claude Code Analysis
+>>>>>>> laraxot/dev

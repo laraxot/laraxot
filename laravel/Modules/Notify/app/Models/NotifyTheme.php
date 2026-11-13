@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Models;
 
-use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Media\Models\Media;
 use Modules\Notify\Database\Factories\NotifyThemeFactory;
+use Modules\Notify\Models\Traits\NotifyThemeMutators;
+use Modules\Notify\Models\Traits\NotifyThemeRelations;
 use Modules\Xot\Contracts\ProfileContract;
-use Override;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 
 /**
@@ -75,10 +75,13 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static Builder<static>|NotifyTheme whereUpdatedBy($value)
  * @method static Builder<static>|NotifyTheme whereViewParams($value)
  *
- * @mixin Eloquent
+ * @mixin Model
  */
 class NotifyTheme extends BaseModel
 {
+    use NotifyThemeMutators;
+    use NotifyThemeRelations;
+
     /** @var list<string> */
     protected $fillable = [
         'id',
@@ -102,26 +105,22 @@ class NotifyTheme extends BaseModel
         'logo'];
 
     /**
+     * `logo` non e' una colonna: l'accessor delega al gemello e `$value` resta per il contratto accessor di Xot.
+     *
+     * @SuppressWarnings("PHPMD.UnusedFormalParameter")
+     *
      * @param  array<string, mixed>|null  $value
      * @return array{path: string, width: int, height: int}
      */
-    public function getLogoAttribute(?array $value): array
-    {
-        return [
-            // 'path' => asset(strval($this->logo_src)),
-            'path' => url($this->getFirstMediaUrl()),
-            'width' => $this->logo_width ?? 50,
-            'height' => $this->logo_height ?? 50];
-    }
+
+    /**
+     * @return array{path: string, width: int, height: int}
+     */
 
     /**
      * Get the parent linkable model (user or post).
      */
     /** @return MorphTo<Model, $this> */
-    public function linkable(): MorphTo
-    {
-        return $this->morphTo('post');
-    }
 
     /** @return array<string, string> */
     protected function casts(): array

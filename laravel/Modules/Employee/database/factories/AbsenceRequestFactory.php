@@ -31,22 +31,22 @@ class AbsenceRequestFactory extends Factory
         return [
             'user_id' => $this->faker->numberBetween(1, 1000),
             'type' => $this->faker->randomElement([
-                AbsenceRequest::TYPE_VACATION,
-                AbsenceRequest::TYPE_LEAVE,
-                AbsenceRequest::TYPE_SICK,
-                AbsenceRequest::TYPE_INJURY,
+                \Modules\Employee\Enums\AbsenceRequestTypeEnum::VACATION->value,
+                \Modules\Employee\Enums\AbsenceRequestTypeEnum::LEAVE->value,
+                \Modules\Employee\Enums\AbsenceRequestTypeEnum::SICK->value,
+                \Modules\Employee\Enums\AbsenceRequestTypeEnum::INJURY->value,
             ]),
             'starts_at' => $startsAt,
             'ends_at' => (clone $startsAt)->modify('+1 day'),
             'notes' => $this->faker->optional()->sentence(),
-            'status' => AbsenceRequest::STATUS_PENDING,
+            'status' => \Modules\Employee\Enums\AbsenceRequestStatusEnum::PENDING->value,
         ];
     }
 
     public function approved(): static
     {
         return $this->state(fn (array $_attributes) => [
-            'status' => AbsenceRequest::STATUS_APPROVED,
+            'status' => \Modules\Employee\Enums\AbsenceRequestStatusEnum::APPROVED->value,
             'decided_by_user_id' => $this->faker->numberBetween(1, 1000),
             'decided_at' => now(),
         ]);
@@ -55,7 +55,7 @@ class AbsenceRequestFactory extends Factory
     public function rejected(): static
     {
         return $this->state(fn (array $_attributes) => [
-            'status' => AbsenceRequest::STATUS_REJECTED,
+            'status' => \Modules\Employee\Enums\AbsenceRequestStatusEnum::REJECTED->value,
             'decided_by_user_id' => $this->faker->numberBetween(1, 1000),
             'decided_at' => now(),
         ]);

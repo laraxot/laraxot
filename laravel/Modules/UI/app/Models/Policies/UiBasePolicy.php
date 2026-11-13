@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 /**
  * ----------------------------------------------------------------.
  */
@@ -23,6 +22,11 @@ abstract class UiBasePolicy
     {
         $xotData = XotData::make();
         if ($user->hasRole('super-admin')) {
+            return true;
+        }
+
+        // Il ruolo che apre il pannello del modulo gestisce tutto il modulo (ADR Xot module-admin-role-policy-bypass).
+        if ($user->hasRole('ui::admin')) {
             return true;
         }
 

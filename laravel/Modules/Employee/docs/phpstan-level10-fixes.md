@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-LEVEL10-FIXES"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Level 10 Fixes - Employee Module
 
 ## Obiettivo

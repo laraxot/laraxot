@@ -4,8 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Widgets;
 
-use Filament\Widgets\StatsOverviewWidget\Stat;
 use Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget as BaseWidget;
+use Filament\Widgets\StatsOverviewWidget\Stat;
+<<<<<<< HEAD
+<<<<<<< .merge_file_1FfZg4
+use Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget as BaseWidget;
+=======
+use Modules\Xot\Filament\Widgets\XotBaseStatsOverviewWidget;
+>>>>>>> .merge_file_ArqXWU
+=======
+>>>>>>> f5ffd8b4 (.)
 
 class HeroWidget extends BaseWidget
 {

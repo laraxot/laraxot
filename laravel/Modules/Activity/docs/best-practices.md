@@ -1,22 +1,5 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_5jewXC
 <<<<<<< HEAD
-=======
----
-module: theme
-topic: best-practices
-canonical: ../../../Themes/docs/shared-components/BEST_PRACTICES.md
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/BEST_PRACTICES.md
-title: Best Practices – Activity
-type: rule
-tags: [activity, best-practices, dry, kiss]
-created: 2026-06-10
-updated: 2026-06-10
-qmd: self
-
->>>>>>> 13cf1831 (.)
 # Best Practices – Activity
 
 ## Principi DRY/KISS
@@ -35,7 +18,6 @@ qmd: self
 ## Documentazione
 - Aggiorna `docs/INDEX.md` con nuovi modelli e relazioni.
 - Collega a `Projects` e `Tasks` per contesto operativo.
-<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -85,7 +67,3 @@ See canonical documentation: ../../../Themes/docs/shared-components/BEST_PRACTIC
 >>>>>>> laraxot/dev
 =======
 >>>>>>> .merge_file_HM2FiY
-=======
-
-
->>>>>>> 13cf1831 (.)

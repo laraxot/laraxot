@@ -7,28 +7,17 @@ use Modules\Activity\Models\StoredEvent;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
 uses(\Modules\Activity\Tests\TestCase::class);
 
 test('Snapshot model can be instantiated', function () {
 <<<<<<< .merge_file_qJZkId
     $snapshot = new Snapshot();
-=======
-uses(TestCase::class);
-
-test('Snapshot model can be instantiated', function () {
-    $snapshot = new Snapshot;
->>>>>>> 13cf1831 (.)
 
     Assert::assertInstanceOf(Snapshot::class, $snapshot);
 });
 
 test('StoredEvent model can be instantiated', function () {
-<<<<<<< HEAD
     $storedEvent = new StoredEvent();
-=======
-    $storedEvent = new StoredEvent;
->>>>>>> 13cf1831 (.)
 
     Assert::assertInstanceOf(StoredEvent::class, $storedEvent);
 =======
@@ -41,11 +30,7 @@ test('StoredEvent model can be instantiated', function () {
 });
 
 test('BaseModel model can be instantiated', function () {
-<<<<<<< HEAD
     $baseModel = new class() extends BaseModel
-=======
-    $baseModel = new class extends BaseModel
->>>>>>> 13cf1831 (.)
     {
         protected $table = 'activity_base_models';
     };
@@ -54,31 +39,19 @@ test('BaseModel model can be instantiated', function () {
 });
 
 test('Snapshot model has correct connection', function () {
-<<<<<<< HEAD
     $snapshot = new Snapshot();
-=======
-    $snapshot = new Snapshot;
->>>>>>> 13cf1831 (.)
 
     Assert::assertIsString($snapshot->getConnectionName());
 });
 
 test('StoredEvent model has correct connection', function () {
-<<<<<<< HEAD
     $storedEvent = new StoredEvent();
-=======
-    $storedEvent = new StoredEvent;
->>>>>>> 13cf1831 (.)
 
     Assert::assertIsString($storedEvent->getConnectionName());
 });
 
 test('BaseModel model has correct connection', function () {
-<<<<<<< HEAD
     $baseModel = new class() extends BaseModel
-=======
-    $baseModel = new class extends BaseModel
->>>>>>> 13cf1831 (.)
     {
         protected $table = 'activity_base_models';
     };

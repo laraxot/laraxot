@@ -3,20 +3,20 @@
     <x-form-section submit="createApiToken">
     <x-form-section submit="createApiToken">
         <x-slot name="title">
-            {{ __('Create API Token') }}
+            {{ __('pub_theme::api_tokens.api_token_manager.create_api_token.label') }}
         </x-slot>
 
         <x-slot name="description">
-            {{ __('API tokens allow third-party services to authenticate with our application on your behalf.') }}
+            {{ __('pub_theme::api_tokens.api_token_manager.api_tokens_allow_third_party_services.message') }}
         </x-slot>
 
         <x-slot name="form">
             <!-- Token Name -->
             <div class="col-span-6 sm:col-span-4">
-                <x-label for="name" value="{{ __('Token Name') }}" />
+                <x-label for="name" value="{{ __('pub_theme::api_tokens.api_token_manager.token_name.label') }}" />
                 <x-input id="name" type="text" class="mt-1 block w-full" wire:model="createApiTokenForm.name" autofocus />
                 <x-input-error for="name" class="mt-2" />
-                <x-label for="name" value="{{ __('Token Name') }}" />
+                <x-label for="name" value="{{ __('pub_theme::api_tokens.api_token_manager.token_name.label') }}" />
                 <x-input id="name" type="text" class="mt-1 block w-full" wire:model="createApiTokenForm.name" autofocus />
                 <x-input-error for="name" class="mt-2" />
             </div>
@@ -24,8 +24,8 @@
             <!-- Token Permissions -->
             @if (Laravel\Jetstream\Jetstream::hasPermissions())
                 <div class="col-span-6">
-                    <x-label for="permissions" value="{{ __('Permissions') }}" />
-                    <x-label for="permissions" value="{{ __('Permissions') }}" />
+                    <x-label for="permissions" value="{{ __('pub_theme::api_tokens.api_token_manager.permissions.label') }}" />
+                    <x-label for="permissions" value="{{ __('pub_theme::api_tokens.api_token_manager.permissions.label') }}" />
 
                     <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
                         @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
@@ -42,11 +42,11 @@
 
         <x-slot name="actions">
             <x-action-message class="me-3" on="created">
-                {{ __('Created.') }}
+                {{ __('pub_theme::api_tokens.api_token_manager.created.message') }}
             </x-action-message>
 
             <x-button>
-                {{ __('Create') }}
+                {{ __('pub_theme::api_tokens.api_token_manager.create.label') }}
             </x-button>
         </x-slot>
     </x-form-section>
@@ -58,11 +58,11 @@
         <div class="mt-10 sm:mt-0">
             <x-action-section>
                 <x-slot name="title">
-                    {{ __('Manage API Tokens') }}
+                    {{ __('pub_theme::api_tokens.api_token_manager.manage_api_tokens.label') }}
                 </x-slot>
 
                 <x-slot name="description">
-                    {{ __('You may delete any of your existing tokens if they are no longer needed.') }}
+                    {{ __('pub_theme::api_tokens.api_token_manager.you_may_delete_any_of_your.message') }}
                 </x-slot>
 
                 <!-- API Token List -->
@@ -77,18 +77,18 @@
                                 <div class="flex items-center ms-2">
                                     @if ($token->last_used_at)
                                         <div class="text-sm text-gray-400">
-                                            {{ __('Last used') }} {{ $token->last_used_at->diffForHumans() }}
+                                            {{ __('pub_theme::api_tokens.api_token_manager.last_used.label') }} {{ $token->last_used_at->diffForHumans() }}
                                         </div>
                                     @endif
 
                                     @if (Laravel\Jetstream\Jetstream::hasPermissions())
                                         <button class="cursor-pointer ms-6 text-sm text-gray-400 underline" wire:click="manageApiTokenPermissions({{ $token->id }})">
-                                            {{ __('Permissions') }}
+                                            {{ __('pub_theme::api_tokens.api_token_manager.permissions.label') }}
                                         </button>
                                     @endif
 
                                     <button class="cursor-pointer ms-6 text-sm text-red-500" wire:click="confirmApiTokenDeletion({{ $token->id }})">
-                                        {{ __('Delete') }}
+                                        {{ __('pub_theme::api_tokens.api_token_manager.delete.label') }}
                                     </button>
                                 </div>
                             </div>
@@ -104,12 +104,12 @@
     <x-dialog-modal wire:model.live="displayingToken">
     <x-dialog-modal wire:model.live="displayingToken">
         <x-slot name="title">
-            {{ __('API Token') }}
+            {{ __('pub_theme::api_tokens.api_token_manager.api_token.label') }}
         </x-slot>
 
         <x-slot name="content">
             <div>
-                {{ __('Please copy your new API token. For your security, it won\'t be shown again.') }}
+                {{ __('pub_theme::api_tokens.api_token_manager.please_copy_your_new_api_token.message') }}
             </div>
 
             <x-input x-ref="plaintextToken" type="text" readonly :value="$plainTextToken"
@@ -122,7 +122,7 @@
 
         <x-slot name="footer">
             <x-secondary-button wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
-                {{ __('Close') }}
+                {{ __('pub_theme::api_tokens.api_token_manager.close.label') }}
             </x-secondary-button>
         </x-slot>
     </x-dialog-modal>
@@ -130,7 +130,7 @@
     <!-- API Token Permissions Modal -->
     <x-dialog-modal wire:model.live="managingApiTokenPermissions">
         <x-slot name="title">
-            {{ __('API Token Permissions') }}
+            {{ __('pub_theme::api_tokens.api_token_manager.api_token_permissions.label') }}
         </x-slot>
 
         <x-slot name="content">
@@ -147,11 +147,11 @@
 
         <x-slot name="footer">
             <x-secondary-button wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
-                {{ __('Cancel') }}
+                {{ __('pub_theme::blocks_common.shared.cancel.label') }}
             </x-secondary-button>
 
             <x-button class="ms-3" wire:click="updateApiToken" wire:loading.attr="disabled">
-                {{ __('Save') }}
+                {{ __('pub_theme::api_tokens.api_token_manager.save.label') }}
             </x-button>
         </x-slot>
     </x-dialog-modal>
@@ -159,20 +159,20 @@
     <!-- Delete Token Confirmation Modal -->
     <x-confirmation-modal wire:model.live="confirmingApiTokenDeletion">
         <x-slot name="title">
-            {{ __('Delete API Token') }}
+            {{ __('pub_theme::api_tokens.api_token_manager.delete_api_token.label') }}
         </x-slot>
 
         <x-slot name="content">
-            {{ __('Are you sure you would like to delete this API token?') }}
+            {{ __('pub_theme::api_tokens.api_token_manager.are_you_sure_you_would_like.label') }}
         </x-slot>
 
         <x-slot name="footer">
             <x-secondary-button wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
-                {{ __('Cancel') }}
+                {{ __('pub_theme::blocks_common.shared.cancel.label') }}
             </x-secondary-button>
 
             <x-danger-button class="ms-3" wire:click="deleteApiToken" wire:loading.attr="disabled">
-                {{ __('Delete') }}
+                {{ __('pub_theme::api_tokens.api_token_manager.delete.label') }}
             </x-danger-button>
         </x-slot>
     </x-confirmation-modal>

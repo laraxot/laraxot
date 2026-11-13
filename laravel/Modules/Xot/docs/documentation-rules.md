@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Regole di Documentazione"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "regole di documentazione xot"
+---
+>>>>>>> laraxot/dev
 # Regole di Documentazione
 
 ## Panoramica

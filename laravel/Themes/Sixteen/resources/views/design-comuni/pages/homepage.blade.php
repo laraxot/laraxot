@@ -1,9 +1,8 @@
 {{--
-    Design Comuni - Homepage
-    Template: Bootstrap Italia HTML-identical
+    Design Comuni - Homepage (TailwindCSS)
     Source: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
-    Body Length: 1331 righe HTML
---}}
+    Converted: Bootstrap Italia (HTML-identical) → Tailwind CSS + Alpine.js + inline SVG icons
+ --}}
 
 @extends('pub_theme::layouts.base')
 
@@ -15,62 +14,56 @@
 
 {{-- Skip Links --}}
 <div class="skiplink">
-    <a class="visually-hidden-focusable" href="#main-container">Vai ai contenuti</a>
-    <a class="visually-hidden-focusable" href="#footer">Vai al footer</a>
+    <a class="visually-hidden-focusable" href="#main-container">{{ __('pub_theme::ui.skip_to_content') }}</a>
+    <a class="visually-hidden-focusable" href="#footer">{{ __('pub_theme::ui.skip_to_footer') }}</a>
 </div>
 
-{{-- Header Component --}}
-
-{{-- Main Content --}}
 <main>
-    <h1 class="visually-hidden" id="main-container">Il mio Comune</h1>
-    
+    <h1 class="visually-hidden" id="main-container">{{ __('pub_theme::header.center.brand.title.label') }}</h1>
+
     {{-- Hero Section --}}
-    <section id="head-section">
-        <h2 class="visually-hidden">Contenuti in evidenza</h2>
-        <div class="container">
-            <div class="row">
+    <section id="head-section" class="py-6">
+        <h2 class="visually-hidden">{{ __('pub_theme::navigation.homepage.featured_content') }}</h2>
+        <div class="mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start">
                 {{-- News Card --}}
-                <div class="col-lg-6 order-2 order-lg-1">
-                    <div class="card mb-5">
-                        <div class="card-body pb-5 px-0">
-                            <div class="category-top">
-                                <svg class="icon icon-sm" aria-hidden="true">
-                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar"></use>
-                                </svg>
-                                <span class="title-xsmall-semi-bold fw-semibold">Notizie</span>
-                                <span class="data fw-normal">18 mag 2026</span>
+                <div class="lg:col-span-6 lg:col-start-1 lg:order-2 lg:order-1">
+                    <article class="overflow-hidden rounded-lg bg-white shadow">
+                        <div class="p-6 pb-5">
+                            <div class="mb-3 flex items-center gap-2">
+                                @include('pub_theme::components.ui.icon', ['name' => 'it-calendar', 'class' => 'h-5 w-5 text-emerald-600'])
+                                <span class="text-xs font-semibold uppercase text-slate-500">{{ __('pub_theme::navigation.news') }}</span>
+                                <span class="text-sm text-slate-500">18 mag 2026</span>
                             </div>
                             <a href="/it/tests/novita-dettaglio" class="text-decoration-none">
-                                <h3 class="card-title text-success">
-                                    Parte l'estate con oltre 300 eventi in centro e nei quartieri, tutti gli eventi previsti
+                                <h3 class="mb-3 text-xl font-semibold text-slate-900">
+                                    {{ __('pub_theme::home_components.dc_homepage.news.title') }}
                                 </h3>
                             </a>
-                            <p class="mb-4 pt-3 lora">
-                                <strong>Inaugurazione lunedì 2 luglio</strong> con il concerto
-                                gratuito in piazza XX Settembre degli Sweet Soul Music Revue. Sul palco 20 musicisti dal tutto il mondo
+                            <p class="mb-4 text-slate-700">
+                                <strong>{{ __('pub_theme::home_components.dc_homepage.news.highlight') }}</strong> {{ __('pub_theme::home_components.dc_homepage.news.concert_intro') }}
+                                {{ __('pub_theme::home_components.dc_homepage.news.concert_detail') }}
                             </p>
                             <a class="chip chip-simple chip-green" href="/it/tests/novita-dettaglio">
-                                <span class="chip-label">Estate in città</span>
+                                <span class="chip-label">{{ __('pub_theme::header.center.nav.estate.label') }}</span>
                             </a>
                             <a class="read-more read-more-green pb-3" href="/it/tests/novita">
-                                <span class="text">Tutte le novità</span>
-                                <svg class="icon">
-                                    <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
-                                </svg>
+                                <span class="text">{{ __('pub_theme::navigation.homepage.all_news') }}</span>
+                                @include('pub_theme::components.ui.icon', ['name' => 'it-arrow-right', 'class' => 'h-5 w-5'])
                             </a>
                         </div>
-                    </div>
+                    </article>
                 </div>
-                
+
                 {{-- Hero Image --}}
-                <div class="col-lg-6 order-1 order-lg-2 px-0 px-lg-3">
-                    <img src="https://picsum.photos/800/600" title="titolo immagine" alt="descrizione immagine" class="img-fluid">
+                <div class="lg:col-span-6 lg:col-start-7 lg:order-1 lg:order-2 px-0 lg:px-0">
+                    <img src="https://picsum.photos/800/600" title="{{ __('pub_theme::design_comuni_pages.homepage.hero_image.title') }}" alt="{{ __('pub_theme::design_comuni_pages.homepage.hero_image.alt') }}" class="w-full max-w-full rounded-lg shadow">
                 </div>
             </div>
         </div>
     </section>
-    {{-- Calendario Section - Organi di governo + Events Calendar (from reference) --}}
+
+    {{-- Calendario / Governance Cards --}}
     @php
         $calendarioData = [
             'cards' => [
@@ -122,364 +115,294 @@
             ],
         ];
     @endphp
+
     <x-blocks.governance.cards :data="$calendarioData" />
 
     {{-- Services Section --}}
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-10">
-                <h2 class="title-xxlarge mb-4">Servizi</h2>
-                <div class="row g-4">
-                    @foreach($servizi ?? [] as $servizio)
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="it-grid-item-wrapper it-grid-item-overlay">
-                            <a href="{{ $servizio['url'] ?? '#' }}" class="text-decoration-none">
-                                <div class="card card-bg card-teaser shadow">
-                                    <div class="card-body">
-                                        <div class="category-top">
-                                            <span class="text">Servizio</span>
-                                        </div>
-                                        <h3 class="card-title h5">{{ $servizio['nome'] ?? 'Servizio' }}</h3>
-                                        <p class="card-text">{{ $servizio['descrizione'] ?? '' }}</p>
-                                    </div>
-                                </div>
-                            </a>
+    <section class="py-5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="mb-5 text-3xl font-bold">{{ __('navigation.homepage.services') }}</h2>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                @foreach($servizi ?? [] as $servizio)
+                    <article class="overflow-hidden rounded-lg bg-white shadow">
+                        <div class="p-6">
+                            <div class="mb-2">
+                                <span class="text-sm text-slate-500">{{ __('pub_theme::home_components.dc_homepage.service.label') }}</span>
+                            </div>
+                            <h3 class="mb-2 text-lg font-semibold text-slate-900">{{ $servizio['nome'] ?? 'Servizio' }}</h3>
+                            <p class="mb-0 text-sm text-slate-600">{{ $servizio['descrizione'] ?? '' }}</p>
                         </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="text-center mt-4">
-                    <a class="btn btn-outline-primary" href="/it/tests/servizi">
-                        Tutti i servizi
-                        <svg class="icon icon-sm">
-                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
+                    </article>
+                @endforeach
+            </div>
+            <div class="mt-5 text-center">
+                <a class="btn btn-outline-primary" href="/it/tests/servizi">
+                    {{ __('pub_theme::navigation.homepage.all_services') }}
+                    @include('pub_theme::components.ui.icon', ['name' => 'it-arrow-right', 'class' => 'h-4 w-4 ml-1'])
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
     {{-- Administration Section --}}
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-10">
-                <h2 class="title-xxlarge mb-4">Amministrazione</h2>
-                <div class="row g-4">
-                    @foreach($amministrazione ?? [] as $item)
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="it-grid-item-wrapper">
-                            <a href="{{ $item['url'] ?? '#' }}" class="text-decoration-none">
-                                <div class="card card-bg card-teaser shadow">
-                                    <div class="card-body">
-                                        <h3 class="card-title h5">{{ $item['titolo'] ?? 'Amministrazione' }}</h3>
-                                        <p class="card-text">{{ $item['descrizione'] ?? '' }}</p>
-                                    </div>
-                                </div>
-                            </a>
+    <section class="bg-slate-50 py-5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="mb-5 text-3xl font-bold">{{ __('navigation.homepage.administration') }}</h2>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                @foreach($amministrazione ?? [] as $item)
+                    <article class="overflow-hidden rounded-lg bg-white shadow">
+                        <div class="p-6">
+                            <h3 class="mb-2 text-lg font-semibold text-slate-900">{{ $item['titolo'] ?? 'Amministrazione' }}</h3>
+                            <p class="mb-0 text-sm text-slate-600">{{ $item['descrizione'] ?? '' }}</p>
                         </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="text-center mt-4">
-                    <a class="btn btn-outline-primary" href="/it/tests/amministrazione">
-                        Tutta l'amministrazione
-                        <svg class="icon icon-sm">
-                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
+                    </article>
+                @endforeach
+            </div>
+            <div class="mt-5 text-center">
+                <a class="btn btn-outline-primary" href="/it/tests/amministrazione">
+                    {{ __('pub_theme::navigation.homepage.all_administration') }}
+                    @include('pub_theme::components.ui.icon', ['name' => 'it-arrow-right', 'class' => 'h-4 w-4 ml-1'])
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
     {{-- News Section --}}
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-10">
-                <h2 class="title-xxlarge mb-4">Novità</h2>
-                <div class="row g-4">
-                    @foreach($novita ?? [] as $notizia)
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="it-grid-item-wrapper">
-                            <a href="{{ $notizia['url'] ?? '#' }}" class="text-decoration-none">
-                                <div class="card card-bg card-teaser shadow">
-                                    <div class="card-body">
-                                        <div class="category-top">
-                                            <svg class="icon icon-sm" aria-hidden="true">
-                                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar"></use>
-                                            </svg>
-                                            <span class="title-xsmall-semi-bold fw-semibold">{{ $notizia['categoria'] ?? 'Notizie' }}</span>
-                                            <span class="data fw-normal">{{ $notizia['data'] ?? '' }}</span>
-                                        </div>
-                                        <h3 class="card-title h5">{{ $notizia['titolo'] ?? 'Notizia' }}</h3>
-                                        <p class="card-text">{{ Str::limit($notizia['contenuto'] ?? '', 100) }}</p>
-                                        <a class="read-more pb-3" href="{{ $notizia['url'] ?? '#' }}">
-                                            <span class="text">Leggi tutto</span>
-                                            <svg class="icon">
-                                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
+    <section class="py-5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="mb-5 text-3xl font-bold">{{ __('navigation.homepage.news') }}</h2>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                @foreach($novita ?? [] as $notizia)
+                    <article class="overflow-hidden rounded-lg bg-white shadow">
+                        <div class="p-6">
+                            <div class="mb-3 flex items-center gap-2">
+                                @include('pub_theme::components.ui.icon', ['name' => 'it-calendar', 'class' => 'h-4 w-4 text-emerald-600'])
+                                <span class="text-xs font-semibold uppercase text-slate-500">{{ $notizia['categoria'] ?? 'Notizie' }}</span>
+                                <span class="text-sm text-slate-500">{{ $notizia['data'] ?? '' }}</span>
+                            </div>
+                            <h3 class="mb-2 text-lg font-semibold text-slate-900">{{ $notizia['titolo'] ?? 'Notizia' }}</h3>
+                            <p class="mb-3 text-sm text-slate-600">{{ Str::limit($notizia['contenuto'] ?? '', 100) }}</p>
+                            <a class="read-more" href="{{ $notizia['url'] ?? '#' }}">
+                                <span class="text">{{ __('pub_theme::news.read_more') }}</span>
+                                @include('pub_theme::components.ui.icon', ['name' => 'it-arrow-right', 'class' => 'h-4 w-4'])
                             </a>
                         </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="text-center mt-4">
-                    <a class="btn btn-outline-primary" href="/it/tests/novita">
-                        Tutte le novità
-                        <svg class="icon icon-sm">
-                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
+                    </article>
+                @endforeach
+            </div>
+            <div class="mt-5 text-center">
+                <a class="btn btn-outline-primary" href="/it/tests/novita">
+                    {{ __('pub_theme::navigation.homepage.all_news') }}
+                    @include('pub_theme::components.ui.icon', ['name' => 'it-arrow-right', 'class' => 'h-4 w-4 ml-1'])
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
     {{-- Events Section (Vivere il Comune) --}}
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-10">
-                <h2 class="title-xxlarge mb-4">Vivere il Comune19</h2>
-                <div class="row g-4">
-                    @foreach($eventi ?? [] as $evento)
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="it-grid-item-wrapper">
-                            <a href="{{ $evento['url'] ?? '#' }}" class="text-decoration-none">
-                                <div class="card card-bg card-teaser shadow">
-                                    <div class="card-body">
-                                        <div class="category-top">
-                                            <svg class="icon icon-sm" aria-hidden="true">
-                                                <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-calendar"></use>
-                                            </svg>
-                                            <span class="title-xsmall-semi-bold fw-semibold">{{ $evento['categoria'] ?? 'Eventi' }}</span>
-                                            <span class="data fw-normal">{{ $evento['data'] ?? '' }}</span>
-                                        </div>
-                                        <h3 class="card-title h5">{{ $evento['titolo'] ?? 'Evento' }}</h3>
-                                        <p class="card-text">{{ Str::limit($evento['descrizione'] ?? '', 100) }}</p>
-                                    </div>
-                                </div>
-                            </a>
+    <section class="bg-slate-50 py-5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="mb-5 text-3xl font-bold">{{ __('navigation.homepage.live_the_town') }}</h2>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                @foreach($eventi ?? [] as $evento)
+                    <article class="overflow-hidden rounded-lg bg-white shadow">
+                        <div class="p-6">
+                            <div class="mb-3 flex items-center gap-2">
+                                @include('pub_theme::components.ui.icon', ['name' => 'it-calendar', 'class' => 'h-4 w-4 text-emerald-600'])
+                                <span class="text-xs font-semibold uppercase text-slate-500">{{ $evento['categoria'] ?? 'Eventi' }}</span>
+                                <span class="text-sm text-slate-500">{{ $evento['data'] ?? '' }}</span>
+                            </div>
+                            <h3 class="mb-2 text-lg font-semibold text-slate-900">{{ $evento['titolo'] ?? 'Evento' }}</h3>
+                            <p class="mb-0 text-sm text-slate-600">{{ Str::limit($evento['descrizione'] ?? '', 100) }}</p>
                         </div>
-                    </div>
-                    @endforeach
-                </div>
-                <div class="text-center mt-4">
-                    <a class="btn btn-outline-primary" href="/it/tests/eventi">
-                        Tutti gli eventi
-                        <svg class="icon icon-sm">
-                            <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
+                    </article>
+                @endforeach
+            </div>
+            <div class="mt-5 text-center">
+                <a class="btn btn-outline-primary" href="/it/tests/eventi">
+                    {{ __('pub_theme::navigation.homepage.all_events') }}
+                    @include('pub_theme::components.ui.icon', ['name' => 'it-arrow-right', 'class' => 'h-4 w-4 ml-1'])
+                </a>
             </div>
         </div>
-    </div>
-</main>
+    </section>
 
-{{-- Argomenti in Evidenza Section --}}
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-            <h2 class="title-xxlarge mb-4">{{ __('navigation.homepage.featured_topics') }}</h2>
-            <div class="row g-4">
+    {{-- Argomenti in Evidenza Section --}}
+    <section class="py-5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="mb-5 text-3xl font-bold">{{ __('navigation.homepage.featured_topics') }}</h2>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 @php
-                $featuredTopics = [
-                    [
-                        'title' => 'Trasporto pubblico',
-                        'description' => 'Informazioni sui servizi di trasporto pubblico e servizi taxi',
-                        'url' => '#',
-                        'image' => 'https://picsum.photos/200/200',
-                    ],
-                    [
-                        'title' => 'Animale domestico',
-                        'description' => 'Informazioni sui servizi e le norme previste dal comune per gli animali domestici.',
-                        'url' => '#',
-                        'links' => [
-                            'Come adottare un cane al Canile Municipale',
-                            'Elenco delle aree per cani',
-                            'Come segnalare una colonia felina',
-                            'Come segnalare lo smarrimento del proprio animale',
+                    $featuredTopics = [
+                        [
+                            'title' => 'Trasporto pubblico',
+                            'description' => 'Informazioni sui servizi di trasporto pubblico e servizi taxi',
+                            'url' => '#',
+                            'image' => 'https://picsum.photos/200/200',
                         ],
-                    ],
-                    [
-                        'title' => 'Sport',
-                        'description' => 'Tutto quello che c\'è da sapere sulle strutture sportive comunali.',
-                        'url' => '#',
-                        'links' => [
-                            'Tutte le strutture sportive della città',
-                            'Da lunedì 3 settembre chiudono le vasche della piscina comunale',
-                            'Concessione di contributi ad enti, associazioni, società sportive',
+                        [
+                            'title' => 'Animale domestico',
+                            'description' => 'Informazioni sui servizi e le norme previste dal comune per gli animali domestici.',
+                            'url' => '#',
+                            'links' => [
+                                'Come adottare un cane al Canile Municipale',
+                                'Elenco delle aree per cani',
+                                'Come segnalare una colonia felina',
+                                'Come segnalare lo smarrimento del proprio animale',
+                            ],
                         ],
-                    ],
-                ];
+                        [
+                            'title' => 'Sport',
+                            'description' => 'Tutto quello che c\'è da sapere sulle strutture sportive comunali.',
+                            'url' => '#',
+                            'links' => [
+                                'Tutte le strutture sportive della città',
+                                'Da lunedì 3 settembre chiudono le vasche della piscina comunale',
+                                'Concessione di contributi ad enti, associazioni, società sportive',
+                            ],
+                        ],
+                    ];
                 @endphp
                 @foreach($featuredTopics as $topic)
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card card-bg card-teaser shadow">
-                        <div class="card-body">
-                            <h3 class="card-title h5">{{ $topic['title'] }}</h3>
-                            <p class="card-text">{{ $topic['description'] }}</p>
+                    <article class="overflow-hidden rounded-lg bg-white shadow">
+                        <div class="p-6">
+                            <h3 class="mb-2 text-lg font-semibold text-slate-900">{{ $topic['title'] }}</h3>
+                            <p class="mb-3 text-sm text-slate-600">{{ $topic['description'] }}</p>
                             @if(isset($topic['links']))
-                            <ul class="mb-3">
-                                @foreach($topic['links'] as $link)
-                                <li><a href="{{ $topic['url'] }}">{{ $link }}</a></li>
-                                @endforeach
-                            </ul>
+                                <ul class="mb-3 list-disc list-inside space-y-1 text-sm text-slate-600">
+                                    @foreach($topic['links'] as $link)
+                                        <li><a href="{{ $topic['url'] }}" class="text-emerald-700 hover:text-emerald-800">{{ $link }}</a></li>
+                                    @endforeach
+                                </ul>
                             @endif
                             <a href="{{ $topic['url'] }}" class="read-more">
-                                <span class="text">Esplora argomento</span>
-                                <svg class="icon"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right"></use></svg>
+                                <span class="text">{{ __('pub_theme::home_components.dc_homepage.explore_topic.label') }}</span>
+                                @include('pub_theme::components.ui.icon', ['name' => 'it-arrow-right', 'class' => 'h-4 w-4'])
                             </a>
                         </div>
-                    </div>
-                </div>
+                    </article>
                 @endforeach
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-{{-- Altri Argomenti Section --}}
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-            <h2 class="title-xxlarge mb-4">{{ __('navigation.homepage.other_topics') }}</h2>
-            <div class="d-flex flex-wrap gap-2">
-                <a href="#" class="chip chip-simple"><span class="chip-label">Associazioni</span></a>
-                <a href="#" class="chip chip-simple"><span class="chip-label">Concorsi</span></a>
-                <a href="#" class="chip chip-simple"><span class="chip-label">Energie rinnovabili</span></a>
-                <a href="#" class="chip chip-simple"><span class="chip-label">Gestione rifiuti</span></a>
-                <a href="#" class="chip chip-simple"><span class="chip-label">Imposte</span></a>
-                <a href="#" class="chip chip-simple"><span class="chip-label">Istruzione</span></a>
-                <a href="#" class="chip chip-simple"><span class="chip-label">Pista ciclabile</span></a>
+    {{-- Altri Argomenti Section --}}
+    <section class="bg-slate-50 py-5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="mb-5 text-3xl font-bold">{{ __('navigation.homepage.other_topics') }}</h2>
+            <div class="flex flex-wrap gap-2">
+                <a href="#" class="chip chip-simple"><span class="chip-label">{{ __('pub_theme::home_components.dc_homepage.topics.associations.label') }}</span></a>
+                <a href="#" class="chip chip-simple"><span class="chip-label">{{ __('pub_theme::home_components.dc_homepage.topics.competitions.label') }}</span></a>
+                <a href="#" class="chip chip-simple"><span class="chip-label">{{ __('pub_theme::home_components.dc_homepage.topics.renewable_energy.label') }}</span></a>
+                <a href="#" class="chip chip-simple"><span class="chip-label">{{ __('pub_theme::home_components.dc_homepage.topics.waste_management.label') }}</span></a>
+                <a href="#" class="chip chip-simple"><span class="chip-label">{{ __('pub_theme::home_components.dc_homepage.topics.taxes.label') }}</span></a>
+                <a href="#" class="chip chip-simple"><span class="chip-label">{{ __('pub_theme::home_components.dc_homepage.topics.education.label') }}</span></a>
+                <a href="#" class="chip chip-simple"><span class="chip-label">{{ __('pub_theme::home_components.dc_homepage.topics.cycle_path.label') }}</span></a>
             </div>
-            <a href="#" class="btn btn-outline-primary mt-3">{{ __('navigation.homepage.show_all') }}</a>
+            <a class="btn btn-outline-primary mt-4" href="#">{{ __('navigation.homepage.show_all') }}</a>
         </div>
-    </div>
-</div>
+    </section>
 
-{{-- Siti Tematici Section --}}
-@php
-$thematicSites = [
-    'title' => __('navigation.homepage.thematic_sites'),
-    'sites' => [
-        [
-            'title' => 'Mobilità in Comune',
-            'description' => 'Il sito del turismo del Comune e della Città Metropolitana',
-            'url' => '#',
-            'image' => 'https://picsum.photos/200/200',
-        ],
-        [
-            'title' => 'Turismo',
-            'description' => 'Il sito che offre informazioni sulle attività turistiche attive in città',
-            'url' => '#',
-            'image' => 'https://picsum.photos/200/201',
-        ],
-        [
-            'title' => 'Musei Civici',
-            'description' => 'Tutte le informazioni sui musei e gli eventi culturali della città',
-            'url' => '#',
-            'image' => 'https://picsum.photos/200/202',
-        ],
-    ],
-];
-@endphp
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-            <h2 class="title-xxlarge mb-4">{{ $thematicSites['title'] }}</h2>
-            <div class="row g-4">
+    {{-- Siti Tematici Section --}}
+    @php
+        $thematicSites = [
+            'title' => __('navigation.homepage.thematic_sites'),
+            'sites' => [
+                [
+                    'title' => 'Mobilità in Comune',
+                    'description' => 'Il sito del turismo del Comune e della Città Metropolitana',
+                    'url' => '#',
+                    'image' => 'https://picsum.photos/200/200',
+                ],
+                [
+                    'title' => 'Turismo',
+                    'description' => 'Il sito che offre informazioni sulle attività turistiche attive in città',
+                    'url' => '#',
+                    'image' => 'https://picsum.photos/200/201',
+                ],
+                [
+                    'title' => 'Musei Civici',
+                    'description' => 'Tutte le informazioni sui musei e gli eventi culturali della città',
+                    'url' => '#',
+                    'image' => 'https://picsum.photos/200/202',
+                ],
+            ],
+        ];
+    @endphp
+    <section class="py-5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="mb-5 text-3xl font-bold">{{ $thematicSites['title'] }}</h2>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 @foreach($thematicSites['sites'] as $site)
-                <div class="col-sm-6 col-lg-4">
-                    <a href="{{ $site['url'] }}" class="text-decoration-none">
-                        <div class="card card-bg shadow">
-                            <img src="{{ $site['image'] }}" alt="{{ $site['title'] }}" class="card-img-top">
-                            <div class="card-body">
-                                <h3 class="card-title h5">{{ $site['title'] }}</h3>
-                                <p class="card-text">{{ $site['description'] }}</p>
+                    <a href="{{ $site['url'] }}" class="group block text-decoration-none">
+                        <article class="overflow-hidden rounded-lg bg-white shadow transition-shadow duration-200 group-hover:shadow-md">
+                            <img src="{{ $site['image'] }}" alt="{{ $site['title'] }}" class="h-48 w-full object-cover">
+                            <div class="p-6">
+                                <h3 class="mb-2 text-lg font-semibold text-slate-900 group-hover:text-emerald-700">{{ $site['title'] }}</h3>
+                                <p class="mb-0 text-sm text-slate-600">{{ $site['description'] }}</p>
                             </div>
-                        </div>
+                        </article>
                     </a>
-                </div>
                 @endforeach
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-{{-- Useful Links Section --}}
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-            <h2 class="title-xxlarge mb-4">{{ __('navigation.homepage.useful_links') }}</h2>
-            <ul class="list-unstyled">
-                <li><a href="#">Rilascio Carta Identità Elettronica (CIE)</a></li>
-                <li><a href="#">Cambio di residenza</a></li>
-                <li><a href="#">Tributi online</a></li>
-                <li><a href="#">Prenotazione appuntamenti</a></li>
-                <li><a href="#">Rilascio tessera elettorale</a></li>
-                <li><a href="#">Voucher connettività</a></li>
+    {{-- Useful Links Section --}}
+    <section class="bg-slate-50 py-5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="mb-5 text-3xl font-bold">{{ __('navigation.homepage.useful_links') }}</h2>
+            <ul class="list-none space-y-3 text-lg">
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.cie.label') }}</a></li>
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.residence_change.label') }}</a></li>
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.online_taxes.label') }}</a></li>
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.appointments.label') }}</a></li>
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.voter_card.label') }}</a></li>
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.connectivity_voucher.label') }}</a></li>
             </ul>
         </div>
-    </div>
-</div>
+    </section>
 
-{{-- Rating Section --}}
-<x-blocks.rating.default />
+    {{-- Rating Section --}}
+    <x-blocks.rating.default />
 
-{{-- Contacts Section --}}
-<div class="bg-grey-card shadow-contacts">
-    <div class="container">
-        <div class="row d-flex justify-content-center p-contacts">
-            <div class="col-12 col-lg-6">
-                <div class="cmp-contacts" data-element="contacts">
-                    <div class="card card-wrapper bg-white p-3">
-                        <div class="card-body">
-                            <h2 class="title-medium-2-semi-bold mb-0">{{ __('navigation.homepage.contacts') }}</h2>
-                            <div class="d-flex flex-column gap-3">
-                                <a href="tel:+390512345678" class="d-flex align-items-center gap-2 text-decoration-none text-primary">
-                                    <svg class="icon icon-sm"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-phone"></use></svg>
-                                    <span>05 12345678</span>
-                                </a>
-                                <a href="mailto:urp@comune.it" class="d-flex align-items-center gap-2 text-decoration-none text-primary">
-                                    <svg class="icon icon-sm"><use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-mail"></use></svg>
-                                    <span>urp@comune.it</span>
-                                </a>
-                            </div>
-                        </div>
+    {{-- Contacts Section --}}
+    <section class="bg-slate-100 py-5 shadow-contacts">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-3xl">
+                <div class="rounded-lg bg-white p-6 shadow">
+                    <h2 class="mb-0 text-2xl font-bold">{{ __('navigation.homepage.contacts') }}</h2>
+                    <div class="mt-4 flex flex-col gap-3">
+                        <a href="tel:+390512345678" class="flex items-center gap-2 text-slate-700 hover:text-emerald-700">
+                            @include('pub_theme::components.ui.icon', ['name' => 'it-phone', 'class' => 'h-5 w-5 text-emerald-600'])
+                            <span>05 12345678</span>
+                        </a>
+                        <a href="mailto:urp@comune.it" class="flex items-center gap-2 text-slate-700 hover:text-emerald-700">
+                            @include('pub_theme::components.ui.icon', ['name' => 'it-mail', 'class' => 'h-5 w-5 text-emerald-600'])
+                            <span>urp@comune.it</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-{{-- Maybe You Were Looking For --}}
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-            <h2 class="title-xxlarge mb-4">{{ __('navigation.homepage.maybe_searching') }}</h2>
-            <ul class="list-unstyled">
-                <li><a href="#">Rilascio Carta Identità Elettronica (CIE)</a></li>
-                <li><a href="#">Cambio di residenza</a></li>
-                <li><a href="#">Tributi online</a></li>
-                <li><a href="#">Prenotazione appuntamenti</a></li>
-                <li><a href="#">Rilascio tessera elettorale</a></li>
-                <li><a href="#">Voucher connettività</a></li>
+    {{-- Maybe You Were Looking For --}}
+    <section class="py-5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 class="mb-5 text-3xl font-bold">{{ __('navigation.homepage.maybe_searching') }}</h2>
+            <ul class="list-none space-y-3 text-lg">
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.cie.label') }}</a></li>
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.residence_change.label') }}</a></li>
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.online_taxes.label') }}</a></li>
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.appointments.label') }}</a></li>
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.voter_card.label') }}</a></li>
+                <li><a href="#" class="text-emerald-700 hover:text-emerald-800">{{ __('pub_theme::home_components.dc_homepage.services.connectivity_voucher.label') }}</a></li>
             </ul>
         </div>
-    </div>
-</div>
+    </section>
+</main>
 
-{{-- Footer Component --}}
 @include('pub_theme::footer-comune')
 
 @endsection
-
-@push('scripts')
-{{-- Bootstrap Italia JS --}}
-@endpush

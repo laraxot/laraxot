@@ -22,14 +22,9 @@ test('GoogleMapGeometryData can be instantiated', function () {
             'lat' => 41.9028,
             'lng' => 12.4964,
         ],
-        'location_type' => 'ROOFTOP',
-        'viewport' => [
-            'northeast' => ['lat' => 41.904, 'lng' => 12.498],
-            'southwest' => ['lat' => 41.901, 'lng' => 12.495],
-        ],
     ]);
 
-    Assert::assertInstanceOf(GoogleMapGeometryData::class, $geometry);
+    Assert::assertSame(41.9028, $geometry->location->lat);
 });
 
 test('GoogleMapAddressComponentData can be instantiated', function () {
@@ -39,7 +34,7 @@ test('GoogleMapAddressComponentData can be instantiated', function () {
         'types' => ['locality', 'political'],
     ]);
 
-    Assert::assertInstanceOf(GoogleMapAddressComponentData::class, $component);
+    Assert::assertSame('Rome', $component->long_name);
 });
 
 test('GoogleMapResultData can be instantiated', function () {
@@ -64,7 +59,7 @@ test('GoogleMapResultData can be instantiated', function () {
         'types' => ['locality', 'political'],
     ]);
 
-    Assert::assertInstanceOf(GoogleMapResultData::class, $result);
+    Assert::assertSame('Rome, Italy', $result->formatted_address);
 });
 
 test('GoogleMapResponseData can be instantiated', function () {
@@ -90,7 +85,7 @@ test('GoogleMapResponseData can be instantiated', function () {
         'status' => 'OK',
     ]);
 
-    Assert::assertInstanceOf(GoogleMapResponseData::class, $response);
+    Assert::assertSame('OK', $response->status);
 });
 
 test('GoogleMapBoundsData can be instantiated', function () {
@@ -99,7 +94,7 @@ test('GoogleMapBoundsData can be instantiated', function () {
         'southwest' => ['lat' => 41.901, 'lng' => 12.495],
     ]);
 
-    Assert::assertInstanceOf(GoogleMapBoundsData::class, $bounds);
+    Assert::assertSame(41.904, $bounds->northeast->lat);
 });
 
 test('GoogleMapLocationData can be instantiated', function () {
@@ -108,14 +103,15 @@ test('GoogleMapLocationData can be instantiated', function () {
         'lng' => 12.4964,
     ]);
 
-    Assert::assertInstanceOf(GoogleMapLocationData::class, $location);
+    Assert::assertSame(41.9028, $location->lat);
 });
 
 test('GoogleMapComponentData can be instantiated', function () {
     $component = GoogleMapComponentData::from([
-        'name' => 'Rome',
-        'type' => 'locality',
+        'long_name' => 'Rome',
+        'short_name' => 'Rome',
+        'types' => ['locality', 'political'],
     ]);
 
-    Assert::assertInstanceOf(GoogleMapComponentData::class, $component);
+    Assert::assertContains('locality', $component->types);
 });

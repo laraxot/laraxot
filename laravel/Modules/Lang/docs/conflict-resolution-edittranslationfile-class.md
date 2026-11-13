@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Risoluzione Conflitto EditTranslationFile.php (Classe)"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "links01"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Risoluzione Conflitto EditTranslationFile.php (Classe)
 

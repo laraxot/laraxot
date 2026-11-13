@@ -1,10 +1,15 @@
 ---
+qmd: "trans choice dry religion.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: trans-choice-dry-religion.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: trans-choice-dry-religion.divergenza.md
 ---
 
 # Divergenza: `trans-choice-dry-religion.md`

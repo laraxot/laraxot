@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Best Practices per Model States e Transizioni Custom"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "best practices per model states e transizioni custom xot"
+---
+>>>>>>> laraxot/dev
 # Best Practices per Model States e Transizioni Custom
 
 ## Parametri aggiuntivi nelle transizioni custom

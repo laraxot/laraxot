@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Regole per i Prompt"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "regole per i prompt xot"
+---
+>>>>>>> laraxot/dev
 # Regole per i Prompt
 
 ## Regola Universale

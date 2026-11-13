@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Miglioramenti al Prompt docs.txt"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Miglioramenti al Prompt docs.txt"
+---
+>>>>>>> laraxot/dev
 # Miglioramenti al Prompt docs.txt
 
 > **Collegamenti correlati**

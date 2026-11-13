@@ -6,6 +6,9 @@ namespace Modules\Lang\Filament\Actions;
 
 use Filament\Forms\Components\Select;
 use Illuminate\Support\Facades\App;
+use Modules\Lang\Actions\ListLocaleOptionsAction;
+use Modules\Lang\Actions\ResolveDefaultTranslatableLocaleAction;
+use Modules\Lang\Actions\ResolveTranslatableLocalesAction;
 use Modules\Xot\Filament\Actions\XotBaseAction;
 
 class LocaleSwitcherRefresh extends XotBaseAction
@@ -17,13 +20,10 @@ class LocaleSwitcherRefresh extends XotBaseAction
     protected function setUp(): void
     {
         parent::setUp();
-        $languageOptions = [
-            'en' => '🇬🇧 English',
-            'it' => '🇮🇹 Italiano',
-        ];
+        $languageOptions = app(ListLocaleOptionsAction::class)->execute(app(ResolveTranslatableLocalesAction::class)->execute());
         $lang = session()->get('locale');
         if (! is_string($lang)) {
-            $lang = 'it';
+            $lang = app(ResolveDefaultTranslatableLocaleAction::class)->execute('it');
         }
         app()->setLocale($lang);
         $this->lang = app()->getLocale();
@@ -34,12 +34,11 @@ class LocaleSwitcherRefresh extends XotBaseAction
                     ->label('Seleziona lingua')
                     ->options($languageOptions)
                     ->default($this->lang)
-                    ->reactive()
+                    ->live()
                     ->required(),
             ])
             ->action(function (array $data) {
-                /** @var array<string, mixed> $data */
-                $this->applyLocale($data);
+                $this->applyLocale(self::normalizeLocale($data['locale'] ?? null));
 
                 return redirect(request()->header('Referer'));
             })
@@ -49,24 +48,25 @@ class LocaleSwitcherRefresh extends XotBaseAction
     }
 
     /**
+     * Coerce l'input form (mixed) a una locale stringa.
+     *
+     * Scopo: tenere il bordo Filament separato dal contratto di dominio
+     * {@see applyLocale()}. Fallback `en` se il valore non e' stringa.
+     */
+    public static function normalizeLocale(mixed $raw): string
+    {
+        return \is_string($raw) ? $raw : 'en';
+    }
+
+    /**
      * Applica la lingua scelta a sessione e applicazione.
      *
+     * Scopo: un solo contratto di dominio — una stringa locale — non un blob form.
      * Estratto dalla closure di `->action()` per renderlo verificabile senza montare
-     * Filament ne' simulare una richiesta HTTP. La closure resta responsabile del solo
-     * redirect, che e' l'unica parte che ha bisogno del contesto della richiesta.
-     *
-     * Il fallback a `en` copre il caso in cui il valore arrivi non-stringa: il Select lo
-     * garantisce, ma `$data` e' pur sempre input e la garanzia sta qui, non nel form.
-     *
-     * @param  array<string, mixed>  $data
+     * Filament ne' simulare una richiesta HTTP.
      */
-    public function applyLocale(array $data): void
+    public function applyLocale(string $locale): void
     {
-        $locale = $data['locale'] ?? 'en';
-        if (! \is_string($locale)) {
-            $locale = 'en';
-        }
-
         session()->put('locale', $locale);
         App::setLocale($locale);
     }

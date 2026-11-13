@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "PDF Translation Guide - HTML2PDF Integration"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "migration filament"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # PDF Translation Guide - HTML2PDF Integration
 

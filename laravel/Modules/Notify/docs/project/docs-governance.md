@@ -1,3 +1,15 @@
+---
+title: "docs governance"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs governance"
+issues: []
+discussions: []
+status: draft
+---
+
 # Documentation Governance
 
 ## Purpose

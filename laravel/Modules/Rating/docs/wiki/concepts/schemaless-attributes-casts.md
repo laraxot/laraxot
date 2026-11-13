@@ -1,10 +1,14 @@
 ---
+qmd: "schemaless attributes casts"
+issues: []
+discussions: []
 title: "Schemaless Attributes casts nota"
 type: concept
 tags: [docs, migrated-from-txt]
 created: 2026-08-24
 updated: 2026-08-24
 source: laravel/Modules/Rating/docs/up.txt
+status: draft
 ---
 
 aggiungere   al file laravel/Modules/IndennitaResponsabilita/app/Models/Rating.php

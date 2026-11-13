@@ -170,7 +170,7 @@ describe('Address Integration', function () {
         $patient = ['id' => 1001, 'type' => 'patient'];
 
         $address = makeAddress([
-            'model_type' => 'patient',
+            'model_type' => $patient['type'],
             'model_id' => $patient['id'],
             'route' => 'Via Roma',
             'street_number' => '123',
@@ -179,7 +179,7 @@ describe('Address Integration', function () {
             'is_primary' => true,
         ]);
 
-        Assert::assertSame('patient', $address['model_type']);
+        Assert::assertSame($patient['type'], $address['model_type']);
         Assert::assertSame($patient['id'], $address['model_id']);
         Assert::assertTrue($address['is_primary']);
     });
@@ -238,14 +238,14 @@ describe('Address Integration', function () {
         $patient = ['id' => 2001, 'type' => 'patient'];
 
         $homeAddress = makeAddress([
-            'model_type' => 'patient',
+            'model_type' => $patient['type'],
             'model_id' => $patient['id'],
             'type' => AddressTypeEnum::HOME->value,
             'is_primary' => true,
         ]);
 
         $workAddress = makeAddress([
-            'model_type' => 'patient',
+            'model_type' => $patient['type'],
             'model_id' => $patient['id'],
             'type' => AddressTypeEnum::WORK->value,
             'is_primary' => false,

@@ -137,10 +137,8 @@
     margin-right: 0.5rem !important;
   }
 
-  /* Wizard specific adjustments */
-  .cmp-wizard-widget {
-    margin-top: 1rem !important;
-  }
+  /* Wizard specific adjustments: rimosso `.cmp-wizard-widget{margin-top:1rem !important}` (DCP-146). Il riferimento Design Comuni attacca il container
+     all'header (stepper a y=317 a 375 px, 294 a 768); la regola spingeva tutta la pagina di 16 px in basso sotto i 992 px. */
 
   /* Make sure mobile nav doesn't overlap wizard */
   .navbar-collapsable {
@@ -164,5 +162,37 @@
   .custom-navbar-toggler .icon {
     width: 1.5rem !important;
     height: 1.5rem !important;
+  }
+}
+
+/* Mobile quality pass: keep controls usable on narrow screens and devices with a home indicator. */
+@media (max-width: 991.98px) {
+  .it-header-center-content-wrapper {
+    min-width: 0 !important;
+    padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right)) !important;
+  }
+
+  .it-header-center-content-wrapper > * {
+    min-width: 0 !important;
+  }
+
+  .it-header-center-content-wrapper .it-brand-title {
+    overflow-wrap: anywhere;
+  }
+
+  .navbar-collapsable .menu-wrapper {
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom)) !important;
+  }
+
+  .navbar-collapsable .close-div {
+    top: max(0.5rem, env(safe-area-inset-top)) !important;
+    right: max(0.5rem, env(safe-area-inset-right)) !important;
+    left: auto !important;
+  }
+
+  .navbar-collapsable .close-menu,
+  .custom-navbar-toggler {
+    min-width: 44px !important;
+    min-height: 44px !important;
   }
 }

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Product Strategy: Media Module"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "strategy"
 related:
   - "./webm.md"
+status: draft
 ---
 # Product Strategy: Media Module
 

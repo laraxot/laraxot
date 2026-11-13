@@ -9,7 +9,19 @@ use Illuminate\Database\Eloquent\Model;
 use Mockery;
 use Modules\Notify\Actions\NotificationManager;
 use Modules\Notify\Actions\SendNotificationAction;
+use Modules\Notify\Database\Factories\NotificationTemplateFactory;
+use Modules\Notify\Models\Notification;
 use Modules\Notify\Models\NotificationTemplate;
+use Modules\Notify\Tests\TestCase;
+
+uses(TestCase::class);
+function actionsNotificationManagerActiveTemplate(string $code): NotificationTemplate
+{
+    return NotificationTemplateFactory::new()->createOne([
+        'code' => $code,
+        'is_active' => true,
+    ]);
+}
 
 function actionsNotificationManagerRecipient(): Model
 {
@@ -33,17 +45,18 @@ it('can send notification to single recipient', function (): void {
     $channels = ['email'];
     $options = ['priority' => 'high'];
 
-    $template = typedMock(NotificationTemplate::class);
-    mockExpectation($template, 'getAttribute')->with('code')->andReturn($templateCode);
+    actionsNotificationManagerActiveTemplate($templateCode);
+    $sent = new Notification;
 
-    $action = typedMock(SendNotificationAction::class);
-    mockExpectation($action, 'handle')
+    $action = TestCase::typedMock(SendNotificationAction::class);
+    TestCase::mockExpectation($action, 'handle')
         ->with($recipient, $templateCode, $data, $channels, $options)
-        ->once();
+        ->once()
+        ->andReturn($sent);
 
     app()->instance(SendNotificationAction::class, $action);
 
-    $notificationManager->send($recipient, $templateCode, $data, $channels, $options);
+    expect($notificationManager->send($recipient, $templateCode, $data, $channels, $options))->toBe($sent);
 });
 
 it('can send notification to multiple recipients', function (): void {
@@ -56,11 +69,10 @@ it('can send notification to multiple recipients', function (): void {
     $channels = ['email'];
     $options = ['priority' => 'high'];
 
-    $template = typedMock(NotificationTemplate::class);
-    mockExpectation($template, 'getAttribute')->with('code')->andReturn($templateCode);
+    actionsNotificationManagerActiveTemplate($templateCode);
 
-    $action = typedMock(SendNotificationAction::class);
-    mockExpectation($action, 'handle')->times(2);
+    $action = TestCase::typedMock(SendNotificationAction::class);
+    TestCase::mockExpectation($action, 'handle')->times(2)->andReturn(new Notification);
 
     app()->instance(SendNotificationAction::class, $action);
 
@@ -73,13 +85,14 @@ it('can get template by code', function (): void {
     $notificationManager = new NotificationManager;
     $code = 'test_template';
 
-    $template = typedMock(NotificationTemplate::class);
-    mockExpectation($template, 'getAttribute')->with('code')->andReturn($code);
-    mockExpectation($template, 'getAttribute')->with('is_active')->andReturn(true);
+    expect($notificationManager->getTemplate($code))->toBeNull();
+
+    $template = actionsNotificationManagerActiveTemplate($code);
 
     $result = $notificationManager->getTemplate($code);
 
-    expect($result)->toBeNull();
+    expect($result)->toBeInstanceOf(NotificationTemplate::class);
+    expect($result?->id)->toBe($template->id);
 });
 
 it('can get templates by category', function (): void {
@@ -104,22 +117,24 @@ it('returns array from send method', function (): void {
     $notificationManager = new NotificationManager;
     $recipient = actionsNotificationManagerRecipient();
     $templateCode = 'test_template';
+    actionsNotificationManagerActiveTemplate($templateCode);
 
-    $action = typedMock(SendNotificationAction::class);
-    mockExpectation($action, 'handle')->once();
+    $action = TestCase::typedMock(SendNotificationAction::class);
+    TestCase::mockExpectation($action, 'handle')->once()->andReturn(null);
 
     app()->instance(SendNotificationAction::class, $action);
 
-    $notificationManager->send($recipient, $templateCode);
+    expect($notificationManager->send($recipient, $templateCode))->toBeNull();
 });
 
 it('returns array from send multiple method', function (): void {
     $notificationManager = new NotificationManager;
     $recipients = [actionsNotificationManagerRecipient()];
     $templateCode = 'test_template';
+    actionsNotificationManagerActiveTemplate($templateCode);
 
-    $action = typedMock(SendNotificationAction::class);
-    mockExpectation($action, 'handle')->once();
+    $action = TestCase::typedMock(SendNotificationAction::class);
+    TestCase::mockExpectation($action, 'handle')->once()->andReturn(new Notification);
 
     app()->instance(SendNotificationAction::class, $action);
 

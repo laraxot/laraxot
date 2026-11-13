@@ -3,26 +3,39 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< .merge_file_oO25QW
     'fields' => [
-        'id' => ['label' => 'id'],
-        'name' => ['label' => 'name'],
-        'slug' => ['label' => 'slug'],
-        'domain' => ['label' => 'domain'],
-        'email_address' => ['label' => 'email_address'],
-        'phone' => ['label' => 'phone'],
-        'is_active' => ['label' => 'is_active'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
-        'email' => ['label' => 'email'],
-        'mobile_phone' => ['label' => 'mobile_phone'],
-        'team_id' => ['label' => 'team_id'],
-        'user_id' => ['label' => 'user_id'],
+        'id' => ['label' => 'ID'],
+        'name' => ['label' => 'Nome'],
+        'slug' => ['label' => 'Codice'],
+        'domain' => ['label' => 'Dominio'],
+        'email_address' => ['label' => 'E-mail'],
+        'phone' => ['label' => 'Telefono'],
+        'is_active' => ['label' => 'Attivo'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
+        'email' => ['label' => 'E-mail'],
+        'mobile_phone' => ['label' => 'Cellulare'],
+        'team_id' => ['label' => 'Team'],
+        'user_id' => ['label' => 'Utente'],
     ],
+=======
+>>>>>>> .merge_file_3kF2Mw
     'actions' => [
-        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
-        'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
-        'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
-        'edit' => ['tooltip' => 'edit', 'icon' => 'edit', 'label' => 'edit'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
+        'create' => [
+            'icon' => 'create',
+        ],
+        'layout' => [
+            'icon' => 'layout',
+        ],
+        'delete' => [
+            'icon' => 'delete',
+        ],
+        'edit' => [
+            'icon' => 'edit',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
     ],
 ];

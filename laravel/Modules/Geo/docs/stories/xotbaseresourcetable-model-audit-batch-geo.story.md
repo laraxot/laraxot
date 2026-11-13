@@ -1,4 +1,11 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "xotbaseresourcetable model audit batch geo.story"
+issues: []
+discussions: []
 title: "Geo — XotBaseResourceTable $model audit (batch-geo)"
 status: done
 module: Geo

@@ -1,9 +1,13 @@
 ---
+qmd: "tech spec"
+issues: []
+discussions: []
 title: "Technical Specification - Job Module"
 type: technical_spec
 tags: [tech spec, job]
 created: 2026-08-04
 updated: 2026-08-04
+status: draft
 ---
 # Technical Specification - Job Module
 

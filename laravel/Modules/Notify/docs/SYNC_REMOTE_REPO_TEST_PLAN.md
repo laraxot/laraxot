@@ -1,3 +1,15 @@
+---
+title: "SYNC REMOTE REPO TEST PLAN"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "SYNC REMOTE REPO TEST PLAN"
+issues: []
+discussions: []
+status: draft
+---
+
 # Sync Remote Repo - Test Plan
 
 **Date**: 2026-03-13  
@@ -6,7 +18,6 @@
 **Workflow**: `.github/workflows/sync-remote-repo.yml`
 
 ---
-
 ## 🎯 Test Objective
 
 Verify that `sync_remote_repo.sh` works correctly for **bidirectional sync**:

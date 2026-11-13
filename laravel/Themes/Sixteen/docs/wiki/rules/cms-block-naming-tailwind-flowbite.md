@@ -1,4 +1,7 @@
 ---
+qmd: "cms block naming tailwind flowbite"
+issues: []
+discussions: []
 title: "CMS Block naming — Tailwind UI / Flowbite (Sixteen)"
 type: rule
 confidence: high
@@ -10,6 +13,7 @@ related:
   - frontend-stack-canonical.md
   - no-italian-component-names.md
   - ../../../../../../docs/wiki/rules/011-blocks-view-convention.md
+status: draft
 ---
 
 # CMS Block naming — Tailwind UI / Flowbite
@@ -19,7 +23,7 @@ related:
 > Ogni sottocartella di `resources/views/components/blocks/` **deve** usare uno slug presente in
 > [Flowbite Blocks](https://flowbite.com/blocks/) o [Tailwind Plus UI Blocks](https://tailwindcss.com/plus/ui-blocks).
 
-- **Nuovi blocchi**: solo slug canonici (`BlockCategoryRegistry::CANONICAL_FOLDERS`)
+- **Nuovi blocchi**: solo slug canonici (`BlockCategoryRegistryData::CANONICAL_FOLDERS`)
 - **Legacy**: cartelle dominio ammesse solo per retrocompatibilita CMS
 - **Vietato**: nomi pagina/modulo (`ticket-layout`, `segnalazioni`, `homepage`)
 
@@ -41,7 +45,7 @@ Vedi catalogo: [blocks-subfolder-catalog.md](../how-to/blocks-subfolder-catalog.
 
 ## SSoT codice
 
-`Themes\Sixteen\Support\BlockCategoryRegistry`
+`Themes\Sixteen\Datas\BlockCategoryRegistryData` (query: `Themes\Sixteen\Actions\Block\*`)
 
 Test: `Themes/Sixteen/tests/Unit/BlockSubfolderNamingTest.php`
 

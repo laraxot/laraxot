@@ -1,9 +1,21 @@
-# Story — `ratingXlsFields`/`RatingData::getXlsFields`: `$ratingClass` required
+---
+title: "rating xls fields ratingclass required.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating xls fields ratingclass required.story"
+issues: []
+discussions: []
+status: draft
+---
+
+# Story: `ratingXlsFields`/`RatingData::getXlsFields`: `$ratingClass` required
 
 **Status**: done
 **Modulo**: Rating (+ call site IR)
 **Epic**: export-xls-ratings
-**Related**: `../architecture/rating-xls-fields-reusable.md` · `18.60-rating-xls-fields-catalog.story.md` · `../../../../IndennitaResponsabilita/docs/bmad/stories/5.179-rating-xls-fields-reusable-component.story.md` (§11 — trappola segnalata da Devin)
+**Related**: `../architecture/rating-xls-fields-reusable.md` · `18.60-rating-xls-fields-catalog.story.md` · `../../../../IndennitaResponsabilita/docs/bmad/stories/5.179-rating-xls-fields-reusable-component.story.md` (§11: trappola segnalata da Devin)
 
 ## Bug/trappola (found by Devin, fix mandatorio per standing order)
 

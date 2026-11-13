@@ -18,6 +18,8 @@ class UpdateModelSubtitleFieldAction
     {
         $plain = app(ExtractSubtitlePlainTextAction::class)->execute($filePath);
 
-        return tap($model)->update([$fieldName => $plain]);
+        $model->update([$fieldName => $plain]);
+
+        return $model;
     }
 }

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "About"
 module: "Tenant"
 type: concept
@@ -8,5 +10,7 @@ updated: 2026-07-14
 qmd: "about"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 

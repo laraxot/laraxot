@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "google_drive"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "google_drive xot"
+---
+>>>>>>> laraxot/dev
 # google_drive
 
 <!-- Contenuto migrato da _docs/google_drive.txt -->

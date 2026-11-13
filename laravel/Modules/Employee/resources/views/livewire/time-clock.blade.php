@@ -8,8 +8,8 @@ declare(strict_types=1);
     <div class="bg-white rounded-lg shadow-sm border p-6">
         <div class="flex items-center justify-between mb-4">
             <div>
-                <h1 class="text-2xl font-bold text-gray-900">Time Clock</h1>
-                <p class="text-gray-600">{{ $employee?->full_name ?? 'Employee' }} - {{ $currentDate }}</p>
+                <h1 class="text-2xl font-bold text-gray-900">{{ __('employee::workhour.pages.timeclock.heading') }}</h1>
+                <p class="text-gray-600">{{ $employee?->full_name ?? __('employee::workhour.fields.employee_id.label') }} - {{ $currentDate }}</p>
             </div>
             <div class="text-right">
                 <div class="text-3xl font-mono font-bold text-gray-900">{{ $currentTime }}</div>
@@ -53,18 +53,18 @@ declare(strict_types=1);
 
             <!-- Notes Input -->
             <div class="max-w-md mx-auto">
-                <label for="notes" class="block text-sm font-medium text-gray-700 mb-2">Notes (Optional)</label>
+                <label for="notes" class="block text-sm font-medium text-gray-700 mb-2">{{ __('employee::workhour.timeclock.notes.label') }}</label>
                 <textarea 
                     wire:model="notes" 
                     id="notes"
                     rows="2" 
                     class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Add a note for this entry..."></textarea>
+                    placeholder="{{ __('employee::workhour.timeclock.notes.placeholder') }}"></textarea>
             </div>
 
             @if($lastEntry)
                 <div class="text-sm text-gray-600">
-                    Last entry: {{ $this->getActionLabel($lastEntry->type) }} at {{ $this->formatTime($lastEntry->time) }}
+                    {{ __('employee::workhour.summary.last_entry', ['type' => $this->getActionLabel($lastEntry->type), 'time' => $this->formatTime($lastEntry->time)]) }}
                 </div>
             @endif
         </div>
@@ -74,20 +74,20 @@ declare(strict_types=1);
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Hours Summary -->
         <div class="bg-white rounded-lg shadow-sm border p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">Today's Summary</h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ __('employee::workhour.summary.todays_summary') }}</h3>
             <div class="space-y-3">
                 <div class="flex justify-between items-center">
-                    <span class="text-gray-600">Total Hours Worked:</span>
+                    <span class="text-gray-600">{{ __('employee::workhour.summary.total_hours_worked') }}:</span>
                     <span class="font-semibold text-lg text-blue-600">{{ number_format($workedHours, 2) }}h</span>
                 </div>
                 <div class="flex justify-between items-center">
-                    <span class="text-gray-600">Current Status:</span>
+                    <span class="text-gray-600">{{ __('employee::workhour.summary.current_status') }}:</span>
                     <span class="font-medium" style="color: {{ $this->getStatusColor() === 'green' ? '#22c55e' : ($this->getStatusColor() === 'orange' ? '#f59e0b' : ($this->getStatusColor() === 'red' ? '#ef4444' : '#6b7280')) }}">
                         {{ $this->getStatusLabel() }}
                     </span>
                 </div>
                 <div class="flex justify-between items-center">
-                    <span class="text-gray-600">Total Entries:</span>
+                    <span class="text-gray-600">{{ __('employee::workhour.summary.total_entries') }}:</span>
                     <span class="font-medium">{{ count($todayEntries) }}</span>
                 </div>
             </div>
@@ -95,13 +95,13 @@ declare(strict_types=1);
 
         <!-- Today's Entries -->
         <div class="bg-white rounded-lg shadow-sm border p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">Today's Entries</h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ __('employee::workhour.summary.todays_entries') }}</h3>
             @if(empty($todayEntries))
                 <div class="text-center py-8 text-gray-500">
                     <svg class="w-12 h-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <p>No entries recorded today</p>
+                    <p>{{ __('employee::workhour.messages.empty_states.no_entries_today') }}</p>
                 </div>
             @else
                 <div class="space-y-3 max-h-64 overflow-y-auto">
@@ -127,7 +127,7 @@ declare(strict_types=1);
 
     <!-- Quick Actions -->
     <div class="bg-white rounded-lg shadow-sm border p-6">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ __('employee::workhour.quick_actions.title') }}</h3>
         <div class="flex flex-wrap gap-3">
             <button 
                 wire:click="refreshData"
@@ -135,7 +135,7 @@ declare(strict_types=1);
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                 </svg>
-                Refresh
+                {{ __('employee::workhour.actions.refresh.label') }}
             </button>
             
             <a href="{{ \Modules\Employee\Filament\Resources\WorkHourResource::getUrl('index') }}" 
@@ -143,7 +143,7 @@ declare(strict_types=1);
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                 </svg>
-                View All Entries
+                {{ __('employee::workhour.quick_actions.view_all') }}
             </a>
         </div>
     </div>

@@ -67,7 +67,6 @@ Il **doppio fallback** `env('DB_DATABASE_ACTIVITY', env('DB_DATABASE'))` è la c
 # ✅ CORRETTO — .env.testing
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 DB_DATABASE=<nome progetto>_data_test
 =======
 DB_DATABASE=techplanner_data_test
@@ -80,16 +79,12 @@ DB_DATABASE=techplanner_data_test
 DB_DATABASE=<nome progetto>_data_test=======
 DB_DATABASE=techplanner_data_test
 >>>>>>> .merge_file_WrIoz4
-=======
-DB_DATABASE=<nome progetto>_data_test
->>>>>>> 13cf1831 (.)
 DB_USERNAME=marco
 DB_PASSWORD=[segreto locale, non nel repo]
 # NESSUNA DB_DATABASE_ACTIVITY, DB_USERNAME_ACTIVITY, DB_PASSWORD_ACTIVITY
 ```
 
 Il fallback in `database.php` garantisce che la connessione `activity` usi automaticamente
-<<<<<<< HEAD
 <<<<<<< .merge_file_zAIF5k
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -104,9 +99,6 @@ Il fallback in `database.php` garantisce che la connessione `activity` usi autom
 `<nome progetto>_data_test` senza configurazione aggiuntiva nei test.=======
 `techplanner_data_test` senza configurazione aggiuntiva nei test.
 >>>>>>> .merge_file_WrIoz4
-=======
-`<nome progetto>_data_test` senza configurazione aggiuntiva nei test.
->>>>>>> 13cf1831 (.)
 
 ---
 

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Dal nome tenant al tema pubblico (pub_theme)"
 module: "Tenant"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "tenant name to pub theme"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # Dal nome tenant al tema pubblico (pub_theme)
 

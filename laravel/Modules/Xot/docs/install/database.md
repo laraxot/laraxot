@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "database"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, install]
+qmd: "database"
+---
+>>>>>>> laraxot/dev
 ~~~ php
 <?php
 
@@ -84,6 +97,7 @@ return $def1;
 ~~~
 ### Versione HEAD
 
+<<<<<<< HEAD
 ## Collegamenti tra versioni di database.md
 * [database.md](docs/tecnico/database/database.md)
 * [database.md](../../../xot/project_docs/install/database.md)
@@ -92,3 +106,17 @@ return $def1;
 ### Versione Incoming
 
 ---
+=======
+
+## Collegamenti tra versioni di database.md
+* [database.md](docs/tecnico/database/database.md)
+* [database.md](../../../Xot/docs/install/database.md)
+* [database.md](../../../Tenant/docs/it/config/database.md)
+
+
+### Versione Incoming
+
+
+---
+
+>>>>>>> laraxot/dev

@@ -1,3 +1,15 @@
+---
+title: "auth login ux design wcag"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "auth login ux design wcag"
+issues: []
+discussions: []
+status: draft
+---
+
 # UX design — `/it/auth/login` (accessibilità e CTA)
 
 **URL:** `http://127.0.0.1:8000/it/auth/login`  
@@ -6,7 +18,6 @@
 **Piattaforme:** Web desktop, tablet, mobile
 
 ---
-
 ## User flow
 
 ```mermaid
@@ -114,6 +125,6 @@ Comando: `pa11y http://127.0.0.1:8000/it/auth/login --standard WCAG2AA --reporte
 ## Collegamenti
 
 - [auth-login-ux-fixes.md](../concepts/auth-login-ux-fixes.md)
-- [mcp-validation-quality-gate.md](../../../../../docs/wiki/mcp-validation-quality-gate.md)
-- [STORY-137](../../../../../docs/stories/STORY-137-mcp-validation-mauve-pagespeed-gsc.md)
-- [ux-design-fixcity.md](../../../../../docs/ux-design-fixcity.md)
+- [mcp-validation-quality-gate.md](../../../../../../docs/wiki/mcp-validation-quality-gate.md)
+- [STORY-137](../../../../../../docs/stories/STORY-137-mcp-validation-mauve-pagespeed-gsc.md)
+- [ux-design-fixcity.md](../../../../../../docs/ux-design-fixcity.md)

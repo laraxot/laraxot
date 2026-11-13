@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Tenant Module - SushiToJson Traits Fix Plan"
 module: "Tenant"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "sushi to json fix plan"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # Tenant Module - SushiToJson Traits Fix Plan
 

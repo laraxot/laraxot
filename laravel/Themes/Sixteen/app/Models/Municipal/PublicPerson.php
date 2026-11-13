@@ -17,6 +17,8 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Themes\Sixteen\Enums\PublicPersonCategoryEnum;
+use Themes\Sixteen\Enums\PublicPersonRoleEnum;
 
 /**
  * Modello per le persone pubbliche (Public Person)
@@ -76,38 +78,6 @@ class PublicPerson extends Model
 {
     /** @use HasFactory<Factory<static>> */
     use HasFactory, SoftDeletes;
-
-    /**
-     * Categorie di persone pubbliche secondo AGID
-     */
-    public const CATEGORIES = [
-        'politician' => 'Politico/Amministratore',
-        'manager' => 'Dirigente',
-        'employee' => 'Dipendente',
-        'consultant' => 'Consulente/Collaboratore',
-        'commission_member' => 'Componente Commissione',
-        'board_member' => 'Componente Organo',
-        'authority_member' => 'Componente Autorità',
-        'other' => 'Altro',
-    ];
-
-    /**
-     * Ruoli principali secondo AGID
-     */
-    public const ROLES = [
-        'mayor' => 'Sindaco',
-        'deputy_mayor' => 'Vicesindaco',
-        'councillor' => 'Assessore',
-        'president' => 'Presidente',
-        'vice_president' => 'Vicepresidente',
-        'secretary' => 'Segretario',
-        'general_manager' => 'Direttore Generale',
-        'manager' => 'Dirigente',
-        'supervisor' => 'Responsabile',
-        'employee' => 'Dipendente',
-        'consultant' => 'Consulente',
-        'collaborator' => 'Collaboratore',
-    ];
 
     protected $table = 'sixteen_public_people';
 
@@ -452,19 +422,19 @@ class PublicPerson extends Model
     protected function categoryName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::CATEGORIES[$this->category] ?? $this->category
+            get: fn () => PublicPersonCategoryEnum::tryFrom($this->category)?->getLabel() ?? $this->category
         );
     }
 
     /**
      * Accessor per il nome del ruolo
      *
-     * @return Attribute<string, never>
+     * @return Attribute<string|null, never>
      */
     protected function roleName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::ROLES[$this->role] ?? $this->role
+            get: fn () => $this->role === null ? null : (PublicPersonRoleEnum::tryFrom($this->role)?->getLabel() ?? $this->role)
         );
     }
 

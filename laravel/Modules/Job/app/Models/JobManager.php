@@ -154,20 +154,20 @@ class JobManager extends BaseModel
     }
 
     /**
-     * @return Builder<static>
+     * @return Builder<JobManager>
      */
     public function prunable(): Builder
     {
-        /** @var Builder<static> $query */
+        /** @var Builder<JobManager> $query */
         $query = $this->newQuery();
 
         if (config('jobs.pruning.activate')) {
-            $retention_days = config('jobs.pruning.retention_days');
-            if (! is_int($retention_days)) {
-                $retention_days = 365;
+            $retentionDays = config('jobs.pruning.retention_days');
+            if (! is_int($retentionDays)) {
+                $retentionDays = 365;
             }
 
-            return $query->where('created_at', '<=', now()->subDays($retention_days));
+            return $query->where('created_at', '<=', now()->subDays($retentionDays));
         }
 
         return $query;

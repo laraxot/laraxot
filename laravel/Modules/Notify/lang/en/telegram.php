@@ -49,7 +49,7 @@ return [
         'botapi' => 'Bot API',
         'laravel_telegram' => 'Laravel Telegram'],
     'actions' => [
-        'send' => 'Invia Telegram',
+        'send' => 'Send Telegram',
         'cancel' => 'Annulla'],
     'messages' => [
         'success' => 'Messaggio Telegram inviato con successo',

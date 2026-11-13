@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Enum Translation Pattern - Implementazione Regola Critica"
 module: "Lang"
 type: pattern
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "lang service helper text fix"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Enum Translation Pattern - Implementazione Regola Critica
 
@@ -222,7 +225,7 @@ return [
 ## Collegamenti
 
 - [Enum Translation Pattern](enum-translation-pattern.md)
-- [TableLayoutEnum Guide](../laravel/Modules/UI/docs/table-layout-enum-complete-guide.md)
+- [TableLayoutEnum Guide](../../UI/docs/table-layout-enum-complete-guide.md)
 - [Translation Management](translation-management.md)
 
 ## Ultimo Aggiornamento

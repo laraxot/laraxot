@@ -1,3 +1,16 @@
+---
+title: "TRANSLATION PLAN"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "TRANSLATION PLAN"
+issues: []
+discussions: []
+status: superseded
+superseded_by: translation-plan.md
+---
+
 # 🌐 Translation Plan - Italian to English Documentation
 
 ## 📊 Current Language Analysis
@@ -198,7 +211,6 @@ Update all references in:
 - Use clear, international English
 
 ---
-
 **🎯 Goal**: 100% English documentation with technical accuracy  
 **📅 Timeline**: 3 days for complete translation  
 **👥 Team**: 1 technical translator + 1 domain expert review  

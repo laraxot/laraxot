@@ -82,4 +82,14 @@ return [
             'label' => 'Elimina Datepicker',
         ],
     ],
+    'messages' => [
+        'loading_calendar' => [
+            'message' => 'Caricamento calendario...',
+        ],
+    ],
+    'test_page' => [
+        'form_state' => [
+            'label' => 'Stato del form:',
+        ],
+    ],
 ];

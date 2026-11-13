@@ -1,4 +1,7 @@
 ---
+qmd: "session phpstan random analysis"
+issues: []
+discussions: []
 title: "Sessione analisi casuale PHPStan — 2026-06-15 14:09 UTC"
 type: chat
 tags: [phpstan, swarm, session, random-analysis]
@@ -8,6 +11,7 @@ related:
   - ../wiki/memories/phpstan-modules-inventory.md
   - ../wiki/how-to/phpstan-modules-swarm.md
   - handoff-phpstan-modules-zero.md
+status: draft
 ---
 
 # Sessione PHPStan — Analisi Random Moduli
@@ -58,7 +62,7 @@ _(aggiornare durante la sessione)_
 - **DateRangeFieldsContract**: spostato sotto `app/Models/Contracts/` perché valido solo per model
 
 ## Chat multi-agente
-Coordinamento via `docs/chat/phpstan-results-collector-2026-06-15.md`
+Coordinamento via `docs/chat/phpstan-results-collector-raccoglitore-risultati.md`
 
 ---
 

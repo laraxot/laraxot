@@ -8,10 +8,7 @@ qmd: "cyclomatic complexity report - module: activity activity"
 ---
 # Cyclomatic Complexity Report - Module: Activity
 
-<<<<<<< HEAD
 **Generated:** 2025-10-01 19:44:11
-=======
->>>>>>> 13cf1831 (.)
 **Analyzer:** Super Mucca 🐮
 
 ---

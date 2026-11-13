@@ -1,3 +1,15 @@
+---
+title: "notify send email translations improvements"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "notify send email translations improvements"
+issues: []
+discussions: []
+status: draft
+---
+
 # Sistemazione e Miglioramenti File Traduzione send_email.php - Modulo Notify
 
 ## Introduzione

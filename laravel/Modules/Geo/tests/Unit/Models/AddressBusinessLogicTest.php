@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Modules\Geo\Tests\Unit\Models;
-
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Geo\Enums\AddressTypeEnum;
 use Modules\Geo\Models\Address;
@@ -12,6 +10,11 @@ use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
+
+/*
+ * Contratto di dominio Address (PostalAddress / Schema.org, geolocalizzazione, scope query).
+ * Assert PHPUnit: evita crash pest-plugin-phpstan HigherOrderExpectationTypeExtension.
+ */
 describe('Address Business Logic', function () {
     test('address extends base model', function () {
         Assert::assertSame(BaseModel::class, get_parent_class(Address::class));
@@ -41,34 +44,42 @@ describe('Address Business Logic', function () {
             'extra_data',
         ];
 
-        Assert::assertEquals($expectedFillable, $address->getFillable());
+        Assert::assertSame($expectedFillable, $address->getFillable());
     });
 
     test('address has correct casts for geolocation and structured data', function () {
         $address = new Address;
         $casts = $address->getCasts();
 
-        Assert::assertSame('float', $casts['latitude']);
-        Assert::assertSame('float', $casts['longitude']);
-        Assert::assertSame('boolean', $casts['is_primary']);
-        Assert::assertSame('array', $casts['extra_data']);
-        Assert::assertSame(AddressTypeEnum::class, $casts['type']);
+        Assert::assertSame('float', $casts['latitude'] ?? null);
+        Assert::assertSame('float', $casts['longitude'] ?? null);
+        Assert::assertSame('boolean', $casts['is_primary'] ?? null);
+        Assert::assertSame('array', $casts['extra_data'] ?? null);
+        Assert::assertSame(AddressTypeEnum::class, $casts['type'] ?? null);
     });
 
     test('address has polymorphic model relationship', function () {
         $address = new Address;
+
+        Assert::assertSame('addressable', $address->addressable()->getRelationName());
     });
 
     test('address can get region data from comune', function () {
         $address = new Address;
+
+        Assert::assertNull($address->getRegione());
     });
 
     test('address can get province data from comune', function () {
         $address = new Address;
+
+        Assert::assertNull($address->getProvincia());
     });
 
     test('address can get locality data from comune', function () {
         $address = new Address;
+
+        Assert::assertNull($address->getLocality());
     });
 
     test('address can format full address attribute', function () {

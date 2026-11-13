@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Trait Method Implementation Rules"
 module: "Tenant"
 type: pattern
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "trait method implementation"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 # Trait Method Implementation Rules
 

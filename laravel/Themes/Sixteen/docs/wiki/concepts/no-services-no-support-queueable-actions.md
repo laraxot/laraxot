@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "No Services / No Support — QueueableAction only"
 type: concept
 module: Sixteen
@@ -9,6 +11,7 @@ qmd: "Sixteen theme Services and Support banned use app Actions QueueableAction 
 related:
   - no-app-support-queueable-actions.md
   - ../../../Modules/Xot/docs/wiki/concepts/queueable-action-trait-mandatory.md
+status: draft
 ---
 
 # Sixteen — Services/Support vietati: solo Actions

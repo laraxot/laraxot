@@ -8,6 +8,11 @@ tags: [migrato-da-txt, xot]
 converted_from: UUID.txt
 created: 2026-08-24
 updated: 2026-08-24
+<<<<<<< HEAD
+=======
+status: draft
+qmd: "_uuid xot"
+>>>>>>> laraxot/dev
 ---
 
 Using UUIDs in Laravel Models

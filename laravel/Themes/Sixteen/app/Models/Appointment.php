@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\User\Models\User;
+use Themes\Sixteen\Enums\AppointmentServiceTypeEnum;
+use Themes\Sixteen\Enums\AppointmentStatusEnum;
 
 /**
  * Modello Appuntamento - Gestione prenotazioni servizi comunali
@@ -26,7 +28,7 @@ use Modules\User\Models\User;
  * @property Carbon|null $appointment_date
  * @property Carbon|null $start_time
  * @property Carbon|null $end_time
- * @property string $status
+ * @property AppointmentStatusEnum|null $status
  * @property string|null $purpose
  * @property string|null $notes
  * @property array<array-key, mixed>|null $required_documents
@@ -51,32 +53,6 @@ class Appointment extends Model
 {
     /** @use HasFactory<Factory<static>> */
     use HasFactory, SoftDeletes;
-
-    /**
-     * Stati appuntamento conformi AGID
-     */
-    public const STATUS_PENDING = 'pending';      // In attesa di conferma
-
-    public const STATUS_CONFIRMED = 'confirmed';  // Confermato
-
-    public const STATUS_COMPLETED = 'completed';  // Completato
-
-    public const STATUS_CANCELLED = 'cancelled';  // Cancellato
-
-    public const STATUS_NO_SHOW = 'no_show';      // Non presentato
-
-    /**
-     * Tipi di servizio supportati
-     */
-    public const SERVICE_ANAGRAFE = 'anagrafe';
-
-    public const SERVICE_TRIBUTI = 'tributi';
-
-    public const SERVICE_SUAP = 'suap';
-
-    public const SERVICE_URP = 'urp';
-
-    public const SERVICE_OTHER = 'other';
 
     protected $table = 'sixteen_appointments';
 
@@ -105,6 +81,7 @@ class Appointment extends Model
         'required_documents' => 'array',
         'reminder_sent' => 'boolean',
         'metadata' => 'array',
+        'status' => AppointmentStatusEnum::class,
     ];
 
     /**
@@ -156,7 +133,7 @@ class Appointment extends Model
     public function scopeUpcoming(Builder $query): Builder
     {
         return $query->where('appointment_date', '>=', now()->toDateString())
-            ->where('status', self::STATUS_CONFIRMED);
+            ->where('status', AppointmentStatusEnum::CONFIRMED->value);
     }
 
     /**
@@ -186,7 +163,7 @@ class Appointment extends Model
      */
     public function getIsCancellableAttribute(): bool
     {
-        return in_array($this->status, [self::STATUS_PENDING, self::STATUS_CONFIRMED])
+        return ($this->status?->isOpen() ?? false)
             && $this->appointment_date > now()->addHours(24); // Cancellabile fino a 24h prima
     }
 
@@ -195,7 +172,7 @@ class Appointment extends Model
      */
     public function getIsModifiableAttribute(): bool
     {
-        return in_array($this->status, [self::STATUS_PENDING, self::STATUS_CONFIRMED])
+        return ($this->status?->isOpen() ?? false)
             && $this->appointment_date > now()->addHours(48); // Modificabile fino a 48h prima
     }
 
@@ -213,7 +190,7 @@ class Appointment extends Model
     public function needsReminder(): bool
     {
         return ! $this->reminder_sent
-            && $this->status === self::STATUS_CONFIRMED
+            && $this->status === AppointmentStatusEnum::CONFIRMED
             && ($this->appointment_date?->isTomorrow() ?? false)
             && now()->hour < 18; // Invio solo prima delle 18
     }
@@ -225,13 +202,7 @@ class Appointment extends Model
      */
     public static function getStatuses(): array
     {
-        return [
-            self::STATUS_PENDING => 'In attesa',
-            self::STATUS_CONFIRMED => 'Confermato',
-            self::STATUS_COMPLETED => 'Completato',
-            self::STATUS_CANCELLED => 'Cancellato',
-            self::STATUS_NO_SHOW => 'Non presentato',
-        ];
+        return AppointmentStatusEnum::options();
     }
 
     /**
@@ -241,13 +212,7 @@ class Appointment extends Model
      */
     public static function getServiceTypes(): array
     {
-        return [
-            self::SERVICE_ANAGRAFE => 'Anagrafe',
-            self::SERVICE_TRIBUTI => 'Tributi',
-            self::SERVICE_SUAP => 'SUAP',
-            self::SERVICE_URP => 'URP',
-            self::SERVICE_OTHER => 'Altro',
-        ];
+        return AppointmentServiceTypeEnum::options();
     }
 
     /**
@@ -286,7 +251,7 @@ class Appointment extends Model
         });
 
         static::updating(function (self $appointment): void {
-            if ($appointment->isDirty('status') && $appointment->status === self::STATUS_CANCELLED) {
+            if ($appointment->isDirty('status') && $appointment->status === AppointmentStatusEnum::CANCELLED) {
                 $appointment->cancelled_at = now();
             }
         });

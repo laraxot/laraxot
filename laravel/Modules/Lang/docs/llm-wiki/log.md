@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Lang Activity Log"
 module: "Lang"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "migration filament"
 related:
   - "./italian-text-refined-audit-report.md"
+  - "../italian-text-refined-audit-report.md"
+status: draft
 ---
 # Lang Activity Log
 

@@ -8,6 +8,12 @@ use Exception;
 use Illuminate\Support\Facades\Artisan;
 use Spatie\QueueableAction\QueueableAction;
 
+<<<<<<< HEAD
+=======
+use function Safe\define;
+use function Safe\fopen;
+
+>>>>>>> laraxot/dev
 /**
  * Replaces Modules\Xot\Services\ArtisanService::exe().
  *
@@ -19,10 +25,19 @@ class RunArtisanCommandAction
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
      * @param  array<string, mixed>  $arguments
      */
     public function execute(string $command, array $arguments = []): string
     {
+=======
+     * @param  array<string, bool|int|string|list<string>>  $arguments
+     */
+    public function execute(string $command, array $arguments = []): string
+    {
+        $this->ensureStdin();
+
+>>>>>>> laraxot/dev
         try {
             Artisan::call($command, $arguments);
 
@@ -31,4 +46,19 @@ class RunArtisanCommandAction
             return '[<pre>'.$exception->getMessage().'</pre>]';
         }
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Con SAPI web `STDIN` non esiste e il QuestionHelper di Symfony lo legge senza guardia
+     * (`$inputStream ??= \STDIN`): un comando con conferma (migrate, key:generate) andrebbe in fatal.
+     * Il guard era in testa a ArtisanService/ArtisanAction ed era stato perso nella migrazione ad Action.
+     */
+    private function ensureStdin(): void
+    {
+        if (! \defined('STDIN')) {
+            define('STDIN', fopen('php://stdin', 'r'));
+        }
+    }
+>>>>>>> laraxot/dev
 }

@@ -1,3 +1,9 @@
+---
+title: "Employee - TIMECLOCK-WIDGET-LAYOUT-TROUBLESHOOTING"
+module: Employee
+bmad: true
+status: active
+---
 # TimeClockWidget Layout Troubleshooting Guide
 
 ## 🚨 Layout Issues and Solutions

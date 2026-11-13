@@ -1,4 +1,15 @@
-<<<<<<< HEAD
+---
+title: "prd"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "prd"
+issues: []
+discussions: []
+status: active
+---
+
 # Product Requirements Document (PRD) - Seo Module
 
 **Module**: Seo
@@ -7,7 +18,6 @@
 **Author**: Product Team
 
 ---
-
 ## Document Control
 
 | Version | Date | Author | Changes |
@@ -426,10 +436,10 @@ CREATE TABLE seo_scores (
 - [Spatie Sitemap](https://github.com/spatie/laravel-sitemap)
 
 ### 11.3 Related PRDs
-- [Blog Module PRD](../Blog/docs/PRD.md)
-- [Cms Module PRD](../Cms/docs/PRD.md)
-- [Predict Module PRD](../Predict/docs/PRD.md)
-- [Media Module PRD](../Media/docs/PRD.md)
+- [Blog Module PRD](../../Blog/docs/PRD.md)
+- [Cms Module PRD](../../Cms/docs/PRD.md)
+- [Predict Module PRD](../Predict/docs/PRD.md) _(target mancante, verificato 2026-10-08)_
+- [Media Module PRD](../../Media/docs/PRD.md)
 
 ---
 
@@ -441,7 +451,7 @@ CREATE TABLE seo_scores (
 | Engineering Lead | | | |
 | Design Lead | | | |
 | Stakeholder | | | |
-=======
+---
 # Seo - Product Requirements Document (PRD)
 
 Documento ponte verso il file canonico legacy:
@@ -452,4 +462,3 @@ Nota operativa:
 - il naming legacy in maiuscolo resta compatibile
 - i nuovi documenti prodotto fanno riferimento a `prd.md`
 - una wave futura puo' convergere il naming a un solo standard
->>>>>>> laraxot/dev

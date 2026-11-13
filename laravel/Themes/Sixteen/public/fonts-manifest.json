@@ -1,0 +1,397 @@
+{
+  "version": 1,
+  "style": {
+    "file": "assets/fonts-B7bCY8tl.css",
+    "familyStyles": {
+      "sans": "@font-face {\n  font-family: \"Titillium Web\";\n  font-style: italic;\n  font-weight: 300;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-300-italic-BaMQNKLK.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: italic;\n  font-weight: 300;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-300-italic--Ko5t23R.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: italic;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-400-italic-Dw3bcAT3.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: italic;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-400-italic-DKtj0qME.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: italic;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-600-italic-RlldkisL.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: italic;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-600-italic-Bj-QcXsN.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: italic;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-700-italic-Bw8Yr478.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: italic;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-700-italic-Dm8RTd1S.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: normal;\n  font-weight: 300;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-300-normal-BKKZ-LnS.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: normal;\n  font-weight: 300;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-300-normal-ClR3VTtz.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-400-normal-Bot9mzhf.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-400-normal-BmGsO8Gb.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-600-normal-u1udDzIn.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-600-normal-DBtSc4_g.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-700-normal-DeLo1m_T.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Titillium Web\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/titillium-web-700-normal-YDdGQjzo.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Titillium Web fallback\";\n  src: local(\"Arial\");\n  ascent-override: 224.27%;\n  descent-override: 76.80%;\n  line-gap-override: 0.00%;\n  size-adjust: 50.52%;\n}\n\n.font-sans {\n  font-family: var(--font-sans);\n}",
+      "serif": "@font-face {\n  font-family: \"Lora\";\n  font-style: italic;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/lora-variable-italic-BC6VAxdc.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Lora\";\n  font-style: italic;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/lora-variable-italic-DBI-iqMr.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Lora\";\n  font-style: italic;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/lora-variable-italic-BC6VAxdc.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Lora\";\n  font-style: italic;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/lora-variable-italic-DBI-iqMr.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Lora\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/lora-variable-normal-C2Wlntb9.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Lora\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/lora-variable-normal-BiLcIKcI.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Lora\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/lora-variable-normal-C2Wlntb9.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Lora\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/lora-variable-normal-BiLcIKcI.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Lora fallback\";\n  src: local(\"Arial\");\n  ascent-override: 95.09%;\n  descent-override: 25.90%;\n  line-gap-override: 0.00%;\n  size-adjust: 105.80%;\n}\n\n.font-serif {\n  font-family: var(--font-serif);\n}",
+      "mono": "@font-face {\n  font-family: \"Roboto Mono\";\n  font-style: italic;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/roboto-mono-variable-italic-xQ7z9ig4.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Roboto Mono\";\n  font-style: italic;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/roboto-mono-variable-italic-CLakWGv2.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Roboto Mono\";\n  font-style: italic;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/roboto-mono-variable-italic-xQ7z9ig4.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Roboto Mono\";\n  font-style: italic;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/roboto-mono-variable-italic-CLakWGv2.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Roboto Mono\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/roboto-mono-variable-normal-QAYlOegK.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Roboto Mono\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/roboto-mono-variable-normal-CZtBPCCa.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Roboto Mono\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/roboto-mono-variable-normal-QAYlOegK.woff2\") format(\"woff2\");\n  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;\n}\n\n@font-face {\n  font-family: \"Roboto Mono\";\n  font-style: normal;\n  font-weight: 700;\n  font-display: swap;\n  src: url(\"/themes/Sixteen/assets/roboto-mono-variable-normal-CZtBPCCa.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;\n}\n\n@font-face {\n  font-family: \"Roboto Mono fallback\";\n  src: local(\"Arial\");\n  ascent-override: 78.81%;\n  descent-override: 20.38%;\n  line-gap-override: 0.00%;\n  size-adjust: 132.96%;\n}\n\n.font-mono {\n  font-family: var(--font-mono);\n}"
+    },
+    "variables": {
+      "sans": "--font-sans: \"Titillium Web\", \"Titillium Web fallback\", system-ui, sans-serif;",
+      "serif": "--font-serif: \"Lora\", \"Lora fallback\", Georgia, serif;",
+      "mono": "--font-mono: \"Roboto Mono\", \"Roboto Mono fallback\", ui-monospace, monospace;"
+    }
+  },
+  "preloads": [
+    {
+      "alias": "sans",
+      "family": "Titillium Web",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/titillium-web-400-normal-Bot9mzhf.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "sans",
+      "family": "Titillium Web",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/titillium-web-400-normal-BmGsO8Gb.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "sans",
+      "family": "Titillium Web",
+      "weight": 700,
+      "style": "normal",
+      "file": "assets/titillium-web-700-normal-DeLo1m_T.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "sans",
+      "family": "Titillium Web",
+      "weight": 700,
+      "style": "normal",
+      "file": "assets/titillium-web-700-normal-YDdGQjzo.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "serif",
+      "family": "Lora",
+      "weight": 400,
+      "style": "italic",
+      "file": "assets/lora-variable-italic-BC6VAxdc.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "serif",
+      "family": "Lora",
+      "weight": 400,
+      "style": "italic",
+      "file": "assets/lora-variable-italic-DBI-iqMr.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "serif",
+      "family": "Lora",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/lora-variable-normal-C2Wlntb9.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "serif",
+      "family": "Lora",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/lora-variable-normal-BiLcIKcI.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "mono",
+      "family": "Roboto Mono",
+      "weight": 400,
+      "style": "italic",
+      "file": "assets/roboto-mono-variable-italic-xQ7z9ig4.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "mono",
+      "family": "Roboto Mono",
+      "weight": 400,
+      "style": "italic",
+      "file": "assets/roboto-mono-variable-italic-CLakWGv2.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "mono",
+      "family": "Roboto Mono",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/roboto-mono-variable-normal-QAYlOegK.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    },
+    {
+      "alias": "mono",
+      "family": "Roboto Mono",
+      "weight": 400,
+      "style": "normal",
+      "file": "assets/roboto-mono-variable-normal-CZtBPCCa.woff2",
+      "as": "font",
+      "type": "font/woff2",
+      "crossorigin": "anonymous"
+    }
+  ],
+  "families": {
+    "sans": {
+      "family": "Titillium Web",
+      "variable": "--font-sans",
+      "fallbackFamily": "Titillium Web fallback",
+      "fallbacks": [
+        "system-ui",
+        "sans-serif"
+      ],
+      "variants": {
+        "300:italic": {
+          "files": [
+            {
+              "file": "assets/titillium-web-300-italic-BaMQNKLK.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/titillium-web-300-italic--Ko5t23R.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "400:italic": {
+          "files": [
+            {
+              "file": "assets/titillium-web-400-italic-Dw3bcAT3.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/titillium-web-400-italic-DKtj0qME.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "600:italic": {
+          "files": [
+            {
+              "file": "assets/titillium-web-600-italic-RlldkisL.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/titillium-web-600-italic-Bj-QcXsN.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "700:italic": {
+          "files": [
+            {
+              "file": "assets/titillium-web-700-italic-Bw8Yr478.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/titillium-web-700-italic-Dm8RTd1S.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "300:normal": {
+          "files": [
+            {
+              "file": "assets/titillium-web-300-normal-BKKZ-LnS.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/titillium-web-300-normal-ClR3VTtz.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "400:normal": {
+          "files": [
+            {
+              "file": "assets/titillium-web-400-normal-Bot9mzhf.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/titillium-web-400-normal-BmGsO8Gb.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "600:normal": {
+          "files": [
+            {
+              "file": "assets/titillium-web-600-normal-u1udDzIn.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/titillium-web-600-normal-DBtSc4_g.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "700:normal": {
+          "files": [
+            {
+              "file": "assets/titillium-web-700-normal-DeLo1m_T.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/titillium-web-700-normal-YDdGQjzo.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        }
+      }
+    },
+    "serif": {
+      "family": "Lora",
+      "variable": "--font-serif",
+      "fallbackFamily": "Lora fallback",
+      "fallbacks": [
+        "Georgia",
+        "serif"
+      ],
+      "variants": {
+        "400:italic": {
+          "files": [
+            {
+              "file": "assets/lora-variable-italic-BC6VAxdc.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/lora-variable-italic-DBI-iqMr.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "700:italic": {
+          "files": [
+            {
+              "file": "assets/lora-variable-italic-BC6VAxdc.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/lora-variable-italic-DBI-iqMr.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "400:normal": {
+          "files": [
+            {
+              "file": "assets/lora-variable-normal-C2Wlntb9.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/lora-variable-normal-BiLcIKcI.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "700:normal": {
+          "files": [
+            {
+              "file": "assets/lora-variable-normal-C2Wlntb9.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/lora-variable-normal-BiLcIKcI.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        }
+      }
+    },
+    "mono": {
+      "family": "Roboto Mono",
+      "variable": "--font-mono",
+      "fallbackFamily": "Roboto Mono fallback",
+      "fallbacks": [
+        "ui-monospace",
+        "monospace"
+      ],
+      "variants": {
+        "400:italic": {
+          "files": [
+            {
+              "file": "assets/roboto-mono-variable-italic-xQ7z9ig4.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/roboto-mono-variable-italic-CLakWGv2.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "700:italic": {
+          "files": [
+            {
+              "file": "assets/roboto-mono-variable-italic-xQ7z9ig4.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/roboto-mono-variable-italic-CLakWGv2.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "400:normal": {
+          "files": [
+            {
+              "file": "assets/roboto-mono-variable-normal-QAYlOegK.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/roboto-mono-variable-normal-CZtBPCCa.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        },
+        "700:normal": {
+          "files": [
+            {
+              "file": "assets/roboto-mono-variable-normal-QAYlOegK.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+            },
+            {
+              "file": "assets/roboto-mono-variable-normal-CZtBPCCa.woff2",
+              "format": "woff2",
+              "unicodeRange": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

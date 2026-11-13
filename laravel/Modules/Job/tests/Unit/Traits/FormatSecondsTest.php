@@ -4,22 +4,24 @@ declare(strict_types=1);
 
 namespace Modules\Job\Tests\Unit\Traits;
 
-use Modules\Job\Traits\FormatSeconds;
 use Modules\Job\Tests\TestCase;
+use Modules\Job\Traits\FormatSeconds;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-test('format_seconds_trait_formats_minutes_and_seconds', function (): void {
-    $formatter = new class {
+test('format_seconds_formats_minutes_and_seconds', function (): void {
+    $formatter = new class
+    {
         use FormatSeconds;
     };
 
     Assert::assertSame('1 m 30 s', $formatter->formatSeconds(90));
 });
 
-test('format_seconds_trait_formats_hours', function (): void {
-    $formatter = new class {
+test('format_seconds_formats_hours', function (): void {
+    $formatter = new class
+    {
         use FormatSeconds;
     };
 

@@ -1,10 +1,14 @@
 ---
+qmd: "project status.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: project-status.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Divergenza: `project-status.md`

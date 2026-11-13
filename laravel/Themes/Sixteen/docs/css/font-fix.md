@@ -1,3 +1,15 @@
+---
+title: "font fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "font fix"
+issues: []
+discussions: []
+status: draft
+---
+
 # Font Fix Report - 2026-04-09
 
 **Page**: `segnalazione-01-privacy`  

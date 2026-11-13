@@ -1,8 +1,19 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "resource"
+issues: []
+discussions: []
 title: Creazione di una Resource
 description: Creazione di una Resource
 extends: _layouts.documentation
 section: content
+<<<<<<< HEAD
+status: draft
+=======
+>>>>>>> f5ffd8b4 (.)
 ---
 
 # Creazione di una Resource {#creazione-resource}

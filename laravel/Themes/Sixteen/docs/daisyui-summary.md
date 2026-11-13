@@ -1,3 +1,15 @@
+---
+title: "daisyui summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "daisyui summary"
+issues: []
+discussions: []
+status: draft
+---
+
 # DaisyUI Integration Summary
 
 ## Pros
@@ -35,7 +47,6 @@ Create utility aliases in `laravel/Themes/Sixteen/resources/css/_aliases.css` (o
 Using `@apply` keeps HTML clean and centralises style changes. Update your component markup to reference the alias classes.
 
 ---
-
 **Next steps**
 - Review the summary in each module’s docs folder.
 - Adjust the adoption percentage if you have precise metrics.

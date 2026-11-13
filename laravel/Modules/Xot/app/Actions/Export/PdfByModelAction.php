@@ -30,7 +30,10 @@ class PdfByModelAction
             'row' => $model,
             'transKey' => app(GetTransKeyByModelClassAction::class)->execute($model::class, '.fields'),
         ];
+<<<<<<< HEAD
 
+=======
+>>>>>>> laraxot/dev
         $view = view($view_name, $view_params);
 
         $html = $view->render();

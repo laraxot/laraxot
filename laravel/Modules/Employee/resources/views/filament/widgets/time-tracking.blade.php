@@ -17,7 +17,7 @@ declare(strict_types=1);
                     </p>
                 </div>
                 <div class="text-right">
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Ore lavorate oggi</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('employee::time_tracking.card.hours_worked_today.label') }}</p>
                     <p class="text-xl font-semibold text-gray-900 dark:text-white">
                         {{ $sessionData['session_duration'] }}
                     </p>
@@ -47,7 +47,7 @@ declare(strict_types=1);
                             </p>
                             @if($sessionData['last_entry_time'] ?? null)
                                 <p class="text-sm text-gray-500 dark:text-gray-400">
-                                    Ultima timbratura: {{ $sessionData['last_entry_time'] }}
+                                    {{ __('employee::time_tracking.card.last_entry.label') }}: {{ $sessionData['last_entry_time'] }}
                                 </p>
                             @endif
                         </div>
@@ -71,7 +71,7 @@ declare(strict_types=1);
                         </div>
                         <div class="ml-3">
                             <p class="text-sm font-medium text-blue-900 dark:text-blue-100">
-                                Ore oggi
+                                {{ __('employee::time_tracking.card.hours_today.label') }}
                             </p>
                             <p class="text-lg font-semibold text-blue-600 dark:text-blue-400">
                                 {{ $sessionData['session_duration'] }}
@@ -87,7 +87,7 @@ declare(strict_types=1);
                         </div>
                         <div class="ml-3">
                             <p class="text-sm font-medium text-green-900 dark:text-green-100">
-                                Settimana
+                                {{ __('employee::time_tracking.card.week.label') }}
                             </p>
                             <p class="text-lg font-semibold text-green-600 dark:text-green-400">
                                 --:--
@@ -103,7 +103,7 @@ declare(strict_types=1);
                         </div>
                         <div class="ml-3">
                             <p class="text-sm font-medium text-purple-900 dark:text-purple-100">
-                                Mese
+                                {{ __('employee::time_tracking.card.month.label') }}
                             </p>
                             <p class="text-lg font-semibold text-purple-600 dark:text-purple-400">
                                 --:--
@@ -120,7 +120,7 @@ declare(strict_types=1);
                 </div>
                 
                 <div class="text-xs text-gray-500 dark:text-gray-400">
-                    Aggiornato automaticamente ogni 30 secondi
+                    {{ __('employee::time_tracking.card.auto_refresh.label') }}
                 </div>
             </div>
         </div>

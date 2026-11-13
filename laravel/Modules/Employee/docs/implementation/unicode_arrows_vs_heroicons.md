@@ -1,3 +1,9 @@
+---
+title: "Employee - UNICODE_ARROWS_VS_HEROICONS"
+module: Employee
+bmad: true
+status: active
+---
 # Unicode Arrows vs Heroicons - La Soluzione Vincente
 
 ## 🎯 Problema Risolto: Icone Mancanti

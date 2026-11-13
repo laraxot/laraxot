@@ -1,3 +1,16 @@
+---
+title: "GETTING STARTED"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "GETTING STARTED"
+issues: []
+discussions: []
+status: superseded
+superseded_by: getting-started.md
+---
+
 # Getting Started with $MOD
 
 ## Installation

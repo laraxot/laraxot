@@ -1,5 +1,11 @@
 ---
-title: "Rating — Architettura BMAD"
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "architecture"
+issues: []
+discussions: []
+title: "Rating: Architettura BMAD"
 type: architecture
 scope: Rating
 epic: 5.124-bmad-user-module-perfection-study
@@ -7,18 +13,18 @@ bmad_version: v3.30.1
 updated_at: '2026-09-22'
 status: done
 related:
-  - ../stories/continuazione-domani.md
+  - stories/continuazione-domani.md
 ---
 
-# Rating — Architettura
+# Rating: Architettura
 
 ## Scopo
 Valutazione rating e feedback.
 
 ## Componenti
-- `Rating/Filament/` — interfacce Filament 5 (se applicabile)
-- `Rating/Actions/` — azioni (Spatie Queueable se richiesto)
-- `Rating/Models/` — estende XotBase (se applicabile)
+- `Rating/Filament/`: interfacce Filament 5 (se applicabile)
+- `Rating/Actions/`: azioni (Spatie Queueable se richiesto)
+- `Rating/Models/`: estende XotBase (se applicabile)
 
 ## Qualità
 - PHPStan: OK (0 errori)

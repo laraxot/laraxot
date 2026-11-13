@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "To Integrate"
 module: "Tenant"
 type: concept

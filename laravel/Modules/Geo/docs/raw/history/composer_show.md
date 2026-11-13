@@ -1,3 +1,14 @@
+---
+title: "composer show"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "composer show"
+issues: []
+discussions: []
+---
+
 # Composer Show
 
 appstract/laravel-opcache          3.2.1            OPcache helper for Laravel.

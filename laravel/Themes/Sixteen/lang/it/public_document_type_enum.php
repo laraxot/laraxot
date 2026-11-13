@@ -1,0 +1,41 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'values' => [
+        'statute' => ['label' => 'Statuto'],
+        'regulation' => ['label' => 'Regolamento'],
+        'ordinance' => ['label' => 'Ordinanza'],
+        'directive' => ['label' => 'Direttiva'],
+        'deliberation' => ['label' => 'Deliberazione'],
+        'determination' => ['label' => 'Determinazione'],
+        'decree' => ['label' => 'Decreto'],
+        'resolution' => ['label' => 'Risoluzione'],
+        'circular' => ['label' => 'Circolare'],
+        'instruction' => ['label' => 'Istruzione'],
+        'plan' => ['label' => 'Piano'],
+        'program' => ['label' => 'Programma'],
+        'budget' => ['label' => 'Bilancio'],
+        'report' => ['label' => 'Relazione'],
+        'contract' => ['label' => 'Contratto'],
+        'agreement' => ['label' => 'Convenzione'],
+        'concession' => ['label' => 'Concessione'],
+        'authorization' => ['label' => 'Autorizzazione'],
+        'permit' => ['label' => 'Permesso'],
+        'license' => ['label' => 'Licenza'],
+        'transparency_act' => ['label' => 'Atto di Trasparenza'],
+        'publication_notice' => ['label' => 'Avviso di Pubblicazione'],
+        'selection_notice' => ['label' => 'Avviso di Selezione'],
+        'tender_notice' => ['label' => 'Bando di Gara'],
+        'form' => ['label' => 'Modulistica'],
+        'guide' => ['label' => 'Guida'],
+        'manual' => ['label' => 'Manuale'],
+        'procedure' => ['label' => 'Procedura'],
+        'specification' => ['label' => 'Capitolato'],
+        'minutes' => ['label' => 'Verbale'],
+        'opinion' => ['label' => 'Parere'],
+        'certificate' => ['label' => 'Certificato'],
+        'other' => ['label' => 'Altro'],
+    ],
+];

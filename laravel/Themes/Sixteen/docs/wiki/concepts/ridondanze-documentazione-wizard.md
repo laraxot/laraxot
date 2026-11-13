@@ -1,4 +1,8 @@
 ---
+tags: [documentation]
+qmd: "ridondanze documentazione wizard"
+issues: []
+discussions: []
 title: "Documentazione wizard Sixteen ridondanza intenzionale vs duplicabile"
 type: concept
 theme: sixteen
@@ -13,6 +17,7 @@ related:
   - ../../design-comuni/wizard-governance-bridge.md
   - ../../../../../Modules/Xot/docs/wiki/concepts/ridondanze-cross-cutting-codebase.md
   - ./fixcity-wizard-full-width-and-opaque-fields.md
+status: draft
 ---
 
 # Ridondanza / sovrapposizioni documentazione wizard (tema Sixteen)

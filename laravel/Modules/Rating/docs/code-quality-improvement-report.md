@@ -1,5 +1,5 @@
 ---
-title: "Code Quality Improvement Report — Rating"
+title: "Code Quality Improvement Report: Rating"
 type: report
 tags: [code-quality, phpstan, pest, maintainability]
 module: "Rating"
@@ -16,9 +16,10 @@ discussions:
   - "https://github.com/laraxot/base_workorder_fila5/discussions/47"
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
+status: draft
 ---
 
-# Code Quality Improvement Report — Rating
+# Code Quality Improvement Report: Rating
 
 > Baseline statica riproducibile per orientare il miglioramento. I conteggi sono segnali, non sostituiscono PHPStan, Pest o la review del flusso reale.
 
@@ -48,25 +49,25 @@ Rilevazione del 17 luglio 2026 sul working tree locale; esclusi vendor e dipende
 
 ## Piano
 
-### P0 — baseline affidabile
+### P0: baseline affidabile
 
 - Eseguire PHPStan L10 e Pest sul solo componente, senza modificare phpstan.neon per occultare errori.
 - Classificare gli esiti come errore reale, dipendenza, test fragile o falso positivo documentato.
 - Conservare comando ed esito ripetibile per ogni correzione.
 
-### P1 — rischio di regressione
+### P1: rischio di regressione
 
 - Aggiungere il test minimo che fallisce per ogni flusso critico scoperto.
 - Correggere la causa nel punto condiviso dopo aver verificato tutti i caller.
 - Sostituire estensioni Filament dirette con la base Laraxot omologa.
 
-### P2 — manutenibilità
+### P2: manutenibilità
 
 - Eliminare codice morto, duplicati e wrapper senza valore prima di nuove astrazioni.
 - Riportare business logic dispersa nelle Actions owner già esistenti.
 - Separare metodi solo lungo responsabilità osservabili.
 
-### P3 — continuità
+### P3: continuità
 
 - Gate CI scoped: PHPStan L10, Pest, formattazione e audit architetturali già presenti.
 - Aggiornare il report solo con metriche ripetibili e tracciamento pertinente.

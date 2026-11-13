@@ -1,3 +1,23 @@
+---
+id: laraxot-sixteen-prompts-03-header-navbar
+type: note
+document_type: operational_prompt
+status: completed
+source_of_truth: true
+scope: ["laravel/Themes/Sixteen"]
+qmd: "header navbar megamenu block 03 design-comuni visual-parity BMAD"
+related:
+  - ./../../../../bashscripts/docs/prompts/55-md-conventions.md
+  - ./../../../docs/stories/EPIC-DESIGN-COMUNI-REPLICATION.md
+title: "Block 03: Header Navbar"
+updated: 2026-10-13
+tags: [docs, sixteen, prompts]
+---
+
+title: "03 header navbar — BMAD + second brain + visual parity 98%"
+updated: 2026-10-12
+---
+
 # Block 03: Header Navbar
 
 **Fonte**: `https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html`
@@ -94,9 +114,18 @@ Su mobile: hamburger button + drawer laterale con overlay.
 |----------|-----------|--------|
 | Hamburger button | Dentro `div.navbar.has-megamenu` | Spostato in `it-header-center-content-wrapper` (prima del brand) |
 
-## Attributi chiave Design Comuni
+## Attributi chiave Design Comuni (verificati con visual-parity 98%)
 
 - `data-element="navigation"` — obbligatorio su ogni link di navigazione principale
+- Megamenu: `dropdown-menu` con colonne (`col-*`) per contenuto per sezione (Amministrazione, Novità, Servizi, Vivere il Comune)
+- `id="nav4"` — collegato al pulsante hamburger (Alpine.js)
+- `.overlay` — chiusura drawer con click fuori area (mobile)
+- `.logo-hamburger` — ripetizione logo solo nel drawer mobile
+- Hamburger button (`.custom-navbar-toggler`) — posizione corretta dentro `.navbar.has-megamenu`, non spostato in `.it-header-center-content-wrapper` (fix applicato con visual-parity 98%)
+- `aria-label="Mostra/Nascondi la navigazione"` — accessibilità su pulsante hamburger
+- Colori: `#007a52` (accento primario) su stati `:hover` e `:focus-visible`; `#191919` (testo) su sfondo chiaro; nessun contrasto fallito (WCAG 2.4.7)
+
+Stack: TailwindCSS + Alpine.js + Lit + DaisyUI + Flowbite — NO Bootstrap Italia.
 
 ## Note strutturali
 

@@ -2,26 +2,30 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_lRSIvv
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'name' => ['label' => 'name'],
-        'created_at' => ['label' => 'created_at'],
-        'user_id' => ['label' => 'user_id'],
-        'client_id' => ['label' => 'client_id'],
-        'scopes' => ['label' => 'scopes'],
-        'revoked' => ['label' => 'revoked'],
-        'expires_at' => ['label' => 'expires_at'],
-        'updated_at' => ['label' => 'updated_at'],
-        'uuid' => ['label' => 'uuid'],
-        'tokenable_type' => ['label' => 'tokenable_type'],
-        'tokenable_id' => ['label' => 'tokenable_id'],
-        'token' => ['label' => 'token'],
-        'abilities' => ['label' => 'abilities'],
-        'last_used_at' => ['label' => 'last_used_at'],
-        'deleted_at' => ['label' => 'deleted_at'],
-        'updated_by' => ['label' => 'updated_by'],
-        'created_by' => ['label' => 'created_by'],
-        'deleted_by' => ['label' => 'deleted_by'],
+        'id' => ['label' => 'ID'],
+        'name' => ['label' => 'Nome'],
+        'created_at' => ['label' => 'Creato il'],
+        'user_id' => ['label' => 'Utente'],
+        'client_id' => ['label' => 'Client ID'],
+        'scopes' => ['label' => 'Ambiti'],
+        'revoked' => ['label' => 'Revocato'],
+        'expires_at' => ['label' => 'Scade il'],
+        'updated_at' => ['label' => 'Modificato il'],
+        'uuid' => ['label' => 'UUID'],
+        'tokenable_type' => ['label' => 'Tipo di proprietario'],
+        'tokenable_id' => ['label' => 'Proprietario'],
+        'token' => ['label' => 'Token'],
+        'abilities' => ['label' => 'Permessi'],
+        'last_used_at' => ['label' => 'Ultimo uso'],
+        'deleted_at' => ['label' => 'Eliminato il'],
+        'updated_by' => ['label' => 'Modificato da'],
+        'created_by' => ['label' => 'Creato da'],
+        'deleted_by' => ['label' => 'Eliminato da'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_ntn3RJ

@@ -1,3 +1,15 @@
+---
+title: "roadmap and issues"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap and issues"
+issues: []
+discussions: []
+status: draft
+---
+
 # Sixteen Theme - Roadmap, Issues & Optimization
 
 **Tema**: Sixteen (Frontend Cittadini)  
@@ -6,7 +18,6 @@
 **Maintainer**: Team FixCity
 
 ---
-
 ## 📊 STATO ATTUALE
 
 ### Completezza Funzionale: 85%
@@ -372,8 +383,8 @@ module.exports = {
 
 - [← Theme Sixteen README](../README.md)
 - [← Components Guide](./components.md)
-- [← Project Roadmap](../../../docs/project-analysis-and-roadmap.md)
-- [← Root Documentation](../../../docs/index.md)
+- [← Project Roadmap](../../../../docs/project-analysis-and-roadmap.md)
+- [← Root Documentation](../../../../docs/index.md)
 
 ---
 

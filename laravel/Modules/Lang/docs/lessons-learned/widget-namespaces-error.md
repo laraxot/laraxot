@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Lesson Learned: Errore Namespace Widget di Autenticazione"
 module: "Lang"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "filament4 migration"
 related:
   - "./italian-text-refined-audit-report.md"
+  - "../italian-text-refined-audit-report.md"
+status: draft
 ---
 # Lesson Learned: Errore Namespace Widget di Autenticazione
 
@@ -107,6 +111,8 @@ Quando creo un nuovo widget, chiedermi:
 - [Widget View Namespaces](../frontend/widget-view-namespaces.md)
 - [Auth Widgets Namespaces](../../laravel/Modules/User/docs/auth-widgets-view-namespaces.md)
 - [Auth Widgets Namespaces](../../laravel/modules/user/docs/auth-widgets-view-namespaces.md)
+- [Auth Widgets Namespaces](../../../User/docs/auth-widgets-view-namespaces.md)
+- [Auth Widgets Namespaces](../../../User/docs/auth-widgets-view-namespaces.md)
 - [Struttura Temi](../tecnico/themes/theme-structure.md)
 
 ### Pattern di Controllo

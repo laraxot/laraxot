@@ -1,3 +1,15 @@
+---
+title: "lessons learned header auth state"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "lessons learned header auth state"
+issues: []
+discussions: []
+status: draft
+---
+
 # Lessons Learned – Header Authenticated State
 
 ## Best Practices

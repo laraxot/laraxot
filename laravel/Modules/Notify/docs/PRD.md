@@ -1,10 +1,14 @@
 ---
+qmd: "PRD"
+issues: []
+discussions: []
 title: "Product Requirements Document (PRD) - Notify Module"
 module: "Notify"
 type: concept
 tags: [PRD, notify]
 created: 2026-08-04
 updated: 2026-08-04
+status: draft
 ---
 # Product Requirements Document (PRD) - Notify Module
 

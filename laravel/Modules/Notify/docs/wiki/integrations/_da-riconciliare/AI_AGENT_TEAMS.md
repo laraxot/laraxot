@@ -1,10 +1,15 @@
 ---
+qmd: "AI AGENT TEAMS"
+issues: []
+discussions: []
 title: "AI Agent Teams - Coordination Hub"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: ai_agent_teams.md
 ---
 
 # AI Agent Teams - Coordination Hub

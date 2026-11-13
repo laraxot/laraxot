@@ -1,3 +1,15 @@
+---
+title: "7 4 segnalazioni elenco html parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "7 4 segnalazioni elenco html parity"
+issues: []
+discussions: []
+status: draft
+---
+
 # Story 7.4: HTML Parity — ticket-list
 
 Status: ready-for-dev

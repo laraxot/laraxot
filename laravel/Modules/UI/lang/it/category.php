@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_FVOldF
 return [
     'fields' => [
         'name' => ['label' => 'name', 'placeholder' => 'name', 'helper_text' => 'name', 'description' => 'name'],
@@ -9,3 +10,6 @@ return [
         'parent_id' => ['label' => 'parent_id', 'placeholder' => 'parent_id', 'helper_text' => 'parent_id', 'description' => 'parent_id'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_tyhHNE

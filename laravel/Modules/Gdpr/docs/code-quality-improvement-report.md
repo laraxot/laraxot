@@ -13,6 +13,7 @@ discussions:
   - "https://github.com/laraxot/base_techplanner_fila5/discussions/47"
 related:
   - "../../../../docs/stories/STORY-001-code-quality-moduli-temi.md"
+status: draft
 ---
 
 # Code Quality Improvement Report — Gdpr

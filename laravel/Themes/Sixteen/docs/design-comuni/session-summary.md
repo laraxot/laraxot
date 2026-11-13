@@ -1,3 +1,15 @@
+---
+title: "session summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "session summary"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🎉 Design Comuni - Session Summary
 
 **Data**: 2026-03-30  
@@ -214,7 +226,6 @@ Usage: <x-filament::icon icon="ui-brands.facebook" />
 - [ ] Correggere errori
 
 ---
-
 **Stato**: ✅ **SESSIONE COMPLETATA CON SUCCESSO**  
 **Progresso**: **13% (5/39 pagine)**  
 **Prossima Sessione**: **Test e completamento Generali**  

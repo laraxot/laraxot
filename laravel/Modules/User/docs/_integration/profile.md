@@ -16,9 +16,10 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: superseded
+superseded_by: ../-integration/profile.md
 ---
 
->>>>>>> 87273113 (.)
 # profile
 
 <!-- Contenuto migrato da _docs/profile.txt -->

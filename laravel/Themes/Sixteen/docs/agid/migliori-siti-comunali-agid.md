@@ -1,3 +1,15 @@
+---
+title: "migliori siti comunali agid"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "migliori siti comunali agid"
+issues: []
+discussions: []
+status: draft
+---
+
 # Migliori 10 Siti Comunali Italiani secondo Linee Guida AGID
 
 ## Analisi Comparativa dei Siti Web Comunali Italiani

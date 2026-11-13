@@ -1,3 +1,16 @@
+---
+title: "ARCHITECTURE"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ARCHITECTURE"
+issues: []
+discussions: []
+status: superseded
+superseded_by: bmad/architecture.md
+---
+
 # Job Module Architecture
 
 ## Overview

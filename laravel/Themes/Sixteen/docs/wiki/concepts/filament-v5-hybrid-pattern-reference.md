@@ -1,3 +1,15 @@
+---
+title: "filament v5 hybrid pattern reference"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament v5 hybrid pattern reference"
+issues: []
+discussions: []
+status: draft
+---
+
 # Filament v5 Hybrid Pattern - Theme Reference
 
 **Status**: Reference  
@@ -14,7 +26,7 @@ Dopo edit Blade che toccano Filament:
 cd laravel && php artisan view:cache
 ```
 
-Canon root: [filament-v5-form-in-blade.md](../../../../../docs/wiki/concepts/filament-v5-form-in-blade.md) · [view-cache-filament-v5-prerequisites.md](../../../../../docs/wiki/concepts/view-cache-filament-v5-prerequisites.md)
+Canon root: [filament-v5-form-in-blade.md](../../../../../../docs/wiki/concepts/filament-v5-form-in-blade.md) · [view-cache-filament-v5-prerequisites.md](../../../../../../docs/wiki/concepts/view-cache-filament-v5-prerequisites.md)
 
 ## Overview
 
@@ -198,5 +210,4 @@ Themes/Sixteen/lang/it/ticket.php
 - Break tab organization (keep Overview + Location)
 
 ---
-
 *Theme reference for Filament v5 Hybrid Pattern. Implementation lives in Fixcity module.*

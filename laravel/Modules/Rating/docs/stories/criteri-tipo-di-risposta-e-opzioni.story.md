@@ -1,15 +1,23 @@
 ---
+title: "criteri tipo di risposta e opzioni.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "criteri tipo di risposta e opzioni.story"
+issues: []
+discussions: []
 name: criteri-tipo-di-risposta-e-opzioni
 description: "Due analisi accoppiate: dove vivono le opzioni di un criterio a scelta, e come si dichiara il tipo di risposta (numerico, scelta, testo) con la regola condizionale «Altro → testo obbligatorio». Solo brainstorming: nessun codice, decisioni in capo all'utente."
 metadata:
   type: story
   status: awaiting-decision
-  agent: claude opus 5 — sessione base-ptvx-fila5-92 [6a95f1]
+  agent: claude opus 5: sessione base-ptvx-fila5-92 [6a95f1]
   module: Rating
   related: 18.46.analisi-criteri-scelta-e-tipo-campo
 ---
 
-# Story — tipo di risposta di un criterio e opzioni del select
+# Story: tipo di risposta di un criterio e opzioni del select
 
 > **Nessun codice.** L'utente ha chiesto esplicitamente due brainstorming, non
 > un'implementazione. Questa story esiste per tracciare le decisioni aperte e per
@@ -39,19 +47,19 @@ non è componibile.
 
 | | |
 |---|---|
-| `rating_morph.value` | `decimal(10,3)` — una risposta testuale non ci sta |
-| `rating_morph.note` | `text` — l'unico posto per il testo, ma significa già «annotazione» |
+| `rating_morph.value` | `decimal(10,3)`: una risposta testuale non ci sta |
+| `rating_morph.note` | `text`: l'unico posto per il testo, ma significa già «annotazione» |
 | `rating_morph` righe | 2.298 in IR, 0 nelle altre due installazioni |
 | `ratings.rule` (`RuleEnum`) | contiene **stringhe di validazione** (`numeric\|min:0\|max:5`), non tipi di widget |
 | `ratings.extra_attributes` | schemaless, presente, già usata |
-| tabella `options` | morph (`option_type`/`option_id`), con `name`, `value`, `pos`, `year`, `parent_id`, `txt`, `txt1` — **sulla connessione del modulo**, stesso database dei rating |
+| tabella `options` | morph (`option_type`/`option_id`), con `name`, `value`, `pos`, `year`, `parent_id`, `txt`, `txt1`: **sulla connessione del modulo**, stesso database dei rating |
 | `options.option_id` vs `ratings.id` | `int(10) unsigned` contro `bigint(20) unsigned`: chiave esterna più stretta della chiave |
 | `criteri_options` / `criteri_esclusione` | **altro dominio**: chi partecipa, non come si valuta. Vedi la correzione sotto |
 
 ## Decisioni in capo all'utente
 
 - [ ] dove vivono le opzioni (la prima analisi raccomanda `options` come morph del criterio)
-- [ ] nome del campo del tipo — `type` è libero, ma non dice quale asse descrive
+- [ ] nome del campo del tipo: `type` è libero, ma non dice quale asse descrive
 - [ ] `options.option_id`: si allarga a `bigint` o si accetta il restringimento
 - [ ] intero e decimale: un tipo con precisione, o due tipi
 - [ ] select e radio: un tipo con resa, o due tipi
@@ -72,7 +80,7 @@ non dopo.
 La prima stesura di entrambi i documenti proponeva `criteri_options` come casa delle
 opzioni di valutazione, e citava `criteri_options.type` / `criteri_esclusione.type`
 come vocabolario in conflitto. **Sbagliato**: quelle tabelle appartengono al dominio
-dell'esclusione — *chi partecipa* — con chiave `anno` e proprietario Ptv, e contengono
+dell'esclusione: *chi partecipa*: con chiave `anno` e proprietario Ptv, e contengono
 parametri di campagna (`min_gg_asz_tip_cod_escluso_subito = 730`,
 `lista_posiz_tempo_determinato = "2,21"`). I rating rispondono a un'altra domanda,
 *come si valuta chi partecipa*.

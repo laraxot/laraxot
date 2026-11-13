@@ -52,7 +52,7 @@ return [
      * |
      */
     'providers' => [
-        'Modules\\Employee\\Providers\\EmployeeServiceProvider',
+        'Modules\Employee\Providers\EmployeeServiceProvider',
     ],
     /*
      * |--------------------------------------------------------------------------

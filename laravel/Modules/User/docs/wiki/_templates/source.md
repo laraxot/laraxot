@@ -9,6 +9,8 @@ tags: [article, paper, documentation]
 related:
   - "./concept.md"
   - "./entity.md"
+status: draft
+qmd: "{{title}} user"
 ---
 
 # {{title}}

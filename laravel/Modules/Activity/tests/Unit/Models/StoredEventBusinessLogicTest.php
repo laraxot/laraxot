@@ -10,40 +10,24 @@ use Modules\Xot\Models\Traits\HasXotFactory;
 use PHPUnit\Framework\Assert;
 use Spatie\EventSourcing\StoredEvents\Models\EloquentStoredEventQueryBuilder;
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_PIJF3v
 uses(\Modules\Activity\Tests\TestCase::class);
 
 describe('StoredEvent Business Logic', function (): void {
     test('stored event has correct connection configured', function (): void {
         $storedEvent = new StoredEvent();
-=======
-uses(TestCase::class);
-
-describe('StoredEvent Business Logic', function (): void {
-    test('stored event has correct connection configured', function (): void {
-        $storedEvent = new StoredEvent;
->>>>>>> 13cf1831 (.)
 
         Assert::assertSame('activity', $storedEvent->getConnectionName());
     });
 
     test('stored event has correct table configured', function (): void {
-<<<<<<< HEAD
         $storedEvent = new StoredEvent();
-=======
-        $storedEvent = new StoredEvent;
->>>>>>> 13cf1831 (.)
 
         Assert::assertSame('stored_events', $storedEvent->getTable());
     });
 
     test('stored event has expected fillable fields for event sourcing', function (): void {
-<<<<<<< HEAD
         $storedEvent = new StoredEvent();
-=======
-        $storedEvent = new StoredEvent;
->>>>>>> 13cf1831 (.)
         $expectedFillable = [
 =======
 use function Safe\class_uses;

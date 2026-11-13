@@ -1,3 +1,9 @@
+---
+title: "Employee - BUSINESS-OVERVIEW"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - Business Overview
 
 > **Documento master**: 2024-09-03  

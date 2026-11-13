@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Migration Guidelines for Project Modules"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "migration guidelines for project modules xot"
+---
+>>>>>>> laraxot/dev
 # Migration Guidelines for Project Modules
 
 ## Overview

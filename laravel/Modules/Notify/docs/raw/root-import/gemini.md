@@ -1,3 +1,14 @@
+---
+title: "gemini"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "gemini"
+issues: []
+discussions: []
+---
+
 # Gemini Rules (Modular)
 
 Questa documentazione è stata divisa in moduli per una gestione più efficiente del contesto.
@@ -13,6 +24,14 @@ Questa documentazione è stata divisa in moduli per una gestione più efficiente
 - [Folio & Volt](./.agents/docs/main-rules/gemini-folio-volt.md)
 
 ---
+title: "gemini"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "gemini"
+issues: []
+discussions: []
 **See also:**
 - [CLAUDE.md](./CLAUDE.md)
 - [AGENTS.md](./AGENTS.md)

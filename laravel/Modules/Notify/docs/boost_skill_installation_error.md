@@ -1,3 +1,16 @@
+---
+title: "boost skill installation error"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "boost skill installation error"
+issues: []
+discussions: []
+status: superseded
+superseded_by: boost-skill-installation-error.md
+---
+
 # Boost Skill Installation Error Analysis
 
 **Date**: 2026-03-02  

@@ -1,3 +1,15 @@
+---
+title: "sms config structure"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sms config structure"
+issues: []
+discussions: []
+status: draft
+---
+
 # Struttura della Configurazione SMS 
 
 ## Introduzione
@@ -151,7 +163,8 @@ $retryDelay = $config['drivers'][$driver]['retry_delay'] ?? $config['retry']['de
 
 - [Configurazione Netfun](./NETFUN_CONFIG_REQUIREMENTS.md)
 - [Provider SMS Supportati](./notifications/SMS_PROVIDER_CONFIGURATION.md)
+- [Configurazione Netfun](./netfun_config_requirements.md)
+- [Provider SMS Supportati](./notifications/sms_provider_configuration.md)
 
 ---
-
 *Ultimo aggiornamento: 2025-05-12*

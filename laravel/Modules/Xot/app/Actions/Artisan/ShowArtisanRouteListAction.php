@@ -20,7 +20,10 @@ class ShowArtisanRouteListAction
     {
         $routeCollection = Route::getRoutes();
 
+<<<<<<< HEAD
         /** @var view-string $view */
+=======
+>>>>>>> laraxot/dev
         $view = 'xot::acts.artisan.show_route_list';
         $view_params = [
             'view' => $view,
@@ -28,7 +31,11 @@ class ShowArtisanRouteListAction
             'lang' => app()->getLocale(),
         ];
 
+<<<<<<< HEAD
         $result = view($view, $view_params);
+=======
+        $result = view('xot::acts.artisan.show_route_list', $view_params);
+>>>>>>> laraxot/dev
         Assert::isInstanceOf($result, View::class);
 
         return $result->render();

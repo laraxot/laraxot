@@ -500,7 +500,6 @@ docker-compose restart app
 
 ---
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_EZiUKx
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -514,9 +513,6 @@ docker-compose restart app
 =======
 **Ultimo aggiornamento**: 27 Ottobre 2025
 >>>>>>> .merge_file_2gJZND
-=======
-**
->>>>>>> 13cf1831 (.)
 **Versione Laravel**: 12.35.1
 **Errore Code**: `InvalidArgumentException`
 **Severità**: Alta (blocca funzionalità Activity Log)

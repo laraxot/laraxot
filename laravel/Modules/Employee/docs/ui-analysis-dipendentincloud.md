@@ -1,3 +1,9 @@
+---
+title: "Employee - UI-ANALYSIS-DIPENDENTINCLOUD"
+module: Employee
+bmad: true
+status: active
+---
 # UI Analysis: dipendentincloud.it Timecard Page
 
 > **Analysis Date**: 2024-09-03  

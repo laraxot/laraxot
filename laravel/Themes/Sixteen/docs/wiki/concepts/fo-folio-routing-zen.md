@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "FO Folio — zen routing (file = rotta)"
 type: concept
 tags: [folio, sixteen, routing, frontoffice, theme]
@@ -8,9 +10,12 @@ qmd: "sixteen folio pages web.php route name filesystem theme vestito area-perso
 related:
   - fo-folio-named-routes-header.md
   - ../troubleshooting/route-not-found-view-cache.md
-  - ../../../../Modules/Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md
+  - ../../../../../Modules/Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md
   - ../../../../../../docs/wiki/memories/folio-no-web-routes-religion.md
+status: draft
 ---
+
+> **Correzione 2026-10-30.** Gli esempi `route('notifications')` e `pages/notifications/` di questo documento sono superati: le pagine CMS (area personale, ticket, FAQ) si linkano con `route('container0.view', ['container0' => 'area-personale', 'slug0' => 'notifiche'])` e `route('container0.index', ['container0' => '...'])` (nome generico, valori nei parametri). Vedi `docs/wiki/memories/translation-protocol-memory-aid.md` §2 e `docs/wiki/rules/folio-named-routes-route-helper.md` nel repo root.
 
 # FO Folio — zen routing (file = rotta)
 
@@ -24,7 +29,7 @@ related:
 
 `route('notifications')` **risolve** l'URL di un file Folio con `name('notifications')`. Se assente da `folio:list` → `RouteNotFoundException`. Nessuna registrazione parallela in `web.php`.
 
-Canon: [folio-filesystem-routing-no-web-php.md](../../../../Modules/Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md).
+Canon: [folio-filesystem-routing-no-web-php.md](../../../../../Modules/Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md).
 
 
 ## Domanda giusta
@@ -60,7 +65,7 @@ Se il sorgente è corretto ma l'errore resta → [route-not-found-view-cache.md]
 
 1. **File = rotta** — `pages/notifications/index.blade.php` è la definizione; `web.php` non entra in gioco.
 2. **`name()` registra, `route()` linka** — confusione principale su Folio.
-3. **`folio:list` > `route:list`** per audit FO ([folio-list-vs-route-list.md](../../../../Modules/Cms/docs/wiki/concepts/folio-list-vs-route-list.md)).
+3. **`folio:list` > `route:list`** per audit FO ([folio-list-vs-route-list.md](../../../../../Modules/Cms/docs/wiki/concepts/folio-list-vs-route-list.md)).
 4. **Label IT / name EN** — `pub_theme::header...` vs `name('notifications')`.
 5. **Cache stale** — fix sorgente + `view:clear` + riavvio serve.
 

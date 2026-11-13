@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_TRACKING_WIDGET"
+module: Employee
+bmad: true
+status: active
+---
 # Time Tracking Widget - Specifiche Implementazione
 
 ## Panoramica

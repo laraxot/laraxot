@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Analisi Modelli, Factory e Seeder - Modulo Lang"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "guida migrazione step by step"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Analisi Modelli, Factory e Seeder - Modulo Lang
 

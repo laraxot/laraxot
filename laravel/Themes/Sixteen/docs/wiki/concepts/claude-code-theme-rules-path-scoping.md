@@ -1,3 +1,15 @@
+---
+title: "claude code theme rules path scoping"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "claude code theme rules path scoping"
+issues: []
+discussions: []
+status: draft
+---
+
 # Claude Code Theme Rules Path Scoping
 
 ## Decisione
@@ -26,6 +38,14 @@ La soluzione corretta e':
 
 ```md
 ---
+title: "claude code theme rules path scoping"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "claude code theme rules path scoping"
+issues: []
+discussions: []
 paths:
   - "laravel/Themes/Sixteen/resources/**/*.blade.php"
   - "laravel/Themes/Sixteen/resources/**/*.css"

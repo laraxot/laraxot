@@ -4,39 +4,62 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Tests;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Support\Collection;
+use Modules\Xot\Tests\XotBaseTestCase;
 use Illuminate\Support\Facades\DB;
-use Modules\Notify\Actions\NotificationManager;
+use Mockery;
+use Mockery\Expectation;
+use Mockery\MockInterface;
 use Modules\Notify\Models\NotificationType;
 use Modules\Notify\Models\NotifyTheme;
 use Modules\Notify\Models\NotifyThemeable;
 use Modules\Notify\Providers\NotifyServiceProvider;
-use Modules\User\Models\User;
-use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Tests\XotBasePest;
-use Modules\Xot\Tests\XotBaseTestCase;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 use ReflectionProperty;
 
 use function Safe\file_get_contents;
+use function Safe\json_decode;
 
 /**
- * Base test case for Notify module.
+ * Base test case for Notify module tests.
  *
- * Uses MySQL from .env.testing.
- * All module connections are mapped by TenantServiceProvider.
- * Migrations must be run ONCE externally: php artisan migrate --env=testing
- * DatabaseTransactions handles rollback between tests.
- *
- * @property object|null $sendNotificationAction
+ * Lo schema (migrate) e i seeder del DB di test si eseguono una volta dall'esterno
+ * (`php artisan migrate --env=testing`): `loadLaravelMigrations()` e' di Testbench,
+ * non di `Illuminate\Foundation\Testing\TestCase`, e non esiste qui.
+ * Mai RefreshDatabase: wipea il MariaDB `*_test` condiviso con Fixcity.
  */
 abstract class TestCase extends XotBaseTestCase
 {
+    protected function setUp(): void
+    {
+        // Prima di parent::setUp(): DatabaseTransactions apre le transazioni subito; senza questo la
+        // connessione `user` (mysql) va in "Connection refused" dove non c'e' MariaDB (vedi XotBaseTestCase).
+        $this->prepareSharedSqliteForTesting();
+
+        parent::setUp();
+    }
+
+    use DatabaseTransactions;
+
     /**
+     * Connessioni da riportare indietro dopo ogni test. Prima elencava `fixcity`, la connessione di
+     * un altro progetto: in ogni altro progetto ogni test falliva con «connection [fixcity] not configured».
+     *
+     * @return list<string>
+     */
+    protected function connectionsToTransact()
+    {
+        $default = config('database.default');
+
+        return array_values(array_unique(array_filter([\is_string($default) ? $default : null, 'user', 'notify'])));
+    }
+
+    /**
+     * Type-guard: accetta un valore arbitrario e asserisce che sia un array.
+     *
      * @return array<string, mixed>
      */
     public static function assertNotifyArray(mixed $value): array
@@ -62,6 +85,8 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
+     * Sorgente PHP della classe riflessa, per i test che ne ispezionano il codice.
+     *
      * @template T of object
      *
      * @param  ReflectionClass<T>  $reflection
@@ -78,6 +103,7 @@ abstract class TestCase extends XotBaseTestCase
      * Legge una catena di chiavi annidate, asserendo a ogni livello che esista.
      *
      * @param  array<mixed, mixed>|null  $array
+     * @return mixed Il valore in fondo alla catena di chiavi e' eterogeneo per definizione
      */
     public static function notifyArrayGet(?array $array, int|string ...$keys): mixed
     {
@@ -106,16 +132,21 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
+     * Impostazioni del tipo di notifica rilette dal DB (non quelle in memoria).
+     *
      * @return array<string, mixed>
      */
     public static function notifyFreshTypeSettings(NotificationType $type): array
     {
         $settings = XotBasePest::assertFreshModel($type, NotificationType::class)->settings;
+        Assert::assertIsArray($settings);
 
-        /** @var array<string, mixed> $settings */
         return $settings;
     }
 
+    /**
+     * Tema collegato al themeable tramite `notify_theme_id`.
+     */
     public static function notifyThemeForThemeable(NotifyThemeable $themeable): NotifyTheme
     {
         $themeId = $themeable->notify_theme_id;
@@ -126,176 +157,60 @@ abstract class TestCase extends XotBaseTestCase
         return $theme;
     }
 
-    use DatabaseTransactions;
-
-    public NotificationManager $notificationManager;
-
-    /** @var list<string> */
-    protected $connectionsToTransact = ['sqlite', 'notify', 'user'];
-
-    protected function setUp(): void
-    {
-        $this->prepareSharedSqliteForTesting();
-
-        parent::setUp();
-
-        config(['auth.providers.users.model' => User::class]);
-
-        if ($this->shouldSkipForMissingNotifyDb()) {
-            $this->markTestSkipped('DB `notify` non disponibile in ambiente test condiviso.');
-        }
-    }
-
     /**
-     * Salta Feature / `notify-db` offline; Unit puri e `no-notify-db` restano verdi.
-     * Shared sqlite ha spesso tabelle notify incomplete (colonne mancanti) — non è MySQL test.
+     * Mock tipizzato: restituisce T&MockInterface, cosi' il mock passa a firme che richiedono T.
      *
-     * Nota: Pest `uses()->group('notify-db')` non sempre riempie `$this->groups()` —
-     * fallback: rileva `group('notify-db')` nel file sorgente del test.
+     * @template T of object
+     *
+     * @param  class-string<T>  $class
+     * @return T&MockInterface
      */
-    protected function shouldSkipForMissingNotifyDb(): bool
+    public static function typedMock(string $class): MockInterface
     {
-        $testFile = $this->resolvePestTestFile();
-        $isUnit = $testFile !== null && str_contains($testFile, '/tests/Unit/');
-        $isNotifyDbGroup = false;
-        if ($testFile !== null && is_file($testFile)) {
-            $source = file_get_contents($testFile);
-            if (str_contains($source, "group('no-notify-db')")) {
-                return false;
-            }
-            $isNotifyDbGroup = str_contains($source, "group('notify-db')");
-        }
+        $mock = Mockery::mock($class);
+        Assert::assertInstanceOf($class, $mock);
+        Assert::assertInstanceOf(MockInterface::class, $mock);
 
-        // Unit puri: sempre esegui (coverage senza schema).
-        if ($isUnit && ! $isNotifyDbGroup) {
-            return false;
-        }
-
-        // Qui c'era uno skip incondizionato quando il driver è sqlite. La premessa —
-        // «lo sqlite condiviso è scratch / incompleto» — è decaduta: lo schema si
-        // costruisce con `php artisan xot:build-test-sqlite` e le suite parallele non si
-        // lockano più (un solo PDO condiviso, un file per processo via `XOT_TEST_SQLITE`).
-        // Se il database manca davvero lo dice il metodo qui sopra, che guarda le tabelle.
-        return static::notifyDbUnavailable();
-    }
-
-    private function resolvePestTestFile(): ?string
-    {
-        $class = static::class;
-
-        if (property_exists($class, '__filename')) {
-            /** @var string $filename */
-            $filename = $class::$__filename;
-
-            return $filename;
-        }
-
-        $file = (new ReflectionClass($this))->getFileName();
-
-        return $file !== false ? $file : null;
+        return $mock;
     }
 
     /**
-     * Il sqlite condiviso non contiene sempre le tabelle notify complete: i test DB vanno saltati, non falliti.
-     * Se la connessione punta a il file sqlite condiviso (offline) trattiamo il dominio come unavailable
-     * salvo override esplicito NOTIFY_DB_TESTS=1.
+     * Expectation concreta per un singolo metodo (stesso pattern di Media TestCase::mockExpectation).
      */
-    public static function notifyDbUnavailable(): bool
+    public static function mockExpectation(MockInterface $mock, string $method): Expectation
     {
-        if (self::notifyDbTestsEnabled()) {
-            // fall through to real schema check
-        } elseif (self::notifyUsesSharedOfflineSqlite()) {
-            return true;
-        }
+        $mock->shouldReceive($method);
+        $director = $mock->mockery_getExpectationsFor($method);
+        Assert::assertNotNull($director);
+        $expectations = $director->getExpectations();
+        $expectation = end($expectations);
+        Assert::assertInstanceOf(Expectation::class, $expectation);
 
-        try {
-            DB::connection('notify')->getPdo();
-            $schema = DB::connection('notify')->getSchemaBuilder();
-
-            foreach (['notifications', 'notification_types', 'contacts', 'mail_templates'] as $table) {
-                if (! $schema->hasTable($table)) {
-                    return true;
-                }
-            }
-
-            // Schema stub/outdated (es. golden senza colonna `type`) → skip, non fail.
-            if (! $schema->hasColumn('mail_templates', 'type')) {
-                return true;
-            }
-
-            return false;
-        } catch (\Throwable) {
-            return true;
-        }
+        return $expectation;
     }
 
-    private static function notifyDbTestsEnabled(): bool
+    /**
+     * Confronta una colonna JSON per contenuto, non per testo: MySQL normalizza il JSON
+     * salvato (spazi, ordine chiavi) e un `where col = 'stringa'` su colonna JSON non trova mai la riga.
+     *
+     * @param  array<array-key, mixed>  $expected
+     */
+    public static function assertNotifyJsonColumn(string $table, int|string $id, string $column, array $expected): void
     {
-        $raw = $_ENV['NOTIFY_DB_TESTS'] ?? $_SERVER['NOTIFY_DB_TESTS'] ?? getenv('NOTIFY_DB_TESTS');
-
-        return $raw === '1' || $raw === true || $raw === 'true';
+        $raw = DB::connection('notify')->table($table)->where('id', $id)->value($column);
+        Assert::assertIsString($raw);
+        Assert::assertEquals($expected, json_decode($raw, true));
     }
 
-    private static function notifyUsesSharedOfflineSqlite(): bool
-    {
-        try {
-            if (DB::connection('notify')->getDriverName() === 'sqlite') {
-                // Qualsiasi sqlite (file condiviso, XOT_TEST_SQLITE, :memory:) è offline rispetto a MySQL notify.
-                return ! self::notifyDbTestsEnabled();
-            }
-
-            $databaseRaw = config('database.connections.notify.database', '');
-            $defaultRaw = config('database.connections.sqlite.database', '');
-            $database = is_string($databaseRaw) ? $databaseRaw : '';
-            $default = is_string($defaultRaw) ? $defaultRaw : '';
-
-            foreach ([$database, $default] as $path) {
-                if ($path !== '' && str_contains($path, basename(self::sharedSqlitePath()))) {
-                    return true;
-                }
-            }
-        } catch (\Throwable) {
-            return true;
-        }
-
-        return false;
-    }
-
+    /**
+     * Get package providers.
+     *
+     * @return array<int, class-string>
+     */
     protected function getPackageProviders(Application $app): array
     {
         return [
-            ...parent::getPackageProviders($app),
-            UserServiceProvider::class,
-            NotifyServiceProvider::class];
-    }
-
-    /**
-     * @template T of Model
-     *
-     * @param  T  $model
-     * @param  class-string<T>  $class
-     * @return T
-     */
-    public function freshModel(Model $model, string $class)
-    {
-        $fresh = $model->fresh();
-        Assert::assertInstanceOf($class, $fresh);
-
-        return $fresh;
-    }
-
-    /**
-     * @template T of Model
-     *
-     * @param  Collection<int, T>  $collection
-     * @param  class-string<T>  $class
-     * @return T
-     */
-    public function firstModel(Collection $collection, string $class)
-    {
-        $first = $collection->first();
-        Assert::assertInstanceOf($class, $first);
-
-        return $first;
+            NotifyServiceProvider::class,
+        ];
     }
 }

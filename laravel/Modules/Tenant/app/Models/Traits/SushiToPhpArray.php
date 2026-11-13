@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://dev.to/hasanmn/automatically-update-createdby-and-updatedby-in-laravel-using-bootable-traits-28g9.
  */
-
-declare(strict_types=1);
 
 namespace Modules\Tenant\Models\Traits;
 
@@ -18,6 +17,7 @@ use Sushi\Sushi;
 trait SushiToPhpArray
 {
     use Sushi;
+    use SushiConnectionByName;
 
     /**
      * @return array<int, array<string, mixed>>

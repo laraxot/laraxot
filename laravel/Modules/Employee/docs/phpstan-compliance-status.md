@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-COMPLIANCE-STATUS"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Level 10 Compliance Status
 
 **Last Updated**: 2026-07-06

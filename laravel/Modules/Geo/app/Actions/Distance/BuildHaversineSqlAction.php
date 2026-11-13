@@ -4,12 +4,20 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Actions\Distance;
 
+use Modules\Geo\Actions\Math\GenerateHaversineSqlAction;
 use Spatie\QueueableAction\QueueableAction;
+
+/*
+ * GateGuard: callers BuildHaversineSqlActionTest; SSoT formula resta GenerateHaversineSqlAction;
+ * no second formula copy; reads lat/lng floats + field names, writes SQL string;
+ * user: "migliora qualità codice , fa tutto con bmad + second brain + filament blueprint"
+ */
 
 /**
  * Espressione SQL haversine per scope Eloquent orderBy distance.
  *
- * Sostituisce GeoService::haversine() + setLatitudeLongitudeField().
+ * Delega a {@see GenerateHaversineSqlAction} (SSoT formula). Sostituisce
+ * GeoService::haversine() + setLatitudeLongitudeField().
  */
 final class BuildHaversineSqlAction
 {
@@ -21,12 +29,11 @@ final class BuildHaversineSqlAction
         string $latitudeField = 'latitude',
         string $longitudeField = 'longitude',
     ): string {
-        return '(6371 * acos(cos(radians('
-            .$latitude.')
-        * cos(radians(`'.$latitudeField.'`))
-        * cos(radians(`'.$longitudeField.'`)
-        - radians('.$longitude.'))
-        + sin(radians('.$latitude.'))
-        * sin(radians(`'.$latitudeField.'`)))) *1.1515';
+        return app(GenerateHaversineSqlAction::class)->execute(
+            $latitude,
+            $longitude,
+            $latitudeField,
+            $longitudeField,
+        );
     }
 }

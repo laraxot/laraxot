@@ -1,10 +1,15 @@
 ---
+qmd: "allineamento bootstrap italia.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: allineamento-bootstrap-italia.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: allineamento-bootstrap-italia.divergenza.md
 ---
 
 # Divergenza: `allineamento-bootstrap-italia.md`

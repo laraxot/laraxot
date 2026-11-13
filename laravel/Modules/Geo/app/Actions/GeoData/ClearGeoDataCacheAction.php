@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions\GeoData;
 
 use Illuminate\Support\Facades\Cache;
+use Modules\Geo\Infrastructure\Config\GeoDataConfig;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -16,7 +17,7 @@ class ClearGeoDataCacheAction
 
     public function execute(): void
     {
-        Cache::forget(GetRegionsAction::CACHE_KEY);
+        Cache::forget(GeoDataConfig::CACHE_KEY_REGIONS);
 
         // Nota: forgetPattern non esiste in Laravel Cache, usiamo forget per le chiavi specifiche
         // In un'implementazione reale, dovremmo mantenere traccia delle chiavi create

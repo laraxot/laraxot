@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "blade component registration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "blade component registration"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Registrazione corretta dei componenti Blade nei moduli
 
 ## Problema

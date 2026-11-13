@@ -1,3 +1,204 @@
+---
+title: "log"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-10-26
+qmd: "log"
+issues: []
+discussions: []
+status: draft
+---
+
+## [2026-10-26] header | slim: "Demo" come regione, avatar come il riferimento (D35)
+
+- Studio del repo italia/design-comuni-pagine-statiche: kit Handlebars, markup fedele e validato, contenuto separato, stile minimo (solo colori); in `cmp-header` solo `logged` e `home` variano. Il nostro equivalente: Blade = vestito, `header.json` = contenuto, `config('ente')` = dato reale che vince.
+- Incidente: `header.json` e' tornato con marker `.merge_file_*` alle 20:51 (dopo la risoluzione delle 20:49), JSON non valido e fascia senza regione; risolto di nuovo tenendo il lato "Demo". Verificare sempre `json_decode` dopo un sync.
+- Regressione trovata dalle misure: cerchio bianco con icona bianca (invisibile) e hover #00966a con testo 3,8:1. Corretti con le misure del riferimento (24px, icona verde 18px, hover #006342).
+- Bug di accessibilita' trovato dal test rosso: con l'ente che vince, `aria-label` e `title` dicevano ancora "Demo" (WCAG 2.5.3). `RegionPortalLinkLabels::resolve` ora segue il nome dell'ente.
+- Link: [decision-log D35](../bmad/decision-log.md), [studio e misure](../bmad/header-design-comuni-study.md).
+
+## [2026-10-26] git + fo | audit dei marker di merge nel front office: 5 file, entrambi i lati studiati
+
+- Causa: marker `.merge_file_*` committati nei commit "." dello script di sync (`3d5395e51d`, `732357ada8`). `git status --unmerged` vuoto non prova che i file runtime siano puliti.
+- Risoluzione per file: `footer/v1.blade.php` = **terza via** (markup Design Comuni dell'incoming + etichette `contact.labels` di `footer.json` dal current + DPO come "Ruolo (Nome)"); `ticket-list/design-comuni.blade.php` = current (DCP-289: `$phoneItems` non piu' usato); `pages/blog|events/index.json` = current (`ente: toll_free`); `sections/header.json` = current (`region.name/url` vuoti rimossi, poi superato dalla decisione "Demo" nel decision-log).
+- Regressione trovata: prendere l'incoming puro del footer faceva leggere `pub_theme::footer.*`, che esiste solo in italiano. In de il footer mostrava "Telefono:" e orari/numero verde senza etichetta. Test rosso poi verde: `FooterV1DesignComuniStructureTest` + `EnteDataFrontOfficeTest` = 58 test, 729 asserzioni.
+- Incidente: questo log era stato sovrascritto da una sessione parallela (1422 righe ridotte a 33); ripristinato dal blob di HEAD, in avanti, senza reset.
+- Altri marker rimasti nei moduli: solo in file `.old` di backup, non runtime.
+- Link: [MERGE_CONFLICT_RESOLUTION_LOG](../merge-conflict-resolution-log.md), [decision-log](../bmad/decision-log.md).
+
+## [2026-10-26] (voce di una sessione parallela, imprecisa: vedi la voce sopra)
+
+Questa voce citava `docs/wiki/collisioni-git-fo-decision.md` nel tema, che esiste solo nel modulo Geo come bozza, e dichiarava risolti file che non aveva verificato. Conservata come cronologia.
+
+### voce originale: git + second-brain | frontoffice collisioni studiate — decisione 3 applicata
+
+- Studio entrambi i lati delle collisioni (current/incoming) su tema Sixteen + moduli Geo/Fixcity/Xot.
+- **Tema Sixteen:** `manifest.json` è artifact di build → non deve avere conflitti manuali; documentato in `docs/wiki/collisioni-git-fo-decision.md`. `docs/wiki/index.md` e `docs/wiki/log.md` sincronizzati con log attività.
+- **Modulo Geo:** marker rimossi con soluzione 3 (primo lato + `uses()` ai test); file `collisioni-git-fo-decision.md` creato.
+- **Fixcity widget:** già risolto (`ticket-create-wizard.blade.php`); 0 residui.
+- **Xot docs:** marcati stale (`phpstan-fixes.md`, `filament-4-...`); non cancellati (regola: mai cancellare senza conferma).
+- Prossimo: PHPStan L10 + Pest sui test Geo modificati; aggiornare `docs/wiki/index.md` radice.
+
+---
+
+module: "Sixteen"
+---
+
+# Sixteen Wiki Activity Log
+
+## [2026-10-26] docs | collisioni frontoffice — studio entrambi i lati (BMAD + second brain)
+
+- `docs/wiki/collisioni-git-fo-decision.md` (radice) documenta la decisione 3 per Geo test, Geo docs, Sixteen manifest, Fixcity widget, Xot docs.
+- Nessun residuo marker in `public/manifest.json`; file preservato come build artifact.
+- Log sincronizzato con `laravel/Modules/Geo/docs/wiki/log.md` e `docs/project_docs/riepilogo-risoluzione-conflitti.md`.
+
+## [2026-10-22] fo | anti-pattern lock — mai pages/profile/edit (D34)
+- knowledge [why-profile-edit-blade-must-not-exist.md](../bmad/knowledge/why-profile-edit-blade-must-not-exist.md); FO = `FrontofficeRoutes::personalAreaImpostazioni()`
+- Pest `NoSemanticFolioPageDirectoriesTest` + header forbid `route('profile.edit')`; hook `theme-pages-guard.sh`; blueprint + fo-folio-links aggiornati
+- hindsight: initiative kp-2414279f6153450582f67e36216631c2 + correction FO impostazioni
+
+## [2026-10-22] fo | audit UI/UX Design Comuni — data-dc home/track + no gravatar (D33)
+
+- Link: [04-audit-ui-ux-design-comuni.md](../compliance/04-audit-ui-ux-design-comuni.md), [decision-log.md](../bmad/decision-log.md), [filament-blueprint.md](../bmad/filament-blueprint.md).
+- User: «analizzare tutta la ui/ux… DesignComuni… bmad + second brain + filament blueprint».
+- Smoke `fixcity.eu`: home/track `data-dc=0` → fix; D-03 Gravatar → iniziali; A-14 breadcrumb i18n; D-12 assistenza → tickets/create.
+
+## [2026-10-22] fo | FrontofficeRoutes wave 2 — ticket + area personale
+
+- Supersede: estende D32 (stesso giorno).
+- Link: [reusable-components.md](../rules/reusable-components.md), [filament-blueprint.md](../bmad/filament-blueprint.md).
+- User: «procedi».
+- `FrontofficeRoutes` + helpers `personalArea*`, `faqIndex`, `ticketsShow`; wire ticket-list/detail, header dropdowns, segnalazioni, settings, logout.
+
+## [2026-10-22] fo | reusable Infrastructure/Presentation + Action (D32)
+
+- Link: [reusable-components.md](../rules/reusable-components.md), [filament-blueprint.md](../bmad/filament-blueprint.md), [decision-log.md](../bmad/decision-log.md).
+- User: «devi sempre cercare di creare componenti riutilizzabili… bmad + second brain + filament blueprint».
+- Estratti: `Infrastructure\Url\FrontofficeContainerAliases` + `FrontofficeRoutes`, `Presentation\Search\FrontofficeSearchSuggestions`, `Actions\Folio\ResolveContainer0IndexAction`.
+- Folio `[container0]/index` e search-modal / services / faq consumano i pezzi riusabili; niente alias inline.
+
+## [2026-10-20] ux | /it/auth/register merge 500 + parity DC
+
+- Supersede: estende entry shell+CTA sotto e [register-ux-audit](../auth/register-ux-audit.md).
+- Link: [register-ux-audit](../auth/register-ux-audit.md), [prompts/04.md](../prompts/04.md).
+- User: «migliora https://fixcity.eu/it/auth/register».
+- Causa: marker merge in `auth-register.blade.php` → HTTP 500; breadcrumb DC con `span.separator` → `/ /`.
+- Fix: shell ripulita (max 36rem); form colonna unica + * required; copy IT «Dati personali»/«Consensi»/«Indirizzo email».
+- Smoke: 200; Playwright card 343/576, CTA 52px, crumb `Home / Crea…`.
+
+## [2026-10-20] ux | /it/auth/register shell + CTA sotto data-dc
+
+- Supersede: estende [register-ux-audit](../auth/register-ux-audit.md); non tocca login.
+- Link: [register-ux-audit](../auth/register-ux-audit.md), [prompts/04.md](../prompts/04.md).
+- User: «migliora https://fixcity.eu/it/auth/register».
+- Causa: isolamento Tailwind/`14-auth-login.css` con `data-dc` → card full-bleed, CTA corta, i18n grezze, breadcrumb `Home / /`.
+- Fix: shell inline max 32rem + CTA widget 44px full-width; chiavi `user::*` corrette; un solo link Accedi; padding cookiebar.
+- Smoke Playwright: 375/1440 card 343/512, submit h=52, 0 raw keys.
+
+## [2026-10-20] a11y | events feedback vuoto + misure parity prompt 04
+
+- Supersede: solo aggiunge evidenze pomeridiane; non sostituisce la entry DCP-221 sotto.
+- Link: [prompts/04.md](../prompts/04.md), [events-public-index](../bmad/events-public-index.md).
+- User: «esegui poi migliora il prompt …/prompts/04.md».
+- Fix: h2 rating vuoti su `/it/events` → feedback/contacts in JSON + default blade.
+- Misure `:8000`: hero Lora 400; mobile gap 0; blog main 74%/80%; events main 54%.
+- Decisione: non copiare «Luoghi» DC fake (castelli/Colosseo) nel FO FixCity.
+
+## [2026-10-20] a11y | regressione DCP-221 hero Titillium→Lora + prompt 04
+
+- Sintomo: `.fc-home-hero h1` tornato a Titillium `font-weight:700` (testo «ciccione»).
+- Fix: ripristino contratto D18/DCP-221 — Lora Regular 400 + `class="font-serif"` su
+  `blocks/home/hero` e `blocks/hero/split`; rebuild Sixteen.
+- Prompt: riscrittura strutturata di `docs/prompts/04.md` (filosofia civica, matrice
+  stato, decisione Event=Article content_type, gate, DoD).
+- Doc: [accessibility](../accessibility.md), [decision-log D18](../bmad/decision-log.md),
+  [dcp-221](../bmad/stories/dcp-221-homepage-tipografia-leggibilita-wcag.story.md).
+
+## [2026-10-16] bugfix | /it/blog getAttribute on null
+
+- Causa: exclude featured con `transform→null` + `filter()` non riassegnato
+- Fix: `setCollection(reject)` + `$renderCard` tipizzato + `@continue`
+- Stesso pattern su `blocks/events/index.blade.php`
+- Smoke: `/it/blog` e `/it/events` → 200
+- Doc: [blog-public-index.md](../bmad/blog-public-index.md)
+
+## [2026-10-16] architecture | container0.index shell JSON-only (D20)
+
+- Folio `[container0]/index` ridotta a Volt + `<x-layouts.app>` + `<x-page>`
+- Rimossi native/utility match e `x-dynamic-component`; chiusura tag coerente
+- JSON tenant: `domande-frequenti.index`, `mappa-sito.index`, `services.index`,
+  `segnalazioni.index`, `lista-categorie.index`
+- Contratto: [container0-index-shell-contract.md](../bmad/container0-index-shell-contract.md)
+- Pest: `FolioPageMountContractTest` rafforzato
+
+## [2026-10-15] inbound | blog + eventi (AFC pattern)
+
+- Doc: [inbound-marketing-blog-eventi.md](../inbound-marketing-blog-eventi.md)
+- Dossier: [inbound-marketing](../../../../Modules/Fixcity/docs/bmad/inbound-marketing/README.md)
+- Pattern: promessa verticale, hub risorse, CTA progressive; no ads/WP copy.
+
+## [2026-10-15] sustainability | modello a strati + docs FO
+
+- Come sostenere FixCity: B2G/co-funding P0; grant+partner P1; no banner ads.
+- Doc tema: [project-sustainability-front-office.md](../project-sustainability-front-office.md)
+- Dossier: [project-sustainability](../../../../../../bmad-output/project-sustainability/README.md)
+
+## [2026-10-15] marketing | footer partner vs banner (BMAD only)
+
+- Domanda: «Sostieni il progetto» + banner sponsor nel footer?
+- Verdict: **partner/sostenitori sì; banner commerciali no** (primo rilascio).
+  CTA monetaria solo con governance. Nessuna modifica runtime.
+- Dossier: [footer-sponsorship](../../../../../../bmad-output/footer-sponsorship/README.md)
+- Concept: [footer-partner-sponsorship-marketing](concepts/footer-partner-sponsorship-marketing.md)
+- Story: [footer-sponsor-marketing](../bmad/stories/footer-sponsor-marketing.story.md)
+
+## [2026-10-15] fo | footer JSON SSoT (DCP-222 / DCP-198 A5)
+
+- `<x-section slug="footer">` → `footer.json`: brand FixCity + slogan, solo path
+  reali; `social: []`; no logo UE. Blade = vestito + `FrontofficeUrl`, niente
+  `<a>` nudi.
+- Guard: `FooterJsonBrandAndLinksSsotTest`. Live `/it`: FixCity, 0 bare anchors.
+- Story: [dcp-222](../bmad/stories/dcp-222-footer-json-ssot-vestito.story.md)
+- Filosofia: [zen-wizard-header-philosophy](concepts/zen-wizard-header-philosophy.md)
+
+## [2026-10-15] ecc | home-page-title + timeline `<time>` (follow-up)
+
+- ECC implement: `homepage.blade.php` → `id="home-page-title"` (no doppio `#main-container`);
+  cronologia dettaglio → `occurred_on` + `<time datetime>` (DCP-148).
+- **Nota runtime `/it`:** la home viva usa `blocks/home/hero` / `hero/split` con
+  `id="fc-home-hero-heading"` (Lora DCP-221); il blocco `blocks/homepage.blade.php`
+  resta corretto per path JSON legacy, ma non e' l'H1 servito oggi.
+- Live check: un solo `#main-container`, H1 = `fc-home-hero-heading`.
+- Docs gia' aggiornati nello ECC: [homepage-guest-visual-fix](concepts/homepage-guest-visual-fix.md),
+  [dcp-148](../bmad/stories/dcp-148-dettaglio-pubblico-segnalazione-e-segui.story.md).
+
+## [2026-10-15] a11y | tipografia home /it (DCP-221) + Lora hero
+
+- Problema: titoli «ciccioni» + H1 poco leggibile in Titillium bold.
+- Fix: H1 hero in **Lora Regular 400 `!important`** (BI `.font-serif`, scale
+  h1 40–48px) per battere `body *` Titillium dello shell Filament FO;
+  sans UI a 600; token `--font-serif`/`--dc-font-serif`; self-host Vite (DCP-183).
+- Verifica Playwright `/it`: family Lora, weight 400, 48px, lh 1.2;
+  `FontsCssGuardTest` 4/4; rebuild `app-BfW1LND_.css`.
+- Story: [dcp-221](../bmad/stories/dcp-221-homepage-tipografia-leggibilita-wcag.story.md)
+- Concetto: [design-comuni-font-tokens](concepts/design-comuni-font-tokens.md)
+
+## [2026-10-14] docs | studio del tema reale e correzione degli ingressi
+
+- Story: [studio e ingressi](../bmad/stories/docs-studio-stato-e-ingressi.story.md). `README.md` e `00-INDEX.md` riscritti con fatti verificati (stato vivo: `pub_theme = Sixteen` nei 4 `xra.php`; conteggi; build da `package.json`).
+- Verificato: controller e rotte del tema esistono ma non sono registrati (`route:list`, 461 rotte, senza `comune/*`, `auth/spid`, `auth/cie`); `INDEX.md` e' la mappa viva, `index.md` e' storico (marcato `stale`).
+- Contraddizione aperta con la voce del 2026-10-11 qui sotto: `components/layouts/design-comuni.blade.php`, `-authenticated` e `-bare` esistono (2026-10-13) e `pages/tests/index.blade.php` usa `<x-layouts.design-comuni-bare>`.
+- Link: 5 ripuntati, 10 annotati in `wiki/index.md` e `wiki/log.md`. Memoria: `bashscripts/ai/wiki/memories/docs-temi-studio.md`.
+
+## [2026-10-11] architecture | Sixteen è già DesignComuni
+
+- Regola locale: [no-parallel-design-comuni-layout](rules/no-parallel-design-comuni-layout.md)
+- Decisione BMAD: [design-comuni-theme-identity-decision](../bmad/design-comuni-theme-identity-decision.md)
+- Contratto: nessun `resources/views/layouts/design-comuni.blade.php`, nessun `components/layouts/design-comuni.blade.php`, nessun `<x-layouts.design-comuni>`.
+- Shell pubblica canonica: `x-layouts.app` / `resources/views/layouts/app.blade.php`, con `components/layouts/main.blade.php` come base HTML.
+- Le vecchie citazioni di `design-comuni.blade.php` sono storico/anti-pattern: non sono istruzioni runtime.
+
 ## [2026-07-24] second-brain | max workflow + composer-go concept
 
 - Link da [composer-go-theme-impact](concepts/composer-go-theme-impact.md) a skill second-brain max
@@ -32,7 +233,7 @@
 
 - Tabella `name()` ↔ `@volt()` in `folio-page-pattern.md` (`container0.index` / `container0.view` / `container1.index`)
 - `folio-route-params-mount.md` + `volt-usage-rule.md` allineati
-- Cms: [folio-page-shell-pattern](../../../Modules/Cms/docs/wiki/concepts/folio-page-shell-pattern.md)
+- Cms: [folio-page-shell-pattern](../../../../Modules/Cms/docs/wiki/concepts/folio-page-shell-pattern.md)
 
 ## [2026-06-05] docs | @volt obbligatorio su Folio+Component — canon allineato
 
@@ -47,7 +248,7 @@
 
 ## [2026-06-05] docs | HackerNoon harness — tips 001-022 in wiki locale
 
-- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
+- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt) _(target mancante, verificato 2026-10-14)_
 - GitHub: [#272](https://github.com/laraxot/base_fixcity_fila5/issues/272) / [D#273](https://github.com/laraxot/base_fixcity_fila5/discussions/273)
 
 # Sixteen Wiki Log
@@ -87,7 +288,7 @@
 ## [2026-06-05] docs | AI harness tema + HackerNoon
 
 - [ai-harness-theme-sixteen.md](concepts/ai-harness-theme-sixteen.md) in index
-- Canon temi: [ai-harness-theme-discipline.md](../../../docs/wiki/concepts/ai-harness-theme-discipline.md)
+- Canon temi: [ai-harness-theme-discipline.md](../../../Barthelemy/docs/wiki/concepts/ai-harness-theme-discipline.md)
 
 ## [2026-06-03] skill | Anthropic frontend-design × civic parity
 
@@ -104,9 +305,9 @@
 
 ## [2026-06-03] docs | map-lit marker + popup — ricostruzione e confini tema
 
-- **SSoT modulo:** [geo-map-lit-reconstruction-guide.md](../../../Modules/Geo/docs/wiki/concepts/geo-map-lit-reconstruction-guide.md) — dimensioni pin, DOM, popup BEM, checklist build
+- **SSoT modulo:** [geo-map-lit-reconstruction-guide.md](../../../../Modules/Geo/docs/wiki/concepts/geo-map-lit-reconstruction-guide.md) — dimensioni pin, DOM, popup BEM, checklist build
 - **Tema:** [geo-map-marker-civic-pin-theme-boundary.md](concepts/geo-map-marker-civic-pin-theme-boundary.md), [geo-map-popup-leaflet-boundary.md](concepts/geo-map-popup-leaflet-boundary.md)
-- **Runbook popup vuoto:** [map-popup-header-whitespace-fix.md](../../../Modules/Geo/docs/wiki/troubleshooting/map-popup-header-whitespace-fix.md) — `<div class="popup__header">` vs `header { min-height: 222px }`
+- **Runbook popup vuoto:** [map-popup-header-whitespace-fix.md](../../../../Modules/Geo/docs/wiki/troubleshooting/map-popup-header-whitespace-fix.md) — `<div class="popup__header">` vs `header { min-height: 222px }`
 - **Codice:** `marker-config.js` (`__shell`/`__inner`/`__point`), `popup-ticket.js` (STORY-132), `07-map-clusters-and-leaflet.css`
 
 ## [2026-06-01] rule | Frontend stack canonico + naming blocchi CMS
@@ -140,21 +341,21 @@
 ## [2026-05-22] troubleshooting | alpine init vs vite esm (bootstrap header pre-livewire)
 
 - **Motivo**: gli script tema `@vite(resources/js/app.js)` sono **`type="module"` differiti**, posizionati dopo `@livewireScripts` nei layout pubblici — Alpine parte prima e `Alpine.data` / listener `alpine:init` in `app.js` arrivano troppo tardi → `headerMobileNav` non risolto al primo boot.
-- **Artifact**: [concepts/livewire-alpine-esm-order.md](concepts/livewire-alpine-esm-order.md), partial [resources/views/partials/alpine-livewire-bootstrap-header.blade.php](../../resources/views/partials/alpine-livewire-bootstrap-header.blade.php), factory [resources/js/theme/header-mobile-nav-scope.js](../../resources/js/theme/header-mobile-nav-scope.js).
+- **Artifact**: [concepts/livewire-alpine-esm-order.md](concepts/livewire-alpine-esm-order.md), partial [resources/views/partials/alpine-livewire-bootstrap-header.blade.php](../../resources/views/partials/alpine-livewire-bootstrap-header.blade.php) _(target mancante, verificato 2026-10-14)_, factory [resources/js/theme/header-mobile-nav-scope.js](../../resources/js/theme/header-mobile-nav-scope.js) _(target mancante, verificato 2026-10-14)_.
 - **Layout**: include partial all’avvio `<body>` in [components/layouts/main.blade.php](../../resources/views/components/layouts/main.blade.php) e [layouts/main.blade.php](../../resources/views/layouts/main.blade.php).
 
 ## [2026-05-15] concept | Tailwind `@apply` come alias preferito
 
-- Documentato in [bootstrap-italia-tailwind-philosophy](concepts/bootstrap-italia-tailwind-philosophy.md), [design-comuni-class-mapping](entities/design-comuni-class-mapping.md); modulo Cms [daisyui-pro-contro-metriche](../../../../../Modules/Cms/docs/daisyui-pro-contro-metriche.md); Fixcity `wizard-architecture-filament-theme-boundary`.
+- Documentato in [bootstrap-italia-tailwind-philosophy](concepts/bootstrap-italia-tailwind-philosophy.md), [design-comuni-class-mapping](entities/design-comuni-class-mapping.md); modulo Cms [daisyui-pro-contro-metriche](../../../../Modules/Cms/docs/daisyui-pro-contro-metriche.md); Fixcity `wizard-architecture-filament-theme-boundary`.
 
 ## [2026-05-15] reference | DaisyUI pro/contro/percentuali (Cms + Sixteen)
 
-- SSoT: [Modules/Cms/docs/daisyui-pro-contro-metriche](../../../../../Modules/Cms/docs/daisyui-pro-contro-metriche.md); sintesi tema [concepts/daisyui-pro-contro-metriche](concepts/daisyui-pro-contro-metriche.md); indici Cms/UI e [daisyui-componenti](../../../../../Modules/Cms/docs/daisyui-componenti.md) aggiornati.
+- SSoT: [Modules/Cms/docs/daisyui-pro-contro-metriche](../../../../Modules/Cms/docs/daisyui-pro-contro-metriche.md); sintesi tema [concepts/daisyui-pro-contro-metriche](concepts/daisyui-pro-contro-metriche.md); indici Cms/UI e [daisyui-componenti](../../../../Modules/Cms/docs/daisyui-componenti.md) aggiornati.
 
 ## [2026-05-15] wiki | DaisyUI nel stack documentato (tema + moduli)
 
 - Tema: [entities/design-comuni-class-mapping.md](entities/design-comuni-class-mapping.md) (sezione DaisyUI), [concepts/design-comuni-site-wide-component-css-rule.md](concepts/design-comuni-site-wide-component-css-rule.md), [wiki index](index.md).
-- Moduli: Fixcity (`fixcity-module`, `wizard-architecture-filament-theme-boundary`), Geo [wiki index](../../../../Modules/Geo/docs/wiki/index.md), Cms `daisyui-componenti.md` + `index`, UI `mcp-ui-ux.md`; root rule [011-blocks-view-convention.md](../../../../docs/wiki/rules/011-blocks-view-convention.md).
+- Moduli: Fixcity (`fixcity-module`, `wizard-architecture-filament-theme-boundary`), Geo [wiki index](../../../../Modules/Geo/docs/wiki/index.md), Cms `daisyui-componenti.md` + `index`, UI `mcp-ui-ux.md`; root rule [011-blocks-view-convention.md](../../../../../docs/wiki/rules/011-blocks-view-convention.md).
 
 ## [2026-05-15] entity | design-comuni-class-mapping — albero upstream `src/stylesheets`
 
@@ -162,7 +363,7 @@
 
 ## [2026-05-15] Import Geo mappa via `@modules`
 
-- **2026-05-28:** rimosso fork vietato `geo-map-lit-local.js`; mappa elenco solo via `import map-lit.js` in `app.js` — regola [no-theme-map-lit-fork](../../../../docs/wiki/rules/no-theme-map-lit-fork.md).
+- **2026-05-28:** rimosso fork vietato `geo-map-lit-local.js`; mappa elenco solo via `import map-lit.js` in `app.js` — regola [no-theme-map-lit-fork](../../../../../docs/wiki/rules/no-theme-map-lit-fork.md).
 - Boundary aggiornato: [concepts/theme-geo-js-boundary.md](concepts/theme-geo-js-boundary.md).
 
 ## [2026-05-15] Geo map styles mirror
@@ -307,7 +508,7 @@
 - Screenshot comparativo Puppeteer: locale vs Design Comuni `segnalazione-02-dati.html`
 - 6 gap confermati: dropdown lingua/utente (data-bs-toggle non funziona su Livewire), classi Tailwind spurie nel dropdown, guest CTA inline style verde, nav active box blu, logo size
 - Story `8-103` aggiornata con: delta visivo da screenshot, fix P7 (nav active underline), fix P9 (Tailwind→BootstrapItalia), nota P1 (slim bg già corretto `#00402b`)
-- Wiki aggiornati: `concepts/header-slim-dropdown-behavior.md` (direzione Alpine + stato file), `comparisons/header-visual-parity-audit-2026-05-04.md` (nuovo)
+- Wiki aggiornati: `concepts/header-slim-dropdown-behavior.md` (direzione Alpine + stato file), `comparisons/header-visual-parity-audit.md` (nuovo)
 - Nota importante: il verde `#007A52` su guest CTA è **deliberato** per il branding Fixcity (non un bug rispetto al reference blu Design Comuni)
 
 ## [2026-05-04] story 8-103 | header dropdown Livewire fix + parity audit
@@ -375,7 +576,7 @@
 ## [2026-05-04] wiki | segnalazione-01-privacy vs locale + path relativi
 - Creato `comparisons/segnalazione-01-privacy-design-comuni-vs-local-wizard.md` (delta vs [reference Design Comuni](https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html), piano correzione Tailwind+Alpine+Lit, HTML parity senza `<style>` in Blade).
 - Allineati link `_bmad-output` e mirror Fixcity: da `comparisons/` servono **6** segmenti `../` fino alla root workspace (`../../../../../_bmad-output/...`).
-- Aggiornati `docs/wiki/index.md` (sezione 2026-05-04) con backlink story [7-103](../../../../../_bmad-output/implementation-artifacts/7-103-segnalazione-01-privacy-tailwind-lit-html-audit-correction-plan.md).
+- Aggiornati `docs/wiki/index.md` (sezione 2026-05-04) con backlink story [7-103](../../../../../_bmad-output/implementation-artifacts/7-103-segnalazione-01-privacy-tailwind-lit-html-audit-correction-plan.md) _(target mancante, verificato 2026-10-14)_.
 
 ## [2026-05-04] documentation | Segnalazione Visual Parity Correction Plan
 - Cross-link from Fixcity module: `../../laravel/Modules/Fixcity/docs/wiki/concepts/segnalazione-design-comuni-comparison.md`
@@ -491,23 +692,23 @@
 - eseguito recheck visuale post-fix sulla stessa URL/step con evidenza screenshot.
 - riferimento screenshot: `../../../Modules/Fixcity/docs/assets/segnalazione-step-dati-after-fix-2026-04-28-full-recheck.png`.
 - esito: clipping search risolto, stato mappa stabilizzato, overlay testuale assente; sidebar non ambigua ma ancora visivamente compressa.
-- pagina aggiornata: `comparisons/segnalazione-crea-step-dati-screenshot-audit-2026-04-28.md`.
+- pagina aggiornata: `comparisons/segnalazione-crea-step-dati-screenshot-audit.md`.
 
 ## [2026-04-28] fix | wizard step dati parity css (sidebar/search/spacing) + build
 - source: `../../../resources/css/app.css`
 - applicati fix CSS su wizard: indicatore accordion duplicato rimosso, link sidebar resi piu' leggibili, ridotto spacing verticale, padding input search corretto con `autocomplete-icon`.
 - build/copy eseguiti: `npm run build && npm run copy`.
-- pagina aggiornata: `comparisons/segnalazione-crea-step-dati-screenshot-audit-2026-04-28.md`.
+- pagina aggiornata: `comparisons/segnalazione-crea-step-dati-screenshot-audit.md`.
 
 ## [2026-04-28] tooling | playwright mcp verification + screenshot audit refinement
 - verificata disponibilita' Playwright MCP in runtime locale con `npx -y @playwright/mcp@latest --help`.
 - raffinato audit visuale screenshot step `Dati della segnalazione` con evidenza file e piano fix owner-side tema.
-- pagina aggiornata: `comparisons/segnalazione-crea-step-dati-screenshot-audit-2026-04-28.md`.
+- pagina aggiornata: `comparisons/segnalazione-crea-step-dati-screenshot-audit.md`.
 
 ## [2026-04-28] audit | screenshot runtime segnalazione-crea step dati
 - formalizzato audit visuale da screenshot utente sulla URL `http://127.0.0.1:8001/it/tests/segnalazione-crea?step=form.dati-della-segnalazione%3A%3Adata%3A%3Awizard-step`.
 - registrati i sintomi principali: sidebar vuota ma dominante, stato accordion ambiguo, spacing eccessivo, search input con clipping, mappa con testo grezzo sovrapposto.
-- nuova pagina: `comparisons/segnalazione-crea-step-dati-screenshot-audit-2026-04-28.md`.
+- nuova pagina: `comparisons/segnalazione-crea-step-dati-screenshot-audit.md`.
 
 ## [2026-04-28] governance | boundary tema su reintroduzione pacchetti Laravel 13
 - chiarito che la reintroduzione dipendenze post-upgrade resta owner del modulo (`Modules/*/composer.json`), non del tema.
@@ -830,7 +1031,7 @@
   - creata story dedicata per estrarre blocchi riusabili dal section header mantenendo `v1.blade.php` come owner
   - candidati espliciti: language switcher, user dropdown, guest CTA e blocchi presentazionali affini
   - regola DRY + KISS aggiornata da story 8-37: eventuali estrazioni locali all'header solo sotto `resources/views/components/sections/header/partials/`, mai come nuovo header parallelo
-  - wiki root: [sixteen-header-composition-rule](../../../../docs/wiki/concepts/sixteen-header-composition-rule.md); aggiornati README tema, AGENTS, MEMORY, `.cursor/rules/sixteen-header-v1-ssot.mdc`
+  - wiki root: [sixteen-header-composition-rule](../../../../../docs/wiki/concepts/sixteen-header-composition-rule.md); aggiornati README tema, AGENTS, MEMORY, `.cursor/rules/sixteen-header-v1-ssot.mdc`
 
 ## [2026-04-20] implement | header slim segnalazione-crea fixato nel section owner reale
 
@@ -1214,5 +1415,51 @@
 ## 2026-06-10 — docs Folio consolidate
 
 - `personal-area-routes.md` allineato al canon (deprecato nomi IT)
-- `fo-folio-named-routes-header.md` sezione Imparato
+- `fo-folio-named-routes.md` sezione Imparato
 - INDEX Folio FO sezione unificata
+
+## 2026-10-13 — docs organization + wizard segnalazione parity
+
+- **Riorganizzazione docs** (governance: no-rm, .old suffix, DRY):
+  `build/` per i 14 doc Vite (con `build/INDEX.md`); `visual-parity/`
+  consolidato (`reports/`, `screenshots/pages/` evidenza per pagina,
+  `screenshots/legacy-2026-04/`); bug path annidato
+  `visual-parity/scripts/docs/visual-parity/scripts/` eliminato;
+  indici root duplicati (`INDEX.md`, `DOCUMENTATION_INDEX.md`,
+  `00-index.md`) ritirati con `.old`; `00-INDEX.md` e
+  `visual-parity/INDEX.md` aggiornati.
+- **Nuova regola** `wiki/rules/cms-content-slug-matches-folio-page-name.md`:
+  il JSON di contenuto si chiama come lo slug interrogato (= nome pagina
+  Folio). Correzione: `/it/tickets/create` usa `tickets.create.json`
+  (famiglia app), NON `tests.tickets-create.json` (famiglia anteprima
+  parity `tests.<slug>.json`). Registrata anche nel second brain.
+- **Wizard segnalazione** (BMAD + second brain): decisione zen
+  `bmad/decisions/segnalazione-flow-parity-zen.md`
+  (perché Filament: no-controllers; la parity la fa il tema; la mappa
+  localizza il danno); storie DCP-32/33/34/35; heading wizard corretto
+  in `create-ticket-wizard.blade.php` (era Tailwind `text-4xl
+  font-bold text-slate-900`, ora `title-xxxlarge`/`subtitle-small`);
+  `callSchemaComponentMethod` verificato presente su `XotBaseSchemaWidget`
+  (via `InteractsWithSchemas`): errore Livewire non riproducibile.
+- **Swarm**: 3 subagenti in parallelo su DCP-33 (dati+mappa), DCP-34
+  (riepilogo infolist→cmp-info-summary), DCP-35 (conferma).
+
+## 2026-10-14 — P6-DOCS-SIXTEEN: registro story, link relativi, blocco ticket-detail e mappa
+
+Fase BMAD: documentazione/qualita'. Pacchetto P6 dello swarm in [DCP-152](../../../../Modules/Geo/docs/stories/dcp-152-marker-dettaglio-ticket-e-pulsanti-mappa-su-pagine-dc.story.md). Solo documentazione, nessun codice.
+
+- **Registro story**: nuovo [bmad/stories/00-REGISTRO-COMPLETO.md](../bmad/stories/00-registro-completo.md). Di 264 file story (`stories/` 37 + `bmad/stories/` 227, `.lock` esclusi) solo 57 erano citati dagli indici; gli altri 207 sono ora elencati con stato e titolo dichiarati nei file, piu' la tabella dei numeri DCP presenti in due famiglie (datata e senza data, 7..26). Collegato da [00-INDEX.md](../00-INDEX.md) e da [bmad/stories/00-INDEX.md](../bmad/stories/00-INDEX.md), con DCP-148 e DCP-152 (owner Geo). Nessuna story toccata, rinominata o rinumerata.
+- **Link relativi** (tool `bashscripts/tools/docs/docs-organizer.py`, funzione `fix_links` con `--by-name`, `prompts/` e `raw/` esclusi, file toccati da meno di 5 minuti saltati): link rotti 1500 -> 1373. Corretti 127 link in 62 file, solo dove il bersaglio esiste ed e' l'unico file con quel nome (cartelle `../`, spostamenti in `build/`, `design-comuni/`, prefisso `laravel/Themes/Sixteen/docs/`). Lasciati volutamente 8 candidati ambigui (`./TESTING.md`, quattro `../rules/on-demand-pattern.md` nei `wiki/*/INDEX.md`, tre `argomenti.md`). Restano 1373 link senza bersaglio sul disco (784 in `design-comuni/`, 256 nei file in radice, 200 in `wiki/`): non indovinati.
+- **`wiki/coordinate-picker.md`**: aggiunta la tabella degli attributi di `coordinate-picker-lit` (`readonly`, `marker-icon-url`, `marker-color`, `marker-label`, ...) letta da `static properties`; precisato che `searchAddress` e `reverseGeocode` sono metodi PHP lato server (trait `HasCoordinatePicker`) mentre il Lit interroga Nominatim dal browser; segnato `(not verified)` il percorso di override `resources/views/vendor/geo/...` (Sixteen non ha quel file).
+- **`wiki/concepts/coordinate-picker-design-comuni-parity-rule.md`**: aggiornamento DCP-152 (pulsanti opachi garantiti da `.map-container .ctrl-btn.ctrl-btn` nel modulo Geo, sola lettura, test Playwright).
+- **Dettaglio ticket**: `filament-first-frontoffice.md`, `mcp-validation-fo-pages.md`, `folio-no-semantic-pages-tickets.md` dicevano che `/it/tickets/{id}` e' il Widget `ViewWidget` con CMS `tickets.view`. Verificato: `tickets.view.json` non esiste in `Modules/Fixcity/config/database/content/pages/`; un id numerico e' servito dal ramo `ticket-detail` di `pages/[container0]/[slug0]/index.blade.php` (`BuildPublicTicketDetailAction`, `data-dc`, blocco `ticket-detail/design-comuni`). Aggiunta una nota datata a ciascun doc; il testo precedente resta come storico.
+- Non verificato: specificita' CSS e cause del bug pulsanti (da DCP-152, non rimisurate), precedenza Folio tra `Modules/Fixcity/.../pages/tickets/[id].blade.php` e la pagina del tema (dedotta dal test Pest `TicketPublicDetailPageTest`, non da `route:list`), esistenza di `TicketInfolist` fuori da `Filament/Infolists`.
+## [2026-10-14] docs | boundary UI consenso legale
+
+- Aggiunta `concepts/legal-consent-ui-boundary.md` per il contratto UI Sixteen.
+- Collegati Gdpr/User e le story BMAD relative a consenso, verifica e legal content.
+- La pagina non introduce Bootstrap runtime e non attribuisce al tema decisioni legali.
+## Logo FixCity — Heroicons Outline (Blu Navy) — 2026-10-18
+- Originale: public_html/images/logo-fixcity.svg (complesso, 200+ path, 8KB)
+- Nuova versione (non sovrascritta): public_html/images/logo-fixcity-outline.svg (linee sottili, outline, 2.2 stroke-width, 1.1KB, heroicons-style)
+- Header (application-logo.blade.php) punta al nuovo SVG con alt descrittivo e max-height 2.5rem.

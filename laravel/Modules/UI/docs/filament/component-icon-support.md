@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "component icon support"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "component icon support"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Supporto per Icone nei Componenti Filament
 
 ## Riepilogo della Compatibilità

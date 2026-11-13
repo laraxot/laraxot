@@ -1,3 +1,15 @@
+---
+title: "01 header slim"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "01 header slim"
+issues: []
+discussions: []
+status: draft
+---
+
 # Block 01: Header Slim
 
 **Fonte**: `https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html`

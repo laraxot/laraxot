@@ -16,9 +16,10 @@ related:
   - "./payment.md"
   - "./phpstan.md"
   - "./profile.md"
+status: superseded
+superseded_by: ../-integration/json.md
 ---
 
->>>>>>> 87273113 (.)
 # json
 
 <!-- Contenuto migrato da _docs/json.txt -->

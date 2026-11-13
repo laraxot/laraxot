@@ -26,8 +26,7 @@ class EditWorkHour extends XotBaseEditRecord
 
     protected function getRedirectUrl(): string
     {
-        /** @var string */
-        return $this->getResource()::getUrl('index');
+        return $this->getRecordReturnUrl($this->getResourceUrl('index'));
     }
 
     protected function beforeSave(): void
@@ -50,8 +49,6 @@ class EditWorkHour extends XotBaseEditRecord
         if (! is_numeric($employeeIdValue)) {
             throw new InvalidArgumentException('Invalid employee ID');
         }
-        $employeeId = (int) $employeeIdValue;
-
         $newTimestamp = Carbon::parse(
             is_string($timestampValue) ? $timestampValue : $timestampValue->format('Y-m-d H:i:s'),
         );

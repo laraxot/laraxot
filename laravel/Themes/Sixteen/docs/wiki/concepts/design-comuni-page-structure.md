@@ -1,7 +1,13 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni page structure"
+issues: []
+discussions: []
 title: Design Comuni Italia — Struttura pagine di riferimento
 type: concept
 tags: [design-comuni, bootstrap-italia, page-templates, UX, sixteen]
+status: draft
 ---
 
 # Design Comuni Italia — Struttura pagine di riferimento

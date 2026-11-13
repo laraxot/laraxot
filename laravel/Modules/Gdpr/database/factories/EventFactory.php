@@ -16,6 +16,7 @@ class EventFactory extends Factory
 
     /**
      * @return array<string, string>
+     * @return array<string, mixed>
      */
     public function definition(): array
     {

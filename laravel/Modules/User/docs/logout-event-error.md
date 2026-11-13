@@ -8,14 +8,19 @@ qmd: "logout-event-error analisi dell'errore negli eventi di logout"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # Analisi dell'Errore negli Eventi di Logout
@@ -24,13 +29,16 @@ related:
 # Analisi dell'Errore negli Eventi di Logout
 
 ## Collegamenti correlati
->>>>>>> 87273113 (.)
 - [Documentazione centrale](/docs/README.md)
 - [Collegamenti documentazione](/docs/collegamenti-documentazione.md)
-- [Implementazione Auth Pages](AUTH_PAGES_IMPLEMENTATION.md)
-- [Implementazione Logout](LOGOUT_BLADE_IMPLEMENTATION.md)
-- [Analisi Errore Logout](LOGOUT_BLADE_ERROR_ANALYSIS.md)
-- [Widget Filament Corretto](LOGOUT_FILAMENT_WIDGET_CORRECTED.md)
+- [Implementazione Auth Pages](auth_pages_implementation.md)
+- [Implementazione Logout](logout_blade_implementation.md)
+- [Analisi Errore Logout](logout_blade_error_analysis.md)
+- [Widget Filament Corretto](logout_filament_widget_corrected.md)
+- [Implementazione Auth Pages](auth_pages_implementation.md)
+- [Implementazione Logout](logout_blade_implementation.md)
+- [Analisi Errore Logout](logout_blade_error_analysis.md)
+- [Widget Filament Corretto](logout_filament_widget_corrected.md)
 - [Documentazione Auth Tema One](/laravel/Themes/One/docs/AUTH.md)
 
 ## Errore Identificato
@@ -95,8 +103,6 @@ try {
     // Dispatch dell'evento prima del logout
     Event::dispatch('auth.logout.attempting', [$user]);
     
->>>>>>> f548be94 (.)
->>>>>>> 87273113 (.)
     // Esegui il logout
     Auth::logout();
     request()->session()->invalidate();
@@ -109,8 +115,6 @@ try {
     // Dispatch dell'evento dopo il logout, passando l'utente salvato
     Event::dispatch('auth.logout.successful', [$user]);
     
->>>>>>> f548be94 (.)
->>>>>>> 87273113 (.)
     // Reindirizzamento con localizzazione
     $locale = app()->getLocale();
     return redirect()->to('/' . $locale)
@@ -119,7 +123,6 @@ try {
     // Log dell'errore
     Log::error('Errore durante il logout: ' . $e->getMessage());
 
->>>>>>> 87273113 (.)
     // Reindirizzamento con messaggio di errore
     $locale = app()->getLocale();
     return redirect()->to('/' . $locale)
@@ -186,16 +189,26 @@ Questa modifica risolverà l'errore `Call to a member function getAuthIdentifier
 - [Documentazione centrale](/docs/readme.md)
 - [Collegamenti documentazione](/docs/collegamenti-documentazione.md)
 - [Implementazione Auth Pages](auth-pages-implementation.md)
-- [Implementazione Logout](logout-blade-implementation-2.md)
-- [Analisi Errore Logout](logout-blade-error-analysis-3.md)
-- [Widget Filament Corretto](logout-filament-widget-corrected-3.md)
+- [Implementazione Logout](logout-blade-implementation.md)
+- [Analisi Errore Logout](logout-blade-error-analysis.md)
+- [Widget Filament Corretto](logout-filament-widget-corrected.md)
 - [Documentazione Auth Tema One](/laravel/themes/one/docs/auth.md)
 - [Documentazione centrale](/docs/README.md)
 - [Collegamenti documentazione](/docs/collegamenti-documentazione.md)
-- [Implementazione Auth Pages](AUTH_PAGES_IMPLEMENTATION.md)
-- [Implementazione Logout](LOGOUT_BLADE_IMPLEMENTATION.md)
-- [Analisi Errore Logout](LOGOUT_BLADE_ERROR_ANALYSIS.md)
-- [Widget Filament Corretto](LOGOUT_FILAMENT_WIDGET_CORRECTED.md)
+- [Implementazione Auth Pages](auth_pages_implementation.md)
+- [Implementazione Logout](logout_blade_implementation.md)
+- [Analisi Errore Logout](logout_blade_error_analysis.md)
+- [Widget Filament Corretto](logout_filament_widget_corrected.md)
+- [Implementazione Logout](logout-blade-implementation-posizione-corretta.md)
+- [Analisi Errore Logout](logout-blade-error-analysis.md)
+- [Widget Filament Corretto](logout-filament-widget-corrected.md)
+- [Documentazione Auth Tema One](/laravel/themes/one/docs/auth.md)
+- [Documentazione centrale](/docs/README.md)
+- [Collegamenti documentazione](/docs/collegamenti-documentazione.md)
+- [Implementazione Auth Pages](auth_pages_implementation.md)
+- [Implementazione Logout](logout_blade_implementation.md)
+- [Analisi Errore Logout](logout_blade_error_analysis.md)
+- [Widget Filament Corretto](logout_filament_widget_corrected.md)
 - [Documentazione Auth Tema One](/laravel/Themes/One/docs/AUTH.md)
 
 ## Errore Identificato
@@ -332,4 +345,3 @@ Si raccomanda di implementare l'**Opzione 1** perché:
 3. Garantisce che gli eventi di logout abbiano sempre accesso all'utente che si è disconnesso
 
 Questa modifica risolverà l'errore `Call to a member function getAuthIdentifier() on null` e garantirà un corretto funzionamento del processo di logout.
->>>>>>> 87273113 (.)

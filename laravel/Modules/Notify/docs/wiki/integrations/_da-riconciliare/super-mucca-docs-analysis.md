@@ -1,10 +1,14 @@
 ---
+qmd: "super mucca docs analysis"
+issues: []
+discussions: []
 title: "SUPER MUCCA - Analisi Completa Documentazione"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # 🐄 SUPER MUCCA - Analisi Completa Documentazione

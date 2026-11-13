@@ -1,10 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+?>
 <div x-data="{ open: false }" class="relative inline-block text-left" @click.away="open = false">
     <div>
-        <button @click="open = !open" type="button" class="flex items-center space-x-3 focus:outline-none group" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+        <button @click="open = !open" type="button" class="flex items-center space-x-3 focus:outline-none group" id="user-menu-button" :aria-expanded="open.toString()" aria-haspopup="true">
             <div class="relative h-10 w-10 overflow-hidden rounded-full border-2 border-slate-700 transition-colors group-hover:border-red-500">
-                <img src="{{ $avatarUrl }}" alt="{{ $name }}" class="h-full w-full object-cover">
+                @if($avatarUrl !== '')
+                    <img src="{{ $avatarUrl }}" alt="" class="h-full w-full object-cover">
+                @else
+                    <span class="flex h-full w-full items-center justify-center bg-gradient-to-br from-red-500 to-orange-500 text-sm font-bold text-white" aria-hidden="true">{{ $initials !== '' ? $initials : '?' }}</span>
+                @endif
             </div>
             <span class="hidden lg:block text-slate-100 group-hover:text-white font-medium transition-colors">{{ $name }}</span>
+            <span class="sr-only lg:hidden">{{ $name }}</span>
             <x-heroicon-m-chevron-down class="h-4 w-4 text-slate-400 group-hover:text-red-500 transition-colors" />
         </button>
     </div>
@@ -21,34 +31,35 @@
         
         @if($user)
         <div class="px-4 py-3 border-b border-slate-700/50">
-            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">{{ __('Account') }}</p>
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">{{ __('user::common.nav.account.label') }}</p>
             <p class="text-sm font-medium text-white truncate">{{ $user->email }}</p>
         </div>
         @endif
 
         <div class="py-1" role="none">
-            <a href="{{ LaravelLocalization::localizeUrl('/dashboard') }}" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-300 hover:bg-slate-700/50 hover:text-white transition-colors group" role="menuitem">
-                <x-heroicon-o-squares-2x2 class="h-5 w-5 text-slate-500 group-hover:text-red-500" />
-                <span>{{ __('Dashboard') }}</span>
-            </a>
-            <a href="{{ LaravelLocalization::localizeUrl('/events-my') }}" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-300 hover:bg-slate-700/50 hover:text-white transition-colors group" role="menuitem">
+            {{-- "Dashboard" rimossa: la dashboard pubblica non esiste (pagina vuota, ora 404). L'area personale è "I miei eventi". --}}
+            <a href="{{ LaravelLocalization::localizeUrl('/events/my') }}" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-300 hover:bg-slate-700/50 hover:text-white transition-colors group" role="menuitem">
                 <x-heroicon-o-calendar class="h-5 w-5 text-slate-500 group-hover:text-red-500" />
-                <span>{{ __('I miei eventi') }}</span>
+                <span>{{ __('user::common.nav.my_events.label') }}</span>
             </a>
-            <a href="{{ LaravelLocalization::localizeUrl('/events-near-me') }}" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-300 hover:bg-slate-700/50 hover:text-white transition-colors group" role="menuitem">
-                <x-heroicon-o-map-pin class="h-5 w-5 text-slate-500 group-hover:text-red-500" />
-                <span>{{ __('Eventi vicini') }}</span>
+            <a href="{{ LaravelLocalization::localizeUrl('/events') }}" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-300 hover:bg-slate-700/50 hover:text-white transition-colors group" role="menuitem">
+                <x-heroicon-o-squares-2x2 class="h-5 w-5 text-slate-500 group-hover:text-red-500" />
+                <span>{{ __('user::common.nav.all_events.label') }}</span>
             </a>
-            <a href="{{ LaravelLocalization::localizeUrl('/profile') }}" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-300 hover:bg-slate-700/50 hover:text-white transition-colors group" role="menuitem">
+            <a href="{{ LaravelLocalization::localizeUrl('/profile/'.auth()->id()) }}" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-300 hover:bg-slate-700/50 hover:text-white transition-colors group" role="menuitem">
                 <x-heroicon-o-user class="h-5 w-5 text-slate-500 group-hover:text-red-500" />
-                <span>{{ __('Profilo') }}</span>
+                <span>{{ __('user::common.nav.profile.label') }}</span>
+            </a>
+            <a href="{{ LaravelLocalization::localizeUrl('/profile/edit') }}" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-300 hover:bg-slate-700/50 hover:text-white transition-colors group" role="menuitem">
+                <x-heroicon-o-pencil-square class="h-5 w-5 text-slate-500 group-hover:text-red-500" />
+                <span>{{ __('user::common.nav.edit_profile.label') }}</span>
             </a>
         </div>
 
         <div class="py-1 border-t border-slate-700/50" role="none">
             <button wire:click="logout" class="flex w-full items-center space-x-3 px-4 py-2 text-sm text-red-400 hover:bg-red-500/10 hover:text-red-300 transition-colors group" role="menuitem">
                 <x-heroicon-o-arrow-right-start-on-rectangle class="h-5 w-5 text-red-500/70 group-hover:text-red-400" />
-                <span>{{ __('Esci') }}</span>
+                <span>{{ __('user::common.actions.logout.label') }}</span>
             </button>
         </div>
     </div>

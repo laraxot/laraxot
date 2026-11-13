@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPMD-FIXES"
+module: Employee
+bmad: true
+status: active
+---
 # PHPMD Fixes for Employee Module (2025-12-30)
 
 This document outlines the errors found by PHPMD in the `Employee` module and the plan to resolve them.

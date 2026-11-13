@@ -1,3 +1,15 @@
+---
+title: "css architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "css architecture"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📚 Documentazione Finale - Sixteen Theme CSS Architecture
 
 ## Panoramica
@@ -170,7 +182,6 @@ class="btn btn-outline-primary btn-sm"
 - [AGID Design System](https://www.agid.gov.it/it/design-sviluppo/design-system)
 
 ---
-
 **Ultimo Aggiornamento**: 2026-03-31  
 **Tema**: Sixteen v1.0  
 **Framework**: Bootstrap Italia 2.8.8 + Tailwind CSS 4.x + Filament 5.x

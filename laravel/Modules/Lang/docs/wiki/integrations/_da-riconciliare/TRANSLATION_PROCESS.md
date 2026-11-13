@@ -1,3 +1,16 @@
+---
+title: "TRANSLATION PROCESS"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "TRANSLATION PROCESS"
+issues: []
+discussions: []
+status: superseded
+superseded_by: translation-process.md
+---
+
 # Processo di Traduzione: Da Sviluppatore a Traduttore
 
 ## Indice

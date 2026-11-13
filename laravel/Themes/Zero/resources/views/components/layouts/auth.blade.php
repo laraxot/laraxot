@@ -46,7 +46,7 @@
 </head>
 <body data-auth-page class="h-full font-sans antialiased bg-primary-50">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-600 text-white px-4 py-2 rounded-md z-50">
-        {{ __('Vai al contenuto principale') }}
+        {{ __('pub_theme::layout.skip_link.main_content.label') }}
     </a>
 
     <div class="relative min-h-screen overflow-hidden bg-primary-50">
@@ -65,7 +65,7 @@
                     </span>
                     <span class="font-serif text-xl font-bold tracking-tight">{{ config('app.name', 'Laravel') }}</span>
                 </a>
-                <span class="hidden text-xs font-semibold uppercase tracking-[0.18em] text-primary-700/70 sm:inline">{{ __('Area riservata') }}</span>
+                <span class="hidden text-xs font-semibold uppercase tracking-[0.18em] text-primary-700/70 sm:inline">{{ __('pub_theme::layout.auth.restricted_area.label') }}</span>
             </header>
 
             <main id="main-content" class="flex flex-1 items-center justify-center px-4 py-10 sm:px-6" data-auth-main>

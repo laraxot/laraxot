@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Integrazione dei Server MCP con il Modulo Xot"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Integrazione dei Server MCP con il Modulo Xot"
+---
+>>>>>>> laraxot/dev
 # Integrazione dei Server MCP con il Modulo Xot
 
 ## Panoramica
@@ -54,25 +67,42 @@ class OptimizeDatabaseQueryAction
             // Esegue EXPLAIN sulla query
             $explainQuery = 'EXPLAIN ' . $query;
             $explainResults = $this->mcpService->mysql()->executeQuery($explainQuery, $params);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             // Analizza i risultati di EXPLAIN
             $estimatedRows = 0;
             $usesIndexes = false;
             $tableScans = [];
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             foreach ($explainResults as $result) {
                 if (isset($result['rows'])) {
                     $estimatedRows += (int) $result['rows'];
                 }
+<<<<<<< HEAD
 
                 if (isset($result['key']) && $result['key'] !== null) {
                     $usesIndexes = true;
                 }
 
+=======
+                
+                if (isset($result['key']) && $result['key'] !== null) {
+                    $usesIndexes = true;
+                }
+                
+>>>>>>> laraxot/dev
                 if (isset($result['type']) && $result['type'] === 'ALL') {
                     $tableScans[] = $result['table'] ?? 'unknown';
                 }
             }
+<<<<<<< HEAD
 
             // Genera suggerimenti di ottimizzazione
             $recommendations = [];
@@ -89,18 +119,44 @@ class OptimizeDatabaseQueryAction
             if ($estimatedRows > 1000) {
                 $recommendations[] = 'La query potrebbe restituire un numero elevato di righe (' . $estimatedRows . '). Considera l\'aggiunta di limiti o filtri.';
 
+=======
+            
+            // Genera suggerimenti di ottimizzazione
+            $recommendations = [];
+            $optimizedQuery = $query;
+            
+            if (!$usesIndexes) {
+                $recommendations[] = 'La query non utilizza indici. Considera l\'aggiunta di indici appropriati.';
+            }
+            
+            if (!empty($tableScans)) {
+                $recommendations[] = 'La query esegue table scan su: ' . implode(', ', $tableScans) . '. Considera l\'aggiunta di indici o la riscrittura della query.';
+            }
+            
+            if ($estimatedRows > 1000) {
+                $recommendations[] = 'La query potrebbe restituire un numero elevato di righe (' . $estimatedRows . '). Considera l\'aggiunta di limiti o filtri.';
+                
+>>>>>>> laraxot/dev
                 // Aggiunge LIMIT se non presente
                 if (stripos($query, 'LIMIT') === false) {
                     $optimizedQuery .= ' LIMIT 1000';
                     $recommendations[] = 'Aggiunto LIMIT 1000 per limitare il numero di risultati.';
                 }
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             // Verifica se ci sono JOIN senza condizioni
             if (stripos($query, 'JOIN') !== false && stripos($query, 'ON') === false) {
                 $recommendations[] = 'La query contiene JOIN senza condizioni ON. Verifica che tutti i JOIN abbiano condizioni appropriate.';
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return new QueryAnalysisData(
                 originalQuery: $query,
                 optimizedQuery: $optimizedQuery,
@@ -115,7 +171,11 @@ class OptimizeDatabaseQueryAction
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return new QueryAnalysisData(
                 originalQuery: $query,
                 optimizedQuery: $query,
@@ -178,7 +238,11 @@ class CacheService
                 'key' => $key,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return false;
         }
     }
@@ -195,14 +259,22 @@ class CacheService
     {
         try {
             $value = $this->mcpService->redis()->get($key);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return $value !== null ? $value : $default;
         } catch (\Exception $e) {
             Log::error('Cache get failed', [
                 'key' => $key,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return $default;
         }
     }
@@ -223,7 +295,11 @@ class CacheService
                 'key' => $key,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return false;
         }
     }
@@ -244,7 +320,11 @@ class CacheService
                 'key' => $key,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return false;
         }
     }
@@ -267,7 +347,11 @@ class CacheService
                 'amount' => $amount,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return false;
         }
     }
@@ -290,7 +374,11 @@ class CacheService
                 'amount' => $amount,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return false;
         }
     }
@@ -339,14 +427,22 @@ class FileService
     {
         try {
             $content = $this->mcpService->filesystem()->readFile($path);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return $content !== false ? $content : null;
         } catch (\Exception $e) {
             Log::error('File read failed', [
                 'path' => $path,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return null;
         }
     }
@@ -367,14 +463,22 @@ class FileService
             if (!file_exists($directory)) {
                 mkdir($directory, 0755, true);
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return $this->mcpService->filesystem()->writeFile($path, $content);
         } catch (\Exception $e) {
             Log::error('File write failed', [
                 'path' => $path,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return false;
         }
     }
@@ -395,7 +499,11 @@ class FileService
                 'path' => $path,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return false;
         }
     }
@@ -416,7 +524,11 @@ class FileService
                 'directory' => $directory,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return [];
         }
     }
@@ -433,11 +545,19 @@ class FileService
     {
         try {
             $content = $this->read($source);
+<<<<<<< HEAD
 
             if ($content === null) {
                 return false;
             }
 
+=======
+            
+            if ($content === null) {
+                return false;
+            }
+            
+>>>>>>> laraxot/dev
             return $this->write($destination, $content);
         } catch (\Exception $e) {
             Log::error('File copy failed', [
@@ -445,7 +565,11 @@ class FileService
                 'destination' => $destination,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return false;
         }
     }
@@ -466,7 +590,11 @@ class FileService
                 'path' => $path,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return false;
         }
     }
@@ -520,11 +648,19 @@ class AnalyzeCodeAction
                 $code,
                 ['code_quality', 'performance', 'security', 'best_practices']
             );
+<<<<<<< HEAD
 
             $qualityScore = $analysis['code_quality']['score'] ?? 0;
             $issues = [];
             $suggestions = [];
 
+=======
+            
+            $qualityScore = $analysis['code_quality']['score'] ?? 0;
+            $issues = [];
+            $suggestions = [];
+            
+>>>>>>> laraxot/dev
             // Raccoglie i problemi
             foreach (['code_quality', 'performance', 'security', 'best_practices'] as $aspect) {
                 if (isset($analysis[$aspect]['issues']) && is_array($analysis[$aspect]['issues'])) {
@@ -537,7 +673,11 @@ class AnalyzeCodeAction
                         ];
                     }
                 }
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> laraxot/dev
                 if (isset($analysis[$aspect]['suggestions']) && is_array($analysis[$aspect]['suggestions'])) {
                     foreach ($analysis[$aspect]['suggestions'] as $suggestion) {
                         $suggestions[] = [
@@ -549,7 +689,11 @@ class AnalyzeCodeAction
                     }
                 }
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return new CodeAnalysisData(
                 language: $language,
                 qualityScore: $qualityScore,
@@ -562,7 +706,11 @@ class AnalyzeCodeAction
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return new CodeAnalysisData(
                 language: $language,
                 qualityScore: 0,
@@ -630,7 +778,11 @@ class PostgresService
                 'params' => $params,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return [];
         }
     }
@@ -653,7 +805,11 @@ class PostgresService
                 'params' => $params,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return [
                 'error' => $e->getMessage()
             ];
@@ -676,14 +832,22 @@ class PostgresService
                 WHERE table_name = $1
                 ORDER BY ordinal_position
             ";
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return $this->executeQuery($query, [$table]);
         } catch (\Exception $e) {
             Log::error('PostgreSQL get table structure failed', [
                 'table' => $table,
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return [];
         }
     }
@@ -702,15 +866,25 @@ class PostgresService
                 WHERE table_schema = 'public'
                 ORDER BY table_name
             ";
+<<<<<<< HEAD
 
             $results = $this->executeQuery($query);
 
+=======
+            
+            $results = $this->executeQuery($query);
+            
+>>>>>>> laraxot/dev
             return array_column($results, 'table_name');
         } catch (\Exception $e) {
             Log::error('PostgreSQL get tables failed', [
                 'message' => $e->getMessage()
             ]);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> laraxot/dev
             return [];
         }
     }
@@ -795,7 +969,11 @@ class XotServiceProvider extends XotBaseServiceProvider
                 $app->make(MCPServiceContract::class)
             );
         });
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> laraxot/dev
         // Altre registrazioni...
     }
 

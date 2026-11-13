@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
@@ -72,9 +73,29 @@ trait HasRatingsTrait
 
         /** @var HasMany<MorphPivot, TModel> $relation */
         $relation = $this->hasMany($pivot::class, 'model_id', $this->getKeyName())
-            ->whereIn('model_type', array_unique([$this->getMorphClass(), static::class]));
+            ->whereIn('model_type', $this->ratingMorphTypes());
 
         return $relation;
+    }
+
+    /**
+     * Return the storage forms used by this host's rating morph rows.
+     *
+     * STI children store the parent's FQCN, while the morph map stores its alias.
+     * Keeping both forms readable preserves historical ratings during migration.
+     *
+     * @return list<string>
+     */
+    public function ratingMorphTypes(): array
+    {
+        $alias = $this->getMorphClass();
+        $morphedModel = Relation::getMorphedModel($alias);
+        $types = [$alias];
+        if (is_string($morphedModel)) {
+            $types[] = $morphedModel;
+        }
+
+        return array_values(array_unique($types));
     }
 
     /**
@@ -112,7 +133,17 @@ trait HasRatingsTrait
      */
     public function getRatingsByIdAttribute(): EloquentCollection
     {
-        /** @var EloquentCollection<int, BaseRating> $ratings */
+        return $this->getRatingsById();
+    }
+
+    /**
+     * Voti del modello, indicizzati per id.
+     *
+     * @return EloquentCollection<int|string, BaseRating>
+     */
+    public function getRatingsById(): EloquentCollection
+    {
+        /** @var EloquentCollection<int|string, BaseRating> $ratings */
         $ratings = $this->ratings->keyBy('id');
 
         /** @var Collection<int, MorphPivot> $pivots */
@@ -122,8 +153,7 @@ trait HasRatingsTrait
         $result = new EloquentCollection;
 
         foreach ($pivots->groupBy('rating_id') as $ratingId => $group) {
-            /** @var MorphPivot $pivot */
-            $pivot = $group->first(static fn (MorphPivot $p): bool => $p->getAttribute('value') !== null) ?? $group->first();
+            $pivot = self::preferredRatingPivot($group);
 
             $rating = $ratings->get($ratingId);
             if (! $rating instanceof BaseRating) {
@@ -147,6 +177,24 @@ trait HasRatingsTrait
         }
 
         return $result;
+    }
+
+    /**
+     * Fra le righe pivot dello stesso rating (forma alias e forma FQCN) sceglie quella
+     * che porta l'informazione: prima quella col voto, poi quella con la nota (opzione
+     * «altro», `value` null + `note` piena), altrimenti la prima.
+     *
+     * @param  Collection<int, MorphPivot>  $group  non vuota (viene da un `groupBy`)
+     */
+    private static function preferredRatingPivot(Collection $group): MorphPivot
+    {
+        $preferred = $group->first(static fn (MorphPivot $pivot): bool => $pivot->getAttribute('value') !== null)
+            ?? $group->first(static fn (MorphPivot $pivot): bool => filled($pivot->getAttribute('note')))
+            ?? $group->first();
+
+        Assert::isInstanceOf($preferred, MorphPivot::class);
+
+        return $preferred;
     }
 
     /**
@@ -220,6 +268,14 @@ trait HasRatingsTrait
      */
     public function getMyRatingAttribute(): Collection
     {
+        return $this->getMyRating();
+    }
+
+    /**
+     * @return Collection<string|int, mixed>
+     */
+    public function getMyRating(): Collection
+    {
         /** @var Collection<int, BaseRating> $myRatings */
         $myRatings = $this->myRatings;
 
@@ -228,12 +284,32 @@ trait HasRatingsTrait
 
     public function getRatingsAvgAttribute(?float $value): ?float
     {
-        return (float) ($value ?? 0);
+        return $value ?? $this->getRatingsAvg();
+    }
+
+    /**
+     * Media dei voti salvata nella colonna cache (0 se assente).
+     */
+    public function getRatingsAvg(): float
+    {
+        $raw = $this->attributes['ratings_avg'] ?? 0;
+
+        return is_numeric($raw) ? (float) $raw : 0.0;
     }
 
     public function getRatingsCountAttribute(?int $value): ?int
     {
-        return $value ?? 0;
+        return $value ?? $this->getRatingsCount();
+    }
+
+    /**
+     * Numero di voti salvato nella colonna cache (0 se assente).
+     */
+    public function getRatingsCount(): int
+    {
+        $raw = $this->attributes['ratings_count'] ?? 0;
+
+        return is_numeric($raw) ? (int) $raw : 0;
     }
 
     /**
@@ -280,6 +356,7 @@ trait HasRatingsTrait
             // sync() DETACH + ATTACH: rischia di creare pivot alias vuoti e di non
             // toccare i FQCN legacy. Qui servono solo le associazioni mancanti.
             $this->ratings()->syncWithoutDetaching($ratingIds);
+            $this->forgetLoadedRatingRelations();
         }
 
         /** @var Collection<int, BaseRating> $result */
@@ -382,6 +459,10 @@ trait HasRatingsTrait
      * duplicato (parziale, solo `value`) dentro
      * `CompilaIndennitaResponsabilita::fillFormWithInitialData()`.
      *
+     * Legge da {@see getRatingsByIdAttribute()} e non da `ratings`: il pivot di `ratings`
+     * e' solo la forma alias di `model_type`, spesso la riga vuota accanto a quella
+     * valorizzata sotto il FQCN (scheda 9240: form aperto senza voti).
+     *
      * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
@@ -390,7 +471,7 @@ trait HasRatingsTrait
         /** @var array<string, array{pivot: array{value: mixed, note: mixed}}> $ratingsData */
         $ratingsData = [];
 
-        foreach ($this->ratings as $rating) {
+        foreach ($this->ratings_by_id as $rating) {
             $id = (string) $rating->id;
             $value = $rating->pivot->value;
             $note = $rating->pivot->note;
@@ -455,6 +536,8 @@ trait HasRatingsTrait
                 $this->ratings()->attach($id, $payload);
             }
         }
+
+        $this->forgetLoadedRatingRelations();
     }
 
     /**
@@ -475,6 +558,18 @@ trait HasRatingsTrait
             'value' => null,
             'note' => null,
         ]);
+
+        $this->forgetLoadedRatingRelations();
+    }
+
+    /**
+     * Chi scrive il pivot scarica `ratings` e `ratingMorphs` gia' caricati: senza,
+     * la rilettura dopo save/Svuota mostrerebbe i valori di prima della scrittura.
+     */
+    private function forgetLoadedRatingRelations(): void
+    {
+        $this->unsetRelation('ratings');
+        $this->unsetRelation('ratingMorphs');
     }
 
     /**

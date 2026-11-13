@@ -1,3 +1,15 @@
+---
+title: "installation summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "installation summary"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🦸 Superpowers Installation Summary
 
 > **Date**: 2026-03-31  
@@ -6,7 +18,6 @@
 > **Platform**: Cursor
 
 ---
-
 ## 📋 Overview
 
 Successfully installed and configured the **Superpowers** agentic skills framework for the FixCity platform.
@@ -288,6 +299,12 @@ Agent: [Systematic debugging]
 - [Skills Reference](docs/superpowers/skills-reference.md)
 - [Quick Index](docs/superpowers/INDEX.md)
 - [Quick Index](docs/superpowers/index.md)
+- [Main README](README.md)
+- [Installation Guide](installation.md)
+- [Workflow Guide](workflow.md)
+- [Skills Reference](skills-reference.md)
+- [Quick Index](INDEX.md)
+- [Quick Index](index.md)
 - [Laravel Integration](laravel/Modules/docs/superpowers.md)
 
 ### External

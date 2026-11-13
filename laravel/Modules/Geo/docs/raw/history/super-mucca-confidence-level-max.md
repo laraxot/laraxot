@@ -1,3 +1,14 @@
+---
+title: "super mucca confidence level max"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "super mucca confidence level max"
+issues: []
+discussions: []
+---
+
 # Super Mucca Confidence Level Max
 
 ```text

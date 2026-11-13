@@ -25,7 +25,7 @@ class TwilioData extends Data
     {
         if (! (self::$instance instanceof TwilioData)) {
             /*
-             * $data = TenantService::getConfig('sms');
+             * Was: TenantService::getConfig('sms') — use GetTenantConfigArrayAction::execute('sms').
              * $data = Arr::get($data, 'drivers.twilio', []);
              */
             $data = Config::array('sms.drivers.twilio');

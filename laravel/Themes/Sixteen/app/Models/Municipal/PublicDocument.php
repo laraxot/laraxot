@@ -16,6 +16,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Themes\Sixteen\Enums\PublicDocumentPrivacyLevelEnum;
+use Themes\Sixteen\Enums\PublicDocumentPublicationStatusEnum;
+use Themes\Sixteen\Enums\PublicDocumentStatusEnum;
+use Themes\Sixteen\Enums\PublicDocumentTypeEnum;
 
 use function Safe\filesize;
 use function Safe\hash_file;
@@ -109,114 +113,6 @@ class PublicDocument extends Model
 {
     /** @use HasFactory<Factory<self>> */
     use HasFactory, SoftDeletes;
-
-    /**
-     * Tipologie di documento secondo AGID
-     */
-    public const DOCUMENT_TYPES = [
-        // Atti normativi
-        'statute' => 'Statuto',
-        'regulation' => 'Regolamento',
-        'ordinance' => 'Ordinanza',
-        'directive' => 'Direttiva',
-
-        // Atti amministrativi
-        'deliberation' => 'Deliberazione',
-        'determination' => 'Determinazione',
-        'decree' => 'Decreto',
-        'resolution' => 'Risoluzione',
-        'circular' => 'Circolare',
-        'instruction' => 'Istruzione',
-
-        // Atti di programmazione
-        'plan' => 'Piano',
-        'program' => 'Programma',
-        'budget' => 'Bilancio',
-        'report' => 'Relazione',
-
-        // Documenti contrattuali
-        'contract' => 'Contratto',
-        'agreement' => 'Convenzione',
-        'concession' => 'Concessione',
-        'authorization' => 'Autorizzazione',
-        'permit' => 'Permesso',
-        'license' => 'Licenza',
-
-        // Atti di trasparenza
-        'transparency_act' => 'Atto di Trasparenza',
-        'publication_notice' => 'Avviso di Pubblicazione',
-        'selection_notice' => 'Avviso di Selezione',
-        'tender_notice' => 'Bando di Gara',
-
-        // Altri documenti
-        'form' => 'Modulistica',
-        'guide' => 'Guida',
-        'manual' => 'Manuale',
-        'procedure' => 'Procedura',
-        'specification' => 'Capitolato',
-        'minutes' => 'Verbale',
-        'opinion' => 'Parere',
-        'certificate' => 'Certificato',
-        'other' => 'Altro',
-    ];
-
-    /**
-     * Stati del documento
-     */
-    public const DOCUMENT_STATUSES = [
-        'draft' => 'Bozza',
-        'review' => 'In Revisione',
-        'approved' => 'Approvato',
-        'published' => 'Pubblicato',
-        'effective' => 'In Vigore',
-        'suspended' => 'Sospeso',
-        'revoked' => 'Revocato',
-        'expired' => 'Scaduto',
-        'archived' => 'Archiviato',
-    ];
-
-    /**
-     * Stati di pubblicazione
-     */
-    public const PUBLICATION_STATUSES = [
-        'unpublished' => 'Non Pubblicato',
-        'scheduled' => 'Programmato',
-        'published' => 'Pubblicato',
-        'updated' => 'Aggiornato',
-        'withdrawn' => 'Ritirato',
-    ];
-
-    /**
-     * Livelli di privacy secondo GDPR
-     */
-    public const PRIVACY_LEVELS = [
-        'public' => 'Pubblico',
-        'restricted' => 'Accesso Limitato',
-        'confidential' => 'Riservato',
-        'classified' => 'Classificato',
-        'personal_data' => 'Dati Personali',
-        'sensitive_data' => 'Dati Sensibili',
-    ];
-
-    /**
-     * Sezioni di Amministrazione Trasparente
-     */
-    public const TRANSPARENCY_SECTIONS = [
-        'organization' => 'Organizzazione',
-        'consulting' => 'Consulenti e Collaboratori',
-        'personnel' => 'Personale',
-        'performance' => 'Performance',
-        'public_procurement' => 'Bandi di Gara e Contratti',
-        'grants' => 'Sovvenzioni, Contributi, Sussidi',
-        'budgets' => 'Bilanci',
-        'assets' => 'Beni Immobili e Gestione Patrimonio',
-        'services' => 'Servizi Erogati',
-        'public_works' => 'Opere Pubbliche',
-        'urban_planning' => 'Pianificazione e Governo del Territorio',
-        'environmental_info' => 'Informazioni Ambientali',
-        'social_interventions' => 'Interventi Straordinari e di Emergenza',
-        'other' => 'Altri Contenuti',
-    ];
 
     protected $table = 'sixteen_public_documents';
 
@@ -610,17 +506,10 @@ class PublicDocument extends Model
     /**
      * Verifica la compliance AGID
      *
-     * @return array<string, mixed>
+     * @return array{accessibility: bool, format: bool, metadata: bool, overall: bool, requirements: array<string, bool>, score: float|int}
      */
     public function checkAgidCompliance(): array
     {
-        $compliance = [
-            'accessibility' => $this->accessibility_compliance,
-            'format' => $this->format_compliance,
-            'metadata' => $this->metadata_compliance,
-            'overall' => false,
-        ];
-
         // Verifica requisiti AGID
         $requirements = [
             'has_title' => ! empty($this->title),
@@ -633,11 +522,16 @@ class PublicDocument extends Model
             'digital_signature' => ! empty($this->digital_signature),
         ];
 
-        $compliance['requirements'] = $requirements;
-        $compliance['score'] = count(array_filter($requirements)) / count($requirements) * 100;
-        $compliance['overall'] = $compliance['score'] >= 80;
+        $score = count(array_filter($requirements)) / count($requirements) * 100;
 
-        return $compliance;
+        return [
+            'accessibility' => $this->accessibility_compliance,
+            'format' => $this->format_compliance,
+            'metadata' => $this->metadata_compliance,
+            'overall' => $score >= 80,
+            'requirements' => $requirements,
+            'score' => $score,
+        ];
     }
 
     /**
@@ -748,7 +642,7 @@ class PublicDocument extends Model
     protected function documentTypeName(): Attribute
     {
         return Attribute::make(
-            get: fn (): string => self::DOCUMENT_TYPES[$this->document_type] ?? $this->document_type
+            get: fn (): string => PublicDocumentTypeEnum::tryFrom($this->document_type)?->getLabel() ?? $this->document_type
         );
     }
 
@@ -760,7 +654,7 @@ class PublicDocument extends Model
     protected function documentStatusName(): Attribute
     {
         return Attribute::make(
-            get: fn (): string => self::DOCUMENT_STATUSES[$this->document_status] ?? $this->document_status
+            get: fn (): string => PublicDocumentStatusEnum::tryFrom($this->document_status)?->getLabel() ?? $this->document_status
         );
     }
 
@@ -772,7 +666,7 @@ class PublicDocument extends Model
     protected function publicationStatusName(): Attribute
     {
         return Attribute::make(
-            get: fn (): string => self::PUBLICATION_STATUSES[$this->publication_status] ?? $this->publication_status
+            get: fn (): string => PublicDocumentPublicationStatusEnum::tryFrom($this->publication_status)?->getLabel() ?? $this->publication_status
         );
     }
 
@@ -784,7 +678,7 @@ class PublicDocument extends Model
     protected function privacyLevelName(): Attribute
     {
         return Attribute::make(
-            get: fn (): string => self::PRIVACY_LEVELS[$this->privacy_level] ?? $this->privacy_level
+            get: fn (): string => PublicDocumentPrivacyLevelEnum::tryFrom($this->privacy_level)?->getLabel() ?? $this->privacy_level
         );
     }
 

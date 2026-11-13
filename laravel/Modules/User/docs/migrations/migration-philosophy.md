@@ -9,6 +9,7 @@ qmd: "user migration philosophy xotbase one migration per model no connection"
 issues:
 discussions:
 related:
+status: draft
 ---
 
 # Migration philosophy

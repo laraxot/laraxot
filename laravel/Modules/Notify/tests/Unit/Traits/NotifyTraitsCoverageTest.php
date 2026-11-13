@@ -1,15 +1,16 @@
 <?php
 
 declare(strict_types=1);
-
 use Filament\Facades\Filament;
 use Illuminate\Support\Facades\Route;
+use Modules\Notify\Tests\TestCase;
 use Modules\Notify\Tests\Unit\Traits\NotifyRateLimitDummy;
 use Modules\Notify\Tests\Unit\Traits\NotifyTenantDummyModel;
 use Modules\Notify\Tests\Unit\Traits\NotifyTrackingDummy;
 use Modules\Tenant\Models\Tenant;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('Notify Traits Coverage', function (): void {
     test('_notification_rate_limiting_helpers_work_with_limiter', function (): void {
         config()->set('cache.default', 'array');

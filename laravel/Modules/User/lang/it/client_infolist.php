@@ -4,21 +4,25 @@ declare(strict_types=1);
 
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'user_id' => ['label' => 'user_id'],
-        'name' => ['label' => 'name'],
-        'provider' => ['label' => 'provider'],
-        'redirect' => ['label' => 'redirect'],
-        'personal_access_client' => ['label' => 'personal_access_client'],
-        'password_client' => ['label' => 'password_client'],
-        'revoked' => ['label' => 'revoked'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+<<<<<<< .merge_file_RItRna
+        'id' => ['label' => 'ID'],
+        'user_id' => ['label' => 'Utente'],
+        'name' => ['label' => 'Nome'],
+        'provider' => ['label' => 'Provider'],
+        'redirect' => ['label' => 'URL di ritorno'],
+        'personal_access_client' => ['label' => 'Client di accesso personale'],
+        'password_client' => ['label' => 'Client password'],
+        'revoked' => ['label' => 'Revocato'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
         'user' => [
-            'name' => ['label' => 'user.name'],
+            'name' => ['label' => 'Utente'],
+=======
+        'user' => [
+            'name' => [
+                'label' => 'user.name',
+            ],
+>>>>>>> .merge_file_17Vdjd
         ],
-    ],
-    'sections' => [
-        'OAuth Client Information' => ['label' => 'OAuth Client Information', 'heading' => 'OAuth Client Information'],
     ],
 ];

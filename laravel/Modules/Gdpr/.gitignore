@@ -130,12 +130,3 @@ docs/archive/
 *.orig
 *.rej
 *~head
-
-agentdb.rvf
-
-# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
-.cursor/
-.devcontainer/
-.vscode/
-.windsurf/
-tests/AuditCoverage/

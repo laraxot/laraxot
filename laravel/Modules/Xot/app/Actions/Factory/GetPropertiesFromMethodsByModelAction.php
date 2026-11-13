@@ -101,7 +101,11 @@ class GetPropertiesFromMethodsByModelAction
                 Assert::stringNotEmpty($codeStr, 'Il corpo della funzione non può essere vuoto');
 
                 // Cerchiamo relazioni belongsTo
+<<<<<<< HEAD
                 $this->extractBelongsToRelations($codeStr, $model, $method, $data);
+=======
+                $data = array_merge($data, $this->extractBelongsToRelations($codeStr, $model, $method));
+>>>>>>> laraxot/dev
             } catch (\Exception $e) {
                 // Se c'è un errore nell'analisi del metodo, lo ignoriamo e passiamo al successivo
                 continue;
@@ -117,15 +121,25 @@ class GetPropertiesFromMethodsByModelAction
      * @param  string  $codeStr  Il codice da analizzare
      * @param  Model  $model  Il modello
      * @param  string  $method  Il nome del metodo
+<<<<<<< HEAD
      * @param  array<string, string>  &$data  L'array in cui salvare i dati estratti
      */
     private function extractBelongsToRelations(string $codeStr, Model $model, string $method, array &$data): void
+=======
+     * @return array<string, string> Chiave esterna => espressione factory del model correlato
+     */
+    private function extractBelongsToRelations(string $codeStr, Model $model, string $method): array
+>>>>>>> laraxot/dev
     {
         $search = '$this->belongsTo(';
         $pos = mb_stripos($codeStr, $search);
 
         if ($pos === false) {
+<<<<<<< HEAD
             return; // Il metodo non contiene una relazione belongsTo
+=======
+            return []; // Il metodo non contiene una relazione belongsTo
+>>>>>>> laraxot/dev
         }
 
         try {
@@ -134,7 +148,11 @@ class GetPropertiesFromMethodsByModelAction
 
             // Verifichiamo che sia effettivamente una relazione
             if (! $relationObj instanceof Relation) {
+<<<<<<< HEAD
                 return;
+=======
+                return [];
+>>>>>>> laraxot/dev
             }
 
             // Verifichiamo che il metodo getForeignKeyName esista
@@ -149,6 +167,7 @@ class GetPropertiesFromMethodsByModelAction
             // Otteniamo la classe relazionata
             $relatedClass = get_class($relationObj->getRelated());
 
+<<<<<<< HEAD
             // Chiamiamo GetFakerAction con parametri corretti
             $fakerAction = app(GetFakerAction::class);
             // Assert::isCallable rimosso - metodo verificato a compile time
@@ -157,6 +176,13 @@ class GetPropertiesFromMethodsByModelAction
         } catch (\Exception $e) {
             // In caso di errore, ignoriamo la relazione
             return;
+=======
+            // La colonna FK viene valorizzata con la factory del model correlato.
+            return [$foreignKeyName => 'factory('.$relatedClass.'::class)'];
+        } catch (\Exception $e) {
+            // In caso di errore, ignoriamo la relazione
+            return [];
+>>>>>>> laraxot/dev
         }
     }
 }

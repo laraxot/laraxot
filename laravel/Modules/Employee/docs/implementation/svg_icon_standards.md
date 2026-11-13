@@ -1,3 +1,9 @@
+---
+title: "Employee - SVG_ICON_STANDARDS"
+module: Employee
+bmad: true
+status: active
+---
 # Standard Icone SVG - Modulo Employee
 
 ## Panoramica

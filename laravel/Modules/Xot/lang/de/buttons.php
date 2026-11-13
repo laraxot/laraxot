@@ -34,6 +34,10 @@ return [
         'save' => 'Speichern',
         'view' => 'Anzeigen',
     ],
+<<<<<<< HEAD
+=======
+    'back' => 'Zurück',
+>>>>>>> laraxot/dev
     'navigation' => [
         'label' => 'Missing Navigation Label',
         'plural_label' => 'Missing Navigation Plural Label',
@@ -43,8 +47,11 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
+<<<<<<< HEAD
     'fields' => [
     ],
     'actions' => [
     ],
+=======
+>>>>>>> laraxot/dev
 ];

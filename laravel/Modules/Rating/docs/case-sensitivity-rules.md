@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Case Sensitivity Rules - Rating Module"
 type: rule
 tags: [case, sensitivity, rules, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "case sensitivity rules"
 related:
   - "./changelog.md"
+status: draft
 ---
 
 # Case Sensitivity Rules - Rating Module

@@ -16,9 +16,9 @@ related:
   - "./component-verification.md"
   - "./dependency-rules.md"
   - "./dependency.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Case Sensitivity Rules - User Module
 
 ## Problema / Problem
@@ -26,7 +26,6 @@ related:
 **NON possono esistere file con lo stesso nome che differiscono solo per maiuscole/minuscole nella stessa directory.**
 
 Riferimento completo: [Xot Module Case Sensitivity Rules](../../Xot/docs/case-sensitivity-rules.md)
->>>>>>> 87273113 (.)
 Riferimento completo: [Xot Module Case Sensitivity Rules](../../xot/docs/case-sensitivity-rules.md)
 
 ## File/Directory Rimossi da User Module
@@ -122,7 +121,7 @@ Il modulo User aveva la struttura più complessa di duplicati:
 - 2023_01_01_000000_create_oauth_auth_codes_table.php
 - 2023_01_01_000002_create_team_invitations_table.php
 - 2023_01_01_000003_create_oauth_access_tokens_table.php
-- 2023_01_01_000003_create_socialite_user_table.php
+- 2026_11_12_120002_create_socialite_users_table.php
 - 2023_01_01_000003_create_tenant_user_table.php
 - 2023_01_01_000004_create_device_user_table.php
 - 2023_01_01_000004_create_oauth_clients_table.php
@@ -191,7 +190,4 @@ grep -r "Database/seeders" .
   - 23 migration files
   - 5 seeder files
   - Total: 57 duplicate files eliminated
->>>>>>> 87273113 (.)
-=======
   - Total: 57 duplicate files eliminated
->>>>>>> laraxot/dev

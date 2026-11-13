@@ -16,6 +16,7 @@ related:
   - "./commit-message.md"
   - "./configuration.md"
   - "./docs-governance.md"
+status: draft
 ---
 
 # Design Comuni Italia - BMad Master Plan
@@ -307,10 +308,10 @@ laravel/Modules/Cms/docs/
 ```
 laravel/Themes/Sixteen/docs/
 ├── README.md
-├── LAYOUT_ARCHITECTURE_AND_NAMESPACE.md  ← Layout hierarchy
+├── layout-architecture-and-namespace.md  ← Layout hierarchy
 ├── theme-detection-system.md             ← Theme detection
 ├── VITE_BUILD_SYSTEM.md                  ← Vite build process
-├── DESIGN_COMUNI_HTML_REPLICATION.md     ← HTML analysis
+├── design-comuni-html-replication.md     ← HTML analysis
 ├── DESIGN_COMUNI_AMMINISTRAZIONE_analysis.md
 └── prompts/
     └── replikate.txt                     ← Replication prompt
@@ -361,7 +362,7 @@ _bmad-output/
 
 - → [Master Index](../../../docs/project/module-docs-index.md)
 - → [Theme Detection](../../../docs/project/theme-detection-system.md)
-- → [Layout Architecture](LAYOUT_ARCHITECTURE_AND_NAMESPACE.md)
+- → [Layout Architecture](layout-architecture-and-namespace.md)
 ```
 
 ### Link Pattern 3: Master Index → Module/Theme
@@ -375,9 +376,9 @@ _bmad-output/
 - **Files:** 221
 - **Index:** [Sixteen Docs Index](Themes/Sixteen/docs/00-index.md)
 - **Key Topics:**
-  - [Layout Architecture](Themes/Sixteen/docs/LAYOUT_ARCHITECTURE_AND_NAMESPACE.md)
+  - [Layout Architecture](Themes/Sixteen/docs/layout-architecture-and-namespace.md)
   - [Theme Detection](docs/project/theme-detection-system.md)
-  - [Design Comuni Replication](Themes/Sixteen/docs/DESIGN_COMUNI_HTML_REPLICATION.md)
+  - [Design Comuni Replication](Themes/Sixteen/docs/design-comuni-html-replication.md)
 ```
 
 ---
@@ -596,7 +597,8 @@ pages/tests/argomenti.blade.php     # NO
 
 - [Master Index](docs/project/module-docs-index.md)
 - [Theme Detection](docs/project/theme-detection-system.md)
-- [Layout Architecture](Themes/Sixteen/docs/LAYOUT_ARCHITECTURE_AND_NAMESPACE.md)
+- [Theme Detection](theme-detection-system.md)
+- [Layout Architecture](Themes/Sixteen/docs/layout-architecture-and-namespace.md)
 - [Page Component](Modules/Cms/docs/PAGE_COMPONENT_architecture.md)
 
 ### External Resources

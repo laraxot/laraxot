@@ -1,32 +1,15 @@
 {{-- LoginWidget — vestito Sixteen; logica in Modules\User\Filament\Widgets\Auth\LoginWidget --}}
 <div class="space-y-6">
-    @php
-        $loginError = $errors->first('data.email') ?: $errors->first('email');
-    @endphp
+    {{-- Esito neutro o positivo (es. "Password cambiata") e riepilogo degli errori: password errata (data.email), campi vuoti, ritorno
+         da Google rifiutato (email). Una sola regione role="status" sempre presente, un solo avviso role="alert" (DCP-290).
+         Il vestito sta in components/auth/assets.blade.php: le utility Tailwind sono spente dentro data-dc. --}}
+    <div role="status" aria-live="polite">
+        @if (session('status'))
+            <p class="auth-status">{{ session('status') }}</p>
+        @endif
+    </div>
 
-    @if ($loginError)
-        <div
-            class="rounded-xl border-2 border-red-300 bg-red-50 px-4 py-4 shadow-sm"
-            role="alert"
-            aria-live="assertive"
-        >
-            <div class="flex items-start gap-3">
-                <span class="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-700" aria-hidden="true">
-                    <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M18 10A8 8 0 114.293 4.293 8 8 0 0118 10zm-8.75-3.25a.75.75 0 011.5 0v3.5a.75.75 0 01-1.5 0v-3.5zm.75 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                    </svg>
-                </span>
-                <div class="min-w-0">
-                    <p class="text-sm font-semibold text-red-800">
-                        {{ __('user::login.actions.login.error') }}
-                    </p>
-                    <p class="mt-1 text-sm text-red-700">
-                        {{ $loginError }}
-                    </p>
-                </div>
-            </div>
-        </div>
-    @endif
+    <x-auth.error-summary />
 
     <form
         wire:submit="login"
@@ -34,12 +17,9 @@
         aria-labelledby="auth-login-heading"
         novalidate
     >
-        <div
-            @class([
-                'fo-filament-form-shell rounded-xl border border-slate-200 p-4 transition-colors',
-                'border-red-300 bg-red-50/40' => (bool) $loginError,
-            ])
-        >
+        {{-- Niente riquadro annidato (le utility border/p-4 erano dipinte anche dentro data-dc): i campi hanno la colonna e l'aspetto
+             della registrazione (DCP-290). L'errore sta nel riepilogo e sul campo, non sul colore del contenitore. --}}
+        <div class="fo-filament-form-shell">
             {{ $this->form }}
         </div>
 
@@ -48,8 +28,20 @@
             color="primary"
             class="w-full"
             wire:loading.attr="disabled"
+            wire:loading.attr="aria-busy"
+            wire:target="login"
+            aria-describedby="login-submit-status"
         >
-            {{ __('user::auth.login.submit.text') }}
+            <span wire:loading wire:target="login" class="inline-flex items-center gap-2" role="status" aria-live="polite">
+                <x-filament::icon icon="heroicon-o-arrow-path" class="h-5 w-5 animate-spin motion-reduce:animate-none" aria-hidden="true" />
+                {{ __('user::auth.login.logging_in.text') }}
+            </span>
+            <span wire:loading.remove wire:target="login">
+                {{ __('user::login.actions.login.label') }}
+            </span>
         </x-filament::button>
+        <span id="login-submit-status" class="sr-only visually-hidden" wire:loading wire:target="login" role="status" aria-live="polite">
+            {{ __('user::auth.login.logging_in.text') }}
+        </span>
     </form>
 </div>

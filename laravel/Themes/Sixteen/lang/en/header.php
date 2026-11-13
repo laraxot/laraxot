@@ -3,6 +3,10 @@
 declare(strict_types=1);
 
 return [
+    // Brand name for <x-cms::head> (pub_theme::header.brand.name): de/es inherit from en.
+    'brand' => [
+        'name' => 'FixCity',
+    ],
     'guest' => [
         'login' => [
             'label' => 'Sign in',
@@ -22,6 +26,8 @@ return [
     ],
 
     'user' => [
+        'unread_notifications' => 'unread notifications',
+        'personal_area' => 'Personal area',
         'welcome' => [
             'label' => 'Hello, :name',
             'placeholder' => '',
@@ -35,6 +41,11 @@ return [
             ],
         ],
         'dropdown' => [
+            // DCP-106: voci che portano a pagine reali dell'area personale (area-personale/{pratiche,seguite,notifiche,impostazioni})
+            'my_reports' => ['label' => 'My reports'],
+            'followed_reports' => ['label' => 'Reports I follow'],
+            'notification_center' => ['label' => 'Notifications'],
+            'settings_privacy' => ['label' => 'Settings and privacy'],
             'my_services' => [
                 'label' => 'My services',
                 'placeholder' => '',

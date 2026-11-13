@@ -60,6 +60,15 @@ return [
         'private_key' => 'Private Key',
         'present' => 'Present',
         'missing' => 'Missing',
+        'completed' => [
+            'message' => 'Completed',
+        ],
+        'failed' => [
+            'message' => 'Failed',
+        ],
+        'running' => [
+            'message' => 'Running...',
+        ],
     ],
     'messages' => [
         'client_created' => 'Client created successfully',
@@ -69,5 +78,25 @@ return [
         'command_failed' => 'Command execution failed',
         'command_error' => 'Error during command execution',
         'credentials_created' => 'Credentials created successfully',
+    ],
+    'view' => [
+        'running_notice' => [
+            'message' => 'The command is running. Please do not close this window.',
+        ],
+        'actions_disabled' => [
+            'description' => 'Other actions are disabled until the command completes.',
+        ],
+        'running_command' => [
+            'message' => 'Running command: php artisan',
+        ],
+        'waiting_output' => [
+            'message' => 'Waiting for output...',
+        ],
+        'select_command' => [
+            'label' => 'Select a command from the header to begin.',
+        ],
+        'scroll' => [
+            'helper_text' => 'Use mouse wheel to scroll output.',
+        ],
     ],
 ];

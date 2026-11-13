@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Passport\AuthCode;
 use Laravel\Passport\Client;
@@ -19,7 +18,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
- * @param class-string $wrapperClass
+ * @param  class-string  $wrapperClass
  */
 function passportWrapperConnectionName(string $wrapperClass): ?string
 {
@@ -32,12 +31,12 @@ function passportWrapperConnectionName(string $wrapperClass): ?string
         $property->setAccessible(true);
         $connection = $property->getValue($reflection->newInstanceWithoutConstructor());
 
-        if (is_string($connection) && '' !== $connection) {
+        if (is_string($connection) && $connection !== '') {
             return $connection;
         }
     }
 
-    $instance = new $wrapperClass();
+    $instance = new $wrapperClass;
 
     if (! $instance instanceof Model) {
         return null;
@@ -62,6 +61,7 @@ test('passport eloquent models have oauth wrappers in user module', function ():
     ];
 
     foreach ($expectedWrappers as $passportClass => $wrapperClass) {
+        Assert::assertTrue((new ReflectionClass($wrapperClass))->isSubclassOf($passportClass), $wrapperClass.' must extend '.$passportClass);
         Assert::assertSame('user', passportWrapperConnectionName($wrapperClass));
     }
 });

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 module: Activity
 topic: METODI_DUPLICATI_ANALISI
 tags: [metodi-duplicati, refactoring]
@@ -207,17 +206,3 @@ _Report generato automaticamente — fonte: `/tmp/metodi_duplicati_domain_report
 =======
 See canonical documentation: ../../../Themes/docs/shared-components/METODI_DUPLICATI_ANALISI.md
 >>>>>>> .merge_file_7bwvH3
-=======
-module: theme
-topic: metodi_duplicati_analisi
-canonical: ../../../Themes/docs/shared-components/METODI_DUPLICATI_ANALISI.md
-# 🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION
-
-**Powered by**: Super Mucca AI 🐄✨  
-**Versione**: 2.0 ULTIMATE  
-**Confidenza**: 99.9% (Dati Reali dal Codice)
-
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/METODI_DUPLICATI_ANALISI.md
->>>>>>> 13cf1831 (.)

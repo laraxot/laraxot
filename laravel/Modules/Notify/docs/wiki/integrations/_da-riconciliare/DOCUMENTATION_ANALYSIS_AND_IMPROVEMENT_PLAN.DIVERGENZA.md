@@ -1,10 +1,15 @@
 ---
+qmd: "DOCUMENTATION ANALYSIS AND IMPROVEMENT PLAN.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: DOCUMENTATION_ANALYSIS_AND_IMPROVEMENT_PLAN.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: documentation-analysis-and-improvement-plan.divergenza.md
 ---
 
 # Divergenza: `DOCUMENTATION_ANALYSIS_AND_IMPROVEMENT_PLAN.md`

@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Filament"
+type: index
+status: draft
+updated: 2026-10-20
+tags: [docs, xot, filament]
+qmd: "filament xot"
+---
+>>>>>>> laraxot/dev
 # Filament
 
 Questa cartella contiene la documentazione relativa all'implementazione di Filament nel progetto.
@@ -11,7 +22,11 @@ Questa cartella contiene la documentazione relativa all'implementazione di Filam
 
 ## Note
 
+<<<<<<< HEAD
 Questa documentazione si applica a tutti i moduli che utilizzano Filament per il backend.
+=======
+Questa documentazione si applica a tutti i moduli che utilizzano Filament per il backend. 
+>>>>>>> laraxot/dev
 
 ## Collegamenti tra versioni di README.md
 * [README.md](bashscripts/docs/README.md)
@@ -117,7 +132,11 @@ Questa documentazione si applica a tutti i moduli che utilizzano Filament per il
 - Aggiornare la documentazione ogni volta che si corregge questo errore.
 
 ### Collegamento
+<<<<<<< HEAD
 - Vedi anche: [<nome progetto>/project_docs/filament-best-practices.mdc](../../../<nome progetto>/project_docs/filament-best-practices.mdc)
+=======
+- Vedi anche: [SaluteOra/docs/filament-best-practices.mdc](../../../SaluteOra/docs/filament-best-practices.mdc)
+>>>>>>> laraxot/dev
 
 ### Checklist
 - [ ] Nessuna closure void restituisce un valore
@@ -151,5 +170,11 @@ $prefix = static::$translationPrefix;
 ```
 
 ## Moduli che fanno riferimento a questa regola
+<<<<<<< HEAD
 - [Patient: DoctorResource](../../../patient/project_docs/filament/resources/doctor-resource.md)
 // Aggiungere qui altri moduli se necessario
+=======
+- [Patient: DoctorResource](../../../Patient/docs/filament/resources/doctor-resource.md)
+// Aggiungere qui altri moduli se necessario
+
+>>>>>>> laraxot/dev

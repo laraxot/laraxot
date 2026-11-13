@@ -9,15 +9,17 @@ use Modules\Media\Models\MediaConvert;
 use Modules\Media\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+use function Safe\class_parents;
+
 uses(TestCase::class)->group('no-media-db');
 
 describe('MediaConvert Model', function (): void {
     it('extends BaseModel', function (): void {
-        Assert::assertInstanceOf(BaseModel::class, new MediaConvert());
+        Assert::assertArrayHasKey(BaseModel::class, class_parents(MediaConvert::class));
     });
 
     it('has correct fillable fields', function (): void {
-        $model = new MediaConvert();
+        $model = new MediaConvert;
 
         expect($model->getFillable())->toContain('media_id');
         expect($model->getFillable())->toContain('format');
@@ -36,7 +38,7 @@ describe('MediaConvert Model', function (): void {
     });
 
     it('has media relationship', function (): void {
-        $model = new MediaConvert();
+        $model = new MediaConvert;
 
         expect((new \ReflectionClass($model))->hasMethod('media'))->toBeTrue();
     });
@@ -54,7 +56,7 @@ describe('MediaConvert Model', function (): void {
     });
 
     it('has connection', function (): void {
-        $model = new MediaConvert();
+        $model = new MediaConvert;
 
         expect($model->getConnectionName())->toBe('media');
     });

@@ -1,9 +1,26 @@
+---
+title: "vite build configuration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "vite build configuration"
+issues: []
+discussions: []
+status: draft
+---
+
 # Geo Module Vite Build Configuration
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 > Configurazione Vite 7.x + Tailwind 4.x per moduli Laraxot
 
 ---
-
 ## Stato Attuale
 
 ✅ **Build funzionante** - 2026-04-27
@@ -175,7 +192,7 @@ npm run build
 ### 4. Copy to Public (opzionale)
 
 ```bash
-npm run copy
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 # Copia in public_html/assets/geo/
 ```
 

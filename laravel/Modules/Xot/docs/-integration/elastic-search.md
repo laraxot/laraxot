@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "elastic_search"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "elastic_search xot"
+---
+>>>>>>> laraxot/dev
 # elastic_search
 
 <!-- Contenuto migrato da _docs/elastic_search.txt -->

@@ -1,3 +1,9 @@
+---
+title: "Employee - ARCHITECTURE"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - System Architecture
 
 ## 🏗️ Architectural Overview

@@ -1,9 +1,16 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "uppercase root dir config regression.story"
+issues: []
+discussions: []
 id: story-uppercase-root-dir-config-regression
 slug: uppercase-root-dir-config-regression
 status: investigated
 priority: medium
-title: Regressione — Modules/Job/Config (maiuscolo) ricomparso nella root del modulo
+title: Regressione: Modules/Job/Config (maiuscolo) ricomparso nella root del modulo
 created_at: 2026-09-22
 updated_at: 2026-09-22
 bmad_phase: analysis
@@ -15,7 +22,7 @@ module: Job
 ## Contesto
 
 Audit trasversale (2026-09-22, swarm parallelo su tutti i Moduli/Temi) per la
-regola "nessuna cartella con maiuscole nella root di un modulo" — SSoT:
+regola "nessuna cartella con maiuscole nella root di un modulo": SSoT:
 `Modules/Xot/docs/case-sensitivity-rules.md`. Trovata `Modules/Job/Config/`
 (maiuscolo) nella root, accanto alla `Modules/Job/config/` (minuscolo) già
 corretta.
@@ -38,9 +45,9 @@ corretta.
 
 ## Stato attuale
 
-- `Modules/Job/config/config.php` — **canonico**, contenuto reale
+- `Modules/Job/config/config.php`: **canonico**, contenuto reale
   (`'name' => 'Job', 'icon' => 'job-icon'`), nessun riferimento rotto.
-- `Modules/Job/Config/config.php` — **stub vuoto** (`return [];`), nessun
+- `Modules/Job/Config/config.php`: **stub vuoto** (`return [];`), nessun
   riferimento nel codice (grep su `Modules/Job` e su `composer.json` /
   `module.json`: zero hit), quasi certamente scaffolding morto rigenerato per
   errore.

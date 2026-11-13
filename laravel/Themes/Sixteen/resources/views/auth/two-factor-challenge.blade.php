@@ -9,11 +9,11 @@
 
         <div x-data="{ recovery: false }">
             <div class="mb-4 text-sm text-gray-600 dark:text-gray-400" x-show="! recovery">
-                {{ __('Please confirm access to your account by entering the authentication code provided by your authenticator application.') }}
+                {{ __('pub_theme::auth_pages.two_factor_challenge.please_confirm_access_to_your_account_2.message') }}
             </div>
 
             <div class="mb-4 text-sm text-gray-600 dark:text-gray-400" x-cloak x-show="recovery">
-                {{ __('Please confirm access to your account by entering one of your emergency recovery codes.') }}
+                {{ __('pub_theme::auth_pages.two_factor_challenge.please_confirm_access_to_your_account.message') }}
             </div>
 
             <x-validation-errors class="mb-4" />
@@ -23,12 +23,12 @@
                 @csrf
 
                 <div class="mt-4" x-show="! recovery">
-                    <x-label for="code" value="{{ __('Code') }}" />
+                    <x-label for="code" value="{{ __('pub_theme::auth_pages.two_factor_challenge.code.label') }}" />
                     <x-input id="code" class="block mt-1 w-full" type="text" inputmode="numeric" name="code" autofocus x-ref="code" autocomplete="one-time-code" />
                 </div>
 
                 <div class="mt-4" x-cloak x-show="recovery">
-                    <x-label for="recovery_code" value="{{ __('Recovery Code') }}" />
+                    <x-label for="recovery_code" value="{{ __('pub_theme::auth_pages.two_factor_challenge.recovery_code.label') }}" />
                     <x-input id="recovery_code" class="block mt-1 w-full" type="text" name="recovery_code" x-ref="recovery_code" autocomplete="one-time-code" />
                 </div>
 
@@ -39,7 +39,7 @@
                                         recovery = true;
                                         $nextTick(() => { $refs.recovery_code.focus() })
                                     ">
-                        {{ __('Use a recovery code') }}
+                        {{ __('pub_theme::auth_pages.two_factor_challenge.use_a_recovery_code.label') }}
                     </button>
 
                     <button type="button" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 underline cursor-pointer"
@@ -49,11 +49,11 @@
                                         recovery = false;
                                         $nextTick(() => { $refs.code.focus() })
                                     ">
-                        {{ __('Use an authentication code') }}
+                        {{ __('pub_theme::auth_pages.two_factor_challenge.use_an_authentication_code.label') }}
                     </button>
 
                     <x-button class="ms-4">
-                        {{ __('Log in') }}
+                        {{ __('pub_theme::auth_pages.two_factor_challenge.log_in.label') }}
                     </x-button>
                 </div>
             </form>

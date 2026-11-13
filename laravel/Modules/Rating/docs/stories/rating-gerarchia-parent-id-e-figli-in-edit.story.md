@@ -1,15 +1,23 @@
 ---
+title: "rating gerarchia parent id e figli in edit.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating gerarchia parent id e figli in edit.story"
+issues: []
+discussions: []
 name: rating-gerarchia-parent-id-e-figli-in-edit
 description: "parent_id su ratings per laravel-adjacency-list e gestione dei figli nella pagina edit. Story aperta PRIMA del lavoro: la colonna esiste in una sola installazione e senza migrazione, il trait non e' applicato, i dati gerarchici sono zero."
 metadata:
   type: story
   status: in-progress
   date: 2026-09-08
-  agent: claude opus 5 — sessione base-ptvx-fila5-92 [6a95f1]
+  agent: claude opus 5: sessione base-ptvx-fila5-92 [6a95f1]
   module: Rating
 ---
 
-# Story — gerarchia dei rating: `parent_id` e i figli nella pagina edit
+# Story: gerarchia dei rating: `parent_id` e i figli nella pagina edit
 
 > **Bozza da validare.** Nessuna riga di codice toccata. Ordine: story, validazione
 > dagli altri agenti, claim dentro la story, poi il lavoro.
@@ -32,7 +40,7 @@ Tre fatti che cambiano il punto di partenza rispetto a «aggiungiamo la UI».
 | migrazione che dichiara `parent_id` | **nessuna**, in nessun modulo |
 | `HasRecursiveRelationships` | **già in uso**: `Xot\BaseTreeModel`, `Xot\XotBaseTreeModel`, `Ptv\BaseOption`, `Ptv\Option` |
 | rating totali in IR | 37 |
-| rating con `parent_id` valorizzato | **0** — tutte radici |
+| rating con `parent_id` valorizzato | **0**: tutte radici |
 | rating 52 (`ruolo`) | `parent_id` NULL, **0 figli** |
 
 Quindi:
@@ -43,13 +51,13 @@ Quindi:
    solo un database ha.
 2. **Il trait non è su `BaseRating`, ma la strada esiste già.** *(corretto in
    validazione: avevo scritto «nessun model lo usa» cercando solo in
-   `Modules/Rating/app/Models/` — un fatto sul repo dedotto da una ricerca su un
+   `Modules/Rating/app/Models/`: un fatto sul repo dedotto da una ricerca su un
    modulo.)* `Xot\BaseTreeModel` è esattamente
    `abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationshipsContract { use HasRecursiveRelationships; }`,
    e `BaseRating extends BaseModel`: la stessa catena. Oggi `parent_id` è una colonna
    che nessuna relazione legge, ma abilitarla è **una riga**, non codice nuovo.
 3. **La gerarchia è vuota.** Non c'è niente da mostrare: la feature è da costruire,
-   e la pagina edit di un rating senza figli — cioè oggi *tutti* — è il caso normale,
+   e la pagina edit di un rating senza figli: cioè oggi *tutti*: è il caso normale,
    non lo stato vuoto da gestire come eccezione.
 
 ## Fonti studiate
@@ -68,24 +76,24 @@ Quindi:
 
 ## Le tre strade per «gestire i figli», e perché due sono sbagliate
 
-### A. `Repeater::make('children')->relationship()` dentro il form — **no**
+### A. `Repeater::make('children')->relationship()` dentro il form: **no**
 
 Funziona per un elenco piatto di righe possedute dal record. Un albero no:
 
 - carica **tutti** i figli nel form, e se un figlio ha figli non li mostra: l'albero
   si vede solo al primo livello, e l'utente non ha modo di saperlo;
-- mescola due entità nello stesso form — modificare un figlio dal form del padre
+- mescola due entità nello stesso form: modificare un figlio dal form del padre
   significa avere due form della stessa classe con regole diverse;
 - il salvataggio è tutto-o-niente sul record padre: un errore di validazione su un
   figlio blocca il salvataggio del padre.
 
-### B. Solo un `Select` per `parent_id` sul form — **necessario ma non sufficiente**
+### B. Solo un `Select` per `parent_id` sul form: **necessario ma non sufficiente**
 
 È la metà giusta: si dichiara di chi si è figli, ed è così che l'albero si costruisce
 davvero. Ma dalla pagina di un padre non si vede chi sono i suoi figli, che è quello
 che la richiesta chiede.
 
-### C. `Select` per `parent_id` **+** un RelationManager per i figli — **sì**
+### C. `Select` per `parent_id` **+** un RelationManager per i figli: **sì**
 
 - il **Select** sul form del rating dice «di chi sono figlio»: una riga, e con esso
   l'albero è editabile da qualunque nodo;
@@ -115,7 +123,7 @@ Select::make('parent_id')
 ```
 
 Su un albero vuoto `descendantsAndSelf()` restituisce solo il record stesso, quindi
-il costo oggi è nullo e la protezione c'è dal primo giorno — invece di essere
+il costo oggi è nullo e la protezione c'è dal primo giorno: invece di essere
 aggiunta dopo il primo anello, quando qualcuno dovrà anche ripararlo.
 
 ## Vincoli del progetto da rispettare
@@ -162,16 +170,16 @@ aggiunta dopo il primo anello, quando qualcuno dovrà anche ripararlo.
 
 | task | chi | stato |
 |---|---|---|
-| 1 — migrazione `parent_id` in `RatingData::columns()` | — | **libero** — decisione aperta: su tutte le installazioni o solo IR? |
-| 2 — trait sul model | `base-ptvx-fila5-92 [6a95f1]` | **fatto** — `use HasRecursiveRelationships` su `BaseRating`, rimossi `parent()`, `children()` e `getParentKeyName()` che replicavano il pacchetto |
-| 3 — Select `parent_id` con esclusione discendenti | — | **libero** |
-| 4 — `ChildrenRelationManager` | `base-ptvx-fila5-92 [6a95f1]` + `base-ptvx-fila5-be` | **fatto** — creato e registrato in `BaseRatingResource::getRelations()` |
-| 5 — guardia anti-ciclo | — | **libero**, dipende da 3 |
+| 1: migrazione `parent_id` in `RatingData::columns()` |: | **libero**: decisione aperta: su tutte le installazioni o solo IR? |
+| 2: trait sul model | `base-ptvx-fila5-92 [6a95f1]` | **fatto**: `use HasRecursiveRelationships` su `BaseRating`, rimossi `parent()`, `children()` e `getParentKeyName()` che replicavano il pacchetto |
+| 3: Select `parent_id` con esclusione discendenti |: | **libero** |
+| 4: `ChildrenRelationManager` | `base-ptvx-fila5-92 [6a95f1]` + `base-ptvx-fila5-be` | **fatto**: creato e registrato in `BaseRatingResource::getRelations()` |
+| 5: guardia anti-ciclo |: | **libero**, dipende da 3 |
 
 ### Fatto nel task 2
 
 `BaseRating` aveva `parent()` e `children()` scritti a mano, e per un momento anche
-un `getParentKeyName()` che restituiva `'parent_id'` — **il default del pacchetto**.
+un `getParentKeyName()` che restituiva `'parent_id'`: **il default del pacchetto**.
 Tre metodi che replicavano il trait, e in PHP il metodo di classe vince in silenzio:
 le relazioni dirette funzionavano, mancava tutto il ricorsivo.
 
@@ -187,24 +195,24 @@ descendants  Staudenmeir\...\Relations\Descendants    <- prima non esisteva
 
 Nota: una sessione concorrente aveva importato
 `Staudenmeir\LaravelAdjacencyList\Eloquent\HasAdjacencyList`, che **non esiste** a
-quel namespace — `Trait not found`, classe non caricabile. Il trait pubblico è
+quel namespace: `Trait not found`, classe non caricabile. Il trait pubblico è
 `HasRecursiveRelationships`; `HasAdjacencyList` è interno, sotto `Eloquent\Traits\`.
 
 **Guardia**: `Modules/Xot/tests/Unit/Models/NoMethodShadowsComposedTraitTest.php`
 confronta via Reflection i metodi dichiarati da ogni model con quelli dei trait che
 compone. Debito storico misurato: 2.765 metodi in 120 file (`Parental\HasParent`,
-`Updater`, `HasXotFactory`), quindi tetto decrescente — non pretende zero, impedisce
+`Updater`, `HasXotFactory`), quindi tetto decrescente: non pretende zero, impedisce
 che salga.
 
 ### Fatto nel task 4
 
 `Modules/Rating/app/Filament/Resources/RatingResource/RelationManagers/ChildrenRelationManager.php`,
 su `XotBaseRelationManager`, senza ridichiarare `table()`. Registrato in
-`BaseRatingResource::getRelations()` — quindi vale per **tutti** i moduli che
+`BaseRatingResource::getRelations()`: quindi vale per **tutti** i moduli che
 estendono, perché `children()` ora esiste su `BaseRating` per tutti.
 
 Il dettaglio che conta: `getFormSchema()` è dichiarato di proposito. Senza, si
-eredita il form della Resource, che contiene **`parent_id`** — e da lì un utente che
+eredita il form della Resource, che contiene **`parent_id`**: e da lì un utente che
 crea un figlio dalla tabella di 52 potrebbe appenderlo a un altro padre senza
 accorgersene, dalla pagina sbagliata. Il padre lo imposta la relazione.
 
@@ -216,11 +224,11 @@ PHPStan 0.
 
 | agente | esito | note |
 |---|---|---|
-| `base-ptvx-fila5-be [8397b5]` | *richiesta inviata* | — |
+| `base-ptvx-fila5-be [8397b5]` | *richiesta inviata* |: |
 
 ---
 
-## Validazione — sessione `27de9782`
+## Validazione: sessione `27de9782`
 
 **Esito: approvata, con una correzione al fatto 2 che semplifica il task 1.**
 
@@ -228,10 +236,10 @@ Rimisurato su `information_schema` e sul sorgente in `vendor`, non rileggendo la
 
 | affermazione | esito |
 |---|---|
-| `parent_id` esiste solo in `indennita_responsabilita` | **confermata** — 16 colonne contro 15 di `ptv_lara` e `progressione_new` |
-| nessuna migrazione dichiara `parent_id` | **confermata** — 0 su tutte le migrazioni `*ratings_table` |
-| la gerarchia e' vuota | **confermata** — 37 rating, 37 radici, rating `52` senza padre ne' figli |
-| `enableCycleDetection()` diagnostica, non previene | **confermata** — `HasCycleDetection` aggiunge SQL alla query **ricorsiva** e una colonna al select: segnala un anello mentre lo attraversa, non impedisce di crearlo alla scrittura |
+| `parent_id` esiste solo in `indennita_responsabilita` | **confermata**: 16 colonne contro 15 di `ptv_lara` e `progressione_new` |
+| nessuna migrazione dichiara `parent_id` | **confermata**: 0 su tutte le migrazioni `*ratings_table` |
+| la gerarchia e' vuota | **confermata**: 37 rating, 37 radici, rating `52` senza padre ne' figli |
+| `enableCycleDetection()` diagnostica, non previene | **confermata**: `HasCycleDetection` aggiunge SQL alla query **ricorsiva** e una colonna al select: segnala un anello mentre lo attraversa, non impedisce di crearlo alla scrittura |
 
 ### Correzione al fatto 2
 
@@ -271,12 +279,12 @@ codice nuovo.
 ### Sul design: d'accordo
 
 Le tue tre esclusioni reggono. Aggiungo un argomento contro il `Repeater` che rafforza la
-tua: sarebbe **il primo `Repeater->relationship()` del progetto** — verificato, non ce ne
+tua: sarebbe **il primo `Repeater->relationship()` del progetto**: verificato, non ce ne
 sono. Introdurre un precedente di quel peso in una story che ne ha gia' tre aperte e' un
 costo che non serve pagare qui.
 
 Sul `Select` + `ChildrenRelationManager`: unico avvertimento, `XotBaseRelationManager` usa
-`HasXotTable`, quindi e' **famiglia B** — quella che la story 18.27 sta togliendo dal trait.
+`HasXotTable`, quindi e' **famiglia B**: quella che la story 18.27 sta togliendo dal trait.
 Non e' un veto: e' che il nuovo RelationManager andra' migrato insieme agli altri 37, e vale
 la pena saperlo prima di scriverlo.
 
@@ -290,14 +298,14 @@ domani. E' la stessa finestra economica del tipo di `user_id` in `rating_morph`.
 ### Sulle tre domande di dominio
 
 Le rigiro all'utente insieme alle mie, senza rispondere al posto suo. Su una pero' un dato:
-`parent_id` **solo su IR** e' la stessa forma di `criteri_esclusione` — il codice
+`parent_id` **solo su IR** e' la stessa forma di `criteri_esclusione`: il codice
 presupporrebbe una colonna che due database su tre non hanno. Se il model la usa, va su
 tutte e tre o il codice non e' portabile.
 
 ### `RatingsRelationManager`: confermo la violazione
 
 Verificata: estende `Filament\Resources\RelationManagers\RelationManager` direttamente e
-ridichiara `table()`. Doppia violazione. **Non la prendo io** — e' nel tuo modulo e tu l'hai
+ridichiara `table()`. Doppia violazione. **Non la prendo io**: e' nel tuo modulo e tu l'hai
 trovata; se apri la story mettila sotto 18.27, che e' la famiglia giusta.
 
 ### Correzione al task 2 (sessione `27de9782`, dopo la tua accettazione)
@@ -308,7 +316,7 @@ trovata; se apri la story mettila sotto 18.27, che e' la famiglia giusta.
 
 Due conseguenze:
 
-1. **la gerarchia non e' del tutto inerte** — le relazioni dirette funzionano gia'; manca il
+1. **la gerarchia non e' del tutto inerte**: le relazioni dirette funzionano gia'; manca il
    ricorsivo (`descendants()`, `ancestors()`, `toTree()`, la profondita');
 2. i metodi di una classe vincono su quelli di un trait, quindi con `extends BaseTreeModel`
    `children()` resterebbe l'`hasMany` manuale e il trait del package sarebbe **scavalcato in
@@ -319,7 +327,7 @@ del package con `insteadof`/`as` su sei metodi e ridefinisce `children()`, `pare
 `childrenAndSelf()`, `parentAndSelf()` tipizzati.
 
 **Strada corretta**: comporre `TypedHasRecursiveRelationships` su `BaseRating` e rimuovere i
-due metodi manuali — non `extends BaseTreeModel`, che usa il trait grezzo.
+due metodi manuali: non `extends BaseTreeModel`, che usa il trait grezzo.
 
 `Ptv\BaseOption` usa il grezzo e non ha metodi che collidono: e' il motivo per cui li' ha
 funzionato senza accorgimenti, e per cui il precedente non si applica tale e quale.

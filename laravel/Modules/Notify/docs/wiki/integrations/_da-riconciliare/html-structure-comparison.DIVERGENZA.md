@@ -1,10 +1,15 @@
 ---
+qmd: "html structure comparison.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: html-structure-comparison.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: html-structure-comparison.divergenza.md
 ---
 
 # Divergenza: `html-structure-comparison.md`

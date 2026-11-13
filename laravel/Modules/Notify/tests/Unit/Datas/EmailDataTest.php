@@ -10,6 +10,7 @@ use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
+uses(TestCase::class);
 describe('EmailData', function () {
     it('can be instantiated via reflection without constructor', function () {
         $reflection = new \ReflectionClass(EmailData::class);

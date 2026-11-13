@@ -9,15 +9,14 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Modules\User\Contracts\HasShieldPermissions;
 use Modules\User\Datas\FilamentShieldData;
-
-use function Safe\class_implements;
-use function Safe\class_uses;
-
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+
+use function Safe\class_implements;
+use function Safe\class_uses;
 
 /**
  * Wrapper che raccoglie i metodi utility legacy di Support\Utils in un'unica
@@ -39,7 +38,7 @@ class ShieldUtilsAction
             '/',
         ));
 
-        $filesystem = new Filesystem();
+        $filesystem = new Filesystem;
 
         return $filesystem->exists($roleResourcePath);
     }
@@ -132,7 +131,7 @@ class ShieldUtilsAction
         Assert::isArray($res = config('filament-shield.permission_prefixes.resource'), 'wip');
 
         return array_values(array_map(
-            static fn (mixed $item): string => Assert::string($item),
+            Assert::string(...),
             $res
         ));
     }
@@ -214,7 +213,7 @@ class ShieldUtilsAction
         Assert::isArray($res = config('filament-shield.exclude.resources'));
 
         return array_values(array_map(
-            static fn (mixed $item): string => Assert::string($item),
+            Assert::string(...),
             $res
         ));
     }
@@ -227,7 +226,7 @@ class ShieldUtilsAction
         Assert::isArray($res = config('filament-shield.exclude.pages'));
 
         return array_values(array_map(
-            static fn (mixed $item): string => Assert::string($item),
+            Assert::string(...),
             $res
         ));
     }
@@ -240,7 +239,7 @@ class ShieldUtilsAction
         Assert::isArray($res = config('filament-shield.exclude.widgets'));
 
         return array_values(array_map(
-            static fn (mixed $item): string => Assert::string($item),
+            Assert::string(...),
             $res
         ));
     }
@@ -287,7 +286,7 @@ class ShieldUtilsAction
         Assert::isArray($res);
 
         return array_values(array_map(
-            static fn (mixed $item): string => Assert::string($item),
+            Assert::string(...),
             $res
         ));
     }

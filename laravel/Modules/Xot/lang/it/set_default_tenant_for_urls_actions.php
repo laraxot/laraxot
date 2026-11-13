@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 // Xot translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
 // Canon: Modules/Xot/docs/wiki/concepts/claude-audit-static.md
 // File: lang/it/set_default_tenant_for_urls_actions.php
@@ -49,6 +50,24 @@ return [
             'icon' => 'ui-showPassword',
             'label' => 'showPassword',
             'tooltip' => 'showPassword',
+=======
+return [
+    'actions' => [
+        'authenticate' => [
+            'icon' => 'ui-authenticate',
+        ],
+        'login' => [
+            'icon' => 'login',
+        ],
+        'request' => [
+            'icon' => 'request',
+        ],
+        'hidePassword' => [
+            'icon' => 'hidePassword',
+        ],
+        'showPassword' => [
+            'icon' => 'ui-showPassword',
+>>>>>>> laraxot/dev
         ],
     ],
 ];

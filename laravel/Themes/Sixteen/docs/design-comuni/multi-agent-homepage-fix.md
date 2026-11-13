@@ -1,3 +1,15 @@
+---
+title: "multi agent homepage fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "multi agent homepage fix"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🚀 Superpowers + BMAD + GSD + Ralph + OpenViking Integration
 
 **Data**: 2026-03-31  
@@ -205,7 +217,6 @@ Migliora accessibilità
 - [HEROICONS_FIX_COMPLETE.md](HEROICONS_FIX_COMPLETE.md)
 
 ---
-
 **Stato**: 🔧 **IN CORSO - Multi-Agent Integration**  
 **Agenti**: **4 installati, 2 da configurare**  
 **Block Views**: **0/7 create**  

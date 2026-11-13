@@ -16,6 +16,7 @@ related:
   - readme.md
   - ../integrations/readme.md
   - ../templates/readme.md
+status: draft
 ---
 # Indice Documentazione Notifiche
 
@@ -23,6 +24,7 @@ related:
 - [Indice Documentazione Notify](../index.md)
 - [README Modulo Notify](../readme.md)
 - [Documentazione Generale Quaeris](../../../../../../docs/readme.md)
+- [Documentazione Generale Quaeris](../../../../../docs/README.md)
 - [Collegamenti Documentazione](../../../../../../docs/collegamenti-documentazione.md)
 
 ## Guida Implementazione

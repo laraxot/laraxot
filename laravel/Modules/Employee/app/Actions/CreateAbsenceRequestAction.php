@@ -29,7 +29,7 @@ class CreateAbsenceRequestAction
             'starts_at' => $startsAt,
             'ends_at' => $endsAt,
             'notes' => $notes,
-            'status' => AbsenceRequest::STATUS_PENDING,
+            'status' => \Modules\Employee\Enums\AbsenceRequestStatusEnum::PENDING->value,
         ]);
 
         return $request;

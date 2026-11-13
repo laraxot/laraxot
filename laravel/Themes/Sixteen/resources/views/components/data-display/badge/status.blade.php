@@ -21,8 +21,9 @@
         $status = TicketStatusEnum::from($status);
     }
     
-    // Get color class and label from enum
-    $colorClass = $status->getColorClass();
+    // TicketStatusEnum non ha getColorClass() (esiste solo su TicketPriorityEnum): il colore Filament
+    // (gray/warning/info/orange/danger/success/secondary) e' gia' una stringa e il match qui sotto lo mappa.
+    $colorClass = (string) $status->getColor();
     $label = $status->getLabel();
     
     // Map badge-* classes to bg-* classes for Bootstrap Italia

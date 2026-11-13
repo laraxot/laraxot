@@ -3,6 +3,14 @@ title: Getting Started
 description: Getting started with Jigsaw's docs starter template is as easy as 1, 2, 3.
 extends: _layouts.documentation
 section: content
+<<<<<<< HEAD
+=======
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "getting started {#getting-started} xot"
+>>>>>>> laraxot/dev
 ---
 
 # Getting Started {#getting-started}

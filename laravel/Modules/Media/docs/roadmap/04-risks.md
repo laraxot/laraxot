@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Risks and dependencies (Module Media)"
 module: "Media"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "04 risks"
 related:
   - "./webm.md"
+status: superseded
+superseded_by: risks.md
 ---
 # Risks and dependencies (Module Media)
 

@@ -1,7 +1,9 @@
 ---
+issues: []
+discussions: []
 id: rating-story-01-41-hasratin​gs-trait-correction
 slug: 01-41-hasratin​gs-trait-correction
-title: "HasRatingsTrait — Apply user correction: replace resolveRatingClass with getClassName"
+title: "HasRatingsTrait: Apply user correction: replace resolveRatingClass with getClassName"
 description: "Implement the user's correction to replace `$related = $this->resolveRatingClass();` with `$related = \\Modules\\Rating\\Models\\Rating::getClassName();` in HasRatingsTrait.php. This ensures proper class resolution per user's explicit instruction."
 type: story
 document_type: story
@@ -24,7 +26,7 @@ gh_discussion: "https://github.com/provtv/module_rating_fila5/discussions/39"
 related_repo_remote: "provtv/module_rating_fila5"
 ---
 
-# Story 01.41: HasRatingsTrait — Apply user correction: replace resolveRatingClass with getClassName
+# Story 01.41: HasRatingsTrait: Apply user correction: replace resolveRatingClass with getClassName
 
 ## Context
 

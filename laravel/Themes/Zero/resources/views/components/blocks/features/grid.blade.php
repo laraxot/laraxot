@@ -32,7 +32,7 @@
                         @if(isset($feature['url']))
                             <a href="{{ $feature['url'] }}" 
                                style="color: #3b82f6; text-decoration: none; font-weight: 500;">
-                                Scopri di più →
+                                {{ __('pub_theme::blocks.features_grid.learn_more.label') }}
                             </a>
                         @endif
                     </div>

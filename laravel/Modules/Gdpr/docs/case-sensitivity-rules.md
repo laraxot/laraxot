@@ -4,6 +4,7 @@
 
 **NON possono esistere file con lo stesso nome che differiscono solo per maiuscole/minuscole nella stessa directory.**
 
+Riferimento completo: [Xot Module Case Sensitivity Rules](../../Xot/docs/case-sensitivity-rules.md)
 Riferimento completo: [Xot Module Case Sensitivity Rules](../../xot/docs/case-sensitivity-rules.md)
 
 ## File Rimossi da Gdpr Module
@@ -33,4 +34,5 @@ cd Modules/Gdpr
 
 ## Update Log
 
+- **2025-11-04**: Removed `conflictresolutiontest.php` duplicate
 - **[DATE]**: Removed `conflictresolutiontest.php` duplicate

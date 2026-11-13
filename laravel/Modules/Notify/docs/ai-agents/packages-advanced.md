@@ -1,9 +1,20 @@
-# Packages advanced — reference
+---
+title: "packages advanced"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "packages advanced"
+issues: []
+discussions: []
+status: draft
+---
+
+# Packages advanced: reference
 
 Packages not covered in `packages-spatie.md`, `packages-laravel-core.md`, `packages-filament-livewire.md`, or `packages-other.md`. All confirmed present in `composer.json` as of February 2026.
 
 ---
-
 ## Eloquent model patterns
 
 ### tightenco/parental 1.5.0
@@ -375,7 +386,7 @@ FIREBASE_CREDENTIALS_FILE=
 
 Elegant CSV reader/writer.
 
-**Where used**: `Modules/Tenant/app/Models/Traits/SushiToCsv.php` — backs Sushi models with CSV files.
+**Where used**: `Modules/Tenant/app/Models/Traits/SushiToCsv.php`: backs Sushi models with CSV files.
 
 ```php
 use League\Csv\Reader;

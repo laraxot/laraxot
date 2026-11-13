@@ -40,7 +40,7 @@
 .it-header-navbar-wrapper .navbar-nav .nav-link[aria-current='page'],
 .it-header-navbar-wrapper .nav-item.active .nav-link {
   color: #ffffff !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   background-color: transparent !important;
 }
 
@@ -98,13 +98,28 @@
 }
 
 .it-brand-title {
-  font-weight: 700 !important;
+  font-weight: 600 !important; /* DCP-221: semibold FO, no bold ciccione */
   /* Colore: non forzare qui — header (center/menu) usa tema; contenuto usa utility / altri layer */
 }
 
 .it-brand-tagline {
   font-size: 14px !important;
   color: var(--bs-gray-secondary, #5d7083) !important;
+}
+
+/* The brand tagline sits on the green institutional header, not on the page canvas. */
+.it-header-center-wrapper .it-brand-tagline {
+  color: #ffffff !important;
+}
+
+.it-header-wrapper .it-socials > span {
+  color: #ffffff !important;
+}
+
+.cmp-accordion.faq .accordion-button,
+.cmp-accordion.faq .accordion-button .button-wrapper {
+  color: #17324d !important;
+  background-color: #ffffff !important;
 }
 
 /* Language selector - reference uses 14px */

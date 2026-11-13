@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_v3qJWm
 return [
     'fields' => [
         'uuid' => [
-            'label' => 'uuid',
+            'label' => 'UUID',
             'placeholder' => 'uuid',
             'helper_text' => 'uuid',
             'description' => 'uuid',
@@ -23,31 +24,31 @@ return [
             'description' => 'languages',
         ],
         'device' => [
-            'label' => 'device',
+            'label' => 'Dispositivo',
             'placeholder' => 'device',
             'helper_text' => 'device',
             'description' => 'device',
         ],
         'platform' => [
-            'label' => 'platform',
+            'label' => 'Piattaforma',
             'placeholder' => 'platform',
             'helper_text' => 'platform',
             'description' => 'platform',
         ],
         'browser' => [
-            'label' => 'browser',
+            'label' => 'Browser',
             'placeholder' => 'browser',
             'helper_text' => 'browser',
             'description' => 'browser',
         ],
         'version' => [
-            'label' => 'version',
+            'label' => 'Versione',
             'placeholder' => 'version',
             'helper_text' => 'version',
             'description' => 'version',
         ],
         'is_robot' => [
-            'label' => 'is_robot',
+            'label' => 'Robot',
             'placeholder' => 'is_robot',
             'helper_text' => 'is_robot',
             'description' => 'is_robot',
@@ -59,28 +60,31 @@ return [
             'description' => 'robot',
         ],
         'is_desktop' => [
-            'label' => 'is_desktop',
+            'label' => 'Desktop',
             'placeholder' => 'is_desktop',
             'helper_text' => 'is_desktop',
             'description' => 'is_desktop',
         ],
         'is_mobile' => [
-            'label' => 'is_mobile',
+            'label' => 'Mobile',
             'placeholder' => 'is_mobile',
             'helper_text' => 'is_mobile',
             'description' => 'is_mobile',
         ],
         'is_tablet' => [
-            'label' => 'is_tablet',
+            'label' => 'Tablet',
             'placeholder' => 'is_tablet',
             'helper_text' => 'is_tablet',
             'description' => 'is_tablet',
         ],
         'is_phone' => [
-            'label' => 'is_phone',
+            'label' => 'Telefono',
             'placeholder' => 'is_phone',
             'helper_text' => 'is_phone',
             'description' => 'is_phone',
         ],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_GcVYnV

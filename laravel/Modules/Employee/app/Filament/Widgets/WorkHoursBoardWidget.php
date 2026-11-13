@@ -13,6 +13,7 @@ use Modules\Employee\Actions\ExportTimeDataAction;
 use Modules\Employee\Actions\GetCurrentEmployeeDataAction;
 use Modules\Xot\Filament\Widgets\XotBaseSchemaWidget;
 use Override;
+use Spatie\QueueableAction\ActionJob;
 
 /**
  * Weekly Time Table Widget - Replica esatta di dipendentincloud.it
@@ -94,17 +95,16 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
 
         $this->employeeInfo = app(GetCurrentEmployeeDataAction::class)->execute($userId);
 
-        $this->weekData = $this->buildWeekTableData($baseData, $this->timelineData);
+        $this->weekData = $this->buildWeekTableData($this->timelineData);
 
         $this->summaryData = $this->buildSummaryData($baseData);
     }
 
     /**
-     * @param  array<string, mixed>  $baseData
      * @param  array<string, mixed>  $timelineData
      * @return array<string, mixed>
      */
-    private function buildWeekTableData(array $baseData, array $timelineData): array
+    private function buildWeekTableData(array $timelineData): array
     {
         $days = [];
 
@@ -224,9 +224,10 @@ class WorkHoursBoardWidget extends XotBaseSchemaWidget
     {
         $userId = (string) (Auth::id() ?? '');
 
-        app(ExportTimeDataAction::class)
-            ->onQueue('exports')
-            ->execute($userId, $this->weekStart, $this->weekEnd, 'xlsx');
+        // `QueueableAction::onQueue()` restituisce un proxy anonimo non tipizzato (per PHPStan `mixed`):
+        // si accoda direttamente l'ActionJob che quel proxy costruirebbe, come in Media/MediaConvertsTable.
+        dispatch(new ActionJob(app(ExportTimeDataAction::class), [$userId, $this->weekStart, $this->weekEnd, 'xlsx']))
+            ->onQueue('exports');
 
         Notification::make()
             ->title('Export avviato')

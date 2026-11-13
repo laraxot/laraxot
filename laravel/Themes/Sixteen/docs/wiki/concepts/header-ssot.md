@@ -1,3 +1,15 @@
+---
+title: "header ssot"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header ssot"
+issues: []
+discussions: []
+status: draft
+---
+
 # Header SSoT (Single Source of Truth) - Sixteen Theme
 
 ## Critical Rule
@@ -11,7 +23,6 @@ resources/views/components/sections/header/v1.blade.php
 Questo file è il **Single Source of Truth (SSoT)** per l'header.
 
 ---
-
 ## Architecture
 
 ### File Structure

@@ -8,17 +8,21 @@ qmd: "missing-features analisi funzionalità mancanti - modulo user"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Analisi Funzionalità Mancanti - Modulo User
 
 **Data Analisi**: [DATE]  
@@ -129,7 +133,6 @@ Il modulo **User** fornisce:
 
 2. **LimeParticipant** - Partecipanti survey
    - Integrazione con Contact model ExternalProject
->>>>>>> 87273113 (.)
    - Gestione partecipanti centralizzata
    - Attributi personalizzati
 
@@ -178,9 +181,8 @@ Nessuna funzionalità critica mancante - il modulo User è ben implementato
 ## Collegamenti
 
 - [Modulo ExternalProject](../<nome progetto>/docs/readme.md)
->>>>>>> 87273113 (.)
 - [Modulo Limesurvey](../limesurvey/docs/readme.md)
-- [User README](./readme.md)
+- [User README](./README.md)
 
 ---
 

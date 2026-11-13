@@ -1,10 +1,15 @@
 ---
+qmd: "composer strategy"
+issues: []
+discussions: []
 title: "Laravel-Modules Composer Strategy"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: composer-strategy.md
 ---
 
 # 🎯 Laravel-Modules Composer Strategy

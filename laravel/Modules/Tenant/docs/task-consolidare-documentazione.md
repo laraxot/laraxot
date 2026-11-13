@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Task: Consolidare Documentazione - Tenant"
 module: "Tenant"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "task consolidare documentazione"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # Task: Consolidare Documentazione - Tenant
 

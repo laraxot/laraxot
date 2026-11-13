@@ -192,8 +192,4 @@ Modulo specifico per Modena, attualmente non utilizzato attivamente.
 6. **Xot** - Framework base ✅ Completo
 
 *Ultimo aggiornamento: Gennaio 2025*
-<<<<<<< HEAD
 *Analisi completa sistema SaluteOra: 150+ modelli, 14 moduli*
-=======
-*Analisi completa sistema SaluteOra: 150+ modelli, 14 moduli*
->>>>>>> 13cf1831 (.)

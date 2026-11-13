@@ -12,6 +12,7 @@ discussions:
 related:
   - ../../../../Modules/Xot/docs/wiki/concepts/env-testing-parity-copy-env.md
   - ../../../../../../docs/wiki/bmad/architecture-env-testing-parity.md
+status: draft
 ---
 
 # E2E Sixteen e database di test

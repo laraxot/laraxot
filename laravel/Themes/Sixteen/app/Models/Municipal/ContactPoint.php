@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Themes\Sixteen\Enums\ContactPointTypeEnum;
 
 use function Safe\preg_replace;
 
@@ -50,28 +51,6 @@ class ContactPoint extends Model
 {
     /** @use HasFactory<Factory<static>> */
     use HasFactory, SoftDeletes;
-
-    /**
-     * Tipi di contatto supportati secondo AGID
-     */
-    public const TYPES = [
-        'email' => 'Email',
-        'pec' => 'PEC (Posta Elettronica Certificata)',
-        'phone' => 'Telefono',
-        'fax' => 'Fax',
-        'mobile' => 'Cellulare',
-        'whatsapp' => 'WhatsApp',
-        'telegram' => 'Telegram',
-        'address' => 'Indirizzo fisico',
-        'website' => 'Sito web',
-        'social_facebook' => 'Facebook',
-        'social_twitter' => 'Twitter/X',
-        'social_linkedin' => 'LinkedIn',
-        'social_youtube' => 'YouTube',
-        'social_instagram' => 'Instagram',
-        'appointment_url' => 'Prenotazione appuntamenti',
-        'other' => 'Altro',
-    ];
 
     protected $table = 'sixteen_contact_points';
 
@@ -241,7 +220,7 @@ class ContactPoint extends Model
     protected function typeName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::TYPES[$this->type] ?? $this->type
+            get: fn () => ContactPointTypeEnum::tryFrom($this->type)?->getLabel() ?? $this->type
         );
     }
 

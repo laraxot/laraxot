@@ -1,10 +1,15 @@
 ---
+qmd: "product strategy"
+issues: []
+discussions: []
 title: "Notify Module - Product Strategy"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: bmad/architecture/product-strategy.md
 ---
 
 # Notify Module - Product Strategy

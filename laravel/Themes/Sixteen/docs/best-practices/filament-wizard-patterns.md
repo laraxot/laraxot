@@ -1,3 +1,15 @@
+---
+title: "filament wizard patterns"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament wizard patterns"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🎯 Filament Wizard Patterns - Best Practices
 
 ## Pattern Ufficiali Filament v5
@@ -232,5 +244,4 @@ use Filament\Schemas\Components\Wizard;
 4. **Database Transactions**: Gestire nel metodo submit
 
 ---
-
 **Ricorda**: Segui sempre la [documentazione ufficiale Filament](https://filamentphp.com/docs/5.x/resources/creating-records#using-a-wizard) per gli aggiornamenti più recenti.

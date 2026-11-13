@@ -16,6 +16,7 @@ related:
   - "./configuration.md"
   - "./design-comuni-bmad-master-plan.md"
   - "./docs-governance.md"
+status: draft
 ---
 
 # PHASE 2 - EPIC 2.1: Citizen Dashboard - CONTEXT

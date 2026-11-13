@@ -1,0 +1,11 @@
+{
+  "slug": "auth.login",
+  "name": "auth.login",
+  "route": "auth.login",
+  "pageSlug": "auth.login",
+  "layout": "app",
+  "view": "pages.auth.login",
+  "blocks": [],
+  "data": {},
+  "locale": "it"
+}

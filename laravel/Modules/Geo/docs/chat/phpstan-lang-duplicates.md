@@ -1,3 +1,15 @@
+---
+title: "phpstan lang duplicates"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan lang duplicates"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Audit — Job, Lang, Gdpr
 **Data:** 2026-06-15  
 **Esecutore:** Claude Haiku 4.5  

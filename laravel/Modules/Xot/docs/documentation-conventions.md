@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Convenzioni per la documentazione in Laraxot PTVX"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Convenzioni per la documentazione in Laraxot PTVX"
+---
+>>>>>>> laraxot/dev
 # Convenzioni per la documentazione in Laraxot PTVX
 
 ## Convenzioni di naming
@@ -23,6 +36,7 @@
 2. **Struttura dei contenuti**: Utilizzare titoli e sottotitoli organizzati in modo gerarchico:
    ```markdown
    # Titolo principale
+<<<<<<< HEAD
 
    ## Sezione 1
 
@@ -30,6 +44,15 @@
 
    ### Sottosezione 1.2
 
+=======
+   
+   ## Sezione 1
+   
+   ### Sottosezione 1.1
+   
+   ### Sottosezione 1.2
+   
+>>>>>>> laraxot/dev
    ## Sezione 2
    ```
 
@@ -43,7 +66,11 @@
 4. **Note e avvertimenti**: Utilizzare un formato standard per note e avvertimenti:
    ```markdown
    > **Nota**: Informazione importante.
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> laraxot/dev
    > **Attenzione**: Avvertimento critico.
    ```
 
@@ -100,9 +127,18 @@ Utilizzare script nella cartella `bashscripts` per automatizzare le verifiche e 
 
 ## Collegamenti a documentazione correlata
 
+<<<<<<< HEAD
 - [Documentazione generale](../../../docs/documentation_rules.md)
 - [Convenzioni di naming in generale](../../../docs/naming_conventions.md)
 - [Regole per ServiceProvider](../../IndennitaCondizioniLavoro/docs/service_provider.md)
 - [Regole per file di traduzione](../../../.cursor/rules/translation_files_rules.mdc)
 
 *Ultimo aggiornamento: Giugno 2025*
+=======
+- [Documentazione generale](documentation_rules.md)
+- [Convenzioni di naming in generale](../../../../docs/naming_conventions.md)
+- [Regole per ServiceProvider](../../IndennitaCondizioniLavoro/docs/service_provider.md)
+- [Regole per file di traduzione](../../../.cursor/rules/translation_files_rules.mdc)
+
+*Ultimo aggiornamento: Giugno 2025*
+>>>>>>> laraxot/dev

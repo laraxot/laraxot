@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Folio — parametri route via mount(), non request()->route()"
 type: concept
 tags: [folio, volt, mount, container0, slug0, six]
@@ -10,6 +12,7 @@ related:
   - ../../../../../../docs/wiki/rules/laravel/volt-route-params-via-mount.md
   - ../../../../../../docs/wiki/memories/volt-route-params-mount-contract.md
   - ../../../../../../docs/wiki/rules/no-volt-in-blade-views.md
+status: draft
 ---
 
 # Folio — parametri route via `mount()`

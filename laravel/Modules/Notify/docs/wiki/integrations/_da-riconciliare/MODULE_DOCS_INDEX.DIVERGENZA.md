@@ -1,10 +1,15 @@
 ---
+qmd: "MODULE DOCS INDEX.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: MODULE_DOCS_INDEX.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: module-docs-index.divergenza.md
 ---
 
 # Divergenza: `MODULE_DOCS_INDEX.md`

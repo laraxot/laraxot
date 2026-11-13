@@ -6,9 +6,8 @@ namespace Modules\Gdpr\Filament\Clusters\Profile\Resources\ProfileResource\Schem
 
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Component;
-use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceInfolist;
 
-class ProfileInfolist extends XotBaseResourceInfolist
+class ProfileInfolist
 {
     /**
      * @return array<string, Component>

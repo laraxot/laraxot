@@ -1,3 +1,15 @@
+---
+title: "docs3"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs3"
+issues: []
+discussions: []
+status: draft
+---
+
 # Docs3
 
 # SISTEMA DI DOCUMENTAZIONE LARAXOT – GUIDA MODULARE
@@ -16,7 +28,6 @@
 ### 10. CROSS-REFERENCES E VALIDAZIONE
 
 ---
-
 ## 1. STRUTTURA GERARCHICA E MODULARITÀ
 
 ### 1.1 Struttura delle Cartelle
@@ -440,19 +451,19 @@ Ogni documento deve avere collegamenti ai documenti correlati:
 - **[collegamenti-documentazione.md](../../docs/collegamenti-documentazione.md)**: Mappa centrale dei collegamenti
 
 ### 10.4 Moduli Core e Riferimenti
-- **[Xot Module](../../laravel/Modules/Xot/docs/README.md)**: Framework base e utilities
-- **[User Module](../../laravel/Modules/User/docs/README.md)**: Gestione utenti e autenticazione
-- **[UI Module](../../laravel/Modules/UI/docs/README.md)**: Componenti UI condivisi
-- **[Cms Module](../../laravel/Modules/Cms/docs/README.md)**: Content management
-- **[Tenant Module](../../laravel/Modules/Tenant/docs/README.md)**: Multi-tenancy
-- **[Lang Module](../../laravel/Modules/Lang/docs/README.md)**: Localizzazione
-- **[Notify Module](../../laravel/Modules/Notify/docs/README.md)**: Sistema notifiche
-- **[Media Module](../../laravel/Modules/Media/docs/README.md)**: Gestione file e media
-- **[Job Module](../../laravel/Modules/Job/docs/README.md)**: Job asincroni
+- **[Xot Module](../../../Xot/docs/README.md)**: Framework base e utilities
+- **[User Module](../../../User/docs/README.md)**: Gestione utenti e autenticazione
+- **[UI Module](../../../UI/docs/README.md)**: Componenti UI condivisi
+- **[Cms Module](../../../Cms/docs/README.md)**: Content management
+- **[Tenant Module](../../../Tenant/docs/README.md)**: Multi-tenancy
+- **[Lang Module](../../../Lang/docs/README.md)**: Localizzazione
+- **[Notify Module](../../../Notify/docs/README.md)**: Sistema notifiche
+- **[Media Module](../../../Media/docs/README.md)**: Gestione file e media
+- **[Job Module](../../../Job/docs/README.md)**: Job asincroni
 - **[Chart Module](../../laravel/Modules/Chart/docs/README.md)**: Grafici e visualizzazioni
-- **[Gdpr Module](../../laravel/Modules/Gdpr/docs/README.md)**: Conformità e privacy
-- **[Activity Module](../../laravel/Modules/Activity/docs/README.md)**: Logging attività
-- **[Geo Module](../../laravel/Modules/Geo/docs/README.md)**: Dati geografici
+- **[Gdpr Module](../../../Gdpr/docs/README.md)**: Conformità e privacy
+- **[Activity Module](../../../Activity/docs/README.md)**: Logging attività
+- **[Geo Module](../README.md)**: Dati geografici
 
 ---
 

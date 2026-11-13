@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_gHvQUL
 title: "UX — SuperAdmin user menu"
+=======
+title: "UX: SuperAdmin user menu"
+>>>>>>> .merge_file_9lyPkF
 type: ux-design
 module: User
 status: approved
@@ -8,6 +12,12 @@ related:
   - ./architecture.md
   - ./tech-spec.md
   - ./decision-log.md
+<<<<<<< .merge_file_gHvQUL
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "ux design: emblema hero nel user menu user"
+>>>>>>> .merge_file_9lyPkF
 ---
 
 # UX design: emblema hero nel user menu
@@ -26,7 +36,11 @@ Hook `USER_MENU_BEFORE`. A sinistra del menu utente, distinto dal team switcher.
 |---------------|----------|----------|-------------------|-----------------|----------------|
 | `super-admin` | identità svelata | `superman.svg` | `user-superman` | `warning` | attivo |
 | `negate-super-admin` | identità nascosta | `clark-kent.svg` | `user-clark-kent` | `danger` | negato |
+<<<<<<< .merge_file_gHvQUL
 | nessuno dei due | — | — | nessun bottone | — | — |
+=======
+| nessuno dei due |: |: | nessun bottone |: |: |
+>>>>>>> .merge_file_9lyPkF
 
 Ruolo elevato visibile = eroe (cappa + ciuffo). Ruolo negato = travestimento da reporter (occhiali + cravatta). Non è lo scudo registrato: outline originale, `stroke="currentColor"` sul root.
 

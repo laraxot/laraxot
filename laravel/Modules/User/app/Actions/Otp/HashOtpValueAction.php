@@ -13,8 +13,7 @@ final class HashOtpValueAction
 
     public function __construct(
         private readonly Hasher $hasher,
-    ) {
-    }
+    ) {}
 
     public function execute(string $value): string
     {

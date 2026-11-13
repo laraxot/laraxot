@@ -1,3 +1,16 @@
+---
+title: "segnalazione visual parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "segnalazione visual parity"
+issues: []
+discussions: []
+status: superseded
+superseded_by: ticket-visual-parity.md
+---
+
 # Visual parity check — Segnalazione (create)
 
 Summary of findings (local vs design-comuni reference):

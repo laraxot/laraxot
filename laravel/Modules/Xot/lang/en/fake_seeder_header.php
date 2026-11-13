@@ -5,7 +5,10 @@ declare(strict_types=1);
 return [
     'fields' => [
         'qty' => [
+<<<<<<< HEAD
             'label' => 'qty',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -20,6 +23,9 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
+<<<<<<< HEAD
     'actions' => [
     ],
+=======
+>>>>>>> laraxot/dev
 ];

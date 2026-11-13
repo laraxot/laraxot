@@ -1,3 +1,14 @@
+---
+title: "file location rules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "file location rules"
+issues: []
+discussions: []
+---
+
 # File Location Rules
 
 > **Rule**: Every file type has a specific location. Never place files in the project root.
@@ -8,6 +19,14 @@
 
 ---
 
+title: "file location rules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "file location rules"
+issues: []
+discussions: []
 ## Project Root Rules
 
 ### ✅ Files Allowed in Root

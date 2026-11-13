@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< HEAD
     'fields' => [
         'email' => [
             'label' => 'email',
@@ -38,6 +39,17 @@ return [
             'label' => 'authenticate',
             'icon' => 'authenticate',
             'tooltip' => 'authenticate',
+=======
+    'actions' => [
+        'showPassword' => [
+            'icon' => 'showPassword',
+        ],
+        'hidePassword' => [
+            'icon' => 'hidePassword',
+        ],
+        'authenticate' => [
+            'icon' => 'authenticate',
+>>>>>>> laraxot/dev
         ],
     ],
 ];

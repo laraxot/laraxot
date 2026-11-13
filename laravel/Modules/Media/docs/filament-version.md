@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Filament Version Declaration — Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "filament version"
 related:
   - "./webm.md"
+status: draft
 ---
 # Filament Version Declaration — Media
 

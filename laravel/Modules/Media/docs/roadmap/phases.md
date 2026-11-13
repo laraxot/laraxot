@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Fasi di sviluppo - Media Module"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "phases"
 related:
   - "./webm.md"
+status: draft
 ---
 # Fasi di sviluppo - Media Module
 

@@ -8,7 +8,7 @@ use Modules\Geo\Actions\GetBoundingBoxAction;
 use PHPUnit\Framework\Assert;
 
 it('calculates bounding box correctly for milan', function (): void {
-    $action = new GetBoundingBoxAction();
+    $action = new GetBoundingBoxAction;
 
     // Milano: 45.4642, 9.1900
     $result = $action->execute(45.4642, 9.1900, 1.0);
@@ -23,7 +23,7 @@ it('calculates bounding box correctly for milan', function (): void {
 });
 
 it('calculates bounding box for rome', function (): void {
-    $action = new GetBoundingBoxAction();
+    $action = new GetBoundingBoxAction;
 
     // Roma: 41.9028, 12.4964
     $result = $action->execute(41.9028, 12.4964, 5.0);
@@ -38,7 +38,7 @@ it('calculates bounding box for rome', function (): void {
 });
 
 it('calculates bounding box with zero distance', function (): void {
-    $action = new GetBoundingBoxAction();
+    $action = new GetBoundingBoxAction;
 
     $result = $action->execute(45.4642, 9.1900, 0);
 
@@ -50,7 +50,7 @@ it('calculates bounding box with zero distance', function (): void {
 });
 
 it('calculates bounding box with larger distance expands more', function (): void {
-    $action = new GetBoundingBoxAction();
+    $action = new GetBoundingBoxAction;
 
     $smallResult = $action->execute(45.4642, 9.1900, 1.0);
     $largeResult = $action->execute(45.4642, 9.1900, 10.0);
@@ -60,19 +60,36 @@ it('calculates bounding box with larger distance expands more', function (): voi
 });
 
 it('handles boundary coordinates at equator', function (): void {
-    $action = new GetBoundingBoxAction();
+    $action = new GetBoundingBoxAction;
 
     $result = $action->execute(0, 0, 1.0);
+
+    Assert::assertLessThan(0.0, $result['min_lat']);
+    Assert::assertGreaterThan(0.0, $result['max_lat']);
+    Assert::assertLessThan(0.0, $result['min_lon']);
+    Assert::assertGreaterThan(0.0, $result['max_lon']);
+
+    // All'equatore cos(0) = 1: l'ampiezza in longitudine coincide con quella in latitudine
+    Assert::assertEqualsWithDelta($result['max_lat'], $result['max_lon'], 1e-9);
 });
 
 it('handles boundary coordinates at poles', function (): void {
-    $action = new GetBoundingBoxAction();
+    $action = new GetBoundingBoxAction;
 
     $result = $action->execute(89.0, 0, 1.0);
+
+    Assert::assertLessThan(89.0, $result['min_lat']);
+    Assert::assertGreaterThan(89.0, $result['max_lat']);
+
+    // Vicino ai poli i meridiani convergono: a parita' di distanza l'ampiezza in longitudine supera quella in latitudine
+    Assert::assertGreaterThan(
+        $result['max_lat'] - $result['min_lat'],
+        $result['max_lon'] - $result['min_lon'],
+    );
 });
 
 it('handles boundary coordinates at international date line', function (): void {
-    $action = new GetBoundingBoxAction();
+    $action = new GetBoundingBoxAction;
 
     $result = $action->execute(0, 179.0, 1.0);
 
@@ -80,7 +97,7 @@ it('handles boundary coordinates at international date line', function (): void 
 });
 
 it('handles negative coordinates', function (): void {
-    $action = new GetBoundingBoxAction();
+    $action = new GetBoundingBoxAction;
 
     $result = $action->execute(-33.8688, 151.2093, 5.0); // Sydney
 

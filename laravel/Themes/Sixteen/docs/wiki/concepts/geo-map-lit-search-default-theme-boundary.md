@@ -1,3 +1,15 @@
+---
+title: "geo map lit search default theme boundary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "geo map lit search default theme boundary"
+issues: []
+discussions: []
+status: draft
+---
+
 # GeoMapLit Search Default Theme Boundary
 
 ## Decisione

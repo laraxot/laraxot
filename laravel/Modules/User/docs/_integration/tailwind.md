@@ -16,9 +16,10 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: superseded
+superseded_by: ../-integration/tailwind.md
 ---
 
->>>>>>> 87273113 (.)
 # tailwind
 
 <!-- Contenuto migrato da _docs/tailwind.txt -->

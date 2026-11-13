@@ -1,10 +1,14 @@
 ---
+qmd: "metodi duplicati analisi"
+issues: []
+discussions: []
 title: "ANALISI METODI DUPLICATI - SUPER MUCCA EDITION"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # 🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION

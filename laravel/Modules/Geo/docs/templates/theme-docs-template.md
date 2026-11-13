@@ -1,4 +1,22 @@
+---
+title: "theme docs template"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "theme docs template"
+issues: []
+discussions: []
+status: draft
+---
+
 # {ThemeName} Theme
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 > **Filament Version**: Admin panels and Filament resources in this theme target **Filament v5** (see Second Brain `docs/wiki/memories/filament-version-policy.md` and `docs/filament-version.md`).
 
@@ -24,7 +42,7 @@
 cd laravel/Themes/{ThemeName}
 npm install
 npm run build
-npm run copy  # Copy assets to public
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 ```
 
 ## Dependencies
@@ -50,7 +68,7 @@ For quick fixes: `GSD quick "{ThemeName}: description"`
 
 After every change:
 - [ ] `npm run build` succeeds
-- [ ] `npm run copy` publishes assets correctly
+- niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
 - [ ] Vite pipeline completes without errors
 - [ ] Visual regression check (if applicable)
 - [ ] Responsive design verified
@@ -59,7 +77,7 @@ After every change:
 ## Documentation
 
 - [GSD Methodology](../../docs/project/gsd-methodology.md)
-- [UI Components](../../laravel/Modules/UI/docs/components.md)
+- [UI Components](../../../UI/docs/components.md)
 - [AGENTS.md](../../AGENTS.md)
 
 ## Roadmap

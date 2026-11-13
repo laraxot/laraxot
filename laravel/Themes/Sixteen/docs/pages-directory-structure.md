@@ -1,3 +1,15 @@
+---
+title: "pages directory structure"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "pages directory structure"
+issues: []
+discussions: []
+status: draft
+---
+
 # Pages Directory Structure - DRY + KISS
 
 > **Architettura CORRETTA delle cartelle pages**
@@ -9,7 +21,6 @@
 **Stato:** ✅ **CORRETTO**
 
 ---
-
 ## ✅ Struttura CORRETTA
 
 ### Cartelle CHE DEVONO ESISTERE

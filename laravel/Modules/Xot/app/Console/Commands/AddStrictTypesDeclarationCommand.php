@@ -66,9 +66,12 @@ class AddStrictTypesDeclarationCommand extends Command
                     continue;
                 }
 
+<<<<<<< HEAD
                 // PHPStan hint: at this point $path is definitely a string
                 assert(is_string($path));
 
+=======
+>>>>>>> laraxot/dev
                 try {
                     $action->execute($path);
                     $this->info("Aggiunta dichiarazione strict_types a: {$path}");

@@ -1,3 +1,15 @@
+---
+title: "php enum string conversion error"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "php enum string conversion error"
+issues: []
+discussions: []
+status: draft
+---
+
 # Errore: "Object of class Enum could not be converted to string"
 
 ## Problema

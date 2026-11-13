@@ -1,15 +1,15 @@
 <x-layouts.main>
     <x-slot name="title">
-        {{ __('Accedi') }} - {{ config('app.name', 'Laravel') }}
+        {{ __('pub_theme::auth.actions.login.label') }} - {{ config('app.name', 'Laravel') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Accedi al tuo account per accedere alle funzionalità riservate.') }}
+        {{ __('pub_theme::auth.login.page_description.description') }}
     </x-slot>
 
     <!-- Skip to main content for accessibility -->
     <a href="#login-widget" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-indigo-600 text-white px-4 py-2 rounded-md z-50">
-        {{ __('Vai al form di login') }}
+        {{ __('pub_theme::auth.login.skip_link.label') }}
     </a>
 
     <!-- Login Container -->
@@ -24,11 +24,11 @@
                 </div>
 
                 <h1 class="text-3xl font-extrabold text-gray-900 mb-2">
-                    {{ __('Accedi al tuo account') }}
+                    {{ __('pub_theme::auth.login.heading.title') }}
                 </h1>
 
                 <p class="text-sm text-gray-600">
-                    {{ __('Inserisci le tue credenziali per accedere') }}
+                    {{ __('pub_theme::auth.login.subheading.description') }}
                 </p>
             </div>
 
@@ -40,12 +40,12 @@
             <!-- Registration Link -->
             <div class="text-center">
                 <p class="text-sm text-gray-600">
-                    {{ __('Non hai un account?') }}
+                    {{ __('pub_theme::auth.login.no_account.message') }}
                     <a
                         href="{{ route('register') }}"
                         class="font-medium text-blue-600 hover:text-blue-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
                     >
-                        {{ __('Registrati ora') }}
+                        {{ __('pub_theme::auth.actions.register_now.label') }}
                     </a>
                 </p>
             </div>
@@ -53,10 +53,10 @@
             <!-- Footer Links -->
             <div class="text-center space-y-2">
                 <p class="text-xs text-gray-500">
-                    {{ __('Continuando, accetti i nostri') }}
-                    <a href="{{-- route('terms') --}}" class="text-blue-600 hover:text-blue-500">{{ __('Termini di Servizio') }}</a>
-                    {{ __('e la nostra') }}
-                    <a href="{{-- route('privacy') --}}" class="text-blue-600 hover:text-blue-500">{{ __('Privacy Policy') }}</a>
+                    {{ __('pub_theme::auth.consent.prefix.message') }}
+                    <a href="{{-- route('terms') --}}" class="text-blue-600 hover:text-blue-500">{{ __('pub_theme::auth.consent.terms.label') }}</a>
+                    {{ __('pub_theme::auth.consent.and.message') }}
+                    <a href="{{-- route('privacy') --}}" class="text-blue-600 hover:text-blue-500">{{ __('pub_theme::auth.consent.privacy.label') }}</a>
                 </p>
             </div>
         </div>

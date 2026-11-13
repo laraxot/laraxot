@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Guida all'Implementazione di mcamara/laravel-localization"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "migrazione filament 4"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Guida all'Implementazione di mcamara/laravel-localization
 

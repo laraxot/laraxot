@@ -8,14 +8,19 @@ qmd: "logout-security sicurezza nel processo di logout"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # Sicurezza nel Processo di Logout
@@ -191,14 +196,18 @@ Log::channel('auth')->info('Logout effettuato', [
 
 ## Collegamenti Correlati
 - [Best Practices di Sicurezza](./security_best_practices.md)
-- [Gestione Sessione](./session-management-2.md)
-- [Documentazione Volt](./volt-blade-implementation-3.md)
+- [Gestione Sessione](./session-management.md)
+- [Documentazione Volt](./volt-blade-implementation.md)
+- [Gestione Sessione](./session-management-gestione-sessioni.md)
+- [Documentazione Volt](./volt-blade-implementation-introduzione.md)
 - [Tema One Documentation](../../themes/one/docs/readme.md) 
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
 - [Gestione Sessione](./session-management.md)
 - [Documentazione Volt](./volt-blade-implementation.md)
 - [Tema One Documentation](../../Themes/One/docs/README.md) 
 - [Best Practices di Sicurezza](./SECURITY_BEST_PRACTICES.md)
-- [Gestione Sessione](./SESSION_MANAGEMENT.md)
-- [Documentazione Volt](./VOLT_BLADE_IMPLEMENTATION.md)
+- [Gestione Sessione](./session_management.md)
+- [Documentazione Volt](./volt_blade_implementation.md)
+- [Gestione Sessione](./session_management.md)
+- [Documentazione Volt](./volt_blade_implementation.md)
 - [Tema One Documentation](../../Themes/One/docs/README.md) 

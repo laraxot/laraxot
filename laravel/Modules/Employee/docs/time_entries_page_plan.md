@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_ENTRIES_PAGE_PLAN"
+module: Employee
+bmad: true
+status: active
+---
 ## time entries page – implementation plan
 
 ### objectives

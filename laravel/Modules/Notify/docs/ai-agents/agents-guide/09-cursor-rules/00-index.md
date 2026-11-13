@@ -1,3 +1,15 @@
+---
+title: "00 index"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "00 index"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📋 09 cursor rules Index
 
 **Path**: `docs/agents-guide/09-cursor-rules/`
@@ -5,7 +17,6 @@
 **Status**: ✅ Auto-generated
 
 ---
-
 ## 📊 Statistics
 
 | Metric | Count |
@@ -32,6 +43,10 @@
 - [📋 Skills Index](../skills/00-MASTER-INDEX.md)
 - [📋 Workflows Index](../workflows/00-INDEX.md)
 - [📋 Guidelines Index](../guidelines/00-INDEX.md)
+- [📋 Rules Index](../../rules/00-INDEX.md)
+- [📋 Skills Index](../skills/00-MASTER-INDEX.md)
+- [📋 Workflows Index](../workflows/00-INDEX.md)
+- [📋 Guidelines Index](../../guidelines/00-INDEX.md)
 - [📋 Memories Index](../memories/00-INDEX.md)
 
 ---

@@ -1,11 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://github.com/spatie/laravel-medialibrary/blob/main/database/migrations/create_media_table.php.stub
  */
-
-declare(strict_types=1);
-
 use Illuminate\Database\Schema\Blueprint;
 // ----- models -----
 use Modules\Xot\Database\Migrations\XotBaseMigration;
@@ -13,7 +11,7 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Class CreateImagesTable.
  */
-return new class() extends XotBaseMigration
+return new class extends XotBaseMigration
 {
     /**
      * i don't write table name, it take from Model, model is singular of this class wit.

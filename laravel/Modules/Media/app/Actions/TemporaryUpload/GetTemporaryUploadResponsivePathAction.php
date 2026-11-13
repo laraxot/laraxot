@@ -11,7 +11,7 @@ use Webmozart\Assert\Assert;
 /**
  * Genera il path per le immagini responsive di un upload temporaneo.
  */
-class GetTemporaryUploadResponsivePathAction
+final class GetTemporaryUploadResponsivePathAction
 {
     use QueueableAction;
 

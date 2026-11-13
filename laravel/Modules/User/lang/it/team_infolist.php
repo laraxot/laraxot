@@ -2,19 +2,23 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_unQkRu
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'uuid' => ['label' => 'uuid'],
-        'user_id' => ['label' => 'user_id'],
+        'id' => ['label' => 'ID'],
+        'uuid' => ['label' => 'UUID'],
+        'user_id' => ['label' => 'Utente'],
         'owner_id' => ['label' => 'owner_id'],
-        'name' => ['label' => 'name'],
-        'slug' => ['label' => 'slug'],
-        'description' => ['label' => 'description'],
-        'personal_team' => ['label' => 'personal_team'],
-        'code' => ['label' => 'code'],
-        'avatar_path' => ['label' => 'avatar_path'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'name' => ['label' => 'Nome'],
+        'slug' => ['label' => 'Codice'],
+        'description' => ['label' => 'Descrizione'],
+        'personal_team' => ['label' => 'Team personale'],
+        'code' => ['label' => 'Codice'],
+        'avatar_path' => ['label' => 'Avatar'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_WiCpzn

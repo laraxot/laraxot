@@ -13,7 +13,7 @@ use Spatie\QueueableAction\QueueableAction;
 /**
  * Invia un SMS delegando dinamicamente al motore configurato per `$driver`.
  *
- * Migrato da `Modules\Notify\Services\SmsService` (facade statica fluente
+ * Migrato dal vecchio `SmsService` (facade statica fluente
  * `make()->setLocalVars()->mergeVars()->send()`): un solo `execute()`
  * sostituisce l'intera catena, impostando prima le proprietà (come faceva
  * `setLocalVars()`/`mergeVars()`) e poi tentando il dispatch.

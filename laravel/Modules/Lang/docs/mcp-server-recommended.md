@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "MCP Server Consigliati per il Modulo Lang"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "migrazione filament 4"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # MCP Server Consigliati per il Modulo Lang
 

@@ -1,11 +1,17 @@
 ---
+tags: [documentation]
+updated: 2026-09-26
+qmd: "phpstan swarm"
+issues: []
+discussions: []
 title: "PHPStan swarm — run parallelo 2026-06-15"
 type: chat-handoff
 created: 2026-06-15
 related:
   - ../wiki/how-to/phpstan-modules-swarm.md
   - ../wiki/troubleshooting/phpstan-parallel-worker-oom.md
-  - ./handoff-phpstan-random-scan-2026-06-15.md
+  - ./handoff-phpstan-random-scan.md
+status: draft
 ---
 
 # PHPStan swarm — esito

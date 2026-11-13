@@ -1,0 +1,5 @@
+/* The light service hero must override the legacy global white heading rule. */
+main section:has(#services-title) #services-title,
+main section:has(#services-title) p {
+  color: #17324d !important;
+}

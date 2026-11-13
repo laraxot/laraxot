@@ -1,3 +1,15 @@
+---
+title: "map picker"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "map picker"
+issues: []
+discussions: []
+status: draft
+---
+
 # Map Picker
 
 ```text
@@ -12,6 +24,14 @@
 
 ---
 
+title: "map picker"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "map picker"
+issues: []
+discussions: []
 ## 0. Non-Negotiable Guards
 
 ### 0.1 Widget Components Persistence

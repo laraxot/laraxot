@@ -16,9 +16,10 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: superseded
+superseded_by: ../repos.md
 ---
 
->>>>>>> 87273113 (.)
 # repos
 
 <!-- Contenuto migrato da _docs/repos.txt -->

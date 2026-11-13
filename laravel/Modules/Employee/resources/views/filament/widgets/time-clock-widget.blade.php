@@ -3,70 +3,75 @@
 declare(strict_types=1);
 
 ?>
+{{--
+    Mobile-first (story docs/stories/mobile-ux-pass.story.md).
+    Il pannello non ha un tema Tailwind: le utility (flex, gap-6, h-24, text-5xl...) non esistono nel
+    CSS compilato di Filament, quindi qui si usa CSS nativo inline. `auto-fit/minmax` mette i tre
+    blocchi in colonna su telefono e in riga da ~50 rem in su, senza media query.
+    Ordine DOM = ordine di lettura su telefono: ora -> pulsante -> timbrature (il tasto resta in alto,
+    sotto il pollice, anche con molte timbrature).
+--}}
 <x-filament-widgets::widget>
-    <div class="flex items-center gap-6 h-24 w-full" wire:poll.1s="updateData">
-        
-        {{-- Left Column: Time and Date --}}
-        <div class="flex-1 text-center">
-            <div class="text-5xl font-mono font-bold text-gray-900 dark:text-gray-100">
-                {{ $currentTime }}
-            </div>
-            <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                {{ $todayDate }}
-            </div>
-        </div>
-
-        {{-- Center Column: Time Entries --}}
-        <div class="flex-1 text-center">
-            @if($isClockedIn)
-                <div class="text-sm font-medium text-green-600 dark:text-green-400 mb-2">
-                    Sessione attiva
+    <x-filament::section>
+        {{-- 15 s e solo a scheda visibile: 1 richiesta/s su rete lenta bloccava la coda di Livewire. --}}
+        <div
+            wire:poll.15s.visible="updateData"
+            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1.25rem;align-items:center;text-align:center;"
+        >
+            <div>
+                <div style="font-size:3rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums;">
+                    {{ $currentTime }}
                 </div>
-            @else
-                 <div class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
-                    Nessuna sessione attiva
+                <div style="margin-top:0.25rem;font-size:0.875rem;opacity:0.7;">
+                    {{ $todayDate }}
                 </div>
-            @endif
-            
-            <div class="flex flex-wrap gap-1 justify-center">
-                @forelse($todayEntries as $entry)
-                    <x-filament::badge 
-                        :color="$entry['type'] === 'clock_in' ? 'success' : 'danger'"
-                        size="sm"
-                        class="cursor-pointer hover:scale-105 transition-transform">
-                        {{ $entry['type'] === 'clock_in' ? '→' : '←' }} {{ $entry['time'] }}
+            </div>
+
+            <div>
+                {{-- Bersaglio di tocco: tutta la larghezza e >= 56 px, un solo gesto con una mano. --}}
+                @if($isClockedIn)
+                    <x-filament::button
+                        wire:click="clockOut"
+                        color="danger"
+                        size="xl"
+                        icon="heroicon-o-arrow-left-on-rectangle"
+                        style="width:100%;min-height:3.5rem;font-size:1.125rem;">
+                        {{ __('employee::time_clock_widget.actions.clock_out.label') }}
+                    </x-filament::button>
+                @else
+                    <x-filament::button
+                        wire:click="clockIn"
+                        color="success"
+                        size="xl"
+                        icon="heroicon-o-arrow-right-on-rectangle"
+                        style="width:100%;min-height:3.5rem;font-size:1.125rem;">
+                        {{ __('employee::time_clock_widget.actions.clock_in.label') }}
+                    </x-filament::button>
+                @endif
+            </div>
+
+            <div aria-live="polite">
+                <div style="margin-bottom:0.5rem;">
+                    <x-filament::badge :color="$isClockedIn ? 'success' : 'gray'">
+                        {{ $isClockedIn ? __('employee::time_clock_widget.messages.session_active.message') : __('employee::time_clock_widget.messages.session_inactive.message') }}
                     </x-filament::badge>
-                @empty
-                    <x-filament::badge 
-                        color="gray" 
-                        size="sm"
-                        icon="heroicon-o-clock"
-                        class="italic">
-                        Nessuna timbratura
-                    </x-filament::badge>
-                @endforelse
+                </div>
+
+                <div style="display:flex;flex-wrap:wrap;gap:0.25rem;justify-content:center;">
+                    @forelse($todayEntries as $entry)
+                        <x-filament::badge
+                            wire:key="entry-{{ $loop->index }}"
+                            :color="$entry['type'] === 'clock_in' ? 'success' : 'danger'"
+                            size="sm">
+                            {{ $entry['type'] === 'clock_in' ? '→' : '←' }} {{ $entry['time'] }}
+                        </x-filament::badge>
+                    @empty
+                        <x-filament::badge color="gray" size="sm" icon="heroicon-o-clock">
+                            {{ __('employee::time_clock_widget.messages.no_entries.message') }}
+                        </x-filament::badge>
+                    @endforelse
+                </div>
             </div>
         </div>
-
-        {{-- Right Column: Action Button --}}
-        <div class="flex-1 text-center">
-            @if($isClockedIn)
-                <x-filament::button 
-                    wire:click="clockOut" 
-                    color="danger"
-                    size="lg"
-                    icon="heroicon-o-arrow-left-on-rectangle">
-                    Timbra uscita
-                </x-filament::button>
-            @else
-                <x-filament::button 
-                    wire:click="clockIn" 
-                    color="success"
-                    size="lg"
-                    icon="heroicon-o-arrow-right-on-rectangle">
-                    Timbra entrata
-                </x-filament::button>
-            @endif
-        </div>
-    </div>
+    </x-filament::section>
 </x-filament-widgets::widget>

@@ -1,4 +1,22 @@
+---
+title: "build lint test commands"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "build lint test commands"
+issues: []
+discussions: []
+status: draft
+---
+
 # 2. Build / Lint / Test Commands
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 ### Running Tests
 ```bash
@@ -83,7 +101,10 @@ cd laravel/Themes/Meetup
 npm install
 npm run dev      # Development
 npm run build    # Production
-npm run copy    # Copy to public_html (REQUIRED after build)
+<<<<<<< .merge_file_nR5qXz
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
+=======
+>>>>>>> .merge_file_S9tWIz
 ```
 
 ### Cache Clearing
@@ -97,4 +118,3 @@ php artisan filament:optimize-clear
 ```
 
 ---
-

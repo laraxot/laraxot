@@ -1,3 +1,15 @@
+---
+title: "filament wizard theme override"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament wizard theme override"
+issues: []
+discussions: []
+status: draft
+---
+
 # Filament Wizard Theme Override — Philosophy & Implementation
 
 ## The Zen of Separation (Il Zen della Separazione)

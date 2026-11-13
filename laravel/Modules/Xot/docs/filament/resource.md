@@ -3,10 +3,22 @@ title: Creazione di una Resource
 description: Creazione di una Resource
 extends: _layouts.documentation
 section: content
+<<<<<<< HEAD
+=======
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, filament]
+qmd: "creazione di una resource {#creazione-resource} xot"
+>>>>>>> laraxot/dev
 ---
 
 # Creazione di una Resource {#creazione-resource}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> laraxot/dev
 - vedi doc savanna e crea le resource con:
 
 ```bash
@@ -38,6 +50,7 @@ class UserResource extends \Modules\Xot\Filament\Resources\XotBaseResource
 ```
 ### Versione HEAD
 
+<<<<<<< HEAD
 ## Collegamenti tra versioni di resource.md
 * [resource.md](../../../Xot/docs/filament/resource.md)
 * [resource.md](../../../Xot/docs/resource.md)
@@ -47,3 +60,16 @@ class UserResource extends \Modules\Xot\Filament\Resources\XotBaseResource
 ### Versione Incoming
 
 ---
+=======
+
+## Collegamenti tra versioni di resource.md
+* [resource.md](../../../Xot/docs/filament/resource.md)
+* [resource.md](../../../Xot/docs/resource.md)
+
+
+### Versione Incoming
+
+
+---
+
+>>>>>>> laraxot/dev

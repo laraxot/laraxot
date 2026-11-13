@@ -6,58 +6,58 @@ namespace Modules\Media\Actions;
 
 use Illuminate\Support\Facades\Storage;
 use Spatie\MediaLibrary\HasMedia;
-use Webmozart\Assert\Assert;
+use Spatie\QueueableAction\QueueableAction;
+use UnexpectedValueException;
 
 use function Safe\file_put_contents;
 use function Safe\tempnam;
 use function Safe\unlink;
 
-// phpmd: UnusedLocalVariable — $full_path legacy path debug (branch commentato in execute)
 class SaveAttachmentsAction
 {
+    use QueueableAction;
+
     /**
      * Save attachments to media library.
      *
-     * @param  list<string>  $attachments
-     * @param  array<string, string|null>  $data
+     * @param  array<int, string>  $attachments
+     * @param  array<string, mixed>  $data
      */
     public function execute(HasMedia $record, array $attachments, array $data, string $disk = 'attachments'): void
     {
-        /** @var array<string, string> $dataAttachments */
         $dataAttachments = [];
+        $storage = Storage::disk($disk);
 
         foreach ($attachments as $attachment) {
-            Assert::string($attachment, '['.__LINE__.']['.class_basename(self::class).']');
-
-            if (! isset($data[$attachment]) || $data[$attachment] === '') {
+            if (! array_key_exists($attachment, $data)) {
                 continue;
             }
 
             $path = $data[$attachment];
-            Assert::string($path, '['.__LINE__.']['.class_basename(self::class).']');
+            if (! is_string($path)) {
+                throw new UnexpectedValueException("Attachment [{$attachment}] must resolve to a string path.");
+            }
 
-            // Metodo compatibile con Laravel 9+ e Flysystem 3.x
-            $storage = Storage::disk($disk);
-
-            if (! $storage->exists($path)) {
+            if ($path === '' || ! $storage->exists($path)) {
                 continue;
             }
 
-            // Ottieni il contenuto del file prima che venga eliminato
             $fileContent = $storage->get($path);
-            $tempPath = tempnam(sys_get_temp_dir(), 'media_');
+            if (! is_string($fileContent)) {
+                throw new UnexpectedValueException("Attachment [{$attachment}] could not be read as a string.");
+            }
 
-            file_put_contents($tempPath, $fileContent);
+            $tempPath = tempnam(storage_path('framework/cache'), 'media_');
 
             try {
-                $media = $record->addMedia($tempPath)->usingFileName(basename($path))->toMediaCollection(
-                    $attachment,
-                    $disk,
-                );
+                file_put_contents($tempPath, $fileContent);
+
+                $media = $record->addMedia($tempPath)
+                    ->usingFileName(basename($path))
+                    ->toMediaCollection($attachment, $disk);
 
                 $dataAttachments[$attachment] = $media->getPathRelativeToRoot();
             } finally {
-                // Cleanup del file temporaneo
                 if (file_exists($tempPath)) {
                     unlink($tempPath);
                 }

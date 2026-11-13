@@ -1,3 +1,15 @@
+---
+title: "filament resource pages architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament resource pages architecture"
+issues: []
+discussions: []
+status: draft
+---
+
 # Architettura delle Pagine di Risorse Filament 
 
 ## Regola Fondamentale
@@ -114,4 +126,5 @@ find /var/www/html/saluteora/laravel/Modules -type f -name "*.php" -path "*/Fila
 
 - [Filament Resources Documentation](https://filamentphp.com/docs/3.x/panels/resources/getting-started)
 - [SaluteOra XotBase Architecture](./FILAMENT_XOT_ARCHITECTURE.md)
+- [SaluteOra XotBase Architecture](./filament_xot_architecture.md)
 - [Pattern Architetturali in Laravel](https://laravel.com/docs/architecture)

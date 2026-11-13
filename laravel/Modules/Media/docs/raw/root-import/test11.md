@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Test11"
 module: "Media"
 type: concept

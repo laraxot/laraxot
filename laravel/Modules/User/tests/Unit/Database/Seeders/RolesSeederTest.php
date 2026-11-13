@@ -1,7 +1,10 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< .merge_file_3RYgkl
 
+=======
+>>>>>>> .merge_file_wBcQLf
 use Modules\User\Database\Seeders\RolesSeeder;
 use Modules\User\Models\Role;
 use Modules\User\Tests\TestCase;
@@ -22,7 +25,11 @@ it('creates all expected roles', function (): void {
         'guest',
     ];
 
+<<<<<<< .merge_file_3RYgkl
     $seeder = new RolesSeeder();
+=======
+    $seeder = new RolesSeeder;
+>>>>>>> .merge_file_wBcQLf
     $seeder->setContainer(app());
     $seeder->run();
 
@@ -35,7 +42,11 @@ it('creates all expected roles', function (): void {
 });
 
 it('is idempotent when run multiple times', function (): void {
+<<<<<<< .merge_file_3RYgkl
     $seeder = new RolesSeeder();
+=======
+    $seeder = new RolesSeeder;
+>>>>>>> .merge_file_wBcQLf
     $seeder->setContainer(app());
 
     $seeder->run();

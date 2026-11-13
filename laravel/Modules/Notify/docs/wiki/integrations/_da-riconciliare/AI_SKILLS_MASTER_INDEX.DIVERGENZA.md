@@ -1,10 +1,15 @@
 ---
+qmd: "AI SKILLS MASTER INDEX.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: AI_SKILLS_MASTER_INDEX.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: ai_skills_master_index.divergenza.md
 ---
 
 # Divergenza: `AI_SKILLS_MASTER_INDEX.md`

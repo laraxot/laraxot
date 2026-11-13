@@ -1,3 +1,9 @@
+---
+title: "Employee - PROSSIMI_7_GIORNI_WIDGET"
+module: Employee
+bmad: true
+status: active
+---
 # PROSSIMI 7 GIORNI Widget - Documentazione
 
 ## 📅 Panoramica

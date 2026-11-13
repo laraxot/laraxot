@@ -1,3 +1,15 @@
+---
+title: "visual parity report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "visual parity report"
+issues: []
+discussions: []
+status: draft
+---
+
 # Visual Parity Report - Homepage
 
 **Data**: 2026-04-02
@@ -6,7 +18,6 @@
 **Stato**: ✅ **COMPLETATO** - 99.5% parity
 
 ---
-
 ## 📊 Risultato Finale
 
 | Metrica | Valore |
@@ -93,11 +104,11 @@
 ### Tema Sixteen
 - [00-index.md](00-index.md) - Indice documentazione
 - [work-plan.md](work-plan.md) - Piano di lavoro
-- [visual-comparison-analysis-2026-04-02.md](visual-comparison-analysis-2026-04-02.md) - Analisi precedente
+- [visual-comparison-analysis-2026-04-02.md](visual-comparison-analysis.md) - Analisi precedente
 - [screenshots/00-index.md](screenshots/00-index.md) - Indice screenshot
 
 ### Modulo Cms
-- [design-comuni-homepage.md](../../../Modules/Cms/docs/design-comuni-homepage.md) - Homepage parity
+- [design-comuni-homepage.md](../../../../Modules/Cms/docs/design-comuni-homepage.md) - Homepage parity
 
 ### Globale
 - [../../../docs/design-comuni/html-match.md](../../../docs/design-comuni/html-match.md) - Regola globale

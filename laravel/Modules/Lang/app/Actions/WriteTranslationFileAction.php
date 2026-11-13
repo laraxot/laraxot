@@ -112,11 +112,16 @@ class WriteTranslationFileAction
     {
         // Pulisce la cache di Laravel
         if (app()->bound('cache')) {
-            app('cache')->flush();
+            /** @var object $cache */
+            $cache = app('cache');
+            if (method_exists($cache, 'flush')) {
+                $cache->flush();
+            }
         }
 
         // Pulisce la cache delle traduzioni
         if (app()->bound('translation.loader')) {
+            /** @var object $loader */
             $loader = app('translation.loader');
             if (method_exists($loader, 'flush')) {
                 $loader->flush();

@@ -1,10 +1,15 @@
 ---
+qmd: "MASTER IMPLEMENTATION PLAN.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: MASTER_IMPLEMENTATION_PLAN.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: master_implementation_plan.divergenza.md
 ---
 
 # Divergenza: `MASTER_IMPLEMENTATION_PLAN.md`

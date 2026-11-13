@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Directory Structure Rules"
 module: "Media"
 type: rule
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "directory structure rules"
 related:
   - "./webm.md"
+status: draft
 ---
 # Directory Structure Rules
 

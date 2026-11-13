@@ -1,10 +1,14 @@
 ---
+qmd: "implementazione completa finale"
+issues: []
+discussions: []
 title: "IMPLEMENTAZIONE COMPLETA - REPORT FINALE ✨🐄"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # 🐄✨ IMPLEMENTAZIONE COMPLETA - REPORT FINALE ✨🐄

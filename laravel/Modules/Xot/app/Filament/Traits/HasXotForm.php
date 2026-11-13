@@ -19,7 +19,11 @@ trait HasXotForm
 
     public function getFormColumns(): int
     {
+<<<<<<< HEAD
         return 2;
+=======
+        return 1;
+>>>>>>> laraxot/dev
     }
 
     final public function form(Schema $schema): Schema

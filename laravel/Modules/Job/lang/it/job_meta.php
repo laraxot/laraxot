@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 // Job translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
 // claude-audit static: pages/widgets/navigation slice (fields → job_fields.php).
 // Canon: Modules/Job/docs/wiki — domain i18n only.

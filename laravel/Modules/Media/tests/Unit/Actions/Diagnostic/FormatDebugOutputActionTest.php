@@ -16,13 +16,13 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class)->group('no-media-db');
 
 test('empty results fall back to the given message', function (): void {
-    $output = (new FormatDebugOutputAction())->execute([], 'nessun risultato');
+    $output = (new FormatDebugOutputAction)->execute([], 'nessun risultato');
 
     Assert::assertSame('nessun risultato', $output);
 });
 
 test('a well formed result renders title, status and data lines', function (): void {
-    $output = (new FormatDebugOutputAction())->execute([
+    $output = (new FormatDebugOutputAction)->execute([
         'bucket' => [
             'title' => 'Bucket',
             'status' => 'ok',
@@ -44,7 +44,7 @@ test('a well formed result renders title, status and data lines', function (): v
 });
 
 test('nested array values are rendered as pretty printed json', function (): void {
-    $output = (new FormatDebugOutputAction())->execute([
+    $output = (new FormatDebugOutputAction)->execute([
         'policy' => [
             'title' => 'Policy',
             'status' => 'ko',
@@ -58,7 +58,7 @@ test('nested array values are rendered as pretty printed json', function (): voi
 });
 
 test('entries that are not arrays or lack the required keys are skipped', function (): void {
-    $output = (new FormatDebugOutputAction())->execute([
+    $output = (new FormatDebugOutputAction)->execute([
         'scalare' => 'non e un array',
         'incompleto' => ['title' => 'Solo il titolo'],
     ], 'nessun risultato');
@@ -73,7 +73,7 @@ test('several results are separated by their own rule line', function (): void {
         'data' => ['k' => 'v'],
     ];
 
-    $output = (new FormatDebugOutputAction())->execute([
+    $output = (new FormatDebugOutputAction)->execute([
         'primo' => $result('Primo'),
         'secondo' => $result('Secondo'),
     ], 'nessun risultato');

@@ -24,7 +24,11 @@
         "calebporzio/sushi": "^2.5",
         "coolsam/panel-modules": "*",
         "doctrine/dbal": "*",
+<<<<<<< HEAD
         "filament/filament": "^5.0",
+=======
+        "filament/filament": "^5.11.2",
+>>>>>>> laraxot/dev
         "filament/spatie-laravel-media-library-plugin": "*",
         "guzzlehttp/guzzle": "*",
         "laravel/folio": "^1.1",
@@ -65,7 +69,11 @@
         "fakerphp/faker": "^1.24",
         "fruitcake/laravel-debugbar": "^4.2",
         "larastan/larastan": "*",
+<<<<<<< HEAD
         "laravel/boost": "^2.0",
+=======
+        "laravel/boost": "^2.10",
+>>>>>>> laraxot/dev
         "laravel/pint": "^1.18",
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
@@ -110,7 +118,10 @@
             "Modules\\Xot\\": "app/",
             "Modules\\Xot\\Database\\Factories\\": "database/factories/",
             "Modules\\Xot\\Database\\Seeders\\": "database/seeders/",
+<<<<<<< HEAD
             "Modules\\Xot\\Tests\\": "tests/",
+=======
+>>>>>>> laraxot/dev
             "Coolsam\\FilamentModules\\": "packages/coolsam/panel-modules/src/"
         },
         "files": [
@@ -118,9 +129,26 @@
         ]
     },
     "autoload-dev": {
+<<<<<<< HEAD
         "files": [
             "tests/Support/helpers.php"
         ]
+=======
+        "psr-4": {
+            "Modules\\Xot\\Tests\\": "tests/"
+        },
+<<<<<<< .merge_file_lIc022
+        "classmap": ["tests/"]
+=======
+<<<<<<< .merge_file_9O9JRY
+        "files": [
+            "tests/Support/helpers.php"
+        ]
+=======
+        "classmap": ["tests/"]
+>>>>>>> .merge_file_Uisczg
+>>>>>>> .merge_file_wjCvWt
+>>>>>>> laraxot/dev
     },
     "scripts": {
         "analyse": "vendor/bin/phpstan analyse",
@@ -151,4 +179,8 @@
     "require-dev_comment": {
         "spatie/laravel-error-solutions": "*"
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> laraxot/dev

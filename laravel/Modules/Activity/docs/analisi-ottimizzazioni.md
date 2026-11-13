@@ -254,7 +254,6 @@ php artisan test
 
 ---
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_szomJ6
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -269,8 +268,5 @@ php artisan test
 **=======
 **ultimo aggiornamento**: 20 agosto 2025
 >>>>>>> .merge_file_765fhQ
-=======
-**
->>>>>>> 13cf1831 (.)
 **analista**: claude code
 **stato**: pronto per implementazione

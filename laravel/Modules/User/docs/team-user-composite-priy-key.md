@@ -8,17 +8,21 @@ qmd: "team-user-composite-priy-key fix: team_user composite primary key implemen
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Fix: team_user Composite Primary Key Implementation
 
 ## Data Intervento
@@ -255,12 +259,15 @@ $membership = Membership::where('team_id', $team->id)
 
 ## Collegamenti
 
-- [Migration team_user](../../database/migrations/2023_01_01_000004_create_team_user_table.php)
-- [Membership Model](../../app/Models/Membership.php)
-- [HasTeams Trait](../../app/Models/Traits/HasTeams.php)
-- [TeamsRelationManager](../../app/Filament/Resources/UserResource/RelationManagers/TeamsRelationManager.php)
+- [Migration team_user](../database/migrations/2023_01_01_000004_create_team_user_table.php)
+- [Membership Model](../app/Models/Membership.php)
+- [HasTeams Trait](../app/Models/Traits/HasTeams.php)
+- [TeamsRelationManager](../app/Filament/Resources/UserResource/RelationManagers/TeamsRelationManager.php)
+- [Migration team_user](../database/migrations/2023_01_01_000004_create_team_user_table.php)
+- [Membership Model](../app/Models/Membership.php)
+- [HasTeams Trait](../app/Models/Traits/HasTeams.php)
+- [TeamsRelationManager](../app/Filament/Resources/UserResource/RelationManagers/TeamsRelationManager.php)
 - [Documentazione Pivot Tables](../../../../docs/pivot-tables-best-practices.md)
->>>>>>> 87273113 (.)
 
 ## Note Tecniche
 
@@ -281,5 +288,4 @@ $membership = Membership::where('team_id', $team->id)
 
 ---
 
->>>>>>> 87273113 (.)
 *Status: IMPLEMENTATO E VALIDATO*

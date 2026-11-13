@@ -1,7 +1,15 @@
 ---
+title: "map fullscreen issues"
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "map fullscreen issues"
+issues: []
+discussions: []
 name: map-fullscreen-issues
 description: Problemi di visualizzazione della mappa in fullscreen nel wizard Segnalazione
 type: concept
+status: draft
 ---
 
 # Problemi di Mappa in Fullscreen – Wizard Segnalazione

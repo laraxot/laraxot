@@ -1,3 +1,15 @@
+---
+title: "docs monitoring system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs monitoring system"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📚 DOCS MONITORING SYSTEM - Sistema di Monitoraggio Documentazione
 
 **Data Creazione**: 2025-01-27  
@@ -6,7 +18,6 @@
 **Scope**: Tutte le cartelle docs dei moduli e temi  
 
 ---
-
 ## 🎯 OBIETTIVO
 
 Monitorare costantemente tutte le cartelle `docs` dei moduli e temi per:

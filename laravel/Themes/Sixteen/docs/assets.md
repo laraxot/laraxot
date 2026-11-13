@@ -1,3 +1,15 @@
+---
+title: "assets"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "assets"
+issues: []
+discussions: []
+status: draft
+---
+
 # Gestione degli asset Vite per il tema Sixteen
 
 ## Problema
@@ -20,7 +32,6 @@ npm run copy
 Questo comando si occupa di copiare e generare tutti gli asset necessari, risolvendo l'errore di Vite.
 
 ---
-
 ## Collegamenti
 - [Guida risoluzione errore Vite nella root](../../../../../docs/project/modules/cms.md)
 

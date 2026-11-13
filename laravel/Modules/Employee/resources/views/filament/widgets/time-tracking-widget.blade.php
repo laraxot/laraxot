@@ -20,15 +20,15 @@ declare(strict_types=1);
             @if($todayStatus === 'active')
                 <div class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2 flex items-center justify-center space-x-2">
                     <span class="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
-                    <span>@lang('employee::widgets.time_tracking.status.active')</span>
+                    <span>@lang('employee::time_tracking_widget.messages.status_active.message')</span>
                 </div>
             @elseif($todayStatus === 'completed')
                 <div class="text-sm font-medium text-gray-900 dark:text-gray-100 mb-2 flex items-center justify-center space-x-2">
                     <span class="inline-block w-2 h-2 bg-gray-400 rounded-full"></span>
-                    <span>@lang('employee::widgets.time_tracking.status.completed')</span>
+                    <span>@lang('employee::time_tracking_widget.messages.status_completed.message')</span>
                 </div>
             @else
-                <div class="text-sm text-gray-500 dark:text-gray-400 mb-2">@lang('employee::widgets.time_tracking.no_entries')</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400 mb-2">@lang('employee::time_tracking_widget.messages.no_entries.message')</div>
             @endif
 
             {{-- Lista timbature di oggi --}}
@@ -45,11 +45,11 @@ declare(strict_types=1);
         <div class="text-center">
             @if($isClockedIn)
                 <x-filament::button color="danger" size="lg" wire:click="clockOut">
-                    @lang('employee::widgets.time_tracking.actions.clock_out')
+                    @lang('employee::time_tracking_widget.actions.clock_out.label')
                 </x-filament::button>
             @else
                 <x-filament::button color="success" size="lg" wire:click="clockIn">
-                    @lang('employee::widgets.time_tracking.actions.clock_in')
+                    @lang('employee::time_tracking_widget.actions.clock_in.label')
                 </x-filament::button>
             @endif
         </div>

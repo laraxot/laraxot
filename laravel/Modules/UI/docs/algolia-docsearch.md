@@ -1,8 +1,19 @@
 ---
+<<<<<<< HEAD
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "algolia docsearch"
+issues: []
+discussions: []
+=======
+>>>>>>> f5ffd8b4 (.)
 title: Algolia DocSearch
 description: Configure Algolia DocSearch with the Jigsaw docs starter template
 extends: _layouts.documentation
 section: content
+status: draft
 ---
 
 # Algolia DocSearch {#algolia-docsearch}
@@ -82,7 +93,10 @@ For more details, visit the [official Algolia DocSearch documentation.](https://
 
 ---
 ---
+<<<<<<< HEAD
+=======
 title: Algolia DocSearch
+>>>>>>> f5ffd8b4 (.)
 description: Configure Algolia DocSearch with the Jigsaw docs starter template
 extends: _layouts.documentation
 section: content

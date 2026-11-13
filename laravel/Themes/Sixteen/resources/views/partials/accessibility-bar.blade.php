@@ -47,7 +47,7 @@
                 {{-- Link accessibilità --}}
                 <div class="flex items-center space-x-4">
                     <a
-                        href="{{ route('pages.view', ['slug' => 'accessibility']) }}"
+                        href="{{ url('/pages/accessibility') }}"
                         class="text-sm text-blue-600 hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
                         :aria-label="__('pub_theme::accessibility.accessibility_statement')"
                     >
@@ -55,7 +55,7 @@
                     </a>
                     
                     <a
-                        href="{{ route('pages.view', ['slug' => 'privacy']) }}"
+                        href="{{ url('/pages/privacy') }}"
                         class="text-sm text-blue-600 hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
                         :aria-label="__('pub_theme::accessibility.privacy_policy')"
                     >

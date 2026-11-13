@@ -1,12 +1,20 @@
 ---
+title: "source"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "source"
+issues: []
+discussions: []
 module: theme
 topic: source
-canonical: ../../../../../Themes/docs/shared-components/source.md
+canonical: ../../../../../Themes/docs/shared-components/source.md  # target mancante, verificato 2026-10-08
+status: stub
 ---
 
 See canonical documentation: ../../../../../Themes/docs/shared-components/source.md
-<<<<<<< HEAD
-=======
+---
 title: "Source Title"
 type: source
 sources: ["raw/articles/source-filename.md"]
@@ -54,4 +62,3 @@ _Any additional notes, context, or observations._
 - [ ] Create concept page for: _concept name_
 - [ ] Cross-reference with: _existing page_
 - [ ] Verify claim: _specific claim that needs verification_
->>>>>>> laraxot/dev

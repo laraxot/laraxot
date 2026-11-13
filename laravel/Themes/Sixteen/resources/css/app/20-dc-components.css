@@ -1,0 +1,391 @@
+/*
+  Componenti Design Comuni, una volta, per ogni pagina con data-dc.
+  Il nome della pagina non è uno scope: .cmp-input-search è lo stesso
+  campo su FAQ, novità e servizi. Bootstrap Italia non è caricato.
+
+  Colore primario: `--bs-primary` (#007a52, Design Comuni). MAI `--color-primary-500`: nel CSS compilato vale
+  `var(--primary-500)`, la tonalita' 500 della palette che Filament inietta inline (oklch 0.683 0.170 161.8,
+  circa #00b877): su bianco non passa il contrasto AA (axe color-contrast su .cmp-contacts e «Invio», 2026-10-23).
+*/
+
+.page-content[data-dc] .cmp-input-search .input-group {
+  position: relative;
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch;
+  border-bottom: 1px solid #5c6f82;
+}
+
+.page-content[data-dc] .cmp-input-search .form-control {
+  display: block !important;
+  flex: 1 1 auto;
+  width: auto !important;
+  min-width: 0;
+  min-height: 3rem;
+  padding: 0.75rem 1rem 0.75rem 2rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.page-content[data-dc] .cmp-input-search .autocomplete-icon {
+  position: absolute;
+  top: 50% !important;
+  left: 0.15rem !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: var(--bs-primary, #007a52);
+  transform: translateY(-50%) !important;
+}
+
+.page-content[data-dc] .cmp-input-search .autocomplete-icon svg {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.page-content[data-dc] .cmp-input-search .btn {
+  display: inline-flex !important;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 6rem;
+  min-height: 3rem;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--bs-primary, #007a52) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.page-content[data-dc] .cmp-accordion.faq .accordion-button {
+  display: flex !important;
+  width: 100% !important;
+  height: auto !important;
+  padding: 0.75rem 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--bs-primary, #007a52) !important;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Il `box-shadow: none !important` qui sopra (0,5,0) batteva l'anello di Bootstrap Italia `:focus:not(.focus--mouse)` (0,4,1): focus invisibile
+   (FO-5-04). Stesso anello nero 3px del resto del sito, con `!important` perche' deve battere quello di sopra. */
+.page-content[data-dc] .cmp-accordion.faq .accordion-button:focus:not(.focus--mouse) {
+  box-shadow: 0 0 0 3px #000 !important;
+}
+
+.page-content[data-dc] .cmp-accordion.faq .accordion-button::after,
+.page-content[data-dc] .cmp-accordion.faq .accordion-button::-webkit-details-marker {
+  display: none !important;
+  content: none !important;
+}
+
+.page-content[data-dc] .cmp-accordion.faq .button-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.page-content[data-dc] .cmp-accordion.faq .icon-wrapper svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.page-content[data-dc] .cmp-accordion .accordion-collapse:not(.show) {
+  display: none;
+}
+
+.page-content[data-dc] .cmp-accordion .accordion-collapse.show {
+  display: block;
+}
+
+.page-content[data-dc] .row:has(.cmp-accordion.faq) .btn-outline-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.75rem;
+  margin: 2rem 0 2.5rem;
+  padding: 0.75rem 1rem;
+  box-sizing: border-box;
+  border: 2px solid var(--bs-primary, #007a52) !important;
+  background: #fff !important;
+  color: var(--bs-primary, #007a52) !important;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.page-content[data-dc] .col-lg-8.offset-lg-2,
+.page-content[data-dc] .cmp-rating,
+.page-content[data-dc] .cmp-contacts {
+  width: 100%;
+  max-width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.page-content[data-dc] .bg-primary:has(.cmp-rating) {
+  background: var(--bs-primary, #007a52) !important;
+  padding: 3rem 1rem;
+}
+
+.page-content[data-dc] .bg-grey-card:has(.cmp-contacts) {
+  background: #eceff1 !important;
+  padding: 2.5rem 1rem 3rem;
+}
+
+.page-content[data-dc] .cmp-rating .card,
+.page-content[data-dc] .cmp-contacts .card {
+  background: #fff !important;
+  padding: 2rem 1.5rem !important;
+  box-sizing: border-box;
+}
+
+.page-content[data-dc] .cmp-rating h2,
+.page-content[data-dc] .cmp-contacts h2 {
+  margin: 0 0 1rem !important;
+  font-size: 1.5rem !important;
+  line-height: 1.3 !important;
+  font-weight: 600 !important;
+  color: #1a1a1a !important;
+}
+
+.page-content[data-dc] .cmp-contacts h2 + ul + h2 {
+  margin-top: 2rem !important;
+}
+
+.page-content[data-dc] .cmp-rating fieldset.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.page-content[data-dc] .cmp-rating fieldset.rating input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.page-content[data-dc] .cmp-rating fieldset.rating label {
+  cursor: pointer;
+}
+
+.page-content[data-dc] .cmp-rating fieldset.rating label svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #c5c7c9;
+}
+
+.page-content[data-dc] .cmp-rating fieldset.rating label:hover svg,
+.page-content[data-dc] .cmp-rating fieldset.rating label:hover ~ label svg,
+.page-content[data-dc] .cmp-rating fieldset.rating input:checked ~ label svg {
+  fill: var(--bs-primary, #007a52);
+}
+
+/*
+  Stelle con il DOM da 1 a 5 (partials/dc-rating-stars, DCP-291 FO-5-17): il riferimento le mette da 5 a 1 e le inverte con row-reverse,
+  cosi' frecce e lettore di schermo vanno al contrario di come si vedono. Ogni radio sta con la sua label in un `.dc-rating-stars__item`:
+  le regole compilate di Bootstrap Italia (`.rating > label`, `.rating > input:checked ~ label`, `label:hover ~ label`) assumono l'ordine
+  inverso e con il DOM 1..5 colorerebbero le stelle SOPRA quella scelta; con il contenitore per stella non si applicano piu'.
+  Il riempimento "fino alla stella" e' a ritroso: `:has()` sugli item successivi. Prefisso a 5 classi per battere `fieldset.rating label svg` sopra.
+*/
+.page-content[data-dc] .cmp-rating fieldset.rating.dc-rating-stars {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.page-content[data-dc] .cmp-rating fieldset.rating.dc-rating-stars .dc-rating-stars__item label {
+  display: block;
+  margin: 0;
+  padding-right: 2px;
+}
+
+.page-content[data-dc] .cmp-rating fieldset.rating.dc-rating-stars .dc-rating-stars__item svg {
+  display: block;
+  /* #7d97b0 su bianco = 3.03:1, il minimo di 1.4.11 per l'oggetto grafico (stesso colore del riferimento) */
+  fill: #7d97b0;
+  transform-origin: 50%;
+  transition: transform 0.1s;
+}
+
+.page-content[data-dc] .cmp-rating fieldset.rating.dc-rating-stars .dc-rating-stars__item label:hover svg {
+  transform: scale(1.1);
+}
+
+.page-content[data-dc] .cmp-rating fieldset.rating.dc-rating-stars .dc-rating-stars__item:hover svg,
+.page-content[data-dc] .cmp-rating fieldset.rating.dc-rating-stars .dc-rating-stars__item:has(~ .dc-rating-stars__item:hover) svg,
+.page-content[data-dc] .cmp-rating fieldset.rating.dc-rating-stars .dc-rating-stars__item:has(input:checked) svg,
+.page-content[data-dc] .cmp-rating fieldset.rating.dc-rating-stars .dc-rating-stars__item:has(~ .dc-rating-stars__item input:checked) svg {
+  fill: var(--bs-primary, #007a52);
+}
+
+/*
+  Focus da tastiera sulle stelle (audit 2026-11-11, F-12): il radio e' 1x1 px (nascosto), quindi l'indicatore visibile e' quello della label, un
+  anello arancione di 2px = 2.14:1 su bianco (minimo 3:1, WCAG 1.4.11/2.4.11). Stesso anello bianco + scuro della regola `.rating > input` qui sotto.
+  `!important` perche' `design-comuni/components.css` (copia del riferimento, minificata) ha `.cmp-rating .rating input:focus+label {box-shadow: ... #f90 !important}`.
+*/
+.page-content[data-dc] .cmp-rating fieldset.rating.dc-rating-stars .dc-rating-stars__item input:focus-visible + label {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #1a1a1a !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-content[data-dc] .cmp-rating fieldset.rating.dc-rating-stars .dc-rating-stars__item svg {
+    transition: none;
+  }
+}
+
+.page-content[data-dc] .cmp-contacts .contact-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.page-content[data-dc] .cmp-contacts .contact-list li + li {
+  margin-top: 0.75rem;
+}
+
+.page-content[data-dc] .cmp-contacts .list-item {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  color: var(--bs-primary, #007a52) !important;
+  text-decoration: none;
+}
+
+.page-content[data-dc] .cmp-contacts .list-item svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+/*
+  Filament FO checkbox (`Checkbox::make('remember')` sul login).
+  DC azzera ogni input con `appearance: none !important`; senza ripristino
+  il controllo resta 20×20 trasparente. Nativo + accent: Filament way.
+  @see https://filamentphp.com/docs/5.x/forms/checkbox
+  @see docs/bmad/stories/dcp-268-login-checkbox-e-occhio-password-dentro-data-dc.story.md
+*/
+.page-content[data-dc] .auth-login-card .fi-fo-field-label:has(.fi-checkbox-input) {
+  display: flex !important;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  cursor: pointer;
+}
+
+.page-content[data-dc] .auth-login-card input.fi-checkbox-input,
+.page-content[data-dc] .auth-login-card form input[type='checkbox'] {
+  appearance: auto !important;
+  -webkit-appearance: checkbox !important;
+  flex: 0 0 auto;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  margin: 0 !important;
+  accent-color: var(--bs-primary, #007a52);
+  cursor: pointer;
+}
+
+/*
+  Pulsante pericolo e valutazione a stelle, DCP-377 (A-02, D-16, T-03). Il CSS servito non aveva `.btn-danger` («Elimina il mio account» era
+  trasparente con testo blu) ne' le regole `.rating` di Bootstrap Italia: le uniche erano daisyUI, spente dentro `data-dc`, e le label delle
+  stelle misuravano 2x0 px. Valori copiati dal CSS ufficiale bootstrap-italia 2.13.0; le stelle piene usano il primario del tema (`--bs-primary`).
+*/
+body:has(.page-content[data-dc]) .btn.btn-danger {
+  color: #fff;
+  background-color: #cc334d;
+  border-color: #cc334d;
+}
+
+body:has(.page-content[data-dc]) .btn.btn-danger:hover,
+body:has(.page-content[data-dc]) .btn.btn-danger:focus-visible,
+body:has(.page-content[data-dc]) .btn.btn-danger:active {
+  color: #fff;
+  background-color: hsl(350 60% 40.5%);
+  border-color: hsl(350 60% 37.5%);
+}
+
+body:has(.page-content[data-dc]) .btn.btn-danger:disabled,
+body:has(.page-content[data-dc]) .btn.btn-danger.disabled {
+  color: #fff;
+  background-color: #cc334d;
+  border-color: #cc334d;
+  pointer-events: none;
+}
+
+.page-content[data-dc] .rating {
+  border: 0;
+  float: left;
+}
+
+.page-content[data-dc] .rating > input {
+  position: absolute;
+  left: -9999px;
+}
+
+.page-content[data-dc] .rating > label {
+  float: right;
+  margin: 0;
+  padding-right: 2px;
+  cursor: pointer;
+}
+
+.page-content[data-dc] .rating > label svg {
+  fill: #c3cfdb;
+  position: relative;
+  transform-origin: center center;
+  transition: transform 0.1s;
+}
+
+.page-content[data-dc] .rating > label:hover svg {
+  transform: scale(1.1);
+}
+
+.page-content[data-dc] .rating > input:checked ~ label svg,
+.page-content[data-dc] .rating > label:hover svg,
+.page-content[data-dc] .rating > label:hover ~ label svg {
+  fill: var(--bs-primary, #007a52);
+}
+
+.page-content[data-dc] .rating > input:focus-visible + label svg {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #000;
+  outline: 3px solid transparent;
+  outline-offset: 3px;
+}
+
+/*
+  Colori forzati (alto contrasto di Windows), DCP-291 FO-5-20. Il browser sostituisce sfondi e bordi con i colori di sistema:
+  `.btn-primary` ha bordo 0 e sfondo pieno, quindi diventava testo semplice (misurato: bordo 0px, sfondo Canvas); nello stepper
+  del wizard i tre passi avevano lo stesso peso e nessun bordo, il passo attivo non si distingueva (`aria-current="step"` c'e' gia').
+  Solo dentro `forced-colors: active`: nessun effetto sul tema normale. Logo bianco su trasparente (`.fc-brand-mark`): vedi story, da rimisurare
+  quando l'intestazione sara' stabile.
+*/
+@media (forced-colors: active) {
+  body:has(.page-content[data-dc]) .btn:not(.btn-link) {
+    border: 1px solid ButtonText;
+  }
+
+  body:has(.page-content[data-dc]) .steppers-header li.active {
+    border-bottom: 3px solid CanvasText;
+  }
+}

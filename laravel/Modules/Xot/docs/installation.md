@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Installazione
 
 ## Requisiti di Sistema
@@ -135,3 +136,13 @@ php artisan serve
 * [installation.md](../../../Lang/docs/installation.md)
 * [installation.md](../../../Cms/docs/installation.md)
 * [installation.md](../../../../Themes/One/docs/installation.md)
+=======
+---
+title: "installation"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "installation xot"
+---
+>>>>>>> laraxot/dev

@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+---
+title: "xotbaseresource"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "xotbaseresource"
+issues: []
+discussions: []
+status: draft
+---
+
+>>>>>>> laraxot/dev
 # XotBaseResource
 
 ## Panoramica
@@ -26,8 +41,22 @@ Questo significa che:
 
 ```php
 <<<<<<< HEAD
+<<<<<<< HEAD
 abstract public function getFormSchema(): array;
 =======
+abstract public function getFormSchema(): array;
+>>>>>>> laraxot/dev
+=======
+abstract public function getFormSchema(): array;
+---
+title: "xotbaseresource"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "xotbaseresource"
+issues: []
+discussions: []
 abstract public function getFormSchema(): array;
 >>>>>>> laraxot/dev
 ```
@@ -64,8 +93,14 @@ class NotificationResource extends XotBaseResource
     protected static ?string $model = 'Modules\Notify\Models\Notification';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public function getFormSchema(): array
+---
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
     {

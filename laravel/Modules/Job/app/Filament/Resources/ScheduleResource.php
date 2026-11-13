@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://github.com/husam-tariq/filament-database-schedule/blob/main/src/Filament/resources/ScheduleResource.php
  */
-
-declare(strict_types=1);
 
 namespace Modules\Job\Filament\Resources;
 
@@ -70,7 +69,7 @@ class ScheduleResource extends XotBaseResource
             'main_section' => Section::make([
                 Select::make('command')
                     ->options(fn () => $commands_opts)
-                    ->reactive()
+                    ->live()
                     ->searchable()
                     ->required()
                     ->afterStateUpdated(function (Set $set, ?string $state): void {

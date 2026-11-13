@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Modules\Gdpr\Tests\Unit\Actions;
 
 use Modules\Gdpr\Actions\Consent\CollectGdprConsentsAction;
-use Modules\Gdpr\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
-
 test('CollectGdprConsentsAction returns correct array', function () {
-    $action = new CollectGdprConsentsAction();
+    $action = new CollectGdprConsentsAction;
     $result = $action->execute(true, true, false);
 
     Assert::assertArrayHasKey('privacy_accepted', $result);
@@ -23,7 +20,7 @@ test('CollectGdprConsentsAction returns correct array', function () {
 });
 
 test('CollectGdprConsentsAction handles all false', function () {
-    $action = new CollectGdprConsentsAction();
+    $action = new CollectGdprConsentsAction;
     $result = $action->execute(false, false, false);
 
     Assert::assertFalse($result['privacy_accepted']);
@@ -32,7 +29,7 @@ test('CollectGdprConsentsAction handles all false', function () {
 });
 
 test('CollectGdprConsentsAction handles all true', function () {
-    $action = new CollectGdprConsentsAction();
+    $action = new CollectGdprConsentsAction;
     $result = $action->execute(true, true, true);
 
     Assert::assertTrue($result['privacy_accepted']);

@@ -1,3 +1,9 @@
+---
+title: "Employee - ERROR_ANALYSIS"
+module: Employee
+bmad: true
+status: active
+---
 # Error Analysis Report - Employee Module
 
 ## Issues Found in WorkHour.php

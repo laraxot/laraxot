@@ -1,13 +1,18 @@
 ---
+updated: 2026-09-26
+qmd: "PHILOSOPHY"
+issues: []
+discussions: []
 title: Notify Module Philosophy
 type: manifesto
 tags: [notify, philosophy, architecture, async]
 created: 2026-09-06
+status: draft
 ---
 
 # Notify Module Philosophy
 
-> **Essere Connessi** — A citizen in the dark is a citizen who doubts. The moment they know—via email, SMS, WhatsApp, or push—that their ticket was received, routed, escalated, closed, they trust the system. That's why Notify exists: not as a feature, but as the connective tissue between state and awareness.
+> **Essere Connessi**: A citizen in the dark is a citizen who doubts. The moment they know-via email, SMS, WhatsApp, or push-that their ticket was received, routed, escalated, closed, they trust the system. That's why Notify exists: not as a feature, but as the connective tissue between state and awareness.
 
 ---
 
@@ -21,7 +26,7 @@ Notify does not *create* state. It *reflects* state. The decision to notify live
 
 ### 2. Multi-Channel is Non-Negotiable
 
-A notification is simultaneously email, SMS, WhatsApp, push, and Telegram—or none. Channels are not alternatives; they are dimensions of the same message. A single template compiles to multiple forms:
+A notification is simultaneously email, SMS, WhatsApp, push, and Telegram-or none. Channels are not alternatives; they are dimensions of the same message. A single template compiles to multiple forms:
 
 - Email: HTML + text fallback
 - SMS: 160 chars, truncated elegantly
@@ -231,52 +236,52 @@ The gap between T0 (decision) and T3 (awareness) is async. It's accepted because
 
 ### Core Laravel/PHP
 
-- `laravel/framework` (v12) — Queueing, Eloquent, Migrations
-- `spatie/laravel-queueable-action` — The action pattern
-- `spatie/laravel-medialibrary` — File attachments for templates
-- `spatie/laravel-translatable` — Multi-language templates
+- `laravel/framework` (v12): Queueing, Eloquent, Migrations
+- `spatie/laravel-queueable-action`: The action pattern
+- `spatie/laravel-medialibrary`: File attachments for templates
+- `spatie/laravel-translatable`: Multi-language templates
 
 ### Channel Providers
 
 #### Email
 
-- `laravel/mail` (built-in) — SMTP driver
-- `spatie/laravel-html-to-pdf` (optional) — PDF attachments
-- `symfony/mailer` (built-in) — Mail sending
+- `laravel/mail` (built-in): SMTP driver
+- `spatie/laravel-html-to-pdf` (optional): PDF attachments
+- `symfony/mailer` (built-in): Mail sending
 
 #### SMS
 
-- `twilio/sdk` — Twilio API
-- `vonage/client` (Nexmo rebrand) — Vonage/Nexmo
-- `guzzlehttp/guzzle` — HTTP client (used by all providers)
+- `twilio/sdk`: Twilio API
+- `vonage/client` (Nexmo rebrand): Vonage/Nexmo
+- `guzzlehttp/guzzle`: HTTP client (used by all providers)
 
 #### Push Notifications
 
-- `kreait/firebase-php` — Firebase Admin SDK
-- `google/cloud-storage` (optional) — GCS for FCM certificates
+- `kreait/firebase-php`: Firebase Admin SDK
+- `google/cloud-storage` (optional): GCS for FCM certificates
 
 #### Telegram
 
-- `nutgram/nutgram` — Telegram Bot API wrapper (preferred)
-- `irazasyed/telegram-bot-sdk` — Alternative Telegram SDK
+- `nutgram/nutgram`: Telegram Bot API wrapper (preferred)
+- `irazasyed/telegram-bot-sdk`: Alternative Telegram SDK
 - Manual cURL for official Bot API
 
 #### WhatsApp
 
-- `twilio/sdk` — Twilio WhatsApp integration
-- `vonage/client` — Vonage WhatsApp
-- `facebook/business` — Facebook Cloud API
+- `twilio/sdk`: Twilio WhatsApp integration
+- `vonage/client`: Vonage WhatsApp
+- `facebook/business`: Facebook Cloud API
 
 ### Infrastructure
 
-- `predis/predis` — Redis for queue backend (optional; use SQS/Postgres if not self-hosted)
-- `monolog/monolog` (built-in) — Logging (configured in config/logging.php)
+- `predis/predis`: Redis for queue backend (optional; use SQS/Postgres if not self-hosted)
+- `monolog/monolog` (built-in): Logging (configured in config/logging.php)
 
 ### Development & Testing
 
-- `pestphp/pest` — Test framework
-- `laravel/dusk` (optional) — Browser testing for rendered emails
-- `jchrist/mailhog` (Docker image) — Local SMTP testing
+- `pestphp/pest`: Test framework
+- `laravel/dusk` (optional): Browser testing for rendered emails
+- `jchrist/mailhog` (Docker image): Local SMTP testing
 
 ### Installation
 
@@ -359,11 +364,11 @@ Sensitive data (ticket IDs, user names) in transit. Encrypt at send time with te
 
 ### Inspirations
 
-1. **Spatie QueueableAction** — Why Notify uses actions, not services.
-2. **Laravel Notification Channel System** — The idea of channels (mail, SMS, push), reimplemented more carefully.
-3. **Postmark's Email Template Language** — Safe variable rendering without eval.
-4. **Segment's CDP** — Audience filtering (e.g., "send only to users in district X").
-5. **Intercom's Messenger** — Multi-channel, user preference aware, real-time.
+1. **Spatie QueueableAction**: Why Notify uses actions, not services.
+2. **Laravel Notification Channel System**: The idea of channels (mail, SMS, push), reimplemented more carefully.
+3. **Postmark's Email Template Language**: Safe variable rendering without eval.
+4. **Segment's CDP**: Audience filtering (e.g., "send only to users in district X").
+5. **Intercom's Messenger**: Multi-channel, user preference aware, real-time.
 
 ---
 
@@ -560,7 +565,7 @@ class TicketService {
         $ticket->status = 'closed';
         $ticket->save();
         
-        // Email sent here — hard to test, hard to debug
+        // Email sent here: hard to test, hard to debug
         Mail::send(...);
         
         // What if email fails? Transaction rolls back? Ticket stays open?
@@ -1090,7 +1095,7 @@ Modules\Notify\Actions\NotificationManager::send(
 | **Orchestration** | 5 | ✅ | Manager, Sender, Recipient, Recorder, Dispatcher |
 | **Support** | 4 | ✅ | Phone normalization, theme resolver, PDF attachment, formatting |
 
-**Total: 46 Actions** — Each provider is separate, each channel is coordinated, each concern is isolated.
+**Total: 46 Actions**: Each provider is separate, each channel is coordinated, each concern is isolated.
 
 ### Model Coverage
 

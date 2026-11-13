@@ -1,3 +1,15 @@
+---
+title: "composer strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "composer strategy"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🎯 Laravel-Modules Composer Strategy
 
 **Data**: 2026-03-30  
@@ -267,7 +279,6 @@ Composer vede:
 - [MODULES_ARCHITECTURE.md](MODULES_ARCHITECTURE.md) - Architettura moduli
 
 ---
-
 **Stato**: ✅ **CONFIGURATO - Composer minimale con merge-plugin**  
 **Principio**: **Root minimale, moduli specifici**  
 **Merge Plugin**: **wikimedia/composer-merge-plugin**

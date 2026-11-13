@@ -1,3 +1,9 @@
+---
+title: "Employee - DOCS_REFACTORING_COMPLETED"
+module: Employee
+bmad: true
+status: active
+---
 # Docs Refactoring Completed - Employee Module
 
 ## 🎯 Obiettivo Completato

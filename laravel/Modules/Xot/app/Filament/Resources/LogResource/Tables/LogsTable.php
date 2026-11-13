@@ -4,8 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources\LogResource\Tables;
 
+<<<<<<< HEAD
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
+=======
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\ViewAction;
+use Filament\Tables\Columns\Column;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
+>>>>>>> laraxot/dev
 use Illuminate\Support\Number;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 use Modules\Xot\Models\Log;
@@ -30,4 +39,39 @@ class LogsTable extends XotBaseResourceTable
                 ->sortable(),
         ];
     }
+<<<<<<< HEAD
+=======
+
+    public function getTableFilters(): array
+    {
+        return [
+            'level_name' => SelectFilter::make('level_name')
+                ->options([
+                    'emergency' => 'Emergency',
+                    'alert' => 'Alert',
+                    'critical' => 'Critical',
+                    'error' => 'Error',
+                    'warning' => 'Warning',
+                    'notice' => 'Notice',
+                    'info' => 'Info',
+                    'debug' => 'Debug',
+                ]),
+        ];
+    }
+
+    public function getTableActions(): array
+    {
+        return [
+            'view' => ViewAction::make(),
+            'delete' => DeleteAction::make(),
+        ];
+    }
+
+    public function getTableBulkActions(): array
+    {
+        return [
+            'delete' => DeleteBulkAction::make(),
+        ];
+    }
+>>>>>>> laraxot/dev
 }

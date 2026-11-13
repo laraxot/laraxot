@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "rating-xls-export-spread-vs-array-merge"
 type: story
 module: Rating
@@ -10,13 +13,13 @@ superseded_by: ./5.238-rating-export-early-stories-supersede.story.md
 qmd: "spread vs array_merge RatingData getXlsFields"
 ---
 
-> **SUPERSEDED** — IR Resource già usa `$where` + spread +
+> **SUPERSEDED**: IR Resource già usa `$where` + spread +
 > `RatingData::getXlsFields($where, Rating::class)`. Chiusura: `5.238`.
 > Testo sotto = debate storico (parti obsolete su helper nel trait).
 
-# BMAD — rating-xls-export-spread-vs-array-merge (storico)
+# BMAD: rating-xls-export-spread-vs-array-merge (storico)
 **Status**: superseded (implementato)
-**Epic**: Rating / IndennitaResponsabilita — spostamento `getXlsFields()` in `RatingData`
+**Epic**: Rating / IndennitaResponsabilita: spostamento `getXlsFields()` in `RatingData`
 
 ---
 
@@ -36,22 +39,22 @@ qmd: "spread vs array_merge RatingData getXlsFields"
 ## 2. Dove vive la logica: `RatingData` vs `HasRatingsTrait`
 
 ### Stato attuale (prima di questa sessione)
-- `HasRatingsTrait::ratingXlsFields(array $where, ?string $ratingClass = null)` — già esiste, usa `Rating::getClassName()` (richiede `object` nel backtrace)
-- `HasRatingsTrait::formFieldLabel()` — usato in `buildRatingComponent()`, `DecoratesRatingFormFields`, `IndennitaResponsabilitaResource`
-- `HasRatingsTrait::ratingXlsValuePath()` — usato ovunque per i path `data_get`
+- `HasRatingsTrait::ratingXlsFields(array $where, ?string $ratingClass = null)`: già esiste, usa `Rating::getClassName()` (richiede `object` nel backtrace)
+- `HasRatingsTrait::formFieldLabel()`: usato in `buildRatingComponent()`, `DecoratesRatingFormFields`, `IndennitaResponsabilitaResource`
+- `HasRatingsTrait::ratingXlsValuePath()`: usato ovunque per i path `data_get`
 
 ### Problema con `getClassName()` da `RatingData`
 `XotBaseModel::getClassName()` cerca `debug_backtrace()` un `object` con `Models\` o `Filament\Resources\` nel namespace. `RatingData` (statico, senza istanza) non ha questo oggetto: la chiamata fallirebbe con `RuntimeException('Unable to resolve caller object...')`. **Questo conferma** che `RatingData::getXlsFields()` NON può chiamare `Rating::getClassName()` senza un `object` chiamante.
 
 ### Soluzione architetturale
-- `RatingData::getXlsFields(array $where)` — usa `Rating::withExtraAttributes($where)` (hardcoded sul modello Rating base, con `type` passato nel `$where`). Questo è corretto perché `$where['type']` contiene già l'alias (`dip`, `po`, ...) del modulo chiamante.
-- `HasRatingsTrait::ratingXlsFields(array $where, ?string $ratingClass = null)` — resta per chi ha bisogno di passare esplicitamente la classe Rating del modulo (es. `Rating::class` da `IndennitaResponsabilita`), delega a `RatingData::getXlsFields()` per la logica principale.
-- `formFieldLabel` e `ratingXlsValuePath` — RESTANO nel trait perché usati da `buildRatingComponent()`, `DecoratesRatingFormFields`, e `CompilaIndennitaResponsabilita`. Non possono essere spostati senza rompere il form.
+- `RatingData::getXlsFields(array $where)`: usa `Rating::withExtraAttributes($where)` (hardcoded sul modello Rating base, con `type` passato nel `$where`). Questo è corretto perché `$where['type']` contiene già l'alias (`dip`, `po`, ...) del modulo chiamante.
+- `HasRatingsTrait::ratingXlsFields(array $where, ?string $ratingClass = null)`: resta per chi ha bisogno di passare esplicitamente la classe Rating del modulo (es. `Rating::class` da `IndennitaResponsabilita`), delega a `RatingData::getXlsFields()` per la logica principale.
+- `formFieldLabel` e `ratingXlsValuePath`: RESTANO nel trait perché usati da `buildRatingComponent()`, `DecoratesRatingFormFields`, e `CompilaIndennitaResponsabilita`. Non possono essere spostati senza rompere il form.
 
 ### Componenti riutilizzabili individuati
-1. **RatingData::getXlsFields()** — nuovo componente riutilizzabile per export XLS (prima era solo in `HasRatingsTrait`)
-2. **RatingData::columns() / updateColumns()** — già riutilizzabile per migrazioni
-3. **HasRatingsTrait::ratingXlsFields()** — delega a `RatingData`, mantiene compatibilità con il parametro `$ratingClass`
+1. **RatingData::getXlsFields()**: nuovo componente riutilizzabile per export XLS (prima era solo in `HasRatingsTrait`)
+2. **RatingData::columns() / updateColumns()**: già riutilizzabile per migrazioni
+3. **HasRatingsTrait::ratingXlsFields()**: delega a `RatingData`, mantiene compatibilità con il parametro `$ratingClass`
 
 ---
 
@@ -75,11 +78,11 @@ qmd: "spread vs array_merge RatingData getXlsFields"
 ## 5. Coordinamento con altri agenti
 
 - `agent-codemonkey` (lock `IndennitaResponsabilitaResource.php`, task `bmad-export-xls-ratings`): il lock è vivo (23h). Non rubato. Quando rilascia, applico `...RatingData::getXlsFields()`.
-- `agent-codemonkey` sta lavorando su `getXlsFields` — potrebbe aver già implementato `array_merge` con `HasRatingsTrait::ratingXlsFields()`. Quando il lock si libera, verifico il contenuto e applico lo spread.
+- `agent-codemonkey` sta lavorando su `getXlsFields`: potrebbe aver già implementato `array_merge` con `HasRatingsTrait::ratingXlsFields()`. Quando il lock si libera, verifico il contenuto e applico lo spread.
 
 ---
 
-## 6. AC (Acceptance Criteria) — stato
+## 6. AC (Acceptance Criteria): stato
 - [x] BMAD `rating-getxlsfields-relocation.story.md` creato
 - [x] Second brain `hasratings-trait-vs-rating-data.md` creato
 - [x] `RatingData::getXlsFields()` creato (rinominato da `getXlsExportFields`)

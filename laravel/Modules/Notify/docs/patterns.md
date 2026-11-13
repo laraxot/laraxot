@@ -1,11 +1,16 @@
 ---
+updated: 2026-09-26
+qmd: "patterns"
+issues: []
+discussions: []
 title: "Notify Module Patterns"
 type: guide
 tags: [notify, patterns]
 created: 2026-07-28
+status: draft
 ---
 
-# Notify Module — Patterns
+# Notify Module: Patterns
 
 ## Async Pattern (Queued Notifications)
 

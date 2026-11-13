@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Linee Guida per la Documentazione"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, guidelines]
+qmd: "linee guida per la documentazione xot"
+---
+>>>>>>> laraxot/dev
 # Linee Guida per la Documentazione
 
 ## Principi Fondamentali

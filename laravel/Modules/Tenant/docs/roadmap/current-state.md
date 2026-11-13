@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Current State - Tenant"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "01 current state"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 # Current State - Tenant
 

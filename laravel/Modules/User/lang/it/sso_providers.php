@@ -3,27 +3,40 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< .merge_file_vkBEa7
     'fields' => [
-        'id' => ['label' => 'id'],
-        'uuid' => ['label' => 'uuid'],
-        'name' => ['label' => 'name'],
-        'slug' => ['label' => 'slug'],
-        'provider' => ['label' => 'provider'],
-        'is_active' => ['label' => 'is_active'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
-        'updated_by' => ['label' => 'updated_by'],
-        'created_by' => ['label' => 'created_by'],
-        'display_name' => ['label' => 'display_name'],
-        'type' => ['label' => 'type'],
+        'id' => ['label' => 'ID'],
+        'uuid' => ['label' => 'UUID'],
+        'name' => ['label' => 'Nome'],
+        'slug' => ['label' => 'Codice'],
+        'provider' => ['label' => 'Provider'],
+        'is_active' => ['label' => 'Attivo'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
+        'updated_by' => ['label' => 'Modificato da'],
+        'created_by' => ['label' => 'Creato da'],
+        'display_name' => ['label' => 'Nome visualizzato'],
+        'type' => ['label' => 'Tipo'],
         'entity_id' => ['label' => 'entity_id'],
-        'redirect_url' => ['label' => 'redirect_url'],
+        'redirect_url' => ['label' => 'URL di ritorno'],
     ],
+=======
+>>>>>>> .merge_file_jDcPcg
     'actions' => [
-        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
-        'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
-        'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
+        'create' => [
+            'icon' => 'create',
+        ],
+        'layout' => [
+            'icon' => 'layout',
+        ],
+        'delete' => [
+            'icon' => 'delete',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
+        'edit' => [
+            'icon' => 'edit',
+        ],
     ],
 ];

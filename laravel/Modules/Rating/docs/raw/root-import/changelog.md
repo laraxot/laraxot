@@ -1,7 +1,13 @@
-# Changelog
+---
+title: "changelog"
+type: alias
+status: superseded
+canonical: "raw/changelog.md"
+qmd: "changelog alias superseded"
+---
 
-All notable changes to `:package_name` will be documented in this file.
+# changelog
 
-## 1.0.0 - 202X-XX-XX
+Documento identico al canonico: [changelog.md](../changelog.md).
 
-- initial release
+Canonico: `laravel/Modules/Rating/docs/raw/changelog.md`. Qui non ci sono istruzioni: seguire il file collegato.

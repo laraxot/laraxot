@@ -1,3 +1,15 @@
+---
+title: "readme en"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "readme en"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🇮🇹 Sixteen — English presentation
 
 [![Design-Comuni](https://img.shields.io/badge/Parity-Design%20Comuni-008758.svg)](https://italia.github.io/design-comuni-pagine-statiche/)
@@ -15,7 +27,6 @@
 > **FixCity's civic face.** Design Comuni in Tailwind + Alpine + Lit — 190+ components, a convincing `/it`.
 
 ---
-
 ## Why it exists
 
 Active frontoffice theme: PA parity, map, wizard, homepage.
@@ -41,7 +52,7 @@ Active frontoffice theme: PA parity, map, wizard, homepage.
 
 **Excellence in PA frontend** — everything visible lives here.
 
-Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
+Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
 
 ---
 

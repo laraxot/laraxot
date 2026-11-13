@@ -1,10 +1,15 @@
 ---
+qmd: "refactoring basemodel analisi"
+issues: []
+discussions: []
 title: "ANALISI REFACTORING BASEMODEL - Eliminazione Duplicazioni"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: refactoring-basemodel-analisi.md
 ---
 
 # 📋 ANALISI REFACTORING BASEMODEL - Eliminazione Duplicazioni

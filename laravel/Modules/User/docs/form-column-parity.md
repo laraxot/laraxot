@@ -9,6 +9,7 @@ related:
   - "./filament-table-architecture.md"
   - "./stories/form-column-parity.story.md"
   - "../../Ptv/docs/form-column-parity.md"
+status: draft
 ---
 
 # Parita' Forms/Components ↔ Tables/Columns (User)

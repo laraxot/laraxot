@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Linee Guida per l'Implementazione di getInfolistSchema"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, filament]
+qmd: "Linee Guida per l'Implementazione di getInfolistSchema"
+---
+>>>>>>> laraxot/dev
 # Linee Guida per l'Implementazione di getInfolistSchema
 
 ## Requisiti Fondamentali
@@ -67,7 +80,11 @@ protected function getInfolistSchema(): array
                             ,
                     ]),
             ]),
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> laraxot/dev
         'dettagli_account' => Section::make('Dettagli Account')
             ->schema([
                 // Altri componenti...
@@ -199,7 +216,11 @@ return [
 
 ## Conclusione
 
+<<<<<<< HEAD
 Seguendo queste linee guida, garantirai un'implementazione corretta e coerente del metodo `getInfolistSchema()`, facilitando la manutenzione del codice e prevenendo errori di tipo rilevati da PHPStan. Ricorda: usa **sempre** chiavi di tipo stringa per gli array restituiti.
+=======
+Seguendo queste linee guida, garantirai un'implementazione corretta e coerente del metodo `getInfolistSchema()`, facilitando la manutenzione del codice e prevenendo errori di tipo rilevati da PHPStan. Ricorda: usa **sempre** chiavi di tipo stringa per gli array restituiti. 
+>>>>>>> laraxot/dev
 
 ## Non Utilizzare il Metodo ->label()
 
@@ -223,4 +244,8 @@ return [
 
 Il `LangServiceProvider` gestisce automaticamente le traduzioni delle label basandosi sulla struttura dei file di traduzione. Aggiungere manualmente le label compromette questo meccanismo automatico e crea incoerenze nel sistema.
 
+<<<<<<< HEAD
 Infatti, il servizio `AutoLabelAction` intercetta la creazione dei componenti e applica automaticamente le traduzioni corrette, rendendo superfluo (e dannoso) l'uso esplicito del metodo `->label()`.
+=======
+Infatti, il servizio `AutoLabelAction` intercetta la creazione dei componenti e applica automaticamente le traduzioni corrette, rendendo superfluo (e dannoso) l'uso esplicito del metodo `->label()`. 
+>>>>>>> laraxot/dev

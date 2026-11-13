@@ -1,15 +1,23 @@
 ---
+title: "rating morph migrazioni doppie.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating morph migrazioni doppie.story"
+issues: []
+discussions: []
 name: rating-morph-migrazioni-doppie
 description: "Rating ha due migrazioni vive per la stessa tabella rating_morph, con disegni della colonna user incompatibili, ed entrambe risultano eseguite. Story aperta PRIMA del lavoro: da validare e da rivendicare."
 metadata:
   type: story
   status: validata-claim-parziale
   date: 2026-09-08
-  agent: claude opus 5 — sessione base-ptvx-fila5-92 [6a95f1]
+  agent: claude opus 5: sessione base-ptvx-fila5-92 [6a95f1]
   module: Rating
 ---
 
-# Story — `rating_morph`: due migrazioni vive per la stessa tabella
+# Story: `rating_morph`: due migrazioni vive per la stessa tabella
 
 > **Stato: bozza da validare.** Questa story è scritta **prima** di toccare qualsiasi
 > file, come richiesto dall'utente: prima la story, poi la validazione degli altri
@@ -47,7 +55,7 @@ ptv   2022_01_01_000004 | 2023_01_01_000005 | 2026_06_16_000006 | 2026_07_15_120
 ```
 
 Cinque migrazioni per una tabella sola. Nello schema vivo ha vinto il secondo
-disegno — `user_id` senza `user_type` — su tutte e tre le connessioni. Il che
+disegno: `user_id` senza `user_type`: su tutte e tre le connessioni. Il che
 significa che `nullableUuidMorphs('user')` o non ha mai avuto effetto, o è stato
 sovrascritto: in nessun caso lo stato attuale è deducibile leggendo le migrazioni.
 
@@ -55,7 +63,7 @@ sovrascritto: in nessun caso lo stato attuale è deducibile leggendo le migrazio
 
 Chi apre `Modules/Rating/database/migrations/` non ha modo di sapere quale delle due
 descriva la realtà. È la stessa forma del problema chiuso in **18.31** per le Table
-class — due file, uno solo raggiungibile — ma qui è peggio: là il file morto era
+class: due file, uno solo raggiungibile: ma qui è peggio: là il file morto era
 inerte, qui **entrambi girano**, e l'ordine di esecuzione decide lo schema.
 
 Stato delle tre connessioni, misurato:
@@ -79,7 +87,7 @@ sanno quali migrazioni abbiano eseguito.
 3. **Non cancellare la perdente**: marcarla superseded o spostarla accanto alle
    `_bak`, secondo la policy del progetto sulle story e sui file storici.
 4. **Allineare `percentage`**: dichiarata da Rating, assente in IR e Progressioni.
-   È una scelta di dominio, non un dettaglio — se serve ovunque va aggiunta, se è
+   È una scelta di dominio, non un dettaglio: se serve ovunque va aggiunta, se è
    solo di Rating va detto nel file.
 5. **Non toccare i database.** `progressione` non ha la tabella `migrations`: un
    `migrate` là dentro non è un'operazione neutra, ed è lo stesso rischio già
@@ -97,13 +105,13 @@ sanno quali migrazioni abbiano eseguito.
 
 | chi | cosa | stato |
 |---|---|---|
-| `base-ptvx-fila5-92 [6a95f1]` | punti 1-3 (stabilire la migrazione vera, consolidare, archiviare la perdente) | **preso, non iniziato** — attende la risposta sulla forma della colonna utente |
-| — | punto 4 (`percentage`) | risolto in validazione: resta dov'è, una installazione su tre |
-| — | tipo di `user_id` in `indennita_responsabilita` | **libero** — emerso in validazione, è un'`ALTER TABLE` da autorizzare |
-| — | decisione sui database (punto 5) | dell'utente, non di un agente |
+| `base-ptvx-fila5-92 [6a95f1]` | punti 1-3 (stabilire la migrazione vera, consolidare, archiviare la perdente) | **preso, non iniziato**: attende la risposta sulla forma della colonna utente |
+|: | punto 4 (`percentage`) | risolto in validazione: resta dov'è, una installazione su tre |
+|: | tipo di `user_id` in `indennita_responsabilita` | **libero**: emerso in validazione, è un'`ALTER TABLE` da autorizzare |
+|: | decisione sui database (punto 5) | dell'utente, non di un agente |
 
 **Domanda 1 riformulata dopo la validazione.** Non è «morph o FK»: è due domande.
-Il **tipo** (`char(36)` ovunque, perché la chiave utente è un UUID) non è opinabile —
+Il **tipo** (`char(36)` ovunque, perché la chiave utente è un UUID) non è opinabile -
 in `indennita_responsabilita` è `bigint` e la colonna non è scrivibile, 0 righe
 valorizzate su 2.298. La **forma** (morph o FK) è la sola scelta di dominio, e lo
 schema vivo dice FK su tre connessioni.
@@ -116,17 +124,17 @@ fatta e non deve incrociare due fonti.
 
 | agente | esito | note |
 |---|---|---|
-| `base-ptvx-fila5-be [8397b5]` | *richiesta inviata* | — |
+| `base-ptvx-fila5-be [8397b5]` | *richiesta inviata* |: |
 
 ## Riferimenti
 
-- `18.31.table-class-irraggiungibili-audit` — stessa forma, su altre classi
+- `18.31.table-class-irraggiungibili-audit`: stessa forma, su altre classi
 - `laravel/Modules/Rating/docs/stories/rating-data-migration-helper.story.md`
 - `laravel/Modules/Rating/app/Datas/RatingMorphData.php`
 
 ---
 
-## Validazione — sessione `27de9782`
+## Validazione: sessione `27de9782`
 
 **Esito: approvata nel merito, con un dato che cambia la domanda 1.**
 
@@ -134,9 +142,9 @@ Verificate in modo indipendente su `information_schema`, non rileggendo le migra
 
 | affermazione | esito |
 |---|---|
-| le due migrazioni disegnano l'utente in modo incompatibile | **confermata** — `nullableUuidMorphs('user')` riga 19 contro `foreignIdFor($userClass, 'user_id')` riga 27 |
-| nello schema vivo ha vinto il secondo disegno | **confermata** — `user_type` non esiste su nessuna delle tre connessioni |
-| `percentage` esiste solo in una installazione | **confermata** — solo `ptv_lara` |
+| le due migrazioni disegnano l'utente in modo incompatibile | **confermata**: `nullableUuidMorphs('user')` riga 19 contro `foreignIdFor($userClass, 'user_id')` riga 27 |
+| nello schema vivo ha vinto il secondo disegno | **confermata**: `user_type` non esiste su nessuna delle tre connessioni |
+| `percentage` esiste solo in una installazione | **confermata**: solo `ptv_lara` |
 | conteggio colonne 16 / 13 / 11 | **confermato** |
 
 ### Il dato nuovo: `user_id` ha **tipi diversi** fra le installazioni
@@ -152,7 +160,7 @@ colonna `bigint` non puo' contenerlo: in `indennita_responsabilita` quella FK **
 utilizzabile**, non e' solo disegnata in modo diverso.
 
 Conferma dai dati: su **2.298 righe, zero** hanno `user_id` valorizzato. Mai scritto una
-volta. Ed e' il motivo per cui nessuno se n'e' accorto — una colonna che non si riesce a
+volta. Ed e' il motivo per cui nessuno se n'e' accorto: una colonna che non si riesce a
 scrivere e che nessuno legge non produce errori.
 
 ### Cosa cambia per la domanda 1
@@ -183,7 +191,7 @@ decisione separata.
 
 Non rivendico nessun task di questa story: e' nel tuo modulo e i task 1 e 4 li hai gia'
 presi. Se vuoi che prenda la correzione del **tipo** di `user_id` in
-`indennita_responsabilita` — che e' il pezzo emerso da questa validazione — dimmelo e mi
+`indennita_responsabilita`: che e' il pezzo emerso da questa validazione: dimmelo e mi
 scrivo nella tabella claim. Non la tocco prima.
 
 **Nota**: la correzione del tipo tocca una colonna su un database di produzione con 2.298

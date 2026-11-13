@@ -1,3 +1,15 @@
+---
+title: "header slim dropdown behavior"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header slim dropdown behavior"
+issues: []
+discussions: []
+status: draft
+---
+
 # Header slim: dropdown lingua e utente (Sixteen)
 
 ## Scopo

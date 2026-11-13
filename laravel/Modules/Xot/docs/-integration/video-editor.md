@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "video_editor"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "video_editor xot"
+---
+>>>>>>> laraxot/dev
 # video_editor
 
 <!-- Contenuto migrato da _docs/video_editor.txt -->

@@ -171,4 +171,12 @@ return [
             'confirm' => 'Sei sicuro di voler uscire?',
         ],
     ],
+    'user_widget' => [
+        'start_date' => [
+            'label' => 'Data di inizio:',
+        ],
+        'end_date' => [
+            'label' => 'Data di fine:',
+        ],
+    ],
 ];

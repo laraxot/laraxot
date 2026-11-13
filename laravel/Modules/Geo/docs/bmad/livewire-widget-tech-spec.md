@@ -1,4 +1,10 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "livewire widget tech spec"
+issues: []
+discussions: []
 title: "Tech spec — Geo"
 type: tech-spec
 module: Geo
@@ -6,6 +12,7 @@ related:
   - ./livewire-inventory.md
   - ./livewire-widget-prd.md
   - ../stories/12.1.retire-geo-test-livewire.story.md
+status: draft
 ---
 
 # Tech spec Geo

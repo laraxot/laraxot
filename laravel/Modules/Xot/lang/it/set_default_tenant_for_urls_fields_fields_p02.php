@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 // Xot translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
 // Canon: Modules/Xot/docs/wiki — domain i18n only.
 // File: lang/it/set_default_tenant_for_urls_fields_fields_p02.php
@@ -114,6 +115,54 @@ return [
             'placeholder' => 'itemValue',
             'helper_text' => 'itemValue',
             'description' => 'itemValue',
+=======
+return [
+    'fields' => [
+        'ordering' => [
+            'tooltip' => '',
+        ],
+        'start_date' => [
+            'tooltip' => '',
+        ],
+        'end_date' => [
+            'tooltip' => '',
+        ],
+        'extensions' => [
+            'tooltip' => '',
+        ],
+        'sections' => [
+            'tooltip' => '',
+        ],
+        'fields' => [
+            'tooltip' => '',
+        ],
+        'type' => [
+            'tooltip' => '',
+        ],
+        'compact' => [
+            'tooltip' => '',
+        ],
+        'aside' => [
+            'tooltip' => '',
+        ],
+        'borderless' => [
+            'tooltip' => '',
+        ],
+        'icon' => [
+            'tooltip' => '',
+        ],
+        'columns' => [
+            'tooltip' => '',
+        ],
+        'itemKey' => [
+            'tooltip' => '',
+        ],
+        'values' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'itemValue' => [
+>>>>>>> laraxot/dev
             'tooltip' => '',
         ],
     ],

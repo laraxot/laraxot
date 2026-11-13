@@ -1,10 +1,15 @@
 ---
+qmd: "DESIGN COMUNI INTEGRATION COMPLETE.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: DESIGN_COMUNI_INTEGRATION_COMPLETE.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: design_comuni_integration_complete.divergenza.md
 ---
 
 # Divergenza: `DESIGN_COMUNI_INTEGRATION_COMPLETE.md`

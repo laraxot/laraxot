@@ -6,6 +6,10 @@ namespace Modules\User\Tests\Feature\Filament\Widgets;
 
 use Filament\Facades\Filament;
 use Filament\Widgets\WidgetConfiguration;
+<<<<<<< .merge_file_HElSAw
+=======
+use Illuminate\Database\Eloquent\Model;
+>>>>>>> .merge_file_1LsT9N
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Schema;
 use Livewire\Livewire;
@@ -32,7 +36,11 @@ uses(TestCase::class);
 function superAdminWidgetProfileConnectionName(): string
 {
     $profileClass = XotData::make()->getProfileClass();
+<<<<<<< .merge_file_HElSAw
     $connection = (new $profileClass)->getConnectionName();
+=======
+    $connection = (new $profileClass())->getConnectionName();
+>>>>>>> .merge_file_1LsT9N
 
     if (is_string($connection) && $connection !== '') {
         return $connection;
@@ -52,7 +60,11 @@ function superAdminWidgetProfileConnectionName(): string
  * fallback catch (RoleDoesNotExist) esiste solo per un ruolo mai seedato ed e' fuori
  * dallo scope di questa story (test del solo widget, non di IsProfileTrait).
  */
+<<<<<<< .merge_file_HElSAw
 function grantSuperAdminWidgetRole(User $user, string $roleName): void
+=======
+function grantSuperAdminWidgetRole(User $user, string $roleName): Model&UserContract
+>>>>>>> .merge_file_1LsT9N
 {
     /** @var Role $superAdminRole */
     $superAdminRole = Role::query()->firstOrCreate(
@@ -68,7 +80,18 @@ function grantSuperAdminWidgetRole(User $user, string $roleName): void
 
     $role = $roleName === 'super-admin' ? $superAdminRole : $negateSuperAdminRole;
 
+<<<<<<< .merge_file_HElSAw
     $user->assignRole($role);
+=======
+    // Il profilo del progetto (XotData::getProfileModel()) guarda i ruoli del suo `user`, cioe' la classe
+    // utente del progetto (config auth, es. Modules\Fixcity\Models\User). I ruoli Spatie sono legati al
+    // morph class del modello: assegnati a Modules\User\Models\User il profilo non li vedrebbe.
+    $userClass = XotData::make()->getUserClass();
+    $projectUser = $userClass::query()->whereKey($user->getKey())->firstOrFail();
+    $projectUser->assignRole($role);
+
+    return $projectUser;
+>>>>>>> .merge_file_1LsT9N
 }
 
 beforeEach(function (): void {
@@ -102,13 +125,22 @@ beforeEach(function (): void {
     }
 
     $this->setupFilamentAdminPanel();
+<<<<<<< .merge_file_HElSAw
+=======
+
+    Assert::assertNotNull(Filament::getPanel('user::admin'));
+>>>>>>> .merge_file_1LsT9N
 });
 
 describe('SuperAdminWidget visibility', function (): void {
     test('super-admin user sees the active hero emblem toggle', function (): void {
         /** @var TestCase $this */
         $user = UserFactory::new()->createOne();
+<<<<<<< .merge_file_HElSAw
         grantSuperAdminWidgetRole($user, 'super-admin');
+=======
+        $user = grantSuperAdminWidgetRole($user, 'super-admin');
+>>>>>>> .merge_file_1LsT9N
         actingAs($user);
 
         Livewire::test(SuperAdminWidget::class)
@@ -125,7 +157,11 @@ describe('SuperAdminWidget visibility', function (): void {
     test('negate-super-admin user sees the barred hero emblem toggle', function (): void {
         /** @var TestCase $this */
         $user = UserFactory::new()->createOne();
+<<<<<<< .merge_file_HElSAw
         grantSuperAdminWidgetRole($user, 'negate-super-admin');
+=======
+        $user = grantSuperAdminWidgetRole($user, 'negate-super-admin');
+>>>>>>> .merge_file_1LsT9N
         actingAs($user);
 
         Livewire::test(SuperAdminWidget::class)
@@ -159,7 +195,11 @@ describe('SuperAdminWidget toggle', function (): void {
     test('toggleSuperAdmin flips super-admin into negate-super-admin', function (): void {
         /** @var TestCase $this */
         $user = UserFactory::new()->createOne();
+<<<<<<< .merge_file_HElSAw
         grantSuperAdminWidgetRole($user, 'super-admin');
+=======
+        $user = grantSuperAdminWidgetRole($user, 'super-admin');
+>>>>>>> .merge_file_1LsT9N
         actingAs($user);
 
         Assert::assertTrue((bool) $user->fresh()?->hasRole('super-admin'));
@@ -177,7 +217,11 @@ describe('SuperAdminWidget toggle', function (): void {
     test('toggleSuperAdmin flips negate-super-admin back into super-admin', function (): void {
         /** @var TestCase $this */
         $user = UserFactory::new()->createOne();
+<<<<<<< .merge_file_HElSAw
         grantSuperAdminWidgetRole($user, 'negate-super-admin');
+=======
+        $user = grantSuperAdminWidgetRole($user, 'negate-super-admin');
+>>>>>>> .merge_file_1LsT9N
         actingAs($user);
 
         Livewire::test(SuperAdminWidget::class)
@@ -193,11 +237,22 @@ describe('SuperAdminWidget toggle', function (): void {
     test('toggleSuperAdmin returns a real 303 redirect response, not just a Livewire effect', function (): void {
         /** @var TestCase $this */
         $user = UserFactory::new()->createOne();
+<<<<<<< .merge_file_HElSAw
         grantSuperAdminWidgetRole($user, 'super-admin');
         actingAs($user);
 
         $widget = new SuperAdminWidget;
         $widget->mount();
+=======
+        $user = grantSuperAdminWidgetRole($user, 'super-admin');
+        actingAs($user);
+
+        $widget = new SuperAdminWidget();
+        $widget->mount();
+        // Dal controllo di DCP-181 il profilo deve vedere il ruolo: l'utente del profilo e' `Modules\Fixcity\Models\User`, quello della factory
+        // `Modules\User\Models\User`, e i ruoli Spatie sono legati alla classe del modello. Si collega il profilo all'utente che ha il ruolo.
+        XotData::make()->getProfileModel()->setRelation('user', $user);
+>>>>>>> .merge_file_1LsT9N
 
         $response = $widget->toggleSuperAdmin();
 
@@ -206,9 +261,39 @@ describe('SuperAdminWidget toggle', function (): void {
     });
 });
 
+<<<<<<< .merge_file_HElSAw
 describe('SuperAdminWidget dashboard discovery', function (): void {
     test('dashboard widget list has no SuperAdminWidget card', function (): void {
         $panel = Filament::getPanel('user::admin');
+=======
+describe('SuperAdminWidget authorization (DCP-181, audit A-3)', function (): void {
+    test('a user with neither role cannot make himself super-admin by calling the Livewire action', function (): void {
+        /** @var TestCase $this */
+        $user = UserFactory::new()->createOne();
+        // i due ruoli esistono (come nel sistema reale); l'utente non ha ne' l'uno ne' l'altro
+        grantSuperAdminWidgetRole(UserFactory::new()->createOne(), 'super-admin');
+        actingAs($user);
+
+        try {
+            Livewire::test(SuperAdminWidget::class)->call('toggleSuperAdmin');
+        } catch (\Throwable) {
+            // un rifiuto con eccezione (403 / AuthorizationException) e' un esito valido: conta solo che il ruolo non sia stato dato
+        }
+
+        $fresh = $user->fresh();
+        Assert::assertInstanceOf(UserContract::class, $fresh);
+        Assert::assertFalse($fresh->hasRole('super-admin'));
+        Assert::assertFalse($fresh->hasRole('negate-super-admin'));
+    });
+});
+
+describe('SuperAdminWidget dashboard discovery', function (): void {
+    test('dashboard widget list has no SuperAdminWidget card', function (): void {
+        $panel = Filament::getPanel('user::admin');
+        if ($panel === null) {
+            Assert::fail('The User admin panel was not registered by the test bootstrap.');
+        }
+>>>>>>> .merge_file_1LsT9N
 
         $widgetClasses = array_map(
             static fn (string|WidgetConfiguration $widget): string => is_string($widget) ? $widget : $widget::class,

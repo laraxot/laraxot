@@ -3,6 +3,14 @@ title: Model
 description: Model Queuable Actions
 extends: _layouts.documentation
 section: content
+<<<<<<< HEAD
+=======
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "model queuable actions xot"
+>>>>>>> laraxot/dev
 ---
 
 ### Versione HEAD

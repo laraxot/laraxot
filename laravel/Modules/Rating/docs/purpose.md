@@ -1,5 +1,5 @@
 ---
-title: "Rating — scopo del modulo e come raggiungerlo meglio"
+title: "Rating: scopo del modulo e come raggiungerlo meglio"
 type: concept
 status: active
 created: 2026-09-02
@@ -7,15 +7,15 @@ tags: [rating, purpose, polimorfico, valutazione, punteggio, morph]
 qmd: "rating scopo modulo polimorfico morph punteggio valutazione riusabile scala"
 updated: 2026-09-02
 issues:
-  # DA CREARE — `gh` non autenticato: mai numeri inventati.
+  # DA CREARE: `gh` non autenticato: mai numeri inventati.
   # gh issue create --repo provtv/module_rating_fila5 --title "<argomento del file>"
   - "https://github.com/provtv/module_rating_fila5/issues/"
 discussions:
-  # DA CREARE — vedi sopra.
+  # DA CREARE: vedi sopra.
   - "https://github.com/provtv/module_rating_fila5/discussions/"
 ---
 
-# Rating — perche' esiste
+# Rating: perche' esiste
 
 ## Lo scopo in una frase
 
@@ -25,7 +25,7 @@ di una tabella di voti reinventata in ogni modulo che valuta.**
 ## L'evidenza
 
 - `Rating`, `RatingMorph`, piu' le basi `BaseRating`, `BaseRatingMorph`: il modello e'
-  **polimorfico** — un punteggio puo' agganciarsi a qualunque entita'.
+  **polimorfico**: un punteggio puo' agganciarsi a qualunque entita'.
 - Solo 59 file PHP: e' il modulo piu' piccolo del dominio, ed e' giusto cosi'.
 - I moduli che lo usano si vedono dai loro modelli: `Rating`/`RatingMorph` compaiono in
   Performance, Progressioni e IndennitaResponsabilita.
@@ -43,7 +43,7 @@ risposta**.
 
 Una relazione morph non ha vincoli di integrita' referenziale: il database non puo'
 garantire che `ratable_id` punti a qualcosa che esiste. Se l'entita' valutata viene
-cancellata, il punteggio resta orfano — e un punteggio orfano non e' rilevabile con una
+cancellata, il punteggio resta orfano: e un punteggio orfano non e' rilevabile con una
 query di consistenza standard.
 
 Vale inoltre la convenzione del progetto sulle migrazioni morph: `morphs()` e i tipi
@@ -55,14 +55,14 @@ funziona nei test e fallisce con dati reali.
 ### 1. Serve un controllo di consistenza per gli orfani
 
 **Azione:** un comando che elenchi i `RatingMorph` il cui bersaglio non esiste piu'. Non
-deve cancellarli — potrebbero essere la traccia di una valutazione storica — deve
+deve cancellarli: potrebbero essere la traccia di una valutazione storica: deve
 **mostrarli**. Cio' che il database non puo' garantire, lo garantisce un controllo
 esplicito.
 
 ### 2. La scala va dichiarata, non dedotta
 
 Se un modulo usa 0–100 e un altro 1–5, un confronto fra punteggi di moduli diversi e'
-privo di senso — e nulla lo impedisce.
+privo di senso: e nulla lo impedisce.
 
 **Azione:** la scala e' un attributo del rating (minimo, massimo, passo), validato in
 scrittura. E `docs/scales.md` che elenchi quali scale sono in uso e da chi.
@@ -88,7 +88,7 @@ cui un modulo generico diventa specifico e smette di essere riusabile.
 Le classi base indicano un punto di estensione previsto. Un modulo che ha bisogno di un
 comportamento proprio estende; non copia la tabella.
 
-## Confini — cosa **non** appartiene a Rating
+## Confini: cosa **non** appartiene a Rating
 
 - Il **significato** e le soglie: modulo di dominio.
 - Il **calcolo** che porta al punteggio: modulo di dominio.
@@ -97,5 +97,5 @@ comportamento proprio estende; non copia la tabella.
 
 ## Collegamenti
 
-- `laravel/Modules/Performance/docs/purpose.md` — principale consumatore
-- `docs/wiki/rules/migration-morphs-polymorphic.md` — convenzione morph
+- `laravel/Modules/Performance/docs/purpose.md`: principale consumatore
+- `docs/wiki/rules/migration-morphs-polymorphic.md`: convenzione morph

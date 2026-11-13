@@ -41,7 +41,7 @@ Compliant image carousel with navigation controls and accessibility features
             data-bs-target="#{{ $id }}" 
             data-bs-slide-to="{{ $index }}"
             @if($index === 0) class="active" aria-current="true" @endif
-            aria-label="Slide {{ $index + 1 }}"
+            aria-label="{{ __('pub_theme::components_common.carousel.slide.label', ['number' => $index + 1]) }}"
         ></button>
         @endforeach
     </div>
@@ -79,11 +79,11 @@ Compliant image carousel with navigation controls and accessibility features
     @if($controls && $itemsCount > 1)
     <button class="carousel-control-prev" type="button" data-bs-target="#{{ $id }}" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">{{ __('pub_theme::components_common.carousel.previous.label') }}</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#{{ $id }}" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">{{ __('pub_theme::components_common.carousel.next.label') }}</span>
     </button>
     @endif
 </div>

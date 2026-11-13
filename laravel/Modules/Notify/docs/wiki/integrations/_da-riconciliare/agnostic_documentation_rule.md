@@ -1,10 +1,15 @@
 ---
+qmd: "agnostic documentation rule"
+issues: []
+discussions: []
 title: "Agnostic Documentation Rule"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: agnostic-documentation-rule.md
 ---
 
 # Agnostic Documentation Rule

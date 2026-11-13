@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Integrazione di mcamara/laravel-localization con Livewire Volt"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "lang service helper text fix"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Integrazione di mcamara/laravel-localization con Livewire Volt
 

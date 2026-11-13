@@ -1,0 +1,16 @@
+{
+  "page": "auth-login",
+  "theme": "design-comuni",
+  "layout": "app",
+  "gradient_header": true,
+  "gradient_from": "blue-700",
+  "gradient_to": "blue-900",
+  "card_rounded": "rounded-3xl",
+  "shadow": "shadow-xl",
+  "border_color": "border-slate-200",
+  "accessibility": true,
+  "wcag_level": "AA",
+  "social_login": true,
+  "form_login": true,
+  "links_register_forgot": true
+}

@@ -15,6 +15,8 @@ related:
   - "./filament-langserviceprovider-governance.md"
   - "./filament-widget-linear-crud-model-create.md"
   - "./filament-widget-resource-form-delegation.md"
+status: draft
+qmd: "socialite architecture analysis user"
 ---
 
 # Socialite Architecture Analysis
@@ -101,7 +103,7 @@ public function user(): BelongsTo
 }
 ```
 
-**Migration**: `2023_01_01_000003_create_socialite_user_table.php`
+**Migration**: `2026_11_12_120002_create_socialite_users_table.php` (connessione `user`)
 
 ---
 

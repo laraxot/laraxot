@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Optimization Analysis"
 module: "Tenant"
 type: concept
@@ -8,5 +10,6 @@ updated: 2026-07-14
 qmd: "optimization analysis"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 

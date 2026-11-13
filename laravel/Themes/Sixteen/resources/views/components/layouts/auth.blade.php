@@ -1,27 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    
-    <!-- AGID Required Meta -->
-    <meta name="description" content="Accesso sicuro ai servizi digitali - {{ config('app.name') }}">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="theme-color" content="#0066CC">
-    
-    <!-- Title -->
-    <title>{{ $title ?? 'Accesso' }} - {{ config('app.name') }}</title>
-    
-    <!-- AGID Fonts - Titillium Web -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Assets -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'], 'themes/Sixteen')
-    
-    <!-- AGID Custom Styles -->
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full" data-theme="light">
+@push('styles')
     <style>
         :root {
             --agid-primary: #0066CC;
@@ -33,10 +12,6 @@
             --agid-gray-50: #F8F9FA;
             --agid-gray-100: #F1F3F4;
             --agid-gray-900: #17324D;
-        }
-        
-        body {
-            font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         .agid-skip-link {
@@ -198,11 +173,18 @@
             100% { transform: rotate(360deg); }
         }
     </style>
-</head>
+@endpush
+
+<x-cms::head
+    :title="$title ?? __('pub_theme::components_common.nav.access.label')"
+    :description="__('pub_theme::components_common.brand.digital_services.text')"
+    theme-color="#0066CC"
+/>
+
 <body>
     <!-- Skip Links AGID -->
-    <a href="#main-content" class="agid-skip-link">Salta al contenuto principale</a>
-    <a href="#login-form" class="agid-skip-link">Vai al modulo di accesso</a>
+    <a href="#main-content" class="agid-skip-link">{{ __('pub_theme::components_common.skiplinks.main_content.label') }}</a>
+    <a href="#login-form" class="agid-skip-link">{{ __('pub_theme::components_common.skiplinks.login_form.label') }}</a>
 
     <!-- AGID Header Istituzionale -->
     <header role="banner" class="agid-header">
@@ -212,15 +194,15 @@
                     <x-pub_theme::ui.logo class="h-8 w-auto text-white" />
                     <x-pub_theme::ui.logo class="h-8 w-auto text-white" />
                     <div>
-                        <h1 class="text-lg font-semibold">{{ config('app.name', 'Nome Ente') }}</h1>
-                        <p class="text-sm opacity-90">{{ config('app.tagline', 'Servizi digitali per i cittadini') }}</p>
+                        <h1 class="text-lg font-semibold">{{ config('app.name', __('pub_theme::components_common.brand.entity_name.label')) }}</h1>
+                        <p class="text-sm opacity-90">{{ config('app.tagline', __('pub_theme::components_common.brand.digital_services.text')) }}</p>
                     </div>
                 </div>
                 @if(config('app.institution_url'))
                     <a href="{{ config('app.institution_url') }}" 
                        class="text-white hover:text-blue-200 transition-colors text-sm"
                        target="_blank" rel="noopener noreferrer">
-                        Vai al sito dell'ente
+                        {{ __('pub_theme::components_content.nav.entity_site.label') }}
                     </a>
                 @endif
             </div>
@@ -228,18 +210,18 @@
     </header>
 
     <!-- AGID Breadcrumb -->
-    <nav class="agid-breadcrumb" aria-label="Percorso di navigazione">
+    <nav class="agid-breadcrumb" aria-label="{{ __('pub_theme::components_common.a11y.navigation_path.label') }}">
         <div class="container mx-auto px-4">
             <ol class="flex items-center space-x-2 text-sm">
                 <li>
                     <a href="{{ route('home') }}" class="text-blue-600 hover:text-blue-800 transition-colors">
                         <x-filament::icon icon="heroicon-o-home" class="w-4 h-4 inline mr-1" />
-                        Home
+                        {{ __('pub_theme::components_common.nav.home.label') }}
                     </a>
                 </li>
                 <li class="text-gray-400" aria-hidden="true">/</li>
                 <li class="text-gray-700 font-medium" aria-current="page">
-                    Accesso
+                    {{ __('pub_theme::components_common.nav.access.label') }}
                 </li>
             </ol>
         </div>
@@ -262,8 +244,8 @@
                         <x-pub_theme::ui.logo class="h-10 w-auto text-white" />
                         <x-pub_theme::ui.logo class="h-10 w-auto text-white" />
                         <div>
-                            <h3 class="text-lg font-semibold">{{ config('app.name', 'Nome Ente') }}</h3>
-                            <p class="text-sm opacity-80">{{ config('app.tagline', 'Servizi digitali') }}</p>
+                            <h3 class="text-lg font-semibold">{{ config('app.name', __('pub_theme::components_common.brand.entity_name.label')) }}</h3>
+                            <p class="text-sm opacity-80">{{ config('app.tagline', __('pub_theme::components_common.brand.digital_services_short.text')) }}</p>
                         </div>
                     </div>
                     @if(config('app.institution_address'))
@@ -273,20 +255,20 @@
                 
                 <!-- Link Obbligatori AGID -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Informazioni</h4>
+                    <h4 class="text-lg font-semibold mb-4">{{ __('pub_theme::components_common.footer.information.label') }}</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ route('pages.view', ['slug' => 'privacy']) }}" class="opacity-80 hover:opacity-100 transition-opacity">Privacy</a></li>
-                        <li><a href="{{ route('pages.view', ['slug' => 'legal-notes']) }}" class="opacity-80 hover:opacity-100 transition-opacity">Note legali</a></li>
-                        <li><a href="{{ route('pages.view', ['slug' => 'accessibility']) }}" class="opacity-80 hover:opacity-100 transition-opacity">Dichiarazione di accessibilità</a></li>
+                        <li><a href="{{ url('/pages/privacy') }}" class="opacity-80 hover:opacity-100 transition-opacity">{{ __('pub_theme::components_footer.legal.privacy_short.label') }}</a></li>
+                        <li><a href="{{ url('/pages/legal-notes') }}" class="opacity-80 hover:opacity-100 transition-opacity">{{ __('pub_theme::legal.documents.legal_notes.title') }}</a></li>
+                        <li><a href="{{ url('/pages/accessibility') }}" class="opacity-80 hover:opacity-100 transition-opacity">{{ __('pub_theme::accessibility.page.title.text') }}</a></li>
                     </ul>
                 </div>
                 
                 <!-- Contatti -->
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Assistenza</h4>
+                    <h4 class="text-lg font-semibold mb-4">{{ __('pub_theme::components_common.footer.support.label') }}</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ route('pages.view', ['slug' => 'contacts']) }}" class="opacity-80 hover:opacity-100 transition-opacity">Contatti</a></li>
-                        <li><a href="{{ route('pages.view', ['slug' => 'help']) }}" class="opacity-80 hover:opacity-100 transition-opacity">Guida</a></li>
+                        <li><a href="{{ url('/pages/contacts') }}" class="opacity-80 hover:opacity-100 transition-opacity">{{ __('pub_theme::components_common.nav.contacts.label') }}</a></li>
+                        <li><a href="{{ url('/pages/help') }}" class="opacity-80 hover:opacity-100 transition-opacity">{{ __('pub_theme::components_common.footer.help.label') }}</a></li>
                         @if(config('app.support_email'))
                             <li><a href="mailto:{{ config('app.support_email') }}" class="opacity-80 hover:opacity-100 transition-opacity">{{ config('app.support_email') }}</a></li>
                         @endif
@@ -296,8 +278,8 @@
             
             <!-- Copyright -->
             <div class="pt-8 border-t border-gray-700 text-center text-sm opacity-80">
-                <p>&copy; {{ date('Y') }} {{ config('app.name') }}. Tutti i diritti riservati.</p>
-                <p class="mt-2">Conforme alle linee guida AGID per i servizi digitali della Pubblica Amministrazione</p>
+                <p>&copy; {{ date('Y') }} {{ config('app.name') }}{{ __('pub_theme::components_footer.legal.rights_reserved.label') }}</p>
+                <p class="mt-2">{{ __('pub_theme::components_common.footer.agid_compliance.text') }}</p>
             </div>
         </div>
     </footer>
@@ -350,5 +332,7 @@
             });
         });
     </script>
+    {{-- Il CSS lo rende <x-cms::head>; il JS del tema resta caricato a fine body (module/defer). --}}
+    @vite(['resources/js/app.js'], 'themes/Sixteen')
 </body>
 </html>

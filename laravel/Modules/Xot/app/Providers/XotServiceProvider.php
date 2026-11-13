@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Modules\Xot\Providers;
 
 use Composer\Autoload\ClassLoader;
+<<<<<<< HEAD
+=======
+use Filament\Actions\DeleteBulkAction;
+>>>>>>> laraxot/dev
 use Filament\Actions\Exports\Jobs\CreateXlsxFile;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
@@ -16,17 +20,37 @@ use Filament\Support\Facades\FilamentColor;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\BaseFilter;
+<<<<<<< HEAD
+=======
+use Illuminate\Database\Eloquent\Factories\Factory;
+>>>>>>> laraxot/dev
 use Illuminate\Database\Events\MigrationsEnded;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
+<<<<<<< HEAD
 use Modules\Xot\Actions\Composer\RegisterRuntimePsr4NamespacesAction;
 use Modules\Xot\Actions\PaDesignColorsAction;
 use Modules\Xot\Console\Commands\GenerateFilamentResources;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Exports\Jobs\XotCreateXlsxFile;
+=======
+use Illuminate\Support\Str;
+use Modules\Xot\Actions\Composer\RegisterRuntimePsr4NamespacesAction;
+use Modules\Xot\Actions\Factory\GetFactoryAction;
+use Modules\Xot\Actions\PaDesignColorsAction;
+use Modules\Xot\Console\Commands\BuildTestSqliteCommand;
+use Modules\Xot\Console\Commands\CheckAccessorTwinsCommand;
+use Modules\Xot\Console\Commands\GenerateFilamentResources;
+use Modules\Xot\Console\Commands\ModuleLinkCommand;
+use Modules\Xot\Console\Commands\SymlinkPublishCommand;
+use Modules\Xot\Console\Commands\ThemeLinkCommand;
+use Modules\Xot\Datas\XotData;
+use Modules\Xot\Exports\Jobs\XotCreateXlsxFile;
+use Modules\Xot\Filament\Traits\HasXotTable;
+>>>>>>> laraxot/dev
 use Modules\Xot\View\Composers\XotComposer;
 use Webmozart\Assert\Assert;
 
@@ -54,6 +78,10 @@ class XotServiceProvider extends XotBaseServiceProvider
         $this->registerTimezone();
         $this->registerFilamentMacros();
         $this->registerPaFilamentColors();
+<<<<<<< HEAD
+=======
+        $this->registerBulkDeleteAuthorization();
+>>>>>>> laraxot/dev
         $this->registerXotLivewireComponents();
         $this->registerProviders();
     }
@@ -69,6 +97,10 @@ class XotServiceProvider extends XotBaseServiceProvider
         // $this->extendExceptionHandler();
         $this->registerCommands();
         $this->registerExportJobs();
+<<<<<<< HEAD
+=======
+        $this->registerFactoryNameResolver();
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -82,6 +114,35 @@ class XotServiceProvider extends XotBaseServiceProvider
         $this->app->bind(CreateXlsxFile::class, XotCreateXlsxFile::class);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * `Model::factory()` risolve la factory con `GetFactoryAction` (`Modules\<M>\Models\X` ->
+     * `Modules\<M>\Database\Factories\XFactory`), ma `Factory::factoryForModel()` (relazioni magiche
+     * `has*`/`for*`) e Larastan usano il resolver di Laravel, che per i modelli dei moduli punta a
+     * `Database\Factories\XFactory`, classe inesistente. Un solo resolver allinea runtime e analisi statica:
+     * `Team::factory()->create()` e' `Team`, non `mixed`. Fuori da `Modules\` vale la convenzione Laravel.
+     */
+    private function registerFactoryNameResolver(): void
+    {
+        Factory::guessFactoryNamesUsing(static function (string $modelName): string {
+            if (str_starts_with($modelName, 'Modules\\')) {
+                $factoryClass = (new GetFactoryAction())->getFactoryClass($modelName);
+            } else {
+                $modelsNamespace = app()->getNamespace().'Models\\';
+                $relativeName = Str::startsWith($modelName, $modelsNamespace)
+                    ? Str::after($modelName, $modelsNamespace)
+                    : Str::after($modelName, app()->getNamespace());
+                $factoryClass = Factory::$namespace.$relativeName.'Factory';
+            }
+
+            // Factory inesistente: `Factory::class` (astratta) al posto di una classe fantasma, cosi' il
+            // tipo resta `class-string<Factory>`; chi la usa fallisce comunque ("Cannot instantiate abstract").
+            return is_a($factoryClass, Factory::class, true) ? $factoryClass : Factory::class;
+        });
+    }
+
+>>>>>>> laraxot/dev
     public function registerProviders(): void
     {
         // $this->app->register(Filament\ModulesServiceProvider::class);
@@ -101,7 +162,11 @@ class XotServiceProvider extends XotBaseServiceProvider
             return;
         }
 
+<<<<<<< HEAD
         (new RegisterRuntimePsr4NamespacesAction)->execute($loader);
+=======
+        (new RegisterRuntimePsr4NamespacesAction())->execute($loader);
+>>>>>>> laraxot/dev
     }
 
     public function registerTimezone(): void
@@ -129,6 +194,20 @@ class XotServiceProvider extends XotBaseServiceProvider
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Eliminazione di gruppo: Filament autorizza una volta sola con `deleteAny()`, che 35 policy del progetto non definiscono (audit DCP-181, A-1).
+     * Un solo punto per tutti i siti, presenti e futuri: ogni record passa da `delete()` se il modello ha una policy.
+     */
+    public function registerBulkDeleteAuthorization(): void
+    {
+        DeleteBulkAction::configureUsing(
+            fn (DeleteBulkAction $action): DeleteBulkAction => $action->authorizeIndividualRecords(HasXotTable::bulkDeleteRecordAuthorization()),
+        );
+    }
+
+    /**
+>>>>>>> laraxot/dev
      * Palette PA su widget FO (login, wizard) senza panel attivo — allineata ai panel admin.
      */
     public function registerPaFilamentColors(): void
@@ -210,6 +289,14 @@ class XotServiceProvider extends XotBaseServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 GenerateFilamentResources::class,
+<<<<<<< HEAD
+=======
+                CheckAccessorTwinsCommand::class,
+                BuildTestSqliteCommand::class,
+                ThemeLinkCommand::class,
+                ModuleLinkCommand::class,
+                SymlinkPublishCommand::class,
+>>>>>>> laraxot/dev
                 // \Modules\Xot\Console\Commands\OptimizeFilamentMemoryCommand::class,
             ]);
         }

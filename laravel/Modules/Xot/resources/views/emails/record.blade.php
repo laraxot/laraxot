@@ -7,7 +7,11 @@ use function Safe\json_encode;
 
 @section('content')
 <div class="record-data">
+<<<<<<< HEAD
     <h2>Dati Record</h2>
+=======
+    <h2>{{ __('xot::record_email.sections.record_data.title') }}</h2>
+>>>>>>> laraxot/dev
     
     <table class="data-table">
         @foreach($data as $key => $value)

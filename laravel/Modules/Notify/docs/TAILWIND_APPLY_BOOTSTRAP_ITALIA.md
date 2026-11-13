@@ -1,10 +1,15 @@
 ---
+qmd: "TAILWIND APPLY BOOTSTRAP ITALIA"
+issues: []
+discussions: []
 title: "Tailwind @apply per Bootstrap Italia - Completato"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: tailwind-apply-bootstrap-italia.md
 ---
 
 # ✅ Tailwind @apply per Bootstrap Italia - Completato

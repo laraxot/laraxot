@@ -1,10 +1,14 @@
 ---
+qmd: "acronym naming conventions"
+issues: []
+discussions: []
 title: "Convenzioni di Naming per Acronimi"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Convenzioni di Naming per Acronimi

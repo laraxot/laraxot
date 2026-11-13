@@ -8,9 +8,9 @@ qmd: "compliance gdpr compliance"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # GDPR Compliance
 
 ## Cookie Consent Plugins

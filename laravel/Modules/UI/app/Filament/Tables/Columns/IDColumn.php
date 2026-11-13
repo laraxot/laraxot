@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\UI\Filament\Tables\Columns;
 
 use Illuminate\Support\HtmlString;
-use Modules\Xot\Filament\Support\RecordAnchor;
+use Modules\Xot\Filament\Links\RecordAnchor;
 use Modules\Xot\Filament\Tables\Columns\XotBaseTextColumn;
 
 /**
@@ -19,12 +19,14 @@ class IDColumn extends XotBaseTextColumn
 {
     public static function make(?string $name = null): static
     {
+        // Nessun label() fisso: lo risolve Column::configureUsing (LangServiceProvider), come per ogni TextColumn('id').
+        // Nessun searchable() forzato: la ricerca sull'id la sceglie il chiamante (LIKE su tutta la tabella, non e' gratis).
         return parent::make($name ?? 'id')
-            ->label('ID')
             ->sortable()
-            ->searchable()
             ->html()
-            ->formatStateUsing(static fn (mixed $state): HtmlString => static::renderAnchor($state));
+            ->formatStateUsing(static fn (mixed $state): HtmlString => static::renderAnchor($state))
+            // Con copyable() Filament copia lo stato FORMATTATO: senza questo negli appunti finirebbe lo <span>.
+            ->copyableState(static fn (mixed $state): string => is_scalar($state) ? (string) $state : '');
     }
 
     /**
@@ -36,12 +38,20 @@ class IDColumn extends XotBaseTextColumn
     {
         $value = is_scalar($state) ? (string) $state : '';
 
+<<<<<<< HEAD
+        if ($value === '') {
+=======
         if ('' === $value) {
+>>>>>>> f5ffd8b4 (.)
             return new HtmlString('');
         }
 
         $escaped = e($value);
+        $anchor = e(RecordAnchor::id($value));
 
-        return new HtmlString('<span id="'.RecordAnchor::id($escaped).'" class="scroll-mt-24">'.$escaped.'</span>');
+        // Filament può già avvolgere la cella in un link di riga. Un secondo
+        // <a> qui produrrebbe anchor annidati non validi; il link nativo della
+        // riga resta l'affordance di navigazione, questo span è il target.
+        return new HtmlString('<span id="'.$anchor.'" class="scroll-mt-24">'.$escaped.'</span>');
     }
 }

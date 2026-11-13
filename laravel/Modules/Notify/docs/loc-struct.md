@@ -1,4 +1,7 @@
 ---
+qmd: "loc struct"
+issues: []
+discussions: []
 title: 'Loc struct'
 module: Notify
 type: reference
@@ -8,6 +11,7 @@ tags: [migrato-da-txt, notify]
 converted_from: loc_struct.txt
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 <body class="">

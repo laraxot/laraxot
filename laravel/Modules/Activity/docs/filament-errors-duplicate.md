@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 # Errori Comuni Filament nel Modulo Activity
 
 ## Errori di Metodi Statici
@@ -166,8 +165,6 @@ class ListSnapshots extends ListRecords
 - [ ] Documentare le modifiche nel CHANGELOG
 - [ ] Eseguire PHPStan per verificare altri possibili errori
 =======
-=======
->>>>>>> 13cf1831 (.)
 ---
 title: "Errori Comuni Filament nel Modulo Activity"
 type: note
@@ -178,7 +175,6 @@ qmd: "errori comuni filament nel modulo activity activity"
 ---
 # Errori Comuni Filament nel Modulo Activity
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_IM43XU
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -360,6 +356,3 @@ See canonical documentation: ../../../Themes/docs/shared-components/filament-err
 See canonical documentation: ../../../Themes/docs/shared-components/filament-errors-duplicate.md
 >>>>>>> 2d6a374 (.)
 >>>>>>> laraxot/dev
-=======
-See canonical documentation: ../../../Themes/docs/shared-components/filament-errors-duplicate.md
->>>>>>> 13cf1831 (.)

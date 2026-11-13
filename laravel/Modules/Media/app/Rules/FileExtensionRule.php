@@ -16,30 +16,39 @@ class FileExtensionRule implements ValidationRule
     protected array $validExtensions = [];
 
     /**
-     * @param  list<string>  $validExtensions
+     * @param  array<int, string>  $validExtensions
      */
     public function __construct(array $validExtensions = [])
     {
         $this->validExtensions = array_values(array_map(
-            /**
-             * @return lowercase-string
-             */
-            static fn (string $ext): string => mb_strtolower($ext),
-            $validExtensions
+            static fn (string $extension): string => mb_strtolower($extension),
+            $validExtensions,
         ));
     }
 
-    public function validate(string $_attribute, mixed $value, Closure $fail): void
+    /**
+     * `mixed $value` imposto da `Illuminate\Contracts\Validation\ValidationRule` (LSP).
+     */
+    public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (! $value instanceof UploadedFile) {
-            $fail($this->message());
-
+        if ($this->passes($attribute, $value)) {
             return;
         }
 
-        if (! in_array(mb_strtolower($value->getClientOriginalExtension()), $this->validExtensions, strict: false)) {
-            $fail($this->message());
+        $fail($this->message());
+    }
+
+    /**
+     * @param  string  $attribute  The attribute being validated (not used in this rule)
+     * @param  mixed  $value  The uploaded file to validate
+     */
+    public function passes(string $attribute, mixed $value): bool
+    {
+        if (! $value instanceof UploadedFile) {
+            return false;
         }
+
+        return in_array(mb_strtolower($value->getClientOriginalExtension()), $this->validExtensions, strict: true);
     }
 
     public function message(): string
@@ -52,13 +61,14 @@ class FileExtensionRule implements ValidationRule
             return $message;
         }
 
-        $parts = [];
-        foreach ($message as $part) {
-            if (is_string($part)) {
-                $parts[] = $part;
+        if (is_array($message)) {
+            foreach ($message as $translation) {
+                if (is_string($translation)) {
+                    return $translation;
+                }
             }
         }
 
-        return implode(' ', $parts);
+        return 'The file extension is not allowed.';
     }
 }

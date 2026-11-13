@@ -24,8 +24,6 @@ class BuildingSixteenMenu
 
     /**
      * Aggiunge elementi al menu corrente in base alla location
-     *
-     * @param  array<array-key, mixed>  $items
      */
     public function addMenuItems(array $items): void
     {

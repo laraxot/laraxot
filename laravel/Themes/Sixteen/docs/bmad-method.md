@@ -1,3 +1,15 @@
+---
+title: "bmad method"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "bmad method"
+issues: []
+discussions: []
+status: draft
+---
+
 # bmad method nel tema sixteen
 
 ## scopo
@@ -17,4 +29,4 @@ Il tema **Sixteen** non “installa” BMAD: il metodo BMAD è **a livello di re
 
 ## backlink
 
-- [indice tema](00-index.md)
+- [indice tema](00-INDEX.md)

@@ -5,10 +5,19 @@ declare(strict_types=1);
 namespace Modules\Xot\Tests\Unit\Filament;
 
 use Modules\Xot\Filament\Traits\HasXotTable;
+<<<<<<< HEAD
+=======
+use Modules\Xot\Tests\TestCase;
+>>>>>>> laraxot/dev
 use ReflectionClass;
 
 use function Safe\file_get_contents;
 
+<<<<<<< HEAD
+=======
+uses(TestCase::class);
+
+>>>>>>> laraxot/dev
 /**
  * Guardia della regola docs/wiki/rules/xot-table-method-names.md:
  * `table()` non decide, chiede — e lo chiede direttamente all'hook.

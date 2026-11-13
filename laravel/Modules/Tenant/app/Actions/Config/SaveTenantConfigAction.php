@@ -52,7 +52,9 @@ class SaveTenantConfigAction
         $merged = $array1;
 
         foreach ($array2 as $key => $value) {
-            if (array_key_exists($key, $merged) && is_array($merged[$key]) && is_array($value)) {
+            // Una lista (TagsInput, CheckboxList, ...) e' sempre lo stato completo inviato dal form:
+            // fonderla per indice con la vecchia farebbe ricomparire gli elementi rimossi.
+            if (array_key_exists($key, $merged) && is_array($merged[$key]) && is_array($value) && ! array_is_list($value)) {
                 /** @var array<string, mixed> $left */
                 $left = $merged[$key];
                 /** @var array<string, mixed> $right */

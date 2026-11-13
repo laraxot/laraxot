@@ -10,13 +10,9 @@ return [
             'name' => 'Gestione Utenti',
             'description' => 'Gestione dei client e delle loro autorizzazioni',
         ],
-        'label' => 'client',
+        'label' => 'Client',
         'sort' => '92',
         'icon' => 'user-user-client',
-    ],
-    'fields' => [
-        'name' => [
-        ],
     ],
     'plural' => [
         'model' => [

@@ -1,10 +1,21 @@
+---
+title: "TICKET CREATION WIZARD"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-10-13
+qmd: "TICKET CREATION WIZARD"
+issues: []
+discussions: []
+status: draft
+---
+
 # Ticket Creation Wizard - Implementation Report
 
 **Date**: 2026-04-09  
 **Status**: ✅ **COMPLETE**
 
 ---
-
 ## Architecture
 
 ### Single Page with Filament Widget
@@ -13,7 +24,7 @@ Instead of 4 separate pages (01-privacy, 02-dati, 03-riepilogo, 04-conferma), th
 
 | Before | After |
 |--------|-------|
-| 4 separate pages | 1 page: `segnalazione-crea` |
+| 4 separate pages | 1 page: `tickets.create` (`/it/tickets/create`) |
 | Manual Blade step navigation | **Filament v5 Wizard Schema** |
 | Hundreds of Blade lines | **67-line thin wrapper view** |
 | JSON blocks per page | Single JSON with widget block |
@@ -28,11 +39,11 @@ Reference: [Filament v5 Wizards](https://filamentphp.com/docs/5.x/schemas/wizard
 ### Component Structure
 
 ```
-segnalazione-crea (page)
-├── JSON: tests.segnalazione-crea.json
-├── Blade: components/blocks/tests/segnalazione-crea.blade.php
+tickets.create (page, /it/tickets/create)
+├── JSON: tickets.create.json (correzione verificata 2026-10-13: tests.segnalazione-crea.json non esiste in nessun tenant)
+├── Blade: components/blocks/tests/ticket-crea.blade.php
 └── Widget: Modules/Fixcity/app/Filament/Widgets/CreateTicketWizardWidget.php
-    ├── View: Modules/Fixcity/resources/views/filament/widgets/ticket-create-wizard.blade.php (impostata esplicitamente su `CreateTicketWizardWidget::$view`; il file tema `filament/widgets/createticketwizard.blade.php` non è usato per questo widget perché `GetViewByClassAction` lo selezionerebbe altrimenti al posto del layout con sidebar)
+    ├── View: correzione verificata 2026-10-13: `CreateTicketWizardWidget` non dichiara `$view`; `XotBaseWidget` la risolve con `GetViewByClassAction` in `pub_theme::filament.widgets.create-ticket-wizard` (= `Themes/Sixteen/resources/views/filament/widgets/create-ticket-wizard.blade.php`), con fallback `Modules/Fixcity/resources/views/filament/widgets/create-ticket-wizard.blade.php`
     ├── Schema SSoT: Modules/Fixcity/app/Filament/Resources/TicketResource/Schemas/TicketForm.php
     └── 3 Steps:
         ├── Step 1: Privacy (checkbox)
@@ -48,7 +59,7 @@ segnalazione-crea (page)
 | segnalazione-02-dati | ✅ Kept | Reference for visual parity |
 | segnalazione-03-riepilogo | ✅ Kept | Reference for visual parity |
 | segnalazione-04-conferma | ✅ Kept | Post-submit confirmation page |
-| segnalazione-crea | ✅ New | Unified wizard page |
+| tickets.create | ✅ New | Unified wizard page (`/it/tickets/create`); `/it/tests/segnalazione-crea` non ha JSON né wizard (verificato 2026-10-13) |
 
 ---
 
@@ -77,24 +88,26 @@ Il contratto corretto e':
 **Form state**: managed via `$this->data` (`XotBaseWizardWidget` / `XotBaseWidget`) — NOT individual public properties.
 
 ### Wizard Schema (Filament v5)
-Composed via `XotBaseWizardWidget::getFormSchema()` and widget-provided steps:
+Composed via `XotBaseWizardWidget::getFormSchema()` (-> `getWizardComponent()` -> `Wizard::make($this->getSteps())`) e dagli step di `TicketForm::getSteps()` (estratto reale, verificato 2026-10-13, DOCS-ARRETRATO DCP-44; i vecchi `makeStepPrivacy()/makeStepData()/makeStepSummary()` non esistono):
 ```php
-Wizard::make([
-    makeStepPrivacy(),   // Step 1: privacy notice statico + checkbox
-    makeStepData(),      // Step 2: address, type, title, details, images, author
-    makeStepSummary(),   // Step 3: summary read-only con Infolist entries
-])
+[
+    'privacy' => static::getStepByName('privacy'), // getPrivacySchema(): notice GDPR + checkbox
+    'data'    => static::getStepByName('data'),    // getDataSchema(): address, type, title, details, images, author
+    'summary' => Step::make('summary')->schema(array_values(static::getReviewStepSchema())), // View summary-step
+]
 ```
 
 ### Key Methods
+Correzione verificata 2026-10-13: `makeStepPrivacy()`, `makeStepData()` e `makeStepSummary()` non esistono (0 occorrenze in `Modules/*/app` e `Themes/Sixteen/app`); `CreateTicketWizardWidget` ha `mount`, `getSteps`, `hasSkippableSteps`, `save`, `submit`, `redirectAfterSuccess`, `getViewData` e gli step vengono da `TicketForm::getSteps()` (`privacy`, `data`, `summary`).
+
 | Method | Purpose |
 |--------|---------|
 | `mount()` | Init blockData, resolve step, fill defaults |
-| `makeStepPrivacy()` | Build step 1 |
-| `makeStepData()` | Build step 2 (all inputs) |
-| `makeStepSummary()` | Build step 3 (read-only) via Infolist |
+| `TicketForm::getPrivacySchema()` | Schema step 1 (`privacy`), scoperto da `getStepByName('privacy')` |
+| `TicketForm::getDataSchema()` | Schema step 2 (`data`, all inputs), scoperto da `getStepByName('data')` |
+| `TicketForm::getReviewStepSchema()` | Schema step 3 (`summary`, read-only): View `pub_theme::components.wizard.summary-step` |
 | `submit()` | Validate, create Ticket, redirect |
-| `getSteps()` | Ordered wizard step list |
+| `getSteps()` | Ordered wizard step list (delega a `TicketForm::getSteps()`) |
 
 **REMOVED (old Blade-managed approach)**:
 - ~~`nextStep()`~~ — Filament wizard handles navigation
@@ -202,10 +215,10 @@ User fills Step 1 (Privacy)
 
 ## Related Documentation
 
-- [Widget Source](../../../laravel/Modules/Fixcity/app/Filament/Widgets/CreateTicketWizardWidget.php)
-- [Widget View](../../../laravel/Modules/Fixcity/resources/views/filament/widgets/ticket-create-wizard.blade.php)
-- [Page JSON](../../../laravel/config/local/fixcity/database/content/pages/tests.segnalazione-crea.json)
-- [Page Blade](../../../laravel/Themes/Sixteen/resources/views/components/blocks/tests/segnalazione-crea.blade.php)
+- [Widget Source](../../../../Modules/Fixcity/app/Filament/Widgets/CreateTicketWizardWidget.php)
+- [Widget View](../../resources/views/filament/widgets/create-ticket-wizard.blade.php)
+- [Page JSON](../../../../config/local/fixcity/database/content/pages/tickets.create.json)
+- [Page Blade](../../resources/views/components/blocks/tests/ticket-crea.blade.php)
 - [Wizard governance story](../../../../Modules/Fixcity/docs/stories/wizard-governance-langserviceprovider-and-xotbase-refactor.md)
 
 ---

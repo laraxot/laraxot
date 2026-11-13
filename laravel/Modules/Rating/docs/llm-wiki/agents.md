@@ -10,6 +10,7 @@ discussions: []
 related:
   - ./index.md
   - ./log.md
+status: draft
 ---
 
 # Rating Module LLM Wiki Agent Instructions

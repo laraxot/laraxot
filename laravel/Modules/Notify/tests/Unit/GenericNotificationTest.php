@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Modules\Notify\Tests\Unit;
-
 use Illuminate\Database\Eloquent\Model;
 use Modules\Notify\Notifications\GenericNotification;
-use PHPUnit\Framework\Assert;
+use Modules\Notify\Tests\TestCase;
 
+uses(TestCase::class);
 // Basic unit tests focusing on business logic of recipient name resolution
 
 describe('GenericNotification getRecipientName', function (): void {
@@ -22,11 +21,11 @@ describe('GenericNotification getRecipientName', function (): void {
             }
         };
 
-        $ref = new \ReflectionClass(GenericNotification::class);
+        $ref = new ReflectionClass(GenericNotification::class);
         $method = $ref->getMethod('getRecipientName');
         $method->setAccessible(true);
 
-        Assert::assertSame('John Doe', $method->invoke($notification, $notifiable));
+        expect($method->invoke($notification, $notifiable))->toBe('John Doe');
     });
 
     it('uses Eloquent model full_name when present and non-empty', function (): void {
@@ -35,14 +34,15 @@ describe('GenericNotification getRecipientName', function (): void {
         $model = new class extends Model
         {
             protected $attributes = [
-                'full_name' => 'Jane Roe'];
+                'full_name' => 'Jane Roe',
+            ];
         };
 
-        $ref = new \ReflectionClass(GenericNotification::class);
+        $ref = new ReflectionClass(GenericNotification::class);
         $method = $ref->getMethod('getRecipientName');
         $method->setAccessible(true);
 
-        Assert::assertSame('Jane Roe', $method->invoke($notification, $model));
+        expect($method->invoke($notification, $model))->toBe('Jane Roe');
     });
 
     it('falls back to first_name then name then default', function (): void {
@@ -64,12 +64,12 @@ describe('GenericNotification getRecipientName', function (): void {
             protected $attributes = [];
         };
 
-        $ref = new \ReflectionClass(GenericNotification::class);
+        $ref = new ReflectionClass(GenericNotification::class);
         $method = $ref->getMethod('getRecipientName');
         $method->setAccessible(true);
 
-        Assert::assertSame('Alice', $method->invoke($notification, $model1));
-        Assert::assertSame('Bob', $method->invoke($notification, $model2));
-        Assert::assertSame('Utente', $method->invoke($notification, $model3));
+        expect($method->invoke($notification, $model1))->toBe('Alice');
+        expect($method->invoke($notification, $model2))->toBe('Bob');
+        expect($method->invoke($notification, $model3))->toBe('Utente');
     });
 });

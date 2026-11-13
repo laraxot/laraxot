@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_4lOT3f
 title: "AdminPanelProvider — mappa render hook → widget Filament"
+=======
+title: "AdminPanelProvider: mappa render hook → widget Filament"
+>>>>>>> .merge_file_SRL64K
 type: tech-spec
 module: User
 status: implemented
@@ -12,6 +16,12 @@ related:
   - ../stories/9.2.admin-panel-provider-hook.story.md
   - ../stories/10.1.team-change-widget.story.md
   - ../stories/10.2.socialite-buttons-widget.story.md
+<<<<<<< .merge_file_4lOT3f
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "`adminpanelprovider`: ogni hook del chrome → il suo widget user"
+>>>>>>> .merge_file_SRL64K
 ---
 
 # `AdminPanelProvider`: ogni hook del chrome → il suo widget
@@ -56,16 +66,27 @@ file assenti; `RetiredChromeLivewireTest` fissa l’assenza).
 
 ### 1. `AUTH_LOGIN_FORM_AFTER` → `SocialLoginWidget` (story 10.2)
 
+<<<<<<< .merge_file_4lOT3f
 - Widget: `Modules/User/app/Filament/Widgets/Auth/SocialLoginWidget.php` — `extends XotBaseSchemaWidget` (r. 21).
 - **Nessun widget nuovo creato** (ADR-C002): il gemello esisteva già; lo switch ha richiesto solo
   l’allineamento del gap config/route documentato in
   [livewire-inventory.md](./livewire-inventory.md) — `$redirectRoute` default `socialite.oauth.redirect`
+=======
+- Widget: `Modules/User/app/Filament/Widgets/Auth/SocialLoginWidget.php`: `extends XotBaseSchemaWidget` (r. 21).
+- **Nessun widget nuovo creato** (ADR-C002): il gemello esisteva già; lo switch ha richiesto solo
+  l’allineamento del gap config/route documentato in
+  [livewire-inventory.md](./livewire-inventory.md): `$redirectRoute` default `socialite.oauth.redirect`
+>>>>>>> .merge_file_SRL64K
   (panel), FO usa `socialite.oauth.fo.redirect`.
 - Classe HTTP `Socialite\Buttons` + vista `livewire/socialite/buttons` eliminate.
 
 ### 2. `USER_MENU_BEFORE` → `TeamChangeWidget` (story 10.1)
 
+<<<<<<< .merge_file_4lOT3f
 - Widget: `Modules/User/app/Filament/Widgets/Team/TeamChangeWidget.php` — `extends XotBaseWidget` (r. 27),
+=======
+- Widget: `Modules/User/app/Filament/Widgets/Team/TeamChangeWidget.php`: `extends XotBaseWidget` (r. 27),
+>>>>>>> .merge_file_SRL64K
   `$isDiscovered = false` (r. 29), vista `user::filament.widgets.team.change` (r. 31).
 - `switchTeam()` replica i quattro effetti del Livewire HTTP: `TeamContract::switchTeam`, evento
   `TeamSwitched`, notify via lang `user::team_change_widget`, redirect `303`.
@@ -73,7 +94,11 @@ file assenti; `RetiredChromeLivewireTest` fissa l’assenza).
 
 ### 3. `USER_MENU_BEFORE` → `SuperAdminWidget` (story 9.2)
 
+<<<<<<< .merge_file_4lOT3f
 - Widget: `Modules/User/app/Filament/Widgets/Profile/SuperAdminWidget.php` — `extends XotBaseWidget` (r. 18),
+=======
+- Widget: `Modules/User/app/Filament/Widgets/Profile/SuperAdminWidget.php`: `extends XotBaseWidget` (r. 18),
+>>>>>>> .merge_file_SRL64K
   `$isDiscovered = false` (r. 20), `mount()` risolve `ProfileContract` via `XotData` (rr. 25-28),
   `toggleSuperAdmin()` ritorna `redirect($this->url, 303)` (rr. 30-34), vista
   `user::filament.widgets.profile.super-admin` (r. 42).
@@ -116,7 +141,11 @@ provider: documentati qui perché restano la decisione architetturale.
 
 ```bash
 grep -n "registerRenderHook\|@livewire" Modules/User/app/Providers/Filament/AdminPanelProvider.php
+<<<<<<< .merge_file_4lOT3f
 # atteso: 3 hook, solo FQCN ::class — zero alias stringa
+=======
+# atteso: 3 hook, solo FQCN ::class: zero alias stringa
+>>>>>>> .merge_file_SRL64K
 grep -rn "socialite.buttons\|team.change\|profile.super-admin" Modules/User/app Modules/User/resources
 # atteso: solo app/Http/Livewire/_components.json (cache stale, da eliminare con la cartella)
 ```

@@ -54,10 +54,12 @@
 - 🏗️ **[Tailwind v4 Upgrade](./filament-v4-theme-upgrade.md)** - Guida alla migrazione verso l'ultima versione di Tailwind.
 - 🛣️ **[Folio & Volt Themes](./struttura-themes-folio.md)** - Gestione dei temi nelle pagine Folio.
 - 🧪 **[Table Layout Enum](./table-layout-enum-complete-guide.md)** - Standardizzazione dei layout tabelle.
+- 📱 **[Admin da telefono](./stories/mobile-ux-pass.story.md)** - Tabelle impilate sotto 640 px, azioni di riga a 44 px, decisioni aperte su filtri e azioni di gruppo.
 
 ## 🧪 **Qualità e Sviluppo**
 - ✅ **[PHPStan Analysis](./phpstan-level-10-cleanup.md)** - Report di conformità Level 10.
 - 🔬 **[Testing UI](./testing.md)** - Test di regressione visuale e componenti.
+- 🌐 **[Niente testi fissi nelle Blade](./stories/blade-i18n-no-hardcoded-text.story.md)** - Testi di blocchi e componenti in `ui::` (it, en, de, es): regola, numeri e residui.
 
 ## 🧹 **Manutenzione**
 - 🗑️ **[Cleanup Plan](./consolidation-plan.md)** - Strategia per ridurre i 280+ file di documentazione.
@@ -99,7 +101,10 @@
 
 ---
 *Documentazione conforme agli standard Laraxot - DRY + KISS + SOLID*
+<<<<<<< HEAD
+=======
 
 ## Dependency Intelligence
 
 - [Dependency intelligence](dependency-intelligence.md)
+>>>>>>> f5ffd8b4 (.)

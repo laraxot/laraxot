@@ -13,7 +13,7 @@ use PHPUnit\Framework\Assert;
 
 uses(LightTestCase::class);
 it('throws exception when google maps api key is not configured', function (): void {
-    $action = new CalculateDistanceMatrixAction();
+    $action = new CalculateDistanceMatrixAction;
 
     config(['services.google.maps_api_key' => null]);
 
@@ -30,12 +30,12 @@ it('throws exception when google maps api key is not configured', function (): v
 
         Assert::fail('Expected GoogleMapsApiException was not thrown');
     } catch (GoogleMapsApiException $exception) {
-        Assert::assertSame('API key non configurata', $exception->getMessage());
+        Assert::assertSame('API key di Google Maps non configurata', $exception->getMessage());
     }
 });
 
 it('throws exception when api key is empty string', function (): void {
-    $action = new CalculateDistanceMatrixAction();
+    $action = new CalculateDistanceMatrixAction;
 
     config(['services.google.maps_api_key' => '']);
 
@@ -56,7 +56,7 @@ it('throws exception when api key is empty string', function (): void {
 });
 
 it('throws exception when api response is not successful', function (): void {
-    $action = new CalculateDistanceMatrixAction();
+    $action = new CalculateDistanceMatrixAction;
 
     config(['services.google.maps_api_key' => 'test_key']);
 
@@ -77,12 +77,12 @@ it('throws exception when api response is not successful', function (): void {
 
         Assert::fail('Expected GoogleMapsApiException was not thrown');
     } catch (GoogleMapsApiException $exception) {
-        Assert::assertSame('Richiesta fallita', $exception->getMessage());
+        Assert::assertSame('Richiesta a Google Maps fallita: HTTP 403', $exception->getMessage());
     }
 });
 
 it('throws exception when response status is not OK', function (): void {
-    $action = new CalculateDistanceMatrixAction();
+    $action = new CalculateDistanceMatrixAction;
 
     config(['services.google.maps_api_key' => 'test_key']);
 
@@ -103,12 +103,12 @@ it('throws exception when response status is not OK', function (): void {
 
         Assert::fail('Expected GoogleMapsApiException was not thrown');
     } catch (GoogleMapsApiException $exception) {
-        Assert::assertSame('Stato della risposta non valido', $exception->getMessage());
+        Assert::assertSame('Stato della risposta non valido: ZERO_RESULTS', $exception->getMessage());
     }
 });
 
 it('throws exception when response has no rows', function (): void {
-    $action = new CalculateDistanceMatrixAction();
+    $action = new CalculateDistanceMatrixAction;
 
     config(['services.google.maps_api_key' => 'test_key']);
 
@@ -129,12 +129,12 @@ it('throws exception when response has no rows', function (): void {
 
         Assert::fail('Expected GoogleMapsApiException was not thrown');
     } catch (GoogleMapsApiException $exception) {
-        Assert::assertSame('Nessun risultato', $exception->getMessage());
+        Assert::assertSame('Nessun risultato trovato', $exception->getMessage());
     }
 });
 
 it('returns distance matrix for valid locations', function (): void {
-    $action = new CalculateDistanceMatrixAction();
+    $action = new CalculateDistanceMatrixAction;
 
     config(['services.google.maps_api_key' => 'test_key']);
 
@@ -172,7 +172,7 @@ it('returns distance matrix for valid locations', function (): void {
 });
 
 it('handles multiple origins and destinations', function (): void {
-    $action = new CalculateDistanceMatrixAction();
+    $action = new CalculateDistanceMatrixAction;
 
     config(['services.google.maps_api_key' => 'test_key']);
 
@@ -219,7 +219,7 @@ it('handles multiple origins and destinations', function (): void {
 });
 
 it('handles zero results status', function (): void {
-    $action = new CalculateDistanceMatrixAction();
+    $action = new CalculateDistanceMatrixAction;
 
     config(['services.google.maps_api_key' => 'test_key']);
 

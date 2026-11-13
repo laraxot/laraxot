@@ -1,3 +1,11 @@
+---
+title: "Widget di Autenticazione: Namespace delle View"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "widget di autenticazione: namespace delle view user"
+---
 # Widget di Autenticazione: Namespace delle View
 
 ## ⚠️ **Regola Critica**

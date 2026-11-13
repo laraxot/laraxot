@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\XotData;
+<<<<<<< HEAD
 use Webmozart\Assert\Assert;
+=======
+>>>>>>> laraxot/dev
 
 /**
  * Trait Updater.
@@ -69,11 +72,21 @@ trait Updater
     }
 
     /**
+<<<<<<< HEAD
      * bootUpdater function.
+=======
+     * Imposta created_by/updated_by/deleted_by con l'utente autenticato.
+     *
+     * In creazione gli attributi del modello contengono solo i campi valorizzati, quindi
+     * la presenza della colonna si chiede allo schema (una volta per tabella e connessione).
+     * In eliminazione logica deleted_by va salvato prima: il soft delete aggiorna solo
+     * deleted_at/updated_at e scarterebbe l'attributo.
+>>>>>>> laraxot/dev
      */
     protected static function bootUpdater(): void
     {
         static::creating(static function (Model $model): void {
+<<<<<<< HEAD
             Assert::isArray($attributes = $model->getAttributes());
 
             if (array_key_exists('created_by', $attributes)) {
@@ -82,10 +95,17 @@ trait Updater
 
             if (array_key_exists('updated_by', $attributes)) {
                 $model->setAttribute('updated_by', authId());
+=======
+            foreach (['created_by', 'updated_by'] as $column) {
+                if ($model->getAttribute($column) === null && self::updaterHasColumn($model, $column)) {
+                    $model->setAttribute($column, authId());
+                }
+>>>>>>> laraxot/dev
             }
         });
 
         static::updating(static function (Model $model): void {
+<<<<<<< HEAD
             Assert::isArray($attributes = $model->getAttributes());
 
             if (array_key_exists('updated_by', $attributes)) {
@@ -104,6 +124,40 @@ trait Updater
             }
         });
     }
+=======
+            if (self::updaterHasColumn($model, 'updated_by')) {
+                $model->setAttribute('updated_by', authId());
+            }
+        });
+
+        static::deleting(static function (Model $model): void {
+            if (! self::updaterHasColumn($model, 'deleted_by')) {
+                return;
+            }
+
+            $model->setAttribute('deleted_by', authId());
+
+            $isSoftDelete = method_exists($model, 'isForceDeleting') && ! $model->isForceDeleting();
+            if ($isSoftDelete && $model->exists) {
+                $model->saveQuietly();
+            }
+        });
+    }
+
+    private static function updaterHasColumn(Model $model, string $column): bool
+    {
+        /** @var array<string, bool> $cache */
+        static $cache = [];
+
+        $key = ($model->getConnectionName() ?? 'default').'.'.$model->getTable().'.'.$column;
+        if (! array_key_exists($key, $cache)) {
+            $cache[$key] = array_key_exists($column, $model->getAttributes())
+                || $model->getConnection()->getSchemaBuilder()->hasColumn($model->getTable(), $column);
+        }
+
+        return $cache[$key];
+    }
+>>>>>>> laraxot/dev
 }
 
 // end trait Updater

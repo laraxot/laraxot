@@ -8,17 +8,21 @@ qmd: "phpstan analisi phpstan del modulo user"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Analisi PHPStan del Modulo User
 
 ## Stato Attuale
@@ -28,25 +32,25 @@ Il modulo User è attualmente in fase di analisi con PHPStan. Questo documento t
 
 ### Team e BaseTeam
 - [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#team-php-e-baseteam-php)
->>>>>>> 87273113 (.)
+- [Dettagli completi](phpstan-fixes.md#team-php-e-baseteam-php)
 - Stato: ✅ Risolto
 - Commit: N/A
 
 ### TeamInvitation
 - [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#teaminvitation-php)
->>>>>>> 87273113 (.)
+- [Dettagli completi](phpstan-fixes.md#teaminvitation-php)
 - Stato: ✅ Risolto
 - Commit: N/A
 
 ### TeamUser e BasePivot
 - [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#teamuser-php-e-basepivot-php)
->>>>>>> 87273113 (.)
+- [Dettagli completi](phpstan-fixes.md#teamuser-php-e-basepivot-php)
 - Stato: ✅ Risolto
 - Commit: N/A
 
 ### BaseUser
 - [Dettagli completi](../../Modules/User/docs/phpstan-fixes-8.md#baseuser-php)
->>>>>>> 87273113 (.)
+- [Dettagli completi](phpstan-fixes.md#baseuser-php)
 - Stato: 🔄 In Corso
 - Problemi rimanenti:
   - Proprietà non definite
@@ -56,7 +60,6 @@ Il modulo User è attualmente in fase di analisi con PHPStan. Questo documento t
 ## Collegamenti
 - [Documentazione Generale PHPStan](/docs/phpstan.md)
 - [Linee Guida PHPStan Livello 10](/docs/phpstan/phpstan_level10_linee_guida.md)
->>>>>>> 87273113 (.)
 - [Contratti del Modulo User](/docs/modules/user/contracts.md)
 - [Best Practices per i Modelli](/docs/modules/user/models.md)
 

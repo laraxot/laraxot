@@ -1,12 +1,18 @@
 ---
-title: "Troubleshooting Guide — Media Module"
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "TROUBLESHOOTING"
+issues: []
+discussions: []
+title: "Troubleshooting Guide: Media Module"
 module: "Media"
 type: operations
 tags: [troubleshooting, errors, debugging]
 last_updated: 2026-07-28
+status: draft
 ---
 
-# Troubleshooting Guide — Media Module
+# Troubleshooting Guide: Media Module
 
 **Last updated:** 2026-07-28
 

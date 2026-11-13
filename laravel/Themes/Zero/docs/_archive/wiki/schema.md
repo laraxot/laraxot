@@ -1,3 +1,21 @@
+---
+id: zero-docs-archive-wiki-schema
+slug: schema
+title: "Theme Zero Wiki - Schema e Convenzioni"
+description: "Tema Zero per la piattaforma PTVX. Tema base/default con layout, stili e componenti Blade per l'interfaccia pubblica e amministrativa."
+document_type: guide
+type: guide
+category: database
+status: archived
+tags: []
+created: "2026-09-24"
+updated: "2026-10-08"
+qmd: "theme zero wiki - schema e convenzioni"
+issues: []
+discussions: []
+canonical: ../../wiki/schema.md
+---
+
 # Theme Zero Wiki — Schema e Convenzioni
 
 ## Dominio

@@ -1,3 +1,15 @@
+---
+title: "homepage structure diff"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "homepage structure diff"
+issues: []
+discussions: []
+status: draft
+---
+
 # Homepage Structure Diff 2026-04-02
 
 Report visuale correlato: [screenshots/homepage-visual-pass-2026-04-02.md](./screenshots/homepage-visual-pass-2026-04-02.md)

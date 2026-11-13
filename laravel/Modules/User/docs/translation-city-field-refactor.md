@@ -1,21 +1,26 @@
 ---
-title: "Refactor Completo Campi "Città" - Modulo User"
+title: 'Refactor Completo Campi "Città" - Modulo User'
 type: concept
 tags: [translation, city, field, refactor]
 created: 2026-07-14
 updated: 2026-07-14
-qmd: "translation-city-field-refactor- refactor completo campi "città" - modulo user"
+qmd: 'translation-city-field-refactor- refactor completo campi "città" - modulo user'
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # Refactor Completo Campi "Città" - Modulo User
@@ -205,15 +210,17 @@ module: theme
 topic: translation-city-field-refactor
 canonical: ../../../Themes/docs/shared-components/translation-city-field-refactor.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/translation-city-field-refactor.md
->>>>>>> 2024e2e7 (.)

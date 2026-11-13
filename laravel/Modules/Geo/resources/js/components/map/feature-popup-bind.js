@@ -26,7 +26,8 @@ export function bindFeaturePopup(mapLit, feature, layer) {
         className: 'popup-wrapper',
         maxWidth: 380,
         minWidth: 300,
-        autoPanPaddingTopLeft: L.point(72, 16),
+        autoPanPaddingTopLeft: L.point(window.innerWidth < 640 ? 56 : 72, 16),
+        autoPanPaddingBottomRight: L.point(16, 28),
     });
 
     layer.on('click', (event) => {

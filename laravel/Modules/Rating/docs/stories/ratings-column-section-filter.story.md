@@ -1,21 +1,29 @@
 ---
+title: "ratings column section filter.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ratings column section filter.story"
+issues: []
+discussions: []
 name: ratings-column-section-filter
 description: "RatingsColumn, RatingsSection e HasRatingValuesFilter nel modulo Rating: stato della valutazione in una cella, il suo specchio nel form, e il filtro. Un solo criterio di «valutata», aggregati in query, zero N+1."
 metadata:
   type: story
   status: done
   date: 2026-09-08
-  agent: claude opus 5 — sessione base-ptvx-fila5-92 [6a95f1]
+  agent: claude opus 5: sessione base-ptvx-fila5-92 [6a95f1]
   module: Rating
 ---
 
-# Story — `RatingsColumn`, `RatingsSection`, `HasRatingValuesFilter`
+# Story: `RatingsColumn`, `RatingsSection`, `HasRatingValuesFilter`
 
 ## Richiesta
 
 Dall'utente, in due passaggi: un filtro per sapere se i rating sono stati popolati
 con un valore diverso da zero; poi una `RatingsColumn` con il suo specchio
-`RatingsSection`, **entrambi nel modulo Rating** — non in Ptv, che è solo uno dei
+`RatingsSection`, **entrambi nel modulo Rating**: non in Ptv, che è solo uno dei
 consumatori.
 
 ## La domanda vera del dominio
@@ -55,7 +63,7 @@ indennita_responsabilita  (alias morph)   180    171     0      9       2
 ```
 
 `ratings()` è una `morphToMany`: filtra su `getMorphClass()`, cioè **solo l'alias**.
-Aggregando lì, la colonna avrebbe detto «non valutata» a 146 schede su 147 — un
+Aggregando lì, la colonna avrebbe detto «non valutata» a 146 schede su 147: un
 numero sbagliato che sembra giusto, la categoria peggiore.
 
 **Fix per entrambi**: si aggrega sulle **righe pivot**, non sui rating. Nuova
@@ -85,7 +93,7 @@ Tre scelte che tengono insieme il gruppo:
    ha un record solo, se li carica con `newQuery()->withCount()/withSum()`.
 3. **I componenti decidono da sé se mostrarsi.** Il filtro si nasconde se il model
    non ha `ratingMorphs()`. Chi compone scrive una riga e non sa niente del dominio
-   rating — regola `filament-reusable-component-owns-visibility`.
+   rating: regola `filament-reusable-component-owns-visibility`.
 
 Composti in `Ptv/.../BaseSchedasTable`: una riga per la colonna, una per il filtro.
 
@@ -108,7 +116,7 @@ filtro:   valutate 147 · non valutate 7.808 · totale 7.955  (147+7808=7955 ✓
 Una sessione concorrente aveva annotato qui l'errore `criteri_esclusione doesn't
 exist`, con la diagnosi «il codice è corretto, manca la tabella». **Avevo corretto
 quella nota dandole torto. Il torto era mio**: i criteri di esclusione sono dati del
-modulo — `performance` ne ha 94, `progressione` 91, elenchi diversi — quindi il leaf
+modulo: `performance` ne ha 94, `progressione` 91, elenchi diversi: quindi il leaf
 deve dichiarare la propria connessione, e quello che manca è la migrazione.
 
 Dettaglio, misure e le due migrazioni scritte:
@@ -120,8 +128,8 @@ applica correttamente.
 ## Incidente da ricordare
 
 `RatingsColumn.php` **esisteva già** (untracked, scritta da una sessione
-concorrente) e l'ho sovrascritta senza leggerla. Il tool me l'aveva segnalato —
-ha risposto *updated*, non *created* — e non ci ho fatto caso. Poco dopo la
+concorrente) e l'ho sovrascritta senza leggerla. Il tool me l'aveva segnalato -
+ha risposto *updated*, non *created*: e non ci ho fatto caso. Poco dopo la
 versione dell'altra sessione è tornata sul file, in uno stato **fatale**
 (`Cannot redeclare getValue()`), e l'ho ripresa sotto lock.
 
@@ -131,7 +139,7 @@ c'era.
 
 ## Aperto
 
-- Normalizzazione di `rating_morph.model_type` — story separata, scritta dalla
+- Normalizzazione di `rating_morph.model_type`: story separata, scritta dalla
   sessione peer con i numeri sopra. Finché non è fatta, `ratingMorphs()` è la
   ragione per cui i conteggi sono giusti.
 - `RatingsSection` non è ancora composta in nessun form: è pronta, e va aggiunta
@@ -142,8 +150,8 @@ c'era.
 Prima di questo filtro esisteva un `RatingsNonZeroFilter`, con nome
 `ratings_nonzero` e tre opzioni (`Tutti` / `Solo zero` / `Diverso da zero`), che
 interrogava direttamente la colonna aggregata `ratings_avg`:
-`ratings_avg IS NOT NULL AND ratings_avg != 0`. Il criterio era lo stesso di oggi —
-lo zero vale come non valutato — ma letto sull'aggregato invece che sulle righe
+`ratings_avg IS NOT NULL AND ratings_avg != 0`. Il criterio era lo stesso di oggi -
+lo zero vale come non valutato: ma letto sull'aggregato invece che sulle righe
 pivot, quindi dipendeva da un campo che qualcuno doveva ricalcolare.
 
 Della classe non resta nulla nel codice. Restava solo la sua nota di
@@ -157,7 +165,7 @@ Conseguenze concrete, prima della rimozione:
 
 - il preflight dei quality gate lo segnalava come «.php troncato» e **bloccava il
   gate** (`03-quality-gates.md`, step 1c);
-- `php -l` lo dava per valido — fuori da `<?php` e' tutto testo inline — quindi
+- `php -l` lo dava per valido: fuori da `<?php` e' tutto testo inline: quindi
   nessun gate sintattico lo vedeva;
 - lo snippet che conteneva era gia' sbagliato due volte: usava `->label()`, vietato
   dalle regole del progetto, e aveva le graffe sbilanciate.

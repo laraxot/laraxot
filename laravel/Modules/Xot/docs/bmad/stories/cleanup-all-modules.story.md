@@ -1,4 +1,11 @@
 ---
+<<<<<<< HEAD
+=======
+type: note
+tags: [documentation]
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 id: "xot-cleanup-all-modules"
 epic: 5
 title: "Fleet: git status + marker HEAD + quality per ogni modulo"
@@ -13,7 +20,11 @@ related:
   - ./uppercase-root-dirs-cleanup.story.md
   - ./graphify-out-gitignore-all-modules.story.md
   - ../../../../Job/docs/bmad/stories/12.3.root-hygiene-conflict-markers.story.md
+<<<<<<< HEAD
   - ../../../../../docs/wiki/memories/job-git-clean-can-hide-committed-conflict-markers.md
+=======
+  - ../../../../../../docs/wiki/memories/job-git-clean-can-hide-committed-conflict-markers.md
+>>>>>>> laraxot/dev
 ---
 
 # Fleet: `git status` + marker in HEAD + quality tools
@@ -26,7 +37,11 @@ Canon: questa story (kebab, **senza data nel filename**). Il file datato `cleanu
 
 - Agent: cursor-80f4250a
 - Task: fleet-cleanup-markers
+<<<<<<< HEAD
 - Non toccati (WIP altri agenti): IndennitaResponsabilita (51 staged), Rating test `HasRatingsTraitRatingsByIdTest`, Xot `CollectionExport`/`ExportXlsByCollection`, Activity docs (90 dirty), Lang/Media `.gitignore` (`graphify-out/` — story graphify-out-gitignore)
+=======
+- Non toccati (WIP altri agenti): IndennitaResponsabilita (51 staged), Rating test `HasRatingsTraitRatingsByIdTest`, Xot `CollectionExport`/`ExportXlsByCollection`, Activity docs (90 dirty), Lang/Media `.gitignore` (`graphify-out/`: story graphify-out-gitignore)
+>>>>>>> laraxot/dev
 
 ## Git status (ordine random 2026-09-22)
 
@@ -59,7 +74,11 @@ Canon: questa story (kebab, **senza data nel filename**). Il file datato `cleanu
 4. [x] UI root senza `ARCHITECTURE.md`/`TESTING.md`/`PHILOSOPHY.md` (SSoT `docs/architecture.md`).
 5. [x] User root senza `Application/` (PSR-4 è `app/`); Xot senza `Tests/` (duplicato identico di `tests/`) e senza `tests/pest.php` (collision con `Pest.php`).
 6. [x] PHPStan max: Notify+User+UI+Media = 0. Rating/IR/Xot/Ptv errori = WIP altri claim, non questo.
+<<<<<<< HEAD
 7. [ ] Commit: **non richiesto** dall'utente — deferred.
+=======
+7. [ ] Commit: **non richiesto** dall'utente: deferred.
+>>>>>>> laraxot/dev
 8. [x] Pest skip: `DB_HOST=10.100.200.53` unreachable / host non di test.
 
 ## Quality
@@ -73,4 +92,8 @@ Canon: questa story (kebab, **senza data nel filename**). Il file datato `cleanu
 
 - Marker **dentro** `docs/` (citazioni / campagne 5.159 già chiuse o WIP Activity).
 - `Xot/.git-rewrite/` (artefatto git).
+<<<<<<< HEAD
 - Cluster Livewire Job Status/Crud (12.2).
+=======
+- Cluster Livewire Job Status/Crud (12.2).
+>>>>>>> laraxot/dev

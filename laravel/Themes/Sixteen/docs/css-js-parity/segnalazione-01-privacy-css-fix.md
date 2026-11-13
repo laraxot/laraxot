@@ -1,3 +1,16 @@
+---
+title: "segnalazione 01 privacy css fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "segnalazione 01 privacy css fix"
+issues: []
+discussions: []
+status: superseded
+superseded_by: ticket-01-privacy-css-fix.md
+---
+
 # CSS/JS Parity Fix - Segnalazione 01 Privacy
 
 **Phase**: CSS/JS Visual Parity  
@@ -8,7 +21,6 @@
 **Visual Parity Target**: 90%+
 
 ---
-
 ## 📊 Baseline Analysis (2026-04-09 10:11)
 
 ### Visual Parity Issues Found
@@ -177,6 +189,6 @@ laravel/Themes/Sixteen/storage/visual-parity/segnalazione-01-privacy/
 
 **Cross-References**:
 - [HTML Parity Report](../../../../bashscripts/html/output/report.md)
-- [Visual Parity Script](../scripts/visual-parity.mjs)
+- [Visual Parity Script](../../scripts/visual-parity.mjs)
 - [Design Comuni Reference](https://github.com/italia/design-comuni-pagine-statiche)
 - [Bootstrap Italia Colors](https://italia.github.io/design-comuni-pagine-statiche/)

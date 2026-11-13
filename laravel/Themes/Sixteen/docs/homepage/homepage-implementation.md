@@ -1,3 +1,15 @@
+---
+title: "homepage implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "homepage implementation"
+issues: []
+discussions: []
+status: draft
+---
+
 # Homepage Design Comuni - Implementation Guide
 
 > *"La homepage è il volto digitale del Comune. Deve essere perfetta."*
@@ -10,7 +22,6 @@ Replicare esattamente la homepage Design Comuni:
 - **Requisito**: HTML identico dentro `<body>` + CSS Bootstrap Italia
 
 ---
-
 ## 📊 Analisi Comparativa
 
 ### Design Comuni Structure

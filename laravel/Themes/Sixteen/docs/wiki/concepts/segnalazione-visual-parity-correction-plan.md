@@ -1,8 +1,14 @@
 ---
+title: "segnalazione visual parity correction plan"
+updated: 2026-09-26
+qmd: "segnalazione visual parity correction plan"
+issues: []
+discussions: []
 type: concept
 created: 2026-05-04
 tags: [design-comuni, plan, visual-parity, tailwind]
-status: proposed
+status: superseded
+superseded_by: ticket-visual-parity-correction-plan.md
 ---
 
 # Visual Parity Correction Plan: Segnalazione (Step 1)

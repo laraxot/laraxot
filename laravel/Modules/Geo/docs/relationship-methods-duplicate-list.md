@@ -1,3 +1,15 @@
+---
+title: "relationship methods duplicate list"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "relationship methods duplicate list"
+issues: []
+discussions: []
+status: draft
+---
+
 # Elenco metodi relazione duplicate
 
 > Modulo: Sigma + consumer

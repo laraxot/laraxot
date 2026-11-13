@@ -9,6 +9,14 @@ related:
   - "./code-redundancy-theme.md"
   - "./context-overflow-prevention.md"
   - "./method-name-homonyms.md"
+id: zero-docs-wiki-concepts-ponytail-docs-lifecycle
+slug: ponytail-docs-lifecycle
+description: "Theme docs should stay smaller than module docs."
+document_type: concept
+category: documentation
+status: active
+issues: []
+discussions: []
 ---
 
 # Ponytail Docs Lifecycle

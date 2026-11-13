@@ -2,13 +2,17 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_9zRRel
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'uuid' => ['label' => 'uuid'],
-        'tenant_id' => ['label' => 'tenant_id'],
-        'user_id' => ['label' => 'user_id'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'id' => ['label' => 'ID'],
+        'uuid' => ['label' => 'UUID'],
+        'tenant_id' => ['label' => 'Tenant'],
+        'user_id' => ['label' => 'Utente'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_jzatc7

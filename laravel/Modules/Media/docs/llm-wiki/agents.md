@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Media {{TYPE^}} LLM Wiki Agent Instructions"
 module: "Media"
 type: concept
@@ -6,10 +8,11 @@ tags: [AGENTS]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "agents"
-<<<<<<< HEAD
 related:
   - "./webm.md"
+status: draft
 ---
+
 # Media {{TYPE^}} LLM Wiki Agent Instructions
 
 > **Module/Theme:** Media
@@ -164,8 +167,7 @@ updated: 2026-07-01
 qmd: "istruzioni agenti LLM wiki modulo"
 issues: []
 discussions: []
-=======
->>>>>>> laraxot/dev
+---
 related:
   - "./webm.md"
 ---

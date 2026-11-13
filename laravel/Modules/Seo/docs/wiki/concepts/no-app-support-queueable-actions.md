@@ -11,7 +11,8 @@ discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
 related:
   - metatag-data-contract.md
-  - ../../../../docs/wiki/rules/queueable-action-trait-mandatory.md
+  - ../../../../../../docs/wiki/rules/queueable-action-trait-mandatory.md
+status: active
 ---
 
 # no `app/Support/` — business logic in QueueableAction
@@ -38,4 +39,4 @@ Nel modulo Seo **non** esiste più `app/Services/MetatagService`. Stato request-
 ## Collegamenti
 
 - [metatag-data-contract.md](metatag-data-contract.md)
-- [queueable-action-trait-mandatory](../../../../docs/wiki/rules/queueable-action-trait-mandatory.md)
+- [queueable-action-trait-mandatory](../../../../../../docs/wiki/rules/queueable-action-trait-mandatory.md)

@@ -73,6 +73,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Titillium Web', 'Inter var', ...defaultTheme.fontFamily.sans],
+                serif: ['Lora', 'Georgia', ...defaultTheme.fontFamily.serif],
                 mono: ['Roboto Mono', ...defaultTheme.fontFamily.mono],
             },
             colors: {
@@ -147,7 +148,7 @@ export default {
                     '@apply text-italia-gray-400 text-sm mt-1': {},
                 },
                 '.btn-primary': {
-                    '@apply bg-italia-blue text-white hover:bg-italia-blue-dark transition-colors': {},
+                    '@apply bg-primary-500 text-white hover:bg-primary-600 transition-colors': {},
                 },
                 '.btn-outline-primary': {
                     '@apply bg-transparent text-italia-blue border border-italia-blue hover:bg-italia-blue hover:text-white transition-colors': {},

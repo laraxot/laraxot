@@ -14,6 +14,8 @@ use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\User\Actions\Passport\RevokeRefreshTokenAction;
 use Modules\User\Filament\Clusters\Passport;
 use Modules\User\Filament\Clusters\Passport\Resources\OauthRefreshTokenResource\Pages\ListOauthRefreshTokens;
@@ -31,7 +33,7 @@ class OauthRefreshTokenResource extends XotBaseResource
     {
         return $table
             ->columns([
-                TextColumn::make('id')
+                IDColumn::make('id')
                     ->searchable()
                     ->sortable()
                     ->copyable(),
@@ -56,7 +58,7 @@ class OauthRefreshTokenResource extends XotBaseResource
                     ->icon('heroicon-o-x-circle')
                     ->color('danger')
                     ->requiresConfirmation()
-                    ->action(function (mixed $record): void {
+                    ->action(function (Model|array|null $record): void {
                         if ($record instanceof OauthRefreshToken && app(RevokeRefreshTokenAction::class)->execute($record)) {
                             Notification::make()
                                 ->title(static::trans('actions.revoke.success'))
@@ -64,7 +66,7 @@ class OauthRefreshTokenResource extends XotBaseResource
                                 ->send();
                         }
                     })
-                    ->visible(fn (mixed $record) => $record instanceof OauthRefreshToken && ! (bool) $record->getAttribute('revoked')),
+                    ->visible(fn (Model|array|null $record) => $record instanceof OauthRefreshToken && ! (bool) $record->getAttribute('revoked')),
                 DeleteAction::make(),
             ])
             ->toolbarActions([

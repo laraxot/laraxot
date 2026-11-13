@@ -1,10 +1,14 @@
 ---
+qmd: "prd"
+issues: []
+discussions: []
 title: "Product Requirements Document (PRD) - Lang Module"
 module: "Lang"
 type: concept
 tags: [PRD, lang]
 created: 2026-08-04
 updated: 2026-08-04
+status: draft
 ---
 # Product Requirements Document (PRD) - Lang Module
 
@@ -249,6 +253,6 @@ The Lang module provides a structured framework for managing lang operations wit
 | Module | Self-contained Laravel module following Laraxot conventions |
 
 ### Related Documents
-- [Architecture](architecture.md)
+- [Architecture](ARCHITECTURE.md)
 - [Technical Specification](TECH_SPEC.md)
 - [User Stories](epics/lang-epics-and-stories.md)

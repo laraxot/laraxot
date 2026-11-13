@@ -1,3 +1,12 @@
+---
+title: "User Module - Product Strategy"
+type: note
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "user module - product strategy user"
+status: superseded
+superseded_by: product-strategy-user-module.md
+---
 # User Module - Product Strategy
 
 **Module:** User  

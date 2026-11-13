@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+---
+title: "Xot - claude-code-laraxot-rules-path-scoping.md"
+module: Xot
+bmad: true
+status: active
+---
+>>>>>>> laraxot/dev
 # Claude Code Laraxot Rules Path Scoping
 
 ## Decisione
@@ -46,4 +55,8 @@ paths:
 - `one-migration-per-model.md`
 - `translation-5-elements.md`
 - `xotbase-blade-icons-auto-registration.md`
+<<<<<<< HEAD
 - `xotbasepage-inheritance.md`
+=======
+- `xotbasepage-inheritance.md`
+>>>>>>> laraxot/dev

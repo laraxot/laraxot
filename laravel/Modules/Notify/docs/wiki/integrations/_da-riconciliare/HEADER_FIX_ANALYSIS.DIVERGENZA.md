@@ -1,10 +1,15 @@
 ---
+qmd: "HEADER FIX ANALYSIS.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: HEADER_FIX_ANALYSIS.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: header_fix_analysis.divergenza.md
 ---
 
 # Divergenza: `HEADER_FIX_ANALYSIS.md`

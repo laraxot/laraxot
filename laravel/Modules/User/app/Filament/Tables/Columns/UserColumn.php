@@ -7,9 +7,10 @@ namespace Modules\User\Filament\Tables\Columns;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Modules\UI\Filament\Tables\Columns\GroupColumn;
+use Modules\User\Filament\Forms\Components\UserSection;
 
 /**
- * Controparte in lista di {@see \Modules\User\Filament\Forms\Components\UserSection}.
+ * Controparte in lista di {@see UserSection}.
  *
  * Stessi campi anagrafici (`first_name`, `last_name`, `email`), due superfici: il form li edita,
  * la tabella li mostra raggruppati.

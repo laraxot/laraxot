@@ -5,22 +5,26 @@ tags: [base, classes, corrections]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "base-classes-corrections- correzione estensioni classi base - modulo user"
-issues: ["https://github.com/provtv/<nome repository>/issues/124"]
-discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
-
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./base-classes-corrections-1.md"
-  - "./base-classes-corrections-2.md"
-  - "./base-classes-corrections-3.md"
   - "./base-classes-corrections.md"
-  - "./phpstan-fixes-1.md"
+  - "./base-classes-corrections.md"
+  - "./base-classes-corrections.md"
+  - "./base-classes-corrections.md"
+  - "./phpstan-fixes.md"
   - "./phpstan-fixes.md"
   - "./phpstanes.md"
+  - "./base-classes-corrections.md"
+  - "./base-classes-corrections.md"
+  - "./base-classes-corrections-stato-rinominato.md"
+  - "./base-classes-corrections.md"
+  - "./phpstan-fixes-correzioni-modulo-user.md"
+  - "./phpstan-fixes.md"
+  - "./phpstanes.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Correzione Estensioni Classi Base - Modulo User
 
 **Data:** 15 Ottobre 2025
@@ -248,7 +252,6 @@ php artisan test --filter=ModelTest
    - Checklist per nuovi modelli
 
 2. **`docs/fixes/base-classes-corrections-.md.md`** (QUESTO FILE)
->>>>>>> 87273113 (.)
    - Riepilogo correzioni
    - Motivazioni tecniche
    - Before/After comparisons
@@ -318,7 +321,6 @@ e
 
 Questo pattern di correzione può essere applicato a:
 - **Modulo ExternalProject**: Verificare QuestionChart, SurveyPdf, Contact
->>>>>>> 87273113 (.)
 - **Modulo Blog**: Verificare Post, Category, Tag
 - **Modulo Dental**: Verificare Visit, Treatment, Patient
 - **Tutti gli altri moduli**: Audit sistematico

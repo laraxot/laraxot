@@ -1,10 +1,15 @@
 ---
+qmd: "documentation analysis and improvement plan"
+issues: []
+discussions: []
 title: "Documentation Analysis and Improvement Plan"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: documentation-analysis-and-improvement-plan.md
 ---
 
 # Documentation Analysis and Improvement Plan

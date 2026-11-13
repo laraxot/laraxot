@@ -1,3 +1,15 @@
+---
+title: "channel enum"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "channel enum"
+issues: []
+discussions: []
+status: draft
+---
+
 # `ChannelEnum`
 
 This document describes the `ChannelEnum`, an enumeration (Enum) defining the various notification channels supported by the `Notify` module. It is designed to provide a type-safe and standardized way to reference notification channels throughout the application, especially in Filament actions and other notification-related logic.

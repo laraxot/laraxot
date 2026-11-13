@@ -1,11 +1,11 @@
 {{-- Bootstrap Italia Header Main Component --}}
 @props([
-    'brandName' => config('app.name', 'Comune di '),
+    'brandName' => config('app.name', __('pub_theme::components_header.brand.municipality_of.label').' '),
     'brandLogo' => null,
     'brandLink' => '/',
-    'tagline' => 'Portale istituzionale',
+    'tagline' => __('pub_theme::components_header.brand.institutional_portal.label'),
     'searchEnabled' => true,
-    'searchPlaceholder' => 'Cerca nel sito...',
+    'searchPlaceholder' => __('pub_theme::components_search.fields.site.placeholder'),
     'menuItems' => [],
     'ctaButton' => null
 ])
@@ -46,7 +46,7 @@
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
-                            <span class="sr-only">Cerca</span>
+                            <span class="sr-only">{{ __('pub_theme::header.center.search.label') }}</span>
                         </button>
                     </form>
                 </div>
@@ -68,7 +68,7 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
-                    <span class="sr-only">Menu</span>
+                    <span class="sr-only">{{ __('pub_theme::components_common.nav.menu.label') }}</span>
                 </button>
             </div>
         </div>
@@ -114,7 +114,7 @@
             <div x-data="{ mobileMenuOpen: false }" class="md:hidden w-full">
                 <button @click="mobileMenuOpen = !mobileMenuOpen" 
                         class="flex items-center justify-between w-full px-4 py-3 text-left">
-                    <span class="font-medium text-italia-gray-900">Menu</span>
+                    <span class="font-medium text-italia-gray-900">{{ __('pub_theme::components_common.nav.menu.label') }}</span>
                     <svg class="w-5 h-5 transition-transform" 
                          :class="{ 'rotate-180': mobileMenuOpen }"
                          fill="none" stroke="currentColor" viewBox="0 0 24 24">

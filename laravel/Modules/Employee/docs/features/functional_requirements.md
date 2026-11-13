@@ -1,3 +1,9 @@
+---
+title: "Employee - FUNCTIONAL_REQUIREMENTS"
+module: Employee
+bmad: true
+status: active
+---
 # Requisiti Funzionali del Modulo Employee
 
 ## Panoramica Generale

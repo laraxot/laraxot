@@ -58,7 +58,7 @@ La regola del repo dice **non astrarre sotto le tre occorrenze**. Se ne trovi un
 
 - o **non estrai**, e lo dici;
 - o estrai **dichiarando che non è deduplicazione** ma posa di un contratto, e allora il
-  guadagno dev'essere il contratto — non le righe risparmiate, che sono zero.
+  guadagno dev'essere il contratto: non le righe risparmiate, che sono zero.
 
 Non c'è una terza uscita onesta.
 
@@ -94,7 +94,7 @@ con «dedurre dal nome del metodo». Stessa famiglia di guasto.
 le closure con default; se ogni consumatore ha per forza un comportamento proprio, serve
 l'interfaccia.
 
-## 4. Non estrarre le deduzioni da stringa — è il passo che decide se l'operazione è in perdita
+## 4. Non estrarre le deduzioni da stringa: è il passo che decide se l'operazione è in perdita
 
 Cercare, nel metodo che si sta per estrarre, ogni punto in cui il **comportamento** dipende da
 un **testo**:
@@ -132,13 +132,13 @@ grep -n "extends \\\\?Filament" <il file>                             # mai este
 ```
 
 Nel caso reale: **otto** `->label()` in una pagina, sotto una regola che dice «SENZA ECCEZIONI».
-Il che apre la domanda vera — se l'etichetta è **un dato** e non una costante, la regola ha una
+Il che apre la domanda vera: se l'etichetta è **un dato** e non una costante, la regola ha una
 lacuna o il dominio ha torto. Va deciso prima di estrarre, perché dopo il problema è di sei
 moduli.
 
 **Se una regola sembra assurda, prima controlla che sia leggibile.** Nel caso reale
 `no-filament-labels` era un file di cinque righe che rimandava a se stesso: il canone vero
-stava altrove. Una regola che non si può leggere non si può applicare — ed è la spiegazione,
+stava altrove. Una regola che non si può leggere non si può applicare: ed è la spiegazione,
 non la scusa, delle otto violazioni.
 
 ## 6. Solo allora: la firma
@@ -156,8 +156,8 @@ Si scrive la firma **dopo** i cinque passi, e deve poter essere letta senza il r
   (regola `normativa-atterra-dove-vive-il-meccanismo`)
 - Claim in `docs/chat/` e lock: un trait condiviso ha consumatori che stanno lavorando adesso
 - Test: uno per il generale, uno per host che non passa nulla, uno per host che passa tutto
-- Concetto in `docs/wiki/concepts/` del modulo owner, con il **fondamento** — perché, logica,
-  scopo, filosofia, politica, religione, zen — non solo la firma
+- Concetto in `docs/wiki/concepts/` del modulo owner, con il **fondamento**: perché, logica,
+  scopo, filosofia, politica, religione, zen: non solo la firma
 - `bash bashscripts/docs/llm-wiki-qmd.sh update`
 
 ## Checklist
@@ -173,9 +173,9 @@ Si scrive la firma **dopo** i cinque passi, e deve poter essere letta senza il r
 
 ## Collegamenti
 
-- [Da riga di rating a campo di form](../wiki/concepts/schema-form-dai-rating.md) — il caso che ha prodotto questo workflow
+- [Da riga di rating a campo di form](../wiki/concepts/schema-form-dai-rating.md): il caso che ha prodotto questo workflow
 - [`normativa-atterra-dove-vive-il-meccanismo`](../../../../../bashscripts/ai/wiki/rules/normativa-atterra-dove-vive-il-meccanismo.md)
-- [form-column-parity](../../../Ptv/docs/form-column-parity.md) — la parità che vale anche per gli schemi estratti
+- [form-column-parity](../../../Ptv/docs/form-column-parity.md): la parità che vale anche per gli schemi estratti
 
 ---
 
@@ -201,7 +201,7 @@ User/Models/Traits/InteractsWithTenant.php  Filament\Facades\Filament
 
 Zero `Filament\Forms\Components\*`. Mettere `TextInput`/`TextEntry` in un trait di model
 sarebbe **il primo caso del monorepo**: non e' vietato, ma e' un precedente, e i precedenti
-si citano. Va deciso da una persona, con la decisione scritta — non ereditato per inerzia
+si citano. Va deciso da una persona, con la decisione scritta: non ereditato per inerzia
 dal fatto che il trait era il posto comodo.
 
 Aggiungere al passo 3 la domanda: *il generale va in un trait di model o in un componente
@@ -212,7 +212,7 @@ risponde gia' per i blocchi di campi riutilizzabili.
 
 Il passo 6 cita la parita' form <-> column. Nel caso concreto la meta' esiste ed e' scritta:
 `Modules/Rating/app/Filament/Forms/Components/RatingsSection.php`, **di sola lettura per
-scelta dichiarata** — «i voti non si scrivono da qui, si scrivono dove si valuta» — specchio
+scelta dichiarata**: «i voti non si scrivono da qui, si scrivono dove si valuta»: specchio
 di `RatingsColumn`.
 
 Quindi cio' che manca non e' «un componente per i rating»: e' il **gemello editabile** di uno

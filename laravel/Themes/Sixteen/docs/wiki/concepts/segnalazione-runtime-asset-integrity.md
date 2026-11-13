@@ -1,3 +1,16 @@
+---
+title: "segnalazione runtime asset integrity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "segnalazione runtime asset integrity"
+issues: []
+discussions: []
+status: superseded
+superseded_by: ticket-runtime-asset-integrity.md
+---
+
 # segnalazione runtime asset integrity
 
 ## Scope tema

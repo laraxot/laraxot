@@ -30,7 +30,7 @@ class EditRole extends XotBaseEditRecord
     {
         $permissionModels = collect();
         Assert::isArray($data = $this->data);
-        $this->permissions->each(static function ($permission) use ($permissionModels, $data): void {
+        $this->permissions->each(static function (string $permission) use ($permissionModels, $data): void {
             $permissionModels->push(app(GetPermissionModelAction::class)->execute()::firstOrCreate([
                 'name' => $permission,
                 'guard_name' => $data['guard_name'] ?? 'web',
@@ -51,10 +51,11 @@ class EditRole extends XotBaseEditRecord
     protected function mutateFormDataBeforeSave(array $data): array
     {
         $this->permissions = collect($data)
+            ->keys()
             ->filter(
-                static fn ($_permission, $key): bool => ! \in_array($key, ['name', 'guard_name', 'select_all'], false) && Str::contains($key, '_'),
+                static fn (string $key): bool => ! \in_array($key, ['name', 'guard_name', 'select_all'], false) && Str::contains($key, '_'),
             )
-            ->keys();
+            ->values();
 
         /** @var array<string, mixed> $result */
         $result = Arr::only($data, ['name', 'guard_name']);

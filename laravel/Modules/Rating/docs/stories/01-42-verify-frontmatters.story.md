@@ -1,7 +1,9 @@
 ---
+issues: []
+discussions: []
 id: rating-story-01-42-verify-frontmatters
 slug: 01-42-verify-frontmatters
-title: "Verifica frontmatters — tutte le story BMAD hanno GitHub links corretti"
+title: "Verifica frontmatters: tutte le story BMAD hanno GitHub links corretti"
 description: "Verificare che tutte le story BMAD (rating-contract-usage, get-ratings-form-schema, etc.) abbiano i campi corretti: gh_issue, gh_discussion, repository, related_repo_remote. Aggiornare quelle incomplete o errate."
 type: story
 document_type: story
@@ -24,7 +26,7 @@ gh_discussion: "https://github.com/provtv/module_rating_fila5/discussions/36"
 related_repo_remote: "provtv/module_rating_fila5"
 ---
 
-# Story 01.42: Verifica frontmatters — tutte le story BMAD hanno GitHub links corretti
+# Story 01.42: Verifica frontmatters: tutte le story BMAD hanno GitHub links corretti
 
 ## Obiettivo
 

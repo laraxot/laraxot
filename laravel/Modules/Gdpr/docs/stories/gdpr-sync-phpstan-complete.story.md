@@ -1,3 +1,14 @@
+---
+title: "gdpr sync phpstan complete.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "gdpr sync phpstan complete.story"
+issues: []
+discussions: []
+---
+
 # Story: Gdpr module complete sync and PHPStan fix
 Status: backlog
 Module: Modules/Gdpr (independent .git)

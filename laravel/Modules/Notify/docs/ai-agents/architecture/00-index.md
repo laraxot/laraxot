@@ -1,3 +1,15 @@
+---
+title: "00 index"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "00 index"
+issues: []
+discussions: []
+status: draft
+---
+
 # Architecture Documentation Index
 
 **Path**: `.agents/docs/architecture/`
@@ -12,8 +24,8 @@
 
 ## Metodologia esecutiva collegata
 
-- [../../../../docs/project/gsd-and-bmad-workflow.md](../../../../docs/project/gsd-and-bmad-workflow.md) — ordine canonico BMAD -> GSD -> Ralph
-- [../../ralph/00-INDEX.md](../../ralph/00-INDEX.md) — albero Ralph locale, senza duplicare template nel root del repository
+- [../../../../docs/project/gsd-and-bmad-workflow.md](../../../../docs/project/gsd-and-bmad-workflow.md): ordine canonico BMAD -> GSD -> Ralph
+- [../../ralph/00-INDEX.md](../../ralph/00-INDEX.md): albero Ralph locale, senza duplicare template nel root del repository
 
 ## Quick Decision Guide
 
@@ -29,3 +41,4 @@
 
 - [../00-INDEX.md](../00-INDEX.md)
 - [../../../../AGENTS.md](../../../../AGENTS.md)
+- [../../../../AGENTS.md](../../../../../AGENTS.md)

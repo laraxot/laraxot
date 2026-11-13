@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "PSR-4 Compliance per Test - Modulo Xot"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "psr-4 compliance per test - modulo xot xot"
+---
+>>>>>>> laraxot/dev
 # PSR-4 Compliance per Test - Modulo Xot
 
 ## Problema Identificato

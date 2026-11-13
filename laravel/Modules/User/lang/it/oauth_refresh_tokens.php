@@ -3,19 +3,32 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< .merge_file_I181ML
     'fields' => [
-        'id' => ['label' => 'id'],
+        'id' => ['label' => 'ID'],
         'access_token_id' => ['label' => 'access_token_id'],
-        'revoked' => ['label' => 'revoked'],
-        'expires_at' => ['label' => 'expires_at'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'revoked' => ['label' => 'Revocato'],
+        'expires_at' => ['label' => 'Scade il'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
+=======
+>>>>>>> .merge_file_JCzyn4
     'actions' => [
-        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
-        'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
-        'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
+        'create' => [
+            'icon' => 'create',
+        ],
+        'layout' => [
+            'icon' => 'layout',
+        ],
+        'delete' => [
+            'icon' => 'delete',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
+        'edit' => [
+            'icon' => 'edit',
+        ],
     ],
 ];

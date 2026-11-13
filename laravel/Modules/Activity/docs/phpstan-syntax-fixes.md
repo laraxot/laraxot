@@ -1,9 +1,6 @@
 # PHPStan Syntax Fixes - Modulo Activity
 
-<<<<<<< HEAD
 **Data**: 2025-01-11
-=======
->>>>>>> 13cf1831 (.)
 **Versione PHPStan**: 1.12.x
 **Livello**: max
 **Status**: ✅ TUTTI I SYNTAX ERRORS RISOLTI

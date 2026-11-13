@@ -126,6 +126,7 @@ abstract class XotBaseState implements StateContract
      */
     public function processStateAction(array $arguments, array $data): void
     {
+<<<<<<< HEAD
         $message = Arr::get($data, 'message');
         $stateClass = static::class;
         /*
@@ -135,6 +136,8 @@ abstract class XotBaseState implements StateContract
          *
          * $appointment?->state->transitionTo($stateClass,$message);
          */
+=======
+>>>>>>> laraxot/dev
         // Fallback safe-mode when model-states package is not available.
         // Transition by generic arguments is intentionally a no-op.
     }

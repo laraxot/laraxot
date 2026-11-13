@@ -1,12 +1,12 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Database\Schema\Blueprint;
 use Modules\User\Models\Profile;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-return new class extends XotBaseMigration {
+return new class extends XotBaseMigration
+{
     protected ?string $model_class = Profile::class;
 
     /**
@@ -16,7 +16,9 @@ return new class extends XotBaseMigration {
     {
         // -- CREATE --
         $this->tableCreate(static function (Blueprint $table): void {
-            $table->uuid('id')->primary();
+            // id autoincrement + colonna uuid: è lo schema atteso da BaseProfile (incrementing, uuid in creating())
+            // e dalle migrazioni successive. Con uuid('id') ogni insert falliva su un database nuovo.
+            $table->id();
             $table->string('uuid', 36)->index()->nullable();
             $table->string('user_id', 36)->index()->nullable();
             $table->string('type')->index()->nullable();

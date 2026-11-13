@@ -1,4 +1,11 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "DESIGN COMUNI REPLICATION"
+issues: []
+discussions: []
 title: "Design Comuni HTML Replication - Master Epic"
 labels: ["epic", "design-comuni", "priority-high"]
 assignees: []

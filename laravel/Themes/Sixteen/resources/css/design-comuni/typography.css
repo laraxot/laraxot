@@ -1,0 +1,149 @@
+/*
+ * Sixteen typography contract.
+ *
+ * Source: Design Comuni / Bootstrap Italia typography guidance. The visual
+ * contract is reproduced with native CSS and Tailwind; Bootstrap Italia is
+ * not loaded at runtime.
+ */
+:root {
+    --dc-font-sans: "Titillium Web", system-ui, -apple-system, sans-serif;
+    --dc-font-serif: "Lora", Georgia, serif;
+    --dc-font-mono: "Roboto Mono", ui-monospace, monospace;
+    --dc-body-size: 1rem;
+    --dc-body-leading: 1.5;
+    --dc-content-leading: 1.5;
+    --dc-heading-leading: 1.2;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--dc-font-sans);
+    font-size: var(--dc-body-size);
+    font-weight: 400;
+    line-height: var(--dc-body-leading);
+    color: #191919;
+}
+
+body p,
+body li,
+body dt,
+body dd {
+    line-height: var(--dc-content-leading);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: var(--dc-font-sans);
+    font-weight: 600;
+    line-height: var(--dc-heading-leading);
+}
+
+code,
+kbd,
+pre,
+samp,
+.font-monospace {
+    font-family: var(--dc-font-mono);
+}
+
+.font-sans-serif {
+    font-family: var(--dc-font-sans);
+}
+
+.font-serif {
+    font-family: var(--dc-font-serif);
+}
+
+@media (min-width: 576px) {
+    :root {
+        --dc-body-size: 1.125rem;
+        --dc-content-leading: 1.5555556;
+    }
+}
+
+/* ========================================
+   HEADING SCALE — Bootstrap Italia v2.7.0 (px → rem, base 16px)
+   Mobile first; >576px overrides per the reference table.
+   Weights: Bold=700, SemiBold=600, Regular=400.
+   ======================================== */
+h1, .h1 { font-size: 2.5rem; line-height: 3rem; font-weight: 700; }
+h2, .h2 { font-size: 2rem; line-height: 2.5rem; font-weight: 700; }
+h3, .h3 { font-size: 1.75rem; line-height: 2rem; font-weight: 700; }
+h4, .h4 { font-size: 1.5rem; line-height: 1.75rem; font-weight: 600; }
+h5, .h5 { font-size: 1.25rem; line-height: 1.5rem; font-weight: 400; }
+h6, .h6 { font-size: 1rem; line-height: 1.5rem; font-weight: 600; }
+
+@media (min-width: 576px) {
+    h1, .h1 { font-size: 3rem; line-height: 3.75rem; }
+    h2, .h2 { font-size: 2.5rem; line-height: 3rem; }
+    h3, .h3 { font-size: 2rem; line-height: 2.5rem; }
+    h4, .h4 { font-size: 1.75rem; line-height: 2.5rem; }
+    h5, .h5 { font-size: 1.5rem; line-height: 2.5rem; }
+    h6, .h6 { font-size: 1.125rem; line-height: 1.75rem; }
+}
+
+/* .display-1 — h1 in evidenza (dimensione sensibilmente più grande) */
+.display-1 { font-size: 4.5rem; line-height: 5rem; font-weight: 700; }
+@media (min-width: 576px) {
+    .display-1 { font-size: 6rem; line-height: 6rem; }
+}
+
+/* .lead — paragrafo in evidenza (1.25× base) */
+.lead { font-size: 1.25rem; line-height: 1.75rem; font-weight: 400; }
+@media (min-width: 576px) {
+    .lead { font-size: 1.40625rem; line-height: 2rem; }
+}
+
+/* ========================================
+   LINK — WCAG: sottolineatura sempre visibile (accessibilità)
+   Bootstrap Italia mantiene la sottolineatura ai link <a>.
+   ======================================== */
+a:not([class*="text-decoration-none"]) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+a:not([class*="text-decoration-none"]):hover,
+a:not([class*="text-decoration-none"]):focus-visible {
+    text-decoration: underline;
+}
+
+/* ========================================
+   BLOCKQUOTE — Bootstrap Italia variants
+   ======================================== */
+.blockquote {
+    padding-left: 1rem;
+    border-left: 4px solid #d9e2e8;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-style: italic;
+    color: #455a64;
+}
+.blockquote p { margin-bottom: 0; }
+.blockquote-footer {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #5c6f82;
+    font-style: normal;
+}
+.blockquote-footer cite { font-style: italic; }
+.blockquote-simple { border-left: 0; padding-left: 0; font-style: normal; }
+
+/* ========================================
+   LISTE — Bootstrap Italia
+   ======================================== */
+.list-unstyled { list-style: none; padding-left: 0; margin-left: 0; }
+.list-inline { list-style: none; padding-left: 0; margin-left: 0; display: flex; gap: 0.5rem; }
+.list-inline-item { display: inline-block; }

@@ -1,3 +1,15 @@
+---
+title: "agid login refactoring plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agid login refactoring plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Piano di Refactoring AGID-Compliant per Login Page
 
 ## 🚨 Analisi del Problema Attuale
@@ -386,7 +398,6 @@ Il nuovo login AGID-compliant avrà:
 7. **Responsive Design** per tutti i dispositivi
 
 ---
-
 **Stato**: 🔄 PIANIFICAZIONE COMPLETATA - PRONTO PER IMPLEMENTAZIONE  
 **Priorità**: 🚨 CRITICA  
 **Tempo Stimato**: 2-3 ore di implementazione  

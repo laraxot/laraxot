@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\User\Database\Seeders;
 
 use Carbon\Carbon;
-use Illuminate\Console\Command;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
@@ -335,18 +334,11 @@ class UserMassSeeder extends Seeder
 
     private function info(string $message): void
     {
-        $command = $this->getConsoleCommand();
-        $command->info($message);
+        $this->command?->info($message);
     }
 
     private function error(string $message): void
     {
-        $command = $this->getConsoleCommand();
-        $command->error($message);
-    }
-
-    private function getConsoleCommand(): Command
-    {
-        return $this->command;
+        $this->command?->error($message);
     }
 }

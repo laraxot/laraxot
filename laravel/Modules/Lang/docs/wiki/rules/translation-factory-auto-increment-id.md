@@ -1,5 +1,5 @@
 ---
-title: "Translation factory — auto-increment id"
+title: "Translation factory: auto-increment id"
 type: rule
 module: Lang
 tags: [lang, pest, factory, sqlite, auto-increment]
@@ -13,9 +13,12 @@ discussions:
 related:
   - ../../../../../docs/wiki/rules/testing-modules-pest.md
   - ../../../../../docs/wiki/bmad/architecture-phpunit-central-config.md
+  - ../../../../../../docs/wiki/rules/testing-modules-pest.md
+  - ../../../../../../docs/wiki/bmad/architecture-phpunit-central-config.md
+status: draft
 ---
 
-# Translation factory — auto-increment id
+# Translation factory: auto-increment id
 
 ## Regola
 

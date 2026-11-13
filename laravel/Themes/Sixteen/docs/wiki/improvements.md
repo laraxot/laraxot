@@ -1,9 +1,13 @@
 ---
+qmd: "improvements"
+issues: []
+discussions: []
 title: "Miglioramenti"
 type: improvements
 created: 2026-04-28
 updated: 2026-04-28
 tags: [improvements, coordinate-picker, state-binding, migration-fix]
+status: draft
 ---
 
 # Miglioramenti Recenti

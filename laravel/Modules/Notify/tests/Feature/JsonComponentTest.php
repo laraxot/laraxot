@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Feature;
 
 use Illuminate\Support\Facades\File;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_decode;
 
+uses(TestCase::class);
 describe('Json Component', function (): void {
     test('_components_json_is_valid_and_contains_expected_components', function (): void {
         $filePath = base_path('Modules/Notify/app/Console/Commands/_components.json');
@@ -19,7 +21,8 @@ describe('Json Component', function (): void {
         $content = File::get($filePath);
         $decoded = json_decode($content, true);
         Assert::assertIsArray($decoded);
-        Assert::assertCount(2, $decoded, 'Il file _components.json non contiene i 2 componenti attesi');
+        $commandFiles = File::glob(dirname($filePath).'/*.php');
+        Assert::assertCount(count($commandFiles), $decoded, 'Il file _components.json non elenca un componente per ogni comando');
 
         $names = [];
         $classes = [];

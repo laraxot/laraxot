@@ -10,7 +10,11 @@ return [
             'name' => 'Sistema',
             'description' => 'Gestione delle variabili d\'ambiente e configurazione del sistema',
         ],
+<<<<<<< HEAD
         'label' => 'env',
+=======
+        'label' => 'Environment',
+>>>>>>> laraxot/dev
         'sort' => '12',
         'icon' => 'xot-env',
     ],
@@ -95,7 +99,10 @@ return [
             'description' => '',
         ],
         'telegram_bot_token' => [
+<<<<<<< HEAD
             'description' => 'telegram_bot_token',
+=======
+>>>>>>> laraxot/dev
             'label' => '',
             'tooltip' => '',
             'helper_text' => '',
@@ -162,7 +169,11 @@ return [
             'changes_saved' => 'Modifiche salvate nel file .env',
         ],
     ],
+<<<<<<< HEAD
     'title' => 'env',
+=======
+    'title' => 'Environment',
+>>>>>>> laraxot/dev
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
 ];

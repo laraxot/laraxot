@@ -1,3 +1,9 @@
+---
+title: "Employee - WORKFLOWS_AND_BEST_PRACTICES"
+module: Employee
+bmad: true
+status: active
+---
 # Workflow e Best Practices - Modulo Employee
 
 ## Workflow Principali

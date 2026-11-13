@@ -1,10 +1,17 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "livewire widget epics"
+issues: []
+discussions: []
 title: "Epics — Geo Livewire"
 type: epics
 module: Geo
 related:
   - ../stories/12.1.retire-geo-test-livewire.story.md
   - ./livewire-inventory.md
+status: draft
 ---
 
 # Epic 12

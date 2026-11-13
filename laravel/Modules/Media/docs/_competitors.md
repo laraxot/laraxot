@@ -1,5 +1,8 @@
 ---
-title: 'Competitors — risorse esterne'
+qmd: " competitors"
+issues: []
+discussions: []
+title: 'Competitors: risorse esterne'
 module: Media
 type: reference
 slug: competitors
@@ -8,9 +11,10 @@ tags: [migrato-da-txt, media]
 converted_from: _competitors.txt
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
-# Competitors — risorse esterne
+# Competitors: risorse esterne
 
 > Fonti raccolte durante lo studio dell'argomento. Una fonte vale quando la si
 > collega a un punto del codice: leggila, poi trova dove è già applicata.

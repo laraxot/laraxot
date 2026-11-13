@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "status"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "status xot"
+---
+>>>>>>> laraxot/dev
 # status
 
 <!-- Contenuto migrato da _docs/status.txt -->

@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_CLOCK_WIDGET_FINAL"
+module: Employee
+bmad: true
+status: active
+---
 # TimeClockWidget - Implementazione Finale Filament 3
 
 ## 🎯 Obiettivo Raggiunto

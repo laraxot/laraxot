@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "LICENSE"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "LICENSE"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 The MIT License (MIT)
 
 Copyright (c) coolsam <smaosa@savannabits.com>

@@ -1,5 +1,5 @@
 ---
-title: "Zero — mai Filament\*, sempre XotBase*"
+title: "Zero: mai Filament*, sempre XotBase*"
 type: concept
 theme: Zero
 tags: [zero, filament, xotbase, architecture]
@@ -10,11 +10,19 @@ related:
   - ../../../../docs/wiki/rules/xotbase-critical-rules.md
   - ../../../../docs/wiki/rules/xot-base-filament-widgets.md
   - ../../../../docs/wiki/memories/xotbase-never-extend-filament.md
+id: zero-docs-concepts-xotbase-never-extend-filament
+slug: xotbase-never-extend-filament
+description: "Bridge on-demand. Contenuto canonico: bashscripts/ai/wiki/rules/xotbase-critical-rules.md."
+document_type: concept
+category: architecture
+status: active
+issues: []
+discussions: []
 ---
 
 # Mai `Filament\*` — sempre `Modules\Xot\Filament\...\XotBase*`
 
-Bridge on-demand. Contenuto canonico: [docs/wiki/rules/xotbase-critical-rules.md](../../../../docs/wiki/rules/xotbase-critical-rules.md).
+Bridge on-demand. Contenuto canonico: [bashscripts/ai/wiki/rules/xotbase-critical-rules.md](../../../../../bashscripts/ai/wiki/rules/xotbase-critical-rules.md).
 
 ## Zen (riassunto)
 

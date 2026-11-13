@@ -1,10 +1,15 @@
 ---
+qmd: "html parity rules.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: html-parity-rules.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: html-parity-rules.divergenza.md
 ---
 
 # Divergenza: `html-parity-rules.md`

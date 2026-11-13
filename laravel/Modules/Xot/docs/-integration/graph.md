@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "graph"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "graph xot"
+---
+>>>>>>> laraxot/dev
 # graph
 
 <!-- Contenuto migrato da _docs/graph.txt -->

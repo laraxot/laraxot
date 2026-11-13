@@ -10,6 +10,7 @@ discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./agents.md"
   - "./index.md"
+status: draft
 ---
 
 # User Activity Log
@@ -35,7 +36,7 @@ related:
 
 ## [2026-06-04] ingest | Filament widget validation + KISS create
 - Updated: `concepts/filament-widget-no-validate-form.md` (alias)
-- RegisterWidget: `getState()` + `XotData::getUserClass()::create()` — rimosso `RegisterFoUserAction`
+- RegisterWidget: `getState()` + `XotData::getUserClass()::create()`: rimosso `RegisterFoUserAction`
 - ADR: `docs/wiki/decisions/filament-widget-linear-crud-model-create.md`
 
 ---

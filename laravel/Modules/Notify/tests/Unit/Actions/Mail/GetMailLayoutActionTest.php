@@ -12,11 +12,13 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
+uses(TestCase::class);
 describe('GetMailLayoutAction', function () {
     it('can be instantiated', function () {
-        $action = new GetMailLayoutAction;
-
-        Assert::assertInstanceOf(GetMailLayoutAction::class, $action);
+        Assert::assertSame(
+            'Modules\\Notify\\Actions\\Mail',
+            (new \ReflectionClass(GetMailLayoutAction::class))->getNamespaceName(),
+        );
     });
 
     it('uses QueueableAction trait', function () {

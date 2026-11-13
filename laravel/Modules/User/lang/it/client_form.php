@@ -2,15 +2,19 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_2n5urL
 return [
     'fields' => [
-        'name' => ['label' => 'name', 'placeholder' => 'name', 'helper_text' => 'name', 'description' => 'name'],
-        'user_id' => ['label' => 'user_id', 'placeholder' => 'user_id', 'helper_text' => 'user_id', 'description' => 'user_id'],
-        'redirect' => ['label' => 'redirect', 'placeholder' => 'redirect', 'helper_text' => 'redirect', 'description' => 'redirect'],
-        'secret' => ['label' => 'secret', 'placeholder' => 'secret', 'helper_text' => 'secret', 'description' => 'secret'],
-        'provider' => ['label' => 'provider', 'placeholder' => 'provider', 'helper_text' => 'provider', 'description' => 'provider'],
-        'personal_access_client' => ['label' => 'personal_access_client', 'placeholder' => 'personal_access_client', 'helper_text' => 'personal_access_client', 'description' => 'personal_access_client'],
-        'password_client' => ['label' => 'password_client', 'placeholder' => 'password_client', 'helper_text' => 'password_client', 'description' => 'password_client'],
-        'revoked' => ['label' => 'revoked', 'placeholder' => 'revoked', 'helper_text' => 'revoked', 'description' => 'revoked'],
+        'name' => ['label' => 'Nome', 'placeholder' => 'name', 'helper_text' => 'name', 'description' => 'name'],
+        'user_id' => ['label' => 'Utente', 'placeholder' => 'user_id', 'helper_text' => 'user_id', 'description' => 'user_id'],
+        'redirect' => ['label' => 'URL di ritorno', 'placeholder' => 'redirect', 'helper_text' => 'redirect', 'description' => 'redirect'],
+        'secret' => ['label' => 'Segreto', 'placeholder' => 'secret', 'helper_text' => 'secret', 'description' => 'secret'],
+        'provider' => ['label' => 'Provider', 'placeholder' => 'provider', 'helper_text' => 'provider', 'description' => 'provider'],
+        'personal_access_client' => ['label' => 'Client di accesso personale', 'placeholder' => 'personal_access_client', 'helper_text' => 'personal_access_client', 'description' => 'personal_access_client'],
+        'password_client' => ['label' => 'Client password', 'placeholder' => 'password_client', 'helper_text' => 'password_client', 'description' => 'password_client'],
+        'revoked' => ['label' => 'Revocato', 'placeholder' => 'revoked', 'helper_text' => 'revoked', 'description' => 'revoked'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_mJ5Juz

@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_V4rJ5P
 title: "Decision log — Perfezione assoluta del modulo User"
+=======
+title: "Decision log: Perfezione assoluta del modulo User"
+>>>>>>> .merge_file_brjHWb
 type: decision-log
 module: User
 status: living
@@ -10,9 +14,18 @@ related:
   - ./perfection-epics.md
   - ./perfection-brainstorming.md
   - ./decision-log.md
+<<<<<<< .merge_file_V4rJ5P
 ---
 
 # Decision log: audit "perfezione assoluta" — 2026-09-22
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "decision log: audit 'perfezione assoluta'   2026-09-22 user"
+---
+
+# Decision log: audit "perfezione assoluta": 2026-09-22
+>>>>>>> .merge_file_brjHWb
 
 ## [2026-09-22] Scope: audit dell'intero modulo, non solo la campagna widget
 
@@ -25,7 +38,11 @@ toccata.
 
 **Rationale:** Epic 9/10 copre solo il chrome UI del toggle SuperAdmin e la
 migrazione Livewire→Filament; il modulo ha 112 model, 357 file Filament, 59
+<<<<<<< .merge_file_V4rJ5P
 migration, 310 test — la richiesta di "perfezione assoluta" implica l'intero
+=======
+migration, 310 test: la richiesta di "perfezione assoluta" implica l'intero
+>>>>>>> .merge_file_brjHWb
 modulo, non un sottoinsieme gia' in lavorazione.
 
 ## [2026-09-22] Metodo: subagent paralleli, solo general-purpose
@@ -35,7 +52,11 @@ non con i tipi specializzati (`laravel-architecture-reviewer`,
 `laravel-security-auditor`, ecc.).
 
 **Rationale:** i 7 agenti specializzati lanciati inizialmente hanno restituito
+<<<<<<< .merge_file_V4rJ5P
 risultati completamente **hallucinati** — narrazione di comandi mai eseguiti,
+=======
+risultati completamente **hallucinati**: narrazione di comandi mai eseguiti,
+>>>>>>> .merge_file_brjHWb
 verificato via ispezione diretta dei transcript JSONL (zero blocchi `tool_use` in
 tutti e 7, solo `thinking`/`text`). Un test diagnostico con `general-purpose`
 (comando reale via Bash, output verificato) ha confermato che quel tipo di agente
@@ -49,11 +70,19 @@ per agente).
 `laravel-architecture-reviewer`/`laravel-code-reviewer`/`laravel-security-
 auditor`/`laravel-testing-expert`/`laravel-documentation-engineer`/
 `eloquent-specialist`/`laravel-performance-optimizer` senza verificare
+<<<<<<< .merge_file_V4rJ5P
 `tool_uses > 0` nella notifica — potrebbe essere un problema di ambiente
 specifico di questa sessione, non necessariamente riproducibile sempre, ma il
 costo di verifica e' basso e l'impatto di un falso report e' alto.
 
 ## [2026-09-22] Disclosure pubblica dei finding di sicurezza critici — NON creato issue/discussion pubblico
+=======
+`tool_uses > 0` nella notifica: potrebbe essere un problema di ambiente
+specifico di questa sessione, non necessariamente riproducibile sempre, ma il
+costo di verifica e' basso e l'impatto di un falso report e' alto.
+
+## [2026-09-22] Disclosure pubblica dei finding di sicurezza critici: NON creato issue/discussion pubblico
+>>>>>>> .merge_file_brjHWb
 
 **Decision:** i finding RQ-SEC-001 (bypass totale autorizzazione `UserPolicy`,
 account takeover) e RQ-SEC-002 (nessun rate limiting login) **non sono stati
@@ -65,10 +94,17 @@ esistente "1 issue + 1 discussion per campagna" (precedente: #100/#101 per Epic
 **Rationale:** verificato (`gh repo view laraxot/module_user_fila5 --json
 visibility` → `"PUBLIC"`) che il repo del modulo e' **pubblico**. Un issue
 GitHub pubblico con path di exploit dettagliato per una vulnerabilita' di
+<<<<<<< .merge_file_V4rJ5P
 account-takeover non ancora corretta sarebbe una disclosure irresponsabile —
 chiunque potrebbe leggerlo e sfruttarlo prima che il fix sia deployato. Questa e'
 un'azione visibile a terzi e difficile da revocare (anche cancellando l'issue,
 GitHub la mantiene nella cronologia/API e puo' essere stata indicizzata) — rientra
+=======
+account-takeover non ancora corretta sarebbe una disclosure irresponsabile -
+chiunque potrebbe leggerlo e sfruttarlo prima che il fix sia deployato. Questa e'
+un'azione visibile a terzi e difficile da revocare (anche cancellando l'issue,
+GitHub la mantiene nella cronologia/API e puo' essere stata indicizzata): rientra
+>>>>>>> .merge_file_brjHWb
 esplicitamente nella categoria di azioni che richiedono conferma esplicita
 dell'utente prima di procedere, non una decisione che un agente deve prendere da
 solo silenziosamente.
@@ -78,14 +114,22 @@ solo silenziosamente.
    privata (funzione nativa GitHub per repo pubblici, visibile solo ai
    maintainer finche' non viene pubblicata) invece di un issue pubblico.
 2. Per il resto della campagna (architettura, qualita', performance, test,
+<<<<<<< .merge_file_V4rJ5P
    schema, documentazione — nessuno di questi e' una vulnerabilita' sfruttabile):
+=======
+   schema, documentazione: nessuno di questi e' una vulnerabilita' sfruttabile):
+>>>>>>> .merge_file_brjHWb
    si puo' procedere con il pattern normale issue+discussion pubblico senza
    rischio di disclosure, se l'utente conferma.
 3. In alternativa, tracciare tutto solo internamente (`sprint-status.yaml` +
    `docs/bmad/`) senza mai pubblicare su GitHub, se il repo pubblico non e'
    il canale di lavoro preferito per debito noto non ancora risolto.
 
+<<<<<<< .merge_file_V4rJ5P
 **Non deciso in questa sessione** — richiede input esplicito dell'utente, non
+=======
+**Non deciso in questa sessione**: richiede input esplicito dell'utente, non
+>>>>>>> .merge_file_brjHWb
 presunto.
 
 ## [2026-09-22] Numerazione epic: 11-16, non riuso di 9/10
@@ -93,7 +137,11 @@ presunto.
 **Decision:** le nuove epic partono da 11 (dopo Epic 10 esistente), non
 riutilizzano o rinumerano nulla di esistente.
 
+<<<<<<< .merge_file_V4rJ5P
 **Rationale:** standing order BMAD — mai cancellare/rinumerare story esistenti;
+=======
+**Rationale:** standing order BMAD: mai cancellare/rinumerare story esistenti;
+>>>>>>> .merge_file_brjHWb
 Epic 9/10 hanno gia' 8 story tracciate in `sprint-status.yaml` con stati reali
 (done/in-progress/blocked), toccarle avrebbe rotto la cronologia.
 
@@ -118,6 +166,7 @@ status `backlog`, senza file dedicato.
 che c'e' da fare") e costo di produrre 39 file story completi in una sola
 sessione. Le story di Epic 11 sono le piu' urgenti (vulnerabilita' attive) e
 quindi le piu' probabili ad essere reclamate per prima in una sessione di
+<<<<<<< .merge_file_V4rJ5P
 esecuzione futura — meritano di essere gia' pronte (`backlog` → promuovibili a
 `ready-for-dev` senza ulteriore lavoro di stesura). Le altre restano comunque
 completamente descritte (intent, severita', citazioni file:riga nel
@@ -125,6 +174,15 @@ brainstorming) — non e' un gap di documentazione, e' una scelta di dove invest
 il dettaglio massimo prima dell'esecuzione.
 
 ## [2026-09-22] Data debt morph map — riverificato, non presente su Ptv
+=======
+esecuzione futura: meritano di essere gia' pronte (`backlog` → promuovibili a
+`ready-for-dev` senza ulteriore lavoro di stesura). Le altre restano comunque
+completamente descritte (intent, severita', citazioni file:riga nel
+brainstorming): non e' un gap di documentazione, e' una scelta di dove investire
+il dettaglio massimo prima dell'esecuzione.
+
+## [2026-09-22] Data debt morph map: riverificato, non presente su Ptv
+>>>>>>> .merge_file_brjHWb
 
 **Decision:** il data debt documentato in `decision-log.md` (40 righe stantie
 `model_has_role.model_type='Modules\Quaeris\Models\User'`) e' stato riverificato
@@ -132,13 +190,21 @@ con una query read-only reale su questa installazione (Ptv): 482/482 righe hanno
 `model_type='user'` corretto, zero righe stantie. Il debito riguardava il tenant
 Quaeris, non questo. Nessuna azione necessaria su Ptv per questo punto specifico.
 
+<<<<<<< .merge_file_V4rJ5P
 **Rationale:** modulo condiviso fra progetti (Sigma/Ptv/Fila5/Quaeris) — un data
+=======
+**Rationale:** modulo condiviso fra progetti (Sigma/Ptv/Fila5/Quaeris): un data
+>>>>>>> .merge_file_brjHWb
 debt osservato su un tenant non implica lo stesso stato su un altro (memoria
 [[moduli-condivisi-fra-progetti]], [[il-morph-map-e-per-tenant]]).
 
 ## [2026-09-22] Nessuna scrittura DB, nessuna migration eseguita
 
+<<<<<<< .merge_file_V4rJ5P
 **Decision:** confermato a fine sessione — nessun file `app/`, `database/`,
+=======
+**Decision:** confermato a fine sessione: nessun file `app/`, `database/`,
+>>>>>>> .merge_file_brjHWb
 `config/`, `routes/`, `lang/` modificato; unica query eseguita e' stata una
 `SELECT ... GROUP BY` via tinker per il punto sopra. Vincolo "dati sacri"
 rispettato integralmente.
@@ -149,7 +215,11 @@ rispettato integralmente.
 (`docs/stories/11.[1-5]-*.story.md`) e completato `perfection-epics.md` con
 Epic 11-16, un controllo `ls docs/stories/ | grep -oE '^[0-9]+\.[0-9]+'`
 ha rivelato 24 file `12.1.*` fino a `14.8.*` gia' presenti su disco, scritti
+<<<<<<< .merge_file_V4rJ5P
 alle 12:19:49 — circa 90 secondi dopo i file di questa sessione (12:18:19) —
+=======
+alle 12:19:49: circa 90 secondi dopo i file di questa sessione (12:18:19) -
+>>>>>>> .merge_file_brjHWb
 insieme a `docs/bmad/module-excellence-{product-brief,prd,architecture,
 brainstorming}.md` e a modifiche gia' fatte a `README.md`/`decision-log.md`/
 `epics.md` (i file canone, non quelli con prefisso `perfection-`).
@@ -157,7 +227,11 @@ brainstorming}.md` e a modifiche gia' fatte a `README.md`/`decision-log.md`/
 **Origine (non accertata con certezza, ma verosimile):** il contenuto di
 `decision-log.md` entry "Campagna module-excellence additiva" cita
 letteralmente "5 ricerche parallele in sola lettura (Agent subagent_type:
+<<<<<<< .merge_file_V4rJ5P
 fork)" — lo stesso meccanismo di fork usato in questa sessione. Ipotesi piu'
+=======
+fork)": lo stesso meccanismo di fork usato in questa sessione. Ipotesi piu'
+>>>>>>> .merge_file_brjHWb
 probabile: un `Agent` con `subagent_type: "fork"` lanciato prima della
 compattazione del contesto di questa conversazione, di cui il riassunto
 post-compattazione non ha conservato traccia, ha proseguito in background con
@@ -173,35 +247,59 @@ PRD, 24 story tutte `backlog`, nessuna scrittura di codice/DB).
 o rinumerato. Il draft di questa campagna (`perfection-epics.md`, mai
 promosso a file story individuali per Epic 12-16 prima di questo momento) e'
 stato rinumerato: Epic 12→15, 13→16, 14→17, 15→18, 16→19. Epic 11 resta
+<<<<<<< .merge_file_V4rJ5P
 invariata (nessuna collisione reale — l'unica story 11.1 pre-esistente e'
+=======
+invariata (nessuna collisione reale: l'unica story 11.1 pre-esistente e'
+>>>>>>> .merge_file_brjHWb
 gia' `superseded_by: 10.1`). Aggiunto un blocco "Cross-reference
 module-excellence" a ogni epic rinumerata per segnalare sovrapposizioni
 tematiche reali (Epic 19 vs Epic 12 module-excellence su docs hygiene, Epic
 15 vs Epic 13 module-excellence su code quality, Epic 17 vs 13.5/13.6 su test
+<<<<<<< .merge_file_V4rJ5P
 coverage) senza eseguire alcun merge — la riconciliazione dei contenuti resta
+=======
+coverage) senza eseguire alcun merge: la riconciliazione dei contenuti resta
+>>>>>>> .merge_file_brjHWb
 per la fase di esecuzione, non per questa sessione di sola documentazione.
 
 **Rationale:** standing order "non cancellare ne' rinumerare story esistenti:
 collegarle o marcarle superseded" si applica a story gia' esistenti/tracciate;
 il draft interno di `perfection-epics.md` per Epic 12-16 non era ancora stato
 promosso a file individuali ne' referenziato da `sprint-status.yaml`, quindi
+<<<<<<< .merge_file_V4rJ5P
 rinumerarlo prima della promozione e' l'azione meno distruttiva — l'alternativa
 (rinumerare `module-excellence`, gia' completa di 24 file story individuali e
 gia' linkata da `README.md`) avrebbe richiesto toccare e rinominare 24 file
 oltre a 3 file canone condivisi. Riferimento: [[le-story-del-modulo-si-leggono-prima]]
 — lezione applicata qui prima di scrivere altro, non dopo.
+=======
+rinumerarlo prima della promozione e' l'azione meno distruttiva: l'alternativa
+(rinumerare `module-excellence`, gia' completa di 24 file story individuali e
+gia' linkata da `README.md`) avrebbe richiesto toccare e rinominare 24 file
+oltre a 3 file canone condivisi. Riferimento: [[le-story-del-modulo-si-leggono-prima]]
+- lezione applicata qui prima di scrivere altro, non dopo.
+>>>>>>> .merge_file_brjHWb
 
 **Verifica:** `ls docs/stories/ | grep -oE '^(1[1-9]|20)\.[0-9]+' | sort -u`
 non mostra piu' collisioni fra i due prefissi di campagna dopo la correzione
 di `perfection-epics.md` (i file individuali 12.x-14.x restano di proprieta'
 esclusiva di module-excellence, nessun file 15.x-19.x esiste ancora su disco
+<<<<<<< .merge_file_V4rJ5P
 per questa campagna — solo tabella in `perfection-epics.md`, come da nota
+=======
+per questa campagna: solo tabella in `perfection-epics.md`, come da nota
+>>>>>>> .merge_file_brjHWb
 "story dedicato completo solo per Epic 11").
 
 ## [2026-09-22] Chiusura riconciliazione: confermata analisi di module-excellence, verificato GitHub reale
 
 **Decision:** letta integralmente l'entry di `decision-log.md` "Riconciliazione
+<<<<<<< .merge_file_V4rJ5P
 con la campagna concorrente 'perfection-' (sessione parallela)" — conferma
+=======
+con la campagna concorrente 'perfection-' (sessione parallela)": conferma
+>>>>>>> .merge_file_brjHWb
 indipendente, dall'altro lato, della stessa riconciliazione fatta qui.
 Attribuisce correttamente i 6 file orfani `docs/stories/12.[1-6].filament-ux-
 *.story.md` (+ `bmad/filament-ux-{architecture,brainstorming}.md`) a un
@@ -214,7 +312,11 @@ segnalato dall'altra sessione.
 
 **GitHub verificato (non assunto):** `gh issue list`/`gh api discussions/104`
 confermano reali issue #103 (parent), #105-116, discussion #104 per
+<<<<<<< .merge_file_V4rJ5P
 `module-excellence` (Epic 12-14) — nessuna hallucination. Fra queste, #113
+=======
+`module-excellence` (Epic 12-14): nessuna hallucination. Fra queste, #113
+>>>>>>> .merge_file_brjHWb
 ("~30 Policy senza permesso nel seeder, silent-deny") e' adiacente ma
 qualitativamente diversa dai finding RQ-SEC-001/002 di questa campagna: un
 gap di permessi mancanti fallisce chiudendo l'accesso (silent-deny), mentre

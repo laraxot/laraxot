@@ -44,7 +44,7 @@ afterEach(function (): void {
 });
 
 test('MediaBasePolicy before concede super-admin e passa oltre altrimenti', function (): void {
-    $policy = new MediaPolicy();
+    $policy = new MediaPolicy;
     $super = mediaBehaviorUser(roles: ['super-admin']);
     Assert::assertTrue($policy->before($super, 'viewAny'));
 
@@ -54,8 +54,8 @@ test('MediaBasePolicy before concede super-admin e passa oltre altrimenti', func
 });
 
 test('MediaPolicy deny/allow su permessi CRUD media', function (): void {
-    $policy = new MediaPolicy();
-    $media = new Media();
+    $policy = new MediaPolicy;
+    $media = new Media;
     $denied = mediaBehaviorUser();
     $allowed = mediaBehaviorUser([
         'media.viewAny', 'media.view', 'media.create', 'media.update',
@@ -80,8 +80,8 @@ test('MediaPolicy deny/allow su permessi CRUD media', function (): void {
 });
 
 test('TemporaryUploadPolicy legato a permessi temporary_upload.*', function (): void {
-    $policy = new TemporaryUploadPolicy();
-    $upload = new TemporaryUpload();
+    $policy = new TemporaryUploadPolicy;
+    $upload = new TemporaryUpload;
     $allowed = mediaBehaviorUser(['temporary_upload.viewAny', 'temporary_upload.view', 'temporary_upload.create']);
 
     Assert::assertFalse($policy->viewAny(mediaBehaviorUser()));
@@ -91,8 +91,8 @@ test('TemporaryUploadPolicy legato a permessi temporary_upload.*', function (): 
 });
 
 test('MediaConvertPolicy legato a permessi media_convert.*', function (): void {
-    $policy = new MediaConvertPolicy();
-    $convert = new MediaConvert();
+    $policy = new MediaConvertPolicy;
+    $convert = new MediaConvert;
     $allowed = mediaBehaviorUser(['media_convert.viewAny', 'media_convert.update']);
 
     Assert::assertFalse($policy->viewAny(mediaBehaviorUser()));

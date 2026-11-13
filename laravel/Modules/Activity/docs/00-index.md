@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_tfVMLU
 <<<<<<< HEAD
 # 📚 **Indice Documentazione Modulo Activity**
@@ -59,8 +58,6 @@ updated: 2026-07-23
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 # 📚 **Indice Documentazione Modulo Activity**
 =======
 ---
@@ -116,15 +113,13 @@ status: stale
 | CODE_QUALITY_ANALYSIS.md | Code quality |
 | QUERY_OPTIMIZATION_ANALYSIS.md | Query optimization |
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_tfVMLU
 >>>>>>> laraxot/dev
-=======
->>>>>>> 13cf1831 (.)
 ### Filament
 | File | Scopo |
 |------|-------|
 | FILAMENT_RESOURCE_GUIDELINES.md | Resource guidelines |
+<<<<<<< HEAD
 
 ## 📦 **Pacchetti Composer**
 - [Riferimento completo](../../../../docs/composer-packages-reference.md) | [Inventario 312 pacchetti](../../../../docs/architecture/composer-packages-full-inventory.md)
@@ -134,14 +129,11 @@ status: stale
 - [Riferimento completo](../../../../docs/composer-packages-reference.md) | [Inventario 312 pacchetti](../../../../docs/architecture/composer-packages-full-inventory.md)
 - `spatie/laravel-activitylog` - Audit trail
 - `spatie/laravel-event-sourcing` - Event sourcing, CQRS
-<<<<<<< HEAD
 =======
 >>>>>>> .merge_file_jSprak
 
 **Status**: ✅ PHPStan Level 10 Compliant
 **Module Version**: 2.3.0
-=======
->>>>>>> 13cf1831 (.)
 
 ## 🎯 **Lettura Essenziale**
 1. [README.md](./README.md) - Panoramica completa e Quick Start.
@@ -188,7 +180,6 @@ status: stale
 <<<<<<< .merge_file_tfVMLU
 // Pattern di utilizzo
 <<<<<<< HEAD
-<<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
@@ -196,8 +187,6 @@ status: stale
 ## 📦 **Pacchetti Composer**
 - [Riferimento completo](../../../../docs/composer-packages-reference.md) | [Inventario 312 pacchetti](../../../../docs/architecture/composer-packages-full-inventory.md)
 >>>>>>> .merge_file_jSprak
-=======
->>>>>>> 13cf1831 (.)
 app(LogActivityAction::class)->execute(
     type: 'user.login',
     user: $user,
@@ -207,7 +196,6 @@ app(LogActivityAction::class)->execute(
 );
 ```
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_tfVMLU
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -235,8 +223,6 @@ app(LogActivityAction::class)->execute(
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 ### 📊 Best Practices
 =======
 >>>>>>> .merge_file_jSprak
@@ -330,10 +316,7 @@ Il modulo Activity serve da **riferimento** per compliance nativa:
 ---
 
 *Modulo di riferimento per PHPStan compliance nel progetto Laraxot*
-<<<<<<< HEAD
 >>>>>>> laraxot/dev
-=======
->>>>>>> 13cf1831 (.)
 
 ## Dependency Intelligence
 
@@ -344,7 +327,6 @@ Il modulo Activity serve da **riferimento** per compliance nativa:
 - Prima di modificare codice: ragionare, studiare i docs del modulo/tema, aggiornare docs/rules/memory/skills.
 - Riferimento globale: [Pre-Edit Docs-First Rule](../../../../docs/rules/pre-edit-docs-first-rule.md)
 - Memory: [Pre-Edit Docs-First Memory](../../../../docs/memory/pre-edit-docs-first-memory.md)
-<<<<<<< HEAD
 <<<<<<< .merge_file_tfVMLU
 <<<<<<< HEAD
 - Skill: [Pre-Edit Docs-First Skill](../../../../docs/skills/pre-edit-docs-first-skill.md)
@@ -363,6 +345,3 @@ Il modulo Activity serve da **riferimento** per compliance nativa:
 
 [completion-status.md](./completion-status.md): indicatori misurati, problemi noti e story aperte (2026-10-28).
 >>>>>>> .merge_file_jSprak
-=======
-- Skill: [Pre-Edit Docs-First Skill](../../../../docs/skills/pre-edit-docs-first-skill.md)
->>>>>>> 13cf1831 (.)

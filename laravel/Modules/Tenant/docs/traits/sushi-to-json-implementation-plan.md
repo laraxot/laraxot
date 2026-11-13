@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Sushi To Json Implementation Plan"
 module: "Tenant"
 type: concept
@@ -8,5 +10,7 @@ updated: 2026-07-14
 qmd: "sushi to json implementation plan"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 

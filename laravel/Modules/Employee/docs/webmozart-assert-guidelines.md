@@ -1,3 +1,9 @@
+---
+title: "Employee - WEBMOZART-ASSERT-GUIDELINES"
+module: Employee
+bmad: true
+status: active
+---
 # Webmozart Assert Guidelines - Best Practices
 
 ## 📚 Panoramica

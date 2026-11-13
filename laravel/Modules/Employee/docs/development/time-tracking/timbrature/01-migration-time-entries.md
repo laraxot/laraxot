@@ -1,3 +1,9 @@
+---
+title: "Employee - 01-MIGRATION-TIME-ENTRIES"
+module: Employee
+bmad: true
+status: active
+---
 # 🗄️ Migration: Time Entries (Timbrature)
 
 ## 📋 Obiettivo

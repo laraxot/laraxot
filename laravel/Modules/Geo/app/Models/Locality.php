@@ -7,19 +7,20 @@ namespace Modules\Geo\Models;
 use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\File;
+use Modules\Geo\Actions\GeoData\GetItalianMunicipalitiesPathAction;
 use Modules\Geo\Database\Factories\LocalityFactory;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
 use Sushi\Sushi;
 
 /**
- * @property int|null                     $region_id
- * @property int|null                     $province_id
- * @property string|null                  $name
- * @property int                          $id
+ * @property int|null $region_id
+ * @property int|null $province_id
+ * @property string|null $name
+ * @property int $id
  * @property array<array-key, mixed>|null $postal_code
- * @property ProfileContract|null         $creator
- * @property ProfileContract|null         $updater
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  *
  * @method static Builder<static>|Locality newModelQuery()
  * @method static Builder<static>|Locality newQuery()
@@ -50,11 +51,26 @@ class Locality extends BaseModel
     ];
 
     /**
+     * Cache su file della tabella Sushi: senza, ogni richiesta che usa il modello rileggeva il JSON dei
+     * comuni (1,9 MB) e reinseriva le righe in un database in memoria (salvataggio di un indirizzo > 10 s).
+     * La cache si rigenera quando cambia il file dei comuni.
+     */
+    protected function sushiShouldCache(): bool
+    {
+        return true;
+    }
+
+    protected function sushiCacheReferencePath(): string
+    {
+        return app(GetItalianMunicipalitiesPathAction::class)->execute();
+    }
+
+    /**
      * @return array<int, array<string, mixed>>
      */
     public function getRows(): array
     {
-        $path = module_path('Geo', 'resources/json/comuni.json');
+        $path = app(GetItalianMunicipalitiesPathAction::class)->execute();
         if (! file_exists($path)) {
             return [];
         }
@@ -82,7 +98,7 @@ class Locality extends BaseModel
             $provinceId = $provincia['codice'] ?? null;
             $id = $item['codice'] ?? $item['id'] ?? null;
             $name = $item['nome'] ?? null;
-            if (null === $regionId || null === $provinceId || null === $id || null === $name) {
+            if ($regionId === null || $provinceId === null || $id === null || $name === null) {
                 continue;
             }
 
@@ -93,7 +109,8 @@ class Locality extends BaseModel
                     'province_id' => $provinceId,
                     'id' => $id,
                     'name' => SafeStringCastAction::cast($name),
-                    'postal_code' => $item['cap'] ?? null,
+                    // Sushi inserisce valori scalari: la lista dei CAP va salvata come JSON (cast `array` in lettura).
+                    'postal_code' => isset($item['cap']) ? json_encode(\is_array($item['cap']) ? array_values($item['cap']) : [$item['cap']], JSON_THROW_ON_ERROR) : null,
                 ];
             }
         }
@@ -123,8 +140,6 @@ class Locality extends BaseModel
         if (! $province) {
             return [];
         }
-
-        $city = $get('locality');
 
         $keys = [];
         $values = [];
@@ -158,7 +173,7 @@ class Locality extends BaseModel
         $city = $get('locality');
         $res = self::where('region_id', $region)
             ->where('province_id', $province)
-            ->when(null !== $city, static fn ($query) => $query->where('id', $city))
+            ->when($city !== null, static fn (Builder $query) => $query->where('id', $city))
             ->select('postal_code')
             ->distinct()
             ->orderBy('postal_code')

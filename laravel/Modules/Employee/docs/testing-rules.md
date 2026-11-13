@@ -1,3 +1,9 @@
+---
+title: "Employee - TESTING-RULES"
+module: Employee
+bmad: true
+status: active
+---
 # Testing Rules Summary
 
 ## Regole Fondamentali dei Test

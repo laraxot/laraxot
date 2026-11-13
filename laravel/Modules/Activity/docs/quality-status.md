@@ -105,11 +105,7 @@ public function withCustomProperties(array $attributes): static
 
 ### Current Files (Selected)
 - `code-quality-analysis.md` ✅ Comprehensive quality analysis
-<<<<<<< HEAD
 - `phpstan-analysis-november-2025.md` ✅ Recent PHPStan status
-=======
-- `phpstan-analysis-archive-1.md` ✅ Recent PHPStan status
->>>>>>> 13cf1831 (.)
 - `business-logic-analysis.md` ✅ Business logic documentation
 - `query-optimization-analysis.md` ✅ Performance analysis
 - `testing-strategy-implementation.md` ✅ Testing approach
@@ -151,11 +147,7 @@ public function withCustomProperties(array $attributes): static
 ## 📚 Related Documentation
 
 - [Code Quality Analysis](./code-quality-analysis.md)
-<<<<<<< HEAD
 - [PHPStan Analysis November 2025](./phpstan-analysis-november-2025.md)
-=======
-- [PHPStan Analysis November 2025](./phpstan-analysis-archive-1.md)
->>>>>>> 13cf1831 (.)
 - [Business Logic Analysis](./business-logic-analysis.md)
 - [Query Optimization Analysis](./query-optimization-analysis.md)
 
@@ -171,8 +163,4 @@ public function withCustomProperties(array $attributes): static
 
 *
 *PHPStan Version: Latest*
-<<<<<<< HEAD
 *PHPMD Version: Latest*
-=======
-*PHPMD Version: Latest*
->>>>>>> 13cf1831 (.)

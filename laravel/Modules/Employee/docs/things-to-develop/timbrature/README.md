@@ -1,3 +1,9 @@
+---
+title: "Employee - README"
+module: Employee
+bmad: true
+status: active
+---
 # 🕐 Sistema Timbrature Presenze
 
 [![Module](https://img.shields.io/badge/Module-🕐 Sistema Timbrature Presenze-8B0000.svg)]()

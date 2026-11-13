@@ -1,3 +1,15 @@
+---
+title: "agents project rules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agents project rules"
+issues: []
+discussions: []
+status: draft
+---
+
 # AGENTS Project Rules
 
 Regole generali del progetto.
@@ -27,7 +39,6 @@ Regole generali del progetto.
 - Module/theme docs remain local in each `docs/` directory
 
 ---
-
 ## JSON Page File Naming
 
 ### CRITICAL Rule
@@ -110,4 +121,6 @@ done
 - [regole-critiche.md](./regole-critiche.md) - Regole critiche
 - [AGENTS.md originale](../../AGENTS.md)
 - [agents.md originale](../../agents.md)
+- [AGENTS.md originale](../AGENTS.md)
+- [agents.md originale](../agents.md)
 - [Index principale](./index.md)

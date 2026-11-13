@@ -3,21 +3,34 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< .merge_file_gTSNek
     'fields' => [
-        'id' => ['label' => 'id'],
-        'user_id' => ['label' => 'user_id'],
-        'client_id' => ['label' => 'client_id'],
-        'scopes' => ['label' => 'scopes'],
-        'revoked' => ['label' => 'revoked'],
-        'expires_at' => ['label' => 'expires_at'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'id' => ['label' => 'ID'],
+        'user_id' => ['label' => 'Utente'],
+        'client_id' => ['label' => 'Client ID'],
+        'scopes' => ['label' => 'Ambiti'],
+        'revoked' => ['label' => 'Revocato'],
+        'expires_at' => ['label' => 'Scade il'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
+=======
+>>>>>>> .merge_file_1pvOi9
     'actions' => [
-        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
-        'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
-        'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
+        'create' => [
+            'icon' => 'create',
+        ],
+        'layout' => [
+            'icon' => 'layout',
+        ],
+        'delete' => [
+            'icon' => 'delete',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
+        'edit' => [
+            'icon' => 'edit',
+        ],
     ],
 ];

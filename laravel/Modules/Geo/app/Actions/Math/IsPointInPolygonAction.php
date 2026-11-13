@@ -11,11 +11,11 @@ class IsPointInPolygonAction
     use QueueableAction;
 
     /**
-     * @param array<mixed> $polygon
+     * @param  array<mixed>  $polygon
      */
     public function execute(float $latitude, float $longitude, array $polygon): bool
     {
-        $i = $j = $c = 0;
+        $c = false;
         $points_polygon = \count($polygon) - 1;
 
         for ($i = 0, $j = $points_polygon; $i < $points_polygon; $j = $i++) {
@@ -46,6 +46,6 @@ class IsPointInPolygonAction
             }
         }
 
-        return (bool) $c;
+        return $c;
     }
 }

@@ -1,3 +1,15 @@
+---
+title: "select nelle valutazioni analisi"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "select nelle valutazioni analisi"
+issues: []
+discussions: []
+status: draft
+---
+
 # Un criterio di valutazione con risposta a scelta: analisi
 
 **Stato: brainstorming.** Nessun codice scritto, nessuna decisione presa. Serve a
@@ -8,7 +20,7 @@ mettere le strade sul tavolo con i numeri veri, non a chiuderne una.
 Fra le valutazioni serve anche un **select**. Le due strade proposte:
 
 1. aggiungere al rating un campo `data` di tipo JSON con i valori del select;
-2. usare padre/figlio — `parent_id` c'è già — e far diventare i figli le opzioni.
+2. usare padre/figlio: `parent_id` c'è già: e far diventare i figli le opzioni.
 
 ## La domanda si sdoppia, ed è il punto
 
@@ -29,8 +41,8 @@ Da cui il vincolo che filtra tutte le strade:
 
 Se «Alta» vale 25 e «Base» vale 5, la scelta *è già* un valore: si continua a
 scrivere `value`, e la lista serve solo a **guidare l'inserimento** invece di lasciare
-un campo numerico libero. Se invece le opzioni sono etichette non ordinabili — «Ufficio
-A / Ufficio B» — allora serve anche una colonna nuova sul pivot, e questa è una
+un campo numerico libero. Se invece le opzioni sono etichette non ordinabili: «Ufficio
+A / Ufficio B»: allora serve anche una colonna nuova sul pivot, e questa è una
 decisione separata da dove mettere le opzioni.
 
 **Prima domanda da girare a chi conosce il dominio: le opzioni hanno un punteggio?**
@@ -44,7 +56,7 @@ Da lì dipende metà del resto.
 | `ratings.extra_attributes` | colonna schemaless Spatie, **già presente** |
 | `ratings.parent_id` + `HasRecursiveRelationships` | attivi, ma **0 righe** con padre: 37 criteri, 37 radici |
 | `rating_morph.value` | **tipo divergente fra installazioni**: `int(11)` in IR e Progressioni, `decimal(10,3)` in Ptv. Più `note` (text), `percentage`, `is_winner`, `reward` |
-| tabella `options` (`Ptv\BaseOption`) | esiste: `option_type`/`option_id` (morph), `name`, `value`, `year`, `txt`, `txt1`, `parent_id`, `pos` — e usa già l'adjacency list |
+| tabella `options` (`Ptv\BaseOption`) | esiste: `option_type`/`option_id` (morph), `name`, `value`, `year`, `txt`, `txt1`, `parent_id`, `pos`: e usa già l'adjacency list |
 | dati in `options` | 3 righe in `indennita_responsabilita`, `option_type` **NULL**: usata come lista piatta globale, il morph non è mai stato sfruttato |
 | `criteri_options` (`CriteriOption`) | **non c'entra**: è la configurazione della campagna per anno (`min_gg_asz_tip_cod_escluso_subito`, `no_posiz`, `data_presenza_al`, `lista_posiz_ruolo`), letta dai criteri di **esclusione**. Vedi sotto |
 | `criteri_esclusione` | **non c'entra**: le regole di chi resta fuori (`field_name`, `op`, `value`, per anno) |
@@ -64,7 +76,7 @@ Nel progetto «criterio» significa **due cose diverse**, in due fasi diverse:
 | **criterio di valutazione** | *come si valuta chi partecipa*. `ratings` + `rating_morph`, chiave il criterio stesso, del modulo Rating |
 
 Sono domini separati: fasi diverse, proprietari diversi, chiavi diverse. `criteri_options`
-non tiene le opzioni di una valutazione, tiene i **parametri della campagna** — misurato
+non tiene le opzioni di una valutazione, tiene i **parametri della campagna**: misurato
 sui dati: `min_gg_asz_tip_cod_escluso_subito = 730`, `lista_posiz_tempo_determinato = "2,21"`,
 `data_presenza_al = 2024-12-31`. Il suo `type` (`list|int|date`) serve a trasformare
 `"2,21"` in una lista: descrive **quei** parametri, non un widget.
@@ -80,16 +92,16 @@ pertinenti perché si chiamano come la cosa che si sta cercando.
 
 Le opzioni in una colonna JSON del criterio: `[{"label":"Base","value":5}, …]`.
 
-**Pro** — una migrazione additiva, nessuna entità nuova, le opzioni viaggiano con il
+**Pro**: una migrazione additiva, nessuna entità nuova, le opzioni viaggiano con il
 criterio (esporti il criterio, esporti le sue opzioni).
 
-**Contro** — le opzioni smettono di essere **dati interrogabili**: non si può chiedere
+**Contro**: le opzioni smettono di essere **dati interrogabili**: non si può chiedere
 «quali criteri offrono l'opzione Alta», né ordinarle, né tradurle, né disattivarne una
 lasciando storia di chi l'aveva scelta. E un JSON non ha vincoli: la prima etichetta
 scritta a mano in modo diverso crea un doppione che nessuna query vede.
 
-**Il difetto vero**: se le opzioni cambiano nel tempo — e in un sistema per anno
-cambiano — il JSON descrive **solo l'oggi**. Una scheda del 2024 valutata con opzioni
+**Il difetto vero**: se le opzioni cambiano nel tempo: e in un sistema per anno
+cambiano: il JSON descrive **solo l'oggi**. Una scheda del 2024 valutata con opzioni
 poi modificate non è più interpretabile, perché la lista che l'utente vide non esiste
 più da nessuna parte.
 
@@ -97,9 +109,9 @@ più da nessuna parte.
 
 Identica ad A nella sostanza, ma senza migrazione: la colonna schemaless c'è già.
 
-**Pro** — costo zero, reversibile.
+**Pro**: costo zero, reversibile.
 
-**Contro** — gli stessi di A, più uno: `extra_attributes` è già usata per altro
+**Contro**: gli stessi di A, più uno: `extra_attributes` è già usata per altro
 (`type`, `anno` compaiono nei form), quindi diventerebbe un contenitore di cose non
 omogenee. Va bene per **provare**, non per restare.
 
@@ -108,7 +120,7 @@ omogenee. Va bene per **provare**, non per restare.
 Il criterio è il padre, ogni opzione è un `rating` figlio. La scelta si registra come
 riga `rating_morph` sul **figlio**.
 
-**Pro** — nessuna entità nuova, l'infrastruttura è già in piedi (`parent_id`, trait,
+**Pro**: nessuna entità nuova, l'infrastruttura è già in piedi (`parent_id`, trait,
 RelationManager dei figli), le opzioni sono righe vere: ordinabili con `order_column`,
 disattivabili con `is_disabled`, e il **peso** è `value` sul pivot. La risposta non
 richiede colonne nuove.
@@ -117,7 +129,7 @@ richiede colonne nuove.
 
 1. **Un'opzione non è un criterio.** Diventerebbero la stessa entità, e tutto ciò che
    conta i criteri comincerebbe a contare anche le opzioni. Conseguenza concreta e
-   già scritta: la `RatingsColumn` mostra `children_count` come «sotto-criteri» —
+   già scritta: la `RatingsColumn` mostra `children_count` come «sotto-criteri» -
    con questa strada quel numero diventerebbe «numero di opzioni», e la stessa
    colonna direbbe due cose diverse a seconda del criterio. Servirebbe un
    discriminante (`is_option`, o un `rule` dedicato), ed è quello il vero costo.
@@ -131,27 +143,27 @@ richiede colonne nuove.
 `value` per etichetta e peso, `pos` per l'ordine, `parent_id` per opzioni annidate, e
 soprattutto **`year`**.
 
-**Pro** — nessuna entità nuova *e* nessuna ambiguità: un'opzione è un'opzione, un
+**Pro**: nessuna entità nuova *e* nessuna ambiguità: un'opzione è un'opzione, un
 criterio è un criterio. `year` risolve il problema che affonda A e B: le opzioni del
 2024 restano, quelle del 2026 sono altre righe, e una scheda vecchia resta leggibile.
 L'infrastruttura morph esiste già, semplicemente non è mai stata usata.
 
-E — verificato — **sta sulla connessione del modulo**, non su `ptv`: la tabella esiste
+E: verificato: **sta sulla connessione del modulo**, non su `ptv`: la tabella esiste
 in `indennita_responsabilita`, in `performance` e in `ptv_lara`, e in IR `options` e
 `ratings` sono **nello stesso database**. Non c'è nessuna questione cross-database:
 una prima versione di questo documento diceva il contrario, ed era la stessa
 supposizione non misurata che aveva portato a preferire `criteri_options`.
 
-**Contro** — due, entrambi concreti:
+**Contro**: due, entrambi concreti:
 
 1. `option_type` è NULL su tutte e 3 le righe presenti: nessuno ha ancora usato il
    morph, quindi è terreno da inaugurare;
 2. **i tipi non combaciano**: `options.option_id` è `int(10) unsigned`, `ratings.id`
    è `bigint(20) unsigned`. Oggi non rompe niente perché i valori sono piccoli, ma è
-   una chiave esterna più stretta della chiave che punta — lo stesso difetto già
+   una chiave esterna più stretta della chiave che punta: lo stesso difetto già
    trovato su `rating_morph.user_id`. Si allarga adesso o si eredita.
 
-### E. `criteri_options` — strada ritirata
+### E. `criteri_options`: strada ritirata
 
 Era la raccomandazione della prima versione di questo documento. **Non regge**, e vale
 la pena tenerne traccia invece di cancellarla, perché l'errore è istruttivo.
@@ -174,9 +186,9 @@ Se le opzioni sono **poche e non cambiano**, non sono dati: sono codice. Un enum
 rende tipizzate, traducibili e verificabili dall'analisi statica, e il progetto ha già
 la convenzione (`->options(MioEnum::class)`).
 
-**Pro** — la forma più solida di tutte, zero query, zero migrazioni.
+**Pro**: la forma più solida di tutte, zero query, zero migrazioni.
 
-**Contro** — se cambiano per anno o le configura un utente, è la strada sbagliata:
+**Contro**: se cambiano per anno o le configura un utente, è la strada sbagliata:
 ogni modifica diventa un rilascio.
 
 **Domanda che la decide**: le opzioni le decide uno sviluppatore o le configura un
@@ -201,7 +213,7 @@ Tre domande di dominio, e ognuna ne elimina almeno una:
    Se no, serve comunque una colonna per la risposta, **indipendentemente** da dove
    stanno le opzioni.
 2. **Le opzioni cambiano per anno?**
-   Se sì, cadono A e B — un JSON non ha versioni — e resta in piedi D, che `year` ce
+   Se sì, cadono A e B: un JSON non ha versioni: e resta in piedi D, che `year` ce
    l'ha già.
 3. **Chi le configura?**
    Uno sviluppatore → F (enum). Un amministratore → serve una UI, e allora sono dati.
@@ -209,35 +221,35 @@ Tre domande di dominio, e ognuna ne elimina almeno una:
 ## Cosa direi io, e perché
 
 **La strada è D: `options` come morph del criterio.** Non per eleganza: perché ha già
-la forma esatta del problema — `option_type`/`option_id` per appartenere a un criterio,
+la forma esatta del problema: `option_type`/`option_id` per appartenere a un criterio,
 `name` e `value` per etichetta e peso, `pos` per l'ordine, `year` per la versione,
-`parent_id` per opzioni annidate — e sta sulla stessa connessione dei rating. È
+`parent_id` per opzioni annidate: e sta sulla stessa connessione dei rating. È
 un'infrastruttura montata e mai accesa.
 
 Ordine di preferenza e motivo, in una riga ciascuno:
 
 | | strada | perché sì / perché no |
 |---|---|---|
-| 1 | **D — `options` morph** | ha già tutto: appartenenza, etichetta, peso, ordine, anno; stesso database dei rating. Costa: inaugurare il morph e allargare `option_id` |
-| 2 | **F — enum** | la più solida, **se** le opzioni non cambiano e non le configura un utente |
-| 3 | **B — `extra_attributes`** | solo come prototipo, sapendo che i dati andranno migrati |
-| 4 | **A — colonna JSON** | come B ma con una migrazione in più, e senza nessun vantaggio in cambio |
-| 5 | **C — figli come opzioni** | l'unica che **peggiora** qualcosa: rende ambiguo un albero appena nato pulito |
-| — | ~~E — `criteri_options`~~ | ritirata: altro dominio, vedi sopra |
+| 1 | **D: `options` morph** | ha già tutto: appartenenza, etichetta, peso, ordine, anno; stesso database dei rating. Costa: inaugurare il morph e allargare `option_id` |
+| 2 | **F: enum** | la più solida, **se** le opzioni non cambiano e non le configura un utente |
+| 3 | **B: `extra_attributes`** | solo come prototipo, sapendo che i dati andranno migrati |
+| 4 | **A: colonna JSON** | come B ma con una migrazione in più, e senza nessun vantaggio in cambio |
+| 5 | **C: figli come opzioni** | l'unica che **peggiora** qualcosa: rende ambiguo un albero appena nato pulito |
+|: | ~~E: `criteri_options`~~ | ritirata: altro dominio, vedi sopra |
 
 **Su C, che è la strada proposta, il no è motivato.** È attraente perché
 l'infrastruttura è stata montata oggi, ma paga con un'ambiguità permanente: `children`
 vorrebbe dire «sotto-criterio» *oppure* «opzione», e `descendants()` li mescolerebbe.
 Conseguenza già scritta e verificabile: `RatingsColumn` mostra `children_count` come
 sotto-criteri, e su un criterio-con-opzioni quel numero direbbe un'altra cosa. Servirebbe
-un flag discriminante, e quel flag è il costo vero della strada — pagato per non usare
+un flag discriminante, e quel flag è il costo vero della strada: pagato per non usare
 una tabella che c'è già.
 
 L'albero oggi è **37 radici, zero figli**: è ancora tutto da usare per la gerarchia
 vera. Riempirlo di opzioni prima significa non poterle più distinguere.
 
 Nota su D e C insieme: `options` ha **anch'essa** `parent_id`. Se un giorno servissero
-opzioni annidate, l'albero è di là — dove annidare opzioni è l'unico significato
+opzioni annidate, l'albero è di là: dove annidare opzioni è l'unico significato
 possibile, e quindi non è ambiguo.
 
 ## Domande aperte

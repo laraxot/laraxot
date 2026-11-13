@@ -1,3 +1,15 @@
+---
+title: "04 datas"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "04 datas"
+issues: []
+discussions: []
+status: active
+---
+
 # Datas in Seo Module
 
 All data objects in the Seo module use the `Spatie\LaravelData\Data` contract for type safety and serialization.

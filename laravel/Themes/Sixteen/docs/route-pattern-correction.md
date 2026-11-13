@@ -1,3 +1,15 @@
+---
+title: "route pattern correction"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "route pattern correction"
+issues: []
+discussions: []
+status: draft
+---
+
 # Correzione Pattern Route - Tema Sixteen
 
 ## 🚨 Problema Identificato
@@ -372,7 +384,6 @@ grep -r "route('contacts')" laravel/Themes/Sixteen/resources/views/
 - Test di accessibilità
 
 ---
-
 **Data Correzione**: Dicembre 2024  
 **Tema**: Sixteen  
 **Stato**: Pattern Route Corretto  

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_jyVG5X
 return [
     'sections' => [
         'Tenant User Information' => [
@@ -11,22 +12,25 @@ return [
     ],
     'fields' => [
         'tenant_id' => [
-            'label' => 'tenant_id',
+            'label' => 'Tenant',
             'placeholder' => 'tenant_id',
             'helper_text' => 'tenant_id',
             'description' => 'tenant_id',
         ],
         'user_id' => [
-            'label' => 'user_id',
+            'label' => 'Utente',
             'placeholder' => 'user_id',
             'helper_text' => 'user_id',
             'description' => 'user_id',
         ],
         'role' => [
-            'label' => 'role',
+            'label' => 'Ruolo',
             'placeholder' => 'role',
             'helper_text' => 'role',
             'description' => 'role',
         ],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_nekaPd

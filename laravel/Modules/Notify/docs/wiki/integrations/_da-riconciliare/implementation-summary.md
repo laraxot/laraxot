@@ -1,10 +1,14 @@
 ---
+qmd: "implementation summary"
+issues: []
+discussions: []
 title: "Riepilogo Implementazione Design Comuni"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Riepilogo Implementazione Design Comuni

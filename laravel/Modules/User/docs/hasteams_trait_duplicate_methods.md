@@ -1,3 +1,11 @@
+---
+title: "Analisi metodi duplicati in HasTeams (trait)"
+type: note
+status: draft
+updated: 2026-10-13
+tags: [docs, user]
+qmd: "analisi metodi duplicati in hasteams (trait) user"
+---
 # Analisi metodi duplicati in HasTeams (trait)
 
 ## Introduzione
@@ -74,7 +82,7 @@ Nel trait `HasTeams` sono presenti diversi metodi con lo stesso nome ma implemen
 ## Collegamenti correlati
 - [Indice documentazione User](./index.md)
 
-- [Indice documentazione User](./INDEX.md)
+- [Indice documentazione User](./index.md)
 - [Modello User](./Models/User.md)
 - [Best practices trait](./best-practices-traits.md)
 - [Refactor checklist](./refactor-checklist.md)
@@ -91,4 +99,5 @@ Quando si implementano trait come HasTeams, è fondamentale tipizzare e accettar
 - facilità di test tramite mock/stub
 - manutenibilità e flessibilità futura
 
-Per la motivazione dettagliata, vedi la sezione dedicata in [Team.md](./Models/Team.md#motivazione-preferire-teamcontract-a-team-nei-trait-e-nei-metodi). 
+Per la motivazione dettagliata, vedi la sezione dedicata in [Team.md](./models/team.md#motivazione-preferire-teamcontract-a-team-nei-trait-e-nei-metodi). 
+Per la motivazione dettagliata, vedi la sezione dedicata in [Team.md](./models/team.md#motivazione-preferire-teamcontract-a-team-nei-trait-e-nei-metodi). 

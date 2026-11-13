@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Notify\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Modules\Xot\Contracts\ProfileContract;
 
@@ -40,9 +41,17 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|NotifyThemeable whereUpdatedAt($value)
  * @method static Builder<static>|NotifyThemeable whereUpdatedBy($value)
  *
- * @mixin \Eloquent
+ * @mixin Model
  */
 class NotifyThemeable extends BaseMorphPivot
 {
-    // ...
+    /** @var list<string> */
+    protected $fillable = [
+        'id',
+        'model_type',
+        'model_id',
+        'notify_theme_id',
+        'created_by',
+        'updated_by',
+    ];
 }

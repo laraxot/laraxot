@@ -247,4 +247,24 @@ return [
         'time_clock' => 'Time Clock',
         'view_all' => 'View All Entries',
     ],
+    'dashboard' => [
+        'overview' => [
+            'label' => 'Overview',
+        ],
+        'period_month' => [
+            'label' => 'This Month',
+        ],
+        'progress_of_target' => [
+            'label' => ':percentage% of :target target',
+        ],
+        'week_number' => [
+            'label' => 'Week :number',
+        ],
+    ],
+    'timeclock' => [
+        'notes' => [
+            'label' => 'Notes (Optional)',
+            'placeholder' => 'Add a note for this entry...',
+        ],
+    ],
 ];

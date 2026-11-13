@@ -5,17 +5,18 @@ declare(strict_types=1);
 namespace Modules\Notify\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Media\Models\Media;
+use Modules\Notify\Models\Traits\NotificationTemplateVersionRelations;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Traits\Updater;
-use Override;
 use RuntimeException;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 
 // BaseModel in same namespace provides common behaviors
 /**
  * @property int|null $template_id
+ * @property string $id
  * @property string|null $subject
  * @property string|null $body_html
  * @property string|null $body_text
@@ -33,10 +34,11 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static Builder<static>|NotificationTemplateVersion newQuery()
  * @method static Builder<static>|NotificationTemplateVersion query()
  *
- * @mixin \Eloquent
+ * @mixin Model
  */
 class NotificationTemplateVersion extends BaseModel
 {
+    use NotificationTemplateVersionRelations;
     use Updater;
 
     protected $fillable = [
@@ -50,12 +52,6 @@ class NotificationTemplateVersion extends BaseModel
         'version',
         'created_by',
         'change_notes'];
-
-    /** @return BelongsTo<NotificationTemplate, $this> */
-    public function template(): BelongsTo
-    {
-        return $this->belongsTo(NotificationTemplate::class, 'template_id');
-    }
 
     public function restoreTemplate(): NotificationTemplate
     {

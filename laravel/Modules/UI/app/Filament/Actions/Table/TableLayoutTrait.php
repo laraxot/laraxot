@@ -19,14 +19,16 @@ trait TableLayoutTrait
     public function getCurrentLayout(string $identifier = 'default'): TableLayoutEnum
     {
         $sessionKey = "table_layout_{$identifier}";
-        /** @var TableLayoutEnum|string|int|null $layout */
         $layout = Session::get($sessionKey);
 
-        if (null !== $layout && in_array($layout, TableLayoutEnum::cases(), strict: true)) {
-            // $layout è già un TableLayoutEnum dopo il controllo in_array con strict
+        if ($layout instanceof TableLayoutEnum) {
             return $layout;
         }
 
+<<<<<<< HEAD
+        // saveLayout() scrive ->value: la sessione contiene la stringa del case.
+        return is_string($layout) ? TableLayoutEnum::tryFrom($layout) ?? TableLayoutEnum::LIST : TableLayoutEnum::LIST;
+=======
         // Se $layout è una stringa/int, prova a convertirlo
         if (is_string($layout) || is_int($layout)) {
             $enum = TableLayoutEnum::tryFrom($layout);
@@ -36,6 +38,7 @@ trait TableLayoutTrait
         }
 
         return TableLayoutEnum::GRID;
+>>>>>>> f5ffd8b4 (.)
     }
 
     /**

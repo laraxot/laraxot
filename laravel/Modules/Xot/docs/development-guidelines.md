@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Development Guidelines - Xot Module"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "development guidelines - xot module xot"
+---
+>>>>>>> laraxot/dev
 # Development Guidelines - Xot Module
 
 ## Panoramica

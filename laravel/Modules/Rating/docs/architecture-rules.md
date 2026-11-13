@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Architectural Rules & Guidelines"
 type: rule
 tags: [architecture, rules, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "architecture rules"
 related:
   - "./architecture.md"
+status: draft
 ---
 
 # Architectural Rules & Guidelines

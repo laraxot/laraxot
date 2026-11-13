@@ -1,3 +1,9 @@
+---
+title: "Employee - XOTBASE_WIDGET_CHECKLIST"
+module: Employee
+bmad: true
+status: active
+---
 # XotBase Widget Implementation Checklist
 
 ## ✅ Pre-Implementation Checklist

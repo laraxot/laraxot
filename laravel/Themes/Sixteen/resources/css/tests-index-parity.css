@@ -1,0 +1,48 @@
+/* The official Design Comuni template index is a standalone catalogue page. */
+body[data-page="tests-index"] {
+    padding-bottom: 0;
+}
+
+body[data-page="tests-index"] > header,
+body[data-page="tests-index"] > footer,
+body[data-page="tests-index"] > [id="search-modal"] {
+    display: none;
+}
+
+body[data-page="tests-index"] > main {
+    padding: 0 !important;
+}
+
+body[data-page="tests-index"] .design-comuni-template-index aside h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+    color: #191919 !important;
+}
+
+body[data-page="tests-index"] .design-comuni-template-index h1 {
+    margin: 0 0 0.5rem;
+    font-size: 3rem !important;
+    line-height: 3.5rem !important;
+}
+
+body[data-page="tests-index"] .design-comuni-template-index h2 {
+    font-size: 2.5rem !important;
+    line-height: 3rem !important;
+    color: #5d7083 !important;
+}
+
+body[data-page="tests-index"] .design-comuni-template-index a {
+    color: #007a52 !important;
+    text-decoration: none !important;
+}
+
+body[data-page="tests-index"] .design-comuni-template-index a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1023px) {
+    body[data-page="tests-index"] .design-comuni-template-index {
+        padding-inline: 1.5rem;
+    }
+}

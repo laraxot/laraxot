@@ -10,13 +10,24 @@ related:
   - ./livewire-widget-prd.md
   - ./livewire-widget-architecture.md
   - ./livewire-widget-tech-spec.md
+<<<<<<< .merge_file_wFjMtj
   - ../../Xot/docs/bmad/livewire-widget-advantages.md
+=======
+  - ../../../Xot/docs/bmad/livewire-widget-advantages.md
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "vantaggi di avere solo filament widget nel chrome del panel user"
+>>>>>>> .merge_file_DnlR5z
 ---
 
 # Vantaggi di avere SOLO Filament widget nel chrome del panel
 
 > **Nota di canone:** il documento di piattaforma sui vantaggi widget-only è
+<<<<<<< .merge_file_wFjMtj
 > [Xot/docs/bmad/livewire-widget-advantages.md](../../Xot/docs/bmad/livewire-widget-advantages.md).
+=======
+> [Xot/docs/bmad/livewire-widget-advantages.md](../../../Xot/docs/bmad/livewire-widget-advantages.md).
+>>>>>>> .merge_file_DnlR5z
 > Questo file resta la vista **specifica del modulo User** (chrome `/admin`, auth, legal).
 > **Stato al 2026-09-21:** i tre hook di `AdminPanelProvider` montano già FQCN widget
 > (`AdminPanelProvider.php:25-38`); questo documento descrive il razionale della scelta, ormai
@@ -57,7 +68,11 @@ Questo causava:
 
 ### 3. Unico percorso di testing e manutenzione
 **Problema pre-campagna:** ogni funzionalità aveva due implementazioni:
+<<<<<<< .merge_file_wFjMtj
 - Implementazione HTTP (spesso orfana, senza route — `routes/web_tall.php` non è mai stato caricato da `XotBaseRouteServiceProvider`)
+=======
+- Implementazione HTTP (spesso orfana, senza route: `routes/web_tall.php` non è mai stato caricato da `XotBaseRouteServiceProvider`)
+>>>>>>> .merge_file_DnlR5z
 - Implementazione widget (SSoT, utilizzata realmente)
 
 Questo richiede:
@@ -98,8 +113,13 @@ Questo richiede:
 ### 6. Eliminazione del technical debt esploso
 **Evidenza raccolta:**
 - `InvalidArgumentException: No hint path defined for [filament-jet]` (runtime error, già osservato)
+<<<<<<< .merge_file_wFjMtj
 - Classi HTTP con `dddx('wip')` ancora eseguibili — residuo: `TermsOfService.php:32` (story 10.4)
 - ViewCopyAction che scriveva disco a ogni request — eliminato con le classi auth (2026-09-21)
+=======
+- Classi HTTP con `dddx('wip')` ancora eseguibili: residuo: `TermsOfService.php:32` (story 10.4)
+- ViewCopyAction che scriveva disco a ogni request: eliminato con le classi auth (2026-09-21)
+>>>>>>> .merge_file_DnlR5z
 - Nomi hardcoded in tedesco/italiano nei toast
 
 **Vantaggio Filament-only:**
@@ -164,7 +184,11 @@ Il modulo User aveva:
 - `LogoutWidget` x2 + `Logout` HTTP + `AuthLogout` HTTP + `Livewire\Logout` (orphan in `app/Livewire`)
 
 Le classi HTTP auth sono eliminate (2026-09-21). **Residuo aperto:** la decisione SSoT non è ancora
+<<<<<<< .merge_file_wFjMtj
 chiusa — convivono `Filament/Widgets/LogoutWidget.php` e `Filament/Widgets/Auth/LogoutWidget.php`,
+=======
+chiusa: convivono `Filament/Widgets/LogoutWidget.php` e `Filament/Widgets/Auth/LogoutWidget.php`,
+>>>>>>> .merge_file_DnlR5z
 e tre widget reset password (`PasswordResetWidget`, `ResetPasswordWidget`,
 `PasswordResetConfirmWidget`). Finché non si sceglie un SSoT per famiglia (AC 10.3 #4-#5), il
 vantaggio "una sola implementazione" è dimezzato.
@@ -192,7 +216,11 @@ La campagna è completata quando (stato verificato 2026-09-21):
 3. [ ] `find app/Http/Livewire -type f -name "*.php"` → restano `PrivacyPolicy.php`, `TermsOfService.php`, `Profile/DeleteAccount.php` (story 10.4 blocked) + `app/Livewire/Logout.php` orfano + cache/file `.no|.wip|.test|.to_widget`
 4. [ ] `phpstan analyse --memory-limit=-1` → 0 errori (livello max)
 5. [ ] `/admin` restituisce 200 per utente autenticato senza hint path error
+<<<<<<< .merge_file_wFjMtj
 6. [ ] Zero `dddx` in qualsiasi componente UI User — `dddx('wip')` ancora in `TermsOfService.php:32`
+=======
+6. [ ] Zero `dddx` in qualsiasi componente UI User: `dddx('wip')` ancora in `TermsOfService.php:32`
+>>>>>>> .merge_file_DnlR5z
 7. [ ] Tutti i lang UI usano chiavi `user::*` o `module::*` mai testi hardcoded
 
 ---

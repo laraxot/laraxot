@@ -1,3 +1,9 @@
+---
+title: "Employee - 03-GESTIONE-POSIZIONI"
+module: Employee
+bmad: true
+status: active
+---
 # 03 - Gestione Posizioni
 
 ## Panoramica

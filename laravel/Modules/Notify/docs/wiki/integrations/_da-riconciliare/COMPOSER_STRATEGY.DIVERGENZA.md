@@ -1,10 +1,15 @@
 ---
+qmd: "COMPOSER STRATEGY.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: COMPOSER_STRATEGY.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: composer-strategy.divergenza.md
 ---
 
 # Divergenza: `COMPOSER_STRATEGY.md`

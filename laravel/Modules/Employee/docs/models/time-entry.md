@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME-ENTRY"
+module: Employee
+bmad: true
+status: active
+---
 # TimeEntry Model - Analysis and Refactoring
 
 ## Current Issues Analysis

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Workstreams - Tenant"
 module: "Tenant"
 type: concept
@@ -8,6 +10,9 @@ updated: 2026-07-14
 qmd: "03 workstreams"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: superseded
+superseded_by: workstreams.md
 ---
 # Workstreams - Tenant
 

@@ -1,10 +1,15 @@
 ---
+qmd: "ui ux pro max skills integration.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: ui-ux-pro-max-skills-integration.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: ui-ux-pro-max-skills-integration.divergenza.md
 ---
 
 # Divergenza: `ui-ux-pro-max-skills-integration.md`

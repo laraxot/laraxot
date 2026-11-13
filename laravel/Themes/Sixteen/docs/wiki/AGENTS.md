@@ -1,4 +1,18 @@
-# Sixteen {{TYPE^}} LLM Wiki Agent Instructions
+---
+title: "AGENTS"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "AGENTS"
+issues: []
+discussions: []
+status: draft
+---
+
+# Sixteen LLM Wiki Agent Instructions
+
+> Copia secondaria con la sola maiuscola diversa (collide su filesystem case-insensitive): fonte è [agents.md](./agents.md); questa copia ha in più solo frontmatter generico.
 
 > **Module/Theme:** Sixteen
 > **Scope:** Sixteen-specific knowledge only

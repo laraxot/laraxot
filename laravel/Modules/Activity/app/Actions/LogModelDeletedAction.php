@@ -10,12 +10,8 @@ use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Log Model Deleted Action.
-<<<<<<< HEAD
  *
  * Logs when a model is deleted using Queueable Actions
-=======
- * Optimized for Laraxot architecture.
->>>>>>> 13cf1831 (.)
  */
 class LogModelDeletedAction
 {
@@ -29,7 +25,6 @@ class LogModelDeletedAction
 >>>>>>> .merge_file_DhF2Bt
         public ?Model $user = null,
     ) {
-<<<<<<< HEAD
         if ($user !== null) {
             // Type already narrowed to Model|null, assertion not needed
         }
@@ -64,23 +59,5 @@ class LogModelDeletedAction
         );
 
         return $action->execute();
-=======
-    }
-
-    /**
-     * Execute the action.
-     */
-    public function execute(): Activity
-    {
-        /** @var array<string, mixed> $properties */
-        $properties = $this->model->toArray();
-
-        return (new LogActivityAction(
-            type: 'deleted',
-            subject: $this->model,
-            properties: $properties,
-            description: sprintf('%s was deleted', class_basename($this->model)),
-        ))->execute();
->>>>>>> 13cf1831 (.)
     }
 }

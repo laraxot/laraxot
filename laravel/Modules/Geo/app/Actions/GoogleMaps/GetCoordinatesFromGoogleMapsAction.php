@@ -8,11 +8,11 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\LocationData;
-
-use function Safe\json_decode;
-
+use Modules\Geo\Infrastructure\Config\GeoApiEndpoints;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+
+use function Safe\json_decode;
 
 /**
  * Action per ottenere le coordinate da un indirizzo tramite Google Maps.
@@ -24,18 +24,17 @@ class GetCoordinatesFromGoogleMapsAction
 {
     use QueueableAction;
 
-    private const string API_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
+    private const string API_URL = GeoApiEndpoints::GOOGLE_GEOCODING;
 
     public function __construct(
         private readonly Client $client,
-    ) {
-    }
+    ) {}
 
     /**
      * Ottiene le coordinate da un indirizzo.
      *
      * @throws \InvalidArgumentException Se i dati di input non sono validi
-     * @throws \RuntimeException         Se la chiave API non è configurata o la richiesta fallisce
+     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
     public function execute(string $address): LocationData
     {
@@ -58,12 +57,15 @@ class GetCoordinatesFromGoogleMapsAction
     /**
      * Valida i dati di input.
      *
+     * @throws \RuntimeException         Se la chiave API non è configurata
      * @throws \InvalidArgumentException Se i dati non sono validi
      */
     private function validateInput(string $address): void
     {
         $apiKey = config('services.google.maps_api_key');
-        Assert::notEmpty($apiKey, 'Google Maps API key not configured');
+        if (! \is_string($apiKey) || '' === $apiKey) {
+            throw new \RuntimeException('Google Maps API key not configured');
+        }
         Assert::notEmpty($address, 'Address cannot be empty');
         Assert::maxLength($address, 1000, 'Address is too long');
     }
@@ -105,7 +107,7 @@ class GetCoordinatesFromGoogleMapsAction
          * } $data */
         $data = json_decode($response, true);
 
-        if ('OK' !== $data['status'] || empty($data['results'][0]['geometry']['location'])) {
+        if ($data['status'] !== 'OK' || empty($data['results'][0]['geometry']['location'])) {
             throw new \RuntimeException('No coordinates found for address');
         }
 

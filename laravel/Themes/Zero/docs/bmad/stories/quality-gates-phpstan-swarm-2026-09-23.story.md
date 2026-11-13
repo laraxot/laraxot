@@ -5,6 +5,15 @@ status: done
 scope: laravel/Themes/Zero
 created: 2026-09-23
 updated: 2026-09-23
+slug: quality-gates-phpstan-swarm-2026-09-23-story
+description: "Story dello swarm PHPStan sul tema Zero: comando eseguito, segnalazioni reali sistemate e second brain."
+document_type: story
+type: story
+category: bmad-story
+tags: []
+qmd: "phpstan quality gate - themes/zero (swarm run)"
+issues: []
+discussions: []
 ---
 
 # PHPStan quality gate — Themes/Zero (swarm run)

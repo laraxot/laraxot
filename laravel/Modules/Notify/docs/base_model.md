@@ -1,3 +1,15 @@
+---
+title: "base model"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "base model"
+issues: []
+discussions: []
+status: draft
+---
+
 # BaseModel del Modulo Notify
 
 ## Panoramica

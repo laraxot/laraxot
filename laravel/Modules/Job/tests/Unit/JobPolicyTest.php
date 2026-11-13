@@ -24,7 +24,7 @@ use Modules\User\Models\Team;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Job\Tests\TestCase::class)->group('no-job-db');
+uses(TestCase::class)->group('no-job-db');
 
 /**
  * @param  list<string>  $permissions
@@ -55,8 +55,8 @@ afterEach(function (): void {
 });
 
 test('TaskPolicy richiede permessi task.*', function (): void {
-    $policy = new TaskPolicy();
-    $task = new Task();
+    $policy = new TaskPolicy;
+    $task = new Task;
 
     Assert::assertTrue($policy->viewAny(jobFakeUser(['task.viewAny'])));
     Assert::assertTrue($policy->view(jobFakeUser(['task.view']), $task));
@@ -66,28 +66,28 @@ test('TaskPolicy richiede permessi task.*', function (): void {
 });
 
 test('SchedulePolicy e ScheduleHistoryPolicy espongono CRUD', function (): void {
-    $schedulePolicy = new SchedulePolicy();
-    $schedule = new Schedule();
+    $schedulePolicy = new SchedulePolicy;
+    $schedule = new Schedule;
     Assert::assertTrue($schedulePolicy->viewAny(jobFakeUser(['schedule.viewAny'])));
     Assert::assertTrue($schedulePolicy->view(jobFakeUser(['schedule.view']), $schedule));
 
-    $historyPolicy = new ScheduleHistoryPolicy();
-    $history = new ScheduleHistory();
+    $historyPolicy = new ScheduleHistoryPolicy;
+    $history = new ScheduleHistory;
     Assert::assertTrue($historyPolicy->viewAny(jobFakeUser(['schedule_history.viewAny'])));
     Assert::assertTrue($historyPolicy->view(jobFakeUser(['schedule_history.view']), $history));
 });
 
 test('TaskCommentPolicy espone CRUD', function (): void {
-    $policy = new TaskCommentPolicy();
-    $comment = new TaskComment();
+    $policy = new TaskCommentPolicy;
+    $comment = new TaskComment;
 
     Assert::assertTrue($policy->create(jobFakeUser(['task_comment.create'])));
     Assert::assertTrue($policy->update(jobFakeUser(['task_comment.update']), $comment));
 });
 
 test('JobPolicy delega su Team', function (): void {
-    $policy = new JobPolicy();
-    $team = new Team();
+    $policy = new JobPolicy;
+    $team = new Team;
 
     Assert::assertFalse($policy->viewAny(jobFakeUser()));
     Assert::assertTrue($policy->view(jobFakeUser(belongsToTeam: true), $team));
@@ -96,15 +96,15 @@ test('JobPolicy delega su Team', function (): void {
 });
 
 test('FailedJobPolicy e JobBatchPolicy espongono metodi team', function (): void {
-    foreach ([new FailedJobPolicy(), new JobBatchPolicy()] as $policy) {
-        $team = new Team();
+    foreach ([new FailedJobPolicy, new JobBatchPolicy] as $policy) {
+        $team = new Team;
         Assert::assertFalse($policy->viewAny(jobFakeUser()));
         Assert::assertTrue($policy->addTeamMember(jobFakeUser(ownsTeam: true), $team));
     }
 });
 
 test('policy stub ereditano JobBasePolicy', function (): void {
-    foreach ([new ImportPolicy(), new FailedImportRowPolicy()] as $policy) {
+    foreach ([new ImportPolicy, new FailedImportRowPolicy] as $policy) {
         Assert::assertTrue($policy->before(jobFakeUser(), 'viewAny') === null);
     }
 });

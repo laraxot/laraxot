@@ -1,10 +1,21 @@
+---
+title: "laravel enum anti pattern"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "laravel enum anti pattern"
+issues: []
+discussions: []
+status: draft
+---
+
 # Laravel Enum Anti-Pattern: Don't Wrap The Wrapper
 
 > **If you cast to Enum, the Enum IS the accessor.**  
 > **Never create accessors that wrap Enum methods.**
 
 ---
-
 ## The Crime (35 Lines → 0 Lines)
 
 ### Before (CACCA PUZZOLENTE)

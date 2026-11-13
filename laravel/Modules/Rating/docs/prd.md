@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "PRD: Rating Module"
 type: guide
 tags: [prd, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "prd"
 related:
   - "./product-launch-plan.md"
+status: draft
 ---
 
 # PRD: Rating Module

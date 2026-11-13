@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Laravel-FFMpeg – Pattern Laraxot nel Modulo Media"
 module: "Media"
 type: pattern
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "laravel ffmpeg patterns laraxot"
 related:
   - "./webm.md"
+status: draft
 ---
 # Laravel-FFMpeg – Pattern Laraxot nel Modulo Media
 

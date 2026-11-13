@@ -8,7 +8,7 @@ use Modules\Media\Models\Media;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
-class GenerateTemporaryUploadPathAction
+final class GenerateTemporaryUploadPathAction
 {
     use QueueableAction;
 
@@ -20,12 +20,29 @@ class GenerateTemporaryUploadPathAction
             default => 'original',
         };
 
-        return $this->getBasePath($media).'/'.md5($media->id.$media->uuid.$suffix).'/';
+        $path = $this->getBasePath($media).'/'.md5($media->id.$media->uuid.$suffix);
+
+        return $purpose === 'original' ? $path.'/' : $path;
+    }
+
+    public function getPath(Media $media): string
+    {
+        return $this->execute($media);
+    }
+
+    public function getPathForConversions(Media $media): string
+    {
+        return $this->execute($media, 'conversion');
+    }
+
+    public function getPathForResponsiveImages(Media $media): string
+    {
+        return $this->execute($media, 'responsive');
     }
 
     protected function getBasePath(Media $media): string
     {
-        Assert::string($id = $media->getKey());
+        Assert::scalar($id = $media->getKey());
         $key = md5($media->uuid.$id);
 
         return "tmp/{$key}";

@@ -4,7 +4,7 @@ type: concept
 module: Sixteen
 tags: [second-brain, theme, boundary, parity, hackernoon]
 created: 2026-05-19
-updated: 2026-06-05
+updated: 2026-09-26
 qmd: "sixteen theme second brain boundary parity visual module owner hackernoon tip 020"
 issues:
   - "https://github.com/laraxot/theme_sixteen_fila5/issues/54"
@@ -12,9 +12,10 @@ discussions:
   - "https://github.com/laraxot/theme_sixteen_fila5/discussions/55"
 related:
   - ./ai-harness-theme-sixteen.md
-  - ../../../docs/wiki/concepts/second-brain-operating-model.md
+  - ../../../../../../docs/wiki/concepts/second-brain-operating-model.md
   - ../../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
   - ../../../../../../bashscripts/tools/prompts/llm-wiki.txt
+status: draft
 ---
 
 # Second Brain Theme Boundary
@@ -24,6 +25,7 @@ related:
 - [ai-harness-theme-sixteen.md](./ai-harness-theme-sixteen.md)
 - [hackernoon map](../../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md) — Tip 019/020
 - [llm-wiki.txt](../../../../../../bashscripts/tools/prompts/llm-wiki.txt)
+- [FixCity wizard UX contract](./fixcity-wizard-ux-contract-2026-09-26.md)
 
 ## Theme meaning
 

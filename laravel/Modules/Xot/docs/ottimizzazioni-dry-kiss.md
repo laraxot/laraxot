@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Ottimizzazioni DRY + KISS - Modulo Xot"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Ottimizzazioni DRY + KISS - Modulo Xot"
+---
+>>>>>>> laraxot/dev
 # Ottimizzazioni DRY + KISS - Modulo Xot
 
 ## Analisi Problematiche Identificate
@@ -9,7 +22,11 @@
 ❌ PRIMA (duplicazioni):
 - architecture_best_practices.md + architecture-best-practices.md
 - best_practices.md + best-practices.md
+<<<<<<< HEAD
 - actions-pattern.md + actions-standardization.md
+=======
+- actions-pattern.md + actions-standardization.md  
+>>>>>>> laraxot/dev
 - directory_structure_guide.md + directory-structure-guide.md
 - naming_conventions.md + naming-conventions.md
 - phpstan_fixes.md + phpstan-fixes-2025.md + phpstan-fixes-gennaio-2025.md
@@ -78,6 +95,7 @@ docs/
 ### 1. **Consolidamento Documentazione Duplicata**
 ```bash
 # Merge intelligente di file duplicati
+<<<<<<< HEAD
 merge architecture_best_practices.md + architecture-best-practices.md
   → architecture/best-practices.md
 
@@ -85,6 +103,15 @@ merge actions-pattern.md + actions-standardization.md
   → development/actions-guide.md
 
 merge tutti i phpstan_*.md
+=======
+merge architecture_best_practices.md + architecture-best-practices.md 
+  → architecture/best-practices.md
+
+merge actions-pattern.md + actions-standardization.md 
+  → development/actions-guide.md
+
+merge tutti i phpstan_*.md 
+>>>>>>> laraxot/dev
   → phpstan/guide.md (sezioni cronologiche)
 ```
 
@@ -107,7 +134,11 @@ mv *architecture* docs/architecture/
 ## Scopo
 Descrizione breve e chiara dello scopo.
 
+<<<<<<< HEAD
 ## Quick Start
+=======
+## Quick Start  
+>>>>>>> laraxot/dev
 Passi essenziali per iniziare.
 
 ## Dettagli Implementazione
@@ -140,7 +171,11 @@ Codice pratico.
 - [Best Practices](architecture/best-practices.md)
 - [Patterns](architecture/patterns.md)
 
+<<<<<<< HEAD
 ### 💻 Sviluppo
+=======
+### 💻 Sviluppo  
+>>>>>>> laraxot/dev
 - [Coding Standards](development/coding-standards.md)
 - [Testing](development/testing.md)
 - [Actions Guide](development/actions-guide.md)
@@ -182,7 +217,11 @@ DOPO:
 2. Merge file Filament → `filament/resources.md`
 3. Merge file Migration → `database/migrations.md`
 
+<<<<<<< HEAD
 ### Fase 2 - Riorganizzazione (2-3 giorni)
+=======
+### Fase 2 - Riorganizzazione (2-3 giorni)  
+>>>>>>> laraxot/dev
 1. Creazione struttura cartelle
 2. Spostamento file per categoria
 3. Aggiornamento collegamenti interni

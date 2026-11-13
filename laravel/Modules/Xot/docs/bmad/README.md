@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # BMAD — Indice workflow Xot
 
 **Repo:** `git@github.com:laraxot/module_xot_fila5.git`
@@ -77,3 +78,19 @@ php -l OK su tutti i file modificati.
 39: Cms/PageContentResource.php (getFormSchemaOld)
 40: Geo/LocationResource.php (property.nonObject)
 Regola: XotBaseResource NON ha getFormSchema(); solo Schema Form; no GatedXotBasePage; no @phpstan-ignore; strict_types=1; git solo avanti; nessun commit senza richiesta esplicita.
+=======
+---
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-10-06
+updated: 2026-10-06
+qmd: "README"
+issues: []
+discussions: []
+---
+
+# Xot bmad docs
+
+This folder contains BMAD method documentation for the Xot module.
+>>>>>>> laraxot/dev

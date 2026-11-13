@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "google_translate"
 module: "Lang"
 type: concept
@@ -7,7 +9,8 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "google translate"
 related:
-  - "./italian-text-refined-audit-report.md"
+  - "../italian-text-refined-audit-report.md"
+status: draft
 ---
 # google_translate
 

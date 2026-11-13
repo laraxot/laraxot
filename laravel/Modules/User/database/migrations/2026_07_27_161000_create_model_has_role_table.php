@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Database\Schema\Blueprint;
 use Modules\User\Models\ModelHasRole;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
@@ -10,7 +9,8 @@ use Modules\Xot\Datas\XotData;
 /*
  * Pivot Spatie HasRoles — tabella da ModelHasRole::getTable() → config permission.table_names.
  */
-return new class extends XotBaseMigration {
+return new class extends XotBaseMigration
+{
     protected ?string $model_class = ModelHasRole::class;
 
     public function up(): void
@@ -30,10 +30,10 @@ return new class extends XotBaseMigration {
             if (! $this->hasColumn('team_id')) {
                 $table->foreignIdFor($teamClass, 'team_id')->nullable();
             }
-            if ('uuid' === $this->getColumnType('model_id')) {
+            if ($this->getColumnType('model_id') === 'uuid') {
                 $table->string('model_id', 36)->index()->change();
             }
-            if ('uuid' === $this->getColumnType('role_id')) {
+            if ($this->getColumnType('role_id') === 'uuid') {
                 $table->integer('role_id')->index()->change();
             }
             $this->updateTimestamps($table);

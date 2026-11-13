@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "BMAD Method v6.3 operativo nel progetto"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "bmad method"
 related:
   - "./webm.md"
+status: draft
 ---
 # BMAD Method v6.3 operativo nel progetto
 

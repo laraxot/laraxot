@@ -1,9 +1,18 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< HEAD
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
+=======
+use Modules\Xot\Tests\TestCase;
+use Modules\Xot\Tests\XotBasePest;
+use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
+
+>>>>>>> laraxot/dev
 test('XotBasePest assertArray normalizza chiavi int in stringhe', function (): void {
     $normalized = XotBasePest::assertArray([0 => 'a', 'b' => 'c']);
 

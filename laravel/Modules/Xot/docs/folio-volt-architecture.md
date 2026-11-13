@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Architettura Folio + Volt + Filament in il progetto"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Architettura Folio + Volt + Filament in il progetto"
+---
+>>>>>>> laraxot/dev
 # Architettura Folio + Volt + Filament in il progetto
 
 ## Panoramica
@@ -118,12 +131,20 @@ $update = function() {
         'name' => 'required|min:3',
         'email' => 'required|email',
     ]);
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     auth()->user()->update([
         'name' => $this->name,
         'email' => $this->email,
     ]);
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     $this->dispatch('profile-updated');
 };
 
@@ -218,26 +239,46 @@ new class extends Component {
 ## Collegamenti Moduli
 
 ### Modulo UI
+<<<<<<< HEAD
 - [Componenti Volt](../UI/docs/components/volt.md)
 - [Layout](../UI/docs/layouts.md)
 - [Temi](../UI/docs/themes.md)
 - [Best Practices](../UI/docs/best-practices.md)
+=======
+- [Componenti Volt](../../UI/docs/components/volt.md)
+- [Layout](../UI/docs/layouts.md)
+- [Temi](../UI/docs/themes.md)
+- [Best Practices](../../UI/docs/best-practices.md)
+>>>>>>> laraxot/dev
 
 ### Modulo Cms
 - [Frontend](../Cms/docs/frontend.md)
 - [Temi](../Cms/docs/themes.md)
+<<<<<<< HEAD
 - [Contenuti](../Cms/docs/content.md)
 - [Convenzioni Filament](../Cms/docs/convenzioni-namespace-filament.md)
 
 ### Modulo Lang
 - [Traduzioni](../Lang/docs/translations.md)
+=======
+- [Contenuti](../../Cms/docs/content.md)
+- [Convenzioni Filament](../../Cms/docs/convenzioni-namespace-filament.md)
+
+### Modulo Lang
+- [Traduzioni](../../Lang/docs/translations.md)
+>>>>>>> laraxot/dev
 - [Localizzazione](../Lang/docs/localization.md)
 - [API Traduzioni](../Lang/docs/api.md)
 
 ### Modulo User
 - [Autenticazione](../User/docs/auth.md)
+<<<<<<< HEAD
 - [Permessi](../User/docs/permissions.md)
 - [Profilo](../User/docs/profile.md)
+=======
+- [Permessi](../../User/docs/permissions.md)
+- [Profilo](../../User/docs/profile.md)
+>>>>>>> laraxot/dev
 
 ### Modulo Patient
 - [Gestione Pazienti](../Patient/docs/patients.md)
@@ -251,7 +292,11 @@ new class extends Component {
 
 ### Modulo Tenant
 - [Multi-tenant](../Tenant/docs/multi-tenant.md)
+<<<<<<< HEAD
 - [Configurazione](../Tenant/docs/configuration.md)
+=======
+- [Configurazione](../../Tenant/docs/configuration.md)
+>>>>>>> laraxot/dev
 - [Migrazione](../Tenant/docs/migration.md)
 
 ### Modulo Media
@@ -260,9 +305,15 @@ new class extends Component {
 - [Storage](../Media/docs/storage.md)
 
 ### Modulo Notify
+<<<<<<< HEAD
 - [Notifiche](../Notify/docs/notifications.md)
 - [Email](../Notify/docs/email.md)
 - [SMS](../Notify/docs/sms.md)
+=======
+- [Notifiche](../../Notify/docs/notifications.md)
+- [Email](../Notify/docs/email.md)
+- [SMS](../../Notify/docs/sms.md)
+>>>>>>> laraxot/dev
 
 ### Modulo Reporting
 - [Report](../Reporting/docs/reports.md)
@@ -271,8 +322,13 @@ new class extends Component {
 
 ### Modulo Gdpr
 - [Privacy](../Gdpr/docs/privacy.md)
+<<<<<<< HEAD
 - [Consensi](../Gdpr/docs/consents.md)
 - [Sicurezza](../Gdpr/docs/security.md)
+=======
+- [Consensi](../../Gdpr/docs/consents.md)
+- [Sicurezza](../../Gdpr/docs/security.md)
+>>>>>>> laraxot/dev
 
 ### Modulo Job
 - [Jobs](../Job/docs/jobs.md)

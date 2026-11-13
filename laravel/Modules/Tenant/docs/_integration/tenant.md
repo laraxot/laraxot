@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "tenant"
 module: "Tenant"
 type: concept
@@ -7,7 +9,8 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "tenant"
 related:
-  - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 # tenant
 

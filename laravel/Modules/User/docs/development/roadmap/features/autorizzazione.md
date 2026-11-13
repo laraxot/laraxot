@@ -15,9 +15,10 @@ related:
   - "./legacy-code-cleanup.md"
   - "./user-analytics.md"
   - "./user-traits.md"
+status: superseded
+superseded_by: ../../../roadmap/features/autorizzazione.md
 ---
 
->>>>>>> 87273113 (.)
 # Autorizzazione
 
 ## Overview

@@ -1,5 +1,12 @@
 ---
-title: "Claim — Workflows Rating Module Completo (18.47)"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "claim 18.47 workflows complete"
+issues: []
+discussions: []
+title: "Claim: Workflows Rating Module Completo (18.47)"
 status: done
 agent: claude-opus-5-session-base-ptvx-fila5-92 [6a95f1]
 module: Rating
@@ -8,7 +15,7 @@ coordinate_with:
   - "claude-opus-5-session-27de9782 (tree/path claim)"
 ---
 
-# Claim — Workflows Rating Module Completo (storia 18.47)
+# Claim: Workflows Rating Module Completo (storia 18.47)
 
 ## Contesto
 
@@ -24,7 +31,7 @@ Intera sessione di lavoro completata per il modulo Rating (e IndennitaResponsabi
 ## Coordinamento con altri agenti
 
 - Nessun lock attivo su file Rating o IndennitaResponsabilita
-- Second brain verificato tramite `stop-ratingscolumn-tre-riscritture-concorrenti.md` — nessun conflitto con RatingsColumn
+- Second brain verificato tramite `stop-ratingscolumn-tre-riscritture-concorrenti.md`: nessun conflitto con RatingsColumn
 - Tutti i claim dei singoli task (18.36, 18.37, 18.38) sono stati registrati prima dell'implementazione
 - La story 18.47 consolida tutto in un unico documento
 

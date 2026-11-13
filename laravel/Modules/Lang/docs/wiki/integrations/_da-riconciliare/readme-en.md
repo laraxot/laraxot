@@ -1,5 +1,7 @@
 ---
-title: "🌐 Lang — English presentation"
+issues: []
+discussions: []
+title: "🌐 Lang: English presentation"
 module: "Lang"
 type: concept
 tags: [ottimizzazioni, correzioni]
@@ -8,8 +10,10 @@ updated: 2026-07-14
 qmd: "ottimizzazioni correzioni"
 related:
   - "./italian-text-refined-audit-report.md"
+  - "../../../italian-text-refined-audit-report.md"
+status: draft
 ---
-# 🌐 Lang — English presentation
+# 🌐 Lang: English presentation
 
 [![Domain-i18n](https://img.shields.io/badge/Domain-i18n-5E35B1.svg)](#)
 [![Laravel 13](https://img.shields.io/badge/Laravel-12-red.svg)](https://laravel.com/)
@@ -22,7 +26,7 @@ related:
 [![<nome progetto> Platform](https://img.shields.io/badge/Platform-<nome progetto>-008758.svg)](#)
 [![Current Platform](https://img.shields.io/badge/Platform-progetto corrente-008758.svg)](#)
 
-> **Italian in UI, English in code.** Structured keys, no hardcoded `->label()` — i18n that scales across 20 modules.
+> **Italian in UI, English in code.** Structured keys, no hardcoded `->label()`: i18n that scales across 20 modules.
 
 ---
 
@@ -51,7 +55,7 @@ Centralizes translations and Filament/Livewire label conventions.
 
 Details matter: **every string in the right place**.
 
-Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
+Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5**: see [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
 
 ---
 
@@ -60,6 +64,7 @@ Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filamen
 | Language | Link |
 |----------|------|
 | 🇮🇹 Presentation | [../README.md](../README.md) |
+| 🇮🇹 Presentation | [../README.md](../../README.md) |
 | 🇬🇧 Business card | This file |
 | 📚 Technical wiki | [./](./) |
 

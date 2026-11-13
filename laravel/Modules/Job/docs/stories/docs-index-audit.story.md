@@ -1,4 +1,11 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs index audit.story"
+issues: []
+discussions: []
 id: story-docs-index-audit
 slug: docs-index-audit
 status: done
@@ -10,7 +17,7 @@ bmad_phase: dev
 module: Job
 ---
 
-# Docs index audit — modulo Job
+# Docs index audit: modulo Job
 
 Audit di `docs/` (517 file `.md`) e ricostruzione di `docs/index.md` come indice
 organizzato per argomento, senza cancellare/rinominare/spostare alcun file.

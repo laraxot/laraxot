@@ -12,9 +12,9 @@ related:
   - "./implementation.md"
   - "./translation-guidelines.md"
   - "./translationlines.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # EditUserWidget Documentation
 
 ## Overview
@@ -142,8 +142,8 @@ All widget text follows the expanded translation structure:
 * Translation system integration
 * File upload and image processing capabilities
 ## Related Documentation
-* [User Module Widget Structure](../widgets-structure-2.md)
->>>>>>> 87273113 (.)
+* [User Module Widget Structure](../widgets-structure.md)
+* [User Module Widget Structure](../widgets-structure-user.md)
 * [Widget Translation Guidelines](./translation-guidelines.md)
 * [Filament Widget Conventions](../../xot/docs/filament-widgets.md)
 * [Translation System Overview](../../xot/docs/translations.md)

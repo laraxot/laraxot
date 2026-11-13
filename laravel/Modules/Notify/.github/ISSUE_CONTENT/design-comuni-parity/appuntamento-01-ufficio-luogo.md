@@ -1,3 +1,14 @@
+---
+title: "appuntamento 01 ufficio luogo"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "appuntamento 01 ufficio luogo"
+issues: []
+discussions: []
+---
+
 # Converti pagina: Appuntamento - Luogo (appuntamento-01-ufficio-luogo.html)
 
 ## Obiettivo
@@ -18,7 +29,7 @@ Appointment step 1b: office location.
 - [ ] Create/update JSON content file: `config/.../content/pages/tests.appuntamento-01-ufficio-luogo.json`
 - [ ] Create/update Blade templates in `Themes/Sixteen/resources/views/components/blocks/`
 - [ ] Add missing CSS to `bootstrap-italia.css`
-- [ ] Run `npm run build && npm run copy`
+- [ ] Run `npm run build`
 - [ ] Verify structural match (component classes, data-element attributes)
 - [ ] Update comparison doc: `docs/visual-comparison/APPUNTAMENTO-01-UFFICIO-LUOGO-COMPARISON.md`
 - [ ] Update theme index: `docs/00-index.md`
@@ -38,4 +49,4 @@ Appointment step 1b: office location.
 - Il file .json contiene testi e immagini
 - Le blade contengono la struttura HTML
 - I CSS sono in `Themes/Sixteen/resources/css/bootstrap-italia.css`
-- Build: `cd Themes/Sixteen && npm run build && npm run copy`
+- Build: `cd Themes/Sixteen && npm run build`

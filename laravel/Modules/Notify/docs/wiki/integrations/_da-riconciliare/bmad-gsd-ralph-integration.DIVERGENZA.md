@@ -1,10 +1,15 @@
 ---
+qmd: "bmad gsd ralph integration.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: bmad-gsd-ralph-integration.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: bmad-gsd-ralph-integration.divergenza.md
 ---
 
 # Divergenza: `bmad-gsd-ralph-integration.md`

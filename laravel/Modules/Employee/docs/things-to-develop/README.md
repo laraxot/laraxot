@@ -1,3 +1,9 @@
+---
+title: "Employee - README"
+module: Employee
+bmad: true
+status: active
+---
 # Things to Develop - Modulo Employee
 
 [![Module](https://img.shields.io/badge/Module-Things to Develop - Modulo Employee-8B0000.svg)]()

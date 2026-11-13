@@ -1,10 +1,14 @@
 ---
+qmd: "filament 5 upgrade complete"
+issues: []
+discussions: []
 title: "Filament 5 Upgrade - COMPLETO ✅"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Filament 5 Upgrade - COMPLETO ✅

@@ -11,7 +11,6 @@ use Mockery\Expectation;
 use Mockery\LegacyMockInterface;
 use Mockery\MockInterface;
 use Modules\UI\Providers\UIServiceProvider;
-use Modules\UI\Tests\Support\EnsuresUiDatabaseSchema;
 use Modules\User\Models\User;
 use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
@@ -27,26 +26,17 @@ use function Safe\file_get_contents;
 abstract class TestCase extends XotBaseTestCase
 {
     use DatabaseTransactions;
-    use EnsuresUiDatabaseSchema;
 
     /**
-     * Restringe il tipo di ritorno unione di shouldReceive() per PHPStan.
+     * Expectation reale di un singolo metodo, con with()/andReturnUsing() tipizzati per PHPStan.
      *
-     * Viveva come funzione libera in tre file di test, ognuno con una guardia
-     * function_exists('expectMethod') che non funzionava: la funzione stava in un
-     * namespace, e function_exists senza namespace cerca quella globale. Il secondo
-     * file caricato faceva fallire l'intera suite con un "Cannot redeclare".
-     *
-     * Con un singolo metodo shouldReceive() restituisce una Expectation
-     * (il PHPDoc Mockery lo garantisce: `$methodNames is list{} ? HigherOrderMessage : Expectation`),
-     * che espone with()/andReturnUsing() ecc. — ExpectationInterface no.
+     * Metodo e non funzione libera: una funzione con lo stesso nome in tre file di test faceva
+     * fallire l'intera suite con "Cannot redeclare". Il corpo sta in XotBaseTestCase::singleExpectation()
+     * perche' shouldReceive() ritorna un CompositeExpectation, non l'Expectation che il suo PHPDoc dichiara.
      */
     public static function expectMethod(LegacyMockInterface|MockInterface $mock, string $method): Expectation
     {
-        /** @var Expectation $expectation */
-        $expectation = $mock->shouldReceive($method);
-
-        return $expectation;
+        return self::singleExpectation($mock, $method);
     }
 
     /** @var list<string> */
@@ -69,8 +59,6 @@ abstract class TestCase extends XotBaseTestCase
         $this->prepareSharedSqliteForTesting();
 
         parent::setUp();
-
-        $this->ensureUiSchema();
 
         config(['auth.providers.users.model' => User::class]);
 

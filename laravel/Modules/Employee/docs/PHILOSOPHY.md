@@ -1,3 +1,9 @@
+---
+title: "Employee - PHILOSOPHY"
+module: Employee
+bmad: true
+status: active
+---
 # PHILOSOPHY — Employee Module
 
 ## RELIGIONE

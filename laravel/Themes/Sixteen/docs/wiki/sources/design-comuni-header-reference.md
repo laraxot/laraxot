@@ -1,4 +1,7 @@
 ---
+qmd: "design comuni header reference"
+issues: []
+discussions: []
 title: "Design Comuni Header Source Reference"
 type: source
 sources:
@@ -14,7 +17,8 @@ related:
   - "../concepts/design-comuni-header-green-navbar-rule.md"
   - "../concepts/bootstrap-tailwind-mapping.md"
   - "../comparisons/segnalazione-01-privacy-design-comuni-vs-local-wizard.md"
-  - "../../../../docs/wiki/concepts/header-section-owner-rule.md"
+  - "../../../../../../docs/wiki/concepts/header-section-owner-rule.md"
+status: draft
 ---
 
 # Design Comuni Header Structure — Source Reference

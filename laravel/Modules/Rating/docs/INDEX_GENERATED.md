@@ -1,3 +1,15 @@
+---
+title: "INDEX GENERATED"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "INDEX GENERATED"
+issues: []
+discussions: []
+status: draft
+---
+
 # Rating Module Documentation Index
 
 **Stats**: 151 files | 18 categories | Last update: 2026-07-28 11:34
@@ -13,9 +25,9 @@
 
 The root level contains strategic documents, analyses, and consolidated guides:
 
-- [00-INDEX.md](00-INDEX.md)
+- [00-INDEX.md](00-index.md)
 - [00-index.md](00-index.md)
-- [INDEX.md](INDEX.md)
+- [INDEX.md](index.md)
 - [index.md](index.md)
 - [README.md](README.md)
 - [BEST_PRACTICES.md](BEST_PRACTICES.md)
@@ -63,7 +75,6 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [configuration.md](configuration.md)
 - [conflict-resolution.md](conflict-resolution.md)
 - [contracts-naming.md](contracts-naming.md)
-- [copilot-redundancy-audit-2026-05-25.md](copilot-redundancy-audit-2026-05-25.md)
 - [copilot-redundancy-audit.md](copilot-redundancy-audit.md)
 - [core-functionality.md](core-functionality.md)
 - [cyclomatic-complexity-report.md](cyclomatic-complexity-report.md)
@@ -87,7 +98,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [migration-patterns.md](migration-patterns.md)
 - [multi-org-sync-laraxot-provtv.md](multi-org-sync-laraxot-provtv.md)
 - [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md)
-- [phpstan-fixes-2026-01.md](phpstan-fixes-2026-01.md)
+- [phpstan-fixes-2026-01.md](phpstan-fixes-modulo-rating.md)
 - [phpstan-fixes-analysis.md](phpstan-fixes-analysis.md)
 - [phpstan-fixes.md](phpstan-fixes.md)
 - [ponytail-audit-over-engineering.md](ponytail-audit-over-engineering.md)
@@ -99,7 +110,7 @@ The root level contains strategic documents, analyses, and consolidated guides:
 - [product-strategy.md](product-strategy.md)
 - [rating-architecture.md](rating-architecture.md)
 - [readme-en.md](readme-en.md)
-- [redundancy-audit-2026-05-21.md](redundancy-audit-2026-05-21.md)
+- [redundancy-audit-rating.md](redundancy-audit-rating.md)
 - [redundancy-audit.md](redundancy-audit.md)
 - [redundancy-report.md](redundancy-report.md)
 - [release-marketing-standard.md](release-marketing-standard.md)
@@ -133,7 +144,7 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [overview.md](wiki/overview.md)
 
 **Concepts** (14 files)
-  - [INDEX.md](wiki/concepts/INDEX.md)
+  - [INDEX.md](wiki/concepts/index.md)
   - [index.md](wiki/concepts/index.md)
   - [composer-root-minimal-nwidart.md](wiki/concepts/composer-root-minimal-nwidart.md)
   - [context-mode-rating-discipline.md](wiki/concepts/context-mode-rating-discipline.md)
@@ -155,7 +166,7 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [source.md](wiki/_templates/source.md)
 
 **Rules** (2 files)
-  - [INDEX.md](wiki/rules/INDEX.md)
+  - [INDEX.md](wiki/rules/index.md)
   - [index.md](wiki/rules/index.md)
   - [no-rm-no-archive-use-old-suffix.md](wiki/rules/no-rm-no-archive-use-old-suffix.md)
 
@@ -164,11 +175,11 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [phpstan-generic-limitations.md](wiki/troubleshooting/phpstan-generic-limitations.md)
 
 **Other** (11 files)
-  - [skills/INDEX.md](wiki/skills/INDEX.md)
+  - [skills/INDEX.md](wiki/skills/index.md)
   - [skills/index.md](wiki/skills/index.md)
-  - [commands/INDEX.md](wiki/commands/INDEX.md)
+  - [commands/INDEX.md](wiki/commands/index.md)
   - [commands/index.md](wiki/commands/index.md)
-  - [memories/INDEX.md](wiki/memories/INDEX.md)
+  - [memories/INDEX.md](wiki/memories/index.md)
   - [memories/index.md](wiki/memories/index.md)
   - [how-to/gitmodules-sync-session.md](wiki/how-to/gitmodules-sync-session.md)
   - [redundancy/duplicate-ratings-table-migrations.md](wiki/redundancy/duplicate-ratings-table-migrations.md)
@@ -217,9 +228,9 @@ Machine learning and documentation knowledge base:
 
 Consolidated root-level markdown documentation:
 
-- [changelog-1.md](root-md-files/changelog-1.md)
+- [changelog-1.md](raw/root-import/changelog-1.md)
 - [changelog.md](root-md-files/changelog.md)
-- [license-1.md](root-md-files/license-1.md)
+- [license-1.md](raw/root-import/license-1.md)
 - [license.md](root-md-files/license.md)
 
 ### Archive (3 files)
@@ -238,14 +249,13 @@ Additional archived content:
 - [license.md](archived/license.md)
 
 ---
-
 ## Recently Updated
 
 **Last 20 files by modification date**
 
 | Date | File | Category |
 |------|------|----------|
-| 2026-07-28 | [00-INDEX.md](00-INDEX.md) | root |
+| 2026-07-28 | [00-INDEX.md](00-index.md) | root |
 | 2026-07-28 | [00-index.md](00-index.md) | root |
 | 2026-07-28 | [README.md](README.md) | root |
 | 2026-07-28 | [best-practices.md](best-practices.md) | root |

@@ -8,13 +8,13 @@ declare(strict_types=1);
     <div class="bg-white rounded-lg shadow-sm border p-6">
         <div class="flex items-center justify-between">
             <div>
-                <h2 class="text-2xl font-bold text-gray-900">Work Hours Dashboard</h2>
-                <p class="text-gray-600">{{ $employee?->full_name ?? 'Employee' }} - Overview</p>
+                <h2 class="text-2xl font-bold text-gray-900">{{ __('employee::workhour.pages.dashboard.title') }}</h2>
+                <p class="text-gray-600">{{ $employee?->full_name ?? __('employee::workhour.fields.employee_id.label') }} - {{ __('employee::workhour.dashboard.overview.label') }}</p>
             </div>
             <div class="flex items-center space-x-4">
                 <select wire:model="selectedPeriod" class="px-3 py-2 border border-gray-300 rounded-md text-sm focus:ring-blue-500 focus:border-blue-500">
-                    <option value="week">This Week</option>
-                    <option value="month">This Month</option>
+                    <option value="week">{{ __('employee::workhour.tabs.this_week') }}</option>
+                    <option value="month">{{ __('employee::workhour.dashboard.period_month.label') }}</option>
                 </select>
             </div>
         </div>
@@ -33,7 +33,7 @@ declare(strict_types=1);
                     </div>
                 </div>
                 <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-500">Today</p>
+                    <p class="text-sm font-medium text-gray-500">{{ __('employee::workhour.widgets.stats.today.label') }}</p>
                     <p class="text-2xl font-semibold text-gray-900">{{ $this->formatHours($todayHours) }}</p>
                 </div>
             </div>
@@ -50,7 +50,7 @@ declare(strict_types=1);
                     </div>
                 </div>
                 <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-500">This Week</p>
+                    <p class="text-sm font-medium text-gray-500">{{ __('employee::workhour.widgets.stats.this_week.label') }}</p>
                     <p class="text-2xl font-semibold text-gray-900">{{ $this->formatHours($weekHours) }}</p>
                 </div>
             </div>
@@ -67,7 +67,7 @@ declare(strict_types=1);
                     </div>
                 </div>
                 <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-500">Avg/Day</p>
+                    <p class="text-sm font-medium text-gray-500">{{ __('employee::workhour.widgets.stats.avg_day.label') }}</p>
                     <p class="text-2xl font-semibold text-gray-900">{{ $this->getAverageHoursPerDay() }}</p>
                 </div>
             </div>
@@ -84,7 +84,7 @@ declare(strict_types=1);
                     </div>
                 </div>
                 <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-500">Work Days</p>
+                    <p class="text-sm font-medium text-gray-500">{{ __('employee::workhour.widgets.stats.work_days.label') }}</p>
                     <p class="text-2xl font-semibold text-gray-900">{{ $this->getTotalWorkDays() }}</p>
                 </div>
             </div>
@@ -94,8 +94,8 @@ declare(strict_types=1);
     <!-- Progress Bar -->
     <div class="bg-white rounded-lg shadow-sm border p-6">
         <div class="flex items-center justify-between mb-2">
-            <h3 class="text-lg font-semibold text-gray-900">Weekly Progress</h3>
-            <span class="text-sm text-gray-500">{{ $this->getProgressPercentage() }}% of 40h target</span>
+            <h3 class="text-lg font-semibold text-gray-900">{{ __('employee::workhour.widgets.progress.weekly_progress') }}</h3>
+            <span class="text-sm text-gray-500">{{ __('employee::workhour.dashboard.progress_of_target.label', ['percentage' => $this->getProgressPercentage(), 'target' => '40h']) }}</span>
         </div>
         <div class="w-full bg-gray-200 rounded-full h-3">
             <div class="h-3 rounded-full transition-all duration-300" 
@@ -112,7 +112,7 @@ declare(strict_types=1);
         <!-- Weekly Breakdown -->
         @if($selectedPeriod === 'week')
             <div class="bg-white rounded-lg shadow-sm border p-6">
-                <h3 class="text-lg font-semibold text-gray-900 mb-4">Daily Breakdown</h3>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ __('employee::workhour.widgets.breakdown.daily_breakdown') }}</h3>
                 <div class="space-y-3">
                     @foreach($weeklyStats as $day)
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
@@ -134,12 +134,12 @@ declare(strict_types=1);
             </div>
         @else
             <div class="bg-white rounded-lg shadow-sm border p-6">
-                <h3 class="text-lg font-semibold text-gray-900 mb-4">Weekly Breakdown</h3>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ __('employee::workhour.widgets.breakdown.weekly_breakdown') }}</h3>
                 <div class="space-y-3">
                     @foreach($monthlyStats as $week)
                         <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                             <div class="flex items-center space-x-3">
-                                <span class="text-sm font-medium text-gray-900">Week {{ $week['week'] }}</span>
+                                <span class="text-sm font-medium text-gray-900">{{ __('employee::workhour.dashboard.week_number.label', ['number' => $week['week']]) }}</span>
                                 <span class="text-sm text-gray-600">{{ $week['start_date'] }} - {{ $week['end_date'] }}</span>
                             </div>
                             <div class="flex items-center space-x-2">
@@ -158,13 +158,13 @@ declare(strict_types=1);
 
         <!-- Recent Entries -->
         <div class="bg-white rounded-lg shadow-sm border p-6">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">Recent Entries</h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ __('employee::workhour.widgets.recent_entries.title') }}</h3>
             @if(empty($recentEntries))
                 <div class="text-center py-8 text-gray-500">
                     <svg class="w-12 h-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <p>No recent entries</p>
+                    <p>{{ __('employee::workhour.widgets.recent_entries.empty_state') }}</p>
                 </div>
             @else
                 <div class="space-y-3 max-h-80 overflow-y-auto">
@@ -193,7 +193,7 @@ declare(strict_types=1);
 
     <!-- Quick Actions -->
     <div class="bg-white rounded-lg shadow-sm border p-6">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ __('employee::workhour.quick_actions.title') }}</h3>
         <div class="flex flex-wrap gap-3">
             <button 
                 wire:click="refreshStats"
@@ -201,7 +201,7 @@ declare(strict_types=1);
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                 </svg>
-                Refresh Data
+                {{ __('employee::workhour.quick_actions.refresh_data') }}
             </button>
             
             <a href="{{ \Modules\Employee\Filament\Resources\WorkHourResource::getUrl('timeclock') }}" 
@@ -209,7 +209,7 @@ declare(strict_types=1);
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                Time Clock
+                {{ __('employee::workhour.quick_actions.time_clock') }}
             </a>
             
             <a href="{{ \Modules\Employee\Filament\Resources\WorkHourResource::getUrl('index') }}" 
@@ -217,7 +217,7 @@ declare(strict_types=1);
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                 </svg>
-                View All Entries
+                {{ __('employee::workhour.quick_actions.view_all') }}
             </a>
         </div>
     </div>

@@ -8,14 +8,23 @@ qmd: "phpinsights-errors phpinsights errors"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
   - "./00-index.md"
-  - "./2fa-guide.md"
+  - "./00-index.md"
+  - "../../../2fa-guide.md"
   - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "../../../accessor-delegation-pattern.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "../../../00-index-indice-documentazione-modulo-user.md"
+  - "./00-index.md"
+  - "../../../2fa-guide.md"
+  - "./2fa.md"
+  - "../../../accessor-delegation-pattern.md"
+  - "../../../actions-path-convention.md"
+  - "../../../actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: superseded
+superseded_by: ../../../phpinsights-errors.md
 ---
 
 
@@ -380,6 +389,4 @@ Traits ......................................................... 2.9 %
 
  [ERROR] The architecture score is too low                                                              
 
- [ERROR] The style score is too low                                                                     
-
-
+ [ERROR] The style score is too low

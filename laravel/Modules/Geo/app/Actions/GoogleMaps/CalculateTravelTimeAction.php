@@ -9,11 +9,11 @@ use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Datas\Routing\TravelTimeData;
-
-use function Safe\json_decode;
-
+use Modules\Geo\Infrastructure\Config\GeoApiEndpoints;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+
+use function Safe\json_decode;
 
 /**
  * Action per calcolare il tempo di percorrenza tra due punti tramite Google Maps.
@@ -25,18 +25,17 @@ class CalculateTravelTimeAction
 {
     use QueueableAction;
 
-    private const string API_URL = 'https://maps.googleapis.com/maps/api/distancematrix/json';
+    private const string API_URL = GeoApiEndpoints::GOOGLE_DISTANCE_MATRIX;
 
     public function __construct(
         private readonly Client $client,
-    ) {
-    }
+    ) {}
 
     /**
      * Calcola il tempo di percorrenza tra due punti.
      *
      * @throws \InvalidArgumentException Se i dati di input non sono validi
-     * @throws \RuntimeException         Se la chiave API non è configurata o la richiesta fallisce
+     * @throws \RuntimeException Se la chiave API non è configurata o la richiesta fallisce
      */
     public function execute(LocationData $origin, LocationData $destination): TravelTimeData
     {
@@ -61,12 +60,14 @@ class CalculateTravelTimeAction
      * Valida i dati di input.
      *
      * @throws \InvalidArgumentException Se i dati di input non sono validi
-     * @throws \RuntimeException         Se la chiave API non è configurata o i dati non sono validi
+     * @throws \RuntimeException Se la chiave API non è configurata o i dati non sono validi
      */
     private function validateInput(LocationData $origin, LocationData $destination): void
     {
         $apiKey = config('services.google.maps_api_key');
-        Assert::notEmpty($apiKey, 'Google Maps API key not configured');
+        if (! \is_string($apiKey) || '' === $apiKey) {
+            throw new \RuntimeException('Google Maps API key not configured');
+        }
         Assert::notSame(
             [$origin->latitude, $origin->longitude],
             [$destination->latitude, $destination->longitude],
@@ -102,39 +103,69 @@ class CalculateTravelTimeAction
      */
     private function parseResponse(string $response): TravelTimeData
     {
-        /** @var array{
-         *     rows: array{
-         *         0: array{
-         *             elements: array{
-         *                 0: array{
-         *                     duration: array{value: int, text: string},
-         *                     duration_in_traffic?: array{value: int, text: string},
-         *                     distance: array{value: int, text: string},
-         *                     status: string
-         *                 }
-         *             }
-         *         }
-         *     },
-         *     status: string
-         * } $data */
         $data = json_decode($response, true);
 
-        if (($data['status']) !== 'OK') {
+<<<<<<< .merge_file_j6dVdl
+        if (! \is_array($data) || ! \is_string($data['status'] ?? null)) {
+            return TravelTimeData::error('INVALID_RESPONSE');
+        }
+
+        /** @var string $status */
+        $status = $data['status'];
+        if ('OK' !== $status) {
+            return TravelTimeData::error($status);
+        }
+
+=======
+<<<<<<< .merge_file_6f9sEl
+        if ($data['status'] !== 'OK') {
             return TravelTimeData::error($data['status']);
         }
 
         $element = $data['rows'][0]['elements'][0];
-        if (! $element || ($element['status']) !== 'OK') {
+        if (! $element || $element['status'] !== 'OK') {
+=======
+        if (! \is_array($data) || ! \is_string($data['status'] ?? null)) {
+            return TravelTimeData::error('INVALID_RESPONSE');
+        }
+
+        /** @var string $status */
+        $status = $data['status'];
+        if ('OK' !== $status) {
+            return TravelTimeData::error($status);
+        }
+
+>>>>>>> .merge_file_AJUf8V
+        $rows = $data['rows'] ?? null;
+        $firstRow = \is_array($rows) ? ($rows[0] ?? null) : null;
+        $elements = \is_array($firstRow) ? ($firstRow['elements'] ?? null) : null;
+        $element = \is_array($elements) ? ($elements[0] ?? null) : null;
+
+        if (! \is_array($element) || ! \is_string($element['status'] ?? null)) {
+            return TravelTimeData::error('INVALID_RESPONSE');
+        }
+
+        if ('OK' !== $element['status']) {
+<<<<<<< .merge_file_j6dVdl
+=======
+>>>>>>> .merge_file_7pIkDx
+>>>>>>> .merge_file_AJUf8V
             return TravelTimeData::error($element['status']);
         }
 
+        /** @var array{
+         *     duration: array{value: int, text: string},
+         *     duration_in_traffic?: array{value: int, text: string},
+         *     distance: array{value: int, text: string},
+         *     status: string
+         * } $element */
         return new TravelTimeData(
             duration_seconds: (int) $element['duration']['value'],
             duration_in_traffic_seconds: (int) ($element['duration_in_traffic']['value'] ?? $element['duration']['value']),
             distance_meters: (int) $element['distance']['value'],
             formatted_duration: (string) $element['duration']['text'],
             formatted_distance: (string) $element['distance']['text'],
-            status: (string) $data['status'],
+            status: $status,
         );
     }
 }

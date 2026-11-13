@@ -1,3 +1,9 @@
+---
+title: "Employee - README"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Dashboard Widgets Documentation
 
 [![Module](https://img.shields.io/badge/Module-Employee Dashboard Widgets Documentation-8B0000.svg)]()

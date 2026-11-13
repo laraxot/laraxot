@@ -1,3 +1,14 @@
+---
+title: "github discussion sync remote repo"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "github discussion sync remote repo"
+issues: []
+discussions: []
+---
+
 # Sync Remote Repo Script - Dual Mode Implementation Complete
 
 **Date**: 2026-03-13  
@@ -7,6 +18,14 @@
 
 ---
 
+title: "github discussion sync remote repo"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "github discussion sync remote repo"
+issues: []
+discussions: []
 ## Test Results (2026-03-13)
 
 ### ✅ CLI Mode Test - PASSED

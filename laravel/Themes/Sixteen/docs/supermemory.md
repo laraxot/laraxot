@@ -1,3 +1,15 @@
+---
+title: "supermemory"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "supermemory"
+issues: []
+discussions: []
+status: draft
+---
+
 # SuperMemory Integration
 
 **Service**: SuperMemory AI - Persistent Memory Infrastructure for AI Agents  

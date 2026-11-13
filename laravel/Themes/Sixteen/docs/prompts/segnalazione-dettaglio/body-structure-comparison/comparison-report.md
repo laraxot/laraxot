@@ -1,3 +1,15 @@
+---
+title: "comparison report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "comparison report"
+issues: []
+discussions: []
+status: draft
+---
+
 # HTML Body Structure Comparison: segnalazione-dettaglio
 
 - Reference: `https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-dettaglio.html`

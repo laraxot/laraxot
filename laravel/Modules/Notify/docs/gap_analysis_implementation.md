@@ -1,3 +1,15 @@
+---
+title: "gap analysis implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "gap analysis implementation"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🔍 FIXCITY - GAP ANALYSIS & IMPLEMENTATION PLAN
 
 **Data**: 2025-10-01  
@@ -5,7 +17,6 @@
 **Status**: 🚀 READY TO IMPLEMENT  
 
 ---
-
 ## 🎯 SCOPO DEL PROGETTO
 
 ### Business Goal

@@ -1,5 +1,8 @@
 ---
-title: "formFieldLabel / ratingXlsValuePath / RatingData::getXlsFields — verdetto"
+tags: [documentation]
+issues: []
+discussions: []
+title: "formFieldLabel / ratingXlsValuePath / RatingData::getXlsFields: verdetto"
 type: architecture
 module: Rating
 status: accepted
@@ -15,16 +18,16 @@ related:
   - ../../../../IndennitaResponsabilita/docs/prompts/04.md
 ---
 
-> **AMENDED 2026-09-23** — il verdetto sotto (~78%, "restano nel trait") è stato
+> **AMENDED 2026-09-23**: il verdetto sotto (~78%, "restano nel trait") è stato
 > **ribaltato** da correzione esplicita dell'utente in `04.md` righe 66-79:
 > chiamare `TraitName::staticMethod()` va evitato "come la peste" a prescindere dal
-> dominio del metodo — i due helper sono spostati in `RatingData` con type hint
+> dominio del metodo: i due helper sono spostati in `RatingData` con type hint
 > `RatingContract` (non `BaseRating`). Vedi
 > [story 5.232](../stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md)
 > per il verdetto finale e la contro-analisi dei punti 1-3 sotto. Documento
 > mantenuto come storico del dibattito, non più normativo.
 
-# Verdetto — dove vivono label, path e catalogo XLS (storico, vedi nota sopra)
+# Verdetto: dove vivono label, path e catalogo XLS (storico, vedi nota sopra)
 
 Prompt utente (`04.md` 35–64): spostare `formFieldLabel` + `ratingXlsValuePath`
 in `RatingData`; Resource con `...RatingData::getXlsFields($where)`.
@@ -34,10 +37,10 @@ in `RatingData`; Resource con `...RatingData::getXlsFields($where)`.
 | Claim | Verifica |
 |-------|----------|
 | «RatingData è il posto naturale» | Debole: file già **due** concetti (blocco UI + migration); docblock lo ammette |
-| «Il trait è solo relazioni» | Falso oggi: path, label, form schema, sync, export — god-object |
+| «Il trait è solo relazioni» | Falso oggi: path, label, form schema, sync, export: god-object |
 | «Spostare i 2 helper risolve il god-object» | Parziale: 2 metodi su ~700 righe; non tocca la radice |
 | «User API `RatingData::getXlsFields`» | Valida come **facade catalogo**; invalida se include colonne host IR |
-| «getClassName torna alias» (5.228) | **Falso** — torna FQCN `Modules\<Mod>\Models\Rating` |
+| «getClassName torna alias» (5.228) | **Falso**: torna FQCN `Modules\<Mod>\Models\Rating` |
 
 ## Debate (agent paralleli + story 5.179)
 
@@ -51,10 +54,10 @@ in `RatingData`; Resource con `...RatingData::getXlsFields($where)`.
 
 ### Perché NON spostare i 2 helper in RatingData
 
-1. **`formFieldLabel`** — presentazione entità *e* form Filament (validationAttribute,
+1. **`formFieldLabel`**: presentazione entità *e* form Filament (validationAttribute,
    DecoratesRatingFormFields). Non è “dato export”. Miglior futuro: accessor
    `BaseRating` (`form_field_label`), non DTO Spatie.
-2. **`ratingXlsValuePath`** — codifica `ratings_by_id.*`, layout **host** (hydration
+2. **`ratingXlsValuePath`**: codifica `ratings_by_id.*`, layout **host** (hydration
    trait). Un DTO entità che conosce la shape array dell’host = leak inverso.
 3. Spostare i dipendenti di `ratingXlsFields` (trait) in Data → dipendenza
    trait↔Data o duplicazione.
@@ -72,7 +75,7 @@ Diffetti rilevati (5.179 §9):
 ### Decisione accettata (allinea preferenza UX utente + confini)
 
 ```php
-// Resource IR — API preferita utente
+// Resource IR: API preferita utente
 $where = ['anno' => $anno, 'type' => $type];
 return [
     ...$fields,                          // SOLO colonne host (Resource)

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Filament\Resources\LogResource\Pages;
 
+<<<<<<< HEAD
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkAction;
@@ -11,6 +12,8 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Filters\SelectFilter;
+=======
+>>>>>>> laraxot/dev
 use Modules\Xot\Filament\Resources\LogResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
@@ -20,6 +23,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 class ListLogs extends XotBaseListRecords
 {
     protected static string $resource = LogResource::class;
+<<<<<<< HEAD
 
     #[\Override]
     public function getTableFilters(): array
@@ -60,4 +64,6 @@ class ListLogs extends XotBaseListRecords
             'delete' => DeleteBulkAction::make(),
         ];
     }
+=======
+>>>>>>> laraxot/dev
 }

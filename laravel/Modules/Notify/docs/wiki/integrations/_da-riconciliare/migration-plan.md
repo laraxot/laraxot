@@ -1,10 +1,14 @@
 ---
+qmd: "migration plan"
+issues: []
+discussions: []
 title: "Documentation Agnostic Migration Plan"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Documentation Agnostic Migration Plan

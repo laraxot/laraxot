@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Laravel-FFMpeg – API Reference Completa"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "laravel ffmpeg api reference"
 related:
   - "./webm.md"
+status: draft
 ---
 # Laravel-FFMpeg – API Reference Completa
 

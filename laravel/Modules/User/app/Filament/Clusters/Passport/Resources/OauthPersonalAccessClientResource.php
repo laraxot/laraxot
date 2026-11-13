@@ -14,6 +14,7 @@ use Filament\Resources\Pages\PageRegistration;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\User\Filament\Clusters\Passport;
 use Modules\User\Filament\Clusters\Passport\Resources\OauthPersonalAccessClientResource\Pages\CreateOauthPersonalAccessClient;
 use Modules\User\Filament\Clusters\Passport\Resources\OauthPersonalAccessClientResource\Pages\EditOauthPersonalAccessClient;
@@ -39,9 +40,8 @@ final class OauthPersonalAccessClientResource extends XotBaseResource
     public static function getTableColumns(): array
     {
         return [
-            'id' => Tables\Columns\TextColumn::make('id')
+            'id' => IDColumn::make('id')
                 ->label('ID')
-                ->sortable()
                 ->searchable(),
             'client' => Tables\Columns\TextColumn::make('client.name')
                 ->label('Client')

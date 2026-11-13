@@ -39,14 +39,22 @@ declare(strict_types=1);
             class="px-3 py-1 text-sm rounded-md"
             :class="autoScroll ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-300'"
         >
+<<<<<<< HEAD
             Auto-scroll: <span x-text="autoScroll ? 'ON' : 'OFF'"></span>
+=======
+            {{ __('xot::terminal.actions.auto_scroll.label') }}: <span x-text="autoScroll ? 'ON' : 'OFF'"></span>
+>>>>>>> laraxot/dev
         </button>
         
         <button
             @click="$refs.terminal.scrollTop = $refs.terminal.scrollHeight"
             class="px-3 py-1 text-sm bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600"
         >
+<<<<<<< HEAD
             Scroll to Bottom
+=======
+            {{ __('xot::terminal.actions.scroll_to_bottom.label') }}
+>>>>>>> laraxot/dev
         </button>
     </div>
 </div>

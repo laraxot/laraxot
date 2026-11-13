@@ -12,9 +12,9 @@ related:
   - "./edit-user-widget.md"
   - "./registration-widget-fileupload.md"
   - "./registration-widget.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # RegistrationWidget FileUpload Error Fix
 
 ## Problema Identificato

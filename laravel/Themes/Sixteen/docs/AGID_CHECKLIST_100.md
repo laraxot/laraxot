@@ -1,3 +1,16 @@
+---
+title: "AGID CHECKLIST 100"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "AGID CHECKLIST 100"
+issues: []
+discussions: []
+status: superseded
+superseded_by: agid-checklist-compliance.md
+---
+
 # ✅ AGID COMPLIANCE - CHECKLIST 100%
 
 **Versione**: 1.0  
@@ -6,7 +19,6 @@
 **Status**: 🎯 90% → 100%  
 
 ---
-
 ## 🎯 OBIETTIVO
 
 Raggiungere il 100% di compliance con le linee guida AGID per l'accessibilità dei siti web della Pubblica Amministrazione.

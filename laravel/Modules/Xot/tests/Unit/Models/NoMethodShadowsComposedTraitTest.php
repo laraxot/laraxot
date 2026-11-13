@@ -136,12 +136,23 @@ function methodsShadowingTraits(): array
 }
 
 /**
+<<<<<<< HEAD
  * Tetto misurato il 2026-09-08: 2.765 metodi in 120 file di modello. È debito
+=======
+ * Tetto misurato il 2026-10-19: 3.052 metodi in 120 file di modello. Il passaggio
+ * dei model ad albero al trait vendor diretto espone anche i metodi composti dal
+ * vendor alla guardia; il nuovo tetto è quindi il baseline verificato dopo la
+ * rimozione del wrapper.
+>>>>>>> laraxot/dev
  * storico — `Parental\HasParent`, `Updater`, `HasXotFactory` e altri — non un
  * bersaglio raggiungibile in una sessione. La guardia non pretende zero: impedisce
  * che il numero **salga**, che è la parte applicabile subito.
  */
+<<<<<<< HEAD
 const TRAIT_SHADOWING_BASELINE = 2765;
+=======
+const TRAIT_SHADOWING_BASELINE = 3052;
+>>>>>>> laraxot/dev
 
 test('nessun metodo nuovo oscura un trait composto', function (): void {
     $offenders = methodsShadowingTraits();

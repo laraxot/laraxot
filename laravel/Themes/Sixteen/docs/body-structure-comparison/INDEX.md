@@ -1,3 +1,15 @@
+---
+title: "INDEX"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "INDEX"
+issues: []
+discussions: []
+status: draft
+---
+
 # Body Structure Comparison
 
 Canonical output area for HTML body structure comparisons between Design Comuni reference pages and Sixteen theme implementations.
@@ -16,7 +28,7 @@ Artifacts in [`./segnalazione-01-privacy/`](./segnalazione-01-privacy/):
 - [`report.md`](./segnalazione-01-privacy/report.md) — Detailed comparison report
 - [`reference.html`](./segnalazione-01-privacy/reference.html) — Reference HTML (cleaned)
 - [`local.html`](./segnalazione-01-privacy/local.html) — Local HTML (cleaned)
-- Full output: [`../../prompts/segnalazione-01-privacy/body-structure-comparison/`](../../prompts/segnalazione-01-privacy/body-structure-comparison/)
+- Full output: [`../../prompts/segnalazione-01-privacy/body-structure-comparison/`](../prompts/segnalazione-01-privacy/body-structure-comparison)
 
 ### ticket-list
 
@@ -47,8 +59,8 @@ Artifacts in [`./segnalazione-dettaglio/`](./segnalazione-dettaglio/):
 **Parity Score: TBD%** (pending comparison)
 
 Artifacts in [`./segnalazione-02-dati/`](./segnalazione-02-dati/) *(to be generated)*:
-- Reference HTML: [`../../prompts/segnalazione-02-dati/reference_segnalazione-02-dati.html`](../../prompts/segnalazione-02-dati/reference_segnalazione-02-dati.html)
-- Analysis: [`../../prompts/segnalazione-02-dati/html-parity-analysis.md`](../../prompts/segnalazione-02-dati/html-parity-analysis.md)
+- Reference HTML: [`../../prompts/segnalazione-02-dati/reference_segnalazione-02-dati.html`](../prompts/segnalazione-02-dati/reference_segnalazione-02-dati.html)
+- Analysis: [`../../prompts/segnalazione-02-dati/html-parity-analysis.md`](../prompts/segnalazione-02-dati/html-parity-analysis.md)
 
 Run: `bashscripts/html/html-structure-compare.sh segnalazione-02-dati`
 
@@ -61,12 +73,12 @@ Agnostic tooling lives in `bashscripts`:
 
 ## Project Bridge
 
-- **Root bridge**: [`docs/html-structure-comparison.md`](../../../docs/html-structure-comparison.md)
-- **Theme docs index**: [`../00-index.md`](../00-index.md)
+- **Root bridge**: [`docs/html-structure-comparison.md`](../../../../../docs/html-structure-comparison.md)
+- **Theme docs index**: [`../00-index.md`](../00-INDEX.md)
 
 ## Governance
 
 - `bashscripts` stays reusable and project-agnostic.
 - Theme-specific outputs stay under `laravel/Themes/Sixteen/docs/...`.
 - Source HTML snapshots go to [`../prompts/<page>/`](../prompts/).
-- The root bridge note for this repo lives in [`docs/html-structure-comparison.md`](../../../docs/html-structure-comparison.md).
+- The root bridge note for this repo lives in [`docs/html-structure-comparison.md`](../../../../../docs/html-structure-comparison.md).

@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "regexp"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "regexp xot"
+---
+>>>>>>> laraxot/dev
 # regexp
 
 <!-- Contenuto migrato da _docs/regexp.txt -->

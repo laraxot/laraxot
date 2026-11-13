@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Laravel XOT Architecture Documentation"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "laravel xot architecture documentation xot"
+---
+>>>>>>> laraxot/dev
 # Laravel XOT Architecture Documentation
 
 ## Overview
@@ -3557,7 +3568,11 @@ cd laravel/Themes/Sixteen
 yarn install
 
 # Build e copia
+<<<<<<< HEAD
 yarn run build && yarn run copy
+=======
+yarn run build   # asset serviti via symlink: niente copy
+>>>>>>> laraxot/dev
 ```
 
 ## 2. Importazione CSS
@@ -3643,7 +3658,11 @@ yarn run build && yarn run copy
    {
        "scripts": {
            "build": "vite build",
+<<<<<<< HEAD
            "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
+=======
+           "_note": "niente script copy: public_html/themes/<Tema> e' un symlink (xot:theme-link)"
+>>>>>>> laraxot/dev
        }
    }
    ```
@@ -3663,7 +3682,11 @@ yarn run build && yarn run copy
    yarn run dev
 
    # Production + Copy
+<<<<<<< HEAD
    yarn run build && yarn run copy
+=======
+   yarn run build   # asset serviti via symlink: niente copy
+>>>>>>> laraxot/dev
    ```
 
 4. **Verifica Installazione**:
@@ -3756,7 +3779,11 @@ yarn install
 yarn cache clean
 
 # Build e copia
+<<<<<<< HEAD
 yarn run build && yarn run copy
+=======
+yarn run build   # asset serviti via symlink: niente copy
+>>>>>>> laraxot/dev
 ```
 
 ### 2. Verifica Build
@@ -3800,7 +3827,11 @@ ls public_html/themes/Sixteen/dist
    {
        "scripts": {
            "build": "vite build",
+<<<<<<< HEAD
            "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
+=======
+           "_note": "niente script copy: public_html/themes/<Tema> e' un symlink (xot:theme-link)"
+>>>>>>> laraxot/dev
        }
    }
    ```
@@ -6261,7 +6292,11 @@ cd laravel/Themes/Sixteen
 yarn install
 
 # Build e copia
+<<<<<<< HEAD
 yarn run build && yarn run copy
+=======
+yarn run build   # asset serviti via symlink: niente copy
+>>>>>>> laraxot/dev
 ```
 
 ## 2. Importazione CSS
@@ -6347,7 +6382,11 @@ yarn run build && yarn run copy
    {
        "scripts": {
            "build": "vite build",
+<<<<<<< HEAD
            "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
+=======
+           "_note": "niente script copy: public_html/themes/<Tema> e' un symlink (xot:theme-link)"
+>>>>>>> laraxot/dev
        }
    }
    ```
@@ -6367,7 +6406,11 @@ yarn run build && yarn run copy
    yarn run dev
 
    # Production + Copy
+<<<<<<< HEAD
    yarn run build && yarn run copy
+=======
+   yarn run build   # asset serviti via symlink: niente copy
+>>>>>>> laraxot/dev
    ```
 
 4. **Verifica Installazione**:
@@ -6460,7 +6503,11 @@ yarn install
 yarn cache clean
 
 # Build e copia
+<<<<<<< HEAD
 yarn run build && yarn run copy
+=======
+yarn run build   # asset serviti via symlink: niente copy
+>>>>>>> laraxot/dev
 ```
 
 ### 2. Verifica Build
@@ -6504,7 +6551,11 @@ ls public_html/themes/Sixteen/dist
    {
        "scripts": {
            "build": "vite build",
+<<<<<<< HEAD
            "copy": "cp -r ./resources/dist/* ../../../public_html/themes/Sixteen/dist"
+=======
+           "_note": "niente script copy: public_html/themes/<Tema> e' un symlink (xot:theme-link)"
+>>>>>>> laraxot/dev
        }
    }
    ```

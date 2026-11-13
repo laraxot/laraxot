@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Gestione Errori di Sintassi nei File di Traduzione PHP"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "redundancy analysis"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Gestione Errori di Sintassi nei File di Traduzione PHP
 

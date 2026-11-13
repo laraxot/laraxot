@@ -24,7 +24,7 @@ use Modules\Notify\Filament\Clusters\Test;
 use Modules\Notify\Models\MailTemplate;
 use Modules\Notify\Notifications\RecordNotification;
 use Modules\Xot\Filament\Pages\XotBasePage;
-use Override;
+use Modules\Xot\Filament\Traits\SuperAdminOnlyTrait;
 use Webmozart\Assert\Assert;
 
 /**
@@ -32,6 +32,8 @@ use Webmozart\Assert\Assert;
  */
 class SendSpatieEmailPage extends XotBasePage
 {
+    use SuperAdminOnlyTrait;
+
     /** @var array<string, mixed>|null */
     public ?array $emailData = [];
 
@@ -84,6 +86,8 @@ class SendSpatieEmailPage extends XotBasePage
 
     public function sendEmail(): void
     {
+        abort_unless(static::canAccess(), 403);
+
         $data = $this->emailForm->getState();
         /*
          * $email_data = EmailData::from($data);
@@ -94,15 +98,6 @@ class SendSpatieEmailPage extends XotBasePage
          *
          */
         $user = $this->getUser();
-        $attachments = [
-            [
-                'path' => public_path('images/avatars/default-3.svg'),
-                'as' => 'logo.png',
-                'mime' => 'image/png'],
-            [
-                'path' => public_path('images/avatars/default-3.svg'),
-                'as' => 'logo.png',
-                'mime' => 'image/png']];
         // Mail::to($data['recipient'])->locale('it')->send((new SpatieEmail($user,'due'))->addAttachments($attachments));
         /*
          * // Create and send the email
@@ -136,6 +131,7 @@ class SendSpatieEmailPage extends XotBasePage
         return [
             'submit' => Action::make('emailFormActions')->submit('emailFormActions')];
     }
+
     protected function getUser(): Authenticatable&Model
     {
         $user = Filament::auth()->user();

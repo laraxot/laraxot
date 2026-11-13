@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION"
 module: "Tenant"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "metodiuplicati analisi"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # 🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION
 

@@ -31,6 +31,36 @@
   color: #FFFFFF !important;
 }
 
+/*
+ * Callers: header/footer design-comuni via partial brand-mark (.fc-brand-mark).
+ * Import: app.css → header-footer-colors.css (già collegato).
+ * Schema: nessuno (solo CSS). Istruzione: «logo footer = logo header».
+ * Size 82×82 come barra header; evita .icon BI a 48px sul footer.
+ */
+.it-footer .it-brand-wrapper .fc-brand-mark,
+.it-header-center-wrapper .it-brand-wrapper .fc-brand-mark {
+  width: 82px;
+  height: 82px;
+  flex-shrink: 0;
+}
+
+.logo-hamburger .fc-brand-mark {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+/* Logo SVG: nero → bianco su sfondo verde/scuro (D7) */
+.it-header-center-wrapper .it-brand-wrapper > a > svg,
+.it-header-slim-wrapper .it-brand-wrapper > a > svg,
+.it-footer .it-brand-wrapper > a > svg.fc-brand-mark,
+.it-header-navbar-wrapper .logo-hamburger > svg.fc-brand-mark,
+.it-brand-wrapper .icon,
+.it-brand-wrapper .icon image,
+.it-brand-wrapper svg image {
+  filter: brightness(0) invert(1) !important;
+}
+
 /* Header Center - Verde (#007A52) per parità con sfondo Logo */
 .it-header-center-wrapper {
   background-color: var(--color-italia) !important;
@@ -78,7 +108,7 @@
 .it-header-navbar-wrapper .navbar-nav .nav-link {
   background-color: transparent !important;
   color: #ffffff !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important; /* DCP-221: Designers Italia medium/semibold */
   border-left: none !important;
 }
 
@@ -116,13 +146,26 @@
   color: #ffffff !important;
 }
 
-/* D1: "Accedi all'area personale" button - light green like central header */
+/* Accedi su slim: primary #007A52 + testo bianco (parity fixcity.eu / style-apply).
+   Gioco cromatico = slim #00402B ≠ center #007A52; Accedi è CTA sulla slim, non pill bianco. */
 .it-header-slim-wrapper .btn-full,
 .it-header-slim-wrapper .btn-primary.btn-icon.btn-full {
-  background-color: var(--color-italia) !important;
-  border-color: var(--color-italia) !important;
+  background-color: #007a52 !important;
+  border-color: #007a52 !important;
   color: #ffffff !important;
 }
+.it-header-slim-wrapper .btn-full .icon,
+.it-header-slim-wrapper .btn-full .icon-primary,
+.it-header-slim-wrapper .btn-primary.btn-icon.btn-full .icon,
+.it-header-slim-wrapper .btn-primary.btn-icon.btn-full .icon-primary {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+.it-header-slim-wrapper .btn-full > span:not(.rounded-icon),
+.it-header-slim-wrapper .btn-primary.btn-icon.btn-full > span:not(.rounded-icon) {
+  color: #ffffff !important;
+}
+
 
 /* D1: Language switcher button transparent */
 .it-header-slim-wrapper .dropdown-toggle {

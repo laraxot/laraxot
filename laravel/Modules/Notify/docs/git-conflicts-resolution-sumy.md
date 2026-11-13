@@ -8,14 +8,23 @@ qmd: "git-conflicts-resolution-sumy risoluzione conflitti git - modulo notify"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
+  - "./action-plan-immediate.md"
+status: draft
 ---
 
 # Risoluzione Conflitti Git - Modulo Notify
@@ -39,7 +48,7 @@ related:
 ### Documentazione
 - `docs/README.md` - Documentazione principale
 - `docs/architecture.md` - Architettura del sistema notifiche
-- `docs/notification-channels-implementation-2.md` - Implementazione canali
+- `docs/notification-channels-implementation.md` - Implementazione canali
 - `docs/email-templates.md` - Template email
 
 ## Modifiche Applicate
@@ -84,9 +93,9 @@ Tutti i file risolti rispettano:
 ## Collegamenti
 
 - [Documentazione Root Notify](../../../docs/modules/notify.md)
-- [Architecture Documentation](./architecture.md)
+- [Architecture Documentation](./ARCHITECTURE.md)
 - [Email Templates](./email-templates.md)
-- [Notification Channels](./notification-channels-implementation-2.md)
+- [Notification Channels](./notification-channels-implementation.md)
 
 ---
 *Aggiornato automaticamente dopo risoluzione conflitti Git*

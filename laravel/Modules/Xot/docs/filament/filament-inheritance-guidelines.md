@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Linee Guida per l'Ereditarietà da Classi Filament"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, filament]
+qmd: "Linee Guida per l'Ereditarietà da Classi Filament"
+---
+>>>>>>> laraxot/dev
 # Linee Guida per l'Ereditarietà da Classi Filament
 
 ## Problema di Compatibilità con Metodi Statici/Non Statici
@@ -17,7 +30,11 @@ Cannot make non static method Filament\Pages\BasePage::getView() static in class
 
 2. **Verifica prima di implementare**: Prima di implementare un metodo, verificare la sua definizione nella classe genitore:
    ```bash
+<<<<<<< HEAD
    grep -r "function methodName" vendor/filament
+=======
+   grep -r "function methodName" /var/www/html/base_saluteora/laravel/vendor/filament
+>>>>>>> laraxot/dev
    ```
 
 3. **Principio di Sostituzione di Liskov**: Le sottoclassi devono essere sostituibili alle loro classi base senza alterare il comportamento corretto del programma.
@@ -93,7 +110,12 @@ public function getNavigationLabel(): string // Non static!
 ## Collegamenti
 
 - [Documentazione di Filament](https://filamentphp.com/docs/3.x/panels/pages)
+<<<<<<< HEAD
 - [Principi di Ereditarietà](../Xot/docs/class_inheritance_principles.md)
 - [XotBasePage](../Xot/docs/filament/pages/xotbasepage.md)
 - [Principi di Ereditarietà](../xot/docs/class_inheritance_principles.md)
 - [XotBasePage](../xot/docs/filament/pages/xotbasepage.md)
+=======
+- [Principi di Ereditarietà](/var/www/html/base_saluteora/laravel/Modules/Xot/docs/class_inheritance_principles.md)
+- [XotBasePage](/var/www/html/base_saluteora/laravel/Modules/Xot/docs/filament/pages/xotbasepage.md)
+>>>>>>> laraxot/dev

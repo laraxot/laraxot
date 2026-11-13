@@ -24,17 +24,31 @@ describe('GetAllModelsByModuleNameAction Integration', function () {
     });
 
     it('returns models from existing modules', function () {
+<<<<<<< HEAD
         $models = app(GetAllModelsByModuleNameAction::class)->execute('Chart');
 
         $hasChartModel = false;
         foreach ($models as $modelClass) {
             if (str_contains($modelClass, 'Chart\\Models\\Chart')) {
                 $hasChartModel = true;
+=======
+        // Il modulo Chart non esiste in questo repo: si usa un modulo presente con app/Models.
+        $models = app(GetAllModelsByModuleNameAction::class)->execute('User');
+
+        $hasUserModel = false;
+        foreach ($models as $modelClass) {
+            if (str_contains($modelClass, 'User\\Models\\User')) {
+                $hasUserModel = true;
+>>>>>>> laraxot/dev
                 break;
             }
         }
 
+<<<<<<< HEAD
         Assert::assertTrue($hasChartModel);
+=======
+        Assert::assertTrue($hasUserModel);
+>>>>>>> laraxot/dev
     });
 
     it('handles User module models correctly', function () {
@@ -103,10 +117,18 @@ describe('GetAllModelsByModuleNameAction Integration', function () {
     });
 
     it('handles namespace construction correctly', function () {
+<<<<<<< HEAD
         $models = app(GetAllModelsByModuleNameAction::class)->execute('Chart');
 
         foreach ($models as $modelClass) {
             Assert::assertStringContainsString('Modules\\Chart\\', $modelClass);
+=======
+        $models = app(GetAllModelsByModuleNameAction::class)->execute('User');
+
+        Assert::assertNotEmpty($models);
+        foreach ($models as $modelClass) {
+            Assert::assertStringContainsString('Modules\\User\\', $modelClass);
+>>>>>>> laraxot/dev
         }
     });
 

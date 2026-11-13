@@ -1,3 +1,9 @@
+---
+title: "Employee - 05-DOCUMENT-MANAGEMENT"
+module: Employee
+bmad: true
+status: active
+---
 # 05 - Gestione Documenti (Document Management)
 
 ## 🎯 Obiettivo

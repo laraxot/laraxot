@@ -1,4 +1,21 @@
+---
+title: "start here replikate phase2"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "start here replikate phase2"
+issues: []
+discussions: []
+---
+
 # 🚀 START HERE - REPLIKATE Phase 2
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 **Status**: Phase 1 Analysis Complete ✅  
 **Your Job**: Execute Phase 2 - HTML Structure Fixes ⏳  
@@ -6,6 +23,14 @@
 
 ---
 
+title: "start here replikate phase2"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "start here replikate phase2"
+issues: []
+discussions: []
 ## 📍 You Are Here
 
 ```
@@ -124,7 +149,10 @@ cd laravel/Themes/Sixteen
 npm run build
 
 # Copy assets
-npm run copy
+<<<<<<< .merge_file_2v9CDu
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
+=======
+>>>>>>> .merge_file_FPJDHD
 
 # Clear cache
 php artisan optimize:clear
@@ -202,7 +230,7 @@ open http://127.0.0.1:8000/it/tests/homepage
 - [ ] Understand what `section#head-section` should contain
 - [ ] Have list of 33 missing CSS classes
 - [ ] Have list of 25 Bootstrap classes to remove
-- [ ] Know how to run `npm run build && npm run copy`
+- [ ] Know how to run `npm run build`
 
 ---
 

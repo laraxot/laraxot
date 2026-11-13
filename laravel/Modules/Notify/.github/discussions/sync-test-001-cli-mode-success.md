@@ -1,4 +1,28 @@
 ---
+title: "sync test 001 cli mode success"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sync test 001 cli mode success"
+issues: []
+discussions: []
+title: "sync test 001 cli mode success"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sync test 001 cli mode success"
+issues: []
+discussions: []
+title: "sync test 001 cli mode success"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sync test 001 cli mode success"
+issues: []
+discussions: []
 title: "✅ [TEST COMPLETATO] Sync Remote Repo - CLI Mode Test Success"
 labels: ["testing", "sync-script", "completed"]
 body:

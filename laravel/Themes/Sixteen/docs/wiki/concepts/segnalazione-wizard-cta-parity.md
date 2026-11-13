@@ -1,3 +1,16 @@
+---
+title: "segnalazione wizard cta parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "segnalazione wizard cta parity"
+issues: []
+discussions: []
+status: superseded
+superseded_by: ticket-wizard-cta-parity.md
+---
+
 # segnalazione wizard cta parity
 
 ## Obiettivo

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating - Sprint Planning Meeting"
 type: guide
 tags: [sprint, planning, meeting, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "sprint planning meeting"
 related:
   - "./sprint-planning.md"
+status: draft
 ---
 
 # Rating - Sprint Planning Meeting

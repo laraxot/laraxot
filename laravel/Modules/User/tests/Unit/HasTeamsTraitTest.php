@@ -2,43 +2,46 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Schema;
 use Modules\User\Contracts\TeamContract;
-use Modules\User\Database\Factories\TeamFactory;
-use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\Role;
 use Modules\User\Models\Team;
+use Modules\User\Models\TeamUser;
 use Modules\User\Models\User;
+<<<<<<< .merge_file_GFhQlN
 use Modules\User\Tests\TestCase;
-use PHPUnit\Framework\Assert;
+=======
+<<<<<<< .merge_file_CfGXTZ
+use Tests\TestCase;
+=======
+use Modules\User\Tests\TestCase;
+>>>>>>> .merge_file_6nEM8h
+>>>>>>> .merge_file_HVVQXY
 
-use function Safe\json_encode;
-
+/**
+ * Test per il trait HasTeams corretto secondo filosofia Jetstream + Laraxot.
+ *
+ * Verifica tutte le correzioni implementate:
+ * - belongsToTeams() ora funziona correttamente
+ * - belongsToTeam() usa logica corretta
+ * - ownsTeam() è efficiente
+ * - teams() usa belongsToManyX
+ * - Tipizzazione rigorosa
+ * - Metodi non-Jetstream rimossi
+ */
 uses(TestCase::class);
 
 /**
- * @param array<string, mixed> $attributes
- */
-function hasTeamsCreateTestUser(array $attributes = []): User
-{
-    return UserFactory::new()->createOne(array_merge([
-        'email' => 'test-'.uniqid('', true).'@example.com',
-    ], $attributes));
-}
-
-/**
+ * Fixture tipizzata: le proprieta' dinamiche del TestCase sono nullable,
+ * quindi ogni test lavora su variabili locali non nulle.
+ *
  * @return array{user: User, team: Team, personalTeam: Team}
  */
-function hasTeamsBootstrapFixture(): array
+function hasTeamsTraitTestFixture(): array
 {
-    $user = hasTeamsCreateTestUser();
-    $team = TeamFactory::new()->createOne(['name' => 'shared-'.uniqid()]);
-    $personalTeam = TeamFactory::new()->createOne([
+    $user = User::factory()->create();
+    $team = Team::factory()->create();
+    $personalTeam = Team::factory()->create([
         'user_id' => $user->id,
-        'name' => 'personal-'.uniqid(),
         'personal_team' => true,
     ]);
 
@@ -49,214 +52,257 @@ function hasTeamsBootstrapFixture(): array
     ];
 }
 
-/**
- * @param array<string, mixed> $pivot
- */
-function hasTeamsAttachMember(Team $team, User $user, array $pivot = []): void
-{
-    $payload = [
-        'team_id' => $team->id,
-        'user_id' => $user->id,
-        'created_at' => now(),
-        'updated_at' => now(),
-    ];
-
-    if (isset($pivot['role'])) {
-        $payload['role'] = $pivot['role'];
-    }
-
-    if (Schema::connection('user')->hasColumn('team_user', 'permissions') && array_key_exists('permissions', $pivot)) {
-        $permissions = $pivot['permissions'];
-        $payload['permissions'] = is_array($permissions) ? json_encode($permissions) : $permissions;
-    }
-
-    DB::connection('user')->table('team_user')->insert($payload);
-}
-
 test('it correctly checks if user belongs to teams', function (): void {
-    ['user' => $user, 'team' => $team] = hasTeamsBootstrapFixture();
-    $userWithoutTeams = hasTeamsCreateTestUser();
+    ['user' => $user, 'team' => $team] = hasTeamsTraitTestFixture();
 
-    Assert::assertFalse($userWithoutTeams->belongsToTeams());
-    Assert::assertTrue($user->belongsToTeams());
+    // Test: User senza team
+    $userWithoutTeams = User::factory()->create();
+    expect($userWithoutTeams->belongsToTeams())->toBeFalse();
 
-    $memberUser = hasTeamsCreateTestUser();
-    hasTeamsAttachMember($team, $memberUser, ['role' => 'member']);
-    Assert::assertTrue($memberUser->teamUsers()->exists());
+    // Test: User con team owned
+    expect($user->belongsToTeams())->toBeTrue();
+
+    // Test: User con team membership
+    $memberUser = User::factory()->create();
+    $memberUser->membershipTeams()->attach($team->id, ['role' => 'member']);
+    expect($memberUser->belongsToTeams())->toBeTrue();
 });
 
 test('it correctly checks if user belongs to specific team', function (): void {
-    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
 
-    Assert::assertFalse($user->belongsToTeam(null));
-    Assert::assertTrue($user->belongsToTeam($personalTeam));
+    // Test: Null team
+    expect($user->belongsToTeam(null))->toBeFalse();
 
-    hasTeamsAttachMember($team, $user, ['role' => 'member']);
-    Assert::assertTrue($user->teamUsers()->where('team_id', $team->id)->exists());
+    // Test: Owned team
+    expect($user->belongsToTeam($personalTeam))->toBeTrue();
 
-    $otherTeam = TeamFactory::new()->createOne(['name' => 'other-'.uniqid()]);
-    Assert::assertFalse($user->belongsToTeam($otherTeam));
+    // Test: Member team
+    $user->membershipTeams()->attach($team->id, ['role' => 'member']);
+    expect($user->belongsToTeam($team))->toBeTrue();
+
+    // Test: Non-member team
+    $otherTeam = Team::factory()->create();
+    expect($user->belongsToTeam($otherTeam))->toBeFalse();
 });
 
 test('it correctly checks team ownership', function (): void {
-    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
 
-    Assert::assertTrue($user->ownsTeam($personalTeam));
-    Assert::assertFalse($user->ownsTeam($team));
+    // Test: Owned team
+    expect($user->ownsTeam($personalTeam))->toBeTrue();
 
-    hasTeamsAttachMember($team, $user, ['role' => 'member']);
-    Assert::assertFalse($user->ownsTeam($team));
+    // Test: Non-owned team
+    expect($user->ownsTeam($team))->toBeFalse();
+
+    // Test: Member team (not owner)
+    $user->membershipTeams()->attach($team->id, ['role' => 'member']);
+    expect($user->ownsTeam($team))->toBeFalse();
 });
 
 test('it uses belongs to many x for teams relationship', function (): void {
-    ['user' => $user] = hasTeamsBootstrapFixture();
+    ['user' => $user] = hasTeamsTraitTestFixture();
 
-    Assert::assertInstanceOf(BelongsToMany::class, $user->membershipTeams());
+    // Su BaseUser teams() e' la relazione Spatie (model_has_role): l'appartenenza
+    // Jetstream-style costruita con belongsToManyX e' esposta come membershipTeams().
+    $relation = $user->membershipTeams();
+    // Verifica che il pivot model sia TeamUser
+    expect($relation->getTable())->toBe('team_user');
 });
 
 test('it correctly manages current team', function (): void {
-    ['user' => $user, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'team' => $team] = hasTeamsTraitTestFixture();
 
-    Assert::assertTrue($user->switchTeam($personalTeam));
+    // Test: Switch to valid team
+    $user->membershipTeams()->attach($team->id, ['role' => 'member']);
+    $result = $user->switchTeam($team);
+    expect($result)->toBeTrue();
+    expect($user->current_team_id)->toBe($team->id);
 
-    $refreshed = $user->fresh();
-    Assert::assertInstanceOf(User::class, $refreshed);
-    Assert::assertSame((string) $refreshed->current_team_id, (string) $personalTeam->id);
-
-    $otherTeam = TeamFactory::new()->createOne(['name' => 'switch-other-'.uniqid()]);
-    Assert::assertFalse($user->switchTeam($otherTeam));
+    // Test: Switch to non-member team
+    $otherTeam = Team::factory()->create();
+    $result = $user->switchTeam($otherTeam);
+    expect($result)->toBeFalse();
 });
 
 test('it correctly identifies current team', function (): void {
-    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
+<<<<<<< .merge_file_GFhQlN
 
     $user->switchTeam($personalTeam);
 
-    Assert::assertTrue($user->isCurrentTeam($personalTeam));
-    Assert::assertFalse($user->isCurrentTeam($team));
+=======
+
+    $user->switchTeam($personalTeam);
+
+>>>>>>> .merge_file_HVVQXY
+    expect($user->isCurrentTeam($personalTeam))->toBeTrue();
+    expect($user->isCurrentTeam($team))->toBeFalse();
 });
 
 test('it returns all teams user owns or belongs to', function (): void {
-    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
 
-    hasTeamsAttachMember($team, $user, ['role' => 'member']);
+    // Aggiungi user come member di un team
+    $user->membershipTeams()->attach($team->id, ['role' => 'member']);
 
     $allTeams = $user->allTeams();
 
-    Assert::assertInstanceOf(Collection::class, $allTeams);
-    Assert::assertCount(1, $allTeams);
-    Assert::assertContains($personalTeam->id, $allTeams->pluck('id')->toArray());
-    Assert::assertTrue($user->teamUsers()->where('team_id', $team->id)->exists());
+    expect($allTeams)->toHaveCount(2); // personal team + member team
+    expect($allTeams->contains($personalTeam))->toBeTrue();
+    expect($allTeams->contains($team))->toBeTrue();
 });
 
 test('it returns owned teams', function (): void {
-    ['user' => $user, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
 
     $ownedTeams = $user->ownedTeams;
 
-    Assert::assertInstanceOf(Collection::class, $ownedTeams);
-    Assert::assertCount(1, $ownedTeams);
-    Assert::assertContains($personalTeam->id, $ownedTeams->pluck('id')->toArray());
+    expect($ownedTeams)->toHaveCount(1);
+    expect($ownedTeams->contains($personalTeam))->toBeTrue();
 });
 
 test('it returns personal team', function (): void {
-    ['user' => $user, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
+<<<<<<< .merge_file_GFhQlN
 
     $resolvedPersonalTeam = $user->personalTeam();
 
-    Assert::assertInstanceOf(TeamContract::class, $resolvedPersonalTeam);
-    Assert::assertSame($personalTeam->id, $resolvedPersonalTeam->id);
-    Assert::assertTrue($resolvedPersonalTeam->personal_team);
+=======
+
+    $resolvedPersonalTeam = $user->personalTeam();
+
+>>>>>>> .merge_file_HVVQXY
+    if (! $resolvedPersonalTeam instanceof TeamContract) {
+        throw new RuntimeException('Expected the user to have a personal team.');
+    }
+    expect($resolvedPersonalTeam->id)->toBe($personalTeam->id);
+    expect($resolvedPersonalTeam->personal_team)->toBeTrue();
 });
 
 test('it correctly determines team role', function (): void {
-    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
 
+    // Test: Owner role
     $role = $user->teamRole($personalTeam);
-    Assert::assertInstanceOf(Role::class, $role);
-    Assert::assertSame('owner', $role->name);
+    if (! $role instanceof Role) {
+        throw new RuntimeException('Expected an owner role.');
+    }
+    expect($role->name)->toBe('owner');
 
-    hasTeamsAttachMember($team, $user, ['role' => 'admin']);
-    $user->unsetRelation('teamUsers');
+    // Test: Member role
+    $user->membershipTeams()->attach($team->id, ['role' => 'admin']);
     $role = $user->teamRole($team);
-    Assert::assertInstanceOf(Role::class, $role);
-    Assert::assertSame('admin', $role->name);
+    if (! $role instanceof Role) {
+        throw new RuntimeException('Expected a member role.');
+    }
+    expect($role->name)->toBe('admin');
 
-    $otherUser = hasTeamsCreateTestUser();
-    Assert::assertNull($otherUser->teamRole($team));
+    // Test: No role (not member)
+    $otherTeam = Team::factory()->create();
+    $role = $user->teamRole($otherTeam);
+    expect($role)->toBeNull();
 });
 
 test('it provides team role name helper', function (): void {
-    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
 
-    Assert::assertSame('owner', $user->teamRoleName($personalTeam));
+    // Test: Owner role name
+    $roleName = $user->teamRoleName($personalTeam);
+    expect($roleName)->toBe('owner');
 
-    hasTeamsAttachMember($team, $user, ['role' => 'admin']);
-    $user->unsetRelation('teamUsers');
-    Assert::assertSame('admin', $user->teamRoleName($team));
+    // Test: Member role name - detach first to avoid duplicates
+    $user->membershipTeams()->detach($team->id);
+    $user->membershipTeams()->attach($team->id, ['role' => 'admin']);
+    $roleName = $user->teamRoleName($team);
+    expect($roleName)->toBe('admin');
 
-    $otherTeam = TeamFactory::new()->createOne(['name' => 'name-other-'.uniqid()]);
-    Assert::assertSame('Unknown', $user->teamRoleName($otherTeam));
+    // Test: No role (not member)
+    $otherTeam = Team::factory()->create();
+    $roleName = $user->teamRoleName($otherTeam);
+    expect($roleName)->toBe('Unknown');
 });
 
 test('it correctly checks team role', function (): void {
-    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
 
-    hasTeamsAttachMember($team, $user, ['role' => 'admin']);
-    $user->unsetRelation('teamUsers');
-    Assert::assertTrue($user->hasTeamRole($team, 'admin'));
-    Assert::assertFalse($user->hasTeamRole($team, 'editor'));
+    // Test: Owner always has any role
+    expect($user->hasTeamRole($personalTeam, 'admin'))->toBeTrue();
+    expect($user->hasTeamRole($personalTeam, 'member'))->toBeTrue();
 
-    Assert::assertTrue($user->hasTeamRole($personalTeam, 'admin'));
-    Assert::assertTrue($user->hasTeamRole($personalTeam, 'editor'));
-
-    $otherTeam = TeamFactory::new()->createOne(['name' => 'role-other-'.uniqid()]);
-    Assert::assertFalse($user->hasTeamRole($otherTeam, 'admin'));
+    // Test: Specific role check
+    $user->membershipTeams()->attach($team->id, ['role' => 'admin']);
+    expect($user->hasTeamRole($team, 'admin'))->toBeTrue();
+    expect($user->hasTeamRole($team, 'member'))->toBeFalse();
 });
 
 test('it correctly manages team permissions', function (): void {
-    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
 
-    Assert::assertTrue($user->hasTeamPermission($personalTeam, 'edit-team'));
+    // Test: Owner has all permissions
+    $permissions = $user->teamPermissions($personalTeam);
+    expect($permissions)->toBe(['*']);
+    expect($user->hasTeamPermission($personalTeam, 'any_permission'))->toBeTrue();
 
-    if (Schema::connection('user')->hasColumn('team_user', 'permissions')) {
-        hasTeamsAttachMember($team, $user, [
-            'role' => 'editor',
-            'permissions' => ['edit-content' => true],
-        ]);
-        $user->unsetRelation('teamUsers');
+    // Test: Non-member has no permissions
+    $otherTeam = Team::factory()->create();
+    $permissions = $user->teamPermissions($otherTeam);
+    expect($permissions)->toBe([]);
+    expect($user->hasTeamPermission($otherTeam, 'any_permission'))->toBeFalse();
 
-        Assert::assertTrue($user->hasTeamPermission($team, 'edit-content'));
-        Assert::assertFalse($user->hasTeamPermission($team, 'delete-content'));
-    }
+    // Test: Member has the permissions granted on the team_user pivot
+    $user->membershipTeams()->attach($team->id, [
+        'role' => 'admin',
+        // Array, non JSON: il pivot TeamUser casta `permissions` ad array e una stringa
+        // JSON verrebbe codificata due volte.
+        'permissions' => ['admin' => true, 'delete' => false],
+    ]);
+    $permissions = $user->teamPermissions($team);
+    expect($permissions)->toBe(['admin']);
+    expect($user->hasTeamPermission($team, 'admin'))->toBeTrue();
 });
 
 test('it provides utility methods', function (): void {
-    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsBootstrapFixture();
+    ['user' => $user, 'team' => $team, 'personalTeam' => $personalTeam] = hasTeamsTraitTestFixture();
 
-    Assert::assertTrue($user->hasTeams());
-    Assert::assertTrue($user->isOwnerOrMember($personalTeam));
+    // Test: hasTeams() alias
+    expect($user->hasTeams())->toBeTrue();
 
-    hasTeamsAttachMember($team, $user, ['role' => 'member']);
-    Assert::assertFalse($user->isOwnerOrMember($team));
+    // Test: isOwnerOrMember()
+    expect($user->isOwnerOrMember($personalTeam))->toBeTrue();
 
-    $otherTeam = TeamFactory::new()->createOne(['name' => 'util-other-'.uniqid()]);
-    Assert::assertFalse($user->isOwnerOrMember($otherTeam));
+    $user->membershipTeams()->attach($team->id, ['role' => 'member']);
+    expect($user->isOwnerOrMember($team))->toBeTrue();
+
+    $otherTeam = Team::factory()->create();
+    expect($user->isOwnerOrMember($otherTeam))->toBeFalse();
 });
 
 test('it handles edge cases correctly', function (): void {
-    ['user' => $user] = hasTeamsBootstrapFixture();
-    $newUser = new User();
+    ['user' => $user] = hasTeamsTraitTestFixture();
 
-    Assert::assertFalse($newUser->belongsToTeams());
+    // Test: User senza ID
+    $newUser = new User;
+    expect($newUser->belongsToTeams())->toBeFalse();
 
-    $teamWithoutOwner = TeamFactory::new()->createOne(['user_id' => null, 'name' => 'no-owner-'.uniqid()]);
-    Assert::assertFalse($user->ownsTeam($teamWithoutOwner));
-    Assert::assertFalse($user->ownsTeam(null));
+    // Test: Team senza user_id
+    $teamWithoutOwner = Team::factory()->create(['user_id' => null]);
+    expect($user->ownsTeam($teamWithoutOwner))->toBeFalse();
 });
 
 test('it validates assertions correctly', function (): void {
-    ['user' => $user] = hasTeamsBootstrapFixture();
+<<<<<<< .merge_file_GFhQlN
+=======
+<<<<<<< .merge_file_CfGXTZ
+    expect(fn () => $this->user->ownsTeam(null))->toThrow(InvalidArgumentException::class, 'Team cannot be null');
+=======
+>>>>>>> .merge_file_HVVQXY
+    ['user' => $user] = hasTeamsTraitTestFixture();
 
-    Assert::assertFalse($user->ownsTeam(null));
+    // ownsTeam() accetta ?TeamContract: un team assente non e' posseduto, nessuna eccezione.
+    expect($user->ownsTeam(null))->toBeFalse();
+<<<<<<< .merge_file_GFhQlN
+=======
+>>>>>>> .merge_file_6nEM8h
+>>>>>>> .merge_file_HVVQXY
 });

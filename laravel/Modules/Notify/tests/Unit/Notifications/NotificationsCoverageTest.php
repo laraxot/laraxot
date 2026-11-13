@@ -6,12 +6,11 @@ namespace Modules\Notify\Tests\Unit\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
+use Modules\Notify\Channels\SmsChannel;
 use Modules\Notify\Contracts\CanThemeNotificationContract;
 use Modules\Notify\Datas\EmailData;
 use Modules\Notify\Datas\NotificationData;
-use Modules\Notify\Datas\SmsData;
-use Modules\Notify\Datas\WhatsAppData;
 use Modules\Notify\Notifications\EmailDataNotification;
 use Modules\Notify\Notifications\GenericNotification;
 use Modules\Notify\Notifications\RecordNotification;
@@ -21,12 +20,14 @@ use Modules\Notify\Notifications\ThemeNotification;
 use Modules\Notify\Notifications\TicketAssignedNotification;
 use Modules\Notify\Notifications\TicketStatusChangedNotification;
 use Modules\Notify\Notifications\WhatsAppNotification;
+use Modules\Notify\Tests\TestCase;
 use Modules\User\Models\User;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
 
+uses(TestCase::class);
 function notificationsCoverageTicketModel(int $id = 10): Model
 {
     $ticket = new class extends Model
@@ -89,7 +90,7 @@ function makeGenericNotifiableDummy(): Model
             return 'Mario Rossi';
         }
 
-        public function routeNotificationForTwilio(mixed $notification): string
+        public function routeNotificationForTwilio(Notification $notification): string
         {
             return '+39000111222';
         }
@@ -124,8 +125,7 @@ test('sms notification builds sms payload and provider config', function () {
 
     $sms = $notification->toSms(new \stdClass);
 
-    Assert::assertInstanceOf(SmsData::class, $sms);
-    Assert::assertSame([\Modules\Notify\Channels\SmsChannel::class], $notification->via(new \stdClass));
+    Assert::assertSame([SmsChannel::class], $notification->via(new \stdClass));
     Assert::assertSame('+39123', $sms->recipient);
     Assert::assertSame('netfun', $notification->getProvider());
     Assert::assertArrayHasKey('provider', $notification->getConfig());
@@ -147,7 +147,6 @@ test('whatsapp notification exposes whatsapp channel and provider', function () 
 
     $wa = $notification->toWhatsApp(new \stdClass);
 
-    Assert::assertInstanceOf(WhatsAppData::class, $wa);
     Assert::assertSame(['whatsapp'], $notification->via(new \stdClass));
     Assert::assertSame('+39999', $wa->recipient);
     Assert::assertSame('twilio', $notification->getProvider());
@@ -175,10 +174,10 @@ test('generic notification supports channels mail twilio and database payload', 
     $notifiable = makeGenericNotifiableDummy();
 
     $mail = $notification->toMail($notifiable);
+    Assert::assertNotEmpty($mail->subject);
     $twilio = $notification->toTwilio($notifiable);
     $database = $notification->toDatabase($notifiable);
 
-    Assert::assertInstanceOf(MailMessage::class, $mail);
     Assert::assertArrayHasKey('content', $twilio);
     Assert::assertArrayHasKey('to', $twilio);
     Assert::assertSame('+39000111222', $twilio['to']);

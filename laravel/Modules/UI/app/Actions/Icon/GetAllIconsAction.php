@@ -7,6 +7,10 @@ namespace Modules\UI\Actions\Icon;
 use BladeUI\Icons\Factory as IconFactory;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
+<<<<<<< HEAD
+use ReflectionClass;
+=======
+>>>>>>> f5ffd8b4 (.)
 use Spatie\QueueableAction\QueueableAction;
 
 class GetAllIconsAction
@@ -22,8 +26,13 @@ class GetAllIconsAction
 
         // Uso reflection per accedere alle icone in modo sicuro
         try {
+<<<<<<< HEAD
+            $reflection = new ReflectionClass($iconsFactory);
+            $property = $reflection->getProperty('sets');
+=======
             $reflection = new \ReflectionClass($iconsFactory);
             $property = $reflection->getProperty('iconSets');
+>>>>>>> f5ffd8b4 (.)
             $property->setAccessible(true);
             $icons = $property->getValue($iconsFactory);
         } catch (\Exception $e) {
@@ -76,7 +85,11 @@ class GetAllIconsAction
                     }
 
                     // Simply ignore files that aren't SVGs
+<<<<<<< HEAD
+                    if ($file->getExtension() !== 'svg') {
+=======
                     if ('svg' !== $file->getExtension()) {
+>>>>>>> f5ffd8b4 (.)
                         continue;
                     }
 
@@ -94,7 +107,11 @@ class GetAllIconsAction
 
                     $prefix = $set['prefix'] ?? '';
                     $prefixString = is_string($prefix) ? $prefix : '';
+<<<<<<< HEAD
+                    $iconFullName = $prefixString !== '' ? $prefixString.'-'.$iconName : $iconName;
+=======
                     $iconFullName = '' !== $prefixString ? $prefixString.'-'.$iconName : $iconName;
+>>>>>>> f5ffd8b4 (.)
                     $iconsList[] = $iconFullName;
                 }
             }

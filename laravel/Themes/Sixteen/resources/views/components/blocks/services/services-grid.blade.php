@@ -1,5 +1,5 @@
 {{-- Canonical Services Grid component (AGID-free namespace)
 Usage: <x-pub_theme::blocks.services.services-grid ...>
-This proxies the legacy agid component to keep single source of truth.
+This delegates to the reusable UI grid because the former AGID target was removed.
 --}}
-@include('pub_theme::components.agid.services-grid')
+@include('pub_theme::components.ui.services-grid')

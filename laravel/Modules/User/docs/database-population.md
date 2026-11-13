@@ -8,17 +8,21 @@ qmd: "database-population popolamento database - modulo user"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Popolamento Database - Modulo User
 
 ## Panoramica
@@ -310,7 +314,7 @@ echo "User roles: " . $user->roles()->count() . "\n";
 
 ## Collegamenti
 
-- [README Modulo User](./readme.md)
+- [README Modulo User](./README.md)
 - [Factory Best Practices](./factory-best-practices.md)
 - [Testing Guidelines](./testing.md)
 - [Database Schema](./database-schema.md)
@@ -320,8 +324,5 @@ echo "User roles: " . $user->roles()->count() . "\n";
 **Ultimo aggiornamento**: Gennaio 2025
 **Versione**: 1.0
 **Autore**: Sistema Laraxot
-
-
-
 
 

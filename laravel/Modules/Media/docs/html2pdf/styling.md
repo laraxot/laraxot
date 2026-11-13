@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Guida agli Stili, Tabelle e Immagini"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "styling"
 related:
   - "./webm.md"
+status: draft
 ---
 # Guida agli Stili, Tabelle e Immagini
 

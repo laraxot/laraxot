@@ -2,17 +2,21 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_LXfoBi
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'name' => ['label' => 'name'],
-        'created_at' => ['label' => 'created_at'],
-        'uuid' => ['label' => 'uuid'],
-        'user_id' => ['label' => 'user_id'],
-        'provider' => ['label' => 'provider'],
+        'id' => ['label' => 'ID'],
+        'name' => ['label' => 'Nome'],
+        'created_at' => ['label' => 'Creato il'],
+        'uuid' => ['label' => 'UUID'],
+        'user_id' => ['label' => 'Utente'],
+        'provider' => ['label' => 'Provider'],
         'provider_id' => ['label' => 'provider_id'],
-        'email' => ['label' => 'email'],
-        'avatar' => ['label' => 'avatar'],
-        'updated_at' => ['label' => 'updated_at'],
+        'email' => ['label' => 'E-mail'],
+        'avatar' => ['label' => 'Avatar'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_7000jW

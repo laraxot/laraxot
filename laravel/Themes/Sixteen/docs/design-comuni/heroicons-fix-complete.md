@@ -1,3 +1,15 @@
+---
+title: "heroicons fix complete"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "heroicons fix complete"
+issues: []
+discussions: []
+status: draft
+---
+
 # ✅ Heroicons Removal - COMPLETATO
 
 **Data**: 2026-03-31  
@@ -90,7 +102,6 @@ ls resources/views/components/blocks/topics/
 - [Icone](https://italia.github.io/bootstrap-italia/docs/elementi-del-kit/icon/)
 
 ---
-
 **Stato**: ✅ **HEROICONS RIMOSSI**  
 **Homepage**: **✅ Funziona senza errori**  
 **Icone**: **Bootstrap Italia**  

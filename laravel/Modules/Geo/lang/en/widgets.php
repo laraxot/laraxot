@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'location' => [
         'title' => 'Selezione Località',
-        'submit' => 'Seleziona',
+        'submit' => 'Select',
         'messages' => [
             'success' => 'Località selezionata con successo',
             'error' => 'Errore durante la selezione della località',
@@ -20,8 +20,12 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
-    'fields' => [
-    ],
-    'actions' => [
+    'base_map' => [
+        'aria_label' => 'Interactive map',
+        'fullscreen' => 'Fullscreen',
+        'fullscreen_exit' => 'Exit fullscreen',
+        'locate' => 'Center on my location',
+        'layer_satellite' => 'Satellite',
+        'markers_shown' => 'Showing :count markers',
     ],
 ];

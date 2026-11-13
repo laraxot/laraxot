@@ -1,4 +1,7 @@
 ---
+qmd: "wizard custom view architecture"
+issues: []
+discussions: []
 title: "Wizard Custom View Architecture - Theme Sixteen"
 type: concept
 sources:
@@ -11,6 +14,7 @@ tags: [filament, wizard, custom-view, theme, architecture, design-comuni]
 related:
   - ../../../../Modules/Xot/docs/wiki/concepts/xotbasewizardwidget-architecture.md
   - ../../../../Modules/Fixcity/docs/wiki/concepts/create-ticket-wizard-architecture.md
+status: draft
 ---
 
 # Wizard Custom View Architecture

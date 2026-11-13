@@ -1,3 +1,11 @@
+---
+title: "UserFactory Integration - Modulo User e SaluteOra"
+type: note
+status: draft
+updated: 2026-10-13
+tags: [docs, user]
+qmd: "userfactory integration - modulo user e saluteora user"
+---
 # UserFactory Integration - Modulo User e SaluteOra
 
 ## Overview
@@ -346,8 +354,10 @@ public function test_bulk_sti_creation()
 
 ### User Module
 - [BaseUser Documentation](../User/docs/baseuser_conflicts.md)
-- [Traits Complete Guide](../User/docs/traits_complete_guide.md)
-- [Authentication Framework](../User/docs/authentication.md)
+- [Traits Complete Guide](traits_complete_guide.md)
+- [Authentication Framework](authentication.md)
+- [Traits Complete Guide](traits_complete_guide.md)
+- [Authentication Framework](authentication.md)
 
 ---
 

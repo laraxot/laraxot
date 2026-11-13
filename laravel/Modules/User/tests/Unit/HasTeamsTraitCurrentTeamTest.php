@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\User\Tests\Unit;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\User\Models\Team;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -23,7 +22,6 @@ describe('Has Teams Trait Current Team', function (): void {
         $user = hasTeamsCurrentCreateUser();
 
         Assert::assertNull($user->currentTeam);
-        Assert::assertInstanceOf(BelongsTo::class, $user->currentTeam());
     });
 
     test('has teams current team is side effect free', function (): void {

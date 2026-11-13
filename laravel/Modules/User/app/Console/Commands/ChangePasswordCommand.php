@@ -32,7 +32,7 @@ class ChangePasswordCommand extends Command
 
         $user = XotData::make()->findUserByEmail($email);
 
-        if (null === $user) {
+        if ($user === null) {
             $this->error("Utente non trovato per email: {$email}");
 
             return;

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Aws"
 module: "Media"
 type: concept
@@ -8,9 +10,6 @@ updated: 2026-07-14
 qmd: "aws"
 related:
   - "./webm.md"
----
-<<<<<<< HEAD
+status: draft
 https://github.com/kefabean/lambda-transcoder/blob/master/transcoder/transcode.js
-=======
-https://github.com/kefabean/lambda-transcoder/blob/master/transcoder/transcode.js
->>>>>>> laraxot/dev
+

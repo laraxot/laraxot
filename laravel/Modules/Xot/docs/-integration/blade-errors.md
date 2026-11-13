@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "blade_errors"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "blade_errors xot"
+---
+>>>>>>> laraxot/dev
 # blade_errors
 
 <!-- Contenuto migrato da _docs/blade_errors.txt -->

@@ -7,6 +7,15 @@ updated: "2026-05-05"
 qmd: "Theme Zero, Laravel 13, composer audit, theme dependencies"
 related:
   - "../index.md"
+id: zero-docs-wiki-sources-laravel13-theme-zero-composer-audit
+slug: laravel13-theme-zero-composer-audit
+description: "Theme Zero currently has a minimal composer.json with package metadata only. It does not declare PHP runtime dependencies or PSR-4 autoload rules."
+document_type: source
+category: architecture
+status: active
+tags: []
+issues: []
+discussions: []
 ---
 
 # Laravel 13 Theme Zero Composer Audit

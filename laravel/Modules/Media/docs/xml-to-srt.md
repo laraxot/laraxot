@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Xml To Srt"
 module: "Media"
 type: concept
@@ -8,9 +10,9 @@ updated: 2026-07-14
 qmd: "xml to srt"
 related:
   - "./webm.md"
+status: draft
 ---
-<<<<<<< HEAD
 https://github.com/mokhosh/laravel-xml2srt
-=======
+---
 https://github.com/mokhosh/laravel-xml2srt
->>>>>>> laraxot/dev
+

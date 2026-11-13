@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 # Lezioni Apprese: Errori Migrazione Activity Table
 
 ## Caso Studio: Errore Critico nella Modifica Migrazione Activity
@@ -173,15 +172,12 @@ Questa lezione è ora memorizzata permanentemente per:
 *Ultimo aggiornamento: Gennaio 2025*
 *Lezione appresa: Context-aware migrations con supporto UUID*
 =======
-=======
->>>>>>> 13cf1831 (.)
 ---
 module: theme
 topic: errori-migrazione-activity-table-lezioni-1
 canonical: ../../../Themes/docs/shared-components/errori-migrazione-activity-table-lezioni-1.md
 ---
 
-<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -196,6 +192,3 @@ See canonical documentation: ../../../Themes/docs/shared-components/errori-migra
 See canonical documentation: ../../../Themes/docs/shared-components/errori-migrazione-activity-table-lezioni-1.md
 >>>>>>> 2d6a374 (.)
 >>>>>>> laraxot/dev
-=======
-See canonical documentation: ../../../Themes/docs/shared-components/errori-migrazione-activity-table-lezioni-1.md
->>>>>>> 13cf1831 (.)

@@ -1,10 +1,21 @@
+---
+title: "css filename english naming"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "css filename english naming"
+issues: []
+discussions: []
+status: draft
+---
+
 # Architettura — nomi file CSS solo in inglese
 
 **Riferimento esterno (commenti):** [design-comuni-pagine-statiche](https://github.com/italia/design-comuni-pagine-statiche)  
 **Slug interno tema:** `civic-design-*` (template PA), non `design-comuni-*`
 
 ---
-
 ## Religione
 
 Il codice tecnico è **language-agnostic**. L’italiano è solo in `lang/`, copy UI e slug route pubblici.
@@ -46,7 +57,7 @@ bash bashscripts/ai/check-italian-names-in-code.sh
 
 ## Collegamenti
 
-- [ADR css-filenames](../../../../docs/wiki/decisions/css-filenames-english-no-italian.md)
+- [ADR css-filenames](../../../../../docs/wiki/decisions/css-filenames-english-no-italian.md)
 - [Wiki concept](../wiki/concepts/css-filename-english-naming.md)
 - [no-italian-component-names](../wiki/rules/no-italian-component-names.md)
 - [design-comuni-site-wide-component-css-rule](../wiki/concepts/design-comuni-site-wide-component-css-rule.md)

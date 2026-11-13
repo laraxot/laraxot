@@ -5,13 +5,19 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Enums;
 
 use Modules\Notify\Enums\NotificationLogStatusEnum;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('it exposes all expected statuses', function () {
-    $values = array_map(static fn (NotificationLogStatusEnum $case): string => $case->value, NotificationLogStatusEnum::cases());
+    $values = array_map(
+        static fn (NotificationLogStatusEnum $case): string => $case->value,
+        NotificationLogStatusEnum::cases(),
+    );
 
     Assert::assertSame([
         'pending',
+        'processing',
         'sent',
         'delivered',
         'failed',
@@ -22,12 +28,11 @@ test('it exposes all expected statuses', function () {
 test('it returns expected label color and icon', function () {
     foreach (NotificationLogStatusEnum::cases() as $case) {
         Assert::assertIsString($case->value);
-        // EnumTrait: label/color/icon possono essere null se lang manca in test.
         $case->getLabel();
         $case->getColor();
         $case->getIcon();
     }
-    Assert::assertCount(6, NotificationLogStatusEnum::cases());
+    Assert::assertCount(7, NotificationLogStatusEnum::cases());
 });
 
 test('it reports completed pending and failed states correctly', function () {

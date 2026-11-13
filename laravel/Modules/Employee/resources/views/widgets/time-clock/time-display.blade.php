@@ -17,14 +17,14 @@ declare(strict_types=1);
                 <div class="flex items-center gap-1">
                     <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <span class="text-green-600 dark:text-green-400 font-medium">
-                        {{ __('employee::widgets.timeclock.session_active') }}
+                        {{ __('employee::time_display.messages.session_active.message') }}
                     </span>
                 </div>
                 <span class="text-gray-500">{{ $sessionTime }}</span>
             </div>
         @else
             <div class="inactive-session text-sm text-gray-500">
-                {{ __('employee::widgets.timeclock.no_active_session') }}
+                {{ __('employee::time_display.messages.session_inactive.message') }}
             </div>
         @endif
     </div>

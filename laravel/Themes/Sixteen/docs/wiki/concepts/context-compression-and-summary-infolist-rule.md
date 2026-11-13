@@ -1,4 +1,8 @@
 ---
+created: 2026-09-26
+qmd: "context compression and summary infolist rule"
+issues: []
+discussions: []
 title: Context compression and summary Infolist rule
 type: concept
 updated: 2026-04-22
@@ -6,6 +10,7 @@ tags: [sixteen, design-comuni, wizard, infolist, context-compression]
 sources:
   - ../../../../../Modules/Fixcity/docs/wiki/concepts/context-compression-and-summary-infolist-rule.md
   - ../../../../../../docs/wiki/concepts/openrouter-context-compression-plugin.md
+status: draft
 ---
 
 # Context compression and summary Infolist rule

@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Struttura delle Configurazioni"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, config]
+qmd: "Struttura delle Configurazioni"
+---
+>>>>>>> laraxot/dev
 # Struttura delle Configurazioni
 
 Questo documento definisce la struttura standard delle configurazioni per tutti i moduli.
@@ -26,7 +39,11 @@ return [
     // Configurazioni di base
     'name' => env('MODULE_NAME', 'default'),
     'enabled' => env('MODULE_ENABLED', true),
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // Cache
     'cache' => [
         'enabled' => env('MODULE_CACHE_ENABLED', true),
@@ -34,7 +51,11 @@ return [
         'driver' => env('MODULE_CACHE_DRIVER', 'redis'),
         'prefix' => env('MODULE_CACHE_PREFIX', 'module_'),
     ],
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // Storage
     'storage' => [
         'disk' => env('MODULE_STORAGE_DISK', 'local'),
@@ -44,7 +65,11 @@ return [
         ],
         'max_size' => env('MODULE_STORAGE_MAX_SIZE', 10240),
     ],
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // API
     'api' => [
         'prefix' => env('MODULE_API_PREFIX', 'api/module'),
@@ -58,14 +83,22 @@ return [
             'minutes' => 1,
         ],
     ],
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // Database
     'database' => [
         'prefix' => env('MODULE_DB_PREFIX', 'module_'),
         'connection' => env('MODULE_DB_CONNECTION', null),
         'soft_deletes' => true,
     ],
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     // Views
     'views' => [
         'namespace' => 'module',
@@ -88,7 +121,11 @@ class ConfigValidator
     public function validate(): ValidationResult
     {
         $config = config('module');
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> laraxot/dev
         $rules = [
             'name' => 'required|string',
             'enabled' => 'required|boolean',
@@ -96,9 +133,15 @@ class ConfigValidator
             'cache.ttl' => 'required|integer|min:0',
             // ... altre regole
         ];
+<<<<<<< HEAD
 
         $validator = Validator::make($config, $rules);
 
+=======
+        
+        $validator = Validator::make($config, $rules);
+        
+>>>>>>> laraxot/dev
         return new ValidationResult($validator);
     }
 }
@@ -145,6 +188,7 @@ return array_merge(require __DIR__.'/../vendor/module/config/module.php', [
 
 - [Architettura](../architecture/module-structure.md)
 - [Best Practices](../best-practices.md)
+<<<<<<< HEAD
 - [Sicurezza](../security/readme.md)
 - [Performance](../performance/readme.md)
 
@@ -165,3 +209,26 @@ return array_merge(require __DIR__.'/../vendor/module/config/module.php', [
 * [structure.md](../../../cms/project_docs/structure.md)
 * [structure.md](../../../cms/project_docs/themes/structure.md)
 * [structure.md](../../../cms/project_docs/components/structure.md)
+=======
+- [Sicurezza](../security/README.md)
+- [Performance](../performance/README.md) 
+
+## Collegamenti tra versioni di structure.md
+* [structure.md](bashscripts/docs/structure.md)
+* [structure.md](../../../Gdpr/docs/structure.md)
+* [structure.md](../../../Notify/docs/structure.md)
+* [structure.md](../../../Xot/docs/structure.md)
+* [structure.md](../../../Xot/docs/base/structure.md)
+* [structure.md](../../../Xot/docs/config/structure.md)
+* [structure.md](../../../User/docs/structure.md)
+* [structure.md](../../../UI/docs/structure.md)
+* [structure.md](../../../Lang/docs/structure.md)
+* [structure.md](../../../Job/docs/structure.md)
+* [structure.md](../../../Media/docs/structure.md)
+* [structure.md](../../../Tenant/docs/structure.md)
+* [structure.md](../../../Activity/docs/structure.md)
+* [structure.md](../../../Cms/docs/structure.md)
+* [structure.md](../../../Cms/docs/themes/structure.md)
+* [structure.md](../../../Cms/docs/components/structure.md)
+
+>>>>>>> laraxot/dev

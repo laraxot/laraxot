@@ -1,4 +1,16 @@
-# Pattern view() — Variabile view-string + Parametri Espliciti
+---
+title: "view pattern"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "view pattern"
+issues: []
+discussions: []
+status: draft
+---
+
+# Pattern view(): Variabile view-string + Parametri Espliciti
 
 **Regola**: Per ogni chiamata a view() usare variabile tipizzata view-string e parametri espliciti.
 
@@ -14,9 +26,9 @@ return view($viewName, $viewParams);
 
 ## Logica
 
-1. **Type safety**: view-string è più preciso di (string) — PHPStan sa che è un path Blade valido
-2. **Estensibilità**: Stessa struttura con 0 o N parametri — aggiungere dati = popolare $viewParams
-3. **Consistenza**: Sempre view($viewName, $viewParams) — nessun default implicito
+1. **Type safety**: view-string è più preciso di (string): PHPStan sa che è un path Blade valido
+2. **Estensibilità**: Stessa struttura con 0 o N parametri: aggiungere dati = popolare $viewParams
+3. **Consistenza**: Sempre view($viewName, $viewParams): nessun default implicito
 4. **Manutenibilità**: View name e params in un blocco, facile modificare
 
 ## Con parametri
@@ -48,3 +60,5 @@ return view((string) $view);
 - [phpstan_critical_rules](../.cursor/rules/phpstan_critical_rules.md)
 - [AGENTS.md](../AGENTS.md)
 - [agents.md](../agents.md)
+- [AGENTS.md](../../../AGENTS.md)
+- [agents.md](../../../AGENTS.md)

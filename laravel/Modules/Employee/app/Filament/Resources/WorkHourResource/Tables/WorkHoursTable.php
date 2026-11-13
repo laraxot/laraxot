@@ -8,6 +8,7 @@ use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Modules\Employee\Enums\WorkHourStatusEnum;
 use Modules\Employee\Enums\WorkHourTypeEnum;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 class WorkHoursTable extends XotBaseResourceTable
@@ -18,10 +19,12 @@ class WorkHoursTable extends XotBaseResourceTable
     public function getTableColumns(): array
     {
         return [
-            'id' => TextColumn::make('id')->sortable()->searchable(),
+            // Telefono: sotto `sm` ogni riga e' una card (HasXotTable::stackedOnMobile) con una riga per colonna.
+            // Restano chi, cosa, quando, stato; il resto compare da `md` (la ricerca per id/luogo funziona comunque).
+            'id' => IDColumn::make('id')->visibleFrom('md'),
             'employee.name' => TextColumn::make('employee.name'),
-            'employee.full_name' => TextColumn::make('employee.full_name'),
-            'employee.email' => TextColumn::make('employee.email'),
+            'employee.full_name' => TextColumn::make('employee.full_name')->visibleFrom('md'),
+            'employee.email' => TextColumn::make('employee.email')->visibleFrom('md'),
             'type' => TextColumn::make('type')
                 ->badge()
                 ->colors([
@@ -32,7 +35,7 @@ class WorkHoursTable extends XotBaseResourceTable
                 ])
                 ->formatStateUsing(fn (WorkHourTypeEnum $state): string => $state->getLabel()),
             'timestamp' => TextColumn::make('timestamp')->dateTime('d/m/Y H:i')->sortable(),
-            'location_name' => TextColumn::make('location_name')->searchable()->limit(30),
+            'location_name' => TextColumn::make('location_name')->searchable()->limit(30)->visibleFrom('md'),
             'status' => TextColumn::make('status')
                 ->badge()
                 ->colors([
@@ -42,8 +45,8 @@ class WorkHoursTable extends XotBaseResourceTable
                     'secondary' => 'cancelled',
                 ])
                 ->formatStateUsing(fn (WorkHourStatusEnum $state): string => $state->getLabel()),
-            'approved_by' => TextColumn::make('approvedBy.name')->sortable()->searchable(),
-            'approved_at' => TextColumn::make('approved_at')->dateTime('d/m/Y H:i')->sortable(),
+            'approved_by' => TextColumn::make('approvedBy.name')->sortable()->searchable()->visibleFrom('md'),
+            'approved_at' => TextColumn::make('approved_at')->dateTime('d/m/Y H:i')->sortable()->visibleFrom('md'),
             'created_at' => TextColumn::make('created_at')
                 ->dateTime('d/m/Y H:i')
                 ->sortable()

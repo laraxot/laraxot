@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Risoluzione Conflitti Git - Modulo Xot"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Risoluzione Conflitti Git - Modulo Xot"
+---
+>>>>>>> laraxot/dev
 # Risoluzione Conflitti Git - Modulo Xot
 
 ## Panoramica
@@ -69,4 +82,8 @@ Documentazione della risoluzione dei conflitti Git nel modulo Xot che bloccavano
 - [Script Risoluzione Conflitti](../../../bashscripts/docs/conflict_resolution_script_improvements.md)
 - [Report Completo PHPStan Fixes](../../../bashscripts/docs/phpstan_fixes_comprehensive_report.md)
 
+<<<<<<< HEAD
 *
+=======
+*Ultimo aggiornamento: Dicembre 2024*
+>>>>>>> laraxot/dev

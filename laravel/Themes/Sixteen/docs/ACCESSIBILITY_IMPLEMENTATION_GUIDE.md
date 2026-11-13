@@ -1,3 +1,16 @@
+---
+title: "ACCESSIBILITY IMPLEMENTATION GUIDE"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ACCESSIBILITY IMPLEMENTATION GUIDE"
+issues: []
+discussions: []
+status: superseded
+superseded_by: accessibility-implementation-guide.md
+---
+
 # WCAG 2.1 Accessibility Implementation Guide - Sixteen Theme
 
 ## Executive Summary
@@ -5,7 +18,6 @@
 This document provides specific accessibility implementation guidelines for the **Sixteen Theme**, the citizen-facing frontend of the FixCity platform. All requirements are based on WCAG 2.1 Level AA compliance, mandatory for Italian/EU public sector websites by **June 28, 2025**.
 
 ---
-
 ## Theme-Specific Accessibility Requirements
 
 ### 1. Color Palette & Contrast Compliance

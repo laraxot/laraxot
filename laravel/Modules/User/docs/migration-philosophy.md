@@ -8,17 +8,21 @@ qmd: "migration-philosophy laraxot migration philosophy"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Laraxot Migration Philosophy
 
 ## Core Principle: One Migration Per Table Per Module
@@ -29,7 +33,6 @@ related:
 
 1. **Database Consistency**: Multiple migrations for the same table create confusion about the authoritative schema definition
 2. **Migration Order Issues**: Different timestamps can cause un<nome progetto>able execution order in different environments
->>>>>>> 87273113 (.)
 3. **Maintenance Complexity**: Multiple files for the same table make it difficult to track schema changes
 4. **DRY Violation**: Duplicate migrations violate the "Don't Repeat Yourself" principle
 5. **Single Source of Truth**: Each table should have exactly one authoritative migration file
@@ -109,7 +112,4 @@ Modules/User/database/migrations/
 ---
 
 **Remember**: In Laraxot philosophy, simplicity and clarity trump flexibility. One table, one migration, no exceptions.
->>>>>>> 87273113 (.)
-=======
 **Remember**: In Laraxot philosophy, simplicity and clarity trump flexibility. One table, one migration, no exceptions.
->>>>>>> laraxot/dev

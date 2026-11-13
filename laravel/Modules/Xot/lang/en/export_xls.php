@@ -37,6 +37,9 @@ return [
         'icon' => 'xot-files.xls',
         'sort' => 100,
     ],
+<<<<<<< HEAD
     'fields' => [
     ],
+=======
+>>>>>>> laraxot/dev
 ];

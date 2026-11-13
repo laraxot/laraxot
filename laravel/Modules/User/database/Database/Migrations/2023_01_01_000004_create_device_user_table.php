@@ -1,13 +1,21 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< .merge_file_3XYOwq
 
+=======
+>>>>>>> .merge_file_JJioqq
 use Illuminate\Database\Schema\Blueprint;
 use Modules\User\Models\Device;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Datas\XotData;
 
+<<<<<<< .merge_file_3XYOwq
 return new class extends XotBaseMigration {
+=======
+return new class extends XotBaseMigration
+{
+>>>>>>> .merge_file_JJioqq
     /**
      * Run the migrations.
      */
@@ -36,7 +44,11 @@ return new class extends XotBaseMigration {
                 $table->string('device_id', 36)->nullable()->change();
             }
             // dddx($this->getColumnType('device_id'));//varchar
+<<<<<<< .merge_file_3XYOwq
             if ('uuid' === $this->getColumnType('user_id')) {
+=======
+            if ($this->getColumnType('user_id') === 'uuid') {
+>>>>>>> .merge_file_JJioqq
                 $table->string('user_id', 36)->nullable()->change();
             }
 

@@ -34,7 +34,7 @@ license: project-internal
 **Un contratto che solo un model puo' implementare sta in `app/Models/Contracts/`.
 Tutti gli altri in `app/Contracts/`.**
 
-## Il perche' — e non e' l'estetica della cartella
+## Il perche': e non e' l'estetica della cartella
 
 Il contratto **dichiara da se'** dove va. Se porta
 
@@ -44,7 +44,7 @@ Il contratto **dichiara da se'** dove va. Se porta
 
 allora nessuna classe che non sia un model puo' implementarlo: la domanda «dove lo metto»
 e' gia' chiusa dal contratto, e metterlo altrove significa scrivere una cosa e archiviarla
-come un'altra. Non serve una convenzione da ricordare — serve leggere il file.
+come un'altra. Non serve una convenzione da ricordare: serve leggere il file.
 
 Il contrario vale ugualmente: `RatingsFormCallerContract` vive in `app/Contracts/` perche'
 chi lo implementa e' una **Page di Filament**, non un model. Metterlo sotto `Models/`
@@ -55,7 +55,7 @@ direbbe al lettore di cercare un model che non esiste.
 Il namespace rispecchia la cartella, e la cartella e' la prima cosa che un umano legge di
 un file. `Modules\Rating\Models\Contracts\RatingContract` dice tre cose prima ancora di
 aprire il file: e' del modulo Rating, riguarda i model, e' un contratto. Se la seconda e'
-falsa, il nome mente — e un nome che mente costa piu' di un file nel posto sbagliato,
+falsa, il nome mente: e un nome che mente costa piu' di un file nel posto sbagliato,
 perche' viene copiato.
 
 ## La convenzione, misurata (2026-09-09)
@@ -86,7 +86,7 @@ Modules/Ptv/app/Models/Contracts/StabiDirigenteContract.php
 Due interfacce con lo stesso nome nello stesso modulo: chi importa sceglie a caso, e le due
 divergono. Vanno unificate, ognuna nella story del proprio modulo.
 
-Il terzo — `Ptv\Models\Contracts\SchedaContract` contro `Sigma\Contracts\SchedaContract` —
+Il terzo: `Ptv\Models\Contracts\SchedaContract` contro `Sigma\Contracts\SchedaContract` -
 sono moduli diversi e potrebbero essere due concetti diversi: va guardato, non risolto per
 analogia.
 
@@ -113,7 +113,7 @@ promessa e' *sui model*, e sta con loro.
 
 Chi crea un contratto decide per tutti quelli che lo importeranno. Quindi:
 
-- **si cerca prima** se esiste gia' — il 2026-09-09 due sessioni hanno creato due
+- **si cerca prima** se esiste gia': il 2026-09-09 due sessioni hanno creato due
   `RatingContract` a 52 secondi di distanza, uno in ciascuna cartella;
 - **si fonde, non si scarta**: quello «perdente» aveva due cose vere che all'altro
   mancavano (`getLabel()` e l'estensione di `HasRecursiveRelationshipsContract`), ed e'
@@ -124,7 +124,7 @@ Chi crea un contratto decide per tutti quelli che lo importeranno. Quindi:
 
 `@phpstan-require-extends Model` non e' un'annotazione decorativa: e' la **prova** che il
 contratto e' di un model. Se c'e', la cartella e' `Models/Contracts/`. Se non c'e' ed e'
-impossibile implementarlo senza essere un model, l'annotazione manca e va aggiunta — non e'
+impossibile implementarlo senza essere un model, l'annotazione manca e va aggiunta: non e'
 un caso limite, e' un contratto scritto male.
 
 ## Lo zen

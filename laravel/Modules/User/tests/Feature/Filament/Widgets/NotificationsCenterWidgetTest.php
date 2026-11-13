@@ -1,18 +1,17 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\User\Filament\Widgets\Auth\NotificationsCenterWidget;
 use Modules\User\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
-
-use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
 it('redirects guests from notifiche page', function (): void {
-    $response = get('/it/area-personale/notifications');
+    // Pagina CMS `area-personale/notifiche` (config/local/<progetto>/database/content/pages), middleware `auth`.
+    $response = get('/it/area-personale/notifiche');
 
     $response->assertRedirect();
 });

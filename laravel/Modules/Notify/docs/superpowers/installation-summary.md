@@ -13,6 +13,7 @@ related:
   - "./skills-reference.md"
   - "./superpowers.md"
   - "./workflow.md"
+status: draft
 ---
 
 # 🦸 Superpowers Installation Summary
@@ -305,6 +306,12 @@ Agent: [Systematic debugging]
 - [Skills Reference](docs/superpowers/skills-reference.md)
 - [Quick Index](docs/superpowers/INDEX.md)
 - [Quick Index](docs/superpowers/index.md)
+- [Main README](README.md)
+- [Installation Guide](installation.md)
+- [Workflow Guide](workflow.md)
+- [Skills Reference](skills-reference.md)
+- [Quick Index](INDEX.md)
+- [Quick Index](index.md)
 - [Laravel Integration](laravel/Modules/docs/superpowers.md)
 
 ### External

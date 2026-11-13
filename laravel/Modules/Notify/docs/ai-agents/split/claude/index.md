@@ -16,10 +16,12 @@ related:
   - ../../../notifications/readme.md
   - ../../../integrations/readme.md
   - ../../../templates/readme.md
+status: draft
 ---
 # Laravel Boost Guidelines (../../../../docs/CLAUDE.md) Index
 
 **Source**: [`docs/../../../../docs/CLAUDE.md`](../../../../../../docs/../../../../docs/CLAUDE.md) (833 lines)  
+**Source**: [`docs/../../../../docs/CLAUDE.md`](../../../../../../../docs/CLAUDE.md) (833 lines)  
 **Split Into**: 20 focused files  
 **Last Updated**: 2026-04-11  
 
@@ -91,21 +93,25 @@ related:
 ## Cross-References
 
 ### Related Documentation
-- ← [BMad Agents Index](../../agents/index.md) — 10 agent definitions
-- ← [BMad Tasks Index](../tasks/index.md) — 22 reusable tasks
-- ← [GEMINI Index](../gemini/index.md) — Gemini-specific rules
-- ← [Main AI Docs Index](../index.md) — Master index
+- ← [BMad Agents Index](../../agents/index.md): 10 agent definitions
+- ← [BMad Agents Index](../agents/index.md): 10 agent definitions
+- ← [BMad Tasks Index](../tasks/index.md): 22 reusable tasks
+- ← [GEMINI Index](../gemini/index.md): Gemini-specific rules
+- ← [Main AI Docs Index](../index.md): Master index
 
 ### Bidirectional Links
 - ← Back to [Main AI Docs Index](../index.md)
 - ← Back to [../../../../docs/CLAUDE.md](../../../../../../docs/../../../../docs/CLAUDE.md) (original source)
 - ← Back to [Project Docs](../../../docs/README.md)
+- ← Back to [../../../../docs/CLAUDE.md](../../../../../../../docs/CLAUDE.md) (original source)
+- ← Back to [Project Docs](../../../README.md)
 
 ---
 
 ## Usage
 
 These guidelines are automatically loaded by Claude/Laravel Boost MCP. For manual reference, see the original [`docs/../../../../docs/CLAUDE.md`](../../../../../../docs/../../../../docs/CLAUDE.md).
+These guidelines are automatically loaded by Claude/Laravel Boost MCP. For manual reference, see the original [`docs/../../../../docs/CLAUDE.md`](../../../../../../../docs/CLAUDE.md).
 
 ---
 

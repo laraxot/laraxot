@@ -10,7 +10,7 @@ declare(strict_types=1);
                 <x-heroicon-o-calendar-days class="w-12 h-12 mx-auto" />
             </div>
             <p class="text-sm text-gray-500 dark:text-gray-400">
-                {{ __('employee::widgets.attendance_overview.no_items', ['type' => $type]) }}
+                {{ __('employee::attendance_list.messages.no_items.message', ['type' => $type]) }}
             </p>
         </div>
     @else
@@ -55,7 +55,7 @@ declare(strict_types=1);
         @if(count($items) > 5)
             <div class="mt-4 text-center">
                 <p class="text-xs text-gray-500 dark:text-gray-400">
-                    {{ __('employee::widgets.attendance_overview.showing_first', ['count' => 5, 'total' => count($items)]) }}
+                    {{ __('employee::attendance_list.messages.showing_first.message', ['count' => 5, 'total' => count($items)]) }}
                 </p>
             </div>
         @endif

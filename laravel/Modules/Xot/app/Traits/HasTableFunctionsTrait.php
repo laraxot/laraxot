@@ -10,9 +10,18 @@ use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+<<<<<<< HEAD
 
 /** @phpstan-ignore trait.unused */
 trait HasTableFunctionsTrait
+=======
+use Modules\UI\Filament\Tables\Columns\IDColumn;
+
+/**
+ * @phpstan-ignore trait.unused
+ */
+trait HasTableFunctionsTrait // @phpstan-ignore trait.unused
+>>>>>>> laraxot/dev
 {
     /**
      * Get the table columns for the list view.
@@ -22,7 +31,11 @@ trait HasTableFunctionsTrait
     public function getTableColumns(): array
     {
         return [
+<<<<<<< HEAD
             'id' => TextColumn::make('id'),
+=======
+            'id' => IDColumn::make('id'),
+>>>>>>> laraxot/dev
             'name' => TextColumn::make('name'),
             'created_at' => TextColumn::make('created_at')->dateTime(),
             'updated_at' => TextColumn::make('updated_at')->dateTime(),

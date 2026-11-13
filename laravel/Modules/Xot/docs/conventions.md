@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Convenzioni di Naming"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "convenzioni di naming xot"
+---
+>>>>>>> laraxot/dev
 # Convenzioni di Naming
 
 ## Struttura delle Cartelle nei Moduli

@@ -1,13 +1,16 @@
 ---
-title: "PHPStan Status — User Module"
+title: "PHPStan Status: User Module"
 module: user
 type: integration
 tags: [integrations, modules, user]
 created: 2026-08-24
 updated: 2026-08-24
+qmd: "phpstan status   user module user"
+status: superseded
+superseded_by: phpstan-status.md
 ---
 
-# PHPStan Status — User Module
+# PHPStan Status: User Module
 
 ## Latest Analysis
 

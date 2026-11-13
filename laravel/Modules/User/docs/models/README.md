@@ -14,6 +14,7 @@ related:
   - "./teampermission.md"
   - "./xotbaivot-migration.md"
   - "./xotbasepivot-migration.md"
+status: draft
 ---
 
 # User Module - Model Documentation
@@ -634,7 +635,8 @@ La connection `user` gestisce queste tabelle principali:
 - [DRY-KISS Analysis](../../../xot/docs/models/dry-kiss-analysis.md) - Analisi duplicazioni
 - [XotBaseModel](../../../Xot/app/Models/XotBaseModel.php) - Base class livello 1
 - [BaseModel](../../app/Models/BaseModel.php) - Base class User module
-- [CLAUDE.md](../../../../claude.md) - Convenzioni progetto
+- [CLAUDE.md](../../../../CLAUDE.md) - Convenzioni progetto
+- [CLAUDE.md](../../../../CLAUDE.md) - Convenzioni progetto
 
 ## Changelog
 

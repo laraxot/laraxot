@@ -1,3 +1,9 @@
+---
+title: "Employee - SESSION-SUMMARY-PHPSTAN-FIXES"
+module: Employee
+bmad: true
+status: active
+---
 # Session Summary - PHPStan Fixes 2025-01-06
 
 ## Obiettivo Sessione

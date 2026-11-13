@@ -1,4 +1,12 @@
 ---
+title: "story 002 scheda contract unification"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "story 002 scheda contract unification"
+issues: []
+discussions: []
 scope: module:Geo
 ---
 

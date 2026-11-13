@@ -1,3 +1,16 @@
+---
+title: "USER RESEARCH"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "USER RESEARCH"
+issues: []
+discussions: []
+status: superseded
+superseded_by: user_research.md
+---
+
 # Seo Module - User Research
 
 **Module:** Seo  
@@ -5,7 +18,6 @@
 **Owner:** Product Team
 
 ---
-
 ## Research Goals
 
 1. Understand search behavior

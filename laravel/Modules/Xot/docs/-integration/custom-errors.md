@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "custom_errors"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "custom_errors xot"
+---
+>>>>>>> laraxot/dev
 # custom_errors
 
 <!-- Contenuto migrato da _docs/custom_errors.txt -->

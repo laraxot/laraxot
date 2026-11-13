@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_yLU0Gf
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -266,8 +265,6 @@ _Report generato automaticamente — fonte: `/tmp/metodi_duplicati_domain_report
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 # 🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION
 =======
 _Report generato automaticamente: fonte: `/tmp/metodi_duplicati_domain_report.md`_# 🐄⚡ ANALISI METODI DUPLICATI - SUPER MUCCA EDITION
@@ -1370,12 +1367,8 @@ public function getTableFilters(): array
 4. Implementazione ColumnBuilder
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 **Domande?** Chiedi alla Super Mucca! 🐄⚡
 >>>>>>> 0a02158a (.)
 =======
 **Domande?** Chiedi alla Super Mucca! 🐄⚡
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-**Domande?** Chiedi alla Super Mucca! 🐄⚡
->>>>>>> 13cf1831 (.)

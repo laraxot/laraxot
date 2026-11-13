@@ -44,7 +44,7 @@ function readTranslationTestFilePath(): string
 
 function makeReadTranslationFileAction(): ReadTranslationFileAction
 {
-    return new ReadTranslationFileAction();
+    return new ReadTranslationFileAction;
 }
 
 afterEach(function (): void {
@@ -59,7 +59,7 @@ describe('Read Translation File Action', function (): void {
         /** @var TestCase $this */
         $filePath = readTranslationTestFilePath();
         $translations = defaultReadTranslationTestData();
-        createTranslationFile($filePath, $translations);
+        TestCase::createTranslationFile($filePath, $translations);
 
         $result = makeReadTranslationFileAction()->execute($filePath);
 
@@ -79,7 +79,7 @@ describe('Read Translation File Action', function (): void {
     test('throws exception for unreadable file', function (): void {
         /** @var TestCase $this */
         $filePath = readTranslationTestFilePath();
-        createTranslationFile($filePath, defaultReadTranslationTestData());
+        TestCase::createTranslationFile($filePath, defaultReadTranslationTestData());
         chmod($filePath, 0o000);
 
         $this->expectApplicationException(\Exception::class, 'File di traduzione non leggibile:');

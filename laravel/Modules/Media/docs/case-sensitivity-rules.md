@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Case Sensitivity Rules - Media Module"
 module: "Media"
 type: rule
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "case sensitivity rules"
 related:
   - "./webm.md"
+status: draft
 ---
 # Case Sensitivity Rules - Media Module
 
@@ -33,6 +36,15 @@ I seguenti file sono stati eliminati perché violavano le regole:
 - **Esempio**: `MediaConvertResourceTest.php`
 - ❌ **Errato**: `mediaconvertresourcetest.php`
 
+## Stato verificato 2026-10-20
+
+L'elenco "File Rimossi" sopra non corrisponde piu' al repository: `git ls-files` in `Modules/Media` traccia di nuovo
+`tests/Filament/Resources/mediaconvertresourcetest.php` accanto a `MediaConvertResourceTest.php`, e la cartella
+`tests/filament/resources/` (minuscola) contiene la stessa coppia di nomi, per un totale di quattro file. Nessuno e' stato
+cancellato dalla lane PHPStan ([phpstan-test-wave-media](./stories/phpstan-test-wave-media.story.md)): le due varianti del
+bucket sono state allineate, la rimozione resta una decisione aperta.
+
 ## Update Log
 
 - **[DATE]**: Removed `mediaconvertresourcetest.php` duplicate
+- **2026-10-20**: duplicati ricomparsi nel repository (vedi sopra), non rimossi

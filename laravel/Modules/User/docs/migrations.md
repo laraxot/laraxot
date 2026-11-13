@@ -1,20 +1,27 @@
 ---
-title: User Module — Migrations & Schema
+title: User Module: Migrations & Schema
 created: 2026-07-15
 updated: 2026-07-15
 type: module-documentation
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
+tags: [docs, user]
+qmd: "user module   migrations & schema parity user"
 ---
 
-# User Module — Migrations & Schema Parity
+# User Module: Migrations & Schema Parity
 
 ## Philosophy
 
@@ -32,7 +39,7 @@ All models in User module must maintain 1:1:1:1 parity with migrations, seeders,
 
 | Model | Migration | Status | Notes |
 |-------|-----------|--------|-------|
-| User | 2026_02_13_172136_create_users_table.php | ✅ | Main users table, Jetstream-based |
+| User | 2026_11_12_120000_create_users_table.php | ✅ | Main users table, Jetstream-based; owner migration timestamp refreshed for schema repair |
 | Team | 2026_07_15_120000_create_teams_table.php | ✅ | Multi-user teams, owner_id pivot |
 | Profile | 2026_04_28_120000_create_profiles_table.php | ✅ | Extended user info (addresses, etc) |
 | TeamUser | 2023_01_01_000004_create_team_user_table.php | ✅ | Pivot: Team ↔ User membership |
@@ -41,7 +48,7 @@ All models in User module must maintain 1:1:1:1 parity with migrations, seeders,
 | DeviceUser | 2023_01_01_000004_create_device_user_table.php | ✅ | Pivot: Device ↔ User mapping |
 | TenantUser | 2026_01_01_000002_create_tenant_user_table.php | ✅ | Pivot: Tenant ↔ User access |
 | SsoProvider | 2025_10_15_153835_create_sso_providers_table.php | ✅ | OAuth/SAML providers (Socialite) |
-| SocialiteUser | 2023_01_01_000003_create_socialite_user_table.php | ✅ | OAuth user identities (GitHub, Google) |
+| SocialiteUser | 2026_11_12_120002_create_socialite_users_table.php | ✅ | OAuth user identities (GitHub, Google), owned by the `user` connection |
 | OauthClient | 2026_03_01_000003_create_oauth_clients_table.php | ✅ | Passport OAuth clients |
 | OauthAccessToken | 2023_01_01_000003_create_oauth_access_tokens_table.php | ✅ | Passport access tokens |
 | OauthRefreshToken | 2020_01_01_000003_create_oauth_refresh_tokens_table.php | ✅ | Passport refresh tokens |
@@ -69,37 +76,37 @@ All models in User module must maintain 1:1:1:1 parity with migrations, seeders,
 - **Auth**: Jetstream with 2FA support
 - **Columns**: id, email, password, name, avatar, phone_verified_at, email_verified_at, two_factor_secret, two_factor_recovery_codes
 - **Relations**: 
-  - `hasMany(Team)` — Teams user owns
-  - `hasMany(Profile)` — User profiles
-  - `belongsToMany(Team)` via `team_user` — Team memberships
-  - `belongsToMany(Role)` — Direct roles (RBAC)
-  - `hasManyThrough(Permission)` — Via roles
+  - `hasMany(Team)`: Teams user owns
+  - `hasMany(Profile)`: User profiles
+  - `belongsToMany(Team)` via `team_user`: Team memberships
+  - `belongsToMany(Role)`: Direct roles (RBAC)
+  - `hasManyThrough(Permission)`: Via roles
 
 ### Team  
 - **Table**: `teams`
 - **Pivot column**: `owner_id` → User who created team
 - **Columns**: id, owner_id, name, personal_team, code, uuid
 - **Relations**:
-  - `belongsTo(User, owner_id)` — Team owner
-  - `belongsToMany(User)` via `team_user` — Members
-  - `hasMany(TeamInvitation)` — Pending invites
+  - `belongsTo(User, owner_id)`: Team owner
+  - `belongsToMany(User)` via `team_user`: Members
+  - `hasMany(TeamInvitation)`: Pending invites
 
 ### Profile
 - **Table**: `profiles`
 - **Purpose**: Extended user info (addresses, phone numbers, social media)
 - **Relations**:
-  - `belongsTo(User)` — Associated user
-  - `belongsToMany(Tenant)` via `profile_team` — Tenant access
+  - `belongsTo(User)`: Associated user
+  - `belongsToMany(Tenant)` via `profile_team`: Tenant access
 
 ### Pivot Tables
 All pivot tables follow naming convention `<model1>_<model2>_table.php`:
-- `team_user` — Team ↔ User membership
-- `device_user` — Device ↔ User mapping
-- `tenant_user` — Tenant ↔ User access
-- `profile_team` — Profile ↔ Tenant access
-- `model_has_roles` — Model ↔ Role assignment
-- `model_has_permissions` — Model ↔ Permission grant
-- `role_has_permissions` — Role ↔ Permission mapping
+- `team_user`: Team ↔ User membership
+- `device_user`: Device ↔ User mapping
+- `tenant_user`: Tenant ↔ User access
+- `profile_team`: Profile ↔ Tenant access
+- `model_has_roles`: Model ↔ Role assignment
+- `model_has_permissions`: Model ↔ Permission grant
+- `role_has_permissions`: Role ↔ Permission mapping
 
 ---
 
@@ -127,7 +134,7 @@ YYYY_MM_DD_HHMMSS_create_<table>_table.php
 
 ✅ **Correct:**
 - `2026_07_15_120000_create_teams_table.php`
-- `2026_02_13_172136_create_users_table.php`
+- `2026_11_12_120000_create_users_table.php`
 - `2023_01_01_000004_create_team_user_table.php`
 
 ❌ **Incorrect (never use):**
@@ -145,10 +152,10 @@ $this->updateTimestamps($table, $softDeletes = false);
 ```
 
 **Added columns:**
-- `created_at` — When record was created
-- `updated_at` — When record was last updated
-- `created_by` — User ID who created it
-- `updated_by` — User ID who updated it
+- `created_at`: When record was created
+- `updated_at`: When record was last updated
+- `created_by`: User ID who created it
+- `updated_by`: User ID who updated it
 
 **With soft deletes** (`SoftDeletes` trait):
 ```php
@@ -156,8 +163,8 @@ $this->updateTimestamps($table, true);
 ```
 
 **Additional columns:**
-- `deleted_at` — When record was soft-deleted
-- `deleted_by` — User ID who deleted it
+- `deleted_at`: When record was soft-deleted
+- `deleted_by`: User ID who deleted it
 
 ---
 
@@ -310,4 +317,4 @@ done
 
 **Last updated:** 2026-07-15  
 **Maintainer:** Marco (marco76tv)  
-**Status:** ✅ Active — All migrations conform to XotBaseMigration standard
+**Status:** ✅ Active: All migrations conform to XotBaseMigration standard

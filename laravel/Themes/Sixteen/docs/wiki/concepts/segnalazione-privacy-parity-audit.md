@@ -1,3 +1,16 @@
+---
+title: "segnalazione privacy parity audit"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "segnalazione privacy parity audit"
+issues: []
+discussions: []
+status: superseded
+superseded_by: ticket-privacy-parity-audit.md
+---
+
 # segnalazione privacy parity audit
 
 ## Scope

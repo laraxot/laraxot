@@ -1,3 +1,15 @@
+---
+title: "translation structure 5 levels mandatory"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "translation structure 5 levels mandatory"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🔴 TRANSLATION STRUCTURE - 5 LEVELS MANDATORY
 
 **Path**: `.agents/docs/rules/translation-structure-5-levels-mandatory.md`  
@@ -6,7 +18,6 @@
 **Priority**: BLOCKER
 
 ---
-
 ## 🎯 The Rule
 
 > **SEMPRE** usare traduzioni a **5 LIVELLI** con `__()`:

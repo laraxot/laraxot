@@ -1,11 +1,23 @@
-# Code quality — modulo Rating
+---
+title: "code quality report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "code quality report"
+issues: []
+discussions: []
+status: draft
+---
+
+# Code quality: modulo Rating
 
 Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (ruleset codesize+unusedcode), grep mirati (TODO/FIXME/@deprecated, dd()/dump(), facade in app/Actions, extends Filament diretto), rapporto file test/app.
 
 ## Numeri
 
 - File in `app/`: 57
-- File di test: 4 — rapporto test/app: 7%
+- File di test: 4: rapporto test/app: 7%
 - File con TODO/FIXME/@deprecated: 0
 - PHPStan: 0 errori (livello max, sweep repo-wide 2026-07-16/17)
 - Violazioni PHPMD (codesize+unusedcode): 16
@@ -50,7 +62,7 @@ Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (rule
 
 
 
-## Come migliorare — modifiche effettive da fare
+## Come migliorare: modifiche effettive da fare
 
 ### 2. Ridurre la complessità ciclomatica
 
@@ -61,7 +73,7 @@ Metodi/classi oltre soglia (10 per metodo, 50 per classe) in questo modulo:
 Tecnica di refactoring consigliata: **estrarre ogni ramo condizionale in un metodo privato dedicato**, o sostituire lunghe catene if/elseif con una `match()` che delega a metodi/Action più piccoli. Esempio:
 
 ```php
-// PRIMA — un metodo con 15+ rami
+// PRIMA: un metodo con 15+ rami
 public function resolveType(string $type): string
 {
     if ($type === "a") { /* ... */ }
@@ -69,7 +81,7 @@ public function resolveType(string $type): string
     // ... altri 10+ rami
 }
 
-// DOPO — dispatch table, ogni ramo è un metodo testabile singolarmente
+// DOPO: dispatch table, ogni ramo è un metodo testabile singolarmente
 public function resolveType(string $type): string
 {
     return match ($type) {

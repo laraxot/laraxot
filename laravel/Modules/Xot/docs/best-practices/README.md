@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Best Practices"
+type: index
+status: draft
+updated: 2026-10-20
+tags: [docs, xot, best-practices]
+qmd: "best practices xot"
+---
+>>>>>>> laraxot/dev
 # Best Practices
 
 ## Laraxot Framework Standards

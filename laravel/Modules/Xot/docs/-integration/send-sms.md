@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "send_sms"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "send_sms xot"
+---
+>>>>>>> laraxot/dev
 # send_sms
 
 <!-- Contenuto migrato da _docs/send_sms.txt -->

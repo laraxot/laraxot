@@ -3,14 +3,23 @@ title: "Module Schema"
 module: "User"
 created: "2026-04-15T08:28:51Z"
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "user module schema user"
 ---
 
 # User Module Schema
@@ -27,12 +36,12 @@ related:
 ## Wiki Rules
 
 ### raw/ Rules
-- ✅ Immutable — AI reads but never modifies or deletes
-- ✅ Drop liberally — articles, code snippets, decisions
+- ✅ Immutable: AI reads but never modifies or deletes
+- ✅ Drop liberally: articles, code snippets, decisions
 - ✅ Subdivide by type: `articles/`, `papers/`, `code-examples/`, `decisions/`
 
 ### wiki/ Rules
-- ✅ AI-owned — synthesizes raw documents into structured knowledge
+- ✅ AI-owned: synthesizes raw documents into structured knowledge
 - ✅ Every page MUST have YAML frontmatter
 - ✅ Link related pages via `related:` in frontmatter
 - ✅ Update `index.md` and `log.md` after each operation

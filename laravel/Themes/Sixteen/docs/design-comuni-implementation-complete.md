@@ -1,3 +1,15 @@
+---
+title: "design comuni implementation complete"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni implementation complete"
+issues: []
+discussions: []
+status: draft
+---
+
 # Implementazione Completa Design Comuni nel Tema Sixteen
 
 ## Panoramica

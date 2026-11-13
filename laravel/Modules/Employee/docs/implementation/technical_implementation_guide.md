@@ -1,3 +1,9 @@
+---
+title: "Employee - TECHNICAL_IMPLEMENTATION_GUIDE"
+module: Employee
+bmad: true
+status: active
+---
 # Guida Implementazione Tecnica - Modulo Employee
 
 ## Architettura del Sistema

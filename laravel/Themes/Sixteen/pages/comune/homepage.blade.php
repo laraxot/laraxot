@@ -1,14 +1,14 @@
 @extends('sixteen::layouts.app')
 
-@section('title', 'Homepage - Comune di ' . config('comune.nome', 'Nome Comune'))
+@section('title', __('pub_theme::comune_pages.homepage.page_title.title', ['name' => config('comune.nome', 'Nome Comune')]))
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="it-page-section">
-                <h1>Benvenuti nel Comune di {{ config('comune.nome', 'Nome Comune') }}</h1>
-                <p class="lead">Il portale ufficiale per i servizi e le informazioni del comune</p>
+                <h1>{{ __('pub_theme::comune_pages.homepage.welcome_to_municipality.label', ['name' => config('comune.nome', 'Nome Comune')]) }}</h1>
+                <p class="lead">{{ __('pub_theme::comune_pages.homepage.the_official_portal_for_the_municipality.message') }}</p>
             </div>
         </div>
     </div>
@@ -22,9 +22,9 @@
                         <div class="it-header-icon">
                             <i class="fas fa-exclamation-triangle"></i>
                         </div>
-                        <h5 class="card-title">Segnalazioni</h5>
-                        <p class="card-text">Segnala problemi e disservizi nel territorio comunale</p>
-                        <a href="{{ route('fixcity.tickets.create') }}" class="btn btn-primary">Segnala</a>
+                        <h5 class="card-title">{{ __('pub_theme::blocks_common.shared.reports.label') }}</h5>
+                        <p class="card-text">{{ __('pub_theme::comune_pages.homepage.report_problems_and_service_issues_in.label') }}</p>
+                        <a href="{{ route('segnalazioni') }}" class="btn btn-primary">{{ __('pub_theme::comune_pages.homepage.report.label') }}</a>
                     </div>
                 </div>
             </div>
@@ -37,9 +37,9 @@
                         <div class="it-header-icon">
                             <i class="fas fa-cogs"></i>
                         </div>
-                        <h5 class="card-title">Servizi</h5>
-                        <p class="card-text">Accedi ai servizi online del comune</p>
-                        <a href="{{ route('comune.servizi') }}" class="btn btn-primary">Vai ai Servizi</a>
+                        <h5 class="card-title">{{ __('pub_theme::blocks_common.shared.services.label') }}</h5>
+                        <p class="card-text">{{ __('pub_theme::comune_pages.homepage.access_the_municipality_s_online_services.label') }}</p>
+                        <a href="{{ route('services.categories') }}" class="btn btn-primary">{{ __('pub_theme::comune_pages.homepage.go_to_services.label') }}</a>
                     </div>
                 </div>
             </div>
@@ -52,9 +52,9 @@
                         <div class="it-header-icon">
                             <i class="fas fa-newspaper"></i>
                         </div>
-                        <h5 class="card-title">Novità</h5>
-                        <p class="card-text">Scopri le ultime notizie e comunicati</p>
-                        <a href="{{ route('comune.novita') }}" class="btn btn-primary">Leggi le Novità</a>
+                        <h5 class="card-title">{{ __('pub_theme::blocks_common.shared.news.label') }}</h5>
+                        <p class="card-text">{{ __('pub_theme::comune_pages.homepage.discover_the_latest_news_and_announcements.label') }}</p>
+                        <a href="{{ route('news') }}" class="btn btn-primary">{{ __('pub_theme::comune_pages.homepage.read_the_news.label') }}</a>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
     <div class="row mt-5">
         <div class="col-12">
             <div class="it-page-section">
-                <h2>Ultime Segnalazioni</h2>
+                <h2>{{ __('pub_theme::comune_pages.homepage.latest_reports.label') }}</h2>
                 <div class="row">
                     @foreach($recentTickets as $ticket)
                     <div class="col-md-6 col-lg-4">
@@ -79,7 +79,7 @@
                                         <span class="badge badge-{{ $ticket->priority }}">{{ $ticket->priority_label }}</span>
                                         <span class="badge badge-{{ $ticket->status }}">{{ $ticket->status_label }}</span>
                                     </div>
-                                    <a href="{{ route('fixcity.tickets.show', $ticket) }}" class="btn btn-outline-primary btn-sm">Dettagli</a>
+                                    <a href="{{ route('container0.view', ['container0' => 'tickets', 'slug0' => $ticket->getKey()]) }}" class="btn btn-outline-primary btn-sm">{{ __('pub_theme::blocks_common.shared.details.label') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
     <div class="row mt-5">
         <div class="col-12">
             <div class="it-page-section">
-                <h2>Ultime Novità</h2>
+                <h2>{{ __('pub_theme::comune_pages.homepage.latest_news.label') }}</h2>
                 <div class="row">
                     @foreach($recentNews as $news)
                     <div class="col-md-6 col-lg-4">
@@ -108,7 +108,7 @@
                                     <div class="card-meta">
                                         <small class="text-muted">{{ $news->created_at->format('d/m/Y') }}</small>
                                     </div>
-                                    <a href="{{ route('comune.novita.show', $news) }}" class="btn btn-outline-primary btn-sm">Leggi</a>
+                                    <a href="{{ route('events.show', $news) }}" class="btn btn-outline-primary btn-sm">{{ __('pub_theme::blocks_common.shared.read.label') }}</a>
                                 </div>
                             </div>
                         </div>

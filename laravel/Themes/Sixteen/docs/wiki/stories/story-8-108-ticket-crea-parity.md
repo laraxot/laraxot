@@ -1,3 +1,15 @@
+---
+title: "story 8 108 ticket crea parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "story 8 108 ticket crea parity"
+issues: []
+discussions: []
+status: draft
+---
+
 # Story 8-108: Segnalazione-Crea Parity con Design Comuni
 
 ## Obiettivo

@@ -14,7 +14,10 @@ describe('Article Data', function (): void {
     test('can create article data with defaults', function (): void {
         $data = ArticleData::make();
 
+<<<<<<< HEAD
         Assert::assertInstanceOf(ArticleData::class, $data);
+=======
+>>>>>>> laraxot/dev
         Assert::assertEquals(['post', 'page', 'news'], $data->types);
         Assert::assertEquals([], $data->categories);
         Assert::assertEquals('markdown', $data->editor);

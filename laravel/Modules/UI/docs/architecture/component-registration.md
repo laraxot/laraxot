@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "component registration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "component registration"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Registrazione dei Componenti nei Moduli
 
 ## Regola Fondamentale

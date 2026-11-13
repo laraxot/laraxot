@@ -1,3 +1,15 @@
+---
+title: "INDEX"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "INDEX"
+issues: []
+discussions: []
+status: draft
+---
+
 # UI Layout & Visibility Fixes - Documentation Index
 
 **Created**: 2026-04-02  
@@ -5,11 +17,10 @@
 **Approach**: BMAD + GSD structured workflow  
 
 ---
-
 ## 📚 Documentation Structure
 
 ### 📋 Master Analysis
-- **File**: `UI-LAYOUT-VISIBILITY-ISSUES-ANALYSIS.md`
+- **File**: `ui-layout-visibility-issues-analysis.md`
 - **Purpose**: Comprehensive overview of all 3 issues
 - **Content**: 
   - Issues identified
@@ -24,7 +35,7 @@
 ## 🔧 Individual Issue Documentation
 
 ### Fix #1: Container Centering
-- **File**: `ui-fixes/CONTAINER-CENTERING-ISSUE.md`
+- **File**: `ui-fixes/container-centering-issue.md`
 - **Issue**: Page content left-aligned instead of centered
 - **Severity**: HIGH
 - **Root Cause**: Missing `margin: auto` and padding
@@ -32,7 +43,7 @@
 - **Testing**: Visual verification
 
 ### Fix #2: Social Icons Visibility
-- **File**: `ui-fixes/SOCIAL-ICONS-VISIBILITY-ISSUE.md`
+- **File**: `ui-fixes/social-icons-visibility-issue.md`
 - **Issue**: Social icons hidden in header
 - **Severity**: HIGH
 - **Root Cause**: CSS class override issue (`d-none d-lg-flex`)
@@ -40,7 +51,7 @@
 - **Testing**: Responsive verification
 
 ### Fix #3: Search Modal Visibility
-- **File**: `ui-fixes/SEARCH-MODAL-VISIBILITY-ISSUE.md`
+- **File**: `ui-fixes/search-modal-visibility-issue.md`
 - **Issue**: Modal should be hidden by default
 - **Severity**: MEDIUM
 - **Root Cause**: Missing Bootstrap modal CSS mappings
@@ -50,7 +61,7 @@
 ---
 
 ### Master Planning (BMAD Decisions)
-- **File**: `ui-fixes/BMAD-STRATEGIC-DECISIONS.md`
+- **File**: `ui-fixes/bmad-strategic-decisions.md`
 - **Purpose**: Strategic approach and execution plan approved by analyst
 - **Content**:
   - Execution strategy (Parallel Fix #1+2 → Fix #3)
@@ -92,7 +103,7 @@ laravel/Themes/Sixteen/resources/css/tailwind-bootstrap-mapping.css
 ## 🚀 Recommended Workflow
 
 ### Step 1: Review Documentation
-1. Read: `UI-LAYOUT-VISIBILITY-ISSUES-ANALYSIS.md`
+1. Read: `ui-layout-visibility-issues-analysis.md`
 2. Review: Individual issue documents
 3. Understand: Each fix's requirements
 
@@ -103,7 +114,7 @@ laravel/Themes/Sixteen/resources/css/tailwind-bootstrap-mapping.css
    - **Decision**: Parallel execution (Fix #1 + Fix #2) → Fix #3
    - **HTML Constraint**: Maintain 100% Italia design structure
    - **Verification**: Multi-level (screenshots + tests + checklist)
-   - **See**: `BMAD-STRATEGIC-DECISIONS.md`
+   - **See**: `bmad-strategic-decisions.md`
 
 ### Step 3: Create Execution Plan (GSD)
 1. Break down: Each fix into tasks
@@ -166,12 +177,12 @@ laravel/Themes/Sixteen/resources/css/tailwind-bootstrap-mapping.css
 ## 📝 Documentation Navigation
 
 ### Forward Links
-- **Analysis** → `UI-LAYOUT-VISIBILITY-ISSUES-ANALYSIS.md`
-- **BMAD Decisions** → `ui-fixes/BMAD-STRATEGIC-DECISIONS.md` ✅ NEW
-- **Container Fix** → `ui-fixes/CONTAINER-CENTERING-ISSUE.md`
-- **Social Icons Fix** → `ui-fixes/SOCIAL-ICONS-VISIBILITY-ISSUE.md`
-- **Modal Fix** → `ui-fixes/SEARCH-MODAL-VISIBILITY-ISSUE.md`
-- **Original Implementation Plan** → `ui-fixes/UI-FIXES-MASTER-PLAN.md`
+- **Analysis** → `ui-layout-visibility-issues-analysis.md`
+- **BMAD Decisions** → `ui-fixes/bmad-strategic-decisions.md` ✅ NEW
+- **Container Fix** → `ui-fixes/container-centering-issue.md`
+- **Social Icons Fix** → `ui-fixes/social-icons-visibility-issue.md`
+- **Modal Fix** → `ui-fixes/search-modal-visibility-issue.md`
+- **Original Implementation Plan** → `ui-fixes/ui-fixes-master-plan.md`
 
 ### Backward Links
 - **From Analysis** ← This index
@@ -203,11 +214,11 @@ laravel/Themes/Sixteen/resources/css/tailwind-bootstrap-mapping.css
 ## 📞 Contact & Questions
 
 For questions about:
-- **Analysis**: See `UI-LAYOUT-VISIBILITY-ISSUES-ANALYSIS.md`
-- **Container Fix**: See `ui-fixes/CONTAINER-CENTERING-ISSUE.md`
-- **Social Icons**: See `ui-fixes/SOCIAL-ICONS-VISIBILITY-ISSUE.md`
-- **Modal**: See `ui-fixes/SEARCH-MODAL-VISIBILITY-ISSUE.md`
-- **Implementation**: See `ui-fixes/UI-FIXES-MASTER-PLAN.md`
+- **Analysis**: See `ui-layout-visibility-issues-analysis.md`
+- **Container Fix**: See `ui-fixes/container-centering-issue.md`
+- **Social Icons**: See `ui-fixes/social-icons-visibility-issue.md`
+- **Modal**: See `ui-fixes/search-modal-visibility-issue.md`
+- **Implementation**: See `ui-fixes/ui-fixes-master-plan.md`
 
 ---
 

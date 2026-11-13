@@ -1,3 +1,15 @@
+---
+title: "master roadmap 2025"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "master roadmap 2025"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🗺️ FIXCITY PLATFORM - MASTER ROADMAP 2025
 
 **Data Creazione**: 2025-01-27  
@@ -7,7 +19,6 @@
 **Filament Status**: ✅ 4.x COMPATIBILE  
 
 ---
-
 ## 🎯 EXECUTIVE SUMMARY
 
 **FixCity** è una piattaforma **Civic Tech** per il civic engagement urbano che connette cittadini e amministrazioni per rendere le città più vivibili, efficienti e responsive. Il progetto è basato su un'architettura modulare Laravel con Filament 4.x e segue i principi AGID per l'accessibilità.

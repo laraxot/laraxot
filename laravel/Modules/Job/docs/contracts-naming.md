@@ -1,4 +1,7 @@
 ---
+qmd: "contracts naming"
+issues: []
+discussions: []
 title: "Contracts Naming & Placement"
 type: concept
 created: 2026-07-12
@@ -6,6 +9,7 @@ updated: 2026-07-12
 tags: [contract, naming, architecture, laraxot, job]
 related:
   - ../../../../docs/wiki/rules/module-contracts-naming-placement.md
+status: draft
 ---
 
 # Contracts Naming & Placement in Job

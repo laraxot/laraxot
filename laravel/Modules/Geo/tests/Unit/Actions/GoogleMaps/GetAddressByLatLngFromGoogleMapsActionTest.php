@@ -11,7 +11,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use Modules\Geo\Actions\GoogleMaps\GetAddressByLatLngFromGoogleMapsAction;
-use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Tests\LightTestCase;
 use PHPUnit\Framework\Assert;
 
@@ -19,7 +18,7 @@ use function Safe\json_encode;
 
 uses(LightTestCase::class);
 it('throws exception when api key is not configured', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -35,7 +34,7 @@ it('throws exception when api key is not configured', function (): void {
 });
 
 it('throws exception for invalid latitude below -90', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -52,7 +51,7 @@ it('throws exception for invalid latitude below -90', function (): void {
 });
 
 it('throws exception for invalid latitude above 90', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -69,7 +68,7 @@ it('throws exception for invalid latitude above 90', function (): void {
 });
 
 it('throws exception for invalid longitude below -180', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -86,7 +85,7 @@ it('throws exception for invalid longitude below -180', function (): void {
 });
 
 it('throws exception for invalid longitude above 180', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -103,7 +102,7 @@ it('throws exception for invalid longitude above 180', function (): void {
 });
 
 it('throws exception for guzzle exception', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -121,7 +120,7 @@ it('throws exception for guzzle exception', function (): void {
 });
 
 it('throws exception when no results found', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -137,12 +136,12 @@ it('throws exception when no results found', function (): void {
         $action->execute(45.4642, 9.1900);
         Assert::fail('Expected RuntimeException was not thrown');
     } catch (\RuntimeException $exception) {
-        Assert::assertSame('No address found', $exception->getMessage());
+        Assert::assertSame('No address found for coordinates', $exception->getMessage());
     }
 });
 
 it('throws exception for invalid response status', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -158,12 +157,12 @@ it('throws exception for invalid response status', function (): void {
         $action->execute(45.4642, 9.1900);
         Assert::fail('Expected RuntimeException was not thrown');
     } catch (\RuntimeException $exception) {
-        Assert::assertSame('No address found', $exception->getMessage());
+        Assert::assertSame('No address found for coordinates', $exception->getMessage());
     }
 });
 
 it('returns location data for valid coordinates', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -185,14 +184,13 @@ it('returns location data for valid coordinates', function (): void {
 
     $result = $action->execute(45.4642, 9.1900);
 
-    Assert::assertInstanceOf(LocationData::class, $result);
     Assert::assertSame('Via Roma, Milano, MI, Italia', $result->address);
     Assert::assertSame(45.4642, $result->latitude);
     Assert::assertSame(9.1900, $result->longitude);
 });
 
 it('handles boundary latitude values', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -214,12 +212,11 @@ it('handles boundary latitude values', function (): void {
 
     $result = $action->execute(90.0, 0.0);
 
-    Assert::assertInstanceOf(LocationData::class, $result);
     Assert::assertSame(90.0, $result->latitude);
 });
 
 it('handles boundary longitude values', function (): void {
-    $mockHandler = new MockHandler();
+    $mockHandler = new MockHandler;
     $handlerStack = HandlerStack::create($mockHandler);
     $client = new Client(['handler' => $handlerStack]);
     $action = new GetAddressByLatLngFromGoogleMapsAction($client);
@@ -241,6 +238,5 @@ it('handles boundary longitude values', function (): void {
 
     $result = $action->execute(0.0, 180.0);
 
-    Assert::assertInstanceOf(LocationData::class, $result);
     Assert::assertSame(180.0, $result->longitude);
 });

@@ -1,3 +1,11 @@
+---
+title: "Type Safety Refactoring: Elimination of `mixed` Types"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "type safety refactoring: elimination of `mixed` types user"
+---
 # Type Safety Refactoring: Elimination of `mixed` Types
 
 **Session Date**: 2026-09-04  
@@ -104,6 +112,21 @@ public function getExtraAttribute(string $key, mixed $default = null): string|in
 | Job | 1 | 1 | - | ⏳ PENDING |
 
 ## Type Narrowing Reference
+
+### User boundary: contract over abstract implementation
+
+`BaseUser` è una classe astratta di infrastruttura e non è il contratto del
+dominio. Il codice che riceve un utente da Auth, eventi, Filament o temi deve
+verificare `Modules\Xot\Contracts\UserContract` (o il facade contract locale
+che lo estende), non `instanceof BaseUser`.
+
+Il motivo è sostanziale: installazioni e moduli possono fornire modelli utenti
+concreti diversi, purché rispettino il comportamento dichiarato dal contratto.
+Controllare la base astratta accoppia il chiamante a una gerarchia interna e
+può rifiutare implementazioni valide. Le firme pubbliche, i return type e i
+guard runtime devono quindi parlare in termini di `UserContract`; `BaseUser`
+resta appropriato solo per ereditarietà, test della base e comportamento
+specifico della sua implementazione.
 
 ### Webmozart\Assert Usage
 

@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-LEVEL-10-FIXES"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Level 10 Implementation - Employee Module
 
 ## Current State Analysis

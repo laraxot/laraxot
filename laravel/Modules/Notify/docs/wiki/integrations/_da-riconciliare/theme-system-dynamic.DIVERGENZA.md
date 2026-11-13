@@ -1,10 +1,15 @@
 ---
+qmd: "theme system dynamic.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: theme-system-dynamic.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: theme-system-dynamic.divergenza.md
 ---
 
 # Divergenza: `theme-system-dynamic.md`

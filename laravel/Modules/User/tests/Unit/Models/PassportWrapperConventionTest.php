@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Tests\TestCase;
 use PHPUnit\Framework\Assert;
@@ -15,12 +14,12 @@ test('every vendor passport eloquent model has a local oauth wrapper', function 
 
     /** @var list<string> $passportFiles */
     $passportFiles = glob($passportSrc.'/*.php');
-    if ([] === $passportFiles) {
+    if ($passportFiles === []) {
         Assert::fail('Unable to read Passport source directory.');
     }
 
     $vendorModelClasses = collect($passportFiles)
-        ->map(function (mixed $file): string {
+        ->map(function (string $file): string {
             return 'Laravel\\Passport\\'.pathinfo((string) $file, PATHINFO_FILENAME);
         })
         ->filter(function (string $class): bool {

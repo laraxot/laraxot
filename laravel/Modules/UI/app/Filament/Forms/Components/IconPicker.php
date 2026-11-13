@@ -37,7 +37,6 @@ class IconPicker extends TextInput
                         ->options(static function () use ($packs): array {
                             return $packs;
                         })
-                        ->reactive()
                         ->live(),
                     RadioIcon::make('newstate')
                         ->options(function (Get $get) use ($icons): array {
@@ -53,7 +52,11 @@ class IconPicker extends TextInput
                             );
                             /** @var array<int|string, mixed> $optsRaw */
                             $optsValues = array_map(
+<<<<<<< HEAD
+                                SafeStringCastAction::cast(...),
+=======
                                 static fn ($v) => SafeStringCastAction::cast($v),
+>>>>>>> f5ffd8b4 (.)
                                 array_values($optsRaw),
                             );
                             /** @var array<int|string> $optsKeys */

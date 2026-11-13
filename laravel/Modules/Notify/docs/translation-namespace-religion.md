@@ -1,4 +1,16 @@
-# Translation Namespace Philosophy — La Religione del Dominio
+---
+title: "translation namespace religion"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "translation namespace religion"
+issues: []
+discussions: []
+status: draft
+---
+
+# Translation Namespace Philosophy: La Religione del Dominio
 
 **Status**: Active  
 **Created**: 2026-04-14  
@@ -7,7 +19,6 @@
 **Audience**: All developers + AI agents
 
 ---
-
 ## LA REGOLA AUREA
 
 **Le traduzioni sono organizzate per DOMINIO, non per componente UI.**
@@ -310,6 +321,9 @@ Amen.
 - [ticket.php (dominio corretto)](../../Modules/Fixcity/lang/it/ticket.php)
 - [Laravel Localization](https://laravel.com/docs/localization)
 - [No Hardcoded Language Religion](../../docs/no-hardcoded-language-religion.md)
+- [ticket.php (dominio corretto)](../../Fixcity/lang/it/ticket.php)
+- [Laravel Localization](https://laravel.com/docs/localization)
+- [No Hardcoded Language Religion](no-hardcoded-language-religion.md)
 
 ---
 

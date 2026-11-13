@@ -1,4 +1,5 @@
 ---
+discussions: []
 title: "RouteNotFoundException — vista compilata stale"
 type: troubleshooting
 tags: [folio, route, view-cache, header, six]
@@ -10,8 +11,11 @@ issues:
 related:
   - ../concepts/fo-folio-named-routes-header.md
   - ../concepts/fo-folio-routing-zen.md
-  - ../../../../Modules/Cms/docs/wiki/troubleshooting/folio-route-not-found.md
+  - ../../../../../Modules/Cms/docs/wiki/troubleshooting/folio-route-not-found.md
+status: draft
 ---
+
+> **Correzione 2026-10-30.** Gli esempi `route('notifications')` e `pages/notifications/` di questo documento sono superati: le pagine CMS (area personale, ticket, FAQ) si linkano con `route('container0.view', ['container0' => 'area-personale', 'slug0' => 'notifiche'])` e `route('container0.index', ['container0' => '...'])` (nome generico, valori nei parametri). Vedi `docs/wiki/memories/translation-protocol-memory-aid.md` §2 e `docs/wiki/rules/folio-named-routes-route-helper.md` nel repo root.
 
 # RouteNotFoundException — vista compilata stale
 
@@ -74,11 +78,11 @@ grep -r "area-personale.notifiche" laravel/storage/framework/views/ || echo "OK"
 ## Imparato
 
 - Tema **vestito**: link `route()`, pagine owner nei moduli (User per notifiche).
-- FO **mai** `web.php` — vedi [folio-filesystem-routing-no-web-php.md](../../../../Modules/Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md).
-- Audit FO: `folio:list`, non `route:list` — [folio-list-vs-route-list.md](../../../../Modules/Cms/docs/wiki/concepts/folio-list-vs-route-list.md).
+- FO **mai** `web.php` — vedi [folio-filesystem-routing-no-web-php.md](../../../../../Modules/Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md).
+- Audit FO: `folio:list`, non `route:list` — [folio-list-vs-route-list.md](../../../../../Modules/Cms/docs/wiki/concepts/folio-list-vs-route-list.md).
 
 
 ## Collegamenti
 
 - [Header named routes](../concepts/fo-folio-named-routes-header.md)
-- [Folio filesystem routing (Cms)](../../../../Modules/Cms/docs/wiki/troubleshooting/folio-route-not-found.md)
+- [Folio filesystem routing (Cms)](../../../../../Modules/Cms/docs/wiki/troubleshooting/folio-route-not-found.md)

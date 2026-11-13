@@ -8,17 +8,21 @@ qmd: "migration-priy-key fix primary key constraint - team_user table"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Fix Primary Key Constraint - team_user Table
 
 ## Data
@@ -136,14 +140,11 @@ $this->tableCreate(static function (Blueprint $table): void {
 ## Collegamenti
 
 - [Teams owner_id fix](./migration-teams-owner-id-fix.md)
-- [Migration Best Practices](../../xot/docs/migration-standards.md)
+- [Migration Best Practices](../../Xot/docs/migration-standards.md)
 - [Primary Key Rules](../../../../docs/development/migration_fixes_summary.md)
->>>>>>> 87273113 (.)
 
 ## Status
 
 ✅ **Fix implementato e testato**
 ✅ **Migrazione funzionante**
 ✅ **Documentazione aggiornata**
-
->>>>>>> 87273113 (.)

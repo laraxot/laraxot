@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Modules\User\Actions\Shield;
 
 use Modules\User\Contracts\HasShieldPermissions;
+use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_implements;
-
-use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Action per risolvere la configurazione permissions e entities.
@@ -70,10 +69,7 @@ class ResolvePermissionsConfigurationAction
             return [];
         }
 
-        return array_values(array_map(
-            static fn (mixed $item): string => is_string($item) ? $item : '',
-            $res
-        ));
+        return array_values(array_filter($res, is_string(...)));
     }
 
     private function getPagePermissionPrefix(): string
@@ -177,9 +173,6 @@ class ResolvePermissionsConfigurationAction
             return [];
         }
 
-        return array_values(array_map(
-            static fn (mixed $item): string => is_string($item) ? $item : '',
-            $res
-        ));
+        return array_values(array_filter($res, is_string(...)));
     }
 }

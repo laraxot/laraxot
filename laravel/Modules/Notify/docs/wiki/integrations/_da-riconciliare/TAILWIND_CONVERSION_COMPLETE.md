@@ -1,10 +1,15 @@
 ---
+qmd: "TAILWIND CONVERSION COMPLETE"
+issues: []
+discussions: []
 title: "TAILWIND CONVERSION COMPLETE - Design Comuni"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: tailwind-conversion-complete.md
 ---
 
 # 🎨 TAILWIND CONVERSION COMPLETE - Design Comuni

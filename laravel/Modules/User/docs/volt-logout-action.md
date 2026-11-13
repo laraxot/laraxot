@@ -1,3 +1,11 @@
+---
+title: "Logout via Volt Action"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "logout via volt action user"
+---
 # Logout via Volt Action
 
 ## Contesto
@@ -67,13 +75,16 @@ module: theme
 topic: volt-logout-action
 canonical: ../../../Themes/docs/shared-components/volt-logout-action.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 

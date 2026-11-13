@@ -1,3 +1,16 @@
+---
+title: "ANALISI VISIVA"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ANALISI VISIVA"
+issues: []
+discussions: []
+status: superseded
+superseded_by: analisi_visiva.md
+---
+
 # 📸 Analisi Visiva Homepage FixCity vs Bootstrap Italia
 # 📸 Analisi Visiva Homepage Notify vs Bootstrap Italia
 
@@ -10,6 +23,14 @@
 
 ---
 
+title: "ANALISI VISIVA"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ANALISI VISIVA"
+issues: []
+discussions: []
 ## 1. Header Structure
 
 ### Bootstrap Italia

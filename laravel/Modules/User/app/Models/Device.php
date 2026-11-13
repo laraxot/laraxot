@@ -7,19 +7,17 @@ namespace Modules\User\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Support\Carbon;
 use Modules\User\Database\Factories\DeviceFactory;
+use Modules\User\Models\Traits\DeviceRelationsTrait;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
-use Modules\Xot\Datas\XotData;
 
 /**
  * Device model representing a user's device in the system.
  *
  * @property EloquentCollection<int, Model&UserContract> $users
- * @property int|null                                    $users_count
+ * @property int|null $users_count
  *
  * @method static Builder|Device newModelQuery()
  * @method static Builder|Device newQuery()
@@ -42,27 +40,27 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder|Device whereUpdatedBy($value)
  * @method static Builder|Device whereVersion($value)
  *
- * @property DeviceUser              $pivot
- * @property ProfileContract|null    $creator
- * @property ProfileContract|null    $updater
- * @property string                  $id
- * @property string|null             $mobile_id
+ * @property DeviceUser $pivot
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
+ * @property string $id
+ * @property string|null $mobile_id
  * @property array<int, string>|null $languages
- * @property string|null             $device
- * @property string|null             $platform
- * @property string|null             $browser
- * @property string|null             $version
- * @property bool|null               $is_robot
- * @property string|null             $robot
- * @property bool|null               $is_desktop
- * @property bool|null               $is_mobile
- * @property bool|null               $is_tablet
- * @property bool|null               $is_phone
- * @property Carbon|null             $created_at
- * @property Carbon|null             $updated_at
- * @property string|null             $updated_by
- * @property string|null             $created_by
- * @property string|null             $uuid
+ * @property string|null $device
+ * @property string|null $platform
+ * @property string|null $browser
+ * @property string|null $version
+ * @property bool|null $is_robot
+ * @property string|null $robot
+ * @property bool|null $is_desktop
+ * @property bool|null $is_mobile
+ * @property bool|null $is_tablet
+ * @property bool|null $is_phone
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string|null $updated_by
+ * @property string|null $created_by
+ * @property string|null $uuid
  *
  * @method static Builder<static>|Device whereUuid($value)
  *
@@ -80,6 +78,13 @@ use Modules\Xot\Datas\XotData;
  */
 class Device extends BaseModel
 {
+<<<<<<< .merge_file_gqIgp8
+    use DeviceRelationsTrait;
+
+=======
+>>>>>>> .merge_file_h0dXKN
+    protected $connection = 'user';
+
     /** @var list<string> */
     protected $fillable = [
         'id',
@@ -107,19 +112,6 @@ class Device extends BaseModel
     }
 
     /**
-     * @return BelongsToMany<Model&UserContract, $this, Pivot, 'pivot'>
-     */
-    public function users(): BelongsToMany
-    {
-        $userClass = XotData::make()->getUserClass();
-
-        /** @var BelongsToMany<Model&UserContract, $this, Pivot, 'pivot'> $relation */
-        $relation = $this->belongsToManyX($userClass);
-
-        return $relation;
-    }
-
-    /**
      * Define the attribute casting for the model.
      *
      * @return array<string, string>
@@ -144,4 +136,6 @@ class Device extends BaseModel
             'is_phone' => 'boolean',
         ];
     }
+
+    use DeviceRelationsTrait;
 }

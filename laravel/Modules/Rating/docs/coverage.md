@@ -1,14 +1,19 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+issues: []
+discussions: []
 title: "Coverage del modulo Rating"
 type: report
 module: Rating
 updated: 2026-09-22
 qmd: "coverage rating pest misura reale test saltati database"
+status: draft
 ---
 
 # Coverage del modulo Rating
 
-## PHPStan — 22 settembre 2026 (gate post `stuck-rebase-real-divergence-recovery`, commit `d80dc62`)
+## PHPStan: 22 settembre 2026 (gate post `stuck-rebase-real-divergence-recovery`, commit `d80dc62`)
 
 Baseline dichiarata dal recovery: **9 errori pre-esistenti** su
 `RatingsHostStub::ratingValuePath()` non definito. Verificato con `git log -S"ratingValuePath"`
@@ -32,10 +37,10 @@ Fix chiusi (dettaglio in `docs/stories/18.56.ratings-by-id-accessor.story.md#Dev
 (`CamelCaseVariableName`/`ShortVariable` su `HasRating.php`/`RatingTrait.php`,
 `UnusedFormalParameter` su `$model` nelle Policy) più il crash noto e preesistente di PDepend
 su tipi DNF/classe anonima in `StatsOverview.php` (due varianti, Filament/Widgets e
-HasRatingResource/Widgets) — non tocca i file editati qui.
+HasRatingResource/Widgets): non tocca i file editati qui.
 
 `tools/phpinsights.sh analyse Modules/Rating/app`: Code 92.9, Complexity 100,
-Architecture 85.7, **Style 97.5** (era 85.2 il 16 settembre — miglioramento, non regressione;
+Architecture 85.7, **Style 97.5** (era 85.2 il 16 settembre: miglioramento, non regressione;
 non attribuibile a questa sessione, `app/` non toccato oltre a `HasRatingsTrait.php`).
 
 `vendor/bin/pint --test` sul test file toccato: passed. Su `HasRatingsTrait.php`: fail, ma
@@ -46,7 +51,7 @@ scope della story 18.56 (AC #7, "nessun file fuori scope").
 Pest: **DB di test irraggiungibile** (`nc -z -w3 10.100.200.53 3306` → `DB_UNREACHABLE`,
 verificato più volte). `./vendor/bin/pest Modules/Rating/tests/Unit/HasRatingsTraitRatingsByIdTest.php`
 con timeout 60s: nessun output, terminato dal timeout (il bootstrap pende sul DB invece di
-fallire subito). Skip ambientale, non un fallimento del fix — il test è DB-free per
+fallire subito). Skip ambientale, non un fallimento del fix: il test è DB-free per
 costruzione (fixture `setRawAttributes()`/`setRelation()`), ma il bootstrap `TestCase` di
 Pest lo precede. Nessuna nuova misura di coverage di riga oggi.
 
@@ -68,7 +73,7 @@ comando non va riutilizzato come configurazione corrente.
 
 ## Misura del 1 settembre 2026
 
-Comando canonico (AD-25 — servono **entrambe** le opzioni: `-c` sposta il perimetro
+Comando canonico (AD-25: servono **entrambe** le opzioni: `-c` sposta il perimetro
 di coverage, il path sposta il bootstrap di `Pest.php` e `Helpers.php`):
 
 ```bash
@@ -102,8 +107,8 @@ Prima di questa misura la suite era rossa su
 mai terminato: le colonne sono state spostate di proposito nelle classi sotto
 `app/Filament/Resources/RatingResource/Tables/`.
 
-Il test era vecchio, non il codice. Riscritto per asserire il contratto vero — la
-pagina non possiede piu colonne, e le 9 colonne stanno in `RatingsTable` — la suite
+Il test era vecchio, non il codice. Riscritto per asserire il contratto vero: la
+pagina non possiede piu colonne, e le 9 colonne stanno in `RatingsTable`: la suite
 e verde e il coverage e diventato misurabile: **80,8 %**.
 
 ## Precondizioni che invalidano la misura
@@ -128,7 +133,7 @@ e verde e il coverage e diventato misurabile: **80,8 %**.
 
 ---
 
-## Misura del 9 settembre 2026 — story `IndennitaResponsabilita/8.22`
+## Misura del 9 settembre 2026: story `IndennitaResponsabilita/8.22`
 
 **Coverage non misurato, e va detto perché.** Il comando canonico qui sopra richiede
 `-c Modules/Rating/phpunit.xml`; quel file (`phpunit.xml.dist`) risulta **cancellato nel
@@ -144,11 +149,11 @@ Eseguito invece `./vendor/bin/pest Modules/Rating/tests` (senza `-c`, quindi sen
 | Saltati | 7 | **5** |
 | **Falliti** | **0** | **19** |
 | Asserzioni | 442 | 404 |
-| Durata | — | 248 s |
+| Durata |: | 248 s |
 
 ### I 19 falliti sono preesistenti, e sono di due famiglie
 
-**17 su 19 — refactor Filament in corso.** `Non-static method
+**17 su 19: refactor Filament in corso.** `Non-static method
 BaseRatingForm::getFormSchema() cannot be called statically`: `XotBaseResourceForm` è stata
 resa astratta e il metodo non statico (registrato in `docs/sprint-status.yaml` come
 «structural-change-form-infolist»), i test la chiamano ancora staticamente. Colpisce
@@ -156,16 +161,16 @@ resa astratta e il metodo non statico (registrato in `docs/sprint-status.yaml` c
 (2), `RatingFilamentExtendedTest` (2), `ListRatingsPageTest` (2), `RatingBlockTest` (1),
 `BaseRatingModelTest` (1).
 
-**2 su 19 — database di test indietro di una migrazione.** `SQLSTATE[42S22] Unknown column
+**2 su 19: database di test indietro di una migrazione.** `SQLSTATE[42S22] Unknown column
 'slug'` su `ptv_lara_test`. La colonna è creata da `RatingData::updateColumns()` (righe 73-74)
-e serve a `Spatie\Sluggable\HasSlug`; **sulla connection di sviluppo esiste** — verificato con
+e serve a `Spatie\Sluggable\HasSlug`; **sulla connection di sviluppo esiste**: verificato con
 `Schema::getColumnListing('ratings')`. È la divergenza di schema fra installazioni tracciata
 da `Xot/5.87.guardia-divergenza-schema-fra-installazioni`.
 
 ### Cosa ha aggiunto la story 8.22
 
 `RuleEnum::ZeroFour` e `RuleEnum::ZeroSix` (griglia art. 17 c. 6 del CCI 2026-2028), le due
-voci in `lang/it/rule_enum.php`, e **tre test** in `RuleEnumTest` — le sei asserzioni sui
+voci in `lang/it/rule_enum.php`, e **tre test** in `RuleEnumTest`: le sei asserzioni sui
 valori più due guardie che reggono anche il caso del prossimo rinnovo:
 
 - ogni caso ha l'etichetta tradotta (`getLabel()` non comincia per `rating::`);
@@ -180,7 +185,7 @@ nessuno dei quali tocca l'enum.
 
 ---
 
-## Verifica PHPStan del 16 settembre 2026 — story `Rating/phpstan-fleet-fix-2026-09-16`
+## Verifica PHPStan del 16 settembre 2026: story `Rating/phpstan-fleet-fix-2026-09-16`
 
 Comando: `cd laravel && ./vendor/bin/phpstan analyse Modules/Rating --no-progress --memory-limit=-1`.
 
@@ -188,13 +193,13 @@ Comando: `cd laravel && ./vendor/bin/phpstan analyse Modules/Rating --no-progres
 erano già risolti nel working tree da un fork precedente di questa stessa sessione (story
 `Rating/5.157-phpstan-rating-pivot-get-test`, non ancora committata):
 
-- `Models/BaseRating.php` — aggiunto `@property-read BaseRatingMorph $pivot` al docblock
+- `Models/BaseRating.php`: aggiunto `@property-read BaseRatingMorph $pivot` al docblock
   della classe. `ratings()` è una `MorphToMany<BaseRating, TModel, MorphPivot, 'pivot'>`
   (quarto/terzo generic = `MorphPivot`): Larastan non infila da solo `->pivot` come proprietà
   statica del modello, va dichiarato. Tipizza la pivot reale (`BaseRatingMorph`, con `value` e
-  `note`) invece di castare `mixed` — risolve le 4 righe `property.notFound`/`property.nonObject`
+  `note`) invece di castare `mixed`: risolve le 4 righe `property.notFound`/`property.nonObject`
   su `HasRatingsTrait.php:362-363` (`hydrateRatingsFormData()`).
-- `tests/Unit/HasRatingsTraitOtherOptionTest.php:243` — lo stub `Get` per il test
+- `tests/Unit/HasRatingsTraitOtherOptionTest.php:243`: lo stub `Get` per il test
   "la Textarea e required solo quando Get sul Select restituisce other" non usa più
   `Mockery::mock(Get::class)` (tipizzato `Get&MockInterface`, phpstan si aspettava
   `Get&MockInterface` di ritorno ma vedeva solo `MockInterface`): sostituito con una classe
@@ -202,12 +207,12 @@ erano già risolti nel working tree da un fork precedente di questa stessa sessi
   (`string|Component $path = '', bool $isAbsolute = false`), confrontando `$path === $select`
   com'era nel mock originale. Verificato contro l'uso reale in
   `HasRatingsTrait.php:517` (`->required(static fn (Get $get) => self::selectIsOther($get($select)))`)
-  — il chiamante passa un `Component`, non una stringa, e lo stub lo rispecchia.
+ : il chiamante passa un `Component`, non una stringa, e lo stub lo rispecchia.
 
 Nessuna soppressione, nessun cast a `mixed`, nessuna baseline/ignore: solo narrowing tipizzato.
 `phpstan.neon` non toccato.
 
-### PHPMD — `tools/phpmd.sh Modules/Rating/app`
+### PHPMD: `tools/phpmd.sh Modules/Rating/app`
 
 Girato senza crash sui file toccati. Solo violazioni di stile preesistenti e fuori scope
 (`CamelCaseVariableName`, `CyclomaticComplexity`, `BooleanArgumentFlag`, ecc. su
@@ -217,7 +222,7 @@ Crash noto e preesistente (non introdotto da questa story, non tocca file editat
 `Filament/Widgets/StatsOverview.php`: PDepend non fa il parse di una classe anonima/tipo DNF
 (vedi memoria `feedback-phpmd-phar-dies-on-dnf-types.md`).
 
-### PHP Insights — `tools/phpinsights.sh analyse Modules/Rating/app`
+### PHP Insights: `tools/phpinsights.sh analyse Modules/Rating/app`
 
 Girato senza errori. Punteggi: Code 92.9, Complexity 100, Architecture 85.7, Style 85.2.
 Findings tutti preesistenti e fuori scope (import ordering, `==` vs `===`, parametri non
@@ -225,27 +230,27 @@ usati nelle policy, ecc.), nessuno sui due file toccati da questa story oltre a 
 riordino import segnalato su `Models/BaseRating.php` (stile, non bloccante, non toccato per
 restare nello scope dichiarato dalla story 5.157).
 
-### Pest — skip ambientale documentato
+### Pest: skip ambientale documentato
 
 `nc -z -w3 10.100.200.53 3306` → **UNREACHABLE** (confermato due volte, a inizio e durante
 questa verifica). `./vendor/bin/pest Modules/Rating/tests/Unit/HasRatingsTraitOtherOptionTest.php`
 lanciato con timeout 120s: **nessun output, terminato per timeout** (non un fallimento del
-fix — il bootstrap pende sul DB irraggiungibile invece di fallire subito, vedi memoria
+fix: il bootstrap pende sul DB irraggiungibile invece di fallire subito, vedi memoria
 `feedback-check-db-reachability-first.md`). Coverage non misurato oggi.
 
 | Data | PHPStan Rating | PHPMD | Insights | Pest |
 |---|---|---|---|---|
-| 2026-09-16 | **0 errori** | 0 violazioni sui file toccati (crash preesistente altrove) | 92.9/100/85.7/85.2 | skip — DB `10.100.200.53:3306` unreachable |
+| 2026-09-16 | **0 errori** | 0 violazioni sui file toccati (crash preesistente altrove) | 92.9/100/85.7/85.2 | skip: DB `10.100.200.53:3306` unreachable |
 
-## 2026-09-23 — fix generics.notSubtype su RatingContract
+## 2026-09-23: fix generics.notSubtype su RatingContract
 
 Task utente: `phpstan analyse Modules` fleet-wide, fix in ordine random/parallelo
 (swarm+subagents+bmad+second brain+ponytail). Unico finding reale trovato su tutto
-`Modules/`: `RatingContract.php` — `@property Collection<int, RatingContract> $children`
+`Modules/`: `RatingContract.php`: `@property Collection<int, RatingContract> $children`
 non e' subtype di `TModel of Model` nel generic `Collection`. Fix: allineato al pattern
 gia' in uso dall'interfaccia madre `HasRecursiveRelationshipsContract` (che usa sempre
 `Collection<int, Model>`, mai l'interfaccia stessa, per le property self-referential con
-`@phpstan-require-extends Model`) — una riga, nessuna invenzione.
+`@phpstan-require-extends Model`): una riga, nessuna invenzione.
 
 - PHPStan `analyse Modules/Rating` → 0 errori (EXIT:0).
 - PHPStan `analyse Modules` (whole-tree) → 0 errori, 0 file_errors (EXIT:0, confermato).
@@ -253,4 +258,4 @@ gia' in uso dall'interfaccia madre `HasRecursiveRelationshipsContract` (che usa 
 - PHP Insights sul file → 100/100/100/100.
 - Pest → skip, DB `10.100.200.53:3306` UNREACHABLE (`nc -z -w3` fallito).
 
-Story: `laravel/Modules/Rating/docs/bmad/stories/phpstan-fleet-fix-2026-09-23.story.md`.
+Story: `laravel/Modules/Rating/docs/bmad/stories/phpstan-fleet-fix.story.md`.

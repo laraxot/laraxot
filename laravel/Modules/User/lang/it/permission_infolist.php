@@ -2,14 +2,18 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_tGWHOs
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'name' => ['label' => 'name'],
-        'guard_name' => ['label' => 'guard_name'],
-        'display_name' => ['label' => 'display_name'],
-        'description' => ['label' => 'description'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'id' => ['label' => 'ID'],
+        'name' => ['label' => 'Nome'],
+        'guard_name' => ['label' => 'Guard'],
+        'display_name' => ['label' => 'Nome visualizzato'],
+        'description' => ['label' => 'Descrizione'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_gA119y

@@ -1,10 +1,14 @@
 ---
+qmd: "html parity rules"
+issues: []
+discussions: []
 title: "HTML Parity Analysis Rules"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # HTML Parity Analysis Rules

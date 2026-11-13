@@ -1,10 +1,15 @@
 ---
+qmd: "MISSIONE SUPER MUCCA COMPLETATA"
+issues: []
+discussions: []
 title: "MISSIONE SUPER MUCCA - COMPLETAMENTO TOTALE ✨🐄"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: missione_super_mucca_completata.md
 ---
 
 # 🐄✨ MISSIONE SUPER MUCCA - COMPLETAMENTO TOTALE ✨🐄

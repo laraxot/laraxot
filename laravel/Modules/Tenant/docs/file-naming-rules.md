@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Regole di Naming per File"
 module: "Tenant"
 type: rule
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "file naming rules"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # Regole di Naming per File
 

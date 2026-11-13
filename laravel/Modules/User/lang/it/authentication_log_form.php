@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_2em9Dx
 return [
     'sections' => [
         'Authentication Information' => [
@@ -23,31 +24,31 @@ return [
             'description' => 'authenticatable_id',
         ],
         'ip_address' => [
-            'label' => 'ip_address',
+            'label' => 'Indirizzo IP',
             'placeholder' => 'ip_address',
             'helper_text' => 'ip_address',
             'description' => 'ip_address',
         ],
         'user_agent' => [
-            'label' => 'user_agent',
+            'label' => 'Browser (user agent)',
             'placeholder' => 'user_agent',
             'helper_text' => 'user_agent',
             'description' => 'user_agent',
         ],
         'login_successful' => [
-            'label' => 'login_successful',
+            'label' => 'Accesso riuscito',
             'placeholder' => 'login_successful',
             'helper_text' => 'login_successful',
             'description' => 'login_successful',
         ],
         'login_at' => [
-            'label' => 'login_at',
+            'label' => 'Accesso il',
             'placeholder' => 'login_at',
             'helper_text' => 'login_at',
             'description' => 'login_at',
         ],
         'logout_at' => [
-            'label' => 'logout_at',
+            'label' => 'Uscita il',
             'placeholder' => 'logout_at',
             'helper_text' => 'logout_at',
             'description' => 'logout_at',
@@ -60,3 +61,6 @@ return [
         ],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_dZudux

@@ -1,3 +1,9 @@
+---
+title: "Employee - 11-INTEGRAZIONE-CONSULENTI-LAVORO"
+module: Employee
+bmad: true
+status: active
+---
 # 11 - Integrazione Consulenti del Lavoro
 
 ## Panoramica

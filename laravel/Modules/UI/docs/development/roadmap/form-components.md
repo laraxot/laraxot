@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "form components"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "form components"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Form Components - 95% Completato
 
 ## Descrizione

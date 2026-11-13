@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Visione - Tenant Module"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "vision"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 # Visione - Tenant Module
 

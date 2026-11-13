@@ -1,3 +1,15 @@
+---
+title: "json content blocks rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "json content blocks rule"
+issues: []
+discussions: []
+status: draft
+---
+
 # Regola content_blocks per JSON delle pagine
 
 ## Regola

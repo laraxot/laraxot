@@ -1,3 +1,9 @@
+---
+title: "Employee - 09-SISTEMA-RUOLI-AUTORIZZAZIONI"
+module: Employee
+bmad: true
+status: active
+---
 # 09 - Sistema Ruoli e Autorizzazioni
 
 ## Panoramica

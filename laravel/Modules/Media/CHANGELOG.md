@@ -134,7 +134,6 @@
 * **tests:** add missing generic/iterable PHPDoc types to HasMediaTestStub ([d4ba1fd](https://github.com/laraxot/module_media_fila5/commit/d4ba1fd2ef1eb93c46d916e9f49d6ed29b049b15))
 * **tests:** add missing generic/iterable PHPDoc types to HasMediaTestStub ([b61d0b8](https://github.com/laraxot/module_media_fila5/commit/b61d0b8c9df895b8af2e3154bfc8a1bde50f964f))
 
-<<<<<<< HEAD
 ## [0.0.3-dev.12](https://github.com/laraxot/module_media_fila5/compare/v0.0.3-dev.11...v0.0.3-dev.12) (2026-08-24)
 
 ### Bug Fixes
@@ -148,8 +147,6 @@
 
 * resolve nested git conflict markers in Media module ([e0935b2](https://github.com/laraxot/module_media_fila5/commit/e0935b222be41e3a8f6327812c390644368c2cfe))
 
-=======
->>>>>>> laraxot/dev
 # Changelog
 
 Tutte le variazioni importanti di Media saranno generate automaticamente da semantic-release.

@@ -1,3 +1,15 @@
+---
+title: "analisi visiva"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "analisi visiva"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📸 Analisi Visiva Homepage FixCity vs Bootstrap Italia
 # 📸 Analisi Visiva Homepage Notify vs Bootstrap Italia
 
@@ -9,7 +21,6 @@
 - **Notify**: http://laraxot.local/it/tests/homepage
 
 ---
-
 ## 1. Header Structure
 
 ### Bootstrap Italia

@@ -1,3 +1,15 @@
+---
+title: "diamond coverage report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "diamond coverage report"
+issues: []
+discussions: []
+status: draft
+---
+
 # 💎 FIXCITY - DIAMOND COVERAGE REPORT
 
 **Data**: 2025-10-02  
@@ -6,7 +18,6 @@
 **Status**: 🚀 IN PROGRESS  
 
 ---
-
 ## 🎯 OBIETTIVO DIAMANTE
 
 Raggiungere il **100% di test coverage** su tutti i moduli critici con test completi, accurati e manutenibili.

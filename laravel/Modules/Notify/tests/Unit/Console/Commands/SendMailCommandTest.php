@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Unit\Console\Commands;
 
-use Illuminate\Console\Command;
 use Modules\Notify\Console\Commands\SendMailCommand;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('SendMailCommand', function () {
     it('has correct signature', function () {
         $command = new SendMailCommand;
@@ -25,8 +26,7 @@ describe('SendMailCommand', function () {
 
     it('extends command', function () {
         $command = new SendMailCommand;
-
-        Assert::assertInstanceOf(Command::class, $command);
+        Assert::assertSame('notify:send-mail', $command->getName());
     });
 
     it('handle is a public command entrypoint', function () {

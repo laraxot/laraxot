@@ -61,8 +61,13 @@ it('throws when config file does not return array', function (): void {
     app()->instance(GetModulePathByGeneratorAction::class, $pathAction);
 
     try {
+<<<<<<< HEAD
         app(GetModuleConfigAction::class)->execute('Xot', 'mail');
         Assert::fail('Expected exception was not thrown');
+=======
+        expect(fn () => app(GetModuleConfigAction::class)->execute('Xot', 'mail'))
+            ->toThrow(Exception::class, 'Config file must return array');
+>>>>>>> laraxot/dev
     } finally {
         unlink($file);
         rmdir($tempDir);

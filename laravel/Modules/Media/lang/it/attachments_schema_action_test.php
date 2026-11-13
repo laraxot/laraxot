@@ -5,24 +5,12 @@ declare(strict_types=1);
 return [
     'fields' => [
         'invoice' => [
-            'label' => 'invoice',
-            'placeholder' => 'invoice',
-            'helper_text' => 'invoice',
-            'description' => 'invoice',
             'tooltip' => '',
         ],
         'contract' => [
-            'label' => 'contract',
-            'placeholder' => 'contract',
-            'helper_text' => 'contract',
-            'description' => 'contract',
             'tooltip' => '',
         ],
         'receipt' => [
-            'label' => 'receipt',
-            'placeholder' => 'receipt',
-            'helper_text' => 'receipt',
-            'description' => 'receipt',
             'tooltip' => '',
         ],
     ],
@@ -37,7 +25,7 @@ return [
         ],
         'label' => 'Attachments Schema Action Test',
         'sort' => 1,
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
     ],
     'actions' => [
         'create' => [

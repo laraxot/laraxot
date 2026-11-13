@@ -1,10 +1,13 @@
 ---
+issues: []
+discussions: []
 title: "Checklist Qualità Modulo Rating"
 type: guide
 tags: [quality, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "quality"
+status: draft
 ---
 
 # Checklist Qualità Modulo Rating

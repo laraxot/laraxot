@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Riepilogo Correzioni S3Test.php - Modulo Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "corrections"
 related:
   - "./webm.md"
+status: draft
 ---
 # Riepilogo Correzioni S3Test.php - Modulo Media
 
@@ -148,7 +151,7 @@ Ho analizzato e corretto completamente il file `S3Test.php` nel modulo Media, ri
 
 - [Correzioni Dettagliate](s3test_corrections.md)
 - [Linee Guida Prevenzione](prevention_guidelines.md)
-- [PHPStan Fixes](phpstan_level10_fixes.md)
+- [PHPStan Fixes](phpstan-level10-fixes.md)
 - [Translation Standards](translations.md)
 
 ---

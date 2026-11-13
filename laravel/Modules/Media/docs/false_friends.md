@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "False Friends – Media Module"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "false friends"
 related:
   - "./webm.md"
+status: draft
 ---
 # False Friends – Media Module
 

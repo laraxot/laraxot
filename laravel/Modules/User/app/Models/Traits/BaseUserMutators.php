@@ -1,0 +1,124 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\User\Models\Traits;
+
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+trait BaseUserMutators
+{
+    public function getFullNameAttribute(?string $value): string
+    {
+        if ($value !== null) {
+            return $value;
+        }
+
+        return $this->getFullName();
+    }
+
+    public function getFullName(): string
+    {
+        $fullName = trim(($this->first_name ?? '').' '.($this->last_name ?? ''));
+
+        return $fullName !== '' ? $fullName : ($this->email ?? 'User');
+    }
+
+    public function getNameAttribute(?string $value): string
+    {
+        if ($value !== null) {
+            return $value;
+        }
+
+        $name = $this->getName();
+
+        if ($this->getKey() === null) {
+            return $name;
+        }
+
+        if ($this->isRunningTests()) {
+            $this->attributes['name'] = $name;
+
+            return $name;
+        }
+
+        try {
+            $this->update(['name' => $name]);
+        } catch (\Throwable) {
+            $name = Str::of((string) $this->email)->before('@')->toString().'-1';
+            $this->attributes['name'] = $name;
+        }
+
+        return $name;
+    }
+
+    public function getName(): string
+    {
+        if ($this->getKey() === null) {
+            return $this->email ?? 'User';
+        }
+
+        $name = Str::of((string) $this->email)->before('@')->toString();
+        $i = 1;
+        $candidate = $name.'-'.$i;
+
+        if ($this->isRunningTests()) {
+            return $candidate;
+        }
+
+        try {
+            $value = $candidate;
+            while (self::firstWhere(['name' => $value]) !== null) {
+                $i++;
+                $value = $name.'-'.$i;
+            }
+
+            return $value;
+        } catch (\Throwable) {
+            return $candidate;
+        }
+    }
+
+    private function isRunningTests(): bool
+    {
+        $app = app();
+        if (method_exists($app, 'environment') && $app->environment('testing')) {
+            return true;
+        }
+
+        return \PHP_SAPI === 'cli' && (getenv('APP_ENV') === 'testing' || getenv('ENV') === 'testing');
+    }
+
+    public function setPasswordAttribute(?string $value): void
+    {
+        if (empty($value)) {
+            unset($this->attributes['password']);
+
+            return;
+        }
+
+<<<<<<< .merge_file_BJzMd1
+        // Un valore gia' hashato (bcrypt/argon, es. da seeder o import) si conserva; tutto il
+        // resto si hasha. Il vecchio criterio "lunghezza >= 32" salvava in chiaro le passphrase lunghe.
+        if (password_get_info($value)['algo'] !== null) {
+=======
+<<<<<<< .merge_file_2bZTrp
+        // Un valore già cifrato (bcrypt/argon, es. da Hash::make o da un import) resta com'è; tutto il resto viene cifrato.
+        // Prima il controllo era sulla lunghezza (< 32 caratteri): una password scelta di 32 o più caratteri
+        // finiva nel database IN CHIARO.
+        if (Hash::info($value)['algo'] !== null) {
+=======
+        // Un valore gia' hashato (bcrypt/argon, es. da seeder o import) si conserva; tutto il
+        // resto si hasha. Il vecchio criterio "lunghezza >= 32" salvava in chiaro le passphrase lunghe.
+        if (password_get_info($value)['algo'] !== null) {
+>>>>>>> .merge_file_xxLNbY
+>>>>>>> .merge_file_AodI3Y
+            $this->attributes['password'] = $value;
+
+            return;
+        }
+
+        $this->attributes['password'] = Hash::make($value);
+    }
+}

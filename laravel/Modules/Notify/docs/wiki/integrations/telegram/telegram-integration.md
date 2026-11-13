@@ -1,3 +1,16 @@
+---
+title: "telegram integration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "telegram integration"
+issues: []
+discussions: []
+status: superseded
+superseded_by: ../../../telegram-integration.md
+---
+
 # Integrazione Telegram 
 
 Questo documento descrive l'architettura e l'implementazione dell'integrazione Telegram nel progetto , seguendo gli stessi pattern di design utilizzati per SMS, Email e WhatsApp.

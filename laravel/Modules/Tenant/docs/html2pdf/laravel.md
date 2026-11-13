@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Integrazione con Laravel e Best Practices"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "laravel"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 # Integrazione con Laravel e Best Practices
 

@@ -6,6 +6,16 @@ created: "2026-04-29T00:00:00Z"
 updated: "2026-04-29T07:22:00Z"
 related:
   - "[[Theme Zero Product and Roadmap Docs]]"
+id: zero-docs-wiki-concepts-theme-zero-operating-focus
+slug: theme-zero-operating-focus
+description: "Stable summary of Theme Zero as the baseline visual system for the repository."
+document_type: concept
+category: documentation
+status: active
+tags: []
+qmd: "theme zero operating focus"
+issues: []
+discussions: []
 ---
 
 # Theme Zero Operating Focus

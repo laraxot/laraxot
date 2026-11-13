@@ -104,6 +104,9 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/../../lang', 'sixteen');
 
         // Caricamento delle configurazioni del tema
+        // Keep the main theme contract at config('sixteen.*'); the per-file
+        // namespace loader below remains available for legacy config groups.
+        $this->mergeConfigFrom(__DIR__.'/../../config/sixteen.php', 'sixteen');
         $this->loadConfigFrom(__DIR__.'/../../config', 'sixteen');
     }
 
@@ -113,7 +116,7 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
     protected function registerMenuSystem(): void
     {
         // Singleton per il Menu Builder
-        $this->app->singleton(MenuBuilderAction::class, static fn (): MenuBuilderAction => new MenuBuilderAction());
+        $this->app->singleton(MenuBuilderAction::class, static fn (): MenuBuilderAction => new MenuBuilderAction);
 
         // Alias per backward compatibility
         $this->app->alias(MenuBuilderAction::class, 'sixteen.menu');
@@ -126,7 +129,7 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
     {
         // Theme Service con dependency injection del MenuBuilder
         $this->app->singleton('sixteen.theme', function ($app) {
-            return new ThemeAdapter();
+            return new ThemeAdapter;
         });
 
         // Alias per il ThemeService
@@ -161,12 +164,12 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
     {
         // Register SPID Auth Service
         $this->app->singleton(SpidAuthAction::class, function ($app) {
-            return new SpidAuthAction();
+            return new SpidAuthAction;
         });
 
         // Register CIE Auth Service
         $this->app->singleton(CieAuthAction::class, function ($app) {
-            return new CieAuthAction();
+            return new CieAuthAction;
         });
 
         // Aliases for easier access
@@ -259,6 +262,10 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
      */
     protected function registerAuthRoutes(): void
     {
+        if (! static::digitalIdentityRoutesEnabled()) {
+            return;
+        }
+
         if (! $this->app->routesAreCached()) {
             $this->loadRoutesFrom(__DIR__.'/../../routes/auth.php');
         }
@@ -309,5 +316,13 @@ class ThemeServiceProvider extends XotBaseThemeServiceProvider
             $name = basename($file, '.php');
             $this->mergeConfigFrom($file, $namespace.'.'.$name);
         }
+    }
+
+    /**
+     * Vero solo se l'identità digitale (SPID/CIE) è stata abilitata esplicitamente.
+     */
+    public static function digitalIdentityRoutesEnabled(): bool
+    {
+        return config('sixteen.auth.spid.enabled') === true;
     }
 }

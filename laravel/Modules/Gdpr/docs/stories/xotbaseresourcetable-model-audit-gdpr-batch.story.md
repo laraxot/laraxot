@@ -1,4 +1,8 @@
 ---
+tags: [documentation]
+qmd: "xotbaseresourcetable model audit gdpr batch.story"
+issues: []
+discussions: []
 title: "XotBaseResourceTable $model audit — Gdpr batch"
 type: story
 module: Gdpr

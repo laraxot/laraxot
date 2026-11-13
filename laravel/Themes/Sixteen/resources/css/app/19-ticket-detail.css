@@ -1,0 +1,97 @@
+/* Dettaglio pubblico di una segnalazione /{lang}/tickets/{id} (DCP-148). Solo cio' che Bootstrap Italia non fornisce gia': riga meta, chip di stato,
+ * mappa di sola lettura, cronologia e azioni. Valgono sotto lo stesso scope delle altre pagine reali Design Comuni (`.page-content[data-dc]`). */
+body:has(.page-content[data-dc]) .td-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+body:has(.page-content[data-dc]) .td-status {
+  margin-top: 1rem;
+}
+
+body:has(.page-content[data-dc]) .td-prose {
+  max-width: 46rem;
+}
+
+body:has(.page-content[data-dc]) .td-map {
+  width: 100%;
+  height: 18rem;
+  border: 1px solid #d9e1e8;
+  overflow: hidden;
+}
+
+body:has(.page-content[data-dc]) .td-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 20rem)); /* una foto sola non deve riempire lo schermo: il clic apre l'originale */
+  gap: 1rem;
+}
+
+body:has(.page-content[data-dc]) .td-gallery__item {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #d9e1e8;
+  border-radius: 0.25rem;
+  background: #fff;
+}
+
+body:has(.page-content[data-dc]) .td-gallery__item a,
+body:has(.page-content[data-dc]) .td-gallery__item img {
+  display: block;
+  width: 100%;
+}
+
+body:has(.page-content[data-dc]) .td-gallery__item img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain; /* foto intera: con `cover` una foto verticale del telefono perde il 44% dell'altezza */
+  background: #f2f5f8;
+}
+
+/* La cronologia e' una lista ordinata con una linea verticale: un punto per ogni cambio di stato. */
+body:has(.page-content[data-dc]) .td-timeline {
+  margin: 0 0 0 0.5rem; /* il punto sporge a sinistra della linea: resta dentro il contenuto */
+  padding: 0;
+  list-style: none;
+  border-left: 2px solid #007a52;
+}
+
+body:has(.page-content[data-dc]) .td-timeline__item {
+  position: relative;
+  padding: 0 0 1.5rem 1.5rem;
+}
+
+body:has(.page-content[data-dc]) .td-timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+body:has(.page-content[data-dc]) .td-timeline__item::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: -0.5rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 2px solid #007a52;
+  border-radius: 50%;
+  background: #fff;
+}
+
+body:has(.page-content[data-dc]) .td-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+body:has(.page-content[data-dc]) .td-actions form {
+  margin: 0;
+}
+
+@media (max-width: 575.98px) {
+  body:has(.page-content[data-dc]) .td-actions > *,
+  body:has(.page-content[data-dc]) .td-actions .btn {
+    width: 100%;
+  }
+}

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: Aggiornare Mysql a 8.0
 description: Aggiornare Mysql a 8.0
 extends: _layouts.documentation
@@ -20,3 +21,17 @@ Articolo di riferimento https://gist.github.com/meorajrul/b57803bf1b4ddfd2f93e6a
 * Fare clic con il tasto destro su Laragon Tray e passare alla versione MySQL 8.*
 * Avvia i servizi
 * Apri HeidiSQL o uno qualsiasi dei tuoi IDE DB e inizia ad accedere alla tabella
+=======
+title: "Aggiornare Mysql a 8.0"
+type: alias
+status: superseded
+canonical: "wiki/laragon/update-mysql-aggiornare.md"
+qmd: "update-mysql alias superseded"
+---
+
+# Aggiornare Mysql a 8.0
+
+Documento identico al canonico: [update-mysql-aggiornare.md](../wiki/laragon/update-mysql-aggiornare.md).
+
+Canonico: `laravel/Modules/Xot/docs/wiki/laragon/update-mysql-aggiornare.md`. Qui non ci sono istruzioni: seguire il file collegato.
+>>>>>>> laraxot/dev

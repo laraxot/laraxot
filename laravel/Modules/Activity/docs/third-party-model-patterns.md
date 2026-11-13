@@ -65,7 +65,6 @@ class Activity extends SpatieActivity
         'causer_type',
         'causer_id',
         'properties',
-<<<<<<< HEAD
 <<<<<<< .merge_file_ke9eag
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -84,15 +83,12 @@ class Activity extends SpatieActivity
         'created_at',
         'updated_at',
 >>>>>>> .merge_file_TWPQYb
-=======
->>>>>>> 13cf1831 (.)
     ];
 }
 ```
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 **Importante**: non ridefinire `$table` nel modello Activity. Il nome della tabella è gestito da Spatie tramite `config('activitylog.table_name')` (vedi `config/activitylog.php` e `config/local/<tenant>/activitylog.php`). Se serve cambiare tabella, farlo via configurazione, non nel modello.
 <<<<<<< .merge_file_ke9eag
 
@@ -102,10 +98,6 @@ class Activity extends SpatieActivity
 >>>>>>> 35d8cf69 (Initial commit)
 =======
 >>>>>>> .merge_file_TWPQYb
-=======
-**Importante**: non ridefinire `$table` nel modello Activity. Il nome della tabella è gestito da Spatie tramite `config('activitylog.table_name')` (vedi `config/activitylog.php` e `config/local/<tenant>/activitylog.php`). Se serve cambiare tabella, farlo via configurazione, non nel modello.
-
->>>>>>> 13cf1831 (.)
 ### StoredEvent Model
 
 **File**: `Modules/Activity/app/Models/StoredEvent.php`

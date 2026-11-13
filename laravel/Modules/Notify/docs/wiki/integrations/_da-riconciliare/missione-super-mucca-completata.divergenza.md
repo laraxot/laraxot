@@ -1,10 +1,14 @@
 ---
+qmd: "missione super mucca completata.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: missione-super-mucca-completata.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Divergenza: `missione-super-mucca-completata.md`

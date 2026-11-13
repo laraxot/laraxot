@@ -16,8 +16,11 @@ class ModelTrendChartWidget extends XotBaseChartWidget
 
     protected static ?int $sort = 5;
 
+<<<<<<< HEAD
     protected static bool $isLazy = true;
 
+=======
+>>>>>>> laraxot/dev
     protected ?string $pollingInterval = '300s'; // 5 minuti
 
     #[\Override]

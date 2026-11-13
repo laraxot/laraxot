@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Lang Module - Testing Guidelines"
 module: "Lang"
 type: how-to
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "guida migrazione step by step"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Lang Module - Testing Guidelines
 
@@ -18,6 +21,7 @@ All tests MUST use `.env.testing` configuration:
 ```env
 APP_ENV=testing
 DB_CONNECTION=sqlite
+DB_CONNECTION=mysql
 DB_DATABASE=<nome progetto>_data_test
 APP_LOCALE=en
 APP_FALLBACK_LOCALE=en

@@ -1,3 +1,15 @@
+---
+title: "telegram notifications guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "telegram notifications guide"
+issues: []
+discussions: []
+status: draft
+---
+
 # Notifiche Telegram 
 
 Questa documentazione descrive come implementare notifiche Telegram nel modulo Notify di Quaeris.

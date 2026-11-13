@@ -1,3 +1,15 @@
+---
+title: "design comuni header green navbar rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni header green navbar rule"
+issues: []
+discussions: []
+status: draft
+---
+
 # Design Comuni Header Green Navbar Rule
 
 ## Regola

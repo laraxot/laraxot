@@ -10,11 +10,19 @@ discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
   - "./change-password-command.md"
   - "./console-commands-philosophy-1-1.md"
-  - "./console-commands-philosophy-1.md"
-  - "./console-commands-philosophy-2.md"
+  - "./console-commands-philosophy.md"
+  - "./console-commands-philosophy.md"
   - "./console-commands-philosophy.md"
   - "./console-commands.md"
-  - "./readme.md"
+  - "./README.md"
+  - "./console-commands-philosophy.md"
+  - "./console-commands-philosophy.md"
+  - "./console-commands-philosophy.md"
+  - "./console-commands-philosophy.md"
+  - "./console-commands.md"
+  - "./README.md"
+status: superseded
+superseded_by: ../console-commands/assign-module-command.md
 ---
 
 # AssignModuleCommand - Gestione Moduli Utente
@@ -186,4 +194,3 @@ Result: No changes made to user modules.
 - ✅ **Feedback Migliorato**: Messaggi chiari per assegnazioni e revoche
 - ✅ **Gestione Errori**: Controlli preventivi per utenti non trovati
 - ✅ **Documentazione**: Documentazione completa con esempi
-

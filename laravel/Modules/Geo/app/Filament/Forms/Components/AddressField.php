@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Modules\Geo\Filament\Forms\Components;
 
 use Filament\Schemas\Components\Component;
-use Filament\Schemas\Components\Section;
 use Modules\Geo\Filament\Resources\AddressResource;
+use Modules\Xot\Filament\Schemas\Components\XotBaseSection;
 
 // use Squire\Models\Country;
 
-class AddressField extends Section
+class AddressField extends XotBaseSection
 {
     // protected string $view = 'filament-forms::components.group';
 
@@ -54,8 +54,7 @@ class AddressField extends Section
     /**
      * Rimuove tutti i pattern reattivi dai campi per prevenire loop infiniti.
      *
-     * @param array<int|string, Component> $schema
-     *
+     * @param  array<int|string, Component>  $schema
      * @return array<int|string, Component>
      */
     protected function removeReactivityFromSchema(array $schema): array

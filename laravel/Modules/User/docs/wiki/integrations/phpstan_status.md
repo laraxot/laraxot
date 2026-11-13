@@ -1,28 +1,13 @@
 ---
-title: "PHPStan Status — User Module"
-module: user
-type: integration
-tags: [integrations, modules, user]
-created: 2026-08-24
-updated: 2026-08-24
+title: "PHPStan Status: User Module"
+type: alias
+status: superseded
+canonical: "wiki/integrations/PHPSTAN_STATUS.md"
+qmd: "phpstan_status alias superseded"
 ---
 
-# PHPStan Status — User Module
+# PHPStan Status: User Module
 
-## Latest Analysis
+Documento identico al canonico: [PHPSTAN_STATUS.md](PHPSTAN_STATUS.md).
 
-- **Updated:** 2026-08-02
-- **Status:** See `build/phpstan-final-2026-08-02.txt` for full results
-- **Strategy:** See `build/PHPSTAN_102_ERRORS_CONSOLIDATED.md` for remediation plan
-
-## Progress
-
-- Fixed errors in this module are tracked in `docs/chat/`
-- Lock coordination: Check `docs/chat/multi-agent-standing-coordination.md`
-
-## Next Steps
-
-Use BMAD orchestration per `build/PHPSTAN_102_ERRORS_CONSOLIDATED.md` Phase 1-3.
-
----
-*This file is auto-generated. Do not edit manually.*
+Canonico: `laravel/Modules/User/docs/wiki/integrations/PHPSTAN_STATUS.md`. Qui non ci sono istruzioni: seguire il file collegato.

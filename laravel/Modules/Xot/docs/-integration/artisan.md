@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "artisan"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "artisan xot"
+---
+>>>>>>> laraxot/dev
 # artisan
 
 <!-- Contenuto migrato da _docs/artisan.txt -->

@@ -1,13 +1,17 @@
 ---
-title: "tailwind — Consolidated Documentation"
+qmd: "tailwind consolidated"
+issues: []
+discussions: []
+title: "tailwind: Consolidated Documentation"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
-# tailwind — Consolidated Documentation
+# tailwind: Consolidated Documentation
 
 Consolidated from **28** individual files.
 
@@ -57,12 +61,17 @@ qmd: "tailwind-apply-bootstrap-italia ✅ tailwind @apply per bootstrap italia -
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -278,7 +287,7 @@ Ora i blade file usano le classi Tailwind:
 
 ## tailwind-best-practices-1
 
-*Consolidated from: `tailwind-best-practices-1.md`*
+*Consolidated from: `tailwind-best-practices.md`*
 
 
 ## 1. Organizzazione del Codice
@@ -600,7 +609,7 @@ Per una lista completa di tutti i collegamenti tra i README.md, consultare il fi
 
 ## tailwind-best-practices-2
 
-*Consolidated from: `tailwind-best-practices-2.md`*
+*Consolidated from: `tailwind-best-practices.md`*
 
 title: "Best Practices Implementazione Tailwind CSS nel Modulo Notify"
 type: concept
@@ -611,12 +620,17 @@ qmd: "tailwind-best-practices-2 best practices implementazione tailwind css nel 
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -1260,7 +1274,7 @@ Per una lista completa di tutti i collegamenti tra i README.md, consultare il fi
 
 ## tailwind-blade-components-1
 
-*Consolidated from: `tailwind-blade-components-1.md`*
+*Consolidated from: `tailwind-blade-components.md`*
 
 title: "Esempi Pratici: Blade Components Tailwind per <nome progetto>"
 type: concept
@@ -1271,12 +1285,17 @@ qmd: "tailwind-blade-components-1 esempi pratici: blade components tailwind per 
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -1938,12 +1957,17 @@ qmd: "tailwind-conversion-complete 🎨 tailwind conversion complete - design co
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -2189,7 +2213,7 @@ Main Content
 
 ## tailwind-css-webcrunch-1
 
-*Consolidated from: `tailwind-css-webcrunch-1.md`*
+*Consolidated from: `tailwind-css-webcrunch.md`*
 
 title: "Tailwind CSS: Approfondimento Collezione Webcrunch"
 type: concept
@@ -2200,12 +2224,17 @@ qmd: "tailwind-css-webcrunch-1 tailwind css: approfondimento collezione webcrunc
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -2282,7 +2311,7 @@ La collezione "Tailwind CSS" di Webcrunch raccoglie tutorial, guide pratiche e a
 
 ## tailwind-css-webcrunch-approfondimento-1
 
-*Consolidated from: `tailwind-css-webcrunch-approfondimento-1.md`*
+*Consolidated from: `tailwind-css-webcrunch-approfondimento.md`*
 
 title: "Approfondimento Completo: Tailwind CSS su Webcrunch"
 type: concept
@@ -2293,12 +2322,17 @@ qmd: "tailwind-css-webcrunch-approfondimento-1 approfondimento completo: tailwin
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -3245,7 +3279,7 @@ class NotificationForm extends Component implements HasForms
 
 ## tailwind-implementation-1
 
-*Consolidated from: `tailwind-implementation-1.md`*
+*Consolidated from: `tailwind-implementation.md`*
 
 
 ## 1. Configurazione Base
@@ -3586,7 +3620,7 @@ Per una lista completa di tutti i collegamenti tra i README.md, consultare il fi
 
 ## tailwind-implementation-2
 
-*Consolidated from: `tailwind-implementation-2.md`*
+*Consolidated from: `tailwind-implementation.md`*
 
 title: "Implementazione Tailwind CSS nel Modulo Notify"
 type: concept
@@ -3597,12 +3631,17 @@ qmd: "tailwind-implementation-2 implementazione tailwind css nel modulo notify"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -4862,7 +4901,7 @@ class NotificationListTest extends TestCase
 
 ## tailwind-plugin-guide-1
 
-*Consolidated from: `tailwind-plugin-guide-1.md`*
+*Consolidated from: `tailwind-plugin-guide.md`*
 
 title: "Guida: Creazione di Plugin Tailwind Custom per <nome progetto>"
 type: guide
@@ -4873,12 +4912,17 @@ qmd: "tailwind-plugin-guide-1 guida: creazione di plugin tailwind custom per <no
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---

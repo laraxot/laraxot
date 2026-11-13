@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Media Module - User Research"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "user research"
 related:
   - "./webm.md"
+status: draft
 ---
 # User Research: Media Module
 # Media Module - User Research

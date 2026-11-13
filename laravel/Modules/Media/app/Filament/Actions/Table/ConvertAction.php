@@ -1,19 +1,18 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://coderflex.com/blog/create-advanced-filters-with-filament
  */
-
-declare(strict_types=1);
 
 namespace Modules\Media\Filament\Actions\Table;
 
 // Header actions must be an instance of Filament\Actions\Action, or Filament\Actions\ActionGroup.
 // use Filament\Actions\Action;
+use Filament\Actions\Action;
 use Filament\Forms\Components\Radio;
-use Modules\Xot\Filament\Actions\XotBaseAction;
 
-class ConvertAction extends XotBaseAction
+class ConvertAction extends Action
 {
     protected function setUp(): void
     {
@@ -31,9 +30,10 @@ class ConvertAction extends XotBaseAction
                     ->inline()
                     ->inlineLabel(false),
             ])
-            ->action(static function (): void {
-                throw new \RuntimeException('Removed debug dddx');
-            });
+            // Segnaposto senza caller (solo MediaHighestMissCoverageTest ne legge il nome): la conversione vera
+            // e' ConvertVideoByMediaConvertAction, accodata da MediaConvertsTable. Prima qui c'era dddx(...),
+            // che al submit scaricava il form e uccideva la richiesta.
+            ->action(static fn (): never => throw new \LogicException('Media ConvertAction not implemented: use MediaConvertsTable'));
 
         // ->requiresConfirmation()
     }

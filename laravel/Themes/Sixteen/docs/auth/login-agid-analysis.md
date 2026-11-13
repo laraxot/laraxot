@@ -1,3 +1,15 @@
+---
+title: "login agid analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login agid analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Analisi Criticità Login AGID - Tema Sixteen
 
 ## 🚨 Problema Identificato
@@ -168,11 +180,10 @@ resources/views/
 
 ## 🔗 Collegamenti
 
-- [Layout Usage Rules](./layout-usage-rules.md)
-- [Vite Configuration Rules](./vite-configuration-rules.md)
-- [Assets Management](./assets.md)
+- [Layout Usage Rules](../layout-usage-rules.md)
+- [Vite Configuration Rules](../build/vite-configuration-rules.md)
+- [Assets Management](../assets.md)
 
 ---
-
 **Prossimi Step**: Implementazione del nuovo layout AGID e refactoring completo della pagina di login.
 

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "consolidated-report-2025-10-01"
 type: concept
 tags: [deprecated]

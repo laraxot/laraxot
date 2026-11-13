@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Widget FileUpload Errors - Troubleshooting Guide"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, troubleshooting]
+qmd: "Widget FileUpload Errors - Troubleshooting Guide"
+---
+>>>>>>> laraxot/dev
 # Widget FileUpload Errors - Troubleshooting Guide
 
 ## Errore: "foreach() argument must be of type array|object, string given"
@@ -26,10 +39,17 @@ Nel metodo che popola i dati del form (es. `getFormFill()`, `mount()`):
 public function getFormFill(): array
 {
     $model = $this->getFormModel();
+<<<<<<< HEAD
 
     if ($model->exists) {
         $data = $model->toArray();
 
+=======
+    
+    if ($model->exists) {
+        $data = $model->toArray();
+        
+>>>>>>> laraxot/dev
         // Converti campi file upload da stringhe ad array
         $attachments = $model::$attachments ?? [];
         foreach ($attachments as $attachment) {
@@ -37,10 +57,17 @@ public function getFormFill(): array
                 $data[$attachment] = [$data[$attachment]];
             }
         }
+<<<<<<< HEAD
 
         return $data;
     }
 
+=======
+        
+        return $data;
+    }
+    
+>>>>>>> laraxot/dev
     return [];
 }
 ```
@@ -59,7 +86,11 @@ Forms\Components\FileUpload::make($attachment)
         } else {
             $sessionFiles = [];
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> laraxot/dev
         $set($attachment, $sessionFiles);
         return $sessionFiles;
     })
@@ -113,16 +144,27 @@ trait HandlesFileUploadFields
     protected function normalizeFileUploadFields(array $data, ?array $fileFields = null): array
     {
         $fileFields = $fileFields ?? $this->getFileUploadFields();
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> laraxot/dev
         foreach ($fileFields as $field) {
             if (isset($data[$field]) && is_string($data[$field])) {
                 $data[$field] = [$data[$field]];
             }
         }
+<<<<<<< HEAD
 
         return $data;
     }
 
+=======
+        
+        return $data;
+    }
+    
+>>>>>>> laraxot/dev
     protected function getFileUploadFields(): array
     {
         $model = $this->getFormModel();
@@ -139,13 +181,21 @@ public function getFileUploadFieldsAsArrays(array $fields = null): array
 {
     $fields = $fields ?? static::$attachments ?? [];
     $data = $this->toArray();
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     foreach ($fields as $field) {
         if (isset($data[$field]) && is_string($data[$field])) {
             $data[$field] = [$data[$field]];
         }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     return $data;
 }
 ```
@@ -159,14 +209,22 @@ public function getFileUploadFieldsAsArrays(array $fields = null): array
 public function mount()
 {
     $data = $this->getFormFill();
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     foreach (['health_card', 'identity_document'] as $field) {
         if (isset($data[$field])) {
             Log::info("Field {$field} type: " . gettype($data[$field]));
             Log::info("Field {$field} value: " . json_encode($data[$field]));
         }
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     $this->form->fill($data);
 }
 ```
@@ -175,8 +233,13 @@ public function mount()
 
 ```sql
 -- Controlla come sono salvati i campi nel database
+<<<<<<< HEAD
 SELECT health_card, identity_document, isee_certificate
 FROM users
+=======
+SELECT health_card, identity_document, isee_certificate 
+FROM users 
+>>>>>>> laraxot/dev
 WHERE id = 'specific-user-id';
 ```
 
@@ -200,6 +263,7 @@ public function test_file_upload_fields_are_converted_to_arrays()
         'health_card' => 'session-uploads/test.pdf',
         'identity_document' => 'session-uploads/doc.pdf',
     ]);
+<<<<<<< HEAD
 
     $widget = new RegistrationWidget();
     $widget->type = 'patient';
@@ -207,6 +271,15 @@ public function test_file_upload_fields_are_converted_to_arrays()
 
     $data = $widget->getFormFill();
 
+=======
+    
+    $widget = new RegistrationWidget();
+    $widget->type = 'patient';
+    // Setup del widget...
+    
+    $data = $widget->getFormFill();
+    
+>>>>>>> laraxot/dev
     $this->assertIsArray($data['health_card']);
     $this->assertIsArray($data['identity_document']);
     $this->assertEquals(['session-uploads/test.pdf'], $data['health_card']);
@@ -221,9 +294,15 @@ public function test_registration_widget_loads_without_errors_for_existing_user(
     $user = User::factory()->create([
         'health_card' => 'session-uploads/test.pdf',
     ]);
+<<<<<<< HEAD
 
     $response = $this->get("/auth/patient/register?email={$user->email}&token={$user->remember_token}");
 
+=======
+    
+    $response = $this->get("/auth/patient/register?email={$user->email}&token={$user->remember_token}");
+    
+>>>>>>> laraxot/dev
     $response->assertStatus(200);
     // Non dovrebbe esserci errore foreach()
 }
@@ -231,9 +310,15 @@ public function test_registration_widget_loads_without_errors_for_existing_user(
 
 ## Riferimenti
 
+<<<<<<< HEAD
 - [Filament FileUpload Documentation](https://filamentphp.com/project_docs/forms/fields/file-upload)
 - [Laravel Eloquent Accessors](https://laravel.com/project_docs/eloquent-accessors)
 - [Livewire File Uploads](https://livewire.laravel.com/project_docs/file-uploads)
+=======
+- [Filament FileUpload Documentation](https://filamentphp.com/docs/forms/fields/file-upload)
+- [Laravel Eloquent Accessors](https://laravel.com/docs/eloquent-accessors)
+- [Livewire File Uploads](https://livewire.laravel.com/docs/file-uploads)
+>>>>>>> laraxot/dev
 
 ## Casi Correlati
 
@@ -245,7 +330,14 @@ Questo pattern si applica anche a:
 
 ---
 
+<<<<<<< HEAD
 **Tipo**: Troubleshooting Guide
 **Modulo**: Xot (Base)
 **Applicabilità**: Tutti i widget con FileUpload che caricano dati esistenti
 **Aggiornato**: 2025-01-07
+=======
+**Tipo**: Troubleshooting Guide  
+**Modulo**: Xot (Base)  
+**Applicabilità**: Tutti i widget con FileUpload che caricano dati esistenti  
+**Aggiornato**: 2025-01-07 
+>>>>>>> laraxot/dev

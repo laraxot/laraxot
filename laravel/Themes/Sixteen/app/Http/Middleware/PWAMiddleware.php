@@ -119,8 +119,8 @@ class PWAMiddleware
             return;
         }
 
-        // Aggiungi viewport meta tag
-        $viewportMeta = '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">';
+        // Aggiungi viewport meta tag. Mai maximum-scale/user-scalable=no: blocca lo zoom (WCAG 1.4.4).
+        $viewportMeta = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 
         // Inserisci dopo <head>
         $content = str_replace('<head>', "<head>\n    {$viewportMeta}", $content);

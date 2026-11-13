@@ -1,3 +1,17 @@
+---
+title: "PHILOSOPHY"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PHILOSOPHY"
+issues: []
+discussions: []
+status: stale
+---
+
+> Nota 2026-10-08 (docs-audit): cita file che nel modulo non esistono (config/seo.php, resources/views/layouts/app.blade.php, resources/views/vendor/seo/meta.blade.php), verificato il 2026-10-08. Contenuto non riscritto, verificare prima di usarlo.
+
 # SEO Module Philosophy
 
 ## RELIGIONE: SEO Dogmas
@@ -20,7 +34,6 @@ The module enforces these dogmas:
 **Reality check:** SEO is not magic. It's a translation layer between your content and machines that don't understand human language. Treat metadata as seriously as you treat your database schema.
 
 ---
-
 ## FILOSOFIA: Architecture as Principle
 
 ### Why no models? The trait-free paradox.
@@ -873,8 +886,6 @@ SEO is not magic. It's infrastructure. The Seo module is the foundation.
 
 **Last updated:** 2025-09-06  
 **Owner:** Seo Module Team  
-<<<<<<< HEAD
 **Platform:** FixCity · Laravel 13 · Filament 5
-=======
+---
 **Platform:** FixCity · Laravel 12 · Filament 5
->>>>>>> laraxot/dev

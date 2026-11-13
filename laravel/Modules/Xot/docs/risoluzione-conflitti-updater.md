@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Risoluzione conflitti su Trait Updater"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "risoluzione conflitti su trait updater xot"
+---
+>>>>>>> laraxot/dev
 # Risoluzione conflitti su Trait Updater
 
 ## File coinvolto

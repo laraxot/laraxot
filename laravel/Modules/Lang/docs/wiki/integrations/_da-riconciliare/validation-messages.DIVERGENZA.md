@@ -1,10 +1,15 @@
 ---
+qmd: "validation messages.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: validation-messages.md"
 module: Lang
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: validation-messages.divergenza.md
 ---
 
 # Divergenza: `validation-messages.md`

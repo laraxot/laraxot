@@ -8,23 +8,26 @@ qmd: "gdpr-compliance gdpr compliance - user registration module"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # GDPR Compliance - User Registration Module
 
 ## Overview
 
 Questo documento definisce i requisiti GDPR (General Data Protection Regulation - Regolamento UE 2016/679) per il sistema di registrazione utenti nel modulo User di <nome progetto>.com, implementato secondo D.Lgs. 101/2018 (adeguamento italiano al GDPR) e le best practices AGID.
->>>>>>> 87273113 (.)
 
 ## Legal Framework
 
@@ -185,7 +188,6 @@ L'AGID fornisce linee guida per l'implementazione della privacy nei servizi digi
 ### Dati Personali Raccolti
 
 Il modulo User di <nome progetto>.com raccoglie i seguenti dati personali durante la registrazione:
->>>>>>> 87273113 (.)
 
 | Campo | Tipo | Base Giuridica | Obbligatorio | Conservazione |
 |-------|------|----------------|--------------|---------------|
@@ -203,7 +205,6 @@ Per la registrazione utenti, la base giuridica principale è:
 
 **Articolo 6(1)(b) GDPR - Esecuzione di un contratto**
 - Il trattamento dei dati è necessario per l'esecuzione del contratto di servizio tra l'utente e <nome progetto>.com
->>>>>>> 87273113 (.)
 - Senza questi dati, non è possibile creare un account e fornire i servizi
 
 **Articolo 6(1)(f) GDPR - Legittimo interesse**
@@ -225,14 +226,12 @@ Il modulo User richiede i seguenti consensi durante la registrazione:
 #### 1. Privacy Policy (Obbligatorio)
 
 **Descrizione**: Accettazione della privacy policy di <nome progetto>.com
->>>>>>> 87273113 (.)
 
 **Base Giuridica**: Articolo 13 GDPR - Obbligo di informazione
 
 **Testo**: 
 ```
 Ho letto e compreso l'Informativa Privacy di <nome progetto>.com e accetto il 
->>>>>>> 87273113 (.)
 trattamento dei miei dati personali come descritto nella policy.
 ```
 
@@ -251,7 +250,6 @@ trattamento dei miei dati personali come descritto nella policy.
 **Testo**:
 ```
 Ho letto e accetto i Termini e Condizioni d'uso di <nome progetto>.com.
->>>>>>> 87273113 (.)
 ```
 
 **Dettagli**:
@@ -270,7 +268,6 @@ Ho letto e accetto i Termini e Condizioni d'uso di <nome progetto>.com.
 ```
 Acconsento al trattamento dei miei dati personali (nome, cognome, email) 
 per le finalità di creazione e gestione del mio account utente su <nome progetto>.com, 
->>>>>>> 87273113 (.)
 necessarie per l'erogazione dei servizi richiesti.
 ```
 
@@ -291,7 +288,6 @@ necessarie per l'erogazione dei servizi richiesti.
 ```
 Acconsento a ricevere comunicazioni marketing e promozionali da parte di 
 <nome progetto>.com via email, relative a eventi meetup, nuove funzionalità 
->>>>>>> 87273113 (.)
 e offerte speciali. Il consenso è facoltativo e posso revocarlo in qualsiasi momento.
 ```
 
@@ -635,7 +631,6 @@ Il form di registrazione deve seguire questi principi UX/GDPR:
 **Esempio di Banner**:
 ```
 <nome progetto>.com utilizza cookie tecnici per garantire il funzionamento del sito 
->>>>>>> 87273113 (.)
 e cookie analitici e marketing per migliorare l'esperienza utente. 
 
 [Accetta tutto] [Rifiuta tutto] [Gestisci preferenze]
@@ -656,7 +651,6 @@ TITOLARE DEL TRATTAMENTO
 <nome progetto>.com
 Email: privacy@<nome progetto>.com
 PEC: privacy@<nome progetto>.pec.it
->>>>>>> 87273113 (.)
 Indirizzo: [Indirizzo completo]
 Telefono: [Numero di telefono]
 ```
@@ -705,7 +699,6 @@ Durante la registrazione raccogliamo i seguenti dati:
 DESTINATARI DEI DATI
 I dati personali possono essere comunicati a:
 - Personale autorizzato di <nome progetto>.com
->>>>>>> 87273113 (.)
 - Fornitori di servizi tecnici (hosting, email, backup)
 - Autorità competenti su richiesta
 ```
@@ -763,7 +756,6 @@ previste dal GDPR (Standard Contractual Clauses, Decisioni di adeguatezza).
 ```
 MODIFICHE ALLA PRIVACY POLICY
 <nome progetto>.com si riserva il diritto di modificare la presente privacy 
->>>>>>> 87273113 (.)
 policy per adeguarla alla normativa vigente. Le modifiche saranno comunicate 
 tramite notifica sul sito e, quando necessario, via email.
 ```

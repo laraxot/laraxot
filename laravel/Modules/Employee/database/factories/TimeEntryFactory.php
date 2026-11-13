@@ -50,9 +50,9 @@ class TimeEntryFactory extends Factory
             'employee_notes' => $this->faker->optional(0.2)->sentence(),
             'supervisor_notes' => null,
             'status' => $this->faker->randomElement([
-                TimeEntry::STATUS_PENDING,
-                TimeEntry::STATUS_APPROVED,
-                TimeEntry::STATUS_AUTO_APPROVED,
+                \Modules\Employee\Enums\TimeEntryStatusEnum::PENDING->value,
+                \Modules\Employee\Enums\TimeEntryStatusEnum::APPROVED->value,
+                \Modules\Employee\Enums\TimeEntryStatusEnum::AUTO_APPROVED->value,
             ]),
             'approved_by' => $this->faker->optional(0.4)->numberBetween(1, 10),
             'approved_at' => $this->faker->optional(0.4)->dateTimeBetween('-7 days', 'now'),

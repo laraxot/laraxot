@@ -1,3 +1,15 @@
+---
+title: "PRD"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PRD"
+issues: []
+discussions: []
+status: active
+---
+
 # Product Requirements Document (PRD) - Seo Module
 
 **Module**: Seo
@@ -6,7 +18,6 @@
 **Author**: Product Team
 
 ---
-
 ## Document Control
 
 | Version | Date | Author | Changes |
@@ -310,11 +321,9 @@ graph TD
 
 ### 7.4 Technical Constraints
 - PHP 8.3+ required
-<<<<<<< HEAD
 - Laravel 13+ required
-=======
+---
 - Laravel 12+ required
->>>>>>> laraxot/dev
 - Filament v5 compatibility
 
 ### 7.5 Database Schema
@@ -429,10 +438,10 @@ CREATE TABLE seo_scores (
 - [Spatie Sitemap](https://github.com/spatie/laravel-sitemap)
 
 ### 11.3 Related PRDs
-- [Blog Module PRD](../Blog/docs/PRD.md)
-- [Cms Module PRD](../Cms/docs/PRD.md)
-- [Predict Module PRD](../Predict/docs/PRD.md)
-- [Media Module PRD](../Media/docs/PRD.md)
+- [Blog Module PRD](../../Blog/docs/PRD.md)
+- [Cms Module PRD](../../Cms/docs/PRD.md)
+- [Predict Module PRD](../Predict/docs/PRD.md) _(target mancante, verificato 2026-10-08)_
+- [Media Module PRD](../../Media/docs/PRD.md)
 
 ---
 

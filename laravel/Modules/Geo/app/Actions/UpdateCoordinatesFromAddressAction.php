@@ -44,20 +44,19 @@ class UpdateCoordinatesFromAddressAction
 
     public function __construct()
     {
-        $this->errors = new Collection();
+        $this->errors = new Collection;
     }
 
     /**
      * Esegue l'aggiornamento delle coordinate per un modello.
      *
-     * @param Model $model Il modello da aggiornare (deve avere full_address, latitude, longitude)
-     *
+     * @param  Model  $model  Il modello da aggiornare (deve avere full_address, latitude, longitude)
      * @return bool True se l'aggiornamento è riuscito, false altrimenti
      */
     public function execute(Model $model): bool
     {
         // Reset errori per questa esecuzione
-        $this->errors = new Collection();
+        $this->errors = new Collection;
 
         // Ottieni l'indirizzo completo dal modello
         $fullAddress = $this->getFullAddressFromModel($model);
@@ -72,11 +71,13 @@ class UpdateCoordinatesFromAddressAction
         $getAddressDataAction = app(GetAddressDataFromFullAddressAction::class);
         $addressData = $getAddressDataAction->execute($fullAddress);
 
-        if (null === $addressData) {
+        if ($addressData === null) {
             // Raccogli errori dal servizio di geocoding
             $geocodingErrors = $getAddressDataAction->getErrors();
             if ($geocodingErrors->isNotEmpty()) {
-                $this->errors->merge($geocodingErrors);
+                // merge() restituisce una nuova Collection: senza riassegnare
+                // gli errori andrebbero persi e la notifica resterebbe vuota.
+                $this->errors = $this->errors->merge($geocodingErrors);
             } else {
                 $this->errors->push(__('geo::actions.update_coordinates.errors.geocoding_failed'));
             }

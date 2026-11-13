@@ -1,3 +1,9 @@
+---
+title: "Employee - WORKHOURS_PAGE_ANALYSIS"
+module: Employee
+bmad: true
+status: active
+---
 # WorkHours Page
 
 ## Overview

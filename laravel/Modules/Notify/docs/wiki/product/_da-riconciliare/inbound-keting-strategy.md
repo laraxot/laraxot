@@ -1,10 +1,14 @@
 ---
+qmd: "inbound keting strategy"
+issues: []
+discussions: []
 title: "Strategia Inbound Marketing - App"
 module: notify
 type: product
 tags: [product, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Strategia Inbound Marketing - App

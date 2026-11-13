@@ -1,3 +1,11 @@
+---
+title: "Conversione Livewire Auth/Login a Filament LoginWidget"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "conversione livewire auth/login a filament loginwidget user"
+---
 # Conversione Livewire Auth/Login a Filament LoginWidget
 
 ## Analisi del componente Livewire
@@ -89,21 +97,24 @@ class LoginWidget extends XotBaseWidget
 - Alcune funzionalità (es. `render()`) non sono necessarie nel widget.
 
 ## Collegamenti
-- [WIDGETS_STRUCTURE.md](../WIDGETS_STRUCTURE.md) — Regole di struttura per i widget Filament nel modulo User.
-- [filament_best_practices.md](filament_best_practices.md) — Best practices per risorse e widget Filament.
-- [login-improvements.md](../../../Themes/TwentyOne/docs/login-improvements.md) — Analisi e miglioramenti della pagina di login nel tema TwentyOne.
+- [widgets-structure.md](./widgets-structure.md): Regole di struttura per i widget Filament nel modulo User.
+- [filament_best_practices.md](filament_best_practices.md): Best practices per risorse e widget Filament.
+- [login-improvements.md](../../../Themes/TwentyOne/docs/login-improvements.md): Analisi e miglioramenti della pagina di login nel tema TwentyOne.
 ---
 module: theme
 topic: login-widget-conversion
 canonical: ../../../Themes/docs/shared-components/login-widget-conversion.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 

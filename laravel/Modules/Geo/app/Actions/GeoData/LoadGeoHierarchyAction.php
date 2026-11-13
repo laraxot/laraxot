@@ -7,6 +7,7 @@ namespace Modules\Geo\Actions\GeoData;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
+use Modules\Geo\Infrastructure\Config\GeoDataConfig;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -21,31 +22,22 @@ final class LoadGeoHierarchyAction
 {
     use QueueableAction;
 
-    private const string CACHE_KEY_REGIONS = 'geo.regions';
-
-    private const string CACHE_KEY_PROVINCES = 'geo.provinces.%s';
-
-    private const string CACHE_KEY_CITIES = 'geo.cities.%s';
-
-    private const string CACHE_KEY_CAP = 'geo.cap.%s.%s';
-
-    private const int CACHE_TTL = 86400;
-
-    private const string JSON_PATH = 'Modules/Geo/resources/json/comuni.json';
-
     /**
-     * @return Collection<int, array{name: string, code: string}>
+     * Regioni come mappa codice => nome.
+     *
+     * @return Collection<string, string>
      */
     public function executeRegions(): Collection
     {
-        /** @var Collection<int, array{name: string, code: string}> $result */
-        $result = Cache::remember(
-            self::CACHE_KEY_REGIONS,
-            self::CACHE_TTL,
-            fn (): Collection => $this->loadData()->pluck('name', 'code'),
+        return Cache::remember(
+            GeoDataConfig::CACHE_KEY_REGIONS,
+            GeoDataConfig::CACHE_TTL,
+            fn (): Collection => $this->loadData()->mapWithKeys(
+                static fn (array $region): array => [
+                    SafeStringCastAction::cast($region['code'] ?? '') => SafeStringCastAction::cast($region['name'] ?? ''),
+                ],
+            ),
         );
-
-        return $result;
     }
 
     /**
@@ -53,72 +45,33 @@ final class LoadGeoHierarchyAction
      */
     public function executeProvinces(string $regionCode): Collection
     {
-        $cacheKey = sprintf(self::CACHE_KEY_PROVINCES, $regionCode);
-
-        /** @var Collection<int, array{name: string, code: string}> $result */
-        $result = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($regionCode): Collection {
-            /** @var array<string, mixed>|null $region */
-            $region = $this->loadData()->firstWhere('code', $regionCode);
-
-            if (! $region || ! is_array($region) || ! isset($region['provinces']) || ! is_array($region['provinces'])) {
-                return new Collection;
-            }
-
-            /** @var array<int, array<string, mixed>> $provinces */
-            $provinces = $region['provinces'];
-
-            return (new Collection($provinces))
-                ->map(static function (array $province): array {
-                    $name = $province['name'] ?? '';
-                    $code = $province['code'] ?? '';
-
-                    return [
-                        'name' => SafeStringCastAction::cast($name),
-                        'code' => SafeStringCastAction::cast($code),
-                    ];
-                })
-                ->values();
-        });
-
-        return $result;
+        return Cache::remember(
+            sprintf(GeoDataConfig::CACHE_KEY_PROVINCES, $regionCode),
+            GeoDataConfig::CACHE_TTL,
+            fn (): Collection => $this->loadProvinces($regionCode),
+        );
     }
 
     /**
-     * @return Collection<int, array{name: string, code: string}>
+     * Città della provincia come mappa codice => nome.
+     *
+     * @return Collection<string, string>
      */
     public function executeCities(string $provinceCode): Collection
     {
-        $cacheKey = sprintf(self::CACHE_KEY_CITIES, $provinceCode);
-
-        /** @var Collection<int, array{name: string, code: string}> $result */
-        $result = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($provinceCode): Collection {
-            /** @var array<string, mixed>|null $province */
-            $province = $this->loadData()->flatMap(static fn (array $region): array => is_array($region['provinces'] ?? null)
-                ? $region['provinces']
-                : [])->firstWhere('code', $provinceCode);
-
-            if (! $province || ! is_array($province) || ! isset($province['cities']) || ! is_array($province['cities'])) {
-                return new Collection;
-            }
-
-            /** @var array<int, array<string, mixed>> $cities */
-            $cities = $province['cities'];
-
-            /** @var Collection<string, string> $cityResult */
-            $cityResult = (new Collection($cities))->pluck('name', 'code');
-
-            return $cityResult;
-        });
-
-        return $result;
+        return Cache::remember(
+            sprintf(GeoDataConfig::CACHE_KEY_CITIES, $provinceCode),
+            GeoDataConfig::CACHE_TTL,
+            fn (): Collection => $this->loadCities($provinceCode),
+        );
     }
 
     public function executeCap(string $provinceCode, string $cityCode): ?string
     {
-        $cacheKey = sprintf(self::CACHE_KEY_CAP, $provinceCode, $cityCode);
+        $cacheKey = sprintf(GeoDataConfig::CACHE_KEY_CAP, $provinceCode, $cityCode);
 
         /** @var string|null $result */
-        $result = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($provinceCode, $cityCode): ?string {
+        $result = Cache::remember($cacheKey, GeoDataConfig::CACHE_TTL, function () use ($provinceCode, $cityCode): ?string {
             /** @var array<string, mixed>|null $province */
             $province = $this->loadData()->flatMap(static fn (array $region): array => is_array($region['provinces'] ?? null)
                 ? $region['provinces']
@@ -142,7 +95,58 @@ final class LoadGeoHierarchyAction
 
     public function executeClearCache(): void
     {
-        Cache::forget(self::CACHE_KEY_REGIONS);
+        Cache::forget(GeoDataConfig::CACHE_KEY_REGIONS);
+    }
+
+    /**
+     * @return Collection<int, array{name: string, code: string}>
+     */
+    private function loadProvinces(string $regionCode): Collection
+    {
+        /** @var array<string, mixed>|null $region */
+        $region = $this->loadData()->firstWhere('code', $regionCode);
+
+        if (! $region || ! is_array($region) || ! isset($region['provinces']) || ! is_array($region['provinces'])) {
+            return new Collection;
+        }
+
+        /** @var array<int, array<string, mixed>> $provinces */
+        $provinces = $region['provinces'];
+
+        return (new Collection($provinces))
+            ->map(static function (array $province): array {
+                $name = $province['name'] ?? '';
+                $code = $province['code'] ?? '';
+
+                return [
+                    'name' => SafeStringCastAction::cast($name),
+                    'code' => SafeStringCastAction::cast($code),
+                ];
+            })
+            ->values();
+    }
+
+    /**
+     * @return Collection<string, string>
+     */
+    private function loadCities(string $provinceCode): Collection
+    {
+        /** @var array<string, mixed>|null $province */
+        $province = $this->loadData()->flatMap(static fn (array $region): array => is_array($region['provinces'] ?? null)
+            ? $region['provinces']
+            : [])->firstWhere('code', $provinceCode);
+
+        if (! $province || ! is_array($province) || ! isset($province['cities']) || ! is_array($province['cities'])) {
+            return new Collection;
+        }
+
+        /** @var array<int, array<string, mixed>> $cities */
+        $cities = $province['cities'];
+
+        /** @var Collection<string, string> $cityResult */
+        $cityResult = (new Collection($cities))->pluck('name', 'code');
+
+        return $cityResult;
     }
 
     /**
@@ -150,12 +154,12 @@ final class LoadGeoHierarchyAction
      */
     private function loadData(): Collection
     {
-        if (! File::exists(base_path(self::JSON_PATH))) {
+        if (! File::exists(base_path(GeoDataConfig::JSON_PATH))) {
             throw new \RuntimeException('Il file JSON dei comuni non esiste');
         }
 
         /** @var array<string, mixed> $data */
-        $data = json_decode(File::get(base_path(self::JSON_PATH)), true);
+        $data = json_decode(File::get(base_path(GeoDataConfig::JSON_PATH)), true);
 
         if (! is_array($data)) {
             throw new \RuntimeException('Il file JSON dei comuni non è valido');

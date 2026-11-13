@@ -8,14 +8,19 @@ qmd: "philosophy user - filosofia completa: logica, religione, politica, zen"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # User - Filosofia Completa: Logica, Religione, Politica, Zen
@@ -110,7 +115,7 @@ class Doctor extends User
     // Type-specific logic
 # User Module: Philosophy, Architecture & Zen
 
-> **Identity & Authorization** — Who you are, what you can do, which tenant you belong to. User module is the backbone of Laraxot's security and multi-tenancy.
+> **Identity & Authorization**: Who you are, what you can do, which tenant you belong to. User module is the backbone of Laraxot's security and multi-tenancy.
 
 ---
 

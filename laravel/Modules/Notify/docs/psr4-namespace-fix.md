@@ -1,3 +1,15 @@
+---
+title: "psr4 namespace fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "psr4 namespace fix"
+issues: []
+discussions: []
+status: draft
+---
+
 # Fix Namespace PSR-4 - Modulo Notify
 
 > **Versione**: 1.0  

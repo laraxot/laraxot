@@ -1,3 +1,15 @@
+---
+title: "route correction summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "route correction summary"
+issues: []
+discussions: []
+status: draft
+---
+
 # Riepilogo Correzione Route - Tema Sixteen
 
 ## Problema Risolto

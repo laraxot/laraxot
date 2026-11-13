@@ -1,4 +1,10 @@
 ---
+type: note
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header authenticated parity"
+issues: []
+discussions: []
 title: Header Authenticated State Parity
 description: Regole per il rendering dell'header quando l'utente è autenticato
 tags: [header, authentication, area-personale, bootstrap-italia]
@@ -6,6 +12,7 @@ sources:
   - ../../../resources/views/components/header-comune.blade.php
   - ../../../resources/views/components/sections/header/partials/user-dropdown.blade.php
   - https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-area-personale.html
+status: draft
 ---
 
 # Header Authenticated State Parity

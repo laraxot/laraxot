@@ -1,13 +1,28 @@
 ---
+<<<<<<< .merge_file_3EBuMO
 title: "UI — BMAD Quick Reference"
+=======
+title: "UI: BMAD Quick Reference"
+>>>>>>> .merge_file_bb3b0L
 description: "Comandi rapidi BMAD per il modulo UI"
 module: "UI"
 alias: "ui"
 documentation_date: "2026-05-27"
 bmad_version: "6.2.0"
+<<<<<<< .merge_file_3EBuMO
 ---
 
 # UI — BMAD Quick Reference
+=======
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, ui, bmad]
+qmd: "ui   bmad quick reference ui"
+---
+
+# UI: BMAD Quick Reference
+>>>>>>> .merge_file_bb3b0L
 
 ## Comandi Rapidi
 

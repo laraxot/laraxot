@@ -1,4 +1,7 @@
 ---
+qmd: "livewire alpine esm order"
+issues: []
+discussions: []
 title: livewire alpine esm order (tema sixteen)
 type: troubleshooting
 confidence: high
@@ -18,6 +21,7 @@ tags:
      - alpine.js
      - vite
      - tema-sixteen
+status: draft
 ---
 
 # ordinamento Livewire Alpine e bundle ESM tema Sixteen

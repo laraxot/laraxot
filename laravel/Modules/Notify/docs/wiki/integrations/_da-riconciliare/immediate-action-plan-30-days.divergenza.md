@@ -1,10 +1,14 @@
 ---
+qmd: "immediate action plan 30 days.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: immediate-action-plan-30-days.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Divergenza: `immediate-action-plan-30-days.md`

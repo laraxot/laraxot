@@ -1,9 +1,20 @@
+---
+title: "philosophy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "philosophy"
+issues: []
+discussions: []
+status: draft
+---
+
 # Gdpr Module: Privacy & Compliance
 
 > **Data Protection & Cookie Consent** — GDPR, CCPA, consent tracking, data export/deletion.
 
 ---
-
 ## Zen
 
 **"User owns their data. Ask permission, log the answer, enable deletion."**
@@ -91,4 +102,3 @@ Fire analytics/tracking only if granted
 
 - **Generated**: 2026-09-06
 - **Last Verified**: 2026-09-06 (module closure merge + quality baseline established)
-

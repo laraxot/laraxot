@@ -1,4 +1,7 @@
 ---
+qmd: "INDEX"
+issues: []
+discussions: []
 title: "Rules Index"
 type: index
 created: 2026-05-11
@@ -6,7 +9,8 @@ updated: 2026-05-11
 tags: [rules, index, on-demand]
 related:
   - ../rules/00-TRIGGER_MAP.md
-  - ../rules/on-demand-pattern.md
+  - ../../ON-DEMAND-PATTERN.md
+status: draft
 ---
 
 # Rules Index
@@ -35,6 +39,11 @@ Le Rules progettuali vivono qui, nel wiki del Theme **Sixteen**, e vengono caric
 - La sorgente di verita' per le Rules e' sempre il wiki locale
 - Non embeddare Rules nei prompt di avvio
 - Per Rules globali, consulta il [wiki root](../../docs/wiki/rules/INDEX.md)
+
+## Regole Sixteen ricorrenti
+
+- [No parallel DesignComuni layout](no-parallel-design-comuni-layout.md) — Sixteen è già il tema DesignComuni; usare la shell pubblica canonica `x-layouts.app`, non creare `x-layouts.design-comuni`.
+- [CMS content slug = Folio page name](cms-content-slug-matches-folio-page-name.md) — il JSON di contenuto si chiama come lo slug interrogato (= nome pagina Folio). Famiglie diverse: pagine app (`tickets.create.json`) vs anteprima parity (`tests.<slug>.json`).
 
 ## Aggiungere una Nuova RULES
 

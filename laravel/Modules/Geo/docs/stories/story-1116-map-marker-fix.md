@@ -1,4 +1,12 @@
 ---
+title: "story 1116 map marker fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "story 1116 map marker fix"
+issues: []
+discussions: []
 scope: module:Geo
 ---
 

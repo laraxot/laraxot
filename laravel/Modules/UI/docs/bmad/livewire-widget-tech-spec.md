@@ -1,10 +1,21 @@
 ---
+<<<<<<< .merge_file_s4ucs7
 title: "Tech spec — UI ritiro HTTP"
+=======
+title: "Tech spec: UI ritiro HTTP"
+>>>>>>> .merge_file_vzxiGl
 type: tech-spec
 module: UI
 related:
   - ./livewire-inventory.md
   - ./livewire-widget-prd.md
+<<<<<<< .merge_file_s4ucs7
+=======
+status: draft
+updated: 2026-10-07
+tags: [docs, ui, bmad]
+qmd: "tech spec ui ui"
+>>>>>>> .merge_file_vzxiGl
 ---
 
 # Tech spec UI

@@ -1,3 +1,9 @@
+---
+title: "Employee - 02-GESTIONE-DIPARTIMENTI"
+module: Employee
+bmad: true
+status: active
+---
 # 02 - Gestione Dipartimenti
 
 ## Panoramica

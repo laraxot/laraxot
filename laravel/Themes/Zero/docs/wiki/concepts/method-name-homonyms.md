@@ -10,6 +10,17 @@ related:
   - ../../../../docs/wiki/method-name-homonym-census.md
   - ../../../Modules/Xot/docs/wiki/concepts/code-redundancy-philosophy.md
   - ./code-redundancy-theme.md
+id: zero-docs-wiki-concepts-method-name-homonyms
+slug: method-name-homonyms
+description: "Il tema Zero è strato presentazione (Blade, CSS, view Filament). Le classi PHP nel tema sono poche e non ripetono metodi con lo stesso nome su classi diverse."
+document_type: analysis
+category: documentation
+status: active
+tags: []
+created: "2026-09-24"
+qmd: "censimento omonimi metodi - tema zero"
+issues: []
+discussions: []
 ---
 
 # Censimento omonimi metodi — Theme Zero
@@ -38,22 +49,22 @@ La ridondanza di business logic da monitorare sta nei **moduli** Laravel (`Sigma
 
 - [Indice censimento progetto](../../../docs/wiki/method-name-homonym-census.md)
 - [Ridondanza tema](./code-redundancy-theme.md)
-- [Sigma — omonimi relazioni](../../../../laravel/Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
-- [Indice censimento progetto](../../../docs/wiki/method-name-homonym-census.md)
+- [Sigma — omonimi relazioni](../../../../../Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
+- [Indice censimento progetto](../../../../../../docs/wiki/method-name-homonym-census.md)
+- [Ridondanza tema](./code-redundancy-theme.md)
+- [Sigma — omonimi relazioni](../../../../../Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
+- [Indice censimento progetto](../../../../../../docs/wiki/method-name-homonym-census.md)
+- [Ridondanza tema](./code-redundancy-theme.md)
+- [Sigma — omonimi relazioni](../../../../../Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
+- [Indice censimento progetto](../../../../../../docs/wiki/method-name-homonym-census.md)
+- [Ridondanza tema](./code-redundancy-theme.md)
+- [Sigma — omonimi relazioni](../../../../../Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
+- [Indice censimento progetto](../../../../../../docs/wiki/method-name-homonym-census.md)
 - [Ridondanza tema](./code-redundancy-theme.md)
 - [Sigma — omonimi relazioni](../../../../laravel/Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
 - [Indice censimento progetto](../../../../docs/wiki/method-name-homonym-census.md)
 - [Ridondanza tema](./code-redundancy-theme.md)
-- [Sigma — omonimi relazioni](../../../Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
-- [Indice censimento progetto](../../../docs/wiki/method-name-homonym-census.md)
-- [Ridondanza tema](./code-redundancy-theme.md)
-- [Sigma — omonimi relazioni](../../../../laravel/Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
-- [Indice censimento progetto](../../../docs/wiki/method-name-homonym-census.md)
-- [Ridondanza tema](./code-redundancy-theme.md)
-- [Sigma — omonimi relazioni](../../../../laravel/Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
-- [Indice censimento progetto](../../../../docs/wiki/method-name-homonym-census.md)
-- [Ridondanza tema](./code-redundancy-theme.md)
-- [Sigma — omonimi relazioni](../../../Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
+- [Sigma — omonimi relazioni](../../../../../Modules/Sigma/docs/wiki/concepts/method-name-homonyms.md)
 
 ## Rigenerazione
 

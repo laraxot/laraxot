@@ -59,7 +59,10 @@ class ExecuteArtisanCommandAction
 
         /** @var list<string> $output */
         $output = [];
+<<<<<<< HEAD
         $status = 'running';
+=======
+>>>>>>> laraxot/dev
 
         try {
             $process = Process::path(base_path())

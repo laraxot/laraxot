@@ -1,7 +1,15 @@
 ---
+title: "theme cms block architecture ticket crea"
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "theme cms block architecture ticket crea"
+issues: []
+discussions: []
 name: theme-cms-block-architecture-segnalazione-crea
 description: "Theme Sixteen organizes CMS pages via JSON blocks → block views → widget mount pattern. segnalazione-crea is CMS-driven not hardcoded."
 type: discovery
+status: draft
 ---
 
 # Theme CMS Block Architecture — Segnalazione-Crea

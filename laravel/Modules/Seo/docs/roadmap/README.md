@@ -1,6 +1,17 @@
+---
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
+status: active
+---
+
 # Seo Module Roadmap
 
-<<<<<<< HEAD
 [![Module](https://img.shields.io/badge/Module-Seo Module Roadmap-8B0000.svg)]()
 [![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
 [![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
@@ -27,13 +38,12 @@
 | Lingua | Link |
 |--------|------|
 | 🇮🇹 Presentazione | Questo file (`README.md`) |
-| 🇬🇧 Business card | [docs/readme-en.md](./docs/readme-en.md) |
-| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+| 🇬🇧 Business card | [docs/readme-en.md](../readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](..) |
 
 ---
-
 **Modulo** `Seo` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
-=======
+---
 > "SEO optimization system for the Laraxot ecosystem with meta tags, sitemaps, and search engine optimization tools."
 
 ## 🎯 Vision
@@ -91,5 +101,3 @@ Provide a **comprehensive SEO toolkit** that includes:
 - Competitor analysis
 
 ---
-
->>>>>>> laraxot/dev

@@ -1,3 +1,11 @@
+---
+title: "Implementazione della Pagina di Logout nel Tema One"
+type: note
+status: draft
+updated: 2026-10-13
+tags: [docs, user]
+qmd: "implementazione della pagina di logout nel tema one user"
+---
 # Implementazione della Pagina di Logout nel Tema One
 
 ## Struttura Corretta
@@ -99,6 +107,8 @@ Il file `logout.blade.php` deve essere implementato come una pagina Folio static
 4. **Mantieni la logica** semplice e diretta
 
 ## Collegamenti Correlati
-- [Best Practices Folio](./ROUTING_BEST_PRACTICES.md)
-- [Gestione Sessione](./SESSION_MANAGEMENT.md)
+- [Best Practices Folio](./routing_best_practices.md)
+- [Gestione Sessione](./session_management.md)
+- [Best Practices Folio](./routing_best_practices.md)
+- [Gestione Sessione](./session_management.md)
 - [Tema One Documentation](../../Themes/One/docs/README.md) 

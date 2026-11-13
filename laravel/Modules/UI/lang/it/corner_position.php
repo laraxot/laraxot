@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_dwRBrx
 return [
     'fields' => [
         'top-left' => ['label' => 'top-left', 'placeholder' => 'top-left', 'helper_text' => 'top-left', 'description' => 'top-left'],
@@ -10,3 +11,6 @@ return [
         'bottom-right' => ['label' => 'bottom-right', 'placeholder' => 'bottom-right', 'helper_text' => 'bottom-right', 'description' => 'bottom-right'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_V7Gn7S

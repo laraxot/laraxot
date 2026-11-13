@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Tenant Module - User Research"
 module: "Tenant"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "user research"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # Tenant Module - User Research
 

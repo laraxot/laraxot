@@ -31,11 +31,16 @@ class MorphToManyAction
         // dddx(['row' => $row, 'relation' => $relation, 't1' => Arr::isAssoc($data)]);
 
         if (! Arr::isAssoc($data)) {
+<<<<<<< HEAD
             $relationDTO->rows->sync($data);
+=======
+            $rows->sync($data);
+>>>>>>> laraxot/dev
 
             return;
         }
 
+<<<<<<< HEAD
         dddx([
             'message' => 'wip',
             'row' => $model,
@@ -46,6 +51,9 @@ class MorphToManyAction
 
         dddx('wip');
 
+=======
+        throw new \LogicException('Store\MorphToManyAction with associative (pivot) data not implemented');
+>>>>>>> laraxot/dev
         /*
          * foreach ($data as $k => $v) {
          * if (\is_array($v)) {

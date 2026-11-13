@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "radio collection usage examples"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "radio collection usage examples"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # RadioCollection - Esempi di Utilizzo
 
 ## Utilizzo Base

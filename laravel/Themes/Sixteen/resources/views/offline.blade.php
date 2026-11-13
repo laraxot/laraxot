@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#0066cc">
     <meta name="description" content="FixCity Platform - Connessione offline">
     
-    <title>Offline - FixCity Platform</title>
+    <title>{{ __('pub_theme::offline_page.offline.page_title.label') }}</title>
     
     <!-- Preload critical resources -->
     <link rel="preload" href="{{ asset('css/app.css') }}" as="style">
@@ -37,38 +37,38 @@
                 </div>
                 
                 <!-- Offline Message -->
-                <h1 class="h2 mb-3 text-primary">Connessione Offline</h1>
+                <h1 class="h2 mb-3 text-primary">{{ __('pub_theme::offline_page.offline.title.label') }}</h1>
                 <p class="lead mb-4">
-                    Sembra che tu non abbia una connessione internet attiva. 
-                    Non preoccuparti, puoi comunque utilizzare alcune funzionalità di FixCity.
+                    {{ __('pub_theme::offline_page.offline.intro.message') }} 
+                    {{ __('pub_theme::offline_page.offline.reassurance.message') }}
                 </p>
                 
                 <!-- Available Features -->
                 <div class="offline-features mb-4">
-                    <h3 class="h5 mb-3">Funzionalità disponibili offline:</h3>
+                    <h3 class="h5 mb-3">{{ __('pub_theme::offline_page.offline.features.title') }}</h3>
                     <div class="row">
                         <div class="col-6 col-md-3 mb-3">
                             <div class="feature-item">
                                 <i class="fas fa-plus-circle text-success mb-2" style="font-size: 2rem;"></i>
-                                <p class="small mb-0">Crea Ticket</p>
+                                <p class="small mb-0">{{ __('pub_theme::offline_page.offline.features.create_ticket.label') }}</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 mb-3">
                             <div class="feature-item">
                                 <i class="fas fa-list text-info mb-2" style="font-size: 2rem;"></i>
-                                <p class="small mb-0">Visualizza Ticket</p>
+                                <p class="small mb-0">{{ __('pub_theme::offline_page.offline.features.view_ticket.label') }}</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 mb-3">
                             <div class="feature-item">
                                 <i class="fas fa-edit text-warning mb-2" style="font-size: 2rem;"></i>
-                                <p class="small mb-0">Modifica Ticket</p>
+                                <p class="small mb-0">{{ __('pub_theme::offline_page.offline.features.edit_ticket.label') }}</p>
                             </div>
                         </div>
                         <div class="col-6 col-md-3 mb-3">
                             <div class="feature-item">
                                 <i class="fas fa-sync text-primary mb-2" style="font-size: 2rem;"></i>
-                                <p class="small mb-0">Sincronizza</p>
+                                <p class="small mb-0">{{ __('pub_theme::offline_page.offline.features.sync.label') }}</p>
                             </div>
                         </div>
                     </div>
@@ -78,11 +78,11 @@
                 <div class="offline-actions">
                     <button type="button" class="btn btn-primary btn-lg me-3" onclick="retryConnection()">
                         <i class="fas fa-wifi me-2"></i>
-                        Riprova Connessione
+                        {{ __('pub_theme::offline_page.offline.actions.retry.label') }}
                     </button>
                     <button type="button" class="btn btn-outline-primary btn-lg" onclick="goToApp()">
                         <i class="fas fa-arrow-right me-2"></i>
-                        Continua Offline
+                        {{ __('pub_theme::offline_page.offline.actions.continue.label') }}
                     </button>
                 </div>
                 
@@ -90,7 +90,7 @@
                 <div class="connection-status mt-4">
                     <div class="alert alert-info" role="alert">
                         <i class="fas fa-info-circle me-2"></i>
-                        <span id="connection-status">Verificando connessione...</span>
+                        <span id="connection-status">{{ __('pub_theme::offline_page.offline.status.checking.message') }}</span>
                     </div>
                 </div>
                 
@@ -98,7 +98,7 @@
                 <div class="sync-status mt-3" id="sync-status" style="display: none;">
                     <div class="alert alert-success" role="alert">
                         <i class="fas fa-sync-alt fa-spin me-2"></i>
-                        Sincronizzazione in corso...
+                        {{ __('pub_theme::offline_page.offline.status.syncing.message') }}
                     </div>
                 </div>
             </div>

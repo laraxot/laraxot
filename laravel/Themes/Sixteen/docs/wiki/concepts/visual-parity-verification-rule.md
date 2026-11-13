@@ -1,9 +1,20 @@
+---
+title: "visual parity verification rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "visual parity verification rule"
+issues: []
+discussions: []
+status: draft
+---
+
 # Visual Parity Verification Rule
 
 ## Data: 2026-04-23
 
 ---
-
 ## REGOLA
 
 Dopo **OGNI** modifica di file PHP, Blade, CSS o JS:

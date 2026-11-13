@@ -16,6 +16,7 @@ related:
   - "./configuration.md"
   - "./design-comuni-bmad-master-plan.md"
   - "./docs-governance.md"
+status: draft
 ---
 
 # ✅ AI Skills & Plugins - COMPLETE

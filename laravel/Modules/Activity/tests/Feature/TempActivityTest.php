@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Feature;
 
+<<<<<<< .merge_file_Qk3X7x
 use Illuminate\Support\Collection;
 use Modules\Activity\Models\Activity;
 use Modules\Activity\Tests\TestCase;
@@ -12,6 +13,15 @@ use Modules\User\Database\Factories\UserFactory;
 use PHPUnit\Framework\Assert;
 
 uses(\Modules\Activity\Tests\TestCase::class);
+=======
+use Modules\Activity\Models\Activity;
+use Modules\Activity\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
+use PHPUnit\Framework\Assert;
+use Spatie\SchemalessAttributes\SchemalessAttributes;
+
+uses(TestCase::class);
+>>>>>>> .merge_file_kudUhs
 
 test('can create activity with basic information', function () {
     $user = UserFactory::new()->createOne();

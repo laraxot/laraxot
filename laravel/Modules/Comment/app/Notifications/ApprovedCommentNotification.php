@@ -36,7 +36,11 @@ class ApprovedCommentNotification extends Notification implements ShouldQueue
         $config = CommentConfigData::make();
         $view = app(ResolveCommentMailViewAction::class)->execute('comment::mail.approved-comment-notification');
 
+<<<<<<< .merge_file_2YR1nH
         return (new MailMessage())
+=======
+        return (new MailMessage)
+>>>>>>> .merge_file_LkteTA
             ->from(
                 $config->notificationMailFromAddress(),
                 $config->notificationMailFromName(),

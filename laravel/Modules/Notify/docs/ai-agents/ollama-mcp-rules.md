@@ -1,3 +1,15 @@
+---
+title: "ollama mcp rules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ollama mcp rules"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📜 Ollama MCP Rules - Regole Condivise per Agenti AI
 
 **Data Creazione**: 2026-03-11  
@@ -6,7 +18,6 @@
 **Status**: Active
 
 ---
-
 ## 🚨 Regole Critiche
 
 ### 1. MCP-First Approach

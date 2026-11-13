@@ -5,13 +5,15 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Actions\SMS;
 
 use Modules\Notify\Actions\SMS\SendTwilioSMSAction;
-use Modules\Notify\Models\Contracts\SmsActionContract;
 use Modules\Notify\Datas\SmsData;
+use Modules\Notify\Models\Contracts\SmsActionContract;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 use ReflectionNamedType;
 use Spatie\QueueableAction\QueueableAction;
 
+uses(TestCase::class);
 test('twilio sms action has the expected public contract', function (): void {
     $reflection = new ReflectionClass(SendTwilioSMSAction::class);
     $method = $reflection->getMethod('execute');

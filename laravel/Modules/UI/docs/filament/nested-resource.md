@@ -1,8 +1,19 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "nested resource"
+issues: []
+discussions: []
 title: Nested Resource
 description: Nested Resource
 extends: _layouts.documentation
 section: content
+<<<<<<< HEAD
+status: draft
+=======
+>>>>>>> f5ffd8b4 (.)
 ---
 
 # Nested Resource {#nested-resource}

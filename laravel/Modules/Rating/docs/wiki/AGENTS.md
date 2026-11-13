@@ -10,6 +10,7 @@ discussions: []
 related:
   - ./coding-agent-manifests.md
   - ./rules/index.md
+status: draft
 ---
 
 # Rating {{TYPE^}} LLM Wiki Agent Instructions

@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "form_request"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "form_request xot"
+---
+>>>>>>> laraxot/dev
 # form_request
 
 <!-- Contenuto migrato da _docs/form_request.txt -->

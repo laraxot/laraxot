@@ -1,3 +1,9 @@
+---
+title: "Employee - TECHNICAL_IMPLEMENTATION"
+module: Employee
+bmad: true
+status: active
+---
 # Implementazione Tecnica Modulo Employee
 
 ## Architettura del Sistema

@@ -1,3 +1,16 @@
+---
+title: "agents"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agents"
+issues: []
+discussions: []
+status: superseded
+superseded_by: AGENTS.md
+---
+
 # AI Agent Instructions for LLM Wiki Management
 
 You are an expert documentation agent responsible for maintaining the PTVX LLM Wiki. Follow these rules to ensure the wiki remains accurate, interlinked, and non-redundant.

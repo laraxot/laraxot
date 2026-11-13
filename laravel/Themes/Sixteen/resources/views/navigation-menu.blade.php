@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('pub_theme::auth.navigation.dashboard') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -40,19 +40,19 @@
                                 <div class="w-60">
                                     <!-- Team Management -->
                                     <div class="block px-4 py-2 text-xs text-gray-400">
-                                        {{ __('Manage Team') }}
+                                        {{ __('pub_theme::account_menu.menu.manage_team.label') }}
                                     </div>
 
                                     <!-- Team Settings -->
                                     <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
                                     <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
-                                        {{ __('Team Settings') }}
+                                        {{ __('pub_theme::account_menu.menu.team_settings.label') }}
                                     </x-dropdown-link>
 
                                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                                         <x-dropdown-link href="{{ route('teams.create') }}">
                                         <x-dropdown-link href="{{ route('teams.create') }}">
-                                            {{ __('Create New Team') }}
+                                            {{ __('pub_theme::account_menu.menu.create_team.label') }}
                                         </x-dropdown-link>
                                     @endcan
 
@@ -61,7 +61,7 @@
                                         <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
                                         <div class="block px-4 py-2 text-xs text-gray-400">
-                                            {{ __('Switch Teams') }}
+                                            {{ __('pub_theme::account_menu.menu.switch_teams.label') }}
                                         </div>
 
                                         @foreach (Auth::user()->allTeams() as $team)
@@ -100,31 +100,29 @@
                         <x-slot name="content">
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                                {{ __('pub_theme::account_menu.menu.manage_account.label') }}
                             </div>
 
                             <x-dropdown-link href="{{ route('profile.show') }}">
                             <x-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                                {{ __('pub_theme::account_menu.menu.profile.label') }}
                             </x-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-dropdown-link href="{{ route('api-tokens.index') }}">
                                 <x-dropdown-link href="{{ route('api-tokens.index') }}">
-                                    {{ __('API Tokens') }}
+                                    {{ __('pub_theme::account_menu.menu.api_tokens.label') }}
                                 </x-dropdown-link>
                             @endif
 
                             <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
                             <!-- Authentication -->
-                            <form method="POST" action="{{ route('logout') }}" x-data>
+                            <form method="POST" action="{{ url('/'.app()->getLocale().'/auth/logout') }}" x-data>
                                 @csrf
-
-                                <x-dropdown-link href="{{ route('logout') }}"
-                                <x-dropdown-link href="{{ route('logout') }}"
+                                <x-dropdown-link href="{{ url('/'.app()->getLocale().'/auth/logout') }}"
                                          @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('pub_theme::navigation_components.profile_dropdown.logout.label') }}
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
@@ -149,7 +147,7 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('pub_theme::auth.navigation.dashboard') }}
             </x-responsive-nav-link>
         </div>
 
@@ -171,22 +169,21 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('pub_theme::account_menu.menu.profile.label') }}
                 </x-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
-                        {{ __('API Tokens') }}
+                        {{ __('pub_theme::account_menu.menu.api_tokens.label') }}
                     </x-responsive-nav-link>
                 @endif
 
                 <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}" x-data>
+                <form method="POST" action="{{ url('/'.app()->getLocale().'/auth/logout') }}" x-data>
                     @csrf
-
-                    <x-responsive-nav-link href="{{ route('logout') }}"
+                    <x-responsive-nav-link href="{{ url('/'.app()->getLocale().'/auth/logout') }}"
                                    @click.prevent="$root.submit();">
-                        {{ __('Log Out') }}
+                        {{ __('pub_theme::navigation_components.profile_dropdown.logout.label') }}
                     </x-responsive-nav-link>
                 </form>
 
@@ -195,17 +192,17 @@
                     <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
                     <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Manage Team') }}
+                        {{ __('pub_theme::account_menu.menu.manage_team.label') }}
                     </div>
 
                     <!-- Team Settings -->
                     <x-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
-                        {{ __('Team Settings') }}
+                        {{ __('pub_theme::account_menu.menu.team_settings.label') }}
                     </x-responsive-nav-link>
 
                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                         <x-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
-                            {{ __('Create New Team') }}
+                            {{ __('pub_theme::account_menu.menu.create_team.label') }}
                         </x-responsive-nav-link>
                     @endcan
 
@@ -214,7 +211,7 @@
                         <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
                         <div class="block px-4 py-2 text-xs text-gray-400">
-                            {{ __('Switch Teams') }}
+                            {{ __('pub_theme::account_menu.menu.switch_teams.label') }}
                         </div>
 
                         @foreach (Auth::user()->allTeams() as $team)

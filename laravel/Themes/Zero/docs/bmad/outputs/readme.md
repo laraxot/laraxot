@@ -1,0 +1,53 @@
+---
+title: "LLM Wiki Outputs"
+type: index
+tags: [theme, zero, readme]
+created: 2026-07-01
+updated: 2026-07-01
+qmd: "zero theme llm wiki outputs"
+id: zero-docs-bmad-outputs-readme
+slug: readme
+description: "![Laravel](https://laravel.com/)](https://laravel.com/)"
+document_type: index
+category: documentation
+status: active
+issues: []
+discussions: []
+---
+# LLM Wiki Outputs
+
+[![Module](https://img.shields.io/badge/Module-LLM Wiki Outputs-8B0000.svg)]()
+[![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge)](https://laravel.com/)](https://laravel.com/)
+[![Filament](https://img.shields.io/badge/Filament-5-ffab00?style=for-the-badge)](https://filamentphp.com/)](https://filamentphp.com/)
+[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://php.net/)
+[![PHP](https://img.shields.io/badge/PHP-8.4+-777BB4?style=for-the-badge)](https://php.net/)](https://phpstan.org/)
+[![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
+[![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
+]()
+
+> **Core module for the FixCity Platform.**
+
+## Perché esiste
+
+Core module for the FixCity Platform.
+
+## Superpoteri
+
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](../readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](./docs/) |
+
+---
+
+**Modulo** `Zero` · **Laraxot** · **FixCity Platform** · PHPStan 10 · Filament 5
+Persistent answers, research reports, and generated summaries derived from this package wiki belong here.
+
+Outputs should cite the wiki or raw files they used, so later agents can audit the reasoning.

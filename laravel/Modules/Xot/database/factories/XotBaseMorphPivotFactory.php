@@ -15,7 +15,11 @@ use Modules\Xot\Models\XotBaseMorphPivot;
  *
  * @extends Factory<XotBaseMorphPivot>
  */
+<<<<<<< HEAD
 class XotBaseMorphPivotFactory extends Factory
+=======
+abstract class XotBaseMorphPivotFactory extends Factory
+>>>>>>> laraxot/dev
 {
     /**
      * The name of the factory's corresponding model.
@@ -23,6 +27,7 @@ class XotBaseMorphPivotFactory extends Factory
      * @var class-string<XotBaseMorphPivot>
      */
     protected $model = XotBaseMorphPivot::class;
+<<<<<<< HEAD
 
     /**
      * Define the model's default state.
@@ -49,4 +54,6 @@ class XotBaseMorphPivotFactory extends Factory
             'deleted_by' => fake()->optional(0.1)->uuid(),
         ];
     }
+=======
+>>>>>>> laraxot/dev
 }

@@ -69,7 +69,7 @@ return [
         'document' => 'Documento',
         'audio' => 'Audio'],
     'actions' => [
-        'send' => 'Invia WhatsApp',
+        'send' => 'WhatsApp senden',
         'cancel' => 'Annulla'],
     'messages' => [
         'success' => 'WhatsApp inviato con successo',

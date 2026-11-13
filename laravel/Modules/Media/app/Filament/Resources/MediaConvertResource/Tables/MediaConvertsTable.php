@@ -17,19 +17,22 @@ use Filament\Tables\Filters\SelectFilter;
 use Modules\Media\Actions\Video\ConvertVideoByMediaConvertAction;
 use Modules\Media\Datas\ConvertData;
 use Modules\Media\Models\MediaConvert;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 use Spatie\QueueableAction\ActionJob;
+
+use function app;
+use function dispatch;
 
 class MediaConvertsTable extends XotBaseResourceTable
 {
     /**
      * @return array<string, Column>
-     * @return array<string, Column>
      */
     public function getTableColumns(): array
     {
         return [
-            'id' => TextColumn::make('id')->searchable()->sortable(),
+            'id' => IDColumn::make('id')->searchable()->sortable(),
             'created_at' => TextColumn::make('created_at')->dateTime(),
             'updated_at' => TextColumn::make('updated_at')->dateTime(),
         ];
@@ -41,18 +44,15 @@ class MediaConvertsTable extends XotBaseResourceTable
     public function getTableFilters(): array
     {
         return [
-            'format' => SelectFilter::make('format')->options(MediaConvert::distinct()->pluck(
-                'format',
-                'format',
-            )->toArray(...)),
-            'codec_video' => SelectFilter::make('codec_video')->options(MediaConvert::distinct()->pluck(
-                'codec_video',
-                'codec_video',
-            )->toArray(...)),
-            'codec_audio' => SelectFilter::make('codec_audio')->options(MediaConvert::distinct()->pluck(
-                'codec_audio',
-                'codec_audio',
-            )->toArray(...)),
+            'format' => SelectFilter::make('format')->options(
+                static fn (): array => MediaConvert::query()->distinct()->pluck('format', 'format')->toArray(),
+            ),
+            'codec_video' => SelectFilter::make('codec_video')->options(
+                static fn (): array => MediaConvert::query()->distinct()->pluck('codec_video', 'codec_video')->toArray(),
+            ),
+            'codec_audio' => SelectFilter::make('codec_audio')->options(
+                static fn (): array => MediaConvert::query()->distinct()->pluck('codec_audio', 'codec_audio')->toArray(),
+            ),
         ];
     }
 

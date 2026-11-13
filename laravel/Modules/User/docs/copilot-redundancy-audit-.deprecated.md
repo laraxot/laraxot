@@ -8,17 +8,19 @@ qmd: "copilot-redundancy-audit-2026-05-25.deprecated copilot redundancy audit 20
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+status: superseded
+superseded_by: copilot-redundancy-audit.md
 ---
 
-Copilot Redundancy Audit — 2026-05-25
+Copilot Redundancy Audit: 2026-05-25
 
 Sintesi
 - Scansione preliminare mostra ridondanze documentali e duplicatione di traduzioni e config (es.: README.md, index.md, validation.php).

@@ -8,17 +8,21 @@ qmd: "case-sensitivity case sensitivity rules - user module"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Case Sensitivity Rules - User Module
 
 ## Problema / Problem
@@ -120,7 +124,7 @@ Il modulo User aveva la struttura più complessa di duplicati:
 - 2023_01_01_000000_create_oauth_auth_codes_table.php
 - 2023_01_01_000002_create_team_invitations_table.php
 - 2023_01_01_000003_create_oauth_access_tokens_table.php
-- 2023_01_01_000003_create_socialite_user_table.php
+- 2026_11_12_120002_create_socialite_users_table.php
 - 2023_01_01_000003_create_tenant_user_table.php
 - 2023_01_01_000004_create_device_user_table.php
 - 2023_01_01_000004_create_oauth_clients_table.php

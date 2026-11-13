@@ -1,3 +1,15 @@
+---
+title: "phpstan1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan1"
+issues: []
+discussions: []
+status: draft
+---
+
 # Phpstan1
 
 esegui ./vendor/bin/phpstan analyse Modules --memory-limit=-1 , devi sistemare tutti gli errori, gli errori non vanno mai ignorati, non devi toccare phpstan.neon , per fare un buon lavoro devi anche

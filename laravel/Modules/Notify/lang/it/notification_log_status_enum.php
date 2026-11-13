@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 /*
  * Chiavi lette da Modules\Xot\Traits\EnumTrait tramite TransTrait::transClass():
  * la chiave e' `<modulo>::<snake(NomeClasse)>.values.<valore>.<attributo>`.
@@ -17,6 +16,12 @@ return [
             'color' => 'gray',
             'icon' => 'heroicon-o-clock',
             'description' => 'Presa in carico, non ancora inviata',
+        ],
+        'processing' => [
+            'label' => 'In elaborazione',
+            'color' => 'warning',
+            'icon' => 'heroicon-o-arrow-path',
+            'description' => 'Invio in corso presso il provider',
         ],
         'sent' => [
             'label' => 'Inviata',

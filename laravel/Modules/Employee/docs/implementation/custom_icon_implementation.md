@@ -1,3 +1,9 @@
+---
+title: "Employee - CUSTOM_ICON_IMPLEMENTATION"
+module: Employee
+bmad: true
+status: active
+---
 # Custom Icon Implementation - Employee Module
 
 ## Overview

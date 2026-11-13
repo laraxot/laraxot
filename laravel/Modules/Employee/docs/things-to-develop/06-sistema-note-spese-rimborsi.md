@@ -1,3 +1,9 @@
+---
+title: "Employee - 06-SISTEMA-NOTE-SPESE-RIMBORSI"
+module: Employee
+bmad: true
+status: active
+---
 # 06 - Sistema Note Spese e Rimborsi
 
 ## Panoramica

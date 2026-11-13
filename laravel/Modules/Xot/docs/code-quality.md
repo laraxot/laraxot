@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+---
+title: "code quality"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "code quality"
+issues: []
+discussions: []
+status: draft
+---
+
+>>>>>>> laraxot/dev
 # Laraxot Code Quality Standards
 
 ## Overview
@@ -128,8 +143,22 @@ return [
 ```php
 // ✅ CORRECT
 <<<<<<< HEAD
+<<<<<<< HEAD
 public function getFormSchema(): array
 =======
+public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+public function getFormSchema(): array
+---
+title: "code quality"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "code quality"
+issues: []
+discussions: []
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
 {
@@ -141,8 +170,14 @@ public function getFormSchema(): array
 
 // ❌ WRONG
 <<<<<<< HEAD
+<<<<<<< HEAD
 public function getFormSchema(): array
 =======
+public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+public function getFormSchema(): array
+---
 public function getFormSchema(): array
 >>>>>>> laraxot/dev
 {

@@ -4,10 +4,33 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Tests\Feature\Filament\Widgets;
 
+<<<<<<< HEAD
 use Filament\Schemas\Components\Section;
 use Illuminate\Support\Facades\File;
 use Modules\Xot\Filament\Widgets\EnvWidget;
 use Tests\TestCase;
+=======
+use Filament\Facades\Filament;
+use Filament\Schemas\Components\Section;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
+use Mockery;
+use Mockery\MockInterface;
+use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Filament\Widgets\EnvWidget;
+<<<<<<< .merge_file_SIoBuu
+use Modules\Xot\Tests\TestCase;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+=======
+<<<<<<< .merge_file_Hj4T2D
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Tests\TestCase;
+=======
+use Modules\Xot\Tests\TestCase;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+>>>>>>> .merge_file_PiAXvq
+>>>>>>> .merge_file_nwu73B
+>>>>>>> laraxot/dev
 
 uses(TestCase::class);
 
@@ -26,9 +49,29 @@ uses(TestCase::class);
  * prima e ripristinarlo sempre (anche se un'asserzione fallisce), altrimenti
  * questi test lascerebbero il .env reale della macchina alterato.
  */
+<<<<<<< HEAD
 beforeEach(function (): void {
     $this->envPath = base_path('.env');
     $this->originalEnvContent = File::get($this->envPath);
+=======
+/**
+ * submit() è riservato al super-admin: i test che scrivono partono da un super-admin,
+ * quelli sul rifiuto lo sostituiscono con envWidgetLoginAs(false).
+ */
+function envWidgetLoginAs(bool $isSuperAdmin): void
+{
+    /** @var UserContract&MockInterface $user */
+    $user = Mockery::mock(UserContract::class);
+    $user->shouldReceive('hasRole')->with('super-admin')->andReturn($isSuperAdmin);
+
+    Filament::auth()->setUser($user);
+}
+
+beforeEach(function (): void {
+    $this->envPath = base_path('.env');
+    $this->originalEnvContent = File::get($this->envPath);
+    envWidgetLoginAs(true);
+>>>>>>> laraxot/dev
 });
 
 afterEach(function (): void {
@@ -143,6 +186,37 @@ it('does not drop a field that is selected but missing from the GROUPS map', fun
     expect($schema[0])->toBeInstanceOf(Section::class);
 });
 
+<<<<<<< HEAD
+=======
+it('refuses to write .env for a user who is not super-admin', function (): void {
+    envWidgetLoginAs(false);
+
+    $widget = new EnvWidget;
+    $widget->mount();
+    $widget->data['telegram_bot_token'] = 'pest-test-'.uniqid('', true);
+
+    expect(fn () => $widget->submit())->toThrow(HttpException::class);
+    expect(File::get($this->envPath))->toBe($this->originalEnvContent);
+});
+
+it('does not write a key that EnvData does not declare, even if the client adds it to the state', function (): void {
+    $widget = new EnvWidget;
+    $widget->mount();
+    $widget->data['app_debug'] = 'true';
+    $widget->data['telegram_bot_token'] = 'pest-test-'.uniqid('', true);
+    $widget->submit();
+
+    $debugLines = collect(explode("\n", File::get($this->envPath)))
+        ->filter(fn (string $line): bool => str_starts_with($line, 'APP_DEBUG='))
+        ->values();
+    $debugLinesBefore = collect(explode("\n", $this->originalEnvContent))
+        ->filter(fn (string $line): bool => str_starts_with($line, 'APP_DEBUG='))
+        ->values();
+
+    expect($debugLines->all())->toBe($debugLinesBefore->all());
+});
+
+>>>>>>> laraxot/dev
 it('resolves field labels and section headings from the translation file, not from hardcoded strings', function (): void {
     app()->setLocale('it');
 
@@ -150,3 +224,27 @@ it('resolves field labels and section headings from the translation file, not fr
     expect(trans('xot::env.fields.netfun_token.label'))->toBe('Netfun token');
     expect(trans('xot::env.sections.Mail.heading'))->toBe('Mail');
 });
+<<<<<<< HEAD
+=======
+
+/*
+ * module_quaeris_fila5#47. Scrivere nel .env non basta: con la configurazione
+ * in cache (`php artisan config:cache`, la norma in produzione) Laravel legge
+ * i valori da bootstrap/cache/config.php e il .env nuovo viene ignorato.
+ * Senza la pulizia, l'utente cambiava MAIL_HOST dal pannello, non succedeva
+ * niente, e concludeva che la pagina non funziona — proprio il caso per cui
+ * questa pagina esiste, dato che non c'e' accesso SSH al server.
+ */
+it('clears the config cache after writing, otherwise a cached config keeps the old value', function (): void {
+    // La verifica passa dallo spy e non dalla facade: Artisan::shouldHaveReceived()
+    // funziona a runtime (la facade la inoltra allo spy), ma per PHPStan non esiste.
+    $artisan = Artisan::spy();
+
+    $widget = new EnvWidget;
+    $widget->mount();
+    $widget->data['mail_host'] = 'pest-test-'.uniqid('', true);
+    $widget->submit();
+
+    $artisan->shouldHaveReceived('call')->with('config:clear')->once();
+});
+>>>>>>> laraxot/dev

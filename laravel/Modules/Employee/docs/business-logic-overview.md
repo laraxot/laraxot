@@ -1,3 +1,9 @@
+---
+title: "Employee - BUSINESS-LOGIC-OVERVIEW"
+module: Employee
+bmad: true
+status: active
+---
 # Business Logic Overview - Employee Module
 
 ## Panoramica

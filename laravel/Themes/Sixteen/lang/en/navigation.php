@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'main' => 'Main navigation',
-    'site_title' => 'My Municipality',
+    'site_title' => 'FixCity',
     'home' => 'Home',
     'about' => 'About',
     'contact' => 'Contact',
@@ -24,6 +24,11 @@ return [
         'all_news' => 'All news',
         'events' => 'Living in the City',
         'all_events' => 'All events',
+        'featured_events' => 'Featured events',
+        'empty_events' => 'There are no published events yet.',
+        'related_events' => 'Related events',
+        'featured_locations' => 'Featured places',
+        'all_locations' => 'All places',
         'featured_topics' => 'Featured topics',
         'other_topics' => 'Other topics',
         'show_all' => 'Show all',

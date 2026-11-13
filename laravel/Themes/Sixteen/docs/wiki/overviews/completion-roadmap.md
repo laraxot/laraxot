@@ -12,7 +12,8 @@ discussions:
 related:
   - ../concepts/theme-component-test-contract.md
   - ../concepts/phpstan-compliance.md
-  - ../../../Modules/Fixcity/docs/wiki/overviews/completion-roadmap.md
+  - ../../../../../Modules/Fixcity/docs/wiki/overviews/completion-roadmap.md
+status: draft
 ---
 
 # Sixteen — roadmap completamento tema FO
@@ -38,6 +39,7 @@ Sixteen è il tema **owner** del front office Fixcity: Folio, Design Comuni, wiz
 
 ### P0 — Shell pagina Folio
 
+- [x] Skip-link FO su `layouts/app.blade.php` via `pub_theme::ui.skip_to_*` + `main tabindex="-1"` (WCAG 2.4.1)
 - [ ] Audit `bashscripts/tools/audit-folio-page-shell.sh Sixteen`
 - [ ] `<x-page :data="$data">` opaque bag su tutte le route ticket/segnalazioni
 - [ ] No `route()` nel FO — solo URL localizzati
@@ -60,6 +62,6 @@ Sixteen è il tema **owner** del front office Fixcity: Folio, Design Comuni, wiz
 
 ## Collegamenti modulo Fixcity
 
-Roadmap dominio: [Fixcity completion-roadmap](../../../Modules/Fixcity/docs/wiki/overviews/completion-roadmap.md)
+Roadmap dominio: [Fixcity completion-roadmap](../../../../../Modules/Fixcity/docs/wiki/overviews/completion-roadmap.md)
 
 Hub piattaforma: [platform-completion-roadmap](../../../Modules/Xot/docs/wiki/overviews/platform-completion-roadmap.md)

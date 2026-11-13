@@ -1,4 +1,16 @@
-# Story — `ratingXlsFields` → `RatingData::getXlsFields` (mossa reale, no facade)
+---
+title: "rating xls fields move to ratingdata.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating xls fields move to ratingdata.story"
+issues: []
+discussions: []
+status: draft
+---
+
+# Story: `ratingXlsFields` → `RatingData::getXlsFields` (mossa reale, no facade)
 
 **Status**: done
 **Modulo**: Rating (+ commento in IR Resource)
@@ -8,11 +20,11 @@
 ## Perché la facade era "merda" (ordine utente)
 
 `RatingData::getXlsFields` era 3 righe: `Assert` + forward identico a
-`HasRatingsTrait::ratingXlsFields` — **indirezione senza astrazione**:
+`HasRatingsTrait::ratingXlsFields`: **indirezione senza astrazione**:
 
 - due firme identiche da tenere in sync (il null-trap era nato proprio lì);
 - docblock duplicato che mentiva ("SSoT nel trait" + "API pubblica qui" insieme);
-- zero adattamento: non aggiungeva tipizzazione, cache, naming — solo un hop.
+- zero adattamento: non aggiungeva tipizzazione, cache, naming: solo un hop.
 
 Peggio di entrambe le alternative (tutto nel trait OPPURE tutto in RatingData).
 
@@ -20,7 +32,7 @@ Peggio di entrambe le alternative (tutto nel trait OPPURE tutto in RatingData).
 
 `RatingData` = casa del **catalogo export rating** (query schemaless + filtro
 criteri + eager children). Il trait tiene `criteriaToXlsFields` + i path helper
-(`ratings_by_id` = layout host — SSoT corretto lì). Confine:
+(`ratings_by_id` = layout host: SSoT corretto lì). Confine:
 
 - **RatingData**: QUALI rating (query `withExtraAttributes`, `parent_id null`)
 - **Trait**: COME si mappano a path/label dell'host
@@ -29,11 +41,11 @@ criteri + eager children). Il trait tiene `criteriaToXlsFields` + i path helper
 
 - `RatingData::getXlsFields(array $where, string $ratingClass)` = **corpo reale**
   (query `withExtraAttributes` + reject `parent_id` + `loadMissing('children')`)
-- `HasRatingsTrait::ratingXlsFields` rimosso — nessun altro caller
+- `HasRatingsTrait::ratingXlsFields` rimosso: nessun altro caller
 - `HasRatingsTrait::criteriaToXlsFields` **resta nel trait** (decisione canon
   dell'agente parallelo, `architecture/rating-xls-fields-home-in-ratingdata.md`):
   il mapper vive coi suoi vocab helper `formFieldLabel`/`ratingXlsValuePath`/
-  `ratingValuePath` — delega *significativa*, non facade
+  `ratingValuePath`: delega *significativa*, non facade
 - Confine finale: **RatingData** = QUALI rating (query+filtro);
   **trait** = COME si mappano a path/label host
 
@@ -41,7 +53,7 @@ criteri + eager children). Il trait tiene `criteriaToXlsFields` + i path helper
 
 Edit concorrenti 14:04–14:08: l'altro agente ha copiato `criteriaToXlsFields`
 in RatingData E lasciato l'originale nel trait (doppia SSoT), poi ha deciso
-trait-side e fatto puntare `getXlsFields` a `HasRatingsTrait::` — mentre io
+trait-side e fatto puntare `getXlsFields` a `HasRatingsTrait::`: mentre io
 rimuovevo il blocco dal trait → call a metodo inesistente per ~1 min.
 Risolto ripristinando la versione trait + test (`HasRatingsTrait::`), che è
 anche il confine canon documentato.

@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN_LEVEL10_COMPLIANCE_PLAN"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Level 10 Compliance Plan - Employee Module
 
 ## Current Status

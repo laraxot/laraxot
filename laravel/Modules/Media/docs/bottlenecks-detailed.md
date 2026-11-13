@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Analisi Dettagliata dei Colli di Bottiglia - Modulo Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "bottlenecks detailed"
 related:
   - "./webm.md"
+status: draft
 ---
 # Analisi Dettagliata dei Colli di Bottiglia - Modulo Media
 
@@ -370,10 +373,8 @@ final class Media extends Model
 
 ```
 
-<<<<<<< HEAD
 ---
 
 ```
-=======
 ---
->>>>>>> laraxot/dev
+---

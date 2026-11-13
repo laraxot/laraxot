@@ -1,3 +1,9 @@
+---
+title: "Employee - PENDING-REQUESTS-WIDGET-DOCUMENTATION"
+module: Employee
+bmad: true
+status: active
+---
 # PendingRequestsWidget (LE MIE RICHIESTE IN ATTESA) - Complete Documentation
 
 ## 📋 Widget Overview

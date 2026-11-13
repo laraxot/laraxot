@@ -1,3 +1,9 @@
+---
+title: "Employee - OVERVIEW"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - Business Logic Overview
 
 ## 📋 Executive Summary

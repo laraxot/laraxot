@@ -6,10 +6,7 @@ namespace Modules\AI\Actions;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-<<<<<<< HEAD
 use Illuminate\Support\Sleep;
-=======
->>>>>>> a99fbfa (.)
 use Modules\AI\Datas\AIConfigData;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;

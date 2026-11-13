@@ -1,3 +1,15 @@
+---
+title: "theme completion plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "theme completion plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Theme Completion Plan
 
 ## Current Status Analysis
@@ -77,5 +89,4 @@ All documentation will follow these rules:
 I will update this document with progress reports as components are implemented.
 
 ---
-
 *Last updated: 2025-09-08*

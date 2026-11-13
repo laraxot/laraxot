@@ -9,7 +9,11 @@ declare(strict_types=1);
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-search"></i></span>
                 </div>
+<<<<<<< HEAD
                 <input type="search" class="form-control" placeholder="{{ __('Search') }}" wire:model="search">
+=======
+                <input type="search" class="form-control" placeholder="{{ __('xot::xot_base_table_component.fields.search.placeholder') }}" wire:model="search">
+>>>>>>> laraxot/dev
             </div>
         </div>
         @if ($header_view)
@@ -22,7 +26,11 @@ declare(strict_types=1);
     <div class="card mb-3">
         @if ($models->isEmpty())
             <div class="card-body">
+<<<<<<< HEAD
                 {{ __('No results to display.') }}
+=======
+                {{ __('xot::xot_base_table_component.messages.no_results.message') }}
+>>>>>>> laraxot/dev
             </div>
         @else
             <div class="card-body p-0">

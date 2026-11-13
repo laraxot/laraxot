@@ -100,6 +100,7 @@ return [
     // TimeClockWidget - Nuovo widget layout 3 colonne
     'time_clock' => [
         'session_active' => 'Sessione attiva',
+        'session_inactive' => 'Nessuna sessione attiva',
         'session_completed' => 'Giornata completata',
         'no_entries' => 'Nessuna timbratura',
         'clock_in' => 'Timbra entrata',

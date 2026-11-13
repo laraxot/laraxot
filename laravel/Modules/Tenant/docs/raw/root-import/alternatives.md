@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Alternatives"
 module: "Tenant"
 type: concept

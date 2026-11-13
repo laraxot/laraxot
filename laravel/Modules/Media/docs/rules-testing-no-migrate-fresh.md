@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "CRITICAL ARCHITECTURE RULE: NO MIGRATE:FRESH"
 module: "Media"
 type: rule
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "rules testing no migrate fresh"
 related:
   - "./webm.md"
+status: draft
 ---
 # CRITICAL ARCHITECTURE RULE: NO MIGRATE:FRESH
 

@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_FvjgZH
 title: "Product brief — User module: percorso verso la perfezione assoluta"
+=======
+title: "Product brief: User module: percorso verso la perfezione assoluta"
+>>>>>>> .merge_file_zwLlcK
 type: product-brief
 module: User
 status: approved
@@ -11,9 +15,18 @@ related:
   - ./epics.md
   - ./decision-log.md
   - ../purpose.md
+<<<<<<< .merge_file_FvjgZH
 ---
 
 # Product brief: User module — percorso verso la perfezione assoluta
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "product brief: user module   percorso verso la perfezione assoluta user"
+---
+
+# Product brief: User module: percorso verso la perfezione assoluta
+>>>>>>> .merge_file_zwLlcK
 
 ## 1. Executive summary
 
@@ -35,7 +48,11 @@ assoluta":
    alcun test dedicato; la suite Pest e' cosi' lenta da non essere mai stata
    eseguita per intero.
 3. **Permessi**: circa 30 classi Policy verificano permessi che non esistono
+<<<<<<< .merge_file_FvjgZH
    nel seeder — un bug di sicurezza silenzioso (nega sempre, nessun errore).
+=======
+   nel seeder: un bug di sicurezza silenzioso (nega sempre, nessun errore).
+>>>>>>> .merge_file_zwLlcK
 
 ## 2. Problem statement
 
@@ -45,7 +62,11 @@ assoluta":
   (30%)**: non e' navigabile.
 - `docs/permissions.md`, che dovrebbe essere la matrice permessi del modulo
   User, contiene invece il dominio "Moderazione Medici" di un altro modulo
+<<<<<<< .merge_file_FvjgZH
   (Patient/Gdpr) — copiato e mai adattato.
+=======
+  (Patient/Gdpr): copiato e mai adattato.
+>>>>>>> .merge_file_zwLlcK
 - 270 file nominati "phpstan" in `docs/`, molti prodotti da uno script di
   generazione filename bacato che ha rimosso le sottostringhe `-fix` e `-d`
   dai nomi (es. `phpstan-fixes.md` -> `phpstanes.md`,
@@ -73,7 +94,11 @@ assoluta":
   stata eseguita: bootstrap anomalmente lento (3-9 secondi per un'asserzione
   banale come "puo' essere istanziato"), stima seriale 85-90 minuti.
   L'issue GitHub #31 ("coverage circa 0%, target 100%") resta pienamente
+<<<<<<< .merge_file_FvjgZH
   attuale — con la causa pratica ora documentata.
+=======
+  attuale: con la causa pratica ora documentata.
+>>>>>>> .merge_file_zwLlcK
 - `tests/Playwright/` ha un solo file (50 righe, un solo flusso: la
   registrazione): non e' una suite E2E, e' uno scaffold.
 
@@ -86,7 +111,11 @@ assoluta":
 - Esistono **~30 classi Policy** (Team, User, Profile, Role, Device,
   Feature, SocialProvider, Tenant, TeamInvitation, TeamPermission,
   Membership, Extra, Notification, PasswordReset...) che verificano
+<<<<<<< .merge_file_FvjgZH
   permessi in convenzione `{resource}.{ability}` — **nessuno di questi
+=======
+  permessi in convenzione `{resource}.{ability}`: **nessuno di questi
+>>>>>>> .merge_file_zwLlcK
   permessi esiste nel seeder**. Ogni `can()`/`authorize()` su queste
   risorse nega sempre, in silenzio: sembra una scelta di sicurezza, e' un
   bug.
@@ -110,7 +139,11 @@ assoluta":
   (`AuthenticationLogResource`, `RecentLoginsWidget`, `DeviceResource`):
   `purpose.md` sottostimava questo punto, dicendo che nessuno li legge.
 - Team (ability/ownership check) e Tenant (query scope via global scope)
+<<<<<<< .merge_file_FvjgZH
   **non si sovrappongono nel codice attuale** — solo non era mai stato
+=======
+  **non si sovrappongono nel codice attuale**: solo non era mai stato
+>>>>>>> .merge_file_zwLlcK
   scritto da nessuna parte.
 - I marker di conflitto Git committati (issue #47, 114 originari) sono
   **quasi tutti risolti**: ne restano 2, entrambi file non-`.php` non
@@ -126,7 +159,11 @@ assoluta":
 - Chi audita sicurezza/compliance (matrice permessi reale, audit log
   utilizzabile).
 
+<<<<<<< .merge_file_FvjgZH
 ## 5. Metriche di successo (per una futura fase di esecuzione — non in
+=======
+## 5. Metriche di successo (per una futura fase di esecuzione: non in
+>>>>>>> .merge_file_zwLlcK
    questa sessione, solo documentazione)
 
 - `docs/index.md`: 0 link rotti, sostituito da mappa curata a 6 voci.

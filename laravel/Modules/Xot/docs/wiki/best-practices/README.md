@@ -1,9 +1,20 @@
 ---
+<<<<<<< HEAD
+=======
+qmd: "README"
+issues: []
+discussions: []
+>>>>>>> laraxot/dev
 title: "Readme"
 type: reference
 tags: [wiki, no-frontmatter-fix]
 created: 2026-08-24
 updated: 2026-08-24
+<<<<<<< HEAD
+=======
+status: superseded
+superseded_by: ../../best-practices/README.md
+>>>>>>> laraxot/dev
 ---
 
 # Best Practices

@@ -5,6 +5,7 @@ declare(strict_types=1);
 return [
     'actions' => [
         'authenticate' => [
+<<<<<<< HEAD
             'label' => 'authenticate',
             'icon' => 'ui-authenticate',
             'tooltip' => 'authenticate',
@@ -46,10 +47,26 @@ return [
             'icon' => 'ui-showPassword',
             'label' => 'showPassword',
             'tooltip' => 'showPassword',
+=======
+            'icon' => 'ui-authenticate',
+        ],
+        'login' => [
+            'icon' => 'login',
+        ],
+        'request' => [
+            'icon' => 'request',
+        ],
+        'hidePassword' => [
+            'icon' => 'hidePassword',
+        ],
+        'showPassword' => [
+            'icon' => 'ui-showPassword',
+>>>>>>> laraxot/dev
         ],
     ],
     'fields' => [
         'email' => [
+<<<<<<< HEAD
             'label' => 'email',
             'description' => 'email',
             'helper_text' => '',
@@ -79,6 +96,23 @@ return [
         ],
         'city' => [
             'description' => 'city',
+=======
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'password' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'remember' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'cap' => [
+            'tooltip' => '',
+        ],
+        'city' => [
+>>>>>>> laraxot/dev
             'label' => '',
             'tooltip' => '',
             'helper_text' => '',
@@ -274,10 +308,13 @@ return [
             'description' => '',
         ],
         'itemIsDefault' => [
+<<<<<<< HEAD
             'description' => 'itemIsDefault',
             'helper_text' => 'itemIsDefault',
             'placeholder' => 'itemIsDefault',
             'label' => 'itemIsDefault',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
         ],
         'zeusData' => [
@@ -311,6 +348,7 @@ return [
             'description' => '',
         ],
         'user_id' => [
+<<<<<<< HEAD
             'label' => 'user_id',
             'placeholder' => 'user_id',
             'helper_text' => 'user_id',
@@ -470,6 +508,75 @@ return [
             'label' => 'Credenziali',
         ],
     ],
+=======
+            'tooltip' => '',
+        ],
+        'name' => [
+            'tooltip' => '',
+        ],
+        'slug' => [
+            'tooltip' => '',
+        ],
+        'category_id' => [
+            'tooltip' => '',
+        ],
+        'description' => [
+            'tooltip' => '',
+        ],
+        'details' => [
+            'tooltip' => '',
+        ],
+        'is_active' => [
+            'tooltip' => '',
+        ],
+        'ordering' => [
+            'tooltip' => '',
+        ],
+        'start_date' => [
+            'tooltip' => '',
+        ],
+        'end_date' => [
+            'tooltip' => '',
+        ],
+        'extensions' => [
+            'tooltip' => '',
+        ],
+        'sections' => [
+            'tooltip' => '',
+        ],
+        'fields' => [
+            'tooltip' => '',
+        ],
+        'type' => [
+            'tooltip' => '',
+        ],
+        'compact' => [
+            'tooltip' => '',
+        ],
+        'aside' => [
+            'tooltip' => '',
+        ],
+        'borderless' => [
+            'tooltip' => '',
+        ],
+        'icon' => [
+            'tooltip' => '',
+        ],
+        'columns' => [
+            'tooltip' => '',
+        ],
+        'itemKey' => [
+            'tooltip' => '',
+        ],
+        'values' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'itemValue' => [
+            'tooltip' => '',
+        ],
+    ],
+>>>>>>> laraxot/dev
     'label' => 'Set Default Tenant For Urls',
     'plural_label' => 'Set Default Tenant For Urls (Plurale)',
     'navigation' => [

@@ -10,13 +10,13 @@ discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./base-classes-hierarchy.md"
   - "./baseuser.md"
-  - "./readme.md"
+  - "./README.md"
   - "./team.md"
   - "./xotbaivot-migration.md"
   - "./xotbasepivot-migration.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # TeamPermission
 
 Il modello `TeamPermission` rappresenta i permessi specifici di un utente all'interno di un team.

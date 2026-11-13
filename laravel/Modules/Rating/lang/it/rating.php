@@ -4,113 +4,322 @@ declare(strict_types=1);
 
 return [
     'resource' => [
-        'name' => ['label' => 'Rating'],
+        'name' => [
+            'label' => 'Rating',
+        ],
     ],
     'navigation' => [
-        'name' => ['label' => 'Rating'],
-        'plural' => ['label' => 'Rating'],
-        'group' => [
-            'name' => ['label' => 'Admin'],
+        'name' => [
+            'label' => 'Rating',
         ],
+        'plural' => [
+            'label' => 'Rating',
+        ],
+        'group' => 'Opzioni di voto',
         'sort' => 33,
         'label' => 'Rating',
+        'icon' => 'heroicon-o-star',
     ],
     'fields' => [
-        'brand' => ['label' => 'Marca'],
-        'model' => ['label' => 'Modello'],
-        'description' => ['label' => 'Descrizione', 'placeholder' => 'description', 'helper_text' => '', 'description' => 'description'],
-        'serial_number' => ['label' => 'Numero di serie'],
-        'inventory_number' => ['label' => 'Codice inventario'],
-        'code' => ['label' => 'Identificativo'],
-        'manufacturing_year' => ['label' => 'Anno di fabbricazione'],
-        'purchase_year' => ['label' => 'Anno di acquisto'],
-        'is_enabled' => ['label' => 'È attivo?'],
-        'asset_type' => ['label' => 'Tipologia'],
-        'area' => ['label' => 'Area'],
-        'parent' => ['label' => 'Asset genitore'],
-        'name' => ['label' => 'Nome'],
-        'is_disabled' => ['label' => 'is_disabled'],
-        'is_readonly' => ['label' => 'is_readonly'],
-        '_tpl' => ['label' => '_tpl'],
-        'ratings' => ['label' => 'ratings', 'placeholder' => 'ratings', 'helper_text' => '', 'description' => 'ratings'],
-        'id' => ['label' => 'id', 'placeholder' => 'id', 'helper_text' => '', 'description' => 'id'],
-        'title' => ['label' => 'title', 'placeholder' => 'title', 'helper_text' => '', 'description' => 'title'],
-        'color' => ['label' => 'color', 'placeholder' => 'color', 'helper_text' => '', 'description' => 'color'],
-        'rating' => ['label' => 'rating', 'description' => 'rating', 'helper_text' => '', 'placeholder' => 'rating'],
-        'view' => ['label' => 'view', 'placeholder' => 'view', 'helper_text' => '', 'description' => 'view'],
-        'anno' => ['label' => 'anno'],
-        'type' => ['label' => 'type'],
-        'rule' => ['label' => 'rule'],
-        'disabled' => ['label' => 'disabled', 'placeholder' => 'disabled', 'helper_text' => '', 'description' => 'disabled'],
-        'slug' => ['label' => 'slug'],
-        'order_column' => ['label' => 'order_column'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'brand' => [
+            'label' => 'Marca',
+        ],
+        'model' => [
+            'label' => 'Modello',
+        ],
+        'description' => [
+            'label' => 'Descrizione',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'serial_number' => [
+            'label' => 'Numero di serie',
+        ],
+        'inventory_number' => [
+            'label' => 'Codice inventario',
+        ],
+        'code' => [
+            'label' => 'Identificativo',
+        ],
+        'manufacturing_year' => [
+            'label' => 'Anno di fabbricazione',
+        ],
+        'purchase_year' => [
+            'label' => 'Anno di acquisto',
+        ],
+        'is_enabled' => [
+            'label' => 'È attivo?',
+        ],
+        'asset_type' => [
+            'label' => 'Tipologia',
+        ],
+        'area' => [
+            'label' => 'Area',
+        ],
+        'parent' => [
+            'label' => 'Asset genitore',
+        ],
+        'name' => [
+            'label' => 'Nome',
+        ],
+        'is_disabled' => [
+            'label' => 'Disattivato',
+        ],
+        'is_readonly' => [
+            'label' => 'Sola lettura',
+        ],
+        '_tpl' => [
+            'label' => ' tpl',
+        ],
+        'ratings' => [
+            'label' => 'Opzioni',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'id' => [
+            'label' => 'ID',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'title' => [
+            'label' => 'Titolo',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'color' => [
+            'label' => 'Colore',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'rating' => [
+            'label' => 'Opzione',
+            'description' => '',
+            'helper_text' => '',
+            'placeholder' => '',
+        ],
+        'view' => [
+            'label' => 'Vista',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'anno' => [
+            'label' => 'Anno',
+        ],
+        'type' => [
+            'label' => 'Tipo',
+        ],
+        'rule' => [
+            'label' => 'Regola',
+        ],
+        'disabled' => [
+            'label' => 'Disattivato',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'slug' => [
+            'label' => 'Indirizzo (slug)',
+        ],
+        'order_column' => [
+            'label' => 'Ordine',
+        ],
+        'created_at' => [
+            'label' => 'Creato il',
+        ],
+        'updated_at' => [
+            'label' => 'Aggiornato il',
+        ],
         'pivot' => [
             'user' => [
-                'name' => ['label' => 'pivot.user.name'],
+                'name' => [
+                    'label' => 'Nome',
+                ],
             ],
         ],
-        'value' => ['label' => 'value'],
-        'is_winner' => ['label' => 'is_winner'],
-        'reward' => ['label' => 'reward'],
+        'value' => [
+            'label' => 'Valore',
+        ],
+        'is_winner' => [
+            'label' => 'Is winner',
+        ],
+        'reward' => [
+            'label' => 'Reward',
+        ],
     ],
     'actions' => [
         'enable' => [
-            'cta' => ['label' => 'Attiva'],
-            'label' => ['label' => 'Attiva'],
+            'cta' => [
+                'label' => 'Attiva',
+            ],
+            'label' => [
+                'label' => 'Attiva',
+            ],
         ],
         'disable' => [
-            'cta' => ['label' => 'Dismetti'],
-            'label' => ['label' => 'Dismetti'],
+            'cta' => [
+                'label' => 'Dismetti',
+            ],
+            'label' => [
+                'label' => 'Dismetti',
+            ],
         ],
         'import' => [
-            'row_number' => ['label' => 'Riga :row'],
-            'label' => ['label' => 'Importa'],
+            'row_number' => [
+                'label' => 'Riga :row',
+            ],
+            'label' => [
+                'label' => 'Importa',
+            ],
             'fields' => [
-                'import_file' => ['label' => 'Seleziona un file XLS o CSV da caricare'],
+                'import_file' => [
+                    'label' => 'Seleziona un file XLS o CSV da caricare',
+                ],
             ],
         ],
         'export' => [
-            'filename_prefix' => ['label' => 'Lista asset al'],
-            'label' => ['label' => 'Esporta'],
+            'filename_prefix' => [
+                'label' => 'Lista asset al',
+            ],
+            'label' => [
+                'label' => 'Esporta',
+            ],
             'columns' => [
-                'brand' => ['label' => 'Marca'],
-                'model' => ['label' => 'Modello'],
-                'description' => ['label' => 'Descrizione'],
-                'serial_number' => ['label' => 'Numero di serie'],
-                'inventory_number' => ['label' => 'Codice inventario'],
-                'code' => ['label' => 'Identificativo'],
-                'manufacturing_year' => ['label' => 'Anno di fabbricazione'],
-                'purchase_year' => ['label' => 'Anno di acquisto'],
-                'is_enabled' => ['label' => 'È attivo?'],
-                'asset_type' => ['label' => 'Tipologia'],
-                'parent_inventory_number' => ['label' => 'Codice inventario genitore'],
+                'brand' => [
+                    'label' => 'Marca',
+                ],
+                'model' => [
+                    'label' => 'Modello',
+                ],
+                'description' => [
+                    'label' => 'Descrizione',
+                ],
+                'serial_number' => [
+                    'label' => 'Numero di serie',
+                ],
+                'inventory_number' => [
+                    'label' => 'Codice inventario',
+                ],
+                'code' => [
+                    'label' => 'Identificativo',
+                ],
+                'manufacturing_year' => [
+                    'label' => 'Anno di fabbricazione',
+                ],
+                'purchase_year' => [
+                    'label' => 'Anno di acquisto',
+                ],
+                'is_enabled' => [
+                    'label' => 'È attivo?',
+                ],
+                'asset_type' => [
+                    'label' => 'Tipologia',
+                ],
+                'parent_inventory_number' => [
+                    'label' => 'Codice inventario genitore',
+                ],
             ],
         ],
-        'delete' => ['tooltip' => 'delete', 'icon' => 'delete', 'label' => 'delete'],
-        'edit' => ['tooltip' => 'edit', 'icon' => 'edit', 'label' => 'edit'],
-        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
-        'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-        'logout' => ['tooltip' => 'logout', 'icon' => 'logout', 'label' => 'logout'],
-        'cancel' => ['tooltip' => 'cancel', 'icon' => 'cancel', 'label' => 'cancel'],
-        'createAnother' => ['tooltip' => 'createAnother', 'icon' => 'createAnother', 'label' => 'createAnother'],
-        'profile' => ['tooltip' => 'profile', 'icon' => 'profile', 'label' => 'profile'],
-        'save' => ['label' => 'save', 'icon' => 'save', 'tooltip' => 'save'],
-        'applyFilters' => ['label' => 'applyFilters', 'icon' => 'applyFilters', 'tooltip' => 'applyFilters'],
-        'openFilters' => ['label' => 'openFilters', 'icon' => 'openFilters', 'tooltip' => 'openFilters'],
-        'resetFilters' => ['label' => 'resetFilters', 'icon' => 'resetFilters', 'tooltip' => 'resetFilters'],
-        'applyTableColumnManager' => ['label' => 'applyTableColumnManager', 'icon' => 'applyTableColumnManager', 'tooltip' => 'applyTableColumnManager'],
-        'openColumnManager' => ['label' => 'openColumnManager', 'icon' => 'openColumnManager', 'tooltip' => 'openColumnManager'],
-        'resetColumnManager' => ['label' => 'resetColumnManager', 'icon' => 'resetColumnManager', 'tooltip' => 'resetColumnManager'],
-        'reorderRecords' => ['label' => 'reorderRecords', 'icon' => 'reorderRecords', 'tooltip' => 'reorderRecords'],
+        'delete' => [
+            'tooltip' => '',
+            'icon' => 'delete',
+            'label' => 'Elimina',
+        ],
+        'edit' => [
+            'tooltip' => '',
+            'icon' => 'edit',
+            'label' => 'Modifica',
+        ],
+        'create' => [
+            'label' => 'Nuovo',
+            'icon' => 'create',
+            'tooltip' => '',
+        ],
+        'layout' => [
+            'label' => 'Vista',
+            'icon' => 'layout',
+            'tooltip' => '',
+        ],
+        'view' => [
+            'label' => 'Vista',
+            'icon' => 'view',
+            'tooltip' => '',
+        ],
+        'logout' => [
+            'tooltip' => '',
+            'icon' => 'logout',
+            'label' => 'Esci',
+        ],
+        'cancel' => [
+            'tooltip' => '',
+            'icon' => 'cancel',
+            'label' => 'Annulla',
+        ],
+        'createAnother' => [
+            'tooltip' => '',
+            'icon' => 'createAnother',
+            'label' => 'Salva e crea un altro',
+        ],
+        'profile' => [
+            'tooltip' => '',
+            'icon' => 'profile',
+            'label' => 'Profile',
+        ],
+        'save' => [
+            'label' => 'Salva',
+            'icon' => 'save',
+            'tooltip' => '',
+        ],
+        'applyFilters' => [
+            'label' => 'Applica filtri',
+            'icon' => 'applyFilters',
+            'tooltip' => '',
+        ],
+        'openFilters' => [
+            'label' => 'Filtri',
+            'icon' => 'openFilters',
+            'tooltip' => '',
+        ],
+        'resetFilters' => [
+            'label' => 'Azzera filtri',
+            'icon' => 'resetFilters',
+            'tooltip' => '',
+        ],
+        'applyTableColumnManager' => [
+            'label' => 'Applica colonne',
+            'icon' => 'applyTableColumnManager',
+            'tooltip' => '',
+        ],
+        'openColumnManager' => [
+            'label' => 'Scegli colonne',
+            'icon' => 'openColumnManager',
+            'tooltip' => '',
+        ],
+        'resetColumnManager' => [
+            'label' => 'Ripristina colonne',
+            'icon' => 'resetColumnManager',
+            'tooltip' => '',
+        ],
+        'reorderRecords' => [
+            'label' => 'Riordina',
+            'icon' => 'reorderRecords',
+            'tooltip' => '',
+        ],
     ],
     'widgets' => [
-        'child_assets' => ['label' => 'Asset figli'],
+        'child_assets' => [
+            'label' => 'Asset figli',
+        ],
     ],
     'exceptions' => [
-        'mandatory_data' => ['label' => '{1} Dato obbligatorio non presente|{2} 2 Dati obbligatori non presenti|{3} 3 Dati obbligatori non presenti|[4,*] Vari dati obbligatori non presenti'],
+        'mandatory_data' => [
+            'label' => '{1} Dato obbligatorio non presente|{2} 2 Dati obbligatori non presenti|{3} 3 Dati obbligatori non presenti|[4,*] Vari dati obbligatori non presenti',
+        ],
     ],
     'label' => 'rating',
 ];

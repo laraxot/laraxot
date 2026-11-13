@@ -1,0 +1,32 @@
+/*
+ * Motion Reveal CSS
+ * Scroll-triggered fade-up animations with prefers-reduced-motion support.
+ * Elements with [data-reveal="fade-up"] start hidden and fade/slide when
+ * the Alpine motionReveal() controller adds .motion-reveal-visible.
+ */
+
+.motion-reveal-hidden,
+[x-cloak] {
+    display: none !important;
+}
+
+[data-reveal="fade-up"] {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition-property: opacity, transform;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal="fade-up"] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+[data-reveal="fade-up"].motion-reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

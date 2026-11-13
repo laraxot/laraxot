@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Modules\User\Actions\Authentication\GetAuthenticationLogQueryForAuthenticatableAction;
 use Modules\User\Contracts\HasAuthentications;
+use Modules\User\Contracts\UserContract;
 use Modules\User\Models\AuthenticationLog;
 
 // use Rappasoft\LaravelAuthenticationLog\Traits\AuthenticationLoggable;
@@ -26,7 +27,10 @@ class OtherDeviceLogoutListener
 
     public function handle(OtherDeviceLogout $event): void
     {
-        if ($event->user instanceof Model && $event->user instanceof HasAuthentications) {
+        // Identità = UserContract; capability log = HasAuthentications (+ Model per Eloquent).
+        if ($event->user instanceof UserContract
+            && $event->user instanceof Model
+            && $event->user instanceof HasAuthentications) {
             $user = $event->user;
             $ip = $this->request->ip();
             $userAgent = $this->request->userAgent();
@@ -69,7 +73,9 @@ class OtherDeviceLogoutListener
         $newUserAgent = $this->request->userAgent();
 
         $user = $event->user;
-        if (! $user instanceof Model || ! $user instanceof HasAuthentications) {
+        if (! $user instanceof UserContract
+            || ! $user instanceof Model
+            || ! $user instanceof HasAuthentications) {
             return;
         }
 

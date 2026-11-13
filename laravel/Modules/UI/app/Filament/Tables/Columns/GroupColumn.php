@@ -37,7 +37,11 @@ class GroupColumn extends Column
     }
 
     /**
+<<<<<<< HEAD
+     * @param  array<int|string, mixed>  $form
+=======
      * @param array<int|string, mixed> $form
+>>>>>>> f5ffd8b4 (.)
      */
     public function schema(array $form): static
     {
@@ -52,4 +56,26 @@ class GroupColumn extends Column
 
         return $this;
     }
+<<<<<<< HEAD
+
+    public function table(?Table $table): static
+    {
+        parent::table($table);
+        $this->mountChildrenToTable($table);
+
+        return $this;
+    }
+
+    private function mountChildrenToTable(?Table $table): void
+    {
+        if ($table === null) {
+            return;
+        }
+
+        foreach ($this->schema as $child) {
+            $child->table($table);
+        }
+    }
+=======
+>>>>>>> f5ffd8b4 (.)
 }

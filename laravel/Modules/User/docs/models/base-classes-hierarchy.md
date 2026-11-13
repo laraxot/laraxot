@@ -9,14 +9,14 @@ issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./baseuser.md"
-  - "./readme.md"
+  - "./README.md"
   - "./team.md"
   - "./teampermission.md"
   - "./xotbaivot-migration.md"
   - "./xotbasepivot-migration.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Gerarchia delle Classi Base - Modulo User
 
 **Data:** 15 Ottobre 2025  
@@ -385,18 +385,11 @@ Quando crei un nuovo modello nel modulo User:
 - [Architettura Core](../core/architecture.md)
 - [XotBasePivot Migration Guide](./xotbasepivot-migration.md)
 - [Best Practices](../best-practices/models.md)
+- [Best Practices](../models.md)
 - [PHPStan Compliance](../development/phpstan-guide.md)
 
 ---
 
->>>>>>> 87273113 (.)
 **Autore:** AI Assistant + Team Laraxot  
 **Versione:** 2.0 - Correzione gerarchia modelli  
 **Status:** ✅ Production Ready
-
-
-
-
-
-
-

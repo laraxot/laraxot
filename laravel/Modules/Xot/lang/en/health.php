@@ -27,8 +27,15 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
+<<<<<<< HEAD
     'fields' => [
     ],
     'actions' => [
+=======
+    'page' => [
+        'last_check' => [
+            'label' => 'Last check',
+        ],
+>>>>>>> laraxot/dev
     ],
 ];

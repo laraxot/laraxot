@@ -1,3 +1,9 @@
+---
+title: "Employee - 06-CONTRACT-MANAGEMENT"
+module: Employee
+bmad: true
+status: active
+---
 # 06 - Gestione Contratti (Contract Management)
 
 ## 🎯 Obiettivo

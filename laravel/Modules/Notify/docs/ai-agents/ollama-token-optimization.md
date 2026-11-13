@@ -1,3 +1,15 @@
+---
+title: "ollama token optimization"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ollama token optimization"
+issues: []
+discussions: []
+status: draft
+---
+
 # Ollama Token Optimization Guide
 
 ## Parametri Chiave per Ridurre i Token

@@ -1,3 +1,15 @@
+---
+title: "login4 translations fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login4 translations fix"
+issues: []
+discussions: []
+status: draft
+---
+
 # Correzione Traduzioni Login4 - Tema Sixteen
 
 ## 🚨 Problema Identificato

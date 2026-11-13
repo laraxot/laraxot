@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Risks - Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "05 risks"
 related:
   - "./webm.md"
+status: draft
 ---
 # Risks - Media
 

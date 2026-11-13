@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Testing Rules Summary"
 module: "Tenant"
 type: rule
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "testing rules"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # Testing Rules Summary
 

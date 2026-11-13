@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "admin_template"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "admin_template xot"
+---
+>>>>>>> laraxot/dev
 # admin_template
 
 <!-- Contenuto migrato da _docs/admin_template.txt -->

@@ -1,5 +1,5 @@
 ---
-title: "Composer root minimale — modulo Rating"
+title: "Composer root minimale: modulo Rating"
 type: concept
 tags: [composer, rating, nwidart, merge-plugin]
 created: 2026-06-29
@@ -12,19 +12,20 @@ discussions:
 related:
   - ../../../Xot/docs/wiki/concepts/composer-root-skeleton-modular.md
   - ../../../../../../docs/wiki/concepts/composer-root-minimal-nwidart.md
-  - ../../composer.json
+  - ../../../composer.json
+status: draft
 ---
 
 # Rating e composer root minimale
 
 ## Regola
 
-Dipendenze del dominio **Rating** in `Modules/Rating/composer.json`. Il root `laravel/composer.json` resta skeleton; riferimento progetto legacy con debito noto — canonico per domini applicativi esterni in [composer-root-minimal-nwidart](../../../../../../docs/wiki/concepts/composer-root-minimal-nwidart.md).
+Dipendenze del dominio **Rating** in `Modules/Rating/composer.json`. Il root `laravel/composer.json` resta skeleton; riferimento progetto legacy con debito noto: canonico per domini applicativi esterni in [composer-root-minimal-nwidart](../../../../../../docs/wiki/concepts/composer-root-minimal-nwidart.md).
 
 
 
 
-## Merge root — solo moduli
+## Merge root: solo moduli
 
 `laravel/composer.json` → merge **solo** `Modules/*/composer.json`. **Vietato** `Themes/*/composer.json` (nwidart owner = modulo; tema = vestito Blade/assets).
 

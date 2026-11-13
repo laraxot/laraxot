@@ -68,6 +68,11 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
      * Get table columns.
      *
      * @return array<string, Tables\Columns\Column>
+<<<<<<< HEAD
+=======
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+>>>>>>> laraxot/dev
      */
     #[\Override]
     public function getTableColumns(): array

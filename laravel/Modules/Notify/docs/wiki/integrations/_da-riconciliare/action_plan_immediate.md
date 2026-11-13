@@ -1,10 +1,15 @@
 ---
+qmd: "action plan immediate"
+issues: []
+discussions: []
 title: "PIANO D'AZIONE IMMEDIATO - Notify Platform"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: action-plan-immediate.md
 ---
 
 # 🎯 PIANO D'AZIONE IMMEDIATO - Notify Platform

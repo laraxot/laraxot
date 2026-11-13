@@ -1,3 +1,9 @@
+---
+title: "Employee - LE_MIE_RIMANENZE_DI_SETTEMBRE_WIDGET"
+module: Employee
+bmad: true
+status: active
+---
 # LE MIE RIMANENZE DI SETTEMBRE Widget - Documentazione
 
 ## 📊 Panoramica

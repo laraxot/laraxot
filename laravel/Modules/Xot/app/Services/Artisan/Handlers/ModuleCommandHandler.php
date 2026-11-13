@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Services\Artisan\Handlers;
 
+<<<<<<< HEAD
 use Modules\Xot\Services\Artisan\Contracts\CommandHandlerInterface;
 use Modules\Xot\Services\ArtisanService;
 use Webmozart\Assert\Assert;
@@ -61,3 +62,12 @@ class ModuleCommandHandler implements CommandHandlerInterface
         return ArtisanService::exe('module:enable '.$moduleName);
     }
 }
+=======
+use Modules\Xot\Actions\Artisan\Handlers\ModuleCommandHandler as ActionModuleCommandHandler;
+
+/**
+ * @deprecated Alias storico (namespace Services): `ArtisanService` e `CommandHandlerInterface` non esistono piu',
+ *             il comportamento vive in {@see ActionModuleCommandHandler} e comunque nessuno lo chiama.
+ */
+class ModuleCommandHandler extends ActionModuleCommandHandler {}
+>>>>>>> laraxot/dev

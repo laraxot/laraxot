@@ -358,6 +358,9 @@ return [
             'helper_text' => '',
             'description' => '',
         ],
+        'value' => [
+            'helper_text' => '',
+        ],
     ],
     'actions' => [
         'create' => [
@@ -541,4 +544,8 @@ return [
     'search_placeholder' => 'Cerca per nome, tipo o stato...',
     'label' => 'Job',
     'plural_label' => 'Job (Plurale)',
+    'stream_widget' => [
+        'start_stop' => 'Avvia/Ferma',
+        'time' => 'Ora',
+    ],
 ];

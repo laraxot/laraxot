@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Sushi To Csv"
 module: "Tenant"
 type: concept
@@ -8,5 +10,7 @@ updated: 2026-07-14
 qmd: "sushi to csv"
 related:
   - "./phpstan-corrections-january.md"
+  - "../../phpstan-corrections-january.md"
+status: draft
 ---
 

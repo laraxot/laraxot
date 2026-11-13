@@ -1,3 +1,15 @@
+---
+title: "header visual parity audit"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header visual parity audit"
+issues: []
+discussions: []
+status: draft
+---
+
 # Header Visual Parity Audit — 2026-05-04
 
 **Tool**: Puppeteer screenshot (1280×300px crop)  

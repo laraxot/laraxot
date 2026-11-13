@@ -16,10 +16,12 @@ related:
   - ../../../notifications/readme.md
   - ../../../integrations/readme.md
   - ../../../templates/readme.md
+status: draft
 ---
 # Gemini AI Guidelines (../../../../laravel/GEMINI.md) Index
 
 **Source**: [`laravel/../../../../laravel/GEMINI.md`](../../../../../../laravel/../../../../laravel/GEMINI.md) (581 lines)  
+**Source**: [`laravel/../../../../laravel/GEMINI.md`](../../../../../../GEMINI.md) (581 lines)  
 **Split Into**: 13 focused files  
 **Last Updated**: 2026-04-11  
 
@@ -73,21 +75,25 @@ related:
 ## Cross-References
 
 ### Related Documentation
-- ← [BMad Agents Index](../../agents/index.md) — 10 agent definitions
-- ← [BMad Tasks Index](../tasks/index.md) — 22 reusable tasks
-- ← [CLAUDE Index](../claude/index.md) — Laravel Boost guidelines
-- ← [Main AI Docs Index](../index.md) — Master index
+- ← [BMad Agents Index](../../agents/index.md): 10 agent definitions
+- ← [BMad Agents Index](../agents/index.md): 10 agent definitions
+- ← [BMad Tasks Index](../tasks/index.md): 22 reusable tasks
+- ← [CLAUDE Index](../claude/index.md): Laravel Boost guidelines
+- ← [Main AI Docs Index](../index.md): Master index
 
 ### Bidirectional Links
 - ← Back to [Main AI Docs Index](../index.md)
 - ← Back to [../../../../laravel/GEMINI.md](../../../../../../laravel/../../../../laravel/GEMINI.md) (original source)
 - ← Back to [Project Docs](../../../docs/README.md)
+- ← Back to [../../../../laravel/GEMINI.md](../../../../../../GEMINI.md) (original source)
+- ← Back to [Project Docs](../../../README.md)
 
 ---
 
 ## Usage
 
 These guidelines are loaded by Gemini AI for Laravel development context. For manual reference, see the original [`laravel/../../../../laravel/GEMINI.md`](../../../../../../laravel/../../../../laravel/GEMINI.md).
+These guidelines are loaded by Gemini AI for Laravel development context. For manual reference, see the original [`laravel/../../../../laravel/GEMINI.md`](../../../../../../GEMINI.md).
 
 ---
 

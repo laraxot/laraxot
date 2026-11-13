@@ -1,10 +1,13 @@
 ---
+issues: []
+discussions: []
 title: "Rating Module LLM Wiki Agent Instructions"
 type: guide
 tags: [agents, rating]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "AGENTS"
+status: draft
 ---
 
 # Rating Module LLM Wiki Agent Instructions

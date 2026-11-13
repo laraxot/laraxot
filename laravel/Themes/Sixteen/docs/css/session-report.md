@@ -1,3 +1,15 @@
+---
+title: "session report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "session report"
+issues: []
+discussions: []
+status: draft
+---
+
 # Sessione CSS/JS Segnalazione - Report Completo
 
 **Data**: 2026-04-09  
@@ -60,7 +72,7 @@ Creato `bashscripts/deploy-css.sh` che:
 | File | Scopo |
 |------|-------|
 | `bashscripts/deploy-css.sh` | Build + deploy CSS con manifest corretto |
-| `docs/css/session-report-2026-04-09.md` | Questo report |
+| `docs/css/session-report.md` | Questo report |
 
 ## 📸 Screenshot
 

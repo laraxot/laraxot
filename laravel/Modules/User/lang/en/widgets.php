@@ -171,4 +171,12 @@ return [
             'confirm' => 'Are you sure you want to sign out?',
         ],
     ],
+    'user_widget' => [
+        'start_date' => [
+            'label' => 'Start date:',
+        ],
+        'end_date' => [
+            'label' => 'End date:',
+        ],
+    ],
 ];

@@ -16,9 +16,10 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./profile.md"
+status: superseded
+superseded_by: ../-integration/phpstan.md
 ---
 
->>>>>>> 87273113 (.)
 # phpstan
 
 <!-- Contenuto migrato da _docs/phpstan.txt -->

@@ -28,14 +28,14 @@ test('absence request has expected fillable attributes', function (): void {
 });
 
 test('absence request status constants are correct', function (): void {
-    Assert::assertSame('pending', AbsenceRequest::STATUS_PENDING);
-    Assert::assertSame('approved', AbsenceRequest::STATUS_APPROVED);
-    Assert::assertSame('rejected', AbsenceRequest::STATUS_REJECTED);
+    Assert::assertSame('pending', \Modules\Employee\Enums\AbsenceRequestStatusEnum::PENDING->value);
+    Assert::assertSame('approved', \Modules\Employee\Enums\AbsenceRequestStatusEnum::APPROVED->value);
+    Assert::assertSame('rejected', \Modules\Employee\Enums\AbsenceRequestStatusEnum::REJECTED->value);
 });
 
 test('absence request type constants are correct', function (): void {
-    Assert::assertSame('vacation', AbsenceRequest::TYPE_VACATION);
-    Assert::assertSame('leave', AbsenceRequest::TYPE_LEAVE);
-    Assert::assertSame('sick', AbsenceRequest::TYPE_SICK);
-    Assert::assertSame('injury', AbsenceRequest::TYPE_INJURY);
+    Assert::assertSame('vacation', \Modules\Employee\Enums\AbsenceRequestTypeEnum::VACATION->value);
+    Assert::assertSame('leave', \Modules\Employee\Enums\AbsenceRequestTypeEnum::LEAVE->value);
+    Assert::assertSame('sick', \Modules\Employee\Enums\AbsenceRequestTypeEnum::SICK->value);
+    Assert::assertSame('injury', \Modules\Employee\Enums\AbsenceRequestTypeEnum::INJURY->value);
 });

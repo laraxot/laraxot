@@ -24,6 +24,7 @@ uses(TestCase::class);
  * connessione. Non è una scorciatoia — è il modo di provare la logica dell'azione invece
  * della disponibilità del database.
  *
+<<<<<<< HEAD
  * @param array<int, string>   $roles
  * @param array<int, string>   $permissions
  * @param array<string, mixed> $attributes
@@ -31,6 +32,16 @@ uses(TestCase::class);
 function uiAuthUser(array $roles = [], array $permissions = [], array $attributes = []): Authenticatable
 {
     $user = new class extends User {
+=======
+ * @param  array<int, string>  $roles
+ * @param  array<int, string>  $permissions
+ * @param  array<string, mixed>  $attributes
+ */
+function uiAuthUser(array $roles = [], array $permissions = [], array $attributes = []): Authenticatable
+{
+    $user = new class extends User
+    {
+>>>>>>> f5ffd8b4 (.)
         public ?object $profile = null;
 
         public function relationLoaded(mixed $key): bool
@@ -39,7 +50,11 @@ function uiAuthUser(array $roles = [], array $permissions = [], array $attribute
                 return false;
             }
 
+<<<<<<< HEAD
             return 'profile' === $key && null !== $this->profile;
+=======
+            return $key === 'profile' && $this->profile !== null;
+>>>>>>> f5ffd8b4 (.)
         }
     };
     $user->forceFill(array_merge([
@@ -49,12 +64,20 @@ function uiAuthUser(array $roles = [], array $permissions = [], array $attribute
     ], $attributes));
 
     $user->setRelation('roles', collect(array_map(
+<<<<<<< HEAD
         static fn (string $name): Role => tap(new Role())->forceFill(['name' => $name]),
+=======
+        static fn (string $name): Role => tap(new Role)->forceFill(['name' => $name]),
+>>>>>>> f5ffd8b4 (.)
         $roles,
     )));
 
     $user->setRelation('permissions', collect(array_map(
+<<<<<<< HEAD
         static fn (string $name): Permission => tap(new Permission())->forceFill(['name' => $name]),
+=======
+        static fn (string $name): Permission => tap(new Permission)->forceFill(['name' => $name]),
+>>>>>>> f5ffd8b4 (.)
         $permissions,
     )));
 

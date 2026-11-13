@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Modules\User\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use Modules\User\Models\Traits\DeviceUserRelationsTrait;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
-use Modules\Xot\Datas\XotData;
 
 /**
  * Modules\User\Models\DeviceUser.
@@ -21,13 +19,13 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder|DeviceUser newQuery()
  * @method static Builder|DeviceUser query()
  *
- * @property string      $id
- * @property string      $device_id
- * @property string      $user_id
+ * @property string $id
+ * @property string $device_id
+ * @property string $user_id
  * @property Carbon|null $login_at
  * @property Carbon|null $logout_at
  * @property string|null $push_notifications_token
- * @property bool|null   $push_notifications_enabled
+ * @property bool|null $push_notifications_enabled
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $updated_by
@@ -46,7 +44,7 @@ use Modules\Xot\Datas\XotData;
  * @method static Builder|DeviceUser whereUserId($value)
  *
  * @property ProfileContract|null $profile
- * @property UserContract|null    $user
+ * @property UserContract|null $user
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
  * @property ProfileContract|null $deleter
@@ -57,6 +55,11 @@ use Modules\Xot\Datas\XotData;
  */
 class DeviceUser extends BasePivot
 {
+<<<<<<< .merge_file_kdQ9dz
+    use DeviceUserRelationsTrait;
+
+=======
+>>>>>>> .merge_file_HuR1tN
     /** @var list<string> */
     protected $fillable = [
         'id',
@@ -67,36 +70,6 @@ class DeviceUser extends BasePivot
         'push_notifications_token',
         'push_notifications_enabled',
     ];
-
-    /**
-     * @return BelongsTo<Device, $this>
-     */
-    public function device(): BelongsTo
-    {
-        return $this->belongsTo(Device::class);
-    }
-
-    /**
-     * @return BelongsTo<Model, $this>
-     */
-    public function user(): BelongsTo
-    {
-        /** @var class-string<Model> */
-        $userClass = XotData::make()->getUserClass();
-
-        return $this->belongsTo($userClass);
-    }
-
-    /**
-     * @return BelongsTo<Model, $this>
-     */
-    public function profile(): BelongsTo
-    {
-        /** @var class-string<Model> */
-        $profileClass = XotData::make()->getProfileClass();
-
-        return $this->belongsTo($profileClass, 'user_id', 'user_id');
-    }
 
     /** @return array<string, string> */
     #[\Override]
@@ -121,4 +94,6 @@ class DeviceUser extends BasePivot
             'logout_at' => 'datetime',
         ];
     }
+
+    use DeviceUserRelationsTrait;
 }

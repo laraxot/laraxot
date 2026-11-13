@@ -1,3 +1,15 @@
+---
+title: "header mobile overlay"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header mobile overlay"
+issues: []
+discussions: []
+status: draft
+---
+
 # Header mobile/tablet — overlay hamburger (story 7-10)
 
 ## Scopo

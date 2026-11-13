@@ -1,1 +1,13 @@
+<<<<<<< HEAD
 
+=======
+---
+title: "serviceprovider best practices"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "serviceprovider best practices xot"
+---
+ 
+>>>>>>> laraxot/dev

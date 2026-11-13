@@ -34,7 +34,11 @@ final class OpeningHoursField extends XotBaseField
         $this->schema($form)->columns(5);
 
         $this->rules([
+<<<<<<< HEAD
             new OpeningHoursRule(),
+=======
+            new OpeningHoursRule,
+>>>>>>> f5ffd8b4 (.)
         ]);
     }
 

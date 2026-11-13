@@ -6,6 +6,7 @@ namespace Modules\Geo\Actions\GeoData;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
+use Modules\Geo\Infrastructure\Config\GeoDataConfig;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -15,20 +16,16 @@ class GetCapAction
 {
     use QueueableAction;
 
-    public const string CACHE_KEY = 'geo.cap.%s.%s';
-
-    public const int CACHE_TTL = 86400;
-
     /**
-     * @param string $provinceCode Codice della provincia
-     * @param string $cityCode     Codice della città
+     * @param  string  $provinceCode  Codice della provincia
+     * @param  string  $cityCode  Codice della città
      */
     public function execute(string $provinceCode, string $cityCode): ?string
     {
-        $cacheKey = \sprintf(self::CACHE_KEY, $provinceCode, $cityCode);
+        $cacheKey = \sprintf(GeoDataConfig::CACHE_KEY_CAP, $provinceCode, $cityCode);
 
         /** @var string|null $result */
-        $result = Cache::remember($cacheKey, self::CACHE_TTL, function () use ($provinceCode, $cityCode): null|string {
+        $result = Cache::remember($cacheKey, GeoDataConfig::CACHE_TTL, function () use ($provinceCode, $cityCode): ?string {
             /** @var array<string, mixed>|null $province */
             $province = app(LoadGeoDataAction::class)->execute()->flatMap(static fn (array $region): array => \is_array($region['provinces'] ?? null)
                 ? $region['provinces']

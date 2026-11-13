@@ -1,3 +1,11 @@
+---
+title: "User Factory Complete Ecosystem Integration - FINAL DOCUMENTATION"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "user factory complete ecosystem integration - final documentation user"
+---
 # User Factory Complete Ecosystem Integration - FINAL DOCUMENTATION
 
 ## 🎯 Integration Achievement
@@ -415,13 +423,16 @@ module: theme
 topic: user-factory-complete-ecosystem-integration
 canonical: ../../../Themes/docs/shared-components/user-factory-complete-ecosystem-integration.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 

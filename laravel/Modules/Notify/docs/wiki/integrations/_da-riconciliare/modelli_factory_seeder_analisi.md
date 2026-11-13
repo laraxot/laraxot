@@ -1,10 +1,14 @@
 ---
+qmd: "modelli factory seeder analisi"
+issues: []
+discussions: []
 title: "Analisi Modelli, Factory e Seeder - Modulo Notify"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Analisi Modelli, Factory e Seeder - Modulo Notify
@@ -264,6 +268,7 @@ Tutti i file factory devono essere validati con PHPStan livello 9:
 ### Documentazione Correlata
 - [Notification System](./notification_system.md)
 - [Email Templates](./email_templates.md)
+- [Email Templates](../../../email_templates.md)
 - [Multi-Channel Delivery](./multi_channel_delivery.md)
 - [Template Versioning](./template_versioning.md)
 
@@ -273,6 +278,9 @@ Tutti i file factory devono essere validati con PHPStan livello 9:
 - [User Module](../../User/docs/modelli_factory_seeder_analisi.md) - Notifiche utente
 - [Media Module](../../Media/docs/modelli_factory_seeder_analisi.md) - Allegati notifiche
 - [Lang Module](../../Lang/docs/modelli_factory_seeder_analisi.md) - Localizzazione
+- [User Module](../../../../../User/docs/modelli_factory_seeder_analisi.md) - Notifiche utente
+- [Media Module](../../../../../Media/docs/modelli_factory_seeder_analisi.md) - Allegati notifiche
+- [Lang Module](../../../../../Lang/docs/modelli_factory_seeder_analisi.md) - Localizzazione
 
 ### Servizi Esterni
 - [Mailgun](https://www.mailgun.com/) - Email delivery service

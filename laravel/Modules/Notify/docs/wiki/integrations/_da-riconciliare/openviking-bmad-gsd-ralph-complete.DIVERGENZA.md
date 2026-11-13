@@ -1,10 +1,15 @@
 ---
+qmd: "openviking bmad gsd ralph complete.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: openviking-bmad-gsd-ralph-complete.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: openviking-bmad-gsd-ralph-complete.divergenza.md
 ---
 
 # Divergenza: `openviking-bmad-gsd-ralph-complete.md`

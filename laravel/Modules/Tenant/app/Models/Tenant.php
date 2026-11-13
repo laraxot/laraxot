@@ -6,52 +6,77 @@ namespace Modules\Tenant\Models;
 
 // use Modules\Patient\Models\Patient; // Module not available
 // use Modules\Dental\Models\Appointment; // Module not available
+use Closure;
+use Illuminate\Contracts\Database\Query\Expression;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Modules\Tenant\Database\Factories\TenantFactory;
-use Modules\Xot\Contracts\UserContract;
-use Modules\Xot\Datas\XotData;
+use Modules\User\Models\User;
+use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Modello Tenant per la gestione multi-tenant dell'applicazione.
  *
- * @property string|null $name
- * @property string|null $domain
- * @property string|null $database
- * @property string|null $slug
- * @property array<array-key, mixed>|null $settings
+ * @property string $name
+ * @property string $domain
+ * @property string $database
+ * @property string $slug
+ * @property array<string, mixed>|null $settings
  * @property bool $is_active
- * @property Carbon|null $last_activity_at
  * @property string|null $logo
- * @property string|null $email
- * @property string|null $phone
- * @property string|null $address
- * @property string|null $city
- * @property string|null $postal_code
- * @property string|null $province
- * @property string|null $country
- * @property string|null $tax_code
- * @property string|null $vat_number
+ * @property \Carbon\Carbon|null $last_activity_at
  * @property-read string $url
- * @property-read Collection<int, Model&UserContract> $users
+ * @property-read Collection<int, User> $users
  * @property-read int|null $users_count
  *
- * @method static \Modules\Tenant\Database\Factories\TenantFactory factory($count = null, $state = [])
+ * @method static TenantFactory factory($count = null, $state = [])
  * @method static Builder<static>|Tenant newModelQuery()
  * @method static Builder<static>|Tenant newQuery()
  * @method static Builder<static>|Tenant query()
+<<<<<<< .merge_file_WRaLXJ
+=======
+<<<<<<< .merge_file_H04Wti
+=======
+>>>>>>> .merge_file_C7AREo
+ * @method static Tenant|null first()
+ * @method static Collection<int, Tenant> get()
+ * @method static Tenant create(array<string, mixed> $attributes = [])
+ * @method static Tenant firstOrCreate(array<string, mixed> $attributes = [], array<string, mixed> $values = [])
+ * @method static Builder<static>|Tenant where((string|Closure) $column, mixed $operator = null, mixed $value = null, string $boolean = 'and')
+ * @method static Builder<static>|Tenant whereNotNull((string|Expression) $columns)
+ * @method static int count(string $columns = '*')
+ *
+ * @property string $id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
+ * @property ProfileContract|null $deleter
+ *
+ * @method static Builder<static>|Tenant whereCreatedAt($value)
+ * @method static Builder<static>|Tenant whereDatabase($value)
+ * @method static Builder<static>|Tenant whereDeletedAt($value)
+ * @method static Builder<static>|Tenant whereDomain($value)
+ * @method static Builder<static>|Tenant whereId($value)
+ * @method static Builder<static>|Tenant whereIsActive($value)
+ * @method static Builder<static>|Tenant whereName($value)
+ * @method static Builder<static>|Tenant whereSlug($value)
+ * @method static Builder<static>|Tenant whereUpdatedAt($value)
+ * @method static Builder<static>|Tenant whereSettings($value)
  *
  * @mixin \Eloquent
+>>>>>>> .merge_file_Eh2jmz
  */
 class Tenant extends BaseModel
 {
-
     /**
      * Gli attributi che sono mass assignable.
+     *
+     * @var list<string>
      */
     protected $fillable = [
         'name',
@@ -76,15 +101,12 @@ class Tenant extends BaseModel
     /**
      * Relazione con gli utenti associati al tenant.
      *
-     * @return HasMany<Model&UserContract, $this>
+     * @return HasMany<User, $this>
      */
     public function users(): HasMany
     {
-        /** @var class-string<Model&UserContract> $userClass */
-        $userClass = XotData::make()->getUserClass();
-
-        /** @var HasMany<Model&UserContract, $this> $relation */
-        $relation = $this->hasMany($userClass);
+        /** @var HasMany<User, $this> $relation */
+        $relation = $this->hasMany(User::class);
 
         return $relation;
     }
@@ -123,17 +145,9 @@ class Tenant extends BaseModel
     {
         $this->attributes['name'] = $value;
 
-        $slug = $this->attributes['slug'] ?? null;
-        if (! is_string($slug) || $slug === '') {
+        if (empty($this->attributes['slug'])) {
             $this->attributes['slug'] = Str::slug($value);
         }
-    }
-
-    public function getNameAttribute(): ?string
-    {
-        $name = $this->attributes['name'] ?? null;
-
-        return is_string($name) ? $name : null;
     }
 
     /**

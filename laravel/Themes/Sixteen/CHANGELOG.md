@@ -1,8 +1,25 @@
-<<<<<<< .merge_file_l99wW2
+---
+title: "CHANGELOG"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "CHANGELOG"
+issues: []
+discussions: []
+---
+
 ## [1.0.0-dev.3](https://github.com/laraxot/theme_sixteen_fila5/compare/theme-sixteen-v1.0.0-dev.2...theme-sixteen-v1.0.0-dev.3) (2026-08-27)
-=======
-<<<<<<< .merge_file_CYGqAY
-=======
+---
+title: "CHANGELOG"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "CHANGELOG"
+issues: []
+discussions: []
+---
 ## [1.0.0-dev.10](https://github.com/laraxot/theme_sixteen_fila5/compare/theme-sixteen-v1.0.0-dev.9...theme-sixteen-v1.0.0-dev.10) (2026-09-25)
 
 ### Bug Fixes
@@ -19,14 +36,8 @@
 * **sixteen:** rimuovi marker di conflitto merge mai risolti in HEAD ([d207b20](https://github.com/laraxot/theme_sixteen_fila5/commit/d207b20d77e5a06f32ec753c70acbd487cba5309))
 * **Sixteen:** risolti i marker di conflitto reimmessi dal sync con laraxot/dev ([e81e973](https://github.com/laraxot/theme_sixteen_fila5/commit/e81e973d9d07713f1c2b8c408926676e51c59284))
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< .merge_file_MKyblt
->>>>>>> laraxot/dev
->>>>>>> .merge_file_hRt6fb
+---
 ## [1.0.0-dev.9](https://github.com/laraxot/theme_sixteen_fila5/compare/theme-sixteen-v1.0.0-dev.8...theme-sixteen-v1.0.0-dev.9) (2026-09-24)
->>>>>>> .merge_file_Bz6k1h
 
 ### Features
 

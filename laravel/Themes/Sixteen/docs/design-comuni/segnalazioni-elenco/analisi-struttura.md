@@ -1,3 +1,15 @@
+---
+title: "analisi struttura"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "analisi struttura"
+issues: []
+discussions: []
+status: draft
+---
+
 # Analisi Struttura HTML - Segnalazioni Elenco
 
 ## Data Analisi
@@ -8,7 +20,6 @@
 **JSON**: `config/local/fixcity/database/content/pages/tests.ticket-list.json`
 
 ---
-
 ## Confronto Strutturale
 
 ### Reference Structure (Bootstrap Italia)

@@ -1,9 +1,20 @@
 ---
+<<<<<<< .merge_file_RBFGWq
 title: "Product brief — ritiro Livewire UI"
+=======
+title: "Product brief: ritiro Livewire UI"
+>>>>>>> .merge_file_WYQGVp
 type: product-brief
 module: UI
 related:
   - ./livewire-inventory.md
+<<<<<<< .merge_file_RBFGWq
+=======
+status: draft
+updated: 2026-10-07
+tags: [docs, ui, bmad]
+qmd: "brief ui"
+>>>>>>> .merge_file_WYQGVp
 ---
 
 # Brief

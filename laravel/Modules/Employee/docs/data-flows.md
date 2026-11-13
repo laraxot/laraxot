@@ -1,3 +1,9 @@
+---
+title: "Employee - DATA-FLOWS"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - Data Flows Documentation
 
 > **Documento generato**: 2024-09-03  

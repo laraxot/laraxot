@@ -12,6 +12,7 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
+uses(TestCase::class);
 describe('NormalizePhoneNumberAction', function () {
     it('can be instantiated', function () {
         Assert::assertTrue(class_exists(NormalizePhoneNumberAction::class));

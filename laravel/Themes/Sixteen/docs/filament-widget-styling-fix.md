@@ -1,3 +1,15 @@
+---
+title: "filament widget styling fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament widget styling fix"
+issues: []
+discussions: []
+status: draft
+---
+
 # Fix: Filament Widget Styling su Pagine Non-Panel
 
 **Data**: 14 Ottobre 2025  

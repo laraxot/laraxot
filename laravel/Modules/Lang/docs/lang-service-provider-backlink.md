@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "LangServiceProvider"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "redundancy analysis"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # LangServiceProvider
 
@@ -22,6 +25,9 @@ La documentazione completa del LangServiceProvider è disponibile nel modulo Lan
 - [Analisi e Proposte di Miglioramento](../laravel/Modules/Lang/docs/lang-service-provider.md)
 - [Analisi e Proposte di Miglioramento](../laravel/modules/lang/docs/lang-service-provider.md)
 - [Analisi e Proposte di Miglioramento](../laravel/modules/lang/docs/lang-service-provider.md)
+- [Analisi e Proposte di Miglioramento](lang-service-provider.md)
+- [Analisi e Proposte di Miglioramento](lang-service-provider.md)
+- [Analisi e Proposte di Miglioramento](lang-service-provider.md)
 
 ## Caratteristiche Principali
 

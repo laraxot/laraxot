@@ -1,7 +1,10 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< .merge_file_5C1yJr
 
+=======
+>>>>>>> .merge_file_jctTe7
 use Modules\User\Database\Seeders\UserDatabaseSeeder;
 use Modules\User\Models\Permission;
 use Modules\User\Models\Role;
@@ -14,7 +17,11 @@ uses(TestCase::class);
  * @covers \Modules\User\Database\Seeders\UserDatabaseSeeder
  */
 it('runs UserDatabaseSeeder successfully', function (): void {
+<<<<<<< .merge_file_5C1yJr
     $seeder = new UserDatabaseSeeder();
+=======
+    $seeder = new UserDatabaseSeeder;
+>>>>>>> .merge_file_jctTe7
     $seeder->setContainer(app());
 
     $seeder->run();
@@ -26,7 +33,11 @@ it('runs UserDatabaseSeeder successfully', function (): void {
 });
 
 it('gives super-admin role all permissions after seeding', function (): void {
+<<<<<<< .merge_file_5C1yJr
     $seeder = new UserDatabaseSeeder();
+=======
+    $seeder = new UserDatabaseSeeder;
+>>>>>>> .merge_file_jctTe7
     $seeder->setContainer(app());
 
     $seeder->run();

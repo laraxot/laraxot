@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Gestione Permessi e Errori Filesystem su File di Lingua (Lang)"
 module: "Lang"
 type: concept
@@ -8,10 +10,12 @@ updated: 2026-07-14
 qmd: "google translate"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Gestione Permessi e Errori Filesystem su File di Lingua (Lang)
 
 > **Backlink:** [Indice e collegamenti root](../../../docs/links.md)
+> **Backlink:** [Indice e collegamenti root](../../../../docs/links.md)
 
 ## Problema
 
@@ -64,6 +68,7 @@ sudo chmod 664 /var/www/html/ptvx/laravel/Modules/Lang/lang/it/lang_service.php
 
 ## Collegamenti
 - [Indice e collegamenti root](../../../docs/links.md)
+- [Indice e collegamenti root](../../../../docs/links.md)
 - [Documentazione MCP e gestione errori](../../../docs/mcp_errors_and_lessons.md)
 
 ---

@@ -42,11 +42,17 @@ test('view path action works', function (): void {
 
 test('asset path action works', function (): void {
     // Spy on Module facade
+<<<<<<< HEAD
     Module::partialMock()->allows([
         'getModulePath' => function (string $module): string {
             return $module === 'test_module' ? '/module/path/' : '';
         },
     ]);
+=======
+    Module::partialMock()
+        ->shouldReceive('getModulePath')
+        ->andReturnUsing(fn (string $module): string => $module === 'test_module' ? '/module/path/' : '');
+>>>>>>> laraxot/dev
 
     $action = app(AssetPathAction::class);
     Assert::assertSame('/module/path/resources/css/style.css', $action->execute('test_module::css/style.css'));

@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "📝 Documentazione Conflitti Git"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, templates]
+qmd: "📝 Documentazione Conflitti Git"
+---
+>>>>>>> laraxot/dev
 # 📝 Documentazione Conflitti Git
 
 ## 🔍 Analisi Conflitto
@@ -82,4 +95,8 @@
 ### Timeline
 - Data risoluzione: [data]
 - Data verifica: [data]
+<<<<<<< HEAD
 - Data follow-up: [data]
+=======
+- Data follow-up: [data] 
+>>>>>>> laraxot/dev

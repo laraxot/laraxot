@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "permission"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, install]
+qmd: "permission"
+---
+>>>>>>> laraxot/dev
 ~~~ php
 <?php
 
@@ -167,6 +180,7 @@ return [
 ~~~
 ### Versione HEAD
 
+<<<<<<< HEAD
 ## Collegamenti tra versioni di permission.md
 * [permission.md](../../../xot/project_docs/install/permission.md)
 * [permission.md](../../../tenant/project_docs/it/config/permission.md)
@@ -174,3 +188,16 @@ return [
 ### Versione Incoming
 
 ---
+=======
+
+## Collegamenti tra versioni di permission.md
+* [permission.md](../../../Xot/docs/install/permission.md)
+* [permission.md](../../../Tenant/docs/it/config/permission.md)
+
+
+### Versione Incoming
+
+
+---
+
+>>>>>>> laraxot/dev

@@ -125,7 +125,11 @@ class XotData extends Data implements Wireable
     public function getUserByEmail(string $email): UserContract
     {
         $user_class = $this->getUserClass();
+<<<<<<< HEAD
         $userInstance = new $user_class;
+=======
+        $userInstance = new $user_class();
+>>>>>>> laraxot/dev
         if (! in_array('email', $userInstance->getFillable(), true)) {
             throw new \Exception("Attribute 'email' not found in model ".$userInstance::class);
         }
@@ -342,7 +346,11 @@ class XotData extends Data implements Wireable
 
     public function save(): void
     {
+<<<<<<< HEAD
         dddx('wip');
+=======
+        throw new \LogicException('XotData::save() not implemented');
+>>>>>>> laraxot/dev
     }
 
     public function getPubThemeViewPath(string $key = ''): string
@@ -366,9 +374,42 @@ class XotData extends Data implements Wireable
         return asset('themes/'.$this->pub_theme.'/'.$key);
     }
 
+<<<<<<< HEAD
     public function getMailHtmlLayoutPath(string $key = ''): string
     {
         return base_path('Themes/'.$this->pub_theme.'/resources/mail-layouts/'.$key);
+=======
+    /**
+<<<<<<< .merge_file_GruKBe
+     * Layout HTML delle e-mail: prima quelli del tema pubblico, poi quelli del modulo Notify.
+     * Un tema senza `resources/mail-layouts` (es. Two) faceva fallire l'invio delle e-mail da modello
+     * e la pagina «Nuovo modello e-mail» (2026-11-10).
+=======
+     * Layout HTML delle email: prima quello del tema pubblico, se il tema non lo ha quello del modulo Notify.
+     * Un tema senza `resources/mail-layouts` non deve far fallire l'invio (es. il reset della password).
+>>>>>>> .merge_file_hDNmRA
+     */
+    public function getMailHtmlLayoutPath(string $key = ''): string
+    {
+        $themePath = base_path('Themes/'.$this->pub_theme.'/resources/mail-layouts/'.$key);
+<<<<<<< .merge_file_GruKBe
+        if (file_exists($themePath)) {
+            return $themePath;
+        }
+
+        $modulePath = base_path('Modules/Notify/resources/mail-layouts/'.$key);
+
+        return file_exists($modulePath) ? $modulePath : $themePath;
+=======
+        if ($key === '' || is_file($themePath)) {
+            return $themePath;
+        }
+
+        $notifyPath = base_path('Modules/Notify/resources/mail-layouts/'.$key);
+
+        return is_file($notifyPath) ? $notifyPath : $themePath;
+>>>>>>> .merge_file_hDNmRA
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -497,6 +538,19 @@ class XotData extends Data implements Wireable
         if (isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] === '127.0.0.1') {
             return false;
         }
+<<<<<<< HEAD
+=======
+        // IP privato/riservato (LAN, 192.168.x.x, 10.x, 172.16-31.x): niente TLS reale
+        // dietro `php artisan serve` — forzare https romperebbe tutti gli asset.
+        $serverName = $_SERVER['SERVER_NAME'] ?? null;
+        if (
+            \is_string($serverName)
+            && filter_var($serverName, FILTER_VALIDATE_IP) !== false
+            && filter_var($serverName, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false
+        ) {
+            return false;
+        }
+>>>>>>> laraxot/dev
         // AWS ELB
         if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
             return true;

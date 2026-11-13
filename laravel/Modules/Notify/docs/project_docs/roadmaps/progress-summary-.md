@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "progress-summary-2025-01-27.deprecated"
 type: concept
 tags: [deprecated]

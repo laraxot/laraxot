@@ -1,3 +1,14 @@
+---
+title: "gdpr mixed type reduction.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "gdpr mixed type reduction.story"
+issues: []
+discussions: []
+---
+
 # Story: Reduce mixed type usage — Gdpr
 
 **Fase BMAD**: Qualita del codice (type-safety), nessuna modifica di comportamento applicativo.

@@ -1,3 +1,9 @@
+---
+title: "Employee - README"
+module: Employee
+bmad: true
+status: active
+---
 # Business Logic Documentation
 
 [![Module](https://img.shields.io/badge/Module-Business Logic Documentation-8B0000.svg)]()

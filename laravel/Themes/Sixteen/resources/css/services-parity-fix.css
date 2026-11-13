@@ -18,7 +18,7 @@
 
 /* Hero background and spacing */
 .hero-default,
-[id*="hero"] {
+section[id*="hero"] {
   background: linear-gradient(to bottom, #f2f7fc 0%, #ffffff 100%);
   padding: 3rem 0 4rem;
   margin-bottom: 3rem;

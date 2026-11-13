@@ -3,11 +3,6 @@
 declare(strict_types=1);
 
 return [
-    'actions' => [
-        'edit' => [
-            'label' => 'edit',
-        ],
-    ],
     'label' => 'View Translation File',
     'plural_label' => 'View Translation File (Plurale)',
     'navigation' => [
@@ -18,7 +13,7 @@ return [
             'description' => 'General Settings',
         ],
         'label' => 'View Translation File',
-        'sort' => 1,
+        'sort' => '1',
         'icon' => 'heroicon-o-rectangle-stack',
     ],
     'fields' => [

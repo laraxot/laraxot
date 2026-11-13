@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Seo\Providers;
 
+use Illuminate\Contracts\Http\Kernel as HttpKernel;
+use Illuminate\Foundation\Http\Kernel as FoundationKernel;
 use Modules\Seo\Adapters\MetatagFacadeAdapter;
-use Modules\Seo\Adapters\MetatagManager;
 use Modules\Seo\Adapters\MetatagState;
+use Modules\Seo\Http\Middleware\RedirectToCanonicalPath;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 
 class SeoServiceProvider extends XotBaseServiceProvider
@@ -26,10 +28,28 @@ class SeoServiceProvider extends XotBaseServiceProvider
 
         $this->app->singleton(MetatagState::class);
         $this->app->singleton(MetatagFacadeAdapter::class);
+    }
 
-        $this->app->singleton(MetatagManager::class, function () {
-            return new MetatagManager();
-        });
+    /**
+     * Bootstrap the module services.
+     */
+    public function boot(): void
+    {
+        parent::boot();
+
+        $this->registerCanonicalPathRedirect();
+    }
+
+    /**
+     * 301 dalle copie di una pagina alla forma canonica (DCP-288, FO-6-20). Middleware globale, perche' deve agire prima della ricerca
+     * della rotta; sul kernel e non sul router, come il modulo Gdpr (il kernel risincronizza il router a ogni richiesta).
+     */
+    protected function registerCanonicalPathRedirect(): void
+    {
+        $kernel = $this->app->make(HttpKernel::class);
+        if ($kernel instanceof FoundationKernel) {
+            $kernel->prependMiddleware(RedirectToCanonicalPath::class);
+        }
     }
 
     /**
@@ -42,7 +62,6 @@ class SeoServiceProvider extends XotBaseServiceProvider
         return [
             MetatagFacadeAdapter::class,
             MetatagState::class,
-            MetatagManager::class,
         ];
     }
 }

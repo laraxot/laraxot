@@ -1,3 +1,14 @@
+---
+title: "sync remote repo test plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sync remote repo test plan"
+issues: []
+discussions: []
+---
+
 # Sync Remote Repo Test Plan
 
 > **Test Date**: 2026-03-13  
@@ -7,6 +18,14 @@
 
 ---
 
+title: "sync remote repo test plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sync remote repo test plan"
+issues: []
+discussions: []
 ## Test Objectives
 
 1. ✅ Verify script works in CLI mode

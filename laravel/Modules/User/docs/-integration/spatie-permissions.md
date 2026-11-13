@@ -16,9 +16,9 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # spatie_permissions
 
 <!-- Contenuto migrato da _docs/spatie_permissions.txt -->

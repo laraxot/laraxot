@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Guida Completa alla Validazione delle Traduzioni - <nome progetto>"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "lang service helper text fix"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Guida Completa alla Validazione delle Traduzioni - <nome progetto>
 
@@ -246,6 +249,7 @@ php docs/obbligatorio-audit-script.php
 - [User Module - City Field Refactor](../modules/user/docs/translation-city-field-refactor-[date].md)
 - [<nome progetto> Module - Refactor Summary](../modules/<nome progetto>/docs/translation-refactor-summary-[date].md)
 - [Geo Module - Helper Text Fix](../modules/geo/docs/helper-text-normalization-fix.md)
+- [Geo Module - Helper Text Fix](../../Geo/docs/helper-text-normalization-fix.md)
 
 ### Script e Tool
 - [Helper Text Audit Script](helper-text-audit-script.php)

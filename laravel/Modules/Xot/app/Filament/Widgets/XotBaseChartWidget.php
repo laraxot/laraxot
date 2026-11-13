@@ -23,7 +23,14 @@ abstract class XotBaseChartWidget extends FilamentChartWidget
 
     protected static ?int $sort = 1;
 
+<<<<<<< HEAD
     protected static bool $isLazy = true;
+=======
+    /*
+     * Niente $isLazyLoaded: il default di Filament e' gia' lazy, e un valore non null qui farebbe
+     * ignorare il $isLazy (deprecato) ancora dichiarato da sottoclassi in altri progetti.
+     */
+>>>>>>> laraxot/dev
 
     protected ?string $pollingInterval = null;
 

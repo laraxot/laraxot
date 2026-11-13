@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Massimizzare il livello di confidenza"
 module: "Lang"
 type: how-to
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "phpstan level10 fixes 1"
 related:
   - "./italian-text-refined-audit-report.md"
+status: superseded
+superseded_by: confidence-guidelines.md
 ---
 # Massimizzare il livello di confidenza
 

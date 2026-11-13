@@ -1,9 +1,0 @@
-# Diff
-
----
-module: theme
-topic: diff
-canonical: ../../../../../docs/shared-components/.gitkeep-Modules
----
-
-See canonical documentation: ../../../../../docs/shared-components/.gitkeep-Modules

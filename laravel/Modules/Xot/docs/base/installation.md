@@ -3,13 +3,25 @@ title: Installazione
 description: Come Installare la Base
 extends: _layouts.documentation
 section: content
+<<<<<<< HEAD
+=======
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, base]
+qmd: "installazione {#installation} xot"
+>>>>>>> laraxot/dev
 ---
 
 # Installazione {#installation}
 
 ### virtual host & Laragon
 
+<<<<<<< HEAD
 Il progetto può utilizzare varie configurazioni, situati dentro la cartella laravel/config.
+=======
+Il progetto può utilizzare varie configurazioni, situati dentro la cartella laravel/config.  
+>>>>>>> laraxot/dev
 
 Crearsi il virtual host con il nome del dominio uguale a quello del file di configurazione. Esempio:
 
@@ -20,11 +32,20 @@ Crearsi il virtual host con il nome del dominio uguale a quello del file di conf
 Noi suggeriamo l'utilizzo di Laragon perchè crea automaticamente i virtual host.
 Dopo aver installato laragon, Assicurarsi di abilitate tutte le estensioni php indicate nella foto
 
+<<<<<<< HEAD
 <img class="block m-auto" src="https://laraxot.github.io/module_xot_fila5/assets/img/php-extentions.png" alt="php extentions" />
 
 Configurare le preferenze di laragon come in foto
 
 <img class="block m-auto" src="https://laraxot.github.io/module_xot_fila5/assets/img/laragon-config.png" alt="laragon config" />
+=======
+<img class="block m-auto" src="https://laraxot.github.io/module_xot_fila3/assets/img/php-extentions.png" alt="php extentions" />  
+
+Configurare le preferenze di laragon come in foto
+
+<img class="block m-auto" src="https://laraxot.github.io/module_xot_fila3/assets/img/laragon-config.png" alt="laragon config" />  
+
+>>>>>>> laraxot/dev
 
 Creare una cartella _bases dentro la cartella www, in questa cartella si andrà a clonare il progetto.
 
@@ -37,8 +58,13 @@ git submodule foreach git pull
 
 Verificare che tutti i moduli siano a master
 
+<<<<<<< HEAD
 ### dalla cartella "laravel" creare il file delle variabili d'ambiente .env
 
+=======
+### dalla cartella "laravel" creare il file delle variabili d'ambiente .env 
+    
+>>>>>>> laraxot/dev
 ```bash
 cp .env.latest .env
 ```
@@ -52,7 +78,11 @@ cp .env.latest .env
 ../bashscripts/composer_init.sh
 ```
 
+<<<<<<< HEAD
 alternativa:
+=======
+alternativa: 
+>>>>>>> laraxot/dev
 
 ```bash
 composer update
@@ -66,12 +96,20 @@ php artisan key:generate
 alternativa da terminale:
 
 ```bash
+<<<<<<< HEAD
 php artisan module:list
+=======
+php artisan module:list 
+>>>>>>> laraxot/dev
 ```
 
 ### abilitare tutti i moduli con il comando
 
+<<<<<<< HEAD
 Assicurarsi che tutti i moduli siano abilitati
+=======
+Assicurarsi che tutti i moduli siano abilitati  
+>>>>>>> laraxot/dev
 in caso eseguire:
 
 ```bash
@@ -91,6 +129,7 @@ php artisan module:migrate NomeModulo
 ```bash
 npm install
 npm run dev
+<<<<<<< HEAD
 ```
 
 ### creare la Giunzione
@@ -101,6 +140,18 @@ Per creare la giunzione, andare nella cartella www ed eseguire tramite il prompt
 ```bash
 mklink /j nome_cartella_giuzione path_della_cartella_progetto
 ```
+=======
+```  
+
+### creare la Giunzione
+
+in locale, se utilizzate Laragon, dopo aver clonato il progetto bisogna creare la giunzione nella cartella www.  
+Per creare la giunzione, andare nella cartella www ed eseguire tramite il prompt dei comandi 
+
+```bash
+mklink /j nome_cartella_giuzione path_della_cartella_progetto
+```  
+>>>>>>> laraxot/dev
 
 dopo riavviare il server di laragon.
 
@@ -108,9 +159,15 @@ Fatto ciò, andare nel browser e inserire nell'url http://nome_cartella_giuzione
 
 ### lavorare nel branch dev
 
+<<<<<<< HEAD
 Sia il progetto che ogni singolo modulo hanno un branch dev, generalmente utilizzato per lo sviluppo del progetto.
 
 nel singolo modulo
+=======
+Sia il progetto che ogni singolo modulo hanno un branch dev, generalmente utilizzato per lo sviluppo del progetto.  
+
+nel singolo modulo  
+>>>>>>> laraxot/dev
 
 ```bash
 git branch dev
@@ -119,6 +176,7 @@ git_init.sh dev
 git pull origin dev
 git push origin dev -u
 git merge origin master
+<<<<<<< HEAD
 ```
 
 dopo aver eseguito
@@ -143,3 +201,33 @@ se il branch di un modulo vuole essere pubblicato, eseguire nel modulo
 ### Versione Incoming
 
 ---
+=======
+```  
+
+dopo aver eseguito  
+git branch nome_branch  
+git checkout nome_branch  
+
+se il branch di un modulo vuole essere pubblicato, eseguire nel modulo 
+```bash
+../../../bascripts/git_init.sh nome_branch
+```  
+### Versione HEAD
+
+
+## Collegamenti tra versioni di installation.md
+* [installation.md](../../../Xot/docs/filament/installation.md)
+* [installation.md](../../../Xot/docs/installation.md)
+* [installation.md](../../../Xot/docs/base/installation.md)
+* [installation.md](../../../User/docs/installation.md)
+* [installation.md](../../../Lang/docs/installation.md)
+* [installation.md](../../../Cms/docs/installation.md)
+* [installation.md](../../../../Themes/One/docs/installation.md)
+
+
+### Versione Incoming
+
+
+---
+
+>>>>>>> laraxot/dev

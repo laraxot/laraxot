@@ -108,7 +108,7 @@ class BuildTimelineVisualizationAction
         $current = $weekStart->copy();
         while ($current->lte($weekEnd)) {
             $dateKey = $current->toDateString();
-            $dayEntries = $entries->filter(fn ($entry) => $entry->timestamp->isSameDay($current));
+            $dayEntries = $entries->filter(fn (WorkHour $entry) => $entry->timestamp->isSameDay($current));
 
             $blocks[$dateKey] = $this->buildDaySessionBlocks($dayEntries);
 

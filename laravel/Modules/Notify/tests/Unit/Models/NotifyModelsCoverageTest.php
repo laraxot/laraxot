@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Unit\Models;
 
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\Notify\Models\Contact;
 use Modules\Notify\Models\MailTemplate;
 use Modules\Notify\Models\Notification;
@@ -12,8 +11,10 @@ use Modules\Notify\Models\NotifyTheme;
 use Modules\Notify\Tests\Fixtures\NotifyBaseMorphPivotProxy;
 use Modules\Notify\Tests\Fixtures\NotifyBasePivotProxy;
 use Modules\Notify\Tests\Fixtures\NotifyNotificationTemplateProxy;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 function makeNotifyBaseMorphPivotProxy(): NotifyBaseMorphPivotProxy
 {
     return new NotifyBaseMorphPivotProxy;
@@ -56,7 +57,7 @@ test('mail template has slug options and expected casts', function () {
     Assert::assertContains('slug', $mailTemplate->getFillable());
     Assert::assertContains('html_layout_path', $mailTemplate->getFillable());
     Assert::assertArrayHasKey('created_at', $mailTemplate->getCasts());
-    Assert::assertSame('slug', $mailTemplate->getSlugOptions()->generateSlugFrom);
+    Assert::assertSame(['subject'], $mailTemplate->getSlugOptions()->generateSlugFrom);
 });
 
 test('notification model has array and datetime casts', function () {
@@ -101,7 +102,7 @@ test('notify theme exposes logo accessor and morph relation', function () {
     $theme->logo_height = 120;
 
     $logo = $theme->getLogoAttribute(null);
-    $relation = $theme->linkable();
+    Assert::assertSame('linkable', $theme->linkable()->getRelationName());
 
     Assert::assertSame('notify', $theme->getConnectionName());
     Assert::assertContains('logo_src', $theme->getFillable());
@@ -109,5 +110,4 @@ test('notify theme exposes logo accessor and morph relation', function () {
     Assert::assertArrayHasKey('view_params', $theme->getCasts());
     Assert::assertSame(300, $logo['width']);
     Assert::assertSame(120, $logo['height']);
-    Assert::assertInstanceOf(MorphTo::class, $relation);
 });

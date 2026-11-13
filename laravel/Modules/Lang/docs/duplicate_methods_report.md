@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Report: Metodi con nome duplicato nei moduli e nei temi"
 module: "Lang"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "redundancy analysis"
 related:
   - "./italian-text-refined-audit-report.md"
+status: superseded
+superseded_by: duplicate-methods-report.md
 ---
 # Report: Metodi con nome duplicato nei moduli e nei temi
 

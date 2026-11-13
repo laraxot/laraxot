@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Alternatives"
 module: "Tenant"
 type: concept
@@ -8,5 +10,6 @@ updated: 2026-07-14
 qmd: "alternatives"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 https://github.com/InterNACHI/modular

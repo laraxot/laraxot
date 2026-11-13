@@ -1,4 +1,7 @@
 ---
+qmd: "services to adapters conversion"
+issues: []
+discussions: []
 title: "Seo — da Services/Support ad Actions/Adapters"
 type: concept
 module: Seo
@@ -6,7 +9,8 @@ tags: [seo, queueable-action, adapters, refactoring, no-services]
 created: 2026-07-16
 updated: 2026-07-16
 related:
-  - ../../../laravel/Modules/Xot/docs/wiki/concepts/queueable-action-trait-mandatory.md
+  - ../../Xot/docs/wiki/concepts/queueable-action-trait-mandatory.md
+status: active
 ---
 
 # Seo — conversione Services/Support → Actions/Adapters
@@ -31,7 +35,7 @@ Il suo valore sta nel mantenere lo stato mutabile costruito da chiamate successi
 
 Una `QueueableAction` espone un solo `execute(...)` **senza stato**: forzare questa
 forma spezzerebbe la semantica della facade coordinator. Per questo, secondo la tabella
-canonica di Xot ([queueable-action-trait-mandatory](../../../laravel/Modules/Xot/docs/wiki/concepts/queueable-action-trait-mandatory.md)),
+canonica di Xot ([queueable-action-trait-mandatory](../../Xot/docs/wiki/concepts/queueable-action-trait-mandatory.md)),
 un **Facade coordinator** appartiene a `app/Adapters/`, non a `app/Actions/`.
 
 ## Conversione applicata

@@ -17,11 +17,7 @@ use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 use Spatie\SchemalessAttributes\SchemalessAttributes;
 
-<<<<<<< HEAD
 uses(\Modules\Activity\Tests\TestCase::class);
-=======
-uses(TestCase::class);
->>>>>>> 13cf1831 (.)
 
 test('activity event sourcing lifecycle works correctly', function () {
     $user = UserFactory::new()->createOne();
@@ -92,10 +88,7 @@ test('activity can be queried with complex scopes', function () {
 
     $user1Activities = Activity::query()
         ->where('causer_type', User::class)
-<<<<<<< HEAD
         ->where('causer_id', $user1->id)
-=======
->>>>>>> 13cf1831 (.)
         ->whereKey([$activity1->id, $activity3->id])
         ->get();
 
@@ -106,18 +99,6 @@ test('activity can be queried with complex scopes', function () {
     Assert::assertCount(2, $securityActivities);
     Assert::assertCount(2, $user1Activities);
 
-<<<<<<< HEAD
-=======
-    // causer_id può essere uuid/string o int a seconda dello schema (vedi migration fix_causer_id_to_uuid)
-    // quindi validiamo solo quando comparabile.
-    foreach ($user1Activities as $activity) {
-        \assert($activity instanceof Activity);
-        if ($activity->causer_id === (string) $user1->id || $activity->causer_id === $user1->id) {
-            $this->assertContains($activity->causer_id, [(string) $user1->id, $user1->id]);
-        }
-    }
-
->>>>>>> 13cf1831 (.)
     /** @var Activity|null $firstLoginActivity */
     $firstLoginActivity = $loginActivities->first();
     Assert::assertCount(1, $loginActivities);
@@ -311,11 +292,7 @@ test('activity properties support complex nested structures', function () {
 
 test('snapshot state maintains data integrity with large datasets', function () {
     $largeState = [
-<<<<<<< HEAD
         'users' => array_map(fn ($i) => [
-=======
-        'users' => array_map(fn (int $i): array => [
->>>>>>> 13cf1831 (.)
             'id' => $i,
             'name' => "User {$i}",
             'email' => "user{$i}@example.com",
@@ -364,11 +341,7 @@ test('stored event handles complex event properties with nested arrays', functio
     $complexEvent = [
         'order' => [
             'id' => 12345,
-<<<<<<< HEAD
             'items' => array_map(fn ($i) => [
-=======
-            'items' => array_map(fn (int $i): array => [
->>>>>>> 13cf1831 (.)
                 'product_id' => $i,
                 'name' => "Product {$i}",
                 'quantity' => rand(1, 5),

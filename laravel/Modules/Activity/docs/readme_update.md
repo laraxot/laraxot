@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_9qefgr
 # Aggiornamento README Activity - Sezione Testing
 
@@ -143,12 +142,3 @@ php artisan test Modules/Activity --coverage
 
 See canonical documentation: ../../../Themes/docs/shared-components/README.md.update
 >>>>>>> .merge_file_cISHnP
-=======
----
-module: theme
-topic: readme_update
-canonical: ../../../Themes/docs/shared-components/README.md.update
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/README.md.update
->>>>>>> 13cf1831 (.)

@@ -4,20 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Activity\Filament\Resources\SnapshotResource\Pages;
 
-<<<<<<< HEAD
-=======
-use Filament\Actions\Action;
-use Filament\Actions\ActionGroup;
-use Filament\Actions\BulkAction;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\ViewAction;
-use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\BaseFilter;
-use Filament\Tables\Filters\SelectFilter;
->>>>>>> 13cf1831 (.)
 use Modules\Activity\Filament\Resources\SnapshotResource;
 use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
@@ -30,11 +16,8 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 class ListSnapshots extends XotBaseListRecords
 {
     protected static string $resource = SnapshotResource::class;
-<<<<<<< HEAD
 <<<<<<< .merge_file_cOenTN
 =======
-=======
->>>>>>> 13cf1831 (.)
 
     /**
      * Get the list table columns.
@@ -90,8 +73,5 @@ class ListSnapshots extends XotBaseListRecords
             DeleteBulkAction::make(),
         ];
     }
-<<<<<<< HEAD
 >>>>>>> .merge_file_uPfQnM
-=======
->>>>>>> 13cf1831 (.)
 }

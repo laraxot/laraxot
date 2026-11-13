@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Changelog"
 module: "Media"
 type: concept

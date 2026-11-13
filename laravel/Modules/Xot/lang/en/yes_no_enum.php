@@ -23,15 +23,22 @@ return [
         'no' => 'No',
     ],
     'navigation' => [
+<<<<<<< HEAD
         'label' => 'Missing Navigation Label',
+=======
+        'label' => 'Yes/No',
+>>>>>>> laraxot/dev
         'plural_label' => 'Missing Navigation Plural Label',
         'group' => 'Missing Group',
         'icon' => 'heroicon-o-puzzle-piece',
         'sort' => 100,
     ],
     'plural_label' => 'Missing Plural label',
+<<<<<<< HEAD
     'fields' => [
     ],
     'actions' => [
     ],
+=======
+>>>>>>> laraxot/dev
 ];

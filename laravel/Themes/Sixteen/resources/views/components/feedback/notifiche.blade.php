@@ -125,7 +125,7 @@
         <button 
             type="button" 
             class="btn-close" 
-            aria-label="Chiudi notifica"
+            aria-label="{{ __('pub_theme::components_common.actions.close_notification.label') }}"
             onclick="document.getElementById('{{ $id }}').style.display = 'none'"
         ></button>
     @endif

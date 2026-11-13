@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_cyqsnB
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -15,8 +14,6 @@ See canonical documentation: ../../../Themes/docs/shared-components/boost-skill-
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 # Boost Skill Fix Summary - Activity Module
 =======
 title: "boost skill fix summary"
@@ -63,11 +60,8 @@ See `/docs/BOOST_SKILL_SOLUTION_PLAN.md` for complete solution details.
 <<<<<<< .merge_file_cyqsnB
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
 =======
 >>>>>>> .merge_file_Uk7FHD
-=======
->>>>>>> 13cf1831 (.)

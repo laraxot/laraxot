@@ -28,7 +28,11 @@ use Spatie\Permission\Exceptions\PermissionDoesNotExist;
  *
  * @phpstan-require-extends Model
  *
+<<<<<<< HEAD
  * @mixin \Eloquent
+=======
+ * @mixin Model
+>>>>>>> laraxot/dev
  */
 interface ProfileContract extends HasMedia
 {

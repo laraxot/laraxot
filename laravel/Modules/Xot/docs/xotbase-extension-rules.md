@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Regole di Estensione XotBase - Guida di Riferimento"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "regole di estensione xotbase - guida di riferimento xot"
+---
+>>>>>>> laraxot/dev
 # Regole di Estensione XotBase - Guida di Riferimento
 
 ## 🚨 REGOLA CRITICA FONDAMENTALE

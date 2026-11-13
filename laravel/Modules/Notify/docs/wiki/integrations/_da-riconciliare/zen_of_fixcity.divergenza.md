@@ -1,10 +1,14 @@
 ---
+qmd: "zen of fixcity.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: ZEN_OF_FIXCITY.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Divergenza: `ZEN_OF_FIXCITY.md`

@@ -2,9 +2,13 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 return [
     'fields' => [
         'f' => ['label' => 'f', 'placeholder' => 'f', 'helper_text' => 'f', 'description' => 'f'],
         'm' => ['label' => 'm', 'placeholder' => 'm', 'helper_text' => 'm', 'description' => 'm'],
     ],
 ];
+=======
+return [];
+>>>>>>> laraxot/dev

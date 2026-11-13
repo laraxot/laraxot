@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Merge Conflict Files List"
 module: "Tenant"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "merge conflict files list"
 related:
   - "./phpstan-corrections-january.md"
+status: draft
 ---
 # Merge Conflict Files List
 

@@ -96,13 +96,11 @@ return [
             'description' => '',
         ],
         'toggleColumns' => [
-            'label' => 'toggleColumns',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
-            'label' => 'reorderRecords',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -160,27 +158,18 @@ return [
             ],
         ],
         'logout' => [
-            'tooltip' => 'logout',
             'icon' => 'logout',
-            'label' => 'logout',
         ],
         'reorderRecords' => [
-            'tooltip' => 'reorderRecords',
             'icon' => 'reorderRecords',
-            'label' => 'reorderRecords',
         ],
         'cancel' => [
-            'tooltip' => 'cancel',
             'icon' => 'cancel',
-            'label' => 'cancel',
         ],
         'openColumnManager' => [
-            'tooltip' => 'openColumnManager',
             'icon' => 'openColumnManager',
-            'label' => 'openColumnManager',
         ],
         'submit' => [
-            'tooltip' => 'submit',
             'icon' => 'submit',
         ],
     ],
@@ -214,12 +203,12 @@ return [
     ],
     'plural' => [
         'model' => [
-            'label' => 'failed job.plural.model',
+            'label' => 'Jobs Falliti',
         ],
         'label' => 'Jobs Falliti',
         'sort' => 93,
         'icon' => 'job-failed-job',
     ],
-    'label' => 'failed job',
-    'plural_label' => 'Failed Job (Plurale)',
+    'label' => 'Job fallito',
+    'plural_label' => 'Jobs Falliti',
 ];

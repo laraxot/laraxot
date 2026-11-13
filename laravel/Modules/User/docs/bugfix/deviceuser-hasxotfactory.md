@@ -12,9 +12,9 @@ related:
   - "./git-conflicts-resolution.md"
   - "./gits-resolution.md"
   - "./multiple-bugs-resolution.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Bugfix: DeviceUser e HasXotFactory
 
 ## Contesto
@@ -106,8 +106,5 @@ php artisan tinker
 **Stato**: ✅ RISOLTO  
 **Modulo**: User  
 **File Modificati**: `Modules/User/app/Models/BasePivot.php`
-
-
-
 
 

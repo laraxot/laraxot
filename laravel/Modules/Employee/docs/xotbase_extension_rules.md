@@ -1,3 +1,9 @@
+---
+title: "Employee - XOTBASE_EXTENSION_RULES"
+module: Employee
+bmad: true
+status: active
+---
 # XotBase Extension Rules - Employee Module
 
 ## ABSOLUTE RULE: NEVER EXTEND FILAMENT CLASSES DIRECTLY

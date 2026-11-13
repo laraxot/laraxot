@@ -1,10 +1,15 @@
 ---
+qmd: "AI RULES CRITICAL"
+issues: []
+discussions: []
 title: "AI Agent Rules - CRITICAL UPDATE"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: ai-rules-critical.md
 ---
 
 # 🤖 AI Agent Rules - CRITICAL UPDATE

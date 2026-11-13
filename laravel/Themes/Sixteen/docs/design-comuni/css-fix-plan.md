@@ -1,3 +1,15 @@
+---
+title: "css fix plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "css fix plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # CSS Fix Plan - 2026-04-02
 
 **Goal**: Match reference computed styles exactly

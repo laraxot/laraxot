@@ -1,3 +1,15 @@
+---
+title: "ui ux enhancements"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ui ux enhancements"
+issues: []
+discussions: []
+status: draft
+---
+
 # UI/UX Enhancements per i Campi `name` e `slug` in MailTemplateResource
 
 ## Introduzione

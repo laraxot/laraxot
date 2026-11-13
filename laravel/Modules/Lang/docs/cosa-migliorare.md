@@ -1,12 +1,17 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+issues: []
+discussions: []
 title: "Cosa migliorare: modulo Lang"
 type: report
 module: Lang
 updated: 2026-09-01
 qmd: "cosa migliorare lang phpstan phpmd phpinsights coverage debito priorita"
+status: draft
 ---
 
-# Cosa migliorare — modulo Lang
+# Cosa migliorare: modulo Lang
 
 Ogni affermazione qui sotto viene da un comando eseguito il 1 settembre 2026, dopo il
 ripristino di `vendor/` a 330 pacchetti. Le misure precedenti a quella data giravano su
@@ -18,9 +23,9 @@ un autoloader dimezzato e non valgono.
 |---|---:|
 | Errori PHPStan (modulo isolato) | 0 |
 | Rilievi PHPMD su `app/` | 60 |
-| PHPInsights — Code | 94.1 % |
-| PHPInsights — Architecture | 92.9 % |
-| PHPInsights — Style | 85.2 % |
+| PHPInsights: Code | 94.1 % |
+| PHPInsights: Architecture | 92.9 % |
+| PHPInsights: Style | 85.2 % |
 | File PHP | 211 |
 | Casi di test | 251 |
 | Casi di test per file | 1.19 |
@@ -53,4 +58,5 @@ php -r 'echo count(require "vendor/composer/autoload_classmap.php");'   # ~25358
 ```
 
 Quadro comparativo di tutte le unità: [`docs/quality-audit.md`](../../../../docs/quality-audit.md).
+Quadro comparativo di tutte le unità: [`docs/quality-audit.md`](quality-audit.md).
 

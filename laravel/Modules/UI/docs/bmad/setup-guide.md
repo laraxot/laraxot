@@ -1,13 +1,28 @@
 ---
+<<<<<<< .merge_file_V7vESd
 title: "UI — BMAD Setup Guide"
+=======
+title: "UI: BMAD Setup Guide"
+>>>>>>> .merge_file_tMolI7
 description: "Setup e configurazione BMAD per il modulo UI"
 module: "UI"
 alias: "ui"
 documentation_date: "2026-05-27"
 bmad_version: "6.2.0"
+<<<<<<< .merge_file_V7vESd
 ---
 
 # UI — BMAD Setup Guide
+=======
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, ui, bmad]
+qmd: "ui   bmad setup guide ui"
+---
+
+# UI: BMAD Setup Guide
+>>>>>>> .merge_file_tMolI7
 
 ## Scopo
 

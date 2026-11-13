@@ -1,10 +1,15 @@
 ---
+qmd: "IMPLEMENTATIONS COMPLETED"
+issues: []
+discussions: []
 title: "NOTIFY - IMPLEMENTAZIONI COMPLETATE"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: implementations-completed.md
 ---
 
 # ✅ NOTIFY - IMPLEMENTAZIONI COMPLETATE

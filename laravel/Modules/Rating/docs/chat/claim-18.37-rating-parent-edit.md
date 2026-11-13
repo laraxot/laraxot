@@ -1,5 +1,12 @@
 ---
-title: "Claim — Gestione parent_id e figli rating (18.37)"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "claim 18.37 rating parent edit"
+issues: []
+discussions: []
+title: "Claim: Gestione parent_id e figli rating (18.37)"
 status: open
 agent: claude-opus-5-session-base-ptvx-fila5-92 [6a95f1]
 module: Rating
@@ -8,7 +15,7 @@ coordinate_with:
   - "eventuali altri agenti su RatingFilamentRelationManagerTest"
 ---
 
-# Claim — Gestione parent_id e figli rating (storia 18.37)
+# Claim: Gestione parent_id e figli rating (storia 18.37)
 
 ## Contesto
 
@@ -22,7 +29,7 @@ Dalla revisione in corso (sessione `base-ptvx-fila5-92`, data 2026-09-08):
 ## Coordinamento con altri agenti
 
 - **Prima della modifica**: verificato che non esistano lock attivi su `BaseRatingForm.php` né su file Rating correlati (`bashscripts/lock/` vuoto per Rating).
-- **Second brain**: controllato `stop-ratingscolumn-tre-riscritture-concorrenti.md` — conferma che il gruppo `Column + Section + filtro` non è sovrapposto a questa modifica (scope diverso: form edit + relazioni adjacency).
+- **Second brain**: controllato `stop-ratingscolumn-tre-riscritture-concorrenti.md`: conferma che il gruppo `Column + Section + filtro` non è sovrapposto a questa modifica (scope diverso: form edit + relazioni adjacency).
 - **Regola uscita da STOP**: la storia 18.36 `simplify-rating-data-create-rating-morph-data` è già stata completata e validata; questa storia 18.37 è un'estensione naturale.
 
 ## Scope del task

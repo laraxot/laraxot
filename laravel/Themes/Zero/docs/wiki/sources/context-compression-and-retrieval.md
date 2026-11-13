@@ -6,6 +6,16 @@ created: "2026-04-29T00:00:00Z"
 updated: "2026-05-12T10:32:00Z"
 related:
   - "[[Theme Zero Operating Focus]]"
+id: zero-docs-wiki-sources-context-compression-and-retrieval
+slug: context-compression-and-retrieval
+description: "Theme Zero-facing summary of the shared context-compression setup."
+document_type: source
+category: documentation
+status: active
+tags: []
+qmd: "context compression and retrieval"
+issues: []
+discussions: []
 ---
 
 # Context Compression and Retrieval

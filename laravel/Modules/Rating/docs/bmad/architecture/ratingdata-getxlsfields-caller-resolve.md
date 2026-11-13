@@ -1,5 +1,8 @@
 ---
-title: "RatingData::getXlsFields($where) — resolve subclass dal backtrace statico"
+tags: [documentation]
+issues: []
+discussions: []
+title: "RatingData::getXlsFields($where): resolve subclass dal backtrace statico"
 type: architecture
 module: Rating
 status: superseded
@@ -13,7 +16,7 @@ related:
   - ../../../../IndennitaResponsabilita/docs/prompts/04.md
 ---
 
-> **Superseded (2026-09-23)** — vedi
+> **Superseded (2026-09-23)**: vedi
 > [`5.232`](../stories/5.234-ratingdata-ratingclass-required-revert-backtrace.story.md).
 > `$ratingClass` torna required, `resolveRatingClassFromCaller()` rimosso:
 > il backtrace non porta il frame originale nella call chain asincrona

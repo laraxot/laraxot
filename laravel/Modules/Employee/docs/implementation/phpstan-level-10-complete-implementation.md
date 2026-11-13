@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-LEVEL-10-COMPLETE-IMPLEMENTATION"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Level 10 - Complete Implementation Plan
 
 ## Obiettivo: Zero Errori PHPStan Level 10

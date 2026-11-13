@@ -1,3 +1,14 @@
+---
+title: "changelog 1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "changelog 1"
+issues: []
+discussions: []
+---
+
 ## [0.0.3-dev.2](https://github.com/laraxot/module_media_fila5/compare/v0.0.3-dev.1...v0.0.3-dev.2) (2026-07-08)
 
 ### Bug Fixes

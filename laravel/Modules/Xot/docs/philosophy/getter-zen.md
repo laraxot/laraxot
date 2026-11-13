@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 
+=======
+---
+title: "La Filosofia Zen dei Getter Semantici"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, philosophy]
+qmd: "La Filosofia Zen dei Getter Semantici"
+---
+>>>>>>> laraxot/dev
 # La Filosofia Zen dei Getter Semantici
 
 ## Il Principio Fondamentale
@@ -106,4 +119,8 @@ Ogni volta che scrivi un getter, chiediti:
 
 - [Filosofia dei Getter](../datas/getter_philosophy.md)
 - [Convenzioni di Naming](../naming-conventions.md)
+<<<<<<< HEAD
 - [Linee Guida Filament](../filament-best-practices.md)
+=======
+- [Linee Guida Filament](../filament-best-practices.md) 
+>>>>>>> laraxot/dev

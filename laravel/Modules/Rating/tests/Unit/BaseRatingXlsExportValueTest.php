@@ -18,10 +18,10 @@ require_once __DIR__.'/../Fixtures/RatingsHostStub.php';
 
 describe('BaseRating xls_export_value (story 18.58)', function (): void {
     test('foglia: xls_export_value espone pivot.value numerico', function (): void {
-        $rating = new Rating;
+        $rating = new Rating();
         $rating->setRawAttributes(['id' => 10, 'title' => 'Voto']);
-        $rating->setRelation('children', new EloquentCollection);
-        $pivot = new RatingMorph;
+        $rating->setRelation('children', new EloquentCollection());
+        $pivot = new RatingMorph();
         $pivot->setRawAttributes(['rating_id' => 10, 'value' => 7, 'note' => null]);
         $rating->setRelation('pivot', $pivot);
 
@@ -30,7 +30,7 @@ describe('BaseRating xls_export_value (story 18.58)', function (): void {
     });
 
     test('padre con figli: xls_export_value e\' txt del figlio selezionato via pivot.value', function (): void {
-        $child = new Rating;
+        $child = new Rating();
         $child->setRawAttributes([
             'id' => 99,
             'title' => 'Opzione B',
@@ -38,10 +38,10 @@ describe('BaseRating xls_export_value (story 18.58)', function (): void {
             'parent_id' => 50,
         ]);
 
-        $parent = new Rating;
+        $parent = new Rating();
         $parent->setRawAttributes(['id' => 50, 'title' => 'Criterio Select']);
         $parent->setRelation('children', new EloquentCollection([$child]));
-        $pivot = new RatingMorph;
+        $pivot = new RatingMorph();
         $pivot->setRawAttributes(['rating_id' => 50, 'value' => 99, 'note' => 'nota libero']);
         $parent->setRelation('pivot', $pivot);
 
@@ -51,13 +51,13 @@ describe('BaseRating xls_export_value (story 18.58)', function (): void {
     });
 
     test('padre senza selezione: xls_export_value stringa vuota', function (): void {
-        $child = new Rating;
+        $child = new Rating();
         $child->setRawAttributes(['id' => 99, 'title' => 'Opzione', 'parent_id' => 50]);
 
-        $parent = new Rating;
+        $parent = new Rating();
         $parent->setRawAttributes(['id' => 50, 'title' => 'Criterio']);
         $parent->setRelation('children', new EloquentCollection([$child]));
-        $pivot = new RatingMorph;
+        $pivot = new RatingMorph();
         $pivot->setRawAttributes(['rating_id' => 50, 'value' => null, 'note' => null]);
         $parent->setRelation('pivot', $pivot);
 
@@ -65,17 +65,17 @@ describe('BaseRating xls_export_value (story 18.58)', function (): void {
     });
 
     test('ratingXlsValuePath + data_get sull\'host risolvono il txt del figlio', function (): void {
-        $child = new Rating;
+        $child = new Rating();
         $child->setRawAttributes(['id' => 99, 'title' => 'Figlio', 'txt' => 'Scelta A', 'parent_id' => 52]);
 
-        $parent = new Rating;
+        $parent = new Rating();
         $parent->setRawAttributes(['id' => 52, 'title' => 'Padre']);
         $parent->setRelation('children', new EloquentCollection([$child]));
-        $pivot = new RatingMorph;
+        $pivot = new RatingMorph();
         $pivot->setRawAttributes(['rating_id' => 52, 'value' => 99, 'note' => 'n1']);
         $parent->setRelation('pivot', $pivot);
 
-        $host = new RatingsHostStub;
+        $host = new RatingsHostStub();
         $host->setRelation('ratings', new EloquentCollection([$parent]));
         $host->setRelation('ratingMorphs', new EloquentCollection([$pivot]));
 

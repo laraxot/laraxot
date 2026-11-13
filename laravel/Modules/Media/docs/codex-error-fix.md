@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Codex Configuration Error Fixes"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "codex error fix"
 related:
   - "./webm.md"
+status: draft
 ---
 # Codex Configuration Error Fixes
 

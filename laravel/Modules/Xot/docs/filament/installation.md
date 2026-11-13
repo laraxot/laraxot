@@ -3,6 +3,14 @@ title: Installazione Filament
 description: Installazione Filament
 extends: _layouts.documentation
 section: content
+<<<<<<< HEAD
+=======
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, filament]
+qmd: "installazione filament {#installazione-filament} xot"
+>>>>>>> laraxot/dev
 ---
 
 # Installazione Filament {#installazione-filament}
@@ -25,7 +33,11 @@ section: content
 
 - php artisan vendor:publish --tag="filament-jet-views"
 
+<<<<<<< HEAD
 - mettere in composer
+=======
+- mettere in composer 
+>>>>>>> laraxot/dev
 
 ```bash
 "repositories": [
@@ -52,13 +64,18 @@ section: content
 - composer require savannabits/filament-modules versione 1.1
 
 - php artisan module:use Modulo
+<<<<<<< HEAD
 -
+=======
+- 
+>>>>>>> laraxot/dev
 - php artisan module:make-filament-context Filament
 
 ### Versione HEAD
 
 - php artisan make:filament-user per creare utente
 ## Collegamenti tra versioni di installation.md
+<<<<<<< HEAD
 * [installation.md](../../../xot/docs/filament/installation.md)
 * [installation.md](../../../xot/docs/installation.md)
 * [installation.md](../../../xot/docs/base/installation.md)
@@ -66,6 +83,8 @@ section: content
 * [installation.md](../../../lang/docs/installation.md)
 * [installation.md](../../../cms/docs/installation.md)
 * [installation.md](../../../../themes/one/docs/installation.md)
+=======
+>>>>>>> laraxot/dev
 * [installation.md](../../../Xot/docs/filament/installation.md)
 * [installation.md](../../../Xot/docs/installation.md)
 * [installation.md](../../../Xot/docs/base/installation.md)
@@ -74,8 +93,17 @@ section: content
 * [installation.md](../../../Cms/docs/installation.md)
 * [installation.md](../../../../Themes/One/docs/installation.md)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> laraxot/dev
 ### Versione Incoming
 
 - php artisan make:filament-user per creare utente
 
+<<<<<<< HEAD
 ---
+=======
+---
+
+>>>>>>> laraxot/dev

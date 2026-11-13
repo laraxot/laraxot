@@ -1,5 +1,11 @@
 ---
-title: Rating — test e coverage
+type: note
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "testing and coverage"
+issues: []
+discussions: []
+title: Rating: test e coverage
 description: Come si eseguono i test del modulo Rating, su quale perimetro si misura la coverage e perché alcuni test sono in skip condizionato.
 document_type: doc
 category: testing
@@ -15,7 +21,7 @@ related:
 tags: [pest, coverage, xdebug, phpunit, skip, xotbasepest]
 ---
 
-# Rating — test e coverage
+# Rating: test e coverage
 
 ## Eseguire la suite
 
@@ -29,7 +35,7 @@ coverage** su `Modules/Rating/app`. La `laravel/phpunit.xml` di root dichiara
 `<source><include><directory>app</directory>`, cioè lo scheletro applicativo, non i moduli:
 misurata da lì, la coverage di Rating non compare affatto.
 
-Il `bootstrap` è `../../vendor/autoload.php` — **relativo al file di config**, non alla cwd.
+Il `bootstrap` è `../../vendor/autoload.php`: **relativo al file di config**, non alla cwd.
 Le `phpunit.xml` di `Modules/Activity` e `Modules/Job` dichiarano `vendor/autoload.php` e
 per questo non sono eseguibili da `laravel/`.
 
@@ -45,9 +51,9 @@ XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Rating/phpunit.xml --coverage 
 | 2026-08-19, baseline | **3,0 %** | 3 passati, 8 rossi |
 | 2026-08-19, primo giro | **13,1 %** | 34 passati, 7 skipped |
 | 2026-08-19, secondo giro | **32,3 %** | 69 passati, 7 skipped |
-| 2026-08-19 22:10, story 5.24 | **71,1 %** | 84 passati, 9 skipped — gate `--min=50` ✅ |
-| 2026-08-20, story 5.25 | **100 %** | 92 passati, 0 skipped — gate `--min=80` ✅ |
-| 2026-08-20, story 5.26 | **100,0 %** | 102 passati, 7 skipped — gate `--min=100` ✅ |
+| 2026-08-19 22:10, story 5.24 | **71,1 %** | 84 passati, 9 skipped: gate `--min=50` ✅ |
+| 2026-08-20, story 5.25 | **100 %** | 92 passati, 0 skipped: gate `--min=80` ✅ |
+| 2026-08-20, story 5.26 | **100,0 %** | 102 passati, 7 skipped: gate `--min=100` ✅ |
 
 Gate floor 100% (story 5.26):
 
@@ -57,7 +63,7 @@ XDEBUG_MODE=coverage ./vendor/bin/pest -c Modules/Rating/phpunit.xml --coverage 
 
 Pest stampa la tabella di coverage solo quando il run esce `0`.
 
-## XotBasePest (gap aperto — story 3.1)
+## XotBasePest (gap aperto: story 3.1)
 
 Il bootstrap [`Modules/Rating/tests/Pest.php`](../tests/Pest.php) deve allinearsi ad ADR-003:
 
@@ -87,7 +93,7 @@ Host stub per `HasRatingsTrait`: `tests/Unit/Fixtures/RatingsHostStub.php` nel n
 `Modules\Rating\Models\` (necessario a `XotBaseModel::getClassName()` che cerca `Models\`
 nello stack). Estende `AbstractRatingsHost`, non `Model` nudo: così gli accessor e le
 relazioni non arrivano a PHPStan come `mixed` (famiglia E, story 4.26). **Nessun file
-test cancellato** — solo guardie e generics.
+test cancellato**: solo guardie e generics.
 
 Story campagna: [`docs/bmad/stories/4.26.coda-moduli-phpstan-zero.story.md`](../../../../docs/bmad/stories/4.26.coda-moduli-phpstan-zero.story.md).
 
@@ -138,7 +144,7 @@ sarebbe rosso a vuoto, uno che asserisce quello che c'è si accorge del cambiame
 
 | Classe | Stato |
 |--------|-------|
-| `Filament/Resources/RatingMorphResource/Schemas/RatingMorphForm` | `getFormSchema()` ritorna `[]`, quindi il create/edit di `RatingMorphResource` non renderizza campi — mentre `RatingMorphInfolist`, della stessa resource, ne dichiara otto |
+| `Filament/Resources/RatingMorphResource/Schemas/RatingMorphForm` | `getFormSchema()` ritorna `[]`, quindi il create/edit di `RatingMorphResource` non renderizza campi: mentre `RatingMorphInfolist`, della stessa resource, ne dichiara otto |
 | `View/Components/Dashboard/Item` | `render()` ritorna la stringa vuota: componente registrato, nessuna view |
 
 ## Cosa non è testabile a unit
@@ -146,5 +152,5 @@ sarebbe rosso a vuoto, uno che asserisce quello che c'è si accorge del cambiame
 I componenti Filament non si ispezionano fuori da uno `Schema`: `Block::getChildComponents()`
 solleva `Typed property … Component::$container must not be accessed before initialization`.
 Restano coperti a costo zero i metodi statici che ritornano array (`getTableColumns()`,
-`getTableActions()`, `getTableBulkActions()` — vedi `ListRatingsPageTest`) e le factory
+`getTableActions()`, `getTableBulkActions()`: vedi `ListRatingsPageTest`) e le factory
 (`::create()`, `->getName()`, `->getLabel()`).

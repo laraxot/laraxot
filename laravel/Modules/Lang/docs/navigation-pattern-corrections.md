@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Correzioni Pattern '.navigation' - Gennaio 2025"
 module: "Lang"
 type: pattern
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "guida migrazione step by step"
 related:
   - "./italian-text-refined-audit-report.md"
+status: superseded
+superseded_by: correzioni-navigation-pattern.md
 ---
 # Correzioni Pattern ".navigation" - Gennaio 2025
 

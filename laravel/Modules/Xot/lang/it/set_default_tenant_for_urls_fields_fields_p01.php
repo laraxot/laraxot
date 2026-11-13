@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 // Xot translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
 // Canon: Modules/Xot/docs/wiki — domain i18n only.
 // File: lang/it/set_default_tenant_for_urls_fields_fields_p01.php
@@ -54,6 +55,26 @@ return [
         ],
         'city' => [
             'description' => 'city',
+=======
+return [
+    'fields' => [
+        'email' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'password' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'remember' => [
+            'helper_text' => '',
+            'tooltip' => '',
+        ],
+        'cap' => [
+            'tooltip' => '',
+        ],
+        'city' => [
+>>>>>>> laraxot/dev
             'label' => '',
             'tooltip' => '',
             'helper_text' => '',
@@ -249,10 +270,13 @@ return [
             'description' => '',
         ],
         'itemIsDefault' => [
+<<<<<<< HEAD
             'description' => 'itemIsDefault',
             'helper_text' => 'itemIsDefault',
             'placeholder' => 'itemIsDefault',
             'label' => 'itemIsDefault',
+=======
+>>>>>>> laraxot/dev
             'tooltip' => '',
         ],
         'zeusData' => [
@@ -286,6 +310,7 @@ return [
             'description' => '',
         ],
         'user_id' => [
+<<<<<<< HEAD
             'label' => 'user_id',
             'placeholder' => 'user_id',
             'helper_text' => 'user_id',
@@ -332,6 +357,26 @@ return [
             'placeholder' => 'is_active',
             'helper_text' => 'is_active',
             'description' => 'is_active',
+=======
+            'tooltip' => '',
+        ],
+        'name' => [
+            'tooltip' => '',
+        ],
+        'slug' => [
+            'tooltip' => '',
+        ],
+        'category_id' => [
+            'tooltip' => '',
+        ],
+        'description' => [
+            'tooltip' => '',
+        ],
+        'details' => [
+            'tooltip' => '',
+        ],
+        'is_active' => [
+>>>>>>> laraxot/dev
             'tooltip' => '',
         ],
     ],

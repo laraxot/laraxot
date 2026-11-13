@@ -1,4 +1,7 @@
 ---
+qmd: "handoff phpstan random scan"
+issues: []
+discussions: []
 title: "Handoff — PHPStan scan random 2026-06-15"
 type: handoff
 tags: [phpstan, gate, swarm, coordination]
@@ -8,6 +11,7 @@ related:
   - ../wiki/memories/phpstan-modules-inventory.md
   - ../wiki/how-to/phpstan-modules-swarm.md
   - handoff-phpstan-modules-zero.md
+status: draft
 ---
 
 # Handoff — PHPStan scan random 2026-06-15

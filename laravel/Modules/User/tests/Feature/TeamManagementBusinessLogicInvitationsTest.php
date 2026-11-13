@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_MphSTb
 use Illuminate\Database\Eloquent\Relations\HasMany;
+=======
+>>>>>>> .merge_file_N42HcX
 use Illuminate\Support\Facades\DB;
 use Modules\User\Models\Team;
 use Modules\User\Models\TeamInvitation;
@@ -307,5 +310,13 @@ test('can force delete team', function (): void {
 });
 
 test('team invitations relation is has many', function (): void {
+<<<<<<< .merge_file_MphSTb
     Assert::assertInstanceOf(HasMany::class, teamMgmtBizCreateTeam()->teamInvitations());
+=======
+    // Jetstream: la relazione si chiama teamInvitations() (BaseTeamRelationsTrait), non invitations().
+    Assert::assertSame(
+        'team_id',
+        (new Team)->teamInvitations()->getForeignKeyName(),
+    );
+>>>>>>> .merge_file_N42HcX
 });

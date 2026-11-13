@@ -10,6 +10,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Components\Text;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Modules\Employee\Models\AbsenceRequest;
 use Modules\Employee\Models\Employee;
@@ -121,19 +122,19 @@ class LeaveBalanceWidget extends XotBaseSchemaWidget
     {
         $usedMinutesByType = AbsenceRequest::query()
             ->where('user_id', $employee->getKey())
-            ->where('status', AbsenceRequest::STATUS_APPROVED)
+            ->where('status', \Modules\Employee\Enums\AbsenceRequestStatusEnum::APPROVED->value)
             ->whereBetween('starts_at', [$from, $to])
             ->get()
             ->groupBy('type')
-            ->map(fn ($requests) => (int) $requests->sum(
+            ->map(fn (Collection $requests) => (int) $requests->sum(
                 fn (AbsenceRequest $request): int => (int) $request->ends_at->diffInMinutes($request->starts_at)
             ));
 
         $definitions = [
-            'ferie' => ['type' => AbsenceRequest::TYPE_VACATION, 'label_key' => 'vacation', 'icon' => 'heroicon-o-sun'],
-            'permessi' => ['type' => AbsenceRequest::TYPE_LEAVE, 'label_key' => 'permits', 'icon' => 'heroicon-o-document-text'],
-            'malattia' => ['type' => AbsenceRequest::TYPE_SICK, 'label_key' => 'former_holidays', 'icon' => 'heroicon-o-heart'],
-            'infortunio' => ['type' => AbsenceRequest::TYPE_INJURY, 'label_key' => 'hour_bank', 'icon' => 'heroicon-o-banknotes'],
+            'ferie' => ['type' => \Modules\Employee\Enums\AbsenceRequestTypeEnum::VACATION->value, 'label_key' => 'vacation', 'icon' => 'heroicon-o-sun'],
+            'permessi' => ['type' => \Modules\Employee\Enums\AbsenceRequestTypeEnum::LEAVE->value, 'label_key' => 'permits', 'icon' => 'heroicon-o-document-text'],
+            'malattia' => ['type' => \Modules\Employee\Enums\AbsenceRequestTypeEnum::SICK->value, 'label_key' => 'former_holidays', 'icon' => 'heroicon-o-heart'],
+            'infortunio' => ['type' => \Modules\Employee\Enums\AbsenceRequestTypeEnum::INJURY->value, 'label_key' => 'hour_bank', 'icon' => 'heroicon-o-banknotes'],
         ];
 
         $balances = [];

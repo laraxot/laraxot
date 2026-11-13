@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Performance"
 module: "Lang"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "migration filament 4"
 related:
   - "./italian-text-refined-audit-report.md"
+  - "../italian-text-refined-audit-report.md"
+status: draft
 ---
 # Performance
 
@@ -108,6 +112,8 @@ Route::middleware([
 * [performance.md](../../../lang/docs/packages/performance.md)
 * [performance.md](../../../job/docs/packages/performance.md)
 * [performance.md](../../../cms/docs/frontoffice/performance.md)
+* [performance.md](../../../Job/docs/packages/performance.md)
+* [performance.md](../../../Cms/docs/frontoffice/performance.md)
 * [performance.md](../../../Xot/docs/features/performance.md)
 * [performance.md](../../../Xot/docs/packages/performance.md)
 * [performance.md](../../../Xot/docs/roadmap/architecture/performance.md)

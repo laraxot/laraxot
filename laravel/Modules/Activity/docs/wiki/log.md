@@ -67,7 +67,6 @@ status: draft
 - Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt) _(target mancante, verificato 2026-10-14)_
 - GitHub: [#272](https://github.com/laraxot/base_fixcity_fila5/issues/272) / [D#273](https://github.com/laraxot/base_fixcity_fila5/discussions/273)
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 
 ---
@@ -76,11 +75,6 @@ title: "Activity Log"
 <<<<<<< HEAD
 =======
 >>>>>>> 4fb998e0 (.)
-=======
-
----
-title: "Activity Log"
->>>>>>> 13cf1831 (.)
 type: log
 module: Activity
 tags: [activity, phpstan, pest, qmd]
@@ -91,24 +85,15 @@ issues:
   - "https://github.com/laraxot/base_fixcity_fila5/issues/328"
 discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/329"
-<<<<<<< HEAD
 ---
 
 ---
-=======
-
->>>>>>> 13cf1831 (.)
 
 ## [2026-06-13] phpstan | Gate chef — 7 file Actions → Assert
 
 - Convertiti tutti i test `tests/Unit/Actions/*` da `expect()` a `Assert::assert*()` per eliminare `method.internalClass` (82 errori piattaforma → 0).
-<<<<<<< HEAD
 - Aggiunti [overviews/completion-status.md](overviews/completion-status.md) e aggiornato [PROJECT-ROADMAP.md](project-roadmap.md) scope Activity.
 - Hub: [Xot platform-completion-roadmap](../../Xot/docs/wiki/overviews/platform-completion-roadmap.md) _(target mancante, verificato 2026-10-14)_.
-=======
-- Aggiunti [overviews/completion-status.md](overviews/completion-status.md) e aggiornato [PROJECT-ROADMAP.md](PROJECT-ROADMAP.md) scope Activity.
-- Hub: [Xot platform-completion-roadmap](../../Xot/docs/wiki/overviews/platform-completion-roadmap.md).
->>>>>>> 13cf1831 (.)
 - GitHub: [Activity#18](https://github.com/laraxot/module_activity_fila5/issues/18) / base [#372](https://github.com/laraxot/base_fixcity_fila5/issues/372).
 
 ## [2026-06-10] testcase | Brainstorm Activity + nWidart BaseTestCase
@@ -116,11 +101,7 @@ discussions:
 - Confermato: Activity `TestCase` già estende `XotBaseTestCase`.
 - `Nwidart\Modules\Tests\BaseTestCase` esiste su GitHub (Orchestra Testbench) ma non è autoloadato in app — non usare come parent.
 - Gap: solo Geo ancora su Laravel `TestCase` diretto.
-<<<<<<< HEAD
 - Chat: [docs/chat/testcase-brainstorm-activity-nwidart.md](../../../../../docs/chat/testcase-brainstorm-activity-nwidart.md)
-=======
-- Chat: [docs/chat/2026-06-10-testcase-brainstorm-activity-nwidart.md](../../../../docs/chat/2026-06-10-testcase-brainstorm-activity-nwidart.md)
->>>>>>> 13cf1831 (.)
 
 ## [2026-06-10] phpstan | Activity clean with Pest tests preserved
 
@@ -142,23 +123,16 @@ discussions:
 
 ## [2026-06-05] docs | HackerNoon harness — tips 001-022 in wiki locale
 
-<<<<<<< HEAD
 - Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt) _(target mancante, verificato 2026-10-14)_
-=======
-- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
->>>>>>> 13cf1831 (.)
 - GitHub: [#272](https://github.com/laraxot/base_fixcity_fila5/issues/272) / [D#273](https://github.com/laraxot/base_fixcity_fila5/discussions/273)
 
 ---
 title: "Activity Log"
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 >>>>>>> 77d3d692 (.)
 =======
 >>>>>>> 4fb998e0 (.)
-=======
->>>>>>> 13cf1831 (.)
 module: "Activity"
 ---
 
@@ -191,7 +165,6 @@ module: "Activity"
 - 2026-06-10: activity_log consolidato in 2026_06_10_140000_create_activity_table.php; duplicate in _bak/
 
 - 2026-06-10: activity_log — consolidate add/fix/update in 141000_create_activity_table; anti-pattern in _bak/
-<<<<<<< HEAD
 <<<<<<< .merge_file_DCzJGY
 >>>>>>> 35d8cf69 (Initial commit)
 =======
@@ -222,5 +195,3 @@ module: "Activity"
 =======
 - Cleared 6 `argument.type` / `return.type` errors.
 >>>>>>> .merge_file_yJbfCX
-=======
->>>>>>> 13cf1831 (.)

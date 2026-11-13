@@ -1,9 +1,13 @@
 ---
+qmd: "project structure"
+issues: []
+discussions: []
 title: "Project Structure — Module Seo"
 type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [structure, architecture, module]
+status: active
 ---
 
 # Project Structure — Module **Seo**
@@ -94,11 +98,11 @@ graph TD
 
 ## Riferimenti Globali
 
-- [Project Wiki Root](../../docs/wiki/)
-- [Global Rules](../../docs/wiki/rules/)
-- [Global Skills](../../docs/wiki/skills/)
-- [Global Commands](../../docs/wiki/commands/)
-- [Global Memories](../../docs/wiki/memories/)
+- [Project Wiki Root](../../docs/wiki/) _(target mancante, verificato 2026-10-08)_
+- [Global Rules](wiki/rules)
+- [Global Skills](wiki/skills)
+- [Global Commands](wiki/commands)
+- [Global Memories](wiki/memories)
 
 ## Setup Iniziale (per nuovi moduli)
 

@@ -5,6 +5,8 @@ type: integration
 tags: [integrations, modules, user]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
+qmd: "terms and conditions user"
 ---
 
 https://github.com/nowendwell/laravel-terms
@@ -17,7 +19,7 @@ https://dev.to/filamentmastery/adding-terms-and-conditions-acceptance-to-filamen
 
 
 
-## Appendice — contenuto migrato
+## Appendice: contenuto migrato
 
 ---
 module: theme

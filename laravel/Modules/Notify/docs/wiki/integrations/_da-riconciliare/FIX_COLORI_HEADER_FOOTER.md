@@ -1,10 +1,15 @@
 ---
+qmd: "FIX COLORI HEADER FOOTER"
+issues: []
+discussions: []
 title: "Fix Colori Header e Footer - Bootstrap Italia"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: fix-colori-header-footer.md
 ---
 
 # 🎨 Fix Colori Header e Footer - Bootstrap Italia

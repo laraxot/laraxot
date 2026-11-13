@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "AI Methodologies Handbook"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "ai methodologies"
 related:
   - "./webm.md"
+status: draft
 ---
 # AI Methodologies Handbook
 

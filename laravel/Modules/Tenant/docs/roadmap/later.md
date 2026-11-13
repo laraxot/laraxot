@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Later (Module Tenant)"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "03 later"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 # Later (Module Tenant)
 

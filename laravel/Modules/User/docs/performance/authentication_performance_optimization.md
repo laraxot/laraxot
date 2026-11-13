@@ -1,3 +1,11 @@
+---
+title: "Authentication Performance Optimization - User Module"
+type: note
+status: draft
+updated: 2026-10-26
+tags: [docs, user, performance]
+qmd: "authentication performance optimization - user module user"
+---
 # Authentication Performance Optimization - User Module
 
 ## 🚨 Critical Issues Identified
@@ -155,7 +163,8 @@ CREATE INDEX idx_sessions_last_activity ON sessions(last_activity);
 
 ## 📚 Related Documentation
 
-- [authentication.md](./authentication.md)
+- [authentication.md](../authentication.md)
+- [authentication.md](../authentication.md)
 - [session-management.md](./session-management.md)
 - [roles-permissions.md](./roles-permissions.md)
 - [optimization-analysis.md](./optimization-analysis.md)

@@ -1,3 +1,9 @@
+---
+title: "Employee - PHILOSOPHY-COMPLETE"
+module: Employee
+bmad: true
+status: active
+---
 # Employee - Filosofia Completa: Logica, Religione, Politica, Zen
 
 **Data Creazione**: 2025-12-23  

@@ -7,7 +7,7 @@
                     <img class="max-w-lg" src="https://error404.fun/img/full-preview/1x/3.png" alt="">
                 </div>
                 <div class="space-y-2 text-center">
-                    <h2 class="text-2xl font-bold md:text-4xl lg:text-6xl">Whooops!</h2>
+                    <h2 class="text-2xl font-bold md:text-4xl lg:text-6xl">{{ __('pub_theme::blocks_content.404.whooops.message') }}</h2>
                     <p class="text-gray-400">{{ __('pub_theme::404.no_article') }}</p>
                 </div>
             </div>

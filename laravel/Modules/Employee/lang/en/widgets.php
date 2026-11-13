@@ -97,6 +97,23 @@ return [
             'description' => 'All your requests have been handled by the administrator.',
         ],
     ],
+    // TimeClockWidget
+    'time_clock' => [
+        'session_active' => 'Session active',
+        'session_inactive' => 'No active session',
+        'session_completed' => 'Day completed',
+        'no_entries' => 'No clock entries',
+        'clock_in' => 'Clock in',
+        'clock_out' => 'Clock out',
+        'notifications' => [
+            'clock_in_success' => 'Clock-in recorded at :time',
+            'clock_out_success' => 'Clock-out recorded at :time',
+            'already_clocked_in' => 'You are already clocked in',
+            'must_clock_in_first' => 'Clock in first',
+            'user_not_found' => 'Employee profile not found',
+            'error_occurred' => 'Error while clocking',
+        ],
+    ],
     // Existing widgets
     'time_tracking' => [
         'title' => 'Time Tracking',

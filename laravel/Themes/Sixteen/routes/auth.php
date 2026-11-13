@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
+/*
+ * Authentication Route definitions for the Sixteen theme.
+ * All Route::view() calls use view-string branded types compatible with PHPStan.
+ */
+
 use Illuminate\Support\Facades\Route;
 use Themes\Sixteen\Actions\CieAuthAction;
 use Themes\Sixteen\Actions\SpidAuthAction;
@@ -85,8 +90,9 @@ Route::prefix('sixteen/auth')
     ->name('sixteen.auth.')
     ->middleware(['web'])
     ->group(function (): void {
-        // Selezione provider di autenticazione
-        Route::view('select-provider', 'pub_theme::auth.select-provider')
+        /** @var view-string $selectProviderView */
+        $selectProviderView = 'pub_theme::auth.select-provider';
+        Route::view('select-provider', $selectProviderView)
             ->name('select-provider');
 
         // Status generale autenticazione digitale
@@ -136,11 +142,15 @@ if (app()->environment(['local', 'development', 'testing'])) {
         ->middleware(['web'])
         ->group(function (): void {
             // Test page per SPID
-            Route::view('spid', 'pub_theme::test.spid-test')
+            /** @var view-string $spidTestView */
+            $spidTestView = 'pub_theme::test.spid-test';
+            Route::view('spid', $spidTestView)
                 ->name('spid');
 
             // Test page per CIE
-            Route::view('cie', 'pub_theme::test.cie-test')
+            /** @var view-string $cieTestView */
+            $cieTestView = 'pub_theme::test.cie-test';
+            Route::view('cie', $cieTestView)
                 ->name('cie');
 
             // Simulate SPID response (per testing)

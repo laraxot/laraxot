@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Gestione delle Traduzioni Mancanti con Spatie Laravel Translatable"
 module: "Lang"
 type: concept
@@ -8,6 +10,9 @@ updated: 2026-07-14
 qmd: "redundancy analysis"
 related:
   - "./italian-text-refined-audit-report.md"
+  - "../italian-text-refined-audit-report.md"
+status: superseded
+superseded_by: gestione-traduzioni-mancanti.md
 ---
 # Gestione delle Traduzioni Mancanti con Spatie Laravel Translatable
 

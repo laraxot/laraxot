@@ -1,21 +1,25 @@
 ---
-title: "Media Module — Complete Philosophy"
+qmd: "PHILOSOPHY"
+issues: []
+discussions: []
+title: "Media Module: Complete Philosophy"
 module: "Media"
 type: philosophy
 tags: [philosophy, architecture, design, storage, media, ffmpeg]
 created: 2026-09-06
 updated: 2026-09-06
+status: draft
 ---
 
-# Media Module — Complete Philosophy
+# Media Module: Complete Philosophy
 
 ## Preliminaries
 
-This module contains 49 actions across 124 PHP files. That density — one action per 2.5 files — is intentional. File handling is inherently fragmented: upload-to-storage, then storage-to-format, then format-to-bytes. No monolithic God-action will emerge. Spatie Media Library forms the substrate; FFmpeg and Intervention Image are the verbs.
+This module contains 49 actions across 124 PHP files. That density: one action per 2.5 files: is intentional. File handling is inherently fragmented: upload-to-storage, then storage-to-format, then format-to-bytes. No monolithic God-action will emerge. Spatie Media Library forms the substrate; FFmpeg and Intervention Image are the verbs.
 
 ---
 
-## I. RELIGIONE — The Dogmas
+## I. RELIGIONE: The Dogmas
 
 ### Core Tenets
 
@@ -29,12 +33,12 @@ The Media module is built on immovable truths about file systems and the physica
 
 #### 2. **The Session Belongs to the Request, Not the File**
 - An upload happens in a session. The model doesn't exist yet.
-- Files in `TemporaryUpload` live in an orphan state—attached to a session, not to a domain entity.
+- Files in `TemporaryUpload` live in an orphan state-attached to a session, not to a domain entity.
 - If the user never confirms, these files accumulate like dust in a static room.
 - **Consequence:** `TemporaryUpload` must be explicitly cleaned, with timestamps and visible accounting.
 
 #### 3. **Disk Boundaries Are Rigid**
-- Local disk, S3, Minio—they are *not* the same thing to the filesystem.
+- Local disk, S3, Minio-they are *not* the same thing to the filesystem.
 - A path that works on S3 (`s3://bucket/file.jpg`) will fail on local disk.
 - CloudFront URLs require signing; local filesystem URLs do not.
 - **Consequence:** Disk abstraction is crucial; defaulting to local and hoping it scales is the silent killer of production apps.
@@ -47,7 +51,7 @@ The Media module is built on immovable truths about file systems and the physica
 
 #### 5. **Spatie Media Library Is the Substrate**
 - Trying to reimplement media handling without it is the path of maximum suffering.
-- `HasMedia` trait, `addMedia()`, `toMediaCollection()`, `registerMediaConversions()`—these patterns work.
+- `HasMedia` trait, `addMedia()`, `toMediaCollection()`, `registerMediaConversions()`-these patterns work.
 - The alternative is 200 lines of custom code for the same 10 lines of functionality.
 - **Consequence:** All models that hold files must use `HasMedia`. Deviation is debt.
 
@@ -65,7 +69,7 @@ The Media module is built on immovable truths about file systems and the physica
 
 ---
 
-## II. FILOSOFIA — The Why of 49 Actions
+## II. FILOSOFIA: The Why of 49 Actions
 
 ### Taxonomy of the 49 Actions
 
@@ -73,43 +77,43 @@ The 49 actions fall into clear clusters. Understanding this taxonomy prevents du
 
 #### **Core Media Operations (8 actions)**
 
-- `AttachMediaAction` — Associates media with models
-- `SaveAttachmentsAction` — Persists temporary uploads to permanent media collections
-- `GetAttachmentsSchemaAction` — Generates Filament form schema for file uploads (PDF, Word, etc.)
-- `DeleteFileAction` — Removes file and cleans up associated records
-- `CheckFileExistsAction` — Verifies file presence on disk
-- `SvgExistsAction` — Specific check for SVG existence (likely for preview generation)
-- `GetFileInfoAction` — Retrieves metadata (size, type, dimensions)
-- `GenerateTemporaryUploadPathAction` — Creates session-scoped path for incoming uploads
+- `AttachMediaAction`: Associates media with models
+- `SaveAttachmentsAction`: Persists temporary uploads to permanent media collections
+- `GetAttachmentsSchemaAction`: Generates Filament form schema for file uploads (PDF, Word, etc.)
+- `DeleteFileAction`: Removes file and cleans up associated records
+- `CheckFileExistsAction`: Verifies file presence on disk
+- `SvgExistsAction`: Specific check for SVG existence (likely for preview generation)
+- `GetFileInfoAction`: Retrieves metadata (size, type, dimensions)
+- `GenerateTemporaryUploadPathAction`: Creates session-scoped path for incoming uploads
 
-**Why:** File handling has distinct phases—attach, save, delete, verify. Each is a micro-concern.
+**Why:** File handling has distinct phases-attach, save, delete, verify. Each is a micro-concern.
 
 #### **Video Processing (7 actions)**
 
-- `ConvertVideoAction` — Main FFmpeg-based video encoding to MP4
-- `ConvertVideoByConvertDataAction` — Encodes using `MediaConvert` data object
-- `ConvertVideoByMediaConvertAction` — Encodes using database record (allows progress tracking)
-- `GetVideoDurationAction` — Extracts video length via FFmpeg
-- `GetVideoScreenshotAction` — Generates thumbnail frame from video
-- `GetVideoFrameContentAction` — Reads raw frame data for preview
-- `StreamVideoAction` — HTTP-range aware video streaming (seek support)
+- `ConvertVideoAction`: Main FFmpeg-based video encoding to MP4
+- `ConvertVideoByConvertDataAction`: Encodes using `MediaConvert` data object
+- `ConvertVideoByMediaConvertAction`: Encodes using database record (allows progress tracking)
+- `GetVideoDurationAction`: Extracts video length via FFmpeg
+- `GetVideoScreenshotAction`: Generates thumbnail frame from video
+- `GetVideoFrameContentAction`: Reads raw frame data for preview
+- `StreamVideoAction`: HTTP-range aware video streaming (seek support)
 
 **Why:** Video is inherently async and stateful. FFmpeg has many modes; each mode is an action.
 
 #### **Subtitle Handling (4 actions)**
 
-- `ConvertSrtToVttAction` — Transforms SRT format to VTT (browser-compatible)
-- `ExtractSubtitlePlainTextAction` — Extracts text content from subtitle file
-- `ParseSubtitleXmlAction` — Parses XML-based subtitle formats (TTML, etc.)
-- `UpdateModelSubtitleFieldAction` — Persists subtitle path to media record
+- `ConvertSrtToVttAction`: Transforms SRT format to VTT (browser-compatible)
+- `ExtractSubtitlePlainTextAction`: Extracts text content from subtitle file
+- `ParseSubtitleXmlAction`: Parses XML-based subtitle formats (TTML, etc.)
+- `UpdateModelSubtitleFieldAction`: Persists subtitle path to media record
 
 **Why:** Subtitles are a separate concern from video. Format normalization is necessary.
 
 #### **Temporary Upload Path Utilities (4 actions)**
 
-- `GetTemporaryUploadPathAction` — Session-scoped upload directory
-- `GetTemporaryUploadConversionPathAction` — Path for conversion artifacts of temp uploads
-- `GetTemporaryUploadResponsivePathAction` — Path for responsive image variants
+- `GetTemporaryUploadPathAction`: Session-scoped upload directory
+- `GetTemporaryUploadConversionPathAction`: Path for conversion artifacts of temp uploads
+- `GetTemporaryUploadResponsivePathAction`: Path for responsive image variants
 - (Covered above: `GenerateTemporaryUploadPathAction`)
 
 **Why:** Session-scoped paths require their own abstraction to avoid collisions.
@@ -127,15 +131,15 @@ The 49 actions fall into clear clusters. Understanding this taxonomy prevents du
 
 #### **FFmpeg & Media Export Support (2 actions)**
 
-- `ResolveMediaExporterResolver` — Abstracts FFmpeg output formatting
+- `ResolveMediaExporterResolver`: Abstracts FFmpeg output formatting
 - (Already covered in video processing)
 
 **Why:** FFmpeg has multiple export modes; each requires different setup.
 
 #### **Other (1)**
 
-- `Merge.php` — Likely a merge conflict artifact or leftover refactoring
-- `SubtitleService.php` — Legacy service class (should be an action)
+- `Merge.php`: Likely a merge conflict artifact or leftover refactoring
+- `SubtitleService.php`: Legacy service class (should be an action)
 
 **These two are technical debt, not philosophy.**
 
@@ -143,16 +147,16 @@ The 49 actions fall into clear clusters. Understanding this taxonomy prevents du
 
 File handling is **inherently granular**. A monolithic `ProcessMediaAction` would contain 15 responsibilities and fail silently in 10 of them. Instead, each action is:
 
-- **Testable in isolation** — One input, one output, no side effects
-- **Queueable** — Can be dispatched async without bloating the queue payload
-- **Reusable** — Video conversion reused by batch processing and single uploads
-- **Debuggable** — Failure points are explicit
+- **Testable in isolation**: One input, one output, no side effects
+- **Queueable**: Can be dispatched async without bloating the queue payload
+- **Reusable**: Video conversion reused by batch processing and single uploads
+- **Debuggable**: Failure points are explicit
 
 The 49-action density is not complexity; it is *honesty*. The complexity exists; this architecture names it.
 
 ---
 
-## III. POLITICA — The Rules
+## III. POLITICA: The Rules
 
 ### File Size Limits
 
@@ -220,7 +224,7 @@ $conversion->disk = $original->disk;
 
 ---
 
-## IV. SCOPO — Role in FixCity
+## IV. SCOPO: Role in FixCity
 
 Media is infrastructure for proof.
 
@@ -238,7 +242,7 @@ In FixCity, Media is:
 
 ---
 
-## V. ZEN — The Essence
+## V. ZEN: The Essence
 
 The ideal state: **Upload a file and never think about storage again.**
 
@@ -279,35 +283,35 @@ All three flow through one action-based architecture with no branching logic in 
 
 ### Currently Required
 
-- **`pbmedia/laravel-ffmpeg:^8.5`** — FFmpeg bridge
+- **`pbmedia/laravel-ffmpeg:^8.5`**: FFmpeg bridge
   - Handles video encoding, duration extraction, thumbnail generation
   - Requires FFmpeg binary on server
   - Powers all video actions
 
-- **`intervention/image:*`** — Image manipulation
+- **`intervention/image:*`**: Image manipulation
   - Resize, crop, format conversion (WebP, AVIF)
   - Powers image optimization conversions
   - Usually runs synchronously (if image is small)
 
-- **`spatie/laravel-medialibrary`** — Via inheritance from `SpatieMedia`
+- **`spatie/laravel-medialibrary`**: Via inheritance from `SpatieMedia`
   - Core media management
   - Collections, conversions, custom properties
   - Not explicitly in composer.json (inherited from base)
 
-- **`spatie/laravel-queueable-action`** — Via `QueueableAction` trait
+- **`spatie/laravel-queueable-action`**: Via `QueueableAction` trait
   - Makes actions dispatchable to queue
   - All heavy actions inherit this
 
 ### Missing (Should Be Installed)
 
-- **`aws/aws-sdk-php`** — For S3 and CloudFront signing
+- **`aws/aws-sdk-php`**: For S3 and CloudFront signing
   - Not in composer.json, but referenced in diagnostic actions
   - Should be explicit dependency
 
-- **`illuminate/filesystem`** — Via Laravel framework
+- **`illuminate/filesystem`**: Via Laravel framework
   - Already included; used for local disk abstraction
 
-- **`league/flysystem-aws-s3-v3`** — S3 adapter
+- **`league/flysystem-aws-s3-v3`**: S3 adapter
   - Implicit via Laravel's storage configuration
   - Should be explicit if using S3 in production
 
@@ -402,7 +406,7 @@ All three flow through one action-based architecture with no branching logic in 
 
 ---
 
-## IX. BEST PRACTICES — What Media Nails
+## IX. BEST PRACTICES: What Media Nails
 
 ### 1. Explicit State Transitions
 
@@ -461,7 +465,7 @@ Conversions are declared once, generated automatically.
 
 ---
 
-## X. BAD PRACTICES — Anti-Patterns to Avoid
+## X. BAD PRACTICES: Anti-Patterns to Avoid
 
 ### 1. **Storing File Paths in env()**
 
@@ -578,7 +582,7 @@ If it fails, someone needs to know.
 
 ---
 
-## XI. FALSE FRIENDS — Traps and Race Conditions
+## XI. FALSE FRIENDS: Traps and Race Conditions
 
 ### 1. **Concurrent Uploads of the Same File**
 
@@ -740,7 +744,7 @@ if (! command_exists('ffmpeg')) {
 
 ---
 
-## XII. COME USARLO — Practical Usage Patterns
+## XII. COME USARLO: Practical Usage Patterns
 
 ### Pattern 1: Simple File Upload
 
@@ -854,7 +858,7 @@ foreach ($attachments as $path) {
 
 ---
 
-## XIII. COME INSTALLARLO — Setup & Configuration
+## XIII. COME INSTALLARLO: Setup & Configuration
 
 ### Step 1: Install Dependencies
 
@@ -1061,7 +1065,7 @@ test('cloudfront url is valid for 1 hour only', fn () {
 - No S3 mocking strategy (minio required; not configured)
 - No CloudFront signing verification
 
-These gaps explain why diagnostic actions are so heavy—manual testing becomes the default.
+These gaps explain why diagnostic actions are so heavy-manual testing becomes the default.
 
 ---
 
@@ -1069,7 +1073,7 @@ These gaps explain why diagnostic actions are so heavy—manual testing becomes 
 
 Media has one job: **Make file handling invisible.**
 
-When it succeeds, developers never think about disk paths. When it fails, failures are explicit—not silent 404s in production.
+When it succeeds, developers never think about disk paths. When it fails, failures are explicit-not silent 404s in production.
 
 The 49 actions are not bloat. They are *honesty about complexity*. File handling is inherently complex. This architecture doesn't hide that; it names each piece and makes it testable.
 

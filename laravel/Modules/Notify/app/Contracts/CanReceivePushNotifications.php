@@ -17,8 +17,11 @@ interface CanReceivePushNotifications
     public function getMobileDeviceTokens(): Collection;
 
     /**
-     * Get the value of the model's primary key.
-     * non si puo usare mixed che cs lo cancella.
+     * Chiave primaria del modello notificabile (come Model::getKey()).
+     * Senza tipo di ritorno: Model::getKey() non lo dichiara e un tipo qui renderebbe
+     * incompatibile (fatal) ogni modello che implementa il contratto.
+     *
+     * @return int|string|null
      */
-    public function getKey(): string|int|null;
+    public function getKey();
 }

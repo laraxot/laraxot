@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_PT6sIV
 title: "User: cartelle maiuscole in root modulo — Database/ e Application/ duplicati orfani"
+=======
+title: "User: cartelle maiuscole in root modulo: Database/ e Application/ duplicati orfani"
+>>>>>>> .merge_file_X5Av7T
 type: story
 module: User
 epic: null
@@ -24,7 +28,11 @@ owned_scope:
 ## Contesto
 
 Audit repo-wide (2026-09-22): nessuna cartella con caratteri maiuscoli deve stare
+<<<<<<< .merge_file_PT6sIV
 nella root di un modulo — root ammette solo `app/`, `config/`, `database/`,
+=======
+nella root di un modulo: root ammette solo `app/`, `config/`, `database/`,
+>>>>>>> .merge_file_X5Av7T
 `resources/`, `routes/`, `tests/`, `docs/` ecc. (lowercase); il PascalCase è
 riservato alle classi PSR-4 dentro `app/`. Trovate due violazioni nella root di
 `Modules/User`: `Database/` e `Application/`.
@@ -37,7 +45,11 @@ riservato alle classi PSR-4 dentro `app/`. Trovate due violazioni nella root di
   model_has_roles x2, device_user, socialite_user) + 1 factory
   (`factories/DeviceProfileFactory.php`).
 - Confronto con l'equivalente lowercase `Modules/User/database/migrations/`:
+<<<<<<< .merge_file_PT6sIV
   stessi nomi file, ma contenuto **diverso e più vecchio** — es.
+=======
+  stessi nomi file, ma contenuto **diverso e più vecchio**: es.
+>>>>>>> .merge_file_X5Av7T
   `2014_10_12_100002_create_password_resets_table.php` nella versione
   maiuscola manca `updateTimestamps($table)` e il commento di regola
   `XotBaseMigration`/ponytail presenti nella versione attiva in `database/`.
@@ -45,7 +57,11 @@ riservato alle classi PSR-4 dentro `app/`. Trovate due violazioni nella root di
   `database/factories/` (→ `Modules\User\Database\Factories\`) e
   `database/seeders/`: **nessuna mappatura per `Database/` (root, maiuscola)**.
   Le migration Laravel/nwidart-modules si caricano da `database/migrations/`
+<<<<<<< .merge_file_PT6sIV
   per convenzione — `Database/Migrations/` in root non è mai stata caricata.
+=======
+  per convenzione: `Database/Migrations/` in root non è mai stata caricata.
+>>>>>>> .merge_file_X5Av7T
 - Nessun riferimento nel codice al path `Database/Migrations` o
   `Database\Migrations`.
 - **Conclusione: snapshot morto/superato**, mai autoloadato né referenziato.
@@ -60,10 +76,17 @@ riservato alle classi PSR-4 dentro `app/`. Trovate due violazioni nella root di
   file** (`SaveOwnershipRelationUseCaseContract.php`, namespace identico) più
   un secondo contract (`GetAllOwnersRelationshipUseCaseContract.php`).
 - Diff fra le due copie: solo differenze di formattazione (allineamento
+<<<<<<< .merge_file_PT6sIV
   parametri PHPDoc, stile Pint) — contenuto sostanzialmente identico.
 - `composer.json` mappa `Modules\User\` → `app/` soltanto: il namespace
   `Modules\User\Application\...` dichiarato nel file in root **non è coperto
   da nessuna regola PSR-4** — il file in root non è mai stato autoloadabile,
+=======
+  parametri PHPDoc, stile Pint): contenuto sostanzialmente identico.
+- `composer.json` mappa `Modules\User\` → `app/` soltanto: il namespace
+  `Modules\User\Application\...` dichiarato nel file in root **non è coperto
+  da nessuna regola PSR-4**: il file in root non è mai stato autoloadabile,
+>>>>>>> .merge_file_X5Av7T
   è un doppione orfano rispetto alla copia reale sotto `app/`.
 - **Conclusione: doppione orfano**, superato dalla copia in `app/Application/UseCases/Owners/`.
 
@@ -74,7 +97,11 @@ concorrenti (questa, `base-ptvx-fila5-b7`, `module-theme-root-hygiene-audit`)
 via composer.json/PSR-4, config/modules.php e diff di contenuto: entrambe le
 cartelle sono sicure da eliminare (nessun autoload, contenuto duplicato in
 `app/`, migrazioni identiche a livello di schema alla controparte
+<<<<<<< .merge_file_PT6sIV
 `database/Migrations/` — solo differenze di formattazione, brace-style e
+=======
+`database/Migrations/`: solo differenze di formattazione, brace-style e
+>>>>>>> .merge_file_X5Av7T
 Yoda-condition).
 
 **Non eseguito**: durante l'investigazione le due cartelle sono state
@@ -84,7 +111,11 @@ working tree condiviso (stesso `.git/index`, non clone separati). Nessuna
 delle sessioni note (questa, b7, module-theme-root-hygiene-audit) rivendica
 l'azione; b7 ha esplicitamente escluso questi path dal proprio scope.
 `Modules/User/Database` è tornato a esistere con `Migrations/` e
+<<<<<<< .merge_file_PT6sIV
 `factories/` popolati mentre `Modules/User/Application` restava assente —
+=======
+`factories/` popolati mentre `Modules/User/Application` restava assente -
+>>>>>>> .merge_file_X5Av7T
 quindi non un semplice `git checkout` simmetrico.
 
 Dato il flapping attivo su un file system condiviso da più agenti, procedere
@@ -94,12 +125,21 @@ in attesa che l'utente chiarisca la fonte del ripristino (altra sessione
 Claude Code non visibile via ListAgents? editor con git integration?
 processo locale?) prima di rieseguire il delete.
 
+<<<<<<< .merge_file_PT6sIV
 ## Raccomandazione (non eseguita in questa story — solo investigazione)
 
 | Cartella | Azione proposta | Rischio |
 |---|---|---|
 | `Modules/User/Database/` | Eliminare l'intera cartella | Basso — nessun autoload, nessun riferimento in codice |
 | `Modules/User/Application/` | Eliminare l'intera cartella | Basso — nessun autoload, contenuto duplicato in `app/Application/UseCases/Owners/` |
+=======
+## Raccomandazione (non eseguita in questa story: solo investigazione)
+
+| Cartella | Azione proposta | Rischio |
+|---|---|---|
+| `Modules/User/Database/` | Eliminare l'intera cartella | Basso: nessun autoload, nessun riferimento in codice |
+| `Modules/User/Application/` | Eliminare l'intera cartella | Basso: nessun autoload, contenuto duplicato in `app/Application/UseCases/Owners/` |
+>>>>>>> .merge_file_X5Av7T
 
 Nessuna modifica ai file è stata applicata in questa story: solo lettura e
 diff. L'esecuzione del fix (rimozione) va coordinata con l'audit degli altri
@@ -112,8 +152,13 @@ richiede lock (`bashscripts/lock/`) prima dell'edit.
 nomi duplicati con solo case/separatore diverso (`BUSINESS-LOGIC-ANALYSIS.md`
 vs `BUSINESS_LOGIC_ANALYSIS.md`, stesso per `CODE-QUALITY-ANALYSIS.md` /
 `CODE_QUALITY_ANALYSIS.md`) e più varianti di index
+<<<<<<< .merge_file_PT6sIV
 (`00-INDEX.md`, `00-index.md`, `00-index-1.md`, `INDEX.md`,
 `INDEX_GENERATED.md`). Non toccato qui — da tracciare separatamente.
+=======
+(`00-INDEX.md`, `00-index.md`, `00-index.md`, `INDEX.md`,
+`INDEX_GENERATED.md`). Non toccato qui: da tracciare separatamente.
+>>>>>>> .merge_file_X5Av7T
 
 ## Dev Agent Record (2026-09-22, sblocco finale)
 

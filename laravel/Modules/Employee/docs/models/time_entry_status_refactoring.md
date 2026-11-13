@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_ENTRY_STATUS_REFACTORING"
+module: Employee
+bmad: true
+status: active
+---
 # Refactoring Stato TimeEntry
 
 ## Obiettivo

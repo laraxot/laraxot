@@ -1,3 +1,15 @@
+---
+title: "docs"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs"
+issues: []
+discussions: []
+status: draft
+---
+
 # Docs
 
 ```text
@@ -6,6 +18,14 @@
 
 ---
 
+title: "docs"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs"
+issues: []
+discussions: []
 # REGOLE FONDAMENTALI
 
 ## Architettura e Stack
@@ -500,7 +520,7 @@ Ogni documento deve includere:
 - [Architecture Overview](../../docs/architecture-overview.md)
 - [Coding Standards](../../docs/coding-standards.md)
 - [Testing Guidelines](../../docs/testing-guidelines.md)
-- [Filament Best Practices](../../docs/filament-best-practices.md)
+- [Filament Best Practices](../raw/history/filament-best-practices.md)
 - [Translation Rules](../../docs/translation-rules.md)
 - [Frontend Guidelines](../../docs/frontend-guidelines.md)
 ```

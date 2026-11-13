@@ -1,5 +1,5 @@
 ---
-title: "no app/Support — Job QueueableAction"
+title: "no app/Support: Job QueueableAction"
 type: concept
 tags: [job, actions, queueable-action, support, artisan, console]
 created: 2026-07-12
@@ -10,10 +10,11 @@ issues:
 discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
 related:
-  - ../../../../docs/wiki/concepts/no-app-support-monorepo-migration.md
+  - ../../../../../../docs/wiki/concepts/no-app-support-monorepo-migration.md
+status: draft
 ---
 
-# Job — `app/Support/` eliminato
+# Job: `app/Support/` eliminato
 
 | Legacy | Action |
 |--------|--------|
@@ -30,4 +31,4 @@ Consumer: `Job/Status`, `Schedule/Status`, `Filament/Pages/JobStatus`.
 
 ## Collegamenti
 
-- [no-app-support-monorepo-migration](../../../../docs/wiki/concepts/no-app-support-monorepo-migration.md)
+- [no-app-support-monorepo-migration](../../../../../../docs/wiki/concepts/no-app-support-monorepo-migration.md)

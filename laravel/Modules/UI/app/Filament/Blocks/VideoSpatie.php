@@ -23,7 +23,11 @@ final class VideoSpatie
             ->schema([
                 Hidden::make('img_uuid')
                     ->default(Str::uuid()->toString(...))
+<<<<<<< HEAD
+                    ->formatStateUsing(static fn (?string $state): string => $state ?? Str::uuid()->toString())
+=======
                     ->formatStateUsing(fn ($state) => $state ?? Str::uuid()->toString())
+>>>>>>> f5ffd8b4 (.)
                     ->live(),
                 // ->required(),
 
@@ -72,7 +76,11 @@ final class VideoSpatie
                 // ->customProperties(fn(Forms\Get $get) => ['gallery_id' => $get('gallery_id')]),
                 // Forms\Components\SpatieMediaLibraryFileUpload::make('media_id')
             ])
+<<<<<<< HEAD
             ->columns('form' === $context ? 2 : 1);
+=======
+            ->columns($context === 'form' ? 2 : 1);
+>>>>>>> f5ffd8b4 (.)
     }
 
     /**

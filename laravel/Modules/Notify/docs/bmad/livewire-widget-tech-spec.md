@@ -1,10 +1,17 @@
 ---
-title: "Tech spec — Notify FQCN"
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "livewire widget tech spec"
+issues: []
+discussions: []
+title: "Tech spec: Notify FQCN"
 type: tech-spec
 module: Notify
 related:
   - ./livewire-inventory.md
   - ./livewire-widget-prd.md
+status: draft
 ---
 
 # Tech spec Notify

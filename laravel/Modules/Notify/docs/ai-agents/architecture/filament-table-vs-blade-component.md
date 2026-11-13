@@ -1,3 +1,15 @@
+---
+title: "filament table vs blade component"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament table vs blade component"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🎯 Filament Table vs Blade Component - Decision Guide
 
 **Data**: 2026-03-26  
@@ -5,7 +17,6 @@
 **Priority**: 🔴 CRITICAL
 
 ---
-
 ## 🚨 REGOLA FONDAMENTALE
 
 > **LIST-like public surface** = Filament Table Widget  

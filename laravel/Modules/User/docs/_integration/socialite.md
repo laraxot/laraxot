@@ -16,9 +16,10 @@ related:
   - "./passport.md"
   - "./payment.md"
   - "./phpstan.md"
+status: superseded
+superseded_by: ../-integration/socialite.md
 ---
 
->>>>>>> 87273113 (.)
 # socialite
 
 <!-- Contenuto migrato da _docs/socialite.txt -->

@@ -16,6 +16,6 @@ test('work hour next-action cycle uses supported entry types', function (): void
             WorkHourTypeEnum::BREAK_START->value,
             WorkHourTypeEnum::BREAK_END->value,
         ],
-        WorkHour::TYPES,
+        WorkHourTypeEnum::values(),
     );
 });

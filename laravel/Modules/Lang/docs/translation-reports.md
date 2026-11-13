@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Translation Module PDF Reports"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "readme.es 1"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Translation Module PDF Reports
 

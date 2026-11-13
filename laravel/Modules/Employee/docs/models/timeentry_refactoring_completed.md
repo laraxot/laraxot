@@ -1,3 +1,9 @@
+---
+title: "Employee - TIMEENTRY_REFACTORING_COMPLETED"
+module: Employee
+bmad: true
+status: active
+---
 # TimeEntry Model Refactoring - Completato
 
 ## Riepilogo Intervento

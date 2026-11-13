@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Refined Italian Text Audit Report"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "italian text refined audit report"
 related:
   - "./automatic-translations-1.md"
+status: draft
 ---
 # Refined Italian Text Audit Report
 

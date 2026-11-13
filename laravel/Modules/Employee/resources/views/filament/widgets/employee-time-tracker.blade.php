@@ -35,15 +35,15 @@ declare(strict_types=1);
             {{-- Stato giornata --}}
             @if($todayStatus === 'active')
                 <div class="text-xs font-medium text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded-full">
-                    🟢 Sessione Attiva
+                    🟢 {{ __('employee::time_tracking.tracker.status.active') }}
                 </div>
             @elseif($todayStatus === 'completed')
                 <div class="text-xs font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded-full">
-                    ✅ Giornata Completata
+                    ✅ {{ __('employee::time_tracking.tracker.status.completed') }}
                 </div>
             @else
                 <div class="text-xs text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-900/20 px-2 py-1 rounded-full">
-                    ⏰ In Attesa di Timbratura
+                    ⏰ {{ __('employee::time_tracking.tracker.status.waiting') }}
                 </div>
             @endif
 
@@ -69,7 +69,7 @@ declare(strict_types=1);
                     </span>
                 @empty
                     <span class="text-sm text-gray-500 dark:text-gray-400 italic">
-                        Nessuna timbratura oggi
+                        {{ __('employee::time_tracking.tracker.no_entries_today.message') }}
                     </span>
                 @endforelse
             </div>
@@ -95,12 +95,12 @@ declare(strict_types=1);
                             ⏳
                         </span>
                         <span>
-                            Clock Out
+                            {{ __('employee::time_entries.header.clock_out') }}
                         </span>
                     </div>
                     
                     <div class="text-xs opacity-80 mt-1" wire:loading.remove wire:target="clockOut">
-                        Termina sessione
+                        {{ __('employee::time_tracking.tracker.end_session.label') }}
                     </div>
                 </button>
             @else
@@ -121,12 +121,12 @@ declare(strict_types=1);
                             ⏳
                         </span>
                         <span>
-                            Clock In
+                            {{ __('employee::time_entries.header.clock_in') }}
                         </span>
                     </div>
                     
                     <div class="text-xs opacity-80 mt-1" wire:loading.remove wire:target="clockIn">
-                        Inizia sessione
+                        {{ __('employee::time_tracking.tracker.start_session.label') }}
                     </div>
                 </button>
             @endif
@@ -134,7 +134,7 @@ declare(strict_types=1);
             {{-- Contatore timbrature --}}
             @if(count($todayEntries) > 0)
                 <div class="mt-3 text-xs text-gray-500 dark:text-gray-400">
-                    {{ count($todayEntries) }} timbratura{{ count($todayEntries) !== 1 ? 'e' : '' }} oggi
+                    {{ trans_choice('employee::time_tracking.tracker.entries_today.description', count($todayEntries), ['count' => count($todayEntries)]) }}
                 </div>
             @endif
         </div>

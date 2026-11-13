@@ -115,28 +115,26 @@
                     <!-- Footer -->
                     <tr>
                         <td class="email-footer">
-                            <p style="font-weight: 600; margin-bottom: 8px;">{{ company_name | default: "Sottana Service" }}</p>
-                            {{#if company_address}}<p style="font-size: 14px; margin-bottom: 16px;">{{ company_address }}</p>{{/if}}
+                            {{#company_name}}<p style="font-weight: 600; margin-bottom: 8px;">{{ company_name }}</p>{{/company_name}}
+                            {{#company_address}}<p style="font-size: 14px; margin-bottom: 16px;">{{ company_address }}</p>{{/company_address}}
                             
                             <!-- Social Links -->
-                            {{#if facebook_url or twitter_url or linkedin_url}}
                             <div style="margin: 16px 0;">
                                 <table role="presentation" align="center" cellpadding="0" cellspacing="0" style="border-spacing: 16px;">
                                     <tr>
-                                        {{#if facebook_url}}<td><a href="{{ facebook_url }}" aria-label="Facebook"><img src="https://i.imgur.com/3ss12yH.png" alt="Facebook" class="social-icon"></a></td>{{/if}}
-                                        {{#if twitter_url}}<td><a href="{{ twitter_url }}" aria-label="Twitter"><img src="https://i.imgur.com/A1pZ292.png" alt="Twitter" class="social-icon"></a></td>{{/if}}
-                                        {{#if linkedin_url}}<td><a href="{{ linkedin_url }}" aria-label="LinkedIn"><img src="https://i.imgur.com/J3lS4A2.png" alt="LinkedIn" class="social-icon"></a></td>{{/if}}
+                                        {{#facebook_url}}<td><a href="{{ facebook_url }}" aria-label="Facebook"><img src="https://i.imgur.com/3ss12yH.png" alt="Facebook" class="social-icon"></a></td>{{/facebook_url}}
+                                        {{#twitter_url}}<td><a href="{{ twitter_url }}" aria-label="Twitter"><img src="https://i.imgur.com/A1pZ292.png" alt="Twitter" class="social-icon"></a></td>{{/twitter_url}}
+                                        {{#linkedin_url}}<td><a href="{{ linkedin_url }}" aria-label="LinkedIn"><img src="https://i.imgur.com/J3lS4A2.png" alt="LinkedIn" class="social-icon"></a></td>{{/linkedin_url}}
                                     </tr>
                                 </table>
                             </div>
-                            {{/if}}
                             
                             <p style="font-size: 12px; color: #9ca3af; margin-top: 16px;">
-                                {{#if site_url}}<a href="{{ site_url }}">Visita il sito</a> | {{/if}}
-                                <a href="{{ unsubscribe_url | default: '#' }}">Annulla iscrizione</a>
+                                {{#site_url}}<a href="{{ site_url }}">Visita il sito</a> | {{/site_url}}
+                                {{#unsubscribe_url}}<a href="{{ unsubscribe_url }}">Annulla iscrizione</a>{{/unsubscribe_url}}
                             </p>
                             <p style="font-size: 11px; color: #6b7280; margin-top: 8px;">
-                                © {{ year | default: "2025" }} {{ company_name | default: "Sottana Service" }}. Tutti i diritti riservati.
+                                {{#company_name}}© {{ year }} {{ company_name }}. Tutti i diritti riservati.{{/company_name}}
                             </p>
                         </td>
                     </tr>

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Best Practices – Rating"
 type: guide
 tags: [best, practices, rating]
@@ -7,6 +9,8 @@ updated: 2026-07-14
 qmd: "BEST PRACTICES"
 related:
   - "./FALSE_FRIENDS.md"
+status: superseded
+superseded_by: best_practices.md
 ---
 
 # Best Practices – Rating

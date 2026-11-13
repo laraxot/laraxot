@@ -1,6 +1,6 @@
 <x-layouts.app>
     <div class="content">
-        <h2>Welcome to Zero Theme</h2>
-        <p>This is the default page for the Zero theme. You can customize this page as needed.</p>
+        <h2>{{ __('pub_theme::welcome.hero.title.title') }}</h2>
+        <p>{{ __('pub_theme::welcome.default_page.intro.description') }}</p>
     </div>
 </x-layouts.app>

@@ -7,8 +7,11 @@ namespace Modules\Xot\Tests\Unit\Exports;
 use Filament\Actions\Exports\ExportColumn;
 use Filament\Actions\Exports\Jobs\CreateXlsxFile;
 use Filament\Actions\Exports\Models\Export;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+=======
+>>>>>>> laraxot/dev
 use Illuminate\Support\Collection;
 use League\Csv\Reader;
 use League\Csv\Statement;
@@ -18,7 +21,10 @@ use Modules\Xot\Exports\Jobs\XotCreateXlsxFile;
 use Modules\Xot\Exports\Jobs\XotExportCsv;
 use Modules\Xot\Exports\Jobs\XotPrepareCsvExport;
 use Modules\Xot\Exports\XotBaseExporter;
+<<<<<<< HEAD
 use Modules\Xot\Filament\Actions\XotBaseExportAction;
+=======
+>>>>>>> laraxot/dev
 use Modules\Xot\Tests\TestCase;
 use OpenSpout\Common\Entity\Cell\EmptyCell;
 use OpenSpout\Common\Entity\Cell\FormulaCell;
@@ -31,6 +37,7 @@ use function Safe\fopen;
 use function Safe\fwrite;
 use function Safe\rewind;
 
+<<<<<<< HEAD
 /**
  * Stub minimo per verificare gli eager-load di XotBaseExporter::modifyQuery.
  *
@@ -76,6 +83,11 @@ class XotBaseExporterStub extends XotBaseExporter
 class ExportActionStub extends XotBaseExportAction {}
 
 /**
+=======
+uses(TestCase::class);
+
+/**
+>>>>>>> laraxot/dev
  * @param  array<string, mixed>  $filters
  * @return array<int, ExportColumn>
  */

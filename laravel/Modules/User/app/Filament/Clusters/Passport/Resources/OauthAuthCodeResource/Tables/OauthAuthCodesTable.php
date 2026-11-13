@@ -7,6 +7,7 @@ namespace Modules\User\Filament\Clusters\Passport\Resources\OauthAuthCodeResourc
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\User\Models\OauthAuthCode;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
@@ -28,7 +29,7 @@ class OauthAuthCodesTable extends XotBaseResourceTable
             'revoked' => IconColumn::make('revoked')->boolean()->sortable(),
             'expires_at' => TextColumn::make('expires_at')->dateTime()->sortable()->placeholder('—'),
             'scopes' => TextColumn::make('scopes')->badge()->toggleable(isToggledHiddenByDefault: true),
-            'id' => TextColumn::make('id')->sortable()->copyable()->toggleable(isToggledHiddenByDefault: true),
+            'id' => IDColumn::make('id')->sortable()->copyable()->toggleable(isToggledHiddenByDefault: true),
         ];
     }
 }

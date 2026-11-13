@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Report: Metodi con nome duplicato nei moduli e nei temi"
 type: guide
 tags: [duplicate, methods, report, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "duplicate methods report"
 related:
   - "./filament-version.md"
+status: draft
 ---
 
 # Report: Metodi con nome duplicato nei moduli e nei temi

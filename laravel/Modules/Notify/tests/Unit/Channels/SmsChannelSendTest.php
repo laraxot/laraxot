@@ -7,9 +7,11 @@ namespace Modules\Notify\Tests\Unit\Channels;
 use Exception;
 use Illuminate\Notifications\Notification;
 use Modules\Notify\Channels\SmsChannel;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use stdClass;
 
+uses(TestCase::class);
 /**
  * Story quaeris-send-invite-migrate-to-record-notification.md, Difetto 17
  * (2026-09-15): `toSms()` e' tipizzato `?SmsData` proprio per poter dire
@@ -26,6 +28,10 @@ use stdClass;
  * ritorna/lancia PRIMA di toccare `SmsActionFactory`/il driver reale (letto
  * nel sorgente: la chiamata al factory e' l'ultima istruzione del metodo,
  * dopo i due controlli qui testati).
+ */
+/**
+ * `mixed` voluto: lo stub viola di proposito il contratto `toSms(): ?SmsData`
+ * per testare i rami di errore di SmsChannel::send() (null, stringa, ecc.).
  */
 function notificationStubReturningFromToSms(mixed $toSmsResult): Notification
 {
@@ -44,7 +50,7 @@ it('returns null without throwing when toSms() returns null (Difetto 17)', funct
     $channel = app(SmsChannel::class);
     $notification = notificationStubReturningFromToSms(null);
 
-    $result = $channel->send(new stdClass(), $notification);
+    $result = $channel->send(new stdClass, $notification);
 
     Assert::assertNull($result);
 });
@@ -53,7 +59,7 @@ it('still throws when toSms() returns something that is neither SmsData nor null
     $channel = app(SmsChannel::class);
     $notification = notificationStubReturningFromToSms('not-sms-data');
 
-    expect(fn () => $channel->send(new stdClass(), $notification))
+    expect(fn () => $channel->send(new stdClass, $notification))
         ->toThrow(Exception::class, 'toSms method must return an instance of SmsData');
 });
 
@@ -61,6 +67,6 @@ it('still throws when the notification has no toSms method at all', function ():
     $channel = app(SmsChannel::class);
     $notification = new class extends Notification {};
 
-    expect(fn () => $channel->send(new stdClass(), $notification))
+    expect(fn () => $channel->send(new stdClass, $notification))
         ->toThrow(Exception::class, 'Notification does not have toSms method');
 });

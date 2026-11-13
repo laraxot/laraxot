@@ -9,8 +9,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\View\Component;
 use Illuminate\View\View;
+<<<<<<< HEAD
+<<<<<<< .merge_file_22kIUc
 use Modules\Cms\Actions\ResolveLocalizedBlockDataAction;
 use Modules\Cms\Actions\View\GetCmsViewAction;
+=======
+use Modules\UI\Actions\Block\ResolveLocalizedBlockDataAction;
+use UnexpectedValueException;
+=======
+use Modules\Cms\Actions\ResolveLocalizedBlockDataAction;
+>>>>>>> f5ffd8b4 (.)
+use Webmozart\Assert\Assert;
+>>>>>>> .merge_file_fX5D3u
 
 /**
  * Blade component that renders a CMS block.
@@ -21,19 +31,41 @@ class Block extends Component
     public ?string $view = null;
 
     /**
+<<<<<<< HEAD
      * @param array<string, mixed> $block
+=======
+     * @param  array<string, mixed>  $block
+>>>>>>> f5ffd8b4 (.)
      */
     public function __construct(
         public array $block,
         public ?Model $model = null,
         public string $tpl = '',
     ) {
+<<<<<<< HEAD
+<<<<<<< .merge_file_22kIUc
         $view = Arr::get($this->block, 'data.view');
         if (! is_string($view) || ! view()->exists($view)) {
             $view = 'ui::empty';
         }
 
         /** @var view-string $view */
+=======
+        $view = Arr::get($this->block, 'data.view', null);
+        if ($view === null) {
+            $view = 'ui::empty';
+        }
+        Assert::string($view, __FILE__.':'.__LINE__.' - '.class_basename(self::class));
+>>>>>>> .merge_file_fX5D3u
+=======
+        $view = Arr::get($this->block, 'data.view', null);
+        if ($view === null) {
+            /** @var view-string $view */
+            $view = 'ui::empty';
+        }
+        Assert::string($view, __FILE__.':'.__LINE__.' - '.class_basename(self::class));
+        /** @var view-string $view */
+>>>>>>> f5ffd8b4 (.)
         $this->view = $view;
     }
 
@@ -46,10 +78,26 @@ class Block extends Component
             return view($viewName);
         }
 
+<<<<<<< HEAD
+<<<<<<< .merge_file_22kIUc
         $viewPath = $this->view ?? 'ui::empty';
         if (! view()->exists($viewPath)) {
             $message = 'view not exists ['.$viewPath.'] ! <pre>'.print_r($this->block, true).'</pre>';
             $view_params = [
+=======
+        $view = $this->view;
+        if (! view()->exists(is_string($view) ? $view : ((string) $view))) {
+            $message = 'view not exists ['.$view.'] ! <pre>'.print_r($this->block, true).'</pre>';
+            $viewParams = [
+>>>>>>> .merge_file_fX5D3u
+=======
+        $view = $this->view ?? 'ui::empty';
+        /** @var view-string $view */
+        $viewPath = (string) $view;
+        if (! view()->exists($viewPath)) {
+            $message = 'view not exists ['.$view.'] ! <pre>'.print_r($this->block, true).'</pre>';
+            $view_params = [
+>>>>>>> f5ffd8b4 (.)
                 'title' => 'deprecated',
                 'message' => $message,
             ];
@@ -58,28 +106,46 @@ class Block extends Component
 
             return view($viewAlert, $view_params);
         }
+<<<<<<< HEAD
+<<<<<<< .merge_file_22kIUc
         $view_params = $this->normalizeViewData($this->block['data'] ?? []);
         $view_params = app(ResolveLocalizedBlockDataAction::class)->execute($view_params);
         $view_params = $this->normalizeViewData($view_params);
         $view = app(GetCmsViewAction::class)->execute($viewPath);
+=======
+        $rawData = $this->block['data'] ?? [];
+        $viewParams = \is_array($rawData) ? $this->normalizeViewData($rawData) : [];
+        $viewParams = app(ResolveLocalizedBlockDataAction::class)->execute($viewParams);
+        $viewParams = $this->normalizeViewData($viewParams);
+        Assert::string($view, __FILE__.':'.__LINE__.' - '.class_basename(self::class));
+>>>>>>> .merge_file_fX5D3u
+
+        /** @var view-string $view */
+        return view($view, $viewParams);
+=======
+        $view_params = $this->normalizeViewData($this->block['data'] ?? []);
+        $view_params = app(ResolveLocalizedBlockDataAction::class)->execute($view_params);
+        $view_params = $this->normalizeViewData($view_params);
 
         return view($view, $view_params);
+>>>>>>> f5ffd8b4 (.)
     }
 
     /**
+     * @param  array<array-key, mixed>  $data
      * @return array<string, mixed>
      */
-    private function normalizeViewData(mixed $data): array
+    private function normalizeViewData(array $data): array
     {
-        if (! is_array($data)) {
-            return [];
-        }
-
         $viewData = [];
 
         foreach ($data as $key => $value) {
             if (! is_string($key)) {
+<<<<<<< HEAD
+                throw new UnexpectedValueException('Block view data must have string keys.');
+=======
                 throw new \UnexpectedValueException('Block view data must have string keys.');
+>>>>>>> f5ffd8b4 (.)
             }
 
             $viewData[$key] = $value;

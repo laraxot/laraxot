@@ -1,4 +1,10 @@
 ---
+title: "phpstan Seo fix"
+type: note
+tags: [documentation]
+qmd: "phpstan Seo fix"
+issues: []
+discussions: []
 id: phpstan-Seo-fix
 slug: phpstan-Seo
 scope: [module:Seo, project:base_workorder_fila5]

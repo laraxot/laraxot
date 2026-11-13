@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 
+=======
+---
+title: "La Filosofia Zen Avanzata dei Getter Semantici"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, philosophy]
+qmd: "La Filosofia Zen Avanzata dei Getter Semantici"
+---
+>>>>>>> laraxot/dev
 # La Filosofia Zen Avanzata dei Getter Semantici
 
 ## Il Tao del Codice Pulito
@@ -179,4 +192,8 @@ getDark*            // L'ombra del brand
 - [Convenzioni di Naming](../naming-conventions.md)
 - [Linee Guida Filament](../filament-best-practices.md)
 - [La Via del Brand](../brand/brand_way.md)
+<<<<<<< HEAD
 - [Il Tao del Codice](../tao/code_tao.md)
+=======
+- [Il Tao del Codice](../tao/code_tao.md) 
+>>>>>>> laraxot/dev

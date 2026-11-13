@@ -5,7 +5,13 @@ type: source
 created: "2026-04-29T00:00:00Z"
 updated: "2026-04-29T00:00:00Z"
 related:
+<<<<<<< HEAD
+status: draft
+tags: [docs, ui, wiki]
+qmd: "ui architecture sources ui"
+=======
   - "[[UI Operating Model]]"
+>>>>>>> f5ffd8b4 (.)
 ---
 
 # UI Architecture Sources
@@ -15,8 +21,13 @@ related:
 ## Source Cluster
 
 - `README.md`
+<<<<<<< HEAD
+- `architecture-1.md`
+- `product-strategy-documentation-themes.md`
+=======
 - `ARCHITECTURE.md`
 - `PRODUCT_STRATEGY.md`
+>>>>>>> f5ffd8b4 (.)
 - `architecture/structure.md`
 
 ## Main Signals

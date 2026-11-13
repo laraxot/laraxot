@@ -7,10 +7,10 @@ namespace Modules\Geo\Actions\TimeZone;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Modules\Geo\Datas\TimeZoneData;
+use Modules\Geo\Infrastructure\Config\GeoApiEndpoints;
+use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\json_decode;
-
-use Spatie\QueueableAction\QueueableAction;
 
 /**
  * Action per ottenere il fuso orario da coordinate geografiche.
@@ -19,7 +19,7 @@ class GetTimeZoneAction
 {
     use QueueableAction;
 
-    private const string API_URL = 'https://maps.googleapis.com/maps/api/timezone/json';
+    private const string API_URL = GeoApiEndpoints::GOOGLE_TIMEZONE;
 
     private Client $client;
 
@@ -27,7 +27,7 @@ class GetTimeZoneAction
 
     public function __construct(?string $apiKey = null)
     {
-        $this->client = new Client();
+        $this->client = new Client;
         $this->apiKey = $apiKey;
     }
 
@@ -47,7 +47,7 @@ class GetTimeZoneAction
         /** @var array{status: string, timeZoneId: string, timeZoneName: string, rawOffset: int, dstOffset: int, countryCode?: string} $data */
         $data = json_decode($response->getBody()->getContents(), true);
 
-        if ('OK' !== $data['status']) {
+        if ($data['status'] !== 'OK') {
             throw new \RuntimeException('Failed to get timezone: '.($data['errorMessage'] ?? $data['status']));
         }
 

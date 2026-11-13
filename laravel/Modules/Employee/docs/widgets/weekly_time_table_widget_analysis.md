@@ -1,3 +1,9 @@
+---
+title: "Employee - WEEKLY_TIME_TABLE_WIDGET_ANALYSIS"
+module: Employee
+bmad: true
+status: active
+---
 # WeeklyTimeTableWidget - Analisi Completa dall'Immagine dipendentincloud.it
 
 ## 📊 Analisi Visuale dell'Immagine

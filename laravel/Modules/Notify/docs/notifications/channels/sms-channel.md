@@ -1,3 +1,15 @@
+---
+title: "sms channel"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sms channel"
+issues: []
+discussions: []
+status: draft
+---
+
 # `SmsChannel`
 
 Canale di notifica Laravel per l'invio di SMS. Non contiene la logica di
@@ -11,7 +23,7 @@ trasporto: sceglie il **driver** e delega alla sua `Send{Provider}SMSAction`.
 
 `laravel/Modules/Notify/app/Channels/SmsChannel.php`
 
-(non `app/Notifications/Channels/` — lì c'è solo il legacy `NetfunChannel`
+(non `app/Notifications/Channels/`: lì c'è solo il legacy `NetfunChannel`
 accoppiato a `ThemeNotification`.)
 
 ## Come arriva qui una notifica
@@ -28,11 +40,11 @@ accoppiato a `ThemeNotification`.)
    `RecordNotification`).
 2. Driver: se la notifica espone `getProvider(): ?string` (es. `SmsNotification`)
    usa quello; altrimenti `null`.
-3. `SmsActionFactory::create($driver)` — con `$driver === null` la factory usa
+3. `SmsActionFactory::create($driver)`: con `$driver === null` la factory usa
    `config('sms.default')` (env `SMS_DRIVER`).
 4. `->execute($smsData)` sull'azione del driver risolto.
 
-Ritorna quello che ritorna `SmsActionContract::execute()` — di norma
+Ritorna quello che ritorna `SmsActionContract::execute()`: di norma
 `array{status_code: int, status_txt: string}`.
 
 ## `SmsActionFactory`
@@ -46,12 +58,12 @@ Alias: `smsfac → smsfactor`, `vonage → nexmo`. Un driver non mappato lancia
 ## Usare Netfun
 
 `.env`: `SMS_DRIVER=netfun` + `NETFUN_TOKEN=...` (`config('sms.drivers.netfun')`).
-Nessuna modifica al codice — vale anche per gli SMS di invito survey
+Nessuna modifica al codice: vale anche per gli SMS di invito survey
 (`SendInviteAction` → `RecordNotification` → `SmsChannel`).
 
 ## Correlati
 
 - [`ChannelEnum`](../../enums/channel-enum.md)
 - [`RecordNotification`](../record-notification.md)
-- `NormalizePhoneNumberAction` — la normalizzazione E.164 vive dentro le
+- `NormalizePhoneNumberAction`: la normalizzazione E.164 vive dentro le
   `Send*SMSAction`, non in `SmsChannel`.

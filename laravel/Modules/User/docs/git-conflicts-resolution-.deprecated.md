@@ -8,14 +8,15 @@ qmd: "git-conflicts-resolution-2025-01-27.deprecated risoluzione conflitti git -
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # Risoluzione Conflitti Git - Modulo User (2025-01-27)
@@ -30,7 +31,7 @@ Documentazione della risoluzione dei conflitti Git nel modulo User, inclusi i fi
 - [Indice documentazione User](/laravel/Modules/User/docs/index.md)
 - [README User](/laravel/Modules/User/docs/README.md)
 - [Auth Components Best Practices](/laravel/Modules/User/docs/auth-components-best-practices.md)
-- [Filament Widgets Structure](/laravel/Modules/User/docs/widgets-structure-2.md)
+- [Filament Widgets Structure](/laravel/Modules/User/docs/widgets-structure.md)
 - [BaseUser Documentation](/laravel/Modules/User/docs/BaseUser.md)
 
 ## File Risolti
@@ -315,10 +316,10 @@ La risoluzione dei conflitti Git ha migliorato significativamente la stabilità 
 - **Tipizzazione**: PHPDoc rigorosi per conformità PHPStan
 
 ### **Documentazione Aggiornata:**
-- [widgets-structure-2.md](./widgets-structure-2.md) - Regole per widget structure
+- [widgets-structure-2.md](./widgets-structure.md) - Regole per widget structure
 - [widget-translation-rules.md](./widget-translation-rules.md) - Pattern traduzioni
-- [path-conventions-2.md](./path-conventions-2.md) - Convenzioni percorsi
-- [volt-blade-implementation-3.md](./volt-blade-implementation-3.md) - View patterns
+- [path-conventions-2.md](./path-conventions.md) - Convenzioni percorsi
+- [volt-blade-implementation-3.md](./volt-blade-implementation.md) - View patterns
 
 ### **Post-Risoluzione TODO:**
 - [ ] Verificare funzionamento widget in contesto Filament panel

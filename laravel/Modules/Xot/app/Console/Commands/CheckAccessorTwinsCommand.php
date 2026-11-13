@@ -8,7 +8,13 @@ use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
+<<<<<<< HEAD
 
+=======
+use Symfony\Component\Finder\Finder;
+
+use function Safe\file_get_contents;
+>>>>>>> laraxot/dev
 use function Safe\glob;
 use function Safe\preg_match;
 
@@ -33,7 +39,13 @@ class CheckAccessorTwinsCommand extends Command
     public function handle(): int
     {
         $module = $this->option('module');
+<<<<<<< HEAD
         $pattern = base_path('Modules/'.(is_string($module) && $module !== '' ? $module : '*').'/app/Models/*.php');
+=======
+        $moduleName = is_string($module) && $module !== '' ? $module : null;
+        $pattern = base_path('Modules/'.($moduleName ?? '*').'/app/Models/*.php');
+        $files = $this->modelFiles($moduleName);
+>>>>>>> laraxot/dev
 
         if ($this->option('orphans') === true) {
             return $this->reportOrphanTwins($pattern);
@@ -44,11 +56,15 @@ class CheckAccessorTwinsCommand extends Command
         $accessors = 0;
         $analyzed = 0;
 
+<<<<<<< HEAD
         foreach (glob($pattern) as $file) {
             if (! is_string($file)) {
                 continue;
             }
 
+=======
+        foreach ($files as $file) {
+>>>>>>> laraxot/dev
             $class = $this->classFromPath($file);
             if ($class === null) {
                 continue;
@@ -68,10 +84,63 @@ class CheckAccessorTwinsCommand extends Command
                     continue;
                 }
 
+<<<<<<< HEAD
                 $accessors++;
 
                 if (! $reflection->hasMethod($twin)) {
                     $missing[$class][] = $method->getName();
+=======
+                // Esclude metodi di dominio ereditati da trait/framework vendor
+                // (es. HasFactory::getUseFactoryAttribute, HasTranslations::getTranslatableColumnsFromAttribute).
+                if ($this->methodFromVendor($reflection, $method)) {
+                    continue;
+                }
+
+                // Solo metodi dichiarati nei file dei moduli.
+                $declaredIn = (string) $method->getDeclaringClass()->getFileName();
+                if ($declaredIn === '' || ! str_starts_with($declaredIn, base_path('Modules'))) {
+                    continue;
+                }
+
+                $accessors++;
+
+                $parameters = $method->getParameters();
+                if (! $method->isPublic()) {
+                    $missing[$class][] = $method->getName().'() non è public';
+                }
+                if (
+                    count($parameters) !== 1
+                    || $parameters[0]->getName() !== 'value'
+                    || $parameters[0]->getType() === null
+                ) {
+                    $missing[$class][] = $method->getName().'() deve ricevere un solo parametro $value tipizzato';
+                }
+                if ($method->getReturnType() === null) {
+                    $missing[$class][] = $method->getName().'() non dichiara il tipo di ritorno';
+                }
+
+                if (! $reflection->hasMethod($twin)) {
+                    $missing[$class][] = $method->getName().'(): manca '.$twin.'()';
+
+                    continue;
+                }
+
+                $twinMethod = $reflection->getMethod($twin);
+                if (! $twinMethod->isPublic() || $twinMethod->getReturnType() === null || $twinMethod->getNumberOfRequiredParameters() !== 0) {
+                    $missing[$class][] = $method->getName().'() ha un gemello non pubblico, non tipizzato o con parametri obbligatori';
+                }
+                if (
+                    $method->getFileName() !== $twinMethod->getFileName()
+                    || $method->getDeclaringClass()->getName() !== $twinMethod->getDeclaringClass()->getName()
+                ) {
+                    $missing[$class][] = $method->getName().'() e '.$twin.'() non sono dichiarati nello stesso file/tipo';
+
+                    continue;
+                }
+
+                if (! $this->delegatesToTwin($method, $twin)) {
+                    $missing[$class][] = $method->getName().'() non delega a $this->'.$twin.'()';
+>>>>>>> laraxot/dev
                 }
             }
         }
@@ -80,8 +149,13 @@ class CheckAccessorTwinsCommand extends Command
 
         foreach ($missing as $class => $methods) {
             $this->line($class);
+<<<<<<< HEAD
             foreach (array_unique($methods) as $method) {
                 $this->line('  - '.$method.'()  =>  manca '.$this->twinLabel($method).'()');
+=======
+            foreach (array_unique($methods) as $finding) {
+                $this->line('  - '.$finding);
+>>>>>>> laraxot/dev
             }
         }
 
@@ -210,9 +284,120 @@ class CheckAccessorTwinsCommand extends Command
         return 'get'.$name;
     }
 
+<<<<<<< HEAD
     private function twinLabel(string $accessor): string
     {
         return (string) substr($accessor, 0, -\strlen('Attribute'));
+=======
+    /**
+     * Verifica se un metodo `get{X}Attribute()` origina da un trait/vendor class
+     * (es. HasFactory::getUseFactoryAttribute, HasTranslations::getTranslatableColumnsFromAttribute).
+     * I metodi ereditati da trait vendor non sono accessor di dominio e vanno esclusi.
+     */
+    /** @phpstan-ignore-next-line missingType.generics */
+    private function methodFromVendor(\ReflectionClass $reflection, \ReflectionMethod $method): bool
+    {
+        $checked = [];
+        $queue = [$reflection];
+
+        while (! empty($queue)) {
+            $current = array_pop($queue);
+            if (isset($checked[$current->getName()])) {
+                continue;
+            }
+            $checked[$current->getName()] = true;
+
+            foreach ($current->getTraits() as $trait) {
+                if ($trait->hasMethod($method->getName())) {
+                    $traitFile = $trait->getFileName();
+                    if ($traitFile === '' || str_starts_with((string) $traitFile, base_path('vendor'))) {
+                        return true;
+                    }
+                }
+                $queue[] = $trait;
+            }
+
+            $parent = $current->getParentClass();
+            if ($parent && ! $parent->isInternal()) {
+                $queue[] = $parent;
+            }
+        }
+
+        return false;
+    }
+
+    /** @return list<string> */
+    private function modelFiles(?string $module): array
+    {
+        $modulesRoot = base_path('Modules');
+        $directories = $module === null
+            ? glob($modulesRoot.DIRECTORY_SEPARATOR.'*'.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'Models', \GLOB_ONLYDIR)
+            : [$modulesRoot.DIRECTORY_SEPARATOR.$module.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEPARATOR.'Models'];
+
+        $files = [];
+        foreach ($directories as $directory) {
+            if (! is_string($directory) || ! is_dir($directory)) {
+                continue;
+            }
+
+            foreach (Finder::create()->files()->name('*.php')->in($directory) as $file) {
+                $path = $file->getRealPath();
+                if (is_string($path)) {
+                    $files[] = $path;
+                }
+            }
+        }
+
+        sort($files);
+
+        return array_values(array_unique($files));
+    }
+
+    private function delegatesToTwin(\ReflectionMethod $method, string $twin): bool
+    {
+        $file = $method->getFileName();
+        if (! is_string($file) || ! is_file($file)) {
+            return false;
+        }
+
+        $lines = explode("\n", file_get_contents($file));
+        $source = implode("\n", array_slice(
+            $lines,
+            $method->getStartLine() - 1,
+            $method->getEndLine() - $method->getStartLine() + 1,
+        ));
+        $tokens = \token_get_all("<?php\n".$source);
+        $significant = [];
+
+        foreach ($tokens as $token) {
+            if (is_array($token)) {
+                if (in_array($token[0], [T_WHITESPACE, T_COMMENT, T_DOC_COMMENT], true)) {
+                    continue;
+                }
+                $significant[] = [$token[0], $token[1]];
+
+                continue;
+            }
+
+            $significant[] = [null, $token];
+        }
+
+        $tokenCount = count($significant);
+        for ($index = 0; $index + 3 < $tokenCount; $index++) {
+            if (
+                $significant[$index][0] === T_VARIABLE
+                && $significant[$index][1] === '$this'
+                && $significant[$index + 1][1] === '->'
+                && $significant[$index + 2][0] === T_STRING
+                && $significant[$index + 2][1] === $twin
+                && $significant[$index + 3][1] === '('
+            ) {
+                return true;
+            }
+        }
+
+        return false;
+>>>>>>> laraxot/dev
     }
 
     /**
@@ -220,6 +405,7 @@ class CheckAccessorTwinsCommand extends Command
      */
     private function classFromPath(string $file): ?string
     {
+<<<<<<< HEAD
         $relative = str_replace(base_path('Modules').\DIRECTORY_SEPARATOR, '', $file);
         $parts = explode(\DIRECTORY_SEPARATOR, $relative);
 
@@ -228,6 +414,26 @@ class CheckAccessorTwinsCommand extends Command
         }
 
         $class = 'Modules\\'.$parts[0].'\\Models\\'.basename($file, '.php');
+=======
+        $modulesRoot = base_path('Modules').\DIRECTORY_SEPARATOR;
+        if (! str_starts_with($file, $modulesRoot)) {
+            return null;
+        }
+
+        $relative = substr($file, \strlen($modulesRoot));
+        $parts = explode(\DIRECTORY_SEPARATOR, $relative);
+
+        if (\count($parts) < 4 || $parts[1] !== 'app' || $parts[2] !== 'Models') {
+            return null;
+        }
+
+        $subnamespace = array_slice($parts, 3, -1);
+        $class = 'Modules\\'.$parts[0].'\\Models';
+        if ($subnamespace !== []) {
+            $class .= '\\'.implode('\\', $subnamespace);
+        }
+        $class .= '\\'.basename($file, '.php');
+>>>>>>> laraxot/dev
 
         if (! class_exists($class) || ! is_subclass_of($class, Model::class)) {
             return null;

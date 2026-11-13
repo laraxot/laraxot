@@ -1,496 +1,181 @@
-# 📚 Sixteen Theme Documentation Index
-
-**Theme**: Sixteen (Bootstrap Italia)  
-**Version**: 2.3.0  
-**Status**: Phase 1 - HTML Structure Alignment  
-**Last Updated**: 2026-04-08  
-
+---
+title: "Sixteen theme documentation index"
+type: index
+theme: Sixteen
+created: 2026-09-27
+updated: 2026-10-14
+qmd: "sixteen theme design comuni folio volt accessibility documentation index classificazione cartelle indici storici INDEX.md index.md"
+status: active
+tags: [docs, sixteen]
 ---
 
-## 🎯 QUICK NAVIGATION
-
-### 🟢 Current Phase: Phase 1 - HTML Structure
-
-**Status**: Strategy Complete → Execution Ready  
-**Start**: 2026-04-08  
-**Target**: 90% HTML structural parity (ticket-list pilot)  
-
-**Key Documents**:
-1. [PHASE-1-STRATEGY.md](PHASE-1-STRATEGY.md) - **START HERE** - Complete strategy with architecture analysis
-2. [GSD-PHASE-1-EXECUTION.md](GSD-PHASE-1-EXECUTION.md) - Execution plan with subtasks
-3. [PHASE-1-FINDINGS.md](PHASE-1-FINDINGS.md) - ⏳ Gap analysis (created after comparison)
-4. [PHASE-1-COMPLETION-REPORT.md](PHASE-1-COMPLETION-REPORT.md) - ⏳ Results (created after verification)
-5. [Directory Structure Rules](../../docs/directory-structure-rules.md) - vietati `lang/lang/` e `_docs/` nei temi
-6. [Merge Conflict Marker Cleanup](merge-conflict-marker-cleanup.md) - regola batch sparsi per cleanup `<<<<<<< HEAD`
-
----
-
-## 📖 DOCUMENTATION BY TOPIC
-
-### 🏗️ Architecture & Design
-
-**Understanding the Theme**:
-- [PHASE-1-STRATEGY.md](PHASE-1-STRATEGY.md) - Design Comuni architecture, component patterns, design tokens
-- [Theme Overview](README.md) - General theme description
-
-**Component System**:
-- [/blocks/](blocks/) - Block component documentation
-- [/components/](components/) - Blade component reference
-- [architecture/CSS-SCOPING-RULE.md](architecture/CSS-SCOPING-RULE.md) - Regola canonica: body plain, scoping solo su `page-content[data-slug][data-side]`, mai su `tests-view-wrapper`
-- [WEB-COMPONENTS-AND-BUILD-SYSTEM.md](WEB-COMPONENTS-AND-BUILD-SYSTEM.md) - Web Components (Lit.dev), build architecture, module vs theme assets, why module components must NOT be globally imported
-
-**Design System**:
-- Color palette & tokens → See PHASE-1-STRATEGY.md § "Design Tokens"
-- Typography system → See PHASE-1-STRATEGY.md § "Typography"
-- Spacing scale → See PHASE-1-STRATEGY.md § "Spacing Grid"
-
----
-
-### 🔍 Phase 1: HTML Structure Alignment
-
-**Strategy & Planning**:
-- [PHASE-1-STRATEGY.md](PHASE-1-STRATEGY.md) - Deep dive strategy (22,000+ words)
-  - Design Comuni architecture analysis
-  - ticket-list structure breakdown
-  - FixCity current state assessment
-  - Identified gaps list
-  - Execution strategy with multi-agent coordination
-  - Translation patterns & examples
-  - Success criteria & checklists
-
-**Execution Plan**:
-- [GSD-PHASE-1-EXECUTION.md](GSD-PHASE-1-EXECUTION.md) - Detailed execution plan
-  - 6 subtasks with clear owners
-  - Step-by-step instructions per subtask
-  - Expected inputs/outputs
-  - Success criteria per subtask
-  - Dependency graph
-  - Timeline estimates
-
-**Analysis & Findings** (during execution):
-- [PHASE-1-FINDINGS.md](PHASE-1-FINDINGS.md) - ⏳ Created after comparison
-  - Detailed gap inventory
-  - Categorized by type (semantic, classes, ARIA)
-  - Prioritized fix list
-  - Code examples & suggestions
-  - Time estimates per gap
-
-**Results & Metrics** (after completion):
-- [PHASE-1-COMPLETION-REPORT.md](PHASE-1-COMPLETION-REPORT.md) - ⏳ Created after verification
-  - Final parity score
-  - What was fixed
-  - Files modified
-  - Metrics & statistics
-  - Lessons learned
-  - Phase 2 preparation
-
-**Comparison Reports**:
-- [/body-structure-comparison/ticket-list/](body-structure-comparison/ticket-list/) - Comparison output
-  - `comparison-report.json` - Machine-readable full report
-  - `parity-summary.txt` - Human-readable summary
-  - `reference-body.html` - Reference structure extracted
-  - `local-body.html` - FixCity structure extracted
-
----
-
-### 🚀 Tools & Utilities
-
-**HTML Structure Comparison Tools**:
-- [bashscripts/docs/html/INDEX.md](../../bashscripts/docs/html/INDEX.md) - HTML comparison tools documentation
-- [Project MCP Servers](../../../docs/project/mcp-overview.md) - Memory and development MCP servers
-- [.qwen/mcp-servers/README.md](../../../.qwen/mcp-servers/README.md) - MCP servers detailed docs
-- [bashscripts/html/html-structure-compare.sh](../../bashscripts/html/html-structure-compare.sh) - Main comparison script
-- [bashscripts/html/extract-body-html.py](../../bashscripts/html/extract-body-html.py) - Body extraction helper
-- [bashscripts/html/compare-html-body.py](../../bashscripts/html/compare-html-body.py) - Structure comparison helper
-
-**Usage**:
-```bash
-cd /var/www/_bases/base_fixcity_fila5
-./bashscripts/html/html-structure-compare.sh ticket-list
-```
-
-Output → `laravel/Themes/Sixteen/docs/body-structure-comparison/ticket-list/`
-
----
-
-### 📝 Blade Templates
-
-**Main Template**:
-- [resources/views/pages/tests/[slug].blade.php](resources/views/pages/tests/[slug].blade.php)
-  - Dynamic routing based on slug parameter
-  - **Do NOT create**: ticket-list.blade.php (use [slug] pattern)
-  - Loads content from JSON via PageSlugMiddleware
-  - Calls <x-page> component
-
-**Block Components**:
-- [resources/views/components/blocks/segnalazioni/](resources/views/components/blocks/segnalazioni/)
-  - layout.blade.php - Main layout & orchestration
-  - featured.blade.php - Hero/featured section (may need to create)
-  - filters.blade.php - Sidebar filters (may need to create)
-  - cards.blade.php - Segnalazione cards list (may need to create)
-
-**Base Components**:
-- [resources/views/components/](resources/views/components/) - Shared blade components
-
----
-
-### 📋 Content & Configuration
-
-**JSON Content Structure**:
-- [laravel/config/local/fixcity/database/content/pages/tests.ticket-list.json](../../../laravel/config/local/fixcity/database/content/pages/tests.ticket-list.json)
-  - Pilot page content configuration
-  - Single source of truth for content
-  - Structured by content_blocks type
-
-**Translations**:
-- Pattern: `fixcity::segnalazione.<field>.<section>.<type>`
-- Files: `laravel/lang/{locale}/fixcity.php`
-- **Important**: All user-visible text must use `trans()` helper
-- Examples in [PHASE-1-STRATEGY.md](PHASE-1-STRATEGY.md) § "Translation Key Patterns"
-
----
-
-## 📊 PHASE PROGRESSION
-
-### ✅ Phase 1: HTML Structure Alignment
-**Status**: 🟢 Strategy Complete → Execution In Progress  
-**Goal**: 90% HTML structural parity  
-**Pilot Page**: ticket-list  
-**Timeline**: ~2 hours concurrent execution  
-
-**Deliverables**:
-- ✅ PHASE-1-STRATEGY.md (complete)
-- ✅ GSD-PHASE-1-EXECUTION.md (complete)
-- ⏳ PHASE-1-FINDINGS.md (awaits comparison)
-- ⏳ PHASE-1-COMPLETION-REPORT.md (awaits completion)
-- ⏳ Comparison reports (awaits execution)
-
-**Next**: Executor agents begin Subtask 1 (Comparison)
-
-### ⏳ Phase 2: CSS Styling Alignment
-**Status**: 🔵 Not Started  
-**Goal**: Achieve visual parity via CSS  
-**Approach**: Map Bootstrap Italia → Tailwind equivalents  
-**Start**: After Phase 1 ✅ Complete  
-
-**Planned Documents**:
-- PHASE-2-STRATEGY.md
-- PHASE-2-FINDINGS.md
-- PHASE-2-COMPLETION-REPORT.md
-
-### ⏳ Phase 3: JavaScript Behavior
-**Status**: 🔵 Not Started  
-**Goal**: Match interactive behavior (tabs, modals, forms)  
-**Approach**: Alpine.js for client-side interactivity  
-**Start**: After Phase 2 ✅ Complete  
-
-### ⏳ Phase 4: Scaling & Polish
-**Status**: 🔵 Not Started  
-**Goal**: Replicate methodology across all 49 test pages  
-**Approach**: Automate comparison, batch fixes, parallel execution  
-**Start**: After Phase 1 methodology proven  
-
----
-
-## 🔄 MULTI-AGENT COORDINATION
-
-### Phase 1 Team Assignments
-
-**Researcher Agent** (Current):
-- ✅ Strategy research & documentation
-- ⏳ Gap analysis & findings documentation
-- ⏳ Completion reporting
-- ⏳ Index maintenance
-
-**Executor Agent #1** (HTML Comparison):
-- ⏳ Run comparison script
-- ⏳ Re-verify parity after fixes
-- Subtasks: 1, 5
-
-**Executor Agent #2** (Code Implementation):
-- ⏳ Apply blade template fixes
-- ⏳ Update JSON content structure
-- ⏳ Verify build succeeds
-- Subtasks: 3, 4
-
-**Coordinator**:
-- Track progress
-- Unblock issues
-- Update GitHub issues
-- Maintain this index
-
-### Communication Flow
-```
-Researcher (Strategy)
-    ↓
-Executor #1 (Comparison)
-    ↓ reports findings
-Researcher (Analysis)
-    ↓ recommends fixes
-Executor #2 (Implementation)
-    ↓ applies fixes
-Executor #1 (Verification)
-    ↓ re-tests
-Researcher (Documentation)
-    ↓ reports completion
-```
-
----
-
-## 📍 FILE LOCATIONS REFERENCE
-
-### Key Directories
-```
-laravel/Themes/Sixteen/
-├── docs/                                (← Documentation YOU ARE HERE)
-│   ├── 00-INDEX.md                     (this file)
-│   ├── PHASE-1-STRATEGY.md             (strategy complete)
-│   ├── GSD-PHASE-1-EXECUTION.md        (execution plan)
-│   ├── PHASE-1-FINDINGS.md             (⏳ pending)
-│   ├── PHASE-1-COMPLETION-REPORT.md    (⏳ pending)
-│   ├── body-structure-comparison/      (comparison outputs)
-│   │   └── ticket-list/
-│   │       ├── comparison-report.json
-│   │       ├── parity-summary.txt
-│   │       ├── reference-body.html
-│   │       └── local-body.html
-│   ├── blocks/                         (block component docs)
-│   ├── components/                     (blade component docs)
-│   └── [other docs]
-│
-├── resources/views/
-│   ├── pages/tests/
-│   │   ├── [slug].blade.php           (← MAIN: Use this)
-│   │   ├── index.blade.php
-│   │   └── design-comuni-[slug].blade.php.old
-│   └── components/
-│       └── blocks/segnalazioni/       (block components)
-│
-├── config/
-│   └── (theme config files)
-│
-└── public/
-    └── (compiled assets)
-
-bashscripts/
-├── body/
-│   └── html-structure-compare.sh      (← MAIN SCRIPT)
-├── html/
-│   ├── extract-body-html.py
-│   └── compare-html-body.py
-└── docs/
-    └── html/
-        ├── INDEX.md                    (tool documentation)
-        └── html-structure-compare.md
-
-laravel/config/local/fixcity/database/content/pages/
-└── tests.ticket-list.json     (← JSON CONTENT)
-```
-
-### Do NOT Modify
-```
-❌ Create laravel/Themes/Sixteen/resources/views/pages/tests/ticket-list.blade.php
-   Use: laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php
-
-❌ Move bashscripts/html-structure-compare.sh
-   Use: bashscripts/html/html-structure-compare.sh
-
-❌ Move bashscripts/compare-html-body.py
-   Use: bashscripts/html/compare-html-body.py
-```
-
----
-
-## 🎓 LEARNING PATH
-
-**New to this project?** Start here:
-
-1. **5 min**: Read this INDEX.md (you are here)
-2. **20 min**: Skim [PHASE-1-STRATEGY.md](PHASE-1-STRATEGY.md) § "Executive Summary" + § "Design Comuni Architecture"
-3. **15 min**: Review [GSD-PHASE-1-EXECUTION.md](GSD-PHASE-1-EXECUTION.md) § "Phase Overview" + § "Subtasks"
-4. **30 min**: Deep dive [PHASE-1-STRATEGY.md](PHASE-1-STRATEGY.md) full document for complete context
-5. **10 min**: Run comparison script to see it in action
-6. **20 min**: Study comparison reports and gap analysis
-
----
-
-## ✅ TODO & TRACKING
-
-**Phase 1 Progress**:
-- [x] Strategy document created
-- [x] Execution plan created
-- [ ] Comparison executed (awaits Executor #1)
-- [ ] Gap analysis documented (awaits comparison)
-- [ ] Blade template fixes applied (awaits gap analysis)
-- [ ] JSON structure verified (awaits gap analysis)
-- [ ] Verification test run (awaits fixes)
-- [ ] Completion report created (awaits verification)
-- [ ] Index updated (ongoing)
-- [ ] Phase 2 strategy outlined (awaits Phase 1 completion)
-
-**Scaling Preparation**:
-- [ ] Methodology validated on ticket-list
-- [ ] Process documented for other pages
-- [ ] Batch execution approach designed
-- [ ] Parallel agent workflow optimized
-
----
-
-## 🔗 RELATED RESOURCES
-
-**Official References**:
-- [Design Comuni Live](https://italia.github.io/design-comuni-pagine-statiche/sito/ticket-list.html) - Reference implementation
-- [Design Comuni GitHub](https://github.com/italia/design-comuni-pagine-statiche) - Source code
-- [Designers Italia](https://designers.italia.it/modelli/comuni/) - Official documentation
-- [Bootstrap Italia](https://italia.github.io/bootstrap-italia/) - Component library
-
-**FixCity Docs**:
-- [FixCity README.md](../../../README.md) - Project overview
-- [Laravel Custom Instructions](../../../laravel/CLAUDE.md) - Framework rules
-- [Bashscripts Documentation](../../docs/html/INDEX.md) - Automation tools
-
----
-
-## 🚀 GETTING STARTED
-
-### For Executor Agents:
-
-**Executor #1 (Comparison)**:
-```bash
-# Step 1: Start Laravel dev server
-cd laravel && php artisan serve
-
-# Step 2: Run comparison (in new terminal)
-cd /var/www/_bases/base_fixcity_fila5
-./bashscripts/html/html-structure-compare.sh ticket-list
-
-# Step 3: Review output
-cat laravel/Themes/Sixteen/docs/body-structure-comparison/ticket-list/parity-summary.txt
-```
-
-**Executor #2 (Code Fixes)**:
-```bash
-# Step 1: Read gap analysis
-cat laravel/Themes/Sixteen/docs/PHASE-1-FINDINGS.md
-
-# Step 2: Edit blade template
-nano laravel/Themes/Sixteen/resources/views/pages/tests/[slug].blade.php
-
-# Step 3: Edit JSON content
-nano laravel/config/local/fixcity/database/content/pages/tests.ticket-list.json
-
-# Step 4: Build & test
-cd laravel/Themes/Sixteen && npm run build && npm run copy
-php artisan optimize:clear
-# Open: http://127.0.0.1:8000/it/tests/ticket-list
-```
-
----
-
-## 📞 QUESTIONS?
-
-**About Phase 1 Strategy?** → See [PHASE-1-STRATEGY.md](PHASE-1-STRATEGY.md)  
-**About Execution Plan?** → See [GSD-PHASE-1-EXECUTION.md](GSD-PHASE-1-EXECUTION.md)  
-**About Tools?** → See [bashscripts/docs/html/INDEX.md](../../docs/html/INDEX.md)  
-**About Blade/Components?** → See [README.md](README.md)  
-**About Translations?** → See [PHASE-1-STRATEGY.md](PHASE-1-STRATEGY.md) § "Translation Key Patterns"  
-
----
-
-**Document Status**: 📖 **ACTIVE REFERENCE**  
-**Maintenance**: Updated as phases progress  
-**Last Review**: 2026-04-08  
-**Next Review**: After Phase 1 completion  
-
-*This index is your source of truth for Phase 1. Bookmark it.*
-
----
-
-## 🟠 PHASE 1 EXECUTION DOCUMENTS (Created During Execution)
-
-*These documents are created as Subtasks progress*
-
-### Execution Coordination
-- **PHASE-1-EXECUTION-STATUS.md** - Real-time progress tracking (updated every subtask)
-- **PHASE-1-FINDINGS-TEMPLATE.md** - Template for analysis results
-- **SUBTASK-2-ANALYSIS-WORKFLOW.md** - Researcher workflow guide for findings
-- **EXECUTOR-2-SUBTASKS-3-4.md** - Detailed instructions for blade fixes and JSON verification
-
-### Output Locations
-```
-laravel/Themes/Sixteen/docs/
-├─ body-structure-comparison/ticket-list/
-│  ├─ comparison-report.json          (Subtask 1 output)
-│  ├─ parity-summary.txt              (Subtask 1 output)
-│  ├─ reference-body.html             (Subtask 1 output)
-│  └─ local-body.html                 (Subtask 1 output)
-└─ prompts/segnalazione_disservizio/
-   ├─ PHASE-1-FINDINGS.md             (Subtask 2 output)
-   └─ PHASE-1-COMPLETION-REPORT.md    (Subtask 6 output)
-```
-
----
-
-## �� MULTI-AGENT WORKFLOW
-
-### Executor #1 (Comparison & Verification)
-- **Subtask 1**: Run comparison script
-  - Input: [web URLs]
-  - Output: comparison-report.json, parity-summary.txt
-  - Duration: 15-20 min
-  - Status: 🟠 IN PROGRESS (Agent ID: executor-phase1-subtask1)
-
-- **Subtask 5**: Re-verify after fixes
-  - Input: Updated blade + JSON
-  - Output: New comparison results with parity ≥ 90%
-  - Duration: 15-20 min
-  - Status: ⏳ PENDING
-
-### Researcher (Analysis & Documentation)
-- **Subtask 2**: Analyze findings
-  - Input: comparison-report.json from Subtask 1
-  - Output: PHASE-1-FINDINGS.md with gap analysis
-  - Duration: 20-30 min
-  - Status: ⏳ PENDING (awaits Subtask 1)
-  - Workflow: See SUBTASK-2-ANALYSIS-WORKFLOW.md
-
-- **Subtask 6**: Document completion
-  - Input: Final comparison results, all changes
-  - Output: PHASE-1-COMPLETION-REPORT.md
-  - Duration: 20-25 min
-  - Status: ⏳ PENDING (awaits Subtask 5)
-
-### Executor #2 (Implementation)
-- **Subtask 3**: Fix blade template
-  - Input: PHASE-1-FINDINGS.md
-  - Output: Updated [slug].blade.php
-  - Duration: 30-40 min
-  - Status: ⏳ PENDING (awaits Subtask 2)
-  - Workflow: See EXECUTOR-2-SUBTASKS-3-4.md
-
-- **Subtask 4**: Verify JSON content
-  - Input: PHASE-1-FINDINGS.md
-  - Output: Verified tests.ticket-list.json
-  - Duration: 15-20 min
-  - Status: ⏳ PENDING (awaits Subtask 2)
-  - Can run in parallel with Subtask 3
-
----
-
-## 📊 CURRENT STATUS
-
-```
-PHASE 1: HTML Structural Parity
-├─ ✅ COMPLETE: Strategy & Planning (Phase 0)
-├─ 🟠 IN PROGRESS: Subtask 1 - Comparison (Agent: executor-phase1-subtask1)
-├─ ⏳ PENDING: Subtask 2 - Analysis
-├─ ⏳ PENDING: Subtask 3 - Blade Fixes
-├─ ⏳ PENDING: Subtask 4 - JSON Verify
-├─ ⏳ PENDING: Subtask 5 - Re-Verify
-└─ ⏳ PENDING: Subtask 6 - Documentation
-
-Expected Parity: ≥ 90% ✅
-Timeline: 90-150 minutes total (parallel execution)
-```
-
-For detailed status, see: **PHASE-1-EXECUTION-STATUS.md**
+# Sixteen — indice canonico
+
+Sixteen è il tema web/PWA pubblico di FixCity: è il proprietario della resa
+Design Comuni, del markup e dei componenti visuali. Le pagine sono Folio +
+Blade/Volt e le Actions di dominio appartengono al modulo owner. Per regola non
+deve avere controller o rotte proprie, ma il codice le contiene ancora: 5
+controller in `app/Http/Controllers/`, `routes/web.php` e `routes/auth.php`
+(verificato 2026-10-14). A runtime non risultano registrate: `php artisan
+route:list` non ha `comune/*`, `auth/spid` ne' `auth/cie`. Stato e conteggi in
+[README.md](README.md).
+
+Questo file è l'indice operativo unico. Stato reale degli altri indici (verificato
+2026-10-14): `00-index.old.md`, `documentation-index.old.md` e
+`index.historical-bmad.old.md` sono storici (suffisso `.old`); `INDEX.md` (la
+mappa delle sottocartelle, DCP-112) è stato rimosso da git (commit
+`52268d5b`): per le cartelle usa la tabella "Classificazione delle cartelle" qui
+sotto. `index.md` è l'indice BMAD/QMD più vecchio (router storico) e
+`master-documentation.md` è un resoconto del 2026-04-01, entrambi senza suffisso
+`.old`; restano anche `00-INDEX.md.tmp` (residuo del 2026-09-24),
+`00-homepage-replication-index.md`, `design-comuni-replication-index.md`,
+`replikate-master-index.md` e `SCRIPTS_INDEX.md`. Non usarli per decidere una
+nuova struttura.
+
+## Riorganizzazione docs 2026-10-13
+
+- `build/` — tutti i 14 documenti Vite/build (erano sparsi alla root come
+  `vite-*.md`/`VITE_*.md`); `build/INDEX.md` non esiste: ordine di lettura da
+  [vite-configuration-guide.md](build/vite-configuration-guide.md);
+- `visual-parity/` — struttura consolidata: `reports/`, `screenshots/pages/`
+  (evidenza per pagina), `screenshots/legacy-2026-04/` (evidenza storica),
+  `scripts/` (bug del path annidato `scripts/docs/visual-parity/scripts/`
+  eliminato);
+- `visual-parity-screenshots/` accorpato in `visual-parity/screenshots/pages/`;
+- `visual-comparison/` resta evidence storica cross-referenziata.
+
+## Classificazione delle cartelle (file presenti il 2026-10-14)
+
+| Ruolo | Cartelle (n. file) |
+|---|---|
+| Canoniche | `bmad/` (410, story in `bmad/stories/`, decisioni in `bmad/decisions/`), `stories/` (37), `decision-log/` (14), `wiki/` (278), `architecture/` (19), `rules/` (3), `i18n/` (3), `compliance/` (1), `build/` (15), `design-system/` (6), `components/` (8), `pages/` (334, contratti per pagina), `design-comuni/` (643, vincoli visuali; i suoi `*/raw` sono evidence) |
+| Supporto | `prompts/` (338, coordinamento tra agenti, es. `prompts/homepage/`), `scripts/` (16), `llm-wiki/` (9) |
+| Evidence (immutabili o storiche) | `screenshots/` (260), `visual-parity/` (280), `visual-comparison/` (224), `body-structure-comparison/` (156), `analysis/` (142), `comparisons/` (83), `visual-analysis/` (53), `html-parity-reports/` (29), `html-structure-comparison/` (21), `html-compare/` (12), `Main_files/` (47), `raw/` (16), `design-comuni/*/raw` |
+| Generate | `graphify-out/` e `qmd-index/`: non presenti in `docs/` al 2026-10-28 |
+| Legacy o da triare (DOC-004, DOC-006) | i `.md` di radice (405, con 25 collisioni di maiuscole nel perimetro), `ui-fixes/` (14), i report di batch in `design-comuni/` (`batch-structure-audit*.md`: 108 link non risolti ciascuno, `batch-pages-analysis.md`: 98) |
+| Mappa delle cartelle | questa tabella (il vecchio `INDEX.md` è stato rimosso); questo file è anche l'indice dei documenti |
+
+## Percorsi di lettura
+
+1. [README](README.md) — identità, ownership e stack;
+2. [knowledge-map](knowledge-map.md) — mappa per QMD/Graphify/Second Brain;
+3. [nomi e frontmatter dei .md](../../../../bashscripts/ai/wiki/rules/markdown-file-naming-and-frontmatter.md) — regole cross-project;
+4. [docs knowledge architecture](bmad/docs-knowledge-architecture.md) — regole BMAD;
+5. [header/footer contract](bmad/header-footer-sections-contract.md) — dati e renderer;
+6. [header/footer parity](bmad/header-footer-parity-report.md) — gate Playwright;
+7. [header/footer data model](bmad/header-footer-data-model.md) — elementi, forma JSON e AC;
+8. [header/footer rationale](second-brain/header-footer-rationale.md) — decisione e perché;
+9. [front-office readiness plan](bmad/front-office-production-readiness-plan.md) — copertura guest/auth e gate;
+10. [front-office readiness brainstorming](bmad/front-office-readiness-brainstorming.md) — otto tecniche BMAD;
+11. [Cms Head adoption plan](../../../Modules/Cms/docs/bmad/head-component-adoption-plan.md) — ownership, decisioni e parita';
+12. [wiki](wiki/README.md) — conoscenza consolidata e regole on-demand;
+13. [design-comuni](design-comuni/design-comuni-canonical.md) — vincoli visuali;
+14. [design-system](design-system/README.md) — token e componenti del tema;
+15. [pages](pages/) — contratti delle pagine e parity;
+16. [stories](stories/) — storie BMAD e acceptance criteria;
+17. [visual-parity](visual-parity/) — verifiche, screenshot per pagina e report;
+18. [investigation](investigation/) — analisi riproducibili, non decisioni canoniche.
+
+Per le pagine CMS di primo livello, leggere anche il contratto
+[FAQ route ownership](bmad/faq-route-ownership.md): una pagina come
+`domande-frequenti` usa lo shell Folio generico e il JSON del tenant; non si
+crea `resources/views/pages/domande-frequenti/index.blade.php`.
+Il perché: [why-domande-frequenti-blade-php-must-not-exist.md](bmad/knowledge/why-domande-frequenti-blade-php-must-not-exist.md).
+
+## SSoT per area
+
+| Area | Canonico | Non usare come SSoT |
+|---|---|---|
+| Layout/Folio | `layout-runtime-contract.md` + `docs/wiki/rules/no-parallel-design-comuni-layout.md` | `design-comuni` come nome di layout runtime; i valori CMS storici vengono risolti da `x-layouts.app`, mentre `-authenticated` e `-bare` restano template specializzati di test |
+| Accessibilità | `accessibility.md` + contratto mobile | claim “100%” senza audit |
+| Design Comuni | `design-comuni/` + documenti parity + `design-system/` | screenshot raw o report duplicati |
+| Componenti | `components/` | copie in `blocks/` non indicizzate |
+| Build asset | `build/vite-configuration-guide.md` + `vite.config.js` | log di singole sessioni |
+| FixCity journeys | `Modules/Fixcity/docs/actor-flows.md` | duplicati nel tema |
+
+## Regola di consolidamento
+
+Le cartelle `analysis/`, `comparisons/`, `html-*`, `body-structure-comparison/` e
+`design-comuni/*/raw` sono evidence storica o generated output. Non creare nuovi report
+paralleli: aggiornare il canonico con finding, data, viewport e link al codice. Prima di
+eliminare o spostare file, verificare i riferimenti con `rg` e registrare la sostituzione
+nel log Second Brain.
+
+I nuovi `.md` usano nomi lowercase senza date/timestamp e senza suffissi numerici
+sequenziali (`-1`, `-2`, `-3`). I file storici restano tali finché una mappa di rinomina
+verificata non garantisce tutti i riferimenti.
+
+## Definition of done visuale
+
+Ogni modifica deve avere: mobile/tablet/desktop evidence, zero overflow, focus visibile,
+target touch adeguato, contrasto e reduced-motion verificati. Un screenshot isolato non
+chiude il gate.
+
+## Studio docs e ingressi (2026-10-14)
+
+- [Studio del tema reale e correzione degli ingressi](bmad/stories/docs-studio-stato-e-ingressi.story.md): stato vivo provato, conteggi, rotte dormienti, layout `design-comuni*`, indici storici.
+
+## Head Cms e production readiness
+
+- [Audit guest e autenticati](stories/front-office-production-readiness-audit.story.md)
+- [Brainstorming BMAD a otto tecniche](bmad/front-office-readiness-brainstorming.md)
+- [Piano di readiness](bmad/front-office-production-readiness-plan.md)
+- [Decisioni Head e parita'](../../../Modules/Cms/docs/bmad/head-component-adoption-plan.md)
+- [Discussion #93](https://github.com/laraxot/theme_sixteen_fila5/discussions/93)
+
+## Story BMAD recenti (standard di codice)
+
+- [Parity degli attributi data-* (2026-10-29)](stories/data-attribute-parity.story.md) — via `data-sixteen-*` dal markup; regola in [data-attribute-rule.md](data-attribute-rule.md) (scala di scelta, inventario del riferimento: 12 nomi, nessuno col nome del tema); 6 varianti legacy di header, una sola con un consumatore.
+- [Passata UX mobile (2026-10-28)](stories/mobile-ux-pass.story.md) — **in revisione**: il tema servito e' Two, non Sixteen; `loading="lazy"` annullato; viewport senza blocco zoom, campi a 16 px, mappa a schermo intero in `dvh` da confermare contro il riferimento.
+- [Services -> Actions e const -> enum (2026-10-08)](stories/services-to-actions-sixteen.story.md) — il tema non ha piu' `app/Services/`; 31 const in enum con lang it/en.
+- [Niente testi fissi nelle Blade (2026-10-30)](stories/blade-i18n-no-hardcoded-text.story.md) — chiavi `pub_theme::` in it, en, de, es; numeri, residui e regola dei link.
+
+## Parity Design Comuni v2 (2026-10-13)
+- [Epic DCP-00 e storie per la ripresa](bmad/stories/dcp-00-epic-design-comuni-parity-v2.story.md)
+- [Perche' la parity non e' stata completata e guardrail](bmad/decisions/parity-root-cause-and-guardrails.md)
+- [Dossier dei 14 difetti della homepage](bmad/homepage-visual-parity-defects/defects-d01-d14.md)
+- [Coordinamento tra agenti](prompts/homepage/00-COORDINATION.md)
+- [Zen del wizard segnalazione (logica/perche'/filosofia/religione/politica)](bmad/decisions/segnalazione-flow-parity-zen.md)
+- [DCP-32 wizard step 1 privacy](bmad/stories/dcp-32-wizard-step1-privacy.story.md) · [DCP-33 step 2 dati + mappa](bmad/stories/dcp-33-wizard-step2-dati.story.md) · [DCP-34 step 3 riepilogo + mappa](bmad/stories/dcp-34-wizard-step3-riepilogo.story.md) · [DCP-35 conferma](bmad/stories/dcp-35-conferma-parity.story.md)
+- Strumenti: `bashscripts/docs/visual-comparison/INDEX.md`
+
+## Wizard /it/tickets/create: DCP-35 (Fixcity) e D15
+- [DCP-35 (modulo Fixcity): passi 1 e 2 del wizard e coordinamento tra agenti](../../../Modules/Fixcity/docs/stories/dcp-35-tickets-create-privacy-dati-coordinamento.story.md): attenzione, la numerazione DCP-32..35 esiste anche nelle story del tema (voci sopra), con significato diverso (qui DCP-35 = conferma)
+- [D15: il Volt della pagina generica ha una radice propria](decision-log/D15-volt-fragment-explicit-root.md): causa di `MethodNotFoundException` su «Avanti»; esiste un secondo D15, [conferma post-save](decision-log/D15-conferma-post-save.md)
+
+## Story tickets/create lato tema (2026-10-13)
+- [DCP-40 radice del Volt nella pagina generica](bmad/stories/dcp-40-volt-radice-widget-livewire.story.md)
+- [DCP-50 guardia di compilazione dei template Blade](bmad/stories/dcp-50-guardia-compilazione-template-blade.story.md)
+- [D15 radice del Volt (decisione)](decision-log/D15-volt-fragment-explicit-root.md)
+
+## Multilingua it, en, de, es (DCP-120)
+- [i18n/INDEX.md](i18n/INDEX.md): comportamento multilingua (lingua, fallback, selettore, link, formati) e glossario di traduzione
+- [DCP-120 copertura de/es](bmad/stories/dcp-120-multilingua-comportamenti-e-copertura.story.md) · [DCP-123 lingua dichiarata e link localizzati](bmad/stories/dcp-123-lingua-dichiarata-e-link-localizzati.story.md)
+- [Multilingua e dispositivi: comportamenti osservati](wiki/concepts/multilingua-e-dispositivi-comportamenti.md): misure su lingua, selettore, wizard, formati, menu e bersagli tattili a 375, 768, 1024, 1440 (studio in [DCP-55](bmad/stories/dcp-55-multilingua-e-dispositivi.story.md))
+
+## Area personale (DCP-106, DCP-110)
+- [DCP-110 area personale: Le mie segnalazioni e Segnalazioni che seguo](bmad/stories/dcp-110-area-personale-pratiche-e-seguite.story.md)
+
+## Registro story e dettaglio ticket (2026-10-14)
+- [Registro completo delle story](bmad/stories/00-registro-completo.md): le story di `stories/` e `bmad/stories/` che prima non avevano un indice (stato e titolo dichiarati nei file)
+- [DCP-148 dettaglio pubblico e Segui](bmad/stories/dcp-148-dettaglio-pubblico-segnalazione-e-segui.story.md): blocco `components/blocks/ticket-detail/design-comuni.blade.php`
+- [DCP-152 (modulo Geo): marker del dettaglio e pulsanti della mappa](../../../Modules/Geo/docs/stories/dcp-152-marker-dettaglio-ticket-e-pulsanti-mappa-su-pagine-dc.story.md): il blocco passa `marker-icon-url`, `marker-color`, `marker-label` al `coordinate-picker-lit` (vedi [coordinate-picker](wiki/coordinate-picker.md))
+
+## Audit front office anonimo (2026-11-12)
+
+- [Sprite delle icone: deve arrivare in produzione (F-01/F-02)](stories/icon-sprite-deployability.story.md): `.gitignore` a due livelli, `test -f` in `deploy.sh`, guardia che interroga git
+- [Home «Novita'»: 3 card per riga (F-06)](stories/home-news-grid-specificity.story.md): specificita' dello scope contro il `<style>` dei blocchi
+- [Sweep del front office anonimo e diff dell'head](how-to/front-office-anonymous-sweep.md): metodo, soglie, trappole
+- [Piano di hardening: guardie e strumenti](plans/front-office-hardening-plan.md): onde per non ripetere i difetti muti
+- [Brainstorming, sessione 85](bmad-brainstorming.md): 5 Perche', reverse brainstorming, matrice delle guardie
+- Discussione con decisioni e alternative scartate: [#95](https://github.com/laraxot/theme_sixteen_fila5/discussions/95)
+
+## Decisione wizard privacy — 2026-11-12
+
+- [DCP-456-Sixteen: informativa a due livelli](bmad/stories/ticket-create-privacy-design-comuni-decision.story.md)
+- [Discussion #96](https://github.com/laraxot/theme_sixteen_fila5/discussions/96): differenze tra informativa integrale duplicata e avviso breve con approfondimento.
+
+--- BMAD + second brain note (agent AI update 2026-10-14) ---
+- [second brain: kp-174d15a58ff94901b2b0df0d86b8907a] Design Comuni parity
+- [BMAD] Design Comuni scope, no Bootstrap Italia
+- [AGENTS.md m00088] Prompt 98-daily-report: ruoli chiari AI

@@ -8,17 +8,21 @@ qmd: "code-quality code quality analysis - user module"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Code Quality Analysis - User Module
 
 ## 🚨 Critical Issues Identified
@@ -325,8 +329,7 @@ public function getTableColumns(): array
 
 ## 📚 Related Documentation
 
-- [authentication-performance-optimization-2.md](./performance/authentication-performance-optimization-3.md)
->>>>>>> 87273113 (.)
+- [authentication-performance-optimization-2.md](./performance/authentication-performance-optimization.md)
 - [optimization-analysis.md](./optimization-analysis.md)
 - [phpstan-compliance.md](./phpstan-compliance.md)
 

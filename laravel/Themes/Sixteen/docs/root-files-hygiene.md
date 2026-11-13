@@ -1,3 +1,15 @@
+---
+title: "root files hygiene"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "root files hygiene"
+issues: []
+discussions: []
+status: stub
+---
+
 # Root files hygiene
 
 ## 2026-07-08 16:48

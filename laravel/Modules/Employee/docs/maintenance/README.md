@@ -1,3 +1,9 @@
+---
+title: "Employee - README"
+module: Employee
+bmad: true
+status: active
+---
 # Maintenance Documentation
 
 [![Module](https://img.shields.io/badge/Module-Maintenance Documentation-8B0000.svg)]()

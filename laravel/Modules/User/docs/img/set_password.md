@@ -6,6 +6,9 @@ topic: set_password
 canonical: ../../../../Themes/docs/shared-components/set-password.jpg
 created: 2026-07-22
 updated: 2026-07-22
+status: stub
+tags: [docs, user, img]
+qmd: "set_password user"
 ---
 
 # set_password

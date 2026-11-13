@@ -1,10 +1,15 @@
 ---
+qmd: "LOGIN TIMEOUT ISSUE"
+issues: []
+discussions: []
 title: "Problema Timeout Pagina Login - Diagnosi e Soluzione"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: login-timeout-issue.md
 ---
 
 # 🚨 Problema Timeout Pagina Login - Diagnosi e Soluzione

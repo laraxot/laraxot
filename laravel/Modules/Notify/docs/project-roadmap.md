@@ -1,3 +1,15 @@
+---
+title: "project roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "project roadmap"
+issues: []
+discussions: []
+status: draft
+---
+
 # ROADMAP PRINCIPALE - Progetto Fixcity
 
 ## Scopo del Progetto
@@ -153,7 +165,7 @@ Creare una piattaforma digitale che connetta cittadini, amministrazioni pubblich
 ## Risorse e Documentazione
 
 ### Documentazione Tecnica
-- [Architecture Guide](./architecture.md)
+- [Architecture Guide](./ARCHITECTURE.md)
 - [API Documentation](./api-docs.md)
 - [Database Schema](./database-schema.md)
 - [Deployment Guide](./deployment.md)

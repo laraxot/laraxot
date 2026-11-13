@@ -1,3 +1,15 @@
+---
+title: "7 3 segnalazione area personale html parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "7 3 segnalazione area personale html parity"
+issues: []
+discussions: []
+status: draft
+---
+
 # Story 7.3: HTML Parity — segnalazione-area-personale
 
 Status: ready-for-dev

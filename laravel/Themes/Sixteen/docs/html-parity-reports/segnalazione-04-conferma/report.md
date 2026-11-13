@@ -1,3 +1,15 @@
+---
+title: "report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "report"
+issues: []
+discussions: []
+status: draft
+---
+
 # HTML Structure Comparison Report
 
 **Generated**: 2026-04-11 22:36:50
@@ -5,7 +17,6 @@
 **URL2 (Local)**:     file:///tmp/batch-fix/local_segnalazione-04-conferma.html
 
 ---
-
 ## Summary
 
 | Metric                        | Value          |

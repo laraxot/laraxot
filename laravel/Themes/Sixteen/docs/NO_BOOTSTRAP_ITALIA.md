@@ -1,3 +1,16 @@
+---
+title: "NO BOOTSTRAP ITALIA"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "NO BOOTSTRAP ITALIA"
+issues: []
+discussions: []
+status: superseded
+superseded_by: no-bootstrap-italia.md
+---
+
 # 🚫 NO Bootstrap Italia - Tailwind + Alpine ONLY
 
 **Date**: 2026-03-30  
@@ -5,7 +18,6 @@
 **Priority**: 🔴 CRITICAL
 
 ---
-
 ## 🚨 Critical Understanding
 
 > **Stiamo RIFACENDO Bootstrap Italia con Tailwind @apply + Alpine.js**

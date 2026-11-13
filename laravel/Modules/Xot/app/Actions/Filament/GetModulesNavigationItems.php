@@ -37,6 +37,7 @@ class GetModulesNavigationItems
         $navs = [];
 
         $modules = app(GetTenantModulesAction::class)->execute();
+<<<<<<< HEAD
         // Pre-load user roles to avoid N+1 queries
         /** @var Authenticatable|null $user */
         $user = Auth::user();
@@ -44,6 +45,8 @@ class GetModulesNavigationItems
         /** @var array<int, string> $userRoles */
         $userRoles = [];
         // Se serve re-introdurre un preload ruoli, farlo solo se il metodo è disponibile e tipizzato nel modello.
+=======
+>>>>>>> laraxot/dev
 
         foreach ($modules as $module) {
             Assert::string($module, 'Il nome del modulo deve essere una stringa');
@@ -85,6 +88,7 @@ class GetModulesNavigationItems
             Assert::integerish($navigation_sort, 'navigation_sort deve essere un intero');
             $navigation_sort = (int) $navigation_sort;
 
+<<<<<<< HEAD
             // Check role using pre-loaded roles instead of hasRole() method
             /*
              $hasRole = in_array($role, $userRoles, true);
@@ -103,6 +107,9 @@ class GetModulesNavigationItems
              */
 
             // Creiamo l'elemento di navigazione
+=======
+            // Il ruolo viene verificato lazy in visible(), per utente corrente
+>>>>>>> laraxot/dev
             $nav = NavigationItem::make($module)
                 ->url('/'.$module_low.'/admin')
                 ->icon($icon)

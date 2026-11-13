@@ -1,5 +1,9 @@
 ---
-title: "Modules/Notify: la suite Pest non riesce a interrogare il database in modo affidabile — la maggior parte dei file di test fallisce per il bootstrap, non per la logica"
+tags: [documentation]
+qmd: "notify pest suite database resolver broken.story"
+issues: []
+discussions: []
+title: "Modules/Notify: la suite Pest non riesce a interrogare il database in modo affidabile: la maggior parte dei file di test fallisce per il bootstrap, non per la logica"
 type: story
 module: Notify
 epic: null
@@ -48,11 +52,11 @@ tra Notify e Quaeris, per evitare l'inquinamento tra file di cui sotto):
 Due sintomi diversi, probabilmente la stessa causa radice:
 1. Alcuni file falliscono dal primo test che tocca davvero il database, con
    `Error: Call to a member function connection() on null` (in
-   `Illuminate\Database\Eloquent\Model::resolveConnection()` —
+   `Illuminate\Database\Eloquent\Model::resolveConnection()` -
    `static::$resolver` è `null`).
 2. Altri file hanno i primi test (di solito reflection pura, nessun accesso al
    DB) verdi, poi il primo che tocca davvero il database fallisce con
-   `BindingResolutionException: Target class [config] does not exist` — e da
+   `BindingResolutionException: Target class [config] does not exist`: e da
    quel punto in poi, nello stesso file, ogni test successivo fallisce a
    cascata con lo stesso errore (il container Laravel risulta svuotato di
    binding di base come `'config'`).
@@ -70,7 +74,7 @@ it('can count mail templates', function (): void {
 ```
 
 Fallisce identico sia in `Modules/Notify/tests/Unit/Emails/` sia in
-`Modules/Notify/tests/Unit/Models/` (cartelle diverse, stesso risultato) — non
+`Modules/Notify/tests/Unit/Models/` (cartelle diverse, stesso risultato): non
 è una questione di dove si trova il file, è la prima query reale a
 `MailTemplate` (connessione `notify`) in un processo Pest pulito a fallire.
 
@@ -100,10 +104,10 @@ esatto in cui questo metodo gira (es. perché la config del modulo Notify non è
 ancora stata mergiata, o perché in questo ambiente la connessione resta
 `mysql` per qualche altro motivo), `notify` **non entra in questo meccanismo**
 e resta affidata al comportamento normale di Testbench per la connessione
-reale — che in questo ambiente, per qualche motivo non ancora isolato, non
+reale: che in questo ambiente, per qualche motivo non ancora isolato, non
 basta a inizializzare `Model::$resolver` in modo affidabile.
 
-## Nota storica — un fix diverso per un problema simile, oggi non più presente
+## Nota storica: un fix diverso per un problema simile, oggi non più presente
 
 Due documenti esistenti in questo stesso modulo, entrambi marcati
 **"Status: Completed"** (gennaio 2025):
@@ -115,12 +119,12 @@ descrivono un problema quasi identico nel sintomo
 (`InvalidArgumentException: Database connection [notify] not configured`) e un
 fix **diverso**: configurare esplicitamente ogni connessione (incluso
 `notify`) a sqlite in-memory dentro `setUp()`, poi lanciare
-`php artisan module:migrate` per Xot/User/Notify nello stesso metodo — nessuna
+`php artisan module:migrate` per Xot/User/Notify nello stesso metodo: nessuna
 dipendenza da un file sqlite pre-costruito esternamente.
 
 Quel pattern **non è più nel codice attuale**: è stato sostituito da
 `prepareSharedSqliteForTesting()`/`xot:build-test-sqlite` (probabilmente per
-velocità — un file condiviso invece di ricostruire lo schema per ogni
+velocità: un file condiviso invece di ricostruire lo schema per ogni
 processo). Non è chiaro, senza indagare oltre, se questa sostituzione abbia
 reintrodotto lo stesso problema del 2025 in una forma diversa, o se sia un
 problema distinto introdotto dal nuovo meccanismo.
@@ -133,7 +137,7 @@ usa `Notification::fake()`, che non tocca mai il database per davvero.
 Ma per proteggere con un test reale il Difetto 16 (`SpatieEmail` non
 valorizzava `html_layout_path` sui template auto-creati) e la prima metà del
 Difetto 17 (`RecordNotification::toSms()` doveva ritornare `null` a corpo
-vuoto) serve davvero interrogare `MailTemplate` — e questo problema lo
+vuoto) serve davvero interrogare `MailTemplate`: e questo problema lo
 impedisce. Due file di test sono stati scritti e sono corretti (verificato che
 la stessa identica cosa, banale e priva di qualunque logica di dominio, fallisce
 allo stesso modo), ma restano rossi per questa causa esterna:
@@ -149,7 +153,7 @@ tocca il database:
 ## Cosa NON è stato fatto, deliberatamente
 
 Nessun tentativo di modificare `prepareSharedSqliteForTesting()`,
-`XotBaseTestCase.php`, o `Notify/tests/TestCase.php` — su richiesta esplicita
+`XotBaseTestCase.php`, o `Notify/tests/TestCase.php`: su richiesta esplicita
 dell'utente di capire meglio il problema prima di decidere come affrontarlo.
 Questa story è analisi/tracciamento, non un fix.
 
@@ -165,9 +169,9 @@ Questa story è analisi/tracciamento, non un fix.
    richiesta non rientra nel meccanismo shared-sqlite, o se il problema è
    altrove (es. ordine dei service provider, cache di boot).
 4. Verificare se il problema è specifico di questa macchina/ambiente locale o
-   riproducibile anche in CI — cambia molto la priorità.
+   riproducibile anche in CI: cambia molto la priorità.
 
-## Acceptance Criteria (per una futura story di fix — non questa)
+## Acceptance Criteria (per una futura story di fix: non questa)
 
 1. Un test Pest nuovo, minimo, che interroga `Modules\Notify\Models\MailTemplate`
    come prima operazione del file, passa in modo affidabile e ripetibile.

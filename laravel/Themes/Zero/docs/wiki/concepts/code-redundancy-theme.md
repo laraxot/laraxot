@@ -12,6 +12,15 @@ related:
   - ../../../../Modules/Xot/docs/wiki/concepts/code-redundancy-philosophy.md
   - ../../../One/docs/wiki/concepts/code-redundancy-theme.md
   - ../../../../Modules/User/docs/wiki/concepts/code-redundancy-user.md
+id: zero-docs-wiki-concepts-code-redundancy-theme
+slug: code-redundancy-theme
+description: "Due temi non sono «duplicati sbagliati» se servono brand/UX diversi. Diventano debito solo quando il diff è zero e nessuno documenta perché esistono due cartelle."
+document_type: concept
+category: static-analysis
+status: active
+qmd: "ridondanza e confini - tema zero"
+issues: []
+discussions: []
 ---
 
 # Ridondanza — Theme Zero

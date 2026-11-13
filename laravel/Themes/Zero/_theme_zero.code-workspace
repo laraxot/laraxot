@@ -40,7 +40,7 @@
 		"git.autofetch": true,
 		"git.ignoreLimitWarning": true,
 		"deepscan.enable": true
-	
+
 	},
 	"extensions": {
 		"recommendations": [

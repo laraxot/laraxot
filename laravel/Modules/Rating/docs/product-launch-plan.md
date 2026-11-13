@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Rating - Product Launch Plan"
 type: guide
 tags: [product, launch, plan, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "product launch plan"
 related:
   - "./product-requirements.md"
+status: draft
 ---
 
 # Rating - Product Launch Plan

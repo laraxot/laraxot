@@ -4,13 +4,22 @@ declare(strict_types=1);
 
 return [
     'navigation' => [
+<<<<<<< HEAD
         'name' => 'cache lock',
+=======
+        'name' => 'Blocco cache',
+>>>>>>> laraxot/dev
         'plural' => 'cache locks',
         'group' => [
             'name' => 'Admin',
         ],
+<<<<<<< HEAD
         'label' => 'cache lock.navigation',
         'icon' => 'cache lock.navigation',
+=======
+        'label' => 'Lock Cache',
+        'icon' => 'heroicon-o-shield-exclamation',
+>>>>>>> laraxot/dev
         'sort' => 95,
     ],
     'pages' => [
@@ -49,6 +58,7 @@ return [
             'helper_text' => '',
             'description' => '',
         ],
+<<<<<<< HEAD
         'key' => [
             'label' => 'key',
             'placeholder' => 'key',
@@ -67,21 +77,30 @@ return [
             'helper_text' => 'expiration',
             'description' => 'expiration',
         ],
+=======
+>>>>>>> laraxot/dev
     ],
     'actions' => [
         'create' => [
             'label' => 'Crea Cache Lock',
             'icon' => 'create',
+<<<<<<< HEAD
             'tooltip' => 'create',
+=======
+>>>>>>> laraxot/dev
         ],
         'edit' => [
             'label' => 'Modifica Cache Lock',
             'icon' => 'edit',
+<<<<<<< HEAD
             'tooltip' => 'edit',
+=======
+>>>>>>> laraxot/dev
         ],
         'delete' => [
             'label' => 'Elimina Cache Lock',
             'icon' => 'delete',
+<<<<<<< HEAD
             'tooltip' => 'delete',
         ],
         'createAnother' => [
@@ -98,6 +117,17 @@ return [
             'label' => 'view',
             'icon' => 'view',
             'tooltip' => 'view',
+=======
+        ],
+        'createAnother' => [
+            'icon' => 'createAnother',
+        ],
+        'save' => [
+            'icon' => 'save',
+        ],
+        'view' => [
+            'icon' => 'view',
+>>>>>>> laraxot/dev
         ],
     ],
 ];

@@ -1,3 +1,15 @@
+---
+title: "resource slug implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "resource slug implementation"
+issues: []
+discussions: []
+status: draft
+---
+
 # Implementazione del Campo `slug` in MailTemplateResource
 
 ## Panoramica
@@ -166,5 +178,8 @@ return [
 - [Implementazione del Modello](./MODEL_SLUG_IMPLEMENTATION.md)
 - [Struttura della Migrazione](./MIGRATION_STRUCTURE.md)
 - [Guida alla Migrazione](../MAIL_TEMPLATE_MIGRATION_GUIDE.md)
+- [Implementazione del Modello](./model_slug_implementation.md)
+- [Struttura della Migrazione](./migration_structure.md)
+- [Guida alla Migrazione](../mail_template_migration_guide.md)
 - [Convenzioni Filament](../../../../docs/FILAMENT_CONVENTIONS.md)
 - [Regole per Filament](../../../../docs/FILAMENT_RULES.md)

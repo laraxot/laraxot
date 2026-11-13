@@ -1,3 +1,9 @@
+---
+title: "Employee - LARAXOT_ACTIONS_PATTERN"
+module: Employee
+bmad: true
+status: active
+---
 # 🚨 CRITICAL: Laraxot Actions Pattern Implementation
 
 ## ⚠️ ABSOLUTE RULE: NO SERVICES - ONLY QUEUEABLE ACTIONS

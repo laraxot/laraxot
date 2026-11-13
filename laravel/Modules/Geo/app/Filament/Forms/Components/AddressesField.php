@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Filament\Forms\Components;
 
-use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Component;
@@ -12,6 +11,7 @@ use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
 use Modules\Geo\Filament\Resources\AddressResource;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
+use Modules\Xot\Filament\Forms\Components\XotBaseRepeater;
 
 use function Safe\preg_match;
 
@@ -30,7 +30,7 @@ use function Safe\preg_match;
  *     ->minItems(1)
  *     ->addActionLabel('Aggiungi Indirizzo')
  */
-class AddressesField extends Repeater
+class AddressesField extends XotBaseRepeater
 {
     // protected string $view = 'geo::filament.forms.components.addresses-field';
 
@@ -60,8 +60,7 @@ class AddressesField extends Repeater
     }
 
     /**
-     * @param array<mixed> $address
-     *
+     * @param  array<mixed>  $address
      * @return array<string, mixed>
      */
     private static function normalizeAddressRow(array $address): array
@@ -110,9 +109,9 @@ class AddressesField extends Repeater
         $baseSchema['is_primary'] = Toggle::make('is_primary')
             ->visible(fn (Get $get): bool => count(self::repeaterAddresses($get)) > 1)
             ->default(fn (Get $get): bool => count(self::repeaterAddresses($get)) <= 1)
-            ->afterStateUpdated(function ($state, Set $set, Get $get, Component $component): void {
+            ->afterStateUpdated(function (mixed $state, Set $set, Get $get, Component $component): void {
                 // Se questo diventa primary, disattiva tutti gli altri
-                if (true === $state) {
+                if ($state === true) {
                     $addresses = self::repeaterAddresses($get);
 
                     // Estrae l'indice dal path del componente (es. "addresses.0.is_primary")
@@ -120,7 +119,7 @@ class AddressesField extends Repeater
                     preg_match('/addresses\.(\d+)\.is_primary/', $path ?? '', $matches);
                     $currentIndex = $matches[1] ?? null;
 
-                    if (null !== $currentIndex) {
+                    if ($currentIndex !== null) {
                         // Disattiva is_primary negli altri elementi
                         foreach ($addresses as $index => $address) {
                             $indexStr = app(SafeStringCastAction::class)->execute($index);
@@ -134,7 +133,7 @@ class AddressesField extends Repeater
                 }
             })
             ->live()
-            ->dehydrateStateUsing(function ($state, Get $get): bool {
+            ->dehydrateStateUsing(function (mixed $state, Get $get): bool {
                 // Se c'è un solo elemento, forza sempre true
                 if (count(self::repeaterAddresses($get)) <= 1) {
                     return true;

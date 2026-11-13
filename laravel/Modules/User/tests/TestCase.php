@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\User\Tests;
 
+use Illuminate\Database\DatabaseManager;
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
 use Filament\Facades\Filament;
 use Filament\Panel;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
+use Filament\Schemas\Schema as FilamentSchema;
 use Filament\Widgets\Widget;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -45,26 +47,59 @@ use function Safe\json_encode;
  * Migrations must be run ONCE externally: php artisan migrate --env=testing
  * DatabaseTransactions handles rollback between tests.
  *
- * @property User|null                  $user
- * @property User|null                  $owner
- * @property User|null                  $member
- * @property User|null                  $admin
- * @property User|null                  $baseUser
- * @property Team|null                  $team
- * @property Tenant|null                $tenant1
- * @property Tenant|null                $tenant2
- * @property Google2FA|null             $google2fa
- * @property Command|null               $command
- * @property ListUsers|null             $listUsersPage
- * @property CreateUser|null            $createUserPage
- * @property Device|null                $device
- * @property Action|null                $action
- * @property Widget|null                $widget
+ * @property User|null $user
+ * @property User|null $owner
+ * @property User|null $member
+ * @property User|null $admin
+ * @property User|null $baseUser
+ * @property Team|null $team
+ * @property Tenant|null $tenant1
+ * @property Tenant|null $tenant2
+ * @property Google2FA|null $google2fa
+ * @property Command|null $command
+ * @property ListUsers|null $listUsersPage
+ * @property CreateUser|null $createUserPage
+ * @property Device|null $device
+ * @property Action|null $action
+ * @property Widget|null $widget
  * @property Collection<int, User>|null $users
  */
 abstract class TestCase extends XotBaseTestCase
 {
-    use DatabaseTransactions;
+    use DatabaseTransactions {
+        beginDatabaseTransaction as openDatabaseTransactions;
+    }
+
+    /**
+     * Le migration girano una volta per processo, come in `Tests\TestCase`.
+     */
+    public static bool $userSchemaMigrated = false;
+
+    /**
+     * Su MariaDB (CI e sviluppo) lo schema del database `*_test` non viene costruito da
+     * `xot:build-test-sqlite`, che popola solo lo SQLite condiviso: senza questo passo i test
+     * che girano prima del primo `Tests\TestCase` (che lancia `migrate`) muoiono con
+     * "Table 'fixcity_user_test.users' doesn't exist". `migrate` e' additivo (mai `fresh`)
+     * e la `TestDatabaseGuard` garantisce che ogni connessione punti a un database `_test`.
+     * Va fatto prima di aprire le transazioni: in MySQL ogni DDL fa commit implicito.
+     *
+     * Nessun tipo di ritorno nativo: il metodo del trait non lo dichiara.
+     *
+     * @return void
+     */
+    public function beginDatabaseTransaction()
+    {
+        if (! static::$userSchemaMigrated) {
+            static::$userSchemaMigrated = true;
+
+            if (config('database.default') !== 'sqlite') {
+                $this->app?->make(\Illuminate\Contracts\Console\Kernel::class)
+                    ->call('migrate', ['--force' => true]);
+            }
+        }
+
+        $this->openDatabaseTransactions();
+    }
 
     protected function setUp(): void
     {
@@ -73,7 +108,7 @@ abstract class TestCase extends XotBaseTestCase
         // scattare gli skipUnless* già previsti da questa TestCase.
         $this->prepareSharedSqliteForTesting();
 
-        if ('sqlite' === config('database.default')) {
+        if (config('database.default') === 'sqlite') {
             $this->connectionsToTransact = ['user'];
         }
 
@@ -83,12 +118,8 @@ abstract class TestCase extends XotBaseTestCase
     /**
      * @return array<int, class-string<ServiceProvider>>
      */
-    protected function getPackageProviders(mixed $app): array
+    protected function getPackageProviders(Application $app): array
     {
-        if (! $app instanceof Application) {
-            throw new \InvalidArgumentException('Expected Illuminate\Foundation\Application.');
-        }
-
         return [
             ...parent::getPackageProviders($app),
             UserServiceProvider::class,
@@ -124,8 +155,13 @@ abstract class TestCase extends XotBaseTestCase
     /** @var Collection<int, User>|null */
     public static ?Collection $users = null;
 
-    /** @var list<string> */
-    protected $connectionsToTransact = ['mysql', 'user'];
+    /**
+     * Come `Tests\TestCase`: anche `mariadb` (default in CI) e `fixcity` (Profile del progetto)
+     * vanno in transazione, altrimenti le righe scritte dai test restano nel DB `_test`.
+     *
+     * @var list<string>
+     */
+    protected $connectionsToTransact = ['mysql', 'mariadb', 'user', 'fixcity'];
 
     public function setupFilamentAdminPanel(): void
     {
@@ -143,7 +179,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function freshUser(User $user): User
     {
         $fresh = $user->fresh();
-        if (null === $fresh) {
+        if ($fresh === null) {
             Assert::fail('User model could not be refreshed.');
         }
 
@@ -153,7 +189,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireUser(): User
     {
         $user = self::$user;
-        if (null === $user) {
+        if ($user === null) {
             Assert::fail('User test property is not initialized.');
         }
 
@@ -163,7 +199,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireOwner(): User
     {
         $owner = self::$owner;
-        if (null === $owner) {
+        if ($owner === null) {
             Assert::fail('Owner test property is not initialized.');
         }
 
@@ -173,7 +209,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireMember(): User
     {
         $member = self::$member;
-        if (null === $member) {
+        if ($member === null) {
             Assert::fail('Member test property is not initialized.');
         }
 
@@ -183,7 +219,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireAdmin(): User
     {
         $admin = self::$admin;
-        if (null === $admin) {
+        if ($admin === null) {
             Assert::fail('Admin test property is not initialized.');
         }
 
@@ -193,7 +229,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireBaseUser(): User
     {
         $baseUser = self::$baseUser;
-        if (null === $baseUser) {
+        if ($baseUser === null) {
             Assert::fail('BaseUser test property is not initialized.');
         }
 
@@ -203,7 +239,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireTeam(): Team
     {
         $team = self::$team;
-        if (null === $team) {
+        if ($team === null) {
             Assert::fail('Team test property is not initialized.');
         }
 
@@ -213,7 +249,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireTenant1(): Tenant
     {
         $tenant1 = self::$tenant1;
-        if (null === $tenant1) {
+        if ($tenant1 === null) {
             Assert::fail('Tenant1 test property is not initialized.');
         }
 
@@ -223,7 +259,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireTenant2(): Tenant
     {
         $tenant2 = self::$tenant2;
-        if (null === $tenant2) {
+        if ($tenant2 === null) {
             Assert::fail('Tenant2 test property is not initialized.');
         }
 
@@ -233,7 +269,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireGoogle2fa(): Google2FA
     {
         $google2fa = self::$google2fa;
-        if (null === $google2fa) {
+        if ($google2fa === null) {
             Assert::fail('Google2FA test property is not initialized.');
         }
 
@@ -243,7 +279,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireDevice(): Device
     {
         $device = self::$device;
-        if (null === $device) {
+        if ($device === null) {
             Assert::fail('Device test property is not initialized.');
         }
 
@@ -253,7 +289,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireCommand(): Command
     {
         $command = self::$command;
-        if (null === $command) {
+        if ($command === null) {
             Assert::fail('Command test property is not initialized.');
         }
 
@@ -263,7 +299,7 @@ abstract class TestCase extends XotBaseTestCase
     public function requireAction(): Action
     {
         $action = $this->action;
-        if (null === $action) {
+        if ($action === null) {
             $this->fail('Action test property is not initialized.');
         }
 
@@ -272,7 +308,7 @@ abstract class TestCase extends XotBaseTestCase
 
     public function requireWidget(): Widget
     {
-        if (null === $this->widget) {
+        if ($this->widget === null) {
             $this->fail('Widget test property is not initialized.');
         }
 
@@ -290,7 +326,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireCreateUserPage(): CreateUser
     {
         $createUserPage = self::$createUserPage;
-        if (null === $createUserPage) {
+        if ($createUserPage === null) {
             Assert::fail('CreateUser page test property is not initialized.');
         }
 
@@ -300,7 +336,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireListUsersPage(): ListUsers
     {
         $listUsersPage = self::$listUsersPage;
-        if (null === $listUsersPage) {
+        if ($listUsersPage === null) {
             Assert::fail('ListUsers page test property is not initialized.');
         }
 
@@ -313,7 +349,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function requireUsers(): Collection
     {
         $users = self::$users;
-        if (null === $users) {
+        if ($users === null) {
             Assert::fail('Users test property is not initialized.');
         }
 
@@ -328,7 +364,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function skipUnlessUserColumn(string $table, string $column, string $reason = ''): void
     {
         if (! self::userTableHasColumn($table, $column)) {
-            Assert::markTestSkipped('' !== $reason ? $reason : "Column {$table}.{$column} missing on user connection.");
+            Assert::markTestSkipped($reason !== '' ? $reason : "Column {$table}.{$column} missing on user connection.");
         }
     }
 
@@ -340,7 +376,7 @@ abstract class TestCase extends XotBaseTestCase
     public static function skipUnlessUserTable(string $table, string $reason = ''): void
     {
         if (! self::userTableExists($table)) {
-            Assert::markTestSkipped('' !== $reason ? $reason : "Table {$table} missing on user connection.");
+            Assert::markTestSkipped($reason !== '' ? $reason : "Table {$table} missing on user connection.");
         }
     }
 
@@ -351,19 +387,19 @@ abstract class TestCase extends XotBaseTestCase
 
     public static function skipUnlessUsersTableReady(string $reason = ''): void
     {
-        self::skipUnlessUserTable('users', '' !== $reason ? $reason : 'users table missing on user connection.');
+        self::skipUnlessUserTable('users', $reason !== '' ? $reason : 'users table missing on user connection.');
     }
 
     public static function skipUnlessRoleAssignmentSupported(string $reason = ''): void
     {
         $table = self::permissionRolePivotTable();
-        self::skipUnlessUserTable($table, '' !== $reason ? $reason : "Role pivot table {$table} missing on user connection.");
+        self::skipUnlessUserTable($table, $reason !== '' ? $reason : "Role pivot table {$table} missing on user connection.");
     }
 
     public static function skipUnlessDirectPermissionSupported(string $reason = ''): void
     {
         $table = self::permissionPivotTable();
-        self::skipUnlessUserTable($table, '' !== $reason ? $reason : "Permission pivot table {$table} missing on user connection.");
+        self::skipUnlessUserTable($table, $reason !== '' ? $reason : "Permission pivot table {$table} missing on user connection.");
     }
 
     public static function skipUnlessUserSoftDeletes(string $reason = ''): void
@@ -373,7 +409,7 @@ abstract class TestCase extends XotBaseTestCase
             \class_uses_recursive(User::class),
             true
         )) {
-            Assert::markTestSkipped('' !== $reason ? $reason : 'User model does not use SoftDeletes.');
+            Assert::markTestSkipped($reason !== '' ? $reason : 'User model does not use SoftDeletes.');
         }
     }
 
@@ -409,7 +445,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param array<string, mixed> $attributes
+     * @param  array<string, mixed>  $attributes
      */
     public static function createTestUser(array $attributes = []): User
     {
@@ -431,7 +467,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param array<string, mixed> $overrides
+     * @param  array<string, mixed>  $overrides
      */
     public static function oauthClientTestPersistedClient(array $overrides = []): OauthClient
     {
@@ -465,7 +501,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param array<string, mixed> $pivot
+     * @param  array<string, mixed>  $pivot
      */
     public static function attachTeamMember(Team $team, User $user, array $pivot = []): void
     {
@@ -509,7 +545,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function assertDatabaseHasRow(string $table, array $data, ?string $connection = 'user'): void
     {
@@ -517,7 +553,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function assertDatabaseMissingRow(string $table, array $data, ?string $connection = 'user'): void
     {
@@ -543,7 +579,19 @@ abstract class TestCase extends XotBaseTestCase
      */
     public static function filamentSectionChildComponents(Section $section): array
     {
-        return array_values($section->getChildComponents());
+        // getChildComponents() costruisce lo schema figlio e richiede il container con il componente
+        // Livewire (Filament 5): fuori da una pagina si leggono i componenti dichiarati nella Section.
+        $declared = $section->getDefaultChildComponents();
+        if ($declared instanceof FilamentSchema) {
+            return [];
+        }
+
+        return array_values(array_filter(
+            $declared,
+            static fn (mixed $component): bool => $component instanceof Component
+                || $component instanceof Action
+                || $component instanceof ActionGroup,
+        ));
     }
 
     public static function teamUsesSoftDeletes(): bool
@@ -559,7 +607,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param array<string, mixed> $attributes
+     * @param  array<string, mixed>  $attributes
      */
     public static function createTeamInvitationRecord(Team $team, array $attributes = []): TeamInvitation
     {
@@ -570,10 +618,43 @@ abstract class TestCase extends XotBaseTestCase
             'role' => 'member',
         ], $attributes);
 
-        $invitation = new TeamInvitation();
+        $invitation = new TeamInvitation;
         $invitation->forceFill($payload);
         $invitation->save();
 
         return $invitation->fresh() ?? $invitation;
+    }
+
+    /**
+     * Una transazione di test per ogni ISTANZA di connessione, non per ogni nome.
+     *
+     * `TenantServiceProvider::aliasModuleConnectionsToDefault()` risolve le connessioni di modulo senza database proprio (`fixcity`,
+     * `comment`, `media`, `blog`) sulla stessa istanza `Connection` della default. Con i cinque nomi il trait apriva quattro livelli
+     * sulla stessa connessione: un'Action con `transaction()` committava al livello 4, mai a 1, e il DatabaseTransactionsManager di test
+     * non eseguiva piu' i callback "dopo il commit" (observer `ShouldHandleEventsAfterCommit`, eventi `ShouldDispatchAfterCommit`).
+     * Effetto in CI su MariaDB: nessuna notifica di approvazione, scarto o chiusura (TicketLifecycleNotificationTest, area personale).
+     * Lo skip del manager conta i nomi restituiti qui, quindi ogni nome deve corrispondere a una sola transazione aperta.
+     *
+     * @return list<string>
+     */
+    protected function connectionsToTransact()
+    {
+        $database = $this->app?->make('db');
+        if (! $database instanceof DatabaseManager) {
+            return $this->connectionsToTransact;
+        }
+
+        $names = [];
+        $seen = [];
+        foreach ($this->connectionsToTransact as $name) {
+            $id = spl_object_id($database->connection($name));
+            if (isset($seen[$id])) {
+                continue;
+            }
+            $seen[$id] = true;
+            $names[] = $name;
+        }
+
+        return $names;
     }
 }

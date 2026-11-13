@@ -470,7 +470,6 @@ class SchedaObserver
 
 ---
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_jGqVfh
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -485,9 +484,6 @@ class SchedaObserver
 **=======
 **Ultimo aggiornamento**: 27 Ottobre 2025
 >>>>>>> .merge_file_E4Lk8v
-=======
-**
->>>>>>> 13cf1831 (.)
 **Severità**: CRITICA (blocca edit in produzione)
 **Workaround**: Disabilitare temporaneamente LogsActivity trait
 **Fix Definitivo**: Refactoring accessor in SchedaTrait

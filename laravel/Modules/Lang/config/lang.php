@@ -13,9 +13,9 @@ return [
      * |
      */
 
-    'default_locale' => 'it',
+    // `default_locale` e `available_locales` non li leggeva nessuno: le lingue dell'editor delle
+    // traduzioni sono in `Modules\Lang\Datas\LangConfigData` (SettingPage), un'unica definizione.
     'fallback_locale' => 'en',
-    'available_locales' => ['it', 'en', 'de'],
     /*
      * |--------------------------------------------------------------------------
      * | Configurazione Cache e Performance

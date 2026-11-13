@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "factory"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "factory xot"
+---
+>>>>>>> laraxot/dev
 # factory
 
 <!-- Contenuto migrato da _docs/factory.txt -->

@@ -1,3 +1,9 @@
+---
+title: "Employee - TIMEENTRY-REFACTORING-SUMMARY"
+module: Employee
+bmad: true
+status: active
+---
 # TimeEntry Model Refactoring - Summary
 
 ## Analisi "Super Mucca" - Metodologia DRY/KISS

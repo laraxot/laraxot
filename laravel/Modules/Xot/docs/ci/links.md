@@ -3,6 +3,14 @@ title: links ci
 description: links ci
 extends: _layouts.documentation
 section: content
+<<<<<<< HEAD
+=======
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, ci]
+qmd: "alcuni links xot"
+>>>>>>> laraxot/dev
 ---
 
 # alcuni links

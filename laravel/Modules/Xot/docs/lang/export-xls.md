@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 
+=======
+---
+title: "Export XLS - File di traduzione"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, lang]
+qmd: "Export XLS - File di traduzione"
+---
+>>>>>>> laraxot/dev
 # Export XLS - File di traduzione
 
 Il file `export_xls.php` contiene tutte le etichette e i testi utilizzati per l'esportazione in formato XLS nel modulo Xot.
@@ -41,4 +54,8 @@ __('xot::export_xls.content.no_data')
 ## Note per lo sviluppo
 - Utilizzare sempre le chiavi di traduzione invece di stringhe hardcoded
 - Mantenere le traduzioni sincronizzate tra le diverse lingue
+<<<<<<< HEAD
 - Aggiungere commenti per spiegare il contesto quando necessario
+=======
+- Aggiungere commenti per spiegare il contesto quando necessario 
+>>>>>>> laraxot/dev

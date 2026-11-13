@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Refactor Completo File di Traduzione - Riepilogo Finale"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "ottimizzazioni correzioni"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Refactor Completo File di Traduzione - Riepilogo Finale
 

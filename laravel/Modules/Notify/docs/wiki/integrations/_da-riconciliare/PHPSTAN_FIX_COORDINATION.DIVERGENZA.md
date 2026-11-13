@@ -1,10 +1,14 @@
 ---
+qmd: "PHPSTAN FIX COORDINATION.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: PHPSTAN_FIX_COORDINATION.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Divergenza: `PHPSTAN_FIX_COORDINATION.md`

@@ -1,3 +1,11 @@
+---
+title: "Translation Convention - User Module"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user, wiki]
+qmd: "translation convention - user module user"
+---
 # Translation Convention - User Module
 
 ## Regola
@@ -29,6 +37,6 @@ __('user::auth.login.logging_in')  // mancano key e type
 ```
 
 ## File di riferimento
-- `laravel/Modules/User/lang/it/auth.php` — file principale per le traduzioni di autenticazione
-- `laravel/Modules/User/lang/it/login.php` — file secondario per widget login
-- `laravel/Modules/User/lang/it/login-widget.php` — file per widget Filament login
+- `laravel/Modules/User/lang/it/auth.php`: file principale per le traduzioni di autenticazione
+- `laravel/Modules/User/lang/it/login.php`: file secondario per widget login
+- `laravel/Modules/User/lang/it/login-widget.php`: file per widget Filament login

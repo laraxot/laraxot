@@ -13,27 +13,27 @@ use Modules\Rating\Models\Rating;
 use Modules\Rating\Models\RatingMorph;
 use Modules\Rating\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-use Spatie\Sluggable\SlugOptions;
 
 uses(TestCase::class);
 
 afterEach(function (): void {
-    \Mockery::close();
+    Mockery::close();
 });
 
 describe('BaseRating (via Rating)', function (): void {
     test('getSlugOptions genera slug dal titolo', function (): void {
-        $options = (new Rating())->getSlugOptions();
+        $options = (new Rating)->getSlugOptions();
 
-        Assert::assertInstanceOf(SlugOptions::class, $options);
+        Assert::assertSame(['title'], $options->generateSlugFrom);
+        Assert::assertSame('slug', $options->slugField);
     });
 
     test('registerMediaConversions non solleva eccezioni', function (): void {
-        $rating = new Rating();
+        $rating = new Rating;
 
         $rating->registerMediaConversions(null);
 
-        Assert::assertInstanceOf(Rating::class, $rating);
+        Assert::assertSame(Rating::class, $rating::class);
     });
 
     // La relazione morphTo verso il model valutato non vive su `Rating`: vive su
@@ -58,20 +58,20 @@ describe('BaseRating (via Rating)', function (): void {
 
     test('scopeWithExtraAttributes filtra per chiave singola con valore', function (): void {
         /** @var Builder<BaseRating>&Mockery\MockInterface $builder */
-        $builder = \Mockery::mock(Builder::class);
+        $builder = Mockery::mock(Builder::class);
         $builder->shouldReceive('where')
             ->once()
             ->with('extra_attributes->anno', 2024)
             ->andReturnSelf();
 
-        $result = (new Rating())->scopeWithExtraAttributes($builder, 'anno', 2024);
+        $result = (new Rating)->scopeWithExtraAttributes($builder, 'anno', 2024);
 
         Assert::assertSame($builder, $result);
     });
 
     test('scopeWithExtraAttributes filtra per array di attributi', function (): void {
         /** @var Builder<BaseRating>&Mockery\MockInterface $builder */
-        $builder = \Mockery::mock(Builder::class);
+        $builder = Mockery::mock(Builder::class);
         $builder->shouldReceive('where')
             ->once()
             ->with('extra_attributes->anno', 2024)
@@ -81,7 +81,7 @@ describe('BaseRating (via Rating)', function (): void {
             ->with('extra_attributes->tipo', 'foo')
             ->andReturnSelf();
 
-        $result = (new Rating())->scopeWithExtraAttributes($builder, [
+        $result = (new Rating)->scopeWithExtraAttributes($builder, [
             'anno' => 2024,
             'tipo' => 'foo',
         ]);
@@ -91,10 +91,10 @@ describe('BaseRating (via Rating)', function (): void {
 
     test('scopeWithExtraAttributes senza value su stringa lascia il builder', function (): void {
         /** @var Builder<BaseRating>&Mockery\MockInterface $builder */
-        $builder = \Mockery::mock(Builder::class);
+        $builder = Mockery::mock(Builder::class);
         $builder->shouldNotReceive('where');
 
-        $result = (new Rating())->scopeWithExtraAttributes($builder, 'anno');
+        $result = (new Rating)->scopeWithExtraAttributes($builder, 'anno');
 
         Assert::assertSame($builder, $result);
     });

@@ -1,5 +1,5 @@
 ---
-title: "Employee — mai Filament\*, sempre XotBase*"
+title: 'Employee — mai Filament*, sempre XotBase*'
 type: concept
 module: Employee
 tags: [employee, filament, xotbase, architecture]

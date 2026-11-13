@@ -1,3 +1,9 @@
+---
+title: "Employee - 02-GESTIONE-PRESENZE"
+module: Employee
+bmad: true
+status: active
+---
 # 02. Gestione Presenze
 
 ## Cosa Fare

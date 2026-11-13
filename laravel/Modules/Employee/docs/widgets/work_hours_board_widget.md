@@ -1,3 +1,9 @@
+---
+title: "Employee - WORK_HOURS_BOARD_WIDGET"
+module: Employee
+bmad: true
+status: active
+---
 ## WorkHoursBoardWidget – analysis and design
 
 Target: replicate the weekly timetable widget from the reference screenshot within a Filament widget.

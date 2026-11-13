@@ -1,4 +1,11 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "MODULE README TEMPLATE"
+issues: []
+discussions: []
 title: [Module Name]
 module: [module-slug]
 related: [module1, module2]
@@ -168,7 +175,8 @@ composer test -- Modules/[ModuleName]
 - [Guides](./guides/) - How-to guides
 
 ### Related Modules
-- [Xot Module](../xot/README.md) - Base classes
+- [Xot Module](../../../Xot/README.md) - Base classes
+- [Xot Module](../../../Xot/README.md) - Base classes
 
 ---
 

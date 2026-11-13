@@ -1,3 +1,15 @@
+---
+title: "test results"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "test results"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🧪 DESIGN COMUNI PAGES - TEST RESULTS
 
 **Data**: 2026-03-30  
@@ -5,7 +17,6 @@
 **Priority**: HIGH
 
 ---
-
 ## 📊 TEST SUMMARY
 
 | # | Page | URL | Status | Errors | Missing Components |

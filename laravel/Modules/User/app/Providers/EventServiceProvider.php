@@ -19,6 +19,7 @@ use SocialiteProviders\Manager\SocialiteWasCalled;
 class EventServiceProvider extends XotBaseEventServiceProvider
 {
     public string $name = 'User';
+
     protected string $module_ns = __NAMESPACE__;
 
     /**

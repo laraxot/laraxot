@@ -3,13 +3,9 @@
 declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Feature;
-<<<<<<< HEAD
 
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
-=======
-use Filament\Actions\Action;
->>>>>>> 13cf1831 (.)
 use Filament\Tables\Table;
 use Modules\Activity\Events\ActivityEvent;
 use Modules\Activity\Filament\Actions\ListLogActivitiesAction;
@@ -31,16 +27,10 @@ use Modules\Activity\Tests\TestCase;
 use Modules\Xot\Filament\Actions\XotBaseAction;
 use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 use PHPUnit\Framework\Assert;
-<<<<<<< HEAD
 
 use function Safe\class_uses;
 
 uses(TestCase::class);
-=======
-use function Safe\class_uses;
-
-uses(\Modules\Activity\Tests\TestCase::class);
->>>>>>> 13cf1831 (.)
 
 describe('ActivityEvent', function (): void {
     test('can be instantiated', function (): void {
@@ -99,17 +89,10 @@ describe('CanPaginate trait', function (): void {
         Assert::assertTrue($trait->hasProperty('recordsPerPage'));
     });
 
-<<<<<<< HEAD
     test('trait has defaultPerPageOption property', function (): void {
         $trait = new \ReflectionClass(CanPaginate::class);
 
         Assert::assertTrue($trait->hasProperty('defaultPerPageOption'));
-=======
-    test('trait has defaultRecordsPerPageSelectOption property', function (): void {
-        $trait = new \ReflectionClass(CanPaginate::class);
-
-        Assert::assertTrue($trait->hasProperty('defaultRecordsPerPageSelectOption'));
->>>>>>> 13cf1831 (.)
     });
 
     test('trait has getRecordsPerPageSelectOptions method', function (): void {
@@ -129,16 +112,12 @@ describe('ActivityResource', function (): void {
     });
 
     test('has required form schema fields', function (): void {
-<<<<<<< HEAD
 <<<<<<< .merge_file_ERYyp4
         $instance = app(\Modules\Activity\Filament\Resources\ActivityResource\Schemas\ActivityForm::class);
 =======
         $instance = app(ActivityForm::class);
 >>>>>>> .merge_file_pneSfz
         $schema = $instance->getFormSchema();
-=======
-        $schema = (new ActivityResource)->getFormSchema();
->>>>>>> 13cf1831 (.)
 
         Assert::assertArrayHasKey('log_name', $schema);
         Assert::assertArrayHasKey('description', $schema);
@@ -187,15 +166,9 @@ describe('ListActivities page', function (): void {
 
     test('has table columns', function (): void {
         $page = new ListActivities;
-<<<<<<< HEAD
         $columns = $page->table(Table::make($page))->getColumns();
 
         Assert::assertNotEmpty($columns);
-=======
-        $table = $page->table(Table::make($page));
-        $columns = $table->getColumns();
-
->>>>>>> 13cf1831 (.)
         Assert::assertArrayHasKey('id', $columns);
         Assert::assertArrayHasKey('description', $columns);
         Assert::assertArrayHasKey('subject_type', $columns);
@@ -216,16 +189,12 @@ describe('SnapshotResource', function (): void {
     });
 
     test('has required form schema fields', function (): void {
-<<<<<<< HEAD
 <<<<<<< .merge_file_ERYyp4
         $instance = app(\Modules\Activity\Filament\Resources\SnapshotResource\Schemas\SnapshotForm::class);
 =======
         $instance = app(SnapshotForm::class);
 >>>>>>> .merge_file_pneSfz
         $schema = $instance->getFormSchema();
-=======
-        $schema = (new SnapshotResource)->getFormSchema();
->>>>>>> 13cf1831 (.)
 
         Assert::assertArrayHasKey('model_type', $schema);
         Assert::assertArrayHasKey('model_id', $schema);
@@ -251,15 +220,9 @@ describe('ListSnapshots page', function (): void {
 
     test('has table columns', function (): void {
         $page = new ListSnapshots;
-<<<<<<< HEAD
         $columns = $page->table(Table::make($page))->getColumns();
 
         Assert::assertNotEmpty($columns);
-=======
-        $table = $page->table(Table::make($page));
-        $columns = $table->getColumns();
-
->>>>>>> 13cf1831 (.)
         Assert::assertArrayHasKey('id', $columns);
         Assert::assertArrayHasKey('aggregate_uuid', $columns);
         Assert::assertArrayHasKey('aggregate_version', $columns);
@@ -270,40 +233,21 @@ describe('ListSnapshots page', function (): void {
 
     test('has table filters', function (): void {
         $page = new ListSnapshots;
-<<<<<<< HEAD
         $filters = $page->table(Table::make($page))->getFilters();
-=======
-        $table = $page->table(Table::make($page));
-        $filters = $table->getFilters();
->>>>>>> 13cf1831 (.)
 
         Assert::assertNotEmpty($filters);
     });
 
     test('has table actions', function (): void {
         $page = new ListSnapshots;
-<<<<<<< HEAD
         $actions = $page->table(Table::make($page))->getRecordActions();
 
         Assert::assertNotEmpty($actions);
-=======
-        $table = $page->table(Table::make($page));
-        $actions = $table->getRecordActions();
-
-        Assert::assertArrayHasKey('view', $actions);
-        Assert::assertArrayHasKey('edit', $actions);
-        Assert::assertArrayHasKey('delete', $actions);
->>>>>>> 13cf1831 (.)
     });
 
     test('has bulk actions', function (): void {
         $page = new ListSnapshots;
-<<<<<<< HEAD
         $bulkActions = $page->table(Table::make($page))->getToolbarActions();
-=======
-        $table = $page->table(Table::make($page));
-        $bulkActions = $table->getFlatBulkActions();
->>>>>>> 13cf1831 (.)
 
         Assert::assertNotEmpty($bulkActions);
     });
@@ -319,16 +263,12 @@ describe('StoredEventResource', function (): void {
     });
 
     test('has required form schema fields', function (): void {
-<<<<<<< HEAD
 <<<<<<< .merge_file_ERYyp4
         $instance = app(\Modules\Activity\Filament\Resources\StoredEventResource\Schemas\StoredEventForm::class);
 =======
         $instance = app(StoredEventForm::class);
 >>>>>>> .merge_file_pneSfz
         $schema = $instance->getFormSchema();
-=======
-        $schema = (new StoredEventResource)->getFormSchema();
->>>>>>> 13cf1831 (.)
 
         Assert::assertArrayHasKey('event_class', $schema);
         Assert::assertArrayHasKey('event_properties', $schema);
@@ -355,17 +295,8 @@ describe('ListStoredEvents page', function (): void {
 
     test('has table columns', function (): void {
         $page = new ListStoredEvents;
-<<<<<<< HEAD
         $columns = $page->table(Table::make($page))->getColumns();
 
         Assert::assertNotEmpty($columns);
-=======
-        $table = $page->table(Table::make($page));
-        $columns = $table->getColumns();
-
-        Assert::assertArrayHasKey('id', $columns);
-        Assert::assertArrayHasKey('event_class', $columns);
-        Assert::assertArrayHasKey('event_properties', $columns);
->>>>>>> 13cf1831 (.)
     });
 });

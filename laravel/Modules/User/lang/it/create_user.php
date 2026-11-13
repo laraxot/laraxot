@@ -5,33 +5,35 @@ declare(strict_types=1);
 return [
     'fields' => [
         'name' => [
-            'label' => 'name',
+<<<<<<< .merge_file_TidrKk
+            'label' => 'Nome',
+=======
+>>>>>>> .merge_file_6P8iCq
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'email' => [
-            'label' => 'email',
+<<<<<<< .merge_file_TidrKk
+            'label' => 'E-mail',
+=======
+>>>>>>> .merge_file_6P8iCq
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'password' => [
-            'label' => 'password',
+<<<<<<< .merge_file_TidrKk
+            'label' => 'Password',
+=======
+>>>>>>> .merge_file_6P8iCq
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
     ],
     'actions' => [
-        'create' => [
-            'label' => 'create',
-        ],
-        'createAnother' => [
-            'label' => 'createAnother',
-        ],
         'cancel' => [
-            'label' => 'cancel',
             'icon' => 'cancel',
         ],
         'logout' => [

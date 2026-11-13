@@ -1,4 +1,7 @@
 ---
+qmd: "bugfix supported locale translation and morph table name"
+issues: []
+discussions: []
 title: "SupportedLocale label mancante + hardcoded table name errato in test"
 type: bugfix
 module: Rating
@@ -8,27 +11,28 @@ updated: 2026-07-27
 related:
   - ../../Xot/docs/testing/pest-globally-blocked-sqlite-connection-collision.md
   - ../../../../docs/chat/phpstan-modules-zero.md
+status: draft
 ---
 
-# Rating — 3 fix in questa sessione
+# Rating: 3 fix in questa sessione
 
-## 1. `HasRating` — trait.unused (PHPStan)
+## 1. `HasRating`: trait.unused (PHPStan)
 
 `Modules/Rating/app/Models/Traits/HasRating.php` è un trait libreria pensato
 per essere composto in modelli di **altri** moduli (`use HasRating;`), ma
 nessun modello nello scope analizzato lo consuma attualmente. Pattern vietato:
 creare un modello/probe finto solo per "usarlo" (vedi
-`Modules/Xot/docs/wiki/concepts/phpstan-trait-probes.md` — questa esatta
+`Modules/Xot/docs/wiki/concepts/phpstan-trait-probes.md`: questa esatta
 combinazione, "Probe Rating legacy", è già citata come incidente storico da
 non ripetere).
 
 Fix: `/** @phpstan-ignore trait.unused */` sopra `trait HasRating`.
 
-## 2. `SupportedLocale::getLabel()` — traduzione mancante
+## 2. `SupportedLocale::getLabel()`: traduzione mancante
 
 `Modules/Rating/app/Enums/SupportedLocale.php` usa `EnumTrait` →
 `TransTrait::transClass()`, che ritorna deliberatamente `'fix:'.$key` quando
-la traduzione non esiste (marcatore di sviluppo intenzionale — vedi
+la traduzione non esiste (marcatore di sviluppo intenzionale: vedi
 implementazione in `Modules/Xot/app/Filament/Traits/TransTrait.php`, non un
 bug). Il test asseriva la vecchia chiave grezza
 (`'rating::supported_locale.values.it.label'`), non il comportamento corretto
@@ -50,7 +54,7 @@ del progetto (italiano primario).
 ```php
 DB::connection('rating')->table('rating_morphs')  // ❌ plurale, non esiste
 ```
-Il modello `RatingMorph::getTable()` ritorna `'rating_morph'` (singolare) —
+Il modello `RatingMorph::getTable()` ritorna `'rating_morph'` (singolare) -
 verificato via tinker (`(new RatingMorph())->getTable()`), la tabella
 singolare esiste davvero sulla connessione `rating`. La stringa `'rating_morphs'`
 nel test era una stringa letterale scollegata dal modello reale, mai
@@ -73,11 +77,11 @@ bash tools/phpmd.sh Modules/Rating/lang/it/supported_locale.php text cleancode,c
 
 PHPInsights segnala solo debito architetturale preesistente su `HasRating.php`
 (uso di trait vietato dalla policy generale, complessità, Yoda comparisons,
-riga lunga con SVG inline) — non introdotto da questi fix, non toccato
+riga lunga con SVG inline): non introdotto da questi fix, non toccato
 (refactor strutturale separato, fuori scope).
 
 ## Collegamenti
 
 Il primo tentativo di eseguire Pest per verificare questi fix ha rivelato un
-blocco **globale** di Pest per l'intero progetto (non specifico a Rating) —
+blocco **globale** di Pest per l'intero progetto (non specifico a Rating) -
 vedi `Modules/Xot/docs/testing/pest-globally-blocked-sqlite-connection-collision.md`.

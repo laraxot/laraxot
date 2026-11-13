@@ -8,15 +8,12 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
 use Laravel\Socialite\Contracts\User;
 use Modules\User\Datas\SocialiteNameFieldsData;
+use Modules\User\Enums\NameSearchEnum;
 use Spatie\QueueableAction\QueueableAction;
 
 final class ResolveUserNameFieldsFromSocialiteAction
 {
     use QueueableAction;
-
-    private const string NAME_SEARCH = 'before';
-
-    private const string SURNAME_SEARCH = 'after';
 
     public function execute(User $oauthUser): SocialiteNameFieldsData
     {
@@ -32,32 +29,23 @@ final class ResolveUserNameFieldsFromSocialiteAction
 
     private function resolveName(User $idpUser): string
     {
-        return $this->resolveNameFields($idpUser, self::NAME_SEARCH);
+        return $this->resolveNameFields($idpUser, NameSearchEnum::Name);
     }
 
     private function resolveSurname(User $idpUser): string
     {
-        return $this->resolveNameFields($idpUser, self::SURNAME_SEARCH);
+        return $this->resolveNameFields($idpUser, NameSearchEnum::Surname);
     }
 
-    private function resolveNameFields(User $idpUser, string $searchMethod): string
+    private function resolveNameFields(User $idpUser, NameSearchEnum $searchMethod): string
     {
-        $this->validateSearchMethod($searchMethod);
-
         return $this->determineNameField($idpUser, $searchMethod)->toString();
     }
 
-    private function validateSearchMethod(string $searchMethod): void
-    {
-        if (! in_array($searchMethod, [self::NAME_SEARCH, self::SURNAME_SEARCH], strict: true)) {
-            throw new \InvalidArgumentException('Metodo di ricerca non valido');
-        }
-    }
-
-    private function determineNameField(User $idpUser, string $searchMethod): Stringable
+    private function determineNameField(User $idpUser, NameSearchEnum $searchMethod): Stringable
     {
         $name = $idpUser->getName();
-        if (is_string($name) && '' !== $name) {
+        if (is_string($name) && $name !== '') {
             $nameSection = $this->resolveNameFieldByNameAttributeAnalysis($name, $searchMethod);
             if ($nameSection->isNotEmpty()) {
                 return $nameSection;
@@ -65,7 +53,7 @@ final class ResolveUserNameFieldsFromSocialiteAction
         }
 
         $rawName = $this->extractRawNameField($idpUser);
-        if ('' !== $rawName) {
+        if ($rawName !== '') {
             $nameSection = $this->resolveNameFieldByNameAttributeAnalysis($rawName, $searchMethod);
             if ($nameSection->isNotEmpty() && ! filter_var($nameSection->toString(), FILTER_VALIDATE_EMAIL)) {
                 return $nameSection;
@@ -80,23 +68,19 @@ final class ResolveUserNameFieldsFromSocialiteAction
         $raw = $this->getRawUserData($idpUser);
         $nameField = $raw['name'] ?? null;
 
-        return is_string($nameField) && '' !== $nameField ? $nameField : '';
+        return is_string($nameField) && $nameField !== '' ? $nameField : '';
     }
 
-    private function analyzeEmailForNameSection(User $idpUser, string $searchMethod): Stringable
+    private function analyzeEmailForNameSection(User $idpUser, NameSearchEnum $searchMethod): Stringable
     {
         $email = $idpUser->getEmail();
-        if (! is_string($email) || '' === $email) {
+        if (! is_string($email) || $email === '') {
             return Str::of('');
         }
 
         $emailPart = Str::of($email)->trim()->before('@');
 
-        if (self::NAME_SEARCH === $searchMethod) {
-            return $emailPart->before('.')->trim()->title();
-        }
-
-        return $emailPart->after('.')->trim()->title();
+        return $searchMethod->applyTo($emailPart, '.')->trim()->title();
     }
 
     /**
@@ -119,8 +103,7 @@ final class ResolveUserNameFieldsFromSocialiteAction
     }
 
     /**
-     * @param \ReflectionClass<User> $reflection
-     *
+     * @param  \ReflectionClass<User>  $reflection
      * @return array<string, mixed>
      */
     private function rawDataFromReflectionMethod(\ReflectionClass $reflection, User $idpUser, string $method): array
@@ -133,8 +116,7 @@ final class ResolveUserNameFieldsFromSocialiteAction
     }
 
     /**
-     * @param \ReflectionClass<User> $reflection
-     *
+     * @param  \ReflectionClass<User>  $reflection
      * @return array<string, mixed>
      */
     private function rawDataFromReflectionProperty(\ReflectionClass $reflection, User $idpUser, string $property): array
@@ -147,8 +129,7 @@ final class ResolveUserNameFieldsFromSocialiteAction
     }
 
     /**
-     * @param array<int|string, mixed> $data
-     *
+     * @param  array<int|string, mixed>  $data
      * @return array<string, mixed>
      */
     private function normalizeRawUserArray(array $data): array
@@ -161,16 +142,12 @@ final class ResolveUserNameFieldsFromSocialiteAction
         return $raw;
     }
 
-    private function resolveNameFieldByNameAttributeAnalysis(string $nameField, string $searchMethod): Stringable
+    private function resolveNameFieldByNameAttributeAnalysis(string $nameField, NameSearchEnum $searchMethod): Stringable
     {
-        if ('' === $nameField) {
+        if ($nameField === '') {
             return Str::of('');
         }
 
-        if (! in_array($searchMethod, [self::NAME_SEARCH, self::SURNAME_SEARCH], strict: true)) {
-            throw new \InvalidArgumentException('Metodo di ricerca non valido');
-        }
-
-        return Str::of($nameField)->trim()->$searchMethod(' ')->trim();
+        return $searchMethod->applyTo(Str::of($nameField)->trim(), ' ')->trim();
     }
 }

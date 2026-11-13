@@ -1,3 +1,9 @@
+---
+title: "Employee - TIMECLOCK-WIDGET-LAYOUT-FIX"
+module: Employee
+bmad: true
+status: active
+---
 # TimeClockWidget - Layout Fix: Da Verticale a 3 Colonne
 
 ## 🚨 PROBLEMA UI IDENTIFICATO

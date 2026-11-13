@@ -8,17 +8,21 @@ qmd: "phpstan-level9es correzione conflitto e miglioramento phpstan livello 9 in
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Correzione conflitto e miglioramento PHPStan livello 9 in Filament/Resources/UserResource.php
 
 **Data:** [DATE]
@@ -42,9 +46,8 @@ Sono stati rilevati conflitti Git non risolti nel file `app/Filament/Resources/U
 
 ## Collegamenti
 - [Documentazione globale correzioni](../../../../docs/modules_analysis.md)
->>>>>>> 87273113 (.)
 
 ---
 
 **Vedi anche:**
-- [module_user.md](module_user.md)
+- [module_user.md](module-user.md)

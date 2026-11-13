@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "immediate-actions-2025-01-27.deprecated"
 type: concept
 tags: [deprecated]

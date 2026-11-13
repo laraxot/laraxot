@@ -1,4 +1,4 @@
-<a class="btn btn-primary btn-icon btn-full" href="{{ route('login') }}" data-element="personal-area-login">
+<a class="btn btn-primary btn-icon btn-full" href="{{ route('login') }}" data-element="personal-area-login" aria-label="{{ __('pub_theme::header.guest.cta.label') }}">
     <span class="rounded-icon" aria-hidden="true">
         <svg class="icon icon-primary">
             <use href="/themes/Sixteen/design-comuni/assets/bootstrap-italia/dist/svg/sprites.svg#it-user"></use>

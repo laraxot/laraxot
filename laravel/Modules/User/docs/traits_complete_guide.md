@@ -1,3 +1,11 @@
+---
+title: "Guida Completa ai Trait del Modulo User - AGGIORNATO POST-IMPLEMENTAZIONE"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, user]
+qmd: "guida completa ai trait del modulo user - aggiornato post-implementazione user"
+---
 # Guida Completa ai Trait del Modulo User - AGGIORNATO POST-IMPLEMENTAZIONE
 
 ## Stato Implementazione ✅ COMPLETATO
@@ -414,7 +422,4 @@ SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key
 - **teamRole() contratto**: CORRETTO - ora restituisce `?Role` invece di `?string`
 - **teamRoleName() helper**: AGGIUNTO - per ottenere stringa del ruolo
 - **Compatibilità**: MANTENUTA - sia oggetti Role che stringhe supportati
->>>>>>> 87273113 (.)
-=======
 - **Compatibilità**: MANTENUTA - sia oggetti Role che stringhe supportati
->>>>>>> laraxot/dev

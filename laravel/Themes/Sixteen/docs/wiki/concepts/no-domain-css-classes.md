@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "no domain css classes"
+issues: []
+discussions: []
 title: no domain css classes in theme
 type: concept
 theme: sixteen
@@ -6,6 +11,7 @@ updated: 2026-05-29
 related:
   - ../../../../../../docs/wiki/concepts/theme-as-vestito-philosophy.md
   - ./theme-page-shell.md
+status: draft
 ---
 
 # Sixteen — classi CSS presentation-only

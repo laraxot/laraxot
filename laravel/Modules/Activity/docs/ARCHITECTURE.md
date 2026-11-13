@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_KkQIkI
 <<<<<<< HEAD
 # Architecture Documentation
@@ -120,8 +119,6 @@ Activity Module Architecture
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 # Architecture Documentation
 
 ## Activity Module Architecture
@@ -165,10 +162,7 @@ Activity Module Architecture
 
 ### Data Flow
 
-<<<<<<< HEAD
 >>>>>>> laraxot/dev
-=======
->>>>>>> 13cf1831 (.)
 1. **Event Creation**: User actions trigger domain events
 2. **Event Storage**: Events persisted to `stored_events` table
 3. **Snapshot Creation**: Aggregates create snapshots for performance
@@ -287,7 +281,6 @@ class ActivityPolicy
 - [Quality](QUALITY.md)
 - [Performance](PERFORMANCE.md)
 <<<<<<< HEAD
-<<<<<<< HEAD
 - [Testing](TESTING.md)
 =======
 <<<<<<< HEAD
@@ -303,6 +296,3 @@ class ActivityPolicy
 - [Performance](PERFORMANCE.md) _(target mancante, verificato 2026-10-14)_
 - [Testing](testing.md)
 >>>>>>> .merge_file_9OIRU7
-=======
-- [Testing](TESTING.md)
->>>>>>> 13cf1831 (.)

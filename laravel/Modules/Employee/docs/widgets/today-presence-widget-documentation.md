@@ -1,3 +1,9 @@
+---
+title: "Employee - TODAY-PRESENCE-WIDGET-DOCUMENTATION"
+module: Employee
+bmad: true
+status: active
+---
 # TodayPresenceWidget (CHI C'È OGGI) - Complete Documentation
 
 ## 📋 Widget Overview

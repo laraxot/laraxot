@@ -1,8 +1,13 @@
 ---
+created: 2026-09-26
+qmd: "bootstrap italia tailwind philosophy"
+issues: []
+discussions: []
 title: Bootstrap Italia + Tailwind CSS — Filosofia e Regole
 type: concept
 tags: [tailwind, bootstrap-italia, design-comuni, css, philosophy]
 updated: 2026-05-15
+status: draft
 ---
 
 # Bootstrap Italia class names → Tailwind @apply

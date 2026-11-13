@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_b1hIJ9
 return [
     'fields' => [
         'text' => ['label' => 'text', 'placeholder' => 'text', 'helper_text' => 'text', 'description' => 'text'],
@@ -15,3 +16,6 @@ return [
         'datetime' => ['label' => 'datetime', 'placeholder' => 'datetime', 'helper_text' => 'datetime', 'description' => 'datetime'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_YuJ5JP

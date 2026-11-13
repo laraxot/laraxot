@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "radio collection fix summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "radio collection fix summary"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # RadioCollection: Riassunto Correzione & Risultati FINALI
 
 ## 🎯 Problema Identificato
@@ -128,7 +143,6 @@ L'utente **conosce** attraverso l'interazione. Ogni click è un atto di conoscen
 Il componente rispetta la **dignità** dell'utente fornendo feedback immediato, chiaro e senza ambiguità.
 
 ---
-
 **Status**: ✅ **COMPLETATO**
 **Data**: Dicembre 2024
 **Versione**: RadioCollection v2.0.0 Quantum

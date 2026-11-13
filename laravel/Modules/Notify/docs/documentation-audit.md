@@ -8,14 +8,23 @@ qmd: "documentation-audit documentation audit report"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
+  - "./action-plan-immediate.md"
+status: draft
 ---
 
 # Documentation Audit Report
@@ -242,7 +251,7 @@ Xot/docs/README.md
 ### 3.4 Duplicate Documentation Patterns
 
 **Same pattern documented multiple times:**
-- `naming-conventions.md` / `naming-conventions-2.md` / `naming-rules.md`
+- `naming-conventions.md` / `naming-conventions.md` / `naming-rules.md`
 - `phpstan-fixes.md` / `phpstan-fixes-.md` / `phpstan-fixes-gennaio.md`
 - `conflict-resolution.md` appears in 10+ modules with identical content
 
@@ -292,11 +301,16 @@ docs/master/
 ### 5.1 Inconsistent Naming Conventions
 
 **Observed patterns:**
-- `snake_case.md` (e.g., `phpstan-fixes-2.md`)
+- `snake_case.md` (e.g., `phpstan-fixes.md`)
 - `kebab-case.md` (e.g., `phpstan-fixes.md`)
 - `PascalCase.md` (e.g., `PHPStanFixes.md`)
 - `UPPERCASE.md` (e.g., `README.md`)
 - Mixed with suffixes: `phpstan-fixes-.md`, `phpstan-fixes-1.md`
+- `snake_case.md` (e.g., `phpstan-fixes-documentation-themes-shared.md`)
+- `kebab-case.md` (e.g., `phpstan-fixes.md`)
+- `PascalCase.md` (e.g., `PHPStanFixes.md`)
+- `UPPERCASE.md` (e.g., `README.md`)
+- Mixed with suffixes: `phpstan-fixes-.md`, `phpstan-fixes-documentation-themes.md`
 
 **Recommended Standard:**
 - Lowercase kebab-case: `topic-subtopic.md`

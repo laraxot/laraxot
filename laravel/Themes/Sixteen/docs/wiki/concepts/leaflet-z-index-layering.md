@@ -1,3 +1,15 @@
+---
+title: "leaflet z index layering"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "leaflet z index layering"
+issues: []
+discussions: []
+status: draft
+---
+
 # Leaflet Z-Index Layering Rule
 
 ## Context

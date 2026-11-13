@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Template Gestione Conflitti Git - README.md"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, templates]
+qmd: "Template Gestione Conflitti Git - README.md"
+---
+>>>>>>> laraxot/dev
 # Template Gestione Conflitti Git - README.md
 
 ## File: bashscripts/README.md
@@ -40,4 +53,8 @@
 ## Follow-up
 - [x] Verifica post-risoluzione
 - [x] Aggiornamento documentazione
+<<<<<<< HEAD
 - [x] Notifica team
+=======
+- [x] Notifica team 
+>>>>>>> laraxot/dev

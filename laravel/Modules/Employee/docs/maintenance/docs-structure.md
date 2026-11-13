@@ -1,3 +1,9 @@
+---
+title: "Employee - DOCS-STRUCTURE"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module Documentation Structure
 
 ## Current Organization

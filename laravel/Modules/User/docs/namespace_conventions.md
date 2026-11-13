@@ -5,6 +5,8 @@ type: integration
 tags: [integrations, modules, user]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
+qmd: "convenzioni di namespace nel modulo user user"
 ---
 
 # Convenzioni di Namespace nel Modulo User
@@ -199,7 +201,6 @@ Se l'override del tema non funziona:
 - [Documentazione Laravel View](https://laravel.com/docs/views)
 - [Regole Struttura Directory Auth](../../../.windsurf/rules/translations.md#regola-critica-struttura-directory-auth-laravel)
 - [Documentazione Tema One](../../../Themes/One/docs/README.md)
->>>>>>> 87273113 (.)
 
 ---
 

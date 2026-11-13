@@ -1,0 +1,17 @@
+<?php
+
+declare(strict_types=1);
+
+<<<<<<< .merge_file_jDx8F2
+<<<<<<< .merge_file_UsBQGn
+return [
+    'fields' => [
+        'order_column' => ['label' => 'order_column'],
+    ],
+];
+=======
+return [];
+>>>>>>> .merge_file_p7mBt6
+=======
+return [];
+>>>>>>> .merge_file_xW2S7I

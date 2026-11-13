@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 
+=======
+---
+title: "Il Tao del Codice"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, tao]
+qmd: "Il Tao del Codice"
+---
+>>>>>>> laraxot/dev
 # Il Tao del Codice
 
 ## Il Principio Fondamentale
@@ -161,4 +174,8 @@ Ogni volta che scrivi un getter, chiediti:
 - [Filosofia Zen Avanzata](../philosophy/getter_zen_advanced.md)
 - [La Via del Brand](../brand/brand_way.md)
 - [Convenzioni di Naming](../naming-conventions.md)
+<<<<<<< HEAD
 - [Linee Guida Filament](../filament-best-practices.md)
+=======
+- [Linee Guida Filament](../filament-best-practices.md) 
+>>>>>>> laraxot/dev

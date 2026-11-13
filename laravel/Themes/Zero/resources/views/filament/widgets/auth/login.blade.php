@@ -6,10 +6,10 @@
         {{-- Header del form --}}
         <div class="text-center">
             <h2 class="text-xl font-semibold text-gray-900">
-                {{ __('Accedi al tuo account') }}
+                {{ __('pub_theme::auth.login.heading.title') }}
             </h2>
             <p class="mt-2 text-sm text-gray-600">
-                {{ __('Inserisci le tue credenziali per accedere') }}!
+                {{ __('pub_theme::auth.login.subheading.description') }}!
             </p>
         </div>
 
@@ -24,7 +24,7 @@
                         href="{{ route('password.request') }}"
                         class="font-medium text-blue-600 hover:text-blue-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded"
                     >
-                        {{ __('Password dimenticata?') }}
+                        {{ __('pub_theme::auth.actions.forgot_password.label') }}
                     </a>
                 </div>
             </div>
@@ -47,8 +47,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
 
-                    <span wire:loading.remove>{{ __('Accedi') }}</span>
-                    <span wire:loading>{{ __('Accesso in corso...') }}</span>
+                    <span wire:loading.remove>{{ __('pub_theme::auth.actions.login.label') }}</span>
+                    <span wire:loading>{{ __('pub_theme::auth.login.loading.message') }}</span>
                 </button>
             </div>
         </form>
@@ -60,7 +60,7 @@
                     <div class="w-full border-t border-gray-300"></div>
                 </div>
                 <div class="relative flex justify-center text-sm">
-                    <span class="px-2 bg-white text-gray-500">{{ __('oppure') }}</span>
+                    <span class="px-2 bg-white text-gray-500">{{ __('pub_theme::auth.login.divider.label') }}</span>
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@
                 class="w-full inline-flex justify-center items-center gap-2 py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
             >
                 <x-filament::icon icon="ui-google" class="w-5 h-5 flex-shrink-0" />
-                <span>{{ __('Google') }}</span>
+                <span>{{ __('pub_theme::auth.social.google.label') }}</span>
             </button>
 
             <button
@@ -80,7 +80,7 @@
                 class="w-full inline-flex justify-center items-center gap-2 py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
             >
                 <x-filament::icon icon="ui-brands.github" class="w-5 h-5 flex-shrink-0" />
-                <span>{{ __('GitHub') }}</span>
+                <span>{{ __('pub_theme::auth.social.github.label') }}</span>
             </button>
         </div>
     </div>

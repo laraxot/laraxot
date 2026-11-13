@@ -1,10 +1,15 @@
 ---
+qmd: "PERFECTION ACHIEVED"
+issues: []
+discussions: []
 title: "NOTIFY - PERFEZIONE RAGGIUNTA"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: perfection_achieved.md
 ---
 
 # 🏆 NOTIFY - PERFEZIONE RAGGIUNTA

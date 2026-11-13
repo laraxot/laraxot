@@ -1,3 +1,15 @@
+---
+title: "supermemory setup"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "supermemory setup"
+issues: []
+discussions: []
+status: draft
+---
+
 # Supermemory Configuration
 
 ## Setup Complete
@@ -45,9 +57,9 @@ supermemory tags
 ```
 
 ### OpenCode Commands
-- `/supermemory-init` — Explore and memorize codebase
-- `/supermemory-login` — Authenticate with Supermemory
-- `/supermemory-logout` — Clear credentials
+- `/supermemory-init`: Explore and memorize codebase
+- `/supermemory-login`: Authenticate with Supermemory
+- `/supermemory-logout`: Clear credentials
 
 ### Config File
 `~/.config/opencode/supermemory.jsonc`:

@@ -1,3 +1,15 @@
+---
+title: "provider actions architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "provider actions architecture"
+issues: []
+discussions: []
+status: draft
+---
+
 # Architettura delle Azioni dei Provider in Notify
 
 ## Struttura e Principi Fondamentali

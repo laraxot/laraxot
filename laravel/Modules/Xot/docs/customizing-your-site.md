@@ -3,6 +3,14 @@ title: Customizing Your Site
 description: Customizing your Jigsaw docs site
 extends: _layouts.documentation
 section: content
+<<<<<<< HEAD
+=======
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "customizing your site {#customizing} xot"
+>>>>>>> laraxot/dev
 ---
 # Customizing Your Site {#customizing}
 
@@ -101,7 +109,10 @@ class Foo extends bar
 
 ---
 ---
+<<<<<<< HEAD
 title: Customizing Your Site
+=======
+>>>>>>> laraxot/dev
 description: Customizing your Jigsaw docs site
 extends: _layouts.documentation
 section: content

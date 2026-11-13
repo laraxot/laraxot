@@ -7,7 +7,6 @@ namespace Themes\Sixteen\Filters;
 use Exception;
 use Illuminate\Support\Facades\Route;
 use Themes\Sixteen\Contracts\MenuFilterInterface;
-
 use function Safe\parse_url;
 
 /**
@@ -15,8 +14,7 @@ use function Safe\parse_url;
  * Converte route in URL e aggiunge informazioni di navigazione
  */
 class HrefMenuFilter implements MenuFilterInterface
-{
-    /**
+{    /**
      * @param  array<array-key, mixed>  $item
      * @return array<array-key, mixed>|false
      */

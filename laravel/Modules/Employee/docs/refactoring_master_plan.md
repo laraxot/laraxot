@@ -1,3 +1,9 @@
+---
+title: "Employee - REFACTORING_MASTER_PLAN"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module Documentation - MASTER REFACTORING PLAN
 
 ## 🚨 CRITICAL ISSUES IDENTIFIED

@@ -1,12 +1,17 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+issues: []
+discussions: []
 title: "Audit di qualita: modulo Notify"
 type: report
 module: Notify
 updated: 2026-09-01
 qmd: "audit qualita notify phpstan phpmd phpinsights pest coverage soppressioni collisioni case"
+status: draft
 ---
 
-# Audit di qualita — modulo Notify
+# Audit di qualita: modulo Notify
 
 Misurato il 1 settembre 2026 a tree fermo. Ogni numero viene da un comando
 eseguito, non da una stima; i comandi sono in fondo, cosi la misura si puo
@@ -23,10 +28,10 @@ rifare e contestare.
 | Casi di test per file PHP | 1.14 |
 | `@phpstan-ignore` nel codice | 1 |
 | Rilievi PHPMD su `app/` | 191 |
-| PHPInsights — Code | 91.8 % |
-| PHPInsights — Complexity | 100.0 % |
-| PHPInsights — Architecture | 85.7 % |
-| PHPInsights — Style | 87.7 % |
+| PHPInsights: Code | 91.8 % |
+| PHPInsights: Complexity | 100.0 % |
+| PHPInsights: Architecture | 85.7 % |
+| PHPInsights: Style | 87.7 % |
 | File `.md` sotto `docs/` | 4545 |
 | `TODO`/`FIXME`/`HACK` | 7 |
 | Test con casi che non girano (senza suffisso `Test.php`) | 0 |

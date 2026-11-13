@@ -9,9 +9,9 @@ issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./user-module-quality.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Analisi Qualità - Modulo User
 
 **Data Analisi**: 2025-01-22
@@ -52,7 +52,6 @@ related:
 **File**: `Listeners/OtherDeviceLogoutListener.php:42`
 **Problema**: Loop con update individuali (50+ query)
 **Soluzione**: Bulk update (già documentata in `code-quality-analysis.md`)
->>>>>>> 87273113 (.)
 
 ### 2. Code Duplication (MEDIUM Priority)
 
@@ -91,7 +90,6 @@ related:
 - [Code Quality Analysis](./code-quality-analysis.md)
 - [Optimization Analysis](./optimization-analysis.md)
 - [Business Logic Deep Dive](./business-logic-deep-dive.md)
->>>>>>> 87273113 (.)
 - [Xot Quality Analysis](../xot/docs/quality-analysis/current-status.md)
 
 ## 📝 Note

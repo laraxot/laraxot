@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Employee\Database\Factories\AbsenceRequestFactory;
+use Modules\Employee\Enums\AbsenceRequestStatusEnum;
 
 /**
  * Class AbsenceRequest.
@@ -41,20 +42,6 @@ use Modules\Employee\Database\Factories\AbsenceRequestFactory;
 class AbsenceRequest extends BaseModel
 {
     use SoftDeletes;
-
-    public const string STATUS_PENDING = 'pending';
-
-    public const string STATUS_APPROVED = 'approved';
-
-    public const string STATUS_REJECTED = 'rejected';
-
-    public const string TYPE_VACATION = 'vacation';
-
-    public const string TYPE_LEAVE = 'leave';
-
-    public const string TYPE_SICK = 'sick';
-
-    public const string TYPE_INJURY = 'injury';
 
     /**
      * The attributes that are mass assignable.
@@ -117,7 +104,7 @@ class AbsenceRequest extends BaseModel
      */
     public function scopePending(Builder $query): Builder
     {
-        return $query->where('status', self::STATUS_PENDING);
+        return $query->where('status', AbsenceRequestStatusEnum::PENDING->value);
     }
 
     /**

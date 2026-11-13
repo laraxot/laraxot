@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "player"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "player"
 related:
   - "./webm.md"
+status: draft
 ---
 # player
 

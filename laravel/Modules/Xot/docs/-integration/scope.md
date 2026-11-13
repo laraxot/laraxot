@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "scope"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "scope xot"
+---
+>>>>>>> laraxot/dev
 # scope
 
 <!-- Contenuto migrato da _docs/scope.txt -->

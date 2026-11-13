@@ -57,11 +57,7 @@ public function store(Request $request)
 ### Testing Commands
 ```bash
 # Run security tests
-<<<<<<< HEAD
 cd /var/www/_bases/base_ptv_fila5/laravel/Modules/Activity
-=======
-cd /var/www/_bases/base_fixcity_fila5/laravel/Modules/Activity
->>>>>>> 13cf1831 (.)
 ./vendor/bin/pest tests/security/
 
 # Run security linting
@@ -139,9 +135,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
 ## Related Files
 
 - [`phpstan.md`](#phpstan) - PHPStan security configuration
-<<<<<<< HEAD
 - [`CODE_QUALITY_ANALYSIS.md`](code_quality_analysis.md) - Code quality standards
-=======
-- [`CODE_QUALITY_ANALYSIS.md`](CODE_QUALITY_ANALYSIS.md) - Code quality standards
->>>>>>> 13cf1831 (.)
 - [`TESTING.md`](#testing) - Testing procedures

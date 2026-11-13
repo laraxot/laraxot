@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "cms"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "cms xot"
+---
+>>>>>>> laraxot/dev
 # cms
 
 <!-- Contenuto migrato da _docs/cms.txt -->

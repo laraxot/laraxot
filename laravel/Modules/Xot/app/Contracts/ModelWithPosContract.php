@@ -48,6 +48,10 @@ use Spatie\ModelStatus\Status;
  *
  * @phpstan-require-extends Model
  *
+<<<<<<< HEAD
  * @mixin \Eloquent
+=======
+ * @mixin Model
+>>>>>>> laraxot/dev
  */
 interface ModelWithPosContract {}

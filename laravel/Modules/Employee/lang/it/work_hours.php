@@ -24,4 +24,12 @@ return [
     'hours_worked' => 'Ore Lavorate',
     'sessions' => 'Sessioni',
     'no_records_found' => 'Nessun record trovato',
+    'page' => [
+        'current_status' => [
+            'label' => 'Status Attuale',
+        ],
+        'hours_today' => [
+            'label' => 'Ore Oggi',
+        ],
+    ],
 ];

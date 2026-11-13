@@ -1,3 +1,15 @@
+---
+title: "module rules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "module rules"
+issues: []
+discussions: []
+status: draft
+---
+
 # Regole Specifiche del Progetto
 
 Vedi [index](index.md) per navigazione completa.

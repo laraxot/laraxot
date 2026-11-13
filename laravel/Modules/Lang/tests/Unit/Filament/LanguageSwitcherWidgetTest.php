@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-use Illuminate\Support\Collection;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Lang\Filament\Widgets\LanguageSwitcherWidget;
@@ -37,9 +36,8 @@ test('LanguageSwitcherWidget getAvailableLocales riflette LaravelLocalization no
     ]);
 
     try {
-        $widget = new LanguageSwitcherWidget();
+        $widget = new LanguageSwitcherWidget;
         $locales = $widget->getAvailableLocales();
-        Assert::assertInstanceOf(Collection::class, $locales);
         $codes = $locales->pluck('code')->all();
         Assert::assertSame(['fr', 'es'], $codes);
         Assert::assertNotContains('it', $codes);
@@ -73,6 +71,6 @@ test('LanguageSwitcherWidget getLanguageUrl usa LaravelLocalization con fallback
         ->once()
         ->andReturn(false);
 
-    $widget = new LanguageSwitcherWidget();
+    $widget = new LanguageSwitcherWidget;
     Assert::assertSame('/fr', $widget->getLanguageUrl('fr'));
 });

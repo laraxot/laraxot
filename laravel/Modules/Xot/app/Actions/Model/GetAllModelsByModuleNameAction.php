@@ -28,9 +28,20 @@ class GetAllModelsByModuleNameAction
             return [];
         }
 
+<<<<<<< HEAD
         $mod_path = $mod->getPath().'/Models';
         $mod_path = str_replace(['\\', '/'], [\DIRECTORY_SEPARATOR, \DIRECTORY_SEPARATOR], $mod_path);
 
+=======
+        // I model vivono in app/Models (PSR-4 Modules\<Mod>\ => app/), non in <Mod>/Models.
+        $mod_path = $mod->getPath().'/app/Models';
+        $mod_path = str_replace(['\\', '/'], [\DIRECTORY_SEPARATOR, \DIRECTORY_SEPARATOR], $mod_path);
+
+        if (! File::isDirectory($mod_path)) {
+            return [];
+        }
+
+>>>>>>> laraxot/dev
         $files = File::files($mod_path);
         /** @var array<string, class-string> $data */
         $data = [];

@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
@@ -28,28 +27,28 @@ test('user type enum implements required interfaces', function (): void {
     Assert::assertTrue($reflection->implementsInterface(HasLabel::class));
 });
 
-test('user type enum getLabel method returns translation keys', function (): void {
-    Assert::assertSame('user::user_type.values.master_admin.label', UserType::MasterAdmin->getLabel());
-    Assert::assertSame('user::user_type.values.backoffice_user.label', UserType::BoUser->getLabel());
-    Assert::assertSame('user::user_type.values.customer_user.label', UserType::CustomerUser->getLabel());
-    Assert::assertSame('user::user_type.values.system.label', UserType::System->getLabel());
-    Assert::assertSame('user::user_type.values.technician.label', UserType::Technician->getLabel());
+test('user type enum getLabel method returns translated values', function (): void {
+    Assert::assertSame((string) trans('user::user_type.values.master_admin.label'), UserType::MasterAdmin->getLabel());
+    Assert::assertSame((string) trans('user::user_type.values.backoffice_user.label'), UserType::BoUser->getLabel());
+    Assert::assertSame((string) trans('user::user_type.values.customer_user.label'), UserType::CustomerUser->getLabel());
+    Assert::assertSame((string) trans('user::user_type.values.system.label'), UserType::System->getLabel());
+    Assert::assertSame((string) trans('user::user_type.values.technician.label'), UserType::Technician->getLabel());
 });
 
-test('user type enum getColor method returns translation keys', function (): void {
-    Assert::assertSame('user::user_type.values.master_admin.color', UserType::MasterAdmin->getColor());
-    Assert::assertSame('user::user_type.values.backoffice_user.color', UserType::BoUser->getColor());
-    Assert::assertSame('user::user_type.values.customer_user.color', UserType::CustomerUser->getColor());
-    Assert::assertSame('user::user_type.values.system.color', UserType::System->getColor());
-    Assert::assertSame('user::user_type.values.technician.color', UserType::Technician->getColor());
+test('user type enum getColor method returns translated values', function (): void {
+    Assert::assertSame((string) trans('user::user_type.values.master_admin.color'), UserType::MasterAdmin->getColor());
+    Assert::assertSame((string) trans('user::user_type.values.backoffice_user.color'), UserType::BoUser->getColor());
+    Assert::assertSame((string) trans('user::user_type.values.customer_user.color'), UserType::CustomerUser->getColor());
+    Assert::assertSame((string) trans('user::user_type.values.system.color'), UserType::System->getColor());
+    Assert::assertSame((string) trans('user::user_type.values.technician.color'), UserType::Technician->getColor());
 });
 
-test('user type enum getIcon method returns translation keys', function (): void {
-    Assert::assertSame('user::user_type.values.master_admin.icon', UserType::MasterAdmin->getIcon());
-    Assert::assertSame('user::user_type.values.backoffice_user.icon', UserType::BoUser->getIcon());
-    Assert::assertSame('user::user_type.values.customer_user.icon', UserType::CustomerUser->getIcon());
-    Assert::assertSame('user::user_type.values.system.icon', UserType::System->getIcon());
-    Assert::assertSame('user::user_type.values.technician.icon', UserType::Technician->getIcon());
+test('user type enum getIcon method returns translated values', function (): void {
+    Assert::assertSame((string) trans('user::user_type.values.master_admin.icon'), UserType::MasterAdmin->getIcon());
+    Assert::assertSame((string) trans('user::user_type.values.backoffice_user.icon'), UserType::BoUser->getIcon());
+    Assert::assertSame((string) trans('user::user_type.values.customer_user.icon'), UserType::CustomerUser->getIcon());
+    Assert::assertSame((string) trans('user::user_type.values.system.icon'), UserType::System->getIcon());
+    Assert::assertSame((string) trans('user::user_type.values.technician.icon'), UserType::Technician->getIcon());
 });
 
 test('user type enum getDefaultGuard method returns correct guards', function (): void {
@@ -61,8 +60,8 @@ test('user type enum getDefaultGuard method returns correct guards', function ()
 });
 
 test('user type enum can be compared', function (): void {
-    Assert::assertSame(UserType::MasterAdmin, UserType::MasterAdmin);
-    Assert::assertNotSame(UserType::MasterAdmin, UserType::BoUser);
+    Assert::assertSame('master_admin', UserType::MasterAdmin->value);
+    Assert::assertSame('backoffice_user', UserType::BoUser->value);
 });
 
 test('user type enum can be used in match statements', function (): void {

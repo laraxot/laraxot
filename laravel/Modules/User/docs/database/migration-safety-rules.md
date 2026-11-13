@@ -1,3 +1,11 @@
+---
+title: "Migration Safety Rules - NEVER Destroy Data"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user, database]
+qmd: "migration safety rules - never destroy data user"
+---
 # Migration Safety Rules - NEVER Destroy Data
 
 ## Regola ASSOLUTA
@@ -290,11 +298,19 @@ Quando un altro agente AI incontra problemi di schema:
 ---
 module: theme
 topic: migration-safety-rules
-canonical: ../../../../Themes/docs/shared-components/migration-safety-rules-1.md
+canonical: ../../../../Themes/docs/shared-components/migration-safety-rules.md
 related:
-  - "./migration-safety-rules-1.md"
-  - "./profile-uuid-philosophy-1.md"
+  - "./migration-safety-rules.md"
+  - "./profile-uuid-philosophy.md"
   - "./profile-uuid-philosophy.md"
 ---
 
-See canonical documentation: ../../../../Themes/docs/shared-components/migration-safety-rules-1.md
+See canonical documentation: ../../../../Themes/docs/shared-components/migration-safety-rules.md
+canonical: ../../../../Themes/docs/shared-components/migration-safety-rules-never-destroy-data.md
+related:
+  - "./migration-safety-rules-never-destroy-data.md"
+  - "./profile-uuid-philosophy-zen-approach.md"
+  - "./profile-uuid-philosophy.md"
+---
+
+See canonical documentation: ../../../../Themes/docs/shared-components/migration-safety-rules-never-destroy-data.md

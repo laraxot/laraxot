@@ -1,10 +1,15 @@
 ---
+qmd: "IMPLEMENTAZIONE COMPLETA FINALE.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: IMPLEMENTAZIONE_COMPLETA_FINALE.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: implementazione_completa_finale.divergenza.md
 ---
 
 # Divergenza: `IMPLEMENTAZIONE_COMPLETA_FINALE.md`

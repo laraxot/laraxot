@@ -1,12 +1,20 @@
 ---
+title: "workstreams"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "workstreams"
+issues: []
+discussions: []
 module: theme
 topic: workstreams
-canonical: ../../../../Themes/docs/shared-components/03-workstreams-Modules.md
+canonical: ../../../../Themes/docs/shared-components/03-workstreams-Modules.md  # target mancante, verificato 2026-10-08
+status: stub
 ---
 
 See canonical documentation: ../../../../Themes/docs/shared-components/03-workstreams-Modules.md
-<<<<<<< HEAD
-=======
+---
 # Workstreams - Seo
 
 ## WS1 Architecture
@@ -28,4 +36,3 @@ See canonical documentation: ../../../../Themes/docs/shared-components/03-workst
 
 - Test funzionali mirati sui percorsi ad alto rischio.
 - Checklist di validazione post-fix.
->>>>>>> laraxot/dev

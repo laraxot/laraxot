@@ -7,6 +7,8 @@ namespace Modules\Rating\Filament\Tables\Columns;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Modules\Rating\Filament\Forms\Components\RatingsSection;
+use Modules\Rating\Filament\Tables\Filters\HasRatingValuesFilter;
 use Modules\Xot\Filament\Tables\Columns\XotBaseTextColumn;
 
 /**
@@ -16,7 +18,7 @@ use Modules\Xot\Filament\Tables\Columns\XotBaseTextColumn;
  * preparato — ma **se qualcuno li ha compilati**. Su un'installazione reale: 171 righe
  * pivot su 180 hanno `value` NULL, e i record valutati sono 147 su 7.955.
  *
- * Specchio di {@see \Modules\Rating\Filament\Forms\Components\RatingsSection}. Il
+ * Specchio di {@see RatingsSection}. Il
  * criterio di «valutata» sta qui, in {@see self::isRated()}: Section e filtro lo
  * chiedono a questa classe invece di ricalcolarlo.
  *
@@ -47,14 +49,14 @@ class RatingsColumn extends XotBaseTextColumn
 
     /**
      * Totale nullo o zero = nessuno ha ancora messo un voto. Stesso criterio del filtro
-     * {@see \Modules\Rating\Filament\Tables\Filters\HasRatingValuesFilter}, così lista
+     * {@see HasRatingValuesFilter}, così lista
      * filtrata e colonna non si contraddicono.
      */
     public static function isRated(Model $record): bool
     {
         $sum = $record->getAttribute('rating_morphs_sum_value');
 
-        return is_numeric($sum) && 0.0 !== (float) $sum;
+        return is_numeric($sum) && (float) $sum !== 0.0;
     }
 
     public static function describe(Model $record): string

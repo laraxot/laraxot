@@ -25,7 +25,11 @@ declare(strict_types=1);
         >
             @if(filled($this->currentCommand))
                 <div class="flex items-center justify-between mb-4 sticky top-0 bg-gray-900 py-2 border-b border-gray-700">
+<<<<<<< HEAD
                     <h3 class="text-lg font-medium">Comando in esecuzione: {{ $this->currentCommand }}</h3>
+=======
+                    <h3 class="text-lg font-medium">{{ __('xot::artisan-commands-manager.messages.running_command.message', ['command' => $this->currentCommand]) }}</h3>
+>>>>>>> laraxot/dev
                     <div>
                         @if($this->status === 'completed')
                             <x-filament::badge color="success">

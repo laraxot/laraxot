@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "filament error fileupload prefixicon"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament error fileupload prefixicon"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # Errore UI: Uso di `prefixIcon` su FileUpload di Filament
 
 ## Descrizione

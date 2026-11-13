@@ -1,10 +1,15 @@
 ---
+qmd: "verifica homepage"
+issues: []
+discussions: []
 title: "Verifica Visiva Homepage Notify"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: verifica-homepage.md
 ---
 
 # 📸 Verifica Visiva Homepage Notify

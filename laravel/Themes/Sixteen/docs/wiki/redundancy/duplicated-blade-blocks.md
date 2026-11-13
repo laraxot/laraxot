@@ -1,4 +1,7 @@
 ---
+qmd: "duplicated blade blocks"
+issues: []
+discussions: []
 title: "Duplicated Blade Blocks Across Modules and Themes"
 type: redundancy
 owner: Themes/Sixteen
@@ -9,6 +12,7 @@ related:
   - ../../../../../Modules/Xot/docs/wiki/redundancy/byte-identical-files-static-scan.md
   - ../../../../../Modules/Xot/docs/wiki/redundancy/audit-profondo-ridondanze-holistic.md
 tags: [redundancy, blade]
+status: draft
 ---
 
 # Duplicated Blade Blocks (Content-Identical Components)
@@ -37,8 +41,9 @@ Examples of content-hash collisions:
 3. Remove the duplicated copies.
 
 ## Related
-
-- Epic [#90](https://github.com/laraxot/base_fixcity_fila5/issues/90) (main redundancy tracker)
+- Issue #90 (main redundancy tracker)
 - Previous static scan already flagged many of these files
+
+- Epic [#90](https://github.com/laraxot/base_fixcity_fila5/issues/90)
 - Inventario tecnico trasversale: [`audit-profondo-ridondanze-holistic.md`](../../../../../Modules/Xot/docs/wiki/redundancy/audit-profondo-ridondanze-holistic.md)
 - Scan byte-identical aggiornato: [`byte-identical-files-static-scan.md`](../../../../../Modules/Xot/docs/wiki/redundancy/byte-identical-files-static-scan.md)

@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Linee Guida per RelationManager e Tabelle Personalizzate Xot in Filament"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Linee Guida per RelationManager e Tabelle Personalizzate Xot in Filament"
+---
+>>>>>>> laraxot/dev
 # Linee Guida per RelationManager e Tabelle Personalizzate Xot in Filament
 
 Questa documentazione descrive come implementare e configurare i `RelationManager` e le loro tabelle all'interno dell'ecosistema PTVX/Laraxot, utilizzando le classi base e i trait forniti dal modulo `Xot`.
@@ -41,7 +54,16 @@ Il trait `Modules\Xot\Filament\Traits\HasXotTable` è utilizzato da `XotBaseRela
     -   Azione `TableLayoutToggleTableAction` aggiunta automaticamente per permettere all'utente di cambiare layout (es. da lista a griglia, se configurato).
 3.  **Azioni Predefinite e Personalizzabili**:
     -   **Header Actions (`getTableHeaderActions`)**:
+<<<<<<< HEAD
         -   `CreateAction` di default.
+=======
+        -   `CreateAction` di default, **ma solo se la Resource ha la pagina `create`** (Xot `e29b74f8c7`, 2026-11-09):
+            senza, il pulsante "Nuovo" portava a una rotta inesistente. La Resource si ricava da
+            `resolveCreatePageResource()`: pagine `ListRecords` e classi Table con `getResource()`
+            **statico** (`XotBaseResourceTable`). I RelationManager restano fuori di proposito: il loro
+            `getResource()` d'istanza è la Resource dell'owner, che non dice nulla sulla relazione.
+            Guardia: `tests/Unit/Filament/HeaderCreateActionFollowsCreatePageTest.php`.
+>>>>>>> laraxot/dev
         -   `AssociateAction` e `AttachAction` condizionali (controllate da `shouldShowAssociateAction()` e `shouldShowAttachAction()` che puoi sovrascrivere).
         -   `TableLayoutToggleTableAction`.
     -   **Row Actions (`getTableActions`)**:
@@ -110,10 +132,17 @@ class MioRelatedRelationManager extends XotBaseRelationManager
     protected static string $relationship = 'nomeDellaRelazioneDefinitiaNelModelloPadre';
 
     // Obbligatorio: specifica la classe XotBaseResource a cui questo RelationManager è associato
+<<<<<<< HEAD
     protected static string $resourceClass = MioResource::class;
 
     // (Opzionale) Titolo del Relation Manager (verrà tradotto)
     // protected static ?string $title = 'mia_relazione_manager.title';
+=======
+    protected static string $resourceClass = MioResource::class; 
+
+    // (Opzionale) Titolo del Relation Manager (verrà tradotto)
+    // protected static ?string $title = 'mia_relazione_manager.title'; 
+>>>>>>> laraxot/dev
 
     // (Opzionale) Etichetta per il record (verrà tradotto)
     // protected static ?string $recordTitleAttribute = 'nome_attributo_del_related_model';

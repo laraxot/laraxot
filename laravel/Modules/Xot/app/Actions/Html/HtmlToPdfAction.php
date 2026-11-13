@@ -6,7 +6,10 @@ namespace Modules\Xot\Actions\Html;
 
 use Illuminate\Support\Facades\Storage;
 use Spatie\QueueableAction\QueueableAction;
+<<<<<<< HEAD
 use Spipu\Html2Pdf\Exception\ExceptionFormatter;
+=======
+>>>>>>> laraxot/dev
 use Spipu\Html2Pdf\Exception\Html2PdfException;
 use Spipu\Html2Pdf\Html2Pdf;
 
@@ -55,11 +58,17 @@ class HtmlToPdfAction
         } catch (Html2PdfException $html2PdfException) {
             $html2pdf->clean();
 
+<<<<<<< HEAD
             $formatter = new ExceptionFormatter($html2PdfException);
             dddx($formatter->getHtmlMessage());
             echo $formatter->getHtmlMessage();
         }
 
         return $filename;
+=======
+            // Niente piu' dump ne' return di un path mai scritto: l'handler segnala l'errore.
+            throw $html2PdfException;
+        }
+>>>>>>> laraxot/dev
     }
 }

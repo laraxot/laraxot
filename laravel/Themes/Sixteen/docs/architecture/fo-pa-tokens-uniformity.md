@@ -1,10 +1,21 @@
+---
+title: "fo pa tokens uniformity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "fo pa tokens uniformity"
+issues: []
+discussions: []
+status: draft
+---
+
 # Architettura FO — uniformità token PA (no hex per pagina)
 
 **Riferimento istituzionale:** [design-comuni-pagine-statiche](https://github.com/italia/design-comuni-pagine-statiche)  
 **Brand FixCity:** verde `#007A52` per CTA / Filament `primary` (scelta prodotto, documentata in token)
 
 ---
-
 ## Religione (regola permanente)
 
 | Vietato | Obbligatorio |
@@ -48,7 +59,7 @@ Componenti: <x-filament::button color="primary"> | .fo-filament-form-shell
 
 ## Collegamenti
 
-- ADR root: [fo-pa-tokens-no-per-page-hex.md](../../../../docs/wiki/decisions/fo-pa-tokens-no-per-page-hex.md)
+- ADR root: [fo-pa-tokens-no-per-page-hex.md](../../../../../docs/wiki/decisions/fo-pa-tokens-no-per-page-hex.md)
 - [filament-pa-design-colors.md](../../../Modules/Xot/docs/wiki/concepts/filament-pa-design-colors.md)
 - [auth-login-ux-design-wcag.md](../wiki/design/auth-login-ux-design-wcag.md)
 - [civic-design-tokens.css](../../resources/css/components/civic-design-tokens.css)

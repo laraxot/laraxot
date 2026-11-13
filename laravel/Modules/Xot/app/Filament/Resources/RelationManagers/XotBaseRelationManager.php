@@ -17,11 +17,22 @@ use Filament\Schemas\Components\Component;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\Layout\Component as LayoutComponent;
+<<<<<<< HEAD
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
+=======
+use Filament\Tables\Filters\BaseFilter;
+use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Arr;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
+use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
+use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
+>>>>>>> laraxot/dev
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use Modules\Xot\Filament\Traits\HasRelationshipModelClass;
 use Modules\Xot\Filament\Traits\HasXotTable;
@@ -133,10 +144,36 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
 
     /**
      * @return array<int|string, Column|LayoutComponent>
+<<<<<<< HEAD
+=======
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+>>>>>>> laraxot/dev
      */
     #[\Override]
     protected function getTableColumns(): array
     {
+<<<<<<< HEAD
+=======
+        /*
+         * Le Resource costruiscono la tabella da una `{Model}sTable` (XotBaseResourceTable): le pagine
+         * index non hanno più colonne proprie, quindi la ricerca sotto restituiva [] e il relation
+         * manager mostrava righe vuote (es. Chiamate nella scheda cliente, 2026-11-05). Prima la classe
+         * Table della Resource, poi il percorso storico tramite la pagina index.
+         */
+        $resource = $this->getResource();
+        if (method_exists($resource, 'getTableClass')) {
+            $tableClass = $resource::getTableClass();
+            $table = \is_string($tableClass) && $tableClass !== XotBaseResourceTable::class ? app($tableClass) : null;
+            if ($table instanceof XotBaseResourceTable) {
+                $columns = $table->getTableColumns();
+                if ($columns !== []) {
+                    return $columns;
+                }
+            }
+        }
+
+>>>>>>> laraxot/dev
         $index = Arr::get($this->getResource()::getPages(), 'index');
         if (! $index) {
             // throw new \Exception('Index page not found');
@@ -201,6 +238,11 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
      * richiede che questo metodo sia pubblico.
      *
      * @return array<string, Action>
+<<<<<<< HEAD
+=======
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+>>>>>>> laraxot/dev
      */
     public function getTableActions(): array
     {
@@ -216,6 +258,7 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
                 return $me->canEdit($record);
             });
 
+<<<<<<< HEAD
         $actions['detach'] = DetachAction::make()
             ->iconButton()
             ->visible(static function (?Model $record) use ($me): bool {
@@ -225,6 +268,21 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
 
                 return $me->canDetach($record);
             });
+=======
+        // «Scollega» ha senso solo per le relazioni molti-a-molti: su una HasMany (es. le chiamate di un
+        // cliente) compariva una X rossa che non poteva funzionare.
+        if ($this->getRelationship() instanceof BelongsToMany) {
+            $actions['detach'] = DetachAction::make()
+                ->iconButton()
+                ->visible(static function (?Model $record) use ($me): bool {
+                    if ($record === null) {
+                        return false;
+                    }
+
+                    return $me->canDetach($record);
+                });
+        }
+>>>>>>> laraxot/dev
 
         return $actions;
     }
@@ -235,6 +293,11 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
      * CRITICO: Deve essere PUBLIC per Filament InteractsWithTable.
      *
      * @return array<string, BulkAction>
+<<<<<<< HEAD
+=======
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+>>>>>>> laraxot/dev
      */
     public function getTableBulkActions(): array
     {
@@ -244,9 +307,17 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
             ->iconButton()
             ->visible(fn (?Model $record): bool => $this->canDeleteBulk($record));
 
+<<<<<<< HEAD
         $actions['detach_bulk'] = DetachBulkAction::make()
             ->iconButton()
             ->visible(fn (?Model $record): bool => $this->canDetachBulk($record));
+=======
+        if ($this->getRelationship() instanceof BelongsToMany) {
+            $actions['detach_bulk'] = DetachBulkAction::make()
+                ->iconButton()
+                ->visible(fn (?Model $record): bool => $this->canDetachBulk($record));
+        }
+>>>>>>> laraxot/dev
 
         return $actions;
     }
@@ -257,16 +328,32 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
      * CRITICO: Deve essere PUBLIC per Filament InteractsWithTable.
      *
      * @return array<string, Action>
+<<<<<<< HEAD
+=======
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+>>>>>>> laraxot/dev
      */
     public function getTableHeaderActions(): array
     {
         $actions = [];
         $me = $this;
+<<<<<<< HEAD
         $actions['attach'] = AttachAction::make()
             ->icon('heroicon-o-link')
             ->iconButton()
             ->tooltip(__('user::actions.attach.label'))
             ->visible(static fn (?Model $_record): bool => $me->canAttach());
+=======
+        // «Collega un record esistente» solo per le molti-a-molti (come detach).
+        if ($this->getRelationship() instanceof BelongsToMany) {
+            $actions['attach'] = AttachAction::make()
+                ->icon('heroicon-o-link')
+                ->iconButton()
+                ->tooltip(__('user::actions.attach.label'))
+                ->visible(static fn (?Model $_record): bool => $me->canAttach());
+        }
+>>>>>>> laraxot/dev
         $actions['create'] = CreateAction::make()
             ->icon('heroicon-o-plus')
             ->iconButton()
@@ -276,6 +363,14 @@ abstract class XotBaseRelationManager extends FilamentRelationManager
         return $actions;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @return array<string|int, BaseFilter>
+     *
+     * @not-deprecated Hook di progetto, non il metodo deprecato omonimo di Filament.
+     */
+>>>>>>> laraxot/dev
     public function getTableFilters(): array
     {
         return [];

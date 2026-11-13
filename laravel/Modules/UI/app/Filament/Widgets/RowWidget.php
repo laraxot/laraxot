@@ -20,6 +20,9 @@ abstract class RowWidget extends XotBaseSchemaWidget
     public array $widgets = [];
 
     /** @var view-string */
+<<<<<<< HEAD
+    protected string $view = 'ui::filament.widgets.row';
+=======
     protected string $view;
 
     public function __construct()
@@ -30,6 +33,7 @@ abstract class RowWidget extends XotBaseSchemaWidget
 
         parent::__construct();
     }
+>>>>>>> f5ffd8b4 (.)
 
     protected int|string|array $columnSpan = 'full';
 

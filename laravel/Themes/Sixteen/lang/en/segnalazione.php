@@ -82,6 +82,35 @@ return [
         'rating_legend' => 'Rate from 1 to 5 stars',
     ],
 
+    'filters' => [
+        'legend' => ['label' => 'Category'],
+    ],
+    'filter' => [
+        'button' => ['label' => 'Filter'],
+        'remove' => ['label' => 'Remove all filters'],
+    ],
+    'results' => [
+        'count' => ['text' => ':count Results'],
+        'empty' => 'No reports match the selected filters.',
+    ],
+    'card' => [
+        'type' => ['label' => 'Report type'],
+        'expand' => ['button' => ['label' => 'Show all']],
+        'address' => ['label' => 'Address'],
+        'detail' => ['label' => 'Details'],
+        'images' => ['label' => 'Images'],
+        'no_images' => ['label' => 'No images available'],
+        'edit' => ['label' => 'Edit'],
+    ],
+    'map' => [
+        'image' => ['alt' => 'Map of public reports'],
+        'cta' => [
+            'title' => 'Make a report',
+            'text' => 'Report a problem to the municipality after signing in.',
+            'button' => 'Report an issue',
+        ],
+    ],
+
     // Contacts
     'contacts' => [
         'title' => 'Contact the Municipality',

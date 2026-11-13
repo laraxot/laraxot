@@ -38,7 +38,11 @@ class PendingCommentNotification extends Notification implements ShouldQueue
         $config = CommentConfigData::make();
         $view = app(ResolveCommentMailViewAction::class)->execute('comment::mail.pending-comment-notification');
 
+<<<<<<< .merge_file_xXScvo
         return (new MailMessage())
+=======
+        return (new MailMessage)
+>>>>>>> .merge_file_VcORmU
             ->from(
                 $config->notificationMailFromAddress(),
                 $config->notificationMailFromName(),

@@ -133,4 +133,23 @@ return [
 
     // Hero
     'highlighted_content' => 'Featured content',
+    'mobile' => [
+        'home_title' => 'FixCity', 'home_subtitle' => 'Your city, your reports',
+        'new_report' => 'New', 'report_action' => 'Report', 'map' => 'Map', 'explore' => 'Explore',
+        'recent_reports' => 'Recent reports', 'profile' => 'Profile', 'citizen' => 'Citizen',
+        'my_reports' => 'My reports', 'notifications' => 'Notifications', 'settings' => 'Settings', 'home' => 'Home',
+        'reports' => 'Reports', 'new_report_title' => 'New report', 'back_reports' => 'Back to reports', 'detail_report' => 'Report details',
+        'title' => 'Title', 'category' => 'Category', 'select_category' => 'Select category', 'photo' => 'Photo',
+        'take_photo' => 'Tap to take a photo', 'open_camera' => 'Open camera', 'location' => 'Location',
+        'detect' => 'Detect', 'description' => 'Description', 'submit_report' => 'Submit report', 'describe_problem' => 'Describe the problem', 'gps_location' => 'Automatic GPS location', 'describe_detail' => 'Describe the problem in detail',
+        'categories' => [
+            'road_maintenance' => 'Road maintenance',
+            'street_lighting' => 'Street lighting',
+            'waste' => 'Waste',
+            'public_green' => 'Public green',
+            'vandalism' => 'Vandalism',
+            'signage' => 'Signage',
+            'transport' => 'Public transport',
+        ],
+    ],
 ];

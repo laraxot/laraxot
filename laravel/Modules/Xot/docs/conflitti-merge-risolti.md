@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Risoluzione Conflitti di Merge"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "risoluzione conflitti di merge xot"
+---
+>>>>>>> laraxot/dev
 # Risoluzione Conflitti di Merge
 
 # Risoluzione Conflitti di Merge in <nome progetto>

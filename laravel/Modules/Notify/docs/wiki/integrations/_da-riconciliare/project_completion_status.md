@@ -1,10 +1,14 @@
 ---
+qmd: "project completion status"
+issues: []
+discussions: []
 title: "NOTIFY - STATO COMPLETAMENTO PROGETTO"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # 🎯 NOTIFY - STATO COMPLETAMENTO PROGETTO

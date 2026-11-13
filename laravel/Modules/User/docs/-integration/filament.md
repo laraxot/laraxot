@@ -16,9 +16,9 @@ related:
   - "./payment.md"
   - "./phpstan.md"
   - "./profile.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # filament
 
 <!-- Contenuto migrato da _docs/filament.txt -->

@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_CLOCK_WIDGET_FLEX_LAYOUT_LESSONS"
+module: Employee
+bmad: true
+status: active
+---
 # TimeClockWidget - Lezioni Apprese sul Layout Flex vs Grid
 
 ## Problema Identificato

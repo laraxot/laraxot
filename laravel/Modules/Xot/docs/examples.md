@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+---
+title: "examples"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "examples"
+issues: []
+discussions: []
+status: draft
+---
+
+>>>>>>> laraxot/dev
 # 💡 **Esempi Modulo Xot**
 
 ## 📋 **Panoramica**
@@ -239,8 +254,22 @@ class ExampleResource extends XotBaseResource
      * @return array<int, \Filament\Forms\Components\Component>
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public function getFormSchema(): array
+---
+title: "examples"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "examples"
+issues: []
+discussions: []
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
     {
@@ -518,8 +547,14 @@ class ExampleWithCustomActionsResource extends XotBaseResource
     protected static ?string $model = \Modules\Example\app\Models\Example::class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function getFormSchema(): array
 =======
+    public function getFormSchema(): array
+>>>>>>> laraxot/dev
+=======
+    public function getFormSchema(): array
+---
     public function getFormSchema(): array
 >>>>>>> laraxot/dev
     {

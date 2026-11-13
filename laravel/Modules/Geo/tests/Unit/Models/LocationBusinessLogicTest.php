@@ -2,30 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Modules\Geo\Tests\Unit\Models;
-
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Geo\Models\BaseModel;
 use Modules\Geo\Models\Location;
 use Modules\Geo\Tests\TestCase;
+use Modules\Xot\Models\Traits\HasXotFactory;
 use PHPUnit\Framework\Assert;
-
-use function Safe\class_uses;
 
 uses(TestCase::class);
 
+/*
+ * Contratto di dominio Location (coordinate, componenti indirizzo, scope geografici).
+ * Assert PHPUnit: evita crash pest-plugin-phpstan HigherOrderExpectationTypeExtension.
+ */
 describe('Location Business Logic', function () {
     test('location extends base model', function () {
-        $parent = (new \ReflectionClass(Location::class))->getParentClass();
-        Assert::assertInstanceOf(\ReflectionClass::class, $parent);
-        Assert::assertSame(BaseModel::class, $parent->getName());
+        Assert::assertSame(BaseModel::class, get_parent_class(Location::class));
     });
 
     test('location has factory trait for testing', function () {
-        $traits = class_uses(Location::class);
-
-        Assert::assertArrayHasKey(HasFactory::class, $traits);
+        Assert::assertContains(HasXotFactory::class, class_uses_recursive(Location::class));
     });
 
     test('location can be queried within distance scope', function () {
@@ -35,7 +31,7 @@ describe('Location Business Logic', function () {
     });
 
     test('location has geographic coordinate properties', function () {
-        $location = new Location();
+        $location = new Location;
         $location->lat = 45.4642;
         $location->lng = 9.1900;
 
@@ -44,7 +40,7 @@ describe('Location Business Logic', function () {
     });
 
     test('location can store address components', function () {
-        $location = new Location();
+        $location = new Location;
         $location->street = 'Via Roma 123';
         $location->city = 'Milano';
         $location->state = 'Lombardia';
@@ -57,14 +53,14 @@ describe('Location Business Logic', function () {
     });
 
     test('location has processing status tracking', function () {
-        $location = new Location();
+        $location = new Location;
         $location->processed = true;
 
-        Assert::assertSame(true, $location->processed);
+        Assert::assertTrue($location->processed);
     });
 
     test('location can store formatted address', function () {
-        $location = new Location();
+        $location = new Location;
         $location->formatted_address = 'Via Roma 123, 20121 Milano MI, Italy';
 
         Assert::assertSame('Via Roma 123, 20121 Milano MI, Italy', $location->formatted_address);

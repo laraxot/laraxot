@@ -3,6 +3,7 @@
 
 # -----------------------------------------------------------------------------
 # Root-level forbidden directories
+# -----------------------------------------------------------------------------
 
 bashscripts/
 _bmad-output/
@@ -22,6 +23,9 @@ test-results/
 tests/.claude-audit/
 tests/AuditCoverage/
 
+# -----------------------------------------------------------------------------
+# IDE / AI tools
+# -----------------------------------------------------------------------------
 # IDE / AI tools
 
 .cursor/
@@ -29,11 +33,17 @@ tests/AuditCoverage/
 .windsurf/
 .agents/
 
+# -----------------------------------------------------------------------------
+# AI / local tooling output
+# -----------------------------------------------------------------------------
 # AI / local tooling output
 
 graphify-out/
 .headroom/
 
+# -----------------------------------------------------------------------------
+# Logs, caches and temporary files
+# -----------------------------------------------------------------------------
 # Logs, caches and temporary files
 
 *.log
@@ -51,12 +61,18 @@ logs/
 /cache/
 .git-rewrite/
 
+# -----------------------------------------------------------------------------
+# Environment files
+# -----------------------------------------------------------------------------
 # Environment files
 
 .env
 .env.docker
 .env.latest
 
+# -----------------------------------------------------------------------------
+# Dependencies / generated assets
+# -----------------------------------------------------------------------------
 # Dependencies / generated assets
 
 vendor/
@@ -65,6 +81,15 @@ uploads/
 limesurvey/
 build/
 
+# -----------------------------------------------------------------------------
+# Package manager files
+# -----------------------------------------------------------------------------
+
+package-lock.json
+
+# -----------------------------------------------------------------------------
+# Public HTML generated/vendor assets
+# -----------------------------------------------------------------------------
 # Package manager files
 
 package-lock.json
@@ -78,6 +103,9 @@ public_html/storage/
 public_html/error_log
 public_html/chart/
 
+# -----------------------------------------------------------------------------
+# Laravel generated / local files
+# -----------------------------------------------------------------------------
 # Laravel generated / local files
 
 laravel/
@@ -128,11 +156,15 @@ laravel/_ide_helper_models.php
 
 # -----------------------------------------------------------------------------
 # PHP / static analysis / quality tools
+# -----------------------------------------------------------------------------
 
 phpstan*.json
 phpinsights.php
 rector.php
 
+# -----------------------------------------------------------------------------
+# Documentation / generated screenshots
+# -----------------------------------------------------------------------------
 # Documentation / generated screenshots
 
 docs/screenshots/
@@ -189,3 +221,10 @@ docs/graphify/graphify-out/
 /.vscode/
 .cursor~*
 .windsurf~*
+
+# Artefatti audit vietati (rule: tests-auditcoverage-forbidden)
+audit-coverage/
+
+/.github/skills/
+.github/skills
+/docs/graphify/

@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Themes\Sixteen\Enums\OrganizationalUnitTypeEnum;
 
 /**
  * Modello per le unità organizzative
@@ -65,25 +66,6 @@ class OrganizationalUnit extends Model
 {
     /** @use HasFactory<Factory<static>> */
     use HasFactory, SoftDeletes;
-
-    /**
-     * Tipi di unità organizzative secondo AGID
-     */
-    public const TYPES = [
-        'municipality' => 'Comune',
-        'department' => 'Dipartimento',
-        'sector' => 'Settore',
-        'office' => 'Ufficio',
-        'service' => 'Servizio',
-        'area' => 'Area',
-        'division' => 'Divisione',
-        'unit' => 'Unità',
-        'committee' => 'Commissione',
-        'council' => 'Consiglio',
-        'board' => 'Giunta',
-        'authority' => 'Autorità',
-        'agency' => 'Agenzia',
-    ];
 
     protected $table = 'sixteen_organizational_units';
 
@@ -428,7 +410,7 @@ class OrganizationalUnit extends Model
     protected function typeName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::TYPES[$this->type] ?? $this->type
+            get: fn () => OrganizationalUnitTypeEnum::tryFrom($this->type)?->getLabel() ?? $this->type
         );
     }
 

@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://smsvi-docs.web.app/docs/restful/send-batch/
  */
-
-declare(strict_types=1);
 
 namespace Modules\Notify\Actions\Mail\Engines\Duocircle;
 

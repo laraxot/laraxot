@@ -12,7 +12,6 @@ use Modules\Media\Actions\S3\GetFileInfoAction;
 use Modules\Media\Actions\S3\UploadFileAction;
 use Modules\Media\Actions\Stream\StreamVideoAction;
 use Modules\Media\Models\TemporaryUpload;
-use Modules\Media\Services\VideoStream;
 use Modules\Media\Tests\TestCase;
 use Modules\Xot\Tests\ModuleRemainingCoverage;
 use PHPUnit\Framework\Assert;
@@ -48,7 +47,7 @@ describe('Media coverage 100 — remaining sweep', function (): void {
 
         try {
             $upload = app(UploadFileAction::class)->execute($missing, 'media/dest.bin');
-            Assert::assertSame(false, $upload['success'] ?? null, 'un upload da un path inesistente non può riuscire');
+            Assert::assertFalse($upload['success'], 'un upload da un path inesistente non può riuscire');
             Assert::assertArrayHasKey('error', $upload);
         } catch (\Throwable $e) {
             Assert::assertNotSame('', $e->getMessage());
@@ -69,21 +68,10 @@ describe('Media coverage 100 — remaining sweep', function (): void {
         }
     });
 
-    test('VideoStream e StreamVideoAction rifiutano un path inesistente sul disco', function (): void {
+    test('StreamVideoAction rifiuta un path inesistente sul disco', function (): void {
         Storage::fake('local');
 
         $missing = 'media/assente-'.uniqid('', true).'.mp4';
-
-        $streamMessage = null;
-        try {
-            new VideoStream('local', $missing);
-        } catch (\Throwable $e) {
-            $streamMessage = $e->getMessage();
-        }
-        if ($streamMessage === null) {
-            Assert::fail('VideoStream doveva rifiutare un path inesistente');
-        }
-        Assert::assertStringContainsString($missing, $streamMessage);
 
         $actionMessage = null;
         try {
@@ -132,7 +120,7 @@ describe('Media coverage 100 — remaining sweep', function (): void {
 
     test('TemporaryUpload session disk accessors offline', function (): void {
         TemporaryUpload::$disk = 'local';
-        $upload = new TemporaryUpload();
+        $upload = new TemporaryUpload;
         $upload->forceFill([
             'session_id' => 'sess-1',
             'uuid' => 'uuid-1',

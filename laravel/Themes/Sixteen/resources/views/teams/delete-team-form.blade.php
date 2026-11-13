@@ -1,41 +1,41 @@
 <x-action-section>
 <x-action-section>
     <x-slot name="title">
-        {{ __('Delete Team') }}
+        {{ __('pub_theme::account_forms.team.delete.label') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Permanently delete this team.') }}
+        {{ __('pub_theme::account_forms.team.delete_summary.help') }}
     </x-slot>
 
     <x-slot name="content">
         <div class="max-w-xl text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Once a team is deleted, all of its resources and data will be permanently deleted. Before deleting this team, please download any data or information regarding this team that you wish to retain.') }}
+            {{ __('pub_theme::account_forms.team.delete_warning.help') }}
         </div>
 
         <div class="mt-5">
             <x-danger-button wire:click="$toggle('confirmingTeamDeletion')" wire:loading.attr="disabled">
-                {{ __('Delete Team') }}
+                {{ __('pub_theme::account_forms.team.delete.label') }}
             </x-danger-button>
         </div>
 
         <!-- Delete Team Confirmation Modal -->
         <x-confirmation-modal wire:model.live="confirmingTeamDeletion">
             <x-slot name="title">
-                {{ __('Delete Team') }}
+                {{ __('pub_theme::account_forms.team.delete.label') }}
             </x-slot>
 
             <x-slot name="content">
-                {{ __('Are you sure you want to delete this team? Once a team is deleted, all of its resources and data will be permanently deleted.') }}
+                {{ __('pub_theme::account_forms.team.delete_confirm.message') }}
             </x-slot>
 
             <x-slot name="footer">
                 <x-secondary-button wire:click="$toggle('confirmingTeamDeletion')" wire:loading.attr="disabled">
-                    {{ __('Cancel') }}
+                    {{ __('pub_theme::account_forms.common.cancel.label') }}
                 </x-secondary-button>
 
                 <x-danger-button class="ms-3" wire:click="deleteTeam" wire:loading.attr="disabled">
-                    {{ __('Delete Team') }}
+                    {{ __('pub_theme::account_forms.team.delete.label') }}
                 </x-danger-button>
             </x-slot>
         </x-confirmation-modal>

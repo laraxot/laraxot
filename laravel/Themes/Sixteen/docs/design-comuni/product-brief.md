@@ -1,3 +1,15 @@
+---
+title: "product brief"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product brief"
+issues: []
+discussions: []
+status: draft
+---
+
 # Design Comuni Replication - Product Brief
 
 > **BMAD Product Brief: Replica completa delle pagine Design Comuni Italia**
@@ -22,7 +34,6 @@ Creare un sistema di **componenti riutilizzabili** che permetta di:
 4. Garantire conformità accessibilità PA
 
 ---
-
 ## 🎯 Obiettivi Strategici
 
 ### Obiettivo 1: Censimento Completo
@@ -720,7 +731,7 @@ Per ogni blocco universale:
 
 ### Indici
 
-- [Main Index](../00-index.md)
+- [Main Index](../00-INDEX.md)
 - [Design Comuni Index](./00-index.md)
 - [Pages Index](./pages/00-index.md)
 - [Blocks Index](./blocks/00-index.md)

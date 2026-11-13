@@ -1,10 +1,15 @@
 ---
+qmd: "notebooklm installation summary.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: NOTEBOOKLM_INSTALLATION_SUMMARY.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: notebooklm-installation-summary.divergenza.md
 ---
 
 # Divergenza: `NOTEBOOKLM_INSTALLATION_SUMMARY.md`

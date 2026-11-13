@@ -12,9 +12,11 @@ use Modules\Notify\Database\Factories\NotificationFactory;
 use Modules\Notify\Database\Factories\NotificationTemplateFactory;
 use Modules\Notify\Models\Notification;
 use Modules\Notify\Models\NotificationTemplate;
+use Modules\Notify\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('Send notification flow', function (): void {
     test('template lookup returns null when code missing', function (): void {
         $result = NotificationTemplate::query()

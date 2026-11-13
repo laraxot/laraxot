@@ -12,6 +12,7 @@ use Modules\Geo\Datas\GoogleMaps\GoogleMapAddressComponentData;
 use Modules\Geo\Datas\GoogleMaps\GoogleMapResponseData;
 use Modules\Geo\Datas\GoogleMaps\GoogleMapResultData;
 use Modules\Geo\Exceptions\GoogleMaps\GoogleMapsApiException;
+use Modules\Geo\Infrastructure\Config\GeoApiEndpoints;
 use Spatie\LaravelData\DataCollection;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -22,7 +23,7 @@ final class GetAddressFromGoogleMapsAction
 {
     use QueueableAction;
 
-    private const string BASE_URL = 'https://maps.googleapis.com/maps/api/geocode/json';
+    private const string BASE_URL = GeoApiEndpoints::GOOGLE_GEOCODING;
 
     /**
      * @throws GoogleMapsApiException Se la richiesta fallisce o i dati non sono validi
@@ -63,7 +64,7 @@ final class GetAddressFromGoogleMapsAction
 
         /** @var Response $response */
         if (! $response->successful()) {
-            throw GoogleMapsApiException::requestFailed((string) $response->status());
+            throw GoogleMapsApiException::requestFailed('Richiesta a Google Maps fallita: HTTP '.$response->status());
         }
 
         return $response;
@@ -122,13 +123,8 @@ final class GetAddressFromGoogleMapsAction
         /** @var GoogleMapAddressComponentData|null $component */
         $component = $components
             ->toCollection()
-            ->first(function ($component) use ($types) {
-                if (! $component instanceof GoogleMapAddressComponentData) {
-                    return false;
-                }
-
-                return ! empty($component->types) && count(array_intersect($component->types, $types)) > 0;
-            });
+            ->first(static fn (GoogleMapAddressComponentData $component): bool => ! empty($component->types)
+                && count(array_intersect($component->types, $types)) > 0);
 
         if (! $component instanceof GoogleMapAddressComponentData) {
             return null;

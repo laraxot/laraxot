@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Media Module - File Management Architecture"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "file management architecture"
 related:
   - "./webm.md"
+status: draft
 ---
 # Media Module - File Management Architecture
 

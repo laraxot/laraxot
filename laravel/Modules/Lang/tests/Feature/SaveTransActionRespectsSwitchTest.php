@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Support\Facades\Config;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Tests\TestCase;
@@ -10,7 +9,7 @@ use function Safe\file_get_contents;
 
 uses(TestCase::class);
 
-/**
+/*
  * `AutoLabelAction` chiama `SaveTransAction` ogni volta che una chiave manca, e la
  * suite passa su migliaia di etichette: senza interruttore i test riscrivono i file
  * di lingua dell'albero di lavoro e lasciano in `git status` modifiche che nessuno

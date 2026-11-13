@@ -1,4 +1,7 @@
 ---
+qmd: "lang translation loading fix.story"
+issues: []
+discussions: []
 title: "Lang: fix array_replace_recursive TypeError in FileLoader"
 type: story
 module: Lang
@@ -28,7 +31,7 @@ owned_scope:
   - laravel/Modules/Lang/tests/
 ---
 
-# Lang — Fix array_replace_recursive TypeError in FileLoader
+# Lang: Fix array_replace_recursive TypeError in FileLoader
 
 ## Story
 

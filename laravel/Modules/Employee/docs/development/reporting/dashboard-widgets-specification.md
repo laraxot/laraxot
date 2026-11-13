@@ -1,3 +1,9 @@
+---
+title: "Employee - DASHBOARD-WIDGETS-SPECIFICATION"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Dashboard Widgets Specification
 
 ## Overview

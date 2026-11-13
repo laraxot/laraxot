@@ -13,8 +13,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Modules\\Seo\\Providers\\SeoServiceProvider",
-                "Modules\\Seo\\Providers\\Filament\\AdminPanelProvider"
+                "Modules\\Seo\\Providers\\SeoServiceProvider"
             ],
             "aliases": {
 
@@ -34,7 +33,7 @@
         }
     },
     "require": {
-        "spatie/laravel-sitemap": "^7.0"
+        "spatie/laravel-sitemap": "^8.2"
     },
     "require-dev_comment": {
         "laravel/pint": "^1.13",

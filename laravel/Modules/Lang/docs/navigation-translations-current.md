@@ -1,4 +1,9 @@
 ---
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "navigation translations current"
+issues: []
+discussions: []
 title: "Regola corrente per le traduzioni di navigazione"
 type: rule
 module: Lang

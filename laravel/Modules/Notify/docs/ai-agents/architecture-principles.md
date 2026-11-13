@@ -1,3 +1,15 @@
+---
+title: "architecture principles"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "architecture principles"
+issues: []
+discussions: []
+status: draft
+---
+
 # Architecture Principles
 
 Key architectural rules for Quaeris Fila5 Mono (Laraxot / Laravel 12 / Filament 5).
@@ -164,11 +176,11 @@ app(GenerateReportAction::class)->onQueue('reports')->execute($pdf);
 - Constructor injection ammessa per collaboratori stabili
 - Composizione: chiamare altre action via `app()` o injection
 - MAI creare un Job separato: usare `onQueue()` sull'action esistente
-- I ServiceProvider (`XotBaseServiceProvider`, `AdminPanelProvider`) NON sono "Service classes" — sono infrastruttura Laravel, si mantengono come sono
+- I ServiceProvider (`XotBaseServiceProvider`, `AdminPanelProvider`) NON sono "Service classes": sono infrastruttura Laravel, si mantengono come sono
 
 **Servizi legacy esistenti** (da non rimuovere, ma non creare di nuovi):
-- `Modules/Xot/app/Services/` — infrastruttura framework, non business logic
-- `Modules/Job/app/Services/ScheduleService.php` — wrapper scheduling
+- `Modules/Xot/app/Services/`: infrastruttura framework, non business logic
+- `Modules/Job/app/Services/ScheduleService.php`: wrapper scheduling
 
 ## 7. Type Safety Rules
 

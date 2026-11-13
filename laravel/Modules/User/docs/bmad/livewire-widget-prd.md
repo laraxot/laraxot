@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_RmZqFX
 title: "PRD — campagna solo Filament widget"
+=======
+title: "PRD: campagna solo Filament widget"
+>>>>>>> .merge_file_D8V2iA
 type: prd
 module: User
 status: approved
@@ -12,6 +16,12 @@ related:
   - ./livewire-inventory.md
   - ./prd.md
   - ./epics.md
+<<<<<<< .merge_file_RmZqFX
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "prd: http/livewire → solo filament widget user"
+>>>>>>> .merge_file_D8V2iA
 ---
 
 # PRD: Http/Livewire → solo Filament widget
@@ -43,42 +53,74 @@ Il PRD SuperAdmin ([prd.md](./prd.md)) resta valido per FR-001…006 dell’Epic
 
 ## Functional requirements
 
+<<<<<<< .merge_file_RmZqFX
 ### FR-C001: Chrome senza alias — [MUST]
+=======
+### FR-C001: Chrome senza alias: [MUST]
+>>>>>>> .merge_file_D8V2iA
 
 I tre hook attivi montano FQCN widget, non stringhe `profile.super-admin` / `team.change` / `socialite.buttons`.  
 **Epic:** 9.2, 10.1, 10.2
 
+<<<<<<< .merge_file_RmZqFX
 ### FR-C002: Team switcher widget — [MUST]
+=======
+### FR-C002: Team switcher widget: [MUST]
+>>>>>>> .merge_file_D8V2iA
 
 Stesso comportamento di `Team\Change` (`switchTeam`, abort 403, notify, redirect 303 a `filament.path`). `$isDiscovered = false`.  
 **Epic:** 10.1
 
+<<<<<<< .merge_file_RmZqFX
 ### FR-C003: Social login dal widget esistente — [MUST]
+=======
+### FR-C003: Social login dal widget esistente: [MUST]
+>>>>>>> .merge_file_D8V2iA
 
 Hook login-form-after usa `SocialLoginWidget`, non `Socialite\Buttons`. Non creare un terzo widget.  
 **Epic:** 10.2
 
+<<<<<<< .merge_file_RmZqFX
 ### FR-C004: Ritiro auth HTTP — [MUST]
+=======
+### FR-C004: Ritiro auth HTTP: [MUST]
+>>>>>>> .merge_file_D8V2iA
 
 Classi Cluster B assenti dopo verifica grep (nessuna route, nessun `@livewire` alias). SSoT = widget già in `Filament/Widgets/Auth`. Unificare i doppi logout/reset **scegliendo** un widget, non aggiungendone.  
 **Epic:** 10.3
 
+<<<<<<< .merge_file_RmZqFX
 ### FR-C005: Zero ViewCopyAction in render User — [MUST]
+=======
+### FR-C005: Zero ViewCopyAction in render User: [MUST]
+>>>>>>> .merge_file_D8V2iA
 
 Nessun `ViewCopyAction` nei componenti UI User.  
 **Epic:** 10.3
 
+<<<<<<< .merge_file_RmZqFX
 ### FR-C006: DeleteAccount nel mondo Filament — [MUST]
+=======
+### FR-C006: DeleteAccount nel mondo Filament: [MUST]
+>>>>>>> .merge_file_D8V2iA
 
 UI cancellazione account via widget o pagina profilo; `DeleteUserAction` invariata; testi da lang, niente toast IT hardcoded.  
 **Epic:** 10.4
 
+<<<<<<< .merge_file_RmZqFX
 ### FR-C007: Privacy/Terms fuori User — [MUST]
+=======
+### FR-C007: Privacy/Terms fuori User: [MUST]
+>>>>>>> .merge_file_D8V2iA
 
 Classi `PrivacyPolicy` e `TermsOfService` ritirate da User. Non decommentare l’hook terms nel provider.  
 **Epic:** 10.4
 
+<<<<<<< .merge_file_RmZqFX
 ### FR-C008: Inventario rispettato — [SHOULD]
+=======
+### FR-C008: Inventario rispettato: [SHOULD]
+>>>>>>> .merge_file_D8V2iA
 
 Fuori campagna resta fuori (Notify, `notifications`, Resource).  
 **Epic:** 10

@@ -1,3 +1,9 @@
+---
+title: "Employee - DASHBOARD_HR_WIDGETS_IMPLEMENTATION"
+module: Employee
+bmad: true
+status: active
+---
 # Implementazione Dashboard HR Widgets - Employee Module
 
 ## Panoramica

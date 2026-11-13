@@ -1,4 +1,7 @@
 ---
+qmd: "queueable actions"
+issues: []
+discussions: []
 title: "Queueable Actions — Geo Module"
 type: concept
 created: 2026-07-12
@@ -7,6 +10,7 @@ confidence: high
 tags: [queueable-action, spatie, architecture, laraxot, geo]
 related:
   - Modules/Xot/docs/queueable-actions.md
+status: draft
 ---
 
 # Queueable Actions — Geo Module Doctrine

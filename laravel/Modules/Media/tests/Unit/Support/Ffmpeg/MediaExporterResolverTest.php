@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Modules\Media\Tests\Unit\Support\Ffmpeg;
+namespace Modules\Media\Tests\Unit\Actions\Ffmpeg;
 
-use Modules\Media\Support\Ffmpeg\MediaExporterResolver;
+use Modules\Media\Actions\Ffmpeg\ResolveMediaExporterAction;
 use Modules\Media\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use ProtoneMedia\LaravelFFMpeg\Exporters\MediaExporter;
@@ -16,12 +16,12 @@ describe('MediaExporterResolver', function (): void {
     it('returns the value unchanged when it is already a MediaExporter', function (): void {
         $exporter = \Mockery::mock(MediaExporter::class);
 
-        Assert::assertSame($exporter, MediaExporterResolver::from($exporter));
+        Assert::assertSame($exporter, app(ResolveMediaExporterAction::class)->execute($exporter));
     });
 
     it('rejects a value that is not a MediaExporter', function (): void {
         try {
-            MediaExporterResolver::from('non-un-exporter');
+            app(ResolveMediaExporterAction::class)->execute('non-un-exporter');
             Assert::fail('Expected RuntimeException was not thrown.');
         } catch (RuntimeException $exception) {
             Assert::assertStringContainsString('MediaExporter', $exception->getMessage());
@@ -30,7 +30,7 @@ describe('MediaExporterResolver', function (): void {
 
     it('names the received type in the error message for an object', function (): void {
         try {
-            MediaExporterResolver::from(new \stdClass());
+            app(ResolveMediaExporterAction::class)->execute(new \stdClass);
             Assert::fail('Expected RuntimeException was not thrown.');
         } catch (RuntimeException $exception) {
             Assert::assertStringContainsString('stdClass', $exception->getMessage());
@@ -39,7 +39,7 @@ describe('MediaExporterResolver', function (): void {
 
     it('names the received type in the error message for a scalar', function (): void {
         try {
-            MediaExporterResolver::from(42);
+            app(ResolveMediaExporterAction::class)->execute(42);
             Assert::fail('Expected RuntimeException was not thrown.');
         } catch (RuntimeException $exception) {
             Assert::assertStringContainsString('int', $exception->getMessage());
@@ -48,7 +48,7 @@ describe('MediaExporterResolver', function (): void {
 
     it('rejects null', function (): void {
         try {
-            MediaExporterResolver::from(null);
+            app(ResolveMediaExporterAction::class)->execute(null);
             Assert::fail('Expected RuntimeException was not thrown.');
         } catch (RuntimeException $exception) {
             Assert::assertStringContainsString('null', $exception->getMessage());

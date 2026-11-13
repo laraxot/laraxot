@@ -1,3 +1,15 @@
+---
+title: "visual comparison report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "visual comparison report"
+issues: []
+discussions: []
+status: draft
+---
+
 # Visual Comparison Report - Homepage
 
 **Data**: 2026-04-02
@@ -6,7 +18,6 @@
 **Strumento**: Playwright (headless Chromium) + Analisi programmatica
 
 ---
-
 ## 📊 Risultato Comparazione
 
 ### Classi CSS
@@ -107,4 +118,4 @@ Screenshot catturati in `docs/design-comuni/screenshots/`:
 **Collegamenti**:
 - [00-index.md](00-index.md) - Indice documentazione
 - [css-js-alignment-plan.md](css-js-alignment-plan.md) - Piano di lavoro
-- [html-structure-comparison-2026-04-02.md](html-structure-comparison-2026-04-02.md) - Analisi struttura
+- [html-structure-comparison-2026-04-02.md](html-structure-comparison.md) - Analisi struttura

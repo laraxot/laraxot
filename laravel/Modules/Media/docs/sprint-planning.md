@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Media Module - Sprint Planning"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "sprint planning"
 related:
   - "./webm.md"
+status: draft
 ---
 # Sprint Planning: Media Module
 # Media Module - Sprint Planning

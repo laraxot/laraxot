@@ -1,3 +1,11 @@
+---
+title: "Registration Widget Documentation"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "registration widget documentation user"
+---
 # Registration Widget Documentation
 
 ## Overview

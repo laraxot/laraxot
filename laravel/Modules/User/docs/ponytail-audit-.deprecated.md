@@ -8,14 +8,15 @@ qmd: "ponytail-audit-2026-07-02.deprecated ponytail-audit 2026-07-02: user modul
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # Ponytail-audit 2026-07-02: User module findings
@@ -33,12 +34,12 @@ suffixed file (117 lines, an abandoned draft of a migration toward
 ## Why this is not just a style nit
 
 The `.to_xot` extension means PHP's autoloader (PSR-4, `.php` only) never loads the
-file — it was dead weight from the moment it landed, not a currently-working
+file: it was dead weight from the moment it landed, not a currently-working
 alternative implementation. A prior audit pass
 (`Modules/User/docs/wiki/decisions/contracts-and-lang-backup-archival-.md.md`)
 had already identified this exact file and stated it would be archived to
 `UserContract.php.to_xot.bak`, but `git log --follow` on the file shows that rename
-was never actually committed to this module's repo — the `.to_xot` file was still
+was never actually committed to this module's repo: the `.to_xot` file was still
 present and untouched on disk. This session deletes it outright rather than
 re-attempting the archive-as-`.bak` pattern, since the file has zero references
 anywhere in the codebase (verified below) and archiving orphaned, never-autoloaded
@@ -46,17 +47,17 @@ drafts provides no value over deletion.
 
 ## Verification performed
 
-- `grep -rln "UserContract" Modules/ --include="*.php"` — only real hits are the
+- `grep -rln "UserContract" Modules/ --include="*.php"`: only real hits are the
   active `Modules/User/app/Contracts/UserContract.php` (aliasing
   `Modules\Xot\Contracts\UserContract`) and its ~900 legitimate repo-wide references;
   nothing references the `.to_xot` file by path or string.
-- `find Modules -name "*.to_xot"` — three other unrelated `.to_xot` files exist
+- `find Modules -name "*.to_xot"`: three other unrelated `.to_xot` files exist
   (`Modules/Quaeris/database/factories/ExtraFactory.to_xot`,
   `Modules/Quaeris/app/Models/Extra.to_xot`,
   `Modules/Media/app/Actions/Image/SvgExistsAction.to_xot`) in different modules;
   out of scope for this module's repo and left untouched.
 - `git status` in `Modules/User` was clean before the delete and showed exactly one
-  `D app/Contracts/UserContract.php.to_xot` after — no collateral deletions.
+  `D app/Contracts/UserContract.php.to_xot` after: no collateral deletions.
 
 ## Fix applied
 
@@ -67,7 +68,7 @@ real `UserContract.php` is untouched.
 
 - **PHPStan** (`Modules/User`): 1 pre-existing error, unrelated to this change
   (`app/Models/Traits/HasDevices.php does not exist`, referenced by
-  `phpstan.neon` path config — not touched by this session).
+  `phpstan.neon` path config: not touched by this session).
 - **PHPMD** (`Modules/User/app/Contracts`, rulesets
   cleancode/codesize/controversial/design/naming/unusedcode): zero violations.
 - **PHPInsights** (`Modules/User/app/Contracts`): 100% code, 100% complexity, 100%

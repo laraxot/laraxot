@@ -1,3 +1,15 @@
+---
+title: "ticket map and section spacing parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ticket map and section spacing parity"
+issues: []
+discussions: []
+status: draft
+---
+
 # Segnalazione Map And Section Spacing Parity
 
 ## Regola

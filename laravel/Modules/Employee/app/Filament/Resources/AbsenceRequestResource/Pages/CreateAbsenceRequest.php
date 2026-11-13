@@ -15,8 +15,7 @@ class CreateAbsenceRequest extends XotBaseCreateRecord
 
     protected function getRedirectUrl(): string
     {
-        /** @var string */
-        return $this->getResource()::getUrl('index');
+        return $this->getRecordReturnUrl($this->getResourceUrl('index'));
     }
 
     /**
@@ -25,8 +24,14 @@ class CreateAbsenceRequest extends XotBaseCreateRecord
      */
     protected function mutateFormDataBeforeCreate(array $data): array
     {
+        // Il form non e' una fonte fidata: chi non gestisce le richieste di tutti ne apre solo di proprie e in attesa.
+        if (! AbsenceRequestResource::canManageAll()) {
+            $data['status'] = \Modules\Employee\Enums\AbsenceRequestStatusEnum::PENDING->value;
+            $data['user_id'] = Auth::id();
+        }
+
         if (! isset($data['status'])) {
-            $data['status'] = AbsenceRequest::STATUS_PENDING;
+            $data['status'] = \Modules\Employee\Enums\AbsenceRequestStatusEnum::PENDING->value;
         }
 
         if (! isset($data['user_id'])) {

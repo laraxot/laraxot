@@ -1,4 +1,11 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "epic 1 foundation homepage"
+issues: []
+discussions: []
 name: Epic 1 - Foundation & Homepage
 about: Epic issue for tracking Foundation & Homepage phase
 title: 'Epic #1: Foundation & Homepage - Design Comuni Replication'

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_ai9Cj8
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -15,8 +14,6 @@ See canonical documentation: ../../../Themes/docs/shared-components/logging-opti
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 # Activity Module - Logging Optimization
 =======
 title: "logging optimization"
@@ -321,12 +318,8 @@ By removing logging from ActivityLogger:
 5. Error logging remains for debugging
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 **Key Takeaway**: The Activity table IS the audit trail. Logging successful database writes is redundant and wastes performance.
 >>>>>>> 0a02158a (.)
 =======
 **Key Takeaway**: The Activity table IS the audit trail. Logging successful database writes is redundant and wastes performance.
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-**Key Takeaway**: The Activity table IS the audit trail. Logging successful database writes is redundant and wastes performance.
->>>>>>> 13cf1831 (.)

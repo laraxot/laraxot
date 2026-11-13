@@ -22,7 +22,10 @@ use function Safe\json_encode;
  * @property int $qty
  * @property ExtraContract|null $extra
  */
+<<<<<<< HEAD
 /** @phpstan-ignore trait.unused */
+=======
+>>>>>>> laraxot/dev
 trait HasExtraTrait
 {
     /**
@@ -49,7 +52,11 @@ trait HasExtraTrait
         return $this->morphOne($extraClass, 'model');
     }
 
+<<<<<<< HEAD
     /** @return array<string, mixed>|bool|float|int|string|null */
+=======
+    /** @return array<array-key, mixed>|bool|float|int|string|null */
+>>>>>>> laraxot/dev
     public function getExtra(string $name): array|bool|float|int|string|null
     {
         $extra = $this->extra;
@@ -65,6 +72,7 @@ trait HasExtraTrait
         $value = $attributes->get($name);
 
         if (\is_array($value)) {
+<<<<<<< HEAD
             $result = [];
             foreach ($value as $key => $item) {
                 if (! \is_string($key)) {
@@ -75,6 +83,10 @@ trait HasExtraTrait
             }
 
             return $result;
+=======
+            // Liste e mappe restano com'erano: il round-trip di setExtra non deve perdere elementi.
+            return $value;
+>>>>>>> laraxot/dev
         }
 
         if (\is_bool($value) || \is_float($value) || \is_int($value) || \is_string($value)) {
@@ -85,9 +97,17 @@ trait HasExtraTrait
     }
 
     /**
+<<<<<<< HEAD
      * @param  int|float|string|array<string, mixed>|bool|null  $value
      */
     public function setExtra(string $name, int|float|string|array|bool|null $value): void
+=======
+     * Persist a schemaless attribute on the related Extra model.
+     *
+     * @param  array<string, mixed>|bool|float|int|string|null  $value
+     */
+    public function setExtra(string $name, array|bool|float|int|string|null $value): void
+>>>>>>> laraxot/dev
     {
         $extra = $this->extra;
         if (! $extra instanceof ExtraContract || ! $extra instanceof Model) {

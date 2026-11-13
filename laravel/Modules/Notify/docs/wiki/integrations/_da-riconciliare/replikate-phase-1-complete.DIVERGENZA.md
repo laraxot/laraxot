@@ -1,10 +1,15 @@
 ---
+qmd: "replikate phase 1 complete.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: replikate-phase-1-complete.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: replikate-phase-1-complete.divergenza.md
 ---
 
 # Divergenza: `replikate-phase-1-complete.md`

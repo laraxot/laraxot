@@ -24,21 +24,18 @@ return [
         'name' => [
             'label' => 'Nome',
             'placeholder' => 'Inserisci il nome',
-            'description' => 'name',
             'helper_text' => '',
             'tooltip' => '',
         ],
         'email' => [
             'label' => 'Email',
             'placeholder' => 'Inserisci l\'email',
-            'description' => 'email',
             'helper_text' => '',
             'tooltip' => '',
         ],
         'password' => [
             'label' => 'Password',
             'placeholder' => 'Inserisci la password',
-            'description' => 'password',
             'helper_text' => '',
             'tooltip' => '',
         ],
@@ -72,6 +69,7 @@ return [
         'unblock' => 'Sblocca',
         'send_reset_link' => 'Invia Link Reset Password',
         'verify_email' => 'Verifica Email',
+        'attach_role' => 'Rolle zuweisen',
     ],
     'messages' => [
         'created' => 'Utente creato con successo',

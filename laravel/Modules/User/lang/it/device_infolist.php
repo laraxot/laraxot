@@ -2,25 +2,29 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_Pler84
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'uuid' => ['label' => 'uuid'],
+        'id' => ['label' => 'ID'],
+        'uuid' => ['label' => 'UUID'],
         'mobile_id' => ['label' => 'mobile_id'],
-        'name' => ['label' => 'name'],
-        'type' => ['label' => 'type'],
-        'device' => ['label' => 'device'],
-        'platform' => ['label' => 'platform'],
-        'browser' => ['label' => 'browser'],
-        'version' => ['label' => 'version'],
-        'is_robot' => ['label' => 'is_robot'],
+        'name' => ['label' => 'Nome'],
+        'type' => ['label' => 'Tipo'],
+        'device' => ['label' => 'Dispositivo'],
+        'platform' => ['label' => 'Piattaforma'],
+        'browser' => ['label' => 'Browser'],
+        'version' => ['label' => 'Versione'],
+        'is_robot' => ['label' => 'Robot'],
         'robot' => ['label' => 'robot'],
-        'is_desktop' => ['label' => 'is_desktop'],
-        'is_mobile' => ['label' => 'is_mobile'],
-        'is_tablet' => ['label' => 'is_tablet'],
-        'is_phone' => ['label' => 'is_phone'],
+        'is_desktop' => ['label' => 'Desktop'],
+        'is_mobile' => ['label' => 'Mobile'],
+        'is_tablet' => ['label' => 'Tablet'],
+        'is_phone' => ['label' => 'Telefono'],
         'languages' => ['label' => 'languages'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
+        'created_at' => ['label' => 'Creato il'],
+        'updated_at' => ['label' => 'Modificato il'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_kWQJ7K

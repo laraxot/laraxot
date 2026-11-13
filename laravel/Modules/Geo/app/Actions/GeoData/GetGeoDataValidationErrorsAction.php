@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Geo\Actions\GeoData;
 
 use Illuminate\Support\Facades\Validator;
+use Modules\Geo\Infrastructure\Validation\GeoDataValidationRules;
 use Spatie\QueueableAction\QueueableAction;
 
 class GetGeoDataValidationErrorsAction
@@ -12,8 +13,7 @@ class GetGeoDataValidationErrorsAction
     use QueueableAction;
 
     /**
-     * @param array<string, mixed> $data
-     *
+     * @param  array<string, mixed>  $data
      * @return array<string, array<int, string>>
      */
     public function execute(array $data): array

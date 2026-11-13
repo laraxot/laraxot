@@ -1,9 +1,13 @@
 ---
+qmd: "tech spec"
+issues: []
+discussions: []
 title: "Technical Specification - Media Module"
 type: technical_spec
 tags: [tech spec, media]
 created: 2026-08-04
 updated: 2026-08-04
+status: draft
 ---
 # Technical Specification - Media Module
 

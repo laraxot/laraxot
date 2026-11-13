@@ -1,3 +1,15 @@
+---
+title: "theme namespace issue"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "theme namespace issue"
+issues: []
+discussions: []
+status: draft
+---
+
 # Problema Namespace Tema Sixteen
 
 ## Problema Identificato
@@ -155,7 +167,7 @@ View [pub_theme::layouts.auth-agid] not found
 
 ## Collegamenti
 
-- [XotBaseThemeServiceProvider](../../../laravel/Modules/Xot/app/Providers/XotBaseThemeServiceProvider.php)
+- [XotBaseThemeServiceProvider](../../../Modules/Xot/app/Providers/XotBaseThemeServiceProvider.php)
 - [Documentazione Tema One](../../../laravel/Themes/One/app/Providers/ThemeServiceProvider.php)
 - [Configurazione Temi](../../../laravel/config/xot.php)
 

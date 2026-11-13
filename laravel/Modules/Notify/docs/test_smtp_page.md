@@ -1,3 +1,15 @@
+---
+title: "test smtp page"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "test smtp page"
+issues: []
+discussions: []
+status: draft
+---
+
 # Test smtp page
 
 ![test smtp page](test-smtp-page.jpg)
@@ -21,4 +33,3 @@ Inseriti le varie impostazioni, si potrà verificare il funzionamento di una det
 Inseriti le varie impostazioni, si potrà verificare il funzionamento di una determinata configurazione email.
 
 ---
-

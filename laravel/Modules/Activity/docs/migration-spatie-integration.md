@@ -134,7 +134,6 @@ Per activity_log, il nome corretto è `create_activity_log_table.php`, non `fix_
 - [Xot Migration Philosophy](../../Xot/docs/migration-philosophy.md)
 - [Root Migration Rules](../../../.windsurf/rules/migration-complete-rules.md)
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_aU9bju
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -149,6 +148,3 @@ Per activity_log, il nome corretto è `create_activity_log_table.php`, non `fix_
 *=======
 *Ultimo aggiornamento: 2026-02-26*
 >>>>>>> .merge_file_i9aqp0
-=======
-*
->>>>>>> 13cf1831 (.)

@@ -1,10 +1,15 @@
 ---
+qmd: "pagine create"
+issues: []
+discussions: []
 title: "Pagine Create - Notify Sixteen Theme"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: pagine-create.md
 ---
 
 # Pagine Create - Notify Sixteen Theme

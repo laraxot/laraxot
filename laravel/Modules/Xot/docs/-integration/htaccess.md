@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "htaccess"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "htaccess xot"
+---
+>>>>>>> laraxot/dev
 # htaccess
 
 <!-- Contenuto migrato da _docs/htaccess.txt -->

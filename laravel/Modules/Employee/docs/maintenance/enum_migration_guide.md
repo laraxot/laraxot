@@ -1,3 +1,9 @@
+---
+title: "Employee - ENUM_MIGRATION_GUIDE"
+module: Employee
+bmad: true
+status: active
+---
 # Enum Migration Guide - WorkHour Constants to Enums
 
 ## Overview

@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Tests\Unit;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+=======
+>>>>>>> laraxot/dev
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -58,7 +61,10 @@ describe('Xot RelationX ManageRelated StatesChart', function (): void {
         $host->exists = true;
 
         $relation = $host->belongsToManyX(CacheModel::class);
+<<<<<<< HEAD
         Assert::assertInstanceOf(BelongsToMany::class, $relation);
+=======
+>>>>>>> laraxot/dev
         Assert::assertSame('cache_cache', $relation->getTable());
         Assert::assertSame(
             ['cache_id', 'related_id', 'extra', 'created_at', 'updated_at'],
@@ -66,7 +72,10 @@ describe('Xot RelationX ManageRelated StatesChart', function (): void {
         );
 
         $morphRelation = $host->morphToManyX(CacheModel::class, 'taggable');
+<<<<<<< HEAD
         Assert::assertInstanceOf(MorphToMany::class, $morphRelation);
+=======
+>>>>>>> laraxot/dev
         Assert::assertSame('cache_morph', $morphRelation->getTable());
         Assert::assertSame(
             ['cache_id', 'related_id', 'related_type', 'created_at', 'updated_at'],

@@ -1,12 +1,10 @@
 ---
-title: "GitHub Issues & Discussions - FixCity Platform"
 title: "GitHub Issues & Discussions - Notify Platform"
 type: index
 tags: [notify, docs, github]
 module: Notify
 created: 2026-07-20
 updated: 2026-07-20
-qmd: "notify documentazione github readme github issues & discussions - fixcity platform index readme frontmatter qmd search"
 qmd: "notify documentazione github readme github issues & discussions - laraxot platform index readme frontmatter qmd search"
 issues:
   - "https://github.com/laraxot/module_notify_fila5/issues/56"
@@ -18,6 +16,7 @@ related:
   - ../notifications/readme.md
   - ../integrations/readme.md
   - ../templates/readme.md
+status: draft
 ---
 # GitHub Issues & Discussions - FixCity Platform
 
@@ -49,7 +48,7 @@ Alcuni file di documentazione facevano riferimento a directory del database con 
 
 #### Files Fixed
 - [x] `laravel/Modules/Blog/docs/structure.md`
-- [x] `laravel/Modules/Blog/docs/CHANGELOG_2025-10.md`
+- [x] `laravel/Modules/Blog/docs/CHANGELOG-blog-module-ottobre.md`
 - [x] `laravel/Modules/Blog/docs/models/README.md`
 - [x] `laravel/Modules/Blog/docs/models/transaction-removal.md`
 - [x] `AGENTS.md` (added naming convention rule)
@@ -80,6 +79,9 @@ Alcuni file di documentazione facevano riferimento a directory del database con 
 - [Database Naming Convention](conventions/database-naming.md)
 - [AGENTS.md](../../AGENTS.md)
 - [agents.md](../../agents.md)
+- [Database Naming Convention](../conventions/database-naming.md)
+- [AGENTS.md](../AGENTS.md)
+- [agents.md](../agents.md)
 
 ---
 

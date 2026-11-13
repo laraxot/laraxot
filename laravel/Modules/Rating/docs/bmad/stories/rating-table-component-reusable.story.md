@@ -1,3 +1,15 @@
+---
+title: "rating table component reusable.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating table component reusable.story"
+issues: []
+discussions: []
+status: draft
+---
+
 # Story: rating-table-component-reusable
 **Status**: ready-for-dev
 **Modulo**: Rating

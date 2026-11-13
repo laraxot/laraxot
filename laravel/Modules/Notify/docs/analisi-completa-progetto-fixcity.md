@@ -1,8 +1,19 @@
+---
+title: "analisi completa progetto fixcity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "analisi completa progetto fixcity"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📊 ANALISI COMPLETA PROGETTO FIXCITY
 ## Data: 1 Ottobre 2025
 
 ---
-
 ## 🎯 EXECUTIVE SUMMARY
 
 **FixCity** è una piattaforma di segnalazione cittadina **enterprise-ready** con:
@@ -416,6 +427,17 @@ Manutenzione Stradale • Illuminazione • Rifiuti • Verde Pubblico • Fogna
 
 ### 🎨 Theme Roadmaps
 - [Sixteen - Frontend Theme](../Themes/Sixteen/docs/roadmap-and-issues.md) - Performance
+- [User - Auth & Profiles](../../User/docs/roadmap-and-issues.md) - 95 errori, 6h fix
+- [Fixcity - Business Logic](../Modules/Fixcity/docs/roadmap-and-issues.md) - N+1 queries, features
+- [AI - Artificial Intelligence](../../AI/docs/roadmap-and-issues.md) - Auto-categorization
+- [Notify - Notifications](roadmap-and-issues.md) - Real-time, push
+- [Geo - Geographic](../../Geo/docs/roadmap-and-issues.md) - Maps integration
+- [UI - Components](../Modules/UI/docs/roadmap-and-issues.md) - Accessibility
+- [Activity - Audit](../../Activity/docs/roadmap-and-issues.md) - Analytics
+- [Cms - Content](../../Cms/docs/roadmap-and-issues.md) - Page builder
+
+### 🎨 Theme Roadmaps
+- [Sixteen - Frontend Theme](../../../Themes/Sixteen/docs/roadmap-and-issues.md) - Performance
 
 ### 📖 Main Docs
 - [Index Principale](./index.md)

@@ -1,3 +1,15 @@
+---
+title: "mcamara implementation guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "mcamara implementation guide"
+issues: []
+discussions: []
+status: draft
+---
+
 # Guida all'Implementazione di mcamara/laravel-localization
 
 ## Indice

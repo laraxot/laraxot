@@ -45,9 +45,8 @@ class NotificationTrackingController extends Controller
         if ($log) {
             $log->markAsClicked();
 
-            // Aggiorna i metadati con il link cliccato
-            $data = $log->data;
-            $metadata = is_array($data) ? $data : [];
+            // Aggiorna i metadati (non il payload `data`) con il link cliccato
+            $metadata = $log->metadata ?? [];
             $clickedLinks = isset($metadata['clicked_links']) && is_array($metadata['clicked_links'])
                 ? $metadata['clicked_links']
                 : [];
@@ -56,9 +55,8 @@ class NotificationTrackingController extends Controller
                 $clickedLinks[$url] = now()->toIso8601String();
             }
 
-            /** @var array<string, mixed> $metadata */
             $metadata['clicked_links'] = $clickedLinks;
-            $log->update(['data' => $metadata]);
+            $log->update(['metadata' => $metadata]);
         }
 
         // Redirect all'URL originale

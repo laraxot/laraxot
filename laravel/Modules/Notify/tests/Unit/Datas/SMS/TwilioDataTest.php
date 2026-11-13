@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Datas\SMS;
 
 use Modules\Notify\Datas\SMS\TwilioData;
+use Modules\Notify\Tests\TestCase;
 
+uses(TestCase::class);
 describe('TwilioData', function () {
     it('has default auth type', function () {
         $data = new TwilioData;

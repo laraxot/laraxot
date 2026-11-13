@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Guida a Filament"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Guida a Filament"
+---
+>>>>>>> laraxot/dev
 # Guida a Filament
 
 ## Risorse Utili
@@ -16,4 +29,8 @@
 ### Componenti
 - [Filament Widgets](https://filamentphp.com/docs/3.x/widgets/installation)
 - [Filament Actions](https://filamentphp.com/docs/3.x/actions/installation)
+<<<<<<< HEAD
 - [Filament Resources](https://filamentphp.com/docs/3.x/resources/installation)
+=======
+- [Filament Resources](https://filamentphp.com/docs/3.x/resources/installation) 
+>>>>>>> laraxot/dev

@@ -1,0 +1,915 @@
+/*
+ * Sixteen homepage civic reframe.
+ * One focused layer for the JSON-driven home; it does not alter inner pages.
+ */
+:root {
+  --fc-ink: #102a2a;
+  --fc-ink-soft: #294646;
+  --fc-green: #007a52;
+  --fc-green-dark: #005c43;
+  --fc-mint: #eaf3ee;
+  --fc-paper: #f7f9f6;
+  --fc-sun: #ffd166;
+  --fc-line: rgba(16, 42, 42, 0.14);
+  --fc-radius: 20px;
+}
+
+/* --------------------------------------------------------------------------
+ * Asse orizzontale home = header brand (Design Comuni).
+ *
+ * Perché: sotto lg Bootstrap centra `.container` (720/960) e il padding 12px
+ * lascia how/track a 12px mentre il brand (dopo burger) vive a ~56px. Su tablet
+ * un `--fc-hero-gutter: 3.5rem` SOLO sull’hero sommava il margine di centering
+ * (h1 a 80 vs brand a 56). Soluzione KISS: un solo `--fc-home-gutter` su
+ * hero + how + track; sotto lg `max-width: 100%` (niente centering); da lg
+ * desktop: misura di lettura 1280px e gutter 24px, coerenti con il riferimento.
+ * -------------------------------------------------------------------------- */
+.page-content.fc-home {
+  --fc-home-gutter: 12px;
+  --fc-home-container-max: 1320px;
+  /* alias legacy usato nei playbook marketing */
+  --fc-hero-gutter: var(--fc-home-gutter);
+}
+
+@media (min-width: 992px) {
+  .page-content.fc-home {
+    /* Design Comuni: desktop uses a 1280px reading measure with 24px breathing room. */
+    --fc-home-gutter: 24px;
+    --fc-home-container-max: 1280px;
+  }
+}
+
+.page-content.fc-home #head-section > .container,
+.page-content.fc-home .fc-how-section > .container,
+.page-content.fc-home .fc-track-section > .container {
+  max-width: var(--fc-home-container-max) !important;
+  padding-left: var(--fc-home-gutter) !important;
+  padding-right: var(--fc-home-gutter) !important;
+}
+
+.page-content.fc-home #head-section > .container > .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.page-content.fc-home #head-section > .container > .row > [class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@media (max-width: 991.98px) {
+  .page-content.fc-home {
+    /* allinea al .it-brand-wrapper dopo il bottone menu (~56px) */
+    --fc-home-gutter: 3.5rem;
+  }
+
+  .page-content.fc-home #head-section > .container,
+  .page-content.fc-home .fc-how-section > .container,
+  .page-content.fc-home .fc-track-section > .container {
+    /* evita centering Bootstrap (720@md) che rompe asse brand↔copy */
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Come funziona: titolo sopra intro (niente space-between su tablet). */
+  .page-content.fc-home .fc-section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-content.fc-home #head-section > .container > .row {
+    margin-left: -0.75rem !important;
+    margin-right: -0.75rem !important;
+  }
+
+  .page-content.fc-home #head-section > .container > .row > [class*="col-"] {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+
+/* Eyebrow: semibold (600) — Designers Italia; mai 800 (Titillium non ha 800 → fallback Black). */
+.fc-eyebrow {
+  color: var(--fc-green);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+}
+
+.fc-home-hero {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(255, 209, 102, 0.12) 0 9rem, transparent 9.1rem),
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    var(--fc-ink);
+  color: #fff;
+  overflow: hidden;
+  padding: clamp(3.5rem, 7vw, 6.5rem) 0 clamp(3rem, 6vw, 5rem);
+  position: relative;
+}
+
+.fc-home-hero > div {
+  align-items: end;
+  display: grid;
+  gap: clamp(2rem, 7vw, 7rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  position: relative;
+  z-index: 1;
+}
+
+/* The Design Comuni `.container` is the single horizontal rhythm for the home. */
+
+.fc-home-hero .fc-eyebrow,
+.fc-home-hero__signal .fc-eyebrow {
+  color: var(--fc-sun) !important;
+}
+
+.fc-home-hero__copy {
+  max-width: 44rem;
+}
+
+/*
+ * Hero H1: Lora Regular 400 — DCP-221 / D18.
+ * Slogan lungo su fondo scuro: Lora (serif display) batte Titillium Bold
+ * per leggibilità e ipovedenti; Titillium 700/800 cade sul Black 900
+ * ("ciccione"). Scale BI h1 (40/48 → 48/60), lh 1.2.
+ * https://italia.github.io/bootstrap-italia/docs/organizzare-i-contenuti/tipografia/
+ */
+.fc-home-hero h1,
+.fc-home-hero h1#fc-home-hero-heading {
+  color: #fff !important;
+  /* !important: wins over legacy front-office heading overrides. */
+  font-family: "Lora", "Lora fallback", Georgia, "Times New Roman", serif !important;
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  font-weight: 400 !important;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+
+.fc-home-hero__intro {
+  color: #e9f2ee !important;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.55;
+  margin: 1.5rem 0 0;
+  max-width: 34rem;
+}
+
+.fc-home-hero__actions,
+.fc-map-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.fc-button {
+  align-items: center;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 1.125rem;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.2rem;
+  text-decoration: none !important;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.fc-button:hover {
+  transform: translateY(-2px);
+}
+
+.fc-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.fc-button--primary {
+  background: var(--fc-green) !important;
+  color: #fff !important;
+}
+
+.fc-button--primary:hover,
+.fc-button--primary:focus-visible {
+  background: #00966a;
+  color: #fff !important;
+}
+
+.fc-button--quiet {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #fff !important;
+}
+
+.fc-button--quiet:hover,
+.fc-button--quiet:focus-visible {
+  border-color: #fff;
+  color: #fff !important;
+}
+
+.fc-home-hero__signal {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--fc-radius);
+  max-width: 24rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.fc-home-hero__signal-mark {
+  background: var(--fc-sun);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.5rem rgba(255, 209, 102, 0.14);
+  display: block;
+  height: 0.8rem;
+  margin-bottom: 2.25rem;
+  width: 0.8rem;
+}
+
+.fc-home-hero__signal-value {
+  color: #fff !important;
+  font-size: clamp(1.35rem, 2.5vw, 1.875rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.fc-home-hero__signal-body {
+  color: #dbeae3 !important;
+  line-height: 1.55;
+  margin: 1rem 0 0;
+}
+
+.fc-home-hero__signal-line {
+  background: var(--fc-sun);
+  height: 2px;
+  margin-top: 2.25rem;
+  opacity: 0.8;
+  width: 4rem;
+}
+
+.fc-home-hero__map-card {
+  max-width: none;
+  padding: 1.25rem;
+}
+
+.fc-home-hero__map-card .fc-eyebrow {
+  margin: 0 0 1rem;
+}
+
+.fc-home-hero__map {
+  background: #d7e7e1;
+  border-radius: 14px;
+  display: block;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.fc-home-hero__map-footer {
+  align-items: center;
+  color: rgba(255, 255, 255, 0.72);
+  display: flex;
+  font-size: 0.8rem;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.fc-home-hero__map-footer a {
+  color: var(--fc-sun);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.fc-home-hero__map-footer a:hover,
+.fc-home-hero__map-footer a:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.fc-map-section,
+.fc-how-section {
+  background: var(--fc-paper);
+  padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+}
+
+.fc-section-heading {
+  align-items: end;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.fc-section-heading h2,
+.fc-track-section h2 {
+  color: var(--fc-ink) !important;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.fc-section-heading > p {
+  color: var(--fc-ink-soft);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 30rem;
+}
+
+.fc-map-shell {
+  background: #d7e7e1;
+  border: 1px solid var(--fc-line);
+  border-radius: var(--fc-radius);
+  box-shadow: 0 1.5rem 3rem rgba(16, 42, 42, 0.12);
+  overflow: hidden;
+  position: relative;
+}
+
+.fc-map-shell map-lit {
+  display: block;
+  min-height: 420px;
+}
+
+.fc-map-shell__legend {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  bottom: 1rem;
+  color: var(--fc-ink);
+  display: flex;
+  font-size: 0.78rem;
+  gap: 0.5rem;
+  left: 1rem;
+  padding: 0.5rem 0.75rem;
+  position: absolute;
+}
+
+.fc-map-shell__dot {
+  background: var(--fc-green);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(0, 122, 82, 0.18);
+  height: 0.55rem;
+  width: 0.55rem;
+}
+
+.fc-map-actions {
+  margin-top: 1.25rem;
+}
+
+.fc-button--outline {
+  border-color: var(--fc-green);
+  color: var(--fc-green) !important;
+}
+
+.fc-button--outline:hover,
+.fc-button--outline:focus-visible {
+  background: var(--fc-green);
+  color: #fff !important;
+}
+
+/* Come funziona — parity fixcity.eu: grid soft, badge mint, linea verde. */
+.fc-how-section {
+  background: #fff;
+}
+
+.fc-how-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fc-how-card {
+  border-top: 3px solid var(--fc-green);
+  padding: 1.5rem 1rem 1rem 0;
+}
+
+.fc-how-card__number {
+  align-items: center;
+  background: var(--fc-mint);
+  border-radius: 50%;
+  color: var(--fc-green-dark);
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 2.5rem;
+  justify-content: center;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  width: 2.5rem;
+}
+
+.fc-how-card__icon {
+  align-items: center;
+  color: var(--fc-green);
+  display: flex;
+  min-height: 3.5rem;
+}
+
+.fc-how-card__icon svg {
+  flex: 0 0 3.5rem;
+  height: 3.5rem;
+  max-width: none;
+  width: 3.5rem;
+}
+
+.fc-how-card h3 {
+  color: var(--fc-ink);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6rem;
+}
+
+.fc-how-card p {
+  color: var(--fc-ink-soft);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 30rem;
+}
+
+@media (max-width: 767.98px) {
+  .fc-how-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Banda track — parity fixcity.eu: verde scuro + sun (inchiostro) + quiet in riga. */
+.fc-track-section {
+  background: var(--fc-green-dark);
+  color: #fff;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+}
+
+.fc-track-section__inner {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.fc-track-section__copy,
+.fc-track-section__actions {
+  min-width: 0;
+}
+
+.fc-track-section__btns {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.fc-track-section__btns .fc-button,
+.fc-track-section__btns .quick-action-btn {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 1 auto;
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 2.75rem;
+  white-space: nowrap;
+}
+
+.fc-track-section__btns .quick-action-btn > svg,
+.quick-action-btn > svg {
+  flex: 0 0 1.25rem;
+  height: 1.25rem;
+  max-width: 1.25rem;
+  width: 1.25rem;
+}
+
+@media (min-width: 576px) {
+  .fc-track-section__btns {
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+.fc-track-section .fc-eyebrow {
+  color: var(--fc-sun);
+}
+
+.fc-track-section h2 {
+  color: #fff !important;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 600;
+}
+
+.fc-track-section p:not(.fc-eyebrow) {
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.55;
+  margin: 0.75rem 0 0;
+  max-width: 34rem;
+}
+
+body:has(.fc-home) .fc-track-section .fc-eyebrow {
+  color: var(--fc-sun) !important;
+}
+
+body:has(.fc-home) .fc-track-section p:not(.fc-eyebrow) {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* WCAG 2.1 AA: verde Design Comuni (#007a52) solo su fondo chiaro.
+   Su fondo verde il testo è bianco. Le card restano bianche con testo inchiostro. */
+#main-container .how-step-card,
+#main-container .how-step-card .card-body,
+#main-container .card.card-bg {
+  background: #fff !important;
+  color: var(--fc-ink) !important;
+}
+
+#main-container .how-step-card h3,
+#main-container .how-step-card .h5,
+#main-container .how-step-card p,
+#main-container .how-step-card .text-secondary {
+  color: var(--fc-ink) !important;
+}
+
+#main-container .how-step-card .bg-primary,
+#main-container .how-step-card .rounded-circle {
+  background: var(--fc-green) !important;
+  color: #fff !important;
+}
+
+#main-container .fc-button--primary,
+#main-container a.btn-primary,
+#main-container .bg-primary:not(.how-step-card):not(.card) {
+  color: #fff !important;
+}
+
+#main-container .fc-button--primary *,
+#main-container a.btn-primary * {
+  color: #fff !important;
+}
+
+#main-container .fc-button--outline {
+  background: #fff !important;
+  color: var(--fc-green-dark) !important;
+}
+
+#main-container .fc-map-section,
+#main-container .fc-how-section,
+#main-container [data-section="how-it-works"] {
+  background: var(--fc-paper) !important;
+  color: var(--fc-ink) !important;
+}
+
+#main-container .fc-map-section h2,
+#main-container .fc-map-section p,
+#main-container [data-section="how-it-works"] h2,
+#main-container [data-section="how-it-works"] > .container > .row p {
+  color: var(--fc-ink) !important;
+}
+
+#main-container .fc-eyebrow {
+  color: var(--fc-green-dark);
+}
+
+/* Callers: homepage FO via app.css → 16-homepage-civic-reframe (già importato).
+ * Nessun altro file colora l’eyebrow della banda track su fondo chiaro.
+ * Schema: nessuno. Istruzione utente: «migliora tutto !» */
+#main-container .fc-track-section .fc-eyebrow {
+  color: var(--fc-green-dark);
+}
+
+.fc-button--sun {
+  background: var(--fc-sun) !important;
+  color: var(--fc-ink) !important;
+  white-space: nowrap;
+}
+
+.fc-button--sun:hover,
+.fc-button--sun:focus-visible {
+  background: #ffe29a;
+  color: var(--fc-ink) !important;
+}
+
+@media (max-width: 767.98px) {
+  .fc-home-hero > div {
+    grid-template-columns: 1fr;
+  }
+
+  .fc-home-hero h1 {
+    max-width: 12ch;
+  }
+
+  .fc-home-hero__signal {
+    max-width: none;
+  }
+
+  .fc-section-heading,
+  .fc-track-section__inner {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .fc-map-shell map-lit {
+    min-height: 360px;
+  }
+
+  .fc-button {
+    min-height: 2.875rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .fc-track-section__inner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .fc-track-section__copy,
+  .fc-track-section__actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .fc-track-section__actions > div {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .quick-action-btn {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-button {
+    transition: none;
+  }
+
+  .fc-button:hover {
+    transform: none;
+  }
+}
+
+/* Track CTA: fc-button--sun + quiet (parity fixcity.eu). */
+.page-content.fc-home .fc-track-section {
+  background: var(--fc-green-dark) !important;
+  border-top: 0;
+  color: #fff;
+}
+
+.page-content.fc-home .fc-track-section .fc-eyebrow {
+  color: var(--fc-sun) !important;
+}
+
+.page-content.fc-home .fc-track-section h2,
+.page-content.fc-home .fc-track-section p:not(.fc-eyebrow) {
+  color: #fff !important;
+}
+
+.page-content.fc-home .fc-track-section .fc-button--sun {
+  background: var(--fc-sun) !important;
+  color: var(--fc-ink) !important;
+}
+
+.page-content.fc-home .fc-track-section .fc-button--quiet {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  color: #fff !important;
+}
+
+/* DCP-106: rifiniture della home dopo l'isolamento delle regole legacy (postcss/isolate-legacy-important.cjs: dentro `.fc-home` non valgono piu' le
+   regole globali con `!important`; i colori, i padding e le dimensioni previsti da questo file tornano a valere senza `!important`). */
+
+/* il layout mette `#main-container` su <main>: la regola legacy `#main-container{padding-block:2rem}` lasciava una striscia bianca sopra l'hero e sopra il footer */
+#main-container:has(> .fc-home) {
+  padding-block: 0;
+}
+
+/* Titillium Web non ha 750/800: chiederli fa fallback al Black 900 (testo "ciccione").
+   Contratto FO Titillium: titoli display = 600 (DCP-221). Hero h1 escluso: Lora Regular 400. */
+.fc-section-heading h2,
+.fc-track-section h2,
+.fc-how-card h3,
+.fc-home-hero__signal-value {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.fc-home-hero .fc-eyebrow,
+.fc-home-hero__signal .fc-eyebrow {
+  font-size: 0.8125rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+
+
+/* Copy hero: misura leggibile, non stirata sul bordo della colonna. */
+.page-content.fc-home #head-section .fc-home-head__copy {
+  max-width: 36rem;
+}
+
+@media (min-width: 992px) {
+  .page-content.fc-home #head-section .fc-home-head__copy {
+    /* respiro tipografico nella colonna, asse container = header (1320) */
+    padding-right: 1rem;
+  }
+}
+
+/* CTA hero: non usare utility BI flex-*-row (isolate/data-dc le spegne). */
+.page-content.fc-home #head-section .fc-home-head__actions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.page-content.fc-home #head-section .fc-home-head__actions .btn {
+  width: auto;
+  max-width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 576px) {
+  .page-content.fc-home #head-section .fc-home-head__actions {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+
+/* ============================================================================
+ * Desiderabilità civic-first (studio pages_old/index → avanti, non restore).
+ * Atmosfera sul verde ente, tipografia Lora, mappa elevata, how/track invitanti.
+ * Istruzione: homepage deve far venire voglia di usare il servizio.
+ * ============================================================================ */
+
+.page-content.fc-home #head-section.fc-home-head {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 80% at 85% 20%, rgba(255, 255, 255, 0.12), transparent 55%),
+    radial-gradient(ellipse 50% 60% at 10% 90%, rgba(0, 0, 0, 0.12), transparent 50%),
+    linear-gradient(165deg, #008a5c 0%, #007a52 45%, #006644 100%) !important;
+}
+
+.page-content.fc-home #head-section.fc-home-head::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.page-content.fc-home #head-section.fc-home-head > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-content.fc-home #head-section .fc-home-head__eyebrow {
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+}
+
+.page-content.fc-home #head-section .fc-home-head__title,
+.page-content.fc-home #head-section #fc-home-hero-heading {
+  color: #fff !important;
+  font-family: "Lora", "Lora fallback", Georgia, "Times New Roman", serif !important;
+  font-size: clamp(2rem, 4.2vw, 3rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0;
+  line-height: 1.18;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+
+.page-content.fc-home #head-section .fc-home-head__lead {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.55;
+  max-width: 36rem;
+}
+
+.page-content.fc-home #head-section .fc-home-head__trust {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.page-content.fc-home #head-section .fc-home-head__map-card {
+  border-radius: 0.5rem;
+  box-shadow:
+    0 1.25rem 2.5rem rgba(0, 32, 24, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
+  transform: translateY(0);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .page-content.fc-home #head-section .fc-home-head__map-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 1.75rem 3rem rgba(0, 32, 24, 0.34),
+      0 0 0 1px rgba(255, 255, 255, 0.16);
+  }
+
+  .page-content.fc-home #head-section .btn-hero-primary:hover,
+  .page-content.fc-home #head-section .btn-hero-primary:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  }
+}
+
+.page-content.fc-home #head-section .btn-hero-primary,
+.page-content.fc-home #head-section .btn-hero-secondary {
+  min-height: 2.75rem;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.page-content.fc-home .fc-how-section {
+  background: var(--fc-paper) !important;
+  padding: clamp(3rem, 6vw, 5.5rem) 0;
+}
+
+.page-content.fc-home .fc-how-section__header h2 {
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.page-content.fc-home .fc-how-card__number {
+  background: var(--fc-mint);
+  color: var(--fc-green-dark);
+}
+
+.page-content.fc-home .fc-track-section {
+  background: var(--fc-green-dark) !important;
+  border-top: 0;
+  color: #fff;
+  padding: clamp(2.75rem, 5vw, 4.75rem) 0;
+}
+
+.page-content.fc-home .fc-track-section__inner {
+  gap: 2.5rem;
+}
+
+.page-content.fc-home .fc-track-section .fc-eyebrow {
+  letter-spacing: 0.1em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-content.fc-home #head-section .fc-home-head__map-card,
+  .page-content.fc-home .fc-how-card,
+  .page-content.fc-home #head-section .btn-hero-primary {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+.page-content.fc-home #head-section .fc-home-head__map-card .card-footer {
+  background: #fff !important;
+}
+
+.page-content.fc-home #head-section .fc-home-head__map-card .read-more {
+  align-items: center;
+  color: var(--fc-green, #007a52) !important;
+  display: inline-flex;
+  font-weight: 600;
+  gap: 0.35rem;
+  text-decoration: none !important;
+}
+
+.page-content.fc-home #head-section .fc-home-head__map-card .read-more:hover,
+.page-content.fc-home #head-section .fc-home-head__map-card .read-more:focus-visible {
+  color: var(--fc-green-dark, #005c43) !important;
+  text-decoration: underline !important;
+}
+
+.page-content.fc-home #head-section .fc-home-head__map-card map-lit {
+  display: block;
+  min-height: clamp(280px, 42vh, 420px);
+}

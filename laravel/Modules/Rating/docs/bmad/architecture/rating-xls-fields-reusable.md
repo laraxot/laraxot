@@ -1,4 +1,7 @@
 ---
+tags: [documentation]
+issues: []
+discussions: []
 title: "Dove mettere le colonne XLS dei rating (catalogo)"
 type: architecture
 module: Rating
@@ -15,25 +18,25 @@ related:
   - ../stories/5.149-compila-vs-trait-reusable-boundary.story.md
   - ../stories/rating-query-with-extra-attributes-scope.story.md
   - ../../../../IndennitaResponsabilita/docs/bmad/stories/5.182-delegate-rating-xls-fields.story.md
-  - ../../app/Datas/RatingData.php
-  - ../../app/Models/Traits/HasRatingsTrait.php
+  - ../../../app/Datas/RatingData.php
+  - ../../../app/Models/Traits/HasRatingsTrait.php
 ---
 
-> **Superseded (2026-09-23)** — le opzioni qui scelte (catalogo in
+> **Superseded (2026-09-23)**: le opzioni qui scelte (catalogo in
 > `HasRatingsTrait`, «non RatingData») sono state ribaltate dal refactor:
 > il catalogo e le helper (label/path/fieldName) vivono in `RatingData`
 > (`getXlsFields(array $where, string $ratingClass)` con `$ratingClass`
 > required). Canon unica: `rating-entity-helpers-home-in-ratingdata.md`
 > (reconcile 5.237, revert 5.234). Questo file resta come storico del debate.
 
-# Architettura — catalogo colonne XLS dai rating
+# Architettura: catalogo colonne XLS dai rating
 
 ## Perché (business)
 
 L’export Excel delle schede IR deve aggiungere **una colonna per criterio**
 (e `note` se ha figli). Oggi la logica vive in
 `IndennitaResponsabilitaResource::getXlsFields()`: utile, ma **non è dominio
-Filament Resource** — è “dato il filtro schemaless, mappa i rating a path→label”.
+Filament Resource**: è “dato il filtro schemaless, mappa i rating a path→label”.
 Lo stesso pezzo servirà a ogni modulo che esporta voti (IR oggi; altri STI
 domani). Tenere il pezzo nel Resource = copia/incolla e drift (già successo con
 path `pivot.value` vs `xls_export_value`).
@@ -47,7 +50,7 @@ path `pivot.value` vs `xls_export_value`).
 | Path/label riusabili già nel trait | `ratingXlsValuePath`, `formFieldLabel`, `ratingValuePath` |
 | `syncRatingsWhere` già fa `Rating::getClassName()` + `withExtraAttributes` | `HasRatingsTrait` ~274–280 |
 | `RatingData` è **già dual-purpose** (blocco UI + colonne migration) | docblock in `RatingData.php` |
-| Story schemaless `ready-for-dev` **stale** | `rating-query-with-extra-attributes-scope.story.md` — AC già soddisfatti in codice |
+| Story schemaless `ready-for-dev` **stale** | `rating-query-with-extra-attributes-scope.story.md`: AC già soddisfatti in codice |
 
 ## Perché non me ne ero accorto prima (autopsia)
 
@@ -64,7 +67,7 @@ path `pivot.value` vs `xls_export_value`).
 Scala: **idoneità %** = quanto il posto rispetta DRY + KISS + religione Laraxot
 (Action/trait, confini modulo, no debito nel DTO già sovraccarico).
 
-### A — `HasRatingsTrait::ratingXlsFields(array $where, ?class-string $ratingClass = null): array`
+### A: `HasRatingsTrait::ratingXlsFields(array $where, ?class-string $ratingClass = null): array`
 
 | | |
 |--|--|
@@ -74,7 +77,7 @@ Scala: **idoneità %** = quanto il posto rispetta DRY + KISS + religione Laraxot
 | **Dubbi** | `getClassName()` da call statico Resource **non** vede IR Rating → serve `$ratingClass` esplicito o default `Rating::getClassName()` |
 | **Perplessità** | Nome `getXlsFields` sul trait **collide** col contratto Resource → meglio `ratingXlsFields` / `appendRatingXlsFields` |
 
-### B — `RatingData::xlsFields(array $where, …)`
+### B: `RatingData::xlsFields(array $where, …)`
 
 | | |
 |--|--|
@@ -84,7 +87,7 @@ Scala: **idoneità %** = quanto il posto rispetta DRY + KISS + religione Laraxot
 | **Dubbi** | Rinominare/split `RatingBlockData` vs `RatingData` prima? Fuori scope export |
 | **Perplessità** | Mettere query Eloquent in un Data object viola il “DTO sottile” |
 
-### C — Spatie Queueable Action `BuildRatingXlsFieldsAction`
+### C: Spatie Queueable Action `BuildRatingXlsFieldsAction`
 
 | | |
 |--|--|
@@ -94,17 +97,17 @@ Scala: **idoneità %** = quanto il posto rispetta DRY + KISS + religione Laraxot
 | **Dubbi** | Overkill KISS se il solo consumer è IR oggi |
 | **Perplessità** | Action vs static trait: quando c’è il 2° consumer Performance-style, Action scala meglio |
 
-### D — Lasciare tutto nel Resource IR
+### D: Lasciare tutto nel Resource IR
 
 | | |
 |--|--|
 | **Idoneità** | **12%** |
 | **Punti di forza** | Zero move; già funziona |
 | **Punti deboli** | Anti-DRY; ogni nuovo modulo copia; non usa `getClassName()` |
-| **Dubbi** | — |
+| **Dubbi** |: |
 | **Perplessità** | Contradice 5.149 / 18.58 |
 
-### E — `BaseRating::catalogXlsFields(array $where)` static sul modello
+### E: `BaseRating::catalogXlsFields(array $where)` static sul modello
 
 | | |
 |--|--|

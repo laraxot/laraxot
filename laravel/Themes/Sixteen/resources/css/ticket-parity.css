@@ -5451,6 +5451,15 @@ coordinate-picker-lit .layer-controls-overlay {
   display: flex !important;
   flex-direction: column !important;
   gap: 0.5rem !important;
+  pointer-events: none !important;
+}
+
+coordinate-picker-lit .layer-controls-overlay .ctrl-btn,
+coordinate-picker-lit .layer-controls-overlay .search-box,
+coordinate-picker-lit .layer-controls-overlay button,
+coordinate-picker-lit .layer-controls-overlay input,
+coordinate-picker-lit .layer-controls-overlay a,
+coordinate-picker-lit .layer-controls-overlay [role="listbox"] {
   pointer-events: auto !important;
 }
 
@@ -5571,5 +5580,163 @@ coordinate-picker-lit .ctrl-btn svg {
 
   .fi-section .fi-section-content-ctn {
     padding: 1rem !important;
+  }
+}
+
+/* ============================================================================
+   14. FILAMENT WIZARD INFOLIST (RIEPILOGO STEP) - BOOTSTRAP ITALIA PARITY
+   Convert .fi-in-entry (Filament Infolist) to .single-line-info look
+   Reference: segnalazione-03-riepilogo.html
+   ============================================================================ */
+.wizard-dc-form-shell .fi-in-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid #d9e2e8;
+}
+
+.wizard-dc-form-shell .fi-in-entry:first-child {
+  border-top: 0;
+}
+
+@media (min-width: 768px) {
+  .wizard-dc-form-shell .fi-in-entry {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.875rem 0;
+  }
+}
+
+.wizard-dc-form-shell .fi-in-entry-label-col {
+  flex: 0 0 auto;
+}
+
+@media (min-width: 768px) {
+  .wizard-dc-form-shell .fi-in-entry-label-col {
+    flex: 0 0 30%;
+  }
+}
+
+.wizard-dc-form-shell .fi-in-entry-label {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #5d7083;
+  font-weight: 400;
+}
+
+.wizard-dc-form-shell .fi-in-entry-content-col {
+  flex: 1 1 auto;
+}
+
+.wizard-dc-form-shell .fi-in-entry-content {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #17324d;
+}
+
+.wizard-dc-form-shell .fi-in-text {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #17324d;
+}
+
+.wizard-dc-form-shell .fi-in-entry-content p {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: #17324d;
+}
+
+/* Badge styling in riepilogo */
+.wizard-dc-form-shell .fi-in-entry .fi-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  background-color: #e6f3ee;
+  color: #007a52;
+}
+
+/* Wizard footer buttons (cmp-nav-steps) */
+.wizard-dc-form-shell .fi-sc-wizard-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #d9e2e8;
+}
+
+.wizard-dc-form-shell .fi-sc-wizard-footer > div:first-child {
+  order: 1;
+}
+
+.wizard-dc-form-shell .fi-sc-wizard-footer > div:last-child {
+  order: 2;
+  margin-left: auto;
+}
+
+.wizard-dc-form-shell .fi-sc-wizard-footer .fi-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  line-height: 1.5;
+}
+
+.wizard-dc-form-shell .fi-sc-wizard-footer > div:first-child .fi-btn {
+  background-color: transparent !important;
+  border: 2px solid transparent !important;
+  color: #007a52 !important;
+  padding-left: 0.25rem;
+}
+
+.wizard-dc-form-shell .fi-sc-wizard-footer > div:first-child .fi-btn:hover {
+  background-color: #e6f3ee !important;
+  text-decoration: underline;
+}
+
+.wizard-dc-form-shell .fi-sc-wizard-footer > div:last-child .fi-btn {
+  background-color: #007a52 !important;
+  border: 2px solid #007a52 !important;
+  color: #ffffff !important;
+}
+
+.wizard-dc-form-shell .fi-sc-wizard-footer > div:last-child .fi-btn:hover {
+  background-color: #005c3d !important;
+  border-color: #005c3d !important;
+}
+
+.wizard-dc-form-shell .fi-sc-wizard-footer > div:first-child .fi-btn:before {
+  content: "←";
+  margin-right: 0.25rem;
+}
+
+.wizard-dc-form-shell .fi-sc-wizard-footer > div:last-child .fi-btn:after {
+  content: "→";
+  margin-left: 0.25rem;
+}
+
+@media (max-width: 575.98px) {
+  .wizard-dc-form-shell .fi-sc-wizard-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .wizard-dc-form-shell .fi-sc-wizard-footer > div {
+    width: 100%;
+  }
+  
+  .wizard-dc-form-shell .fi-sc-wizard-footer .fi-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

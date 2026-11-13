@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< HEAD
     'actions' => [
         'route:list' => [
             'label' => 'route:list',
@@ -17,6 +18,8 @@ return [
             'label' => 'filament:clear-cached-components',
         ],
     ],
+=======
+>>>>>>> laraxot/dev
     'label' => 'Artisan Header',
     'plural_label' => 'Artisan Header (Plurale)',
     'navigation' => [

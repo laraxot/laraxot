@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Test"
 module: "Lang"
 type: concept

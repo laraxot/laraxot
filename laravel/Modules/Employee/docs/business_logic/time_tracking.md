@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_TRACKING"
+module: Employee
+bmad: true
+status: active
+---
 # Time Tracking Workflow & Business Logic
 
 This document provides a detailed breakdown of the business logic, rules, and workflows that govern the time tracking functionality within the Employee module. It serves as a technical reference for implementation, ensuring consistency and compliance.

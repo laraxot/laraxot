@@ -1,5 +1,7 @@
 ---
-title: "Rating — scopo, confini e come servirlo meglio"
+issues: []
+discussions: []
+title: "Rating: scopo, confini e come servirlo meglio"
 type: concept
 module: Rating
 status: active
@@ -9,12 +11,12 @@ tags: [scopo, confini, valutazioni, schemaless, classi-base, filament, dipendenz
 qmd: "scopo rating valutazioni schemaless classi base foglie tabelle filament confini dipendenze"
 ---
 
-# Rating — scopo, confini e come servirlo meglio
+# Rating: scopo, confini e come servirlo meglio
 
 ## Lo scopo, dedotto dal codice
 
 Rating non è una foglia applicativa: è **una piattaforma**, come Xot e Sigma. Non
-contiene le valutazioni di nessun dominio — contiene la forma che una valutazione ha in
+contiene le valutazioni di nessun dominio: contiene la forma che una valutazione ha in
 questo progetto, e le classi Base che i moduli di dominio estendono per averla.
 
 | Fatto | Dove si verifica | Cosa significa |
@@ -36,7 +38,7 @@ La direzione delle dipendenze è corretta e va detto: 38 file di Rating toccano
 `Modules\Xot`, 2 toccano `Modules\Media`, **zero** toccano un modulo di dominio.
 L'unica occorrenza di `Modules\Rating` dentro Xot
 (`Modules/Xot/app/Models/XotBaseMorphPivot.php:85,93`) è in due commenti che usano
-`RatingMorph` come esempio — non è un import.
+`RatingMorph` come esempio: non è un import.
 
 La connessione `rating` è dichiarata esplicitamente in `config/localhost/database.php:264`,
 ma non nella mappa del tenant di produzione `config/local/ptvx/database.php` (righe
@@ -48,12 +50,12 @@ default. È un giunto disponibile, non ancora usato.
 
 ### Le colonne stanno nelle `Tables/`, ma sono scritte tre volte
 
-La domanda canonica del progetto — *le colonne sono nelle `Tables/` o ancora nelle
-Pages?* — su Rating ha una risposta a due facce.
+La domanda canonica del progetto: *le colonne sono nelle `Tables/` o ancora nelle
+Pages?*: su Rating ha una risposta a due facce.
 
 Nelle Pages il debito è quasi chiuso, ma male: in
 `RatingResource/Pages/BaseListRatings.php` il metodo `getTableColumns()` (righe 17-45)
-è **dentro un docblock mai chiuso** — la riga 16 apre `/**`, il `*/` arriva solo alla
+è **dentro un docblock mai chiuso**: la riga 16 apre `/**`, il `*/` arriva solo alla
 riga 45. Il metodo non è stato rimosso: è stato spento allargando un commento, e la
 classe astratta che ne risulta è un guscio con una sola proprietà. In
 `RatingMorphResource/Pages/ListRatingMorphs.php:19` invece `getTableColumns()` è vivo e
@@ -66,7 +68,7 @@ Nelle `Tables/` il debito è invece pieno: 5 classi per 2 Resource.
 | Classe | Stato |
 |---|---|
 | `RatingResource/Tables/BaseRatingsTable.php` | astratta, **è la base vera**: la estendono `Progressioni` e `IndennitaResponsabilita` |
-| `RatingResource/Tables/RatingsTable.php` | quella che `getTableClass()` risolve — ma estende `XotBaseResourceTable`, **non** `BaseRatingsTable`: le 9 colonne sono ricopiate identiche |
+| `RatingResource/Tables/RatingsTable.php` | quella che `getTableClass()` risolve: ma estende `XotBaseResourceTable`, **non** `BaseRatingsTable`: le 9 colonne sono ricopiate identiche |
 | `RatingResource/Tables/RatingTable.php` | mai risolta, mai estesa: gli unici riferimenti sono in `tests/Unit/RatingFilamentSchemaTest.php` |
 | `RatingMorphResource/Tables/RatingMorphsTable.php` | quella risolta da `getTableClass()` |
 | `RatingMorphResource/Tables/RatingMorphTable.php` | mai risolta; stesse colonne di `RatingMorphsTable` ma con modificatori diversi (`->numeric()`, `->limit(50)`, ordine differente). Viva solo nei test |
@@ -78,7 +80,7 @@ fra la base condivisa e la classe concreta del modulo che la ospita.
 
 `app/Filament/RelationManagers/RatingsRelationManager.php:16` e
 `app/Filament/Resources/HasRatingResource/RelationManagers/RatingsRelationManager.php:16`
-dichiarano entrambe `extends RelationManager` — la classe di Filament, non una
+dichiarano entrambe `extends RelationManager`: la classe di Filament, non una
 `XotBase*`. Sono due copie dello stesso file: differiscono per il namespace, per un
 blocco di sei righe commentate e per un array di filtri scritto su una riga invece che
 su due. Nei tre moduli esaminati (Activity, Job, Rating) sono le uniche due violazioni
@@ -90,7 +92,7 @@ della regola.
 in tutto il repository crea `likes`**. La regola "1 modello = 1 migrazione" è rotta dal
 lato opposto a quello solito: non una tabella con due migrazioni, ma un modello senza
 nessuna. Attorno gli gravitano `Models/Traits/HasLikes.php` e
-`Contracts/HasLikeContract.php` — il secondo con zero riferimenti nel repo.
+`Contracts/HasLikeContract.php`: il secondo con zero riferimenti nel repo.
 
 ### Lo stesso nome per due contratti diversi
 
@@ -107,12 +109,12 @@ canonica del progetto è `Datas/`.
 
 ### Codice morto dichiarato tale e lasciato lì
 
-- `app/Models/Traits/RatingTrait.php` — zero riferimenti nel repo
-- `app/Contracts/HasLikeContract.php` — zero riferimenti
-- `app/Models/Traits/HasRating.php` — porta in testa (riga 12) un
+- `app/Models/Traits/RatingTrait.php`: zero riferimenti nel repo
+- `app/Contracts/HasLikeContract.php`: zero riferimenti
+- `app/Models/Traits/HasRating.php`: porta in testa (riga 12) un
   `@phpstan-ignore trait.unused` con la nota *«verificato zero consumer reale il
   2026-09-01»*. La verifica è stata fatta, la conseguenza no
-- `app/Aggregates/BettableAggregate.to_predict` e `BettableAggregate.to_rating` — due
+- `app/Aggregates/BettableAggregate.to_predict` e `BettableAggregate.to_rating`: due
   file da 296 byte senza estensione `.php`, residui di uno spostamento fra Rating e
   Predict rimasto a metà
 
@@ -120,8 +122,8 @@ canonica del progetto è `Datas/`.
 
 `app/Filament/Actions/Table/BetTableAction.php`, `app/Enums/RuleEnum.php` e gli
 `Aggregates` scommessa (`Bettable`) parlano un linguaggio che non è quello delle
-valutazioni. Non è una violazione misurata — non c'è un import di modulo di dominio in
-nessuno di questi file — ma è il punto da cui una piattaforma comincia a diventare
+valutazioni. Non è una violazione misurata: non c'è un import di modulo di dominio in
+nessuno di questi file: ma è il punto da cui una piattaforma comincia a diventare
 un'applicazione.
 
 ## Come servire meglio lo scopo
@@ -154,7 +156,7 @@ cd laravel && grep -rn 'extends RelationManager\b' --include=*.php Modules/Ratin
 Due strade oneste: o `likes` è un concetto del progetto e ha diritto alla sua migrazione
 (`{timestamp}_create_likes_table.php`, `XotBaseMigration`, `nullableMorphs('likeable')`),
 o non lo è e allora `Like.php`, `HasLikes.php` e `HasLikeContract.php` escono dal repo.
-La terza strada — un modello che punta a una tabella inesistente — è quella che rompe
+La terza strada: un modello che punta a una tabella inesistente: è quella che rompe
 al primo `Like::query()`.
 
 ```bash
@@ -187,7 +189,7 @@ cd laravel && grep -rn '@phpstan-ignore trait.unused' --include=*.php Modules/Ra
 ## Cosa NON è compito di Rating
 
 - **Non** conosce la Scheda, la Performance, la Progressione, l'Indennità. Se una classe
-  di Rating nominasse uno di quei concetti, quel codice sarebbe della foglia — vale qui
+  di Rating nominasse uno di quei concetti, quel codice sarebbe della foglia: vale qui
   la stessa regola di direzione che vale per Sigma verso Ptv.
 - **Non** definisce la scala di valutazione. È il senso di `extra_attributes` schemaless:
   chi valuta decide i criteri, il modulo garantisce solo che siano persistiti e
@@ -238,8 +240,8 @@ ls Modules/Rating/app/Services 2>/dev/null | wc -l                           # o
 
 ## Collegamenti
 
-- [quality-audit.md](quality-audit.md) — i numeri di qualità già misurati
-- [Sigma — scopo](../../Sigma/docs/scopo.md) — la stessa disciplina su un altro modulo di piattaforma
-- [parental-sti-filament-schemas](../../../../docs/wiki/rules/parental-sti-filament-schemas.md) — perché ogni figlio ha bisogno delle proprie classi Schema
-- [migration-filename-from-model-name](../../../../docs/wiki/rules/migration-filename-from-model-name.md) — 1 modello = 1 migrazione
-- [architecture.md](architecture.md) — l'architettura già documentata
+- [quality-audit.md](quality-audit.md): i numeri di qualità già misurati
+- [Sigma: scopo](../../Sigma/docs/scopo.md): la stessa disciplina su un altro modulo di piattaforma
+- [parental-sti-filament-schemas](../../../../docs/wiki/rules/parental-sti-filament-schemas.md): perché ogni figlio ha bisogno delle proprie classi Schema
+- [migration-filename-from-model-name](../../../../docs/wiki/rules/migration-filename-from-model-name.md): 1 modello = 1 migrazione
+- [architecture.md](architecture.md): l'architettura già documentata

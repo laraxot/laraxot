@@ -7,14 +7,20 @@ namespace Modules\Lang\Tests;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
+use Modules\Lang\Actions\ReadTranslationFileAction;
 use Modules\Lang\Actions\SaveTransAction;
+use Modules\Lang\Database\Factories\TranslationFactory;
+use Modules\Lang\Models\BaseModel;
+use Modules\Lang\Models\Translation;
 use Modules\Lang\Providers\LangServiceProvider;
 use Modules\User\Models\User;
 use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
+use PHPUnit\Framework\Assert;
 
 use function Safe\file_put_contents;
 use function Safe\mkdir;
+use function Safe\unlink;
 
 /**
  * Base test case for Lang module.
@@ -33,13 +39,16 @@ abstract class TestCase extends XotBaseTestCase
 
     protected function setUp(): void
     {
+        // Prima di parent::setUp(): DatabaseTransactions apre le transazioni subito; senza questo la
+        // connessione `user` (mysql) va in "Connection refused" dove non c'e' MariaDB (vedi XotBaseTestCase).
+        $this->prepareSharedSqliteForTesting();
+
         parent::setUp();
 
         $database = database_path('database.sqlite');
 
         /** @var array<string, array<string, mixed>> $connections */
         $connections = config('database.connections', []);
-
         foreach (array_keys($connections) as $connection) {
             if (config("database.connections.{$connection}.driver") !== 'sqlite') {
                 continue;
@@ -84,15 +93,25 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
+     * Istanza tipizzata del provider Lang per i test unitari.
+     *
+     * SSoT del gate PHPStan: i test chiamano questo metodo (FQCN) o il wrapper
+     * globale in `tests/Pest.php`. Non ridefinire `makeLangServiceProvider()`
+     * dentro un file test — pest-plugin non la risolve (`function.notFound`).
+     */
+    public static function makeLangServiceProvider(): LangServiceProvider
+    {
+        return new LangServiceProvider(app());
+    }
+
+    /**
      * Scrive un file di traduzione PHP, creando la directory se manca.
      *
      * I test la usano per preparare un file esistente prima di verificare come
-     * lo trattano le action di scrittura. Il tipo e' `array<string, string>` e
-     * non un array annidato perche' tutti i chiamanti passano coppie piatte:
-     * se un giorno servisse l'annidamento, si allarga di proposito e si aggiorna
-     * questo commento, invece di partire larghi e non sapere piu' cosa arriva.
+     * lo trattano le action di scrittura. Il tipo e' `array<string, mixed>`
+     * perche' i file di traduzione reali sono annidati (auth.failed, ...).
      *
-     * @param  array<string, string>  $data
+     * @param  array<string, mixed>  $data
      */
     public static function createTranslationFile(string $path, array $data): void
     {
@@ -114,7 +133,7 @@ abstract class TestCase extends XotBaseTestCase
      */
     public static function bindRealSaveTransAction(): void
     {
-        app()->instance(SaveTransAction::class, new SaveTransAction());
+        app()->instance(SaveTransAction::class, new SaveTransAction);
     }
 
     /**
@@ -129,5 +148,80 @@ abstract class TestCase extends XotBaseTestCase
     public static function forgetSaveTransActionOverride(): void
     {
         app()->forgetInstance(SaveTransAction::class);
+    }
+
+    /**
+     * @param  array<string, mixed>  $attributes
+     */
+    public static function createTranslation(array $attributes = []): Translation
+    {
+        return TranslationFactory::new()->createOne($attributes);
+    }
+
+    /**
+     * @param  array<string, mixed>  $attributes
+     */
+    public static function makeTranslation(array $attributes = []): Translation
+    {
+        $translation = TranslationFactory::new()->make($attributes);
+        if (! $translation instanceof Translation) {
+            throw new \InvalidArgumentException('Expected Translation model from factory make().');
+        }
+
+        return $translation;
+    }
+
+    public static function cleanupTranslationFile(string $filePath): void
+    {
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+    }
+
+    /**
+     * @param  array<string, mixed>  $data
+     */
+    public static function langAssertDatabaseHasRow(string $table, array $data, ?string $connection = 'lang'): void
+    {
+        $query = DB::connection($connection)->table($table);
+
+        foreach ($data as $column => $value) {
+            $query->where((string) $column, $value);
+        }
+
+        Assert::assertTrue($query->exists());
+    }
+
+    public static function makeLangBaseModel(): BaseModel
+    {
+        return new class extends BaseModel
+        {
+            protected $table = 'test_lang_table';
+        };
+    }
+
+    /** @return array<string, mixed> */
+    public static function defaultReadTranslationTestData(): array
+    {
+        return [
+            'auth' => [
+                'failed' => 'These credentials do not match our records.',
+                'password' => 'The provided password is incorrect.',
+            ],
+            'pagination' => [
+                'previous' => '&laquo; Previous',
+                'next' => 'Next &raquo;',
+            ],
+        ];
+    }
+
+    public static function readTranslationTestFilePath(): string
+    {
+        return sys_get_temp_dir().'/test_translations.php';
+    }
+
+    public static function makeReadTranslationFileAction(): ReadTranslationFileAction
+    {
+        return new ReadTranslationFileAction;
     }
 }

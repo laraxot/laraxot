@@ -1,3 +1,14 @@
+---
+title: "agent teams"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agent teams"
+issues: []
+discussions: []
+---
+
 # Agent Teams Coordination
 
 > **Purpose**: Coordinate multiple AI agents working on the same codebase  
@@ -6,6 +17,14 @@
 
 ---
 
+title: "agent teams"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agent teams"
+issues: []
+discussions: []
 ## Agent Teams Structure
 
 ### Team: Subtree Sync

@@ -1,3 +1,9 @@
+---
+title: "Employee - BUSINESS-LOGIC-SECURITY"
+module: Employee
+bmad: true
+status: active
+---
 # Business Logic - Security & Authorization
 
 ## Panoramica

@@ -1,3 +1,15 @@
+---
+title: "collision"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "collision"
+issues: []
+discussions: []
+status: draft
+---
+
 # Collision
 
 # Guida per la Risoluzione dei Conflitti Git - Laraxot

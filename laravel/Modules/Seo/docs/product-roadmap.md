@@ -1,12 +1,20 @@
 ---
+title: "product roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product roadmap"
+issues: []
+discussions: []
 module: theme
 topic: product-roadmap
-canonical: ../../../Themes/docs/shared-components/PRODUCT_ROADMAP-Modules.md
+canonical: ../../../Themes/docs/shared-components/PRODUCT_ROADMAP-Modules.md  # target mancante, verificato 2026-10-08
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/PRODUCT_ROADMAP-Modules.md
-<<<<<<< HEAD
-=======
+---
 # Seo Module - Product Roadmap
 
 **Module:** Seo  
@@ -112,5 +120,3 @@ To build a **comprehensive SEO optimization system** that drives organic traffic
 | **Domain Authority** | 10 | 20 | 30 | 40 |
 
 ---
-
->>>>>>> laraxot/dev

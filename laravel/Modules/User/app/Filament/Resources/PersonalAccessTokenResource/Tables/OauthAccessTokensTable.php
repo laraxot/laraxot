@@ -7,6 +7,7 @@ namespace Modules\User\Filament\Resources\PersonalAccessTokenResource\Tables;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\User\Models\OauthAccessToken;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
@@ -29,7 +30,7 @@ class OauthAccessTokensTable extends XotBaseResourceTable
             'revoked' => IconColumn::make('revoked')->boolean()->sortable(),
             'expires_at' => TextColumn::make('expires_at')->dateTime()->sortable()->placeholder('—'),
             'scopes' => TextColumn::make('scopes')->badge()->toggleable(isToggledHiddenByDefault: true),
-            'id' => TextColumn::make('id')->sortable()->copyable()->toggleable(isToggledHiddenByDefault: true),
+            'id' => IDColumn::make('id')->sortable()->copyable()->toggleable(isToggledHiddenByDefault: true),
             'created_at' => TextColumn::make('created_at')->dateTime()->sortable()->placeholder('—'),
             'updated_at' => TextColumn::make('updated_at')->dateTime()->sortable()->placeholder('—')->toggleable(isToggledHiddenByDefault: true),
         ];

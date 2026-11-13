@@ -1,4 +1,7 @@
 ---
+qmd: "no docs archive rule"
+issues: []
+discussions: []
 title: "No Docs Archive Rule"
 type: concept
 sources: ["../wiki/concepts/no-docs-archive-rule.md"]
@@ -8,6 +11,7 @@ updated: 2026-04-21
 tags: [docs, governance, theme]
 related:
   - concepts/header-authenticated-state.md
+status: draft
 ---
 
 For Sixteen, new documentation must not be created in `docs/archive/`.

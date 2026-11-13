@@ -1,8 +1,16 @@
+<<<<<<< .merge_file_a1G9YV
 # Story — Gap analysis utente + clean-up fase 1 (2026-09-22)
 
 - **Epic**: USER-GAP-2026
 - **Status**: done
 - **Ambito**: `laravel/Modules/User` — analisi architetturale a sola lettura (report BMAD) + fase 1 di igiene (rimozione artefatti morti).
+=======
+# Story: Gap analysis utente + clean-up fase 1 (2026-09-22)
+
+- **Epic**: USER-GAP-2026
+- **Status**: done
+- **Ambito**: `laravel/Modules/User`: analisi architetturale a sola lettura (report BMAD) + fase 1 di igiene (rimozione artefatti morti).
+>>>>>>> .merge_file_mK3gyX
 - **AC**:
   - Report prodotto in `laravel/Modules/User/docs/bmad/user-architecture-gap-analysis.md` (inventario, top gap, punti sani, work item).
   - Rimozione di soli file morti verificati: 0 riferimenti in produzione (rg su `laravel/`, escluso il file stesso).

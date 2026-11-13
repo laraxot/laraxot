@@ -1,10 +1,15 @@
 ---
+qmd: "header fix complete.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: header-fix-complete.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: header-fix-complete.divergenza.md
 ---
 
 # Divergenza: `header-fix-complete.md`

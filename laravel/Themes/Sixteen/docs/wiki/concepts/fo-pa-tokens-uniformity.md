@@ -1,4 +1,7 @@
 ---
+qmd: "fo pa tokens uniformity"
+issues: []
+discussions: []
 title: "FO PA tokens — uniformità Design Comuni"
 type: concept
 confidence: high
@@ -8,8 +11,9 @@ tags: [sixteen, design-comuni, css, filament, auth]
 related:
   - ../../architecture/fo-pa-tokens-uniformity.md
   - design-comuni-site-wide-component-css-rule.md
-  - ../../../../../docs/wiki/decisions/fo-pa-tokens-no-per-page-hex.md
+  - ../../../../../../docs/wiki/decisions/fo-pa-tokens-no-per-page-hex.md
   - ../../../../../Modules/Xot/docs/wiki/concepts/filament-pa-design-colors.md
+status: draft
 ---
 
 # FO PA tokens — uniformità
@@ -43,6 +47,6 @@ Il tema **veste**; il modulo **logica**. Il colore CTA si decide **una volta** i
 
 ## Collegamenti
 
-- [Architettura](../architecture/fo-pa-tokens-uniformity.md)
-- [ADR root](../../../../docs/wiki/decisions/fo-pa-tokens-no-per-page-hex.md)
+- [Architettura](../../architecture/fo-pa-tokens-uniformity.md)
+- [ADR root](../../../../../../docs/wiki/decisions/fo-pa-tokens-no-per-page-hex.md)
 - [Auth login UX](../design/auth-login-ux-design-wcag.md)

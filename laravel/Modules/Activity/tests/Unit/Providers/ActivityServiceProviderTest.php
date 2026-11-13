@@ -3,16 +3,20 @@
 declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Unit\Providers;
-<<<<<<< HEAD
 
+<<<<<<< .merge_file_SA9Fif
 use function Safe\json_encode;
 =======
->>>>>>> 13cf1831 (.)
+<<<<<<< .merge_file_ISCjJE
+=======
+use function Safe\json_encode;
+>>>>>>> .merge_file_z4eaw1
+>>>>>>> .merge_file_KekFHz
 use Modules\Activity\Providers\ActivityServiceProvider;
 use Modules\Activity\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Activity\Tests\TestCase::class);
+uses(TestCase::class);
 
 test('activity service provider exposes expected metadata', function (): void {
     $provider = new ActivityServiceProvider(app());
@@ -30,13 +34,8 @@ test('activity service provider exposes expected metadata', function (): void {
 
     Assert::assertSame('Activity', $name->getValue($provider));
     $moduleDirValue = $moduleDir->getValue($provider);
-<<<<<<< HEAD
     $moduleDirString = is_string($moduleDirValue) ? $moduleDirValue : (is_scalar($moduleDirValue) ? (string) $moduleDirValue : (json_encode($moduleDirValue) ?: ''));
     Assert::assertStringContainsString('Modules/Activity', $moduleDirString);
-=======
-    Assert::assertIsString($moduleDirValue);
-    Assert::assertStringContainsString('Modules/Activity', $moduleDirValue);
->>>>>>> 13cf1831 (.)
     Assert::assertSame('Modules\\Activity\\Providers', $moduleNs->getValue($provider));
 });
 

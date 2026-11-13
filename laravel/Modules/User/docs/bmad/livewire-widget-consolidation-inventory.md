@@ -1,10 +1,22 @@
 ---
+<<<<<<< .merge_file_CYOQqs
 title: "Puntatore — consolidation inventory"
+=======
+title: "Puntatore: consolidation inventory"
+>>>>>>> .merge_file_sO5SAa
 canonical: ./livewire-inventory.md
 superseded: true
 related:
   - ./livewire-inventory.md
   - ./livewire-widget-prd.md
+<<<<<<< .merge_file_CYOQqs
+=======
+type: note
+status: stub
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "livewire widget consolidation inventory user"
+>>>>>>> .merge_file_sO5SAa
 ---
 
 Canon: [livewire-inventory.md](./livewire-inventory.md).

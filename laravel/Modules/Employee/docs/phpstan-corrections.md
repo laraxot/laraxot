@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-CORRECTIONS"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Corrections - Employee Module
 
 ## Fixed Issues

@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "anthropic frontend design skill adapted"
+issues: []
+discussions: []
 title: anthropic frontend design skill adapted
 type: memory
 module: Sixteen
@@ -6,6 +11,7 @@ updated: 2026-06-03
 related:
   - ../concepts/frontend-design-fixcity-overlay.md
   - ../concepts/ui-ai-tooling-on-demand.md
+status: draft
 ---
 
 # Memoria — skill frontend-design (Anthropic → Fixcity)

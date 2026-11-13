@@ -190,6 +190,33 @@ return [
             'description' => 'Azione per annullare',
             'icon' => 'heroicon-o-x-mark',
         ],
+        'reorderRecords' => [
+            'icon' => 'reorderRecords',
+        ],
+        'detach' => [
+            'icon' => 'detach',
+        ],
+        'attach' => [
+            'icon' => 'attach',
+        ],
+        'applyFilters' => [
+            'icon' => 'applyFilters',
+        ],
+        'openFilters' => [
+            'icon' => 'openFilters',
+        ],
+        'resetFilters' => [
+            'icon' => 'resetFilters',
+        ],
+        'applyTableColumnManager' => [
+            'icon' => 'applyTableColumnManager',
+        ],
+        'openColumnManager' => [
+            'icon' => 'openColumnManager',
+        ],
+        'resetColumnManager' => [
+            'icon' => 'resetColumnManager',
+        ],
     ],
     'messages' => [
         'created' => 'Tenant creato con successo',

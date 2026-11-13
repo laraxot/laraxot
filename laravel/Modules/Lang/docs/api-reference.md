@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "📚 **API Reference Modulo Lang - Laraxot**"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "lang service helper text fix"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # 📚 **API Reference Modulo Lang - Laraxot**
 
@@ -850,7 +853,7 @@ public function get(string $key, array $replace = [], ?string $locale = null): s
 
 ### **2. Esempi**
 - [Examples/](../Examples/) - Esempi di utilizzo
-- [Tests/](../Tests/) - Test unitari e di integrazione
+- [Tests/](../tests) - Test unitari e di integrazione
 
 ### **3. Framework**
 - [Laraxot Framework](https://github.com/laraxot/laraxot)

@@ -1,3 +1,15 @@
+---
+title: "05 governance calendar"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "05 governance calendar"
+issues: []
+discussions: []
+status: draft
+---
+
 # Block 05: Governance & Calendar
 
 **Fonte**: `https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html`

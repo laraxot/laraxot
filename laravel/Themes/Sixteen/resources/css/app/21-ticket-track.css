@@ -1,0 +1,405 @@
+/*
+ * Callers: components/pages/ticket-track.blade.php (.dc-ticket-track).
+ * Import: app.css → 21-ticket-track.css (già collegato).
+ * Schema: nessuno (solo CSS). Nessun altro sheet veste questa pagina FO.
+ * Istruzione: «migliora http://192.168.1.40:8000/it/tickets/track».
+ */
+
+body:has(.page-content[data-dc]) .dc-ticket-track {
+  background: #fff;
+  padding: 0 16px 64px;
+  color: #17324d;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__container {
+  width: min(100%, 760px);
+  margin-inline: auto;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track .cmp-hero {
+  margin-bottom: 1.5rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track .it-hero-wrapper {
+  background: #fff;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track h1,
+body:has(.page-content[data-dc]) .dc-ticket-track h2 {
+  color: #17324d;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track .hero-text p {
+  margin: 0.75rem 0 0;
+  color: #455a64;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__form {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #17324d;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__controls {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  margin-top: 0;
+  border-bottom: 1px solid #5c6f82;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__input.form-control {
+  min-width: 0 !important;
+  min-height: 48px !important;
+  flex: 1 1 auto;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 12px 16px 12px 0 !important;
+  color: #17324d !important;
+  font-size: 1rem !important;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__input.form-control:focus,
+body:has(.page-content[data-dc]) .dc-ticket-track__input.form-control:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__controls:focus-within {
+  border-bottom-color: #007a52;
+  box-shadow: 0 2px 0 0 #007a52;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__submit.btn {
+  min-width: 7rem;
+  min-height: 48px;
+  flex: 0 0 auto;
+  margin: 0;
+  border-radius: 0;
+  font-weight: 600;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__input[aria-invalid="true"] {
+  color: #b42318 !important;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__controls:has(.dc-ticket-track__input[aria-invalid="true"]) {
+  border-bottom-color: #b42318;
+  box-shadow: 0 2px 0 0 #b42318;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__help {
+  margin: 0.75rem 0 0;
+  color: #5c6f82;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__hint {
+  margin: 1.5rem 0 0;
+  color: #455a64;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__hint a {
+  color: #007a52;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__alert {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid #a66300;
+  background: #fff9e8;
+  color: #17324d;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__alert-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__alert-body {
+  margin: 0.5rem 0 0;
+  color: #455a64;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__result {
+  margin-top: 2.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__result-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__result-title {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+/* Testo ereditato #17324d su bg-primary #007a52 = 2.44:1; bianco = 5.38:1 (stato-indipendente: il markup applica sempre bg-primary). */
+body:has(.page-content[data-dc]) .dc-ticket-track__status.badge {
+  color: #fff;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__meta {
+  margin: 0;
+  padding: 1.25rem 0;
+  border-block: 1px solid #d9e2e8;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__meta-row {
+  display: grid;
+  grid-template-columns: minmax(0, 10rem) minmax(0, 1fr);
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__meta-row + .dc-ticket-track__meta-row {
+  margin-top: 0.75rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__meta dt {
+  margin: 0;
+  color: #5c6f82;
+  font-weight: 600;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__meta dd {
+  margin: 0;
+  color: #17324d;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__meta code {
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-size: 0.95em;
+  letter-spacing: 0.02em;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__description {
+  margin: 1.25rem 0 0;
+  color: #17324d;
+  line-height: 1.7;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline {
+  margin-top: 2.5rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline-empty {
+  margin: 0;
+  color: #5c6f82;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 3px solid #007a52;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline-item {
+  position: relative;
+  margin: 0;
+  padding: 0 0 1.25rem 1.25rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: -0.45rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 2px solid #007a52;
+  border-radius: 50%;
+  background: #fff;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline-item-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline-item-head strong {
+  color: #17324d;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline-item-head time {
+  color: #5c6f82;
+  font-size: 0.875rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__timeline-item p {
+  margin: 0.35rem 0 0;
+  color: #455a64;
+  line-height: 1.6;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__actions .btn {
+  min-height: 44px;
+}
+
+@media (max-width: 575.98px) {
+  body:has(.page-content[data-dc]) .dc-ticket-track__controls {
+    flex-direction: column;
+    border-bottom: 0;
+    gap: 0.75rem;
+  }
+
+  body:has(.page-content[data-dc]) .dc-ticket-track__controls:focus-within {
+    box-shadow: none;
+  }
+
+  body:has(.page-content[data-dc]) .dc-ticket-track__input.form-control {
+    border-bottom: 1px solid #5c6f82 !important;
+    padding-left: 0 !important;
+  }
+
+  /* Bootstrap Italia: `.input-group > .form-control { width: 1% }` (0,4,1). In colonna lo stretch non agisce: il campo restava largo 16 px. */
+  body:has(.page-content[data-dc]) .dc-ticket-track__controls > .dc-ticket-track__input.form-control {
+    width: 100%;
+  }
+
+  body:has(.page-content[data-dc]) .dc-ticket-track__controls:focus-within .dc-ticket-track__input.form-control {
+    border-bottom-color: #007a52 !important;
+    box-shadow: 0 2px 0 0 #007a52;
+  }
+
+  body:has(.page-content[data-dc]) .dc-ticket-track__submit.btn {
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  body:has(.page-content[data-dc]) .dc-ticket-track__meta-row {
+    grid-template-columns: 1fr;
+  }
+
+  body:has(.page-content[data-dc]) .dc-ticket-track__actions {
+    flex-direction: column;
+  }
+
+  body:has(.page-content[data-dc]) .dc-ticket-track__actions .btn {
+    width: 100%;
+  }
+}
+
+/* «Le tue segnalazioni» per l'utente autenticato (module_fixcity_fila5#73, theme_sixteen_fila5#117). */
+body:has(.page-content[data-dc]) .dc-ticket-track__mine {
+  margin-top: 2.5rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__mine-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__mine-intro,
+body:has(.page-content[data-dc]) .dc-ticket-track__mine-empty {
+  color: #5d7083;
+  margin-bottom: 1rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__mine-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #d9dadb;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__mine-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d9dadb;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__mine-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  text-decoration: none;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__mine-name {
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__mine-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  color: #5d7083;
+  font-size: 0.875rem;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__mine-item .dc-ticket-track__status {
+  flex-shrink: 0;
+}
+
+body:has(.page-content[data-dc]) .dc-ticket-track__mine-all {
+  margin-top: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  body:has(.page-content[data-dc]) .dc-ticket-track__mine-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

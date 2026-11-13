@@ -1,3 +1,15 @@
+---
+title: "database naming fix summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "database naming fix summary"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📁 Database Naming Convention - Fix Summary
 
 > **Date**: 2026-03-13  
@@ -5,7 +17,6 @@
 > **Modules Affected**: Blog (fixed), Others (to verify)
 
 ---
-
 ## 🎯 Summary
 
 Ho corretto tutti i riferimenti errati alle directory del database nel modulo **Blog** e aggiornato la documentazione di progetto per prevenire errori futuri.
@@ -22,7 +33,7 @@ Ho corretto tutti i riferimenti errati alle directory del database nel modulo **
   - Corretto: `database/Migrations` → `database/migrations`
   - Corretto: `database/Seeders` → `database/seeders`
 
-- ✅ `laravel/Modules/Blog/docs/CHANGELOG_2025-10.md`
+- ✅ `laravel/Modules/Blog/docs/CHANGELOG-blog-module-ottobre.md`
   - Rimossi riferimenti a directory con maiuscole
 
 - ✅ `laravel/Modules/Blog/docs/models/README.md`
@@ -187,6 +198,9 @@ grep -A 5 "autoload" laravel/Modules/*/composer.json | grep -i "database"
 - [Database Naming Convention](conventions/database-naming.md)
 - [AGENTS.md](../../AGENTS.md)
 - [agents.md](../../agents.md)
+- [Database Naming Convention](../conventions/database-naming.md)
+- [AGENTS.md](../AGENTS.md)
+- [agents.md](../agents.md)
 - [GitHub Issues & Discussions](github/README.md)
 - [MCP Configuration](mcp/README.md)
 - [Laravel Directory Structure](https://laravel.com/docs/structure)

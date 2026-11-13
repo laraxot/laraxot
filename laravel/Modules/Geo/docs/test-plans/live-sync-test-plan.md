@@ -1,3 +1,15 @@
+---
+title: "live sync test plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "live sync test plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Live Sync Test Plan
 
 > **Test:** Real module sync with GitHub remote
@@ -9,7 +21,6 @@
 > **Team:** sync-test-team
 
 ---
-
 ## Objective
 
 Execute a **real-world test** of `sync_remote_repo.sh` on an actual GitHub repository to verify:

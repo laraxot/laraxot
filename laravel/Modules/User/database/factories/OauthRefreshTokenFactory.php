@@ -34,7 +34,7 @@ class OauthRefreshTokenFactory extends Factory
     protected function newAccessTokenId(): string
     {
         /** @var OauthAccessToken $token */
-        $token = (new OauthAccessTokenFactory())->create([
+        $token = (new OauthAccessTokenFactory)->create([
             'id' => $this->faker->uuid(),
             'user_id' => null,
             'client_id' => OauthClient::factory(),

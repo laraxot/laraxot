@@ -9,15 +9,21 @@ issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./parse-error-orphan-methods-.md"
-  - "./parse-error-orphan-methods-1-1.md"
-  - "./parse-error-orphan-methods-1.md"
-  - "./parse-error-orphan-methods-2.md"
-  - "./parse-error-orphan-methods-3.md"
+  - "./parse-error-orphan-methods.md"
+  - "./parse-error-orphan-methods.md"
+  - "./parse-error-orphan-methods.md"
+  - "./parse-error-orphan-methods.md"
   - "./parse-error-orphan-methods.md"
   - "./parse-orphan-methods.md"
+  - "./parse-error-orphan-methods.md"
+  - "./parse-error-orphan-methods.md"
+  - "./parse-error-orphan-methods-documentation-themes.md"
+  - "./parse-error-orphan-methods-stato-rinominato.md"
+  - "./parse-error-orphan-methods.md"
+  - "./parse-orphan-methods.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Bug Fix: Crash durante creazione utenti con make:filament-user
 
 ## 🐛 Problema Identificato
@@ -295,7 +301,6 @@ class CreateTenantUserCommand extends Command
 
 - [../../../../docs/modules/user/README.md](../../../../docs/modules/user/readme.md) - Panoramica modulo User
 - [../../../../docs/architecture/multi-tenancy.md](../../../../docs/architecture/multi-tenancy.md) - Architettura globale
->>>>>>> 87273113 (.)
 
 ## 🎓 Lezioni Apprese
 

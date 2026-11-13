@@ -1,3 +1,9 @@
+---
+title: "Employee - INTEGRATION-APIS"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - Integration APIs Documentation
 
 > **Documento generato**: 2024-09-03  

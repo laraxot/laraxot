@@ -1,5 +1,7 @@
 ---
-title: "Ponytail audit — Rating (over-engineering)"
+issues: []
+discussions: []
+title: "Ponytail audit: Rating (over-engineering)"
 type: guide
 tags: [ponytail, audit, over, engineering, rating]
 created: 2026-07-14
@@ -7,9 +9,10 @@ updated: 2026-07-14
 qmd: "ponytail audit over engineering"
 related:
   - "./prd.md"
+status: draft
 ---
 
-# Ponytail audit — Rating (over-engineering)
+# Ponytail audit: Rating (over-engineering)
 
 **Ultimo run:** 2026-06-30  
 **Hub:** [../../../../docs/audit/ponytail-audit.md](../../../../docs/audit/ponytail-audit.md)

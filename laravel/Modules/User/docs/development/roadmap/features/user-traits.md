@@ -15,9 +15,9 @@ related:
   - "./gestione-utenti.md"
   - "./legacy-code-cleanup.md"
   - "./user-analytics.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # User Traits Implementation
 
 ## Overview

@@ -18,11 +18,7 @@ Il progetto usa una collection QMD centralizzata in  che include:
 
 ```yaml
 collection:
-<<<<<<< HEAD
   name: ptv
-=======
-  name: fixcity
->>>>>>> 13cf1831 (.)
   source: docs/wiki  # Include tutti i moduli
   
 paths:

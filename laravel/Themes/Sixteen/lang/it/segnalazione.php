@@ -82,6 +82,35 @@ return [
         'rating_legend' => 'Valuta da 1 a 5 stelle',
     ],
 
+    'filters' => [
+        'legend' => ['label' => 'categoria'],
+    ],
+    'filter' => [
+        'button' => ['label' => 'Filtra'],
+        'remove' => ['label' => 'Rimuovi tutti i filtri'],
+    ],
+    'results' => [
+        'count' => ['text' => ':count Risultati'],
+        'empty' => 'Nessuna segnalazione corrisponde ai filtri selezionati.',
+    ],
+    'card' => [
+        'type' => ['label' => 'Tipologia di segnalazione'],
+        'expand' => ['button' => ['label' => 'Mostra tutto']],
+        'address' => ['label' => 'Indirizzo'],
+        'detail' => ['label' => 'Dettaglio'],
+        'images' => ['label' => 'Immagini'],
+        'no_images' => ['label' => 'Nessuna immagine al momento'],
+        'edit' => ['label' => 'Modifica'],
+    ],
+    'map' => [
+        'image' => ['alt' => 'Mappa delle segnalazioni pubbliche'],
+        'cta' => [
+            'title' => 'Fai una segnalazione',
+            'text' => 'Segnala un problema al Comune dopo aver effettuato l’accesso.',
+            'button' => 'Segnala disservizio',
+        ],
+    ],
+
     // Contacts
     'contacts' => [
         'title' => 'Contatta il comune',

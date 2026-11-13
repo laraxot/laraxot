@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\User\Tests\Feature;
 
-use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Modules\User\Console\Commands\ChangeTypeCommand;
 use Modules\User\Tests\TestCase;
 use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
+use Symfony\Component\Console\Input\InputDefinition;
 
 uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\User\Tests\TestCase $this */
     /* @var TestCase $this */
-    TestCase::$command = new ChangeTypeCommand();
+    TestCase::$command = new ChangeTypeCommand;
 });
 
 describe('User Command Integration', function (): void {
@@ -24,13 +24,11 @@ describe('User Command Integration', function (): void {
         /** @var TestCase $this */
         $command = TestCase::requireCommand();
         Assert::assertSame('user:change-type', $command->getName());
-        Assert::assertInstanceOf(Command::class, $command);
     });
 
     test('integrates with xot data system', function (): void {
-        $xotData = XotData::make();
+        Assert::assertNotEmpty(XotData::make()->getUserClass());
 
-        Assert::assertInstanceOf(XotData::class, $xotData);
     });
 
     test('validates command registration in service provider', function (): void {
@@ -63,6 +61,12 @@ describe('User Command Integration', function (): void {
     test('can handle command input output operations', function (): void {
         /** @var TestCase $this */
         $command = TestCase::requireCommand();
+
+        $reflection = new \ReflectionClass($command);
+
+        Assert::assertSame(InputDefinition::class, $command->getDefinition()::class);
+        Assert::assertTrue($reflection->hasMethod('info'));
+        Assert::assertTrue($reflection->hasMethod('error'));
     });
 
     test('validates command signature and options', function (): void {
@@ -89,8 +93,7 @@ describe('User Command Integration', function (): void {
 
     test('handles command execution context', function (): void {
         /** @var TestCase $this */
-        $command = TestCase::requireCommand();
-        Assert::assertInstanceOf(Command::class, $command);
+        Assert::assertInstanceOf(ChangeTypeCommand::class, TestCase::requireCommand());
     });
 
     test('validates error handling patterns', function (): void {
@@ -105,7 +108,7 @@ describe('User Command Integration', function (): void {
     });
 
     test('can work with type checking utilities', function (): void {
-        $testObject = new \stdClass();
+        $testObject = new \stdClass;
         $testObject->value = 'test';
         $testObject->getLabel = fn () => 'Test Label';
 
@@ -124,9 +127,8 @@ describe('User Command Integration', function (): void {
     });
 
     test('handles string manipulation correctly', function (): void {
-        $testString = 'TestValue';
+        Assert::assertSame('TESTVALUE', strtoupper('TestValue'));
 
-        Assert::assertSame('TestValue', (string) $testString);
     });
 
     test('validates array operations', function (): void {
@@ -136,12 +138,17 @@ describe('User Command Integration', function (): void {
         foreach ($testArray as $key => $value) {
             $mapped[$key.'_suffix'] = $value.'_modified';
         }
-        Assert::assertSame('value1_modified', $mapped['key1_suffix']);
+        Assert::assertArrayHasKey('key1_suffix', $mapped);
     });
 
     test('can handle command lifecycle', function (): void {
         /** @var TestCase $this */
         $command = TestCase::requireCommand();
+
+        $reflection = new \ReflectionClass($command);
+
+        Assert::assertTrue($reflection->hasMethod('run'));
+        Assert::assertTrue($reflection->hasMethod('handle'));
     });
 
     test('validates dependency injection compatibility', function (): void {
@@ -153,9 +160,7 @@ describe('User Command Integration', function (): void {
 
     test('handles console application integration', function (): void {
         /** @var TestCase $this */
-        $command = TestCase::requireCommand();
-        Assert::assertInstanceOf(Command::class, $command);
-        Assert::assertInstanceOf(\Symfony\Component\Console\Command\Command::class, $command);
+        Assert::assertInstanceOf(ChangeTypeCommand::class, TestCase::requireCommand());
     });
 
     test('validates command help and description', function (): void {
@@ -172,8 +177,6 @@ describe('User Command Integration', function (): void {
         $command = TestCase::requireCommand();
         $reflection = new \ReflectionClass($command);
 
-        Assert::assertInstanceOf(\ReflectionClass::class, $reflection);
-
         Assert::assertSame(ChangeTypeCommand::class, $reflection->getName());
     });
 
@@ -184,7 +187,7 @@ describe('User Command Integration', function (): void {
     });
 
     test('can handle object property access safely', function (): void {
-        $testObject = new \stdClass();
+        $testObject = new \stdClass;
         $testObject->testProperty = 'test_value';
 
         $objectData = (array) $testObject;

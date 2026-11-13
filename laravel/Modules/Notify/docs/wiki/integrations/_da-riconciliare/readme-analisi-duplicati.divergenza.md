@@ -1,10 +1,14 @@
 ---
+qmd: "readme analisi duplicati.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: readme-analisi-duplicati.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Divergenza: `readme-analisi-duplicati.md`

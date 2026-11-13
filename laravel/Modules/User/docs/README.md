@@ -3,14 +3,20 @@ title: "User Module Documentation"
 type: documentation
 tags: [module, documentation]
 created: 2026-06-05
-updated: 2026-07-27
+updated: 2026-10-20
+status: draft
+qmd: "user module documentation overview trait filament auth"
 ---
 
 # Modulo User - Documentazione Completa
 
+**Scopo:** User e' il confine di identita' (auth FO/BO, OAuth localizzato, profilo, RBAC/tenant): Sixteen veste le pagine, Fixcity/Gdpr possiedono segnalazione e consensi, User possiede login/registrazione e i contratti Filament/Socialite. Hub BMAD: [bmad/decision-log.md](./bmad/decision-log.md), [bmad/filament-blueprint.md](./bmad/filament-blueprint.md).
+
+> Nota 2026-10-14 (docs-audit): l'ingresso canonico della cartella e' [00-INDEX.md](./00-index.md), con numeri e percorsi verificati sul codice. Questo file ha due difetti strutturali: contiene due volte lo stesso corpo (righe 155-1253 e 1257-2352, uguali al 99,8% prima delle note di verifica) e a meta' (riga 131) aveva un blocco front matter incollato da `readme.md`, ora trasformato in blocco di codice. Le smentite verificate sul codice sono marcate "Nota 2026-10-14"; il resto del testo non e' stato rivisto.
+
 ## Overview
 
-Il modulo **User** gestisce l'autenticazione, l'autorizzazione e la gestione utenti completa nel sistema [PROJECT_NAME] platform.
+Il modulo **User** gestisce autenticazione, autorizzazione e gestione utenti nel monorepo Fixcity (vedi **Scopo** sopra; non e' uno stub generico di piattaforma).
 
 ## Funzionalità Principali
 
@@ -47,20 +53,20 @@ Modules\User\Models\Tenant
 
 ## Collegamenti
 
-- [Documentazione Root](../../../docs/USER_MODULE.md)
+- [Documentazione Root](../../../docs/USER_MODULE.md) _(target mancante, verificato 2026-10-14)_
 - [Regole Trait](./traits.md)
 - [Filament Resources](./filament/)
 
 ## Backlinks
 
-- [Xot Base](../Xot/docs/)
-- [Tenant Module](../Tenant/docs/)
-- [UI Components](../UI/docs/)
+- [Xot Base](../../Xot/docs)
+- [Tenant Module](../../Tenant/docs)
+- [UI Components](../../UI/docs)
 
-## Architectural Rules — Violations Fixed
+## Architectural Rules: Violations Fixed
 
 ### Module Directory Structure Standard
-In compliance with the [Global Rule](../../../docs/wiki/rules/module-root-php-folders-forbidden.md), all root-level capitalized directories (`Actions/`, `Application/`, `Database/`, `Events/`, `Listeners/`) have been moved into `app/` or renamed to lowercase `database/`.
+In compliance with the [Global Rule](../../../../docs/wiki/rules/module-root-php-folders-forbidden.md), all root-level capitalized directories (`Actions/`, `Application/`, `Database/`, `Events/`, `Listeners/`) have been moved into `app/` or renamed to lowercase `database/`.
 - **app/**: Home for all PHP functional code (mapped via PSR-4).
 - **database/**: Strictly lowercase for migrations/factories/seeders.
 
@@ -72,12 +78,14 @@ Per evitare crash dei parallel workers su analisi massive, usare sempre:
 
 **Owner schema = WorkOrder** (`main_module`), non User:
 
-- [profile-schema-ownership.md](../WorkOrder/docs/profile-schema-ownership.md)
+- [profile-schema-ownership.md](../WorkOrder/docs/profile-schema-ownership.md) _(target mancante, verificato 2026-10-14)_
 - [wiki/concepts/profile-migration-uuid-contract.md](./wiki/concepts/profile-migration-uuid-contract.md)
 - Migrazione canonica: `WorkOrder/database/migrations/2026_07_27_111500_create_profiles_table.php`
 - Duplicati User archiviati in `database/migrations/_bak/*.merged`
 
-### Spatie Permission — `table_names` intoccabile
+> Nota 2026-10-14 (verifica): il modulo WorkOrder non esiste in `laravel/Modules/` e la migrazione indicata sopra non e' presente. `create_profiles_table` esiste invece in `User/database/migrations/` (6 file attivi: 2022_01_01, 2026_01_01, 2026_03_12, 2026_04_20, 2026_04_28, 2026_10_01), in `Fixcity/database/migrations/` (2: 2026_06_05, 2026_06_10) e in `Blog/database/migrations/` (1: 2026_03_12). Anche `wiki/log.md` (voci 2026-06-05 e 2026-06-10) indica Fixcity come owner: le fonti si contraddicono e la proprieta' dello schema `profiles` non e' stata decisa qui.
+
+### Spatie Permission: `table_names` intoccabile
 
 - `laravel/config/permission.php` → nomi pivot **singolari** (`model_has_role`, …)
 - Vietato modificare `table_names` o hardcodare nomi tabella in migrazioni/modelli
@@ -89,17 +97,22 @@ Per evitare crash dei parallel workers su analisi massive, usare sempre:
 Found and removed from `RegisterWidget`. Laravel logs unhandled exceptions automatically.
 See: [no-log-in-production.md](./no-log-in-production.md)
 
+> Nota 2026-10-14 (verifica): `RegisterWidget` e' pulito, ma `app/` ha ancora 35 chiamate `Log::debug|info|warning|error` in 9 file, tra cui `Actions/CreateUserAction` (2), `Filament/Widgets/LogoutWidget` (3), `Filament/Widgets/Auth/LogoutWidget` (2) ed `EditUserWidget` (1); la regola qui sopra non e' quindi rispettata nel codice.
+
 ### Git merge conflicts in migrations
 46 migration files in `database/migrations/` had unresolved conflict markers .
 These break PHP syntax and halt PHPStan entirely. All were resolved.
 Rule: never commit files with conflict markers. Fix immediately when found.
+(Verifica 2026-10-14: 0 file con marker `<<<<<<<` in `app/`, `database/`, `routes/`, `config/`, `tests/`.)
 
 ## Requisiti
 
-- PHP 8.3+
-- Laravel 11/12
-- Spatie Laravel Permission
-- Filament v5
+Verificati il 2026-10-14 su `laravel/composer.json` e `laravel/composer.lock` (la versione precedente indicava "PHP 8.3+, Laravel 11/12", ormai falsa):
+
+- PHP `^8.4`
+- Laravel `^13.0` (installato 13.35.0)
+- Spatie Laravel Permission (installato 8.3.0)
+- Filament v5 (installato 5.10.1), Livewire 4.4.7, Passport 13.9.0, Socialite 5.31.0
 
 
 ## Standard Rules & Workflow
@@ -110,16 +123,18 @@ Rule: never commit files with conflict markers. Fix immediately when found.
 
 ## Documentation
 
-- [On-Demand Pattern](./on-demand-pattern.md) — Pattern per caricamento efficiente
-- [QMD Setup](./qmd-setup.md) — Configurazione ricerca locale
-- [Performance](./performance-optimization.md) — Metriche e best practice
-- [Project Structure](./project-structure.md) — Directory layout
+- [On-Demand Pattern](./on-demand-pattern.md): Pattern per caricamento efficiente
+- [QMD Setup](./qmd-setup.md): Configurazione ricerca locale
+- [Performance](./performance-optimization.md): Metriche e best practice
+- [Project Structure](./project-structure.md): Directory layout
 
 ---
 
 <!-- Merged from readme.md, which collided with this file on case-insensitive filesystems. -->
 
----
+Front matter originale di `readme.md` (2026-10-14: spostato in un blocco di codice perche' un file puo' avere un solo front matter, quello in testa):
+
+```yaml
 title: "User Module - Authentication & Authorization"
 type: concept
 tags: [readme]
@@ -129,21 +144,21 @@ qmd: "readme user module - authentication & authorization"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
----
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+```
 
 # User Module - Authentication & Authorization
 
 **Last Update**: 2025-12-05
 **Status**: ✅ Production Ready
-**PHPStan Level**: 10
+**PHPStan Level**: 10 (dichiarato nel 2025; verificato 2026-10-14: `phpstan analyse Modules/User` da `laravel/` segnala 3 errori in `lang/{de,en,es}/validation.php:8` e 0 in `app/`)
 **Maintainers**: Laraxot Team
 
 ---
@@ -227,8 +242,8 @@ public function getMobileDeviceTokens(): Collection
 4. **PHPDoc Precision**: Usare `non-empty-string` quando appropriato, non solo `string`
 
 ### Documentazione Correlata
-- [PHPStan Level 10 Success](../../../docs/phpstan-level-10-success.md) - Achievement generale progetto
-- [Xot PHPStan Patterns](../../Xot/docs/phpstan-patterns-dec-2025.md) - Pattern comuni
+- [PHPStan Level 10 Success](../../../docs/phpstan-level-10-success.md) _(target mancante, verificato 2026-10-14)_ - Achievement generale progetto
+- [Xot PHPStan Patterns](../../Xot/docs/phpstan-patterns-dec-2025.md) _(target mancante, verificato 2026-10-14)_ - Pattern comuni
 
 ---
 
@@ -281,6 +296,8 @@ User Module
 ```
 
 ### Technology Stack
+> Nota 2026-10-14 (verifica su `laravel/composer.lock`): Laravel 13.35.0 (non 12.x), Filament 5.10.1 (non 4.x), spatie/laravel-permission 8.3.0 (non 6.x), PHP `^8.4` (non 8.3+); `laravel/sanctum` non e' installato, l'API usa Laravel Passport 13.9.0.
+
 - **Laravel**: 12.x
 - **Filament**: 4.x (for admin UI)
 - **Spatie Laravel Permission**: 6.x
@@ -290,6 +307,8 @@ User Module
 - **PHPStan**: Level 10
 
 ### Directory Structure
+
+> Nota 2026-10-14 (verifica): lo schema sotto e' in parte inventato. Non esistono `app/Policies/` (le 39 policy sono in `app/Models/Policies/`), `app/Services/` (`AuthService`, `PermissionService`, `TenantService` non esistono; la logica e' in `app/Actions/`, regola no-services) e gli eventi `UserCreated`, `UserLoggedIn`, `PermissionGranted` (gli eventi reali sono 27 in `app/Events/`, ad esempio `Login`, `Registered`, `NewPasswordSet`, `SocialiteUserConnected`). I seeder sono in `database/seeders/`. Struttura reale: [00-INDEX.md](./00-index.md).
 
 ```
 User/
@@ -587,6 +606,8 @@ $user->revokeDevice($deviceId);
 
 ### Services
 
+> Nota 2026-10-14 (verifica): le classi `AuthService`, `PermissionService` e `TenantService` descritte in questa sezione non esistono nel codice (`app/Services/` assente, nessun file `*Service.php` in `app/` oltre al nome `TermsOfService`). Gli equivalenti reali sono Actions, ad esempio `Actions/Socialite/LoginUserAction`, `Actions/User/CreateUserAction`, `Actions/Passport/RevokeAllUserTokensAction`.
+
 #### AuthService
 **Purpose**: Authentication business logic
 
@@ -640,6 +661,8 @@ TenantService::setTenant($tenant);
 ---
 
 ## 🚀 Quick Start
+
+> Nota 2026-10-14 (verifica): questa sezione e' in gran parte inventata e non va eseguita alla lettera. `laravel/sanctum` non e' installato (l'API usa Passport 13.9.0); non esiste `config/user.php` e nel codice non compaiono le chiavi `max_login_attempts`, `lockout_duration`, `password_reset_timeout`, `oauth_providers`; la config reale del modulo e' in `config/config.php`, `passport.php`, `password.php`, `services.php`, `socialite.php`, `social-providers.php` (il codice legge ad esempio `config('user.passport.tokens')`); non risulta alcun tag `user-config` per `vendor:publish`. `php artisan module:list` funziona (verificato 2026-10-14); `UserSeeder` esiste ma con namespace `Modules\User\Database\Seeders`. Percorso verificabile: [00-INDEX.md](./00-index.md).
 
 ### Prerequisites
 1. Xot Module (foundation) - **REQUIRED**
@@ -1131,36 +1154,36 @@ test('user can switch teams', function () {
 ## 📚 Documentation Index
 
 ### Architecture
-- [User Model Architecture](./architecture/user-model.md) - User model design
-- [Permission System](./architecture/permission-system.md) - RBAC architecture
-- [Multi-Tenancy](./architecture/multi-tenancy.md) - Tenant isolation
-- [Team System](./architecture/teams.md) - Team collaboration
+- [User Model Architecture](./architecture/user-model.md) _(target mancante, verificato 2026-10-14)_ - User model design
+- [Permission System](./architecture/permission-system.md) _(target mancante, verificato 2026-10-14)_ - RBAC architecture
+- [Multi-Tenancy](./architecture/multi-tenancy.md) _(target mancante, verificato 2026-10-14)_ - Tenant isolation
+- [Team System](./teams.md) - Team collaboration
 
 ### Authentication
-- [Authentication Flow](./auth/authentication-flow.md) - Login/logout process
-- [OAuth Integration](./auth/oauth.md) - Social login setup
-- [SSO Integration](./auth/sso.md) - Single Sign-On
-- [Two-Factor Auth](./auth/2fa.md) - 2FA implementation
+- [Authentication Flow](./auth/authentication-flow.md) _(target mancante, verificato 2026-10-14)_ - Login/logout process
+- [OAuth Integration](./auth/oauth.md) _(target mancante, verificato 2026-10-14)_ - Social login setup
+- [SSO Integration](./auth/sso.md) _(target mancante, verificato 2026-10-14)_ - Single Sign-On
+- [Two-Factor Auth](./auth/2fa.md) _(target mancante, verificato 2026-10-14)_ - 2FA implementation
 
 ### Authorization
-- [Roles & Permissions](./authorization/roles-permissions.md) - RBAC guide
-- [Policies](./authorization/policies.md) - Policy-based authorization
-- [Permission Checking](./authorization/checking.md) - How to check permissions
+- [Roles & Permissions](./authorization/roles-permissions.md) _(target mancante, verificato 2026-10-14)_ - RBAC guide
+- [Policies](./authorization/policies.md) _(target mancante, verificato 2026-10-14)_ - Policy-based authorization
+- [Permission Checking](./authorization/checking.md) _(target mancante, verificato 2026-10-14)_ - How to check permissions
 
 ### Development
-- [Creating User Types](./development/user-types.md) - STI implementation
-- [Custom Authentication](./development/custom-auth.md) - Custom auth methods
-- [API Integration](./development/api.md) - API usage guide
+- [Creating User Types](./development/user-types.md) _(target mancante, verificato 2026-10-14)_ - STI implementation
+- [Custom Authentication](./development/custom-auth.md) _(target mancante, verificato 2026-10-14)_ - Custom auth methods
+- [API Integration](./development/api.md) _(target mancante, verificato 2026-10-14)_ - API usage guide
 
 ### Security
-- [Security Best Practices](./security/best-practices.md) - Security guidelines
-- [Password Policies](./security/passwords.md) - Password requirements
-- [Audit Logging](./security/audit-log.md) - Security audit trail
+- [Security Best Practices](./best-practices.md) - Security guidelines
+- [Password Policies](./security/passwords.md) _(target mancante, verificato 2026-10-14)_ - Password requirements
+- [Audit Logging](./security/audit-log.md) _(target mancante, verificato 2026-10-14)_ - Security audit trail
 
 ### Troubleshooting
-- [Common Issues](./troubleshooting/common-issues.md) - Frequently encountered problems
+- [Common Issues](./troubleshooting/common-issues.md) _(target mancante, verificato 2026-10-14)_ - Frequently encountered problems
 - [Login Component Troubleshooting](./troubleshooting-login-component.md) - Login widget issues
-- [FAQ](./troubleshooting/faq.md) - Frequently asked questions
+- [FAQ](./troubleshooting/faq.md) _(target mancante, verificato 2026-10-14)_ - Frequently asked questions
 
 ---
 
@@ -1203,14 +1226,14 @@ See [ROADMAP.md](./roadmap.md) for details.
 ## 📖 Related Documentation
 
 ### Internal Modules
-- [Xot Module](../Xot/docs/README.md) - Core foundation
-- [Activity Module](../Activity/docs/README.md) - Activity tracking
-- [Lang Module](../Lang/docs/README.md) - Translations
-- [Tenant Module](../Tenant/docs/README.md) - Enhanced tenancy
+- [Xot Module](../../Xot/docs/README.md) - Core foundation
+- [Activity Module](../../Activity/docs/README.md) - Activity tracking
+- [Lang Module](../../Lang/docs/README.md) - Translations
+- [Tenant Module](../../Tenant/docs/README.md) - Enhanced tenancy
 
 ### Project Documentation
 - [CLAUDE.md](../../../CLAUDE.md) - Project architecture
-- [Security Guidelines](../../../docs/security.md)
+- [Security Guidelines](../../../../docs/security.md)
 
 ### External Resources
 - [Laravel Authentication](https://laravel.com/docs/12.x/authentication)
@@ -1321,8 +1344,8 @@ public function getMobileDeviceTokens(): Collection
 4. **PHPDoc Precision**: Usare `non-empty-string` quando appropriato, non solo `string`
 
 ### Documentazione Correlata
-- [PHPStan Level 10 Success](../../../docs/phpstan-level-10-success.md) - Achievement generale progetto
-- [Xot PHPStan Patterns](../../Xot/docs/phpstan-patterns-dec-2025.md) - Pattern comuni
+- [PHPStan Level 10 Success](../../../docs/phpstan-level-10-success.md) _(target mancante, verificato 2026-10-14)_ - Achievement generale progetto
+- [Xot PHPStan Patterns](../../Xot/docs/phpstan-patterns-dec-2025.md) _(target mancante, verificato 2026-10-14)_ - Pattern comuni
 
 ---
 
@@ -1375,6 +1398,8 @@ User Module
 ```
 
 ### Technology Stack
+> Nota 2026-10-14 (verifica su `laravel/composer.lock`): Laravel 13.35.0 (non 12.x), Filament 5.10.1 (non 4.x), spatie/laravel-permission 8.3.0 (non 6.x), PHP `^8.4` (non 8.3+); `laravel/sanctum` non e' installato, l'API usa Laravel Passport 13.9.0.
+
 - **Laravel**: 12.x
 - **Filament**: 4.x (for admin UI)
 - **Spatie Laravel Permission**: 6.x
@@ -1384,6 +1409,8 @@ User Module
 - **PHPStan**: Level 10
 
 ### Directory Structure
+
+> Nota 2026-10-14 (verifica): lo schema sotto e' in parte inventato. Non esistono `app/Policies/` (le 39 policy sono in `app/Models/Policies/`), `app/Services/` (`AuthService`, `PermissionService`, `TenantService` non esistono; la logica e' in `app/Actions/`, regola no-services) e gli eventi `UserCreated`, `UserLoggedIn`, `PermissionGranted` (gli eventi reali sono 27 in `app/Events/`, ad esempio `Login`, `Registered`, `NewPasswordSet`, `SocialiteUserConnected`). I seeder sono in `database/seeders/`. Struttura reale: [00-INDEX.md](./00-index.md).
 
 ```
 User/
@@ -1681,6 +1708,8 @@ $user->revokeDevice($deviceId);
 
 ### Services
 
+> Nota 2026-10-14 (verifica): le classi `AuthService`, `PermissionService` e `TenantService` descritte in questa sezione non esistono nel codice (`app/Services/` assente, nessun file `*Service.php` in `app/` oltre al nome `TermsOfService`). Gli equivalenti reali sono Actions, ad esempio `Actions/Socialite/LoginUserAction`, `Actions/User/CreateUserAction`, `Actions/Passport/RevokeAllUserTokensAction`.
+
 #### AuthService
 **Purpose**: Authentication business logic
 
@@ -1734,6 +1763,8 @@ TenantService::setTenant($tenant);
 ---
 
 ## 🚀 Quick Start
+
+> Nota 2026-10-14 (verifica): questa sezione e' in gran parte inventata e non va eseguita alla lettera. `laravel/sanctum` non e' installato (l'API usa Passport 13.9.0); non esiste `config/user.php` e nel codice non compaiono le chiavi `max_login_attempts`, `lockout_duration`, `password_reset_timeout`, `oauth_providers`; la config reale del modulo e' in `config/config.php`, `passport.php`, `password.php`, `services.php`, `socialite.php`, `social-providers.php` (il codice legge ad esempio `config('user.passport.tokens')`); non risulta alcun tag `user-config` per `vendor:publish`. `php artisan module:list` funziona (verificato 2026-10-14); `UserSeeder` esiste ma con namespace `Modules\User\Database\Seeders`. Percorso verificabile: [00-INDEX.md](./00-index.md).
 
 ### Prerequisites
 1. Xot Module (foundation) - **REQUIRED**
@@ -2225,36 +2256,36 @@ test('user can switch teams', function () {
 ## 📚 Documentation Index
 
 ### Architecture
-- [User Model Architecture](./architecture/user-model.md) - User model design
-- [Permission System](./architecture/permission-system.md) - RBAC architecture
-- [Multi-Tenancy](./architecture/multi-tenancy.md) - Tenant isolation
-- [Team System](./architecture/teams.md) - Team collaboration
+- [User Model Architecture](./architecture/user-model.md) _(target mancante, verificato 2026-10-14)_ - User model design
+- [Permission System](./architecture/permission-system.md) _(target mancante, verificato 2026-10-14)_ - RBAC architecture
+- [Multi-Tenancy](./architecture/multi-tenancy.md) _(target mancante, verificato 2026-10-14)_ - Tenant isolation
+- [Team System](./teams.md) - Team collaboration
 
 ### Authentication
-- [Authentication Flow](./auth/authentication-flow.md) - Login/logout process
-- [OAuth Integration](./auth/oauth.md) - Social login setup
-- [SSO Integration](./auth/sso.md) - Single Sign-On
-- [Two-Factor Auth](./auth/2fa.md) - 2FA implementation
+- [Authentication Flow](./auth/authentication-flow.md) _(target mancante, verificato 2026-10-14)_ - Login/logout process
+- [OAuth Integration](./auth/oauth.md) _(target mancante, verificato 2026-10-14)_ - Social login setup
+- [SSO Integration](./auth/sso.md) _(target mancante, verificato 2026-10-14)_ - Single Sign-On
+- [Two-Factor Auth](./auth/2fa.md) _(target mancante, verificato 2026-10-14)_ - 2FA implementation
 
 ### Authorization
-- [Roles & Permissions](./authorization/roles-permissions.md) - RBAC guide
-- [Policies](./authorization/policies.md) - Policy-based authorization
-- [Permission Checking](./authorization/checking.md) - How to check permissions
+- [Roles & Permissions](./authorization/roles-permissions.md) _(target mancante, verificato 2026-10-14)_ - RBAC guide
+- [Policies](./authorization/policies.md) _(target mancante, verificato 2026-10-14)_ - Policy-based authorization
+- [Permission Checking](./authorization/checking.md) _(target mancante, verificato 2026-10-14)_ - How to check permissions
 
 ### Development
-- [Creating User Types](./development/user-types.md) - STI implementation
-- [Custom Authentication](./development/custom-auth.md) - Custom auth methods
-- [API Integration](./development/api.md) - API usage guide
+- [Creating User Types](./development/user-types.md) _(target mancante, verificato 2026-10-14)_ - STI implementation
+- [Custom Authentication](./development/custom-auth.md) _(target mancante, verificato 2026-10-14)_ - Custom auth methods
+- [API Integration](./development/api.md) _(target mancante, verificato 2026-10-14)_ - API usage guide
 
 ### Security
-- [Security Best Practices](./security/best-practices.md) - Security guidelines
-- [Password Policies](./security/passwords.md) - Password requirements
-- [Audit Logging](./security/audit-log.md) - Security audit trail
+- [Security Best Practices](./best-practices.md) - Security guidelines
+- [Password Policies](./security/passwords.md) _(target mancante, verificato 2026-10-14)_ - Password requirements
+- [Audit Logging](./security/audit-log.md) _(target mancante, verificato 2026-10-14)_ - Security audit trail
 
 ### Troubleshooting
-- [Common Issues](./troubleshooting/common-issues.md) - Frequently encountered problems
+- [Common Issues](./troubleshooting/common-issues.md) _(target mancante, verificato 2026-10-14)_ - Frequently encountered problems
 - [Login Component Troubleshooting](./troubleshooting-login-component.md) - Login widget issues
-- [FAQ](./troubleshooting/faq.md) - Frequently asked questions
+- [FAQ](./troubleshooting/faq.md) _(target mancante, verificato 2026-10-14)_ - Frequently asked questions
 
 ---
 
@@ -2297,14 +2328,14 @@ See [ROADMAP.md](./roadmap.md) for details.
 ## 📖 Related Documentation
 
 ### Internal Modules
-- [Xot Module](../Xot/docs/README.md) - Core foundation
-- [Activity Module](../Activity/docs/README.md) - Activity tracking
-- [Lang Module](../Lang/docs/README.md) - Translations
-- [Tenant Module](../Tenant/docs/README.md) - Enhanced tenancy
+- [Xot Module](../../Xot/docs/README.md) - Core foundation
+- [Activity Module](../../Activity/docs/README.md) - Activity tracking
+- [Lang Module](../../Lang/docs/README.md) - Translations
+- [Tenant Module](../../Tenant/docs/README.md) - Enhanced tenancy
 
 ### Project Documentation
 - [CLAUDE.md](../../../CLAUDE.md) - Project architecture
-- [Security Guidelines](../../../docs/security.md)
+- [Security Guidelines](../../../../docs/security.md)
 
 ### External Resources
 - [Laravel Authentication](https://laravel.com/docs/12.x/authentication)

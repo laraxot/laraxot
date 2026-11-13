@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Sistema di Traduzione"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "sistema di traduzione xot"
+---
+>>>>>>> laraxot/dev
 # Sistema di Traduzione
 
 ## Regola Fondamentale: NO ->label()

@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Enums;
 
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\View;
 use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
+use Modules\Geo\Filament\Forms\Components\CoordinatesSection;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 use Modules\Xot\Traits\EnumTrait;
 
@@ -19,7 +23,9 @@ use Modules\Xot\Traits\EnumTrait;
  */
 enum AddressItemEnum: string implements HasColor, HasIcon, HasLabel
 {
-    use EnumTrait;
+    use EnumTrait {
+        getFormSchema as private traitGetFormSchema;
+    }
 
     case PHONE = 'phone';
     case NAME = 'name';
@@ -164,8 +170,8 @@ enum AddressItemEnum: string implements HasColor, HasIcon, HasLabel
      */
     public static function columnsWithLegacy(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
-        static::columns($table, $migration);
-        static::addLegacyColumns($table, $migration);
+        self::columns($table, $migration);
+        self::addLegacyColumns($table, $migration);
     }
 
     /**
@@ -173,7 +179,7 @@ enum AddressItemEnum: string implements HasColor, HasIcon, HasLabel
      */
     public static function updateColumnsWithLegacy(Blueprint $table, XotBaseMigration $migration): void
     {
-        static::columnsWithLegacy($table, $migration);
+        self::columnsWithLegacy($table, $migration);
     }
 
     /**
@@ -182,8 +188,8 @@ enum AddressItemEnum: string implements HasColor, HasIcon, HasLabel
      * These fields maintain compatibility with older code that expects
      * generic field names like 'address', 'city', 'province', etc.
      *
-     * @param Blueprint             $table     The table blueprint
-     * @param XotBaseMigration|null $migration XotBaseMigration instance for UPDATE context
+     * @param  Blueprint  $table  The table blueprint
+     * @param  XotBaseMigration|null  $migration  XotBaseMigration instance for UPDATE context
      */
     private static function addLegacyColumns(Blueprint $table, ?XotBaseMigration $migration = null): void
     {
@@ -216,9 +222,39 @@ enum AddressItemEnum: string implements HasColor, HasIcon, HasLabel
         ];
 
         foreach ($legacyColumns as $name => $definition) {
-            if (null === $migration || ! $migration->hasColumn($name)) {
+            if ($migration === null || ! $migration->hasColumn($name)) {
                 $definition($table);
             }
         }
+    }
+
+    /**
+     * Schema del form indirizzo: campi standard + sezione coordinate e mappa.
+     *
+     * Ogni indirizzo ha latitudine/longitudine e una mappa di anteprima:
+     * la composizione vive qui, nella SSoT dei campi indirizzo, non nei
+     * singoli form. I campi contatto (phone, email, ...) restano nella
+     * selezione e vengono scartati da AddressSection, che delega a
+     * Notify\ContactSection.
+     *
+     * @return array<int|string, TextInput|CoordinatesSection|View>
+     */
+    public static function getFormSchema(): array
+    {
+        $schema = self::traitGetFormSchema();
+
+        // Le coordinate non sono semplici campi testo: vivono in
+        // CoordinatesSection (validazione + azione di geocoding).
+        unset($schema[self::LATITUDE->value], $schema[self::LONGITUDE->value]);
+
+        $schema[] = CoordinatesSection::make();
+        $schema[] = View::make('geo::filament.forms.components.location-map')
+            ->viewData(static fn (?Model $record): array => [
+                'record' => $record,
+                'asset_base' => asset('assets/geo/assets'),
+            ])
+            ->columnSpanFull();
+
+        return $schema;
     }
 }

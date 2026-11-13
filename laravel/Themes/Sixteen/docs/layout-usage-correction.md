@@ -1,3 +1,15 @@
+---
+title: "layout usage correction"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "layout usage correction"
+issues: []
+discussions: []
+status: draft
+---
+
 # Layout Usage Correction - Sixteen Theme AGID Compliance
 
 ## Problem Analysis
@@ -165,7 +177,6 @@ Verify correct layout files exist:
 - ✅ `components/layouts/main.blade.php`
 
 ---
-
 **Analysis Date**: July 31, 2025  
 **Issue Type**: Incorrect Layout Usage  
 **Solution**: Use `layouts.guest` instead of non-existent `auth-agid`  

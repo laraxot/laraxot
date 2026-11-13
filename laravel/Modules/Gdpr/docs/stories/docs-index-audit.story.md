@@ -1,3 +1,14 @@
+---
+title: "docs index audit.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs index audit.story"
+issues: []
+discussions: []
+---
+
 # Story: Docs index audit — Gdpr
 
 **Fase BMAD**: Documentazione / manutenzione (docs-only, nessuna modifica a codice applicativo).

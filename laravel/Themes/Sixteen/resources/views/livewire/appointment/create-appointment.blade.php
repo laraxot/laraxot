@@ -6,13 +6,13 @@
         <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
             <div class="flex items-center justify-between mb-6">
                 <div>
-                    <h1 class="text-2xl font-bold text-gray-900">Prenotazione Appuntamento</h1>
+                    <h1 class="text-2xl font-bold text-gray-900">{{ __('pub_theme::appointment_form.booking.title.label') }}</h1>
                     <p class="text-gray-600 mt-1">{{ $stepTitle }}</p>
                 </div>
                 
                 <div class="text-right">
                     <div class="text-sm text-gray-500 mb-1">
-                        Step {{ $currentStep }} di {{ $totalSteps }}
+                        {{ __('pub_theme::appointment_form.booking.progress.label', ['current' => $currentStep, 'total' => $totalSteps]) }}
                     </div>
                     <div class="w-32 bg-gray-200 rounded-full h-2">
                         <div class="bg-blue-600 h-2 rounded-full transition-all duration-300" 
@@ -31,7 +31,6 @@
                             {{ $step > $currentStep ? 'bg-gray-100 text-gray-400' : '' }}">
                             @if($step < $currentStep)
                                 <x-filament::icon icon="heroicon-o-check" class="w-4 h-4" />
-f7ac8eda (.)
                             @else
                                 {{ $step }}
                             @endif
@@ -49,35 +48,34 @@ f7ac8eda (.)
             <div class="bg-white rounded-lg shadow-sm border border-green-200 p-8 text-center">
                 <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <x-filament::icon icon="heroicon-o-check" class="w-8 h-8 text-green-600" />
-f7ac8eda (.)
                 </div>
                 
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Prenotazione Confermata!</h2>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">{{ __('pub_theme::appointment_form.booking.confirmed.title') }}</h2>
                 <p class="text-gray-600 mb-6">
-                    La tua prenotazione è stata registrata con successo.
+                    {{ __('pub_theme::appointment_form.booking.confirmed.message') }}
                 </p>
 
                 <div class="bg-gray-50 rounded-lg p-4 mb-6">
-                    <div class="text-sm text-gray-600 mb-2">Codice di Conferma:</div>
+                    <div class="text-sm text-gray-600 mb-2">{{ __('pub_theme::appointment_form.booking.confirmation_code.label') }}</div>
                     <div class="text-2xl font-mono font-bold text-blue-600">{{ $confirmationCode }}</div>
                 </div>
 
                 <p class="text-sm text-gray-500 mb-6">
-                    Riceverai una email di conferma con tutti i dettagli.
-                    Conserva questo codice per riferimento futuro.
+                    {{ __('pub_theme::appointment_form.booking.confirmed.email_notice') }}
+                    {{ __('pub_theme::appointment_form.booking.confirmed.keep_code') }}
                 </p>
 
                 <div class="flex justify-center space-x-4">
                     <x-button 
                         href="{{ route('appointments.index') }}"
                         variant="primary">
-                        Le Mie Prenotazioni
+                        {{ __('pub_theme::appointment_form.booking.my_bookings.label') }}
                     </x-button>
                     
                     <x-button 
                         wire:click="restart"
                         variant="secondary">
-                        Nuova Prenotazione
+                        {{ __('pub_theme::appointment_form.booking.new_booking.label') }}
                     </x-button>
                 </div>
             </div>
@@ -89,7 +87,7 @@ f7ac8eda (.)
                     <div class="space-y-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Seleziona il Servizio
+                                {{ __('pub_theme::appointment_form.booking.select_service.title') }}
                             </label>
                             <div class="grid md:grid-cols-2 gap-4">
                                 @foreach($services as $service)
@@ -118,7 +116,7 @@ f7ac8eda (.)
                         @if($serviceId)
                             <div x-data="{ selectedOffice: null }">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    Seleziona l'Ufficio
+                                    {{ __('pub_theme::appointment_form.booking.select_office.title') }}
                                 </label>
                                 <div class="grid gap-3">
                                     @foreach($offices as $office)
@@ -136,7 +134,6 @@ f7ac8eda (.)
                                                     @endif
                                                 </div>
                                                 <x-filament::icon icon="heroicon-o-arrow-right" class="w-5 h-5 text-gray-400" />
-f7ac8eda (.)
                                             </div>
                                         </button>
                                     @endforeach
@@ -150,7 +147,7 @@ f7ac8eda (.)
                     <div class="space-y-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Seleziona la Data
+                                {{ __('pub_theme::appointment_form.booking.select_date.title') }}
                             </label>
                             <div class="grid grid-cols-7 gap-2 mb-4">
                                 @foreach(['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'] as $day)
@@ -178,9 +175,8 @@ f7ac8eda (.)
                             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
                                 <div class="flex items-center">
                                     <x-filament::icon icon="heroicon-o-calendar" class="w-5 h-5 text-blue-600 mr-3" />
-f7ac8eda (.)
                                     <span class="text-blue-800">
-                                        Data selezionata: {{ $selectedDateFormatted }}
+                                        {{ __('pub_theme::appointment_form.booking.selected_date.label', ['date' => $selectedDateFormatted]) }}
                                     </span>
                                 </div>
                             </div>
@@ -192,7 +188,7 @@ f7ac8eda (.)
                     <div class="space-y-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Seleziona l'Orario
+                                {{ __('pub_theme::appointment_form.booking.select_time.title') }}
                             </label>
                             <div class="grid md:grid-cols-3 gap-3">
                                 @foreach($availableSlots as $slot)
@@ -207,7 +203,7 @@ f7ac8eda (.)
                                             {{ \Carbon\Carbon::parse($slot['end'])->format('H:i') }}
                                         </div>
                                         <div class="text-xs text-gray-500 mt-1">
-                                            {{ $slot['duration'] }} minuti
+                                            {{ $slot['duration'] }} {{ __('pub_theme::appointment_form.booking.minutes.label') }}
                                         </div>
                                     </button>
                                 @endforeach
@@ -218,9 +214,8 @@ f7ac8eda (.)
                             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
                                 <div class="flex items-center">
                                     <x-filament::icon icon="heroicon-o-clock" class="w-5 h-5 text-blue-600 mr-3" />
-f7ac8eda (.)
                                     <span class="text-blue-800">
-                                        Orario selezionato: {{ $selectedTimeFormatted }}
+                                        {{ __('pub_theme::appointment_form.booking.selected_time.label', ['time' => $selectedTimeFormatted]) }}
                                     </span>
                                 </div>
                             </div>
@@ -232,7 +227,7 @@ f7ac8eda (.)
                     <div class="space-y-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-4">
-                                Chi richiede l'appuntamento?
+                                {{ __('pub_theme::appointment_form.booking.requester.title') }}
                             </label>
                             
                             <div class="grid md:grid-cols-2 gap-4 mb-6">
@@ -242,8 +237,7 @@ f7ac8eda (.)
                                     class="p-4 border rounded-lg text-center transition-colors
                                         {{ $isSelf ? 'border-blue-300 bg-blue-50 text-blue-800' : 'border-gray-200 hover:border-gray-300' }}">
                                     <x-filament::icon icon="heroicon-o-user" class="w-8 h-8 mx-auto mb-2" />
-f7ac8eda (.)
-                                    <div class="font-medium">Per me stesso</div>
+                                    <div class="font-medium">{{ __('pub_theme::appointment_form.booking.requester_self.label') }}</div>
                                 </button>
                                 
                                 <button 
@@ -252,8 +246,7 @@ f7ac8eda (.)
                                     class="p-4 border rounded-lg text-center transition-colors
                                         {{ !$isSelf ? 'border-blue-300 bg-blue-50 text-blue-800' : 'border-gray-200 hover:border-gray-300' }}">
                                     <x-filament::icon icon="heroicon-o-users" class="w-8 h-8 mx-auto mb-2" />
-f7ac8eda (.)
-                                    <div class="font-medium">Per altra persona</div>
+                                    <div class="font-medium">{{ __('pub_theme::appointment_form.booking.requester_other.label') }}</div>
                                 </button>
                             </div>
                         </div>
@@ -262,30 +255,27 @@ f7ac8eda (.)
                             <div class="space-y-4">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 mb-2">
-                                        Codice Fiscale della persona
+                                        {{ __('pub_theme::appointment_form.booking.tax_code.label') }}
                                     </label>
                                     <div class="flex space-x-2">
-                                        <x-input 
-                                        <x-input 
+                                        <x-input
                                             type="text"
                                             wire:model="citizenData.fiscal_code"
-                                            placeholder="Inserisci codice fiscale"
+                                            placeholder="{{ __('pub_theme::appointment_form.booking.tax_code.placeholder') }}"
                                             class="flex-1"
                                             wire:keydown.enter="searchCitizen($event.target.value)" />
-                                        <x-button 
-                                        <x-button 
+                                        <x-button
                                             type="button"
                                             wire:click="searchCitizen($citizenData['fiscal_code'] ?? '')"
                                             variant="secondary">
-                                            Cerca
-                                        </x-button>
+                                            {{ __('pub_theme::header.center.search.label') }}
                                         </x-button>
                                     </div>
                                 </div>
 
                                 @if(!empty($citizenData))
                                     <div class="bg-gray-50 rounded-lg p-4">
-                                        <div class="text-sm text-gray-600">Dati trovati:</div>
+                                        <div class="text-sm text-gray-600">{{ __('pub_theme::appointment_form.booking.person_found.label') }}</div>
                                         <div class="font-medium text-gray-900">
                                             {{ $citizenData['first_name'] }} {{ $citizenData['last_name'] }}
                                         </div>
@@ -303,7 +293,7 @@ f7ac8eda (.)
                     <div class="space-y-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Documenti Richiesti
+                                {{ __('pub_theme::appointment_form.booking.required_documents.title') }}
                             </label>
                             <div class="grid md:grid-cols-2 gap-3">
                                 @foreach($availableDocuments as $key => $label)
@@ -321,24 +311,22 @@ f7ac8eda (.)
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Note aggiuntive (opzionale)
+                                {{ __('pub_theme::appointment_form.booking.notes.label') }}
                             </label>
-                            <x-textarea 
-                            <x-textarea 
+                            <x-textarea
                                 wire:model="notes"
-                                placeholder="Eventuali note o informazioni aggiuntive..."
+                                placeholder="{{ __('pub_theme::appointment_form.booking.notes.placeholder') }}"
                                 rows="3" />
                         </div>
 
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">
-                                Contatto di emergenza (opzionale)
+                                {{ __('pub_theme::appointment_form.booking.emergency_contact.label') }}
                             </label>
-                            <x-input 
-                            <x-input 
+                            <x-input
                                 type="text"
                                 wire:model="emergencyContact"
-                                placeholder="Nome e telefono di riferimento" />
+                                placeholder="{{ __('pub_theme::appointment_form.booking.emergency_contact.placeholder') }}" />
                         </div>
                     </div>
 
@@ -346,31 +334,31 @@ f7ac8eda (.)
                 @elseif($currentStep == 6)
                     <div class="space-y-6">
                         <div class="bg-gray-50 rounded-lg p-6">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Riepilogo Prenotazione</h3>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ __('pub_theme::appointment_form.booking.summary.title') }}</h3>
                             
                             <div class="space-y-3">
                                 <div class="flex justify-between">
-                                    <span class="text-gray-600">Servizio:</span>
+                                    <span class="text-gray-600">{{ __('pub_theme::appointment_form.booking.summary.service.label') }}</span>
                                     <span class="font-medium">{{ $service->name }}</span>
                                 </div>
                                 
                                 <div class="flex justify-between">
-                                    <span class="text-gray-600">Ufficio:</span>
+                                    <span class="text-gray-600">{{ __('pub_theme::appointment_form.booking.summary.office.label') }}</span>
                                     <span class="font-medium">{{ $office->name }}</span>
                                 </div>
                                 
                                 <div class="flex justify-between">
-                                    <span class="text-gray-600">Data:</span>
+                                    <span class="text-gray-600">{{ __('pub_theme::appointment_form.booking.summary.date.label') }}</span>
                                     <span class="font-medium">{{ $selectedDateFormatted }}</span>
                                 </div>
                                 
                                 <div class="flex justify-between">
-                                    <span class="text-gray-600">Orario:</span>
+                                    <span class="text-gray-600">{{ __('pub_theme::appointment_form.booking.summary.time.label') }}</span>
                                     <span class="font-medium">{{ $selectedTimeFormatted }}</span>
                                 </div>
                                 
                                 <div class="flex justify-between">
-                                    <span class="text-gray-600">Richiedente:</span>
+                                    <span class="text-gray-600">{{ __('pub_theme::appointment_form.booking.summary.requester.label') }}</span>
                                     <span class="font-medium">
                                         {{ $isSelf ? 'Me stesso' : ($citizenData['first_name'] ?? 'Altro') }}
                                     </span>
@@ -378,7 +366,7 @@ f7ac8eda (.)
                                 
                                 @if(!empty($requiredDocuments))
                                     <div class="flex justify-between">
-                                        <span class="text-gray-600">Documenti:</span>
+                                        <span class="text-gray-600">{{ __('pub_theme::appointment_form.booking.summary.documents.label') }}</span>
                                         <span class="font-medium text-right">
                                             @foreach($requiredDocuments as $doc)
                                                 {{ $availableDocuments[$doc] }}
@@ -393,17 +381,16 @@ f7ac8eda (.)
                         <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                             <div class="flex">
                                 <x-filament::icon icon="heroicon-o-exclamation-triangle" class="w-5 h-5 text-yellow-600 mr-3 flex-shrink-0" />
-f7ac8eda (.)
                                 <div class="text-sm text-yellow-800">
-                                    <strong>Importante:</strong> Porta con te i documenti richiesti e presenta il codice di conferma all'ufficio.
+                                    <strong>{{ __('pub_theme::appointment_form.booking.important.label') }}</strong> {{ __('pub_theme::appointment_form.booking.important.message') }}
                                 </div>
                             </div>
                         </div>
 
                         <div class="text-center">
                             <p class="text-sm text-gray-600 mb-4">
-                                Confermando, accetti i <a href="#" class="text-blue-600 hover:text-blue-800">termini di servizio</a>
-                                e l'<a href="#" class="text-blue-600 hover:text-blue-800">informativa privacy</a>.
+                                {{ __('pub_theme::appointment_form.booking.consent.intro') }} <a href="{{ route('terms.show') }}" class="text-blue-600 hover:text-blue-800">{{ __('pub_theme::appointment_form.booking.consent.terms') }}</a>
+                                {{ __('pub_theme::appointment_form.booking.consent.and_privacy') }}<a href="{{ route('policy.show') }}" class="text-blue-600 hover:text-blue-800">{{ __('pub_theme::appointment_form.booking.consent.privacy') }}</a>.
                             </p>
                         </div>
                     </div>
@@ -412,35 +399,28 @@ f7ac8eda (.)
 
             {{-- Navigation Buttons --}}
             <div class="flex justify-between">
-                <x-button 
-                <x-button 
+                <x-button
                     wire:click="previousStep"
                     variant="secondary"
-                    {{ $isFirstStep ? 'disabled' : '' }}>
+                    :disabled="$currentStep === 1">
                     <x-filament::icon icon="heroicon-o-arrow-left" class="w-4 h-4 mr-2" />
-f7ac8eda (.)
-                    Indietro
+                    {{ __('pub_theme::common.actions.back.label') }}
                 </x-button>
 
                 @if($currentStep < $totalSteps)
                     <x-button 
                         wire:click="nextStep"
                         variant="primary">
-                        Avanti
+                        {{ __('pub_theme::common.actions.next.label') }}
                         <x-filament::icon icon="heroicon-o-arrow-right" class="w-4 h-4 ml-2" />
-f7ac8eda (.)
                     </x-button>
                 @else
-                    <x-button 
-                    </x-button>
-                @else
-                    <x-button 
+                    <x-button
                         wire:click="confirmAppointment"
                         variant="primary"
                         wire:loading.attr="disabled">
-                        <span wire:loading.remove>Conferma Prenotazione</span>
-                        <span wire:loading>Conferma in corso...</span>
-                    </x-button>
+                        <span wire:loading.remove>{{ __('pub_theme::appointment_form.booking.confirm.label') }}</span>
+                        <span wire:loading>{{ __('pub_theme::appointment_form.booking.confirm.loading') }}</span>
                     </x-button>
                 @endif
             </div>

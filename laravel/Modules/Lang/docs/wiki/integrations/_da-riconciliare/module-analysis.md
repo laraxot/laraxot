@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Lang Module - Comprehensive Analysis"
 module: "Lang"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "links"
 related:
   - "./italian-text-refined-audit-report.md"
+  - "../../../italian-text-refined-audit-report.md"
+status: draft
 ---
 # Lang Module - Comprehensive Analysis
 
@@ -71,10 +75,8 @@ The Lang module provides comprehensive localization and translation management:
 - **User**: User language preferences
 - **Cms**: Multi-language content
 - **Quaeris**: Survey translation
-<<<<<<<< HEAD:docs/wiki/integrations/_da-riconciliare/module-analysis.md
 - **modulo questionari**: Survey translation
-========
->>>>>>>> laraxot/dev:docs/archive/historical/module-analysis.md
+---
 - **Limesurvey**: Question translation
 - **Xot**: Base localization infrastructure
 - **Filament**: Translation management interface

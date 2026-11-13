@@ -5,10 +5,6 @@ declare(strict_types=1);
 return [
     'fields' => [
         'key' => [
-            'label' => 'key',
-            'placeholder' => 'key',
-            'helper_text' => 'key',
-            'description' => 'key',
             'tooltip' => '',
         ],
         'data' => [
@@ -23,14 +19,9 @@ return [
             'description' => '',
         ],
         'pippo' => [
-            'description' => 'pippo',
-            'helper_text' => 'pippo',
-            'placeholder' => 'pippo',
-            'label' => 'pippo',
             'tooltip' => '',
         ],
         'pluto' => [
-            'description' => 'pluto',
             'label' => '',
             'tooltip' => '',
             'helper_text' => '',
@@ -415,17 +406,6 @@ return [
             'description' => '',
         ],
     ],
-    'actions' => [
-        'delete' => [
-            'label' => 'delete',
-        ],
-        'activeLocale' => [
-            'label' => 'activeLocale',
-        ],
-        'lang' => [
-            'label' => 'lang',
-        ],
-    ],
     'label' => 'Edit Translation File',
     'plural_label' => 'Edit Translation File (Plurale)',
     'navigation' => [
@@ -436,7 +416,7 @@ return [
             'description' => 'General Settings',
         ],
         'label' => 'Edit Translation File',
-        'sort' => 1,
+        'sort' => '1',
         'icon' => 'heroicon-o-rectangle-stack',
     ],
 ];

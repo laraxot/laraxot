@@ -1,10 +1,14 @@
 ---
+qmd: "multi agent coordination rules"
+issues: []
+discussions: []
 title: "Multi-Agent AI Coordination - Critical Rules"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # 🤖 Multi-Agent AI Coordination - Critical Rules
@@ -257,6 +261,10 @@ git push origin dev
 - [GitHub Sync Rule](docs/GITHUB_SYNC_RULE.md)
 - [AI Rules](../.qwen/AI_RULES_CRITICAL.md)
 - [AI Memory](../.qwen/AI_MEMORY.md)
+- [Multi-Agent Guide](MULTI_AGENT_COLLABORATION_GUIDE.md)
+- [GitHub Sync Rule](GITHUB_SYNC_RULE.md)
+- [AI Rules](../../../../.qwen/AI_RULES_CRITICAL.md)
+- [AI Memory](../../../../.qwen/AI_MEMORY.md)
 
 ---
 

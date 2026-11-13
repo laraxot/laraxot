@@ -17,6 +17,10 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @phpstan-require-extends Model
  *
+<<<<<<< HEAD
  * @mixin \Eloquent
+=======
+ * @mixin Model
+>>>>>>> laraxot/dev
  */
 interface PivotContract {}

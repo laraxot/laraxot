@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "stubs"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "stubs xot"
+---
+>>>>>>> laraxot/dev
 # stubs
 
 <!-- Contenuto migrato da _docs/stubs.txt -->

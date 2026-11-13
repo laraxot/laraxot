@@ -15,6 +15,7 @@ related:
   - ../../../../../docs/wiki/bmad/architecture.md
   - ../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md
   - ../../docs/wiki/concepts/ai-harness-module-discipline.md
+status: draft
 ---
 
 # Rating Module LLM Wiki
@@ -24,7 +25,7 @@ related:
 - [hackernoon-ai-coding-tips-map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-map.md)
 - [bmad/architecture](../../../../../docs/wiki/bmad/architecture.md)
 - [frontmatter + GitHub](../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
-- [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
+- ai-harness-module-discipline _(riferimento non presente nel repository, verificato 2026-10-14)_
 - [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
 
 
@@ -34,11 +35,11 @@ Indice operativo del wiki Rating.
 
 - [concepts/](./concepts/): Pattern architetturali e metodologie rating.
 - [entities/](./entities/): Modelli e componenti chiave.
-- [sources/](./sources/): Dati di ricerca e link esterni.
+- sources/ _(riferimento non presente nel repository, verificato 2026-10-14)_: Dati di ricerca e link esterni.
 - [comparisons/](./comparisons/): Implementazioni alternative.
 - [decisions/](./decisions/): ADL (Architectural Decision Log).
 - [troubleshooting/](./troubleshooting/): Problemi noti e soluzioni.
-- [_archive/](./_archive/): Documentazione legacy.
+- _archive/ _(riferimento non presente nel repository, verificato 2026-10-14)_: Documentazione legacy.
 - [_templates/](./_templates/): Template standard.
 
 ## Regole collegate
@@ -61,19 +62,19 @@ Gestione valutazioni, recensioni, rating polimorfici e moderazione.
 |--------|------|-----------|------|
 | [.gitkeep](./concepts/.gitkeep) | Concept | - | 2026-04-21 |
 | [filament-resource-zen-pattern](./concepts/filament-resource-zen-pattern.md) | Concept | Resource Filament senza override `form()`/`table()` | 2026-05-06 |
-| [xotbase-table-columns-enforcement](./concepts/xotbase-table-columns-enforcement.md) | Concept | 4 Table files — RatingMorph and Rating populated | 2026-05-07 |
+| [xotbase-table-columns-enforcement](./concepts/xotbase-table-columns-enforcement.md) | Concept | 4 Table files: RatingMorph and Rating populated | 2026-05-07 |
 
 ## Best Practices
 
 - Usare Actions per rating logic (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
-- Implementare `casts()` method non `$casts` property (vedi [model-casts-phpstan](../../../../../docs/wiki/concepts/model-casts-phpstan.md))
-- Usare Eloquent polymorphic relations per rating (vedi [eloquent-best-practices](../../../../../docs/wiki/concepts/eloquent-best-practices.md))
+- Implementare `casts()` method non `$casts` property (vedi model-casts-phpstan _(riferimento non presente nel repository, verificato 2026-10-14)_)
+- Usare Eloquent polymorphic relations per rating (vedi eloquent-best-practices _(riferimento non presente nel repository, verificato 2026-10-14)_)
 
 ## Bad Practices
 
 - NON creare Service classes - usare Actions (vedi [actions-over-services-governance](https://github.com/laraxot/platform/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 - NON usare `dehydrated(false)` nei trait - blocca salvataggio (vedi Geo CoordinatePicker fix)
-- NON hardcodare rating scale - usare Enums (vedi [laravel-enums](../../../../../docs/wiki/concepts/laravel-enums.md))
+- NON hardcodare rating scale - usare Enums (vedi laravel-enums _(riferimento non presente nel repository, verificato 2026-10-14)_)
 
 ## False Friends
 

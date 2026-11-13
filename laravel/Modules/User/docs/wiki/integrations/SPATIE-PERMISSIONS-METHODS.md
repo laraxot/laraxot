@@ -5,6 +5,9 @@ type: integration
 tags: [integrations, modules, user]
 created: 2026-08-24
 updated: 2026-08-24
+qmd: "user module - spatie permission methods reference user"
+status: superseded
+superseded_by: spatie-permissions-methods.md
 ---
 
 # User Module - Spatie Permission Methods Reference

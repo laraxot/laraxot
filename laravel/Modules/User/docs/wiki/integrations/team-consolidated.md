@@ -1,13 +1,15 @@
 ---
-title: "team — Consolidated Documentation"
+title: "team: Consolidated Documentation"
 module: user
 type: integration
 tags: [integrations, modules, user]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
+qmd: "team   consolidated documentation user"
 ---
 
-# team — Consolidated Documentation
+# team: Consolidated Documentation
 
 Consolidated from **11** individual files.
 
@@ -29,7 +31,8 @@ Consolidated from **11** individual files.
 
 ## team-bindings-fix-3
 
-*Consolidated from: `team-bindings-fix-3.md`*
+*Consolidated from: `team-bindings-fix.md`*
+*Consolidated from: `team-bindings-fix-topic.md`*
 
 title: "Team Bindings Fix 3"
 type: concept
@@ -40,13 +43,16 @@ qmd: "team-bindings-fix-3 team bindings fix 3"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -60,10 +66,14 @@ related:
 ---
 module: theme
 topic: team_bindings_fix
-canonical: ../../../Themes/docs/shared-components/team-bindings-fix-3.md
+canonical: ../../../Themes/docs/shared-components/team-bindings-fix.md
 ---
 
-See canonical documentation: ../../../Themes/docs/shared-components/team-bindings-fix-3.md
+See canonical documentation: ../../../Themes/docs/shared-components/team-bindings-fix.md
+canonical: ../../../Themes/docs/shared-components/team-bindings-fix-topic.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/team-bindings-fix-topic.md
 ---
 
 ## team-bindings-fix
@@ -74,13 +84,16 @@ module: theme
 topic: team-bindings-fix
 canonical: ../../../Themes/docs/shared-components/team-bindings-fix.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -101,13 +114,16 @@ qmd: "team-bindings fix binding team models nel modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -402,10 +418,14 @@ $this->assertTrue($user->belongsToTeam($team));
 3. **Validation**: Validare che i modelli binding implementino le interfacce richieste
 
 ## Collegamenti
-- [HasTeams Trait](../app/Models/Traits/HasTeams.php)
-- [TeamUser Model](../app/Models/TeamUser.php)
-- [TeamInvitation Model](../app/Models/TeamInvitation.php)
-- [UserServiceProvider](../app/Providers/UserServiceProvider.php)
+- [HasTeams Trait](../../../app/Models/Traits/HasTeams.php)
+- [TeamUser Model](../../../app/Models/TeamUser.php)
+- [TeamInvitation Model](../../../app/Models/TeamInvitation.php)
+- [UserServiceProvider](../../../app/Providers/UserServiceProvider.php)
+- [HasTeams Trait](../../../app/Models/Traits/HasTeams.php)
+- [TeamUser Model](../../../app/Models/TeamUser.php)
+- [TeamInvitation Model](../../../app/Models/TeamInvitation.php)
+- [UserServiceProvider](../../../app/Providers/UserServiceProvider.php)
 - [Critical Errors Documentation](../../<nome progetto>/docs/critical-errors-resolved.md)
 
 ---
@@ -421,19 +441,28 @@ $this->assertTrue($user->belongsToTeam($team));
 
 module: theme
 topic: team-contract-usage-reasoning
-canonical: ../../../Themes/docs/shared-components/team-contract-usage-reasoning-2.md
+canonical: ../../../Themes/docs/shared-components/team-contract-usage-reasoning.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+canonical: ../../../Themes/docs/shared-components/team-contract-usage-reasoning.md
+related:
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
   - "./actions-path-convention.md"
 ---
 
-See canonical documentation: ../../../Themes/docs/shared-components/team-contract-usage-reasoning-2.md
+See canonical documentation: ../../../Themes/docs/shared-components/team-contract-usage-reasoning.md
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/team-contract-usage-reasoning.md
 
 ---
 
@@ -445,13 +474,16 @@ module: theme
 topic: team-user-composite-primary-key-fix
 canonical: ../../../Themes/docs/shared-components/team-user-composite-primary-key-fix.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -472,13 +504,16 @@ qmd: "team-user-composite-priy-key fix: team_user composite primary key implemen
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -718,10 +753,14 @@ $membership = Membership::where('team_id', $team->id)
 
 ## Collegamenti
 
-- [Migration team_user](../../database/migrations/2023_01_01_000004_create_team_user_table.php)
-- [Membership Model](../../app/Models/Membership.php)
-- [HasTeams Trait](../../app/Models/Traits/HasTeams.php)
-- [TeamsRelationManager](../../app/Filament/Resources/UserResource/RelationManagers/TeamsRelationManager.php)
+- [Migration team_user](../../../database/migrations/2023_01_01_000004_create_team_user_table.php)
+- [Membership Model](../../../app/Models/Membership.php)
+- [HasTeams Trait](../../../app/Models/Traits/HasTeams.php)
+- [TeamsRelationManager](../../../app/Filament/Resources/UserResource/RelationManagers/TeamsRelationManager.php)
+- [Migration team_user](../../../database/migrations/2023_01_01_000004_create_team_user_table.php)
+- [Membership Model](../../../app/Models/Membership.php)
+- [HasTeams Trait](../../../app/Models/Traits/HasTeams.php)
+- [TeamsRelationManager](../../../app/Filament/Resources/UserResource/RelationManagers/TeamsRelationManager.php)
 - [Documentazione Pivot Tables](../../../../docs/pivot-tables-best-practices.md)
 
 ## Note Tecniche
@@ -755,13 +794,16 @@ module: theme
 topic: team-user-permissions-fix
 canonical: ../../../Themes/docs/shared-components/team-user-permissions-fix.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -782,13 +824,16 @@ qmd: "team-user-permissions team user permissions column fix - laraxot philosoph
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -1070,10 +1115,14 @@ $this->assertTrue($user->belongsToTeam($team));
 3. **Validation**: Validare che i modelli binding implementino le interfacce richieste
 
 ## Collegamenti
-- [HasTeams Trait](../app/Models/Traits/HasTeams.php)
-- [TeamUser Model](../app/Models/TeamUser.php)
-- [TeamInvitation Model](../app/Models/TeamInvitation.php)
-- [UserServiceProvider](../app/Providers/UserServiceProvider.php)
+- [HasTeams Trait](../../../app/Models/Traits/HasTeams.php)
+- [TeamUser Model](../../../app/Models/TeamUser.php)
+- [TeamInvitation Model](../../../app/Models/TeamInvitation.php)
+- [UserServiceProvider](../../../app/Providers/UserServiceProvider.php)
+- [HasTeams Trait](../../../app/Models/Traits/HasTeams.php)
+- [TeamUser Model](../../../app/Models/TeamUser.php)
+- [TeamInvitation Model](../../../app/Models/TeamInvitation.php)
+- [UserServiceProvider](../../../app/Providers/UserServiceProvider.php)
 - [Critical Errors Documentation](../../SaluteOra/docs/critical-errors-resolved.md)
 
 ---
@@ -1121,13 +1170,16 @@ description:
 globs:
 alwaysApply: false
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 # Relazione utenti-team: tabella pivot `doctor_team`

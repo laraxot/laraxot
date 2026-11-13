@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_Nmp0WT
 # Indice documentazione — Modulo Activity
 
@@ -40,14 +39,6 @@ Indice organizzato per argomento. Copre tutti i file `.md` sotto `Modules/Activi
 (890 file al 2026-10-14, 755 al 2026-09-03, non 362 come indicato nel task originale — la cartella e'
 cresciuta molto oltre le stime precedenti, vedi `docs/task-consolidare-documentazione.md`
 e `docs/docs-health.md`).
-=======
-# Activity Module Documentation
-
-## Overview
-The Activity module provides comprehensive activity logging and tracking functionality for the Laraxot system. It records user actions, system events, and business operations to enable audit trails, analytics, and monitoring.
-**
-**Status**: Active Development
->>>>>>> 13cf1831 (.)
 
 ## Key Features
 - **Activity Logging**: Automatic logging of user and system activities
@@ -69,7 +60,6 @@ The module follows the Laraxot architecture principles:
 - `Activity` - Main activity model
 - `ActivityLog` - Detailed activity logging
 
-<<<<<<< HEAD
 - [architecture.md](ARCHITECTURE.md) — architettura generale del modulo.
 >>>>>>> .merge_file_gTqmlk
 - [architecture/structure.md](architecture/structure.md) — organizzazione interna dettagliata.
@@ -117,12 +107,6 @@ The module follows the Laraxot architecture principles:
 
 ## Filament / UI
 =======
-=======
-### Resources
-- `ActivityResource` - Filament resource for activity management
-- `ActivityLogResource` - Resource for detailed logs
-
->>>>>>> 13cf1831 (.)
 ### Services
 - `ActivityService` - Core activity management logic
 - `ActivityLogger` - Activity logging service
@@ -133,7 +117,6 @@ The module follows the Laraxot architecture principles:
 ```php
 // Log an activity
 activity()->log('User logged in');
-<<<<<<< HEAD
 >>>>>>> .merge_file_gTqmlk
 
 - [filament.md](filament.md) — nota minima (2 righe).
@@ -591,23 +574,11 @@ find Modules/Activity/docs/use_cases Modules/Activity/docs/roadmap -regextype po
 <<<<<<< .merge_file_Nmp0WT
 ### Puntatori a documentazione condivisa (Themes) — stub con frontmatter `canonical:`
 =======
-=======
-
-// Log activity with properties
-activity()
-    ->performedOn($user)
-    ->causedBy(auth()->user())
-    ->withProperties(['ip' => request()->ip()])
-    ->log('User updated profile');
-```
-
->>>>>>> 13cf1831 (.)
 ### Configuration
 The module can be configured through the `config/activity.php` file:
 - Log retention policies
 - Activity types to track
 - Database connection settings
-<<<<<<< HEAD
 >>>>>>> .merge_file_gTqmlk
 
 63 file sotto `docs/` sono stub minimi (6-7 righe) con frontmatter `module: theme` +
@@ -642,15 +613,6 @@ Non richiedono consolidamento: sono puntatori voluti, non copie accidentali.
 
 <<<<<<< HEAD
 =======
-=======
-
-## Best Practices
-1. **Selective Logging**: Only log meaningful activities to avoid performance issues
-2. **Property Management**: Store relevant context data with activities
-3. **Cleanup Policies**: Implement regular cleanup of old activity logs
-4. **Privacy Compliance**: Ensure activity logging complies with data protection regulations
-
->>>>>>> 13cf1831 (.)
 ## Related Modules
 - [User Module](../User/docs/README.md) - User authentication and management
 - [Notify Module](../Notify/docs/index.md) - Notification system
@@ -659,7 +621,6 @@ Non richiedono consolidamento: sono puntatori voluti, non copie accidentali.
 - [Notify Module](../notify/docs/index.md) - Notification system
 - [Xot Module](../xot/docs/index.md) - Core base classes
 
-<<<<<<< HEAD
 >>>>>>> .merge_file_gTqmlk
 Quattro copie parallele dello stesso lotto di file di test/placeholder, quasi tutte a
 0-3 righe (`archived-note.md`, `documentation*.md`, `2024-03-27.md`, `test*.md`,
@@ -696,19 +657,12 @@ cartelle di import grezzo sopra citate (49 file a 0 righe in tutto il modulo).
 <<<<<<< .merge_file_Nmp0WT
 - File indicizzati esplicitamente per argomento in questo documento: la quasi totalita' dei restanti file con contenuto reale; le eccezioni (import grezzo/placeholder vuoti) sono referenziate per gruppo con comando `find` riproducibile, non singolarmente.
 =======
-=======
->>>>>>> 13cf1831 (.)
 ## Troubleshooting
 Common issues and solutions:
 - Database performance with large activity logs
 - Missing activity entries
 - Configuration issues
-<<<<<<< HEAD
 >>>>>>> laraxot/dev
 =======
 - File indicizzati esplicitamente per argomento in questo documento: la quasi totalita' dei restanti file con contenuto reale; le eccezioni (import grezzo/placeholder vuoti) sono referenziate per gruppo con comando `find` riproducibile, non singolarmente.
 >>>>>>> .merge_file_gTqmlk
-=======
-
-- [Conflict Resolution](conflict-resolution.md)
->>>>>>> 13cf1831 (.)

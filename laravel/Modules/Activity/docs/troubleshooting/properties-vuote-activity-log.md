@@ -358,7 +358,6 @@ $record->update(['stabi' => 999]);
 
 ---
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_OtkPJg
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -373,8 +372,5 @@ $record->update(['stabi' => 999]);
 **=======
 **Ultimo aggiornamento**: 27 Ottobre 2025
 >>>>>>> .merge_file_jgsj15
-=======
-**
->>>>>>> 13cf1831 (.)
 **Severità**: Media (funziona ma properties vuote)
 **Soluzione**: Aggiungere `->logAll()` o `->logOnly()` in getActivitylogOptions()

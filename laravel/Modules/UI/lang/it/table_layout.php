@@ -3,6 +3,20 @@
 declare(strict_types=1);
 
 return [
+    'values' => [
+        'list' => [
+            'label' => 'Elenco',
+            'icon' => 'heroicon-o-list-bullet',
+            'color' => 'primary',
+            'description' => 'Elenco',
+        ],
+        'grid' => [
+            'label' => 'Griglia',
+            'icon' => 'heroicon-o-squares-2x2',
+            'color' => 'secondary',
+            'description' => 'Griglia',
+        ],
+    ],
     'actions' => [
         'toggle' => [
             'label' => 'Cambia Layout',
@@ -21,7 +35,7 @@ return [
         ],
         'label' => 'Table Layout',
         'sort' => 1,
-        'icon' => 'heroicon-o-collection',
+        'icon' => 'heroicon-o-rectangle-stack',
     ],
     'fields' => [
         'id' => [

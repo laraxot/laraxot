@@ -1,13 +1,17 @@
 ---
-title: "netfun — Consolidated Documentation"
+qmd: "netfun consolidated"
+issues: []
+discussions: []
+title: "netfun: Consolidated Documentation"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
-# netfun — Consolidated Documentation
+# netfun: Consolidated Documentation
 
 Consolidated from **20** individual files.
 
@@ -38,7 +42,7 @@ Consolidated from **20** individual files.
 
 ## netfun-action-errors-1
 
-*Consolidated from: `netfun-action-errors-1.md`*
+*Consolidated from: `netfun-action-errors.md`*
 
 title: "Errori in SendNetfunSMSAction e Correzioni"
 type: concept
@@ -49,12 +53,17 @@ qmd: "netfun-action-errors-1 errori in sendnetfunsmsaction e correzioni"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -457,7 +466,7 @@ Queste correzioni garantiscono che l'azione funzioni correttamente con la config
 
 ## netfun-action-updates-1
 
-*Consolidated from: `netfun-action-updates-1.md`*
+*Consolidated from: `netfun-action-updates.md`*
 
 
 ## Panoramica delle Modifiche
@@ -783,7 +792,7 @@ Questi miglioramenti garantiscono:
 
 ## netfun-action-updates-2
 
-*Consolidated from: `netfun-action-updates-2.md`*
+*Consolidated from: `netfun-action-updates.md`*
 
 title: "Aggiornamenti a SendNetfunSMSAction"
 type: concept
@@ -794,12 +803,17 @@ qmd: "netfun-action-updates-2 aggiornamenti a sendnetfunsmsaction"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -1652,7 +1666,7 @@ Queste correzioni garantiscono che l'azione funzioni correttamente con la config
 
 ## netfun-channel-1
 
-*Consolidated from: `netfun-channel-1.md`*
+*Consolidated from: `netfun-channel.md`*
 
 
 ## 1. Struttura Base
@@ -2343,7 +2357,7 @@ Log::info('SMS inviato', [
 
 ## netfun-channel-2
 
-*Consolidated from: `netfun-channel-2.md`*
+*Consolidated from: `netfun-channel.md`*
 
 title: "Implementazione Canale Netfun"
 type: concept
@@ -2354,12 +2368,17 @@ qmd: "netfun-channel-2 implementazione canale netfun"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -3746,7 +3765,7 @@ Log::info('SMS inviato', [
 
 ## netfun-config-requirements-1
 
-*Consolidated from: `netfun-config-requirements-1.md`*
+*Consolidated from: `netfun-config-requirements.md`*
 
 title: "Requisiti di Configurazione per Netfun SMS"
 type: concept
@@ -3757,12 +3776,17 @@ qmd: "netfun-config-requirements-1 requisiti di configurazione per netfun sms"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -3853,7 +3877,7 @@ NETFUN_API_URL=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 - [Struttura Standardizzata della Configurazione SMS](./standardized-sms-config-structure.md)
 - [Canale SMS Netfun](./sms-netfun-channel.md)
 - [Struttura Standardizzata della Configurazione SMS](./standardized-sms-config-structure.md)
-- [Canale SMS Netfun](./sms-netfun-channel-2.md)
+- [Canale SMS Netfun](./sms-netfun-channel.md)
 
 ## Supporto
 
@@ -3910,8 +3934,8 @@ NETFUN_ENDPOINT=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 - [Documentazione Completa Netfun Channel](./sms-netfun-channel.md)
 - [Esempi di Utilizzo Netfun](./netfun-examples.md)
-- [Documentazione Completa Netfun Channel](./sms-netfun-channel-2.md)
-- [Esempi di Utilizzo Netfun](./netfun-examples-2.md)
+- [Documentazione Completa Netfun Channel](./sms-netfun-channel.md)
+- [Esempi di Utilizzo Netfun](./netfun-examples.md)
 - [Risoluzione Conflitti Netfun](./netfunchannel-conflict-resolution.md)
 
 ---
@@ -3937,6 +3961,7 @@ Aggiungi la seguente sezione nel file `config/sms.php`:
 ## Introduzione
 
 Questo documento descrive i requisiti di configurazione per l'integrazione con il provider SMS Netfun nel modulo Notify, seguendo la [struttura standardizzata della configurazione SMS](./standardized_sms_config_structure.md).
+Questo documento descrive i requisiti di configurazione per l'integrazione con il provider SMS Netfun nel modulo Notify, seguendo la [struttura standardizzata della configurazione SMS](../../standardized_sms_config_structure.md).
 
 ## Struttura di Configurazione
 
@@ -4007,6 +4032,8 @@ NETFUN_API_URL=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 - [Struttura Standardizzata della Configurazione SMS](./standardized_sms_config_structure.md)
 - [Canale SMS Netfun](./sms_netfun_channel.md)
+- [Struttura Standardizzata della Configurazione SMS](../../standardized_sms_config_structure.md)
+- [Canale SMS Netfun](../../sms_netfun_channel.md)
 
 ## Supporto
 
@@ -4063,6 +4090,8 @@ NETFUN_ENDPOINT=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 - [Documentazione Completa Netfun Channel](./sms_netfun_channel.md)
 - [Esempi di Utilizzo Netfun](./netfun_examples.md)
+- [Documentazione Completa Netfun Channel](../../sms_netfun_channel.md)
+- [Esempi di Utilizzo Netfun](../../netfun_examples.md)
 - [Risoluzione Conflitti Netfun](./netfunchannel_conflict_resolution.md)
 
 ---
@@ -4073,7 +4102,7 @@ NETFUN_ENDPOINT=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 ## netfun-examples-1
 
-*Consolidated from: `netfun-examples-1.md`*
+*Consolidated from: `netfun-examples.md`*
 
 
 ## 1. Invio SMS OTP
@@ -5005,7 +5034,7 @@ class NetfunNotificationIntegrationTest extends TestCase
 
 ## netfun-examples-2
 
-*Consolidated from: `netfun-examples-2.md`*
+*Consolidated from: `netfun-examples.md`*
 
 title: "Netfun Examples"
 type: concept
@@ -5016,12 +5045,17 @@ qmd: "netfun-examples-2 netfun examples"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion-100.md"
-  - "./acronym-naming-conventions-1.md"
-  - "./acronym-naming-conventions-2.md"
+  - "./absolute-completion.md"
+  - "./acronym-naming-conventions.md"
+  - "./00-index-documentation.md"
+  - "./00-index-2.md"
+  - "./00-index.md"
+  - "./absolute-completion-completamento-assoluto.md"
+  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
 ---
@@ -7867,6 +7901,7 @@ Aggiungi la seguente sezione nel file `config/sms.php`:
 ## Introduzione
 
 Questo documento descrive i requisiti di configurazione per l'integrazione con il provider SMS Netfun nel modulo Notify, seguendo la [struttura standardizzata della configurazione SMS](./STANDARDIZED_SMS_CONFIG_STRUCTURE.md).
+Questo documento descrive i requisiti di configurazione per l'integrazione con il provider SMS Netfun nel modulo Notify, seguendo la [struttura standardizzata della configurazione SMS](../../standardized_sms_config_structure.md).
 
 ## Struttura di Configurazione
 
@@ -7937,6 +7972,8 @@ NETFUN_API_URL=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 - [Struttura Standardizzata della Configurazione SMS](./STANDARDIZED_SMS_CONFIG_STRUCTURE.md)
 - [Canale SMS Netfun](./SMS_NETFUN_CHANNEL.md)
+- [Struttura Standardizzata della Configurazione SMS](../../standardized_sms_config_structure.md)
+- [Canale SMS Netfun](../../sms_netfun_channel.md)
 
 ## Supporto
 
@@ -7993,6 +8030,8 @@ NETFUN_ENDPOINT=https://v2.smsviainternet.it/api/rest/v1/sms-batch.json
 
 - [Documentazione Completa Netfun Channel](./SMS_NETFUN_CHANNEL.md)
 - [Esempi di Utilizzo Netfun](./NETFUN_EXAMPLES.md)
+- [Documentazione Completa Netfun Channel](../../sms_netfun_channel.md)
+- [Esempi di Utilizzo Netfun](../../netfun_examples.md)
 - [Risoluzione Conflitti Netfun](./netfunchannel_conflict_resolution.md)
 
 ---

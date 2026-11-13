@@ -10,6 +10,14 @@ related:
   - ../../../../../docs/wiki/rules/ptv-leaf-dependency-direction.md
   - ./module-directory-structure-boundary.md
   - ./duplicate-method-bodies.md
+id: zero-docs-wiki-concepts-platform-leaf-dependency-and-theme
+slug: platform-leaf-dependency-and-theme
+description: "La gerarchia del progetto è: Xot Ptv (piattaforma) leaf (Progressioni, Indennita, Performance)."
+document_type: concept
+category: documentation
+status: active
+issues: []
+discussions: []
 ---
 
 # Direzione dipendenze e tema Zero
@@ -35,6 +43,6 @@ sicure operazioni come lo spostamento CriteriPrecedenza → Ptv (2026-07-22): ze
 
 ## Canon
 
-- [Legge completa](../../../../../docs/wiki/rules/ptv-leaf-dependency-direction.md)
-- [Pattern Base* (Ptv)](../../../../Modules/Ptv/docs/wiki/concepts/base-criteri-precedenza.md)
+- [Legge completa](../../../../../../docs/wiki/rules/ptv-leaf-dependency-direction.md)
+- [Pattern Base* (Ptv)](../../../../../Modules/Ptv/docs/wiki/concepts/base-criteri-precedenza.md)
 - [Confine struttura tema](./module-directory-structure-boundary.md)

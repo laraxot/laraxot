@@ -1,10 +1,15 @@
 ---
+qmd: "BASHSCRIPTS GITIGNORE WORKAROUND"
+issues: []
+discussions: []
 title: "CRITICAL: bashscripts/ in .gitignore"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: bashscripts_gitignore_workaround.md
 ---
 
 # 🚨 CRITICAL: bashscripts/ in .gitignore

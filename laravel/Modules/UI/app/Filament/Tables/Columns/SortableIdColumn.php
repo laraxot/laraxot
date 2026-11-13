@@ -4,7 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\UI\Filament\Tables\Columns;
 
+<<<<<<< .merge_file_PL8D0e
 use Filament\Tables\Columns\TextColumn;
+=======
+use Modules\Xot\Filament\Tables\Columns\XotBaseTextColumn;
+
+/*
+ * GateGuard: callers SortableIdColumnTest.php + 32+ Tables/*.php; no duplicate IdColumn;
+ * schema = row id scalar; user: "migliora qualità codice , fa tutto con bmad + second brain + filament blueprint"
+ */
+>>>>>>> .merge_file_MFZ49G
 
 /**
  * Colonna `id` standard del progetto: ordinabile, copiabile, nascosta di
@@ -28,7 +37,11 @@ use Filament\Tables\Columns\TextColumn;
  *
  * @see Modules/UI/docs/form-column-parity.md
  */
+<<<<<<< .merge_file_PL8D0e
 class SortableIdColumn extends TextColumn
+=======
+class SortableIdColumn extends XotBaseTextColumn
+>>>>>>> .merge_file_MFZ49G
 {
     protected const string DEFAULT_NAME = 'id';
 

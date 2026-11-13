@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +19,7 @@ use function Safe\json_encode;
 uses(TestCase::class);
 
 /**
- * @param array<string, mixed> $attributes
+ * @param  array<string, mixed>  $attributes
  */
 function pestHasTeamsCreateTestUser(array $attributes = []): User
 {
@@ -50,7 +49,7 @@ function pestHasTeamsBootstrapFixture(): array
 }
 
 /**
- * @param array<string, mixed> $pivot
+ * @param  array<string, mixed>  $pivot
  */
 function pestHasTeamsAttachMember(Team $team, User $user, array $pivot = []): void
 {
@@ -144,8 +143,10 @@ test('it returns all teams user owns or belongs to', function (): void {
     $allTeams = $user->allTeams();
 
     Assert::assertInstanceOf(Collection::class, $allTeams);
-    Assert::assertCount(1, $allTeams);
+    // allTeams() = team posseduti + team di cui si e' membri (membershipTeams su team_user).
+    Assert::assertCount(2, $allTeams);
     Assert::assertContains($personalTeam->id, $allTeams->pluck('id')->toArray());
+    Assert::assertContains($team->id, $allTeams->pluck('id')->toArray());
     Assert::assertTrue($user->teamUsers()->where('team_id', $team->id)->exists());
 });
 
@@ -233,7 +234,7 @@ test('it correctly manages team permissions', function (): void {
 
 test('it handles edge cases', function (): void {
     ['user' => $user] = pestHasTeamsBootstrapFixture();
-    $newUser = new User();
+    $newUser = new User;
 
     Assert::assertFalse($newUser->belongsToTeams());
 

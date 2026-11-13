@@ -3,17 +3,30 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< .merge_file_4EFQez
     'fields' => [
-        'id' => ['label' => 'id'],
-        'email' => ['label' => 'email'],
-        'token' => ['label' => 'token'],
-        'created_at' => ['label' => 'created_at'],
+        'id' => ['label' => 'ID'],
+        'email' => ['label' => 'E-mail'],
+        'token' => ['label' => 'Token'],
+        'created_at' => ['label' => 'Creato il'],
     ],
+=======
+>>>>>>> .merge_file_W03PtH
     'actions' => [
-        'create' => ['label' => 'create', 'icon' => 'create', 'tooltip' => 'create'],
-        'layout' => ['label' => 'layout', 'icon' => 'layout', 'tooltip' => 'layout'],
-        'delete' => ['label' => 'delete', 'icon' => 'delete', 'tooltip' => 'delete'],
-        'view' => ['label' => 'view', 'icon' => 'view', 'tooltip' => 'view'],
-        'edit' => ['label' => 'edit', 'icon' => 'edit', 'tooltip' => 'edit'],
+        'create' => [
+            'icon' => 'create',
+        ],
+        'layout' => [
+            'icon' => 'layout',
+        ],
+        'delete' => [
+            'icon' => 'delete',
+        ],
+        'view' => [
+            'icon' => 'view',
+        ],
+        'edit' => [
+            'icon' => 'edit',
+        ],
     ],
 ];

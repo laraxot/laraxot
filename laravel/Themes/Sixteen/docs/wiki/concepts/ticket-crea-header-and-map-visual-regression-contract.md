@@ -1,7 +1,15 @@
 ---
+title: "ticket crea header and map visual regression contract"
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ticket crea header and map visual regression contract"
+issues: []
+discussions: []
 name: segnalazione-crea-header-and-map-visual-regression-contract
 description: Visual regression guardrails for header and map on segnalazione-crea
 type: concept
+status: draft
 ---
 
 # Segnalazione Crea Header And Map Visual Regression Contract

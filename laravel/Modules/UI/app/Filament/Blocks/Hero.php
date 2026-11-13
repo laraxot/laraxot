@@ -24,8 +24,8 @@ final class Hero
             FileUpload::make('background')
                 // ->acceptedFileTypes(['application/pdf'])
                 // ->image()
-                ->directory('blocks')
-                ->preserveFilenames(),
+                // niente ->preserveFilenames(): conservare il nome scelto dal client su un disco servito dal web permette di caricare un .php eseguibile (audit DCP-181, B-1)
+                ->directory('blocks'),
             /*
              * RadioImage::make('view')
              * ->options($options),

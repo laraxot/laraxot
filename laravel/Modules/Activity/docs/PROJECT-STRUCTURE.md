@@ -18,7 +18,6 @@ tags: [structure, architecture, module]
 │   ├── concepts/                 # Topic/theme pages
 │   ├── entities/                 # Organization/person pages
 │   ├── rules/                    # ⚠️ 151+ regole progettuali
-<<<<<<< HEAD
 │   │   ├── 00-index.md          # Indice regole
 │   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
 │   │   └── *.md                 # Regole specifiche modulo
@@ -30,30 +29,13 @@ tags: [structure, architecture, module]
 │   │   └── *.md
 │   ├── memories/                 # Memorie progettuali
 │   │   ├── index.md
-=======
-│   │   ├── 00-INDEX.md          # Indice regole
-│   │   ├── 00-TRIGGER_MAP.md    # Trigger map (link a globale)
-│   │   └── *.md                 # Regole specifiche modulo
-│   ├── skills/                   # Skill progettuali
-│   │   ├── INDEX.md
-│   │   └── *.md
-│   ├── commands/                 # Comandi progettuali
-│   │   ├── INDEX.md
-│   │   └── *.md
-│   ├── memories/                 # Memorie progettuali
-│   │   ├── INDEX.md
->>>>>>> 13cf1831 (.)
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
 ├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
-<<<<<<< HEAD
 ├── architecture.md               # (opzionale) Architettura modulo
-=======
-├── ARCHITECTURE.md               # (opzionale) Architettura modulo
->>>>>>> 13cf1831 (.)
 └── README.md                     # (opzionale) Overview modulo
 ```
 
@@ -125,13 +107,8 @@ graph TD
 mkdir -p docs/wiki/{rules,skills,commands,memories,concepts,entities,decisions,troubleshooting}
 
 # 2. Crea INDEX files
-<<<<<<< HEAD
 cp docs/wiki/rules/index.md docs/wiki/rules/
 cp docs/wiki/skills/index.md docs/wiki/skills/
-=======
-cp docs/wiki/rules/INDEX.md docs/wiki/rules/
-cp docs/wiki/skills/INDEX.md docs/wiki/skills/
->>>>>>> 13cf1831 (.)
 # ... etc
 
 # 3. Aggiungi a QMD collection (opzionale, già incluso global)

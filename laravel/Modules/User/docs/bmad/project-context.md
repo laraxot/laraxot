@@ -1,5 +1,9 @@
 ---
+<<<<<<< .merge_file_rlgVBz
 title: "Project context — SuperAdmin widget"
+=======
+title: "Project context: SuperAdmin widget"
+>>>>>>> .merge_file_Eg7FOg
 type: constitution
 module: User
 status: approved
@@ -9,9 +13,18 @@ related:
   - ./prd.md
   - ./architecture.md
   - ./tech-spec.md
+<<<<<<< .merge_file_rlgVBz
 ---
 
 # Project context — SuperAdmin nel user menu
+=======
+updated: 2026-10-07
+tags: [docs, user, bmad]
+qmd: "project context   superadmin nel user menu user"
+---
+
+# Project context: SuperAdmin nel user menu
+>>>>>>> .merge_file_Eg7FOg
 
 Costituzione di **questo slice**, non del modulo User intero. Non contraddice la religione User (Actions, PHPStan max, Spatie ruoli, XotBase*).
 

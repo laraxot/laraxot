@@ -9,7 +9,6 @@ enum WorkHourStatusEnum: string
     case PENDING = 'pending';
     case APPROVED = 'approved';
     case REJECTED = 'rejected';
-    case CANCELLED = 'cancelled';
 
     /**
      * Get all enum values as array.
@@ -30,7 +29,6 @@ enum WorkHourStatusEnum: string
             self::PENDING => 'Pending',
             self::APPROVED => 'Approved',
             self::REJECTED => 'Rejected',
-            self::CANCELLED => 'Cancelled',
         };
     }
 
@@ -40,7 +38,6 @@ enum WorkHourStatusEnum: string
             self::PENDING => 'warning',
             self::APPROVED => 'success',
             self::REJECTED => 'danger',
-            self::CANCELLED => 'gray',
         };
     }
 }

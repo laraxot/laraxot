@@ -1,10 +1,14 @@
 ---
+qmd: "dynamic class resolution"
+issues: []
+discussions: []
 title: "Risoluzione Dinamica delle Classi nei Factory Pattern"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Risoluzione Dinamica delle Classi nei Factory Pattern

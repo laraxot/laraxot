@@ -1,10 +1,14 @@
 ---
+qmd: "sessione fix completata"
+issues: []
+discussions: []
 title: "Sessione Completata - Fix Homepage Bootstrap Italia"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # ✅ Sessione Completata - Fix Homepage Bootstrap Italia

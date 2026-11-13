@@ -20,16 +20,17 @@ use Modules\Xot\Contracts\UserContract;
 /**
  * Modules\User\Contracts\TeamContract.
  *
- * @property int               $id
- * @property int               $user_id
- * @property string            $name
- * @property int               $personal_team
- * @property Carbon|null       $created_at
- * @property Carbon|null       $updated_at
- * @property string            $role
+ * @property int $id
+ * @property int $user_id
+ * @property string $name
+ * @property bool $personal_team
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string $role
  * @property UserContract|null $owner
- * @property int|null          $team_invitations_count
- * @property int|null          $users_count
+ * @property int|null $team_invitations_count
+ * @property int|null $users_count
+ * @property Collection<int, Model&UserContract> $users
  *
  * @method static Builder<Model> newModelQuery()
  * @method static Builder<Model> newQuery()

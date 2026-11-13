@@ -1,5 +1,9 @@
 ---
-title: "Architecture — Select + Textarea (value/note) con altro"
+tags: [documentation]
+created: 2026-09-26
+issues: []
+discussions: []
+title: "Architecture: Select + Textarea (value/note) con altro"
 type: architecture
 module: Rating
 status: decided
@@ -14,11 +18,11 @@ related:
   - ../stories/5.141-has-rating-values-filter-note.story.md
 ---
 
-# Architecture — Select + Textarea su rating con figli
+# Architecture: Select + Textarea su rating con figli
 
 ## Contratto di business (canon utente)
 
-Fonte primaria verificabile: [`../../prompts/01.md`](../../prompts/01.md) —
+Fonte primaria verificabile: [`../../prompts/01.md`](../../prompts/01.md) -
 *«chiave "" o null»*; raffinato: **option `'other'` ≠ placeholder `null`**.
 
 Quando un criterio (`rating`) **ha figli**:
@@ -28,7 +32,7 @@ Quando un criterio (`rating`) **ha figli**:
 3. Textarea → `rating_morph.note`.
 4. Textarea **required** solo se Select = option «altro» (`=== 'other'` via `selectIsOther`).
 5. «altro» **non è un figlio**; lo aggiunge il trait.
-6. Chiave option = **`'other'`** (`OTHER_OPTION_KEY`, stringa non vuota — NON `''`). Placeholder Select →
+6. Chiave option = **`'other'`** (`OTHER_OPTION_KEY`, stringa non vuota: NON `''`). Placeholder Select →
    stato **`null`**. Label option =
    `trans('rating::fields.altro')` (non `->label()` sul componente).
 
@@ -49,7 +53,7 @@ Quando un criterio (`rating`) **ha figli**:
 | Collisione figli | Chiavi reali = id interi → nessuna collisione con `'other'` | Id interi → nessuna collisione, ma permane il bug runtime |
 | Rischio `blank()` | Assente: `'other'` è non-blank, resta distinguibile | Fatale: `blank('')` true |
 
-**Decisione:** `required` note = `Get(select) === 'other'` — **mai** `blank()`.
+**Decisione:** `required` note = `Get(select) === 'other'`: **mai** `blank()`.
 
 ## UI
 

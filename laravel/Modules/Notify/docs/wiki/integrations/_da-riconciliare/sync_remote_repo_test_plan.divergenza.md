@@ -1,10 +1,15 @@
 ---
+qmd: "sync remote repo test plan.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: SYNC_REMOTE_REPO_TEST_PLAN.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: sync-remote-repo-test-plan.divergenza.md
 ---
 
 # Divergenza: `SYNC_REMOTE_REPO_TEST_PLAN.md`

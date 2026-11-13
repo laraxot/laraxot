@@ -1,3 +1,15 @@
+---
+title: "page component conflict"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page component conflict"
+issues: []
+discussions: []
+status: draft
+---
+
 # Page Component — conflitto namespace (storico)
 
 > **Stato 2026-06-04**: risolto. `<x-page>` → **solo** `Modules\Cms\View\Components\Page`. Rimosso `Themes\Sixteen\View\Components\Page` (duplicato senza spread `$data`). Regola: [wiki/concepts/x-page-data-bag-only.md](wiki/concepts/x-page-data-bag-only.md).

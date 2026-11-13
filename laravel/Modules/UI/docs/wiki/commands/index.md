@@ -7,6 +7,11 @@ tags: [commands, index, on-demand]
 related:
   - ../rules/00-TRIGGER_MAP.md
   - ../rules/on-demand-pattern.md
+<<<<<<< .merge_file_6cz2Qd
+=======
+status: draft
+qmd: "commands index ui"
+>>>>>>> .merge_file_7XlS2O
 ---
 
 # Commands Index

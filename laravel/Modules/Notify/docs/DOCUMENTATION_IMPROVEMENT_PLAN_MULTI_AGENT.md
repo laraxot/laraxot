@@ -1,10 +1,14 @@
 ---
+qmd: "DOCUMENTATION IMPROVEMENT PLAN MULTI AGENT"
+issues: []
+discussions: []
 title: "Documentation Improvement Plan - Multi-Agent Edition"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Documentation Improvement Plan - Multi-Agent Edition

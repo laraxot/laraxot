@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Gestione del Tema"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, theme]
+qmd: "Gestione del Tema"
+---
+>>>>>>> laraxot/dev
 # Gestione del Tema
 
 ## Principi Fondamentali
@@ -77,11 +90,19 @@ class ThemeConfigurator
     {
         $colors = $metatag->getThemeColors();
         $settings = $metatag->getThemeSettings();
+<<<<<<< HEAD
 
         $this->applyColors($colors);
         $this->applySettings($settings);
     }
 
+=======
+        
+        $this->applyColors($colors);
+        $this->applySettings($settings);
+    }
+    
+>>>>>>> laraxot/dev
     private function applyColors(array $colors): void
     {
         foreach ($colors as $type => $color) {
@@ -104,7 +125,11 @@ class ColorValidator
         }
         return true;
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     private function isValidColor(string $color): bool
     {
         return preg_match('/^#[a-f0-9]{6}$/i', $color) === 1;
@@ -123,7 +148,11 @@ class DarkModeManager
             $colors
         );
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     private function adjustColorForDarkMode(string $color): string
     {
         // Logica per adattare i colori alla dark mode
@@ -158,4 +187,8 @@ class DarkModeManager
 - [Brand Philosophy](../philosophy/brand_philosophy.md)
 - [Semantic Methods](../philosophy/semantic_methods.md)
 - [Best Practices](../best-practices.md)
+<<<<<<< HEAD
 - [Testing Guide](../testing/theme_testing.md)
+=======
+- [Testing Guide](../testing/theme_testing.md) 
+>>>>>>> laraxot/dev

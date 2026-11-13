@@ -1,0 +1,277 @@
+/* Shared Design Comuni chrome contract.
+   The slim bar owns the language and account controls; it must never become
+   transparent or let its controls escape above the viewport. */
+body:has(.page-content[data-dc]) .it-header-wrapper {
+    position: relative !important;
+    z-index: 1000 !important;
+    --dc-header-slim: #00402b;
+    --dc-header-primary: #007a52;
+}
+
+body:has(.page-content[data-dc]) .it-header-slim-wrapper {
+    display: flex !important;
+    min-height: 48px !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: var(--dc-header-slim) !important;
+    background-color: var(--dc-header-slim) !important;
+    color: #fff !important;
+}
+
+/* Keep the final declaration specific enough to beat the legacy mobile reset. */
+html body:has(.page-content[data-dc]) .it-header-wrapper > .it-header-slim-wrapper {
+    background-color: var(--dc-header-slim) !important;
+}
+
+body:has(.page-content[data-dc]) .it-header-slim-wrapper-content {
+    display: flex !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    overflow: visible !important;
+}
+
+body:has(.page-content[data-dc]) .it-header-slim-right-zone {
+    align-self: center !important;
+    display: flex !important;
+    min-height: 48px !important;
+    align-items: center !important;
+}
+
+body:has(.page-content[data-dc]) .it-header-slim-right-zone > * {
+    align-self: center !important;
+}
+
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .nav-link.dropdown-toggle {
+    min-height: 48px !important;
+    align-items: center !important;
+    background-color: var(--dc-header-slim) !important;
+}
+
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .nav-link.dropdown-toggle:hover,
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .nav-link.dropdown-toggle:focus-visible {
+    background-color: #005238 !important;
+}
+
+/* Accedi su slim = btn-primary #007a52 + testo bianco (come fixcity.eu).
+   Il gioco cromatico è slim #00402b ≠ center/nav #007a52; Accedi resta
+   il CTA primario sulla fascia scura, non un pill bianco. */
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .btn-icon.btn-full {
+    min-height: 48px !important;
+    margin: 0 !important;
+    background-color: var(--dc-header-primary) !important;
+    border-color: var(--dc-header-primary) !important;
+    color: #fff !important;
+}
+
+/* D35: l'avatar e' quello del riferimento Design Comuni: cerchio bianco 24px (`.rounded-icon`) con l'icona primaria (`icon-primary`, 18px)
+   sul verde del pulsante. L'evidenza viene dal contrasto bianco su verde, non da misure inventate (niente bordo, niente 28px). */
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .btn-icon.btn-full .rounded-icon {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    min-width: 1.5rem !important;
+    border-radius: 50% !important;
+    background-color: #fff !important;
+}
+
+/* Lo spazio tra cerchio ed etichetta e' il `margin-left: .5em` di Bootstrap Italia (8px, come nel riferimento): niente `gap` in piu'. */
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .btn-icon.btn-full.personal-area-login-cta {
+    gap: 0 !important;
+}
+
+/* L'icona sta nel cerchio bianco: primaria come nel riferimento Design Comuni (`icon-primary`). Con il fill bianco della
+   regola qui sotto spariva (bianco su bianco). Piu' specifica di quella, quindi vince. */
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .btn-icon.btn-full .rounded-icon .icon {
+    width: 1.125rem !important;
+    height: 1.125rem !important;
+    color: var(--dc-header-primary) !important;
+    fill: var(--dc-header-primary) !important;
+}
+
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .btn-icon.btn-full .icon,
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .btn-icon.btn-full .icon-primary {
+    color: #fff !important;
+    fill: #fff !important;
+}
+
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .btn-icon.btn-full > span:not(.rounded-icon),
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .btn-icon.btn-full > span.d-none.d-lg-block {
+    color: #fff !important;
+    font-size: 1rem !important;
+}
+
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .btn-icon.btn-full:hover,
+body:has(.page-content[data-dc]) .it-header-slim-wrapper .btn-icon.btn-full:focus-visible {
+    /* #006342 = hover del riferimento (misurato) e di design-comuni/overrides.css: testo bianco 7,3:1. Il vecchio #00966a dava 3,8:1 (< 4,5). */
+    background-color: #006342 !important;
+    border-color: #006342 !important;
+    color: #fff !important;
+}
+
+/* Center = brand band. Navbar desktop = stessa tinta. Su mobile lo slot hamburger
+   NON deve ereditare questo verde: altrimenti translateY/-22px lo dipinge sulla slim. */
+body:has(.page-content[data-dc]) .it-header-center-wrapper {
+    background: var(--dc-header-primary) !important;
+}
+
+@media (min-width: 992px) {
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper {
+        background: var(--dc-header-primary) !important;
+    }
+}
+
+/*
+ * Mobile hamburger slot (≤991.98px).
+ * Callers: FO data-dc. Perché: 08-layout translateY(-50%) + BI margin-top:-22px +
+ * mobile-header-fix background:#fff spingono .it-header-navbar-wrapper nella slim
+ * e coprono ITA / Accedi (Design Comuni + WCAG 2.4.7 / 1.4.3). Contratto: slot
+ * trasparente 3.5rem nel center, transform/margin azzerati; slim intatta.
+ */
+@media (max-width: 991.98px) {
+    /* The reference stylesheet contains 330/360px left offsets for a 375px
+       sample. They are not responsive: at 320px the close button leaves the
+       viewport. Keep the action anchored to the safe right edge instead. */
+    body:has(.it-header-wrapper) .navbar-collapsable .close-div {
+        right: max(2px, env(safe-area-inset-right)) !important;
+        left: auto !important;
+    }
+
+    body:has(.page-content[data-dc]) .it-nav-wrapper {
+        position: relative !important;
+        display: block !important;
+    }
+
+    body:has(.page-content[data-dc]) .it-header-center-wrapper {
+        position: static !important;
+        z-index: auto !important;
+        pointer-events: auto !important;
+    }
+
+    body:has(.page-content[data-dc]) .it-header-center-content-wrapper {
+        padding-left: 3.5rem !important;
+    }
+
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 3.5rem !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        margin-top: 0 !important;
+        transform: none !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-bottom: none !important;
+        z-index: 30 !important;
+        pointer-events: none !important;
+    }
+
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar {
+        height: 100% !important;
+        min-height: 0 !important;
+        background: transparent !important;
+        padding: 0 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        pointer-events: none !important;
+    }
+
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .custom-navbar-toggler {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        pointer-events: auto !important;
+        margin: 0 auto !important;
+        color: #fff !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar-collapsable {
+        pointer-events: auto !important;
+    }
+}
+
+/*
+ * Callers: FO page-content[data-dc] con .cmp-breadcrumbs (tickets, blog, events, FAQ).
+ * Import: app.css → 22-header-shell.css (chrome FO; non soggetto a isolate-legacy).
+ * Schema: nessuno (solo CSS). Nessun altro file serve: ticket-parity mt:0 è isolate.
+ * Istruzione: «hai fatto un errore nell'header in alto adesso c'e' una fascia bianca».
+ * Perché: BI components.css sotto data-dc forza margin-top 1.5rem / 2rem (md+) →
+ * striscia bianca sotto il chrome verde. Contratto: breadcrumb aderente al header.
+ */
+/* mt:0 come ticket-parity pre-isolate; respiro tipografico resta su heading/hero. */
+body:has(.page-content[data-dc]) .cmp-breadcrumbs {
+    margin-top: 0;
+}
+
+/* Evita che un figlio trasparente di .it-nav-wrapper lasci vedere il bianco body
+   tra center e navbar (subpixel / stacking). */
+body:has(.page-content[data-dc]) .it-nav-wrapper {
+    background-color: var(--dc-header-primary);
+}
+
+/* DCP-288 inizio: menu mobile, controlli mappa, skip link. Tre difetti misurati su :8091 il 2026-10-26 (story dcp-288). */
+
+/* FO-1-06: sotto 992 px il pannello del menu era trasparente. Due regole legacy con !important ("menu-wrapper trasparente su desktop":
+   components/header-footer-colors.css e app/05-homepage-parity-overrides.css) valgono a ogni larghezza e battono lo sfondo bianco del
+   riferimento; le stesse regole rendono bianchi voci e logo, che su fondo bianco sparivano. Da 992 px in su l'intestazione verde non cambia. */
+@media (max-width: 991.98px) {
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar-collapsable .menu-wrapper {
+        background: #fff !important;
+    }
+
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar-collapsable .menu-wrapper .navbar-nav,
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar-collapsable .menu-wrapper .nav-item {
+        background: transparent !important;
+    }
+
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar-collapsable .menu-wrapper a,
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar-collapsable .menu-wrapper .nav-link,
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar-collapsable .menu-wrapper .nav-link span,
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar-collapsable .menu-wrapper .it-brand-title {
+        color: #007a52 !important;
+    }
+
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar-collapsable .menu-wrapper .logo-hamburger svg,
+    body:has(.page-content[data-dc]) .it-header-navbar-wrapper .navbar-collapsable .menu-wrapper .logo-hamburger image {
+        filter: none !important;
+    }
+}
+
+/* FO-1-07 e FO-1-06: i pulsanti della mappa (z-index 3001 e 3002 nel CSS del modulo Geo) stavano sopra la modale di ricerca (1055) e sopra
+   il menu mobile (1050) perche' .map-container non crea un contesto di impilamento: Geo gli da' `z-index: var(--mp-z-index)`, ma la variabile
+   e' definita su :host e nel DOM leggero (map-lit senza shadow root) non esiste, quindi lo z-index resta auto. Con `isolation` quei valori
+   restano dentro la mappa. A schermo intero la mappa ha il suo z-index (999999) e non cambia. Il selettore con `body:has(.page-content[data-dc])`
+   serve: postcss/isolate-legacy-important.cjs spegne dentro l'ambito Design Comuni ogni regola che non lo nomina. */
+body:has(.page-content[data-dc]) map-lit .map-container,
+body:has(.page-content[data-dc]) coordinate-picker-lit .map-container,
+map-lit .map-container,
+coordinate-picker-lit .map-container {
+    isolation: isolate;
+}
+
+/* FO-1-22: lo skip link a fuoco era in flusso (sposta la pagina di 24 px), verde su trasparente e con il contorno bianco su fondo bianco.
+   Da fuoco diventa un pulsante in alto a sinistra sopra a tutto, senza spostare il contenuto. Il secondo selettore copre le pagine fuori
+   dall'ambito Design Comuni (la pagina 429 ha il guscio normale: li' lo skip link restava fuori schermo, top -96 px anche a fuoco). */
+body:has(.page-content[data-dc]) .skiplink a.visually-hidden-focusable:focus,
+.skiplink a.visually-hidden-focusable:focus {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 3100;
+    border: 2px solid #007a52;
+    border-radius: 4px;
+    font-weight: 600;
+    /* !important: nel riferimento `:focus:not(.focus--mouse)` mette un contorno bianco 3px con !important (invisibile su fondo bianco) e fuori dal
+       riferimento (pagina 429) le regole legacy di `a` e di `.visually-hidden-focusable` azzerano padding e sfondo e colorano il testo, tutte con !important. */
+    padding: 8px 16px !important;
+    background: #fff !important;
+    color: #005a3c !important;
+    outline: 3px solid #ffbf47 !important;
+    outline-offset: 2px;
+}
+/* DCP-288 fine */

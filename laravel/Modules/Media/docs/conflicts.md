@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Risoluzione Conflitti - Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "conflicts"
 related:
   - "./webm.md"
+status: draft
 ---
 # Risoluzione Conflitti - Media
 

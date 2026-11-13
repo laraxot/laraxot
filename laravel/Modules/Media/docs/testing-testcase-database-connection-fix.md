@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Fix: Media TestCase - Database Connection Configuration"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "testing testcase database connection fix"
 related:
   - "./webm.md"
+status: draft
 ---
 # Fix: Media TestCase - Database Connection Configuration
 
@@ -91,8 +94,8 @@ protected function setUp(): void
 ## 🔗 Collegamenti
 
 - [Testing Rules](testing-rules.md)
-- [Activity TestCase Fix](../../activity/docs/testing-testcase-database-connection-fix.md)
-- [Geo TestCase Fix](../../geo/docs/testing-testcase-database-connection-fix.md)
+- [Activity TestCase Fix](../../Activity/docs/testing-testcase-database-connection-fix.md)
+- [Geo TestCase Fix](../../Geo/docs/testing-testcase-database-connection-fix.md)
 
 ---
 

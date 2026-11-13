@@ -1,10 +1,15 @@
 ---
+qmd: "MODULE DOCS INDEX"
+issues: []
+discussions: []
 title: "Master Documentation Index - Notify Fila5"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: module-docs-index.md
 ---
 
 # Master Documentation Index - Notify Fila5
@@ -79,8 +84,8 @@ Notify Fila5 Documentation
 │
 ├── 📁 Themes (laravel/Themes/*/docs/)
 │   ├── Sixteen - 325+ files
-│   │   ├── DESIGN_COMUNI_TEAM_GUIDE.md - Complete team guide for replication
-│   │   ├── DESIGN_COMUNI_PROJECT_SUMMARY.md - Project summary and status
+│   │   ├── design-comuni-team-guide.md - Complete team guide for replication
+│   │   ├── design-comuni-project-summary.md - Project summary and status
 │   │   ├── COMPONENT_CATALOG.md - All 47 components (TO BE CREATED)
 │   │   ├── BLOCK_TYPES.md - All block types (TO BE CREATED)
 │   │   ├── JSON_STRUCTURE.md - JSON schema (TO BE CREATED)
@@ -198,10 +203,10 @@ Notify Fila5 Documentation
 
 **Key Documents:**
 - [Layout Architecture](Themes/Sixteen/docs/layout-architecture.md)
-- [LAYOUT_ARCHITECTURE_MAP.md](Themes/Sixteen/docs/LAYOUT_ARCHITECTURE_MAP.md)
-- [LAYOUT_FIX_COMPLETE_BMAD.md](Themes/Sixteen/docs/LAYOUT_FIX_COMPLETE_BMAD.md)
+- [LAYOUT_ARCHITECTURE_MAP.md](Themes/Sixteen/docs/layout-architecture-map.md)
+- [LAYOUT_FIX_COMPLETE_BMAD.md](Themes/Sixteen/docs/layout-fix-complete-bmad.md)
 - [VITE_MANIFEST_FIX_COMPLETE.md](Themes/Sixteen/docs/VITE_MANIFEST_FIX_COMPLETE.md)
-- [PHPSTAN_LAYOUT_FIX_COMPLETE.md](Themes/Sixteen/docs/PHPSTAN_LAYOUT_FIX_COMPLETE.md)
+- [PHPSTAN_LAYOUT_FIX_COMPLETE.md](Themes/Sixteen/docs/phpstan-layout-fix-complete.md)
 
 **Categories:**
 - Architecture (10 files)
@@ -285,7 +290,7 @@ Notify Fila5 Documentation
 - → [PRD](_bmad-output/design-comuni-prd.md) - Requirements
 - → [Architecture](_bmad-output/design-comuni-architecture.md) - System design
 - → [UI Spec](_bmad-output/design-comuni-ui-spec.md) - Component specs
-- → [Replication Master Plan](laravel/Themes/Sixteen/docs/design-comuni/REPLICATION_MASTER_PLAN.md) - Technical guide
+- → [Replication Master Plan](laravel/Themes/Sixteen/docs/design-comuni/replication-master-plan.md) - Technical guide
 - → [Theme Docs Index](laravel/Themes/Sixteen/docs/00-index.md) - Theme documentation
 
 ---
@@ -330,7 +335,7 @@ Modules/
 Themes/Sixteen/docs/
 ├── README.md (START HERE)
 ├── layout-architecture.md
-├── LAYOUT_ARCHITECTURE_MAP.md
+├── layout-architecture-map.md
 ├── components/
 ├── guides/
 └── ...

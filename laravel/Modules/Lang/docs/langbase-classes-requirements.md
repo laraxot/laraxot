@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "LangBase Classes - Requisiti e Pattern"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "lang service helper text fix"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # LangBase Classes - Requisiti e Pattern
 
@@ -200,6 +203,8 @@ LogicException: Plugin [spatie-translatable] is not registered for panel [xxx::a
 **Documentazione**: [Notify - Plugin Not Registered](../../Notify/docs/errori/plugin-spatie-translatable-not-registered.md)
 **Documentazione**: [Notify - Plugin Not Registered](../../notify/docs/errori/plugin-spatie-translatable-not-registered.md)
 **Documentazione**: [Notify - Plugin Not Registered](../../notify/docs/errori/plugin-spatie-translatable-not-registered.md)
+**Documentazione**: [Notify - Plugin Not Registered](../../Notify/docs/errori/plugin-spatie-translatable-not-registered.md)
+**Documentazione**: [Notify - Plugin Not Registered](../../Notify/docs/errori/plugin-spatie-translatable-not-registered.md)
 
 ### Errore: Undefined Method getTranslation()
 
@@ -338,6 +343,9 @@ $value = $model->field;  // Ritorna traduzione 'en' se esiste, altrimenti fallba
 - [Notify Integration](../../notify/docs/spatie-translatable-integration.md)
 - [Xot Filament Best Practices](../../xot/docs/filament-best-practices.md)
 - [Notify Integration](../../notify/docs/spatie-translatable-integration.md)
+- [Notify Integration](../../Notify/docs/spatie-translatable-integration.md)
+- [Xot Filament Best Practices](../../xot/docs/filament-best-practices.md)
+- [Notify Integration](../../Notify/docs/spatie-translatable-integration.md)
 - [Xot Filament Best Practices](../../xot/docs/filament-best-practices.md)
 
 ---

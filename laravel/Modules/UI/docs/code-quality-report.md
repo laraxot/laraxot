@@ -1,11 +1,11 @@
-# Code quality — modulo UI
+# Code quality: modulo UI
 
 Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (ruleset codesize+unusedcode), grep mirati (TODO/FIXME/@deprecated, dd()/dump(), facade in app/Actions, extends Filament diretto), rapporto file test/app.
 
 ## Numeri
 
 - File in `app/`: 108
-- File di test: 37 — rapporto test/app: 34%
+- File di test: 37: rapporto test/app: 34%
 - File con TODO/FIXME/@deprecated: 2
 - PHPStan: 0 errori (livello max, sweep repo-wide 2026-07-16/17)
 - Violazioni PHPMD (codesize+unusedcode): 37
@@ -57,8 +57,9 @@ Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (rule
 | Notify | - | - | 61% | 21 |
 | Rating | - | - | 7% | 0 |
 | Seo | - | - | 100% | 0 |
-<<<<<<< HEAD
 | TechPlanner | - | - | 2% | 0 |
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 <<<<<<< .merge_file_HXxlsw
 =======
@@ -103,6 +104,7 @@ Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (rule
 >>>>>>> .merge_file_dlurv4
 =======
 >>>>>>> 804451c (Lint)
+>>>>>>> f5ffd8b4 (.)
 | Tenant | - | - | 75% | 6 |
 | UI | - | - | 34% | 4 |
 | User | - | - | 23% | 4 |
@@ -110,11 +112,11 @@ Report locale (2026-07-17). Metodo: `phpstan analyse` livello max, `phpmd` (rule
 
 
 
-## Come migliorare — modifiche effettive da fare
+## Come migliorare: modifiche effettive da fare
 
 ### 1. Rimuovere le Facade da `app/Actions/`
 
-Regola del progetto (skill `queueable-action-trait`): nelle Action **niente Facade**, le dipendenze si iniettano nel costruttore — il container le risolve automaticamente quando l'Action viene chiamata con `app(XxxAction::class)->execute(...)`.
+Regola del progetto (skill `queueable-action-trait`): nelle Action **niente Facade**, le dipendenze si iniettano nel costruttore: il container le risolve automaticamente quando l'Action viene chiamata con `app(XxxAction::class)->execute(...)`.
 
 Facade usate in questo modulo e relativa dipendenza da iniettare al loro posto:
 
@@ -125,7 +127,7 @@ Facade usate in questo modulo e relativa dipendenza da iniettare al loro posto:
 | `File::` | `Illuminate\Filesystem\Filesystem` |
 | `Log::` | `Psr\Log\LoggerInterface` |
 
-**Esempio concreto** — `Modules/UI/app/Actions/GetUserDataAction.php`:
+**Esempio concreto**: `Modules/UI/app/Actions/GetUserDataAction.php`:
 
 ```php
 // PRIMA
@@ -161,7 +163,7 @@ class XxxAction
 }
 ```
 
-Vantaggio pratico: l'Action diventa testabile senza `Http::fake()` globale — nei test Pest si passa un mock/fake del client via `app()->instance(HttpFactory::class, $fakeClient)` o via binding nel service provider di test.
+Vantaggio pratico: l'Action diventa testabile senza `Http::fake()` globale: nei test Pest si passa un mock/fake del client via `app()->instance(HttpFactory::class, $fakeClient)` o via binding nel service provider di test.
 
 File da convertire in questo modulo (elenco sopra in "Numeri"), uno alla volta, con `php -l` + PHPStan L max sul singolo file dopo ogni modifica.
 
@@ -181,7 +183,7 @@ Metodi/classi oltre soglia (10 per metodo, 50 per classe) in questo modulo:
 Tecnica di refactoring consigliata: **estrarre ogni ramo condizionale in un metodo privato dedicato**, o sostituire lunghe catene if/elseif con una `match()` che delega a metodi/Action più piccoli. Esempio:
 
 ```php
-// PRIMA — un metodo con 15+ rami
+// PRIMA: un metodo con 15+ rami
 public function resolveType(string $type): string
 {
     if ($type === "a") { /* ... */ }
@@ -189,7 +191,7 @@ public function resolveType(string $type): string
     // ... altri 10+ rami
 }
 
-// DOPO — dispatch table, ogni ramo è un metodo testabile singolarmente
+// DOPO: dispatch table, ogni ramo è un metodo testabile singolarmente
 public function resolveType(string $type): string
 {
     return match ($type) {
@@ -201,3 +203,4 @@ public function resolveType(string $type): string
 ```
 
 Ogni `resolveX()` estratto scende sotto soglia 10 e diventa testabile in isolamento con un test Pest dedicato.
+

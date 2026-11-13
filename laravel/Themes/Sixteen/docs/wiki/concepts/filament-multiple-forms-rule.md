@@ -1,3 +1,15 @@
+---
+title: "filament multiple forms rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament multiple forms rule"
+issues: []
+discussions: []
+status: draft
+---
+
 # Filament Multiple Forms Rule
 
 ## REGOLA PERMANENTE: Widget $form property declaration

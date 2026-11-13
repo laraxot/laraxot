@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "annotations"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "annotations"
+issues: []
+discussions: []
+---
+
+>>>>>>> laraxot/dev
 //---
 continuo di type_hinting
 --//

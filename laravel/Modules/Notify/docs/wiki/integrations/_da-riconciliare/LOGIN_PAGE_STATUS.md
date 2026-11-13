@@ -1,10 +1,15 @@
 ---
+qmd: "LOGIN PAGE STATUS"
+issues: []
+discussions: []
 title: "Status Pagina Login - Verifica Tecnica"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: login_page_status.md
 ---
 
 # 📊 Status Pagina Login - Verifica Tecnica

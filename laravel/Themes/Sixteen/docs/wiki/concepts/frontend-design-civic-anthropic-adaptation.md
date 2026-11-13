@@ -1,4 +1,7 @@
 ---
+qmd: "frontend design civic anthropic adaptation"
+issues: []
+discussions: []
 title: frontend design — adattamento plugin anthropic al tema sixteen
 type: concept
 module: Sixteen
@@ -8,11 +11,12 @@ updated: 2026-06-03
 tags: [frontend, design-comuni, anthropic, ux, theme]
 related:
   - ../rules/frontend-stack-canonical.md
-  - ../../../../docs/wiki/skills/frontend-design-civic-pa.md
+  - ../../../../../../docs/wiki/skills/frontend-design-civic-pa.md
   - geo-map-popup-leaflet-boundary.md
-  - ../../../../Modules/Geo/docs/wiki/concepts/geo-map-lit-reconstruction-guide.md
+  - ../../../../../Modules/Geo/docs/wiki/concepts/geo-map-lit-reconstruction-guide.md
 upstream:
   - https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design
+status: draft
 ---
 
 # Frontend design — Anthropic plugin × Sixteen
@@ -51,5 +55,5 @@ Il tema Sixteen implementa **Design Comuni** e bundle Vite condiviso con Geo (`m
 
 ## Collegamenti
 
-- Skill wiki: [frontend-design-civic-pa.md](../../../../docs/wiki/skills/frontend-design-civic-pa.md)
+- Skill wiki: [frontend-design-civic-pa.md](../../../../../../docs/wiki/skills/frontend-design-civic-pa.md)
 - [ticket-list-map-integration.md](./ticket-list-map-integration.md)

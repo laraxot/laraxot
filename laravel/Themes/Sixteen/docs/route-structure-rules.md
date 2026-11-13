@@ -1,3 +1,15 @@
+---
+title: "route structure rules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "route structure rules"
+issues: []
+discussions: []
+status: draft
+---
+
 # Regole per la Struttura delle Route - Tema Sixteen
 
 ## 🚨 REGOLA FONDAMENTALE - Route per Pagine Istituzionali
@@ -189,7 +201,6 @@ Prima di utilizzare link a pagine istituzionali:
 - [critical-rules.md](critical-rules.md) - Regole critiche del progetto
 
 ---
-
 **Regola stabilita**: 31 Luglio 2025  
 **Autorità**: Analisi del codice esistente (`RegistrationWidget.php`)  
 **Stato**: REGOLA FONDAMENTALE  

@@ -1,3 +1,9 @@
+---
+title: "Employee - 01-GESTIONE-ANAGRAFICA-DIPENDENTI"
+module: Employee
+bmad: true
+status: active
+---
 # 01. Gestione Anagrafica Dipendenti
 
 ## Cosa Fare

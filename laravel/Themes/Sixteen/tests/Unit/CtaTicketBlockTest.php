@@ -7,15 +7,14 @@ use function Safe\file_get_contents;
 
 uses(TestCase::class);
 
-test('cta ticket block renders with defaults', function (): void {
+test('cta ticket block omits empty CMS payload', function (): void {
     /** @var TestCase $this */
     $view = $this->view('pub_theme::components.blocks.cta.ticket', [
         'cta' => [],
     ]);
 
-    $view->assertSee('cmp-text-button', false);
-    $view->assertSee(__('fixcity::ticket.map.cta.title.label'), false);
-    $view->assertSee(__('fixcity::ticket.map.cta.button.label'), false);
+    $view->assertDontSee('cmp-text-button', false);
+    $view->assertDontSee('<h2', false);
 });
 
 test('cta ticket block renders custom payload', function (): void {

@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
-    <title>Log Out</title>
+    <title>{{ __('pub_theme::navigation_components.profile_dropdown.logout.label') }}</title>
 
     <style>
         body,
@@ -128,10 +128,10 @@
             <line class="cls-7" x1="295.05" y1="61.8" x2="277.2" y2="79.65"></line>
             <line class="cls-7" x1="294.17" y1="46.81" x2="275.09" y2="64.66"></line>
         </svg>
-        <h1>Goodbye</h1>
-        <h3>You have logged out</h3>
+        <h1>{{ __('pub_theme::auth_components.logout.goodbye.title') }}</h1>
+        <h3>{{ __('pub_theme::auth_components.logout.done.message') }}</h3>
         <div class="link">
-            <a href="#" onclick="logBack();return false;">Click here to log back on</a>
+            <a href="#" onclick="logBack();return false;">{{ __('pub_theme::auth_components.logout.log_back.label') }}</a>
         </div>
     </div>
     <script>

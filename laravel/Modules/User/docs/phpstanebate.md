@@ -8,17 +8,21 @@ qmd: "phpstanebate filosofia laraxot: il grande dibattito interno - phpstan leve
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Filosofia Laraxot: Il Grande Dibattito Interno - PHPStan Level 10
 
 **Data Creazione**: [DATE]
@@ -182,7 +186,6 @@ Ogni modulo corretto è un traguardo.
 - [Filament 4 Actions Namespace](./filament-4-actions-namespace.md)
 - [PHPStan Corrections Summary](./phpstan-corrections-summary.md)
 - [DRY/KISS Principles](../../../../docs/architecture/dry-kiss-principles.md)
->>>>>>> 87273113 (.)
 
 ---
 

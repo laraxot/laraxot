@@ -1,3 +1,15 @@
+---
+title: "fixcity ticket infolist theme boundary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "fixcity ticket infolist theme boundary"
+issues: []
+discussions: []
+status: draft
+---
+
 # Fixcity Ticket Infolist Theme Boundary
 
 ## Scopo
@@ -16,6 +28,6 @@ Documentare il boundary tra modulo `Fixcity` e tema `Sixteen` per la nuova class
 
 ## Riferimenti
 
-- [ticketinfolist pattern reference](../../../../Modules/Fixcity/docs/wiki/concepts/ticketinfolist-pattern-reference.md)
+- [ticketinfolist pattern reference](../../../../../Modules/Fixcity/docs/wiki/concepts/ticketinfolist-pattern-reference.md)
 - [theme css only parity rule](./theme-css-only-parity-rule.md)
 - [sixteen best practices](./sixteen-best-practices.md)

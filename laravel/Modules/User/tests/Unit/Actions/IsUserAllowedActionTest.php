@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Laravel\Socialite\Contracts\User as SocialiteUserContract;
 use Mockery\MockInterface;
 use Modules\User\Actions\Socialite\IsUserAllowedAction;
@@ -13,7 +12,7 @@ uses(TestCase::class);
 describe('IsUserAllowedAction', function (): void {
     beforeEach(function (): void {
         /* @var \Modules\User\Tests\TestCase $this */
-        config(['filament-socialite.domain_allowlist' => []]);
+        config(['socialite.domain_allowlist' => []]);
     });
 
     $getMockUser = function (string $email = 'user@example.com'): SocialiteUserContract {

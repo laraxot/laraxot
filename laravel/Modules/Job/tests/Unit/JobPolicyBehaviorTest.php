@@ -30,7 +30,7 @@ use Modules\User\Models\Team;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Job\Tests\TestCase::class)->group('no-job-db');
+uses(TestCase::class)->group('no-job-db');
 
 /**
  * @param  list<string>  $permissions
@@ -73,7 +73,7 @@ function jobValidationFailure(?string &$message): \Closure
 }
 
 test('JobBasePolicy before concede tutto al super-admin e passa oltre altrimenti', function (): void {
-    $policy = new TaskPolicy();
+    $policy = new TaskPolicy;
     $super = jobBehaviorUser([], ['super-admin']);
     Assert::assertTrue($policy->before($super, 'viewAny'));
 
@@ -83,8 +83,8 @@ test('JobBasePolicy before concede tutto al super-admin e passa oltre altrimenti
 });
 
 test('TaskPolicy rifiuta utente senza permessi e concede con permessi', function (): void {
-    $policy = new TaskPolicy();
-    $task = new Task();
+    $policy = new TaskPolicy;
+    $task = new Task;
     $denied = jobBehaviorUser();
     $allowed = jobBehaviorUser([
         'task.viewAny', 'task.view', 'task.create', 'task.update', 'task.delete',
@@ -105,8 +105,8 @@ test('TaskPolicy rifiuta utente senza permessi e concede con permessi', function
 });
 
 test('JobPolicy: viewAny e update sempre false; create true; team ops solo owner', function (): void {
-    $policy = new JobPolicy();
-    $team = new Team();
+    $policy = new JobPolicy;
+    $team = new Team;
     $outsider = jobBehaviorUser(ownsTeam: false, belongsToTeam: false);
     $member = jobBehaviorUser(ownsTeam: false, belongsToTeam: true);
     $owner = jobBehaviorUser(ownsTeam: true, belongsToTeam: true);
@@ -128,10 +128,10 @@ test('JobPolicy: viewAny e update sempre false; create true; team ops solo owner
 });
 
 test('Schedule e history policy rispettano permessi specifici', function (): void {
-    $schedule = new Schedule();
-    $history = new ScheduleHistory();
-    $sp = new SchedulePolicy();
-    $hp = new ScheduleHistoryPolicy();
+    $schedule = new Schedule;
+    $history = new ScheduleHistory;
+    $sp = new SchedulePolicy;
+    $hp = new ScheduleHistoryPolicy;
 
     Assert::assertFalse($sp->viewAny(jobBehaviorUser()));
     Assert::assertTrue($sp->viewAny(jobBehaviorUser(['schedule.viewAny'])));
@@ -142,15 +142,15 @@ test('Schedule e history policy rispettano permessi specifici', function (): voi
 });
 
 test('TaskCommentPolicy deny/allow su permesso task_comment.view', function (): void {
-    $policy = new TaskCommentPolicy();
-    $comment = new TaskComment();
+    $policy = new TaskCommentPolicy;
+    $comment = new TaskComment;
     Assert::assertFalse($policy->view(jobBehaviorUser(), $comment));
     Assert::assertTrue($policy->view(jobBehaviorUser(['task_comment.view']), $comment));
 });
 
 test('FailedJobPolicy e JobBatchPolicy legano view al membership del team', function (): void {
-    $team = new Team();
-    foreach ([new FailedJobPolicy(), new JobBatchPolicy()] as $policy) {
+    $team = new Team;
+    foreach ([new FailedJobPolicy, new JobBatchPolicy] as $policy) {
         Assert::assertFalse($policy->viewAny(jobBehaviorUser(belongsToTeam: true)));
         Assert::assertTrue($policy->create(jobBehaviorUser()));
         Assert::assertFalse($policy->view(jobBehaviorUser(belongsToTeam: false), $team));
@@ -160,11 +160,11 @@ test('FailedJobPolicy e JobBatchPolicy legano view al membership del team', func
 
 test('Export Import JobsWaiting JobManager FailedImportRow: solo before super-admin (policy vuote)', function (): void {
     foreach ([
-        new ExportPolicy(),
-        new ImportPolicy(),
-        new JobsWaitingPolicy(),
-        new JobManagerPolicy(),
-        new FailedImportRowPolicy(),
+        new ExportPolicy,
+        new ImportPolicy,
+        new JobsWaitingPolicy,
+        new JobManagerPolicy,
+        new FailedImportRowPolicy,
     ] as $policy) {
         Assert::assertTrue($policy->before(jobBehaviorUser(roles: ['super-admin']), 'viewAny'));
         Assert::assertNull($policy->before(jobBehaviorUser(), 'viewAny'));
@@ -172,7 +172,7 @@ test('Export Import JobsWaiting JobManager FailedImportRow: solo before super-ad
 });
 
 test('Corn rule: rifiuta non-stringa e cron invalido; accetta espressione valida', function (): void {
-    $rule = new Corn();
+    $rule = new Corn;
 
     $msg = null;
     $rule->validate('expression', 123, jobValidationFailure($msg));

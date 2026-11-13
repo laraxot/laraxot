@@ -1,4 +1,8 @@
 ---
+tags: [documentation]
+updated: 2026-09-26
+qmd: "duplicate ratings table migrations"
+discussions: []
 title: "RatingTable gemelle e doppia migration ratings"
 type: redundancy
 owner: Modules/Rating
@@ -9,6 +13,7 @@ issues:
 related:
   - ../../redundancy-report.md
   - ../../../docs/redundancy-report.md
+status: draft
 ---
 
 # Tabelle Filament e migration `ratings`
@@ -17,8 +22,8 @@ related:
 
 Sotto `RatingResource/Tables/`:
 
-- `RatingTable.php` — schema “zen” (title, type, toggle, …)
-- `RatingsTable.php` — colonne id/slug/order/timestamps
+- `RatingTable.php`: schema “zen” (title, type, toggle, …)
+- `RatingsTable.php`: colonne id/slug/order/timestamps
 
 Sotto `RatingMorphResource/Tables/`:
 

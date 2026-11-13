@@ -8,6 +8,10 @@ return [
     | Header Translations (Design Comuni parity — Story 8-105)
     |--------------------------------------------------------------------------
     */
+    // Nome del brand per <x-cms::head> (pub_theme::header.brand.name): de/es ereditano da en.
+    'brand' => [
+        'name' => 'FixCity',
+    ],
     'guest' => [
         'login' => [
             'label' => 'Accedi',
@@ -27,6 +31,8 @@ return [
     ],
 
     'user' => [
+        'unread_notifications' => 'notifiche non lette',
+        'personal_area' => 'Area personale',
         'welcome' => [
             'label' => 'Ciao, :name',
             'placeholder' => '',
@@ -40,6 +46,11 @@ return [
             ],
         ],
         'dropdown' => [
+            // DCP-106: voci che portano a pagine reali dell'area personale (area-personale/{pratiche,seguite,notifiche,impostazioni})
+            'my_reports' => ['label' => 'Le mie segnalazioni'],
+            'followed_reports' => ['label' => 'Segnalazioni che seguo'],
+            'notification_center' => ['label' => 'Notifiche'],
+            'settings_privacy' => ['label' => 'Impostazioni e privacy'],
             'my_services' => [
                 'label' => 'I miei servizi',
                 'placeholder' => '',

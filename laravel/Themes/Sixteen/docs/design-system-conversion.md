@@ -1,3 +1,15 @@
+---
+title: "design system conversion"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design system conversion"
+issues: []
+discussions: []
+status: draft
+---
+
 # Design System Conversion: Bootstrap Italia → Tailwind + Alpine + Flowbite
 
 **Type**: Architecture Documentation  
@@ -6,7 +18,6 @@
 **Related**: [[00-index]], [[layout-hierarchy]], [[vite-configuration-guide]]
 
 ---
-
 ## 🎯 Overview
 
 Questo documento spiega la strategia di conversione da **Bootstrap Italia** a **Tailwind CSS + Alpine.js + Flowbite**, mantenendo l'HTML identico ma sostituendo i CSS e JS.

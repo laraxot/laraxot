@@ -111,8 +111,6 @@ class WorkHourDashboard extends Component
         }
 
         $startOfWeek = Carbon::now()->startOfWeek();
-        $endOfWeek = Carbon::now()->endOfWeek();
-
         $this->weekHours = (float) WorkHour::calculateWorkedHours($this->employee->id, $startOfWeek);
 
         $this->weeklyStats = [];

@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "ticket crea step dati screenshot audit"
+issues: []
+discussions: []
 title: Segnalazione Crea Step Dati Screenshot Audit 2026-04-28
 type: comparison
 updated: 2026-04-28

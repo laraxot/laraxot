@@ -1,4 +1,8 @@
 ---
+updated: 2026-09-26
+qmd: "filament first frontoffice"
+issues: []
+discussions: []
 title: "Filament-first sul frontoffice Sixteen"
 type: concept
 status: active
@@ -28,6 +32,8 @@ Il tema Sixteen pubblica pagine Design Comuni con **Tailwind + BI semantics**, m
 - **Skin:** classi su `.ticket-list .fi-tabs` in `style-apply.css` (non sostituire con `ul.nav-tabs` nuovi)
 
 ## Dettaglio ticket `/it/tickets/{id}`
+
+> Aggiornamento 2026-10-14 (verificato sul codice): un `/{lang}/tickets/{id}` con id numerico e' servito dal ramo `ticket-detail` di `Themes/Sixteen/resources/views/pages/[container0]/[slug0]/index.blade.php` (condizione `ctype_digit($slug0)`): chiama `BuildPublicTicketDetailAction`, risponde 404 se la segnalazione non e' pubblica, aggiunge `data-dc` a `.page-content` e include `components/pages/ticket-detail.blade.php`, che include il blocco `components/blocks/ticket-detail/design-comuni.blade.php` (DCP-148). Il blocco usa `coordinate-picker-lit` in sola lettura con icona del tipo e colore dello stato (DCP-152, vedi [coordinate-picker](../coordinate-picker.md)). Nel repo non esiste `tickets.view.json` in `Modules/Fixcity/config/database/content/pages/` (solo `tickets.confirmation`, `tickets.create`, `tickets.index`, `tickets.track`), quindi il punto elenco CMS qui sotto non descrive piu' il percorso attivo; `Modules/Fixcity/app/Filament/Widgets/Ticket/ViewWidget.php` esiste ancora, ma non e' il percorso del dettaglio pubblico. Il divieto di `pub_theme::components.blocks.ticket.detail` resta vero: quel file non c'e' in `components/blocks/ticket/`. `TicketInfolist` non e' stato cercato altrove (non verificato). Le righe seguenti descrivono il disegno precedente, mantenute come storico.
 
 - **CMS:** `tickets.view.json` → blocco `type: widget` (non `type: ticket` + Blade custom).
 - **Widget:** `Modules\Fixcity\Filament\Widgets\Ticket\ViewWidget` (`XotBaseInfolistWidget`). Naming: [filament-widgets-domain-folder-naming](../../../../Modules/Xot/docs/wiki/concepts/filament-widgets-domain-folder-naming.md).

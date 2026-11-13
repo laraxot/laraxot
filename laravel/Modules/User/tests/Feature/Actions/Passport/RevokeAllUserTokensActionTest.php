@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Modules\User\Actions\Passport\RevokeAllUserTokensAction;
@@ -179,7 +178,7 @@ describe('RevokeAllUserTokensAction', function (): void {
 
         $tokenCount = 5;
         $tokens = [];
-        for ($i = 0; $i < $tokenCount; ++$i) {
+        for ($i = 0; $i < $tokenCount; $i++) {
             $tokens[] = [
                 'id' => (string) Str::uuid(),
                 'user_id' => (string) $user->id,

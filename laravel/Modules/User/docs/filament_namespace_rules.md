@@ -1,3 +1,11 @@
+---
+title: "Regole per i Namespace Filament"
+type: note
+status: draft
+updated: 2026-10-13
+tags: [docs, user]
+qmd: "regole per i namespace filament user"
+---
 # Regole per i Namespace Filament
 
 ## Regola 1: Namespace Modulare
@@ -62,6 +70,8 @@ class Dashboard extends Page
 ```
 
 ## Collegamenti
-- [Convenzioni Namespace Filament](../../cms/docs/convenzioni-namespace-filament.md)
-- [Regole Generali Xot](../../xot/docs/readme.md)
+- [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
+- [Regole Generali Xot](../../Xot/docs/README.md)
+- [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
+- [Regole Generali Xot](../../Xot/docs/README.md)
 - [Best Practices Filament](../../cms/docs/best-practices/filament.md) 

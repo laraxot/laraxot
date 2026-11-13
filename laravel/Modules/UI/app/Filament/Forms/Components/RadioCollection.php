@@ -26,7 +26,11 @@ final class RadioCollection extends XotBaseField
      * Set the options collection for the radio buttons.
      */
     /**
+<<<<<<< HEAD
+     * @param  \Closure|Collection<int|string, mixed>|null  $options
+=======
      * @param \Closure|Collection<int|string, mixed>|null $options
+>>>>>>> f5ffd8b4 (.)
      */
     public function options(\Closure|Collection|null $options): static
     {
@@ -89,8 +93,16 @@ final class RadioCollection extends XotBaseField
 
     /**
      * Comparazione type-safe per determinare se un'opzione è selezionata.
+<<<<<<< HEAD
+     *
+     * @param  array<string, mixed>|object  $option  elemento della collection di opzioni (array o model)
+     * @param  string|int|float|bool|null  $stateOverride  stato esplicito (test/offline senza container Livewire)
+     */
+    public function isOptionSelected(array|object $option, string|int|float|bool|null $stateOverride = null): bool
+=======
      */
     public function isOptionSelected(mixed $option): bool
+>>>>>>> f5ffd8b4 (.)
     {
         $state = SafeStringCastAction::cast($this->getState());
         $currentValue = (string) $state;

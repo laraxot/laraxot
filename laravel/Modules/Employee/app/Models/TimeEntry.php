@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Employee\Database\Factories\TimeEntryFactory;
+use Modules\Employee\Enums\TimeEntryStatusEnum;
 use Modules\Xot\Contracts\ProfileContract;
 
 /**
@@ -89,14 +90,6 @@ use Modules\Xot\Contracts\ProfileContract;
  */
 final class TimeEntry extends BaseModel
 {
-    public const string STATUS_PENDING = 'pending';
-
-    public const string STATUS_APPROVED = 'approved';
-
-    public const string STATUS_AUTO_APPROVED = 'auto_approved';
-
-    public const string STATUS_REJECTED = 'rejected';
-
     /** @var list<string> */
     protected $fillable = [
         'employee_id',
@@ -149,7 +142,7 @@ final class TimeEntry extends BaseModel
      */
     public function scopePending(Builder $query): Builder
     {
-        return $query->where('status', self::STATUS_PENDING);
+        return $query->where('status', TimeEntryStatusEnum::PENDING->value);
     }
 
     /**
@@ -202,7 +195,10 @@ final class TimeEntry extends BaseModel
      */
     public function isApproved(): bool
     {
-        return in_array($this->status, [self::STATUS_APPROVED, self::STATUS_AUTO_APPROVED], strict: true);
+        return in_array($this->status, [
+            TimeEntryStatusEnum::APPROVED->value,
+            TimeEntryStatusEnum::AUTO_APPROVED->value,
+        ], strict: true);
     }
 
     /**
@@ -210,7 +206,7 @@ final class TimeEntry extends BaseModel
      */
     public function isPending(): bool
     {
-        return $this->status === self::STATUS_PENDING;
+        return $this->status === TimeEntryStatusEnum::PENDING->value;
     }
 
     /**
@@ -218,6 +214,6 @@ final class TimeEntry extends BaseModel
      */
     public function isRejected(): bool
     {
-        return $this->status === self::STATUS_REJECTED;
+        return $this->status === TimeEntryStatusEnum::REJECTED->value;
     }
 }

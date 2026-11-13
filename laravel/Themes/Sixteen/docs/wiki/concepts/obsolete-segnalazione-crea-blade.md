@@ -1,7 +1,15 @@
 ---
+title: "obsolete segnalazione crea blade"
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "obsolete segnalazione crea blade"
+issues: []
+discussions: []
 name: obsolete-segnalazione-crea-blade
 description: Blade file `segnalazione-crea.blade.php` should not exist; the page is rendered via JSON configuration and Livewire wizard.
 type: concept
+status: draft
 ---
 
 # Why `segnalazione-crea.blade.php` is obsolete
@@ -26,3 +34,6 @@ The *Segnalazione* wizard is a Filament wizard driven entirely by the **Livewire
 Removing the Blade file eliminates the rendering conflict, allowing the wizard’s map component to initialize correctly and the page to respect the modular JSON configuration.
 
 ---
+
+Correzione verificata 2026-10-13 (DCP-35 S4): `tests.segnalazione-crea.json` è stato eliminato (commit 260f3bcc5, `git log --diff-filter=D`) e oggi non esiste in nessun tenant; la risposta di `/it/tests/segnalazione-crea` (200) non contiene il wizard (0 occorrenze di `fi-sc-wizard` e `$wire.save()`). Il flusso vive su `/it/tickets/create` (`tickets.create.json`, blocco `components/blocks/tests/ticket-crea.blade.php`). Questo documento descrive lo stato precedente; stato attuale in `Modules/Fixcity/docs/wiki/concepts/ticket-crea-url-routing-chain.md`.
+Inoltre, correzione verificata 2026-10-13: il file Blade `Themes/Sixteen/resources/views/components/blocks/tests/segnalazione-crea.blade.php` esiste ancora (non è stato rimosso, `ls`).

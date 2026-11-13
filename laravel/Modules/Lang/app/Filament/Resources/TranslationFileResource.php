@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Modules\Lang\Filament\Resources;
 
 use Illuminate\Support\Facades\Config;
+use Modules\Lang\Actions\ResolveDefaultTranslatableLocaleAction;
+use Modules\Lang\Actions\ResolveTranslatableLocalesAction;
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\CreateTranslationFile;
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\EditTranslationFile;
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\ListTranslationFiles;
@@ -17,7 +19,7 @@ class TranslationFileResource extends XotBaseResource
 
     public static function getDefaultTranslatableLocale(): string
     {
-        return Config::string('app.locale', 'it');
+        return app(ResolveDefaultTranslatableLocaleAction::class)->execute(Config::string('app.locale', 'it'));
     }
 
     /**
@@ -25,7 +27,7 @@ class TranslationFileResource extends XotBaseResource
      */
     public static function getTranslatableLocales(): array
     {
-        return ['it', 'en'];
+        return app(ResolveTranslatableLocalesAction::class)->execute();
     }
 
     #[\Override]

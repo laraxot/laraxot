@@ -7,11 +7,11 @@ namespace Modules\User\Filament\Resources\TenantUserResource\Pages;
 use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Modules\User\Filament\Resources\TenantUserResource;
-use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
-
 /**
  * Class ListTenantUsers.
  */
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
+
 class ListTenantUsers extends XotBaseListRecords
 {
     protected static string $resource = TenantUserResource::class;

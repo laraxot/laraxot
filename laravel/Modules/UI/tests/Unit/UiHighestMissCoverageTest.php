@@ -21,6 +21,7 @@ use Modules\UI\Filament\Forms\Components\AddressField;
 use Modules\UI\Filament\Forms\Components\IconPicker;
 use Modules\UI\Filament\Forms\Components\OpeningHoursField;
 use Modules\UI\Filament\Forms\Components\RadioBadge;
+use Modules\UI\Filament\Forms\Components\RadioCardSelector;
 use Modules\UI\Filament\Forms\Components\RadioCollection;
 use Modules\UI\Filament\Forms\Components\SelectState;
 use Modules\UI\Filament\Forms\Components\YearSelect;
@@ -32,8 +33,6 @@ use Modules\UI\Filament\Tables\Columns\IDColumn;
 use Modules\UI\Filament\Tables\Columns\SelectStateColumn;
 use Modules\UI\Filament\Widgets\TestChartWidget;
 use Modules\UI\Filament\Widgets\UserCalendarWidget;
-use Modules\UI\Forms\Components\RadioCardSelector;
-use Modules\UI\Http\Controllers\LanguageController;
 use Modules\UI\Http\Middleware\SetLocale;
 use Modules\UI\Models\Category;
 use Modules\UI\Models\Collection;
@@ -57,6 +56,9 @@ describe('UI highest-miss coverage', function (): void {
         Assert::assertInstanceOf(IconStateGroupColumn::class, IconStateGroupColumn::make('state'));
         Assert::assertSame('state', SelectStateColumn::make('state')->getName());
         Assert::assertSame('id', IDColumn::make('id')->getName());
+        $anchor = IDColumn::renderAnchor(7)->toHtml();
+        Assert::assertStringContainsString('id="record-7"', $anchor);
+        Assert::assertStringContainsString('class="scroll-mt-24"', $anchor);
 
         $split = IconStateSplitColumn::make('state')->stateClass(\stdClass::class, Category::class);
         Assert::assertSame([], $split->getRecordStates());
@@ -150,9 +152,18 @@ describe('UI highest-miss coverage', function (): void {
         $response = (new SetLocale())->handle(Request::create('/'), static fn (): Response => new Response('ok'));
         Assert::assertSame('ok', $response->getContent());
 
+<<<<<<< .merge_file_Eguo0t
         config(['app.supported_locales' => ['it', 'en'], 'app.locale' => 'it']);
         Assert::assertTrue((new LanguageController())->switch('en')->isRedirect());
         Assert::assertTrue((new LanguageController())->switch('xx')->isRedirect());
+=======
+        config(['app.locale' => 'it']);
+        $localeResponse = (new SetLocale)->handle(
+            Request::create('/en'),
+            static fn (): Response => new Response('ok'),
+        );
+        Assert::assertSame('ok', $localeResponse->getContent());
+>>>>>>> .merge_file_T81EJN
 
         $block = new Block(['data' => ['view' => 'ui::empty']]);
         Assert::assertSame('ui::empty', $block->view);
@@ -178,9 +189,15 @@ describe('UI highest-miss coverage', function (): void {
     });
 
     test('XotBase blocks and document upload factories expose schema', function (): void {
+<<<<<<< .merge_file_Eguo0t
         Assert::assertNotEmpty((new Contact())->getFormSchema());
         Assert::assertNotEmpty((new \Modules\UI\Filament\Blocks\Category())->getFormSchema());
         Assert::assertNotEmpty((new Post())->getFormSchema());
+=======
+        Assert::assertNotEmpty(Contact::getFormSchema());
+        Assert::assertNotEmpty(\Modules\UI\Filament\Blocks\Category::getFormSchema());
+        Assert::assertNotEmpty(Post::getFormSchema());
+>>>>>>> .merge_file_T81EJN
         Assert::assertNotSame('', Contact::getTitle());
 
         Assert::assertSame('identity_document', SpatieDocumentUpload::forIdentityDocument()->getName());

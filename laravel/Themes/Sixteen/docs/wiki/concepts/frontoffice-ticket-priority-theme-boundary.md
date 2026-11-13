@@ -1,4 +1,7 @@
 ---
+qmd: "frontoffice ticket priority theme boundary"
+issues: []
+discussions: []
 title: "Frontoffice Ticket Priority Theme Boundary"
 type: concept
 confidence: high
@@ -7,6 +10,7 @@ updated: 2026-05-26
 tags: [sixteen, fixcity, wizard, select, priority, design-comuni]
 related:
   - ../../../../../Modules/Fixcity/docs/wiki/concepts/frontoffice-ticket-priority-default-rule.md
+status: draft
 ---
 
 # Frontoffice Ticket Priority Theme Boundary

@@ -1,4 +1,16 @@
+<<<<<<< .merge_file_L4Y5i2
 # Coverage — User
+=======
+---
+title: "Coverage: User"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "coverage   user user"
+---
+# Coverage: User
+>>>>>>> .merge_file_kOjLqL
 
 Stato onesto (2026-09-22), campagna git-hygiene/marker-cleanup.
 
@@ -6,10 +18,17 @@ Stato onesto (2026-09-22), campagna git-hygiene/marker-cleanup.
 - PHPMD (`tools/phpmd.phar Modules/User`): **crash pre-esistente**, fatal error
   `Call to a member function getParent() on null` in
   `PHPMD/Rule/AbstractLocalVariable.php:297` (bug noto phpmd.phar su costrutti del
+<<<<<<< .merge_file_L4Y5i2
   modulo, non introdotto da questa sessione — memoria second brain
   `feedback-phpmd-phar-dies-on-dnf-types.md`). Nessun conteggio finding producibile.
 - PHPInsights: non eseguito in questa sessione (scope git-hygiene, non code-quality;
   nessun file `.php` di produzione modificato — solo rimozione marker/file morti).
+=======
+  modulo, non introdotto da questa sessione: memoria second brain
+  `feedback-phpmd-phar-dies-on-dnf-types.md`). Nessun conteggio finding producibile.
+- PHPInsights: non eseguito in questa sessione (scope git-hygiene, non code-quality;
+  nessun file `.php` di produzione modificato: solo rimozione marker/file morti).
+>>>>>>> .merge_file_kOjLqL
 - Pest: **bloccato**, DB `10.100.200.53:3306` irraggiungibile (`nc -z -w3` fallito).
   Blocco infrastrutturale pre-esistente, non introdotto qui (memoria
   `project-test-db-unreachable-drives-skips.md`).

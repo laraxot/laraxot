@@ -18,8 +18,13 @@ class UiCoverageRecord extends Model
     public static array $findMap = [];
 
     /**
+<<<<<<< HEAD
      * @param int|string                $id
      * @param array<int, string>|string $columns
+=======
+     * @param  int|string  $id
+     * @param  array<int, string>|string  $columns
+>>>>>>> f5ffd8b4 (.)
      */
     public static function find($id, $columns = ['*']): ?self
     {

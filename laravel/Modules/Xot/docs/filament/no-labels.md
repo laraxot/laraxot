@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "DIVIETO ASSOLUTO DI USARE ->label(), ->placeholder() e ->helperText()"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, filament]
+qmd: "DIVIETO ASSOLUTO DI USARE ->label(), ->placeholder() e ->helperText()"
+---
+>>>>>>> laraxot/dev
 # DIVIETO ASSOLUTO DI USARE ->label(), ->placeholder() e ->helperText()
 
 ## Regola Fondamentale Inviolabile
@@ -103,10 +116,13 @@ Se trovi codice che viola questa regola:
 
 ## Link a Risorse Correlate
 
+<<<<<<< HEAD
 - [Documentazione sulla struttura delle traduzioni](/laravel/modules/xot/docs/translation_rules.md)
 - [Esempio pratico nel TeamsRelationManager](/laravel/modules/user/docs/filament/teams_relation_manager.md)
 - [Regole per RelationManager](/docs/filament/relation_managers.md)
 
+=======
+>>>>>>> laraxot/dev
 - [Documentazione sulla struttura delle traduzioni](/laravel/Modules/Xot/docs/translation_rules.md)
 - [Esempio pratico nel TeamsRelationManager](/laravel/Modules/User/docs/filament/teams_relation_manager.md)
 - [Regole per RelationManager](/docs/filament/relation_managers.md)

@@ -1,3 +1,9 @@
+---
+title: "Employee - MODULES_OVERVIEW"
+module: Employee
+bmad: true
+status: active
+---
 # Moduli Laraxot - Panoramica Completa
 
 ## Moduli Identificati nel Progetto

@@ -2,25 +2,29 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_RSQmYW
 return [
     'fields' => [
         'name' => [
-            'label' => 'name',
+            'label' => 'Nome',
             'placeholder' => 'name',
             'helper_text' => 'name',
             'description' => 'name',
         ],
         'guard_name' => [
-            'label' => 'guard_name',
+            'label' => 'Guard',
             'placeholder' => 'guard_name',
             'helper_text' => 'guard_name',
             'description' => 'guard_name',
         ],
         'active' => [
-            'label' => 'active',
+            'label' => 'Attivo',
             'placeholder' => 'active',
             'helper_text' => 'active',
             'description' => 'active',
         ],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_cBarUG

@@ -1,3 +1,15 @@
+---
+title: "plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Plan: Laravel 13 Upgrade
 
 ## Phase 1: Global Documentation

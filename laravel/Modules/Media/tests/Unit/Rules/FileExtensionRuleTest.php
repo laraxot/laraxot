@@ -69,7 +69,7 @@ describe('FileExtensionRule', function (): void {
     });
 
     it('builds a message even when no extension is allowed', function (): void {
-        $rule = new FileExtensionRule();
+        $rule = new FileExtensionRule;
 
         Assert::assertNotSame('', $rule->message());
     });

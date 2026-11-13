@@ -8,6 +8,15 @@ updated: "2026-06-18"
 related:
   - README.md
   - ../README.md
+id: zero-docs-changelog
+slug: changelog
+description: "Cronologia delle versioni del tema Zero, con la strategia di rilascio."
+document_type: reference
+category: documentation
+created: "2026-09-24"
+qmd: "changelog - zero theme"
+issues: []
+discussions: []
 ---
 
 # Changelog — Zero Theme
@@ -233,6 +242,6 @@ Current known issues:
 
 - [README.md](./README.md) — Theme overview
 - [Component Guide](./component-guide.md) — Components reference
-- [Customization Guide](./customization.md) — How to extend
+- [Customization Guide](./bmad/customization.md) — How to extend
 - [../README.md](../README.md) — Root theme README (marketing)
 - [../../docs/wiki/themes/](../../../../docs/wiki/themes/) — Project-wide theme docs

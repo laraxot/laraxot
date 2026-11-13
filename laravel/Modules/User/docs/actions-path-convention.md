@@ -8,17 +8,21 @@ qmd: "actions-path-convention convenzione dei percorsi per le actions"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
-  - "./actions-structure-1.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-structure.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-structure.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Convenzione dei Percorsi per le Actions
 
 ## Regola Fondamentale
@@ -82,7 +86,7 @@ fi
 ```
 
 ## Collegamenti
-- [Convenzioni Path nei Moduli Laravel](./path-conventions-2.md)
+- [Convenzioni Path nei Moduli Laravel](./path-conventions.md)
+- [Convenzioni Path nei Moduli Laravel](./path-conventions-user.md)
 - [Checklist per la Struttura delle Directory](./directory-structure-checklist.md)
 - [Analisi Errore: Gestione Percorsi](../../../../docs/error_analysis/path_management.md)
->>>>>>> 87273113 (.)

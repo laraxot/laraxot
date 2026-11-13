@@ -4,6 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Tenant\Providers;
 
+<<<<<<< .merge_file_b6m4wY
+use Illuminate\Database\Connection;
+=======
+<<<<<<< .merge_file_R09Zio
+=======
+use Illuminate\Database\Connection;
+>>>>>>> .merge_file_ENee1N
+>>>>>>> .merge_file_m0F4O4
+use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Arr;
@@ -14,6 +23,7 @@ use Illuminate\Support\Facades\Schema;
 use Modules\Tenant\Actions\Config\FilterConfigStringKeysAction;
 use Modules\Tenant\Actions\Config\GetTenantConfigNamesAction;
 use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
+use Modules\Xot\Datas\XotData;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 use Nwidart\Modules\Facades\Module;
 use Nwidart\Modules\Laravel\Module as LaravelModule;
@@ -66,10 +76,89 @@ class TenantServiceProvider extends XotBaseServiceProvider
 
         /** @var array<string, mixed> $data */
         $data = $this->loadTenantDatabaseConfig($preMergeDefaultConn);
+        /** @var array<string, mixed> $explicitConnections */
+        $explicitConnections = Arr::get($data, 'connections', []);
         $data = Arr::set($data, 'connections', $this->mergeModuleConnections($data, $preMergeDefaultConn));
 
         Config::set('database', $data);
+        $this->aliasModuleConnectionsToDefault(array_keys(\is_array($explicitConnections) ? $explicitConnections : []), $preMergeDefaultConn);
         $this->reconnectDatabaseUnlessTesting();
+    }
+
+    /**
+     * Le connessioni di modulo create copiando la default puntano allo stesso database:
+     * le risolve sulla stessa istanza `Connection` della default.
+     *
+     * Senza alias ogni modulo apre una propria sessione sul database, e una transazione
+     * che scrive su piu' moduli (es. registro rifiuti + magazzino) non e' atomica: il
+     * commit avviene connessione per connessione. Con l'alias c'e' una sola sessione e
+     * una sola transazione, come gia' avviene nei test. Le connessioni dichiarate
+     * esplicitamente nella config del tenant (database diverso) restano separate.
+     *
+     * @param  list<int|string>  $explicitNames
+     */
+    private function aliasModuleConnectionsToDefault(array $explicitNames, string $defaultConnection): void
+    {
+        foreach (Module::getOrdered() as $module) {
+            if (! $module instanceof LaravelModule) {
+                continue;
+            }
+
+            $name = $module->getSnakeName();
+            if ($name === $defaultConnection || \in_array($name, $explicitNames, true)) {
+                continue;
+            }
+
+            DB::purge($name);
+<<<<<<< .merge_file_b6m4wY
+=======
+<<<<<<< .merge_file_R09Zio
+            DB::extend($name, static fn (): ConnectionInterface => DB::connection($defaultConnection));
+=======
+>>>>>>> .merge_file_m0F4O4
+            DB::extend(
+                $name,
+                static fn (array $config, string $connectionName): ConnectionInterface => self::resolveModuleConnection($config, $connectionName, $defaultConnection),
+            );
+<<<<<<< .merge_file_b6m4wY
+=======
+>>>>>>> .merge_file_ENee1N
+>>>>>>> .merge_file_m0F4O4
+        }
+    }
+
+    /**
+     * Alias della default solo finche' la config del modulo e' quella della default: una config
+     * ridefinita a runtime (es. un test su un file sqlite proprio) apre la sua connessione.
+     *
+     * @param  array<mixed>  $config  config che Laravel passa al resolver di `DB::extend()` (callable non tipizzato)
+     */
+    private static function resolveModuleConnection(array $config, string $connectionName, string $defaultConnection): ConnectionInterface
+    {
+        $default = DB::connection($defaultConnection);
+
+        if (self::hasSameDatabaseConfig($config, $default)) {
+            return $default;
+        }
+
+        return app('db.factory')->make($config, $connectionName);
+    }
+
+    /**
+     * `name` e' escluso perche' differisce per costruzione (e' il nome della connessione);
+     * `==` confronta le chiavi senza badare all'ordine.
+     *
+     * @param  array<mixed>  $moduleConfig
+     */
+    private static function hasSameDatabaseConfig(array $moduleConfig, ConnectionInterface $default): bool
+    {
+        if (! $default instanceof Connection) {
+            return false;
+        }
+
+        $defaultConfig = $default->getConfig();
+
+        return \is_array($defaultConfig) && Arr::except($moduleConfig, ['name']) == Arr::except($defaultConfig, ['name']);
     }
 
     #[Override]
@@ -189,6 +278,16 @@ class TenantServiceProvider extends XotBaseServiceProvider
             /** @var class-string<Model> $modelClass */
             $modelClass = $class;
             $typedMap[$alias] = $modelClass;
+        }
+
+        // The 'user' morph alias must always resolve to the canonical user class
+        // (XotData::getUserClass()), never to a stale per-domain config entry:
+        // polymorphic pivot rows (e.g. model_has_role.model_type) are written
+        // through it, and a wrong class here makes roles invisible.
+        $userClass = XotData::make()->getUserClass();
+        if (is_subclass_of($userClass, Model::class)) {
+            /** @var class-string<Model> $userClass */
+            $typedMap['user'] = $userClass;
         }
 
         return $typedMap;

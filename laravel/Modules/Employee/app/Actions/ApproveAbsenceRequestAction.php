@@ -19,7 +19,7 @@ class ApproveAbsenceRequestAction
     public function execute(AbsenceRequest $request, int|string $decidedByUserId, ?CarbonInterface $decidedAt = null): AbsenceRequest
     {
         $request->forceFill([
-            'status' => AbsenceRequest::STATUS_APPROVED,
+            'status' => \Modules\Employee\Enums\AbsenceRequestStatusEnum::APPROVED->value,
             'decided_by_user_id' => $decidedByUserId,
             'decided_at' => $decidedAt ?? Carbon::now(),
         ])->save();

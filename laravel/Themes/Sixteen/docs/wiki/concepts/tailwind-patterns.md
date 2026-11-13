@@ -1,4 +1,7 @@
 ---
+qmd: "tailwind patterns"
+issues: []
+discussions: []
 title: "Sixteen Theme — Tailwind CSS Patterns"
 type: concept
 tags: [sixteen, tailwind, css, design-system, patterns, daisyui, bootstrap-italia]
@@ -6,9 +9,10 @@ created: 2026-06-10
 updated: 2026-06-10
 related:
   - ./bootstrap-italia-tailwind-philosophy.md
-  - ./design-comuni-class-mapping.md
+  - ../entities/design-comuni-class-mapping.md
   - ../entities/design-comuni-class-mapping.md
   - ../../../../docs/wiki/concepts/design-system-tailwind-parity.md
+status: draft
 ---
 
 # Sixteen Theme — Tailwind CSS Patterns

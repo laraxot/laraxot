@@ -1,3 +1,15 @@
+---
+title: "mappa implementazione"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "mappa implementazione"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🗺️ Implementazione Mappa Interattiva - Piano Esecutivo
 
 **Priorità**: 🔴 P0 - CRITICO  
@@ -5,7 +17,6 @@
 **Deadline**: Entro 3 giorni
 
 ---
-
 ## 🎯 Obiettivo
 
 Implementare mappa interattiva OpenStreetMap con Leaflet per:

@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace Modules\Media\Actions\S3;
 
 use Aws\S3\Exception\S3Exception;
+use Spatie\QueueableAction\QueueableAction;
 
 class CheckFileExistsAction extends BaseS3Action
 {
+    use QueueableAction;
+
     /**
      * Check if a file exists in S3
      */

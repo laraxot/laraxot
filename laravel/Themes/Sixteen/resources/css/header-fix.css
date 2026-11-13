@@ -59,10 +59,16 @@
     background: white !important;
 }
 
-/* Ensure nav wrapper has content */
+/* Ensure nav wrapper has content — responsive: desktop 144px, mobile auto (fixes white space under header on small screens) */
 .it-nav-wrapper {
     display: block !important;
-    min-height: calc(64px + 80px) !important;
+    min-height: 56px !important;
+}
+
+@media (min-width: 992px) {
+    .it-nav-wrapper {
+        min-height: calc(64px + 80px) !important;
+    }
 }
 
 /* Story 8.8: reduce aggressive overrides that degrade runtime parity */

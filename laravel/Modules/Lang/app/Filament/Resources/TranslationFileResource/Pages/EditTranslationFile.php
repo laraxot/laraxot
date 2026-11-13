@@ -7,6 +7,7 @@ namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Illuminate\Contracts\Support\Htmlable;
+use Modules\Lang\Actions\ResolveTranslatableLocalesAction;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
 use Modules\Lang\Filament\Resources\TranslationFileResource;
@@ -21,7 +22,7 @@ class EditTranslationFile extends XotBaseEditRecord
      */
     public function getTranslatableLocales(): array
     {
-        return ['it', 'en'];
+        return app(ResolveTranslatableLocalesAction::class)->execute();
     }
 
     /**
@@ -133,7 +134,7 @@ class EditTranslationFile extends XotBaseEditRecord
             $key = is_string($recordKeyNarrowed) ? $recordKeyNarrowed : (string) $recordKeyNarrowed;
             /** @var array<string, mixed>|string|int|Htmlable|null $contentNarrowed */
             $contentNarrowed = $data['content'] ?? null;
-            app(SaveTransAction::class)->execute($key, $contentNarrowed);
+            app(SaveTransAction::class)->persist($key, $contentNarrowed);
         }
 
         // dddx(['record'=>$this->record,'data'=>$data]);

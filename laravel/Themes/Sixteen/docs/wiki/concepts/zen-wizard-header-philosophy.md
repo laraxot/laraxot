@@ -1,3 +1,15 @@
+---
+title: "zen wizard header philosophy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-10-15
+qmd: "zen wizard header philosophy"
+issues: []
+discussions: []
+status: draft
+---
+
 # Filosofia Zen: Wizard & Header Architecture
 
 ## 🧘 Zen del Wizard Filament
@@ -28,42 +40,52 @@ pub_theme::components.wizard = Nostro "vestito" Design Comuni
 | **Scopo** | Separazione logica (PHP) da presentazione (Blade) |
 
 ---
-
 ## 🏛️ Zen dell'Header Dynamic
 
-### Architecture Chain
+### Architecture Chain (verificata 2026-10-15)
 
 ```
-<livewire:widget...>
+layout FO (`components/layouts/app` → home)
   ↓
-<x-section slug="header" />
+<x-section slug="header" tpl="design-comuni" />   {{-- tpl omesso → v1 → tailwind --}}
   ↓
-Modules/Cms/app/View/Components/Section.php
-  ↓ (legge blocks via SectionModel::getBlocksBySlug())
-  ↓
-Themes/Sixteen/resources/views/components/sections/header/v1.blade.php
-  ↓ (legge header.json via TenantService::filePath())
+Modules/Cms/View/Components/Section.php
+  ↓ SectionModel::getBlocksBySlug('header')  (Sushi/JSON tenant)
   ↓
 laravel/config/local/fixcity/database/content/sections/header.json
+  ↓ blocks[locale][0].data  → brand.tagline (slogan), navigation, account, languages, search…
   ↓
-nav-primary.blade.php + nav-secondary.blade.php (render $headerNavItems)
+pub_theme::components.sections.header.{tpl}   {{-- SOLO vestito: markup + FrontofficeUrl --}}
 ```
 
 ### Perché `header.json`?
 
-**Single Source of Truth (SSoT):**
-- **Nessun link hardcoded** nei Blade files
-- Tutti i menu items (Amministrazione, Novità, Servizi, Iscrizioni, etc.) da JSON
-- **Filament Builder** (`HeaderNavBlock`) gestirà questo JSON via admin panel
+**Single Source of Truth (SSoT) — D11 BMAD:**
+- Slogan, nome, logo, link, social, lingue, etichette search/menu: **solo JSON**
+- Blade = vestito (HTML/CSS/Alpine); **mai** testi istituzionali hardcoded
+- Path localizzati nel vestito con `FrontofficeUrl` (il JSON tiene path senza lingua)
+- **Filament** `HeaderNavBlock` / SectionResource: admin modifica lo stesso JSON
 
 ### Filosofia Zen:
 
-> "Un JSON to rule them all, One JSON to find them,
-> One JSON to bring them all, and in the darkness bind them."
+> "Un JSON to rule them all" — contenuto tenant vs presentazione tema.
 
-- **header.json** = "Anello Unico" (SSoT)
-- **Filament Builder** = Interfaccia per amministratori non-tecnici
-- **Blade** = Presentation layer (legge JSON, renderizza HTML)
+- **header.json** = Anello Unico (SSoT)
+- **Filament Blueprint / Builder** = piano e UI admin senza toccare Blade
+- **Blade** = vestito (D11: un renderer Tailwind/Alpine per tpl)
+
+### Footer (stesso contratto, 2026-10-15)
+
+```
+<x-section slug="footer" tpl="design-comuni|full">
+  → Section::getBlocksBySlug('footer')
+  → sections/footer.json  (brand.name, brand.description=slogan, groups/columns, contact, legal, social)
+  → pub_theme::components.sections.footer.{tpl}  (solo vestito + FrontofficeUrl)
+```
+
+- Slogan e link: **solo JSON** (DCP-222 / DCP-198 A5)
+- URL vuoti/`#` → non renderizzati come link
+- Social / logo UE assenti finche' l'ente non fornisce dati reali
 
 ---
 

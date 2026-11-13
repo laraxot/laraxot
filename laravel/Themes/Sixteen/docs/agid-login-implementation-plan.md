@@ -1,3 +1,15 @@
+---
+title: "agid login implementation plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agid login implementation plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Piano di Implementazione Login AGID-Compliant
 
 ## 🎯 **OBIETTIVO**
@@ -654,7 +666,6 @@ php artisan serve
 - [Kit UI Italia](https://designers.italia.it/kit/ui-kit/)
 
 ---
-
 **Creato**: 2025-07-31  
 **Autore**: Piano Implementazione AGID  
 **Versione**: 1.0  

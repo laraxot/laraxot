@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 return [
     'fields' => [
         'id' => [
@@ -42,3 +43,6 @@ return [
         ],
     ],
 ];
+=======
+return [];
+>>>>>>> laraxot/dev

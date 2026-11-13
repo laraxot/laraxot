@@ -1,3 +1,15 @@
+---
+title: "batch structure audit"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "batch structure audit"
+issues: []
+discussions: []
+status: draft
+---
+
 # Design Comuni Batch Structure Audit
 
 Generato: 2026-04-03T10:11:26.955Z

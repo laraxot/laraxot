@@ -20,8 +20,12 @@ final class StrictTranslationsHost extends BaseModel
 
     protected $table = 'translations';
 
+    /** Valore forzato arbitrario: copre i rami non-string di getTranslation(). */
     public mixed $forcedTranslation = null;
 
+    /**
+     * Firma speculare a `HasTranslations::getTranslation(): mixed` (contratto spatie).
+     */
     protected function spatieGetTranslation(string $key, string $locale, bool $useFallbackLocale = true): mixed
     {
         unset($key, $locale, $useFallbackLocale);

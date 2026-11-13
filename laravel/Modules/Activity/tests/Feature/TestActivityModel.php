@@ -4,21 +4,25 @@ declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Feature;
 
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Carbon;
 use Modules\Activity\Models\BaseModel;
 use Modules\Xot\Models\Traits\HasXotFactory;
+<<<<<<< .merge_file_Y6qseP
+=======
+<<<<<<< .merge_file_oR2ztd
+=======
+>>>>>>> .merge_file_elsrN7
 <<<<<<< .merge_file_2XtIQo
 =======
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 >>>>>>> .merge_file_OA1j6N
+<<<<<<< .merge_file_Y6qseP
 =======
-use Illuminate\Support\Carbon;
-use Modules\Activity\Models\BaseModel;
->>>>>>> 13cf1831 (.)
+>>>>>>> .merge_file_CMj9Ok
+>>>>>>> .merge_file_elsrN7
 
 /**
  * Classe concreta di test per BaseModel.
@@ -35,16 +39,12 @@ use Modules\Activity\Models\BaseModel;
  * @property int|null $updated_by
  * @property int|null $deleted_by
  *
-<<<<<<< HEAD
  * @method static Factory<static> factory()
  *
-=======
->>>>>>> 13cf1831 (.)
  * @coversNothing
  */
 class TestActivityModel extends BaseModel
 {
-<<<<<<< HEAD
     /**
      * @use HasFactory<Factory<self>>
      *
@@ -67,8 +67,6 @@ class TestActivityModel extends BaseModel
         HasXotFactory::factory insteadof HasFactory;
     }
 
-=======
->>>>>>> 13cf1831 (.)
     /** @var string */
     protected $table = 'test_models';
 

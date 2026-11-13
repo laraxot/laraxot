@@ -5,6 +5,15 @@ tags: [docs, migrated-from-txt]
 created: 2026-08-24
 updated: 2026-08-24
 source: laravel/Themes/Zero/docs/filament-5-nested-resources.txt
+id: zero-docs-wiki-concepts-filament-nested-resources
+slug: filament-nested-resources
+description: "Filament 5.x Nested Resources allow hierarchical relationships between resources with automatic routing and breadcrumb generation."
+document_type: concept
+category: ui-frontend
+status: active
+qmd: "filament nested resources"
+issues: []
+discussions: []
 ---
 
 # Filament 5.x Nested Resources Guide

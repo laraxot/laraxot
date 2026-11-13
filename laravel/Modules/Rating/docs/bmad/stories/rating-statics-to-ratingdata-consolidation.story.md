@@ -1,4 +1,16 @@
-# Story — consolidamento helper statici: trait → `RatingData`
+---
+title: "rating statics to ratingdata consolidation.story"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating statics to ratingdata consolidation.story"
+issues: []
+discussions: []
+status: draft
+---
+
+# Story: consolidamento helper statici: trait → `RatingData`
 
 **Status**: done
 **Modulo**: Rating (+ repoint in IR, tests)
@@ -14,7 +26,7 @@
 > (qui `RatingData`).
 
 Nota: `architecture/form-field-label-and-xls-path-home.md` (accepted) argomentava
-il contrario (helper nel trait, 15-22% per Data) — **sovrascritto da ordine
+il contrario (helper nel trait, 15-22% per Data): **sovrascritto da ordine
 utente diretto**; il doc va marcato superato.
 
 ## Fatto
@@ -27,7 +39,7 @@ utente diretto**; il doc va marcato superato.
 - `selectIsOther` resta private nel trait (interno, non API)
 - Chiamanti ripuntati: `DecoratesRatingFormFields`, `CompilaIndennitaResponsabilita`,
   6 file di test (incluse chiamate via host class `IndennitaResponsabilita::` /
-  `RatingsHostStub::` — stessa violazione, il metodo non è più nel trait)
+  `RatingsHostStub::`: stessa violazione, il metodo non è più nel trait)
 
 ## Bug trovato e risolto (ordine "trappole → BMAD")
 
@@ -35,14 +47,14 @@ utente diretto**; il doc va marcato superato.
 `Rating::getClassName()` → `RuntimeException` quando il caller non è in
 `Models\`/`Filament\Resources\` (fixture `RatingsHostStub` in `Tests\Fixtures`,
 2 test `HasRatingsTraitRatingsByIdTest` fallivano). Fix fail-soft: `try/catch`
-→ `Rating::class` piattaforma — è solo un carrier in-memory (`->id` + accessors
+→ `Rating::class` piattaforma: è solo un carrier in-memory (`->id` + accessors
 `BaseRating`), mai interrogato.
 
 ## Gate
 
 - `php -l` OK su tutti i file toccati
 - PHPStan sui 10 file toccati: `[OK] No errors` (post-Pint, `/tmp/phpstan` svuotato)
-- Pest: **47 passed** (105 assertions) — inclusi i 2 test precedentemente rotti
+- Pest: **47 passed** (105 assertions): inclusi i 2 test precedentemente rotti
 - `pint`: 8 issue stile sistemate (import, braces)
 - Marker sweep `rg '^(<<<<<<<|>>>>>>> |=======)' Modules --glob '*.php'`: vuoto
 - Test rinominati: `HasRatingsTraitFormFieldLabelTest` → `RatingDataFormFieldLabelTest`,
@@ -52,7 +64,7 @@ utente diretto**; il doc va marcato superato.
 
 SSoT unica: helper statici rating SOLO in `RatingData`. Il trait conserva i
 metodi di istanza host (relazioni, form schema, hydrate/sync) e delega ai
-vocab `RatingData::` — dipendenza a senso unico trait→Data. `Rating::class`
+vocab `RatingData::`: dipendenza a senso unico trait→Data. `Rating::class`
 esplicito resta canon al call-site Resource (story 5.232, subclass IR per
 connection dedicata); `resolveRatingClassFromCaller()` resta fallback.
 

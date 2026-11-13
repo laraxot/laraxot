@@ -86,6 +86,11 @@ trait RatingTrait
      */
     public function getMyRatingAttribute($value)
     {
+        return $this->getMyRating();
+    }
+
+    public function getMyRating()
+    {
         $my = $this->myRatings;
 
         return $my->pluck('pivot.rating', 'post_id');
@@ -99,7 +104,7 @@ trait RatingTrait
         if (null !== $value) {
             return $value;
         }
-        $value = $this->ratings->avg('pivot.rating');
+        $value = $this->getRatingsAvg();
         if (null !== $value) {
             // ✅ Persist con update chirurgico (salva SOLO questo campo, previene loop)
             if (null !== $this->getKey()) {
@@ -115,9 +120,7 @@ trait RatingTrait
         if (null !== $value) {
             return $value;
         }
-        // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
-        // $value = $this->ratings->count('pivot.rating');
-        $value = $this->ratings->count(); // ?? forse fare filtro
+        $value = $this->getRatingsCount();
         $this->ratings_count = $value;
 
         // Guard: modello deve avere PK per salvare
@@ -129,6 +132,18 @@ trait RatingTrait
         $this->update(['ratings_count' => $value]);
 
         return $value;
+    }
+
+    public function getRatingsAvg(): ?float
+    {
+        return $this->ratings->avg('pivot.rating');
+    }
+
+    public function getRatingsCount(): ?int
+    {
+        // Method Illuminate\Support\Collection<int,Modules\Rating\Models\Rating>::count() invoked with 1 parameter, 0 required.
+        // $value = $this->ratings->count('pivot.rating');
+        return $this->ratings->count(); // ?? forse fare filtro
     }
 
     // */

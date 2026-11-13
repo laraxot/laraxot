@@ -2,9 +2,15 @@
 
 declare(strict_types=1);
 
+use function Safe\file_get_contents;
+use function Safe\file_put_contents;
+use function Safe\glob;
+
 /**
  * Script raffinato per identificare VERI testi italiani in file di traduzione non italiani
  * Esclude falsi positivi come "email", "password" che sono termini internazionali.
+ *
+ * @return array<string, list<array{pattern: string, line: int<1, max>, content: string, language: string}>>
  */
 function auditRealItalianText(string $basePath): array
 {
@@ -13,15 +19,18 @@ function auditRealItalianText(string $basePath): array
 
     // Trova tutti i file di traduzione non italiani
     $patterns = [
-        $basePath.'/*/lang/en/*.php',
-        $basePath.'/*/lang/de/*.php',
-        $basePath.'/*/lang/es/*.php',
-        $basePath.'/*/lang/fr/*.php',
+        $basePath.'/Modules/*/lang/en/*.php',
+        $basePath.'/Modules/*/lang/de/*.php',
+        $basePath.'/Modules/*/lang/es/*.php',
+        $basePath.'/Modules/*/lang/fr/*.php',
     ];
 
     foreach ($patterns as $pattern) {
-        $files = glob($pattern);
-        $nonItalianFiles = array_merge($nonItalianFiles, $files);
+        foreach (glob($pattern) as $file) {
+            if (is_string($file)) {
+                $nonItalianFiles[] = $file;
+            }
+        }
     }
 
     // Pattern italiani REALI (escludendo termini internazionali)
@@ -208,9 +217,6 @@ function auditRealItalianText(string $basePath): array
 
     foreach ($nonItalianFiles as $file) {
         $content = file_get_contents($file);
-        if (! $content) {
-            continue;
-        }
 
         $fileIssues = [];
         $lines = explode("\n", $content);
@@ -218,12 +224,12 @@ function auditRealItalianText(string $basePath): array
         foreach ($realItalianPatterns as $pattern) {
             $lineNumber = 0;
             foreach ($lines as $line) {
-                ++$lineNumber;
-                if (false !== stripos($line, $pattern)) {
+                $lineNumber++;
+                if (stripos($line, $pattern) !== false) {
                     // Verifica che non sia un falso positivo
                     $isExcluded = false;
                     foreach ($excludePatterns as $exclude) {
-                        if (false !== stripos($line, $exclude) && false !== stripos($line, $pattern)) {
+                        if (stripos($line, $exclude) !== false) {
                             // Controlla se il pattern è parte del termine escluso
                             if (str_contains(strtolower($exclude), strtolower(trim($pattern)))) {
                                 $isExcluded = true;
@@ -270,6 +276,9 @@ function getLanguageFromPath(string $file): string
     return 'Unknown';
 }
 
+/**
+ * @param  array<string, list<array{pattern: string, line: int<1, max>, content: string, language: string}>>  $issues
+ */
 function generateRefinedReport(array $issues): string
 {
     $report = "# Refined Italian Text Audit Report\n\n";
@@ -325,7 +334,7 @@ function generateRefinedReport(array $issues): string
 }
 
 // Esegui audit raffinato
-$basePath = '/var/www/html/_bases/base_<nome progetto>/laravel';
+$basePath = dirname(__DIR__, 3);
 echo "Inizio audit raffinato per testi italiani REALI in file non italiani...\n";
 
 $issues = auditRealItalianText($basePath);

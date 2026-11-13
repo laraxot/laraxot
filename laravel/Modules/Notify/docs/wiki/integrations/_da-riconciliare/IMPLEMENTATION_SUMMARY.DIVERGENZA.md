@@ -1,10 +1,15 @@
 ---
+qmd: "IMPLEMENTATION SUMMARY.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: IMPLEMENTATION_SUMMARY.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: implementation-summary.divergenza.md
 ---
 
 # Divergenza: `IMPLEMENTATION_SUMMARY.md`

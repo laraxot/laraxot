@@ -53,7 +53,7 @@ class PendingRequestsWidget extends XotBaseSchemaWidget
 
         return AbsenceRequest::query()
             ->where('user_id', $userId)
-            ->where('status', AbsenceRequest::STATUS_PENDING)
+            ->where('status', \Modules\Employee\Enums\AbsenceRequestStatusEnum::PENDING->value)
             ->orderByDesc('created_at')
             ->limit(10)
             ->get()

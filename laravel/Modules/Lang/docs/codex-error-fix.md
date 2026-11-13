@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Codex Configuration Error Fixes"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "phpstan level10 fixes 1"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Codex Configuration Error Fixes
 

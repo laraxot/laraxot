@@ -1,3 +1,15 @@
+---
+title: "vhost configuration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "vhost configuration"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🌐 Notify Local VHost Configuration
 
 > **Last Updated**: 2026-03-31
@@ -6,7 +18,6 @@
 > **Server**: Apache 2.4.64 (Ubuntu)
 
 ---
-
 ## 🎯 Overview
 
 This document describes the Apache VirtualHost configuration for local development of the Notify platform using the domain `laraxot.local`.

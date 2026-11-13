@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Console Commands - Lang Module"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "phpstan level10 fixes 1"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Console Commands - Lang Module
 
@@ -150,6 +153,9 @@ php artisan lang:find-missing it
 - [PHPStan Corrections](../../../docs/phpstan-fixes.md)
 - [PHPStan Corrections](../../../docs/phpstan-fixes.md)
 - [PHPStan Corrections](../../../docs/phpstan-fixes.md)
+- [PHPStan Corrections](../../../../docs/phpstan-fixes.md)
+- [PHPStan Corrections](../../../../docs/phpstan-fixes.md)
+- [PHPStan Corrections](../../../../docs/phpstan-fixes.md)
 
 ## Note di Sviluppo
 

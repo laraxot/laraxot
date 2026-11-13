@@ -1,4 +1,9 @@
 ---
+type: note
+tags: [documentation]
+qmd: "rating altro option conditional textarea design.story"
+issues: []
+discussions: []
 title: "Design: opzione 'altro' con textarea obbligatoria nel Select dei rating figli"
 epic: "5"
 slug: rating-altro-option-conditional-textarea-design
@@ -21,7 +26,7 @@ github_issues:
 github_discussion: https://github.com/laraxot/module_rating_fila5/discussions/59
 ---
 
-# Design — Select «altro» + note
+# Design: Select «altro» + note
 
 ## BMAD pack (2026-09-16)
 
@@ -31,9 +36,9 @@ github_discussion: https://github.com/laraxot/module_rating_fila5/discussions/59
 - [architecture/rating-select-altro-implementation-spec.md](../bmad/architecture/rating-select-altro-implementation-spec.md)
 
 Questo file resta il design storico D-1..D-8 **riallineato** al canone utente.  
-**Fase:** solo documentazione — nessun codice.
+**Fase:** solo documentazione: nessun codice.
 
-## Chiave option — cronologia (e perché batte le rivendicazioni parallele)
+## Chiave option: cronologia (e perché batte le rivendicazioni parallele)
 
 | Quando | Versione | Fonte |
 |--------|----------|-------|
@@ -59,13 +64,13 @@ Verificato su `HasRatingsTrait.php` (~343–373):
 2. Con figli → **oggi solo** `Select` (options = id figli). **Target:** `Group(Select + Textarea)` sempre
 3. Senza figli → `TextInput` numerico (invariato)
 
-Nessuna option «altro» oggi. Campo testo: `rating_morph.note` già in migration — **nessuna migration nuova**.
+Nessuna option «altro» oggi. Campo testo: `rating_morph.note` già in migration: **nessuna migration nuova**.
 
 `ratingFieldName` oggi solo `…pivot.value`; to-be: secondo argomento `$pivotColumn = 'value'|'note'`.
 
 ## Decisioni (canone)
 
-### D-1 — Chiave option «altro» (supersede stringa `'altro'`)
+### D-1: Chiave option «altro» (supersede stringa `'altro'`)
 
 ```php
 private const string OTHER_OPTION_KEY = '';
@@ -81,15 +86,15 @@ private static function selectIsOther(Get $get, string $selectField): bool
 | `''` | option «altro» | **sì** |
 | int > 0 | id figlio | no |
 
-### D-2 — Storage testo
+### D-2: Storage testo
 
 `rating_morph.note`. `ratingFieldName($rating, 'note')`.
 
-### D-3 — Label option
+### D-3: Label option
 
-`trans('rating::fields.altro')` nel **valore** dell’array options — non `->label()` sul componente (D-1 story 5.92).
+`trans('rating::fields.altro')` nel **valore** dell’array options: non `->label()` sul componente (D-1 story 5.92).
 
-### D-4 — Presenza e validazione
+### D-4: Presenza e validazione
 
 Select + Textarea **sempre** visibili (`Group`). Nessun `->visible()` sulla note.
 
@@ -100,21 +105,21 @@ Textarea::make(self::ratingFieldName($rating, 'note'))
 
 Coda `nullable|rules|live|afterStateUpdated` resta sul **Select**, non sul Group.
 
-### D-5 — `recalculateRatingFields`
+### D-5: `recalculateRatingFields`
 
 Non reagisce a `note` (solo value numerico readonly).
 
-### D-6 — Opt-in
+### D-6: Opt-in
 
 Nessun flag: con figli, «altro» sempre in coda options.
 
-### D-7 — Mapping form ↔ `value` (**superseded** come sentinella stringa)
+### D-7: Mapping form ↔ `value` (**superseded** come sentinella stringa)
 
 Con chiave `''`, dehydrate speciale stringa→null **non serve**: form `''` e DB `null` si allineano in save host (`''`→`null`).  
 
 Hydrate round-trip: se `value===null` e `note` filled → Select state **`''`** (non placeholder). Vedi implementation-spec § fill.
 
-### D-8 — `HasRatingValuesFilter`
+### D-8: `HasRatingValuesFilter`
 
 `value` null/0 = non valutata oggi → schede solo-note false negative.  
 **Issue:** [#60](https://github.com/laraxot/module_rating_fila5/issues/60) · story [5.141](../bmad/stories/5.141-has-rating-values-filter-note.story.md). Preferenza: note filled = valutata.

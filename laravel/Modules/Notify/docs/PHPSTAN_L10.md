@@ -1,12 +1,17 @@
 ---
-title: PHPStan Level 10 Compliance — Notify Module
+tags: [documentation]
+updated: 2026-09-26
+qmd: "PHPSTAN L10"
+issues: []
+discussions: []
+title: PHPStan Level 10 Compliance: Notify Module
 module: Notify
 type: quality-gate
 status: complete
 created: 2026-08-02
 ---
 
-# PHPStan Level 10 Compliance — Notify Module
+# PHPStan Level 10 Compliance: Notify Module
 
 ## Summary
 
@@ -58,8 +63,9 @@ phpstan analyse app --level=10
 
 ## Related Docs
 
-- [`phpstan-l10-compliance.md`](../../../docs/wiki/rules/phpstan-l10-compliance.md)
-- [`MODULE_STRUCTURE.md`](./MODULE_STRUCTURE.md) — Module discipline
+- [`phpstan-l10-compliance.md`](../../../../docs/wiki/rules/phpstan-l10-compliance.md)
+- [`phpstan-l10-compliance.md`](../../../../docs/wiki/rules/phpstan-l10-compliance.md)
+- [`MODULE_STRUCTURE.md`](./MODULE_STRUCTURE.md): Module discipline
 - [GitHub Repo](https://github.com/laraxot/module_notify_fila5)
 
 **Status:** ✅ Compliant (2026-08-02)

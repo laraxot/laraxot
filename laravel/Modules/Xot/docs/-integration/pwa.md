@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "pwa"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "pwa xot"
+---
+>>>>>>> laraxot/dev
 # pwa
 
 <!-- Contenuto migrato da _docs/pwa.txt -->

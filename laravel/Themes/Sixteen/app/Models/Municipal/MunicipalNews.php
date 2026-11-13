@@ -16,6 +16,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Themes\Sixteen\Enums\MunicipalNewsPriorityEnum;
+use Themes\Sixteen\Enums\MunicipalNewsStatusEnum;
+use Themes\Sixteen\Enums\MunicipalNewsTypeEnum;
+use Themes\Sixteen\Enums\MunicipalNewsUrgencyEnum;
 
 use function Safe\parse_url;
 
@@ -40,8 +44,8 @@ use function Safe\parse_url;
  * @property string|null $source
  * @property string $news_status
  * @property string $visibility
- * @property int $priority_level
- * @property int $urgency_level
+ * @property int|null $priority_level
+ * @property int|null $urgency_level
  * @property array<array-key, mixed>|null $target_audience
  * @property array<array-key, mixed>|null $geographic_scope
  * @property string|null $language
@@ -101,74 +105,6 @@ class MunicipalNews extends Model
 {
     /** @use HasFactory<Factory<self>> */
     use HasFactory, SoftDeletes;
-
-    /**
-     * Tipologie di notizia secondo AGID
-     */
-    public const NEWS_TYPES = [
-        'news' => 'Notizia',
-        'press_release' => 'Comunicato Stampa',
-        'public_notice' => 'Avviso Pubblico',
-        'announcement' => 'Annuncio',
-        'alert' => 'Allerta',
-        'service_update' => 'Aggiornamento Servizi',
-        'regulation_update' => 'Aggiornamento Normativo',
-        'event_announcement' => 'Annuncio Eventi',
-        'tender_notice' => 'Bando/Gara',
-        'job_posting' => 'Offerta Lavoro',
-        'council_update' => 'Aggiornamento Consiglio',
-        'mayor_message' => 'Messaggio del Sindaco',
-        'citizen_info' => 'Informazione ai Cittadini',
-        'emergency' => 'Emergenza',
-        'other' => 'Altro',
-    ];
-
-    /**
-     * Stati della notizia
-     */
-    public const NEWS_STATUSES = [
-        'draft' => 'Bozza',
-        'review' => 'In Revisione',
-        'approved' => 'Approvata',
-        'published' => 'Pubblicata',
-        'archived' => 'Archiviata',
-        'expired' => 'Scaduta',
-        'retracted' => 'Ritirata',
-    ];
-
-    /**
-     * Livelli di priorità
-     */
-    public const PRIORITY_LEVELS = [
-        1 => 'Bassa',
-        2 => 'Normale',
-        3 => 'Alta',
-        4 => 'Urgente',
-        5 => 'Critica',
-    ];
-
-    /**
-     * Livelli di urgenza
-     */
-    public const URGENCY_LEVELS = [
-        1 => 'Non Urgente',
-        2 => 'Normale',
-        3 => 'Urgente',
-        4 => 'Molto Urgente',
-        5 => 'Emergenza',
-    ];
-
-    /**
-     * Ambiti geografici
-     */
-    public const GEOGRAPHIC_SCOPES = [
-        'municipal' => 'Comunale',
-        'district' => 'Quartiere/Circoscrizione',
-        'regional' => 'Regionale',
-        'national' => 'Nazionale',
-        'european' => 'Europeo',
-        'international' => 'Internazionale',
-    ];
 
     protected $table = 'sixteen_municipal_news';
 
@@ -713,7 +649,7 @@ class MunicipalNews extends Model
     protected function newsTypeName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::NEWS_TYPES[$this->news_type] ?? $this->news_type
+            get: fn () => MunicipalNewsTypeEnum::tryFrom($this->news_type)?->getLabel() ?? $this->news_type
         );
     }
 
@@ -725,7 +661,7 @@ class MunicipalNews extends Model
     protected function newsStatusName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::NEWS_STATUSES[$this->news_status] ?? $this->news_status
+            get: fn () => MunicipalNewsStatusEnum::tryFrom($this->news_status)?->getLabel() ?? $this->news_status
         );
     }
 
@@ -737,7 +673,7 @@ class MunicipalNews extends Model
     protected function priorityName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::PRIORITY_LEVELS[$this->priority_level] ?? 'Normale'
+            get: fn () => (MunicipalNewsPriorityEnum::tryFrom($this->priority_level ?? 0) ?? MunicipalNewsPriorityEnum::NORMAL)->getLabel()
         );
     }
 
@@ -749,7 +685,7 @@ class MunicipalNews extends Model
     protected function urgencyName(): Attribute
     {
         return Attribute::make(
-            get: fn () => self::URGENCY_LEVELS[$this->urgency_level] ?? 'Normale'
+            get: fn () => (MunicipalNewsUrgencyEnum::tryFrom($this->urgency_level ?? 0) ?? MunicipalNewsUrgencyEnum::NORMAL)->getLabel()
         );
     }
 

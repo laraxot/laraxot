@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\User\Datas\DeviceData;
 use Modules\User\Datas\FilamentShieldData;
 use Modules\User\Datas\FilamentUserData;
@@ -15,12 +14,11 @@ use Modules\User\Datas\ShieldResourceData;
 use Modules\User\Datas\SocialProviderData;
 use Modules\User\Datas\SuperAdminData;
 use Modules\User\Tests\TestCase;
-use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
 test('PermissionData can be instantiated', function () {
-    $permissionData = PermissionData::from([
+    expect(PermissionData::from([
         'models' => PermissionModelsData::from(['permission' => 'Modules\User\Models\Permission', 'role' => 'Modules\User\Models\Role']),
         'table_names' => PermissionTableNamesData::from(['permissions' => 'permissions', 'roles' => 'roles', 'model_has_permissions' => 'model_has_permissions', 'model_has_roles' => 'model_has_roles', 'role_has_permissions' => 'role_has_permissions']),
         'column_names' => PermissionColumnNamesData::from(['model_morph_key' => 'model_id']),
@@ -30,110 +28,145 @@ test('PermissionData can be instantiated', function () {
         'display_role_in_exception' => false,
         'enable_wildcard_permission' => false,
         'cache' => PermissionCacheData::from(['enabled' => true, 'key' => 'spatie.permission.cache', 'expiration_time' => DateInterval::createFromDateString('24 hours'), 'store' => 'default']),
-    ]);
+    ]))->toEqual(PermissionData::from([
+        'models' => PermissionModelsData::from(['permission' => 'Modules\User\Models\Permission', 'role' => 'Modules\User\Models\Role']),
+        'table_names' => PermissionTableNamesData::from(['permissions' => 'permissions', 'roles' => 'roles', 'model_has_permissions' => 'model_has_permissions', 'model_has_roles' => 'model_has_roles', 'role_has_permissions' => 'role_has_permissions']),
+        'column_names' => PermissionColumnNamesData::from(['model_morph_key' => 'model_id']),
+        'register_permission_check_method' => false,
+        'teams' => false,
+        'display_permission_in_exception' => false,
+        'display_role_in_exception' => false,
+        'enable_wildcard_permission' => false,
+        'cache' => PermissionCacheData::from(['enabled' => true, 'key' => 'spatie.permission.cache', 'expiration_time' => DateInterval::createFromDateString('24 hours'), 'store' => 'default']),
+    ]));
 
-    Assert::assertInstanceOf(PermissionData::class, $permissionData);
 });
 
 test('PermissionModelsData can be instantiated', function () {
-    $modelsData = PermissionModelsData::from([
+    expect(PermissionModelsData::from([
         'permission' => 'Modules\User\Models\Permission',
         'role' => 'Modules\User\Models\Role',
-    ]);
+    ]))->toEqual(PermissionModelsData::from([
+        'permission' => 'Modules\User\Models\Permission',
+        'role' => 'Modules\User\Models\Role',
+    ]));
 
-    Assert::assertInstanceOf(PermissionModelsData::class, $modelsData);
 });
 
 test('PermissionTableNamesData can be instantiated', function () {
-    $tableNamesData = PermissionTableNamesData::from([
+    expect(PermissionTableNamesData::from([
         'permissions' => 'permissions',
         'roles' => 'roles',
         'model_has_permissions' => 'model_has_permissions',
         'model_has_roles' => 'model_has_roles',
         'role_has_permissions' => 'role_has_permissions',
-    ]);
+    ]))->toEqual(PermissionTableNamesData::from([
+        'permissions' => 'permissions',
+        'roles' => 'roles',
+        'model_has_permissions' => 'model_has_permissions',
+        'model_has_roles' => 'model_has_roles',
+        'role_has_permissions' => 'role_has_permissions',
+    ]));
 
-    Assert::assertInstanceOf(PermissionTableNamesData::class, $tableNamesData);
 });
 
 test('PermissionColumnNamesData can be instantiated', function () {
-    $columnNamesData = PermissionColumnNamesData::from([
+    expect(PermissionColumnNamesData::from([
         'model_morph_key' => 'model_id',
-    ]);
+    ]))->toEqual(PermissionColumnNamesData::from([
+        'model_morph_key' => 'model_id',
+    ]));
 
-    Assert::assertInstanceOf(PermissionColumnNamesData::class, $columnNamesData);
 });
 
 test('PermissionCacheData can be instantiated', function () {
-    $cacheData = PermissionCacheData::from([
+    expect(PermissionCacheData::from([
         'expiration_time' => DateInterval::createFromDateString('24 hours'),
         'key' => 'spatie.permission.cache',
         'store' => 'default',
-    ]);
+    ]))->toEqual(PermissionCacheData::from([
+        'expiration_time' => DateInterval::createFromDateString('24 hours'),
+        'key' => 'spatie.permission.cache',
+        'store' => 'default',
+    ]));
 
-    Assert::assertInstanceOf(PermissionCacheData::class, $cacheData);
 });
 
 test('DeviceData can be instantiated', function () {
-    $deviceData = DeviceData::from([
+    expect(DeviceData::from([
         'id' => 1,
         'name' => 'Test Device',
         'user_id' => 1,
-    ]);
+    ]))->toEqual(DeviceData::from([
+        'id' => 1,
+        'name' => 'Test Device',
+        'user_id' => 1,
+    ]));
 
-    Assert::assertInstanceOf(DeviceData::class, $deviceData);
 });
 
 test('SocialProviderData can be instantiated', function () {
-    $socialProviderData = SocialProviderData::from([
+    expect(SocialProviderData::from([
         'id' => 1,
         'name' => 'google',
         'active' => true,
-    ]);
+    ]))->toEqual(SocialProviderData::from([
+        'id' => 1,
+        'name' => 'google',
+        'active' => true,
+    ]));
 
-    Assert::assertInstanceOf(SocialProviderData::class, $socialProviderData);
 });
 
 test('FilamentUserData can be instantiated', function () {
-    $filamentUserData = FilamentUserData::from([
+    expect(FilamentUserData::from([
         'id' => 1,
         'name' => 'Test User',
-    ]);
+    ]))->toEqual(FilamentUserData::from([
+        'id' => 1,
+        'name' => 'Test User',
+    ]));
 
-    Assert::assertInstanceOf(FilamentUserData::class, $filamentUserData);
 });
 
 test('SuperAdminData can be instantiated', function () {
-    $superAdminData = SuperAdminData::from([
+    expect(SuperAdminData::from([
         'id' => 1,
         'name' => 'Super Admin',
-    ]);
+    ]))->toEqual(SuperAdminData::from([
+        'id' => 1,
+        'name' => 'Super Admin',
+    ]));
 
-    Assert::assertInstanceOf(SuperAdminData::class, $superAdminData);
 });
 
 test('FilamentShieldData can be instantiated', function () {
-    $filamentShieldData = FilamentShieldData::from([
+    expect(FilamentShieldData::from([
         'enabled' => true,
-    ]);
+    ]))->toEqual(FilamentShieldData::from([
+        'enabled' => true,
+    ]));
 
-    Assert::assertInstanceOf(FilamentShieldData::class, $filamentShieldData);
 });
 
 test('PasswordData can be instantiated', function () {
-    $passwordData = PasswordData::from([
+    expect(PasswordData::from([
         'min' => 8,
         'max' => 100,
-    ]);
+    ]))->toEqual(PasswordData::from([
+        'min' => 8,
+        'max' => 100,
+    ]));
 
-    Assert::assertInstanceOf(PasswordData::class, $passwordData);
 });
 
 test('ShieldResourceData can be instantiated', function () {
-    $shieldResourceData = ShieldResourceData::from([
+    expect(ShieldResourceData::from([
         'name' => 'users',
         'enabled' => true,
-    ]);
+    ]))->toEqual(ShieldResourceData::from([
+        'name' => 'users',
+        'enabled' => true,
+    ]));
 
-    Assert::assertInstanceOf(ShieldResourceData::class, $shieldResourceData);
 });

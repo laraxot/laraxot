@@ -4,23 +4,23 @@ declare(strict_types=1);
 
 return [
     'edit_user' => [
-        'title' => 'Modifica Profilo Utente',
-        'description' => 'Aggiorna le informazioni del profilo utente',
+        'title' => 'Benutzerprofil bearbeiten',
+        'description' => 'Profilinformationen des Benutzers aktualisieren',
         'sections' => [
             'personal_info' => [
-                'title' => 'Informazioni Personali',
+                'title' => 'Persönliche Informationen',
                 'description' => 'Dati anagrafici e contatti',
             ],
             'preferences' => [
-                'title' => 'Preferenze',
+                'title' => 'Einstellungen',
                 'description' => 'Impostazioni personali e lingua',
             ],
             'security' => [
-                'title' => 'Sicurezza',
+                'title' => 'Sicherheit',
                 'description' => 'Password e impostazioni di sicurezza',
             ],
             'admin_settings' => [
-                'title' => 'Impostazioni Amministratore',
+                'title' => 'Administratoreinstellungen',
                 'description' => 'Configurazioni riservate agli amministratori',
             ],
         ],
@@ -169,6 +169,14 @@ return [
         'messages' => [
             'success' => 'Disconnessione effettuata con successo',
             'confirm' => 'Sei sicuro di voler uscire?',
+        ],
+    ],
+    'user_widget' => [
+        'start_date' => [
+            'label' => 'Startdatum:',
+        ],
+        'end_date' => [
+            'label' => 'Enddatum:',
         ],
     ],
 ];

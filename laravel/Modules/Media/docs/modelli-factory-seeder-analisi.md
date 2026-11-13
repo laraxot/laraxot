@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Analisi Modelli, Factory e Seeder - Modulo Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "modelli factory seeder analisi"
 related:
   - "./webm.md"
+status: draft
 ---
 
 
@@ -45,11 +48,9 @@ Questo documento analizza tutti i modelli del modulo Media verificando la presen
 - **Versioning**: Gestione versioni multiple file
 
 **Relazioni Business Logic**:
-<<<<<<< HEAD
 - **Dominio sanitario**: Documenti pazienti, referti medici, immagini profilo
-=======
+---
 - **SaluteOra**: Documenti pazienti, referti medici, immagini profilo
->>>>>>> laraxot/dev
 - **User**: Avatar utenti, documenti identità
 - **Cms**: Immagini contenuti, allegati pagine
 - **Notify**: Allegati notifiche email
@@ -152,12 +153,12 @@ Tutti i modelli attivi hanno le factory corrispondenti.
 - **Streaming**: Streaming file grandi
 
 ### File Processing
-- **Image Processing**: 
+- **Image Processing**:
   - Resize, crop, rotate
   - Filters e effetti
   - Format conversion
   - Quality optimization
-  
+
 - **Document Processing**:
   - PDF generation
   - Text extraction
@@ -212,11 +213,9 @@ Tutti i file factory devono essere validati con PHPStan livello 9:
 - [Performance Optimization](./performance_optimization.md)
 
 ### Moduli Collegati
-<<<<<<< HEAD
 - Modulo sanitario legacy - Documenti medici
-=======
+---
 - [SaluteOra Module](../../SaluteOra/docs/modelli_factory_seeder_analisi.md) - Documenti medici
->>>>>>> laraxot/dev
 - [User Module](../../User/docs/modelli_factory_seeder_analisi.md) - Avatar e documenti utente
 - [Cms Module](../../Cms/docs/modelli_factory_seeder_analisi.md) - Contenuti multimediali
 - [Notify Module](../../Notify/docs/modelli_factory_seeder_analisi.md) - Allegati notifiche
@@ -227,6 +226,5 @@ Tutti i file factory devono essere validati con PHPStan livello 9:
 - [FFmpeg](https://ffmpeg.org/) - Video/Audio processing
 - [ImageMagick](https://imagemagick.org/) - Advanced image processing
 
-*Ultimo aggiornamento: Gennaio 2025*
 *Analisi completa di 4 modelli attivi, sistema media completo*
 *Supporto upload, conversioni, storage locale/cloud*

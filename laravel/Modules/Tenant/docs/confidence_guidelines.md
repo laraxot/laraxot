@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Massimizzare il livello di confidenza"
 module: "Tenant"
 type: how-to
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "confidence guidelines"
 related:
   - "./phpstan-corrections-january.md"
+status: superseded
+superseded_by: confidence-guidelines.md
 ---
 # Massimizzare il livello di confidenza
 

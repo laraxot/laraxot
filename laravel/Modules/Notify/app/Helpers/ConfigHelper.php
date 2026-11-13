@@ -36,6 +36,10 @@ class ConfigHelper
 
     /**
      * Ottiene un valore di configurazione con sostituzione delle variabili template.
+     *
+     * `mixed` voluto: specchia `Config::get()` — chiavi config eterogenee.
+     *
+     * @param  mixed  $default  Valore di fallback eterogeneo
      */
     public static function get(string $key, mixed $default = null): mixed
     {

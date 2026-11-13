@@ -1,3 +1,14 @@
+---
+title: "CHANGELOG"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "CHANGELOG"
+issues: []
+discussions: []
+---
+
 ## [1.0.0-dev.2](https://github.com/laraxot/module_seo_fila5/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2026-08-27)
 
 ### Bug Fixes

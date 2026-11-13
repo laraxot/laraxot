@@ -1,3 +1,16 @@
+---
+title: "SYNC TEST FILE"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "SYNC TEST FILE"
+issues: []
+discussions: []
+status: superseded
+superseded_by: sync-test-file.md
+---
+
 # Test Sync File
 
 Questo file è stato creato il 2026-03-13 per testare la sincronizzazione bidirezionale.
@@ -9,7 +22,6 @@ Questo file è stato creato il 2026-03-13 per testare la sincronizzazione bidire
 Se stai leggendo questo file su GitHub (laraxot/module_seo_fila5), allora il sync **MAIN → REMOTE** funziona! ✅
 
 ---
-
 ## Istruzioni per Verifica
 
 1. ✅ Questo file è stato creato in: `laravel/Modules/Seo/SYNC_TEST_FILE.md`

@@ -8,17 +8,21 @@ qmd: "widget-translation widget translation rules - fixcity project"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # Widget Translation Rules - FixCity Project
 
 ## Core Principles
@@ -154,12 +158,16 @@ protected static string $view = 'user::widgets.edit-user';
 - Check responsive design and accessibility
 - Validate form submission and error handling
 ## Related Documentation
-- [User Module Widget Structure](../modules/user/project_docs/widgets-structure-2.md)
+- [User Module Widget Structure](../modules/user/project_docs/widgets-structure.md)
 - [EditUserWidget Documentation](../modules/user/project_docs/widgets/edit-user-widget.md)
 - [Widget Translation Guidelines](../modules/user/project_docs/widgets/translation-guidelines.md)
 - [Filament Widget Conventions](../modules/xot/project_docs/filament-widgets.md)
-- [User Module Widget Structure](../modules/user/docs/widgets-structure-2.md)
->>>>>>> 87273113 (.)
+- [User Module Widget Structure](../modules/user/docs/widgets-structure.md)
+- [User Module Widget Structure](../modules/user/project_docs/widgets-structure-user.md)
+- [EditUserWidget Documentation](../modules/user/project_docs/widgets/edit-user-widget.md)
+- [Widget Translation Guidelines](../modules/user/project_docs/widgets/translation-guidelines.md)
+- [Filament Widget Conventions](../modules/xot/project_docs/filament-widgets.md)
+- [User Module Widget Structure](../modules/user/docs/widgets-structure-user.md)
 - [EditUserWidget Documentation](../modules/user/docs/widgets/edit-user-widget.md)
 - [Widget Translation Guidelines](../modules/user/docs/widgets/translation-guidelines.md)
 - [Filament Widget Conventions](../modules/xot/docs/filament-widgets.md)
@@ -355,8 +363,8 @@ protected static string $view = 'user::widgets.edit-user';
 
 ## Related Documentation
 
-- [User Module Widget Structure](../modules/user/docs/widgets-structure-2.md)
->>>>>>> 87273113 (.)
+- [User Module Widget Structure](../modules/user/docs/widgets-structure.md)
+- [User Module Widget Structure](../modules/user/docs/widgets-structure-user.md)
 - [EditUserWidget Documentation](../modules/user/docs/widgets/edit-user-widget.md)
 - [Widget Translation Guidelines](../modules/user/docs/widgets/translation-guidelines.md)
 - [Filament Widget Conventions](../modules/xot/docs/filament-widgets.md)

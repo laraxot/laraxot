@@ -1,4 +1,22 @@
+---
+title: "specialized rules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "specialized rules"
+issues: []
+discussions: []
+status: draft
+---
+
 # Specialized Rules & Configurations
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 This document contains niche but critical rules for specific domains of the project.
 
@@ -24,6 +42,6 @@ Avoid ad-hoc layouts. Use the following structure:
 - Avoid creating new Blade files for simple content; use the generic `[slug].blade.php` with the `x-page` component.
 
 ## Frontend Assets
-- To see changes: `npm run build && npm run copy` inside the theme directory.
+- To see changes: `npm run build` inside the theme directory.
 - Assets are served from `public_html/themes/{ThemeName}`.
 - `@vite` requires the theme's base path (e.g., `'themes/Meetup'`).

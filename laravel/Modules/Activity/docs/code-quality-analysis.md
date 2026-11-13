@@ -13,15 +13,12 @@ qmd: "code quality analysis - activity module activity"
 ### 1. Activity Listing Performance (MEDIUM)
 
 #### N+1 Queries in Activity Logs
-<<<<<<< HEAD
 <<<<<<< .merge_file_jNjVfD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 **Problem**: 50-100 queries per page load
 =======
 >>>>>>> .merge_file_TbSgve
@@ -330,11 +327,7 @@ private function updateActivityStatistics($activityData): void
 **Problem**: Nested search conditions
 **Solution**: Use query builders and break into smaller methods
 
-<<<<<<< HEAD
 ## 🔧 Laravel 13 Compliance Issues
-=======
-## 🔧 Laravel 12 Compliance Issues
->>>>>>> 13cf1831 (.)
 
 ### 1. Database Query Optimization
 **Problem**: Inefficient database queries
@@ -396,14 +389,11 @@ This analysis provides a comprehensive roadmap for improving code quality in the
 ### 1. Activity Listing Performance (MEDIUM)
 
 #### N+1 Queries in Activity Logs
-<<<<<<< HEAD
 <<<<<<< .merge_file_jNjVfD
 <<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 
 **Problem**: 50-100 queries per page load
 
@@ -516,7 +506,6 @@ public function searchActivities($searchTerm, $filters = [])
     
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 =======
 >>>>>>> .merge_file_TbSgve
@@ -525,9 +514,6 @@ public function searchActivities($searchTerm, $filters = [])
 =======
     
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-    
->>>>>>> 13cf1831 (.)
     return Cache::remember($cacheKey, 300, function() use ($searchTerm, $filters) {
         $query = ActivityLog::with(['causer', 'subject'])
             ->where(function($q) use ($searchTerm) {
@@ -728,11 +714,7 @@ private function updateActivityStatistics($activityData): void
 **Problem**: Nested search conditions
 **Solution**: Use query builders and break into smaller methods
 
-<<<<<<< HEAD
 ## 🔧 Laravel 13 Compliance Issues
-=======
-## 🔧 Laravel 12 Compliance Issues
->>>>>>> 13cf1831 (.)
 
 ### 1. Database Query Optimization
 **Problem**: Inefficient database queries
@@ -853,15 +835,12 @@ $defaultRecordsPerPageSelectOption → $defaultPerPageOption
 
 ## 📚 Related Documentation
 
-<<<<<<< HEAD
 <<<<<<< .merge_file_jNjVfD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 - [ACTIVITY_LOG_OPTIMIZATION.md](./performance/activity_log_optimization.md)
 =======
 >>>>>>> .merge_file_TbSgve
@@ -872,12 +851,9 @@ This analysis provides a comprehensive roadmap for improving code quality in the
 
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 >>>>>>> 0a02158a (.)
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 - [ACTIVITY_LOG_OPTIMIZATION.md](./performance/ACTIVITY_LOG_OPTIMIZATION.md)
 - [QUERY_OPTIMIZATION_ANALYSIS.md](./QUERY_OPTIMIZATION_ANALYSIS.md)
 - [bottlenecks.md](./bottlenecks.md)

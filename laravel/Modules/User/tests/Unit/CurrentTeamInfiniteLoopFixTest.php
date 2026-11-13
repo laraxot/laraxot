@@ -1,8 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\User\Database\Factories\TeamFactory;
 use Modules\User\Models\Team;
 use Modules\User\Models\User;
@@ -12,7 +10,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
- * @param array<string, mixed> $attributes
+ * @param  array<string, mixed>  $attributes
  */
 function currentTeamFixCreateUser(array $attributes = []): User
 {
@@ -23,7 +21,7 @@ function currentTeamFixCreateUser(array $attributes = []): User
 }
 
 /**
- * @param array<string, mixed> $attributes
+ * @param  array<string, mixed>  $attributes
  */
 function currentTeamFixCreateTeam(User $user, array $attributes = []): Team
 {
@@ -41,7 +39,6 @@ beforeEach(function (): void {
 test('current team getter does not crash when user has no teams', function () {
     $user = currentTeamFixCreateUser();
 
-    Assert::assertInstanceOf(BelongsTo::class, $user->currentTeam());
     Assert::assertNull($user->currentTeam);
 });
 
@@ -51,7 +48,6 @@ test('current team getter is side effect free', function () {
 
     Assert::assertNull($user->currentTeam);
     Assert::assertNull($user->currentTeam);
-    Assert::assertInstanceOf(BelongsTo::class, $user->currentTeam());
 
     $user->refresh();
     Assert::assertSame($originalTeamId, $user->current_team_id);
@@ -128,7 +124,6 @@ test('current team getter does not cause errors on repeated access', function ()
 
     Assert::assertInstanceOf(Team::class, $user->currentTeam);
     Assert::assertSame($team->id, $user->currentTeam->id);
-    Assert::assertInstanceOf(BelongsTo::class, $user->currentTeam());
 });
 
 test('current team getter works correctly with existing team', function () {
@@ -148,17 +143,15 @@ test('current team getter works correctly with existing team', function () {
 test('user creation does not trigger infinite loop', function () {
     $user = currentTeamFixCreateUser(['name' => 'New User']);
 
-    Assert::assertInstanceOf(User::class, $user);
     Assert::assertNotNull($user->id);
     Assert::assertSame('New User', $user->name);
     Assert::assertNull($user->currentTeam);
-    Assert::assertInstanceOf(BelongsTo::class, $user->currentTeam());
 });
 
 test('multiple users can be created without issues', function () {
     $users = [];
 
-    for ($i = 1; $i <= 5; ++$i) {
+    for ($i = 1; $i <= 5; $i++) {
         $users[] = currentTeamFixCreateUser([
             'name' => "User {$i}",
             'email' => "user-{$i}-".uniqid('', true).'@example.com',
@@ -168,9 +161,7 @@ test('multiple users can be created without issues', function () {
     Assert::assertCount(5, $users);
 
     foreach ($users as $user) {
-        Assert::assertInstanceOf(User::class, $user);
         Assert::assertNotNull($user->id);
         Assert::assertNull($user->currentTeam);
-        Assert::assertInstanceOf(BelongsTo::class, $user->currentTeam());
     }
 });

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: "Rimando a changelog.md"
 description: "Documento unificato: il contenuto canonico vive in changelog.md."
@@ -21,8 +20,6 @@ Questo file era un duplicato esatto che differiva solo per maiuscole/minuscole, 
 
 <!-- Merged from changelog.md, which collided with this file on case-insensitive filesystems. -->
 
-=======
->>>>>>> 13cf1831 (.)
 # Changelog
 
 All notable changes to this project will be documented in this file.

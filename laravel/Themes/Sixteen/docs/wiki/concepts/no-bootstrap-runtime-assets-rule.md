@@ -1,13 +1,17 @@
 ---
+qmd: "no bootstrap runtime assets rule"
+issues: []
+discussions: []
 title: "No Bootstrap Runtime Assets Rule"
 type: concept
 confidence: high
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-10-19
 tags: [sixteen, vite, tailwind, alpine, lit, bootstrap, runtime]
 related:
-  - ../../../../../docs/wiki/memories/sixteen-tailwind-vite-runtime-boundary.md
+  - ../../../../../../docs/wiki/memories/sixteen-tailwind-vite-runtime-boundary.md
   - ../../../../../Modules/Fixcity/docs/wiki/concepts/frontoffice-wizard-theme-runtime-boundary.md
+status: draft
 ---
 
 # No Bootstrap Runtime Assets Rule
@@ -19,7 +23,7 @@ Il runtime del tema Sixteen non deve caricare Bootstrap o Bootstrap Italia trami
 - JS applicativo: una sola entry pubblica nel layout, `@vite(['resources/js/app.js'], 'themes/Sixteen')`.
 - JS di feature: import dentro `resources/js/app.js`, per esempio `import { initHeaderMobileNav } from './theme/header-mobile-nav.js';`.
 - CSS runtime: `@vite(['resources/css/app.css'], 'themes/Sixteen')`; niente `bootstrap-italia.min.css` da CDN.
-- Icone SVG Design Comuni: sprite locale pubblicato dal tema, non CDN.
+- Icone SVG Design Comuni: sprite in `resources/static/`, copiato da `vite build` (`publicDir`) nell'`outDir` `public/`. URL stabile, non hashato, non CDN, non file depositato a mano in `public/`.
 - HTML di reference sotto `docs/` o `Main_files/` puo' contenere asset Bootstrap Italia per confronto upstream, ma non e' codice runtime.
 
 ## Perche'

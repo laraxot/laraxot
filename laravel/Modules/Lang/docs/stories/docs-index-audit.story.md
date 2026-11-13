@@ -1,4 +1,7 @@
 ---
+qmd: "docs index audit.story"
+issues: []
+discussions: []
 title: "Lang: audit e ricostruzione indice docs/index.md"
 type: story
 module: Lang

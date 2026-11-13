@@ -1,5 +1,5 @@
 ---
-title: "Composer root minimale — modulo Lang"
+title: "Composer root minimale: modulo Lang"
 type: concept
 tags: [composer, lang, nwidart, merge-plugin]
 created: 2026-06-29
@@ -13,6 +13,8 @@ related:
   - ../../../Xot/docs/wiki/concepts/composer-root-skeleton-modular.md
   - ../../../../../../docs/wiki/concepts/composer-root-minimal-nwidart.md
   - ../../composer.json
+  - ../../../composer.json
+status: draft
 ---
 
 # Lang e composer root minimale
@@ -24,7 +26,7 @@ Dipendenze del dominio **Lang** in `Modules/Lang/composer.json`. Il root `larave
 
 
 
-## Merge root — solo moduli
+## Merge root: solo moduli
 
 `laravel/composer.json` → merge **solo** `Modules/*/composer.json`. **Vietato** `Themes/*/composer.json` (nwidart owner = modulo; tema = vestito Blade/assets).
 

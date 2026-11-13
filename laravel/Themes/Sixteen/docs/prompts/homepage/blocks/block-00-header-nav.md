@@ -1,3 +1,15 @@
+---
+title: "block 00 header nav"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "block 00 header nav"
+issues: []
+discussions: []
+status: draft
+---
+
 # Block 00: Header e Navigazione
 
 **ID:** `header-navigation`  

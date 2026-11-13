@@ -507,14 +507,63 @@ footer a:hover {
    Reference: <main> → <section> → <div.container>
    Local: <main> → <div.container#main-container> → <section> → <div.container>
    ============================================================================ */
-#main-container > section > .container {
+/* Non azzerare i gutter di #head-section: il copy deve restare sull’asse Design Comuni. */
+#main-container > section:not(#head-section) > .container {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
 @media (min-width: 992px) {
-  #main-container > section > .container {
+  #main-container > section:not(#head-section) > .container {
     max-width: 100% !important;
   }
 }
+/* Homepage contract: public-sector trust, one accent, 44px controls. */
+#head-section .btn-hero-primary {
+    background-color: #fff;
+    color: #007a52;
+    border: 0;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 15%);
+}
 
+#head-section .btn-hero-primary:hover,
+#head-section .btn-hero-primary:focus-visible {
+    background-color: #f0f0f0;
+    color: #005c3d;
+}
+
+#head-section .btn-hero-secondary {
+    background-color: rgb(255 255 255 / 14%);
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+#head-section .btn-hero-secondary:hover,
+#head-section .btn-hero-secondary:focus-visible {
+    background-color: rgb(255 255 255 / 24%);
+    color: #fff;
+}
+
+#head-section .btn-hero-link {
+    color: #fff;
+    text-decoration: underline;
+    background: transparent;
+    border: 0;
+}
+
+#head-section #welcome-heading,
+#head-section .lead,
+#head-section .title-xsmall-semi-bold {
+    color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #head-section *,
+    #head-section *::before,
+    #head-section *::after {
+        scroll-behavior: auto;
+        transition-duration: 0.01ms;
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+    }
+}

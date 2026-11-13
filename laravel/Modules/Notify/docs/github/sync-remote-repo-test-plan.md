@@ -15,6 +15,7 @@ related:
   - "./issue-multi-agent-collaboration.md"
   - "./issue-subtree-sync-test.md"
   - "./sync-remote-repo-docs-summary.md"
+status: draft
 ---
 
 # Sync Remote Repo - Test Plan

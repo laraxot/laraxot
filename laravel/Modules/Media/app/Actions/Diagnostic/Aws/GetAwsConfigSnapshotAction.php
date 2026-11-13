@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Media\Actions\Diagnostic\Aws;
 
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Spatie\QueueableAction\QueueableAction;
 
 class GetAwsConfigSnapshotAction
@@ -18,8 +17,12 @@ class GetAwsConfigSnapshotAction
      */
     public function execute(): array
     {
+        $accessKeyId = config('filesystems.disks.s3.key', '');
+
         return [
-            'AWS_ACCESS_KEY_ID' => substr(SafeStringCastAction::cast(config('filesystems.disks.s3.key', '')), 0, self::KEY_PREVIEW_LENGTH).'...',
+            'AWS_ACCESS_KEY_ID' => is_string($accessKeyId)
+                ? substr($accessKeyId, 0, self::KEY_PREVIEW_LENGTH).'...'
+                : '',
             'AWS_DEFAULT_REGION' => config('filesystems.disks.s3.region'),
             'AWS_BUCKET' => config('filesystems.disks.s3.bucket'),
             'CLOUDFRONT_URL' => config('filesystems.cloudfront.url'),

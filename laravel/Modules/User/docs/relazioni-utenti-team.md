@@ -3,15 +3,24 @@ description:
 globs:
 alwaysApply: false
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
->>>>>>> 87273113 (.)
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+title: "Relazione utenti-team: tabella pivot `doctor_team`"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, user]
+qmd: "relazione utenti-team: tabella pivot `doctor_team` user"
 ---
 # Relazione utenti-team: tabella pivot `doctor_team`
 
@@ -27,7 +36,6 @@ Questa documentazione descrive la relazione many-to-many tra utenti e team nel m
 
 ## Collegamenti
 - [Documentazione generale sulle migrazioni](mdc:../../../../docs/database-migrations.md)
->>>>>>> 87273113 (.)
 - [Best practice XotBaseMigration](mdc:../../xot/docs/migrations.md)
 
 ---

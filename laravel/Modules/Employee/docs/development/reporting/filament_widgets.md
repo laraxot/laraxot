@@ -1,3 +1,9 @@
+---
+title: "Employee - FILAMENT_WIDGETS"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module Dashboard Widgets
 
 ## Overview

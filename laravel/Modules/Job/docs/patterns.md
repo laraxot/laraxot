@@ -1,4 +1,10 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+qmd: "patterns"
+issues: []
+discussions: []
 title: "Job Module Architectural Patterns"
 category: "architecture"
 owner: "Job"
@@ -380,7 +386,7 @@ ProcessUserDataAction::dispatch(Auth::id());
 ```php
 class LongRunningAction implements ShouldQueue
 {
-    // No $timeout set — job may timeout unpredictably
+    // No $timeout set: job may timeout unpredictably
 }
 ```
 
@@ -444,7 +450,7 @@ public function handle(Invoice $invoice): void
 
 - [Laravel Queues Documentation](https://laravel.com/docs/queues)
 - [Queue Best Practices](./best-practices.md)
-- [Troubleshooting Guide](./TROUBLESHOOTING.md)
+- [Troubleshooting Guide](./job-module-troubleshooting-guide.md)
 - [Job Monitor Filament Resource](./COMPONENTS.md#filament-resources)
 
 ---

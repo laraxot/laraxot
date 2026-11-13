@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 /**
  * @see https://github.com/DutchCodingCompany/filament-socialite
  */
-
-declare(strict_types=1);
 
 namespace Modules\User\Actions\Socialite;
 
@@ -35,6 +34,6 @@ class GetProviderScopesAction
         return array_values(array_filter(array_map(
             static fn (mixed $scope): ?string => \is_scalar($scope) || $scope instanceof \Stringable ? (string) $scope : null,
             $scopes
-        ), static fn (?string $scope): bool => null !== $scope));
+        ), static fn (?string $scope): bool => $scope !== null));
     }
 }

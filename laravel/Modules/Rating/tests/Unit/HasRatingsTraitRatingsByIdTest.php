@@ -22,7 +22,7 @@ require_once __DIR__.'/../Fixtures/RatingsHostStub.php';
  */
 function ratingWithPivot(int $id, string $title, ?int $value): Rating
 {
-    $rating = new Rating;
+    $rating = new Rating();
     $rating->setRawAttributes([
         'id' => $id,
         'title' => $title,
@@ -38,7 +38,7 @@ function ratingWithPivot(int $id, string $title, ?int $value): Rating
  */
 function ratingMorph(int $ratingId, ?int $value): RatingMorph
 {
-    $pivot = new RatingMorph;
+    $pivot = new RatingMorph();
     $pivot->setRawAttributes([
         'rating_id' => $ratingId,
         'value' => $value,
@@ -50,7 +50,7 @@ function ratingMorph(int $ratingId, ?int $value): RatingMorph
 
 function hostWithRatings(): RatingsHostStub
 {
-    $host = new RatingsHostStub;
+    $host = new RatingsHostStub();
     $host->setRelation('ratings', new EloquentCollection([
         ratingWithPivot(52, 'Obiettivo A', 57),
         ratingWithPivot(34, 'Obiettivo B', 1),
@@ -81,16 +81,16 @@ describe('HasRatingsTrait ratings_by_id', function (): void {
     });
 
     test('ratings_by_id senza ratings caricati e\' una collection vuota', function (): void {
-        $host = new RatingsHostStub;
-        $host->setRelation('ratings', new EloquentCollection);
-        $host->setRelation('ratingMorphs', new EloquentCollection);
+        $host = new RatingsHostStub();
+        $host->setRelation('ratings', new EloquentCollection());
+        $host->setRelation('ratingMorphs', new EloquentCollection());
 
         Assert::assertSame([], $host->ratings_by_id->all());
     });
 
     test('ratings_by_id legge il pivot anche quando il rating non e\' nella forma alias di model_type (story rating-morph-model-type-doppio)', function (): void {
-        $host = new RatingsHostStub;
-        $host->setRelation('ratings', new EloquentCollection);
+        $host = new RatingsHostStub();
+        $host->setRelation('ratings', new EloquentCollection());
         $host->setRelation('ratingMorphs', new EloquentCollection([
             ratingMorph(52, 57),
         ]));
@@ -100,8 +100,8 @@ describe('HasRatingsTrait ratings_by_id', function (): void {
     });
 
     test('ratings_by_id preferisce la riga pivot con value non nullo quando duplicata fra le due forme di model_type', function (): void {
-        $host = new RatingsHostStub;
-        $host->setRelation('ratings', new EloquentCollection);
+        $host = new RatingsHostStub();
+        $host->setRelation('ratings', new EloquentCollection());
         $host->setRelation('ratingMorphs', new EloquentCollection([
             ratingMorph(52, null),
             ratingMorph(52, 57),

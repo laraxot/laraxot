@@ -8,6 +8,7 @@ use Modules\Notify\Channels\NetfunChannel;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('NetfunChannel', function () {
     it('can be instantiated', function () {
         $reflection = new \ReflectionClass(NetfunChannel::class);

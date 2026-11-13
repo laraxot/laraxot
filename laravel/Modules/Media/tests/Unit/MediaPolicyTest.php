@@ -47,29 +47,29 @@ afterEach(function (): void {
 
 describe('MediaPolicy', function (): void {
     test('super-admin bypassa before', function (): void {
-        $policy = new MediaPolicy();
+        $policy = new MediaPolicy;
 
         Assert::assertTrue($policy->before(mediaFakeUser(roles: ['super-admin']), 'viewAny'));
     });
 
     test('viewAny richiede media.viewAny', function (): void {
-        $policy = new MediaPolicy();
+        $policy = new MediaPolicy;
 
         Assert::assertTrue($policy->viewAny(mediaFakeUser(['media.viewAny'])));
         Assert::assertFalse($policy->viewAny(mediaFakeUser()));
     });
 
     test('view richiede media.view', function (): void {
-        $policy = new MediaPolicy();
-        $media = new Media();
+        $policy = new MediaPolicy;
+        $media = new Media;
 
         Assert::assertTrue($policy->view(mediaFakeUser(['media.view']), $media));
         Assert::assertFalse($policy->view(mediaFakeUser(), $media));
     });
 
     test('create update delete restore forceDelete', function (): void {
-        $policy = new MediaPolicy();
-        $media = new Media();
+        $policy = new MediaPolicy;
+        $media = new Media;
 
         Assert::assertTrue($policy->create(mediaFakeUser(['media.create'])));
         Assert::assertTrue($policy->update(mediaFakeUser(['media.update']), $media));
@@ -81,8 +81,8 @@ describe('MediaPolicy', function (): void {
 
 describe('MediaConvertPolicy', function (): void {
     test('abilities usano il prefisso media_convert', function (): void {
-        $policy = new MediaConvertPolicy();
-        $record = new MediaConvert();
+        $policy = new MediaConvertPolicy;
+        $record = new MediaConvert;
 
         Assert::assertTrue($policy->viewAny(mediaFakeUser(['media_convert.viewAny'])));
         Assert::assertTrue($policy->view(mediaFakeUser(['media_convert.view']), $record));
@@ -96,8 +96,8 @@ describe('MediaConvertPolicy', function (): void {
 
 describe('TemporaryUploadPolicy', function (): void {
     test('abilities usano il prefisso temporary_upload', function (): void {
-        $policy = new TemporaryUploadPolicy();
-        $record = new TemporaryUpload();
+        $policy = new TemporaryUploadPolicy;
+        $record = new TemporaryUpload;
 
         Assert::assertTrue($policy->viewAny(mediaFakeUser(['temporary_upload.viewAny'])));
         Assert::assertTrue($policy->view(mediaFakeUser(['temporary_upload.view']), $record));

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Video Manager"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "video manager"
 related:
   - "./webm.md"
+status: draft
 ---
 https://github.com/amitavroy/MyVideoManager
 

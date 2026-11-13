@@ -1,13 +1,25 @@
 ---
+qmd: "PROJECT OVERVIEW"
+issues: []
+discussions: []
 title: "NOTIFY - Civic Engagement Platform"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: project_overview.md
 ---
 
 # 🏛️ NOTIFY - Civic Engagement Platform
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 # 🏛️ <nome progetto> - Civic Engagement Platform
 
 > **Piattaforma di segnalazione civica per la gestione intelligente dei disservizi urbani**
@@ -515,7 +527,7 @@ php artisan migrate --seed
 
 # 4. Build
 npm run build
-cd Themes/Sixteen && npm run build && npm run copy
+cd Themes/Sixteen && npm run build
 
 # 5. Serve
 php artisan serve

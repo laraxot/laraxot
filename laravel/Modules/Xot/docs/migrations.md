@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Migrazioni"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, docs]
+qmd: "Migrazioni"
+---
+>>>>>>> laraxot/dev
 # Migrazioni
 
 ## Configurazione Base
@@ -220,7 +233,11 @@ try {
         'migration' => 'create_users_table',
         'error' => $e->getMessage(),
     ]);
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     throw $e;
 }
 ```
@@ -298,4 +315,8 @@ return new class extends Migration
         Schema::dropIfExists('comments');
     }
 };
+<<<<<<< HEAD
 ```
+=======
+``` 
+>>>>>>> laraxot/dev

@@ -1,3 +1,9 @@
+---
+title: "Employee - 04-LEAVE-MANAGEMENT"
+module: Employee
+bmad: true
+status: active
+---
 # 04 - Gestione Permessi e Ferie (Leave Management)
 
 ## 🎯 Obiettivo

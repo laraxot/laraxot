@@ -8,24 +8,23 @@ qmd: "roadmap-2025 👥 user module - roadmap 2025"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
->>>>>>> 87273113 (.)
 # 👥 USER MODULE - ROADMAP 2025
 
 **Modulo**: User (Authentication & Authorization)  
 **Status**: 90% COMPLETATO  
 **Priority**: HIGH  
 **PHPStan**: ✅ Level 10 (0 errori)  
->>>>>>> 87273113 (.)
 **Filament**: ✅ 4.x Compatibile  
 
 ---
@@ -105,7 +104,6 @@ User Module
 
 ### 🔧 Technical Excellence
 - [x] **PHPStan Level 10**: 0 errori
->>>>>>> 87273113 (.)
 - [x] **Filament 4.x**: Compatibilità completa
 - [x] **Type Safety**: Type hints completi
 - [x] **Error Handling**: Gestione errori robusta
@@ -273,7 +271,6 @@ User Module
 
 #### ✅ Completed
 - [x] PHPStan Level 10 compliance
->>>>>>> 87273113 (.)
 - [x] Type safety implementation
 - [x] Error handling improvement
 - [x] Code documentation
@@ -333,7 +330,6 @@ User Module
 
 ### 📊 Technical Metrics
 - [x] **PHPStan Level 10**: 0 errori ✅
->>>>>>> 87273113 (.)
 - [x] **Filament 4.x**: Compatibile ✅
 - [ ] **Test Coverage**: 80% (target)
 - [ ] **Response Time**: < 200ms
@@ -497,7 +493,6 @@ User Module
 
 ---
 
->>>>>>> 87273113 (.)
 **Status**: 🚧 ACTIVE DEVELOPMENT  
 **Confidence Level**: 98%  
 

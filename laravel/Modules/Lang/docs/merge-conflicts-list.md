@@ -1,5 +1,7 @@
 ---
-title: "Merge conflict markers — file list"
+issues: []
+discussions: []
+title: "Merge conflict markers: file list"
 module: "Lang"
 type: concept
 tags: [google, translate]
@@ -8,8 +10,9 @@ updated: 2026-07-14
 qmd: "google translate"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
-# Merge conflict markers — file list
+# Merge conflict markers: file list
 
 Elenco dei file trovati contenenti marker di merge (<<<<<<<, >>>>>>>, .merge_file). Seguire la lista per assegnare task agli agenti.
 
@@ -55,7 +58,7 @@ Elenco dei file trovati contenenti marker di merge (<<<<<<<, >>>>>>>, .merge_fil
 
 ## Stato
 
-- [x] laravel/Modules/Project/resources/views/filament/widgets/ticket-create-wizard.blade.php — risolto (merge markers rimossi e unione logica applicata)
+- [x] laravel/Modules/Project/resources/views/filament/widgets/ticket-create-wizard.blade.php: risolto (merge markers rimossi e unione logica applicata)
 - [ ] gli altri file: da verificare e risolvere
 
 ## Note

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_UvZcXw
 return [
     'fields' => [
         'name' => ['label' => 'name', 'placeholder' => 'name', 'helper_text' => 'name', 'description' => 'name'],
@@ -10,3 +11,6 @@ return [
         'message' => ['label' => 'message', 'placeholder' => 'message', 'helper_text' => 'message', 'description' => 'message'],
     ],
 ];
+=======
+return [];
+>>>>>>> .merge_file_tA1OlE

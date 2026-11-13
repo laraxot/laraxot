@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Filament\Resources\UserResource\Actions;
 
+use Illuminate\Support\Facades\Gate;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Filament\Actions\XotBaseAction;
 
@@ -24,7 +25,11 @@ class VerifyEmailAction extends XotBaseAction
             ->icon('heroicon-o-check-badge')
             ->color('success')
             ->visible(static fn (UserContract $record): bool => ! $record->hasVerifiedEmail())
+            ->authorize('update')
             ->action(static function (UserContract $record): void {
+                // Le Action non autorizzano da sole: verificare l'email di un super-admin spetta solo a un super-admin.
+                Gate::authorize('update', $record);
+
                 $record->markEmailAsVerified();
             })
             ->requiresConfirmation()

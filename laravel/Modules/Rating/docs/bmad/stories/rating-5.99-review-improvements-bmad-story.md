@@ -1,4 +1,10 @@
 ---
+type: note
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rating 5.99 review improvements bmad story"
+issues: []
+discussions: []
 id: rating-5.99-review-improvements-bmad-story
 slug: rating-5.99-review-improvements-bmad-story
 title: "Review Rating/5.99 'altro' feature implementation and identified improvements"
@@ -37,7 +43,7 @@ maintainer: PTVX
 license: project-internal
 ---
 
-# Review Rating/5.99 'altro' feature implementation — BMAD story
+# Review Rating/5.99 'altro' feature implementation: BMAD story
 
 ## Contesto
 
@@ -61,7 +67,7 @@ L'altro agente ha recentemente modificato la documentazione Rating (1354 file ca
 
 #### 2. Filtro HasRatingValuesFilter interazione (D-8)
 - **Problema**: `HasRatingValuesFilter` tratta `value null/0` come "non valutata". Quando si sceglie "altro" (`value = null` + `note` piena), quelle schede apparirebbero come "senza rating" finché non si decide filtro o sentinel
-- **Miglioramento**: Documentare questo rischio e decidere strategia (estendere filtro considerare `note` non vuota, oppure sentinel numerico dedicato) — story separata #60
+- **Miglioramento**: Documentare questo rischio e decidere strategia (estendere filtro considerare `note` non vuota, oppure sentinel numerico dedicato): story separata #60
 - **Riferimento**: `docs/bmad/architecture/rating-select-altro-note.md` § D-8
 
 #### 3. Lang/translation verification
@@ -69,7 +75,7 @@ L'altro agente ha recentemente modificato la documentazione Rating (1354 file ca
 - **Miglioramento**: Aggiungere entry `altro` nei file lingua di tutti i moduli consumatori se non presenti, verificare costanza traduzioni
 
 #### 4. Placeholder null vs '' confusa negli test
-- **Problema**: I test Pest devono essere espliciti su `null` vs `''` — `selectIsOther` deve usare `=== ''` only, mai `blank()`
+- **Problema**: I test Pest devono essere espliciti su `null` vs `''`: `selectIsOther` deve usare `=== ''` only, mai `blank()`
 - **Miglioramento**: Aggiungere test Pest che verifichino:
   - `null` → placeholder visualizzato, `note` NON required
   - `''` → option "altro" selezionata, `note` REQUIRED

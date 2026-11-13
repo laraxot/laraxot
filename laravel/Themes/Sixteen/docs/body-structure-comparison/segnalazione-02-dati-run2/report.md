@@ -1,3 +1,15 @@
+---
+title: "report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "report"
+issues: []
+discussions: []
+status: draft
+---
+
 # HTML Parity Report (Fuzzy Match)
 
 - **Score: 96.39%**

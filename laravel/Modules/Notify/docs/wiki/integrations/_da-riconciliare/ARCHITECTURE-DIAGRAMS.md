@@ -1,10 +1,15 @@
 ---
+qmd: "ARCHITECTURE DIAGRAMS"
+issues: []
+discussions: []
 title: "Architecture Diagrams & Visual Reference"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: architecture-diagrams.md
 ---
 
 # Architecture Diagrams & Visual Reference

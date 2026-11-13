@@ -8,13 +8,19 @@ qmd: "phpstan-fixes correzioni phpstan nel modulo user"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./base-classes-corrections-.md"
-  - "./base-classes-corrections-1.md"
-  - "./base-classes-corrections-2.md"
-  - "./base-classes-corrections-3.md"
+  - "../fixes/base-classes-corrections-.md"
   - "./base-classes-corrections.md"
-  - "./phpstan-fixes-1.md"
+  - "./base-classes-corrections.md"
+  - "./base-classes-corrections.md"
+  - "./base-classes-corrections.md"
+  - "./phpstan-fixes.md"
+  - "../fixes/base-classes-corrections.md"
+  - "../fixes/base-classes-corrections.md"
+  - "../fixes/base-classes-corrections-stato-rinominato.md"
+  - "./base-classes-corrections.md"
+  - "./phpstan-fixes-correzioni-modulo-user.md"
   - "./phpstanes.md"
+status: draft
 ---
 
 # Correzioni PHPStan nel Modulo User
@@ -60,4 +66,9 @@ Il modello `Team` accede direttamente a proprietà che potrebbero non essere dis
 * [phpstan-fixes-8.md](../../../user/docs/phpstan-fixes-8.md)
 * [phpstan-fixes-8.md](../../../user/docs/fixes/phpstan-fixes-8.md)
 * [phpstan-fixes-8.md](../../../activity/docs/phpstan-fixes-8.md)
+## Collegamenti tra versioni di phpstan-fixes.md
+* [phpstan-fixes-8.md](../../../Xot/docs/phpstan-fixes.md)
+* [phpstan-fixes-8.md](../phpstan-fixes.md)
+* [phpstan-fixes-8.md](../fixes/phpstan-fixes.md)
+* [phpstan-fixes-8.md](../../../Activity/docs/phpstan-fixes.md)
 

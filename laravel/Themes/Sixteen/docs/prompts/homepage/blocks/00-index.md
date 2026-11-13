@@ -1,10 +1,21 @@
+---
+title: "00 index"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "00 index"
+issues: []
+discussions: []
+status: draft
+---
+
 # Homepage Blocks Index
 
 > Documentazione completa di ogni blocco HTML nella homepage Design Comuni
 > Reference: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
 
 ---
-
 ## Blocchi Identificati
 
 ### 0. Accessibilità
@@ -62,13 +73,13 @@
 ## 🔗 Link Bidirezionali
 
 ### Indici
-- ← [Design Comuni Index](../../00-index.md)
-- ← [Homepage Structural Analysis](../../HOMEPAGE_STRUCTURAL_ANALYSIS_FINAL.md)
+- ← [Design Comuni Index](../../../00-INDEX.md)
+- ← [Homepage Structural Analysis](../../../design-comuni/homepage-structural-analysis-final.md)
 - ← [Bashscripts HTML Compare](../../../../../bashscripts/html/compare-html.sh) — script agnostico di confronto
 
 ### Documenti Correlati
-- → [HTML_SIMILARITY_90_PERCENT_PLAN.md](../HTML_SIMILARITY_90_PERCENT_PLAN.md)
-- → [HTML_SIMILARITY_90_PERCENT_SESSION.md](../HTML_SIMILARITY_90_PERCENT_SESSION.md)
+- → [HTML_SIMILARITY_90_PERCENT_PLAN.md](../html-similarity-90-percent-plan.md)
+- → [HTML_SIMILARITY_90_PERCENT_SESSION.md](../html-similarity-90-percent-session.md)
 
 ---
 

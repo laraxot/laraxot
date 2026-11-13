@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "rating data export methods.story"
+issues: []
+discussions: []
 title: "rating-data-export-methods"
 type: story
 module: Rating
@@ -8,7 +13,7 @@ updated: 2026-09-23
 superseded_by: ./5.238-rating-export-early-stories-supersede.story.md
 ---
 
-> **SUPERSEDED** — helper in `RatingData` via `rating-statics-to-ratingdata-consolidation`. Vedi `5.238`.
+> **SUPERSEDED**: helper in `RatingData` via `rating-statics-to-ratingdata-consolidation`. Vedi `5.238`.
 
 # Story: rating-data-export-methods (storico)
 
@@ -16,7 +21,7 @@ superseded_by: ./5.238-rating-export-early-stories-supersede.story.md
 **Modulo**: Rating
 **Epic**: utility rating riutilizzabili per export XLS
 
-## AC (storici — soddisfatti altrove)
+## AC (storici: soddisfatti altrove)
 - [x] `formFieldLabel` / path in `RatingData` (consolidation)
 - [x] `RatingData::getXlsFields` usa i metodi (5.229 / move)
 - [x] Callers ripuntati (5.231)

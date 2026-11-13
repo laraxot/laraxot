@@ -4,10 +4,18 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Console\Commands;
 
+<<<<<<< HEAD
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Facades\DB;
 use Modules\Xot\Tests\XotBaseTestCase;
+=======
+use Illuminate\Support\Str;
+use Illuminate\Console\Command;
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Support\Facades\DB;
+use Modules\Xot\Actions\Testing\ResolveSharedSqlitePathAction;
+>>>>>>> laraxot/dev
 use Throwable;
 
 use function Safe\glob;
@@ -49,7 +57,11 @@ class BuildTestSqliteCommand extends Command
 
     public function handle(Repository $config): int
     {
+<<<<<<< HEAD
         $target = $this->stringOption('path') ?? XotBaseTestCase::sharedSqlitePath();
+=======
+        $target = $this->stringOption('path') ?? app(ResolveSharedSqlitePathAction::class)->execute();
+>>>>>>> laraxot/dev
 
         if ($this->option('fresh') === true && file_exists($target)) {
             unlink($target);
@@ -204,9 +216,13 @@ class BuildTestSqliteCommand extends Command
 
     private function firstLine(string $message): string
     {
+<<<<<<< HEAD
         $normalised = preg_replace('/\s+/', ' ', $message);
 
         return mb_substr($normalised, 0, 160);
+=======
+        return Str::of($message)->replaceMatches('/\s+/', ' ')->substr(0, 160)->toString();
+>>>>>>> laraxot/dev
     }
 
     private function stringOption(string $name): ?string

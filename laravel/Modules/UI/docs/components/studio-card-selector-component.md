@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+---
+title: "studio card selector component"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "studio card selector component"
+issues: []
+discussions: []
+status: draft
+---
+
+=======
+>>>>>>> f5ffd8b4 (.)
 # StudioCardSelector Component - Modulo UI
 
 ## 🎯 **Panoramica**
@@ -501,7 +516,6 @@ class StudioCardSelectorTest extends DuskTestCase
 - [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
 ---
-
 **Component Status**: 📋 Documented - Ready for Implementation
 **Reusability**: 🔄 High - Cross-module compatible
 **Complexity**: 🟡 Medium - Custom view with Alpine.js

@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+=======
+---
+title: "Modelli"
+type: note
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, models]
+qmd: "Modelli"
+status: superseded
+superseded_by: ../models.md
+---
+>>>>>>> laraxot/dev
 # Modelli
 
 ## Configurazione Base
@@ -246,7 +260,11 @@ try {
     Log::error('Errore nella creazione del prodotto', [
         'error' => $e->getMessage(),
     ]);
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> laraxot/dev
     throw $e;
 }
 ```
@@ -310,4 +328,8 @@ class Comment extends Model
         return $this->morphTo();
     }
 }
+<<<<<<< HEAD
 ```
+=======
+``` 
+>>>>>>> laraxot/dev

@@ -58,15 +58,14 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  * @property string|null $updated_at
  *
  * @method static EloquentStoredEventQueryBuilder<static>|StoredEvent whereUpdatedAt($value)
+<<<<<<< .merge_file_uz5xQe
  *
+=======
+>>>>>>> .merge_file_V7gIQL
  */
 // @see Modules/Xot/docs/spatie-schemaless-attributes.md
 class StoredEvent extends SpatieStoredEvent
 {
-<<<<<<< HEAD
-=======
-    /** > */
->>>>>>> 13cf1831 (.)
     use HasXotFactory;
 
     /** @laravel/Modules/UI/docs/bugfix-awstest-undefined-variable.md string */
@@ -74,18 +73,6 @@ class StoredEvent extends SpatieStoredEvent
 
     protected $table = 'stored_events';
 
-<<<<<<< HEAD
-=======
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
-        if (app()->environment('testing')) {
-            $default = config('database.default');
-            $this->connection = is_string($default) ? $default : 'mysql';
-        }
-    }
-
->>>>>>> 13cf1831 (.)
     protected $fillable = [
         'id',
         'aggregate_uuid',

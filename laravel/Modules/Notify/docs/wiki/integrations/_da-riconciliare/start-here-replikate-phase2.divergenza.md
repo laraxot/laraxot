@@ -1,10 +1,14 @@
 ---
+qmd: "start here replikate phase2.divergenza"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: start-here-replikate-phase2.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
 # Divergenza: `start-here-replikate-phase2.md`

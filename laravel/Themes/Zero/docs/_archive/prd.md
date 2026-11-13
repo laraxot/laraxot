@@ -1,3 +1,21 @@
+---
+id: zero-docs-archive-prd
+slug: prd
+title: "PRD: Zero Theme"
+description: "Theme Zero is the lightweight, performance-first foundation theme for the PTVX system. It serves as the baseline for all other themes and offers a minimal-overhead interface..."
+document_type: guide
+type: guide
+category: product-planning
+status: archived
+tags: []
+created: "2026-09-24"
+updated: "2026-10-08"
+qmd: "prd: zero theme"
+issues: []
+discussions: []
+canonical: ../bmad/prd.md
+---
+
 # PRD: Zero Theme
 
 ## 📋 Executive Summary

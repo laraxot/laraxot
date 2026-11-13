@@ -61,7 +61,7 @@ class TestFileUploadDownloadAction
             ];
         } catch (Exception $exception) {
             return $this->errorResult('File operations test failed: '.$exception->getMessage(), [
-                'error_class' => $exception::class,
+                'error_class' => get_class($exception),
                 'error_file' => $exception->getFile(),
                 'error_line' => $exception->getLine(),
             ]);

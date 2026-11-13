@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "tree"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "tree xot"
+---
+>>>>>>> laraxot/dev
 # tree
 
 <!-- Contenuto migrato da _docs/tree.txt -->

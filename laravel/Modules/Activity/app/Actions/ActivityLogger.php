@@ -24,11 +24,6 @@ class ActivityLogger
     use QueueableAction;
 
     /**
-<<<<<<< HEAD
-=======
-     * Log activity.
-     *
->>>>>>> 13cf1831 (.)
      * @param  array<string, mixed>|null  $properties
      */
     public function log(
@@ -77,7 +72,6 @@ class ActivityLogger
      */
     public function created(Model $model, ?UserContract $user = null): Activity
     {
-<<<<<<< HEAD
 <<<<<<< .merge_file_sFkdDV
         $action = new LogModelCreatedAction($model, $user);
 
@@ -85,11 +79,6 @@ class ActivityLogger
 =======
         return (new LogModelCreatedAction($model, $user instanceof Model ? $user : null))->execute();
 >>>>>>> .merge_file_icBWev
-=======
-        $action = new LogModelCreatedAction($model, $user);
-
-        return $action->execute();
->>>>>>> 13cf1831 (.)
     }
 
     /**
@@ -97,7 +86,6 @@ class ActivityLogger
      */
     public function updated(Model $model, ?UserContract $user = null): Activity
     {
-<<<<<<< HEAD
 <<<<<<< .merge_file_sFkdDV
         $action = new LogModelUpdatedAction($model, $user);
 
@@ -105,11 +93,6 @@ class ActivityLogger
 =======
         return (new LogModelUpdatedAction($model, $user instanceof Model ? $user : null))->execute();
 >>>>>>> .merge_file_icBWev
-=======
-        $action = new LogModelUpdatedAction($model, $user);
-
-        return $action->execute();
->>>>>>> 13cf1831 (.)
     }
 
     /**
@@ -117,7 +100,6 @@ class ActivityLogger
      */
     public function deleted(Model $model, ?UserContract $user = null): Activity
     {
-<<<<<<< HEAD
 <<<<<<< .merge_file_sFkdDV
         $action = new LogModelDeletedAction($model, $user);
 
@@ -125,11 +107,6 @@ class ActivityLogger
 =======
         return (new LogModelDeletedAction($model, $user instanceof Model ? $user : null))->execute();
 >>>>>>> .merge_file_icBWev
-=======
-        $action = new LogModelDeletedAction($model, $user);
-
-        return $action->execute();
->>>>>>> 13cf1831 (.)
     }
 
     /**
@@ -137,7 +114,6 @@ class ActivityLogger
      */
     public function login(UserContract $user): Activity
     {
-<<<<<<< HEAD
 <<<<<<< .merge_file_sFkdDV
         $action = new LogUserLoginAction($user);
 
@@ -145,11 +121,6 @@ class ActivityLogger
 =======
         return (new LogUserLoginAction($user))->execute();
 >>>>>>> .merge_file_icBWev
-=======
-        $action = new LogUserLoginAction($user);
-
-        return $action->execute();
->>>>>>> 13cf1831 (.)
     }
 
     /**
@@ -157,10 +128,7 @@ class ActivityLogger
      */
     public function logout(UserContract $user): Activity
     {
-<<<<<<< HEAD
 <<<<<<< .merge_file_sFkdDV
-=======
->>>>>>> 13cf1831 (.)
         $action = new LogUserLogoutAction($user);
 
         return $action->execute();
@@ -170,11 +138,6 @@ class ActivityLogger
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Log custom event.
-     *
->>>>>>> 13cf1831 (.)
      * @param  array<string, mixed>|null  $properties
      */
     public function custom(
@@ -208,8 +171,12 @@ class ActivityLogger
             ->whereIn('causer_id', $userKeyValues)
             ->where('causer_type', $user::class)
             ->latest()
+<<<<<<< .merge_file_qPdMqE
             ->limit($limit)
             ;
+=======
+            ->limit($limit);
+>>>>>>> .merge_file_YziX5b
 
         return Activity::typedGet($query);
     }
@@ -226,8 +193,12 @@ class ActivityLogger
             ->where('subject_type', $model::class)
             ->where('subject_id', $model->getKey())
             ->latest()
+<<<<<<< .merge_file_qPdMqE
             ->limit($limit)
             ;
+=======
+            ->limit($limit);
+>>>>>>> .merge_file_YziX5b
 
         return Activity::typedGet($query);
     }
@@ -250,8 +221,12 @@ class ActivityLogger
             ->with(['causer', 'subject'])
             ->where('event', $type)
             ->latest()
+<<<<<<< .merge_file_qPdMqE
             ->limit($limit)
             ;
+=======
+            ->limit($limit);
+>>>>>>> .merge_file_YziX5b
 
         return Activity::typedGet($query);
     }
@@ -270,8 +245,12 @@ class ActivityLogger
         $query = Activity::typedQuery()
             ->with(['causer', 'subject'])
             ->latest()
+<<<<<<< .merge_file_qPdMqE
             ->limit($limit)
             ;
+=======
+            ->limit($limit);
+>>>>>>> .merge_file_YziX5b
 
         return Activity::typedGet($query);
     }
@@ -326,11 +305,7 @@ class ActivityLogger
 
                 // Explicitly map and cast to ensure types
                 /** @var array<string, int> $byType */
-<<<<<<< HEAD
                 $byType = $results->mapWithKeys(function (object $item): array {
-=======
-                $byType = $results->mapWithKeys(function (object $item, int $_key): array {
->>>>>>> 13cf1831 (.)
                     // PHPStan L10: isset() per magic attributes invece di property_exists()
                     if (! isset($item->event, $item->count)) {
                         return [];

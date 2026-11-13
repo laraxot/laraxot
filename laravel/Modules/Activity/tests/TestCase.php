@@ -4,18 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Activity\Tests;
 
-<<<<<<< HEAD
 use Filament\Notifications\Notification;
-=======
->>>>>>> 13cf1831 (.)
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\ServiceProvider;
 use Modules\Activity\Filament\Pages\ListLogActivities;
-<<<<<<< HEAD
 use Modules\Activity\Filament\Resources\ActivityResource;
-=======
->>>>>>> 13cf1831 (.)
 use Modules\Activity\Providers\ActivityServiceProvider;
 use Modules\Activity\Providers\EventServiceProvider;
 use Modules\User\Models\User;
@@ -26,11 +20,7 @@ use Modules\Xot\Tests\XotBaseTestCase;
  * Base test case for Activity module.
  *
  * Uses shared fixcity_data.sqlite (no RefreshDatabase / migrate:fresh).
-<<<<<<< HEAD
  * prepareSharedSqliteForTesting() runs before transactions begin.
-=======
- * prepareSharedFixcitySqliteForTesting() runs before transactions begin.
->>>>>>> 13cf1831 (.)
  *
  * @property ListLogActivities|null $page
  */
@@ -94,7 +84,6 @@ abstract class TestCase extends XotBaseTestCase
 
         return $this->page;
     }
-<<<<<<< HEAD
 
     /**
      * Builds a fresh ListLogActivities page instance exposing the
@@ -124,6 +113,4 @@ abstract class TestCase extends XotBaseTestCase
             }
         };
     }
-=======
->>>>>>> 13cf1831 (.)
 }

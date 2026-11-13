@@ -9,6 +9,8 @@ tags: [tag1, tag2]
 related:
   - "./entity.md"
   - "./source.md"
+status: draft
+qmd: "{{title}} user"
 ---
 
 # {{title}}

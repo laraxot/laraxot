@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Lang Module - User Research"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "migrazione filament"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Lang Module - User Research
 

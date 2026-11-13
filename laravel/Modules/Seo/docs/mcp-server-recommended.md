@@ -1,12 +1,20 @@
 ---
+title: "mcp server recommended"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "mcp server recommended"
+issues: []
+discussions: []
 module: theme
 topic: mcp-server-recommended
-canonical: ../../../Themes/docs/shared-components/MCP_SERVER_RECOMMENDED.md
+canonical: ../../../Themes/docs/shared-components/MCP_SERVER_RECOMMENDED.md  # target mancante, verificato 2026-10-08
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/MCP_SERVER_RECOMMENDED.md
-<<<<<<< HEAD
-=======
+---
 # Server MCP consigliati per Seo
 
 Per il modulo Seo, si consiglia di utilizzare i seguenti server MCP:
@@ -23,4 +31,3 @@ Per il modulo Seo, si consiglia di utilizzare i seguenti server MCP:
 - Non usare fetch, mysql o redis se non attivo.
 
 Per dettagli e best practice consulta la guida generale MCP nel workspace.
->>>>>>> laraxot/dev

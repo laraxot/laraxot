@@ -1,5 +1,7 @@
 ---
-title: "Redundancy Report — Modulo Lang"
+issues: []
+discussions: []
+title: "Redundancy Report: Modulo Lang"
 module: "Lang"
 type: concept
 tags: [filament4, migration]
@@ -8,11 +10,12 @@ updated: 2026-07-14
 qmd: "filament4 migration"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 - Inventario [ridondanze cross-modulo](../docs/redundancy-report.md)
 - Concetti [ridondanze cross-cutting](../Xot/docs/wiki/concepts/ridondanze-cross-cutting-codebase.md)
 
-# Redundancy Report — Modulo Lang
+# Redundancy Report: Modulo Lang
 
 > Generato: 2026-05-21 | Analisi automatica deep-scan
 
@@ -33,7 +36,7 @@ abstract class BaseMorphPivot extends MorphPivot
 abstract class BaseMorphPivot extends XotBaseMorphPivot {}
 ```
 
-### 2. 🟠 BaseModelLang — Duplicato con Cms
+### 2. 🟠 BaseModelLang: Duplicato con Cms
 
 | File | Modulo |
 |------|--------|
@@ -42,7 +45,7 @@ abstract class BaseMorphPivot extends XotBaseMorphPivot {}
 
 Verificare quale è la versione canonica. Lang, essendo il modulo di traduzione, dovrebbe essere l'owner.
 
-### 3. 🟡 AutoLabelAction — Versione canonica (Lang è owner)
+### 3. 🟡 AutoLabelAction: Versione canonica (Lang è owner)
 
 **File**: `app/Actions/Filament/AutoLabelAction.php`
 
@@ -50,7 +53,7 @@ Questa è la versione completa con SVG, traduzioni, HtmlString. Esiste una copia
 
 **Nota**: Lang è il modulo canonico per `AutoLabelAction` perché gestisce traduzioni.
 
-### 4. 🟡 EventServiceProvider — Non usa XotBaseEventServiceProvider
+### 4. 🟡 EventServiceProvider: Non usa XotBaseEventServiceProvider
 
 **File**: `app/Providers/EventServiceProvider.php`
 
@@ -62,5 +65,5 @@ Estende `BaseEventServiceProvider` (Laravel) invece di `XotBaseEventServiceProvi
 |----------|----------|-------|
 | 🟠 | BaseMorphPivot non conforme | Da risolvere |
 | 🟠 | BaseModelLang duplicato con Cms | Da verificare |
-| 🟡 | AutoLabelAction è la versione canonica | OK — Xot va pulito |
+| 🟡 | AutoLabelAction è la versione canonica | OK: Xot va pulito |
 | 🟡 | EventServiceProvider inconsistente | Da standardizzare |

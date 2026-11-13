@@ -4,14 +4,38 @@ declare(strict_types=1);
 
 return [
     'fields' => [
-        'id' => ['label' => 'id'],
-        'created_at' => ['label' => 'created_at'],
-        'updated_at' => ['label' => 'updated_at'],
-        'first_name' => ['label' => 'first_name'],
-        'last_name' => ['label' => 'last_name'],
-        'email' => ['label' => 'email'],
-        'phone' => ['label' => 'phone'],
-        'is_active' => ['label' => 'is_active'],
-        'type' => ['label' => 'type'],
+        'id' => [
+            'label' => 'ID',
+        ],
+        'created_at' => [
+            'label' => 'Creato il',
+        ],
+        'updated_at' => [
+            'label' => 'Aggiornato il',
+        ],
+        'first_name' => [
+            'label' => 'Nome',
+        ],
+        'last_name' => [
+            'label' => 'Cognome',
+        ],
+        'email' => [
+            'label' => 'Email',
+        ],
+        'phone' => [
+            'label' => 'Telefono',
+        ],
+        'is_active' => [
+            'label' => 'Attivo',
+        ],
+        'type' => [
+            'label' => 'Tipo',
+        ],
+    ],
+    'actions' => [
+        'delete' => [
+            'tooltip' => '',
+            'icon' => 'delete',
+        ],
     ],
 ];

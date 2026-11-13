@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Tests\Unit\Actions\GeoData;
 
-use Modules\Geo\Actions\GeoData\GeoDataValidationRules;
+use Modules\Geo\Infrastructure\Validation\GeoDataValidationRules;
 use PHPUnit\Framework\Assert;
 
 it('returns validation rules and messages with string keys', function (): void {

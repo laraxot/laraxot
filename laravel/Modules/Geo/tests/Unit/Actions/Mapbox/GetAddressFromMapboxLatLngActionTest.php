@@ -6,14 +6,13 @@ namespace Modules\Geo\Tests\Unit\Actions\Mapbox;
 
 use Illuminate\Support\Facades\Http;
 use Modules\Geo\Actions\Mapbox\GetAddressFromMapboxLatLngAction;
-use Modules\Geo\Datas\Geocoding\AddressData;
 use Modules\Geo\Exceptions\InvalidLocationException;
 use Modules\Geo\Tests\LightTestCase;
 use PHPUnit\Framework\Assert;
 
 uses(LightTestCase::class);
 it('throws exception for invalid latitude below -90', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     try {
         $action->execute(-91.0, 9.1900);
@@ -25,7 +24,7 @@ it('throws exception for invalid latitude below -90', function (): void {
 });
 
 it('throws exception for invalid latitude above 90', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     try {
         $action->execute(91.0, 9.1900);
@@ -37,7 +36,7 @@ it('throws exception for invalid latitude above 90', function (): void {
 });
 
 it('throws exception for invalid longitude below -180', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     try {
         $action->execute(45.0, -181.0);
@@ -49,7 +48,7 @@ it('throws exception for invalid longitude below -180', function (): void {
 });
 
 it('throws exception for invalid longitude above 180', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     try {
         $action->execute(45.0, 181.0);
@@ -61,7 +60,7 @@ it('throws exception for invalid longitude above 180', function (): void {
 });
 
 it('throws exception when api key is not configured', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     config(['services.mapbox.api_key' => null]);
 
@@ -75,7 +74,7 @@ it('throws exception when api key is not configured', function (): void {
 });
 
 it('throws exception when api response is not successful', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     config(['services.mapbox.api_key' => 'test_key']);
 
@@ -93,7 +92,7 @@ it('throws exception when api response is not successful', function (): void {
 });
 
 it('throws exception when response is not valid json', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     config(['services.mapbox.api_key' => 'test_key']);
 
@@ -111,7 +110,7 @@ it('throws exception when response is not valid json', function (): void {
 });
 
 it('throws exception when no features in response', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     config(['services.mapbox.api_key' => 'test_key']);
 
@@ -131,7 +130,7 @@ it('throws exception when no features in response', function (): void {
 });
 
 it('returns address data for valid coordinates', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     config(['services.mapbox.api_key' => 'test_key']);
 
@@ -153,8 +152,6 @@ it('returns address data for valid coordinates', function (): void {
     ]);
 
     $result = $action->execute(45.4642, 9.1900);
-
-    Assert::assertInstanceOf(AddressData::class, $result);
 
     Assert::assertSame(45.4642, $result->latitude);
 
@@ -182,7 +179,7 @@ it('returns address data for valid coordinates', function (): void {
 });
 
 it('handles boundary coordinate values', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     config(['services.mapbox.api_key' => 'test_key']);
 
@@ -200,15 +197,13 @@ it('handles boundary coordinate values', function (): void {
 
     $result = $action->execute(90.0, 180.0);
 
-    Assert::assertInstanceOf(AddressData::class, $result);
-
     Assert::assertSame(90.0, $result->latitude);
 
     Assert::assertSame(180.0, $result->longitude);
 });
 
 it('handles missing context items', function (): void {
-    $action = new GetAddressFromMapboxLatLngAction();
+    $action = new GetAddressFromMapboxLatLngAction;
 
     config(['services.mapbox.api_key' => 'test_key']);
 
@@ -222,8 +217,6 @@ it('handles missing context items', function (): void {
     ]);
 
     $result = $action->execute(45.4642, 9.1900);
-
-    Assert::assertInstanceOf(AddressData::class, $result);
 
     Assert::assertNull($result->country);
 

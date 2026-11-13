@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Dependency Intelligence - Module Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "dependency intelligence"
 related:
   - "./webm.md"
+status: draft
 ---
 # Dependency Intelligence - Module Media
 

@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 ?>
+<<<<<<< .merge_file_1hySqd
+=======
+{{-- current_team_id letto dagli attributi grezzi: con Model::preventAccessingMissingAttributes() un utente
+     caricato senza quella colonna faceva fallire il render (MissingAttributeException). --}}
+>>>>>>> .merge_file_fvID3Q
 <x-filament::dropdown>
     <x-slot name="trigger" class="ml-4">
         <button @class([
@@ -14,7 +19,11 @@ declare(strict_types=1);
 
     <x-filament::dropdown.list>
         @foreach ($teams as $team)
+<<<<<<< .merge_file_1hySqd
         <x-filament::dropdown.list.item wire:click="switchTeam('{{ $team['id'] }}')" :icon="$this->user->current_team_id==$team['id'] ? 'heroicon-o-check-circle' : ''">
+=======
+        <x-filament::dropdown.list.item wire:click="switchTeam('{{ $team['id'] }}')" :icon="($this->user->getAttributes()['current_team_id'] ?? null) == $team['id'] ? 'heroicon-o-check-circle' : ''">
+>>>>>>> .merge_file_fvID3Q
             {{ $team['name'] }}
         </x-filament::dropdown.list.item>
         @endforeach

@@ -1,10 +1,15 @@
 ---
+qmd: "DECISIONE BASEMODEL REFACTORING"
+issues: []
+discussions: []
 title: "DECISIONE: BaseModel Refactoring - Analisi Approfondita"
 module: notify
 type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: decisione-basemodel-refactoring.md
 ---
 
 # 🎯 DECISIONE: BaseModel Refactoring - Analisi Approfondita

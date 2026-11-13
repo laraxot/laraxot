@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 return [
     'fields' => [
         'is_active' => ['label' => 'is_active'],
@@ -21,3 +22,6 @@ return [
         'name' => ['label' => 'name'],
     ],
 ];
+=======
+return [];
+>>>>>>> laraxot/dev

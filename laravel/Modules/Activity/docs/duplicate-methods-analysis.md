@@ -8,10 +8,7 @@ qmd: "analisi metodi duplicati - modulo activity activity"
 ---
 # Analisi Metodi Duplicati - Modulo Activity
 
-<<<<<<< HEAD
 **Data Generazione**: 2025-10-15 06:41:17
-=======
->>>>>>> 13cf1831 (.)
 **Totale Gruppi di Duplicati**:
 
 ## Sommario Esecutivo

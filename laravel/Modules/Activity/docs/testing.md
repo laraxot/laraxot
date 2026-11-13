@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <<<<<<< .merge_file_FEAyr2
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,8 +48,6 @@ test('logs causer on user action', function () {
 =======
 =======
 >>>>>>> 35d8cf69 (Initial commit)
-=======
->>>>>>> 13cf1831 (.)
 # Testing Documentation
 =======
 ```# Testing Documentation
@@ -314,11 +311,7 @@ protected function createApplication()
 
 ### External Resources
 
-<<<<<<< HEAD
 - [Laravel 13.x Testing Documentation](https://laravel.com/docs/12.x/testing)
-=======
-- [Laravel 12.x Testing Documentation](https://laravel.com/docs/12.x/testing)
->>>>>>> 13cf1831 (.)
 - [Pest Installation Guide](https://pestphp.com/docs/installation)
 - [PHPStan Documentation](https://phpstan.org/user-guide/getting-started)
 
@@ -445,12 +438,8 @@ Remember: Good tests are the foundation of reliable software development.
 
 *Last updated: January 2025*
 <<<<<<< HEAD
-<<<<<<< HEAD
 *
 >>>>>>> 0a02158a (.)
 =======
 *
 >>>>>>> 35d8cf69 (Initial commit)
-=======
-*
->>>>>>> 13cf1831 (.)

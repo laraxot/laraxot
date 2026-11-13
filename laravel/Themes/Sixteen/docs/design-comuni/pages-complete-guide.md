@@ -1,3 +1,15 @@
+---
+title: "pages complete guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "pages complete guide"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📄 DESIGN COMUNI PAGES - COMPLETE GUIDE
 
 **Data**: 2026-03-30  
@@ -5,7 +17,6 @@
 **Priority**: HIGH
 
 ---
-
 ## 🎯 PAGES CREATED
 
 ### 1. Homepage

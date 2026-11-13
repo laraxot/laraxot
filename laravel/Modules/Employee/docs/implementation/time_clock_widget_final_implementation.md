@@ -1,3 +1,9 @@
+---
+title: "Employee - TIME_CLOCK_WIDGET_FINAL_IMPLEMENTATION"
+module: Employee
+bmad: true
+status: active
+---
 # TimeClockWidget - Implementazione Finale con Badge Ottimizzati
 
 ## Panoramica

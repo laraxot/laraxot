@@ -1,171 +1,60 @@
 ---
-title: "Design Comuni Font Tokens for Sixteen Theme"
+title: "design comuni font tokens"
 type: concept
-sources: ["https://github.com/italia/design-comuni-pagine-statiche", "laravel/Themes/Sixteen/resources/css/app.css"]
-confidence: high
+tags: [design-comuni, fonts, tokens, sixteen, bootstrap-italia, vite]
 created: 2026-05-04
-updated: 2026-05-04
-tags: [design-comuni, fonts, tokens, sixteeen-theme, tailwind]
+updated: 2026-10-15
+qmd: "design comuni font tokens titillium lora roboto mono vite self-hosted"
+status: active
 related:
-  - ../concepts/header-dynamic-navigation.md
-  - ../../../docs/wiki/concepts/segnalazione-privacy-design-comuni-parity.md
-  - ../../../docs/wiki/concepts/design-comuni-header-auth-state.md
+  - ../concepts/homepage-guest-visual-fix.md
+  - ../../bmad/stories/dcp-183-font-come-asset-di-vite.story.md
+  - ../../bmad/stories/dcp-221-homepage-tipografia-leggibilita-wcag.story.md
+  - ../../accessibility.md
 ---
 
-# Design Comuni Font Tokens for Sixteen Theme
+# Font tokens Design Comuni / Bootstrap Italia (Sixteen)
 
-## Typography Tokens (Design Comuni → Tailwind)
+## Scopo
 
-Design Comuni uses Bootstrap Italia which defines these font tokens. We convert to Tailwind CSS for Sixteen theme.
+Allineare il FO alle [regole tipografiche Bootstrap Italia](https://italia.github.io/bootstrap-italia/docs/organizzare-i-contenuti/tipografia/):
 
-### Primary Font: Titillium Web
+| Famiglia | Ruolo | Classe BI |
+|---|---|---|
+| **Titillium Web** | sans UI / body / nav | `.font-sans-serif` |
+| **Lora** | serif leggibile su display / testi lunghi | `.font-serif` |
+| **Roboto Mono** | numeri, codici | `.font-monospace` |
 
-| Use Case | Design Comuni (Bootstrap) | Sixteen (Tailwind) |
-|----------|---------------------------|----------------------|
-| Body text | `font-family: 'Titillium Web', Arial, sans-serif` | `font-family: 'Titillium Web', Arial, sans-serif` |
-| Base size | `font-size: 16px` | `text-base` (16px) |
-| Small text | `font-size: 14px` | `text-sm` (14px) |
-| Large text | `font-size: 18px` | `text-lg` (18px) |
-| X-Large | `font-size: 20px` | `text-xl` (20px) |
+## Incorporamento (Vite, no CDN)
 
-### Secondary Font: Roboto Mono
+Metodologia Laravel [Working with Fonts](https://laravel.com/docs/vite#working-with-fonts) nella variante **Local Fonts / Vite nativo** (DCP-183):
 
-| Use Case | Design Comuni (Bootstrap) | Sixteen (Tailwind) |
-|----------|---------------------------|----------------------|
-| Headings | `font-family: 'Roboto Mono', monospace` | `font-family: 'Roboto Mono', monospace` |
-| Code blocks | `font-family: 'Roboto Mono', monospace` | `font-mono` + custom font |
+1. File OFL in `resources/fonts/{titillium-web,lora,roboto-mono}/*.woff2`
+2. `@font-face` in `resources/css/design-comuni/fonts.css` con `url()` **relativi** (`../../fonts/...`)
+3. Import da `resources/css/app.css` → Vite hash + voci in `manifest.json`
+4. Guardia: `tests/Unit/FontsCssGuardTest.php`
 
-## Implementation in Sixteen Theme
+Niente `fonts.googleapis.com` (privacy / DCP-137).
 
-File: `laravel/Themes/Sixteen/resources/css/app.css`
+## Token Tailwind (`@theme` in `app.css`)
 
 ```css
-/* Import Design Comuni fonts */
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap');
-
-/* Body text - Titillium Web */
-body {
-    font-family: 'Titillium Web', Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Headings - Roboto Mono */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 600;
-}
-
-/* Stepper text - match Design Comuni */
-.filament-wizard-step-label {
-    font-family: 'Titillium Web', Arial, sans-serif;
-    font-size: 14px;
-}
-
-/* Checkbox text */
-.filament-checkbox-label {
-    font-family: 'Titillium Web', Arial, sans-serif;
-    font-size: 16px;
-}
+--font-sans: "Titillium Web", system-ui, sans-serif;
+--font-serif: "Lora", Georgia, serif;
+--font-mono: "Roboto Mono", ui-monospace, monospace;
 ```
 
-## Design Comuni Reference Pages
+## Hero home `/it`
 
-- **Stepper Example**: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazione-01-privacy.html
-- **Font Source**: https://github.com/italia/design-comuni-pagine-statiche/blob/main/src/stylesheets/
-- **Bootstrap Italia**: https://github.com/italia/bootstrap-italia
+L'H1 «Segnalazioni e servizi per la tua comunità» usa **Lora Regular 400**
+con `font-family` / `font-weight` in `!important` (batte
+`body * { Titillium !important }` dello shell Filament FO in
+`08-layout-type-and-header.css`). Self-hosted: solo 400/700; niente 600
+sintetizzato. Scale BI h1 `clamp(2.5rem, 4vw, 3rem)`, `line-height: 1.2`.
 
-## Wizard Stepper Parity
+Incorporamento: Vite nativo su `resources/fonts` + `fonts.css` relative url
+([Working with fonts](https://laravel.com/docs/vite#working-with-fonts) —
+Local Fonts; DCP-183). `laravel-vite-plugin/fonts` richiede Vite 8: non usato.
 
-### Design Comuni Stepper Structure (Bootstrap)
-
-```html
-<div class="stepper">
-  <div class="step active">
-    <span class="step-number">1</span>
-    <span class="step-label">Autorizzazioni e condizioni</span>
-  </div>
-  <div class="step">
-    <span class="step-number">2</span>
-    <span class="step-label">Dati di segnalazione</span>
-  </div>
-  <div class="step">
-    <span class="step-number">3</span>
-    <span class="step-label">Riepilogo</span>
-  </div>
-</div>
-```
-
-### Sixteen + Filament Wizard (Tailwind)
-
-```php
-Wizard::make([
-    Step::make('privacy')
-        ->label('Autorizzazioni e condizioni')
-        ->icon('heroicon-o-shield-check'),
-    Step::make('data')
-        ->label('Dati di segnalazione')
-        ->icon('heroicon-o-pencil'),
-    Step::make('summary')
-        ->label('Riepilogo')
-        ->icon('heroicon-o-document-text'),
-])
-->skippable()
-->persistStepInQueryString()
-```
-
-## Checkbox Text Parity (CRITICAL)
-
-Exact text from Design Comuni:
-```
-"Dichiaro di aver letto l'informativa sulla privacy e acconsento al trattamento dei dati personali"
-```
-
-Translation file: `laravel/Modules/Fixcity/lang/it/create_ticket_wizard.php`
-
-```php
-'privacyAccepted' => [
-    'label' => 'Dichiaro di aver letto l\'informativa sulla privacy e acconsento al trattamento dei dati personali',
-    // ...
-],
-```
-
-## Mobile-First Responsive
-
-Design Comuni uses responsive breakpoints:
-- **Mobile**: `< 768px` → Stepper collapses to dropdown or horizontal scroll
-- **Tablet**: `≥ 768px` → Stepper shows all steps
-- **Desktop**: `≥ 1024px` → Full stepper with descriptions
-
-Tailwind implementation:
-```css
-/* Mobile: stepper horizontal scroll */
-@media (max-width: 768px) {
-    .filament-wizard-steps {
-        @apply flex overflow-x-auto;
-    }
-}
-
-/* Desktop: full stepper */
-@media (min-width: 1024px) {
-    .filament-wizard-steps {
-        @apply flex justify-between;
-    }
-}
-```
-
-## Quality Gates
-
-- [ ] Fonts load from Google Fonts CDN (no 404)
-- [ ] Stepper visible on all breakpoints
-- [ ] Checkbox text matches Design Comuni exactly
-- [ ] No Bootstrap classes in Blade (Tailwind only)
-- [ ] Mobile responsive: stepper usable on 375px width
-
-## Related Files
-
-- Theme CSS: `laravel/Themes/Sixteen/resources/css/app.css`
-- Wizard Schema: `laravel/Modules/Fixcity/app/Filament/Resources/TicketResource/Schemas/TicketForm.php`
-- Translation: `laravel/Modules/Fixcity/lang/it/create_ticket_wizard.php`
-- Widget: `laravel/Modules/Fixcity/app/Filament/Widgets/CreateTicketWizardWidget.php`
-- View: `laravel/Modules/Fixcity/resources/views/pages/tickets/create.blade.php`
+Vedi [dcp-221](../../bmad/stories/dcp-221-homepage-tipografia-leggibilita-wcag.story.md),
+[homepage-guest-visual-fix](homepage-guest-visual-fix.md).

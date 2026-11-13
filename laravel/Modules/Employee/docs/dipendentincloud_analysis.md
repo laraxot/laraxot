@@ -1,3 +1,9 @@
+---
+title: "Employee - DIPENDENTINCLOUD_ANALYSIS"
+module: Employee
+bmad: true
+status: active
+---
 # Analisi Funzionalità dipendentincloud.it - Modulo Employee
 
 ## Panoramica

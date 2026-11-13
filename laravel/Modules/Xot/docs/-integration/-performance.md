@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "_performance"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "_performance xot"
+---
+>>>>>>> laraxot/dev
 # _performance
 
 <!-- Contenuto migrato da _docs/_performance.txt -->

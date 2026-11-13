@@ -1,7 +1,7 @@
 {{-- Services Catalog List (AGID) --}}
 @props([
     'items' => [], // array<array{title:string, href:string, category:?string, icon:?string, description:?string}>
-    'empty' => __('Nessun servizio disponibile'),
+    'empty' => __('pub_theme::components_content.services.empty.message'),
     'cols' => 3,
 ])
 
@@ -28,7 +28,7 @@
             @endif
             <div class="mt-auto">
                 <a href="{{ $item['href'] ?? '#' }}" class="inline-flex items-center gap-2 text-italia-blue-600 hover:underline font-medium">
-                    <span>{{ __('Vai al servizio') }}</span>
+                    <span>{{ __('pub_theme::components_content.services.go_to_service.label') }}</span>
                     <span aria-hidden="true">→</span>
                 </a>
             </div>

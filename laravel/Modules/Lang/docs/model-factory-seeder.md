@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Model/Factory/Seeder Audit"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "redundancy analysis"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Model/Factory/Seeder Audit
 

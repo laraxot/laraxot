@@ -11,46 +11,24 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-/**
- * @return view-string
- */
-function uiButtonViewName(): string
-{
-    /** @var view-string $viewName */
-    $viewName = 'ui::components.ui.button';
-
-    return $viewName;
-}
-
-/**
- * @return view-string
- */
-function uiCardViewName(): string
-{
-    /** @var view-string $viewName */
-    $viewName = 'ui::components.ui.card';
-
-    return $viewName;
-}
-
 describe('Component', function (): void {
     test('ui components can be rendered', function (): void {
         $component = new class extends Component {
             public function render(): View
             {
-                return view(uiButtonViewName());
+                return view('ui::components.ui.button');
             }
         };
 
-        Assert::assertInstanceOf(Component::class, $component);
+        Assert::assertStringContainsString('button', (string) $component->render()->render());
     });
 
     test('ui button component has correct attributes', function (): void {
-        Assert::assertInstanceOf(View::class, view(uiButtonViewName()));
+        Assert::assertInstanceOf(View::class, view('ui::components.ui.button'));
     });
 
     test('ui card component renders content', function (): void {
-        $view = view(uiCardViewName(), [
+        $view = view('ui::components.ui.card', [
             'title' => 'Test Card',
             'content' => 'Test Content',
         ]);

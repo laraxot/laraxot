@@ -19,7 +19,7 @@
 
 @props([
     'name' => 'rating',
-    'legend' => 'Rating',
+    'legend' => __('pub_theme::components_reports.rating.region.label'),
     'value' => 0,
     'maxRating' => 5,
     'showLabel' => false,
@@ -45,11 +45,11 @@
     
     // Default labels for rating values
     $defaultLabels = [
-        1 => 'Pessimo',
-        2 => 'Scarso', 
-        3 => 'Sufficiente',
-        4 => 'Buono',
-        5 => 'Ottimo'
+        1 => __('pub_theme::components_common.rating.levels.terrible.label'),
+        2 => __('pub_theme::components_common.rating.levels.poor.label'), 
+        3 => __('pub_theme::components_common.rating.levels.fair.label'),
+        4 => __('pub_theme::components_common.rating.levels.good.label'),
+        5 => __('pub_theme::components_common.rating.levels.excellent.label')
     ];
     
     $ratingLabels = !empty($labels) ? $labels : $defaultLabels;
@@ -61,7 +61,7 @@
 <fieldset class="{{ $fieldsetClasses->implode(' ') }}" {{ $attributes }}>
     @if($showLabel && $value > 0)
         <legend>
-            <span class="visually-hidden">Valutazione</span>
+            <span class="visually-hidden">{{ __('pub_theme::components_common.fields.rating.label') }}</span>
             <span>{{ $value }} {{ $value === 1 ? 'stella' : 'stelle' }}</span>
             <span class="visually-hidden">su {{ $maxRating }}</span>
         </legend>
@@ -74,7 +74,7 @@
         @php
             $inputId = $fieldsetId . '-star' . $i;
             $isChecked = $value == $i;
-            $labelText = $ratingLabels[$i] ?? "Valuta {$i} stelle su {$maxRating}";
+            $labelText = $ratingLabels[$i] ?? __('pub_theme::components_common.rating.rate_out_of.label', ['star' => $i, 'max' => $maxRating]);
         @endphp
         
         @if($readonly)
@@ -111,7 +111,7 @@
     {{-- Display current rating value for screen readers when readonly --}}
     @if($readonly && $value > 0)
         <span class="visually-hidden">
-            Valutazione corrente: {{ $value }} su {{ $maxRating }} stelle. {{ $ratingLabels[$value] ?? '' }}
+            {{ __('pub_theme::components_common.rating.current.text', ['value' => $value, 'max' => $maxRating]) }} {{ $ratingLabels[$value] ?? '' }}
         </span>
     @endif
 </fieldset>

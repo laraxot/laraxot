@@ -1,12 +1,17 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+issues: []
+discussions: []
 title: "Audit di qualita: modulo Job"
 type: report
 module: Job
 updated: 2026-09-01
 qmd: "audit qualita job phpstan phpmd phpinsights pest coverage soppressioni collisioni case"
+status: draft
 ---
 
-# Audit di qualita — modulo Job
+# Audit di qualita: modulo Job
 
 Misurato il 1 settembre 2026 a tree fermo. Ogni numero viene da un comando
 eseguito, non da una stima; i comandi sono in fondo, cosi la misura si puo
@@ -23,10 +28,10 @@ rifare e contestare.
 | Casi di test per file PHP | 0.73 |
 | `@phpstan-ignore` nel codice | 0 |
 | Rilievi PHPMD su `app/` | 116 |
-| PHPInsights — Code | 88.2 % |
-| PHPInsights — Complexity | 100.0 % |
-| PHPInsights — Architecture | 71.4 % |
-| PHPInsights — Style | 90.1 % |
+| PHPInsights: Code | 88.2 % |
+| PHPInsights: Complexity | 100.0 % |
+| PHPInsights: Architecture | 71.4 % |
+| PHPInsights: Style | 90.1 % |
 | File `.md` sotto `docs/` | 484 |
 | `TODO`/`FIXME`/`HACK` | 1 |
 | Test con casi che non girano (senza suffisso `Test.php`) | 0 |

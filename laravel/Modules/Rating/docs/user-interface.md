@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "User Interface"
 type: guide
 tags: [user, interface, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "user interface"
 related:
   - "./user-research.md"
+status: draft
 ---
 
 ## User Interface - Modulo Rating

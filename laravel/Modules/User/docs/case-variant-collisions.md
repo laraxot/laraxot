@@ -1,3 +1,11 @@
+---
+title: "Collisioni di nome per sola differenza di maiuscole"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "collisioni di nome per sola differenza di maiuscole user"
+---
 # Collisioni di nome per sola differenza di maiuscole
 
 **Misurato**: 2026-08-31

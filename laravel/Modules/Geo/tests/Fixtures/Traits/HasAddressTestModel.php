@@ -12,6 +12,7 @@ use Modules\Geo\Models\Traits\HasAddress;
  */
 final class HasAddressTestModel extends BaseModel
 {
+    /** @use HasAddress<HasAddressTestModel> */
     use HasAddress;
 
     /** @var list<string> */
@@ -25,7 +26,7 @@ final class HasAddressTestModel extends BaseModel
     {
         parent::boot();
 
-        static::creating(static function (): void {
+        self::creating(static function (): void {
             if (! app()->environment('testing')) {
                 throw new \Exception('HasAddressTestModel should only be used in tests.');
             }

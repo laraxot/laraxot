@@ -1,3 +1,15 @@
+---
+title: "header design comuni parity mapping"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header design comuni parity mapping"
+issues: []
+discussions: []
+status: draft
+---
+
 # Header Design Comuni Parity Mapping
 
 ## Overview

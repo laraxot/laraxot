@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "payment_gateway"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "payment_gateway xot"
+---
+>>>>>>> laraxot/dev
 # payment_gateway
 
 <!-- Contenuto migrato da _docs/payment_gateway.txt -->

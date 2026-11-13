@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Correzioni Pattern '.navigation' - Gennaio 2025"
 module: "Lang"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "migration filament"
 related:
   - "./italian-text-refined-audit-report.md"
+status: superseded
+superseded_by: correzioni-navigation.md
 ---
 # Correzioni Pattern ".navigation" - Gennaio 2025
 

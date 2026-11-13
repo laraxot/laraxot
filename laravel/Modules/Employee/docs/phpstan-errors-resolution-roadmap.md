@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-ERRORS-RESOLUTION-ROADMAP"
+module: Employee
+bmad: true
+status: active
+---
 # Employee Module - PHPStan Level 10 Errors Resolution Roadmap
 
 ## 📊 Stato Attuale

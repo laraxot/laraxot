@@ -1,4 +1,14 @@
-<<<<<<< HEAD
+---
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
+---
+
 # 🔍 Seo
 
 [![Stars](https://img.shields.io/github/stars/laraxot/module_seo_fila5?style=plastic&color=yellow)]()
@@ -63,8 +73,16 @@ Importa, installa, configura. Il resto ci penseremo noi.
 
 ---
 
+title: "README"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "README"
+issues: []
+discussions: []
 **Modulo** `Seo` · **Laraxot** · PHPStan 10 · Filament 5
-=======
+---
 ---
 id: module-seo-readme
 title: "SEO — Metadati, Sitemap e Dati Strutturati"
@@ -127,4 +145,3 @@ Maintain `declare(strict_types=1);` in PHP, adhere to project PHPStan config, an
 ---
 
 **Modulo** `seo` · **Laraxot ecosystem** · **Project-agnostic**
->>>>>>> laraxot/dev

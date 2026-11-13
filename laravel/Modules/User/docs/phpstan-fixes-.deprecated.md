@@ -8,14 +8,15 @@ qmd: "phpstan-fixes-2025-10-01.deprecated user module - phpstan fixes session 20
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # User Module - PHPStan Fixes Session 2025-10-01
@@ -226,8 +227,8 @@ public function canAccessTenant(\Illuminate\Database\Eloquent\Model $tenant): bo
 
 - [← User Module README](./README.md)
 - [← PHPStan Session Report](../../../docs/phpstan/filament-v4-fixes-session.md)
-- [← Final Report](../../../docs/phpstan/final-report-session-2025-10-01.md)
-- [← Root Documentation](../../../docs/index.md)
+- [← Final Report](../../../docs/phpstan/final-report-session.md)
+- [← Root Documentation](../../../../docs/index.md)
 
 ---
 

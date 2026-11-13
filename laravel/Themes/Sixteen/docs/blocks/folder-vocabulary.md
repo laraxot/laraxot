@@ -1,4 +1,5 @@
 ---
+qmd: "folder vocabulary"
 title: "Blocks folder vocabulary — Flowbite / Tailwind UI"
 type: concept
 confidence: high
@@ -13,6 +14,7 @@ related:
   - ../wiki/rules/cms-block-naming-tailwind-flowbite.md
   - ../wiki/rules/no-italian-component-names.md
   - ../../../../../docs/wiki/rules/cms-block-naming-tailwind-flowbite.md
+status: draft
 ---
 
 # Vocabolario cartelle `components/blocks/`
@@ -147,7 +149,7 @@ Usare solo se la pagina riusa pattern ecommerce Tailwind; altrimenti mappare su 
 
 ## SSoT nel codice
 
-Lista machine-readable: `laravel/Themes/Sixteen/app/Support/BlockCategoryRegistry.php`  
+Lista machine-readable: `laravel/Themes/Sixteen/app/Datas/BlockCategoryRegistryData.php`
 Test Pest: `Themes/Sixteen/tests/Unit/BlockSubfolderNamingTest.php`  
 Shell (mirror del registry): `bash bashscripts/quality-gates/check-blocks-folder-names.sh`
 

@@ -1,10 +1,15 @@
 ---
+qmd: "THEMES DOCUMENTATION INDEX.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: THEMES_DOCUMENTATION_INDEX.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: themes_documentation_index.divergenza.md
 ---
 
 # Divergenza: `THEMES_DOCUMENTATION_INDEX.md`

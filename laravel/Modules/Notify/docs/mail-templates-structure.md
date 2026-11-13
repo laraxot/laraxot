@@ -1,3 +1,15 @@
+---
+title: "mail templates structure"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "mail templates structure"
+issues: []
+discussions: []
+status: draft
+---
+
 # Struttura Template Email
 
 ## Introduzione

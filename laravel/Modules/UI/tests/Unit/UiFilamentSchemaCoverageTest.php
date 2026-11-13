@@ -39,7 +39,11 @@ describe('UI Filament schema coverage', function (): void {
             static fn (string $class): bool => str_ends_with($class, 'Resource'),
         ));
         Assert::assertSame([], array_diff($resources, $resources));
+<<<<<<< HEAD
         if ([] === $resources) {
+=======
+        if ($resources === []) {
+>>>>>>> f5ffd8b4 (.)
             return;
         }
         FilamentSchemaCoverage::testAllResources($appRoot, $ns);

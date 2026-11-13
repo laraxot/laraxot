@@ -1,13 +1,22 @@
 ---
+title: "translation study guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "translation study guide"
+issues: []
+discussions: []
 name: translation-study-guide
 description: Study guide for Laravel translation handling with spatie/laravel-translatable
 metadata:
   type: procedure
   source: prompts/01.txt (migrated 2026-07-30)
   related_docs: []
+status: draft
 ---
 
-# Translation Study Guide — Laravel Lang Module
+# Translation Study Guide: Laravel Lang Module
 
 ## Context
 This module handles Laravel application translations. Translation errors have occurred in past development cycles, requiring deeper understanding of spatie/laravel-translatable.

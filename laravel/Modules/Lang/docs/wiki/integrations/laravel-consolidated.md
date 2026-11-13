@@ -1,13 +1,17 @@
 ---
-title: "laravel — Consolidated Documentation"
+qmd: "laravel consolidated"
+issues: []
+discussions: []
+title: "laravel: Consolidated Documentation"
 module: lang
 type: integration
 tags: [integrations, modules, lang]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
 ---
 
-# laravel — Consolidated Documentation
+# laravel: Consolidated Documentation
 
 Consolidated from **23** individual files.
 
@@ -1063,7 +1067,7 @@ Il pacchetto `mcamara/laravel-localization` offre un controllo versatile sulla l
 
 *Consolidated from: `laravel-localization-consolidated.md`*
 
-title: "Laravel Localization (mcamara) — Consolidated Reference"
+title: "Laravel Localization (mcamara): Consolidated Reference"
 module: "Lang"
 type: concept
 tags: [filament4, migration]
@@ -1073,7 +1077,7 @@ qmd: "filament4 migration"
 related:
   - "./italian-text-refined-audit-report.md"
 ---
-# Laravel Localization (mcamara) — Consolidated Reference
+# Laravel Localization (mcamara): Consolidated Reference
 
 ## Overview
 
@@ -1194,9 +1198,9 @@ php artisan route:trans:list it # List routes for locale
 
 ## Laraxot Rules
 
-1. **Module `Lang` owns localization** — other modules must not duplicate this logic
-2. **Always use redirect middleware** — prevents SEO duplicate content
-3. **Never hardcode locale strings** — use `LaravelLocalization::getCurrentLocale()`
+1. **Module `Lang` owns localization**: other modules must not duplicate this logic
+2. **Always use redirect middleware**: prevents SEO duplicate content
+3. **Never hardcode locale strings**: use `LaravelLocalization::getCurrentLocale()`
 4. **Short array syntax `[]`** only in all PHP code
 5. **Filament panels** integrate via `XotBasePanelProvider`
 
@@ -1204,6 +1208,7 @@ php artisan route:trans:list it # List routes for locale
 
 - [Skill: laravel-localization](../../../../.agent/skills/laravel-localization/skill.md)
 - [Filament Integration](./filament-integration.md)
+- [Filament Integration](../../filament-integration.md)
 - [Philosophy](./philosophy.md)
 
 ---
@@ -1764,6 +1769,11 @@ Se la localizzazione dei path è fondamentale, valuta se usare ancora le rotte c
 - [FAQ e problemi comuni](Modules/Lang/project_docs/translations-faq.md)
 - [Guida language switcher](Modules/Lang/project_docs/README.md)
 - [FAQ e problemi comuni](Modules/Lang/project_docs/translations-faq.md)
+- [FAQ e problemi comuni](../../translations-faq.md)
+- [Guida language switcher](Modules/Lang/project_docs/README.md)
+- [FAQ e problemi comuni](../../translations-faq.md)
+- [Guida language switcher](Modules/Lang/project_docs/README.md)
+- [FAQ e problemi comuni](../../translations-faq.md)
 - [Guida language switcher](Modules/Lang/project_docs/README.md)
 
 ---
@@ -1913,6 +1923,9 @@ Se la localizzazione dei path è fondamentale, valuta se usare ancora le rotte c
 - [FAQ e problemi comuni](Modules/Lang/docs/translations-faq.md)
 - [Guida language switcher](Modules/Lang/docs/README.md)
 - [FAQ e problemi comuni](Modules/Lang/docs/translations-faq.md)
+- [FAQ e problemi comuni](../../translations-faq.md)
+- [Guida language switcher](Modules/Lang/docs/README.md)
+- [FAQ e problemi comuni](../../translations-faq.md)
 - [Guida language switcher](Modules/Lang/docs/README.md)
 
 ---
@@ -1923,6 +1936,7 @@ Se la localizzazione dei path è fondamentale, valuta se usare ancora le rotte c
 
 **Se vuoi che aggiorni direttamente la documentazione o vuoi esempi pratici di override/mapping path Folio, chiedi pure!**
 - [FAQ e problemi comuni](Modules/Lang/docs/translations-faq.md)
+- [FAQ e problemi comuni](../../translations-faq.md)
 - [Guida language switcher](Modules/Lang/docs/README.md)
 
 ---
@@ -2888,7 +2902,7 @@ Vedi file `.cursor/rules/laravel-localization-livewire-volt.mdc` e `.windsurf/ru
 
 *Consolidated from: `laravel-localization-mcaa-reference.md`*
 
-title: "mcamara/laravel-localization — Riferimento per moduli e temi"
+title: "mcamara/laravel-localization: Riferimento per moduli e temi"
 module: "Lang"
 type: concept
 tags: [migrazione, filament, 4]
@@ -2898,7 +2912,7 @@ qmd: "migrazione filament 4"
 related:
   - "./italian-text-refined-audit-report.md"
 ---
-# mcamara/laravel-localization — Riferimento per moduli e temi
+# mcamara/laravel-localization: Riferimento per moduli e temi
 
 ## Scopo
 
@@ -2993,7 +3007,7 @@ Vedi README del package per PHPUnit e Pest.
 
 *Consolidated from: `laravel-localization-mcamara-reference.md`*
 
-title: "mcamara/laravel-localization — Riferimento per moduli e temi"
+title: "mcamara/laravel-localization: Riferimento per moduli e temi"
 module: "Lang"
 type: concept
 tags: [migration, filament, 4]
@@ -3003,7 +3017,7 @@ qmd: "migration filament 4"
 related:
   - "./italian-text-refined-audit-report.md"
 ---
-# mcamara/laravel-localization — Riferimento per moduli e temi
+# mcamara/laravel-localization: Riferimento per moduli e temi
 
 ## Scopo
 
@@ -3317,6 +3331,13 @@ related:
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [README modulo Lang](./README.md)
 - [Best Practices Chiavi di Traduzione](translation-keys-best-practices.md)
+- [Best Practices Chiavi di Traduzione](../../translation-keys-best-practices.md)
+- [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
+- [README modulo Lang](./README.md)
+- [Best Practices Chiavi di Traduzione](../../translation-keys-best-practices.md)
+- [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
+- [README modulo Lang](./README.md)
+- [Best Practices Chiavi di Traduzione](../../translation-keys-best-practices.md)
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 
@@ -3557,6 +3578,13 @@ Questi middleware sono già configurati  e non è necessario modificarli.
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [README modulo Lang](./README.md)
 - [Best Practices Chiavi di Traduzione](translation-keys-best-practices.md)
+- [Best Practices Chiavi di Traduzione](../../translation-keys-best-practices.md)
+- [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
+- [README modulo Lang](./README.md)
+- [Best Practices Chiavi di Traduzione](../../translation-keys-best-practices.md)
+- [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
+- [README modulo Lang](./README.md)
+- [Best Practices Chiavi di Traduzione](../../translation-keys-best-practices.md)
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 
@@ -3912,6 +3940,9 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
   - [translation-keys-best-practices.md](../translation-keys-best-practices.md)
   - [translation_keys_rules.md](../translation_keys_rules.md)
   - [filament-translations.md](../filament-translations.md)
+  - [translation-keys-best-practices.md](../../translation-keys-best-practices.md)
+  - [translation_keys_rules.md](../../translation_keys_rules.md)
+  - [filament-translations.md](../../filament-translations.md)
   - [docs <nome progetto>](../../../<nome progetto>/docs/translations.md)
 ## Modifiche Suggerite
 
@@ -4383,6 +4414,7 @@ Se la localizzazione dei path è fondamentale, valuta se usare ancora le rotte c
 - [Documentazione Laravel Folio](https://laravel.com/docs/12.x/folio)
 - [Esempio di mapping rotte](https://github.com/mcamara/laravel-localization#translated-routes)
 - [FAQ e problemi comuni]([project-root]/laravel/Modules/Lang/docs/translations-faq.md)
+- [FAQ e problemi comuni](../../translations-faq.md)
 - [Guida language switcher]([project-root]/laravel/Modules/Lang/docs/README.md)
 
 ---
@@ -5115,6 +5147,7 @@ related:
 ## Collegamenti correlati
 - [README modulo Lang](./README.md)
 - [Best Practices Chiavi di Traduzione](translation-keys-best-practices.md)
+- [Best Practices Chiavi di Traduzione](../../translation-keys-best-practices.md)
 - [Implementazione Header con Selettore Lingua](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 

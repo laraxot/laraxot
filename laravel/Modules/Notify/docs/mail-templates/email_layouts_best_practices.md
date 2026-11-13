@@ -1,3 +1,15 @@
+---
+title: "email layouts best practices"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "email layouts best practices"
+issues: []
+discussions: []
+status: draft
+---
+
 # Email Layouts Best Practices
 
 Questa documentazione descrive le best practices da seguire per i layout email quando si utilizza `spatie/laravel-database-mail-templates` nel modulo Notify di <nome progetto>.
@@ -206,3 +218,6 @@ Il supporto per la Dark Mode migliora l'esperienza utente e riduce l'affaticamen
 - [Email Templates Guide](./EMAIL_TEMPLATES_GUIDE.md)
 - [Spatie Mail Templates Structure](./SPATIE_MAIL_TEMPLATES_STRUCTURE.md)
 - [Template Content Examples](./TEMPLATE_CONTENT_EXAMPLES.md)
+- [Email Templates Guide](./email_templates_guide.md)
+- [Spatie Mail Templates Structure](./spatie_mail_templates_structure.md)
+- [Template Content Examples](./template_content_examples.md)

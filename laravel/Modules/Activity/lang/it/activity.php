@@ -86,7 +86,6 @@ return [
             'label' => 'Ripristina',
             'tooltip' => 'Ripristina stato precedente',
         ],
-<<<<<<< HEAD
 <<<<<<< .merge_file_hTkIug
         'logout' => [
             'tooltip' => 'logout',
@@ -96,12 +95,6 @@ return [
             'icon' => 'delete',
             'tooltip' => 'Elimina questa attività',
 >>>>>>> .merge_file_2BtG5P
-=======
-        'delete' => [
-            'label' => 'delete',
-            'icon' => 'delete',
-            'tooltip' => 'delete',
->>>>>>> 13cf1831 (.)
         ],
     ],
     'messages' => [

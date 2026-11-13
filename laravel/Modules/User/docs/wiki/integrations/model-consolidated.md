@@ -1,13 +1,15 @@
 ---
-title: "model — Consolidated Documentation"
+title: "model: Consolidated Documentation"
 module: user
 type: integration
 tags: [integrations, modules, user]
 created: 2026-08-24
 updated: 2026-08-24
+status: draft
+qmd: "model   consolidated documentation user"
 ---
 
-# model — Consolidated Documentation
+# model: Consolidated Documentation
 
 Consolidated from **18** individual files.
 
@@ -42,13 +44,16 @@ module: theme
 topic: model-classification
 canonical: ../../../Themes/docs/shared-components/model-classification-Modules.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -58,7 +63,7 @@ See canonical documentation: ../../../Themes/docs/shared-components/model-classi
 
 ## model-inheritance-analysis-3
 
-*Consolidated from: `model-inheritance-analysis-3.md`*
+*Consolidated from: `model-inheritance-analysis.md`*
 
 title: "Analisi Ereditarietà Modelli - Modulo User"
 type: concept
@@ -69,13 +74,16 @@ qmd: "model-inheritance-analysis-3 analisi ereditarietà modelli - modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -223,18 +231,24 @@ Dopo le modifiche, eseguire:
 ## Collegamenti
 
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
-- [XotBaseModel](../../Xot/app/Models/XotBaseModel.php)
-- [XotBasePivot](../../Xot/app/Models/XotBasePivot.php)
-- [XotBaseMorphPivot](../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
 
 ---
 
 ## model-inheritance-analysis-4
 
-*Consolidated from: `model-inheritance-analysis-4.md`*
+*Consolidated from: `model-inheritance-analysis.md`*
 
 title: "Analisi Ereditarietà Modelli - Modulo User"
 type: concept
@@ -245,13 +259,16 @@ qmd: "model-inheritance-analysis-4 analisi ereditarietà modelli - modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -399,18 +416,24 @@ Dopo le modifiche, eseguire:
 ## Collegamenti
 
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
-- [XotBaseModel](../../Xot/app/Models/XotBaseModel.php)
-- [XotBasePivot](../../Xot/app/Models/XotBasePivot.php)
-- [XotBaseMorphPivot](../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
 
 ---
 
 ## model-inheritance-analysis-5
 
-*Consolidated from: `model-inheritance-analysis-5.md`*
+*Consolidated from: `model-inheritance-analysis.md`*
 
 title: "Analisi Ereditarietà Modelli - Modulo User"
 type: concept
@@ -421,13 +444,16 @@ qmd: "model-inheritance-analysis-5 analisi ereditarietà modelli - modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -575,12 +601,18 @@ Dopo le modifiche, eseguire:
 ## Collegamenti
 
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
-- [XotBaseModel](../../Xot/app/Models/XotBaseModel.php)
-- [XotBasePivot](../../Xot/app/Models/XotBasePivot.php)
-- [XotBaseMorphPivot](../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
 
 ---
 
@@ -597,13 +629,16 @@ qmd: "model-inheritance-analysis analisi ereditarietà modelli - modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -751,18 +786,24 @@ Dopo le modifiche, eseguire:
 ## Collegamenti
 
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
-- [XotBaseModel](../../Xot/app/Models/XotBaseModel.php)
-- [XotBasePivot](../../Xot/app/Models/XotBasePivot.php)
-- [XotBaseMorphPivot](../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
 
 ---
 
 ## model-inheritance-fixes-3
 
-*Consolidated from: `model-inheritance-fixes-3.md`*
+*Consolidated from: `model-inheritance-fixes.md`*
 
 title: "Correzioni Ereditarietà Modelli - Modulo User"
 type: concept
@@ -773,13 +814,16 @@ qmd: "model-inheritance-fixes-3 correzioni ereditarietà modelli - modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -972,17 +1016,22 @@ cd /var/www/_bases/base_<nome progetto>_fila4_mono/laravel/Modules/User
 
 ## Collegamenti
 
-- [Analisi Completa](./model-inheritance-analysis-4.md)
+- [Analisi Completa](./model-inheritance-analysis.md)
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [Analisi Completa](../../model-inheritance-analysis.md)
+- [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
 
 ---
 
 ## model-inheritance-fixes-4
 
-*Consolidated from: `model-inheritance-fixes-4.md`*
+*Consolidated from: `model-inheritance-fixes.md`*
 
 title: "Correzioni Ereditarietà Modelli - Modulo User"
 type: concept
@@ -993,13 +1042,16 @@ qmd: "model-inheritance-fixes-4 correzioni ereditarietà modelli - modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -1192,17 +1244,23 @@ cd /var/www/_bases/base_quaeris_fila4_mono/laravel/Modules/User
 
 ## Collegamenti
 
-- [Analisi Completa](./model-inheritance-analysis-4.md)
+- [Analisi Completa](./model-inheritance-analysis.md)
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [Analisi Completa](../../model-inheritance-analysis.md)
+- [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
 
 ---
 
 ## model-inheritance-fixes-5
 
-*Consolidated from: `model-inheritance-fixes-5.md`*
+*Consolidated from: `model-inheritance-fixes.md`*
+*Consolidated from: `model-inheritance-fixes-analisi-completa.md`*
 
 title: "Model Inheritance Fixes 5"
 type: concept
@@ -1213,28 +1271,46 @@ qmd: "model-inheritance-fixes-5 model inheritance fixes 5"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
   - "./actions-path-convention.md"
 ---
 
-- [Analisi Completa](./model-inheritance-analysis-4.md)
+- [Analisi Completa](./model-inheritance-analysis.md)
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
 ---
 module: theme
 topic: model_inheritance_fixes
-canonical: ../../../Themes/docs/shared-components/model-inheritance-fixes-5.md
+canonical: ../../../Themes/docs/shared-components/model-inheritance-fixes.md
 ---
 
-See canonical documentation: ../../../Themes/docs/shared-components/model-inheritance-fixes-5.md
+See canonical documentation: ../../../Themes/docs/shared-components/model-inheritance-fixes.md
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+---
+
+- [Analisi Completa](../../model-inheritance-analysis.md)
+- [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+---
+module: theme
+topic: model_inheritance_fixes
+canonical: ../../../Themes/docs/shared-components/model-inheritance-fixes-analisi-completa.md
+---
+
+See canonical documentation: ../../../Themes/docs/shared-components/model-inheritance-fixes-analisi-completa.md
 ---
 
 ## model-inheritance-fixes
@@ -1245,13 +1321,16 @@ module: theme
 topic: model-inheritance-fixes
 canonical: ../../../Themes/docs/shared-components/model-inheritance-fixes.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -1272,13 +1351,16 @@ qmd: "model-inheritance-rules regole di ereditarietà dei modelli - modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -1484,8 +1566,9 @@ Prima di creare un nuovo modello, verifica:
 
 ## Link Correlati
 
-- [Documentazione Xot BaseModel](../../xot/docs/model-inheritance-rules.md)
-- [Documentazione Geo Model Pattern](../../geo/docs/model-inheritance-pattern.md)
+- [Documentazione Xot BaseModel](../../../../Xot/docs/model-inheritance-rules.md)
+- [Documentazione Geo Model Pattern](../../../../Geo/docs/model-inheritance-pattern.md)
+- [Documentazione Geo Model Pattern](../../../../Geo/docs/model-inheritance-pattern.md)
 - [Laravel Eloquent Documentation](https://laravel.com/docs/eloquent)
 
 ## Note Tecniche
@@ -1563,13 +1646,16 @@ qmd: "model-inheritance analisi ereditarietà modelli - modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -1717,12 +1803,18 @@ Dopo le modifiche, eseguire:
 ## Collegamenti
 
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
-- [XotBaseModel](../../Xot/app/Models/XotBaseModel.php)
-- [XotBasePivot](../../Xot/app/Models/XotBasePivot.php)
-- [XotBaseMorphPivot](../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
 
 ---
 
@@ -1739,13 +1831,16 @@ qmd: "model-inheritancees correzioni ereditarietà modelli - modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -1938,11 +2033,16 @@ cd Modules/User
 
 ## Collegamenti
 
-- [Analisi Completa](./model-inheritance-analysis-5.md)
+- [Analisi Completa](./model-inheritance-analysis.md)
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [Analisi Completa](../../model-inheritance-analysis.md)
+- [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
 # Correzioni Ereditarietà Modelli - Modulo User
 
 ## Data Implementazione
@@ -2132,11 +2232,16 @@ cd Modules/User
 
 ## Collegamenti
 
-- [Analisi Completa](./model-inheritance-analysis-5.md)
+- [Analisi Completa](./model-inheritance-analysis.md)
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [Analisi Completa](../../model-inheritance-analysis.md)
+- [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
 # Correzioni Ereditarietà Modelli - Modulo User
 
 ## Data Implementazione
@@ -2326,11 +2431,16 @@ cd Modules/User
 
 ## Collegamenti
 
-- [Analisi Completa](./model-inheritance-analysis-5.md)
+- [Analisi Completa](./model-inheritance-analysis.md)
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [Analisi Completa](../../model-inheritance-analysis.md)
+- [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
 
 ---
 
@@ -2481,12 +2591,18 @@ Dopo le modifiche, eseguire:
 ## Collegamenti
 
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
-- [XotBaseModel](../../Xot/app/Models/XotBaseModel.php)
-- [XotBasePivot](../../Xot/app/Models/XotBasePivot.php)
-- [XotBaseMorphPivot](../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
+- [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
+- [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
 
 ---
 
@@ -2684,9 +2800,12 @@ cd /var/www/_bases/base_quaeris_fila4_mono/laravel/Modules/User
 
 - [Analisi Completa](./MODEL_INHERITANCE_ANALYSIS.md)
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
+- [BaseModel](../../../app/Models/BaseModel.php)
+- [BasePivot](../../../app/Models/BasePivot.php)
+- [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
 
 ---
 
@@ -2698,13 +2817,16 @@ module: theme
 topic: modelli-factory-seeder-analisi
 canonical: ../../../Themes/docs/shared-components/modelli-factory-seeder-analisi-Modules.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -2901,7 +3023,8 @@ Tutti i file factory devono essere validati con PHPStan livello 9:
 ### Moduli Collegati
 - [SaluteOra Module](../../SaluteOra/docs/modelli_factory_seeder_analisi.md)
 - [Tenant Module](../../Tenant/docs/modelli_factory_seeder_analisi.md)
-- [Notify Module](../../Notify/docs/modelli_factory_seeder_analisi.md)
+- [Notify Module](../../../../Notify/docs/modelli_factory_seeder_analisi.md)
+- [Notify Module](../../../../Notify/docs/modelli_factory_seeder_analisi.md)
 
 *Ultimo aggiornamento: Gennaio 2025*
 *Analisi completa di 35+ modelli attivi, sistema completo authentication/authorization*
@@ -2921,13 +3044,16 @@ qmd: "models-analysis models analysis - user module"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 
@@ -3002,13 +3128,16 @@ module: theme
 topic: models
 canonical: ../../../Themes/docs/shared-components/models-analysis.md
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
 ---
 

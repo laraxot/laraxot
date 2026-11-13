@@ -8,6 +8,11 @@ use Filament\Tables\Columns\SelectColumn;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
+<<<<<<< HEAD
+use Modules\Xot\Filament\Tables\Columns\XotBaseSelectColumn;
+use ReflectionClass;
+=======
+>>>>>>> f5ffd8b4 (.)
 
 class SelectStateColumn extends SelectColumn
 {
@@ -16,7 +21,11 @@ class SelectStateColumn extends SelectColumn
         parent::setUp();
         $this->options(function (Model $record, mixed $state): array {
             $name = $this->getName();
+<<<<<<< HEAD
+            if ($state === null) {
+=======
             if (null === $state) {
+>>>>>>> f5ffd8b4 (.)
                 if (! method_exists($record, 'getDefaultStateFor')) {
                     return [];
                 }
@@ -53,14 +62,22 @@ class SelectStateColumn extends SelectColumn
                 if (class_exists($stateClass)) {
                     $stateNameProperty = null;
                     try {
+<<<<<<< HEAD
+                        $reflection = new ReflectionClass($stateClass);
+=======
                         $reflection = new \ReflectionClass($stateClass);
+>>>>>>> f5ffd8b4 (.)
                         if ($reflection->hasProperty('name')) {
                             $nameProperty = $reflection->getStaticPropertyValue('name');
                             $stateNameProperty = \is_string($nameProperty) ? $nameProperty : null;
                         }
                     } catch (\ReflectionException) {
                     }
+<<<<<<< HEAD
+                    if ($stateNameProperty !== null) {
+=======
                     if (null !== $stateNameProperty) {
+>>>>>>> f5ffd8b4 (.)
                         $statesValues = array_values($states);
                         /** @var list<int|string> $statesValuesTyped */
                         $statesValuesTyped = $statesValues;
@@ -99,8 +116,12 @@ class SelectStateColumn extends SelectColumn
     }
 
     /**
+<<<<<<< HEAD
+     * @param  array<int|string, mixed>  $states
+=======
      * @param array<int|string, mixed> $states
      *
+>>>>>>> f5ffd8b4 (.)
      * @return array<int|string, string>
      */
     private function combineStateOptions(array $states): array
@@ -110,7 +131,11 @@ class SelectStateColumn extends SelectColumn
             array_keys($states),
         );
         $statesValues = array_map(
+<<<<<<< HEAD
+            SafeStringCastAction::cast(...),
+=======
             static fn ($value) => SafeStringCastAction::cast($value),
+>>>>>>> f5ffd8b4 (.)
             array_values($states),
         );
         $combined = array_combine($statesKeys, $statesValues);

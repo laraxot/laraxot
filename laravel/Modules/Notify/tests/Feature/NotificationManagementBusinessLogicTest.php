@@ -18,11 +18,13 @@ use Modules\Notify\Models\MailTemplateVersion;
 use Modules\Notify\Models\Notification;
 use Modules\Notify\Models\NotificationTemplate;
 use Modules\Notify\Models\NotificationType;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
+uses(TestCase::class);
 describe('Notification Management Business Logic', function () {
     it('can create notification with core fields', function () {
         $notification = NotificationFactory::new()->createOne([
@@ -119,7 +121,7 @@ describe('Notification Management Business Logic', function () {
     it('can create mail template version snapshot', function () {
         $template = MailTemplateFactory::new()->createOne();
         $version = MailTemplateVersionFactory::new()->createOne([
-            'template_id' => $template->id,
+            'mail_template_id' => $template->id,
             'subject' => 'Versione precedente',
             'html_template' => '<p>Snapshot</p>',
             'text_template' => 'Snapshot',

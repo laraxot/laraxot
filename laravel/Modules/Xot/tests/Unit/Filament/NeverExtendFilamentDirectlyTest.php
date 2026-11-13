@@ -25,7 +25,12 @@ uses(TestCase::class);
  * nuovi: `RatingsColumn extends TextColumn`, `HasRatingValuesFilter extends
  * TernaryFilter`, `WorkerTypeFilter extends Filter`. Nessuna delle tre dava errore.
  *
+<<<<<<< HEAD
  * Debito storico misurato: 6 RelationManager estendono `RelationManager` di Filament.
+=======
+ * Debito storico residuo: 0 file (wave 2026-10-22: tutti i componenti
+ * Notify, Blog, Fixcity, UI, Xot mock bonificati a XotBase*).
+>>>>>>> laraxot/dev
  * Tetto decrescente: la guardia non pretende zero, impedisce che il numero salga.
  *
  * @see docs/wiki/rules/fundamental-xotbase-rule.md
@@ -49,9 +54,25 @@ function filamentBasesWithXotEquivalent(): array
         'TernaryFilter' => 'XotBaseTernaryFilter',
         'Filter' => 'XotBaseFilter',
         'Section' => 'XotBaseSection',
+<<<<<<< HEAD
     ];
 }
 
+=======
+        // Wave qualità 2026-10-20 — blueprint Filament
+        'Select' => 'XotBaseSelect',
+        'Field' => 'XotBaseField',
+        'TextInput' => 'XotBaseTextInput',
+        'Widget' => 'XotBaseWidget',
+    ];
+}
+
+/*
+ * GateGuard test: behaviour = ratchet never-extend-Filament; module Xot;
+ * existing file this; user: "migliora qualità codice , fa tutto con bmad + second brain + filament blueprint"
+ */
+
+>>>>>>> laraxot/dev
 /**
  * @return array<string, string> file => violazione
  */
@@ -105,12 +126,20 @@ function classesExtendingFilamentDirectly(): array
 }
 
 /**
+<<<<<<< HEAD
  * Tetto misurato il 2026-09-08 dopo la bonifica del modulo Rating: **27 file**.
  * Per classe: Section 12, RelationManager 6, SelectFilter 4, Filter 2, poi
  * ViewColumn, SelectColumn e TextColumn uno ciascuno. Scende con la bonifica, non
  * sale mai.
  */
 const FILAMENT_DIRECT_EXTENDS_BASELINE = 27;
+=======
+ * Tetto dopo wave qualità Notify+UI XotBase*: **0 file** residuo
+ * Tutte le classi Filament ora si estendono via XotBase.
+ * Non deve salire mai.
+ */
+const FILAMENT_DIRECT_EXTENDS_BASELINE = 0;
+>>>>>>> laraxot/dev
 
 test('nessuna classe nuova estende Filament al posto della sua XotBase', function (): void {
     $offenders = classesExtendingFilamentDirectly();

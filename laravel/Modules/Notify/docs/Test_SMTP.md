@@ -1,4 +1,7 @@
 ---
+qmd: "Test SMTP"
+issues: []
+discussions: []
 title: 'Test smtp'
 module: Notify
 type: reference
@@ -8,6 +11,8 @@ tags: [migrato-da-txt, notify]
 converted_from: Test_SMTP.txt
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: test_smtp.md
 ---
 
 //----------------------------------------------------------------------------

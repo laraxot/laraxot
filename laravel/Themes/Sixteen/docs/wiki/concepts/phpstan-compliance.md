@@ -12,9 +12,10 @@ discussions:
 related:
   - ./theme-component-test-contract.md
   - ../overviews/completion-roadmap.md
-  - ../../../Modules/Fixcity/docs/wiki/concepts/phpstan-compliance.md
+  - ../../../../../Modules/Fixcity/docs/wiki/concepts/phpstan-compliance.md
   - ../../../../docs/wiki/concepts/phpstan-level-max-compliance.md
-  - ../../../../docs/wiki/rules/git-forward-only.md
+  - ../../../../../../docs/wiki/rules/git-forward-only.md
+status: draft
 ---
 
 # Sixteen Theme — PHPStan Type Compliance
@@ -371,6 +372,6 @@ parameters:
 ## Related
 
 - [Root PHPStan Compliance Guide](../../../../docs/wiki/concepts/phpstan-level-max-compliance.md)
-- [Activity Module PHPStan](../../../Modules/Activity/docs/wiki/concepts/phpstan-compliance.md)
-- [Git Forward-Only Policy](../../../../docs/wiki/rules/git-forward-only.md)
+- [Activity Module PHPStan](../../../../../Modules/Activity/docs/wiki/concepts/phpstan-compliance.md)
+- [Git Forward-Only Policy](../../../../../../docs/wiki/rules/git-forward-only.md)
 - [Type System Philosophy](../../../../docs/wiki/concepts/type-system-philosophy.md)

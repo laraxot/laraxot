@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Risoluzione Conflitti"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot]
+qmd: "risoluzione conflitti xot"
+---
+>>>>>>> laraxot/dev
 # Risoluzione Conflitti
 
 ## Best Practices

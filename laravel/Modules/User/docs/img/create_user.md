@@ -6,6 +6,9 @@ topic: create_user
 canonical: ../../../../Themes/docs/shared-components/create-user.jpg
 created: 2026-07-22
 updated: 2026-07-22
+status: stub
+tags: [docs, user, img]
+qmd: "create_user user"
 ---
 
 # create_user

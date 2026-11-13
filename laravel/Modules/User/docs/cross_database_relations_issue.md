@@ -1,3 +1,11 @@
+---
+title: "Cross Database Relations Issue - belongsToManyX SQLite Problem"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "cross database relations issue - belongstomanyx sqlite problem user"
+---
 # Cross Database Relations Issue - belongsToManyX SQLite Problem
 
 ## Problema Identificato

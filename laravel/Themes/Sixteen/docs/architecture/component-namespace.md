@@ -1,3 +1,15 @@
+---
+title: "component namespace"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "component namespace"
+issues: []
+discussions: []
+status: draft
+---
+
 # Component Namespace Architecture - DRY + KISS
 
 > **Perché usiamo `<x-pub_theme::*>` e NON `<x-sixteen::*>`**
@@ -9,7 +21,6 @@
 **Tipo:** Architettura namespace componenti
 
 ---
-
 ## 🐛 Errori da Evitare
 
 ### ❌ ERRORE 1: Usare `<x-sixteen::page>`
@@ -428,7 +439,7 @@ Vantaggi:
 
 - [Layout Architecture](./layout-architecture.md)
 - [Page Component Architecture](./page-component-architecture.md)
-- [Blocks Implementation](../BLOCKS_IMPLEMENTATION.md)
+- [Blocks Implementation](../blocks-implementation.md)
 - [ThemeServiceProvider](../../app/Providers/ThemeServiceProvider.php)
 - [Replikate.txt](../prompts/replikate.txt)
 

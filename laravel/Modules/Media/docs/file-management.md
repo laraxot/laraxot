@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Gestione dei File in <nome progetto>"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "file management"
 related:
   - "./webm.md"
+status: draft
 ---
 # Gestione dei File in <nome progetto>
 

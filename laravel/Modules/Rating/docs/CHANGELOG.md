@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Changelog"
 type: guide
 tags: [changelog, rating]
@@ -8,6 +10,7 @@ qmd: "changelog rating"
 related:
   - "./code-quality-analysis.md"
   - "./changelog.md"
+status: draft
 ---
 
 # Changelog

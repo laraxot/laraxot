@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Checklist qualità - Tenant Module"
 module: "Tenant"
 type: concept
@@ -8,6 +10,8 @@ updated: 2026-07-14
 qmd: "quality"
 related:
   - "./phpstan-corrections-january.md"
+  - "../phpstan-corrections-january.md"
+status: draft
 ---
 # Checklist qualità - Tenant Module
 

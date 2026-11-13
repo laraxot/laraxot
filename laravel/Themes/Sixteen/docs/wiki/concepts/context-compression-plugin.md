@@ -1,4 +1,7 @@
 ---
+qmd: "context compression plugin"
+issues: []
+discussions: []
 title: "Sixteen theme context compression boundary"
 type: concept
 created: 2026-05-11
@@ -7,6 +10,7 @@ tags: [theme, sixteen, context-compression, qmd, openrouter]
 related:
   - ../../../../../../docs/wiki/concepts/context-mode-integration.md
   - ../../../../../../docs/wiki/concepts/context-compression-plugin-openrouter.md
+status: draft
 ---
 
 # Sixteen Theme Context Compression Boundary

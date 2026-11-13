@@ -34,8 +34,6 @@ export default defineConfig({
     ssr: {
         noExternal: [
             'chart.js/**',
-            'bootstrap-italia/**',
-            '@popperjs/core'
         ]
     },
     
@@ -47,11 +45,8 @@ export default defineConfig({
                 resolve(__dirname, 'resources/css/app.css'),
                 resolve(__dirname, 'resources/js/app.js'),
                 
-                // Bootstrap Italia components CSS
+                // Local DesignComuni compatibility CSS (Tailwind-owned)
                 resolve(__dirname, 'resources/css/bootstrap-italia.css'),
-                
-                // Component-specific assets
-                resolve(__dirname, 'resources/js/components/bootstrap-italia.js'),
                 
                 // Additional theme assets
                 resolve(__dirname, 'resources/css/theme.css'),
@@ -61,7 +56,7 @@ export default defineConfig({
                 ...refreshPaths,
                 'app/Livewire/**',
                 'resources/views/**/*.blade.php',
-                'resources/views/components/bootstrap-italia/**/*.blade.php',
+                'resources/views/components/**/*.blade.php',
             ],
         }),
     ],
@@ -70,7 +65,6 @@ export default defineConfig({
         alias: {
             '@': resolve(__dirname, 'resources'),
             '@components': resolve(__dirname, 'resources/views/components'),
-            '@bootstrap-italia': resolve(__dirname, 'resources/views/components/bootstrap-italia'),
         },
     },
     
@@ -81,7 +75,6 @@ export default defineConfig({
             '@alpinejs/intersect',
             '@alpinejs/persist',
             'chart.js',
-            'bootstrap-italia'
         ]
     },
     

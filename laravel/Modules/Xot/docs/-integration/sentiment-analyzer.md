@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "sentiment-analyzer"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, -integration]
+qmd: "sentiment-analyzer xot"
+---
+>>>>>>> laraxot/dev
 # sentiment-analyzer
 
 <!-- Contenuto migrato da _docs/sentiment-analyzer.txt -->

@@ -10,7 +10,11 @@ return [
             'name' => 'Sistema',
             'description' => 'Gestione dei meta tag e SEO del sito',
         ],
+<<<<<<< HEAD
         'label' => 'metatag',
+=======
+        'label' => 'Metatag',
+>>>>>>> laraxot/dev
         'sort' => '16',
         'icon' => 'xot-metatag',
     ],

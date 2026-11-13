@@ -8,14 +8,19 @@ qmd: "user-factory-advanced-integration userfactory advanced integration - modul
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index-1.md"
+  - "./00-index.md"
+  - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention-1.md"
-  - "./actions-path-convention-2.md"
   - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention.md"
+  - "./actions-path-convention-convenzione-percorsi.md"
+  - "./actions-path-convention.md"
+status: draft
 ---
 
 # UserFactory Advanced Integration - Modulo User & <nome progetto>
@@ -24,7 +29,6 @@ related:
 # UserFactory Advanced Integration - Modulo User & SaluteOra
 
 ## Post Deep-Study Analysis 
->>>>>>> 87273113 (.)
 
 Dopo uno studio approfondito dei modelli User, Patient, Doctor e Admin, l'integrazione UserFactory ha raggiunto un livello di eccellenza enterprise-grade con supporto completo per:
 
@@ -36,14 +40,12 @@ BaseUser (User Module)
 ├── User (<nome progetto>) - STI Base + Business Logic
     ├── Patient (HasParent) - Healthcare Consumer
     ├── Doctor (HasParent) - Healthcare Provider
->>>>>>> 87273113 (.)
     └── Admin (HasParent) - System Administrator
 ```
 
 ### Cross-Module Compatibility Matrix
 
 | BaseUser Field | <nome progetto> User | Business Logic | Factory Support |
->>>>>>> 87273113 (.)
 |----------------|----------------|----------------|-----------------|
 | `name` | `name` | Full name concat | ✅ Complete |
 | `email` | `email` | Authentication | ✅ Complete |
@@ -74,7 +76,6 @@ User::factory()->patient()->pregnant()->create();
 User::factory()->patient()->lowIncome()->create();
 
 // Doctor scenarios
->>>>>>> 87273113 (.)
 User::factory()->doctor()->withStudio()->create();
 User::factory()->doctor()->withWorkflow()->create();
 User::factory()->doctor()->specialist()->create();
@@ -95,7 +96,6 @@ User::factory()->gdprCompliant()->create();
 ### Italian Healthcare System
 - **Codice Fiscale**: Realistic generation algorithm
 - **ISEE Integration**: Low-income eligibility logic
->>>>>>> 87273113 (.)
 - **Pregnancy Services**: Special healthcare pathways
 - **Professional Credentials**: Realistic doctor certifications
 
@@ -117,7 +117,6 @@ protected $connection = '<nome progetto>';
 
 // Factory automatically handles connection switching
 User::factory()->create(); // Uses '<nome progetto>' connection
->>>>>>> 87273113 (.)
 ```
 
 ### Morph Relations Support
@@ -145,13 +144,11 @@ public function test_cross_module_compatibility()
     expect($user->email_verified_at)->toBeInstanceOf(Carbon::class);
 
     // <nome progetto> domain contracts
->>>>>>> 87273113 (.)
     expect($user->type)->toBeInstanceOf(UserTypeEnum::class);
     expect($user->state)->toBeInstanceOf(UserState::class);
 }
 
 // Business logic testing
->>>>>>> 87273113 (.)
 public function test_healthcare_workflows()
 {
     // Patient registration workflow
@@ -159,7 +156,6 @@ public function test_healthcare_workflows()
     $patient->requestIntegration();
     expect($patient->isIntegrationRequested())->toBeTrue();
 
->>>>>>> 87273113 (.)
     // Doctor onboarding workflow
     $doctor = User::factory()->doctorWithWorkflow()->create();
     expect($doctor->workflow)->toBeInstanceOf(DoctorRegistrationWorkflow::class);
@@ -181,7 +177,6 @@ public function test_bulk_sti_performance()
 
     expect(Patient::count())->toBe(100);
     expect(Doctor::count())->toBe(30);
->>>>>>> 87273113 (.)
     expect(Admin::count())->toBe(5);
 }
 ```
@@ -227,7 +222,6 @@ public function run(): void
     User::factory()->doctorWithStudio()->count(50)->create();
     User::factory()->doctor()->specialist()->count(20)->create();
 
->>>>>>> 87273113 (.)
     // Administrative structure
     User::factory()->admin()->count(5)->create();
 }
@@ -253,7 +247,6 @@ public function run(): void
 - **Single Table Inheritance**: Optimal queries
 - **Eager Loading**: Relationship optimization
 - **Connection Pooling**: Cross-database efficiency
->>>>>>> 87273113 (.)
 - **Index Strategy**: Query performance
 
 ### Memory Management
@@ -281,7 +274,6 @@ public function run(): void
 ### Phase 2 Roadmap
 - **Media Library Integration**: Real file attachments
 - **API Testing Support**: RESTful endpoint testing
->>>>>>> 87273113 (.)
 - **Multi-Language**: Internationalization support
 - **Advanced Workflows**: Complex business processes
 
@@ -298,7 +290,6 @@ public function run(): void
 - **Testability**: Comprehensive user scenario testing
 
 ### For <nome progetto> Module
->>>>>>> 87273113 (.)
 - **Domain Focus**: Healthcare-specific data generation
 - **Business Logic**: Real-world scenario testing
 - **Compliance**: GDPR and healthcare regulation support
@@ -313,7 +304,6 @@ public function run(): void
 **Status**: ✅ **PRODUCTION READY**
 **Last Updated**: Gennaio 2025
 **Maintenance**: Active development
->>>>>>> 87273113 (.)
 **Support**: Enterprise-grade
 
 ## Link Documentazione
@@ -324,8 +314,10 @@ public function run(): void
 - [Model States](../../<nome progetto>/docs/models/states.md)
 
 ### User Module
-- [User Factory Integration](./user-factory-integration-2.md)
-- [Traits Complete Guide](./traits-complete-guide-2.md)
+- [User Factory Integration](./user-factory-integration.md)
+- [Traits Complete Guide](./traits-complete-guide-aggiornato-post.md)
+- [User Factory Integration](./user-factory-integration-module.md)
+- [Traits Complete Guide](./traits-complete-guide-aggiornato-post.md)
 - [BaseUser Architecture](./parental-inheritance.md)
 
 ### Root Documentation
@@ -619,11 +611,12 @@ public function run(): void
 - [Model States](../../<nome progetto>/docs/models/states.md)
 
 ### User Module
-- [User Factory Integration](./user-factory-integration-2.md)
-- [Traits Complete Guide](./traits-complete-guide-2.md)
+- [User Factory Integration](./user-factory-integration.md)
+- [Traits Complete Guide](./traits-complete-guide-aggiornato-post.md)
+- [User Factory Integration](./user-factory-integration-module.md)
+- [Traits Complete Guide](./traits-complete-guide-aggiornato-post.md)
 - [BaseUser Architecture](./parental-inheritance.md)
 
 ### Root Documentation
 - [UserFactory <nome progetto> Integration](../../../../../docs/userfactory_<nome progetto>_integration.md)
 - [Testing Standards](../../../../../docs/testing_standards.md)
->>>>>>> 87273113 (.)

@@ -1,3 +1,15 @@
+---
+title: "bmad method setup"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "bmad method setup"
+issues: []
+discussions: []
+status: draft
+---
+
 # BMAD Method - Guida Installazione e Configurazione
 
 **Versione:** 6.2.2  
@@ -6,7 +18,6 @@
 **Progetto:** Notify Fila5 (Laraxot)
 
 ---
-
 ## documentazione canonica (naming stabile)
 
 - [setup e configurazione](../bmad/setup-guide.md)
@@ -20,9 +31,9 @@ Un framework open-source (MIT) per lo sviluppo software guidato da AI che fornis
 
 - **12+ agenti specializzati** (PM, Architect, Developer, UX, QA, Scrum Master, etc.)
 - **Workflow strutturati** basati su best practice agili
-- **Scale-Domain-Adaptive** — si adatta alla complessità del progetto
-- **Party Mode** — collaborazione multi-agente in una sessione
-- **Lifecycle completo** — dal brainstorming al deployment
+- **Scale-Domain-Adaptive**: si adatta alla complessità del progetto
+- **Party Mode**: collaborazione multi-agente in una sessione
+- **Lifecycle completo**: dal brainstorming al deployment
 
 ### Sito e Risorse
 
@@ -189,7 +200,7 @@ output_folder: '{project-root}/_bmad-output'
 
 ### IDE Configurati
 
-- **Windsurf** (`.windsurf/skills/` — 110 skills)
+- **Windsurf** (`.windsurf/skills/`: 110 skills)
 - **OpenCode** (legacy, mantenuto per compatibilità)
 
 ---
@@ -223,7 +234,7 @@ Invoca un agente per conversazione diretta:
 
 ### 3. Workflow Principali (BMM)
 
-#### Fase 1 — Analisi (opzionale)
+#### Fase 1: Analisi (opzionale)
 
 | Skill | Scopo |
 |-------|-------|
@@ -232,7 +243,7 @@ Invoca un agente per conversazione diretta:
 | `bmad-market-research` | Analisi competitiva |
 | `bmad-technical-research` | Ricerca tecnica |
 
-#### Fase 2 — Pianificazione (richiesta)
+#### Fase 2: Pianificazione (richiesta)
 
 | Skill | Scopo |
 |-------|-------|
@@ -240,7 +251,7 @@ Invoca un agente per conversazione diretta:
 | `bmad-create-ux-design` | Spec UX/UI |
 | `bmad-create-epics-and-stories` | Epiche e storie |
 
-#### Fase 3 — Solutioning
+#### Fase 3: Solutioning
 
 | Skill | Scopo |
 |-------|-------|
@@ -248,7 +259,7 @@ Invoca un agente per conversazione diretta:
 | `bmad-generate-project-context` | Contesto progetto |
 | `bmad-check-implementation-readiness` | Verifica readiness |
 
-#### Fase 4 — Implementazione
+#### Fase 4: Implementazione
 
 | Skill | Scopo |
 |-------|-------|

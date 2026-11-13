@@ -13,17 +13,30 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;
+<<<<<<< HEAD
+=======
+use Mockery\Expectation;
+use Mockery\ExpectationDirector;
+use Mockery\LegacyMockInterface;
+>>>>>>> laraxot/dev
 use Mockery\MockInterface;
 use Modules\User\Database\Factories\TenantFactory;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\Tenant;
+<<<<<<< HEAD
+=======
+use Modules\Xot\Actions\Testing\ResolveSharedSqlitePathAction;
+>>>>>>> laraxot/dev
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Database\Factories\ModuleFactory;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Models\Module;
 use Modules\Xot\Providers\XotServiceProvider;
 use PHPUnit\Framework\MockObject\MockObject;
+<<<<<<< HEAD
 use Safe\Exceptions\FilesystemException;
+=======
+>>>>>>> laraxot/dev
 
 /**
  * Class XotBaseTestCase.
@@ -128,6 +141,26 @@ abstract class XotBaseTestCase extends BaseTestCase
         return $mock;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Mockery 1.6 shouldReceive() always returns a CompositeExpectation, whatever its docblock says, so a
+     * wrapper with a native `Expectation` return type throws TypeError at runtime. The director holds the real
+     * Expectation that shouldReceive() just registered, which keeps chained with()/once()/andReturn() typed.
+     */
+    public static function singleExpectation(LegacyMockInterface $mock, string $method): Expectation
+    {
+        $mock->shouldReceive($method);
+        $director = $mock->mockery_getExpectationsFor($method);
+        self::assertInstanceOf(ExpectationDirector::class, $director);
+        $expectations = $director->getExpectations();
+        $expectation = end($expectations);
+        self::assertInstanceOf(Expectation::class, $expectation);
+
+        return $expectation;
+    }
+
+>>>>>>> laraxot/dev
     public function skipTest(string $message = ''): never
     {
         $this->markTestSkipped($message);
@@ -154,6 +187,16 @@ abstract class XotBaseTestCase extends BaseTestCase
         ];
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Dati sacri: nessun TestCase modulo puo' lanciare migrate:fresh.
+     * I figli che `use RefreshDatabase` lo riattivano — quel trait e' vietato
+     * (vedi Fixcity REGOLA_DATI_SACRI / TestDatabaseGuard).
+     */
+    protected function refreshDatabase(): void {}
+
+>>>>>>> laraxot/dev
     protected function setUp(): void
     {
         parent::setUp();
@@ -257,6 +300,7 @@ abstract class XotBaseTestCase extends BaseTestCase
      */
     public static function sharedSqlitePath(): string
     {
+<<<<<<< HEAD
         $configured = config('xot.testing.sqlite_file');
 
         if (is_string($configured) && $configured !== '') {
@@ -275,6 +319,13 @@ abstract class XotBaseTestCase extends BaseTestCase
         }
 
         return database_path('test_data.sqlite');
+=======
+<<<<<<< .merge_file_7FZABj
+        return app(\Modules\Xot\Actions\Testing\ResolveSharedSqlitePathAction::class)->execute();
+=======
+        return app(ResolveSharedSqlitePathAction::class)->execute();
+>>>>>>> .merge_file_5MLM2g
+>>>>>>> laraxot/dev
     }
 
     /**

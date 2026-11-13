@@ -16,29 +16,29 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 /**
  * Modules\User\Models\Tenant.
  *
- * @method static Builder|Tenant newModelQuery()
- * @method static Builder|Tenant newQuery()
- * @method static Builder|Tenant query()
+ * @method static Builder<static>|Tenant newModelQuery()
+ * @method static Builder<static>|Tenant newQuery()
+ * @method static Builder<static>|Tenant query()
  *
  * @property EloquentCollection<int, Model&UserContract> $members
- * @property int|null                                    $members_count
- * @property ProfileContract|null                        $creator
- * @property ProfileContract|null                        $updater
- * @property MediaCollection<int, Media>                 $media
- * @property int|null                                    $media_count
- * @property TenantUser                                  $pivot
- * @property EloquentCollection<int, User>               $users
- * @property int|null                                    $users_count
- * @property string                                      $id
- * @property string                                      $name
- * @property string|null                                 $slug
- * @property string|null                                 $domain
- * @property string|null                                 $database
- * @property int                                         $is_active
- * @property Carbon|null                                 $created_at
- * @property Carbon|null                                 $updated_at
- * @property Carbon|null                                 $deleted_at
- * @property ProfileContract|null                        $deleter
+ * @property int|null $members_count
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
+ * @property MediaCollection<int, Media> $media
+ * @property int|null $media_count
+ * @property TenantUser $pivot
+ * @property EloquentCollection<int, User> $users
+ * @property int|null $users_count
+ * @property string $id
+ * @property string $name
+ * @property string|null $slug
+ * @property string|null $domain
+ * @property string|null $database
+ * @property int $is_active
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ * @property ProfileContract|null $deleter
  *
  * @method static Builder<static>|Tenant whereCreatedAt($value)
  * @method static Builder<static>|Tenant whereDatabase($value)
@@ -59,26 +59,26 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @property string|null $updated_by
  * @property string|null $created_by
  * @property string|null $deleted_by
- * @property string|null $settings
+ * @property array<string, mixed>|null $settings
  *
  * @method static \Modules\User\Database\Factories\TenantFactory factory($count = null, $state = [])
- * @method static Builder<static>|Tenant                         whereAddress($value)
- * @method static Builder<static>|Tenant                         whereCreatedBy($value)
- * @method static Builder<static>|Tenant                         whereDeletedBy($value)
- * @method static Builder<static>|Tenant                         whereEmailAddress($value)
- * @method static Builder<static>|Tenant                         whereMobile($value)
- * @method static Builder<static>|Tenant                         wherePhone($value)
- * @method static Builder<static>|Tenant                         wherePrimaryColor($value)
- * @method static Builder<static>|Tenant                         whereSecondaryColor($value)
- * @method static Builder<static>|Tenant                         whereSettings($value)
- * @method static Builder<static>|Tenant                         whereUpdatedBy($value)
+ * @method static Builder<static>|Tenant whereAddress($value)
+ * @method static Builder<static>|Tenant whereCreatedBy($value)
+ * @method static Builder<static>|Tenant whereDeletedBy($value)
+ * @method static Builder<static>|Tenant whereEmailAddress($value)
+ * @method static Builder<static>|Tenant whereMobile($value)
+ * @method static Builder<static>|Tenant wherePhone($value)
+ * @method static Builder<static>|Tenant wherePrimaryColor($value)
+ * @method static Builder<static>|Tenant whereSecondaryColor($value)
+ * @method static Builder<static>|Tenant whereSettings($value)
+ * @method static Builder<static>|Tenant whereUpdatedBy($value)
  *
- * @property string|null $trial_ends_at
+ * @property Carbon|null $trial_ends_at
  *
  * @method static Builder<static>|Tenant whereTrialEndsAt($value)
+<<<<<<< .merge_file_lfm89c
  *
- * @mixin \Eloquent
+=======
+>>>>>>> .merge_file_qq8mTH
  */
-class Tenant extends BaseTenant
-{
-}
+class Tenant extends BaseTenant {}

@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+---
+title: "Gestione dei Conflitti Git"
+type: note
+status: draft
+updated: 2026-10-18
+tags: [docs, xot, git]
+qmd: "gestione dei conflitti git xot"
+---
+>>>>>>> laraxot/dev
 # Gestione dei Conflitti Git
 
 ## Principi Fondamentali

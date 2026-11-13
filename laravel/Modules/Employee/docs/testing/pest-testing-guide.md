@@ -1,3 +1,9 @@
+---
+title: "Employee - PEST-TESTING-GUIDE"
+module: Employee
+bmad: true
+status: active
+---
 # Pest Testing Guide - Employee Module
 
 ## 🎯 Overview

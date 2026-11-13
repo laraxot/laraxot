@@ -25,7 +25,7 @@ class GetGeoMapDatasetCategoriesAction
 
             $category = $feature['properties']['p'] ?? $feature['properties']['category'] ?? null;
 
-            if (is_string($category) && '' !== $category) {
+            if (is_string($category) && $category !== '') {
                 $categories[] = $category;
             }
         }

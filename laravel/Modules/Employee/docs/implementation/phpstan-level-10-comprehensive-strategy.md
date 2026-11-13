@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-LEVEL-10-COMPREHENSIVE-STRATEGY"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Level 10 - Comprehensive Strategy & Implementation
 
 ## Strategy Overview

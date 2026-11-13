@@ -1,3 +1,9 @@
+---
+title: "Employee - IMPLEMENTATION_PLAN"
+module: Employee
+bmad: true
+status: active
+---
 # Piano di Implementazione - Modulo Employee
 
 ## Panoramica

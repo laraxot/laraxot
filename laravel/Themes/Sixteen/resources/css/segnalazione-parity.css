@@ -342,6 +342,15 @@ coordinate-picker-lit .layer-controls-overlay {
   display: flex !important;
   flex-direction: column !important;
   gap: 0.5rem !important;
+  pointer-events: none !important;
+}
+
+coordinate-picker-lit .layer-controls-overlay .ctrl-btn,
+coordinate-picker-lit .layer-controls-overlay .search-box,
+coordinate-picker-lit .layer-controls-overlay button,
+coordinate-picker-lit .layer-controls-overlay input,
+coordinate-picker-lit .layer-controls-overlay a,
+coordinate-picker-lit .layer-controls-overlay [role="listbox"] {
   pointer-events: auto !important;
 }
 

@@ -1,3 +1,9 @@
+---
+title: "Employee - PHPSTAN-CORRECTIONS-SUMMARY"
+module: Employee
+bmad: true
+status: active
+---
 # PHPStan Level 9 Corrections Summary
 
 ## Overview

@@ -364,6 +364,30 @@ return [
             'tooltip' => '',
             'description' => '',
         ],
+<<<<<<< HEAD
+        'monday_label' => [
+            'label' => 'Lunedì',
+        ],
+        'tuesday_label' => [
+            'label' => 'Martedì',
+        ],
+        'wednesday_label' => [
+            'label' => 'Mercoledì',
+        ],
+        'thursday_label' => [
+            'label' => 'Giovedì',
+        ],
+        'friday_label' => [
+            'label' => 'Venerdì',
+        ],
+        'saturday_label' => [
+            'label' => 'Sabato',
+        ],
+        'sunday_label' => [
+            'label' => 'Domenica',
+        ],
+=======
+>>>>>>> f5ffd8b4 (.)
     ],
     'sections' => [
         'week_schedule' => [
@@ -386,6 +410,13 @@ return [
             'success' => 'Orari cancellati con successo',
             'confirmation' => 'Sei sicuro di voler cancellare tutti gli orari?',
         ],
+<<<<<<< HEAD
+    ],
+    'messages' => [
+        'no_availability' => 'Nessuna disponibilità configurata',
+        'schedule_saved' => 'Orari salvati correttamente',
+        'invalid_time_range' => 'Orario non valido: l\'ora di fine deve essere successiva all\'ora di inizio',
+=======
     ],
     'messages' => [
         'no_availability' => 'Nessuna disponibilità configurata',
@@ -417,6 +448,7 @@ return [
             'helper_text' => 'Afternoon from',
             'description' => 'Afternoon from',
         ],
+>>>>>>> f5ffd8b4 (.)
     ],
     'time_pickers' => [
         'saturday' => [

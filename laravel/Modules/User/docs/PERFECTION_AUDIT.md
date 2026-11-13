@@ -1,4 +1,12 @@
-# Perfection Audit — User Module
+---
+title: "Perfection Audit: User Module"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, user]
+qmd: "perfection audit   user module user"
+---
+# Perfection Audit: User Module
 
 **Data**: 2026-09-01
 **Scope**: `laravel/Modules/User/docs/`
@@ -26,13 +34,13 @@ User ha **1,465 file .md** (100% uppercase) con **48 stub vuoti**. Terzo modulo 
 
 ## Problemi P0
 
-### P0.1 — 100% uppercase
+### P0.1: 100% uppercase
 Tutti i file in `User/docs/` sono maiuscoli.
 
-### P0.2 — 48 stub vuoti
+### P0.2: 48 stub vuoti
 Residui di iterazioni agenti.
 
-### P0.3 — Nessun indice consolidato
+### P0.3: Nessun indice consolidato
 
 ---
 
@@ -40,12 +48,12 @@ Residui di iterazioni agenti.
 
 Identico a Notify (vedi `PERFECTION_AUDIT.md` in Notify/docs/).
 
-### Fase 1 — Emergency
+### Fase 1: Emergency
 ```bash
 find laravel/Modules/User/docs -name "*.md" -size -100c -delete
 ```
 
-### Fase 2 — Rename ricorsivo
+### Fase 2: Rename ricorsivo
 ```bash
 find laravel/Modules/User/docs -type f -name "*.md" \
   -not -name "README.md" \
@@ -57,7 +65,7 @@ find laravel/Modules/User/docs -type f -name "*.md" \
   done
 ```
 
-### Fase 3 — Consolidamento
+### Fase 3: Consolidamento
 Merge file duplicati in un solo indice.
 
 ---

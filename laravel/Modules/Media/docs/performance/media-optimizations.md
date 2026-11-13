@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Ottimizzazioni Performance Modulo Media"
 module: "Media"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "media optimizations"
 related:
   - "./webm.md"
+status: draft
 ---
 # Ottimizzazioni Performance Modulo Media
 

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Cyclomatic Complexity Report - Module: Rating"
 type: guide
 tags: [cyclomatic, complexity, report, rating]
@@ -7,6 +9,7 @@ updated: 2026-07-14
 qmd: "cyclomatic complexity report"
 related:
   - "./data-models.md"
+status: draft
 ---
 
 # Cyclomatic Complexity Report - Module: Rating

@@ -1,10 +1,15 @@
 ---
+qmd: "action plan immediate.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: action_plan_immediate.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: action_plan_immediate.divergenza.md
 ---
 
 # Divergenza: `action_plan_immediate.md`

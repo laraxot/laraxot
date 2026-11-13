@@ -1,3 +1,15 @@
+---
+title: "scripts"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "scripts"
+issues: []
+discussions: []
+status: draft
+---
+
 # Scripts for Sixteen Theme
 
 All JavaScript/Node utility scripts for the Sixteen theme are now kept in the **`scripts/`** sub‑folder. This keeps the theme root clean and makes the purpose of each file explicit.

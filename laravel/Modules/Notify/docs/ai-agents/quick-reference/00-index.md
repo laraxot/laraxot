@@ -1,3 +1,15 @@
+---
+title: "00 index"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "00 index"
+issues: []
+discussions: []
+status: draft
+---
+
 # 📋 quick reference Index
 
 **Path**: `docs/quick-reference/`
@@ -5,7 +17,6 @@
 **Status**: ✅ Auto-generated
 
 ---
-
 ## 📊 Statistics
 
 | Metric | Count |

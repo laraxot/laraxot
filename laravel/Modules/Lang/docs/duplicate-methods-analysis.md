@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Analisi Metodi Duplicati - Modulo Lang"
 module: "Lang"
 type: concept
@@ -8,6 +10,7 @@ updated: 2026-07-14
 qmd: "lang service helper text"
 related:
   - "./italian-text-refined-audit-report.md"
+status: draft
 ---
 # Analisi Metodi Duplicati - Modulo Lang
 

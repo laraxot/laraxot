@@ -6,13 +6,12 @@ namespace Modules\User\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Support\Carbon;
 use Modules\Media\Models\Media;
 use Modules\User\Contracts\UserContract;
+use Modules\User\Models\Traits\ProfileRelationsTrait;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -26,46 +25,46 @@ use Spatie\SchemalessAttributes\SchemalessAttributesTrait as HasSchemalessAttrib
  *
  * Represents a user profile with relationships to devices, teams, and roles.
  *
- * @property int                                                       $id
- * @property string                                                    $first_name
- * @property string                                                    $last_name
- * @property string                                                    $user_name
- * @property string                                                    $email
- * @property string|null                                               $phone
- * @property string|null                                               $bio
- * @property string|null                                               $avatar
- * @property string|null                                               $timezone
- * @property string|null                                               $locale
- * @property array<string, mixed>                                      $preferences
- * @property string                                                    $status
- * @property SchemalessAttributes                                      $extra
- * @property string                                                    $avatar
- * @property ProfileContract|null                                      $creator
- * @property Collection<int, DeviceUser>                               $deviceUsers
- * @property int|null                                                  $device_users_count
- * @property ProfileTeam|DeviceProfile|null                            $pivot
- * @property Collection<int, Device>                                   $devices
- * @property int|null                                                  $devices_count
- * @property string|null                                               $first_name
- * @property string|null                                               $full_name
- * @property string|null                                               $last_name
- * @property MediaCollection<int, Media>                               $media
- * @property int|null                                                  $media_count
- * @property Collection<int, DeviceUser>                               $mobileDeviceUsers
- * @property int|null                                                  $mobile_device_users_count
- * @property Collection<int, Device>                                   $mobileDevices
- * @property int|null                                                  $mobile_devices_count
+ * @property int $id
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $user_name
+ * @property string $email
+ * @property string|null $phone
+ * @property string|null $bio
+ * @property string|null $avatar
+ * @property string|null $timezone
+ * @property string|null $locale
+ * @property array<string, mixed> $preferences
+ * @property string $status
+ * @property SchemalessAttributes $extra
+ * @property string $avatar
+ * @property ProfileContract|null $creator
+ * @property Collection<int, DeviceUser> $deviceUsers
+ * @property int|null $device_users_count
+ * @property ProfileTeam|DeviceProfile|null $pivot
+ * @property Collection<int, Device> $devices
+ * @property int|null $devices_count
+ * @property string|null $first_name
+ * @property string|null $full_name
+ * @property string|null $last_name
+ * @property MediaCollection<int, Media> $media
+ * @property int|null $media_count
+ * @property Collection<int, DeviceUser> $mobileDeviceUsers
+ * @property int|null $mobile_device_users_count
+ * @property Collection<int, Device> $mobileDevices
+ * @property int|null $mobile_devices_count
  * @property DatabaseNotificationCollection<int, DatabaseNotification> $notifications
- * @property int|null                                                  $notifications_count
- * @property Collection<int, Permission>                               $permissions
- * @property int|null                                                  $permissions_count
- * @property Collection<int, Role>                                     $roles
- * @property int|null                                                  $roles_count
- * @property Collection<int, Team>                                     $teams
- * @property int|null                                                  $teams_count
- * @property ProfileContract|null                                      $updater
- * @property UserContract|null                                         $user
- * @property string|null                                               $user_name
+ * @property int|null $notifications_count
+ * @property Collection<int, Permission> $permissions
+ * @property int|null $permissions_count
+ * @property Collection<int, Role> $roles
+ * @property int|null $roles_count
+ * @property Collection<int, Team> $teams
+ * @property int|null $teams_count
+ * @property ProfileContract|null $updater
+ * @property UserContract|null $user
+ * @property string|null $user_name
  *
  * @method static Builder<static>|Profile newModelQuery()
  * @method static Builder<static>|Profile newQuery()
@@ -76,33 +75,33 @@ use Spatie\SchemalessAttributes\SchemalessAttributesTrait as HasSchemalessAttrib
  * @method static Builder<static>|Profile withoutPermission($permissions)
  * @method static Builder<static>|Profile withoutRole($roles, $guard = null)
  *
- * @property string|null          $user_id
- * @property Carbon|null          $created_at
- * @property Carbon|null          $updated_at
- * @property string|null          $updated_by
- * @property string|null          $created_by
- * @property Carbon|null          $deleted_at
- * @property string|null          $deleted_by
+ * @property string|null $user_id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string|null $updated_by
+ * @property string|null $created_by
+ * @property Carbon|null $deleted_at
+ * @property string|null $deleted_by
  * @property ProfileContract|null $deleter
  *
- * @method static Builder<static>|Profile                         whereBio($value)
- * @method static Builder<static>|Profile                         whereCreatedAt($value)
- * @method static Builder<static>|Profile                         whereCreatedBy($value)
- * @method static Builder<static>|Profile                         whereDeletedAt($value)
- * @method static Builder<static>|Profile                         whereDeletedBy($value)
- * @method static Builder<static>|Profile                         whereEmail($value)
- * @method static Builder<static>|Profile                         whereFirstName($value)
- * @method static Builder<static>|Profile                         whereId($value)
- * @method static Builder<static>|Profile                         whereLastName($value)
- * @method static Builder<static>|Profile                         wherePhone($value)
- * @method static Builder<static>|Profile                         whereUpdatedAt($value)
- * @method static Builder<static>|Profile                         whereUpdatedBy($value)
- * @method static Builder<static>|Profile                         whereUserId($value)
+ * @method static Builder<static>|Profile whereBio($value)
+ * @method static Builder<static>|Profile whereCreatedAt($value)
+ * @method static Builder<static>|Profile whereCreatedBy($value)
+ * @method static Builder<static>|Profile whereDeletedAt($value)
+ * @method static Builder<static>|Profile whereDeletedBy($value)
+ * @method static Builder<static>|Profile whereEmail($value)
+ * @method static Builder<static>|Profile whereFirstName($value)
+ * @method static Builder<static>|Profile whereId($value)
+ * @method static Builder<static>|Profile whereLastName($value)
+ * @method static Builder<static>|Profile wherePhone($value)
+ * @method static Builder<static>|Profile whereUpdatedAt($value)
+ * @method static Builder<static>|Profile whereUpdatedBy($value)
+ * @method static Builder<static>|Profile whereUserId($value)
  * @method static \Modules\User\Database\Factories\ProfileFactory factory($count = null, $state = [])
  *
  * @property string|null $post_type
- * @property int|null    $ente
- * @property int|null    $matr
+ * @property int|null $ente
+ * @property int|null $matr
  * @property string|null $address
  * @property string|null $premise
  * @property string|null $premise_short
@@ -177,7 +176,7 @@ use Spatie\SchemalessAttributes\SchemalessAttributesTrait as HasSchemalessAttrib
  * @property string|null $type
  * @property string|null $birth_date
  * @property string|null $gender
- * @property bool        $is_active
+ * @property bool $is_active
  *
  * @method static Builder<static>|Profile whereBirthDate($value)
  * @method static Builder<static>|Profile whereExtra($value)
@@ -192,9 +191,9 @@ use Spatie\SchemalessAttributes\SchemalessAttributesTrait as HasSchemalessAttrib
  */
 class Profile extends BaseProfile implements HasMedia
 {
-    use HasRoles;
-    use HasSchemalessAttributes;
-    use InteractsWithMedia;
+    use HasRoles, HasSchemalessAttributes, InteractsWithMedia, ProfileRelationsTrait {
+        ProfileRelationsTrait::teams insteadof HasRoles;
+    }
 
     /**
      * The table associated with the model.
@@ -202,20 +201,9 @@ class Profile extends BaseProfile implements HasMedia
     protected $table = 'profiles';
 
     /**
-     * Get the teams that the profile belongs to.
-     *
-     * @return BelongsToMany<Team, $this, Pivot, 'pivot'>
-     */
-    public function teams(): BelongsToMany
-    {
-        return $this->belongsToManyX(Team::class);
-    }
-
-    /**
      * Scope a query to include schemaless attributes.
      *
-     * @param Builder<static> $query
-     *
+     * @param  Builder<static>  $query
      * @return Builder<static>
      */
     public function scopeWithExtraAttributes(Builder $query): Builder

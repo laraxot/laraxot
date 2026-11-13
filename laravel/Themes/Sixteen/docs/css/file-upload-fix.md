@@ -1,3 +1,15 @@
+---
+title: "file upload fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "file upload fix"
+issues: []
+discussions: []
+status: draft
+---
+
 # File Upload Fix - segnalazione-02-dati
 
 **Date**: 2026-04-09  

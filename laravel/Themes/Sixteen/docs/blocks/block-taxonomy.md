@@ -1,3 +1,15 @@
+---
+title: "block taxonomy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "block taxonomy"
+issues: []
+discussions: []
+status: draft
+---
+
 # 🧱 Block Taxonomy - Complete Reference
 
 **Date**: 2026-03-30  
@@ -5,7 +17,6 @@
 **Based On**: Flowbite + Tailwind UI + DaisyUI + Bootstrap Italia
 
 ---
-
 ## 📚 Block Categories (Inspired by Industry Standards)
 
 ### 1. **HERO** (Layout - Header Sections)

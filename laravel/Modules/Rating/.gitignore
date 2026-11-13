@@ -1,94 +1,94 @@
-/.ai*
-/_bmad
-/bashscripts
-/_docs
-/docs/archive
-/docs/legacy
-*.lock
-.php-cs-fixer.cache
-.vscode
 
-# Cartelle di configurazione IDE: non stanno nella root di un modulo o di un tema.
-# Sono impostazioni personali di chi sviluppa, non contratto del modulo, e su un
-# repository condiviso fra basi diverse producono conflitti a ogni sync (XOT-5.38).
-.cursor/
-.devcontainer/
-.windsurf/
-/rector.php
-/phpinsights.php
-rector.php
-graphify-out/
-
-# Laraxot — forbidden at module/theme root (rector.php, phpinsights.php, .cursor, .windsurf, .vscode)
-/.cursor
-/.cursor/
-/.windsurf
-/.windsurf/
-/.vscode
-/.vscode/
-.cursor~*
-.windsurf~*
-node_modules
-
-# Regola tests-auditcoverage-forbidden: artefatti audit, mai nel repo
-tests/AuditCoverage/
-audit-coverage/
-.claude-audit/
-*.jar
-*.log
-package-lock.json
-*.phar
-.git-rewrite
-vendor/
-node_modules/
-.env
-/.vagrant
-.phpunit.result.cache
-.DS_Store
-error_log
-.phpintel
-/.idea
-
-*.stackdump
-*.cache
-*.bakup
-*.old
-*.old1
-
-.git-blame-ignore-revs
-vendor
-build/
-docs/cache/
-cache/
-*:Zone.Identifier
-
-# Backup files
-*.bak
-*.backup
-*.backup.*
-
-# PHPStan documentation
-docs/phpstan/
-lang/lang/
-_docs/
-
-# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
-docs/archive/
-# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
-*~HEAD
 *~BASE
+*~head
+*~HEAD
 *~LOCAL
 *~REMOTE
-*.orig
-*.rej
-*~head
-
 agentdb.rvf
-.vscode/
-
+/.ai*
+audit-coverage/
+*.backup
+*.backup.*
+# Backup files
+*.bak
+*.bakup
+/bashscripts
+/_bmad
+build/
+*.cache
+cache/
+# Cartelle di configurazione IDE: non stanno nella root di un modulo o di un tema.
+.claude-audit/
+# claude-audit bridge (non committare)
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
+.cursor/
+/.cursor
+/.cursor/
+.cursor~*
+.devcontainer/
+_docs/
+/_docs
+/docs/archive
+docs/archive/
+docs/cache/
+/docs/legacy
+docs/phpstan/
+.DS_Store
+.env
+.env.*
+!.env.example
+error_log
+.git-blame-ignore-revs
+.git-rewrite
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out/
+/.idea
+*.jar
+lang/lang/
+# Laraxot — forbidden at module/theme root (rector.php, phpinsights.php, .cursor, .windsurf, .vscode)
+*.lock
+*.log
+node_modules
+node_modules/
+*.old
+*.old1
+*.orig
+package-lock.json
 # Pest + audit-coverage bridge (claude-audit — path /tests/ nel matcher)
+*.phar
+.php-cs-fixer.cache
+/phpinsights.php
+.phpintel
+# PHPStan documentation
+.phpunit.result.cache
+/rector.php
+rector.php
+# Regola tests-auditcoverage-forbidden: artefatti audit, mai nel repo
+*.rej
+# repository condiviso fra basi diverse producono conflitti a ogni sync (XOT-5.38).
+# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
+# Sono impostazioni personali di chi sviluppa, non contratto del modulo, e su un
+*.stackdump
 !tests/
 !tests/**
+tests/AuditCoverage/
+/.vagrant
+vendor
+vendor/
+.vscode
+.vscode/
+/.vscode
+/.vscode/
+.windsurf/
+/.windsurf
+/.windsurf/
+.windsurf~*
+*:Zone.Identifier
+test-results/
+rating.code-workspace
+*.lock
 
-# claude-audit bridge (non committare)
-tests/AuditCoverage/*
+# module-root-hygiene (story module-root-hygiene)
+/.github/skills/
+docs/graphify
+resources/lang

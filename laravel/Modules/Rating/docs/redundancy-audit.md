@@ -1,4 +1,8 @@
 ---
+updated: 2026-09-26
+qmd: "redundancy audit"
+issues: []
+discussions: []
 title: "Rating redundancy audit 2026-05-21"
 type: audit
 module: Rating
@@ -6,6 +10,7 @@ tags: [redundancy, livewire, views]
 created: 2026-05-21
 related:
   - https://github.com/laraxot/platform/issues/89
+status: draft
 ---
 
 # Rating redundancy audit 2026-05-21

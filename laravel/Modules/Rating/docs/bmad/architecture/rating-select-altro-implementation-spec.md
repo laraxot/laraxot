@@ -1,5 +1,9 @@
 ---
-title: "Spec implementazione — Select+Textarea value/note (HasRatingsTrait)"
+tags: [documentation]
+created: 2026-09-26
+issues: []
+discussions: []
+title: "Spec implementazione: Select+Textarea value/note (HasRatingsTrait)"
 type: architecture
 module: Rating
 status: ready-for-dev
@@ -13,7 +17,7 @@ related:
   - ../../stories/rating-altro-option-conditional-textarea-design.story.md
 ---
 
-# Spec implementazione — codice che si vuole scrivere
+# Spec implementazione: codice che si vuole scrivere
 
 > **Docs-only.** Canon: option «altro» = `''`; placeholder = `null`; `selectIsOther === ''` only.  
 > **Non** `ALTRO_KEY='altro'` (superseded). SSoT: [rating-select-altro-note.md](rating-select-altro-note.md).
@@ -34,7 +38,7 @@ related:
 
 IR Compila: fill solo `pivot.value`; save `is_numeric ? value : 0` (altro/blank → **0**).
 
-## To-be — helpers
+## To-be: helpers
 
 ```php
 private const string OTHER_OPTION_KEY = '';
@@ -51,7 +55,7 @@ public static function ratingFieldName(BaseRating $rating, string $pivotColumn =
 }
 ```
 
-## To-be — `buildRatingComponent` (ramo figli)
+## To-be: `buildRatingComponent` (ramo figli)
 
 ```php
 $options[self::OTHER_OPTION_KEY] = trans('rating::fields.altro');
@@ -68,7 +72,7 @@ $note = Textarea::make(self::ratingFieldName($rating, 'note'))
     ->rows(3)
     ->required(static fn (Get $get): bool => self::selectIsOther($get, $field));
 
-// UI: Fieldset — https://filamentphp.com/docs/5.x/schemas/layouts#fieldset-component
+// UI: Fieldset: https://filamentphp.com/docs/5.x/schemas/layouts#fieldset-component
 // Host: decorateRatingField → label($label). Trait non setta label (D-1).
 return Fieldset::make()
     ->columnSpan(2)
@@ -77,10 +81,10 @@ return Fieldset::make()
 
 Coda `rules|nullable|live` sul **Select**, non sul Fieldset. Senza figli / readonly invariati.
 
-## To-be — IR fill/save
+## To-be: IR fill/save
 
 ```php
-// fill — remap UI: null+note → ''
+// fill: remap UI: null+note → ''
 foreach ($record->ratings as $ratingRow) {
     $id = (string) $ratingRow->id;
     $value = $ratingRow->pivot->value;
@@ -92,7 +96,7 @@ foreach ($record->ratings as $ratingRow) {
     $data['ratings'][$id]['pivot']['note'] = $note;
 }
 
-// save — ''/null → null; mai cast a 0
+// save: ''/null → null; mai cast a 0
 foreach ($ratingsData as $id => $rating) {
     $pivot = (array) ($rating['pivot'] ?? []);
     $value = $pivot['value'] ?? null;
@@ -110,7 +114,7 @@ Preferenza KISS: remap in host fill **oppure** helper Rating `normalizePivotValu
 1. adds empty-key altro option when children
 2. returns Group with Select + Textarea
 3. does not require note when child id selected
-4. does not require note when select is null (placeholder) — **regressione blank()**
+4. does not require note when select is null (placeholder): **regressione blank()**
 5. requires note when select is `''`
 6. TextInput path unchanged without children
 7. ratingFieldName accepts `note`

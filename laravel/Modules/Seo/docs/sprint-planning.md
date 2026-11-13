@@ -1,12 +1,20 @@
 ---
+title: "sprint planning"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sprint planning"
+issues: []
+discussions: []
 module: theme
 topic: sprint-planning
-canonical: ../../../Themes/docs/shared-components/SPRINT_PLANNING.md
+canonical: ../../../Themes/docs/shared-components/SPRINT_PLANNING.md  # target mancante, verificato 2026-10-08
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/SPRINT_PLANNING.md
-<<<<<<< HEAD
-=======
+---
 # Seo Module - Sprint Planning
 
 **Module:** Seo  
@@ -72,5 +80,3 @@ Implement core technical SEO features including meta tags, sitemap, and schema m
 | **Performance impact** | Caching, optimization |
 
 ---
-
->>>>>>> laraxot/dev

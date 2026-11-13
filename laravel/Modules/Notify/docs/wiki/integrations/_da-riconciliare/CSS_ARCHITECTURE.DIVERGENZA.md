@@ -1,10 +1,15 @@
 ---
+qmd: "CSS ARCHITECTURE.DIVERGENZA"
+issues: []
+discussions: []
 title: "Divergenza da riconciliare: CSS_ARCHITECTURE.md"
 module: Notify
 type: note
 tags: [xot-5.39, riconciliazione, docs-ownership]
 created: 2026-08-24
 updated: 2026-08-24
+status: superseded
+superseded_by: css-architecture.divergenza.md
 ---
 
 # Divergenza: `CSS_ARCHITECTURE.md`

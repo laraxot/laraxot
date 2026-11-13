@@ -7,15 +7,9 @@ created: 2026-05-11
 updated: 2026-06-10
 qmd: "Activity concepts index phpstan pest discipline"
 issues:
-<<<<<<< HEAD
   - "https://github.com/laraxot/base_ptv_fila5/issues/328"
 discussions:
   - "https://github.com/laraxot/base_ptv_fila5/discussions/329"
-=======
-  - "https://github.com/laraxot/base_fixcity_fila5/issues/328"
-discussions:
-  - "https://github.com/laraxot/base_fixcity_fila5/discussions/329"
->>>>>>> 13cf1831 (.)
 ---
 
 # Activity Module - concepts Index
@@ -45,7 +39,6 @@ qmd search "Activity concepts" --limit 5
 - [activity-log-single-migration-contract](activity-log-single-migration-contract.md) — una create per modello, uuid morphs
 - [activity-log-attribute-changes-column](activity-log-attribute-changes-column.md) — colonna attribute_changes
 
-<<<<<<< HEAD
 
 ## Aggiunti 2026-08-24 (da .txt)
 
@@ -55,5 +48,3 @@ qmd search "Activity concepts" --limit 5
 ## Aggiunti 2026-09-20
 
 - [log-viewer-page-no-ssh](log-viewer-page-no-ssh.md) — pagina Log del pannello Activity: legge i file di storage/logs (anche sottocartelle per survey) dalla coda, con ricerca, filtro per livello e download, senza SSH/FTP
-=======
->>>>>>> 13cf1831 (.)

@@ -1,4 +1,16 @@
-# Status pagina login — documento estraneo (deprecato)
+---
+title: "login page status"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login page status"
+issues: []
+discussions: []
+status: draft
+---
+
+# Status pagina login: documento estraneo (deprecato)
 
 Questo documento descriveva una pagina di login basata su
 `Modules\User\Filament\Widgets\Auth\LoginWidget` con template
@@ -14,7 +26,7 @@ copiato da un progetto sibling dello stesso ecosistema mono-repo
 (`base_fixcity_fila5_mono` o `base_ptv_fila5_mono`).
 
 Trovato e segnalato durante l'investigazione del bug Livewire "This page has
-expired" al login — vedi
+expired" al login: vedi
 `Modules/Xot/docs/stories/login-page-expired-investigation-2026-09-11.story.md`
 e https://github.com/laraxot/module_xot_fila5/issues/119 per la causa reale e
 il fix di questo repo.

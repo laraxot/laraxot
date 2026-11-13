@@ -1,3 +1,9 @@
+---
+title: "Employee - DATA_ARCHITECTURE"
+module: Employee
+bmad: true
+status: active
+---
 # Architettura Dati - Modulo Employee
 
 ## Modello di Dominio

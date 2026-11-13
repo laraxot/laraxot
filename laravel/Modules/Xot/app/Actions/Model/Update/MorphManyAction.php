@@ -15,7 +15,14 @@ class MorphManyAction
     use QueueableAction;
 
     /**
+<<<<<<< HEAD
      * Undocumented function.
+=======
+     * Aggiorna i record figli della relazione morphMany dal payload del form e li (ri)associa al padre.
+     *
+     * UpdateAction salva i campi di ogni riga, poi saveMany() scrive morph type/id sul figlio.
+     * Le righe non presenti nel payload non vengono staccate ne' cancellate.
+>>>>>>> laraxot/dev
      */
     public function execute(Model $model, RelationDTO $relationDTO): void
     {
@@ -34,7 +41,10 @@ class MorphManyAction
         $related = $relationDTO->related;
         $keyName = $related->getKeyName();
         $models = [];
+<<<<<<< HEAD
         $ids = [];
+=======
+>>>>>>> laraxot/dev
         foreach ($relationDTO->data as $data) {
             Assert::isArray($data);
             if (\in_array($keyName, array_keys($data), false)) {
@@ -46,10 +56,16 @@ class MorphManyAction
                 /** @var array<string, mixed> $safeData */
                 $safeData = $data;
                 $res = app(UpdateAction::class)->execute($related, $safeData, []);
+<<<<<<< HEAD
                 $ids[] = $res->getKey();
                 $models[] = $res;
             } else {
                 dddx(['model' => $model, 'relationDTO' => $relationDTO]);
+=======
+                $models[] = $res;
+            } else {
+                throw new \LogicException('Update\MorphManyAction: rows without primary key not implemented, relation ['.$relationDTO->name.']');
+>>>>>>> laraxot/dev
             }
         }
 

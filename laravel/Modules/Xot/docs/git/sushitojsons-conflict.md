@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+---
+title: "Risoluzione Conflitto in SushiToJsons"
+type: note
+status: unverified
+created: 2026-09-24
+updated: 2026-10-20
+module: Xot
+tags: [xot, git]
+qmd: "Risoluzione Conflitto in SushiToJsons"
+---
+>>>>>>> laraxot/dev
 # Risoluzione Conflitto in SushiToJsons
 
 ## Panoramica
@@ -24,7 +37,11 @@ Sono state identificate tre principali versioni in conflitto:
 - Validazione standard senza eccezioni personalizzate
 
 ### Versione 2 (Intermedia)
+<<<<<<< HEAD
 - Implementazione con controlli aggiuntivi
+=======
+- Implementazione con controlli aggiuntivi 
+>>>>>>> laraxot/dev
 - Eccezioni personalizzate per la validazione
 
 ### Versione 3 (Più recente)
@@ -133,7 +150,11 @@ trait SushiToJsons
                 File::put($file, $content);
             }
         );
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> laraxot/dev
         /*
          * Aggiornamento del modello.
          */
@@ -146,7 +167,11 @@ trait SushiToJsons
                 File::put($file, $content);
             }
         );
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> laraxot/dev
         /*
          * Eliminazione del modello.
          */
@@ -173,5 +198,9 @@ trait SushiToJsons
 ## Collegamenti Bidirezionali
 
 - [Documento principale risoluzione conflitti](risoluzione_conflitti.md)
+<<<<<<< HEAD
 - [Documentazione modulo Tenant](../../Tenant/docs/risoluzione_conflitti.md)
 - [Documentazione modulo Tenant](../../tenant/docs/risoluzione_conflitti.md)
+=======
+- [Documentazione modulo Tenant](../../Tenant/docs/risoluzione_conflitti.md) 
+>>>>>>> laraxot/dev

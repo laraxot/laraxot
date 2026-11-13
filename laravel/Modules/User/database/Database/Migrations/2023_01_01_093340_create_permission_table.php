@@ -1,10 +1,17 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< .merge_file_D3VSBj
 
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 return new class extends XotBaseMigration {
+=======
+use Modules\Xot\Database\Migrations\XotBaseMigration;
+
+return new class extends XotBaseMigration
+{
+>>>>>>> .merge_file_0W4c0f
     /**
      * Run the migrations.
      */
@@ -44,7 +51,11 @@ return new class extends XotBaseMigration {
         try {
             // Verifica se l'applicazione è completamente inizializzata
             if (app()->bound('cache')) {
+<<<<<<< .merge_file_D3VSBj
                 app('cache')->store('default' !== $cache_store ? $cache_store : null)->forget($cache_key);
+=======
+                app('cache')->store($cache_store !== 'default' ? $cache_store : null)->forget($cache_key);
+>>>>>>> .merge_file_0W4c0f
             }
         } catch (Exception $e) {
             // Silently ignore cache errors during package discovery

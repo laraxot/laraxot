@@ -1,3 +1,15 @@
+---
+title: "live parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "live parity"
+issues: []
+discussions: []
+status: draft
+---
+
 # Live Parity Audit 2026-04-04
 
 ## Scope
@@ -7,10 +19,10 @@ Pagine verificate con screenshot live e confronto strutturale aggiornato:
 - `ticket-list`
 
 ## Evidence
-- [Lista Risorse screenshot diff](../pages/lista-risorse/VISUAL-COMPARISON-DETAILED.md)
-- [Amministrazione screenshot diff](../pages/amministrazione/VISUAL-COMPARISON-DETAILED.md)
+- [Lista Risorse screenshot diff](../pages/lista-risorse/visual-comparison-detailed.md)
+- [Amministrazione screenshot diff](../pages/amministrazione/visual-comparison-detailed.md)
 - [Segnalazioni Elenco screenshot diff](../pages/ticket-list/VISUAL-COMPARISON-DETAILED.md)
-- [Live body parity report](./LIVE_BODY_PARITY_REPORT.md)
+- [Live body parity report](./live-body-parity-report.md)
 - [Script doc](../../../bashscripts/docs/design-comuni-live-body-parity.md)
 
 ## Current findings

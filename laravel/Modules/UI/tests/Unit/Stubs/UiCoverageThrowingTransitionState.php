@@ -10,7 +10,11 @@ use Illuminate\Support\Collection;
 final class UiCoverageThrowingTransitionState extends UiCoverageStateContract
 {
     /**
+<<<<<<< HEAD
      * @param Model|array<string, mixed>|string|null $record
+=======
+     * @param  Model|array<string, mixed>|string|null  $record
+>>>>>>> f5ffd8b4 (.)
      */
     public function __construct(Model|array|string|null $record = null)
     {
